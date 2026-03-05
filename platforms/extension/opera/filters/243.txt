@@ -1,14 +1,14 @@
-! Checksum: RVxKa2DmTqpcdqnRMm3mYA
-! Diff-Path: ../patches/243/243-s-1772484741-14400.patch
+! Checksum: AAVPr9XWm/Fmmkh94EjJEA
+! Diff-Path: ../patches/243/243-s-1772715022-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.5
-! TimeUpdated: 2026-03-02T20:49:20+00:00
+! Version: 2.0.24.6
+! TimeUpdated: 2026-03-05T12:47:26+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-03-02 17:56:56 CET
+! Last modified: 2026-03-05 13:25:16 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -129,6 +129,7 @@ aftonbladet.se##div[class^="stickylogin"]
 aftonbladet.se#?#div[class^="_adLabel"]:upward(1)
 aftonbladet.se##h2[data-test-tag="paragraph-header"]:has(a[aria-label*="ANNONS"])
 aftonbladet.se##section[class^="twocolumnlayout-main"] > div[class^="usermsgtoast-root"]:has(iframe)
+aftonbladet.se#?#.cd-title:contains(Annons):upward(.countdown__main)
 aftonbladet.se#?#.label-medium:contains(/annonslänkar/i):upward(astro-island[component-url])
 aftonbladet.se#?#:is(aside[class^="twocolumnlayout-aside"], section[class^="twocolumnlayout-main"]) a[data-test-tag="internal-link"]:contains(/annonslänkar/i)
 aftonbladet.se,godare.se##div[data-edition-name^="ab-native-premium"], div[class^="advertory-"]:not(.advertory-header-anchor), a[href*="/brandstudio"], a[href*="/brand-studio"],  a[href*="/casinoguide"]
@@ -561,7 +562,7 @@ fasting.nu#$#body { display:unset!important }
 feber.se,tjock.se##f-internallink:has(a[href="#"])
 feber.se,tjock.se#%#//scriptlet('ubo-nosiif', 'checkGDPRInt')
 feber.se,tjock.se#%#//scriptlet('ubo-set', 'dovideostuffAD', 'noopFunc')
-feber.se,tjock.se##.burt-unit, .art_ad, adline, f-panorama, f-deals, #rpPopular, #maxetiseFull, #outsider, [data-ad="true"], f-internallink[adid], f-automatos-promo, f-native, .readpeak-puff-content, .readpeak-puff-item
+feber.se,tjock.se##.burt-unit, .art_ad, adline, f-panorama, f-deals, #rpPopular, #maxetiseFull, #outsider, [data-ad="true"], f-internallink[adid], f-automatos-promo, f-native, .readpeak-puff-content, .readpeak-puff-item, f-veckansprylar-container, f-readpeak-pre-article
 fightermag.se##article:has(a[href*="betting"], a[href*="casino"], a[href*="kasino"], a[href*="/gastskribent/"])
 fightermag.se##a[href*="/sponsra"], #partners
 filatelisten.se#?#:is(a[target="_blank"]:not([href^="/"], [href*="filatelisten.se"])):upward(section)
@@ -2181,6 +2182,7 @@ zeromagazine.nu##div[id^="ads"]
 /banner$domain=assistanskoll.se|hrnytt.se|lokalguiden.se|nyaboendet.se|ljudoljus.net|poloniainfo.se|alltombostad.se|thepattayanewsse.com
 /banner/ads/*
 /betald-exponering$image
+/betting-link$subdocument,domain=aftonbladet.se
 /bigdatapushworker.js$domain=eurocampings.se
 /bilder-for-annonser$image
 /bilder/ads/*
@@ -2761,6 +2763,7 @@ zeromagazine.nu##div[id^="ads"]
 /susnetstat.js
 /sveacasino_banner
 /svenska-ridsportforbundet/*banners
+/svenska-spel-coupon$subdocument,domain=aftonbladet.se
 /svff/bannerblock/*
 /sv_se/metrics/*$script,xmlhttprequest
 /swg$script,domain=thelocal.se
