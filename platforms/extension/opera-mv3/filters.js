@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.51.28",
-			"timeUpdated": "2026-03-05T11:17:04+0000",
+			"version": "2.4.51.29",
+			"timeUpdated": "2026-03-05T12:18:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.1.3",
-			"timeUpdated": "2026-03-05T05:25:40+0000",
+			"version": "2.1.1.4",
+			"timeUpdated": "2026-03-05T12:18:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.25.74",
-			"timeUpdated": "2026-03-05T11:17:15+0000",
+			"version": "2.1.25.75",
+			"timeUpdated": "2026-03-05T12:18:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.82.19",
-			"timeUpdated": "2026-03-05T11:17:45+0000",
+			"version": "2.0.82.20",
+			"timeUpdated": "2026-03-05T12:18:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -692,8 +692,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.71.58",
-			"timeUpdated": "2026-03-05T11:17:48+0000",
+			"version": "2.0.71.59",
+			"timeUpdated": "2026-03-05T12:18:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1169,8 +1169,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.55.22",
-			"timeUpdated": "2026-03-05T11:17:55+0000",
+			"version": "2.1.55.23",
+			"timeUpdated": "2026-03-05T12:18:42+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
