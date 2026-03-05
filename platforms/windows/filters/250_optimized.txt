@@ -1,9 +1,9 @@
-! Checksum: L3seUv1xn/T5b29b1PVeag
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1772600469-14400.patch
+! Checksum: l7ur/3Br5R0kDFB9LJaSyg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1772687064-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.19.13
-! TimeUpdated: 2026-03-03T16:46:43+00:00
+! Version: 2.0.19.14
+! TimeUpdated: 2026-03-05T05:01:24+00:00
 ! Expires: 12 hours (update frequency)
 ||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top
 @@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
@@ -41,6 +41,7 @@ howtoremove.guide##[id*="newage"]
 windowsreport.com##div[class^=restoro-download] + section
 appuals.com##.wptp
 appuals.com##p + div > div:first-of-type
+wikidll.com,dllfile.net,dll-files.org#?#.method:contains(Outbyte)
 windll.com##.download-block
 windll.com##.dll > p
 softwaretested.com##.st-alternative
@@ -106,7 +107,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 /^172\.255\.6\.(\d\d?|(17?|2)[0-689]\d)$/$network
 ||connatedresspint.com^$all
-||pacifyinvalid.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 /^173\.233\.137\.[12]?\d?\d$/$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -492,7 +492,6 @@ google.*#?#div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
 ||clickadddilla.com^$all
 ||directsle.com^$all
 ||innaxx.com^$all
-||javcosplay.com^$all
 [2a02:128:7:4910::2]$network
 [2a02:128:7:4931::2]$network
 [2a02:128:7:4966::2]$network
@@ -1007,6 +1006,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##.uSocial-Share:not(body,html,:empty)
 ~line.me,~linecorp.com##a[href^="line://msg/text/"]:is([class*=share i],[aria-label*=share i])
 ##.b-share-bar__twitter
+~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.b-share-bar__facebook:not(body,html,:empty)
 ~linkedin.com##.b-share-bar__linkedin:not(body,html,:empty)
 winstall.app##button[class*=singleApp_shareApp_]
 ##button[aria-label^="Share article on "]
@@ -1532,9 +1532,6 @@ $document,removeparam=source_location
 $document,removeparam=psf_variant
 $document,removeparam=es_id
 $document,removeparam=bxid
-$document,removeparam=cndid
-$document,removeparam=hasha
-$document,removeparam=hashc
 $document,removeparam=irgwc
 $document,removeparam=/^clickid=.*$/i,domain=~discover.*
 $document,removeparam=ito
@@ -1851,6 +1848,7 @@ $removeparam=ko_click_id
 $removeparam=nrtv_cid
 $removeparam=trk_ref
 $removeparam=ircid
+$removeparam=dfw_tracker
 $document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
 $removeparam=awinaffid
@@ -1883,6 +1881,7 @@ $removeparam=ads_creative
 $removeparam=ads_matchtype
 $removeparam=ads_network
 $removeparam=ads_targetid
+ref=rss^$document,removeparam=ref
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -1919,6 +1918,7 @@ $removeparam=nosto
 $document,removeparam=af_id,domain=~dmm.co.jp|~dmm.com
 $removeparam=trafficSource
 $removeparam=gps_adid
+$removeparam=app_clickref
 $removeparam=as_campaign
 $removeparam=as_camptype
 $removeparam=as_channel
@@ -2614,7 +2614,6 @@ $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
-||bleepingcomputer.com^$removeparam=cx
 $document,removeparam=iid,domain=cnn.com|time.com
 ||despegar.$removeparam=mktdata
 ||hao123.com^$removeparam=tn
@@ -2647,7 +2646,6 @@ $removeparam=hooid,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hoas,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hoaci,domain=hotspotshield.com|gethotspotshield.com
 ||dw.com^$removeparam=maca
-||fiverr.com^$removeparam=bta
 $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
@@ -2942,7 +2940,6 @@ $document,domain=carousell.*,removeparam=/^t-referrer_/
 ||www.roblox.com^$removeparam=treatmentType
 $document,removeparam=ucid,domain=unicredit.it|steampowered.com
 $document,removeparam=entrypoint,domain=bing.com
-$document,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
@@ -3030,6 +3027,7 @@ $document,removeparam=refid,domain=press.aboutamazon.com|aws.amazon.com|aws.eu
 $document,removeparam=sc_ichannel,domain=aws.eu|pages.awscloud.com
 $document,removeparam=sc_icampaign,domain=aws.eu|pages.awscloud.com
 $document,removeparam=sc_iplace,domain=aws.eu|pages.awscloud.com
+||musescore.com^$document,removeparam=feature
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu

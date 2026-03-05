@@ -1,9 +1,9 @@
-! Checksum: by6eX7VD+4DSx3diwLQKqA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1772672275-14400.patch
+! Checksum: SwTsXmBMDkExbz83zrrNMQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1772687035-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.57.51
-! TimeUpdated: 2026-03-05T00:55:04+00:00
+! Version: 2.1.57.52
+! TimeUpdated: 2026-03-05T05:00:49+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -49,6 +49,7 @@
 /jquery.sharecount.min.js
 /juiz-social-post-sharer.min.js
 /lg-share.js
+/like_button.js
 /like_button.png
 /likebox.php
 /likesScript.js
@@ -116,7 +117,6 @@
 /socialbookmarks.js
 /socialite.js
 /socialite.min.js
-/SocialSprite.
 /socialsprites.
 /socialstat?
 /synved-social/image/*
@@ -215,7 +215,6 @@ _social-bar/
 ###facebookWidget
 ###facebook_box
 ###facebook_like
-###facebook_like_box
 ###facebook_link
 ###facebook_overlay
 ###facebook_share
@@ -498,6 +497,7 @@ _social-bar/
 ###sharethis
 ###sharetop
 ###sharing-bar
+###sharing-box
 ###sharing-button
 ###sharing-buttons
 ###sharing-sidebar
@@ -652,6 +652,7 @@ _social-bar/
 ###socialblock
 ###socialbookmarks
 ###socialbox
+###socialbtns
 ###socialbuttons
 ###socialbuttonsbox
 ###socialemail
@@ -918,6 +919,7 @@ _social-bar/
 ##.article__sharing
 ##.article__social
 ##.article__social-links
+##.article__social-share
 ##.article__socials
 ##.article_bottom_share
 ##.article_footer_pinterest
@@ -1035,6 +1037,7 @@ _social-bar/
 ##.bt-social-share
 ##.btFacebook
 ##.btn--share
+##.btn-facebook-lg
 ##.btn-group-social
 ##.button-pinterest
 ##.button-share
@@ -1764,6 +1767,7 @@ _social-bar/
 ##.janrainSocialBar
 ##.jd-social-share
 ##.jeg_author_socials
+##.jeg_meta_share
 ##.jeg_share_button
 ##.jeg_share_top_container
 ##.jeg_sharelist
@@ -1988,6 +1992,7 @@ _social-bar/
 ##.mvp-soc-mob-list
 ##.mvp-soc-mob-pin
 ##.mvp_facebook_widget
+##.nShare
 ##.native-share
 ##.native-share-buttons
 ##.nav--share
@@ -2408,7 +2413,6 @@ _social-bar/
 ##.share-social
 ##.share-social-bottom
 ##.share-social-box
-##.share-social-icon
 ##.share-social-link
 ##.share-social-links
 ##.share-social-list
@@ -2465,6 +2469,7 @@ _social-bar/
 ##.shareBtn
 ##.shareBtnContainer
 ##.shareBtns
+##.shareButt
 ##.shareButtons
 ##.shareButtons-button
 ##.shareButtons-buttons
@@ -2709,7 +2714,6 @@ _social-bar/
 ##.sharrre_widget
 ##.show-share
 ##.showShareMore
-##.show_social
 ##.shr-bookmarks
 ##.shr-btn
 ##.shr-btns
@@ -3098,7 +3102,6 @@ _social-bar/
 ##.socialMedia
 ##.socialMedia-linkedin
 ##.socialMediaBlock
-##.socialMediaBox
 ##.socialMediaButtons
 ##.socialMediaContainer
 ##.socialMediaIcon
@@ -3152,7 +3155,6 @@ _social-bar/
 ##.social_links_footer
 ##.social_links_top
 ##.social_links_wrapper
-##.social_media_section
 ##.social_media_share
 ##.social_menu_icon
 ##.social_popup
@@ -3657,6 +3659,7 @@ _social-bar/
 ||b.st-hatena.com/js/$script,third-party,domain=~b.hatena.ne.jp
 ||badge.facebook.com^$third-party
 ||badges.instagram.com^$third-party
+||bloglovin.com/widget/$third-party
 ||bshare.cn^$third-party
 ||button-share.zalo.me^$third-party
 ||button.like.co^$third-party
@@ -3828,7 +3831,6 @@ firstpost.com##.art-soc-icons
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 foodbible.com##.article-header_discoverButton__PDfrQ
-infoworld.com##.article-hero__social
 neowin.net,seattletimes.com,thecooldown.com##.article-share
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
@@ -3943,7 +3945,6 @@ popsci.com##.footer-socials-wrapper
 dailykos.com##.footer__connect
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
-infoq.com##.footer__social-wrap
 indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 telex.hu##.framed-content
@@ -4005,7 +4006,6 @@ euronews.com##.js-c-article-partage-commentaire-share
 buzzfeed.com##.js-inline-share-bar
 guide.michelin.com##.js-share-sticky
 myanimelist.net##.js-sns-icon-container
-nasdaq.com##.jupiter22-c-share-link
 4sysops.com##.kleo-quick-contact-wrapper
 axios.com##.leading-0
 mymodernmet.com##.lets-connect
@@ -4027,6 +4027,7 @@ fordauthority.com,motrolix.com##.mtxh-share-buttons
 denofgeek.com##.nav-social__items
 triblive.com##.navbar-right
 chess.com##.navigation-footer-platforms-component
+thesouthafrican.com##.navigator-share
 pmc.ncbi.nlm.nih.gov##.ncbi-footer__icon-section
 nerdist.com##.nerdist-social-share
 taiwebs.com##.networking
@@ -4310,6 +4311,7 @@ theintercept.com#?#[data-ga-track-action]:contains(Join The Conversation)
 clubic.com#?#[style="position: sticky; top: 55px;"]:contains(Inscrivez-vous à notre newsletter quotidienne !)
 nbcsports.com#?#p.cms-textAlign-center:contains(follow NBC Sports)
 psypost.org#?#strong:contains(/Stay informed|Stay on top/)
+royalqueenseeds.*##.social-media-icons-footer
 agfk-bw.de,clara.es,hcb.net,travel.state.gov##.socialmedia
 1movies.bz,avira.com,betakit.com,byjus.com,commentpicker.com,hakaimagazine.com,hollywoodlife.com,homemark.co.za,ilgiornale.it,iphoneitalia.com,malaymail.com,maxabout.com,motorsport-xl.de,ncbi.nlm.nih.gov,novosti.rs,nu.nl,politico.eu,tennismagazin.de,thepostmillennial.com,uncnews.unc.edu##.social-sharing
 exafm.com,goldderby.com,lacaderadeeva.com,lamejor.com.mx,lasillarota.com,mvsnoticias.com,pronto.com.ar,radioformula.com.mx,revistaforum.com.br,sumedico.com##.share-group
