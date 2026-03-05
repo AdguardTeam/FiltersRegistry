@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 6D+cYgxwoIyCtBTt98+qQQ
-! Diff-Path: ../patches/3/3-s-1772713308-3600.patch
+! Checksum: ult26r1s1xdsX+UrKOnF+A
+! Diff-Path: ../patches/3/3-s-1772717747-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.1.4
-! TimeUpdated: 2026-03-05T12:18:14+00:00
+! Version: 2.1.1.5
+! TimeUpdated: 2026-03-05T13:31:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -143629,7 +143629,7 @@ addons.mozilla.org##+js(href-sanitizer, a[href^="https://prod.outgoing.prod.webs
 ||myglo.com.ua/cdn/*/assets/adobe_tracking.js
 ||webapi-cloud.bluestacks.com/api/*/report-page-view
 ||progameguides.com/*/openweb-tracking.js
-||ticketmaster.com/*/log
+||ticketmaster.com/*/log^
 ||ticketmaster.com/logger/
 yakutia.info##.popular:has(> .js-relap-anchor)
 ||amazonaws.com/default/tracking?url=
@@ -150728,6 +150728,14 @@ d4?appid*type*
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/226314
+@@||cdn.cxense.com/cx.cce.js$domain=df.cl
+@@||cdn.cxense.com/cx.js$domain=df.cl
+@@||api.cxense.com/public/widget/data?json=$domain=df.cl
+! https://github.com/AdguardTeam/AdguardFilters/issues/225988
+! Bug of SafariConverterLib - `^` is ignored
+! Related to ||ticketmaster.com/*/log^
+! TODO: check 01.06.2026
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226252
 @@||srvr.dmvs-apac.com/dm-story/*.js$domain=eldeber.com.bo|reduno.com.bo
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226250
