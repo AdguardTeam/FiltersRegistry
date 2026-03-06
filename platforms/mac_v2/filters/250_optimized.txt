@@ -1,5 +1,5 @@
-! Checksum: k0iQvC1N9TKGFDQWqrThNA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1772743755-14400.patch
+! Checksum: RXOuxheY0WRaulQ6ELzEZw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1772773318-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.15
@@ -15,7 +15,6 @@
 .xyz/*/?*=*&*=*&*=*&*=*&*=$document
 !+ PLATFORM(windows, mac, android, cli)
 109.201.135.46$network
-||ublock.org^$document
 !+ PLATFORM(windows, mac, android, cli)
 138.68.252.54$network
 ||fileplanet.com^$document,popup
@@ -36,7 +35,6 @@ drivereasy.com#?#.pakb-content ol:contains(Download and install Driver Easy)
 drivereasy.com#?#.pakb-content p:contains(Driver Easy)
 drivereasy.com#?#.pakb-content div.info.note:contains(drivereasy.com)
 drivereasy.com#?#.pakb-content p:contains(the Pro version)
-drivereasy.com#?#.pakb-content p:contains(click Update All)
 howtoremove.guide##[id*="newage"]
 windowsreport.com##div[class^=restoro-download] + section
 appuals.com##.wptp
@@ -49,6 +47,7 @@ softwaretested.com##.st-alternative
 ||testedforyou.net^$all
 dll-found.com##p:has(a[href*=tweakbit])
 ||solvusoft.com^$document
+exefiles.com##.row:has(a[href*="/recommended/"])
 ||freeroms.com^$document
 ||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
@@ -352,7 +351,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||excessivelynell.com^$all
 ||highcpmrevenue*.com^$all
 ||profitablecpm*.com^$all
-||rewindonto.com^$all
 ||scarcehepatitis.com^$all
 ||seenwage.com^$all
 ||vidox.net^$all
@@ -395,7 +393,9 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||junclikrmedi.com^$all
 ||locked3.com^$all
 ||onthatass.com^$all
+||unlockcontent.net^$all
 ||blizzboygames.net^$all
+||cumguns.online^$all
 ||srvdowns.com^$all
 ||tjrksciow.pro^$all
 ||howtofix.guide^$document
@@ -700,7 +700,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ||flash.cn^$all
 ||cprapid.com^$all
 ||crentgate.com^$all
-||ghastlyejection.com^$all
 ||redirekted.com^$all
 ||zonedummy.com^$all
 /^172\.255\.6\.(\d{1,2}|2.*|1[0-689].*|17[0-689])\$/$network
@@ -816,7 +815,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##a[href*="plusone.google.com"]
 ##a[href*="telegram.me/share/url?"]
 ##a[href^="/sharer/sharer.php?"] > button[type=submit]
-##a[href^="javascript:sendSns('"]
 ##a[id*=share-][id*=-button]
 ##a[id^=share_btn]
 ##a[onclick*="plus.google.com/share?"]
@@ -868,6 +866,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 /sharing/reddit.$image
 /sharing/stumbleupon.$image
 /sharing/twitter.$image
+||addthis.com/static/btn/sm-share*.gif^
 ||apis.google.com/*/+1/*button$subdocument
 ||apis.google.com/js/plusone.js^
 ||assets.pinterest.com/js/pinit
@@ -1331,7 +1330,6 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ||collector.schibsted.io^$third-party
 ~ru###preloader
 ~ru##div.preloader
-##app-loading-screen
 ##.loading-mask:not(html,body)
 ##div#loading
 *,~barter.vg#?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
@@ -1591,7 +1589,6 @@ $removeparam=tblci
 $removeparam=tcid,domain=~rug.nl
 $removeparam=/^wdorigin=.*$/i
 $document,removeparam=/^aff_id\d?=.*$/i,domain=~affiliate.salestring.com
-$removeparam=twitchReferral
 $document,removeparam=elqTrackId,domain=~comcast.com|~comcastforbusiness.com
 $removeparam=tctx
 $removeparam=ad_medium
@@ -1817,6 +1814,7 @@ $document,removeparam=/^pid=.*_int$/
 $removeparam=deep_link_sub1
 $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
+$removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
 $removeparam=waad
@@ -2724,6 +2722,8 @@ $removeparam=nl,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62
 $removeparam=regi_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=segment_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
+^fs=e&s=cl$document,removeparam=fs
+^fs=e&s=cl$document,removeparam=s
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
