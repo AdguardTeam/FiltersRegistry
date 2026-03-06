@@ -1,9 +1,9 @@
-! Checksum: 2cSbaWCiG2FhgongXx4k2A
-! Diff-Path: ../patches/120_optimized/120_optimized-s-1772786901-14400.patch
+! Checksum: sd1O0TeKZaHoVeiSuKtPiA
+! Diff-Path: ../patches/120_optimized/120_optimized-s-1772830038-14400.patch
 ! Title: AdBlockID (Optimized)
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.28.37
-! TimeUpdated: 2026-03-06T08:44:54+00:00
+! Version: 2.0.28.38
+! TimeUpdated: 2026-03-06T20:43:41+00:00
 ! Expires: 12 hours (update frequency)
 /smartfren/ads.
 -ad123-
@@ -4588,11 +4588,12 @@ moenime.com#?#*:matches-css(position: absolute):has(*:matches-css(list-style-ima
 moenime.com#?#*:matches-css(position: absolute):has(*:matches-css(after,content: /base64|url\(/))
 moenime.com#$?#*:matches-css(position: static):matches-css(display: /grid|flex/):has(> :matches-css(position: static)) { remove: true; }
 moenime.com#?#*:matches-css(position: /absolute|relative/):has(:is(canvas, embed, iframe, object, [src*="blob:"], [data*="blob:"]))
-moenime.com#?#*:matches-css(position: /absolute|relative/):has(:is(image, [type*="image"], [data*="data:image"], [href*="data:image"], [src*="data:image"]))
+moenime.com#?#*:matches-css(position: /absolute|relative/):has(:is(image, [type*="image"], [data*="data:image"], [href*="data:image"], [src*="data:image"], img[src*="data:"]))
 moenime.com#?#*:matches-css(position: /fixed|sticky/)
 moenime.com#?#*:matches-css(position: absolute):matches-css(content: /base64|url\(/)
 moenime.com#?#*:matches-css(position: absolute):matches-css(list-style-image: /base64|url\(/)
 moenime.com#?#*:matches-css(position: relative):has([src*="base64"])
+moenime.com#?#*:matches-css(position: static) > :matches-css(position: absolute)
 moenime.com#?#:is([srcset*="data:"], [style*="transform"]):matches-css(position: absolute)
 moenime.com#?#iframe:matches-css(position: absolute)
 moenime.com#%#//scriptlet('ubo-acis', 'Blob')
