@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SElTZvOf45n1p0/YiNQoVA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1772859297-14400.patch
+! Checksum: cmg8aXSqXoPwbCIK8rpU/w
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1772873219-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.19.16
-! TimeUpdated: 2026-03-06T08:45:28+00:00
+! Version: 2.0.19.17
+! TimeUpdated: 2026-03-07T08:44:14+00:00
 ! Expires: 5 days (update frequency)
 ||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top
 @@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
@@ -592,7 +592,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||unlockcontent.net^$all
 ||verificationcenter.top^$all
 ||23.22.126.183^$all
-||blizzboygames.net^$all
+||blizzboygames.net^$all,domain=~contains_fraudulent_fake_installer_files.*
 ||cumguns.online^$all
 ||novatalent.agency^$all
 ||srvdowns.com^$all
@@ -1424,6 +1424,9 @@ forbes.com##.article-sharing
 rawstory.com##.share-popup.rm-stats-tracked
 ||syndication.twitter.com/srv/timeline-profile^$3p
 ##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
+##.PreferredSourceButtonWrapper:is(a,div)
+##.google-addus:is(a,div)
+##.goo-pref:is(a,div)
 ##.chrome-footer:not(html, body)
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
@@ -1662,6 +1665,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@||t.me^
 @@||lemondeinformatique.fr^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
+@@||consentmanager.net^$script,3p,badfilter
 @@||siteadvisor.com^
 @@||securitytrails.com^
 @@||www.joesandbox.com^
@@ -1672,6 +1676,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@||safebrowsing.google.com^
 @@://global.sitesafety.trendmicro.com^
 @@://www.fortiguard.com^
+@@||urlscan.io^
 @@://wikipedia.org^
 @@://github.com^|
 @@||bitbucket.org^
@@ -1766,6 +1771,7 @@ eeconomy.gr##.bgnav:style(max-height:40px!important)
 feltet.dk##iframe + div[style*="height: 80vh"]:style(height: unset !important)
 rule34.xxx###status-notices > br:empty
 pixiv.net##div[class*=" "]:empty:has(+ aside + aside)
+sims.fandom.com##table[data-mw-revid]:style(margin:2px!important)
 hbomax.com##.vjs-control-bar:style(background: none !important)
 hbomax.com##.video-js ~ div:style(background-image: none !important)
 rakuten.tv##div[data-testid^=video_controls_]:style(background: none !important)
@@ -1779,6 +1785,11 @@ www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(m
 ##div[class^=ytp-gradient-]
 www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##.ytp-time-display > span:style(font-weight: 800 !important; text-shadow: black 0 0 3px !important)
 twe.no##div[style*=overlayFadeTo]:style(--overlayFadeTo: none !important)
+play.max.com,hbomax.com##div[class*=Gradient-Beam-]:empty
+play.max.com,hbomax.com##div[class^=ProtectionLayer]
+hbomax.com##div[data-testid=protection_layer]
+www.twitch.tv##div[data-a-target=player-controls]:style(background:unset!important)
+www.twitch.tv##.top-bar:style(background:unset!important)
 www.google.*,ipv6.google.com###m-x-content div[class]:first-of-type:not([class*=" "]):has(> [data-rl])
 www.google.*,ipv6.google.com##style:first-of-type ~ div ~ button[jsaction*=mouseleave i]:last-of-type
 www.google.*,ipv6.google.com##div[data-st-cnt] div[role=list] > div[role=listitem]:has(a[href*="&udm=50&"])
@@ -3907,6 +3918,7 @@ coinlive.com##.ant-tooltip
 coinlive.com##.ant-tooltip-open
 panewslab.com##button[data-grace-area-trigger]
 panewslab.com##div.leading-none ~ div:not([class]):last-of-type
+foodora.*##.bds-c-sticky-banner
 @@/jquery.smartbanner.js^
 .smartbanner.js$domain=~mcpedl.com
 ##div[data-test-id$=InterstitialUpsell]
