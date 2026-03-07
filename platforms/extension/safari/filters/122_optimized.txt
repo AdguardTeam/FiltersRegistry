@@ -1,9 +1,9 @@
-! Checksum: oq6G+ioLsFDi0nX6XxH8GA
-! Diff-Path: ../patches/122_optimized/122_optimized-s-1772873214-14400.patch
+! Checksum: /vqIq1G/QuwYPlR6KeesMw
+! Diff-Path: ../patches/122_optimized/122_optimized-s-1772887765-14400.patch
 ! Title: Fanboy's Annoyances (Optimized)
 ! Description: Removes in-page pop-ups and other annoyances. Includes Fanboy's Social Blocking & EasyList Cookie Lists.
-! Version: 2.1.61.72
-! TimeUpdated: 2026-03-07T08:43:44+00:00
+! Version: 2.1.61.73
+! TimeUpdated: 2026-03-07T12:46:06+00:00
 ! Expires: 5 days (update frequency)
 /1-popupally-pro-code.js
 /akam-sw.js
@@ -1078,8 +1078,8 @@ www.google.com#?#[aria-describedby="promo_desc_id"]:contains(/Time for a new lap
 youtube.com##.ytp-paid-content-overlay
 www.youtube.com#?##content > .ytd-rich-section-renderer:contains(YouTube Playables)
 music.youtube.com#?#tp-yt-paper-dialog.ytmusic-popup-container:contains(/We’re listening!|family plan|Premium|ad-free|background play|kept playing|month free|without the ads|Try YouTube Music/)
-www.youtube.com##tp-yt-paper-dialog.ytd-popup-container:has(> .ytd-popup-container > #options.ytd-checkbox-survey-renderer)
-www.youtube.com#?#tp-yt-paper-dialog.ytd-popup-container:contains(/How do you feel|Which of the following|following Premium|Get background play|Choose all that apply|Become a member of this channel|Free trial|How are your|How interested|Live TV|Wish videos|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply|View live scores/)
+www.youtube.com##tp-yt-paper-dialog.ytd-popup-container:has(> .ytd-popup-container > #options[class$="survey-renderer"])
+www.youtube.com#?#tp-yt-paper-dialog.ytd-popup-container:contains(/How do you feel|Which of the following|following Premium|Get background play|Choose all that apply|Become a member of this channel|Free trial|How are your|How interested|Live TV|Wish videos|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply|View live scores|YouTube experience/)
 archdaily.com###article-navigation
 saigoneer.com###bottom-menu
 conservativedailynews.com,fightful.com,laprensalatina.com,voxelmatters.com,xboxera.com###check-also-box
@@ -15438,6 +15438,7 @@ sberbank.com,sberbank.ru##div[class^="CookieWarning-"]
 life.by##div[class^="Cookie_modalRoot_"]
 stoloto.ru##div[class^="Provider_container"]
 aliexpress.ru##div[class^="SnowPrivacyPolicyBanner_"]
+pulsesync.dev##div[class^="cookieConsent-module-"]
 asna.ru##div[class^="modalCookies_"]
 rencredit.ru##div[data-attention-id="3420"]
 yoomoney.ru##div[data-qa="gdpr"]
@@ -17990,6 +17991,8 @@ patreon.com#%#//scriptlet('ubo-aeld', 'touchmove', 'preventDefault')
 onedio.com#%#//scriptlet('ubo-set-cookie', 'o-push-alert', '1')
 copilot.microsoft.com#$#body,html { overflow: auto !important; position: initial !important; }
 genius.com#$?#.android_interstitial { remove: true; }
+shufoo.net#%#//scriptlet('ubo-rc', 'is-hidden', 'body')
+shufoo.net##.appdl_modal_overlay
 @@||braze.com/api/$domain=dairyqueen.com|deezer.com
 @@||oakley.com^*/notifications.js$~third-party
 @@||assure.ameli.fr^*/smart-app-banner.js$~third-party

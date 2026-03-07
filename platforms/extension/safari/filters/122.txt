@@ -1,15 +1,15 @@
-! Checksum: KUnvUW+hhr/7EhX7AwyeXA
-! Diff-Path: ../patches/122/122-s-1772873214-14400.patch
+! Checksum: 143pCd2jGbDEiNT7rrtaaQ
+! Diff-Path: ../patches/122/122-s-1772887765-14400.patch
 ! Title: Fanboy's Annoyances
 ! Description: Removes in-page pop-ups and other annoyances. Includes Fanboy's Social Blocking & EasyList Cookie Lists.
-! Version: 2.1.61.72
-! TimeUpdated: 2026-03-07T08:43:44+00:00
+! Version: 2.1.61.73
+! TimeUpdated: 2026-03-07T12:46:06+00:00
 ! Expires: 5 days (update frequency)
 !
-! Checksum: BX0vPIYjquC8nM2/gFRDmA
-! OriginalVersion: 202603070450
+! Checksum: apX3ioHEae98fUclTZ307g
+! OriginalVersion: 202603071125
 ! Title: Fanboy's Annoyance List
-! Last modified: 2026-03-07 04:50 UTC
+! Last modified: 2026-03-07 11:25 UTC
 ! Expires: 9 days (update frequency)
 ! Homepage: https://easylist.to/
 ! License: http://creativecommons.org/licenses/by/3.0/
@@ -2746,9 +2746,9 @@ youtube.com##.ytp-paid-content-overlay
 www.youtube.com#?##content > .ytd-rich-section-renderer:contains(YouTube Playables)
 ! youtube popups
 music.youtube.com#?#tp-yt-paper-dialog.ytmusic-popup-container:contains(/We’re listening!|family plan|Premium|ad-free|background play|kept playing|month free|without the ads|Try YouTube Music/)
-www.youtube.com##tp-yt-paper-dialog.ytd-popup-container:has(> .ytd-popup-container > #options.ytd-checkbox-survey-renderer)
+www.youtube.com##tp-yt-paper-dialog.ytd-popup-container:has(> .ytd-popup-container > #options[class$="survey-renderer"])
 www.youtube.com#?#.YtdTalkToRecsFlowRendererHost:contains(What hobbies are you interested in developing?)
-www.youtube.com#?#tp-yt-paper-dialog.ytd-popup-container:contains(/How do you feel|Which of the following|following Premium|Get background play|Choose all that apply|Become a member of this channel|Free trial|How are your|How interested|Live TV|Wish videos|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply|View live scores/)
+www.youtube.com#?#tp-yt-paper-dialog.ytd-popup-container:contains(/How do you feel|Which of the following|following Premium|Get background play|Choose all that apply|Become a member of this channel|Free trial|How are your|How interested|Live TV|Wish videos|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply|View live scores|YouTube experience/)
 ! https://github.com/easylist/easylist/issues/22334 YT suggestion div
 www.youtube.com#?#.YtdTalkToRecsFlowRendererHost:contains(/Ask for videos|What do you like|Help us improve/)
 ! Login popups
@@ -47968,6 +47968,7 @@ dom.ria.com##div[class^="GdprComponent"]
 stoloto.ru##div[class^="Provider_container"]
 aliexpress.ru##div[class^="SnowPrivacyPolicyBanner_"]
 bb.market##div[class^="_cookies_"]
+pulsesync.dev##div[class^="cookieConsent-module-"]
 asna.ru##div[class^="modalCookies_"]
 rencredit.ru##div[data-attention-id="3420"]
 yoomoney.ru##div[data-qa="gdpr"]
@@ -58070,6 +58071,9 @@ s.tabelog.com#$#body,html { overflow-y: auto !important; }
 trial-net.co.jp##.app-remind
 ! genius.com (mobile app)
 genius.com#$?#.android_interstitial { remove: true; }
+! shufoo.net (mobile app)
+shufoo.net#%#//scriptlet('ubo-rc', 'is-hidden', 'body')
+shufoo.net##.appdl_modal_overlay
 !---------------------------------Allowlists----------------------------------!
 ! fanboy_notifications_allowlist.txt
 @@||bostonherald.com^*/webpush.js$script,~third-party
