@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: e3fG48l1zdKQWSyLNnG18Q
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1772766403-3600.patch
+! Checksum: DwAMdPiSFZtLMaTFC76MgA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1772852380-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.18
@@ -72,7 +72,6 @@ larvf.com#@#.AdsBox
 equinoxmagazine.fr,adala-news.fr##+js(abort-current-script, jQuery, adblocker)
 equinoxmagazine.fr,adala-news.fr##+js(set-constant, penci_options_set.ad_blocker_detector, false)
 @@||soins-infirmiers.com/*/adblocker.blogads.css
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=qub.ca
 qub.ca,tvaplus.ca##+js(set-constant, ima, {})
 ||cdn.assets*.nicematin.com/build/js/viewpay.*.js
 nicematin.com##+js(addEventListener-defuser, DOMContentLoaded, adblock)
@@ -205,6 +204,7 @@ sante.journaldesfemmes.fr,linternaute.com##.AdBox.Ligatus.pub_300x250.pub_300x25
 ||cdn.adsafeprotected.com/iasPET.*.js$script,redirect=noop.js,important,domain=linternaute.com|sante.journaldesfemmes.fr
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,important,domain=linternaute.com|sante.journaldesfemmes.fr
 @@||googletagmanager.com/gtm.js$domain=linternaute.com|sante.journaldesfemmes.fr
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=linternaute.com|p.ccmbg.com
 rtl.be##+js(set-constant, bAdBlocker, false)
 !+ NOT_OPTIMIZED
 @@||service.videoplaza.tv/proxy/pulse-sdk-html5^$domain=rtl.be
@@ -366,6 +366,7 @@ secondechance.org##.iframe-advert
 radio.fr##.mx-auto:has(> div.super-reklame-header-holder)
 actugaming.net##.h-content > .placeholder-wrap
 ici.radio-canada.ca##.adbox-cls
+hdnumerique.com###heroPub1
 hdnumerique.com##.column:has(> .is-divider[data-content="BON PLAN"])
 hdnumerique.com##article.box > aside:has(> .columns > .column > .hd-horizontal-card)
 cyclismactu.net##.stickySidePClong:style(min-height: auto !important;)
@@ -389,6 +390,7 @@ numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
+south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
 challenges.fr##.domain-ui-ad-placeholder
@@ -1613,6 +1615,7 @@ _ads_view/
 _adsens_
 _adspromo.
 _adunit=
+_adv_300.
 _advertising_img.
 _affiliate.$subdocument
 _affiliate_banner_
@@ -1776,6 +1779,7 @@ _build=iclick-$popup
 ||adsixmedia.fr^$3p
 ||adskom.com^$3p
 ||adsmmgp.com^$3p
+||adsplius.lt^$3p
 ||adspot.ch^$3p
 ||adspsp.com^$3p
 ||adstune.com^$3p
@@ -1790,6 +1794,7 @@ _build=iclick-$popup
 ||adwidgets.ru^$3p
 ||adwise.bg^$3p
 ||adxxx.com^$3p
+||adzbux.com^$3p
 ||adzmath.com^$3p
 ||affilae.com^$3p
 ||affiliatable.io^$3p
@@ -1838,7 +1843,6 @@ _build=iclick-$popup
 ||diffusionpub.com^$3p
 ||digidip.net^$3p
 ||digital-metric.com^$3p
-||dm.gg^$3p
 ||dolead.com^$3p
 ||dorcelcash.com^$3p
 ||e-mailit.com^$3p
@@ -1846,6 +1850,7 @@ _build=iclick-$popup
 ||ebuzzing.fr^$3p
 ||echangedebannieres.fr^$3p
 ||egnatius-ear.com^$3p
+||eurolive.com^$~image,3p
 ||explorads.com^$3p
 ||explorads^$3p
 ||ezpopups.com^$3p
@@ -1948,6 +1953,7 @@ _build=iclick-$popup
 ||secureanalytic.com^$3p
 ||shareaholic.com^$3p
 ||sharemyads.com^$3p
+||slutroulette.com^$3p
 ||smartclip.net^$~object,3p
 ||smartstream.tv^$3p
 ||spacepush.ru^$3p
@@ -1971,6 +1977,7 @@ _build=iclick-$popup
 ||travelbar.tools^$3p
 ||trk-egestas.com^$3p
 ||truenat.bid^$3p
+||ulclick.ru^$3p
 ||viahelium.com^$3p
 ||videoplaza.se^$~object,3p
 ||vyking.io^$3p
@@ -1991,7 +1998,6 @@ _build=iclick-$popup
 ||zmctrack.net^$3p
 ||zononi.com^$3p
 ||zxcvads.com^$3p
-||besucherstatistiken.com^$3p
 ||compteurdevisite.com^$3p
 ||contadorvisitasgratis.com^$3p
 ||freecounterstat.com^$3p
@@ -2555,6 +2561,7 @@ _build=iclick-$popup
 ||porncrash.com^
 ||pornravage.com^
 ||possietuskar.com^
+||postback.report^
 ||poudrinnamaste.com^
 ||pourbaiser.com^
 ||precismo.com^
@@ -2850,6 +2857,7 @@ _build=iclick-$popup
 ||jewhouca.net^$popup
 ||klclick.com^$popup
 ||livepartners.com^$popup,3p
+||monetizer.co^$popup
 ||monetizze.com.br^$popup,3p
 ||multiupload.com^$popup,3p
 ||mybestclick.net^$popup,3p
@@ -2928,7 +2936,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||cloudfront.net^*?partner=
 ||cloudfront.net^*tid=$script
 ||comdotcdn.com/hiqqu/files/widgets/
-||csstatic.com/banners/
 ||ctb.intersport.fr^
 ||ctrip.com/?TypeID=$3p
 ||devisprox-media.s3-website-eu-west-1.amazonaws.com^
@@ -4222,6 +4229,7 @@ africanmanager.com###Layer1
 scan-manga.com###TOPAMZ720
 lepoint.fr###WRAP_BAN_ATF
 ahlaejaba.com,net-iris.fr,orange.fr,paruvendu.fr,radio.co.ma,zalotech.com###ad
+logitheque.com###adni_widgets-2
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 akeo.fr###amazon
@@ -4564,7 +4572,6 @@ flvto.biz##.push-offer
 imobie.fr##.rec_download
 cdiscount.com##.regBloc
 endirect24.com##.rek
-qwant.com##.result--ext
 sante-dz.com##.revenue-wrapper
 darty.com##.rm-format
 darty.com##.rm-product
