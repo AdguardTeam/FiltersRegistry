@@ -1,9 +1,9 @@
-! Checksum: Vp1ZkHdQqoyXFCIFINnG9g
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1772844895-14400.patch
+! Checksum: ccNEThsI1b/0CkKCzkx+yQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1772859293-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.57.62
-! TimeUpdated: 2026-03-07T00:51:40+00:00
+! Version: 2.1.57.63
+! TimeUpdated: 2026-03-07T04:51:49+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -139,7 +139,6 @@
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
-_share_widget_
 _social-bar/
 /jquery.bpopup.$script,domain=telechargerunevideo.com
 ###FollowUs
@@ -288,6 +287,7 @@ _social-bar/
 ###footerSocialIcons
 ###footerSocialLinks
 ###footerSocialMenu
+###footer_follow
 ###footer_social
 ###footer_social_facebook
 ###footer_social_icons
@@ -708,6 +708,7 @@ _social-bar/
 ###twitter_content
 ###twitter_link
 ###twitter_share
+###twitter_share_link
 ###twitter_timeline-2
 ###twitter_widget
 ###twitterbtn
@@ -760,6 +761,7 @@ _social-bar/
 ##.ShareButtons__link
 ##.ShareIcons
 ##.ShareLinks
+##.ShareLinksContainer
 ##.ShareList
 ##.ShareMenu
 ##.ShareRail
@@ -943,6 +945,7 @@ _social-bar/
 ##.author-social
 ##.author-social__share
 ##.author-socials
+##.authorSocial
 ##.author_social
 ##.author_socials
 ##.av-share-box
@@ -1044,6 +1047,7 @@ _social-bar/
 ##.button-pinterest
 ##.button-share
 ##.button-share-facebook
+##.button-share-twitter
 ##.button-social
 ##.button-twitter
 ##.button__share
@@ -1276,6 +1280,7 @@ _social-bar/
 ##.facebook_logo
 ##.facebook_net
 ##.facebook_share
+##.facebookbox
 ##.facebooklike
 ##.facebookshare
 ##.facewrapper
@@ -1326,8 +1331,6 @@ _social-bar/
 ##.fbshare
 ##.fbslideout
 ##.fbsmallshare
-##.ff-icon-share
-##.ff-share-wrapper
 ##.fi-social-facebook
 ##.fi-social-instagram
 ##.fi-social-pinterest
@@ -1380,7 +1383,6 @@ _social-bar/
 ##.followTwitter
 ##.followUsBox
 ##.followUsLinks
-##.follow__item
 ##.follow__list
 ##.followus-icons
 ##.followus_net
@@ -1840,7 +1842,6 @@ _social-bar/
 ##.likebtn
 ##.likebutton
 ##.likes-block
-##.likes-block_left
 ##.likes-box
 ##.line-btn-icon
 ##.line-social
@@ -1876,6 +1877,7 @@ _social-bar/
 ##.locshare-share-button
 ##.loggedout-follow-normal
 ##.logo-social
+##.logo_social
 ##.lsi-social-icons
 ##.lst-shrpst
 ##.lst-social
@@ -1895,7 +1897,6 @@ _social-bar/
 ##.m-social-share
 ##.m-socialbar
 ##.m-socials
-##.m-socials__list
 ##.m_share
 ##.main-article-share-count
 ##.main-article-share-counts
@@ -2039,7 +2040,6 @@ _social-bar/
 ##.ns-social
 ##.nv-post-share
 ##.o-footer__social
-##.o-footer__socials
 ##.o-shareBooster__item
 ##.o-social-icon
 ##.oSocial
@@ -3458,6 +3458,7 @@ _social-bar/
 ##.vuukle-powerbar
 ##.w-share
 ##.w-sharing
+##.w-sharing-icon
 ##.w-sharing-item
 ##.w-social
 ##.w-socials
@@ -3679,6 +3680,7 @@ _social-bar/
 ||flipboard.com/web/buttons/$third-party
 ||friends2follow.com^$subdocument,third-party
 ||fwcdn3.com^$third-party
+||getsocial.io^*/gs_async.js$third-party
 ||google.com^*/fastbutton?$third-party
 ||gotchosen.com^$third-party
 ||graph.facebook.com/fql?q=SELECT$third-party
@@ -3771,6 +3773,7 @@ aiseesoft.com###share-list
 journals.aps.org,theintercept.com###share-menu-button
 theintercept.com###share-menu-top-button
 androidpolice.com###sharingButtonPopup
+12tomatoes.com###sidebar > h4
 coingape.com###social-ad-new
 animenewsnetwork.com###social-bookmarks
 breitbart.com###social-follow-sidebar-widget
@@ -3785,6 +3788,7 @@ osxdaily.com###subscribe_box
 thenewstack.io###tns-footer-bar
 thenewstack.io###tns-post-body-sidebar-share
 reuters.com###toolbar-item-parent-share-12
+yardbarker.com###top-nav-soc
 pcgamer.com,tomshardware.com###utility-bar
 videocardz.com###welcome-modal
 oneindia.com###youtube_promo
@@ -3910,6 +3914,7 @@ cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
 alizila.com##.entry-meta__social
 arabnews.com##.entry-views
+yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
 trueachievements.com##.fa-reddit
 techradar.com##.facebook-icon
@@ -4022,6 +4027,7 @@ smashingmagazine.com##.meta-box--share
 businessinsider.com##.mi-logo-social-container
 boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
+yardbarker.com##.msnfc
 denofgeek.com##.nav-social__items
 triblive.com##.navbar-right
 chess.com##.navigation-footer-platforms-component
@@ -4113,7 +4119,6 @@ cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
 12tomatoes.com##.sharetocare-popup
-glassalmanac.com##.shhr-btn
 thefreedictionary.com##.shr-facebook
 thefreedictionary.com##.shr-twitter
 welivesecurity.com##.sidebar-card-media
@@ -4144,7 +4149,6 @@ denofgeek.com##.social-links__anchor--sharing
 knowablemagazine.org,leouve.com.br,newskarnataka.com,ric.com.br,securityaffairs.com,ucl.ac.uk##.social-media-links
 247sports.com##.social-media-list
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
-adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
 kathmandupost.com##.social-scroll
 iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
@@ -4344,6 +4348,7 @@ n1info.ba,n1info.hr,n1info.rs,n1info.si,nova.rs##.uc-social-bar-wrapper
 bestcarweb.jp,biglobe.ne.jp,hankooktire.com,jiji.com,joins.com,op.gg,theinvestor.co.kr,videor.co.jp##.sns
 hindustantimes.com##.ln
 avtoradio.ru,franceantilles.fr,hindustantimes.com,rtl.fr##.tw
+advocate.com,avtoradio.ru,eurocash.pl,franceantilles.fr,hindustantimes.com,richersounds.com,rtl.fr##.fb
 radiolodz.pl,trueachievements.com##.fa-twitter
 agenziacasaclima.it,buzzfil.com,cadenaazul.com,catapult.co,clubic.com,dailymail.co.uk,futbol24.com,ilfoglio.it,iveybusinessreview.ca,klimahaus.it,ladepeche.fr,lesoir.be,loi1901.com,ludokado.com,mf24.pl,nyheteridag.se,peoplesweather.com,picclick.fr,programme-tv.net,rfm.fr,screendaily.com,startromagna.it,suedtiroler-gaertner.it,teleticino.ch,todomercadoweb.es,trt.net.tr,tuttomercatoweb.com##.facebook
 bicycling.com,caranddriver.com,cosmopolitan.com,countryliving.com,delish.com,goodhousekeeping.com,nymag.com,roadandtrack.com,thepioneerwoman.com,vulture.com##.pinterest
@@ -4460,6 +4465,7 @@ altoadige.it,giornaletrentino.it##.default--toolbar-listitem[data-type="icon"]
 iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
+agi.it##.hidden.xlarge\:flex.border-t.border-base-300.pt-2.core.items-center.justify-between
 ilfattoquotidiano.it##.ifq-news-meta__share
 ilfattoquotidiano.it##.ifq-post__share
 alfredopedulla.com##.ig-banner
@@ -4644,10 +4650,8 @@ forbes.co##.single__social
 motor.elpais.com##.site-footer__redes
 larazon.es##.site-footer__rrss
 eldiario.es,eldiarioar.com##.sn-buttons
-eldia.com##.social-nota-top
 larazon.es##.social-wrapper
 rtve.es##.socialBox
-eldia.com##.social_profiles
 cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
 theobjective.com##.tno-share
