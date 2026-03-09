@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: cxDbd730oNQgyGelgf2h6g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1772946137-14400.patch
+! Checksum: D/fWf45+oZ3ylvhFIfMcuA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1773032922-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.17
@@ -24,6 +24,7 @@
 windowsreport.com##.code-block
 appuals.com##.info.box
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
+ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.sidebar_download_inner
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_info_texts
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
@@ -54,7 +55,6 @@ exefiles.com##.row:has(a[href*="/recommended/"])
 ||freeroms.com^$document
 ||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
-addons.mozilla.org##li.SearchResult:contains(AdsBlocker)
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
@@ -806,6 +806,7 @@ google.*##div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
 ||178.63.5.120^$all
 ||[2a01:4f8:c0:33d8::1]^$all
 ||[2a01:4f8:c0:2a5c::1]^$all
+||awpya.com^$all
 ||167.235.163.216^$all
 ||[2a01:4f8:c0:2343::2]^$all
 ||[2a01:4f8:e0:19cb::1]^$all
@@ -1067,7 +1068,6 @@ www.microsoft.com##.card[data-bi-cn*="car chase" i][data-bi-cn*=racing i]
 ://ww19.$document,domain=~ww19.autotask.net|~ww19.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww20.$document,domain=~ww20.autotask.net|~ww20.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww21.$document,domain=~ww21.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
-://ww23.$document,domain=~ww23.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww25.$document,domain=~ww25.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww26.$document,domain=~ww26.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww38.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
@@ -1507,6 +1507,7 @@ instacart.com##.AuthModal__Overlay:has(a[href$="/business"])
 mycarly.com##.chakra-dialog__backdrop:style(backdrop-filter:0!important)
 amazon.*##.nav-flyout.nav-signin-tt
 trello.com##.mod-warning.header-banner
+cdn.memberspace.com/*
 pinterest.*##div[data-test-id=giftWrap]
 quizlet.com##.LoginBottomBar
 quizlet.com##.SetPageTerm-largeSide:style(filter: none !important)
@@ -1593,7 +1594,6 @@ wikia.org,fandom.com##.wds-global-footer__header:style(pointer-events: none !imp
 fandom.com##.unified-search__layout__right-rail
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
-||wikia.com/*/images/*/Wiki-background^$domain=wikia.org|fandom.com
 ||vignette.wikia.nocookie.net/*_BG.png/revision^$domain=wikia.org|fandom.com
 fandom.com##.community-background:style(background-image: none !important)
 fandom.com##.background-image:style(background-image: none !important)
@@ -2862,8 +2862,10 @@ $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.c
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
+$removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com
 $removeparam=hpt,domain=cnn.com
 ||pbtech.$removeparam=qr
+||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
 $removeparam=ab_channel,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $~xhr,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
@@ -3061,10 +3063,6 @@ $removeparam=plink,domain=audible.*
 ||startpage.$removeparam=segment
 @@||startpage.com/suggestions$removeparam=segment
 ||netflix.com^$removeparam=trackId
-||netflix.com^$removeparam=trackIdJaw
-||netflix.com^$removeparam=trackIdTrailer
-||netflix.com^$removeparam=trackIdEpisode
-||netflix.com^$removeparam=dpRightClick
 $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
@@ -3223,7 +3221,6 @@ ref=spreadprivacy.com$removeparam=ref
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
 $document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
-$document,removeparam=icmp,domain=fortnite.com|lego.com|ho-mobile.it
 ||linkedin.com/feed/update$removeparam=origin
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
@@ -4051,6 +4048,7 @@ foodora.*##.user-wrapper + .order-components:style(top: 64px !important)
 #@#.text-ad
 ##.text-ad:not(html,body,:empty)
 #@#.text-ad-links
+##.text-ad-links:not(html,body,:empty)
 #@#.text-ads
 ##.text-ads:not(html,body,:empty)
 #@#.text_ad

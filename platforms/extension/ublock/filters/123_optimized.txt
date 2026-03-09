@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: CoYzTsmox7YjY7RtowBDyQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1773017926-14400.patch
+! Checksum: 4+wYtyb8tzS3mJK6fE/Xfw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1773032920-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.57.74
-! TimeUpdated: 2026-03-09T00:55:20+00:00
+! Version: 2.1.57.75
+! TimeUpdated: 2026-03-09T05:05:29+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -163,7 +163,6 @@ _social-bar/
 ###articleShare
 ###article_share
 ###article_tools_share
-###articlebottomsharinglinks
 ###aside-social-links-container
 ###bdshare
 ###block-menu-menu-social-links
@@ -445,7 +444,6 @@ _social-bar/
 ###shareLink
 ###shareLinks
 ###shareMenu
-###shareOverlay
 ###sharePage
 ###sharePageControl
 ###sharePinterest
@@ -468,6 +466,7 @@ _social-bar/
 ###share_facebook
 ###share_google
 ###share_icon
+###share_icons
 ###share_linkedin
 ###share_links
 ###share_panel
@@ -660,6 +659,7 @@ _social-bar/
 ###socialbtns
 ###socialbuttons
 ###socialbuttonsbox
+###socialdiv
 ###socialemail
 ###socialfloat
 ###socialfooter
@@ -1106,6 +1106,7 @@ _social-bar/
 ##.category-share
 ##.cb-social-sharing
 ##.ccm-block-social-links
+##.ccm_social_header
 ##.cd-fb-like-widget
 ##.cff-share-container
 ##.cff-share-tooltip
@@ -1179,6 +1180,7 @@ _social-bar/
 ##.dpsp-total-share-wrapper
 ##.dropdown-social
 ##.ds-social
+##.ds2-main-footer--social
 ##.dshare
 ##.dt_social_single
 ##.dtm-footer-social-link
@@ -1599,7 +1601,6 @@ _social-bar/
 ##.header__social-media
 ##.header__social-nav
 ##.header__socials
-##.header_sharing
 ##.header_sns
 ##.header_social
 ##.header_social_icon
@@ -1907,9 +1908,7 @@ _social-bar/
 ##.main-footer__socials
 ##.main-header__social
 ##.main-nav-social
-##.mainVerticalArticleSharingLinks
 ##.main__share
-##.main_search_social
 ##.main_share_panel
 ##.mashicon-share
 ##.mashsb-box
@@ -1974,6 +1973,7 @@ _social-bar/
 ##.mod-social
 ##.mod-twitter
 ##.modSharing
+##.modSocialbar
 ##.mod_footer_sociallist_iconlink
 ##.module--share
 ##.module-follow
@@ -1998,7 +1998,7 @@ _social-bar/
 ##.native-share-buttons
 ##.nav--share
 ##.nav--social
-##.nav-follow-us
+##.nav-footer-social
 ##.nav-share
 ##.nav-soc-but
 ##.nav-social
@@ -2284,6 +2284,7 @@ _social-bar/
 ##.share-bar-item-desktop
 ##.share-bar__item
 ##.share-bar__link
+##.share-bar__list
 ##.share-bg
 ##.share-block
 ##.share-block-item
@@ -2312,6 +2313,7 @@ _social-bar/
 ##.share-buttons-top
 ##.share-buttons-wrapper
 ##.share-buttons__item
+##.share-buttons__text
 ##.share-column
 ##.share-component
 ##.share-container.vertical
@@ -3105,6 +3107,7 @@ _social-bar/
 ##.socialMedia
 ##.socialMedia-linkedin
 ##.socialMediaBlock
+##.socialMediaBox
 ##.socialMediaButtons
 ##.socialMediaContainer
 ##.socialMediaIcon
@@ -3833,7 +3836,6 @@ tableconvert.com##._share-wrapper
 goldderby.com##._socialMedia_hgv74_1
 france24.com##.a-share-button
 tandfonline.com##.a2a_share_target
-womansworld.com##.add-to-google-banner__wrapper___1PWZa
 planetizen.com##.addtoany_list
 alchetron.com##.alchetronShareCard
 asiaone.com##.ao-share-buttons
@@ -3955,6 +3957,7 @@ protothema.gr,videogamer.com##.footer-social
 maketecheasier.com,tribune.com.pk,voetbalkrant.com,wielerkrant.be##.footer-social-icons
 gastrojournal.ch,myanimelist.net##.footer-social-media
 popsci.com##.footer-socials-wrapper
+oilprice.com##.footerLogoBanner__socialMedia
 dailykos.com##.footer__connect
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
@@ -3987,6 +3990,7 @@ sammobile.com##.google-preferred-news-source-cta
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,spaceexplored.com##.google-preferred-source-badge
 bolde.com##.google-source-button
 goal.com##.google-trusted-source
+oilprice.com##.google_preferred_source_banner_sidebar
 japan.go.jp##.gov_sns
 gadgets360.com##.gsocialbar
 israelnationalnews.com##.header-nav-addons-link
@@ -4198,6 +4202,7 @@ hindustantimes.com##.subscribe-social
 locals.com##.support-now
 dcrainmaker.com,disruptionbanking.com,msmagazine.com##.swp_floating_horizontal_wrapper
 targettrend.com##.sws_supernormalaction
+gamingbolt.com##.tag-social-media
 notthebee.com##.take-shareables
 firstpost.com##.tbl-cell-wp
 thediplomat.com##.td-follow
@@ -4264,6 +4269,7 @@ nytimes.com##[data-testid="social-group"]
 dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
 straitstimes.com##button.desktop\:block
+player.amperwavepodcasting.com,stockx.com##button[aria-label="Share"]
 theguardian.com##div > gu-island[name="ShareButton"]
 theatlantic.com##div[class^="ArticleShare_"]
 genius.com##div[class^="ShareButtons_"]
@@ -4441,6 +4447,7 @@ tportal.hr##.t-share
 storm.mg###article_sns_inner
 ettoday.net###et_sticky_pc
 ettoday.net##.et_social_2
+rti.org.tw##.fbIcon
 news.cn##.pageShare
 people.com.cn##.section-common-share-wrap
 mingpao.com##.ssm
@@ -4613,10 +4620,9 @@ cope.es##.c-detail__social
 eleconomista.com.mx##.c-detail__toolbar__share
 eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
 adslzone.net##.comments-social-share
+ecologiaverde.com,el9nou.cat,elsaltodiario.com,infocatolica.com,lanacion.com.ar,laverdad.com,psicologia-online.com,qmusica.tv,revistafamilia.ec##.compartir
 wapa.pe##.container_shared--internal
-cooperativa.cl##.contenedor-compartir
 elcolombiano.com##.contenedor-google-noticias
-cooperativa.cl##.contenedor-sociales
 highxtar.com,motor.elpais.com##.content__compartir
 qhubomedellin.com##.div_canal_telegram
 qhubomedellin.com##.div_canal_whatsapp
@@ -4641,7 +4647,6 @@ cooperativa.cl##.modulo-google-news
 depor.com##.nav__story-social-network
 noticiasargentinas.com##.news-follow
 debate.com.mx,rionegro.com.ar##.newsfull__share
-diarioeldia.cl,elterritorio.com.ar##.noticia-social-share
 vidaextra.com,xataka.com.mx##.post-comments-shortcut
 biobiochile.cl##.post-social-container
 qhubomedellin.com##.qh-social-icons-articulo
