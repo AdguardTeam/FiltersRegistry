@@ -1,15 +1,15 @@
 ![Adblock Plus 2.0]
-! Checksum: uhj8bYBUQpa/ybHdbBqEoQ
-! Diff-Path: ../patches/120/120-s-1773060633-14400.patch
+! Checksum: 3VmjAj3K5If3o4ba/tG1rA
+! Diff-Path: ../patches/120/120-s-1773089277-14400.patch
 ! Title: AdBlockID
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.28.42
-! TimeUpdated: 2026-03-09T12:46:57+00:00
+! Version: 2.0.28.43
+! TimeUpdated: 2026-03-09T20:44:20+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: Mon, 09 Mar 2026 10:57:46 GMT
+! Last modified: Mon, 09 Mar 2026 20:23:28 GMT
 ! Expires: 1 days
 ! Homepage: https://github.com/realodix/AdBlockID
 ! License: https://github.com/realodix/AdBlockID/blob/main/LICENSE
@@ -2110,6 +2110,7 @@ republika.co.id##article .wrapper-replay:has(> a > img[data-original^="https://s
 republika.co.id##article > div:matches-css(text-align:center):contains(/sponsored/i)
 republika.co.id##.popup
 republika.co.id##header:style(position: inherit !important)
+republika.co.id##main.fixedtop:style(margin-top: unset !important)
 schoters.com##.banner-header
 brainacademy.id,english-academy.id,ruangguru.com,schoters.com##.banner-product-wrapper
 brainacademy.id,english-academy.id,ruangguru.com,schoters.com##.bantuan
@@ -4593,23 +4594,27 @@ moenime.com##*:matches-css(position: absolute):has(*:matches-css(border-image-so
 moenime.com##*:matches-css(position: absolute):has(*:matches-css(list-style-image: /base64|url\(/))
 moenime.com##*:matches-css(position: absolute):has(*:matches-css(after,content: /base64|url\(/))
 moenime.com##*:matches-css(position: /absolute|relative/):has(:is(canvas, embed, iframe, object, [src*="blob:"], [data*="blob:"]))
-moenime.com##*:matches-css(position: /absolute|relative/):has(:is(image, [type*="image"], [data*="data:image"], [href*="data:image"], [src*="data:image"], img[src*="data:"]))
+moenime.com##*:matches-css(position: /absolute|relative/):has(:is(image, [data*="data:image"], [href*="data:image"], [src*="data:image"], img[src*="data:" i]))
 moenime.com##*:matches-css(position: /fixed|sticky/)
 moenime.com##*:matches-css(position: absolute):matches-css(content: /base64|url\(/)
 moenime.com##*:matches-css(position: absolute):matches-css(list-style-image: /base64|url\(/)
 moenime.com##*:matches-css(position: relative):has([src*="base64"])
 moenime.com##:is([srcset*="data:"], [style*="transform"]):matches-css(position: absolute)
+moenime.com##[open]:remove()
 moenime.com##iframe:matches-css(position: absolute)
 moenime.com##+js(acis, Blob)
 moenime.com##+js(acis, CSSStyleDeclaration.prototype.setProperty)
 moenime.com##+js(acis, Element.prototype.addEventListener, remove)
 moenime.com##+js(acis, Element.prototype.attachShadow)
+moenime.com##+js(acis, HTMLDialogElement.prototype.showModal)
 moenime.com##+js(acis, String.fromCharCode)
 moenime.com##+js(acis, window.atob)
 moenime.com##+js(acis, window.requestAnimationFrame)
+moenime.com##+js(prevent-innerHTML)
 moenime.com##body > [style*="position"]:remove()
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xhr,redirect-rule=googlesyndication_adsbygoogle.js,domain=moenime.com,script
 moenime.com##body:style(overflow: auto !important;)
+moenime.com##html:style(overflow: auto !important;)
 moenime.com##+js(set, HTMLScriptElement.prototype.onerror, undefined)
 ||trafficbass.com^$xhr,method=head,redirect-rule=noop.txt,domain=moenime.com
 moenime.com##.entry-content div:matches-css(text-align: center):has([onclick])
@@ -4652,11 +4657,11 @@ samehadaku.*##a[target="_blank"] ~ .naveps:style(display: inline !important;)
 samehadaku.*##a[target="_blank"] ~ .pencenter:style(display: inline-block !important;)
 samehadaku.*##+js(aeld, contextmenu)
 ||terbit21.gdn/ads/
-ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,gudangmovies21.host,movieon21.mov,movies21.ing,nontonfilm.website,teman21.app,terbit21.*,terbit21official.*###float-banner
-ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,gudangmovies21.host,movieon21.mov,movies21.ing,nontonfilm.website,teman21.app,terbit21.*,terbit21official.*###float-bottom-banner
-ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,gudangmovies21.host,movieon21.mov,movies21.ing,nontonfilm.website,teman21.app,terbit21.*,terbit21official.*###top-banner
-ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,gudangmovies21.host,movieon21.mov,movies21.ing,nontonfilm.website,t21.press,teman21.app,terbit21.*,terbit21official.*##a[target*="blank"]:has(> img)
-ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,gudangmovies21.host,movieon21.mov,movies21.ing,nontonfilm.website,t21.press,teman21.app,terbit21.*,terbit21official.*##+js(nowoif)
+ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,movieon21.mov,movies21.ing,nontonfilm.website,teman21.app,terbit21.*,terbit21official.*###float-banner
+ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,movieon21.mov,movies21.ing,nontonfilm.website,teman21.app,terbit21.*,terbit21official.*###float-bottom-banner
+ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,movieon21.mov,movies21.ing,nontonfilm.website,teman21.app,terbit21.*,terbit21official.*###top-banner
+ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,movieon21.mov,movies21.ing,nontonfilm.website,t21.press,teman21.app,terbit21.*,terbit21official.*##a[target*="blank"]:has(> img)
+ayononton.app,bioskopkeren.shop,cinemaindo.dev,d21.im,ditonton.dev,dunia21official.*,filmapik.my,ganool.app,movieon21.mov,movies21.ing,nontonfilm.website,t21.press,teman21.app,terbit21.*,terbit21official.*##+js(nowoif)
 cosmicscans.asia,novascans.id###floatcenter
 cosmicscans.asia,novascans.id##.kln
 cosmicscans.asia,novascans.id##a[target*="blank"]:has(> img)
