@@ -1,5 +1,5 @@
-! Checksum: JAV6LW+Ln2D/V0gI1lHmZg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1773025811-3600.patch
+! Checksum: LyYbBSVQwKt9a1DjSXwpQw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1773111887-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.20
@@ -1049,7 +1049,6 @@ capital.fr#@#[data-ads-core]
 maxisciences.com,gentside.*,ohmymag.*#@#[data-ads-core]
 @@||tra.scds.pmdstatic.net/advertising-core/$script,domain=maxisciences.com|gentside.*|ohmymag.*
 ||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,important,domain=maxisciences.com|gentside.*|ohmymag.*
-@@||amazon-adsystem.com/aax2/apstag.js$script,domain=maxisciences.com|gentside.*|ohmymag.*
 @@||cmpv2.berliner-zeitung.de/mms/
 fshd.link#@#div[data-ad]
 mobimart.it#@##ad_global_below_navbar
@@ -1569,6 +1568,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?ad_sub=
 ?ADFassetID=
 ?adlink/
+?adnet=
 ?adprovider=
 ?adRef=
 ?adroll_adv_id=
@@ -1620,7 +1620,6 @@ _300x300.gif
 _300x400.gif
 _300x600&
 _336x280.
-_468-x-60_
 _46860_
 _468x200.
 _468x60&
@@ -2101,6 +2100,7 @@ _build=iclick-$popup
 ||adulateprofessnorth.com^
 ||advancementcircuscaptured.com^
 ||advancingtheirs.com^
+||advantageroughplay.com^
 ||advantagesblareseizure.com^
 ||adviseforty.com^
 ||affluentmirth.com^
@@ -2116,7 +2116,6 @@ _build=iclick-$popup
 ||allotshyoides.com^
 ||allworldinfo4.store^
 ||amangrunts.shop^
-||amuseer.com^
 ||amusingsnow.pro^
 ||anadistil.com^
 ||analaxadulatory.com^
@@ -2394,6 +2393,7 @@ _build=iclick-$popup
 ||heaplap.com^
 ||heaptube.com^
 ||hedraighugru.net^
+||helicopterskull.com^
 ||heloninremake.shop^
 ||hemnes.win^
 ||herdethi.net^
@@ -3066,6 +3066,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||offer.alibaba.com^$subdocument
 ||partenaires.feerik.com^$third-party
 ||philatelistes.net/liens/cptr/
+||placelibertine.com^$image,third-party
 ||planet49.com^*?click=
 ||planete-hit.com/hit.php?
 ||pm.gamedistribution.com^
@@ -3302,7 +3303,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||dl-protect.link/assets/$image
 ||editions-humanis.com/Pubs/
 ||egaliteetreconciliation.fr/img/
-||ekipotel.net/_pub/
 ||elahmad.com/ads/
 ||elahmad.com/js/extreme.js
 ||elheddaf.com/data/pub/
@@ -3383,7 +3383,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||maison-travaux.fr/wp-content/uploads/sites/8/2021/04/deco.jpg
 ||mameworld.info/net/pics/da.gif
 ||mamytwink.com/pub2/bg.php?
-||maroc1000.net/pub/
 ||mediabong.*/loader.js
 ||medialot.fr/wp-content/uploads/*/Logo-
 ||medialot.fr/wp-content/uploads/*/pub-
@@ -3745,6 +3744,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pubtopflex
 ###quads-ad3_widget
 ###quads-ad4_widget
+###rail_ad3
 ###rectSlotAd
 ###reklama2
 ###reklama3
@@ -3823,7 +3823,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.blocPub
 ##.bloc_annonce_2_ad
 ##.bloc_pub_300
-##.bloc_pub_left
 ##.block-advertising-insert
 ##.block-artwhere-ads
 ##.block-gc-ad
@@ -4090,6 +4089,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pub_leaderboard
 ##.pub_left
 ##.pub_left_content
+##.pub_middle
 ##.pub_mobile
 ##.pub_open
 ##.pub_pave
@@ -4733,7 +4733,6 @@ lesnumeriques.com##a[href^="/publicite/"]
 edcom.fr##a[href^="/regie"]
 skitour.fr##a[href^="divers/a/out.php?"]
 lefigaro.fr##a[href^="http://www.ticketac.com/?utm_source="]
-yahoo.com##a[href^="https://beap.gemini.yahoo.com/"]
 hentaifr.net##a[href^="https://drmanga.net"]
 condor.dz##a[href^="https://e-faciliti.dz/"]
 appsystem.fr##a[href^="https://shop.appsystem.fr/"] > img
@@ -4751,6 +4750,7 @@ petit-bulletin.fr##a[onclick^="_gaq.push(['_trackEvent'"]
 lejournaldelamaison.fr,maison-travaux.fr,mariefrance.fr,zoneadsl.com##a[rel="sponsored"]
 israelmagazine.co.il##a[target="_blank"] > img[src$=".gif"]
 maliweb.net##a[target="_blank"] > img[width="300"][height="100"]
+maliweb.net##a[target="_blank"] > img[width="300"][height="200"]
 forexmt4indicators.com##a[target="_blank"] > img[width="300"][height="250"]
 gamergen.com,generation-nt.com##article .product
 scan-manga.com##article[itemtype="https://schema.org/Product"]
