@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: D/fWf45+oZ3ylvhFIfMcuA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1773032922-14400.patch
+! Checksum: 9jJCGubf02oJc84eU1m76Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1773118927-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.17
@@ -21,6 +21,7 @@
 ||138.68.252.54^$document
 ||fileplanet.com^$document,popup
 ||henrypp.org^$document,domain=~stolen_by_casino_spammers.*
+||iqtest.com^$document
 windowsreport.com##.code-block
 appuals.com##.info.box
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
@@ -48,7 +49,6 @@ windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||testedforyou.net^$all
-dll-found.com##p:has(a[href*=tweakbit])
 ||solvusoft.com^$document
 exefiles.com##.row:has(a[href*="/recommended/"])
 /^https?:\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php$/$document,domain=biz|fun|live
@@ -668,7 +668,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||209.74.107.131^$all
 ||69.172.200.185^$all
 ||77.220.214.153^$all
-google.*##div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
 ://104.21.82.132^$document,popup
 ||172.67.158.57^$document,popup
 ||198.12.86.90^$all
@@ -1625,7 +1624,6 @@ spleis.no##+js(set, __INITIAL_STATE__.features.should-show-snow, false)
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
 alpresor.se##+js(acis, snowMax)
-||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important
 /snow.js|$script
 /wp-content/plugins/christmasify^
 /wp-content/plugins/snow-3d^
@@ -1639,7 +1637,6 @@ daz3d.ru##+js(set-constant, snow, undefined)
 /snowfall.jquery.
 /snowstorm-min.js
 /snowstorm.js
-/snowstorm.min.js
 /wp-snow-effect^
 /christmas-snow.js
 @@||aboluowang.com^
@@ -1766,6 +1763,7 @@ tv.nrk.no##:is(.episode-info-gradient,.tv-layout-fill):style(background:unset!im
 *##.playkit-bottom-bar:style(background: none !important)
 *##.playkit-top-bar:style(background: none !important)
 ##.c-controls__background:not(html, body)
+www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class*="-gradient-bottom "]
 www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class$=-gradient-bottom]
 ##div[class^=ytp-gradient-]
 www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##.ytp-time-display > span:style(font-weight: 800 !important; text-shadow: black 0 0 3px !important)
@@ -1814,6 +1812,7 @@ rule34.xxx###comment-list
 e621.net,e926.net###comments
 ###hot-network-questions
 /api/amediacomments/*
+/commentsbutton.js$domain=nettavisen.no
 www.pixiv.net##div[data-ga4-label*=comment i]
 $removeparam=yclid
 $removeparam=gclid
@@ -2346,7 +2345,6 @@ $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
 $removeparam=adroll_fpc
-$removeparam=cm_user_id
 $removeparam=ad-session-id
 $removeparam=ga_cid
 $removeparam=hubspotUtk
@@ -2403,7 +2401,6 @@ $removeparam=retailerSlug
 $removeparam=uls_trackid
 $removeparam=gad_campaignid
 $removeparam=duckai
-$removeparam=/^ref=winstall$/
 !+ NOT_OPTIMIZED
 $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adressa.no|polarismedia.no
 $removeparam=x-clickref
@@ -2571,6 +2568,7 @@ $removeparam=fref
 $removeparam=privacy_mutation_token
 $~xhr,removeparam=/^refsrc=.*$/i
 $removeparam=_rdr
+$removeparam=m_entstream_source
 $removeparam=referral_code,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=referral_story_type,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=_nc_cat,domain=~instagram.com
@@ -2847,6 +2845,7 @@ $removeparam=app,domain=tiktok.com|music.apple.*
 $removeparam=c,document,domain=announcements.bybit.com|appsflyer.com|farfetch.com|glami.cz|hepsiburada.com|norton.com|onelink.me|shopee.*|tiktok.com|instabox.io
 $document,removeparam=campaign,domain=1sol.io|bdsmx.tube|blue-tomato.com|bybit.com|coinpanel.com|discord.*|docs.google.com|docsend.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|mrgay.tube|outnorth.fi|peterhahn.*|reddit.app.link|runnode.com|scmp.com|shopee.*|sitepoint.com|sportler.com|t.me|twitter.com|ubereats.com|x.com|youtube.com|235.190.94.206|206.94.190.35.bc.googleusercontent.com
 $removeparam=/^pf_rd_.*$/,domain=shopbop.com|amazon.*|imdb.com|zappos.com|audible.*|6pm.com
+$removeparam=Source,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com|evga.com
 $removeparam=p,domain=banggood.com|sogou.com|bstn.com
 $removeparam=linkId,domain=amazon.*|cbsnews.*|disneyplus.com|espn.*|sporza.be
 $removeparam=trkid,domain=netflix.com|tokopedia.com
@@ -3214,6 +3213,7 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 ||sciencedirect.com/*?via%3D$removeparam=/^via%3D.*$/,document
 ||deepl.com^$document,removeparam=cta
 ||kahoot.it^$removeparam=refer_method
+||substack.com^$removeparam=sd,document
 ||open.substack.com^$removeparam=r,document
 ||businessinsider.com^$removeparam=op,document
 ref=spreadprivacy.com$removeparam=ref
@@ -3417,7 +3417,6 @@ $document,removeparam=sc_iplace,domain=aws.eu|pages.awscloud.com
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
-||ikea.com/*/images/products^$removeparam=f
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com##+js(set, GSvars.addressTracking, false)
 buffalonews.com##+js(set, lee_trkLinkSrc, noopFunc)
 @@||web.archive.org/*_/http$removeparam

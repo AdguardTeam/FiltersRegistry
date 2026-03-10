@@ -1,5 +1,5 @@
-! Checksum: VBAb8H5hnmwwRnqC/5XP8w
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1773032918-14400.patch
+! Checksum: 5qc9kkhFL+ng3AxGQIfnyg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1773118924-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.17
@@ -19,6 +19,7 @@
 ||138.68.252.54^$document
 ||fileplanet.com^$document,popup
 ||henrypp.org^$document,domain=~stolen_by_casino_spammers.*
+||iqtest.com^$document
 windowsreport.com##.code-block
 appuals.com##.info.box
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
@@ -46,7 +47,6 @@ windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||testedforyou.net^$all
-dll-found.com##p:has(a[href*=tweakbit])
 ||solvusoft.com^$document
 exefiles.com##.row:has(a[href*="/recommended/"])
 ||freeroms.com^$document
@@ -1047,7 +1047,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||69.172.200.185^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||77.220.214.153^$all
-google.*#?#div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://104.21.82.132^$document,popup
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -2002,7 +2001,6 @@ spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow'
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
 alpresor.se#%#//scriptlet('ubo-acis', 'snowMax')
-||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important
 /snow.js|$script
 /wp-content/plugins/christmasify^
 /wp-content/plugins/snow-3d^
@@ -2016,7 +2014,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /snowfall.jquery.
 /snowstorm-min.js
 /snowstorm.js
-/snowstorm.min.js
 /wp-snow-effect^
 /christmas-snow.js
 @@||aboluowang.com^
@@ -2119,6 +2116,7 @@ tv.nrk.no#$#:is(.episode-info-gradient,.tv-layout-fill) { background:unset!impor
 *#$#.playkit-bottom-bar { background: none !important }
 *#$#.playkit-top-bar { background: none !important }
 ##.c-controls__background:not(html, body)
+www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class*="-gradient-bottom "]
 www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class$=-gradient-bottom]
 ##div[class^=ytp-gradient-]
 www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com#$#.ytp-time-display > span { font-weight: 800 !important; text-shadow: black 0 0 3px !important }
@@ -2167,6 +2165,7 @@ rule34.xxx###comment-list
 e621.net,e926.net###comments
 ###hot-network-questions
 /api/amediacomments/*
+/commentsbutton.js$domain=nettavisen.no
 www.pixiv.net##div[data-ga4-label*=comment i]
 /auto-append-spmid.js
 wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
