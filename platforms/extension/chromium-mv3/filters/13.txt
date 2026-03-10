@@ -1,8 +1,8 @@
-! Checksum: Iv5S9ZnS+Wt4z7NlmhcSPQ
+! Checksum: BxCEHqwUiCRVzI4D13hbbg
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.82
-! TimeUpdated: 2026-03-10T12:18:09+00:00
+! Version: 2.0.62.83
+! TimeUpdated: 2026-03-10T13:32:48+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1210,7 +1210,7 @@ coin-turk.com#$#body .fixed_header { top: 0 !important; }
 coin-turk.com#$#body .page_container { margin-top: 80px !important; }
 coin-turk.com#$#.page_container > .single { margin-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133244
-r10.net#$##burtiModal { display: none!important; }
+r10.net#$#body > div#burtiModal:not(#style_important) { display: none !important; }
 r10.net#$#.modal-backdrop { display: none!important; }
 r10.net#$#body { overflow: visible!important; padding-right: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129765
@@ -1547,6 +1547,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+bloomberght.com##.paycell
+r10.net##.rPanel:has(> div[class] > a[href^="https://www.r10.net/hosting-sirketleri"] > img)
 cimri.com#?#div[class^="OfferCard_offerCard"]:contains(Reklam)
 trhaber.com##.container > section:has(> div[style] > a[target="_blank"])
 marieclaire.com.tr##.ad-billboard__wrapper
@@ -5839,6 +5841,12 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! NOTE: Frequently changed domains
 ! WARNING: When adding new rules here, try to find an initial source of an actual domain,
 !          or add a last known domain
+!
+! Frequently changed domains: sultansportv*.com
+! Source: sultansportv509.com
+[$domain=/sultansportv\d+\.com$/]##.header-top > div.header-text
+[$domain=/sultansportv\d+\.com$/]##body > header:has(> a[href="https://tinyurl.com/sultanbetuyelik"])
+[$domain=/sultansportv\d+\.com$/]##.footer-links
 !
 ! Frequently changed domains: restmacizle*.cfd
 ! Source: restmacizle46.cfd

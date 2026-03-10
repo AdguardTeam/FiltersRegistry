@@ -1,9 +1,9 @@
-! Checksum: pPix8fvNMFFqw9ynQVvAeg
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1773145276-3600.patch
+! Checksum: pU5iiJ5HxMeUuITrFyh9KQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1773149769-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.82
-! TimeUpdated: 2026-03-10T12:18:09+00:00
+! Version: 2.0.62.83
+! TimeUpdated: 2026-03-10T13:32:48+00:00
 ! Expires: 10 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -829,7 +829,7 @@ gratis.com#$#html.async-hide { opacity: 1 !important; }
 coin-turk.com#$#body .fixed_header { top: 0 !important; }
 coin-turk.com#$#body .page_container { margin-top: 80px !important; }
 coin-turk.com#$#.page_container > .single { margin-top: 0 !important; }
-r10.net#$##burtiModal { display: none!important; }
+r10.net#$#body > div#burtiModal:not(#style_important) { display: none !important; }
 r10.net#$#.modal-backdrop { display: none!important; }
 r10.net#$#body { overflow: visible!important; padding-right: 0!important; }
 tamindir.com#$#ul.app-features { margin-top: 0!important; }
@@ -1039,6 +1039,8 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+bloomberght.com##.paycell
+r10.net##.rPanel:has(> div[class] > a[href^="https://www.r10.net/hosting-sirketleri"] > img)
 cimri.com#?#div[class^="OfferCard_offerCard"]:contains(Reklam)
 trhaber.com##.container > section:has(> div[style] > a[target="_blank"])
 marieclaire.com.tr##.ad-billboard__wrapper
@@ -5327,6 +5329,9 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+[$domain=/sultansportv\d+\.com$/]##.header-top > div.header-text
+[$domain=/sultansportv\d+\.com$/]##body > header:has(> a[href="https://tinyurl.com/sultanbetuyelik"])
+[$domain=/sultansportv\d+\.com$/]##.footer-links
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/restmacizle\d+\.cfd$/
 [$domain=/restmacizle\d+\.cfd$/]##.background-link
