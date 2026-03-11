@@ -1,9 +1,9 @@
-! Checksum: p2t3YCuIb/PzaqPdKhJlLw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1773161463-14400.patch
+! Checksum: kDAj39eos0UjaYgptwAo5A
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1773262063-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.10
-! TimeUpdated: 2026-03-10T16:48:08+00:00
+! Version: 2.0.24.11
+! TimeUpdated: 2026-03-11T20:44:54+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -803,8 +803,9 @@ hrsvepet.se,cfosvepet.se,vdsvepet.se##.cookie-banner, .desktopbanner, .mobilbann
 hrsvepet.se,cfosvepet.se,vdsvepet.se##:is(.recent-post-item, .w-dyn-item):has(a[href="#"]:not(.w-condition-invisible))
 humorbibeln.se,newsner.com,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibeln.se,nojeslivet.se##.inline-share-buttons
 husbilhusvagn.se,vibilagare.se##.article-native
-husbilskompisar.se#?#.uk-text-center:contains(Annonser:):upward(.uk-width-large\@m)
-husbilskompisar.se#?#.uk-text-left:contains(Annonser:):upward(.uk-section)
+husbilskompisar.se##body > div + div:has(.mantine-Button-label)
+husbilskompisar.se##main > div:first-child:has(a[rel*="sponsored"])
+husbilskompisar.se##.mantine-Modal-root, a[rel^="sponsored"]
 husbilsplats.se##div[id^="husbi-"]
 husbilsskolan.se##.elementor-image a[target="_blank"]
 husbil.se#?#.articleintroduction strong:contains(/samarbete/i):upward(li.item)
