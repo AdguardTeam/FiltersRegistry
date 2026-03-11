@@ -1,9 +1,9 @@
-! Checksum: 0FI50f8jxMnrm3F/8op3Ow
-! Diff-Path: ../patches/2/2-s-1773217209-3600.patch
+! Checksum: 57q14v3X8o/G8sqkNrZwfA
+! Diff-Path: ../patches/2/2-s-1773221065-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.52.64
-! TimeUpdated: 2026-03-11T08:16:26+00:00
+! Version: 2.4.52.65
+! TimeUpdated: 2026-03-11T09:19:47+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,8 @@
 !
 !
 !
+||fhpxjbryxqwoak.com^
+||aikhiwnpdff.com^
 ||satisfiednews.com^
 ||acceptancedishearten.com^
 ||broadlyjukeboxunrevised.com^
@@ -10428,6 +10430,12 @@ pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('prevent-setTimeout', '\x41\x6
 youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/')
 youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! END: Ads replacement
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/226559
+! Common ExoClick bait
+! Do not confuse this with ad script:
+! https://ads.exoclick.com/ads.js
+@@://www.exoclick.com/ads.js|
 !
 ! Prevent detection by various scripts which use common bait classes, including fingerprinting (for example "Freestar Recovered")
 ! NOTE[id=common_baits]
@@ -37609,6 +37617,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+roshy.tv##div[style^="min-height: "][style$="px;"]
 reelsmunkey.com#%#//scriptlet('trusted-set-local-storage-item', 'adsTimer', '$now$')
 reelsmunkey.com#%#//scriptlet('set-local-storage-item', 'initAds', 'true')
 reelsmunkey.com#%#//scriptlet('set-constant', 'exoJsPop101', 'emptyObj')
@@ -37654,8 +37663,8 @@ whistleout.com.au##.results-list > div[data-feature="SuperFeature"]
 *$script,third-party,domain=ziperto.com
 ziperto.com#%#//scriptlet('remove-node-text', 'script', 'newHref = href.replace')
 appagg.com##.si_li:has(> .short_info > .si > ins.adsbygoogle)
-lolpol2.com##.order-1:has(> .video-block-happy)
-lolpol2.com#$?#.row.no-gutters > div.d-none:empty { remove: true; }
+watchporn4k.com,lolpol2.com##.order-1:has(> .video-block-happy)
+watchporn4k.com,lolpol2.com#$?#.row.no-gutters > div.d-none:empty { remove: true; }
 thegamebusiness.com##a[href^="https://careers.playstation.com/"]
 manhuarmtl.com##.da-container-wrapper
 viduyy.com##a[href^="https://s.shopee.co.id/"]
@@ -45197,7 +45206,7 @@ chapmanganato.com##div[style^="width: 100%;overflow: hidden;"]
 !+ NOT_OPTIMIZED
 watchporn4k.com###video-overlay
 mydesi.click,watchporn4k.com,fucking-tube.com##.video-block-happy
-mdhstream.cc,fucking-tube.com##.happy-section
+watchporn4k.com,mdhstream.cc,fucking-tube.com##.happy-section
 ||hotlinkie.com^*index.php$third-party
 freepreset.net##.theiaStickySidebar > div > div.widget_custom_html
 lightsnovel.com##div[class^="novel-ins"]
@@ -47976,7 +47985,7 @@ raise.com##aside[class^="nudge_main"]
 windowscentral.com###bordeaux-static-slot-0
 cocomanga.com##html > iframe
 vjav.*,privatehomeclips.com##.partners-wrap + div[class]
-vjav.com,fuxxx.com,hdzog.tube,hdzog.com,hotmovs.com,privatehomeclips.com##.partners-wrap
+desi-porn.tube,vjav.com,fuxxx.com,hdzog.tube,hdzog.com,hotmovs.com,privatehomeclips.com##.partners-wrap
 ||hardwarezone.com.sg/js/hwz/hwz_gam_f.js
 ||hardwarezone.com.sg/ads/ad_site_notice.js
 ||overclockers.co.uk/KitGuru/similarArticle?sku=$domain=kitguru.net
@@ -58059,6 +58068,8 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 !
 !
 !+ NOT_OPTIMIZED
+bdsmx.tube,desi-porn.tube,hclips.com,hdzog.com,hdzog.tube,hotmovs.com,inporn.com,vxxx.com##.under-channel
+!+ NOT_OPTIMIZED
 usnews.com###ac-lre-player-ph
 !+ NOT_OPTIMIZED
 justthegays.tv##.zd-slot
@@ -63453,6 +63464,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/226775
+@@||embedseek.online^$subdocument,stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226752
 @@||cdn*.merrypsycho.xyz^$image,stealth=referrer,domain=bbato.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226671
@@ -84290,6 +84303,7 @@ browsershots.org#@#.advert_area
 ||acreinterstatethe.com^
 ||acritagiddiedwaives.cyou^
 ||acritanpausai.cyou^
+||acrobatic-carry.pro^
 ||acrobatic-chest.pro^
 ||acrobaticcouple.com^
 ||acrodusabscind.qpon^
@@ -84450,6 +84464,7 @@ browsershots.org#@#.advert_area
 ||adept-peak.pro^
 ||adept-shock.pro^
 ||adepticily.com^
+||adetxlcpwbrjcnr.com^
 ||adevbom.com^
 ||adevppl.com^
 ||adex.media^
@@ -91739,6 +91754,7 @@ browsershots.org#@#.advert_area
 ||conceivesaucerfalcon.com^
 ||concentratetogethersubmarine.com^
 ||concentrationminefield.com^
+||concerned-plate.pro^
 ||concernedvoice.pro^
 ||concernrest.com^
 ||conciergeeccentricstrained.com^
@@ -92055,6 +92071,7 @@ browsershots.org#@#.advert_area
 ||cotysphenols.cyou^
 ||couacsemoted.cyou^
 ||coucalhidated.com^
+||coucalmildishbright.cyou^
 ||coucheegimbal.help^
 ||coudawaisto.net^
 ||couijnmkgjdim.site^
@@ -92748,6 +92765,7 @@ browsershots.org#@#.advert_area
 ||cvaiojnnjprul.space^
 ||cvastico.com^
 ||cvbwtmpzxwxkl.site^
+||cvc7gloc7o6529.cfd^
 ||cvcglqxybcnqp.space^
 ||cvdbvcrpzjrgv.website^
 ||cvdjkxsucrcya.website^
@@ -95884,6 +95902,7 @@ browsershots.org#@#.advert_area
 ||eixgdeonnumrp.site^
 ||eiyyjstblubzo.website^
 ||eizcfqypdourg.online^
+||eizheksjqinjf.space^
 ||eizzih.com^
 ||ejadhobthckao.site^
 ||ejajqmtadgoce.space^
@@ -96021,6 +96040,7 @@ browsershots.org#@#.advert_area
 ||elejwqalsqjbb.rocks^
 ||elelasticalsdebat.org^
 ||elementarysinger.com^
+||elementaryvideo.com^
 ||elementsacorncolossal.com^
 ||elemoltwigful.com^
 ||elevationhypnotize.com^
@@ -97165,6 +97185,7 @@ browsershots.org#@#.advert_area
 ||expressjustifierlent.com^
 ||exptlgooney.com^
 ||exptrncaaidhs.site^
+||expulsionelinorcorruption.com^
 ||exqbxfzcrslqg.store^
 ||exqbxkfncmcli.website^
 ||exrcfdbcqiddp.space^
@@ -98769,6 +98790,7 @@ browsershots.org#@#.advert_area
 ||fppxjvtmcxjqib.xyz^
 ||fpqtfxgqlvcvi.space^
 ||fprgsxjsykxem.website^
+||fpuditrtxsdhb.online^
 ||fpukmwpb.top^
 ||fpuxxbskapwcz.online^
 ||fpvqazktkywjf.site^
@@ -103016,6 +103038,7 @@ browsershots.org#@#.advert_area
 ||hrwshoskzmugy.online^
 ||hrxeublgkniat.website^
 ||hrxtbicnsiunn.online^
+||hs5nhe45.xyz^
 ||hscfjrtmjpabs.website^
 ||hsfcuorcijlne.website^
 ||hsfefxyzfztdt.space^
@@ -104826,6 +104849,7 @@ browsershots.org#@#.advert_area
 ||italianbeepimpediment.com^
 ||italianceramal.cyou^
 ||italianforesee.com^
+||italiangooseberry.com^
 ||italyrogueinhabit.com^
 ||itaupsophie.net^
 ||itawaxywmjarm.space^
@@ -108610,6 +108634,7 @@ browsershots.org#@#.advert_area
 ||lintolstelopea.qpon^
 ||lintsbunker.qpon^
 ||lintyahimsas.com^
+||linwezjgwscfk.online^
 ||lionbasote.cyou^
 ||liondolularhenewre.com^
 ||lioneldorical.cfd^
@@ -111966,6 +111991,7 @@ browsershots.org#@#.advert_area
 ||myronicbrulzie.cyou^
 ||myrosinurlaraivr.cyou^
 ||myrrhbehorn.com^
+||myselguggles.cfd^
 ||mysellbeamy.cyou^
 ||mysmbkoapuust.website^
 ||mysoidaggress.qpon^
@@ -114669,6 +114695,7 @@ browsershots.org#@#.advert_area
 ||opsczlntxhvki.space^
 ||opsglctefhxxc.online^
 ||opskiwzwtvfic.store^
+||opslnkrbabvcd.space^
 ||opsonialaban.qpon^
 ||optad360.io^
 ||optad360.net^
@@ -121592,6 +121619,7 @@ browsershots.org#@#.advert_area
 ||ruddy-bite.pro^
 ||ruddy-pass.com^
 ||ruddyheat.com^
+||rude-cat.com^
 ||rudechangingmetropolitan.com^
 ||rudenature.pro^
 ||ruderavidian.cyou^
@@ -122380,6 +122408,7 @@ browsershots.org#@#.advert_area
 ||scratchyhook.com^
 ||scrayebummest.cyou^
 ||scrddlfvolmta.site^
+||screamsrerigvawntie.qpon^
 ||screedlocket.help^
 ||screekshriek.cfd^
 ||screenhurtfuldelicatessen.com^
@@ -124814,6 +124843,7 @@ browsershots.org#@#.advert_area
 ||stoomawy.net^
 ||stoondgastly.shop^
 ||stoopedbedaub.cfd^
+||stoopeddigestaggregation.com^
 ||stoopeddiscourse.com^
 ||stoopsellers.com^
 ||stoorturtun.net^
@@ -129382,6 +129412,7 @@ browsershots.org#@#.advert_area
 ||v2cigs.com^
 ||v2gpc4ou715f24.cfd^
 ||v2kb8uikm1e598b4trjvlir.cfd^
+||v2v8tr1p9rlv37z65x6iuh.rest^
 ||v3g682uyzu6kp1n9.cfd^
 ||v3hiwk4pyxgjqc.cfd^
 ||v4g368bnr84pv741825.cfd^
@@ -130537,6 +130568,7 @@ browsershots.org#@#.advert_area
 ||vsdiz.xyz^
 ||vsdoustkimglz.online^
 ||vsffqogjqucms.com^
+||vsfnmefuhbnj.xyz^
 ||vsfowtixgsjed.website^
 ||vsfswhpnyjnbv.space^
 ||vshpajniedp.com^
@@ -131902,6 +131934,7 @@ browsershots.org#@#.advert_area
 ||wlzhmngyhuebs.space^
 ||wlzzwzeevbyak.top^
 ||wmbbsat.com^
+||wmcafnbjivh.com^
 ||wmccd.com^
 ||wmcdct.com^
 ||wmcdpt.com^
@@ -146684,6 +146717,7 @@ sammobile.com###venatus-hybrid-banner
 nutritioninsight.com###verticlblks
 mykhel.com,oneindia.com###verticleLinks
 ghgossip.com###vi-sticky-ad
+slashdot.org###vibe-coding-bar
 investing.com###video
 forums.tomsguide.com###video_ad
 gumtree.com.au###view-item-page__leaderboard-wrapper

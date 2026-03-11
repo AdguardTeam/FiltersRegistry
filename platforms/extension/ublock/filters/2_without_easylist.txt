@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +ke4vxpj0IHwByFyhyWNAg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1773217198-3600.patch
+! Checksum: EUMfKE69X6+5ALJAYVPpbg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1773221051-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.52.64
-! TimeUpdated: 2026-03-11T08:16:26+00:00
+! Version: 2.4.52.65
+! TimeUpdated: 2026-03-11T09:19:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,8 @@
 !
 !
 !
+||fhpxjbryxqwoak.com^
+||aikhiwnpdff.com^
 ||satisfiednews.com^
 ||acceptancedishearten.com^
 ||broadlyjukeboxunrevised.com^
@@ -10258,6 +10260,12 @@ pornhub.com,pornhub.org,pornhub.net##+js(set-constant, page_params.holiday_promo
 pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62)
 youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! END: Ads replacement
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/226559
+! Common ExoClick bait
+! Do not confuse this with ad script:
+! https://ads.exoclick.com/ads.js
+@@://www.exoclick.com/ads.js|
 !
 ! Prevent detection by various scripts which use common bait classes, including fingerprinting (for example "Freestar Recovered")
 ! NOTE[id=common_baits]
@@ -36623,6 +36631,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+roshy.tv##div[style^="min-height: "][style$="px;"]
 reelsmunkey.com##+js(set-local-storage-item, initAds, true)
 reelsmunkey.com##+js(set-constant, exoJsPop101, {})
 reelsmunkey.com##+js(set-constant, exoJsPop101.add, noopFunc)
@@ -36667,8 +36676,8 @@ whistleout.com.au##.results-list > div[data-feature="SuperFeature"]
 *$script,3p,domain=ziperto.com
 ziperto.com##+js(remove-node-text, script, newHref = href.replace)
 appagg.com##.si_li:has(> .short_info > .si > ins.adsbygoogle)
-lolpol2.com##.order-1:has(> .video-block-happy)
-lolpol2.com##.row.no-gutters > div.d-none:empty:remove()
+watchporn4k.com,lolpol2.com##.order-1:has(> .video-block-happy)
+watchporn4k.com,lolpol2.com##.row.no-gutters > div.d-none:empty:remove()
 thegamebusiness.com##a[href^="https://careers.playstation.com/"]
 manhuarmtl.com##.da-container-wrapper
 viduyy.com##a[href^="https://s.shopee.co.id/"]
@@ -44118,7 +44127,7 @@ chapmanganato.com##div[style^="width: 100%;overflow: hidden;"]
 !+ NOT_OPTIMIZED
 watchporn4k.com###video-overlay
 mydesi.click,watchporn4k.com,fucking-tube.com##.video-block-happy
-mdhstream.cc,fucking-tube.com##.happy-section
+watchporn4k.com,mdhstream.cc,fucking-tube.com##.happy-section
 ||hotlinkie.com^*index.php$3p
 freepreset.net##.theiaStickySidebar > div > div.widget_custom_html
 lightsnovel.com##div[class^="novel-ins"]
@@ -46896,7 +46905,7 @@ raise.com##aside[class^="nudge_main"]
 windowscentral.com###bordeaux-static-slot-0
 cocomanga.com##html > iframe
 vjav.*,privatehomeclips.com##.partners-wrap + div[class]
-vjav.com,fuxxx.com,hdzog.tube,hdzog.com,hotmovs.com,privatehomeclips.com##.partners-wrap
+desi-porn.tube,vjav.com,fuxxx.com,hdzog.tube,hdzog.com,hotmovs.com,privatehomeclips.com##.partners-wrap
 ||hardwarezone.com.sg/js/hwz/hwz_gam_f.js
 ||hardwarezone.com.sg/ads/ad_site_notice.js
 ||overclockers.co.uk/KitGuru/similarArticle?sku=$domain=kitguru.net
@@ -56925,6 +56934,8 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 !
 !
 !+ NOT_OPTIMIZED
+bdsmx.tube,desi-porn.tube,hclips.com,hdzog.com,hdzog.tube,hotmovs.com,inporn.com,vxxx.com##.under-channel
+!+ NOT_OPTIMIZED
 usnews.com###ac-lre-player-ph
 !+ NOT_OPTIMIZED
 justthegays.tv##.zd-slot
@@ -62134,6 +62145,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/226775
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226752
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226671
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226661
