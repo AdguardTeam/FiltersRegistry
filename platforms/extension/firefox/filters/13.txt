@@ -1,9 +1,9 @@
-! Checksum: 3zjHHp/WrmGslAEnI5L2WQ
-! Diff-Path: ../patches/13/13-s-1773204070-3600.patch
+! Checksum: 6IDA1TVX6zVwZnCtzrCSzg
+! Diff-Path: ../patches/13/13-s-1773217187-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.87
-! TimeUpdated: 2026-03-11T04:38:03+00:00
+! Version: 2.0.62.88
+! TimeUpdated: 2026-03-11T08:16:56+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5871,6 +5871,14 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! NOTE: Frequently changed domains
 ! WARNING: When adding new rules here, try to find an initial source of an actual domain,
 !          or add a last known domain
+!
+! Frequently changed domains: patronsportv*.cfd
+! Source: patronspor.is
+||blogger.googleusercontent.com/img/*/s1600/Mrt-Pageskin-1.jpg
+||blogger.googleusercontent.com/img/*/s1600/yayinmrt.jpg
+[$domain=/patronsportv\d+\.cfd$/]##.background-link
+[$domain=/patronsportv\d+\.cfd$/]##.header-nav > a[href="/"] ~ a[href][target="_blank"]
+[$domain=/patronsportv\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
 !
 ! Frequently changed domains: sultansportv*.com
 ! Source: sultansportv509.com
