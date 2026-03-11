@@ -1,9 +1,9 @@
-! Checksum: jn5u1saHXCGjJCRNANtByA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1773190497-14400.patch
+! Checksum: V6roLo/zhUad/bZLoPnKPw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1773205386-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.57.86
-! TimeUpdated: 2026-03-11T00:51:49+00:00
+! Version: 2.1.57.87
+! TimeUpdated: 2026-03-11T04:59:40+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -75,6 +75,7 @@
 /prisna-social-counter.css
 /Resources/twitter-$~xmlhttprequest
 /rrshare.js
+/share/count?
 /share/footer/*
 /share42.js
 /share_button?
@@ -137,6 +138,7 @@
 /whatsapp_icon.png
 /widget/share?
 /widgets/socials/*
+/widgets/twitter/*
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
@@ -493,6 +495,7 @@ _social-bar/
 ###sharefloattitle
 ###sharefooter
 ###shareicon
+###shareicons
 ###sharelink
 ###sharelinks
 ###sharelist
@@ -1053,6 +1056,9 @@ _social-bar/
 ##.button-share
 ##.button-share-facebook
 ##.button-share-twitter
+##.button-share__bar
+##.button-share__media
+##.button-share__media--mail
 ##.button-social
 ##.button-twitter
 ##.button__share
@@ -1060,7 +1066,6 @@ _social-bar/
 ##.button_share
 ##.button_twitter
 ##.buttons-share
-##.bw_sharetom
 ##.bx-footer__social-links
 ##.bx-header__social-links
 ##.bx-social-share
@@ -1418,6 +1423,7 @@ _social-bar/
 ##.footer-facebook-icon
 ##.footer-fb
 ##.footer-follow
+##.footer-follow-text
 ##.footer-follow-us
 ##.footer-followUs
 ##.footer-followus
@@ -1539,6 +1545,7 @@ _social-bar/
 ##.genericon-youtube
 ##.get-social
 ##.getsocial
+##.ggm-social-share-bar
 ##.gig-share-bar-container
 ##.gig-simpleShareUI
 ##.gigyaShareBottom
@@ -1890,6 +1897,7 @@ _social-bar/
 ##.m-footer-social
 ##.m-header--social-nav
 ##.m-icon-facebook
+##.m-icon-instagram
 ##.m-icon-tw
 ##.m-share
 ##.m-share-bar
@@ -1998,7 +2006,6 @@ _social-bar/
 ##.nShare
 ##.native-share
 ##.native-share-buttons
-##.nav--share
 ##.nav--social
 ##.nav-footer-social
 ##.nav-share
@@ -2010,6 +2017,7 @@ _social-bar/
 ##.nav__social
 ##.nav_share
 ##.nav_social
+##.nav_social_container
 ##.navbar-social
 ##.navbar-sociallink
 ##.navbar__social
@@ -2190,7 +2198,6 @@ _social-bar/
 ##.reseaux-sociaux-list
 ##.reseauxSociaux
 ##.resp-sharing-button
-##.resultShare
 ##.right-social
 ##.right_social
 ##.rmp-sharing
@@ -2837,10 +2844,12 @@ _social-bar/
 ##.social-bar-sticky
 ##.social-bar-widget
 ##.social-bar-wrapper
+##.social-block-news-page
 ##.social-blocks
 ##.social-bookmark
 ##.social-bookmarks
 ##.social-box-footer
+##.social-box-widget
 ##.social-btn-container
 ##.social-btn-facebook
 ##.social-btn-list
@@ -2853,7 +2862,6 @@ _social-bar/
 ##.social-buttons--uk
 ##.social-buttons-compact
 ##.social-buttons-container
-##.social-buttons-footer
 ##.social-buttons-twitter
 ##.social-buttons-wrapper
 ##.social-buttons__item
@@ -3381,10 +3389,10 @@ _social-bar/
 ##.twitter-feed-wrapper
 ##.twitter-follow
 ##.twitter-follow-box
+##.twitter-followers
 ##.twitter-footer
 ##.twitter-hashtag
 ##.twitter-inner
-##.twitter-module
 ##.twitter-popup
 ##.twitter-share
 ##.twitter-share-btn
@@ -3465,7 +3473,6 @@ _social-bar/
 ##.vlog-share-single
 ##.vlog-social-icons
 ##.voc-social
-##.vp-share-buttons
 ##.vs-social
 ##.vuukle-powerbar
 ##.w-share
@@ -3515,7 +3522,6 @@ _social-bar/
 ##.widget_jnews_social
 ##.widget_novashare_follow_widget
 ##.widget_nypost_social_widget
-##.widget_rotatingtweets_widget
 ##.widget_siliconcounters
 ##.widget_social
 ##.widget_social_counter
@@ -3808,6 +3814,7 @@ tennis.com##.-sharebar
 nhl.com,petri.com##.-social
 ynet.co.il,ynetnews.com##.AccordionShareWrapper
 abebooks.com,nbcsports.com,nhpr.org,pitchbook.com,scrippsnews.com##.ActionBar
+cnbc.com##.ArticleBody-googlePreferredSourceContainer
 newscientist.com##.ArticleHeader__SocialWrapper
 nordvpn.com##.BlogPost__social-block
 cnbc.com##.CNBCFooter-social
@@ -4036,6 +4043,7 @@ corrosionpedia.com,exchangerates.org.uk,idownloadblog.com,kyivpost.com,thedrinks
 soundcloud.com##.listenDetails__login
 discover.hubpages.com,thestreet.com##.m-social--pinterest-pin-it
 consumerfinance.gov##.m-social-media
+insideevs.com,motor1.uol.com.br##.m1-article-meta_share
 morningstar.com##.mdc-social-share
 amazon.jobs##.media-icons
 arabnews.com##.meta-area
@@ -4159,7 +4167,6 @@ digitimes.com##.social-frame
 firstpost.com##.social-ic-wrap
 actu.epfl.ch,brasil247.com,estadao.com.br,india.com,maketecheasier.com,news18.com,recipetineats.com,theshovel.com.au,wionews.com##.social-icon
 tmz.com##.social-item
-knewz.com,revolvermag.com##.social-items
 afro.com,berlin-live.de,elsol.com.ar,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,theatlantavoice.com,washingtoncitypaper.com,washingtonmonthly.com##.social-links-menu
 denofgeek.com##.social-links__anchor--sharing
 knowablemagazine.org,leouve.com.br,newskarnataka.com,ric.com.br,securityaffairs.com,ucl.ac.uk##.social-media-links
@@ -4174,7 +4181,6 @@ edition.cnn.com##.social-share_labelled-list__share-links
 idropnews.com##.social-sharing-controller
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
-dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
 macrumors.com##.socialMedia--3i9tSnAb
 jetphotos.com##.social__link--share
@@ -4457,6 +4463,7 @@ dr.dk##.dre-sticky-share-band
 telegraaf.nl##.SocialButtons
 nu.nl##.app-follow-us
 bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_"]
+dawn.fi##.anchored
 apotti.fi#?#.post-footer:has(> .share)
 forssanlehti.fi#?#.herald-single-sticky:has(.herald-share)
 capital.gr##.controls
@@ -4468,6 +4475,7 @@ magyarnemzet.hu##.share-container
 amarujala.com##.auw_event_share
 centrometeoitaliano.it,leggo.it###box-social
 liberoquotidiano.it###dropdown-trigger
+ilfattoquotidiano.it###glfb
 navigaweb.net###like
 navigaweb.net###social3
 dissapore.com##._social-share

@@ -1,9 +1,9 @@
-! Checksum: nqB5UvCF7BjURA3CpVBZRQ
-! Diff-Path: ../patches/227/227-s-1773118939-14400.patch
+! Checksum: a+/TSJjKUAudasuh3AfGTw
+! Diff-Path: ../patches/227/227-s-1773205413-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.76
-! TimeUpdated: 2026-03-10T04:58:53+00:00
+! Version: 2.0.23.77
+! TimeUpdated: 2026-03-11T05:00:01+00:00
 ! Expires: 12 hours (update frequency)
 !
 ||ad.adwiser.kr^
@@ -552,6 +552,7 @@ namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[c
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 !
+||cdn.algumon.com/temp/$image
 ||api.coupangstreaming.com/ads-vod-public/
 /mobus/resources/images/route_inquiry_addBoxImg$domain=m.bustago.or.kr
 ||m.stock.naver.com/front-api/ad/reward
@@ -1687,6 +1688,7 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+www.algumon.com##.deal-content > .deal-list-full:is(:has(> .gap-1.pt-3.pb-3.px-3 > div[style^="display: flex; justify-content: center;"]), :has(> .gap-1.pt-3.pb-3.px-3 > a[href^="https://link.coupang.com/a/"]))
 damoang.net##div[data-slot="board-list-promotion"]
 damoang.net##main .gap-4.sm\:grid-cols-3 > .gap-1
 damoang.net##aside .gap-4 > div[data-slot="sidebar-banner"]
