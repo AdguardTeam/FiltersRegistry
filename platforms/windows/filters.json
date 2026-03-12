@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.52.95",
-			"timeUpdated": "2026-03-12T16:27:58+0000",
+			"version": "2.4.52.96",
+			"timeUpdated": "2026-03-12T17:22:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.1.44",
-			"timeUpdated": "2026-03-12T12:17:06+0000",
+			"version": "2.1.1.45",
+			"timeUpdated": "2026-03-12T17:23:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.33.59",
-			"timeUpdated": "2026-03-12T16:28:15+0000",
+			"version": "2.0.33.60",
+			"timeUpdated": "2026-03-12T17:23:11+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.68.17",
-			"timeUpdated": "2026-03-11T08:16:54+0000",
+			"version": "2.0.68.18",
+			"timeUpdated": "2026-03-12T17:23:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.61.82",
-			"timeUpdated": "2026-03-12T16:28:25+0000",
+			"version": "2.2.61.83",
+			"timeUpdated": "2026-03-12T17:23:20+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -710,8 +710,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.13.14",
-			"timeUpdated": "2026-03-07T10:08:47+0000",
+			"version": "2.0.13.15",
+			"timeUpdated": "2026-03-12T17:23:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.82.77",
-			"timeUpdated": "2026-03-12T13:32:40+0000",
+			"version": "2.0.82.78",
+			"timeUpdated": "2026-03-12T17:23:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

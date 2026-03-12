@@ -1,9 +1,9 @@
-! Checksum: LoufvDi549W7eHFPdVpj1g
-! Diff-Path: ../patches/11/11-s-1773217187-3600.patch
+! Checksum: gA1gG/xPA0lnNstQU1emwA
+! Diff-Path: ../patches/11/11-s-1773336391-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.68.17
-! TimeUpdated: 2026-03-11T08:16:54+00:00
+! Version: 2.0.68.18
+! TimeUpdated: 2026-03-12T17:23:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2435,6 +2435,9 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+trashbox.ru#%#//scriptlet('set-constant', 'bw_no_ad', 'noopFunc')
+suki-kira.com#$##im_interstitial_b { display: none !important; }
+suki-kira.com#$#body[style="overflow: hidden;"] { overflow: auto !important; }
 ||ogfap.com/_astro/AdContainer.
 ogfap.com#%#//scriptlet('trusted-set-local-storage-item', 'ad-shown', '$now$')
 shorts.xxx#$?#.boxads:not([data-creator]) { remove: true; }
