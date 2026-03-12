@@ -1,9 +1,9 @@
-! Checksum: fz1SKMnc/QfL3S7EvzhvkA
-! Diff-Path: ../patches/6/6-s-1773184437-3600.patch
+! Checksum: k/NITzIe4OrZBUkAqLA24g
+! Diff-Path: ../patches/6/6-s-1773333109-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.51.39
-! TimeUpdated: 2026-03-10T23:10:34+00:00
+! Version: 2.0.51.40
+! TimeUpdated: 2026-03-12T16:28:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -858,6 +858,11 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/226888
+tarnkappe.info#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'checkAdblocker')
+tarnkappe.info###adblock-check-overlay
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||cdntrf.com/tarnkappe-info.js$domain=tarnkappe.info
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226092
 speedweek.com#%#//scriptlet('prevent-setTimeout', 'offsetHeight')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
