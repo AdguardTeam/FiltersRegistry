@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.52.88",
-			"timeUpdated": "2026-03-12T09:20:11+0000",
+			"version": "2.4.52.89",
+			"timeUpdated": "2026-03-12T10:18:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.1.42",
-			"timeUpdated": "2026-03-12T00:29:27+0000",
+			"version": "2.1.1.43",
+			"timeUpdated": "2026-03-12T10:18:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.0",
-			"timeUpdated": "2026-03-12T09:20:29+0000",
+			"version": "2.0.63.1",
+			"timeUpdated": "2026-03-12T10:18:56+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.61.76",
-			"timeUpdated": "2026-03-12T08:19:01+0000",
+			"version": "2.2.61.77",
+			"timeUpdated": "2026-03-12T10:19:04+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.14.63",
-			"timeUpdated": "2026-03-12T08:19:03+0000",
+			"version": "2.1.14.64",
+			"timeUpdated": "2026-03-12T10:19:06+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.82.74",
-			"timeUpdated": "2026-03-12T07:23:59+0000",
+			"version": "2.0.82.75",
+			"timeUpdated": "2026-03-12T10:19:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1734,8 +1734,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.55.77",
-			"timeUpdated": "2026-03-12T09:20:47+0000",
+			"version": "2.1.55.78",
+			"timeUpdated": "2026-03-12T10:19:17+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
