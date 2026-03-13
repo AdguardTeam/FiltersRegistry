@@ -1,5 +1,5 @@
-! Checksum: LvLz1psQRPiVt19uF2XVEQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1773284879-3600.patch
+! Checksum: FysDKDGl9BbeblVu15s+nQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1773371176-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.22
@@ -493,7 +493,6 @@ europe1.fr###block-europe1-pubatfsidebar
 filmoflix.money,filmoflix.ad,papadustream.*,cpasfini.me,cinez.net,cpasmieux.club,papadustream.cash###playerOver
 filmoflix.money,filmoflix.ad,papadustream.*,papadustream.cash##.g-buttons
 terre-bitume.org##table[class="forumline 11ababa"]
-anime-sama.eu##div[id^="bann"][id$="t"]
 ici.radio-canada.ca##div[class^="_adBoxReset"]
 planhub.ca##.h-banner
 lemoniteur.fr##.b-ad-banner__wrap
@@ -509,7 +508,6 @@ actugaming.net##.h-content > .placeholder-wrap
 ici.radio-canada.ca##.adbox-cls
 hdnumerique.com###heroPub1
 hdnumerique.com##.column:has(> .is-divider[data-content="BON PLAN"])
-hdnumerique.com##article.box > aside:has(> .columns > .column > .hd-horizontal-card)
 cyclismactu.net#$#.stickySidePClong { min-height: auto !important; }
 cyclismactu.net#$#div[id^="ad-slot"] { display: none !important; }
 latribune.fr##div[id*="-ban"]
@@ -885,7 +883,6 @@ maisonapart.com###pub_MAP_ROTATION_PUB_EMPLACEMENT_TOPMAP
 onvasortir.com###pub_rectangle
 fr.tennistemple.com##.right > .box_nd > [id^="300x250"]
 replay.fr##.dfa
-lefigaro.fr##.fig-adgps
 empire-streaming.*,empire-stream.*##iframe[src="/banner_ads"]
 ||empire-streaming.*/serviceWorker.js
 /neads.$domain=~neads.io|~neads.co
@@ -1232,7 +1229,6 @@ serieslatinoamerica.tv#@#a[href*="/redirect?tid="]
 @@||aliexpress.com^$popup,domain=forum.hardware.fr
 $subdocument,third-party,domain=alltube.tv,badfilter
 @@||vidsrc.me/*.js$~third-party
-@@||image.tmdb.org^$domain=vidsrc.me
 $image,third-party,domain=vidsrc.me,badfilter
 $script,~third-party,domain=vidsrc.me,badfilter
 $xmlhttprequest,domain=vidsrc.me,badfilter
@@ -1651,6 +1647,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://go.*&zoneid=
 ://imads.
 ://link.*&siteid=$third-party
+://ma.ads.
 ://pop.$script,subdocument,third-party,xmlhttprequest
 ://promo.*?site_id=
 ://promo2.$third-party
@@ -1685,7 +1682,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?468&60&
 ?728&90&
 ?ad_domain=
-?ad_server_
 ?ad_sub=
 ?ADFassetID=
 ?adlink/
@@ -1786,6 +1782,7 @@ _adsens_
 _adspromo.
 _adunit=
 _adv_300.
+_adv_728.
 _advertising_img.
 _affiliate.$subdocument
 _affiliate_banner_
@@ -1819,6 +1816,7 @@ _publ1c1te.
 _publicite.
 _publicite_
 _publog_2.
+_pubscript.
 _pubted.
 _regie/aff.
 _regiepub/
@@ -1910,6 +1908,7 @@ _build=iclick-$popup
 ||shop^*cuid/?
 ||xyz^*&zoneid=$popup
 ||3xtraffic.com^$third-party
+||7x5.fr^$third-party
 ||acexedge.com^$third-party
 ||acwm.biz^$third-party
 ||acxiom-online.com^$third-party
@@ -1948,6 +1947,7 @@ _build=iclick-$popup
 ||adsgarden.com^$third-party
 ||adsixmedia.fr^$third-party
 ||adskom.com^$third-party
+||adsmena.com^$third-party
 ||adsmmgp.com^$third-party
 ||adsplius.lt^$third-party
 ||adspot.ch^$third-party
@@ -1998,7 +1998,6 @@ _build=iclick-$popup
 ||clickzzs.nl^$third-party
 ||clicmanager.fr^$third-party
 ||clicmanager.net^$third-party
-||clicnscores.ma^$third-party
 ||conduit.com^$third-party
 ||cougar-rencontre.net^$third-party
 ||cpa-content.com^$third-party
@@ -2097,6 +2096,7 @@ _build=iclick-$popup
 ||opti-digital.com^$third-party
 ||orangepublicite.fr^$third-party
 ||ovnet.fr^$third-party
+||pee-puu-see.com^$third-party
 ||permato.com^$third-party
 ||phuc.cc^$third-party
 ||picxxxhub.com^$third-party
@@ -2161,7 +2161,6 @@ _build=iclick-$popup
 ||yospace.com^$~object,third-party
 ||youborafds01.com^$third-party
 ||youwatch.org^$third-party
-||z-barre.com^$third-party
 ||zapcdn.space^$third-party
 ||zebestof.com^$third-party
 ||zmctrack.net^$third-party
@@ -2197,6 +2196,7 @@ _build=iclick-$popup
 ||abdicatehorrified.com^
 ||abkajbvlymqmb.top^
 ||ablebodiedsweatisolated.com^
+||ablecolony.com^
 ||abmagbychan.com^
 ||aboveaveragefinallycast.com^
 ||abwsunml.com^
@@ -2605,7 +2605,6 @@ _build=iclick-$popup
 ||looksmartppc.com^
 ||loppersixtes.top^
 ||lothlyunfaith.com^
-||lovedatng.com^
 ||loveonlinee.net^
 ||lqbvjmkoomerm.top^
 ||lvkwz.com^
@@ -2629,6 +2628,7 @@ _build=iclick-$popup
 ||mimerkapur.com^
 ||minemytraffic.com^
 ||minergate.com^
+||minero.cc^
 ||miskenish.com^
 ||missena.io^
 ||mk-cdn.net^
@@ -3115,7 +3115,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||echangegagnant.com^$image,third-party
 ||edenai.go2cloud.org^
 ||ehanex.com/images/main/banner_
-||eiffelturf.com/img/$third-party
 ||embed.ly^*.amazon.
 ||emploipartner.com/uploads/media/5fb6411bbfd4d310595939.jpg
 ||equirodi.com/images/pub/
@@ -3131,7 +3130,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||fcdn.webme.com^$third-party
 ||flux.effiliation.com^
 ||forokeys.com/foro/banners/
-||fpcplugs.com/do.cgi?
 ||fsx.i-run.fr^
 ||fuckandcdn.com^*/ads/
 ||fusion.localpoint.ch/widgets/$third-party
@@ -3171,6 +3169,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||lm-publicities.nyc3.digitaloceanspaces.com^
 ||loadshare.org/custom/
 ||logo.gralon.net/plogo-gralon-$third-party
+||maliwebnetcdn-*/wp-content/news/images/*habillage
 ||mangahome.com/store/banners/
 ||mangatown.com^*/banners/
 ||maxannu.com^$image,third-party
@@ -3887,7 +3886,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###sponsor-block
 ###sponsor_google
 ###sponsored-container
-###sponsoredContainer
 ###sponsoredProducts
 ###stickyDFP
 ###stop_ad
@@ -4242,6 +4240,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.publicite_horizontale_well
 ##.publicite_horizontale_wrapper
 ##.publicite_l
+##.publicite_locale
 ##.publicite_mobile
 ##.publicite_mobile_cache
 ##.publicite_sidebar
@@ -4313,6 +4312,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.sponsorfooter
 ##.squareadboxext
 ##.squareadevertise
+##.srcPub
 ##.srcPubZone
 ##.stackcommerce-widget
 ##.stage-advertising
@@ -4401,6 +4401,7 @@ logitheque.com###adni_widgets-2
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 akeo.fr###amazon
+leberry.fr###appel_BR_home_BPI_Stonest
 lejdc.fr###appel_JC_home_BPI_Stonest
 africanmanager.com###bLayer
 commentcamarche.com,commentcamarche.net###ba_right
@@ -4419,7 +4420,6 @@ ouest-france.fr###bloc_partenaires_sport
 ouest-france.fr###bloc_pleine_page_1
 ouest-france.fr###bloc_pleine_page_2
 ouest-france.fr###bloc_shopping
-cap-public.fr###blocflottant
 manga-news.com###block-up
 lanutrition.fr###block-views-remote-products-block-home
 voyages-sncf.com###block-vsct_vsca-megabanner
@@ -4518,6 +4518,7 @@ argentmania.com###publeft
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
 sante-dz.com###revenue-wrapper
 lesoir.be###rossel-imu-bottom
+glenatmanga.com###signature_chinoise > a > span
 maitresrestaurateurs.com###sliderPartenaire
 otaku-attitude.net###smart-bann
 amazon.fr###sp_detail
@@ -4525,6 +4526,7 @@ amazon.fr###sp_detail2
 animeka.com,europages.fr###sponsor
 maison-travaux.fr###sticker-video-popin
 ruedesjoueurs.com###supersticiel
+dinogaia.com###tableau_info
 lelmanga.com###teaser3
 tech2tech.fr###text-html-widget-20
 frenchweb.fr###text-html-widget-324
@@ -4549,7 +4551,6 @@ lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
 outlook.live.com##.Ogt7j[id*="-"]
-essonneinfo.fr##.Partenaire
 radiofrance.fr##.PopSlot
 marmiton.org##.RCP__sc-i1pqes-4
 amazon.fr##.a-link-normal[href*="&adId="]
@@ -4602,6 +4603,7 @@ multiup.io##.bg-info
 ennaharonline.com##.big-ad2
 journaldemontreal.com##.bigbox-container
 autonews.fr##.bl-partner
+nouvelobs.com##.bloc-partners
 egora.fr##.block-egora-pub
 cotemaison.fr##.block_partners
 aveq.ca##.blog-sidebar a > img
@@ -4641,7 +4643,6 @@ gamekult.com##.ed__news-h--native
 howtofix.guide##.eds-animate
 maison-et-domotique.com##.elementor-widget-heading
 manga-news.com##.external-link
-lefigaro.fr##.fig-adgps
 gameblog.fr##.footer__partners
 tukif.com##.footer_partner_container_wrapper
 realmadrid.com##.footer_sponsors
