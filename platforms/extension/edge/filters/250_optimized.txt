@@ -1,5 +1,5 @@
-! Checksum: Sl00wg9kYQ8Rx0iv7rCuDw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1773334249-14400.patch
+! Checksum: I0tE9uVTPPnYPrwXwchoQQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1773378227-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.21
@@ -938,7 +938,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||tjrksciow.pro^$all
 ||howtofix.guide^$document
 /^.*[^rw]\.advancedhosters.com(\/.*)?$/$document
-||anthargo.com^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||194.226.139.121^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1779,6 +1778,7 @@ winstall.app##button[class*=singleApp_shareApp_]
 ~threads.net##a[href^="https://threads.net/intent/post?text="]
 ##.sdc-site-share__link--x:not(html,body,:empty)
 ##[class*=socialshare i]:not(html,body,article,[class*=body i],[id*=body i])
+##a[href*=share-tools]
 ~kjokkenskriveren.no##[class*=ShareButton i]:not(button,body,html,article,[class*=body i],[id*=body i])
 ikea.com##.social-media-bar__content
 pixivision.net##._floated-bottom-bar
@@ -2161,7 +2161,6 @@ www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-
 tv.nu#?#a[title] span:contains(IMDb)
 kissanime.*##.rating
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
-vg.no###comments
 ||comment.youmaker.com^$domain=theepochtimes.com
 indiatimes.com##div[class$="cmtwrapper "]
 color-hex.com##.txtgray
@@ -2500,7 +2499,6 @@ $removeparam=oly_anon_id
 $removeparam=oly_enc_id,document,domain=~greenbuildingadvisor.com
 $document,removeparam=/^wickedid=.*$/i
 $document,removeparam=/^wickedsource=.*$/i
-$removeparam=rb_clickid,document
 $removeparam=s_cid
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
@@ -3139,6 +3137,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||bilibili.com^$removeparam=refer_from
 ||bilibili.com^$removeparam=msource
 ||bilibili.com/bangumi$removeparam=theme
+||bilibili.com/audio/au*?$removeparam=type
 ^p=1^$removeparam=p,domain=bilibili.com
 ^t=0^$removeparam=t,domain=bilibili.com
 ||bilibili.com^$removeparam=-Arouter
@@ -3228,6 +3227,7 @@ $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|a
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com
+$removeparam=hpt,domain=cnn.com
 ||pbtech.$removeparam=qr
 ||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
@@ -3462,6 +3462,7 @@ $removeparam=af,domain=1fichier.com|comodo.com
 $removeparam=intcid,domain=cbsnews.com
 ||mercadolibre.com.mx^$removeparam=/^matt_.*$/
 ||lidl.$removeparam=flyx
+$removeparam=s_kw,domain=expansion.com|marca.com
 ||qwant.com^$removeparam=client
 ||ecosia.org^$removeparam=addon
 $removeparam=referralInfo,domain=wix.com
@@ -3711,7 +3712,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||hotels.com^$removeparam=pwa_ts
 !+ NOT_OPTIMIZED
 ||hotels.com^$removeparam=latLong
-||atlassian.net^$document,removeparam=atlOrigin
 ||forms.office.com^$removeparam=route
 ||ul.com^$removeparam=redirected
 ||pond5.com^$removeparam=dd_referrer
@@ -3748,7 +3748,6 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
 ||microsoft.com/*/download/details$removeparam=lc
-ref=aftermath.site$document,removeparam=ref
 ||dell.com^$removeparam=lwp
 ||microsoft.com^$removeparam=srcref
 ||microsoft^$removeparam=fromcode

@@ -1,8 +1,8 @@
-! Checksum: K1FtegPBIfvgwBTUgYgUQQ
+! Checksum: XLcFluNKEAZAN/9WwNzF7A
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.57.98
-! TimeUpdated: 2026-03-13T00:53:28+00:00
+! Version: 2.1.57.99
+! TimeUpdated: 2026-03-13T05:00:43+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -82,6 +82,7 @@
 /share_sprite.png
 /share_toolbar.js
 /share_view.js
+/share_wechat.png
 /share_weibo.png
 /shareaholic.js
 /sharebar.js
@@ -222,6 +223,7 @@ _social-bar/
 ###facebook_share
 ###facebookbtn
 ###facebooklike
+###facebooklikebox-2
 ###facebooknotification
 ###facebookpopup-fan-exit
 ###facebookpopup-fanback
@@ -456,7 +458,6 @@ _social-bar/
 ###shareUrl
 ###share_bar
 ###share_block
-###share_bottom
 ###share_box
 ###share_button
 ###share_buttons
@@ -608,6 +609,7 @@ _social-bar/
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
+###socialMediaBar
 ###socialMediaFacebook
 ###socialMediaMenu
 ###socialMediaSection
@@ -1081,6 +1083,7 @@ _social-bar/
 ##.c-global-header__social
 ##.c-header__social
 ##.c-list--social
+##.c-main-footer__social
 ##.c-nav-social
 ##.c-navbar-primary__social
 ##.c-share
@@ -1371,7 +1374,6 @@ _social-bar/
 ##.follow-facebook
 ##.follow-instagram
 ##.follow-link-facebook
-##.follow-link-twitter
 ##.follow-link-wrapper
 ##.follow-linkedin
 ##.follow-pinterest
@@ -1632,6 +1634,7 @@ _social-bar/
 ##.horizontal.social
 ##.hover_share
 ##.hp-tab-share
+##.ht-share
 ##.icon--app-store
 ##.icon--dailymotion
 ##.icon--facebook
@@ -1666,6 +1669,7 @@ _social-bar/
 ##.icon-facebook-squared
 ##.icon-facebook-white
 ##.icon-facebook2
+##.icon-fb-small
 ##.icon-fb2
 ##.icon-flickr
 ##.icon-flipboard
@@ -1891,7 +1895,6 @@ _social-bar/
 ##.logo-social
 ##.logo_social
 ##.lsi-social-icons
-##.lst-shrpst
 ##.lst-social
 ##.lst_social
 ##.lzd-follow-us-icon
@@ -2007,6 +2010,7 @@ _social-bar/
 ##.nShare
 ##.native-share
 ##.native-share-buttons
+##.nav--share
 ##.nav--social
 ##.nav-footer-social
 ##.nav-share
@@ -2557,6 +2561,7 @@ _social-bar/
 ##.share_block_sub
 ##.share_bottom
 ##.share_box
+##.share_box_text
 ##.share_btn
 ##.share_btn_white
 ##.share_btns
@@ -2657,7 +2662,6 @@ _social-bar/
 ##.sharer-icon
 ##.sharer-twitter
 ##.sharers
-##.shares-top
 ##.shares__item
 ##.sharesocial
 ##.sharetastic
@@ -3432,6 +3436,7 @@ _social-bar/
 ##.twitterlink
 ##.twittershare
 ##.twshare
+##.twt-icon
 ##.twtr
 ##.ty-social-link
 ##.ty-social-link-block
@@ -3710,7 +3715,6 @@ _social-bar/
 ||line-apps.com^*/thirdparty/$third-party
 ||line.me/js/line-button.js?$third-party
 ||linkedin.com/countserv/$third-party
-||linkedin.com/img/$third-party
 ||messengerpeople.com^$third-party
 ||milotree.com^$third-party
 ||newsharecounts.com^$third-party
@@ -3813,6 +3817,7 @@ videocardz.com###welcome-modal
 tennis.com##.-sharebar
 nhl.com,petri.com##.-social
 ynet.co.il,ynetnews.com##.AccordionShareWrapper
+newatlas.com##.ActionLink
 cnbc.com##.ArticleBody-googlePreferredSourceContainer
 newscientist.com##.ArticleHeader__SocialWrapper
 nordvpn.com##.BlogPost__social-block
@@ -4211,7 +4216,6 @@ gamingbolt.com##.tag-social-media
 notthebee.com##.take-shareables
 firstpost.com##.tbl-cell-wp
 thediplomat.com##.td-follow
-opindia.com##.tdi_134
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
 twitchy.com##.thm-sc
@@ -4372,6 +4376,7 @@ teltarif.de##.sbm
 orf.at##.share-dialog
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
 bild.de##.sharingbar
+mpg.de##.social-media-buttons
 kurier.at##.socialmedia-nav
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
@@ -4501,6 +4506,7 @@ tecnoblog.net###tb-banner-whatsapp
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
+b9.com.br##.c-social-midias
 bcb.gov.br,correiodoestado.com.br,folhape.com.br,ocioso.com.br,opoder.com.br,portalperifacon.com,sampi.net.br##.compartilhar
 jovempan.com.br##.cta-model
 correiodoestado.com.br##.custom-link-container
@@ -4773,6 +4779,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||jsdelivr.net/npm/sharer.js
 @@||moneyweb.co.za^*/social-shares.min.js?
 @@||nhk.or.jp/common/sns/nol_share.js$script,~third-party
+@@||player.fm^*/social-icons/$image
 @@||radio24.ilsole24ore.com/plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js$script,~third-party
 @@||sharethis.com/button/buttons.js$domain=bristan.com
 @@||svgrepo.com/show/$image,~third-party
