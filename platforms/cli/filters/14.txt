@@ -1,9 +1,9 @@
-! Checksum: N+LkEoBL5F8tJRhkSLM88Q
-! Diff-Path: ../patches/14/14-s-1773512173-3600.patch
+! Checksum: PW+M928BSoiNu9fy7Ao2iQ
+! Diff-Path: ../patches/14/14-s-1773515738-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.62.2
-! TimeUpdated: 2026-03-14T18:13:08+00:00
+! Version: 2.2.62.3
+! TimeUpdated: 2026-03-14T19:12:58+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2584,6 +2584,8 @@ ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-
 !
 ! NOTE: Regular rules
 !
+ertflix.gr#$#.didomi-host { display: none !important; }
+ertflix.gr#$#html > body.didomi-popup-open { overflow: auto !important; }
 manta.net##div[data-test="CookieBottomSheet"]
 tapas.io##.z-cookiePopup
 immobilienpool.de#$#.modal-backdrop { display: none !important; }
@@ -18540,6 +18542,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227038
+@@||sdk.privacy-center.org/*/loader.js$domain=ertflix.gr
+@@||sdk.privacy-center.org/sdk/$domain=ertflix.gr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226899
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$script,domain=aljazeera.com
 @@||cdn.cookielaw.org/consent/$xmlhttprequest,domain=aljazeera.com
