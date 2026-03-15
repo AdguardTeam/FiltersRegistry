@@ -1,15 +1,15 @@
-! Checksum: 3LpW9dMtoUgj2Uxgcl40+A
-! Diff-Path: ../patches/203/203-s-1773348452-14400.patch
+! Checksum: +uzFJpJHCxxApapiA5/JHA
+! Diff-Path: ../patches/203/203-s-1773578993-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.81
-! TimeUpdated: 2026-03-12T20:44:36+00:00
+! Version: 2.0.4.82
+! TimeUpdated: 2026-03-15T12:46:38+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: Tls8iRoWnuTsGirsdfi8Bw
-! OriginalVersion: 202603121936
+! Checksum: UrluuBjHZI3qp9L9nFXAlA
+! OriginalVersion: 202603151023
 ! Title: Hufilter for AdGuard
-! Last modified: 12 Mar 2026 19:36 UTC
+! Last modified: 15 Mar 2026 10:23 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -450,7 +450,6 @@ gportal.hu##[class*="banner"]
 gsplus.hu,pcwplus.hu##.ad
 gsplus.hu,pcwplus.hu##.box-wrapper > .box-actual-magazine + .box-html
 gumiszoba.com##.wpcnt
-gyakorikerdesek.hu,hoxa.hu##div[style="text-align: center; margin: 30px 0px;"]:has(> a)
 gyakorikerdesek.hu###adryf
 gyakorikerdesek.hu##.rltdwidget
 gyakorikerdesek.hu##IFRAME
@@ -1197,6 +1196,10 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owne
 !-------------------------------------------------------------------------------!
 !------ Specific network filters -----------------------------------------------!
 !-------------------------------------------------------------------------------!
+! https://github.com/hufilter/hufilter/pull/704
+||*$image,domain=gyakorikerdesek.hu
+||*$media,domain=gyakorikerdesek.hu
+@@||gyakorikerdesek.hu/p/$image
 ! https://github.com/hufilter/hufilter/issues/172
 /dl/cnt/20[^0]\d-\d{2}/\d{4}//$image,domain=prohardver.hu|mobilarena.hu|logout.hu|hardverapro.hu
 ||3monkey.lol/vilagunk_640.html$domain=vilagunk.hu
@@ -2033,6 +2036,8 @@ greendex.hu#@#.heateor_sss_sharing_container
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
+! https://github.com/uBlockOrigin/uAssets/issues/32204#issuecomment-4062542193
+gyakorikerdesek.hu,hoxa.hu#?#[href^="/"]:matches-css(background:/https/)
 ! https://github.com/uBlockOrigin/uAssets/issues/23271
 jofogas.hu#%#//scriptlet('prevent-setTimeout', 'E(!1)')
 myonlineradio.hu#$#._bannerTop1 { background-color: transparent !important; }
