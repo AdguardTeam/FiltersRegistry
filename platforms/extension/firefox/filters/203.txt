@@ -1,15 +1,15 @@
-! Checksum: +uzFJpJHCxxApapiA5/JHA
-! Diff-Path: ../patches/203/203-s-1773578993-14400.patch
+! Checksum: f39bv20qJ3g8LAIxdeW7Fw
+! Diff-Path: ../patches/203/203-s-1773593216-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.82
-! TimeUpdated: 2026-03-15T12:46:38+00:00
+! Version: 2.0.4.83
+! TimeUpdated: 2026-03-15T16:43:56+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: UrluuBjHZI3qp9L9nFXAlA
-! OriginalVersion: 202603151023
+! Checksum: Wl1Q/f8s0YEY2GEDS9FP3A
+! OriginalVersion: 202603151525
 ! Title: Hufilter for AdGuard
-! Last modified: 15 Mar 2026 10:23 UTC
+! Last modified: 15 Mar 2026 15:25 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -122,6 +122,8 @@ hu##[class*="overlayBg"]
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
+jofogas.hu##.adverticum-anchor-banner
+hellomagyar.hu##.ban
 leetgaming.com##.banner_container_gtm
 naphire.hu##.ad__cont
 eredmenyek.com##div[data-zone-group]
@@ -391,7 +393,7 @@ eropolis.hu##[class*="banner"]
 es.hu##[class*="banner"]
 es.hu##[id*="banner"]
 es.hu##IFRAME
-esport1.hu##.adaptiveStyle, [class^="cls-"]:has(> .adaptiveStyle)
+esport1.hu##[class*="cls-"]
 eudomain.eu##div[id*="col_2"]
 evamagazin.hu##.popupunderlay
 evamagazin.hu##[class*="adPlace"]
@@ -455,6 +457,7 @@ gyakorikerdesek.hu##.rltdwidget
 gyakorikerdesek.hu##IFRAME
 gyakorikerdesek.hu##[id*="aswift"]
 gyakorikerdesek.hu##td.txtcenter:has(>script+ins)
+gyakorikerdesek.hu##div:has(> a[href^="/"] + div[style*="background-color"])
 gyaloglo.hu###banner
 gyaloglo.hu##div[class*="Advert"]
 gyartastrend.hu##[class*="contentBanner"]
@@ -1199,7 +1202,7 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owne
 ! https://github.com/hufilter/hufilter/pull/704
 ||*$image,domain=gyakorikerdesek.hu
 ||*$media,domain=gyakorikerdesek.hu
-@@||gyakorikerdesek.hu/p/$image
+@@||gyakorikerdesek.hu/p/$image,domain=gyakorikerdesek.hu
 ! https://github.com/hufilter/hufilter/issues/172
 /dl/cnt/20[^0]\d-\d{2}/\d{4}//$image,domain=prohardver.hu|mobilarena.hu|logout.hu|hardverapro.hu
 ||3monkey.lol/vilagunk_640.html$domain=vilagunk.hu
@@ -1471,6 +1474,7 @@ hu##.sz2020-logo
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
+hellomagyar.hu##.ct-popup
 24.hu##.a-hirstartRecommender
 24.hu##.fb-exit-popup-container
 24.hu##.m-donationBottomLine

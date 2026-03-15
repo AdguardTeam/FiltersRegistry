@@ -1,9 +1,9 @@
-! Checksum: 2gyRIoL73VlZ2qB4/cVlFQ
-! Diff-Path: ../patches/203_optimized/203_optimized-s-1773578981-14400.patch
+! Checksum: 01Q8kcdEfN1LtedVlzNqaw
+! Diff-Path: ../patches/203_optimized/203_optimized-s-1773593207-14400.patch
 ! Title: Hungarian filter (Optimized)
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.82
-! TimeUpdated: 2026-03-15T12:46:38+00:00
+! Version: 2.0.4.83
+! TimeUpdated: 2026-03-15T16:43:56+00:00
 ! Expires: 12 hours (update frequency)
 ##.ad__main
 ##.adblokk
@@ -87,6 +87,8 @@ hu###hirdetes
 hu###hirdetesek
 hu##ins[id^="aswift_"]
 hu##[class*="overlayBg"]
+jofogas.hu##.adverticum-anchor-banner
+hellomagyar.hu##.ban
 leetgaming.com##.banner_container_gtm
 naphire.hu##.ad__cont
 eredmenyek.com##div[data-zone-group]
@@ -354,7 +356,7 @@ eropolis.hu##[class*="banner"]
 es.hu##[class*="banner"]
 es.hu##[id*="banner"]
 es.hu##IFRAME
-esport1.hu##.adaptiveStyle, [class^="cls-"]:has(> .adaptiveStyle)
+esport1.hu##[class*="cls-"]
 eudomain.eu##div[id*="col_2"]
 evamagazin.hu##.popupunderlay
 evamagazin.hu##[class*="adPlace"]
@@ -416,6 +418,7 @@ gyakorikerdesek.hu##.rltdwidget
 gyakorikerdesek.hu##IFRAME
 gyakorikerdesek.hu##[id*="aswift"]
 gyakorikerdesek.hu##td.txtcenter:has(>script+ins)
+gyakorikerdesek.hu##div:has(> a[href^="/"] + div[style*="background-color"])
 gyaloglo.hu###banner
 gyaloglo.hu##div[class*="Advert"]
 gyartastrend.hu##[class*="contentBanner"]
@@ -1144,7 +1147,7 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu##.adaptiveAd
 prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owner):has(> h4:contains(/(Hirdetés|[Hh].*i.*r.*d.*e.*t.*é.*s)/) + div[class])
 ||*$image,domain=gyakorikerdesek.hu
 ||*$media,domain=gyakorikerdesek.hu
-@@||gyakorikerdesek.hu/p/$image
+@@||gyakorikerdesek.hu/p/$image,domain=gyakorikerdesek.hu
 /dl/cnt/20[^0]\d-\d{2}/\d{4}//$image,domain=prohardver.hu|mobilarena.hu|logout.hu|hardverapro.hu
 ||3monkey.lol/vilagunk_640.html$domain=vilagunk.hu
 ||aghtag.tech/libs/projectagora.min.js^$script,domain=gyakorikerdesek.hu|hoxa.hu
@@ -1401,6 +1404,7 @@ hu###szechenyi_2020_logo
 hu###szechenyi-banner
 hu##.szechenyi2020-top-infoblokk
 hu##.sz2020-logo
+hellomagyar.hu##.ct-popup
 24.hu##.a-hirstartRecommender
 24.hu##.fb-exit-popup-container
 24.hu##.m-donationBottomLine
