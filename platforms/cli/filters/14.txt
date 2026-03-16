@@ -1,9 +1,9 @@
-! Checksum: ocHC0gCXCFlv+M8oot1qQg
-! Diff-Path: ../patches/14/14-s-1773625407-3600.patch
+! Checksum: Tdhigp2dixIZX8tCesfs2w
+! Diff-Path: ../patches/14/14-s-1773630862-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.62.7
-! TimeUpdated: 2026-03-16T01:40:34+00:00
+! Version: 2.2.62.8
+! TimeUpdated: 2026-03-16T03:11:21+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18362,6 +18362,8 @@ geberit.de#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button
 conrad.*,br.de,peri.lv,webasto-comfort.com,shop-apotheke.com,sennheiser.com,antenne.de,bechtle.com,hagebau.de#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-accept-all-button"]')
 bonify.de,srf.ch,hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.nl,villeroy-boch.fr#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-deny-all-button"]')
 !
+! TODO: Rework when https://github.com/AdguardTeam/Scriptlets/issues/554 is resolved.
+mediamarkt.de#%#(()=>{const t=document.documentElement,o=new MutationObserver((()=>{const t=document.querySelector('#mms-consent-portal-container button[data-test="pwa-consent-layer-deny-all"]');if(t&&typeof t.click !== 'undefined'){t.click();}}));o.observe(t,{attributes:!0,childList:!0,subtree:!0})})();
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
 ! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_firefox)
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#body > * { filter: none !important; }
@@ -35739,6 +35741,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+olhardigital.com.br##.fitec-embcmp
+olhardigital.com.br##.top-bar-olhar
 android.com.pl##.wp-block-acp-newsletter-form
 toomics.in,toomics.com#%#//scriptlet('set-cookie', 'showCoinDiscountModal173', 'no')
 toomics.in,toomics.com###glo_contents > section.mt-8:has(> article a.bannerPromotion)
