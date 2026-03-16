@@ -1,5 +1,5 @@
-! Checksum: iMF9yXoPSPjaguQqkB+LoA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1773551817-14400.patch
+! Checksum: HwgbOvMyO03Ax7waZvmgNw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1773638389-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.23
@@ -340,6 +340,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 167.71.252.38$network
 ||commonjamknights.com^$all
 ||grievetube.com^$all
+||hardworkinglust.com^$all
 ||fluffyinfection.com^$all
 ||delicioustightbronze.com^$all
 ||markswaitingrouge.com^$all
@@ -551,8 +552,6 @@ drvhub.net##.driver-item__install
 ||newtabsearch.net^$document
 ||ey43.com^$all
 ||snowvan.xyz^$all
-||kygens.xyz^$all
-||host15m.cfd^$document
 ||crvftgbyh.click^$all
 ||tvgyfdtrf.pro^$all
 ||edweasdxf.pro^$all
@@ -597,7 +596,6 @@ www.microsoft.com##.card[data-bi-cn*="car chase" i][data-bi-cn*=racing i]
 .to/popconsole.php|
 google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|d\ownl\oad).*$/i):contains(/^.*(ph\ot\osh\op|dav\inc\i|\il{2}ustrat\or).*$/i):contains(/^.*(fre{2}|(cr|h)ack).*$/i))
 ||kuaizip.com^$all
-||xiaobaixitong.com^$all
 ||dabaicai.com^$all
 ||flash.cn^$all
 ||cprapid.com^$all
@@ -1004,6 +1002,7 @@ context.reverso.net#$#.blocked { filter: none !important; }
 linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea:has(.cGuestTeaser):not(:has(.ipsComposeArea_editor))
 ||subs.youmaker.com^$third-party
 ##.paywall-gradient:not(html, body)
+zapytaj.onet.pl##.know-better-answer
 instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
 zeit.de#$#.paragraph--faded { overflow: visible !important }
 zeit.de#$#.paragraph--faded::before { background-image: none !important }
@@ -1700,6 +1699,8 @@ $document,removeparam=/^source=webgains$/
 $document,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
 $removeparam=sClickID
 $removeparam=paid
+$removeparam=pacid
+$removeparam=pa-partnerid
 $removeparam=adtype
 $removeparam=tmad
 $removeparam=tmcampid
@@ -2024,7 +2025,6 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 $removeparam=_trkparms
 $removeparam=_from
 $removeparam=sacat
-$removeparam=amdata,domain=ebay.*
 $removeparam=hash,domain=ebay.*
 ||ebay.$removeparam=mkevt
 ||ebay.$removeparam=mkcid
@@ -2323,7 +2323,6 @@ $removeparam=user_ip
 ||baike.sogou.com^$removeparam=ch
 ||sogou.com^$removeparam=fromTitle
 ||mp.weixin.qq.com^$removeparam=scene
-@@||mp.weixin.qq.com/mp/qrcode?$removeparam=scene
 ||mp.weixin.qq.com^$removeparam=xtrack
 ||mp.weixin.qq.com^$removeparam=key
 ||mp.weixin.qq.com^$removeparam=ascene
@@ -2675,6 +2674,7 @@ $removeparam=srsltid,document
 ||dl-protect.$removeparam=rl
 ||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
+$removeparam=%24deep_link,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
 $removeparam=link_source_user_id,domain=nextdoor.com
@@ -2691,7 +2691,6 @@ $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com
 ||github.com^$removeparam=ref_page
 ||quizlet.com^$removeparam=funnelUUID
 $removeparam=qid,domain=bookdepository.com|eastday.com
-$removeparam=pk_vid,document
 ||xiaohongshu.com^$removeparam=app_platform,document
 ||xiaohongshu.com^$removeparam=app_version,document
 ||xiaohongshu.com^$removeparam=share_from_user_hidden,document
@@ -2763,6 +2762,11 @@ $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46q
 $document,removeparam=af_reengagement_window
 ||privatbank.ua^$removeparam=visit_id
 ||yandex.com/portal/set/any$removeparam=sk
+||affiliate.insider.com^$document,removeparam=amazonTrackingID
+||affiliate.insider.com^$document,removeparam=h
+||affiliate.insider.com^$document,removeparam=platform
+||affiliate.insider.com^$document,removeparam=postID
+||affiliate.insider.com^$document,removeparam=postSlug
 ||wordpress.com^$document,removeparam=/^ref=[a-z-]{5,}$/
 $document,removeparam=_x_ns_sku_id,domain=temu.com
 $document,removeparam=_x_ads_channel,domain=temu.com
@@ -2831,6 +2835,7 @@ $document,domain=carousell.*,removeparam=/^t-referrer_/
 ||www.roblox.com^$removeparam=treatmentType
 $document,removeparam=ucid,domain=unicredit.it|steampowered.com
 $document,removeparam=entrypoint,domain=bing.com
+ref=producthunt$document,removeparam=ref
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
@@ -2866,7 +2871,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 !+ NOT_OPTIMIZED
 ||www.rawstory.com^$removeparam=rsplus
 ||em.dynamicyield.com^$removeparam=tag_ids
-||filestore.app^$document,removeparam=/^client_ip=$/
 ||l.clips4sale.com^$removeparam=a
 ||l.clips4sale.com^$removeparam=o
 ||substack.com^$removeparam=r
