@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1vNm/FWoq2fG0EG8bBWYtg
-! Diff-Path: ../patches/250/250-s-1773651049-14400.patch
+! Checksum: cjJVhOaTvSJ8RTQY3g7KMg
+! Diff-Path: ../patches/250/250-s-1773665485-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.19.24
-! TimeUpdated: 2026-03-16T08:47:57+00:00
+! Version: 2.0.19.25
+! TimeUpdated: 2026-03-16T12:48:16+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -13804,7 +13804,7 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|d\ownl\oad).*$/i):contains(/^.*(ph\ot\osh\op|dav\inc\i|\il{2}ustrat\or).*$/i):contains(/^.*(fre{2}|(cr|h)ack).*$/i))
 ! Placeholder line for alternate list versions
 ! Title: 🐐 Dandelion Sprout's Lightweight Anti-'Social share' List
-! OriginalVersion: 07March2026v1-Beta
+! OriginalVersion: 16March2026v1-Beta
 ! Expires: 3 days
 ! Description: This list aims to achieve pretty broad (if not overly broad) coverage of social sharing buttons, with perhaps 1/50th~1/100th as many entries as what the biggest anti-'social button' lists out there have.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -14342,6 +14342,7 @@ swissinfo.ch##.si-page__utility-container
 midtnorskdebatt.no##.twitter
 knowyourmeme.com##.cbox-smedia
 kglakademi.dk##.social-button
+artstation.com##.s-icons
 ! For sites that have $generichide
 e24.no##.article-share
 ekstrabladet.dk##label[for*=ShareModal]
@@ -14455,7 +14456,7 @@ fileinfo.com##.top:has(a[href*="/windows_file_viewer"])
 ! Description: Are you tired of being nagged on by websites, that say "Log in to read more"? With this list, you'll be much less nagged on from now own.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! This is an extension file, not an independent list.
-! Extension file's version: 10May2025v1-Extension
+! Extension file's version: 16March2026v1-Extension
 ! Experts Exchange 📛📠
 experts-exchange.com##.accepted.answer:style(display: block !important)
 experts-exchange.com##.solutionIntertitialWrapper.body
@@ -14584,6 +14585,9 @@ instacart.com##.ReactModalPortal > div.AuthModal__Overlay:not(:has(button[aria-l
 instacart.com##body.body--auth-modal-open:style(overflow: visible !important)
 ! https://github.com/DandelionSprout/adfilt/issues/1130
 chatgpt.com##+js(set-local-storage-item, oai/apps/hasSeenNoAuthImagegenNux, true)
+! globalcomixCOM - Makes the last 2 pages of comics previews somewhat more readable (11/03/2026)
+globalcomix.com##.chakra-portal
+globalcomix.com##.chakra-image:style(filter:none!important)
 ! ——————————————————————————————————————————————————————————————————————
 ! Entries below are fixed in other lists that are included in uBO as of the 2nd of March 2019, but are also in this list to serve minimal-setup users.
 !! Removing the blurring of random Pinterest images ↪️📛 (Fixed in "uBlock Filters - Annoyances", except for the Redirector portion of it)
@@ -16431,7 +16435,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 14March2026v1
+! OriginalVersion: 16March2026v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -20804,6 +20808,11 @@ $document,removeparam=intid,domain=homedepot.*
 ref=theneedlenews.com$document,removeparam=ref
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-16128367
 ref=thestack.technology$document,removeparam=ref
+! https://www•deezer•com/da/album/677166011?host=692437151&utm_campaign=clipboard-generic&utm_source=user_sharing&utm_content=album-677166011 (Generated from a link•deezer•com link; the site has $ghide in EasyList; 16/03/2026)
+||deezer.$removeparam=host
+||deezer.$removeparam=/^utm_.*$/
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-16157417
+ref=blog.livekit.io$document,removeparam=ref
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
