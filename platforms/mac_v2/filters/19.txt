@@ -1,9 +1,9 @@
-! Checksum: PTHvo7nil0YY5rwb0TvcDQ
-! Diff-Path: ../patches/19/19-s-1773657105-3600.patch
+! Checksum: OFtJni7OHuZC5whsmvN+aA
+! Diff-Path: ../patches/19/19-s-1773664050-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.72.28
-! TimeUpdated: 2026-03-16T10:28:39+00:00
+! Version: 2.0.72.29
+! TimeUpdated: 2026-03-16T12:24:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3315,6 +3315,10 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+comodo.com#$#.blogModalPopup { display: none !important; }
+comodo.com#$#.modal { display: none !important; }
+comodo.com#$#.modal-backdrop { display: none !important; }
+comodo.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 ||cdn.etasio.com/scripts/apps/modules/wheel.js
 elcomercio.pe#$#div.tp-modal[style^="z-index: 300050;"] { display: none !important; }
 elcomercio.pe#$#.tp-backdrop { display: none !important; }
@@ -12386,6 +12390,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+gamesradar.com###utilitybar__button--newsletter
+gamesradar.com##a[href^="https://google.com/preferences/source?q="]
 winaero.com###ddpa
 realty.yandex.ru##main > div > div[class^="container-"]:has(> div[class^="root-"] > a[href="https://t.me/yatakzhivu_mag"])
 olhardigital.com.br##.fitec-embcmp
