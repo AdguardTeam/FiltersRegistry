@@ -1,8 +1,8 @@
-! Checksum: qnjR11fUR/rn4Eepb3UiqQ
+! Checksum: yNmcz9ZjuNx85e3b8GkLvA
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.1.54
-! TimeUpdated: 2026-03-16T03:10:52+00:00
+! Version: 2.1.1.55
+! TimeUpdated: 2026-03-16T04:58:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -75964,6 +75964,8 @@
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||a.n11.com^
+||h.n11.com^
 ||pulse.perfmetrics.netflix.com^
 ||eu-south-2.alb.pulse.perfmetrics.netflix.com^
 ||analytics.shutterstock.com^
@@ -80148,6 +80150,7 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||sdk.rum.aliyuncs.com/v*/bl.js
 ||cimri.com/api/pixel
 ||api.k2s.cc/v1/analytics/
 ||jm-madeira.pt/html/js/iter-libraries/iter-statistics.js
@@ -82582,7 +82585,7 @@ markezine.jp##.carouselBlock > li[id^="cx_"].c-headlineindex_listitem
 ||cdn.nwl1.megaknihy.cz/tr.js
 ||amazon.*/*/track_framework_metrics?
 ||vicodes.com/tag/load-*.js
-||arms-retcode-sg.aliyuncs.com/r.png?
+||arms-retcode*.aliyuncs.com/r.png?
 ||app.turbobiyt.net/js/analytics/index.js
 ||revive-chat.io/js/tracking-min.js
 ||sp.vtex.com/event-api/
@@ -88197,6 +88200,9 @@ d4?appid*type*
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227097
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||n11scdn.akamaized.net/ha.js$domain=n11.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226803
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js$domain=suki-kira.com

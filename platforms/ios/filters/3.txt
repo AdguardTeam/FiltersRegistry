@@ -1,9 +1,9 @@
-! Checksum: RzFcuxoZTrAtrte/pOEhug
-! Diff-Path: ../patches/3/3-s-1773630901-3600.patch
+! Checksum: X7gADuBcn05XeR9ZZD8vIA
+! Diff-Path: ../patches/3/3-s-1773637345-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.1.54
-! TimeUpdated: 2026-03-16T03:10:52+00:00
+! Version: 2.1.1.55
+! TimeUpdated: 2026-03-16T04:58:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -64548,6 +64548,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||a.n11.com^
+||h.n11.com^
 ||pulse.perfmetrics.netflix.com^
 ||eu-south-2.alb.pulse.perfmetrics.netflix.com^
 ||analytics.shutterstock.com^
@@ -68733,6 +68735,7 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||sdk.rum.aliyuncs.com/v*/bl.js
 ||cimri.com/api/pixel
 ||api.k2s.cc/v1/analytics/
 ||jm-madeira.pt/html/js/iter-libraries/iter-statistics.js
@@ -71316,7 +71319,7 @@ markezine.jp##.carouselBlock > li[id^="cx_"].c-headlineindex_listitem
 ||cdn.nwl1.megaknihy.cz/tr.js
 ||amazon.*/*/track_framework_metrics?
 ||vicodes.com/tag/load-*.js
-||arms-retcode-sg.aliyuncs.com/r.png?
+||arms-retcode*.aliyuncs.com/r.png?
 ||app.turbobiyt.net/js/analytics/index.js
 ||revive-chat.io/js/tracking-min.js
 ||sp.vtex.com/event-api/
@@ -76993,6 +76996,10 @@ d4?appid*type*
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227097
+n11.com#%#//scriptlet('prevent-addEventListener', 'click', 'ownerDocument', 'elements', 'a.product-card[href]')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||n11scdn.akamaized.net/ha.js$domain=n11.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226803
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js$domain=suki-kira.com
