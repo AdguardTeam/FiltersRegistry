@@ -1,9 +1,9 @@
-! Checksum: JsVs1A3MtRkRCy5ATY9ydg
-! Diff-Path: ../patches/122_optimized/122_optimized-s-1773651054-14400.patch
+! Checksum: 2LJQh9nhcktvqhSiId7LVg
+! Diff-Path: ../patches/122_optimized/122_optimized-s-1773679930-14400.patch
 ! Title: Fanboy's Annoyances (Optimized)
 ! Description: Removes in-page pop-ups and other annoyances. Includes Fanboy's Social Blocking & EasyList Cookie Lists.
-! Version: 2.1.61.94
-! TimeUpdated: 2026-03-16T08:47:21+00:00
+! Version: 2.1.61.95
+! TimeUpdated: 2026-03-16T16:48:45+00:00
 ! Expires: 12 hours (update frequency)
 /1-popupally-pro-code.js
 /akam-sw.js
@@ -18038,6 +18038,10 @@ s.tabelog.com#$#body,html { overflow-y: auto !important; }
 genius.com#$?#.android_interstitial { remove: true; }
 shufoo.net#%#//scriptlet('ubo-rc', 'is-hidden', 'body')
 shufoo.net##.appdl_modal_overlay
+sp.nicovideo.jp###jsAppModalWithLogin
+sp.nicovideo.jp#$#.is-fixed body:not(.player-horizontal):has(#jsAppModalWithLogin) { position: static !important; width: unset !important; }
+sp.nicovideo.jp#$#.is-fixed:has(#jsAppModalWithLogin) { position: static !important; width: unset !important; }
+sp.nicovideo.jp#$#body.hdNoFixed.watch:has(#jsAppModalWithLogin) { padding-top: unset !important; overflow: auto !important; min-height: unset !important; }
 @@||braze.com/api/$domain=dairyqueen.com|deezer.com
 @@||oakley.com^*/notifications.js$~third-party
 @@||assure.ameli.fr^*/smart-app-banner.js$~third-party
