@@ -1,5 +1,5 @@
-! Checksum: o6qbybIA39JSRNzuu92a6A
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1773653642-3600.patch
+! Checksum: AiHEWaUnuMne2bE8kFjFOQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1773716916-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.51.41
@@ -27,7 +27,6 @@
 ||cockpit.symplr.de^$third-party
 ||afl-static-cdn.newbiz-prod.stroeerws.de^$third-party
 ||embed.contentverticals.de^$third-party
-||tikibihu.com^$third-party
 ||partners2.das-onlinespiel.de^$third-party
 ||intextlinks.idg.zone^$third-party
 ||megadeliveryn.com^$third-party
@@ -909,6 +908,7 @@ sportdeutschland.tv#%#//scriptlet('set-constant', 'IOMm', 'noopFunc')
 @@||sportdeutschland.tv/assets/ads.js
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=sportdeutschland.tv
+sinoptik.de#$?#body > iframe[name]:not([class]):not([id]):not([src])[style="display:none"] { remove: true; }
 ||tinypass.com^$domain=blick.ch
 zappn.tv#%#!function(){window.somtag={cmd:function(){}};}();
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium)
@@ -1796,7 +1796,6 @@ giga.de#%#//scriptlet('remove-class', 'show-teaserheld-header', 'body')
 delamar.de#%#//scriptlet('prevent-setTimeout', '#modal_livestream')
 krone.at#$#body .ad-container[data-nodeid] { display: block !important; }
 datenbanken-verstehen.de##div[class^="ad-block-"]:not(.ad-block-text)
-datenbanken-verstehen.de###ai_widget-38
 nordbayern.de##.row:has(> article:first-child + div:last-child > a:only-child > div:only-child > .modul__teaser__anzeige)
 macwelt.de,pcwelt.de##.jwPlayer--floatingContainer
 auf1.tv#?#.w-full:has(> div.text-sm:contains(Bezahlte Anzeige))
@@ -2532,7 +2531,6 @@ geo.de##.sidebar-cobranded-teaser
 finanzen.net##body .ad-hint
 finanzen.net##div[id^="fin-ob-box-ar_"]
 bitblokes.de###google_ad_2_amazon
-carsharing-news.de##.inside-right-sidebar > aside#custom_html-2 > .textwidget > a[href][target="_blank"] > img
 kodi-tipps.de##.identitaet-box
 kodi-tipps.de##.entry-content > p > a[href="https://www.kodi-tipps.de/out/?id=cyberghost"]
 dubisthalle.de##.sidebar-content > .dbh-widget
@@ -2651,7 +2649,6 @@ finanzen.at,finanzen.ch##.equalheights > .col-md-4.col-xs-12 .dynamic-content
 ffh.de###omsRectangleChannel
 moz.de,lr-online.de,swp.de##.swp-adbox
 wallstreet-online.de##div[id^="sban"]
-aerzteblatt.de##.anzeigenbox
 holidaycheck.de##div[id^="tad"]
 finanz-tools.de##.sidebar.nur_desktop
 buzer.de##.anz_unten
@@ -4523,7 +4520,6 @@ lippe-news.de##.anzeige_content
 motorsport-total.com##.anzeige_teas_rect
 motorsport-total.com##.anzeige_teas_rect_ax
 partyamt.de##.anzeigen
-aerzteblatt.de##.anzeigenbox
 oefb.at##.app-foesvAdSpace
 lokalmatador.de##.article-adbanner
 heise.de##.article-layout__header-wrbng
@@ -4684,7 +4680,6 @@ l-mag.de##.editorial-teaser
 eintracht.de##.ef-article-card--ad
 eintracht.de##.ef-stadium-ad__banner
 report24.news##.elementor-element-1266dd4
-spot-on-news.de##.elementor-element-127b96a
 elektroauto-news.net##.elementor-element-1f0334b
 report24.news##.elementor-element-41d9f5c
 report24.news##.elementor-element-4330702
@@ -4776,6 +4771,7 @@ xdate.ch##.interstitial
 saechsische.de##.iqadtile-wrapper
 faz.net,spektrum.de,sueddeutsche.de,tagesspiegel.de,zeit.de##.iqdcontainer
 welt.de##.is-commercial
+islamische-zeitung.de##.islam-widget
 it-boltwise.de##.itbw-asect + style + center
 it-daily.net##.itd-ad-sidebar
 kleinanzeigen.de##.j-liberty-wrapper

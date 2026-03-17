@@ -1,5 +1,5 @@
-! Checksum: fHbQAKQQQtjp+rorHSpwFA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1773678741-3600.patch
+! Checksum: c1I94cJS2V64mBBwDl/FLw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1773716893-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.26
@@ -1659,6 +1659,7 @@ _banniere-468.
 _banniere-728.
 _bnrrotator_
 _board_ad.
+_dfp_conf.js
 _display_ad_
 _domain=ads.
 _event_pub.
@@ -1669,6 +1670,7 @@ _isab.
 _jx.ads/
 _liens/banniere-
 _mobileAds|
+_nnads/$subdocument
 _pages_ad.
 _personalized_ads
 _pop.php?z=
@@ -1834,6 +1836,7 @@ _build=iclick-$popup
 ||afilio.com.br^$third-party
 ||apypxl.com^$third-party
 ||aquaplatform.com^$third-party
+||asiatmessenger.com^$third-party
 ||askmecca.com^$third-party
 ||atedra.com^$third-party
 ||avenir-affiliation.fr^$third-party
@@ -2111,6 +2114,7 @@ _build=iclick-$popup
 ||arraigncompter.com^
 ||ashinetalk.com^
 ||asialiahersir.top^
+||asmonfernor.com^
 ||atappanic.click^
 ||atimaze.com^
 ||avaljumectk.com^
@@ -2253,7 +2257,6 @@ _build=iclick-$popup
 ||domainscherts.com^
 ||dorpshexyls.com^
 ||douveejoalastu.net^
-||dowabledecil.com^
 ||doxdynpvwvkcw.com^
 ||dpuplet.net^
 ||dq95d35.com^
@@ -2574,7 +2577,6 @@ _build=iclick-$popup
 ||pilleustrig.com^
 ||pimentoscoter.com^
 ||pimplyhauling.com^
-||pitapatcalloo.com^
 ||pittardhectare.com^
 ||pketred.com^
 ||platedmanlily.com^
@@ -2987,7 +2989,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||exceluser.com/images/info/pub/
 ||ezojs.com/ezoic/
 ||f00.psgsm.net/p/891014/sigma-forum.gif
-||fapbase.com/widgets?
 ||fcdn.webme.com^$third-party
 ||flux.effiliation.com^
 ||forokeys.com/foro/banners/
@@ -3073,7 +3074,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||static.k2s.cc/images/i/
 ||static.wui.fr/widget-uptogo/$third-party
 ||super-plans.com^$script,subdocument,third-party
-||tac2.xcams.com/livecams/$third-party
 ||teenskitten.com^$media,script
 ||themasoftware.com/images/banners/$third-party
 ||tools.prnewswire.com^$third-party
@@ -3436,6 +3436,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||viamichelin.*/img/partners/
 ||vidmoly.to/static/vastAD.js
 ||vosfemmes.com^$script,subdocument
+||weblettres.net/@images/pub/
 ||weshrak.com^*/imp.php?
 ||weshrak.com^*/pub.php?
 ||wiflix-*/voir/
@@ -3590,6 +3591,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###partner-ads2
 ###pave4_ad
 ###pavePub
+###pave_pub
 ###pavepub
 ###pie_pub_google
 ###player-option-fake
@@ -3785,7 +3787,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.banniere_pub
 ##.before-side-nav-ad
 ##.bg-adsense
-##.bigadvert
 ##.bloc-ads
 ##.bloc-pub
 ##.bloc-pub2
@@ -3917,6 +3918,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.lbl-ad
 ##.leaderboard728
 ##.leftSideAds
+##.leftaddsense
 ##.liens-sponsorises__external
 ##.line-adv
 ##.logo-right-ads
@@ -4281,6 +4283,7 @@ lanutrition.fr###block-views-remote-products-block-home
 voyages-sncf.com###block-vsct_vsca-megabanner
 bricoleurdudimanche.com###block_a_decouvrir
 cowcotland.com###blocpub1
+soudure.fr###bodytopbanner
 pagesjaunes.fr###bons-plans
 cowcotland.com###bottom_pubN2
 flashresultats.fr,flashscore.fr###box-over-content-a
@@ -4407,6 +4410,7 @@ lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
 outlook.live.com##.Ogt7j[id*="-"]
+essonneinfo.fr##.Partenaire
 radiofrance.fr##.PopSlot
 marmiton.org##.RCP__sc-i1pqes-4
 amazon.fr##.a-link-normal[href*="&adId="]
@@ -4450,6 +4454,7 @@ iphone4.fr,jeux-mmorpg.com##.baner
 judgehype.com##.bannerATF_container
 2ememain.be##.bannerContainerLoading
 darjadida.com##.banner_125x125
+roadsexe.com##.banner_right
 bfmtv.com##.banner_top
 agroligne.com,cultivoo.com,laverite.mg,rtc.be,sudhorizons.dz##.bannergroup
 liberte-algerie.com##.bannergroup_pave
@@ -4673,7 +4678,6 @@ seloger.com##[data-testid="serp-side-skyscraper-top"]
 toutvendre.fr##[href*=".kelkoogroup.net/"]
 fnac.com##[id$="-sponsored_products-0"]
 voyageforum.com##[id*="billboardArround"]
-comarketing-news.fr##[id^="comar-"]
 3dnatives.com##[id^="dnati-"]
 jeuxvideomoinschers.fr,tahiti-infos.com##[id^="pub_"]
 moneyvox.fr##[mam-campaign="Ban"]
@@ -4700,7 +4704,6 @@ rtl.be##a[href*="://ad.doubleclick.net/"]
 jeuxetcompagnie.fr##a[href*="://www.ludeek.com/"] > img
 nouvelobs.com##a[href*="?partner="]
 abcbourse.com,meteofrance.com##a[href*="?utm_source="]
-voyageforum.com##a[href*="_ads;"]
 welovebuzz.com##a[href*="_adw&"]
 jds.fr##a[href*="_clic.php?"]
 bleachmx.fr##a[href*="californiansmiles.com/products/"]
