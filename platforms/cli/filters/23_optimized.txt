@@ -1,9 +1,9 @@
-! Checksum: 3Hxc/pVqUtBJknAzIbZQew
-! Diff-Path: ../patches/23_optimized/23_optimized-s-1773329213-3600.patch
+! Checksum: TugalCaztUz6+UypQ6WhwA
+! Diff-Path: ../patches/23_optimized/23_optimized-s-1773758029-3600.patch
 ! Title: AdGuard Ukrainian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.7.83
-! TimeUpdated: 2026-03-12T15:24:25+00:00
+! Version: 2.0.7.84
+! TimeUpdated: 2026-03-17T14:31:03+00:00
 ! Expires: 12 hours (update frequency)
 /kinogo/js/ads/*
 /code/video-steam/?id=*&vast=
@@ -195,6 +195,8 @@ rtl.*/init.js?$third-party
 /bens/*/vinos.js?
 /bens/vinos.js?
 /bens/somejscode.js
+!+ PLATFORM(windows, mac, android, cli)
+/bens/vinos$redirect=nooptext,important
 /a.php?id=*&loc=*&ref=
 /b?size=*&catgry=$script,third-party
 /code/partners.php?id=$third-party
@@ -3424,8 +3426,7 @@ http://w7.ru^$third-party
 62.76.25.27^$network
 62.76.25.28^$network
 45.82.68.79^$network
-!+ NOT_PLATFORM(windows, mac, android)
-||greencuttlefish.com^$third-party,~xmlhttprequest
+||greencuttlefish.com^$third-party
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||cpm.wargaming.net^$third-party
 ||adfox.yandex.ru^$domain=~yandex.by|~yandex.cloud|~yandex.com|~yandex.com.am|~yandex.com.tr|~yandex.kz|~yandex.net|~yandex.ru|~yandex.uz
@@ -3459,6 +3460,10 @@ wss://s.zmctrack.net/
 @@||s.znctrack.net/z$domain=ukr.net
 ||s.znctrack.net/z$xmlhttprequest,redirect=noopjson,important,domain=ukr.net
 sinoptik.ua#$#head > style[id]:empty { background-image: none !important; }
+sinoptik.ua#%#(function () { const mutObs = new MutationObserver(function () { const elStyle = document.querySelector('link[type="text/css"][rel="preload"][as="style"][disabled]'); if (elStyle) { mutObs.disconnect(); elStyle.removeAttribute('disabled'); elStyle.setAttribute('rel', 'stylesheet'); } }); mutObs.observe(document, { childList: !0, subtree: !0 }); setTimeout(function () { mutObs.disconnect(); }, 1E4); })();
+sinoptik.ua$$script[wildcard="*function*=""bind""*"][max-length="5000"]
+meteofor.com.ua$$script[wildcard="*function*=""bind""*"][max-length="15000"]
+meteofor.com.ua##.placeholder
 forumodua.com#$?#head > iframe[name] { remove: true; }
 www.ukr.net#%#//scriptlet('remove-node-text', 'script', '!function(r,n,t,e)')
 www.ukr.net#$?#body > iframe { remove: true; }
@@ -3474,8 +3479,6 @@ sinoptik.ua$$script[tag-content="div-gpt-ad"]
 sinoptik.ua#%#//scriptlet("abort-on-property-read", "SIN.AdsLoader")
 sinoptik.ua$$script[tag-content="SIN.AdsLoader.adBlockDetector()"][max-length="16000"]
 budport.com.ua##body > div[style*="text-align:center"][style*="z-index:9999"]
-!+ NOT_PLATFORM(windows, mac, android)
-@@||pubads.g.doubleclick.net/gampad/ads?sz=640x360&ad_rule=0&iu=%2F82479101%2FTsn.ua%2FPREroll-1_Cut&cust_params=$domain=imasdk.googleapis.com
 1plus1.video#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||1plus1.video/static/player/js/ovva.$script,replace=/\.abMessage\(\)//
 @@||1plus1.video/static/pubads.ad^
@@ -3492,8 +3495,6 @@ budport.com.ua##body > div[style*="text-align:center"][style*="z-index:9999"]
 @@||gaua.hit.gemius.pl/gemiuslib.js$domain=unian.net|unian.ua
 !#safari_cb_affinity
 prozoro.net.ua#%#//scriptlet('abort-on-property-read', 'adsBlocked')
-!+ NOT_PLATFORM(windows, mac, android)
-@@||pixel.adtelligent.com/player/adblock$domain=player.starlight.digital
 ||static.adtelligent.com/static/jsvpaid.js$script,redirect=noopjs,important,domain=stb.ua|novy.tv|ictv.ua|teleportal.ua
 ictv.ua#@##adblock
 @@||geo-service.adtelligent.com^|$domain=ictv.ua
@@ -3519,10 +3520,6 @@ omskbird.at.ua###_uwndWnd1
 24tv.ua##.no-ad-block
 @@||i.online.ua/js/advertisement.js
 @@||i.online.ua/adsence.js
-!+ NOT_PLATFORM(windows, mac, android)
-zaxid.net,kurs.com.ru,isport.ua,24tv.ua,ria-m.tv,allboxing.ru#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "!function()")
-!+ NOT_PLATFORM(windows, mac, android)
-dengi.ua,kino-hd720.net,mirknig.su,kino-fs.ucoz.net,ex-fs.net,hvylya.net#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "/\/\*[0-9a-f]{40}\*\//")
 aniqit.com#%#//scriptlet('json-prune', 'vast')
 ain.ua#%#//scriptlet('abort-current-inline-script', 'jQuery', 'link_br')
 classicalmusicnews.ru,agroreview.com,agronews.ua#%#//scriptlet('abort-on-property-read', 'wpsite_clickable_data')

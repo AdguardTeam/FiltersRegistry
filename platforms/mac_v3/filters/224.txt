@@ -1,9 +1,9 @@
-! Checksum: i4tGun4EnGiogj8Wv5YMNw
-! Diff-Path: ../patches/224/224-s-1773755017-3600.patch
+! Checksum: RN7um8EM/RMdpPpvrKJ28w
+! Diff-Path: ../patches/224/224-s-1773758079-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.56.12
-! TimeUpdated: 2026-03-17T13:40:07+00:00
+! Version: 2.1.56.13
+! TimeUpdated: 2026-03-17T14:31:07+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -841,7 +841,7 @@ msn.cn#%#//scriptlet('json-prune', 'configs.*.properties.slideshowWCSettings.int
 ! which is set by "https://log.mmstat.com/eg.js" script, but it's blocked on DNS level, so we need to set cookie manually.
 ! Original cookie value is the same as ETag value from "https://log.mmstat.com/eg.js" response, but it's not static.
 ! So as a workaround we use hardcoded value from "https://g.alicdn.com/kplayer/kuplayer/4.5.26-xmedia/index.js" script.
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 v.youku.com#%#(()=>{const e="cna",t=()=>null!==document.cookie.match(new RegExp(`^${e}=|; ${e}=`));if(t())return;const o=new MutationObserver((()=>{const o=document.querySelector("preplay-layer > error-layer .preLayer-title");o&&o.textContent.includes("请关闭VPN代理软件或广告拦截插件后重试")&&!t()&&(document.cookie=`${e}=MwCHGEQKugYCAWoLKcbU0UGk;`,window.location.reload())})),n=document.documentElement;o.observe(n,{attributes:!0,childList:!0,subtree:!0}),setTimeout((()=>o.disconnect()),1e4)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34910
 goodav17.com#%#//scriptlet("abort-on-property-read", "popunder")
@@ -3159,7 +3159,7 @@ huavod.com,huaren.live#%#//scriptlet('set-constant', 'ConFig.config.ads', 'empty
 ||huavod.com/player/$replace=/let ConFig/var ConFig/,document,subdocument
 ||huaren.live/player/$replace=/let ConFig/var ConFig/,document,subdocument
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177520
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 /gmu-download.oss-$image,redirect-rule=1x1-transparent.gif,domain=voflix.vip
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204700
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202922
@@ -3229,7 +3229,7 @@ m.nivod2.com,m.nivod2.tv,m.nivod4.com,m.nivod4.tv,m.nivod5.tv,m.nivod7.tv,m.nivo
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154676
 ! Website shows "Request failed with status code 500" error when request is blocked by apps
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||adpai.thepaper.cn^$xmlhttprequest,redirect-rule=nooptext,domain=thepaper.cn
 ! yeyemo4.com
 ! frequently changed domain
@@ -3254,7 +3254,7 @@ $script,third-party,denyallow=cdn.yinghuazy.xyz|rsc.cdn77.org|linkvertise.com|fa
 !+ NOT_PLATFORM(ext_ublock)
 $script,third-party,denyallow=myqcloud.com|bytecdntp.com|pddpic.com|googletagmanager.com,domain=yjys.me
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/4227
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 doubibackup.com##body div.guangg
 ! fix infinite call
 ||52996.me/upload/ad/$media,redirect=noopmp4-1s
@@ -3297,14 +3297,14 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211243
 ! https://github.com/AdguardTeam/CoreLibs/issues/2003
 ! TODO: Remove when CoreLibs issue is fixed
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||cdn.dingxiang-inc.com/ctu-group/constid-js/index.js$replace=/(^\/\*!.*?\*\/)/\$1try{const t=document.head\,e=document.createElement("style");e.type="text\/css"\,e.textContent=".wp > .a_t:has(> table > tbody > tr > td > .adsbygoogle) { display: none !important; }"\,t.appendChild(e)}catch(t){};/,domain=right.com.cn
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158639
 ||yfsp.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
 ||iyf.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
 ||aiyifan.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114470
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||101.qq.com/js/base.js$replace=/(el\.getAttribute\("type"\) === "text\/javascript")/\(\$1 && !el\.getAttribute\("nonce"\)\)/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/87176
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54359
@@ -3325,7 +3325,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225957
 mnya.tw#@##advertise
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225120
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||republicworld.com/_app/immutable/assets/FloatAd.*.css$redirect-rule=nooptext
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223843
 xjwiki.github.io#@##pub_head
@@ -3370,7 +3370,7 @@ huya.com#@##banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187167
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=nowplayer.now.com,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183849
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 @@||s1-static.msstatic.com/mfe/huya_main/*.html$xmlhttprequest,elemhide,jsinject,content,extension,domain=huya.com
 ! 360doc.com - fixing frames with content (chat, security settings)
 ||360doc.com^*.html?t=$badfilter
@@ -3458,7 +3458,7 @@ gamersglobal.de#@#.gg-box
 ! https://github.com/AdguardTeam/AdguardFilters/issues/115152
 @@||img*.kangaroobro.com/images/$image,domain=leyuman.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114332
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 @@||cloud.189.cn/web/subapp/main.html$jsinject,elemhide,extension
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114739
 @@||amazonaws.com/storage.liveabc.com/ads/$domain=store.liveabc.com
@@ -5338,6 +5338,7 @@ newduba.cn###jq_youxi
 ||af1tsjdta.com^
 ||cbhzxctgm.com^
 ||d48paxyhx.com^
+||aiheatta.com^
 ||w97nv5ibv4.com^
 ||1tvg524vih.com^
 ||pepwpv.icu^

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mk5f0WZhUQgsXN/aE7DbYg
-! Diff-Path: ../patches/18/18-s-1773750421-3600.patch
+! Checksum: AtbAfM5JDAA4ae7A778W3g
+! Diff-Path: ../patches/18/18-s-1773758061-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.83.7
-! TimeUpdated: 2026-03-17T12:23:35+00:00
+! Version: 2.0.83.8
+! TimeUpdated: 2026-03-17T14:30:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2528,6 +2528,7 @@ ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-
 !
 ! NOTE: Regular rules
 !
+supplierassurance.com###global-cookie-message-holder
 shangri-la.com###js-cookie-modal:style(display: none !important;)
 shangri-la.com##.sl-cookie-modal-body-hidden:style(overflow: auto !important;)
 map.ru##div[x-show$="showCookieBanner"]
@@ -16457,7 +16458,7 @@ nablussoaps.de,bike1980.de,goldshop-ulm.de,scandmarkt.com,hannibelle.de,holzfee.
 gusarov-group.by,m.economictimes.com##.privacy_block
 !+ NOT_OPTIMIZED
 sutas.market##.footer-fixed-cookie-container
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 mmorpg.org.pl##body div.cookies-policy
 !+ NOT_OPTIMIZED
 smart.com###cp-dialog
@@ -17153,7 +17154,7 @@ empik.com##+js(set-cookie, cad, 1)
 !
 ! TODO: Rework when https://github.com/AdguardTeam/Scriptlets/issues/554 is resolved.
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
-! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_firefox)
+! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli && !adguard_ext_firefox)
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net##body > *:style(filter: none !important;)
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net##html > body:style(overflow: auto !important;)
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net##html:not(#style_important):style(overflow: auto !important;)
@@ -17164,7 +17165,7 @@ medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.p
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193266
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173053
 ! TODO: remove the hints, JS rule when the issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/407
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_safari)
+!+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_safari)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170168
 ! TODO: use trusted-click-element scriptlet when issues below are fixed
 ! Fix 'trusted-click-element' — Cloudflare captcha is broken when >>> combinator is used - https://github.com/AdguardTeam/Scriptlets/issues/491
@@ -17253,6 +17254,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227247
+@@||cdn.cookielaw.org/consent/*.json$domain=seriouseats.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227038
 @@||sdk.privacy-center.org/*/loader.js$domain=ertflix.gr
 @@||sdk.privacy-center.org/sdk/$domain=ertflix.gr
@@ -20058,7 +20061,7 @@ bafa.de#@#.cookiebanner:not(body)
 ble.de#@##cookiebanner
 ble.de#@#.cookiebanner:not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123888
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||ap*.usercentrics.eu^$domain=wohnglueck.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124034
 @@||sdk.privacy-center.org^$domain=lesoir.be
@@ -20861,7 +20864,7 @@ www-kreiszeitung-de.cdn.ampproject.org#@#amp-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85066
 @@||cdn.cookielaw.org/consent/*.json$domain=ign.com
 @@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=ign.com
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 ign.com#@##_evidon-barrier-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/84488
 hallhuber.com#@#.cookie-box:not(body):not(html)

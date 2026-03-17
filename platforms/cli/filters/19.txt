@@ -1,9 +1,9 @@
-! Checksum: 5tigLCYyFfmwgnE1hwWNzQ
-! Diff-Path: ../patches/19/19-s-1773754988-3600.patch
+! Checksum: viZg+/5A5vDc6EFQ64/xgQ
+! Diff-Path: ../patches/19/19-s-1773758028-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.72.37
-! TimeUpdated: 2026-03-17T13:39:59+00:00
+! Version: 2.0.72.38
+! TimeUpdated: 2026-03-17T14:31:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -134,14 +134,6 @@ shedevrum.ai###app > div.z-\[12\].bg-white
 ! END: Yandex
 !
 !
-! pikabu.ru
-pikabu.ru##.b-page-story__bf-comments > div.story:not(:has(*))
-/pikabu.ru\/ajax\/[\w\d]+\?[\w\d]+=[\w\d-]+$/$xmlhttprequest,domain=pikabu.ru
-pikabu.ru#%#//scriptlet('abort-current-inline-script', 'XMLHttpRequest', 'xhr.withCredentials')
-! comedy-radio.ru
-comedy-radio.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
-! relax-fm.ru
-relax-fm.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 ! otzovik
 otzovik.com##td[colspan] > div[style^="background-color: #ffd2ca;"]
 otzovik.com#%#//scriptlet('prevent-eval-if', 'xored')
@@ -151,8 +143,6 @@ otzovik.com#%#//scriptlet("abort-on-property-read", "Object.prototype.RtbBlockRe
 irecommend.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/142800
-!+ NOT_PLATFORM(windows, mac, android)
-rg.ru#%#//scriptlet('set-constant', 'Object.prototype.renderTo', 'undefined')
 !
 ! ati.su
 ati.su#%#//scriptlet('abort-on-property-read', 'Object.prototype.createBannerItem')
@@ -198,8 +188,6 @@ echo.msk.ru#%#//scriptlet("set-constant", "Object.prototype.BannerDirect", "unde
 ! livejournal.com, razlozhi.ru
 ! LiveJournal blogs with separate domains
 ! vadimrazumov.ru, levik.blog, varlamov.ru, lena-miro.ru, olegmakarenko.ru, periskop.su
-razlozhi.ru#$#body > div[style*="background: url("][style*="/default/bg.png"] > div[style$="px;"] { width: 100% !important }
-razlozhi.ru#$#body > div[style*="background: url("][style*="/default/bg.png"] > div[style^="top:"] ~ div[class]:not([style]) { left: 100% !important; }
 shakko.ru,vadimrazumov.ru,levik.blog,varlamov.ru,lena-miro.ru,olegmakarenko.ru,periskop.su,livejournal.com#%#//scriptlet("abort-on-property-read", "Object.prototype.showAd")
 razlozhi.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.initTime')
 !
@@ -297,8 +285,6 @@ rambler.ru##.comments__read-also-title
 rambler.ru##.comments__partners
 !
 ! championat.com
-!+ NOT_PLATFORM(windows, mac, android)
-championat.com#%#//scriptlet('json-prune', 'Blocks')
 ! subdomains: news.rambler.ru,kino.rambler.ru,sport.rambler.ru,auto.rambler.ru,finance.rambler.ru,woman.rambler.ru,weekend.rambler.ru,travel.rambler.ru,doctor.rambler.ru
 ! Check, if these sites work fine with scriptlet: mail.rambler.ru, kino.rambler.ru, weather.rambler.ru, comments.rambler.ru, kassa.rambler.ru, horoscopes.rambler.ru
 !
@@ -512,6 +498,8 @@ flightaware.com,boingboing.net,emojipedia.org#%#//scriptlet('trusted-suppress-na
 neowin.net,globe.adsbexchange.com,box.live,aerowitter.com,aerolla.net,wenxuecity.com,newrepublic.com,fragrantica.*,flightaware.com,boingboing.net,chosic.com,emojipedia.org,camelcamelcamel.com,adsoftheworld.com,flightconnections.com,smithsonianmag.com,thenation.com,lse.co.uk,knowt.com,gamerescape.com,myabandonware.com,androidheadlines.com,phoronix.com,virtualpiano.net,creaders.net,baeldung.com,titantv.com,thisisanfield.com,mouse-sensitivity.com,hostednovel.com,getemoji.com,concertarchives.org#%#//scriptlet('prevent-element-src-loading', 'script', 'a.pub.network')
 neowin.net,globe.adsbexchange.com,box.live,aerowitter.com,aerolla.net,wenxuecity.com,newrepublic.com,boingboing.net,camelcamelcamel.com,adsoftheworld.com,flightconnections.com,smithsonianmag.com,thenation.com,lse.co.uk,knowt.com,gamerescape.com,myabandonware.com,androidheadlines.com,phoronix.com,virtualpiano.net,creaders.net,baeldung.com,titantv.com,thisisanfield.com,mouse-sensitivity.com,hostednovel.com,getemoji.com,concertarchives.org#%#//scriptlet('abort-current-inline-script', 'Uint8Array', 'getAndSetOverlay')
 ! TODO: remove rules with "TrustedScriptURL" when this issues will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/514
+!+ PLATFORM(windows, mac, android, cli)
+neowin.net,globe.adsbexchange.com,box.live,aerowitter.com,aerolla.net,wenxuecity.com,newrepublic.com,fragrantica.*,flightaware.com,boingboing.net,chosic.com,emojipedia.org,camelcamelcamel.com,adsoftheworld.com,flightconnections.com,smithsonianmag.com,thenation.com,lse.co.uk,knowt.com,gamerescape.com,myabandonware.com,androidheadlines.com,phoronix.com,virtualpiano.net,creaders.net,baeldung.com,titantv.com,thisisanfield.com,mouse-sensitivity.com,hostednovel.com,getemoji.com,concertarchives.org#%#(()=>{void 0===window.TrustedScriptURL&&(window.TrustedScriptURL=()=>{});})();
 ! If the script in a separate file
 ||getemoji.com/scripts/apester.js
 ! NOTE: Freestar Recovered end ⬆️
@@ -3159,8 +3147,6 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! washingtonpost.com
 ||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$redirect=nooptext,important,domain=washingtonpost.com
-!+ NOT_PLATFORM(windows, mac, android)
-@@||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$domain=washingtonpost.com
 !
 ! NOTE: Grouped rules for specific sites end ⬆️
 ! !SECTION: Anti-adblock - Grouped rules for specific sites
@@ -10396,6 +10382,8 @@ myfoxzone.com,wtol.com,5newsonline.com,fox61.com,wthr.com,wqad.com,fox43.com,10t
 !+ NOT_OPTIMIZED
 online-lawyer.jp,open-minds.it##.fixed-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213716
+!+ PLATFORM(windows, mac, android, cli)
+tri247.com#?#body > div[style*="z-index:"]:has(> div[style*="cursor:"] > img[alt="Progressier logo"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175941
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169531#issuecomment-1877526044
 ||smetrics.telegraph.co.uk^
@@ -10475,8 +10463,6 @@ movieshdwatch.to,watchseries.pe,watch32.sx,tinyzonetv.cc,moviesjoytv.to,solarmov
 huya.com#%#!function(){const t={apply:(t,e,n)=>{if(n[0]&&"function"==typeof n[0])try{if(n[0].toString().includes("LOGIN_FORCE_TIME"))return}catch(t){console.trace(t)}return Reflect.apply(t,e,n)}},e=new Proxy(window.setTimeout,t);Object.defineProperty(window,"setTimeout",{set:function(){},get:function(){return e}})}();
 ! https://github.com/uBlockOrigin/uAssets/issues/15883
 coolpc.com.tw,coolpc.tw#%#(function(){window.setTimeout=new Proxy(window.setTimeout,{apply:(a,b,c)=>c&&c[0]&&/SkipMsg\(\)/.test(c[0].toString())&&c[1]?(c[1]=1,Reflect.apply(a,b,c)):Reflect.apply(a,b,c)})})();
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
-coolpc.com.tw,coolpc.tw#%#//scriptlet("adjust-setTimeout", "SkipMsg()", "*", "0.02")
 !
 atbmarket.com#$#.popup_promo_block { display: none !important; }
 atbmarket.com#$#.popup_promo_block ~ div.modal-backdrop { display: none !important; }
@@ -12212,8 +12198,6 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130066
 @@||onesignal.com^$domain=e1.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129633
-!+ NOT_PLATFORM(windows, mac, android)
-||cdn.onesignal.com/sdks/OneSignalSDK.js$script,redirect=noopjs,domain=sammobile.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/126988
 @@||cdn.onesignal.com/sdks/amp/amp-helper-frame.js$domain=lelum.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/121072

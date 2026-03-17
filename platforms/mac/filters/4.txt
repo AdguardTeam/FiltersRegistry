@@ -1,8 +1,8 @@
-! Checksum: xo+rjeTlGFT620Pb5jzSCA
+! Checksum: MZSPdNncAU7na2+K41QD6Q
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.26.28
-! TimeUpdated: 2026-03-17T13:39:28+00:00
+! Version: 2.1.26.29
+! TimeUpdated: 2026-03-17T14:30:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -299,7 +299,7 @@ check-host.net#%#//scriptlet('remove-node-text', 'span', '/Поделиться|
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157369
 faroutmagazine.co.uk#%#//scriptlet('hide-in-shadow-dom', '.single-article-sharing')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153296
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 huanqiu.com#%#//scriptlet('inject-css-in-shadow-dom', '.share > .item:not(.item-comment) { display: none !important; }')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149113
 soundiiz.com#%#//scriptlet('set-cookie', 'socialDisplayed', 'true')
@@ -357,7 +357,7 @@ educationtimes.com#?#span:contains(Share):upward(button)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180146
 bleepingcomputer.com#$#.cz-full-bio-wrapp { border-top: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179840
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 gamedeveloper.com#?#.ArticleBase-SocialShare
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178951
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175631
@@ -668,6 +668,7 @@ cogconnected.com,echofm.online,antirez.com,comicbook.com,alexp.pl,2ality.com,sma
 !
 ! NOTE: Specific rules
 !
+iimg.su##.meta-bottom > div.pt-1:has(> div.ya-share2)
 netnaija.film##.flex-1 > div.fixed:has(> div.grid > button > svg > path[d^="M24 12.07"])
 sflix.film##section > div.flex:has(> div[title^="share to"])
 2short.club##label[aria-label="Share"]
@@ -13811,7 +13812,7 @@ wwmt.com,wutv29.com,wtwc40.com,wset.com,wpgh53.com,wgme.com,wfgxtv.com,weartv.co
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205448
 ! https://github.com/AdguardTeam/CoreLibs/issues/1370
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||espncdn.com/players/web-player-bundle/*/espn-web-player-bundle.css$replace=/(\.vjs-share-control.*\})/\$1.vjs-share-control{display:none!important;}/
 !
 ! Progorod
@@ -14012,7 +14013,7 @@ jbbs.seesaa.net#?#.bookmark > .sns_box
 strani.cz##iframe[src^="https://www.facebook.com/plugins/"]
 ||facebook.com/plugins/$subdocument,redirect=noopframe,domain=strani.cz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179384
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 darkreading.com#?#.ArticleBase-Body .SocialShare
 ! Not visible on desktop - so should be NOT_OPTIMIZED
 !+ NOT_OPTIMIZED

@@ -296,7 +296,7 @@ check-host.net#%#//scriptlet('remove-node-text', 'span', '/Поделиться|
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157369
 faroutmagazine.co.uk#%#//scriptlet('hide-in-shadow-dom', '.single-article-sharing')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153296
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 huanqiu.com#%#//scriptlet('inject-css-in-shadow-dom', '.share > .item:not(.item-comment) { display: none !important; }')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149113
 soundiiz.com#%#//scriptlet('set-cookie', 'socialDisplayed', 'true')
@@ -356,7 +356,7 @@ educationtimes.com#?#span:contains(Share):upward(button)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180146
 bleepingcomputer.com#$#.cz-full-bio-wrapp { border-top: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179840
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 gamedeveloper.com#?#.ArticleBase-SocialShare
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178951
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175631
@@ -580,7 +580,7 @@ m.timesofindia.com$$div[class="w100p fl text-center pdTop_2"]
 !-------------------
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196405
 ! Generic fix for openweb Comments widget, share button is inside "ShadowRoot"
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli)
 ||static-cdn.spot.im/production/conversation/tags/*/styles.css$replace=/(Menu__menuButtonWrapper--.*})/\$1 button[data-testid="ShareBtn"]\, div[data-spot-im-class="vote-links"] + span[class\\$="index__dot"] { display: none !important; }/
 ||static-cdn.spot.im/production/social/tags/*/conversation/styles.css$replace=/(Menu__menuButtonWrapper--.*})/\$1 button[data-testid="ShareBtn"]\, div[data-spot-im-class="vote-links"] + span[class\\$="index__dot"] { display: none !important; }/
 !#endif
@@ -678,6 +678,7 @@ cogconnected.com,echofm.online,antirez.com,comicbook.com,alexp.pl,2ality.com,sma
 !
 ! NOTE: Specific rules
 !
+iimg.su##.meta-bottom > div.pt-1:has(> div.ya-share2)
 netnaija.film##.flex-1 > div.fixed:has(> div.grid > button > svg > path[d^="M24 12.07"])
 sflix.film##section > div.flex:has(> div[title^="share to"])
 2short.club##label[aria-label="Share"]
@@ -13821,7 +13822,7 @@ wwmt.com,wutv29.com,wtwc40.com,wset.com,wpgh53.com,wgme.com,wfgxtv.com,weartv.co
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205448
 ! https://github.com/AdguardTeam/CoreLibs/issues/1370
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||espncdn.com/players/web-player-bundle/*/espn-web-player-bundle.css$replace=/(\.vjs-share-control.*\})/\$1.vjs-share-control{display:none!important;}/
 !
 ! Progorod
@@ -14038,7 +14039,7 @@ thecode.media##.post-social-links
 luzernerzeitung.ch##.social > li
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 rpgbot.net##.shareit
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 kinopoisk.ru##.block_social
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 bikeradar.com##.share-buttons
@@ -14046,7 +14047,7 @@ bikeradar.com##.share-buttons
 forbes.com##.social-icon
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 gametimers.it,blogthetech.com##.td-post-sharing
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 gazeta.ru##.article-share-name
 !+ PLATFORM(ios, android, ext_android_cb)
 barmer.de##.sidebar > .siteactions
@@ -14070,7 +14071,7 @@ gurugurulog.com#?#.content > nav.section-box > ul.article-button > li.article-tw
 finance.rambler.ru#?#div[class^="container-"] > div[class^="container-"]:has(> amp-social-share)
 !+ PLATFORM(android)
 unian.net#?#div[style] > div.article-shares:upward(1)
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli)
 ichip.ru#?#.article-action
 1000.menu#?#.share-box
 jbbs.seesaa.net#?#.bookmark > .sns_box
@@ -14079,12 +14080,12 @@ jbbs.seesaa.net#?#.bookmark > .sns_box
 !+ PLATFORM(ext_ff)
 rtvi.com#$#.ya-share2 { visibility: hidden !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168228
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli)
 strani.cz##iframe[src^="https://www.facebook.com/plugins/"]
 ||facebook.com/plugins/$subdocument,redirect=noopframe,domain=strani.cz
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179384
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 darkreading.com#?#.ArticleBase-Body .SocialShare
 ! Not visible on desktop - so should be NOT_OPTIMIZED
 !+ NOT_OPTIMIZED
@@ -16160,7 +16161,7 @@ googlewatchblog.de,euro.hr#@##facebook-icon
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138359
 gartic.io#@#.socialNetworks
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137619
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||static.addtoany.com/menu/page.js$domain=stomp.straitstimes.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137719
 bilibili.com#@#.share-wrap

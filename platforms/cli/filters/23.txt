@@ -1,9 +1,9 @@
-! Checksum: 46N25CsApo1/128gPIGGMg
-! Diff-Path: ../patches/23/23-s-1773329213-3600.patch
+! Checksum: vndWHL1KP/qAEcX73/zqng
+! Diff-Path: ../patches/23/23-s-1773758029-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.7.83
-! TimeUpdated: 2026-03-12T15:24:25+00:00
+! Version: 2.0.7.84
+! TimeUpdated: 2026-03-17T14:31:03+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -282,6 +282,8 @@ rtl.*/init.js?$third-party
 /bens/*/vinos.js?
 /bens/vinos.js?
 /bens/somejscode.js
+!+ PLATFORM(windows, mac, android, cli)
+/bens/vinos$redirect=nooptext,important
 !
 /a.php?id=*&loc=*&ref=
 /b?size=*&catgry=$script,third-party
@@ -3568,9 +3570,8 @@ http://w7.ru^$third-party
 !
 ! Ads reinjection (For apps only)
 !
+||greencuttlefish.com^$third-party
 !
-!+ NOT_PLATFORM(windows, mac, android)
-||greencuttlefish.com^$third-party,~xmlhttprequest
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||cpm.wargaming.net^$third-party
 !
@@ -3644,6 +3645,10 @@ wss://s.zmctrack.net/
 @@||s.znctrack.net/z$domain=ukr.net
 ||s.znctrack.net/z$xmlhttprequest,redirect=noopjson,important,domain=ukr.net
 sinoptik.ua#$#head > style[id]:empty { background-image: none !important; }
+sinoptik.ua#%#(function () { const mutObs = new MutationObserver(function () { const elStyle = document.querySelector('link[type="text/css"][rel="preload"][as="style"][disabled]'); if (elStyle) { mutObs.disconnect(); elStyle.removeAttribute('disabled'); elStyle.setAttribute('rel', 'stylesheet'); } }); mutObs.observe(document, { childList: !0, subtree: !0 }); setTimeout(function () { mutObs.disconnect(); }, 1E4); })();
+sinoptik.ua$$script[wildcard="*function*=""bind""*"][max-length="5000"]
+meteofor.com.ua$$script[wildcard="*function*=""bind""*"][max-length="15000"]
+meteofor.com.ua##.placeholder
 !
 ! for `zmctrack` if iframe isn't in ShadowRoot
 ! #$?#body > iframe[style="display:none"] { remove: true; }
@@ -3657,10 +3662,10 @@ i.factor.ua,kriminal.tv,i.ua,lifedon.com.ua,football24.ua,vsetv.com,gorod.dp.ua,
 newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,internetua.com,okino.ua,orakul.com,ringside24.com,toneto.net#$?#head > iframe[name]:not([class]):not([id]):not([src]) { remove: true; }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52734
-! !+ PLATFORM(windows, mac, android)
+! !+ PLATFORM(windows, mac, android, cli)
 ! @@://s.zmctrack.net/z|$domain=finance.i.ua,vsetv.com|cn.ru|viks.bz|peers.tv|radio.i.ua|love.i.ua,~script
 !
-! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android)
+! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android && !adguard_app_cli)
 ! #%#//scriptlet("set-constant", "String.prototype.charCodeAt", "trueFunc")
 ! #%#//scriptlet("set-constant", "String.prototype.charCodeAt", "falseFunc")
 ! !#endif
@@ -3691,8 +3696,6 @@ sinoptik.ua$$script[tag-content="SIN.AdsLoader.adBlockDetector()"][max-length="1
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68143
 budport.com.ua##body > div[style*="text-align:center"][style*="z-index:9999"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102060
-!+ NOT_PLATFORM(windows, mac, android)
-@@||pubads.g.doubleclick.net/gampad/ads?sz=640x360&ad_rule=0&iu=%2F82479101%2FTsn.ua%2FPREroll-1_Cut&cust_params=$domain=imasdk.googleapis.com
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48882#issuecomment-584208221
 1plus1.video#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
@@ -3716,8 +3719,6 @@ budport.com.ua##body > div[style*="text-align:center"][style*="z-index:9999"]
 prozoro.net.ua#%#//scriptlet('abort-on-property-read', 'adsBlocked')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46073
-!+ NOT_PLATFORM(windows, mac, android)
-@@||pixel.adtelligent.com/player/adblock$domain=player.starlight.digital
 ||static.adtelligent.com/static/jsvpaid.js$script,redirect=noopjs,important,domain=stb.ua|novy.tv|ictv.ua|teleportal.ua
 ictv.ua#@##adblock
 @@||geo-service.adtelligent.com^|$domain=ictv.ua
@@ -3762,10 +3763,6 @@ omskbird.at.ua###_uwndWnd1
 ! news.online.ua
 @@||i.online.ua/adsence.js
 !
-!+ NOT_PLATFORM(windows, mac, android)
-zaxid.net,kurs.com.ru,isport.ua,24tv.ua,ria-m.tv,allboxing.ru#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "!function()")
-!+ NOT_PLATFORM(windows, mac, android)
-dengi.ua,kino-hd720.net,mirknig.su,kino-fs.ucoz.net,ex-fs.net,hvylya.net#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "/\/\*[0-9a-f]{40}\*\//")
 !
 !-------------------------------------------------------------------------------!
 !------------------ General javascript, CSS and HTML extensions ----------------!

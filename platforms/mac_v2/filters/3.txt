@@ -1,9 +1,9 @@
-! Checksum: DIce4X6Ni2I7cC32gyW7iw
-! Diff-Path: ../patches/3/3-s-1773729175-3600.patch
+! Checksum: r0LaboFZUF25QPSaQ1Kv7g
+! Diff-Path: ../patches/3/3-s-1773758074-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.1.58
-! TimeUpdated: 2026-03-17T06:29:02+00:00
+! Version: 2.1.1.59
+! TimeUpdated: 2026-03-17T14:30:29+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -76230,7 +76230,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ||countly-
 ! https://github.com/AdguardTeam/AdGuardSDNSFilter/issues/344
 ! Disabled in DNS filter
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||incoming.telemetry.mozilla.org^
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
@@ -158331,25 +158331,25 @@ mediamarkt.de#%#//scriptlet('abort-on-property-write', 'ftr__startScriptLoad')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216803
 ! aglint-disable no-invalid-modifiers
-!+ NOT_VALIDATE PLATFORM(windows, mac, android)
+!+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||track.effiliation.com/servlet/effi.redir$urltransform=/%3A/:/
-!+ NOT_VALIDATE PLATFORM(windows, mac, android)
+!+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||track.effiliation.com/servlet/effi.redir$urltransform=/%2F/\//
-!+ NOT_VALIDATE PLATFORM(windows, mac, android)
+!+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||track.effiliation.com/servlet/effi.redir$urltransform=/^https?:\/\/(?:[a-z0-9-]+\.)*?track\.effiliation\.com.*[?&]url=(.+)$/\$1/
 ! aglint-enable no-invalid-modifiers
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197963
 ! aglint-disable no-invalid-modifiers
-!+ NOT_VALIDATE PLATFORM(windows, mac, android)
+!+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||digidip.net/visit?url=$urltransform=/%3A/:/
-!+ NOT_VALIDATE PLATFORM(windows, mac, android)
+!+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||digidip.net/visit?url=$urltransform=/%2F/\//
-!+ NOT_VALIDATE PLATFORM(windows, mac, android)
+!+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||digidip.net/visit?url=$urltransform=/%3F/?/
-!+ NOT_VALIDATE PLATFORM(windows, mac, android)
+!+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||digidip.net/visit?url=$urltransform=/%3D/=/
-!+ NOT_VALIDATE PLATFORM(windows, mac, android)
+!+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||digidip.net/visit?url=$urltransform=/^https?:\/\/(?:[a-z0-9-]+\.)*?.*\.digidip\.net.*url=([^&]*).*/\$1/
 ! aglint-enable no-invalid-modifiers
 !
@@ -158361,7 +158361,7 @@ dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adPixelsDat
 ||cdn.dzen.ru/pingx
 ||suggest.sso.dzen.ru/clck/$image,ping
 ||clck.dzen.ru/click|
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||dzen.ru/api/v4/launcher/stats/$badfilter
 !
 ||chat.deepseek.com/api/v0/events
@@ -158416,7 +158416,7 @@ link.gmapp*.net$image
 ||spweb.gmarket.co.kr/Scripts/lib/fp2.min.js
 gmarket.co.kr#%#//scriptlet('fingerprintjs2')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167721
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||weibo.com/ajax/log/$xmlhttprequest,redirect=nooptext
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/3973
 ||static.olx.pl/static/*/js/tracking/ninja.js$important,domain=olx.pl
@@ -162652,7 +162652,7 @@ telex.hu#%#//scriptlet('set-constant', 'pp_gemius_hit', 'noopFunc')
 ! For platforms which do not support $redirect rules
 ! https://jp.nexon.com/ngm/?gm=talesweaver broken DL if trackparam is added
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213510
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||webtags.logitech.com^$redirect-rule=nooptext
 ! musinsa.com - adding an item into the cart doesn't work (a type of anti-adblock)
 musinsa.com#%#//scriptlet('trusted-suppress-native-method', 'CookieStore.prototype.set', '_dd_s', 'prevent', 'datadog')
@@ -162844,7 +162844,7 @@ mail.yandex.*#@%#//scriptlet('set-constant', 'navigator.getBattery', 'noopPromis
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201363
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=sncf-connect.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201008
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 @@||googletagmanager.com/gtag/$domain=oo.ai
 ! https://x.com/iti_harapeko/status/1900164627310543248
 @@||f-tra.com^$script,domain=pokemoncenter-online.com
@@ -162931,7 +162931,7 @@ larocheposay.co.kr#%#//scriptlet('set-constant', 'wptg_tagscript.exec', 'noopFun
 @@||moneypartners.co.jp/web/*/fingerprint.js$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194142
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194417
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||vgwort.de^$image,redirect-rule=1x1-transparent.gif,domain=experte.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194454
 ! https://github.com/easylist/easylist/pull/20815
@@ -163008,7 +163008,7 @@ larocheposay.co.kr#%#//scriptlet('set-constant', 'wptg_tagscript.exec', 'noopFun
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187876
 @@||cdn.clerk.io/clerk.js$domain=industrivarer.no
 ! Rule $referrerpolicy is required for apps, because source of "cdn.clerk.io/clerk.js" is not detected
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||industrivarer.no^$referrerpolicy=origin
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187827
 @@||cdn.clerk.io/clerk.js$domain=garmont.com
@@ -163830,7 +163830,7 @@ goodwillfinds.com#%#//scriptlet("set-constant", "_etmc", "emptyArr")
 @@||cdn.cxense.com/cx.js$domain=journaldemontreal.com
 @@||api.cxense.com/public/widget/data?json=$domain=journaldemontreal.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133210
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||data-*.welt.de/iomm/latest/manager/base/*/bundle.js$script,stylesheet,redirect-rule=nooptext
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158128
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133076
@@ -164208,7 +164208,7 @@ extrahop.com#%#//scriptlet('prevent-setTimeout', 'ad blocker')
 @@||googletagmanager.com/gtm.js$domain=oresundsbron.com
 ||googletagmanager.com/gtm.js$script,xmlhttprequest,redirect=google-analytics,domain=oresundsbron.com,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103018
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103244
 @@||googletagmanager.com/gtm.js$domain=thestar.co.uk
 ||googletagmanager.com/gtm.js$script,xmlhttprequest,redirect=google-analytics,important,domain=thestar.co.uk
@@ -164229,10 +164229,10 @@ extrahop.com#%#//scriptlet('prevent-setTimeout', 'ad blocker')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103023
 ||googletagmanager.com/gtag/js$script,other,redirect=google-analytics,domain=filmomaniak.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/101263
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||googletagmanager.com/ns.html$subdocument,redirect=nooptext,domain=pool.binance.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102558
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||cnet.com/*/video-player/*/lib/tracking/comscore/comscore.streaming.*.min.js$script,redirect=noopjs
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102387
 @@||googletagmanager.com/gtm.js$domain=independent.co.uk

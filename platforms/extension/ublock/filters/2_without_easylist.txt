@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0UI0HTIWXs4ZgFvEFfNOrw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1773755008-3600.patch
+! Checksum: ScpqEcepyYf1kC7RL5IsKg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1773758063-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.54.6
-! TimeUpdated: 2026-03-17T13:39:17+00:00
+! Version: 2.4.54.7
+! TimeUpdated: 2026-03-17T14:30:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -924,9 +924,9 @@
 ||stripe.rs-1028-a.com^
 !
 ! Ads reinjection (For apps only)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||piguiqproxy.com^$badfilter
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ! [excluded by ||amgload.net^$third-party] ||amgload.net^$third-party,badfilter
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31688
@@ -9640,17 +9640,17 @@ the-sun.com,gmx.*,transfermarkt.*##+js(abort-on-property-read, Object.prototype.
 !
 ! JS rule for blocking XHR requests
 ! ***It has less supported ad domains than new rule***
-!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
-!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
+!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android, cli)
+!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android, cli)
 ! JS for the sites with frequenly changed ad domains
 ! Another JS rule for some sites
-!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 acefile.co,mineavto.ru,newkaliningrad.ru,eku.ru,kramola.info,farap.ru,vesti.ru,myslo.ru,pravda.ru,vesti.ru,itog.info,myshows.me,neolove.ru##+js(abort-current-script, atob, ['charCodeAt'])
 !
 ! https://github.com/uBlockOrigin/uAssets/issues/30172
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11091
 ! ads reinjection
-!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
+!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android, cli)
 kizi.com,minijuegos.com,footyroom.com,computerhoy.com,tworeddots.com,netzwelt.de,datpiff.com,jpost.com,quotidiano.net,broadwayworld.com,bold.dk,ilrestodelcarlino.it,spaziogames.it,ilgiorno.it,acidcow.com,yepi.com,talkwithstranger.com,mathwarehouse.com,lanazione.it,vidmax.com,popmatters.com,toptenz.net,autobild.es,activistpost.com,spiele-umsonst.de,tamilo.com,nowtheendbegins.com,obaoba.com.br,autopista.es,izzygames.com,blacklistednews.com,textsfromlastnight.com,meta-chart.com,motociclismo.es,mobga.me,ginjfo.com,sportlife.es,dailygalaxy.com,miniplay.com,meta-calculator.com,minijogos.com.br,ciclismoafondo.es,hiphopearly.com,iltelegrafolivorno.it,healthyfocus.org,parolesdefoot.com,asheepnomore.net,virtualjerusalem.com,dailyspikes.com,triatlonweb.es,vreme-on.net,transportemundial.es,mathworksheetsgo.com,lamoto.es,sportenkort.dk,motomercado.es,datpiff.com,asheepnomore.net,tworeddots.com,datpiff.com,footyroom.com,kizi.com##+js(abort-current-script, EventTarget.prototype.addEventListener, window.TextDecoder)
 !
 ! SECTION: AdFender
@@ -9727,7 +9727,7 @@ wololo.net,lebakcyber.net,ifdreamscametrue.com,nudes7.com,switch-xci.xyz,ps4pkg.
 !
 !START: adtoniq
 bigleaguepolitics.com,flagandcross.com##+js(abort-on-property-read, adtoniq)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=flagandcross.com
 !
 tech.gelbooru.com,flagandcross.com##.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links:style(display: block !important;)
@@ -10808,7 +10808,7 @@ toweroffantasy.info##+js(set-constant, nitroAds.abp, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210730
 readallcomics.com##.jconfirm-box-container:has(.jconfirm-buttons > .btn-blue.refresh)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210548
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,domain=urlgd.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210493
 gaystream.pro##+js(set-constant, PlayerConfig.trusted, true)
@@ -11319,7 +11319,7 @@ gpldose.com##+js(abort-on-property-write, Dataffcecd)
 @@||static.doubleclick.net/instream/ad_status.js$domain=gpldose.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194085
 noice.com##+js(set-constant, adsBlocked, false)
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_chromium_mv3, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_chromium_mv3, ext_opera)
 @@||pagead2.googlesyndication.com/pagead/$domain=noice.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194001
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193923
@@ -11467,7 +11467,7 @@ uploadmall.com#@#.adSense
 uploadmall.com#@#iframe[width="728"][height="90"]
 uploadmall.com##+js(set-constant, navigator.brave, undefined)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication_adsbygoogle.js,domain=uploadmall.com
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_opera)
 @@||dcbbwymp1bhlf.cloudfront.net^$script,domain=uploadmall.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188763
 meteum.ai##+js(abort-on-stack-trace, Promise, loadAdvManager)
@@ -11545,7 +11545,7 @@ sivadictionaries.com##.adsbygoogle:style(height: 1px !important;)
 ||im9.eu/*_*_*.js
 im9.eu##+js(noeval-if, adpreserve)
 im9.eu##+js(abort-current-script, setTimeout, /\+-parseInt.*0x.*;if\(typeof/)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@-sponsor-ad.gif?advert=$domain=im9.eu
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185311
 fastp.org##+js(set-constant, adsbygoogle.loaded, true)
@@ -11908,7 +11908,7 @@ fmoonembed.*,embedme.*,filemoon.*,finfang.*,hellnaw.*,moonembed.*,z12z0vla.*##+j
 arabic-for-nerds.com##+js(prevent-fetch, cookiebanner)
 arabic-for-nerds.com##+js(addEventListener-defuser, DOMContentLoaded, detect)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174290
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 botrix.live##+js(set-constant, Object.prototype.isAdblock, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173936
 @@||oddee.com/w_files/scripts/adblock.js
@@ -12713,7 +12713,7 @@ emulatorgames.onl##+js(set-constant, aiptag.adplayer, {})
 southpark.*,southparkstudios.*##+js(prevent-fetch, imasdk.googleapis.com)
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$script,redirect=noop.js,domain=southpark.*|southparkstudios.*
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=southpark.*|southparkstudios.*
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_opera)
 @@||mssl.fwmrm.net/libs/adm/*/AdManager.js$domain=southpark.*|southparkstudios.*
 ! #abDetectorModal
 okpeliz.com,ftuapps.dev,onehack.us##.adsbox.doubleclick.ad-placement:style(display: block !important;)
@@ -12745,7 +12745,7 @@ xfreehd.com##+js(remove-node-text, script, .abk_msg)
 xfreehd.com#@#.ad-title
 xfreehd.com##.abk_msg
 xfreehd.com#@#.ad-body
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 $script,redirect-rule=noop.js,domain=xfreehd.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156515
 @@||all3dp.com/gpt.min.js
@@ -13057,7 +13057,7 @@ winaero.com##+js(noeval-if, .style.getPropertyValue("display"))
 winaero.com##+js(abort-current-script, jQuery, /\.innerHTML[\s\S]*?(R[ЕE]COMM[ЕE]ND[ЕE]D|to fix Wind[оo]ws|\.parentNode\.insertBefore)/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149195
 z-lib.io##+js(set-constant, isAdBlockActive, false)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,domain=z-lib.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207434
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148373
@@ -13206,7 +13206,7 @@ upzone.ga#@#.sponsorad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143808
 broadwayworld.com##+js(addEventListener-defuser, load, detectAdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144195
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 $script,redirect-rule=noop.js,domain=diudemy.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143921
 techacrobat.com##+js(prevent-fetch, https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js)
@@ -13704,7 +13704,7 @@ donnaglamour.it###detect ~ div[style^="display: flex; align-items: center; justi
 techcyan.com##+js(abort-current-script, $, div-gpt-ad)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132509
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 $script,redirect-rule=noop.js,domain=insurancegold.in
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130397
@@ -13838,7 +13838,7 @@ zeroupload.com##body > center[id]:has(> p:contains(Disable Your ad blocker)):rem
 zeroupload.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 zeroupload.com##+js(abort-current-script, EventTarget.prototype.addEventListener, /nextFunction|google_ad_client|adsbygoogle\.js/)
 $script,redirect-rule=noop.js,domain=zeroupload.com
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||zeroupload.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/127547
 bitsfree.net##+js(abort-on-property-read, adsBlocked)
@@ -14010,7 +14010,7 @@ minorpatch.com##+js(abort-current-script, Array.prototype.shift, _0x)
 tesla-club.eu#@#.reklama
 ! https://github.com/AdguardTeam/AdguardFilters/issues/121126
 jasonsavard.com##+js(set-constant, detectAdsPromise, {})
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 jasonsavard.com#@#.ad-placement
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155544
 ! https://github.com/AdguardTeam/AdguardFilters/issues/121630
@@ -14066,7 +14066,7 @@ amritadrino.com##div[id^="adguru_modal_"]
 @@||ireland101.com/assets/js/prebid-add.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118072
 @@||11bit.co.in/*/libs/advertisement.js
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||googletagmanager.com/gtag/js?id=$script,redirect=noop.js,domain=11bit.co.in
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118215
 @@||j2apps.s.llnwi.net/assets-origin/static/js/mx-prebid-ads.js$domain=mxplayer.in
@@ -14136,7 +14136,7 @@ tyla.com,gamingbible.com,unilad.com,ladbible.com#@#div[class*="margin-Advert"]
 tyla.com,gamingbible.com,unilad.com,ladbible.com##body > div[id].margin-Advert:style(display: block !important;)
 tyla.com,gamingbible.com,unilad.com,ladbible.com##+js(set-constant, pbjs.adUnits, [])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/115190
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||googletagmanager.com/gtag/js$script,redirect=noop.js,domain=faucetofbob.xyz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/115162
 nagarlyricshub.blogspot.com###antiAdBlock
@@ -14284,7 +14284,7 @@ btcadspace.com##+js(abort-current-script, document.getElementById, AdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110989
 mrlabtest.com##.adblockwrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111267
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||services.vlitag.com/adv$script,redirect=noop.js,domain=mangasco.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111068
 ||claimtrx.com/next.js
@@ -14387,7 +14387,7 @@ gplpalace.one###adb
 gplpalace.one##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107394
 htmlsave.com##+js(remove-attr, href, a[id][href^='#PleaseDisableAdblock'])
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,domain=htmlsave.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108210
 apkandroidhub.in##+js(prevent-fetch, pagead2.googlesyndication.com)
@@ -16101,7 +16101,7 @@ asmrfreeplayer.fun,mov18plus.cloud,jetvid.top,fembedx.top,hihihaha1.xyz,filmespi
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48010
 joblo.com##+js(abort-current-script, document.body.appendChild, adb:function)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,important,domain=joblo.com
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||rddywd.com/adcode.png$domain=joblo.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48008
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=player.glomex.com
@@ -16113,10 +16113,10 @@ rong-chang.com###content > div > table:nth-child(3)
 ||cdn.rawgit.com/perampokgoogle/AntiAdblock/master/AdblockRampok.js
 ! sickworldmusic.com - antiadblock
 sickworldmusic.com##+js(abort-current-script, document.addEventListener, ad blocker)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||sickworldmusic.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47144
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_ff, ext_opera)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=radiotunes.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47331
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47187
@@ -16205,7 +16205,7 @@ sadeempc.com##body[style*="visibility"]:style(visibility: visible!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44048
 @@||kxcdn.com/js/wutime_adblock/ads.js$domain=enxf.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44003
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_ff, ext_opera)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=jazzradio.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102126
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53221
@@ -16219,7 +16219,7 @@ adshnk.com,adshrink.it##.adsbox.pub_300x250:style(display: block !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43152
 pch.com##+js(abort-current-script, pAPI, location)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43723
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_ff, ext_opera)
 @@||adservice.google.com/adsid/integrator.js$domain=943thex.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43517
 ||subtitledb.org/js/adblockcheck.js
@@ -16341,7 +16341,7 @@ younetu.*,waaw.to,meucdn.vip,yandexcdn.com,waaw1.tv,waaw.tv,hqq.tv##+js(set-cons
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=hqq.tv|waaw.tv
 ||deliver.vkcdnservice.com/vast-im.js$script,redirect=noop.js,domain=meucdn.vip|yandexcdn.com|waaw.to|waaw1.tv|waaw.tv|hqq.tv
 ! Redirect rule is not required for apps, because script with onerror event is removed from website
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||googletagmanager.com/ns.html?id=GTM-$script,redirect-rule=noop.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39196
 antdownloadmanager.com#@#.adv_td
@@ -16458,7 +16458,7 @@ ebates.ca#@#.google-ads
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 @@.png#$domain=fforfree.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35273
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||theseotools.net^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35212
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
@@ -16507,7 +16507,7 @@ fstore.biz#@##bannerad
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 @@||akoam.ws^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34464
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||vnhax.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34429
 @@||satellite-calculations.com/ads.js
@@ -16692,7 +16692,7 @@ memoryhackers.org#@#.pub_300x250
 @@||nullpress.net^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31052
 pornbimbo.com##+js(set-constant, flashvars.protect_block, '')
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pornbimbo.com/player/player_ads.html
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30966
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
@@ -16826,7 +16826,7 @@ hanime.tv#@#.banner-ad
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 @@||techreviewpro.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27797
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||nulledteam.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27643
 ||googletagmanager.com/gtag/$domain=strikeout.nu
@@ -16852,7 +16852,7 @@ hanime.tv#@#.banner-ad
 @@||tpc.googlesyndication.com/simgad/$image,domain=a2zupload.com|unlockapk.com
 @@||adsterra.com/images/*.png$image,domain=unlockapk.com
 @@||static.popads.net/img/icons/menu/websites.png$domain=a2zupload.com
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=unlockapk.com
 @@||unlockapk.com/*ads.js
 unlockapk.com###aswift_2_expand
@@ -16864,7 +16864,7 @@ a2zupload.com,unlockapk.com###adsenseimage:style(height: 1px!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27102
 @@||player.ooyala.com/static/v*/production/latest/ad-plugin/google_ima.min.js$domain=broncos.com.au
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26990
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||freshstuff4you.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51300
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27060
@@ -16929,7 +16929,7 @@ uploadbox.io##+js(set-constant, replaceContentWithAdBlockerContent, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25925
 dexterclearance.com###ads:style(height: 1px!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25923
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||google-analytics.com/analytics.js$domain=receive-sms-online.info
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25765
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
@@ -17136,7 +17136,7 @@ ebook3000.biz##.swal2-fade
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21671
 @@||firstonetv.net^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21628
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 pcmag.com#@#iframe[title="3rd party ad content"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21422
 @@||pngtosvg.com/wp-content/plugins/ad-inserter^
@@ -17160,7 +17160,7 @@ mhtviewer.booogle.net,kmlviewer.nsspot.net,epubreader.1bestlink.net,imagetotext.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20955
 @@||lunaticfiles.com/ads.js|
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21030
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||everydayporn.co/player/player_ads.html
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20966
 @@||vb.icdrama.se/advertisement.js
@@ -17361,7 +17361,7 @@ hotcars.com#@#.AdSense
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28122
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16909
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16676
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pagead2.googlesyndication.com/pagead/$domain=nationalpost.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16832
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16698
@@ -17404,7 +17404,7 @@ thememypc.net##.ABD_display_noadblock:style(display: block!important;)
 @@||thememypc.net/wp-content/plugins/nervous-pleasure/assets/js/advertisement.min.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15046
 /^https?:\/\/anonymousemail\.me\/[\S]{3,10}\.js$/$important,domain=anonymousemail.me
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||benkhouya.com/ads.js$domain=anonymousemail.me
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15242
 rentanadviser.com##.reklamcontainer:style(height: 1px!important;)
@@ -17976,11 +17976,11 @@ cellmapper.net##+js(no-setTimeout-if, /children\('ins'\)|Adblock|adsbygoogle/)
 openculture.com#@##SponsoredLinks
 openculture.com#@##influads_block
 !
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 gktoday.in#@##google-ads
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 gktoday.in#@#.adsense
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 gktoday.in#@#.sponsored
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5508
 @@||cdn.reverso.net/*/static/js/advertising.js^
@@ -18023,7 +18023,7 @@ uploadfiles.io##.ad-blocked
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5389
 gosugamers.net#@#.ad-placement
 ! https://forum.adguard.com/index.php?threads/22624/
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=receive-sms-online.info
 !
 ! https://forum.adguard.com/index.php?threads/22596/
@@ -19038,11 +19038,11 @@ raialyoum.com##a[href="http://www.oxbridge-apartments.com/"] > img
 ! https://forum.adguard.com/index.php?threads/missed-ads-on-two-news-sites.23389/
 ammonnews.net##[class^="bestaAds_"]
 ! https://github.com/AdguardTeam/CoreLibs/issues/492
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 gerasanews.com##[class^="adsSpacer"]
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 gerasanews.com##[class^="bestaAds_"]
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 gerasanews.com##.iads_border
 !
 qatarshares.com##.above_body > div#header+table[width="100%"][cellpadding="0"]
@@ -20099,7 +20099,7 @@ zive.cz#@#+js(acis, window.addEventListener, :visible)
 mobilmania.cz##+js(abort-on-stack-trace, Element.prototype.insertAdjacentHTML, /Object\.(go|run|[a-zA-Z0-9]{1\,}_[a-zA-Z0-9]{1\,})/)
 mobilmania.cz##+js(abort-on-stack-trace, String.prototype.indexOf, /Object\.(go|run|[a-zA-Z0-9]{1\,}_[a-zA-Z0-9]{1\,})/)
 mobilmania.cz##+js(addEventListener-defuser, load, /function\(\){[a-zA-Z0-9]{1\,}_[a-zA-Z0-9]{1\,}.*\(\)}/)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 mobilmania.cz##div[class*=" cnc-ads--"]:style(height: 10px !important; min-height: 10px !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164067
 sector.sk##.conte
@@ -20587,8 +20587,8 @@ metro.cz,fights.cz,antiyoutuber.cz,expres.cz,televizeseznam.cz,ahaonline.cz,extr
 metro.cz,fights.cz,antiyoutuber.cz,expres.cz,televizeseznam.cz,ahaonline.cz,extra.cz,mobilmania.cz,idnes.cz,aktuality.sk,aktualne.cz,auto.cz,blesk.cz,centrum.cz,cnews.cz,e15.cz,sport.cz,super.cz,tiscali.cz,zive.cz##+js(abort-current-script, document.createElement, kununu_mul)
 metro.cz,fights.cz,antiyoutuber.cz,expres.cz,televizeseznam.cz,ahaonline.cz,extra.cz,mobilmania.cz,idnes.cz,aktuality.sk,aktualne.cz,auto.cz,blesk.cz,centrum.cz,cnews.cz,e15.cz,sport.cz,super.cz,tiscali.cz,zive.cz##+js(abort-on-property-read, Object.prototype.kununu_mul)
 ! novinky.cz requires different rule, because rule above breaks video player
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 karaoketexty.cz##+js(abort-current-script, Math, adbDetect)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202095
 super.cz##+js(set-constant, Object.prototype._advertState, true)
@@ -20659,7 +20659,7 @@ sport.cz##iframe[src^="//c.imedia.cz/context?url="]
 nova.cz#@#.AdSense
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28905
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=nova.cz
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pubads.g.doubleclick.net/gampad/ads?*=xml_vast*nova.cz$domain=nova.cz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61169
 @@||idos.idnes.cz^$csp
@@ -21590,7 +21590,7 @@ walla.co.il##iframe[src^="https://campaigns.yad2.co.il/"]
 ||walla.co.il/js/walla.js
 ||sheee.co.il/js/walla.js
 /walla.js$3p,domain=walla.co.il
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 sheee.co.il,walla.co.il##head  iframe:remove()
 sheee.co.il,walla.co.il##.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links:style(display: block !important;)
 ||cm.g.doubleclick.net/pixel?$image,redirect=1x1.gif,domain=sheee.co.il|walla.co.il
@@ -21621,7 +21621,7 @@ themarker.com#@#div[data-adunit]
 themarker.com#@#.banner-ad
 themarker.com##.advert:style(height: 1px !important;)
 themarker.com##+js(prevent-fetch, pagead2.googlesyndication.com)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 themarker.com##+js(addEventListener-defuser, load, hblocked?returnTo)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45669
 @@||admedia.com/images/cross_channel_arrows.png$domain=weather2day.co.il
@@ -21677,7 +21677,7 @@ themarker.com##.outbrain-wrapper
 haaretz.co.il##html[class][style="overflow-y: hidden;"]:style(overflow: visible!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36558
 haaretz.co.il#@#div[class*="addBlocker"]
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 haaretz.co.il##+js(addEventListener-defuser, load, hblocked?returnTo)
 @@||haaretz.co.il/htz/js/advertisement.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14568
@@ -23081,9 +23081,9 @@ eramuslim.com#@##topAd
 inwepo.co##.adsbygoogle
 @@||inwepo.co^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6872
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 mivo.com##.top-ads
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||mivo.com^$generichide
 mivo.com##div[class^="player-ads-"]:style(visibility: hidden!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6338
@@ -23286,7 +23286,7 @@ tv8.it##main div[type="atf-btf"]
 sport.sky.it##.advContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185324
 unionesarda.it##+js(set-constant, videojs.log.level, noopFunc)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||googleads.github.io/videojs-ima/node_modules/video.js/dist/video.min.js$domain=unionesarda.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182782
 torrinomedica.it##.entry-content > .code-block:has(> .adsbygoogle)
@@ -28015,7 +28015,7 @@ portalwrc.pl##.gAds-content
 portalwrc.pl##img[src^="/images/reklama/"]
 ||portalwrc.pl/images/dodaj/reklama_bok2.jpg
 ! sinoptik.pl - ads
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 sinoptik.pl##cv > .sl0
 sinoptik.pl##body > iframe[name]:not([class]):not([id]):not([src])[style="display:none"]:remove()
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50376
@@ -28557,7 +28557,7 @@ docer.pl##iframe#doublebillboard-1:style(width: 1px !important;)
 pilot.wp.pl#@#body > script + iframe + div:not([id])[class]
 pilot.wp.pl##html > body > div.pub_300x250.text_ads.ad_container[style]:not(#page):style(display: block!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29296
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||wp.pl/*-FwkqOxhmGz4XCSo7GGYbPhcJKjsYZhs-$script,domain=pilot.wp.pl
 ! legia.net - antiadblock
 ||get.optad360.io/*/plugin.min.js$script,redirect=noop.js,important,domain=legia.net
@@ -28709,7 +28709,7 @@ dziennik.pl##.widget-list-ul > .infeed1
 ! https://github.com/MajkiIT/polish-ads-filter/issues/22709
 ! Some links redirects through "wykop.pl/api/v3/ads/redirect?data=" and it might be blocked by some rules,
 ! so rule below converts links to destination URL
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||wykop.pl/api/v3/ads/redirect?data=$xhr,domain=wykop.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170628
 wykop.pl##aside.tag-top > .hits-slider:matches-css(before, content: /^reklama$/)
@@ -29110,7 +29110,7 @@ shinden.pl##+js(abort-on-property-write, AdservingModule)
 @@||a.spolecznosci.net/pet?s=Shinden$domain=shinden.pl
 @@||static.criteo.net/js/ld/publishertag.js$domain=shinden.pl
 ||spolecznosci.net/js/modules/sfw.js$important,domain=shinden.pl
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||stats.g.doubleclick.net/r/collect$image,domain=shinden.pl
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@||cdn.jsdelivr.net/npm/fuckadblock*/fuckadblock.js$domain=shinden.pl
@@ -29199,13 +29199,13 @@ tvn24.pl##+js(prevent-fetch, /adocean\.pl\/.*ad\.xml/)
 vod.pl##.advert[class*="advert--"]
 ||recontent.services.tvn.pl/*ad.xml$xhr,redirect=noopvast-2.0,domain=tvn24.pl
 @@||tvn.hit.gemius.pl/*redataredir?url=*tvn.adocean.pl*ad.xml$domain=player.pl|teletoonplus.pl|get.x-link.pl
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 ||tvn.adocean.pl/*ad.xml$xhr,redirect=noopvast-2.0,domain=tvn24.pl,important
 @@||redcdn.pl/*/TVN-Adserver/*.mp4$xhr,domain=miniminiplus.pl|teletoonplus.pl|tvnturbo.pl|tvn.pl
 @@||cdntvn.pl/adscript.js$domain=player.pl
 ||redcdn.pl/*/TVN-Adserver/*.mp4$media,redirect=noop-1s.mp4,domain=player.pl
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=tvn24.pl|tvn.pl
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 tvn24.pl##.video-player > .videoPlayer.player-initialized .vjs-switching .vjs-loading-spinner
 @@||tvn24.pl^$generichide
 @@||get.x-link.pl^$generichide
@@ -29271,7 +29271,7 @@ stooq.pl,stooq.com###f13 > table[bgcolor]:has(> tbody:only-child > tr:only-child
 stooq.pl,stooq.com###f13 > table[bgcolor][style*="display: none !important"] + div + table[style]:has(> tbody > tr > td > a[href^="?"])
 stooq.pl,stooq.com##div[style*="position:"][style*="relative;"][style*="width:"][style*="300px;"][style*="height:"][style*="250px"]:has(> iframe[src*="/ads/"])
 stooq.pl,stooq.com##td[align="center"] > div[style*="position:"][style*="width:"][style*="height"]:has(> iframe[src*="/ads/"])
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||stooq.*/ads/$subdocument,domain=stooq.pl|stooq.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51605
 stooq.pl,stooq.com##td[align="center"] > table[width="100%"] > tbody > tr > td > .adsbygoogle + script + table[width="100%"] div[style="position:relative;width:970px;height:250px"]
@@ -29636,7 +29636,7 @@ delo.si##.iprom-background-placement
 vizita.si##onl-banner
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=vizita.si
 ! https://github.com/AdguardTeam/AdguardFilters/issues/63579
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||ads.api.24ur.si/adserver/banner/vast.php$domain=24ur.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42866
 citymagazine.si##div[class^="banner-square-"]
@@ -29772,7 +29772,7 @@ play.tv3.ee##+js(set-constant, window.dfpScriptLoadDate, 1)
 tv4play.se##+js(json-prune, ad.*)
 tv4play.se##+js(json-prune, playbackItem.isStitched)
 tv4play.se##+js(m3u-prune, /https:\/\/prism-ads-cdn\.a2d\.tv\//, .m3u8)
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_opera)
 @@||v.fwmrm.net/ad/g/1$domain=tv4play.se
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13978
 ||dbf0a92kfjvxs.cloudfront.net/creatives/assets^$domain=tv4play.se
@@ -29810,7 +29810,7 @@ expressen.se##div[id*="_randomContainer"]
 aftonbladet.se##[id^="abAdArea"]
 ||se-aftonbladet.videoplaza.tv/proxy/distributor/$domain=aftonbladet.se,important
 ||aftonbladet.ooul.tv/nocache/se-aftonbladet/aab/aftonbladet_config.js$script,redirect=noop.js,domain=aftonbladet.se
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ! https://forum.adguard.com/index.php?threads/aftonbladet-se-anti-adblock.26830/
 aftonbladet.se##.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links:style(display: block !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36632
@@ -31224,7 +31224,7 @@ techrum.vn##div[class^="k_ads_vip_"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9553
 @@||megaurl.in/adi/advertisement.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8077
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||delivery.senvangvn.com^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25822
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7444
@@ -32801,7 +32801,7 @@ hentaiworld.tv##+js(no-window-open-if, hyenadata)
 turbovid.vip,turbocloud.xyz,turbovidhls.com,trailerhg.xyz,turboplayers.xyz,javggvideo.xyz,turtleviplay.xyz,findjav.com,stbturbo.xyz,emturbovid.com##+js(no-setTimeout-if, window.open)
 turbovid.vip,turbocloud.xyz,turbovidhls.com,trailerhg.xyz,turboplayers.xyz,javggvideo.xyz,turtleviplay.xyz,findjav.com,stbturbo.xyz,emturbovid.com##+js(set-constant, premium, undefined)
 ! TODO: remove hints when this issue is resolved - https://github.com/AdguardTeam/Scriptlets/issues/517
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135902
 mega4upload.com##+js(remove-attr, onclick, #direct_link > a[onclick])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135953
@@ -34170,7 +34170,7 @@ pixroute.com##+js(set-constant, proclayer, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45272
 rekkerd.org##+js(set-constant, td_ad_background_click_link, undefined)
 ! streamcdn.to - popups
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 streamcdn.to##+js(addEventListener-defuser, click, dtnoppu)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45250
 pornxs.com##+js(no-window-open-if)
@@ -34194,7 +34194,7 @@ filecrypt.cc##+js(set-constant, FBPOP, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43700
 fuqer.com##+js(abort-on-property-read, fUnder)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43415
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 xsexvideos.pro,mature-tube.sexy##+js(no-setTimeout-if, /window\.location\.href = ("\/sell\.php"|popURL)/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43481
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43304
@@ -34217,7 +34217,7 @@ m1xdrop.bz,m1xdrop.com,m1xdrop.net,mixdrop23.net,md3b0j6hj.com,mixdrop21.net,mix
 /mi?\d?xdrop\d{0,2}\.(net|com)/##+js(abort-current-script, document.createElement, dtnoppu)
 /mi?\d?xdrop\d{0,2}\.(net|com)/##+js(addEventListener-defuser, click, dtnoppu)
 ! typingtestnow.com - ads
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 typingtestnow.com##+js(no-setTimeout-if, replace_blank_adsense_ads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42211
 laidhub.com##+js(abort-on-property-read, OpenPopUnder)
@@ -34340,7 +34340,7 @@ pinterest.*##+js(json-prune, resource_response.data.[-].ad_data)
 ! Blocking ads based on property - sidebar
 ! Blocking ads based on property in watch section
 ! Blocking ads based on property when watching an marketplace item
-! ! #if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+! ! #if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli)
 ! ! #endif
 ! facebook.com - hides sponsored ads on marketplace
 ! new interface
@@ -35343,9 +35343,9 @@ readwhere.com##.adunit:style(margin-top: 0!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20013
 toucharcade.com##header > #header:style(padding-top: 0!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20098
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 msn.com##li[data--ac*="adblockMediumCardContainer"]:style(position: absolute!important; left: -3000px!important;)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 msn.com##[id^="-"]:style(position: absolute!important; left: -3000px!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22485
 ! https://forum.adguard.com/index.php?threads/29078/
@@ -36684,6 +36684,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+iqsaved.com##.main__block > div.page__inner:has(> div.context > div.context__caption)
 sflix.film,netnaija.film##div[class^="fixed inset-0 z-[22] w-full h-full bg-black/60 flex items-center justify-center px-4 md:px-0"]
 thestreet.com##div[class^="styles_headerAdSlot__"]
 primesrc.me##+js(remove-attr, href, a.splash)
@@ -57747,7 +57748,7 @@ softpedia.com##+js(set-constant, ads_skipped_due_policy, true)
 ! filmy4wap.co.in - popups and ads redirection
 filmy4wap.co.in##+js(prevent-refresh)
 filmy4wap.co.in##+js(no-window-open-if)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ! https://github.com/AdguardTeam/FiltersCompiler/issues/237
 ! TODO: remove rule below when this issue is fixed - https://github.com/AdguardTeam/FiltersCompiler/issues/237
 !+ NOT_VALIDATE
@@ -57939,7 +57940,7 @@ beeg.com##.s-nmtv
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 direct-link.net##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35273
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 theseotools.net##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34832
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
@@ -58003,7 +58004,7 @@ mlb.com##.side-rail__ad-placeholder
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25989
 ||syndication.exoclick.com/splash.php?$redirect=noop.txt,image,media,subdocument,stylesheet,script,xhr,other
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26990
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 freshstuff4you.com##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26841
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26600
@@ -58788,7 +58789,7 @@ si.com#@#.l-inline.m-detail--feature-container
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=soonersports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161551
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=bloomberg.com,important
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_opera)
 @@||js-sec.indexww.com/ht/*.js$domain=bloomberg.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161447
 @@||vms-videos.minutemediaservices.com/*/m3u8/$domain=reignoftroy.com
@@ -59174,7 +59175,7 @@ silverspoon.site#@#.adsbyvli
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128604
 @@||cdnjs.cloudflare.com/ajax/libs/Swiper/*/js/swiper.min.js$domain=9anime.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128921
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||s.ntv.io/serve/load.js$domain=titantv.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128733
 gamerevolution.com#@#.custom-html-widget
@@ -59189,7 +59190,7 @@ $popup,3p,domain=sbplay2.xyz,badfilter
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=paroles2chansons.lemonde.fr
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=paroles2chansons.lemonde.fr,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128221
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||cdn.adswizz.com/adswizz/js/SynchroClient*.js$domain=jacarandafm.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128133
 ! https://github.com/AdguardTeam/AdguardFilters/issues/127984
@@ -59210,10 +59211,10 @@ petri.com#@##bww-advertising-popup-overlay
 ! unhide right sidebar
 pics-x.com#@#.sidebar-ads-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135040
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||ads.pubmatic.com/AdServer/js/pwt/*/pwt.js$domain=wionews.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125900
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||ads.pubmatic.com/AdServer/js/pwt/*/pwt.js$domain=dnaindia.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125527
 @@||dn0qt3r0xannq.cloudfront.net/*/default/prebid-load.js$domain=nationalreview.com
@@ -59296,7 +59297,7 @@ pcgamer.com,tomshardware.com#@#.sponsored-article
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174096
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118378
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118188
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||i.cdn.turner.com/ads/adfuel/*/nba-teams-ais.min.js$domain=nba.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/117915
 @@||megatube.xxx/atrm/s/s/js/m/pr-before.js
@@ -59391,7 +59392,7 @@ allurekorea.com#@#.paszone_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/109026
 marketplace.zoom.us#@#.oas-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/109127
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=yiv.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108803
 @@||delivery.vidible.tv/jsonp/$script,domain=delivery.vidible.tv
@@ -59430,7 +59431,7 @@ nfl.com#@#.nfl-c-strip
 @@||securepubads.g.doubleclick.net/pagead/ppub_config?$domain=purepeople.com
 @@||securepubads.g.doubleclick.net/gampad/ads?$domain=purepeople.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103247#issuecomment-1001250733
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||i.cdn.turner.com/ads/adfuel/adfuel-*.min.js$domain=cnn.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/97790
 @@||recaptcha.net/recaptcha/$csp
@@ -59454,7 +59455,7 @@ ua-voyeur.org#@#.adsbar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100748
 careerindia.com#@#.os-header-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100820
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||securenetsystems.net/cirruscontent/js/prebid.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100421
 @@||extreme-down.plus^$popup,domain=extreme-down.plus
@@ -60244,7 +60245,7 @@ kzstock.blogspot.com#@##ad-target
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48162
 @@||stream2watch.ws/js/app.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151706
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||googlevideo.com/videoplayback/*dclk_video_ads$domain=10play.com.au|10.com.au
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146902
 @@||pubads.g.doubleclick.net/ondemand/*/content/*/streams|$xhr,domain=10play.com.au|10.com.au
@@ -61982,7 +61983,7 @@ americannews.com#@#.wpInsertInPostAd
 @@||hulu.com/embed$document
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20098
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 msn.com#@#[id^="-"]
 ! https://forum.adguard.com/index.php?threads/pop-up-on-2-websites-nsfw.29143/
 @@||sexgalaxy.net/wp-content/plugins^

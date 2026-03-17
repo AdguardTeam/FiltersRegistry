@@ -2583,6 +2583,7 @@ ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-
 !
 ! NOTE: Regular rules
 !
+supplierassurance.com###global-cookie-message-holder
 dilosi.services.gov.gr#%#//scriptlet('trusted-set-cookie', 'dilosi_cookie', 'Accept_cookies')
 shangri-la.com#$##js-cookie-modal { display: none !important; }
 shangri-la.com#$#.sl-cookie-modal-body-hidden { overflow: auto !important; }
@@ -16860,7 +16861,7 @@ bayernportal.de#$#div[id="cookieConsentOverlay"] { display: none !important; }
 bayernportal.de#$#body[class] { overflow: auto !important; }
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172738
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 shop.app#?#section[data-section-name="cookie-active-consent-notice"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167649
 !#if (adguard_app_ios)
@@ -16885,13 +16886,13 @@ belsta.ua#$#body { overflow: auto !important; height: unset !important; }
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140449
 patronite.pl#%#(()=>{window.patroniteGdprData={google_recaptcha:"allow"}})();
-!+ PLATFORM(windows, mac, android, ext_chromium)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium)
 ||cdn.patronite.pl/rodo/rodo.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179384
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 darkreading.com#?##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103888
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ozerki.ru#?#.cookie_accept
 ! jimdosite.com is site constructor. The rule applied to subdomains
 harmonie-im-garten.de,jimdosite.com##main + div:last-child
@@ -17436,7 +17437,7 @@ nablussoaps.de,bike1980.de,goldshop-ulm.de,scandmarkt.com,hannibelle.de,holzfee.
 gusarov-group.by,m.economictimes.com##.privacy_block
 !+ NOT_OPTIMIZED
 sutas.market##.footer-fixed-cookie-container
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 mmorpg.org.pl##body div.cookies-policy
 !+ NOT_OPTIMIZED
 smart.com###cp-dialog
@@ -18453,7 +18454,7 @@ bonify.de,srf.ch,hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.n
 ! TODO: Rework when https://github.com/AdguardTeam/Scriptlets/issues/554 is resolved.
 mediamarkt.de#%#(()=>{const t=document.documentElement,o=new MutationObserver((()=>{const t=document.querySelector('#mms-consent-portal-container button[data-test="pwa-consent-layer-deny-all"]');if(t&&typeof t.click !== 'undefined'){t.click();}}));o.observe(t,{attributes:!0,childList:!0,subtree:!0})})();
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
-! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_firefox)
+! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli && !adguard_ext_firefox)
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#body > * { filter: none !important; }
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html > body { overflow: auto !important; }
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html:not(#style_important) { overflow: auto !important; }
@@ -18467,9 +18468,9 @@ wplatform.media,staszownews.pl,zdrowienews.pl,kurierostrowiecki.pl,ostrowiec24.i
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193266
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173053
 ! TODO: remove the hints, JS rule when the issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/407
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_safari)
+!+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_safari)
 journaldunet.com,linternaute.com,lachainemeteo.com,journaldesfemmes.fr,lefigaro.fr#%#//scriptlet('trusted-click-element', 'button.button__acceptAll')
-!+ PLATFORM(windows, mac, android, ios, ext_safari)
+!+ PLATFORM(windows, mac, android, cli, ios, ext_safari)
 journaldunet.com,linternaute.com,lachainemeteo.com,journaldesfemmes.fr,lefigaro.fr#%#(()=>{document.addEventListener('DOMContentLoaded',()=>{if("undefined"!=typeof localStorage)try{if(!localStorage.getItem("_pubcid")){var b=new MutationObserver(function(){var a=document.querySelector("#appconsent > iframe");a&&a.contentDocument&&(a=a.contentDocument.querySelector(".button__acceptAll"))&&(b.disconnect(),a.click())});b.observe(document,{childList:!0,subtree:!0,attributes:!0});setTimeout(function(){b.disconnect()},1E4)}}catch(a){}})})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170168
 ! TODO: use trusted-click-element scriptlet when issues below are fixed
@@ -18494,7 +18495,7 @@ wetter.com#%#//scriptlet('trusted-click-element', 'div[class^="sc-"] > button.pr
 voorkeuren.tvgids.nl#%#//scriptlet('trusted-click-element', '.v4vptQ ._-5rsyq .xEPIo4')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186661
 ! https://github.com/AdguardTeam/CoreLibs/issues/1904
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 gxr.world#%#(()=>{if("adoptedStyleSheets"in document)try{const t=new CSSStyleSheet;t.replaceSync("#cc--main { display: none !important; } html:not(#style_important) { overflow-y: auto !important; }"),document.adoptedStyleSheets=[...document.adoptedStyleSheets,t]}catch(t){}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143411
 ! Eika bank sites
@@ -18652,9 +18653,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! Required for apps only
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
-!+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
+!+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227247
+@@||cdn.cookielaw.org/consent/*.json$domain=seriouseats.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227038
 @@||sdk.privacy-center.org/*/loader.js$domain=ertflix.gr
 @@||sdk.privacy-center.org/sdk/$domain=ertflix.gr
@@ -20190,7 +20193,7 @@ tarczynskiarenawroclaw.pl,blog.bizvibe.com#@##cookie-law-info-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175701
 @@||cdn-ukwest.onetrust.com^$domain=super6.skysports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175560
-!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli)
 @@||app.eu.usercentrics.eu^$domain=loewenbraeukeller.com
 @@||sdp.eu.usercentrics.eu^$domain=loewenbraeukeller.com
 @@||config.eu.usercentrics.eu^$domain=loewenbraeukeller.com
@@ -20215,7 +20218,7 @@ rtl.nl#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174435
 avplanet.hu#@#.cookie-alert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174692
-!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium && !adguard_ext_opera)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli && !adguard_ext_chromium && !adguard_ext_opera)
 @@||sdk.privacy-center.org^$domain=le10sport.com
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168446
@@ -20558,7 +20561,7 @@ deutsches-museum.de#@#.cookiebanner:not(body)
 @@||privacyportal-eu.onetrust.com/webform^$domain=locatepeople.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165497
 ! Fixes video player, it seems that it occurs on Android only
-!+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
+!+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 @@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=reuters.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165496
 @@||cdn.preferred.tech/cookie-consent.*.js$domain=typing.playgram.jp
@@ -21099,7 +21102,7 @@ kultura.com.pl#@##cookieModal
 ! https://github.com/List-KR/List-KR/issues/656 - The plus buttons placing next to country name cannot be clicked.
 @@||cdn.oddschecker.com/cookie-policy-banner/bundle/cookie-policy-banner-$script
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146471
-!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli && !adguard_ext_chromium)
 @@||sdk.privacy-center.org^$domain=ozap.com
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146761
@@ -21616,7 +21619,7 @@ bafa.de#@#.cookiebanner:not(body)
 ble.de#@##cookiebanner
 ble.de#@#.cookiebanner:not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123888
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||ap*.usercentrics.eu^$domain=wohnglueck.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124034
 @@||sdk.privacy-center.org^$domain=lesoir.be
@@ -21654,7 +21657,7 @@ schleswig-holstein.de#@#.cookiebanner:not(body)
 diorama-world.com#@#.cookie-consent-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176833
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122714
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera, ext_ublock)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_ff, ext_opera, ext_ublock)
 @@||sdk.privacy-center.org^$domain=radiofrance.fr
 ||sdk.privacy-center.org/*/loader.js$script,redirect=didomi-loader,domain=radiofrance.fr,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122648
@@ -21707,7 +21710,7 @@ milwaukeetool.eu#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119755
 deineapotheke.at#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119739
-!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli && !adguard_ext_chromium)
 developer.confluent.io#@##onetrust-consent-sdk
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=developer.confluent.io
 !#endif
@@ -22134,7 +22137,7 @@ visti.it#@#.cookiealert
 @@||quantcast.mgr.consensu.org/choice/*/choice.js$domain=tomsguide.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95233
 ! This issue occurs only in apps, because script is removed from website and it causes breakage
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||ccpa-wrapper.privacymanager.io/ccpa/*/ccpa-liveramp.js$script,redirect=noopjs,domain=venturebeat.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94936
 @@||cdn.opencmp.net^$domain=stimme.de
@@ -22199,7 +22202,7 @@ olympics.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/92918
 digital-fuer-deutschland.de#@##cookiebanner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/93013
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||consent.cookiebot.com/uc.js$script,redirect=noopjs,domain=compo.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/92817
 bremerhaven.de#@#.cookie-banner:not(body):not(html)
@@ -22496,7 +22499,7 @@ www-kreiszeitung-de.cdn.ampproject.org#@#amp-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85066
 @@||cdn.cookielaw.org/consent/*.json$domain=ign.com
 @@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=ign.com
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 ign.com#@##_evidon-barrier-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/84488
 hallhuber.com#@#.cookie-box:not(body):not(html)
@@ -23938,7 +23941,7 @@ shedevrum.ai###app > div.z-\[12\].bg-white
 ! END: Yandex
 !
 !
-!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli)
 ! pikabu.ru
 pikabu.ru##.b-page-story__bf-comments > div.story:not(:has(*))
 /pikabu.ru\/ajax\/[\w\d]+\?[\w\d]+=[\w\d-]+$/$xmlhttprequest,domain=pikabu.ru
@@ -23957,7 +23960,7 @@ otzovik.com#%#//scriptlet("abort-on-property-read", "Object.prototype.RtbBlockRe
 irecommend.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/142800
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 rg.ru#%#//scriptlet('set-constant', 'Object.prototype.renderTo', 'undefined')
 !
 ! ati.su
@@ -24008,7 +24011,7 @@ echo.msk.ru#$?#span > div[role]:has(> div[class] > section.content) { margin-top
 ! livejournal.com, razlozhi.ru
 ! LiveJournal blogs with separate domains
 ! vadimrazumov.ru, levik.blog, varlamov.ru, lena-miro.ru, olegmakarenko.ru, periskop.su
-!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli)
 razlozhi.ru#$#body > div[style*="background: url("][style*="/default/bg.png"] > div[style$="px;"] { width: 100% !important }
 razlozhi.ru#$#body > div[style*="background: url("][style*="/default/bg.png"] > div[style^="top:"] ~ div[class]:not([style]) { left: 100% !important; }
 !#endif
@@ -24128,7 +24131,7 @@ rambler.ru##.comments__read-also-title
 rambler.ru##.comments__partners
 !
 ! championat.com
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 championat.com#%#//scriptlet('json-prune', 'Blocks')
 ! subdomains: news.rambler.ru,kino.rambler.ru,sport.rambler.ru,auto.rambler.ru,finance.rambler.ru,woman.rambler.ru,weekend.rambler.ru,travel.rambler.ru,doctor.rambler.ru
 ! Check, if these sites work fine with scriptlet: mail.rambler.ru, kino.rambler.ru, weather.rambler.ru, comments.rambler.ru, kassa.rambler.ru, horoscopes.rambler.ru
@@ -24414,7 +24417,7 @@ flightaware.com,boingboing.net,emojipedia.org#%#//scriptlet('trusted-suppress-na
 neowin.net,globe.adsbexchange.com,box.live,aerowitter.com,aerolla.net,wenxuecity.com,newrepublic.com,fragrantica.*,flightaware.com,boingboing.net,chosic.com,emojipedia.org,camelcamelcamel.com,adsoftheworld.com,flightconnections.com,smithsonianmag.com,thenation.com,lse.co.uk,knowt.com,gamerescape.com,myabandonware.com,androidheadlines.com,phoronix.com,virtualpiano.net,creaders.net,baeldung.com,titantv.com,thisisanfield.com,mouse-sensitivity.com,hostednovel.com,getemoji.com,concertarchives.org#%#//scriptlet('prevent-element-src-loading', 'script', 'a.pub.network')
 neowin.net,globe.adsbexchange.com,box.live,aerowitter.com,aerolla.net,wenxuecity.com,newrepublic.com,boingboing.net,camelcamelcamel.com,adsoftheworld.com,flightconnections.com,smithsonianmag.com,thenation.com,lse.co.uk,knowt.com,gamerescape.com,myabandonware.com,androidheadlines.com,phoronix.com,virtualpiano.net,creaders.net,baeldung.com,titantv.com,thisisanfield.com,mouse-sensitivity.com,hostednovel.com,getemoji.com,concertarchives.org#%#//scriptlet('abort-current-inline-script', 'Uint8Array', 'getAndSetOverlay')
 ! TODO: remove rules with "TrustedScriptURL" when this issues will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/514
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 neowin.net,globe.adsbexchange.com,box.live,aerowitter.com,aerolla.net,wenxuecity.com,newrepublic.com,fragrantica.*,flightaware.com,boingboing.net,chosic.com,emojipedia.org,camelcamelcamel.com,adsoftheworld.com,flightconnections.com,smithsonianmag.com,thenation.com,lse.co.uk,knowt.com,gamerescape.com,myabandonware.com,androidheadlines.com,phoronix.com,virtualpiano.net,creaders.net,baeldung.com,titantv.com,thisisanfield.com,mouse-sensitivity.com,hostednovel.com,getemoji.com,concertarchives.org#%#(()=>{void 0===window.TrustedScriptURL&&(window.TrustedScriptURL=()=>{});})();
 !+ PLATFORM(ext_ff)
 neowin.net,globe.adsbexchange.com,box.live,aerowitter.com,aerolla.net,wenxuecity.com,newrepublic.com,fragrantica.*,flightaware.com,boingboing.net,chosic.com,emojipedia.org,camelcamelcamel.com,adsoftheworld.com,flightconnections.com,smithsonianmag.com,thenation.com,lse.co.uk,knowt.com,gamerescape.com,myabandonware.com,androidheadlines.com,phoronix.com,virtualpiano.net,creaders.net,baeldung.com,titantv.com,thisisanfield.com,mouse-sensitivity.com,hostednovel.com,getemoji.com,concertarchives.org#%#//scriptlet('trusted-create-element', 'head', 'script', '', '(()=>{void 0===window.TrustedScriptURL&&(window.TrustedScriptURL=()=>{});})();')
@@ -27238,7 +27241,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! washingtonpost.com
 ||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$redirect=nooptext,important,domain=washingtonpost.com
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$domain=washingtonpost.com
 !
 ! NOTE: Grouped rules for specific sites end ⬆️
@@ -34563,7 +34566,7 @@ myfoxzone.com,wtol.com,5newsonline.com,fox61.com,wthr.com,wqad.com,fox43.com,10t
 !+ NOT_OPTIMIZED
 online-lawyer.jp,open-minds.it##.fixed-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213716
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 tri247.com#?#body > div[style*="z-index:"]:has(> div[style*="cursor:"] > img[alt="Progressier logo"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175941
 !#if (adguard_app_ios || adguard_ext_safari)
@@ -34650,7 +34653,7 @@ movieshdwatch.to,watchseries.pe,watch32.sx,tinyzonetv.cc,moviesjoytv.to,solarmov
 huya.com#%#!function(){const t={apply:(t,e,n)=>{if(n[0]&&"function"==typeof n[0])try{if(n[0].toString().includes("LOGIN_FORCE_TIME"))return}catch(t){console.trace(t)}return Reflect.apply(t,e,n)}},e=new Proxy(window.setTimeout,t);Object.defineProperty(window,"setTimeout",{set:function(){},get:function(){return e}})}();
 ! https://github.com/uBlockOrigin/uAssets/issues/15883
 coolpc.com.tw,coolpc.tw#%#(function(){window.setTimeout=new Proxy(window.setTimeout,{apply:(a,b,c)=>c&&c[0]&&/SkipMsg\(\)/.test(c[0].toString())&&c[1]?(c[1]=1,Reflect.apply(a,b,c)):Reflect.apply(a,b,c)})})();
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 coolpc.com.tw,coolpc.tw#%#//scriptlet("adjust-setTimeout", "SkipMsg()", "*", "0.02")
 !
 atbmarket.com#$#.popup_promo_block { display: none !important; }
@@ -36521,7 +36524,7 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130066
 @@||onesignal.com^$domain=e1.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129633
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||cdn.onesignal.com/sdks/OneSignalSDK.js$script,redirect=noopjs,domain=sammobile.com
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||cdn.onesignal.com/sdks/OneSignalSDK.js$domain=sammobile.com
@@ -52897,7 +52900,7 @@ brainly.co.id#%#//scriptlet('set-local-storage-item', 'simple-funnel-name', '')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/78751
 brainly.com#%#//scriptlet('set-local-storage-item', 'social-qa/telemetry', '')
 brainly.com,brainly.pl#%#//scriptlet('set-local-storage-item', '/^flexible-funnel-/', '$remove$')
-!+ PLATFORM(windows, mac, android, ext_chromium)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium)
 brainly.pl##.js-react-bottom-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79085
 saashub.com##.sponsored
@@ -58670,9 +58673,9 @@ virustotal.com##span[slot="header"] > div + a[href^="https://developers.virustot
 ||media.geeksforgeeks.org/wp-content/post-ads-banner/
 geeksforgeeks.org##.inArticleAds
 ! https://github.com/AdguardTeam/AdguardFilters/issues/141546
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 liga.net##a[href="https://www.liga.net/adfree"]
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 liga.net#$#a[href="https://www.liga.net/adfree"] { position: absolute !important; left: -9999px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140450
 cyclismactu.net##div[id^="stop_pub_"]
@@ -60392,7 +60395,7 @@ hashhackers.com,katdrive.net#?#.row > center:has(> a#verify_button) ~ aside#seco
 rightrasta.com,neo-blood.co.jp#$#html { -webkit-touch-callout: default !important; -webkit-user-select: auto !important;-moz-user-select: text !important; -ms-user-select: text !important; user-select: auto !important; -webkit-tap-highlight-color: black !important; }
 rightrasta.com,neo-blood.co.jp#$#.unselectable { -webkit-touch-callout: default !important; -webkit-user-select: auto !important;-moz-user-select: text !important; -ms-user-select: text !important; user-select: auto !important; -webkit-tap-highlight-color: black !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123316
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_ext_chromium)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli || adguard_ext_chromium)
 work.ink#$#span#popup { display: none !important; }
 work.ink#$#span#notification-blackout { display: none !important; }
 !#endif
@@ -61528,7 +61531,7 @@ forex-trnd.com#%#//scriptlet("adjust-setInterval", "#mdtimer", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79196
 oeko-planet.com#%#//scriptlet('remove-class', 'async-hide', 'html')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/87661
-!+ PLATFORM(windows, mac, android, ext_chromium)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium)
 skmedix.pl#%#//scriptlet('adjust-setTimeout', '/runCounter|Math.random\(\)/', '*', '0.001')
 ! go.leechpremium.link - skip timer
 go.leechpremium.link#%#(function(){"function"===typeof fetch&&location.href.includes("/?id=")&&fetch(location.href).then(function(e){e.headers.forEach(function(a,f){if("refresh"===f&&a.includes("url=http"))try{if(a.includes("&url=aHR0c")){var b,c=null==(b=a.split(/&url=/))?void 0:b[1];location=atob(c)}else{var d;location=c=null==(d=a.split(/url=(.+)/))?void 0:d[1]}}catch(g){}})})})();
@@ -61797,9 +61800,9 @@ translit.net,translit.ru#%#//scriptlet("set-constant", "setblur", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46996
 wowroms.com#%#document.addEventListener('DOMContentLoad', function() { setTimeout(function() { second = 0; }, 300); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46530
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 sfile.mobi#%#//scriptlet("adjust-setInterval", "downloadButton", "", "0.02")
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 sfile.mobi#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/downloadButton/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45532
 goodssh.com#%#//scriptlet("set-constant", "counter", "-1")
@@ -61808,14 +61811,14 @@ a2zupload.com#%#//scriptlet("adjust-setInterval", "download", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45486
 katfile.cloud,katfile.com#%#//scriptlet("adjust-setTimeout", "#freebtn", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43273
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 coolrom.com.au#%#//scriptlet("adjust-setTimeout", "download()")
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 coolrom.com.au#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/download\(\)/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43131
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 freeroms.com#%#//scriptlet("adjust-setTimeout", "download()")
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 freeroms.com#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/download\(\)/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42766
 uxglow.com#%#!function(){if(-1<window.location.href.indexOf("/?r=")){var a=location.href.split("?r=");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
@@ -61861,7 +61864,7 @@ kisalt.xyz#%#//scriptlet("set-constant", "count", "0")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25825
 bankier.pl,claudia.pl,dyskusje24.pl,edziecko.pl,haps.pl,infozdrowie24.pl,kobieta.pl,moto.pl,gazeta.pl,tokfm.pl,sport.pl,plotek.pl#%#//scriptlet("set-constant", "ONTVminiatureBlocked", "trueFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16740
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 doviz.com#%#(() => {document.addEventListener("DOMContentLoaded", (() => {setTimeout(function() { if(typeof player.pause != 'undefined') { player.pause(); } }, 3000);}));})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14682
 cocoleech.com#%#//scriptlet("set-constant", "width", "100")

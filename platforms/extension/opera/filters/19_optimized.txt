@@ -1,9 +1,9 @@
-! Checksum: EbUcUOspsIJFWsggZjXvMg
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1773755001-3600.patch
+! Checksum: uwYro/dL+YmDkLSWp1wquA
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1773758051-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.72.37
-! TimeUpdated: 2026-03-17T13:39:59+00:00
+! Version: 2.0.72.38
+! TimeUpdated: 2026-03-17T14:31:00+00:00
 ! Expires: 10 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 meteum.ai,ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -68,7 +68,7 @@ otzovik.com#%#//scriptlet('prevent-eval-if', 'xored')
 otzovik.com#%#//scriptlet("abort-on-property-read", "Object.prototype.RtbLoadDone")
 otzovik.com#%#//scriptlet("abort-on-property-read", "Object.prototype.RtbBlockRenderStart")
 irecommend.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 rg.ru#%#//scriptlet('set-constant', 'Object.prototype.renderTo', 'undefined')
 ati.su#%#//scriptlet('abort-on-property-read', 'Object.prototype.createBannerItem')
 24smi.org#%#//scriptlet('set-constant', 'Object.prototype.blockId', 'undefined')
@@ -126,7 +126,7 @@ dzen.ru##div[class^="float-interview__float-"]
 [$path=/video]dzen.ru##div[class*="item-info__videoViewerItemInfo-"] + div:not([class])
 [$path=/pogoda]dzen.ru##div[data-bem*="segment-details"] > article.card ~ div[class]
 rambler.ua,rambler.ru#%#//scriptlet('set-cookie', '_blocker_hidden', '1')
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 championat.com#%#//scriptlet('json-prune', 'Blocks')
 sports.ru#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'undefined')
 sports.ru#%#//scriptlet('set-local-storage-item', 'sports:views:anti-adblock:shower', 'null')
@@ -1517,7 +1517,7 @@ forbes.com#$#html > body:not(#style_important) { overflow: visible !important; }
 filmix.ac,filmix.tech,filmix.zone##.social-counters
 aol.com#@#.topAd
 aol.com#@#.adwrap
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$domain=washingtonpost.com
 ##body.wp-embed-responsive > div#actionbar
 ##.gliaplayer-container
@@ -5008,7 +5008,7 @@ movieshdwatch.to,watchseries.pe,watch32.sx,tinyzonetv.cc,moviesjoytv.to,solarmov
 movieshdwatch.to,watchseries.pe,watch32.sx,tinyzonetv.cc,moviesjoytv.to,solarmovies.win,moviesjoyz.lol,arc018.to,fmovieszz.lol,myflixtor.tv,vipstream.tv,fboxtv.com,attackertv.so,lookmovie.tube,flixhq.to,actvid.rs,zoechip.gg,seriesonline.sx,hurawatchz.to,cineb.gg,sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.*,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,soap2day.*,sflix.*,hurawatch.cc#$##modalshare { display: none !important; }
 huya.com#%#!function(){const t={apply:(t,e,n)=>{if(n[0]&&"function"==typeof n[0])try{if(n[0].toString().includes("LOGIN_FORCE_TIME"))return}catch(t){console.trace(t)}return Reflect.apply(t,e,n)}},e=new Proxy(window.setTimeout,t);Object.defineProperty(window,"setTimeout",{set:function(){},get:function(){return e}})}();
 coolpc.com.tw,coolpc.tw#%#(function(){window.setTimeout=new Proxy(window.setTimeout,{apply:(a,b,c)=>c&&c[0]&&/SkipMsg\(\)/.test(c[0].toString())&&c[1]?(c[1]=1,Reflect.apply(a,b,c)):Reflect.apply(a,b,c)})})();
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 coolpc.com.tw,coolpc.tw#%#//scriptlet("adjust-setTimeout", "SkipMsg()", "*", "0.02")
 atbmarket.com#$#body { overflow: auto !important; }
 4glaza.ru#$#html { overflow: visible !important; }
@@ -5807,7 +5807,7 @@ techxplore.com,phys.org###subscribeToWebPush
 @@||d2r1yp2w7bby2u.cloudfront.net/js/a.js$domain=sonyliv.com
 @@||app.getbeamer.com/js/beamer-embed.js$domain=dashboard.ionicframework.com
 @@||onesignal.com^$domain=e1.ru
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||cdn.onesignal.com/sdks/OneSignalSDK.js$script,redirect=noopjs,domain=sammobile.com
 @@||cdn.onesignal.com/sdks/OneSignalSDK.js$domain=simkl.com
 @@||d2r1yp2w7bby2u.cloudfront.net/js/a.js$domain=lottiefiles.com

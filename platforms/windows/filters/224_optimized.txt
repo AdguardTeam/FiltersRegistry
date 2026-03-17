@@ -1,9 +1,9 @@
-! Checksum: vMs9FlUttwVDdwraKac/5Q
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1773755020-3600.patch
+! Checksum: jRJOhKhMt4JWhJzxKVz/WA
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1773758084-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.56.12
-! TimeUpdated: 2026-03-17T13:40:07+00:00
+! Version: 2.1.56.13
+! TimeUpdated: 2026-03-17T14:31:07+00:00
 ! Expires: 12 hours (update frequency)
 ||fsuooh.cc^
 ||hsehk.cn^
@@ -568,7 +568,7 @@ msn.cn#%#//scriptlet('json-prune', 'configs.*.properties.slideshowWCSettings.int
 ||msn.cn/resolver/api/resolve/$jsonprune=\$.configs['SlideShow/ntpmsn'].properties.additionalChildExperiences..children..childExperienceConfigInfo.configRef[?(key-substr '\$' 'NativeAd')]
 ||assets.msn.cn/periconfigs/feature-configs/consumptionpage/gallery_default/config.json$jsonprune=\$.properties.componentConfigs.slideshowConfigs.interstitialNativeAds
 ||assets.msn.cn/periconfigs/feature-configs/consumptionpage/gallery_default/config.json$jsonprune=\$.properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 v.youku.com#%#(()=>{const e="cna",t=()=>null!==document.cookie.match(new RegExp(`^${e}=|; ${e}=`));if(t())return;const o=new MutationObserver((()=>{const o=document.querySelector("preplay-layer > error-layer .preLayer-title");o&&o.textContent.includes("请关闭VPN代理软件或广告拦截插件后重试")&&!t()&&(document.cookie=`${e}=MwCHGEQKugYCAWoLKcbU0UGk;`,window.location.reload())})),n=document.documentElement;o.observe(n,{attributes:!0,childList:!0,subtree:!0}),setTimeout((()=>o.disconnect()),1e4)})();
 goodav17.com#%#//scriptlet("abort-on-property-read", "popunder")
 v-wb.youku.com#%#//scriptlet('set-constant', 'Object.prototype.adData', 'emptyObj')
@@ -2679,7 +2679,7 @@ netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] + span.tt-icon-close
 huavod.com,huaren.live#%#//scriptlet('set-constant', 'ConFig.config.ads', 'emptyObj')
 ||huavod.com/player/$replace=/let ConFig/var ConFig/,document,subdocument
 ||huaren.live/player/$replace=/let ConFig/var ConFig/,document,subdocument
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 /gmu-download.oss-$image,redirect-rule=1x1-transparent.gif,domain=voflix.vip
 bilibili.com##.container > .bili-feed-card:has(> div.bili-video-card div.bili-video-card__info--no-interest + h3 > a[target="_blank"]:not([href^="https://www.bilibili.com/"]))
 bilibili.com#?#.recommended-container_floor-aside .container > div[class$="feed-card"]:has(div[style$="56.25%;"] > div[class]:matches-css(before, content: /AdGuard/))
@@ -2721,7 +2721,7 @@ nivod2.com,nivod2.tv,nivod4.com,nivod5.com#%#//scriptlet('set-constant', 'pageDa
 nivod2.com,nivod2.tv,nivod4.com,nivod5.com#%#(function(){window.eval=new Proxy(eval,{apply:(e,c,n)=>{const o=Reflect.apply(e,c,n);if("object"==typeof o&&o.banners)try{o.banners.forEach(((e,c)=>{e.commercial&&(e.commercial={})}))}catch(e){console.debug(e)}return o}})})();
 nivod2.com,nivod2.tv,nivod4.com,nivod5.com#%#//scriptlet('set-constant', 'detailParams.is_ad_play', 'false')
 m.nivod2.com,m.nivod2.tv,m.nivod4.com,m.nivod4.tv,m.nivod5.tv,m.nivod7.tv,m.nivod8.tv,m.nivod9.tv#%#//scriptlet('evaldata-prune', 'entity.commercial')
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||adpai.thepaper.cn^$xmlhttprequest,redirect-rule=nooptext,domain=thepaper.cn
 yeyemo4.com,yeyemo5.com,yeyemo6.com,yeyemo7.com,yeyemo8.com,yeyemo9.com##center > a[target="_blank"] > img
 liaoningmovie.net##.ad_panelAR
@@ -2739,7 +2739,7 @@ mxdm.xyz#%#//scriptlet('abort-current-inline-script', 'Function', 'new Function(
 $script,third-party,denyallow=cdn.yinghuazy.xyz|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|cloudflare.net|rabbitstream.net|x.com,_____,domain=mxdm.xyz
 !+ NOT_PLATFORM(ext_ublock)
 $script,third-party,denyallow=myqcloud.com|bytecdntp.com|pddpic.com|googletagmanager.com,domain=yjys.me
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 doubibackup.com##body div.guangg
 ||52996.me/upload/ad/$media,redirect=noopmp4-1s
 !+ NOT_OPTIMIZED
@@ -2753,16 +2753,16 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_chinese
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||cdn.dingxiang-inc.com/ctu-group/constid-js/index.js$replace=/(^\/\*!.*?\*\/)/\$1try{const t=document.head\,e=document.createElement("style");e.type="text\/css"\,e.textContent=".wp > .a_t:has(> table > tbody > tr > td > .adsbygoogle) { display: none !important; }"\,t.appendChild(e)}catch(t){};/,domain=right.com.cn
 ||yfsp.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
 ||iyf.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
 ||aiyifan.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||101.qq.com/js/base.js$replace=/(el\.getAttribute\("type"\) === "text\/javascript")/\(\$1 && !el\.getAttribute\("nonce"\)\)/
 ||acs.youku.com/*/mtop.youku.play.ups.appinfo.get/*/?jsv=$replace=/("ad":\{)[\s\S]*?(\}\,"playlog")/\$1\$2/,important
 mnya.tw#@##advertise
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||republicworld.com/_app/immutable/assets/FloatAd.*.css$redirect-rule=nooptext
 xjwiki.github.io#@##pub_head
 spandayoga.ch#@#.elementor-popup-modal
@@ -2786,7 +2786,7 @@ hgamefree.info#@#.gridlove-ad
 @@||int.mwbbiz.com/static/*/app.js$domain=91porny.com
 huya.com#@##banner
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=nowplayer.now.com,important
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 @@||s1-static.msstatic.com/mfe/huya_main/*.html$xmlhttprequest,elemhide,jsinject,content,extension,domain=huya.com
 ||360doc.com^*.html?t=$badfilter
 @@||republicbharat.com/_app/immutable/chunks/FloatAd.*.js$domain=republicbharat.com
@@ -2831,7 +2831,7 @@ downkr.com#@#.address-left > ul:nth-child(2)
 hipertextual.com#@#.ad-above-footer
 gamersglobal.de#@#.gg-box
 @@||img*.kangaroobro.com/images/$image,domain=leyuman.com
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 @@||cloud.189.cn/web/subapp/main.html$jsinject,elemhide,extension
 @@||amazonaws.com/storage.liveabc.com/ads/$domain=store.liveabc.com
 @@||51zxw.net/getvutf.asp?$domain=51zxw.net
@@ -4657,6 +4657,7 @@ newduba.cn###jq_youxi
 ||af1tsjdta.com^
 ||cbhzxctgm.com^
 ||d48paxyhx.com^
+||aiheatta.com^
 ||w97nv5ibv4.com^
 ||1tvg524vih.com^
 ||pepwpv.icu^

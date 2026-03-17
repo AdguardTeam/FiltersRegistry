@@ -1,9 +1,9 @@
-! Checksum: 2JsdEs4zS8suheod7MMR4A
-! Diff-Path: ../patches/1/1-s-1773739699-3600.patch
+! Checksum: Vxm/x4rKs33/kbdsV9jHYg
+! Diff-Path: ../patches/1/1-s-1773758019-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.4.78
-! TimeUpdated: 2026-03-17T09:24:39+00:00
+! Version: 2.1.4.79
+! TimeUpdated: 2026-03-17T14:30:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -284,7 +284,7 @@ rtl.*/init.js?$third-party
 /bens/*/vinos.js?
 /bens/vinos.js?
 /bens/somejscode.js
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 /bens/vinos$redirect=nooptext,important
 !
 /a.php?id=*&loc=*&ref=
@@ -3789,10 +3789,10 @@ i.factor.ua,kriminal.tv,i.ua,lifedon.com.ua,football24.ua,vsetv.com,gorod.dp.ua,
 newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,internetua.com,okino.ua,orakul.com,ringside24.com,toneto.net#$?#head > iframe[name]:not([class]):not([id]):not([src]) { remove: true; }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52734
-! !+ PLATFORM(windows, mac, android)
+! !+ PLATFORM(windows, mac, android, cli)
 ! @@://s.zmctrack.net/z|$domain=finance.i.ua,vsetv.com|cn.ru|viks.bz|peers.tv|radio.i.ua|love.i.ua,~script
 !
-! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android)
+! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android && !adguard_app_cli)
 ! #%#//scriptlet("set-constant", "String.prototype.charCodeAt", "trueFunc")
 ! #%#//scriptlet("set-constant", "String.prototype.charCodeAt", "falseFunc")
 ! !#endif
@@ -3831,7 +3831,7 @@ dtf.ru#%#(()=>{const t=window.Map.prototype.values,a={apply:(a,e,p)=>{try{const 
 ||dtf.ru/assets/index-*.js$replace=/"assets\/Blocker-[\d\w]+\.js"\,//
 ||dtf.ru/assets/index-*.js$replace=/detectAdblock:/detectNoAdblock:/
 ! TODO: remove when this issues will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/514
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 dtf.ru#%#(()=>{void 0===window.TrustedScriptURL&&(window.TrustedScriptURL=()=>{});})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212306
 blitzfoxhub.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'AnalyticsMonitor')
@@ -4288,7 +4288,7 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12917
 opnevmonii.ru,sonnikonline.club$$script[tag-content=".com/rotator-v2/"][max-length="800"]
 opnevmonii.ru,bodytrain.ru,felomena.com#%#//scriptlet("abort-current-inline-script", "document.addEventListener", "onerror")
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ://block.*.com/rotator-v2/*.js
 ! <script id="cc-support-script" / spAsyncScript / ClicksCloud.net / `load([e(atob(host)`
 !
@@ -5203,7 +5203,7 @@ liveinternet.ru#%#Element.prototype.attachShadow = function(){};
 ||razlozhi.ru^$cookie=/^ya/
 !
 ! livejournal.com#
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 livejournal.com#%#//scriptlet("set-constant", "begun_new_callbacks", "undefined")
 !
 !
@@ -6441,7 +6441,7 @@ bikepost.ru#$#.ooDgoDoo { height: 0!important; }
 37.1.207.65#$#body { padding: 0 0 0 !important; }
 !
 ! ok.ru - ads in the right column
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 !ok.ru#$#.trg-b-banner-block { opacity: 0.01!important; pointer-events: none!important; height: 2px!important; }
 !ok.ru#$#.dialogWrapperBanner * { height: 0!important; }
 ! roem.ru - удаление брендированного фона, отступа сверху
@@ -17040,7 +17040,7 @@ moscowtimes.eu,moscowtimes.news,moscowtimes.ru##div[y-name="banner"]
 moscowtimes.eu,moscowtimes.news,moscowtimes.ru##.banner
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184250
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||yandex.ru/ads/*/getCode?$redirect=noopjson,domain=promodj.com
 !
 dad-fan.ru,freehat.cc,grif-fan.ru,lalapaluza.ru,simp-fan.ru,sp-fan.ru#$##page { z-index: 11!important; margin-top: auto!important; }
@@ -17287,7 +17287,7 @@ overclockers.ru##.material-other-feed
 ||overclockers.ru/static/js/app-pip.js
 ||overclockers.ru/webservice/getPipPlace?pipId=
 overclockers.ru#?#.column > div.grid:has(> div[class] > div[class^="an-block-"])
-!+ PLATFORM(windows, mac, android, ext_chromium)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium)
 overclockers.ru##.material-inline-an
 !
 ! рус-порно.com
@@ -17424,7 +17424,7 @@ afisha.bigmir.net#?#.b-article-footer > div.b-block_split:has(> header > span.b-
 pb-news.info,fainaidea.com#?#.td-ss-main-sidebar > aside.widget:contains(/загрузка...|Новости партнера/)
 !+ NOT_OPTIMIZED
 doctorpiter.ru##.creative-sticky
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 comss.ru##td[style="width:260px"] > div.av > a > img[width="185"][height="250"]
 !+ NOT_OPTIMIZED
 roem.ru###prnews-promo
@@ -17457,7 +17457,7 @@ youhack.ru##li.navTab.PopupClosed > a[href="https://youhack.ru/threads/775884/"]
 start33.ru###ad_top__block
 !+ NOT_OPTIMIZED
 start33.ru##div[id^="adv__banner_"]
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||utarget.ru/goto/*/18a7c76811/$redirect=nooptext,important,domain=utarget.ru
 ! goodgame.ru - remove hint after 6.2 release
 !+ PLATFORM(ios, ext_opera, ext_ff, android)
@@ -17614,7 +17614,7 @@ mail.ru##.micro-widgets + div:empty
 mail.ru#%#//scriptlet('json-prune', '*.json.result.body.direct')
 ! for all domains
 mail.ru#%#//scriptlet('json-prune', 'result.status')
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 mail.ru##div[slot="main-column"] > div.tgb-wrapper
 !
 ||ad.mail.ru^$domain=~e.mail.ru|~octavius.mail.ru
@@ -17790,7 +17790,7 @@ vk.com,vk.ru##div[data-ad]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198603#issuecomment-2683352478
 ! Вероятно проблемное
 ! vk.com,vk.ru#?##feed_rows > div[class^="feed_row"]:has(> div[class] .PostHeaderSubtitle:contains(/[Реклама]/))
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 feed$domain=vk.com|vk.ru,xmlhttprequest,replace=/banner:/bann_er:/
 vk.com,vk.ru#%#//scriptlet('trusted-replace-xhr-response', '/banner:/g', '_banner:', 'feed')
 vk.com,vk.ru##.post_marked_as_ads
@@ -18322,7 +18322,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49088
 ||vast*.kinogo.by/code/video-steam/?id=$xmlhttprequest,other,~script,replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39998
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||otvet.mail.ru/*/|$replace=/\{\s*(\"css\"\s:\s*".*"\,)|(\"baits\"\s:\s*".*"\,)//
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29629
 ||my.mail.ru/*?xemail=*&ajax_call=$replace=/^.*\"direct\":\{\"ads\"\:.*\$//,important
@@ -18675,7 +18675,7 @@ biblio.com#@#.affiliate
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67678
 @@||dzyannica.by/sites/default/files/files/files/Reclama/$image
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66843
-!+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
+!+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 @@||ssp.rambler.ru^|$domain=rambler.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/65736
 @@||yastatic.net/pcode/adfox/loader.js$domain=vseinstrumenti.ru
@@ -18813,7 +18813,7 @@ club.foto.ru#@#.adv_link
 ! https://forum.adguard.com/index.php?threads/pingfarm-com-incorrect-blocking.29297/
 @@||pingfarm.com/ping.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21421
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 @@||anketa.vtb.ru^$jsinject,elemhide,extension
 ! https://forum.adguard.com/index.php?threads/24242/
 !@@||reklama*.ngs.ru/ap-js/?pid=
@@ -19480,7 +19480,7 @@ gnezdogluharya.ru#@#.banners
 @@||galaxy2.mobstudio.ru$document
 @@||pm.mobstudio.ru/services/$document
 ! Плеер не работает без этого правила
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 @@||trinixy.ru/vid.php$content,elemhide,jsinject
 ! Боковая панель Яндекса для Opera
 @@||op.yandex.ru$document

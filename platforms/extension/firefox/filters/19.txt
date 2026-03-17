@@ -1,9 +1,9 @@
-! Checksum: UQHpxt/yaaw2/YGr+EgKTw
-! Diff-Path: ../patches/19/19-s-1773754998-3600.patch
+! Checksum: SxU3A/rEe4qZ5TOshBJ/oA
+! Diff-Path: ../patches/19/19-s-1773758045-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.72.37
-! TimeUpdated: 2026-03-17T13:39:59+00:00
+! Version: 2.0.72.38
+! TimeUpdated: 2026-03-17T14:31:00+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -151,7 +151,7 @@ otzovik.com#%#//scriptlet("abort-on-property-read", "Object.prototype.RtbBlockRe
 irecommend.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/142800
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 rg.ru#%#//scriptlet('set-constant', 'Object.prototype.renderTo', 'undefined')
 !
 ! ati.su
@@ -297,7 +297,7 @@ rambler.ru##.comments__read-also-title
 rambler.ru##.comments__partners
 !
 ! championat.com
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 championat.com#%#//scriptlet('json-prune', 'Blocks')
 ! subdomains: news.rambler.ru,kino.rambler.ru,sport.rambler.ru,auto.rambler.ru,finance.rambler.ru,woman.rambler.ru,weekend.rambler.ru,travel.rambler.ru,doctor.rambler.ru
 ! Check, if these sites work fine with scriptlet: mail.rambler.ru, kino.rambler.ru, weather.rambler.ru, comments.rambler.ru, kassa.rambler.ru, horoscopes.rambler.ru
@@ -3154,7 +3154,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! washingtonpost.com
 ||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$redirect=nooptext,important,domain=washingtonpost.com
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$domain=washingtonpost.com
 !
 ! NOTE: Grouped rules for specific sites end ⬆️
@@ -10468,7 +10468,7 @@ movieshdwatch.to,watchseries.pe,watch32.sx,tinyzonetv.cc,moviesjoytv.to,solarmov
 huya.com#%#!function(){const t={apply:(t,e,n)=>{if(n[0]&&"function"==typeof n[0])try{if(n[0].toString().includes("LOGIN_FORCE_TIME"))return}catch(t){console.trace(t)}return Reflect.apply(t,e,n)}},e=new Proxy(window.setTimeout,t);Object.defineProperty(window,"setTimeout",{set:function(){},get:function(){return e}})}();
 ! https://github.com/uBlockOrigin/uAssets/issues/15883
 coolpc.com.tw,coolpc.tw#%#(function(){window.setTimeout=new Proxy(window.setTimeout,{apply:(a,b,c)=>c&&c[0]&&/SkipMsg\(\)/.test(c[0].toString())&&c[1]?(c[1]=1,Reflect.apply(a,b,c)):Reflect.apply(a,b,c)})})();
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 coolpc.com.tw,coolpc.tw#%#//scriptlet("adjust-setTimeout", "SkipMsg()", "*", "0.02")
 !
 atbmarket.com#$#.popup_promo_block { display: none !important; }
@@ -12204,7 +12204,7 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130066
 @@||onesignal.com^$domain=e1.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129633
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||cdn.onesignal.com/sdks/OneSignalSDK.js$script,redirect=noopjs,domain=sammobile.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/126988
 @@||cdn.onesignal.com/sdks/amp/amp-helper-frame.js$domain=lelum.pl

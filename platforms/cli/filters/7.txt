@@ -1,9 +1,9 @@
-! Checksum: PlAVI25je5FCKYf8j9JL0Q
-! Diff-Path: ../patches/7/7-s-1773685738-3600.patch
+! Checksum: Fpn3H+SJPYiuA+/P6NwqGA
+! Diff-Path: ../patches/7/7-s-1773758031-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.72.86
-! TimeUpdated: 2026-03-16T18:25:58+00:00
+! Version: 2.0.72.87
+! TimeUpdated: 2026-03-17T14:30:38+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -563,6 +563,8 @@ yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box:not(.text-ad)
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
+||local.adguard.org/?type=content-script|$domain=wiki.yjsnpi.nu,important
+@@||local.adguard.org^$redirect=noopjs,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#%#//scriptlet('abort-on-stack-trace', 'Function.prototype.toString', '/w/load.php?lang=ja&modules=codex-search-styles%2Cjquery%2Coojs%2C&skin=vector-2022&version=L58hf')
 wiki.yjsnpi.nu#%#//scriptlet("prevent-setTimeout", "()=>k(S(4")
 $script,~third-party,redirect-rule=noopjs,domain=wiki.yjsnpi.nu
@@ -570,6 +572,8 @@ wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([hre
 wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img', 'height', '128px')
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) { font-size: 0 !important; }
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img { height: 0 !important; }
+||wiki.yjsnpi.nu/comments/$script,replace=/(;\}\}function [A-Za-z]+\([A-Za-z]?\)\{const [a-z]+=[A-Z]\,(?:const )?[a-z]+=[A-Z]).{500\,2000}\]\(\);\}\}/\$1}/
+||wiki.yjsnpi.nu/comments/$script,replace=/(\);\}\}function [A-Za-z]+\([A-Za-z]?\)\{const [a-z]+=[A-Z]\,(?:const )?[a-z]+=[A-Z]).{500\,2000}\]\(\)\)\);\}/\$1}/
 $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 @@||wiki.yjsnpi.nu^$image,xmlhttprequest,~third-party
 @@||wiki.yjsnpi.nu^$generichide
@@ -743,6 +747,8 @@ blog-and-destroy.com###no-ads-msg
 blog-and-destroy.com##.affiliate-card
 blog-and-destroy.com#%#//scriptlet("abort-current-inline-script", "onload", "adsCount")
 ! https://github.com/brave/adblock-lists/pull/985
+!+ PLATFORM(windows, mac, android, cli, ext_chromium, ext_ublock)
+musenboya.com#%#//scriptlet("abort-current-inline-script", "navigator.brave")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131648
 gamemod.blog.fc2.com,helpsupport.blog.fc2.com#%#//scriptlet('prevent-setTimeout', '/adsbygoogle|clientHeight/')
 gamemod.blog.fc2.com,helpsupport.blog.fc2.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com', 'true', 'cors')
@@ -873,6 +879,8 @@ video.tv-tokyo.co.jp#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect
 @@||video.tv-tokyo.co.jp/common/js/pc/ads.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=video.tv-tokyo.co.jp
 @@||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$domain=video.tv-tokyo.co.jp
+!+ PLATFORM(windows, mac, android, cli)
+||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$redirect=nooptext,important,domain=video.tv-tokyo.co.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21737
 380cc.cc#$##playertopads { height: 51px!important; position: absolute!important; left: -3000px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20703
@@ -11950,8 +11958,7 @@ kokopyon.net#%#//scriptlet('remove-attr', 'href', '.topentry_text a', 'stay')
 ||livedoor.blogimg.jp/ld_manga/imgs/
 !+ NOT_OPTIMIZED
 web.gekisaka.jp###PC_SP_NEWS_D_GROUP
-automaton-media.com#$?##custom-background-css { remove: true; }
-||automaton-media.com/wp-content/uploads/*_automaton_banner.jpg
+automaton-media.com$$style[id="custom-background-css"]
 service.webgoto.net##a[href^="https://www.amazon.co.jp"][target="_blank"]
 ! https://github.com/AdguardTeam/AdguardForiOS/issues/2315
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179893
@@ -12045,6 +12052,8 @@ h1g.jp#$#.mainbody > div[style="width:800px; height:400px; margin-top:30px;"] { 
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202622
 ! Website is broken when blocked scripts are removed from the page,
 ! so as a workaround, "redirect-rule" is used.
+!+ PLATFORM(windows, mac, android, cli)
+$script,redirect-rule=noopjs,domain=azukiazusa.dev
 ! fix download
 @@||g.doubleclick.net/gampad/ads?$xmlhttprequest,domain=video-ac.com
 @@||g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=video-ac.com

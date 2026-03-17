@@ -1,8 +1,8 @@
-! Checksum: GdEd7Hhw9e7PfjBlbdIH5g
+! Checksum: Eea2kpi21SmeRciFlRhr1w
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.4.78
-! TimeUpdated: 2026-03-17T09:24:39+00:00
+! Version: 2.1.4.79
+! TimeUpdated: 2026-03-17T14:30:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3526,7 +3526,7 @@ http://w7.ru^$third-party
 !
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 adbetnet.com$third-party
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||greencuttlefish.com^$third-party,~xmlhttprequest
 !
 ! This section contains the list of advertising networks domains, which are hosted on non advertising sites as subdomains.
@@ -3714,10 +3714,10 @@ wss://s.zmctrack.net/
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52734
-! !+ PLATFORM(windows, mac, android)
+! !+ PLATFORM(windows, mac, android, cli)
 ! @@://s.zmctrack.net/z|$domain=finance.i.ua,vsetv.com|cn.ru|viks.bz|peers.tv|radio.i.ua|love.i.ua,~script
 !
-! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android)
+! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android && !adguard_app_cli)
 ! !#endif
 !
 ! NOTE: Ads replacement (piguiqproxy.com etc.) end ⬆️
@@ -4184,9 +4184,9 @@ fishki.net##div[class^="__brand_"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14492
 @@||money-pic.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14820
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||horoscopes.rambler.ru^$generichide
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||an.yandex.ru/system/context.js$domain=horoscopes.rambler.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14708
 @@/fuckadblock.js$domain=animedub.ru
@@ -4215,7 +4215,7 @@ fishki.net##div[class^="__brand_"]
 !
 ! <script src="data:text/javascript;base64
 ! <script>var _0x
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||loadercdn.com^
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13764
@@ -4225,14 +4225,14 @@ chipmaker.ru#@#.ad-inline
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13178
 @@||screenpost.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13396
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||baby.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13127
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||dni.ru^$generichide
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||an.yandex.ru/system/context.js$domain=dni.ru
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||yastatic.net/pcode/adfox/loader.js$domain=dni.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12158
 @@||suj.li/assets/xnew/js/fuckadblock.js
@@ -4286,7 +4286,7 @@ api.yadoma.tv#@#.ad_content
 @@||seetv.tv^$generichide
 @@||seetv.tv/assets_t/ads/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9265
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||ltorzhok.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8490
 @@||blog.foolsoft.ru^$generichide
@@ -4337,7 +4337,7 @@ aqa.ru#@#div[id^="div-gpt-ad"]
 ! rambler replacement script (scriptlet must be in Annoyances filter)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16182
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||franecki.net/assets/vendor/152d2e364054f1dec817d4bbab982298.xml$third-party
 ! lifehacker.ru - ads reinjection
 @@||lifehacker.ru/js/advert.js
@@ -4382,9 +4382,9 @@ rango-hack.ru##.svg-adblock
 ! https://forum.adguard.com/index.php?threads/18571/
 api.ekranka.tv#@#.ad_content
 ! https://forum.adguard.com/index.php?threads/18179/
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=iomedia.ru
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 iomedia.ru#@#.desktop_ad
 @@||iomedia.ru/static/adsbygoogle.js
 cybergame.tv###abwarn
@@ -15242,7 +15242,7 @@ kritika24.ru##table[width="160"][height="600"]
 ||sarnovosti.ru/banners/
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_safari, ext_android_cb)
 appleinsider.ru##.branding-placeholder
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 |https://$script,stylesheet,third-party,domain=fastpic.ru,badfilter
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_safari, ext_android_cb)
 stolica-s.su##.ban-top
@@ -15274,9 +15274,9 @@ soccer365.ru##body > div[class*="no-mobile"] > div[onclick]
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 soccer365.ru##div[style^="width:980px;height:90px;"]
 ! goodgame.ru - remove hint after 6.2 release
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ://goodgame.ru^|$xmlhttprequest
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ://goodgame.ru/*/|$xmlhttprequest
 !+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ff)
 winlined.ru##a[href="http://www.winline.ru"]
@@ -16498,7 +16498,7 @@ altapress.ru#@##banner-top
 ! gsmvezde.ru - broken by Adguard injections
 @@||gsmvezde.ru/imgs|$document
 ! goodgame.ru - broken auth
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||goodgame.ru/ajax/*$domain=goodgame.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6137
 @@||parlament.ch/_layouts/*/Branding/
@@ -17204,7 +17204,7 @@ gsm.in.ua##body > div[class*=" "][style^="background: "]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68143
 budport.com.ua##body > div[style*="text-align:center"][style*="z-index:9999"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102060
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pubads.g.doubleclick.net/gampad/ads?sz=640x360&ad_rule=0&iu=%2F82479101%2FTsn.ua%2FPREroll-1_Cut&cust_params=$domain=imasdk.googleapis.com
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48882#issuecomment-584208221
@@ -17225,7 +17225,7 @@ budport.com.ua##body > div[style*="text-align:center"][style*="z-index:9999"]
 ! prozoro.net.ua - ads reinjection
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46073
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pixel.adtelligent.com/player/adblock$domain=player.starlight.digital
 ictv.ua#@##adblock
 @@||geo-service.adtelligent.com^|$domain=ictv.ua

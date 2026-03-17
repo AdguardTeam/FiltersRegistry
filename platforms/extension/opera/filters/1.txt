@@ -1,9 +1,9 @@
-! Checksum: ACZpgtekc0llw5utLAuqZg
-! Diff-Path: ../patches/1/1-s-1773739715-3600.patch
+! Checksum: +DDWCdKSDYylFagdQ22W6A
+! Diff-Path: ../patches/1/1-s-1773758048-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.4.78
-! TimeUpdated: 2026-03-17T09:24:39+00:00
+! Version: 2.1.4.79
+! TimeUpdated: 2026-03-17T14:30:09+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3562,7 +3562,7 @@ http://w7.ru^$third-party
 ! Ads reinjection (For apps only)
 !
 !
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||greencuttlefish.com^$third-party,~xmlhttprequest
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||cpm.wargaming.net^$third-party
@@ -3763,10 +3763,10 @@ i.factor.ua,kriminal.tv,i.ua,lifedon.com.ua,football24.ua,vsetv.com,gorod.dp.ua,
 newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,internetua.com,okino.ua,orakul.com,ringside24.com,toneto.net#$?#head > iframe[name]:not([class]):not([id]):not([src]) { remove: true; }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52734
-! !+ PLATFORM(windows, mac, android)
+! !+ PLATFORM(windows, mac, android, cli)
 ! @@://s.zmctrack.net/z|$domain=finance.i.ua,vsetv.com|cn.ru|viks.bz|peers.tv|radio.i.ua|love.i.ua,~script
 !
-! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android)
+! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android && !adguard_app_cli)
 ! #%#//scriptlet("set-constant", "String.prototype.charCodeAt", "trueFunc")
 ! #%#//scriptlet("set-constant", "String.prototype.charCodeAt", "falseFunc")
 ! !#endif
@@ -4251,9 +4251,9 @@ fishki.net#%#//scriptlet('prevent-xhr', 'yandex.ru')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14492
 @@||money-pic.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14820
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||horoscopes.rambler.ru^$generichide
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||an.yandex.ru/system/context.js$domain=horoscopes.rambler.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14708
 @@/fuckadblock.js$domain=animedub.ru
@@ -4281,15 +4281,15 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12917
 opnevmonii.ru,bodytrain.ru,felomena.com#%#//scriptlet("abort-current-inline-script", "document.addEventListener", "onerror")
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 sonnikonline.club#%#//scriptlet("abort-current-inline-script", "document.addEventListener", "/rotator")
 ! <script id="cc-support-script" / spAsyncScript / ClicksCloud.net / `load([e(atob(host)`
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 maxpark.com,y-story.ru,primamedia.ru,sobakada.ru,aftershock.news,it-tehnik.ru,modernfirearms.net#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "/^new \(function\(\)/")
 !
 ! <script src="data:text/javascript;base64
 ! <script>var _0x
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||loadercdn.com^
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13764
@@ -4300,14 +4300,14 @@ chipmaker.ru#$#a[id^="ipb-attach-url-"] { display: block!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13178
 @@||screenpost.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13396
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||baby.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13127
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||dni.ru^$generichide
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||an.yandex.ru/system/context.js$domain=dni.ru
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||yastatic.net/pcode/adfox/loader.js$domain=dni.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12158
 @@||suj.li/assets/xnew/js/fuckadblock.js
@@ -4359,7 +4359,7 @@ api.yadoma.tv#@#.ad_content
 ! https://forum.adguard.com/index.php?threads/seetv-tv.6112/
 @@||seetv.tv/assets_t/ads/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9265
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||ltorzhok.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8490
 @@||blog.foolsoft.ru^$generichide
@@ -4414,7 +4414,7 @@ aqa.ru#@#div[id^="div-gpt-ad"]
 ||zoomdecorate.rambler.ru^$script,xmlhttprequest,redirect=noopjs,domain=afisha.ru|autorambler.ru|championat.com|eda.ru|gazeta.ru|lenta.ru|letidor.ru|moslenta.ru|motor.ru|passion.ru|quto.ru|rambler.ru|rns.online|wmj.ru
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16182
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||franecki.net/assets/vendor/152d2e364054f1dec817d4bbab982298.xml$third-party
 ! lifehacker.ru - ads reinjection
 @@||lifehacker.ru/js/advert.js
@@ -4470,9 +4470,9 @@ rango-hack.ru##.svg-adblock
 ! https://forum.adguard.com/index.php?threads/18571/
 api.ekranka.tv#@#.ad_content
 ! https://forum.adguard.com/index.php?threads/18179/
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=iomedia.ru
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 iomedia.ru#@#.desktop_ad
 @@||iomedia.ru/static/adsbygoogle.js
 iomedia.ru#%#//scriptlet('set-constant', 'canRunAds', 'true')
@@ -5372,7 +5372,7 @@ androidtop.net#%#//scriptlet("adjust-setInterval", "countdown", "", "0.02")
 ! zikurat.media - background
 zikurat.media#%#//scriptlet('prevent-window-open', '0', 'zikurat.media')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56102#issuecomment-633917168
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 forallkino.ru,hdrabbit.ru,kinowinx.ru#%#//scriptlet("set-constant", "Object.prototype.timeToHoldAds", "0")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55487
 oxax.tv#%#//scriptlet('prevent-window-open')
@@ -5407,7 +5407,7 @@ vk.com#%#//scriptlet("set-constant", "noAdsAtAll", "true")
 ! life.ru - ads
 life.ru#?#.news-feed-item:has(> div.news-feed-item-advertising)
 ! tele.ru - ads
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 tele.ru#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "/substr/")
 ! Streams at sport-24tv.ru
 sportbox.ws,goool7.ws,sport-24tv.ru#%#//scriptlet("prevent-window-open")
@@ -5976,7 +5976,7 @@ mel.fm#$#.i-layout_branding > i-layout__branding-content-wrapper { margin-top: 0
 ! car.ru - top padding fix
 car.ru#$#main > header { padding-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37631
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_ff)
 rpgnuke.ru#$#html > body { background: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28519
 razlozhi.ru#$#body > div[class][style^="background: url"][style*="rgb"][style*="; width:"][style*="; height:"] { width: 100% !important; }
@@ -6179,7 +6179,7 @@ koolinar.ru#$#body { background-image: none !important; }
 hs-manacost.ru#$#body { background-image: none!important; }
 hs-manacost.ru#$##td-outer-wrap { cursor: auto!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8579
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 bazr.ru#$#.fluid-width-video-wrapper { padding-top: 50%!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7998
 province.ru#$#div[style*="width:240px;"][style*="height: 400px;"] { visibility: hidden!important; }
@@ -6233,7 +6233,7 @@ itbukva.com#$#.popular_tems { margin-bottom: 1em!important; }
 iguides.ru#$#body > div[style="height: 300px;"] { height: 100px!important; }
 !
 ! https://forum.adguard.com/index.php?threads/18179/
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 iomedia.ru#$#.adsbygoogle { position: absolute!important; left: -3000px!important; }
 !
 ! banki.ru - удаление отступа сверху
@@ -17381,9 +17381,9 @@ kritika24.ru##div[id^="fialet_"]
 kritika24.ru##table[width="160"][height="600"]
 !+ NOT_OPTIMIZED
 ||sarnovosti.ru/banners/
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 |https://$script,stylesheet,third-party,domain=fastpic.ru,badfilter
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ||gynax.com/j/w.php$redirect=nooptext,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10907
 !+ NOT_OPTIMIZED
@@ -17397,9 +17397,9 @@ start33.ru###ad_top__block
 !+ NOT_OPTIMIZED
 start33.ru##div[id^="adv__banner_"]
 ! goodgame.ru - remove hint after 6.2 release
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ://goodgame.ru^|$xmlhttprequest
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ://goodgame.ru/*/|$xmlhttprequest
 !+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ff)
 winlined.ru##a[href="http://www.winline.ru"]
@@ -18029,7 +18029,7 @@ sports.ru##.news-item__content > a[href^="https://trbna.co/"]
 ! VAST: https://uploads.adguard.com/up04_3dsdl_Sport_futbol_hokkei_basketbol_tennis_boks_biatlon_Formula-1__vse_novosti_sporta_na_Sports.ru.png
 ||cdn.videonow.ru^$domain=ua.tribuna.com|by.tribuna.com
 !
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 sports.ru#%#//scriptlet('set-constant', 'Object.prototype.branding', '')
 ! END: sports.ru / ua.tribuna.com / by.tribuna.com
 !
@@ -18757,7 +18757,7 @@ altapress.ru#@##banner-top
 ! gsmvezde.ru - broken by Adguard injections
 @@||gsmvezde.ru/imgs|$document
 ! goodgame.ru - broken auth
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 @@||goodgame.ru/ajax/*$domain=goodgame.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6137
 @@||parlament.ch/_layouts/*/Branding/

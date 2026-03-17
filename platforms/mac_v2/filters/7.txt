@@ -1,9 +1,9 @@
-! Checksum: 8P4HsoD9xDJX+Xj2NtE1dg
-! Diff-Path: ../patches/7/7-s-1773685761-3600.patch
+! Checksum: mdEiiem2Glgo6EXqvYHH9w
+! Diff-Path: ../patches/7/7-s-1773758075-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.72.86
-! TimeUpdated: 2026-03-16T18:25:58+00:00
+! Version: 2.0.72.87
+! TimeUpdated: 2026-03-17T14:30:38+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -747,7 +747,7 @@ blog-and-destroy.com###no-ads-msg
 blog-and-destroy.com##.affiliate-card
 blog-and-destroy.com#%#//scriptlet("abort-current-inline-script", "onload", "adsCount")
 ! https://github.com/brave/adblock-lists/pull/985
-!+ PLATFORM(windows, mac, android, ext_chromium, ext_ublock)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium, ext_ublock)
 musenboya.com#%#//scriptlet("abort-current-inline-script", "navigator.brave")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131648
 gamemod.blog.fc2.com,helpsupport.blog.fc2.com#%#//scriptlet('prevent-setTimeout', '/adsbygoogle|clientHeight/')
@@ -879,7 +879,7 @@ video.tv-tokyo.co.jp#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect
 @@||video.tv-tokyo.co.jp/common/js/pc/ads.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=video.tv-tokyo.co.jp
 @@||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$domain=video.tv-tokyo.co.jp
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$redirect=nooptext,important,domain=video.tv-tokyo.co.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21737
 380cc.cc#$##playertopads { height: 51px!important; position: absolute!important; left: -3000px!important; }
@@ -12052,7 +12052,7 @@ h1g.jp#$#.mainbody > div[style="width:800px; height:400px; margin-top:30px;"] { 
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202622
 ! Website is broken when blocked scripts are removed from the page,
 ! so as a workaround, "redirect-rule" is used.
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 $script,redirect-rule=noopjs,domain=azukiazusa.dev
 ! fix download
 @@||g.doubleclick.net/gampad/ads?$xmlhttprequest,domain=video-ac.com

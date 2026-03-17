@@ -590,7 +590,7 @@ wiki.yjsnpi.nu#@##mw-content-text > div.ad.top[style*="min-height:"]
 wiki.yjsnpi.nu#@##mw-content-text > div[style*="min-height:"]:has(> div[id^="im-"] > script)
 wiki.yjsnpi.nu###mw-content-text > div > div[style^="position:fixed; bottom:0;left:0;right:0;width:100%;background:"]
 !#endif
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli)
 ||local.adguard.org/?type=content-script|$domain=wiki.yjsnpi.nu,important
 @@||local.adguard.org^$redirect=noopjs,domain=wiki.yjsnpi.nu
 !#endif
@@ -601,7 +601,7 @@ wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([hre
 wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img', 'height', '128px')
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) { font-size: 0 !important; }
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img { height: 0 !important; }
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_ext_firefox)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli || adguard_ext_firefox)
 ||wiki.yjsnpi.nu/comments/$script,replace=/(;\}\}function [A-Za-z]+\([A-Za-z]?\)\{const [a-z]+=[A-Z]\,(?:const )?[a-z]+=[A-Z]).{500\,2000}\]\(\);\}\}/\$1}/
 ||wiki.yjsnpi.nu/comments/$script,replace=/(\);\}\}function [A-Za-z]+\([A-Za-z]?\)\{const [a-z]+=[A-Z]\,(?:const )?[a-z]+=[A-Z]).{500\,2000}\]\(\)\)\);\}/\$1}/
 !#endif
@@ -828,7 +828,7 @@ blog-and-destroy.com###no-ads-msg
 blog-and-destroy.com##.affiliate-card
 blog-and-destroy.com#%#//scriptlet("abort-current-inline-script", "onload", "adsCount")
 ! https://github.com/brave/adblock-lists/pull/985
-!+ PLATFORM(windows, mac, android, ext_chromium, ext_ublock)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium, ext_ublock)
 musenboya.com#%#//scriptlet("abort-current-inline-script", "navigator.brave")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131648
 gamemod.blog.fc2.com,helpsupport.blog.fc2.com#%#//scriptlet('prevent-setTimeout', '/adsbygoogle|clientHeight/')
@@ -1042,7 +1042,7 @@ video.tv-tokyo.co.jp#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect
 @@||video.tv-tokyo.co.jp/common/js/pc/ads.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=video.tv-tokyo.co.jp
 @@||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$domain=video.tv-tokyo.co.jp
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$redirect=nooptext,important,domain=video.tv-tokyo.co.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21737
 380cc.cc#$##playertopads { height: 51px!important; position: absolute!important; left: -3000px!important; }
@@ -12235,7 +12235,7 @@ kokopyon.net##.topentry_text
 ||livedoor.blogimg.jp/ld_manga/imgs/
 !+ NOT_OPTIMIZED
 web.gekisaka.jp###PC_SP_NEWS_D_GROUP
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli)
 automaton-media.com$$style[id="custom-background-css"]
 !#else
 automaton-media.com#$?##custom-background-css { remove: true; }
@@ -12380,7 +12380,7 @@ h1g.jp#$#.mainbody > div[style="width:800px; height:400px; margin-top:30px;"] { 
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202622
 ! Website is broken when blocked scripts are removed from the page,
 ! so as a workaround, "redirect-rule" is used.
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 $script,redirect-rule=noopjs,domain=azukiazusa.dev
 ! fix download
 @@||g.doubleclick.net/gampad/ads?$xmlhttprequest,domain=video-ac.com

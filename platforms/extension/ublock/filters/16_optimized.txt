@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ElYYUbAuvAyDjPWRfPaZEw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1773716911-3600.patch
+! Checksum: SQVpN8jjqd44q9/46Q9OvQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1773758061-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.56.26
-! TimeUpdated: 2026-03-16T16:28:35+00:00
+! Version: 2.0.56.27
+! TimeUpdated: 2026-03-17T14:30:57+00:00
 ! Expires: 5 days (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -247,7 +247,7 @@ $script,redirect-rule=noop.js,domain=tf1info.fr
 ##.rwad-with-placeholder
 tf1info.fr##+js(adjust-setInterval, defaultConsentString, *, 0.001)
 !+ NOT_PLATFORM(ext_ff)
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 supersoluce.com##+js(adjust-setTimeout, event_listener_timeout, *, 0.001)
 marieclaire.fr##+js(adjust-setTimeout, /userConsentProcess|this===/, *, 0.001)
 1jour1film.cyou##+js(remove-attr, href, a[href]#clickfakeplayer)
@@ -835,7 +835,7 @@ nicematin.com#@#section:has(.brand:contains(sponsorisé))
 @@||viherpeukalot.fi/shop_layout/
 $script,3p,domain=waaw.to,badfilter
 @@||sonar.viously.com/*/js$script,domain=futura-sciences.com
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_opera)
 @@||tdn.da-services.ch/current/lessentiel_durable.js$domain=lessentiel.lu
 #@#.croco_wrapper, [onclick*="_"], [onclick*="var"], [onmousedown*="\x"], [style*="height: 90px;"]
 @@||ultimedia.com/js/common/smart.js$domain=sudouest.fr
@@ -873,7 +873,7 @@ raidshadowlegends.com#@#a[href^="https://plarium.com/"]
 cloud.189.cn#@#.ad-container
 @@||sonar.viously.com/*/js?*vastPassbackCustomMacro$domain=futura-sciences.com
 hsreplay.net#@#.ads-container
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_opera)
 @@||prod.adspsp.com/adb.*.min.js$domain=healthline.com
 @@||img.dorzeczy.pl/*static/*.css
 @@||yospace.com/csm/*.mpd$xhr,domain=m6.fr

@@ -1,9 +1,9 @@
-! Checksum: dLsHUkvdM7w8hF5/Zd/3Aw
-! Diff-Path: ../patches/18/18-s-1773750425-3600.patch
+! Checksum: O+OoFyhEzqoQ6UQQznfwVw
+! Diff-Path: ../patches/18/18-s-1773758067-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.83.7
-! TimeUpdated: 2026-03-17T12:23:35+00:00
+! Version: 2.0.83.8
+! TimeUpdated: 2026-03-17T14:30:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2586,6 +2586,7 @@ ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-
 !
 ! NOTE: Regular rules
 !
+supplierassurance.com###global-cookie-message-holder
 dilosi.services.gov.gr#%#//scriptlet('trusted-set-cookie', 'dilosi_cookie', 'Accept_cookies')
 shangri-la.com#$##js-cookie-modal { display: none !important; }
 shangri-la.com#$#.sl-cookie-modal-body-hidden { overflow: auto !important; }
@@ -17380,7 +17381,7 @@ nablussoaps.de,bike1980.de,goldshop-ulm.de,scandmarkt.com,hannibelle.de,holzfee.
 gusarov-group.by,m.economictimes.com##.privacy_block
 !+ NOT_OPTIMIZED
 sutas.market##.footer-fixed-cookie-container
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 mmorpg.org.pl##body div.cookies-policy
 !+ NOT_OPTIMIZED
 smart.com###cp-dialog
@@ -18379,7 +18380,7 @@ bonify.de,srf.ch,hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.n
 ! TODO: Rework when https://github.com/AdguardTeam/Scriptlets/issues/554 is resolved.
 mediamarkt.de#%#(()=>{const t=document.documentElement,o=new MutationObserver((()=>{const t=document.querySelector('#mms-consent-portal-container button[data-test="pwa-consent-layer-deny-all"]');if(t&&typeof t.click !== 'undefined'){t.click();}}));o.observe(t,{attributes:!0,childList:!0,subtree:!0})})();
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
-! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_firefox)
+! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli && !adguard_ext_firefox)
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#body > * { filter: none !important; }
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html > body { overflow: auto !important; }
 medikredyt.pl,money2money.com.pl,17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html:not(#style_important) { overflow: auto !important; }
@@ -18393,7 +18394,7 @@ wplatform.media,staszownews.pl,zdrowienews.pl,kurierostrowiecki.pl,ostrowiec24.i
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193266
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173053
 ! TODO: remove the hints, JS rule when the issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/407
-!+ PLATFORM(windows, mac, android, ios, ext_safari)
+!+ PLATFORM(windows, mac, android, cli, ios, ext_safari)
 journaldunet.com,linternaute.com,lachainemeteo.com,journaldesfemmes.fr,lefigaro.fr#%#(()=>{document.addEventListener('DOMContentLoaded',()=>{if("undefined"!=typeof localStorage)try{if(!localStorage.getItem("_pubcid")){var b=new MutationObserver(function(){var a=document.querySelector("#appconsent > iframe");a&&a.contentDocument&&(a=a.contentDocument.querySelector(".button__acceptAll"))&&(b.disconnect(),a.click())});b.observe(document,{childList:!0,subtree:!0,attributes:!0});setTimeout(function(){b.disconnect()},1E4)}}catch(a){}})})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170168
 ! TODO: use trusted-click-element scriptlet when issues below are fixed
@@ -18512,6 +18513,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227247
+@@||cdn.cookielaw.org/consent/*.json$domain=seriouseats.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227038
 @@||sdk.privacy-center.org/*/loader.js$domain=ertflix.gr
 @@||sdk.privacy-center.org/sdk/$domain=ertflix.gr
@@ -21393,7 +21396,7 @@ bafa.de#@#.cookiebanner:not(body)
 ble.de#@##cookiebanner
 ble.de#@#.cookiebanner:not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123888
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 @@||ap*.usercentrics.eu^$domain=wohnglueck.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124034
 @@||sdk.privacy-center.org^$domain=lesoir.be
@@ -21431,7 +21434,7 @@ schleswig-holstein.de#@#.cookiebanner:not(body)
 diorama-world.com#@#.cookie-consent-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176833
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122714
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera, ext_ublock)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_ff, ext_opera, ext_ublock)
 @@||sdk.privacy-center.org^$domain=radiofrance.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122648
 @@||sdk.privacy-center.org^$domain=ledauphine.com
@@ -22249,7 +22252,7 @@ www-kreiszeitung-de.cdn.ampproject.org#@#amp-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85066
 @@||cdn.cookielaw.org/consent/*.json$domain=ign.com
 @@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=ign.com
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium)
 ign.com#@##_evidon-barrier-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/84488
 hallhuber.com#@#.cookie-box:not(body):not(html)

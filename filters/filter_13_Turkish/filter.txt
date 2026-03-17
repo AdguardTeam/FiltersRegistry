@@ -308,7 +308,7 @@ haber3.com#%#//scriptlet('set-constant', 'App.detectAdBlock', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208754
 tabii.com#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
 ! TODO: remove when this issues will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/514
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 tabii.com#%#(()=>{void 0===window.TrustedScriptURL&&(window.TrustedScriptURL=()=>{});})();
 !+ PLATFORM(ext_ff)
 tabii.com#%#//scriptlet('trusted-create-element', 'head', 'script', '', '(()=>{void 0===window.TrustedScriptURL&&(window.TrustedScriptURL=()=>{});})();')
@@ -605,7 +605,7 @@ kanald.com.tr#%#//scriptlet('set-constant', 'adblockCheckUrl', '')
 kanald.com.tr#%#//scriptlet('set-constant', 'adservice', 'emptyObj')
 @@||kanald.com.tr/*scripts/ad*.js
 @@||cdn.medyanetads.com/assets/adservice.css$domain=kanald.com.tr
-!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli && !adguard_ext_chromium)
 @@||ad.medyanetads.com/adservice/adservice.js$domain=kanald.com.tr
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=kanald.com.tr
 @@||securepubads.g.doubleclick.net/*/*pubads_impl*.js$domain=kanald.com.tr
@@ -662,9 +662,9 @@ fontyukle.net#$#.reklam_alani { display: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47098
 ||mordefter.com/ad_killer/handler.js
 mordefter.com#%#//scriptlet("abort-current-inline-script", "EventTarget.prototype.addEventListener", "ad_killer")
-!+ PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium, ext_ff, ext_opera)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,important,domain=mordefter.com
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_ff, ext_opera)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mordefter.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212075
 isgfrm.com##.adblock-detection
@@ -1661,7 +1661,7 @@ itemci.com#$#body { background: none !important; }
 ! Images hosting. Used for advertising on many sites
 !+ NOT_OPTIMIZED
 ://i.hizliresim.com^$domain=filmolly.com|filmgo1.com|sinefilmgo.org|mnfilmizle.com|mnfilmizle1.com|diziplus.*|sinemangoo.org|sexfilmleriizle.com|ajans32.com|haber32.com.tr|technopat.net|ertehaber.com|duzcetv.com|unyenethaber.com|haberant.com|medya32.com|malatyamegahaber.com|erotikfilmtube.com|birasyadizi.com|asyadiziizle.com|dizicaps.*|hdfilmizleamk.*|muglayenigun.com|sinetiktok.com|filmzevkim.com|justintvnews.com|sinekolikk.com|filmmolly.com|filmgo2.org
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 filmolly.com,sinekolikk.com,filmgo1.com,sinefilmgo.org,mnfilmizle.com,mnfilmizle1.com,sinetiktok.com,diziplus.*,hdfilmizleamk.*,ajans32.com,haber32.com.tr,technopat.net,ertehaber.com,duzcetv.com,unyenethaber.com,haberant.com,medya32.com,malatyamegahaber.com,erotikfilmtube.com##img[src^="https://i.hizliresim.com/"]
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5969
@@ -6613,7 +6613,7 @@ hdselcuksports420.top,hdselcuksports421.top,hdselcuksports422.top,hdselcuksports
 !#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
 sporcafe-cc312b798596.xyz##.banner-placeholder
 !#endif
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_ext_chromium || adguard_ext_opera || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3 || ext_ublock)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli || adguard_ext_chromium || adguard_ext_opera || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3 || ext_ublock)
 !+ NOT_VALIDATE
 [$domain=/^(www\.)?sporcafe[a-z0-9-]+\.xyz$/]##.banner-placeholder
 !+ NOT_VALIDATE
@@ -6864,7 +6864,7 @@ dizilla40.com,dizilla.*###router-view > div > div > div[class]:has(> div:only-ch
 selcuksportshd.is##.page-overlay
 selcuksportshdcanli.com,selcuksportshd.is#$?#body { background-image: none !important; }
 selcuksportshdcanli.com##.ps
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli)
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||hizliresims.com/*.gif$domain=/selcuksportshd\d+\.(xyz\|click)/
@@ -6879,7 +6879,7 @@ selcuksportshdcanli.com##.ps
 ! aglint-enable no-invalid-modifiers
 !#endif
 ! TODO: remove "NOT_VALIDATE" hint when this issue is fixed - https://github.com/AdguardTeam/FiltersCompiler/issues/237
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_ext_opera || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3 || ext_ublock)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli || adguard_ext_opera || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3 || ext_ublock)
 !+ NOT_VALIDATE
 [$domain=/^main\.uxsyplayer[a-z0-9]+\.click$/]#%#//scriptlet('set-constant', 'Object.prototype.adSkipped', 'true')
 !+ NOT_VALIDATE
@@ -6889,7 +6889,7 @@ selcuksportshdcanli.com##.ps
 !#endif
 [$domain=/^i\[a-z\]*\.strmrdr\[a-z0-9\]+\..*/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 cinque.668a396e58bcbc27.click#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_ext_opera || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3 || ext_ublock)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli || adguard_ext_opera || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3 || ext_ublock)
 ! selcuksportshd*.biz
 [$domain=/selcuksportshd[a-z0-9-]+\.biz/]##.banner
 [$domain=/selcuksportshd[a-z0-9-]+\.biz/]##.container > aside.sidebar:has(> .banner)
@@ -7227,7 +7227,7 @@ inattv1212.xyz,inattv1213.xyz,inattv1214.xyz,inattv1215.xyz,inattv1216.xyz,inatt
 ! Source: https://trgoalsgiris.xyz/ => https://t.co/6vPuUxO91F / https://trgoals1524.xyz/
 [$path=/^\/$/]itemci.com#%#//scriptlet('trusted-click-element', 'div[style^="background"][style*="https://cdn.itemci.com/assets/images/site_login_image.jpg"] > button.close', '', '3000')
 ! Frequently changed domains: trgoals*.xyz
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_ext_chromium || adguard_ext_opera || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli || adguard_ext_chromium || adguard_ext_opera || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3)
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/trgoals\d+\.xyz$/
@@ -7363,7 +7363,7 @@ gazetevatan.com#$#.dfp { position: absolute !important; left: -3000px !important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162640
 ! Apps remove source tag from the website and it breaks video player
 ! so it's necessary to use redirect rule
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||tafdi4.com/*.mp4$media,redirect=nooptext
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
@@ -7386,7 +7386,7 @@ m.pes24.com##.adsbygoogle
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 merlininkazani.com##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13933
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 driverdestek.com##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77520
 ! TODO: We take a look at this rule later in the linter, until then keep the linter disabled here

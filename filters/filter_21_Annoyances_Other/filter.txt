@@ -1671,7 +1671,7 @@ brainly.co.id#%#//scriptlet('set-local-storage-item', 'simple-funnel-name', '')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/78751
 brainly.com#%#//scriptlet('set-local-storage-item', 'social-qa/telemetry', '')
 brainly.com,brainly.pl#%#//scriptlet('set-local-storage-item', '/^flexible-funnel-/', '$remove$')
-!+ PLATFORM(windows, mac, android, ext_chromium)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium)
 brainly.pl##.js-react-bottom-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79085
 saashub.com##.sponsored
@@ -7444,9 +7444,9 @@ virustotal.com##span[slot="header"] > div + a[href^="https://developers.virustot
 ||media.geeksforgeeks.org/wp-content/post-ads-banner/
 geeksforgeeks.org##.inArticleAds
 ! https://github.com/AdguardTeam/AdguardFilters/issues/141546
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 liga.net##a[href="https://www.liga.net/adfree"]
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 liga.net#$#a[href="https://www.liga.net/adfree"] { position: absolute !important; left: -9999px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140450
 cyclismactu.net##div[id^="stop_pub_"]
@@ -9166,7 +9166,7 @@ hashhackers.com,katdrive.net#?#.row > center:has(> a#verify_button) ~ aside#seco
 rightrasta.com,neo-blood.co.jp#$#html { -webkit-touch-callout: default !important; -webkit-user-select: auto !important;-moz-user-select: text !important; -ms-user-select: text !important; user-select: auto !important; -webkit-tap-highlight-color: black !important; }
 rightrasta.com,neo-blood.co.jp#$#.unselectable { -webkit-touch-callout: default !important; -webkit-user-select: auto !important;-moz-user-select: text !important; -ms-user-select: text !important; user-select: auto !important; -webkit-tap-highlight-color: black !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123316
-!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_ext_chromium)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli || adguard_ext_chromium)
 work.ink#$#span#popup { display: none !important; }
 work.ink#$#span#notification-blackout { display: none !important; }
 !#endif
@@ -10302,7 +10302,7 @@ forex-trnd.com#%#//scriptlet("adjust-setInterval", "#mdtimer", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79196
 oeko-planet.com#%#//scriptlet('remove-class', 'async-hide', 'html')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/87661
-!+ PLATFORM(windows, mac, android, ext_chromium)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium)
 skmedix.pl#%#//scriptlet('adjust-setTimeout', '/runCounter|Math.random\(\)/', '*', '0.001')
 ! go.leechpremium.link - skip timer
 go.leechpremium.link#%#(function(){"function"===typeof fetch&&location.href.includes("/?id=")&&fetch(location.href).then(function(e){e.headers.forEach(function(a,f){if("refresh"===f&&a.includes("url=http"))try{if(a.includes("&url=aHR0c")){var b,c=null==(b=a.split(/&url=/))?void 0:b[1];location=atob(c)}else{var d;location=c=null==(d=a.split(/url=(.+)/))?void 0:d[1]}}catch(g){}})})})();
@@ -10571,9 +10571,9 @@ translit.net,translit.ru#%#//scriptlet("set-constant", "setblur", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46996
 wowroms.com#%#document.addEventListener('DOMContentLoad', function() { setTimeout(function() { second = 0; }, 300); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46530
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 sfile.mobi#%#//scriptlet("adjust-setInterval", "downloadButton", "", "0.02")
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 sfile.mobi#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/downloadButton/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45532
 goodssh.com#%#//scriptlet("set-constant", "counter", "-1")
@@ -10582,14 +10582,14 @@ a2zupload.com#%#//scriptlet("adjust-setInterval", "download", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45486
 katfile.cloud,katfile.com#%#//scriptlet("adjust-setTimeout", "#freebtn", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43273
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 coolrom.com.au#%#//scriptlet("adjust-setTimeout", "download()")
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 coolrom.com.au#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/download\(\)/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43131
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 freeroms.com#%#//scriptlet("adjust-setTimeout", "download()")
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 freeroms.com#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/download\(\)/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42766
 uxglow.com#%#!function(){if(-1<window.location.href.indexOf("/?r=")){var a=location.href.split("?r=");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
@@ -10635,7 +10635,7 @@ kisalt.xyz#%#//scriptlet("set-constant", "count", "0")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25825
 bankier.pl,claudia.pl,dyskusje24.pl,edziecko.pl,haps.pl,infozdrowie24.pl,kobieta.pl,moto.pl,gazeta.pl,tokfm.pl,sport.pl,plotek.pl#%#//scriptlet("set-constant", "ONTVminiatureBlocked", "trueFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16740
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 doviz.com#%#(() => {document.addEventListener("DOMContentLoaded", (() => {setTimeout(function() { if(typeof player.pause != 'undefined') { player.pause(); } }, 3000);}));})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14682
 cocoleech.com#%#//scriptlet("set-constant", "width", "100")

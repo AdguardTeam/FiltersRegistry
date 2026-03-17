@@ -1,9 +1,9 @@
-! Checksum: kYVrsOTpTn83MnXk7HY+Mg
-! Diff-Path: ../patches/13/13-s-1773739734-3600.patch
+! Checksum: 1RIWVvvuXzGqljdCgslL8Q
+! Diff-Path: ../patches/13/13-s-1773758081-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.9
-! TimeUpdated: 2026-03-17T09:25:26+00:00
+! Version: 2.0.63.10
+! TimeUpdated: 2026-03-17T14:30:45+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -304,7 +304,7 @@ haber3.com#%#//scriptlet('set-constant', 'App.detectAdBlock', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208754
 tabii.com#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
 ! TODO: remove when this issues will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/514
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 tabii.com#%#(()=>{void 0===window.TrustedScriptURL&&(window.TrustedScriptURL=()=>{});})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201678
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=noopjs,domain=tabii.com,important
@@ -555,7 +555,7 @@ fontyukle.net#$#.reklam_alani { display: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47098
 ||mordefter.com/ad_killer/handler.js
 mordefter.com#%#//scriptlet("abort-current-inline-script", "EventTarget.prototype.addEventListener", "ad_killer")
-!+ PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
+!+ PLATFORM(windows, mac, android, cli, ext_chromium, ext_ff, ext_opera)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,important,domain=mordefter.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212075
 isgfrm.com##.adblock-detection
@@ -1496,7 +1496,7 @@ itemci.com#$#body { background: none !important; }
 ! Images hosting. Used for advertising on many sites
 !+ NOT_OPTIMIZED
 ://i.hizliresim.com^$domain=filmolly.com|filmgo1.com|sinefilmgo.org|mnfilmizle.com|mnfilmizle1.com|diziplus.*|sinemangoo.org|sexfilmleriizle.com|ajans32.com|haber32.com.tr|technopat.net|ertehaber.com|duzcetv.com|unyenethaber.com|haberant.com|medya32.com|malatyamegahaber.com|erotikfilmtube.com|birasyadizi.com|asyadiziizle.com|dizicaps.*|hdfilmizleamk.*|muglayenigun.com|sinetiktok.com|filmzevkim.com|justintvnews.com|sinekolikk.com|filmmolly.com|filmgo2.org
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 filmolly.com,sinekolikk.com,filmgo1.com,sinefilmgo.org,mnfilmizle.com,mnfilmizle1.com,sinetiktok.com,diziplus.*,hdfilmizleamk.*,ajans32.com,haber32.com.tr,technopat.net,ertehaber.com,duzcetv.com,unyenethaber.com,haberant.com,medya32.com,malatyamegahaber.com,erotikfilmtube.com##img[src^="https://i.hizliresim.com/"]
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5969
@@ -6798,7 +6798,7 @@ gazetevatan.com#$#.dfp { position: absolute !important; left: -3000px !important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162640
 ! Apps remove source tag from the website and it breaks video player
 ! so it's necessary to use redirect rule
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 ||tafdi4.com/*.mp4$media,redirect=nooptext
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya

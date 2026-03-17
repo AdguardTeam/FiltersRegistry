@@ -1,9 +1,9 @@
-! Checksum: mh8ioYkYZE3TmqDobTgKYw
-! Diff-Path: ../patches/4/4-s-1773754990-3600.patch
+! Checksum: WznxGSqTl59ZxO6T2LhgSw
+! Diff-Path: ../patches/4/4-s-1773758031-3600.patch
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.26.28
-! TimeUpdated: 2026-03-17T13:39:28+00:00
+! Version: 2.1.26.29
+! TimeUpdated: 2026-03-17T14:30:31+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -300,6 +300,8 @@ check-host.net#%#//scriptlet('remove-node-text', 'span', '/Поделиться|
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157369
 faroutmagazine.co.uk#%#//scriptlet('hide-in-shadow-dom', '.single-article-sharing')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153296
+!+ PLATFORM(windows, mac, android, cli)
+huanqiu.com#%#//scriptlet('inject-css-in-shadow-dom', '.share > .item:not(.item-comment) { display: none !important; }')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149113
 soundiiz.com#%#//scriptlet('set-cookie', 'socialDisplayed', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147569
@@ -356,6 +358,8 @@ educationtimes.com#?#span:contains(Share):upward(button)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180146
 bleepingcomputer.com#$#.cz-full-bio-wrapp { border-top: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179840
+!+ PLATFORM(windows, mac, android, cli)
+gamedeveloper.com#?#.ArticleBase-SocialShare
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178951
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175631
 dizipal.org,diziyoutv.com#$#.next-prev-episode { margin-left: 0 !important; }
@@ -570,6 +574,8 @@ m.timesofindia.com$$div[class="w100p fl text-center pdTop_2"]
 !-------------------
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196405
 ! Generic fix for openweb Comments widget, share button is inside "ShadowRoot"
+||static-cdn.spot.im/production/conversation/tags/*/styles.css$replace=/(Menu__menuButtonWrapper--.*})/\$1 button[data-testid="ShareBtn"]\, div[data-spot-im-class="vote-links"] + span[class\\$="index__dot"] { display: none !important; }/
+||static-cdn.spot.im/production/social/tags/*/conversation/styles.css$replace=/(Menu__menuButtonWrapper--.*})/\$1 button[data-testid="ShareBtn"]\, div[data-spot-im-class="vote-links"] + span[class\\$="index__dot"] { display: none !important; }/
 !
 ||mp.lura.live/player/prod/v*/*/anvhtml5.css$replace=/(\.anv-splash-share \{)/\$1 display: none !important;/
 !-------------------------------------------------------------------------------!
@@ -663,6 +669,7 @@ cogconnected.com,echofm.online,antirez.com,comicbook.com,alexp.pl,2ality.com,sma
 !
 ! NOTE: Specific rules
 !
+iimg.su##.meta-bottom > div.pt-1:has(> div.ya-share2)
 netnaija.film##.flex-1 > div.fixed:has(> div.grid > button > svg > path[d^="M24 12.07"])
 sflix.film##section > div.flex:has(> div[title^="share to"])
 2short.club##label[aria-label="Share"]
@@ -13806,6 +13813,8 @@ wwmt.com,wutv29.com,wtwc40.com,wset.com,wpgh53.com,wgme.com,wfgxtv.com,weartv.co
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205448
 ! https://github.com/AdguardTeam/CoreLibs/issues/1370
+!+ PLATFORM(windows, mac, android, cli)
+||espncdn.com/players/web-player-bundle/*/espn-web-player-bundle.css$replace=/(\.vjs-share-control.*\})/\$1.vjs-share-control{display:none!important;}/
 !
 ! Progorod
 pgn21.ru,orodkirov.ru,navigator-kirov.ru,pg11.ru,pg12.ru,pg13.ru,pg21.ru,prochepetsk.ru,prodzer.ru,progorod33.ru,progorod43.ru,progorod58.ru,progorod59.ru,progorod62.ru,progorod76.ru,progorodnn.ru,progorodnsk.ru,progorodsamara.ru,progoroduhta.ru##div[class^="article-social_"]
@@ -13995,13 +14004,16 @@ meduza.io###DailySubscriber
 medyaloji.net,a24.com.tr##.share_3lu
 !+ NOT_OPTIMIZED
 m.gunes.com##.fixed-interaction-bar
-!+ NOT_PLATFORM(windows, mac, android)
-kinopoisk.ru##.block_social
-!+ NOT_PLATFORM(windows, mac, android)
-gazeta.ru##.article-share-name
+ichip.ru#?#.article-action
+1000.menu#?#.share-box
+jbbs.seesaa.net#?#.bookmark > .sns_box
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202625
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168228
+strani.cz##iframe[src^="https://www.facebook.com/plugins/"]
+||facebook.com/plugins/$subdocument,redirect=noopframe,domain=strani.cz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179384
+!+ PLATFORM(windows, mac, android, cli)
+darkreading.com#?#.ArticleBase-Body .SocialShare
 ! Not visible on desktop - so should be NOT_OPTIMIZED
 !+ NOT_OPTIMIZED
 betanews.com##.social-links-wrap
@@ -16043,8 +16055,6 @@ googlewatchblog.de,euro.hr#@##facebook-icon
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138359
 gartic.io#@#.socialNetworks
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137619
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
-@@||static.addtoany.com/menu/page.js$domain=stomp.straitstimes.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137719
 bilibili.com#@#.share-wrap
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136739

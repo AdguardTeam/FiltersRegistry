@@ -1,9 +1,9 @@
-! Checksum: REny62Qq8b0KSrWcywWFFA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1773685738-3600.patch
+! Checksum: gBFmAB82NyO80J2RR/uTDQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1773758031-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.72.86
-! TimeUpdated: 2026-03-16T18:25:58+00:00
+! Version: 2.0.72.87
+! TimeUpdated: 2026-03-17T14:30:38+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||enhance.co.jp^$third-party
@@ -475,6 +475,8 @@ in-jpn.com##.sk-popup-window
 yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box:not(.text-ad)
 mytry.jp#$#body > #container { display: block !important; }
+||local.adguard.org/?type=content-script|$domain=wiki.yjsnpi.nu,important
+@@||local.adguard.org^$redirect=noopjs,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#%#//scriptlet('abort-on-stack-trace', 'Function.prototype.toString', '/w/load.php?lang=ja&modules=codex-search-styles%2Cjquery%2Coojs%2C&skin=vector-2022&version=L58hf')
 wiki.yjsnpi.nu#%#//scriptlet("prevent-setTimeout", "()=>k(S(4")
 $script,~third-party,redirect-rule=noopjs,domain=wiki.yjsnpi.nu
@@ -482,6 +484,8 @@ wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([hre
 wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img', 'height', '128px')
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) { font-size: 0 !important; }
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img { height: 0 !important; }
+||wiki.yjsnpi.nu/comments/$script,replace=/(;\}\}function [A-Za-z]+\([A-Za-z]?\)\{const [a-z]+=[A-Z]\,(?:const )?[a-z]+=[A-Z]).{500\,2000}\]\(\);\}\}/\$1}/
+||wiki.yjsnpi.nu/comments/$script,replace=/(\);\}\}function [A-Za-z]+\([A-Za-z]?\)\{const [a-z]+=[A-Z]\,(?:const )?[a-z]+=[A-Z]).{500\,2000}\]\(\)\)\);\}/\$1}/
 $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 @@||wiki.yjsnpi.nu^$image,xmlhttprequest,~third-party
 @@||wiki.yjsnpi.nu^$generichide
@@ -615,6 +619,8 @@ youpouch.com,rocketnews24.com#$#img[data-sco-src] { opacity: 1 !important; }
 blog-and-destroy.com###no-ads-msg
 blog-and-destroy.com##.affiliate-card
 blog-and-destroy.com#%#//scriptlet("abort-current-inline-script", "onload", "adsCount")
+!+ PLATFORM(windows, mac, android, cli, ext_chromium, ext_ublock)
+musenboya.com#%#//scriptlet("abort-current-inline-script", "navigator.brave")
 gamemod.blog.fc2.com,helpsupport.blog.fc2.com#%#//scriptlet('prevent-setTimeout', '/adsbygoogle|clientHeight/')
 gamemod.blog.fc2.com,helpsupport.blog.fc2.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com', 'true', 'cors')
 ||fc2.com/h/e/l/helpsupport/min-tc.js$domain=helpsupport.blog.fc2.com
@@ -705,6 +711,8 @@ video.tv-tokyo.co.jp#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect
 @@||video.tv-tokyo.co.jp/common/js/pc/ads.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=video.tv-tokyo.co.jp
 @@||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$domain=video.tv-tokyo.co.jp
+!+ PLATFORM(windows, mac, android, cli)
+||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$redirect=nooptext,important,domain=video.tv-tokyo.co.jp
 380cc.cc#$##playertopads { height: 51px!important; position: absolute!important; left: -3000px!important; }
 kyukyoku-matome.com##.widget_pc_ad
 @@||mushinavi.com^$generichide
@@ -11498,8 +11506,7 @@ kokopyon.net#%#//scriptlet('remove-attr', 'href', '.topentry_text a', 'stay')
 ||livedoor.blogimg.jp/ld_manga/imgs/
 !+ NOT_OPTIMIZED
 web.gekisaka.jp###PC_SP_NEWS_D_GROUP
-automaton-media.com#$?##custom-background-css { remove: true; }
-||automaton-media.com/wp-content/uploads/*_automaton_banner.jpg
+automaton-media.com$$style[id="custom-background-css"]
 service.webgoto.net##a[href^="https://www.amazon.co.jp"][target="_blank"]
 !+ NOT_OPTIMIZED
 ||yimg.jp/bdv/
@@ -11546,6 +11553,8 @@ safeframe.googlesyndication.com#%#//scriptlet('href-sanitizer', 'a[href^="https:
 qa.weblio.jp,okinawatimes.co.jp,rank-king.jp,uwl.weblio.jp,chugoku-np.co.jp,minato-yamaguchi.co.jp,kyoto-np.co.jp,raysee.jp,j-cast.com,medicalnote.jp,kurashi-to-oshare.jp,ar-mag.jp,ben54.jp#$#html[class*="loading"] { visibility: visible !important; }
 mobilegadget.jp#@#.header-ad
 h1g.jp#$#.mainbody > div[style="width:800px; height:400px; margin-top:30px;"] { height: 600px !important; }
+!+ PLATFORM(windows, mac, android, cli)
+$script,redirect-rule=noopjs,domain=azukiazusa.dev
 @@||g.doubleclick.net/gampad/ads?$xmlhttprequest,domain=video-ac.com
 @@||g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=video-ac.com
 @@||g.doubleclick.net/tag/js/gpt.js$domain=video-ac.com

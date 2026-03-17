@@ -1,9 +1,9 @@
-! Checksum: eOWMqd6kqX7hpUWL8Wpu9w
-! Diff-Path: ../patches/23/23-s-1773329241-3600.patch
+! Checksum: G8i1NddWUYai/Si4MkVCSg
+! Diff-Path: ../patches/23/23-s-1773758079-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.7.83
-! TimeUpdated: 2026-03-12T15:24:25+00:00
+! Version: 2.0.7.84
+! TimeUpdated: 2026-03-17T14:31:03+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -282,7 +282,7 @@ rtl.*/init.js?$third-party
 /bens/*/vinos.js?
 /bens/vinos.js?
 /bens/somejscode.js
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, cli)
 /bens/vinos$redirect=nooptext,important
 !
 /a.php?id=*&loc=*&ref=
@@ -3662,10 +3662,10 @@ i.factor.ua,kriminal.tv,i.ua,lifedon.com.ua,football24.ua,vsetv.com,gorod.dp.ua,
 newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,internetua.com,okino.ua,orakul.com,ringside24.com,toneto.net#$?#head > iframe[name]:not([class]):not([id]):not([src]) { remove: true; }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52734
-! !+ PLATFORM(windows, mac, android)
+! !+ PLATFORM(windows, mac, android, cli)
 ! @@://s.zmctrack.net/z|$domain=finance.i.ua,vsetv.com|cn.ru|viks.bz|peers.tv|radio.i.ua|love.i.ua,~script
 !
-! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android)
+! !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android && !adguard_app_cli)
 ! #%#//scriptlet("set-constant", "String.prototype.charCodeAt", "trueFunc")
 ! #%#//scriptlet("set-constant", "String.prototype.charCodeAt", "falseFunc")
 ! !#endif

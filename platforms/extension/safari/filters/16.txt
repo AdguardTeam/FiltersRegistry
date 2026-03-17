@@ -1,9 +1,9 @@
-! Checksum: 0WJuxpRSRYBBJLOD0nlnsQ
-! Diff-Path: ../patches/16/16-s-1773678759-3600.patch
+! Checksum: mxKqIbO8Gywa9r6ICnU94w
+! Diff-Path: ../patches/16/16-s-1773758056-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.56.26
-! TimeUpdated: 2026-03-16T16:28:35+00:00
+! Version: 2.0.56.27
+! TimeUpdated: 2026-03-17T14:30:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -268,7 +268,7 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/1478420
-japscan.*#%#//scriptlet("remove-node-text", "script", "/pubadx-ad|runBanner|threshold|getBoundingClientRect|'nextElementSi|TagName'|\+'play|'debu|'gge'|\.constructor\(|\/gif;base64|'runInte|nterstitial'/")
+japscan.*#%#//scriptlet("remove-node-text", "script", "/pubadx-ad|runBanner|threshold|getBoundingClientRect|'nextElementSi|TagName'|\+'play|'debu|'gge'|\.constructor\(|\/gif;base64|'runInte|nterstitial'|\+'png/")
 japscan.*#%#//scriptlet('abort-current-inline-script', 'MessageChannel', '0x')
 japscan.*#%#//scriptlet('prevent-requestAnimationFrame', '/(\s*)\s*=>/')
 japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Array.prototype.join', '""', 'prevent', 'inlineScript')
@@ -728,7 +728,7 @@ tf1info.fr#%#(()=>{const e=function(){};window.tC={privacy:{getOptinCategories:e
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213146
 ! Fixes loading video player and delay in video playback start
 ! Apps cannot inject script into iframe with "about:blank" src, so a workaround is required
-!+ NOT_PLATFORM(windows, mac, android)
+!+ NOT_PLATFORM(windows, mac, android, cli)
 supersoluce.com#%#//scriptlet('adjust-setTimeout', 'event_listener_timeout', '*', '0.001')
 @@||flashb.id/universal/*.js$domain=supersoluce.com
 @@||flashb.id/assets/js/hbdbrk_*_m.js$domain=supersoluce.com
@@ -1916,7 +1916,7 @@ $script,third-party,domain=waaw.to,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185291
 @@||sonar.viously.com/*/js$script,domain=futura-sciences.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185148
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_opera)
 @@||tdn.da-services.ch/current/lessentiel_durable.js$domain=lessentiel.lu
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184097
 @@||sohosystems.co.za/gfx/banners/$~third-party
@@ -2003,7 +2003,7 @@ hsreplay.net#@#.ads-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161727
 @@||page-notices.yorkshirepost.co.uk/?pub_id=*&notice_id=$domain=yorkshirepost.co.uk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161220
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+!+ NOT_PLATFORM(windows, mac, android, cli, ext_chromium, ext_opera)
 @@||prod.adspsp.com/adb.*.min.js$domain=healthline.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160601
 @@||img.dorzeczy.pl/*static/*.css
