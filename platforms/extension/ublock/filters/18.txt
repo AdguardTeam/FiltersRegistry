@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: k+vSkKmkDnQw8GlWauZhwg
-! Diff-Path: ../patches/18/18-s-1773809268-3600.patch
+! Checksum: k/yTa2Xc0xfyKKlUI10FCA
+! Diff-Path: ../patches/18/18-s-1773822261-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.83.13
-! TimeUpdated: 2026-03-18T04:44:53+00:00
+! Version: 2.0.83.14
+! TimeUpdated: 2026-03-18T08:21:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2528,6 +2528,12 @@ ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-
 !
 ! NOTE: Regular rules
 !
+audiomagic.pl##+js(set-cookie-reload, AtomStore[COOKIES_ACCEPTED], 1)
+audiomagic.pl##+js(set-cookie, AtomStore[FRONT_COOKIE][1], 0)
+audiomagic.pl##+js(set-cookie, AtomStore[FRONT_COOKIE][2], 0)
+audiomagic.pl##+js(set-cookie, AtomStore[FRONT_COOKIE][3], 0)
+audiomagic.pl##+js(set-cookie, AtomStore[FUNCTIONAL_COOKIES_ACCEPTED], 1)
+audiomagic.pl##+js(set-cookie, AtomStore[MARKETING_COOKIES_ACCEPTED], 0)
 download.trimble.com##.cookies-settings-dialog-content
 supplierassurance.com###global-cookie-message-holder
 shangri-la.com###js-cookie-modal:style(display: none !important;)
@@ -7315,7 +7321,7 @@ shop.tecsafe.de##.page-wrap--cookie-permission:style(display: none !important;)
 shop.tecsafe.de##+js(remove-class, cookie--not-set, body)
 sdelsol.com##.COOKIES
 commsec.com.au##.announcements > .closeable.priority-2:has(> .container > span > p > a[href*="/cookies.html"])
-/privacy-layer$domain=teufel.de|teufel.ch|teufelaudio.*
+teufelaudio.*,teufel.*##privacy-layer
 stilkuhni.ru##.js-cookie-popup-container
 black.sk,wubertools.pl,kocbayi.com.tr##.cookie-modal:style(display: none !important;)
 black.sk,wubertools.pl,kocbayi.com.tr##.modal-backdrop:style(display: none !important;)

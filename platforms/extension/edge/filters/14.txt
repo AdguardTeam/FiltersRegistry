@@ -1,9 +1,9 @@
-! Checksum: 2YlbpCbSKMqu85YFT48nXw
-! Diff-Path: ../patches/14/14-s-1773819096-3600.patch
+! Checksum: x7QcC/T2oLTFwdwO8aNX8w
+! Diff-Path: ../patches/14/14-s-1773822246-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.62.41
-! TimeUpdated: 2026-03-18T07:28:30+00:00
+! Version: 2.2.62.42
+! TimeUpdated: 2026-03-18T08:21:02+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2583,6 +2583,12 @@ ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-
 !
 ! NOTE: Regular rules
 !
+audiomagic.pl#%#//scriptlet('set-cookie-reload', 'AtomStore[COOKIES_ACCEPTED]', '1')
+audiomagic.pl#%#//scriptlet('set-cookie', 'AtomStore[FRONT_COOKIE][1]', '0')
+audiomagic.pl#%#//scriptlet('set-cookie', 'AtomStore[FRONT_COOKIE][2]', '0')
+audiomagic.pl#%#//scriptlet('set-cookie', 'AtomStore[FRONT_COOKIE][3]', '0')
+audiomagic.pl#%#//scriptlet('set-cookie', 'AtomStore[FUNCTIONAL_COOKIES_ACCEPTED]', '1')
+audiomagic.pl#%#//scriptlet('set-cookie', 'AtomStore[MARKETING_COOKIES_ACCEPTED]', '0')
 iteraplay.com#%#//scriptlet('trusted-set-local-storage-item', 'itera_cookie_consent', '{"strictlyNecessary":true,"analytics":false,"marketing":false,"functional":false}')
 download.trimble.com##.cookies-settings-dialog-content
 supplierassurance.com###global-cookie-message-holder
@@ -8205,7 +8211,7 @@ shop.tecsafe.de#$#.page-wrap--cookie-permission { display: none !important; }
 shop.tecsafe.de#%#//scriptlet('remove-class', 'cookie--not-set', 'body')
 sdelsol.com##.COOKIES
 commsec.com.au#?#.announcements > .closeable.priority-2:has(> .container > span > p > a[href*="/cookies.html"])
-/privacy-layer$domain=teufel.de|teufel.ch|teufelaudio.*
+teufelaudio.*,teufel.*##privacy-layer
 stilkuhni.ru##.js-cookie-popup-container
 black.sk,wubertools.pl,kocbayi.com.tr#$#.cookie-modal { display: none !important; }
 black.sk,wubertools.pl,kocbayi.com.tr#$#.modal-backdrop { display: none !important; }
