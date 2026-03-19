@@ -1,5 +1,5 @@
-! Checksum: cJR9t4fDdiN0FovA2IZ7cg
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1773803582-3600.patch
+! Checksum: ciMIG0gTnuRCB5EeLR4l3Q
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1773889961-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.27.98
@@ -93,7 +93,6 @@ megapteka.ru##ma-grid-list-item > ma-card-qr-code
 gate.com###downloadAppSpecial
 trendyol.com###smartbanner-wrapper
 megapteka.ru##.banner-podcast
-blog.espaces.com.br##a[href^="https://espaces.com.br/app"]
 jiotv.com##.bannerContainer
 jiotv.com##div[class^="CtaBanner_"]
 mega.nz##.application
@@ -158,6 +157,8 @@ books.yandex.ru##button[class*="DesktopHeaderPromoOrPlusButton"]
 paribucineverse.com###app-qr-modal
 hoff.ru##.suggest-wrapper
 doordash.com#%#//scriptlet('trusted-click-element', 'button[data-testid="storepage-app-donwload-bottom-sheet-handle-close-click"]')
+doordash.com#$#header[data-testid="Header"] > div[class*=" "]:has(div[class^="StyledStackChildren-sc-"] ~ div[class] a[href^="https://doordash.sng.link"]) { display: none !important; }
+doordash.com#$#header[data-testid="Header"] > div[class*=" "]:has(div[class^="StyledStackChildren-sc-"] ~ div[class] a[href^="https://doordash.sng.link"]) ~ div[class] { top: 0px !important; }
 doordash.com#$#header[data-testid="Header"] { padding-top: 0px !important; }
 qms.ru###pwa-prompt
 agoda.com##div[class]:has(> div[data-element-test="prominent-app-download-popover"])
@@ -172,7 +173,7 @@ offerup.com##.MuiGrid-direction-xs-column > div.MuiGrid-item:has(img[alt="Offeru
 burgerking.co.jp#%#//scriptlet('trusted-set-local-storage-item', 'is_mainpopup_opened', 'none_expired')
 kolesa.kz##.kolesa-app-promo
 lastminute.com.au##.customer-notification-container
-chirashiplus.jp##.contents > a[href="https://app.chirashiplus.jp/"]
+skyticket.jp###__next > div[class^="Header__StHeaderArea"]:has(skyticket-header[show-app-promotion="true"])
 poshmark.com##.btn--open-in-app
 hotokami.jp##a[onclick*="app"]
 zarahome.com,flipp.com##.download-app-banner
@@ -213,7 +214,6 @@ mobiletrans.wondershare.com#%#//scriptlet('prevent-addEventListener', '', '/moda
 customer.licard.ru#%#//scriptlet('set-session-storage-item', 'modalClosed', 'true')
 happymod.*##.righthm
 medikamente-per-klick.de##.erx-top
-eurovisionsport.com##div[class^="layout_bottomBannerContainer__"]
 xn--pckua2a7gp15o89zb.com#%#//scriptlet('set-cookie', 'hideuab', '1')
 xn--pckua2a7gp15o89zb.com##.p-resultArea_sideWrap--appbnr
 follow.yahoo.co.jp##div[class^="AppPromotion_AppPromotion__"]
@@ -528,7 +528,6 @@ level.travel#%#//scriptlet('trusted-set-cookie', 'lt_go_to_app_mobile_popup', 'h
 perekrestok.ru#%#//scriptlet('trusted-click-element', 'button.app-banner-close', '', '800')
 arabam.com,m.sonyunara.jp,magnit.ru##.install-app-banner
 navitime.co.jp###body-left > div.section:has(> a[href="https://www.navitime.co.jp/pcstorage/html/japan_travel/english/"])
-megamarket.ru##.header-entry-point__app > a
 msn.com##div[class^="weatherMobileUpsellContainer-"]
 digitimes.com.tw#%#//scriptlet('abort-current-inline-script', '$', 'apppromo')
 moises.ai##.relative > div.flex-col:has(> div[role="group"] > a[title="App Store"])
@@ -618,7 +617,6 @@ m.economictimes.com#%#//scriptlet('set-session-storage-item', 'nudgeStickyBanner
 m.economictimes.com##a[href*="app.goo.gl/?link="]
 wrtn.jp#%#//scriptlet('trusted-click-element', '#web-modal button.css-1d86b5p')
 promobil.de##div[class*="bannerImage_background__"] > a[href="https://promobil.de/stellplatz/instastores"]
-zutool.jp##.column_app_box01
 zutool.jp##[class^="cmn_app_link"]
 bundesliga.com##app-banner-wrapper
 realtor.com##div[class^="MobileBannerstyles"]
@@ -1331,7 +1329,6 @@ asajikan.jp##.apri_b_pc
 asajikan.jp##.apri_b_sp
 asajikan.jp#%#//scriptlet("set-cookie", "header-guidance-close", "true")
 vinted.*##.sticky-footer
-m.happymoney.co.kr##.recommendAppWrap
 m.guancha.cn##.g_swiper_container
 m.doviz.com,whowatch.tv,ebay.*,locari.jp##.app-download-banner
 membo.net,musicjob.net,airpaz.com,techfeed.io,locari.jp##.app-install-banner
