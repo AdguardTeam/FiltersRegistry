@@ -1,10 +1,11 @@
-! Checksum: /3uw5g8yKGseEfxKhj1grA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1773882025-14400.patch
+! Checksum: +ZdT0UYZm1Ckdmy3Pec1kw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1773896963-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.58.33
-! TimeUpdated: 2026-03-19T00:56:58+00:00
+! Version: 2.1.58.34
+! TimeUpdated: 2026-03-19T05:05:53+00:00
 ! Expires: 5 days (update frequency)
+-facebook-share.
 -facebook-widget.
 -follow-icon-
 -share-buttons3/$~stylesheet
@@ -264,6 +265,7 @@ _social_footer_
 ###follow-twitter
 ###follow-us-box
 ###follow-us-widget
+###follow-widget
 ###followBox
 ###followFB
 ###followFBSvg
@@ -310,6 +312,7 @@ _social_footer_
 ###header-social-block
 ###header-social-icons
 ###header-social-links
+###header-social-media
 ###header-socials
 ###header-youtube-social-link
 ###headerSocial
@@ -500,7 +503,6 @@ _social_footer_
 ###sharepost
 ###sharer
 ###sharethis
-###sharetop
 ###sharing-bar
 ###sharing-box
 ###sharing-button
@@ -1642,6 +1644,7 @@ _social_footer_
 ##.horizontal.social
 ##.hover_share
 ##.hp-tab-share
+##.hs-blog-social-share
 ##.ht-share
 ##.icon--app-store
 ##.icon--dailymotion
@@ -2475,6 +2478,7 @@ _social_footer_
 ##.share-vertical
 ##.share-viber
 ##.share-video
+##.share-video-link
 ##.share-weibo
 ##.share-whatsapp
 ##.share-widget
@@ -2900,6 +2904,7 @@ _social_footer_
 ##.social-float
 ##.social-follow
 ##.social-follow-bar
+##.social-follow-box
 ##.social-follow-item
 ##.social-foot
 ##.social-footer
@@ -3001,7 +3006,6 @@ _social_footer_
 ##.social-profiles-widget
 ##.social-promo
 ##.social-prompt
-##.social-rel
 ##.social-right
 ##.social-rocket-inline-buttons
 ##.social-row
@@ -3027,7 +3031,6 @@ _social_footer_
 ##.social-share-custom
 ##.social-share-expand
 ##.social-share-facebook
-##.social-share-footer
 ##.social-share-google
 ##.social-share-group
 ##.social-share-icons
@@ -3201,6 +3204,7 @@ _social_footer_
 ##.social_share_buttons
 ##.social_share_fb
 ##.social_share_left
+##.social_share_list_holder
 ##.social_share_privacy_area
 ##.social_share_wrapper
 ##.social_sharer
@@ -3886,6 +3890,7 @@ kyodonews.net##.article-sns
 newrepublic.com,thetech.com##.article-social
 nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
+altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
 nationalreview.com##.article-utility-nav
 english.nv.ua##.article__footer__additional_share
 rt.com##.article__google-news
@@ -3914,7 +3919,6 @@ tuta.com##.blog__share
 9to5linux.com##.bm-social-top
 breitbart.com##.bnn-social-share
 bom.gov.au##.bom-social-share
-essentiallysports.com##.brand-google-news-banner_link__NsLkA
 businessinsider.com##.brands-social
 oilprice.com##.breakingNews__socialMedia
 agrimag.co.za,androidpolice.com,automart.co.za##.btn-facebook
@@ -3960,7 +3964,6 @@ breakingdefense.com##.ea-share-count-wrap
 bdonline.co.uk,dailymail.co.uk,flightglobal.com,screendaily.com##.email
 cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
-alizila.com##.entry-meta__social
 arabnews.com##.entry-views
 yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
@@ -3996,7 +3999,6 @@ maketecheasier.com,tribune.com.pk,voetbalkrant.com,wielerkrant.be##.footer-socia
 gastrojournal.ch,myanimelist.net##.footer-social-media
 popsci.com##.footer-socials-wrapper
 oilprice.com##.footerLogoBanner__socialMedia
-dailykos.com##.footer__connect
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
 indiatoday.in##.footer__socialshare
@@ -4022,7 +4024,6 @@ alarabiya.net##.google-news-callout
 dailygalaxy.com,glassalmanac.com##.google-news-card
 cybernews.com,sammobile.com##.google-news-cta
 phonearena.com,quiverquant.com##.google-news-follow
-bleedingcool.com##.google-news-source
 ringsidenews.com,tmz.com##.google-preferred-btn
 sammobile.com##.google-preferred-news-source-cta
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,spaceexplored.com##.google-preferred-source-badge
@@ -4123,7 +4124,6 @@ cnet.com##.preferred-source-button
 dailymail.co.uk##.prevNextWrapper-1Vg7e
 reason.com##.rcom-social-tools
 dermatologytimes.com,drive.com.au##.react-share__ShareButton
-playstore.pw##.resp-sharing-button__link
 the-gadgeteer.com##.review-price
 firstpost.com##.rhs-yt-ch-wrap
 businesstoday.in##.rhs_fixwhtsapp
@@ -4167,11 +4167,12 @@ mirror.co.uk,themirror.com##.sharebar-icon
 al.com,cleveland.com,lehighvalleylive.com,masslive.com,mlive.com,newyorkupstate.com,nj.com,oregonlive.com,pennlive.com,silive.com,syracuse.com##.sharebarBetaWrapper
 thehackernews.com##.sharebelow-twitter
 aftvnews.com,baptistnews.com,calmatters.org,cardinalnews.org,cartoonbrew.com,jta.org,thefrisc.com,usmagazine.com,washingtoncitypaper.com,washingtoninformer.com##.sharedaddy
-radiocity.in##.sharepartphotos
 cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
+proofpoint.com##.sharethis_toolbox
 12tomatoes.com##.sharetocare-popup
+glassalmanac.com##.shhr-btn
 welivesecurity.com##.sidebar-card-media
 tribune.com.pk##.sidebar-social-icons
 pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
@@ -4181,6 +4182,7 @@ defector.com,sf.gazetteer.co##.single_inner__pWuJ8
 news24online.com##.single_page-social-share
 streetsblog.org##.single_sharingInner__3IoQO
 nme.com,operawire.com,whoopsee.it##.site-footer-social
+dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.site-header__social
 news.sky.com,skysports.com##.site-share-wrapper
 archaeology.org##.site-socials
 buyee.jp##.sns_list
@@ -4518,6 +4520,7 @@ calciomercato.com##.cm-share
 iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
+altalex.com##.footer__altx-top-social
 livesicilia.it,perizona.it##.google_news
 agi.it##.hidden.xlarge\:flex.border-t.border-base-300.pt-2.core.items-center.justify-between
 ilfattoquotidiano.it##.ifq-news-meta__share
@@ -4846,6 +4849,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||arcgis.com/apps/Nearby/app/components/Share/$~third-party
 @@||assets.msn.com/bundles/*/social-bar-$~third-party
 @@||cdn.flowplayer.com^*/share.min.js
+@@||commonsensemedia.org/ajax/review/$~third-party,xmlhttprequest
 @@||gen.jut.su/jcdn/minify?charset=*/videojs-share.$script,stylesheet,domain=jut.su
 @@||iconfinder.com/data/icons/$~third-party
 @@||instagram.com/p/$subdocument,third-party
