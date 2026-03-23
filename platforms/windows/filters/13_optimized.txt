@@ -1,9 +1,9 @@
-! Checksum: iXYuuWNMy6p36THZqlkmhQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1774258284-3600.patch
+! Checksum: Y28tVyzrDf3Gp1kala0+0g
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1774261807-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.15
-! TimeUpdated: 2026-03-23T09:27:54+00:00
+! Version: 2.0.63.16
+! TimeUpdated: 2026-03-23T10:26:39+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5348,10 +5348,17 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+!+ NOT_VALIDATE
+||i.ibb.co/*.gif$domain=/softtv\d+\.com$/
+[$domain=/softtv\d+\.com$/]##.slot-header_banner
+||nesinetv*.com/*.gif
+||data-reality.com/skor.php
+[$domain=/nesinetv\d+\.com$/]##header > ul > li:not(:has(> a[href="/"]))
+[$domain=/nesinetv\d+\.com$/]##.footer-links
 ||betvinotv*.live/*.gif
 ||betvinotv*.live/yayinonu.jpg
 [$domain=/betvinotv\d+\.live$/]##header > ul > li:not(:has(> a[href="/"]))
-[$domain=/betvinotv\d+\.live$/]a[href^="https://dub.sh/"]
+[$domain=/betvinotv\d+\.live$/]##a[href^="https://dub.sh/"]
 [$domain=/betvinotv\d+\.live$/]##.footer-links
 ||betpaributv*.com/*.gif
 [$domain=/betpaributv\d+\.com$/]##header > ul > li:not(:has(> a[href="/"]))

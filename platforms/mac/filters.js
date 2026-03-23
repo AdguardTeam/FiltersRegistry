@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.4.87",
-			"timeUpdated": "2026-03-23T04:49:10+0000",
+			"version": "2.1.4.88",
+			"timeUpdated": "2026-03-23T10:26:07+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.55.39",
-			"timeUpdated": "2026-03-23T09:27:35+0000",
+			"version": "2.4.55.40",
+			"timeUpdated": "2026-03-23T10:26:19+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.26.42",
-			"timeUpdated": "2026-03-23T08:25:23+0000",
+			"version": "2.1.26.43",
+			"timeUpdated": "2026-03-23T10:26:29+0000",
 			"languages": []
 		},
 		{
@@ -158,8 +158,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.33.74",
-			"timeUpdated": "2026-03-23T08:25:35+0000",
+			"version": "2.0.33.75",
+			"timeUpdated": "2026-03-23T10:26:36+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -217,8 +217,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.63.15",
-			"timeUpdated": "2026-03-23T09:27:54+0000",
+			"version": "2.0.63.16",
+			"timeUpdated": "2026-03-23T10:26:39+0000",
 			"languages": [
 				"tr"
 			]
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.62.83",
-			"timeUpdated": "2026-03-23T09:28:00+0000",
+			"version": "2.2.62.84",
+			"timeUpdated": "2026-03-23T10:26:46+0000",
 			"languages": []
 		},
 		{
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.15.92",
-			"timeUpdated": "2026-03-23T08:25:51+0000",
+			"version": "2.1.15.93",
+			"timeUpdated": "2026-03-23T10:26:47+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.72.66",
-			"timeUpdated": "2026-03-23T09:28:05+0000",
+			"version": "2.0.72.67",
+			"timeUpdated": "2026-03-23T10:26:52+0000",
 			"languages": []
 		},
 		{
@@ -338,8 +338,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.42.79",
-			"timeUpdated": "2026-03-23T07:34:42+0000",
+			"version": "2.0.42.80",
+			"timeUpdated": "2026-03-23T10:26:52+0000",
 			"languages": []
 		},
 		{
@@ -815,12 +815,12 @@
 		{
 			"filterId": 203,
 			"name": "Hungarian filter",
-			"description": "Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.",
-			"homepage": "https://github.com/hufilter/hufilter/wiki",
+			"description": "Hufilter. Filter list that specifically removes ads, privacy threats, and security risks on websites in the Hungarian language.",
+			"homepage": "https://hufilter.hu/",
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 7,
-			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/hufilter/hufilter@gh-pages/hufilter-adguard.txt",
+			"subscriptionUrl": "https://filters.hufilter.hu/hufilter-adguard.txt",
 			"version": "2.0.4.89",
 			"timeUpdated": "2026-03-21T12:46:12+0000",
 			"languages": [
@@ -1154,8 +1154,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.56.44",
-			"timeUpdated": "2026-03-23T09:28:09+0000",
+			"version": "2.1.56.45",
+			"timeUpdated": "2026-03-23T10:26:57+0000",
 			"languages": [
 				"zh"
 			]
