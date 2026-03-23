@@ -1,8 +1,8 @@
-! Checksum: ryHSOEu1JgCkO02MWqoIsw
+! Checksum: bnvTvUBcqZG0LKwNt14mWQ
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.62.88
-! TimeUpdated: 2026-03-23T15:27:21+00:00
+! Version: 2.2.62.89
+! TimeUpdated: 2026-03-23T16:24:59+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -11861,8 +11861,6 @@ topspeed.com,polygon.com,howtogeek.com,pocket-lint.com,cbr.com,thegamer.com,coll
 topspeed.com,polygon.com,howtogeek.com,pocket-lint.com,cbr.com,thegamer.com,collider.com,xda-developers.com,gamerant.com,screenrant.com,makeuseof.com,androidpolice.com,fextralife.com#%#//scriptlet('prevent-fetch', 'adsbygoogle.js')
 rutube.ru#?#div[class^="footer"] > div#notifier:has(> div.message-container-module__messageItem span.message-module__description:contains(Блокировщик рекламы))
 anizone.to##main .overflow-hidden:has(> .relative:only-child > .border-dashed)
-global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"]
-global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"] + div[data-dismissable-layer]
 xvideos.com##body > div[style*="background: rgb"][style*="text-align: center"]
 bluesky-soft.com#%#//scriptlet('prevent-setTimeout', 'Please allow ads')
 bangkokpost.com###adblock-overlay
@@ -13431,7 +13429,8 @@ news.bitcoin.com#%#//scriptlet('trusted-click-element', '#youtube-player + img[a
 iqos.ru$$script:contains(new PopupAuth)
 iqos.ru#%#//scriptlet('remove-node-text', 'script', 'new PopupAuth')
 global.novelpia.com#$#body { overflow: auto !important; pointer-events: auto !important; }
-global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] + div[data-dismissable-layer][role="dialog"] { display: none !important; }
+global.novelpia.com#$#div[data-state="open"][style="pointer-events: auto;"]:empty + div[data-dismissable-layer]:not([class*="state=open"]) { display: none !important; }
+global.novelpia.com#$#div[data-state="open"][style="pointer-events: auto;"]:empty { display: none !important; }
 youtube.com##tp-yt-paper-dialog:has(> .ytd-popup-container > #options.ytd-checkbox-survey-renderer)
 rutube.ru###communicationBanner
 behance.net##div[class*="Project-followsAppreciationsOverlay"]
@@ -17325,7 +17324,6 @@ armeniasputnik.am,sputniknewslv.com,sputnik-georgia.ru##.window-push
 uol.com.br##.webalert_container
 ||c.jsuol.com.br/assets/*tpl=assets/dist/service-worker/webalert-notification
 eldeber.com.bo,laarena.com.ar,lanacion.com.ar##.notificacion-modal
-auchan.ua#%#//scriptlet("set-constant", "navigator.geolocation", "emptyObj")
 /push.js$domain=51xiazai.cn|tsn.ua|sputnik.by|news.noteru.com|sputnik-georgia.ru|aksiyon.com.tr|infox.sg
 izlesene.com,doviz.com,sinemalar.com###x-comet-dialog
 sbt.com.br,sports.ru,tribuna.com##.webpush
