@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: rrknTBc/7nmgmfotKpZl6Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1774273218-3600.patch
+! Checksum: d6teqpPF4gJtFX7UoICmAw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1774276393-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.55.43
-! TimeUpdated: 2026-03-23T13:36:17+00:00
+! Version: 2.4.55.44
+! TimeUpdated: 2026-03-23T14:29:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10295,6 +10295,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227604
+h-game18.xyz##.adsbygoogle.Ad-Container.sidebar-ad.ad-slot.ad.ads.doubleclick.ad-placement.ad-placeholder.adbadge.BannerAd.adsbox:style(display: block !important;)
+h-game18.xyz##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227522
 fc-lc.xyz##+js(remove-node-text, script, AdscoreInit)
 @@||adsco.re/p$script,domain=fc-lc.xyz
@@ -13586,9 +13589,6 @@ vnexpress.net##a[data-event-label="Button-TatAdblock"]
 codevn.net##+js(no-setInterval-if, ['offsetHeight'])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190068
 link.codevn.net##+js(abort-on-property-write, checkDomain)
-! https://github.com/AdguardTeam/AdguardFilters/issues/135481
-h-game18.xyz##+js(addEventListener-defuser, load, pagead2.googlesyndication.com)
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xhr,redirect=googlesyndication_adsbygoogle.js,domain=h-game18.xyz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135457
 truffeonline.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js|$domain=truffeonline.com
