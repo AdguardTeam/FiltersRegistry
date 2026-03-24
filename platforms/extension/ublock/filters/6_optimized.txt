@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: n0d6HzvPsgXrBEgiCH+FBQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1774290371-3600.patch
+! Checksum: 2nCcwAaSJs+fobG8flvMhw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1774321759-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.51.49
-! TimeUpdated: 2026-03-23T18:22:49+00:00
+! Version: 2.0.51.50
+! TimeUpdated: 2026-03-24T03:05:41+00:00
 ! Expires: 5 days (update frequency)
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
@@ -713,6 +713,10 @@ finanzen.net,mainfranken24.de,jetzt.de,derwesten.de,eurosport.de,ingenieur.de,he
 stern.de,monopol-magazin.de,krone.at,cleverdialer.de,sueddeutsche.de,geo.de,northdata.de,losungencodycross.com,spieletipps.de,heise.de,netdoktor.de,aachener-zeitung.de,wissen.de##.ad-container
 winfuture.de,netzwelt.de,quoka.de,farmeramania.de,bravofly.de,computerbild.de,digitalfernsehen.de,hl-live.de,chinamobilemag.de,focus.de,pcwelt.de##.adsbygoogle
 it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpool.de,fnweb.de,laborjournal.de,deraktionaer.tv,morgenweb.de##.billboard
+kleinanzeigen.de###viewad-details
+20min.ch##div[type="ad"]
+20min.ch##div[class^="ContentPage_insideFullContentEnd"]
+20min.ch##section aside[class^="sc-"]:has(> div[class^="sc-"]:not([id]) > div[class^="sc-"]:not([id]) > div[data-ad-unit-id])
 mydealz.de##div[class]:has(> .ad--bg:only-child)
 digital-eliteboard.com##article[class$="debAd"]
 cad.de##:matches-path(/foren) tr:has(> td > span > a[target="new"])
@@ -778,7 +782,6 @@ bussgeldkatalog.de###amazon + p + div.aawp
 bussgeldkatalog.de##.slideIn
 testsieger.de###sponsoredProductPdp
 chip.de##article + div:has(> h3:first-child + a[href^="https://www.chip.de/angebote"]:last-child)
-heise.de##.swvzinfobox
 heise.de##.article-sidebar > div[class]:has(> .ad-label:first-child + .ad:last-child)
 heise.de##div[class]:has(> .downloads-container:only-child > div:only-child > .ad-label)
 20min.ch##div[id*="/inside-full-recommender-pos"]
@@ -2003,6 +2006,7 @@ lokalo24.de,kreiszeitung.de,merkur.de,tz.de,hna.de##.id-Teaser-el--proBEEP
 inside-digital.de###parallax
 inside-digital.de###td-outer-wrap > #bigsize
 der-betze-brennt.de###ad-superbanner
+sportbuzzer.de##.dcm-adv-container
 pcgames.de##div.topFrameEddie
 augsburger-allgemeine.de##.p-ad-poster
 quotenmeter.de##div[id^="leaderboard_"]
@@ -2164,7 +2168,6 @@ chip.de###hp-neongelb .copy-sm > a[href]:not([href*=".chip.de"])
 vorsprung-online.de##.custom > p[style="text-align: center;"]
 vorsprung-online.de##a[href="/index.php/anzeigenpreise.html"]
 pi-news.net##a[href^="http://www.pi-news.net/werben-auf-pi/"]
-||cdn.recognified.net/rd.loader.php^$domain=winfuture.de
 donnerwetter.de##.col-xs-12 > center > div[style="font-size: 60%; color: #aab5b5;"]
 donnerwetter.de##.prepend-top > .block-content > div[style="font-size: 60%; color: #aab5b5;"]
 unicum.de,schwaebische.de,infranken.de##.billboard-wrapper
@@ -2283,7 +2286,6 @@ bmw-syndikat.de##.forum_show_main_banner_left
 n-tv.de,stern.de##.gujAd
 kreiszeitung.de,oktoberfest-live.de##.id-Container-headline--proBEEP
 pcgameshardware.de##.innerArticleModule.ghapi
-hifitest.de##.mainContent > .marginBottom30
 transfermarkt.de##.mobile-werbung-inrow
 tichyseinblick.de##.mod-cad2
 spielen.de##.mtAd
@@ -2594,7 +2596,6 @@ email.t-online.de#@#.advertising
 @@||st.wetteronline.de/dr/*/css/p_*.css
 @@||ad.doubleclick.net/ddm/pfadx^$domain=n-tv.de
 @@||ad-ipd.sxp.smartclip.net/select^$domain=n-tv.de
-@@||yospace.com/csm/builder/*,proxy$domain=joyn.de
 @@||mediamarkt.de/*/shop^
 frag-mutti.de#@##top-banner
 @@||adspirit.de^$domain=kinopolis.de
@@ -2764,6 +2765,7 @@ _woz_banner_vote.
 ##.adsense-ArtikelOben
 ##.adzeiger
 ##.anzeigenwerbung
+##.article-werb
 ##.artikelinlinead
 ##.azk-native-responsive
 ##.babbelMultilangAdBannerHorizontal
@@ -2773,7 +2775,6 @@ _woz_banner_vote.
 ##.banneritemwerbung_head_1
 ##.banneritemwerbung_head_2
 ##.bdeFotoGalAdText
-##.big-werb
 ##.block-huss-adblocks
 ##.bottom-werbung-box
 ##.box_werbung_detailseite
@@ -2783,7 +2784,6 @@ _woz_banner_vote.
 ##.content_header_werbung
 ##.content_right_side_werbewrapper
 ##.dk-ad-ident
-##.fullbanner_werbung
 ##.nfy-sebo-ad
 ##.nfy-slim-ad
 ##.orbitsoft-ad
@@ -2845,6 +2845,7 @@ _woz_banner_vote.
 ##a[href^="http://www.sexkontaktportal.com/?wm="]
 ##a[href^="https://ads.sunmaker.com/tracking.php?"]
 ##a[href^="https://bd742.com/"]
+##a[href^="https://clicks.imaxcash.com/?aff_"]
 ##a[href^="https://dpm.affaire18.com/click.php?dp="]
 ##a[href^="https://feed.solads.media/"]
 ##a[href^="https://marketing.net.brillen.de/"]
@@ -2960,6 +2961,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||maxiad.de^$3p
 ||mirando.de^$3p
 ||mocafirst.at^$3p
+||mupads.de^$3p
 ||nativendo.de^$3p
 ||netpoint-media.de^$3p
 ||netwayer.de^
@@ -3887,7 +3889,6 @@ mallorcazeitung.es##._mo_recs
 verben.de##.aAnz
 4kfilme.de,abenteuerfreundschaft.de,appgefahren.de,automatentest.de,autorevue.at,gameswirtschaft.de,gartenjournal.net,gebrauchtwagenberater.de,googlewatchblog.de,it-boltwise.de,justnetwork.eu,kabel-blog.de,medienkuh.de,nachbelichtet.com,nat-games.de,pocketpc.ch,stadt-bremerhaven.de,technikshavo.de##.aawp
 com-magazin.de##.abo
-salue.de##.action-item > * > .ad
 abendblatt.de,adz.ro,ak-kurier.de,apollo-news.net,apotheke.com,architektenwelt.com,azonline.de,beruhmte-zitate.de,bike-magazin.de,bildderfrau.de,boote-exclusiv.com,bos-fahrzeuge.info,bvz.at,chefkoch.de,dastelefonbuch.de,derwesten.de,dwdl.de,eatsmarter.de,echo-online.de,erf.de,esslinger-zeitung.de,eurosport.de,frankenpost.de,futurezone.de,gmx.net,gq-magazin.de,hamburg.de,icasa.ch,idowa.de,imtest.de,ingenieur.de,insuedthueringen.de,juedische-allgemeine.de,klassikradio.de,lahrer-zeitung.de,leckerschmecker.me,macwelt.de,mallorcazeitung.es,mann.tv,modell-fahrzeug.com,modhoster.de,mybike-magazin.de,mydealz.de,nau.ch,netzwelt.de,news38.de,noen.at,np-coburg.de,nr-kurier.de,online-webradio.com,paracelsus-apo-rosslau.de,paradisi.de,pcwelt.de,pfaffenhofen-today.de,primavera24.de,schwarzwaelder-bote.de,selbermachen.de,spektrum.de,stadtradio-goettingen.de,stuttgarter-nachrichten.de,sueddeutsche.de,sup-mag.de,surf-magazin.de,tachles.ch,tellows.at,tellows.ch,tellows.de,tennisnet.com,tour-magazin.de,verlagshaus-jaumann.de,vfb.de,vogue.com,wallstreet-online.de,web.de,webwiki.de,wissen.de,wmn.de,wn.de,ww-kurier.de,yacht.de,zeit.de##.ad
 ak-kurier.de,nr-kurier.de,ww-kurier.de##.ad + #flashContent
 ak-kurier.de,nr-kurier.de,ww-kurier.de##.ad + .tdt
@@ -4261,8 +4262,6 @@ ofc.de##.main-club-partner
 aerotelegraph.com##.marcopolo
 morecore.de##.mcad_wrapper
 morecore.de##.mcadblock
-hausgeraete-test.de,heimwerker-test.de,hifitest.de##.med4
-hausgeraete-test.de,heimwerker-test.de,hifitest.de##.med5
 ligaportal.at##.media
 android-hilfe.de##.medium-rectangle-incontent-wrapper
 hausgeraete-test.de,heimwerker-test.de,hifitest.de##.mediumRectangle
@@ -4448,6 +4447,7 @@ finanznachrichten.de##.smartbroker1
 5-sms.com##.smsbox2
 administrator.de##.snhb-ads
 ladies.de##.sol-content
+9monate.de##.spark-container-desktop
 gernekochen.de##.spice-box-container
 xn--spidersolitr-qcb.de##.spielen_kopf
 mahjongkostenlos.de##.spielseite_anz_2
@@ -4986,6 +4986,7 @@ flaconi.de##[data-product-list-id]:has([data-badge-type="sponsored"])
 shop-apotheke.com##[data-qa-id="cross-sell-widget"] li:has(> [data-as-xsell-product-id])
 mediamarkt.at,mediamarkt.ch,mediamarkt.de,saturn.de##[data-test="mms-product-card"]:has(div[data-test="mms-plp-sponsored"])
 obi.*##[data-track-section^="home-topteaser"]:has(hobi-advertiser-tag)
+t3n.de##article.c-pin:has(div.c-badge + span.u-text-extrasmall)
 finanzen.net##article.page-content__item:has(img[alt="UBS"])
 abendzeitung-muenchen.de##article[class^="teaser nummer-"]:has(span.specialfeature)
 futurezone.de##article[data-post-id]:has(.sponsor-byline)
