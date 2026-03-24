@@ -1,9 +1,9 @@
-! Checksum: Bxk6RnnbZTAMY4Ni8CST3g
-! Diff-Path: ../patches/20/20-s-1774279804-3600.patch
+! Checksum: 61TYp7iyqxG4DHMUO4BAtQ
+! Diff-Path: ../patches/20/20-s-1774351494-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.28.7
-! TimeUpdated: 2026-03-23T15:27:27+00:00
+! Version: 2.0.28.8
+! TimeUpdated: 2026-03-24T11:21:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -89,8 +89,6 @@ wear.jp#%#//scriptlet('set-session-storage-item', 'showed_app_redirect_half_moda
 shufoo.net#$#.appdl_modal_overlay { display: none !important; }
 shufoo.net#%#//scriptlet('remove-class', 'is-hidden', 'body')
 palcy.jp##aside > .flex-col:has(> a[href^="https://palcy.onelink.me/"])
-m.vk.com#%#//scriptlet('trusted-set-cookie', 'remixvideo_mvk_first_session_promo_last_seen_timestamp', '%7B%22banner%22%3A99999999999999%7D')
-m.vk.com##a[class*="OpenInAppPromoButton__button--"]
 ripley.cl##section[data-testid="marketing--popup"]
 pw.live##div[class^="deepLinks_getAppWrapper"]
 books.yandex.ru##div[class^="AppPromoDesktopBanner_"]
@@ -4060,6 +4058,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+trip.com##div[class^="app-download-bottomstyle"]
+m.vkvideo.ru,m.vk.com#%#//scriptlet('trusted-set-cookie', 'remixvideo_mvk_first_session_promo_last_seen_timestamp', '%7B%22banner%22%3A99999999999999%7D')
+m.vkvideo.ru,m.vk.com##a[class*="OpenInAppPromoButton__button--"]
 thefreedictionary.com##.header-top > a.download-link
 expero.ru##.banner-loader
 etstur.com###appStoreContentForm
