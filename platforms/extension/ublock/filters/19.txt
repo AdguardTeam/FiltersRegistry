@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: i4bAraEmYyHMoCx0PPKAow
-! Diff-Path: ../patches/19/19-s-1773930469-3600.patch
+! Checksum: neWNjctrbXD9BEsEWLTrQw
+! Diff-Path: ../patches/19/19-s-1774373324-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.72.56
-! TimeUpdated: 2026-03-19T14:24:34+00:00
+! Version: 2.0.72.76
+! TimeUpdated: 2026-03-24T17:25:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -546,7 +546,7 @@ animakima.ru##.broadsheet
 seelen.io##body > div[style^="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"]
 txori.com##body > div.cache
 txori.com##+js(addEventListener-defuser, DOMContentLoaded, aContainer)
-abdpost.com##div[x-data="adblockBanner()"]
+songelenhaber.com.tr,abdpost.com##div[x-data="adblockBanner()"]
 daido-h-ict.com##+js(addEventListener-defuser, load, detectAdBlock)
 comicschau.de###detect-modal
 pikuco.ru##.adbnotification
@@ -602,8 +602,6 @@ anizone.to##main .overflow-hidden:has(> .relative:only-child > .border-dashed)
 feedwatcher.net###wrapper > div.feed-block > div:has(> div#blocker-warning)
 telewizjada.cc,workora.space###adblock-warning
 idphotoland.com###msgpb
-global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"]
-global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"] + div[data-dismissable-layer]
 livacha.com##div[href="/p/adv-enable"]
 xvideos.com##body > div[style*="background: rgb"][style*="text-align: center"]
 bluesky-soft.com##+js(no-setTimeout-if, Please allow ads)
@@ -1844,7 +1842,7 @@ zkillboard.com###adsensetop
 ||good-surf.ru/*script/script.js
 ||googleads.g.doubleclick.net/pagead/$redirect=noop.txt,important,domain=maxedtech.com,image,media,subdocument,stylesheet,script,xhr,other
 ||googleads.g.doubleclick.net/pagead/ads$subdocument,redirect=noop.html,domain=thehouseofportable.com
-||googletagmanager.com/gtm.js$domain=popsci.com|saveur.com|denik.cz|ign.com|thehouseofportable.com
+||googletagmanager.com/gtm.js$domain=popsci.com|saveur.com|denik.cz|ign.com|thehouseofportable.com|xataka.com
 ||googletagservices.com/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=diep.io
 ||guhoyas.com/*/adblock-modal.js
 ||htlbid.com/*/motherjones.com/htlbid.js$script,redirect=noop.js,domain=motherjones.com,important
@@ -3202,6 +3200,12 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+bloomberght.com##.sticky-brand-logo
+lampenwelt.de##.modals-overlay:style(display: none !important;)
+lampenwelt.de##.modal-popup:style(display: none !important;)
+lampenwelt.de##body:style(overflow: auto !important;)
+shop.purina.ru##+js(remove-node-text, script, dalee_promo_modal_delay)
+officebusters.com###cleaning-mov
 eda.yandex.ru##section > div[class]:has(> div[class] > button[aria-label="Promo"][style^="background-image:"])
 pachca.com##body > div.min-h-screen > div.animate-in:has(> div.bg-background > div.relative > div.items-left > img[alt="Таблица сравнения"])
 technopark.ru##+js(set-cookie, promo500closed, true)
@@ -3231,7 +3235,6 @@ ghxi.com##body:style(overflow: auto !important;)
 uslugi.mosreg.ru##+js(set-cookie, dobrobot_window, true)
 oricon.co.jp##.modalArea-small
 blog.sarar.com##.modal-dialog
-x.com###react-root div[data-testid="BottomBar"]:has(> div[class^="css-"] div[class^="css-"][style^="flex-grow: 1; margin-left:"] > a[href^="/i/flow/signup"])
 trivago.com.tr##div[data-interaction="login-banner"]
 ostrovok.ru##div[data-floating-ui-portal] > div[class^="ApartmentsFilter-module__tooltip"]
 crn.com##.site-alert:style(display: none !important;)
@@ -3483,8 +3486,8 @@ msn.com##.showDialog[data-t*="WeatherPwaPopup"]
 news.bitcoin.com##+js(remove-class, fixed, #youtube-card > div[class^="sc-"])
 iqos.ru##+js(remove-node-text, script, new PopupAuth)
 global.novelpia.com##body:style(overflow: auto !important; pointer-events: auto !important;)
-global.novelpia.com##div[class^="fixed inset-0 bg-black"]:style(display: none !important;)
-global.novelpia.com##div[class^="fixed inset-0 bg-black"] + div[data-dismissable-layer][role="dialog"]:style(display: none !important;)
+global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"]:empty + div[data-dismissable-layer]:not([class*="state=open"]):style(display: none !important;)
+global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"]:empty:style(display: none !important;)
 youtube.com##tp-yt-paper-dialog:has(> .ytd-popup-container > #options.ytd-checkbox-survey-renderer)
 rutube.ru###communicationBanner
 behance.net##div[class*="Project-followsAppreciationsOverlay"]
@@ -8118,7 +8121,7 @@ bt.no##body:style(overflow: auto !important;)
 dell.com##body:style(overflow: auto !important;)
 dell.com##.ask-question-banner-wrapper:style(display: none !important;)
 harpersbazaar.com.ua,cosmo.com.ua###magazine_popup
-hromadske.ua##.Questionnaire
+smfg.co.jp,hromadske.ua##.Questionnaire
 mathebibel.de##form[style^="display: block; width: 100%; height: 100%; position: fixed; z-index:"]
 carnegie.ru##.analytics-stay-in-the-know
 carnegie.ru##div[class="section banded padded"]
@@ -11902,7 +11905,6 @@ uol.com.br##.webalert_container
 eldeber.com.bo,laarena.com.ar,lanacion.com.ar##.notificacion-modal
 ||pornl.com/ps/index.js
 ||sw.wpu.sh/script/main.js$domain=hclips.com|erkiss.live
-auchan.ua##+js(set-constant, navigator.geolocation, {})
 /push.js$domain=51xiazai.cn|tsn.ua|sputnik.by|news.noteru.com|sputnik-georgia.ru|aksiyon.com.tr|infox.sg
 lifehacker.ru###lh-push-app
 youla.ru##.web_push_confirmation
@@ -12286,6 +12288,18 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+cian.ru##.cg-row > div.cg-col-8:has(> div > div[class$="-c-digest-form"] > div[class$="-c-digest-form-email-container"])
+euractiv.com##.js-newsletter-card
+blog.domclick.ru##.tgblock_wrapper
+overclockers.ru##.grid > div.sixteen:has(> div.blue > i.telegram)
+elpais.com.co##.prose > div.text-center:has(> a[href^="https://whatsapp.com/channel/"])
+elpais.com.co##.prose > div.not-prose:has(> form[name="newsletterForm"])
+elpais.com.co##.prose > div.leading-none:has(> a[href^="https://news.google.com/publications/"])
+fcbayern.com##div[data-upscore-zone^="content(NEWSLETTER)"]
+theonion.com##.pat-newsletter-onpage
+news.yahoo.co.jp##button[aria-label="チュートリアルを閉じる"]
+techblog.gr###tbNlBar
+teluguone.com##.content-one-main-middle-add
 ipiter.ru###telegram_invite
 sabr.org###sabr-popup
 sabr.org###sabr-overlay
@@ -14066,7 +14080,6 @@ profi.ru###footerSubscription
 clickhouse.com##.duration-300.ease-in-out.rounded-lg:has(iframe[src^="/marketo-forms/"])
 securityweek.com##.security-newsletter-container
 hartvannederland.nl##div[class]:not([id]):has(> div + form > input[type="email"])
-winaero.com###dcpa
 modcombo.com##.box-discord
 boundless.com##.o-block:has(> form[data-lead-magnet-name="bit-newsletter"])
 kavkaz-uzel.eu##.text-block > div.too:has(> p > a[href="https://t.me/cknot"])
@@ -14112,7 +14125,6 @@ aviasales.ru##div[class^="SubscriptionCard_container"]
 tutu.ru###banner-covid-19
 axios.com##div[data-vars-experiment="content_to_subscription_recommendations"]
 today.com##.preloaded_lightbox:has(> iframe[title="(LIVE) Start TODAY App | Al with Weights"])
-winaero.com###dbpa
 calltouch.ru##+js(set-local-storage-item, lastDateSubNotice, true)
 gov.kz##.card-information__actions
 vulture.com##.promotional-spot
@@ -18337,7 +18349,8 @@ agroxxi.ru##.b-gsubs
 agroxxi.ru##article > p:has(> b > a[href="https://zen.yandex.ru/media/agroxxi.ru"])
 kam24.ru,astv.ru###overlvaysubcribe
 astv.ru,kam24.ru,sastv.ru###followwhatsapp
-miloserdie.ru##.adp-popup
+theonion.com##.adp-popup-overlay
+theonion.com,miloserdie.ru##.adp-popup
 bloombergquint.com###bq-piano-story-page-newsletter
 mansetebak.com,korsanedebiyat.com###popup-box:style(display: none !important;)
 mansetebak.com,korsanedebiyat.com##body.collapsible-active:style(overflow: auto !important;)

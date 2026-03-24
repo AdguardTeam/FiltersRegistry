@@ -1,15 +1,15 @@
 ![Adblock Plus 2.0]
-! Checksum: 4Ah10hvel3I29/9T5jBQPg
-! Diff-Path: ../patches/243/243-s-1773910132-14400.patch
+! Checksum: aazQwpAXmmLDXW5KGbu2VQ
+! Diff-Path: ../patches/243/243-s-1774356671-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.16
-! TimeUpdated: 2026-03-19T08:46:00+00:00
+! Version: 2.0.24.19
+! TimeUpdated: 2026-03-24T12:48:04+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-03-19 06:55:04 CET
+! Last modified: 2026-03-24 13:24:16 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -392,6 +392,7 @@ dagensarena.se,mytaste.se,matklubben.se,vivavinomat.se##.popup
 dagensinnovation.se,nyheter.swebbtv.se,modernalivet.se###moove_gdpr_cookie_info_bar
 dagensjuridik.se##.outher-sidebar, a[href*="/annons/"], a[href*="/native/"], .dj-inline-ad, .sticky
 dagenslogistik.se##small:contains(/annons/i):upward(.elementor-column)
+dagensmuslim.se##.breaking-title-text:contains(ANNONS:):upward(.breaking.controls-is-active)
 dagensmuslim.se##.stream-item-top, .theiaStickySidebar a[target="_blank"]
 dagensnamn.nu##div[id^="dagensnamn_"], .dagensnamn_nu_billboard_middle, a[href*="kohantering"]
 dagensopinion.se##.post-block:has(a[href*="/annons/"])
@@ -900,6 +901,7 @@ kandisvarlden.com##+js(acs, disableEnterKey)
 kandisvarlden.com##.unselectable:style(-moz-user-select:unset!important; -webkit-user-select:unset!important; cursor:unset!important;)
 kardemummagumman.se###custom_html-2
 karinrahm.se##.thb-page-transition-on:style(opacity:1!important)
+karinrahm.se,sydasien.se##.thb-cookie-bar
 karlskogavaxer.se,molndalvaxer.se##.elementor-heading-title:contains(/annons/i):upward(.elementor-column)
 karriarlakare.se##a[target][onclick], #cliSettingsPopup
 karriarlakare.se##.annons-label:upward(a)
@@ -958,7 +960,7 @@ kurera.se##.pc-das, [data-ad-type]
 kurera.se##.post-card:has(a[href*="ad=native"])
 kvalitetsmagasinet.se,miljo-utveckling.se,techtidningen.se,vdtidningen.se###subscribe_splash, [class*="nativeadwidget"], .partnermedia, .annonswidget
 kwiss.me##.square-item:has(.qz-quiz-sponsored)
-kyrkpressen.fi###list_banners_right_top
+kyrkpressen.fi###list_banners_right_top, #list_banners_top
 lagenhetsbyte.se##.cookie-modal-wrapper
 lajvo.se###panoramaTop, .facebook
 lajvo.se##.postCard:contains(/bonusar|casino|betting|spelbranschen|spelupplevelse/i)
@@ -1166,7 +1168,8 @@ nordiskradio.se###cookieWindow
 nordiskskog.se##.templateHelannonsBOX
 norrahalland.se##.bannercontent
 norrortssporten.se##.vc_column_container:has(.td-adspot-title)
-nouw.com##div[class^="_washer"]
+nouw.com##div[style^="text-align: center;"]:has(div[id*="panorama"])
+nouw.com##.post-grid-item:has(a[href*="poker"], a[href*="betting"], a[href*="casino"], a[href*="spelplat"])
 nyadagbladet.se##.site-main > div.widget_custom_html p[style^="text-align: center;"]:contains(/annonssamarbete/i):upward(div.widget_custom_html)
 nyadagbladet.se##.third-col, article[class*="sponsrad"], div[id^="nyd-"], .below_header_front_page, div[data-aeon-news-trackbid="1"], .aeon-news-widget, div[id^="aeon-news"]
 nyadagbladet.se##.widget_media_image:contains(/annons/i)
@@ -1493,7 +1496,6 @@ swedroid.se##.puff:has(script[data-pbid])
 swedroid.se##.puff:contains(/Aktuellt på Prisjakt/i)
 swehockey.se##[class*="-reklam"], .sif-sponsorer, .teaserblock, .commonblock a:not([href^="/"], [href*="/swehockey.se"])
 sxk.se###start-sponsors
-sydasien.se##.thb-cookie-bar
 sydnarkenytt.se##.toppbanner-outer, .reklamplats_hspalt, .egenbanner, .hspalt
 synonyma.se##amp-user-notification.cookie
 synonyma.se##.full-bleed:has(.adsbygoogle)
@@ -2888,7 +2890,6 @@ zeromagazine.nu##div[id^="ads"]
 /?news=ajaxrequest&bannerzone
 /?news=ajaxrequest&blok=sliderBanner
 /?template=prisjakt$domain=ljudochbild.se
-/?trafikkalla$image,domain=bloggplatsen.se
 /@sentry$script,domain=aftonbladet.se
 /_adsmodern/*$image
 /_astro/InitializeAdverts$domain=aftonbladet.se
@@ -2940,7 +2941,6 @@ _banner.php?$domain=tvmatchen.nu
 ||adhype-assets.com/images/*betting
 ||adhype-assets.com/images/*casino
 ||adhype.se/js/native
-||admin.bloggplatsen.se/status/$image
 ||adnordics.com^$3p
 ||adonsales.com^$3p
 ||adonstudio.com^$3p
@@ -3531,6 +3531,7 @@ _banner.php?$domain=tvmatchen.nu
 ||tracing.yelp.com^
 ||tracking.fasab6f.se^
 ||track.intersport.se^
+||track.mediaintelliview.com^
 ||track.yetric.net^
 ||tradehouse.media^$3p
 ||travellink.se/marketing-channel

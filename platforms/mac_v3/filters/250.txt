@@ -1,9 +1,9 @@
-! Checksum: UXGJ8MpVkzfLCVkaSDRLjw
-! Diff-Path: ../patches/250/250-s-1773924644-14400.patch
+! Checksum: 8p1yCWlAWmrrTZXOSuMkQQ
+! Diff-Path: ../patches/250/250-s-1774371097-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.19.30
-! TimeUpdated: 2026-03-19T12:47:33+00:00
+! Version: 2.0.19.37
+! TimeUpdated: 2026-03-24T16:48:32+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -75,14 +75,14 @@
 ! ⌘ Makes some websites use much more of the screen width, instead of just a thin central column.
 ! What this broad compilation does not block：Newsletters, cookie banners, social media links to companies' pages
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 26February2026v1
+! OriginalVersion: 24March2026v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! Legitimate use is almost non-existent, but has a tiny userbase in Japan and among upstart coding experiments. Its extreme common-ness in malware redirections means that the entry will be kept forever.
-||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top
+||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~yggleak.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top
 ! (Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067)
 @@||masto*.top^$document
 @@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
@@ -10419,7 +10419,7 @@ http://secured21.*.com/|$all
 ||zensa.site^$all
 ||adbuho.shop^$all
 ||againstmor.store^$all
-||blizzboygames.net^$all
+||blizzboygames.net^$all,domain=~contains_fraudulent_fake_installer_files.*
 ||cherriescoil.xyz^$all
 ||cumguns.online^$all
 ||floridistor.icu^$all
@@ -12773,6 +12773,10 @@ drvhub.net##.driver-item__install
 ||edweasdxf.pro^$all
 ||hubygvftc.cfd^$all
 ||audioza.cyou^$all
+! https://www.reddit.com/r/uBlockOrigin/comments/1rqgj9d/ubo_some_scamsmalware_sites_arent_blocked/
+! https://app.any.run/tasks/dd05e9da-400a-4936-8ea0-d440fa0887e0
+||rpcs4.com^$all
+||rpcs5.com^$all
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
 ||unofficialtwrp.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
@@ -13339,6 +13343,27 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 .to/popconsole.php|
 ! Sus(picious) search results for YouTube videos that claim to have craсks for Adоbe products. (https://github.com/DandelionSprout/adfilt/issues/1197)
 google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|d\ownl\oad).*$/i):contains(/^.*(ph\ot\osh\op|dav\inc\i|\il{2}ustrat\or).*$/i):contains(/^.*(fre{2}|(cr|h)ack).*$/i))
+! Various E-mail spams' links
+||statautos.com^$all
+/noo/taxx/*$document
+||solitanh.site^$document
+||floraltepi.site^$document
+||arlonb.my^$document
+||astonishedsound.com^$document
+||avibary.com^$document
+||buysalesclub.com^$document
+||corlmedi.com^$document
+||csstudyhub.com^$document
+||hxzf4er.com^$document
+||k2krl7zj.com^$document
+||mcafee.sjv.io^$document
+||ojrq.net^$document
+||oninebest.com^$document
+||ormediao.com^$document
+||paramatise.com^$document
+||watchterm.com^$document
+!+ PLATFORM(windows, mac, android, cli)
+185.176.220.31$network
 ! ——— Entries that are and/or were in "uBlock Filters — Ads" and/or "uBlock Filters — Badware Risks" but which aren't in AdGuard Base or EasyList ———
 ! https://github.com/DandelionSprout/adfilt/pull/395
 ! https://www•huorong•cn/info/1531309921141.html
@@ -15596,7 +15621,7 @@ nettavisen.no###topover
 ! Prevents Google from changing normal links in image searches to their tracking links whenever they're clicked on.
 ! I was only able to get this to work with the 2 links below the main image in the rightside drawer, and not on the main image itself. Trust me, I tried.
 ! Title: 🕳 Empty Padding Remover
-! OriginalVersion: 16March2026v1-Beta
+! OriginalVersion: 23March2026v1-Beta
 ! Expires: 4 days
 ! Description: Are you tired of having to scroll so much on websites, or you want to keep your eyes on more text and content at once? Or perhaps you're tired ot very large shadows on video sites when moving the mouse? If so, this list will help you a little extra bit with that.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -15723,6 +15748,8 @@ play.tv2.no##div[data-testid=player-controls]::before
 ! Twitch on PC
 www.twitch.tv#$#div[data-a-target=player-controls] { background:unset!important }
 www.twitch.tv#$#.top-bar { background:unset!important }
+! DR TV
+dr.dk#$#.player-overlay { background:0!important }
 ! Title: 🍁 Anti-"Aİ results in tech situations where Aİ was not asked for" List
 ! OriginalVersion: 17March2026v1-Alpha
 ! Expires: 2 days
@@ -15993,7 +16020,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 19March2026v1
+! OriginalVersion: 23March2026v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -18416,7 +18443,7 @@ $removeparam=article_url,domain=shop-links.co
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-782437
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-931912
 $removeparam=/^shared.*$/,domain=alibi.fi|anna.fi|eralehti.fi|hymy.fi|kaksplus.fi|kotiliesi.fi|rakennusmaailma.fi|seura.fi|tekniikanmaailma.fi
-$removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
+$removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com|duck.ai
 ! https://fernerjacobsen•no/?epi=STS-SHP--FernerJacobsen-Logo%7Cxid%3Afr1624121412114eah
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
@@ -20379,6 +20406,11 @@ ref=blog.livekit.io$document,removeparam=ref
 ||duckduckgo.com/atb.js$document,removeparam=v
 ||duckduckgo.com/atb.js$document,removeparam=bv
 ||duckduckgo.com/atb.js$document,removeparam=browser
+! https://github.com/DandelionSprout/adfilt/issues/1234
+||github.com^$document,removeparam=email_source
+||github.com^$document,removeparam=email_token
+! https://github.com/DandelionSprout/adfilt/issues/1237
+$document,removeparam=premiumVisit,domain=fic.fan|fanfictionero.com|ficmania.com|ficbook.net
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au

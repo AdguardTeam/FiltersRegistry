@@ -1,8 +1,8 @@
-! Checksum: BpGYMcXySi1WsABVQ5A80A
+! Checksum: 9M60gA2rzYw0mmDcDRzeMg
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.28.0
-! TimeUpdated: 2026-03-19T14:24:35+00:00
+! Version: 2.0.28.9
+! TimeUpdated: 2026-03-24T15:30:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -59,6 +59,10 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+elpais.com.co##.prose > div:not([class]):has(> div.not-prose > div.flex > div.flex > a[href^="https://play.google.com/store/apps/"])
+lazada.sg###J_CampaignBanner
+lazada.sg###J_Banner
+grok.com##.group\/sidebar-wrapper .fixed.top-0:has(> button > div> svg > path#mark)
 eda.yandex.ru#?#div[style^="z-index:"]:has(> div > div:contains(Открыть в приложении))
 eda.yandex.ru#%#//scriptlet('trusted-set-session-storage-item', 'SMART_BANNER_COMMUNICATION_SHOW_TIME', '{"modal":9773925851419}')
 movieboxapp.in,moviebox.pk##.justify-center.flex.inset-0.fixed
@@ -84,8 +88,6 @@ wear.jp#%#//scriptlet('set-session-storage-item', 'showed_app_redirect_half_moda
 shufoo.net#$#.appdl_modal_overlay { display: none !important; }
 shufoo.net#%#//scriptlet('remove-class', 'is-hidden', 'body')
 palcy.jp##aside > .flex-col:has(> a[href^="https://palcy.onelink.me/"])
-m.vk.com#%#//scriptlet('trusted-set-cookie', 'remixvideo_mvk_first_session_promo_last_seen_timestamp', '%7B%22banner%22%3A99999999999999%7D')
-m.vk.com##a[class*="OpenInAppPromoButton__button--"]
 ripley.cl##section[data-testid="marketing--popup"]
 pw.live##div[class^="deepLinks_getAppWrapper"]
 books.yandex.ru##div[class^="AppPromoDesktopBanner_"]
@@ -280,7 +282,6 @@ skyticket.jp###__next > div[class^="Header__StHeaderArea"]:has(skyticket-header[
 airtrip.jp###app_banner_top
 m.olx.ua##div[class^="css-"]:has(> button[data-testid="app-install-banner-open"])
 chirashiplus.jp##.contents > a[href="https://app.chirashiplus.jp/"]
-adidas.ua##.header__static-container ~ .sap
 poshmark.com##.btn--open-in-app
 hotokami.jp##a[onclick*="app"]
 zarahome.com,flipp.com##.download-app-banner
@@ -985,7 +986,6 @@ bbs.wps.cn##.topic_download_top
 wrtn.jp##.css-zw50as
 wrtn.jp#%#//scriptlet('trusted-click-element', '#web-modal button.css-1d86b5p')
 promobil.de##div[class*="bannerImage_background__"] > a[href="https://promobil.de/stellplatz/instastores"]
-baseball.yahoo.co.jp,soccer.yahoo.co.jp,sports.yahoo.co.jp##.sn-modAppText
 kasioda.com###custom_html-9
 zutool.jp##.column_app_box01
 zutool.jp##[class^="cmn_app_link"]
@@ -3812,6 +3812,10 @@ wear.jp#%#//scriptlet('trusted-set-session-storage-item', 'status_of_app_redirec
 ! Misc rules, removed during optimization. If some rules are in groups, no need to move them here
 !
 !
+!+ NOT_OPTIMIZED
+baseball.yahoo.co.jp,soccer.yahoo.co.jp,sports.yahoo.co.jp##.sn-modAppText
+!+ NOT_OPTIMIZED
+adidas.ua##.header__static-container ~ .sap
 !+ NOT_OPTIMIZED
 doordash.com##main > div[style="border: none; margin-top: var(--usage-space-medium);"]
 !+ NOT_OPTIMIZED

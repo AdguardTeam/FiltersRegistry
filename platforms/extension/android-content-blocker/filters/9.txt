@@ -1,8 +1,8 @@
-! Checksum: 1i61TArZ+tM5GzNKOG9MkQ
+! Checksum: jLWCt7nFNRQrB3XM/7C5uw
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.33.70
-! TimeUpdated: 2026-03-17T14:30:41+00:00
+! Version: 2.0.33.78
+! TimeUpdated: 2026-03-24T06:29:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -172,6 +172,7 @@
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||ak-ads-ns.prisasd.com^
 ||ads.comunidades.net^
 ||go.etoro.com^$third-party
 ||ads-redis.ecn.cl^
@@ -194,6 +195,8 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227346
+||outbound-proxy-us-east1-0-glob-usercontent-client-id-4143213601.googleapis.com.do/*/sweetalert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227120
 ||sushianimes.com.br/app/theme/assets/js/lazycore-ad.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226890
@@ -1053,9 +1056,6 @@ asialiveaction.com##.ms_ga.dblock
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20092
 !+ PLATFORM(ios, ext_android_cb)
 @@||meutimao.com.br^$generichide
-! https://github.com/AdguardTeam/AdguardFilters/issues/19393
-!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
-@@||latornamesa.blogspot.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19311
 @@||damelibros.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19151
@@ -1778,6 +1778,9 @@ eloutput.com,mundobytes.com,techondicas.com,jornalrepercussao.com.br,zonaaps.com
 !
 ! NOTE: Specific rules
 !
+maisgasolina.com#@##stationBlock
+elpais.com.co##.ads-iframe
+peliculasbluray.com##a[target="_blank"][href*="/4/"]
 hentaihd.xyz,hentaihd.net,hentaihd.*##div[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"]
 hentaihd.xyz,hentaihd.net,hentaihd.*##.video-content > div[style]:not([class])
 ||hentaihd.*.php|$script
@@ -2079,7 +2082,6 @@ puntodebreak.com##.region-taxonomy-ad
 puntodebreak.com###ver-partido-directo
 selfie.iol.pt##.taboolaWrapper
 selfie.iol.pt##.pubTopWrapper.mcd-hidden-block
-ole.com.ar##.bannerTopHeader
 ole.com.ar,terra.es##.bann
 veja.abril.com.br###abrAdAnchor
 sport.es##.friso-marcadores-sponsor
@@ -2842,7 +2844,6 @@ ffcv.es##.hidden-xs.zn_section
 dw-anime.net###custom_html-60
 autoscout24.es##.hf-top-old
 maisgasolina.com###homeBlock
-maisgasolina.com###stationBlock
 oliberal.com##.bgbanner
 oliberal.com###bgbanner
 oliberal.com##.banner-container-sticky

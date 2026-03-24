@@ -1,8 +1,8 @@
-! Checksum: opka+z8n1i7F3kY3+sa8AA
+! Checksum: Zhp/k1YqfdL6LoyrpP9VrA
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.4.84
-! TimeUpdated: 2026-03-19T10:18:41+00:00
+! Version: 2.1.4.92
+! TimeUpdated: 2026-03-24T12:23:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7061,7 +7061,13 @@ gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,chehov-vid.ru,161.ru
 !
 !
 !
-blog.domclick.ru##div[class^="tpln-DddNskBanner-DddNskBanner"]
+||image.krasview.ru/thread/1946128/a1033c691da65e2dfa15749f4ea0dfa4_700.jpg
+shazoo.ru##a[href^="https://yandex.ru/adfox/"]
+||static.ofd.ru/mail/all/*/banner*.png
+ofd.ru##a[href^="https://ofd.ru/ReceiptBanner/Click?"]
+platformaofd.ru###cheque_html_block > table:not([class]):has(#big_data_container)
+legalbet.ru##.bonus-cards
+domclick.ru##div[class^="tpln-DddNskBanner-DddNskBanner"]
 ||statics.dmclk.ru/web-ui-library/images/topline/banners/
 yapx.ru##main > div[class]:has(> div[caramel-id])
 s7.ru##.content-container > div:not(.html-text-container):has(> .ds-Flex-root > a.cta-btn[href^="https://www.s7.ru/external/"])
@@ -17072,6 +17078,7 @@ ozon.ru##div[data-widget="advBanner"]
 ozon.ru##div[data-widget="advVideoBanner"]
 ozon.ru##img[elementtiming*="Banner"]
 ozon.ru##div[class] > div[data-widget="island"]:has(> div > div[data-widget="objectBannerList"])
+ozon.ru##div[data-widget="container"] > div[data-widget="island"]:has(> div > div[data-widget="bannerCarousel"]:only-child)
 ozon.ru##div[data-widget="bannerCarousel"]
 !
 ! 2gis
@@ -17427,6 +17434,8 @@ vio.to###payadvert
 !
 !
 !
+!+ NOT_PLATFORM(ios, android, ext_android_cb)
+overclockers.ru##.grid > div.container-block:has(> div[class="sixteen wide center aligned column"])
 !+ NOT_PLATFORM(ios, android, ext_android_cb)
 offside.kz#$?#.content { padding-top: 90px !important; }
 !+ NOT_OPTIMIZED
@@ -18483,8 +18492,9 @@ mirror.co.uk#@#.affiliate
 @@||amur.life/upload/ads/c9742537734826b5d04e73f8f86823d9.jpg
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193152
 @@||fizi.ua/cdn/shop/files/baner_site_mob_web_ukr_*.png
+! https://github.com/AdguardTeam/AdguardFilters/issues/227603
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172368
-@@||ads.vk.com^$~image,domain=ads.vk.com
+@@||ads.vk.*^$~image,domain=ads.vk.com|ads.vk.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189493
 @@||ssp.rambler.ru/capirs_async.js$domain=championat.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187103

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: RK6Ikfn5n60TVGgwlhhPbA
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1773970940-3600.patch
+! Checksum: I3EFTHwLrLIGiZ8OWDqjLw
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1774376929-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.1.66
-! TimeUpdated: 2026-03-20T01:38:46+00:00
+! Version: 2.1.1.85
+! TimeUpdated: 2026-03-24T18:25:32+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -211,6 +211,7 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||vault.nqintelligence.com^
 ||rudder-server-prd.arena.im^
 ||wobs.route.com^
 ||mythtracker.com^
@@ -2489,7 +2490,7 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||apollofind.com^$3p
 ||appboycdn.com^$3p
 ||apptentive.com^$redirect=noop.txt,image,media,subdocument,stylesheet,script,xhr,other
-||apptimize.com^$redirect=noop.txt,image,media,subdocument,stylesheet,script,xhr,other
+||apptimize.com^$redirect=noop.txt,domain=~synchrony.com,image,media,subdocument,stylesheet,script,xhr,other
 ||aprtx.com^$3p
 ||aqtracker.com^$3p
 ||arcadeweb.com^$3p
@@ -17188,7 +17189,6 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||subscriptionlist.customermail.sparcolruytgroup.be^
 ||subscriptions.communications.guard.me^
 ||subscriptions.costco.ca^
-||subscriptions.costco.com^
 ||subscriptions.e.silverfernfarms.com^
 ||subscriptions.experience.dcu.org^
 ||subscriptions.news.pistons.com^
@@ -75630,6 +75630,10 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||countly.
 ||countly-
 |piwik.
+||qa-track.ssg.com^
+||track.ssg.com^
+||ssgmanual.snov.io^
+||metrics-content.duckduckgo.com^
 ||analytics.morphe.software^
 ||a.n11.com^
 ||h.n11.com^
@@ -75938,8 +75942,8 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||analytics.shutterstock.com^
 ||plw6buurmlxhrlkm6wy3uk7cia0mprkq.lambda-url.ap-south-1.on.aws^
 ||collector-pxdojv695v.protechts.net^
-||collector1.sooplive.co.kr^
-||exlogcollector.sooplive.co.kr^
+||collector1.sooplive.com^
+||exlogcollector.sooplive.com^
 ||snowflake.qq.com^
 ||d2fuc4clr7gvcn.cloudfront.net^
 ||analytics.edaily.co.kr^
@@ -77371,7 +77375,7 @@ prd.api.bleacherreport.com^
 ||amplifypixel.outbrain.com^
 ||ampltd.top.gg^
 ||an.reflektion.com^
-||analysis.sooplive.co.kr^
+||analysis.sooplive.com^
 ||analytic.imlive.com^
 ||analytic20.detik.com^
 ||analytics-api.smzdm.com^
@@ -77743,7 +77747,7 @@ prd.api.bleacherreport.com^
 ||deepdive.zum.com^
 ||dejavu.mlapps.com^
 ||deliver.oztam.com.au^
-||delog.sooplive.co.kr^
+||delog.sooplive.com^
 ||device-metrics-us*.amazon.com^
 ||df.tanx.com^
 ||discovery-script.newspic.kr^
@@ -77802,7 +77806,7 @@ prd.api.bleacherreport.com^
 ||event.condenastdigital.com^
 ||event.impression-neo.naver.com^
 ||event.scimo.io^
-||eventapi.sooplive.co.kr^
+||eventapi.sooplive.com^
 ||eventbus.intuit.com^
 ||eventlog.inspsearchapi.com^
 ||eventlog.jackpot.de^
@@ -152249,6 +152253,17 @@ _tracking.php?b=
 /prod/dfm/t8y9347t.min.js$redirect=noop.txt,important,domain=dailycamera.com,image,media,subdocument,stylesheet,script,xhr,other
 ||google-analytics.com^$object,redirect=noop.js,script
 ||googletagmanager.com/gtag/$3p,object,redirect=noop.js,script
+||91jp3.beauty/000/flink/analytics.php
+||s.yimg.com/ss/analytics-*.js
+||apptimize.com^$domain=synchrony.com
+||checkout.paze.com/api/v*/logging/logEvent
+||sui.ssgcdn.com/ui/ssg/js/affiliate/wiselog_makePCookie.js
+||adpay.ssg.com/adpayapi/pay/send.ssg
+||fcbayern.com/static/*/collect?
+||fcbayern.com/static/*/av?
+||fcbayern.com/static/*/ah?
+||duckduckgo.com/atb.js
+||duckduckgo.com/exti/
 ||cdn.work.hotp.jp/assets/lib/js/logTeam-
 ||divatoon.com/api/track-visit
 ||divatoon.com/api/analytics
@@ -152963,7 +152978,7 @@ adultportal.jp###custom_html-12
 ||kebhana.com/cont/common/js/tag_hana.js
 ||sstatic-rmcnmv.pstatic.net/resources/log/media-capable-log.js
 ||ssl.pstatic.net/static/coreplayer/mclog/media-capable-log.js
-||ntm.pstatic.net/scripts/ntm_*.js$domain=~smartstore.naver.com|~brand.naver.com
+||ntm.pstatic.net/scripts/ntm_*.js$domain=~smartstore.naver.com|~brand.naver.com|~flight.naver.com
 ||chatgpt.com/ces/*/b|$xhr
 /facebook-pixel.js$domain=lit.link
 ||justwatch.com/appassets/js/sp-*.lite.min.js
@@ -153341,7 +153356,7 @@ mais.sbt.com.br##+js(set-local-storage-item, youbora.youboraDeviceUUID, $remove$
 ||grubhub.com/clickstream/events
 ||umdc.alibaba-inc.com/ru.gif
 ||alicdn.com/UnionCps/tktrace/cps.js
-||nlog.naver.com^$domain=~shopping.naver.com|~smartstore.naver.com|~brand.naver.com
+||nlog.naver.com^$domain=~shopping.naver.com|~smartstore.naver.com|~brand.naver.com|~flight.naver.com
 ||api-stage.route.com/*/analytics/
 ||docviewer.yandex.com/monitoring.txt
 ||channelexco.com/ppx/
@@ -153499,8 +153514,8 @@ wowhead.com##+js(set-local-storage-item, zafusr, $remove$)
 wowhead.com##+js(set-session-storage-item, zafusr, $remove$)
 ||slack.com/clog/track/
 ||vault.gostatera.com/collect/rap
-||sooplive.co.kr/js/google.analytics.js
-||sooplive.co.kr/asset/service/common/common_analysis.js
+||sooplive.com/js/google.analytics.js
+||sooplive.com/asset/service/common/common_analysis.js
 ||kapang.com/api/stats|$xhr
 ||fastpic.org/viewed.php?url=/*.html&ref=$xhr
 ||box.com/data/ptm.gif/
@@ -154623,7 +154638,7 @@ newsweekjapan.jp##.taboola-below-article-thumbnails-desktop-2-wrap
 ||jav4tv.com/player/analytics
 nukigazo.com###text-2
 ||smart-bdash.com/receptions/action/impression
-||st.sooplive.co.kr/api/da_block_api.php
+||st.sooplive.com/api/da_block_api.php
 ||navitime.co.jp/*/common/nt_count.js
 ||navitime.co.jp/*/jquery.adcount.js
 ||navitime.co.jp/*/log/logger.js
@@ -155795,7 +155810,7 @@ sports.goo.ne.jp###taboola-below-sokuho-thumbnails
 ||locondo.jp/*/analysis/tracker.js
 ||wazzup.me/libs/track.js
 ||imstream.jp/analytics/js/
-||stbbs.sooplive.co.kr/api/*_log.php
+||stbbs.sooplive.com/api/*_log.php
 ||terabox.com/statistics^
 ||terabox.com/api/analytics
 ||video-library.showheroes.com/player/ad_tag?
@@ -155981,7 +155996,7 @@ the-ans.jp##.side-reccomend
 ||crunchyroll.com/tracker
 ||sa.crunchyroll.com/analytics.js
 /lcslog*.js$domain=playentry.org
-||ssl.pstatic.net/static.gn/js/clickcrD.js$domain=~search.naver.com|~smartstore.naver.com|~brand.naver.com
+||ssl.pstatic.net/static.gn/js/clickcrD.js$domain=~search.naver.com|~smartstore.naver.com|~brand.naver.com|~flight.naver.com
 ||paypal.com/xoplatform/logger/$domain=tapas.io
 ||api-router.kaspersky-labs.com/logger2^
 ||signal-collector.gemaltodigitalbankingidcloud.com^$script
@@ -157645,6 +157660,10 @@ link.gmapp*.net$image
 %2FCI0%2F0$image
 /ss/o/*/ho.gif$image
 %2Fss%2Fo%2F*%2Fho.gif$image
+newegg.com/mr/*.gif?r=
+newegg.com%2Fmr%2F*.gif%3Fr%3D
+digital-eliteboard.com/b/image.gif?p=
+digital-eliteboard.com%2Fb%2Fimage.gif%3Fp%3D
 track-mmp.navercorp.com/received/*.gif$image
 track-mmp.navercorp.com%2Freceived%2F*.gif$image
 mailer.eip.telegraph.co.uk$image
@@ -158179,6 +158198,7 @@ dlsdk.appsflyer.com^
 ||int.vlancaa.site^
 ||int.vlancaa.fun^
 ||tok.vaicore.xyz^
+||ingest.skarb.work^
 ||sensor.photogrid.app^
 ||sensor.aqhg.online^
 ||log-nontt.bytegsdk.com^
@@ -162358,10 +162378,12 @@ demae-can.com##+js(remove-attr, data-trm-action|data-trm-category|data-trm-label
 ||firstendpoint.com^
 ||firstscreenshot.com^
 ||fishersfinds.com^
+||fishingtoolsbox.com^
 ||fitmessage.com^
 ||fitnessmapper.com^
 ||fivesidedsquare.com^
 ||fixedfold.com^
+||fjordsand.com^
 ||flakyfeast.com^
 ||flameuncle.com^
 ||flashtexting.com^
@@ -162613,6 +162635,7 @@ demae-can.com##+js(remove-attr, data-trm-action|data-trm-category|data-trm-label
 ||inquisitiveice.com^
 ||inquisitiveinvention.com^
 ||insectmacros.com^
+||insidepsych.net^
 ||inspirebees.com^
 ||insulatech.com^
 ||intelligentscissors.com^
@@ -163098,6 +163121,7 @@ demae-can.com##+js(remove-attr, data-trm-action|data-trm-category|data-trm-label
 ||puppetcorp.com^
 ||puppiesart.com^
 ||puppytooth.com^
+||purebloom.net^
 ||purposepipe.com^
 ||pyramidpaw.com^
 ||q20jqurls0y7gk8.info^
@@ -163347,6 +163371,7 @@ demae-can.com##+js(remove-attr, data-trm-action|data-trm-category|data-trm-label
 ||shylibrary.com^
 ||sicksmash.com^
 ||siderain.com^
+||sidetrades.com^
 ||sierrakermit.com^
 ||signalszone.com^
 ||signaturepod.com^

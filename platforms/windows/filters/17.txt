@@ -1,9 +1,9 @@
-! Checksum: Wlbm4c1ogYiiuAYIqzkQFQ
-! Diff-Path: ../patches/17/17-s-1773758083-3600.patch
+! Checksum: g9IdpQTI8R5LerPIhuIqZA
+! Diff-Path: ../patches/17/17-s-1774316580-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.18
-! TimeUpdated: 2026-03-17T14:30:57+00:00
+! Version: 2.0.13.24
+! TimeUpdated: 2026-03-24T01:39:30+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -497,6 +497,8 @@ $removeparam=tduid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227596
+||duck.ai^$removeparam=origin
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-16099608
 ||t.ly^$removeparam=ref
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-16004356
@@ -888,6 +890,11 @@ $removeparam=s-id,domain=item.rakuten.co.jp|www.rakuten.co.jp
 ||duckduckgo.com^$removeparam=vis
 ||duckduckgo.com^$removeparam=perf_id
 ||duckduckgo.com^$removeparam=parent_perf_id
+!
+! A/B testing
+||duckduckgo.com^$removeparam=/^experiment_/
+! https://github.com/AdguardTeam/AdguardFilters/issues/227413#issuecomment-4107238932
+! ||duckduckgo.com^$removeparam=atb
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208058
 ||olybet.lv^$removeparam=ref
@@ -2258,7 +2265,7 @@ $removeparam=ici,domain=shein.co.uk|shein.com
 ! SK Telecom (skt.sh domain used as their own URL shortening service )
 ||skt.sh/common/share/bridge?$removeparam=referer
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4966523
-||login.sooplive.co.kr^$removeparam=szFrom
+||login.sooplive.com^$removeparam=szFrom
 ! moffme.com?source=gl&medium=moffme&campaign=article_2699
 ||moffme.com^$removeparam=source
 ||moffme.com^$removeparam=medium
