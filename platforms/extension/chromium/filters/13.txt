@@ -1,9 +1,9 @@
-! Checksum: KxexWC2RqPlcTRV8b6uvtw
-! Diff-Path: ../patches/13/13-s-1774449314-3600.patch
+! Checksum: hL85ibLM32dURzAfN0E2MQ
+! Diff-Path: ../patches/13/13-s-1774452898-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.29
-! TimeUpdated: 2026-03-25T14:32:14+00:00
+! Version: 2.0.63.30
+! TimeUpdated: 2026-03-25T15:31:40+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1546,6 +1546,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+webtekno.com##a[href^="https://s.mdznconnect.com/"]
 turkleak1.live##body .ad-overlay
 turkporoclub1.sbs#%#//scriptlet("abort-current-inline-script", "document.createElement", "'script'")
 turkporoclub1.sbs##h3.section-title
@@ -5859,6 +5860,14 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! NOTE: Frequently changed domains
 ! WARNING: When adding new rules here, try to find an initial source of an actual domain,
 !          or add a last known domain
+!
+! Frequently changed domains: turkifsa*.porn
+! Source: turkifsa.porn
+[$domain=/turkifsa\d?.porn$/]#%#//scriptlet('abort-on-property-read', 'doOpen')
+!
+! Frequently changed domains: turkifsalink*.store
+! Source: turkifsalink3.store
+[$domain=/turkifsalink\d+\.store$/]##a[href="http://ank.ac/"]
 !
 ! Frequently changed domains: turktube*.xyz; turktube*.site; turktube*.online
 ! Source: turktube1.xyz; turktube6.site; turktube1.online
