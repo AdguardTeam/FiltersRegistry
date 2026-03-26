@@ -1,9 +1,9 @@
-! Checksum: NrePBhFrTnRit5fs9pmYTQ
-! Diff-Path: ../patches/7/7-s-1774524407-3600.patch
+! Checksum: 9/EjumxdvU0xuqvlrWCtDQ
+! Diff-Path: ../patches/7/7-s-1774532395-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.73.4
-! TimeUpdated: 2026-03-26T11:23:40+00:00
+! Version: 2.0.73.5
+! TimeUpdated: 2026-03-26T13:36:24+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2119,7 +2119,6 @@ doujinnote.com,trend-answer.com#$#.pum-open { overflow: auto !important; }
 dengekionline.com##div[id^="article-body-"] > div#header-1 > div[class*="CommonParts_underBanner"]
 hanshintigers.jp###sp-banner
 hanshintigers.jp##.p-header-menu__joshin
-chichi-pui.com##section:has(> .c-section-title-button + .p-fanza-item-cards)
 hotokami.jp##div[id^="gam-anchor"]
 hotokami.jp##.article-sns-box__wrapper + div.mt-1.mb-4.py-1.rounded
 anime-rating.com##.pochipp-box + p:has(> span.marker-under-red)
@@ -3226,10 +3225,8 @@ marushin-magazine.com###custom_html-1
 chichi-pui.com##section:has(> div.p-advertisement-book-cards)
 chichi-pui.com##.p-sidebar > div:has(> div.p-sidebar-title-and-link > a.p-sidebar-title-and-link__link[href="/fanza/ranking/"])
 chichi-pui.com###js-homing-ad
-chichi-pui.com##section:has(> div.c-section-title-button > a[href^="/fanza/"])
 chichi-pui.com##.p-sidebar__advertisement
 chichi-pui.com,hanasone.mainichi.jp##.p-advertisement
-chichi-pui.com##.p-image-cards__item:has(> a.gtm-event-click)
 chichi-pui.com#?#.image-posts-detail > div.l-section-container > section:has(> h2.c-section-title:contains(Amazon))
 uwema-blog.com##.entry-content > center:has(> ins.adsbygoogle)
 ||car-me.jp/images/*/carnext_banner/
@@ -11955,6 +11952,9 @@ itest.5ch.io,itest.bbspink.com##.res_ad
 itest.5ch.io,itest.bbspink.com##div[class^="sproutad_"]
 itest.5ch.io,itest.bbspink.com##[class*="js-ads-content-top_"]
 !
+chichi-pui.com##section:has(> div.c-section-title-button > a[href^="/fanza/"])
+chichi-pui.com##section:has(> .c-section-title-button + .p-fanza-item-cards)
+chichi-pui.com##.p-image-cards__item:has(> a.gtm-event-click)
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 kokopyon.net#%#//scriptlet('remove-attr', 'href', '.topentry_text a', 'stay')
 !+ NOT_OPTIMIZED
@@ -12008,6 +12008,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! /fanza/ is dedicated for ads
+[$path=/fanza/]chichi-pui.com#@#section:has(> div.c-section-title-button > a[href^="/fanza/"])
+[$path=/fanza/]chichi-pui.com#@#section:has(> .c-section-title-button + .p-fanza-item-cards)
+[$path=/fanza/]chichi-pui.com#@#.p-image-cards__item:has(> a.gtm-event-click)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221531
 @@||i.daily.jp/Koukoku/Images/ds_noimage.jpg$domain=daily.co.jp
 ! Fix ranking widget

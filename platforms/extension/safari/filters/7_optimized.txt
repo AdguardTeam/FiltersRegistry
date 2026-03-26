@@ -1,9 +1,9 @@
-! Checksum: TkUSQw46fsulWp0WenJU2Q
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1774524413-3600.patch
+! Checksum: nx48s9WOvzxSgFZk8efWJw
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1774532401-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.73.4
-! TimeUpdated: 2026-03-26T11:23:40+00:00
+! Version: 2.0.73.5
+! TimeUpdated: 2026-03-26T13:36:24+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||mmeegc.com^$document
@@ -1736,7 +1736,6 @@ doujinnote.com,trend-answer.com#$#.pum-open { overflow: auto !important; }
 dengekionline.com##div[id^="article-body-"] > div#header-1 > div[class*="CommonParts_underBanner"]
 hanshintigers.jp###sp-banner
 hanshintigers.jp##.p-header-menu__joshin
-chichi-pui.com##section:has(> .c-section-title-button + .p-fanza-item-cards)
 hotokami.jp##div[id^="gam-anchor"]
 hotokami.jp##.article-sns-box__wrapper + div.mt-1.mb-4.py-1.rounded
 anime-rating.com##.pochipp-box + p:has(> span.marker-under-red)
@@ -2840,10 +2839,8 @@ marushin-magazine.com###custom_html-1
 chichi-pui.com##section:has(> div.p-advertisement-book-cards)
 chichi-pui.com##.p-sidebar > div:has(> div.p-sidebar-title-and-link > a.p-sidebar-title-and-link__link[href="/fanza/ranking/"])
 chichi-pui.com###js-homing-ad
-chichi-pui.com##section:has(> div.c-section-title-button > a[href^="/fanza/"])
 chichi-pui.com##.p-sidebar__advertisement
 chichi-pui.com,hanasone.mainichi.jp##.p-advertisement
-chichi-pui.com##.p-image-cards__item:has(> a.gtm-event-click)
 chichi-pui.com#?#.image-posts-detail > div.l-section-container > section:has(> h2.c-section-title:contains(Amazon))
 uwema-blog.com##.entry-content > center:has(> ins.adsbygoogle)
 ||car-me.jp/images/*/carnext_banner/
@@ -11540,6 +11537,9 @@ itest.5ch.io##.ranking > div[style^="height: 320px;"]
 itest.5ch.io,itest.bbspink.com##.res_ad
 itest.5ch.io,itest.bbspink.com##div[class^="sproutad_"]
 itest.5ch.io,itest.bbspink.com##[class*="js-ads-content-top_"]
+chichi-pui.com##section:has(> div.c-section-title-button > a[href^="/fanza/"])
+chichi-pui.com##section:has(> .c-section-title-button + .p-fanza-item-cards)
+chichi-pui.com##.p-image-cards__item:has(> a.gtm-event-click)
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 kokopyon.net##.topentry_text
 !+ NOT_OPTIMIZED
@@ -11566,6 +11566,9 @@ d-navi004.com##.adsbygoogle
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 !+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+[$path=/fanza/]chichi-pui.com#@#section:has(> div.c-section-title-button > a[href^="/fanza/"])
+[$path=/fanza/]chichi-pui.com#@#section:has(> .c-section-title-button + .p-fanza-item-cards)
+[$path=/fanza/]chichi-pui.com#@#.p-image-cards__item:has(> a.gtm-event-click)
 @@||i.daily.jp/Koukoku/Images/ds_noimage.jpg$domain=daily.co.jp
 @@||js.mediams.mb.softbank.jp/t/$domain=www.ohk.co.jp
 @@||mediamsmbsoftbank.genieesspv.jp/yie/ld/nad$domain=www.ohk.co.jp
