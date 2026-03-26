@@ -849,10 +849,12 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157188
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156507
 ! ads in video player
-##pjsdiv[style*="top: 378px; opacity:"][style*="font-size: 14px; line-height: 1em;"]
 ##pjsdiv[style*="top: 17px; opacity:"][style*="font-size: 14px; line-height: 1em;"]
 ##pjsdiv[style*="top: 17px; opacity:"][style*="font-size: 14px; line-height: 1em;"] + pjsdiv[style*="opacity:"][style*="font-size: 14px; line-height: 1em;"]
 ##pjsdiv[style="position: absolute; left: 0px; top: 0px;"] > pjsdiv[style^="position: absolute; top:"][style*="pointer-events: none; opacity:"][style*="transform:"] > img
+! https://github.com/AdguardTeam/AdguardFilters/issues/227650#issuecomment-4117290524
+! breaks controls
+! ##pjsdiv[style*="top: 378px; opacity:"][style*="font-size: 14px; line-height: 1em;"]
 ! A workaround for the issue with applying the generic rules to small iframes - https://github.com/AdguardTeam/CoreLibs/issues/1721
 !#if (adguard_app_android)
 [$path=/embed]top##pjsdiv[style*="top: 378px; opacity:"][style*="font-size: 14px; line-height: 1em;"]
@@ -1719,6 +1721,16 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+gucluanadolugazetesi.com##.col-lg-4 > div.mb-3:has(> iframe[name="BIKADV"])
+gucluanadolugazetesi.com##.col-lg-4 > div.mb-3:has(> div[data-type="_mgwidget"])
+sabah.com.tr##.row > div.col-flex:has(> div.advert)
+webteknolife.com##.wtl-ad-wrap
+webteknolife.com##.svd-box
+||kartalhaber.com/images/banners/
+fotospor.com.tr##.container > div[align="center"]:has(> the-ads)
+halktv.com.tr##.container section > .row > .section-mb:has(> .dfp-ad-loaded)
+halktv.com.tr##.container section > .row > .section-mb:has(> .HLK_VIDEO)
+webtekno.com##a[href^="https://s.mdznconnect.com/"]
 turkleak1.live##body .ad-overlay
 turkporoclub1.sbs#%#//scriptlet("abort-current-inline-script", "document.createElement", "'script'")
 turkporoclub1.sbs##h3.section-title
@@ -1759,9 +1771,9 @@ cimri.com#?#div[class^="OfferCard_offerCard"]:contains(Reklam)
 trhaber.com#%#//scriptlet('remove-attr', 'href', 'a[href*="eminevim"]')
 marieclaire.com.tr##.ad-billboard__wrapper
 marieclaire.com.tr##div[style^="width:970px;"][style*="height:250px"]
-alanyapostasi.com.tr,samsungazetesi.com,hamlegazetesi.com.tr,yeniizmir.com,ilerigazetesi.com.tr,egetelgraf.com,referansgazetesi.com.tr,sonmuhur.com,gazetearena.com,24saatgazetesi.com##div.news-section > div.row > div > div[class="mb-3 p-3 bg-white "]:not([id])
-alanyapostasi.com.tr,samsungazetesi.com,hamlegazetesi.com.tr,yeniizmir.com,ilerigazetesi.com.tr,egetelgraf.com,referansgazetesi.com.tr,sonmuhur.com,gazetearena.com,24saatgazetesi.com##main.index > div.container > div[class="mb-3 p-3 bg-white "]:not([id])
-alanyapostasi.com.tr,samsungazetesi.com,hamlegazetesi.com.tr,aydinhedef.com.tr,sokgazetesi.com.tr,yeniizmir.com,ilerigazetesi.com.tr,egetelgraf.com,referansgazetesi.com.tr,sonmuhur.com,gazetearena.com,24saatgazetesi.com##div.mb-3:has(> iframe[name="BIKADV"])
+dirilispostasi.com,alanyapostasi.com.tr,samsungazetesi.com,hamlegazetesi.com.tr,yeniizmir.com,ilerigazetesi.com.tr,egetelgraf.com,referansgazetesi.com.tr,sonmuhur.com,gazetearena.com,24saatgazetesi.com##div.news-section > div.row > div > div[class="mb-3 p-3 bg-white "]:not([id])
+dirilispostasi.com,alanyapostasi.com.tr,samsungazetesi.com,hamlegazetesi.com.tr,yeniizmir.com,ilerigazetesi.com.tr,egetelgraf.com,referansgazetesi.com.tr,sonmuhur.com,gazetearena.com,24saatgazetesi.com##main.index > div.container > div[class="mb-3 p-3 bg-white "]:not([id])
+dirilispostasi.com,alanyapostasi.com.tr,samsungazetesi.com,hamlegazetesi.com.tr,aydinhedef.com.tr,sokgazetesi.com.tr,yeniizmir.com,ilerigazetesi.com.tr,egetelgraf.com,referansgazetesi.com.tr,sonmuhur.com,gazetearena.com,24saatgazetesi.com##div.mb-3:has(> iframe[name="BIKADV"])
 yeniizmir.com,cizgivedizi.com#%#//scriptlet('abort-current-inline-script', 'JSON.parse', 'injectOtherAds')
 ecchicix.com,animecix.tv,animecix.net#%#//scriptlet('trusted-set-local-storage-item', 'player_interstitial_last_shown_at', '$now$')
 1stlineglobal.com##.r34-overlay
@@ -1823,11 +1835,6 @@ sotweturkifsa8.blog#%#//scriptlet('prevent-addEventListener', 'click', 'popUnder
 trtspor.com.tr##div[class]:has(> div.ad-container)
 turkleak1.live#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
 velvetporntube.com##.bns-place-ob
-||ifsakolik.com/*.gif
-ifsakolik.com###promoPopup
-ifsakolik.com###video-banner
-ifsakolik.com##.banner-wrap
-ifsakolik.com#%#//scriptlet('trusted-replace-node-text', 'script', 'jojoVideoUrl', '/const jojoVideoUrl[\s\S]*const jojoClickUrl.*/', 'const jojoVideoUrl = "";')
 milliyet.com.tr#?#.medyanet-inline-adv
 gzt.com##div[class^="_adWrapper"]
 duhuliye.com##.menu-bosluk > div.container-xl
@@ -2156,7 +2163,7 @@ fivemturk.net##.swal2-container
 fivemturk.net##.p-body-inner > div[style^="width: 100%;"][style*="flex;"]
 servers-mc.net###server-ad-right
 servers-mc.net###server-ad-left
-servers-mc.net##.ads
+altinpalmiye.com,servers-mc.net##.ads
 servers-mc.net##.ad
 servers-mc.net###popup
 mnfilmizle.com,mnfilmizle1.com#$##rk-content { display: none !important; }
@@ -2181,14 +2188,14 @@ ensonhaber.com##div[id^="ad-slot"]
 ensonhaber.com##main > .text-center:has(div[id^="ad-slot"])
 gazetebirlik.com##div[id^="disable-div-gpt-ad-"]
 gazetebirlik.com##article > div.detail-sort-item:has(> div.detailside-inner-ad-cont)
-turkgun.com,ensonolay.com.tr,iscihaber.net,gazetebirlik.com##div[data-module-name="advert"]
+muhalif.com.tr,turkgun.com,ensonolay.com.tr,iscihaber.net,gazetebirlik.com##div[data-module-name="advert"]
 beyazperde.com##.sticky-ad-holder
 gdh.digital##.bg-adsGray
 gdh.digital##div[id^="fontSizeChanger"] > div[class*="250px"]:has(> .adsbygoogle)
 gdh.digital##.col-start-1 > .my-6 > .items-center > .relative:has(> .block > .adsbygoogle)
 ||istanbulticaretgazetesi.com/uploads/ads/
 ||r.resimlink.com/*.gif
-haberingundemi.com,iscihaber.net##.detailside-inner-ad-cont
+ortadogugazetesi.com,haberingundemi.com,iscihaber.net##.detailside-inner-ad-cont
 flatscher.net,dizilla40.com,roketdizi.*,dizilla.*,yabancidizi.*,selcukflix.net##.player > .flex:has(> div > img[alt="ad image"])
 flatscher.net,dizilla40.com,roketdizi.*,dizilla.*,yabancidizi.*##ad
 flatscher.net,dizilla40.com,roketdizi.*,dizilla.*,yabancidizi.*###router-view > div:not([class],[id]) > div[class*="bg-\[rgb"]:has(> .grid:only-child > .w-full > ad)
@@ -2609,6 +2616,9 @@ akakce.com###billboard_wrapper
 ||worldofturkiye.com/wp-content/uploads/*/sagkule.
 /uploads/*-banner-$domain=worldofturkiye.com|bursa.com|sigortacigazetesi.com.tr
 /uploads/*-banner.$domain=worldofturkiye.com|kampyerleri.org|bilgenc.com|sigortacigazetesi.com.tr|gmdergi.com
+haberturk.com##ht-section[data-section^="masthead"]
+haberturk.com##ht-section[data-section^="advertisement"]
+haberturk.com##ht-section[data-section="magazinAltiReklam"]
 haberturk.com##ht-section[data-section="manset2reklam"]
 ensonhaber.com##.aksa
 uzaymanga.com##section:has(> p > a[href^="https://bit.ly/"])
@@ -6033,6 +6043,22 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! NOTE: Frequently changed domains
 ! WARNING: When adding new rules here, try to find an initial source of an actual domain,
 !          or add a last known domain
+! Don't mix frequently changed domains with other rules, to make it easier to maintain,
+! except some sites that use non-template domain names of mirror sites
+!
+! Frequently changed domains: turkifsa*.porn
+! Source: turkifsa.porn
+[$domain=/turkifsa\d?.porn$/]#%#//scriptlet('abort-on-property-read', 'doOpen')
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
+turkifsa.porn,turkifsa1.porn,turkifsa2.porn,turkifsa3.porn,turkifsa4.porn,turkifsa5.porn,turkifsa6.porn,turkifsa7.porn,turkifsa8.porn,turkifsa9.porn,turkifsa10.porn,turkifsa11.porn,turkifsa12.porn,turkifsa13.porn,turkifsa14.porn,turkifsa15.porn,turkifsa16.porn,turkifsa17.porn,turkifsa18.porn,turkifsa19.porn,turkifsa20.porn,turkifsa21.porn,turkifsa22.porn,turkifsa23.porn,turkifsa24.porn,turkifsa25.porn,turkifsa26.porn,turkifsa27.porn,turkifsa28.porn,turkifsa29.porn#%#//scriptlet('abort-on-property-read', 'doOpen')
+!#endif
+!
+! Frequently changed domains: turkifsalink*.store
+! Source: turkifsalink3.store
+[$domain=/turkifsalink\d+\.store$/]##a[href="http://ank.ac/"]
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
+turkifsalink3.store,turkifsalink4.store,turkifsalink5.store,turkifsalink6.store,turkifsalink7.store,turkifsalink8.store,turkifsalink9.store,turkifsalink10.store,turkifsalink11.store,turkifsalink12.store,turkifsalink13.store,turkifsalink14.store,turkifsalink15.store,turkifsalink16.store,turkifsalink17.store,turkifsalink18.store,turkifsalink19.store,turkifsalink20.store,turkifsalink21.store,turkifsalink22.store,turkifsalink23.store,turkifsalink24.store,turkifsalink25.store,turkifsalink26.store,turkifsalink27.store,turkifsalink28.store,turkifsalink29.store,turkifsalink30.store,turkifsalink31.store,turkifsalink32.store##a[href="http://ank.ac/"]
+!#endif
 !
 ! Frequently changed domains: turktube*.xyz; turktube*.site; turktube*.online
 ! Source: turktube1.xyz; turktube6.site; turktube1.online
@@ -6270,6 +6296,8 @@ zbahistv26.com,zbahistv27.com,zbahistv28.com,zbahistv29.com,zbahistv30.com,zbahi
 !#endif
 !
 ! Frequently changed domains: turkifsalar*.space
+! Source: turkifsalar26.space
+[$domain=/^turkifsalar\d+\.space$/]##section[data-slot="video_above_player"]
 [$domain=/^turkifsalar\d+\.space$/]#$#.tubesite-modal-overlay { display: none !important; }
 [$domain=/^turkifsalar\d+\.space$/]#$#body { overflow: auto !important; }
 [$domain=/^turkifsalar\d+\.space$/]##.ts-pbox
@@ -6277,11 +6305,12 @@ zbahistv26.com,zbahistv27.com,zbahistv28.com,zbahistv29.com,zbahistv30.com,zbahi
 [$domain=/^turkifsalar\d+\.space$/]#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'promoContainers')
 ||turkifsalar*.space/wp-content/plugins/
 !#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
-turkifsalar7.space,turkifsalar8.space,turkifsalar9.space,turkifsalar10.space,turkifsalar11.space,turkifsalar12.space,turkifsalar13.space,turkifsalar14.space,turkifsalar15.space,turkifsalar16.space,turkifsalar17.space,turkifsalar18.space,turkifsalar19.space,turkifsalar20.space#$#.tubesite-modal-overlay { display: none !important; }
-turkifsalar7.space,turkifsalar8.space,turkifsalar9.space,turkifsalar10.space,turkifsalar11.space,turkifsalar12.space,turkifsalar13.space,turkifsalar14.space,turkifsalar15.space,turkifsalar16.space,turkifsalar17.space,turkifsalar18.space,turkifsalar19.space,turkifsalar20.space#$#body { overflow: auto !important; }
-turkifsalar7.space,turkifsalar8.space,turkifsalar9.space,turkifsalar10.space,turkifsalar11.space,turkifsalar12.space,turkifsalar13.space,turkifsalar14.space,turkifsalar15.space,turkifsalar16.space,turkifsalar17.space,turkifsalar18.space,turkifsalar19.space,turkifsalar20.space##.ts-pbox
-turkifsalar7.space,turkifsalar8.space,turkifsalar9.space,turkifsalar10.space,turkifsalar11.space,turkifsalar12.space,turkifsalar13.space,turkifsalar14.space,turkifsalar15.space,turkifsalar16.space,turkifsalar17.space,turkifsalar18.space,turkifsalar19.space,turkifsalar20.space#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
-turkifsalar7.space,turkifsalar8.space,turkifsalar9.space,turkifsalar10.space,turkifsalar11.space,turkifsalar12.space,turkifsalar13.space,turkifsalar14.space,turkifsalar15.space,turkifsalar16.space,turkifsalar17.space,turkifsalar18.space,turkifsalar19.space,turkifsalar20.space#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'promoContainers')
+turkifsalar26.space,turkifsalar27.space,turkifsalar28.space,turkifsalar29.space,turkifsalar30.space,turkifsalar31.space,turkifsalar32.space,turkifsalar33.space,turkifsalar34.space,turkifsalar35.space,turkifsalar36.space,turkifsalar37.space,turkifsalar38.space,turkifsalar39.space,turkifsalar40.space,turkifsalar41.space,turkifsalar42.space,turkifsalar43.space,turkifsalar44.space,turkifsalar45.space,turkifsalar46.space,turkifsalar47.space,turkifsalar48.space,turkifsalar49.space,turkifsalar50.space,turkifsalar51.space,turkifsalar52.space,turkifsalar53.space,turkifsalar54.space,turkifsalar55.space##section[data-slot="video_above_player"]
+turkifsalar26.space,turkifsalar27.space,turkifsalar28.space,turkifsalar29.space,turkifsalar30.space,turkifsalar31.space,turkifsalar32.space,turkifsalar33.space,turkifsalar34.space,turkifsalar35.space,turkifsalar36.space,turkifsalar37.space,turkifsalar38.space,turkifsalar39.space,turkifsalar40.space,turkifsalar41.space,turkifsalar42.space,turkifsalar43.space,turkifsalar44.space,turkifsalar45.space,turkifsalar46.space,turkifsalar47.space,turkifsalar48.space,turkifsalar49.space,turkifsalar50.space,turkifsalar51.space,turkifsalar52.space,turkifsalar53.space,turkifsalar54.space,turkifsalar55.space#$#.tubesite-modal-overlay { display: none !important; }
+turkifsalar26.space,turkifsalar27.space,turkifsalar28.space,turkifsalar29.space,turkifsalar30.space,turkifsalar31.space,turkifsalar32.space,turkifsalar33.space,turkifsalar34.space,turkifsalar35.space,turkifsalar36.space,turkifsalar37.space,turkifsalar38.space,turkifsalar39.space,turkifsalar40.space,turkifsalar41.space,turkifsalar42.space,turkifsalar43.space,turkifsalar44.space,turkifsalar45.space,turkifsalar46.space,turkifsalar47.space,turkifsalar48.space,turkifsalar49.space,turkifsalar50.space,turkifsalar51.space,turkifsalar52.space,turkifsalar53.space,turkifsalar54.space,turkifsalar55.space#$#body { overflow: auto !important; }
+turkifsalar26.space,turkifsalar27.space,turkifsalar28.space,turkifsalar29.space,turkifsalar30.space,turkifsalar31.space,turkifsalar32.space,turkifsalar33.space,turkifsalar34.space,turkifsalar35.space,turkifsalar36.space,turkifsalar37.space,turkifsalar38.space,turkifsalar39.space,turkifsalar40.space,turkifsalar41.space,turkifsalar42.space,turkifsalar43.space,turkifsalar44.space,turkifsalar45.space,turkifsalar46.space,turkifsalar47.space,turkifsalar48.space,turkifsalar49.space,turkifsalar50.space,turkifsalar51.space,turkifsalar52.space,turkifsalar53.space,turkifsalar54.space,turkifsalar55.space##.ts-pbox
+turkifsalar26.space,turkifsalar27.space,turkifsalar28.space,turkifsalar29.space,turkifsalar30.space,turkifsalar31.space,turkifsalar32.space,turkifsalar33.space,turkifsalar34.space,turkifsalar35.space,turkifsalar36.space,turkifsalar37.space,turkifsalar38.space,turkifsalar39.space,turkifsalar40.space,turkifsalar41.space,turkifsalar42.space,turkifsalar43.space,turkifsalar44.space,turkifsalar45.space,turkifsalar46.space,turkifsalar47.space,turkifsalar48.space,turkifsalar49.space,turkifsalar50.space,turkifsalar51.space,turkifsalar52.space,turkifsalar53.space,turkifsalar54.space,turkifsalar55.space#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
+turkifsalar26.space,turkifsalar27.space,turkifsalar28.space,turkifsalar29.space,turkifsalar30.space,turkifsalar31.space,turkifsalar32.space,turkifsalar33.space,turkifsalar34.space,turkifsalar35.space,turkifsalar36.space,turkifsalar37.space,turkifsalar38.space,turkifsalar39.space,turkifsalar40.space,turkifsalar41.space,turkifsalar42.space,turkifsalar43.space,turkifsalar44.space,turkifsalar45.space,turkifsalar46.space,turkifsalar47.space,turkifsalar48.space,turkifsalar49.space,turkifsalar50.space,turkifsalar51.space,turkifsalar52.space,turkifsalar53.space,turkifsalar54.space,turkifsalar55.space#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'promoContainers')
 !#endif
 !
 ! Frequently changed domains: patronmac*.cfd
