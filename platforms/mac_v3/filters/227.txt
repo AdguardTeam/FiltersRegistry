@@ -1,9 +1,9 @@
-! Checksum: Jf8ofYgeZL4tiFK+4iK34w
-! Diff-Path: ../patches/227/227-s-1774328986-14400.patch
+! Checksum: 9HH+Znq2WWO1XaB+Yb9YXw
+! Diff-Path: ../patches/227/227-s-1774502289-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.80
-! TimeUpdated: 2026-03-24T05:06:34+00:00
+! Version: 2.0.23.81
+! TimeUpdated: 2026-03-26T05:14:30+00:00
 ! Expires: 12 hours (update frequency)
 !
 ||ad.adwiser.kr^
@@ -1414,6 +1414,8 @@ namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[c
 !
 ! DOMAIN-REFRESHER: START
 !
+/^https:\/\/cdn\.xtoon[0-9]+\.com\/collaboration\//$domain=/xtoon[0-9]+\.com/
+/^https:\/\/funbe[0-9]+\.com\/images\//$domain=/funbe[0-9]+\.com/
 ||mingk*.net/data/file/passfree/$domain=/mingky[0-9]+\.net/
 /^https:\/\/(www\.)?yako[0-9]+\.com\/upload\/banner\//$domain=/yako[0-9]+\.com/
 /lover[0-9]\.net\/file\/tohotv\/.*\.gif$domain=/lover[0-9]\.net/
@@ -3019,6 +3021,10 @@ kio.ac##main > div:has(> div > div > a > img)
 !
 ! DOMAIN-REFRESHER: START
 !
+[$domain=/xtoon[0-9]+\.com/]##.container > div.row > div > a[target="_blank"] > picture
+[$domain=/funbe[0-9]+\.com/]##.mobile-banner > div[class^="main_top_bann"]
+[$domain=/funbe[0-9]+\.com/]##.mobile-banner div.banner_m
+[$domain=/funbe[0-9]+\.com/]###bo_list div[class^="bancol"]
 [$domain=/mingky[0-9]+\.net/]##.contents_wrap.column div[style="display: flex; flex-direction: column; align-items: center;"]
 nightofpeace.com,ilovebees.io##.e-con-full.e-flex.e-con:has(a[target="_blank"] img)
 nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_blank"] img)
