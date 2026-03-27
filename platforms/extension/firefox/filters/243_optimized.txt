@@ -1,9 +1,9 @@
-! Checksum: 4ZPMSx93Eni14iC/kW0usQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1774415400-14400.patch
+! Checksum: uD3tEqWVOkQkDdW5ramDMA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1774601408-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.20
-! TimeUpdated: 2026-03-25T05:07:11+00:00
+! Version: 2.0.24.21
+! TimeUpdated: 2026-03-27T08:47:17+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -797,6 +797,7 @@ hrnytt.se#?#.spd-article-over-pic:contains(/spons/i):upward(a)
 hrnytt.se#?#.spd-article-over-pic:contains(/spons/i):upward(a) + h4
 hrsvepet.se,cfosvepet.se,vdsvepet.se#$#body { overflow:unset!important; opacity:unset!important; }
 hrsvepet.se,cfosvepet.se,vdsvepet.se##.cookie-banner, .desktopbanner, .mobilbanner-section, #takeover-banner, .top-banner-wrapper, .toppbanner-under-header, .pre-header-banner-wrapper, div[data-leadflow-host], .banner-host-pro, .take-over-banner
+hrsvepet.se,cfosvepet.se,vdsvepet.se##.w-dyn-item:has(a[href="/katergori/employer-branding"])
 hrsvepet.se,cfosvepet.se,vdsvepet.se##:is(.recent-post-item, .w-dyn-item):has(a[href="#"]:not(.w-condition-invisible))
 humorbibeln.se,newsner.com,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibeln.se,nojeslivet.se##.inline-share-buttons
 husbilhusvagn.se,vibilagare.se##.article-native
@@ -2013,6 +2014,7 @@ zeromagazine.nu##div[id^="ads"]
 &displayMode=modal$domain=dagen.se
 *$subdocument,third-party,redirect=click2load.html,domain=alltomsallskapsspel.se
 *$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net
+*$script,~third-party,domain=hrsvepet.se|cfosvepet.se|vdsvepet.se
 *$script,redirect-rule=noopjs,domain=elevspel.se
 -VideoAD$domain=alekuriren.se
 -banner$image,domain=bokadirekt.se
@@ -2566,7 +2568,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/pixel-review-partnerlinker-addon
 /plugins/popups/*$script,domain=svenskhistoria.se|bugburger.se
 /plugins/popup$domain=ordfrontmagasin.se|snowmobile.se|forvaltarforum.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|jobsinsweden.se
-/plugins/pressidium-cookie-consent$script,domain=undervarttak.se|paleoskafferiet.se|radiotreby.se
+/plugins/pressidium-cookie-consent$script,domain=undervarttak.se|radiotreby.se
 /plugins/pum-$script,domain=snowmobile.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se
 /plugins/quantcast-choice$script,domain=javligtgott.se|villalivet.se
 /plugins/quick-adsense
