@@ -1,9 +1,9 @@
-! Checksum: nZ0ZtJ6z+o9gYS0cniz1DQ
-! Diff-Path: ../patches/1/1-s-1774587332-3600.patch
+! Checksum: 2at/0/fDvSMMo0q6/BPFAw
+! Diff-Path: ../patches/1/1-s-1774618661-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.4.97
-! TimeUpdated: 2026-03-27T04:51:57+00:00
+! Version: 2.1.4.98
+! TimeUpdated: 2026-03-27T13:34:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3754,7 +3754,7 @@ inforesist.org,newsyou.info,newsua.one,textreferat.com,socportal.info,vsetv.com#
 kurs.com.ua,gismeteo.ua,tv.ua,isport.ua$$script[tag-content="ShadowRoot"][max-length="15000"]
 eurointegration.com.ua$$script[wildcard="*track*banner*"][max-length="22000"]
 dengi.ua,dt.ua,liga.net$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
-glianec.com,ostro.org,nashamama.com,bilshe.com,i.factor.ua,gismeteo.ua,1777.ru,cn.ru,finance.i.ua,hvylya.net,love.i.ua,peers.tv,radio.i.ua,real-vin.com,vsetv.com$$script[tag-content="zmctrack"]
+glianec.com,ostro.org,nashamama.com,bilshe.com,i.factor.ua,gismeteo.ua,1777.ru,cn.ru,finance.i.ua,hvylya.net,love.i.ua,peers.tv,radio.i.ua,real-vin.com,vsetv.com$$script:contains(zmctrack)
 xittv.net,bigmir.net$$script[wildcard="*!function(*""zmctrack""*""mzs""*"][max-length="9500"]
 allboxing.ru$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
 bagnet.org$$script[wildcard="*(function(){var *substr*,Bn=*"][max-length="10000"]
@@ -4591,7 +4591,7 @@ kino.mail.ru##button[class*="adv-marker"] + div.text
 ||auto.mail.ru/sw-mobile.js
 ! minigames.mail.ru - ads replacement script
 mmminigames.mail.ru#%#//scriptlet('remove-node-text', 'script', 'mimicBottomClass')
-minigames.mail.ru$$script[tag-content="yandexSlot ="]
+minigames.mail.ru$$script:contains(yandexSlot =)
 minigames.mail.ru#%#//scriptlet("abort-current-inline-script", "$", "advBlock")
 minigames.mail.ru#%#//scriptlet("abort-current-inline-script", "$", "showAd")
 !
@@ -4648,7 +4648,7 @@ vk.com#%#//scriptlet('prevent-fetch', '/(\.com|\.ru)$/ method:HEAD')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3070
 vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!important; left: -3000px!important; }
 !
-overclockers.ru$$script[tag-content="enable_page_level_ads"]
+overclockers.ru$$script:contains(enable_page_level_ads)
 ||forums.overclockers.ru$replace=/(script.onerror = function\(\)\{)/\$1return;/,important
 forums.overclockers.ru#%#//scriptlet('set-constant', 'chkA', 'noopFunc')
 ~forums.overclockers.ru,overclockers.ru#%#//scriptlet("abort-on-property-read", "cardinals")
@@ -4664,7 +4664,7 @@ game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,nayl
 game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,naylo.top,zannn.top,innal.top###chess2day
 game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,naylo.top,zannn.top,innal.top###as2_script
 $removeheader=location,domain=zannn.top|innal.top
-game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,naylo.top,zannn.top,innal.top$$script[tag-content="=document[_"]
+game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,naylo.top,zannn.top,innal.top$$script:contains(=document[_)
 game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,naylo.top,zannn.top,innal.top#$##e7af0de8b4 { height: 16px !important; }
 game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,naylo.top,zannn.top,innal.top##div[id^="epom-"]
 !
@@ -4890,7 +4890,7 @@ planetaua.net$$script[tag-content="ad,ads,adsense"][max-length="4500"]
 ! ph4.ru
 ph4.ru##.rnb
 ph4.ru#@##advert-1
-ph4.ru$$script[tag-content="u0435%20AdBlock."]
+ph4.ru$$script:contains(u0435%20AdBlock.)
 ||ph4.ru/images/noad.gif
 ||ph4.ru/images/noadd.png
 ! multikonline.ru
@@ -4913,7 +4913,7 @@ gismeteo.by#%#//scriptlet("abort-on-property-write", "yaads")
 womanhit.ru#%#//scriptlet("abort-on-property-read", "Object.prototype.AdblockCookieMatchingType")
 echo.msk.ru,kakprosto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.AdvManagerLoaderRender')
 ||echo.msk.ru^$replace=/AdvManager\.render/AdvManager._render/
-echo.msk.ru$$script[tag-content="DisplayAcceptableAdIfAdblocked"]
+echo.msk.ru$$script:contains(DisplayAcceptableAdIfAdblocked)
 otzovik.com$$script[wildcard="*function*blockId*"][min-length="1000"][max-length="2500"]
 !
 !
@@ -6594,11 +6594,11 @@ www.kinopoisk.ru##div[class*="styles_height250__"]
 !-----------------------
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/117101
-gtamania.ru$$script[tag-content="/bens/vinos"]
+gtamania.ru$$script:contains(/bens/vinos)
 ! 80-e.ru ad scripts
 80-e.ru$$script[tag-content="document.createElement('script');"][max-length="1000"]
 ! https://github.com/AdguardTeam/CoreLibs/issues/1442
-novosti-n.org$$script[tag-content="setAttribute('type', 'text')"]
+novosti-n.org$$script:contains(setAttribute('type', 'text'))
 ! rutracker.org - addition for apps only
 !+ NOT_PLATFORM(ext_ff)
 rutracker.appspot.com,pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net,rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org$$div[class="bn-topic"]
@@ -6614,7 +6614,7 @@ zoneofgames.ru$$script[tag-content="an.yandex.ru"][max-length="700"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42990
 animebest.org$$iframe[srcdoc="getOwnPropertyDescriptor"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41410
-nntt.org,rus-media.org,rutor.in,rutracker.in$$script[tag-content="(function(g,b,a,c,e,d)"]
+nntt.org,rus-media.org,rutor.in,rutracker.in$$script:contains((function(g,b,a,c,e,d))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37789
 echo.msk.ru$$script[tag-content="iadfox"][max-length="600"]
 ! forum.fonarevka.ru
@@ -6637,7 +6637,7 @@ games.mail.ru$$video[id="rb_video"][preload=""]
 ! https://forum.adguard.com/index.php?threads/26833/
 forum.ixbt.com$$style[tag-content=".clickable_zone_brand"][max-length="2300"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7523
-igromania.ru$$style[tag-content="min-height:32px !important;height:200px !important;"]
+igromania.ru$$style:contains(min-height:32px !important;height:200px !important;)
 ! https://forum.adguard.com/index.php?threads/26071/
 bigcinema.cc$$script[tag-content="var brdImg "][max-length="1000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24538
@@ -6658,7 +6658,7 @@ tivix.net$$script[tag-content="vbm('get'"][max-length="500"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4012
 aces.gg$$script[tag-content="$('#alert').on('click'"][max-length="250"]
 ! myplaycity.ru - удаление пустот от рекламы
-myplaycity.ru$$div[class="contentbox gamespage_contentbox"][tag-content="advertisement"]
+myplaycity.ru$$div[class="contentbox gamespage_contentbox"]:contains(advertisement)
 ! https://forum.adguard.com/index.php?threads/9483/
 freerutor.com$$style[tag-content="padding: 250px 0px 0px !important"][max-length="600"]
 ! Remove some ads loaders(utarget etc.)
@@ -7055,6 +7055,9 @@ gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,chehov-vid.ru,161.ru
 !
 !
 !
+consumer.1-ofd.ru##con-banners
+consumer.1-ofd.ru##con-ad-banner
+consumer.1-ofd.ru##con-banner-btn
 otzyvru.com##body > div.body_wrapper:has(> div[id^="yandex_rtb_"])
 calc.by##.ads-block-
 ||image.krasview.ru/thread/1946128/a1033c691da65e2dfa15749f4ea0dfa4_700.jpg
