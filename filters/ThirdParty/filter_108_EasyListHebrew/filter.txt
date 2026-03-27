@@ -1491,11 +1491,11 @@ walla.co.il#%#//scriptlet('ubo-nostif', '()', '1500')
 !sheee.co.il,walla.co.il,~mail.walla.co.il##+js(aost, Object, injectedScript)
 ! !#endif
 sheee.co.il,walla.co.il#%#//scriptlet('ubo-no-fetch-if', 'adsbygoogle')
-sheee.co.il,walla.co.il$$script[tag-content="responseText"][max-length="262144"]
-mail.walla.co.il$@$script[tag-content="responseText"][max-length="262144"]
-sheee.co.il,walla.co.il$$script[tag-content="(window)}catch"][max-length="262144"]
-mail.walla.co.il$@$script[tag-content="(window)}catch"][max-length="262144"]
-sheee.co.il,walla.co.il$$script[tag-content="200==="][max-length="262144"]
+sheee.co.il,walla.co.il$$script:contains(responseText)
+mail.walla.co.il$@$script:contains(responseText)
+sheee.co.il,walla.co.il$$script:contains((window)}catch)
+mail.walla.co.il$@$script:contains((window)}catch)
+sheee.co.il,walla.co.il$$script:contains(200===)
 !#if !env_mobile
 sheee.co.il,walla.co.il,~mail.walla.co.il#%#//scriptlet('ubo-aopr', 'googletag.cmd')
 !#endif
@@ -1520,6 +1520,7 @@ ynet.co.il#%#//scriptlet('ubo-nostif', 'offsetHeight')
 ynet.co.il#%#//scriptlet('ubo-no-fetch-if', 'adsbygoogle')
 !
 !#if env_mobile
+ynet.co.il$$style#yitwall
 !#endif
 ! * mako * !
 |blob:$~script,important,domain=www.mako.co.il
@@ -1651,7 +1652,7 @@ foodsdictionary.co.il###bottom-ad-stick
 !#endif
 ! * Morfix * !
 morfix.co.il#%#//scriptlet('ubo-acis', 'document.createElement', 'admiral')
-morfix.co.il$$script[tag-content="admiral"][max-length="262144"]
+morfix.co.il$$script:contains(admiral)
 ||warmafterthought.com^$domain=morfix.co.il
 ! * FXP * !
 !#if env_mobile

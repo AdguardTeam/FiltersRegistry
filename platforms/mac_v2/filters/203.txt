@@ -1,9 +1,9 @@
-! Checksum: 5ms+OMamfGoSVAHAO0rdOw
-! Diff-Path: ../patches/203/203-s-1774502285-14400.patch
+! Checksum: gVlyl+uXpqgdB2CsxPT0zA
+! Diff-Path: ../patches/203/203-s-1774630257-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads, privacy threats, and security risks on websites in the Hungarian language.
-! Version: 2.0.4.91
-! TimeUpdated: 2026-03-26T05:14:20+00:00
+! Version: 2.0.4.92
+! TimeUpdated: 2026-03-27T16:47:21+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Checksum: hTO/GjMGIHXbYLpKk89jjQ
@@ -2081,7 +2081,7 @@ prohardver.hu,fototrend.hu#$#main { background-image: none !important; }
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
 napiszar.com$$script[data-cfasync="false"]
-portfolio.hu$$script[tag-content="fbmodal-title"]
+portfolio.hu$$script:contains(fbmodal-title)
 arcanum.com#%#//scriptlet('set-constant', 'show_modal', 'noopFunc')
 blikk.hu#%#//scriptlet('set-cookie', 'isLeavingPopUpReady', '3')
 erzsebetvaros.hu#%#//scriptlet('set-session-storage-item', 'popupClosed', 'true')
@@ -2115,9 +2115,9 @@ unideb.hu##.sendi-banner-block-container
 ! This section file contains rules for blocking cookie notices.
 ! The rules in this section should be AdGuard-specific, but cross-compatible rules are also allowed, if they are
 ! not working properly without the AdGuard-specific rules.
-bme.hu,unideb.hu$$style[tag-content="eu-cookie-withdraw-banner"]
-egeszsegkalauz.hu$$script[tag-content="Quantcast Choice"]
-gamer.hu$$script[tag-content="cli_cookiebar_"]
+bme.hu,unideb.hu$$style:contains(eu-cookie-withdraw-banner)
+egeszsegkalauz.hu$$script:contains(Quantcast Choice)
+gamer.hu$$script:contains(cli_cookiebar_)
 onlinepenztarca.hu#%#//scriptlet('set-local-storage-item', 'felhasznalo_cookie_preferencia', '0')
 ! https://github.com/hufilter/hufilter/issues/520
 fizz.hu#%#//scriptlet('set-cookie', 'cookie.consent.finished', '1')
@@ -2136,14 +2136,14 @@ otpbank.hu#$#html { position: static !important; }
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
-24.hu$$script[tag-content="a2blckLayer"]
-divany.hu,totalcar.hu,totalbike.hu$$script[tag-content="window.onload = window.onfocus"]
-hazipatika.com$$script[tag-content="a2blckLayer"]
-hungliaonline.com$$script[tag-content="adblocker"]
-hang.hu$$script[tag-content="ai_run_"]
-openspeedtest.com$$script[tag-content="testadblock"]
-port.hu$$script[tag-content="popUpBannerBox Ad300 hirdetes_box"]
-szeretlekmagyarorszag.hu$$script[tag-content="window.atob"]
+24.hu$$script:contains(a2blckLayer)
+divany.hu,totalcar.hu,totalbike.hu$$script:contains(window.onload = window.onfocus)
+hazipatika.com$$script:contains(a2blckLayer)
+hungliaonline.com$$script:contains(adblocker)
+hang.hu$$script:contains(ai_run_)
+openspeedtest.com$$script:contains(testadblock)
+port.hu$$script:contains(popUpBannerBox Ad300 hirdetes_box)
+szeretlekmagyarorszag.hu$$script:contains(window.atob)
 24.hu#%#//scriptlet('abort-current-inline-script', 'window._ceCTSData', 'hirdetések')
 angol-magyar-szotar.hu#%#//scriptlet('set-constant', 'adblock', 'false')
 calculat.org#%#//scriptlet('prevent-setTimeout', 'adstest', '4000')
