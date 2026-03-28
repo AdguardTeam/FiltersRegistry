@@ -297,9 +297,12 @@ can be found in [its documentation][gh-compiler-include-directive].
     yarn build
     ```
 
-    The `yarn build` command accepts two parameters:
+    The `yarn build` command accepts the following parameters:
     - `-i`: Filters to build.
     - `-s`: Filters to skip.
+    - `--no-patches-prepare`: Skip copying `platforms/` to `temp/platforms/`, used to build patches.
+      Speeds up the build when patch generation (`yarn build:patches`) is not needed afterwards.
+      Works with both `yarn build` and `yarn build:local`.
 
     For example, to build only AdGuard filters:
 
@@ -385,6 +388,49 @@ can be found in [its documentation][gh-compiler-include-directive].
     ```bash
     yarn validate
     ```
+
+1. **Generate filter cache**
+
+    To update the cached `filter.txt` files in `filters` dir, used for testing/reproducible builds, run a build
+    with the `--generate-cache` flag:
+
+    ```bash
+    yarn generate-cache
+    ```
+
+    This compiles every filter from its `template.txt` and updates the corresponding
+    `filter.txt` inside `filters/`. Platform-specific filters and patches are **not** generated.
+    The resulting `filter.txt` files contain the fully resolved filter content
+    (all `@include` and `!#include` directives expanded) and can be used to build filters from
+    cache using `--use-cache` parameter.
+
+1. **Build from cache**
+
+    To build filters from the previously cached `filter.txt` files without downloading
+    filters, run:
+
+    ```bash
+    yarn build:local
+    ```
+
+    Under the hood this copies `filters/` to `temp/filters_cached/`,
+    replaces every `template.txt` with a single `@include "./filter.txt"` directive,
+    and compiles from that copy. The original `filters/` directory is never modified.
+
+    The `-i` / `-s` / `--no-patches-prepare` parameters can be combined:
+
+    ```bash
+    yarn build:local -i=1,2,3 --no-patches-prepare
+    ```
+
+    > **Typical workflow — comparing two compiler versions:**
+    >
+    > 1. `yarn generate-cache` — build `filter.txt` files with downloading filters from sources.
+    > 2. Switch to compiler version A, run `yarn build:local`, save the output.
+    > 3. Switch to compiler version B, run `yarn build:local`, diff the results.
+    >
+    > Both runs use the exact same raw filter content, so any difference comes
+    > solely from the compiler.
 
 ## <a id="use-cases"></a> Use Cases
 
