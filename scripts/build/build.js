@@ -8,12 +8,14 @@ import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
+import { stripGeneratedMetaFromDir } from './strip_generated_meta.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * Parse command-cli parameters -i|--include, -s|--skip, --use-cache, --generate-cache, --no-patches-prepare
+ * Parse command-line parameters -i|--include, -s|--skip, --use-cache, --generate-cache,
+ * --no-patches-prepare, --strip-generated-meta
  */
 let includedFilterIDs = [];
 let excludedFilterIDs = [];
@@ -21,6 +23,7 @@ let rawReportPath = '';
 let useCache = false;
 let generateCache = false;
 let noPatchesPrepare = false;
+let stripGeneratedMeta = false;
 
 const args = process.argv.slice(2);
 args.forEach((val) => {
@@ -54,6 +57,10 @@ args.forEach((val) => {
 
     if (val === '--no-patches-prepare') {
         noPatchesPrepare = true;
+    }
+
+    if (val === '--strip-generated-meta') {
+        stripGeneratedMeta = true;
     }
 });
 
@@ -205,6 +212,14 @@ const buildFilters = async () => {
     if (initialRun && !noPatchesPrepare) {
         // Make copy for future patches generation
         await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
+    }
+
+    // Strip generated metadata (Checksum, Diff-Path, TimeUpdated, Version)
+    // from compiled filter files so they don't pollute diff comparisons.
+    if (stripGeneratedMeta) {
+        const count = await stripGeneratedMetaFromDir(platformsPath);
+        // eslint-disable-next-line no-console
+        console.log(`Stripped generated meta from ${count} file(s).`);
     }
 };
 

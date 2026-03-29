@@ -303,6 +303,9 @@ can be found in [its documentation][gh-compiler-include-directive].
     - `--no-patches-prepare`: Skip copying `platforms/` to `temp/platforms/`, used to build patches.
       Speeds up the build when patch generation (`yarn build:patches`) is not needed afterwards.
       Works with both `yarn build` and `yarn build:local`.
+    - `--strip-generated-meta`: After compilation, remove generated meta lines
+      (`! Checksum`, `! Diff-Path`, `! TimeUpdated`, `! Version`) from all filter files
+      in `platforms/`. Useful when comparing outputs between builds, e.g. in Total Commander.
 
     For example, to build only AdGuard filters:
 
@@ -417,20 +420,39 @@ can be found in [its documentation][gh-compiler-include-directive].
     replaces every `template.txt` with a single `@include "./filter.txt"` directive,
     and compiles from that copy. The original `filters/` directory is never modified.
 
-    The `-i` / `-s` / `--no-patches-prepare` parameters can be combined:
+    The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` parameters can be combined:
 
     ```bash
-    yarn build:local -i=1,2,3 --no-patches-prepare
+    yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
     ```
 
     > **Typical workflow — comparing two compiler versions:**
     >
-    > 1. `yarn generate-cache` — build `filter.txt` files with downloading filters from sources.
-    > 2. Switch to compiler version A, run `yarn build:local`, save the output.
-    > 3. Switch to compiler version B, run `yarn build:local`, diff the results.
+    > 1. Download and cache fresh source filter content:
+
+         ```bash
+         `yarn generate-cache`
+         ```
+    > 2. Build from cache with generated metadata lines stripped:
     >
-    > Both runs use the exact same raw filter content, so any difference comes
-    > solely from the compiler.
+    >    ```bash
+    >    yarn build:local --no-patches-prepare --strip-generated-meta
+    >    ```
+    >
+    > 3. Rename the output to `mv platforms platforms_A`.
+    > 4. Switch to the other compiler version (e.g. `yarn add @adguard/filters-compiler@...`).
+    > 5. Build again with the same flags:
+    >
+    >    ```bash
+    >    yarn build:local --no-patches-prepare --strip-generated-meta
+    >    ```
+    >
+    > 6. Rename the output to `mv platforms platforms_B`.
+    > 7. Diff the two directories (e.g. in Total Commander or with `diff -r`).
+    >
+    > Both runs use the exact same cached filter content and strip all
+    > volatile metadata (`! Checksum`, `! Diff-Path`, `! TimeUpdated`,
+    > `! Version`), so any difference comes solely from the compiler.
 
 ## <a id="use-cases"></a> Use Cases
 
