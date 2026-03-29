@@ -426,33 +426,22 @@ can be found in [its documentation][gh-compiler-include-directive].
     yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
     ```
 
-    > **Typical workflow — comparing two compiler versions:**
-    >
-    > 1. Download and cache fresh source filter content:
+    **Typical workflow — comparing two compiler versions:**
 
-         ```bash
-         `yarn generate-cache`
-         ```
-    > 2. Build from cache with generated metadata lines stripped:
-    >
-    >    ```bash
-    >    yarn build:local --no-patches-prepare --strip-generated-meta
-    >    ```
-    >
-    > 3. Rename the output to `mv platforms platforms_A`.
-    > 4. Switch to the other compiler version (e.g. `yarn add @adguard/filters-compiler@...`).
-    > 5. Build again with the same flags:
-    >
-    >    ```bash
-    >    yarn build:local --no-patches-prepare --strip-generated-meta
-    >    ```
-    >
-    > 6. Rename the output to `mv platforms platforms_B`.
-    > 7. Diff the two directories (e.g. in Total Commander or with `diff -r`).
-    >
-    > Both runs use the exact same cached filter content and strip all
-    > volatile metadata (`! Checksum`, `! Diff-Path`, `! TimeUpdated`,
-    > `! Version`), so any difference comes solely from the compiler.
+    1. Download and compile filter content into cache:
+       `yarn generate-cache`
+    1. Build from cache with generated metadata lines stripped:
+       `yarn build:local --no-patches-prepare --strip-generated-meta`
+    1. Rename the output: `mv platforms platforms_A`.
+    1. Switch to the other compiler version (e.g. `yarn add @adguard/filters-compiler@...`).
+    1. Build again with the same flags:
+       `yarn build:local --no-patches-prepare --strip-generated-meta`
+    1. Rename the output: `mv platforms platforms_B`.
+    1. Diff the two directories (e.g. in Total Commander, WinMerge, or with `diff -r`).
+
+    Both runs use the exact same cached filter content and strip all
+    volatile metadata (`! Checksum`, `! Diff-Path`, `! TimeUpdated`,
+    `! Version`), so any difference comes solely from the compiler.
 
 ## <a id="use-cases"></a> Use Cases
 
