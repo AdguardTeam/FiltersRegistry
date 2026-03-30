@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: IRY8IaGcTL79H31bTN7MBw
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1774860112-3600.patch
+! Checksum: Q9HrVhcjiVF68TeN65TygQ
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1774870210-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.73.12
-! TimeUpdated: 2026-03-30T08:39:00+00:00
+! Version: 2.0.73.13
+! TimeUpdated: 2026-03-30T11:27:12+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xhr,method=post
 meteum.ai,ya.ru,yandex.*##+js(abort-on-property-write, __pcodeAllActiveTestIds)
@@ -34,7 +34,6 @@ tv.yandex.*##+js(abort-on-property-read, Object.prototype.renderDirect)
 tv.yandex.*##+js(json-prune, rtb)
 realty.ya.*##+js(json-prune, rtb direct)
 turbopages.org##+js(json-prune, *.blockId)
-kinopoisk.ru##div[class*="adfoxSpecialPopup"]
 www.kinopoisk.ru##+js(set-constant, Object.prototype.renderToNode, undefined)
 www.kinopoisk.ru##div[class^="styles_fixed_"][class*="styles_"][data-tid]
 www.kinopoisk.ru##div[class^="toaster-container"]
@@ -197,7 +196,7 @@ dellin.ru##div[data-qa="ad_block_notification"]
 strumyk.icu##+js(no-setTimeout-if, checkAdBlock)
 ||cdn.ziffstatic.com/jst/zdconsent.js$domain=maxroll.gg
 maxroll.gg##+js(set-constant, adblock, false)
-maxroll.gg##+js(addEventListener-defuser, adblock, (!0))
+maxroll.gg##+js(addEventListener-defuser, /adblock|[a-zA-Z0-9]{40\,80}/, (!0))
 linovelib.com##+js(abort-on-stack-trace, document.querySelectorAll, _0x)
 linovelib.com##body.no-scroll:style(overflow: auto !important;)
 geenstijl.nl##body > div.fixed.inset-0
@@ -1536,6 +1535,8 @@ inews.co.uk,pinterest.com##+js(set-constant, google.accounts.id.prompt, noopFunc
 klerk.ru##iframe[src^="https://autofill.yandex.ru/suggest?"][src*="widget"]
 sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+levelblue.com###hs-web-interactives-top-anchor:style(display: none !important;)
+levelblue.com##body:style(overflow: auto !important;)
 xtusubs.com##.tador
 xtusubs.com##.poemts
 locipo.jp##+js(set-cookie, is_user_attribute_questionnaire_answered, 1)

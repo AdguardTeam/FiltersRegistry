@@ -1,9 +1,9 @@
-! Checksum: j5Sywo+Mzbjfiv+2f9k1LQ
-! Diff-Path: ../patches/19/19-s-1774860083-3600.patch
+! Checksum: QL2ZUUDe1PYkoUqxSzYXoQ
+! Diff-Path: ../patches/19/19-s-1774870189-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.73.12
-! TimeUpdated: 2026-03-30T08:39:00+00:00
+! Version: 2.0.73.13
+! TimeUpdated: 2026-03-30T11:27:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -113,7 +113,6 @@ turbopages.org#%#//scriptlet('json-prune', '*.blockId')
 [$path=/q]yandex.*#%#//scriptlet('json-prune', 'direct rtb')
 !
 ! Kinopoisk
-kinopoisk.ru##div[class*="adfoxSpecialPopup"]
 www.kinopoisk.ru#%#//scriptlet('set-constant', 'Object.prototype.renderToNode', 'undefined')
 www.kinopoisk.ru##div[class^="styles_fixed_"][class*="styles_"][data-tid]
 www.kinopoisk.ru##div[class^="toaster-container"]
@@ -121,6 +120,9 @@ hd.kinopoisk.ru##.ReactModalPortal > div[class*=" styles_fixed__"]:has(> div > a
 kinopoisk.ru##div[class*="_adBlockWarningRoot__"]
 www.kinopoisk.ru##.media-post-page > div[class*=" "][data-tid]:not([class*="media"])
 www.kinopoisk.ru#?#div[class*="_"]:has(> div[aria-hidden][data-tid] > div[id][class][data-tid] + script:contains(/JSON\.parse\(\'\{\"containerId\"/))
+! Breaks useful popups
+! https://github.com/AdguardTeam/AdguardFilters/issues/227462#issue-4110610712
+! kinopoisk.ru##div[class*="adfoxSpecialPopup"]
 !
 ! auto.ru
 auto.ru#%#//scriptlet('json-prune', 'ads')
@@ -574,7 +576,8 @@ strumyk.icu#$##adblock-overlay { display: none !important; }
 strumyk.icu#$#body.ab-locked { overflow: auto !important; }
 ||cdn.ziffstatic.com/jst/zdconsent.js$domain=maxroll.gg
 maxroll.gg#%#//scriptlet('set-constant', 'adblock', 'false')
-maxroll.gg#%#//scriptlet('prevent-addEventListener', 'adblock', '(!0)')
+maxroll.gg#%#//scriptlet('prevent-addEventListener', '/adblock|[a-zA-Z0-9]{40,80}/', '(!0)')
+maxroll.gg#%#//scriptlet('prevent-element-src-loading', 'script', 'cdn.ziffstatic.com/')
 linovelib.com#%#//scriptlet('abort-on-stack-trace', 'document.querySelectorAll', '_0x')
 linovelib.com#$##adblock-dialog { display: none !important; }
 linovelib.com#$#body.no-scroll { overflow: auto !important; }
@@ -3320,6 +3323,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+levelblue.com#$##hs-web-interactives-top-anchor { display: none !important; }
+levelblue.com#$#body { overflow: auto !important; }
 xtusubs.com##.tador
 xtusubs.com##.poemts
 locipo.jp#%#//scriptlet('set-cookie', 'is_user_attribute_questionnaire_answered', '1')

@@ -1,9 +1,9 @@
-! Checksum: gOAKKDUsJ2+dbdxeXJgGYw
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1774860091-3600.patch
+! Checksum: 5/Z3LPUDvWiCM5Px1kfm1A
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1774870195-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.73.12
-! TimeUpdated: 2026-03-30T08:39:00+00:00
+! Version: 2.0.73.13
+! TimeUpdated: 2026-03-30T11:27:12+00:00
 ! Expires: 10 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 meteum.ai,ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -47,7 +47,6 @@ turbopages.org#%#//scriptlet('json-prune', '*.blockId')
 [$path=/games]yandex.*#%#//scriptlet('json-prune', 'direct rtb')
 [$path=/sport]yandex.*#%#//scriptlet('json-prune', 'rtb seatbid')
 [$path=/q]yandex.*#%#//scriptlet('json-prune', 'direct rtb')
-kinopoisk.ru##div[class*="adfoxSpecialPopup"]
 www.kinopoisk.ru#%#//scriptlet('set-constant', 'Object.prototype.renderToNode', 'undefined')
 www.kinopoisk.ru##div[class^="styles_fixed_"][class*="styles_"][data-tid]
 www.kinopoisk.ru##div[class^="toaster-container"]
@@ -218,7 +217,8 @@ dellin.ru##div[data-qa="ad_block_notification"]
 strumyk.icu#%#//scriptlet('prevent-setTimeout', 'checkAdBlock')
 ||cdn.ziffstatic.com/jst/zdconsent.js$domain=maxroll.gg
 maxroll.gg#%#//scriptlet('set-constant', 'adblock', 'false')
-maxroll.gg#%#//scriptlet('prevent-addEventListener', 'adblock', '(!0)')
+maxroll.gg#%#//scriptlet('prevent-addEventListener', '/adblock|[a-zA-Z0-9]{40,80}/', '(!0)')
+maxroll.gg#%#//scriptlet('prevent-element-src-loading', 'script', 'cdn.ziffstatic.com/')
 linovelib.com#%#//scriptlet('abort-on-stack-trace', 'document.querySelectorAll', '_0x')
 linovelib.com#$#body.no-scroll { overflow: auto !important; }
 geenstijl.nl##body > div.fixed.inset-0
@@ -1600,6 +1600,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 klerk.ru#?#iframe[src^="https://autofill.yandex.ru/suggest?"][src*="widget"]
 sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+levelblue.com#$##hs-web-interactives-top-anchor { display: none !important; }
+levelblue.com#$#body { overflow: auto !important; }
 xtusubs.com##.tador
 xtusubs.com##.poemts
 locipo.jp#%#//scriptlet('set-cookie', 'is_user_attribute_questionnaire_answered', '1')

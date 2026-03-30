@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qd4lnOSGsoTok76wXcmAVw
-! Diff-Path: ../patches/19/19-s-1774860112-3600.patch
+! Checksum: unZ0EVLT/O2VW8aMoP4+Ug
+! Diff-Path: ../patches/19/19-s-1774870210-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.73.12
-! TimeUpdated: 2026-03-30T08:39:00+00:00
+! Version: 2.0.73.13
+! TimeUpdated: 2026-03-30T11:27:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -102,7 +102,6 @@ turbopages.org##+js(json-prune, *.blockId)
 ! Yandex.Q
 !
 ! Kinopoisk
-kinopoisk.ru##div[class*="adfoxSpecialPopup"]
 www.kinopoisk.ru##+js(set-constant, Object.prototype.renderToNode, undefined)
 www.kinopoisk.ru##div[class^="styles_fixed_"][class*="styles_"][data-tid]
 www.kinopoisk.ru##div[class^="toaster-container"]
@@ -110,6 +109,9 @@ hd.kinopoisk.ru##.ReactModalPortal > div[class*=" styles_fixed__"]:has(> div > a
 kinopoisk.ru##div[class*="_adBlockWarningRoot__"]
 www.kinopoisk.ru##.media-post-page > div[class*=" "][data-tid]:not([class*="media"])
 www.kinopoisk.ru##div[class*="_"]:has(> div[aria-hidden][data-tid] > div[id][class][data-tid] + script:contains(/JSON\.parse\(\'\{\"containerId\"/))
+! Breaks useful popups
+! https://github.com/AdguardTeam/AdguardFilters/issues/227462#issue-4110610712
+! kinopoisk.ru##div[class*="adfoxSpecialPopup"]
 !
 ! auto.ru
 auto.ru##+js(json-prune, ads)
@@ -521,7 +523,7 @@ strumyk.icu###adblock-overlay:style(display: none !important;)
 strumyk.icu##body.ab-locked:style(overflow: auto !important;)
 ||cdn.ziffstatic.com/jst/zdconsent.js$domain=maxroll.gg
 maxroll.gg##+js(set-constant, adblock, false)
-maxroll.gg##+js(addEventListener-defuser, adblock, (!0))
+maxroll.gg##+js(addEventListener-defuser, /adblock|[a-zA-Z0-9]{40\,80}/, (!0))
 linovelib.com##+js(abort-on-stack-trace, document.querySelectorAll, _0x)
 linovelib.com###adblock-dialog:style(display: none !important;)
 linovelib.com##body.no-scroll:style(overflow: auto !important;)
@@ -3205,6 +3207,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+levelblue.com###hs-web-interactives-top-anchor:style(display: none !important;)
+levelblue.com##body:style(overflow: auto !important;)
 xtusubs.com##.tador
 xtusubs.com##.poemts
 locipo.jp##+js(set-cookie, is_user_attribute_questionnaire_answered, 1)
