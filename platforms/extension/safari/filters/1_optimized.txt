@@ -1,5 +1,5 @@
-! Checksum: c8rgfJWos7QnDyRZusbPNw
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1774834991-3600.patch
+! Checksum: dDKtbZd1/M34twNpCb9Veg
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1774840467-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.5.2
@@ -607,7 +607,6 @@ ucoz.ru/informer/
 ##.msk-onair-advert-block
 ##.mywidget-content-ad
 ##.one-search
-##.one-search6
 ##.publicidad
 ##.r_banner
 ##.reclama
@@ -1335,6 +1334,7 @@ ucoz.ru/informer/
 ||cshi.ru^$third-party
 ||cys.ru/button.png?url=
 ||d1mib12jcgwmnv.cloudfront.net^
+||darkweb.su/peklama/
 ||datamind.ru^$third-party
 ||davarello.com^$third-party
 ||delivery.adrecover.com^$third-party
@@ -1425,7 +1425,6 @@ ucoz.ru/informer/
 ||linkhelp.clients.google.com/tbproxy/lh/wm
 ||linkslot.ru^$third-party
 ||linkwithin.com^$third-party
-||linkwmr.ru^$third-party
 ||livesurf.ru^$third-party
 ||login.tracking101.com^
 ||loneday.com
@@ -1458,7 +1457,6 @@ ucoz.ru/informer/
 ||mezima.com^
 ||mipagerank.com^$third-party
 ||mixadvert.com^$third-party
-||mmcispartners.com^$third-party
 ||mobiads.ru^$third-party
 ||moe.video^$third-party
 ||moevideo.biz^$third-party
@@ -1606,6 +1604,7 @@ ucoz.ru/informer/
 ||topadvert.ru^$third-party
 ||topcto.ru^$third-party
 ||torgdom.biz^$third-party
+||torgnn.ru^$third-party
 ||tr.samoresim.ru^
 ||tradedoubler.com^$third-party
 ||traff.ru^$third-party
@@ -1670,7 +1669,6 @@ ucoz.ru/informer/
 ||widgets.planeta.ru^$third-party
 ||wieistmeineip.de/ip-address/
 ||wlbann.com^$third-party
-||wm-help.net/b.php?
 ||wmcasher.ru^$third-party
 ||wmlink.ru^$third-party
 ||wmrok.com^$third-party
@@ -2074,9 +2072,9 @@ chipmaker.ru#@#.ad-inline
 !+ NOT_PLATFORM(windows, mac, android, cli)
 @@||yastatic.net/pcode/adfox/loader.js$domain=dni.ru
 @@||pronpic.org/*/index.php/$~script,~image
-@@||mail.rambler.su/*/js/ads/ads.adblockdetect.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=showjet.ru
 @@||cdncontent.wakanim.tv/scripts/dist/ads.js
+@@||static.gazeta.ru/nm2015/js/advertising.js
 api.yadoma.tv#@#.ad_content
 !+ NOT_PLATFORM(windows, mac, android, cli)
 @@||ltorzhok.ru^$generichide
@@ -3537,6 +3535,7 @@ x-xx.pro##h6
 hibinform.ru##.slick-track
 msk1.ru##.gridContainer > div[class^="wrap_"][class*="gridFullMobile"]:has(> div[data-creative])
 ||motogonki.ru/images/adv/*.jpg
+motogonki.ru###widget
 shikimori.*##.news_wall > article.b-news_wall-topic:has(> a[href] > .status-line div.promo)
 habr.com##.sidebar-small-banner
 nplus1.ru##a[id^="adv-banner"]
@@ -5064,7 +5063,6 @@ tv2.today##.post__banner-wrapper
 rifme.net###sverhuAd
 bosch-club.ru##a[href^="https://sanabelle-russia.ru/corma/"] > img
 superplanshet.ru##span[itemprop="articleBody"] > script + div.ya-share2 ~ p
-1rnd.ru##.f-banner
 igrozor.org###sideAdv
 novostroy.su##.newton-ad
 /images/branding/*$domain=tourprom.ru|rodgor-vlg.ru|roem.ru|podfm.ru|myfin.by|meduza.io|bookmix.ru|fanfics.me|kv.by|gorod55.ru|law.ru
@@ -5129,7 +5127,6 @@ zikua.news###isolate-banner
 itvua.tv##.banner-item
 valday.com###sh > div[style^="background-color: #f2f2f2;"]
 coop-land.ru##body > header + div:not([class]):not([empty]):empty
-mmo13.ru###wallpaper_container
 yablyk.com,trucoteca.com,deep-review.com##div[class^="code-block code-block-"][style*="margin: 8px auto; text-align: center;"]
 starhit.ru##.spec-projects_wrap
 nnovosti.info##div[class="w-100 bg-white p-3 text-center mb-4 d-none d-lg-block"]
@@ -5210,7 +5207,6 @@ orsk.ru##.bs_bottom
 hard-tm.su##.reklamaGL
 vz.ru###topor
 vz.ru##.sys_wrap
-yurasumy.livejournal.com##.j-promo-widget
 zvezdaweekly.ru##.outer-banner
 peopletalk.ru##a.text-gray[target="_blank"]
 mipped.com,zerocoolpro.biz,skynetzone.org##.samCodeUnit
@@ -5446,7 +5442,6 @@ modxvm.com##.social-buttons-container
 ||v*.plrjs.org/*.xml
 ||hdxclub.com/js8698/b51c4b6f96c8f7.js
 banana.by###content > div.content_right > div.simple_block:last-child
-takiedela.ru##.b-barrel
 /card/load?place=$domain=ngnovoros.ru|ngzt.ru
 the-radio.ru##.artblack-promo
 glavred.net,glavred.info##body .bnr-block
@@ -5569,6 +5564,7 @@ poli-vsp.ru##div.pum[id^="pum-"]
 basicweb.ru##.g_advert
 football.kulichki.net##.vtop > table[width="100%"] > tbody > tr > td[valign="top"] > center > a[target="_new"] > img
 rivne1.tv##.info > a[rel="nofollow"] > img
+text-lyrics.ru##.right_bl_ad
 sport-24tv.ru###HTML3
 meditation-portal.com##.inner_content_banner
 meditation-portal.com##.alm-google
@@ -5639,7 +5635,6 @@ opennet.ru###adv2
 opennet.ru###adv3
 orakul.com###advLeftZone
 orakul.com###advRightZone
-ritualexpert.biz.ua,computercoach.co.nz,itznaniya.ru,aslenkov.ru##.ai_widget
 haqqin.az###aside-right > .banner
 tabsbook.ru###b-ads
 meteonova.ru###ban_500
@@ -5973,7 +5968,6 @@ bloknot-krasnodar.ru,bloknot-stavropol.ru,bloknot-volgograd.ru##.html_banner
 iccup.com##.image-left
 iccup.com##.image-right
 hh.ru##.index-banner
-charivne.info##.info-link
 povar.ru##.ingredients_ad
 baby.ru##.js-promo-fixed
 tvernews.ru##.kc6a
@@ -7189,7 +7183,6 @@ news.rambler.ru##div[data-marker-observer]
 news.rambler.ru###desktop_billboard
 news.rambler.ru##.adfox-billboard
 nova.rambler.ru##article[class^="Direct__item--"]
-nova.rambler.ru##.b-context_top
 org.rambler.ru##.ad-serp-item
 weekend.rambler.ru##.b-reklama-superfooter
 rambler.ru##div[class*="xmr"][style^="min-height:"]
@@ -7727,6 +7720,7 @@ nur.kz##.sidebar-adv
 nur.kz##.adv-placeholder:not(#style_important)
 baq.kz##.top-banner
 ||baq.kz/ajax/banners/
+sn.kz##.top-adv-sec
 stan.kz##.admanager_block
 ||stan.kz/js/admanager_v*.js
 stan.kz##[class^="branding_"]
