@@ -857,8 +857,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt",
 			"trustLevel": "high",
-			"version": "2.0.6.24",
-			"timeUpdated": "2026-03-27T16:47:01+0000",
+			"version": "2.0.6.25",
+			"timeUpdated": "2026-03-31T08:47:35+0000",
 			"deprecated": false,
 			"languages": [
 				"he"
@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.87.99",
-			"timeUpdated": "2026-03-30T16:47:35+0000",
+			"version": "2.1.88.0",
+			"timeUpdated": "2026-03-31T08:47:36+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.87.98",
-			"timeUpdated": "2026-03-30T16:47:36+0000",
+			"version": "2.1.87.99",
+			"timeUpdated": "2026-03-31T08:47:36+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1077,8 +1077,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.42.69",
-			"timeUpdated": "2026-03-30T12:48:10+0000",
+			"version": "2.0.42.70",
+			"timeUpdated": "2026-03-31T08:47:56+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1189,14 +1189,14 @@
 			"name": "List-KR",
 			"description": "Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.",
 			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://list-kr.github.io/",
+			"homepage": "https://github.com/List-KR/List-KR",
 			"expires": 864000,
 			"displayNumber": 2,
 			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/List-KR/List-KR/refs/heads/master/filter-AdGuard-forward.txt",
+			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@list-kr/filterslists@latest/dist/filterslist-AdGuard-classic.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.82",
-			"timeUpdated": "2026-03-27T16:47:35+0000",
+			"version": "2.0.23.83",
+			"timeUpdated": "2026-03-31T08:48:02+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1296,8 +1296,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.24.23",
-			"timeUpdated": "2026-03-29T16:44:52+0000",
+			"version": "2.0.24.24",
+			"timeUpdated": "2026-03-31T08:48:13+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1380,8 +1380,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.81.30",
-			"timeUpdated": "2026-03-30T16:48:35+0000",
+			"version": "2.0.81.31",
+			"timeUpdated": "2026-03-31T08:48:21+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1428,8 +1428,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.14.4",
-			"timeUpdated": "2026-03-30T12:48:53+0000",
+			"version": "2.0.14.5",
+			"timeUpdated": "2026-03-31T08:48:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1448,8 +1448,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.7.20",
-			"timeUpdated": "2026-03-30T05:18:28+0000",
+			"version": "2.0.7.21",
+			"timeUpdated": "2026-03-31T08:48:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1468,8 +1468,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.11.6",
-			"timeUpdated": "2026-03-30T16:48:39+0000",
+			"version": "2.0.11.7",
+			"timeUpdated": "2026-03-31T08:48:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
