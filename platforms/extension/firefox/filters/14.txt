@@ -1,9 +1,9 @@
-! Checksum: oK9wFbsfm2ZVNcQ+l+FVvA
-! Diff-Path: ../patches/14/14-s-1774926824-3600.patch
+! Checksum: hUu6xSiDnhN4KVmPiw/h6A
+! Diff-Path: ../patches/14/14-s-1774933043-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.63.75
-! TimeUpdated: 2026-03-31T03:10:35+00:00
+! Version: 2.2.63.76
+! TimeUpdated: 2026-03-31T04:54:08+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2583,6 +2583,7 @@ ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-
 !
 ! NOTE: Regular rules
 !
+meteovesti.ru#%#//scriptlet('set-cookie', 'cookie_policy_notice_closed', '1', '/', 'meteovesti.ru')
 ekw.plus##.curtain:has(> #cookies-pop-up)
 sport15mauriac.fr##.site-gdpr
 etsy.com##div[data-selector="privacy-cookie-banner-container"]
@@ -25175,7 +25176,6 @@ techinferno.com##.ipsModal
 techinferno.com##div[aria-label^="AdBlock Detected!"]
 techinferno.com#$#body { overflow: visible !important; }
 technews.tw##.AD_wrapper
-techobest.com#%#//scriptlet("abort-current-inline-script", "document.getElementById", "adback")
 techonthenet.com##.adsblocked
 techsolutiontips.com#%#window.google_jobrunner = function() { };
 techtobo.com##.notices--block
@@ -35832,6 +35832,11 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+honichi.com#$#.mailmag-modal { display :none !important; }
+honichi.com#$#.modal-backdrop { display :none !important; }
+honichi.com#$#.modal-open { overflow: auto !important; }
+honichi.com###popup
+meteovesti.ru##main section.d-block .right-line:has(> a.telegram-link)
 techregister.co.uk##.spc-social-block
 bankiros.ru##.xxx-news-banks a[href="https://t.me/bankirosru"]
 bankiros.ru##.xxx-main-subscribe
@@ -35887,7 +35892,6 @@ plantbasednews.org##.newsletter-popup-iframe
 shazoo.ru##aside > div.grid:has(> div.flex a[href="https://t.me/weareshazoo"])
 yesasia.ru##.ya-box
 bbc.com##section[data-testid^="message-banner-"]
-gamesradar.com###utilitybar__button--newsletter
 gamesradar.com##a[href^="https://google.com/preferences/source?q="]
 realty.yandex.ru##main > div > div[class^="container-"]:has(> div[class^="root-"] > a[href="https://t.me/yatakzhivu_mag"])
 olhardigital.com.br##.fitec-embcmp
@@ -36109,8 +36113,9 @@ meteomedia.com##div[aria-labelledby="notification-prompt-title"]
 capterra.com##iframe[id^="faas-modal-form-"]
 e-forologia.gr##.linkbox--newsletter
 hipertextual.com###block-158
-livescience.com###utility-bar__google-button
-livescience.com###utilitybar__button--newsletter
+techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
+techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
+techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
 cloudykitchen.com##.email-highlight
 newspicks.com##div[data-testid="premiumBanner"]
 zeenews.india.com###googleCTA
@@ -36299,7 +36304,6 @@ maxidom.ru##.footer-banner-mobile
 pagellapolitica.it##.bg-blue:has(a[class^="hover:text-blue"])
 pagellapolitica.it##section.bg-black:has(> .container > .grid)
 powercompare.co.nz##floating-subscription-element
-tomsguide.com###clubPopup
 tomsguide.com###bannerHeader
 tomsguide.com##a[href^="https://google.com/preferences/source?q=tomsguide.com"]
 reebok.jp##.footer_box
@@ -53960,6 +53964,8 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+media.moneyforward.com##.articles-ad-title-link
+media.moneyforward.com##.aside-promoted-articles
 thespruce.com##.mntl-notification-banner
 levelblue.com##.req-demo-mob
 faphouse.com###modal-container
