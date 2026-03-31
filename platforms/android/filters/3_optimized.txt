@@ -1,9 +1,9 @@
-! Checksum: ACvloHAq0Vdvolo84gYE8Q
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1774933029-3600.patch
+! Checksum: WgLrkVX2OAADxvIFWCIcuQ
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1774935653-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.2.14
-! TimeUpdated: 2026-03-31T04:53:39+00:00
+! Version: 2.1.2.15
+! TimeUpdated: 2026-03-31T05:37:49+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -262,6 +262,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||tpwdg.com^$script
 ||monitoragc.xyz^
 ||analytics.kelasmalam.net^
 ||metrics.rapidedge.io^
@@ -77138,6 +77139,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 !+ PLATFORM(windows, mac, android, cli)
 ||incoming.telemetry.mozilla.org^
 |piwik.
+||logs.tourister.ru^
 ||wa.wawlabs.com^
 ||dsas-t.danawa.com^
 ||spm.gmarket.co.kr^
@@ -158237,6 +158239,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+tourister.ru#%#//scriptlet('href-sanitizer', 'a[href*="/go?"]', '?url')
 ||api.mercari.jp/client_events/
 ||etsy.com/api/v*/ajax/public/recs-interactions
 ||livemint.com/lm-img/js/lm-inp-tracker.js

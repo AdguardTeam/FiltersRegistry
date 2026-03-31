@@ -1,9 +1,9 @@
-! Checksum: m+RfydBGQc614ATzxlrkAA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1774933043-3600.patch
+! Checksum: MfttMvSKuwqEmlgLWajTAg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1774935666-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.63.76
-! TimeUpdated: 2026-03-31T04:54:08+00:00
+! Version: 2.2.63.77
+! TimeUpdated: 2026-03-31T05:38:08+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -8596,8 +8596,6 @@ aptos.ru,m.sporx.com###cookie_text
 turkgun.com###cookiePolicyMessage
 !+ NOT_OPTIMIZED
 burgan.com.tr###footer_cerez_politikasi
-!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
-premium-link.ninja##.cc_banner-wrapper
 akku-maeser.at#%#//scriptlet('set-cookie-reload', 'cookies_confirmed_1', '1')
 joyn.de#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector('cmp-button[variant="primary"]');c&&(c.click(),o.disconnect())})),c={apply:(c,n,a)=>{const r=Reflect.apply(c,n,a);return!e&&n.matches("cmp-dialog")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
 blog.seznam.cz,kupi.cz#%#(()=>{let t;const e=new MutationObserver(((e,o)=>{const n=t?.querySelector('button[data-testid="button-agree"]');n&&(setTimeout((()=>{n.click()}),500),o.disconnect())})),o={apply:(o,n,c)=>{const a=Reflect.apply(o,n,c);return n.matches(".szn-cmp-dialog-container")&&(t=a),e.observe(a,{subtree:!0,childList:!0}),a}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,o)})();
@@ -26136,6 +26134,8 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+||tourister.ru/query?m=promo-
+||tourister.ru/query?m=popularMaterials-
 media.moneyforward.com##.articles-ad-title-link
 media.moneyforward.com##.aside-promoted-articles
 thespruce.com##.mntl-notification-banner
@@ -31184,6 +31184,7 @@ t-online.de,welt.de##iframe[src^="https://widget.civey.com"]
 ##.opinary-widget-wrapper
 ~civey.com##iframe[src^="https://widget.civey.com"]
 ##iframe[src*="compass.pressekompass.net/compasses"]
+||aflt.travel.yandex.ru^$script,third-party
 ||widget.justwatch.com^$third-party
 ||insticator.com^$third-party
 ||iteratehq.com^$third-party
