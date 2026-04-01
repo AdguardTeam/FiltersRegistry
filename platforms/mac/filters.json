@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.57.46",
-			"timeUpdated": "2026-04-01T14:37:13+0000",
+			"version": "2.4.57.47",
+			"timeUpdated": "2026-04-01T16:25:29+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.73.14",
-			"timeUpdated": "2026-03-31T13:37:24+0000",
+			"version": "2.0.73.15",
+			"timeUpdated": "2026-04-01T16:25:47+0000",
 			"languages": [
 				"ja"
 			]
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.16.92",
-			"timeUpdated": "2026-04-01T14:37:48+0000",
+			"version": "2.1.16.93",
+			"timeUpdated": "2026-04-01T16:26:03+0000",
 			"languages": []
 		},
 		{
@@ -1196,8 +1196,8 @@
 		},
 		{
 			"filterId": 227,
-			"name": "List-KR",
-			"description": "Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.",
+			"name": "List-KR Classic filter list",
+			"description": "The List-KR Сlassic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.",
 			"homepage": "https://github.com/List-KR/List-KR",
 			"expires": 86400,
 			"displayNumber": 2,
