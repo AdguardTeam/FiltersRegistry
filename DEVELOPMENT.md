@@ -206,7 +206,7 @@ git gc --aggressive --prune=now
 
 This will remove unnecessary entries from the reflog and perform garbage collection.
 
-After this procedure git repository will reduce it's size.
+After this procedure git repository will reduce its size.
 
 ## Common Tasks
 

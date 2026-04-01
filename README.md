@@ -173,7 +173,6 @@ Every filter directory contains these files:
 
     This file contains rules that are excluded by the filters compiler based on the specified trustLevel.
 
-[gh-compiler-trust-levels]: https://github.com/AdguardTeam/FiltersCompiler/tree/master/src/main/utils/trust-levels
 [kb-hint-platforms]: https://adguard.com/kb/general/ad-filtering/create-own-filters/#platform-and-not_platform-hints
 
 ### <a id="tags"></a> Tags
@@ -333,3 +332,4 @@ For the compression procedure and commands, see
 - [Filters compiler: @include directive][gh-compiler-include-directive]
 
 [gh-compiler-include-directive]: https://github.com/AdguardTeam/FiltersCompiler#include-directive
+[gh-compiler-trust-levels]: https://github.com/AdguardTeam/FiltersCompiler/tree/master/src/main/utils/trust-levels
