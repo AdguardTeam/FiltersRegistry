@@ -141,7 +141,8 @@ yarn validate
 Or individually:
 
 ```bash
-yarn validate:platforms
+yarn validate:platforms          # defaults to ./platforms
+yarn validate:platforms ./platforms  # explicit path (optional)
 yarn validate:locales
 ```
 
