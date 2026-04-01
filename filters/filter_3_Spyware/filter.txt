@@ -77714,6 +77714,11 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||beacon.cdnpure.com^
+||r.cdnpure.com^
+||ja*.apppure.net^
+||udbdf.apkpure.com^
+||a.apkpures.xyz^
 ||c.qiandao.cn^
 ||logs.tourister.ru^
 ||wa.wawlabs.com^
@@ -158968,6 +158973,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||apkpure.com/static/script/device-*-min.js
+apkpure.com#%#//scriptlet('set-local-storage-item', '__BEACON_deviceId', '$remove$')
+apkpure.com#%#//scriptlet('remove-node-text', 'script', '/deviceId|__apkpureFirstInteractionType|fingerprintjs|pvid/i')
 decrypt.co#%#//scriptlet('set-local-storage-item', 'spindl_persistent_id', '$remove$')
 phys.org##.news-related
 ||rainbet.com/api/ping
@@ -166199,6 +166207,8 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! apkpure.com
+||apkpure.com^$cookie=_qimei
 ! expero.ru
 ||expero.ru^$cookie=deviceId
 ! my.club

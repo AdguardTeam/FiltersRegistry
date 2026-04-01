@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Gmyhq8zu4rEmQFRA1d9XKQ
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1775032660-3600.patch
+! Checksum: kvyDhIfqM/y1LDnqnP7MoQ
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1775050855-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.2.23
-! TimeUpdated: 2026-04-01T08:33:59+00:00
+! Version: 2.1.2.24
+! TimeUpdated: 2026-04-01T13:37:11+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -77089,6 +77089,11 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||countly.
 ||countly-
 |piwik.
+||beacon.cdnpure.com^
+||r.cdnpure.com^
+||ja*.apppure.net^
+||udbdf.apkpure.com^
+||a.apkpures.xyz^
 ||c.qiandao.cn^
 ||logs.tourister.ru^
 ||wa.wawlabs.com^
@@ -158187,6 +158192,9 @@ _tracking.php?b=
 /prod/dfm/t8y9347t.min.js$redirect=noop.txt,important,domain=dailycamera.com,image,media,subdocument,stylesheet,script,xhr,other
 ||google-analytics.com^$object,redirect=noop.js,script
 ||googletagmanager.com/gtag/$3p,object,redirect=noop.js,script
+||apkpure.com/static/script/device-*-min.js
+apkpure.com##+js(set-local-storage-item, __BEACON_deviceId, $remove$)
+apkpure.com##+js(remove-node-text, script, /deviceId|__apkpureFirstInteractionType|fingerprintjs|pvid/i)
 decrypt.co##+js(set-local-storage-item, spindl_persistent_id, $remove$)
 phys.org##.news-related
 ||rainbet.com/api/ping
