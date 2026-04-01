@@ -40,15 +40,19 @@ Build all filters (AdGuard + third-party) into `platforms/`:
 yarn build
 ```
 
-Build only specific filters by ID:
+Build only specific filters by ID (short and long forms both work):
 
 ```bash
+yarn build -i=1,2,3
+# or
 yarn build --include=1,2,3
 ```
 
 Build all filters except specific ones:
 
 ```bash
+yarn build -s=12,24
+# or
 yarn build --skip=12,24
 ```
 
