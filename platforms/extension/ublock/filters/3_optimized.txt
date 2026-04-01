@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: CKtYkQfexaOC1VgwX+LMGw
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1775019973-3600.patch
+! Checksum: N05vqTiHjDxn1m2pkpLKvQ
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1775029249-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.2.21
-! TimeUpdated: 2026-04-01T05:02:47+00:00
+! Version: 2.1.2.22
+! TimeUpdated: 2026-04-01T07:37:18+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -211,6 +211,7 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||spindl.link^
 ||tpwdg.com^$script
 ||monitoragc.xyz^
 ||analytics.kelasmalam.net^
@@ -158186,6 +158187,8 @@ _tracking.php?b=
 /prod/dfm/t8y9347t.min.js$redirect=noop.txt,important,domain=dailycamera.com,image,media,subdocument,stylesheet,script,xhr,other
 ||google-analytics.com^$object,redirect=noop.js,script
 ||googletagmanager.com/gtag/$3p,object,redirect=noop.js,script
+decrypt.co##+js(set-local-storage-item, spindl_persistent_id, $remove$)
+phys.org##.news-related
 ||rainbet.com/api/ping
 lifehacker.jp###mainContent > div[class^="articles_pArticles_Title_"]:has(+ div[class^="displayhandler_"] > div > div[id^="cxMore"])
 tourister.ru##+js(href-sanitizer, a[href*="/go?"], ?url)
@@ -164154,6 +164157,10 @@ dlsdk.appsflyer.com^
 ||int.vlancaa.site^
 ||int.vlancaa.fun^
 ||tok.vaicore.xyz^
+||report.tantanapp.com^
+||pco-sm-log.tantanapp.com^
+||app-log-lab.immomo.com^
+||aqueduct-collector-prod.alar.my^
 ||mp-gb-sdklog.kurogames.net^
 -datareceiver.aki-game.net^
 ||telemetry.split.io^
