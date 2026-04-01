@@ -228,7 +228,7 @@ until the compression goal (defined in percentages) is achieved.
 ### Compiler Customization
 
 Script located in `scripts/build/custom_platforms.js` customizes the way filters are compiled for certain platforms.
-We should use it if we need to temporary change rules for a platform.
+We should use it if we need to temporarily change rules for a platform.
 In all other cases, we should prefer the default configuration.
 
 Below is a example of the configuration for the platform `AdGuard for Chrome` with comments:
