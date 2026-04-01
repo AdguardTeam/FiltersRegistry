@@ -31,18 +31,18 @@ for all supported AdGuard products.
 - **Performance Goals**: N/A
 - **Constraints**: Filter lists must remain compatible with AdGuard's rule syntax;
   third-party filters follow an acceptance policy documented in README.md
-- **Scale / Scope**: 30+ AdGuard filters, 77+ third-party filters, 8 platform targets,
-  45+ locale translations
+- **Scale / Scope**: dozens of AdGuard filters, dozens of third-party filters, multiple platform targets,
+  many locale translations
 
 ## Project Structure
 
 ```text
 ├── filters/                        # Filter list sources
-│   ├── filter_<ID>_<Name>/         # AdGuard filters (30+ dirs) — each contains template.txt,
+│   ├── filter_<ID>_<Name>/         # AdGuard filters (dozens of dirs) — each contains template.txt,
 │   │                               #   metadata.json, revision.json, filter.txt, diff.txt
-│   ├── ThirdParty/                 # Third-party filters (77+ dirs, same structure)
+│   ├── ThirdParty/                 # Third-party filters (dozens of dirs, same structure)
 │   └── exclusions.txt              # Global rule exclusions
-├── platforms/                      # Built platform-specific outputs (8 top-level platforms)
+├── platforms/                      # Built platform-specific outputs (multiple top-level platforms)
 │   └── <platform>/                 # android, cli, extension, ios, mac, mac_v2, mac_v3, windows
 │       ├── filters/                # Compiled filter files per platform
 │       ├── patches/                # Incremental diff patches
