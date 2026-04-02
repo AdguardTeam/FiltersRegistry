@@ -1,7 +1,7 @@
 !
 ! Title: List-KR classic filters list (AdGuard)
 ! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20545.0
+! OriginalVersion: 2026.20545.1
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/List-KR/List-KR
 ! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
@@ -1735,7 +1735,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 
-
+stock.naver.com##div[class^="AdvertisementArea_advertisement-"]
 prod.danawa.com##.ad-floating-banner
 prod.danawa.com##.powershopping-prod
 www.algumon.com##.deal-content .deal-2col:is(:has(div[style^="display: flex; justify-content: center;"] p[class^="fb-desc svelte-"]), :has(> div[style^="display:flex;"] > .adsbygoogle))
@@ -3292,6 +3292,9 @@ x86.co.kr#@#.download_ad
 @@||adxv.zum.com/view/targets?slots=$domain=zum.com
 !#endif
 !
+!#if (adguard_app_ios || adguard_ext_android_cb)
+@@||ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js$domain=stock.naver.com
+!#endif
 !#if (adguard_app_ios)
 @@||tinnews.co.kr/data/tinnews_co_kr/banner/2020040642392902
 @@||tinnews.co.kr/data/tinnews_co_kr/banner/favicon.ico
@@ -3830,6 +3833,7 @@ m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 !
+stock.naver.com#%#//scriptlet('set-constant', 'MobileDetect', 'noopFunc')
 excellesports.com#%#//scriptlet('set-cookie', 'popup_view', 'disable')
 maple.gg#%#//scriptlet('set-cookie', 'hideFrontPagePopup', 'true')
 enuri.com#%#//scriptlet('set-constant', 'getPowerLink', 'noopFunc')
