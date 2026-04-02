@@ -1,5 +1,5 @@
-! Checksum: db7FykhulCZMW4REKmMtmQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1775013209-3600.patch
+! Checksum: tSe10GMPCfGED6MVcF2Qow
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1775099593-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.43.6
@@ -15,7 +15,6 @@ nbcnews.com##.recommended-intersection-ref
 ||mcd-playlist.ex.co/api/*7&targetedPlaylist=true&articleUrl=$domain=mashable.com
 mashable.com#?##article > div.w-full:has(> div > strong:contains(You May Also Like))
 iceout.org#%#//scriptlet('set-local-storage-item', 'tos_accepted', 'true')
-rexdlbox.com##ul.dl-list > ul.dl
 5ch.io#%#//scriptlet('href-sanitizer', 'a[href^="http://jump"][href*="/?http"]')
 itest.5ch.io#%#//scriptlet('trusted-replace-argument', 'window.open', '0', 'replace:/^https:\/\/itest\.5ch\.io\/jump\/to\?url=(.+)/$1/', '/jump/to?url=')
 calciomercato.com#%#(()=>{const t={construct:(t,e,n)=>{const r=e[0],o=r?.toString(),c=o?.includes("vidFloating");return c&&(e[0]=()=>{}),Reflect.construct(t,e,n)}};window.IntersectionObserver=new Proxy(window.IntersectionObserver,t)})();
@@ -701,6 +700,7 @@ foxnews.com##.page .alert-banner
 calendar.google.com,docs.google.com,mail.google.com,news.google.com,drive.google.com#?#iframe[src^="https://ogs.google.com"][src*="/widget/callout/"]:upward(div[style^="overflow: hidden; position: absolute; top: 0px; width:"])
 kresy.pl##.ls-popup [id^="layerslider_"]
 semrush.com#$#body { overflow:visible!important; }
+crazymailing.com#$#body.download-pl { padding-top: 0!important; }
 ||pdj.cc^$domain=promodj.com
 urlaubstracker.de###wysija-2
 m.heise.de##.btn-toolbar > .whatsbroadcast-group
@@ -722,7 +722,6 @@ wikipedia.org###frb-inline
 wikipedia.org###frb-nag
 kitguru.net###check-also-box
 developer.mozilla.org###helpful-survey
-vidz24.com##.right-advertising
 xtapes.to##.menu-item-2370
 last.fm##.join-cta.link-block
 lostfilm.info##body > div.wrapper > a[title^="LostFilm"]
@@ -1140,7 +1139,6 @@ justwatch.com##.mrr-banner
 justwatch.com##.removal-container
 computerbase.de##.promobar
 arkm.com##div[class*="mfaBannerContainer"]
-xn--pckua2a7gp15o89zb.com##.s-modal-trigger_cmOnboarding
 manzoku.or.jp##.mzh-banner
 sabah.com.tr##.market-banner
 amwine.ru##.header__announce
@@ -1375,7 +1373,6 @@ uchi.ru##a[href="https://max.ru/uchi_quiz_bot"]
 voelkner.de##.promotion_campaign
 farodevigo.es###mid_news iframe
 welivesecurity.com##.sidebar-card-banner:not([href*="welivesecurity.com"])
-freightwaves.com#$#.f3-article-cta { display: none !important; }
 freightwaves.com#$#body { padding-top: 0 !important; }
 gamewith.jp##.walkthrough-gamewith-announces
 gamewith.jp###article-body > a[href^="https://hrmos.co/"]
@@ -1419,6 +1416,7 @@ banki.ru###lightbox-container > div[style^="font-size: initial; word-break: init
 deepl.com#%#//scriptlet('trusted-set-local-storage-item', 'LabsBanner', '{"bannerShown":true}')
 play.mercadolibre.com.ar##.banner-ads-container
 ||img.cityheaven.net/img/banner/seamless_login_unlinked_banner.png
+menshealth.de##.va-article-text > div:has(> p:only-child > strong:only-child > a[gaaffiliatetrackingvalue]:only-child)
 cheathappens.com###__EAAPS_PORTAL
 bcs-express.ru##figure[id^="component"]:has(> a[href^="https://bcs-express.ru/open-account?utm_source"])
 domclick.ru##div[class^="tpln-EasyDeal-EasyDealBanner"]
@@ -1437,7 +1435,6 @@ shtrafy-gibdd.ru###articleDownBanner
 zeit.de##.joblisting
 zeit.de##.studylisting
 watch.spencerdevs.xyz##a[href="/promo"]
-offidocs.com##.nav.level-one > li:has(> a[href$="-affiliate.php"])
 forum.golem.de###abo-clip
 crunchyroll.com###upsell-popup > div[class^="upsell-popup__body--"]:has(> a[href^="https://www.crunchyroll.com/premium?referrer="])
 graphicnet.co.jp#%#//scriptlet('prevent-addEventListener', 'scroll', 'scrollTimeout = setTimeout(() => {')
@@ -1727,7 +1724,6 @@ hobbyhall.fi##.full-width-banner-top
 musee-pla.com##.bnrSideNav__list
 3dmgame.com##.Content_R > a[href="https://h5.3dmgame.com/activities/signinPc"]
 mail.proton.me##.bg-promotion
-ig-store.ru##div[class^="productAd--"]
 ig-store.ru##.news-banner
 ig-store.ru##.banner-one-item
 ig-store.ru##.banner-gl
@@ -1743,7 +1739,6 @@ apidog.com##.grid > div.hidden > div.sticky > div.relative:has(> div > a[href="h
 apidog.com##download-app-button
 kusurinomadoguchi.com##.sp-campaign-on-article
 financial-field.com##a[href="https://financial-field.com/tax-return-diagnostic-special-page"] > img
-finuslugi.ru##.rating-table__banner
 ||api.k2s.cc/v1/files/*/recommended?
 k2s.cc##a[href="/recommended"]
 k2s.cc#%#//scriptlet('prevent-xhr', 'api.k2s.cc/v1/users/me/plans?returnUrl=')
@@ -1785,7 +1780,6 @@ filepuma.com##.ad-gu-wrap
 bild.de#$?#article:has(> a:only-child[target="_blank"][href*="source"]) { remove: true; }
 [$path=/file]tezfiles.com##.premium
 securelist.ru,securelist.com##a[data-element-id="main-page-banner"]
-bogsfootwear.com###upSellPop
 journal.sovcombank.ru##astro-island:has( > div > div > div > span.bg-red + div > div.wysiwyg-markup > p > a[href*="utm_medium=referral"][target="_blank"])
 journal.sovcombank.ru##a[data-event^="bannerClick_"]
 jorudan.co.jp###js_bnr_right_block3_parent
@@ -2031,7 +2025,6 @@ anilibria.top##.v-carousel
 aniliberty.top,anilibria.top##.v-col-md-8:has(> div.v-card--flat a[href="/support"])
 aniliberty.top,anilibria.top##.v-col-md-8:has(> div.v-card--flat a[href="/support"]) + div.v-col-md-4
 funabashi-tsushin.com###main > a[href="https://funabashi-tsushin.com/banner_ads"]
-[$path]fontanka.ru##.gridContainer > div[class^="grid"]:has(> div[class] > div.flickity-enabled)
 fontanka.ru##div[data-adv-mark]
 fontanka.ru##section[class^="sliderWrap_"]:has(> div[class^="slider_"] > div[class^="wrap_"] > div[class^="companyNewsItem_"])
 service.smt.docomo.ne.jp##.ad_height
@@ -2350,6 +2343,7 @@ paradigm-shift.co.jp##.paperbnr1-wrap
 iguides.ru##.i-box__bottom-note
 filemail.com##.signupinvite
 idnes.cz###pianoreminder
+knowledgehut.com#?#.sticky > div.mt-6:has(> div.mt-6 > div.flex > div.z-200)
 ttt.ua##.page__big-banner
 ttt.ua##.pop-under
 tool.chinaz.com#?#.backtoTop > div.toItem:has(> a[href="http://my.chinaz.com/toolvip/vip"])
@@ -2504,6 +2498,7 @@ watchsomuch.to#%#//scriptlet('set-cookie', 'Upgrade', '0')
 w3schools.com#?#.sidesection:has(> a[href="/colors/colors_picker.asp"])
 w3schools.com###upperfeatureshowcaselink
 w3schools.com###lowerfeatureshowcaselink
+best-legal.jp###common-cta
 bookwalker.jp###banner-area
 digitimes.com,rusklik.tvnet.lv##.tp-banner
 websearch.rakuten.co.jp###banner
@@ -2558,6 +2553,7 @@ new-123movies.live,fmovies.style##.jw-overlays + div.jw-logo[style^="background-
 bellesa.co##a[target="_blank"] > div > video
 androidinsider.ru##.link-alert
 marmiton.org#?#div[data-ad-sticky-reference] > div[class^="RCP__sc-"] > div[class^="RCP__sc-"]:has(> div.MuiPaper-rounded > button:contains(Commandez vos ingrédients))
+rockpapershotgun.com##.merch_component
 blog.skillfactory.ru##.link-to-course
 blog.skillfactory.ru##div[class^="wp-block-vadim-banner-"]
 g2a.com##.com-container__sidebar
@@ -2691,7 +2687,6 @@ washingtonpost.com###main-content > div.hide-for-print.mb-lg
 morinaga.co.jp###pc-column-detail-bottom-banner
 enigmasoftware.com###bio_ep
 enigmasoftware.com###bio_ep_bg
-olx.pl##.topbarbanner
 w-higa.com##div[id^="single_banner"]
 nijitoraware.com##.headline_entry_middle1
 my.rakuten.co.jp###randomAdArea
@@ -2941,7 +2936,6 @@ ok.ru###hook_Block_VideoBannerBlock
 untangle.com###overview-features + div.right_col
 nauchniestati.ru##.adv-universal
 opportunitydesk.info#?#.td-ss-main-sidebar> aside.widget:has(> picture[title="PROMOTION"])
-autotrader.co.uk##li[data-is-ymal-listing="true"]
 zerkalo.io##script[src*=".zerkalo.io/api?rev=r0~r0~r0~r0"] + div[class^="news-section-"]
 intellipaat.com##.recmnd-cours
 intellipaat.com##.tutorial-cta-wrapper
@@ -3601,6 +3595,7 @@ amazon.de###cart-item-recs
 amazon.de##div[data-cel-widget="desktop-rhf_SponsoredProductsRemoteRHFSearchEXPSubsK2ClickPagination"]
 amazon.co.jp##span[class*="slot_adPlacements"]
 amazon.*##div[data-slot="auto-sparkle-hsa-tetris"]
+amazon.de,amazon.co.uk###detail-ilm_div
 amazon.de,amazon.co.uk###heroQuickPromo_feature_div
 amazon.de###detailILMPercolate_feature_div
 amazon.de###percolate-ui-ilm_div
