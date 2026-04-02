@@ -1,9 +1,9 @@
-! Checksum: nviUSHQvWDlsSIVh5O9rOQ
-! Diff-Path: ../patches/9/9-s-1774610611-3600.patch
+! Checksum: iQJlK8QSBHWEAq29TVONqQ
+! Diff-Path: ../patches/9/9-s-1775118632-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.33.81
-! TimeUpdated: 2026-03-27T11:20:53+00:00
+! Version: 2.0.33.87
+! TimeUpdated: 2026-04-02T08:27:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -198,6 +198,14 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228134
+! https://github.com/AdguardTeam/AdguardFilters/issues/228135
+deemixer.com,arlx.site#@#.banner-ad
+deemixer.com,arlx.site#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'detectAdBlock')
+! https://github.com/AdguardTeam/AdguardFilters/issues/228071
+pornoenspanish.es#%#//scriptlet('prevent-setTimeout', 'scriptObj')
+! https://github.com/AdguardTeam/AdguardFilters/issues/228011
+||cdnpc.net^$xmlhttprequest,redirect=nooptext,domain=file4go.lol
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227704
 novelaplay.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'bait')
 novelaplay.com#@#.ad-space:not(.textads)
@@ -1132,7 +1140,6 @@ seriesdonghua.com,mundodonghua.com#%#//scriptlet("prevent-setTimeout", "/Tamamo_
 @@||mundodonghua.com/*banner.gif
 @@||mundodonghua.com/js/adsbygoogle.js
 seriesdonghua.com,mundodonghua.com#%#//scriptlet("set-constant", "loadingAds", "true")
-! https://github.com/AdguardTeam/AdguardFilters/issues/24732
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24385
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21896
 @@||eurogamer.pt^$generichide,app=iexplore.exe
@@ -2077,6 +2084,13 @@ eloutput.com,mundobytes.com,techondicas.com,jornalrepercussao.com.br,zonaaps.com
 !
 ! NOTE: Specific rules
 !
+blizzboygames.net##.wpb-content-wrapper > .vc_row-fluid:has(> .vc_col-sm-12 > .vc_column-inner > .wpb_wrapper > .wpb_content_element > .wpb_wrapper:only-child > div[class^="mybanner"]:only-child)
+blizzboygames.net###gp-content-wrapper.gp-container > #gp-content .wpb-content-wrapper > .vc_row-fluid:first-child:has(> .vc_col-sm-12 > .vc_column-inner > .wpb_wrapper > .wpb_content_element > .wpb_wrapper:only-child)
+blizzboygames.net#$##gp-content-wrapper.gp-container > #gp-content:has(.wpb-content-wrapper > .vc_row-fluid> .vc_col-sm-12 > .vc_column-inner > .wpb_wrapper > .wpb_content_element > .wpb_wrapper:only-child > div[class^="mybanner"]:only-child) { padding-top: 0 !important; }
+||blizzboygames.net/wp-content/plugins/notificationx/assets/public/js/frontend.js
+sub69.online##.banner-promo-container
+pornosubesp.com##.articles > article:has(> div.epcl-banner)
+pornoenspanish.es##a[href^="https://theporndude.com/"]
 elsol.com.co,lafmplus.com,lamega.com.co,radiouno.com.co##div[id^="container-HOME"]:has(> span[class*="PUBLICIDAD"])
 mundoperfecto.net##.above-ad-unit
 mundoperfecto.net##.aligncenter.wp-block-image > img[src][width="263"][height="72"]

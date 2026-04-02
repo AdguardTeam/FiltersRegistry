@@ -1,9 +1,9 @@
-! Checksum: rPo2lYZ8UjFdxN5go15vAg
-! Diff-Path: ../patches/17/17-s-1774520863-3600.patch
+! Checksum: DBYiOz8Ug+pKtvNsmD0UMw
+! Diff-Path: ../patches/17/17-s-1775042893-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.25
-! TimeUpdated: 2026-03-26T10:25:07+00:00
+! Version: 2.0.13.28
+! TimeUpdated: 2026-04-01T11:25:18+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -312,6 +312,7 @@ $removeparam=itm_campaign
 $removeparam=itm_content
 $removeparam=itm_term
 ! UTM
+$removeparam=utm_prid
 $removeparam=utm_wave
 $removeparam=utm_lob
 $removeparam=utm_emailid
@@ -497,6 +498,8 @@ $removeparam=tduid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228267
+||usaa.com^$removeparam=wa_ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227596
 ||duck.ai^$removeparam=origin
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-16099608
@@ -893,8 +896,6 @@ $removeparam=s-id,domain=item.rakuten.co.jp|www.rakuten.co.jp
 !
 ! A/B testing
 ||duckduckgo.com^$removeparam=/^experiment_/
-! https://github.com/AdguardTeam/AdguardFilters/issues/227413#issuecomment-4107238932
-! ||duckduckgo.com^$removeparam=atb
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208058
 ||olybet.lv^$removeparam=ref

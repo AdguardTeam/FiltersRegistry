@@ -1,9 +1,9 @@
-! Checksum: udBDOCQMA+Ldc+6CuQHKwQ
-! Diff-Path: ../patches/216/216-s-1774630264-14400.patch
+! Checksum: IVVq3tBXI59B4fq2WLr+Iw
+! Diff-Path: ../patches/216/216-s-1774817278-14400.patch
 ! Title: Official Polish filters for AdBlock, uBlock Origin & AdGuard
 ! Description: Additional filter list for websites in Polish.
-! Version: 2.0.16.40
-! TimeUpdated: 2026-03-27T16:47:28+00:00
+! Version: 2.0.16.42
+! TimeUpdated: 2026-03-29T20:44:31+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Official Polish Filters for AdBlock, uBlock Origin & AdGuard
@@ -14,9 +14,9 @@
 ! Works best with EasyList - be sure to subscribe it as well!
 ! Działa najlepiej z EasyList - pamiętaj aby zasubskrybować!
 !   Patronite ==> https://patronite.pl/polskiefiltry
-! Last modified: 15 March 2026
+! Last modified: 29 March 2026
 ! Expires: 1 day
-! OriginalVersion: 2026031501
+! OriginalVersion: 2026032902
 ! Support:
 !   Email >> errorsfilters@certyficate.it
 !   Github >> https://github.com/MajkiIT/polish-ads-filter/issues
@@ -24,7 +24,7 @@
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright © 2026 Certyficate IT
 ! Najnowsza wersja zawsze na: https://www.certyficate.it/adblock
-! v.2026031501 aktualizacja: nie, 15 marca 2026, 21:00:00
+! v.2026032902 aktualizacja: nie, 29 marca 2026, 21:30:00
 !
 !
 !1#-----------------------General advert blocking filters-----------------------!
@@ -4836,7 +4836,7 @@ www.wirtualnemedia.pl###wtg_art_full_service
 ||speedtest.pl/files/$subdocument
 ||spidersweb.pl/*reklamy/$subdocument
 ||spidersweb.pl/wp-content/themes/new_sw_v3_git/others/$subdocument,domain=spidersweb.pl
-||spolecznosci.net^$image,subdocument,script,popup
+||spolecznosci.net^$image,subdocument,script,popup,domain=~www.donald.pl
 ||spolecznosci.mgr.consensu.org^$image,subdocument,script,popup
 ||sportslaski.pl/materialy/foto_tlo/$image
 ||spottedskarzysko.pl/images/data/*/UNINET-MAJ2.gif
@@ -5153,6 +5153,7 @@ www.wirtualnemedia.pl###wtg_art_full_service
 @@||consent.cookiefirst.com/banner/*$stylesheet,domain=swiatzdrowia.pl
 @@||consent.cookiefirst.com/banner/*$xmlhttprequest,domain=swiatzdrowia.pl
 @@/ads/ga-audiences$domain=swiatzdrowia.pl
+@@||spolecznosci.net$script,domain=www.donald.pl
 !
 !13#------------------------Whitelist specific element hiding rules------------------------!
 emag.pl#@#a[href^="https://pubads.g.doubleclick.net/"]
@@ -5296,6 +5297,7 @@ wykop.pl##.m-hide.m-reset-width.m-reset-margin.m-reset-float.grid-right > div.r-
 wykop.pl##.pub-slot-wrapper
 wykop.pl##.ski-jumping-slider
 wykop.pl##section.lisek-app
+wykop.pl##section[class]:not([id]):has(> .wrapper > a[href*="tradedoubler.com/click"])
 !
 !22#--------------------------Rules unblock protection------------!
 autocentrum.pl,demotywatory.pl,dziennik.pl,facetemjestem.pl,gala.pl,garnek.pl,jegostrona.pl,joemonster.org,kobieta.pl,komixxy.pl,transfery.info,v10.pl,prawdaobiektywna.pl##div > iframe[style^="border:"]:not([src])

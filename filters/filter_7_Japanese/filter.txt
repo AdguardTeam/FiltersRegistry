@@ -1758,6 +1758,8 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 /wp-content/uploads/2024/09/fanza_ad$image
 !
 ! Malware/Phishing
+.cfd/gatway/check.php?r=$document
+-ne-jp.duckdns.org/$document
 .cfd/?track=sjnlogin$document
 .com/api/v1/verify/fingerprint|$xmlhttprequest,~third-party
 .com/api/support/MessageGet|$xmlhttprequest,~third-party
@@ -1880,6 +1882,7 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 .php?nbVVVsa^$document
 ://rakuten-card.*.cn/Mobile/login.php$document
 ||web.core.windows.net/*Security0*/index.html$document
+.pics/shopping/item/m*/?zenid=$document
 .cv/shopping/item/m*/?zenid=$document
 .com/shopping/item/m*/?zenid=$document
 .com/mart/detail/m*?zenid=$document
@@ -1973,7 +1976,7 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 /^https?:\/\/(?:j[ap]|qq)\d{4,8}\.[a-z]{6,8}\.[a-z]{2,10}\//$document,domain=agency|art|asia|auction|bar|beauty|beer|best|biz|bond|business|cam|cards|casa|click|cloud|coupons|courses|cv|digital|diy|fashion|food|forum|gay|guru|hair|info|life|live|living|link|ltd|my|ooo|property|pw|qpon|republican|rocks|run|sale|sbs|services|shop|skin|store|studio|support|surf|tattoo|tech|today|top|uno|watch|work,match-case
 !#endif
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_cli && !adguard_app_android && !adguard_ext_chromium_mv3 && !ext_ublock)
-/%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%B1.%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%A6%F0%9D%90%A5$document,domain=shop|top
+/%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%B1.%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%A6%F0%9D%90%A5$document,domain=info|shop|top
 ://*.*.cn/jp|$document,domain=cn
 -or-jp.net/$document,domain=net
 .com/co.jp/|$document,domain=com
@@ -2023,7 +2026,7 @@ _co_jp.*.php$document,domain=cc|com
 !#endif
 !#if (adguard_app_windows || adguard_app_mac || adguard_app_cli || adguard_app_android || adguard_ext_chromium_mv3 || ext_ublock)
 /^https?:\/\/(?:j[ap]|qq)\d{4,8}\.[a-z]{6,8}\.[a-z]{2,10}\//$document,to=agency|art|asia|auction|bar|beauty|beer|best|biz|bond|business|cam|cards|casa|click|cloud|coupons|courses|cv|digital|diy|fashion|food|forum|gay|guru|hair|info|life|live|living|link|ltd|my|ooo|property|pw|qpon|republican|rocks|run|sale|sbs|services|shop|skin|store|studio|support|surf|tattoo|tech|today|top|uno|watch|work,match-case
-/%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%B1.%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%A6%F0%9D%90%A5$document,to=shop|top
+/%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%B1.%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%A6%F0%9D%90%A5$document,to=info|shop|top
 ://*.*.cn/jp|$document,to=cn
 -or-jp.net/$document,to=net
 .com/co.jp/|$document,to=com
@@ -2429,6 +2432,7 @@ sun-tv.co.jp##.m-postList_itemAds
 sun-tv.co.jp##.-ad
 eropuru.com##.element_ad_box
 ||reuters.com/pf/resources/dist/reuters-japan/js/index.js
+mamastar.jp##.c-card-ad
 mamastar.jp##.c-list-comment__li.is-content
 phileweb.com###fourm_video_pc
 hrs-game.main.jp##div[class^="ads_"]
@@ -10378,6 +10382,7 @@ sp.nicovideo.jp##.siteWide-BannerAd
 dic.nicovideo.jp###right-column > div[style*="height:250px; width:300px;"]
 dic.nicovideo.jp##.ad-bannar-maincolumn-top
 dic.nicovideo.jp##.adsense-728
+live.nicovideo.jp##aside[class^="___ad-sticky-"]
 live.nicovideo.jp##a[href="https://www.eldoahfree.com/"][target="_blank"] > img
 live.nicovideo.jp###side-banner-north
 live.nicovideo.jp###side-banner-south
@@ -11966,10 +11971,12 @@ youpouch.com##.widget_text:first-child
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/116832
 ! Duck DNS phishing domains
-!+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
-/^https?:\/\/[0-9a-z]{5,10}\.duckdns/$document,domain=duckdns.org
+!+ NOT_PLATFORM(ios, ext_android_cb, ext_safari, ext_chromium_mv3, ext_ublock)
+/^https?:\/\/[0-9a-z-]{5,10}\.duckdns/$document,domain=duckdns.org
+!+ PLATFORM(ext_chromium_mv3, ext_ublock)
+/^https?:\/\/[0-9a-z-]{5,10}\.duckdns/$document,to=duckdns.org
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
-/^https?:\/\/[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]+\.duckdns/$document,domain=duckdns.org
+/^https?:\/\/[0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-]+\.duckdns/$document,domain=duckdns.org
 !
 !
 blog.livedoor.jp###main.column > a[href^="https://amzn.to"][title] > img.pict[height="200"][width="800"]
@@ -12430,6 +12437,7 @@ nogizaka46-matome.jp#@##headerafficode
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190666#issuecomment-2408330385
 ||taboola.com^$domain=pashplus.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184080
+tver.jp#%#//scriptlet('google-ima3')
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=tver.jp,important
 ! https://gd.gesoten.com/m/ap-ecnavi-games/mypage
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=gd.gesoten.com

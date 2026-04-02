@@ -1,30 +1,30 @@
-# AG Filters Registry
+# AdGuard Filters Registry
 
-1. [Introduction](#introduction)
-1. [What filters can be added to this repository](#what-filters-can-be-added-to-this-repository)
-1. [About filters](#about-filters)
-    1. [Metadata](#metadata)
-    1. [Tags](#tags)
-    1. [Groups](#groups)
-    1. [Optimization](#optimization)
-    1. [Compiler customization](#compiler-customization)
-    1. [Localization](#localization)
-    1. [Templates](#templates)
-1. [How to build filters and patches](#how-to-build-filters-and-patches)
-1. [Use cases](#use-cases)
-    1. [Building *only AdGuard* filters and updating filters and patches](#build-adguard-filters)
-    1. [Building *all* filters and updating filters and patches](#build-all-filters)
-    1. [Working with locales](#working-with-locales)
-    1. [Expanding wildcard domains](#expanding-wildcard-domains)
-    1. [Repository compression](#repository-compression)
+AdGuard Filters Registry is the canonical repository of filter list subscriptions
+available to AdGuard users. It stores AdGuard's own filters and re-hosted
+third-party filter lists served via `filters.adtidy.org`. Filters can be slightly
+modified in order to achieve better compatibility with AdGuard.
 
-## Introduction
+The build pipeline compiles filter templates into platform-specific outputs
+for 8 AdGuard product platforms (Android, CLI, Extension, iOS, Mac, Mac v2,
+Mac v3, Windows), generates incremental patches, and produces localized metadata.
 
-This repository contains the known filters subscriptions available to AdGuard users.
-We re-host these filters on `filters.adtidy.org`.
-Also, these filters can be slightly modified in order to achieve better compatibility with AdGuard.
+## Table of Contents
 
-## What filters can be added to this repository
+- [Third-Party Filter Acceptance Policy](#third-party-filter-acceptance-policy)
+- [Filters Reference](#filters-reference)
+    - [Filter Directory Structure](#filter-directory-structure)
+    - [Tags](#tags)
+    - [Groups](#groups)
+    - [Optimization](#optimization)
+    - [Compiler Customization](#compiler-customization)
+    - [Localization](#localization)
+    - [Templates](#templates)
+- [Wildcard Domain Expansion](#wildcard-domain-expansion)
+- [Repository Compression](#repository-compression)
+- [Documentation](#documentation)
+
+## Third-Party Filter Acceptance Policy
 
 We may add third-party filters to AdGuard Filters Registry. When making a decision about adding a third-party filter,
 we follow these rules:
@@ -63,9 +63,14 @@ we follow these rules:
 
 [kb-rules-syntax]: https://adguard.com/kb/general/ad-filtering/create-own-filters
 
-## About filters
+## Filters Reference
 
-### Metadata
+Each filter lives in its own directory under `filters/` (AdGuard filters)
+or `filters/ThirdParty/` (third-party filters).
+
+### Filter Directory Structure
+
+Every filter directory contains these files:
 
 - `template.txt`
 
@@ -168,7 +173,6 @@ we follow these rules:
 
     This file contains rules that are excluded by the filters compiler based on the specified trustLevel.
 
-[gh-compiler-trust-levels]: https://github.com/AdguardTeam/FiltersCompiler/tree/master/src/main/utils/trust-levels
 [kb-hint-platforms]: https://adguard.com/kb/general/ad-filtering/create-own-filters/#platform-and-not_platform-hints
 
 ### <a id="tags"></a> Tags
@@ -221,10 +225,10 @@ until the compression goal (defined in percentages) is achieved.
 
 [kb-filter-statistics]: https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics/
 
-### Compiler customization
+### Compiler Customization
 
 Script located in `scripts/build/custom_platforms.js` customizes the way filters are compiled for certain platforms.
-We should use it if we need to temporary change rules for a platform.
+We should use it if we need to temporarily change rules for a platform.
 In all other cases, we should prefer the default configuration.
 
 Below is a example of the configuration for the platform `AdGuard for Chrome` with comments:
@@ -281,378 +285,51 @@ Please learn more about translating our products: <https://adguard.com/kb/miscel
 More information about the `@include` directive and its options
 can be found in [its documentation][gh-compiler-include-directive].
 
-## How to build filters and patches
+## Wildcard Domain Expansion
 
-1. **Install dependencies**
+Some filter rules use wildcard domains (e.g., `domain.*`). The build pipeline can expand
+these wildcards into actual live domains for platforms that require it
+(Chromium MV3, Safari, iOS).
 
-    ```bash
-    yarn install
-    ```
+The expansion process uses the `expandWildcardsInAst` function to process rules
+in the Abstract Syntax Tree (AST) format. It handles different rule categories:
 
-1. **Build filters and patches**:
+- **Network Rules** — all network rules with wildcard domains are expanded.
+- **Cosmetic Rules** — only element hiding rules and their exceptions are expanded
+  since these are natively supported in Safari content blockers.
+  Other cosmetic rules (like scriptlets) are not expanded
+  because wildcards are automatically handled by:
+    - Advanced Blocking in Safari browser;
+    - tswebextension in Browser extension MV3.
 
-    To build all filters, run:
+The wildcard domain map is stored in
+[wildcard_domains.json](./scripts/wildcard-domain-processor/wildcard_domains.json),
+where keys are wildcard domains (e.g., `domain.*`) and values contain arrays of
+live domains (e.g., `["domain.com", "domain.org"]`).
 
-    ```bash
-    yarn build
-    ```
-
-    The `yarn build` command accepts the following parameters:
-    - `-i`: Filters to build.
-    - `-s`: Filters to skip.
-    - `--no-patches-prepare`: Skip copying `platforms/` to `temp/platforms/`, used to build patches.
-      Speeds up the build when patch generation (`yarn build:patches`) is not needed afterwards.
-      Works with both `yarn build` and `yarn build:local`.
-    - `--strip-generated-meta`: After compilation, remove generated meta lines
-      (`! Checksum`, `! Diff-Path`, `! TimeUpdated`, `! Version`) from all filter files
-      in `platforms/`. Useful when comparing outputs between builds, e.g. in Total Commander.
-
-    For example, to build only AdGuard filters:
-
-    ```bash
-    yarn build -i=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,224
-    ```
-
-    It takes filter templates from the `/filters` path, loads their content,
-    compiles filters based on the provided whitelist and blacklist, generates log and report files,
-    and creates a copy of platform files for future patch generation in `temp/platforms` to compare old and new filters.
-
-    After every `yarn build`, yarn will execute the `postbuild` task,
-    which checks all generated filters in the `platforms/` folder.
-    If there are no changes in the filter except for deleting `Diff-Path` (because the compiler doesn't retrieve
-    this tag from metadata and deletes it on every compile run), the script will undo these unnecessary changes.
-
-1. **Build Patches**
-
-    To build patches with different TTL (Time To Live) and selectively include or exclude specific filter IDs,
-    use the following commands:
-
-    - For a TTL of 10 hours:
-
-        ```bash
-        yarn build:patches --time=10 --resolution=h
-        ```
-
-    - For a TTL of 60 minutes:
-
-        ```bash
-        yarn build:patches --time=60 --resolution=m
-        ```
-
-    - For a TTL of 3000 seconds:
-
-        ```bash
-        yarn build:patches --time=3000 --resolution=s
-        ```
-
-    - To include specific filter IDs:
-
-        ```bash
-        yarn build:patches --include=1,2,3
-        ```
-
-        This includes only filters with IDs 1, 2, and 3 in the patch generation process.
-
-    - To exclude specific filter IDs:
-
-        ```bash
-        yarn build:patches --skip=4,5
-        ```
-
-        This excludes filters with IDs 4 and 5 from the patch generation process.
-
-    This script recursively finds new filter files in the `platforms/` folder,
-    generates patches by comparing them with corresponding old filter files (from `temp/platforms`),
-    and saves these patches in a designated directory.
-    The `--include` and `--skip` parameters allow for selective processing of filters based on their IDs.
-    After generating the patches, the script copies any existing old patches to the new filter directory
-    and cleans up temporary files, facilitating the maintenance and updates of filters.
-
-1. **Validate Platforms**
-
-    To validate `filters.json` and `filters_i18n.json` for platforms, use the following command:
-
-    ```bash
-    yarn validate:platforms ./platforms
-    ```
-
-1. **Validate Locales**
-
-    To validate locales, use the following command:
-
-    ```bash
-    yarn validate:locales
-    ```
-
-1. (Optional) **Combined Validation**
-
-    Two previous steps can be combined and run with a single command:
-
-    ```bash
-    yarn validate
-    ```
-
-1. **Generate filter cache**
-
-    To update the cached `filter.txt` files in `filters` dir, used for testing/reproducible builds, run a build
-    with the `--generate-cache` flag:
-
-    ```bash
-    yarn generate-cache
-    ```
-
-    This compiles every filter from its `template.txt` and updates the corresponding
-    `filter.txt` inside `filters/`. Platform-specific filters and patches are **not** generated.
-    The resulting `filter.txt` files contain the fully resolved filter content
-    (all `@include` and `!#include` directives expanded) and can be used to build filters from
-    cache using `--use-cache` parameter.
-
-1. **Build from cache**
-
-    To build filters from the previously cached `filter.txt` files without downloading
-    filters, run:
-
-    ```bash
-    yarn build:local
-    ```
-
-    Under the hood this copies `filters/` to `temp/filters_cached/`,
-    replaces every `template.txt` with a single `@include "./filter.txt"` directive,
-    and compiles from that copy. The original `filters/` directory is never modified.
-
-    The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` parameters can be combined:
-
-    ```bash
-    yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
-    ```
-
-    **Typical workflow — comparing two compiler versions:**
-
-    1. Download and compile filter content into cache:
-       `yarn generate-cache`
-    1. Build from cache with generated metadata lines stripped:
-       `yarn build:local --no-patches-prepare --strip-generated-meta`
-    1. Rename the output: `mv platforms platforms_A`.
-    1. Switch to the other compiler version (e.g. `yarn add @adguard/filters-compiler@...`).
-    1. Build again with the same flags:
-       `yarn build:local --no-patches-prepare --strip-generated-meta`
-    1. Rename the output: `mv platforms platforms_B`.
-    1. Diff the two directories (e.g. in Total Commander, WinMerge, or with `diff -r`).
-
-    Both runs use the exact same cached filter content and strip all
-    volatile metadata (`! Checksum`, `! Diff-Path`, `! TimeUpdated`,
-    `! Version`), so any difference comes solely from the compiler.
-
-## <a id="use-cases"></a> Use Cases
-
-### <a id="build-adguard-filters"></a> Building *only AdGuard* filters and updating filters and patches
-
-1. **Install Dependencies**
-
-    ```bash
-    yarn install
-    ```
-
-1. **Run the Build Process**
-
-    ```bash
-    yarn auto-build --mode adguard
-    ```
-
-### <a id="build-all-filters"></a> Building *all* filters and updating filters and patches
-
-1. **Install Dependencies**
-
-    ```bash
-    yarn install
-    ```
-
-1. **Run the Build Process**
-
-    ```bash
-    yarn auto-build --mode all
-    ```
-
-### Working with Locales
-
-For information on working with locales, please refer to the [translations docs].
-
-[translations docs]: ./scripts/translations/README.md
-
-### Expanding wildcard domains
-
-You can expand wildcard domains using the CLI commands provided in this project.
-These commands help update and expand wildcard domains across various platforms.
+The list of supported top level domains (TLD) is limited by default. To add a new TLD,
+update [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts).
 
 More information on why this feature was needed can be found in [the related task][#964].
 
 [#964]: https://github.com/AdguardTeam/FiltersRegistry/issues/964
 
-> The list of supported top level domains (TLD) is limited by default. To add a new TLD,
-> update [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts) and follow
-> the instructions below.
+For build commands, see [Development Guide](DEVELOPMENT.md#wildcard-domain-processing).
 
-1. **Install dependencies**
+## Repository Compression
 
-    ```bash
-    yarn install
-    ```
+For the compression procedure and commands, see
+[Development Guide](DEVELOPMENT.md#repository-compression).
 
-1. **Update wildcard domains**
+## Documentation
 
-    This command updates the list of wildcard domains by expanding entries like `domain.*`
-    from the filters using TLDs from [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts),
-    checks which of the resulting domains are alive,
-    and saves them to `alive` property in [wildcard_domains.json] where:
-
-    - keys are wildcard domains, e.g., `domain.*`;
-    - values are arrays of checked domains, e.g., `['domain.com', 'domain.org']`.
-
-    There is also a list of dead domains found during the check,
-    and it is saved to `dead` property in [wildcard_domains.json].
-
-    **Syntax**
-
-    ```bash
-    yarn update-wildcard-domains <filtersDir> <wildcardDomainsFile>
-    ```
-
-    where:
-
-    - `<filtersDir>` — directory containing the filter files.
-    - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
-
-    **Usage**
-
-    ```bash
-    yarn update-wildcard-domains filters scripts/wildcard-domain-processor/wildcard_domains.json
-    ```
-
-1. **Expand wildcard domains**
-
-    This command processes platform-specific filters and replaces wildcard domains with actual
-    live domains based on the map in the file [wildcard_domains.json].
-
-    **Syntax**
-
-    ```bash
-    yarn expand-wildcard-domains <platformsDir> <wildcardDomainsFile>
-    ```
-
-    where:
-
-    - `<platformsDir>` — directory containing the platform files.
-    - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
-
-    **Usage**
-
-    ```bash
-    yarn expand-wildcard-domains platforms scripts/wildcard-domain-processor/wildcard_domains.json
-    ```
-
-1. **How wildcard expansion works**
-
-    The wildcard expansion process uses the `expandWildcardsInAst` function to process rules
-    in the Abstract Syntax Tree (AST) format. The function handles different rule categories:
-
-    - **Network Rules** — all network rules with wildcard domains are expanded.
-
-    - **Cosmetic Rules** — only element hiding rules and their exceptions are expanded
-      since these are natively supported in Safari content blockers.
-      Other cosmetic rules (like scriptlets) are not expanded
-      because wildcards are automatically handled by:
-
-        - Advanced Blocking in Safari browser;
-        - tswebextension in Browser extension MV3.
-
-    The expansion process replaces wildcard domains with their non-wildcard equivalents
-    based on the mapping provided in the wildcard domains file.
-
-[wildcard_domains.json]: ./scripts/wildcard-domain-processor/wildcard_domains.json
-
-#### CLI commands help
-
-To see the help information for each command, you can use the `-h` option:
-
-- **Update wildcard domains help**:
-
-```bash
-yarn update-wildcard-domains -h
-```
-
-- **Expand wildcard domains help**:
-
-```bash
-yarn expand-wildcard-domains -h
-```
-
-These commands must be run from the root directory of the project,
-and the directories specified will be resolved relative to the current working directory.
-
-### Repository compression
-
-Once a year, we will compress the repository to reduce its size.
-We will delete all remote branches and overwrite the master branch with a squashed history.
-The compression script will retain the first N commits in their original order in the history.
-All other commits (except the first one) will be squashed into a single commit.
-
-#### How to
-
-##### 1. Squash all old commits
-
-```bash
-yarn install
-yarn compress [commits_to_keep]
-```
-
-It will retain the first `[commits_to_keep]` (default is 10000,
-which is approximately one year of history) commits, starting from now, in their original order in the history.
-All other older commits (except the very first one) will be squashed into a single commit.
-
-##### 2. Overwrite master branch
-
-```bash
-git push --set-upstream origin --force master
-```
-
-##### 3. List all remote branches
-
-```bash
-git ls-remote --heads origin
-```
-
-##### 4. Remove remote branches
-
-Remove remote branches that are no longer needed locally
-and push the removal to the remote repository:
-
-```bash
-git push origin --delete branchName
-```
-
-Replace `branchName` with the name of the branch you want to delete.
-
-##### 5. Prune remote branches
-
-Use git remote prune origin to remove references to remote branches that have been deleted on the remote repository.
-This keeps your local repository in sync with the remote:
-
-```bash
-git remote prune origin
-```
-
-##### 6. Clean the reflog
-
-Over time, Git can accumulate references in the reflog that are no longer needed.
-You can clean the reflog using the following command:
-
-```bash
-git reflog expire --expire=now --all
-git gc --aggressive --prune=now
-```
-
-This will remove unnecessary entries from the reflog and perform garbage collection.
-
-After this procedure git repository will reduce it's size.
+- [Development Guide](DEVELOPMENT.md) — development setup, build commands, and workflow
+- [LLM Agent Rules](AGENTS.md) — project context, code guidelines, and contribution rules
+- [Translations](scripts/translations/README.md) — localization workflow
+- [AdGuard knowledge base: filter syntax][kb-rules-syntax]
+- [AdGuard knowledge base: filter statistics][kb-filter-statistics]
+- [Filters compiler: trust levels][gh-compiler-trust-levels]
+- [Filters compiler: @include directive][gh-compiler-include-directive]
 
 [gh-compiler-include-directive]: https://github.com/AdguardTeam/FiltersCompiler#include-directive
+[gh-compiler-trust-levels]: https://github.com/AdguardTeam/FiltersCompiler/tree/master/src/main/utils/trust-levels

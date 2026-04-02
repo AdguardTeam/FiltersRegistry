@@ -1,11 +1,18 @@
-! Checksum: nRh30VnO79xu37ZBiEv/Ew
-! Diff-Path: ../patches/227/227-s-1774630261-14400.patch
-! Title: List-KR
-! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.82
-! TimeUpdated: 2026-03-27T16:47:35+00:00
+! Checksum: Nwb5l5wz2ce2YYYmQ0OkpA
+! Diff-Path: ../patches/227/227-s-1775106904-14400.patch
+! Title: List-KR Classic filter list
+! Description: The List-KR Сlassic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
+! Version: 2.0.23.85
+! TimeUpdated: 2026-04-02T05:12:01+00:00
 ! Expires: 12 hours (update frequency)
 !
+! Title: List-KR classic filters list (AdGuard)
+! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
+! OriginalVersion: 2026.20545.0
+! Expires: 1 day (update frequency)
+! Homepage: https://github.com/List-KR/List-KR
+! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
+||barohere.xyz^
 ||ad.adwiser.kr^
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -551,8 +558,7 @@ namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[c
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
-!
-||cdn.algumon.com/temp/$image
+||algumon.com/n/api/ca/list
 ||api.coupangstreaming.com/ads-vod-public/
 /mobus/resources/images/route_inquiry_addBoxImg$domain=m.bustago.or.kr
 ||m.stock.naver.com/front-api/ad/reward
@@ -1691,7 +1697,9 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
-www.algumon.com##.deal-content .deal-2col:is(:has(> div[style^="display: flex; justify-content: center;"]), :has(> div[style^="display:flex;"] > .adsbygoogle))
+prod.danawa.com##.ad-floating-banner
+prod.danawa.com##.powershopping-prod
+www.algumon.com##.deal-content .deal-2col:is(:has(div[style^="display: flex; justify-content: center;"] p[class^="fb-desc svelte-"]), :has(> div[style^="display:flex;"] > .adsbygoogle))
 damoang.net##div[data-slot="board-list-promotion"]
 damoang.net##main .gap-4.sm\:grid-cols-3 > .gap-1
 damoang.net##aside .gap-4 > div[data-slot="sidebar-banner"]
@@ -3706,7 +3714,6 @@ hdhd344.net,hdhd345.net,hdhd346.net,hdhd347.net,hdhd348.net,hdhd349.net,hdhd350.
 blacktoon302.com,blacktoon303.com,blacktoon304.com,blacktoon305.com,blacktoon306.com,blacktoon307.com,blacktoon308.com,blacktoon309.com,blacktoon310.com,blacktoon311.com,blacktoon312.com,blacktoon313.com#?#.alert.alert-danger:has(> a:contains([AD]))
 !
 ! DOMAIN-REFRESHER: END
-!
 ! Check after 2024 April 1st.
 zum.com#%#//scriptlet('set-constant', '_ads_zum_main_initbanner_750_zum_main_br_widget_336', 'true')
 ! PopMagic
@@ -3801,7 +3808,6 @@ zzzz.lol#%#//scriptlet('prevent-setInterval', 'animationEffects[settings.animati
 [$domain=/lover[0-9]\.net/]#%#//scriptlet('adjust-setTimeout', 'closeBtn.innerHTML', '*', '0.001')
 !
 ! DOMAIN-REFRESHER: END
-!
 ! #%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '/adscale_slot_id/')
 asdn.kr,healthfeed.co.kr,bikesell.co.kr,remiz.co.kr,enjoytaiwan.co.kr,poketory.com,withukor.com,tistory.com,love.asdn.kr,untitle.org,seo-marketing.co.kr#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '/adscale_slot_id/')
 ! #%#//scriptlet('prevent-setTimeout', '/\.displayMessage\(/')
@@ -4001,8 +4007,6 @@ kio.ac$$script:contains(K$())
 ||newspic.kr^$removeparam=cp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208160
 @@||m.sktuniverse.co.kr/html/template/*.html$xmlhttprequest,elemhide,jsinject,extension
-!
-!
 ! This file contains the trusted rules
 ! chzzk.naver.com#%#//scriptlet('trusted-replace-xhr-response', ',"adFree":false', ',"adFree":true', 'my-info')
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')

@@ -1,15 +1,15 @@
-! Checksum: ut6uSzG/Y4772WZRgVGxYg
-! Diff-Path: ../patches/203/203-s-1774630232-14400.patch
+! Checksum: dBnUxiMccjGwmYXgVNhMmQ
+! Diff-Path: ../patches/203/203-s-1775119841-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads, privacy threats, and security risks on websites in the Hungarian language.
-! Version: 2.0.4.92
-! TimeUpdated: 2026-03-27T16:47:21+00:00
+! Version: 2.0.4.95
+! TimeUpdated: 2026-04-02T08:47:32+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: hTO/GjMGIHXbYLpKk89jjQ
-! OriginalVersion: 202603260438
+! Checksum: UwuBbwWLS/iZ6tWc8VMqWA
+! OriginalVersion: 202604020836
 ! Title: Hufilter for AdGuard
-! Last modified: 26 Mar 2026 04:38 UTC
+! Last modified: 02 Apr 2026 08:36 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -389,7 +389,6 @@ eletmod.hu##.super
 eletmod.hu##[class*="hirdetes"]
 eletmod.hu##[id*="banner"]
 eletmod.hu##[id*="etarget"]
-emag.hu##.js-banner-carousel
 epresso.hu##[class*="banner"]
 eredmenyek.com###onetrust-banner-sdk
 erettsegi.com##.code-block
@@ -457,8 +456,6 @@ gportal.hu##[class*="banner"]
 gsplus.hu,pcwplus.hu##.ad
 gsplus.hu,pcwplus.hu##.box-wrapper > .box-actual-magazine + .box-html
 gumiszoba.com##.wpcnt
-gyakorikerdesek.hu###adryf
-gyakorikerdesek.hu##.rltdwidget
 gyakorikerdesek.hu##IFRAME
 gyakorikerdesek.hu##[id*="aswift"]
 gyakorikerdesek.hu##td.txtcenter:has(>script+ins)
@@ -539,7 +536,6 @@ hogymondom.hu##img[src*="ads"]
 hogymondom.hu##td > a > img[data-src]
 hogymondom.hu##td > a[href*="utm_campaign"]
 hotdog.hu###tetszett
-hoxa.hu##[data-adblockonly]
 hrportal.hu##.ui-widget-overlay
 hrportal.hu##[class*="banner"]
 hrportal.hu###cucc
@@ -1221,6 +1217,7 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owne
 ||*$image,domain=gyakorikerdesek.hu
 ||*$media,domain=gyakorikerdesek.hu
 @@||gyakorikerdesek.hu/p/$image,domain=gyakorikerdesek.hu
+@@||static.gyakorikerdesek.hu/favicon.ico$image,domain=gyakorikerdesek.hu
 ! https://github.com/hufilter/hufilter/issues/172
 /dl/cnt/20[^0]\d-\d{2}/\d{4}//$image,domain=prohardver.hu|mobilarena.hu|logout.hu|hardverapro.hu
 ||3monkey.lol/vilagunk_640.html$domain=vilagunk.hu
@@ -1279,7 +1276,6 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owne
 ||geeks.hu/*body-bg-*.$image
 ||gigasex.hu/bannerek/$image
 ||glassdoor.com/app/static/js/gd-fj-ads-init$script
-||gyakorikerdesek.hu/pic/bannerek/$image
 ||harmonet.hu/*hirdetes
 ||hasznaltgsm.hu/gsm/iframes/
 ||hatarido-szamitas.hu/partnerek/
@@ -2058,8 +2054,7 @@ greendex.hu#@#.heateor_sss_sharing_container
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
-! https://github.com/uBlockOrigin/uAssets/issues/32204#issuecomment-4062542193
-gyakorikerdesek.hu,hoxa.hu#?#[href^="/"]:matches-css(background:/https/)
+gyakorikerdesek.hu,hoxa.hu#?#a[rel]:matches-css(background: /url.*static/)
 ! https://github.com/uBlockOrigin/uAssets/issues/23271
 jofogas.hu#%#//scriptlet('prevent-setTimeout', 'E(!1)')
 myonlineradio.hu#$#._bannerTop1 { background-color: transparent !important; }

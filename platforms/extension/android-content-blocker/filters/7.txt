@@ -1,8 +1,8 @@
-! Checksum: EvjDZJN+iCJU1hX460Lt1Q
+! Checksum: Z/zn1CLGhwHKHLcqOSzjBg
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.73.8
-! TimeUpdated: 2026-03-27T13:34:37+00:00
+! Version: 2.0.73.17
+! TimeUpdated: 2026-04-02T14:32:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1230,6 +1230,8 @@ kyukyoku-matome.com##.widget_pc_ad
 /wp-content/uploads/2024/09/fanza_ad$image
 !
 ! Malware/Phishing
+.cfd/gatway/check.php?r=$document
+-ne-jp.duckdns.org/$document
 .cfd/?track=sjnlogin$document
 .com/api/v1/verify/fingerprint|$xmlhttprequest,~third-party
 .com/api/support/MessageGet|$xmlhttprequest,~third-party
@@ -1352,6 +1354,7 @@ kyukyoku-matome.com##.widget_pc_ad
 .php?nbVVVsa^$document
 ://rakuten-card.*.cn/Mobile/login.php$document
 ||web.core.windows.net/*Security0*/index.html$document
+.pics/shopping/item/m*/?zenid=$document
 .cv/shopping/item/m*/?zenid=$document
 .com/shopping/item/m*/?zenid=$document
 .com/mart/detail/m*?zenid=$document
@@ -1439,7 +1442,7 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 ://eki*.*.com/Personal/member/Login/index.php?oneTimeAccessID=$document
 .com/ae/login.php?openid.pape.max_auth_age=0&openid.return_to=%$document
 !
-/%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%B1.%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%A6%F0%9D%90%A5$document,domain=shop|top
+/%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%B1.%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%A6%F0%9D%90%A5$document,domain=info|shop|top
 ://*.*.cn/jp|$document,domain=cn
 -or-jp.net/$document,domain=net
 .com/co.jp/|$document,domain=com
@@ -1776,6 +1779,7 @@ sun-tv.co.jp##.m-postList_itemAds
 sun-tv.co.jp##.-ad
 eropuru.com##.element_ad_box
 ||reuters.com/pf/resources/dist/reuters-japan/js/index.js
+mamastar.jp##.c-card-ad
 mamastar.jp##.c-list-comment__li.is-content
 phileweb.com###fourm_video_pc
 hrs-game.main.jp##div[class^="ads_"]
@@ -8965,6 +8969,7 @@ sp.nicovideo.jp##.siteWide-BannerAd
 dic.nicovideo.jp###right-column > div[style*="height:250px; width:300px;"]
 dic.nicovideo.jp##.ad-bannar-maincolumn-top
 dic.nicovideo.jp##.adsense-728
+live.nicovideo.jp##aside[class^="___ad-sticky-"]
 live.nicovideo.jp##a[href="https://www.eldoahfree.com/"][target="_blank"] > img
 live.nicovideo.jp###side-banner-north
 live.nicovideo.jp###side-banner-south
@@ -9509,7 +9514,7 @@ youpouch.com##.widget_text:first-child
 ! https://github.com/AdguardTeam/AdguardFilters/issues/116832
 ! Duck DNS phishing domains
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
-/^https?:\/\/[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]+\.duckdns/$document,domain=duckdns.org
+/^https?:\/\/[0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-]+\.duckdns/$document,domain=duckdns.org
 !
 !
 blog.livedoor.jp###main.column > a[href^="https://amzn.to"][title] > img.pict[height="200"][width="800"]
