@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { compile } from '@adguard/filters-compiler';
+import { compile, optimizationConfigLocal } from '@adguard/filters-compiler';
 import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import {
@@ -63,7 +63,9 @@ const filtersDir = path.join(__dirname, '../../filters');
 const logPath = path.join(__dirname, '../../log.txt');
 const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
 const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
-const cachedFiltersDir = path.join(__dirname, '../../temp/filters_cached');
+const tempDir = path.join(__dirname, '../../temp');
+const cachedFiltersDir = path.join(tempDir, 'filters_cached');
+const optimizationConfigCachePath = path.join(tempDir, 'optimization_config');
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -119,6 +121,12 @@ const buildFilters = async () => {
     // When --generate-cache we only need to compile filters (which updates filter.txt),
     // skip platform generation, patches preparation, and temp/platforms copying.
     if (generateCache) {
+        await fs.promises.rm(optimizationConfigCachePath, { recursive: true, force: true });
+        await optimizationConfigLocal.generate(optimizationConfigCachePath);
+        optimizationConfigLocal.setPath(optimizationConfigCachePath);
+        // eslint-disable-next-line no-console
+        console.log(`Using local optimization config from: ${optimizationConfigCachePath}`);
+
         await compile(
             filtersDir,
             logPath,
@@ -151,6 +159,9 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
+        optimizationConfigLocal.setPath(optimizationConfigCachePath);
+        // eslint-disable-next-line no-console
+        console.log(`Using local optimization config from: ${optimizationConfigCachePath}`);
     }
 
     try {

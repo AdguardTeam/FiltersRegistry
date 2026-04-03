@@ -23,7 +23,7 @@ for all supported AdGuard products.
     - `zod` — schema validation
     - `crypto-js` — checksum computation
 - **Storage**: File-system based; no database
-- **Testing**: Vitest (unit tests for wildcard-domain-processor)
+- **Testing**: Vitest (unit + integration tests under `scripts/*/__tests__/`);
 - **Target Platform**: Node.js CLI tooling; build outputs target 8 top-level AdGuard product
   platforms (Android, CLI, Extension, iOS, Mac, Mac v2, Mac v3, Windows).
   The Extension platform has 9 sub-targets: Chromium, Chromium MV3, Edge, Firefox, Opera,
@@ -118,8 +118,10 @@ After completing any task that modifies code in `scripts/`:
     yarn test
     ```
 
-3. **Update tests for changed code.** If you modify logic in `scripts/wildcard-domain-processor/`,
-   add or update corresponding tests in `scripts/wildcard-domain-processor/__tests__/`.
+3. **Update tests for changed code.** Add or update tests in the `__tests__/` directory
+   alongside the code you changed:
+   - `scripts/wildcard-domain-processor/__tests__/` for wildcard-domain-processor changes
+   - `scripts/build/__tests__/` for build script changes
 
 4. **Validate platform outputs** if filters, templates, or build scripts changed.
 
