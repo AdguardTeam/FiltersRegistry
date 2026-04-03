@@ -1,5 +1,5 @@
-! Checksum: 5HaUI3LOHmY1bgZTyyqoBQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1775178244-14400.patch
+! Checksum: zvzphjZX6oD6MV431dhu+Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1775193392-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.48
@@ -63,7 +63,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
 ||track.vcdc.com^$all,domain=~malware_redirection_trains.*
-?bemobdata=$all
 [2600:1f18:43d1:2a04:ee05:261e:d408:7ba1]$network
 !+ PLATFORM(windows, mac, android, cli)
 /^172\.255\.6\.(\d\d?|(17?|2)[0-689]\d)$/$network
@@ -268,6 +267,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 108.62.157.10$network
 .avito.www.booking.$all
+||fruitlessleanslender.com^$all
 ||paddlemoscowsplit.com^$all
 ||recipientpopulationregret.com^$all
 !+ PLATFORM(windows, mac, android, cli)
@@ -610,6 +610,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 /adx_iframe_$third-party
 drvhub.net##.driver-item__install
 |https://undefined/
+||adverttise.com^$all
 ||bestadperf.com^$all
 ||bonusnun.com^$all
 ||perfsimpl.com^$all
@@ -618,6 +619,7 @@ drvhub.net##.driver-item__install
 ||tamping.net^$all
 ||trckprf.com^$all
 ||watchnowclick.com^$all
+||xmladsystem.com^$all
 ||zentrixads.com^$all
 [2604:9e00:1:129::2:b10]$network
 [2606:4700:3033::6815:5644]$network
@@ -625,10 +627,14 @@ drvhub.net##.driver-item__install
 ||aenhance.link^$all
 ||prodproof.com^$all
 ||admozartxml.com^$all
+||adxfactory.com^$all
 ||bidmyadz.com^$all
+||ctrtraffic.com^$all
 ||explorads.com^$all
+||flurryad.com^$all
 ||healthvot.com^$all
 ||mainexpclkdir.com^$all
+||mediacpc.com^$all
 ||mobuppsrtb.com^$all
 [2a00:8860:10d:1::2:b01]$network
 ||driverpack.io^$document,domain=~has_extreme_amounts_of_pup_in_it.*
@@ -644,7 +650,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||ogp.me^$csp=upgrade-insecure-requests
 ||detectportal.firefox.com^$csp=upgrade-insecure-requests
 msftconnecttest.com^$csp=upgrade-insecure-requests
-www.microsoft.com##.card[data-bi-cn*="car chase" i][data-bi-cn*=racing i]
 !+ PLATFORM(windows, mac, android, cli)
 212.27.60.108$network
 ||amazonaws.com^$all,badfilter
@@ -823,6 +828,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##a[title="Share on WhatsApp" i]
 ##a[title^="Share to "]
 ##amp-social-share
+##button[class*=ShareOverlayButton i]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
 ##button[title^="Share this "]
@@ -1036,7 +1042,6 @@ chromewebstore.google.com##div[aria-labelledby=promo-header]
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
 bing.com#?##b_pole:contains(Microsoft Edge)
-bing.com##.bnp_btc
 bing.com##.bnp_fly_hp
 microsoft.com,windows.com###epb
 outlook.live.com##div[class*=" body-"] > div[class] > div[class]:not([role]) > div:first-of-type:not([class])
@@ -1261,7 +1266,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 @@||lemondeinformatique.fr^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||consentmanager.net^$script,third-party,badfilter
-@@||securitytrails.com^
 @@||www.joesandbox.com^
 @@||virustotal.com^
 @@://safeweb.norton.com^
@@ -1695,6 +1699,11 @@ $document,removeparam=/^source=pepperjam$/
 $document,removeparam=/^source=cj$/
 $removeparam=affil
 $removeparam=cjid
+$removeparam=cl_crtv
+$removeparam=cl_camp
+$removeparam=cl_aid
+$removeparam=cl_vend
+$removeparam=cl_ch
 $removeparam=irsharedid
 $removeparam=hvarAID
 $removeparam=sv_affiliate_id
@@ -1947,6 +1956,7 @@ $removeparam=adsafe_url
 $removeparam=mt_uuid
 $removeparam=sifi_uid
 $removeparam=_rlid
+$removeparam=turn_id
 $removeparam=ga_fc
 $removeparam=ga_client_id
 $removeparam=s_id
@@ -2141,6 +2151,7 @@ $removeparam=cmpgn,domain=ebay.*
 ||ebay.$removeparam=segname
 ://www.ebay.$document,removeparam=/^itm[a-zA-Z0-9].*$/
 ||ebay.$removeparam=_skw
+$removeparam=hc_location
 $removeparam=sfnsn
 ?*__$~xmlhttprequest,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
@@ -2587,6 +2598,7 @@ $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||apple.com^$removeparam=mttnsubplmnt
 $removeparam=wfr,domain=weidian.com|baidu.com
 $removeparam=organic_search_click
+$removeparam=pop,domain=etsy.com
 $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
@@ -2682,7 +2694,6 @@ $removeparam=cxt,domain=twitter.com|x.com
 $removeparam=mwv_rm
 ||comodo.com^$removeparam=track
 $removeparam=af,domain=1fichier.com|comodo.com
-$removeparam=intcid,domain=cbsnews.com
 ||mercadolibre.com.mx^$removeparam=/^matt_.*$/
 ||lidl.$removeparam=flyx
 $removeparam=s_kw,domain=expansion.com|marca.com
@@ -2818,7 +2829,6 @@ ref=spreadprivacy.com$removeparam=ref
 ||github.com^$removeparam=reference_location
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
-$document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
 ||linkedin.com/feed/update$removeparam=origin
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
@@ -2835,7 +2845,6 @@ $removeparam=partner,domain=accuweather.com|fastcompany.com|humblebundle.com
 ||audible.$removeparam=source_code
 ||audible.$removeparam=ipRedirectFrom
 ||audible.$removeparam=ipRedirectOriginalURL
-$removeparam=x-acqsource
 $removeparam=csrc,domain=mcafee.com|vitacost.com
 $removeparam=csrcl2
 ||mcafee.com^$removeparam=cctype
@@ -3002,10 +3011,6 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||microsoft.com^$removeparam=refSource
 ||microsoft.com^$removeparam=refPage
 ||store.steampowered.com^$document,removeparam=curator_clanid
-$document,removeparam=refid,domain=press.aboutamazon.com|aws.amazon.com|aws.eu
-$document,removeparam=sc_ichannel,domain=aws.eu|pages.awscloud.com
-$document,removeparam=sc_icampaign,domain=aws.eu|pages.awscloud.com
-$document,removeparam=sc_iplace,domain=aws.eu|pages.awscloud.com
 ||musescore.com^$document,removeparam=feature
 $document,removeparam=intid,domain=homedepot.*
 ref=theneedlenews.com$document,removeparam=ref
