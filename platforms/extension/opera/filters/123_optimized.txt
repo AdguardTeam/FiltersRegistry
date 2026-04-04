@@ -1,9 +1,9 @@
-! Checksum: FkghZu0zRoQGSpL0T7lPSQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1775264367-14400.patch
+! Checksum: pkjeYdwMI98jQzhQTKfewg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1775279369-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.59.24
-! TimeUpdated: 2026-04-04T00:56:15+00:00
+! Version: 2.1.59.25
+! TimeUpdated: 2026-04-04T05:05:46+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -49,7 +49,6 @@
 /jquery.sharecount.min.js
 /juiz-social-post-sharer.min.js
 /lg-share.js
-/like_button.js
 /like_button.png
 /likebox.php
 /likesScript.js
@@ -192,6 +191,7 @@ _social_footer_
 ###custom-tweet-button
 ###desktop-share-wrapper
 ###details-share-icon-link
+###divFacebook
 ###divSideShare
 ###divSocial
 ###embed-share
@@ -449,6 +449,7 @@ _social_footer_
 ###shareLink
 ###shareLinks
 ###shareMenu
+###shareOverlay
 ###sharePage
 ###sharePageControl
 ###sharePinterest
@@ -605,6 +606,7 @@ _social_footer_
 ###socialHeader
 ###socialHolder
 ###socialIcons
+###socialInstagram
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
@@ -1153,7 +1155,6 @@ _social_footer_
 ##.custom-sharing
 ##.custom-social
 ##.custom-social-share
-##.custom_social
 ##.d3-o-share-bar
 ##.dark-social
 ##.dashicons-facebook
@@ -1287,6 +1288,7 @@ _social_footer_
 ##.facebook_box
 ##.facebook_icn
 ##.facebook_icon
+##.facebook_image
 ##.facebook_large
 ##.facebook_like
 ##.facebook_like_box
@@ -1360,6 +1362,7 @@ _social_footer_
 ##.flare-horizontal
 ##.flaticon-facebook
 ##.float-share
+##.floating-facebook
 ##.floating-header-share
 ##.floating-share
 ##.floating-share-bar
@@ -1562,6 +1565,7 @@ _social_footer_
 ##.group--social
 ##.gs-share
 ##.gshare
+##.gtm-social-link
 ##.gtm_footer_facebook
 ##.gtm_footer_instagram
 ##.gtm_footer_twitter
@@ -1842,6 +1846,7 @@ _social_footer_
 ##.lien-facebook
 ##.lien-instagram
 ##.like-fb
+##.like-layer
 ##.like-share
 ##.like_block
 ##.like_block_rendered
@@ -1919,6 +1924,7 @@ _social_footer_
 ##.mashsb-container
 ##.masterSocialbutton
 ##.masthead-social
+##.material-icons-share
 ##.mc-share-toggle
 ##.md-social-toolbar-circle
 ##.mdi-facebook
@@ -1993,13 +1999,13 @@ _social_footer_
 ##.mvp-soc-mob-list
 ##.mvp-soc-mob-pin
 ##.mvp_facebook_widget
-##.nShare
 ##.native-share
 ##.native-share-buttons
 ##.nav--share
 ##.nav--social
 ##.nav-footer-social
 ##.nav-share
+##.nav-share-btn
 ##.nav-soc-but
 ##.nav-social-links
 ##.nav-social-wrap
@@ -2434,6 +2440,7 @@ _social_footer_
 ##.share-this-article
 ##.share-this-page
 ##.share-this-popover
+##.share-this-post
 ##.share-tiktok
 ##.share-title
 ##.share-to
@@ -2477,7 +2484,6 @@ _social_footer_
 ##.shareBtn
 ##.shareBtnContainer
 ##.shareBtns
-##.shareButt
 ##.shareButtons
 ##.shareButtons-button
 ##.shareButtons-buttons
@@ -2528,7 +2534,6 @@ _social_footer_
 ##.share__button
 ##.share__button-container
 ##.share__buttons
-##.share__container--article
 ##.share__facebook
 ##.share__header-btn
 ##.share__icon
@@ -2587,7 +2592,6 @@ _social_footer_
 ##.share_small
 ##.share_social
 ##.share_story
-##.share_tb
 ##.share_this
 ##.share_three
 ##.share_toggle
@@ -3027,7 +3031,6 @@ _social_footer_
 ##.social-sharing-btn
 ##.social-sharing-button
 ##.social-sharing-buttons
-##.social-sharing-item
 ##.social-sharing-link
 ##.social-sharing-top
 ##.social-sharing__icons
@@ -3390,7 +3393,6 @@ _social_footer_
 ##.twitter-follow-box
 ##.twitter-followers
 ##.twitter-footer
-##.twitter-hashtag
 ##.twitter-inner
 ##.twitter-module
 ##.twitter-popup
@@ -3405,6 +3407,7 @@ _social_footer_
 ##.twitter-wrap
 ##.twitter-wrapper
 ##.twitterBadge
+##.twitterBlock
 ##.twitterBox
 ##.twitterFollow
 ##.twitterIcon
@@ -3919,7 +3922,6 @@ mediaite.com##.c-youtube-subscribe
 yahoo.com##.caas-comment
 yahoo.com##.caas-content-contain-share
 cgdirector.com##.cgd-social-wrapper
-thecinemaholic.com##.cinemaholic-share
 mustsharenews.com##.code-block-18
 goal.com##.component-share
 goal.com##.component-social-twitter
@@ -4057,7 +4059,6 @@ yardbarker.com##.msnfc
 denofgeek.com##.nav-social__items
 triblive.com##.navbar-right
 chess.com##.navigation-footer-platforms-component
-thesouthafrican.com##.navigator-share
 pmc.ncbi.nlm.nih.gov##.ncbi-footer__icon-section
 nerdist.com##.nerdist-social-share
 taiwebs.com##.networking
@@ -4340,7 +4341,6 @@ theintercept.com#?#[data-ga-track-action]:contains(Join The Conversation)
 theshovel.com.au#?#.padding-top-small > .widgetizedArea:contains(Like this)
 tvblackbox.com.au#?#.tdm-descr:contains(Share)
 twitch.tv#?#.tw-balloon:contains(Share To)
-royalqueenseeds.*##.social-media-icons-footer
 1movies.bz,avira.com,betakit.com,byjus.com,commentpicker.com,hakaimagazine.com,hollywoodlife.com,homemark.co.za,ilgiornale.it,iphoneitalia.com,malaymail.com,maxabout.com,motorsport-xl.de,ncbi.nlm.nih.gov,novosti.rs,nu.nl,politico.eu,tennismagazin.de,thepostmillennial.com,uncnews.unc.edu##.social-sharing
 exafm.com,goldderby.com,lacaderadeeva.com,lamejor.com.mx,lasillarota.com,mvsnoticias.com,pronto.com.ar,radioformula.com.mx,revistaforum.com.br,sumedico.com##.share-group
 beebom.com,captimes.com,cheknews.ca,cockroachlabs.com,cpac.ca,estadao.com.br,fandomwire.com,gta5-mods.com,mag.toyota.co.uk,mydramalist.com,philstarlife.com,silicon.co.uk,silicon.de,silicon.es,silicon.fr,silicon.pt,stadiumtalk.com##.share-container
@@ -4593,6 +4593,7 @@ uol.com.br##.solar-header-columnist-socialmedia-content
 terra.com.br##.t360-sharebar__wrapper
 tecmundo.com.br##.tec--didyouknow
 tecmundo.com.br##.tec--share__container
+gaudiumpress.org##.widget_gaudium_social_links_widget
 r7.com##[class*="article-fill-social-"]
 infomoney.com.br##[data-ds-element^="social-share-"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]
