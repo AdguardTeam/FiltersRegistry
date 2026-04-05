@@ -1,5 +1,5 @@
-! Checksum: 3jVIG1AiqrHGgN0riVmNog
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1775330364-3600.patch
+! Checksum: G8VoPkXSz6qDYt0QvuCJxg
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1775358822-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.43.18
@@ -786,6 +786,7 @@ vuku.tv##div[class^="bookmarks_div"]
 g-tv.ru/videomore_gtv.php?video_id=*&auto_play=1$domain=kino-dom.tv
 24tv.ua##.programs_wrap
 sports.ru##.c-favorite-team
+sports.ru##.js_favteam > .tooltips
 ||sports.ru/censusbarca/*.js
 sports.ru##.news-item__sources
 cyber.sports.ru,m.sports.ru##.b-news-sources
@@ -1245,6 +1246,7 @@ observer.co.uk,jutarnji.hr###piano_inline > .tp-container-inner
 wear.jp##.bg-white > div[class*="xl:"]:has(> ul button > img[alt^="ZOZOTOWN"])
 newegg.com##.category-banner
 yesporn.vip##.spot_index
+finanzfluss.de##.page-content > div:only-child > div[class]:has(> .flex > img[srcset*="buch"])
 vik1ngfile.site##.content-wrap > div.row:has(> div#progress-current > a[href="/premium"])
 telegraaf.nl##div[data-testid^="paywall-position-"]
 iwate-np.co.jp###sa-banner
@@ -1263,6 +1265,7 @@ perplexity.ai#?#.pr-md > div.gap-x-sm > div[class] > button > div.flex > svg[wid
 cnews.ru###cnLike + noindex
 windguru.cz###forecasts-page-content > a[href="/help.php?sec=pro"]
 check.lenta.com###carousel_banners
+fissman.ru#$#.popmechanic-js-paranja { display: none !important; }
 fissman.ru#$##popmechanic-snippet { display: none !important; }
 kinogo.*##.zplata
 thirdspacelearning.com##.popup.resource_download_button
@@ -1322,7 +1325,6 @@ almabetter.com#%#//scriptlet('set-session-storage-item', 'popup_viewed', 'true')
 akool.com#$#.MuiDialog-root { display: none !important; }
 akool.com#$#body { overflow: auto !important; }
 akool.com##.MuiPopper-root
-eternalai.org#$#.styles_container__AKsXh { display: none !important; }
 eternalai.org#$##HEADER_VIEW { position: static !important; }
 eternalai.org#$##HEADER_SPACE_ID { display: none !important; }
 rail.hobidas.com###side_bnr
@@ -1406,6 +1408,7 @@ gamewith.jp##.walkthrough-gamewith-announces
 gamewith.jp###article-body > a[href^="https://hrmos.co/"]
 gamewith.jp###article-body > h3:has(+ a[href^="https://hrmos.co/"])
 hobbygames.ru##.banner-desktop-wrapper
+minute.jp##.bunner-in-article-wrapper
 nypost.com##.zephrModal
 faq.rakuten.net#$#c-mobilebanner { display: none !important; }
 faq.rakuten.net#$#.siteforceThemeLayoutStarter { padding-top: 0 !important; }
@@ -1592,7 +1595,6 @@ thecode.media##.float-link
 avtocod.ru##div[id^="mntg-banner"]
 avtocod.ru###free-book-form
 mirf.ru##.right-stub-price
-tripadvisor.*##a[href^="https://www.tripadvisor"][target="_blank"]:has(> section[aria-label])
 4travel.jp##.u_bottomFixedBanner
 xnxx-ru.com,xnxx.com###header + div[style^="display"]:not(#content)
 avrebo.com##body > div.MuiModal-root
@@ -2035,6 +2037,7 @@ blog.logrocket.com##.code-block:has(> div#arcade-interstitial)
 blog.logrocket.com##.code-block:has(> div#gutter)
 heise.de##div[data-module-name="MarketingTeasersModule"]
 ||ibarakinews.jp/attach_image/cplanbigbanner.png
+ghacks.net##main > div.post-subtitle-meta:has(a[href^="https://deals.ghacks.net/sales/"])
 techspot.com##.related-query
 brasilparalelo.com.br##.new-ribbon
 ||hubspotusercontent-na1.net/hubfs/*/banners/tax-haven-banner-*.gif
@@ -2390,6 +2393,7 @@ biglobe.ne.jp##.h_bar
 ||backgrounds.wetransfer.net^
 gab.com#?#.sticky-inner-wrapper > div > aside[class^="_"]:has(> div[class] > div[class] > div[class] > h2[class]:contains(/^(Upgrade to|Dissenter Shop)/))
 gab.com#?#div[tabindex="-1"] ~ div > div:has(span[data-text]:contains(/^(Upgrade to|Help keep Gab online|Invest in Gab|Dissenter Shop|Elevate Your Experience)/))
+zendesk.com##div[aria-label="top-promo-eyebrow-next-big-ai-drop"]
 apteka.ru##.OrderCreatedPopup__gift
 apteka.ru##.BaseView__content > div.cartPage-wrap > div.Carousel
 soundcloud.com##.l-product-banners
@@ -2459,6 +2463,7 @@ jikayosha.jp##.l-sidebar > div.widget_block
 translate.com##.tsl_hero__buttons > a[tsl-data="mtButton"] + a[tsl-data="htButton"]
 translate.com##.tsl_hero__buttons + div.tsl_hero__features
 cocokara-next.com##.shopping
+fakedetail.com##.ads_us
 deviantart.com##div[role="complementary"] > div[class]:empty:not(:has(>*))
 ||deviantart.com/*/?realEstateId=
 nifty.com#?#div[class^="Setsuzoku_ourServicesDList"] > dl > dt:has(> span:contains(ニフティのサービス))
@@ -2566,7 +2571,6 @@ apkmonk.com##.apkmonk_banner
 statnews.com##.stat-plus-article-cta
 consumerreports.org##.cda-article__col div[id^="monetate_selectorHTML"]
 npr.org###ad-backstage-wrap + div.flex-location-wrap
-hira2.jp##.p-infobar-wrapper--header-bottom
 urbandictionary.com##a[href^="https://ads.urbandictionary.com"]
 realsound.jp###bookStore
 24h.tv##.notify.is_freshdesk
@@ -2716,7 +2720,6 @@ washingtonpost.com###main-content > div.hide-for-print.mb-lg
 morinaga.co.jp###pc-column-detail-bottom-banner
 enigmasoftware.com###bio_ep
 enigmasoftware.com###bio_ep_bg
-w-higa.com##div[id^="single_banner"]
 nijitoraware.com##.headline_entry_middle1
 my.rakuten.co.jp###randomAdArea
 bt.com##.experiencefragment
@@ -2933,7 +2936,6 @@ blog.csdn.net##.csdn-common-logo-advert
 apteka.ru##.banners
 ccleaner.com##div[data-componentname="article-sharing"] + div[data-componentname="article-cta"]
 litres.ru##.Banners-module__wrapper
-dreamstime.com##.js-banner-free-trial
 avg.com##.green-rebranding
 videoconverterfactory.com##.down-bannerbg
 kom-dir.ru,firesticktricks.com##.warning
@@ -3121,10 +3123,8 @@ femina.hu##div[data-miniapp-id]
 coolutils.com###bottomBanner
 drweb.ru###ShowIt
 realitykings.com##body div.floating-footer
-milfhdporno.com##.fc-right
 ||vkstorm.ru/banners/$third-party
 music.youtube.com#$?#ytmusic-mealbar-promo-renderer { remove: true; }
-youtube.com###ticker-content
 ||banner.consultant.ru^
 k2sporn.com,rallys.online,hobbygames.ru,islamicfinder.org,incehesap.com,curseforge.com,toto.rakuten.co.jp,themeforest.net##.banner
 filmix.my,filmix.biz,filmix.ac,filmix.tech,filmix.zone##.remove-sda-wrap
@@ -3197,7 +3197,6 @@ dtf.ru#$#html { --layout-header-height-large: 60px !important; }
 igg-games.com##.uk-article div[style^="display:"][style*="justify-content:"]:has(> a[href] > img[src])
 mirage.ru##.top-bnr-wrapper
 cinema5.ru##.promo__slider
-dealmoon.com##.dm-event-tip-wrap
 irozhlas.cz##.branding
 ddlvalley.me##.pb > h2:has(> a[rel="bookmark"][href^="https://www.ddlvalley.me/get-more"])
 ddlvalley.me##.pb > h2:has(> a[rel="bookmark"][href^="https://www.ddlvalley.me/get-more"]) + div.post
@@ -3361,6 +3360,7 @@ contents.fc2.com#?#div[class] > div[class] > a[class^="c-cntCard-110"][class*="_
 ||mj-king.net/img/bnr/bnr_*_300x200.gif
 mj-king.net,mjk-r.net###bg-banner
 andapp.jp##.topJackBanner
+maruyanagi.co.jp##.side-banner
 ||gamewith.jp/ad/
 ln-online.de,solinger-tageblatt.de,ostsee-zeitung.de,siegener-zeitung.de,dnn.de,landeszeitung.de,lvz.de#$#.tp-modal:has(> div.tp-iframe-wrapper > iframe[src^="https://buy-eu.piano.io/"]) { display: none !important; }
 ln-online.de,solinger-tageblatt.de,ostsee-zeitung.de,siegener-zeitung.de,dnn.de,landeszeitung.de,lvz.de#$#.tp-backdrop.tp-active { display: none !important; }
@@ -3557,7 +3557,6 @@ e.mail.ru,octavius.mail.ru##div[class^="ReactVirtualized"] > div[style]:has(> di
 e.mail.ru,octavius.mail.ru##.new-year-ball
 mail.ru#?#body a[href^="https://r.mail.ru/"]:has(> span[class] > span[id^="tb-close-"])
 member.id.rakuten.co.jp###recommendService
-wenku.baidu.com##.yuedu-recommend-wrap
 duckduckgo.com###faq
 duckduckgo.com##.onboarding-ed
 duckduckgo.com#$#.js-header-aside.is-hidden { display: block!important; }
@@ -3636,7 +3635,6 @@ evrimagaci.org##div[data-url*="cbox-no-ads"]
 netzpolitik.org###spendenleiste
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#?#div[data-testid="frontpage-sidebar"] > div[class]:has(> div[class][data-redditstyle="false"] > div[class] > div[class] > button:contains(Try Now))
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##.premium-banner-outer
-cdkeyit.it,allkeyshop.com##.bg-link-left
 ebok.vectra.pl##.login__custom-bg
 amazon.de###cart-item-recs
 amazon.de##div[data-cel-widget="desktop-rhf_SponsoredProductsRemoteRHFSearchEXPSubsK2ClickPagination"]
