@@ -1,5 +1,5 @@
-! Checksum: 2V+wHAcgD61+IOYqIVXnKA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1775279367-14400.patch
+! Checksum: cm6LeGk3+G8VBNWd/QyMeA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1775366309-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.48
@@ -61,6 +61,7 @@ coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
+||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||173.208.96.42^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1456,6 +1457,7 @@ drvhub.net##.driver-item__install
 ||admozartxml.com^$all
 ||adxfactory.com^$all
 ||bidmyadz.com^$all
+||blastmedia.site^$all
 ||ctrtraffic.com^$all
 ||explorads.com^$all
 ||flurryad.com^$all
@@ -1631,7 +1633,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##.social-footer:not(html,body,:empty)
 ##.social-icon:not(html, body, img)
 ##.social-likes:not(html,body,:empty)
-##.social-sharing-buttons:not(html,body,:empty)
 ##.social-sharing:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.social-widget:not(html,body,:empty)
 ##.social-wrap:not(html,body,:empty)
@@ -1714,7 +1715,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 /sharing/reddit.$image
 /sharing/stumbleupon.$image
 /sharing/twitter.$image
-||addthis.com/static/btn/sm-share*.gif^
 ||apis.google.com/*/+1/*button$subdocument
 ||apis.google.com/js/plusone.js^
 ||assets.pinterest.com/js/pinit
@@ -2435,6 +2435,8 @@ $removeparam=wgu
 $removeparam=wgexpiry
 $removeparam=Referrer
 $removeparam=algo_pvid
+$removeparam=algo_expid
+$removeparam=ws_ab_test
 $removeparam=spLa
 $removeparam=shrsl_analytics_sscid
 $removeparam=shrsl_analytics_sstid
@@ -2636,6 +2638,7 @@ $removeparam=tid4
 $removeparam=avad
 $removeparam=ckmc
 $removeparam=ckmsc
+$removeparam=__cn_tracker
 $document,removeparam=/^sfmc_.*$/
 $removeparam=mktc
 $removeparam=cm_ven
@@ -2691,7 +2694,6 @@ $removeparam=ko_click_id
 $removeparam=nrtv_cid
 $removeparam=trk_ref
 $removeparam=ircid
-$removeparam=dfw_tracker
 $document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
 $removeparam=awinaffid
@@ -2830,7 +2832,6 @@ $removeparam=bidswitch_ssp_id
 $removeparam=tgclid
 $removeparam=dlsi
 $removeparam=adset_id
-$removeparam=affid2
 $removeparam=tw_source
 $removeparam=tw_adid
 $removeparam=retailerSlug
@@ -3502,6 +3503,10 @@ $removeparam=ppref,domain=digidip.net
 $removeparam=plink,domain=audible.*
 ||startpage.$removeparam=segment
 ||netflix.com^$removeparam=trackId
+||netflix.com^$removeparam=trackIdJaw
+||netflix.com^$removeparam=trackIdTrailer
+||netflix.com^$removeparam=trackIdEpisode
+||netflix.com^$removeparam=dpRightClick
 $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
@@ -3539,6 +3544,7 @@ $removeparam=mwv_rm
 $removeparam=af,domain=1fichier.com|comodo.com
 ||mercadolibre.com.mx^$removeparam=/^matt_.*$/
 ||lidl.$removeparam=flyx
+||apple.com^$removeparam=ctx_brand
 $removeparam=s_kw,domain=expansion.com|marca.com
 ||qwant.com^$removeparam=client
 ||ecosia.org^$removeparam=addon
@@ -3573,8 +3579,6 @@ $removeparam=nl,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62
 $removeparam=regi_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=segment_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
-^fs=e&s=cl$document,removeparam=fs
-^fs=e&s=cl$document,removeparam=s
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
@@ -3712,7 +3716,6 @@ $document,removeparam=af_reengagement_window
 ||affiliate.insider.com^$document,removeparam=platform
 ||affiliate.insider.com^$document,removeparam=postID
 ||affiliate.insider.com^$document,removeparam=postSlug
-||wordpress.com^$document,removeparam=/^ref=[a-z-]{5,}$/
 $document,removeparam=_x_ns_sku_id,domain=temu.com
 $document,removeparam=_x_ads_channel,domain=temu.com
 $document,removeparam=_x_gmc_account,domain=temu.com
@@ -3855,7 +3858,6 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||microsoft.com^$removeparam=refSource
 ||microsoft.com^$removeparam=refPage
 ||store.steampowered.com^$document,removeparam=curator_clanid
-||musescore.com^$document,removeparam=feature
 $document,removeparam=intid,domain=homedepot.*
 ref=theneedlenews.com$document,removeparam=ref
 ref=thestack.technology$document,removeparam=ref
