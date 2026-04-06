@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { findFiles } from '../utils/find_files.js';
@@ -38,7 +38,7 @@ const isGeneratedMetaLine = (line) => {
  * @returns {Promise<boolean>} True if the file was modified, false otherwise.
  */
 const stripGeneratedMeta = async (filePath) => {
-    const content = await fs.promises.readFile(filePath, 'utf8');
+    const content = await fs.readFile(filePath, 'utf8');
     const lines = content.split('\n');
     const filtered = lines.filter((line) => !isGeneratedMetaLine(line));
 
@@ -46,7 +46,7 @@ const stripGeneratedMeta = async (filePath) => {
         return false;
     }
 
-    await fs.promises.writeFile(filePath, filtered.join('\n'), 'utf8');
+    await fs.writeFile(filePath, filtered.join('\n'), 'utf8');
     return true;
 };
 
@@ -57,7 +57,7 @@ const stripGeneratedMeta = async (filePath) => {
  * @returns {Promise<string[]>} Array of absolute paths to `filters` directories.
  */
 const findFiltersDirs = async (dir) => {
-    const entries = await fs.promises.readdir(dir, { withFileTypes: true });
+    const entries = await fs.readdir(dir, { withFileTypes: true });
 
     const results = await Promise.all(entries.map(async (entry) => {
         if (!entry.isDirectory()) {
