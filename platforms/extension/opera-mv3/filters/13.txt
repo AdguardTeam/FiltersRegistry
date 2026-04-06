@@ -1,8 +1,8 @@
-! Checksum: dI66LrUgUI0Bb8Al+iSW0w
+! Checksum: CKWBrS+MFEduhb5v5z5sqw
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.52
-! TimeUpdated: 2026-04-06T10:29:45+00:00
+! Version: 2.0.63.53
+! TimeUpdated: 2026-04-06T11:23:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1549,6 +1549,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+utanmazkizlar.com##.custom-ust-banner-alan
+utanmazkizlar.com##.k-post-visual-wrap-alt
 paradurumu.com##a[href^="https://app.adjust.com/"]
 canakkalekalem.com##.no-click.my-3
 kayserianadoluhaber.com.tr##div[class^="mi-rgb reklam"]
@@ -2203,7 +2205,7 @@ siyahfilmizle.*#$?##wrapper { margin-top: 0px !important; }
 herpet.net##.player-side-ad
 herpet.net##.footer-ad-container
 herpet.net##div[class^="rnd-"] > a[target="_blank"] > img
-||blogger.googleusercontent.com/img/$domain=herpet.net|buenosairesideal.com|inattvgiris.pro|selcuksports.*|selcuk-sports.com|taraftarium.*|selcuksportss.*|hudsonlegalblog.com|taraftariumlive.com|inatspor.xyz
+||blogger.googleusercontent.com/img/$domain=herpet.net|buenosairesideal.com|inattvgiris.pro|selcuksports.*|selcuk-sports.com|taraftarium.*|selcuksportss.*|hudsonlegalblog.com|taraftariumlive.com|inatspor.xyz|utanmazkizlar.com
 hlktrpl.cfd###player > .jw-wrapper > .jw-logo
 hlktrpl.cfd###player > .jw-wrapper > .jw-title
 yatirimnedir.com##.container > div.mb-4:has(> div.col > a[href^="https://www.getmidas.com/"])
@@ -5880,6 +5882,16 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 !          or add a last known domain
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
+!
+! Frequently changed domains: turkifsa*.site; turkifsalar2.site
+! Source: turkifsa40.site; turkifsalar2.site
+||labvex.b-cdn.net/ads/
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||img.akamaicdn.work/ads/$domain=/turkifsa(lar)?\d+\.site$/
+! aglint-enable no-invalid-modifiers
+[$domain=/turkifsa(lar)?\d+\.site$/]##div:has(> a[href^="https://cutt.ly/"])
+[$domain=/turkifsa(lar)?\d+\.site$/]#%#//scriptlet('set-session-storage-item', 'preroll_view_count', '1')
 !
 ! Frequently changed domains: amatorifsa*.com
 ! Source: amatorifsa4.com
