@@ -6,6 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PLATFORMS_DIR = path.join(__dirname, '../../platforms');
+const FILTERS_DIR_NAME = 'filters';
+const TXT_FILE_EXTENSION = '.txt';
 
 /**
  * Lines starting with these prefixes are generated meta — they change on every build
@@ -18,7 +20,15 @@ const GENERATED_META_PREFIXES = [
     '! Version:',
 ];
 
-const isGeneratedMetaLine = (line) => GENERATED_META_PREFIXES.some((prefix) => line.startsWith(prefix));
+/**
+ * Checks whether a line is a generated meta line that should be stripped.
+ *
+ * @param {string} line - A single line from a filter file.
+ * @returns {boolean} True if the line starts with a generated meta prefix.
+ */
+const isGeneratedMetaLine = (line) => {
+    return GENERATED_META_PREFIXES.some((prefix) => line.startsWith(prefix));
+};
 
 /**
  * Strip generated metadata lines from a single filter file in-place.
@@ -53,7 +63,7 @@ const findTxtFiles = async (dir) => {
         if (entry.isDirectory()) {
             return findTxtFiles(fullPath);
         }
-        if (entry.isFile() && entry.name.endsWith('.txt')) {
+        if (entry.isFile() && entry.name.endsWith(TXT_FILE_EXTENSION)) {
             return [fullPath];
         }
         return [];
@@ -76,7 +86,7 @@ const findFiltersDirs = async (dir) => {
             return [];
         }
         const fullPath = path.join(dir, entry.name);
-        if (entry.name === 'filters') {
+        if (entry.name === FILTERS_DIR_NAME) {
             return [fullPath];
         }
         return findFiltersDirs(fullPath);
@@ -95,21 +105,20 @@ const findFiltersDirs = async (dir) => {
 export const stripGeneratedMetaFromDir = async (rootDir) => {
     const filtersDirs = await findFiltersDirs(rootDir);
 
-    let totalModified = 0;
-
-    await Promise.all(filtersDirs.map(async (filtersDir) => {
+    const counts = await Promise.all(filtersDirs.map(async (filtersDir) => {
         const files = await findTxtFiles(filtersDir);
         const results = await Promise.all(files.map((f) => stripGeneratedMeta(f)));
         const modified = results.filter(Boolean).length;
-        totalModified += modified;
 
         if (modified > 0) {
             // eslint-disable-next-line no-console
-            console.log(`${path.relative(rootDir, filtersDir)}: stripped headers from ${modified} file(s)`);
+            console.log(`${path.relative(rootDir, filtersDir)}: stripped metadata from ${modified} file(s)`);
         }
+
+        return modified;
     }));
 
-    return totalModified;
+    return counts.reduce((sum, count) => sum + count, 0);
 };
 
 /**

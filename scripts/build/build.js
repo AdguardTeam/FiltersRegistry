@@ -8,7 +8,7 @@ import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
-import { stripGeneratedMetaFromDir } from './strip_generated_meta.js';
+import { stripGeneratedMetaFromDir } from './strip-generated-meta.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
