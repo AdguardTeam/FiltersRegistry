@@ -9,6 +9,7 @@ import {
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
 import { stripGeneratedMetaFromDir } from './strip-generated-meta.js';
+import { findFiles } from '../utils/find_files.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -88,29 +89,6 @@ const reportPath = rawReportPath !== ''
 const SHADOW_TEMPLATE_CONTENT = '@include "./filter.txt"\n';
 
 /**
- * Recursively find all `template.txt` files under the given directory.
- *
- * @param {string} dir - Root directory to search.
- * @returns {Promise<string[]>} Array of absolute paths to `template.txt` files.
- */
-const findTemplatePaths = async (dir) => {
-    const entries = await fs.promises.readdir(dir, { withFileTypes: true });
-
-    const results = await Promise.all(entries.map(async (entry) => {
-        const fullPath = path.join(dir, entry.name);
-        if (entry.isDirectory()) {
-            return findTemplatePaths(fullPath);
-        }
-        if (entry.name === 'template.txt') {
-            return [fullPath];
-        }
-        return [];
-    }));
-
-    return results.flat();
-};
-
-/**
  * Prepare a temporary copy of the filters directory with shadow templates.
  *
  * Copies `filters/` → `temp/filters_cached/`, then replaces the content of every
@@ -129,7 +107,7 @@ const prepareCachedFiltersDir = async () => {
     await fs.promises.cp(filtersDir, cachedFiltersDir, { recursive: true });
 
     // Find all directories containing template.txt and replace with shadow templates
-    const templatePaths = await findTemplatePaths(cachedFiltersDir);
+    const templatePaths = await findFiles(cachedFiltersDir, (p) => path.basename(p) === 'template.txt');
 
     await Promise.all(templatePaths.map(async (templatePath) => {
         const dir = path.dirname(templatePath);

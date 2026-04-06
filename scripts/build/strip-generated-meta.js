@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { findFiles } from '../utils/find_files.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -50,29 +51,6 @@ const stripGeneratedMeta = async (filePath) => {
 };
 
 /**
- * Recursively find all .txt files inside a given directory.
- *
- * @param {string} dir - Root directory to search.
- * @returns {Promise<string[]>} Array of absolute paths to .txt files.
- */
-const findTxtFiles = async (dir) => {
-    const entries = await fs.promises.readdir(dir, { withFileTypes: true });
-
-    const results = await Promise.all(entries.map(async (entry) => {
-        const fullPath = path.join(dir, entry.name);
-        if (entry.isDirectory()) {
-            return findTxtFiles(fullPath);
-        }
-        if (entry.isFile() && entry.name.endsWith(TXT_FILE_EXTENSION)) {
-            return [fullPath];
-        }
-        return [];
-    }));
-
-    return results.flat();
-};
-
-/**
  * Recursively find all directories named `filters` under the given root.
  *
  * @param {string} dir - Root directory to search.
@@ -106,7 +84,7 @@ export const stripGeneratedMetaFromDir = async (rootDir) => {
     const filtersDirs = await findFiltersDirs(rootDir);
 
     const counts = await Promise.all(filtersDirs.map(async (filtersDir) => {
-        const files = await findTxtFiles(filtersDir);
+        const files = await findFiles(filtersDir, (p) => p.endsWith(TXT_FILE_EXTENSION));
         const results = await Promise.all(files.map((f) => stripGeneratedMeta(f)));
         const modified = results.filter(Boolean).length;
 
