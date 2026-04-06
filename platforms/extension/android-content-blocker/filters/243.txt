@@ -1,13 +1,13 @@
-! Checksum: Uu1QiJnB9umzLWUQAyP0CA
+! Checksum: SaZcKH2rXzszKt+ts0Gd3w
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.27
-! TimeUpdated: 2026-04-05T05:15:44+00:00
+! Version: 2.0.24.28
+! TimeUpdated: 2026-04-06T05:17:40+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-04-05 07:13:03 CEST
+! Last modified: 2026-04-06 07:06:22 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -32,6 +32,7 @@
 .nu/images/banners/
 .nu/prebid$script
 .php?annonsid=$image
+.php?p=$xmlhttprequest,domain=skogsforum.se
 .se/AdPlugins/
 .se/Banners/
 .se/Logger?
@@ -292,7 +293,7 @@ driva-eget.se##.sponsored_content
 drugnews.se##.ad-swiper-container
 dx-radio.se###header .fl_right a[target]
 dykarna.nu###rightbanners
-edgeflyfishing.com###g-header, #g-aside, #g-sidebar
+edgeflyfishing.com###g-header, #g-aside, #g-sidebar, a[href*="utm_campaign"], a:not([href^="/"], [href*="edgeflyfishing.com"]) img
 edukatus.se###g-preloader
 ehandelstips.se##div[class*="block-wrap-ad-"]
 ehandel.se##.commercial-row, .aside-image-with-link, .post-container-sponsored, aside a[href*="/branschnyheter/"], .e-loop-nothing-found-message, .bhr-board
@@ -753,7 +754,7 @@ skidspar.se##.MuiDialog-root
 skillingaryd.nu,xn--vrnamo-bua.nu###more-banners
 skippo.se##a[href*="/sponsra"]
 skogen.se##.jobslider.up
-skogsforum.se##.masthead, .col-right, a[href^="https://goo.gl/"], a[href*="//bit.ly/"], a[target="_blank"][onclick], #ap1, .modal, .modal-backdrop, div[style^="height"]:empty
+skogsforum.se##.masthead, .col-right, a[href^="https://goo.gl/"], a[href*="//bit.ly/"], a[target="_blank"][onclick], #ap1, .modal, .modal-backdrop, div[style^="height"]:empty, .b1a, .col-left + div
 skogsindustrierna.se###cookieOverlay
 skolporten.se##.advertMod
 skrattnet.se##.region-sidebar-second
@@ -1619,6 +1620,7 @@ zeromagazine.nu##div[id^="ads"]
 /log/hublytics
 /log|$domain=vk.se|folkbladet.nu|nordsverige.se|mellanbygden.nu|vasterbottningen.se|lokaltidningen.nu|bohuslaningen.se|stromstadstidning.se|markposten.se|harrydaposten.se|partilletidning.se|sttidningen.se|molndalsposten.se|kungalvsposten.se|kungsbackaposten.se|alingsastidning.se|ttela.se|gp.se|hallandsposten.se|hn.se|mellerudsnyheter.se|booli.se|placera.se
 /losad/loada.$script
+/mallgan$script,domain=skogsforum.se
 /maps.sponsored-pill.$script,domain=tripadvisor.se
 /marbles/marbles.js
 /marketmate-prod$subdocument,domain=marketmate.se
@@ -1876,6 +1878,7 @@ zeromagazine.nu##div[id^="ads"]
 /prod/adform
 /prod/collect$domain=mkse.com|dietisten.net
 /profile$ping,domain=feber.se|skippo.se|tasteline.com|tjock.se|marcusoscarsson.se|surfa.se|nordichardware.se|tv4.se|fotbollskanalen.se|koket.se|teknikveckan.se|langd.se|shl.se|hemhyra.se|qx.se
+/pslot$domain=skogsforum.se
 /ps-partner$xmlhttprequest,domain=dagensps.se
 /public/log$domain=kalender.se
 /public/t/*$domain=tvmatchen.nu
@@ -2665,7 +2668,6 @@ _banner.php?$domain=tvmatchen.nu
 ||signals.tt.se/collect
 ||sitegainer.com/jsinsert/*/sitegainer$third-party
 ||skogsforum.pro/analytics
-||skogsforum.se/async
 ||sleeknote.com^$domain=gaffa.se
 ||smartstats.kla.tv^
 ||snapwidget.com/images/snapwidget_ad
