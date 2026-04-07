@@ -12,7 +12,9 @@ for all supported AdGuard products.
 
 ## Technical Context
 
-- **Language / Version**: TypeScript and JavaScript, Node.js >= 22, ESM (`"type": "module"`)
+- **Language / Version**: TypeScript and JavaScript, Node.js >= 22, ESM (`"type": "module"`).
+  New code must be written in TypeScript. The project is gradually migrating all scripts to
+  TypeScript; existing `.js` files should be converted to `.ts` when touched.
 - **Primary Dependencies**:
     - `@adguard/filters-compiler` — compiles filter templates into final filter lists
     - `@adguard/agtree` — AdGuard filter rule parser / AST

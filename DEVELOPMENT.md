@@ -30,6 +30,11 @@
     yarn test
     ```
 
+    > **Note:** `yarn lint` runs three checks in sequence: ESLint (`yarn lint:code`),
+    > TypeScript type checking (`yarn lint:types`), and Markdownlint (`yarn lint:md`).
+    > All three must pass. The build scripts are a mix of JavaScript and TypeScript;
+    > `tsx` executes both transparently — no manual compilation step is needed.
+
 ## Development Workflow
 
 ### Building Filters
@@ -306,6 +311,9 @@ All build tooling lives under `scripts/`. After making changes:
 1. If you changed `scripts/wildcard-domain-processor/`, update tests in
    `scripts/wildcard-domain-processor/__tests__/`.
 1. Run `yarn validate` if the change affects filter compilation or platform outputs.
+
+Build scripts under `scripts/` are written in JavaScript and TypeScript, executed
+via [tsx](https://github.com/privatenumber/tsx) — no manual compilation step is needed.
 
 ## Troubleshooting
 
