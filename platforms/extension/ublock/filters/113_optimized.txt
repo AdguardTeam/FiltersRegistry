@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cXdCz6W1CTXMzPmmGa14iw
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1775523892-14400.patch
+! Checksum: eAUUoLPCH+d65KlCBWJdQg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1775539110-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.88.38
-! TimeUpdated: 2026-04-07T01:01:22+00:00
+! Version: 2.1.88.39
+! TimeUpdated: 2026-04-07T05:14:40+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -264,8 +264,8 @@
 /wgAds.
 /widgets.stackcommerce.com/*
 ://a.*/display?zone_id=
-://a.*/interstitial?id=$script
 ://a.*/loader?*&keywords=$3p
+://aclick.
 ://act-http-ban.
 ://ad.*&sid=
 ://ad.*/ad/*.gif
@@ -310,7 +310,6 @@
 ://syndication.$~subdocument,3p
 ://video-ads.
 ://xml.*/redirect?
-=/ligatus/
 =120x600&
 =160x600_
 =250x250&
@@ -399,6 +398,7 @@ _728-x-90_
 _728x90@
 _728x90px_
 _758x60.
+_866x120.
 _90x728_
 _970-x-90_
 _970_90_
@@ -466,6 +466,7 @@ _profits_ad-
 _program_ad.
 _pub.gif
 _pub_iframe.
+_publicitaire/
 _publicite.
 _publicite_
 _publog_2.
@@ -544,7 +545,6 @@ _werbebanner_
 ://landing.*/?ats=$popup,3p
 ://syndication.$popup,3p
 ://xml.*/click?$popup
-?adTagId=$popup
 ?key=*&psid=$popup
 ?key=*&zoneid=$popup
 ?lpkey=*&uclick=$popup
@@ -571,6 +571,7 @@ _build=iclick-$popup
 ||adintop.com^$3p
 ||adkontekst.pl^$3p
 ||adleadevent.com^$3p
+||adm-vids.com^$3p
 ||admark.fr^$3p
 ||admediaking.com^$3p
 ||admuncher.com^$3p
@@ -586,10 +587,11 @@ _build=iclick-$popup
 ||adpicker.net^$3p
 ||adrequest.net^$3p
 ||adrock.tv^$3p
-||adsb4trk.com^$3p
+||adschemist.com^$3p
 ||adschoom.com^$3p
 ||adsclick.com.br^$3p
 ||adsenseguard.com^$3p
+||adservone.com^$3p
 ||adsgarden.com^$3p
 ||adsixmedia.fr^$3p
 ||adskom.com^$3p
@@ -623,6 +625,7 @@ _build=iclick-$popup
 ||asiatmessenger.com^$3p
 ||askmecca.com^$3p
 ||atedra.com^$3p
+||atlassolutions.com^$3p
 ||bazardux.com^$3p
 ||best-deals-products.com^$3p
 ||bestcontentwork.top^$3p
@@ -687,7 +690,6 @@ _build=iclick-$popup
 ||ip-51-255-80.eu^$3p
 ||ipcdigital.co.uk^$3p
 ||iwadserver.com^$3p
-||iyfsearch.com^$3p
 ||k-words.io^$3p
 ||kingtopdeals.com^$3p
 ||kinkypeepz.com^$3p
@@ -768,7 +770,6 @@ _build=iclick-$popup
 ||secureanalytic.com^$3p
 ||shareaholic.com^$3p
 ||sharemyads.com^$3p
-||slutroulette.com^$3p
 ||smartclip.net^$~object,3p
 ||smartstream.tv^$3p
 ||spacepush.ru^$3p
@@ -845,12 +846,10 @@ _build=iclick-$popup
 ||admiredexcrete.com^
 ||admithelperbusy.com^
 ||adoproperly.com^
-||adornperpendicular.com^
 ||adslop.com^
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
 ||advancementcircuscaptured.com^
-||advantagesblareseizure.com^
 ||affluentmirth.com^
 ||agatorkoaltor.com^
 ||aicandy.link^
@@ -915,6 +914,7 @@ _build=iclick-$popup
 ||cemantical4.com^
 ||centalkochab.com^
 ||certifiedblob.com^
+||cfpushsdevpw.com^
 ||cgqhtithixi.com^
 ||chambulwacs.com^
 ||ckdxbragemqum.com^
@@ -1327,7 +1327,6 @@ _build=iclick-$popup
 ||umspecrek.ru^
 ||undom.net^
 ||unframesiberia.com^
-||unlevelyonder.com^
 ||unrebelasterin.com^
 ||uploadmix.net^
 ||usbmodmenu.com^
@@ -1468,6 +1467,7 @@ _build=iclick-$popup
 ||sv2.biz^$popup,3p
 ||sylverlight.net^$popup,3p
 ||themoneytizer.com^$popup,3p
+||thewhizmarketing.com^$popup,3p
 ||trackor.net^$popup,3p
 ||travelaudience.com^$popup,3p
 ||trmzum.com^$popup
@@ -1544,7 +1544,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||ctrip.com/?TypeID=$3p
 ||dailymotion.com^*autoplay=1$domain=gum-gum-streaming.com|hitek.fr|maison-travaux.fr|mavanimes.co
 ||delivery.vidible.tv^$domain=gamekult.com
-||devisprox-media.s3-website-eu-west-1.amazonaws.com^
 ||e-media-concept.com/medias/
 ||easy5now.com/images/b/
 ||ecchi.fr/banieres/
@@ -1992,6 +1991,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||mediabong.*/loader.js
 ||medialot.fr/wp-content/uploads/*/Logo-
 ||medialot.fr/wp-content/uploads/*/pub-
+||mega-debrid.eu/images/cessfull.png
 ||mobile.matchendirect.fr/html_template/mobile/header_info.html
 ||mobilealgerie.com/wp-content/uploads/*/banniere-
 ||monbestseller.com/sites/default/files/pushs/
@@ -2104,6 +2104,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||datoporn.co^*.php?$popup
 ||ddl-island.*/xxx/$popup
 ||permispratique.com/ads/$popup
+||streamcomplet.*/play.php?$popup
 ||tahiti-infos.com/ads/$popup
 ||tube-teen.fr^$popup,script
 ||wawacity.al/a?$popup
@@ -2504,6 +2505,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pub_info
 ##.pub_leaderboard
 ##.pub_left
+##.pub_mobile
 ##.pub_pave
 ##.pub_sky
 ##.pub_slot
@@ -2514,6 +2516,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pub_vertical
 ##.pub_visuel
 ##.pubaccueildroite1
+##.pubadsense
 ##.pubimage
 ##.pubitem
 ##.publicidad
@@ -2626,17 +2629,20 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 echoroukonline.com###Advertisement
 basketusa.com###Basketusa_Habillage
 fnac.com###BrandWord
+amazon.fr###DAadrp
 caradisiac.com###Habillage2
 koaci.com###KPubSetTop
 africanmanager.com###Layer1
 scan-manga.com###TOPAMZ720
 lepoint.fr###WRAP_BAN_ATF
 ahlaejaba.com,net-iris.fr,orange.fr,paruvendu.fr,radio.co.ma,zalotech.com###ad
+logitheque.com###adni_widgets-2
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 akeo.fr###amazon
 millenium.gg###amazon_container
 leberry.fr###appel_BR_home_BPI_Stonest
+lepopulaire.fr###appel_PC_home_BPI_Stonest
 commentcamarche.com,commentcamarche.net###ba_right
 manga-news.com###ban970250
 degrouptest.com###bandeauFooter
@@ -2841,7 +2847,6 @@ nouvelobs.com##.bloc-partners
 tv5.org##.bloc_promomiddle
 egora.fr##.block-egora-pub
 cotemaison.fr##.block_partners
-aveq.ca##.blog-sidebar a > img
 techniques-ingenieur.fr##.boxPub
 lepoint.fr##.branding
 gamergen.com,generation-nt.com##.bup
@@ -2924,6 +2929,8 @@ allocine.fr##.main-banner
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
 igraal.com##.merchant__banner-wrap
+ceesty.com,clkmein.com,corneey.com,destyy.com,festyy.com,sh.st,shorte.st##.middle-container
+abidjanshow.com##.mod-banners
 formation-dz.com##.mod_banners
 leparisien.fr##.moduleNew300
 ouedkniss.com##.mt-4.mt-md-6.home-front-store
@@ -2994,6 +3001,7 @@ forum-xiaomi.com##.samItem
 ouedkniss.com##.search-top-1
 educatout.com##.showpub
 wikiclic.com##.sidebar-promotion
+businessinsider.fr##.sidebar-push
 beaute-test.com##.sidebar-sticky
 test-achats.be##.skin
 infoconcert.com##.slider.container
@@ -3139,6 +3147,7 @@ mahjong.fr##div[class^="sub_jeu_160"]
 mahjong.fr##div[class^="sub_jeu_300"]
 mahjong.fr##div[class^="sub_jeu_72890"]
 fnac.com##div[data-component-id="kamino"]
+e-monsite.com##div[data-role="sp"]
 e-monsite.com##div[data-role="sp2"]
 maisonapart.com##div[id*="-pub-"]
 maisonapart.com##div[id*="-publi-"]

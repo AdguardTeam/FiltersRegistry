@@ -1,5 +1,5 @@
-! Checksum: NY33AcBRqfVFEUcgc6k6Rw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1775452851-14400.patch
+! Checksum: WwFXg/XWWVFewqplIUvx+A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1775539117-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.48
@@ -170,7 +170,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||kdmttk.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 31.220.27.134$network
-||msccasino.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 158.247.212.220$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -554,6 +553,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 185.155.186.24$network
 !+ PLATFORM(windows, mac, android, cli)
 209.74.107.131$network
+||afflat3a2.com^$all
 ||afflat3c1.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 69.172.200.185$network
@@ -830,6 +830,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##button[class*=ShareOverlayButton i]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
+##button[title^="Del på "]
 ##button[title^="Share this "]
 ##div[button=share]
 ##div[class$=-sticky-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=post-with-stick])
@@ -1014,6 +1015,7 @@ winstall.app##button[class*=singleApp_shareApp_]
 ##.share-tw:not(html,body,article)
 ~flipboard.com##.share-flipboard:not(html,body,article)
 ~bsky.social##.share-bluesky:not(html,body,article)
+##a[data-testid^=ShareModal-ShareLink]
 ##a.x-share
 ~bsky.*,~bluesky.*##a[href^="https://bsky.app/intent/compose?text="]
 ~threads.net##a[href^="https://threads.net/intent/post?text="]
@@ -1032,9 +1034,7 @@ forbes.com##.article-sharing
 rawstory.com##.share-popup.rm-stats-tracked
 ||syndication.twitter.com/srv/timeline-profile^$third-party
 ##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
-##.PreferredSourceButtonWrapper:is(a,div)
 ##.google-addus:is(a,div)
-##.goo-pref:is(a,div)
 chromewebstore.google.com##div[aria-labelledby=promo-header]
 ##.chrome-footer:not(html, body)
 www.google.com##.chr-panel-switcher__card:first-of-type
@@ -1169,6 +1169,7 @@ smzdm.com##.qr-buy-container
 12306.cn##.fixed-right-menu > li.menu-item:nth-of-type(3)
 amap.com###amapAppDownload
 amap.com###to_lushu
+bthhotels.com##.app_head_box
 coolapk.com##.apk_topba_code
 ctrip.com##.service-notice-right
 ctrip.com##.set-phone.set-list > .nav-myctrip.person-text
@@ -1253,6 +1254,7 @@ alpresor.se#%#//scriptlet('ubo-acis', 'snowMax')
 daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /jquery.snow.js
 /let-it-snow.
+/script/snow.js
 /snow-falling.js
 /snowfall-master.min.js
 /snowfall.jquery.
@@ -1264,6 +1266,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 @@||lemondeinformatique.fr^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||consentmanager.net^$script,third-party,badfilter
+@@||siteadvisor.com^
 @@||www.joesandbox.com^
 @@||virustotal.com^
 @@://safeweb.norton.com^
@@ -1364,8 +1367,6 @@ www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(m
 ##div[class^=ytp-gradient-]
 www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com#$#.ytp-time-display > span { font-weight: 800 !important; text-shadow: black 0 0 3px !important }
 twe.no#$#div[style*=overlayFadeTo] { --overlayFadeTo: none !important }
-play.max.com,hbomax.com##div[class*=Gradient-Beam-]:empty
-play.max.com,hbomax.com##div[class^=ProtectionLayer]
 hbomax.com##div[data-testid=protection_layer]
 www.twitch.tv#$#div[data-a-target=player-controls] { background:unset!important }
 www.twitch.tv#$#.top-bar { background:unset!important }
@@ -1400,7 +1401,6 @@ tvseans.az#?#.m-adv > span:contains(IMDb)
 unblockninja.st##.rating-row:has(img[src*=imdb])
 www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
-kissanime.*##.rating
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 ||comment.youmaker.com^$domain=theepochtimes.com
 indiatimes.com##div[class$="cmtwrapper "]
@@ -1746,7 +1746,6 @@ $removeparam=spUserID
 $removeparam=spJobID
 $removeparam=spReportId
 $removeparam=actId
-$removeparam=oly_enc_id,document,domain=~greenbuildingadvisor.com
 $document,removeparam=/^wickedid=.*$/i
 $document,removeparam=/^wickedsource=.*$/i
 $removeparam=rb_clickid,document
@@ -1844,7 +1843,6 @@ $removeparam=af_campaign
 $removeparam=aftr
 $removeparam=aftr_source
 $removeparam=ko_click_id
-$removeparam=nrtv_cid
 $removeparam=trk_ref
 $removeparam=ircid
 $document,removeparam=/^src=rss$/
@@ -2989,11 +2987,6 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||click.linksynergy.com^$removeparam=mid
 ||tubebuddy.com^$removeparam=a
-||fastmail.com^$removeparam=pscd
-||fastmail.com^$removeparam=ps_partner_key
-||fastmail.com^$removeparam=ps_xid
-||fastmail.com^$removeparam=gsxid
-||fastmail.com^$removeparam=gspk
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
 ||microsoft.com/*/download/details$removeparam=lc
