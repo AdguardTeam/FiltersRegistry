@@ -1,9 +1,9 @@
-! Checksum: STCO2D9fJmP2Sz2B5JteZg
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1775554396-3600.patch
+! Checksum: ZQshoyxLBIJJlp0EXfUxyA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1775557828-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.54
-! TimeUpdated: 2026-04-07T09:30:52+00:00
+! Version: 2.0.63.55
+! TimeUpdated: 2026-04-07T10:27:25+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -1069,8 +1069,6 @@ halktv.com.tr##.container section > .row > .section-mb:has(> .dfp-ad-loaded)
 halktv.com.tr##.container section > .row > .section-mb:has(> .HLK_VIDEO)
 webtekno.com##a[href^="https://s.mdznconnect.com/"]
 turkleak1.live##body .ad-overlay
-turkporoclub1.sbs#%#//scriptlet("abort-current-inline-script", "document.createElement", "'script'")
-turkporoclub1.sbs##h3.section-title
 ||blogger.googleusercontent.com/img/*/pshg-min-min.gif
 ||bloomberght.com/adsbht/
 corumtime.com###siteSag > div[style^="width:"]:not([class])
@@ -5376,6 +5374,9 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+[$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet('remove-node-text', 'script', 'LAST_POP')
+[$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet("abort-current-inline-script", "document.createElement", "'script'")
+[$domain=/turkporoclub\d+\.sbs$/]##h3.section-title
 !+ NOT_VALIDATE
 ||hdgifs.b-cdn.net^$media,domain=/hdifsaizle\d+\.com$/
 [$domain=/hdifsaizle\d+\.com$/]##div[style]:has(> a[href^="http://bpkaff.com/"])
