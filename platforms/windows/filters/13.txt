@@ -1,9 +1,9 @@
-! Checksum: sM6Dl9pvp95XQ02IVcHMLg
-! Diff-Path: ../patches/13/13-s-1775557856-3600.patch
+! Checksum: XrLz/wClAkC9OeoMmFx4+g
+! Diff-Path: ../patches/13/13-s-1775561275-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.55
-! TimeUpdated: 2026-04-07T10:27:25+00:00
+! Version: 2.0.63.56
+! TimeUpdated: 2026-04-07T11:24:36+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5892,6 +5892,11 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: doedaturkifsa*.blog
+! Source: doedaturkifsa6.blog
+[$domain=/doedaturkifsa\d+.blog$/]$$script:contains(popUnder)
+[$domain=/doedaturkifsa\d+.blog$/]#%#//scriptlet('remove-node-text', 'script', 'popUnder')
+!
 ! Frequently changed domains: turkporoclub*.sbs
 ! Source: turkporoclub1.sbs
 [$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet('remove-node-text', 'script', 'LAST_POP')
@@ -5901,8 +5906,6 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Frequently changed domains: hdifsaizle*.com
 ! Source: hdifsaizle4.com
 ! aglint-disable no-invalid-modifiers
-!+ NOT_VALIDATE
-||hdgifs.b-cdn.net^$media,domain=/hdifsaizle\d+\.com$/
 ! aglint-enable no-invalid-modifiers
 [$domain=/hdifsaizle\d+\.com$/]##div[style]:has(> a[href^="http://bpkaff.com/"])
 [$domain=/hdifsaizle\d+\.com$/]##.sticky-banner-container
@@ -5923,8 +5926,6 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Frequently changed domains: amatorifsa*.com
 ! Source: amatorifsa4.com
 ! aglint-disable no-invalid-modifiers
-!+ NOT_VALIDATE
-||hdgifs.b-cdn.net^$media,domain=/amatorifsa\d+\.com$/
 ! aglint-enable no-invalid-modifiers
 [$domain=/amatorifsa\d+\.com$/]##div[style="margin-bottom:14px; text-align:center;"]
 [$domain=/amatorifsa\d+\.com$/]##div[style="margin-top:14px; text-align:center;"]
