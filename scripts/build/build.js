@@ -8,7 +8,7 @@ import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
-import { stripGeneratedMetaFromDir } from './strip-generated-meta.js';
+import { stripGeneratedMetaFromDir } from './strip-generated-meta.ts';
 import { findFiles } from '../utils/find_files.js';
 
 const __filename = fileURLToPath(import.meta.url);

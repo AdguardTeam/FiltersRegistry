@@ -1,12 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { findFiles } from '../utils/find_files.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const PLATFORMS_DIR = path.join(__dirname, '../../platforms');
 const FILTERS_DIR_NAME = 'filters';
 const TXT_FILE_EXTENSION = '.txt';
 
@@ -19,25 +14,25 @@ const GENERATED_META_PREFIXES = [
     '! Diff-Path:',
     '! TimeUpdated:',
     '! Version:',
-];
+] as const;
 
 /**
  * Checks whether a line is a generated meta line that should be stripped.
  *
- * @param {string} line - A single line from a filter file.
- * @returns {boolean} True if the line starts with a generated meta prefix.
+ * @param line - A single line from a filter file.
+ * @returns True if the line starts with a generated meta prefix.
  */
-const isGeneratedMetaLine = (line) => {
+const isGeneratedMetaLine = (line: string): boolean => {
     return GENERATED_META_PREFIXES.some((prefix) => line.startsWith(prefix));
 };
 
 /**
  * Strip generated metadata lines from a single filter file in-place.
  *
- * @param {string} filePath - Absolute path to the .txt filter file.
- * @returns {Promise<boolean>} True if the file was modified, false otherwise.
+ * @param filePath - Absolute path to the .txt filter file.
+ * @returns True if the file was modified, false otherwise.
  */
-const stripGeneratedMeta = async (filePath) => {
+const stripGeneratedMeta = async (filePath: string): Promise<boolean> => {
     const content = await fs.readFile(filePath, 'utf8');
     const lines = content.split('\n');
     const filtered = lines.filter((line) => !isGeneratedMetaLine(line));
@@ -53,10 +48,10 @@ const stripGeneratedMeta = async (filePath) => {
 /**
  * Recursively find all directories named `filters` under the given root.
  *
- * @param {string} dir - Root directory to search.
- * @returns {Promise<string[]>} Array of absolute paths to `filters` directories.
+ * @param dir - Root directory to search.
+ * @returns Array of absolute paths to `filters` directories.
  */
-const findFiltersDirs = async (dir) => {
+const findFiltersDirs = async (dir: string): Promise<string[]> => {
     const entries = await fs.readdir(dir, { withFileTypes: true });
 
     const results = await Promise.all(entries.map(async (entry) => {
@@ -73,19 +68,21 @@ const findFiltersDirs = async (dir) => {
     return results.flat();
 };
 
+const hasTxtExtension = (p: string): boolean => p.endsWith(TXT_FILE_EXTENSION);
+
 /**
  * Strip generated metadata lines from all .txt files inside all `filters/`
  * directories found recursively under the given root.
  *
- * @param {string} rootDir - Root directory to search (e.g. `platforms/`).
- * @returns {Promise<number>} Number of files actually modified.
+ * @param rootDir - Root directory to search (e.g. `platforms/`).
+ * @returns Number of files actually modified.
  */
-export const stripGeneratedMetaFromDir = async (rootDir) => {
+export const stripGeneratedMetaFromDir = async (rootDir: string): Promise<number> => {
     const filtersDirs = await findFiltersDirs(rootDir);
 
     const counts = await Promise.all(filtersDirs.map(async (filtersDir) => {
-        const files = await findFiles(filtersDir, (p) => p.endsWith(TXT_FILE_EXTENSION));
-        const results = await Promise.all(files.map((f) => stripGeneratedMeta(f)));
+        const files = await findFiles(filtersDir, hasTxtExtension);
+        const results = await Promise.all(files.map(stripGeneratedMeta));
         const modified = results.filter(Boolean).length;
 
         if (modified > 0) {
@@ -98,20 +95,3 @@ export const stripGeneratedMetaFromDir = async (rootDir) => {
 
     return counts.reduce((sum, count) => sum + count, 0);
 };
-
-/**
- * Main entry point (standalone execution).
- * Recursively finds all `filters/` directories under platforms/ and strips
- * generated meta headers from every .txt file found there.
- */
-const main = async () => {
-    const totalModified = await stripGeneratedMetaFromDir(PLATFORMS_DIR);
-
-    // eslint-disable-next-line no-console
-    console.log(`Done. Total files modified: ${totalModified}`);
-};
-
-// Run only when executed directly, not when imported as a module.
-if (process.argv[1] === __filename) {
-    main();
-}
