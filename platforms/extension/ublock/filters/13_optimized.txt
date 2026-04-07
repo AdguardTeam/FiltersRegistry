@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: QuddWnQbYM5qVuvXHEb6lA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1775561263-3600.patch
+! Checksum: tln0sCcUWjSshPIdHXE+dg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1775565036-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.56
-! TimeUpdated: 2026-04-07T11:24:36+00:00
+! Version: 2.0.63.57
+! TimeUpdated: 2026-04-07T12:27:07+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$3p
 ||rtb-stack.com^
@@ -237,8 +237,8 @@ teknoistan.com##+js(no-setTimeout-if, adsbygoogle)
 hisse.net##+js(abort-current-script, document.querySelector, adBlocks)
 hisse.net##.detail-mymani-widget
 ||finans.mynet.com/mymani/widget-form/$domain=hisse.net
-turkleak1.live##+js(no-setTimeout-if, offsetHeight === 0)
-turkleak1.live#@#.ad-overlay
+/turkleak\d+.live$/##+js(no-setTimeout-if, offsetHeight === 0)
+/turkleak\d+.live$/#@#.ad-overlay
 adrbook.com##body:style(overflow: auto !important;)
 adrbook.com###adblockOverlay:style(display: none !important;)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication_adsbygoogle.js,domain=adrbook.com,important
@@ -1061,7 +1061,6 @@ fotospor.com.tr##.container > div[align="center"]:has(> the-ads)
 halktv.com.tr##.container section > .row > .section-mb:has(> .dfp-ad-loaded)
 halktv.com.tr##.container section > .row > .section-mb:has(> .HLK_VIDEO)
 webtekno.com##a[href^="https://s.mdznconnect.com/"]
-turkleak1.live##body .ad-overlay
 ||blogger.googleusercontent.com/img/*/pshg-min-min.gif
 ||bloomberght.com/adsbht/
 corumtime.com###siteSag > div[style^="width:"]:not([class])
@@ -1159,7 +1158,6 @@ pornoizle9.icu##+js(abort-on-property-read, open)
 sotweturkifsa8.blog###block-35
 sotweturkifsa8.blog##+js(addEventListener-defuser, click, popUnder)
 trtspor.com.tr##div[class]:has(> div.ad-container)
-turkleak1.live##+js(addEventListener-defuser, click, window.open)
 velvetporntube.com##.bns-place-ob
 milliyet.com.tr##.medyanet-inline-adv
 gzt.com##div[class^="_adWrapper"]
@@ -5357,6 +5355,12 @@ oyunu.com.tr###bir.oynama:style(display: none !important;)
 oyunu.com.tr###iki.oynama:style(display: block !important;)
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com##.play-that-video:style(display: none !important;)
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com##body div#player:style(display: block !important;)
+/turkleak\d+.live$/###video-ad-overlay:style(display: none !important;)
+/turkleak\d+.live$/###main-video-content:style(display: block !important;)
+/turkleak\d+.live$/##+js(addEventListener-defuser, click, window.open)
+turkleak1.live,turkleak2.live,turkleak3.live,turkleak4.live,turkleak5.live,turkleak6.live,turkleak7.live,turkleak8.live,turkleak9.live,turkleak10.live,turkleak11.live,turkleak12.live,turkleak13.live,turkleak14.live,turkleak15.live,turkleak16.live,turkleak17.live,turkleak18.live,turkleak19.live,turkleak20.live,turkleak21.live,turkleak22.live,turkleak23.live,turkleak24.live,turkleak25.live,turkleak26.live,turkleak27.live,turkleak28.live,turkleak29.live,turkleak30.live###video-ad-overlay:style(display: none !important;)
+turkleak1.live,turkleak2.live,turkleak3.live,turkleak4.live,turkleak5.live,turkleak6.live,turkleak7.live,turkleak8.live,turkleak9.live,turkleak10.live,turkleak11.live,turkleak12.live,turkleak13.live,turkleak14.live,turkleak15.live,turkleak16.live,turkleak17.live,turkleak18.live,turkleak19.live,turkleak20.live,turkleak21.live,turkleak22.live,turkleak23.live,turkleak24.live,turkleak25.live,turkleak26.live,turkleak27.live,turkleak28.live,turkleak29.live,turkleak30.live###main-video-content:style(display: block !important;)
+turkleak1.live,turkleak2.live,turkleak3.live,turkleak4.live,turkleak5.live,turkleak6.live,turkleak7.live,turkleak8.live,turkleak9.live,turkleak10.live,turkleak11.live,turkleak12.live,turkleak13.live,turkleak14.live,turkleak15.live,turkleak16.live,turkleak17.live,turkleak18.live,turkleak19.live,turkleak20.live,turkleak21.live,turkleak22.live,turkleak23.live,turkleak24.live,turkleak25.live,turkleak26.live,turkleak27.live,turkleak28.live,turkleak29.live,turkleak30.live##+js(addEventListener-defuser, click, window.open)
 /doedaturkifsa\d+.blog$/##+js(remove-node-text, script, popUnder)
 doedaturkifsa6.blog,doedaturkifsa7.blog,doedaturkifsa8.blog,doedaturkifsa9.blog,doedaturkifsa10.blog,doedaturkifsa11.blog,doedaturkifsa12.blog,doedaturkifsa13.blog,doedaturkifsa14.blog,doedaturkifsa15.blog,doedaturkifsa16.blog,doedaturkifsa17.blog,doedaturkifsa18.blog,doedaturkifsa19.blog,doedaturkifsa20.blog,doedaturkifsa21.blog,doedaturkifsa22.blog,doedaturkifsa23.blog,doedaturkifsa24.blog,doedaturkifsa25.blog,doedaturkifsa26.blog,doedaturkifsa27.blog,doedaturkifsa28.blog,doedaturkifsa29.blog,doedaturkifsa30.blog,doedaturkifsa31.blog,doedaturkifsa32.blog,doedaturkifsa33.blog,doedaturkifsa34.blog,doedaturkifsa35.blog##+js(remove-node-text, script, popUnder)
 /turkporoclub\d+\.sbs$/##+js(remove-node-text, script, LAST_POP)

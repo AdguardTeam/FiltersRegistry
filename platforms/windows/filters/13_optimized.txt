@@ -1,9 +1,9 @@
-! Checksum: MdpKGOxM8zAT2lftLM12lA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1775561276-3600.patch
+! Checksum: V5NpYo4UMraSUVKhVWOCxQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1775565054-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.56
-! TimeUpdated: 2026-04-07T11:24:36+00:00
+! Version: 2.0.63.57
+! TimeUpdated: 2026-04-07T12:27:07+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -236,8 +236,8 @@ teknoistan.com#%#//scriptlet('prevent-setTimeout', 'adsbygoogle')
 hisse.net#%#//scriptlet('abort-current-inline-script', 'document.querySelector', 'adBlocks')
 hisse.net##.detail-mymani-widget
 ||finans.mynet.com/mymani/widget-form/$domain=hisse.net
-turkleak1.live#%#//scriptlet('prevent-setTimeout', 'offsetHeight === 0')
-turkleak1.live#@#.ad-overlay
+[$domain=/turkleak\d+.live$/]#%#//scriptlet('prevent-setTimeout', 'offsetHeight === 0')
+[$domain=/turkleak\d+.live$/]#@#.ad-overlay
 adrbook.com#$#body { overflow: auto !important; }
 adrbook.com#$##adblockOverlay { display: none !important; }
 adrbook.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
@@ -1068,7 +1068,6 @@ fotospor.com.tr##.container > div[align="center"]:has(> the-ads)
 halktv.com.tr##.container section > .row > .section-mb:has(> .dfp-ad-loaded)
 halktv.com.tr##.container section > .row > .section-mb:has(> .HLK_VIDEO)
 webtekno.com##a[href^="https://s.mdznconnect.com/"]
-turkleak1.live##body .ad-overlay
 ||blogger.googleusercontent.com/img/*/pshg-min-min.gif
 ||bloomberght.com/adsbht/
 corumtime.com###siteSag > div[style^="width:"]:not([class])
@@ -1167,7 +1166,6 @@ pornoizle9.icu#%#//scriptlet('abort-on-property-read', 'open')
 sotweturkifsa8.blog###block-35
 sotweturkifsa8.blog#%#//scriptlet('prevent-addEventListener', 'click', 'popUnder')
 trtspor.com.tr##div[class]:has(> div.ad-container)
-turkleak1.live#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
 velvetporntube.com##.bns-place-ob
 milliyet.com.tr#?#.medyanet-inline-adv
 gzt.com##div[class^="_adWrapper"]
@@ -5374,6 +5372,9 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+[$domain=/turkleak\d+.live$/]#$##video-ad-overlay { display: none !important; }
+[$domain=/turkleak\d+.live$/]#$##main-video-content { display: block !important; }
+[$domain=/turkleak\d+.live$/]#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
 [$domain=/doedaturkifsa\d+.blog$/]$$script:contains(popUnder)
 [$domain=/doedaturkifsa\d+.blog$/]#%#//scriptlet('remove-node-text', 'script', 'popUnder')
 [$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet('remove-node-text', 'script', 'LAST_POP')
