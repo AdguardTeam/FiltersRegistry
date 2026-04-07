@@ -1,9 +1,9 @@
-! Checksum: /ecNZf0ugVGZOhlOVaxXYw
-! Diff-Path: ../patches/1/1-s-1775464953-3600.patch
+! Checksum: GDwrDfjcQJrGU4lFJlyN8w
+! Diff-Path: ../patches/1/1-s-1775522646-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.5.21
-! TimeUpdated: 2026-04-06T08:37:57+00:00
+! Version: 2.1.5.22
+! TimeUpdated: 2026-04-07T00:39:46+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -313,8 +313,8 @@ rtl.*/init.js?$third-party
 ://*.*.biz/xx?$script
 ://*.*.biz/xy/$redirect=nooptext,important
 ://*.*.biz/xy/$script
-://*.*.com/xj/$redirect=nooptext,important,domain=~mirait-one.com
-://*.*.com/xj/$script,domain=~mirait-one.com
+://*.*.com/xj/$redirect=nooptext,important
+://*.*.com/xj/$script
 ://*.*.info/v/$redirect=nooptext,important
 ://*.*.info/v/$script
 ://*.*.xyz/v/$script
@@ -18442,6 +18442,8 @@ bender/_bender*.js$script,replace=/this\.removeShadowBlockers\(\);/true; return;
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228513
+@@||mirait-one.com/xj/$domain=mirait-one.com,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223191
 mush-e.com#@##banner-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220247

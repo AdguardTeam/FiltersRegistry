@@ -1,9 +1,9 @@
-! Checksum: r7O07GFmFvZuAgcmwnTynA
-! Diff-Path: ../patches/23/23-s-1775451931-3600.patch
+! Checksum: O8NFSqxhjhukmGf9MQzQYg
+! Diff-Path: ../patches/23/23-s-1775522643-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.7.94
-! TimeUpdated: 2026-04-06T05:02:24+00:00
+! Version: 2.0.7.95
+! TimeUpdated: 2026-04-07T00:40:57+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -313,8 +313,8 @@ rtl.*/init.js?$third-party
 ://*.*.biz/xx?$script
 ://*.*.biz/xy/$redirect=nooptext,important
 ://*.*.biz/xy/$script
-://*.*.com/xj/$redirect=nooptext,important,domain=~mirait-one.com
-://*.*.com/xj/$script,domain=~mirait-one.com
+://*.*.com/xj/$redirect=nooptext,important
+://*.*.com/xj/$script
 ://*.*.info/v/$redirect=nooptext,important
 ://*.*.info/v/$script
 ://*.*.xyz/v/$script
@@ -5696,6 +5696,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228513
+@@||mirait-one.com/xj/$domain=mirait-one.com,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223191
 mush-e.com#@##banner-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220247
