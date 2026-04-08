@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: dgCTxroNycwI5URmazk58w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1775634046-3600.patch
+! Checksum: UmWy2Rzu3cCYiWlsTpsYAA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1775637312-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.58.97
-! TimeUpdated: 2026-04-08T07:37:05+00:00
+! Version: 2.4.58.98
+! TimeUpdated: 2026-04-08T08:31:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10630,6 +10630,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228712
+cloudfam.io##+js(prevent-fetch, adsbygoogle)
+@@||cloudfam.io^$generichide
+! https://github.com/AdguardTeam/AdguardFilters/issues/228716
+hentaitoon.tv##+js(no-setTimeout-if, container.remove)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228682
 @@||aigenda.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228589
@@ -37110,6 +37115,8 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+partitionwizard.com##.side-popup-container
+pimpbunny.com##ul[class^="includes-header-"] > li:has(> a[rel^="sponsored"])
 ||exporntoons.net/static/players/*/vast.js
 calculators.ro##.adv728_90
 followfollow.com##.structItemContainer-group > div[style*="text-align: center; width: 100%;"]:has(> .advertisement)
