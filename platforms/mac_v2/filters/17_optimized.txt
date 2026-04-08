@@ -1,9 +1,9 @@
-! Checksum: FNgsjWz0UC4rNvlO51wF1A
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1775554434-3600.patch
+! Checksum: 9IpZEm2GrfZrNz9koskd5w
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1775655652-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.30
-! TimeUpdated: 2026-04-07T09:31:04+00:00
+! Version: 2.0.13.31
+! TimeUpdated: 2026-04-08T13:37:42+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=tgclid
 $removeparam=analytics_context
@@ -190,6 +190,7 @@ $removeparam=itm_medium
 $removeparam=itm_campaign
 $removeparam=itm_content
 $removeparam=itm_term
+$removeparam=utm_compaign
 $removeparam=utm_prid
 $removeparam=utm_wave
 $removeparam=utm_lob
@@ -319,6 +320,7 @@ $removeparam=erid
 $removeparam=oly_enc_id
 $removeparam=_ga
 $removeparam=tduid
+||fboom.me^$removeparam=site
 ||usaa.com^$removeparam=wa_ref
 ||duck.ai^$removeparam=origin
 ||t.ly^$removeparam=ref
@@ -1670,7 +1672,7 @@ $removeparam=clid,domain=adguard-vpn.*|adguardvpn-help.*
 ||doctolib.de^$removeparam=utm_content-group
 ||doctolib.de^$removeparam=utm_button
 ||nationalgeographic.com^$removeparam=utm_rd
-||ficbook.net^$removeparam=/premiumVisit|utm_compaign/
+*$domain=fic.fan|fanfictionero.com|ficmania.com|ficbook.net,removeparam=premiumVisit
 ||go.tscprts.com^$removeparam
 ||stripchat.com^$removeparam=abTest
 ||stripchat.com^$removeparam=abTestVariant

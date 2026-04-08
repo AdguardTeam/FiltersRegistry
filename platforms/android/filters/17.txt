@@ -1,9 +1,9 @@
-! Checksum: TTxyLCXIWZtoZA16Mwc9/w
-! Diff-Path: ../patches/17/17-s-1775554393-3600.patch
+! Checksum: actE2SMi7amrIN2+Pz60QA
+! Diff-Path: ../patches/17/17-s-1775655618-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.30
-! TimeUpdated: 2026-04-07T09:31:04+00:00
+! Version: 2.0.13.31
+! TimeUpdated: 2026-04-08T13:37:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -314,6 +314,7 @@ $removeparam=itm_campaign
 $removeparam=itm_content
 $removeparam=itm_term
 ! UTM
+$removeparam=utm_compaign
 $removeparam=utm_prid
 $removeparam=utm_wave
 $removeparam=utm_lob
@@ -500,6 +501,8 @@ $removeparam=tduid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228746
+||fboom.me^$removeparam=site
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228267
 ||usaa.com^$removeparam=wa_ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227596
@@ -2488,8 +2491,9 @@ $removeparam=clid,domain=adguard-vpn.*|adguardvpn-help.*
 ||doctolib.de^$removeparam=utm_button
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128206
 ||nationalgeographic.com^$removeparam=utm_rd
+! https://github.com/AdguardTeam/AdguardFilters/issues/227598
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128339
-||ficbook.net^$removeparam=/premiumVisit|utm_compaign/
+*$domain=fic.fan|fanfictionero.com|ficmania.com|ficbook.net,removeparam=premiumVisit
 ! stripchat.com
 ||go.tscprts.com^$removeparam
 ||stripchat.com^$removeparam=abTest
