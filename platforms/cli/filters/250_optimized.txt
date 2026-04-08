@@ -1,5 +1,5 @@
-! Checksum: TFnGR2NMeCVrqhwxrX7s2w
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1775539094-14400.patch
+! Checksum: 97+X+arfp+5wx6i6ziRkHA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1775625507-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.48
@@ -22,7 +22,6 @@
 windowsreport.com##.code-block
 appuals.com##.appua-reimage-top
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
-ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.sidebar_download_inner
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_info_texts
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
@@ -75,6 +74,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^192\.243\.59\.[12]?\d?\d$/$network
 !+ PLATFORM(windows, mac, android, cli)
 /^192\.243\.61\.[12]?\d?\d$/$network
+/scan-update-and-protect-your-browser.html$document
 /^((https?|tcp|iquic)://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 /^(https?|tcp|iquic)://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 ||hooligapps.com^$all
@@ -589,7 +589,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 [2a02:128:7:5940::3]$network
 [2a01:4f8:c0:33d8::1]$network
 [2a01:4f8:c0:2a5c::1]$network
-||awpya.com^$all
 [2a01:4f8:c0:2343::2]$network
 [2a01:4f8:e0:19cb::1]$network
 ||cant3am.com^$all
@@ -665,6 +664,7 @@ msftconnecttest.com^$csp=upgrade-insecure-requests
 ://ww6.$document,domain=~ww6.generali.pt|~ww6.autotask.net|~ww6.pornhoarder.org
 ://ww7.$document,domain=~ww7.be|~ww7.readsnk.com|~ww7.autotask.net|~ww7.pornhoarder.tv
 ://ww10.$document,domain=~ww10.autotask.net|~ww10.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww11.$document,domain=~ww11.autotask.net|~ww11.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww12.$document,domain=~ww12.autotask.net|~ww12.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww13.$document,domain=~ww13.autotask.net|~ww13.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww16.$document,domain=~ww16.autotask.net|~ww16.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
@@ -1262,6 +1262,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /snowstorm.js
 /christmas-snow.js
 @@||aboluowang.com^
+@@||ntdtv.com^
 @@||soundofhope.org^
 @@||lemondeinformatique.fr^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
@@ -1584,12 +1585,14 @@ $removeparam=ns_mchannel
 $removeparam=ns_source
 $removeparam=ns_campaign
 $removeparam=ns_linkname
+$removeparam=ns_fee
 $removeparam=zanpid
 $removeparam=wgu
 $removeparam=wgexpiry
 $removeparam=Referrer
 $removeparam=algo_pvid
 $removeparam=algo_expid
+$removeparam=btsid
 $removeparam=ws_ab_test
 $removeparam=spLa
 $removeparam=shrsl_analytics_sscid
@@ -2036,6 +2039,7 @@ $removeparam=geniuslink
 ||amazon.$removeparam=refinements
 ||amazon.$removeparam=qsid
 ||amazon.$removeparam=sres
+||amazon.$removeparam=srpt
 $removeparam=hvadid
 $removeparam=hvpos
 $removeparam=hvnetw
@@ -2455,7 +2459,6 @@ $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.c
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
-$removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com
 $removeparam=reflink,domain=marketwatch.com|mansionglobal.com|wsj.com
 $removeparam=hpt,domain=cnn.com
 ||pbtech.$removeparam=qr
@@ -2816,6 +2819,7 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 ||whitepages.com^$document,removeparam=wp_term
 ||thisismoney.co.uk^$removeparam=molReferrerUrl
 ||sciencedirect.com/*?via%3D$removeparam=/^via%3D.*$/,document
+||iplt20.com^$document,removeparam=tagNames
 ||deepl.com^$document,removeparam=cta
 ||kahoot.it^$removeparam=refer_method
 ||substack.com^$removeparam=sd,document
@@ -2989,7 +2993,6 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||tubebuddy.com^$removeparam=a
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
-||microsoft.com/*/download/details$removeparam=lc
 ||intel.com^$document,removeparam=campid
 ||intel.com^$document,removeparam=erpm_id
 ||intel.com^$document,removeparam=mkt_cid
@@ -3078,7 +3081,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 ##.pub_300x250:not(html,body,:empty)
 #@#.pub_300x250m
 #@#.pub_728x90
-##.pub_728x90:not(html,body,:empty)
 #@#.text-ad
 ##.text-ad:not(html,body,:empty)
 #@#.text-ad-links
