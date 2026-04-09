@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: ncmE8qJGm8bgPy0e5CLHug
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1775618007-3600.patch
+! Checksum: x0QpYTZ+fuG6BR5LI0wHiA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1775704420-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.46
@@ -1049,6 +1049,7 @@ blocket.se#@#a[href*="?ad_id="]
 ||redirect-ads.com^$popup,3p,badfilter
 serieslatinoamerica.tv#@#a[href*="/redirect?tid="]
 @@||ajax.cloudflare.com/cdn-cgi/scripts/*/cloudflare-static/mirage2.min.js$domain=extreme-down.tv
+@@||aliexpress.com^$popup,domain=forum.hardware.fr
 $subdocument,3p,domain=alltube.tv,badfilter
 @@||vidsrc.me/*.js$~3p
 $image,3p,domain=vidsrc.me,badfilter
@@ -1433,6 +1434,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://ad.*/embed.
 ://ad.*?pid=
 ://adg.*/pub/
+://adlik.
 ://adn.*/zone/
 ://adscdn.
 ://adspaces.
@@ -1481,7 +1483,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 =ajaxGetAds&
 =dynamic_banner&
 =GetAdHtml&
-=iframe_pub&
 =popunder&
 =publicite&
 =sponsored_links_
@@ -1631,6 +1632,7 @@ _publicite_
 _publog_2.
 _pubscript.
 _regie/aff.
+_regiepub/
 _smads_
 _square_ads.
 _werbebanner_
@@ -1917,7 +1919,6 @@ _build=iclick-$popup
 ||pubstack.io^$3p
 ||pwspace.com^$3p
 ||pxltgr.com^$3p
-||reactivpub.fr^$3p
 ||recoco.it^$3p
 ||rederditium.com^$3p
 ||regie24h00.com^$3p
@@ -2010,6 +2011,7 @@ _build=iclick-$popup
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
 ||advancementcircuscaptured.com^
+||adventuroustame.com^
 ||affluentmirth.com^
 ||agatorkoaltor.com^
 ||aicandy.link^
@@ -2261,6 +2263,7 @@ _build=iclick-$popup
 ||kadam.net^
 ||kernh41.com^
 ||klclick.com^
+||kombr.ru^
 ||kosseanmudpack.com^
 ||laikeeboathaip.com^
 ||langretsahibah.com^
@@ -2342,7 +2345,6 @@ _build=iclick-$popup
 ||ovologysnoops.com^
 ||ozjga.top^
 ||ozwvd.com^
-||pafpaf.com^
 ||pafutos.com^
 ||palliondout.com^
 ||pampopholf.com^
@@ -2574,6 +2576,7 @@ _build=iclick-$popup
 ||absurdbatchconfess.com^$popup
 ||adjux.com^$popup,3p
 ||admarketplace.net^$popup,3p
+||affforce.com^$popup,3p
 ||agileskincareunrented.com^$popup
 ||agkn.com^$popup,3p
 ||alitems.com^$popup,3p
@@ -2688,6 +2691,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||cdn.x1cdn.com^*/banner/
 ||cex.io/rb/$3p
 ||chaturbate.com^*/?track=$subdocument,3p
+||classement.pro/banners/
 ||classement.pro^$image,3p
 ||cloudfront.net/dynamic-banners/
 ||cloudfront.net/img/banner
@@ -3097,8 +3101,8 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||monbestseller.com/sites/default/files/pushs/
 ||monpetitforfait.com/wp-content/uploads/*/ban
 ||musculaction.com/images/*-300x420.
-||mvideoporno.xxx/wp-content/uploads/*/porno
 ||nestoria.fr/jsp/include/banners/
+||netiris.fr/imgs/wengo/
 ||nextwarez.com/wp-content/uploads/*-300x250.
 ||niooz.fr^$subdocument
 ||pagesjaunes-dz.com/pub/
@@ -3467,7 +3471,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###pubtopflex
 ###quads-ad3_widget
 ###quads-ad4_widget
-###rail_ad3
 ###reklam-468x60
 ###reklam300x600
 ###reklama2
@@ -3548,11 +3551,11 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.bloc-pub2
 ##.blocPub
 ##.bloc_annonce_2_ad
+##.bloc_pub_250_s_marge
 ##.block-advertising-insert
 ##.block-artwhere-ads
 ##.block-gc-ad
 ##.block-pub
-##.block-pub-ens-th-forum
 ##.block_pub
 ##.blockgrayad
 ##.blocpub
@@ -3619,12 +3622,12 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.fix_reklama
 ##.fixedAd
 ##.flash-ad
-##.footer--pub
 ##.footer-pub
 ##.footerlinkad
 ##.footerpubright
 ##.frame-ads-left
 ##.frame-ads-right
+##.frame-ads-top
 ##.full-width-add-footer
 ##.google_ad2
 ##.gptAd
@@ -3632,6 +3635,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.gtm-pub
 ##.gutter-ads-container
 ##.hb__ad--header
+##.head-advrtsmnt
 ##.header-adds
 ##.header-blocked-ad
 ##.header-promo
@@ -3808,6 +3812,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pub_160x600
 ##.pub_300_250
 ##.pub_468
+##.pub_468x60_bas
 ##.pub_468x60_haut
 ##.pub_728_90
 ##.pub_article
@@ -3826,7 +3831,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pub_leaderboard
 ##.pub_left
 ##.pub_left_content
-##.pub_middle
 ##.pub_mobile
 ##.pub_open
 ##.pub_pave
@@ -3845,6 +3849,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pubads
 ##.pubadsense
 ##.pubb-336-1
+##.pubb-336-2
 ##.pubbigsize
 ##.pubimage
 ##.pubind1
@@ -4007,7 +4012,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##a[href^="https://pornworks.com/fr/undress/image?utm_source="]
 ##div[data-ad]
 ##div[data-iab-tag]
-echoroukonline.com###Advertisement
 basketusa.com###Basketusa_Habillage
 fnac.com###BrandWord
 amazon.fr###DAadrp
@@ -4117,7 +4121,6 @@ e-wok.tv,mp4upload.com###overlay
 gameblog.fr###overlayFnac
 lebonfap.com###page-sexcam--roomlist
 blogspot.com###pageflip
-miroirsocial.com,netbeopen.com,slateafrique.com###partners
 sante-dz.com###partners-container
 tiplanet.org###partnersWidget
 lacentrale.fr###pavePubDesktop
