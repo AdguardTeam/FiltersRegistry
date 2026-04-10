@@ -1,5 +1,5 @@
-! Checksum: fxWqJ4mlMAXu+XFM9hdAiQ
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1775745938-3600.patch
+! Checksum: vjo6rZTb961Uis1pTj8jCA
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1775790919-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.28.40
@@ -76,7 +76,6 @@ expero.ru##phrm-promotion-app-mobile
 trip.com##.body-wrapper > div[style]:has(> div.flt-ol-adc)
 downdetector.com##.grid > div[data-testid="card"]:has(> div.flex > div[class] > div[class] > a[aria-label="Facebook"])
 hurriyet.com.tr##.deeplink-banner-container
-instreet.com.tr##.mm-page > div[role="dialog"]:has(> div.fancybox-inner div.redirect-app)
 wear.jp#%#//scriptlet('set-session-storage-item', 'showed_app_redirect_half_modal_on_item_detail', 'true')
 shufoo.net#$#.appdl_modal_overlay { display: none !important; }
 shufoo.net#%#//scriptlet('remove-class', 'is-hidden', 'body')
@@ -89,6 +88,7 @@ trivago.com.tr##div[data-testid="app-install-section"]
 damattween.com#%#//scriptlet('set-local-storage-item', 'mobileAppInstall', 'true')
 jackjones.com.tr##div[class*="appbannerflyout"]
 tiklagelsin.com##.flex > div.items-center:has(> div > div > a[data-adjust-download="playstore"])
+dsdamat.com##.hide-on-app
 coinglass.com##.MuiBox-root.appd
 yenicaggazetesi.com###app-download-popup
 blog.csdn.net##.csdn-side-toolbar a.option-box[data-type="app"]
@@ -121,6 +121,7 @@ jp.moony.com##header .CMP-CM05-block > .CMP-CM28-reference.parbase:has(a[href^="
 mdcalc.com#%#//scriptlet('set-cookie', 'mobile_cta_banner_dismissed', 'true')
 trial-net.co.jp#$#.app-remind { display: none !important; }
 trial-net.co.jp#%#//scriptlet('remove-class', 'header-app-remind', 'header')
+valant.io##vng-smart-banner
 m.avito.ru##.js-apps-banner
 caretobeauty.com##.pwa-download-footer__content
 caretobeauty.com#%#//scriptlet('set-local-storage-item', 'downloadPopupDisplayed', 'true')
@@ -180,6 +181,7 @@ qms.ru###pwa-prompt
 agoda.com##div[class]:has(> div[data-element-test="prominent-app-download-popover"])
 shopltk.com##.v-main__wrap > .v-banner
 litres.ru#%#//scriptlet('set-cookie', 'appsTopBannerClosed', '1')
+redfin.com###AppInstallBanner
 goodnovel.com##.qrcode
 kabum.com.br###banner-apps-container
 tokyo-city.ru#%#//scriptlet('trusted-set-local-storage-item', 'lastShowDownload', '"2030-12-11T14:39:03.754Z"')
@@ -191,7 +193,6 @@ offerup.com##.MuiGrid-direction-xs-column > div.MuiGrid-item:has(img[alt="Offeru
 burgerking.co.jp#%#//scriptlet('trusted-set-local-storage-item', 'is_mainpopup_opened', 'none_expired')
 kolesa.kz##.kolesa-app-promo
 lastminute.com.au##.CustomerNotificationsWrapper
-lastminute.com.au##.customer-notification-container
 skyticket.jp###__next > div[class^="Header__StHeaderArea"]:has(skyticket-header[show-app-promotion="true"])
 m.olx.ua##div[class^="css-"]:has(> button[data-testid="app-install-banner-open"])
 poshmark.com##.btn--open-in-app
@@ -217,6 +218,7 @@ nintendo.com##a#Header_HeaderTop_HeaderBanner[href*="/app/"]
 enuygun.com##div[data-testid^="mobile-app-banner"]
 nbg.gr##app-slider-fancy-tabs
 bushikaku.net#%#//scriptlet('set-cookie', 'hide_fixed_bottom_app_banner', 'true')
+tour.bushikaku.net##.headerAppBanner
 shopcider.com#%#//scriptlet('remove-class', 'show-branch', '.header > .header-container')
 hh.ru##div[class^="footer-app-banner-"]
 www.dji.com#%#//scriptlet('trusted-click-element', '.universal-product-tip a.universal-product-tip-link[href^="https://cdp-vg.djiservice.org/"] ~ .close-icon')
@@ -236,8 +238,8 @@ eurovisionsport.com##div[class^="layout_bottomBannerContainer__"]
 xn--pckua2a7gp15o89zb.com#%#//scriptlet('set-cookie', 'hideuab', '1')
 xn--pckua2a7gp15o89zb.com##.p-resultArea_sideWrap--appbnr
 baitoru.com##li:has(> a[href*="adj.st"]:only-child)
+baitoru.com##a[href*="adj.st"]
 milliyet.com.tr##.redirectPopup
-bikemap.net##div[class^="app-qr-code_container"]
 temp-mail.lol#%#//scriptlet('trusted-set-local-storage-item', 'app-install-promotion', '{"hasSeenBefore":true,"alreadyInstalled":true}')
 stay.rakuten.co.jp##a[href^="/app/?l-id="]
 news.yahoo.co.jp##li:has(> a[href*="/app.adjust.com"]:only-child)
@@ -257,12 +259,12 @@ turkcell.com.tr##section[class^="AppsWorld_apps-world"]
 bcs-express.ru##div[data-id="footer-banner"]
 bhaskar.com#%#(()=>{const t={apply:async(t,e,r)=>{try{const o=await Reflect.apply(t,e,r);return o?.feed&&Array.isArray(o.feed)&&o.feed.forEach((t=>{t?.data?.shortUrl&&t?.data?.webStoryAction&&Object.keys(t.data.webStoryAction).forEach((e=>{const r=t.data.webStoryAction.webUrl;if("string"==typeof r){const e=r.split("web-blocker"),o=e.length>1?e[1]:null;if(o){const e=document.querySelector(`a[href*="${o}"]`);e&&(e.href=t.data.shortUrl,e.setAttribute("web-blocker","true"))}}t.data.webStoryAction[e]=t.data.shortUrl}))})),o}catch(t){console.trace("Error occurred:",t)}return await Reflect.apply(t,e,r)}};window.Response.prototype.json=new Proxy(window.Response.prototype.json,t),window.addEventListener("click",(function(t){t&&("A"===t.target?.nodeName||"H3"===t.target?.nodeName&&t.target?.closest("li")?.querySelector('a[web-blocker="true"]'))&&t.stopPropagation()}),!0)})();
 memurlar.net##.detail > p:has(> b > a[href^="https://play.google.com/store/apps/"])
+pizzaroni.ru##.fpsmart
 tipranks.com##.h12 > a.mobile_fontSize6small.mobile_px7
 anglers.jp###about-app
 wink.ru##div[data-type="promo"]
 bing.com##div[id^="bnp.nid."][data-viewname="VerticalHeaderFlyout"] > div[id^="b_vfly_"] > div[id^="b_vfly_"]:has(> a[href^="https://bingapp.microsoft.com/bing"])
 bookwalker.jp##.t-c-detail-app-induction
-trip.com##div[class^="tcp-h5-install-pop__"]
 jagran.com##div[class^="AdFreeBottomLoginModal_"]
 msn.com##.showDialog[data-t*="WeatherPwaPopup"]
 movilhentai.com##.alerta-adblock
@@ -381,6 +383,7 @@ newsmax.com###dtnmapp
 calendar.yandex.ru###CalendarBanner
 rohlik.cz##section[data-test="app-promo-wrapper"]
 m.dcinside.com##.app-info-ban
+m.dcinside.com##.layer-bottom-popup
 wetransfer.com##.AppInstallBanner
 apsiyon.com#$##mobile-redirect-banner { display: none !important; }
 apsiyon.com#%#//scriptlet('remove-class', 'with-sb', '#header')
@@ -615,7 +618,6 @@ medicalnote-qa.jp###header-app-banner
 news.ntv.co.jp##.introduction
 cdek.ru##.mobile-applications
 weathernews.jp##a[href^="https://weathernews.jp/app/"]
-kurumaerabi.com##.deeplink_dl_app_modal
 trip.com###new-app-download-component
 teb.com.tr###lblBanner2819
 e.mail.ru,octavius.mail.ru#?#.octopus__icon_qr-code
@@ -1410,6 +1412,7 @@ recipe.rakuten.co.jp##.rakuten_recipe_app
 recipe.rakuten.co.jp##.rakuten_recipe_app__btn
 travel.rakuten.co.jp##span[id="footerBannerAppDL"]
 travel.rakuten.co.jp###appDlBn
+travel.rakuten.co.jp##.downloads-in
 hoyolab.com##.bbs-qr
 linkedin.com#$#.header-container { margin-top:0px!important; }
 oceans-nadia.com#$#div[class^="CommonModal_modalBack"] { display:none!important; }
@@ -1500,6 +1503,7 @@ pogoda.by##.mobile-app-link
 ||jpnumber.com/m/img/googleplaylink.png
 businessinsider.com##.app-download-cta-container
 narendramodi.in##.nmapp-container
+sports.ru,ua.tribuna.com,by.tribuna.com##amp-iframe[src^="//st.s5o.ru/public/amp-smartapp/"]
 leverageedu.com##div[class^="downloadBtn"]
 myfin.by##.section-block--banner
 rtrp.jp##footer-induction
@@ -1657,7 +1661,6 @@ yahoo.co.jp##.sn-modInterstitial
 chiebukuro.yahoo.co.jp###app_bnr
 news.yahoo.co.jp##.newsFeed_list > li.newsFeed_item.null
 paypayfleamarket.yahoo.co.jp###appadbnr
-weather.yahoo.co.jp##.kizashiPromo
 weather.yahoo.co.jp##.doubleImage_cardBetween
 weather.yahoo.co.jp##.linkAndroid
 weather.yahoo.co.jp###doubleImage
@@ -1665,10 +1668,10 @@ weather.yahoo.co.jp##.footeLinkPromo
 weather.yahoo.co.jp##.appLink
 typhoon.yahoo.co.jp,weather.yahoo.co.jp##.mdStickyFooter
 smartnews.com,sixty-percent.com,m.sporx.com,baitoru.com,hokuohkurashi.com,weather.yahoo.co.jp##a[href^="https://app.adjust.com/"]
-roadway.yahoo.co.jp##.banners > li > a[href^="https://itunes.apple.com/app/"]
 roadway.yahoo.co.jp###rc_app
 netkeiba.com,zhihu.com,wayfair.de,shopping.yahoo.co.jp,103.by##.AppBanner
 search.yahoo.co.jp###contentsInner > article[class^="W2ALink_W2ALink__"]
+kyodo-d.jp,yahoo.co.jp###prm_sapp
 sportsnavi.ht.kyodo-d.jp,sports.yahoo.co.jp,baseball.yahoo.co.jp,soccer.yahoo.co.jp##.sn-modBanner
 thehindu.com###artmeterwrap
 novaposhta.ua##.b_banners
@@ -1830,6 +1833,7 @@ linkedin.com#$#.no-scroll { overflow:visible!important; }
 m.box.com#$#.mobile-app-banner { display: none!important; }
 m.tokopedia.com#$#body { overflow: visible!important; }
 m.tr.beinsports.com#$#.content_section[style="margin-top: 78px;"] { margin-top: 0!important; }
+nepisirsem.com,onliner.by#$#.smartbanner { display: none !important; }
 m.webtoons.com#$#.pop_download_app { display: none !important; }
 m.webtoons.com#$#body { overflow: visible !important; position: relative !important; }
 rtl2.de#$#body { overflow: auto !important; }
@@ -1844,6 +1848,7 @@ tr.usbxh.life,xhamster44.desi,aawweb.beauty,colourxh.site,xhamster43.desi,fullxh
 1015vibe.com,1033theeagle.com,1037chuckfm.com,1073theeagle.com,960theref.com,969theeagle.com,971theriver.com,97xonline.com,99jamzmiami.com,actionnewsjax.com,b985.com,boston25news.com,business860.com,eagledayton.com,eaglesanantonio.com,easy1029.com,easy93.com,espn690.com,hits1053sanantonio.com,hits965orlando.com,hits973.com,hot105fm.com,hot1065fm.com,k923orlando.com,k95tulsa.com,k99online.com,kiro7.com,kiss104fm.com,kissrocks.com,kkyx.com,kono1011.com,krmg.com,magic1021.com,mymagic949.com,oregonsfox.com,power1061.com,powerathens.com,star945.com,theboneonline.com,wape.com,wbab.com,wbli.com,wdbo.com,wduv.com,wftv.com,wgauradio.com,whio.com,whio.com,wmmo.com,wokv.com,wpxi.com,wsbradio.com,wsbtv.com,wsoctv.com,x995jax.com,y100fm.com,yourgeorgiacountry.com##.b-right-rail-advanced__main-right-rail table[style$="width: 100%; height: 250px; padding-bottom:0px;"]
 rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##.b-dwnapp
 irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com#$#.mobileAffiliateAdblock { display: none !important; }
+irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com#$#.admngr { display: none !important; }
 irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com#%#//scriptlet('trusted-click-element', '.js-closeAppBnr')
 irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com#$#.cover-slider-cont { display: block !important; }
 disk.360.yandex.*##div[class^="download-mobile-qr-"]
