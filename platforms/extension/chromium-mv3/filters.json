@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.88.60",
-			"timeUpdated": "2026-04-10T08:55:07+0000",
+			"version": "2.1.88.61",
+			"timeUpdated": "2026-04-10T12:47:16+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.88.59",
-			"timeUpdated": "2026-04-10T08:55:08+0000",
+			"version": "2.1.88.60",
+			"timeUpdated": "2026-04-10T12:47:17+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.28.69",
-			"timeUpdated": "2026-04-03T12:47:13+0000",
+			"version": "2.0.28.70",
+			"timeUpdated": "2026-04-10T12:47:23+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1056,8 +1056,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.7.13",
-			"timeUpdated": "2026-04-09T12:50:37+0000",
+			"version": "2.1.7.14",
+			"timeUpdated": "2026-04-10T12:47:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1380,8 +1380,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.81.91",
-			"timeUpdated": "2026-04-10T08:55:57+0000",
+			"version": "2.0.81.92",
+			"timeUpdated": "2026-04-10T12:48:10+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1428,8 +1428,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.14.25",
-			"timeUpdated": "2026-04-10T01:02:37+0000",
+			"version": "2.0.14.26",
+			"timeUpdated": "2026-04-10T12:48:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
