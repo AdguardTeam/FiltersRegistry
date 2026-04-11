@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.59.58",
-			"timeUpdated": "2026-04-11T00:37:42+0000",
+			"version": "2.4.59.59",
+			"timeUpdated": "2026-04-11T01:39:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.17.99",
-			"timeUpdated": "2026-04-10T22:16:00+0000",
+			"version": "2.1.18.0",
+			"timeUpdated": "2026-04-11T01:39:46+0000",
 			"languages": [],
 			"tags": [
 				45,
