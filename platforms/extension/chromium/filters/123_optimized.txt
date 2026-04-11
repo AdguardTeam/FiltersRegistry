@@ -1,9 +1,9 @@
-! Checksum: OyGi7sNpNb4/CJbFknZ7JQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1775869386-14400.patch
+! Checksum: TK8L/bFyAHi8B2kWaOpSKg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1775884182-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.59.66
-! TimeUpdated: 2026-04-11T00:58:47+00:00
+! Version: 2.1.59.67
+! TimeUpdated: 2026-04-11T05:06:35+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -87,7 +87,6 @@
 /shareaholic.js
 /sharebar.js
 /shareBar/*
-/shareBtn_
 /sharebutton?
 /sharecount/*
 /shared/btn_
@@ -260,8 +259,6 @@ _social_footer_
 ###follow-us-widget
 ###follow-widget
 ###followBox
-###followFB
-###followFBSvg
 ###followTwitter
 ###followUs
 ###follow_box
@@ -333,7 +330,6 @@ _social_footer_
 ###linkedin_share
 ###lnkSocial
 ###mainShare
-###menu-footer-social-icons
 ###menu-footer-social-links
 ###menu-footer_social
 ###menu-gridlove-social
@@ -386,6 +382,7 @@ _social_footer_
 ###pp-share-menu
 ###rshare
 ###rsociaux
+###sb-social
 ###sb_instagram
 ###scroll-social
 ###selectionShare
@@ -428,6 +425,7 @@ _social_footer_
 ###shareBar
 ###shareBarBottom
 ###shareBarTop
+###shareBarWrapper
 ###shareBlock
 ###shareBottom
 ###shareBox
@@ -643,7 +641,6 @@ _social_footer_
 ###social_media
 ###social_media_container
 ###social_media_icons
-###social_media_widget
 ###social_mobile
 ###social_panel
 ###social_pinterest
@@ -761,6 +758,7 @@ _social_footer_
 ##.LineShareButton
 ##.ListSocial
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
+##.PageSharingMenu
 ##.PinItButton
 ##.PinterestButtonContainer
 ##.QUISocialList
@@ -996,7 +994,6 @@ _social_footer_
 ##.big-share
 ##.bimber-microshare-item-share
 ##.bio-social
-##.bloc-share
 ##.bloc-social
 ##.bloc_float_share
 ##.block-addtoany
@@ -1373,6 +1370,7 @@ _social_footer_
 ##.floating-header-share
 ##.floating-share
 ##.floating-share-bar
+##.floating-share-buttons
 ##.floating-social
 ##.fluid_share_container
 ##.fluid_share_wrapper
@@ -1427,7 +1425,6 @@ _social_footer_
 ##.footer-connect
 ##.footer-connect-links
 ##.footer-contact-social
-##.footer-contacts__socials
 ##.footer-content-social
 ##.footer-facebook
 ##.footer-facebook-icon
@@ -1608,7 +1605,6 @@ _social_footer_
 ##.headerFacebook
 ##.headerShare
 ##.headerSocialIcons
-##.headerSocialLink
 ##.headerSocialLinks
 ##.header__social
 ##.header__social-button
@@ -1734,6 +1730,7 @@ _social_footer_
 ##.ig-share-button
 ##.ig_social
 ##.ikonz-social
+##.image-share
 ##.image-social
 ##.img-social
 ##.img__sharer
@@ -1911,6 +1908,7 @@ _social_footer_
 ##.m-icon-tw
 ##.m-share
 ##.m-share-bar__link
+##.m-share-list
 ##.m-sharing
 ##.m-sns
 ##.m-social-bar
@@ -2315,7 +2313,6 @@ _social_footer_
 ##.share-button-group
 ##.share-button-list
 ##.share-button-wrapper
-##.share-buttons-bar
 ##.share-buttons-bottom
 ##.share-buttons-box
 ##.share-buttons-container
@@ -2783,7 +2780,6 @@ _social_footer_
 ##.site-social
 ##.site-social-menu
 ##.sitewide-social-media
-##.slim-header--social-icons
 ##.sm-page-widget-sociallinks
 ##.smshare
 ##.sn-share
@@ -2854,7 +2850,6 @@ _social_footer_
 ##.social-bookmark
 ##.social-bookmarks
 ##.social-box-footer
-##.social-box-widget
 ##.social-btn-container
 ##.social-btn-facebook
 ##.social-btn-list
@@ -3046,7 +3041,6 @@ _social_footer_
 ##.social-sharing__link
 ##.social-sidebar
 ##.social-siderail-l
-##.social-single
 ##.social-site
 ##.social-site-links
 ##.social-sondage
@@ -3513,6 +3507,8 @@ _social_footer_
 ##.whatsapp.icon
 ##.whatsapp_share
 ##.widget--twitter
+##.widget-ahsocial
+##.widget-easy-twitter-feed-widget-container
 ##.widget-follow
 ##.widget-follow-us
 ##.widget-share
@@ -3884,6 +3880,7 @@ coloradopolitics.com##.article-social-share-icons
 nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
 altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
+nationalreview.com##.article-utility-nav
 rt.com##.article__google-news
 noticiabrasil.net.br,noticiaslatam.lat,spnfa.ir,sputnik-abkhazia.info,sputnik-georgia.com,sputnik-ossetia.com,sputnik.af,sputnik.by,sputnik.kg,sputnik.kz,sputnik.tj,sputnikglobe.com,sputniknews.africa,sputniknews.cn,sputniknews.in,sputniknews.jp,sputniknews.ru,sputniknews.uz,sputnikportal.rs##.article__news-services-subscribe
 salon.com##.article__share
@@ -4101,6 +4098,7 @@ evoke.ie##.oxy-social-share-buttons
 latimes.com##.page-actions
 news18.com##.phtshare
 theroar.com.au##.pm-share-horizontal
+autoexpress.co.uk##.polaris__social
 getcomics.org##.post-footer-shr
 wccftech.com##.post-google
 discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
@@ -4113,6 +4111,7 @@ lifestyleasia.com##.pre-footer_instagram
 gsmarena.com##.preferred-source
 cnet.com##.preferred-source-button
 dailymail.co.uk##.prevNextWrapper-1Vg7e
+androidheadlines.com##.push-notification
 reason.com##.rcom-social-tools
 dermatologytimes.com,drive.com.au##.react-share__ShareButton
 firstpost.com##.rhs-yt-ch-wrap
@@ -4121,6 +4120,7 @@ aljazeera.com,aljazeera.net##.rich-share
 crealitycloud.com##.right-share-box
 outlookindia.com##.rm-social-share
 sordum.org##.sbar_social_div
+pornbox.com##.scene-data__share
 fortnitetracker.com,tracker.gg,tracker.network##.scl-buttons
 oracle.com##.scl-icons
 kyivpost.com##.section-soc-icons
@@ -4263,7 +4263,9 @@ dailymail.co.uk,oogtv.nl##.whatsapp
 aajtak.in,businesstoday.in##.whatsapp_channel
 business-standard.com##.whtsclick
 indiatoday.in##.whtspp_share
+androidheadlines.com##.widget-ahcount
 trustedreviews.com##.widget-social-b
+whats-on-netflix.com##.widget_won_google_preferred_widget
 fandom.com##.wikia-bar-anon
 windowslatest.com##.wl-floatbar
 destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
@@ -4498,7 +4500,6 @@ magyarnemzet.hu##.share-container
 amarujala.com##.auw_event_share
 centrometeoitaliano.it,leggo.it###box-social
 liberoquotidiano.it###dropdown-trigger
-ilfattoquotidiano.it###glfb
 navigaweb.net###like
 navigaweb.net###social3
 dissapore.com##._social-share
