@@ -1,9 +1,9 @@
-! Checksum: yr/ik6BLoXgM5o6j/3XKvA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1775956162-14400.patch
+! Checksum: uqo2TnpXeXitURM7xsBq0w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1775971282-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.59.72
-! TimeUpdated: 2026-04-12T01:06:06+00:00
+! Version: 2.1.59.73
+! TimeUpdated: 2026-04-12T05:17:16+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -82,7 +82,6 @@
 /share_popup.js
 /share_sprite.png
 /share_view.js
-/share_wechat.png
 /share_weibo.png
 /shareaholic.js
 /sharebar.js
@@ -133,7 +132,6 @@
 /whatsapp_icon.png
 /widget/share?
 /widgets/socials/*
-/widgets/twitter/*
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
@@ -210,7 +208,7 @@ _social_footer_
 ###facebookShareButton
 ###facebookTab
 ###facebookWidget
-###facebook_box
+###facebookWindow
 ###facebook_container
 ###facebook_like
 ###facebook_link
@@ -913,6 +911,7 @@ _social_footer_
 ##.article-socials
 ##.article-title-share
 ##.articleShare
+##.articleShare-buttons
 ##.articleShareLinks
 ##.articleSocial
 ##.article__header__share
@@ -1072,11 +1071,9 @@ _social_footer_
 ##.c-footer__social-list
 ##.c-footer__social-list-item
 ##.c-footer__social-media
-##.c-footer__socials-list
 ##.c-global-header__social
 ##.c-header__social
 ##.c-list--social
-##.c-main-footer__social
 ##.c-nav-social
 ##.c-navbar-primary__social
 ##.c-share
@@ -1359,6 +1356,7 @@ _social_footer_
 ##.fixed-share
 ##.fixed-share-bar
 ##.fixed-social
+##.fixed-social-media
 ##.fixedsocial
 ##.fl-social-icons
 ##.flare-button-icon
@@ -1780,7 +1778,6 @@ _social_footer_
 ##.janrainShareCountContainer
 ##.janrainSocialBar
 ##.jeg_author_socials
-##.jeg_custom_share_wrapper
 ##.jeg_meta_share
 ##.jeg_share_button
 ##.jeg_share_top_container
@@ -1790,7 +1787,6 @@ _social_footer_
 ##.jetpack-social-widget-item
 ##.jetpack_widget_social_icons
 ##.js-Share
-##.js-fb-share
 ##.js-icon-facebook
 ##.js-icon-twitter
 ##.js-share-btn
@@ -1955,6 +1951,7 @@ _social_footer_
 ##.menu-social-menu-container
 ##.menu-social-navigation-container
 ##.menu_social
+##.menusocial
 ##.messageShareButtons
 ##.meta-share
 ##.meta-share-count
@@ -2006,7 +2003,6 @@ _social_footer_
 ##.native-share-buttons
 ##.nav--share
 ##.nav--social
-##.nav-footer-social
 ##.nav-share
 ##.nav-share-btn
 ##.nav-soc-but
@@ -2120,7 +2116,6 @@ _social_footer_
 ##.pk-share-buttons-link
 ##.pk-share-buttons-wrap
 ##.player__share
-##.pn-social-icons
 ##.pocket-btn-icon
 ##.pod_share
 ##.polaris__social--icon
@@ -2143,6 +2138,7 @@ _social_footer_
 ##.post-share-item
 ##.post-share-links
 ##.post-share-menu-item
+##.post-share-panel
 ##.post-share-pinterest
 ##.post-share-social
 ##.post-share-twitter
@@ -2515,7 +2511,6 @@ _social_footer_
 ##.shareListBox
 ##.shareMenu
 ##.shareMore
-##.shareNav
 ##.shareOption
 ##.sharePage
 ##.sharePanel
@@ -2948,7 +2943,6 @@ _social_footer_
 ##.social-media-share
 ##.social-media-share-buttons
 ##.social-media-share-links
-##.social-media-sharer
 ##.social-media-sharing
 ##.social-media-twitter
 ##.social-media-widget
@@ -3199,6 +3193,7 @@ _social_footer_
 ##.socialbtns
 ##.socialbutton
 ##.socialbuttons
+##.socialcont
 ##.socialcontainer
 ##.socialcount
 ##.socialfooter
@@ -4007,11 +4002,11 @@ bringmethenews.com,thehindu.com##.google-btn
 windowslatest.com##.google-news-btn
 thethaiger.com##.google-news-button-container
 alarabiya.net##.google-news-callout
+dailygalaxy.com,glassalmanac.com##.google-news-card
 cybernews.com,sammobile.com##.google-news-cta
 phonearena.com,quiverquant.com##.google-news-follow
 kyivpost.com##.google-news-preffer-button
 ringsidenews.com,tmz.com##.google-preferred-btn
-sammobile.com##.google-preferred-news-source-cta
 cultofmac.com##.google-preferred-source
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
 goal.com##.google-trusted-source
@@ -4132,6 +4127,7 @@ thedirect.com##.share-bar-2
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
 beincrypto.com##.share-block
 ibtimes.co.in##.share-btn-wrp
+dailygalaxy.com,glassalmanac.com##.share-buttons-toggler
 dailymail.co.uk,thisismoney.co.uk##.share-email
 dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
@@ -4441,7 +4437,6 @@ orf.at##.share-dialog
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
 bild.de##.sharingbar
 autohaus.de##.social-list
-mpg.de##.social-media-buttons
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
@@ -4572,7 +4567,6 @@ brasil247.com##.article__notif
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
-b9.com.br##.c-social-midias
 bcb.gov.br,correiodoestado.com.br,folhape.com.br,ocioso.com.br,opoder.com.br,portalperifacon.com,sampi.net.br##.compartilhar
 jovempan.com.br##.cta-model
 em.com.br##.edm-bottom-social
@@ -4843,7 +4837,6 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||jsdelivr.net/npm/sharer.js
 @@||moneyweb.co.za^*/social-shares.min.js?
 @@||nhk.or.jp/common/sns/nol_share.js$script,~third-party
-@@||player.fm^*/social-icons/$image
 @@||radio24.ilsole24ore.com/plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js$script,~third-party
 @@||sharethis.com/button/buttons.js$domain=bristan.com
 @@||svgrepo.com/show/$image,~third-party
