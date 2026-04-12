@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 2OxglmflphjcyD8916lh1g
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1775902726-3600.patch
+! Checksum: +VHP+sTlszY3QEQk8FV2lA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1775963687-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.43.44
@@ -29,7 +29,6 @@ praxistipps.chip.de##.Article > #videoWidget
 quizlet.com##+js(set-local-storage-item, setPageVisitsCount, $remove$)
 bhaskar.com##+js(abort-on-stack-trace, Array.prototype.findIndex, /isWithinLimits[\s\S]*?(at R \(http|R@http)/)
 ajansspor.com##.article-content + div.bg-card-body:has(> div > .recommended-video-wrapper)
-ajansspor.com##.recommended-video
 shiftdelete.net##.bkz
 chip.com.tr##.related-big
 hightech.fm##.ad-banner
@@ -48,6 +47,7 @@ fmstream.org##.main ~ div.framedinfo.cb
 ahaber.com.tr##+js(addEventListener-defuser, /scroll|resize/, checkScroll)
 tele1.com.tr##+js(remove-attr, target, .col-lg-8 > .result-category + a.btn-more[href="javascript:void(0)"][target="_blank"])
 androidauthority.com##div[class*="_"]:not(#comments-section) > .viafoura:has(> vf-widget#vf-conversation-starter)
+ozon.ru##:matches-path(/my/orderlist) div[data-widget="skuShelfGoods"]
 ||elements.video/player.js$domain=forbes.com
 forbes.com##div[class][style^="top:"]:has(+ div[data-testid="fbs-ad - rightRail"])
 travelandleisure.com##.mm-video-medianet-bytes
@@ -317,6 +317,7 @@ cnbc.com##.UniversalVideoPlayer-videoContainer:style(position: absolute !importa
 cnbc.com##.UniversalVideoPlayer-videoContainer.customControls #jw-container
 cyclismactu.net###dailymotion-pip-large-viewport
 danas.hr##+js(remove-class, videoContent_player_fixed, .videoContent_player_fixed)
+bankier.pl##.o-article-content > .o-graphics-multiobject:has(> .o-graphics-multiobject__wrapper > .o-graphics-multiobject__inner > .o-graphics-multiobject__inner-field > a[href^="https://www.bankier.pl/wiadomosc/Gorzej-nie-bedzie-To-sie-jeszcze-okaze-Scenariusze-dla-inwestorow-na-2023-rok-"][target="_blank"][data-vr-contentbox^="image_news_"])
 bankier.pl##.o-article-content > .o-graphics-multiobject > .o-graphics-multiobject__wrapper > .o-graphics-multiobject__inner > .o-graphics-multiobject__inner-field > a[href^="https://www.bankier.pl/wiadomosc/Gorzej-nie-bedzie-To-sie-jeszcze-okaze-Scenariusze-dla-inwestorow-na-2023-rok-"][target="_blank"][data-vr-contentbox^="image_news_"]
 femmeactuelle.fr###dailymotion-pip-large-viewport
 tecnologia.libero.it###iol_player_container.vjs-floater-parent
@@ -462,6 +463,7 @@ myuploadedpremium.de##.copyright
 wizaz.pl###forum-gad-video
 nuance.com##.modal-backdrop
 healthians.com##.bottomsticky
+smartpress.by##.list-event > a[href="https://t.me/smartpress"]
 heise.de##.sidebar-deal
 gismeteo.ru##.follow-zen
 rockmods.net###HTML1
@@ -1265,6 +1267,7 @@ creativefabrica.com##.fixed.bottom-0 > .fixed-banner
 courses.monoprix.fr##[data-test="pop-up-banner"]
 courses.monoprix.fr##div[data-test="product-list-ad-container"]
 courses.monoprix.fr##div[data-test^="product-card-advert-"]
+jorudan.co.jp##.nr_routeBlock > div.com_card:has(> .com_entry_list > li > a[href^="https://www.amazon.co.jp/gp/product/jorudancode/"])
 fitbook.de##a[rel="sponsored nofollow noreferrer noopener"]
 newt.net##body > div[class$="__banner"]
 newt.net##article iframe[class$="__card--hotel"]
@@ -1298,6 +1301,7 @@ neg.by##.footer-banner
 neg.by##.parallax-neg-rek-wrap
 hongkongfp.com,wyofile.com##.newspack-popup-container
 fnn.jp##.js-piano-sp-underarticle
+iask.ai###top-carousel
 nexusmods.com##.bg-premium-weak
 rusprofile.ru###sticky-header
 promptingguide.ai##.nextra-callout
@@ -1319,6 +1323,7 @@ rallys.online##.side_box01
 ugreen.com###shopify-section-top-activity-bar
 rutube.ru##body:style(overflow: auto !important;)
 rutube.ru##.wdp-popup-overlay-module__overlay:style(display: none !important;)
+sciencealert.com##.post-content a[href="https://www.sciencealert.com/spark-into-space-comp"] > img
 brusselstimes.com,digitimes.com,rnd.de,elmundo.es##div[class^="tp-modal"][style="z-index: 300050; display: block;"]:style(display: none !important;)
 brusselstimes.com,digitimes.com,rnd.de,elmundo.es##div[class^="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop:style(display: none !important;)
 brusselstimes.com,digitimes.com,rnd.de,elmundo.es##html > body.tp-modal-open:style(overflow: auto !important;)
@@ -1496,6 +1501,7 @@ migalhas.com.br##.patrocinador
 proton.me##+js(set-session-storage-item, modal-password, true)
 newsday.com###__next > header.masthead:style(margin-bottom: auto !important;)
 newsday.com##+js(remove-class, nd-lock, html)
+colegialacasero.com##[class]:has(> div.dvr-3x2)
 duckduckgo.com##section[class^="homepage-cta-section_"]
 rikeilabo.com##.cta-wrap
 qitano.com,rikeilabo.com##div[id^="xeory-fixed-banner"]
@@ -1524,7 +1530,6 @@ donghuanosekai.com##video[alt="Patreon DNSK"]
 foxford.ru##.embedded-banner-wrapper
 finance.sina.com.cn##a[href="http://tousu.sina.com.cn"] img
 samoletplus.ru##div[qa-data="journalDetailBlockButton"]
-porn4fans.com##.premium-banner_holder
 samoletplus.ru##div[qa-data="bannerAgentCall"]
 search.brave.com##.premium-cta
 newyorker.com##.consumer-marketing-unit
@@ -1575,8 +1580,6 @@ afisha.ru###root > div[style^="width: 100%; height: 120px; display: flex;"]
 kimbino.*##.brochure-secret-modal:style(display: none !important;)
 controld.com##.css-9hjcxa
 vook.vc##.note-main-spnsr
-investors.com##.market-banner-container
-investors.com##.market-promo
 ||news.google.com/swg^$domain=behindmlm.com|manapedia.jp|gazetepencere.com|tarimdanhaber.com
 crunchyroll.com##section[class^="lowerBannerPanel_"]
 carparts.com##section[data-testid="membership-notif-bar"]
@@ -2135,7 +2138,6 @@ vc.ru##html:style(--layout-header-height-large: 60px !important;)
 vc.ru##.distribution
 sahibinden.com##.special-day.tff-sponsor
 kotsovolos.gr###top-pre-header
-smopia.com###custom_html-25
 videogameschronicle.com##.vgc-products
 kinoart.ru###issue_banner
 wcoflix.tv,wcoanimesub.tv,wcoanimedub.tv,wco.tv##.saklasanabunu
@@ -2170,6 +2172,7 @@ iotransfer.itopvpn.com##.itop-fl-banner:style(display: none !important;)
 iotransfer.itopvpn.com##.language:style(margin-top: 0 !important; padding-top: 0 !important;)
 zerohedge.com##div[class^="PromoBanner_"]
 renosy.com##.floatBanner
+inzynieria.com##.partners-top
 twitter.com,x.com##div[aria-label] > div[class]:only-child > div[class]:only-child > div[class]:not([class*=" "]):has(> div[style="display: none !important;"])
 wcostream.tv##td[width="160"][height="900"][align="left"]
 okmusi.com##.footer-banner
@@ -2251,6 +2254,7 @@ hexlet.io##main > section[class^="container"]:has(> div.row > div[class^="col-"]
 lepoint.fr,lpnt.fr##.slotkam
 scribd.com##.between_page_portal_root
 langenscheidt.com###lgs-ad
+wordparts.ru##div[class^="ad"]:has(> a[href="https://t.me/wordparts_bot"])
 sportskeeda.com###fortnite-promotional-banner
 wix.com###comp-k0zay9k9
 animexin.vip##.announ
@@ -2549,6 +2553,7 @@ learn.microsoft.com###banner-holder
 ||static.fc2.com/contents/images/ZQEJVWJ2Z/j4k/
 ivoox.com##body:style(overflow: auto !important; padding-right: 0 !important;)
 ivoox.com##.modal-backdrop:style(display: none !important;)
+ivoox.com##.main-container > .wrapper:has(> .container-xl > div > a[href*="_promotion_1.html?"]):style(display: none !important;)
 apartmenttherapy.com,thekitchn.com,cubbyathome.com##.PromotionalRibbon
 tonarinoyj.jp##.image-container > div.page-area:has(> div.page > div.link-page-content > div.link-slot  > a[href="https://ynjn.jp"])
 mintmanga.live##+js(set-cookie, list-banner, true)
@@ -3262,7 +3267,6 @@ tver.jp##div[class^="episode-page-main_companionAd"]
 asahi.com##.ArticleNoteBox
 transit.yahoo.co.jp###stanby
 techtarget.itmedia.co.jp###tmplCol2 > div.cbox:has(> .vendorcontents)
-wcax.com##.right-rail > .card:has(> .card-body > .image-container > a[href^="/sponsored/"])
 portal.librus.pl##advertisement-module:remove()
 portal.librus.pl##.article-list .row > .article__container:has(> .article__link > .article__image-container > .article__content-inner > .article__sponsored)
 portal.librus.pl###articles-slider > .article-carousel > .list-container > .list-item:has(> .article__container > .article__link > .article__image-container > .article__content-inner > .article__sponsored)
@@ -3308,6 +3312,7 @@ thelocal.*##.tp-modal:has(> div.tp-iframe-wrapper > iframe[src^="https://buy.tin
 thelocal.*##.tp-backdrop.tp-active:style(display: none !important;)
 thelocal.*##body.tp-modal-open:style(overflow: auto !important; position: static !important; touch-action: unset !important; background: unset !important;)
 famitsu.com##.banner-ad-mark:upward(1)
+cloud.mail.ru###app div[id="reactApp"][class^="Public-desktop_"]:style(width: 100% !important;)
 ||r.mradx.net^*.html?data=$subdocument,domain=cloud.mail.ru
 cloud.mail.ru##div[class^="ReactViewer__contentWrapper"] > div[class^="ReactViewer__bottominfoWrapper"]:has(> a[class^="DisableButton_"])
 cloud.mail.ru##.marketingPromo-banner
@@ -3697,6 +3702,7 @@ web-service.aiportrait.online##html:style(overflow: auto !important;)
 web-service.aiportrait.online##body:style(overflow: auto !important;)
 asd.pics,asd.homes###clickme + a#btn[style*="display: none;"]:style(display: table !important;)
 asd.pics,asd.homes###clickme:has(+ a#btn[style*="display: none;"]):style(display: none !important;)
+gamezizo.com###oiistepone:style(display: none !important;)
 lzmods.com,iseekgames.com##.wfl_pretimer:style(display: none !important;)
 lzmods.com,iseekgames.com##.wfl_active-timer:style(display: block !important;)
 megafire.net##.show_download_links:style(display: block !important;)
@@ -3784,6 +3790,7 @@ uzone.id##body:style(margin-top: 0!important;)
 cossa.ru,nevasport.ru##.main-wrapper:style(margin-top: 0 !important;)
 naver.com##body #NM_INT_RIGHT > div.column_fix_wrap:style(top: 0!important;)
 dota2.ru###dappo:style(padding-top: 0px!important;)
+1ink.cc###countingsec:style(display: none!important;)
 saechsische.de##body:style(overflow: visible!important;)
 focus.de###teaserRss:style(border-top: 0px !important;)
 nnmclub.to##select[id="fs"][name="f[]"][multiple="multiple"]:style(height: 250px !important;)
