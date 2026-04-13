@@ -1,5 +1,5 @@
-! Checksum: P6c3nL/O951yoJLzTP7gHA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1775963692-3600.patch
+! Checksum: Tn9+ylymQhSZf/vyVmBtrQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1776050150-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.48
@@ -403,6 +403,7 @@ hentaivost.fr#%#//scriptlet('remove-node-text', 'script', '__ADX_slot_id')
 hentaivost.fr$$script:contains(__ADX_slot_id)
 hentaivost.fr##.navbar-nav > li[id^="nav-menu-item-"] > a:not([href^="https://hentaivost.fr/"])
 ||hentaivost.fr/detect.js
+||gupload.xyz/data/head/script.php
 ||gupload.xyz/vast/
 zone-telechargement.al##.body-clickable
 qwant.com#%#//scriptlet('json-prune', 'data.result.items.sidebar.[-].type.[=].advertiser_ads', 'data.search_id')
@@ -646,7 +647,6 @@ universfreebox.com###free-mid-article-native
 meteofrance.com###block-bandeauadministrablepoi
 liberation.fr##div[class^="default__OutbrainWrapper-"]
 generation-nt.com###page-hp > div.pub.overflow-hidden
-/main.js$~third-party,domain=wawacity.*
 cnews.fr##.ban-top-habillage
 cnews.fr##div[id^="block-dm-ads-"]
 aufeminin.com###af_partnerBlock_seeAlso
@@ -718,7 +718,6 @@ purepeople.com##.article-page-sticky
 caradisiac.com###MegaBan
 caradisiac.com##.containerPub
 liberation.fr##div[class^="StickyAd-"]
-torrent911.*,oxtorrent.*,bookys-ebooks.com###vpnvpn
 nouvelobs.com##.slice--ad
 forums.automobile-propre.com##.ipsDataItem a[href*="advertisement&ad="] > img
 programme-television.org##div[id^="programme-televisionorg_"][id$="_ar"].cmi_pSticky:empty
@@ -1624,7 +1623,6 @@ _ads_view/
 _adspromo.
 _adunit=
 _adv_300.
-_adv_728.
 _advertising_img.
 _affiliate.$subdocument
 _affiliate_banner_
@@ -1920,7 +1918,6 @@ _build=iclick-$popup
 ||multilinkhost.com^$third-party
 ||myservdir.com^$third-party
 ||myxpass.com^$third-party
-||neckermann.be^$third-party
 ||nend.net^$third-party
 ||netclickstats.com^$third-party
 ||non.li^$third-party
@@ -2054,6 +2051,7 @@ _build=iclick-$popup
 ||anadistil.com^
 ||analaxadulatory.com^
 ||animeplaynow.com^
+||announcenutshell.com^
 ||apl373.me^
 ||armataangrily.shop^
 ||asmonfernor.com^
@@ -2268,6 +2266,7 @@ _build=iclick-$popup
 ||imglnkx.com^
 ||imparloments.com^
 ||impendtewter.com^
+||informpay.com^
 ||insimipourr.com^
 ||inteindwormer.com^
 ||ioefhvcc.com^
@@ -2527,7 +2526,6 @@ _build=iclick-$popup
 ||vealedincite.com^
 ||veritabledate.com^
 ||videoadex.com^
-||videocdnmetrika31.com^
 ||vidox.net^
 ||viiadr.com^
 ||viipura.com^
@@ -3127,6 +3125,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||monbestseller.com/sites/default/files/pushs/
 ||monpetitforfait.com/wp-content/uploads/*/ban
 ||musculaction.com/images/*-300x420.
+||mybloggertricks.googlecode.com/files/mbtlikebox2.js
 ||nestoria.fr/jsp/include/banners/
 ||netiris.fr/imgs/wengo/
 ||nextwarez.com/wp-content/uploads/*-300x250.
@@ -3151,7 +3150,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||rapeporn.name^$script
 ||rapidgator.net/images/pics/
 ||realite-virtuelle.com/wp-content/cache/min/1/pub.
-||regie.story-fr.com^
 ||rennes-infos-autrement.fr/wp-content/uploads/2022/02/une-
 ||roulettechat.fr^*/facebook-api-pub/
 ||routiers.com/image/routiers/pub/
@@ -3445,6 +3443,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub_dfp_pre_home
 ###pub_droite
 ###pub_droite_2
+###pub_entete1
 ###pub_footer
 ###pub_gauche
 ###pub_geante
@@ -3628,6 +3627,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.div_ads
 ##.div_pub_728_90
 ##.dm_ads_InRead
+##.dp-ad-chrome
+##.dp-ad-visible
 ##.drt-ad-url
 ##.drt-sponsor-block
 ##.drt-sponsor-data
@@ -3747,6 +3748,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.p-with-floating-ad
 ##.padscreen
 ##.page-head-ad
+##.pageLoadAdBox
 ##.pagin_pub
 ##.panel-ads
 ##.parent_ad
@@ -3948,7 +3950,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.smiliar_ads
 ##.special-banner
 ##.sponsor_leaderboard-wrap
-##.sponsor_sidebar
 ##.sponsored-articles
 ##.sponsored-fly
 ##.sponsored-fly__brand
@@ -4108,6 +4109,7 @@ tsa-algerie.com###home_immo
 lesoir.be###horoscope-promo
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
+whassup.fr###js-fixed-bar
 agriaffaires.com,bloggif.com,lesoir.be,play3-live.com,topquizz.fr###leaderboard
 tiplanet.org###left_column > .archive:not([id])
 grandecran.fr###les_pubs_locales
@@ -4236,6 +4238,7 @@ pornovore.fr##.bandeau-vertical
 handroit.com##.bandeau_header
 iphone4.fr,jeux-mmorpg.com##.baner
 01net.com,1001jeux.fr,2conv.com,afrik-foot.com,afrik.com,afrikeco.com,expressio.fr,flvto.biz,glenatbd.com,hdnumerique.com,jizzbunker.com,journaldugeek.com,lautomarche.com,manga-news.com,medialot.fr,mesbagages.com,mob.org,orientation-chabab.com,photofiltres.fr,solutions-numeriques.com,telquel.ma,textnow.com,ventsdouest.com##.banner
+jizzbunker.com##.banner-popup
 judgehype.com##.bannerATF_container
 2ememain.be##.bannerContainerLoading
 darjadida.com##.banner_125x125
