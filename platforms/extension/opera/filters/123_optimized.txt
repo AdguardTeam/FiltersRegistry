@@ -1,9 +1,9 @@
-! Checksum: DLxTTBaYlmh/xs4mzydi3Q
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1776042657-14400.patch
+! Checksum: Q6jgTYCvN9FVh0AcCt9XPg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1776058360-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.59.78
-! TimeUpdated: 2026-04-13T01:07:29+00:00
+! Version: 2.1.59.79
+! TimeUpdated: 2026-04-13T05:29:20+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -32,6 +32,7 @@
 /facebook_social.png
 /fb-like-pop.js
 /fb-pixel.js
+/fbfooter.svg
 /fbshare.js
 /fbshare.png
 /floating-wpp.min.js
@@ -460,13 +461,13 @@ _social_footer_
 ###share_box
 ###share_button
 ###share_buttons
+###share_cnt
 ###share_container
 ###share_data
 ###share_div
 ###share_facebook
 ###share_google
 ###share_icon
-###share_icons
 ###share_linkedin
 ###share_links
 ###share_panel
@@ -643,7 +644,6 @@ _social_footer_
 ###social_panel
 ###social_pinterest
 ###social_popup
-###social_right
 ###social_section
 ###social_share
 ###social_share_wrapper
@@ -726,6 +726,7 @@ _social_footer_
 ###viber_share
 ###whatsapp-share
 ###widget-social
+###widget-twitter
 ###wp_fb_like_button
 ###wpcw_social-7
 ###wpzoom-widget-social-2
@@ -1283,7 +1284,6 @@ _social_footer_
 ##.facebook-social
 ##.facebookOuter
 ##.facebookShare
-##.facebookShareButton
 ##.facebookThis
 ##.facebook_block
 ##.facebook_box
@@ -1357,7 +1357,6 @@ _social_footer_
 ##.fixed-share-bar
 ##.fixed-social
 ##.fixed-social-media
-##.fixedsocial
 ##.fl-social-icons
 ##.flare-button-icon
 ##.flare-follow
@@ -1402,6 +1401,7 @@ _social_footer_
 ##.followUsBox
 ##.followUsLinks
 ##.follow__item
+##.follow__list
 ##.followus_net
 ##.followuson
 ##.foo-facebook
@@ -1618,6 +1618,7 @@ _social_footer_
 ##.headersocials
 ##.headsocial
 ##.heateorSssSharingRound
+##.heateorSsspSharing
 ##.heateor_sss_sharing_container
 ##.heateor_sss_sharing_ul
 ##.heateor_sssp_sharing_container
@@ -1635,7 +1636,6 @@ _social_footer_
 ##.hover_share
 ##.hp-tab-share
 ##.hs-blog-social-share
-##.ht-share
 ##.icon--app-store
 ##.icon--facebook
 ##.icon--facebook-simple
@@ -1851,7 +1851,6 @@ _social_footer_
 ##.like-share
 ##.like_block
 ##.like_block_rendered
-##.like_box_widget_facbook
 ##.like_buttons
 ##.likebtn
 ##.likebutton
@@ -1979,7 +1978,6 @@ _social_footer_
 ##.mod-social-navigation
 ##.mod-twitter
 ##.modSharing
-##.mod_footer_sociallist_iconlink
 ##.module--share
 ##.module-follow
 ##.module-social-share-icons
@@ -2001,7 +1999,6 @@ _social_footer_
 ##.mvp_facebook_widget
 ##.native-share
 ##.native-share-buttons
-##.nav--share
 ##.nav--social
 ##.nav-share
 ##.nav-share-btn
@@ -2044,7 +2041,6 @@ _social_footer_
 ##.novashare-buttons-wrapper
 ##.ns-social
 ##.nv-post-share
-##.nypr-social-icons
 ##.o-footer__social
 ##.o-footer__socials
 ##.o-shareBooster__item
@@ -2298,7 +2294,6 @@ _social_footer_
 ##.share-box-inner
 ##.share-box-new
 ##.share-box-wrapper
-##.share-bsky
 ##.share-btn
 ##.share-btn-container
 ##.share-btns
@@ -2748,7 +2743,6 @@ _social_footer_
 ##.simplesocialbuttons
 ##.simplesocialbuttons_inline
 ##.single-post-meta-data__social-sharing
-##.single-post-meta-info-share
 ##.single-post-share
 ##.single-post-sharing-button
 ##.single-post-social
@@ -3280,10 +3274,7 @@ _social_footer_
 ##.stickysocial
 ##.stm-share
 ##.stm-shareble
-##.stm-socials
-##.stm-socials__icon
 ##.story-share
-##.story-share-buttons
 ##.story-tool-share
 ##.story__share
 ##.story__social
@@ -3436,7 +3427,6 @@ _social_footer_
 ##.twitterlink
 ##.twittershare
 ##.twshare
-##.twt-icon
 ##.twtr
 ##.ty-social-link
 ##.ty-social-link-block
@@ -3539,7 +3529,6 @@ _social_footer_
 ##.widget_social
 ##.widget_social_links
 ##.widget_social_networks
-##.widget_socialcounter
 ##.widget_socialnetworklinks_widget
 ##.widget_socials
 ##.widget_socials_ignited
@@ -3710,7 +3699,6 @@ _social_footer_
 ||friends2follow.com^$subdocument,third-party
 ||fwcdn3.com^$third-party
 ||getbutton.io/widget-send-button/$third-party
-||getsocial.io^*/gs_async.js$third-party
 ||google.com^*/fastbutton?$third-party
 ||gotchosen.com^$third-party
 ||graph.facebook.com/fql?q=SELECT$third-party
@@ -4081,7 +4069,6 @@ nhl.com##.nhl-o-sharebar
 nist.gov##.nist-social__wrapper
 infobyip.com##.noprint
 conservativebrief.com,karanpc.com,parlamentario.com,sexypedia.it##.ns-buttons
-nerdnomads.com,paperkawaii.com,stationx.net##.ns-share-count
 nationaltoday.com##.nt-share
 foodnetwork.com##.o-SocialShare
 sheknows.com,spy.com##.o-social-list__item
@@ -4091,6 +4078,7 @@ omgubuntu.co.uk##.omg-hero-button__link
 omgubuntu.co.uk##.omg-socials
 evoke.ie##.oxy-social-share-buttons
 latimes.com##.page-actions
+operawire.com##.page-social-share
 news18.com##.phtshare
 theroar.com.au##.pm-share-horizontal
 autoexpress.co.uk##.polaris__social
@@ -4236,8 +4224,6 @@ rottentomatoes.com##.trending-bar__social-link
 slashdot.org##.tw
 apptrigger.com,motherjones.com##.tweet
 videocardz.com##.twitter-follow-button
-tjapan.jp##.u-side-col--mailmagazine-share
-tjapan.jp##.u-side-col--share--body
 unsw.edu.au##.uds-social-follow
 news.sky.com##.ui-news-footer-social
 news.sky.com##.ui-news-footer-social-link
@@ -4265,6 +4251,7 @@ whats-on-netflix.com##.widget_won_google_preferred_widget
 fandom.com##.wikia-bar-anon
 windowslatest.com##.wl-floatbar
 destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
+hsph.harvard.edu##.wp-block-hsph-sharing
 comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-sharing-buttons
 techcrunch.com##.wp-block-techcrunch-social-share
 washingtonpost.com##.wpds-c-SnBxc
@@ -4464,11 +4451,10 @@ boursedirect.fr##.slide-share
 gameblog.fr##.social-button:not(.comment-button):not(.heart-button)
 phonandroid.com##.social-networks
 francetvinfo.fr##.social-zone__wrapper
+tv5monde.com##.tv5monde-footer-menu--social
 ||lequipe.fr/_nuxt/Share.
 express.24sata.hr##.article__top
 tportal.hr##.footer__social_media
-gloria.hr,jutarnji.hr##.item__social-jl
-jutarnji.hr##.item__wrap-social
 jutarnji.hr##.item_social_share
 express.24sata.hr##.social__wrap
 tportal.hr##.t-share
@@ -4559,6 +4545,7 @@ srad.jp##.synd
 mainichi.jp##.tool-facebook
 mainichi.jp##.tool-twitter
 auction.co.kr##.sare-sns
+forbes.pl##.articleSocials
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
 terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
