@@ -1,9 +1,9 @@
-! Checksum: 7chIf82zerT5HBgHPQ+xIA
-! Diff-Path: ../patches/2/2-s-1776057206-3600.patch
+! Checksum: n2u/V7+hP7rv2tJwpaLwWw
+! Diff-Path: ../patches/2/2-s-1776063331-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.60.6
-! TimeUpdated: 2026-04-13T05:09:05+00:00
+! Version: 2.4.60.7
+! TimeUpdated: 2026-04-13T06:52:12+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18864,7 +18864,7 @@ bigbrothercanada.ca#%#//scriptlet('set-constant', 'video_player_config.players.0
 ##embed[width="600"][height="160"]
 ##embed[width="728"][height="90"]
 ##iframe[width="100%"][height="90"]
-##iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+##iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ##iframe[width="104"][height="464"]
 ##iframe[width="200"][height="240"]
 ##iframe[width="200"][height="300"]
@@ -21854,7 +21854,7 @@ newsbeast.gr##.amSlotInReadVideo
 newsbeast.gr#$#.adsbox.doubleclick.ad-placement { display: block !important; }
 newsbeast.gr#%#//scriptlet('prevent-setTimeout', 'adsbox')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125995
-thepressproject.gr#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+thepressproject.gr#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124277
 mixanitouxronou.gr##.narrow-ad
 mixanitouxronou.gr##div[class="prel min-height"]
@@ -21921,7 +21921,7 @@ lexigram.gr#$#.col1 > div[style="margin-top: 95px; height: 130px; text-align: ce
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45660
 iefimerida.gr#@#.ads-loaded
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45143
-parapolitika.gr#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+parapolitika.gr#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42521
 newsthessaloniki.gr##.adace-slideup-slot-wrap
 @@||newsthessaloniki.gr/wp-content/*/adblock-detector/advertisement.js
@@ -29226,6 +29226,8 @@ wykop.pl#?#aside.tag-top > .hits-slider:matches-css(before, content: /^reklama$/
 @@||wykop.pl/api/v3/tags/reklama/$xmlhttprequest,~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225300
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140299
+! TODO: Remove later, when it's fixed in Polish filter list
+wykop.pl$badfilter
 ||wykop.pl/api/v*/ads
 ||wykop.pl/static/img/pub/
 wykop.pl##.lisek-app
@@ -30441,6 +30443,10 @@ vatantat.ru##a[href="https://pobeda.onf.ru/"]
 ##.right-menu > div.adhl
 !
 !
+animewaku.com##.module_home_x
+animewaku.com##.content > center
+animewaku.com##a[href^="https://ibit.ly/"]
+||animewaku.com/up/img/webp/*.webp
 ||goldtraders.or.th/api/Banner/
 overmovies.com###header-ad-container-2
 overmovies.com###footer-ad-container-1
@@ -59840,7 +59846,7 @@ pagesix.com#@#.nyp-video-player
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194727
 nihon-ikuji.com#@#.showads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193934
-nytimes.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+nytimes.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194223
 ! Captcha blocks access to website with any extension enabled
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193630
@@ -60343,7 +60349,7 @@ supersummary.com#@#.sidebar-ads-container
 @@||outkick.com/wp-content/plugins/advanced-ads-pro/assets/js/
 @@||outkick.com/wp-content/plugins/advanced-ads/public/assets/js/advanced.min.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144923
-gearspace.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+gearspace.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144474
 @@||sonic-ui.highereducation.com/latest/vendor.js$domain=thebestschools.org
 @@||sonic-ui.highereducation.com/latest/ucl.publisher.js$domain=thebestschools.org
@@ -60354,7 +60360,7 @@ gearspace.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
 @@||gammaplus.takeshobo.co.jp/img/ad/
 ! https://www.reddit.com/r/Adguard/comments/11asj2f/how_to_allow_iframes_from_specific_domains/
 ! Unblocks embedded player from bandcamp.com
-tumblr.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+tumblr.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143829
 @@||cdn.vox-cdn.com/packs/js/concert_ads-*.js$domain=goldenstateofmind.com
 @@||concert.io/lib/concert-ads/v*-latest/concert_ads.js$domain=goldenstateofmind.com
@@ -60679,7 +60685,7 @@ listcrawler.eu#@#.listad
 @@||en.bongacash.com/js/videojs/videojs_*.vast.vpaid.min.js$domain=pornsocket.com
 ! moneycontrol.com - incorrect blocking
 ! Fixes blocked graph - https://www.moneycontrol.com/news/business/markets/share-market-live-updates-stock-market-today-march-17-latest-news-bse-nse-sensex-nifty-covid-coronavirus-beml-gufic-biosciences-satin-creditcare-network-yasho-industries-indiabulls-housing-finance-8241801.html
-moneycontrol.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+moneycontrol.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 /^https?:\/\/.*\.(jpg|gif|png|php|svg|ico|js|txt|css)/$popup,domain=mixdrop.*|mixdrop.ag|mixdrop.nu,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/112207
 /^https?:\/\/.*\.(club|bid|biz|xyz|site|pro|info|online|icu|monster|buzz|website|biz|re|casa|top|one|space|network|live|systems|ml|world|life|co)\/.*/$~image,~media,~subdocument,third-party,domain=streamz.ws,badfilter
@@ -60953,7 +60959,7 @@ youronlinechoices.com#@#a[href*=".adform.net/"]
 ! cbc.ca - fixing video player
 @@||pubads.g.doubleclick.net/ssai/event/*/streams$domain=cbc.ca
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88612
-faskil.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+faskil.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88121
 @@||youporn.com/embed/$subdocument
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88066
@@ -61376,7 +61382,7 @@ nonfungerbils.com#@#iframe[width="600"][height="90"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56884
 @@||cdn.adswizz.com/adswizz/js/SynchroClient*.js$domain=lounge.fm
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56868
-dust-sounds.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+dust-sounds.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56800
 @@||thumbor.thedailymeal.com^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56828
@@ -61540,7 +61546,7 @@ station-drivers.com#@#iframe[width="600"][height="90"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49903
 @@||hotpornfile.org/*/a/na/js/*?container=naskjz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49950
-youredm.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+youredm.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49739
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=classicreload.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49581
@@ -62183,7 +62189,7 @@ cheapovegas.com#@#a[href*="/www/delivery/"]
 ! translate.google.com does not translate if url block value is included in text
 @@||translate.google.*/translate_a/single^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22225
-mozilla.org#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+mozilla.org#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22027
 @@||cdn.jsdelivr.net/*/clappr^
 @@||cdn.jsdelivr.net/gh/video-dev^
@@ -62494,7 +62500,7 @@ tusfiles.net#@#.btn
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11883#issuecomment-367017541
 @@||bing.com/news/search?*InfiniteScroll=$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11196#issuecomment-364187868
-twitter.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+twitter.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11050
 msn.com#@#.morefromproviderrr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10364
@@ -62553,7 +62559,7 @@ gelbooru.com#@#[style*="width:"][height]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7904
 yiv.com#@##adsContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8026
-grownuprap.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+grownuprap.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8014
 europaplus.ru#@#img[width="240px"][height="400px"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7809
@@ -63015,7 +63021,7 @@ icube.ru#@#.top-banners
 ! Embed video is not work in Firefox-based browsers
 @@||twitter.com/i/videos/tweet/*?embed_$document
 ! https://forum.adguard.com/index.php?threads/10813/
-mixesdb.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+mixesdb.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://forum.adguard.com/index.php?threads/10293/
 @@||pubads.g.doubleclick.net/gampad/ads$domain=cbs.com,~image,~script
 ! https://forum.adguard.com/index.php?threads/10939/
@@ -83321,6 +83327,7 @@ browsershots.org#@#.advert_area
 ||7on4m4c4b1ej1yrp.cfd^
 ||7oo2r9vfgw2k22kwrzobtv7.rest^
 ||7pe59uixcyqevun3f73i8f5.rest^
+||7pobx6vqzbl8bcpgmevl395yyybblbzzk.cfd^
 ||7tg9vr9pjloq5nl.rest^
 ||7v6gvx5b5ywlu289zh.cfd^
 ||7vf2llmkf59tl38o4ongf1c7.rest^
@@ -86367,6 +86374,7 @@ browsershots.org#@#.advert_area
 ||barelydonkeysteed.com^
 ||barermetrics.com^
 ||bareseries.pro^
+||barfedtrema.cyou^
 ||barflyevolver.com^
 ||barinvent.net^
 ||barlo.xyz^
@@ -88418,6 +88426,7 @@ browsershots.org#@#.advert_area
 ||carefree-pitch.pro^
 ||carefreefootball.pro^
 ||carefulbleatdish.com^
+||carefultongue.pro^
 ||carelessnurse.com^
 ||caremecoshes.com^
 ||caresseashoreunrest.com^
@@ -94135,6 +94144,7 @@ browsershots.org#@#.advert_area
 ||fadskis.com^
 ||fadslimz.com^
 ||faeknuuqt.com^
+||faenasthereoflalo.cfd^
 ||fafflebotry.shop^
 ||fafxuylrwwnxg.online^
 ||fagaldazinputtan.qpon^
@@ -94526,6 +94536,7 @@ browsershots.org#@#.advert_area
 ||ffwmijupxxcda.online^
 ||ffzljtcftssxn.space^
 ||fg1focl77h2obu.cfd^
+||fgaxbdtgdia.com^
 ||fggjrptybynnt.space^
 ||fggovwtouynec.site^
 ||fgjaelzvzxtdq.rocks^
@@ -96153,6 +96164,7 @@ browsershots.org#@#.advert_area
 ||ginchoirblessed.com^
 ||ginningconant.com^
 ||ginningsteri.com^
+||ginshavance.qpon^
 ||giocyrvdmxgqz.website^
 ||gipsiesthyrsi.com^
 ||gipsydeceivedepoch.com^
@@ -101104,6 +101116,7 @@ browsershots.org#@#.advert_area
 ||jaaeymeyvwlga.online^
 ||jaahqjqnkzlpb.site^
 ||jaapeserinmisword.cyou^
+||jaapwinevat.cyou^
 ||jaavnacsdw.com^
 ||jabgbmoddpmjp.site^
 ||jaborinrally.com^
@@ -101323,6 +101336,7 @@ browsershots.org#@#.advert_area
 ||jcplphmxeqhrr.website^
 ||jcqsiwmyioxsu.online^
 ||jcqwudfidmevr.online^
+||jcrjlzcl.com^
 ||jcsbdfpddlahn.online^
 ||jcsjeisnswjmp.site^
 ||jcsubfkhazsil.website^
@@ -104877,6 +104891,7 @@ browsershots.org#@#.advert_area
 ||levitytape.com^
 ||levxyipnritcw.website^
 ||lewd.ws^
+||lewdballersyeomen.cfd^
 ||lewdl.com^
 ||lewjjyubvihfw.space^
 ||lewthshallop.cyou^
@@ -111292,6 +111307,7 @@ browsershots.org#@#.advert_area
 ||octobertheatrenosy.com^
 ||octoicmayer.qpon^
 ||octonewjs.com^
+||octopeddefoam.qpon^
 ||octopedentr.help^
 ||octopuscreedpincers.com^
 ||octopuspop.com^
@@ -113646,6 +113662,7 @@ browsershots.org#@#.advert_area
 ||pbulltkdrf.com^
 ||pbvmuafmk.com^
 ||pbxai.com^
+||pbxphallus.qpon^
 ||pbyfqdlhzrrit.online^
 ||pbymqomcjgyqk.online^
 ||pbymzmwwopnlm.site^
@@ -116595,6 +116612,7 @@ browsershots.org#@#.advert_area
 ||pxmocwbetdyby.online^
 ||pxnzitqmsqaxg.online^
 ||pxnzwgdyvcaqd.online^
+||pxp9.com^
 ||pxptonxdhbgwd.site^
 ||pxpxauecpdbfj.website^
 ||pxqudpostizcp.online^
@@ -118562,6 +118580,7 @@ browsershots.org#@#.advert_area
 ||reelnk.com^
 ||reempaperydetune.cfd^
 ||reenakun.com^
+||reenterbikini.cyou^
 ||reepsotograg.net^
 ||reestale.help^
 ||reetjicara.cfd^
@@ -119243,6 +119262,7 @@ browsershots.org#@#.advert_area
 ||rhombicsomeday.com^
 ||rhombswhipmanvegan.cfd^
 ||rhonchifaujdar.qpon^
+||rhoosscrunuj.in^
 ||rhosbetag.qpon^
 ||rhouhvlqclqwk.online^
 ||rhousoasopersb.org^
@@ -120791,6 +120811,7 @@ browsershots.org#@#.advert_area
 ||sanestruggle.com^
 ||sangahfrazingkelpy.cfd^
 ||sangarrigbane.qpon^
+||sangarsooty.shop^
 ||sangerschews.qpon^
 ||sanghissed.com^
 ||sangopportunity.com^
@@ -125172,6 +125193,7 @@ browsershots.org#@#.advert_area
 ||taxissunroom.com^
 ||taxitesgyal.top^
 ||taxpaidconed.help^
+||taxwaxtreks.cyou^
 ||taycwgofsxugf.online^
 ||taypwqoprmcap.space^
 ||taysaamsouled.qpon^
@@ -125183,6 +125205,7 @@ browsershots.org#@#.advert_area
 ||tbexzfbwrbnfp.online^
 ||tbezwqeyyioqa.site^
 ||tbfqspkqykdcljg.com^
+||tbgehesqivycnf.com^
 ||tbgoqplabnhkb.site^
 ||tbguudxflcfub.site^
 ||tbgwyrxwtmfrh.site^
@@ -127684,6 +127707,7 @@ browsershots.org#@#.advert_area
 ||uaraycugougers.qpon^
 ||uarlonjzgxvlb.site^
 ||uasvnmrxqj.com^
+||uauhosrlqmbkx.space^
 ||uauswagtehnwg.online^
 ||uavefhtrbkbhq.online^
 ||uavnfdezxzote.site^
@@ -129925,6 +129949,7 @@ browsershots.org#@#.advert_area
 ||vfegfmbcyerbh.space^
 ||vfegqmbcgyndw.today^
 ||vfeissowmnvyu.website^
+||vfelxgfxodljv.space^
 ||vfertqhkmxvra.website^
 ||vfetupuyuwhso.space^
 ||vffncubbivrcm.website^
@@ -130328,6 +130353,7 @@ browsershots.org#@#.advert_area
 ||vjhixkkzjtlau.online^
 ||vjhtegmziupkn.website^
 ||vjhxheqlglwtt.space^
+||vjkgjdtcucpiy.site^
 ||vjkiaxkxnijvu.site^
 ||vjlckfkbcuswo.site^
 ||vjlocpypzmhzr.website^
@@ -130779,6 +130805,7 @@ browsershots.org#@#.advert_area
 ||vtemlrnsqozri.site^
 ||vtfjzqzivtvrf.space^
 ||vtfktvqx.net^
+||vtgfeyimfufyq.online^
 ||vthdfsbbscgzv.website^
 ||vthfrtuowddcm.space^
 ||vthnavimclxsbc.xyz^
@@ -132972,6 +132999,7 @@ browsershots.org#@#.advert_area
 ||wwaaqgfxuonwz.com^
 ||wwaispipywjia.online^
 ||wwalclcbe.com^
+||wwarrifmila.in^
 ||wwazalfqbheab.space^
 ||wwbdayuvbvrsr.rocks^
 ||wwcjhitmvwdqh.space^
@@ -133988,6 +134016,7 @@ browsershots.org#@#.advert_area
 ||xvegvlkqovqqr.online^
 ||xvepksunvchaf.website^
 ||xvfarnkhampqi.space^
+||xvhdggbxfjauj.website^
 ||xviperonec.com^
 ||xvjafhbaifpngfu.com^
 ||xvjshpsbondpn.site^
@@ -134331,6 +134360,7 @@ browsershots.org#@#.advert_area
 ||ycjhwnqmlchll.space^
 ||yckkscwnnhsnj.space^
 ||yckzwrlrapwbk.site^
+||yclwk98mzke6rk4p.rest^
 ||ycmksqoykzgyf.website^
 ||ycnlvmsuyvhhi.website^
 ||ycnowupwlki.com^
@@ -135880,6 +135910,7 @@ browsershots.org#@#.advert_area
 ||zmywhopme.in^
 ||znbgaspigycyc.space^
 ||znbkeybfqmeub.space^
+||zndtdgimaaued.space^
 ||znfjejuvhkuuz.site^
 ||znigpcayzsxyp.site^
 ||znizlnbamkeod.site^

@@ -1,9 +1,9 @@
-! Checksum: iWW9OhCUky+zZB3rzq3W+g
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1776057202-3600.patch
+! Checksum: wWkqgVl2UdYw5a6MlWUqHg
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1776063329-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.60.6
-! TimeUpdated: 2026-04-13T05:09:05+00:00
+! Version: 2.4.60.7
+! TimeUpdated: 2026-04-13T06:52:12+00:00
 ! Expires: 12 hours (update frequency)
 ||hoerenjs.b-cdn.net^
 ||bojegoju.top^
@@ -5853,7 +5853,7 @@ doulci.net#@##top_ad_game
 doulci.net#@#.rightAd
 bigbrothercanada.ca#%#//scriptlet('set-constant', 'video_player_config.players.0.adblock', 'false')
 ##iframe[width="100%"][height="90"]
-##iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+##iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ##iframe[width="200"][height="300"]
 ##iframe[width="210"][height="237"]
 ##iframe[width="240"][height="400"]
@@ -6618,7 +6618,7 @@ in.gr##.das-mmiddle
 ||epimenidis.in.gr/shopflix/widget.php$domain=in.gr
 in.gr##.shopflix-wrapper
 newsbeast.gr#%#//scriptlet('prevent-setTimeout', 'adsbox')
-thepressproject.gr#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+thepressproject.gr#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 gamatotv.info#%#//scriptlet("remove-attr", "href", "a[href]#clickfakeplayer")
 insider.gr##.admanager-content
 newsit.gr##.advert
@@ -6630,7 +6630,7 @@ bestprice.gr###filters-aside > .ads
 bestprice.gr##a[class^="promo"]
 ||go.linkwi.se/delivery/
 iefimerida.gr#@#.ads-loaded
-parapolitika.gr#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+parapolitika.gr#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 newsthessaloniki.gr#%#//scriptlet("set-constant", "jQuery.adblock", "false")
 xiaomi-miui.gr#%#//scriptlet("set-constant", "$easyadvtblock", "false")
 newsbomb.gr##.banner-section
@@ -8204,6 +8204,7 @@ infor.pl#?#.singleTopArea:has(> .adsContent)
 kreskowkazone.pl#@#.myTestAd
 !+ PLATFORM(windows, mac, android, cli)
 wykop.pl#%#(()=>{const t={apply:(t,e,r)=>{const o=r[0]&&"href"===r[0],n=r[1];if(e&&e instanceof HTMLAnchorElement&&o&&n&&n.includes?.("https://wykop.pl/api/v3/ads/redirect?data="))try{const t=new URL(n).searchParams.get("data"),e=atob(t),o=JSON.parse(e),p=decodeURIComponent(o.target_url);(t=>{let e;try{e=new URL(t)}catch(t){return!1}return"http:"===e.protocol||"https:"===e.protocol})(p)&&(r[1]=p)}catch(o){return Reflect.apply(t,e,r)}return Reflect.apply(t,e,r)}};window.Element.prototype.setAttribute=new Proxy(window.Element.prototype.setAttribute,t)})();
+wykop.pl$badfilter
 ||wykop.pl/api/v*/ads
 wykop.pl##.lisek-app
 wykop.pl##body .pub-slot-wrapper
@@ -8686,6 +8687,10 @@ ekstrabladet.dk#@##ad_container
 manithan.com##.blurb
 lankasri.com#?#.theiaStickySidebar div[id^="div-gpt-ad-"]:upward(1)
 cinema.dinamalar.com##div[class^="topadtxt"]
+animewaku.com##.module_home_x
+animewaku.com##.content > center
+animewaku.com##a[href^="https://ibit.ly/"]
+||animewaku.com/up/img/webp/*.webp
 overmovies.com##a[rel="sponsored nofollow noopener"]
 ||cdn.nanamovies.org/*.gif$domain=overmovies.com
 nanaplayer.net#%#//scriptlet('trusted-replace-node-text', 'script', 'playerads', 'object.advertising', 'object.adv')
@@ -17576,7 +17581,7 @@ pagesix.com#@#.nyp-video-player
 @@||analytics.analytics-egain.com/onetag/$script,domain=digikey.fr
 @@||flormar.webinstats.com^$domain=flormar.com.tr
 nihon-ikuji.com#@#.showads
-nytimes.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+nytimes.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 usatoday.com#@#.pbs__player
 @@||player.ex.co/player/$domain=usatoday.com
 @@||b.cdnst.net/javascript/prebid.*.min.js$domain=speedtest.net
@@ -17793,9 +17798,9 @@ supersummary.com#@#.sidebar-ads-container
 @@||amazon-adsystem.com/aax2/apstag.js$domain=ladbible.com|unilad.com|unilad.co.uk|gamingbible.com|tyla.com|sportbible.com|uniladtech.com
 !+ NOT_OPTIMIZED
 @@||simkl.com^$xmlhttprequest,elemhide,jsinject,extension
-gearspace.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+gearspace.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 @@||gammaplus.takeshobo.co.jp/img/ad/
-tumblr.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+tumblr.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 @@||cdn.vox-cdn.com/packs/js/concert_ads-*.js$domain=goldenstateofmind.com
 @@||concert.io/lib/concert-ads/v*-latest/concert_ads.js$domain=goldenstateofmind.com
 gamemonetize.video#@#.companion-ads
@@ -17917,7 +17922,7 @@ linkvertise.download#@##headerTopAd
 listcrawler.eu#@#.listad
 @@||google.com/recaptcha/$domain=vidoza.net
 @@||unpkg.com/vue-recaptcha@*/dist/vue-recaptcha.js$domain=vidoza.net
-moneycontrol.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+moneycontrol.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 /^https?:\/\/.*\.(jpg|gif|png|php|svg|ico|js|txt|css)/$popup,domain=mixdrop.*|mixdrop.ag|mixdrop.nu,badfilter
 /^https?:\/\/.*\.(club|bid|biz|xyz|site|pro|info|online|icu|monster|buzz|website|biz|re|casa|top|one|space|network|live|systems|ml|world|life|co)\/.*/$~image,~media,~subdocument,third-party,domain=streamz.ws,badfilter
 technoashwath.com#@##ad-top
@@ -18019,7 +18024,7 @@ jamaicaobserver.com#@##bottom_leaderboard
 @@||ad.amgdgt.com/ads/js/*$domain=ad.amgdgt.com
 youronlinechoices.com#@#a[href*=".adform.net/"]
 @@||pubads.g.doubleclick.net/ssai/event/*/streams$domain=cbc.ca
-faskil.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+faskil.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 @@||youporn.com/embed/$subdocument
 fontawesome.com#@#.fa-ad
 @@||v.fwmrm.net/ad/g/1?csid=vcbs_cbsnews_*_web_vod&*&host=https%3A%2F%2Fwww.cbsnews.com&$domain=imasdk.googleapis.com
@@ -18143,7 +18148,7 @@ nonfungerbils.com#@#iframe[width="600"][height="90"]
 @@||short.croclix.me/*js/viewad.js
 @@||short.goldenfaucet.io/*templates/css/viewad.css
 @@||cdn.adswizz.com/adswizz/js/SynchroClient*.js$domain=lounge.fm
-dust-sounds.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+dust-sounds.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 @@||cdn.stat-rock.com/player/*player.js$domain=4shared.com
 ||imgshare.info^$badfilter
 |https://$image,script,stylesheet,subdocument,third-party,xmlhttprequest,domain=upstream.to,badfilter
@@ -18192,7 +18197,7 @@ nypost.com#@#.recirc
 station-drivers.com#@#iframe[width="600"][height="90"]
 !+ NOT_PLATFORM(windows, mac)
 @@||my.westfieldinsurance.com^$document
-youredm.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+youredm.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=classicreload.com
 myip.ms#@#.google_ads
 yepi.com#@##PreRollAd
@@ -18376,7 +18381,7 @@ redmondpie.com#@#.advertisment
 @@||gstatic.com/ads/external/images/logo_google_ads_*px.png$domain=support.google.com
 cheapovegas.com#@#a[href*="/www/delivery/"]
 @@||translate.google.*/translate_a/single^
-mozilla.org#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+mozilla.org#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 @@||cdn.jsdelivr.net/*/clappr^
 @@||cdn.jsdelivr.net/gh/video-dev^
 1001tracklists.com#@#[id][width]
@@ -18472,7 +18477,7 @@ zmorph3d.com#@#.b-header-banner
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=sbs.com.au
 tusfiles.net#@#.btn
 @@||bing.com/news/search?*InfiniteScroll=$document
-twitter.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+twitter.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 msn.com#@#.morefromproviderrr
 gahag.net#@#.adbox2
 gelbooru.com#@#[style*="height:"][width]
@@ -18488,7 +18493,7 @@ gelbooru.com#@#[style*="width:"][height]
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=cimri.com
 @@||dingit.tv/dingit2/static/player/videojs.ads.js
 yiv.com#@##adsContainer
-grownuprap.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+grownuprap.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 europaplus.ru#@#img[width="240px"][height="400px"]
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=autorambler.ru
 bloomberg.com#@#.page-ad
@@ -18606,7 +18611,7 @@ azerty.nl#@#img[width="728"][height="90"]
 @@||static.opensubtitles.org/libs/js/common.js
 @@||static.opensubtitles.org/libs/js/urlshortener.js
 icube.ru#@#.top-banners
-mixesdb.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
+mixesdb.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 @@||tagmanager.google.com^$document
 @@||adm.fwmrm.net/crossdomain.xml
 @@||btg.mtvnservices.com/aria/coda.html?site=nickelodeontv.ru$domain=nickelodeon.ru
@@ -25195,6 +25200,7 @@ browsershots.org#@#.advert_area
 ||7ng6v3lu3c.execute-api.us-east-1.amazonaws.com^
 ||7nujijkfh5xfbehzetp.rest^
 ||7oo2r9vfgw2k22kwrzobtv7.rest^
+||7pobx6vqzbl8bcpgmevl395yyybblbzzk.cfd^
 ||7tg9vr9pjloq5nl.rest^
 ||7vf2llmkf59tl38o4ongf1c7.rest^
 ||7yormczmtp3owb3lf6lkk8y5ewovl4387i.rest^
@@ -26848,6 +26854,7 @@ browsershots.org#@#.advert_area
 ||bardismshagbag.com^
 ||barefitacater.cyou^
 ||barermetrics.com^
+||barfedtrema.cyou^
 ||barflyevolver.com^
 ||barlo.xyz^
 ||barnabaslinger.com^
@@ -27860,6 +27867,7 @@ browsershots.org#@#.advert_area
 ||cardialeldin.shop^
 ||cardiganpalmreconcile.com^
 ||carefree-pitch.pro^
+||carefultongue.pro^
 ||carelessnurse.com^
 ||caremecoshes.com^
 ||cargoattachment.com^
@@ -30403,6 +30411,7 @@ browsershots.org#@#.advert_area
 ||fadiyqfhdrots.online^
 ||fadsipz.com^
 ||faeknuuqt.com^
+||faenasthereoflalo.cfd^
 ||fafflebotry.shop^
 ||fagaldazinputtan.qpon^
 ||fagarauvitic.com^
@@ -30573,6 +30582,7 @@ browsershots.org#@#.advert_area
 ||ffsrxeamzwtsl.website^
 ||fftvarabrusqk.website^
 ||fg1focl77h2obu.cfd^
+||fgaxbdtgdia.com^
 ||fggjrptybynnt.space^
 ||fgjaelzvzxtdq.rocks^
 ||fgoqfrzcwdmrh.online^
@@ -31292,6 +31302,7 @@ browsershots.org#@#.advert_area
 ||ginchoirblessed.com^
 ||ginningconant.com^
 ||ginningsteri.com^
+||ginshavance.qpon^
 ||gipsydeceivedepoch.com^
 ||giqduwgfuov.in^
 ||girllsforyou.net^
@@ -32892,6 +32903,7 @@ browsershots.org#@#.advert_area
 ||j6mn99mr0m2n.com^
 ||j8pngwt16ggotzxwp9ex5ftmj4byn35.rest^
 ||ja2n2u30a6rgyd.com^
+||jaapwinevat.cyou^
 ||jaavnacsdw.com^
 ||jabgbmoddpmjp.site^
 ||jaborinrally.com^
@@ -32956,6 +32968,7 @@ browsershots.org#@#.advert_area
 ||jcgkhqwlxpmbh.site^
 ||jcnqpuregmpkqy.com^
 ||jcplphmxeqhrr.website^
+||jcrjlzcl.com^
 ||jct83bclvg8c7h91f.cfd^
 ||jculbjoopikfwtq.com^
 ||jcvwmstu.com^
@@ -33867,6 +33880,7 @@ browsershots.org#@#.advert_area
 ||levfyrqglxvkl.space^
 ||levxyipnritcw.website^
 ||lewd.ws^
+||lewdballersyeomen.cfd^
 ||lewdl.com^
 ||leymubpjmjtuq.online^
 ||lf21cgfgpg2cfz.cfd^
@@ -35670,6 +35684,7 @@ browsershots.org#@#.advert_area
 ||octo25.me^
 ||octobertheatrenosy.com^
 ||octonewjs.com^
+||octopeddefoam.qpon^
 ||octopuspop.com^
 ||octroikilter.qpon^
 ||oculatesackman.shop^
@@ -36346,6 +36361,7 @@ browsershots.org#@#.advert_area
 ||pbugzelgt7vlxm.cfd^
 ||pbulltkdrf.com^
 ||pbxai.com^
+||pbxphallus.qpon^
 ||pc180101.com^
 ||pc20160301.com^
 ||pc2121.com^
@@ -37267,6 +37283,7 @@ browsershots.org#@#.advert_area
 ||pxjwhfafyxlnak.com^
 ||pxktbqnixjrmt.com^
 ||pxls4gm.space^
+||pxp9.com^
 ||pydulxopajrbwna.com^
 ||pygmydelire.cfd^
 ||pykije.com^
@@ -37748,6 +37765,7 @@ browsershots.org#@#.advert_area
 ||reefunderage.com^
 ||reelingpanther.qpon^
 ||reelnk.com^
+||reenterbikini.cyou^
 ||reepsotograg.net^
 ||refbanners.com^
 ||refbanners.website^
@@ -37961,6 +37979,7 @@ browsershots.org#@#.advert_area
 ||rhinosdase.com^
 ||rho3ihhlouug529z8eneu.rest^
 ||rhombicsomeday.com^
+||rhoosscrunuj.in^
 ||rhploidy.com^
 ||rhujriqfoarz.in^
 ||rhumbasnant.com^
@@ -38418,6 +38437,7 @@ browsershots.org#@#.advert_area
 ||sandwichconscientiousroadside.com^
 ||sanelisten.com^
 ||sanespend.pro^
+||sangarsooty.shop^
 ||sangopportunity.com^
 ||sanifylinga.cfd^
 ||sankhyaten.qpon^
@@ -39767,10 +39787,12 @@ browsershots.org#@#.advert_area
 ||tawneyakhoond.shop^
 ||taxashaft.shop^
 ||taxissunroom.com^
+||taxwaxtreks.cyou^
 ||taycwgofsxugf.online^
 ||tazzasbustles.cfd^
 ||tbezwqeyyioqa.site^
 ||tbfqspkqykdcljg.com^
+||tbgehesqivycnf.com^
 ||tbksccuy.com^
 ||tbmoxtvskajqz.space^
 ||tbpnaezomkw.com^
@@ -40601,6 +40623,7 @@ browsershots.org#@#.advert_area
 ||uabvpjljbbaqa.website^
 ||uapcmhjywzbkh.online^
 ||uasvnmrxqj.com^
+||uauhosrlqmbkx.space^
 ||uavnfdezxzote.site^
 ||uayecvqeslarn.com^
 ||uazhaixvzaggm.space^
@@ -41231,6 +41254,7 @@ browsershots.org#@#.advert_area
 ||vexolinu.com^
 ||vfcxsogc.com^
 ||vfegqmbcgyndw.today^
+||vfelxgfxodljv.space^
 ||vfertqhkmxvra.website^
 ||vfgbvavljpiwut.com^
 ||vfghc.com^
@@ -41358,6 +41382,7 @@ browsershots.org#@#.advert_area
 ||vjdciu.com^
 ||vjehbytyxzsom.site^
 ||vjhdqmupqsugi.site^
+||vjkgjdtcucpiy.site^
 ||vjmwnvteuhwhe.website^
 ||vjrjvojuxlkhc.website^
 ||vjstudksodqe.com^
@@ -41466,6 +41491,7 @@ browsershots.org#@#.advert_area
 ||vswafpkjmekfo.com^
 ||vsznyyhrbezhg.online^
 ||vtekvway.com^
+||vtgfeyimfufyq.online^
 ||vtilbcxygwyac.space^
 ||vtkhxouqlxnypf4pbcjfxy6l.rest^
 ||vtqwdogrjewrv.site^
@@ -42127,6 +42153,7 @@ browsershots.org#@#.advert_area
 ||wvwaerpeqvzpb.fun^
 ||wwaaqgfxuonwz.com^
 ||wwalclcbe.com^
+||wwarrifmila.in^
 ||wwbdayuvbvrsr.rocks^
 ||wwgarbtgydwfga.com^
 ||wwija.com^
@@ -42384,6 +42411,7 @@ browsershots.org#@#.advert_area
 ||xumbrhkbakm.com^
 ||xuxtzbczsxcrs.website^
 ||xvfarnkhampqi.space^
+||xvhdggbxfjauj.website^
 ||xviperonec.com^
 ||xvjafhbaifpngfu.com^
 ||xvnzteuiiidy.com^
@@ -42471,6 +42499,7 @@ browsershots.org#@#.advert_area
 ||ycdhgqvracdci.space^
 ||yceml.net^
 ||ycjeeokkadizr.com^
+||yclwk98mzke6rk4p.rest^
 ||ycnowupwlki.com^
 ||ycugaikxafv.com^
 ||ycvcpyvmbdyd.com^
@@ -42851,6 +42880,7 @@ browsershots.org#@#.advert_area
 ||zmvcbfmrdgner.club^
 ||zmynapdza.in^
 ||zmywhopme.in^
+||zndtdgimaaued.space^
 ||znigpcayzsxyp.site^
 ||znjiryteilzih.site^
 ||znjwdrbrsotej.website^
