@@ -1,9 +1,9 @@
-! Checksum: BrrANZ/2NC/+dUbPTttGBg
-! Diff-Path: ../patches/19/19-s-1776080178-3600.patch
+! Checksum: xCkjh3YcGQgNASP8vWIY0w
+! Diff-Path: ../patches/19/19-s-1776087708-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.73.78
-! TimeUpdated: 2026-04-13T11:33:04+00:00
+! Version: 2.0.73.79
+! TimeUpdated: 2026-04-13T13:38:37+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3317,6 +3317,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+spartoo.nl#$##MaskFlou { display: none !important; }
+spartoo.nl#$##formFlou { display: none !important; }
 nebula.tv#%#//scriptlet('trusted-click-element', 'main div[data-theater-mode] button[type="submit"]', '', '2000')
 nebula.tv##.css-1csnssi
 telex.hu##.snackbar--tax
@@ -12441,6 +12443,10 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+kp.ru##div[class^="sc-"] > div[class^="sc-"]:has(> div[class^="sc-"] > a[href="https://max.ru/truekpru"])
+kp.ru##div[class^="sc-"] > p:has(> a[href="https://max.ru/truekpru"])
+pcgamer.com###bannerHeader
+pcgamer.com###signupForm
 telex.hu##.article-html-content div.framed-content:has(> p > a[href*="/subscribe-to-our-newsletters"])
 iex.nl##.blocksub
 ura.news##div[class^="detail_news-publication-detail__report-news"]
