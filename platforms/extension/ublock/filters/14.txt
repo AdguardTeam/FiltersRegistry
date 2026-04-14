@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qTD6wJUwbHBm2UxZl6kiow
-! Diff-Path: ../patches/14/14-s-1776184487-3600.patch
+! Checksum: M7EmoIH/gqzYW1mdf3NT8g
+! Diff-Path: ../patches/14/14-s-1776191706-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.65.24
-! TimeUpdated: 2026-04-14T16:31:25+00:00
+! Version: 2.2.65.25
+! TimeUpdated: 2026-04-14T18:31:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17400,6 +17400,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228439
+@@||sdk.privacy-center.org/*/loader.js$domain=plus.rtl.de
+@@||sdk.privacy-center.org/sdk/$domain=plus.rtl.de
 ! https://github.com/uBlockOrigin/uAssets/issues/32541
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=bostad.stockholm.se
 @@||cdn.cookielaw.org/consent/$xhr,domain=bostad.stockholm.se
@@ -43897,6 +43900,9 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+bestbuy.com##body.upper-slim-smart-banner-sticky > .align-items-center:has(> a[href^="https://promos.bestbuy.com/"])
+bestbuy.com##body.upper-slim-smart-banner-sticky:style(margin-top: 0px !important;)
+bestbuy.com##.small-header:style(position: initial !important;)
 operationsports.com###os-app-widget
 aptekanevis.ru##.header__main:style(top: 0 !important;)
 aptekanevis.ru##.get_mobile_app:style(display: none !important;)

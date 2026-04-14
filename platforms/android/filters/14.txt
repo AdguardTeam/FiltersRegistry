@@ -1,9 +1,9 @@
-! Checksum: yUEOxs0b+MiUQyISD/D+5Q
-! Diff-Path: ../patches/14/14-s-1776184456-3600.patch
+! Checksum: 2qZAGD5S9d7xIFd9gPpE4Q
+! Diff-Path: ../patches/14/14-s-1776191680-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.65.24
-! TimeUpdated: 2026-04-14T16:31:25+00:00
+! Version: 2.2.65.25
+! TimeUpdated: 2026-04-14T18:31:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2405,6 +2405,8 @@ rtl.fr,idealista.it,lidovky.cz,theobjective.com,dziennikzachodni.pl,standaard.be
 ! #%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button')
 tf1.fr,cadenaser.com,filmstarts.de,tv.free.fr,orange.fr,laliga.com,latribune.fr,laopiniondezamora.es,elpais.com,laprovincia.es,informacion.es,levante-emv.com,ondacero.es,rtbf.be,mediasetinfinity.es,franceinfo.fr,ivoox.com,nationalgeographic.com.es,slam.nl,rmcbfmplay.com,abc.es,lejsl.com,bienpublic.com,funradio.fr,flooxernow.com,techcrunch.com,gamepro.de,lemon.fr,mundodeportivo.com,elmundo.es,profil.at,ladepeche.fr,francetvinfo.fr,lexpress.fr,elespanol.com,sncf-connect.com,lasexta.com,shadow.tech,letemps.ch,nicematin.com,mein-mmo.de,heureka.sk,video-streaming.orange.fr,leparisien.fr,film.at,euronews.com,france24.com,elcorreo.com,ideal.es,lesoir.be,lavanguardia.com,dhnet.be,20minutes.fr,moviepilot.de,dnevnik.hr,lesechos.fr,lasprovincias.es,programme-television.org,cnews.fr,boursorama.com,marianne.net,ouest-france.fr,jeanmarcmorandini.com,publicsenat.fr,dna.fr,bfmtv.com,sudinfo.be,europe1.fr,public.fr,rtl.be,rfi.fr,kurier.at,telegraaf.nl,marmiton.org,reviewingthebrew.com,jaysjournal.com,engadget.com,reignoftroy.com,actu.fr,elconfidencial.com,rtl.lu#%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button')
 leboncoin.fr#%#//scriptlet('trusted-click-element', '#didomi-agree-to-all')
+! #%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button','','1000')
+plus.rtl.de#%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button', '', '1000')
 ! For the case if the scroll page is blocked
 bonjour-ratp.fr,yahoo.com,expressen.se,elespanol.com,shadow.tech,letemps.ch,nicematin.com,purepeople.com,dn.se,numerama.com,goplay.be,lavozdegalicia.es,boursobank.com,corrieredellosport.it,recup.paylib.fr,radioclassique.fr,joabet.fr,xataka.com,lejdd.fr,filmweb.pl,speedy.fr,manomano.fr,talent-soft.com,jofogas.hu,m.rtl.be,elmundo.es,vecernji.hr,zive.cz#$##didomi-host { display: none !important; }
 bonjour-ratp.fr,yahoo.com,expressen.se,elespanol.com,techcrunch.com,shadow.tech,letemps.ch,nicematin.com,purepeople.com,dn.se,numerama.com,goplay.be,lavozdegalicia.es,boursobank.com,recup.paylib.fr,radioclassique.fr,joabet.fr,xataka.com,lejdd.fr,filmweb.pl,speedy.fr,manomano.fr,talent-soft.com,jofogas.hu,m.rtl.be,elmundo.es,vecernji.hr,zive.cz#$#html > body.didomi-popup-open { overflow: auto !important; position: unset !important; }
@@ -18742,6 +18744,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228439
+@@||sdk.privacy-center.org/*/loader.js$domain=plus.rtl.de
+@@||sdk.privacy-center.org/sdk/$domain=plus.rtl.de
 ! https://github.com/uBlockOrigin/uAssets/issues/32541
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=bostad.stockholm.se
 @@||cdn.cookielaw.org/consent/$xmlhttprequest,domain=bostad.stockholm.se
@@ -45575,6 +45580,9 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+bestbuy.com##body.upper-slim-smart-banner-sticky > .align-items-center:has(> a[href^="https://promos.bestbuy.com/"])
+bestbuy.com#$#body.upper-slim-smart-banner-sticky { margin-top: 0px !important; }
+bestbuy.com#$#.small-header { position: initial !important; }
 operationsports.com###os-app-widget
 aptekanevis.ru#$#.header__main { top: 0 !important; }
 aptekanevis.ru#$#.get_mobile_app { display: none !important; }
