@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.60.30",
-			"timeUpdated": "2026-04-14T07:38:25+0000",
+			"version": "2.4.60.31",
+			"timeUpdated": "2026-04-14T08:40:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.33.98",
-			"timeUpdated": "2026-04-13T23:21:19+0000",
+			"version": "2.0.33.99",
+			"timeUpdated": "2026-04-14T08:40:21+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.66",
-			"timeUpdated": "2026-04-11T10:15:22+0000",
+			"version": "2.0.63.67",
+			"timeUpdated": "2026-04-14T08:40:24+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.65.15",
-			"timeUpdated": "2026-04-14T07:39:04+0000",
+			"version": "2.2.65.16",
+			"timeUpdated": "2026-04-14T08:40:31+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.84.92",
-			"timeUpdated": "2026-04-14T07:39:12+0000",
+			"version": "2.0.84.93",
+			"timeUpdated": "2026-04-14T08:40:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.73.82",
-			"timeUpdated": "2026-04-14T07:39:14+0000",
+			"version": "2.0.73.83",
+			"timeUpdated": "2026-04-14T08:40:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.43.50",
-			"timeUpdated": "2026-04-13T23:21:37+0000",
+			"version": "2.0.43.51",
+			"timeUpdated": "2026-04-14T08:40:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
