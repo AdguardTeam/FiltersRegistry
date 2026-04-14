@@ -1,9 +1,9 @@
-! Checksum: cTrXvlCpQmngBjNJUW3nmQ
-! Diff-Path: ../patches/14/14-s-1776156216-3600.patch
+! Checksum: x9BwITx3dNTzwVxX8H0BRQ
+! Diff-Path: ../patches/14/14-s-1776159719-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.65.16
-! TimeUpdated: 2026-04-14T08:40:31+00:00
+! Version: 2.2.65.17
+! TimeUpdated: 2026-04-14T09:38:24+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18654,6 +18654,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/uBlockOrigin/uAssets/issues/32541
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=bostad.stockholm.se
+@@||cdn.cookielaw.org/consent/$xmlhttprequest,domain=bostad.stockholm.se
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228892
 doutorfinancas.pt#@#.cookies-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228836
@@ -35882,6 +35885,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+7eminar.ua##.contain:has(> section.widget-subscribe-simple)
 kp.ru##div[class^="sc-"] > div[class^="sc-"]:has(> div[class^="sc-"] > a[href="https://max.ru/truekpru"])
 kp.ru##div[class^="sc-"] > p:has(> a[href="https://max.ru/truekpru"])
 pcgamer.com###bannerHeader
@@ -53006,6 +53010,8 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+7eminar.ua##.header-banner
+2ip.io##.tabs li:has(> button[data-id="ad"])
 spb.docdoc.ru##div.ddamcat
 ||navitime.co.jp/*/account/walk/proplus_myspot_banner.webp
 telex.hu##.telex-links
