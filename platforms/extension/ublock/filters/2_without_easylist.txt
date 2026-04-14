@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: e32nTc/NmNmieQQh4zdt2g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776159745-3600.patch
+! Checksum: chxcmQkJNoMLMkqpgtf0yw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776163088-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.60.32
-! TimeUpdated: 2026-04-14T09:37:54+00:00
+! Version: 2.4.60.33
+! TimeUpdated: 2026-04-14T10:33:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37214,7 +37214,6 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 ! NOTE: Specific rules
 !
 rule34.xxx##.postListSidebarRight
-2ip.io##.ip-links-container > div.ip-links-container-item:has(> i.ip-icon-alps)
 vxxx.com##.nav-item ~ a[href][target="_blank"]
 vxxx.com##a[href="/ai"]
 vxxx.com##.nav-group
@@ -37241,6 +37240,7 @@ onlychickshub.com##a[href^="https://t.mbjms.com/"]
 onlychickshub.com##a[href^="https://t.acrsmartcam.com/"]
 ||namethatporn.com/assets/prod/fuf4g_*.js
 namethatporn.com##article.sbitm_custom
+namethatporn.com##.item:has(> div.item_media)
 namethatporn.com##+js(abort-on-property-write, dataLayer)
 namethatporn.com##+js(no-window-open-if, !namethatporn)
 sporked.com##h2#video-header:has(+ #sv-video-container)
@@ -57408,6 +57408,8 @@ gismeteo.md##.content > div[class] > div[class] > div[class] > div[class] > div[
 gismeteo.md##.content > div[class] > div[class] > div[class] > div[class] > div[class]:has(> div[class] > div[class] > div[class] > div[class] > a:contains(Accent-TV))
 !
 ! 2ip.io,2ip.ru
+2ip.io,2ip.ru##.tabs li:has(> button[data-id="ad"])
+2ip.io,2ip.ru##.ip-links-container > div.ip-links-container-item:has(> i.ip-icon-alps)
 2ip.io,2ip.ru##.ip-links-container > .ip-links-container-item:has(> .ad-x-change-ip)
 2ip.io,2ip.ru##.data_table > div.data_item a:has(> span)
 2ip.io,2ip.ru##.data_table > div.data_item > div > div:has(> i + span)
@@ -59092,6 +59094,9 @@ $popup,3p,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228824
+! Website is broken when blocked scripts are removed from the page,
+! so as a workaround a "redirect-rule" is used.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228051
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228579
 ||marissasharecareer.com^$badfilter
