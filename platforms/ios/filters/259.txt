@@ -1,20 +1,20 @@
-! Checksum: uIle7qQj3m+eTtzWIh3lfw
-! Diff-Path: ../patches/259/259-s-1772095806-14400.patch
+! Checksum: W7xsdFctQ+kQAM14HXwGLA
+! Diff-Path: ../patches/259/259-s-1775767786-14400.patch
 ! Title: Dandelion Sprout's Anti-Malware List
 ! Description: Blocks more malware than most other major anti-malware lists - domains and URL patterns used in malware redirection chains, IP addresses that are solely used by malware, PUP nags, and a few scammers. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.0.13
-! TimeUpdated: 2026-02-26T08:47:20+00:00
+! Version: 2.0.0.17
+! TimeUpdated: 2026-04-09T20:47:02+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 26February2026v1
+! OriginalVersion: 09April2026v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! Legitimate use is almost non-existent, but has a tiny userbase in Japan and among upstart coding experiments. Its extreme common-ness in malware redirections means that the entry will be kept forever.
-||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top
+||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~yggleak.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top|~outlands.top
 ! (Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067)
 @@||masto*.top^$document
 @@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
@@ -24,6 +24,8 @@
 @@://pyrofork.*.top^$document
 ! https://github.com/DandelionSprout/adfilt/issues/1158
 @@||wceui.top^
+! https://github.com/DandelionSprout/adfilt/issues/1242
+@@://maven.*.top^$document
 ! International topical domains that have consistently horrendous scores on watchlists of bad TLDs, and whose use for legit purposes is practically non-existent.
 ||loan^$document
 ||bid^$document
@@ -294,10 +296,10 @@ azdll.net##.dllhelper-banner
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 ! Common scam domain patterns
-/^https?://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
-/^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
+/^(https?|tcp|iquic)://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
+/^(https?|tcp|iquic):\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
 ! https://github•com/AdguardTeam/AdguardFilters/issues/58737
-/^https?:\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php\$/$document,domain=biz|fun|live
+/^(https?|tcp|iquic):\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php\$/$document,domain=biz|fun|live
 ! ——— Banner for "MSN New Tab" ———
 msn.com##.irisbanner
 ! ——— Download sites that felt shoddy to me (Most of which, if not all of which, had real non-ad download links that contained malware exe files) ———
@@ -846,9 +848,9 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 /scan-update-and-protect-your-browser.html$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61755
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61743
-/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
+/^((https?|tcp|iquic)://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 ! https://github.com/easylist/easylist/issues/6111
-/^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
+/^(https?|tcp|iquic)://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 ||best202*-games-web1.com^$all
 ||bigkick.biz^$all
 ||findmedia.biz^$all
@@ -885,14 +887,14 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ! https://maldita•es/malditobulo/2020/11/18/no-no-es-cierto-que-amancio-ortega-haya-invertido-100-millones-en-bitcoin-revolution-es-una-web-falsa/
 ||starpowders.github.io^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69611
-/^https?://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/.*)?$/
+/^(https?|tcp|iquic)://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/.*)?$/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71721
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71369
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73623
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73627
-/^https?://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/.*)?$/
+/^(https?|tcp|iquic)://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/.*)?$/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73133
-/^(https?://)?\d\d?\.[a-z0-9-]{1,}\.biz(/.*)?$/$document
+/^((https?|tcp|iquic)://)?\d\d?\.[a-z0-9-]{1,}\.biz(/.*)?$/$document
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-428333
 /bitcoinrevolution/lp.php^$document
 ! https://github.com/DandelionSprout/adfilt/issues/188
@@ -1667,8 +1669,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||198.199.120.251^$all
 ! https://www•telia•no/kundeservice/mobil/malware-flubot-android/
-!+ NOT_OPTIMIZED
-/^https?://(www\.)?[a-z0-9-]{1,}\.[a-z]{2,17}/[a-z0-9]/\?[a-z0-9.-]{8,}\$/$document
+/^(https?|tcp|iquic)://(www\.)?[a-z0-9-]{1,}\.[a-z]{2,17}/[a-z0-9]/\?[a-z0-9.-]{8,}\$/$document
 ! A Discord conversation I had about Throneful
 ||datings-club.life^$all
 ||findsexy.life^$all
@@ -10891,7 +10892,7 @@ http://secured21.*.com/|$all
 ||23.22.126.183^$all
 ||adbuho.shop^$all
 ||againstmor.store^$all
-||blizzboygames.net^$all
+||blizzboygames.net^$all,domain=~contains_fraudulent_fake_installer_files.*
 ||cherriescoil.xyz^$all
 ||cumguns.online^$all
 ||floridistor.icu^$all
@@ -10910,6 +10911,185 @@ http://secured21.*.com/|$all
 ||trackmedia.site^$all
 ||trkepcs.com^$all
 ||xcvnerui.pro^$all
+! https://www•tjekdet•dk/fup-og-spam/pas-paa-falske-beskeder-fra-dao-rammer-danmark
+||as-dao.icu^$all
+||dao-as.cc^$all
+||dao-as.com^$all
+||dao-as.vip^$all
+||dao-as.xyz^$all
+||dao-asdk.cc^$all
+||dao-asdk.vip^$all
+||dao-ase.cc^$all
+||dao-ase.vip^$all
+||dao-asen.bond^$all
+||dao-asi.cc^$all
+||dao-asi.vip^$all
+||dao-asiiv.icu^$all
+||dao-asioiiv.icu^$all
+||dao-asl.vip^$all
+||dao-aso.cc^$all
+||dao-asoi.icu^$all
+||dao-asoiiv.icu^$all
+||dao-asr.cc^$all
+||dao-asr.vip^$all
+||dao-ass.cc^$all
+||dao-ass.vip^$all
+||dao-assion.icu^$all
+||dao-asuui.icu^$all
+||dao-asvisu.icu^$all
+||dao-post.icu^$all
+||daoao.icu^$all
+||daoas-en.bond^$all
+||daoasa.cyou^$all
+||daoasa.sbs^$all
+||daoiiox.icu^$all
+||daoios.icu^$all
+||daoipost.icu^$all
+||daonevt.com^$all
+||daoosi.icu^$all
+||daopakke.sbs^$all
+||daopst.icu^$all
+||daosa.cyou^$all
+||daosa.shop^$all
+||daosviz.com^$all
+||daoteams.com^$all
+||daovisx.com^$all
+||daoxo.bond^$all
+||dpd-sio.icu^$all
+||pakke.click^$all
+||postuin.bond^$all
+||daobo.bond^$all
+||daodo.bond^$all
+||daoicom.bond^$all
+||aecopetrol.qpon^$all
+||araskargo-tr.bond^$all
+||araskargotr.bond^$all
+||asxczmv.click^$all
+||autostrade.cfd^$all
+||autostrade.cyou^$all
+||autostrade.sbs^$all
+||autostrade.shop^$all
+||bahrain-bh.love^$all
+||cimb2.one^$all
+||claroiso.cc^$all
+||commodits.shop^$all
+||commoditys.store^$all
+||dhl-com.bond^$all
+||dhl-commx.^$all
+||dhl-commx.bond^$all
+||dhlse.icu^$all
+||dhlse.sbs^$all
+||dhlse.shop^$all
+||dpd-aco.icu^$all
+||dpd-cis.icu^$all
+||dpd-com.bond^$all
+||dpd-cv.icu^$all
+||dpd-sa.icu^$all
+||dpd-verfolge.cc^$all
+||dpd-voi.icu^$all
+||dpdatd.cyou^$all
+||dpdatd.icu^$all
+||dpdatd.shop^$all
+||dpdcom.bond^$all
+||dpdcz.my.id^$all
+||dpddp.cyou^$all
+||dpddpd.biz.id^$all
+||dpddpd.sbs^$all
+||dpdias.bond^$all
+||dpdopd.cyou^$all
+||dpdopd.icu^$all
+||dpdopd.sbs^$all
+||dpdopd.shop^$all
+||dpdpd.cyou^$all
+||dpdpd.icu^$all
+||dpdpd.sbs^$all
+||dpdpd.shop^$all
+||dpdsdd.cfd^$all
+||dpdsdd.cyou^$all
+||dpdsdd.icu^$all
+||dpdsdd.sbs^$all
+||dpdsdd.shop^$all
+||dpdsn.cyou^$all
+||dpdsn.icu^$all
+||dpdsn.sbs^$all
+||dpdsn.shop^$all
+||dpdspd.cfd^$all
+||dpdspd.cyou^$all
+||dpdspd.icu^$all
+||dpdspd.sbs^$all
+||dpdspd.shop^$all
+||dpduio.bond^$all
+||dpdzp.bond^$all
+||egh.me^$all
+||egyptpoat.cc^$all
+||egyptposc.cc^$all
+||egyptposz.cc^$all
+||egyptpoxu.cc^$all
+||egyptpoxy.cc^$all
+||egyptpsto.cc^$all
+||ezdrivema-com-vip.bond^$all
+||ezdrivema-com.bond^$all
+||ezdrivemia-com.bond^$all
+||fancourier-ro.icu^$all
+||finessa.icu^$all
+||finlands.icu^$all
+||fullcopec-cil.bond^$all
+||gdexpiress.co^$all
+||ghana-post.bond^$all
+||ghanapost.my.id^$all
+||gls-group-eu.bond^$all
+||glssi.biz.id^$all
+||glsso.biz.id^$all
+||glsso.my.id^$all
+||ieb.me^$all
+||itale-post.com^$all
+||italy-poste.biz.id^$all
+||italy-poste.my.id^$all
+||italy-posti.info^$all
+||itaypostin.bond^$all
+||jt-egpaeso-eg.cc^$all
+||jt-egpreso-ey.cc^$all
+||jt-egypost-ey.cc^$all
+||kgm-*.bond^$all
+||kgm-govv.icu^$all
+||kgm-gv.icu^$all
+||kgmei.bond^$all
+||kgmg-ovtr.bond^$all
+||kgmgiov.bond^$all
+||kgmgiovtr.bond^$all
+||kgmgo*.bond^$all
+||kgmic.bond^$all
+||kgmim.bond^$all
+||kgmit.bond^$all
+||magenta-at.help^$all
+||maybank2u.mom^$all
+||maybank2u.web.id^$all
+||plpost.icu^$all
+||poschat.asia^$all
+||postahe.biz.id^$all
+||santander.wikaba.com^$all
+||seurac.bond^$all
+||seurnu.bond^$all
+||t-mobiile-*.bond^$all
+||t-mobile-*.bond^$all
+||telceleslareds.dubya.net^$all
+||telceleslareds.mynetav.net^$all
+||telceleslareds.trickip.net^$all
+||tigo-gt.love^$all
+||tigo-onisu.icu^$all
+||tigosv.mrbonus.com^$all
+||tigosv.toythieves.com^$all
+||trpttgovqs.icu^$all
+||very-wonderful.shop^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||43.157.122.86^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||43.157.46.83^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||43.164.196.209^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||88.255.216.16^$all
+/((https?|tcp|iquic)://)?204\.194\.54\.\d{1,3}([:/].*)?$/$all
 ! ——— Standard malware that I stumbled upon on my own ———
 ! http://www•toorgle•net/results•php?q=fetishkitsch&security=666
 ||downloadprovider.me^$all
@@ -11103,7 +11283,7 @@ toorgle.net##.join
 ||y96q29a1fo.com^$all
 ||yjwtolgjjeky.com^$all
 ||zdicbpujzjps.com^$all
-/^(https?://)?192\.243\.59\.\d{1,3}(/.*)?$/$document
+/^((https?|tcp|iquic)://)?192\.243\.59\.\d{1,3}(/.*)?$/$document
 ! rule34hentaiNET when uBlock Filters and AdGuard Base are turned oﬀ
 ! Googling Aksel Hennie (Results for prior week) in late July 2021
 ||okmx.org^$all
@@ -11411,7 +11591,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ! Overly dedicated E-mail spammers
 ||wirexapp.africa.com^$all
 ! Google results for «SodaStream site:no cranberry»
-/^https?://[a-z0-9.-]{1,}\.([a-z]{3,}|[a-z][a-tv-z]|[a-qs-z][a-z])/.*(go\.php|redirect|url=|\?re=).*\.(xn--p1ai|рф|%D1%80%D1%84)\$/$document,domain=~malware_redirection_results.*
+/^(https?|tcp|iquic)://[a-z0-9.-]{1,}\.([a-z]{3,}|[a-z][a-tv-z]|[a-qs-z][a-z])/.*(go\.php|redirect|url=|\?re=).*\.(xn--p1ai|рф|%D1%80%D1%84)\$/$document,domain=~malware_redirection_results.*
 ||adservice.google.*/ddm/clk/$document,domain=~malware_redirection_results.*
 /ad_click/q?&url=$document,domain=~malware_redirection_results.*
 ! Laughably blatant fraud site
@@ -13530,6 +13710,10 @@ drvhub.net##.driver-item__install
 ||edweasdxf.pro^$all
 ||hubygvftc.cfd^$all
 ||audioza.cyou^$all
+! https://www.reddit.com/r/uBlockOrigin/comments/1rqgj9d/ubo_some_scamsmalware_sites_arent_blocked/
+! https://app.any.run/tasks/dd05e9da-400a-4936-8ea0-d440fa0887e0
+||rpcs4.com^$all
+||rpcs5.com^$all
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
 ||unofficialtwrp.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
@@ -14106,6 +14290,27 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 .to/popconsole.php|
 ! Sus(picious) search results for YouTube videos that claim to have craсks for Adоbe products. (https://github.com/DandelionSprout/adfilt/issues/1197)
 google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|d\ownl\oad).*$/i):contains(/^.*(ph\ot\osh\op|dav\inc\i|\il{2}ustrat\or).*$/i):contains(/^.*(fre{2}|(cr|h)ack).*$/i))
+! Various E-mail spams' links
+||statautos.com^$all
+/noo/taxx/*$document
+||solitanh.site^$document
+||floraltepi.site^$document
+||arlonb.my^$document
+||astonishedsound.com^$document
+||avibary.com^$document
+||buysalesclub.com^$document
+||corlmedi.com^$document
+||csstudyhub.com^$document
+||hxzf4er.com^$document
+||k2krl7zj.com^$document
+||mcafee.sjv.io^$document
+||ojrq.net^$document
+||oninebest.com^$document
+||ormediao.com^$document
+||paramatise.com^$document
+||watchterm.com^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||185.176.220.31^$document
 ! ——— Entries that are and/or were in "uBlock Filters — Ads" and/or "uBlock Filters — Badware Risks" but which aren't in AdGuard Base or EasyList ———
 ! https://github.com/DandelionSprout/adfilt/pull/395
 ! https://www•huorong•cn/info/1531309921141.html

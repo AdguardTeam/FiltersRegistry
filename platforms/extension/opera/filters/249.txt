@@ -1,14 +1,14 @@
-! Checksum: GHhYQk1niQmcZ7vBn+2iMw
-! Diff-Path: ../patches/249/249-s-1772946130-14400.patch
+! Checksum: 1oz8zkGYmuD285vBW7ox+A
+! Diff-Path: ../patches/249/249-s-1775306996-14400.patch
 ! Title: Dandelion Sprout's Nordic Filters
 ! Description: This list covers websites for Norway, Denmark, Iceland, Danish territories, and the Sami indigenous population.
-! Version: 2.0.8.43
-! TimeUpdated: 2026-03-08T04:59:25+00:00
+! Version: 2.0.8.48
+! TimeUpdated: 2026-04-04T12:47:00+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Title 🇬🇧: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
-! Last modified: 08March2026v1
+! Last modified: 04April2026v1
 ! Expires: 18 hours
 ! Lisens / Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md
@@ -452,6 +452,8 @@ samvirke.dk##.external-banner--continue
 dagensbyggeri.dk##.banner-megaboard-top
 fcbarcelona.dk##.yellow
 kulturnet.dk##.col-md-4:has(a[href*=spil])
+bt.dk##contimo-widget
+bt.dk##.dre-group--sm-empty
 friflyt.no###ads_fullwidth_container
 gulesider.no##.MuiListItem-root:has(div[id^=div-gpt-ad-])
 utvarpsaga.is##.textwidget > center
@@ -796,7 +798,7 @@ madensverden.dk##.maden-widget
 tek.no###application > div[class]:nth-of-type(1):nth-last-of-type(2)
 fcfredericia.dk##.et_pb_equal_columns
 politiken.dk##.js-sticky-container.col--overflow
-visir.is##section > .padded--tight
+!!!visir.is##section > .padded--tight (https://github.com/DandelionSprout/adfilt/issues/1241#issuecomment-4186382884)
 feltet.dk###struct_topBanner
 reiseliv.no##a[href*=annonsorartikler][href*=aksje]
 kanalfrederikshavn.dk##table[width="620"]
@@ -1223,8 +1225,8 @@ tvkampen.com,tvsporten.dk##a.p-icon.partner
 norges.online##.modal-backdrop
 friflyt.no,terrengsykkel.no##.inlineAdBlock
 ehandel.*##.annons
-jyllands-posten.dk##.m-auto > div.border-b:not([id])
-jyllands-posten.dk##.relative:has(> div > [obs-elem-type*=advertisement])
+!!!jyllands-posten.dk##.m-auto > div.border-b:not([id]) (Known to break articles for logged-in subscribers, but not for anyone else.)
+!!!jyllands-posten.dk##.relative:has(> div > [obs-elem-type*=advertisement]) (Known to break articles for logged-in subscribers, but not for anyone else.)
 retrospilling.no#?#.widget:contains(Reklame)
 gulesider.no##.min-h-8
 dagens.dk##.col-sticky > div > p
@@ -2499,6 +2501,8 @@ findbolig.nu#@#.advertLink
 @@://imasdk.googleapis.com/js/sdkloader/ima3.js^$domain=tv2.dk
 ! http://sosialurin•fo/news-detail/steypafinala-vilhelm-og-rogvi-a-ruv1-fra-klokkan-1630
 sosialurin.fo#@#.ads-banner
+! ekstrabladet•dk/klip/(...) (11/03/2026)
+@@||imasdk.googleapis.com/js/core/bridge^$domain=ekstrabladet.dk
 ! ★★★ Caused by «I Don't Care About Cookies» (Its maintainer couldn't reproduce it) ★★★
 ! Fullpage uncloseable overlay when browsing around on Telenor Norway's TV section
 telenor.no##.global-overlay-background
@@ -2750,6 +2754,59 @@ triplx.dk##.aff-inner-col
 ||srilanka.no^$document
 ||logg-inn.online^$all,domain=~en-falsk-svindelside.*
 ||nyhetsnett.no^$all,domain=~en-falsk-svindelside.*
+||comoutlook.com^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||onlinemailmicrosotfvalidation.com^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetate-n.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetateennoo.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatei.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-altinn.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-konferense.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-mine-sider.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-no.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-norge.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-norway.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-porten.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-refusjon.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-skatteetaten.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-support.com^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-tax.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten-track.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.app^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.ceo^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.cfd^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.do^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.info.gf^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.online^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.pages.dev^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.rianicefe.com^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.sharefile.eu^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.site^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.support^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.support.do^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.sytes.net^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetaten.top^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatenadministration.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatenaltinninformasjon.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatencomp.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatencompno.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatenid.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetateninfo.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetateninformasjon.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetateninnboks.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatenkunden24.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatenmelding.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatenn0.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatenno.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatennorge.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatennorway.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatens.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatensupport.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatentax.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatentrack.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatentrackpro.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatentracks.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatn-person.$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
+||skatteetatten.com^$all,domain=~no|~svindelside_som_ikke_er_skatteetaten.*
 !+ NOT_OPTIMIZED
 /?finn.no/login$document
 ! 🇬🇧：Copied over from «Dandelion Sprout's Anti-Malware List»
@@ -3069,6 +3126,8 @@ triplx.dk##.aff-inner-col
 ||195-242-152-122.static.hvvc.us^$document,popup
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||195.242.152.122^$all
+||statautos.com^$all
+/noo/taxx/*$document
 ! https://www•tv2•no/nyheter/forbruker/sjokksvar-pa-epost-harreisende/17805239/
 ! https://www•tv2•no/nyheter/forbruker/tenkte-shit-na-har-jeg-blitt-lurt/17474448/
 ||takstskolen.no^$document,domain=~suspekt_sertifiseringssystem.*
@@ -3170,6 +3229,67 @@ triplx.dk##.aff-inner-col
 ://16.170.34.33^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://43.160.248.24^$all
+! https://www•tjekdet•dk/fup-og-spam/pas-paa-falske-beskeder-fra-dao-rammer-danmark
+||as-dao.icu^$all
+||dao-as.cc^$all
+||dao-as.com^$all
+||dao-as.top^$all
+||dao-as.vip^$all
+||dao-as.xyz^$all
+||dao-ascu.top^$all
+||dao-asdk.cc^$all
+||dao-asdk.vip^$all
+||dao-ase.cc^$all
+||dao-ase.vip^$all
+||dao-asen.bond^$all
+||dao-asi.cc^$all
+||dao-asi.vip^$all
+||dao-asiiv.icu^$all
+||dao-asioiiv.icu^$all
+||dao-asl.vip^$all
+||dao-aso.cc^$all
+||dao-asoi.icu^$all
+||dao-asoiiv.icu^$all
+||dao-asr.cc^$all
+||dao-asr.vip^$all
+||dao-ass.cc^$all
+||dao-ass.vip^$all
+||dao-assion.icu^$all
+||dao-asuui.icu^$all
+||dao-asvisu.icu^$all
+||dao-post.icu^$all
+||daoao.icu^$all
+||daoas-en.bond^$all
+||daoasa.cyou^$all
+||daoasa.sbs^$all
+||daoiiox.icu^$all
+||daoios.icu^$all
+||daoipost.icu^$all
+||daonevt.com^$all
+||daoosi.icu^$all
+||daopakke.sbs^$all
+||daopst.icu^$all
+||daosa.cyou^$all
+||daosa.shop^$all
+||daosviz.com^$all
+||daoteams.com^$all
+||daovisx.com^$all
+||daoxo.bond^$all
+||dpd-sio.icu^$all
+||pakke.click^$all
+||postuin.bond^$all
+||daobo.bond^$all
+||daodo.bond^$all
+||daoicom.bond^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://43.157.122.86^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://43.157.46.83^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://43.164.196.209^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://88.255.216.16^$all
+/((https?|tcp)://)?204\.194\.54\.\d{1,3}([:/].*)?$/$all
 ! 🇳🇴：Falske nettapoteker
 ! 🇬🇧：Fake online pharmacies
 -med.footeo.com^$document,domain=~falskt-svindelapotek.*

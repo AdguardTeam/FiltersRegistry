@@ -15,6 +15,8 @@
 !
 ! NOTE: Generic rules
 !
+! Telergam Ads click tracking
+$removeparam=tgclid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224235
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217915
 $removeparam=analytics_context
@@ -218,8 +220,6 @@ $removeparam=cx_recsWidget
 $removeparam=mkt_tok
 ! Mindbox email tracking
 $removeparam=mindbox-message-key
-! Klaviyo onsite tracking
-$removeparam=_kx
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123544
 ! ad click tracking
 ?uclick=*&uclickhash=$removeparam
@@ -307,6 +307,8 @@ $removeparam=itm_campaign
 $removeparam=itm_content
 $removeparam=itm_term
 ! UTM
+$removeparam=utm_compaign
+$removeparam=utm_prid
 $removeparam=utm_wave
 $removeparam=utm_lob
 $removeparam=utm_emailid
@@ -449,8 +451,8 @@ $removeparam=fb_source
 !
 !#if (adguard_ext_chromium_mv3 || ext_ublock)
 $denyallow=cleviationly.com,removeparam=cmpid
-$denyallow=adj.st|yandex.go.link,removeparam=adj_t
-$denyallow=em.dynamicyield.com|mootoon.co.kr,removeparam=cuid
+$denyallow=adj.st|yandex.go.link|dermanostic.go.link,removeparam=adj_t
+$denyallow=em.dynamicyield.com|mootoon.co.kr|iforms.americanexpress.com,removeparam=cuid
 $denyallow=a8cv.amiami.jp,removeparam=a8
 $denyallow=meishi.meituan.com|portal-portm.meituan.com|rd.bizrate.com|glavnoe.life|mmcref.pl|t.send.vt.edu|app.plex.tv,removeparam=utm_medium
 $denyallow=usprobioticguide.com|rd.bizrate.com|glavnoe.life|redirects.tradedoubler.com|t.send.vt.edu|google.ad|google.ae|google.al|google.am|google.as|google.at|google.az|google.ba|google.be|google.bf|google.bg|google.bi|google.bj|google.bs|google.bt|google.by|google.ca|google.cat|google.cd|google.cf|google.cg|google.ch|google.ci|google.cl|google.cm|google.cn|google.co.ao|google.co.bw|google.co.ck|google.co.cr|google.co.id|google.co.il|google.co.in|google.co.jp|google.co.ke|google.co.kr|google.co.ls|google.co.ma|google.co.mz|google.co.nz|google.co.th|google.co.tz|google.co.ug|google.co.uk|google.co.uz|google.co.ve|google.co.vi|google.co.za|google.co.zm|google.co.zw|google.com|google.com.af|google.com.ag|google.com.ai|google.com.ar|google.com.au|google.com.bd|google.com.bh|google.com.bn|google.com.bo|google.com.br|google.com.bz|google.com.co|google.com.cu|google.com.cy|google.com.do|google.com.ec|google.com.eg|google.com.et|google.com.fj|google.com.gh|google.com.gi|google.com.gt|google.com.hk|google.com.jm|google.com.kh|google.com.kw|google.com.lb|google.com.ly|google.com.mm|google.com.mt|google.com.mx|google.com.my|google.com.na|google.com.nf|google.com.ng|google.com.ni|google.com.np|google.com.om|google.com.pa|google.com.pe|google.com.pg|google.com.ph|google.com.pk|google.com.pr|google.com.py|google.com.qa|google.com.sa|google.com.sb|google.com.sg|google.com.sl|google.com.sv|google.com.tj|google.com.tr|google.com.tw|google.com.ua|google.com.uy|google.com.vc|google.com.vn|google.cv|google.cz|google.de|google.dj|google.dk|google.dm|google.dz|google.ee|google.es|google.fi|google.fm|google.fr|google.ga|google.ge|google.gg|google.gl|google.gm|google.gp|google.gr|google.gy|google.hn|google.hr|google.ht|google.hu|google.ie|google.im|google.iq|google.is|google.it|google.je|google.jo|google.kg|google.ki|google.kz|google.la|google.li|google.lk|google.lt|google.lu|google.lv|google.md|google.me|google.mg|google.mk|google.ml|google.mn|google.ms|google.mu|google.mv|google.mw|google.ne|google.nl|google.no|google.nr|google.nu|google.pl|google.pn|google.ps|google.pt|google.ro|google.rs|google.ru|google.rw|google.sc|google.se|google.sh|google.si|google.sk|google.sm|google.sn|google.so|google.sr|google.st|google.td|google.tg|google.tk|google.tl|google.tm|google.tn|google.to|google.tt|google.vg|google.vu|google.ws,removeparam=utm_campaign
@@ -462,7 +464,7 @@ $denyallow=tix.axs.com,removeparam=irclickid
 $denyallow=booklive.jp,removeparam=vc_lpp
 $denyallow=lifehacker.ru|forbes.ru|kommersant.ru,removeparam=erid
 $denyallow=greenbuildingadvisor.com,removeparam=oly_enc_id
-$denyallow=login.aliexpress.com,removeparam=_ga
+$denyallow=login.aliexpress.us|login.aliexpress.com,removeparam=_ga
 $denyallow=tradedoubler.com,removeparam=tduid
 !#endif
 !
@@ -501,6 +503,7 @@ $removeparam=tduid
 ! NOTE: Generic rules with exclusions for the MV3 extensions ⬆️
 ! !SECTION: Generic rules with exclusions for the MV3 extensions
 !
+
 !---------------------------------------------------------------------------!
 !-------------- Specific web sites -----------------------------------------!
 !---------------------------------------------------------------------------!
@@ -512,6 +515,17 @@ $removeparam=tduid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228812
+||kuper.ru^$removeparam=ads_identity_ads_promo_identity_site_uid
+||kuper.ru^$removeparam=ads_identity_ads_promo_identity_placement_uid
+! https://github.com/AdguardTeam/AdguardFilters/issues/228746
+||fboom.me^$removeparam=site
+! https://github.com/AdguardTeam/AdguardFilters/issues/228267
+||usaa.com^$removeparam=wa_ref
+! https://github.com/AdguardTeam/AdguardFilters/issues/227596
+||duck.ai^$removeparam=origin
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-16099608
+||t.ly^$removeparam=ref
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-16004356
 ||musescore.com^$removeparam=feature
 ! paypal.com
@@ -901,6 +915,9 @@ $removeparam=s-id,domain=item.rakuten.co.jp|www.rakuten.co.jp
 ||duckduckgo.com^$removeparam=vis
 ||duckduckgo.com^$removeparam=perf_id
 ||duckduckgo.com^$removeparam=parent_perf_id
+!
+! A/B testing
+||duckduckgo.com^$removeparam=/^experiment_/
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208058
 ||olybet.lv^$removeparam=ref
@@ -2273,7 +2290,7 @@ $removeparam=ici,domain=shein.co.uk|shein.com
 ! SK Telecom (skt.sh domain used as their own URL shortening service )
 ||skt.sh/common/share/bridge?$removeparam=referer
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4966523
-||login.sooplive.co.kr^$removeparam=szFrom
+||login.sooplive.com^$removeparam=szFrom
 ! moffme.com?source=gl&medium=moffme&campaign=article_2699
 ||moffme.com^$removeparam=source
 ||moffme.com^$removeparam=medium
@@ -2494,8 +2511,9 @@ $removeparam=clid,domain=adguard-vpn.*|adguardvpn-help.*
 ||doctolib.de^$removeparam=utm_button
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128206
 ||nationalgeographic.com^$removeparam=utm_rd
+! https://github.com/AdguardTeam/AdguardFilters/issues/227598
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128339
-||ficbook.net^$removeparam=/premiumVisit|utm_compaign/
+*$domain=fic.fan|fanfictionero.com|ficmania.com|ficbook.net,removeparam=premiumVisit
 ! stripchat.com
 ||go.tscprts.com^$removeparam
 ||stripchat.com^$removeparam=abTest
@@ -2792,6 +2810,8 @@ $removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||azby.fmworld.net^$removeparam=mc_pc
 ! https://toku.yahoo.co.jp/ytop202111/entry?fr=weather_right_column
 ||toku.yahoo.co.jp^$removeparam=fr
+! https://github.com/AdguardTeam/AdguardFilters/issues/228387
+||nikkei.com^$removeparam=n_tw
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106436
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106435
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106434
@@ -3124,7 +3144,7 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ||www.baidu.com^$removeparam=rsv_t
 ! https://github.com/AdguardTeam/CoreLibs/issues/1464
 ! Probably a bug
-!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_app_cli)
 ||www.baidu.com/link?url=$removeparam=eqid
 !#endif
 ! bitrec.com recommendations widget
@@ -3508,6 +3528,10 @@ adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_i
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/227699
+@@||msn.com^$app=msedgewebview2.exe,removeparam=ocid
+! https://github.com/AdguardTeam/AdguardFilters/issues/227175
+@@||iforms.americanexpress.com^$removeparam=cuid
 ! canadacompanyregistry.com - utm_source is used to lookup the company name; removing it breaks the page
 @@||canadacompanyregistry.com^$removeparam=utm_campaign
 ! https://github.com/uBlockOrigin/uAssets/issues/31494

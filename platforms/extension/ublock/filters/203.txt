@@ -1,16 +1,16 @@
 ![Adblock Plus 2.0]
-! Checksum: bCi5IwTQgQ6Fn7OSF/J/1A
-! Diff-Path: ../patches/203/203-s-1773175655-14400.patch
+! Checksum: YjEpQrYGnWH5mYqPLNu3qg
+! Diff-Path: ../patches/203/203-s-1775234955-14400.patch
 ! Title: Hungarian filter
-! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.78
-! TimeUpdated: 2026-03-10T20:44:22+00:00
+! Description: Hufilter. Filter list that specifically removes ads, privacy threats, and security risks on websites in the Hungarian language.
+! Version: 2.0.4.96
+! TimeUpdated: 2026-04-03T16:46:01+00:00
 ! Expires: 5 days (update frequency)
 !
-! Checksum: pzpIoChjcgDFoz8auIVZRg
-! OriginalVersion: 202603102039
+! Checksum: oucLdq3naO75ja7qEq9trQ
+! OriginalVersion: 202604031433
 ! Title: Hufilter for AdGuard
-! Last modified: 10 Mar 2026 20:39 UTC
+! Last modified: 03 Apr 2026 14:33 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -123,6 +123,11 @@ hu##[class*="overlayBg"]
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
+! https://github.com/uBlockOrigin/uAssets/issues/32274
+ipolyinfo.com##[style]:has(.ipoly-adlabel)
+ipolyinfo.com##figure.size-large
+jofogas.hu##.adverticum-anchor-banner
+hellomagyar.hu##.ban
 leetgaming.com##.banner_container_gtm
 naphire.hu##.ad__cont
 eredmenyek.com##div[data-zone-group]
@@ -392,7 +397,7 @@ eropolis.hu##[class*="banner"]
 es.hu##[class*="banner"]
 es.hu##[id*="banner"]
 es.hu##IFRAME
-esport1.hu##.adaptiveStyle, [class^="cls-"]:has(> .adaptiveStyle)
+esport1.hu##[class*="cls-"]
 eudomain.eu##div[id*="col_2"]
 evamagazin.hu##.popupunderlay
 evamagazin.hu##[class*="adPlace"]
@@ -417,6 +422,7 @@ figyelo.hu##[class*="adbox"]
 figyelo.hu##[class*="banner"]
 filmoldal.hu##div[class*="reklam"]
 foodora.hu##.partnership-ads
+foodora.hu##div[class*="video-container"]
 forbes.hu##div[id^="forbesad"]
 forbes.hu##p + [class*="-bekezdes-utan-"]
 forum.index.hu###ot2015
@@ -451,18 +457,10 @@ gportal.hu##[class*="banner"]
 gsplus.hu,pcwplus.hu##.ad
 gsplus.hu,pcwplus.hu##.box-wrapper > .box-actual-magazine + .box-html
 gumiszoba.com##.wpcnt
-gyakorikerdesek.hu###adryf
-gyakorikerdesek.hu##.rltdwidget
 gyakorikerdesek.hu##IFRAME
-gyakorikerdesek.hu##[href^="https://www.webminute.hu"]
 gyakorikerdesek.hu##[id*="aswift"]
-gyakorikerdesek.hu##div[style*="width"]:has(a[target="_blank"])
-gyakorikerdesek.hu##a[rel*="nofollow"]
-gyakorikerdesek.hu##div.reklam_jobbra
-gyakorikerdesek.hu##div[style*="text-align"]:has(> a > img)
-gyakorikerdesek.hu##td[style="width: 10px;"]:empty
 gyakorikerdesek.hu##td.txtcenter:has(>script+ins)
-gyakorikerdesek.hu##a:empty
+gyakorikerdesek.hu##div:has(> a[href^="/"] + div[style*="background-color"])
 gyaloglo.hu###banner
 gyaloglo.hu##div[class*="Advert"]
 gyartastrend.hu##[class*="contentBanner"]
@@ -474,6 +472,8 @@ hajdupress.hu##.catch-click
 hajdupress.hu##[class*="hirdetes"]
 hajdupress.hu##[id*="banner"]
 hajokonyha.hu##[class*="hirdetes"]
+hang.hu##.banner-wrapper
+hang.hu##.sidebar > .widget:has(> h3 + picture)
 ! https://github.com/hufilter/hufilter/issues/249
 hang.hu##.banner-widget-container
 haon.hu##.Ad
@@ -533,8 +533,10 @@ hogyankell.hu##[id^="advert"]
 holtankoljak.hu##div[class*="banner"]
 holtankoljak.hu##div[class="module noheading"]
 holtankoljak.hu##EMBED
+hogymondom.hu##img[src*="ads"]
+hogymondom.hu##td > a > img[data-src]
+hogymondom.hu##td > a[href*="utm_campaign"]
 hotdog.hu###tetszett
-hoxa.hu##[data-adblockonly]
 hrportal.hu##.ui-widget-overlay
 hrportal.hu##[class*="banner"]
 hrportal.hu###cucc
@@ -592,6 +594,7 @@ iho.hu##.article-cards-inlist-ad
 idokep.hu##[class*="hird_"]
 idokep.hu##[class*="hird-"]
 idokep.hu##a[data-bs-content*="(hirdetés)"]
+idokep.hu##.panoContainer.position-relative.sideScroll30sInfinite
 ilovebalaton.hu##[class*=" ad"]
 indavideo.hu##.topAdv
 indavideo.hu##[class*="billboard"]
@@ -783,6 +786,9 @@ mandiner.hu##.real-estate-wrapper
 maszol.ro###article > section > div:not(.article_content)
 mavcsoport.hu###cboxOverlay
 mavcsoport.hu###colorbox
+mediamarkt.hu##article[data-cs-override-id^="mms-sponsored-product-card-"]
+mediamarkt.hu##aside[class="sc-a2fcee8-0 fmYGst"]:has(button[aria-label="Tudj meg többet a termékszponzorációról"])
+mediamarkt.hu##li[data-index-number]:has(button[aria-label="Tudj meg többet a termékszponzorációról"])
 medicalonline.hu##.ui-floating-message
 medicalonline.hu##.wsp-wrap
 medicalonline.hu##[class*="tBanner"]
@@ -848,6 +854,10 @@ ncore.pro##.banner
 ncore.pro##:has(> .banner) + .hr_stuff, .hr_stuff:has(+ * > .banner)
 nemkutya.com##[class^="ad-"]
 nemkutya.com###text-3
+nemzetisport.hu##nso-petition-popup
+nemzetisport.hu##app-strossle-advert
+nemzetisport.hu##div[class*="img_"]:has(> p + div[data-google-query-id])
+nemzetisport.hu##div[class*="img_"][style*="text-align: center;"]
 nemzetisport.hu##.bet365_connect
 nemzetisport.hu##[class*=" ad"]
 nemzetisport.hu##[class*="_szponzor_"]
@@ -1147,6 +1157,7 @@ vg.hu##div[class*="hird-"]
 vg.hu##div[class*="hirdetes"]
 vg.hu##div[class="fej_felett cf"]
 vg.hu##div[id*="etarget"]
+vicc24.hu##div:has(> a[rel][target="_blank"] > img)
 videa.hu###sitemessage
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197485
 videa.hu###videa-video-overlay
@@ -1204,6 +1215,11 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu##div:not(.priv-thread-owner
 !-------------------------------------------------------------------------------!
 !------ Specific network filters -----------------------------------------------!
 !-------------------------------------------------------------------------------!
+! https://github.com/hufilter/hufilter/pull/704
+||*$image,domain=gyakorikerdesek.hu
+||*$media,domain=gyakorikerdesek.hu
+@@||gyakorikerdesek.hu/p/$image,domain=gyakorikerdesek.hu
+@@||static.gyakorikerdesek.hu/favicon.ico$image,domain=gyakorikerdesek.hu
 ! https://github.com/hufilter/hufilter/issues/172
 /dl/cnt/20[^0]\d-\d{2}/\d{4}//$image,domain=prohardver.hu|mobilarena.hu|logout.hu|hardverapro.hu
 ||3monkey.lol/vilagunk_640.html$domain=vilagunk.hu
@@ -1262,7 +1278,6 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu##div:not(.priv-thread-owner
 ||geeks.hu/*body-bg-*.$image
 ||gigasex.hu/bannerek/$image
 ||glassdoor.com/app/static/js/gd-fj-ads-init$script
-||gyakorikerdesek.hu/pic/bannerek/$image
 ||harmonet.hu/*hirdetes
 ||hasznaltgsm.hu/gsm/iframes/
 ||hatarido-szamitas.hu/partnerek/
@@ -1475,6 +1490,7 @@ hu##.sz2020-logo
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
+hellomagyar.hu##.ct-popup
 24.hu##.a-hirstartRecommender
 24.hu##.fb-exit-popup-container
 24.hu##.m-donationBottomLine
@@ -2040,6 +2056,7 @@ greendex.hu#@#.heateor_sss_sharing_container
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
+gyakorikerdesek.hu,hoxa.hu##a[rel]:matches-css(background: /url.*static/)
 ! https://github.com/uBlockOrigin/uAssets/issues/23271
 jofogas.hu##+js(no-setTimeout-if, E(!1))
 myonlineradio.hu##._bannerTop1:style(background-color: transparent !important;)
