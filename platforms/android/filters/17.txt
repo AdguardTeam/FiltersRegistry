@@ -1,9 +1,9 @@
-! Checksum: XW5iZXf+ecA8w5GSLtonyg
-! Diff-Path: ../patches/17/17-s-1775745895-3600.patch
+! Checksum: 1EpXBkSS/58/wtGfb5VG9A
+! Diff-Path: ../patches/17/17-s-1776184458-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.32
-! TimeUpdated: 2026-04-09T14:42:08+00:00
+! Version: 2.0.13.33
+! TimeUpdated: 2026-04-14T16:31:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,11 @@
 !
 ! NOTE: Generic rules
 !
+! True Anthem
+! https://github.com/AdguardTeam/AdguardFilters/issues/228929
+! https://github.com/AdguardTeam/AdguardFilters/issues/222986
+$removeparam=link_source
+$removeparam=taid
 ! Telergam Ads click tracking
 $removeparam=tgclid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224235
@@ -583,9 +588,6 @@ ref=shadcn.com^$removeparam=ref
 ||ratel-ad.com^$removeparam=advertiser
 ||123chat.jp/promotion/$removeparam=cid
 ||123chat.jp/promotion/$removeparam=p
-! https://github.com/AdguardTeam/AdguardFilters/issues/222986
-||tw.news.yahoo.com^$removeparam=link_source
-||tw.news.yahoo.com^$removeparam=taid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223033
 ||netmonet.co^$removeparam=id
 ||netmonet.co^$removeparam=wpid
