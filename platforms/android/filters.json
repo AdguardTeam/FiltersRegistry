@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.60.50",
-			"timeUpdated": "2026-04-15T05:02:38+0000",
+			"version": "2.4.60.51",
+			"timeUpdated": "2026-04-15T06:44:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.2.96",
-			"timeUpdated": "2026-04-15T03:11:03+0000",
+			"version": "2.1.2.97",
+			"timeUpdated": "2026-04-15T06:44:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.67",
-			"timeUpdated": "2026-04-14T18:31:25+0000",
+			"version": "2.0.51.68",
+			"timeUpdated": "2026-04-15T06:44:40+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.2",
-			"timeUpdated": "2026-04-14T16:31:14+0000",
+			"version": "2.0.69.3",
+			"timeUpdated": "2026-04-15T06:44:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.65.29",
-			"timeUpdated": "2026-04-15T05:03:19+0000",
+			"version": "2.2.65.30",
+			"timeUpdated": "2026-04-15T06:44:54+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.85.2",
-			"timeUpdated": "2026-04-15T05:03:28+0000",
+			"version": "2.0.85.3",
+			"timeUpdated": "2026-04-15T06:45:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
