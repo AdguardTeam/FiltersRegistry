@@ -1,5 +1,5 @@
-! Checksum: iiKmZnpjHiMW/76JZoQutw
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1776163063-3600.patch
+! Checksum: 8hvLd8ZT5E7Dh+lKXNQ/zA
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1776222886-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.13.87
@@ -360,7 +360,6 @@ hiragana46matome.com##.sec-rss
 hiragana46matome.com##.sec-rss-article
 pazdra2ch.blog.jp##div[id^="rss-box"]
 otonarisoku.com,pazdra2ch.blog.jp###comment-title
-pazdra2ch.blog.jp#?#.plugin-memo > div > div.side > div[id^="blz_rss_"]:upward(3)
 world-fusigi.net##.ad_btm
 aaieba.livedoor.biz##div[style^="BORDER: #FEEED9 1px solid; margin: 3px 0px 3px 0px ;  BACKGROUND: #FEEED9; COLOR: #000000; "]
 ||dameparts.com/plist/
@@ -827,10 +826,12 @@ blog.livedoor.jp##.pickup
 ||blog.livedoor.jp/aoba_f/$subdocument,~third-party
 ||blog.livedoor.jp/jyoushiki43/$subdocument,~third-party
 blog.livedoor.jp###pickrightcon
+blog.livedoor.jp##.boxrss1toppage
 blog.livedoor.jp##.rss3rd
 blog.livedoor.jp##.rssbottom3
 blog.livedoor.jp##.rsskijityu2
 blog.livedoor.jp##.rsstop
+blog.livedoor.jp##.rsstoptop
 blog.livedoor.jp##.tabmoji
 blog.livedoor.jp##.tabmoji2
 blog.livedoor.jp###rss3
@@ -878,7 +879,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 /wp-content/plugins/elfsight-whatsapp-chat-cc/*
 ##gg-toolbar--specials
 ||lemrock.com^$third-party
-||tariffuxx.de^$third-party
 ||affilizz.com^$third-party
 ||mbp-japan.com/information/$script,third-party
 ||chat.quickcep.com^
@@ -1376,7 +1376,6 @@ cutter.yt#$##popup { display: none !important; }
 cutter.yt#$#.blurred { filter: none !important; }
 betterbird.eu#%#//scriptlet('prevent-setTimeout', '/donate')
 tansajp.org##.banner_donation_request
-steamdb.info##.armored-headcrab
 finanztip.de##main > div.floating-element:has(> a.support)
 recyclemap.ru##.donation-section
 recyclemap.ru##rc-donation-banner
@@ -1391,6 +1390,7 @@ pbs.org#$#div[data-popup-type="large_funding"] { display: none !important; }
 pbs.org#$#body[style^="overflow:"] { overflow: auto !important; }
 plannedparenthood.org#$##year-end-donations { display: none !important; }
 plannedparenthood.org#$#html[style] { overflow-y: scroll !important; }
+documentaryarea.com###watermark
 echofm.online##div[class^="sc-"]:has(> a[href="/donation"])
 huffpost.com##.big-banner-container:has(.big-banner__support-button)
 searchfloor.org#%#//scriptlet('trusted-set-local-storage-item', 'promoSeenAt', '99999999999999')
@@ -1404,6 +1404,7 @@ frontieresmedia.fr##.sticky.bottom-0
 9to5linux.com##.theiaStickySidebar > section:has(> div.kofi)
 istories.media##div[class^="MaterialDonationBanner-module--"]
 boykot.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'lastClosed')
+holod.media##.js-a-donate-toggle
 istories.media##div[class^="DonationsModalTimer-"]
 ncronline.org##.region-main-top
 stlpr.org##.alleg-donate-embed
