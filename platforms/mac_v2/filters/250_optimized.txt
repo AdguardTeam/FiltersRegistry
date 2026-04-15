@@ -1,5 +1,5 @@
-! Checksum: uh84l08CHcF9WdXRpQPrGw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1776157507-14400.patch
+! Checksum: WUYC/qEPaYemFi0UiNDfQg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1776230481-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.50
@@ -170,6 +170,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||kdmttk.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 31.220.27.134$network
+||1xgokil.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 158.247.212.220$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -215,6 +216,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 209.141.51.49$network
 !+ PLATFORM(windows, mac, android, cli)
 /^139\.45\.197\.[12]?\d?\d$/$network
+||wholegrady.com^$all
 !+ NOT_OPTIMIZED
 ://landings.*_slots/?partner=$document
 !+ PLATFORM(windows, mac, android, cli)
@@ -274,7 +276,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||aboveaveragefinallycast.com^$all
 ||commonjamknights.com^$all
 ||grievetube.com^$all
-||hardworkinglust.com^$all
 ||delicioustightbronze.com^$all
 ||markswaitingrouge.com^$all
 ||outlaysudden.com^$all
@@ -607,9 +608,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 |https://undefined/
 ||adverttise.com^$all
 ||agilitydigitalmedia.com^$all
-||bestadperf.com^$all
 ||perfsimpl.com^$all
-||secprf2.com^$all
 ||sidesteamroll.com^$all
 ||tamping.net^$all
 ||trckprf.com^$all
@@ -1105,7 +1104,6 @@ context.reverso.net#$#.blocked { filter: none !important; }
 linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea:has(.cGuestTeaser):not(:has(.ipsComposeArea_editor))
 ||subs.youmaker.com^$third-party
 ##.paywall-gradient:not(html, body)
-zapytaj.onet.pl##.know-better-answer
 instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
 zeit.de#$#.paragraph--faded { overflow: visible !important }
 zeit.de#$#.paragraph--faded::before { background-image: none !important }
@@ -1569,6 +1567,7 @@ $removeparam=campaign_id,domain=~kochava.com|~unisportstore.*
 $removeparam=wmlspartner
 $removeparam=sscid
 $removeparam=rmmds
+$removeparam=act_poa
 $removeparam=msclkid
 $removeparam=litb_from
 $removeparam=ftag
@@ -1801,8 +1800,6 @@ $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
 $document,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
 $removeparam=paid
-$removeparam=pacid
-$removeparam=pa-partnerid
 $removeparam=adtype
 $removeparam=n_cid
 $removeparam=awid
@@ -1890,6 +1887,8 @@ $removeparam=vgo_ee
 $document,removeparam=/^amp;utm_.*$/
 $removeparam=sap-outbound-id
 $removeparam=analyticsCorrelationId
+$removeparam=Affiliate_id
+$removeparam=Cvosrc
 $removeparam=oft_id
 $removeparam=oft_k
 $removeparam=oft_lk
@@ -2461,7 +2460,6 @@ $removeparam=hpt,domain=cnn.com
 ||paypal.com^$removeparam=calc
 $removeparam=ab_channel,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
-||tcgplayer.com^$removeparam=productLineName
 ||humblebundle.com^$removeparam=linkID
 ||humblebundle.com^$removeparam=mcID
 ||artstation.com^$removeparam=/^\d.*$/
@@ -2805,6 +2803,7 @@ $removeparam=qid,domain=bookdepository.com|eastday.com
 ||typeform.com^$removeparam=typeform-source
 $removeparam=_1lr
 $removeparam=ymid
+^z=*&var=$removeparam=var,document
 $removeparam=via,domain=sincode.ai|skillshare.com|thedailybeast.com
 ||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
@@ -2837,6 +2836,7 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||cdninstagram.com^$removeparam=_nc_sid
 ||adguard.info^$removeparam=nc
 ref=404media.co$document,removeparam=ref
+$document,removeparam=jp_cmp,domain=chase.com
 ||researchgate.net^$document,removeparam=_tp
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|sky.it
 ||xvideos.$document,removeparam=sxcaf
@@ -2864,11 +2864,6 @@ $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46q
 $document,removeparam=af_reengagement_window
 ||privatbank.ua^$removeparam=visit_id
 ||yandex.com/portal/set/any$removeparam=sk
-||affiliate.insider.com^$document,removeparam=amazonTrackingID
-||affiliate.insider.com^$document,removeparam=h
-||affiliate.insider.com^$document,removeparam=platform
-||affiliate.insider.com^$document,removeparam=postID
-||affiliate.insider.com^$document,removeparam=postSlug
 ||wordpress.com^$document,removeparam=/^ref=[a-z-]{5,}$/
 $document,removeparam=_x_ns_sku_id,domain=temu.com
 $document,removeparam=_x_ads_channel,domain=temu.com
@@ -2933,7 +2928,6 @@ $document,removeparam=af_xp
 ||www.roblox.com^$removeparam=treatmentType
 $document,removeparam=entrypoint,domain=bing.com
 ||sky.it^$document,removeparam=social
-ref=producthunt$document,removeparam=ref
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
@@ -3002,8 +2996,8 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||microsoft^$removeparam=refOrigin
 ||microsoft.com^$removeparam=refSource
 ||microsoft.com^$removeparam=refPage
+||www.reddit.com^$document,removeparam=entry_point
 ||store.steampowered.com^$document,removeparam=curator_clanid
-ref=thestack.technology$document,removeparam=ref
 ||deezer.$removeparam=host
 ||deezer.$removeparam=/^utm_.*$/
 ref=blog.livekit.io$document,removeparam=ref
