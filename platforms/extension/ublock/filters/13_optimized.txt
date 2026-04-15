@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: jCU3kTRnRlQYGI7Z9JyeAw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1776246088-3600.patch
+! Checksum: cOu/W+teFtGgpZ6exk52YA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1776260519-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.69
-! TimeUpdated: 2026-04-15T09:38:15+00:00
+! Version: 2.0.63.70
+! TimeUpdated: 2026-04-15T13:38:41+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$3p
 ||rtb-stack.com^
@@ -1475,7 +1475,9 @@ filmizlemobil.net##a[href="https://www.zurna.net/"]
 ||hddizifilmizle.vip/ab.js
 ||hddizifilmizle.vip/daks.js
 ||tranimaci.com/*.mp4
-tranimaci.com###player > div[style^="position: absolute;"]
+||videostream.can.re/cdn/*.mp4$media,redirect=noop-1s.mp4,domain=tranimaci.com
+tranimaci.com###player > div[style^="position: absolute;"]:style(display: none !important;)
+tranimaci.com###player > iframe.embededvido:style(display: block !important;)
 ||zerotiktok.com/maczer14.js
 fivemturk.net##.p-body > a[target="_blank"]
 fivemturk.net##.samBackground:style(background: none!important;)
