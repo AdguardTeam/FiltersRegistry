@@ -1,9 +1,9 @@
-! Checksum: 5jc1HNxbr9+7GopIFEwhQw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1776301943-14400.patch
+! Checksum: 3mw6Y+Kwio2dg+5WpI/UBA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1776317038-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.59.96
-! TimeUpdated: 2026-04-16T01:08:36+00:00
+! Version: 2.1.59.97
+! TimeUpdated: 2026-04-16T05:20:03+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -39,7 +39,6 @@
 /follow-twitter-
 /follow-twitter.
 /follow-us.$~stylesheet
-/follow_instagram.png
 /highlight-and-share.js
 /icon_share_
 /icon_sns_
@@ -576,7 +575,6 @@ _social_footer_
 ###social-sharing
 ###social-sharing-bar
 ###social-sharing-buttons
-###social-side2
 ###social-sidebar
 ###social-slideout
 ###social-slider
@@ -715,7 +713,6 @@ _social_footer_
 ###twitter_btn
 ###twitter_button
 ###twitter_content
-###twitter_follow
 ###twitter_link
 ###twitter_share
 ###twitter_timeline-2
@@ -731,7 +728,6 @@ _social_footer_
 ###widget-twitter
 ###wp_fb_like_button
 ###wpcw_social-7
-###wpzoom-widget-social-2
 ###xe-header-social-nav
 ###yt-widget
 ###zoom-social-icons-widget-1
@@ -911,12 +907,12 @@ _social_footer_
 ##.articleShare
 ##.articleShare-buttons
 ##.articleShareLinks
+##.articleShareVideoBox
 ##.articleSocial
 ##.article__header__share
 ##.article__likes
 ##.article__share
 ##.article__share-buttons
-##.article__share-links
 ##.article__share-title
 ##.article__sharebar
 ##.article__shares
@@ -933,6 +929,7 @@ _social_footer_
 ##.article_social
 ##.articlesharebox
 ##.aside-social
+##.aside-socials
 ##.aspexifblikebox
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
@@ -1158,7 +1155,6 @@ _social_footer_
 ##.desktop-share
 ##.desktop-social
 ##.detail-share
-##.detail-share-btIco
 ##.detail-social
 ##.detailShare
 ##.detail__social
@@ -1189,7 +1185,6 @@ _social_footer_
 ##.ea-share-count-button
 ##.eapps-social-share-buttons
 ##.easy-share
-##.easy-social-profile-buttons-class
 ##.ebm-share-item
 ##.eg-footer-icon-facebook
 ##.eg-footer-icon-instagram
@@ -1559,7 +1554,6 @@ _social_footer_
 ##.gridlove-share-item
 ##.gridlove-share-wrapper
 ##.gridlove-soc-menu
-##.group--social
 ##.gs-share
 ##.gtm-social-link
 ##.gtm_footer_facebook
@@ -2004,7 +1998,6 @@ _social_footer_
 ##.nav-social-links
 ##.nav-social-wrap
 ##.navSocial
-##.nav__share
 ##.nav__social
 ##.nav_share
 ##.nav_social
@@ -2292,7 +2285,6 @@ _social_footer_
 ##.share-bottom
 ##.share-bottom-new
 ##.share-box-inner
-##.share-box-new
 ##.share-box-wrapper
 ##.share-btn
 ##.share-btn-container
@@ -2750,7 +2742,6 @@ _social_footer_
 ##.single-post-social
 ##.single-share
 ##.single-share-bar
-##.single-share-box-container
 ##.single-sharing-btns
 ##.single-sidebar-share
 ##.single-social-button
@@ -2772,7 +2763,6 @@ _social_footer_
 ##.site-social-menu
 ##.sitewide-social-media
 ##.sm-page-widget-sociallinks
-##.smshare
 ##.sn-share
 ##.snapchat-share-button
 ##.sns-bar
@@ -2853,7 +2843,6 @@ _social_footer_
 ##.social-buttons--follow
 ##.social-buttons-compact
 ##.social-buttons-container
-##.social-buttons-footer
 ##.social-buttons-twitter
 ##.social-buttons-wrapper
 ##.social-buttons__item
@@ -3245,6 +3234,7 @@ _social_footer_
 ##.socshare
 ##.sow-social-media-button
 ##.ss-facebook
+##.ss-follow-network
 ##.ss-inline-share-content
 ##.ss-instagram
 ##.ss-share
@@ -3322,7 +3312,6 @@ _social_footer_
 ##.tha__socialItem
 ##.thb-social-links-container
 ##.thb-social-top
-##.the-social-links
 ##.theChampSharing
 ##.the_champ_sharing_container
 ##.the_champ_sharing_ul
@@ -3463,6 +3452,7 @@ _social_footer_
 ##.videoShare
 ##.video_share
 ##.video_share_item
+##.view_share
 ##.vjs-icon-share
 ##.vjs-share-block
 ##.vjs-share-button
@@ -3489,6 +3479,7 @@ _social_footer_
 ##.wc_social_plugin_wrapper
 ##.wds-is-follow-us
 ##.web_widget_socialBar
+##.wf-social
 ##.whatsapp-share
 ##.whatsapp-share-btn
 ##.whatsapp-share-button
@@ -3948,7 +3939,6 @@ thefreedictionary.com##.fb-share
 dailymail.co.uk##.fbmessenger
 eadaily.com##.feed
 lubuntu.me##.ff-social-icon
-indiatoday.in##.fixedshared
 testbook.com##.fl-social
 health.clevelandclinic.org##.flex.gap-rem24px
 dailymail.co.uk##.flipboard
@@ -4085,6 +4075,7 @@ operawire.com##.page-social-share
 news18.com##.phtshare
 theroar.com.au##.pm-share-horizontal
 autoexpress.co.uk##.polaris__social
+tsunagujapan.com##.post-article_sns
 getcomics.org##.post-footer-shr
 wccftech.com##.post-google
 discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
@@ -4318,6 +4309,7 @@ economictimes.indiatimes.com#?#.Pbanner:contains(as a Reliable and Trusted News 
 freethoughtnow.org#?#.elementor-widget-container > h2:contains(Please share)
 gizmodo.com#?#.border-t-grey-200:contains(Share this story)
 heritagedaily.com#?#.tds-button:contains(FOLLOW ON GOOGLE NEWS)
+houstonchronicle.com,nhregister.com,registercitizen.com,sfchronicle.com,sfgate.com,stamfordadvocate.com#?#.deep:contains(Google)
 ign.com#?#.promo-card:contains(Follow us!)
 jacobin.com#?#.po-fr__heading:contains(Share this article)
 lifenews.com#?#.post_style_zk > p:contains(Please subscribe)
@@ -4491,7 +4483,6 @@ iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
 altalex.com##.footer__altx-top-social
-livesicilia.it,perizona.it##.google_news
 ilfattoquotidiano.it##.ifq-news-meta__share
 ilfattoquotidiano.it##.ifq-post__share
 alfredopedulla.com##.ig-banner
@@ -4610,6 +4601,7 @@ forocoches.com###social-networks
 europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
 caracoltv.com##.GoogleNewsProvider
+lasexta.com##.L6-social-share
 adn40.mx##.ListSiguenos-SocialStrip
 ejecentral.com.mx##.NavigationSocial
 elpais.com.uy##.Page-actions-wrapper
@@ -4625,7 +4617,6 @@ cooperativa.cl##.botones-redes-sociales
 elplural.com##.btn-whatsapp
 eleconomista.com.mx##.c-detail__author__share
 cmmedia.es,diariodecastillayleon.es,diariodeleon.es,diariodevalladolid.es,elcorreodeburgos.com,eldebate.com,eleconomista.com.mx,heraldodiariodesoria.es,huffingtonpost.es,listindiario.com,segre.com##.c-detail__share
-cope.es##.c-detail__social
 eleconomista.com.mx##.c-detail__toolbar__share
 eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
 los40.com##.c-sha
