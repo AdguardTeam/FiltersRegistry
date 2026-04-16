@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: rL/si1YM8R+EajB/J4K/iQ
-! Diff-Path: ../patches/13/13-s-1776260519-3600.patch
+! Checksum: hdmVM4UIL+TmK9IAmpmzlQ
+! Diff-Path: ../patches/13/13-s-1776322115-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.70
-! TimeUpdated: 2026-04-15T13:38:41+00:00
+! Version: 2.0.63.71
+! TimeUpdated: 2026-04-16T06:45:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1544,6 +1544,11 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+||videostream.can.re/gif/$domain=tranimaci.com
+||videostream.can.re/cdn/*.mp4$media,redirect=noop-1s.mp4,domain=tranimaci.com
+tranimaci.com##div[data-ad-track]
+tranimaci.com###player > div[style^="position: absolute;"]:style(display: none !important;)
+tranimaci.com###player > iframe.embededvido:style(display: block !important;)
 teknoblog.com##.tb-ad-wrap
 games.gg##div[data-ad-container]
 gazetegercek.com.tr###sidebar > div:has(> div.flex > div.w-full > img[src^="https://www.gazetegercek.com.tr/images/money/"])
@@ -1978,10 +1983,6 @@ minecraft-turkiye.com##.p-body-inner > a[href^="https://minecraft-turkiye.com/th
 filmizlemobil.net##a[href="https://www.zurna.net/"]
 ||hddizifilmizle.vip/ab.js
 ||hddizifilmizle.vip/daks.js
-||tranimaci.com/*.mp4
-||videostream.can.re/cdn/*.mp4$media,redirect=noop-1s.mp4,domain=tranimaci.com
-tranimaci.com###player > div[style^="position: absolute;"]:style(display: none !important;)
-tranimaci.com###player > iframe.embededvido:style(display: block !important;)
 ||zerotiktok.com/maczer14.js
 fivemturk.net##.p-body > a[target="_blank"]
 fivemturk.net##.samBackground:style(background: none!important;)
