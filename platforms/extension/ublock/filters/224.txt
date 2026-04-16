@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: akPTZzJBrj7+CTwLgQA1NQ
-! Diff-Path: ../patches/224/224-s-1776316215-3600.patch
+! Checksum: lH9OaKphQ/ePcB09SHA7tg
+! Diff-Path: ../patches/224/224-s-1776332508-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.57.61
-! TimeUpdated: 2026-04-16T05:07:04+00:00
+! Version: 2.1.57.62
+! TimeUpdated: 2026-04-16T09:38:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -290,6 +290,8 @@
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228610
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228606
 huaren.live,huavod.com##+js(no-setTimeout-if, bait.offsetHeight===0)
+huavod.net,huaren.live,huavod.com##+js(addEventListener-defuser, DOMContentLoaded, showModal)
+huavod.net,huaren.live,huavod.com##div[id^="anti-adblock-"]
 huaren.live,huavod.com#@#.ad_unit
 ||static.okokserver.com/js/anti/adblocker.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228259
@@ -1106,6 +1108,7 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+huaren.live,huavod.com,huavod.net##a[href="/go/baba/1"]
 *$script,xhr,3p,domain=m.niupizhi.net
 ||m.niupizhi.net/lokedpgdjs
 ||cdn.rrmj.plus/ad_4k.mp4$media,redirect=noop-0.1s.mp3,domain=m.yichengwlkj.com
@@ -3138,7 +3141,7 @@ netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] > img
 netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] + span.tt-icon-close
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219444
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210237
-huavod.com,huaren.live##+js(set-constant, ConFig.config.ads, {})
+huavod.net,huavod.com,huaren.live##+js(set-constant, ConFig.config.ads, {})
 ! TODO: remove hints when this issue is resolved - https://github.com/AdguardTeam/Scriptlets/issues/517
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177520
@@ -14847,10 +14850,9 @@ meijutt.*/js/pcjs/
 ||gliacloud.com^$domain=thisiscm.com
 ||cilipa.com^*0.js
 ||ttks.tw/js/otherad.
-||*.mp4$redirect=noop-0.1s.mp3,domain=huavod.com,media
+||*.mp4$redirect=noop-0.1s.mp3,domain=huavod.com|huaren.live,media
 ||pan0304.com/ads.
 ||mwka.cc/static/gg.
-||okokserver.com/uploads/haigou.
 ||okokserver.com/uploads/lesi/
 huaren.live##.pause-love
 qq.com##.qzone-carousel-ad
@@ -21059,7 +21061,7 @@ android-doc.com,apk.tw,chaojizhibo.net,chtoen.com,dizhishengcheng.com,doitwell.t
 @@||pagead2.googlesyndication.com/pagead/*/show_ads_impl$domain=bilinovel.com
 @@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl$domain=ff14angler.com|logi.im
 @@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl.js$domain=doitwell.tw
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=tt1069.com|akashio.com|1991421.cn|kantie.org|kejilion.pro|bilinovel.com|mcappx.com|yeeach.com|blog.6ziz.com|docsmall.com|uiadmin.net|4horlover.com|23qb.net|4spaces.org|aboluowang.com|assbbs.com|chaojizhibo.net|chtoen.com|daxiaamu.com|demo.ama.pub|dizhishengcheng.com|doitwell.tw|ekamus.info|eu4cn.com|ff14angler.com|freedidi.com|fsbot.xyz|haoweichi.com|it365.abctool.info|linovelib.com|logi.im|mens1069.com|monnsutogatya.com|mpyit.com|myqqjd.com|numberempire.com|ozabc.com|pansearch.me|patch.ali213.net|pc3mag.com|reh.tw|shenfendaquan.com|sistersbedroom.com|sto520.com|vaptcha.com|wandhi.com|wenxuecity.com|wuyong.fun|xbeibeix.com|xiebruce.top|xugaoxiang.com|xxxxx520.com|yodu.org|yummy.best|zaixianjisuan.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=huavod.com|huaren.live|tt1069.com|akashio.com|1991421.cn|kantie.org|kejilion.pro|bilinovel.com|mcappx.com|yeeach.com|blog.6ziz.com|docsmall.com|uiadmin.net|4horlover.com|23qb.net|4spaces.org|aboluowang.com|assbbs.com|chaojizhibo.net|chtoen.com|daxiaamu.com|demo.ama.pub|dizhishengcheng.com|doitwell.tw|ekamus.info|eu4cn.com|ff14angler.com|freedidi.com|fsbot.xyz|haoweichi.com|it365.abctool.info|linovelib.com|logi.im|mens1069.com|monnsutogatya.com|mpyit.com|myqqjd.com|numberempire.com|ozabc.com|pansearch.me|patch.ali213.net|pc3mag.com|reh.tw|shenfendaquan.com|sistersbedroom.com|sto520.com|vaptcha.com|wandhi.com|wenxuecity.com|wuyong.fun|xbeibeix.com|xiebruce.top|xugaoxiang.com|xxxxx520.com|yodu.org|yummy.best|zaixianjisuan.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xhr,domain=duelmeta.com|linetv.tw|liout.com|moneysave.info|raenonx.cc|zxmee.com
 @@||pagead2.googlesyndication.com/pagead/js/google_top_exp.js$domain=ebb.io
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=knowlet3389.blogspot.com|knowlet3389.blogspot.hk|knowlet3389.blogspot.jp|knowlet3389.blogspot.tw|mnighthk.net|weithenn.org
