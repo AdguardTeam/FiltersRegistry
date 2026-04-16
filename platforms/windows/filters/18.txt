@@ -1,9 +1,9 @@
-! Checksum: vfcOF91AOYSB5dUPfPu/pg
-! Diff-Path: ../patches/18/18-s-1776300560-3600.patch
+! Checksum: khay8AsArFAfegJ0AmsAEQ
+! Diff-Path: ../patches/18/18-s-1776316234-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.85.8
-! TimeUpdated: 2026-04-16T00:46:19+00:00
+! Version: 2.0.85.9
+! TimeUpdated: 2026-04-16T05:06:54+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2586,6 +2586,7 @@ bayreuth-region.de,ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarb
 !
 ! NOTE: Regular rules
 !
+absolutbank.ru##section.agreement
 pornhub.com###globalCookieBanner
 mixcloud.com#?#div[class][style^="--x-backgroundColor"] > div[class]:has(> div[class] > p[class]:contains(Cookies))
 burger-king.by#%#//scriptlet('trusted-set-cookie', 'burgerKing', '%7B%22advertising%22%3Afalse%2C%22functionality%22%3Afalse%2C%22analytics%22%3Afalse%2C%22personalization%22%3Afalse%7D')
@@ -18061,7 +18062,7 @@ depop.com#%#//scriptlet("set-cookie", "gdpr__google__analytics", "false")
 depop.com#%#//scriptlet("set-cookie", "gdpr__facebook__social", "false")
 everyeye.it,youmath.it#%#//scriptlet('trusted-click-element', '#pt-accept-all')
 qwic.nl,qwic.eu,qwic.de#%#//scriptlet('set-cookie', 'cookie_consent', '0')
-turkusowawieza.pl,coder.com#%#//scriptlet('set-local-storage-item', 'cookie', 'true')
+rshb.ru,turkusowawieza.pl,coder.com#%#//scriptlet('set-local-storage-item', 'cookie', 'true')
 cleanvoice.ai,minefort.com,diariodaregiao.com.br,sticpay.com#%#//scriptlet('set-local-storage-item', 'cookie-consent', 'true')
 mantel.com#%#//scriptlet('set-cookie', 'tracking_cookie', '0')
 amd-moebel.de#%#//scriptlet('set-cookie', 'cookies_mandatory', 'true')
@@ -18744,6 +18745,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229239
+@@||searoute.info/js/cookieControl.js$domain=searoute.info
 ! de.ergo.app - error code on startup
 @@||mobile-data.onetrust.io^$app=de.ergo.app
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229172
