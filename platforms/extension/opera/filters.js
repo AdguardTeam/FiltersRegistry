@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.61.1",
-			"timeUpdated": "2026-04-17T12:27:30+0000",
+			"version": "2.4.61.2",
+			"timeUpdated": "2026-04-17T13:26:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.18.76",
-			"timeUpdated": "2026-04-17T10:31:35+0000",
+			"version": "2.1.18.77",
+			"timeUpdated": "2026-04-17T13:27:35+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -1195,10 +1195,6 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://www.zoso.ro/pages/rolist.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3",
-				"ext_opera_mv3"
-			],
 			"trustLevel": "low",
 			"version": "2.0.1.56",
 			"timeUpdated": "2026-04-07T20:45:56+0000",

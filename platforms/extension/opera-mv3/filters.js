@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.61.1",
-			"timeUpdated": "2026-04-17T12:27:30+0000",
+			"version": "2.4.61.2",
+			"timeUpdated": "2026-04-17T13:26:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -970,6 +970,28 @@
 				38
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/112.txt"
+		},
+		{
+			"filterId": 114,
+			"name": "ROList",
+			"description": "Additional filter list for websites in Romanian.",
+			"timeAdded": "2014-06-30T07:56:55+0000",
+			"homepage": "https://www.zoso.ro/rolist",
+			"expires": 864000,
+			"displayNumber": 2,
+			"groupId": 7,
+			"subscriptionUrl": "https://www.zoso.ro/pages/rolist.txt",
+			"trustLevel": "low",
+			"version": "2.0.1.56",
+			"timeUpdated": "2026-04-07T20:45:56+0000",
+			"deprecated": false,
+			"languages": [],
+			"tags": [
+				1,
+				9,
+				39
+			],
+			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/114.txt"
 		},
 		{
 			"filterId": 120,
