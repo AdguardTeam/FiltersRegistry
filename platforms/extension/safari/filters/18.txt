@@ -1,9 +1,9 @@
-! Checksum: 61q6viwNIhiy25Z6c8Fvnw
-! Diff-Path: ../patches/18/18-s-1776439901-3600.patch
+! Checksum: DeYZ677krtBtCuuCBdBigw
+! Diff-Path: ../patches/18/18-s-1776457355-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.85.26
-! TimeUpdated: 2026-04-17T15:28:55+00:00
+! Version: 2.0.85.27
+! TimeUpdated: 2026-04-17T20:19:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16938,7 +16938,7 @@ fansided.com##body > div[id^="img_"]:has(> div[aria-label="Cookie banner"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23706
 ! Fixes embedded content
 moto.pl,edziecko.pl,plotek.pl,sport.pl,gazeta.pl#$#.art_embed { height: auto !important; }
-!+ NOT_PLATFORM(ext_ff)
+!+ PLATFORM(windows, mac, android, cli, ios, ext_safari)
 moto.pl,edziecko.pl,plotek.pl,sport.pl,gazeta.pl#%#(()=>{window.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll('.embed-container > [data-blocked-by-rodoguard="true"]').forEach((e=>{const t=e.getAttribute("data-src")||e.getAttribute("src"),r=e.tagName.toLowerCase(),a=e.attributes;if(!t||!r)return;const o=document.createElement(r);if(o.setAttribute("src",t),"iframe"===r&&a.length)for(const e of a)"src"!==e.name&&"data-blocked-by-rodoguard"!==e.name&&o.setAttribute(e.name,e.value);e.replaceWith(o)}))}));})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210395
 !
