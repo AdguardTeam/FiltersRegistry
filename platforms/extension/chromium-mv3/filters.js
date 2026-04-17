@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.89.2",
-			"timeUpdated": "2026-04-17T09:01:16+0000",
+			"version": "2.1.89.3",
+			"timeUpdated": "2026-04-17T12:47:55+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.89.1",
-			"timeUpdated": "2026-04-17T09:01:18+0000",
+			"version": "2.1.89.2",
+			"timeUpdated": "2026-04-17T12:47:55+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1056,8 +1056,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.7.23",
-			"timeUpdated": "2026-04-17T01:07:02+0000",
+			"version": "2.1.7.24",
+			"timeUpdated": "2026-04-17T12:48:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1380,8 +1380,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.82.33",
-			"timeUpdated": "2026-04-17T09:02:12+0000",
+			"version": "2.0.82.34",
+			"timeUpdated": "2026-04-17T12:48:37+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1428,8 +1428,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.14.39",
-			"timeUpdated": "2026-04-17T01:07:36+0000",
+			"version": "2.0.14.40",
+			"timeUpdated": "2026-04-17T12:48:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1488,8 +1488,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.17",
-			"timeUpdated": "2026-04-09T20:47:02+0000",
+			"version": "2.0.0.18",
+			"timeUpdated": "2026-04-17T12:48:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
