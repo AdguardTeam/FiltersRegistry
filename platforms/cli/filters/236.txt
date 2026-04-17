@@ -1,9 +1,9 @@
-! Checksum: t2j7TjCHRV0ygPl2/XmRBw
-! Diff-Path: ../patches/236/236-s-1776243871-14400.patch
+! Checksum: PXx5l+uMk3KCLKSjY1nBUw
+! Diff-Path: ../patches/236/236-s-1776416669-14400.patch
 ! Title: road-block light
 ! Description: Romanian ad blocking filter subscription.
-! Version: 2.0.3.77
-! TimeUpdated: 2026-04-15T09:01:51+00:00
+! Version: 2.0.3.78
+! TimeUpdated: 2026-04-17T09:01:55+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ROU: Romanian Ad (ROad) Block List Light
@@ -1116,6 +1116,8 @@ stiri.md##.desktopBranding
 stiri.md##[href*="banner"]
 stiri.md#?#[data-banner-name]:upward([class^="mocked-styled"]):not(*:has(.content-banner))
 stiri.md##[data-testid="source-url"]:not(*:has([href*="stiri.md"]))
+stiri.md##[class*="AdWrapper"]
+stiri.md##.desktop-branding-wrapper
 ||ziarulincomod.ro^*gif$image
 ziarulincomod.ro#?#.td-a-rec:has([href*="350x350"])
 ciao.ro#?#.hidden-xs:has([id^="div-gpt-ad"])
@@ -1345,6 +1347,7 @@ coinjournal.net##.ad-banner
 coinjournal.net#?#.py-6:has([href*="/etoro"])
 ||pornlash.com^
 ||pgnasm.click^
+||colorfulculture.click^
 ||eporno.ro/assets/js/cxads.js$script
 ||filme-porno.ro/assets/js/cxads.js$script
 eporno.ro,filme-porno.ro##.cxADBlock
@@ -1602,7 +1605,10 @@ obiectivderadauti.ro##.wpb_wrapper:not(*:has([href*="obiectivderadauti.ro"], [hr
 2mnews.ro##.wpb_wrapper:not(*:has([href*="2mnews.ro"], [href*="facebook.com"], [href="#"])):has([href])
 2mnews.ro##.textwidget:not(*:has([href*="2mnews.ro"], [href*="facebook.com"], [href="#"])):has([href])
 ziuaveche.ro##[align="center"]:not(*:has([href*="ziuaveche.ro"], [href*="facebook.com"], [href="#"])):has([href])
-tv8.md##[style="height:250px"]:has([id^="admixer"])
+tv8.md##[style*="250px"]:has([id^="admixer"])
+tv8.md##[style*="90px"]:has([id^="admixer"])
+tv8.md##[style*="600px"]:has([id^="admixer"])
+tv8.md##.ad-container
 ||adv.noi.md^
 noi.md##.top-bnr
 noi.md##.news-feed-item:has([src*="adv"])
@@ -1668,6 +1674,7 @@ point.md##[class] > [class]:has([data-banner-position="Top"])
 point.md##div[class]:has(> a[href*="://sales.simpals.com/"][href*="banner"])
 point.md##[data-banner-name*="Banner"]
 point.md##aside > [class]:has([data-banner-name*="Banner"])
+okazii.ro#?#[style]:contains(Publicitate)
 ! Title: Romanian specific uBO filters
 ! Expires: 3 days
 ! Issue tracker: https://github.com/tcptomato/ROad-Block/issues
@@ -1766,6 +1773,7 @@ acasa.ro#%#//scriptlet('ubo-set-cookie', 'fwp_wpm_', '1')
 bzb.ro#$#.upM { margin-top: 10px !important }
 ! https://github.com/tcptomato/ROad-Block/issues/428
 eporno.ro,filme-porno.ro#%#//scriptlet('ubo-aeld', 'load', 'ADS')
+e-porno.ro#%#//scriptlet('ubo-aeld', 'click', '_0x')
 ! https://github.com/tcptomato/ROad-Block/issues/650
 catalog-az.ro#$#.main-content-section { min-height: 400px !important }
 ! https://github.com/tcptomato/ROad-Block/issues/651
