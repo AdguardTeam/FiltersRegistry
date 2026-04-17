@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: E0M5PVN/XhJSHYybejFKgA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1776388209-14400.patch
+! Checksum: RjZa52opm9KbDpNqPddiUQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1776403346-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.88.98
-! TimeUpdated: 2026-04-17T01:06:42+00:00
+! Version: 2.1.88.99
+! TimeUpdated: 2026-04-17T05:18:47+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -327,6 +327,7 @@
 =ajaxGetAds&
 =dynamic_banner&
 =GetAdHtml&
+=iframe_pub&
 =popunder&
 =publicite&
 =sponsored_links_
@@ -431,6 +432,7 @@ _ads_banner/
 _ads_banner_
 _ads_desktop.
 _ads_one_
+_ads_toroadv.
 _ads_view/
 _adspromo.
 _adunit=
@@ -545,6 +547,7 @@ _werbebanner_
 ://landing.*/?ats=$popup,3p
 ://syndication.$popup,3p
 ://xml.*/click?$popup
+?adTagId=$popup
 ?key=*&psid=$popup
 ?key=*&zoneid=$popup
 ?lpkey=*&uclick=$popup
@@ -566,7 +569,6 @@ _build=iclick-$popup
 ||ad-spire.net^$3p
 ||ad6.fr^$3p
 ||adconnect.fr^$3p
-||adfurikun.jp^$3p
 ||adhslx.com^$3p
 ||adintop.com^$3p
 ||adkontekst.pl^$3p
@@ -591,6 +593,7 @@ _build=iclick-$popup
 ||adschemist.com^$3p
 ||adschoom.com^$3p
 ||adsclick.com.br^$3p
+||adsearch.pl^$3p
 ||adsenseguard.com^$3p
 ||adservone.com^$3p
 ||adsgarden.com^$3p
@@ -624,7 +627,6 @@ _build=iclick-$popup
 ||alosafada.com^$3p
 ||apypxl.com^$3p
 ||aquaplatform.com^$3p
-||arabyads.com^$3p
 ||askmecca.com^$3p
 ||atedra.com^$3p
 ||atlassolutions.com^$3p
@@ -671,6 +673,7 @@ _build=iclick-$popup
 ||ebuzzing.fr^$3p
 ||echangedebannieres.fr^$3p
 ||egnatius-ear.com^$3p
+||eurowebbiz.com^$3p
 ||explorads.com^$3p
 ||ezstatic.com^$3p
 ||fancybar.net^$3p
@@ -793,7 +796,6 @@ _build=iclick-$popup
 ||travelbar.tools^$3p
 ||trk-egestas.com^$3p
 ||truenat.bid^$3p
-||ulclick.ru^$3p
 ||viahelium.com^$3p
 ||vyking.io^$3p
 ||wedoo.com^$3p
@@ -881,6 +883,7 @@ _build=iclick-$popup
 ||bestcontentcost.top^
 ||bestfreecounterstat.com^
 ||betulinherl.shop^
+||bhabhiporn.pro^
 ||bharsilked.com^
 ||biokrfvnvs.com^
 ||bkrkv.com^
@@ -1286,6 +1289,7 @@ _build=iclick-$popup
 ||smnyayzhv.com^
 ||sodhef.com^
 ||soknm.com^
+||sokrostream.tv^
 ||songslunger.com^
 ||sparelli.com^
 ||spiraeadurums.com^
@@ -1294,6 +1298,7 @@ _build=iclick-$popup
 ||starsx.fr^
 ||stat.ovh^
 ||statdynamic.com^
+||supersbugsha.com^
 ||supportxmr.com^
 ||surfcountor.com^
 ||talktomeplease.biz^
@@ -1646,7 +1651,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||ratehub.ca/widgets/$3p
 ||rebrand.ly^$domain=korben.info
 ||recettes.de/images/logos/$3p
-||reef-guardian.com/boutique/$3p
 ||regie-agricole.com^*/pubs^$3p
 ||rza.pmu.fr^
 ||s.beop.io^
@@ -2073,10 +2077,10 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||viamichelin.*/img/partners/
 ||vidmoly.to/static/vastAD.js
 ||vosfemmes.com^$script,subdocument
+||vostfr.club/system/banners/
 ||vtube.*/api/click/$popup
 ||web2.$subdocument,domain=0calc.com|0calc.es|0calc.fr|0calc.in|0calc.ru|0rechner.de
 ||web2.*/|$xhr,domain=0calc.com|0calc.es|0calc.fr|0calc.in|0calc.ru|0rechner.de
-||weblettres.net/@images/pub/
 ||weshrak.com^*/imp.php?
 ||weshrak.com^*/pub.php?
 ||wiflix-*/voir/
@@ -2304,6 +2308,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###topleftad
 ###vertical-ad
 ###videoadv
+###werbeblock
 ###widget_box_pub
 ##.MIXADVERT_NET
 ##.Middle-Ad
@@ -2584,7 +2589,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.sponsorfooter
 ##.squareadboxext
 ##.srcPubZone
-##.stackcommerce-widget
 ##.standard_adv_link
 ##.sticky-ad-holder
 ##.structure_wrapper-ad
@@ -2698,9 +2702,9 @@ bdgest.com,bedetheque.com###hab_click_side
 banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comics-sanctuary.com,ffeminin.com,gamer-network.fr,jeux-mmorpg.fr,lequipement.fr,letelegramme.fr,nrj.fr###habillage
 leparking.fr###habillage-pub
 buzzdefou.com,gerardmerinfo.fr###habillage_site
+ezgif.com###header-infoblock
 amateur2sexe.fr###home-p2
 leboncoin.fr###home-top-banner
-tsa-algerie.com###home_immo
 lesoir.be###horoscope-promo
 mega-p2p.net###imStickyBar_imObjectButton_03
 ladepeche.fr,midilibre.fr###immobilier
@@ -3043,6 +3047,7 @@ leparisien.fr##[class*="ads-"]
 uploaded.net##[class*="pico-"]
 winamax.fr##[class][onclick]
 therealdeal.com##[class^="AdUnit_"]
+narkive.com,tourte.org##[class^="ads_"]
 carrefour.fr##[class^="advertising-placeholder"]
 webstar-electro.com##[class^="banner"]
 doctissimo.fr##[class^="doc-ad-"]

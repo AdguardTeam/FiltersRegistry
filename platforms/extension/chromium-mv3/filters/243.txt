@@ -1,13 +1,13 @@
-! Checksum: pLh2UpvYP2NEc5pmVIJFTQ
+! Checksum: TcfRdxxW8yBSkDG42LEtpg
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.34
-! TimeUpdated: 2026-04-16T12:52:47+00:00
+! Version: 2.0.24.35
+! TimeUpdated: 2026-04-17T05:19:30+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-04-16 14:42:51 CEST
+! Last modified: 2026-04-17 07:04:05 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -767,7 +767,7 @@ hemnet.se##:is(article, li):has([class*="SponsoredLabel"], .article-card__sponso
 hemnet.se##:is(div[class^="Carousel"], #top_listing):has(div[class^="PaidPlacementLabel"])
 hemtrevligt.se##article[data-section="Partner"]
 hifitorget.se##.billboard_container, .billboard-style, a[href*="utm_"][target] img, .listing-ad-row
-hifitorget.se##:is(.row[style^="min-height"], .row .h-100):has(.adsbygoogle, .billboard_container)
+hifitorget.se##:is(.row div[style^="min-height"], .row .h-100):has(.adsbygoogle, .billboard_container, div[id^="div-gpt-ad"])
 hippson.se#?#.font-bold:contains(SAMARBETE):upward(.rounded-xl)
 hippson.se##.my-8:empty
 hippson.se##:is(.rounded-xl, .main-article-container):has(a[href="/sponsrad-artikel"])
@@ -1453,7 +1453,7 @@ svenskarnaochinternet.se,internetstiftelsen.se###newsletter-sliding
 svenskbotanik.se###cookieModal
 svenskelitfotboll.se##custom-ad, sponsors
 svenskelitfotboll.se##.image-block:has(a[class*="sponsor"])
-svenskfarmaci.se##.Dialog[data-dialog-skip-auto-open-for-utm-source-value="Newsletter"]
+svenskfarmaci.se##.Dialog[data-dialog-skip-auto-open-for-utm-source-value="Newsletter"], .Dialog--ad
 svenskfilmdatabas.se##.wt-cli-cookie-bar-container
 svenskfotboll.se##.news-multi-link--sponsor
 svenskgolf.se##.card:has(a[href*="/partner/"])
@@ -1689,9 +1689,6 @@ vovve.net#?#span.arialtext11[style^="float:left"]:contains(/^i samarbete med/i):
 vovve.net###sticky_ad, div[style*="ad_hor.gif"], a[href*="casino"], a[href*="kasyno"], a[href*="betting"], a[href*="spelsajter.eu"], a[href*="spelsidor.org"], a[href*="oddsgurun.com"], a[href*="betsidor"], a[href*="välkomstbonusar"]
 webbjobb.io##.cookie
 webbkryss.nu##.skyad-wrapper
-webhallen.com#%#//scriptlet('ubo-set-local-storage-item', 'marketingConsent', 'false')
-webhallen.com#%#//scriptlet('ubo-set-local-storage-item', 'necessaryConsent', 'true')
-webhallen.com#%#//scriptlet('ubo-set-local-storage-item', 'personalisationConsent', 'false')
 webhallen.com##.takeover-link
 westmagazine.se##.cnvs-block-section:has(a[href*="utm_medium=banner"])
 westmagazine.se#?#.post:contains(ANNONS)
@@ -1843,6 +1840,7 @@ zeromagazine.nu##div[id^="ads"]
 ##div.flow_ad
 ##div.fs-holid-live-widescreen
 ##div.helsida-ad
+##div.infeed-ad-card
 ##div.inner_advertisement
 ##div.in-feed-ad
 ##div.in-post-ad-wrap
