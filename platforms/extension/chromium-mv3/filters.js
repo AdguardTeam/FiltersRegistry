@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.88.99",
-			"timeUpdated": "2026-04-16T20:46:03+0000",
+			"version": "2.1.89.0",
+			"timeUpdated": "2026-04-17T01:06:38+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.88.98",
-			"timeUpdated": "2026-04-16T20:46:05+0000",
+			"version": "2.1.88.99",
+			"timeUpdated": "2026-04-17T01:06:40+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1056,8 +1056,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.7.22",
-			"timeUpdated": "2026-04-16T01:08:46+0000",
+			"version": "2.1.7.23",
+			"timeUpdated": "2026-04-17T01:07:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1195,8 +1195,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@list-kr/filterslists@latest/dist/filterslist-AdGuard-classic.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.95",
-			"timeUpdated": "2026-04-16T12:52:35+0000",
+			"version": "2.0.23.96",
+			"timeUpdated": "2026-04-17T01:07:12+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1380,8 +1380,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.82.30",
-			"timeUpdated": "2026-04-16T20:47:05+0000",
+			"version": "2.0.82.31",
+			"timeUpdated": "2026-04-17T01:07:32+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1428,8 +1428,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.14.38",
-			"timeUpdated": "2026-04-16T12:53:00+0000",
+			"version": "2.0.14.39",
+			"timeUpdated": "2026-04-17T01:07:36+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
