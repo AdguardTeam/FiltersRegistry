@@ -383,8 +383,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.66.9",
-			"timeUpdated": "2026-04-18T01:00:29+0000",
+			"version": "2.1.66.10",
+			"timeUpdated": "2026-04-18T05:14:05+0000",
 			"languages": []
 		},
 		{
@@ -432,8 +432,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.62.69",
-			"timeUpdated": "2026-04-18T01:00:33+0000",
+			"version": "2.1.62.70",
+			"timeUpdated": "2026-04-18T05:14:08+0000",
 			"languages": []
 		},
 		{
@@ -465,8 +465,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.89.5",
-			"timeUpdated": "2026-04-18T01:00:33+0000",
+			"version": "2.1.89.6",
+			"timeUpdated": "2026-04-18T05:14:09+0000",
 			"languages": []
 		},
 		{
@@ -510,8 +510,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.89.7",
-			"timeUpdated": "2026-04-18T01:00:35+0000",
+			"version": "2.1.89.8",
+			"timeUpdated": "2026-04-18T05:14:10+0000",
 			"languages": [
 				"it"
 			]
@@ -555,8 +555,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.89.6",
-			"timeUpdated": "2026-04-18T01:00:37+0000",
+			"version": "2.1.89.7",
+			"timeUpdated": "2026-04-18T05:14:11+0000",
 			"languages": [
 				"ar"
 			]
@@ -574,8 +574,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.89.5",
-			"timeUpdated": "2026-04-18T01:00:39+0000",
+			"version": "2.1.89.6",
+			"timeUpdated": "2026-04-18T05:14:13+0000",
 			"languages": []
 		},
 		{
@@ -655,8 +655,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.62.75",
-			"timeUpdated": "2026-04-18T01:00:42+0000",
+			"version": "2.1.62.76",
+			"timeUpdated": "2026-04-18T05:14:17+0000",
 			"languages": []
 		},
 		{
@@ -738,8 +738,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.60.9",
-			"timeUpdated": "2026-04-18T01:00:51+0000",
+			"version": "2.1.60.10",
+			"timeUpdated": "2026-04-18T05:14:26+0000",
 			"languages": []
 		},
 		{
@@ -755,8 +755,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.60.80",
-			"timeUpdated": "2026-04-18T01:00:52+0000",
+			"version": "2.0.60.81",
+			"timeUpdated": "2026-04-18T05:14:27+0000",
 			"languages": []
 		},
 		{
@@ -887,8 +887,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.89.6",
-			"timeUpdated": "2026-04-18T01:00:58+0000",
+			"version": "2.1.89.7",
+			"timeUpdated": "2026-04-18T05:14:32+0000",
 			"languages": []
 		},
 		{
@@ -964,8 +964,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.88.32",
-			"timeUpdated": "2026-04-18T01:01:00+0000",
+			"version": "2.1.88.33",
+			"timeUpdated": "2026-04-18T05:14:35+0000",
 			"languages": []
 		},
 		{
@@ -1265,8 +1265,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.89.7",
-			"timeUpdated": "2026-04-18T01:01:09+0000",
+			"version": "2.1.89.8",
+			"timeUpdated": "2026-04-18T05:14:43+0000",
 			"languages": []
 		},
 		{
@@ -1510,8 +1510,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.85.13",
-			"timeUpdated": "2026-04-18T01:01:20+0000",
+			"version": "2.1.85.14",
+			"timeUpdated": "2026-04-18T05:14:56+0000",
 			"languages": []
 		},
 		{
@@ -1613,8 +1613,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.82.38",
-			"timeUpdated": "2026-04-18T01:01:26+0000",
+			"version": "2.0.82.39",
+			"timeUpdated": "2026-04-18T05:15:02+0000",
 			"languages": [
 				"hi"
 			]
@@ -1656,8 +1656,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
-			"version": "2.0.7.38",
-			"timeUpdated": "2026-04-17T05:19:45+0000",
+			"version": "2.0.7.39",
+			"timeUpdated": "2026-04-18T05:15:06+0000",
 			"languages": []
 		},
 		{
