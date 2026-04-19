@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.61.43",
-			"timeUpdated": "2026-04-19T10:18:24+0000",
+			"version": "2.4.61.44",
+			"timeUpdated": "2026-04-19T11:17:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1731,8 +1731,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.57.81",
-			"timeUpdated": "2026-04-19T08:26:44+0000",
+			"version": "2.1.57.82",
+			"timeUpdated": "2026-04-19T11:17:55+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
