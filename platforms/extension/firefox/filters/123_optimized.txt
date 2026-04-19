@@ -1,9 +1,9 @@
-! Checksum: bkJIMzK/4+BjkwaAInUoCw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1776561133-14400.patch
+! Checksum: 1bG61fEkFO3Yc8LwQEriPw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1776576124-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.60.15
-! TimeUpdated: 2026-04-19T01:08:55+00:00
+! Version: 2.1.60.16
+! TimeUpdated: 2026-04-19T05:18:55+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -202,6 +202,7 @@ _social_footer_
 ###facebookFan
 ###facebookIcon
 ###facebookLike
+###facebookLikeBox
 ###facebookLikeButton
 ###facebookShareButton
 ###facebookTab
@@ -610,7 +611,6 @@ _social_footer_
 ###socialMediaSection
 ###socialModal
 ###socialNetworks
-###socialPopup
 ###socialShare
 ###socialSharing
 ###socialTwitter
@@ -951,7 +951,6 @@ _social_footer_
 ##.b-advert-social-wrapper
 ##.b-article__social
 ##.b-event_links__share__block
-##.b-footer-social-icons
 ##.b-footer__social
 ##.b-footer_social
 ##.b-header__social
@@ -1067,6 +1066,7 @@ _social_footer_
 ##.c-header__social
 ##.c-list--social
 ##.c-main-footer__social
+##.c-mainsocial
 ##.c-nav-social
 ##.c-navbar-primary__social
 ##.c-scribblelive__social
@@ -1144,6 +1144,7 @@ _social_footer_
 ##.custom-sharing
 ##.custom-social
 ##.custom-social-share
+##.d-share
 ##.d3-o-share-bar
 ##.dark-social
 ##.dashicons-facebook
@@ -1211,6 +1212,7 @@ _social_footer_
 ##.entry-sharing
 ##.entry-sharing-buttons
 ##.entry-social
+##.entry-social-buttons
 ##.entry-social-content
 ##.entry-socials
 ##.entryShare
@@ -1219,6 +1221,7 @@ _social_footer_
 ##.entypo-share
 ##.entypo-social
 ##.epcl-share-container
+##.eplayer-share-social
 ##.ess-share-text
 ##.ess-social-sharing
 ##.essb-mobile-sharepoint
@@ -1462,7 +1465,6 @@ _social_footer_
 ##.footerFacebook
 ##.footerFollow
 ##.footerFollowUs
-##.footerMainContent__socialButton
 ##.footerSeguici
 ##.footerShare
 ##.footerSocial
@@ -1502,7 +1504,6 @@ _social_footer_
 ##.footer_social_facebook
 ##.footer_social_icons
 ##.footer_social_links
-##.footer_social_social-networks
 ##.footer_social_twitter
 ##.footer_social_wrapper
 ##.footer_socials
@@ -1798,6 +1799,7 @@ _social_footer_
 ##.js-share-twitter
 ##.js-shareButton
 ##.js-sharecount
+##.js-social-bar
 ##.js-social-facebook
 ##.js-social-instagram
 ##.js-social-share
@@ -1967,8 +1969,6 @@ _social_footer_
 ##.mobileShare
 ##.mod-facebook
 ##.mod-follow
-##.mod-social
-##.mod-social-navigation
 ##.mod-twitter
 ##.modSharing
 ##.module--share
@@ -2034,7 +2034,6 @@ _social_footer_
 ##.ns-social
 ##.nv-post-share
 ##.o-footer__social
-##.o-footer__socials
 ##.o-shareBooster__item
 ##.o-social-icon
 ##.oSocial
@@ -2752,6 +2751,7 @@ _social_footer_
 ##.single__floating-share
 ##.single__share
 ##.single__social
+##.single_post_share_icon_post
 ##.single_post_share_icons
 ##.single_share
 ##.single_social
@@ -2767,6 +2767,7 @@ _social_footer_
 ##.site_share
 ##.sitewide-social-media
 ##.sm-page-widget-sociallinks
+##.sm-share-social-buttons
 ##.sn-share
 ##.snapchat-share-button
 ##.sns-bar
@@ -2785,7 +2786,6 @@ _social_footer_
 ##.sns-wrapper
 ##.sns-yt
 ##.snsBox
-##.snsPalette
 ##.snsWrapper
 ##.sns_box
 ##.sns_follow
@@ -3115,6 +3115,7 @@ _social_footer_
 ##.socialMenu
 ##.socialMod
 ##.socialNav
+##.socialNetwork-container
 ##.socialNetworks
 ##.socialPanel
 ##.socialSection
@@ -3194,6 +3195,7 @@ _social_footer_
 ##.socialheader
 ##.socialicon
 ##.socialicons
+##.socialink
 ##.socialinks
 ##.socialite-widget
 ##.socialite-widget-item
@@ -3520,7 +3522,6 @@ _social_footer_
 ##.widget_g1_socials
 ##.widget_jnews_social
 ##.widget_jnews_social_counter
-##.widget_likebox
 ##.widget_novashare_follow_widget
 ##.widget_nypost_social_widget
 ##.widget_reallysimpletwitterwidget
@@ -3682,7 +3683,6 @@ _social_footer_
 ||facebook.com/plugins/like_box.php$third-party
 ||facebook.com/plugins/page.php?$third-party
 ||facebook.com/plugins/share_button.php?$third-party
-||facebook.com/widgets/like.php?$third-party
 ||facebook.com^*/plugins/like.php?$third-party
 ||facebook.com^*/plugins/page.php?$third-party
 ||facebook.com^*/plugins/share_button.php?$third-party
@@ -3822,7 +3822,6 @@ cnbc.com##.HighlightShare-container
 apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
-ask.com,smarter.com##.PartialSocialLinks
 rbth.com##.Popup-telegram
 ndtv.com##.SSR_drp
 abc.net.au##.ShareBanner_container__OX63I
@@ -3984,6 +3983,7 @@ ghacks.net##.ghacks_share_widget
 cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
 bringmethenews.com,thehindu.com##.google-btn
+faroutmagazine.co.uk##.google-follow
 windowslatest.com##.google-news-btn
 thethaiger.com##.google-news-button-container
 alarabiya.net##.google-news-callout
@@ -4145,6 +4145,7 @@ cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
 12tomatoes.com##.sharetocare-popup
+faroutmagazine.co.uk##.sharing-sidebar
 glassalmanac.com##.shhr-btn
 welivesecurity.com##.sidebar-card-media
 tribune.com.pk##.sidebar-social-icons
@@ -4279,6 +4280,7 @@ dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
 news.yahoo.com##[data-ylk="elm:partnercta;itc:0;sec:google-pub;"]
 windowslatest.com##[href^="https://google.com/preferences/source"]
+ynetnews.com##[style="display: flex; justify-content: center; width:100%;height:65px;border: 1px solid #e6e6e6;border-radius: 5px;background-color: #fff;box-sizing: border-box; margin: 20px auto;"]
 hackster.io##a.social_icons__icon__BxTgB
 straitstimes.com##button.desktop\:block
 theguardian.com##div > gu-island[name="ShareButton"]
@@ -4640,7 +4642,6 @@ ara.cat,europapress.es##.footer-rrss
 elonce.com,portafolio.co##.footer__redes
 elperiodico.com,sport.es##.ft-mol-rrss-column
 diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,elcorreoweb.es,eldia.es,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondemurcia.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,regio7.cat,superdeporte.es##.ft-mol-rrss-column__items
-adnradio.cl##.gdisc-follow
 milenio.com##.google-news-follow
 dolarhoy.com##.header__redes
 tn.com.ar##.horizontal-share
