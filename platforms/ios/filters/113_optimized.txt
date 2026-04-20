@@ -1,9 +1,9 @@
-! Checksum: K9Aem+sFzFnH5tdem3znAQ
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1776647463-14400.patch
+! Checksum: jlR6c6MAsiouUOUxWCiPgQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1776663068-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.89.17
-! TimeUpdated: 2026-04-20T01:07:37+00:00
+! Version: 2.1.89.18
+! TimeUpdated: 2026-04-20T05:27:47+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -299,6 +299,7 @@
 ://get.*&clickid=
 ://go.*&zoneid=
 ://link.*&siteid=$third-party
+://look.*/offer?prod=
 ://ma.ads.
 ://pop.$script,subdocument,third-party,xmlhttprequest
 ://promo.*?site_id=
@@ -443,7 +444,6 @@ _b468x60.
 _banner-300x150.
 _banner.*?partner=
 _banner_pub.
-_bannerad2_
 _banniere-300.
 _banniere-728.
 _bnrrotator_
@@ -452,6 +452,7 @@ _dfp_conf.js
 _display_ad_
 _domain=ads.
 _event_pub.
+_flash_ad_
 _id=*&nads=
 _iframe728x90.
 _isab.
@@ -465,7 +466,6 @@ _popdhtml/
 _profits_ad-
 _program_ad.
 _pub.gif
-_pub_iframe.
 _publicitaire/
 _publicite.
 _publicite_
@@ -843,7 +843,6 @@ _build=iclick-$popup
 ||actionrtb.com^
 ||admiredexcrete.com^
 ||admithelperbusy.com^
-||adoproperly.com^
 ||adslop.com^
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
@@ -912,7 +911,6 @@ _build=iclick-$popup
 ||ccgcg.com^
 ||cemantical4.com^
 ||centalkochab.com^
-||certifiedblob.com^
 ||cfpushsdevpw.com^
 ||cgqhtithixi.com^
 ||chambulwacs.com^
@@ -964,7 +962,6 @@ _build=iclick-$popup
 ||domainscherts.com^
 ||dorpshexyls.com^
 ||douveejoalastu.net^
-||dowabledecil.com^
 ||doxdynpvwvkcw.com^
 ||dpuplet.net^
 ||dq95d35.com^
@@ -1463,6 +1460,7 @@ _build=iclick-$popup
 ||o000oo.com^$popup
 ||passion.com^$popup
 ||porncrash.com^$popup,third-party
+||redlightcenter.com^$popup,third-party
 ||revsharecash.com^$popup,third-party
 ||schjmp.com^$popup
 ||sersh.com^$popup,third-party
@@ -1510,7 +1508,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||amazonaws.com/hbams/
 ||ams.cdn.arkadiumhosted.com/advertisement/$media
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
-||annuaire-web-france.com/partenaires/
 ||api.gamerprices.com/compare/$third-party
 ||arc.io/widget$third-party
 ||asumi.shinobi.jp^
@@ -1528,7 +1525,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||blogspot.com^$image,domain=desiupload.co|desiupload.in
 ||brfiles.com/static/pub/
 ||brsimg.com/pub/
-||btcclicks.com/img/$third-party
 ||camtempel.com/banner/
 ||cdn.citytourgirls.com/static/bn/
 ||cdn.escortdude.com/static/bn/
@@ -1674,7 +1670,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||torah-box.com/upl/ban/
 ||tounet.com/button.php
 ||toutsurlesabdos.com/images/bannieres_$domain=europeplusnet.info
-||track.mdsmatch.com^
 ||tripadvisor.*/partner/$third-party
 ||try.abtasty.com^$domain=planet.fr
 ||tudou.com^$subdocument
@@ -1683,6 +1678,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||up-banner.wavecdn.net^
 ||vachvoi.cc/picture/files/
 ||vegemiam.fr/wp-content/uploads/$third-party
+||vendezvotrevoiture.fr^$subdocument,third-party
 ||vidazoo.com/aggregate?
 ||vidcoin.com^$domain=aufeminin.com
 ||viously.com/amp/szuG21KBA-F$domain=positivr.fr
@@ -2439,6 +2435,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.parent_ad
 ##.pave-pub
 ##.pave_pub
+##.pjsleads
 ##.placeholder-pub_dfp
 ##.player-adv
 ##.player-sponsor-block
@@ -2645,7 +2642,6 @@ finalclap.com###aff_tuto_com
 akeo.fr###amazon
 millenium.gg###amazon_container
 soap-passion.com###annonce
-leberry.fr###appel_BR_home_BPI_Stonest
 lepopulaire.fr###appel_PC_home_BPI_Stonest
 commentcamarche.com,commentcamarche.net###ba_right
 manga-news.com###ban970250
@@ -2851,6 +2847,7 @@ gamergen.com,generation-nt.com##.bup
 lecho.be##.c-adh-connecthpwrapper
 cheriefm.fr##.c-block-display--covering
 terrafemina.com##.c-product
+lacentrale.fr##.caradisiac
 orange.fr##.carousel-hp-pub2
 emu-france.com##.cas_version_mobile_cache_grande_pub
 comptoir-hardware.com##.cat_bons_plans_du_comptoir
@@ -3003,7 +3000,6 @@ test-achats.be##.skin
 infoconcert.com##.slider.container
 lepoint.fr##.slotadm
 boursorama.com##.smart
-lefigaro.fr##.spec-ops-box
 blogduwebdesign.com,channelbiz.fr,europages.fr,itespresso.fr,silicon.fr##.sponsor
 novaplanet.com##.sponsor-top
 tsa-algerie.com##.sponsored-by
@@ -3130,6 +3126,7 @@ gamergen.com,generation-nt.com##article .product
 scan-manga.com##article[itemtype="https://schema.org/Product"]
 tchatche.com##banner
 agroligne.com,auto-utilitaire.com,mobilealgerie.com##body > a > img
+annuaire-horaire.fr##div#aq
 gamopat-forum.com##div#wrapper > div#right img[src*="/11/03/61/79/"]
 laprovence.com##div[class*="Ads_ad_"]
 newpharma.fr##div[class*="adh-banner"]

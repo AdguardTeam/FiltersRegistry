@@ -1,9 +1,9 @@
-! Checksum: 8Ni2m+bKxqepqPAey2ihlA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1776647434-14400.patch
+! Checksum: 7q97+fO9z7sLUDGx5CiChg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1776663043-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.60.21
-! TimeUpdated: 2026-04-20T01:07:49+00:00
+! Version: 2.1.60.22
+! TimeUpdated: 2026-04-20T05:27:58+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -133,6 +133,7 @@
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
+_small_share.
 _social-bar/
 _social_bookmark/
 _social_footer_
@@ -237,7 +238,6 @@ _social_footer_
 ###fb_share
 ###fb_share_btn
 ###fb_video_link
-###fb_widget
 ###fbbox
 ###fbbox1
 ###fblike
@@ -267,10 +267,16 @@ _social_footer_
 ###footer-follow-us
 ###footer-instagram-icon
 ###footer-share
+###footer-share-facebook
+###footer-share-google
+###footer-share-linkedin
+###footer-share-list
+###footer-share-twitter
 ###footer-social
 ###footer-social-link
 ###footer-socials
 ###footer-twitter
+###footer-twitterfeed
 ###footer-youtube
 ###footer-youtube-icon
 ###footerConnect
@@ -655,6 +661,7 @@ _social_footer_
 ###social_widget
 ###social_widget-4
 ###socialbar
+###socialblock
 ###socialbookmarks
 ###socialbox
 ###socialbtns
@@ -956,6 +963,7 @@ _social_footer_
 ##.b-header__social
 ##.b-share
 ##.b-share-button
+##.b-share-media__main-position
 ##.b-sharelist
 ##.b-sidebar-social
 ##.b-social-icons
@@ -1124,6 +1132,7 @@ _social_footer_
 ##.content-footer-social
 ##.contentShareLeft
 ##.contentSocialBar
+##.contentshare
 ##.convosharebuttons
 ##.countShare
 ##.counted-share-vertical
@@ -1274,6 +1283,7 @@ _social_footer_
 ##.facebook-share-link
 ##.facebook-sidebar
 ##.facebook-social
+##.facebookFeed
 ##.facebookOuter
 ##.facebookShare
 ##.facebookShare__button
@@ -1373,6 +1383,7 @@ _social_footer_
 ##.follow-instagram
 ##.follow-link-facebook
 ##.follow-link-twitter
+##.follow-link-wrapper
 ##.follow-linkedin
 ##.follow-pinterest
 ##.follow-share
@@ -1504,6 +1515,7 @@ _social_footer_
 ##.footer_social_facebook
 ##.footer_social_icons
 ##.footer_social_links
+##.footer_social_social-networks
 ##.footer_social_twitter
 ##.footer_social_wrapper
 ##.footer_socials
@@ -1605,6 +1617,7 @@ _social_footer_
 ##.header__socials
 ##.header_sns
 ##.header_social
+##.header_social-media
 ##.header_social_icon
 ##.headersocial:not(body):not(html)
 ##.headersocials
@@ -2209,7 +2222,6 @@ _social_footer_
 ##.s_google
 ##.s_instagram
 ##.s_twitter
-##.s_youtube
 ##.saboxplugin-socials
 ##.safirShare
 ##.sal-leaf-accessori-sharebox
@@ -2711,6 +2723,7 @@ _social_footer_
 ##.sharings_box
 ##.sharrre
 ##.sharrre-container
+##.sharrre_widget
 ##.show-share
 ##.showShareMore
 ##.shr-bookmarks
@@ -2868,6 +2881,7 @@ _social_footer_
 ##.social-follow
 ##.social-follow-bar
 ##.social-follow-buttons
+##.social-follow-item
 ##.social-foot
 ##.social-footer
 ##.social-footer-block
@@ -3369,6 +3383,7 @@ _social_footer_
 ##.tve__info__share
 ##.tve_social_items
 ##.tw-share
+##.twd-footer-social-stripe
 ##.tweet-btn
 ##.tweet-link-button
 ##.tweet-this
@@ -3502,7 +3517,6 @@ _social_footer_
 ##.widget-sharrre
 ##.widget-social
 ##.widget-social-b
-##.widget-social-follower
 ##.widget-social-icons
 ##.widget-social-links
 ##.widgetFollowUs
@@ -3525,6 +3539,7 @@ _social_footer_
 ##.widget_novashare_follow_widget
 ##.widget_nypost_social_widget
 ##.widget_reallysimpletwitterwidget
+##.widget_rotatingtweets_widget
 ##.widget_siliconcounters
 ##.widget_social
 ##.widget_social_links
@@ -3747,7 +3762,6 @@ _social_footer_
 ||yandex.st/share/
 ||youtube.com/subscribe_embed?$third-party
 ||youtube.com/subscribe_widget$third-party
-||gasgoo.com/api/wxshare/
 ||people.com.cn/img/2020fenxiang/
 iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
@@ -3903,12 +3917,15 @@ cyclingnews.com,livescience.com##.buttons-social
 nature.com##.c-article-extras-additional-links
 lawandcrime.com##.c-article-foot__site
 thenextweb.com##.c-engage
+greatnorthernrail.com,southernrailway.com##.c-footer--social
 lawandcrime.com##.c-header-social-item
 heart.org##.c-hero-card__social
 dev.to##.c-link--icon-alone
 united24media.com##.c-post__props
 euroweeklynews.com,thisisfutbol.com,videocelts.com##.c-post__social
 kyivindependent.com##.c-share__wrapper
+coolmaterial.com##.c-socials-share-box
+coolmaterial.com##.c-socials-share-section
 mediaite.com##.c-youtube-subscribe
 yahoo.com##.caas-comment
 yahoo.com##.caas-content-contain-share
@@ -3974,7 +3991,6 @@ indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,flamboroughtoday.com,griceconnect.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,newmarkettoday.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,vancouverisawesome.com,westernwheel.ca##.ft-social
-getty.edu##.g-footer__social
 ecoticias.com##.gb-element-1da6670c
 ecoticias.com##.gb-element-6d236576
 news18.com##.gglebtn
@@ -3995,7 +4011,6 @@ ringsidenews.com,tmz.com##.google-preferred-btn
 cultofmac.com##.google-preferred-source
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
 goal.com##.google-trusted-source
-oilprice.com##.google_preferred_source_banner_sidebar
 gadgets360.com##.gsocialbar
 webdunia.com##.h_search_apps
 ndtv.com##.hdr-ss
@@ -4129,7 +4144,6 @@ dailymail.co.uk,fundrazr.com,gizmodo.com,modernagejournal.com,nymag.com,thisismo
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 thehackernews.com##.share-open-modal
 alternet.org,audacy.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,physicsworld.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
-forward.com##.share-post
 aajtak.in,gnttv.com,indiatoday.in,indiatodayne.in##.share-social-icons
 alarabiya.net,timeextension.com##.share-this
 dailymail.co.uk,thisismoney.co.uk##.share-twitter
@@ -4607,12 +4621,10 @@ excelsior.com.mx###social-bottom-node
 forocoches.com###social-networks
 europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
-caracoltv.com##.GoogleNewsProvider
 lasexta.com##.L6-social-share
 adn40.mx##.ListSiguenos-SocialStrip
 ejecentral.com.mx##.NavigationSocial
 elpais.com.uy##.Page-actions-wrapper
-caracoltv.com##.WhatsappChannel
 rpp.pe##.article__follow
 elespanol.com##.article__footer-nav
 elfinanciero.com.mx##.b-footer__social-links-container
@@ -4639,7 +4651,6 @@ qhubomedellin.com##.div_news_google
 eldiario.es,eldiarioar.com##.edi-social-buttons
 paparazzi.com.ar##.entry-sharer
 ara.cat,europapress.es##.footer-rrss
-elonce.com,portafolio.co##.footer__redes
 elperiodico.com,sport.es##.ft-mol-rrss-column
 diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,elcorreoweb.es,eldia.es,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondemurcia.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,regio7.cat,superdeporte.es##.ft-mol-rrss-column__items
 milenio.com##.google-news-follow
