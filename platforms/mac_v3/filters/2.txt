@@ -1,9 +1,9 @@
-! Checksum: ryoXYkqjgijOANlg/MuDOQ
-! Diff-Path: ../patches/2/2-s-1776668218-3600.patch
+! Checksum: G13x3YLgK6qSwk+JJG1jHQ
+! Diff-Path: ../patches/2/2-s-1776671090-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.61.61
-! TimeUpdated: 2026-04-20T06:53:19+00:00
+! Version: 2.4.61.62
+! TimeUpdated: 2026-04-20T07:41:01+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9559,6 +9559,7 @@ ad.broadstreetads.com
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||ads.starzd.pro^
 ||advertising.civitai.
 ||iwad.cachefly.net^
 ||ad-server.linkvertise.com^
@@ -11316,6 +11317,12 @@ snopes.com#%#//scriptlet('prevent-setTimeout', '.offsetHeight === 0')
 snopes.com#%#//scriptlet('prevent-setTimeout', '=>')
 snopes.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'setTimeout(()')
 snopes.com#%#//scriptlet('prevent-element-src-loading', 'script', '/adsbygoogle|doubleclick|googletagservices|bigcrunch/')
+snopes.com#$#.sidebar_ad { transform: rotateX(90deg) !important; height: 1px !important; }
+snopes.com#$#.outer_ad_container { transform: rotateX(90deg) !important; height: 1px !important; }
+snopes.com#$#.snopesad { transform: rotateX(90deg) !important; height: 1px !important; position: fixed !important; }
+snopes.com#$#.advertise_text { transform: rotateX(90deg) !important; height: 1px !important; }
+snopes.com#$#.ad-caption { transform: rotateX(90deg) !important; height: 1px !important; }
+snopes.com#$#.home_ad_bottom { transform: rotateX(90deg) !important; height: 1px !important; }
 snopes.com#@#.sidebar_ad
 snopes.com#@#.outer_ad_container
 snopes.com#@#.outer-ad-unit-wrapper
@@ -31484,6 +31491,8 @@ animevietsub.*##.video-ad-layer
 animevietsub.*##center > a[target="_blank"] > img
 animevietsub.*#%#//scriptlet('set-cookie', 'popupOpened', 'true')
 !
+holitv.org##div[class^="catfish-"]
+holitv.org###top-banner
 ||motphimr.io/rikvip-
 motphimr.io#%#//scriptlet('prevent-addEventListener', 'click', 'document.createElement')
 motphimr.io#%#//scriptlet('trusted-set-session-storage-item', 'popup-ads-last-shown', '$now$')
@@ -39711,6 +39720,8 @@ h-donghua.xyz##.video-content > div[id][style*="position:absolute;"][style*=";z-
 5v5world.co,burgerpixel.net,summonersky.com,homepander.com,aov-news.com#%#//scriptlet('trusted-replace-node-text', 'script', 'adstep', '/select_page \+ Math\.floor\(\(select_page - 1\)\/adstep\) \+ 1/g', 'select_page')
 anikai.to#%#//scriptlet('prevent-window-open')
 anikai.to#%#//scriptlet('set-cookie', '__p_mov', '1')
+anikai.to#%#//scriptlet('prevent-setInterval', '/\+3e4>.*<0\)\){var/', '3000')
+anikai.to##body > a[target="_blank"][style^="position:"][style*="z-index:"]
 player4u.xyz,2embed.*,vidapi.xyz###gate
 ||indianexpress.com/wp-content/plugins/express-ad-code-manager/
 ||indianexpress.com/wp-content/themes/indianexpress/js/ie-google-vignette-ad.js
@@ -58893,7 +58904,7 @@ tr.myxh.today,tr.usbxh.life,xhamster44.desi,aawweb.beauty,colourxh.site,xhamster
 ! back button manipulation
 tr.myxh.today,tr.usbxh.life,xhamster44.desi,krakenfiles.com,aawweb.beauty,colourxh.site,xhamster43.desi,fullxh.com,interxh.site,xhspot.com,xhwide5.com,xhchannel.com,xhtotal.com,xhtree.com,xhwide2.com,xhlease.world,xhamsterporno.mx,valuexh.life,xhdate.world,xhbranch5.com,galleryxh.site,xhbig.com,xhaccess.com,xhofficial.com,seexh.com,xhamster42.desi,xhvid.com,xhamster20.desi,xhamster19.desi,xhwebsite2.com,xhamster18.desi,xhadult3.com,xhadult2.com,xhmoon5.com,xhwide1.com,xhamster3.com,xhplanet2.com,megaxh.com,xhamster16.*,xhamster.com,xhamster2.com,xhamster7.com,xhamster8.com,xhamster9.com,xhamster10.com,xhamster12.com,xhamster13.*,xhamster14.com,xhamster15.com,xhamster17.*,xhamster18.*,xhamster19.com,xhamster1.desi,xhamster2.desi,xhamster3.*,xhamster4.desi,xhamster22.com,xhamster27.com,openxh.com,xhamster5.desi,xhopen.com,openxh1.com,xhamster40.com,xhamster.one,xhamster.desi,stripchat.com#%#//scriptlet("set-constant", "history.replaceState", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226833
-!+ PLATFORM(windows, mac, android, cli)
+!+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||video.flirtify.com^$redirect-rule=nooptext,domain=xhamster.com
 !
 moonbit.co.in,moondash.co.in##.flexContentAd
@@ -60325,6 +60336,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229568
+@@||paula2.com/WS2/dnfiles/Banners/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229492
 ! Website is broken when blocked scripts are removed from the page,
 ! so as a workaround a "redirect-rule" is used.
@@ -90523,6 +90536,7 @@ browsershots.org#@#.advert_area
 ||cheungtreron.qpon^
 ||chezoams.com^
 ||chfpgcbe.com^
+||chfqcsadfkkqw.space^
 ||chganwddpxhmw.online^
 ||chgoakspitied.cfd^
 ||chhencmmgwogk.space^
@@ -90856,6 +90870,7 @@ browsershots.org#@#.advert_area
 ||clevernt.com^
 ||cleverunjuicysolein.cyou^
 ||cleverwebserver.com^
+||clfctybv.com^
 ||clhxzrqdatxqm.store^
 ||clicadu.com^
 ||click-cdn.com^
@@ -101937,6 +101952,7 @@ browsershots.org#@#.advert_area
 ||iykrqkfbduoxn.site^
 ||iylmylijdicmv.site^
 ||iylwnmnnchzkq.website^
+||iymihwrynzdwx.online^
 ||iymvmpyfsqnui.site^
 ||iyodewlrk.com^
 ||iypxxhjdiwggg.website^
@@ -103537,6 +103553,7 @@ browsershots.org#@#.advert_area
 ||knudsengrillee.cyou^
 ||knutenegros.pro^
 ||knvhtkrrebdcv.space^
+||knwaiimhcziae.website^
 ||knwjmjujhadoo.site^
 ||knxcyvvibuvde.website^
 ||knxnrqidbmlen.site^
@@ -107537,6 +107554,7 @@ browsershots.org#@#.advert_area
 ||neatmadeiraairborne.com^
 ||nebulousfledwhy.com^
 ||necessary-catch.pro^
+||necessary-jury.com^
 ||necjqkadyfwgf.store^
 ||neckcaterer.com^
 ||necsvlizaxunm.online^
@@ -122995,6 +123013,7 @@ browsershots.org#@#.advert_area
 ||thereafterblazingclass.com^
 ||thereare.cfd^
 ||thereforeprisoniso.com^
+||theresehoodingalcippe.qpon^
 ||theretenoned.com^
 ||theretounstuff.cyou^
 ||thermalcustom.com^

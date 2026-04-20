@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /pQ8YTdRLRTfiPxQHTIPMQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776668207-3600.patch
+! Checksum: /6wsWBepfRzlXRsBpM+3tg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776671081-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.61.61
-! TimeUpdated: 2026-04-20T06:53:19+00:00
+! Version: 2.4.61.62
+! TimeUpdated: 2026-04-20T07:41:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9518,6 +9518,7 @@ ad.broadstreetads.com
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||ads.starzd.pro^
 ||advertising.civitai.
 ||iwad.cachefly.net^
 ||ad-server.linkvertise.com^
@@ -31039,6 +31040,8 @@ animevietsub.*##.video-ad-layer
 animevietsub.*##center > a[target="_blank"] > img
 animevietsub.*##+js(set-cookie, popupOpened, true)
 !
+holitv.org##div[class^="catfish-"]
+holitv.org###top-banner
 ||motphimr.io/rikvip-
 motphimr.io##+js(addEventListener-defuser, click, document.createElement)
 ||cvt.finallygotthexds.site/pmolink/$xhr
@@ -38666,6 +38669,8 @@ h-donghua.xyz##.video-content > div[id][style*="position:absolute;"][style*=";z-
 5v5world.co,burgerpixel.net,summonersky.com,homepander.com,aov-news.com##.carousel-item.recommend:not(:has(>*)):remove()
 anikai.to##+js(no-window-open-if)
 anikai.to##+js(set-cookie, __p_mov, 1)
+anikai.to##+js(no-setInterval-if, /\+3e4>.*<0\)\){var/, 3000)
+anikai.to##body > a[target="_blank"][style^="position:"][style*="z-index:"]
 player4u.xyz,2embed.*,vidapi.xyz###gate
 ||indianexpress.com/wp-content/plugins/express-ad-code-manager/
 ||indianexpress.com/wp-content/themes/indianexpress/js/ie-google-vignette-ad.js
@@ -59118,6 +59123,8 @@ $popup,3p,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229568
+@@||paula2.com/WS2/dnfiles/Banners/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229492
 ! Website is broken when blocked scripts are removed from the page,
 ! so as a workaround a "redirect-rule" is used.
