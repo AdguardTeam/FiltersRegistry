@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: g2f35sQsYup54eDhvfi/rQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776699539-3600.patch
+! Checksum: xhb/JJs0KwnBPcYK6bP/zA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776702900-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.61.70
-! TimeUpdated: 2026-04-20T15:34:59+00:00
+! Version: 2.4.61.71
+! TimeUpdated: 2026-04-20T16:31:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10703,6 +10703,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229517
+links.lootlabs.gg##+js(prevent-fetch, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229430
 file-me.top###adblock-overlay
 file-me.top##+js(abort-current-script, EventTarget.prototype.addEventListener, /AdBlock|adsbox/)
@@ -37207,6 +37209,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||apimg.net/*.gif$image,domain=affpaying.com
+||apimg.net/slider/propellerads
+affpaying.com##div.bg-white:has(a[href^="https://propellerads.com/"])
 file-me.top##+js(addEventListener-defuser, click, cc++;)
 moneywise.com##.wise-ad
 porn4days.pw##.col-12 > div.alert:has(> a.theme-link)
