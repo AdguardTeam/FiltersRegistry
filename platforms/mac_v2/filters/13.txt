@@ -1,9 +1,9 @@
-! Checksum: /MR2kalSZVepAHp3hbTt8w
-! Diff-Path: ../patches/13/13-s-1776661933-3600.patch
+! Checksum: p30F0mZIWQtCFEs1+lxPDw
+! Diff-Path: ../patches/13/13-s-1776767896-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.75
-! TimeUpdated: 2026-04-20T05:08:42+00:00
+! Version: 2.0.63.76
+! TimeUpdated: 2026-04-21T10:35:14+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5908,16 +5908,28 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: dizimor*.com.tr
+! Source: dizimor1.com.tr
+x.palv2.cfd#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollVideoUrl', '/prerollVideoUrl = "https:.*\.mp4";/', 'prerollVideoUrl = "";')
+||blogger.googleusercontent.com/img/$domain=x.palv2.cfd
+x.palv2.cfd###adPlayerBanner
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||blogger.googleusercontent.com/img/$domain=/dizimor\d+\.com\.tr$/
+! aglint-enable no-invalid-modifiers
+||dizimor*.com.tr/uploads/ad/
+[$domain=/dizimor\d+\.com\.tr$/]##div[data-ad-zone]
+!
 ! Frequently changed domains: turkleak*.live
 ! Source: turkleak1.live
-[$domain=/turkleak\d+.live$/]#$##video-ad-overlay { display: none !important; }
-[$domain=/turkleak\d+.live$/]#$##main-video-content { display: block !important; }
-[$domain=/turkleak\d+.live$/]#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
+[$domain=/turkleak\d+\.live$/]#$##video-ad-overlay { display: none !important; }
+[$domain=/turkleak\d+\.live$/]#$##main-video-content { display: block !important; }
+[$domain=/turkleak\d+\.live$/]#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
 !
 ! Frequently changed domains: doedaturkifsa*.blog
 ! Source: doedaturkifsa6.blog
-[$domain=/doedaturkifsa\d+.blog$/]$$script:contains(popUnder)
-[$domain=/doedaturkifsa\d+.blog$/]#%#//scriptlet('remove-node-text', 'script', 'popUnder')
+[$domain=/doedaturkifsa\d+\.blog$/]$$script:contains(popUnder)
+[$domain=/doedaturkifsa\d+\.blog$/]#%#//scriptlet('remove-node-text', 'script', 'popUnder')
 !
 ! Frequently changed domains: turkporoclub*.sbs
 ! Source: turkporoclub1.sbs

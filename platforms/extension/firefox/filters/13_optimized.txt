@@ -1,9 +1,9 @@
-! Checksum: SIQ5t21VE4fAu52X7R79fA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1776661913-3600.patch
+! Checksum: guVJhQpJHEECymAHOB2CYA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1776767880-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.63.75
-! TimeUpdated: 2026-04-20T05:08:42+00:00
+! Version: 2.0.63.76
+! TimeUpdated: 2026-04-21T10:35:14+00:00
 ! Expires: 10 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5409,10 +5409,17 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
-[$domain=/turkleak\d+.live$/]#$##video-ad-overlay { display: none !important; }
-[$domain=/turkleak\d+.live$/]#$##main-video-content { display: block !important; }
-[$domain=/turkleak\d+.live$/]#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
-[$domain=/doedaturkifsa\d+.blog$/]#%#//scriptlet('remove-node-text', 'script', 'popUnder')
+x.palv2.cfd#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollVideoUrl', '/prerollVideoUrl = "https:.*\.mp4";/', 'prerollVideoUrl = "";')
+||blogger.googleusercontent.com/img/$domain=x.palv2.cfd
+x.palv2.cfd###adPlayerBanner
+!+ NOT_VALIDATE
+||blogger.googleusercontent.com/img/$domain=/dizimor\d+\.com\.tr$/
+||dizimor*.com.tr/uploads/ad/
+[$domain=/dizimor\d+\.com\.tr$/]##div[data-ad-zone]
+[$domain=/turkleak\d+\.live$/]#$##video-ad-overlay { display: none !important; }
+[$domain=/turkleak\d+\.live$/]#$##main-video-content { display: block !important; }
+[$domain=/turkleak\d+\.live$/]#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
+[$domain=/doedaturkifsa\d+\.blog$/]#%#//scriptlet('remove-node-text', 'script', 'popUnder')
 [$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet('remove-node-text', 'script', 'LAST_POP')
 [$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet("abort-current-inline-script", "document.createElement", "'script'")
 [$domain=/turkporoclub\d+\.sbs$/]##h3.section-title
