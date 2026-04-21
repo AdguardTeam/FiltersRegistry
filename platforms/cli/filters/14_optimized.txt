@@ -1,9 +1,9 @@
-! Checksum: T76t/tOtTReNQzR4V3MquQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1776767870-3600.patch
+! Checksum: pOPXco11wEYke83PJzB9qQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1776771188-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.65.93
-! TimeUpdated: 2026-04-21T10:35:21+00:00
+! Version: 2.2.65.94
+! TimeUpdated: 2026-04-21T11:30:33+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -11715,7 +11715,11 @@ auto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.RenderMarks')
 shedevrum.ai#%#//scriptlet('set-constant', 'Object.prototype.isStickyAd', 'undefined')
 shedevrum.ai###app > div.z-\[12\].bg-white
 @@||shedevrum.ai^$generichide
-mtpro.xyz#%#//scriptlet('trusted-replace-argument', 'document.querySelector', '0', 'body', 'a[href^="tg://resolve?domain=durevpnbot"]')
+mtpro.xyz#%#//scriptlet('trusted-replace-argument', 'document.getElementById', '0', 'modal-1-content', 'detect-')
+mtpro.xyz#$#figure > div:has(> a[href="tg://resolve?domain=durevpnbot"]) { display: none !important; }
+mtpro.xyz#$#a[class~="wp-block-button__link"][target="_blank"]:not([href*="mtpro"]) { display: none !important; }
+mtpro.xyz#$#figure[class] > div:has(> a[href="https://px6.me/"]) { display: none !important; }
+mtpro.xyz#$#.wp-block-navigation__submenu-container > li[class]:has(> a[href="https://mod.ovh/proxy"]) { display: none !important; }
 otzovik.com##td[colspan] > div[style^="background-color: #ffd2ca;"]
 otzovik.com#%#//scriptlet('prevent-eval-if', 'xored')
 otzovik.com#%#//scriptlet("abort-on-property-read", "Object.prototype.RtbLoadDone")
@@ -17661,6 +17665,7 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+techblog.gr##.post-inner > div.nl-cta-card:has(> div.nl-cta-card__inner > form.nl-cta-card__form)
 pcmag.com##article > p > div[role="dialog"][id^="lightbox-"]
 dailymail.com##div[data-newsletter]
 ecoaliza.com.br#$##elementor-popup-modal-15633 { display: none !important; }
@@ -30292,6 +30297,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 /wp-content/plugins/bazz-callback-widget/*
 /wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/js/app.js
 /wp-content/plugins/elfsight-whatsapp-chat-cc/*
+||cdn.helvia.io^$third-party
 ||lemrock.com^$third-party
 ||tariffuxx.de^$third-party
 ||web-client.moveo.ai^$third-party
