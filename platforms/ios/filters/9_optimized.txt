@@ -1,9 +1,9 @@
-! Checksum: S/REQFeWc10MUayV16M84g
-! Diff-Path: ../patches/9_optimized/9_optimized-s-1776685080-3600.patch
+! Checksum: rUrflXTPGEuQuz7vkUQsmg
+! Diff-Path: ../patches/9_optimized/9_optimized-s-1776785882-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.34.7
-! TimeUpdated: 2026-04-20T11:34:33+00:00
+! Version: 2.0.34.8
+! TimeUpdated: 2026-04-21T15:34:46+00:00
 ! Expires: 5 days (update frequency)
 ||cdn-4k-webp.site^
 ||adzep.io^
@@ -155,6 +155,10 @@
 ||xad.dnoticias.pt^
 ||adclient-uol.lp.uol.com.br^
 ||adv.r7.com^
+baixedetudo.net.br#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'adblock')
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=baixedetudo.net.br
+baixedetudo.net.br#@#div[id^="div-gpt-"]
+baixedetudo.net.br#@#[id^="div-gpt-ad"]
 deemixweb.com,deemixer.com,arlx.site#@#.banner-ad
 deemixweb.com,deemixer.com,arlx.site#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'detectAdBlock')
 pornoenspanish.es#%#//scriptlet('prevent-setTimeout', 'scriptObj')
@@ -748,9 +752,6 @@ ouniversodatv.com#%#//scriptlet("set-constant", "easySettings.adblock", "0")
 @@||ouniversodatv.com^$generichide
 @@||illamadas.es/public/javascripts/wp-banners.js
 illamadas.es#%#//scriptlet("abort-current-inline-script", "onload", "AdBlock")
-link.baixedetudo.net.br#%#//scriptlet("abort-current-inline-script", "document.createElement", "adblock")
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=baixedetudo.net.br
 stardeos.com#%#(function(){var b=XMLHttpRequest.prototype.open,c=/pagead2\.googlesyndication\.com/i;XMLHttpRequest.prototype.open=function(d,a){if("GET"===d&&c.test(a))this.send=function(){return null},this.setRequestHeader=function(){return null},console.log("AG has blocked request: ",a);else return b.apply(this,arguments)}})();
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=stardeos.com
