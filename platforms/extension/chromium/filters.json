@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.61.84",
-			"timeUpdated": "2026-04-21T07:39:08+0000",
+			"version": "2.4.61.85",
+			"timeUpdated": "2026-04-21T08:44:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.27.33",
-			"timeUpdated": "2026-04-20T13:39:00+0000",
+			"version": "2.1.27.34",
+			"timeUpdated": "2026-04-21T08:44:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.65.91",
-			"timeUpdated": "2026-04-21T07:39:50+0000",
+			"version": "2.2.65.92",
+			"timeUpdated": "2026-04-21T08:44:49+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.19.21",
-			"timeUpdated": "2026-04-21T06:46:09+0000",
+			"version": "2.1.19.22",
+			"timeUpdated": "2026-04-21T08:44:51+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.85.48",
-			"timeUpdated": "2026-04-21T07:39:59+0000",
+			"version": "2.0.85.49",
+			"timeUpdated": "2026-04-21T08:44:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.74.16",
-			"timeUpdated": "2026-04-21T06:46:16+0000",
+			"version": "2.0.74.17",
+			"timeUpdated": "2026-04-21T08:44:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1731,8 +1731,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.57.91",
-			"timeUpdated": "2026-04-21T07:40:11+0000",
+			"version": "2.1.57.92",
+			"timeUpdated": "2026-04-21T08:45:05+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

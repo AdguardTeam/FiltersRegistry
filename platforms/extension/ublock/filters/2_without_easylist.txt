@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XZ+A5IZnOVsIvYncwhfchQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776757389-3600.patch
+! Checksum: /6qK60AIU+IuYrCV3Exl0A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776761244-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.61.84
-! TimeUpdated: 2026-04-21T07:39:08+00:00
+! Version: 2.4.61.85
+! TimeUpdated: 2026-04-21T08:44:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37209,6 +37209,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+dailymail.com##.billboard-container
 bleepingcomputer.com##.article-callout
 mangadex.com##a[href*="amazon.com"] > img
 gobankingrates.com##.advert-top01
@@ -40787,8 +40788,10 @@ disney--games.com##div[class$=-responsive-wrapper]
 getcomics.org##a[target="_blank"][class="center"] > img
 asuracomic.net##header ~ div[class]:has(> div#main-menu-ads)
 flamecomics.xyz##div[class^="Radio_radio_content"]
-newsnow.co.uk##+js(set-constant, nnad, noopFunc)
-newsnow.co.uk##+js(set-constant, nnad.AdSlotManager.createAdSlot, noopFunc)
+||newsnow.*/housead?$domain=newsnow.co.uk|newsnow.com
+||newsnow.*/pharos.js$domain=newsnow.co.uk|newsnow.com
+newsnow.com,newsnow.co.uk##.container__group:has(> .ad__container:only-child)
+newsnow.com,newsnow.co.uk##+js(set-constant, nnad.networks.house.displayHouseAd, noopFunc, , , true)
 wzstats.gg##app-desktop-takeover-ad
 ashemaletube.com##.navmenu > li:has(> a[rel="sponsored"])
 ||cdn77.ashemaletube.com/ast/*/bg-b.jpg

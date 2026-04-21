@@ -1,9 +1,9 @@
-! Checksum: +tIx46FnbrnVT+TjgwMspg
-! Diff-Path: ../patches/14/14-s-1776757398-3600.patch
+! Checksum: +qdH6/mo6XcvS2vdFbgndw
+! Diff-Path: ../patches/14/14-s-1776761251-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.65.91
-! TimeUpdated: 2026-04-21T07:39:50+00:00
+! Version: 2.2.65.92
+! TimeUpdated: 2026-04-21T08:44:49+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2586,7 +2586,8 @@ bayreuth-region.de,ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarb
 !
 ! NOTE: Regular rules
 !
-touchmywife.com###root > div[class^="sc-"]:has(> p[class] > a[href="https://touchmywife.com/legal/privacy"])
+touchmywife.com,mypervyfamily.com#%#//scriptlet('trusted-set-cookie', 'cookieConsent', 'eyJjIjp7IjEiOjEsIjExIjowLCIyMSI6MCwiMzEiOjB9LCJ2IjoiMTAifQ==')
+support.mypervyfamily.com#%#//scriptlet('trusted-set-cookie', 'acceptedCookies', '%7B%22essential%22%3Atrue%2C%22functional%22%3Afalse%2C%22')
 bus.hava.ist#%#//scriptlet('trusted-set-local-storage-item', 'havaist_cookie_prefs', '{"essential":true,"analytics":false,"marketing":false,"social":false}')
 bus.hava.ist#%#//scriptlet('set-local-storage-item', 'havaist_cookie_consent', 'true')
 bsa.org###block-cookiepolicy
@@ -16965,6 +16966,9 @@ pugski.com#?#.Panels > .Notice.DismissParent:has(> .noticeContent > .noticeCooki
 forum.gamer.com.tr#?#.p-body-inner > .notices > .notice:has(> .notice-content > a[href="/help/cookies"])
 bethesda.net#?#visor-alert > div > div > div:last-child:has(> a[href$="/cookie-policy"])
 maximum.com.tr#?#.sticky_cookie_warning:has(> a[href^="/TR/gizlilik-politikamiz/Sayfalar/gizlilik-politikamiz.aspx"])
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/229631
+! https://github.com/AdguardTeam/AdguardFilters/issues/229633
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228794
 !
@@ -36072,6 +36076,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+pcmag.com##article > p > div[role="dialog"][id^="lightbox-"]
+dailymail.com##div[data-newsletter]
 ecoaliza.com.br#$##elementor-popup-modal-15633 { display: none !important; }
 ecoaliza.com.br#$#.dialog-prevent-scroll { overflow: visible !important; }
 affpaying.com##.w-full > div.flex-col:has(> span.text-sm.block)
