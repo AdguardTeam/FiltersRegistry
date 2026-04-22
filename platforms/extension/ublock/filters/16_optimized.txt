@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: ssBZOP8eyefxBQWdxPg5zg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1776785877-3600.patch
+! Checksum: I5zPAMdSHmS7ur5wW3RNOw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1776827686-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.52
@@ -70,6 +70,7 @@ marieclaire.fr###overlay:style(display: none !important;)
 equinoxmagazine.fr,adala-news.fr##+js(abort-current-script, jQuery, adblocker)
 equinoxmagazine.fr,adala-news.fr##+js(set-constant, penci_options_set.ad_blocker_detector, false)
 @@||soins-infirmiers.com/*/adblocker.blogads.css
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=qub.ca
 qub.ca,tvaplus.ca##+js(set-constant, ima, {})
 ||cdn.assets*.nicematin.com/build/js/viewpay.*.js
 nicematin.com##+js(addEventListener-defuser, DOMContentLoaded, adblock)
@@ -382,7 +383,6 @@ numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
-south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
 challenges.fr##.domain-ui-ad-placeholder
@@ -713,7 +713,6 @@ tvanouvelles.ca##.header-banner-sticky
 immobilier.lefigaro.fr,sante.journaldesfemmes.fr###ctn_right
 immobilier.lefigaro.fr,sante.journaldesfemmes.fr##.ccmcss_oas_top
 expresso.1fr1.net##div[style*="height:90px;"][style*="728px"]
-gameblog.fr###adsense
 gameblog.fr##.r89-desktop-Incontent
 gameblog.fr##.r89-desktop-video-outstream
 gameblog.fr##div[class^="r89-desktop-hpa-"]
@@ -992,7 +991,6 @@ mobimart.it#@##ad_global_below_navbar
 ||googletagmanager.com/gtm.js$script,redirect=google-analytics_analytics.js,domain=gala.fr
 @@||content.uplynk.com/preplay/*/multiple.json*&ad.preroll$domain=fifa.com
 @@||google.com/recaptcha/api.js
-@@||mos.ru/blitz/assets/blitz-common/javascripts/hashcash.js
 $popup,domain=mcloud.to,badfilter
 @@$csp=worker-src 'none',domain=uptostream.com
 nova.rs#@#div[data-ad]
@@ -1630,7 +1628,6 @@ _personalized_ads
 _popads.
 _popdhtml/
 _profits_ad-
-_program_ad.
 _pub.gif
 _publicitaire/
 _publicite.
@@ -1706,7 +1703,6 @@ _werbebanner_
 /s2iurl.php?$popup
 /splash.*?idzone=$popup
 /syndication.*&idzone=$popup
-://go.*?zoneid=$popup
 ://landing.*/?ats=$popup,3p
 ://syndication.$popup,3p
 ://xml.*/click?$popup
@@ -1828,6 +1824,7 @@ _build=iclick-$popup
 ||deltax.com^$3p
 ||digidip.net^$3p
 ||digital-metric.com^$3p
+||dm.gg^$3p
 ||dolead.com^$3p
 ||dorcelcash.com^$3p
 ||e-mailit.com^$3p
@@ -1846,6 +1843,7 @@ _build=iclick-$popup
 ||gestion2web.com^$3p
 ||getpublica.com^$3p
 ||getresponse.com^$3p
+||girlsmessenger.com^$3p
 ||globalrotator.com^$3p
 ||goracash.com^$3p
 ||hebdotop.com^$3p
@@ -1917,7 +1915,6 @@ _build=iclick-$popup
 ||play-asia.com^$3p
 ||plurielmediacenter.com^$3p
 ||popupmaker.com^$3p
-||pornego.com^$3p
 ||pornme.pm^$3p
 ||pubinteractive.ca^$3p
 ||publy.net^$3p
@@ -2160,7 +2157,6 @@ _build=iclick-$popup
 ||energyborazon.com^
 ||engridfanlike.com^
 ||enviousthread.com^
-||eonads.com^
 ||epilreoffer.com^
 ||epiurallass.com^
 ||euboicarmpit.top^
@@ -2265,6 +2261,7 @@ _build=iclick-$popup
 ||jvnpnyqoxoqx.com^
 ||kadam.net^
 ||kernh41.com^
+||khanshabus.com^
 ||klclick.com^
 ||kombr.ru^
 ||kosseanmudpack.com^
@@ -2944,6 +2941,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||ccbill.com/cgi-bin/clicks.cgi?$popup,3p
 ||chaturbate.com/in/?*&tour=$popup,3p
 ||g2a.com/r/$popup
+||gearbest.com^*?utm_$popup,3p
 ||google.com/favicon.ico$popup,3p
 ||iqbroker.com/lp/$popup
 ||livejasmin.com^*&utm_$popup
@@ -3638,7 +3636,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.fixedAd
 ##.flash-ad
 ##.footer-pub
-##.footerlinkad
 ##.footerpubright
 ##.frame-ads-left
 ##.frame-ads-right
@@ -3663,6 +3660,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.header_pub
 ##.header_sponsors
 ##.hidden-horizontal-pub
+##.hmads_1x1
 ##.hmads_300x250
 ##.home-career-side-ad
 ##.horizontal-pub

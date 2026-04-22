@@ -1,5 +1,5 @@
-! Checksum: k1W0MnBa551LrWomIEPwbw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1776741276-3600.patch
+! Checksum: uwPqNjUF1fHzC7gTcu9n1w
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1776827695-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.52
@@ -70,6 +70,7 @@ marieclaire.fr#$##overlay { display: none !important; }
 equinoxmagazine.fr,adala-news.fr#%#//scriptlet('abort-current-inline-script', 'jQuery', 'adblocker')
 equinoxmagazine.fr,adala-news.fr#%#//scriptlet('set-constant', 'penci_options_set.ad_blocker_detector', 'false')
 @@||soins-infirmiers.com/*/adblocker.blogads.css
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=qub.ca
 qub.ca,tvaplus.ca#%#//scriptlet('set-constant', 'ima', 'emptyObj')
 qub.ca,tvaplus.ca#%#!function(){const e={apply:(e,t,n)=>(n&&n[1]&&"useAdBlockerDetector"===n[1]&&n[2]&&n[2].get&&(n[2].get=function(){return function(){return!1}}),Reflect.apply(e,t,n))};window.Object.defineProperty=new Proxy(window.Object.defineProperty,e)}();
 ||cdn.assets*.nicematin.com/build/js/viewpay.*.js
@@ -417,7 +418,6 @@ numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
-south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
 challenges.fr##.domain-ui-ad-placeholder
@@ -749,7 +749,6 @@ tvanouvelles.ca##.header-banner-sticky
 immobilier.lefigaro.fr,sante.journaldesfemmes.fr###ctn_right
 immobilier.lefigaro.fr,sante.journaldesfemmes.fr##.ccmcss_oas_top
 expresso.1fr1.net##div[style*="height:90px;"][style*="728px"]
-gameblog.fr###adsense
 gameblog.fr##.r89-desktop-Incontent
 gameblog.fr##.r89-desktop-video-outstream
 gameblog.fr##div[class^="r89-desktop-hpa-"]
@@ -1027,7 +1026,6 @@ mobimart.it#@##ad_global_below_navbar
 ||googletagmanager.com/gtm.js$script,redirect=google-analytics,domain=gala.fr
 @@||content.uplynk.com/preplay/*/multiple.json*&ad.preroll$domain=fifa.com
 @@||google.com/recaptcha/api.js
-@@||mos.ru/blitz/assets/blitz-common/javascripts/hashcash.js
 $popup,domain=mcloud.to,badfilter
 @@$csp=worker-src 'none',domain=uptostream.com
 nova.rs#@#div[data-ad]
@@ -1665,7 +1663,6 @@ _personalized_ads
 _popads.
 _popdhtml/
 _profits_ad-
-_program_ad.
 _pub.gif
 _publicitaire/
 _publicite.
@@ -1741,7 +1738,6 @@ _werbebanner_
 /s2iurl.php?$popup
 /splash.*?idzone=$popup
 /syndication.*&idzone=$popup
-://go.*?zoneid=$popup
 ://landing.*/?ats=$popup,third-party
 ://syndication.$popup,third-party
 ://xml.*/click?$popup
@@ -1863,6 +1859,7 @@ _build=iclick-$popup
 ||deltax.com^$third-party
 ||digidip.net^$third-party
 ||digital-metric.com^$third-party
+||dm.gg^$third-party
 ||dolead.com^$third-party
 ||dorcelcash.com^$third-party
 ||e-mailit.com^$third-party
@@ -1881,6 +1878,7 @@ _build=iclick-$popup
 ||gestion2web.com^$third-party
 ||getpublica.com^$third-party
 ||getresponse.com^$third-party
+||girlsmessenger.com^$third-party
 ||globalrotator.com^$third-party
 ||goracash.com^$third-party
 ||hebdotop.com^$third-party
@@ -1952,7 +1950,6 @@ _build=iclick-$popup
 ||play-asia.com^$third-party
 ||plurielmediacenter.com^$third-party
 ||popupmaker.com^$third-party
-||pornego.com^$third-party
 ||pornme.pm^$third-party
 ||pubinteractive.ca^$third-party
 ||publy.net^$third-party
@@ -2195,7 +2192,6 @@ _build=iclick-$popup
 ||energyborazon.com^
 ||engridfanlike.com^
 ||enviousthread.com^
-||eonads.com^
 ||epilreoffer.com^
 ||epiurallass.com^
 ||euboicarmpit.top^
@@ -2300,6 +2296,7 @@ _build=iclick-$popup
 ||jvnpnyqoxoqx.com^
 ||kadam.net^
 ||kernh41.com^
+||khanshabus.com^
 ||klclick.com^
 ||kombr.ru^
 ||kosseanmudpack.com^
@@ -2979,6 +2976,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||ccbill.com/cgi-bin/clicks.cgi?$popup,third-party
 ||chaturbate.com/in/?*&tour=$popup,third-party
 ||g2a.com/r/$popup
+||gearbest.com^*?utm_$popup,third-party
 ||google.com/favicon.ico$popup,third-party
 ||iqbroker.com/lp/$popup
 ||livejasmin.com^*&utm_$popup
@@ -3673,7 +3671,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.fixedAd
 ##.flash-ad
 ##.footer-pub
-##.footerlinkad
 ##.footerpubright
 ##.frame-ads-left
 ##.frame-ads-right
@@ -3698,6 +3695,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.header_pub
 ##.header_sponsors
 ##.hidden-horizontal-pub
+##.hmads_1x1
 ##.hmads_300x250
 ##.home-career-side-ad
 ##.horizontal-pub
