@@ -1,9 +1,9 @@
-! Checksum: Ceu+rv1HHjza9lHhJ3oorg
-! Diff-Path: ../patches/19/19-s-1776827680-3600.patch
+! Checksum: TkW5geKAJlHLHpS0Dpz1Bg
+! Diff-Path: ../patches/19/19-s-1776834355-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.74.23
-! TimeUpdated: 2026-04-22T03:12:08+00:00
+! Version: 2.0.74.24
+! TimeUpdated: 2026-04-22T05:03:14+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3328,6 +3328,9 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+estuary.dev##iframe[title="Close message"]
+estuary.dev##iframe[title="Message from company"]
+money.ca,moneywise.com#%#//scriptlet('trusted-set-local-storage-item', 'comment_notice_dismissed_at', '$now$')
 otterbox.com#$##popUpModal { display: none !important; }
 otterbox.com#$#.modal-backdrop { display: none !important; }
 otterbox.com#$#body.modal-open { overflow: auto !important; padding-right: 0 !important; }
@@ -12465,6 +12468,9 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+denimfy.de#$#div[id*="custom_newsletter_banner"] { display: none !important; }
+money.ca,moneywise.com###main div[data-alpine-component="InlineNewsletter"]
+money.ca,moneywise.com##a[aria-label="Add as a preferred source on Google"]
 power-technology.com##.gdm-newsletter-banner__container
 musicradar.com##button[aria-label="Newsletter"]
 syracuse.com##.module__promo--news
@@ -13407,8 +13413,8 @@ getstronganimals.com#%#//scriptlet('set-session-storage-item', 'freeshippingShow
 publicapis.io##.bottom-newsletter-form
 potensic.com#%#//scriptlet('set-cookie', 'cookie_time', '1')
 ||email.2ndswing.com/resources/sharing/popoverv2.js
-myhixel.com,orthofeet.com,dreo.com,relentlessgrooming.com,store.twloha.com,carved.com#$#body.klaviyo-prevent-body-scrolling { overflow: auto !important; }
-myhixel.com,orthofeet.com,dreo.com,relentlessgrooming.com,store.twloha.com,carved.com#$#div[aria-label="POPUP Form"] { display: none !important; }
+denimfy.de,myhixel.com,orthofeet.com,dreo.com,relentlessgrooming.com,store.twloha.com,carved.com#$#body.klaviyo-prevent-body-scrolling { overflow: auto !important; }
+denimfy.de,myhixel.com,orthofeet.com,dreo.com,relentlessgrooming.com,store.twloha.com,carved.com#$#div[aria-label="POPUP Form"] { display: none !important; }
 thepage.ua##div[class]:has(> section.subscription-section)
 express.co.uk##.whatsapp-group
 axios.com#%#//scriptlet('set-cookie', '_pc_bypass_subwall', 'true')

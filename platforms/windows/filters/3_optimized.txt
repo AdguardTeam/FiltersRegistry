@@ -1,9 +1,9 @@
-! Checksum: zU66wYGodPEQOPm9R2NCEA
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1776810186-3600.patch
+! Checksum: YaajQM1VeM7GOgTrvVlMlg
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1776834384-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.3.28
-! TimeUpdated: 2026-04-21T22:19:36+00:00
+! Version: 2.1.3.29
+! TimeUpdated: 2026-04-22T05:02:43+00:00
 ! Expires: 12 hours (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -260,6 +260,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||globalsiteanalytics.com^
 ||content-settings.com^
 ||config-factory.com^
 ||aan8bq.ru^
@@ -78697,6 +78698,9 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 !+ PLATFORM(windows, mac, android, cli)
 ||incoming.telemetry.mozilla.org^
 |piwik.
+||goto.simplywall.st^
+||swssp.simplywall.st^
+||swsdd.simplywall.st^
 ||android-beacons.xumo.com^
 ||roku-beacons.xumo.com^
 ||samsung-beacons.xumo.com^
@@ -181412,6 +181416,11 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+||rudderstack.com/v1/track|
+||rudderstack.com/v1/identify|
+||rudderstack.com/v1/batch?writeKey=
+||simplywall.st/backend/flags/proxy/client/metrics
+||doofinder.com/api/v*/stats/
 ||chatgpt.com/backend-api/beacons/
 ||chatgpt.com/backend-api/sentinel/ping
 ||lg-chatbot.com/chatbot/v*/api/client_logger
@@ -181424,7 +181433,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 ||dce-frontoffice.imggaming.com/api/v2/event/
 ||hls-beacons-us.xumo.com/hlsstream/v*/beacon?
 ||ducttapeai.com/api/tracking/event
-||moneywise.com/scottie/api/cdp/v1/event|
+/scottie/api/cdp/v1/event|$domain=moneywise.com|money.ca
+/js/adobe-analytics.js$domain=moneywise.com|money.ca
 ||fileditchfiles.me/api/plausible
 /https:\/\/www\.fakt\.pl\/[a-zA-Z0-9_]{40,200}/$xmlhttprequest,~third-party,match-case,domain=fakt.pl
 play.xumo.com#%#//scriptlet('set-local-storage-item', 'com.kochava.tracker.EventQueue', '$remove$')
@@ -187854,6 +187864,8 @@ $cookie=_pubcid
 $cookie=pbjs-unifiedid
 $cookie=bf_lead
 $cookie=bf_visit
+||money.ca^$cookie=suid
+||moneywise.com^$cookie=suid
 ||gobankingrates.com^$cookie=visitor_id
 ||invb.ru^$cookie=/^pa_/
 ||ridibooks.com$cookie=ruid
