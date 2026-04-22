@@ -1,8 +1,8 @@
-! Checksum: BTEdjaOD0fV+9l832rZFGg
+! Checksum: whjPa2ldrPG3NlL1Ibl5kw
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.62.7
-! TimeUpdated: 2026-04-22T08:41:52+00:00
+! Version: 2.4.62.8
+! TimeUpdated: 2026-04-22T10:35:07+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26089,6 +26089,13 @@ analizy.pl##.randomBilboardAd
 analizy.pl##.articleStandardSidebarLongAd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171503
 nauka.rocks###sticky-anchor
+! https://github.com/AdguardTeam/AdguardFilters/issues/229501
+rp.pl##.overlay--advert
+rp.pl##.inner--ad--breaker
+rp.pl###intextVideoGremiPlayer[data-id="advert-video"]
+rp.pl#$#html.is-locked { overflow: auto !important; }
+rp.pl#%#//scriptlet('set-cookie', 'commercialBreakDailyCounter', '99', '/', 'rp.pl')
+rp.pl#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'loadCommercialBreak')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199050
 rp.pl##.commercial--component--advert
 rp.pl##.latestArticleWrapper .commercialComponent
@@ -37828,6 +37835,9 @@ www.youtube.com#%#(()=>{const e={apply:(e,t,o)=>{const n=Reflect.apply(e,t,o);if
 www.youtube.com#%#//scriptlet('set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.web_streaming_watch', 'false')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3902013966
 www.youtube.com#%#//scriptlet('prevent-setTimeout', '(),a,b)', '5000')
+! Fix fake buffering on mobile website
+m.youtube.com#%#//scriptlet('json-prune', 'playerResponse.messages.[].youThereRenderer')
+m.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(t,e,n);try{const a=n[0];if(!a?.context?.client)return Reflect.apply(t,e,n);const o=String(Date.now());a.playbackContext&&void 0===a.playbackContext.adPlaybackContext&&(a.playbackContext.contentPlaybackContext.lactMilliseconds=o),a.playerRequest&&void 0===a.playerRequest.playbackContext?.adPlaybackContext&&(a.playerRequest.playbackContext.contentPlaybackContext.lactMilliseconds=o),n[0]=a}catch(t){}return Reflect.apply(t,e,n)}};window.JSON.stringify=new Proxy(window.JSON.stringify,t)})();
 ! This one may be unnecessary:
 ||youtube.com/get_video_info?*=adunit&$important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/81610
@@ -85051,6 +85061,7 @@ browsershots.org#@#.advert_area
 ||agatarainpro.com^
 ||agathisdented.com^
 ||agattlaidvkmm.website^
+||agavestreflefalse.qpon^
 ||agbaploddedbewired.cyou^
 ||agbasodrfnifw.space^
 ||agbfgatnhzdeb.online^
@@ -88211,6 +88222,7 @@ browsershots.org#@#.advert_area
 ||bouncy-ask.pro^
 ||bouncycocin.cyou^
 ||boundarygoose.com^
+||boundenlapon.cyou^
 ||bountifulcomfortable.com^
 ||bountyformseedlings.com^
 ||bountyketchup.com^
@@ -88677,6 +88689,7 @@ browsershots.org#@#.advert_area
 ||bulimiakoreish.qpon^
 ||bulimiaour.cyou^
 ||buljlwaclnocq.site^
+||buljrsbfh.com^
 ||bulkishshirpit.qpon^
 ||bulky-battle.com^
 ||bulletinsituatedelectronics.com^
@@ -89794,6 +89807,7 @@ browsershots.org#@#.advert_area
 ||chugrypsodu.com^
 ||chujstkfubpix.space^
 ||chumpardale.com^
+||chunhalides.qpon^
 ||chunkdestructiveenforce.com^
 ||chunkwastecuppen.cyou^
 ||chunkyaward.cfd^
@@ -90897,6 +90911,7 @@ browsershots.org#@#.advert_area
 ||cpwbapcsltmjh.vip^
 ||cpx24.com^
 ||cpxinteractive.com^
+||cpz76zh699u8eoj4m3.cfd^
 ||cqameayljgier.space^
 ||cqaqwekgzvkek.tech^
 ||cqcaoltqtarmz.space^
@@ -91602,6 +91617,7 @@ browsershots.org#@#.advert_area
 ||daflaskeet.shop^
 ||daftarfilles.shop^
 ||dagnar.com^
+||dagobacotland.cyou^
 ||dagrtenihca.in^
 ||dahmsrevile.cfd^
 ||dahoutask.cyou^
@@ -93976,6 +93992,7 @@ browsershots.org#@#.advert_area
 ||ekgliuilmwdi.com^
 ||ekisticspinoid.cyou^
 ||ekjyguvzxzlrb.online^
+||ekkasimulerlacatan.qpon^
 ||ekklgpfmaviji.online^
 ||ekkqxyree.com^
 ||ekliewcnqmfsn.website^
@@ -99251,6 +99268,7 @@ browsershots.org#@#.advert_area
 ||hodfctkolgrjw.space^
 ||hodnjqyavomuj.site^
 ||hodurekaberu.qpon^
+||hodxdowigps.com^
 ||hoeencpohchbi.online^
 ||hoeinstitutionbye.com^
 ||hofxbrhznoggg.space^
@@ -100632,6 +100650,7 @@ browsershots.org#@#.advert_area
 ||innocentebony.com^
 ||innovations4444.net^
 ||innsarabit.cfd^
+||innumerablebenedictiondisgrace.com^
 ||innumerabledeclinedrepentance.com^
 ||innumerablemakeupreligious.com^
 ||innyweakela.co^
@@ -103940,6 +103959,7 @@ browsershots.org#@#.advert_area
 ||linerdyeswarn.cyou^
 ||lingercatchpyramid.com^
 ||lingotlimpin.shop^
+||liningsvexil.cyou^
 ||linkaffectionately.com^
 ||linkbuddies.com^
 ||linkedkneebrisk.com^
@@ -106511,6 +106531,7 @@ browsershots.org#@#.advert_area
 ||mwowoshszibzo.space^
 ||mwqxkshueflnl.site^
 ||mwrgi.com^
+||mwrqghbivxqmr.online^
 ||mwseohimnnfcx.store^
 ||mwsvsmhfwpffc.club^
 ||mwtwzzeyvnwdx.site^
@@ -106610,6 +106631,7 @@ browsershots.org#@#.advert_area
 ||myteamdev.com^
 ||mythad.com^
 ||mythings.com^
+||mythoiunfur.cyou^
 ||mythpointsatheism.com^
 ||mytsyoisjverr.space^
 ||myurphoftafzx.space^
@@ -107066,6 +107088,7 @@ browsershots.org#@#.advert_area
 ||nezygmobha.com^
 ||nfcliqjyhwatk.website^
 ||nfdxprxptlubs.buzz^
+||nfdyrhlrzcszj.online^
 ||nfexcdiuvfyuu.online^
 ||nfhsctjaibyji.space^
 ||nfitekfooeigt.website^
@@ -107750,6 +107773,7 @@ browsershots.org#@#.advert_area
 ||nudeghogukwhx.store^
 ||nudesgirlsx.com^
 ||nudeyepely.cyou^
+||nudismsbilge.qpon^
 ||nudismsmomishmalmier.cyou^
 ||nueyowipxyuok.store^
 ||nufafsrupf.in^
@@ -120105,6 +120129,7 @@ browsershots.org#@#.advert_area
 ||spoqcyx.digital^
 ||sporedbrazed.cfd^
 ||sporeentropypomey.cyou^
+||sportershatan.shop^
 ||sportingamazingconsequence.com^
 ||sportpardon.com^
 ||sportradarserving.com^
@@ -123148,6 +123173,7 @@ browsershots.org#@#.advert_area
 ||toftmenmurre.qpon^
 ||tofusardeid.cyou^
 ||togachasse.cfd^
+||togemanalgates.shop^
 ||togemanflocci.shop^
 ||togenron.com^
 ||togerspas.com^
@@ -124924,6 +124950,7 @@ browsershots.org#@#.advert_area
 ||ujvschqrq.com^
 ||ujw1y54r.fun^
 ||ujzracmcrktyb.space^
+||uk1t7q1iyx62hybo8kw9x.rest^
 ||uk8n7yfhqlbwy66g6k.cfd^
 ||ukankingwithea.com^
 ||ukasesbhokra.cfd^
@@ -126144,6 +126171,7 @@ browsershots.org#@#.advert_area
 ||uvulacoil.qpon^
 ||uvularstairs.shop^
 ||uvvhimqchjcvq.site^
+||uvyccqohhzlcr.online^
 ||uwahagoyvuccd.website^
 ||uwamtkhzhlpyl.online^
 ||uwarxltcjhtid.site^
@@ -126886,6 +126914,7 @@ browsershots.org#@#.advert_area
 ||vfnwknntttiuo.site^
 ||vfnxqznmwbcee.store^
 ||vfookihg.com^
+||vfoxctwaggane.website^
 ||vfpasudskjdiw.space^
 ||vfpdbwwrvkecy.store^
 ||vfqejeazinwis.site^
@@ -132392,6 +132421,7 @@ browsershots.org#@#.advert_area
 ||yxloucsirgwyb.online^
 ||yxlrztklsogxs.site^
 ||yxmtgttitplap.store^
+||yxmywgqsccyul.online^
 ||yxnitldzfbuun.space^
 ||yxnkrmzdmjwwt.site^
 ||yxoygmeyhpxnf.site^
@@ -132612,6 +132642,7 @@ browsershots.org#@#.advert_area
 ||zcjxztzucmjxn.online^
 ||zckfjcotzjdty.space^
 ||zcktecweawyrn.com^
+||zcmmfeksehgvx.online^
 ||zcmywlwnaequm.online^
 ||zcnsvxuykpwaq.website^
 ||zcode17.com^
@@ -133188,6 +133219,7 @@ browsershots.org#@#.advert_area
 ||zopowwzvfnvba.space^
 ||zopumirerfahv.website^
 ||zoqalwuvnsxut.site^
+||zoqsadbiwwszj.website^
 ||zorango.com^
 ||zordoabsolsooph.net^
 ||zorseeckoaroa.net^

@@ -1,0 +1,64 @@
+d1 2
+a2 2
+! Checksum: Lux1sbElG4vECBzTAgYKHg
+! Diff-Path: ../patches/2/2-s-1776854330-3600.patch
+d5 2
+a6 2
+! Version: 2.4.62.8
+! TimeUpdated: 2026-04-22T10:35:07+00:00
+a28586 7
+! https://github.com/AdguardTeam/AdguardFilters/issues/229501
+rp.pl##.overlay--advert
+rp.pl##.inner--ad--breaker
+rp.pl###intextVideoGremiPlayer[data-id="advert-video"]
+rp.pl#$#html.is-locked { overflow: auto !important; }
+rp.pl#%#//scriptlet('set-cookie', 'commercialBreakDailyCounter', '99', '/', 'rp.pl')
+rp.pl#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'loadCommercialBreak')
+a40474 3
+! Fix fake buffering on mobile website
+m.youtube.com#%#//scriptlet('json-prune', 'playerResponse.messages.[].youThereRenderer')
+m.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(t,e,n);try{const a=n[0];if(!a?.context?.client)return Reflect.apply(t,e,n);const o=String(Date.now());a.playbackContext&&void 0===a.playbackContext.adPlaybackContext&&(a.playbackContext.contentPlaybackContext.lactMilliseconds=o),a.playerRequest&&void 0===a.playerRequest.playbackContext?.adPlaybackContext&&(a.playerRequest.playbackContext.contentPlaybackContext.lactMilliseconds=o),n[0]=a}catch(t){}return Reflect.apply(t,e,n)}};window.JSON.stringify=new Proxy(window.JSON.stringify,t)})();
+a90860 1
+||agavestreflefalse.qpon^
+a94020 1
+||boundenlapon.cyou^
+a94486 1
+||buljrsbfh.com^
+a95603 1
+||chunhalides.qpon^
+a96706 1
+||cpz76zh699u8eoj4m3.cfd^
+a97411 1
+||dagobacotland.cyou^
+a99785 1
+||ekkasimulerlacatan.qpon^
+a105060 1
+||hodxdowigps.com^
+a106441 1
+||innumerablebenedictiondisgrace.com^
+a109749 1
+||liningsvexil.cyou^
+a112320 1
+||mwrqghbivxqmr.online^
+a112419 1
+||mythoiunfur.cyou^
+a112875 1
+||nfdyrhlrzcszj.online^
+a113559 1
+||nudismsbilge.qpon^
+a125914 1
+||sportershatan.shop^
+a128957 1
+||togemanalgates.shop^
+a130733 1
+||uk1t7q1iyx62hybo8kw9x.rest^
+a131953 1
+||uvyccqohhzlcr.online^
+a132695 1
+||vfoxctwaggane.website^
+a138201 1
+||yxmywgqsccyul.online^
+a138421 1
+||zcmmfeksehgvx.online^
+a138997 1
+||zoqsadbiwwszj.website^

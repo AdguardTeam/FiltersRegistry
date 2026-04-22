@@ -1,0 +1,19 @@
+d2 2
+a3 2
+! Checksum: WZSiH4yMfTdk9zD6oOBARA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776854328-3600.patch
+d6 2
+a7 2
+! Version: 2.4.62.8
+! TimeUpdated: 2026-04-22T10:35:07+00:00
+a26047 7
+! https://github.com/AdguardTeam/AdguardFilters/issues/229501
+rp.pl##.overlay--advert
+rp.pl##.inner--ad--breaker
+rp.pl###intextVideoGremiPlayer[data-id="advert-video"]
+rp.pl##html.is-locked:style(overflow: auto !important;)
+rp.pl##+js(set-cookie, commercialBreakDailyCounter, 99, /, rp.pl)
+rp.pl##+js(addEventListener-defuser, DOMContentLoaded, loadCommercialBreak)
+a37114 2
+! Fix fake buffering on mobile website
+m.youtube.com##+js(json-prune, playerResponse.messages.[].youThereRenderer)
