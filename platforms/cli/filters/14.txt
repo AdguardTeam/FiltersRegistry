@@ -1,9 +1,9 @@
-! Checksum: 1wTwLje/yUtKNIH9znzHHA
-! Diff-Path: ../patches/14/14-s-1776843735-3600.patch
+! Checksum: Eq29Q8783E7FAtG0efBsDA
+! Diff-Path: ../patches/14/14-s-1776847502-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.66.6
-! TimeUpdated: 2026-04-22T07:39:27+00:00
+! Version: 2.2.66.7
+! TimeUpdated: 2026-04-22T08:42:26+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18664,8 +18664,12 @@ thestrad.com#%#//scriptlet('trusted-click-element', '.footer-policy button[title
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170429
 ! If there will be many complains about empty home page, then rule below can be used:
 ! youtube.com#%#//scriptlet('trusted-click-element', 'ytd-consent-bump-v2-lightbox .eom-buttons > .ytd-consent-bump-v2-lightbox > .ytd-consent-bump-v2-lightbox:nth-of-type(2) button.yt-spec-button-shape-next')
+youtube.com#%#//scriptlet('trusted-click-element', 'ytd-consent-bump-v2-lightbox .eom-buttons > .ytd-consent-bump-v2-lightbox > .ytd-consent-bump-v2-lightbox button.ytSpecButtonShapeNextHost')
+! TODO: Check later if rule below is needed, perhaps it's obsolete
 youtube.com#%#//scriptlet('trusted-click-element', 'ytd-consent-bump-v2-lightbox .eom-buttons > .ytd-consent-bump-v2-lightbox > .ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next')
 ! m.youtube.com
+m.youtube.com#%#//scriptlet('trusted-click-element', 'ytm-consent-bump-v2-renderer .dialog-scrollable-content > .one-col-dialog-buttons > ytm-button-renderer.eom-reject button.ytSpecButtonShapeNextHost', '', '2000')
+! TODO: Check later if rule below is needed, perhaps it's obsolete
 m.youtube.com#%#//scriptlet('trusted-click-element', 'ytm-consent-bump-v2-renderer .dialog-scrollable-content > .one-col-dialog-buttons > ytm-button-renderer.eom-reject button.yt-spec-button-shape-next', '', '2000')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169466
 [$path=/m]consent.youtube.com#%#//scriptlet('trusted-click-element', 'form[action="https://consent.youtube.com/save"][jsaction] button[jsname="b3VHJd"]')
