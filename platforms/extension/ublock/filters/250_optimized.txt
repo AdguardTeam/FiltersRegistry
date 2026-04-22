@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: KoDrDwV2w2ClNj5DHkbmQg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1776748891-14400.patch
+! Checksum: rLXm83XCMm+thfsGe68g4Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1776835244-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.53
@@ -36,8 +36,8 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.js-download_button_offer
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.primary_download
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-text
-drivereasy.com##.pakb-content ol:contains(Download and install Driver Easy)
 drivereasy.com##.pakb-content p:contains(Driver Easy)
+drivereasy.com##.pakb-content div.info.note:contains(drivereasy.com)
 drivereasy.com##.pakb-content p:contains(the Pro version)
 drivereasy.com##.pakb-content p:contains(click Update All)
 howtoremove.guide##[id*="newage"]
@@ -466,6 +466,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||putproudlyhowl.com^$all
 ||scarcehepatitis.com^$all
 ||seenwage.com^$all
+||straitpaltrybelief.com^$all
 ||supplybanalsuggest.com^$all
 ||vidox.net^$all
 ||wretchedclearance.com^$all
@@ -935,6 +936,8 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||[2604:9e00:1:129::2:b10]^$all
 ||[2606:4700:3033::6815:5644]^$all
 ||[2a01:4f8:2201:388a::2]^$all
+||aenhance.link^$all
+||vfgth.com^$all
 ||185.7.99.190^$all
 ||admozartxml.com^$all
 ||adxfactory.com^$all
@@ -948,6 +951,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||mediacpc.com^$all
 ||mobuppsrtb.com^$all
 ||pornamigo.com^$all
+||sportsvot.com^$all
 ||webmedxml.com^$all
 ||103.67.200.64^$all
 ||[2a00:8860:10d:1::2:b01]^$all
@@ -2137,6 +2141,7 @@ $removeparam=gbraid
 $removeparam=wbraid
 $removeparam=cvosrc
 $document,removeparam=/^cvo_.*$/
+$removeparam=ads_params
 $document,removeparam=/^affiliateID=.*$/i
 $removeparam=affiliate_id
 $removeparam=cjdata
@@ -2215,7 +2220,9 @@ $removeparam=spJobID
 $removeparam=spReportId
 $removeparam=track_click
 $removeparam=actId
-$document,removeparam=/^wickedid=.*$/i
+$removeparam=actCampaignType
+$removeparam=actSource
+$removeparam=oly_anon_id
 $document,removeparam=/^wickedsource=.*$/i
 $removeparam=s_cid
 $removeparam=_branch_match_id
@@ -2401,7 +2408,6 @@ $removeparam=ttd_tdid
 $removeparam=bsw_param
 $removeparam=google_push
 $removeparam=partneruserid
-$removeparam=sExtCookieId
 $removeparam=vxii_pdid
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
@@ -2417,7 +2423,6 @@ $removeparam=criteoId
 $removeparam=dspCookie
 $document,removeparam=_rand,domain=~goofish.com
 $removeparam=dsp_uid
-$removeparam=mt_exuid
 $removeparam=pn_id
 $removeparam=adsafe_url
 $removeparam=mt_uuid
@@ -2530,6 +2535,7 @@ $removeparam=%2AVersion%2A,domain=amazon.*
 $removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
+||amazon.*/stores/$removeparam=tag,document
 ||amazon.*/product/$removeparam=tag,document
 ||amazon.$removeparam=qu
 ||amazon.*/dp/$removeparam=rps,document
@@ -3107,7 +3113,10 @@ $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=wl12
 ||walmart.$removeparam=/^ath.*$/
 $removeparam=refdomain,domain=bestbuy.com
+$removeparam=recs_placement,domain=nordstrom.com
+$removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
+$removeparam=recs_seed,domain=nordstrom.com
 $removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
 ||banggood.com^$removeparam=custlinkid
@@ -3256,6 +3265,7 @@ $removeparam=mar,domain=nextdoor.com
 ||verizon.com^$removeparam=campaignName
 ||verizon.com^$removeparam=campaignSource
 $removeparam=source_ve_path,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
+^ref=hackernoon.com^$removeparam=ref
 ||notion.so^$removeparam=gspk
 ||notion.so^$removeparam=gsxid
 ||notion.so^$removeparam=pscd
@@ -3399,7 +3409,6 @@ $document,removeparam=af_xp
 ||www.roblox.com^$document,removeparam=discoverPageSessionInfo
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
-||www.roblox.com^$removeparam=treatmentType
 $document,removeparam=entrypoint,domain=bing.com
 $document,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
 ||sky.it^$document,removeparam=social
@@ -4099,6 +4108,7 @@ foodora.*##.user-wrapper + .order-components:style(top: 64px !important)
 #@#.ad-below
 ##.ad-below:not(html,body,:empty)
 #@#.ad-display
+##.ad-display:not(html,body,:empty)
 #@#.ad-displayed
 #@#.ad-item
 ##.ad-item:not(html,body,:empty)
