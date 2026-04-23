@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: dLqcN0dOnNC76eGiLgZdUw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776926942-3600.patch
+! Checksum: C4Lb/enDPVJlJ8WzqgBRSw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1776930213-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.62.25
-! TimeUpdated: 2026-04-23T06:45:37+00:00
+! Version: 2.4.62.26
+! TimeUpdated: 2026-04-23T07:39:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18956,7 +18956,7 @@ gjirafa.com##div[id^="an-holder-"]
 elahmad.org#@#.ad-unit:not(.textads)
 elahmad.org##body > div[id^="ads"]
 elahmad.org##body > div[style^="z-index: 99999; position: fixed;"]
-elahmad.org##+js(prevent-fetch, pahtag.tech)
+elahmad.org##+js(prevent-fetch, /pahtag\.tech|adsbygoogle/)
 elahmad.org##+js(no-setTimeout-if, /\.display==="none"|BlockAdBlock/)
 ! https://github.com/easylist/listear/issues/43
 stardima.com##+js(addEventListener-defuser, click, /redirect.php?)
@@ -59078,6 +59078,9 @@ mail.yahoo.com##[data-test-id^="pencil-ad"]
 ! ATTENTION: The rules in this section must be accompanied by a link of an issue, where the problem will be fixed
 ! or with clear description what to do next
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229403
+@@||cdn.ampproject.org^$domain=ai.ettoday.net
+@@||bidder.criteo.com/amp/rtc$domain=ai.ettoday.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229352
 @@||patreonusercontent.com^$image,domain=patreon.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228617
