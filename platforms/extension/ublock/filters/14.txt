@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1b76eTn7Jsbp8UaUZExCAg
-! Diff-Path: ../patches/14/14-s-1776940781-3600.patch
+! Checksum: IgRhHpOwhMYdZgbNgjYl7Q
+! Diff-Path: ../patches/14/14-s-1776943991-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.66.22
-! TimeUpdated: 2026-04-23T10:36:46+00:00
+! Version: 2.2.66.23
+! TimeUpdated: 2026-04-23T11:29:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2528,6 +2528,7 @@ bayreuth-region.de,ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarb
 !
 ! NOTE: Regular rules
 !
+forms.wb.*##div[role="region"] > div[role="alertdialog"]:has(span > a[href*="/privacypolicy/"])
 autofinancebank.ru##.ui-cookies-warning
 solid.ru##+js(set-cookie-reload, messages_cookies, true)
 rshb.ru##.fixed.lg\:bottom-0
@@ -3894,7 +3895,6 @@ cambuy.de##.cookie-popup::after
 pkhex-web.github.io##.cc-isolation-container
 kolesa.ru##body > div[style*="z-index"]:has(> div[style] > a[href="https://www.kolesa.ru/policy"])
 lotto.pl##+js(set-local-storage-item, privacyAccepted, 2)
-optqc.com,brainhub.eu##.fs-consent_banner
 mkelektronik-esklep.pl##.cookie-message-popup-js
 omadanetworks.com,tp-link.com###tp-cookie-banner
 june12.io##div[class^="GDPRPanel_"]
@@ -16497,6 +16497,8 @@ befestigungsfuchs.de,jawoll.de,cafe-royal.com,campingplus.de,bikebox-shop.de,mli
 !
 !
 !+ NOT_OPTIMIZED
+optqc.com,brainhub.eu##.fs-consent_banner
+!+ NOT_OPTIMIZED
 tokyo-city.ru##body > div[id^="cookies"]
 !+ NOT_OPTIMIZED
 bankinform.ru###bisCookieCompliance
@@ -24283,7 +24285,6 @@ iqiyi.com##div[adid]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38910
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22801
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14731
-sports.iqiyi.com##+js(set-constant, Object.prototype.adPlayerId, '')
 www.iqiyi.com##+js(set-constant, Object.prototype.parseXML, noopFunc)
 www.iqiyi.com##+js(set-constant, Object.prototype.blackscreenDuration, 1)
 ||data.video.iqiyi.com/videos/other/*$xhr,~3p,badfilter
