@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.89.41",
-			"timeUpdated": "2026-04-23T17:00:40+0000",
+			"version": "2.1.89.42",
+			"timeUpdated": "2026-04-23T20:46:32+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.89.40",
-			"timeUpdated": "2026-04-23T17:00:42+0000",
+			"version": "2.1.89.41",
+			"timeUpdated": "2026-04-23T20:46:33+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://www.zoso.ro/pages/rolist.txt",
 			"trustLevel": "low",
-			"version": "2.0.1.56",
-			"timeUpdated": "2026-04-07T20:45:56+0000",
+			"version": "2.0.1.57",
+			"timeUpdated": "2026-04-23T20:46:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1217,8 +1217,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@list-kr/filterslists@latest/dist/filterslist-AdGuard-classic.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.99",
-			"timeUpdated": "2026-04-22T20:47:06+0000",
+			"version": "2.0.24.0",
+			"timeUpdated": "2026-04-23T20:47:05+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.82.72",
-			"timeUpdated": "2026-04-23T17:01:44+0000",
+			"version": "2.0.82.73",
+			"timeUpdated": "2026-04-23T20:47:26+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
