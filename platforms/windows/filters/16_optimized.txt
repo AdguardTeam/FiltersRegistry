@@ -1,5 +1,5 @@
-! Checksum: UmV35CgZRAaaLvkAxcmcqQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1776834382-3600.patch
+! Checksum: KdRAAUc6bp0uojU10MYENw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1776914091-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.53
@@ -1562,6 +1562,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?style=160x600-
 ?style=300x250-
 ?style=468x60-
+?style=720x90-
 ?tag_id=*&sw_url=
 ?target=_blank&mouseover=
 ?tour=*&campaign=$third-party
@@ -1792,6 +1793,7 @@ _build=iclick-$popup
 ||adsgarden.com^$third-party
 ||adsixmedia.fr^$third-party
 ||adskom.com^$third-party
+||adslead.com^$third-party
 ||adsmena.com^$third-party
 ||adsmmgp.com^$third-party
 ||adsplain.com^$third-party
@@ -2886,6 +2888,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||bitly.com^$script,third-party
 ||cpmlink.net^$script,third-party
 ||link.tl^$script,third-party
+||pubiza.com^$script,third-party
 ||safelinku.com^$script,third-party
 ||shorte.st^$script,third-party
 ||shortem.com^$script,subdocument,third-party
@@ -3030,6 +3033,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||bedetheque.com/javascript/campagne?
 ||bleachmx.fr/wp-content/uploads/bleach-
 ||boursier.com/illustrations/campaigns/
+||ca-anjou-maine.fr/content/binary/*_tetiere_
 ||cambro.tv/player/html.php
 ||carrefour.fr/api/advertising/
 ||carrefour.fr/js-ssr/footer-partner-banner.
@@ -3060,6 +3064,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||elheddaf.com/data/pub/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
+||expomaroc.ma/pub/
 ||ferrarista.fr/forum-ferrari/uploads/referral-$image
 ||fiches-auto.fr/_carre_300_
 ||file-upload.net/include/$subdocument
@@ -3175,6 +3180,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||ruedesjoueurs.com/images/banners/
 ||ruedesjoueurs.com/images/campagnes/habillage/
 ||s-sfr.fr^*/pubwm.
+||sabqpress.net/wp-content/uploads/2020/03/0.jpg
 ||salaire-brut-en-net.fr/wp-content/*/img/banners/
 ||securite.01net.com^
 ||seduireunhomme.fr/wp-content/uploads/*/Banner_
@@ -3450,6 +3456,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub_banniere_basse
 ###pub_banniere_haute
 ###pub_bas
+###pub_bas_droit
 ###pub_bottom
 ###pub_brique
 ###pub_carre
@@ -3592,6 +3599,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.bireklam
 ##.blc_ads_home
 ##.bloc-ads
+##.bloc-ligatus-300
 ##.bloc-parution-ad
 ##.bloc-pub
 ##.bloc-pub2
@@ -3620,6 +3628,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.bumpable-ima-ad-container
 ##.buzz-ads
 ##.c-ads-sidebar
+##.cadre_pub
+##.cap-ads-text
 ##.card--row-ads
 ##.carouselpub
 ##.carre_pub
@@ -3783,6 +3793,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.player__ads
 ##.pmd-ads-300x600
 ##.pmd-ads-mobile
+##.pmd-ads-placeholder
 ##.pmd_dfp_ad
 ##.popupads
 ##.porn-videos-ads
@@ -4016,12 +4027,14 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.vda-title
 ##.video-list-ads
 ##.video_reklama
+##.videocontrols-ads
 ##.view-publicites
 ##.wide_add
 ##.widget-advert
 ##.widget-le_guide
 ##.widget-pub
 ##.widget_advncdads
+##.widget_box_pub
 ##.widget_keleops-ad
 ##.widget_keleops-adhalfpage
 ##.widget_positivr-sponsored-posts
@@ -4192,7 +4205,6 @@ emu-france.com###pub_casino_header
 entrecoquins.com###pub_club
 paris-communiques.com,plateformemedia.com###publaterale
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
-lexpress.mu###region-user-second
 sante-dz.com###revenue-wrapper
 lesoir.be###rossel-imu-bottom
 maitresrestaurateurs.com###sliderPartenaire
@@ -4209,7 +4221,6 @@ quick-tutoriel.com###the-post .warning
 plancul-gratuit.fr,plancul-gratuit.org###toast-container
 viewsurf.com###top-ban
 2ememain.be###top-banner-root
-algeriepatriotique.com###topbanner_wrapper
 freepik.com###topbar
 cbanque.com###trk_promoforum
 matchendirect.fr###tux728x90
@@ -4342,6 +4353,7 @@ xboxygen.com##.htpub
 hitek.fr##.incontent
 ##.incontent-promo-blitz-container
 quebeccoupongratuit.com##.inner-pub
+maison-travaux.fr##.intersticiel_block
 viamichelin.be,viamichelin.ch,viamichelin.com,viamichelin.fr##.itinerary-index-advertising
 dealabs.com##.js-idealo-section
 trovit.fr##.js-loadPremium
