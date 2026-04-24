@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +0WDxHxx28DQFv8i8u+x5g
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1776993154-14400.patch
+! Checksum: x2IzMaKZI/hKa9jvIwZq7w
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1777008448-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.89.41
-! TimeUpdated: 2026-04-24T01:08:58+00:00
+! Version: 2.1.89.42
+! TimeUpdated: 2026-04-24T05:24:04+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -426,6 +426,7 @@ _adreaper/
 _ads.php$script,subdocument
 _ads/banner/
 _ads2-
+_ads4stream_
 _ads_*?pubId=
 _ads_banner&
 _ads_banner/
@@ -1612,7 +1613,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||kaltura.com^*/a.mp4|$media
 ||laredoute.com/marketing/$3p,domain=~laredoute.be|~laredoute.ch|~laredoute.co.uk|~laredoute.com|~laredoute.es|~laredoute.fr|~laredoute.gr|~laredoute.hr|~laredoute.it|~laredoute.kr|~laredoute.lu|~laredoute.ma|~laredoute.nl|~laredoute.pl|~laredoute.pt|~laredoute.ru|~laredouteliban.com
 ||les-meilleurs-plans.com^$script,subdocument,3p
-||lewebfacilement.com^$script,subdocument,3p
 ||lh3.googleusercontent.com/$image,domain=forum.gsmhosting.com
 ||linkshrink.net/content/img/$3p
 ||livehost.fr^*/bannieres/
@@ -2094,8 +2094,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||weshrak.com^*/imp.php?
 ||weshrak.com^*/pub.php?
 ||wiflix-*/voir/
-||wii-info.fr/bane/
-||wii-info.fr/p/
 ||winamax.fr/img/banners/
 ||winamax.fr/img/pub/
 ||winds-up.com/pub/
@@ -2140,6 +2138,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###ad_video
 ###ban728
 ###bandeau_pub
+###banner_pub
 ###bannerad1
 ###bloc-pub
 ###blocPub_CARRE_PUB
@@ -2253,6 +2252,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###pub_728x90-2
 ###pub_banniere_basse
 ###pub_banniere_haute
+###pub_bas_droit
 ###pub_bottom
 ###pub_brique
 ###pub_carre
@@ -2362,7 +2362,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.coreads-wrapper
 ##.coreads_habillage
 ##.creatividad
-##.criteoad
 ##.desktop-ff-ads
 ##.desktop-ff-ads__main
 ##.dfp-ads
@@ -2622,6 +2621,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.widget_box_pub
 ##.widget_keleops-ad
 ##.widget_keleops-adhalfpage
+##.widget_positivr-sponsored-posts
 ##.widgetadv
 ##.widgetpub
 ##.window-ad-container
@@ -2650,6 +2650,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##a[href*="?bz=300*250"] > img[src*=".alicdn.com/"]
 ##a[href*="?bz=725*90"] > img[src*=".alicdn.com/"]
 ##a[href^="http://repslys.com/"]
+##a[href^="https://cosmicfundboost.com/trck/"]
 ##div[data-ad]
 ##div[data-iab-tag]
 basketusa.com###Basketusa_Habillage
@@ -2829,7 +2830,6 @@ statistiks.fr##.adz
 permaculteurs.com##.aff
 leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
-madagascar-tribune.com##.annonce
 centre-presse.fr,lamontagne.fr,larep.fr,le-pays.fr,leberry.fr,lechorepublicain.fr,lejdc.fr,lepopulaire.fr,lyonne.fr##.annonce_prompteur
 autojournal.fr,autoplus.fr##.annonces-container
 autojournal.fr,autoplus.fr##.annonces-container-sidebar
@@ -3325,6 +3325,7 @@ yggtorrent.support##html
 @@||hcaptcha.com/1/api.js?render=$script
 @@||hcaptcha.com/captcha/*&host=$subdocument
 @@||hcaptcha.com/captcha/*/hcaptcha.js$script
+@@||static.stormwall.pro/jsav1.3.js$script
 payfit.com#@#.publicity
 casualgame.hange.jp#@#a[href*="/adclick?"]
 newsdig.tbs.co.jp#@#div[data-ad]
