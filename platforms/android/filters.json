@@ -869,8 +869,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.66.49",
-			"timeUpdated": "2026-04-24T16:46:59+0000",
+			"version": "2.1.66.50",
+			"timeUpdated": "2026-04-24T20:45:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -997,8 +997,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.89.45",
-			"timeUpdated": "2026-04-24T16:47:04+0000",
+			"version": "2.1.89.46",
+			"timeUpdated": "2026-04-24T20:45:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1070,8 +1070,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.89.47",
-			"timeUpdated": "2026-04-24T16:47:08+0000",
+			"version": "2.1.89.48",
+			"timeUpdated": "2026-04-24T20:46:01+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -1145,8 +1145,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.89.46",
-			"timeUpdated": "2026-04-24T16:47:10+0000",
+			"version": "2.1.89.47",
+			"timeUpdated": "2026-04-24T20:46:03+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1174,8 +1174,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.89.45",
-			"timeUpdated": "2026-04-24T16:47:13+0000",
+			"version": "2.1.89.46",
+			"timeUpdated": "2026-04-24T20:46:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1222,8 +1222,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.63.15",
-			"timeUpdated": "2026-04-24T16:47:17+0000",
+			"version": "2.1.63.16",
+			"timeUpdated": "2026-04-24T20:46:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1347,8 +1347,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.60.49",
-			"timeUpdated": "2026-04-24T16:47:26+0000",
+			"version": "2.1.60.50",
+			"timeUpdated": "2026-04-24T20:46:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1372,8 +1372,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.61.20",
-			"timeUpdated": "2026-04-24T16:47:27+0000",
+			"version": "2.0.61.21",
+			"timeUpdated": "2026-04-24T20:46:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1522,8 +1522,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.89.46",
-			"timeUpdated": "2026-04-24T16:47:34+0000",
+			"version": "2.1.89.47",
+			"timeUpdated": "2026-04-24T20:46:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1567,8 +1567,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.88.72",
-			"timeUpdated": "2026-04-24T16:47:36+0000",
+			"version": "2.1.88.73",
+			"timeUpdated": "2026-04-24T20:46:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1836,8 +1836,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.89.47",
-			"timeUpdated": "2026-04-24T16:47:47+0000",
+			"version": "2.1.89.48",
+			"timeUpdated": "2026-04-24T20:46:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1862,8 +1862,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.83.39",
-			"timeUpdated": "2026-04-24T16:47:49+0000",
+			"version": "2.0.83.40",
+			"timeUpdated": "2026-04-24T20:46:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2141,8 +2141,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.85.53",
-			"timeUpdated": "2026-04-24T16:48:02+0000",
+			"version": "2.1.85.54",
+			"timeUpdated": "2026-04-24T20:46:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2273,8 +2273,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.82.78",
-			"timeUpdated": "2026-04-24T16:48:10+0000",
+			"version": "2.0.82.79",
+			"timeUpdated": "2026-04-24T20:47:02+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
