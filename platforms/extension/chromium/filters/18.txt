@@ -1,9 +1,9 @@
-! Checksum: d4JmdTWJfbgqYXMK0OPauA
-! Diff-Path: ../patches/18/18-s-1777065869-3600.patch
+! Checksum: e9hpx9h0o4G0NFvIYTkY1A
+! Diff-Path: ../patches/18/18-s-1777069368-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.85.85
-! TimeUpdated: 2026-04-24T21:21:58+00:00
+! Version: 2.0.85.86
+! TimeUpdated: 2026-04-24T22:20:05+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2587,6 +2587,10 @@ bayreuth-region.de,ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarb
 !
 ! NOTE: Regular rules
 !
+! cookie
+ettoday.net#$#.i-amphtml-consent-ui-mask { display: none !important; }
+ettoday.net#$#amp-consent { display: none !important; }
+ettoday.net#$?#.i-amphtml-scroll-disabled { overflow-x: auto !important; overflow-y: auto !important; }
 rg.ru#%#//scriptlet('set-cookie', 'cookie_consent', '1')
 truecar.com##a[href="#mainContent"] + .fixed.bottom-0
 chelindbank.ru##.bottom-warning
@@ -18735,6 +18739,7 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229404
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229876
 @@||onetrust.com/scripttemplates/otSDKStub.js$domain=asda.com
 @@||onetrust.com/consent/$domain=asda.com
