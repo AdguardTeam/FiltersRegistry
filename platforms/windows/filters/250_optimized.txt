@@ -1,5 +1,5 @@
-! Checksum: HAETp5G52GrKHDTe31SDpw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1777063787-14400.patch
+! Checksum: pkGmsk21dQ6wWhpxE2tQzA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1777094323-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.55
@@ -57,6 +57,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
 ||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
+?bemobdata=$all
 [2600:1f18:43d1:2a04:ee05:261e:d408:7ba1]$network
 !+ PLATFORM(windows, mac, android, cli)
 /^172\.255\.6\.(\d\d?|(17?|2)[0-689]\d)$/$network
@@ -1210,6 +1211,7 @@ wikia.org,fandom.com#$#.wds-global-footer__header { pointer-events: none !import
 fandom.com##.unified-search__layout__right-rail
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
+||wikia.com/*/images/*/Wiki-background^$domain=wikia.org|fandom.com
 fandom.com#$#.community-background { background-image: none !important }
 fandom.com#$#.background-image { background-image: none !important }
 fandom.com#$#:root { --oasis-community-background-image: none !important }
@@ -1752,6 +1754,7 @@ $removeparam=actCampaignType
 $removeparam=actSource
 $removeparam=oly_anon_id
 $document,removeparam=/^wickedsource=.*$/i
+$removeparam=rb_clickid,document
 $removeparam=s_cid
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
@@ -2007,6 +2010,7 @@ $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*
 $removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|feeder.co|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|tvtropes.org|mideacomfort.us|yandex.com
 $removeparam=keyword,domain=bindright.com|lendgo.com|reddit.app.link
+$removeparam=id,domain=go.redirectingat.com|go.skimlinks.com|go.skimresources.com|karkkainen.com
 $removeparam=offer_id,domain=catch.com.au|surfshark.com
 $document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 ||amazon.$removeparam=th
@@ -2363,15 +2367,11 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
 ||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
-||bilibili.com^$removeparam=/^playurl.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
-||bilibili.com^$removeparam=accept_quality
 ||bilibili.com^$removeparam=bbid
 ||bilibili.com^$removeparam=broadcast_type
 ||bilibili.com^$removeparam=bsource
 ||bilibili.com^$removeparam=hotRank
-||bilibili.com^$removeparam=p2p_type
-||bilibili.com^$removeparam=quality_description
 ||bilibili.com^$removeparam=seid
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
@@ -2481,6 +2481,7 @@ $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2d
 $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
+$removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||apple.com^$removeparam=fnode
 ||microsoft.com^$removeparam=headerid
 ||microsoft.com^$removeparam=destrt
@@ -2702,6 +2703,7 @@ $removeparam=cxt,domain=twitter.com|x.com
 $removeparam=mwv_rm
 ||comodo.com^$removeparam=track
 $removeparam=af,domain=1fichier.com|comodo.com
+$removeparam=intcid,domain=cbsnews.com
 ||mercadolibre.com.mx^$removeparam=/^matt_.*$/
 ||lidl.$removeparam=flyx
 ||apple.com^$removeparam=ctx_brand
@@ -3123,8 +3125,6 @@ independent.co.uk,indy100.com##.notification-prompt
 |https://adblock.*/js/widget/ads.js|$~third-party
 |https://adblock.*/js/pagead.js|$~third-party
 /bugsnag.$domain=adblock-tester.*
-||js.sentry-cdn.com^$domain=adblock-tester.*
-@@$redirect-rule,domain=adblock-tester.*
 discord.com##div[data-list-item-id*=skill-trees] + div[class*=" unreadImportant"]
 www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 &client_ad_session_id=
