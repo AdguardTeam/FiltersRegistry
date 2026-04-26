@@ -1,5 +1,5 @@
-! Checksum: OqC4nVy+qeYv3JXnmbUNvA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1777086780-3600.patch
+! Checksum: lW9E+31KJYDZ+1Ri54UDfA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1777173307-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.53
@@ -257,6 +257,7 @@ lesacdechips.com#$#.popup-adblocker { display: none !important; }
 lesacdechips.com#$#body { overflow: visible !important; }
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||lesacdechips.com^$generichide
+@@||espacesoignant.com/templates/css/adblocker.blogads.css
 hack-life.net#%#//scriptlet("set-constant", "adBlockDetected", "false")
 recreatisse.com#%#//scriptlet("abort-current-inline-script", "document.getElementById", "adback")
 @@||static.criteo.net/js/px.js^$domain=recreatisse.com
@@ -740,6 +741,7 @@ lefigaro.fr##.fig-sticky-bottom-subscription-banner
 zeste.ca##.isPub
 zeste.ca##.wrapper-pub
 charentelibre.fr,sudouest.fr,techno-science.net##.pub
+paroles2chansons.lemonde.fr##div[style="min-height:280px;"]
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
 ||jobat.be^$subdocument,third-party
@@ -1771,6 +1773,7 @@ _popads.
 _popdhtml/
 _profits_ad-
 _pub.gif
+_publ1c1te.
 _publicitaire/
 _publicite.
 _publicite_
@@ -1778,6 +1781,7 @@ _publog_2.
 _pubscript.
 _regie/aff.
 _regiepub/
+_rivcash_banner_
 _smads_
 _square_ads.
 _werbebanner_
@@ -2022,7 +2026,6 @@ _build=iclick-$popup
 ||mirando.de^$third-party
 ||missaffiliate.com^$third-party
 ||misstrends.com^$third-party
-||mm387.com^$third-party
 ||mobileoffers-*-download.com^$third-party
 ||mobsuccess.com^$third-party
 ||mobvista.com^$third-party
@@ -2057,7 +2060,6 @@ _build=iclick-$popup
 ||plurielmediacenter.com^$third-party
 ||popupmaker.com^$third-party
 ||pornme.pm^$third-party
-||pubinteractive.ca^$third-party
 ||publy.net^$third-party
 ||pubstack.io^$third-party
 ||pwspace.com^$third-party
@@ -2284,7 +2286,6 @@ _build=iclick-$popup
 ||ecijrxibrulgnb.com^
 ||eddnxllt.com^
 ||ediva.gr^
-||educandrelock.com^
 ||efcybuvko.com^
 ||egalitysarking.com^
 ||ejoorep.com^
@@ -2696,7 +2697,6 @@ _build=iclick-$popup
 ||a-calc.de^$third-party
 ||adless.io^$third-party
 ||afminer.com^$third-party
-||authedmine.com^$third-party
 ||binance.org^$third-party
 ||browsealoud.com/plus/scripts/$script
 ||cnhv.co^$third-party
@@ -2757,7 +2757,6 @@ _build=iclick-$popup
 ||gsurl.in^$popup
 ||hk6vdj4z.click^$popup
 ||iqoption.com^$popup
-||istri.it^$popup,third-party
 ||jewhouca.net^$popup
 ||klclick.com^$popup
 ||livepartners.com^$popup,third-party
@@ -2903,6 +2902,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||logo.gralon.net/plogo-gralon-$third-party
 ||maliwebnetcdn-*/wp-content/news/images/*habillage
 ||mangahome.com/store/banners/
+||mangatown.com^*/banners/
 ||maxannu.com^$image,third-party
 ||mdhcdn.com^*/banner_
 ||mediastay.net^*/offers.php?
@@ -3116,7 +3116,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||amateur2sexe.fr/include/$script
 ||andlil.com/prorealtime-trading-
 ||animeka.com/_img/cache/partner/
-||api.annonces.nc/posts/random-boosted
 ||aps.dz/images/banners/clients/
 ||archimag.com/sites/archimag.com/files/adds/
 ||athle.org/upload/marketing/
@@ -3301,7 +3300,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||tahiti-infos.com/photo/*crescendo
 ||tahiti-infos.com/photo/*x150
 ||tchatche.com/123m?
-||tech.powergothgirls.com^
 ||techpowerup.com/reviyu
 ||telesatellite.com/images/a/
 ||tendancehotellerie.fr/img/jpg/
@@ -4024,6 +4022,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.publicite3
 ##.publicite4
 ##.publiciteHeader
+##.publicite_droite
 ##.publicite_droite_600
 ##.publicite_gauche
 ##.publicite_horizontale_well
@@ -4033,6 +4032,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.publicite_mobile
 ##.publicite_mobile_cache
 ##.publicite_sidebar
+##.publicite_sous_slider
 ##.publiciteac
 ##.publiciteright
 ##.publicity
@@ -4799,7 +4799,6 @@ yggtorrent.support##html
 @@||koifaire.com/upload/*/300x250-$image,~third-party
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,third-party,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,third-party
-@@||planet-casio.com/images/ad/$image,~third-party
 @@||publicwww.com/images/labels.$image,~third-party
 @@||yospace.com/csm/*.mpd^$xmlhttprequest,domain=6play.fr
 @@||ab.9xbud.com/extract|$xmlhttprequest,domain=9xbuddy.online
