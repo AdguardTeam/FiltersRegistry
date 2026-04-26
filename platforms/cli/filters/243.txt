@@ -1,14 +1,14 @@
-! Checksum: o5cQHs63IVE+oq3N2b3DFw
-! Diff-Path: ../patches/243/243-s-1777049431-14400.patch
+! Checksum: yJtHf1TEekMO/pl2tKLEWw
+! Diff-Path: ../patches/243/243-s-1777207791-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.40
-! TimeUpdated: 2026-04-24T16:47:59+00:00
+! Version: 2.0.24.41
+! TimeUpdated: 2026-04-26T12:47:28+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-04-24 14:54:32 CEST
+! Last modified: 2026-04-26 14:34:41 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -858,11 +858,7 @@ inredningsvis.se#%#//scriptlet('ubo-set-cookie', 'cmplz_statistics', 'deny')
 internetmedicin.se##[itemtype="https://schema.org/WPAdBlock"]
 internetodontologi.se,prv.se##.overlay
 internetodontologi.se,skrattsajten.com,norpan.se#%#//scriptlet('ubo-rmnt', 'script', 'e.preventDefault')
-investeramera.se##a[href^="https://go."], a[href*="/go/"], img[width="320"][height="320"]
-investeramera.se##main > .section:has(a[href*="spelcash"])
 investeramera.se###dialog-locked
-investeramera.se#?#.post-single-content p em:contains(Annons:)
-investeramera.se##.rounded-lg:has(a[href^="https://go."], a[href*="/go/"])
 ipo.se##.tag-sponsrad
 itseniorerna.se###astroid-preloader
 itseniorerna.se###redim-cookiehint-modal
@@ -2132,10 +2128,13 @@ zeromagazine.nu##div[id^="ads"]
 /annons_ver.
 /antiblock$domain=vmj.se|viseniorer.se|danskaspraket.se|digitalavykort.se
 /apester-javascript-sdk.min.js
+/api/ads$xmlhttprequest,domain=investeramera.se
 /api/a/b$domain=borskollen.se
 /api/event$domain=feber.se|tjock.se|fastighetsvarlden.se
 /api/exposure$domain=svenskverkstad.se
 /api/partners$domain=familjehemsbanken.se
+/api/popup-block$xmlhttprequest,domain=investeramera.se
+/api/promo-block$xmlhttprequest,domain=investeramera.se
 /api/sponsors$domain=aikhockey.se|almtuna.com|bikkarlskoga.se|bjorkloven.com|brynas.se|difhockey.se|frolundahockey.com|farjestadbk.se|hockeyallsvenskan.se|hv71.se|ikoskarshamn.se|kalmarhockey.com|leksandsif.se|luleahockey.se|malmoredhawks.com|modohockey.se|moraik.se|nybrovikings.com|orebrohockey.se|roglebk.se|shl.se|skellefteaaik.se|sodertaljesk.se|taif.nu|timraik.se|vaxjolakers.se|vik.se|ostersundik.com
 /api/tracker?$image
 /appinsights/*/track
@@ -2170,6 +2169,7 @@ zeromagazine.nu##div[id^="ads"]
 /bilder-for-annonser$image
 /bilder/ads/*
 /bilder/annonser/*
+/bilder/annons*$image,domain=psykoterapicentrum.se
 /bilder/betalannonser
 /bilder/logotyper/partners
 /bilder/samarbeten$domain=hojen.nu
