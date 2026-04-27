@@ -1,9 +1,9 @@
-! Checksum: /84ZOiYTLeAonW/w1nY24Q
-! Diff-Path: ../patches/11/11-s-1777286912-3600.patch
+! Checksum: bz3gnqEY8dQV/7V6OOtEaw
+! Diff-Path: ../patches/11/11-s-1777293824-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.69.38
-! TimeUpdated: 2026-04-27T10:44:47+00:00
+! Version: 2.0.69.39
+! TimeUpdated: 2026-04-27T12:40:32+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1071,6 +1071,8 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229892
+vodafone.de##.mc-content > #adbl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221944
 mangalivre.tv#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'bait')
 mangalivre.tv#$##manga-safe-wrapper { display: block !important; }
@@ -2682,6 +2684,10 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+toyokeizai.net##.article-related__list > article.article-related__item:has(> div.ad-container)
+techorange.com#?#.elementor-hidden-desktop:has(> div.e-con-inner:only-child:not(:has(*)))
+immowelt.de##div[data-testid="serp-core-scrollablelistview-testid"] > div[class^="css-"]:has(> div[class] > div[class] > div[id^="div-gam-ad-"])
+immowelt.de##.HideOnPrint:has(> div[class] > div[class] > div#ad-banner-mobile)
 news.denfaminicogamer.jp##aside[id*="-1"]
 navitime.co.jp##.js-inview-myplace
 navitime.co.jp##.js-inview-realestate
