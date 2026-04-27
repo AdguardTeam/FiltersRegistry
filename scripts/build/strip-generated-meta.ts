@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { findFiles } from '../utils/find_files.js';
 
 const FILTERS_DIR_NAME = 'filters';
@@ -95,3 +96,11 @@ export const stripGeneratedMetaFromDir = async (rootDir: string): Promise<number
 
     return counts.reduce((sum, count) => sum + count, 0);
 };
+
+// CLI entrypoint: strip generated meta from platform build outputs when run directly
+if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
+    const rootDir = process.argv[2] ?? path.resolve('platforms');
+    const modified = await stripGeneratedMetaFromDir(rootDir);
+    // eslint-disable-next-line no-console
+    console.log(`Done. ${modified} file(s) modified.`);
+}
