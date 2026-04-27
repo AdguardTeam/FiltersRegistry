@@ -104,15 +104,18 @@ if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
         ? [path.resolve(process.argv[2])]
         : [path.resolve('platforms'), path.resolve('temp', 'platforms')];
 
-    let total = 0;
-    for (const rootDir of rootDirs) {
-        if (existsSync(rootDir)) {
-            const count = await stripGeneratedMetaFromDir(rootDir);
-            // eslint-disable-next-line no-console
-            console.log(`${path.relative('.', rootDir)}: ${count} file(s) modified.`);
-            total += count;
-        }
-    }
+    const results = await Promise.all(
+        rootDirs
+            .filter((dir) => existsSync(dir))
+            .map(async (rootDir) => {
+                const count = await stripGeneratedMetaFromDir(rootDir);
+                // eslint-disable-next-line no-console
+                console.log(`${path.relative('.', rootDir)}: ${count} file(s) modified.`);
+                return count;
+            }),
+    );
+
+    const total = results.reduce((sum, count) => sum + count, 0);
     // eslint-disable-next-line no-console
     console.log(`Done. ${total} file(s) modified in total.`);
 }
