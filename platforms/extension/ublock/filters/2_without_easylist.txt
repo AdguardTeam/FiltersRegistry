@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SdRPkHzLa5QLRDTIKDjDVA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1777273498-3600.patch
+! Checksum: PgUtXYpxdSuvRKJPpgpfKg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1777276684-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.63.12
-! TimeUpdated: 2026-04-27T07:01:23+00:00
+! Version: 2.4.63.13
+! TimeUpdated: 2026-04-27T07:54:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,8 +23,6 @@
 !
 !
 !
-||adradar.io^$3p
-||adserve.adradar.io^
 ||b-short.link^$all
 ||yoszi.com^$3p
 ||d3rem.com^
@@ -9523,6 +9521,8 @@ ad.broadstreetads.com
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||adradar.io^$3p
+||adserve.adradar.io^
 ||ads.starzd.pro^
 ||advertising.civitai.
 ||iwad.cachefly.net^
@@ -10706,6 +10706,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
 !
 ! NOTE: Regular rules
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/230044
+xswiper.com##+js(no-xhr-if, adpresenter.de)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229963
 smksports.live##+js(addEventListener-defuser, load, checkAdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229890
@@ -37203,6 +37206,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! linksconsole.com
 ||linksconsole.com/ad-system/
+!
+! Minecraft feather client ( https://feathermc.com/#features )
 !
 ! NOTE: Specific rules
 !
