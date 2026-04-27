@@ -1,9 +1,9 @@
-! Checksum: W1SCRg7d4PU1RqAeQPgBOA
-! Diff-Path: ../patches/18/18-s-1777254231-3600.patch
+! Checksum: hbT+VrJHdWCAOUzPsQ/HGw
+! Diff-Path: ../patches/18/18-s-1777259783-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.85.92
-! TimeUpdated: 2026-04-27T01:41:03+00:00
+! Version: 2.0.85.93
+! TimeUpdated: 2026-04-27T03:13:32+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2589,6 +2589,9 @@ beamten-infoportal.de,bayreuth-region.de,ra-hoernschemeyer.de,tuhlteim-pedia.de,
 ! NOTE: Regular rules
 !
 ! cookie
+slipstreammusic.com##div[class^="CookieBannerStyles_container_"]
+erste.pl#%#//scriptlet('trusted-click-element', '.privacy-prompt-content button[class*="button-reject"]')
+urlsafetychecker.com##.min-h-screen .fixed.right-4.z-50
 makeup.com.ua##.CookieBanner__cookie
 rundfunkbeitrag.de##.-show.consentDialog
 igetnow.com##app-cookie-banner-wrapper-component
@@ -5404,7 +5407,7 @@ novinky.cz,volnamista.cz##szn-cwl
 kosik.cz#$#.cmp-modal { display: none !important; }
 kosik.cz#$#html.is-scroll-hidden { overflow: auto !important; }
 kosik.cz#$#body[style*="padding-right:"] { padding-right: 0 !important; }
-dragon.cz,unihobby.cz##.cookies-confirm
+global.cdek.ru,dragon.cz,unihobby.cz##.cookies-confirm
 edstellar.com,englishbrightesl.com,usaco.co.jp###consent_container
 ||rb.cz/attachments/applications/scripts/apps/cookie-wall.js
 dolnimorava.cz,palladiumpraha.cz#$#body { overflow: auto !important; }
@@ -12440,7 +12443,7 @@ kreiskrankenhaus-weisswasser.de,steuerberater-vos.de,mm-liebenswert.de,pflegestu
 retroplace.com#$#body { overflow: auto !important; position: static !important; padding-right: 0 !important; }
 retroplace.com#$##retroplaceCookies { display: none !important; }
 retroplace.com#$##retroplaceCookies ~ *:not(.ekko-lightbox):not(.modal-backdrop) + div.modal-backdrop { display: none !important; }
-single.infranken.de,rosenheimsingles.de,localflirt24.de,innsalzachsingles.de,ilove.de,isarsingles.de,rp-online-dating.de,mzflirt.de###ccp-overlay
+rtl.de,single.infranken.de,rosenheimsingles.de,localflirt24.de,innsalzachsingles.de,ilove.de,isarsingles.de,rp-online-dating.de,mzflirt.de###ccp-overlay
 smarturl.it###cookie-banner-cta
 ||buxtehude.de/static/static/jscript/cookiedough_min.js
 ||buchholz.de/static/static/jscript/cookiedough_min.js
@@ -18783,6 +18786,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229955
+@@||reishunger.de/build/assets/cookieConsent-$domain=reishunger.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229404
 ettoday.net#@#amp-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229876
