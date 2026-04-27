@@ -195,9 +195,17 @@ const buildFilters = async () => {
     // Strip generated metadata (Checksum, Diff-Path, TimeUpdated, Version)
     // from compiled filter files so they don't pollute diff comparisons.
     if (stripGeneratedMeta) {
-        const count = await stripGeneratedMetaFromDir(platformsPath);
+        const newCount = await stripGeneratedMetaFromDir(platformsPath);
         // eslint-disable-next-line no-console
-        console.log(`Stripped generated meta from ${count} file(s).`);
+        console.log(`Stripped generated meta from ${newCount} new file(s).`);
+
+        // Also strip the old baseline copy so build:patches diffs
+        // consistently-stripped content.
+        if (fs.existsSync(copyPlatformsPath)) {
+            const oldCount = await stripGeneratedMetaFromDir(copyPlatformsPath);
+            // eslint-disable-next-line no-console
+            console.log(`Stripped generated meta from ${oldCount} old baseline file(s).`);
+        }
     }
 };
 
