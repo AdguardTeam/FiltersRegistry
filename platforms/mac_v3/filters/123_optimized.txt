@@ -1,9 +1,9 @@
-! Checksum: fYliGLTYwHn7pZVlMdmbrw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1777252477-14400.patch
+! Checksum: rxPlWHUZpFkavr/rAKw9Rw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1777268390-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.60.63
-! TimeUpdated: 2026-04-27T01:11:10+00:00
+! Version: 2.1.60.64
+! TimeUpdated: 2026-04-27T05:36:50+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -167,6 +167,7 @@ _social_footer_
 ###block-menu-menu-social-links
 ###block-menu-menu-social-media-links
 ###block-social
+###block-socialfooter
 ###block-sociallinks
 ###block-socialmedia
 ###block-socialmedialinks
@@ -288,6 +289,7 @@ _social_footer_
 ###footerSocialLinks
 ###footerSocialMenu
 ###footer_block_social
+###footer_follow_us
 ###footer_social
 ###footer_social_facebook
 ###footer_social_icons
@@ -353,7 +355,6 @@ _social_footer_
 ###menu-social-navigation
 ###menuSocial
 ###meteored_share
-###mobile-share-bar
 ###mobile-share-boxbottom
 ###mobile-share-button
 ###mobile-social
@@ -1051,7 +1052,6 @@ _social_footer_
 ##.button-share
 ##.button-share-facebook
 ##.button-social
-##.button-social-share
 ##.button-twitter
 ##.button__share
 ##.button_share
@@ -1574,6 +1574,7 @@ _social_footer_
 ##.gridlove-soc-menu
 ##.gs-share
 ##.gs-sharebar
+##.gt-social-menu
 ##.gtm-social-link
 ##.gtm_footer_facebook
 ##.gtm_footer_instagram
@@ -1588,6 +1589,7 @@ _social_footer_
 ##.head-fb
 ##.head-post-share
 ##.header-facebook
+##.header-follow-us
 ##.header-icon-instagram
 ##.header-main-socs
 ##.header-menu__social
@@ -1650,6 +1652,7 @@ _social_footer_
 ##.hp-tab-share
 ##.hs-blog-social-share
 ##.icon--app-store
+##.icon--dailymotion
 ##.icon--facebook
 ##.icon--facebook-simple
 ##.icon--footer-social
@@ -1666,6 +1669,7 @@ _social_footer_
 ##.icon-circle-youtube
 ##.icon-condividi
 ##.icon-connect
+##.icon-dailymotion
 ##.icon-delicious
 ##.icon-digg
 ##.icon-facebook-alt
@@ -1681,7 +1685,6 @@ _social_footer_
 ##.icon-facebook-squared
 ##.icon-facebook-white
 ##.icon-facebook2
-##.icon-fb-small
 ##.icon-fb-white
 ##.icon-fb2
 ##.icon-flickr
@@ -1767,7 +1770,6 @@ _social_footer_
 ##.instagram_icon
 ##.instagram_share
 ##.instagramicon
-##.iol-social-share
 ##.ion-social-facebook
 ##.ion-social-linkedin
 ##.ion-social-twitter
@@ -1992,7 +1994,6 @@ _social_footer_
 ##.mod-facebook
 ##.mod-follow
 ##.mod-twitter
-##.modSharing
 ##.module--share
 ##.module-follow
 ##.module-social-share-icons
@@ -2136,6 +2137,7 @@ _social_footer_
 ##.polaris__social--icon
 ##.poll-share
 ##.popover-share
+##.post--share
 ##.post-content-share
 ##.post-footer-share
 ##.post-footer-social
@@ -2156,7 +2158,6 @@ _social_footer_
 ##.post-share-menu-item
 ##.post-share-panel
 ##.post-share-pinterest
-##.post-share-social
 ##.post-share-twitter
 ##.post-share-whatsapp
 ##.post-share-widget
@@ -2516,7 +2517,6 @@ _social_footer_
 ##.shareFacebook
 ##.shareFix
 ##.shareForm
-##.shareGroup
 ##.shareHomeButtons
 ##.shareIcons
 ##.shareLeft
@@ -2857,7 +2857,6 @@ _social_footer_
 ##.social-area
 ##.social-area-syncer
 ##.social-aside
-##.social-background
 ##.social-badge
 ##.social-badges
 ##.social-banner
@@ -2898,6 +2897,7 @@ _social_footer_
 ##.social-cta
 ##.social-ext
 ##.social-fixed
+##.social-fixed-bar
 ##.social-fl
 ##.social-follow
 ##.social-follow-bar
@@ -3056,6 +3056,7 @@ _social_footer_
 ##.social-sharer
 ##.social-shares
 ##.social-sharing-bot
+##.social-sharing-bottom
 ##.social-sharing-btn
 ##.social-sharing-button
 ##.social-sharing-buttons
@@ -3283,6 +3284,7 @@ _social_footer_
 ##.ss-social-icons-container
 ##.ss-social-regular
 ##.ss-social-share-label
+##.ss-total-shares
 ##.ssb_followers
 ##.ssba-share-text
 ##.ssba_email_share
@@ -3296,7 +3298,6 @@ _social_footer_
 ##.st_sharethis
 ##.st_sharethis_custom
 ##.st_sharethis_large
-##.static-social
 ##.sti-share-box
 ##.stick-share
 ##.sticky-share
@@ -3348,7 +3349,6 @@ _social_footer_
 ##.tdm-social-wrapper
 ##.tdm_block_socials
 ##.tds-social1
-##.tg-socialicons
 ##.tgla7-share
 ##.tha__socialItem
 ##.thb-social-links-container
@@ -3422,9 +3422,7 @@ _social_footer_
 ##.twitter-feed
 ##.twitter-follow
 ##.twitter-follow-box
-##.twitter-followers
 ##.twitter-footer
-##.twitter-inner
 ##.twitter-module
 ##.twitter-popup
 ##.twitter-share
@@ -4035,11 +4033,14 @@ dailygalaxy.com,glassalmanac.com##.google-news-card
 cybernews.com,sammobile.com##.google-news-cta
 phonearena.com,quiverquant.com##.google-news-follow
 kyivpost.com##.google-news-preffer-button
+bleedingcool.com##.google-news-source
 ringsidenews.com,tmz.com##.google-preferred-btn
+sammobile.com##.google-preferred-news-source-cta
 cultofmac.com##.google-preferred-source
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
 goal.com##.google-trusted-source
 scientificamerican.com##.google_cta-CuF5m
+wrestletalk.com##.google_source_badge
 gadgets360.com##.gsocialbar
 theprint.in##.gw-follow-button
 webdunia.com##.h_search_apps
@@ -4276,6 +4277,7 @@ news.sky.com##.ui-news-footer-social
 news.sky.com##.ui-news-footer-social-link
 hp.com##.ul_media_links
 aa.com.tr##.ustBar-sosyal
+trueachievements.com##.vc
 apa.org##.vertical-icon-bar
 videogameschronicle.com##.vgc-branding__container > ul
 videogameschronicle.com##.vgc-socialshare
@@ -4473,7 +4475,6 @@ pcgameshardware.de##.artSocialLinks
 finanznachrichten.de##.article--footer
 n-tv.de##.article__share-wrapper
 welt.de##.c-social-bar
-evangelisch.de##.field-share
 nn.de,nordbayern.de##.icon__social
 kicker.de##.kick__article__social
 ndr.de##.meta
@@ -4742,6 +4743,7 @@ elmundo.es##.ue-c-article__share-tools
 burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-btn--2
 burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-f__sm
 elpais.com##.w_rs
+abc.com.py##.whatsapp-button-container
 bigpara.hurriyet.com.tr##.share-list
 trthaber.com##.social-links-container
 bigpara.hurriyet.com.tr##.socialIcons
