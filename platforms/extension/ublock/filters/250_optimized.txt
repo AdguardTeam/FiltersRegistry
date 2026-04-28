@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: /+0VcCO9HSZqKmuyjzvMFA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1777268384-14400.patch
+! Checksum: 7utXbnjbqjt1LLIAiEudDQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1777354976-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.57
@@ -53,8 +53,6 @@ softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||solvusoft.com^$document
 exefiles.com##.row:has(a[href*="/recommended/"])
-/^(https?|tcp|iquic)://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~3p,document
-/^(https?|tcp|iquic):\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
 /^(https?|tcp|iquic):\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php$/$document,domain=biz|fun|live
 coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
@@ -118,9 +116,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||62.210.7.209^$document
 ||62.210.9.92^$document
 ||167.99.249.47^$document
-/^(https?|tcp|iquic)://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/.*)?$/
-/^(https?|tcp|iquic)://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/.*)?$/
-/^((https?|tcp|iquic)://)?\d\d?\.[a-z0-9-]{1,}\.biz(/.*)?$/$document
 ||5.8.34.26^$document
 ||5.8.47.3^$document
 ||103.224.182.251^$document
@@ -532,7 +527,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||43.157.46.83^$all
 ||43.164.196.209^$all
 ||88.255.216.16^$all
-/((https?|tcp|iquic)://)?204\.194\.54\.\d{1,3}([:/].*)?$/$all
 ||adtng.com^$all
 ||anonymity-guardstation.com^$all
 ||anonymity-ninjacloud.com^$all
@@ -1205,7 +1199,6 @@ msftconnecttest.com^$csp=upgrade-insecure-requests
 ://ww18.$document,domain=~ww18.autotask.net|~ww18.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww19.$document,domain=~ww19.autotask.net|~ww19.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww20.$document,domain=~ww20.autotask.net|~ww20.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
-://ww23.$document,domain=~ww23.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww25.$document,domain=~ww25.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww26.$document,domain=~ww26.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww38.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
@@ -1226,6 +1219,7 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ||ojrq.net^$document
 ||185.176.220.31^$document
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
+###ctoolbar
 ###ppsPopupBgOverlay
 ###rail-share-bar
 ###share-buttons
@@ -1529,6 +1523,7 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###article-share-facebook
 ###article-share-twitter
 ##.uSocial-Share:not(body,html,:empty)
+~line.me,~linecorp.com##a.js-share-line
 ~line.me,~linecorp.com##a[href^="line://msg/text/"]:is([class*=share i],[aria-label*=share i])
 winstall.app##button[class*=singleApp_shareApp_]
 ##button[aria-label^="Share article on "]
@@ -1625,6 +1620,7 @@ context.reverso.net##.blocked:style(filter: none !important;)
 linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea:has(.cGuestTeaser):not(:has(.ipsComposeArea_editor))
 ||subs.youmaker.com^$3p
 ##.paywall-gradient:not(html, body)
+zapytaj.onet.pl##.know-better-answer
 instagram.com##div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
 zeit.de##.paragraph--faded:style(overflow: visible !important)
 zeit.de##.paragraph--faded::before:style(background-image: none !important)
@@ -2116,6 +2112,7 @@ $removeparam=wmlspartner
 $removeparam=sscid
 $removeparam=rmmds
 $removeparam=act_poa
+$removeparam=utmid
 $removeparam=msclkid
 $removeparam=litb_from
 $removeparam=ggntk
@@ -2132,6 +2129,7 @@ $removeparam=ns_fee
 $removeparam=zanpid
 $removeparam=wgu
 $removeparam=wgexpiry
+$removeparam=fsrc
 $removeparam=Referrer
 $removeparam=algo_pvid
 $removeparam=algo_expid
@@ -2223,9 +2221,7 @@ $removeparam=o_xid
 $removeparam=wtExtndSource
 $removeparam=rfsn
 $removeparam=afsrc
-$removeparam=lctid
 $document,removeparam=lcid,domain=~rekono.si
-$removeparam=usource
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
@@ -2377,6 +2373,7 @@ $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
 $removeparam=dt_dapp
 $removeparam=dt_platform
+$removeparam=i_cid
 $removeparam=waad
 $removeparam=_gac
 $removeparam=af_medium
@@ -2456,6 +2453,7 @@ $removeparam=as_campaign
 $removeparam=as_camptype
 $removeparam=as_channel
 $removeparam=as_source
+$document,removeparam=/^source=igodigital$/
 $removeparam=qq-pf-to
 $removeparam=mibextid
 $removeparam=li_medium
@@ -2906,6 +2904,7 @@ wenku.baidu.com##+js(set, history.replaceState, noopFunc)
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
+||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
 ||bilibili.com^$removeparam=bbid
@@ -3007,7 +3006,7 @@ $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=reflink,domain=marketwatch.com|mansionglobal.com|wsj.com
 $removeparam=hpt,domain=cnn.com
 ||pbtech.$removeparam=qr
-||son-video.com^$removeparam=ae
+||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
 $removeparam=ab_channel,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $~xhr,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
@@ -3332,9 +3331,6 @@ $removeparam=link_source_user_id,domain=nextdoor.com
 $removeparam=is,domain=nextdoor.com
 $removeparam=mar,domain=nextdoor.com
 ||dzen.ru^$removeparam=yredirect
-||verizon.com^$removeparam=campaignGroup
-||verizon.com^$removeparam=campaignName
-||verizon.com^$removeparam=campaignSource
 $removeparam=source_ve_path,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ^ref=hackernoon.com^$removeparam=ref
 ||notion.so^$removeparam=gspk
