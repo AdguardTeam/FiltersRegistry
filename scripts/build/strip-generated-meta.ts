@@ -2,7 +2,6 @@ import fs from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { findFiles } from '../utils/find_files.js';
 
 const FILTERS_DIR_NAME = 'filters';
 const TXT_FILE_EXTENSION = '.txt';
@@ -48,29 +47,46 @@ const stripGeneratedMeta = async (filePath: string): Promise<boolean> => {
 };
 
 /**
- * Recursively find all directories named `filters` under the given root.
+ * Single-pass recursive walk: strips metadata from .txt files inside `filters/`
+ * directories and counts modified files per `filters/` dir.
  *
- * @param dir - Root directory to search.
- * @returns Array of absolute paths to `filters` directories.
+ * When a directory named `filters` is encountered, all .txt files inside it are
+ * processed immediately — no second traversal is needed.
+ *
+ * @param dir - Current directory being walked.
+ * @param rootDir - Top-level root (used only for log output).
+ * @returns Number of files actually modified under this subtree.
  */
-const findFiltersDirs = async (dir: string): Promise<string[]> => {
+const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
     const entries = await fs.readdir(dir, { withFileTypes: true });
 
-    const results = await Promise.all(entries.map(async (entry) => {
-        if (!entry.isDirectory()) {
-            return [];
-        }
+    const counts = await Promise.all(entries.map(async (entry) => {
         const fullPath = path.join(dir, entry.name);
-        if (entry.name === FILTERS_DIR_NAME) {
-            return [fullPath];
+
+        if (!entry.isDirectory()) {
+            // Only process .txt files that are directly inside a `filters/` dir,
+            // which is guaranteed by the caller when dir itself is a filters dir.
+            if (entry.name.endsWith(TXT_FILE_EXTENSION)) {
+                return (await stripGeneratedMeta(fullPath)) ? 1 : 0;
+            }
+            return 0;
         }
-        return findFiltersDirs(fullPath);
+
+        if (entry.name === FILTERS_DIR_NAME) {
+            // Process all .txt files inside this `filters/` dir in one pass.
+            const modified = await walkAndStrip(fullPath, rootDir);
+            if (modified > 0) {
+                // eslint-disable-next-line no-console
+                console.log(`${path.relative(rootDir, fullPath)}: stripped metadata from ${modified} file(s)`);
+            }
+            return modified;
+        }
+
+        return walkAndStrip(fullPath, rootDir);
     }));
 
-    return results.flat();
+    return counts.reduce((sum: number, count: number) => sum + count, 0);
 };
-
-const hasTxtExtension = (p: string): boolean => p.endsWith(TXT_FILE_EXTENSION);
 
 /**
  * Strip generated metadata lines from all .txt files inside all `filters/`
@@ -80,22 +96,7 @@ const hasTxtExtension = (p: string): boolean => p.endsWith(TXT_FILE_EXTENSION);
  * @returns Number of files actually modified.
  */
 export const stripGeneratedMetaFromDir = async (rootDir: string): Promise<number> => {
-    const filtersDirs = await findFiltersDirs(rootDir);
-
-    const counts = await Promise.all(filtersDirs.map(async (filtersDir) => {
-        const files = await findFiles(filtersDir, hasTxtExtension);
-        const results = await Promise.all(files.map(stripGeneratedMeta));
-        const modified = results.filter(Boolean).length;
-
-        if (modified > 0) {
-            // eslint-disable-next-line no-console
-            console.log(`${path.relative(rootDir, filtersDir)}: stripped metadata from ${modified} file(s)`);
-        }
-
-        return modified;
-    }));
-
-    return counts.reduce((sum, count) => sum + count, 0);
+    return walkAndStrip(rootDir, rootDir);
 };
 
 // CLI entrypoint: strip generated meta from platform build outputs when run directly
