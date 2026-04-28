@@ -1,7 +1,7 @@
 !
 ! Title: List-KR classic filters list (AdGuard)
 ! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20569.0
+! OriginalVersion: 2026.20570.0
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/List-KR/List-KR
 ! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
@@ -4078,13 +4078,18 @@ dicoall.com#@##AD_Top
 dicoall.com#@##homead
 dicoall.com#@##ad-lead
 dicoall.com#@##rightAd
-!
+! bser-koroshi.vercel.app
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android || adguard_app_cli || adguard_ext_firefox || adguard_ext_chromium || adguard_ext_chromium_mv3)
+_vercel/insights/script.js$domain=bser-koroshi.vercel.app,redirect=nooptext
+!#else
 bser-koroshi.vercel.app#%#//scriptlet('prevent-fetch', '_vercel/insights/script.js')
+!#endif
 !#if (adguard_app_ios || adguard_ext_safari)
 !#safari_cb_affinity(privacy)
 @@||bser-koroshi.vercel.app/_vercel/insights/script.js$domain=bser-koroshi.vercel.app,xmlhttprequest
 !#safari_cb_affinity
 !#endif
+!
 algumon.com##div[id^="deal-"].card ~ .bg-base-100:has(div[style] > div[class*=" svelte-"])
 cheatdot.com#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle(t).display')
 tv.jtbc.co.kr,mvod.jtbc.co.kr,onair.jtbc.co.kr#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(t).getPropertyValue("visibility")')
