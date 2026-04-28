@@ -107,6 +107,11 @@ After completing any task that modifies code in `scripts/`:
     yarn lint
     ```
 
+    > **Important:** `yarn lint` runs three checks sequentially:
+    > `yarn lint:code` → `yarn lint:types` → `yarn lint:md`.
+    > A failure in any one stage aborts the rest. Always verify that **all three**
+    > pass, including Markdown lint on edited `.md` files.
+
 2. **Run unit tests.** All tests must pass.
 
     ```bash
