@@ -8,6 +8,8 @@ import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
+// eslint-disable-next-line import/no-unresolved
+import { parseFlags, validateFlags, validateArgs } from './build-config.ts';
 import { stripGeneratedMetaFromDir } from './strip-generated-meta.ts';
 import { findFiles } from '../utils/find_files.js';
 
@@ -15,55 +17,38 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * Parse command-line parameters -i|--include, -s|--skip, --use-cache, --generate-cache,
- * --no-patches-prepare, --strip-generated-meta
+ * Parse and validate command-line parameters
  */
-let includedFilterIDs = [];
-let excludedFilterIDs = [];
-let rawReportPath = '';
-let useCache = false;
-let generateCache = false;
-let noPatchesPrepare = false;
-let stripGeneratedMeta = false;
-
 const args = process.argv.slice(2);
-args.forEach((val) => {
-    if (val.startsWith('-i=') || val.startsWith('--include=')) {
-        const value = val.slice(val.indexOf('=') + 1);
+const red = (s) => `\x1b[31m${s}\x1b[0m`;
+const argsError = validateArgs(args);
+if (argsError) {
+    // eslint-disable-next-line no-console
+    console.error(`${red(argsError)}\n`);
+    process.exit(1);
+}
 
-        includedFilterIDs = value
-            .split(',')
-            .map((x) => Number.parseInt(x, 10));
+const flags = parseFlags(args);
+const validationResult = validateFlags(flags);
+
+if (validationResult) {
+    // eslint-disable-next-line no-console
+    if (validationResult.type === 'error') {
+        // eslint-disable-next-line no-console
+        console.error(`\n${red(validationResult.message)}\n`);
+        process.exit(1);
     }
+}
 
-    if (val.startsWith('-s=') || val.startsWith('--skip=')) {
-        const value = val.slice(val.indexOf('=') + 1);
-
-        excludedFilterIDs = value
-            .split(',')
-            .map((x) => Number.parseInt(x, 10));
-    }
-
-    if (val.startsWith('--report=')) {
-        rawReportPath = val.slice(val.indexOf('=') + 1).trim();
-    }
-
-    if (val === '--use-cache') {
-        useCache = true;
-    }
-
-    if (val === '--generate-cache') {
-        generateCache = true;
-    }
-
-    if (val === '--no-patches-prepare') {
-        noPatchesPrepare = true;
-    }
-
-    if (val === '--strip-generated-meta') {
-        stripGeneratedMeta = true;
-    }
-});
+const {
+    includedFilterIDs,
+    excludedFilterIDs,
+    rawReportPath,
+    useCache,
+    generateCache,
+    noPatchesPrepare,
+    stripGeneratedMeta,
+} = flags;
 
 if (useCache && generateCache) {
     // eslint-disable-next-line no-console

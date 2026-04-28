@@ -131,6 +131,59 @@ yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
 Both runs use the exact same cached filter content and strip all volatile
 metadata, so any difference comes solely from the compiler.
 
+#### Command Compatibility
+
+The following flags can be used with `yarn build` and `yarn build:local`:
+
+- `-i=`, `--include=` — comma-separated filter IDs to build (e.g., `--include=1,2,3`)
+- `-s=`, `--skip=` — comma-separated filter IDs to exclude (e.g., `--skip=12,24`)
+- `--report=` — custom report file name (e.g., `--report='report-adguard.txt'`)
+- `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
+- `--strip-generated-meta` — remove volatile metadata lines from built files
+- `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
+- `--generate-cache` — compile filters and update cache only (no platform files)
+
+**Valid combinations:**
+
+```bash
+# Base builds
+yarn build
+yarn build:local
+
+# Filter selection
+yarn build --include=1,2,3
+yarn build --skip=12,24
+yarn build --include=1,2,3 --skip=2   # intersection minus exclusion. Excessive, but it works
+
+# Report output
+yarn build --report='report-adguard.txt'
+
+# Patch and metadata control
+yarn build --no-patches-prepare
+yarn build --strip-generated-meta
+
+# Combined examples
+yarn build --include=1,2,3 --no-patches-prepare --strip-generated-meta
+yarn build:local --skip=12,24 --report='report.txt' --strip-generated-meta
+
+# Cache generation with filter selection
+yarn build --generate-cache
+yarn build --generate-cache --include=1,2,3
+yarn build --generate-cache --skip=12,24
+yarn build --generate-cache --report='report.txt'
+```
+
+**Invalid or ineffective combinations:**
+
+```bash
+# Mutually exclusive flags → script exits with error
+yarn build --use-cache --generate-cache
+
+# --generate-cache exits early; these flags are incompatible → script exits with error
+yarn build --generate-cache --strip-generated-meta
+yarn build --generate-cache --no-patches-prepare
+```
+
 ### Automated Build
 
 The `auto-build` script performs a full build with patches and wildcard domain expansion.

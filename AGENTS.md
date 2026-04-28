@@ -53,7 +53,8 @@ for all supported AdGuard products.
 │       └── <sub-target>/           # extension/ only: chromium, chromium-mv3, edge, firefox,
 │                                   #   opera, opera-mv3, safari, android-content-blocker, ublock
 ├── scripts/                        # All build and utility scripts
-│   ├── build/                      # build.js, constants.js, custom_platforms.js, patches.js
+│   ├── build/                      # build.js, build-config.ts, constants.js,
+│   │                               #   custom_platforms.js, patches.js, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
 │   ├── repository/                 # compress.js — repository compression
 │   ├── translations/               # Locale download/upload tooling
@@ -128,6 +129,12 @@ After completing any task that modifies code in `scripts/`:
 
 7. **Do not modify third-party filter sources.** Files under `filters/ThirdParty/` are managed
    by the upstream filter lists workflow and should not be edited manually.
+
+8. **Synchronise code, tests, and documentation for CLI changes.** When adding or modifying
+   command-line arguments, build flags, or their compatibility rules:
+    - Add or update tests in `scripts/build/__tests__/` covering the new behaviour.
+    - Update the *Command Compatibility* section in `DEVELOPMENT.md`.
+    - Never merge CLI changes without matching tests and documentation.
 
 ## Code Guidelines
 
