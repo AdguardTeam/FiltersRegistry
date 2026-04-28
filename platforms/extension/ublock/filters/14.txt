@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: vSLuoalsH6ZCkBo4Mjm3RA
-! Diff-Path: ../patches/14/14-s-1777353418-3600.patch
+! Checksum: qQobPAr/XaGTqy2JeHuVTg
+! Diff-Path: ../patches/14/14-s-1777359962-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.66.70
-! TimeUpdated: 2026-04-28T05:13:46+00:00
+! Version: 2.2.66.71
+! TimeUpdated: 2026-04-28T07:02:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2531,6 +2531,10 @@ authentisch-maennlich.de,beamten-infoportal.de,bayreuth-region.de,ra-hoernscheme
 ! NOTE: Regular rules
 !
 ! cookie
+riacurrencyexchange.es##body.cookies-no-overflow:style(overflow: auto !important;)
+riacurrencyexchange.es##.cookies-mask:style(display: none !important;)
+apotekfordeg.no##section[x-init*="showConsentModal"]
+||api.netze-bw.de/appscatalog/v*/apps/CookieBanner/
 anadolusigorta.com.tr##body.no__scroll:style(overflow: auto !important; position: static !important;)
 anadolusigorta.com.tr##.nxmCerezWrapper:style(display: none !important;)
 investor.tronox.com##.evergreen-consent-banner
@@ -17482,6 +17486,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229914
+@@||cdn.cookielaw.org/consent/*.json$domain=realsimple.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229955
 @@||reishunger.de/build/assets/cookieConsent-$domain=reishunger.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229404
@@ -25528,6 +25534,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+hgtv.com###welcome-banner
 cinevibe.asia##.inset-0.fixed:style(display: none !important;)
 cinevibe.asia##body:style(overflow: auto !important;)
 ofuse.me##+js(set-local-storage-item, hasAboutFanLetterOpened, true)
@@ -34680,6 +34687,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+folhadelondrina.com.br##.ultimos-posts-container
+folhadelondrina.com.br##.google-news-top
 thegamer.com##.google-addus
 bavarianfootballworks.com##form:has(> div.duet--cta--newsletter)
 techorange.com##aside > div.elementor-widget-template:has(div[data-widget_type="form.default"])
@@ -52725,6 +52734,10 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+time.udn.com##.timeshop
+folhadelondrina.com.br##.mw-desk-bloco-imoveis
+folhadelondrina.com.br##.mw-desk-bloco-ads-1
+folhadelondrina.com.br##.widget-ofertas
 wildberries.ru##.media-placement
 alfabank.ru##div[data-test-id="light-action-steps"]
 alfabank.ru##div[data-test-id="grid"] > div[style$="flex-shrink: 0;"] div[style*="border-image: initial;"]:has(a[href="https://alfabank.ru/alfa-investor/open-acc/"])
