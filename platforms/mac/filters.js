@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.5.56",
-			"timeUpdated": "2026-04-28T21:28:14+0000",
+			"version": "2.1.5.57",
+			"timeUpdated": "2026-04-29T06:56:40+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.63.52",
-			"timeUpdated": "2026-04-29T05:10:48+0000",
+			"version": "2.4.63.53",
+			"timeUpdated": "2026-04-29T06:56:54+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.3.73",
-			"timeUpdated": "2026-04-29T05:10:58+0000",
+			"version": "2.1.3.74",
+			"timeUpdated": "2026-04-29T06:57:05+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.66.85",
-			"timeUpdated": "2026-04-29T05:11:16+0000",
+			"version": "2.2.66.86",
+			"timeUpdated": "2026-04-29T06:57:25+0000",
 			"languages": []
 		},
 		{
@@ -286,8 +286,8 @@
 				"ext_safari",
 				"ext_android_cb"
 			],
-			"version": "2.0.13.34",
-			"timeUpdated": "2026-04-27T22:22:13+0000",
+			"version": "2.0.13.35",
+			"timeUpdated": "2026-04-29T06:57:30+0000",
 			"languages": []
 		},
 		{
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.86.11",
-			"timeUpdated": "2026-04-29T05:11:22+0000",
+			"version": "2.0.86.12",
+			"timeUpdated": "2026-04-29T06:57:32+0000",
 			"languages": []
 		},
 		{
@@ -325,8 +325,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.28.76",
-			"timeUpdated": "2026-04-28T17:38:19+0000",
+			"version": "2.0.28.77",
+			"timeUpdated": "2026-04-29T06:57:34+0000",
 			"languages": []
 		},
 		{
