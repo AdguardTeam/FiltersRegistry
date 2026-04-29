@@ -1,5 +1,5 @@
-! Checksum: 6U1Qj6O+bcDem7RVAkfLIA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1777354970-14400.patch
+! Checksum: +//M62xw3pBu1u9vSpqUUg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1777441192-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.57
@@ -23,7 +23,6 @@ play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=
 ||fileplanet.com^$document,popup
 ||iqtest.com^$document
 windowsreport.com##.code-block
-appuals.com##.appua-reimage-top
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_info_texts
@@ -158,6 +157,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||62.210.9.92^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||167.99.249.47^$document
+||instantfwding.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||5.8.34.26^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -778,7 +778,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||highnessdemon.com^$all
 ||delicioustightbronze.com^$all
 ||markswaitingrouge.com^$all
-||outlaysudden.com^$all
 ||aboveboardcomplicate.com^$all
 ||intriguingajar.com^$all
 ||acrebackcharacter.com^$all
@@ -1278,7 +1277,6 @@ drvhub.net##.driver-item__install
 ||ctrtraffic.com^$all
 ||explorads.com^$all
 ||flurryad.com^$all
-||healthvot.com^$all
 ||mainexpclkdir.com^$all
 ||mediacpc.com^$all
 ||mobuppsrtb.com^$all
@@ -1294,7 +1292,6 @@ drvhub.net##.driver-item__install
 ||newtabsearch.net^$document
 ||ey43.com^$all
 ||rpcs4.com^$all
-||rpcs5.com^$all
 ||androidweblog.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
 ||ytechb.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
 $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|ufl.edu|oecd.org|bu.edu|wikidot.com|alternativenation.net|w3.com|idpf.org|ogp.me|schema.org|detectportal.firefox.com|ocsp.r2m04.amazontrust.com|f.c2r.ts.cdn.office.net|msftconnecttest.com|launcher.thesims3.com
@@ -1314,7 +1311,6 @@ msftconnecttest.com^$csp=upgrade-insecure-requests
 ://ww6.$document,domain=~ww6.generali.pt|~ww6.autotask.net|~ww6.pornhoarder.org
 ://ww7.$document,domain=~ww7.be|~ww7.readsnk.com|~ww7.autotask.net|~ww7.pornhoarder.tv
 ://ww9.$document,domain=~ww9.ikea.com|~ww9.tiki.ne.jp|~ww9.sakura.ne.jp|~ww9.generali.pt|~ww9.itau.com.br|~ww9.autotask.net|~ww9.pornhoarder.tv
-://ww10.$document,domain=~ww10.autotask.net|~ww10.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww11.$document,domain=~ww11.autotask.net|~ww11.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww12.$document,domain=~ww12.autotask.net|~ww12.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww13.$document,domain=~ww13.autotask.net|~ww13.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
@@ -1899,7 +1895,6 @@ spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow'
 ##canvas[data-testid=SnowfallCanvas i]
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
-##div.snow-container:not(:empty)
 /snowfall.min.jquery.js
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
@@ -2341,6 +2336,7 @@ $removeparam=o_sch
 $removeparam=o_xid
 $removeparam=wtExtndSource
 $removeparam=rfsn
+$removeparam=bclid
 $removeparam=afsrc
 $document,removeparam=lcid,domain=~rekono.si
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
@@ -2400,7 +2396,6 @@ $removeparam=a_aid
 $removeparam=ft_source
 $removeparam=ft_medium
 $removeparam=ref_source
-$removeparam=ref_campaign
 $removeparam=spMailingID
 $removeparam=spUserID
 $removeparam=spJobID
@@ -2533,12 +2528,14 @@ $removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
 $removeparam=elqTrack
-ref=rss^$document,removeparam=ref
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
+$removeparam=cx_testId
+$removeparam=cx_testVariant
+$removeparam=cx_artPos
 $removeparam=channable
 $removeparam=int_source
 $removeparam=int_medium
@@ -3157,6 +3154,7 @@ $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||newegg.com^$removeparam=nm_mc
 $removeparam=bsencid
 ||target.com^$removeparam=clkid
+$removeparam=adcampaigngroup
 ||dell.com^$removeparam=dgc
 ||dell.com^$removeparam=VEN1
 ||dell.com^$removeparam=gacd
@@ -3294,7 +3292,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
-$removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||dw.com^$removeparam=maca
 ||fiverr.com^$removeparam=bta
 ||fiverr.com^$removeparam=afp
@@ -3360,7 +3357,6 @@ $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
-$removeparam=mwv_rm
 ||comodo.com^$removeparam=track
 $removeparam=af,domain=1fichier.com|comodo.com
 $removeparam=intcid,domain=cbsnews.com
@@ -3445,7 +3441,6 @@ $removeparam=srsltid,document
 ||dl-protect.$removeparam=rl
 ||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
-$removeparam=%24deep_link,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
 $removeparam=link_source_user_id,domain=nextdoor.com
