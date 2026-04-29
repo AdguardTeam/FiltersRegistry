@@ -1,9 +1,9 @@
-! Checksum: P/ySBaP8GrzubiB1r0yOog
-! Diff-Path: ../patches/17/17-s-1777446010-3600.patch
+! Checksum: ET/MZrfva3aUE04EJoqTYA
+! Diff-Path: ../patches/17/17-s-1777456221-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.35
-! TimeUpdated: 2026-04-29T06:57:30+00:00
+! Version: 2.0.13.36
+! TimeUpdated: 2026-04-29T09:47:39+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -506,12 +506,17 @@ $removeparam=tduid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! ridibooks.com - book detail page reference tracker
+||ridibooks.com^$removeparam=_rdt_sid
+||ridibooks.com^$removeparam=_rdt_idx
+||ridibooks.com^$removeparam=_rdt_arg
 ! 777.ua
 ||777casino.top^$removeparam
 ||uatracer.link^$removeparam
 ||blogostoks.com$removeparam
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230239
 ||change.org^$removeparam=recruited_by_id
+||change.org^$removeparam=recruiter
 ||change.org^$removeparam=share_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228812
 ||kuper.ru^$removeparam=ads_identity_ads_promo_identity_site_uid
