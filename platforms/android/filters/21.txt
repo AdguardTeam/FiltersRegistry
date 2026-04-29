@@ -1,9 +1,9 @@
-! Checksum: Il3nH6AGocC/g5mRxGTfsw
-! Diff-Path: ../patches/21/21-s-1777456198-3600.patch
+! Checksum: dLLDSWNm9R94tqB9RPGUYQ
+! Diff-Path: ../patches/21/21-s-1777466606-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.44.12
-! TimeUpdated: 2026-04-29T09:47:45+00:00
+! Version: 2.0.44.13
+! TimeUpdated: 2026-04-29T12:41:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -43,6 +43,11 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://arena.ai/leaderboard/text
+arena.ai#%#//scriptlet('trusted-set-local-storage-item', 'l-ytcta', 'true')
+! https://github.com/AdguardTeam/AdguardFilters/issues/229966
+muyinteresante.okdiario.com#%#//scriptlet('prevent-addEventListener', 'scroll', 'a.forEach(function(t)')
+muyinteresante.okdiario.com#%#(()=>{const t={construct:(t,e,n)=>{const r=e[0],o=r?.toString(),c=o?.includes("if(null==e?void 0:e.length)");return c&&(e[0]=()=>{}),Reflect.construct(t,e,n)}};window.IntersectionObserver=new Proxy(window.IntersectionObserver,t)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230145
 wccftech.com##.post-google
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229142

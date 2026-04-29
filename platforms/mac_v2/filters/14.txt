@@ -1,9 +1,9 @@
-! Checksum: 609KVdjzX5roC6DVtqFnHg
-! Diff-Path: ../patches/14/14-s-1777456239-3600.patch
+! Checksum: r5Xs+0MDIPRhepS1CR/20w
+! Diff-Path: ../patches/14/14-s-1777466641-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.66.88
-! TimeUpdated: 2026-04-29T09:47:32+00:00
+! Version: 2.2.66.89
+! TimeUpdated: 2026-04-29T12:41:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2590,6 +2590,7 @@ authentisch-maennlich.de,beamten-infoportal.de,bayreuth-region.de,ra-hoernscheme
 !
 ! NOTE: Regular rules
 !
+||l8.nu/cookie/load.js
 unileoben.ac.at##.tx-cookieoptin
 discoveryplus.com#%#//scriptlet('trusted-click-element', '#modal-test-id-consent-modal button.btn--privacy-primary')
 theletter.jp#$##subscription-gate-modal { display: none !important; }
@@ -2959,8 +2960,8 @@ softinfo.ro##.ct-ultimate-gdpr-cookie-popup-10-set
 optimizer.co.jp##.coop-banner
 med.kissei.co.jp###gdpr_conf
 med.meiji-seika-pharma.co.jp,meiji.com##.cookie-agree-wrap
-ispot.pl#$##am-cookie-bar { display: none !important; }
-ispot.pl#$#body { overflow: auto !important; }
+horace.com,ispot.pl#$##am-cookie-bar { display: none !important; }
+horace.com,ispot.pl#$#body { overflow: auto !important; }
 skyscanner.cz#$##cookieBannerContent { display: none !important; }
 scan.co.uk#$#.s-popup { display: none !important; }
 scan.co.uk#$#body.popup-open { overflow: auto !important; }
@@ -36160,6 +36161,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+muyinteresante.okdiario.com##.suscrip-sticky-bottom-suscripciones-zinet
+||davidc1092.sg-host.com/tests/suscripciones_2026/suscripciones_modal.js$domain=muyinteresante.okdiario.com
 tasteatlas.com#%#//scriptlet('set-local-storage-item', 'newsletterShown', 'true')
 cybersecuritynews.com##.tdm-ii-wrap
 rijnmond.nl##.layout-components-group > div.layout-component:has(> div.promobox a[href="/nieuwsbrieven"])
@@ -49815,6 +49818,11 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://arena.ai/leaderboard/text
+arena.ai#%#//scriptlet('trusted-set-local-storage-item', 'l-ytcta', 'true')
+! https://github.com/AdguardTeam/AdguardFilters/issues/229966
+muyinteresante.okdiario.com#%#//scriptlet('prevent-addEventListener', 'scroll', 'a.forEach(function(t)')
+muyinteresante.okdiario.com#%#(()=>{const t={construct:(t,e,n)=>{const r=e[0],o=r?.toString(),c=o?.includes("if(null==e?void 0:e.length)");return c&&(e[0]=()=>{}),Reflect.construct(t,e,n)}};window.IntersectionObserver=new Proxy(window.IntersectionObserver,t)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230145
 wccftech.com##.post-google
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229142
