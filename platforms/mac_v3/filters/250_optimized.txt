@@ -1,5 +1,5 @@
-! Checksum: gGzvh/H6ZpwziY+bgiUJRA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1777598553-14400.patch
+! Checksum: x8YpuGkIlANFEZK7RFbkLQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1777614542-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.59
@@ -24,6 +24,7 @@ play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=
 ||iqtest.com^$document
 windowsreport.com##.code-block
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
+ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.sidebar_download_inner
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_info_texts
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
@@ -448,6 +449,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||onlinesurfsafe.com^$all
 ||onmicrosoft.co^$all
 ||oomcast.com^$all
+||optvz.com^$all
 ||ourdreamersai.com^$all
 ||pagemaster.net^$all
 ||phoneprivacycloud.com^$all
@@ -565,7 +567,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 95.181.172.204$network
 !+ PLATFORM(windows, mac, android, cli)
 /^194\.226\.139\.[12]?\d?\d$/$network
-||drugcoupons.xyz^$document
 !+ PLATFORM(windows, mac, android, cli)
 147.135.16.27$network
 apkfab.com##.tip-extension
@@ -886,7 +887,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##div[class*=social_sidebar]
 ##div[class*=social_slide]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=socials-share]
-##div[class^=icon-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class^=share-options]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class^=shareLinks]
 ##div[class^=social-like]
@@ -1077,7 +1077,6 @@ rawstory.com##.share-popup.rm-stats-tracked
 ||syndication.twitter.com/srv/timeline-profile^$third-party
 ##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
 ##.goo-pref:is(a,div)
-chromewebstore.google.com##div[aria-labelledby=promo-header]
 ##.chrome-footer:not(html, body)
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
@@ -1669,7 +1668,6 @@ $removeparam=ASUBID
 $removeparam=ASID
 $removeparam=cm_sp
 $removeparam=cm_re
-$removeparam=refer_code
 $removeparam=AFID,domain=~chggtrx.com|~state.gov
 $document,removeparam=campaignid
 $removeparam=loc,document,domain=bestbuy.*|shopping.google.com
@@ -2726,8 +2724,6 @@ $removeparam=mweb_loid,domain=reddit.app.link
 $removeparam=mweb_loid_created,domain=reddit.app.link
 $removeparam=tags,domain=reddit.app.link
 ||adjust.com^$removeparam=adgroup
-$removeparam=xcreo
-||skimresources.com^$removeparam=xed
 $removeparam=rffrid
 $removeparam=ad_name
 ||deezer.com^$removeparam=deferredFl
@@ -2744,6 +2740,7 @@ $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=rec,domain=argos.co.uk|roboform.com
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
+$removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
 ||comodo.com^$removeparam=track
@@ -2789,7 +2786,6 @@ $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
-$removeparam=sub,domain=allboner.com|twinkvideos.com
 ||fandom.com^$removeparam=so
 ||lindex.com^$removeparam=affiliate_source
 ||tumblr.com^$removeparam=is_related_post
@@ -2846,7 +2842,6 @@ $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com
 ||github.com^$removeparam=ref_loc
 ||github.com^$removeparam=ref_page
 ||quizlet.com^$removeparam=funnelUUID
-||quizlet.com^$removeparam=signupOrigin
 $removeparam=qid,domain=bookdepository.com|eastday.com
 ||xiaohongshu.com^$removeparam=app_platform,document
 ||xiaohongshu.com^$removeparam=app_version,document
