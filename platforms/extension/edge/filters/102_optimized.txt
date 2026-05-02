@@ -1,9 +1,9 @@
-! Checksum: luoxESh/zmvUG2tQBv5iVA
-! Diff-Path: ../patches/102_optimized/102_optimized-s-1777309517-14400.patch
+! Checksum: QSnIvhxoYyxdzjKWTBDo5A
+! Diff-Path: ../patches/102_optimized/102_optimized-s-1777726245-14400.patch
 ! Title: ABPindo (Optimized)
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.9.60
-! TimeUpdated: 2026-04-27T17:02:05+00:00
+! Version: 2.0.9.61
+! TimeUpdated: 2026-05-02T12:47:12+00:00
 ! Expires: 10 days (update frequency)
 ||188affiliates.com^$third-party
 ||accesstrade.co.id^$third-party
@@ -324,6 +324,7 @@ _iklan_|$image
 ||komikcast.*/wp-content/uploads/*.gif$image,~third-party
 ||kompas.com/data/banner/
 ||kotakgame.com/images/bnr/partner/*.jpg
+||kuyhaa.me/pmbut.js
 ||layarkeren.*/wp-content/uploads/*.gif$image
 ||linkgenerator.xyz$script,third-party
 ||lytogame.com/images/partner/$third-party
@@ -387,6 +388,7 @@ $popup,domain=animekompi.*|kiryuu.id|kiryuu.org|kiryuu03.*|komikstation.co|manga
 dicrotin.*#%#//scriptlet('ubo-abort-on-property-read', 'SGPB_POPUP_PARAMS')
 animekompi.*#%#//scriptlet('ubo-abort-on-property-write', 'MutationObserver')
 lk21semi.*#%#//scriptlet('ubo-acs', 'chp_ads_blocker_detector')
+kuyhaa.me#%#//scriptlet('ubo-acs', 'document.addEventListener', 'window.open')
 doroni.me#%#//scriptlet('ubo-acs', 'getComputedStyle', '', 'cpm')
 info.vebma.com#%#//scriptlet('ubo-aeld', 'click', 'linkOpened')
 moutogami.com#%#//scriptlet('ubo-aeld', 'load', '/adblock/i')
@@ -1134,6 +1136,7 @@ bola.com,bola.net,dream.co.id,fimela.com,kapanlagi.com,liputan6.com,merdeka.com,
 jawapos.com,mamikos.com###in_image
 republika.co.id###inscroll-banner-home
 detik.com###inventory-p5
+jpnn.com###jpnn_m_nasional_medrec
 harakahdaily.net###jsemrp_372_719
 harakahdaily.net###jsemrp_373_873
 harakahdaily.net###jsemrp_374_469
@@ -1353,6 +1356,7 @@ autonetmagz.com##.anm__flying--ads-holder
 jpnn.com##.ans-300x250
 hellosehat.com##.article-bottom-ad
 hellosehat.com##.article-desktop-ad
+goodnewsfromindonesia.id##.article-photos-ads
 tirto.id##.article-sidebar
 cantika.com##.artikel-rekomendasi-blue
 inews.id##.asideAds
@@ -1511,7 +1515,6 @@ okezone.com##.container-skin-ads
 kompas.tv##.container_skinad
 tribunnews.com##.content [style="width:160px; height:600px;"]
 sindonews.com#$#.content-paralax { top: 0!important; }
-tvonenews.com##.content_center.mobile-only.sticky-bottom.slotiklan-320x100
 dailysocial.id##.cover-ads-article
 kapanlagi.com##.crm-wrapper
 carisinyal.com##.ct-section-inner-wrap > article + aside
@@ -1633,6 +1636,7 @@ kontan.co.id##.kus
 starringheavenlyrics.blogspot.com##.lalulintas
 gooto.com##.lanjutkan.bggrey
 metrotvnews.com##.layout_topads
+medcom.id##.leaderboard
 dwanonton.*##.left.banner-vertical
 lapar.com##.leftcontent[style="padding:0px; margin:0px auto; height:250px; width:720px; border:0px; background:none; "]
 kabargames.id##.legend_banner-container
@@ -1707,6 +1711,8 @@ bacasaja.id##.no_auto_ads
 detik.com##.normalbanner
 animeindo.id##.nyaa300
 animeindo.id##.nyaa728
+harianbasis.co##.oduu-ads
+harianbasis.co##.oduu-banner-billboard
 kompas.com##.ol_big_inner
 kompas.com,kompasiana.com,sonora.id##.osmplaceonsite.ads-partner-wrap
 detik.com##.otp_banner_close
@@ -1772,6 +1778,7 @@ inews.id##.rowx
 republika.co.id##.scrollToRead
 republika.co.id##.scrollToRead + .container:has( > .content)
 uzone.id##.section-ads-mid
+katadata.co.id##.section-affiliate
 vnn.co.id##.section.Atas.Iklan
 duwitmu.com##.section_sticky_ads_bottom
 semprot.com##.semprotnenenmontok_2
@@ -1784,6 +1791,7 @@ terabox.app##.share-embed-container > .shadow
 doroni.me,doronime.id##.show.Popup
 kompas.com##.show.ol_promo
 metrotvnews.com##.showcase
+wowkeren.com##.sidebar-box[style]
 realitakita.com##.site-sticky-bottom
 ninemanga.com##.sitemaji_banner
 satujuang.com##.sj-ads-parallax-wrap
@@ -1801,6 +1809,8 @@ okezone.com##.skyscrapper
 bisnis.com##.skyscrapper--left
 bisnis.com##.skyscrapper--right
 zigi.id##.slot-iklan
+tvonenews.com##.slotiklan-320x100
+tvonenews.com##.slotiklan-custom-desktop
 sahijab.com##.small-mobile-banner
 cnbcindonesia.com,haibunda.com##.smartbanner_new
 hipwee.com##.spb_middle.spb_banner
@@ -1855,6 +1865,7 @@ medcom.id##.widebanner.banner
 komiku.com##.widget_text:has([href^="https://shope.ee/"])
 cantika.com##.width-ads
 cantika.com##.width-ads-leader
+sumbardaily.com##.wp-block-image
 cdramabase.com##.wpa
 bolatimes.com,dewiku.com,guideku.com,himedik.com,hitekno.com,mobimoto.com##.wrap-ads-leaderboard
 bolatimes.com,dewiku.com,guideku.com,himedik.com,mobimoto.com##.wrap-ads-r
@@ -1867,7 +1878,7 @@ kontan.co.id##[class*="heightads"]
 s.id##[class^="AdUnit"]
 astroawani.com##[class^="Advertisement_ads_container"]
 jalantikus.com##[class^="ad-"][class*="-container"]
-kompas.tv##[class^="ads-"]
+kompas.tv,medcom.id##[class^="ads-"]
 emitennews.com##[class^="ads-space-"]
 wisatalova.com##[class^="wisat-"]
 kumparan.com#?#[data-qa-id="desktop-article-page-below-images"]:has(span:contains(/ADVERTISEMENT/i))
@@ -1933,6 +1944,7 @@ hotabis.com##a[href^="http://www.pembesar-vimax-herbal.com/"]
 animebatch.web.id,animeindo.co,eka.web.id,filmbioskop21.com,kazefuri.web.id,mangaku.in,mangashiro.net,neonime.net,nontonbioskop21.org,nontonsub.com,subindo.id##a[href^="https://bit.ly/"]
 awsubs.id,bioskop45.com,drakorindo.tv,idbioskop.com,nonton33.net##a[href^="https://goo.gl/"]
 komikindo.co##a[href^="https://shope.ee/"]
+thebalitimes.com##a[href^="https://www.amazon.com/s"]
 otakudesu.pro##a[rel^="nofollow noopener"] > img[src$=".gif"]
 republika.co.id##a[style="width: 100%; height: 100%; display: block; position: fixed; z-index: 1"]
 mangakita.net##a[title^="manga4d"]
@@ -1981,6 +1993,7 @@ katadata.co.id##div:has( > [id^="div-gpt-ad"][class^="paralax"])
 kiryuu03.com##div[class*="ads-header"]
 samehadaku.*##div[class*="player-iklan"]
 nontonanimeid.*##div[class^="adspost"]
+jpnn.com##div[class^="ans-"]
 oploverz.*##div[class^="fixed"]
 nimegami.*##div[class^="iklan_banner"]
 wolipop.detik.com##div[data-ads]
@@ -2011,6 +2024,7 @@ inilah.com##div[style="height: 278px; width: 100%; background-color: rgb(239, 23
 situshp.com##div[style="height:260px;"]
 inilah.com##div[style="height:278px;width:100%;background-color:#efefef;display:flex;align-items:center;justify-content:center;gap:1px"]
 antaranews.com##div[style="min-width:300px;min-height:250px;"]
+antaranews.com##div[style="min-width:336px;min-height:280px;"]
 tabloidbintang.com##div[style="position:absolute; top:20px; left:45px; width:70px; background:#000; text-align:center;"]
 cnbcindonesia.com##div[style="z-index:65; position: fixed; bottom:0;  isolation:isolate;display: block; width:100%;"]
 beritaharian.sg##div[style^="background-image: linear-gradient"]
