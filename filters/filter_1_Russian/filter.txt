@@ -11,6 +11,9 @@
 ! Good: .org/ads/
 ! Bad: .org/ads/$domain=example.org (for instance, should be in speficic.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230427
+||com/services/?rt=$script,third-party
+||com/services/?fx=$script,third-party
 ! Kinogo player
 /kinogo/js/ads/*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205747
@@ -1437,6 +1440,9 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||tallertorn.com^
+||deltarockme.com^
+||beesratyou.com^
 ||trorqeok.com^
 ||merilrise.com^$third-party
 ||elonreptiloid.pw^$third-party
@@ -7337,6 +7343,7 @@ gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,chehov-vid.ru,161.ru
 !
 ! NOTE: Specific rules
 !
+ex-fs.net#%#//scriptlet("abort-current-inline-script", "document.createElement", "'script'")
 russeeders.top##a[href*="https://download.cdn.yandex.net/"]
 ||habr.com/img/u-shaped-*.webp
 habr.com#$#.p-shaped { display: none !important; }
