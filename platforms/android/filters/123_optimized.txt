@@ -1,9 +1,9 @@
-! Checksum: 4dEB8jnfYuYsG0A3ekNICQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1777771207-14400.patch
+! Checksum: uclDdNpVBMtH2yOJ6CveGg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1777786953-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.60.94
-! TimeUpdated: 2026-05-03T01:17:06+00:00
+! Version: 2.1.60.95
+! TimeUpdated: 2026-05-03T05:39:33+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -36,6 +36,7 @@
 /fbfooter.svg
 /fbshare.js
 /fbshare.png
+/fbshare2.png
 /floating-wpp.min.js
 /follow-twitter-
 /follow-twitter.
@@ -342,7 +343,6 @@ _social_bookmark/
 ###menu-item-twitter
 ###menu-reseaux-sociaux
 ###menu-share
-###menu-share-float
 ###menu-social
 ###menu-social-1
 ###menu-social-2
@@ -424,7 +424,6 @@ _social_bookmark/
 ###shareActions
 ###shareArticle
 ###shareBar
-###shareBarBottom
 ###shareBarTop
 ###shareBarWrapper
 ###shareBlock
@@ -967,7 +966,6 @@ _social_bookmark/
 ##.b-share-button
 ##.b-share-media__main-position
 ##.b-sharelist
-##.b-sidebar-social
 ##.b-social-icons
 ##.b-social-share
 ##.b-socials
@@ -1115,7 +1113,6 @@ _social_bookmark/
 ##.cff-share-tooltip
 ##.ci-socials-ignited
 ##.cmg-share-bar
-##.cnbc-share-top
 ##.col-sharing
 ##.col-social
 ##.column-social
@@ -2361,6 +2358,7 @@ _social_bookmark/
 ##.share-icon-container
 ##.share-icon-list
 ##.share-icon-small
+##.share-icons-bottom
 ##.share-icons-box
 ##.share-icons-list
 ##.share-icons-sticky-box
@@ -2469,6 +2467,7 @@ _social_bookmark/
 ##.share-twitter
 ##.share-twitter-icon
 ##.share-vertical
+##.share-via-facebook
 ##.share-viber
 ##.share-video
 ##.share-video-link
@@ -2603,6 +2602,7 @@ _social_bookmark/
 ##.share_panel
 ##.share_pinterest
 ##.share_post
+##.share_posts
 ##.share_row
 ##.share_social
 ##.share_story
@@ -2634,7 +2634,6 @@ _social_bookmark/
 ##.sharebottom
 ##.sharebox
 ##.sharebtn
-##.sharebtns
 ##.sharebutt
 ##.sharebutton
 ##.sharebuttons
@@ -2659,6 +2658,7 @@ _social_bookmark/
 ##.sharelist__items
 ##.sharepage
 ##.sharepanel
+##.sharepanel-wrapper
 ##.sharepinterest
 ##.sharepop
 ##.sharepost
@@ -2961,6 +2961,7 @@ _social_bookmark/
 ##.social-main-footer
 ##.social-media-bar
 ##.social-media-column
+##.social-media-fixed
 ##.social-media-footer
 ##.social-media-header
 ##.social-media-li
@@ -3002,6 +3003,7 @@ _social_bookmark/
 ##.social-print
 ##.social-profile-icons
 ##.social-profiles
+##.social-profiles-nav
 ##.social-profiles-widget
 ##.social-promo
 ##.social-prompt
@@ -3121,6 +3123,7 @@ _social_bookmark/
 ##.socialFollow
 ##.socialFooter
 ##.socialHeader
+##.socialHolder
 ##.socialHubIcon
 ##.socialHubInnerDiv
 ##.socialHubWrapper
@@ -3608,7 +3611,6 @@ _social_bookmark/
 ##SOCIAL-SHARING
 ##TWITTER-SHARE-BUTTON
 ##[data-social="share"]
-##[data-target="#social-share"]
 ##[data-target="share-review"]
 ##[data-testid="prism-share"]
 ##[data-xtclick^="social::"]
@@ -3832,7 +3834,6 @@ salon.com###social_total
 nsctotal.com.br,pastebin.pl###socials
 motortrend.com###socialshare_title
 news.crunchbase.com###ss-sticky-bar
-spiked-online.com###sticky-sharing
 rfa.org###storytoptools
 osxdaily.com###subscribe_box
 thenewstack.io###tns-footer-bar
@@ -3851,11 +3852,9 @@ newscientist.com##.ArticleHeader__SocialWrapper
 nordvpn.com##.BlogPost__social-block
 cnbc.com##.CNBCFooter-social
 abc.net.au##.FixedHeader_shareBtn__yNush
-i24news.tv##.Footer_social-network-links-wrapper__xN9Go
 ndtv.com##.FtrScl
 indianexpress.com##.G-folow-button
 meduza.io##.GeneralMaterial-module-share
-newsweek.com##.GooglePreferredSourceBanner_container__4kWoo
 birminghammail.co.uk,bristolpost.co.uk,dailyrecord.co.uk,irishstar.com,liverpoolecho.co.uk,manchestereveningnews.co.uk,stokesentinel.co.uk,themirror.com,walesonline.co.uk##.GooglePreferredSource_wrapper__lSRA6
 cnbc.com##.HighlightShare-container
 apnews.com##.Infobox
@@ -3908,6 +3907,7 @@ sciencex.com##.article_info-goog
 thespectator.com##.article_set_wrap
 news18.com##.article_socials
 news18.com##.artshare
+attitude.co.uk##.at-article__social
 secretchicago.com,secretldn.com##.author-share-buttons
 adweek.com##.aw-social-share-container
 bnnbloomberg.ca,cp24.com,ctvnews.ca,irishnews.com,thedailybeast.com,tsn.ca##.b-share-bar
