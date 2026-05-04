@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.5.61",
-			"timeUpdated": "2026-05-02T19:26:12+0000",
+			"version": "2.1.5.62",
+			"timeUpdated": "2026-05-04T05:14:36+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.64.54",
-			"timeUpdated": "2026-05-04T03:13:37+0000",
+			"version": "2.4.64.55",
+			"timeUpdated": "2026-05-04T05:14:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.27.77",
-			"timeUpdated": "2026-05-04T03:13:49+0000",
+			"version": "2.1.27.78",
+			"timeUpdated": "2026-05-04T05:15:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.21",
-			"timeUpdated": "2026-05-03T17:22:07+0000",
+			"version": "2.0.86.22",
+			"timeUpdated": "2026-05-04T05:15:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -692,8 +692,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.74.79",
-			"timeUpdated": "2026-05-03T18:24:42+0000",
+			"version": "2.0.74.80",
+			"timeUpdated": "2026-05-04T05:15:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1192,8 +1192,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.58.50",
-			"timeUpdated": "2026-05-04T00:50:49+0000",
+			"version": "2.1.58.51",
+			"timeUpdated": "2026-05-04T05:15:33+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
