@@ -1,14 +1,14 @@
-! Checksum: 9yJPGjEtgA80WcZaF/TTjg
-! Diff-Path: ../patches/243/243-s-1777799111-14400.patch
+! Checksum: V3Cgpxz+Hq+DQ/yZBh+Cww
+! Diff-Path: ../patches/243/243-s-1777873557-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.46
-! TimeUpdated: 2026-05-03T09:02:38+00:00
+! Version: 2.0.24.47
+! TimeUpdated: 2026-05-04T05:43:31+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-05-03 09:19:01 CEST
+! Last modified: 2026-05-04 07:10:27 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -814,7 +814,7 @@ husbilskompisar.se##body > div + div:has(.mantine-Button-label)
 husbilskompisar.se##main > div:first-child:has(a[rel*="sponsored"])
 husbilskompisar.se##.mantine-Modal-root, a[rel^="sponsored"]
 husbilsplats.se##div[id^="husbi-"]
-husbilsskolan.se##.elementor-image a[target="_blank"]
+husbilsskolan.se##:is(.elementor-image, .elementor-widget-image) a[target="_blank"]
 husbil.se#?#.articleintroduction strong:contains(/samarbete/i):upward(li.item)
 husbil.se##.ui-top-adversite, #optin-cover, #optin
 husbyggaren.se##div[id^="nordi-"]
@@ -894,7 +894,7 @@ kandisvarlden.com#%#//scriptlet('ubo-acs', 'disableEnterKey')
 kandisvarlden.com#$#.unselectable { -moz-user-select:unset!important; -webkit-user-select:unset!important; cursor:unset!important; }
 kardemummagumman.se###custom_html-2
 karinrahm.se#$#.thb-page-transition-on { opacity:1!important }
-karinrahm.se,sydasien.se##.thb-cookie-bar
+karinrahm.se,sydasien.se,magasindagg.se##.thb-cookie-bar
 karlskogavaxer.se,molndalvaxer.se#?#.elementor-heading-title:contains(/annons/i):upward(.elementor-column)
 karriarlakare.se##a[target][onclick], #cliSettingsPopup
 karriarlakare.se#?#.annons-label:upward(a)
@@ -948,9 +948,9 @@ kultmagasin.se##a[href*="/annonsering"]
 kultur1.se##a[href^="openadd"]
 kulturbloggen.com,schack.se##.sidebar .widget_custom_html
 kulturdelen.nu##:is(.vl-post-item, .vl-thumb):has(a[href*="casino"], a[href*="betting"])
-kurera.se##.newsletter-popup
 kurera.se##.pc-das, [data-ad-type]
 kurera.se##.post-card:has(a[href*="ad=native"])
+kurera.se,magasindagg.se##.newsletter-popup
 kvalitetsmagasinet.se,miljo-utveckling.se,techtidningen.se,vdtidningen.se###subscribe_splash, [class*="nativeadwidget"], .partnermedia, .annonswidget
 kwiss.me##.square-item:has(.qz-quiz-sponsored)
 kyrkpressen.fi###list_banners_right_top, #list_banners_top
@@ -999,7 +999,7 @@ livetsgoda.se,betongforeningen.se,espressomedia.se,ordfrontmagasin.se,europaport
 livetsgoda.se,bfn.se,biblioteksforeningen.se#$#body { opacity:unset!important }
 livinguppsala.se#?#.fusion-post-content-container:contains(/^annons/i):upward(article)
 livsmedelsnyheter.se#?#div[class*="elementor-widget-text-editor"][data-widget_type="text-editor.default"] > .elementor-widget-container > p:contains(SPONSRAT):upward(.jet-listing-grid__items)
-livsmedelsnyheter.se##.jet-popup
+livsmedelsnyheter.se,signprint.se##.jet-popup
 ljudochbild.se#$##MoreLink_content-container { height:unset!important; }
 ljudochbild.se###MoreLink_fade-out-div
 ljudochbild.se#?#.Annonsinnehåll:upward(.maincol)
@@ -2107,7 +2107,7 @@ zeromagazine.nu##div[id^="ads"]
 /ajax/ads.php$domain=garaget.org
 /ajax/docu_stats.jsp
 /aller-ads$domain=~seiska.fi
-/analytics$domain=gbgfotboll.se|stff.se|svenskfotboll.se|di.se|etc.se|vackertvader.se|skogsforum.se|skolporten.se|sjf.se|rimlab.se|alandsradio.ax|dagen.se|global.morningstar.com|vidzflow.com|vinia.se|kvartal.se|shortcut.se
+/analytics$domain=gbgfotboll.se|stff.se|svenskfotboll.se|di.se|etc.se|vackertvader.se|skogsforum.se|skolporten.se|sjf.se|rimlab.se|alandsradio.ax|dagen.se|global.morningstar.com|vidzflow.com|vinia.se|kvartal.se|shortcut.se|inredningsvis.se
 /analytics-bmb
 /analytics/collect|
 /analytics/cts.min.js
@@ -3290,6 +3290,7 @@ _banner.php?$domain=tvmatchen.nu
 ||liveagent.se/scripts/track
 ||live-tag.creatopy.net^$third-party
 ||load.lite.lchfarkivet.se^$script
+||load.znq.tt.se^
 ||logger.tv.nu^
 ||logsnag.com^$third-party
 ||logs.sesamy.com/events
