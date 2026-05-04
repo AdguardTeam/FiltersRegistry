@@ -1,8 +1,8 @@
-! Checksum: x+ebv3jr4t6sUoDk72EheQ
+! Checksum: +IAK91WzAqPKdMx5Ix/KpA
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.3.90
-! TimeUpdated: 2026-05-04T12:42:21+00:00
+! Version: 2.1.3.91
+! TimeUpdated: 2026-05-04T14:50:02+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -182087,6 +182087,10 @@ _tracking.php?b=
 ! Reduce lifetime for a cookie that is used to store persistent user ID
 $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
+! Yandex.Metrika
+mexc.com,2gis.*,spletnik.ru#%#//scriptlet('set-local-storage-item', '/^_ym/', '$remove$')
+mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
+!
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/3973
 ! Probably caused by overriding "dataLayer.push" function
 ||google-analytics.com/analytics.js$script,redirect=google-analytics,domain=~olx.*|~banki.ru|~bigc.co.th|~sonos.com|~hepsiburada.com
@@ -182135,6 +182139,15 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||static.mocortech.com/mx-fingerprintjs/
+||static.mocortech.com/mx-remote-packages/mxc-web-remote-script/lib/tag_ww.js
+||static.mocortech.com/mx-remote-packages/mxc-web-remote-script/lib/ytag.js
+||mexc.com/staticjs/tag.js
+mexc.com#%#//scriptlet('set-local-storage-item', 'mexc_local_fingerprint_visitorId', '$remove$')
+mexc.com#%#//scriptlet('set-local-storage-item', 'mexc_local_fingerprint', '$remove$')
+mexc.com#%#//scriptlet('set-local-storage-item', 'mexc_local_fingerprint_sys_info', '$remove$')
+mexc.com#%#//scriptlet('set-local-storage-item', 'mexc_fingerprint_all_config_init_time', '$remove$')
+mexc.com#%#//scriptlet('set-local-storage-item', '__watchman_anonymous_id$$_', '$remove$')
 ||static.fd.nl/assets/fdmg-tag-manager/
 ||pd5sngsre3.net/g/hn.js
 ||m.media-amazon.com/images/I/*/BotCXMetricsCollectionJSAsset
@@ -183871,7 +183884,6 @@ arstechnica.com###story-recommendations
 ||ieq-systems.de/includes/piwikQ.js
 ||player.ivideosmart.com/ivsplayer/*/moat-tracker.js
 ||nexon.com/nxlog-collect/
-2gis.*#%#//scriptlet('set-local-storage-item', '/_ym/', '$remove$')
 ||tags.stepstone.com/utag/*/prod/utag.js
 ||static.posta.com.tr/scripts/tracking/dailymotion-event.min.js
 ||afkgaming.com/scooby/api/v1/log/event|
@@ -186514,8 +186526,8 @@ abp?type=js&session$domain=prosieben.de|sat1.de|kabeleins.de|sixx.de|prosiebenma
 ||scripts.hepsiburada.net/assets/analytics/analytics.*.js
 ||airbnb.*/tracking/
 ||googleadservices.com/pagead/conversion_async.js
-||analytics.twitter.com/i/adsct?
-||t.co/i/adsct?
+||analytics.twitter.com/*/adsct?
+||t.co/*/adsct?
 ||linkedin.com/*/rum-track?
 ||media.licdn.com/cdo/rum/id?
 ||sendsay.ru/js/target/tracking.js
@@ -187592,6 +187604,8 @@ dreamprogs.net##td[width="88"][height="31"]
 ||ztat.net/*/webtrekk.min.js^
 ||google.com/log?$redirect=nooptext
 ||yandex.ru/clck/click|
+! AdRiver
+spletnik.ru#%#//scriptlet('set-local-storage-item', 'adrcid', '$remove$')
 !
 discord.com#%#//scriptlet('prevent-xhr', '/discord\.com\/api\/v[0-9]+\/science/')
 discord.com#%#//scriptlet('prevent-fetch', '/discord\.com\/api\/v[0-9]+\/science/')
@@ -189422,6 +189436,10 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! mexc.com
+||mexc.com^$cookie=sensorsdata2015jssdkcross
+||mexc.com^$cookie=sajssdk_2015_cross_new_user
+||mexc.com^$cookie=mxc_home_advertising_redhot_isclick
 ! abc.net.au
 ||abc.net.au^$cookie=/^ABC_Snowplow_id/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229676
