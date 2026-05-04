@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: e9wGmL+j9TBsNXDt1xAJag
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1777859106-3600.patch
+! Checksum: UmBkyR2JDnyiFi91aVFfow
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1777864636-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.64.53
-! TimeUpdated: 2026-05-04T01:41:15+00:00
+! Version: 2.4.64.54
+! TimeUpdated: 2026-05-04T03:13:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10708,6 +10708,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230417
+vidbox.dev##+js(prevent-fetch, method:HEAD)
+vidbox.dev##+js(no-setTimeout-if, getComputedStyle)
+vidbox.dev##div[aria-labelledby="adblock-title"]:style(display: none !important;)
+vidbox.dev##html:style(overflow: auto !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230473
 waredata.com###adblock-overlay
 waredata.com###adblock-backdrop
@@ -37235,6 +37240,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+vidbox.dev##section[aria-label="Sponsored content"]
 azcentral.com##aside[aria-label="advertisement"]
 azcentral.com##.gnt_tba
 positioniseverything.net##+js(abort-current-script, atob, showModal)
