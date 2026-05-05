@@ -1,9 +1,9 @@
-! Checksum: xxEDLvm1ZxYfvlMA/Yi1yw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1777873560-14400.patch
+! Checksum: 4npCOugHBwl6i01diLpmxQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1778000735-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.47
-! TimeUpdated: 2026-05-04T05:43:31+00:00
+! Version: 2.0.24.48
+! TimeUpdated: 2026-05-05T17:02:58+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -293,6 +293,7 @@ breakit.se##:is(section[class*="Article_layout"], article):has(div[class*="Spons
 bredband.se,telepriskollen.se,kontantkort.se,simkort.se,xn--fackfrbund-icb.com##.wcc-overlay, .wcc-consent-container
 bredband.se,telepriskollen.se,kontantkort.se,simkort.se,xn--fackfrbund-icb.com#$#.wcc-popup-overflow { overflow:unset!important; }
 brollopsguiden.se#?#div[class^="cookie-banner"]:upward(div[data-portal="true"])
+brollopsguiden.se###cookiescript_injected_wrapper
 brukshunden.se##.article-content:has(.bgcolor-ad-card)
 brukshunden.se##.cm-ad, .bgcolor-ad-card
 bucketlistmagazine.se#?#.elementor-heading-title:contains(Annons):upward(a)
@@ -736,7 +737,8 @@ helahisingen.se###custom_html-15, .code-block img, .banner-promotions-wrapper, a
 helahisingen.se##.latest-posts-grid:has(a[href*="/annons/"])
 helahisingen.se#?#.post-excerpt:contains(ANNONS):upward(.post)
 helahisingen.se,xn--sporthnt-5za.se,stockholmblaljus.se,filmextra.se,halmstadsport.se###af-preloader
-helastadenuppsala.nu##.elementor-widget-image:has(a:not([href*="helastadenuppsala.nu"]))
+helastadenuppsala.nu##.below_header_front_page
+helastadenuppsala.nu##:is(.elementor-widget-image, .widget_media_image):has(a:not([href*="helastadenuppsala.nu"]))
 helgon.se##[id*="banner"], a[href^="https://ad."], a[href^="https://ad2."]
 hellofresh.se##a[data-test-id^="top-banner-ad"], div[data-test-id="exit-intent-banner"], div[data-test-id="urgency-banner-modal"], a[data-test-id="side-banner-ad-link"]
 hembygd.se##bs-modal-backdrop
@@ -2555,6 +2557,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/popup$domain=ordfrontmagasin.se|snowmobile.se|forvaltarforum.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|jobsinsweden.se
 /plugins/pressidium-cookie-consent$script,domain=undervarttak.se|radiotreby.se
 /plugins/pum-$script,domain=snowmobile.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se
+/plugins/qte-native-ads$script
 /plugins/quantcast-choice$script,domain=javligtgott.se|villalivet.se
 /plugins/quick-adsense
 /plugins/r9-analytics
