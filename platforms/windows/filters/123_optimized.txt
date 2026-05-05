@@ -1,9 +1,9 @@
-! Checksum: b+t2jejw7vfbOeZ7sRSnjQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1777943549-14400.patch
+! Checksum: IOtS6lLmB80fa1o6Wb5B7w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1777959163-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.61.6
-! TimeUpdated: 2026-05-05T01:08:55+00:00
+! Version: 2.1.61.7
+! TimeUpdated: 2026-05-05T05:29:17+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -546,7 +546,6 @@ _social_bookmark/
 ###social-follow
 ###social-foot
 ###social-footer
-###social-head
 ###social-header
 ###social-icons-block
 ###social-instagram
@@ -589,7 +588,7 @@ _social_bookmark/
 ###social-yt
 ###social2
 ###socialBar
-###socialButton
+###socialBlog
 ###socialButtonOnPage
 ###socialButtons
 ###socialConnect
@@ -753,6 +752,7 @@ _social_bookmark/
 ##.Header-social
 ##.Header-socialIcons
 ##.Hero-Share-SocialLink
+##.IconSocialMedia
 ##.LineShareButton
 ##.ListSocial
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
@@ -868,6 +868,7 @@ _social_bookmark/
 ##.aol-share
 ##.app_btn_share
 ##.app_share_mod
+##.append_social_share
 ##.aps-social-icon-wrapper
 ##.apsc-facebook-icon
 ##.apsc-icons-wrapper
@@ -942,6 +943,7 @@ _social_bookmark/
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
 ##.at-share-btn
+##.at4-jumboshare
 ##.author-bio__social
 ##.author-card__social
 ##.author-follow-button
@@ -1028,7 +1030,6 @@ _social_bookmark/
 ##.bottom-social
 ##.bottom-social-share
 ##.bottom-socials
-##.bottom__share
 ##.bottom_share
 ##.bottom_social
 ##.box-facebook
@@ -1156,7 +1157,6 @@ _social_bookmark/
 ##.dark-social
 ##.dashicons-facebook
 ##.dashicons-twitter
-##.dd-social
 ##.ddc-social-share
 ##.desktop-share
 ##.desktop-social
@@ -1899,7 +1899,6 @@ _social_bookmark/
 ##.logo-social
 ##.lsi-social-icons
 ##.lst-shrpst
-##.lst-social
 ##.lst_social
 ##.lzd-follow-us-icon
 ##.m-footer-social
@@ -1926,6 +1925,7 @@ _social_bookmark/
 ##.main-nav-social
 ##.main__share
 ##.mashfs-popup-share
+##.mashicon-share
 ##.mashsb-box
 ##.mashsb-container
 ##.masterSocialbutton
@@ -2087,6 +2087,7 @@ _social_bookmark/
 ##.parent-shareBox
 ##.pathSocialIcons
 ##.pbtsharethisbutt
+##.pdb-share
 ##.pen_social_networks
 ##.penci-social-share-footer
 ##.penci-social__content
@@ -2556,7 +2557,6 @@ _social_bookmark/
 ##.share_area
 ##.share_article
 ##.share_bar
-##.share_bar_wrapper
 ##.share_blk
 ##.share_block
 ##.share_bottom
@@ -2953,7 +2953,6 @@ _social_bookmark/
 ##.social-list-container
 ##.social-list-footer
 ##.social-list-icon
-##.social-main-footer
 ##.social-media-bar
 ##.social-media-column
 ##.social-media-fixed
@@ -3196,6 +3195,7 @@ _social_bookmark/
 ##.social_links_footer
 ##.social_links_sticky
 ##.social_links_top
+##.social_media_header
 ##.social_menu_icon
 ##.social_popup
 ##.social_row
@@ -3551,7 +3551,6 @@ _social_bookmark/
 ##.widget_jnews_social_counter
 ##.widget_novashare_follow_widget
 ##.widget_nypost_social_widget
-##.widget_reallysimpletwitterwidget
 ##.widget_rotatingtweets_widget
 ##.widget_siliconcounters
 ##.widget_social
@@ -3902,6 +3901,7 @@ sciencex.com##.article_info-goog
 thespectator.com##.article_set_wrap
 news18.com##.article_socials
 news18.com##.artshare
+telegraphindia.com##.astkysharebox
 attitude.co.uk##.at-article__social
 secretchicago.com,secretldn.com##.author-share-buttons
 adweek.com##.aw-social-share-container
@@ -4000,6 +4000,7 @@ metro.co.uk##.follow-promo
 alarabiya.net,ausgamers.com,cgtn.com,cloudwards.net,crypto.news,exitoina.perfil.com,magazine.artstation.com,mensxp.com,notateslaapp.com,republicworld.com,timeslive.co.za,trueachievements.com,truetrophies.com##.follow-us
 watchers.news##.follow-us-button
 rbth.com##.follows-channel
+telegraphindia.com##.followusbox
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
 meteoblue.com##.footer-options
 maketecheasier.com,tribune.com.pk,voetbalkrant.com,wielerkrant.be##.footer-social-icons
@@ -4123,6 +4124,7 @@ omgubuntu.co.uk##.omg-hero-button__link
 omgubuntu.co.uk##.omg-socials
 latimes.com##.page-actions
 operawire.com##.page-social-share
+playbuzz.com##.pb-share-bar
 news18.com##.phtshare
 theroar.com.au##.pm-share-horizontal
 autoexpress.co.uk##.polaris__social
@@ -4191,7 +4193,6 @@ thenation.com##.sharethis-menu
 faroutmagazine.co.uk##.sharing-sidebar
 glassalmanac.com##.shhr-btn
 welivesecurity.com##.sidebar-card-media
-tribune.com.pk##.sidebar-social-icons
 pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
 streetsblog.org##.single_sharingInner__3IoQO
 news.sky.com,skysports.com##.site-share-wrapper
@@ -4245,7 +4246,6 @@ natlawreview.com##.sticky__sidebar
 hackster.io##.sticky_actions__stickyButton__vVglk
 aetv.com,wccftech.com##.story-share
 wccftech.com##.story-share-bottom
-tribune.com.pk##.story-social-icons
 gadgets360.com##.story_social_share
 news.adidas.com,thenewsmarket.com##.storyshare-div
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
@@ -4324,6 +4324,9 @@ nytimes.com##[data-testid="social-group"]
 dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
 news.yahoo.com##[data-ylk="elm:partnercta;itc:0;sec:google-pub;"]
+mothership.sg##[height="73"]
+mothership.sg##[href="https://bit.ly/3KjTj94"]
+mothership.sg##[href="https://bit.ly/3qgqzHg"]
 windowslatest.com##[href^="https://google.com/preferences/source"]
 ynetnews.com##[style="display: flex; justify-content: center; width:100%;height:65px;border: 1px solid #e6e6e6;border-radius: 5px;background-color: #fff;box-sizing: border-box; margin: 20px auto;"]
 hackster.io##a.social_icons__icon__BxTgB
