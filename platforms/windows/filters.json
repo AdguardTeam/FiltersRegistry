@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.65.3",
-			"timeUpdated": "2026-05-06T12:45:10+0000",
+			"version": "2.4.65.4",
+			"timeUpdated": "2026-05-06T13:40:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.98",
-			"timeUpdated": "2026-05-06T08:56:27+0000",
+			"version": "2.0.63.99",
+			"timeUpdated": "2026-05-06T13:41:07+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.67.43",
-			"timeUpdated": "2026-05-06T12:45:42+0000",
+			"version": "2.2.67.44",
+			"timeUpdated": "2026-05-06T13:41:15+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.20.88",
-			"timeUpdated": "2026-05-06T11:39:02+0000",
+			"version": "2.1.20.89",
+			"timeUpdated": "2026-05-06T13:41:18+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -710,8 +710,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.13.37",
-			"timeUpdated": "2026-05-01T12:28:54+0000",
+			"version": "2.0.13.38",
+			"timeUpdated": "2026-05-06T13:41:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.44",
-			"timeUpdated": "2026-05-06T10:46:14+0000",
+			"version": "2.0.86.45",
+			"timeUpdated": "2026-05-06T13:41:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.75.3",
-			"timeUpdated": "2026-05-06T12:45:51+0000",
+			"version": "2.0.75.4",
+			"timeUpdated": "2026-05-06T13:41:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1731,8 +1731,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.58.63",
-			"timeUpdated": "2026-05-06T08:56:48+0000",
+			"version": "2.1.58.64",
+			"timeUpdated": "2026-05-06T13:41:28+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

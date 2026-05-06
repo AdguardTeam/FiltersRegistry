@@ -1,9 +1,9 @@
-! Checksum: 9C67pG19wPYrGK7W/9dvxg
-! Diff-Path: ../patches/17/17-s-1777638701-3600.patch
+! Checksum: Ag6kYLLhCbtH6hFYprJ/sw
+! Diff-Path: ../patches/17/17-s-1778075047-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.37
-! TimeUpdated: 2026-05-01T12:28:54+00:00
+! Version: 2.0.13.38
+! TimeUpdated: 2026-05-06T13:41:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,11 @@
 !
 ! NOTE: Generic rules
 !
+! Not identified, popular in emails
+$removeparam=eml-name
+$removeparam=eml-mediaplan
+$removeparam=eml-publisher
+$removeparam=eurl
 ! True Anthem
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228929
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222986
@@ -506,6 +511,10 @@ $removeparam=tduid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! nte.onelink.me
+$removeparam=af_sub1
+$removeparam=c
+$removeparam=shortlink
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-16774089
 ||t.info.telus.com^$removeparam=s
 ! ridibooks.com - book detail page reference tracker
