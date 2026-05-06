@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.5.66",
-			"timeUpdated": "2026-05-06T03:12:48+0000",
+			"version": "2.1.5.67",
+			"timeUpdated": "2026-05-06T11:38:09+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.65.1",
-			"timeUpdated": "2026-05-06T10:45:37+0000",
+			"version": "2.4.65.2",
+			"timeUpdated": "2026-05-06T11:38:23+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.4.7",
-			"timeUpdated": "2026-05-06T10:45:48+0000",
+			"version": "2.1.4.8",
+			"timeUpdated": "2026-05-06T11:38:34+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.67.41",
-			"timeUpdated": "2026-05-06T10:46:08+0000",
+			"version": "2.2.67.42",
+			"timeUpdated": "2026-05-06T11:38:59+0000",
 			"languages": []
 		},
 		{
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.20.87",
-			"timeUpdated": "2026-05-06T08:56:37+0000",
+			"version": "2.1.20.88",
+			"timeUpdated": "2026-05-06T11:39:02+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.75.1",
-			"timeUpdated": "2026-05-06T09:53:38+0000",
+			"version": "2.0.75.2",
+			"timeUpdated": "2026-05-06T11:39:08+0000",
 			"languages": []
 		},
 		{
@@ -338,8 +338,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.44.27",
-			"timeUpdated": "2026-05-06T07:02:47+0000",
+			"version": "2.0.44.28",
+			"timeUpdated": "2026-05-06T11:39:10+0000",
 			"languages": []
 		},
 		{
