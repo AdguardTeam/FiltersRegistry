@@ -1,5 +1,5 @@
-! Checksum: rfjSoMGez1k75PM94PjBmQ
-! Diff-Path: ../patches/201_optimized/201_optimized-s-1777959157-14400.patch
+! Checksum: xYVvAF3+5R1SvGI0sEII7Q
+! Diff-Path: ../patches/201_optimized/201_optimized-s-1778046138-14400.patch
 ! Title: Web Annoyances Ultralist (Optimized)
 ! Description: Blocks annoying web elements and reclaims lost screen real estate.
 ! Version: 2.0.0.18
@@ -52,7 +52,6 @@ nytimes.com###HPBottom2, #HPHalf, #NYT_MAIN_CONTENT_2_REGION, #Top, #TopAd, #acm
 nytimes.com#?#body > #app .dfp-ad-top-wrapper.ad:upward(2)
 openculture.com###leaderboard_div, .advertisement_notice, .framearound_ad_in_post
 player.fm##.top-promo
-podtail.com##li.advert
 pokernews.com##.virgutis
 politico.com###widgetPromoCarousel, .story-continued, .story-interrupt.pos-alpha.format-s
 reddit.com##.dfp-ad-container, .listingsignupbar.infobar, .premium-banner-outer
@@ -279,6 +278,7 @@ ack.net,adelnews.com,advocatepress.com,aledotimesrecord.com,alicetx.com,amarillo
 acrobat.adobe.com,boomplay.com,mail.google.com,open.spotify.com#$#html,body { overflow: auto !important; }
 acrobat.adobe.com#$##root > div:nth-child(1) { height: unset !important; }
 adblockplus.org,tinkercad.com#$##navbar { position: absolute !important; top: 0 !important; }
+adespresso.com,gossipcop.com,pbs.org,totalprosports.com,westbranch.blogs.bucknell.edu#$#.site-header { position: static !important; }
 adguard.com#$#.sidebar__sticky-in { position: static !important; }
 adnauseam.io,al.com,alaskahighwaynews.ca,americanexpress.com,artfixdaily.com,assiniboiatimes.ca,bentkowski.info,biv.com,bowenislandundercurrent.com,burnabynow.com,buzzfeed.com,buzzfeednews.com,canoracourier.com,carlyleobserver.com,chicagobusiness.com,chrome.google.com,cigarbid.com,cnet.com,coastreporter.net,coinbase.com,coindesk.com,comicbook.com,community.jivesoftware.com,costco.com,craigslist.org,crainscleveland.com,crainsdetroit.com,crainsnewyork.com,creditcards.com,datalounge.com,dawsoncreekmirror.ca,delorainetimes.ca,delta-optimist.com,directvnow.com,discover.com,docs.aws.amazon.com,docusign.com,domains.google.com,droid-life.com,ebates.com,effectivealtruism.org,empireadvance.ca,estevanmercury.ca,everycaller.com,fablesofaesop.com,filmstro.com,fox13memphis.com,gatesnotes.com,getpocket.com,github.io,gocomics.com,groupninemedia.com,gulflive.com,haydenjames.io,hbr.org,heavy.com,hillreporter.com,historynet.com,hm.com,hollywoodreporter.com,humboldtjournal.ca,hunker.com,hybridcars.com,i24news.tv,indiatimes.com,investopedia.com,jd.com,juicymaters.com,kamsacktimes.com,keikai.io,khaleejtimes.com,kiplingcitizen.ca,kirkcenter.org,koditips.com,kohls.com,learningsolutionsmag.com,lehighvalleylive.com,lensculture.com,linkedin.com,longreads.com,lyft.com,mailgun.com,makershare.com,mardigras.com,marketplace.org,masslive.com,mindbodyonline.com,mlive.com,money.com,myactivity.google.com,nationalgeographic.org,nationalpost.com,newsoptimist.ca,newswhip.com,newwestrecord.ca,newyorkupstate.com,nj.com,njbiz.com,nola.com,npr.org,nsnews.com,oregonlive.com,oregonscientific.com,pennlive.com,pennzoil.com,pinterest.com,pipelinenews.ca,pipelinenewsnorth.ca,preecevilleprogress.com,princegeorgecitizen.com,privateinternetaccess.com,prpeak.com,pudding.cool,puppylinux.com,qz.com,radare.org,redfin.com,reference.com,rgagnon.com,richmond-news.com,robinhood.com,safeway.com,saksfifthavenue.com,sandboxie.com,sbgi.net,scripting.com,seattlemet.com,securityweek.com,seriouseats.com,silive.com,squamishchief.com,stackoverflow.blog,stanleyhotel.com,starwars.com,struckbylightning.org,substack.com,suntimes.com,symless.com,syracuse.com,tabbank.com,tabulator.info,ted.com,telesurtv.net,theartnewspaper.com,thefederalist.com,them.us,thenational.ae,theoutlook.ca,thepacker.com,thepioneerwoman.com,thereminder.ca,thespruce.com,thesprucecrafts.com,thespruceeats.com,thesprucepets.com,thisweekinstartups.com,thompsoncitizen.net,timescolonist.com,tirerack.com,tisdalerecorder.ca,toptenreviews.com,tricitynews.com,tripplite.com,tripsavvy.com,ulalaunch.com,usgamer.net,vancourier.com,vancouversun.com,wallethub.com,walmart.com,wbur.org,weeklystandard.com,weyburnreview.com,weyburnthisweek.com,whoisthatnumber.com,wilton.com,worldmarket.com,wweek.com,yorktonthisweek.com#$#body { overflow-x: hidden !important; overflow-y: scroll !important; padding-right: 0 !important; }
 adnauseam.io#$##source { position: relative !important; animation: none !important; }
@@ -312,8 +312,17 @@ aljazeera.com#$#.container--header { position: relative !important; }
 aljazeera.com#$#.navigation-bar--sticky { position: relative !important; top: 0 !important; }
 allacronyms.com,blender.org,daniweb.com,princetonreview.com,straitstimes.com,suntrust.com,zona-m.net#$#.navbar { position: absolute !important; top: 0 !important; }
 allacronyms.com,craftsmanship.net,goodreads.com,rodaleinstitute.org,sofrep.com,sputniknews.com,wtop.com#$#html { margin-top: 0 !important; }
+allmusic.com##.registrationPromptBox
+allmusic.com#$#.searchContainer form { border: unset !important; width: unset !important; }
+allmusic.com#$#.searchContainer { width: 100% !important; margin-right: unset !important; }
+allmusic.com###fixedLogo, #fixedNavTrigger
+allmusic.com#$##headerTopRow { display: flex !important; }
+allmusic.com#$##pageContainer { padding-top: 0 !important; }
+allmusic.com#$##searchNavContainer { border: 1px solid hsla(0,0%,100%,.34) !important; grid-column: 1/span 10 !important; grid-row: 2 !important; align-items: unset !important; align-self: unset !important; }
+allmusic.com#$##sidebarNav { position: relative !important; top: 0 !important; }
+allmusic.com#$##siteHeader { position: relative !important; height: 100px !important; }
+allmusic.com#$##siteHeaderInnerContain { height: 100px !important; align-items: flex-end !important; grid-template-areas: "logoNavs " "searchNav" !important; grid-template-columns: repeat(10,minmax(0,1fr)) !important; }
 allrecipes.com,bhg.com,coastalliving.com,cookinglight.com,ew.com,foodandwine.com,fortune.com,health.com,hellogiggles.com,instyle.com,myrecipes.com,peopleenespanol.com,realsimple.com,southernliving.com,time.com,travelandleisure.com#$#.component.navigation-test .menu-homepage-row:last-of-type .primary-links, .logo, .menu-homepage-row:last-of-type .primary-link { display: block !important; }
-allure.com,architecturaldigest.com,bonappetit.com,epicurious.com,glamour.com,gq.com,pitchfork.com,teenvogue.com,them.us,vanityfair.com,wired.com#$#.persistent-top { position: absolute !important; }
 almarsguides.com#$#.header__right, .websiteLogo { position: absolute !important; }
 gadgetfeed.com,gameaddik.com,horrorsocietystore.com,ijr.com,improveverywhere.com,luxurypools.com,pizzabottle.com,shoewawa.com,themindcircle.com,theshiftnews.com,tipjunkie.com,trendingpolitics.com,vegannews.co,wroops.com#$#.g1-sticky-top-wrapper { position: relative !important; }
 alternativeto.net#$#.sticky { position: relative !important; top: 0 !important; padding-inline: 100px !important; box-shadow: none !important; -tw-shadow: none !important; }
@@ -369,7 +378,6 @@ audiocleaner.ai,blog.linkody.com,digitaljournal.com,topclassactions.com#$#.a2a_k
 autoevolution.com,dev.to,nyaa.eu,spongepowered.org#$##topbar { position: absolute !important; }
 autohotkey.com#$#.mbr-navbar__brand-link::after, .mbr-navbar__brand-img { height: 74px !important; }
 autohotkey.com#$#.mbr-section.mbr-navbar__section { position: absolute !important; background-color: transparent !important; }
-avis.com#$##oo_float, .fix-to-top, .navbar { position: absolute !important; }
 avrotros.nl,ibb.co,kidrock.com#$#.top-bar { position: relative !important; top: 0 !important; }
 aws.amazon.com#$##aws-page-content { margin-top: 38px !important; }
 azquotes.com,safenotes.org#$##menu { position: absolute !important; }
@@ -428,7 +436,6 @@ bleepingcomputer.com#$#.bc_wrapper { padding-top: 0 !important; }
 bleepingcomputer.com#$#header { position: relative !important; top: 0 !important; transform: none !important; }
 blockstack.org,crikey.com.au,f5.com,find.xyz,futurism.com,goodreads.com,lesswrong.com,wccftech.com#$#.headroom { position: absolute !important; transform: none !important; }
 blog.cloudflare.com,kinsta.com#$##nav { position: static !important; }
-blog.cloudflare.com##.reading-progress
 blog.google#$#.uni-google-logo.uni-header-row, body > main { margin-top: 0 !important; }
 blog.google#$#.uni-header { position: absolute !important; transform: translateY(0) !important; }
 blog.naver.com##.floating_bottom, .floating_header
@@ -450,8 +457,6 @@ britannica.com###global-nav-top-search-bar
 broadcom.com##.scrollto-top-wrapper
 browserleaks.com,codemirror.net,facebook.design,fivethirtyeight.com,fogodechao.com,foragerfunds.com,herdprotect.com,iridiumbrowser.de,jet.com,kiln.digital,knobattack.com,komodoplatform.com,nextcloud.com,olympic.org,ont.io,poki.com,shop.bird.co,thedrive.com,thezdi.com,videolan.org,wykop.pl,zerodayinitiative.com#$##nav { position: absolute !important; }
 bsky.app,popeyes.com#$#.r-gtdqiz { position: relative !important; }
-bugzilla.mozilla.org,kromtech.com#$##wrapper { overflow-x: hidden !important; overflow-y: scroll !important; }
-bugzilla.mozilla.org#$##bugzilla-body { overflow: unset !important; }
 business.com,laptopmag.com,livescience.com,space.com,tomsguide.com,tomshardware.*,toptenreviews.com#$#.jw-flag-floating .jw-wrapper { position: absolute !important; top: 0 !impotant; left: 0 !important; bottom: 0 !important; right: 0 !important; }
 businessinsider.com#$#.main-header, .masthead { position: relative !important; top: 0 !important; }
 buzzfeed.com#$#.js-main-nav { position: relative !important; }
@@ -484,6 +489,9 @@ cbsnews.com#$#.lazyloaded.breaking-news { position: static !important; margin-to
 cbsnews.com#$##amp-live-list--title { width: auto !important; }
 cbsnews.com#$##article-header { min-height: unset !important; }
 cbsnews.com#$#aviajs { position: absolute !important; margin: auto !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; max-width: 100% !important; box-shadow: none !important; border-radius: 0 !important; will-change: unset !important; -webkit-transform: none !important; animation: none !important; }
+cbssports.com#$#.GlobalSubnav_bar__RzvP0 { position: absolute !important; top: 0 !important; }
+cbssports.com#$#.GlobalSubnav_header__f0swP { max-width: unset !important; }
+cbssports.com#$##GlobalMainNavWrap { position: absolute !important; top: 0 !important; }
 celebritynetworth.com##.bubbles_container
 cell.com#$#.core-sections-menu { position: relative !important; top: 0 !important; }
 cell.com#$#.stickied .info-panel__right-content { justify-content: flex-end !important; }
@@ -518,7 +526,6 @@ cnbc.com#$##BrandPageWrapper[class="cnbcBrand"] [id^="nav-menu-article"] { posit
 cnbc.com#$##BrandPageWrapper[class="makeitBrand"] [class*="nav-menu-styles-makeit-linksSticky"], .account-menu-accountMenu, .account-menu-accountMenuPro, .NavLinks-navMenuArticleSticky .NavLinks-hiddenArticleLinks, .nav-menu-articleNavLinks { display: flex !important; }
 cnbc.com#$##GlobalNavigation-Persistent, #GlobalNavigation, #MakeItGlobalNavigation, #SelectGlobalNavigation, .Sidebar-wrapperSticky, .fixedPosition.ng-scope.pageHeader { position: absolute !important; }
 cnbc.com###nav-menu-articleSticky-persistent, .GlobalNavigation-mobileNavMenu, .NavLinks-articleContent, .NavLinks-articleTitle, .nav-menu-articleContent, .nav-menu-articleTitle, .story-header-right, .sub-header
-cnet.com,funnyordie.com,hermes.com,podtail.com,thefederalsavingsbank.com,weber.com#$##page-header { position: absolute !important; }
 cnn.com#$##pageHeader, .header__wrapper-outer { position: relative !important; }
 coldstonecreamery.com,fitgirl-repacks.site,joekiller.com,matthewhurst.com#$##main { margin-top: 0 !important; }
 collinsdictionary.com#$#.navigation:nth-of-type(7), .sticky { position: relative !important; top: 0 !important; }
@@ -668,7 +675,6 @@ facebook.com##.x1u8a7rm
 facebook.com#$#.x7wzq59 { position: relative !important; top: 0 !important; }
 facebook.com#$#.xlshs6z, .xnpuxes { visibility: visible !important; }
 fanbox.cc#$#.cplgnZ { position: absolute !important; }
-fancentro.com#$#.mui-style-1x8pmxt { position: absolute !important; }
 fandom.com#$#.fandom-community-header__background { position: absolute !important; }
 fandom.com#$#.fixed-header { position: unset !important; transform: none !important; outline: unset !important; box-shadow: none !important; }
 fandom.com#$#.global-explore-navigation, .global-navigation, .global-navigation__bottom, .global-top-navigation { position: absolute !important; }
@@ -820,8 +826,6 @@ govconwire.com#$#.navbar { color: #ffffff !important; background: unset !importa
 govconwire.com#$#.sticky-scroll { position: relative !important; top: unset !important; left: unset !important; right: unset !important; transform: none !important; animation: none !important; background: unset !important; }
 grammarly.com#$#.headerFixed_QHpyYVio { position: absolute !important; }
 grammarly.com#$#.primaryHeaderSticky_MLJ1wzb3 { border-bottom: none !important; }
-grubstreet.com,nymag.com,thecut.com,vulture.com#$#.logo { flex-basis: 274px !important; }
-grubstreet.com,nymag.com,thecut.com,vulture.com#$#.page-sticky-header { position: relative !important; top: 0 !important; border-bottom-color: #ffffff !important; }
 gyazo.com#$#.explorer-header-block { position: unset !important; }
 gyazo.com##.guest-page-header
 gyazo.com#$#.images-show { padding-top: 0 !important; }
@@ -939,7 +943,6 @@ ko-fi.com##.kfds-show-hide-btn
 ko-fi.com#$#.sidebar__inner { position: absolute !important; top: 0 !important; }
 ko-fi.com#$##tabsMenu { position: relative !important; box-shadow: none !important; }
 kodi.tv#$#.breadcrumb-navi { position: relative !important; }
-kohls.com#$##persistent_bar_container { position: relative !important; z-index: 999 !important; }
 kremlin.ru#$#.topline__menu.topline { position: absolute !important; }
 ksl.com##.ksl-header-reserved
 ksl.com#$##kslHeader, .ksl-header__outer { position: relative !important; top: 0 !important; }
@@ -1011,6 +1014,8 @@ marketplace.visualstudio.com#$#.details-tab { padding-top: 0 !important; }
 marketplace.visualstudio.com#$#.ux-item-details { margin-bottom: 0 !important; }
 marketplace.visualstudio.com#$##section-banner, .itemdetails.details-tab, .ms-Pivot, .ux-item-shortdesc { animation: none !important; }
 marketplace.visualstudio.com#$##section-banner, .ms-Pivot { position: relative !important; }
+mdpi.com#$#.html-profile-nav { position: absolute !important; top: 0 !important; }
+mdpi.com#$#.middle-column__help__fixed { position: absolute !important; }
 mediabiasfactcheck.com#$##mega-menu-wrap-header_nav, #mega-menu-wrap-social_nav { position: static !important; }
 mediafire.com#$##header:not(.signUp #header) { position: absolute !important; }
 mediaite.com#$#.o-header-nav-bar { max-height: 30px !important; }
@@ -1072,6 +1077,7 @@ myactivity.google.com,support.google.com#$##gb { box-shadow: none !important; }
 myactivity.google.com#$#.Algkbe { position: absolute !important; }
 myactivity.google.com#$#.CCVxfb { position: relative !important; top: 0 !important; }
 myanimelist.net#$#.js-scrollfix-bottom { position: static!important; }
+mybookie.ag,uhmegal.net#$#.main-header { position: relative !important; }
 nasdaq.com#$#.header-group { position: relative !important; }
 nasdaq.com#$#.nsdq-l-right-rail-sticky > .nsdq-sticky-container { position: relative !important; top: 0 !important; }
 nasdaq.com#$#.primary-nav { transform: none !important; }
@@ -1187,9 +1193,6 @@ playstation.com#$##shared-nav-container { position: relative !important; top: au
 playstation.com#$##jetstream-tertiary-nav { position: relative !important; transform: none !important; }
 playstation.com#$#body { padding-top: 36px !important; }
 pmc.ncbi.nlm.nih.gov#$#.usa-in-page-nav { position: relative !important; }
-podtail.com#$##content { top: 200px !important; }
-podtail.com#$##page-footer { margin-bottom: 0 !important; }
-podtail.com#$##podtail-player { position: absolute !important; top: 256px !important; }
 poki.com#$##app-root { background-attachment: unset !important; }
 policies.google.com#$#.n2nH3e { position: absolute !important; }
 politico.com#$#.container__slot--sticky { position: static !important; }
@@ -1406,17 +1409,14 @@ theatlantic.com#$#.HomepageNav_root__L4mvf { top: 0 !important; }
 theatlantic.com###nonMeteredNudge
 thecinemaholic.com#$#.cinemaholic-header-sticky { position: relative !important; }
 thecinemaholic.com#$#.header-sub-menu { position: relative !important; top: 0 !important; }
-thecut.com#$#div.article-nav-dynamic:nth-child(1) { transform: translateY(11px) !important; }
 thefreedictionary.com###fixedBlock
 theguardian.com#$#.live-blog__sticky-components-container, [data-component="geo-most-popular"] { position: static !important; }
-thehill.com##.close-btn, [class="rollover-people-block"]
 thehill.com#$##siteNavigation.site-header.sticky, .floating-block-active { position: absolute !important; }
 thelancet.com#$#.fixed.base.header { position: absolute !important; }
 themeisle.com###notice-popup
 thenextweb.com#$##nav { position: absolute !important; transform: none !important; transition: none !important; }
 theverge.com##.duet--navigation--sticky-nav
 thewindowsclub.com,whdh.com#$#.site-header { position: absolute !important; transform: translateY(0) !important; }
-thisvsthat.io#$##left-aside { position: absolute !important; }
 thoughtco.com#$##header_1-0 { position: relative !important; top: 0 !important; }
 tiktok.com#$#[class*="-DivCategoryListWrapper"] { position: absolute !important; top: 0 !important; }
 tiktok.com##[class*="-DivScrollToButtonContainer"]
@@ -1445,6 +1445,7 @@ tmz.com#$#.nav-desktop__list { margin: 0 !important; padding: 0 .5rem !important
 tomsguide.com,tomshardware.com##.u-scrollButtons
 topclassactions.com###padding-top-sticky
 torrentfreak.com#$#.header__fixed { position: absolute !important }
+totalprosports.com#$#.custom-logo { opacity: 1 !important; }
 toyota.com#$#body .wrapper { margin-top: 0 !important; }
 tracker.gg#$#.landing__sidebar { position: relative !important; height: unset !important; overflow-x: unset !important; overflow-y: unset !important; }
 tracker.gg#$#.trn-navigation { position: relative !important; }
@@ -1488,7 +1489,6 @@ verywell.com,verywellfamily.com,verywellfit.com,verywellhealth.com,verywellmind.
 verywell.com,verywellfamily.com,verywellfit.com,verywellhealth.com,verywellmind.com#$#.logo svg { height: 45px !important; width: 245px !important; }
 videa.hu,videakid.hu#$#.top-menu-bar { position: absolute !important; }
 vimeo.com#$#.wrap_content { padding-top: 0 !important; }
-visible.com#$#[class*="HeaderWrapper-sc"], header[class*="HeaderStyled-sc-"] { position: static !important; }
 visualstudio.com#$##main { transform: none !important; }
 vivaldi.com#$##vivmenu { position: absolute !important; background-color: unset !important; }
 vk.com#$#.ScrollStickyWrapper > div { position: relative !important; top: 0 !important; }
@@ -1737,6 +1737,7 @@ zerohedge.com#$#[class*="Header_siteHeader"] { position: static !important; }
 ##.jetpack_subscription_widget
 ##.js-scroll-top:not(html):not(body)
 ##.js-share
+##.jssocials-share-facebook
 ##.jw-sharing-dock-btn
 ##.linkedin-share
 ##.mashsb-container
@@ -1945,7 +1946,6 @@ zerohedge.com#$#[class*="Header_siteHeader"] { position: static !important; }
 ##.u-scrollButtons
 ##.vf-share-option
 ##.vjs-share-control
-##.w-toplink
 ##.widget_singlead
 ##.wp-embed-share
 ##.zergnet-widget
@@ -2080,6 +2080,7 @@ appuals.com#$##tie-wrapper { filter: none !important; }
 appuals.com#$#html { overflow-x: hidden !important; overflow-y: scroll !important; margin-right: 0 !important; padding-right: 0 !important; }
 artsy.net,bestvpn.com,camzter.tv,change.org,cryptocompare.com,discordbots.org,economist.com,franchisehelp.com,galoremag.com,goodreads.com,justanswer.co.uk,justanswer.com,kiwico.com,konbini.com,legalist.com,seattletimes.com,thehackernews.com,thenation.com,vogue.com##.modal
 as.com,euronews.com,france24.com,marca.com,rfi.fr###didomi-host
+ask.fm##.lightbox_overlay
 asus.com###cookie-policy-info-bg
 bathandbodyworks.com,bt.com,canadagoose.com,crucial.com,greencarreports.com,mattressfirm.com,motorauthority.com,paypal-community.com,rag-bone.com##.ui-dialog, .ui-widget-overlay
 bedbathandbeyond.com,pictoa.com,realcleardefense.com,realclearpolitics.com,thehindubusinessline.com,vice.com##.overlay
@@ -2111,7 +2112,6 @@ fandom.com##.AgeGateDialog-module_modal__huX7o
 fastestvpn.com,kaspersky.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 flickr.com##.foot-banner-container, .hidden.footer-banner-view.view
 gamespot.com###in-page-nav
-grubstreet.com,nymag.com,thecut.com,vulture.com##.ad-splash
 haaretz.com,mercola.com,victoriassecret.com##.modal-wrapper
 healthline.com###modal-host
 ifixit.com##.modalBox:not(:has(.modalContentBox #login))
@@ -2122,6 +2122,7 @@ libreoffice.org###toTop
 linkedin.com###artdeco-global-alert-container, #artdeco-toasts__wormhole, #siteflow-widget-next, .ember-view.msg-overlay-onboarding-hovercard--minimized-list.msg-overlay-onboarding-hovercard--top.Elevation-2dp.active.msg-overlay-onboarding-hovercard.hovercard-top.msg-overlay-onboarding-hovercard--general, .ember-view.shared-modal-container.splash-modal, .toast-container
 loyalfans.com##.cdk-overlay-container
 majorgeeks.com###fanback
+mdpi.com##.big_direction, .direction
 nationalgeographic.com###privacy-policy-popup
 newyorker.com##.Failsafe__tny-failsafe___3NxXj, .bx-has-close-inside, .interstitial, .paywall-bar, .paywall-modal, .paywall-registration-gate
 notepad-plus-plus.org##[href="#main"]
@@ -2147,6 +2148,7 @@ thedailybeast.com#$#html { overflow-x: hidden !important; overflow-y: auto !impo
 timeanddate.com###mpo
 twitter.com#$#html[style*="overflow: hidden;"] { overflow-y: scroll !important; overscroll-behavior-y: auto !important; margin-right: 0 !important; }
 vanityfair.com##.component-modal, .paywall-bar, .paywall-bar__consumer-marketing-unit, .paywall-container, .paywall-modal
+wallethub.com###footer_cta
 washingtonpost.com#$#html[style*="overflow: hidden;"] { overflow: auto !important; }
 wbur.org##.section--takeover
 wsj.com###agate-wallet, #cx-candybar, #cx-candybarhp, #cx-scrim, [id*="sp_message_container"]
@@ -2178,16 +2180,13 @@ eff.org##.pane-effector-signup
 etsy.com#?#.not-signed-in.subscribe-form:upward(1)
 euronews.com##.o-site-footer__newsletter
 express.co.uk##.newsletter-pure
-familyhandyman.com###ads-container-single
 foreignaffairs.com##.article-newsletter-signup--container
 foreignpolicy.com##.subscribe--long
 foxnews.com##.item-newsletter, .item-subscribe.item, .promo-newsletter, p a[href*="foxnews.com/newsletters"]
 glamour.com##.g-mobile.component-newsletters, .newsletter-subscribe-form
-grubstreet.com,nymag.com,thecut.com,vulture.com###magpromo, .column-subscribe, .newsletter-flex-text, .newsletter-slideout, .subscribe, .subscription
 hongkiat.com##.sidebar-widget--subscribe
 independent.co.uk###newsletter-component, .email-signpost, .newsletter-component
 investors.com,mindk.com,rookiemoms.com##.subscribe-widget
-ksl.com##.emailSignup, .queueHeader
 mediaite.com###newsletter > .heading, section.c-promo-slice.o-slice
 mediapost.com###subscribe_form
 mercola.com##.bottom-subscription, .top-subscription
@@ -2197,7 +2196,6 @@ nature.com##.c-site-messages, .nature-briefing
 nerdist.com###sub-footer-banner-wrapper-300
 newsmax.com###nmSignUpContainer
 newyorker.com##.ArticlePageSidebar__railItem___1K-hs, .Failsafe__header___21L-f, .MainHeader__fullSubscribe___dolgp, .MainHeader__subscribeLink___3TGEc, .NewsletterSubscribe__newsletterComponent___1ZI2a, .content-well-newsletter, .newsletter-subscribe-form
-nypost.com###commerce-disclosure, .inline-module--newsletter
 openculture.com##.new_subscription_block
 patheos.com##.simple-signup
 pbs.org##.sidebar__subscribe
