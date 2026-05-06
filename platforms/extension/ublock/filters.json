@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.65.10",
-			"timeUpdated": "2026-05-06T19:37:11+0000",
+			"version": "2.4.65.11",
+			"timeUpdated": "2026-05-06T20:35:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.20.92",
-			"timeUpdated": "2026-05-06T19:37:54+0000",
+			"version": "2.1.20.93",
+			"timeUpdated": "2026-05-06T20:36:25+0000",
 			"languages": [],
 			"tags": [
 				45,
