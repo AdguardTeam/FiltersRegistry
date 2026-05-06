@@ -1,9 +1,9 @@
-! Checksum: Pgo5/RZ5D5dDpRC2BxGXZQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1778051110-3600.patch
+! Checksum: AlkRxDLz4TM8WKUr9Q9VtQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1778057957-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.67.38
-! TimeUpdated: 2026-05-06T07:02:38+00:00
+! Version: 2.2.67.39
+! TimeUpdated: 2026-05-06T08:56:34+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -2152,7 +2152,7 @@ latimes.com#%#//scriptlet('set-cookie', 'c_tos', '1')
 ||technomedia.com/*/cookies.js
 spusu.at#%#//scriptlet('trusted-click-element', '.cookie-banner button.inline-link, .cookie-banner-background .light-green')
 morele.net#$##cookie-consent { display: none !important; }
-morele.net#$#body { overflow: auto !important; }
+morele.net#$#body { overflow-y: auto !important; }
 vivara.de#%#//scriptlet('trusted-click-element', '#_ec-dialog ._ec-learn-more, #_ec-dialog ._ec-reject-all', '!cookie:emico-cookie-consent')
 bmvg.de,bundeswehr.de###PrivacyProtectionBanner
 podarujdobro.pl,tunemymusic.com##div[class^="CookieConsent-"]
@@ -13415,6 +13415,12 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 klerk.ru#?#iframe[src^="https://autofill.yandex.ru/suggest?"][src*="widget"]
 sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+pc.game.iqiyi.com##.home > .tips
+pc.game.iqiyi.com##.home > .bottom-right-corner
+youku.com#%#//scriptlet('set-cookie', '47002-ee936742-index', '1')
+stlpr.org###bottom-lightbox:has(iframe[src*="-newsletter-"])
+stlpr.org###dynamic-ask:has(> iframe[src*="-newsletter-popup"])
+||stlpr.org/iframes/the-gateway-newsletter-popup$subdocument
 foodtalkdaily.com,hometalk.com##.lbox-wrap
 powder.com#%#//scriptlet('set-session-storage-item', 'arena-bottom-drawer', 'true')
 sj.qq.com##div[class^="SplashAds_splashAds"]
