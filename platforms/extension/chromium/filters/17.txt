@@ -1,9 +1,9 @@
-! Checksum: fMHVfMW7/XjFetw/oDt82A
-! Diff-Path: ../patches/17/17-s-1778075039-3600.patch
+! Checksum: EFsqJaLwGHN6LWeZTrfwyg
+! Diff-Path: ../patches/17/17-s-1778085613-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.38
-! TimeUpdated: 2026-05-06T13:41:20+00:00
+! Version: 2.0.13.39
+! TimeUpdated: 2026-05-06T16:37:44+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -40,13 +40,6 @@ $removeparam=analytics_context
 $removeparam=analytics_trace_id
 ! Bance
 $removeparam=bance_xuid
-! Oracle Eloqua
-$removeparam=elqTrackId
-$removeparam=elq
-$removeparam=elqaid
-$removeparam=elqat
-$removeparam=elqCampaignId
-$removeparam=elqak
 ! Winfluencer
 $removeparam=winflncrtag
 ! FastFlow
@@ -468,6 +461,14 @@ $removeparam=fb_source
 !
 !
 ! Move original rules to this directive if you can confirm the problem
+!
+! Oracle Eloqua
+$removeparam=elqTrackId
+$removeparam=elq
+$removeparam=elqaid
+$removeparam=elqat
+$removeparam=elqCampaignId
+$removeparam=elqak
 !
 $removeparam=cmpid
 ! adjust.com tracking
@@ -3526,6 +3527,12 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230641
+@@/e/er?$removeparam=elqTrackId,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elq,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqaid,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqat,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqak,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227699
 @@||msn.com^$app=msedgewebview2.exe,removeparam=ocid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227175

@@ -33,13 +33,6 @@ $removeparam=analytics_context
 $removeparam=analytics_trace_id
 ! Bance
 $removeparam=bance_xuid
-! Oracle Eloqua
-$removeparam=elqTrackId
-$removeparam=elq
-$removeparam=elqaid
-$removeparam=elqat
-$removeparam=elqCampaignId
-$removeparam=elqak
 ! Winfluencer
 $removeparam=winflncrtag
 ! FastFlow
@@ -460,6 +453,11 @@ $removeparam=fb_source
 ! SECTION: Generic rules with exclusions for the MV3 extensions
 !
 !#if (adguard_ext_chromium_mv3 || ext_ublock)
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elqTrackId
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elq
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elqaid
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elqat
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elqak
 $denyallow=cleviationly.com,removeparam=cmpid
 $denyallow=adj.st|yandex.go.link|dermanostic.go.link,removeparam=adj_t
 $denyallow=em.dynamicyield.com|mootoon.co.kr|iforms.americanexpress.com,removeparam=cuid
@@ -481,6 +479,14 @@ $denyallow=tradedoubler.com,removeparam=tduid
 ! Move original rules to this directive if you can confirm the problem
 !
 !#if (!adguard_ext_chromium_mv3 && !ext_ublock)
+! Oracle Eloqua
+$removeparam=elqTrackId
+$removeparam=elq
+$removeparam=elqaid
+$removeparam=elqat
+$removeparam=elqCampaignId
+$removeparam=elqak
+!
 $removeparam=cmpid
 ! adjust.com tracking
 $removeparam=adj_t
@@ -3552,6 +3558,12 @@ adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_i
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230641
+@@/e/er?$removeparam=elqTrackId,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elq,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqaid,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqat,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqak,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227699
 @@||msn.com^$app=msedgewebview2.exe,removeparam=ocid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227175

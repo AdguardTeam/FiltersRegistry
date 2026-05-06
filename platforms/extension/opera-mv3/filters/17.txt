@@ -1,8 +1,8 @@
-! Checksum: yiRCNkq8BmbpGTBavyF9jA
+! Checksum: 1rGxXIwt8RxiXfqcq3H9hw
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.38
-! TimeUpdated: 2026-05-06T13:41:20+00:00
+! Version: 2.0.13.39
+! TimeUpdated: 2026-05-06T16:37:44+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -39,13 +39,6 @@ $removeparam=analytics_context
 $removeparam=analytics_trace_id
 ! Bance
 $removeparam=bance_xuid
-! Oracle Eloqua
-$removeparam=elqTrackId
-$removeparam=elq
-$removeparam=elqaid
-$removeparam=elqat
-$removeparam=elqCampaignId
-$removeparam=elqak
 ! Winfluencer
 $removeparam=winflncrtag
 ! FastFlow
@@ -465,6 +458,11 @@ $removeparam=fb_source
 ! TODO: Remove this section and revert to the original rules if this https://github.com/w3c/webextensions/issues/783 is fixed
 ! SECTION: Generic rules with exclusions for the MV3 extensions
 !
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elqTrackId
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elq
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elqaid
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elqat
+$denyallow=app.econnect.utexas.edu|s1740541080.t.eloqua.com|clk.texaslonghorns.com,removeparam=elqak
 $denyallow=cleviationly.com,removeparam=cmpid
 $denyallow=adj.st|yandex.go.link|dermanostic.go.link,removeparam=adj_t
 $denyallow=em.dynamicyield.com|mootoon.co.kr|iforms.americanexpress.com,removeparam=cuid
@@ -3513,6 +3511,12 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230641
+@@/e/er?$removeparam=elqTrackId,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elq,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqaid,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqat,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
+@@/e/er?$removeparam=elqak,domain=s1740541080.t.eloqua.com|app.econnect.utexas.edu|clk.texaslonghorns.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227699
 @@||msn.com^$app=msedgewebview2.exe,removeparam=ocid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227175
