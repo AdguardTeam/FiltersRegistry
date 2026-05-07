@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.65.19",
-			"timeUpdated": "2026-05-07T07:07:49+0000",
+			"version": "2.4.65.20",
+			"timeUpdated": "2026-05-07T08:59:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.11",
-			"timeUpdated": "2026-05-07T05:13:46+0000",
+			"version": "2.1.4.12",
+			"timeUpdated": "2026-05-07T09:00:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.27.93",
-			"timeUpdated": "2026-05-07T03:14:16+0000",
+			"version": "2.1.27.94",
+			"timeUpdated": "2026-05-07T09:00:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.34.25",
-			"timeUpdated": "2026-05-07T05:14:02+0000",
+			"version": "2.0.34.26",
+			"timeUpdated": "2026-05-07T09:00:19+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.55",
-			"timeUpdated": "2026-05-07T05:14:05+0000",
+			"version": "2.0.69.56",
+			"timeUpdated": "2026-05-07T09:00:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.67.50",
-			"timeUpdated": "2026-05-07T07:08:19+0000",
+			"version": "2.2.67.51",
+			"timeUpdated": "2026-05-07T09:00:33+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.20.97",
-			"timeUpdated": "2026-05-07T07:08:22+0000",
+			"version": "2.1.20.98",
+			"timeUpdated": "2026-05-07T09:00:36+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.75.7",
-			"timeUpdated": "2026-05-07T05:14:28+0000",
+			"version": "2.0.75.8",
+			"timeUpdated": "2026-05-07T09:00:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -774,8 +774,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.91",
-			"timeUpdated": "2026-05-07T05:14:29+0000",
+			"version": "2.0.28.92",
+			"timeUpdated": "2026-05-07T09:00:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.30",
-			"timeUpdated": "2026-05-07T07:08:28+0000",
+			"version": "2.0.44.31",
+			"timeUpdated": "2026-05-07T09:00:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1731,8 +1731,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.58.69",
-			"timeUpdated": "2026-05-07T05:14:37+0000",
+			"version": "2.1.58.70",
+			"timeUpdated": "2026-05-07T09:00:48+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
