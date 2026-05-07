@@ -23,7 +23,8 @@ for all supported AdGuard products.
     - `zod` — schema validation
     - `crypto-js` — checksum computation
 - **Storage**: File-system based; no database
-- **Testing**: Vitest (unit + integration tests under `scripts/*/__tests__/`);
+- **Testing**: Vitest (unit + integration + e2e tests under `scripts/*/__tests__/`);
+  local e2e for optimization config (`yarn test:optimization-e2e`) requires `yarn generate-cache` as a prerequisite
 - **Target Platform**: Node.js CLI tooling; build outputs target 8 top-level AdGuard product
   platforms (Android, CLI, Extension, iOS, Mac, Mac v2, Mac v3, Windows).
   The Extension platform has 9 sub-targets: Chromium, Chromium MV3, Edge, Firefox, Opera,
@@ -87,6 +88,7 @@ for all supported AdGuard products.
 | `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
+| `yarn test:optimization-e2e` | Run local e2e for optimization config (requires `yarn generate-cache`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
 | `yarn lint:code` | ESLint check (`eslint . --ext .js,.ts`) |
 | `yarn lint:types` | TypeScript type check (`tsc --noEmit`) |
