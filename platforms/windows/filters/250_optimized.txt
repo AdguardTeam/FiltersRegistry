@@ -1,5 +1,5 @@
-! Checksum: CIOvC4/ibtsIr43s+N535g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1778173841-14400.patch
+! Checksum: Xy8W9WiXikVuMSC6PUCIGg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1778217813-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.65
@@ -656,6 +656,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||cant3am.com^$all
 ||gettopple.com^$all
 ||tf4srv.com^$all
+||zlink0.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 95.211.229.247$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -683,6 +684,8 @@ drvhub.net##.driver-item__install
 [2606:4700:3033::6815:5644]$network
 [2a01:4f8:2201:388a::2]$network
 ||aenhance.link^$all
+||findmattez.com^$all
+||hotllove.net^$all
 ||mbsrv2.com^$all
 ||vfgth.com^$all
 ||admozartxml.com^$all
@@ -1345,6 +1348,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 #@#body
 @@||network-auth.com^
 ://$badfilter
+@@|https://raw.githubusercontent.com/DandelionSprout/adfilt/*
 @@||kaltura.com^
 @@.dna.ip-only.net^
 @@.in-addr.arpa|
@@ -1662,7 +1666,6 @@ $removeparam=ns_mchannel
 $removeparam=ns_source
 $removeparam=ns_campaign
 $removeparam=ns_linkname
-$removeparam=ns_fee
 $removeparam=zanpid
 $removeparam=wgu
 $removeparam=wgexpiry
@@ -1670,7 +1673,6 @@ $removeparam=fsrc
 $removeparam=Referrer
 $removeparam=algo_pvid
 $removeparam=algo_expid
-$removeparam=btsid
 $removeparam=ws_ab_test
 $removeparam=spLa
 $removeparam=shrsl_analytics_sscid
@@ -1809,6 +1811,8 @@ $removeparam=ldtag_cl
 $removeparam=vero_conv
 $removeparam=vero_id
 $removeparam=a_aid
+$removeparam=otracker
+$removeparam=otracker1
 $removeparam=ft_source
 $removeparam=ft_medium
 $removeparam=ref_source
@@ -2119,7 +2123,6 @@ $removeparam=geniuslink
 ||amazon.$removeparam=refinements
 ||amazon.$removeparam=qsid
 ||amazon.$removeparam=sres
-||amazon.$removeparam=srpt
 $removeparam=hvadid
 $removeparam=hvpos
 $removeparam=hvnetw
@@ -2411,9 +2414,6 @@ $removeparam=aff_click_id
 ||map.baidu.com^$removeparam=compat
 ||map.baidu.com^$removeparam=da_src
 ||map.baidu.com^$removeparam=device_ratio
-||map.baidu.com^$removeparam=pcevaname
-||map.baidu.com^$removeparam=ugc_type
-||map.baidu.com^$removeparam=ugc_ver
 ||baidu.com^$removeparam=hl_tag
 ||zhidao.baidu.com^$removeparam=qbl
 ||baike.baidu.com^$removeparam=lemmaFrom
@@ -2686,6 +2686,7 @@ $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
 ||bleepingcomputer.com^$removeparam=cx
 $document,removeparam=iid,domain=cnn.com|time.com
+$removeparam=d_id,domain=buzzfeed.com|buzzfeednews.com
 ||hao123.com^$removeparam=tn
 ||lazada.$removeparam=dsource
 ||lazada.$removeparam=laz_share_info
@@ -2847,7 +2848,6 @@ $removeparam=src_medium,document
 $removeparam=src_campaign,document
 ||bbc.$removeparam=at_campaign_type
 ||bbc.$removeparam=at_format
-||bbc.$removeparam=at_creation
 ||bbc.$removeparam=at_link_type
 ||bbc.$removeparam=at_bbc_team
 ||bbc.$removeparam=at_ptr_name
@@ -3011,7 +3011,6 @@ $document,removeparam=s_campaign
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 $document,removeparam=entrypoint,domain=bing.com
 $document,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
-||sky.it^$document,removeparam=social
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
@@ -3063,6 +3062,7 @@ $removeparam=source,domain=search.brave.com|search.brave4u7jddbv7cyviptqjc7jusxh
 !+ NOT_OPTIMIZED
 $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||proton.me^$removeparam=url_id
+||proton.me^$removeparam=phfp
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||click.linksynergy.com^$removeparam=mid
 ||threads.com^$removeparam=xmt
@@ -3176,7 +3176,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 #@#.text_ad
 ##.text_ad:not(html,body,:empty)
 #@#.text_ads
-##.text_ads:not(html,body,:empty)
 #@#.textad
 #@#.textAd
 ##.textAd:not(html,body,:empty)
