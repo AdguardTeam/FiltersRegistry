@@ -1,9 +1,9 @@
-! Checksum: 8houl9LsaiVYQHKmpOLvRw
-! Diff-Path: ../patches/18/18-s-1778179447-3600.patch
+! Checksum: 3b9FdZmdMS1Tf8OksR/zcg
+! Diff-Path: ../patches/18/18-s-1778216964-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.86.51
-! TimeUpdated: 2026-05-07T18:41:16+00:00
+! Version: 2.0.86.52
+! TimeUpdated: 2026-05-08T05:06:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2603,6 +2603,7 @@ cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][dat
 !
 ! NOTE: Regular rules
 !
+||rp.my.onetrust.eu/cdn/cookies/scripttemplates/otSDKStub.js$domain=prisma.de
 yepas.com###cerezizin
 rspb.org.uk##.layout-cookie-banner
 tsurispot.com##body > .shadow-lg.md\:px-4.md\:py-2\.5
@@ -2751,8 +2752,8 @@ ruplaymarket.ru,ruplay.market#%#//scriptlet('set-local-storage-item', 'policyAcc
 online.globus.ru#%#//scriptlet('trusted-set-local-storage-item', 'notifications-ls', '{"state":{"isCookieNotified":true},"version":0}')
 taketaketake.com#%#//scriptlet('set-local-storage-item', 'takex3.cookie-consent', 'accepted')
 aa.com.tr##.fixed.inset-0
-creator.fronius.com#%#//scriptlet('trusted-click-element', '#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection', '', '500')
-creator.fronius.com#%#//scriptlet('trusted-click-element', '#CybotCookiebotDialogBodyLevelButtonMarketing')
+nibelungen-wohnbau.de,creator.fronius.com#%#//scriptlet('trusted-click-element', '#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection', '', '500')
+nibelungen-wohnbau.de,creator.fronius.com#%#//scriptlet('trusted-click-element', '#CybotCookiebotDialogBodyLevelButtonMarketing')
 helse-sorost.no##div[class^="_cookieconsent-banner"]
 nikonlenswear.com##.popup-cookie-consent
 sexualhealthoxfordshire.nhs.uk##section[aria-label="privacy-consent"]
@@ -18816,6 +18817,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230829
+@@||consent.cookiebot.com/uc.js$domain=nibelungen-wohnbau.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230717
 @@||usercentrics.eu^$domain=hom.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230270
