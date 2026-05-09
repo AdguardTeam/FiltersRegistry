@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.65.68",
-			"timeUpdated": "2026-05-09T12:26:05+0000",
+			"version": "2.4.65.69",
+			"timeUpdated": "2026-05-09T13:35:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.21.22",
-			"timeUpdated": "2026-05-09T08:39:07+0000",
+			"version": "2.1.21.23",
+			"timeUpdated": "2026-05-09T13:35:49+0000",
 			"languages": [],
 			"tags": [
 				45,
