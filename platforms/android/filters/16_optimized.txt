@@ -1,5 +1,5 @@
-! Checksum: 0mAdiCH+/PhhHXuYaDw1QQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1778210044-3600.patch
+! Checksum: iEqMxIGP7+iCJUJ0hW05rQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1778296569-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.53
@@ -133,6 +133,7 @@ japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target
 japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
 @@||japscan.$generichide
+/^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.*
 $script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.*
 @@$image,domain=japscan.*
 @@||googletagmanager.com/gtag/js$domain=japscan.*
@@ -418,6 +419,7 @@ numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
+south-park-tv.fr##.king-ads
 south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
@@ -1061,7 +1063,6 @@ twitter.com#@?#[data-testid="tweet"]:contains(Sponsorisé)
 @@||uqload.com/embed-$subdocument
 $subdocument,third-party,domain=cloudvideo.tv,badfilter
 @@||consent-cdn.zeit.de/wrapper/tcfv2/*/gdpr/native-message
-@@||cmp.focus.de/mms/choice_select
 youronlinechoices.com#@#a[href*="weborama.fr/fcgi-bin/"]
 mz.de#@#.ads-container
 @@||linksredirect.com/?pub_id=$popup,domain=desidime.com
@@ -1948,7 +1949,6 @@ _build=iclick-$popup
 ||smartstream.tv^$third-party
 ||spacepush.ru^$third-party
 ||static-od.com^$third-party
-||storetail.io^$third-party
 ||streamvo.com^$third-party
 ||stripcdn.com^$third-party,domain=~xhamsterlive.com
 ||strpjmp.com^$third-party
@@ -2022,7 +2022,6 @@ _build=iclick-$popup
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
 ||advancementcircuscaptured.com^
-||adventuroustame.com^
 ||affluentmirth.com^
 ||agatorkoaltor.com^
 ||aifuwgcygccfp.com^
@@ -2272,7 +2271,6 @@ _build=iclick-$popup
 ||kernh41.com^
 ||khanshabus.com^
 ||klclick.com^
-||kombr.ru^
 ||kosseanmudpack.com^
 ||laikeeboathaip.com^
 ||langretsahibah.com^
@@ -2753,6 +2751,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||imagefacile.com^$image
 ||img.root-top.com/topsite/$third-party
 ||img.webme.com/pic/p/piriketseverler/
+||jeu-legal-france.fr/sites/$third-party
 ||jolstatic.fr/www/skins/
 ||jumia.*/banners/
 ||kaltura.com^*/a.mp4|$media
@@ -3652,7 +3651,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.hidden-horizontal-pub
 ##.hmads_1x1
 ##.hmads_300x250
-##.home-career-side-ad
 ##.horizontal-pub
 ##.iframe_pub
 ##.iframeads
@@ -3807,7 +3805,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pub_160x600
 ##.pub_300-250
 ##.pub_300_250
-##.pub_468x60_bas
 ##.pub_728_90
 ##.pub_article
 ##.pub_banner
@@ -4016,7 +4013,6 @@ ahlaejaba.com,net-iris.fr,orange.fr,paruvendu.fr,radio.co.ma,zalotech.com###ad
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 akeo.fr###amazon
-soap-passion.com###annonce
 upp-auteurs.fr###annonce_a
 upp-auteurs.fr###annonce_b
 commentcamarche.com,commentcamarche.net###ba_right
@@ -4033,6 +4029,7 @@ ouest-france.fr###bloc_partenaires_sport
 ouest-france.fr###bloc_pleine_page_1
 ouest-france.fr###bloc_pleine_page_2
 ouest-france.fr###bloc_shopping
+cap-public.fr###blocflottant
 manga-news.com###block-up
 lanutrition.fr###block-views-remote-products-block-home
 cowcotland.com###blocpub1
@@ -4079,7 +4076,6 @@ leparisien.fr###meteo-immo
 liligo.fr###midbanner
 jeu.video###mobile_clic
 w0rld.tv###modal
-le-buzz.fr###modal_chrome
 leparisien.fr###moteur-billetterie
 zdnet.fr###mpuTop
 presse-citron.net,touchdownactu.com###mvp-leader-wrap
@@ -4279,7 +4275,6 @@ cuisineactuelle.fr##.magazineBlock
 allocine.fr##.main-banner
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
-igraal.com##.merchant__banner-wrap
 ceesty.com,clkmein.com,corneey.com,destyy.com,festyy.com,sh.st,shorte.st##.middle-container
 abidjanshow.com##.mod-banners
 leparisien.fr##.moduleNew300
@@ -4557,7 +4552,6 @@ aliexpress.com,aliexpress.us#?#._2FypS:has(._1rKqn:contains(/AD|Annonce|إعلا
 auchan.fr##article.product-thumbnail:has(.product-thumbnail__sponsored)
 bol.com#?#[data-bltgi*="ProductList_"]:contains(Sponsorisé)
 cdiscount.com#?#section:has(> span:contains(/^Sponsorisé/))
-delhaize.be#?#.product-item:contains(Sponsorisé)
 discordbots.org,top.gg#?#.bot-card:has(.lib:has(img))
 distrowatch.com#?#.News1:has(td:contains(Sponsored))
 ebay.fr#?#[id^="nume_html_"]:has(.mfe-card-group:has(.mfe-card-group-title:contains(sponsorisées)))
@@ -4574,7 +4568,6 @@ phonandroid.com#?#li:has(a:contains(sponso))
 positivr.fr#?#article:has(.sponsored-notice)
 rakuten.com#?#[data-productid]:has(a[href^="/offer?action="])
 starbike.com#?#.post.has-profile:has(.postbody:has(.adsbygoogle))
-temp-mail.org#?#li:has(.inboxSenderEmail:contains(AD | Temp Number))
 zataz.com#?#.custom-sidebar:has(h3:contains(/Partenaires|Publicité/))
 ||facebook.com/ajax/qm/
 ||facebook.com/tr/
