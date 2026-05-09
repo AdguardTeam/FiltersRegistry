@@ -1,5 +1,5 @@
-! Checksum: tJkxJRwv9OgoO+atb0hc5g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1778259530-14400.patch
+! Checksum: AR2Dtqlc0rAC7ukPlwuIiw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1778305020-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.67
@@ -75,7 +75,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 /^192\.243\.61\.[12]?\d?\d$/$network
 /scan-update-and-protect-your-browser.html$document
-/^((https?|tcp|iquic)://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 /^(https?|tcp|iquic)://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 ||instantfwding.com^$all
 [2a02:1668:1034::2]$network
@@ -299,6 +298,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||datehereamazonga.click^$all
 ||dealshik.com^$all
 ||dealslandz.com^$all
+||webhop.me^$all
 ||x2lt.com^$all
 [2600:1f18:43d1:2a02:169f:dcbb:85f9:3c56]$network
 [2600:1f18:43d1:2a02:b6ee:327b:545e:e578]$network
@@ -662,7 +662,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 !+ PLATFORM(windows, mac, android, cli)
 88.208.22.1$network
 ||amused-condition.com^$all
-||envious-long.com^$all
 ||reflectingproject.com^$all
 [2a00:1178:1:4b::e]$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -907,7 +906,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##span[class*=-social-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class*=share-icon]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class^=share_btn]
-##span[data-lnkd-debug]
 ##ul[class*=-share-buttons]
 /images/share_icons/*
 /images/social-share/*
@@ -1001,7 +999,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ~pinterest.*##a[data-pin-do=buttonPin]
 ~pinterest.*##a[href*="pinterest.com/pin/find/?"]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
-~pinterest.*##a[href="#pinit"]
 ~pinterest.*##a[href="/#pinterest"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
 ~pinterest.*##a[title="Share on Pinterest" i]
@@ -1070,7 +1067,6 @@ winstall.app##button[class*=singleApp_shareApp_]
 ~flipboard.com##.share-flipboard:not(html,body,article)
 ~bsky.social##.share-bluesky:not(html,body,article)
 ##a[data-testid^=ShareModal-ShareLink]
-##a.x-share
 ~bsky.*,~bluesky.*##a[href^="https://bsky.app/intent/compose?text="]
 ~threads.net##a[href^="https://threads.net/intent/post?text="]
 ##.sdc-site-share__link--x:not(html,body,:empty)
@@ -1421,7 +1417,6 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ||collector.schibsted.io^$third-party
 ~ru###preloader
 ~ru##div.preloader
-##app-loading-screen
 ##.loading-mask:not(html,body)
 ##div#loading
 *,~barter.vg#?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
@@ -2491,9 +2486,6 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||iqiyi.com^$removeparam=r_source
 ||iqiyi.com^$removeparam=stype
 ||iqiyi.com^$removeparam=source
-||iqiyi.com^$removeparam=sr
-||iqiyi.com^$removeparam=ssra
-||iqiyi.com^$removeparam=ssrt
 ||sogou.com^$removeparam=_asf
 ||sogou.com^$removeparam=_ast
 ||sogou.com^$removeparam=lkt
@@ -2700,7 +2692,6 @@ $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
-||bleepingcomputer.com^$removeparam=cx
 $document,removeparam=iid,domain=cnn.com|time.com
 $removeparam=d_id,domain=buzzfeed.com|buzzfeednews.com
 ||hao123.com^$removeparam=tn
@@ -3002,6 +2993,7 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=activity
 !+ NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
+$document,domain=carousell.*,removeparam=/^t-referrer_/
 ||qzone.qq.com^$document,removeparam=loginfrom
 ||qzone.qq.com^$document,removeparam=jumptoqzone
 ||qzone.qq.com^$document,removeparam=subtype
@@ -3034,7 +3026,6 @@ $document,removeparam=maltcode,domain=gamestop.com|ubisoft.com|steampowered.com
 $document,removeparam=bp,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||walmart.com/ip/$document,removeparam=classType
 $document,removeparam=embeds_referring_origin,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
-?from=glia^$removeparam=from
 $document,removeparam=priceTId,domain=tmall.com|taobao.com
 $document,removeparam=utparam,domain=tmall.com|taobao.com
 $document,removeparam=ns,domain=tmall.com|taobao.com
