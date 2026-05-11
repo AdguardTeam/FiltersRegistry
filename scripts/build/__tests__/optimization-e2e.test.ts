@@ -31,13 +31,15 @@ const TEST_PLATFORM_CONFIG: Record<string, unknown> = {
 
 describe('optimization config e2e', () => {
     let tmpDir: string;
+    let optimizationDir: string;
     let allOutput: string;
+    let statsContentBefore: string;
 
     beforeAll(async () => {
-        tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'filters-e2e-'));
+        tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'filters-e2e-genstats-'));
 
         const filtersDir = path.join(tmpDir, 'filters');
-        const optimizationDir = path.join(tmpDir, 'optimization_config');
+        optimizationDir = path.join(tmpDir, 'optimization_config');
         const platformsDir = path.join(tmpDir, 'platforms');
         const logPath = path.join(tmpDir, 'log.txt');
         const reportPath = path.join(tmpDir, 'report.txt');
@@ -69,26 +71,24 @@ describe('optimization config e2e', () => {
             'utf-8',
         );
 
-        // stats.json: RULE_TO_FILTER hits=0 < threshold=1 → filtered out
-        //             RULE_TO_KEEP   hits=9999 ≥ threshold=1 → kept
-        await fs.promises.writeFile(
-            path.join(statsDir, 'stats.json'),
-            JSON.stringify({
-                percent: 40,
-                minPercent: 25,
-                maxPercent: 50,
-                strict: true,
-                groups: [{
-                    config: { type: 'BASIC', scope: 'GENERIC', hits: 1 },
-                    rules: {
-                        [RULE_TO_FILTER]: 0,
-                        [RULE_TO_KEEP]: 9999,
-                    },
-                }],
-            }),
-            'utf-8',
-        );
+        const statsJson = JSON.stringify({
+            percent: 40,
+            minPercent: 25,
+            maxPercent: 50,
+            strict: true,
+            groups: [{
+                config: { type: 'BASIC', scope: 'GENERIC', hits: 1 },
+                rules: {
+                    [RULE_TO_FILTER]: 0,
+                    [RULE_TO_KEEP]: 9999,
+                },
+            }],
+        });
+        const statsPath = path.join(statsDir, 'stats.json');
+        await fs.promises.writeFile(statsPath, statsJson, 'utf-8');
+        statsContentBefore = statsJson;
 
+        await optimizationConfigLocal.generateStats(optimizationDir);
         optimizationConfigLocal.setPath(optimizationDir);
 
         await compile(
@@ -109,9 +109,10 @@ describe('optimization config e2e', () => {
         )).join('\n');
     }, 30_000);
 
-    afterAll(async () => {
-        optimizationConfigLocal.reset();
-        await fs.promises.rm(tmpDir, { recursive: true, force: true });
+    it('generateStats() does not overwrite existing local stats.json', async () => {
+        const statsPath = path.join(tmpDir, 'optimization_config', 'filters', String(FILTER_ID), 'stats.json');
+        const statsContentAfter = await fs.promises.readFile(statsPath, 'utf-8');
+        expect(statsContentAfter).toBe(statsContentBefore);
     });
 
     it('rule with 0 hits is absent in compiled output', () => {
@@ -120,5 +121,11 @@ describe('optimization config e2e', () => {
 
     it('rule with 9999 hits is present in compiled output', () => {
         expect(allOutput).toContain(RULE_TO_KEEP);
+    });
+
+    afterAll(async () => {
+        optimizationConfigLocal.setPath(optimizationDir);
+        await optimizationConfigLocal.reset();
+        await fs.promises.rm(tmpDir, { recursive: true, force: true });
     });
 });

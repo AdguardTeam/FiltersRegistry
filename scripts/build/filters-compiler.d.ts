@@ -12,6 +12,7 @@ declare module '@adguard/filters-compiler' {
     export const optimizationConfigLocal: {
         setPath(configPath: string): void;
         generate(configPath: string): Promise<void>;
+        generateStats(configPath: string): Promise<void>;
         reset(): Promise<void>;
     };
 }
