@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XjuQZlVrmpP9CMEbxy6LyQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778477335-3600.patch
+! Checksum: FM55FPHNqzaqQsZqkoM2Mg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778484318-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.66.5
-! TimeUpdated: 2026-05-11T05:25:33+00:00
+! Version: 2.4.66.6
+! TimeUpdated: 2026-05-11T07:21:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13362,9 +13362,14 @@ zeste.ca##.text-center > div#modal-root:has(>div > div#modal div:contains(utilis
 zeste.ca#@##adBanner:not([style^="position: absolute; left: -5000px"]):not([data-testid="adBlockTest"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201172
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154687
+needrom.com###ab-warn:style(display: none !important;)
+needrom.com###cp_firmware:style(display: block !important;)
 needrom.com##body ins.adsbygoogle[data-ad-slot]:style(display: block !important; position: absolute !important; left: -3000px !important;)
+needrom.com##+js(set-constant, adsbygoogle.loaded, true)
 needrom.com##+js(no-requestAnimationFrame-if, document[_0x)
 needrom.com##+js(no-setTimeout-if, /adsbygoogle|\.offsetHeight&&0!=|\.innerHTML=[\s\S]*?(Adblock|advertisement)/)
+needrom.com##+js(no-setInterval-if, /adsbygoogle|\.offsetHeight&&0!=|\.innerHTML=[\s\S]*?(Adblock|advertisement)/)
+needrom.com##+js(addEventListener-defuser, , /adsbygoogle|\.offsetHeight&&0!=|\.innerHTML=[\s\S]*?(Adblock|advertisement)|if\(!document\.hidden\).\(\)/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155552
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154666
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154664
@@ -37250,6 +37255,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||meteologix.com/*/ajax/xclickslayer
+meteologix.com##+js(set-constant, checkChartcounter, trueFunc)
 karanpc.com##span.wp-txt-ref:contains(Direct)
 karanpc.com##.entry-content div[onclick][data-matrix]
 remembering.ca##.homepage-notices-wrapper.sticky-padding:style(padding-top: 98px !important;)
@@ -37291,7 +37298,7 @@ xnxx.*,xnxx-ru.com###ad-footer
 xnxx.*###video-right.mobile-hide
 every.to###main-content > section.py-6 > .border:has(> div.text-center > a[href="mailto:sponsorships@every.to"])
 ||amdvids.com/vmap/
-localnow.com##+js(json-prune, ads vmap ad_tag props.pageProps.config.localNow.advertising)
+localnow.com##+js(json-prune, ads vmap ad_tag props.pageProps.config.localNow.advertising.*)
 ||hmama.tv/wp-content/custom_assets/jwplayer/*/vast.js
 urbandictionary.com###ud-root > div[class*="print:hidden"]:has(> .justify-center > div[class*="leaderboard:"])
 defence-industry.eu##.die-ad-bar

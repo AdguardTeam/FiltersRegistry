@@ -1,9 +1,9 @@
-! Checksum: sqGXoQSRzWrG8jRYKXWVuw
-! Diff-Path: ../patches/18/18-s-1778477327-3600.patch
+! Checksum: qaezPCGWmzqkCHVoOhomkA
+! Diff-Path: ../patches/18/18-s-1778484311-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.86.62
-! TimeUpdated: 2026-05-11T05:26:15+00:00
+! Version: 2.0.86.63
+! TimeUpdated: 2026-05-11T07:22:37+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2601,6 +2601,7 @@ cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][dat
 !
 ! NOTE: Regular rules
 !
+iptp.net##.popup-gtag-cookie
 dr-proelss.de#%#//scriptlet('trusted-click-element', '.cookieManagerQ-sm .cookieManagerQ-sm-only-required')
 qsp.org###stcm-banner
 site777.jp##.overlay-cookie-policy
@@ -17060,7 +17061,7 @@ fansided.com##body > div[id^="img_"]:has(> div[aria-label="Cookie banner"])
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23706
 ! Fixes embedded content
-moto.pl,edziecko.pl,plotek.pl,sport.pl,gazeta.pl#$#.art_embed { height: auto !important; }
+moto.pl,edziecko.pl,plotek.pl,sport.pl,gazeta.pl#$#.art_embed { height: auto !important; pointer-events: auto !important; }
 !+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_safari)
 moto.pl,edziecko.pl,plotek.pl,sport.pl,gazeta.pl#%#//scriptlet('trusted-create-element', 'head', 'script', '', '(()=>{window.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll(`.embed-container > [data-blocked-by-rodoguard="true"]`).forEach((e=>{const t=e.getAttribute("data-src")||e.getAttribute("src"),r=e.tagName.toLowerCase(),a=e.attributes;if(!t||!r)return;const o=document.createElement(r);if(o.setAttribute("src",t),"iframe"===r&&a.length)for(const e of a)"src"!==e.name&&"data-blocked-by-rodoguard"!==e.name&&o.setAttribute(e.name,e.value);e.replaceWith(o)}))}));})();')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210395

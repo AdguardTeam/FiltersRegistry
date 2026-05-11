@@ -1,9 +1,9 @@
-! Checksum: dhZU+VtJY8gaD873yS8EJA
-! Diff-Path: ../patches/9/9-s-1778229694-3600.patch
+! Checksum: SFbVgmCAcpDG5qKmeyedKQ
+! Diff-Path: ../patches/9/9-s-1778484307-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.34.27
-! TimeUpdated: 2026-05-08T08:38:33+00:00
+! Version: 2.0.34.28
+! TimeUpdated: 2026-05-11T07:22:19+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -292,7 +292,10 @@ darkmahou.org#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '/ad
 anime-jl.net#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'detect')
 anime-jl.net#@#.ad-unit:not(.textads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218094
-zonaaps.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '/detect|\.onerror/')
+zonaaps.com#%#//scriptlet('abort-on-property-write', '__ANTI_ADBLOCK_CORE__')
+zonaaps.com#%#//scriptlet('prevent-element-src-loading', 'script', '/trafficbass\.com|acscdn\.com/')
+zonaaps.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '/detect|\.onerror|window\.open/')
+zonaaps.com#$#body > div[id^="gen_"][style*="position: fixed !important;"][style*="z-index:"] { display: none !important; }
 zonaaps.com#$##siteContentNotice { display: none !important; }
 zonaaps.com#$##antiAdblockOverlay { display: none !important; }
 zonaaps.com#$#body { overflow: auto !important; pointer-events: auto !important; }
