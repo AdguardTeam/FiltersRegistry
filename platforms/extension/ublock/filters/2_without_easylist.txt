@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: l6eKek79OSyxbeHkBryjFw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778469553-3600.patch
+! Checksum: XjuQZlVrmpP9CMEbxy6LyQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778477335-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.66.4
-! TimeUpdated: 2026-05-11T03:15:27+00:00
+! Version: 2.4.66.5
+! TimeUpdated: 2026-05-11T05:25:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10716,6 +10716,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230986
+||google-analytics.com^$image,redirect=1x1.gif,domain=simpmusic.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230931
 seriezloaded.com.ng##+js(no-setTimeout-if, offsetHeight === 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230882
@@ -37248,6 +37250,10 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+karanpc.com##span.wp-txt-ref:contains(Direct)
+karanpc.com##.entry-content div[onclick][data-matrix]
+remembering.ca##.homepage-notices-wrapper.sticky-padding:style(padding-top: 98px !important;)
+remembering.ca##div[class^="leaderboard-"]:style(display: none !important;)
 tap-coin.de##.dracoinbox
 livemint.com##div[class^="rightblockAd"]
 issuu.com##.fullWidth > div[class^="sc-"] div[class^="sc-"]:has(div[class]:contains(Advertisement))
@@ -38833,10 +38839,10 @@ h-donghua.xyz##body > div[id][style*="position:fixed;"][style*=";z-index:"]
 h-donghua.xyz##.video-content > div[id][style*="position:absolute;"][style*=";z-index:"]
 5v5world.co,burgerpixel.net,summonersky.com,homepander.com,aov-news.com##.ads_reader:remove()
 5v5world.co,burgerpixel.net,summonersky.com,homepander.com,aov-news.com##.carousel-item.recommend:not(:has(>*)):remove()
-anikai.to##+js(no-window-open-if)
+animekai.la,animekai.gs,animekai.fo,animekai.fi,anikai.to##+js(no-window-open-if)
 anikai.to##+js(set-cookie, __p_mov, 1)
 comix.to,anikai.to##+js(no-setInterval-if, /\+3e4>.*<0\)\){var/, 3000)
-comix.to,anikai.to##body > a[target="_blank"][style^="position:"][style*="z-index:"]
+animekai.*,animekai.la,animekai.gs,animekai.fo,animekai.fi,comix.to,anikai.to##body > a[target="_blank"][style^="position:"][style*="z-index:"]
 player4u.xyz,2embed.*,vidapi.xyz###gate
 ||indianexpress.com/wp-content/plugins/express-ad-code-manager/
 ||indianexpress.com/wp-content/themes/indianexpress/js/ie-google-vignette-ad.js
@@ -39390,8 +39396,6 @@ pstream.*##.bg-buttons-purple:has(> button[aria-label="Dismiss ad"])
 lostgamer.io##.standard-banner-ad
 odiadance.com,sayphotobooth.com##.code-block > center:has(> div#BR-Footer-Ads)
 majorgeeks.com##[style*="background-color:"]:has(> a[href*="&utm_source"])
-animekai.cc,animekai.ac,animekai.to,animekai.bz##+js(no-window-open-if)
-animekai.bz##a[href^="https://yflix.to/?"]
 streamhls.to##+js(addEventListener-defuser, click, popup)
 streamhls.to##+js(no-window-open-if)
 streamhls.to##div[id^="clickCatcher"]
@@ -63361,6 +63365,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230996
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230693
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230771
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230704
