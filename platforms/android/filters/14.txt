@@ -1,9 +1,9 @@
-! Checksum: tt9nAnPomVbKvBmjkiqEvg
-! Diff-Path: ../patches/14/14-s-1778484296-3600.patch
+! Checksum: KhibTqvKXX1g08AKOVJeZA
+! Diff-Path: ../patches/14/14-s-1778491283-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.67.77
-! TimeUpdated: 2026-05-11T07:22:30+00:00
+! Version: 2.2.67.78
+! TimeUpdated: 2026-05-11T09:18:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2602,6 +2602,11 @@ cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][dat
 !
 ! NOTE: Regular rules
 !
+movavi.com##.rPrivacyPolicyPopup__ls
+caido.io#%#//scriptlet('set-local-storage-item', 'consent.has-all', 'false')
+caido.io#%#//scriptlet('set-local-storage-item', 'consent.show-cookie-banner', 'false')
+bubilet.com.tr#%#//scriptlet('trusted-set-local-storage-item', 'bubilet-consent', '{"necessary":true,"analytics":false,"marketing":false}')
+bubilet.com.tr#%#//scriptlet('set-local-storage-item', 'bubilet-consent-decline-cleared', '1')
 iptp.net##.popup-gtag-cookie
 dr-proelss.de#%#//scriptlet('trusted-click-element', '.cookieManagerQ-sm .cookieManagerQ-sm-only-required')
 qsp.org###stcm-banner
@@ -50036,6 +50041,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~odaibako.net,~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+greg.app###download-banner-wrapper
+greg.app###download-modal
 yamap.com##.DownloadBanner
 www.kinopoisk.ru#%#//scriptlet('set-cookie', 'kp_mobile_app_sheet', 'true')
 etsy.com##div[data-appears-component-name="app_download"]
@@ -54837,6 +54844,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+bubilet.com.tr#%#//scriptlet('trusted-set-local-storage-item', 'superTicketGuestLastShown', '$currentISODate$')
 wildberries.ru##.main-page__tv-media-placements
 temu.com###RecommendedRef div[data-id="list0"] > div[class^="columnWrap-"] > div[class][data-uniqid]:has(> div[class^="item-"] div[class^="adTag-"])
 check.lenta.com###otzyv
@@ -60768,6 +60776,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231018
+skym3u.top#%#//scriptlet('adjust-setInterval', 'adWindow', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229430
 file-me.top#%#//scriptlet('adjust-setTimeout', 'downloadbtn', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229423

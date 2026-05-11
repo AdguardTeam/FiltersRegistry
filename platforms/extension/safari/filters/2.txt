@@ -1,9 +1,9 @@
-! Checksum: klVbw+xt46veTv9loo+NMw
-! Diff-Path: ../patches/2/2-s-1778484315-3600.patch
+! Checksum: vURKtvN8lAgQbcS8aNB/ZQ
+! Diff-Path: ../patches/2/2-s-1778491313-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.66.6
-! TimeUpdated: 2026-05-11T07:21:57+00:00
+! Version: 2.4.66.7
+! TimeUpdated: 2026-05-11T09:17:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10897,6 +10897,12 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231018
+skym3u.top#%#//scriptlet('prevent-setTimeout', 'pagead2.googlesyndication.com')
+skym3u.top#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '/checkUBlock|kickUser/')
+skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', 'if (document.hidden || document.visibilityState === \'hidden\')', 'if (!0)')
+skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', '/adWindow = window.open.*?;/', 'adWindow = true;')
+skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', 'timeLeft--;', 'timeLeft--;try{timerDisplay.innerText = timeLeft;}catch(e){}')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230986
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||google-analytics.com/collect$image,domain=simpmusic.org
@@ -39016,7 +39022,7 @@ thesaurus.net#%#//scriptlet('prevent-setTimeout', 'loader.min.js')
 mlbpark.donga.com,tweaksforgeeks.com#%#//scriptlet('remove-node-text', 'script', 'KCgpPT57bGV0IGU')
 ! Stylesheet is loaded by html-load.com script, so we need to add it manually
 tenasia.hankyung.com#%#//scriptlet('trusted-create-element', 'head', 'link', 'rel="stylesheet" https://hkstatic.hankyung.com/css/rel/tenasia/w/common.css"')
-taycanforum.com,deltiasgaming.com,broncosportforum.com,all-nationz.com,ontariofarmer.com,247wallst.com,euronews.com,foodtalkdaily.com,hometalk.com,yorkshirepost.co.uk,jlwranglerforums.com,cybertruckownersclub.com,urbandictionary.com,robbreport.com,torontosun.com,saikyo-jump.com,elnacional.cat,parade.com,thestarphoenix.com,leaderpost.com,athlonsports.com,edmontonsun.com,calgaryherald.com,theprovince.com,notebookcheck.*,driving.ca,vancouversun.com,financialpost.com,followfollow.com,seriouseats.com,alfalfalfa.com,pcguide.com,thingiverse.com,welt.de,edmontonjournal.com,itavisen.no,russianmachineneverbreaks.com,geo.fr,langenscheidt.com,urldecoder.org,base64decode.org,deadline.com,crosswordsolver.com,natalie.mu,daily.co.jp,egitim.net.tr,9gag.com,hb-nippon.com,ukaudiomart.com,windsorstar.com,akinator.com,pons.com,autobild.de,odyclub.com,dict.cc,respublika.lt,si.com,stocktwits.com,zeilen.nl,wielerrevue.nl,speisekarte.de,ldoceonline.com,sankei.com,oxfordlearnersdictionaries.com,dictionary.cambridge.org,nishinippon.co.jp,gamewith.jp,glutenfreeonashoestring.com,subaruforester.org,tsxclub.com,civinfo.com,2coolfishing.com,1911forum.com,stylegirlfriend.com,toyokeizai.net,madaboutfood.co,galonamission.com,iheartnaptime.net,momontimeout.com,31daily.com,easydessertrecipes.com,scribd.com,dessertsonadime.com,skinnytaste.com,thehomesteadinghippy.com,gigafile.nu,trilltrill.jp,intoindiegames.com,liveandletsfly.com,traicy.com,stuckonsweet.com,worldhistory.org,kuruma-news.jp,1lumen.com,bluearchive.gg,ttforum.co.uk,newatlas.com,game8.jp,motorradfrage.net,sportlerfrage.net,finanzfrage.net,reisefrage.net,gesundheitsfrage.net,computerfrage.net,autofrage.net,wholesomeyum.com,gutefrage.net,sportico.com,wwd.com,neoseeker.com,yahoo.com,doviz.com,baseballchannel.jp,programme-tv.net,tz.de,ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e=/html-load\.com|loader\.min\.js|andwonderful\.com\/safe\.min\.js|shieldload\.|:\/\/loader\.|core\.js/,t={filter:Array.prototype.filter,includes:String.prototype.includes,regexTest:RegExp.prototype.test},o=()=>(new Error).stack,l=o=>t.regexTest.call(e,o),r={construct:(e,r,n)=>{const c=o();return l(c)&&r[0]&&t.includes.call(r[0],"adshield")&&(r[0]=["(function(){})();"]),Reflect.construct(e,r,n)}};window.Blob=new Proxy(window.Blob,r);const n={apply:(e,r,n)=>{const c=o();return l(c)&&n[0]&&(t.includes.call(n[0],"new Error")||t.includes.call(n[0],".apply(this"))&&(n[0]=()=>{}),Reflect.apply(e,r,n)}};window.setTimeout=new Proxy(window.setTimeout,n);const c={apply:(e,r,n)=>{const c=o();return l(c)&&n[0]&&r?.includes?.("setTimeout")&&(r=t.filter.call(r,(e=>!t.includes.call(e,"setTimeout")))),Reflect.apply(e,r,n)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,c)})();
+tvtv.us,taycanforum.com,deltiasgaming.com,broncosportforum.com,all-nationz.com,ontariofarmer.com,247wallst.com,euronews.com,foodtalkdaily.com,hometalk.com,yorkshirepost.co.uk,jlwranglerforums.com,cybertruckownersclub.com,urbandictionary.com,robbreport.com,torontosun.com,saikyo-jump.com,elnacional.cat,parade.com,thestarphoenix.com,leaderpost.com,athlonsports.com,edmontonsun.com,calgaryherald.com,theprovince.com,notebookcheck.*,driving.ca,vancouversun.com,financialpost.com,followfollow.com,seriouseats.com,alfalfalfa.com,pcguide.com,thingiverse.com,welt.de,edmontonjournal.com,itavisen.no,russianmachineneverbreaks.com,geo.fr,langenscheidt.com,urldecoder.org,base64decode.org,deadline.com,crosswordsolver.com,natalie.mu,daily.co.jp,egitim.net.tr,9gag.com,hb-nippon.com,ukaudiomart.com,windsorstar.com,akinator.com,pons.com,autobild.de,odyclub.com,dict.cc,respublika.lt,si.com,stocktwits.com,zeilen.nl,wielerrevue.nl,speisekarte.de,ldoceonline.com,sankei.com,oxfordlearnersdictionaries.com,dictionary.cambridge.org,nishinippon.co.jp,gamewith.jp,glutenfreeonashoestring.com,subaruforester.org,tsxclub.com,civinfo.com,2coolfishing.com,1911forum.com,stylegirlfriend.com,toyokeizai.net,madaboutfood.co,galonamission.com,iheartnaptime.net,momontimeout.com,31daily.com,easydessertrecipes.com,scribd.com,dessertsonadime.com,skinnytaste.com,thehomesteadinghippy.com,gigafile.nu,trilltrill.jp,intoindiegames.com,liveandletsfly.com,traicy.com,stuckonsweet.com,worldhistory.org,kuruma-news.jp,1lumen.com,bluearchive.gg,ttforum.co.uk,newatlas.com,game8.jp,motorradfrage.net,sportlerfrage.net,finanzfrage.net,reisefrage.net,gesundheitsfrage.net,computerfrage.net,autofrage.net,wholesomeyum.com,gutefrage.net,sportico.com,wwd.com,neoseeker.com,yahoo.com,doviz.com,baseballchannel.jp,programme-tv.net,tz.de,ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e=/html-load\.com|loader\.min\.js|andwonderful\.com\/safe\.min\.js|shieldload\.|:\/\/loader\.|core\.js/,t={filter:Array.prototype.filter,includes:String.prototype.includes,regexTest:RegExp.prototype.test},o=()=>(new Error).stack,l=o=>t.regexTest.call(e,o),r={construct:(e,r,n)=>{const c=o();return l(c)&&r[0]&&t.includes.call(r[0],"adshield")&&(r[0]=["(function(){})();"]),Reflect.construct(e,r,n)}};window.Blob=new Proxy(window.Blob,r);const n={apply:(e,r,n)=>{const c=o();return l(c)&&n[0]&&(t.includes.call(n[0],"new Error")||t.includes.call(n[0],".apply(this"))&&(n[0]=()=>{}),Reflect.apply(e,r,n)}};window.setTimeout=new Proxy(window.setTimeout,n);const c={apply:(e,r,n)=>{const c=o();return l(c)&&n[0]&&r?.includes?.("setTimeout")&&(r=t.filter.call(r,(e=>!t.includes.call(e,"setTimeout")))),Reflect.apply(e,r,n)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,c)})();
 ! Workaround also for iOS, where we cannot apply url blocking rule
 ! Related to https://github.com/AdguardTeam/FiltersCompiler/issues/226
 ! After implementation, we could add any rules for AdGuard for iOS only with Advanced Protection
@@ -39585,6 +39591,8 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+empflix.com#%#//scriptlet('prevent-addEventListener', 'flix:load', '/ad_error|Flix\.ads/')
+empflix.com#%#//scriptlet('prevent-addEventListener', 'click', 'location.href')
 ||meteologix.com/*/ajax/xclickslayer
 meteologix.com#%#//scriptlet('set-constant', 'checkChartcounter', 'trueFunc')
 karanpc.com#?#span.wp-txt-ref:contains(Direct)
@@ -92237,6 +92245,7 @@ browsershots.org#@#.advert_area
 ||bartererfaxtingling.com^
 ||bartonpriority.com^
 ||bartreeaureous.cfd^
+||barundilissomegreing.qpon^
 ||baryesagrecamisia.cfd^
 ||baryticbotels.cfd^
 ||basculezaremawisdoms.cfd^
@@ -98307,6 +98316,7 @@ browsershots.org#@#.advert_area
 ||disguisedtimingbreath.com^
 ||disguisesmashdisappearing.com^
 ||disguisestoughprocured.com^
+||disgusting-nation.com^
 ||disgustinghighnesseventually.com^
 ||disgustingmad.com^
 ||dishesha.net^
@@ -99879,6 +99889,7 @@ browsershots.org#@#.advert_area
 ||ekpeqlwopcihi.site^
 ||ekrpjrrovubka.club^
 ||ektxsfkdnciut.space^
+||ekvahiyrcrnzt.online^
 ||ekvhgfruqyadw.site^
 ||ekvoffgfhdtoj.website^
 ||ekxtrafcewyww.store^
@@ -100354,6 +100365,7 @@ browsershots.org#@#.advert_area
 ||eopuzol1.online^
 ||eoqigwlbhhfg.com^
 ||eoredi.com^
+||eorimblasvzgx.space^
 ||eostvofsqqsvi.site^
 ||eoszovqcxtbzi.space^
 ||eoveukrnme.org^
@@ -100791,6 +100803,7 @@ browsershots.org#@#.advert_area
 ||evkjlmtnqwwcu.space^
 ||evkmgofne.com^
 ||evmdamxavzsgk.website^
+||evmoucxsjccr.com^
 ||evmyclkocfcnr.space^
 ||evnhigkzgp.club^
 ||evnzrsecbioqp.today^
@@ -101063,6 +101076,7 @@ browsershots.org#@#.advert_area
 ||eyesurlyprecaution.com^
 ||eyeviewads.com^
 ||eyewondermedia.com^
+||eyeyjacatpxweoa.com^
 ||eyfq92zj54w12y.cfd^
 ||eyhmhohuflljt.website^
 ||eyiccxilrwhpm.site^
@@ -102133,6 +102147,7 @@ browsershots.org#@#.advert_area
 ||fluterozum.cyou^
 ||flutterstumpbullet.com^
 ||fluxads.com^
+||fluxedidolize.cyou^
 ||fluxthirty.qpon^
 ||fluxyt.xyz^
 ||flyads1.com^
@@ -107849,6 +107864,7 @@ browsershots.org#@#.advert_area
 ||iyodewlrk.com^
 ||iypxxhjdiwggg.website^
 ||iyqnahkspthlb.site^
+||iyqtpifqeoavq.site^
 ||iyresfhhvgqex.site^
 ||iyrrtosjcravm.online^
 ||iyspseyshidcp.com^
@@ -112472,6 +112488,7 @@ browsershots.org#@#.advert_area
 ||methodimperativebackground.com^
 ||methodinduced.com^
 ||methoxyunpaled.com^
+||methsnacritepreview.qpon^
 ||metothepointa.com^
 ||metradasheen.shop^
 ||metredesculic.com^
@@ -116752,6 +116769,7 @@ browsershots.org#@#.advert_area
 ||oyagncfnrlmij.club^
 ||oyazrojxnntsc.site^
 ||oydtmcxdmxkihlj.com^
+||oyecilgvdeazh.online^
 ||oyeonwxjqtzcm.website^
 ||oyfubcxsssvwo.online^
 ||oygriuqguwqbi.website^
@@ -123481,6 +123499,7 @@ browsershots.org#@#.advert_area
 ||sfstcxntycsrx.website^
 ||sftapi.com^
 ||sftfanfxqjiso.website^
+||sftyxvamhhblp.space^
 ||sfulylydeveloped.org^
 ||sfupiqqwhxoxl.website^
 ||sfvauwpjcdgfo.xyz^
@@ -133754,6 +133773,7 @@ browsershots.org#@#.advert_area
 ||vxywqihengksm.site^
 ||vxyxdlepxxdsd.online^
 ||vxzmrvmaugiuf.online^
+||vy9fwpl1.xyz^
 ||vyabxutgyiidb.site^
 ||vyargtzwkkasg.website^
 ||vybjkrtkdgqzx.space^

@@ -1,9 +1,9 @@
-! Checksum: xqBJciptW0NCEAICc++ItQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1778484302-3600.patch
+! Checksum: VE0kMNuN55WIi8eadMRCnw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1778491293-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.67.77
-! TimeUpdated: 2026-05-11T07:22:30+00:00
+! Version: 2.2.67.78
+! TimeUpdated: 2026-05-11T09:18:21+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1614,6 +1614,11 @@ knusperstuebchen.net,intercraft.pl#%#//scriptlet('trusted-click-element', 'dialo
 tippsling.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:c82d723')
 wegwandern.ch,compact-online.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:f4adc5d')
 cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:0c09270')
+movavi.com##.rPrivacyPolicyPopup__ls
+caido.io#%#//scriptlet('set-local-storage-item', 'consent.has-all', 'false')
+caido.io#%#//scriptlet('set-local-storage-item', 'consent.show-cookie-banner', 'false')
+bubilet.com.tr#%#//scriptlet('trusted-set-local-storage-item', 'bubilet-consent', '{"necessary":true,"analytics":false,"marketing":false}')
+bubilet.com.tr#%#//scriptlet('set-local-storage-item', 'bubilet-consent-decline-cleared', '1')
 iptp.net##.popup-gtag-cookie
 dr-proelss.de#%#//scriptlet('trusted-click-element', '.cookieManagerQ-sm .cookieManagerQ-sm-only-required')
 qsp.org###stcm-banner
@@ -25622,6 +25627,7 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+bubilet.com.tr#%#//scriptlet('trusted-set-local-storage-item', 'superTicketGuestLastShown', '$currentISODate$')
 wildberries.ru##.main-page__tv-media-placements
 temu.com###RecommendedRef div[data-id="list0"] > div[class^="columnWrap-"] > div[class][data-uniqid]:has(> div[class^="item-"] div[class^="adTag-"])
 check.lenta.com###otzyv
@@ -28509,6 +28515,7 @@ softpedia.com#$#iframe.swipebox-rightxd[id="relcontent"] { top: 60px!important; 
 !##############################
 !######### JS tweaks ##########
 !##############################
+skym3u.top#%#//scriptlet('adjust-setInterval', 'adWindow', '*', '0.001')
 file-me.top#%#//scriptlet('adjust-setTimeout', 'downloadbtn', '*', '0.001')
 vpzserver.com#%#//scriptlet('adjust-setInterval', 'countdown')
 fredl.ru,frdl.hk#%#//scriptlet('adjust-setTimeout', 'seconds', '*', '0.02')

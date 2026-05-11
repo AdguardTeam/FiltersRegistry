@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FM55FPHNqzaqQsZqkoM2Mg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778484318-3600.patch
+! Checksum: kQT/j+M+kKgx68nhrwNrWw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778491318-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.66.6
-! TimeUpdated: 2026-05-11T07:21:57+00:00
+! Version: 2.4.66.7
+! TimeUpdated: 2026-05-11T09:17:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10716,6 +10716,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231018
+skym3u.top##+js(no-setTimeout-if, pagead2.googlesyndication.com)
+skym3u.top##+js(abort-on-stack-trace, document.createElement, /checkUBlock|kickUser/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230986
 ||google-analytics.com^$image,redirect=1x1.gif,domain=simpmusic.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230931
@@ -37255,6 +37258,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+empflix.com##+js(addEventListener-defuser, flix:load, /ad_error|Flix\.ads/)
+empflix.com##+js(addEventListener-defuser, click, location.href)
 ||meteologix.com/*/ajax/xclickslayer
 meteologix.com##+js(set-constant, checkChartcounter, trueFunc)
 karanpc.com##span.wp-txt-ref:contains(Direct)
