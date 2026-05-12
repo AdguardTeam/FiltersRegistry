@@ -1,9 +1,9 @@
-! Checksum: msn8AYA07Dylhypon9cljg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1778548626-14400.patch
+! Checksum: wvnMYRpuHtcmx9RB8Qe7tw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1778564897-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.61.48
-! TimeUpdated: 2026-05-12T01:13:42+00:00
+! Version: 2.1.61.49
+! TimeUpdated: 2026-05-12T05:44:32+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -219,7 +219,6 @@ _social-bar/
 ###facebook_link
 ###facebook_overlay
 ###facebook_share
-###facebook_subscribe
 ###facebookbtn
 ###facebookjs
 ###facebooklike
@@ -252,6 +251,7 @@ _social-bar/
 ###floatingSocialShare
 ###follow-box
 ###follow-buttons
+###follow-facebook
 ###follow-footer
 ###follow-icons
 ###follow-links
@@ -310,6 +310,7 @@ _social-bar/
 ###header-socials
 ###header-youtube-social-link
 ###headerSocial
+###header_social_wrapper
 ###headersocial
 ###highlight-share
 ###hshare
@@ -467,7 +468,6 @@ _social-bar/
 ###share_linkedin
 ###share_links
 ###share_panel
-###share_social_sidebar
 ###share_telegram
 ###share_this
 ###share_to
@@ -596,6 +596,7 @@ _social-bar/
 ###socialGoogle
 ###socialHolder
 ###socialIcons
+###socialInstagram
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
@@ -910,7 +911,6 @@ _social-bar/
 ##.article-subline-share
 ##.article-title-share
 ##.articleShare
-##.articleShare-buttons
 ##.articleShareLinks
 ##.articleShareVideoBox
 ##.articleSocial
@@ -2172,8 +2172,6 @@ _social-bar/
 ##.psd-sharebar
 ##.pswp__button--share
 ##.pw-button-email
-##.pw-button-facebook
-##.pw-button-twitter
 ##.qlwapp-button
 ##.qodef-social-share
 ##.qt-sharepage
@@ -2236,6 +2234,7 @@ _social-bar/
 ##.scSocialIconsWidget
 ##.sc_sns
 ##.scriptlesssocialsharing
+##.scroll-triggered-box
 ##.sd-sharing
 ##.sd-social
 ##.sd-social-icon-text
@@ -2883,6 +2882,7 @@ _social-bar/
 ##.social-fixed
 ##.social-fixed-bar
 ##.social-fl
+##.social-float
 ##.social-follow
 ##.social-follow-bar
 ##.social-follow-item
@@ -3056,7 +3056,6 @@ _social-bar/
 ##.social-single
 ##.social-site
 ##.social-site-links
-##.social-sondage
 ##.social-space
 ##.social-stack
 ##.social-static
@@ -3344,7 +3343,6 @@ _social-bar/
 ##.theChampSharing
 ##.the_champ_sharing_container
 ##.the_champ_sharing_ul
-##.thim-author-social
 ##.thirdShareBox
 ##.thread-share
 ##.thread-share-bar-buttons
@@ -3520,6 +3518,7 @@ _social-bar/
 ##.widget-sharrre
 ##.widget-social
 ##.widget-social-b
+##.widget-social-follower
 ##.widget-social-icons
 ##.widget-social-links
 ##.widget_FacebookLikeBox
@@ -3857,6 +3856,7 @@ cbssports.com##.SocialIconsBar
 indiatoday.in##.Story_whatsapp_channel__6xdtB
 pixivision.net##._floated-bottom-bar
 pixivision.net##._follow-us-card
+tableconvert.com##._share-wrapper
 stylecaster.com##._socialMedia_1o0tg_1
 france24.com##.a-share-button
 tandfonline.com##.a2a_share_target
@@ -4002,6 +4002,7 @@ citizen.co.za##.g-cta-sidebar
 citizen.co.za##.g-cta-single
 citizen.co.za##.g-cta-single-socials
 ecoticias.com##.gb-element-1da6670c
+naval-technology.com,railway-technology.com,verdict.co.uk##.gdm-article-share
 news18.com##.gglebtn
 felixbarbalet.com##.gh-button-share
 ghacks.net##.ghacks_share_widget
@@ -4063,6 +4064,7 @@ euronews.com##.js-c-article-partage-commentaire-share
 buzzfeed.com##.js-inline-share-bar
 guide.michelin.com##.js-share-sticky
 myanimelist.net##.js-sns-icon-container
+nasdaq.com##.jupiter22-c-share-link
 4sysops.com##.kleo-quick-contact-wrapper
 axios.com##.leading-0
 mymodernmet.com##.lets-connect
@@ -4335,7 +4337,6 @@ genius.com##div[class^="ShareButtons_"]
 cnbc.com##div[class^="SocialShare-"]
 wired.com##div[class^="StickyBoxWrapper"]
 newsday.com##div[class^="share-tools"]
-thisismoney.co.uk##div[class^="socialContainer-"]
 technologyreview.com##div[class^="socialList_"]
 reuters.com##div[class^="social__container_"]
 abc.net.au##div[data-component="ShareUtility"]
@@ -4550,6 +4551,7 @@ open.online##.container-meta-social
 iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
+focus.it##.foc-footer-social
 ilfattoquotidiano.it##.ifq-news-meta__share
 ilfattoquotidiano.it##.ifq-post__share
 alfredopedulla.com##.ig-banner
@@ -4580,7 +4582,6 @@ mymovies.it##.vota-pul-consiglio
 virgilio.it##.vv-shr
 ilgiorno.it,ilrestodelcarlino.it,iltelegrafolivorno.it,lanazione.it,quotidiano.net##div[class^="SocialShare_"]
 ilpost.it##div[class^="_share_"]
-liberoquotidiano.it##img[id^="social-"]
 nlab.itmedia.co.jp###my_social_top
 bizgate.nikkei.com##.c-single-sns
 univ-journal.jp##.snsSpace
@@ -4636,6 +4637,7 @@ cnnbrasil.com.br##.single-editorial__follow
 cnnbrasil.com.br##.single-sharer
 publico.pt##.social-tools
 cnnbrasil.com.br##.social__footer
+rollingstone.com.br##.social_content_article
 tvi.iol.pt##.social_media_links
 meiobit.com##.socialfloating
 uol.com.br##.solar-header-columnist-socialmedia-content
@@ -4670,7 +4672,6 @@ europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
 lasexta.com##.L6-social-share
 adn40.mx##.ListSiguenos-SocialStrip
-ejecentral.com.mx##.NavigationSocial
 elpais.com.uy##.Page-actions-wrapper
 rpp.pe##.article__follow
 elfinanciero.com.mx##.b-footer__social-links-container
