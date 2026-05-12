@@ -1,9 +1,9 @@
-! Checksum: 0p/w4BAWWw2hXcZc2XnPPQ
-! Diff-Path: ../patches/14/14-s-1778586308-3600.patch
+! Checksum: VrbLRxE8+zxZcjWsigzamg
+! Diff-Path: ../patches/14/14-s-1778590343-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.67.88
-! TimeUpdated: 2026-05-12T11:42:22+00:00
+! Version: 2.2.67.89
+! TimeUpdated: 2026-05-12T12:49:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18817,6 +18817,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231098
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=caterpillar.com
+@@||cdn.cookielaw.org/consent/*.json$domain=caterpillar.com
 ! https://github.com/uBlockOrigin/uAssets/issues/32875
 @@||robertsspaceindustries.com/plt-client/assets/chunks/CookieConsent-*.js$domain=robertsspaceindustries.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230129
@@ -36151,6 +36154,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+timeshighereducation.com##.student-cta-spacing
+timeshighereducation.com###footer-top > .section-container:has(> div > div#the-subscribe)
 feelgoodfoodie.net##.block-area > div.wp-block-group:has(> div.wp-block-group__inner-container > div > form input[type="email"])
 feelgoodfoodie.net##.post-header__email
 feelgoodfoodie.net###h-free-meal-plans
