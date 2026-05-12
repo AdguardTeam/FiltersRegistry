@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.5.77",
-			"timeUpdated": "2026-05-12T11:41:29+0000",
+			"version": "2.1.5.78",
+			"timeUpdated": "2026-05-12T16:48:46+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.66.29",
-			"timeUpdated": "2026-05-12T15:02:45+0000",
+			"version": "2.4.66.30",
+			"timeUpdated": "2026-05-12T16:49:00+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.4.27",
-			"timeUpdated": "2026-05-12T11:41:57+0000",
+			"version": "2.1.4.28",
+			"timeUpdated": "2026-05-12T16:49:11+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.67.90",
-			"timeUpdated": "2026-05-12T15:03:29+0000",
+			"version": "2.2.67.91",
+			"timeUpdated": "2026-05-12T16:49:38+0000",
 			"languages": []
 		},
 		{
@@ -266,8 +266,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/16.txt",
-			"version": "2.0.56.54",
-			"timeUpdated": "2026-05-11T09:18:27+0000",
+			"version": "2.0.56.55",
+			"timeUpdated": "2026-05-12T16:49:45+0000",
 			"languages": [
 				"fr"
 			]
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.86.75",
-			"timeUpdated": "2026-05-12T15:03:39+0000",
+			"version": "2.0.86.76",
+			"timeUpdated": "2026-05-12T16:49:47+0000",
 			"languages": []
 		},
 		{
@@ -364,8 +364,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/23.txt",
-			"version": "2.0.8.12",
-			"timeUpdated": "2026-05-12T09:04:48+0000",
+			"version": "2.0.8.13",
+			"timeUpdated": "2026-05-12T16:49:53+0000",
 			"languages": [
 				"uk"
 			]

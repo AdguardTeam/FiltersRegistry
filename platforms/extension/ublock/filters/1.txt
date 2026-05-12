@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Dlo2uqYXW8mi+lIOpAOrhw
-! Diff-Path: ../patches/1/1-s-1778586330-3600.patch
+! Checksum: Pan9f91G6hRUOTxnDklBhQ
+! Diff-Path: ../patches/1/1-s-1778604758-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.5.77
-! TimeUpdated: 2026-05-12T11:41:29+00:00
+! Version: 2.1.5.78
+! TimeUpdated: 2026-05-12T16:48:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25,7 +25,8 @@
 ||com/services/?rt=$script,3p
 ||com/services/?fx=$script,3p
 ! Kinogo player
-/vast.xml?token=*c2NvcGUiOiJWQVNUIn0
+! BASE64 = 'scope":"VAST"}'
+?token=*c2NvcGUiOiJWQVNUIn0
 /kinogo/js/ads/*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205747
 /code/video-steam/?id=*&vast=
@@ -371,6 +372,7 @@ http://*.ru/leftunit.pl?
 /kadam.base.min.js?
 !
 mpg.com/movie/files/episodes/*-RU.mp4|
+/api-integration/fluxline?view=
 /api-integration/player/vast1.xml?view=
 ||vst.*/*?subid=
 /vast.php?partner_id=
@@ -1445,6 +1447,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||hello.vipapi.org^
 ||wishgofox.com^
 ||tallertorn.com^
 ||deltarockme.com^
@@ -6584,6 +6587,8 @@ mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,
 !
 ! NOTE: Specific rules
 !
+||cinemar.cc/api/player/vast
+||spdmpgcdn.com/*bet.mp4
 ||vipapi.org/vast.xml
 ||vipapi.org/vast/ad-rotator/
 technopark.ru##.catalog-banner
@@ -7053,6 +7058,7 @@ vedomosti.ru##.article__metrics
 ||netmonet.co/api/general/adfox
 ||netmonet.co/last-page-banner-modal.
 ||rstprgapipt.com/api-integration/fluxline
+||temptcdn.com/api-integration/fluxline?view=
 ||rstprgapipt.com/*.xml
 *$script,3p,denyallow=gstatic.com,domain=kinogo.ec|kinogo.tours|kinogo.wales
 kinogo.*##+js(remove-node-text, script, tryScriptLoader)
