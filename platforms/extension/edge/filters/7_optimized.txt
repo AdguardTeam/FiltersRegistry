@@ -1,9 +1,9 @@
-! Checksum: K3HGDHF62JXUXgToyJtlpg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1778343960-3600.patch
+! Checksum: SISVdtxIYxQ3AOeUfjtnYg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1778583363-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.73.76
-! TimeUpdated: 2026-05-09T16:23:09+00:00
+! Version: 2.0.73.77
+! TimeUpdated: 2026-05-12T10:52:47+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||sankei.click^$all
@@ -654,7 +654,8 @@ g-pc.info#%#//scriptlet('set-constant', 'adsbygoogle.loaded', 'true')
 ||nend.net/js/nendAdLoader.js$script,redirect=noopjs,domain=musenboya.com
 @@||musenboya.com^$generichide
 musenboya.com##.widget_pc_ad
-musenboya.com#%#//scriptlet('prevent-setTimeout', '/location\.href|document\./')
+musenboya.com#%#//scriptlet('prevent-element-src-loading', 'script', 'imp-adedge.i-mobile.co.jp')
+musenboya.com#%#//scriptlet('prevent-element-src-loading', 'script', 'js.ad-stir.com')
 ||health.joyplot.com/HealthWordsWiki/skin/foradblock.
 @@||intaa.net^$generichide
 intaa.net#%#//scriptlet('set-constant', 'gptScriptLoaded', 'true')
