@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: GJYHHhItvpB1vbPsT/oTaw
-! Diff-Path: ../patches/2/2-s-1778569837-3600.patch
+! Checksum: ibz2Y+IfDH818cvU7Gg7NA
+! Diff-Path: ../patches/2/2-s-1778576859-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.66.23
-! TimeUpdated: 2026-05-12T07:06:46+00:00
+! Version: 2.4.66.24
+! TimeUpdated: 2026-05-12T09:04:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10717,6 +10717,10 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230999
+noctua.paris###noctua-adb-modal
+noctua.paris##+js(no-setTimeout-if, /\.offsetHeight === 0|try \{ fetch/)
+noctua.paris##+js(set-local-storage-item, is_vip, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26327
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230953
 area.waffi.cloud#@#.adzone
@@ -11956,7 +11960,7 @@ animedb.in##+js(no-setInterval-if, window.getComputedStyle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191359
 edumail.icu##+js(remove-node-text, script, enable_ad_block_detector)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190738
-@@||fundingchoicesmessages.google.com/i/$script,domain=decrypt.day
+@@||fundingchoicesmessages.google.com^$script,domain=decrypt.day
 decrypt.day##div[class] > center:has(> div.w-full > ins.adsbygoogle):style(display: block !important; position: absolute !important; left: -9999px !important;)
 ||g.doubleclick.net/pagead/ads?gdpr=$subdocument,redirect=noop.html,domain=decrypt.day
 ||googleads.g.doubleclick.net/pagead/html/*.html$subdocument,redirect-rule=noop.html,domain=decrypt.day
@@ -19478,6 +19482,7 @@ auto.am##.azd-top
 ##.ainsyndication
 az##.makerekframe
 !
+||fed.az/upload/banners/$image
 mast.az##.xendev-top-banners
 caliber.az##.left_banner
 caliber.az##.top_banner
@@ -37251,6 +37256,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+noctua.paris##div[data-noctua-shield][style^="position: absolute; inset: 0px;"][style*="z-index:"]
 minorpatch.com##+js(addEventListener-defuser, click, pop)
 ||playzip.com/static/js/abcd.js
 playzip.com##+js(addEventListener-defuser, click, handleAdClick)
@@ -83426,6 +83432,7 @@ browsershots.org#@#.advert_area
 ||allocatedense.com^
 ||allocationcaller.com^
 ||allodiapreburn.com^
+||allodyqueys.qpon^
 ||allotupwardmalicious.com^
 ||allowingirksome.com^
 ||allowsalmond.com^
@@ -90044,6 +90051,7 @@ browsershots.org#@#.advert_area
 ||cxikfjqfiwxta.vip^
 ||cxjtsybhvpsfl.space^
 ||cxjuvi82x1rv83hofmnt6ryfmy.rest^
+||cxlfcqjg.com^
 ||cxnbgyadiqscl.click^
 ||cxofostbnjehi.website^
 ||cxojwgav.com^
@@ -98596,6 +98604,7 @@ browsershots.org#@#.advert_area
 ||ho2b3cfb7x276rojfmoy6q.cfd^
 ||hoanghmyqzkgrg.com^
 ||hoardedquipus.cyou^
+||hoardsketosehenry.qpon^
 ||hoarsecelebrityversus.com^
 ||hoarserbeastsarunta.cyou^
 ||hoarseshopping.pro^
@@ -102048,6 +102057,7 @@ browsershots.org#@#.advert_area
 ||karnwduphelya.cyou^
 ||karoskarn.shop^
 ||karthliunstagy.com^
+||karvarlectentete.cyou^
 ||kasifbaikqhyq.online^
 ||kasrsihavelear.org^
 ||kassudawson.cyou^
@@ -105565,6 +105575,7 @@ browsershots.org#@#.advert_area
 ||mhkufxshpxgps.website^
 ||mhlezkarznvwe.site^
 ||mhlzxcieymrw.com^
+||mhnxtnwkrrosfyp.com^
 ||mhqxzzklfxqdt.website^
 ||mhslimakagrzq.space^
 ||mhtgouywqxrxa.online^
@@ -112445,6 +112456,7 @@ browsershots.org#@#.advert_area
 ||pxbjmbnllzvhl.site^
 ||pxctpszddyyan.site^
 ||pxekfmmylcrqo.space^
+||pxgruigwgorib.website^
 ||pxgvyiizzmgqr.site^
 ||pxgynnjtdxwsb.site^
 ||pxhjcxcmfynxf.online^
@@ -112952,6 +112964,7 @@ browsershots.org#@#.advert_area
 ||qqhjdsbubacon.online^
 ||qqhuwthhmxeuc.space^
 ||qqifefphpoord.site^
+||qqjchhamewpmi.space^
 ||qqjildbaefe.com^
 ||qqjtldyoobxpo.online^
 ||qqkbagfoxsjkh.online^
@@ -113063,6 +113076,7 @@ browsershots.org#@#.advert_area
 ||qtroibxoalnmq.site^
 ||qttkyxopotgkk.site^
 ||qttwxclxus.com^
+||qtufjslitdyzf.space^
 ||qtunfmawyv.com^
 ||qtutulebptizh.website^
 ||qtvbpiamyq.com^
@@ -114427,6 +114441,7 @@ browsershots.org#@#.advert_area
 ||rhy79ti4knpiuxww2.rest^
 ||rhymersolidi.cfd^
 ||rhymyachiote.cfd^
+||rhynhmifegimi.site^
 ||rhythmclamour.com^
 ||rhythmxchange.com^
 ||riaoz.xyz^
@@ -114616,6 +114631,7 @@ browsershots.org#@#.advert_area
 ||rklggmnhygfut.online^
 ||rklrcrmurszvg.site^
 ||rknwvagviu.com^
+||rkoadzavbx.in^
 ||rkomf.com^
 ||rkopcipugj.in^
 ||rkp8kjfcw5vxlm8h7.cfd^
@@ -123276,6 +123292,7 @@ browsershots.org#@#.advert_area
 ||ueqaxthtwbo.com^
 ||ueqjychtgl.net^
 ||ueqkrtmgiokeg.site^
+||uerbcssuraiyf.space^
 ||uesqpftluoe.com^
 ||uetkgpbmolnjxz.com^
 ||ueuee.com^

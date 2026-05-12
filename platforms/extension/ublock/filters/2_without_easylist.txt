@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JxrW6xtazNsEwcCuNf3WeQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778569838-3600.patch
+! Checksum: PuVaT49nZPQZAtOAa9FmLw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778576860-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.66.23
-! TimeUpdated: 2026-05-12T07:06:46+00:00
+! Version: 2.4.66.24
+! TimeUpdated: 2026-05-12T09:04:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10717,6 +10717,10 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230999
+noctua.paris###noctua-adb-modal
+noctua.paris##+js(no-setTimeout-if, /\.offsetHeight === 0|try \{ fetch/)
+noctua.paris##+js(set-local-storage-item, is_vip, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26327
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230953
 area.waffi.cloud#@#.adzone
@@ -11956,7 +11960,7 @@ animedb.in##+js(no-setInterval-if, window.getComputedStyle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191359
 edumail.icu##+js(remove-node-text, script, enable_ad_block_detector)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190738
-@@||fundingchoicesmessages.google.com/i/$script,domain=decrypt.day
+@@||fundingchoicesmessages.google.com^$script,domain=decrypt.day
 decrypt.day##div[class] > center:has(> div.w-full > ins.adsbygoogle):style(display: block !important; position: absolute !important; left: -9999px !important;)
 ||g.doubleclick.net/pagead/ads?gdpr=$subdocument,redirect=noop.html,domain=decrypt.day
 ||googleads.g.doubleclick.net/pagead/html/*.html$subdocument,redirect-rule=noop.html,domain=decrypt.day
@@ -19478,6 +19482,7 @@ auto.am##.azd-top
 ##.ainsyndication
 az##.makerekframe
 !
+||fed.az/upload/banners/$image
 mast.az##.xendev-top-banners
 caliber.az##.left_banner
 caliber.az##.top_banner
@@ -37251,6 +37256,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+noctua.paris##div[data-noctua-shield][style^="position: absolute; inset: 0px;"][style*="z-index:"]
 minorpatch.com##+js(addEventListener-defuser, click, pop)
 ||playzip.com/static/js/abcd.js
 playzip.com##+js(addEventListener-defuser, click, handleAdClick)

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 6N60QT4UOCHJDfzAAm3wpg
-! Diff-Path: ../patches/19/19-s-1778569836-3600.patch
+! Checksum: rC13DGqc+09tkEamrmZlwg
+! Diff-Path: ../patches/19/19-s-1778576859-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.75.31
-! TimeUpdated: 2026-05-12T07:07:49+00:00
+! Version: 2.0.75.32
+! TimeUpdated: 2026-05-12T09:04:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -232,7 +232,7 @@ dzen.ru##div[class^="dzen-layout--desktop-page-layout__root-"] > div > div[data-
 dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
 ! Ads in news
 dzen.ru##div[id^="ad-"][class*="__isStretched"]
-dzen.ru##div:matches-attr("/.*/"="/placeholder/")
+dzen.ru##div[data-microappname="ContentMicroApp"] div:matches-attr("/.*/"="/placeholder/")
 dzen.ru##article:matches-attr("/.*/"="/skeleton/")
 dzen.ru##div[class*="__forceShowPlaceholder-"]
 dzen.ru##div[style^="--maxRightAdHeight:"]
@@ -10767,6 +10767,7 @@ kurashiru.com##html.dly-modal-active:style(overflow: auto !important;)
 !
 ! SECTION: Popups - Mobile sites only
 !
+www.kinopoisk.ru##+js(set-session-storage-item, hasShowTouchLoginWall, true)
 m.qoo10.jp##+js(set-cookie, mobile_main_big_popup, Y)
 suno.com##audio ~ div.fixed:has(> div[class] > div[class] > div[class] > img[alt="join suno"])
 time.com###google-source-tooltip-mobile

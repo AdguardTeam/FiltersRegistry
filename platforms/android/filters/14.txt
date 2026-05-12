@@ -1,9 +1,9 @@
-! Checksum: HzpE77HN6++gdpW6MNqxYQ
-! Diff-Path: ../patches/14/14-s-1778569809-3600.patch
+! Checksum: c5NbnXDjwOiw8NeUFmraog
+! Diff-Path: ../patches/14/14-s-1778576827-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.67.85
-! TimeUpdated: 2026-05-12T07:07:35+00:00
+! Version: 2.2.67.86
+! TimeUpdated: 2026-05-12T09:04:38+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2408,8 +2408,10 @@ rtl.fr,idealista.it,lidovky.cz,theobjective.com,dziennikzachodni.pl,standaard.be
 ! #%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button')
 tf1.fr,cadenaser.com,filmstarts.de,tv.free.fr,orange.fr,laliga.com,latribune.fr,laopiniondezamora.es,elpais.com,laprovincia.es,informacion.es,levante-emv.com,ondacero.es,rtbf.be,mediasetinfinity.es,franceinfo.fr,ivoox.com,nationalgeographic.com.es,slam.nl,rmcbfmplay.com,abc.es,lejsl.com,bienpublic.com,funradio.fr,flooxernow.com,techcrunch.com,gamepro.de,lemon.fr,mundodeportivo.com,elmundo.es,profil.at,ladepeche.fr,francetvinfo.fr,lexpress.fr,elespanol.com,sncf-connect.com,lasexta.com,shadow.tech,letemps.ch,nicematin.com,mein-mmo.de,heureka.sk,video-streaming.orange.fr,leparisien.fr,film.at,euronews.com,france24.com,elcorreo.com,ideal.es,lesoir.be,lavanguardia.com,dhnet.be,20minutes.fr,moviepilot.de,dnevnik.hr,lesechos.fr,lasprovincias.es,programme-television.org,cnews.fr,boursorama.com,marianne.net,ouest-france.fr,jeanmarcmorandini.com,publicsenat.fr,dna.fr,bfmtv.com,sudinfo.be,europe1.fr,public.fr,rtl.be,rfi.fr,kurier.at,telegraaf.nl,marmiton.org,reviewingthebrew.com,jaysjournal.com,engadget.com,reignoftroy.com,actu.fr,elconfidencial.com,rtl.lu#%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button')
 leboncoin.fr#%#//scriptlet('trusted-click-element', '#didomi-agree-to-all')
-! #%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button','','1000')
+! #%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button', '', '1000')
 plus.rtl.de#%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button', '', '1000')
+! #%#//scriptlet('trusted-click-element', '.didomi-continue-without-agreeing')
+clubic.com#%#//scriptlet('trusted-click-element', '.didomi-continue-without-agreeing')
 ! For the case if the scroll page is blocked
 bonjour-ratp.fr,yahoo.com,expressen.se,elespanol.com,shadow.tech,letemps.ch,nicematin.com,purepeople.com,dn.se,numerama.com,goplay.be,lavozdegalicia.es,boursobank.com,corrieredellosport.it,recup.paylib.fr,radioclassique.fr,joabet.fr,xataka.com,lejdd.fr,filmweb.pl,speedy.fr,manomano.fr,talent-soft.com,jofogas.hu,m.rtl.be,elmundo.es,vecernji.hr,zive.cz#$##didomi-host { display: none !important; }
 bonjour-ratp.fr,yahoo.com,expressen.se,elespanol.com,techcrunch.com,shadow.tech,letemps.ch,nicematin.com,purepeople.com,dn.se,numerama.com,goplay.be,lavozdegalicia.es,boursobank.com,recup.paylib.fr,radioclassique.fr,joabet.fr,xataka.com,lejdd.fr,filmweb.pl,speedy.fr,manomano.fr,talent-soft.com,jofogas.hu,m.rtl.be,elmundo.es,vecernji.hr,zive.cz#$#html > body.didomi-popup-open { overflow: auto !important; position: unset !important; }
@@ -8447,6 +8449,7 @@ rog-forum.asus.com#$##cookie-policy-info { display: none !important; }
 rog-forum.asus.com#$#.fixed,.fixed body { overflow: auto !important; }
 arcraiders.com,furuyametals.co.jp,b2c.vds.pl,psyarxiv.com##div[class*="cookie-banner"]
 getmailbird.com###mb-footer-lawmsg
+sexmex.xxx###lawmsg
 prorail.nl##.prorail-cookie-popup
 mercatoemcasa.com.br###COOKIEBAR
 woktowalk.com##div[class^="cookieAceptance"]
@@ -23987,7 +23990,7 @@ dzen.ru##div[class^="dzen-layout--desktop-page-layout__root-"] > div > div[data-
 dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
 ! Ads in news
 dzen.ru##div[id^="ad-"][class*="__isStretched"]
-dzen.ru#?#div:matches-attr("/.*/"="/placeholder/")
+dzen.ru#?#div[data-microappname="ContentMicroApp"] div:matches-attr("/.*/"="/placeholder/")
 dzen.ru#?#article:matches-attr("/.*/"="/skeleton/")
 dzen.ru##div[class*="__forceShowPlaceholder-"]
 dzen.ru##div[style^="--maxRightAdHeight:"]
@@ -34749,6 +34752,7 @@ kurashiru.com#$#html.dly-modal-active { overflow: auto !important; }
 !
 ! SECTION: Popups - Mobile sites only
 !
+www.kinopoisk.ru#%#//scriptlet('set-session-storage-item', 'hasShowTouchLoginWall', 'true')
 www.kinopoisk.ru#%#//scriptlet('trusted-set-local-storage-item', 'touchLoginWallPages', '{"timestamp":9999999999999,"pages":["series-page"]}')
 m.qoo10.jp#%#//scriptlet('set-cookie', 'mobile_main_big_popup', 'Y')
 suno.com##audio ~ div.fixed:has(> div[class] > div[class] > div[class] > img[alt="join suno"])
@@ -45958,6 +45962,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+goal.com##.fco-app-promo-modal
 ||buy-eu.piano.io/checkout/template/cacheableShow.html*&offerId=fakeOfferId&experienceId=$subdocument,domain=kathimerini.gr
 kathimerini.gr##.app-holder
 myacgmall.com.tw,olhelmets.com#?##root > .container-component .slide-push-menu ~ div[class^="sc-"]:contains(Try the App)

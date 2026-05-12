@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 2VSRmzQk8Yh+pT4Oi2bu9w
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1778569835-3600.patch
+! Checksum: ExHl8FujetrLOkI/pm8eIA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1778576858-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.64.11
-! TimeUpdated: 2026-05-12T07:07:25+00:00
+! Version: 2.0.64.12
+! TimeUpdated: 2026-05-12T09:04:31+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$3p
 ||rtb-stack.com^
@@ -233,6 +233,7 @@
 ||ttauri.livescience.com^
 ankarakampkafasi.com,zamaninvarken.com,kriptoradar.com,bakimlikadin.net,korsanedebiyat.com,genelpara.com,azbuz.org,mustafabukulmez.com##+js(no-setTimeout-if, 0===o.offsetLeft&&0===o.offsetTop)
 teknop.net,ozgunbilgi.com##+js(set-constant, adblock.check, noopFunc)
+kpsssorucevapba.com##+js(addEventListener-defuser, DOMContentLoaded, adsbygoogle)
 teknoistan.com##+js(no-setTimeout-if, adsbygoogle)
 hisse.net##+js(abort-current-script, document.querySelector, adBlocks)
 hisse.net##.detail-mymani-widget
@@ -1041,6 +1042,8 @@ $xhr,3p,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|dood
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xhr,redirect=noop.txt,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+ajansspor.com##div[data-slot^="masthead"]
+onedio.com###masthead-background
 kanald.com.tr##+js(set-attr, .player-container, data-ad, false)
 sondakika.com###video-ad-container-desktop
 haberler.com##div[id^="video-ad-container-"]
@@ -1084,6 +1087,9 @@ webteknolife.com##.wtl-ad-wrap
 webteknolife.com##.svd-box
 ||kartalhaber.com/images/banners/
 fotospor.com.tr##.container > div[align="center"]:has(> the-ads)
+fotospor.com.tr##.infinite-item > div[style*="margin-bottom:"]:has(> the-ads)
+fotospor.com.tr##.col-4 > .center > div[style*="margin-bottom:"]:has(> the-ads)
+fotospor.com.tr##.col-8 > .center[style*="height:"]:has(> .margin-bottom-md > the-ads)
 halktv.com.tr##.container section > .row > .section-mb:has(> .dfp-ad-loaded)
 halktv.com.tr##.container section > .row > .section-mb:has(> .HLK_VIDEO)
 webtekno.com##a[href^="https://s.mdznconnect.com/"]

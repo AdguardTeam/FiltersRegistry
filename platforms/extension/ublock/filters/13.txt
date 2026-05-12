@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: s7IioIQzPdmBAP2zaFuUBQ
-! Diff-Path: ../patches/13/13-s-1778569835-3600.patch
+! Checksum: o+BXSbxKINkg6J8stpDcJA
+! Diff-Path: ../patches/13/13-s-1778576858-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.64.11
-! TimeUpdated: 2026-05-12T07:07:25+00:00
+! Version: 2.0.64.12
+! TimeUpdated: 2026-05-12T09:04:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -271,6 +271,8 @@
 ankarakampkafasi.com,zamaninvarken.com,kriptoradar.com,bakimlikadin.net,korsanedebiyat.com,genelpara.com,azbuz.org,mustafabukulmez.com##+js(no-setTimeout-if, 0===o.offsetLeft&&0===o.offsetTop)
 teknop.net,ozgunbilgi.com##+js(set-constant, adblock.check, noopFunc)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231083
+kpsssorucevapba.com##+js(addEventListener-defuser, DOMContentLoaded, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226594
 teknoistan.com##+js(no-setTimeout-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225415
@@ -1545,6 +1547,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+ajansspor.com##div[data-slot^="masthead"]
+onedio.com###masthead-background
 kanald.com.tr##+js(set-attr, .player-container, data-ad, false)
 sondakika.com###video-ad-container-desktop
 haberler.com##div[id^="video-ad-container-"]
@@ -1588,6 +1592,9 @@ webteknolife.com##.wtl-ad-wrap
 webteknolife.com##.svd-box
 ||kartalhaber.com/images/banners/
 fotospor.com.tr##.container > div[align="center"]:has(> the-ads)
+fotospor.com.tr##.infinite-item > div[style*="margin-bottom:"]:has(> the-ads)
+fotospor.com.tr##.col-4 > .center > div[style*="margin-bottom:"]:has(> the-ads)
+fotospor.com.tr##.col-8 > .center[style*="height:"]:has(> .margin-bottom-md > the-ads)
 halktv.com.tr##.container section > .row > .section-mb:has(> .dfp-ad-loaded)
 halktv.com.tr##.container section > .row > .section-mb:has(> .HLK_VIDEO)
 webtekno.com##a[href^="https://s.mdznconnect.com/"]
