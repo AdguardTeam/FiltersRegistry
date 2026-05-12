@@ -1,9 +1,9 @@
-! Checksum: x8mAznIjqMkqa6XBE31O2A
-! Diff-Path: ../patches/3/3-s-1778604753-3600.patch
+! Checksum: eZqyy52qwRwLgUDD0wZSzQ
+! Diff-Path: ../patches/3/3-s-1778614766-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.4.28
-! TimeUpdated: 2026-05-12T16:49:11+00:00
+! Version: 2.1.4.29
+! TimeUpdated: 2026-05-12T19:36:11+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -154,13 +154,26 @@ jrhokkaido.co.jp#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '
 firmwaredrive.com#%#setTimeout(function() { var el = document.querySelector('input[name="dfp"]'); if(el){el.value = '1234567890123456';} }, 300);
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167963
 wirkaufens.de#%#//scriptlet('trusted-replace-fetch-response', '/"ip":".*?"/', '"ip":""', 'api.ipify.org')
+!
+! Sensors Analytics
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167885
-cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505', 'emptyObj')
-cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.use', 'noopFunc')
-cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.init', 'noopFunc')
-cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.track', 'noopFunc')
-cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.quick', 'noopFunc')
-cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.registerPage', 'noopFunc')
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505', 'emptyObj')
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.use', 'noopFunc')
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.init', 'noopFunc')
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.track', 'noopFunc')
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.quick', 'noopFunc')
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn#%#//scriptlet('set-constant', 'sensorsDataAnalytic201505.registerPage', 'noopFunc')
+! https://github.com/AdguardTeam/AdguardFilters/issues/173678
+! https://github.com/AdguardTeam/AdguardFilters/issues/167552
+! https://github.com/AdguardTeam/AdguardFilters/issues/152478
+! https://github.com/AdguardTeam/AdguardFilters/issues/139949
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors', 'emptyObj')
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.init', 'noopFunc')
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.track', 'noopFunc')
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.quick', 'noopFunc')
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.login', 'noopFunc')
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.registerPage', 'noopFunc')
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166258
 yourstory.com#%#(()=>{const n=function(){};window.pa={avInsights:{Media:function(){return{set:n}}},setConfigurations:n,sendEvent:n,refresh:n,getVisitorId:n}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165757
@@ -245,16 +258,6 @@ member.neofinancial.com#%#//scriptlet('set-constant', '__fpjs_p_l_b.load', 'noop
 itsu.com#%#//scriptlet('set-constant', 'AtreemoTrackingLbr', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140059
 pracuj.pl#%#//scriptlet('set-cookie-reload', 'gptrackCookie', '1')
-! https://github.com/AdguardTeam/AdguardFilters/issues/173678
-! https://github.com/AdguardTeam/AdguardFilters/issues/167552
-! https://github.com/AdguardTeam/AdguardFilters/issues/152478
-! https://github.com/AdguardTeam/AdguardFilters/issues/139949
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors', 'emptyObj')
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.init', 'noopFunc')
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.track', 'noopFunc')
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.quick', 'noopFunc')
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.login', 'noopFunc')
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn#%#//scriptlet('set-constant', 'sensors.registerPage', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139139
 embed.rtl.hu#%#//scriptlet('set-constant', 'gemiusStream', 'emptyObj')
 embed.rtl.hu#%#//scriptlet('set-constant', 'gemiusStream.event', 'noopFunc')
@@ -79264,6 +79267,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||data-api.fenbi.com^
 ||mpecom-analyticevents-prod.boyner.com.tr^
 ||dlso-ap96.macgamingdb.app^
 ||fm-analytics.cloudbees.io^
@@ -191817,6 +191821,7 @@ d4?appid*type*
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230877
 ! https://github.com/uBlockOrigin/uAssets/issues/32857
 @@||dd.subito.it.first-party-js.datadome.co^$script,xmlhttprequest,domain=areariservata.subito.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229453

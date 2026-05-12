@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: am8V3zRDxNOaeGFQ+UhzXw
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1778604761-3600.patch
+! Checksum: DUQlFaI7Vum5Zqb99+P9Zg
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1778614774-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.4.28
-! TimeUpdated: 2026-05-12T16:49:11+00:00
+! Version: 2.1.4.29
+! TimeUpdated: 2026-05-12T19:36:11+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -74,12 +74,18 @@ muratorplus.pl##+js(set-constant, GemiusPlayer.prototype.newProgram, noopFunc)
 muratorplus.pl##+js(set-constant, GemiusPlayer.prototype.programEvent, noopFunc)
 muratorplus.pl##+js(set-constant, GemiusPlayer.prototype.setVideoObject, noopFunc)
 jrhokkaido.co.jp##+js(addEventListener-defuser, DOMContentLoaded, pt_enable)
-cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505, {})
-cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.use, noopFunc)
-cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.init, noopFunc)
-cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.track, noopFunc)
-cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.quick, noopFunc)
-cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.registerPage, noopFunc)
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505, {})
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.use, noopFunc)
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.init, noopFunc)
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.track, noopFunc)
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.quick, noopFunc)
+fenbi.com,cib.com.cn,pconline.pcvideo.com.cn##+js(set-constant, sensorsDataAnalytic201505.registerPage, noopFunc)
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors, {})
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.init, noopFunc)
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.track, noopFunc)
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.quick, noopFunc)
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.login, noopFunc)
+xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.registerPage, noopFunc)
 biologianet.com##+js(set-constant, UOLPD, {})
 biologianet.com##+js(set-constant, UOLPD.dataLayer, {})
 biologianet.com##+js(set-constant, __configuredDFPTags, {})
@@ -119,12 +125,6 @@ member.neofinancial.com##+js(set-constant, __fpjs_p_l_b, {})
 member.neofinancial.com##+js(set-constant, __fpjs_p_l_b.load, noopFunc)
 itsu.com##+js(set-constant, AtreemoTrackingLbr, noopFunc)
 pracuj.pl##+js(set-cookie-reload, gptrackCookie, 1)
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors, {})
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.init, noopFunc)
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.track, noopFunc)
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.quick, noopFunc)
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.login, noopFunc)
-xingyue.geely.com,tineco.com,galaxy.geely.com,guancha.cn##+js(set-constant, sensors.registerPage, noopFunc)
 embed.rtl.hu##+js(set-constant, gemiusStream, {})
 embed.rtl.hu##+js(set-constant, gemiusStream.event, noopFunc)
 reuters.com##+js(set-local-storage-item, ajs_anonymous_id, null)
@@ -78660,6 +78660,7 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||countly.
 ||countly-
 |piwik.
+||data-api.fenbi.com^
 ||mpecom-analyticevents-prod.boyner.com.tr^
 ||dlso-ap96.macgamingdb.app^
 ||fm-analytics.cloudbees.io^
