@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: T3Gay20jwZgCyhK0XBVCGw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778555849-3600.patch
+! Checksum: Nx5JOu4lUHM/K6YYF7Eljg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778563402-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.66.21
-! TimeUpdated: 2026-05-12T03:13:32+00:00
+! Version: 2.4.66.22
+! TimeUpdated: 2026-05-12T05:19:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10716,6 +10716,7 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/26327
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230953
 area.waffi.cloud#@#.adzone
 area.waffi.cloud##+js(abort-current-script, EventTarget.prototype.addEventListener, .offsetHeight === 0)
@@ -18404,9 +18405,6 @@ gktoday.in#@#.adsense
 gktoday.in#@#.sponsored
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5508
 @@||cdn.reverso.net/*/static/js/advertising.js^
-! https://forum.adguard.com/index.php?threads/23122/
-trancepodcasts.com###banner-message:style(visibility: hidden!important;)
-trancepodcasts.com##.w3eden:style(display: block!important;)
 ! 9cartoon.me/Watch/160651/party-legends-season-2-2016/episodie-3
 @@||player.9cartoon.me/static/ads.js^
 ! https://forum.adguard.com/index.php?threads/22999/
@@ -18422,14 +18420,6 @@ trancepodcasts.com##.w3eden:style(display: block!important;)
 !+ PLATFORM(ios, ext_ff, ext_opera, ext_android_cb, ext_ublock)
 @@||muchfriends.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5469
-! https://github.com/AdguardTeam/AdguardFilters/issues/28761
-! https://github.com/AdguardTeam/AdguardFilters/issues/26327
-! https://forum.adguard.com/index.php?threads/flacplayer-ehubsoft-net-anti-ad-block-ubo-on-chrome.23131/
-ehubsoft.net##+js(set-constant, gadb, false)
-!+ NOT_PLATFORM(ios, ext_android_cb)
-||pagead2.googlesyndication.com/pagead/show_ads.js$script,redirect=noop.js,important,domain=ehubsoft.net
-!+ PLATFORM(ext_ublock)
-||pagead2.googlesyndication.com/pagead/show_ads.js$script,domain=ehubsoft.net,redirect=noop.js
 !
 ! https://forum.adguard.com/index.php?threads/smsreceiveonline-com-anti-ad-block-ubo.23093/
 !+ PLATFORM(ios, ext_android_cb, ext_ublock)
@@ -18603,8 +18593,6 @@ vulture.com###article > #bottom > div.nymab-response
 @@||contextual.media.net/fcmdynet.js$domain=webupd8.org
 ! https://forum.adguard.com/index.php?threads/16312/
 @@||media2.intoday.in/aajtak/$script
-! https://forum.adguard.com/index.php?threads/16242/
-/torrenttrackerlist.com\/(wp-content)\/(uploads)\/[a-zA-Z0-9]{10,}\/[a-zA-Z0-9]{10,}.js/
 ! https://forum.adguard.com/index.php?threads/16173/
 @@||tehnotone.com^$generichide
 ! https://forum.adguard.com/index.php?threads/15996/
@@ -18617,9 +18605,6 @@ vipleague.tv###warningdiv + div[id][style]
 @@||cdn.vidyomani.com/*/*ads*.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3354
 @@||paybis.com/assets/*/responsive/*.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/3333
-@@||doridro.com^$generichide
-@@||doridro.com/forum/styles/FLATBOOTS/theme/images/logo.png
 ! https://forum.adguard.com/index.php?threads/15454/
 @@||crawlist.net^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3279
@@ -37269,6 +37254,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+minorpatch.com##+js(addEventListener-defuser, click, pop)
 ||playzip.com/static/js/abcd.js
 playzip.com##+js(addEventListener-defuser, click, handleAdClick)
 scatsite.com##a[href^="https://ad.stuffserve.me/"]
@@ -57230,7 +57216,6 @@ winaero.com##.gad-gads
 ! Hearst Television Inc
 4029tv.com,98online.com,abc-7.com,hearst.com,kcci.com,kcra.com,ketv.com,kmbc.com,koat.com,koco.com,ksbw.com,mor-tv.com,mynbc5.com,nbc-2.com,wapt.com,wbal.com,wbaltv.com,wcvb.com,wdsu.com,wesh.com,wgal.com,wisn.com,wjcl.com,wlky.com,wlwt.com,wmtw.com,wmur.com,wpbf.com,wptz.com,wtae.com,wvtm13.com,wxii12.com,wyff4.com##.listing-page-ad
 ! Other hearst.com sites
-theridgefieldpress.com,thetelegraph.com,beaumontenterprise.com,bigrapidsnews.com,chron.com,ctinsider.com,ctpost.com,darientimes.com,seattlepi.com,expressnews.com,fuelfix.com,greenwichtime.com,houstonchronicle.com,lakecountystar.com,lmtonline.com,manisteenews.com,michigansthumb.com,middletownpress.com,milfordmirror.com,mrt.com,myjournalcourier.com,myplainview.com,mysanantonio.com,ncadvertiser.com,newstimes.com,nhregister.com,ourmidland.com,recordpatriot.com,registercitizen.com,seattlepi.com,sfchronicle.com,sfgate.com,sheltonherald.com,smallbusiness.chron.com,stamfordadvocate.com,theheraldreview.com,thehour.com,theintelligencer.com,timesunion.com,trumbulltimes.com,weekand.com,wiltonbulletin.com,work.chron.com,yourconroenews.com##div[data-layout="Layout1Column"][class="f fdc mxa mb40"]
 theridgefieldpress.com,thetelegraph.com,beaumontenterprise.com,bigrapidsnews.com,chron.com,ctinsider.com,ctpost.com,darientimes.com,seattlepi.com,expressnews.com,fuelfix.com,greenwichtime.com,houstonchronicle.com,lakecountystar.com,lmtonline.com,manisteenews.com,michigansthumb.com,middletownpress.com,milfordmirror.com,mrt.com,myjournalcourier.com,myplainview.com,mysanantonio.com,ncadvertiser.com,newstimes.com,nhregister.com,ourmidland.com,recordpatriot.com,registercitizen.com,seattlepi.com,sfchronicle.com,sfgate.com,sheltonherald.com,smallbusiness.chron.com,stamfordadvocate.com,theheraldreview.com,thehour.com,theintelligencer.com,timesunion.com,trumbulltimes.com,weekand.com,wiltonbulletin.com,work.chron.com,yourconroenews.com##.ar16-9
 theridgefieldpress.com,thetelegraph.com,beaumontenterprise.com,bigrapidsnews.com,chron.com,ctinsider.com,ctpost.com,darientimes.com,seattlepi.com,expressnews.com,fuelfix.com,greenwichtime.com,houstonchronicle.com,lakecountystar.com,lmtonline.com,manisteenews.com,michigansthumb.com,middletownpress.com,milfordmirror.com,mrt.com,myjournalcourier.com,myplainview.com,mysanantonio.com,ncadvertiser.com,newstimes.com,nhregister.com,ourmidland.com,recordpatriot.com,registercitizen.com,seattlepi.com,sfchronicle.com,sfgate.com,sheltonherald.com,smallbusiness.chron.com,stamfordadvocate.com,theheraldreview.com,thehour.com,theintelligencer.com,timesunion.com,trumbulltimes.com,weekand.com,wiltonbulletin.com,work.chron.com,yourconroenews.com##.x300px > div.package.y100.none
 theridgefieldpress.com,thetelegraph.com,beaumontenterprise.com,bigrapidsnews.com,chron.com,ctinsider.com,ctpost.com,darientimes.com,seattlepi.com,expressnews.com,fuelfix.com,greenwichtime.com,houstonchronicle.com,lakecountystar.com,lmtonline.com,manisteenews.com,michigansthumb.com,middletownpress.com,milfordmirror.com,mrt.com,myjournalcourier.com,myplainview.com,mysanantonio.com,ncadvertiser.com,newstimes.com,nhregister.com,ourmidland.com,recordpatriot.com,registercitizen.com,seattlepi.com,sfchronicle.com,sfgate.com,sheltonherald.com,smallbusiness.chron.com,stamfordadvocate.com,theheraldreview.com,thehour.com,theintelligencer.com,timesunion.com,trumbulltimes.com,weekand.com,wiltonbulletin.com,work.chron.com,yourconroenews.com##.bb.sy16.pt16.b-gray300
@@ -63401,6 +63386,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231058
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230996
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230693
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230771
