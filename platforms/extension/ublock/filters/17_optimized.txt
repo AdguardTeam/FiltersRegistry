@@ -1,11 +1,17 @@
 ![Adblock Plus 2.0]
-! Checksum: CDEYWBQgEIbjifLWdGZPvQ
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1778680274-3600.patch
+! Checksum: Ac2bOu1+WblqVBlYXaJ7Mw
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1778784420-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.42
-! TimeUpdated: 2026-05-13T13:48:12+00:00
+! Version: 2.0.13.43
+! TimeUpdated: 2026-05-14T18:43:57+00:00
 ! Expires: 5 days (update frequency)
+$removeparam=x-clickref
+$removeparam=x-source
+$removeparam=x-a-medium
+$removeparam=ranMID
+$removeparam=ranEAID
+$removeparam=ranSiteID
 $removeparam=eml-name
 $removeparam=eml-mediaplan
 $removeparam=eml-publisher
@@ -326,6 +332,24 @@ $denyallow=lifehacker.ru|forbes.ru|kommersant.ru,removeparam=erid
 $denyallow=greenbuildingadvisor.com,removeparam=oly_enc_id
 $denyallow=login.aliexpress.us|login.aliexpress.com,removeparam=_ga
 $denyallow=tradedoubler.com,removeparam=tduid
+||bestbuycreators.7tiv.net^$removeparam=sharedid
+||bestbuycreators.7tiv.net^$removeparam=adcampaignid
+||bestbuycreators.7tiv.net^$removeparam=svlink
+||bestbuycreators.7tiv.net^$removeparam=subId1
+||bestbuycreators.7tiv.net^$removeparam=subId2
+||bestbuycreators.7tiv.net^$removeparam=subId3
+||bestbuy.7tiv.net^$removeparam=subid1
+||bestbuy.7tiv.net^$removeparam=subid2
+||bestbuy.7tiv.net^$removeparam=subid3
+||www.bestbuy.com^$removeparam=id
+||www.bestbuy.com^$removeparam=mpid
+||www.bestbuy.com^$removeparam=acampid
+||artlist.io^$removeparam=artlist_aid
+||newegg.com^$removeparam=AFFID
+||newegg.com^$removeparam=AFFNAME
+||newegg.com^$removeparam=ACRID
+||newegg.com^$removeparam=ASUBID
+||newegg.com^$removeparam=ASID
 ||taboolanews.com^$removeparam=dc_data
 ||bubilet.com.tr^$removeparam=ref
 ||onelink.me^$removeparam=af_sub1
@@ -1133,9 +1157,6 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ||smartrecruiters.com^$removeparam=km_adgroup
 ||smartrecruiters.com^$removeparam=km_matchtype
 ||smartrecruiters.com^$removeparam=km_partner
-||nuuvem.com^$removeparam=ranMID
-||nuuvem.com^$removeparam=ranEAID
-||nuuvem.com^$removeparam=ranSiteID
 ||gog.com^$removeparam=pp
 ||chitai-gorod.ru^$removeparam=partnerId
 ||mall.kinarino.jp^$removeparam=karea
@@ -1414,9 +1435,6 @@ mailchimp.com$removeparam=amp%3Bafl
 ||productcatalog.channeladvisor.com^$document,removeparam=profileId
 ||go.skimresources.com^$document,removeparam=id
 ||go.skimresources.com^$document,removeparam=xcust
-||chemistwarehouse.com.au^$removeparam=ranMID
-||chemistwarehouse.com.au^$removeparam=ranEAID
-||chemistwarehouse.com.au^$removeparam=ranSiteID
 ||playstation.com$removeparam=emcid
 ||epicgames.com^$removeparam=epic_gameId
 ||epicgames.com^$removeparam=epic_affiliate
@@ -2194,6 +2212,11 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 $removeparam=asc_campaign,domain=aboutamazon.com|amazon.*|amzn.to
 $removeparam=asc_refurl,domain=aboutamazon.com|amazon.*|amzn.to
 $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
+||amazon.*&linkCode=*&tag=*&linkId=$removeparam=crid
+||amazon.*&linkCode=*&tag=*&linkId=$removeparam=sprefix
+||amazon.*&linkCode=*&tag=*&linkId=$removeparam=linkCode
+||amazon.*&linkCode=*&tag=*&linkId=$removeparam=tag
+||amazon.*&linkCode=*&tag=*&linkId=$removeparam=linkId
 ||amazon.*$removeparam=ascsubtag
 ||amazon.*$removeparam=isDramIntegrated
 ||amazon.*$removeparam=shoppingPortalEnabled
