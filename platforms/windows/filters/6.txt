@@ -1,9 +1,9 @@
-! Checksum: toLQl4I47xxfEt0yAErS2g
-! Diff-Path: ../patches/6/6-s-1778691439-3600.patch
+! Checksum: LgtnPkaMU6q7rL7BoDcA2g
+! Diff-Path: ../patches/6/6-s-1778742745-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.51.96
-! TimeUpdated: 2026-05-13T16:52:57+00:00
+! Version: 2.0.51.97
+! TimeUpdated: 2026-05-14T07:08:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -372,7 +372,9 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 ! NOTE: Regular rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230870
-kinoking.cc#%#//scriptlet('prevent-setTimeout', 'adblock')
+kinoking.cc#$#body { overflow: auto !important; }
+kinoking.cc#$##adblockOverlay { display: none !important; }
+kinoking.cc#%#//scriptlet('prevent-setTimeout', '/adblock|\.offsetHeight === 0/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227083
 @@||static.classistatic.de/adv/public/js/nf/mobile-detect-adblock.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226888
@@ -11838,7 +11840,7 @@ abendzeitung-muenchen.de##article[class^="teaser nummer-"]:has(span.specialfeatu
 futurezone.de##article[data-post-id]:has(.sponsor-byline)
 diegrenzgaenger.lu##article[id^=post-]:has(.sponsored-indicator)
 az.com.na##aside:has(img[src*="/adverts/"])
-mediamarkt.*,saturn.de##aside[class="sc-a2fcee8-0 fmYGst"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
+mediamarkt.*,saturn.de##aside[class="sc-3e143820-0 erAlUN"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
 travelbook.de##div.has-mark[style="min-width: 300px; min-height: 250px;"]
 hornoxe.com##div.post.hentry.ivycat-post:has(a[href^="https://amzn.to/"])
 hornoxe.com##div.post.hentry.ivycat-post:has(a[href^="https://www.amazon.de/"])

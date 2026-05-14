@@ -874,7 +874,9 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 ! NOTE: Regular rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230870
-kinoking.cc#%#//scriptlet('prevent-setTimeout', 'adblock')
+kinoking.cc#$#body { overflow: auto !important; }
+kinoking.cc#$##adblockOverlay { display: none !important; }
+kinoking.cc#%#//scriptlet('prevent-setTimeout', '/adblock|\.offsetHeight === 0/')
 !#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=kinoking.cc
 kinoking.cc#@#.ad-unit:not(.textads)
@@ -12560,7 +12562,7 @@ abendzeitung-muenchen.de##article[class^="teaser nummer-"]:has(span.specialfeatu
 futurezone.de##article[data-post-id]:has(.sponsor-byline)
 diegrenzgaenger.lu##article[id^=post-]:has(.sponsored-indicator)
 az.com.na##aside:has(img[src*="/adverts/"])
-mediamarkt.*,saturn.de##aside[class="sc-a2fcee8-0 fmYGst"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
+mediamarkt.*,saturn.de##aside[class="sc-3e143820-0 erAlUN"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
 travelbook.de##div.has-mark[style="min-width: 300px; min-height: 250px;"]
 hornoxe.com##div.post.hentry.ivycat-post:has(a[href^="https://amzn.to/"])
 hornoxe.com##div.post.hentry.ivycat-post:has(a[href^="https://www.amazon.de/"])

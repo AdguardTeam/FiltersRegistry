@@ -1,9 +1,9 @@
-! Checksum: O/k0Bt+9VnebzkwdrYLJeQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1778728628-3600.patch
+! Checksum: GX029jxQ3yAcme4N55dWqQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1778742735-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.51.96
-! TimeUpdated: 2026-05-13T16:52:57+00:00
+! Version: 2.0.51.97
+! TimeUpdated: 2026-05-14T07:08:55+00:00
 ! Expires: 5 days (update frequency)
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
@@ -792,7 +792,9 @@ urbia.de,essen-und-trinken.de#@#.playerAd
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=schnittmuster-datenbank.de
 @@||ads-api.twitter.com^$domain=schnittmuster-datenbank.de
-kinoking.cc#%#//scriptlet('prevent-setTimeout', 'adblock')
+kinoking.cc#$#body { overflow: auto !important; }
+kinoking.cc#$##adblockOverlay { display: none !important; }
+kinoking.cc#%#//scriptlet('prevent-setTimeout', '/adblock|\.offsetHeight === 0/')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=kinoking.cc
 kinoking.cc#@#.ad-unit:not(.textads)
 kinoking.cc#@#.bottom-ad
@@ -5572,7 +5574,7 @@ mediamarkt.*,saturn.de##[data-test="mms-product-card"]:has(div[data-test="mms-pl
 obi.*##[data-track-section^="home-topteaser"]:has(hobi-advertiser-tag)
 finanzen.net##article.page-content__item:has(img[alt="UBS"])
 abendzeitung-muenchen.de##article[class^="teaser nummer-"]:has(span.specialfeature)
-mediamarkt.*,saturn.de##aside[class="sc-a2fcee8-0 fmYGst"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
+mediamarkt.*,saturn.de##aside[class="sc-3e143820-0 erAlUN"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
 travelbook.de##div.has-mark[style="min-width: 300px; min-height: 250px;"]
 hornoxe.com##div.post.hentry.ivycat-post:has(a[href^="https://www.amazon.de/"])
 nydus.org##div.ui-tabs:has(#nydus_org_300x600_desktop_1)

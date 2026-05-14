@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: hYzsFMc55DRw7HGNvaiL5w
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1778728625-3600.patch
+! Checksum: /MbotNWp7nx5ln7FiV2KSw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1778742731-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.51.96
-! TimeUpdated: 2026-05-13T16:52:57+00:00
+! Version: 2.0.51.97
+! TimeUpdated: 2026-05-14T07:08:55+00:00
 ! Expires: 5 days (update frequency)
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
@@ -387,7 +387,9 @@ t-online.de#@#div[class^="Tsshopst"]
 essen-und-trinken.de##+js(no-setTimeout-if, s.call(null), 10)
 /^https:\/\/www\.essen-und-trinken\.de\/[a-z]{10,}\.js$/$script,~3p,match-case
 schnittmuster-datenbank.de##+js(abort-on-property-read, adsBlocked)
-kinoking.cc##+js(no-setTimeout-if, adblock)
+kinoking.cc##body:style(overflow: auto !important;)
+kinoking.cc###adblockOverlay:style(display: none !important;)
+kinoking.cc##+js(no-setTimeout-if, /adblock|\.offsetHeight === 0/)
 @@||static.classistatic.de/adv/public/js/nf/mobile-detect-adblock.js
 tarnkappe.info##+js(addEventListener-defuser, DOMContentLoaded, checkAdblocker)
 tarnkappe.info###adblock-check-overlay
@@ -5018,7 +5020,7 @@ mediamarkt.*,saturn.de##[data-test="mms-product-card"]:has(div[data-test="mms-pl
 obi.*##[data-track-section^="home-topteaser"]:has(hobi-advertiser-tag)
 finanzen.net##article.page-content__item:has(img[alt="UBS"])
 abendzeitung-muenchen.de##article[class^="teaser nummer-"]:has(span.specialfeature)
-mediamarkt.*,saturn.de##aside[class="sc-a2fcee8-0 fmYGst"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
+mediamarkt.*,saturn.de##aside[class="sc-3e143820-0 erAlUN"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
 travelbook.de##div.has-mark[style="min-width: 300px; min-height: 250px;"]
 hornoxe.com##div.post.hentry.ivycat-post:has(a[href^="https://www.amazon.de/"])
 nydus.org##div.ui-tabs:has(#nydus_org_300x600_desktop_1)
