@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bDhZCHZl/b6CDv8asQAmLA
-! Diff-Path: ../patches/203_optimized/203_optimized-s-1778750690-14400.patch
+! Checksum: k8awVPSAN9xwJBNEMl6QLw
+! Diff-Path: ../patches/203_optimized/203_optimized-s-1778824237-14400.patch
 ! Title: Hungarian filter (Optimized)
 ! Description: Hufilter. Filter list that specifically removes ads, privacy threats, and security risks on websites in the Hungarian language.
-! Version: 2.0.5.6
-! TimeUpdated: 2026-05-14T09:21:37+00:00
+! Version: 2.0.5.7
+! TimeUpdated: 2026-05-15T05:47:34+00:00
 ! Expires: 5 days (update frequency)
 ##.ad__main
 ##.adblokk
@@ -322,6 +322,7 @@ divany.hu##[id*="hirdetes"]
 divany.hu##[id*="szponzoracio"]
 divany.hu###interstitial
 divany.hu##iframe
+divany.hu##.bg-primary-button-bg
 donna.hu##[class*="banner"]
 donna.hu##[id*="banner"]
 duen.hu##[id*="banner"]
@@ -388,6 +389,8 @@ filmezek.com##a[style*="inline-block"] > img
 figyelo.hu##[class*="adbox"]
 figyelo.hu##[class*="banner"]
 filmoldal.hu##div[class*="reklam"]
+focikatalogus.hu##a[target="_blank"] > img
+focikatalogus.hu##div:has(>a[target="_blank"] > img)
 foodora.hu##.partnership-ads
 foodora.hu##div[class*="video-container"]
 forbes.hu##div[id^="forbesad"]
@@ -1907,9 +1910,10 @@ greendex.hu#@#.heateor_sss_sharing_container
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=hu.iqos.com
 @@||kollegium-neriszentfulop.chemin-neuf.hu/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js$domain=kollegium-neriszentfulop.chemin-neuf.hu
 @@||kollegium-neriszentfulop.chemin-neuf.hu/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css$domain=kollegium-neriszentfulop.chemin-neuf.hu
-hoxa.hu##a:matches-css(background: /url.*/)
-hoxa.hu##a:matches-css(background-image: /url.*/)
+hoxa.hu,focikatalogus.hu##a:matches-css(background: /url.*/)
+hoxa.hu,focikatalogus.hu##a:matches-css(background-image: /url.*/)
 hoxa.hu##+js(abort-on-property-read, getComputedStyle)
+hoxa.hu##HTML,#main1:style(background: none !important;)
 gyakorikerdesek.hu##a:matches-css(background: /url(?!.*static\.gyakorikerdesek\.hu\/p\/).*/)
 gyakorikerdesek.hu##a:matches-css(background-image: /url(?!.*static\.gyakorikerdesek\.hu\/p\/).*/)
 jofogas.hu##+js(no-setTimeout-if, E(!1))
@@ -1949,6 +1953,7 @@ hetek.hu###nyeremenyModal
 otpportalok.hu###pop_1:has(> .suti)
 bme.hu###floating-logo-container
 unideb.hu##.sendi-banner-block-container
+divany.hu,femina.hu##+js(addEventListener-defuser, mouseout)
 onlinepenztarca.hu##+js(set-local-storage-item, felhasznalo_cookie_preferencia, 0)
 fizz.hu##+js(set-cookie, cookie.consent.finished, 1)
 fizz.hu##+js(set-cookie, gdpr_level, 1)

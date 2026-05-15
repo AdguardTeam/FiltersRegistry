@@ -1,15 +1,15 @@
-! Checksum: PA1txVXm1IURHlB0CGOjxw
-! Diff-Path: ../patches/203/203-s-1778750696-14400.patch
+! Checksum: Cba6/15PbeDsz8l3mZWF5w
+! Diff-Path: ../patches/203/203-s-1778824243-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads, privacy threats, and security risks on websites in the Hungarian language.
-! Version: 2.0.5.6
-! TimeUpdated: 2026-05-14T09:21:37+00:00
+! Version: 2.0.5.7
+! TimeUpdated: 2026-05-15T05:47:34+00:00
 ! Expires: 12 hours (update frequency)
 !
-! Checksum: oIGJMLT/2IaXeqV6J5ND+g
-! OriginalVersion: 202605140618
+! Checksum: 5eoI0zKkKsyZvsoPblDh2g
+! OriginalVersion: 202605150512
 ! Title: Hufilter for AdGuard
-! Last modified: 14 May 2026 06:18 UTC
+! Last modified: 15 May 2026 05:12 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -359,6 +359,7 @@ divany.hu##[id*="hirdetes"]
 divany.hu##[id*="szponzoracio"]
 divany.hu###interstitial
 divany.hu##iframe
+divany.hu##.bg-primary-button-bg
 donna.hu##[class*="banner"]
 donna.hu##[id*="banner"]
 duen.hu##[id*="banner"]
@@ -425,6 +426,8 @@ filmezek.com##a[style*="inline-block"] > img
 figyelo.hu##[class*="adbox"]
 figyelo.hu##[class*="banner"]
 filmoldal.hu##div[class*="reklam"]
+focikatalogus.hu##a[target="_blank"] > img
+focikatalogus.hu##div:has(>a[target="_blank"] > img)
 foodora.hu##.partnership-ads
 foodora.hu##div[class*="video-container"]
 forbes.hu##div[id^="forbesad"]
@@ -2078,9 +2081,10 @@ greendex.hu#@#.heateor_sss_sharing_container
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
-hoxa.hu#?#a:matches-css(background: /url.*/)
-hoxa.hu#?#a:matches-css(background-image: /url.*/)
+hoxa.hu,focikatalogus.hu#?#a:matches-css(background: /url.*/)
+hoxa.hu,focikatalogus.hu#?#a:matches-css(background-image: /url.*/)
 hoxa.hu#%#//scriptlet('abort-on-property-read', 'getComputedStyle')
+hoxa.hu#$#HTML,#main1 { background: none !important; }
 gyakorikerdesek.hu#?#a:matches-css(background: /url(?!.*static\.gyakorikerdesek\.hu\/p\/).*/)
 gyakorikerdesek.hu#?#a:matches-css(background-image: /url(?!.*static\.gyakorikerdesek\.hu\/p\/).*/)
 ! https://github.com/uBlockOrigin/uAssets/issues/23271
@@ -2136,6 +2140,7 @@ hetek.hu###nyeremenyModal
 otpportalok.hu###pop_1:has(> .suti)
 bme.hu###floating-logo-container
 unideb.hu##.sendi-banner-block-container
+divany.hu,femina.hu#%#//scriptlet('prevent-addEventListener', 'mouseout')
 ! This section file contains rules for blocking cookie notices.
 ! The rules in this section should be AdGuard-specific, but cross-compatible rules are also allowed, if they are
 ! not working properly without the AdGuard-specific rules.
