@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: jAXNUbkiYRxLly7gTXsTKw
-! Diff-Path: ../patches/7/7-s-1778842574-3600.patch
+! Checksum: 51nGmpMg8FEl3KQAdNz6uQ
+! Diff-Path: ../patches/7/7-s-1778860211-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.73.85
-! TimeUpdated: 2026-05-15T10:52:39+00:00
+! Version: 2.0.73.86
+! TimeUpdated: 2026-05-15T15:47:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1884,6 +1884,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+m-s-y.com###random-banner
+m-s-y.com##.adsense-in-article
 hokkaido-np.co.jp##.main_1col:has(> div[class^="ad-group"]:first-child + script:last-child)
 hokkaido-np.co.jp##div[class^="ad-group"]
 si-coding.net##a[href^="https://hb.afl.rakuten.co.jp/"]
@@ -2276,6 +2278,7 @@ xenospectrum.com##.xs-amazon-products
 xenospectrum.com##.xs-ad-slot
 news.tv-asahi.co.jp##.ad-timeline-summary-taboola
 ||avdb-app.com/affi/
+avdb-app.com##body > div.bg-blue-50.sm\:text-sm.text-blue-800.mb-0.md\:mb-4
 avdb-app.com##.h-\[300px\]
 avdb-app.com##.max-w-\[320px\]
 misatopi.com##.bnr-list
@@ -2527,8 +2530,7 @@ cookpad.com###page + div.grid-cols-subgrid.col-span-2.sticky.bottom-0
 2ch.logpo.jp##.Jungle
 2ch.logpo.jp##.TATEJungleLarge
 math.nakaken88.com##.fix-sidebar > div.widget:has(> div.widget-body > div.myAdAm)
-mindhack2ch.com,seesaawiki.jp,playing.wiki,chronicle.wiki,sokuhou.wiki,game-info.wiki###vignette-overlay
-mindhack2ch.com,seesaawiki.jp,playing.wiki,chronicle.wiki,sokuhou.wiki,game-info.wiki##+js(addEventListener-defuser, DOMContentLoaded, /[Aa]dDiv|showVignette/)
+seesaa.net,mindhack2ch.com,seesaawiki.jp,playing.wiki,chronicle.wiki,sokuhou.wiki,game-info.wiki##+js(addEventListener-defuser, DOMContentLoaded, /[Aa]dDiv|showVignette/)
 ||way78.com/side.html
 way78.com##tr[bgcolor="#ffffff"][valign="top"] > td[width="170"]
 qa.tunagaru.info##.widget_smartslider3
@@ -2756,6 +2758,7 @@ c-ute.doorblog.jp##div[class^="article-body"] > blockquote:has(> div.amazon)
 hagesokuho.livedoor.blog##.adTx1
 hagesokuho.livedoor.blog##.amzBox1
 saiganak.com##.entry-textad
+gazlog.jp##.ai-title-eyecatch-ad
 gazlog.jp##.swell-block-capbox:has(> div.cap_box_ttl:contains(/^関連商品$/))
 kohavrog.com##.entry-content > div[style="text-align: center;"]
 note.com,note.jp##figure[name][id] > a[href^="https://px.a8.net/svt/ejp"] > img[width="300"][height="250"]
@@ -4629,7 +4632,7 @@ city.toyokawa.lg.jp##.tkokoku
 city.ichihara.chiba.jp##.class_area7 ~ .class_area18
 ||sma-p.com/data.php?i=$3p
 gamesindustry.biz##.recruit_banner
-mihomiho0109.com,moez-m.com,sumahoinfo.net##.widget-below-single-content-title
+hiroiro.com,mihomiho0109.com,moez-m.com,sumahoinfo.net##.widget-below-single-content-title
 koufuku-eki.com##.l-mainContent__inner > center
 koufuku-eki.com##.l-mainContent__inner > center ~ br:nth-of-type(-n+3)
 lifematome.blog##.amagetti-tabContent
@@ -5174,7 +5177,7 @@ techinsight.jp##.rectangle-images-main
 wwdjapan.com##.sp-infeed-ad
 wwdjapan.com##.wwdj-ad
 yamakamu.net###pc_text-8
-hyougaki.xyz,2ch-uwaki.com,holosoku.com,yamakamu.net##.widget-above-single-sns-buttons
+hiroiro.com,hyougaki.xyz,2ch-uwaki.com,holosoku.com,yamakamu.net##.widget-above-single-sns-buttons
 ||sites.google.com/view/8loomy-love/halaman-muka$document
 digital-soccer.net##.footer_dlsite
 bunshun.jp##.list-thumb.recommend > li:has(.pr)
@@ -5853,7 +5856,7 @@ newtongym8.com##td[style="border-style: solid; border-color: #1a1919; text-align
 ||doucolle-kako.livedoor.biz/pick-dmm.html
 ||doucolle-kako.livedoor.biz/dmm_$subdocument
 doucolle-kako.livedoor.biz##li > a[href^="https://al.dmm.co.jp/"]
-doucolle-kako.livedoor.biz,chikakb.ldblog.jp##.dmm
+danger.anmo.info,doucolle-kako.livedoor.biz,chikakb.ldblog.jp##.dmm
 ||doucolle.net/wp-content/pick-dmm.html
 doucolle.net###freebox_02
 tomari.org##a[href="https://tomari.org/uri/amazon.html"]
@@ -8076,7 +8079,7 @@ suzukikenichi.com###side > div > .widget-wrap > .textwidget > .al-c > a[target="
 luchs.fxproject-blog.com###sidebar-scroll > aside#text-2
 warorince.com###sidemenu_widget-2 ~ .widget_st_custom_html_widget.ad
 doktornakanoblog.com##.mainbox > .adbox + .widget_text
-grasoku.com,cherio199.blog.fc2.com,hobbylog.jp,netizen-voice.blog.jp,kinsoku.blog.jp##a[href^="https://amzn.to"]
+daidaidiary.com,grasoku.com,cherio199.blog.fc2.com,hobbylog.jp,netizen-voice.blog.jp,kinsoku.blog.jp##a[href^="https://amzn.to"]
 rare-zaiko.blog.jp,aikodemoneyfactory.dreamlog.jp,eddiarchive.com,jumpsokuhou.com,burusoku-vip.com,ganohr.net,betweenjpandkr.blog,vip-jikkyo.net,abc-by.com,travel-nippon.net##a[href^="https://px.a8.net/svt/ejp"]
 anime-rating.com,cybersocean.net,e-penguiner.com,napgames.jp,spla3sokuhou.games,hegtel.com,fpsjp.net##.pochipp-box
 valorantnews.jp##.wp-block-columns
@@ -8341,7 +8344,7 @@ otakomu.jp,46matome.net,samuraisoccer.doorblog.jp###more > a[href^="https://www.
 ||amebaowndme.com/v2/public/pureads|
 okinawatimes.co.jp##div[style*="width:300px;height:250px"]
 tenmusume.com##.home_block > div.pc.clearfix
-psych0h3ad.tech,nekopictures.net,color-hiyoko.com,wanabe.net,wackwack.net,paiza.hatenablog.com,namakeru.com##.hatena-module-html:first-child
+error-daizenn.hatenablog.com,psych0h3ad.tech,nekopictures.net,color-hiyoko.com,wanabe.net,wackwack.net,paiza.hatenablog.com,namakeru.com##.hatena-module-html:first-child
 ear-phone-review.com###box2-inner > div.hatena-module-html:nth-last-child(-n+2)
 ||joyu.info/pp/
 ||heydouga.com/ecpcommon/img/anzen-$3p
@@ -8953,7 +8956,7 @@ hangul-note.info##.ads_header_under
 hangul-note.info##div.aside_box[style="height: 600px;"]
 oisiso.com###ads_w
 petwell.jp##.adsFooterTopWrap
-voiceplus-php.jp,hinakira.com,e-nenpi.com,rubiconbrewing.com##.bfb_textTextBtn
+dohack.jp,voiceplus-php.jp,hinakira.com,e-nenpi.com,rubiconbrewing.com##.bfb_textTextBtn
 firestorage.com,firestorage.jp,xfs.jp,nailenamel.work,beautifullywhitening.work,mineralfoundation.work,contents-group.work,bridalgown.work,liquidfoundation.work,nailcolor.work,weddinghall.work,g-journal.jp,japan-indepth.jp,kuroyonhon.com,enno.jp###ad1
 firestorage.com,firestorage.jp,xfs.jp,bridalgown.work,contents-group.work,liquidfoundation.work,nailcolor.work,studioglass.work,teaceremony.work,weddinghall.work,heisei-housewarming.work,g-journal.jp,biz-journal.jp###ad2
 bridalgown.work,contents-group.work,liquidfoundation.work,nailcolor.work,studioglass.work,teaceremony.work,weddinghall.work,heisei-housewarming.work,g-journal.jp###ad3
