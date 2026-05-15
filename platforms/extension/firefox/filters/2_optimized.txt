@@ -1,9 +1,9 @@
-! Checksum: B1M6N3+BnAlAWhZDWkSZzA
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1778836505-3600.patch
+! Checksum: 56KqoVYISntPng/8NCBWig
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1778842558-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.66.80
-! TimeUpdated: 2026-05-15T09:11:20+00:00
+! Version: 2.4.66.81
+! TimeUpdated: 2026-05-15T10:52:15+00:00
 ! Expires: 10 days (update frequency)
 ||scripts.contimo.app^
 ||pub.searchnova.net^
@@ -2087,7 +2087,6 @@ skym3u.top#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '/che
 skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', 'if (document.hidden || document.visibilityState === \'hidden\')', 'if (!0)')
 skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', '/adWindow = window.open.*?;/', 'adWindow = true;')
 skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', 'timeLeft--;', 'timeLeft--;try{timerDisplay.innerText = timeLeft;}catch(e){}')
-||google-analytics.com^$image,redirect=1x1-transparent.gif,domain=simpmusic.org
 seriezloaded.com.ng#%#//scriptlet('prevent-setTimeout', 'offsetHeight === 0')
 ||avweb.com/wp-content/plugins/advanced-ads-pro/modules/extended-adblocker/
 avweb.com##.advads-modal
@@ -2229,6 +2228,10 @@ airlive.net#%#//scriptlet('prevent-setTimeout', '/siteAccessNotification|AdBlock
 custommapposter.com#%#//scriptlet('set-constant', 'Object.prototype.bannerIds', 'undefined')
 bandle.app#%#//scriptlet('set-constant', 'nitroAds.abp', 'true')
 simpmusic.org#%#//scriptlet('prevent-xhr', 'adsbygoogle')
+simpmusic.org#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle')
+simpmusic.org#%#//scriptlet('prevent-element-src-loading', 'img', 'google-analytics.com')
+simpmusic.org#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
+||google-analytics.com^$image,redirect=1x1-transparent.gif,domain=simpmusic.org
 leaguegaming.com#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 @@||kissjav.$generichide
 @@||asianporn.li^$generichide
@@ -11367,8 +11370,10 @@ thesaurus.net#%#//scriptlet('prevent-setTimeout', 'loader.min.js')
 mlbpark.donga.com,tweaksforgeeks.com#%#//scriptlet('remove-node-text', 'script', 'KCgpPT57bGV0IGU')
 tenasia.hankyung.com#%#//scriptlet('trusted-create-element', 'head', 'link', 'rel="stylesheet" https://hkstatic.hankyung.com/css/rel/tenasia/w/common.css"')
 index.hr,automobile-catalog.com,trafficnews.jp,tvtv.us,taycanforum.com,deltiasgaming.com,broncosportforum.com,all-nationz.com,ontariofarmer.com,247wallst.com,euronews.com,foodtalkdaily.com,hometalk.com,yorkshirepost.co.uk,jlwranglerforums.com,cybertruckownersclub.com,urbandictionary.com,robbreport.com,torontosun.com,saikyo-jump.com,elnacional.cat,parade.com,thestarphoenix.com,leaderpost.com,athlonsports.com,edmontonsun.com,calgaryherald.com,theprovince.com,notebookcheck.*,driving.ca,vancouversun.com,financialpost.com,followfollow.com,seriouseats.com,alfalfalfa.com,pcguide.com,thingiverse.com,welt.de,edmontonjournal.com,itavisen.no,russianmachineneverbreaks.com,geo.fr,langenscheidt.com,urldecoder.org,base64decode.org,deadline.com,crosswordsolver.com,natalie.mu,daily.co.jp,egitim.net.tr,9gag.com,hb-nippon.com,ukaudiomart.com,windsorstar.com,akinator.com,pons.com,autobild.de,odyclub.com,dict.cc,respublika.lt,si.com,stocktwits.com,zeilen.nl,wielerrevue.nl,speisekarte.de,ldoceonline.com,sankei.com,oxfordlearnersdictionaries.com,dictionary.cambridge.org,nishinippon.co.jp,gamewith.jp,glutenfreeonashoestring.com,subaruforester.org,tsxclub.com,civinfo.com,2coolfishing.com,1911forum.com,stylegirlfriend.com,toyokeizai.net,madaboutfood.co,galonamission.com,iheartnaptime.net,momontimeout.com,31daily.com,easydessertrecipes.com,scribd.com,dessertsonadime.com,skinnytaste.com,thehomesteadinghippy.com,gigafile.nu,trilltrill.jp,intoindiegames.com,liveandletsfly.com,traicy.com,stuckonsweet.com,worldhistory.org,kuruma-news.jp,1lumen.com,bluearchive.gg,ttforum.co.uk,newatlas.com,game8.jp,motorradfrage.net,sportlerfrage.net,finanzfrage.net,reisefrage.net,gesundheitsfrage.net,computerfrage.net,autofrage.net,wholesomeyum.com,gutefrage.net,sportico.com,wwd.com,neoseeker.com,yahoo.com,doviz.com,baseballchannel.jp,programme-tv.net,tz.de,ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e=/html-load\.com|loader\.min\.js|andwonderful\.com\/safe\.min\.js|shieldload\.|:\/\/loader\.|core\.js|\/sdk\.js/,t={filter:Array.prototype.filter,includes:String.prototype.includes,regexTest:RegExp.prototype.test},o=()=>(new Error).stack,l=o=>t.regexTest.call(e,o),r={construct:(e,r,n)=>{const c=o();return l(c)&&r[0]&&t.includes.call(r[0],"adshield")&&(r[0]=["(function(){})();"]),Reflect.construct(e,r,n)}};window.Blob=new Proxy(window.Blob,r);const n={apply:(e,r,n)=>{const c=o();return l(c)&&n[0]&&(t.includes.call(n[0],"new Error")||t.includes.call(n[0],".apply(this"))&&(n[0]=()=>{}),Reflect.apply(e,r,n)}};window.setTimeout=new Proxy(window.setTimeout,n);const c={apply:(e,r,n)=>{const c=o();return l(c)&&n[0]&&r?.includes?.("setTimeout")&&(r=t.filter.call(r,(e=>!t.includes.call(e,"setTimeout")))),Reflect.apply(e,r,n)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,c)})();
-letemsvetemapplem.eu,webdesignledger.com#$#body { overflow: auto !important; }
-letemsvetemapplem.eu,webdesignledger.com#%#(()=>{const e={apply:(e,l,o)=>"link"===o[0]||"style"===o[0]?[]:Reflect.apply(e,l,o)};window.document.querySelectorAll=new Proxy(window.document.querySelectorAll,e)})();
+notebookcheck.net,letemsvetemapplem.eu,webdesignledger.com#$#body { overflow: auto !important; }
+notebookcheck.net,letemsvetemapplem.eu,webdesignledger.com#$?#iframe[src^="https://report.error-report.com/modal"] { remove: true; }
+notebookcheck.net,letemsvetemapplem.eu,webdesignledger.com#%#//scriptlet('prevent-setTimeout', '/\(\)=>{.\|\|.\|\|\(.=!0/')
+notebookcheck.net,letemsvetemapplem.eu,webdesignledger.com#%#//scriptlet('trusted-replace-argument', 'document.querySelectorAll', '0', 'replace:/^(?:link|style|link,style)$/html > noop/', 'style')
 kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('abort-on-stack-trace', 'Object.defineProperty', 'html-load.com')
 kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('prevent-setTimeout', '/document\.querySelectorAll[\s\S]*?\.remove\(\)[\s\S]*?alert/')
 pcgamebenchmark.com#%#//scriptlet('remove-class', 'sp-message-open', 'html.sp-message-open')
@@ -19847,6 +19852,9 @@ seirsanduk.com#%#//scriptlet('set-constant', 'canRunAds', 'true')
 bg-gledai.*#%#//scriptlet('set-constant', 'chp_adblock_browser', 'noopFunc')
 play.nova.bg#%#//scriptlet("set-constant", "_spabia", "true")
 blitz.bg#$#div[id^="div-gpt-ad"] { position: absolute!important; left: -3000px!important; }
+bulnews.bg###inbet_sticky_small
+bulnews.bg###inbet_sticky_big
+||bulnews.bg/images.inbet/
 plovdiv24.bg##div[style$="min-height: 250px;"]
 plovdiv24.bg#$#.v5_fashad2 { min-height: 0 !important; }
 24chasa.bg##.sidebar:has(> div.ad)
@@ -24768,6 +24776,7 @@ browsershots.org#@#.advert_area
 ||18zkj1qlruj79oyq63f6w.cfd^
 ||199g9kegveh84rllz.cfd^
 ||19uugz4crqucw23qqvzwl53.cfd^
+||19vnyxxp611kxbhqm.cfd^
 ||19x8868ce1pkq3zwfu3yrrun.rest^
 ||1aacb6bb9f.com^
 ||1asb.com^
@@ -25245,6 +25254,7 @@ browsershots.org#@#.advert_area
 ||aagprboumamaz.space^
 ||aainwekolbdzo.site^
 ||aajhkzdwbmloi.today^
+||aamleghorn.cyou^
 ||aanyjhbvszjim.site^
 ||aawdlvr.com^
 ||aawjmrorb.com^
@@ -25873,6 +25883,7 @@ browsershots.org#@#.advert_area
 ||aghorimeline.cyou^
 ||agieltrucked.shop^
 ||agileskincareunrented.com^
+||aginbaretta.shop^
 ||agistertumidmapper.cyou^
 ||agitatechampionship.com^
 ||agixasrmyutbxr.com^
@@ -27298,6 +27309,7 @@ browsershots.org#@#.advert_area
 ||bodilysubtractoversight.com^
 ||bodleanarcho.com^
 ||bodragglairsaesop.cyou^
+||bodtdwiswmmsc.space^
 ||bodybossmotivate.com^
 ||boffinsoft.com^
 ||boffoadsfeeds.com^
@@ -27888,6 +27900,7 @@ browsershots.org#@#.advert_area
 ||cash-program.com^
 ||cash4members.com^
 ||cashcinemaunbiased.com^
+||cashedgobbler.shop^
 ||cashmachines.biz^
 ||cashooshut.com^
 ||cashtrafic.com^
@@ -29169,6 +29182,7 @@ browsershots.org#@#.advert_area
 ||dependablecount.com^
 ||dependablemountain.com^
 ||dependent-boy.com^
+||dependentadequatemyth.com^
 ||depleterefutation.com^
 ||deployads.com^
 ||depmestiza.com^
@@ -31030,6 +31044,7 @@ browsershots.org#@#.advert_area
 ||g33ktr4ck.com^
 ||g4rm818we13bj8iw4.rest^
 ||g8tor.com^
+||g96ykg5epqxji1.rest^
 ||g9o63y6m.xyz^
 ||g9qnk89pd5ic.com^
 ||gabalcsix.in^
@@ -31183,6 +31198,7 @@ browsershots.org#@#.advert_area
 ||gfxdn.pics^
 ||ggcgrzir.com^
 ||gggpht.com^
+||ggjwrtdb.com^
 ||gglx.me^
 ||ggmmupnudokjdcy.com^
 ||ggreatstuff.com^
@@ -32074,6 +32090,7 @@ browsershots.org#@#.advert_area
 ||hpyrdr.com^
 ||hqazaazwdnxle.site^
 ||hqbqp46cl99yeh8.rest^
+||hqdhdyehelnks.online^
 ||hqmxqcmoczlma.site^
 ||hqpurqannvmka.com^
 ||hqscene.com^
@@ -33117,6 +33134,7 @@ browsershots.org#@#.advert_area
 ||jzysorlfmgznf.website^
 ||jzyxymekrmauc.site^
 ||k1w4386yec6lu28ioc9uqno9v4.rest^
+||k5ob0kmh.xyz^
 ||k68tkg.com^
 ||k6f9acdo.xyz^
 ||k8e8bvl7mkr41uzbgumib117.rest^
@@ -35209,6 +35227,7 @@ browsershots.org#@#.advert_area
 ||numeralsquickerreprove.com^
 ||numnahphineas.com^
 ||nunceinlacesframea.cyou^
+||nunryvespers.cfd^
 ||nuoetydcuqyf.com^
 ||nuopadskjwbrcrs.com^
 ||nurobi.info^
@@ -37244,6 +37263,7 @@ browsershots.org#@#.advert_area
 ||rbbpxlxhxccdw.space^
 ||rbdvwhcizpzoz.space^
 ||rbfopobkvokbt.online^
+||rbgtakatwyhjm.com^
 ||rblezsuhrvhor.space^
 ||rblpdwvhby.com^
 ||rbp-gen1.site^
@@ -38076,6 +38096,7 @@ browsershots.org#@#.advert_area
 ||searforsear.online^
 ||seaskydvd.com^
 ||seatslaurelblemish.com^
+||seawarerealerqueenly.qpon^
 ||secantwedged.qpon^
 ||secederhippen.cfd^
 ||secederslipway.cfd^
@@ -39281,6 +39302,7 @@ browsershots.org#@#.advert_area
 ||tc1h6twmizuzr4nv.rest^
 ||tcdjvujzfhyoc.online^
 ||tcdwm.com^
+||tcezpiinbuinr.website^
 ||tcfydbeatqqbq.website^
 ||tcikinyewto.com^
 ||tckanbizczxcfj.com^
@@ -39798,6 +39820,7 @@ browsershots.org#@#.advert_area
 ||trkn1.com^
 ||trmit.com^
 ||trmzum.com^
+||trolleyjackpotbummer.com^
 ||trollopkubong.shop^
 ||tronads.io^
 ||troopinvariably.com^
@@ -40292,6 +40315,7 @@ browsershots.org#@#.advert_area
 ||uoxzmt72opv66oz7foxprv.cfd^
 ||uparceuson.com^
 ||upbeat-original.com^
+||upbeatnature.com^
 ||upbeatshellos.cyou^
 ||upbindsswythe.com^
 ||upcityarles.com^
@@ -40395,6 +40419,7 @@ browsershots.org#@#.advert_area
 ||usurv.com^
 ||uswqumrdseugf.site^
 ||utagyernjwdnw.website^
+||utahansninonsconamed.cfd^
 ||utarget.co.uk^
 ||utbxvmsgpcznb.fun^
 ||uteglmmdyovaebv.com^
@@ -41479,6 +41504,7 @@ browsershots.org#@#.advert_area
 ||wwarrifmila.in^
 ||wwbdayuvbvrsr.rocks^
 ||wwcdgvwvl.com^
+||wwfictxcxfioz.website^
 ||wwgarbtgydwfga.com^
 ||wwmifsmxx.com^
 ||wwnlbsuvpt.com^
@@ -41700,6 +41726,7 @@ browsershots.org#@#.advert_area
 ||xuvokdytjqvyl.online^
 ||xuxtzbczsxcrs.website^
 ||xuyrlpyxbfucl.website^
+||xvgmwsnnifbvm.website^
 ||xvhyfjblktelp.site^
 ||xviggvimgldin.website^
 ||xviperonec.com^
@@ -42842,6 +42869,7 @@ browsershots.org#@#.advert_area
 ||perfumedsecret.com^
 ||perlikewiseamid.com^
 ||providedwell.com^
+||psstentice.com^
 ||punctualbut.com^
 ||puzzledrally.com^
 ||r033o0p37qr4v914m06om.xyz^

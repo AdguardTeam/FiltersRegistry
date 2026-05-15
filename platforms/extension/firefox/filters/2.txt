@@ -1,9 +1,9 @@
-! Checksum: 8sfnZLa3rnzA1RtyXeS5Wg
-! Diff-Path: ../patches/2/2-s-1778836504-3600.patch
+! Checksum: GpM5hUyXxr74OJB8IcxnRw
+! Diff-Path: ../patches/2/2-s-1778842557-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.66.80
-! TimeUpdated: 2026-05-15T09:11:20+00:00
+! Version: 2.4.66.81
+! TimeUpdated: 2026-05-15T10:52:15+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10843,8 +10843,6 @@ skym3u.top#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '/che
 skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', 'if (document.hidden || document.visibilityState === \'hidden\')', 'if (!0)')
 skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', '/adWindow = window.open.*?;/', 'adWindow = true;')
 skym3u.top#%#//scriptlet('trusted-replace-node-text', 'script', 'startSecureTimer', 'timeLeft--;', 'timeLeft--;try{timerDisplay.innerText = timeLeft;}catch(e){}')
-! https://github.com/AdguardTeam/AdguardFilters/issues/230986
-||google-analytics.com^$image,redirect=1x1-transparent.gif,domain=simpmusic.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230931
 seriezloaded.com.ng#%#//scriptlet('prevent-setTimeout', 'offsetHeight === 0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230882
@@ -11120,9 +11118,6 @@ rpmplay.online#%#//scriptlet('google-ima3')
 lootup.me#%#//scriptlet("abort-current-inline-script", "document.getElementById", ".style.display='block")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224013
 ||nasdaqfutures.org/wp-content/uploads/edcbdb/eeaafb.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/223969
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=simpmusic.org,important
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=simpmusic.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223918
 apply.gokiwi.in#%#//scriptlet('prevent-element-src-loading', 'script', 'adsbygoogle')
 apply.gokiwi.in#%#//scriptlet('prevent-setTimeout', 'adsbygoogle')
@@ -11148,8 +11143,15 @@ custommapposter.com#%#//scriptlet('set-constant', 'Object.prototype.bannerIds', 
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223512
 bandle.app#%#//scriptlet('set-constant', 'nitroAds.abp', 'true')
 bandle.app##body > div[style^="background:"][style*="position: fixed; display: flex;"][style*="z-index:"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/230986
+! https://github.com/AdguardTeam/AdguardFilters/issues/223969
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223426
 simpmusic.org#%#//scriptlet('prevent-xhr', 'adsbygoogle')
+simpmusic.org#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle')
+simpmusic.org#%#//scriptlet('prevent-element-src-loading', 'img', 'google-analytics.com')
+simpmusic.org#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
+||google-analytics.com^$image,redirect=1x1-transparent.gif,domain=simpmusic.org
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=simpmusic.org,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223187
 leaguegaming.com#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223984
@@ -38265,9 +38267,10 @@ index.hr,automobile-catalog.com,trafficnews.jp,tvtv.us,taycanforum.com,deltiasga
 ! Workaround also for iOS, where we cannot apply url blocking rule
 ! Related to https://github.com/AdguardTeam/FiltersCompiler/issues/226
 ! After implementation, we could add any rules for AdGuard for iOS only with Advanced Protection
-letemsvetemapplem.eu,webdesignledger.com#$#body { overflow: auto !important; }
-letemsvetemapplem.eu,webdesignledger.com#$?#iframe[src^="https://report.error-report.com/modal"] { remove: true; }
-letemsvetemapplem.eu,webdesignledger.com#%#(()=>{const e={apply:(e,l,o)=>"link"===o[0]||"style"===o[0]?[]:Reflect.apply(e,l,o)};window.document.querySelectorAll=new Proxy(window.document.querySelectorAll,e)})();
+notebookcheck.net,letemsvetemapplem.eu,webdesignledger.com#$#body { overflow: auto !important; }
+notebookcheck.net,letemsvetemapplem.eu,webdesignledger.com#$?#iframe[src^="https://report.error-report.com/modal"] { remove: true; }
+notebookcheck.net,letemsvetemapplem.eu,webdesignledger.com#%#//scriptlet('prevent-setTimeout', '/\(\)=>{.\|\|.\|\|\(.=!0/')
+notebookcheck.net,letemsvetemapplem.eu,webdesignledger.com#%#//scriptlet('trusted-replace-argument', 'document.querySelectorAll', '0', 'replace:/^(?:link|style|link,style)$/html > noop/', 'style')
 techfortravel.co.uk,issuya.com#$?#script[src$="/loader.min.js"][onerror*="error-report.com"] { remove: true; }
 kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('abort-on-stack-trace', 'Object.defineProperty', 'html-load.com')
 kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('prevent-setTimeout', '/document\.querySelectorAll[\s\S]*?\.remove\(\)[\s\S]*?alert/')
@@ -68573,6 +68576,9 @@ blitz.bg#$#div[id^="div-gpt-ad"] { position: absolute!important; left: -3000px!i
 !
 ! NOTE: Specific
 !
+bulnews.bg###inbet_sticky_small
+bulnews.bg###inbet_sticky_big
+||bulnews.bg/images.inbet/
 ||kaldata.com/img/banners/banners.js
 fakti.bg##video-banner[ad-tag-url]
 seir-sanduk.com#?##program > p:contains(Реклама:)
@@ -84131,6 +84137,7 @@ browsershots.org#@#.advert_area
 ||197c4632ea.com^
 ||199g9kegveh84rllz.cfd^
 ||19uugz4crqucw23qqvzwl53.cfd^
+||19vnyxxp611kxbhqm.cfd^
 ||19x8868ce1pkq3zwfu3yrrun.rest^
 ||1a0b76c793.com^
 ||1a8f9rq9c.de^
@@ -85296,6 +85303,7 @@ browsershots.org#@#.advert_area
 ||aajhkzdwbmloi.today^
 ||aakvewesiefbx.website^
 ||aaliissceptre.shop^
+||aamleghorn.cyou^
 ||aanyjhbvszjim.site^
 ||aanyslvgdtooh.website^
 ||aaponlzrawuzk.site^
@@ -86407,6 +86415,7 @@ browsershots.org#@#.advert_area
 ||agile-perspective.pro^
 ||agile-vast.pro^
 ||agileskincareunrented.com^
+||aginbaretta.shop^
 ||agingravenous.com^
 ||agistertumidmapper.cyou^
 ||agitatechampionship.com^
@@ -89702,6 +89711,7 @@ browsershots.org#@#.advert_area
 ||bodilywondering.com^
 ||bodleanarcho.com^
 ||bodragglairsaesop.cyou^
+||bodtdwiswmmsc.space^
 ||bodybossmotivate.com^
 ||bodystrickenmultitude.com^
 ||boehwxhleexzc.website^
@@ -91038,6 +91048,7 @@ browsershots.org#@#.advert_area
 ||cash-program.com^
 ||cash4members.com^
 ||cashcinemaunbiased.com^
+||cashedgobbler.shop^
 ||cashgzb.com^
 ||cashibohs.digital^
 ||cashlayer.com^
@@ -94255,6 +94266,7 @@ browsershots.org#@#.advert_area
 ||dependablerecord.pro^
 ||dependantcarefullyheavenly.com^
 ||dependent-boy.com^
+||dependentadequatemyth.com^
 ||depleteheadphoneshoe.com^
 ||depleterefutation.com^
 ||deployads.com^
@@ -99511,6 +99523,7 @@ browsershots.org#@#.advert_area
 ||g863kn8onmtxuxtr9bxj8bmeq.cfd^
 ||g8tor.com^
 ||g8ur46v52wu4c4bi8y.rest^
+||g96ykg5epqxji1.rest^
 ||g9o63y6m.xyz^
 ||g9qnk89pd5ic.com^
 ||gaaekexcvdkur.site^
@@ -99950,6 +99963,7 @@ browsershots.org#@#.advert_area
 ||gggpht.com^
 ||gghlevdqepehs.website^
 ||ggifvakvysycu.site^
+||ggjwrtdb.com^
 ||ggllekdgudxgx.store^
 ||gglx.me^
 ||ggmbjybfylctk.space^
@@ -102453,6 +102467,7 @@ browsershots.org#@#.advert_area
 ||hqazaazwdnxle.site^
 ||hqbaanqvcscwl.space^
 ||hqbqp46cl99yeh8.rest^
+||hqdhdyehelnks.online^
 ||hqerddmneojvl.online^
 ||hqgkgvxhdlzba.store^
 ||hqieltkpcifyb.com^
@@ -105608,6 +105623,7 @@ browsershots.org#@#.advert_area
 ||k2o2ls46.xyz^
 ||k3bm5qrgx7h3krx.cfd^
 ||k55p9ka2.de^
+||k5ob0kmh.xyz^
 ||k5zoom.com^
 ||k68tkg.com^
 ||k68y9fb6o7rvuzzvbmh2c.rest^
@@ -111781,6 +111797,7 @@ browsershots.org#@#.advert_area
 ||nunbirdglommedmeratia.cyou^
 ||nunceinlacesframea.cyou^
 ||nungcjtbkmbvi.online^
+||nunryvespers.cfd^
 ||nunrzusi.in^
 ||nuoetydcuqyf.com^
 ||nuolvunldkuuy.space^
@@ -117350,6 +117367,7 @@ browsershots.org#@#.advert_area
 ||rbemdvyhqskji.site^
 ||rbfnporpsrazz.online^
 ||rbfopobkvokbt.online^
+||rbgtakatwyhjm.com^
 ||rbhraahxxsllp.online^
 ||rbitqcfjfh.com^
 ||rbjixtnbjdcnd.online^
@@ -119869,6 +119887,7 @@ browsershots.org#@#.advert_area
 ||seaskydvd.com^
 ||seatedsaintinsist.com^
 ||seatslaurelblemish.com^
+||seawarerealerqueenly.qpon^
 ||sebacictriazin.cyou^
 ||sebumsend.qpon^
 ||sebundyjannock.qpon^
@@ -124238,6 +124257,7 @@ browsershots.org#@#.advert_area
 ||tcdtznnvvvbdq.site^
 ||tcdwm.com^
 ||tce4pi823ckpu6ooulw.cfd^
+||tcezpiinbuinr.website^
 ||tcf58umppnphjz.cfd^
 ||tcfjjiomnshlh.com^
 ||tcfuzwrctqofr.online^
@@ -126158,6 +126178,7 @@ browsershots.org#@#.advert_area
 ||troftmolala.cfd^
 ||troghypoxis.cyou^
 ||trojanspithfreyja.cfd^
+||trolleyjackpotbummer.com^
 ||trollopkubong.shop^
 ||trollsvide.com^
 ||trombocrack.com^
@@ -128221,6 +128242,7 @@ browsershots.org#@#.advert_area
 ||upbbklofphpay.online^
 ||upbearheezie.cfd^
 ||upbeat-original.com^
+||upbeatnature.com^
 ||upbeatshellos.cyou^
 ||upbindsswythe.com^
 ||upboresoutar.com^
@@ -128603,6 +128625,7 @@ browsershots.org#@#.advert_area
 ||ut7gotgezumkfc97vyr27yyqrrge6j6hv.cfd^
 ||ut822p6gpwuig6n.cfd^
 ||utagyernjwdnw.website^
+||utahansninonsconamed.cfd^
 ||utailisp.cyou^
 ||utajxinmmiuhp.site^
 ||utarget.co.uk^
@@ -132940,6 +132963,7 @@ browsershots.org#@#.advert_area
 ||wwcjhitmvwdqh.space^
 ||wwdhgevpmxmvs.online^
 ||wwewuqdsxgcei.space^
+||wwfictxcxfioz.website^
 ||wwfmjmjqucuri.website^
 ||wwfntyobeyyfu.website^
 ||wwfrkeycgvpwz.site^
@@ -134086,6 +134110,7 @@ browsershots.org#@#.advert_area
 ||xvegvlkqovqqr.online^
 ||xvepksunvchaf.website^
 ||xvfarnkhampqi.space^
+||xvgmwsnnifbvm.website^
 ||xvhdggbxfjauj.website^
 ||xvhyfjblktelp.site^
 ||xviggvimgldin.website^
@@ -138925,6 +138950,7 @@ browsershots.org#@#.advert_area
 ||pilotuntil.com^
 ||pishenormously.com^
 ||providedwell.com^
+||psstentice.com^
 ||punctualbut.com^
 ||puzzledrally.com^
 ||r033o0p37qr4v914m06om.xyz^

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wfLAXM540d4hL51Hjpk36g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778836519-3600.patch
+! Checksum: 3VXdCCEfdqEHlhfx/zYn5Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1778842572-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.66.80
-! TimeUpdated: 2026-05-15T09:11:20+00:00
+! Version: 2.4.66.81
+! TimeUpdated: 2026-05-15T10:52:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10740,8 +10740,6 @@ area.waffi.cloud##+js(abort-current-script, EventTarget.prototype.addEventListen
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231018
 skym3u.top##+js(no-setTimeout-if, pagead2.googlesyndication.com)
 skym3u.top##+js(abort-on-stack-trace, document.createElement, /checkUBlock|kickUser/)
-! https://github.com/AdguardTeam/AdguardFilters/issues/230986
-||google-analytics.com^$image,redirect=1x1.gif,domain=simpmusic.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230931
 seriezloaded.com.ng##+js(no-setTimeout-if, offsetHeight === 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230882
@@ -11001,9 +10999,6 @@ rpmplay.online##+js(google-ima)
 lootup.me##+js(abort-current-script, document.getElementById, .style.display='block)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224013
 ||nasdaqfutures.org/wp-content/uploads/edcbdb/eeaafb.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/223969
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication_adsbygoogle.js,domain=simpmusic.org,important
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=simpmusic.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223918
 apply.gokiwi.in##+js(no-setTimeout-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223935
@@ -11026,8 +11021,13 @@ custommapposter.com##+js(set-constant, Object.prototype.bannerIds, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223512
 bandle.app##+js(set-constant, nitroAds.abp, true)
 bandle.app##body > div[style^="background:"][style*="position: fixed; display: flex;"][style*="z-index:"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/230986
+! https://github.com/AdguardTeam/AdguardFilters/issues/223969
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223426
 simpmusic.org##+js(no-xhr-if, adsbygoogle)
+simpmusic.org##+js(no-setTimeout-if, window.getComputedStyle)
+||google-analytics.com^$image,redirect=1x1.gif,domain=simpmusic.org
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication_adsbygoogle.js,domain=simpmusic.org,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223187
 leaguegaming.com##+js(prevent-fetch, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223984
@@ -65239,6 +65239,9 @@ blitz.bg##div[id^="div-gpt-ad"]:style(position: absolute!important; left: -3000p
 !
 ! NOTE: Specific
 !
+bulnews.bg###inbet_sticky_small
+bulnews.bg###inbet_sticky_big
+||bulnews.bg/images.inbet/
 ||kaldata.com/img/banners/banners.js
 fakti.bg##video-banner[ad-tag-url]
 seir-sanduk.com###program > p:contains(Реклама:)
