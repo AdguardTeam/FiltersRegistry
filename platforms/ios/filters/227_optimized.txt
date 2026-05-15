@@ -1,9 +1,9 @@
-! Checksum: Viegk3wPx7c/pftmdDn4yA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1778837648-14400.patch
+! Checksum: 0/4dVx3uxnCz1Mntl5oR2A
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1778850604-14400.patch
 ! Title: List-KR Classic filter list (Optimized)
 ! Description: The List-KR Сlassic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.24.14
-! TimeUpdated: 2026-05-15T09:31:09+00:00
+! Version: 2.0.24.15
+! TimeUpdated: 2026-05-15T13:07:01+00:00
 ! Expires: 1 day (update frequency)
 ||delivery.pryzmads.com^
 ||barohere.xyz^
@@ -505,8 +505,6 @@ namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=
 namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[src*="arca.live/external/callad"])
 namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:has(iframe[src*="arca.live/external/callad"])
 m.humoruniv.com###list_body ~ *[id][style^="border-bottom-width:"]
-newtoki.help##.ba_test
-newtoki.help##.banner2
 board.namu.wiki#@#div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(> iframe[id^="google_ads_"])
 board.namu.wiki#@#div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(iframe[src*="arca.live/external/callad"])
 namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(> iframe[id^="google_ads_"])
@@ -1551,8 +1549,6 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /^https:\/\/sonagitv\.[a-z]+\/images\/banner\/(?!webtoon_)/$domain=sonagitv.*
 ||i.imgur.com^$domain=sonagitv.*
 ||xn--h10b90b998c.*/img/$domain=xn--h10b90b998c.*
-||i.imgur.com^$domain=newtoki.*
-||newtoki.*/banner*/$domain=newtoki.*
 ||cdn.jjun.live/BANNER/*.gif
 ||tvmon.*/img/ba
 ||tvmon.*/AD/
@@ -1580,7 +1576,6 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /^https:\/\/cdn-nl-[0-9]+\.hasha\.in\/[A-z0-9_]+\.gif$/$domain=hasha.in
 ||jusotop.com/b/$domain=yatv.net|yadongtube.net|yadongkorea.red|yadongwang.org|yako.red
 /^https:\/\/jgmoa[0-9]+\.com\/upload_files\/popup\//
-/^https:\/\/newtoki[0-9]+\.com\/tokinbtoki\/[0-9]+/
 /^https:\/\/manatoki[0-9]+\.net\/tokinbtoki\//
 /^https:\/\/static\.tzstatic\.top\/t\/[a-z0-9]+\.gif$/
 /^https:\/\/image\.yaburi[0-9]+\.com\/image-storage\/banners\//
@@ -2622,6 +2617,7 @@ newsis.com##div[id][style~="height:100px;"]
 newsis.com##iframe[src^="/view/ad/"]
 newsis.com##div[class^="w_header_"]:nth-child(1)
 newsis.com##table[class*="Ad"]
+m.etoday.co.kr##section > div[style*="height:250px"]
 jootc.com,funissu.com##aside[id^="ai_widget-"]
 poro.gg##div[class^="flex"][class$="h-[250px]"]
 bada.io##div[id*="amazon_shopping"]
@@ -3015,14 +3011,12 @@ bbongtv.*##img[src^="/img/"][src*=".gif"]
 moeni.net##img[src^="/img/sp/"]
 av19.gg###page ~ div[style^="min-height:"]#content.row
 agitwebtoon.*##.advx
-newtoki.*##.banner2
 agitnovel.*##.banner
 spochak.com##.list-webzine .list-item
 cokcok.*##.custom_banner_item
 tvhot.*##div[id*="-banner-"]
 tvhot.*###body_wrap > div[class][style^="margin:"]
 sonagitv.*##a[href][target="_blank"] > img[src^="/images/banner/"]:not([src^="/images/banner/webtoon_"])
-newtoki.*##.ba_test
 sonagitv.*##.popup_warp
 kr.bb-tv.co##.banner
 zzzz.lol##a[href*="/bbs/link.php?bo_table=partner&"]
@@ -3103,7 +3097,6 @@ x86.co.kr#@#.download_ad
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 @@||ssl.pstatic.net/adimg3.search/adpost/js/adpost_show_ads_v2.min.js$domain=danawa.com
 @@||ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js$script,domain=m.cafe.naver.com
-||newtoki.*/banner*/$domain=newtoki.help
 ||api-gw.sports.naver.com/cms/contents/adContents/$domain=m.sports.naver.com
 @@||api-gw.sports.naver.com/cms/contents/adContents/GENERAL$domain=m.sports.naver.com
 @@||api-gw.sports.naver.com/cms/contents/adContents/BRAND_STORY$domain=m.sports.naver.com
@@ -3834,13 +3827,6 @@ lover932.net,lover933.net,lover934.net,lover935.net,lover936.net,lover937.net,lo
 booktoki469.com,booktoki470.com,booktoki471.com,booktoki472.com,booktoki473.com,booktoki474.com,booktoki475.com,booktoki476.com,booktoki477.com#?#ul[class] > li:has(> a[href*="tokkiweb.com"])
 booktoki469.com,booktoki470.com,booktoki471.com,booktoki472.com,booktoki473.com,booktoki474.com,booktoki475.com,booktoki476.com,booktoki477.com###hd_pop
 booktoki469.com,booktoki470.com,booktoki471.com,booktoki472.com,booktoki473.com,booktoki474.com,booktoki475.com,booktoki476.com,booktoki477.com##img[src^="/tokinbtoki/"]
-newtoki469.com,newtoki470.com,newtoki471.com,newtoki472.com,newtoki473.com,newtoki474.com,newtoki475.com,newtoki476.com,newtoki477.com,newtoki478.com,newtoki479.com#?#ul[class] > li:has(> a[href^="/guarantee.php"])
-newtoki469.com,newtoki470.com,newtoki471.com,newtoki472.com,newtoki473.com,newtoki474.com,newtoki475.com,newtoki476.com,newtoki477.com,newtoki478.com,newtoki479.com#$#body { overflow: auto !important; }
-newtoki469.com,newtoki470.com,newtoki471.com,newtoki472.com,newtoki473.com,newtoki474.com,newtoki475.com,newtoki476.com,newtoki477.com,newtoki478.com,newtoki479.com##img[title="소울_뉴토끼_이벤트_배너"]
-newtoki469.com,newtoki470.com,newtoki471.com,newtoki472.com,newtoki473.com,newtoki474.com,newtoki475.com,newtoki476.com,newtoki477.com,newtoki478.com,newtoki479.com###hd_pop
-newtoki469.com,newtoki470.com,newtoki471.com,newtoki472.com,newtoki473.com,newtoki474.com,newtoki475.com,newtoki476.com,newtoki477.com,newtoki478.com,newtoki479.com##.basic-banner
-newtoki469.com,newtoki470.com,newtoki471.com,newtoki472.com,newtoki473.com,newtoki474.com,newtoki475.com,newtoki476.com,newtoki477.com,newtoki478.com,newtoki479.com##div.col-15.col-md-9
-newtoki469.com,newtoki470.com,newtoki471.com,newtoki472.com,newtoki473.com,newtoki474.com,newtoki475.com,newtoki476.com,newtoki477.com,newtoki478.com,newtoki479.com##.board-tail-banner
 /^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\/[a-z0-9-_]+\./$image,domain=wfwf449.com|wfwf450.com|wfwf451.com|wfwf452.com|wfwf453.com|wfwf454.com|wfwf455.com|wfwf456.com|wfwf457.com|wfwf458.com|wfwf459.com
 ||i.imgur.com^$domain=yasyadong01.tv|yasyadong02.tv|yasyadong03.tv|yasyadong04.tv|yasyadong05.tv|yasyadong06.tv|yasyadong07.tv|yasyadong08.tv|yasyadong09.tv
 manatoki469.net,manatoki470.net,manatoki471.net,manatoki472.net,manatoki473.net,manatoki474.net,manatoki475.net,manatoki476.net,manatoki477.net##[style="margin-bottom: 20px;"].row.row-15
