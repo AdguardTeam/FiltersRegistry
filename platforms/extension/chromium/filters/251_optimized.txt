@@ -1,9 +1,9 @@
-! Checksum: U6m+J+HS6ZfnGia/DWyIvA
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1778259502-14400.patch
+! Checksum: cP+LnuWfERyJZUR+uuTYdQ
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1778964541-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.74
-! TimeUpdated: 2026-05-08T16:56:00+00:00
+! Version: 2.0.9.75
+! TimeUpdated: 2026-05-16T20:46:31+00:00
 ! Expires: 10 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1387,7 +1387,7 @@ $removeparam=share_link_id
 ||tiktok.com^$removeparam=share_author_id
 $removeparam=/^web_id\d+/,domain=tiktok.com
 ||tiktok.com^$removeparam=embed_source
-$removeparam=si,document,domain=open.spotify.com|soundcloud.com|zappos.com
+$removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtu.be|zappos.com
 ||open.spotify.com^$removeparam=/^.*advertising_partner_name=.*$/i
 ||open.spotify.com^$removeparam=%243p
 $removeparam=gtm
@@ -2945,6 +2945,9 @@ $document,removeparam=premiumVisit,domain=fic.fan|fanfictionero.com|ficmania.com
 ||newsoveraudio.com^$document,removeparam=embedPubName
 ||newsoveraudio.com^$document,removeparam=offerId
 ||newsoveraudio.com^$document,removeparam=publisher
+||youtube.com/shorts/$document,removeparam=si
+||youtube.com/@$document,removeparam=si
+||youtube.com/post/$document,removeparam=si
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu

@@ -1,6 +1,6 @@
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 8May2026v1
+! OriginalVersion: 16May2026v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -2382,8 +2382,7 @@ $removeparam=/^web_id\d+/,domain=tiktok.com
 
 !!! ——— 🔊 Spotify ———
 ! https://open•spotify•com/playlist/37i9dQZF1DWXRvPx3nttRN?si=asdf1234567890
-! Do not add YouTube: https://github.com/uBlockOrigin/uAssets/issues/20586#issuecomment-1932122079
-$removeparam=si,document,domain=open.spotify.com|soundcloud.com|zappos.com
+$removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtu.be|zappos.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1740689
 ||open.spotify.com^$removeparam=/^.*advertising_partner_name=.*$/i
 ||open.spotify.com^$removeparam=%243p
@@ -5354,6 +5353,12 @@ $document,removeparam=premiumVisit,domain=fic.fan|fanfictionero.com|ficmania.com
 ||newsoveraudio.com^$document,removeparam=embedPubName
 ||newsoveraudio.com^$document,removeparam=offerId
 ||newsoveraudio.com^$document,removeparam=publisher
+
+! https://infosec.exchange/@iampytest1/116584411863070677
+! example: https://youtube.com/shorts/vCDjOE1EFvM?si=HdfBT8MfUhbfJ1-L
+||youtube.com/shorts/$document,removeparam=si
+||youtube.com/@$document,removeparam=si
+||youtube.com/post/$document,removeparam=si
 
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
