@@ -1,9 +1,9 @@
-! Checksum: Ew8331AYvDs+AM5IKNcI0Q
-! Diff-Path: ../patches/2/2-s-1779082413-3600.patch
+! Checksum: 8qdyBQ83K1i1bIB6O3v3eQ
+! Diff-Path: ../patches/2/2-s-1779089834-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.67.40
-! TimeUpdated: 2026-05-18T05:29:16+00:00
+! Version: 2.4.67.41
+! TimeUpdated: 2026-05-18T07:33:19+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||wxqdcakvuv.com^
 ||somepossibility.com^
 ||scripts.contimo.app^
 ||pub.searchnova.net^
@@ -9536,6 +9537,8 @@ ad.broadstreetads.com
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||mewcdn.online^$script
+||dump.mewcdn.online^
 ||a.hentaiocean.com^
 ||adradar.io^$third-party
 ||adserve.adradar.io^
@@ -10822,6 +10825,10 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231453
+nokaria.com#%#//scriptlet('prevent-setTimeout', 'detect(function')
+! https://github.com/AdguardTeam/AdguardFilters/issues/231461
+zeroupload.com#%#//scriptlet('prevent-element-src-loading', 'img', 'doubleclick')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231171
 rust-servers.net#@#.ad-slot
 rust-servers.net#@##ad-banner-top
@@ -38822,7 +38829,7 @@ bscscan.com##.search-panel-ads
 solscan.io#?#div.items-stretch.shrink-0 > .box-border:has(> div.dark\:shadow-mDark > div.flex:contains(Sponsored))
 solscan.io#?##top-tx-overview > div.gap-y-0.items-stretch:has(> div > div.flex-wrap.justify-start:contains(Sponsored))
 etherscan.io,basescan.org#?#div.dropdown > div.dropdown-menu:contains(Sponsored)
-viduro.top,vindaz.shop,xca.cymru,uiil.ink,pornwex.tv,manhuarmtl.com,vidara.to,vidara.so,krakenfiles.com,streamix.so,livecamrips.*#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
+sht-link.com,viduro.top,vindaz.shop,xca.cymru,uiil.ink,pornwex.tv,manhuarmtl.com,vidara.to,vidara.so,krakenfiles.com,streamix.so,livecamrips.*#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
 rxbabu.com##.flotiads
 link.snipcash.com#%#//scriptlet('remove-node-text', 'script', 'urlPC')
 link.snipcash.com#%#//scriptlet('prevent-addEventListener', 'click', 'openOnce')
@@ -41377,6 +41384,7 @@ shrib.com#%#//scriptlet('prevent-element-src-loading', 'script', 'cdn.taboola.co
 ||shrib.com/zuex/img/trusty.gif
 leo.org###topBranding
 omegleapp.me##.promotions
+nextdoor.com#%#//scriptlet('json-prune', 'data.me.personalizedFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.adRequestId')
 nextdoor.com#?#div[data-v3-view-type="V3Wrapper"]:has(> span[data-testid="feed-item-visibility-tracker"] > div[id^="feedItem_"] span[class*="Item"]:contains(Sponsored))
 ||s2.coinmarketcap.com/static/img/cdp_ad_banner/
 coinmarketcap.com##a[class*="_ad-banner_"]
@@ -57923,7 +57931,7 @@ cuttlinks.com,exe-links.com,cuttty.com,cutynow.com,exnion.com,cutyion.com,jixo.o
 !   winaero.com##.winrec
 !   winaero.com##.ebpa-close
 winaero.com##.windiv:has(> a.winrec)
-winaero.com##.gad-gads
+winaero.com##body > div[class] > #page .entry-content > .gad-gads:has(> .gad-gads-title)
 ! winaero.com###custom_html-11
 !
 ! Hearst Television Inc
@@ -60020,6 +60028,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231488
+||vidsrc.to^$badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230813
 @@||tg1.aniview.com/api/adserver/spt?$domain=nuovavenezia.it
 @@||player.avplayer.com^$domain=nuovavenezia.it
@@ -83405,6 +83415,7 @@ browsershots.org#@#.advert_area
 ||2fyzxp40.xyz^
 ||2g2kaa598.de^
 ||2gg6ebbhh.de^
+||2gnc.com^
 ||2h4els889.com^
 ||2h6skj2da.de^
 ||2hpb1i5th.de^
@@ -87868,6 +87879,7 @@ browsershots.org#@#.advert_area
 ||bedsitetchingwicht.cyou^
 ||bedumbhakdargumdrop.cfd^
 ||bedviojcrllpi.space^
+||bee3qlbxqu2h988rr4t4bcj5o9.cfd^
 ||beebeesloops.com^
 ||beefilydictbaburd.cfd^
 ||beefingserb.shop^
@@ -91207,6 +91219,7 @@ browsershots.org#@#.advert_area
 ||cloudyreach.pro^
 ||cloudysoil.com^
 ||cloventrotyls.shop^
+||clpfxzqdtmhqu.website^
 ||clprfkljfcmnm.site^
 ||clprr.com^
 ||clqmmy2lhc2qnfjvyxigxe95wb.cfd^
@@ -91325,6 +91338,7 @@ browsershots.org#@#.advert_area
 ||coalbuffalo.com^
 ||coalitionconcessionbecause.com^
 ||coarseschool.com^
+||coastalbloom.xyz^
 ||coastuniversalintroducing.com^
 ||coatsanguine.com^
 ||coaxalgaumy.cfd^
@@ -94035,6 +94049,7 @@ browsershots.org#@#.advert_area
 ||dkpgudwqxociz.site^
 ||dkpvbyvscxraq.space^
 ||dkqbwntpklrob.online^
+||dkqfoqqcqhgyo.site^
 ||dkqpcbuliyx.com^
 ||dkrbus.com^
 ||dkrnlccknrlqz.online^
@@ -102971,6 +102986,7 @@ browsershots.org#@#.advert_area
 ||inheritedvastpageant.com^
 ||inheritknow.com^
 ||inhibitalertnesstouch.com^
+||inhiveanoine.shop^
 ||inhousead.net^
 ||inhshlfbgkqdw.site^
 ||inhumyszolcov.space^
@@ -104538,6 +104554,7 @@ browsershots.org#@#.advert_area
 ||jrqzmiipckcvm.website^
 ||jrrqgiblbj.com^
 ||jrrygibhwcmwb.space^
+||jrtspnocd.com^
 ||jruczsajvawgi.website^
 ||jrunkpbdiqiuu.site^
 ||jrvhmxnfzczll.online^
@@ -104797,6 +104814,7 @@ browsershots.org#@#.advert_area
 ||jwxlupfcsmlkb.online^
 ||jwxmbvcnjlyto.website^
 ||jwyqeonarrrit.website^
+||jwyvtewajahc.in^
 ||jwzeoshnruedd.website^
 ||jwzvfjur.work^
 ||jxawcxgxuerba.online^
@@ -106065,6 +106083,7 @@ browsershots.org#@#.advert_area
 ||ladsipz.com^
 ||ladskiz.com^
 ||ladysabryna-xxiqlkt.work^
+||laertesyirdfusate.qpon^
 ||lafastnews.com^
 ||lafundahyxevo.website^
 ||laggarbedouse.cyou^
@@ -106690,6 +106709,7 @@ browsershots.org#@#.advert_area
 ||lieutenantvealelongated.com^
 ||lievestarnicasbogymen.qpon^
 ||lievestcrasser.com^
+||lievestportemoireed.cyou^
 ||lifeboatlegalalleviate.com^
 ||lifemoodmichelle.com^
 ||lifeporn.net^
@@ -108054,6 +108074,7 @@ browsershots.org#@#.advert_area
 ||martitetavell.cyou^
 ||martnetinhumed.cyou^
 ||martpleadescended.com^
+||martted.com^
 ||marydrillsmoither.qpon^
 ||marysth.cyou^
 ||masakeku.com^
@@ -108623,6 +108644,7 @@ browsershots.org#@#.advert_area
 ||miewocoaedlin.online^
 ||miffsnuttilyacquits.qpon^
 ||mifonrcki.in^
+||mifvigmz.com^
 ||mig3incvggbukg.cfd^
 ||migcradnebxmy.website^
 ||mignished-sility.com^
@@ -113146,6 +113168,7 @@ browsershots.org#@#.advert_area
 ||papelonkokoona.com^
 ||paperedunmitre.cfd^
 ||papereruption.com^
+||paperestop.qpon^
 ||papermonthlyalright.com^
 ||paperysaponinzaphara.cyou^
 ||papiosaiid.com^
@@ -116674,6 +116697,7 @@ browsershots.org#@#.advert_area
 ||rankpeers.com^
 ||ranoby.click^
 ||ranopportuni.com^
+||ransackbolases.qpon^
 ||ranseursinoper.shop^
 ||ransommaliciousveneering.com^
 ||ransomnotify.com^
@@ -123328,6 +123352,7 @@ browsershots.org#@#.advert_area
 ||t.uc.cn^
 ||t1eflp28b5lowgm6tf2.cfd^
 ||t1g6zmv7lw9k1wfk.cfd^
+||t1hwhow1t3r98k.rest^
 ||t1voo2e5wrjlprrcuq4h.rest^
 ||t2lgo.com^
 ||t2nlwfmuq2io4bwm8i2uoryb9w.cfd^
@@ -123746,6 +123771,7 @@ browsershots.org#@#.advert_area
 ||tcnaecgsqurme.online^
 ||tcneqnkonxydt.space^
 ||tcolfwuhtwqln.space^
+||tcotakyaptua.com^
 ||tcpcharms.com^
 ||tcpedpdcfkcgo.rocks^
 ||tcpmjizhgaypw.site^
@@ -124988,6 +125014,7 @@ browsershots.org#@#.advert_area
 ||togtmicah.cfd^
 ||togvnrchpuflt.site^
 ||togxfwvfslruy.space^
+||tohoef.com^
 ||toieetnnb.com^
 ||toiknxtfiyaht.site^
 ||toiletaudacity.com^
@@ -129241,7 +129268,6 @@ browsershots.org#@#.advert_area
 ||vidrugnirtop.net^
 ||vidryfanglet.qpon^
 ||vidscriptshark.com^
-||vidsrc.to^
 ||viduouschatino.cyou^
 ||viesalascan.cfd^
 ||viesfalter.help^
@@ -131787,6 +131813,7 @@ browsershots.org#@#.advert_area
 ||wmdmkdbhowqgr.space^
 ||wmedps.com^
 ||wmeqoborqbkjw.top^
+||wmgdsxahsspkk.space^
 ||wmgikspuyjxwm.online^
 ||wmgtr.com^
 ||wmhq8tw8t5ju3y.rest^
@@ -133592,6 +133619,7 @@ browsershots.org#@#.advert_area
 ||xttdpwnnedxsacn.net^
 ||xttdpwnnedxsacn.xyz^
 ||xtuirgdoviqif.online^
+||xtuohnfwia.in^
 ||xtuvodbzcvoff.space^
 ||xtvjvibumhgdk.online^
 ||xtvygqhzejjis.online^
@@ -154296,6 +154324,7 @@ dribbble.com##drb-infinite-scroll div[data-username]:has(drb-tooltip[data-promot
 fdiintelligence.com#?#.undefined:contains(Advertisement)
 90min.com##figure:has(> div > #mm-player-placeholder-large-screen)
 unsplash.com##figure[itemprop="image"]:has(div[class*="sponsorLabelContainer-"])
+findagrave.com#?#.rounded-pill:contains(Remove Ads)
 5dariyanews.com##h2:has(a[href*="sponsored-ads"])
 streeteasy.com##li [class^="ListingCard-module"]:has([class*="sponsoredTag"])
 ulta.com##li.ProductListingResults__productCard:has(.pal-c-ProductCardFooter__sponsored)

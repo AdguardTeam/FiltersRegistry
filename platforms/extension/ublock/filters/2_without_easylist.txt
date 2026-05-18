@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: N4HkFOeAABpOMB/80xJtIw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779082430-3600.patch
+! Checksum: IZOn9xMVh7ukmVguB1nbaA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779089847-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.67.40
-! TimeUpdated: 2026-05-18T05:29:16+00:00
+! Version: 2.4.67.41
+! TimeUpdated: 2026-05-18T07:33:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||wxqdcakvuv.com^
 ||somepossibility.com^
 ||scripts.contimo.app^
 ||pub.searchnova.net^
@@ -9537,6 +9538,8 @@ ad.broadstreetads.com
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||mewcdn.online^$script
+||dump.mewcdn.online^
 ||a.hentaiocean.com^
 ||adradar.io^$3p
 ||adserve.adradar.io^
@@ -10724,6 +10727,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231453
+nokaria.com##+js(no-setTimeout-if, detect(function)
+! https://github.com/AdguardTeam/AdguardFilters/issues/231461
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231171
 rust-servers.net#@#.ad-slot
 rust-servers.net#@##ad-banner-top
@@ -38212,7 +38218,7 @@ bscscan.com##.search-panel-ads
 solscan.io##div.items-stretch.shrink-0 > .box-border:has(> div.dark\:shadow-mDark > div.flex:contains(Sponsored))
 solscan.io###top-tx-overview > div.gap-y-0.items-stretch:has(> div > div.flex-wrap.justify-start:contains(Sponsored))
 etherscan.io,basescan.org##div.dropdown > div.dropdown-menu:contains(Sponsored)
-viduro.top,vindaz.shop,xca.cymru,uiil.ink,pornwex.tv,manhuarmtl.com,vidara.to,vidara.so,krakenfiles.com,streamix.so,livecamrips.*##+js(addEventListener-defuser, click, window.open)
+sht-link.com,viduro.top,vindaz.shop,xca.cymru,uiil.ink,pornwex.tv,manhuarmtl.com,vidara.to,vidara.so,krakenfiles.com,streamix.so,livecamrips.*##+js(addEventListener-defuser, click, window.open)
 rxbabu.com##.flotiads
 link.snipcash.com##+js(remove-node-text, script, urlPC)
 link.snipcash.com##+js(addEventListener-defuser, click, openOnce)
@@ -40729,6 +40735,7 @@ shrib.com###umWaerbig
 ||shrib.com/zuex/img/trusty.gif
 leo.org###topBranding
 omegleapp.me##.promotions
+nextdoor.com##+js(json-prune, data.me.personalizedFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.adRequestId)
 nextdoor.com##div[data-v3-view-type="V3Wrapper"]:has(> span[data-testid="feed-item-visibility-tracker"] > div[id^="feedItem_"] span[class*="Item"]:contains(Sponsored))
 ||s2.coinmarketcap.com/static/img/cdp_ad_banner/
 coinmarketcap.com##a[class*="_ad-banner_"]
@@ -57242,7 +57249,7 @@ cuttlinks.com,exe-links.com,cuttty.com,cutynow.com,exnion.com,cutyion.com,jixo.o
 !   winaero.com##.winrec
 !   winaero.com##.ebpa-close
 winaero.com##.windiv:has(> a.winrec)
-winaero.com##.gad-gads
+winaero.com##body > div[class] > #page .entry-content > .gad-gads:has(> .gad-gads-title)
 ! winaero.com###custom_html-11
 !
 ! Hearst Television Inc
@@ -59364,6 +59371,8 @@ $popup,3p,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231488
+||vidsrc.to^$badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230813
 @@||tg1.aniview.com/api/adserver/spt?$domain=nuovavenezia.it
 @@||player.avplayer.com^$domain=nuovavenezia.it
