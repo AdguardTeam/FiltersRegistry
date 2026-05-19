@@ -13,8 +13,8 @@ vi.mock('@adguard/filters-compiler', () => ({
     compile: vi.fn().mockResolvedValue(undefined),
     optimizationConfigLocal: {
         setPath: vi.fn(),
-        generate: vi.fn().mockResolvedValue(undefined),
-        generateStats: vi.fn().mockResolvedValue(undefined),
+        downloadPercentJson: vi.fn().mockResolvedValue(undefined),
+        downloadStatsFromPercentJson: vi.fn().mockResolvedValue(undefined),
     },
 }));
 
@@ -45,26 +45,26 @@ describe('build.js optimization config integration', () => {
         vi.clearAllMocks();
     });
 
-    it('generateStats and setPath are called with optimizationConfigCacheDir when --use-cache', async () => {
+    it('downloadStatsFromPercentJson and setPath are called with optimizationConfigCacheDir when --use-cache', async () => {
         process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
         const { optimizationConfigLocal } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
-            expect(vi.mocked(optimizationConfigLocal.generateStats))
+            expect(vi.mocked(optimizationConfigLocal.downloadStatsFromPercentJson))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
             expect(vi.mocked(optimizationConfigLocal.setPath))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
         });
     });
 
-    it('generate is called with optimizationConfigCacheDir when --generate-cache', async () => {
+    it('downloadPercentJson is called with optimizationConfigCacheDir when --generate-cache', async () => {
         process.argv = ['node', 'build.js', '--generate-cache'];
         await import('../build.js');
 
         const { optimizationConfigLocal } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
-            expect(vi.mocked(optimizationConfigLocal.generate))
+            expect(vi.mocked(optimizationConfigLocal.downloadPercentJson))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
         });
         expect(vi.mocked(optimizationConfigLocal.setPath)).not.toHaveBeenCalled();

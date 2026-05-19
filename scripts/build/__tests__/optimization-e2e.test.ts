@@ -88,7 +88,7 @@ describe('optimization config e2e', () => {
         await fs.promises.writeFile(statsPath, statsJson, 'utf-8');
         statsContentBefore = statsJson;
 
-        await optimizationConfigLocal.generateStats(optimizationDir);
+        await optimizationConfigLocal.downloadStatsFromPercentJson(optimizationDir);
         optimizationConfigLocal.setPath(optimizationDir);
 
         await compile(
