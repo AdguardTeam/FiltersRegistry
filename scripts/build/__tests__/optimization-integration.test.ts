@@ -11,7 +11,7 @@ const expectedOptimizationConfigCachePath = path.resolve(
 
 vi.mock('@adguard/filters-compiler', () => ({
     compile: vi.fn().mockResolvedValue(undefined),
-    optimizationConfigLocal: {
+    localOptimizationConfig: {
         setPath: vi.fn(),
         downloadPercentJson: vi.fn().mockResolvedValue(undefined),
         downloadStatsFromPercentJson: vi.fn().mockResolvedValue(undefined),
@@ -49,11 +49,11 @@ describe('build.js optimization config integration', () => {
         process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
-        const { optimizationConfigLocal } = await import('@adguard/filters-compiler');
+        const { localOptimizationConfig } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
-            expect(vi.mocked(optimizationConfigLocal.downloadStatsFromPercentJson))
+            expect(vi.mocked(localOptimizationConfig.downloadStatsFromPercentJson))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
-            expect(vi.mocked(optimizationConfigLocal.setPath))
+            expect(vi.mocked(localOptimizationConfig.setPath))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
         });
     });
@@ -62,11 +62,11 @@ describe('build.js optimization config integration', () => {
         process.argv = ['node', 'build.js', '--generate-cache'];
         await import('../build.js');
 
-        const { optimizationConfigLocal } = await import('@adguard/filters-compiler');
+        const { localOptimizationConfig } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
-            expect(vi.mocked(optimizationConfigLocal.downloadPercentJson))
+            expect(vi.mocked(localOptimizationConfig.downloadPercentJson))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
         });
-        expect(vi.mocked(optimizationConfigLocal.setPath)).not.toHaveBeenCalled();
+        expect(vi.mocked(localOptimizationConfig.setPath)).not.toHaveBeenCalled();
     });
 });

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { compile, optimizationConfigLocal } from '@adguard/filters-compiler';
+import { compile, localOptimizationConfig } from '@adguard/filters-compiler';
 import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import {
@@ -122,8 +122,8 @@ const buildFilters = async () => {
     // skip platform generation, patches preparation, and temp/platforms copying.
     if (generateCache) {
         await fs.promises.rm(optimizationConfigCachePath, { recursive: true, force: true });
-        await optimizationConfigLocal.generate(optimizationConfigCachePath);
-        optimizationConfigLocal.setPath(optimizationConfigCachePath);
+        await localOptimizationConfig.generate(optimizationConfigCachePath);
+        localOptimizationConfig.setPath(optimizationConfigCachePath);
         // eslint-disable-next-line no-console
         console.log(`Using local optimization config from: ${optimizationConfigCachePath}`);
 
@@ -159,7 +159,7 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
-        optimizationConfigLocal.setPath(optimizationConfigCachePath);
+        localOptimizationConfig.setPath(optimizationConfigCachePath);
         // eslint-disable-next-line no-console
         console.log(`Using local optimization config from: ${optimizationConfigCachePath}`);
     }

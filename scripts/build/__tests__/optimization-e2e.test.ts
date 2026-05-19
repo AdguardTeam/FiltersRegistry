@@ -1,7 +1,7 @@
 import {
     describe, it, expect, beforeAll, afterAll,
 } from 'vitest';
-import { compile, optimizationConfigLocal } from '@adguard/filters-compiler';
+import { compile, localOptimizationConfig } from '@adguard/filters-compiler';
 import os from 'os';
 import path from 'path';
 import fs from 'fs';
@@ -88,8 +88,8 @@ describe('optimization config e2e', () => {
         await fs.promises.writeFile(statsPath, statsJson, 'utf-8');
         statsContentBefore = statsJson;
 
-        await optimizationConfigLocal.downloadStatsFromPercentJson(optimizationDir);
-        optimizationConfigLocal.setPath(optimizationDir);
+        await localOptimizationConfig.downloadStatsFromPercentJson(optimizationDir);
+        localOptimizationConfig.setPath(optimizationDir);
 
         await compile(
             filtersDir,
@@ -124,8 +124,8 @@ describe('optimization config e2e', () => {
     });
 
     afterAll(async () => {
-        optimizationConfigLocal.setPath(optimizationDir);
-        await optimizationConfigLocal.reset();
+        localOptimizationConfig.setPath(optimizationDir);
+        await localOptimizationConfig.reset();
         await fs.promises.rm(tmpDir, { recursive: true, force: true });
     });
 });

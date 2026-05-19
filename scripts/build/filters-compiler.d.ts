@@ -9,7 +9,7 @@ declare module '@adguard/filters-compiler' {
         customPlatformsConfig?: Record<string, unknown>,
     ): Promise<void>;
 
-    export const optimizationConfigLocal: {
+    export const localOptimizationConfig: {
         setPath(configPath: string): void;
         downloadPercentJson(configPath: string): Promise<void>;
         downloadStatsFromPercentJson(configPath: string): Promise<void>;
