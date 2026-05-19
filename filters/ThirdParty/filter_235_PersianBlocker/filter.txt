@@ -1,6 +1,5 @@
 !
 ! Title: ☀️ PersianBlockerNG ☀️
-! Last modified: Thu, 4 Sep 2025 23:38:35 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads, trackers and annoyances in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -523,7 +522,8 @@ ana.press##div.back_links
 !#if !env_mobile
 ac.ir#%#//scriptlet('ubo-set', 'chromeOS', 'true')
 !#endif
-||ac.ir/common/scripts/analytics/meetingLaunchIA.js^$script,~third-party
+! https://github.com/AdguardTeam/AdguardFilters/issues/231021
+!||ac.ir/common/scripts/analytics/meetingLaunchIA.js^$script,1p
 ac.ir#$#body[style^="background-image: url(\"/_images/nonprintable.gif\")"] { background-image: unset !important; }
 avapedia.com##figure.size-full.wp-block-image
 ! https://github.com/MasterKia/PersianBlocker/issues/152
@@ -3916,7 +3916,7 @@ app.epoll.pro#$#* { cursor: revert !important; -webkit-touch-callout: default !i
 
 ! Trackers:
 ! Title: PersianBlockerTrackers
-! Last modified: Sun, 10 May 2026 12:49:06 +0330
+! Last modified: Mon, 18 May 2026 22:17:08 +0330
 ! Expires: 7 days
 ! Description: Filters to block trackers in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -3936,6 +3936,8 @@ app.epoll.pro#$#* { cursor: revert !important; -webkit-touch-callout: default !i
 ||trustseal.e-rasaneh.ir/Trustseal^$method=post
 ! aparat.com:
 ||sentry.sabaidea.cloud^
+! aparat.com/shorts:
+||aparat.com/external/roost/v1/b/watchtime^
 ! Google Account Login (e.g. gama.ir):
 ! rokna.net:
 ||bl9.ir^

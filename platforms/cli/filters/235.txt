@@ -1,13 +1,12 @@
-! Checksum: XdSqDyFl807uMC0uMlWJgQ
-! Diff-Path: ../patches/235/235-s-1778417444-14400.patch
+! Checksum: NjPadg+O+EfKev+f2bIsGQ
+! Diff-Path: ../patches/235/235-s-1779184100-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.6.17
-! TimeUpdated: 2026-05-10T12:48:10+00:00
+! Version: 2.0.6.18
+! TimeUpdated: 2026-05-19T09:45:50+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ☀️ PersianBlockerNG ☀️
-! Last modified: Thu, 4 Sep 2025 23:38:35 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads, trackers and annoyances in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -511,7 +510,8 @@ appreview.ir##a[onclick^="increase_ad_click_count"]
 ! https://github.com/MasterKia/PersianBlocker/issues/183
 ana.press##div.back_links
 ac.ir#%#//scriptlet('ubo-set', 'chromeOS', 'true')
-||ac.ir/common/scripts/analytics/meetingLaunchIA.js^$script,~third-party
+! https://github.com/AdguardTeam/AdguardFilters/issues/231021
+!||ac.ir/common/scripts/analytics/meetingLaunchIA.js^$script,1p
 ac.ir#$#body[style^="background-image: url(\"/_images/nonprintable.gif\")"] { background-image: unset !important; }
 avapedia.com##figure.size-full.wp-block-image
 ! https://github.com/MasterKia/PersianBlocker/issues/152
@@ -3743,7 +3743,7 @@ digiform.ir#$#body { cursor: revert !important; -webkit-touch-callout: default !
 app.epoll.pro#$#* { cursor: revert !important; -webkit-touch-callout: default !important; -webkit-user-select: text !important; -khtml-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; -webkit-tap-highlight-color: revert !important; }
 ! Trackers:
 ! Title: PersianBlockerTrackers
-! Last modified: Sun, 10 May 2026 12:49:06 +0330
+! Last modified: Mon, 18 May 2026 22:17:08 +0330
 ! Expires: 7 days
 ! Description: Filters to block trackers in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -3763,6 +3763,8 @@ app.epoll.pro#$#* { cursor: revert !important; -webkit-touch-callout: default !i
 ||trustseal.e-rasaneh.ir/Trustseal^$method=post
 ! aparat.com:
 ||sentry.sabaidea.cloud^
+! aparat.com/shorts:
+||aparat.com/external/roost/v1/b/watchtime^
 ! Google Account Login (e.g. gama.ir):
 ! rokna.net:
 ||bl9.ir^

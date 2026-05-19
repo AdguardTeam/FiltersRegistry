@@ -1,13 +1,13 @@
-! Checksum: DmBoTO9nZ7g6XE2qBLFhVA
-! Diff-Path: ../patches/251/251-s-1778964562-14400.patch
+! Checksum: EkMGxlWAtljpSRWZxj9O2Q
+! Diff-Path: ../patches/251/251-s-1779184142-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.75
-! TimeUpdated: 2026-05-16T20:46:31+00:00
+! Version: 2.0.9.76
+! TimeUpdated: 2026-05-19T09:46:01+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 16May2026v1
+! OriginalVersion: 17May2026v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -2428,7 +2428,7 @@ $removeparam=article_url,domain=shop-links.co
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-782437
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-931912
 $removeparam=/^shared.*$/,domain=alibi.fi|anna.fi|eralehti.fi|hymy.fi|kaksplus.fi|kotiliesi.fi|rakennusmaailma.fi|seura.fi|tekniikanmaailma.fi
-$removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com|duck.ai
+$removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|duckduckgo.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com|duck.ai
 ! https://fernerjacobsen•no/?epi=STS-SHP--FernerJacobsen-Logo%7Cxid%3Afr1624121412114eah
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
@@ -4412,6 +4412,10 @@ $document,removeparam=premiumVisit,domain=fic.fan|fanfictionero.com|ficmania.com
 ||youtube.com/shorts/$document,removeparam=si
 ||youtube.com/@$document,removeparam=si
 ||youtube.com/post/$document,removeparam=si
+||youtube.com/live/$document,removeparam=si
+! https://toot.cafe/@tomayac/116557731798196446
+! https://www.youtube.com/live/zwYkHS8jvSE?t=4870&is=CZXKIGViynCeBxWr
+||youtube.com/live/$document,removeparam=is
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
