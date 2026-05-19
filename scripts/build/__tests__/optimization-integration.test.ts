@@ -14,6 +14,7 @@ vi.mock('@adguard/filters-compiler', () => ({
     optimizationConfigLocal: {
         setPath: vi.fn(),
         generate: vi.fn().mockResolvedValue(undefined),
+        generateStats: vi.fn().mockResolvedValue(undefined),
     },
 }));
 
@@ -44,19 +45,20 @@ describe('build.js optimization config integration', () => {
         vi.clearAllMocks();
     });
 
-    it('setPath is called with optimizationConfigCacheDir when --use-cache', async () => {
+    it('generateStats and setPath are called with optimizationConfigCacheDir when --use-cache', async () => {
         process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
         const { optimizationConfigLocal } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
+            expect(vi.mocked(optimizationConfigLocal.generateStats))
+                .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
             expect(vi.mocked(optimizationConfigLocal.setPath))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
         });
     });
 
-    it('generate and setPath are called in sequence with optimizationConfigCacheDir '
-         + 'when --generate-cache', async () => {
+    it('generate is called with optimizationConfigCacheDir when --generate-cache', async () => {
         process.argv = ['node', 'build.js', '--generate-cache'];
         await import('../build.js');
 
@@ -64,8 +66,7 @@ describe('build.js optimization config integration', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(optimizationConfigLocal.generate))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
-            expect(vi.mocked(optimizationConfigLocal.setPath))
-                .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
         });
+        expect(vi.mocked(optimizationConfigLocal.setPath)).not.toHaveBeenCalled();
     });
 });
