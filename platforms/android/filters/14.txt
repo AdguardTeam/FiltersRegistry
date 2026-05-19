@@ -1,9 +1,9 @@
-! Checksum: ODCoMfWsUtXzZmVcZTBg+w
-! Diff-Path: ../patches/14/14-s-1779196699-3600.patch
+! Checksum: nM1XhdQZkXYu4fYQrh3g9w
+! Diff-Path: ../patches/14/14-s-1779203691-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.68.47
-! TimeUpdated: 2026-05-19T13:15:36+00:00
+! Version: 2.2.68.48
+! TimeUpdated: 2026-05-19T15:11:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2605,6 +2605,8 @@ cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][dat
 !
 ! NOTE: Regular rules
 !
+home-appliances.philips#%#//scriptlet('trusted-click-element', 'button[data-cy="accept-functional-cookies-btn"]')
+gorod.gov.spb.ru##.fixed-alert
 porngameshub.com##aside[aria-label="Cookie Notification"]
 ||bhg.com.au/wp-content/themes/express/build/js/privacy-banner.js
 subnautica.com#%#//scriptlet('set-cookie-reload', 'analytics', 'N')
@@ -18001,7 +18003,7 @@ drafthound.com#%#//scriptlet('set-local-storage-item', 'acceptsAnalyticsCookies'
 tvsmartgo.elsat.pl,tvsmart.elsat.pl,tvsmart.multimedia.pl,tvsmart.jambox.pl,tvsmart.vectra.pl,tvsmart.pl#%#//scriptlet('set-cookie', 'cookie-notice', '1')
 consent.sportbible.com#%#//scriptlet('trusted-click-element', '.message-component > button[aria-label$="Settings"]')
 consent.sportbible.com#%#//scriptlet('trusted-click-element', '.message-component > button.sp_choice_type_SAVE_AND_EXIT')
-bol.com#%#//scriptlet('trusted-click-element', 'wsp-consent-modal-ofc button#js-reject-all-button', '', '1000')
+bol.com#%#//scriptlet('trusted-set-cookie', 'bolConsentChoices', 'source%23OFC%7Cversion%236%7Cint-tran%23false%7Cext-tran%23false%7Cint-beh%23false%7Cext-beh%23false')
 onlineveilingmeester.nl#%#//scriptlet('set-cookie', 'trackingConsent', 'false')
 gld.nl,omroepwest.nl,rtvnoord.nl#%#//scriptlet('trusted-set-cookie', 'consent-cookie-toggles', '[{"type":"social","value":3},{"type":"remaining","value":2}]')
 eboo.lu#%#document.cookie="PostAnalytics=inactive; path=/;";
@@ -36426,7 +36428,7 @@ wccftech.com,isaogluyapi.com,blooloop.com,funmix.pl,ckpodgorza.pl,stary.pl,cocon
 ! ##.newsletter-signup
 ksat.com,eltrecetv.com.ar,click2houston.com,venturebeat.com,247sports.com,tetsudo.com,gamer.no,urbanize.city,clublexus.com,wsls.com,fox29.com,13newsnow.com,footballtransfers.com,fox35orlando.com,fox61.com,time.com,euobserver.com,citynews.ca,fox32chicago.com,nobelprize.org,vice.com,whattowatch.com,asia.nikkei.com,laptopmag.com,musicradar.com,airmail.news,newsweek.com,zeit.de,currentaffairs.org,financefwd.com,proprivacy.com,bikeperfect.com,bookriot.com,komando.com,tn.com.ar,whathifi.com,futurestud.io,slate.com,businessinsider.de,fastcompany.com,heise.de,history.com,itprotoday.com,jewishjournal.com,king5.com,mic.com,motherjones.com,nydailynews.com,people.com,skyscanner.com.tw##.newsletter-signup
 ! ##.footer-newsletter
-geox.com,365daysofbakingandmore.com,lejournaldelamaison.fr,newsbomb.gr,hartsofstur.com,vg247.com,rockpapershotgun.com,eurogamer.net,silbonshop.com,dinos.co.jp,supermagnete.de,lampenwelt.de,oxfordlearning.com,caseking.de,lidyana.com,officedepot.co.cr##.footer-newsletter
+ianos.gr,geox.com,365daysofbakingandmore.com,lejournaldelamaison.fr,newsbomb.gr,hartsofstur.com,vg247.com,rockpapershotgun.com,eurogamer.net,silbonshop.com,dinos.co.jp,supermagnete.de,lampenwelt.de,oxfordlearning.com,caseking.de,lidyana.com,officedepot.co.cr##.footer-newsletter
 ! ##.cta-component-full-width
 eveningtimes.co.uk,greenocktelegraph.co.uk,heraldscotland.com,swindonadvertiser.co.uk,wiltshiretimes.co.uk##.cta-component-full-width
 ! ##.subscribe
@@ -36464,6 +36466,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+seudinheiro.com###form_newsletter_box
 cheezburger.com##.chz-theme-links[data-chz-analytics-event-anchors-only]
 artforum.com##.nova-js-newsletter-capture
 footballchannel.jp##.g_rcm
@@ -46082,6 +46085,8 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+ianos.gr###app-download-popup
+ianos.gr##a[href="https://static.app.ianos.gr/smart-redirect.html"]
 delish.com##.recipe-body > section[data-lazy-id]:not([class]):has(div[data-theme-key="app-download-banner-content"])
 openrec.tv##div[style^="transform:"] > div:has(> div > div > img[src*="openrec_logo"])
 nefisyemektarifleri.com###app-presentation-modal
@@ -55013,6 +55018,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+seudinheiro.com##.widget_tituloheader
 keinet.ne.jp##a.kn-link[onclick^="sc_func"]
 univ-online.com##.banners-header__item
 univ-online.com##.banners-c
