@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: GjL9hrjNBxEpk51LUluUdQ
-! Diff-Path: ../patches/2/2-s-1779182454-3600.patch
+! Checksum: ycdL6FW1CdZYTWdR0FFxrQ
+! Diff-Path: ../patches/2/2-s-1779189180-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.67.58
-! TimeUpdated: 2026-05-19T09:17:07+00:00
+! Version: 2.4.67.59
+! TimeUpdated: 2026-05-19T11:08:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15775,6 +15775,7 @@ ephoto360.com##+js(abort-current-script, $, Adblock)
 transfermarkt.*#@#.AD-POST
 #@#.ADV320_50_100
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152983
+client.falixnodes.net##+js(no-setTimeout-if, so5t8U8)
 client.falixnodes.net##+js(no-setInterval-if, amzn_aps_csm)
 falixnodes.net##+js(abort-on-property-write, showAdblockCard)
 @@||client.falixnodes.net^$generichide
@@ -18000,6 +18001,8 @@ majesy.com,magesy.eu##+js(set-constant, jQuery.adblock, false)
 @@||minecraft-forum.net/v/adblock-detection-master/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12736
 @@||img.tfd.com/ads.js
+freethesaurus.com,thefreedictionary.com##+js(set-constant, showAds, 1)
+freethesaurus.com,thefreedictionary.com##+js(no-setTimeout-if, warn)
 freethesaurus.com#@#.TopBannerAd
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
 ||thefreedictionary.com/_/tr.ashx?
@@ -29542,8 +29545,9 @@ elektroda.pl##div[id^="post-content-"] > .text-wrap[style*="filter: blur"]:style
 elektroda.pl##body div.adBanner.advert.advertisement.adsby:not(#style_important):style(display: block !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24309
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7139
-elektroda.pl##section[class] > [id]:has(> div a:is([href^="https://www.elektroda.pl/"][href*="dsa.php?"], [href^="https://www.elektroda.pl/"][href*="dsaeu.php?"], [href^="https://www.elektroda.pl/"][href*="dsaue.php?"]))
-elektroda.pl##.head ~ ul > li:not(.post):has(> div[class] a:is([href^="https://www.elektroda.pl/"][href*="dsa.php?"], [href^="https://www.elektroda.pl/"][href*="dsaeu.php?"], [href^="https://www.elektroda.pl/"][href*="dsaue.php?"]))
+elektroda.pl##a.campaign4words-ad
+elektroda.pl##section[class] > [id]:has(> div a:is([href^="https://www.elektroda.pl/"][href*="dsa.php?"], [href^="https://www.elektroda.pl/"][href*="dsaeu.php?"], [href^="https://www.elektroda.pl/"][href*="dsaue.php?"], [href^="https://www.elektroda.pl/"][href*="/n/dsa/"]))
+elektroda.pl##.head ~ ul > li:not(.post):has(> div[class] a:is([href^="https://www.elektroda.pl/"][href*="dsa.php?"], [href^="https://www.elektroda.pl/"][href*="dsaeu.php?"], [href^="https://www.elektroda.pl/"][href*="dsaue.php?"], [href^="https://www.elektroda.pl/"][href*="/n/dsa/"]))
 elektroda.pl##+js(abort-on-property-read, welcomeAdContainerElement)
 elektroda.pl##+js(abort-on-property-read, loadPopup)
 elektroda.pl##+js(abort-on-property-read, disablePopup)
@@ -37260,6 +37264,11 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+ebaumsworld.com##.large-ad-space
+thebaynet.com##a[href="https://www.owingsautomotive.com/"]
+thebaynet.com##a[href^="https://www.princegeorgescountymd.gov/"]
+thebaynet.com##.entry-content > h2.has-text-align-center:contains(Featured Business Partners)
+thebaynet.com##.wp-block-newspack-blocks-carousel
 xxxtik.com##app-modal
 xxxtik.com##app-popup
 xxxtik.com##.app-bar-list > a[href][rel="nofollow"][target="_blank"]
@@ -41059,7 +41068,7 @@ camsmut.com##.navigation a[target="_blank"]
 camsmut.com##a[href^="/go/"]
 camsmut.com##+js(no-window-open-if)
 kaa.lt,movielinkbd.*,anime4up.rest,1movielinkbd.com##+js(abort-current-script, EventTarget.prototype.addEventListener, window.open)
-forge.plebmasters.de##+js(json-prune, servers.*.imageThumbnailUrl servers.*.adDescription servers.*.redirectUrl servers.*.adTitle)
+forge.plebmasters.de##+js(json-prune, servers.*.imageThumbnailUrl servers.*.adDescription servers.*.redirectUrl servers.*.adTitle *.results.[-].advertisement)
 forge.plebmasters.de##.server-row:has(> td > div[aria-label="Pleb Masters: Forge partner logo"])
 dropmms.com##p[id^="a-ads"]
 ||js.dropmms.net/adprovider.js
@@ -84486,6 +84495,7 @@ browsershots.org#@#.advert_area
 ||assautlazars.shop^
 ||asscfpprqsurr.online^
 ||assealsulfion.com^
+||asselffixt.qpon^
 ||assembleservers.com^
 ||assemblyexchange.com^
 ||assertedclosureseaman.com^
@@ -88010,6 +88020,7 @@ browsershots.org#@#.advert_area
 ||cde497d52a.com^
 ||cdfhatjndqvcb.space^
 ||cdfkygvddsbre.online^
+||cdfqgqmobmsvw.com^
 ||cdgtoqkhrmbii.com^
 ||cdhzzirkkgoce.website^
 ||cdhzzqqmnmpqf.website^
@@ -93218,6 +93229,7 @@ browsershots.org#@#.advert_area
 ||ekxuwignogvdd.site^
 ||ekyngoyzuutls.website^
 ||ekzyqldtqnnth.online^
+||el8e4ke81e5euv.cfd^
 ||elaborate-fan.pro^
 ||elaboratebasis.com^
 ||eladove.com^
@@ -94491,6 +94503,7 @@ browsershots.org#@#.advert_area
 ||f279jmh5vqkkzpylluzx3y.rest^
 ||f2a31b0912.com^
 ||f308e80f54.com^
+||f30fpad7.xyz^
 ||f34aabcc0e.com^
 ||f351966262.com^
 ||f435ee855c.com^
@@ -96340,6 +96353,7 @@ browsershots.org#@#.advert_area
 ||fwbntw.com^
 ||fwcavwstvmekw.online^
 ||fwciiqsskqyih.site^
+||fwcvdfgoeayyo.site^
 ||fweeneezxbrll.website^
 ||fwegwonurb.in^
 ||fwhiygzlhmklt.website^
@@ -97162,6 +97176,7 @@ browsershots.org#@#.advert_area
 ||gleampointscrystal.com^
 ||gleanertzaam.shop^
 ||glecjwgrihxui.site^
+||gledeguebucutamarao.cfd^
 ||gleedbusters.qpon^
 ||gleeful-metal.pro^
 ||gleefulnote.com^
@@ -99422,6 +99437,7 @@ browsershots.org#@#.advert_area
 ||hpk42r7a.de^
 ||hpkgotrfjkccm.site^
 ||hpksppeewaoyu.website^
+||hpkxfyonrrohf.site^
 ||hplorfdbzidtd.site^
 ||hpmstr.com^
 ||hpowfhyhqgtvg.website^
@@ -99867,6 +99883,7 @@ browsershots.org#@#.advert_area
 ||i1901zxd.xyz^
 ||i1eh7gbfb3kn6eo.rest^
 ||i1he1ixrh9unhb2jgh5.cfd^
+||i1mt4e2gvhjh5pr8qbz.rest^
 ||i2fu9qxy71ulnc5k5obvrb.rest^
 ||i2qoohyfr49mtm.cfd^
 ||i2vh2p5cjl9uvyccjmtztvfc.rest^
@@ -100751,6 +100768,7 @@ browsershots.org#@#.advert_area
 ||inkreconnaissancetasting.com^
 ||inktad.com^
 ||inkvm.com^
+||inkyreheat.qpon^
 ||inlar.xyz^
 ||inlwhyhdnpjxk.website^
 ||inlyeugene.com^
@@ -110130,6 +110148,7 @@ browsershots.org#@#.advert_area
 ||or6gu73b276xy8.rest^
 ||oraculairicizereverie.cfd^
 ||oralismyelloch.com^
+||orallycundy.cfd^
 ||orangeads.fr^
 ||orangeapproach.com^
 ||orangeassistant.pro^
@@ -111742,6 +111761,7 @@ browsershots.org#@#.advert_area
 ||pilinhomered.com^
 ||pillowcaselogic.com^
 ||pillowisocola.qpon^
+||pillsmerula.cyou^
 ||pillsofecho.com^
 ||piloteddescaleneogene.qpon^
 ||pilotignoranceitch.com^
@@ -117804,6 +117824,7 @@ browsershots.org#@#.advert_area
 ||silverleafroad.com^
 ||silversbogiesmelting.qpon^
 ||silverwhitebirds.co^
+||silylcanhoop.cfd^
 ||simblumpatty.qpon^
 ||simhtgguozodp.online^
 ||similarlyabdomenwrestle.com^
@@ -118748,6 +118769,7 @@ browsershots.org#@#.advert_area
 ||spicy-two.com^
 ||spicyram.com^
 ||spicytask.pro^
+||spielsbeni.com^
 ||spielsboorishtestees.cyou^
 ||spiffyboy.com^
 ||spigwjjbhjvpl.site^
@@ -120651,6 +120673,7 @@ browsershots.org#@#.advert_area
 ||thaugnaixi.net^
 ||thavxaiwvxtja.website^
 ||thawbootsamplitude.com^
+||thawieratlases.cfd^
 ||thawnappy.com^
 ||thbfepqqqebde.online^
 ||thcgornwlukyy.online^
@@ -120772,6 +120795,7 @@ browsershots.org#@#.advert_area
 ||thorperandomaccounts.com^
 ||thoseeducation.com^
 ||thoseplace.pro^
+||thoseposts.qpon^
 ||thoughexocarp.shop^
 ||thoughtfuladvance.com^
 ||thoughtfulend.pro^
@@ -121072,6 +121096,7 @@ browsershots.org#@#.advert_area
 ||tlkpwxjxnuxsi.online^
 ||tlllccmkxwcze.website^
 ||tllxxerr.com^
+||tlmbepyxjkdxb.site^
 ||tlmeaonjgwleq.online^
 ||tlmsrqbupfivk.site^
 ||tlnactaeon.qpon^
@@ -124405,6 +124430,7 @@ browsershots.org#@#.advert_area
 ||visantefixgelded.cfd^
 ||visariomedia.com^
 ||visayafacet.cfd^
+||viscidcowpatspaneler.cfd^
 ||visiads.com^
 ||visibilityconnectashy.com^
 ||visibilityintentionaladmiral.com^
@@ -143519,6 +143545,7 @@ allevents.in##.advt-text
 rediff.com##.advtcontainer
 pravda.com.ua##.advtext
 rediff.com##.advttext
+news18.com##.adwpr
 toocool2betrue.com,videogameschronicle.com##.adwrapper
 mail.google.com##.aeF > .nH > .nH[role="main"] > .aKB
 revolver.news##.af-slim-promo
@@ -145736,7 +145763,6 @@ cutecoloringpagesforkids.com##.mv-trellis-feed-unit
 cannabishealthnews.co.uk##.mvp-side-widget img
 marijuanamoment.net##.mvp-widget-ad
 malwaretips.com##.mwt_ads
-invezz.com##.mx-auto
 smallseotools.com##.mx-auto.d-block
 mangapill.com##.mx-auto.m-3.z-0
 theawesomer.com##.mxyptext

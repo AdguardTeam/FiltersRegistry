@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 4Ugt4VF21PA9HBqlLXYgHA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779182455-3600.patch
+! Checksum: oEbo39gajV3j5sm34/UqCg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779189181-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.67.58
-! TimeUpdated: 2026-05-19T09:17:07+00:00
+! Version: 2.4.67.59
+! TimeUpdated: 2026-05-19T11:08:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15775,6 +15775,7 @@ ephoto360.com##+js(abort-current-script, $, Adblock)
 transfermarkt.*#@#.AD-POST
 #@#.ADV320_50_100
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152983
+client.falixnodes.net##+js(no-setTimeout-if, so5t8U8)
 client.falixnodes.net##+js(no-setInterval-if, amzn_aps_csm)
 falixnodes.net##+js(abort-on-property-write, showAdblockCard)
 @@||client.falixnodes.net^$generichide
@@ -18000,6 +18001,8 @@ majesy.com,magesy.eu##+js(set-constant, jQuery.adblock, false)
 @@||minecraft-forum.net/v/adblock-detection-master/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12736
 @@||img.tfd.com/ads.js
+freethesaurus.com,thefreedictionary.com##+js(set-constant, showAds, 1)
+freethesaurus.com,thefreedictionary.com##+js(no-setTimeout-if, warn)
 freethesaurus.com#@#.TopBannerAd
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
 ||thefreedictionary.com/_/tr.ashx?
@@ -29542,8 +29545,9 @@ elektroda.pl##div[id^="post-content-"] > .text-wrap[style*="filter: blur"]:style
 elektroda.pl##body div.adBanner.advert.advertisement.adsby:not(#style_important):style(display: block !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24309
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7139
-elektroda.pl##section[class] > [id]:has(> div a:is([href^="https://www.elektroda.pl/"][href*="dsa.php?"], [href^="https://www.elektroda.pl/"][href*="dsaeu.php?"], [href^="https://www.elektroda.pl/"][href*="dsaue.php?"]))
-elektroda.pl##.head ~ ul > li:not(.post):has(> div[class] a:is([href^="https://www.elektroda.pl/"][href*="dsa.php?"], [href^="https://www.elektroda.pl/"][href*="dsaeu.php?"], [href^="https://www.elektroda.pl/"][href*="dsaue.php?"]))
+elektroda.pl##a.campaign4words-ad
+elektroda.pl##section[class] > [id]:has(> div a:is([href^="https://www.elektroda.pl/"][href*="dsa.php?"], [href^="https://www.elektroda.pl/"][href*="dsaeu.php?"], [href^="https://www.elektroda.pl/"][href*="dsaue.php?"], [href^="https://www.elektroda.pl/"][href*="/n/dsa/"]))
+elektroda.pl##.head ~ ul > li:not(.post):has(> div[class] a:is([href^="https://www.elektroda.pl/"][href*="dsa.php?"], [href^="https://www.elektroda.pl/"][href*="dsaeu.php?"], [href^="https://www.elektroda.pl/"][href*="dsaue.php?"], [href^="https://www.elektroda.pl/"][href*="/n/dsa/"]))
 elektroda.pl##+js(abort-on-property-read, welcomeAdContainerElement)
 elektroda.pl##+js(abort-on-property-read, loadPopup)
 elektroda.pl##+js(abort-on-property-read, disablePopup)
@@ -37260,6 +37264,11 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+ebaumsworld.com##.large-ad-space
+thebaynet.com##a[href="https://www.owingsautomotive.com/"]
+thebaynet.com##a[href^="https://www.princegeorgescountymd.gov/"]
+thebaynet.com##.entry-content > h2.has-text-align-center:contains(Featured Business Partners)
+thebaynet.com##.wp-block-newspack-blocks-carousel
 xxxtik.com##app-modal
 xxxtik.com##app-popup
 xxxtik.com##.app-bar-list > a[href][rel="nofollow"][target="_blank"]
@@ -41059,7 +41068,7 @@ camsmut.com##.navigation a[target="_blank"]
 camsmut.com##a[href^="/go/"]
 camsmut.com##+js(no-window-open-if)
 kaa.lt,movielinkbd.*,anime4up.rest,1movielinkbd.com##+js(abort-current-script, EventTarget.prototype.addEventListener, window.open)
-forge.plebmasters.de##+js(json-prune, servers.*.imageThumbnailUrl servers.*.adDescription servers.*.redirectUrl servers.*.adTitle)
+forge.plebmasters.de##+js(json-prune, servers.*.imageThumbnailUrl servers.*.adDescription servers.*.redirectUrl servers.*.adTitle *.results.[-].advertisement)
 forge.plebmasters.de##.server-row:has(> td > div[aria-label="Pleb Masters: Forge partner logo"])
 dropmms.com##p[id^="a-ads"]
 ||js.dropmms.net/adprovider.js
