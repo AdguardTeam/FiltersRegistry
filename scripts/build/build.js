@@ -122,19 +122,11 @@ const buildFilters = async () => {
     // skip platform generation, patches preparation, and temp/platforms copying.
     if (generateCache) {
         await fs.promises.rm(optimizationConfigCachePath, { recursive: true, force: true });
-        await localOptimizationConfig.generate(optimizationConfigCachePath);
-        localOptimizationConfig.setPath(optimizationConfigCachePath);
+        await localOptimizationConfig.downloadPercentJson(optimizationConfigCachePath);
         // eslint-disable-next-line no-console
-        console.log(`Using local optimization config from: ${optimizationConfigCachePath}`);
-
-        await compile(
-            filtersDir,
-            logPath,
-            reportPath,
-            null, // null ⇒ generate() inside compiler returns early, no platform files
-            includedFilterIDs,
-            excludedFilterIDs,
-            CUSTOM_PLATFORMS_CONFIG,
+        console.log(
+            `percent.json saved to ${optimizationConfigCachePath}.\n`
+            + 'Edit it if needed, then run "yarn build:local".',
         );
         return;
     }
@@ -159,7 +151,7 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
-        localOptimizationConfig.setPath(optimizationConfigCachePath);
+        await localOptimizationConfig.downloadStatsFromPercentJson(optimizationConfigCachePath);
         // eslint-disable-next-line no-console
         console.log(`Using local optimization config from: ${optimizationConfigCachePath}`);
     }
