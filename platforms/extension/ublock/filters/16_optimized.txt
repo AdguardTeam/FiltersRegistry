@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: MNHTy0EjDEXrVyXNPY6s+w
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1779160701-3600.patch
+! Checksum: hD7kz8M9X17uz986njWlIA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1779247091-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.59
@@ -1178,7 +1178,6 @@ porngem.com#@#.is-ad-visible
 @@||svonm.com^$3p
 forospyware.com#@#.ad_content_wrapper
 @@||damoh.$media
-@@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=aeroport-de-tunis-carthage.com
 alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#.header-promo
 @@||template-help.com^$domain=templatemonster.com
 &ad_count=
@@ -1626,11 +1625,11 @@ _pages_ad.
 _personalized_ads
 _popads.
 _popdhtml/
+_program_ad.
 _pub.gif
 _publ1c1te.
 _publicite.
 _publicite_
-_regie/aff.
 _rivcash_banner_
 _smads_
 _smartclick.js
@@ -1726,6 +1725,7 @@ _build=iclick-$popup
 ||adintop.com^$3p
 ||adkontekst.pl^$3p
 ||adleadevent.com^$3p
+||adleave.com^$3p
 ||admark.fr^$3p
 ||admathhd.com^$3p
 ||admediaking.com^$3p
@@ -1754,6 +1754,7 @@ _build=iclick-$popup
 ||adstune.com^$3p
 ||adsupplyads.net^$3p
 ||adsximg.com^$3p
+||adtech.com^$3p
 ||adten.eu^$3p
 ||adultwork.com^$3p
 ||adverdata.net^$3p
@@ -1791,6 +1792,7 @@ _build=iclick-$popup
 ||circulate.com^$3p
 ||cityads.com^$3p
 ||clcktrax.com^$3p
+||click-fr.com^$3p
 ||click2m.org^$3p
 ||clickbank.net^$3p
 ||clickiocdn*.com^$3p
@@ -1994,6 +1996,7 @@ _build=iclick-$popup
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
 ||advancementcircuscaptured.com^
+||advancingtheirs.com^
 ||affluentmirth.com^
 ||agatorkoaltor.com^
 ||aifuwgcygccfp.com^
@@ -2448,6 +2451,7 @@ _build=iclick-$popup
 ||statdynamic.com^
 ||supportxmr.com^
 ||surfcountor.com^
+||synochaauca.com^
 ||talktomeplease.biz^
 ||tammycooly.com^
 ||targaubs.com^
@@ -2658,6 +2662,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
 ||api.gamerprices.com/compare/$3p
 ||arc.io/widget$3p
+||astore.amazon.com^$subdocument,3p
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$3p
 ||awin1.com/awclick.php?
@@ -2666,7 +2671,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||b.clictoload.com^
 ||bandeiracorp.biz/images/$3p
 ||be.com/wp-content/uploads/$3p
-||brfiles.com/static/pub/
 ||brsimg.com/pub/
 ||camtempel.com/banner/
 ||cdn.citytourgirls.com/static/bn/
@@ -2800,7 +2804,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||upload.amatrys.com/images/cougar.jpg
 ||vachvoi.cc/picture/files/
 ||vegemiam.fr/wp-content/uploads/$3p
-||vendezvotrevoiture.fr^$subdocument,3p
 ||vidazoo.com/aggregate?
 ||vultr.com/?ref=$3p
 ||vuplus-support.org/custom_files/banner.gif
@@ -2833,7 +2836,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||shorte.st^$script,3p
 ||shortem.com^$script,subdocument,3p
 ||i.imgur.com/32xkKog.jpg
-||i.imgur.com/3RxyL0Z.png
 ||images2.imgbox.com/c9/ea/LjZOipad_o.png
 ||lookimg.com/images/2021/12/20/PydgJE.png
 ||nsa40.casimages.com/img/2020/05/11/200511033032222532.png
@@ -3261,6 +3263,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###div_banniere_pub
 ###dm_ads_Ban_desktop_bottom
 ###dm_ads_mobile_bottom
+###eShowPubTop
 ###encart_pub
 ###fake-player-wrapper
 ###fecharads1-fx
@@ -3489,6 +3492,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###werbeblock
 ###widget_box_pub
 ###zone_pub
+###zone_pub2
 ##.MIXADVERT_NET
 ##.Middle-Ad
 ##.ad--desk
@@ -3516,7 +3520,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.bireklam2
 ##.bloc-ads
 ##.bloc-ligatus-300
-##.bloc-parution-ad
+##.bloc-ligatus-500
 ##.bloc-pub
 ##.bloc-pub2
 ##.blocPub
@@ -3806,7 +3810,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pubads
 ##.pubadsense
 ##.pubb-336-1
-##.pubbottomvideo
 ##.pubimage
 ##.pubitem
 ##.publicidad
@@ -4022,12 +4025,10 @@ banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comi
 buzzdefou.com,gerardmerinfo.fr###habillage_site
 amateur2sexe.fr###home-p2
 leboncoin.fr###home-top-banner
-mega-p2p.net###imStickyBar_imObjectButton_03
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
 agriaffaires.com,bloggif.com,lesoir.be,play3-live.com,topquizz.fr###leaderboard
 tiplanet.org###left_column > .archive:not([id])
-orange.fr###lienComPart
 journaldugeek.com###linkhabillage
 a40ans.com###liste-webcams
 cdiscount.com###lpHeadlineMain.headlineWithoutLogo
@@ -4040,6 +4041,7 @@ autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_bo
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_top
 leparisien.fr###meteo-immo
 liligo.fr###midbanner
+20min.ch###min_billboard
 jeu.video###mobile_clic
 w0rld.tv###modal
 leparisien.fr###moteur-billetterie
@@ -4239,7 +4241,6 @@ leparisien.fr##.marketingParisien
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
 ceesty.com,clkmein.com,corneey.com,destyy.com,festyy.com,sh.st,shorte.st##.middle-container
-abidjanshow.com##.mod-banners
 leparisien.fr##.moduleNew300
 lemondeinformatique.fr##.mpu
 ouedkniss.com##.mt-4.mt-md-6.home-front-store
@@ -4335,6 +4336,7 @@ place4geek.com##.widget_text.widget.widget_custom_html
 macg.co##.wrapper > a
 boulistenaute.com##.xo-banner-ad-footer
 jawharafm.net##.zone_banner_content
+alloforfait.fr##.zpart
 fdesouche.com##[class$="-link"]
 ccm.net,commentcamarche.com,commentcamarche.net##[class$="_adsense"]
 amazon.fr##[class*="-advertising-"]

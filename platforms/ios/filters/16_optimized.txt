@@ -1,5 +1,5 @@
-! Checksum: HEdFgXgM3KcM9Lff+jiCAA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1779160705-3600.patch
+! Checksum: jfS5VNyRxlno0OA2ZOFfXg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1779247095-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.59
@@ -1340,7 +1340,6 @@ forospyware.com#@#.ad_content_wrapper
 !+ PLATFORM(ios, ext_safari)
 @@||dailymotion.com/cdn/$media
 @@||damoh.$media
-@@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=aeroport-de-tunis-carthage.com
 alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#.header-promo
 @@||template-help.com^$domain=templatemonster.com
 !+ PLATFORM(ext_android_cb, ext_safari, ios)
@@ -1792,11 +1791,11 @@ _pages_ad.
 _personalized_ads
 _popads.
 _popdhtml/
+_program_ad.
 _pub.gif
 _publ1c1te.
 _publicite.
 _publicite_
-_regie/aff.
 _rivcash_banner_
 _smads_
 _smartclick.js
@@ -1892,6 +1891,7 @@ _build=iclick-$popup
 ||adintop.com^$third-party
 ||adkontekst.pl^$third-party
 ||adleadevent.com^$third-party
+||adleave.com^$third-party
 ||admark.fr^$third-party
 ||admathhd.com^$third-party
 ||admediaking.com^$third-party
@@ -1920,6 +1920,7 @@ _build=iclick-$popup
 ||adstune.com^$third-party
 ||adsupplyads.net^$third-party
 ||adsximg.com^$third-party
+||adtech.com^$third-party
 ||adten.eu^$third-party
 ||adultwork.com^$third-party
 ||adverdata.net^$third-party
@@ -1957,6 +1958,7 @@ _build=iclick-$popup
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
+||click-fr.com^$third-party
 ||click2m.org^$third-party
 ||clickbank.net^$third-party
 ||clickiocdn*.com^$third-party
@@ -2160,6 +2162,7 @@ _build=iclick-$popup
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
 ||advancementcircuscaptured.com^
+||advancingtheirs.com^
 ||affluentmirth.com^
 ||agatorkoaltor.com^
 ||aifuwgcygccfp.com^
@@ -2614,6 +2617,7 @@ _build=iclick-$popup
 ||statdynamic.com^
 ||supportxmr.com^
 ||surfcountor.com^
+||synochaauca.com^
 ||talktomeplease.biz^
 ||tammycooly.com^
 ||targaubs.com^
@@ -2822,6 +2826,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
 ||api.gamerprices.com/compare/$third-party
 ||arc.io/widget$third-party
+||astore.amazon.com^$subdocument,third-party
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$third-party
 ||awin1.com/awclick.php?
@@ -2830,7 +2835,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||b.clictoload.com^
 ||bandeiracorp.biz/images/$third-party
 ||be.com/wp-content/uploads/$third-party
-||brfiles.com/static/pub/
 ||brsimg.com/pub/
 ||camtempel.com/banner/
 ||cdn.citytourgirls.com/static/bn/
@@ -2964,7 +2968,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||upload.amatrys.com/images/cougar.jpg
 ||vachvoi.cc/picture/files/
 ||vegemiam.fr/wp-content/uploads/$third-party
-||vendezvotrevoiture.fr^$subdocument,third-party
 ||vidazoo.com/aggregate?
 ||vultr.com/?ref=$third-party
 ||vuplus-support.org/custom_files/banner.gif
@@ -2997,7 +3000,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||shorte.st^$script,third-party
 ||shortem.com^$script,subdocument,third-party
 ||i.imgur.com/32xkKog.jpg
-||i.imgur.com/3RxyL0Z.png
 ||images2.imgbox.com/c9/ea/LjZOipad_o.png
 ||lookimg.com/images/2021/12/20/PydgJE.png
 ||nsa40.casimages.com/img/2020/05/11/200511033032222532.png
@@ -3423,6 +3425,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###div_banniere_pub
 ###dm_ads_Ban_desktop_bottom
 ###dm_ads_mobile_bottom
+###eShowPubTop
 ###encart_pub
 ###fake-player-wrapper
 ###fecharads1-fx
@@ -3651,6 +3654,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###werbeblock
 ###widget_box_pub
 ###zone_pub
+###zone_pub2
 ##.MIXADVERT_NET
 ##.Middle-Ad
 ##.ad--desk
@@ -3678,7 +3682,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.bireklam2
 ##.bloc-ads
 ##.bloc-ligatus-300
-##.bloc-parution-ad
+##.bloc-ligatus-500
 ##.bloc-pub
 ##.bloc-pub2
 ##.blocPub
@@ -3968,7 +3972,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pubads
 ##.pubadsense
 ##.pubb-336-1
-##.pubbottomvideo
 ##.pubimage
 ##.pubitem
 ##.publicidad
@@ -4184,12 +4187,10 @@ banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comi
 buzzdefou.com,gerardmerinfo.fr###habillage_site
 amateur2sexe.fr###home-p2
 leboncoin.fr###home-top-banner
-mega-p2p.net###imStickyBar_imObjectButton_03
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
 agriaffaires.com,bloggif.com,lesoir.be,play3-live.com,topquizz.fr###leaderboard
 tiplanet.org###left_column > .archive:not([id])
-orange.fr###lienComPart
 journaldugeek.com###linkhabillage
 a40ans.com###liste-webcams
 cdiscount.com###lpHeadlineMain.headlineWithoutLogo
@@ -4202,6 +4203,7 @@ autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_bo
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_top
 leparisien.fr###meteo-immo
 liligo.fr###midbanner
+20min.ch###min_billboard
 jeu.video###mobile_clic
 w0rld.tv###modal
 leparisien.fr###moteur-billetterie
@@ -4401,7 +4403,6 @@ leparisien.fr##.marketingParisien
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
 ceesty.com,clkmein.com,corneey.com,destyy.com,festyy.com,sh.st,shorte.st##.middle-container
-abidjanshow.com##.mod-banners
 leparisien.fr##.moduleNew300
 lemondeinformatique.fr##.mpu
 ouedkniss.com##.mt-4.mt-md-6.home-front-store
@@ -4497,6 +4498,7 @@ place4geek.com##.widget_text.widget.widget_custom_html
 macg.co##.wrapper > a
 boulistenaute.com##.xo-banner-ad-footer
 jawharafm.net##.zone_banner_content
+alloforfait.fr##.zpart
 fdesouche.com##[class$="-link"]
 ccm.net,commentcamarche.com,commentcamarche.net##[class$="_adsense"]
 amazon.fr##[class*="-advertising-"]
