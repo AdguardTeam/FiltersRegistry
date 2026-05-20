@@ -10,9 +10,8 @@ declare module '@adguard/filters-compiler' {
     ): Promise<void>;
 
     export const localOptimizationConfig: {
-        setPath(configPath: string): void;
         downloadPercentJson(configPath: string): Promise<void>;
         downloadStatsFromPercentJson(configPath: string): Promise<void>;
-        reset(): Promise<void>;
+        reset(configPath: string): Promise<void>;
     };
 }

@@ -89,7 +89,6 @@ describe('optimization config e2e', () => {
         statsContentBefore = statsJson;
 
         await localOptimizationConfig.downloadStatsFromPercentJson(optimizationDir);
-        localOptimizationConfig.setPath(optimizationDir);
 
         await compile(
             filtersDir,
@@ -124,8 +123,7 @@ describe('optimization config e2e', () => {
     });
 
     afterAll(async () => {
-        localOptimizationConfig.setPath(optimizationDir);
-        await localOptimizationConfig.reset();
+        await localOptimizationConfig.reset(optimizationDir);
         await fs.promises.rm(tmpDir, { recursive: true, force: true });
     });
 });

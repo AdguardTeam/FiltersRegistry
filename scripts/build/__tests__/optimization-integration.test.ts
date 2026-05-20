@@ -12,7 +12,6 @@ const expectedOptimizationConfigCachePath = path.resolve(
 vi.mock('@adguard/filters-compiler', () => ({
     compile: vi.fn().mockResolvedValue(undefined),
     localOptimizationConfig: {
-        setPath: vi.fn(),
         downloadPercentJson: vi.fn().mockResolvedValue(undefined),
         downloadStatsFromPercentJson: vi.fn().mockResolvedValue(undefined),
     },
@@ -45,15 +44,13 @@ describe('build.js optimization config integration', () => {
         vi.clearAllMocks();
     });
 
-    it('downloadStatsFromPercentJson and setPath are called with optimizationConfigCacheDir when --use-cache', async () => {
+    it('downloadStatsFromPercentJson is called with optimizationConfigCacheDir when --use-cache', async () => {
         process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
         const { localOptimizationConfig } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
             expect(vi.mocked(localOptimizationConfig.downloadStatsFromPercentJson))
-                .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
-            expect(vi.mocked(localOptimizationConfig.setPath))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
         });
     });
@@ -67,6 +64,5 @@ describe('build.js optimization config integration', () => {
             expect(vi.mocked(localOptimizationConfig.downloadPercentJson))
                 .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
         });
-        expect(vi.mocked(localOptimizationConfig.setPath)).not.toHaveBeenCalled();
     });
 });
