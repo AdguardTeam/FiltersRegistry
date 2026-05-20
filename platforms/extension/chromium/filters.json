@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.67.75",
-			"timeUpdated": "2026-05-20T11:06:47+0000",
+			"version": "2.4.67.76",
+			"timeUpdated": "2026-05-20T13:00:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.61",
-			"timeUpdated": "2026-05-20T11:07:03+0000",
+			"version": "2.1.4.62",
+			"timeUpdated": "2026-05-20T13:00:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.34.39",
-			"timeUpdated": "2026-05-20T09:15:23+0000",
+			"version": "2.0.34.40",
+			"timeUpdated": "2026-05-20T13:00:51+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.32",
-			"timeUpdated": "2026-05-20T03:14:52+0000",
+			"version": "2.0.64.33",
+			"timeUpdated": "2026-05-20T13:00:54+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.68.57",
-			"timeUpdated": "2026-05-20T11:07:38+0000",
+			"version": "2.2.68.58",
+			"timeUpdated": "2026-05-20T13:01:01+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.22.36",
-			"timeUpdated": "2026-05-20T11:07:41+0000",
+			"version": "2.1.22.37",
+			"timeUpdated": "2026-05-20T13:01:04+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.18",
-			"timeUpdated": "2026-05-20T11:07:47+0000",
+			"version": "2.0.87.19",
+			"timeUpdated": "2026-05-20T13:01:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

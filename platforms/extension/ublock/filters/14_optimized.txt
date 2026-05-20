@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: pRf3ATUc7AUIMq9P+aAdng
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1779275439-3600.patch
+! Checksum: 4R4nhb4qmVPWvkZ2ruI8/g
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1779282254-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.68.57
-! TimeUpdated: 2026-05-20T11:07:38+00:00
+! Version: 2.2.68.58
+! TimeUpdated: 2026-05-20T13:01:01+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1138,7 +1138,7 @@
 ||service-cmp.com^$3p
 ||consent.nitrocnct.com^
 ||cdn.cookiesuit.com^$3p
-/wp-content/plugins/consent-magic-pro/*
+/plugins/consent-magic-pro/*
 ||transcend-cdn.com^$3p
 /pandectes-core.js
 ||consentbanner.de^$3p
@@ -3689,7 +3689,8 @@ eplus.by###cookiesAgreementNotice:style(display: none !important;)
 eplus.by##body[class]:style(overflow: auto !important;)
 screen.studio##body > div[class]:has(> div[style] a[href="/privacy"])
 select.by,banki24.by##.cookies_consent
-primevideo.com##.DVWebNode-conditional-site-wide-wrapper > .fbl-banner:has(form[action*="/privacyprefs/sp/consent/"])
+primevideo.com##div[data-testid="critical-notification"]:has(> div[class] > form[action*="_cookienotf_"])
+primevideo.com##div[data-testid="critical-notification"]:has(> div[class] > div[class^="scrollableContent-"] > div[class^="criticalNotificationBody-"] > p > a[href$="/privacyprefs/primevideo/partners"])
 bullionvault.com##.navigation__cookies
 ||cdn.shopify.com/shopifycloud/privacy-banner/storefront-banner.js
 r.pl##.r-consent-bottom-notif__modal:style(display: none !important;)
