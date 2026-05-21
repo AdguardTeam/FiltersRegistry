@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
@@ -17,9 +17,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
-
-      - name: Enable corepack
-        run: corepack enable
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn
