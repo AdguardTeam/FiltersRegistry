@@ -1,12 +1,13 @@
 !
 ! Title: List-KR classic filters list (AdGuard)
 ! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20593.3
+! OriginalVersion: 2026.20594.1
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/List-KR/List-KR
 ! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
 
 !#if adguard
+||adv.imadrep.co.kr^
 ||delivery.pryzmads.com^
 ||barohere.xyz^
 ||ad.adwiser.kr^
@@ -656,6 +657,7 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 
+||static.fmkorea.com/modules/fmad/tpl/*/naver_power_link.
 ||jeongcheogi.edugamja.com/ads/
 ||algumon.com/n/api/ca/list
 ||api.coupangstreaming.com/ads-vod-public/
@@ -1791,6 +1793,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 
+ruliweb.com##.ti_reserved_slot[style^="min-height:"]
 etoland.co.kr###list-header + section li.h-fit.min-h-14:not(.border-b-etoDivider-1)
 zod.kr##a[rel="sponsored"]
 zod.kr##.swiper-container.swiper-initialized.swiper-horizontal li[style^="width:"] > a[target]
@@ -4060,8 +4063,10 @@ dicoall.com#@##rightAd
 @@||bser-koroshi.vercel.app/_vercel/insights/script.js$domain=bser-koroshi.vercel.app,xmlhttprequest
 !#safari_cb_affinity
 ! windowsforum.kr
-windowsforum.kr#%#//scriptlet('prevent-constructor', 'MutationObserver', 'offsetHeight === 0')
-windowsforum.kr#%#//scriptlet('prevent-addEventListener', 'load', 'setTimeout(function() {')
+windowsforum.kr#%#//scriptlet('set-constant', 'isAdBlockDisabled', 'true')
+!#if (adguard_app_ios || adguard_ext_safari)
+@@||windowsforum.kr/prebid.js
+!#endif
 !
 etoland.co.kr#%#//scriptlet('prevent-fetch', '/pagead2.googlesyndication.com|googleads.g.doubleclick.net|googletagservices.com|securepubads.g.doubleclick.net|googleads.g.doubleclick.net|google-analytics.com|googlesyndication.com|doubleclick.net/')
 !#if (adguard_app_ios || adguard_ext_safari)
@@ -4289,6 +4294,7 @@ dicoall.com#@##homead
 dicoall.com#@##ad-lead
 dicoall.com#@##rightAd
 !
+@@||windowsforum.kr/prebid.js
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=windowsforum.kr
 windowsforum.kr#@#.adsbygoogle-noablate
 windowsforum.kr#@#ins.adsbygoogle[data-ad-slot]

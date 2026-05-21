@@ -1,5 +1,5 @@
-! Checksum: A3JX6ulWCBmLv2mdOr5YhQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1779256560-14400.patch
+! Checksum: LsjGRQKhEJQdZ9kJMcE3Iw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1779343055-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.79
@@ -51,8 +51,10 @@ windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||solvusoft.com^$document
+exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 ||freeroms.com^$document
+||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
@@ -789,7 +791,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||scarcehepatitis.com^$all
 ||seenwage.com^$all
 ||straitpaltrybelief.com^$all
-||supplybanalsuggest.com^$all
 ||voraciousinfosag.com^$all
 ||workdeadlinededicate.com^$all
 ||wretchedclearance.com^$all
@@ -802,6 +803,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||datehereamazonga.click^$all
 ||dealshik.com^$all
 ||dealslandz.com^$all
+||difference101.com^$all
 ||webhop.me^$all
 ||x2lt.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1006,7 +1008,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||phoneshieldhub.com^$all
 ||phoneshieldprotection.com^$all
 ||phrix-lnc.com^$all
-||pornamigo.com^$all
 ||porno-webhub.com^$all
 ||privacy-firstvpn.com^$all
 ||privacy-webnetwork.com^$all
@@ -1534,7 +1535,6 @@ drvhub.net##.driver-item__install
 ||mainexpclkdir.com^$all
 ||mediacpc.com^$all
 ||mobuppsrtb.com^$all
-||pornamigo.com^$all
 ||sportsvot.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||103.67.200.64^$all
@@ -1752,6 +1752,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##div[class^=shareLinks]
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
+##div[id^=btnShare i]
 ##div[id^=dpsp-]
 ##h2[class*=share-links]
 ##share-grid
@@ -2152,7 +2153,6 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
-##canvas[data-testid=SnowfallCanvas i]
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
 /snowfall.min.jquery.js
@@ -2165,7 +2165,6 @@ alpresor.se#%#//scriptlet('ubo-acis', 'snowMax')
 daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /jquery.snow.js
 /let-it-snow.
-/script/snow.js
 /snow-falling.js
 /snowfall-master.min.js
 /snowfall.jquery.
@@ -2251,7 +2250,6 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ||collector.schibsted.io^$third-party
 ~ru###preloader
 ~ru##div.preloader
-##app-loading-screen
 ##.loading-mask:not(html,body)
 ##div#loading
 *,~barter.vg#?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
@@ -2685,6 +2683,7 @@ $removeparam=_kx
 $document,removeparam=/^affsrc=.*$/i
 $document,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
+$removeparam=atid
 $document,removeparam=/^clickref\d?=.*$/
 $removeparam=cuid,domain=~dynamicyield.com
 $removeparam=data1,domain=~web3.cmvm.pt
@@ -2783,7 +2782,6 @@ $removeparam=pk_kwd
 $removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
-$removeparam=elqTrack
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -3531,6 +3529,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
+$removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=hotid,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hoaid,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hooid,domain=hotspotshield.com|gethotspotshield.com
@@ -3682,6 +3681,7 @@ $removeparam=srsltid,document
 ||dl-protect.$removeparam=rl
 ||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
+$removeparam=%24deep_link,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
 $removeparam=link_source_user_id,domain=nextdoor.com
@@ -3869,6 +3869,8 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
 .com/*/status/$document,removeparam=t,domain=twitter.com|x.com
 ||qwant.com^$removeparam=hti
+||finn.no^$removeparam=stored-id
+||finn.no^$removeparam=nocache
 ||instagram.com^$document,removeparam=entry_point
 !+ NOT_OPTIMIZED
 ||www.rawstory.com^$removeparam=rsplus
@@ -3924,6 +3926,8 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||youtube.com/post/$document,removeparam=si
 ||youtube.com/live/$document,removeparam=si
 ||youtube.com/live/$document,removeparam=is
+$removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
+$removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set', 'GSvars.addressTracking', 'false')
@@ -3939,7 +3943,6 @@ buffalonews.com#%#//scriptlet('ubo-set', 'lee_trkLinkSrc', 'noopFunc')
 @@||manage.kmail-lists.com/subscriptions^$removeparam
 @@/login-redirect/*$removeparam
 @@/login?$removeparam=referrer
-@@||secure.kps-payment.de^$removeparam
 @@||urldefense.com^$removeparam
 @@|wss://$removeparam
 1000mg.jp,1geki.jp,2nn.jp,4travel.jp,account.nicovideo.jp,altema.jp,amiami.jp,amy.tokyo,ark-pc.co.jp,ascii.jp,athome.co.jp,atpress.ne.jp,auone.jp,automaton-media.com,biccamera.com,blog.esuteru.com,bloomberg.co.jp,books-sanseido.jp,cdjapan.co.jp,cero.gr.jp,ch.nicovideo.jp,cinematoday.jp,coat.co.jp,cookpad.com,dengekionline.com,diamond.jp,direct.sanwa.co.jp,dmkt-sp.jp,dmm.co.jp,dmm.com,doope.jp,doorblog.jp,dto.jp,eagate.573.jp,entabe.jp,entamepost.jp,eonet.jp,epark.jp,eposcard.co.jp,expresscard.jp,expy.jp,familio-folkloro.com,famitsu.com,faq.radiko.jp,fgomatomeplus.com,g123.jp,gamefactory.jp,gamepedia.jp,gameranbu.jp,gamewith.jp,geekjob.jp,getchu.com,gigazine.net,goguynet.jp,granbluefantasy.jp,gta5.jp,h1g.jp,hentai-image.com,hentai-img.com,hosyusokuhou.jp,hotpepper.jp,huffingtonpost.jp,hulu.jp,ib-game.jp,impress.co.jp,innervision.co.jp,insightnow.jp,iphone-mania.jp,itmedia.co.jp,japan-animemusic.com,jgrants-portal.go.jp,jmty.jp,joshinweb.jp,jp.ign.com,jp.nexon.com,jp.wsj.com,k-manga.jp,kabutan.jp,kakaku.com,kamigame.jp,kinokuniya.co.jp,kitimama-matome.net,kojima.net,konoyubitomare.jp,livedoor.com,logroid.blogspot.com,maidonanews.jp,mainichi.jp,mapion.co.jp,matu.cocolog-nifty.com,mechacomic.jp,melonbooks.co.jp,mgjshop.co.jp,mineo.jp,mixi.jp,mora.jp,nazonazo.jp,nec.co.jp,neowing.co.jp,news.infoseek.co.jp,newsweekjapan.jp,nicenature.top,nicoco.net,nijie.info,nikkan.co.jp,nojima.co.jp,ntj.jac.go.jp,nttxstore.jp,ocn.ne.jp,odakyu.jp,omni7.jp,onojibi.jp,originalnews.nico,osawa-inc.co.jp,otakomu.jp,otanew.jp,pex.jp,platinedispositif.net,point.recruit.co.jp,poptapbeat.taiko-ch.net,qa.nicovideo.jp,qoo10.jp,rakuten.co.jp,rank-king.jp,recipe-blog.jp,research-panel.jp,sankei.com,sanwa-d.co.jp,security-next.com,seesaa.jp,seiga.nicovideo.jp,sengokuixa.jp,shogakukan.co.jp,store-tsutaya.tsite.jp,suruga-ya.jp,suumo.jp,takarazuka-an.co.jp,taking-a-stand.jp,tenki.jp,tinami.com,tokubai.co.jp,tokyo-np.co.jp,tsukumo.co.jp,tv-tokyo.co.jp,vector.co.jp,vippers.jp,vita.taiko-ch.net,weathernews.jp,web-ace.jp,webcomics.jp,weblio.jp,westjr.co.jp,wowkorea.jp,wowma.jp,www.gpoint.co.jp,www.homes.co.jp,www.infoseek.co.jp,www.jorudan.co.jp,www.meti.go.jp,www.nikkei.com,www.nintendo.co.kr,www.swiki.jp,yahoo.co.jp,yamanashirei.blog.fc2.com,yodobashi.com,yomiuri.co.jp,yugioh-card.com,~justpass.epark.jp,~mall.epark.jp,bookmeter.com,mottainaihonpo.com,netoff.co.jp,tokyodisneyresort.jp,nijimen.kusuguru.co.jp,applion.jp,mayla.jp,kawade.co.jp,koupenchan-store.jp,asunaro.shop-pro.jp,st-c.co.jp,eikoh-prize.jp,cocreco.kodansha.co.jp,kenko-tokina.co.jp,ganguoroshi.jp,shop.hanshintigers.jp,loft.co.jp,universal-music.co.jp,animate-onlineshop.jp,takaratomymall.jp,shop.adidas.jp,ftnews.jp,rtrp.jp,jalan.net,2ch2.net,japan-baseball.jp,bookoff.co.jp,kotobank.jp,sansokan.jp,p-m-g.tokyo,sendenkaigi.com,toyokeizai.net,sentankyo.jp,cosmeconcier.jp,commerce-design.net,diamond.co.jp,photo-ac.com,ac-illust.com,jmca.jp,maonline.jp,shidaikyo.or.jp,1book.biz,nikkeibp.co.jp,jri.co.jp,10mtv.jp,booth.pm,l2blocker.com,syosetu.org,futtsu.lg.jp,numata.gunma.jp,walica.jp,conan-cafe.jp,gch.jp,syukatsu-kaigi.jp,umitenki.jp,jingu-stadium.com,shiki.jp,dietnavi.com,t-stamina.jp,jma.go.jp,jetro.go.jp,tokyubus.co.jp,kinro.ntv.co.jp,expo70-park.jp,kntv.jp,club-animate.jp,tepco.co.jp,kitakyushu.lg.jp,library.city.kita.tokyo.jp,jfa.jp,odakyubus.co.jp,keio.co.jp,number.bunshun.jp,yachiyo.lg.jp,kijyomatome-ch.com,girlschannel.net,dorcus-brothers.com,appmedia.jp,dddfont.com,tabechoku.com,woman.excite.co.jp,jpn.faq.panasonic.com,chil-chil.net,hia-net.gr.jp,estar.jp,balance-ichinomiya.com,nosv.org,otona-novel.jp,animanch.com,kanno-novel.jp,cosme.net,syurabahazard.com,ita-do.com,otemo-yan.net,vivit-name.com,pon-navi.net,namedic.jp,newsmatomedia.com,jitenon.jp,mimumimu.org,secure.tw4.jp,novelgame.jp,chindami.com,soranoshita.net,eic.or.jp,n-kishou.co.jp,naturum.ne.jp,jafp.or.jp,mext.go.jp,chindami.com,vpass.ne.jp,skima.jp,nwknews.jp,sneakerwars.jp,kanachu.jp,wowgame.jp,9db.jp,www.yuzawaya.co.jp,hiltonjapan.co.jp,rizzan.co.jp,dokkyomed.ac.jp,dokkyo.tv,cosmospc.co.jp,xn--pckua2a7gp15o89zb.com,castel.jp,famicoms.net,yamagata-np.jp,toonippo.co.jp,rurubu.jp,location.sevenbank.co.jp,dpoint.docomo.ne.jp,ms.bridgestone.co.jp,ryokan.or.jp,cyclowired.jp,nta.co.jp,timesclub.jp,livedoor.biz,epson.jp,lexilogos.com,gamersky.com,eizo.co.jp,enkei-museum.com,ja-obako.org,enkei-shop.com,ino-inc.com#$#:is(body,div,li,a,strong,dd,span) { font-family:"Segoe UI",Calibri,Verdana,Ubuntu,"Noto Sans CJK JP","Noto Sans CJK","Hiragino Maru Gothic Pro W4","ヒラギノ丸ゴ W4","Hiragino Maru Gothic Pro W3","ヒラギノ丸ゴ W3","Ume Gothic","Ume UI Gothic","Yu Gothic","Yu Gothic UI",Meiryo,メイリオ,"BabelStone Han",Nishiki-teki,FRBTaiwaneseKana,"Malgun Gothic","맑은 고딕",NanumGothic,AppleSDGothicNeo,NanumBarumGothic,sandoll-gothicneo3,sandoll-gothicneo2,sandoll-gothicneo1,NanumSquareRoundB,sans-serif!important }
@@ -4597,6 +4600,8 @@ independent.co.uk,indy100.com##.notification-prompt
 |https://adblock.*/js/pagead.js|$~third-party
 /bugsnag.$domain=adblock-tester.*
 ||js.sentry-cdn.com^$domain=adblock-tester.*
+discord.com##div[data-list-item-id*=skill-trees] + div[class*=" unreadImportant"]
+discord.com##div[data-list-item-id*=skill-trees] ~ div path[d^="M12 23a11 11 0 "]
 www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 &client_ad_session_id=
 duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##button:first-of-type + div:last-of-type[class*=" "]:has(button)

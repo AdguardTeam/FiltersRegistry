@@ -1,5 +1,5 @@
-! Checksum: LnGu657zUAUR59aUn3/V4Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1779256579-14400.patch
+! Checksum: E4KdS15ZYTRmt4pwQnnbTw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1779343070-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.79
@@ -51,8 +51,10 @@ windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||solvusoft.com^$document
+exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 ||freeroms.com^$document
+||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
@@ -282,7 +284,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||scarcehepatitis.com^$all
 ||seenwage.com^$all
 ||straitpaltrybelief.com^$all
-||supplybanalsuggest.com^$all
 ||voraciousinfosag.com^$all
 ||workdeadlinededicate.com^$all
 ||wretchedclearance.com^$all
@@ -295,6 +296,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||datehereamazonga.click^$all
 ||dealshik.com^$all
 ||dealslandz.com^$all
+||difference101.com^$all
 ||webhop.me^$all
 ||x2lt.com^$all
 [2600:1f18:43d1:2a02:169f:dcbb:85f9:3c56]$network
@@ -462,7 +464,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||phoneshieldhub.com^$all
 ||phoneshieldprotection.com^$all
 ||phrix-lnc.com^$all
-||pornamigo.com^$all
 ||porno-webhub.com^$all
 ||privacy-firstvpn.com^$all
 ||privacy-webnetwork.com^$all
@@ -702,7 +703,6 @@ drvhub.net##.driver-item__install
 ||mainexpclkdir.com^$all
 ||mediacpc.com^$all
 ||mobuppsrtb.com^$all
-||pornamigo.com^$all
 ||sportsvot.com^$all
 [2a00:8860:10d:1::2:b01]$network
 ||driverpack.io^$document,domain=~has_extreme_amounts_of_pup_in_it.*
@@ -901,6 +901,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##div[class^=shareLinks]
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
+##div[id^=btnShare i]
 ##div[id^=dpsp-]
 ##h2[class*=share-links]
 ##share-grid
@@ -1302,7 +1303,6 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
-##canvas[data-testid=SnowfallCanvas i]
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
 /snowfall.min.jquery.js
@@ -1315,7 +1315,6 @@ alpresor.se#%#//scriptlet('ubo-acis', 'snowMax')
 daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /jquery.snow.js
 /let-it-snow.
-/script/snow.js
 /snow-falling.js
 /snowfall-master.min.js
 /snowfall.jquery.
@@ -1402,7 +1401,6 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ||collector.schibsted.io^$third-party
 ~ru###preloader
 ~ru##div.preloader
-##app-loading-screen
 ##.loading-mask:not(html,body)
 ##div#loading
 *,~barter.vg#?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
@@ -1836,6 +1834,7 @@ $removeparam=_kx
 $document,removeparam=/^affsrc=.*$/i
 $document,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
+$removeparam=atid
 $document,removeparam=/^clickref\d?=.*$/
 $removeparam=cuid,domain=~dynamicyield.com
 $removeparam=data1,domain=~web3.cmvm.pt
@@ -1934,7 +1933,6 @@ $removeparam=pk_kwd
 $removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
-$removeparam=elqTrack
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -2682,6 +2680,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
+$removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=hotid,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hoaid,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hooid,domain=hotspotshield.com|gethotspotshield.com
@@ -2833,6 +2832,7 @@ $removeparam=srsltid,document
 ||dl-protect.$removeparam=rl
 ||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
+$removeparam=%24deep_link,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
 $removeparam=link_source_user_id,domain=nextdoor.com
@@ -3020,6 +3020,8 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
 .com/*/status/$document,removeparam=t,domain=twitter.com|x.com
 ||qwant.com^$removeparam=hti
+||finn.no^$removeparam=stored-id
+||finn.no^$removeparam=nocache
 ||instagram.com^$document,removeparam=entry_point
 !+ NOT_OPTIMIZED
 ||www.rawstory.com^$removeparam=rsplus
@@ -3075,6 +3077,8 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||youtube.com/post/$document,removeparam=si
 ||youtube.com/live/$document,removeparam=si
 ||youtube.com/live/$document,removeparam=is
+$removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
+$removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set', 'GSvars.addressTracking', 'false')
@@ -3090,7 +3094,6 @@ buffalonews.com#%#//scriptlet('ubo-set', 'lee_trkLinkSrc', 'noopFunc')
 @@||manage.kmail-lists.com/subscriptions^$removeparam
 @@/login-redirect/*$removeparam
 @@/login?$removeparam=referrer
-@@||secure.kps-payment.de^$removeparam
 @@||urldefense.com^$removeparam
 @@$removeparam=/^OCID=.*$/i,app=Microsoft.Msn.News.exe
 prisjakt.*,pricespy.*,prisjagt.dk,hintaopas.fi,ledenicheur.fr#$#.category-page > div { max-width: 98vw !important }
@@ -3445,6 +3448,8 @@ independent.co.uk,indy100.com##.notification-prompt
 |https://adblock.*/js/pagead.js|$~third-party
 /bugsnag.$domain=adblock-tester.*
 ||js.sentry-cdn.com^$domain=adblock-tester.*
+discord.com##div[data-list-item-id*=skill-trees] + div[class*=" unreadImportant"]
+discord.com##div[data-list-item-id*=skill-trees] ~ div path[d^="M12 23a11 11 0 "]
 www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 &client_ad_session_id=
 ||anyclip.com^$app=TETR.IO.exe

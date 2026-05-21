@@ -1,5 +1,5 @@
-! Checksum: kHNLbW+yUUR2ModTeSQyGg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1779256566-14400.patch
+! Checksum: vGwS3F/iqxNeY26MohA1oA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1779343060-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.79
@@ -51,8 +51,10 @@ windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||solvusoft.com^$document
+exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 ||freeroms.com^$document
+||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
@@ -789,7 +791,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||scarcehepatitis.com^$all
 ||seenwage.com^$all
 ||straitpaltrybelief.com^$all
-||supplybanalsuggest.com^$all
 ||voraciousinfosag.com^$all
 ||workdeadlinededicate.com^$all
 ||wretchedclearance.com^$all
@@ -802,6 +803,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||datehereamazonga.click^$all
 ||dealshik.com^$all
 ||dealslandz.com^$all
+||difference101.com^$all
 ||webhop.me^$all
 ||x2lt.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1006,7 +1008,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||phoneshieldhub.com^$all
 ||phoneshieldprotection.com^$all
 ||phrix-lnc.com^$all
-||pornamigo.com^$all
 ||porno-webhub.com^$all
 ||privacy-firstvpn.com^$all
 ||privacy-webnetwork.com^$all
@@ -1534,7 +1535,6 @@ drvhub.net##.driver-item__install
 ||mainexpclkdir.com^$all
 ||mediacpc.com^$all
 ||mobuppsrtb.com^$all
-||pornamigo.com^$all
 ||sportsvot.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||103.67.200.64^$all
@@ -1748,6 +1748,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##div[class^=shareLinks]
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
+##div[id^=btnShare i]
 ##div[id^=dpsp-]
 ##h2[class*=share-links]
 ##share-grid
@@ -2148,7 +2149,6 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
-##canvas[data-testid=SnowfallCanvas i]
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
 /snowfall.min.jquery.js
@@ -2161,7 +2161,6 @@ alpresor.se#%#//scriptlet('ubo-acis', 'snowMax')
 daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /jquery.snow.js
 /let-it-snow.
-/script/snow.js
 /snow-falling.js
 /snowfall-master.min.js
 /snowfall.jquery.
@@ -2245,7 +2244,6 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ||collector.schibsted.io^$third-party
 ~ru###preloader
 ~ru##div.preloader
-##app-loading-screen
 ##.loading-mask:not(html,body)
 ##div#loading
 *,~barter.vg#?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
@@ -2989,6 +2987,8 @@ independent.co.uk,indy100.com##.notification-prompt
 |https://adblock.*/js/pagead.js|$~third-party
 /bugsnag.$domain=adblock-tester.*
 ||js.sentry-cdn.com^$domain=adblock-tester.*
+discord.com##div[data-list-item-id*=skill-trees] + div[class*=" unreadImportant"]
+discord.com##div[data-list-item-id*=skill-trees] ~ div path[d^="M12 23a11 11 0 "]
 www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 &client_ad_session_id=
 duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##button:first-of-type + div:last-of-type[class*=" "]:has(button)
