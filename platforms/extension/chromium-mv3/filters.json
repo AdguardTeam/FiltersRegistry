@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.90.89",
-			"timeUpdated": "2026-05-21T17:21:56+0000",
+			"version": "2.1.90.90",
+			"timeUpdated": "2026-05-21T21:03:55+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.90.88",
-			"timeUpdated": "2026-05-21T17:21:58+0000",
+			"version": "2.1.90.89",
+			"timeUpdated": "2026-05-21T21:03:56+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1266,8 +1266,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlocker.txt",
 			"trustLevel": "high",
-			"version": "2.0.6.20",
-			"timeUpdated": "2026-05-21T17:22:42+0000",
+			"version": "2.0.6.21",
+			"timeUpdated": "2026-05-21T21:04:28+0000",
 			"deprecated": false,
 			"languages": [
 				"fa",
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.84.20",
-			"timeUpdated": "2026-05-21T17:22:59+0000",
+			"version": "2.0.84.21",
+			"timeUpdated": "2026-05-21T21:04:43+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1510,8 +1510,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.19",
-			"timeUpdated": "2026-04-29T20:48:42+0000",
+			"version": "2.0.0.20",
+			"timeUpdated": "2026-05-21T21:04:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

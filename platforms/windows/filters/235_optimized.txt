@@ -1,9 +1,9 @@
-! Checksum: JOtZrxMrS+F1eRUdj8Lfzw
-! Diff-Path: ../patches/235_optimized/235_optimized-s-1779384354-14400.patch
+! Checksum: C9E+02sKIdVgW8kCkd1eAw
+! Diff-Path: ../patches/235_optimized/235_optimized-s-1779397651-14400.patch
 ! Title: Persian Blocker (Optimized)
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.6.20
-! TimeUpdated: 2026-05-21T17:22:42+00:00
+! Version: 2.0.6.21
+! TimeUpdated: 2026-05-21T21:04:28+00:00
 ! Expires: 12 hours (update frequency)
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.site/"]
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.co/"]
@@ -2940,6 +2940,10 @@ farsroid.com##.ads-dashed-banner
 alef.ir##a[href="https://www.yektanet.com/"][target="_blank"]
 alef.ir##a[href="https://panel.triboon.net/"][target="_blank"]
 ||virgool.io/api2/app/posts/*/ad^
+||virgool.io/api2/app/banners^
+virgool.io##body > div:has(> div > a[rel="sponsored"])
+virgool.io###app-portal > div:has(a[rel="sponsored"] > img[alt="Ad"])
+virgool.io#$#body[style="overflow: hidden;"] { overflow: auto !important; }
 setare.com##.chavosh-ad-box
 ||adsc.beytoote.com^
 ||storage.beytoote.com/images/adsbeytoote^

@@ -1,9 +1,9 @@
-! Checksum: +2hRGFFYTJroBeKTE3xaJQ
-! Diff-Path: ../patches/235/235-s-1779384334-14400.patch
+! Checksum: lO9Bj5qP/TcRkHUxSpC/Ig
+! Diff-Path: ../patches/235/235-s-1779397629-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.6.20
-! TimeUpdated: 2026-05-21T17:22:42+00:00
+! Version: 2.0.6.21
+! TimeUpdated: 2026-05-21T21:04:28+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ☀️ PersianBlockerNG ☀️
@@ -3417,7 +3417,7 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 !------------------------^ Afghanistan sites ^-----------------------!
 ! Ads:
 ! Title: PersianBlockerAds
-! Last modified: Thu, 21 May 2026 20:28:07 +0330
+! Last modified: Thu, 21 May 2026 22:03:05 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads in Persian websites
 ! License: https://github.com/MasterKia/PersianBlocker/blob/main/LICENSE
@@ -3564,6 +3564,12 @@ alef.ir##a[href="https://www.yektanet.com/"][target="_blank"]
 alef.ir##a[href="https://panel.triboon.net/"][target="_blank"]
 ! virgool.io:
 ||virgool.io/api2/app/posts/*/ad^
+! Header ads:
+||virgool.io/api2/app/banners^
+virgool.io##body > div:has(> div > a[rel="sponsored"])
+! Popup ads:
+virgool.io###app-portal > div:has(a[rel="sponsored"] > img[alt="Ad"])
+virgool.io#$#body[style="overflow: hidden;"] { overflow: auto !important; }
 ! setare.com:
 setare.com##.chavosh-ad-box
 ! beytoote.com:
