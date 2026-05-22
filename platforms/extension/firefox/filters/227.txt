@@ -1,14 +1,14 @@
-! Checksum: p08Ddqo4W6EB0e5D+9+1iQ
-! Diff-Path: ../patches/227/227-s-1779370709-14400.patch
+! Checksum: ny1D+WFD4ualG7mR1v+BLQ
+! Diff-Path: ../patches/227/227-s-1779470277-14400.patch
 ! Title: List-KR Classic filter list
 ! Description: The List-KR Сlassic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.24.21
-! TimeUpdated: 2026-05-21T13:35:29+00:00
+! Version: 2.0.24.22
+! TimeUpdated: 2026-05-22T17:14:54+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: List-KR classic filters list (AdGuard)
 ! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20594.2
+! OriginalVersion: 2026.20595.0
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/List-KR/List-KR
 ! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
@@ -4012,7 +4012,11 @@ play.aidungeon.io,tamrieltradecentre.com,downloads.descendant.me,html5.gamedistr
 !
 ! DOMAIN-REFRESHER: START
 !
-[$domain=/sbxh[0-9]+\.com/]#%#//scriptlet('prevent-setTimeout', '/[A-Za-z0-9]+ *\( *\) *, *[A-Za-z0-9]+ *\. *[A-Za-z0-9]+ *= *window\.setInterval *\(/')
+[$domain=/sbxh[0-9]+\.com/]#%#//scriptlet('set-local-storage-item', '/ntk_blk_/', '$remove$')
+[$domain=/sbxh[0-9]+\.com/]#%#//scriptlet('set-local-storage-item', '/ntk_dev_/', '$remove$')
+[$domain=/sbxh[0-9]+\.com/]#%#//scriptlet('spoof-css', '[data-bs], img[width], img[height], [data-bp]', 'width', '100')
+[$domain=/sbxh[0-9]+\.com/]#%#//scriptlet('spoof-css', '[data-bs], img[width], img[height], [data-bp]', 'height', '100')
+/^https:\/\/sbxh[0-9]+\.com\/init\/block\.js/$domain=/sbxh[0-9]+\.com/
 hasha.in#%#//scriptlet('prevent-fetch', 'adManager.js')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=hasha.in
 @@||js.wpadmngr.com/static/adManager.js$xmlhttprequest,domain=hasha.in

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: oHW/BBjKfzbm0xwhLiXEsw
-! Diff-Path: ../patches/235/235-s-1779456132-14400.patch
+! Checksum: EP0G6rsCRUQuITTzLPqoPw
+! Diff-Path: ../patches/235/235-s-1779470288-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.6.22
-! TimeUpdated: 2026-05-22T13:19:04+00:00
+! Version: 2.0.6.23
+! TimeUpdated: 2026-05-22T17:15:00+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ☀️ PersianBlockerNG ☀️
@@ -3412,7 +3412,7 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 !------------------------^ Afghanistan sites ^-----------------------!
 ! Ads:
 ! Title: PersianBlockerAds
-! Last modified: Thu, 21 May 2026 22:03:05 +0330
+! Last modified: Fri, 22 May 2026 20:06:05 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads in Persian websites
 ! License: https://github.com/MasterKia/PersianBlocker/blob/main/LICENSE
@@ -3651,8 +3651,6 @@ khabaronline.ir##.cyt-ads-block
 ! namnak.com:
 namnak.com##.namank-ad
 namnak.com###implant-ad-container
-! offerdaily.ir:
-offerdaily.ir##+js(href-sanitizer, a[href^="https://offerdaily.ir/index.php?do=go&url="], ?url -base64)
 ! football360.ir:
 ! https://github.com/MasterKia/PersianBlocker/issues/107
 ||football360.ir/api/advertisements^
@@ -3728,9 +3726,13 @@ app.epoll.pro##*:style(cursor: revert !important; -webkit-touch-callout: default
 hamkelasi.ir##+js(nano-sib, countdown)
 ! androidha.com:
 androidha.com##.arh_banner
+! takhfif.co:
+takhfif.co##.lepopup-popup-overlay
+takhfif.co##.lepopup-popup-container
+takhfif.co##.page-container > a[href^="https://www.filimo.com/m/"]
 ! Trackers:
 ! Title: PersianBlockerTrackers
-! Last modified: Thu, 21 May 2026 12:22:27 +0330
+! Last modified: Fri, 22 May 2026 19:59:07 +0330
 ! Expires: 7 days
 ! Description: Filters to block trackers in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -3742,10 +3744,11 @@ androidha.com##.arh_banner
 ! ==VVV== !
 ||metrix.ir^
 ||intrack.ir^
-||affilio.ir^
 ||usermap.net^
 ||analyticsdaily.ir^
 ||kntr.ir^
+||affilio.ir^
+||aflo.ir^
 ! trustseal.e-rasaneh.ir (e.g. zoomit.ir):
 ||trustseal.e-rasaneh.ir/Trustseal^$method=post
 ! aparat.com:
@@ -3817,6 +3820,9 @@ search.bertina.ir##+js(href-sanitizer, a[href^="/api/click?dest="], ?dest -base6
 ||sentry.bale.sh^
 ! linkdooni.site:
 ||hooshang-umami-rjslgcdoxg.liara.run/api/send^
+! offerdaily.ir:
+offerdaily.ir##+js(href-sanitizer, a[href^="https://offerdaily.ir/index.php?do=go&url="], ?url -base64 ?b64 -base64)
+offerdaily.ir##+js(href-sanitizer, a[href^="https://dgkl.io/api/v1/Click/b/"][href*="?b64="], ?b64 -base64)
 ! Annoyances (Disabled, please use manually - غیرفعال، لطفا به صورت دستی استفاده کنید):
 ! !#include PersianBlockerAnnoyances.txt
 ! Video Censorship:
