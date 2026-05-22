@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kYp1G1aw3EqTs6+0aV+P+Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779419944-3600.patch
+! Checksum: +Yl8rGxG9Fq49cZtSDvtVg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779427833-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.68.5
-! TimeUpdated: 2026-05-22T03:15:21+00:00
+! Version: 2.4.68.6
+! TimeUpdated: 2026-05-22T05:27:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13364,6 +13364,7 @@ thotchicks.com,gelbooru.com,lewdzone.com,r-34.xyz,simply-hentai.com,turbo.cr,upl
 motherless.com##+js(no-setTimeout-if, WebAssembly)
 natomanga.com##+js(no-setTimeout-if, this.ast)
 /^https:\/\/www\.natomanga\.com\/js\/[a-f0-9]{32}\.js$/$script,domain=natomanga.com
+/^https:\/\/www\.gayxnow\.com\/[a-z][a-z][a-z][a-z][a-z][a-z]?\.js$/$script
 /aas/r45d/vki/*$script,redirect=noop.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156120
 topbubbleindex.com##+js(prevent-fetch, pagead2.googlesyndication.com)
@@ -32384,6 +32385,7 @@ shameless.com##+js(abort-current-script, $LAB, /getexoloader/)
 pornhub-sexfilme.net,pornojenny.net,pornoleon.com,herzporno.net##+js(no-setTimeout-if, /loadMomoVip|loadExo|includeSpecial/)
 pornhub-sexfilme.net,pornojenny.net,pornoleon.com##+js(abort-on-stack-trace, document.createElement, loadNeverBlock)
 ||magsrv.com^$script,redirect=noop.js,domain=pornoleon.com|pornojenny.net|pornhub-sexfilme.net
+||gayxnow.com/bn/
 /static/*/froload.js?v=$script
 !
 ! 'PopJSLock/PopAds'
@@ -37264,9 +37266,15 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+elamigosedition.com##.side-b:has(> div[style] > a[href^="https://www.etsy.com/"])
 ||watchporn.to/banners/
 ||mangakakalot.gg/js/ads/clck-adu-kklgg.js
 ||mangakakalot.gg/js/ads/admaven.js
+||creative.live.*/widgets/*&campaignId=$subdocument
+||gayxnow.com/*.html$subdocument,~3p
+||gayxnow.com/static/js/promo-
+gayxnow.com##ul.grid-temp > li.livecam
+gayxnow.com##ul.grid-temp > li.spot
 gayxnow.com##.col-asside
 trannymovs.com##.block-video > .video-holder > .sponsor
 kdvqi.xyz,ehinditimes.com##div[class^="stickyAd"]
@@ -63450,6 +63458,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231779
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231216
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231683
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231465
