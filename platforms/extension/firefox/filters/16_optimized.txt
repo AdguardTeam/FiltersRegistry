@@ -1,5 +1,5 @@
-! Checksum: ApXD/bn8L6gB2oYEPnZu3w
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1779419930-3600.patch
+! Checksum: 2615emjCRSSuiCkexxTsTQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1779506201-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.59
@@ -422,7 +422,6 @@ radio.fr##.mx-auto:has(> div.super-reklame-header-holder)
 actugaming.net##.h-content > .placeholder-wrap
 ici.radio-canada.ca##.adbox-cls
 hdnumerique.com##.column:has(> .is-divider[data-content="BON PLAN"])
-lecteurvideo.com##.OD > li:has([href^="https://planetwealthbuilders.net"])
 cyclismactu.net#$#.stickySidePClong { min-height: auto !important; }
 cyclismactu.net#$#div[id^="ad-slot"] { display: none !important; }
 latribune.fr##div[id*="-ban"]
@@ -1522,6 +1521,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://get.*&clickid=
 ://go.*&zoneid=
 ://go.*?zoneid=
+://install.*&clickid=
 ://link.*&siteid=$third-party
 ://look.*/offer?prod=
 ://pop.$script,subdocument,third-party,xmlhttprequest
@@ -1608,6 +1608,7 @@ _300x300.gif
 _300x400.gif
 _300x600&
 _336x280.
+_468-x-60_
 _46860_
 _468x200.
 _468x60&
@@ -1843,6 +1844,7 @@ _build=iclick-$popup
 ||cdn3.net^$third-party
 ||cdntraffic.com^$third-party
 ||cfgr2.com^$third-party
+||chilican.com^$third-party
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
@@ -2325,6 +2327,7 @@ _build=iclick-$popup
 ||loading-delivery2.com^
 ||looksmartppc.com^
 ||lothlyunfaith.com^
+||lovedatng.com^
 ||loveonlinee.net^
 ||lqbvjmkoomerm.top^
 ||lvkwz.com^
@@ -2671,7 +2674,6 @@ _build=iclick-$popup
 ||porncrash.com^$popup,third-party
 ||pulseadnetwork.com^$popup
 ||redlightcenter.com^$popup,third-party
-||repslys.com^$popup
 ||revsharecash.com^$popup,third-party
 ||schjmp.com^$popup
 ||sersh.com^$popup,third-party
@@ -3061,7 +3063,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||esoxiste.com/wp-content/images/*.gif
 ||esoxiste.com/wp-content/images/bandeau-
 ||esoxiste.com/wp-content/images/banni%C3%A8re-
-||expomaroc.ma/pub/
 ||fiches-auto.fr/_carre_300_
 ||file-upload.net/include/$subdocument
 ||firebasestorage.googleapis.com^$domain=avito.ma
@@ -3172,7 +3173,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||ruedesjoueurs.com/images/banners/
 ||ruedesjoueurs.com/images/campagnes/habillage/
 ||s-sfr.fr^*/pubwm.
-||sabqpress.net/wp-content/uploads/2020/03/0.jpg
 ||salaire-brut-en-net.fr/wp-content/*/img/banners/
 ||securite.01net.com^
 ||seneweb.com/dynamic/modules/banners/
@@ -3514,7 +3514,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###rightrail-ad-2
 ###sagreklam
 ###shopper-widget-wrapper
-###sideBar_pub1
 ###sideBar_pub2
 ###sidead2
 ###sidebar-pub
@@ -3600,7 +3599,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.breaking-ad
 ##.buzz-ads
 ##.c-ads-sidebar
-##.cadre_pub
 ##.cap-ads-text
 ##.card--row-ads
 ##.carouselpub
@@ -3722,6 +3720,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.mod-ad-top-2
 ##.mod-advertisement
 ##.modAd
+##.modalPub
 ##.module-pub
 ##.module_sponsored
 ##.mom-ads-wrap
@@ -3754,7 +3753,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.player-sponsor-block
 ##.player__ads
 ##.pmd-ads-mobile
-##.pmd-ads-placeholder
 ##.pmd_dfp_ad
 ##.popupads
 ##.porn-videos-ads
@@ -3827,6 +3825,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pubVideo
 ##.pub_1000_liste
 ##.pub_160x600
+##.pub_300
 ##.pub_300-250
 ##.pub_300_250
 ##.pub_728_90
@@ -4378,7 +4377,6 @@ jeretiens.net##.top-bar
 lefigaro.fr##.tvm-reagir__pub
 topito.com##.type-shopping
 autonews.fr##.uptogo
-d8.tv##.video-preroll
 amateur2sexe.fr,pornovore.fr##.video-pub
 mariefrance.fr,science-et-vie.com##.viously-player
 pornovore.fr,tukif.com##.vjs-toolbar
@@ -4485,7 +4483,6 @@ forexmt4indicators.com##a[target="_blank"] > img[width="300"][height="250"]
 gamergen.com,generation-nt.com##article .product
 scan-manga.com##article[itemtype="https://schema.org/Product"]
 tchatche.com##banner
-annuaire-horaire.fr##div#aq
 gamopat-forum.com##div#wrapper > div#right img[src*="/11/03/61/79/"]
 laprovence.com##div[class*="Ads_ad_"]
 newpharma.fr##div[class*="adh-banner"]
