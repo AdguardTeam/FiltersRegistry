@@ -1,5 +1,5 @@
-! Checksum: 8nhhytUSbBuXIPRnYg1KyA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1779429289-14400.patch
+! Checksum: 7De/YY0fH1Bb/zia3ZINwg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1779515266-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.80
@@ -130,6 +130,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 45.148.120.171$network
 !+ PLATFORM(windows, mac, android, cli)
 159.148.186.228$network
+||yotube.com^$all
 &url_bnm_redirect=$all,domain=~malware_redirection_trains.*
 !+ PLATFORM(windows, mac, android, cli)
 198.23.255.14$network
@@ -281,7 +282,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||profitablecpm*.com^$all
 ||scarcehepatitis.com^$all
 ||seenwage.com^$all
-||straitpaltrybelief.com^$all
 ||voraciousinfosag.com^$all
 ||workdeadlinededicate.com^$all
 ||wretchedclearance.com^$all
@@ -580,7 +580,6 @@ apkfab.com##.tip-extension
 !+ PLATFORM(windows, mac, android, cli)
 159.89.10.102$network
 cdburnerxp.se##[href*="/downloadsetup.exe"]
-||sexy-egirls-leaked.com^$document
 ||erothots.co^$all
 !+ PLATFORM(windows, mac, android, cli)
 104.206.252.90$network
@@ -1232,6 +1231,8 @@ pixiv.net##div > div + section:has(a[href^="/premium/lead/"])
 cda.pl##.video-baner
 cda.pl##.row-video-clip-wrapper
 cda.pl###tVC
+||images.opencollective.com^$domain=socket.io
+||socket.io/images/sponsors^$image
 fandom.com##.ad-slot-placeholder
 amap.com##.dir_qr
 ctrip.com##.set-wechat.set-list > .nav-myctrip.person-text
@@ -1348,7 +1349,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /snowfall.jquery.
 /snowstorm-min.js
 /snowstorm.js
-/wp-snow-effect^
 /christmas-snow.js
 @@||aboluowang.com^
 @@||bannedbook.org^
@@ -1514,6 +1514,8 @@ rule34.paheal.net###comment-list-recent
 rule34.xxx###comment-list
 e621.net,e926.net###comments
 ###hot-network-questions
+/api/amediacomments/*
+/commentsbutton.js$domain=nettavisen.no
 www.pixiv.net##div[data-ga4-label*=comment i]
 $removeparam=yclid
 $removeparam=gclid
@@ -1570,7 +1572,6 @@ $removeparam=personaclick_input_query
 $removeparam=personaclick_search_query
 $removeparam=rtkcid
 $removeparam=spot_im_redirect_source
-$removeparam=uzcid
 $removeparam=vero_conv
 $removeparam=vero_id
 $removeparam=wickedid
@@ -1963,6 +1964,12 @@ $removeparam=pk_kwd
 $removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
+$removeparam=ads_adid
+$removeparam=ads_cmpid
+$removeparam=ads_creative
+$removeparam=ads_matchtype
+$removeparam=ads_network
+$removeparam=ads_targetid
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -2158,7 +2165,6 @@ $removeparam=%2AVersion%2A,domain=amazon.*
 $removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
-||amazon.*/stores/$removeparam=tag,document
 ||amazon.*/product/$removeparam=tag,document
 ||amazon.$removeparam=qu
 ||amazon.*/dp/$removeparam=rps,document
@@ -2546,6 +2552,7 @@ $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.c
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
+$removeparam=refsec,domain=barrons.com
 $removeparam=hpt,domain=cnn.com
 ||pbtech.$removeparam=qr
 ||fnac.$removeparam=Origin
@@ -2917,7 +2924,6 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||instagram.com^$removeparam=ig_rid
 ||cdninstagram.com^$removeparam=_nc_sid
 ||adguard.info^$removeparam=nc
-ref=404media.co$document,removeparam=ref
 $document,removeparam=jp_cmp,domain=chase.com
 ||researchgate.net^$document,removeparam=_tp
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|sky.it
@@ -2993,8 +2999,10 @@ $document,domain=carousell.*,removeparam=/^t-referrer_/
 ||qzone.qq.com^$document,removeparam=ciphertext
 ||qzone.qq.com^$document,removeparam=blog_photo
 ||qzone.qq.com^$document,removeparam=g
+||qzone.qq.com^$document,removeparam=res_uin
 ||qzone.qq.com^$document,removeparam=bp2
 ||qzone.qq.com^$document,removeparam=bp7
+||qzone.qq.com^$document,removeparam=g_f
 ||asos.com^$removeparam=ctaref
 ||gumroad.com^$removeparam=recommended_by
 $document,removeparam=s_campaign
@@ -3082,13 +3090,12 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||microsoft.com^$removeparam=refSource
 ||microsoft.com^$removeparam=refPage
 $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com
+||deezer.$removeparam=/^utm_.*$/
 ||duckduckgo.com/extension-success$document,removeparam=atb
 ||duckduckgo.com/atb.js$document,removeparam=set_atb
 ||duckduckgo.com/atb.js$document,removeparam=v
 ||duckduckgo.com/atb.js$document,removeparam=bv
 ||duckduckgo.com/atb.js$document,removeparam=browser
-||github.com^$document,removeparam=email_source
-||github.com^$document,removeparam=email_token
 ||apotekfordeg.no^$removeparam=/^vt_.*$/
 ||publicmobile.ca^$document,removeparam=p_id
 ||newsoveraudio.com^$document,removeparam=article
@@ -3420,7 +3427,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 #@#.ad-below
 ##.ad-below:not(html,body,:empty)
 #@#.ad-display
-##.ad-display:not(html,body,:empty)
 #@#.ad-displayed
 #@#.ad-item
 ##.ad-item:not(html,body,:empty)
