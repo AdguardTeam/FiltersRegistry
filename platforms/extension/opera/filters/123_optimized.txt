@@ -1,9 +1,9 @@
-! Checksum: DtYulLNY+iLK+RzsclsliQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1779586078-14400.patch
+! Checksum: DJPCI+bRZzXLcFqaeOENVg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1779601955-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.62.5
-! TimeUpdated: 2026-05-24T01:24:46+00:00
+! Version: 2.1.62.6
+! TimeUpdated: 2026-05-24T05:49:17+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -146,7 +146,6 @@ _social-bar/
 ###FollowUs
 ###Followers1
 ###ShareButton
-###ShareEntryPoint
 ###ShareItemBtn
 ###SocialMedia
 ###SocialShare
@@ -186,7 +185,6 @@ _social-bar/
 ###content-social
 ###crestashareicon
 ###crestashareiconincontent
-###custom-social
 ###custom-tweet-button
 ###desktop-share-wrapper
 ###details-share-icon-link
@@ -342,6 +340,7 @@ _social-bar/
 ###menu-social
 ###menu-social-1
 ###menu-social-2
+###menu-social-buttons
 ###menu-social-icons
 ###menu-social-icons-menu
 ###menu-social-items
@@ -543,6 +542,7 @@ _social-bar/
 ###social-links-twitter
 ###social-media-footer
 ###social-media-header
+###social-media-nav
 ###social-media-share
 ###social-media-wrapper
 ###social-nav
@@ -554,7 +554,6 @@ _social-bar/
 ###social-plugins
 ###social-popup
 ###social-profiles
-###social-promo-flyin
 ###social-share
 ###social-share-bottom
 ###social-share-buttons
@@ -834,6 +833,7 @@ _social-bar/
 ##.addthis_horizontal_follow_toolbox
 ##.addthis_inline_share_toolbox
 ##.addthis_native_toolbox
+##.addthis_responsive_sharing
 ##.addthis_separator
 ##.addthis_sharing_toolbox
 ##.addthis_toolbox
@@ -844,7 +844,6 @@ _social-bar/
 ##.af-share
 ##.af-social-btns
 ##.af-social-share-v2
-##.agencies-about-share
 ##.allshare_buttons
 ##.amp-facebook
 ##.amp-social-container
@@ -1114,6 +1113,7 @@ _social-bar/
 ##.content-footer-social
 ##.content-share-wrap
 ##.contentShareLeft
+##.contentSocialBar
 ##.convosharebuttons
 ##.countShare
 ##.counted-share-vertical
@@ -1531,7 +1531,6 @@ _social-bar/
 ##.gridlove-share-wrapper
 ##.gridlove-soc-menu
 ##.gs-share
-##.gs-sharebar
 ##.gt-social-menu
 ##.gtm-social-link
 ##.gtm_footer_facebook
@@ -1881,7 +1880,6 @@ _social-bar/
 ##.m-share
 ##.m-share-bar
 ##.m-share-bar__link
-##.m-share-list
 ##.m-sharing
 ##.m-sns
 ##.m-social-bar
@@ -1921,6 +1919,7 @@ _social-bar/
 ##.menu-header-links-container
 ##.menu-section-social
 ##.menu-share
+##.menu-social-buttons-container
 ##.menu-social-container
 ##.menu-social-icons
 ##.menu-social-links
@@ -2050,6 +2049,7 @@ _social-bar/
 ##.page-footer__social
 ##.page-footer__social-link
 ##.page-footer__social-links
+##.page-header__social
 ##.page-share
 ##.page-share-button
 ##.page-social
@@ -2059,6 +2059,7 @@ _social-bar/
 ##.panel-share-networks
 ##.par-footer-social
 ##.parent-shareBox
+##.parler-icon
 ##.pathSocialIcons
 ##.pbtsharethisbutt
 ##.pdb-share
@@ -2277,7 +2278,6 @@ _social-bar/
 ##.share-box-wrapper
 ##.share-btn
 ##.share-btn-container
-##.share-btn-lnks
 ##.share-btns
 ##.share-button--email
 ##.share-button--twitter
@@ -3028,7 +3028,6 @@ _social-bar/
 ##.social-sharing-btn
 ##.social-sharing-button
 ##.social-sharing-buttons
-##.social-sharing-item
 ##.social-sharing-link
 ##.social-sharing-top
 ##.social-sharing__link
@@ -3156,7 +3155,6 @@ _social-bar/
 ##.social_linkedin
 ##.social_links_container
 ##.social_links_footer
-##.social_links_sticky
 ##.social_links_top
 ##.social_media_header
 ##.social_menu_icon
@@ -3184,7 +3182,6 @@ _social-bar/
 ##.socialb
 ##.socialbar-sidebar
 ##.socialbar-sidebar-item
-##.socialbot
 ##.socialbox2
 ##.socialbtns
 ##.socialbutton
@@ -3465,6 +3462,7 @@ _social-bar/
 ##.vlog-social-icons
 ##.voc-social
 ##.vs-social
+##.vshare
 ##.vuukle-powerbar
 ##.w-share
 ##.w-sharing
@@ -3800,6 +3798,7 @@ thenewstack.io###tns-footer-bar
 thenewstack.io###tns-post-body-sidebar-share
 reuters.com###toolbar-item-parent-share-12
 thescientificdrop.com###top-bar
+yardbarker.com###top-nav-soc
 pcgamer.com,tomshardware.com###utility-bar
 windowscentral.com###utilitybar__button--share
 videocardz.com###welcome-modal
@@ -3909,7 +3908,6 @@ agrimag.co.za,androidpolice.com,automart.co.za,givemesport.com##.btn-whatsapp
 koimoi.com##.btn-whatsup
 androidpolice.com##.btn-x
 consumerreports.org##.btn__social
-channelnewsasia.com##.button--google-preferred
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
 nature.com##.c-article-extras-additional-links
@@ -3930,11 +3928,9 @@ androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.c
 overwolf.com##.creator-social
 dinneratthezoo.com##.cwp-food-footer
 drugs.com##.ddc-footer-column-social
-anthropocenemagazine.org##.divibars-temp-page-container
 inews.co.uk##.dmg__post-section
 dailymail.co.uk##.dms-puff
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,catholicnewsagency.com##.donation-box
-anthropocenemagazine.org##.dssb_sharing_buttons
 mississippitoday.org##.dst-google-news-source
 theverge.com,vox.com##.duet--article--share-buttons
 dailyboulder.com,echonewshub.com,jugomobile.com,thartribune.com,thegamepost.com,townflex.com##.e-shared-sec
@@ -3944,6 +3940,7 @@ endocrine.org##.end-social-links-header
 cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
 arabnews.com##.entry-views
+yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
 trueachievements.com##.fa-reddit
 techradar.com##.facebook-icon
@@ -4073,6 +4070,7 @@ news18.com##.midgprfd
 autonocion.com##.mn-share
 boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
+yardbarker.com##.msnfc
 punchdrink.com##.nav-main__share
 denofgeek.com##.nav-social__items
 triblive.com##.navbar-right
@@ -4178,7 +4176,6 @@ news.sky.com,skysports.com##.site-share-wrapper
 archaeology.org##.site-socials
 buyee.jp##.sns_list
 firstpost.com##.so-ics
-porngals4.com##.soc
 macrumors.com##.social--159R8SRB
 freepressjournal.in##.social-account
 noticias.perfil.com,vaticannews.va##.social-btn
@@ -4203,6 +4200,7 @@ techwalla.com##.social-share-icons
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
 cnn.com##.social-share_labelled-list
+edition.cnn.com##.social-share_labelled-list__share-links
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
 nist.gov##.social-twitter
