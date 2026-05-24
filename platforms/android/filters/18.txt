@@ -1,9 +1,9 @@
-! Checksum: DD1qA+sMxbkZXdb/Yd+RPA
-! Diff-Path: ../patches/18/18-s-1779615975-3600.patch
+! Checksum: mCXKSDyymZ3O70Aa33I5WA
+! Diff-Path: ../patches/18/18-s-1779619243-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.87.31
-! TimeUpdated: 2026-05-24T09:43:44+00:00
+! Version: 2.0.87.32
+! TimeUpdated: 2026-05-24T10:38:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2610,6 +2610,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+fightmode.tv#%#//scriptlet('trusted-set-local-storage-item', 'cookie_consent', 'declined')
 ||neboa.pl/wp-content/plugins/gdpr-cookie-compliance/
 gptzero.me##body > div.fixed:has(> div.CookieConsent)
 instar-informatika.hr###vsccookieConsent
@@ -18949,6 +18950,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231876
+fightmode.tv#@#.ck-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231719
 @@||cdn.vhx.tv/assets/vite/CookieBanner.*.js$domain=watch.dropout.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231343

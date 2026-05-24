@@ -1,9 +1,9 @@
-! Checksum: G6U0jVDbAMIr4b7abvk0tA
-! Diff-Path: ../patches/14/14-s-1779615981-3600.patch
+! Checksum: EkPWxzW5pjpmMOhZW4uWzA
+! Diff-Path: ../patches/14/14-s-1779619248-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.68.81
-! TimeUpdated: 2026-05-24T09:43:35+00:00
+! Version: 2.2.68.82
+! TimeUpdated: 2026-05-24T10:38:10+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2609,6 +2609,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+fightmode.tv#%#//scriptlet('trusted-set-local-storage-item', 'cookie_consent', 'declined')
 ||neboa.pl/wp-content/plugins/gdpr-cookie-compliance/
 gptzero.me##body > div.fixed:has(> div.CookieConsent)
 instar-informatika.hr###vsccookieConsent
@@ -18865,6 +18866,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231876
+fightmode.tv#@#.ck-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231719
 @@||cdn.vhx.tv/assets/vite/CookieBanner.*.js$domain=watch.dropout.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231343
