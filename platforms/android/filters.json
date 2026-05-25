@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.5.91",
-			"timeUpdated": "2026-05-25T11:27:24+0000",
+			"version": "2.1.5.92",
+			"timeUpdated": "2026-05-25T15:07:57+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.68.69",
-			"timeUpdated": "2026-05-25T13:17:09+0000",
+			"version": "2.4.68.70",
+			"timeUpdated": "2026-05-25T15:08:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.78",
-			"timeUpdated": "2026-05-25T13:17:22+0000",
+			"version": "2.1.4.79",
+			"timeUpdated": "2026-05-25T15:08:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.28.46",
-			"timeUpdated": "2026-05-25T13:17:25+0000",
+			"version": "2.1.28.47",
+			"timeUpdated": "2026-05-25T15:08:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.88",
-			"timeUpdated": "2026-05-25T13:17:41+0000",
+			"version": "2.0.69.89",
+			"timeUpdated": "2026-05-25T15:08:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/13_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.52",
-			"timeUpdated": "2026-05-25T11:28:12+0000",
+			"version": "2.0.64.53",
+			"timeUpdated": "2026-05-25T15:08:47+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.68.90",
-			"timeUpdated": "2026-05-25T13:17:52+0000",
+			"version": "2.2.68.91",
+			"timeUpdated": "2026-05-25T15:08:56+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.22.90",
-			"timeUpdated": "2026-05-25T11:28:24+0000",
+			"version": "2.1.22.91",
+			"timeUpdated": "2026-05-25T15:09:00+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.36",
-			"timeUpdated": "2026-05-25T13:18:03+0000",
+			"version": "2.0.87.37",
+			"timeUpdated": "2026-05-25T15:09:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.75.96",
-			"timeUpdated": "2026-05-25T13:18:05+0000",
+			"version": "2.0.75.97",
+			"timeUpdated": "2026-05-25T15:09:08+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -840,8 +840,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/23_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.8.18",
-			"timeUpdated": "2026-05-25T11:28:34+0000",
+			"version": "2.0.8.19",
+			"timeUpdated": "2026-05-25T15:09:11+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
@@ -1731,8 +1731,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.59.46",
-			"timeUpdated": "2026-05-25T13:18:13+0000",
+			"version": "2.1.59.47",
+			"timeUpdated": "2026-05-25T15:09:17+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

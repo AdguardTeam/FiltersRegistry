@@ -1,9 +1,9 @@
-! Checksum: 0T9spqPxwi9Sf0BQ0MZUJA
-! Diff-Path: ../patches/14/14-s-1779715247-3600.patch
+! Checksum: TAknWtp9dYdvoUxemaFnUw
+! Diff-Path: ../patches/14/14-s-1779721927-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.68.90
-! TimeUpdated: 2026-05-25T13:17:52+00:00
+! Version: 2.2.68.91
+! TimeUpdated: 2026-05-25T15:08:56+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1347,7 +1347,7 @@
 ##.cookie-siteusage-notice
 ##.cookie-warn
 ##.cookie-warn-msg
-##.cookie-warning
+##.cookie-warning:not(body)
 ##.cookieAccept
 ##.cookieAccepterSlider
 ##.cookieAdvice
@@ -2609,6 +2609,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+ukrinform.ua#$##cookie-banner { display: none !important; }
+ukrinform.ua#$#html { overflow: auto !important; }
 sushi-karate.ru##div[data-legal-panel]
 trhaber.com.tr##div.fixed:has(> div > p > a[href="/kurumsal/cerez-politikasi"])
 ||pcekspert.com/assets/pce-consent.js
@@ -4834,7 +4836,6 @@ focusgarden.pl#$#body { position: static !important; overflow: auto !important; 
 jetbrains.com#$#div[class^="jetbrains-cookies-"] { display: none !important; }
 jetbrains.com#$#.jetbrains-cookies-banner-lock-scroll { overflow: auto !important; }
 bandcamp.com#%#//scriptlet('inject-css-in-shadow-dom', '.dialog-container:has(> #cookie-control-dialog) { display: none !important; }')
-lamontagne.fr##div[style=""].transition.duration-500
 lamontagne.fr#%#//scriptlet('trusted-set-cookie', 'euconsent-v2', 'CQOGuIAQOGuIAAHABBENBgFgAAAAAAAAAAAAAAAAAADEoAMAAQV0CQAYAAgroUgAwABBXQdABgACCuhCADAAEFdC0AGAAIK6AAAA.YAAAAAAAAAAA')
 ||3d4medical.com/common/vendor/cookies-listener/
 ||3d4medical.com/app/themes/threedfourmed/js/*cookie
@@ -11508,7 +11509,7 @@ heimkinoraum.de##div[id^="mod_cookie"]
 expresszuschnitt.de###cookie_hinweis
 jbl.de##.uim
 lust-auf-strand.de##.cc_overlay
-nhm.ac.uk,codingame.com,schwarzwaldradio.com,meincharivari.de,radioplayer.hitradion1.de,classicrock-radio.de,alpin.fm,radio-charivari.de,radioplayer.986charivari.de,salue.de,radioplayer.de,radiogong.com##div[class^="CookieBanner-"]
+ggsel.net,nhm.ac.uk,codingame.com,schwarzwaldradio.com,meincharivari.de,radioplayer.hitradion1.de,classicrock-radio.de,alpin.fm,radio-charivari.de,radioplayer.986charivari.de,salue.de,radioplayer.de,radiogong.com##div[class^="CookieBanner-"]
 ||stiebel-eltron.de/apps/ste/docroot/js/app/modules/cookies-selection.js
 taschen.com#$##ConsentManagerModal { display: none!important; }
 taschen.com#$#.modal-backdrop { display: none!important; }
@@ -18870,6 +18871,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231902
+ukrinform.ua#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231984
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=tntsports.co.uk
 @@||cdn.cookielaw.org/consent/*.json$domain=tntsports.co.uk
@@ -36289,6 +36292,8 @@ expert.in.ua,turkiyegazetesi.com.tr,aksam.com.tr,trhaber.com.tr,droidwin.com,one
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rbc.ua##.read-in-socials
+rbc.ua##.mark-as-preferred
 trueua.info##.news_feed-social
 usmagazine.com##.just-from-us-widget
 electronicsweekly.com###text-html-widget-15

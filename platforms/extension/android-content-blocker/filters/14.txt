@@ -1,8 +1,8 @@
-! Checksum: 9yjW8/mVtQuo/qVdnXJvKw
+! Checksum: 0zMpCy2egXoP4wRUn5CiYg
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.68.90
-! TimeUpdated: 2026-05-25T13:17:52+00:00
+! Version: 2.2.68.91
+! TimeUpdated: 2026-05-25T15:08:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1346,7 +1346,7 @@
 ##.cookie-siteusage-notice
 ##.cookie-warn
 ##.cookie-warn-msg
-##.cookie-warning
+##.cookie-warning:not(body)
 ##.cookieAccept
 ##.cookieAccepterSlider
 ##.cookieAdvice
@@ -3557,7 +3557,6 @@ homecinesolutions.fr###consent-loader-component
 deepseek.com##.cookie_banner-wrap
 worthepenny.com###privacy_policy_popup
 ortorex.de###cookie-overlay-q
-lamontagne.fr##div[style=""].transition.duration-500
 ||3d4medical.com/common/vendor/cookies-listener/
 ||3d4medical.com/app/themes/threedfourmed/js/*cookie
 ||3d4medical.com/common/web-shared/cookies-banner.js
@@ -7548,7 +7547,7 @@ heimkinoraum.de##div[id^="mod_cookie"]
 expresszuschnitt.de###cookie_hinweis
 jbl.de##.uim
 lust-auf-strand.de##.cc_overlay
-nhm.ac.uk,codingame.com,schwarzwaldradio.com,meincharivari.de,radioplayer.hitradion1.de,classicrock-radio.de,alpin.fm,radio-charivari.de,radioplayer.986charivari.de,salue.de,radioplayer.de,radiogong.com##div[class^="CookieBanner-"]
+ggsel.net,nhm.ac.uk,codingame.com,schwarzwaldradio.com,meincharivari.de,radioplayer.hitradion1.de,classicrock-radio.de,alpin.fm,radio-charivari.de,radioplayer.986charivari.de,salue.de,radioplayer.de,radiogong.com##div[class^="CookieBanner-"]
 ||stiebel-eltron.de/apps/ste/docroot/js/app/modules/cookies-selection.js
 zenpirlanta.com,bluediamond.com.tr,ddiamond.com.tr,lizaypirlanta.com,altinbas.com##.vnotify-container
 ||components2.gazzettaobjects.it/rcs_cpmt$domain=~video.gazzetta.it
@@ -12616,6 +12615,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231902
+ukrinform.ua#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231984
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=tntsports.co.uk
 @@||cdn.cookielaw.org/consent/*.json$domain=tntsports.co.uk
@@ -26933,6 +26934,8 @@ expert.in.ua,turkiyegazetesi.com.tr,aksam.com.tr,trhaber.com.tr,droidwin.com,one
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rbc.ua##.read-in-socials
+rbc.ua##.mark-as-preferred
 trueua.info##.news_feed-social
 usmagazine.com##.just-from-us-widget
 electronicsweekly.com###text-html-widget-15
