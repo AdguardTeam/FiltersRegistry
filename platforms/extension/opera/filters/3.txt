@@ -1,9 +1,9 @@
-! Checksum: jWTo6H7JLtvw3yu3MJDTRw
-! Diff-Path: ../patches/3/3-s-1779701516-3600.patch
+! Checksum: Nqwm8CGnMOQVhMa+5AsU3w
+! Diff-Path: ../patches/3/3-s-1779708679-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.4.76
-! TimeUpdated: 2026-05-25T09:28:11+00:00
+! Version: 2.1.4.77
+! TimeUpdated: 2026-05-25T11:27:53+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -550,6 +550,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 !
 !
 !
+||marcuscash.one^
 ||vm.target-video.com^
 ||tagmanager.andata.ru^
 ||statlytic.net^
@@ -181368,6 +181369,7 @@ zonedirector.avadacom.com$image
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
 !
+/hit-track.php
 /wp-content/plugins/jetpack/jetpack_vendor/automattic/woocommerce-analytics/*
 /phenomtrack.min.js$script
 /dead-clicks-autocapture.js
@@ -191444,9 +191446,12 @@ trendyol-milla.com#%#//scriptlet('set-constant', 'process.env', '')
 bitdefender.com#$#body[style="opacity: 0;"] { opacity: 1 !important; }
 ||sstats.bitdefender.com^$xmlhttprequest,redirect=nooptext,~third-party,important
 @@||sstats.bitdefender.com^$~third-party
+! https://github.com/AdguardTeam/AdguardFilters/issues/231982
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211553
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209573
 sports.yahoo.com#%#//scriptlet('set-constant', 'rapidInstance.isModuleTracked', 'falseFunc')
+sports.yahoo.com#%#//scriptlet('set-constant', 'rapidInstance.getRapidAttribute', 'falseFunc')
+sports.yahoo.com#%#//scriptlet('set-constant', 'rapidInstance.addModuleProgression', 'noopFunc')
 sports.yahoo.com#%#//scriptlet('set-constant', 'rapidInstance.addModulesWithViewability', 'noopFunc')
 sports.yahoo.com#%#//scriptlet('set-constant', 'YAHOO.i13n', 'emptyObj')
 sports.yahoo.com#%#//scriptlet('set-constant', 'YAHOO.i13n.Rapid', 'noopFunc')
