@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.68.63",
-			"timeUpdated": "2026-05-25T01:51:05+0000",
+			"version": "2.4.68.64",
+			"timeUpdated": "2026-05-25T03:16:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.73",
-			"timeUpdated": "2026-05-23T15:29:02+0000",
+			"version": "2.1.4.74",
+			"timeUpdated": "2026-05-25T03:16:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.28.40",
-			"timeUpdated": "2026-05-22T16:50:04+0000",
+			"version": "2.1.28.41",
+			"timeUpdated": "2026-05-25T03:16:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.47",
-			"timeUpdated": "2026-05-25T01:51:36+0000",
+			"version": "2.0.64.48",
+			"timeUpdated": "2026-05-25T03:16:38+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -692,8 +692,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.75.90",
-			"timeUpdated": "2026-05-23T15:29:50+0000",
+			"version": "2.0.75.91",
+			"timeUpdated": "2026-05-25T03:16:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -714,8 +714,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.29.28",
-			"timeUpdated": "2026-05-24T13:36:18+0000",
+			"version": "2.0.29.29",
+			"timeUpdated": "2026-05-25T03:16:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
