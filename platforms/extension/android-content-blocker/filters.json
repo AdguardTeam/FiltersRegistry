@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.5.93",
-			"timeUpdated": "2026-05-25T16:47:55+0000",
+			"version": "2.1.5.94",
+			"timeUpdated": "2026-05-25T18:39:34+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.68.72",
-			"timeUpdated": "2026-05-25T17:36:38+0000",
+			"version": "2.4.68.73",
+			"timeUpdated": "2026-05-25T18:39:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.28.48",
-			"timeUpdated": "2026-05-25T17:36:54+0000",
+			"version": "2.1.28.49",
+			"timeUpdated": "2026-05-25T18:40:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.68.93",
-			"timeUpdated": "2026-05-25T17:37:21+0000",
+			"version": "2.2.68.94",
+			"timeUpdated": "2026-05-25T18:40:19+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -705,8 +705,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.38",
-			"timeUpdated": "2026-05-25T16:48:58+0000",
+			"version": "2.0.87.39",
+			"timeUpdated": "2026-05-25T18:40:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -815,8 +815,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.8.20",
-			"timeUpdated": "2026-05-25T16:49:04+0000",
+			"version": "2.0.8.21",
+			"timeUpdated": "2026-05-25T18:40:29+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
