@@ -1,9 +1,9 @@
-! Checksum: qxePh/dLRvZCfKdqLauZ7A
-! Diff-Path: ../patches/14/14-s-1779708671-3600.patch
+! Checksum: wgwLtP2oqv2zmiA5h/VV5Q
+! Diff-Path: ../patches/14/14-s-1779715251-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.68.89
-! TimeUpdated: 2026-05-25T11:28:21+00:00
+! Version: 2.2.68.90
+! TimeUpdated: 2026-05-25T13:17:52+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10947,7 +10947,7 @@ shakeshack.com###block-privacymessageblock
 dataversity.net##.section-popup-gdpr
 flickr.com##.cookie-banner-reg
 micro-wave.net,rinna.co.jp,teac.jp##.accept_cookie
-boykotdedektifi.org,bubilet.com.tr,epicvin.com,is74.ru##.cookie-card
+boykotdedektifi.com,boykotdedektifi.org,bubilet.com.tr,epicvin.com,is74.ru##.cookie-card
 transpack-krumbach.de###my-ctc-widget
 reimsuche.de#?##__layout > div.flex > div[role="dialog"]:has(> div.flex > div.modal-container > header > h1:contains(/^Cookies!/))
 melhoresdestinos.com.br###banner-lgpd
@@ -18638,7 +18638,7 @@ kokaihop.se#%#//scriptlet('set-cookie', 'cookieUserPolicy', 'true')
 voordeeldrogist.eu,kmweg.de#%#//scriptlet('set-cookie', 'cookie_consent', '1')
 abcya.com#%#//scriptlet('set-cookie', 'abcya_cb', '1')
 fehler-haft.de#%#//scriptlet('set-cookie', 'cookieerlaubnis', 'yes')
-rtlplay.be,natgeotv.com#%#//scriptlet('trusted-click-element', '#onetrust-consent-sdk button.ot-pc-refuse-all-handler')
+tntsports.co.uk,rtlplay.be,natgeotv.com#%#//scriptlet('trusted-click-element', '#onetrust-consent-sdk button.ot-pc-refuse-all-handler')
 theguardian.com#%#//scriptlet('remove-class', 'sp-message-open', 'html.sp-message-open')
 hsbc.com.tr,advantage.com.tr#%#//scriptlet('set-local-storage-item', 'cookiePolicy', 'true')
 eon.de#%#//scriptlet('set-cookie', 'consent_mgt', '1')
@@ -18912,6 +18912,12 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231984
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=tntsports.co.uk
+@@||cdn.cookielaw.org/consent/*.json$domain=tntsports.co.uk
+tntsports.co.uk#@##onetrust-consent-sdk
+! https://github.com/AdguardTeam/AdguardFilters/issues/231988
+@@||cmp.uniconsent.com^$domain=footballtransfers.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231947
 kakto.pl#@#.cookie-message:not(html):not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231876
@@ -42145,7 +42151,7 @@ parfois.com#%#//scriptlet("set-cookie", "newsletter_shown", "false")
 lavatools.co##.nsio-edp-overlay
 ayntec.com##section[data-section-type="newsletter-popup"]
 github.com##.js-newsletter-signup-form
-||thesun.co.uk/simwidgets/v1/sim$subdocument
+||thesun.co.uk/simwidgets/
 the-sun.com##iframe[src="https://www.thesun.co.uk/simwidgets/v1/sim"]
 machow2.com#%#//scriptlet('set-cookie-reload', 'hustle-hide-module-2', '2')
 globo.com###newsletterMCWrapper
@@ -50100,6 +50106,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+tntsports.co.uk##div[data-testid="smart-banner"]
 db.sp.netkeiba.com##.nk_info_bunner
 infoyatirim.com###dwnld-app
 buzzfeed.com###mobile-app-promo

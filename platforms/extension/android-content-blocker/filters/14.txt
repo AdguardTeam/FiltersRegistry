@@ -1,8 +1,8 @@
-! Checksum: upH+j3jeyXZxy1fbklpeMA
+! Checksum: 9yjW8/mVtQuo/qVdnXJvKw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.68.89
-! TimeUpdated: 2026-05-25T11:28:21+00:00
+! Version: 2.2.68.90
+! TimeUpdated: 2026-05-25T13:17:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7109,7 +7109,7 @@ shakeshack.com###block-privacymessageblock
 dataversity.net##.section-popup-gdpr
 flickr.com##.cookie-banner-reg
 micro-wave.net,rinna.co.jp,teac.jp##.accept_cookie
-boykotdedektifi.org,bubilet.com.tr,epicvin.com,is74.ru##.cookie-card
+boykotdedektifi.com,boykotdedektifi.org,bubilet.com.tr,epicvin.com,is74.ru##.cookie-card
 transpack-krumbach.de###my-ctc-widget
 melhoresdestinos.com.br###banner-lgpd
 subzero-wolf.com##.footer-announcement
@@ -12616,6 +12616,12 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231984
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=tntsports.co.uk
+@@||cdn.cookielaw.org/consent/*.json$domain=tntsports.co.uk
+tntsports.co.uk#@##onetrust-consent-sdk
+! https://github.com/AdguardTeam/AdguardFilters/issues/231988
+@@||cmp.uniconsent.com^$domain=footballtransfers.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231947
 kakto.pl#@#.cookie-message:not(html):not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231876
@@ -30824,7 +30830,7 @@ torontovka.com##tor-subscribe-btn
 lavatools.co##.nsio-edp-overlay
 ayntec.com##section[data-section-type="newsletter-popup"]
 github.com##.js-newsletter-signup-form
-||thesun.co.uk/simwidgets/v1/sim$subdocument
+||thesun.co.uk/simwidgets/
 the-sun.com##iframe[src="https://www.thesun.co.uk/simwidgets/v1/sim"]
 globo.com###newsletterMCWrapper
 piacenza24.eu###simplemodal-overlay
@@ -37116,6 +37122,7 @@ tekstilbank.com.tr,icbc.com.tr,212.109.224.91###mobileAppPanel
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+tntsports.co.uk##div[data-testid="smart-banner"]
 db.sp.netkeiba.com##.nk_info_bunner
 infoyatirim.com###dwnld-app
 buzzfeed.com###mobile-app-promo
