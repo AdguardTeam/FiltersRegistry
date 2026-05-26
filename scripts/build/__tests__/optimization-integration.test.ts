@@ -103,7 +103,7 @@ const RULE_TO_FILTER = '||e2e-optimization-filtered.example^';
 const RULE_TO_KEEP = '||e2e-optimization-kept.example^';
 const FILTER_ID = 1;
 
-const TEST_PLATFORM_CONFIG: Record<string, unknown> = {
+const TEST_PLATFORM_CONFIG: Record<string, Record<string, unknown>> = {
     TEST: {
         platform: 'test',
         path: 'test',

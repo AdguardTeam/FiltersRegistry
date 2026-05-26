@@ -118,8 +118,8 @@ const buildFilters = async () => {
         await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
         // eslint-disable-next-line no-console
         console.log(
-            `percent.json saved to ${localOptimizationConfigPath}.\n` +
-                'Edit it if needed, then run "yarn generate-cache:stats".',
+            `percent.json saved to ${localOptimizationConfigPath}.\n`
+                + 'Edit it if needed, then run "yarn generate-cache:stats".',
         );
 
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath);
