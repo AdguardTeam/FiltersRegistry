@@ -1,9 +1,9 @@
-! Checksum: yK9kS5s+SRRolDtYeXXkMg
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1779801069-3600.patch
+! Checksum: 8kux+4eM53lQDs0E7vC1eA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1779808318-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.2
-! TimeUpdated: 2026-05-26T13:08:27+00:00
+! Version: 2.2.69.3
+! TimeUpdated: 2026-05-26T15:08:42+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -13245,6 +13245,10 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !+ PLATFORM(ext_edge)
 #%#//scriptlet('set-constant', 'ms.auth.initialize', 'undefined')
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+promo.habr.com#$#.jquery-modal { display: none !important; }
+promo.habr.com#$#body { overflow: auto !important; }
+maltadaily.mt#%#//scriptlet('set-session-storage-item', 'md_popup_shown', '1')
+maltadaily.mt#%#//scriptlet('set-session-storage-item', 'md_popup_clicks', 'null')
 opentix.life##.c-popUp
 vpsmetrics.com##div[data-bookmark-toast].bottom-0.right-0
 google.com##g-bottom-sheet[aria-describedby="promo_desc_id"]
@@ -17594,6 +17598,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
 thepost.co.nz,sportbible.com,washingtonpost.com,expert.in.ua,turkiyegazetesi.com.tr,aksam.com.tr,trhaber.com.tr,droidwin.com,onedio.com,cheezburger.com,tastesbetterfromscratch.com,techgear.gr,glavcom.ua,noticias.yahoo.com,hurriyet.com.tr,dexerto.com,saltandbaker.com,bbc.com,decrypt.co,uniladtech.com,mothership.sg,pcmag.com,coindesk.com,sammyfans.com,m9.news,crankers.com,asiaone.com,cbr.com,thedailyjagran.com,digitaltrends.com,hardwaretimes.com,www.yahoo.com,interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
+oversteer48.com###elementor-popup-modal-26985
 devonlive.com##.social-follow-comment-bar > div.follow-us
 devonlive.com##.social-follow-comment-bar > div.social-actions > div.social-links
 devonlive.com#$#section[data-testid="social-follow"] > div[data-testid="commenting-box"] > ul:has(> li > span > a[href="https://www.facebook.com/thisisexeter"]) { display: none !important; }
@@ -24451,6 +24456,7 @@ honeysanime.com#$##header-line-2 { margin-top: -60px !important; }
 honeysanime.com#$##wrap-app-notice { display: none !important; }
 !+ NOT_OPTIMIZED
 m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
+giphy.com##a[href^="https://giphy.page.link?apn=com.giphy.messenger"]
 tntsports.co.uk##div[data-testid="smart-banner"]
 db.sp.netkeiba.com##.nk_info_bunner
 infoyatirim.com###dwnld-app
@@ -25584,6 +25590,7 @@ yourchannel.blog.jp#@##app-follow-banner
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
 instagram.com#?#div[style*="opacity"] > div > div[class]:has(> div[class] > div[style] > div[style] > div[aria-labelledby] > div[class]:last-child > button)
 instagram.com##._aagw:empty
+itc.ua#?#.xoxo > li.widget_execphp:has(h3:contains(Партнерські блоги))
 usmagazine.com##.link-related
 meduza.io##.GeneralMaterial-module-article > p[class^="SimpleBlock"]:has(> a[href^="https://onelink.to/"] + a[href="https://bit.ly/meduzamirror"])
 meduza.io##.GeneralMaterial-module-article > hr

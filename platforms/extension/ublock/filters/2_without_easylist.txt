@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: jgVRkIAdBZgnw3jtj+4yFg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779801093-3600.patch
+! Checksum: kbGzHOvTMgezvQqoOPnb8Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779808339-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.68.85
-! TimeUpdated: 2026-05-26T13:07:58+00:00
+! Version: 2.4.68.86
+! TimeUpdated: 2026-05-26T15:07:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36977,9 +36977,9 @@ quefaire.be##.gpt_box
 dogdrip.net##html[lang="ko"] [id^="img_"][style]:has(iframe[frameborder="0"][style]):style(clip-path: circle(0) !important;)
 smsonline.cloud##html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]):style(clip-path: circle(0) !important;)
 ! Common rules, which partially hide banners
-.html-load.com/*/a/$font,domain=~dogdrip.net|~smsonline.cloud
-.html-load.com/*/d/$domain=~dogdrip.net|~smsonline.cloud
-.fb2.html-load.com/player/$domain=~dogdrip.net|~smsonline.cloud
+.stg.html-load.com/feed/$xhr,domain=~dogdrip.net|~smsonline.cloud
+.stg.html-load.com/media/$xhr,domain=~dogdrip.net|~smsonline.cloud
+||html-load.com/l/$xhr
 ||html-load.com^$image,~3p,domain=html-load.com,important
 ~dogdrip.net,~smsonline.cloud##div[id^="img_"][style^="width: 100%;height: 90px;position: fixed;bottom: 0px;left: 0px;z-index:"]
 ~dogdrip.net,~smsonline.cloud##div[id^="img_"] > button.gCloseButton
@@ -37279,6 +37279,10 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+express.co.uk##.partners-element
+maltadaily.mt##.max-w-5xl > a[href]:has(> img[alt*="Advertisement"])
+maltadaily.mt##.max-w-3xl:has(> div.flex > span.font-semibold:contains(/^Continue reading$/i))
+||oversteer48.com/wp-content/uploads/*/Nurblife-Ad-
 thepost.co.nz##.header-container > div[class*="overflow-hidden bg-white min-h-"]
 devonlive.com##div[class^="GroupGrid_group"] > div[data-testid^="ncu-within-group-"]:style(visibility: hidden !important;)
 devonlive.com##aside[class^="RHRBlock_right-aside-wrapper"]
@@ -37581,7 +37585,6 @@ mmsi01.com##+js(no-window-open-if)
 soopage.com###main > .row > div:has(> .box > .ads)
 gardeningknowhow.com##.sponsored-post--placeholder
 gardeningknowhow.com##.article__sidebar
-2ip.ua,2ip.me##a[href^="//proxy-seller.com/"]
 fileserve.com##+js(no-window-open-if)
 fileserve.com###uphone-ban
 sexydixy.com##app-reddit-post-viewer > div.explore-post:has(> div > app-promo-post-random)
@@ -38786,8 +38789,6 @@ katu.com##div[class^="TaboolaMore"]
 yellowpages.com##.center-ads
 bestbuy.ca##section[data-automation="dynamic-content-ad-slot"]
 healthgrades.com##div[class]:has(> div[data-visible] > div[data-qa-target="leaderboard-ad"])
-!+ NOT_OPTIMIZED
-healthgrades.com##div[class]:has(> div[data-qa-target="leaderboard-ad"])
 bestmvno.com##.advertextsize
 ||einthusan.tv/promo/request/?
 hockeyfeed.com##.not-prose
@@ -58236,7 +58237,12 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 /(?:com|net)\/[0-9a-f]{12}\.js$/$script,~3p,domain=imgadult.com|imgdrive.net|imgtaxi.com|imgwallet.com
 !
 !
-!
+!+ NOT_OPTIMIZED
+2ip.ua,2ip.me##a[href^="//proxy-seller.com/"]
+!+ NOT_OPTIMIZED
+snbforums.com##.leaderboard_snbad
+!+ NOT_OPTIMIZED
+healthgrades.com##div[class]:has(> div[data-qa-target="leaderboard-ad"])
 !+ NOT_OPTIMIZED
 gamingbible.com##.floating-video-player_container__u4D9_
 !+ NOT_OPTIMIZED
@@ -58988,6 +58994,7 @@ thepostmillennial.com###leader-mot
 thepostmillennial.com##.surfsharkcontent
 !+ NOT_OPTIMIZED
 masalaseen.com##a[target="_blank"] > img
+! https://github.com/AdguardTeam/AdguardFilters/issues/231845
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224811
 !+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194402

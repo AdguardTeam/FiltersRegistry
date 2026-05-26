@@ -1,9 +1,9 @@
-! Checksum: 5rYX20B+M5rFGSPrPbx1HQ
-! Diff-Path: ../patches/14/14-s-1779801068-3600.patch
+! Checksum: Z8dDOs+K1tdX9JGa3+3rEQ
+! Diff-Path: ../patches/14/14-s-1779808317-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.2
-! TimeUpdated: 2026-05-26T13:08:27+00:00
+! Version: 2.2.69.3
+! TimeUpdated: 2026-05-26T15:08:42+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27090,6 +27090,10 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+promo.habr.com#$#.jquery-modal { display: none !important; }
+promo.habr.com#$#body { overflow: auto !important; }
+maltadaily.mt#%#//scriptlet('set-session-storage-item', 'md_popup_shown', '1')
+maltadaily.mt#%#//scriptlet('set-session-storage-item', 'md_popup_clicks', 'null')
 opentix.life##.c-popUp
 vpsmetrics.com##div[data-bookmark-toast].bottom-0.right-0
 google.com##g-bottom-sheet[aria-describedby="promo_desc_id"]
@@ -36302,6 +36306,7 @@ thepost.co.nz,sportbible.com,washingtonpost.com,expert.in.ua,turkiyegazetesi.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+oversteer48.com###elementor-popup-modal-26985
 devonlive.com##.social-follow-comment-bar > div.follow-us
 devonlive.com##.social-follow-comment-bar > div.social-actions > div.social-links
 devonlive.com#$#section[data-testid="social-follow"] > div[data-testid="commenting-box"] > ul:has(> li > span > a[href="https://www.facebook.com/thisisexeter"]) { display: none !important; }
@@ -50058,6 +50063,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+giphy.com##a[href^="https://giphy.page.link?apn=com.giphy.messenger"]
 tntsports.co.uk##div[data-testid="smart-banner"]
 db.sp.netkeiba.com##.nk_info_bunner
 infoyatirim.com###dwnld-app
@@ -51276,6 +51282,8 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231900
+itc.ua#?#.xoxo > li.widget_execphp:has(h3:contains(Партнерські блоги))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231980
 usmagazine.com##.link-related
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231685

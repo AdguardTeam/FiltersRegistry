@@ -1,9 +1,9 @@
-! Checksum: KkGWJjEfG5Y70dg18eG5xA
-! Diff-Path: ../patches/19/19-s-1779801064-3600.patch
+! Checksum: vv5/wrLpoLebukOFWRUbdA
+! Diff-Path: ../patches/19/19-s-1779808314-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.76.5
-! TimeUpdated: 2026-05-26T13:08:35+00:00
+! Version: 2.0.76.6
+! TimeUpdated: 2026-05-26T15:08:52+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3339,6 +3339,10 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+promo.habr.com#$#.jquery-modal { display: none !important; }
+promo.habr.com#$#body { overflow: auto !important; }
+maltadaily.mt#%#//scriptlet('set-session-storage-item', 'md_popup_shown', '1')
+maltadaily.mt#%#//scriptlet('set-session-storage-item', 'md_popup_clicks', 'null')
 opentix.life##.c-popUp
 vpsmetrics.com##div[data-bookmark-toast].bottom-0.right-0
 google.com##g-bottom-sheet[aria-describedby="promo_desc_id"]
@@ -12549,6 +12553,7 @@ thepost.co.nz,sportbible.com,washingtonpost.com,expert.in.ua,turkiyegazetesi.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+oversteer48.com###elementor-popup-modal-26985
 devonlive.com##.social-follow-comment-bar > div.follow-us
 devonlive.com##.social-follow-comment-bar > div.social-actions > div.social-links
 devonlive.com#$#section[data-testid="social-follow"] > div[data-testid="commenting-box"] > ul:has(> li > span > a[href="https://www.facebook.com/thisisexeter"]) { display: none !important; }
