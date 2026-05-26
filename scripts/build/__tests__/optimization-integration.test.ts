@@ -135,14 +135,8 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
         const filterDir = path.join(filtersDir, 'filter_1_Russian');
         await fs.promises.mkdir(filterDir, { recursive: true });
 
-        await fs.promises.copyFile(
-            path.join(REAL_FILTER_DIR, 'metadata.json'),
-            path.join(filterDir, 'metadata.json'),
-        );
-        await fs.promises.copyFile(
-            path.join(REAL_FILTER_DIR, 'revision.json'),
-            path.join(filterDir, 'revision.json'),
-        );
+        await fs.promises.copyFile(path.join(REAL_FILTER_DIR, 'metadata.json'), path.join(filterDir, 'metadata.json'));
+        await fs.promises.copyFile(path.join(REAL_FILTER_DIR, 'revision.json'), path.join(filterDir, 'revision.json'));
 
         await fs.promises.writeFile(
             path.join(filterDir, 'template.txt'),
@@ -164,13 +158,15 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
             minPercent: 25,
             maxPercent: 50,
             strict: true,
-            groups: [{
-                config: { type: 'BASIC', scope: 'GENERIC', hits: 1 },
-                rules: {
-                    [RULE_TO_FILTER]: 0,
-                    [RULE_TO_KEEP]: 9999,
+            groups: [
+                {
+                    config: { type: 'BASIC', scope: 'GENERIC', hits: 1 },
+                    rules: {
+                        [RULE_TO_FILTER]: 0,
+                        [RULE_TO_KEEP]: 9999,
+                    },
                 },
-            }],
+            ],
         });
         const statsPath = path.join(statsDir, 'stats.json');
         await fs.promises.writeFile(statsPath, statsJson, 'utf-8');
