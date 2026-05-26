@@ -66,7 +66,7 @@ const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
 const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
 const tempDir = path.join(__dirname, '../../temp');
 const cachedFiltersDir = path.join(tempDir, 'filters_cached');
-const optimizationConfigCachePath = path.join(tempDir, 'optimization_config');
+const localOptimizationConfigPath = path.join(tempDir, 'optimization_config');
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -122,26 +122,26 @@ const buildFilters = async () => {
     // When --generate-cache we only need to compile filters (which updates filter.txt),
     // skip platform generation, patches preparation, and temp/platforms copying.
     if (generateCache) {
-        await fs.promises.rm(optimizationConfigCachePath, { recursive: true, force: true });
+        await fs.promises.rm(localOptimizationConfigPath, { recursive: true, force: true });
 
-        await localOptimizationConfig.downloadPercentJson(optimizationConfigCachePath);
+        await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
         // eslint-disable-next-line no-console
         console.log(
-            `percent.json saved to ${optimizationConfigCachePath}.\n`
-                 + 'Edit it if needed, then run "yarn generate-cache:stats".',
+            `percent.json saved to ${localOptimizationConfigPath}.\n` +
+                'Edit it if needed, then run "yarn generate-cache:stats".',
         );
 
-        await localOptimizationConfig.downloadStatsFromPercentJson(optimizationConfigCachePath);
+        await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath);
 
         // eslint-disable-next-line no-console
-        console.log(`Optimization config cached to ${optimizationConfigCachePath}.`);
+        console.log(`Optimization config cached to ${localOptimizationConfigPath}.`);
         return;
     }
 
     if (generateStatsFromCachedPercentJson) {
-        await localOptimizationConfig.downloadStatsFromPercentJson(optimizationConfigCachePath);
+        await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath);
         // eslint-disable-next-line no-console
-        console.log(`Stats generated from cached percent.json at ${optimizationConfigCachePath}.`);
+        console.log(`Stats generated from cached percent.json at ${localOptimizationConfigPath}.`);
         return;
     }
 
@@ -166,7 +166,7 @@ const buildFilters = async () => {
     if (useCache) {
         await prepareCachedFiltersDir();
         // eslint-disable-next-line no-console
-        console.log(`Using local optimization config from: ${optimizationConfigCachePath}`);
+        console.log(`Using local optimization config from: ${localOptimizationConfigPath}`);
     }
 
     try {

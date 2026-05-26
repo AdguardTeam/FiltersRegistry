@@ -10,7 +10,7 @@ import { findFiles } from '../../utils/find_files.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const expectedOptimizationConfigCachePath = path.resolve(__dirname, '../../../temp/optimization_config');
+const expectedLocalOptimizationConfigPath = path.resolve(__dirname, '../../../temp/optimization_config');
 
 describe('build.js: cache flag handling', () => {
     const originalArgv = process.argv;
@@ -70,10 +70,10 @@ describe('build.js: cache flag handling', () => {
         } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
             expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).toHaveBeenCalledWith(
-                expectedOptimizationConfigCachePath,
+                expectedLocalOptimizationConfigPath,
             );
             expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).toHaveBeenCalledWith(
-                expectedOptimizationConfigCachePath,
+                expectedLocalOptimizationConfigPath,
             );
         });
         expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
@@ -89,7 +89,7 @@ describe('build.js: cache flag handling', () => {
         } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
             expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).toHaveBeenCalledWith(
-                expectedOptimizationConfigCachePath,
+                expectedLocalOptimizationConfigPath,
             );
         });
         expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).not.toHaveBeenCalled();
@@ -178,22 +178,12 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
 
         await localOptimizationConfig.downloadStatsFromPercentJson(optimizationDir);
 
-        await compile(
-            filtersDir,
-            logPath,
-            reportPath,
-            platformsDir,
-            [FILTER_ID],
-            [],
-            TEST_PLATFORM_CONFIG,
-        );
+        await compile(filtersDir, logPath, reportPath, platformsDir, [FILTER_ID], [], TEST_PLATFORM_CONFIG);
 
         const outputFiles: string[] = await findFiles(platformsDir, () => true);
         const optimizedFiles = outputFiles.filter((f) => f.endsWith('_optimized.txt'));
         expect(optimizedFiles.length).toBeGreaterThan(0);
-        allOutput = (await Promise.all(
-            optimizedFiles.map((f) => fs.promises.readFile(f, 'utf-8')),
-        )).join('\n');
+        allOutput = (await Promise.all(optimizedFiles.map((f) => fs.promises.readFile(f, 'utf-8')))).join('\n');
     }, 30_000);
 
     it('generateStats() does not overwrite existing local stats.json', async () => {
