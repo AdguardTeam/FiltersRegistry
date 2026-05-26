@@ -1,9 +1,9 @@
-! Checksum: gmEfNZNuXu+odsr8CzUgag
-! Diff-Path: ../patches/3/3-s-1779808321-3600.patch
+! Checksum: +MZwmoGyeflWK2g08kzScg
+! Diff-Path: ../patches/3/3-s-1779815680-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.4.85
-! TimeUpdated: 2026-05-26T15:08:12+00:00
+! Version: 2.1.4.86
+! TimeUpdated: 2026-05-26T17:11:11+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -187911,6 +187911,11 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Bad:  ||example.com^$cookie=flat_r_mb (should be in cookies_specific.txt)
 !
 !
+! USA Today Co., Inc., (formerly Gannett)
+$cookie=gup_anonid
+$cookie=gup_clientid
+$cookie=gnt_ti
+$cookie=gnt_i
 ! SnowPlow
 $cookie=/^_sp_id/
 ! Rakuten
@@ -191114,6 +191119,9 @@ d4?appid*type*
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232066
+@@||onlinestarten.net/assets/*sn1_dvt-prod.js$domain=247sports.com
+@@||onlinestarten.net^$xmlhttprequest,domain=247sports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231874
 pedalparts.co.kr#%#//scriptlet('set-constant', 'aCounterPageScriptGoodsView', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231988
@@ -197484,6 +197492,9 @@ bitdefender.com#$#body[style="opacity: 0;"] { opacity: 1 !important; }
 !       %2Fpix.gif%3F$image
 ! Bad:  ||newegg.com/mr/ (for instance, should be in specific.txt)
 !
+! Adobe Campaign
+/r/?id=$image
+%2Fr%2F%3Fid%3D$image
 ! Constant Contact
 .cc.rs6.net/on.jsp$image
 .cc.rs6.net%2Fon.jsp$image
@@ -197822,8 +197833,10 @@ e.mail.cnn.com$image
 ! esputnik.com
 esputnik.com$image
 ! Adobe Campaign
-/r/?id=$image
-%2Fr%2F%3Fid%3D$image
+postoffice.adobe.com/po-server/link/open$image
+postoffice.adobe.com%2Fpo-server%2Flink%2Fopen$image
+apo-prod.adobe.io/po-server/link/open$image
+apo-prod.adobe.io%2Fpo-server%2Flink%2Fopen$image
 sbs-mkt-stage1-res.adobe-campaign.com$image
 ! demdex.net
 demdex.net/event?d_src=$image
