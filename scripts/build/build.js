@@ -46,6 +46,7 @@ const {
     rawReportPath,
     useCache,
     generateCache,
+    generateStatsFromCachedPercentJson,
     noPatchesPrepare,
     stripGeneratedMeta,
 } = flags;
@@ -122,12 +123,25 @@ const buildFilters = async () => {
     // skip platform generation, patches preparation, and temp/platforms copying.
     if (generateCache) {
         await fs.promises.rm(optimizationConfigCachePath, { recursive: true, force: true });
+
         await localOptimizationConfig.downloadPercentJson(optimizationConfigCachePath);
         // eslint-disable-next-line no-console
         console.log(
             `percent.json saved to ${optimizationConfigCachePath}.\n`
-            + 'Edit it if needed, then run "yarn build:local".',
+                 + 'Edit it if needed, then run "yarn generate-cache:stats".',
         );
+
+        await localOptimizationConfig.downloadStatsFromPercentJson(optimizationConfigCachePath);
+
+        // eslint-disable-next-line no-console
+        console.log(`Optimization config cached to ${optimizationConfigCachePath}.`);
+        return;
+    }
+
+    if (generateStatsFromCachedPercentJson) {
+        await localOptimizationConfig.downloadStatsFromPercentJson(optimizationConfigCachePath);
+        // eslint-disable-next-line no-console
+        console.log(`Stats generated from cached percent.json at ${optimizationConfigCachePath}.`);
         return;
     }
 
@@ -151,7 +165,6 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
-        await localOptimizationConfig.downloadStatsFromPercentJson(optimizationConfigCachePath);
         // eslint-disable-next-line no-console
         console.log(`Using local optimization config from: ${optimizationConfigCachePath}`);
     }

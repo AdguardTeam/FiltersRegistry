@@ -8,6 +8,7 @@ export interface BuildFlags {
     rawReportPath: string;
     useCache: boolean;
     generateCache: boolean;
+    generateStatsFromCachedPercentJson: boolean;
     noPatchesPrepare: boolean;
     stripGeneratedMeta: boolean;
 }
@@ -25,6 +26,7 @@ export function parseFlags(argv: string[]): BuildFlags {
         rawReportPath: '',
         useCache: false,
         generateCache: false,
+        generateStatsFromCachedPercentJson: false,
         noPatchesPrepare: false,
         stripGeneratedMeta: false,
     };
@@ -58,6 +60,10 @@ export function parseFlags(argv: string[]): BuildFlags {
             flags.generateCache = true;
         }
 
+        if (val === '--generate-stats-from-cached-percent-json') {
+            flags.generateStatsFromCachedPercentJson = true;
+        }
+
         if (val === '--no-patches-prepare') {
             flags.noPatchesPrepare = true;
         }
@@ -84,6 +90,24 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         return {
             type: 'error',
             message: `Error: --use-cache and --generate-cache are mutually exclusive.\n${hint}`,
+        };
+    }
+
+    if (flags.useCache && flags.generateStatsFromCachedPercentJson) {
+        return {
+            type: 'error',
+            message:
+                'Error: --use-cache'
+                    + `and --generate-stats-from-cached-percent-json are mutually exclusive.\n${hint}`,
+        };
+    }
+
+    if (flags.generateCache && flags.generateStatsFromCachedPercentJson) {
+        return {
+            type: 'error',
+            message:
+                'Error: --generate-cache and '
+                    + `--generate-stats-from-cached-percent-json are mutually exclusive.\n${hint}`,
         };
     }
 
@@ -116,6 +140,7 @@ const KNOWN_ARGS_PREFIXES = [
 const KNOWN_ARGS_EXACT = new Set([
     '--use-cache',
     '--generate-cache',
+    '--generate-stats-from-cached-percent-json',
     '--no-patches-prepare',
     '--strip-generated-meta',
 ]);

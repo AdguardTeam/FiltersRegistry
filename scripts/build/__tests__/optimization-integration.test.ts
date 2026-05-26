@@ -10,12 +10,9 @@ import { findFiles } from '../../utils/find_files.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const expectedOptimizationConfigCachePath = path.resolve(
-    __dirname,
-    '../../../temp/optimization_config',
-);
+const expectedOptimizationConfigCachePath = path.resolve(__dirname, '../../../temp/optimization_config');
 
-describe('build.js: --use-cache / --generate-cache flag handling', () => {
+describe('build.js: cache flag handling', () => {
     const originalArgv = process.argv;
 
     beforeEach(() => {
@@ -48,26 +45,55 @@ describe('build.js: --use-cache / --generate-cache flag handling', () => {
         vi.clearAllMocks();
     });
 
-    it('downloadStatsFromPercentJson is called with optimizationConfigCacheDir when --use-cache', async () => {
+    it('--use-cache: compile runs, no optimization downloads', async () => {
         process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
-        const { localOptimizationConfig: mockedLocalOptimizationConfig } = await import('@adguard/filters-compiler');
+        const {
+            compile: mockedCompile,
+            localOptimizationConfig: mockedLocalOptimizationConfig,
+        } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
-            expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson))
-                .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
         });
+        expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).not.toHaveBeenCalled();
+        expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).not.toHaveBeenCalled();
     });
 
-    it('downloadPercentJson is called with optimizationConfigCacheDir when --generate-cache', async () => {
+    it('--generate-cache: downloads percent.json and stats, compile skipped', async () => {
         process.argv = ['node', 'build.js', '--generate-cache'];
         await import('../build.js');
 
-        const { localOptimizationConfig: mockedLocalOptimizationConfig } = await import('@adguard/filters-compiler');
+        const {
+            compile: mockedCompile,
+            localOptimizationConfig: mockedLocalOptimizationConfig,
+        } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
-            expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson))
-                .toHaveBeenCalledWith(expectedOptimizationConfigCachePath);
+            expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).toHaveBeenCalledWith(
+                expectedOptimizationConfigCachePath,
+            );
+            expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).toHaveBeenCalledWith(
+                expectedOptimizationConfigCachePath,
+            );
         });
+        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
+    });
+
+    it('--generate-stats-from-cached-percent-json: downloads stats only, compile skipped', async () => {
+        process.argv = ['node', 'build.js', '--generate-stats-from-cached-percent-json'];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationConfig: mockedLocalOptimizationConfig,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).toHaveBeenCalledWith(
+                expectedOptimizationConfigCachePath,
+            );
+        });
+        expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).not.toHaveBeenCalled();
+        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
     });
 });
 
