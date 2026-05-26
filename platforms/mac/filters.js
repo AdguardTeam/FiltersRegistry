@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.68.87",
-			"timeUpdated": "2026-05-26T17:11:00+0000",
+			"version": "2.4.68.88",
+			"timeUpdated": "2026-05-26T18:53:53+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.4.86",
-			"timeUpdated": "2026-05-26T17:11:11+0000",
+			"version": "2.1.4.87",
+			"timeUpdated": "2026-05-26T18:54:05+0000",
 			"languages": []
 		},
 		{
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.69.91",
-			"timeUpdated": "2026-05-26T13:08:19+0000",
+			"version": "2.0.69.92",
+			"timeUpdated": "2026-05-26T18:54:18+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.69.4",
-			"timeUpdated": "2026-05-26T17:11:37+0000",
+			"version": "2.2.69.5",
+			"timeUpdated": "2026-05-26T18:54:27+0000",
 			"languages": []
 		},
 		{
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.87.44",
-			"timeUpdated": "2026-05-26T13:08:34+0000",
+			"version": "2.0.87.45",
+			"timeUpdated": "2026-05-26T18:54:34+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.76.7",
-			"timeUpdated": "2026-05-26T17:11:48+0000",
+			"version": "2.0.76.8",
+			"timeUpdated": "2026-05-26T18:54:36+0000",
 			"languages": []
 		},
 		{
@@ -325,8 +325,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.29.35",
-			"timeUpdated": "2026-05-26T17:11:49+0000",
+			"version": "2.0.29.36",
+			"timeUpdated": "2026-05-26T18:54:36+0000",
 			"languages": []
 		},
 		{
