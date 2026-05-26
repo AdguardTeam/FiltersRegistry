@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: yugk2Z6fxBGg+9Kg7pWpKQ
-! Diff-Path: ../patches/14/14-s-1779773420-3600.patch
+! Checksum: 3jlR2JVdPaOPjtaXNDsyTw
+! Diff-Path: ../patches/14/14-s-1779780312-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.68.99
-! TimeUpdated: 2026-05-26T05:27:09+00:00
+! Version: 2.2.69.0
+! TimeUpdated: 2026-05-26T07:22:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9758,7 +9758,6 @@ hahnair.com###cookieRequestBox
 britishairways.com##body[style^="overflow:"]:style(overflow: auto !important;)
 britishairways.com###ensNotifyBanner[aria-label="Consent Banner"]:style(display: none !important;)
 britishairways.com###overlay:style(display: none !important;)
-meramedas.com.tr,ayedas.com.tr,toroslaredas.com.tr,baskentedas.com.tr##.footer_cerezpolitikasi
 xoxowifi.com###cookies_message_container
 tylko.com##.ty-settings
 cn.momondo.com##body:style(position: static !important; overflow: auto !important;)
@@ -16611,6 +16610,8 @@ befestigungsfuchs.de,jawoll.de,cafe-royal.com,campingplus.de,bikebox-shop.de,mli
 ! Misc rules, removed during optimization. If some rules are in groups, no need to move them here
 !
 !
+!+ NOT_OPTIMIZED
+meramedas.com.tr,ayedas.com.tr,toroslaredas.com.tr,baskentedas.com.tr##.footer_cerezpolitikasi
 !+ NOT_OPTIMIZED
 optqc.com,brainhub.eu##.fs-consent_banner
 !+ NOT_OPTIMIZED
@@ -36663,7 +36664,8 @@ leggo.it###box_newsbuon
 jetpacglobal.com##.css-v2kfba
 news.de##section:has(> #newsletterFormBox:last-child)
 shadowcore.ru###tg-btn
-darntough.com##body > div:has(> .needsclick > div[aria-label="POPUP Form"])
+darntough.com##html > body:not(#style_important):style(overflow: auto !important;)
+darntough.com##body > div:has(> .needsclick > div[aria-label="POPUP Form"]):style(display: none !important;)
 1tv.ru##.title__social__link
 andhrajyothy.com##.sub_n_follow
 dws.com##.d-newsletter-teaser
@@ -53207,6 +53209,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+115.com##.ceiling-feature
 prostomob.com##.forum-cta-box
 unian.ua##.support-post
 babel.ua##.js-donate-widget

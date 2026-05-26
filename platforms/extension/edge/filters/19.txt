@@ -1,9 +1,9 @@
-! Checksum: TbUYvjs0rdJg82oSH0W7jA
-! Diff-Path: ../patches/19/19-s-1779773403-3600.patch
+! Checksum: kKjeo2I+n2anM2MEPVsqOQ
+! Diff-Path: ../patches/19/19-s-1779780294-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.76.2
-! TimeUpdated: 2026-05-26T05:27:18+00:00
+! Version: 2.0.76.3
+! TimeUpdated: 2026-05-26T07:22:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14367,7 +14367,8 @@ leggo.it###box_newsbuon
 jetpacglobal.com##.css-v2kfba
 news.de##section:has(> #newsletterFormBox:last-child)
 shadowcore.ru###tg-btn
-darntough.com##body > div:has(> .needsclick > div[aria-label="POPUP Form"])
+darntough.com#$#html > body:not(#style_important) { overflow: auto !important; }
+darntough.com#$#body > div:has(> .needsclick > div[aria-label="POPUP Form"]) { display: none !important; }
 1tv.ru##.title__social__link
 andhrajyothy.com##.sub_n_follow
 dws.com##.d-newsletter-teaser
