@@ -1,14 +1,14 @@
-! Checksum: k5BEN7dmBDGlI0UgLGuzMg
-! Diff-Path: ../patches/243/243-s-1779601944-14400.patch
+! Checksum: VCfRXUEFMbdsrvuuFnhFJg
+! Diff-Path: ../patches/243/243-s-1779774893-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.58
-! TimeUpdated: 2026-05-24T05:49:50+00:00
+! Version: 2.0.24.59
+! TimeUpdated: 2026-05-26T05:52:23+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-05-24 07:10:24 CEST
+! Last modified: 2026-05-26 03:28:25 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -369,6 +369,7 @@ citattorget.se##.adsense-main
 citiboard.se##div[adunit]
 citymark.today,hotellorestaurang.se,omtanke.today##.post--card:has(a[href*="/annons/"])
 computersweden.se##.nativo
+computersweden.se#%#//scriptlet('ubo-aopr', '_sp_')
 computersweden.se##.latest-content__card-secondary:has(.nativo)
 com.se,~www.com.se#$#html::before { content: "OBS! VARNING! Om denna sida är en butik så är det förmodligen en bluffbutik. Detta är ett meddelande från den svenska listan i din annonsblockerare." !important; font-size: 18px !important; font-family: sans !important; background-color: red !important; color: white !important; padding: 6px !important; width: 100% !important; display: block !important; text-align: center !important; }
 conpot.se#%#//scriptlet('ubo-set', 'square_array1', 'null')
@@ -1035,6 +1036,9 @@ lwcdn.com#%#//scriptlet('ubo-aeld', '/^(?:adBlocker|contextmenu)$/')
 lwcdn.com,alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se,kungsbackaposten.se,kungalvsposten.se,molndalsposten.se,partilletidning.se,sttidningen.se,markposten.se,harrydaposten.se,mellerudsnyheter.se#%#//scriptlet('ubo-json-prune-fetch-response', 'autoplay', '', 'propsToMatch', 'url:ljsp.lwcdn.com')
 lysekilsposten.se###archiveAdContainer, .casino-wrapper
 m3.se,pcforalla.se,macworld.se#%#//scriptlet('ubo-href-sanitizer', 'a[href*="/idg.digidip.net/"]', '?url')
+m3.se,pcforalla.se,macworld.se##.site-main-fullwidth-sponsored
+m3.se,pcforalla.se,macworld.se,computersweden.se#%#//scriptlet('ubo-acs', 'dataLayer.push', 'fireGtm')
+m3.se,pcforalla.se,macworld.se,computersweden.se#%#//scriptlet('ubo-acs', 'document.createElement', 'admiral')
 macken.xyz##a[target="_blank"]:not([href^="/"]):not([href*="/macken.xyz"])
 macken.xyz###snowflakes
 macken.xyz##.et_pb_slider:has(a[target="_blank"])

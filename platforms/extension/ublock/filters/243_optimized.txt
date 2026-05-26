@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: J4siSO4X0P36tg9yz2s5hw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1779601962-14400.patch
+! Checksum: I2+K+5FCDBrA2X6TtXKFBA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1779774913-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.58
-! TimeUpdated: 2026-05-24T05:49:50+00:00
+! Version: 2.0.24.59
+! TimeUpdated: 2026-05-26T05:52:23+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -357,6 +357,7 @@ citattorget.se##.adsense-main
 citiboard.se##div[adunit]
 citymark.today,hotellorestaurang.se,omtanke.today##.post--card:has(a[href*="/annons/"])
 computersweden.se##.nativo
+computersweden.se##+js(aopr, _sp_)
 computersweden.se##.latest-content__card-secondary:has(.nativo)
 com.se,~www.com.se##html::before:style(content: "OBS! VARNING! Om denna sida är en butik så är det förmodligen en bluffbutik. Detta är ett meddelande från den svenska listan i din annonsblockerare." !important; font-size: 18px !important; font-family: sans !important; background-color: red !important; color: white !important; padding: 6px !important; width: 100% !important; display: block !important; text-align: center !important;)
 conpot.se##+js(set, square_array1, null)
@@ -1023,6 +1024,9 @@ lwcdn.com##+js(aeld, /^(?:adBlocker|contextmenu)$/)
 lwcdn.com,alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se,kungsbackaposten.se,kungalvsposten.se,molndalsposten.se,partilletidning.se,sttidningen.se,markposten.se,harrydaposten.se,mellerudsnyheter.se##+js(json-prune-fetch-response, autoplay, , propsToMatch, url:ljsp.lwcdn.com)
 lysekilsposten.se###archiveAdContainer, .casino-wrapper
 m3.se,pcforalla.se,macworld.se##+js(href-sanitizer, a[href*="/idg.digidip.net/"], ?url)
+m3.se,pcforalla.se,macworld.se##.site-main-fullwidth-sponsored
+m3.se,pcforalla.se,macworld.se,computersweden.se##+js(acs, dataLayer.push, fireGtm)
+m3.se,pcforalla.se,macworld.se,computersweden.se##+js(acs, document.createElement, admiral)
 macken.xyz##a[target="_blank"]:not([href^="/"]):not([href*="/macken.xyz"])
 macken.xyz###snowflakes
 macken.xyz##.et_pb_slider:has(a[target="_blank"])
