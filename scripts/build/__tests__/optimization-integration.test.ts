@@ -279,7 +279,7 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
         allOutput = (await Promise.all(optimizedFiles.map((f) => fs.promises.readFile(f, 'utf-8')))).join('\n');
     }, 30_000);
 
-    it('generateStats() does not overwrite existing local stats.json', async () => {
+    it('local stats.json is not modified by compile', async () => {
         const statsPath = path.join(tmpDir, 'optimization_config', 'filters', String(FILTER_ID), 'stats.json');
         const statsContentAfter = await fs.promises.readFile(statsPath, 'utf-8');
         expect(statsContentAfter).toBe(statsContentBefore);
