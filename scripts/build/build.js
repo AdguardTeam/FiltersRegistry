@@ -122,7 +122,7 @@ const buildFilters = async () => {
                 + 'Edit it if needed, then run "yarn generate-cache:stats".',
         );
 
-        await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath);
+        await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
 
         // eslint-disable-next-line no-console
         console.log(`Optimization config cached to ${localOptimizationConfigPath}.`);
@@ -130,7 +130,7 @@ const buildFilters = async () => {
     }
 
     if (generateStatsFromCachedPercentJson) {
-        await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath);
+        await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
         // eslint-disable-next-line no-console
         console.log(`Stats generated from cached percent.json at ${localOptimizationConfigPath}.`);
         return;
@@ -156,6 +156,7 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
+        localOptimizationConfig.useLocalConfig(localOptimizationConfigPath);
         // eslint-disable-next-line no-console
         console.log(`Using local optimization config from: ${localOptimizationConfigPath}`);
     }

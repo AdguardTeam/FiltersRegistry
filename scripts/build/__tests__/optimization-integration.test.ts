@@ -12,6 +12,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const expectedLocalOptimizationConfigPath = path.resolve(__dirname, '../../../temp/optimization_config');
 
+const EMPTY_FILTER_IDS = Object.freeze([]);
+const FILTER_ID = 1;
+
 describe('build.js: cache flag handling', () => {
     const originalArgv = process.argv;
 
@@ -22,6 +25,7 @@ describe('build.js: cache flag handling', () => {
             localOptimizationConfig: {
                 downloadPercentJson: vi.fn().mockResolvedValue(undefined),
                 downloadStatsFromPercentJson: vi.fn().mockResolvedValue(undefined),
+                useLocalConfig: vi.fn(),
             },
         }));
         vi.doMock('fs', () => ({
@@ -45,7 +49,7 @@ describe('build.js: cache flag handling', () => {
         vi.clearAllMocks();
     });
 
-    it('--use-cache: compile runs, no optimization downloads', async () => {
+    it('--use-cache: compile runs, no optimization downloads before', async () => {
         process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
@@ -58,6 +62,7 @@ describe('build.js: cache flag handling', () => {
         });
         expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).not.toHaveBeenCalled();
         expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).not.toHaveBeenCalled();
+        expect(vi.mocked(mockedLocalOptimizationConfig.useLocalConfig)).toHaveBeenCalled();
     });
 
     it('--generate-cache: downloads percent.json and stats, compile skipped', async () => {
@@ -74,6 +79,24 @@ describe('build.js: cache flag handling', () => {
             );
             expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).toHaveBeenCalledWith(
                 expectedLocalOptimizationConfigPath,
+                EMPTY_FILTER_IDS,
+            );
+        });
+        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
+    });
+
+    it(`--generate-cache --include=${FILTER_ID}: scopes stats download to filter ${FILTER_ID}`, async () => {
+        process.argv = ['node', 'build.js', '--generate-cache', `--include=${FILTER_ID}`];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationConfig: mockedLocalOptimizationConfig,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).toHaveBeenCalledWith(
+                expectedLocalOptimizationConfigPath,
+                [FILTER_ID],
             );
         });
         expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
@@ -90,10 +113,85 @@ describe('build.js: cache flag handling', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).toHaveBeenCalledWith(
                 expectedLocalOptimizationConfigPath,
+                EMPTY_FILTER_IDS,
             );
         });
         expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).not.toHaveBeenCalled();
         expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
+    });
+
+    it(`--generate-stats-from-cached-percent-json --include=${FILTER_ID}:`
+        + ` scopes stats download to filter ${FILTER_ID}`, async () => {
+        process.argv = ['node', 'build.js', '--generate-stats-from-cached-percent-json',
+            `--include=${FILTER_ID}`];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationConfig: mockedLocalOptimizationConfig,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).toHaveBeenCalledWith(
+                expectedLocalOptimizationConfigPath,
+                [FILTER_ID],
+            );
+        });
+        expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).not.toHaveBeenCalled();
+        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
+    });
+
+    it('--use-cache with local cache: loads stats for all filters when no --include', async () => {
+        vi.doMock('fs', () => ({
+            default: {
+                existsSync: vi.fn().mockImplementation((p: string) => p.endsWith('percent.json')),
+                promises: {
+                    cp: vi.fn().mockResolvedValue(undefined),
+                    rm: vi.fn().mockResolvedValue(undefined),
+                    writeFile: vi.fn().mockResolvedValue(undefined),
+                },
+            },
+        }));
+        process.argv = ['node', 'build.js', '--use-cache'];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationConfig: mockedLocalOptimizationConfig,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
+        });
+        expect(vi.mocked(mockedLocalOptimizationConfig.useLocalConfig))
+            .toHaveBeenCalledWith(expectedLocalOptimizationConfigPath);
+        expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).not.toHaveBeenCalled();
+    });
+
+    it(`--use-cache with local cache and --include=${FILTER_ID}:`
+         + ` loads stats for filter ${FILTER_ID} only`, async () => {
+        vi.doMock('fs', () => ({
+            default: {
+                existsSync: vi.fn().mockImplementation((p: string) => p.endsWith('percent.json')),
+                promises: {
+                    cp: vi.fn().mockResolvedValue(undefined),
+                    rm: vi.fn().mockResolvedValue(undefined),
+                    writeFile: vi.fn().mockResolvedValue(undefined),
+                },
+            },
+        }));
+        process.argv = ['node', 'build.js', '--use-cache', '--include=1'];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationConfig: mockedLocalOptimizationConfig,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
+        });
+        expect(vi.mocked(mockedLocalOptimizationConfig.useLocalConfig)).toHaveBeenCalledWith(
+            expectedLocalOptimizationConfigPath,
+        );
+        expect(vi.mocked(mockedLocalOptimizationConfig.downloadStatsFromPercentJson)).not.toHaveBeenCalled();
     });
 });
 
@@ -101,7 +199,6 @@ const REAL_FILTER_DIR = path.resolve(__dirname, '../../../filters/filter_1_Russi
 
 const RULE_TO_FILTER = '||e2e-optimization-filtered.example^';
 const RULE_TO_KEEP = '||e2e-optimization-kept.example^';
-const FILTER_ID = 1;
 
 const TEST_PLATFORM_CONFIG: Record<string, Record<string, unknown>> = {
     TEST: {
@@ -172,7 +269,7 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
         await fs.promises.writeFile(statsPath, statsJson, 'utf-8');
         statsContentBefore = statsJson;
 
-        await localOptimizationConfig.downloadStatsFromPercentJson(optimizationDir);
+        localOptimizationConfig.useLocalConfig(optimizationDir);
 
         await compile(filtersDir, logPath, reportPath, platformsDir, [FILTER_ID], [], TEST_PLATFORM_CONFIG);
 
