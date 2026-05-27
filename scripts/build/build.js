@@ -50,12 +50,6 @@ const {
     stripGeneratedMeta,
 } = flags;
 
-if (useCache && generateCache) {
-    // eslint-disable-next-line no-console
-    console.error('Error: --use-cache and --generate-cache are mutually exclusive.');
-    process.exit(1);
-}
-
 /**
  * Set all relative paths needed for compiler
  */
