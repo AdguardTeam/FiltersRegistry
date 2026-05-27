@@ -141,7 +141,9 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
-- `--generate-cache` — compile filters and update cache only (no platform files)
+- `--generate-cache` — download `percent.json` and per-filter `stats.json` files
+- `--generate-stats-from-cached-percent-json` — download missing `stats.json` files using
+  an existing local `percent.json` (edit it first if needed)
 
 **Valid combinations:**
 
