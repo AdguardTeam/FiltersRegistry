@@ -12,7 +12,9 @@ for all supported AdGuard products.
 
 ## Technical Context
 
-- **Language / Version**: TypeScript and JavaScript, Node.js >= 22, ESM (`"type": "module"`)
+- **Language / Version**: TypeScript and JavaScript, Node.js >= 22, ESM (`"type": "module"`).
+  New code must be written in TypeScript. The project is gradually migrating all scripts to
+  TypeScript; existing `.js` files should be converted to `.ts` when touched.
 - **Primary Dependencies**:
     - `@adguard/filters-compiler` — compiles filter templates into final filter lists
     - `@adguard/agtree` — AdGuard filter rule parser / AST
@@ -51,7 +53,8 @@ for all supported AdGuard products.
 │       └── <sub-target>/           # extension/ only: chromium, chromium-mv3, edge, firefox,
 │                                   #   opera, opera-mv3, safari, android-content-blocker, ublock
 ├── scripts/                        # All build and utility scripts
-│   ├── build/                      # build.js, constants.js, custom_platforms.js, patches.js
+│   ├── build/                      # build.js, build-config.ts, constants.js,
+│   │                               #   custom_platforms.js, patches.js, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
 │   ├── repository/                 # compress.js — repository compression
 │   ├── translations/               # Locale download/upload tooling
@@ -77,8 +80,11 @@ for all supported AdGuard products.
 | Command | Description |
 | ------- | ----------- |
 | `yarn build` | Build all filters (`tsx scripts/build/build.js`) |
+| `yarn build:local` | Build filters from cached `filter.txt` files (`tsx scripts/build/build.js --use-cache`) |
 | `yarn auto-build` | Full automated build via `bash scripts/auto_build.sh` |
 | `yarn build:patches` | Build incremental patches |
+| `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
+| `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
 | `yarn lint:code` | ESLint check (`eslint . --ext .js,.ts`) |
@@ -100,6 +106,11 @@ After completing any task that modifies code in `scripts/`:
     ```bash
     yarn lint
     ```
+
+    > **Important:** `yarn lint` runs three checks sequentially:
+    > `yarn lint:code` → `yarn lint:types` → `yarn lint:md`.
+    > A failure in any one stage aborts the rest. Always verify that **all three**
+    > pass, including Markdown lint on edited `.md` files.
 
 2. **Run unit tests.** All tests must pass.
 
@@ -123,6 +134,12 @@ After completing any task that modifies code in `scripts/`:
 
 7. **Do not modify third-party filter sources.** Files under `filters/ThirdParty/` are managed
    by the upstream filter lists workflow and should not be edited manually.
+
+8. **Synchronise code, tests, and documentation for CLI changes.** When adding or modifying
+   command-line arguments, build flags, or their compatibility rules:
+    - Add or update tests in `scripts/build/__tests__/` covering the new behaviour.
+    - Update the *Command Compatibility* section in `DEVELOPMENT.md`.
+    - Never merge CLI changes without matching tests and documentation.
 
 ## Code Guidelines
 

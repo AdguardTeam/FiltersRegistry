@@ -30,6 +30,11 @@
     yarn test
     ```
 
+    > **Note:** `yarn lint` runs three checks in sequence: ESLint (`yarn lint:code`),
+    > TypeScript type checking (`yarn lint:types`), and Markdownlint (`yarn lint:md`).
+    > All three must pass. The build scripts are a mix of JavaScript and TypeScript;
+    > `tsx` executes both transparently — no manual compilation step is needed.
+
 ## Development Workflow
 
 ### Building Filters
@@ -60,6 +65,123 @@ Generate a build report to a custom file:
 
 ```bash
 yarn build --report='report-adguard.txt'
+```
+
+#### Additional Build Flags
+
+The `yarn build` command (and `yarn build:local`) also accepts:
+
+- `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`, used
+  to build patches. Speeds up the build when patch generation
+  (`yarn build:patches`) is not needed afterwards.
+- `--strip-generated-meta` — after compilation, remove generated meta lines
+  (`! Checksum`, `! Diff-Path`, `! TimeUpdated`, `! Version`) from all filter
+  files in `platforms/` and `temp/platforms/`. Useful when comparing outputs between builds.
+
+### Generating Filter Cache
+
+To update the cached `filter.txt` files in `filters/`, used for
+testing/reproducible builds, run:
+
+```bash
+yarn generate-cache
+```
+
+This compiles every filter from its `template.txt` and updates the corresponding
+`filter.txt` inside `filters/`. Platform-specific filters and patches are **not**
+generated. The resulting `filter.txt` files contain the fully resolved filter
+content (all `@include` and `!#include` directives expanded) and can be used to
+build filters from cache with `yarn build:local`.
+
+### Building From Cache
+
+To build filters from previously cached `filter.txt` files without downloading
+external filters, run:
+
+```bash
+yarn build:local
+```
+
+Under the hood this copies `filters/` to `temp/filters_cached/`, replaces every
+`template.txt` with a single `@include "./filter.txt"` directive, and compiles
+from that copy. The original `filters/` directory is never modified.
+
+The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` flags can be
+combined:
+
+```bash
+yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
+```
+
+**Typical workflow — comparing two compiler versions:**
+
+1. Download and compile filter content into cache:
+   `yarn generate-cache`
+1. Build from cache with generated metadata lines stripped:
+   `yarn build:local --no-patches-prepare --strip-generated-meta`
+1. Rename the output: `mv platforms platforms_A`
+1. Switch to the other compiler version
+   (e.g. `yarn add @adguard/filters-compiler@...`)
+1. Build again with the same flags:
+   `yarn build:local --no-patches-prepare --strip-generated-meta`
+1. Rename the output: `mv platforms platforms_B`
+1. Diff the two directories (e.g. in Total Commander, WinMerge, or
+   with `diff -r`)
+
+Both runs use the exact same cached filter content and strip all volatile
+metadata, so any difference comes solely from the compiler.
+
+#### Command Compatibility
+
+The following flags can be used with `yarn build` and `yarn build:local`:
+
+- `-i=`, `--include=` — comma-separated filter IDs to build (e.g., `--include=1,2,3`)
+- `-s=`, `--skip=` — comma-separated filter IDs to exclude (e.g., `--skip=12,24`)
+- `--report=` — custom report file name (e.g., `--report='report-adguard.txt'`)
+- `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
+- `--strip-generated-meta` — remove volatile metadata lines from built files
+- `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
+- `--generate-cache` — compile filters and update cache only (no platform files)
+
+**Valid combinations:**
+
+```bash
+# Base builds
+yarn build
+yarn build:local
+
+# Filter selection
+yarn build --include=1,2,3
+yarn build --skip=12,24
+yarn build --include=1,2,3 --skip=2   # intersection minus exclusion. Excessive, but it works
+
+# Report output
+yarn build --report='report-adguard.txt'
+
+# Patch and metadata control
+yarn build --no-patches-prepare
+yarn build --strip-generated-meta
+
+# Combined examples
+yarn build --include=1,2,3 --no-patches-prepare --strip-generated-meta
+yarn build:local --skip=12,24 --report='report.txt' --strip-generated-meta
+
+# Cache generation with filter selection
+yarn build --generate-cache
+yarn build --generate-cache --include=1,2,3
+yarn build --generate-cache --skip=12,24
+yarn build --generate-cache --report='report.txt'
+```
+
+**Invalid or ineffective combinations:**
+
+```bash
+# Mutually exclusive flags → script exits with error
+yarn build --use-cache --generate-cache
+
+# --generate-cache exits early; these flags are incompatible → script exits with error
+yarn build --generate-cache --strip-generated-meta
+yarn build --generate-cache --no-patches-prepare
 ```
 
 ### Automated Build
@@ -242,6 +364,9 @@ All build tooling lives under `scripts/`. After making changes:
 1. If you changed `scripts/wildcard-domain-processor/`, update tests in
    `scripts/wildcard-domain-processor/__tests__/`.
 1. Run `yarn validate` if the change affects filter compilation or platform outputs.
+
+Build scripts under `scripts/` are written in JavaScript and TypeScript, executed
+via [tsx](https://github.com/privatenumber/tsx) — no manual compilation step is needed.
 
 ## Troubleshooting
 

@@ -7,7 +7,10 @@ export default defineConfig({
             enabled: true,
             tsconfig: './tsconfig.json',
         },
-        include: ['scripts/wildcard-domain-processor/__tests__/*.test.ts'],
+        include: [
+            'scripts/wildcard-domain-processor/__tests__/*.test.ts',
+            'scripts/build/__tests__/*.test.ts',
+        ],
         watch: false,
         silent: true,
     },
