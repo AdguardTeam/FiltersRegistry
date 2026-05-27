@@ -1,9 +1,9 @@
-! Checksum: cc9btsZGomOdRsGpSLp3BQ
-! Diff-Path: ../patches/8/8-s-1774952977-3600.patch
+! Checksum: gmeradI7pukdC0xDROu/pA
+! Diff-Path: ../patches/8/8-s-1779434735-3600.patch
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.9.7
-! TimeUpdated: 2026-03-31T10:26:36+00:00
+! Version: 2.0.9.23
+! TimeUpdated: 2026-05-22T07:22:11+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -150,7 +150,7 @@ _advertentieleaderboardhome.
 ||bol-an.nl/wp-content/uploads/*/Adv_
 ||brandweerspotters.nl/modules/banners/
 ||buzzbie.nl/uploads/banners/
-||cdn-ster-nl.akamaized.net/*.mp4$redirect=noopmp4-1s,domain=npo.nl
+||cdn-ster-nl.akamaized.net/*.mp4$redirect=noopmp4-1s,domain=nos.nl|npo.nl
 ||cdn-tmo.nl^*/banners/
 ||cdn-webcam-harlingen.nl/adv/
 ||chatmetvreemden.be/static/html/
@@ -683,6 +683,7 @@ rtvkrimpenerwaard.nl###pg-1407-8
 meteoalblasserdam.nl###pic_446
 sexpower.nl###pre-footer-banners
 bdsmgirl.nl###product_banner
+trouw.nl###r2
 boerderij.nl###rb_logolink_box
 fcutrecht.net###reclame
 mnm.be,stubru.be###reclameblok-wrapper
@@ -1017,6 +1018,7 @@ radiovisie.eu##.gmollik
 wattedoen.be##.gpt_box
 srherald.com##.gsrhera
 ninefornews.nl##.gyehnsh
+trouw.nl##.h1-container
 porntube.nl,sextube.nl##.happy-player-beside
 porntube.nl,sextube.nl##.happy-section
 noordkopcentraal.nl##.headbanner
@@ -1476,7 +1478,7 @@ ah.nl##.product-card-portrait_root__ZiRpZ:has(.promotion_root__pAAlu)
 tvgids.nl##.square-item:has( > .banner)
 plus.nl##a[data-link]:has(.sponsored-product)
 agconnect.nl#?#.c-teaser:has(.c-pill--partner)
-mediamarkt.*##aside[class="sc-a2fcee8-0 fmYGst"]:has(button[aria-label="Lees meer over productsponsoring"])
+mediamarkt.*##aside[class="sc-3e143820-0 erAlUN"]:has(button[aria-label="Lees meer over productsponsoring"])
 delhaize.be#?#.product-item:contains(Gesponsord)
 androidplanet.nl##div[data-name="post"]:has(div[data-name="sponsor-logo"])
 krefel.be#?#div[class^="Flex-styled__StyledFlex-"]:has(h3:contains(Gesponsorde producten))
@@ -1556,6 +1558,8 @@ vakantieplaats.nl#@#.topAds
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||zsp1.ah.be^
+||zsp1.ah.nl^
 ||h3v9p8x2q1r7-agckaeh6g2ehcaes.*.azurewebsites.net^
 ||x9t7g4m2qk2.azurewebsites.net^
 ||kjdsfjisdfjr23.azurewebsites.net^
@@ -1595,7 +1599,7 @@ autotrader.nl$$script[tag-content="Flags."][min-length="10000"][max-length="3000
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208455
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197442
-kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl#%#//scriptlet('prevent-xhr', 'assets.prod.webx.talpa.digital/ad/view/')
+radio10.nl,kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl#%#//scriptlet('prevent-xhr', 'assets.prod.webx.talpa.digital/ad/view/')
 !+ NOT_OPTIMIZED
 vandaaginside.nl,538.nl,hartvannederland.nl#@##topbanner_ad
 !+ NOT_OPTIMIZED
@@ -1629,8 +1633,8 @@ tweakers.net#%#//scriptlet('prevent-fetch', '/a[ab]\.tweakers\.nl/')
 kijk.nl#@##topbanner_ad
 @@/prebid/ad.gif?user=*&adId=$domain=kijk.nl
 @@||ads-talpa.adhese.com/json/$domain=kijk.nl
-kijk.nl#$#body .pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: initial !important; }
-kijk.nl#%#(()=>{const t={apply:(t,e,n)=>{try{if((new Error).stack.includes("Popup"))return Reflect.apply(t,e,n);const o=e;"function"==typeof o&&(o.toString().includes("adBlockerDetected")||o.toString().includes("pub_300x250m"))&&(e=()=>new Promise((t=>t(!1))))}catch(t){}return Reflect.apply(t,e,n)}};window.Function.prototype.apply=new Proxy(window.Function.prototype.apply,t)})();
+radio10.nl,kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl#$#body .pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: initial !important; }
+radio10.nl,kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl#%#(()=>{const t={apply:(t,e,n)=>{try{if((new Error).stack.includes("Popup"))return Reflect.apply(t,e,n);const o=e;"function"==typeof o&&(o.toString().includes("adBlockerDetected")||o.toString().includes("pub_300x250m")||o.toString().includes(".offsetHeight||0==="))&&(e=()=>new Promise((t=>t(!1))))}catch(t){}return Reflect.apply(t,e,n)}};window.Function.prototype.apply=new Proxy(window.Function.prototype.apply,t)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215774
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167987
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=goplay.be|play.tv
@@ -1781,6 +1785,24 @@ omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -40
 ! Good: example.org###rek; ||example.com/ads/
 ! Bad: example.org#@##banner_ad (for instance, should be in allowlist.txt or in antiadblock.txt)
 !
+nederland.fm##div[class^="adv_"]
+telegraaf.nl##div[class^="page-layout_leadingAdContainer"]
+demorgen.be##.h1-container:has(> #h1:only-child)
+demorgen.be###main div[style*="--zone-column-"] > #r1
+demorgen.be###main div[style*="--zone-column-"] > #r2
+||static.fd.nl/assets/fdmg-ads/
+noorderland.nl##center:has(> div[data-aa-adunit])
+noorderland.nl##body > div:has(> div[data-aa-adunit])
+||cdn.optoutadvertising.com^$domain=ad.nl
+security.nl##.content_right > div.posting:has(> div.sidebar a[href^="https://www.security.nl/"])
+trouw.nl##aside[data-test-id="temptation-PAGE_TOP"] + div.h1-container
+trouw.nl###r1
+trouw.nl###r2
+trouw.nl###b1
+trouw.nl###h0
+trouw.nl###h1
+iex.nl##.banner
+iex.nl##.native_positie
 volkskrant.nl#?#.h1-container:has(> div[class]:matches-css(before, content: /Advertentie/))
 volkskrant.nl#?#div[id][class][tabindex]:matches-css(before, content: /Advertentie/)
 f1maximaal.nl###article-blocks > .raw-html-component
@@ -1794,8 +1816,8 @@ mijnwoordenboek.nl##div[style="min-height:270px"]
 ||ssl.p.jwpcdn.com/player/v/*/vast.js$domain=matele.be
 f1maximaal.nl##.raw-html-component:has(>div.Pnvp__ad)
 telegraaf.nl##.tik4-extension--inline-ad
-||ssl.p.jwpcdn.com/player/v/*/freewheel.js$domain=kijk.nl
-kijk.nl#%#//scriptlet('prevent-element-src-loading', 'script', '/freewheel.js')
+||ssl.p.jwpcdn.com/player/v/*/freewheel.js$domain=kijk.nl|hartvannederland.nl|538.nl|vandaaginside.nl|radio10.nl
+radio10.nl,kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl#%#//scriptlet('prevent-element-src-loading', 'script', '/freewheel.js')
 f1maximaal.nl##.w-full[class*="flex"]:has(> .flex_component > .raw-html-component > .Pnvp__ad)
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=player.vrt.be
 ||zeilen.nl/builds/zeilen/assets/taboola-page-view-id-*.js
@@ -1891,6 +1913,7 @@ iphoned.nl##div[data-name="featured-header-container"] > header[data-campaign]
 iphoned.nl##article > .no-content-styles:has(> div[data-nosnippet] > div[data-name="dynamic-content-injected"][data-campaign])
 rtl.nl##div[data-adslot-variant]
 bright.nl##html > body .ad:not(#style_important)
+nieuwsblad.be##.mh-ad-label
 nieuwsblad.be##.cba_container_grid
 dumpert.nl##div[class^="css-"]:has(> div[class^="css-"]:only-child > .ad)
 402online.com##.bannerblock
@@ -1976,6 +1999,7 @@ buienradar.nl###adholderContainerHeader
 trouw.nl,parool.nl##.ad--section
 nnieuws.be##.banner-silver
 ah.nl##.ad-lane
+ah.nl##div[data-testid="spotlight-ahrms"]
 forum.fok.nl###wa_web_headertofloor
 nu.nl###header > .zone
 telegraaf.nl##.VideoArticlePage__banner

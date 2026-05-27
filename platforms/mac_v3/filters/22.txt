@@ -1,9 +1,9 @@
-! Checksum: bj9NyYDwJwzWNl2bTI8QEA
-! Diff-Path: ../patches/22/22-s-1775129118-3600.patch
+! Checksum: 1zjo7z7hPEBEmDZ8tnVJ7Q
+! Diff-Path: ../patches/22/22-s-1779860303-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.13.80
-! TimeUpdated: 2026-04-02T11:21:52+00:00
+! Version: 2.0.14.10
+! TimeUpdated: 2026-05-27T05:35:11+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -89,6 +89,10 @@ nizimoenews.livedoor.blog,butumori.com,netizen-voice.blog.jp,ityouchannel.livedo
 !
 ! NOTE: Blogroll specific rules
 !
+blog.domesoccer.jp###side > section:has(> div#rss_3site_frame)
+||chaos-giga.com/wp-content/uploads/js/above-content-links_random.js
+||chaos-giga.com/wp-content/uploads/js/link_random.js
+chaos-giga.com##.above-content-links
 ||yugioh-starlight.com/_/json/pbp_ranking.json
 ||yugioh-starlight.com/_/json/ranking_category_min_
 dot.asahi.com##.m-widget.js-closewidget-target
@@ -508,7 +512,6 @@ negisoku.com##.article-body-more > p[style="color:gray;text-align:right;"]
 shouginews.blog.jp###main > div[style^="border:"][style*="padding:"]
 sexytvcap.com###bottomrss
 revuestarlightre.com##main aside.widget_custom_html
-cavolump.com##div[class^="pickup"]
 parlourfullslotl.com##.RSSBlogroll
 nofootynolife.net##.blogroll_content1
 nofootynolife.net##.entry_body > div[style$="#AAA;width: 400px;"]
@@ -1221,10 +1224,6 @@ mizugigurabia.com##.ad3
 newsmana.com##div[class^="rss-table"]
 gameleaks.org##.rss-table
 newsmana.com,gameleaks.org##.rss-widget
-||fategrandorder.info/kiji/$subdocument
-fategrandorder.info##.ad_toprss
-fategrandorder.info##.rss_big
-fategrandorder.info##.heading3
 moeimg.net###sp-pickup-link-frame
 moeimg.net##.post-single > div.entryblock.sp_only
 news.2chblog.jp##.sita-3
@@ -1406,6 +1405,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (third-party services)
 !
+||cdn.helvia.io^$third-party
 ||lemrock.com^$third-party
 ||tariffuxx.de^$third-party
 ||web-client.moveo.ai^$third-party
@@ -1560,6 +1560,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (specific)
 !
+marks.com###kampyleButtonContainer
 ||ipbd.ru/34122*.js
 ||assets.bouyguestelecom.fr/Palpatine_Omnikit/omnikit@1/widget.init.js
 karrierewelt.golem.de###widget-chat-container
@@ -1789,6 +1790,9 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 !
 !   SECTION: Widgets - Marketing - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229403
+@@||api.popin.cc/searchbox/$domain=ampproject.net
+@@||api.popin.cc/images/logo.png$domain=ampproject.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218990
 @@||widgets.coingecko.com/gecko-coin-price-chart-widget.js$domain=rewards.ambire.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214100
@@ -2021,12 +2025,20 @@ freestreams-live.my###custom_html-9
 daddyhd.com##.sidebar__inner
 !
 ! Blocking these chat widgets if they are really annoying
+||webagent.bedore.jp^$domain=ajinomoto.co.jp
 ||zoom.us/*/web-sdk/zcc-sdk.js$domain=fullcompass.com
 ||widget.intercom.io^$domain=appmaster.io|internxt.com|mainwp.com
 ||helpdeskeddy.com//js/contact-widget.js$domain=litres.ru
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+games-world4you.de###shopify-chat
+ianos.gr##chat-widget
+vit.ac.in###whatsapp-chat-widget
+||astra.wati.io/widget/astra.js$domain=vit.ac.in
+godaddy.com##.ai-chatbot-tab
+study.iitm.ac.in##.chatbot-toggler
+business.linkedin.com##.persistent-assistant-container
 ||app.qualified.com/*/messenger?$domain=cloudflare.com
 iport.ru##div[class^="layout_chat_widgets_wrap__"]
 elcomercio.pe###merlin-widget-root
@@ -2190,6 +2202,15 @@ zebratechnologies.force.com##.zbrbot-container
 !
 !   SECTION: Uncategorized
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232077
+posta.com.tr##.compatibility-widget
+! https://github.com/AdguardTeam/AdguardFilters/issues/229681
+||power-technology.com/wp-content/plugins/sgpolls/
+||survey.alchemer.eu^$subdocument,third-party
+! https://github.com/AdguardTeam/AdguardFilters/issues/229092
+sn-jp.com##.br-vote-widget
+! https://github.com/AdguardTeam/AdguardFilters/issues/228367
+||tgrthaber.com/components/continuereading
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228142
 livemint.com##.aiQuickReadButton
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225849
@@ -2439,6 +2460,7 @@ habr.com#?#.tm-article-blocks > section:has(> div.tm-block__body > div.tm-vacanc
 !
 !   NOTE: Exchange rates widgets
 !
+mynet.com##.finance-bar
 wallstreetjournal.postimees.ee##.stock-highlights
 happycoin.club##.currency-social
 rbc.ru##.js-forecast
@@ -2496,6 +2518,18 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+kisadalga.net##.tp-patreon
+mind.ua##.donate__frame
+techblog.gr##.rrm-contribution
+foerde.news##.rte
+foerde.news###popup-container
+bentopdf.com###donation-ribbon
+phys.org##.support-note
+phys.org##.article-main__support
+20minut.ua##.thx-block
+telex.hu##.telex-donate
+telex.hu##.support-box
+vsquare.org##.content > div.module-item:has(> div.give-embed-form-wrapper)
 volcanodiscovery.com###supportPopup
 cutter.yt#$##popup { display: none !important; }
 cutter.yt#$#.blurred { filter: none !important; }
@@ -2513,7 +2547,8 @@ recyclemap.ru##.donation-section
 recyclemap.ru##rc-donation-banner
 pypi.org,python.org###fundraiser-banner-host
 kyivindependent.com###article-banner-slot
-meduza.io##.SupportPanel-module-root
+meduza.io#$#.Header-module-root { height: auto !important; }
+meduza.io#$#.SupportPanel-module-root { display: none !important; }
 hongkongfp.com###block-108
 hongkongfp.com##.wp-block-newspack-blocks-donate
 hongkongfp.com##.entry-content > div.wp-block-image:has(> figure[class] > a[href="https://hongkongfp.com/support-hong-kong-free-press/"])

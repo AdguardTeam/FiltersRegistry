@@ -25,11 +25,13 @@ describe('parseFlags', () => {
     it('parses all boolean flags', () => {
         const flags = parseFlags([
             '--use-cache',
+            '--generate-cache',
             '--no-patches-prepare',
             '--strip-generated-meta',
         ]);
 
         expect(flags.useCache).toBe(true);
+        expect(flags.generateCache).toBe(true);
         expect(flags.noPatchesPrepare).toBe(true);
         expect(flags.stripGeneratedMeta).toBe(true);
     });

@@ -1,9 +1,9 @@
-! Checksum: QDLp2SYAwT2fzid28E176w
-! Diff-Path: ../patches/247/247-s-1774141252-14400.patch
+! Checksum: u0k22euOrsCaFPIT3JbrGw
+! Diff-Path: ../patches/247/247-s-1779627202-14400.patch
 ! Title: Polish Anti-Annoying Special Supplement
 ! Description: Filters that block and hide RSS elements and remnants of hidden newsletters combined with social elements on Polish websites.
-! Version: 2.0.4.58
-! TimeUpdated: 2026-03-22T00:58:30+00:00
+! Version: 2.0.4.62
+! TimeUpdated: 2026-05-24T12:50:46+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 Polski Antyirytujący Dodatek Specjalny
@@ -11,8 +11,8 @@
 ! Codename: PASS
 ! Description: Filtry blokujące i ukrywające elementy RSS oraz resztki po ukrytych newsletterach złączonych z elementami społecznościowymi na polskojęzycznych stronach.
 ! Używanie listy „Polski Antyirytujący Dodatek Specjalny" jest jednoznaczne ze świadomością, co do jej zawartości (co blokuje itp.) a twórcy nie ponoszą odpowiedzialności za niewiedzę użytkownika.
-! Last modified: Sun, 22 Mar 2026, 00:13 UTC+01:00
-! OriginalVersion: 2026.3.3
+! Last modified: Sun, 24 May 2026, 12:53 UTC+02:00
+! OriginalVersion: 2026.5.1
 ! Expires: 7 days
 ! Support:
 !   Github => https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement/issues
@@ -20,7 +20,7 @@
 ! Original creator: RikoDev
 ! Current maintainer: Filters Heroes
 ! Homepage: https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement
-! Aktualizacja: nie, 22 mar 2026, 00:13 UTC+01:00
+! Aktualizacja: nie, 24 maj 2026, 12:53 UTC+02:00
 !
 !
 ! Ogólne filtry ukrywające
@@ -34,6 +34,8 @@
 ~pl##a[href*="news.google.com/publications/"] img:lang(pl)
 ~pl##footer a[href$="/rss.xml"]:lang(pl)
 ~pl##li > a > .icon-rss:lang(pl)
+com,eu,info,pl##.prefer-google-source
+eu,info,pl##.google-news__button
 eu,pl##.componentsNavigationFooterNewExpanded__socialMediaLink:is([href*="google.com/publications/"], [href*="msn.com/"])
 info,pl##.stickySocialIcon a[href*=".xml"]
 pl###naglowek-link-rss
@@ -102,6 +104,7 @@ aszdziennik.pl,dadhero.pl,innpoland.pl,klubzwierzaki.pl,mamadu.pl,natemat.pl,top
 ataksja.org.pl###linkcat-34
 augustow24.pl##a[href="rss.xml"]
 auto-swiat.pl,businessinsider.com.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl##.googleNewsBanner
+auto-swiat.pl,businessinsider.com.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl##.ods-o-footer__social:has([href*="feed"])
 auto-swiat.pl,businessinsider.com.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl##[class*="follow"]:is(.follow-us, .followUs, .ods-c-follow-us):has(> a[href]:is([href*="news.google.com/publications/"], [href*="profile.google.com/cp/"]):only-of-type)
 auto-swiat.pl,businessinsider.com.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl##[class*="follow"]:is(.follow-us, .followUs, .ods-c-follow-us):has(> div > a[href]:is([href*="news.google.com/publications/"], [href*="profile.google.com/cp/"]):only-of-type)
 auto-swiat.pl,businessinsider.com.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl##[class*="footer__social"]:is(.ods-c-footer__social, .ods-o-footer__social):has(> a[href]:is([href*="feed" i], [href*="rss" i], [href=".xml"]))
@@ -187,13 +190,14 @@ di.com.pl##li:has(a[href$="/rss.html"])
 digitalassets.pl##.feed-link-wrap
 diver.net.pl###menumob > a[href*="feedburner."]
 diver.net.pl##.xpd-ele-1
+dlahandlu.pl##.p-footer-menu-list-link[href*="/rss"]
+dlahandlu.pl,dobrzemieszkaj.pl,portalsamorzadowy.pl,propertydesign.pl,rynekaptek.pl,rynekseniora.pl,rynekzdrowia.pl,sadyogrody.pl##.google-box
 dlahandlu.pl,rynekaptek.pl,rynekseniora.pl,rynekzdrowia.pl,sadyogrody.pl##.box:has(> #socialBox)
 dlahandlu.pl,rynekaptek.pl,rynekseniora.pl,rynekzdrowia.pl,sadyogrody.pl##.footer-menu-list-link[href*="/rss"]
 dlapolski.pl##.dashicons-rss
 dns.pl##.follow-icon__rss
 dns.pl##.follow-links > li[class*="rss" i]
 dobreprogramy.pl##a[href="#rssModal"], .no-mobile.block:nth-of-type(7)
-dobrzemieszkaj.pl,portalsamorzadowy.pl,propertydesign.pl##.google-box
 dojczland.info##.td-footer-template-13
 dompelenpomyslow.pl##a[href*="news.google.com/publications/"]
 dzeta.com.pl,zssucha.pl###block-node-syndicate
@@ -650,8 +654,10 @@ yves-rocher.pl##.l-footer__services div.service__column:nth-of-type(2)
 zadania.info###atomR > a[href^="/feed"]
 zaufanatrzeciastrona.pl##.sidebar-box-wrap:nth-of-type(2) > .sidebar-box
 zbooy.pl##a[href^="/360/rss.xml"] > img
+zielonyogrodek.pl##a.footer__icon:is([href*="news.google.com"], [href*="atom.xml"])
 zlotoryjska.pl##.rss_ul
 zlotyaniol.pl###ic3
+zmiksowani.pl##a[href*="/feed.xml"]
 znajdzto.pl##.subRss
 zs-cogito.pl##a[href*="/?feed=rss"]
 ztm.waw.pl###Banneryiztm > a[href*="ztm.waw.pl/"]:nth-of-type(-n+4):nth-of-type(even)

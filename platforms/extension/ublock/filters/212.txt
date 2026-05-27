@@ -1,16 +1,16 @@
 ![Adblock Plus 2.0]
-! Checksum: DMhxsNRHoT1/wDYK9vl6Hg
-! Diff-Path: ../patches/212/212-s-1775134260-14400.patch
+! Checksum: nIAdTpN8tJG2Kilv0mgzcQ
+! Diff-Path: ../patches/212/212-s-1779875337-14400.patch
 ! Title: RU AdList: Counters
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.87.38
-! TimeUpdated: 2026-04-02T12:47:50+00:00
+! Version: 2.1.90.48
+! TimeUpdated: 2026-05-27T09:45:56+00:00
 ! Expires: 5 days (update frequency)
 !
-! Checksum: 83s25HgEwh2/SNSNyrMk7g
-! OriginalVersion: 202604021231
+! Checksum: a5SArOF7nOhf62NHtSee+Q
+! OriginalVersion: 202605270931
 ! Title: RU AdList: Counters
-! Last modified: 02 Apr 2026 12:31 UTC
+! Last modified: 27 May 2026 09:31 UTC
 ! Expires: 1 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -313,6 +313,7 @@ _pagespeed_beacon?
 ||api-hprof.odkl.ru/api/crash/upload?$domain=~ok.ru
 ||api-hprof.odkl.ru/api/crash/uploadBatch?$domain=~ok.ru
 ||api-statist.tinkoff.ru/gateway/*/events
+||api.expf.ru/api/*/geo$3p
 ||api.mindbox.ru/scripts/*/tracker.
 ||api.vp.rambler.ru/events/
 ||apistats.rg.ru/add-visit?
@@ -478,7 +479,6 @@ _pagespeed_beacon?
 ||evolvemediametrics.com^$3p
 ||exe.bid/pixel?
 ||exelator.com^$3p
-||expf.ru^$3p
 ||exponea.com^$3p
 ||ext.clickstream.sberbank.ru/metrics/$3p
 ||extreme-dm.com^$3p
@@ -550,9 +550,9 @@ _pagespeed_beacon?
 ||google.*/ads/ga-audiences?v=
 ||googleadservices.com^$3p
 ||googleoptimize.com^$3p
-||googletagmanager.com/gtag/$3p,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz
 ||gostats.$3p
 ||goto.kz/img.php?
+||goto.startracking.ru^$3p
 ||groot.ivi.ru/track|$xhr
 ||gws.ru/gwscnt/?
 ||h-cdn.com/loader.js?customer=
@@ -616,6 +616,7 @@ _pagespeed_beacon?
 ||ipinfo.io^$3p,domain=~retromusic.cz
 ||iplis.ru^$3p
 ||iplookup.vvdev.ru^$3p
+||iportal.ru/static/mediadash/tracker.iife.min.js
 ||irecommend.ru^*superstat/
 ||ixbt.pro/api/_brimp/
 ||j.uralweb.ru/
@@ -937,6 +938,7 @@ _pagespeed_beacon?
 ||stats.qmerce.com^
 ||stats.seedr.ru^
 ||stats.serpads.com^$3p
+||stats.temptcdn.com^$3p
 ||stats.vk-portal.net^$3p
 ||stats.wordpress.com^
 ||stats.wp.com^$3p
@@ -1227,7 +1229,7 @@ rutube.ru##[aria-label="raichuLogoLink"]
 tass.ru##[class^="Footer_liveinternet"]
 levik.blog,livejournal.com,olegmakarenko.ru,periskop.su,shakko.ru,shiro-kino.ru,vadimrazumov.ru##[data-react-rcm-block]
 avtorambler.com,rambler.ru##article div:has(> div > [id^="rcmw-container-"])
-game4you.top,innal.top,naylo.top,rustorka.com,rustorka.net,rustorka.top,rustorkacom.lib##body[onload] > div[id]:not([class]):not([style]):nth-child(-n+7):not([id^="ajax"]):not([id^="body_"]):not([id^="fancybox-"])
+game4you.top,innal.top,naylo.top,rustorka.com,rustorka.net,rustorka.top,rustorkacom.lib##body[onload] > [id]:not([class]):nth-child(-n+7):not([id^="ajax"]):not([id^="body_"]):not([id^="fancybox-"])
 avtorambler.com,rambler.ru##circle[stroke-dashoffset]
 inoreader.com##div[id^="leaderboard_ad"] > *
 radioprofusion.com##footer > .counter
@@ -1248,13 +1250,15 @@ avtorambler.com,rambler.ru##section > nav ~ div div:has(> div > [id^="rcmw-conta
 /^https?://yastatic\.net\/www\/_\/[^\s]{150,}/$redirect=noop.txt,image,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
 @@://yandex.*/news/$generichide
 @@://yandex.*/news|$generichide
+dzen.*##.content-id-for-morda div:matches-attr(/./=top-content) > div + div:style(display: none !important)
 dzen.*##[aria-label*="Лент"] article:has(> div:matches-css(display: none)):style(display: none !important)
 dzen.*##div:matches-attr(/[a-z0-9]/=/media-banner/):style(display: none !important)
+dzen.*##div:matches-attr(/data-[a-z0-9]/=/placeholder/):style(display: none !important)
 eda.yandex.ru##main#main main > div[style^="margin-bottom:"] [aria-label="Акция"]
 eda.yandex.ru##main#main main > div[style^="margin-bottom:"]:has([aria-label="Акция"])
 mail.yandex.*##.mail-Page-Body .Popup2 > .Tooltip-Content:contains(2025)
 ya.*,yandex.*##.content__right div:has(> div > button:matches-attr(/[a-z0-9]/=/advertiser/)):style(display: none !important)
-ya.*,yandex.*##[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-z0-9]/=/abuseLink|advertiser/)):style(display: none !important)
+ya.*,yandex.*##[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-z0-9]/=/"type":"adv"|advertiser/)):style(display: none !important)
 ||mail.yandex.*/u2709/$script,~3p,redirect=noop.js
 ||strm.yandex.ru/get/$script,domain=yandex.ru|yastatic.net
 ||strm.yandex.ru/get/*?sid=*&vsid=
@@ -1282,7 +1286,7 @@ yandex.*##.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-cha
 @@||yandex.ru/ads/page/*target-ref=*pogoda$xhr,domain=yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||yandex.ru/ads/system/context.js?$script,domain=dzen.ru
 @@||yandex.ru/ads/system/context.js?|$script,domain=ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
-@@||yandex.ru/ads/system/context.js|$domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
+@@||yandex.ru/ads/system/context.js|$domain=auto.ru|dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||yandex.ru/ads/system/header-bidding.js|$xhr,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
 @@||yandex.ru/ads/system/widget.js|$script,domain=dzen.ru
 @@||yastatic.net/daas/atom.js|$domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
@@ -1323,6 +1327,8 @@ yandex.*##.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-cha
 ||stloadi.live/*block=$subdocument,removeparam=block
 ||variyt.ws/embed/*geo_block=$subdocument,removeparam=geo_block
 ||variyt.ws/embed/*geoBlock=$subdocument,removeparam=geoBlock
+||zenithjs.ws/embed/*geo_block=$subdocument,removeparam=geo_block
+||zenithjs.ws/embed/*geoBlock=$subdocument,removeparam=geoBlock
 !
 ! Экспериментальные правила для маркеров
 $document,removeparam=ai,domain=ggsel.net
@@ -1453,7 +1459,7 @@ $removeparam=ysclid
 /search/*$document,removeparam=search_source,domain=ya.ru|yandex.*
 /search/*$document,removeparam=src,domain=ya.ru|yandex.*
 /search/*$document,removeparam=suggest_reqid,domain=ya.ru|yandex.*
-?from=$document,removeparam=from,domain=3dnews.ru|7days.ru|~auth.mail.ru|auto.ru|autodaily.ru|autonews.ru|autopilot.ru|habr.com|igromania.ru|klops.ru|kommersant.ru|mail.ru|metro-cc.ru|mk.ru|myweekend.ru|ntv.ru|ozon.ru|quote.ru|rbc.ru|rbcautonews.ru|rbclifemedia.ru|rbcrealty.ru|ridus.ru|sportmail.ru|sportrbc.ru|sports.ru|vkplay.ru
+?from=$document,removeparam=from,domain=3dnews.ru|7days.ru|~auth.mail.ru|auto.ru|autodaily.ru|autonews.ru|autopilot.ru|habr.com|igromania.ru|klops.ru|kommersant.ru|kp.ru|mail.ru|metro-cc.ru|mk.ru|myweekend.ru|ntv.ru|ozon.ru|quote.ru|rbc.ru|rbcautonews.ru|rbclifemedia.ru|rbcrealty.ru|ridus.ru|sportmail.ru|sportrbc.ru|sports.ru|vkplay.ru
 ?from=$document,xhr,removeparam=from,domain=vedomosti.ru
 ?media&ila_camaign=$document,removeparam=media
 ?prov=ukrnet$removeparam=prov
@@ -1465,6 +1471,7 @@ referrer=appmetrica_tracking_id$document,removeparam=referrer
 utm_$document,removeparam=ig_rid,domain=instagram.com
 utm_source=*partner=$document,removeparam=partner
 ||afisha.yandex.*/$removeparam=source
+||alice.yandex.*/?utm_to=$document,removeparam=utm_to
 ||disk.yandex.$document,removeparam=source
 ||my.mail.ru/apps$document,removeparam=ref,domain=my.mail.ru
 ||quke.ru/promocodes?utm_campaign=*.$removeparam=utm_campaign

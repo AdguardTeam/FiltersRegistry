@@ -15,6 +15,8 @@
 !
 ! ||mobileapptracking.com^ - don't block this domain with all subdomains. https://forum.adguard.com/index.php?threads/23917/
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/229939
+||yodo1.com^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222820
 ||banner.bet365partners.com^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221816
@@ -162,6 +164,25 @@
 ||startup.mobile.webvisor.com^
 ||startup-mobile.ap.yandex-net.ru^
 !
+||ads.heytapmobi.com^
+||adsfs.heytapimage.com^
+||shiyifacaisalzc.com^
+||kw0xlh4wig.com^
+||h-adashx.ut.taobao.com^
+||p3-ad-sign.byteimg.com^
+||p3-ad-sign.byteimg.com.queniusy.com^
+||goads2023.com^
+||wcp.taobao.com^
+||yfanads.com^
+||mobads-pre-config.cdn.bcebos.com^
+||mobads-logs.bcebos.com^
+||prismriotads.com^
+||bidder.a11.vega.aurion11.io^
+||adapi*.boomplaymusic.com^
+||ad-api.revoaidapp.com^
+||mmp-api.itpub.cloud^
+||mt-api.itpub.cloud^
+||uydeqs9.xyz^
 ||pullcf.com^
 ||fnyfeds.com^
 ||api2.wshareit.com^
@@ -277,7 +298,6 @@
 ||nbcollect.kugou.com^
 ||nbcollectretry.kugou.com^
 ||dl-adx.op-mobile.opera.com^
-||dsp-api.moloco.com^
 ||ads.smrtbid.com^
 ||creative*.bidease.com^
 ||bidjora.com^
@@ -296,6 +316,7 @@
 ||ads.cocomobi.com^
 ||inmense.site^
 ||dollphoin.site^
+||news-img.site^
 ||news-cdn.site^
 ||mossru.com^
 ||jjpp.lmtjapi.com^
@@ -456,6 +477,7 @@
 ||mobondhrd.appspot.com^
 ||api.ads.newsdigest.jp^
 ||mobi.yanosik.pl^
+||mobileadvertiser.yanosik.pl^
 ||videoads-cloud.rovio.com^
 ||vmap.v.ad-generation.jp^
 ||iyes.youku.com^
@@ -1053,6 +1075,14 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231354
+sht-link.com#%#//scriptlet('prevent-fetch', 'adsbygoogle')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=sht-link.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/230216
+planetf1.com#%#//scriptlet('abort-on-property-read', 'freeProConfig.btnRefresh')
+! https://github.com/AdguardTeam/AdguardFilters/issues/229892
+vodafone.de##.mc-content > #adbl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221944
 mangalivre.tv#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'bait')
 mangalivre.tv#$##manga-safe-wrapper { display: block !important; }
@@ -1142,8 +1172,6 @@ wr.de,wp.de,nrz.de#@#.ad
 @@||farmeramania.de^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5033
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dthforum.com
-! https://forum.adguard.com/index.php?threads/20215/
-@@||smedia2.intoday.in/aajtak_pwapp$script
 ! https://forum.adguard.com/index.php?threads/19885/
 ||m.eisamay.com/detector.cms
 ! https://forum.adguard.com/index.php?threads/19892/
@@ -1254,6 +1282,7 @@ turbopages.org##.page__result > div[class*="type_native"]
 ! Good: ##.adv
 ! Bad: example.org##.adv (should be in specific.txt)
 !
+##body > #js-adContainer.adBlock
 ###mobile-adhesion:not(#style_important)
 ###ad-300x250_mid_mobile
 ##amp-iframe[src^="https://ad.vidverto.io/"]
@@ -1266,6 +1295,8 @@ turbopages.org##.page__result > div[class*="type_native"]
 ##.happy-under-player-mobile
 ##.b-mobile-spots
 ###ad_inview_area
+! Tegna Inc.
+##body > div.page[data-kochava-app-guid^="kotegna-web-prod-"] > .page__top > .universal-ad
 ! Sinclair, Inc
 ##div[class^="MidArticleAdUnit_mobile_"]
 ##div[class^="PrimisMidArticleAdUnit_mobile_"]
@@ -1809,9 +1840,6 @@ scmp.com#$#.top-ad { display: none !important; }
 scmp.com#$#div[class*="page-outer--slide-up"] { -webkit-transform: none !important; -ms-transform: none !important; transform: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58092
 amazingribs.com#$##count-container { bottom: 0 !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/46115
-zmovs.com#$#.holder-rich-media { display: none!important; }
-zmovs.com#$#body { position: inherit!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43035
 m.detik.com#$#body[style^="overflow:"] { overflow: auto!important; height: auto!important; }
 m.detik.com#$#html[style^="overflow:"] { overflow: auto!important; height: auto!important; }
@@ -1986,6 +2014,8 @@ motherless.com$$script[tag-content="awentw.com"][min-length="2000"][max-length="
 @@77.88.21.122$network,app=ru.yandex.rasp
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/228886
+@@||pubads.g.doubleclick.net^$app=com.channel2.mobile.ui
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228276
 @@||securepubads.g.doubleclick.net^$app=com.walla.wallasports
 @@||pagead2.googlesyndication.com^$app=com.walla.wallasports
@@ -2328,6 +2358,12 @@ motherless.com$$script[tag-content="awentw.com"][min-length="2000"][max-length="
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/230428
+!+ PLATFORM(android)
+@@||meet.dramirtavari.com^$content
+! https://github.com/AdguardTeam/AdguardFilters/issues/229403
+ettoday.net#@#amp-ad
+ettoday.net#@#.amp-unresolved
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225641
 usnews.com#%#//scriptlet('set-constant', 'Object.prototype.vjsPlayer.ads', 'noopFunc')
 !+ PLATFORM(ios, ext_android_cb)
@@ -2774,7 +2810,7 @@ handelsblatt.com,moyens.net,ign.com,gazeteduvar.com.tr,innpoland.pl,wired.com,sp
 ! ##.ads
 keisanki.me,kalporn.com,canalporno.com,serviporno.com,livechat-ero.net,kingautos.net,ranky-ranking.net,memo.onl.jp,daily-sun.com,home.kingsoft.jp,berkem.ru,pixiv.net,cartoonpornvideos.com,m.economictimes.com,m.mistrzowie.org,up.ymgt.xyz,google.de,www-bento-de.cdn.ampproject.org,m-economictimes-com.cdn.ampproject.org,winfuture.de##.ads
 ! ##.ad
-qlife.jp,wiki.yjsnpi.nu,opinion.cw.com.tw,aidoly.net,celeby-media.net,kyun2-girls.com,hapiee.com,2ch-c.net,4p.de,www-cbc-ca.cdn.ampproject.org,m.geboren.am,dictionary.com,transfermarkt.de,iyf.tv,macwelt.de,pcwelt.de,xataka.com.mx,shikiho.toyokeizai.net,newsee-media.com,rank1-media.com,m.proporn.com,sugoren.com,dailynewsonline.jp,yakuji.co.jp,asahi.com,m.winporn.com,slate.com,sankei.com,gameranbu.jp,seiga.nicovideo.jp,m.arukikata.co.jp,setn.com,hateblo.jp,hatenablog.com,hatenablog.jp,hatenadiary.com,hatenadiary.jp,hatenadiary.org,syosetu.org##.ad
+healthyplace.com,qlife.jp,wiki.yjsnpi.nu,opinion.cw.com.tw,aidoly.net,celeby-media.net,kyun2-girls.com,hapiee.com,2ch-c.net,4p.de,www-cbc-ca.cdn.ampproject.org,m.geboren.am,dictionary.com,transfermarkt.de,iyf.tv,macwelt.de,pcwelt.de,xataka.com.mx,shikiho.toyokeizai.net,newsee-media.com,rank1-media.com,m.proporn.com,sugoren.com,dailynewsonline.jp,yakuji.co.jp,asahi.com,m.winporn.com,slate.com,sankei.com,gameranbu.jp,seiga.nicovideo.jp,m.arukikata.co.jp,setn.com,hateblo.jp,hatenablog.com,hatenablog.jp,hatenadiary.com,hatenadiary.jp,hatenadiary.org,syosetu.org##.ad
 ! ##.Ad
 chip.de,gamesworld.de,fnn.jp##.Ad
 ! ##body .banner
@@ -2785,6 +2821,111 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+pornobueno.com##.adz
+puritanas.com##.mobile-content
+muhalif.com.tr##.detailside-inner-ad-cont
+web.gekisaka.jp#$?##PC_SP_NEWS_D_GROUP { remove: true; }
+teamtalk.com##main > div > .bs_hint[style^="height:"]
+freesoft-100.com###header_ad_text
+inews.hket.com##.adunit.detail-page[data-admap]
+football365.com##div[style="height: 300px;"]
+finans.cnnturk.com###cnn-app > .d-block:has(> .ad-border:only-child)
+finans.cnnturk.com##.col-lg-4 > .widget-card:has(> .banner300x600:only-child)
+plus-msg.auone.jp##.news__rectangle-ad--under-first
+plus-msg.auone.jp##.news__genre-item--taboola-ads
+plus-msg.auone.jp##.news__genre-item--ads
+plus-msg.auone.jp##.ad__under-article-content
+pornocarioca.com##.pc-info-box__clickad
+pornocarioca.com##.top-banner--mobile
+eda.yandex.ru#$?#main > div[style^="margin-bottom:"]:has(> div > ul.scroll-snap-slider button[aria-label="Акция"] > div > img[src*="get-market-adv"]) { remove: true; }
+ebaumsworld.com##.mobile-ad-space
+xxxtik.com##.navigation-container > a[href][rel="nofollow"][target="_blank"]
+news.mynavi.jp##.gn-scroll-catch-ad
+navitime.co.jp###inview-koten
+tugatech.com.pt#$#body > div#header::before { display: none !important; }
+tugatech.com.pt#$?#body > div#header { margin-top: 0 !important; }
+karapaia.com##.kb-links
+jukenbbs.com##div[style="padding:25px 0; text-align:center;"]
+jukenbbs.com##div[style="padding:25px 0; text-align:center;"] + hr
+appagg.com##.ftblad ~ div[class][style*="box-shadow:none"]:has(> div[class] ins.adsbygoogle)
+appagg.com##.si_list > .si_li:has(> div[class] ins.adsbygoogle)
+atlas.taboolanews.com##section[aria-label="Advertisement"]
+porntourist.com##.header__bar > div.bar > a[href][target="_blank"][rel="nofollow"]
+2ch.logpo.jp##.AmazonItems
+hochi.news##.kyujin__head
+timeshighereducation.com##.pane-multiple-hub-traffic-drivers
+article.auone.jp##.infeed__large--block
+s.kabutan.jp##main > div > div.justify-center[style="min-height:280px;"]
+yay.porn,1porno.net##.rekspan
+fishingjapan.jp##.common__adv_chowari_app
+greatandhra.com##.mob-Ad
+meteo60.fr##.encart750x300
+meteo60.fr##.encart336SmartVertical
+m.soundcloud.com##div[class^="BannerAd"]
+pcgamesn.com##.entry-content > div[data-format="isvideo"]
+pcgamesn.com#?#div[class]:has(> div[id][class]:matches-css(before, content: /^Advertisement$/))
+telepolis.de##div[class^="ad-mobile-"]
+fapnado.xxx##.top
+fapnado.xxx##a[href^="https://www.tckcandy.com/"]
+thelayoff.com#$#.epp-blinds { display: none !important; }
+thelayoff.com#$#body.anchoradtop { margin-top: 0 !important; }
+thelayoff.com#$#body.anchoradtop > #navbar { top: 0 !important; }
+toyokeizai.net##.article-related__list > article.article-related__item:has(> div.ad-container)
+techorange.com#?#.elementor-hidden-desktop:has(> div.e-con-inner:only-child:not(:has(*)))
+immowelt.de##div[data-testid="serp-core-scrollablelistview-testid"] > div[class^="css-"]:has(> div[class] > div[class] > div[id^="div-gam-ad-"])
+immowelt.de##.HideOnPrint:has(> div[class] > div[class] > div#ad-banner-mobile)
+news.denfaminicogamer.jp##aside[id*="-1"]
+navitime.co.jp##.js-inview-myplace
+navitime.co.jp##.js-inview-realestate
+fxstreet.*#$#.fxs_bgHeader { top: 0 !important; }
+fxstreet.*##.fxs_stickyAd-mobile
+weathernews.jp##.main > section.dmenu-non:has(> div[id^="div-gpt-ad"])
+s.kakaku.com##.s-billboard
+||apis.pchome.com.tw/PFB_AD.php
+pchome.megatime.com.tw##div:has(> ins[data-rmax-space-id])
+pchome.megatime.com.tw##center[style="border-bottom:1px #d3d3d3 solid;"]
+hotokami.jp##.spots__main > div.block:has(> div.flex > div[onclick^="gtag"] > a[href*="utm_campaign"])
+techblog.gr##div[class^="single-mobile-billboard"]
+smartapps.baidu.com##.mount-fc-promo-wrapper
+||staff.livedoor.blog/slot-fallback$script
+keiba-umanami.com,2chblog.jp,blog.jp,blog.livedoor.jp,bloggeek.jp,blogism.jp,blogo.jp,blogstation.jp,blogto.jp,cafeblog.jp,corpblog.jp,diary.to,doorblog.jp,dreamlog.jp,gger.jp,golog.jp,ldblog.jp,liblo.jp,livedoor.biz,livedoor.blog,myjournal.jp,mynikki.jp,officeblog.jp,officialblog.jp,publog.jp,storeblog.jp,teamblog.jp,techblog.jp,weblog.to,xxxblog.jp,youblog.jp,mona-news.com##.slot-insert
+vocus.cc##.editor-content-block > div[style]:has(> #vocus_m_reading_parallax_middle)
+hotukdeals.com##.js-threadList > div:not([class]):not([id]):has(> .box--contents > div[class] > .slot--bg)
+alternet.org##.widget__body > span.widget__section:has(> div#alternet_mob_incontent)
+tvguia.es##div.channel-programs-main > div:not(.channel-row):has(> div.Clickio-Mobile-Channel-Banner)
+dexerto.com##div.mt-6:has(> div[id^="FooterAd"])
+dexerto.com##nav[aria-label="Navigation"] ~ div:has(> #top-leaderboard-ad)
+news.cnyes.com##body > div#content-main-news + div[class]
+dic.pixiv.net###ad-d-sp-footer-not-spa
+porntrex.*##.bottomNav > [target="_blank"]
+ukr.net##[data-report-ad-id]
+today.line.me##article.entityBodyModule > div:has(span.midAd-title)
+navitime.co.jp##div[style="display:flex;justify-content:center;align-items:center;height:120px;width:100%;"]
+erome.com##.hidden-sm.sp-mob
+||m.xp600.com/js/*.js?v=
+iex.nl##.mobilebillboard
+talk.jp##.comments > div[class^="display-module-scss-module__"]
+classicpornvids.com##.right_col
+porn300.com##.aan__wrapper
+m.mydrivers.com##div.box > div[style]:not([class]):not([id]):has(> a[href] img)
+||kkeji.com/img/*.gif$domain=m.mydrivers.com
+link.snipcash.com##.banner-inner
+thothub.ch##iframe[src^="https://engine.zerodayromance.com/"]
+championat.com##div[data-banner-place-id]
+pimpbunny.com##ul[class^="includes-header-"] > li:has(> a[href="https://livehdcams.net/"])
+exporntoons.net##.container > div[style]:has(> ins)
+kbook8.com#%#//scriptlet('abort-on-stack-trace', 'eval', '/ddnext|ddtop/')
+kbook8.com##.box > div[id]:has(> div > img[src^="https://pebfvv.icu/"])
+solscan.io#?#.flex.flex-wrap:has(div.not-italic:contains(Sponsored))
+solscan.io##div[id^="wrapper-sevio"]:has(> div.sevioads)
+mynet.com##div[style="min-height: 200px; min-width: 360px; width: 100%"]
+oppaisan.com##.click_fit__tab_tie_up
+geinoukame.com##.entry_more > a[href="http://geinoukame.com/blog-entry-77130.html"]
+||i-pclub.com/m/ama_$script
+||i-pclub.com/m/randam_$script
+i-pclub.com##center > .zoon:has(> div#trip)
+i-pclub.com##.zoon2:has(> div#nex)
+qz.com##.ay-ad-slot
 wikwik.org##.a_v
 ||wikwik.org/a1.js
 decrypt.co##div.post-content > div.post-content-w-full:has(> div > div[id^="decrypt_mobile_articles_inline"])
@@ -2835,7 +2976,7 @@ marieclaire.com.tr##div[style^="width:320px;"][style*="height:100px"]
 player4me.vip#%#//scriptlet('abort-on-property-write', 'cache_loader')
 dalealbo.cl#$#.top-sticky-wrapper { display: none !important; }
 dalealbo.cl#$#header { top: 0 !important; }
-vidara.to,vidara.so##.ad-download-box
+vindaz.shop,xca.cymru,vidara.to,vidara.so##.ad-download-box
 gubdaily.ru#$?#.gub-ad-mob { remove: true; }
 gubdaily.ru##div[class^="ai-viewport"]:has(> .code-block > .gub-ad-article)
 medex.com.bd##.campaign-block
@@ -2849,7 +2990,6 @@ eleconomista.es##div[data-ad-unit-id]
 eleconomista.es##aside#main-rail
 dplnews.com##.header-inner
 dplnews.com##.primary-sidebar-widget > .g
-notebookcheck.com##.tx-nbc2fe-incontent-column:has(> .nbc-r-float-inline > div[id^="div-gpt-ad"])
 sn-online.de##div[id^="mad_"]
 softpedia.com##.applist > div.nl_item:has(> div.ad)
 ainzscans01.com###i56tm99ncgnw
@@ -2893,8 +3033,6 @@ baseballchannel.jp###sp_all_header
 ||cdn.sinparty.com^$subdocument,domain=imgbox.com
 imgbox.com##a[href^="https://sinparty.com/"]
 imgbox.com##._ln-floater
-abtranny.com##.header_mobile:has(> div.ad__title)
-abtranny.com##.video__wrapper > div.wrapper:has(> section div.ad__title)
 abtranny.com#$#.video-page__info > div.headline { margin-top: 0 !important; }
 tapatalk.com###TapatalkFooterMobileAds
 nfl.com##.flex.justify-center.lg\:my-8:has(> #adv_league)
@@ -2909,7 +3047,6 @@ pornbaker.com###before-list-boxes-mobile-singl
 pornbaker.com###inside-video-boxes-mobile2_2
 pornbaker.com###inside-video-boxes-mobile2
 baseballchannel.jp###sp_all_header
-itc.ua##.image-100
 walica.jp##footer + div.fixed.bottom-0.left-0.right-0.z-50.sm\:hidden
 thetoc.gr##.bannerparent
 thetoc.gr##.mg_underhero
@@ -3081,7 +3218,6 @@ pornoxo.com##.video-listing > div.no-popup
 pornoxo.com##.container:has(> h3 > a[href="/live-cam-models/"])
 pornoxo.com##a[href^="https://xo.show/"]
 pornoxo.com##a[href^="https://tsyndicate.com/"]
-motogonki.ru##section:has(> div[style] > a[onclick*="/go/click.php?"])
 motogonki.ru###article > div[style^="position:"]:has(> a[onclick*="/go/click.php?"])
 motogonki.ru##section[id^="adv"]
 motogonki.ru###widget
@@ -3095,8 +3231,8 @@ h1g.jp##div[style^="width:300px;height:280px"]
 futbolperuano.com#$#header.sticky-top { top: 0 !important; }
 sxyprn.net,sxyprn.com##.tbd
 mydramalist.com##div:has(> div[style="min-height:327px;"]:only-child)
-coloradoan.com##.gnt_x__bvc:has(> aside[aria-label="advertisement"])
-coloradoan.com##aside[aria-label="advertisement"]
+hoopshype.com,coloradoan.com##.gnt_x__bvc:has(> aside[aria-label="advertisement"])
+hoopshype.com,coloradoan.com##aside[aria-label="advertisement"]
 capetownetc.com##.mobile-advertisements
 famitsu.com##section[class^="Top_topHeaderBanner"]
 famitsu.com##div[class^="ArticleDetailMiddleRectangle_container_"]
@@ -3462,7 +3598,7 @@ telugu.goodreturns.in###oneliner-promo ~ p
 pinzuba.news##.m-instream
 ebony8.com##.mobile_nav
 vook.vc##.note-sp-spnsr
-thestar.com###sticky-anchor
+postandcourier.com,thestar.com###sticky-anchor
 milffox.com##.mobile_top_ads
 milffox.com###side_content > div.header.red
 makemytrip.com##.landingContainer > .makeFlex:has(> div[class^="adtech"])
@@ -3566,7 +3702,7 @@ wife.koe-koe.com##div[style="min-height:240px"]
 juken-mikata.net##.\31 th-ad
 pokeca-zanmai.jp##.mobile-anchor-ad
 blog.2nt.com##.fc2spad_noactive + div[style="font-size:8px;"]
-thegay.com##.video-page > div:not(.video-page__content):has(> div > div >  iframe[width="300"][height="100"])
+thegay.tube,thegay.com##.video-page > div:not(.video-page__content):has(> div > div >  iframe[width="300"][height="100"])
 m.minixiaoshuow.com#%#//scriptlet('set-constant', 'showme', 'false')
 m.minixiaoshuow.com#%#//scriptlet('set-constant', 'pcc', '1')
 pleasureme.jp##.mobile-footer-menu-buttons
@@ -3652,8 +3788,9 @@ maquia.hpplus.jp##.SP_inarticle
 m.tub5exer.com##.info-holder > center
 m.tub5exer.com##.advertising
 pepper.pl##div[class*="hide--fromW"] > .flex:has(> .ad--bg)
-pepper.com,pepper.pl,mydealz.de##.js-threadList > .hide--fromW3
-pepper.com,pepper.pl,mydealz.de##.js-threadList > div > .box--contents > .aGrid:has(> .ad--bg)
+promodescuentos.com,pepper.com,pepper.pl,mydealz.de##.js-threadList > .hide--fromW3
+promodescuentos.com,pepper.com,pepper.pl,mydealz.de##.js-threadList > div > .box--contents > .aGrid:has(> div:is(.ad--bg, .slot--bg))
+promodescuentos.com,pepper.com,pepper.pl,mydealz.de##.js-threadList > div > .box--contents > .overflow--hidden:has(> div:is(.ad--bg, .slot--bg))
 m.humoruniv.com##.bg0:has(div > img[height="200"][width="300"])
 m.humoruniv.com###pnut_ad_bottom
 m.humoruniv.com##div[style="min-height:100px;"]
@@ -3797,7 +3934,8 @@ op.gg##.w-full:has(> .flex:only-child > #mobile_takeover:only-child)
 cna.com.tw##.advertiseMobile
 sushi.ski##.xuKt2
 mobalytics.gg##main > div[class]:has(> div[class] > div#poe-2-video-all-pages-mobile)
-star-ettoday-net.cdn.ampproject.org##.adHint
+ettoday.net##div[id^="adsense_matched_content"]
+ettoday.net,star-ettoday-net.cdn.ampproject.org##.adHint
 star-ettoday-net.cdn.ampproject.org##a[href^="https://ad.ettoday.net/adclick.php"]
 stars.glavred.info##.article-column > div[style^="height"]:has(> amp-ad)
 glavred.info##.infinite-item > div[style^="height"]:has(> div.bnr-block__ad)
@@ -3868,7 +4006,7 @@ uploady.io###dlnk1
 schizophonic9-2.com##body > a[href^="https://"][href*="linksynergy.com/"]
 schizophonic9-2.com##body > a[href="https://amzn.to/3UQkNZ0"]
 schizophonic9-2.com##body > div.ad_footer ~ br
-wusa9.com,krem.com,kare11.com,wzzm13.com,king5.com##.universal-ad
+9news.com,wusa9.com,krem.com,kare11.com,wzzm13.com,king5.com##.universal-ad
 pulzo.com##.connatix-spacer
 bloomberg.com##.adWrapper
 wired.com##.ad--footer
@@ -4021,7 +4159,7 @@ cyzowoman.jp##.section_common:has(> .entryad)
 ckworks.jp##.adbox310x100
 cyberdaily.au##.dfp-ticker
 zenless.gamerstand.net##.post > div[style="padding:20px 0px;"] > div.execphpwidget
-seikeidouga.blog.jp#%#//scriptlet('abort-current-inline-script', 'navigator.userAgent', '_rand')
+blog.jp#%#//scriptlet('abort-current-inline-script', 'document.write', '_rand')
 haberler.com##div[id^="ana_mobile_336x280_"]
 cyberdaily.au##.tabletSkinBlock
 nikkansports.com###photoScrollText
@@ -4037,7 +4175,6 @@ hostlove.com###s_vip1
 hostlove.com###vip2_2
 buzzap.jp#$#@media (max-width: 570px) { #masthead { margin-top: 0 !important; } }
 h-taikendan.net##.AdRectangle
-txxx.com#?#div[class^="video-conten"] > div[class] > div > div[class]:has(span:contains(AD))
 twivideo.net##.content_area > div[style]:has(> div[style] > iframe[src^="https://creative.bbrdbr.com/"])
 jiji.com##.ArticleText > span.notice
 menshealth.de##div[class^="mps-ad-container"]
@@ -4089,7 +4226,8 @@ timesofindia.indiatimes.com##div[onclick="stpPgtn(event)"]:has(> div.wdt-taboola
 timesofindia.indiatimes.com##div[data-sp-click="stpPgtn(event)"]:has(> div.wdt-taboola)
 nplus1.ru##.header-bidding-ad-container
 wunderweib.de##div[data-ad-slot-id^="mobile"]
-sondakika.com#$##native_masthead_mobil { height: 0 !important; }
+sondakika.com#$##video-ad-container-mobile { display: none !important; }
+sondakika.com#$##native_masthead_mobil { height: 0 !important; margin: 0 !important; }
 vxxx.com##.popular-models + div[class]
 baseball-mag.net##div[style="width:100%;text-align: center;height:152px;overflow:hidden;"]
 news.yahoo.co.jp#$##inf_mid { border-bottom: unset !important; }
@@ -4419,7 +4557,7 @@ grapee.jp##.comment > aside:has(> div.OUTBRAIN)
 ||frontend.vh.yandex.ru/player/*&adConfig=$domain=mentoday.ru
 quotidiano.net#%#//scriptlet('set-local-storage-item', 'pwa_show', 'true')
 akashi-journal.com###custom_html-46
-topics.smt.docomo.ne.jp,bayburtmedya.com,m.business-gazeta.ru##.banner
+plus-msg.auone.jp,topics.smt.docomo.ne.jp,bayburtmedya.com,m.business-gazeta.ru##.banner
 privatehomeclips.com##.video__wrapper > section[style="display: flex;"]
 m.tsumanne.net##object[data*="/ad.html"]
 inrlp.de##div[class^="w4_Mobile_Pos"]
@@ -4748,7 +4886,6 @@ crx4chrome.com##div[style="min-height:336px;"]
 erologz.com##div[class^="cls-"]
 ||templates.stroeerdigital.de/[PROD]_MobileExpandableStickyFooter.min.js
 t-online.de##div[id^="mobileexpandablestickyfooter"]
-news-postseven.com##div[style="min-height: 180px; margin-bottom:10px;"]
 news-postseven.com##div[style^="position:fixed; height:auto; min-height: 100px; top:0px; width:100%;"]
 news-postseven.com##div[style="display:block; height:120px;"]
 appleinsider.com###mobile-ad-wrap
@@ -4797,7 +4934,6 @@ engadget.com##.caas-sda-benji-ad
 vesti.kz##.xbet-mob-index
 vesti.kz##amp-iframe[src^="https://smi24.kz/"]
 trendyporn.com##div[style^="height:"][style$="width:auto"]
-notebookcheck.com,notebookcheck.it,notebookcheck.nl,notebookcheck.info,notebookcheck.biz##aside.nbc-right-float
 carro-groce.com###text-50
 worldcrunch.com##.wc_infinite
 winfuture.de###articleBody > a[href*="/r?"]
@@ -4811,7 +4947,7 @@ justthegays.com###block-31
 soccerstats.com###content_old > div[style*="padding-bottom:"]:not([id])
 soccerstats.com##div[style*="margin-top:"]:not([id]) div[style*="padding-bottom:"]
 porndr.com##div[style="text-align: center; display: block; margin: 0px 0px 10px;"]
-ebony8.com,zeenite.com,shemalesin.com,sortporn.com,porndr.com,freeporn8.com##.top
+teenager365.to,ebony8.com,zeenite.com,shemalesin.com,sortporn.com,porndr.com,freeporn8.com##.top
 amateur8.com,freeporn8.com##.mobile_nav.pignr
 hotmovs.com##.video-page > div > div > div:empty
 tv.yahoo.co.jp##.adMmon
@@ -4912,7 +5048,6 @@ wsj.com#?#div[class^="WhatsNewsTheme"] > div[class]:has(div[class] > div[class^=
 amp.dantri.com.vn##div[id^="xds-"]
 outdoorlife.com#?##empire-unit-footer-close-btn
 outdoorlife.com#?#div[id^="empire-unit-sticky_footer__mobile"]
-manysex.com,xjav.tube,aniporn.com##.header__item
 esquire.com#?#section > div[class*="css"]:has(> div.ad-container)
 thegreatoutdoorsmag.com,amateurphotographer.com##.post-content-ad
 themanual.com##body .dtads-mobile
@@ -5176,7 +5311,8 @@ cityheaven.net##.noguide_banner
 cityheaven.net##.adm-layoutshift-loading
 search.yahoo.co.jp##.TSg_Ad
 citimuzik.com##div[class*="ai-viewport-"]
-nknews.jp###im_overlay
+buzzap.jp###im_panel_top
+buzzap.jp,nknews.jp###im_overlay
 nknews.jp###im_panel_b
 thehindu.com##.flooting-ad
 nishinippon.co.jp##.c-ad-header
@@ -5542,13 +5678,14 @@ theporndude.vip,theporndude.com##.pdc-casting
 soccerdigestweb.com##div[class^="bnr_w3"]
 teleprogramma.pro##.header-bottom-wrapper
 nukemanga.com##.widget-text
-m.viptube.icu,m.viptube.com,m.viptube.*##.player_premium_bar
-m.viptube.icu,m.viptube.com,m.viptube.*##.partner_text_link
-m.viptube.icu,m.viptube.com,m.viptube.*##.livecams_main
-m.viptube.icu,m.viptube.com,m.viptube.*##.lcb
-m.viptube.icu,m.viptube.com,m.viptube.*###mobile-header-1
-m.viptube.icu,m.viptube.com,m.viptube.*###mobile-middle-1
-m.viptube.icu,m.viptube.com,m.viptube.*###mobile-footer-1
+m.viptube.*#%#//scriptlet('set-cookie', 'adv_show', '3')
+m.viptube.*##.player_premium_bar
+m.viptube.*##.partner_text_link
+m.viptube.*##.livecams_main
+m.viptube.*##.lcb
+m.viptube.*###mobile-header-1
+m.viptube.*###mobile-middle-1
+m.viptube.*###mobile-footer-1
 olive-hitomawashi.com###main > .bl_articles > h3[style="margin-bottom:0;"]
 olive-hitomawashi.com##h3[style="margin-bottom:0;"] + div[style^="padding-bottom: 50px; text-align: -webkit-center"]
 bisweb.jp###sp_all_header_1st
@@ -5954,7 +6091,7 @@ unian.net,unian.ua##div[style^="height:390px;"][style*="clear:both;"]
 unian.ua##div[style="height: 300px"]
 unian.net,unian.ua##iframe[src^="/content/lentainform-"]
 mynet.com##.ad-flying-carpet
-pisshamster.com,xanimu.com,darknessporn.com,familyporner.com##div[class*="-boxes-mobile"]
+xanimu.top,pisshamster.com,xanimu.com,darknessporn.com,familyporner.com##div[class*="-boxes-mobile"]
 cumlouder.com##.banner-300x100
 fyptt.to##.bottom-post-ad-space
 fyptt.to##.top-post-ad
@@ -6070,7 +6207,6 @@ tripnote.jp###button-booking
 hochi.news##.ad[style^="min-width: 360px; min-height: 100px"]
 hochi.news##.ad[style^="min-width: 336px"]
 hochi.news##div[style^="min-width: 320px; min-height: 1"]
-manysex.com,manysex.tube,inporn.com##.video__wrapper > div.header__item
 number.bunshun.jp##div[class^="container-banner-"]
 comic.pixiv.net##.w-screen.bg-surface4-default[data-testid="container"]
 refind2ch.org##.ads_sp_base
@@ -6470,7 +6606,10 @@ filmibeat.com,goodreturns.in##.amp-inner-ad
 filmibeat.com,goodreturns.in###first-ad > *
 filmibeat.com,goodreturns.in###mobifooterad
 m.gazeta.ru###top-banner
-notebookcheck.pl,notebookcheck.net###content > .ttcl_0 > .tx-nbc2fe-incontent-column > .first_incontent
+notebookcheck-hu.com,notebookcheck-tr.com,notebookcheck-ru.com,notebookcheck.*##aside.nbc-right-float
+notebookcheck-hu.com,notebookcheck-tr.com,notebookcheck-ru.com,notebookcheck.*##aside[class^="nbc-r"]:has(> div[id^="adngin-"])
+notebookcheck-hu.com,notebookcheck-tr.com,notebookcheck-ru.com,notebookcheck.*##.tx-nbc2fe-incontent-column:has(> .nbc-r-float-inline > div[id^="div-gpt-ad"])
+notebookcheck-hu.com,notebookcheck-tr.com,notebookcheck-ru.com,notebookcheck.*###content > .ttcl_0 > .tx-nbc2fe-incontent-column > .first_incontent
 rottentomatoes.com##.sticky-footer-link
 withnews.jp##.sticky-sidebar
 noticias.uol.com.br##amp-fx-flying-carpet[height="400px"]
@@ -7214,7 +7353,6 @@ vandal-elespanol-com.cdn.ampproject.org,google.ad,google.ae,google.al,google.am,
 amp.theguardian.com,google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.cn,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.bz,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.nf,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.je,google.jo,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tk,google.tl,google.tm,google.tn,google.to,google.tt,google.vg,google.vu,google.ws,ampproject.org###ad-undefined
 gala.de,mobil.stern.de,google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.cn,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.bz,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.nf,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.je,google.jo,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tk,google.tl,google.tm,google.tn,google.to,google.tt,google.vg,google.vu,google.ws,ampproject.org##.flying-carpet-element__ad-label + amp-fx-flying-carpet
 gala.de,mobil.stern.de,google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.cn,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.bz,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.nf,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.je,google.jo,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tk,google.tl,google.tm,google.tn,google.to,google.tt,google.vg,google.vu,google.ws,ampproject.org##.flying-carpet-element__ad-label
-zmovs.com##div[id^="div-gpt-"]
 hot-grid-id.cdn.ampproject.org###outbrain-container
 ||yqingge.com/wap.js
 m.kaskus.co.id###my-ad-slot
@@ -7838,7 +7976,6 @@ nudevista.at,nudevista.be,nudevista.com,nudevista.com.br,nudevista.com.pl,nudevi
 m.hclips.com##div#pane_related[role="tabpanel"] > .collapse.in
 m.hclips.com##.container > .section--normal[style^="margin-top:"] > .section__panel.text-center
 telegraph.co.uk##div[class^="mobileAdvertInStream"]
-zmovs.com##div[class^="player-banner"]
 ||m.fmhua.com/js/lbo1888.js
 laravel-news.com##.site-main > div.container > div.callout:first-child
 udn.com##.overlay-container
@@ -7957,7 +8094,7 @@ theatlantic.com##.native-promo-slider
 ulm-news.de###SWU-schwabenstrom
 ulm-news.de##div[id^="banner_"]
 www.yahoo.com###act-ad-parallax
-totalwar.doorblog.jp,xn--dkqp0gri91r38rn1wmlurtz.com,gigazine.net,medicinenet.com,rxlist.com,wap.lexun.com###ad
+2ch-ero-report.blog.jp,totalwar.doorblog.jp,xn--dkqp0gri91r38rn1wmlurtz.com,gigazine.net,medicinenet.com,rxlist.com,wap.lexun.com###ad
 m.sondakika.com###adsgoogle
 opodo.de###appLayer
 russian7.ru###bottomLine-banner
@@ -8087,7 +8224,6 @@ hog.mobi#?#.content__info:has(> ul.info__list > li.info__item > div.info__link >
 hog.mobi#?#.content__body > section.related-view:has(> div[id$="-adv"])
 hog.mobi#?#.content__body > div.content__info:has(> ul.info__list > li.info__item > h3.info__title.info__title:contains(Sponsored by))
 sexu.site#?#.info__item:has(> .info__link > div[id$="_player-adv"])
-notebookcheck-ru.com,notebookcheck-tr.com,notebookcheck.org,notebookcheck.net#?#.nbc-right-float-inline:has(> div[id^="adngin-"])
 donnerwetter.de#?#div[class^="col-"] > div.prepend-top:has(> center > ins.adsbygoogle)
 radio.net#?##stationpage-holder > div:has(div[id^="RAD_M_station_incontent-"])
 sueddeutsche.de#?#article > div[data-manual-remove="true"]:has(> div[id^="iqadt"])
@@ -8293,7 +8429,6 @@ aaieba.livedoor.biz#?#div[align="center"] > table:has(a[href*="amazon.co.jp/"])
 profile.ru#?#.main > div.container-fluid > div > div.float-right:contains(/^\s{8} $/)
 app.famitsu.com#?#.news_section > ul > li > div.adcloud_frame:upward(1)
 sueddeutsche.de#?#div[itemprop="articleBody"] > div:has(> div[id^="iqadtile"])
-notebookcheck.com#?#div[class*="incontent-column"]:has(> div[class] > div[id^="div-gpt-ad"])
 cuebic.biz#?#.shelf-text script[src^="https://img.ad-nex.com/"]:upward(.shelf-text)
 vipcle2.com#?#body > div[id^="text-"] > div.textwidget:has(> div[class^="ad300"])
 mydramalist.com#?#.app-body > div[class]:first-child:has(> .is-mobile > div[class] > .mdl-gpt-tag)
@@ -8415,7 +8550,6 @@ m-news-de.cdn.ampproject.org#?#.article > amp-fx-flying-carpet:has(> div > div >
 buffed.de#?#ul[data-role="listview"] > .ticker_item:has(> a[href^="/E-Commerce"])
 amp.n-tv.de#?#span[itemprop="articleBody"] > amp-fx-flying-carpet:has(> div > div > amp-ad)
 hurriyet.com.tr#?#.news-wrapper > div > amp-fx-flying-carpet:has(> div > div > amp-ad)
-zmovs.com#?#.player-spot__title:contains(Advertisement)
 m.quotenmeter.de#?##qm-home > .qm-item:has(> div[id^="div-gpt-ad-"])
 mobil.stern.de#?#.teaserlist__items > .mod-teaser:has(> a > .teaser > .sponsorship)
 mobil.stern.de#?#.teaserlist__items > .i-frame-element:has(> .guj-iframe-parent > iframe[src*="stern.de/vergleich/wp-content/themes/stern"][src*="/iframe-startseite"])
@@ -8458,6 +8592,15 @@ contexto.me#$#.top-ad-padding { padding-top: 15px !important; }
 ! NOTE: Regular rules end ⬆️
 ! !SECTION: Regular rules
 !
+! TXXX network/tubecorp/Adultnext
+bdsmx.tube,manysex.com,manysex.tube,inporn.com##.video__wrapper > div.header__item
+txxxporn.tube,txxx.*##.video-conten > div[class] > div[class]:has(> div[class] > div[style="height: 100px;"])
+porn-latina.com,gfthai.com,lesbigo.com,boobse.com,ourgay.tube,xshemale.tube,pornl.tube,fuxxx.com,keporn.vip,keporn.com,peporn.com,teen21.com,pornuse.com,uanal.com##.content > [class$="wrapper"] > section
+desi-porn.tube##.content > div > div[class]:has(> div[class] > div.da-container)
+voyeurhit.tube,voyeurhit.com##a[class^="tag"][target="_blank"]
+thegay.tube,shemalez.tube,shemalez.com,xjav.tube,hclips.com,hotmovs.tube,hotmovs.com,hdzog.tube,hdzog.com##div[class^="tag"] > a[href][target="_blank"]
+gettranny.com,blackporn.tube,abbdsm.com,abgay.tube,abjav.com,abxxx.com,abmilf.com,abtranny.com,manysex.com,xjav.tube,aniporn.com##.header__item
+mrgay.tube,transtxxx.com,txxxporn.tube,txxx.*##div[class^="links"] > [href][target="_blank"]
 ! pornhub.com
 pornhub.com,pornhub.org##div[class]:has(> ins.adsbytrafficjunky)
 pornhub.com,pornhub.org##.eudsaLink
@@ -8504,8 +8647,8 @@ hanime1.me#$#iframe[src^="//a.magsrv.com/"] { height: 100px !important; width: 0
 ! noodlemagazine.com
 noodlemagazine.com##.container > noindex
 noodlemagazine.com##div[style^="height:110px;max-width:450px;"]
-noodlemagazine.com##.container > div[style*="height:100px"]
-noodlemagazine.com##.container > div[style*="height:250px"]
+mat6tube.com,noodlemagazine.com##.container > div[style*="height:100px"]
+mat6tube.com,noodlemagazine.com##.container > div[style*="height:250px"]
 noodlemagazine.com##.main > div.container > div[style^="max-width:450px;margin:0 auto;padding:15px"]
 noodlemagazine.com#?#div[style^="background-color:"]:has(> iframe[data-src^="//go."])
 ! op.gg
@@ -8545,9 +8688,6 @@ clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.co
 4pda.to##body > :not(div) > [style*="px;zoom:"]
 4pda.to##body > [style*="px;zoom:"]
 !#endif
-!
-! citysites.ua
-0154.by,0312.ua,032.ua,0332.ua,0342.ua,0352.ua,0362.ua,0372.ua,0382.ua,0412.ua,04141.com.ua,0432.ua,04563.com.ua,04597.com.ua,04598.com.ua,0462.ua,0472.ua,048.ua,04868.com.ua,0512.com.ua,05136.com.ua,0522.ua,0532.ua,05366.com.ua,0542.ua,05447.com.ua,0552.ua,056.ua,0564.ua,0566.com.ua,0569.com.ua,057.ua,061.ua,06153.com.ua,0619.com.ua,06236.com.ua,06237.com.ua,06239.com.ua,06242.ua,06252.com.ua,06267.com.ua,06272.com.ua,06274.com.ua,06277.com.ua,0629.com.ua,0642.ua,06452.com.ua,1rnd.ru,3849.com.ua,44.ua,4594.com.ua,5692.com.ua,62.ua,6262.com.ua,6264.com.ua,65.media,7152.kz,7232.kz,8692.ru,city04.kz,city41.ru,citydomodedovo.ru,go31.ru,go61.ru,go7812.ru,gorod3466.ru,inaktau.kz,inalmaty.kz,inastana.kz,inatyrau.kz,inkaragandy.kz,inshymkent.kz,karelia.news,kaskelenec.kz,qapshagai-city.kz,uralskcity.kz##app-news-popup-banner
 !
 ! Google
 google.*##.commercial-unit-mobile-top .jackpot-main-content-container > div[data-hveid] + div[style] div.vci
@@ -8619,6 +8759,7 @@ m.vk.com,m.vk.ru#?#.wall_item > div.wi_head > div[class^="PostHeader"] span[clas
 m.vk.com,m.vk.ru##.wall_item[data-ad-view]
 !
 ! xhamster.com
+tr.usbxh.life,xhamster44.desi,aawweb.beauty,colourxh.site,xhamster43.desi,fullxh.com,interxh.site,xhspot.com,xhwide5.com,xhchannel.com,xhtotal.com,xhtree.com,xhwide2.com,xhlease.world,xhamsterporno.mx,valuexh.life,xhdate.world,xhbranch5.com,galleryxh.site,xhbig.com,xhaccess.com,xhofficial.com,seexh.com,xhamster42.desi,xhvid.com,xhamster20.desi,xhamster19.desi,xhwebsite2.com,xhamster18.desi,xhadult3.com,xhadult2.com,xhmoon5.com,xhwide1.com,xhamster3.com,xhplanet2.com,megaxh.com,xhamster16.*,xhamster.com,xhamster2.com,xhamster7.com,xhamster8.com,xhamster9.com,xhamster10.com,xhamster12.com,xhamster13.*,xhamster14.com,xhamster15.com,xhamster17.*,xhamster18.*,xhamster19.com,xhamster1.desi,xhamster2.desi,xhamster3.*,xhamster4.desi,xhamster22.com,xhamster27.com,openxh.com,xhamster5.desi,xhopen.com,openxh1.com,xhamster40.com,xhamster.one,xhamster.desi,stripchat.com##.subscribe-block__container > div[class^="linkButton-"]
 tr.usbxh.life,xhamster44.desi,aawweb.beauty,colourxh.site,xhamster43.desi,fullxh.com,interxh.site,xhspot.com,xhwide5.com,xhchannel.com,xhtotal.com,xhtree.com,xhwide2.com,xhlease.world,xhamsterporno.mx,valuexh.life,xhdate.world,xhbranch5.com,galleryxh.site,xhbig.com,xhaccess.com,xhofficial.com,seexh.com,xhamster42.desi,xhvid.com,xhamster20.desi,xhamster19.desi,xhwebsite2.com,xhamster18.desi,xhadult3.com,xhadult2.com,xhmoon5.com,xhwide1.com,xhamster3.com,xhplanet2.com,megaxh.com,xhamster16.*,xhamster.com,xhamster2.com,xhamster7.com,xhamster8.com,xhamster9.com,xhamster10.com,xhamster12.com,xhamster13.*,xhamster14.com,xhamster15.com,xhamster17.*,xhamster18.*,xhamster19.com,xhamster1.desi,xhamster2.desi,xhamster3.*,xhamster4.desi,xhamster22.com,xhamster27.com,openxh.com,xhamster5.desi,xhopen.com,openxh1.com,xhamster40.com,xhamster.one,xhamster.desi,stripchat.com#%#//scriptlet('set-cookie-reload', 'pShowMob', 'true')
 tr.usbxh.life,xhamster44.desi,aawweb.beauty,colourxh.site,xhamster43.desi,fullxh.com,interxh.site,xhspot.com,xhwide5.com,xhchannel.com,xhtotal.com,xhtree.com,xhwide2.com,xhlease.world,xhamsterporno.mx,valuexh.life,xhdate.world,xhbranch5.com,galleryxh.site,xhbig.com,xhaccess.com,xhofficial.com,seexh.com,xhamster42.desi,xhvid.com,xhamster20.desi,xhamster19.desi,xhwebsite2.com,xhamster18.desi,xhadult3.com,xhadult2.com,xhmoon5.com,xhwide1.com,xhamster3.com,xhplanet2.com,megaxh.com,xhamster16.*,xhamster.com,xhamster2.com,xhamster7.com,xhamster8.com,xhamster9.com,xhamster10.com,xhamster12.com,xhamster13.*,xhamster14.com,xhamster15.com,xhamster17.*,xhamster18.*,xhamster19.com,xhamster1.desi,xhamster2.desi,xhamster3.*,xhamster4.desi,xhamster22.com,xhamster27.com,openxh.com,xhamster5.desi,xhopen.com,openxh1.com,xhamster40.com,xhamster.one,xhamster.desi,stripchat.com##.video_info + div[class^="container-"]
 tr.usbxh.life,xhamster44.desi,aawweb.beauty,colourxh.site,xhamster43.desi,fullxh.com,interxh.site,xhspot.com,xhwide5.com,xhchannel.com,xhtotal.com,xhtree.com,xhwide2.com,xhlease.world,xhamsterporno.mx,valuexh.life,xhdate.world,xhbranch5.com,galleryxh.site,xhbig.com,xhaccess.com,xhofficial.com,seexh.com,xhamster42.desi,xhvid.com,xhamster20.desi,xhamster19.desi,xhwebsite2.com,xhamster18.desi,xhadult3.com,xhadult2.com,xhmoon5.com,xhwide1.com,xhamster3.com,xhplanet2.com,megaxh.com,xhamster16.*,xhamster.com,xhamster2.com,xhamster7.com,xhamster8.com,xhamster9.com,xhamster10.com,xhamster12.com,xhamster13.*,xhamster14.com,xhamster15.com,xhamster17.*,xhamster18.*,xhamster19.com,xhamster1.desi,xhamster2.desi,xhamster3.*,xhamster4.desi,xhamster22.com,xhamster27.com,openxh.com,xhamster5.desi,xhopen.com,openxh1.com,xhamster40.com,xhamster.one,xhamster.desi,stripchat.com##.thumb-list-mobile > li.thumb-list-mobile-item[role="button"]
@@ -8723,6 +8864,18 @@ livejournal.com##div[id^="billboard_mobile_"]
 ! END: Livejournal.com
 !
 !
+!+ NOT_OPTIMIZED
+itc.ua##.image-100
+!+ NOT_OPTIMIZED
+techxplore.com##.ads-container
+!+ NOT_OPTIMIZED
+furaffinity.net###c-videoAd--outer
+!+ NOT_OPTIMIZED
+fileditchfiles.me##.box-a9x
+!+ NOT_OPTIMIZED
+goal.com##.fco-fc-video-player
+!+ NOT_OPTIMIZED
+applealmond.com###sticky-ad-bottom
 !+ NOT_OPTIMIZED
 politico.com##.adlib-sticky-footer
 !+ NOT_OPTIMIZED
@@ -9182,9 +9335,9 @@ adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_i
 ! Solving problems: problematic apps must be excluded by adding `~package_name` to these rules.
 !                   The most of excluded apps - browsers. They should not be matched.
 !#if (adguard_app_android)
-/:\/\/yandex\.(ru|com)$/$app=~acr.browser.barebones|~acr.browser.lightning|~cn.mozilla.firefox|~com.amazon.cloud9|~com.android.browser|~com.android.chrome|~com.apn.mobile.browser|~com.appdream.cloud|~com.apusapps.browser|~com.apusapps.browser.turbo|~com.asus.browser|~com.baidu.browser.inter|~com.baidu.browserhd.inter|~com.boatbrowser.free|~com.boatbrowser.free.addon.en|~com.boatbrowser.free.addon.fb|~com.boatbrowser.free.addon.gcp|~com.boatbrowser.free.addon.ip|~com.boatbrowser.free.addon.pm|~com.boatbrowser.free.addon.th|~com.boatbrowser.free.addon.twitter|~com.boatbrowser.free.addon.us|~com.boatbrowser.license.key|~com.boatbrowser.tablet|~com.boatgo.browser|~com.boatgo.license.key|~com.brave.browser|~com.brave.browser_beta|~com.brave.browser_default|~com.brave.browser_dev|~com.brave.browser_nightly|~com.browser.Speed|~com.callsoft.cobrabrowser|~com.chrome.beta|~com.chrome.canary|~com.chrome.dev|~com.chrome.deviceextras.samsung|~com.cleanmaster.security|~com.cloudmosa.puffin|~com.cloudmosa.puffinFree|~com.cmcm.armorfly|~com.dolphin.addons.dropbox|~com.dolphin.addons.evernotesshare|~com.dolphin.addons.pocket|~com.dolphin.battery.saver|~com.dolphin.browser|~com.dolphin.browser.addons.box|~com.dolphin.browser.addons.skitch|~com.dolphin.browser.android.elex|~com.dolphin.browser.engine|~com.dolphin.browser.express.web|~com.dolphin.browser.id|~com.dolphin.browser.zero|~com.dolphin.theme.ocean|~com.dolphin.web.browser.android|~com.droid.browser|~com.explore.web.browser|~com.feedback.browser.wjbrowser|~com.fevdev.nakedbrowser|~com.fevdev.nakedbrowserpro|~com.ghostery.android.ghostery|~com.google.android.apps.searchlite|~com.hsv.freeadblockerbrowser|~com.htc.sense.browser|~com.huawei.browser|~com.ilegendsoft.mercury|~com.jbak.superbrowser|~com.jiubang.browser|~com.kiwibrowser.browser|~com.ksmobile.cb|~com.lemurbrowser.exts|~com.linkbubble.playstore|~com.metalasfook.nochromo|~com.mi.globalbrowser.mini|~com.microsoft.amp.apps.bingnews|~com.microsoft.emmx|~com.microsoft.emmx.canary|~com.mmbox.xbrowser.pro|~com.mokee.yubrowser|~com.mx.browser|~com.mx.browser.tablet|~com.mycompany.app.soulbrowser|~com.naver.whale|~com.nhn.android.search|~com.ninesky.browser|~com.ninnix96.pyrope.browser|~com.nubelacorp.javelin|~com.opera.browser|~com.opera.browser.beta|~com.opera.browser.classic|~com.opera.browser.extension|~com.opera.browser.pwa|~com.opera.browser.yandex|~com.opera.browses|~com.opera.mini.android|~com.opera.mini.android.yandex|~com.opera.touch|~com.qihoo.contents|~com.quark.browser|~com.rocket.browser|~com.rtsw.easydownloader|~com.sec.android.app.sbrowser|~com.sec.android.app.sbrowser.beta|~com.stoutner.privacybrowser.free|~com.stoutner.privacybrowser.standard|~com.swe.atego.browser|~com.tencent.ibibo.mtt|~com.tencent.mtt|~com.uc.browser.en|~com.uc.browser.hd|~com.UCMobile.intl|~com.UCMobile.intl.x86|~com.vionika.firephoenix|~com.vivaldi.browser|~com.vivaldi.browser.snapshot|~com.vivaldi.browser.sopranos|~com.xbrowser.play|~com.yandex.aliceapp|~com.yandex.browser|~com.yandex.browser.alpha|~com.yandex.browser.beta|~com.yandex.browser.corp|~com.yandex.browser.lite|~com.yandex.browser.tv|~com.yandex.calendar.app|~com.yandex.courier|~com.yandex.iot|~com.yandex.mobile.plus.game.city|~com.yandex.mobile.realty|~com.yandex.searchapp|~com.yandex.searchapp.beta|~com.yandex.tasks.androidapp|~com.yandex.uslugi|~com.yandex.uslugi.clients|~com.yandex.yamb|~explore.web.browser|~internetexplorer.browser.webexplorer|~io.github.forkmaintainers.iceraven|~jp.co.fenrir.android.sleipnir|~jp.co.fenrir.android.sleipnir_black|~jp.co.fenrir.android.sleipnir_test|~jp.ddo.pigsty.Habit_Browser|~jp.ddo.pigsty.HabitBrowser|~jp.ejimax.yuzubrowser|~jp.hazuki.yuzubrowser|~mark.via|~mark.via.gp|~me.android.browser|~mobi.browser.flashfox|~mobi.browser.flfoxpro|~mobi.mgeek.alexa|~mobi.mgeek.BookmarksWidget|~mobi.mgeek.brightness|~mobi.mgeek.browserfaster|~mobi.mgeek.DolphinFM|~mobi.mgeek.DolphinReader|~mobi.mgeek.DolphinTranslate|~mobi.mgeek.eBaySearch|~mobi.mgeek.MorningCoffee|~mobi.mgeek.mypdf|~mobi.mgeek.ScreenCut|~mobi.mgeek.shinyshake|~mobi.mgeek.showip|~mobi.mgeek.TabHistory|~mobi.mgeek.TabMixPlus|~mobi.mgeek.tabreload|~mobi.mgeek.tabswitcher|~mobi.mgeek.textadjust|~mobi.mgeek.TunnyBrowser|~mobi.mgeek.TunnyBrowser.Theme.EnNightModeV10|~mobi.mgeek.UltimateFlag|~mobi.mgeek.whois|~mobi.mgeek.YoutubeSearch|~net.fast.web.browser|~net.quetta.browser|~net.slions.fulguris.full.fdroid|~net.slions.fulguris.full.playstore|~nextapp.atlas|~nu.tommie.inbrowser|~o.o.joey|~org.adblockplus.browser|~org.bromite.bromite|~org.chromium.chrome|~org.chromium.thorium|~org.cromite.cromite|~org.cyanogenmod.gello.browser|~org.easyweb.browser|~org.gnu.icecat|~org.iron.srware|~org.mozilla.fenix|~org.mozilla.fenix.nightly|~org.mozilla.fennec|~org.mozilla.fennec_aurora|~org.mozilla.fennec_fdroid|~org.mozilla.firefox|~org.mozilla.firefox_beta|~org.mozilla.focus|~org.mozilla.reference.browser|~org.tint|~reddit.news|~ru.mail.amigo|~ru.yandex.androidkeyboard|~ru.yandex.cloud|~ru.yandex.cloud.tracker|~ru.yandex.direct|~ru.yandex.disk|~ru.yandex.drawie|~ru.yandex.games|~ru.yandex.key|~ru.yandex.mobile.afisha|~ru.yandex.mobile.arenda|~ru.yandex.music|~ru.yandex.practicum.flutter_practicum|~ru.yandex.readie|~ru.yandex.searchplugin|~ru.yandex.searchplugin.beta|~ru.yandex.shell|~ru.yandex.telemost|~ru.yandex.translate|~ru.yandex.travel|~ru.yandex.weatherplugin|~ru.yandex.yandexmaps|~ru.yandex.yandexnavi|~us.spotco.mulch|~com.kakao.talk|~net.daum.android.daum|~com.nate.android.portalmini|~org.ironfoxoss.ironfox|~ru.auto.ara
-/^77\.88\.(4|5){2}.(5|8){2}/$network,app=~acr.browser.barebones|~acr.browser.lightning|~cn.mozilla.firefox|~com.amazon.cloud9|~com.android.browser|~com.android.chrome|~com.apn.mobile.browser|~com.appdream.cloud|~com.apusapps.browser|~com.apusapps.browser.turbo|~com.asus.browser|~com.baidu.browser.inter|~com.baidu.browserhd.inter|~com.boatbrowser.free|~com.boatbrowser.free.addon.en|~com.boatbrowser.free.addon.fb|~com.boatbrowser.free.addon.gcp|~com.boatbrowser.free.addon.ip|~com.boatbrowser.free.addon.pm|~com.boatbrowser.free.addon.th|~com.boatbrowser.free.addon.twitter|~com.boatbrowser.free.addon.us|~com.boatbrowser.license.key|~com.boatbrowser.tablet|~com.boatgo.browser|~com.boatgo.license.key|~com.brave.browser|~com.brave.browser_beta|~com.brave.browser_default|~com.brave.browser_dev|~com.brave.browser_nightly|~com.browser.Speed|~com.callsoft.cobrabrowser|~com.chrome.beta|~com.chrome.canary|~com.chrome.dev|~com.chrome.deviceextras.samsung|~com.cleanmaster.security|~com.cloudmosa.puffin|~com.cloudmosa.puffinFree|~com.cmcm.armorfly|~com.dolphin.addons.dropbox|~com.dolphin.addons.evernotesshare|~com.dolphin.addons.pocket|~com.dolphin.battery.saver|~com.dolphin.browser|~com.dolphin.browser.addons.box|~com.dolphin.browser.addons.skitch|~com.dolphin.browser.android.elex|~com.dolphin.browser.engine|~com.dolphin.browser.express.web|~com.dolphin.browser.id|~com.dolphin.browser.zero|~com.dolphin.theme.ocean|~com.dolphin.web.browser.android|~com.droid.browser|~com.explore.web.browser|~com.feedback.browser.wjbrowser|~com.fevdev.nakedbrowser|~com.fevdev.nakedbrowserpro|~com.ghostery.android.ghostery|~com.google.android.apps.searchlite|~com.hsv.freeadblockerbrowser|~com.htc.sense.browser|~com.huawei.browser|~com.ilegendsoft.mercury|~com.jbak.superbrowser|~com.jiubang.browser|~com.kiwibrowser.browser|~com.ksmobile.cb|~com.lemurbrowser.exts|~com.linkbubble.playstore|~com.metalasfook.nochromo|~com.mi.globalbrowser.mini|~com.microsoft.amp.apps.bingnews|~com.microsoft.emmx|~com.microsoft.emmx.canary|~com.mmbox.xbrowser.pro|~com.mokee.yubrowser|~com.mx.browser|~com.mx.browser.tablet|~com.mycompany.app.soulbrowser|~com.naver.whale|~com.nhn.android.search|~com.ninesky.browser|~com.ninnix96.pyrope.browser|~com.nubelacorp.javelin|~com.opera.browser|~com.opera.browser.beta|~com.opera.browser.classic|~com.opera.browser.extension|~com.opera.browser.pwa|~com.opera.browser.yandex|~com.opera.browses|~com.opera.mini.android|~com.opera.mini.android.yandex|~com.opera.touch|~com.qihoo.contents|~com.quark.browser|~com.rocket.browser|~com.rtsw.easydownloader|~com.sec.android.app.sbrowser|~com.sec.android.app.sbrowser.beta|~com.stoutner.privacybrowser.free|~com.stoutner.privacybrowser.standard|~com.swe.atego.browser|~com.tencent.ibibo.mtt|~com.tencent.mtt|~com.uc.browser.en|~com.uc.browser.hd|~com.UCMobile.intl|~com.UCMobile.intl.x86|~com.vionika.firephoenix|~com.vivaldi.browser|~com.vivaldi.browser.snapshot|~com.vivaldi.browser.sopranos|~com.xbrowser.play|~com.yandex.aliceapp|~com.yandex.browser|~com.yandex.browser.alpha|~com.yandex.browser.beta|~com.yandex.browser.corp|~com.yandex.browser.lite|~com.yandex.browser.tv|~com.yandex.calendar.app|~com.yandex.courier|~com.yandex.iot|~com.yandex.mobile.plus.game.city|~com.yandex.mobile.realty|~com.yandex.searchapp|~com.yandex.searchapp.beta|~com.yandex.tasks.androidapp|~com.yandex.uslugi|~com.yandex.uslugi.clients|~com.yandex.yamb|~explore.web.browser|~internetexplorer.browser.webexplorer|~io.github.forkmaintainers.iceraven|~jp.co.fenrir.android.sleipnir|~jp.co.fenrir.android.sleipnir_black|~jp.co.fenrir.android.sleipnir_test|~jp.ddo.pigsty.Habit_Browser|~jp.ddo.pigsty.HabitBrowser|~jp.ejimax.yuzubrowser|~jp.hazuki.yuzubrowser|~mark.via|~mark.via.gp|~me.android.browser|~mobi.browser.flashfox|~mobi.browser.flfoxpro|~mobi.mgeek.alexa|~mobi.mgeek.BookmarksWidget|~mobi.mgeek.brightness|~mobi.mgeek.browserfaster|~mobi.mgeek.DolphinFM|~mobi.mgeek.DolphinReader|~mobi.mgeek.DolphinTranslate|~mobi.mgeek.eBaySearch|~mobi.mgeek.MorningCoffee|~mobi.mgeek.mypdf|~mobi.mgeek.ScreenCut|~mobi.mgeek.shinyshake|~mobi.mgeek.showip|~mobi.mgeek.TabHistory|~mobi.mgeek.TabMixPlus|~mobi.mgeek.tabreload|~mobi.mgeek.tabswitcher|~mobi.mgeek.textadjust|~mobi.mgeek.TunnyBrowser|~mobi.mgeek.TunnyBrowser.Theme.EnNightModeV10|~mobi.mgeek.UltimateFlag|~mobi.mgeek.whois|~mobi.mgeek.YoutubeSearch|~net.fast.web.browser|~net.quetta.browser|~net.slions.fulguris.full.fdroid|~net.slions.fulguris.full.playstore|~nextapp.atlas|~nu.tommie.inbrowser|~o.o.joey|~org.adblockplus.browser|~org.bromite.bromite|~org.chromium.chrome|~org.chromium.thorium|~org.cromite.cromite|~org.cyanogenmod.gello.browser|~org.easyweb.browser|~org.gnu.icecat|~org.iron.srware|~org.mozilla.fenix|~org.mozilla.fenix.nightly|~org.mozilla.fennec|~org.mozilla.fennec_aurora|~org.mozilla.fennec_fdroid|~org.mozilla.firefox|~org.mozilla.firefox_beta|~org.mozilla.focus|~org.mozilla.reference.browser|~org.tint|~reddit.news|~ru.mail.amigo|~ru.yandex.androidkeyboard|~ru.yandex.cloud|~ru.yandex.cloud.tracker|~ru.yandex.direct|~ru.yandex.disk|~ru.yandex.drawie|~ru.yandex.games|~ru.yandex.key|~ru.yandex.mobile.afisha|~ru.yandex.mobile.arenda|~ru.yandex.music|~ru.yandex.practicum.flutter_practicum|~ru.yandex.readie|~ru.yandex.searchplugin|~ru.yandex.searchplugin.beta|~ru.yandex.shell|~ru.yandex.telemost|~ru.yandex.translate|~ru.yandex.travel|~ru.yandex.weatherplugin|~ru.yandex.yandexmaps|~ru.yandex.yandexnavi|~us.spotco.mulch|~com.kakao.talk|~net.daum.android.daum|~com.nate.android.portalmini|~org.ironfoxoss.ironfox|~ru.auto.ara
-/^5\.255\.255\.77/$network,app=~acr.browser.barebones|~acr.browser.lightning|~cn.mozilla.firefox|~com.amazon.cloud9|~com.android.browser|~com.android.chrome|~com.apn.mobile.browser|~com.appdream.cloud|~com.apusapps.browser|~com.apusapps.browser.turbo|~com.asus.browser|~com.baidu.browser.inter|~com.baidu.browserhd.inter|~com.boatbrowser.free|~com.boatbrowser.free.addon.en|~com.boatbrowser.free.addon.fb|~com.boatbrowser.free.addon.gcp|~com.boatbrowser.free.addon.ip|~com.boatbrowser.free.addon.pm|~com.boatbrowser.free.addon.th|~com.boatbrowser.free.addon.twitter|~com.boatbrowser.free.addon.us|~com.boatbrowser.license.key|~com.boatbrowser.tablet|~com.boatgo.browser|~com.boatgo.license.key|~com.brave.browser|~com.brave.browser_beta|~com.brave.browser_default|~com.brave.browser_dev|~com.brave.browser_nightly|~com.browser.Speed|~com.callsoft.cobrabrowser|~com.chrome.beta|~com.chrome.canary|~com.chrome.dev|~com.chrome.deviceextras.samsung|~com.cleanmaster.security|~com.cloudmosa.puffin|~com.cloudmosa.puffinFree|~com.cmcm.armorfly|~com.dolphin.addons.dropbox|~com.dolphin.addons.evernotesshare|~com.dolphin.addons.pocket|~com.dolphin.battery.saver|~com.dolphin.browser|~com.dolphin.browser.addons.box|~com.dolphin.browser.addons.skitch|~com.dolphin.browser.android.elex|~com.dolphin.browser.engine|~com.dolphin.browser.express.web|~com.dolphin.browser.id|~com.dolphin.browser.zero|~com.dolphin.theme.ocean|~com.dolphin.web.browser.android|~com.droid.browser|~com.explore.web.browser|~com.feedback.browser.wjbrowser|~com.fevdev.nakedbrowser|~com.fevdev.nakedbrowserpro|~com.ghostery.android.ghostery|~com.google.android.apps.searchlite|~com.hsv.freeadblockerbrowser|~com.htc.sense.browser|~com.huawei.browser|~com.ilegendsoft.mercury|~com.jbak.superbrowser|~com.jiubang.browser|~com.kiwibrowser.browser|~com.ksmobile.cb|~com.lemurbrowser.exts|~com.linkbubble.playstore|~com.metalasfook.nochromo|~com.mi.globalbrowser.mini|~com.microsoft.amp.apps.bingnews|~com.microsoft.emmx|~com.microsoft.emmx.canary|~com.mmbox.xbrowser.pro|~com.mokee.yubrowser|~com.mx.browser|~com.mx.browser.tablet|~com.mycompany.app.soulbrowser|~com.naver.whale|~com.nhn.android.search|~com.ninesky.browser|~com.ninnix96.pyrope.browser|~com.nubelacorp.javelin|~com.opera.browser|~com.opera.browser.beta|~com.opera.browser.classic|~com.opera.browser.extension|~com.opera.browser.pwa|~com.opera.browser.yandex|~com.opera.browses|~com.opera.mini.android|~com.opera.mini.android.yandex|~com.opera.touch|~com.qihoo.contents|~com.quark.browser|~com.rocket.browser|~com.rtsw.easydownloader|~com.sec.android.app.sbrowser|~com.sec.android.app.sbrowser.beta|~com.stoutner.privacybrowser.free|~com.stoutner.privacybrowser.standard|~com.swe.atego.browser|~com.tencent.ibibo.mtt|~com.tencent.mtt|~com.uc.browser.en|~com.uc.browser.hd|~com.UCMobile.intl|~com.UCMobile.intl.x86|~com.vionika.firephoenix|~com.vivaldi.browser|~com.vivaldi.browser.snapshot|~com.vivaldi.browser.sopranos|~com.xbrowser.play|~com.yandex.aliceapp|~com.yandex.browser|~com.yandex.browser.alpha|~com.yandex.browser.beta|~com.yandex.browser.corp|~com.yandex.browser.lite|~com.yandex.browser.tv|~com.yandex.calendar.app|~com.yandex.courier|~com.yandex.iot|~com.yandex.mobile.plus.game.city|~com.yandex.mobile.realty|~com.yandex.searchapp|~com.yandex.searchapp.beta|~com.yandex.tasks.androidapp|~com.yandex.uslugi|~com.yandex.uslugi.clients|~com.yandex.yamb|~explore.web.browser|~internetexplorer.browser.webexplorer|~io.github.forkmaintainers.iceraven|~jp.co.fenrir.android.sleipnir|~jp.co.fenrir.android.sleipnir_black|~jp.co.fenrir.android.sleipnir_test|~jp.ddo.pigsty.Habit_Browser|~jp.ddo.pigsty.HabitBrowser|~jp.ejimax.yuzubrowser|~jp.hazuki.yuzubrowser|~mark.via|~mark.via.gp|~me.android.browser|~mobi.browser.flashfox|~mobi.browser.flfoxpro|~mobi.mgeek.alexa|~mobi.mgeek.BookmarksWidget|~mobi.mgeek.brightness|~mobi.mgeek.browserfaster|~mobi.mgeek.DolphinFM|~mobi.mgeek.DolphinReader|~mobi.mgeek.DolphinTranslate|~mobi.mgeek.eBaySearch|~mobi.mgeek.MorningCoffee|~mobi.mgeek.mypdf|~mobi.mgeek.ScreenCut|~mobi.mgeek.shinyshake|~mobi.mgeek.showip|~mobi.mgeek.TabHistory|~mobi.mgeek.TabMixPlus|~mobi.mgeek.tabreload|~mobi.mgeek.tabswitcher|~mobi.mgeek.textadjust|~mobi.mgeek.TunnyBrowser|~mobi.mgeek.TunnyBrowser.Theme.EnNightModeV10|~mobi.mgeek.UltimateFlag|~mobi.mgeek.whois|~mobi.mgeek.YoutubeSearch|~net.fast.web.browser|~net.quetta.browser|~net.slions.fulguris.full.fdroid|~net.slions.fulguris.full.playstore|~nextapp.atlas|~nu.tommie.inbrowser|~o.o.joey|~org.adblockplus.browser|~org.bromite.bromite|~org.chromium.chrome|~org.chromium.thorium|~org.cromite.cromite|~org.cyanogenmod.gello.browser|~org.easyweb.browser|~org.gnu.icecat|~org.iron.srware|~org.mozilla.fenix|~org.mozilla.fenix.nightly|~org.mozilla.fennec|~org.mozilla.fennec_aurora|~org.mozilla.fennec_fdroid|~org.mozilla.firefox|~org.mozilla.firefox_beta|~org.mozilla.focus|~org.mozilla.reference.browser|~org.tint|~reddit.news|~ru.mail.amigo|~ru.yandex.androidkeyboard|~ru.yandex.cloud|~ru.yandex.cloud.tracker|~ru.yandex.direct|~ru.yandex.disk|~ru.yandex.drawie|~ru.yandex.games|~ru.yandex.key|~ru.yandex.mobile.afisha|~ru.yandex.mobile.arenda|~ru.yandex.music|~ru.yandex.practicum.flutter_practicum|~ru.yandex.readie|~ru.yandex.searchplugin|~ru.yandex.searchplugin.beta|~ru.yandex.shell|~ru.yandex.telemost|~ru.yandex.translate|~ru.yandex.travel|~ru.yandex.weatherplugin|~ru.yandex.yandexmaps|~ru.yandex.yandexnavi|~us.spotco.mulch|~com.kakao.talk|~net.daum.android.daum|~com.nate.android.portalmini|~org.ironfoxoss.ironfox|~ru.auto.ara
+/:\/\/yandex\.(ru|com)$/$app=~acr.browser.barebones|~acr.browser.lightning|~cn.mozilla.firefox|~com.amazon.cloud9|~com.android.browser|~com.android.chrome|~com.apn.mobile.browser|~com.appdream.cloud|~com.apusapps.browser|~com.apusapps.browser.turbo|~com.asus.browser|~com.baidu.browser.inter|~com.baidu.browserhd.inter|~com.boatbrowser.free|~com.boatbrowser.free.addon.en|~com.boatbrowser.free.addon.fb|~com.boatbrowser.free.addon.gcp|~com.boatbrowser.free.addon.ip|~com.boatbrowser.free.addon.pm|~com.boatbrowser.free.addon.th|~com.boatbrowser.free.addon.twitter|~com.boatbrowser.free.addon.us|~com.boatbrowser.license.key|~com.boatbrowser.tablet|~com.boatgo.browser|~com.boatgo.license.key|~com.brave.browser|~com.brave.browser_beta|~com.brave.browser_default|~com.brave.browser_dev|~com.brave.browser_nightly|~com.browser.Speed|~com.callsoft.cobrabrowser|~com.chrome.beta|~com.chrome.canary|~com.chrome.dev|~com.chrome.deviceextras.samsung|~com.cleanmaster.security|~com.cloudmosa.puffin|~com.cloudmosa.puffinFree|~com.cmcm.armorfly|~com.dolphin.addons.dropbox|~com.dolphin.addons.evernotesshare|~com.dolphin.addons.pocket|~com.dolphin.battery.saver|~com.dolphin.browser|~com.dolphin.browser.addons.box|~com.dolphin.browser.addons.skitch|~com.dolphin.browser.android.elex|~com.dolphin.browser.engine|~com.dolphin.browser.express.web|~com.dolphin.browser.id|~com.dolphin.browser.zero|~com.dolphin.theme.ocean|~com.dolphin.web.browser.android|~com.droid.browser|~com.explore.web.browser|~com.feedback.browser.wjbrowser|~com.fevdev.nakedbrowser|~com.fevdev.nakedbrowserpro|~com.ghostery.android.ghostery|~com.google.android.apps.searchlite|~com.hsv.freeadblockerbrowser|~com.htc.sense.browser|~com.huawei.browser|~com.ilegendsoft.mercury|~com.jbak.superbrowser|~com.jiubang.browser|~com.kiwibrowser.browser|~com.ksmobile.cb|~com.lemurbrowser.exts|~com.linkbubble.playstore|~com.metalasfook.nochromo|~com.mi.globalbrowser.mini|~com.microsoft.amp.apps.bingnews|~com.microsoft.emmx|~com.microsoft.emmx.canary|~com.mmbox.xbrowser.pro|~com.mokee.yubrowser|~com.mx.browser|~com.mx.browser.tablet|~com.mycompany.app.soulbrowser|~com.naver.whale|~com.nhn.android.search|~com.ninesky.browser|~com.ninnix96.pyrope.browser|~com.nubelacorp.javelin|~com.opera.browser|~com.opera.browser.beta|~com.opera.browser.classic|~com.opera.browser.extension|~com.opera.browser.pwa|~com.opera.browser.yandex|~com.opera.browses|~com.opera.mini.android|~com.opera.mini.android.yandex|~com.opera.touch|~com.qihoo.contents|~com.quark.browser|~com.rocket.browser|~com.rtsw.easydownloader|~com.sec.android.app.sbrowser|~com.sec.android.app.sbrowser.beta|~com.stoutner.privacybrowser.free|~com.stoutner.privacybrowser.standard|~com.swe.atego.browser|~com.tencent.ibibo.mtt|~com.tencent.mtt|~com.uc.browser.en|~com.uc.browser.hd|~com.UCMobile.intl|~com.UCMobile.intl.x86|~com.vionika.firephoenix|~com.vivaldi.browser|~com.vivaldi.browser.snapshot|~com.vivaldi.browser.sopranos|~com.xbrowser.play|~com.yandex.aliceapp|~com.yandex.browser|~com.yandex.browser.alpha|~com.yandex.browser.beta|~com.yandex.browser.corp|~com.yandex.browser.lite|~com.yandex.browser.tv|~com.yandex.calendar.app|~com.yandex.courier|~com.yandex.iot|~com.yandex.mobile.plus.game.city|~com.yandex.mobile.realty|~com.yandex.searchapp|~com.yandex.searchapp.beta|~com.yandex.tasks.androidapp|~com.yandex.uslugi|~com.yandex.uslugi.clients|~com.yandex.yamb|~explore.web.browser|~internetexplorer.browser.webexplorer|~io.github.forkmaintainers.iceraven|~jp.co.fenrir.android.sleipnir|~jp.co.fenrir.android.sleipnir_black|~jp.co.fenrir.android.sleipnir_test|~jp.ddo.pigsty.Habit_Browser|~jp.ddo.pigsty.HabitBrowser|~jp.ejimax.yuzubrowser|~jp.hazuki.yuzubrowser|~mark.via|~mark.via.gp|~me.android.browser|~mobi.browser.flashfox|~mobi.browser.flfoxpro|~mobi.mgeek.alexa|~mobi.mgeek.BookmarksWidget|~mobi.mgeek.brightness|~mobi.mgeek.browserfaster|~mobi.mgeek.DolphinFM|~mobi.mgeek.DolphinReader|~mobi.mgeek.DolphinTranslate|~mobi.mgeek.eBaySearch|~mobi.mgeek.MorningCoffee|~mobi.mgeek.mypdf|~mobi.mgeek.ScreenCut|~mobi.mgeek.shinyshake|~mobi.mgeek.showip|~mobi.mgeek.TabHistory|~mobi.mgeek.TabMixPlus|~mobi.mgeek.tabreload|~mobi.mgeek.tabswitcher|~mobi.mgeek.textadjust|~mobi.mgeek.TunnyBrowser|~mobi.mgeek.TunnyBrowser.Theme.EnNightModeV10|~mobi.mgeek.UltimateFlag|~mobi.mgeek.whois|~mobi.mgeek.YoutubeSearch|~net.fast.web.browser|~net.quetta.browser|~net.slions.fulguris.full.fdroid|~net.slions.fulguris.full.playstore|~nextapp.atlas|~nu.tommie.inbrowser|~o.o.joey|~org.adblockplus.browser|~org.bromite.bromite|~org.chromium.chrome|~org.chromium.thorium|~org.cromite.cromite|~org.cyanogenmod.gello.browser|~org.easyweb.browser|~org.gnu.icecat|~org.iron.srware|~org.mozilla.fenix|~org.mozilla.fenix.nightly|~org.mozilla.fennec|~org.mozilla.fennec_aurora|~org.mozilla.fennec_fdroid|~org.mozilla.firefox|~org.mozilla.firefox_beta|~org.mozilla.focus|~org.mozilla.reference.browser|~org.tint|~reddit.news|~ru.mail.amigo|~ru.yandex.androidkeyboard|~ru.yandex.cloud|~ru.yandex.cloud.tracker|~ru.yandex.direct|~ru.yandex.disk|~ru.yandex.drawie|~ru.yandex.games|~ru.yandex.key|~ru.yandex.mobile.afisha|~ru.yandex.mobile.arenda|~ru.yandex.music|~ru.yandex.practicum.flutter_practicum|~ru.yandex.readie|~ru.yandex.searchplugin|~ru.yandex.searchplugin.beta|~ru.yandex.shell|~ru.yandex.telemost|~ru.yandex.translate|~ru.yandex.travel|~ru.yandex.weatherplugin|~ru.yandex.yandexmaps|~ru.yandex.yandexnavi|~us.spotco.mulch|~com.kakao.talk|~net.daum.android.daum|~com.nate.android.portalmini|~org.ironfoxoss.ironfox|~ru.auto.ara|~ru.yandex.taxi
+/^77\.88\.(4|5){2}.(5|8){2}/$network,app=~acr.browser.barebones|~acr.browser.lightning|~cn.mozilla.firefox|~com.amazon.cloud9|~com.android.browser|~com.android.chrome|~com.apn.mobile.browser|~com.appdream.cloud|~com.apusapps.browser|~com.apusapps.browser.turbo|~com.asus.browser|~com.baidu.browser.inter|~com.baidu.browserhd.inter|~com.boatbrowser.free|~com.boatbrowser.free.addon.en|~com.boatbrowser.free.addon.fb|~com.boatbrowser.free.addon.gcp|~com.boatbrowser.free.addon.ip|~com.boatbrowser.free.addon.pm|~com.boatbrowser.free.addon.th|~com.boatbrowser.free.addon.twitter|~com.boatbrowser.free.addon.us|~com.boatbrowser.license.key|~com.boatbrowser.tablet|~com.boatgo.browser|~com.boatgo.license.key|~com.brave.browser|~com.brave.browser_beta|~com.brave.browser_default|~com.brave.browser_dev|~com.brave.browser_nightly|~com.browser.Speed|~com.callsoft.cobrabrowser|~com.chrome.beta|~com.chrome.canary|~com.chrome.dev|~com.chrome.deviceextras.samsung|~com.cleanmaster.security|~com.cloudmosa.puffin|~com.cloudmosa.puffinFree|~com.cmcm.armorfly|~com.dolphin.addons.dropbox|~com.dolphin.addons.evernotesshare|~com.dolphin.addons.pocket|~com.dolphin.battery.saver|~com.dolphin.browser|~com.dolphin.browser.addons.box|~com.dolphin.browser.addons.skitch|~com.dolphin.browser.android.elex|~com.dolphin.browser.engine|~com.dolphin.browser.express.web|~com.dolphin.browser.id|~com.dolphin.browser.zero|~com.dolphin.theme.ocean|~com.dolphin.web.browser.android|~com.droid.browser|~com.explore.web.browser|~com.feedback.browser.wjbrowser|~com.fevdev.nakedbrowser|~com.fevdev.nakedbrowserpro|~com.ghostery.android.ghostery|~com.google.android.apps.searchlite|~com.hsv.freeadblockerbrowser|~com.htc.sense.browser|~com.huawei.browser|~com.ilegendsoft.mercury|~com.jbak.superbrowser|~com.jiubang.browser|~com.kiwibrowser.browser|~com.ksmobile.cb|~com.lemurbrowser.exts|~com.linkbubble.playstore|~com.metalasfook.nochromo|~com.mi.globalbrowser.mini|~com.microsoft.amp.apps.bingnews|~com.microsoft.emmx|~com.microsoft.emmx.canary|~com.mmbox.xbrowser.pro|~com.mokee.yubrowser|~com.mx.browser|~com.mx.browser.tablet|~com.mycompany.app.soulbrowser|~com.naver.whale|~com.nhn.android.search|~com.ninesky.browser|~com.ninnix96.pyrope.browser|~com.nubelacorp.javelin|~com.opera.browser|~com.opera.browser.beta|~com.opera.browser.classic|~com.opera.browser.extension|~com.opera.browser.pwa|~com.opera.browser.yandex|~com.opera.browses|~com.opera.mini.android|~com.opera.mini.android.yandex|~com.opera.touch|~com.qihoo.contents|~com.quark.browser|~com.rocket.browser|~com.rtsw.easydownloader|~com.sec.android.app.sbrowser|~com.sec.android.app.sbrowser.beta|~com.stoutner.privacybrowser.free|~com.stoutner.privacybrowser.standard|~com.swe.atego.browser|~com.tencent.ibibo.mtt|~com.tencent.mtt|~com.uc.browser.en|~com.uc.browser.hd|~com.UCMobile.intl|~com.UCMobile.intl.x86|~com.vionika.firephoenix|~com.vivaldi.browser|~com.vivaldi.browser.snapshot|~com.vivaldi.browser.sopranos|~com.xbrowser.play|~com.yandex.aliceapp|~com.yandex.browser|~com.yandex.browser.alpha|~com.yandex.browser.beta|~com.yandex.browser.corp|~com.yandex.browser.lite|~com.yandex.browser.tv|~com.yandex.calendar.app|~com.yandex.courier|~com.yandex.iot|~com.yandex.mobile.plus.game.city|~com.yandex.mobile.realty|~com.yandex.searchapp|~com.yandex.searchapp.beta|~com.yandex.tasks.androidapp|~com.yandex.uslugi|~com.yandex.uslugi.clients|~com.yandex.yamb|~explore.web.browser|~internetexplorer.browser.webexplorer|~io.github.forkmaintainers.iceraven|~jp.co.fenrir.android.sleipnir|~jp.co.fenrir.android.sleipnir_black|~jp.co.fenrir.android.sleipnir_test|~jp.ddo.pigsty.Habit_Browser|~jp.ddo.pigsty.HabitBrowser|~jp.ejimax.yuzubrowser|~jp.hazuki.yuzubrowser|~mark.via|~mark.via.gp|~me.android.browser|~mobi.browser.flashfox|~mobi.browser.flfoxpro|~mobi.mgeek.alexa|~mobi.mgeek.BookmarksWidget|~mobi.mgeek.brightness|~mobi.mgeek.browserfaster|~mobi.mgeek.DolphinFM|~mobi.mgeek.DolphinReader|~mobi.mgeek.DolphinTranslate|~mobi.mgeek.eBaySearch|~mobi.mgeek.MorningCoffee|~mobi.mgeek.mypdf|~mobi.mgeek.ScreenCut|~mobi.mgeek.shinyshake|~mobi.mgeek.showip|~mobi.mgeek.TabHistory|~mobi.mgeek.TabMixPlus|~mobi.mgeek.tabreload|~mobi.mgeek.tabswitcher|~mobi.mgeek.textadjust|~mobi.mgeek.TunnyBrowser|~mobi.mgeek.TunnyBrowser.Theme.EnNightModeV10|~mobi.mgeek.UltimateFlag|~mobi.mgeek.whois|~mobi.mgeek.YoutubeSearch|~net.fast.web.browser|~net.quetta.browser|~net.slions.fulguris.full.fdroid|~net.slions.fulguris.full.playstore|~nextapp.atlas|~nu.tommie.inbrowser|~o.o.joey|~org.adblockplus.browser|~org.bromite.bromite|~org.chromium.chrome|~org.chromium.thorium|~org.cromite.cromite|~org.cyanogenmod.gello.browser|~org.easyweb.browser|~org.gnu.icecat|~org.iron.srware|~org.mozilla.fenix|~org.mozilla.fenix.nightly|~org.mozilla.fennec|~org.mozilla.fennec_aurora|~org.mozilla.fennec_fdroid|~org.mozilla.firefox|~org.mozilla.firefox_beta|~org.mozilla.focus|~org.mozilla.reference.browser|~org.tint|~reddit.news|~ru.mail.amigo|~ru.yandex.androidkeyboard|~ru.yandex.cloud|~ru.yandex.cloud.tracker|~ru.yandex.direct|~ru.yandex.disk|~ru.yandex.drawie|~ru.yandex.games|~ru.yandex.key|~ru.yandex.mobile.afisha|~ru.yandex.mobile.arenda|~ru.yandex.music|~ru.yandex.practicum.flutter_practicum|~ru.yandex.readie|~ru.yandex.searchplugin|~ru.yandex.searchplugin.beta|~ru.yandex.shell|~ru.yandex.telemost|~ru.yandex.translate|~ru.yandex.travel|~ru.yandex.weatherplugin|~ru.yandex.yandexmaps|~ru.yandex.yandexnavi|~us.spotco.mulch|~com.kakao.talk|~net.daum.android.daum|~com.nate.android.portalmini|~org.ironfoxoss.ironfox|~ru.auto.ara|~ru.yandex.taxi
+/^5\.255\.255\.77/$network,app=~acr.browser.barebones|~acr.browser.lightning|~cn.mozilla.firefox|~com.amazon.cloud9|~com.android.browser|~com.android.chrome|~com.apn.mobile.browser|~com.appdream.cloud|~com.apusapps.browser|~com.apusapps.browser.turbo|~com.asus.browser|~com.baidu.browser.inter|~com.baidu.browserhd.inter|~com.boatbrowser.free|~com.boatbrowser.free.addon.en|~com.boatbrowser.free.addon.fb|~com.boatbrowser.free.addon.gcp|~com.boatbrowser.free.addon.ip|~com.boatbrowser.free.addon.pm|~com.boatbrowser.free.addon.th|~com.boatbrowser.free.addon.twitter|~com.boatbrowser.free.addon.us|~com.boatbrowser.license.key|~com.boatbrowser.tablet|~com.boatgo.browser|~com.boatgo.license.key|~com.brave.browser|~com.brave.browser_beta|~com.brave.browser_default|~com.brave.browser_dev|~com.brave.browser_nightly|~com.browser.Speed|~com.callsoft.cobrabrowser|~com.chrome.beta|~com.chrome.canary|~com.chrome.dev|~com.chrome.deviceextras.samsung|~com.cleanmaster.security|~com.cloudmosa.puffin|~com.cloudmosa.puffinFree|~com.cmcm.armorfly|~com.dolphin.addons.dropbox|~com.dolphin.addons.evernotesshare|~com.dolphin.addons.pocket|~com.dolphin.battery.saver|~com.dolphin.browser|~com.dolphin.browser.addons.box|~com.dolphin.browser.addons.skitch|~com.dolphin.browser.android.elex|~com.dolphin.browser.engine|~com.dolphin.browser.express.web|~com.dolphin.browser.id|~com.dolphin.browser.zero|~com.dolphin.theme.ocean|~com.dolphin.web.browser.android|~com.droid.browser|~com.explore.web.browser|~com.feedback.browser.wjbrowser|~com.fevdev.nakedbrowser|~com.fevdev.nakedbrowserpro|~com.ghostery.android.ghostery|~com.google.android.apps.searchlite|~com.hsv.freeadblockerbrowser|~com.htc.sense.browser|~com.huawei.browser|~com.ilegendsoft.mercury|~com.jbak.superbrowser|~com.jiubang.browser|~com.kiwibrowser.browser|~com.ksmobile.cb|~com.lemurbrowser.exts|~com.linkbubble.playstore|~com.metalasfook.nochromo|~com.mi.globalbrowser.mini|~com.microsoft.amp.apps.bingnews|~com.microsoft.emmx|~com.microsoft.emmx.canary|~com.mmbox.xbrowser.pro|~com.mokee.yubrowser|~com.mx.browser|~com.mx.browser.tablet|~com.mycompany.app.soulbrowser|~com.naver.whale|~com.nhn.android.search|~com.ninesky.browser|~com.ninnix96.pyrope.browser|~com.nubelacorp.javelin|~com.opera.browser|~com.opera.browser.beta|~com.opera.browser.classic|~com.opera.browser.extension|~com.opera.browser.pwa|~com.opera.browser.yandex|~com.opera.browses|~com.opera.mini.android|~com.opera.mini.android.yandex|~com.opera.touch|~com.qihoo.contents|~com.quark.browser|~com.rocket.browser|~com.rtsw.easydownloader|~com.sec.android.app.sbrowser|~com.sec.android.app.sbrowser.beta|~com.stoutner.privacybrowser.free|~com.stoutner.privacybrowser.standard|~com.swe.atego.browser|~com.tencent.ibibo.mtt|~com.tencent.mtt|~com.uc.browser.en|~com.uc.browser.hd|~com.UCMobile.intl|~com.UCMobile.intl.x86|~com.vionika.firephoenix|~com.vivaldi.browser|~com.vivaldi.browser.snapshot|~com.vivaldi.browser.sopranos|~com.xbrowser.play|~com.yandex.aliceapp|~com.yandex.browser|~com.yandex.browser.alpha|~com.yandex.browser.beta|~com.yandex.browser.corp|~com.yandex.browser.lite|~com.yandex.browser.tv|~com.yandex.calendar.app|~com.yandex.courier|~com.yandex.iot|~com.yandex.mobile.plus.game.city|~com.yandex.mobile.realty|~com.yandex.searchapp|~com.yandex.searchapp.beta|~com.yandex.tasks.androidapp|~com.yandex.uslugi|~com.yandex.uslugi.clients|~com.yandex.yamb|~explore.web.browser|~internetexplorer.browser.webexplorer|~io.github.forkmaintainers.iceraven|~jp.co.fenrir.android.sleipnir|~jp.co.fenrir.android.sleipnir_black|~jp.co.fenrir.android.sleipnir_test|~jp.ddo.pigsty.Habit_Browser|~jp.ddo.pigsty.HabitBrowser|~jp.ejimax.yuzubrowser|~jp.hazuki.yuzubrowser|~mark.via|~mark.via.gp|~me.android.browser|~mobi.browser.flashfox|~mobi.browser.flfoxpro|~mobi.mgeek.alexa|~mobi.mgeek.BookmarksWidget|~mobi.mgeek.brightness|~mobi.mgeek.browserfaster|~mobi.mgeek.DolphinFM|~mobi.mgeek.DolphinReader|~mobi.mgeek.DolphinTranslate|~mobi.mgeek.eBaySearch|~mobi.mgeek.MorningCoffee|~mobi.mgeek.mypdf|~mobi.mgeek.ScreenCut|~mobi.mgeek.shinyshake|~mobi.mgeek.showip|~mobi.mgeek.TabHistory|~mobi.mgeek.TabMixPlus|~mobi.mgeek.tabreload|~mobi.mgeek.tabswitcher|~mobi.mgeek.textadjust|~mobi.mgeek.TunnyBrowser|~mobi.mgeek.TunnyBrowser.Theme.EnNightModeV10|~mobi.mgeek.UltimateFlag|~mobi.mgeek.whois|~mobi.mgeek.YoutubeSearch|~net.fast.web.browser|~net.quetta.browser|~net.slions.fulguris.full.fdroid|~net.slions.fulguris.full.playstore|~nextapp.atlas|~nu.tommie.inbrowser|~o.o.joey|~org.adblockplus.browser|~org.bromite.bromite|~org.chromium.chrome|~org.chromium.thorium|~org.cromite.cromite|~org.cyanogenmod.gello.browser|~org.easyweb.browser|~org.gnu.icecat|~org.iron.srware|~org.mozilla.fenix|~org.mozilla.fenix.nightly|~org.mozilla.fennec|~org.mozilla.fennec_aurora|~org.mozilla.fennec_fdroid|~org.mozilla.firefox|~org.mozilla.firefox_beta|~org.mozilla.focus|~org.mozilla.reference.browser|~org.tint|~reddit.news|~ru.mail.amigo|~ru.yandex.androidkeyboard|~ru.yandex.cloud|~ru.yandex.cloud.tracker|~ru.yandex.direct|~ru.yandex.disk|~ru.yandex.drawie|~ru.yandex.games|~ru.yandex.key|~ru.yandex.mobile.afisha|~ru.yandex.mobile.arenda|~ru.yandex.music|~ru.yandex.practicum.flutter_practicum|~ru.yandex.readie|~ru.yandex.searchplugin|~ru.yandex.searchplugin.beta|~ru.yandex.shell|~ru.yandex.telemost|~ru.yandex.translate|~ru.yandex.travel|~ru.yandex.weatherplugin|~ru.yandex.yandexmaps|~ru.yandex.yandexnavi|~us.spotco.mulch|~com.kakao.talk|~net.daum.android.daum|~com.nate.android.portalmini|~org.ironfoxoss.ironfox|~ru.auto.ara|~ru.yandex.taxi
 !#endif
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228276
@@ -9437,8 +9590,6 @@ c0server.jags.co.jp/jss/img/banners/$app=jp.co.jags.android.Bokumaka
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10326
 ||api.ambelbet.com/assets/js/page.ads.js$script,redirect=noopjs
 ||api.ambelbet.com/assets/js/in.ads.js$script,redirect=noopjs
-! https://github.com/AdguardTeam/AdguardFilters/issues/8935
-||mobi.yanosik.pl:8080/mobile-advertizer/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8162
 ||api.mobpowertech.com^$app=cn.wps.moffice_eng
 ||cloudservice14.kingsoft-office-service.com^$app=cn.wps.moffice_eng
