@@ -26,6 +26,7 @@ describe('parseFlags', () => {
         const flags = parseFlags([
             '--use-cache',
             '--generate-cache',
+            '--generate-stats-from-cached-percent-json',
             '--no-patches-prepare',
             '--strip-generated-meta',
         ]);
