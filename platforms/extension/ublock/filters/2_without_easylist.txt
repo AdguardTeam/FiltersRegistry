@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LDMa+CpmR0q+FwdPKNcQwg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779967309-3600.patch
+! Checksum: ZMfo5rHps2v8MoYkYfOdMw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1779974816-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.69.16
-! TimeUpdated: 2026-05-28T11:18:05+00:00
+! Version: 2.4.69.17
+! TimeUpdated: 2026-05-28T13:23:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9552,7 +9552,8 @@ ad.broadstreetads.com
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
-!
+||ads-banner.s3.ap-south-1.amazonaws.com^
+||widget.revtrixjs.com^
 ||dump.mewcdn.online^
 ||a.hentaiocean.com^
 ||adradar.io^$3p
@@ -59352,6 +59353,14 @@ mail.yahoo.com##[data-test-id^="pencil-ad"]
 ! Special rules for AdGuard websites' test pages. The only purpose of these
 ! rules is to make test pages work so that users could verify that AdGuard
 ! is properly working.
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/232217
+outlookindia.com##.modal-background
+outlookindia.com##[id="fxd-s"]
+outlookindia.com###banner-cube-pe
+outlookindia.com##.ads-box
+outlookindia.com##a[rel="sponsored nofollow"]
+!
 !
 ! Detect ad blocking
 ! Detect of using AdGuard products
