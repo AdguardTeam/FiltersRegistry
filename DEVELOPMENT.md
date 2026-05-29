@@ -173,6 +173,10 @@ yarn build --generate-cache
 yarn build --generate-cache --include=1,2,3
 yarn build --generate-cache --skip=12,24
 yarn build --generate-cache --report='report.txt'
+
+# Stats download from existing local percent.json
+yarn build --generate-stats-from-cached-percent-json
+yarn build --generate-stats-from-cached-percent-json --include=1,2,3
 ```
 
 **Invalid or ineffective combinations:**
@@ -180,6 +184,8 @@ yarn build --generate-cache --report='report.txt'
 ```bash
 # Mutually exclusive flags → script exits with error
 yarn build --use-cache --generate-cache
+yarn build --use-cache --generate-stats-from-cached-percent-json
+yarn build --generate-cache --generate-stats-from-cached-percent-json
 
 # --generate-cache exits early; these flags are incompatible → script exits with error
 yarn build --generate-cache --strip-generated-meta
