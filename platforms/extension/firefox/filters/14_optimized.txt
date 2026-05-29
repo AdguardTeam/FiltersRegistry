@@ -1,9 +1,9 @@
-! Checksum: nqTsG49lH3WsO882IrdiqQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1780075153-3600.patch
+! Checksum: CQ0BI/pqNTFtxbP8d0OYxw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1780081276-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.32
-! TimeUpdated: 2026-05-29T17:16:15+00:00
+! Version: 2.2.69.33
+! TimeUpdated: 2026-05-29T18:58:55+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -13311,6 +13311,7 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 klerk.ru#?#iframe[src^="https://autofill.yandex.ru/suggest?"][src*="widget"]
 sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+pstream.net##body > div > .popout-wrapper.fixed
 aether.bar#$#html[data-no-scroll], html[data-no-scroll] body { overflow: auto !important; }
 aether.bar#$#.popout-wrapper { display: none !important; }
 edmunds.com##a[data-tracking-id="open_chat_canvas"]
@@ -17599,6 +17600,7 @@ aol.com#$#.m-notifications-banner { display: none !important; }
 @@||gratis.api.useinsider.com^$script,domain=gratis.com
 @@||rdsubfrm.relateddigital.com/api/Unsubscription
 @@||powr.io/powr.js$domain=ipitaka.com
+##div[data-testid="google-news-widget"]
 ##.article-content__widget-group--newsletter-slot
 ##form[aria-label="Sign up for newsletter: Daily Briefing"]
 ##.breadcrumb__google-news
@@ -17685,6 +17687,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
 theguardian.com,star.com.tr,halktv.com.tr,zaxid.net,ballotpedia.org,timesofmalta.com,24tv.ua,thepost.co.nz,sportbible.com,washingtonpost.com,expert.in.ua,turkiyegazetesi.com.tr,aksam.com.tr,trhaber.com.tr,droidwin.com,onedio.com,cheezburger.com,tastesbetterfromscratch.com,techgear.gr,glavcom.ua,noticias.yahoo.com,hurriyet.com.tr,dexerto.com,saltandbaker.com,bbc.com,decrypt.co,uniladtech.com,mothership.sg,pcmag.com,coindesk.com,sammyfans.com,m9.news,crankers.com,asiaone.com,cbr.com,thedailyjagran.com,digitaltrends.com,hardwaretimes.com,www.yahoo.com,interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
+si.com##a[href="https://www.si.com/newsletter-nfl"]
 lun.ua##.Search-subscribe
 ridus.ru##.headerSocials
 euromaidanpress.com##.cs-meta-google-news
@@ -17798,7 +17801,6 @@ road.cc##.subscribe-pink-box
 gpfans.com##.preferred-source-card--gpfans
 cumhuriyet.com.tr###contentArea > div.col-span-12 > div.rounded-full:has(> a[href="https://cumhuriyet.s.gy/google-kaydet"])
 cumhuriyet.com.tr##.flex:has(> a[href^="https://news.google.com/publications/"])
-therealchamps.com##div[data-testid="google-news-widget"]
 teamtalk.com##.ciam-article-tt > p[style]:has(> em > a[href^="https://www.google.com/preferences/source?q="])
 haendlerbund.de##.tx-sy-newsletter
 youtubetotranscript.com##.promo-modal-slot
