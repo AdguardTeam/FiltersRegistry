@@ -1,8 +1,8 @@
-! Checksum: HOa7RtO6kzHK+nuAboicig
+! Checksum: 6n7x8EtBVqZSpUaiH9vrRw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.28
-! TimeUpdated: 2026-05-29T09:17:50+00:00
+! Version: 2.2.69.29
+! TimeUpdated: 2026-05-29T11:11:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12626,6 +12626,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232327
+one.com.mt#@##cookie-law-info-bar
+one.com.mt#@##cliSettingsPopup
+one.com.mt#@#.cli-popupbar-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232237
 @@||bitrefill.com/assets/CookieConsent-
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231983
@@ -20464,6 +20468,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+edmunds.com##a[data-tracking-id="open_chat_canvas"]
 irbank.net##div[aria-label="IRBANK クラウドファンディング 最終日"]
 irbank.net###ib-floating
 24live.com##.pop-up-banner
@@ -27101,7 +27106,7 @@ scientificamerican.com##div[class^="columnSignup-"]
 noorderland.nl##.showheroes-unit
 folhadelondrina.com.br##.ultimos-posts-container
 folhadelondrina.com.br##.google-news-top
-androidpolice.com,thegamer.com##.google-addus
+pocket-lint.com,androidpolice.com,thegamer.com##.google-addus
 goldderby.com##div[data-column] > div[data-component="newsletter"]
 goldderby.com##div[data-component="newsletter-widget"]
 flexikon.doccheck.com###loginNagger
@@ -27339,9 +27344,6 @@ meteomedia.com##div[aria-labelledby="notification-prompt-title"]
 capterra.com##iframe[id^="faas-modal-form-"]
 e-forologia.gr##.linkbox--newsletter
 hipertextual.com###block-158
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
 cloudykitchen.com##.email-highlight
 newspicks.com##div[data-testid="premiumBanner"]
 zeenews.india.com###googleCTA
@@ -33890,6 +33892,11 @@ ilfont.it##body div.popup-overlay-newsletter
 ||widgets.contentfleet.com/newsletter/
 ||womenshealthmag.com/*/files/wh-newsletter-signup$image
 !
+! Future Publishing Limited Quay House
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
+!
 ! People Inc.
 bhg.com,southernliving.com,ew.com,allrecipes.com,health.com,lifewire.com,parents.com,thespruce.com,simplyrecipes.com,thespruceeats.com,thesprucepets.com,travelandleisure.com,verywellhealth.com,foodandwine.com##div[aria-label="Modal Overlay Box"][emailfield="email"]
 bhg.com,southernliving.com,ew.com,allrecipes.com,health.com,lifewire.com,parents.com,thespruce.com,simplyrecipes.com,thespruceeats.com,thesprucepets.com,travelandleisure.com,verywellhealth.com,foodandwine.com##div[id^="sidebar-overlay-lightbox"]
@@ -37196,6 +37203,8 @@ tekstilbank.com.tr,icbc.com.tr,212.109.224.91###mobileAppPanel
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+fotmob.com###__next > main ~ div[class*="-Backdrop"]
+fotmob.com###__next > main ~ div[class*="-Backdrop"] + div[class*="-Container"]
 europages.com.tr##.app-scene-banner
 haber365.com##.my-apps
 vesty.co.il##a[href="https://onelink.to/w75zed"]
@@ -38016,8 +38025,8 @@ bbc.com##main[role="main"] > section[aria-labelledby="recommendations-heading"][
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230145
 wccftech.com##.post-google
-! https://github.com/AdguardTeam/AdguardFilters/issues/229142
-musicradar.com##aside[data-mrf-recirculation="Trending Bar"]
+! Future Publishing Limited Quay House
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com##aside[data-mrf-recirculation="Trending Bar"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229386
 thecode.media##.main-social-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228524

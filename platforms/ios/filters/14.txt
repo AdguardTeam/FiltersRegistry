@@ -1,9 +1,9 @@
-! Checksum: Tu+pFbbittjRIiTv/rpPog
-! Diff-Path: ../patches/14/14-s-1780046467-3600.patch
+! Checksum: ASh4IPBH8lok39L0oVHMcw
+! Diff-Path: ../patches/14/14-s-1780053236-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.28
-! TimeUpdated: 2026-05-29T09:17:50+00:00
+! Version: 2.2.69.29
+! TimeUpdated: 2026-05-29T11:11:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2613,6 +2613,11 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+one.com.mt#$##cookie-law-info-bar { display: none !important; }
+one.com.mt#$##cliSettingsPopup { display: none !important; }
+one.com.mt#$#.cli-popupbar-overlay { display: none !important; }
+one.com.mt#$#.cli-barmodal-open { overflow: auto !important; }
+footballtransfers.com#%#//scriptlet('trusted-click-element', '#uniccmp button.unic-manage-options-button, #uniccmp button.unic-reject-all-button')
 indsponsors.nl##.min-h-screen > .sm\:max-w-md.shadow-2xl
 ||tesla.info/wp-content/themes/teslainfo/js/cookie.js
 gemini.google.com#%#//scriptlet('trusted-click-element', '.cookie-banner button[data-test-id="reject-button"]')
@@ -18908,6 +18913,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232327
+one.com.mt#@##cookie-law-info-bar
+one.com.mt#@##cliSettingsPopup
+one.com.mt#@#.cli-popupbar-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232237
 @@||bitrefill.com/assets/CookieConsent-
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231983
@@ -27573,11 +27582,14 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+aether.bar#$#html[data-no-scroll], html[data-no-scroll] body { overflow: auto !important; }
+aether.bar#$#.popout-wrapper { display: none !important; }
+edmunds.com##a[data-tracking-id="open_chat_canvas"]
 irbank.net##div[aria-label="IRBANK クラウドファンディング 最終日"]
 irbank.net###ib-floating
 24live.com##.pop-up-banner
 24live.com##.banner
-androidpolice.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
+pocket-lint.com,androidpolice.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
 ||star.com.tr/video/embed/$subdocument
 star.com.tr##div[style^="height:530px;"]:has(> .video-container)
 star.com.tr##.video-container
@@ -36938,6 +36950,9 @@ theguardian.com,star.com.tr,halktv.com.tr,zaxid.net,ballotpedia.org,timesofmalta
 !
 ! SECTION: Subscriptions - Regular rules
 !
+footballtransfers.com#?#article > h2:contains(/^The FootballTransfers app$/i)
+footballtransfers.com#?#article > h2:contains(/^The FootballTransfers app$/i) ~ p:contains(/Check out FootballTransfers' new app|The FootballTransfers app/i)
+footballtransfers.com##article > p:has(> b > a:is([title="Google Play"], [title="App Store"]))
 videocardz.com##.socialbar
 videocardz.com##.vc-google-icons-only
 tldr.tech#?#main > div.px-6 > h1.text-left:contains(Keep up with tech in 5 minutes)
@@ -37141,7 +37156,7 @@ scientificamerican.com#%#//scriptlet('remove-class', 'scroll-lock', 'html.scroll
 noorderland.nl##.showheroes-unit
 folhadelondrina.com.br##.ultimos-posts-container
 folhadelondrina.com.br##.google-news-top
-androidpolice.com,thegamer.com##.google-addus
+pocket-lint.com,androidpolice.com,thegamer.com##.google-addus
 managingmadrid.com,bavarianfootballworks.com##form:has(> div.duet--cta--newsletter)
 techorange.com##aside > div.elementor-widget-template:has(div[data-widget_type="form.default"])
 revistamercado.do##.content  > p:has(> strong > a[href="https://revistamercado.do/mercado-newsletter"])
@@ -37515,9 +37530,6 @@ meteomedia.com##div[aria-labelledby="notification-prompt-title"]
 capterra.com##iframe[id^="faas-modal-form-"]
 e-forologia.gr##.linkbox--newsletter
 hipertextual.com###block-158
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
 cloudykitchen.com##.email-highlight
 newspicks.com##div[data-testid="premiumBanner"]
 zeenews.india.com###googleCTA
@@ -46333,6 +46345,11 @@ ilfont.it##body div.popup-overlay-newsletter
 ||widgets.contentfleet.com/newsletter/
 ||womenshealthmag.com/*/files/wh-newsletter-signup$image
 !
+! Future Publishing Limited Quay House
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
+!
 ! People Inc.
 bhg.com,southernliving.com,ew.com,allrecipes.com,health.com,lifewire.com,parents.com,thespruce.com,simplyrecipes.com,thespruceeats.com,thesprucepets.com,travelandleisure.com,verywellhealth.com,foodandwine.com##div[aria-label="Modal Overlay Box"][emailfield="email"]
 bhg.com,southernliving.com,ew.com,allrecipes.com,health.com,lifewire.com,parents.com,thespruce.com,simplyrecipes.com,thespruceeats.com,thesprucepets.com,travelandleisure.com,verywellhealth.com,foodandwine.com##div[id^="sidebar-overlay-lightbox"]
@@ -50746,6 +50763,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+fotmob.com###__next > main ~ div[class*="-Backdrop"]
+fotmob.com###__next > main ~ div[class*="-Backdrop"] + div[class*="-Container"]
 europages.com.tr##.app-scene-banner
 haber365.com##.my-apps
 chat.deepseek.com##.the-header > div.ds-icon-button ~ div[class]:has(> button.ds-atom-button > div.ds-atom-button__icon > svg[width="14"][height="14"])
@@ -52007,8 +52026,8 @@ muyinteresante.okdiario.com#%#//scriptlet('prevent-addEventListener', 'scroll', 
 muyinteresante.okdiario.com#%#(()=>{const t={construct:(t,e,n)=>{const r=e[0],o=r?.toString(),c=o?.includes("if(null==e?void 0:e.length)");return c&&(e[0]=()=>{}),Reflect.construct(t,e,n)}};window.IntersectionObserver=new Proxy(window.IntersectionObserver,t)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230145
 wccftech.com##.post-google
-! https://github.com/AdguardTeam/AdguardFilters/issues/229142
-musicradar.com##aside[data-mrf-recirculation="Trending Bar"]
+! Future Publishing Limited Quay House
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com##aside[data-mrf-recirculation="Trending Bar"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229386
 thecode.media##.main-social-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228524

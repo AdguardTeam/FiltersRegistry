@@ -1,9 +1,9 @@
-! Checksum: YBA05+IhZvIgWs27ndVjRA
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1780046450-3600.patch
+! Checksum: bzUi4WYTvagy2+BuEb6lhQ
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1780053225-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.76.29
-! TimeUpdated: 2026-05-29T09:17:58+00:00
+! Version: 2.0.76.30
+! TimeUpdated: 2026-05-29T11:12:01+00:00
 ! Expires: 10 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 meteum.ai,ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -1618,11 +1618,14 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !+ PLATFORM(ext_edge)
 #%#//scriptlet('set-constant', 'ms.auth.initialize', 'undefined')
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+aether.bar#$#html[data-no-scroll], html[data-no-scroll] body { overflow: auto !important; }
+aether.bar#$#.popout-wrapper { display: none !important; }
+edmunds.com##a[data-tracking-id="open_chat_canvas"]
 irbank.net##div[aria-label="IRBANK クラウドファンディング 最終日"]
 irbank.net###ib-floating
 24live.com##.pop-up-banner
 24live.com##.banner
-androidpolice.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
+pocket-lint.com,androidpolice.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
 ||star.com.tr/video/embed/$subdocument
 star.com.tr##div[style^="height:530px;"]:has(> .video-container)
 star.com.tr##.video-container
@@ -5990,6 +5993,9 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
 theguardian.com,star.com.tr,halktv.com.tr,zaxid.net,ballotpedia.org,timesofmalta.com,24tv.ua,thepost.co.nz,sportbible.com,washingtonpost.com,expert.in.ua,turkiyegazetesi.com.tr,aksam.com.tr,trhaber.com.tr,droidwin.com,onedio.com,cheezburger.com,tastesbetterfromscratch.com,techgear.gr,glavcom.ua,noticias.yahoo.com,hurriyet.com.tr,dexerto.com,saltandbaker.com,bbc.com,decrypt.co,uniladtech.com,mothership.sg,pcmag.com,coindesk.com,sammyfans.com,m9.news,crankers.com,asiaone.com,cbr.com,thedailyjagran.com,digitaltrends.com,hardwaretimes.com,www.yahoo.com,interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
+footballtransfers.com#?#article > h2:contains(/^The FootballTransfers app$/i)
+footballtransfers.com#?#article > h2:contains(/^The FootballTransfers app$/i) ~ p:contains(/Check out FootballTransfers' new app|The FootballTransfers app/i)
+footballtransfers.com##article > p:has(> b > a:is([title="Google Play"], [title="App Store"]))
 videocardz.com##.socialbar
 videocardz.com##.vc-google-icons-only
 tldr.tech#?#main > div.px-6 > h1.text-left:contains(Keep up with tech in 5 minutes)
@@ -6190,7 +6196,7 @@ scientificamerican.com##div[class^="columnSignup-"]
 scientificamerican.com#$##emailCollectorModalOverlay { display: none !important; }
 scientificamerican.com#$##paywallModalOverlay { display: none !important; }
 scientificamerican.com#%#//scriptlet('remove-class', 'scroll-lock', 'html.scroll-lock')
-androidpolice.com,thegamer.com##.google-addus
+pocket-lint.com,androidpolice.com,thegamer.com##.google-addus
 managingmadrid.com,bavarianfootballworks.com##form:has(> div.duet--cta--newsletter)
 techorange.com##aside > div.elementor-widget-template:has(div[data-widget_type="form.default"])
 cian.ru##div[class*="--sidebar"] > div.design-theme--light:has(> div[class*="--wrapper"] > div > div[class*="unsubscribed-wrapper"])
@@ -6423,9 +6429,6 @@ g2a.com##.bg-background-accent-primary-soft
 startribune.com###piano-banner > .tp-container-inner
 meteomedia.com##div[aria-labelledby="notification-prompt-title"]
 hipertextual.com###block-158
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
 zeenews.india.com###googleCTA
 thepopinsider.com##.wds-block-newsletter
 courrier.jp##.article_banner
@@ -10638,6 +10641,9 @@ psychologies.ru##span[data-track="https://zen.yandex.ru/psychologies"]
 ||mailerlite.com^$third-party,domain=~howtosucceed.at|~riavrn.ru|~masterborn.com|~hrpowermentor.com|~labmuffin.com|~real.gr
 ||s3-*.amazonaws.com/news-networkeditorial/masthead/*/widgets/edm/index-*.html
 ||telegram.im/widget-button/
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
 bhg.com,southernliving.com,ew.com,allrecipes.com,health.com,lifewire.com,parents.com,thespruce.com,simplyrecipes.com,thespruceeats.com,thesprucepets.com,travelandleisure.com,verywellhealth.com,foodandwine.com##div[aria-label="Modal Overlay Box"][emailfield="email"]
 bhg.com,southernliving.com,ew.com,allrecipes.com,health.com,lifewire.com,parents.com,thespruce.com,simplyrecipes.com,thespruceeats.com,thesprucepets.com,travelandleisure.com,verywellhealth.com,foodandwine.com##div[id^="sidebar-overlay-lightbox"]
 bhg.com,southernliving.com,ew.com,allrecipes.com,foodandwine.com,health.com,investopedia.com,lifewire.com,mydomaine.com,parents.com,simplyrecipes.com,thespruce.com,thespruceeats.com,thesprucepets.com,travelandleisure.com,treehugger.com,tripsavvy.com,verywellfit.com,verywellhealth.com,verywellmind.com#$#html { overflow: auto !important; }

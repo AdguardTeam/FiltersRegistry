@@ -1,9 +1,9 @@
-! Checksum: IFWf7UKV3kwVFIy2R9wlqw
-! Diff-Path: ../patches/19/19-s-1780046468-3600.patch
+! Checksum: EPNXi1tnDMr4IXJgaEp67g
+! Diff-Path: ../patches/19/19-s-1780053237-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.76.29
-! TimeUpdated: 2026-05-29T09:17:58+00:00
+! Version: 2.0.76.30
+! TimeUpdated: 2026-05-29T11:12:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3563,11 +3563,14 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+aether.bar#$#html[data-no-scroll], html[data-no-scroll] body { overflow: auto !important; }
+aether.bar#$#.popout-wrapper { display: none !important; }
+edmunds.com##a[data-tracking-id="open_chat_canvas"]
 irbank.net##div[aria-label="IRBANK クラウドファンディング 最終日"]
 irbank.net###ib-floating
 24live.com##.pop-up-banner
 24live.com##.banner
-androidpolice.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
+pocket-lint.com,androidpolice.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
 ||star.com.tr/video/embed/$subdocument
 star.com.tr##div[style^="height:530px;"]:has(> .video-container)
 star.com.tr##.video-container
@@ -12928,6 +12931,9 @@ theguardian.com,star.com.tr,halktv.com.tr,zaxid.net,ballotpedia.org,timesofmalta
 !
 ! SECTION: Subscriptions - Regular rules
 !
+footballtransfers.com#?#article > h2:contains(/^The FootballTransfers app$/i)
+footballtransfers.com#?#article > h2:contains(/^The FootballTransfers app$/i) ~ p:contains(/Check out FootballTransfers' new app|The FootballTransfers app/i)
+footballtransfers.com##article > p:has(> b > a:is([title="Google Play"], [title="App Store"]))
 videocardz.com##.socialbar
 videocardz.com##.vc-google-icons-only
 tldr.tech#?#main > div.px-6 > h1.text-left:contains(Keep up with tech in 5 minutes)
@@ -13131,7 +13137,7 @@ scientificamerican.com#%#//scriptlet('remove-class', 'scroll-lock', 'html.scroll
 noorderland.nl##.showheroes-unit
 folhadelondrina.com.br##.ultimos-posts-container
 folhadelondrina.com.br##.google-news-top
-androidpolice.com,thegamer.com##.google-addus
+pocket-lint.com,androidpolice.com,thegamer.com##.google-addus
 managingmadrid.com,bavarianfootballworks.com##form:has(> div.duet--cta--newsletter)
 techorange.com##aside > div.elementor-widget-template:has(div[data-widget_type="form.default"])
 revistamercado.do##.content  > p:has(> strong > a[href="https://revistamercado.do/mercado-newsletter"])
@@ -13505,9 +13511,6 @@ meteomedia.com##div[aria-labelledby="notification-prompt-title"]
 capterra.com##iframe[id^="faas-modal-form-"]
 e-forologia.gr##.linkbox--newsletter
 hipertextual.com###block-158
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
-gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
 cloudykitchen.com##.email-highlight
 newspicks.com##div[data-testid="premiumBanner"]
 zeenews.india.com###googleCTA
@@ -22322,6 +22325,11 @@ ilfont.it##body div.popup-overlay-newsletter
 ||widget.manychat.com^$domain=ukrinform.ru
 ||widgets.contentfleet.com/newsletter/
 ||womenshealthmag.com/*/files/wh-newsletter-signup$image
+!
+! Future Publishing Limited Quay House
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utility-bar__google-button
+fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###utilitybar__button--newsletter
 !
 ! People Inc.
 bhg.com,southernliving.com,ew.com,allrecipes.com,health.com,lifewire.com,parents.com,thespruce.com,simplyrecipes.com,thespruceeats.com,thesprucepets.com,travelandleisure.com,verywellhealth.com,foodandwine.com##div[aria-label="Modal Overlay Box"][emailfield="email"]

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: H4jSryoSJu+2ArbQIBCQNA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780046466-3600.patch
+! Checksum: 7jWtZM3Eayh4L02HP5LXig
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780053235-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.69.31
-! TimeUpdated: 2026-05-29T09:17:19+00:00
+! Version: 2.4.69.32
+! TimeUpdated: 2026-05-29T11:11:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||lust-girls.com^$all
 ||constellation.networknmedia.com^
 ||ropsumemu.com^
 ||wizensbuphaga.sh^$all
@@ -25049,6 +25050,14 @@ mingguanwanita.my##.adplaceholder-leaderboard
 mingguanwanita.my##.adplaceholder-mrec
 !
 !---------------------------------------------------------------------
+!------------------------------ Maltese ------------------------------
+!---------------------------------------------------------------------
+!
+! NOTE: Maltese
+!
+one.com.mt###popup-root
+!
+!---------------------------------------------------------------------
 !------------------------------ Moldovian ----------------------------
 !---------------------------------------------------------------------
 !
@@ -32588,6 +32597,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231983
+! Fixes delay in the video player
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225608
 ! TODO: remove when this issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/560
 metacritic.com##+js(set-constant, googletag.setConfig, noopFunc)
@@ -37253,6 +37264,11 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||orangepix.is/istrp/*.gif
+||orangepix.is/b_pics/*.gif
+ussoccer.com##div[class^="PreviewStory_advertising"]
+edmunds.com###results-container > div[style]:has(> div.sponsored-cars)
+edmunds.com##.usurp-card-list > li:has(> div > div.exco-player)
 tldr.tech##.flex:has(> div.w-full > span.text-white.underline:contains(Sponsored))
 zerohedge.com##div[class^="MMWidgetFeb12_container"]
 gamespot.com##.fandom-ad-sticky-container
@@ -39080,7 +39096,6 @@ zerohedge.com##div[class*="AxosPromoCalc_axosWidget"]
 wowroms.com##.ulromlist > .element:not([data-alpha])
 romsdl.com###ad-header
 videogameschronicle.com##.vgc-layout__adbreak
-nypost.com##+js(adjust-setTimeout, [native code], 7000, 0.001)
 appleinsider.com##.block:has(> div.ad)
 tupaki.com##body div[id^="detail_wrap_ad_"]:not(#style_important)
 shopthemedetector.com##+js(set-cookie, shopify, 1)
@@ -41831,7 +41846,7 @@ eloking.com##.elo-ad-container
 edition.cnn.com##.featured-product
 time.com##.h-sidebar-sticky-container:has(> div > div.ad)
 erothots.co##.bnr
-erothots.co,zenporn.com##.bnrs
+orangepix.is,erothots.co,zenporn.com##.bnrs
 comdotgame.com##+js(abort-current-script, $, cdgPops)
 comdotgame.com##main div[style*="height:90px"][style*="overflow:hidden"]:not([class]):not([id])
 comdotgame.com##div[style^="text-align:"]:has(> [title="Hiqqu"])
@@ -59506,6 +59521,9 @@ $popup,3p,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/231983
+nypost.com#@#.cnx-player-wrapper
+@@||connatix.com^$domain=nypost.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232066
 247sports.com##+js(google-ima)
 @@||dt.adsafeprotected.com/dt?adspot_id=$domain=247sports.com
