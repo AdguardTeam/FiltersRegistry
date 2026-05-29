@@ -1,9 +1,9 @@
-! Checksum: vWjNycnG0gxv1cMGxgqxaA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1780033013-3600.patch
+! Checksum: GzljEFoeDeGSHok2c3CTyA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1780039932-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.26
-! TimeUpdated: 2026-05-29T05:33:43+00:00
+! Version: 2.2.69.27
+! TimeUpdated: 2026-05-29T07:29:12+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -12677,7 +12677,8 @@ starsandstripesfc.com,polygon.com#%#//scriptlet("set-constant", "ConcertAds", "t
 starve.io###trevda
 strangermeetup.com#%#//scriptlet("set-constant", "window.adsEnabled", "true")
 kukuo.tw,studopedia.info,infopedia.su,studopedia.net,studopedia.su,studopedia.org,studopedia.ru,studopedia.com.ua,lektsii.org,mydocx.ru#%#//scriptlet("set-constant", "adsbygoogle.loaded", "true")
-d3f6gjnauy613m.cloudfront.net,studyflix.de##.huge-notification
+d3f6gjnauy613m.cloudfront.net,studyflix.de#%#//scriptlet('google-ima3')
+d3f6gjnauy613m.cloudfront.net,studyflix.de#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
 sudomod.com#$#body { overflow: visible!important; }
 surviv.io##div[class^="adblock-plea"]
 t-online.de#%#window.IM = [1,2,3];
@@ -13376,6 +13377,7 @@ aol.com#@#.adwrap
 !+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$domain=washingtonpost.com
 !#safari_cb_affinity(general)
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=d3f6gjnauy613m.cloudfront.net|studyflix.de
 @@||a.pemsrv.com/ad-provider.js$domain=xvideos.es
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=thegamer.com,xmlhttprequest
 @@||hardwaretimes.com^$generichide
@@ -13557,6 +13559,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 klerk.ru#?#iframe[src^="https://autofill.yandex.ru/suggest?"][src*="widget"]
 sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+24live.com##.pop-up-banner
+24live.com##.banner
 androidpolice.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
 ||star.com.tr/video/embed/$subdocument
 star.com.tr##div[style^="height:530px;"]:has(> .video-container)
@@ -17445,6 +17449,7 @@ labs.google.com#@##google-hats-survey
 turkiyegazetesi.com.tr,tozlu.com,ekonomika.org.tr,lagacetadesalamanca.es,lovense.com,evvelcevap.com,wal.yalenkino.org,pibig.info,lefigaro.fr,banki.ru,a2zapk.io,delfi.lt,ganyancanavari.com,turkcell.com.tr,a101.com.tr,news.mail.ru,realitatea.net,winnipegfreepress.com,tenorshare.com,gzt.com,haber.biz,sakshi.com,shiftdelete.net,community.oneplus.com,lnc.nc,superfilmes.ph,meduza.io,yenisafak.com,offidocs.com,onedio.com,hpplus.jp,fullfilmcibaba1.com,joom.com,nbc.com,maximum.ru,ch3plus.com,dropmefiles.com,rg.ru,reddit.com,life.ru#%#//scriptlet('set-constant', 'Notification.requestPermission', 'noopFunc')
 wallstreet-online.de,dni.ru#%#if (window.PushManager) { window.PushManager.prototype.subscribe = function () { return { then: function (func) { } }; }; }
 macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFunc")
+24live.com###push-notification
 mobilelaby.com###wp-push-banner
 nhnieuws.nl##div[class^="BrowserPushPopup_"]
 rijnmond.nl##.dialog-toggle-notifications-container
@@ -22611,6 +22616,8 @@ flightradar24.com##[data-id="1f03f7d"][data-element_type="widget"]
 flightradar24.com##[data-id="18f2aaf"][data-element_type="widget"]
 flightradar24.com##[data-id="a2aa32b"][data-element_type="widget"]
 !+ NOT_OPTIMIZED
+gdh.digital##.publish-bar-sticky ~ div.w-full > div.my-4 > div.overflow-visible + div.flex + div:not([class]) > div.w-full
+!+ NOT_OPTIMIZED
 medyascope.tv##.elementor-widget-container > div:has(> div[data-elementor-post-type="elementor_library"] .subscription-btn)
 !+ NOT_OPTIMIZED
 dev.ua##.subscription-block
@@ -22689,6 +22696,7 @@ buttondown.email#@##subscribe-form
 ##div[class^="smartbanner"][class*="-android"]
 ###smartbanner.ios
 rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+gdh.digital##body > div.overflow-hidden.fixed
 memorial.com.tr##.smart-banner-block
 bitrefill.com##div[class^="_wrapper_"] > section[class]:has(> div[class^="_inner_11mgk"] a[href="https://apps.apple.com/in/app/bitrefill/id1378102623"])
 uatv.ua##.first-rotation-banner
@@ -23914,7 +23922,7 @@ emailnator.com#%#//scriptlet('set-local-storage-item', 'announcement_1', '1')
 cimri.com#?#a[href="https://www.cimri.com/en-son-kaca-olur"] > img:upward(2)
 dpoint.docomo.ne.jp###store_item_app
 weathernews.jp,dbook.docomo.ne.jp###app_dl
-go.chatwork.com##.floating-banner
+europages.com.tr,go.chatwork.com##.floating-banner
 ostrovok.ru##div[class^="MobileAppWidget-module__button-wrapper"]
 ostrovok.ru##.zenorders-mobile
 ostrovok.ru##.homepage-mobile-wrapper
@@ -25632,6 +25640,7 @@ labkom.co.id#$#.fca-lockercat-wrapper { display: none!important; }
 labkom.co.id#$#.fca-lockercat-content { display: block!important; }
 yasir252.com#%#document.addEventListener('DOMContentLoaded', function(){setTimeout(function(){var a=document.querySelector(".onp-sl-content");if("function"===typeof jQuery&&"object"===typeof bizpanda.lockerOptions&&a)try{a=0;for(var c=Object.keys(bizpanda.lockerOptions);a<c.length;a++){var d=c[a];if(d.includes("onpLock")){var b=bizpanda.lockerOptions[d];b&&jQuery.ajax({url:b.ajaxUrl,method:"post",data:{lockerId:b.lockerId,action:"opanda_loader",hash:b.contentHash},success:function(a){var b=jQuery(".onp-sl-content"),c=jQuery(".onp-sl-social-locker"); b.append(a);b.css("display","block");c.css("display","none")}})}}}catch(e){}},1E3)});
 ||trimay.ru/?
+ortadogugazetesi.com##.detailside-inner-ad
 euyansang.com##.fixed-footer-email-signup
 aiosearch.com##.v-tour > .v-step:has(> div.v-step__content > div > div > a[href="/login"])
 aiosearch.com##iframe[src="/ban/1.html"]
@@ -29609,7 +29618,7 @@ tokyo-sports.co.jp,news.dwango.jp#%#//scriptlet("remove-attr", "oncontextmenu", 
 7lafa.com#%#//scriptlet("remove-attr", "oncopy|onselectstart", "body")
 mhwg.org,biyografi.info,seiya-saiga.com#%#//scriptlet("remove-attr", "oncontextmenu|onselectstart", "body")
 !+ NOT_PLATFORM(ext_ff)
-mangaplus.shueisha.co.jp,otakuhg.site,megaplay.buzz,cloudnestra.com,rapid-cloud.co,ico3c.com,luluvdoo.com,sterham.net,animeshouse.net,animeunity.it,themeslide.com,orangespotlight.com,magdyman.com,topflix.*,poisonous-raspberry-fields.blogspot.com,redirdx.in,tmofans.com,thememazing.com,baan-series.com,baixarfilmetorrent.net,yourupload.com,wikitechy.com,windes.com.es,freecourser.com,audioreview.m1001.coreserver.jp,portalwrc.pl,themeslide.com#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
+savefiles.com,mangaplus.shueisha.co.jp,otakuhg.site,megaplay.buzz,cloudnestra.com,rapid-cloud.co,ico3c.com,luluvdoo.com,sterham.net,animeshouse.net,animeunity.it,themeslide.com,orangespotlight.com,magdyman.com,topflix.*,poisonous-raspberry-fields.blogspot.com,redirdx.in,tmofans.com,thememazing.com,baan-series.com,baixarfilmetorrent.net,yourupload.com,wikitechy.com,windes.com.es,freecourser.com,audioreview.m1001.coreserver.jp,portalwrc.pl,themeslide.com#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
 !#######################################################
 !######### Block useless widgets #######################
 !### Weather, money exchange, 3rd-party feedbacks, #####

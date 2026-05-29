@@ -1,9 +1,9 @@
-! Checksum: BvQ345xp6YVrIMw+3NvstQ
-! Diff-Path: ../patches/14/14-s-1780032997-3600.patch
+! Checksum: F6zHKBqXGtxa64AeSNxDCw
+! Diff-Path: ../patches/14/14-s-1780039917-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.26
-! TimeUpdated: 2026-05-29T05:33:43+00:00
+! Version: 2.2.69.27
+! TimeUpdated: 2026-05-29T07:29:12+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25533,7 +25533,9 @@ steamid.io##.noads-inner
 strangermeetup.com#%#//scriptlet("set-constant", "window.adsEnabled", "true")
 streamonsport.to##.events img[alt="adblock"]
 kukuo.tw,studopedia.info,infopedia.su,studopedia.net,studopedia.su,studopedia.org,studopedia.ru,studopedia.com.ua,lektsii.org,mydocx.ru#%#//scriptlet("set-constant", "adsbygoogle.loaded", "true")
-d3f6gjnauy613m.cloudfront.net,studyflix.de##.huge-notification
+d3f6gjnauy613m.cloudfront.net,studyflix.de#%#//scriptlet('google-ima3')
+d3f6gjnauy613m.cloudfront.net,studyflix.de#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=d3f6gjnauy613m.cloudfront.net|studyflix.de
 sudomod.com#$#.fade { display: none!important; }
 sudomod.com#$#body { overflow: visible!important; }
 surviv.io##div[class^="adblock-plea"]
@@ -27105,6 +27107,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+24live.com##.pop-up-banner
+24live.com##.banner
 androidpolice.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
 ||star.com.tr/video/embed/$subdocument
 star.com.tr##div[style^="height:530px;"]:has(> .video-container)
@@ -35331,6 +35335,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+24live.com###push-notification
 mobilelaby.com###wp-push-banner
 nhnieuws.nl##div[class^="BrowserPushPopup_"]
 rijnmond.nl##.dialog-toggle-notifications-container
@@ -37915,7 +37920,6 @@ aktuality.sk###tp-thanks-template
 aktuality.sk##.tp-sticky-delayed
 finance.sina.com.cn##.blk-wxfollow
 motorsport.com##.mst-article-alerts > .flex-col:has(> button[data-id="getAlerts"])
-gdh.digital##.publish-bar-sticky ~ div.w-full > div.my-4 > div.overflow-visible + div.flex + div:not([class]) > div.w-full
 news.itsfoss.com##.kg-cta-card
 bhol.co.il###share_sectoin
 xn--h1alcedd.xn--d1aqf.xn--p1ai###telegram-block
@@ -45851,6 +45855,8 @@ flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
 !+ NOT_OPTIMIZED
+gdh.digital##.publish-bar-sticky ~ div.w-full > div.my-4 > div.overflow-visible + div.flex + div:not([class]) > div.w-full
+!+ NOT_OPTIMIZED
 medyascope.tv##.elementor-widget-container > div:has(> div[data-elementor-post-type="elementor_library"] .subscription-btn)
 !+ NOT_OPTIMIZED
 dev.ua##.subscription-block
@@ -46008,6 +46014,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+gdh.digital##body > div.overflow-hidden.fixed
 memorial.com.tr##.smart-banner-block
 bitrefill.com##div[class^="_wrapper_"] > section[class]:has(> div[class^="_inner_11mgk"] a[href="https://apps.apple.com/in/app/bitrefill/id1378102623"])
 uatv.ua##.first-rotation-banner
@@ -48096,7 +48103,7 @@ cimri.com#?#a[href="https://www.cimri.com/en-son-kaca-olur"] > img:upward(2)
 thedailystar.net##.special-block
 dpoint.docomo.ne.jp###store_item_app
 weathernews.jp,dbook.docomo.ne.jp###app_dl
-go.chatwork.com##.floating-banner
+europages.com.tr,go.chatwork.com##.floating-banner
 ostrovok.ru##div[class^="MobileAppWidget-module__button-wrapper"]
 ostrovok.ru##.zenorders-mobile
 ostrovok.ru##.homepage-mobile-wrapper
@@ -50120,6 +50127,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+europages.com.tr##.app-scene-banner
+haber365.com##.my-apps
 chat.deepseek.com##.the-header > div.ds-icon-button ~ div[class]:has(> button.ds-atom-button > div.ds-atom-button__icon > svg[Width="14"][height="14"])
 app.koofr.net##div[role="dialog"]:has(> .l-mobile-offer)
 vesty.co.il##a[href="https://onelink.to/w75zed"]
@@ -50904,7 +50913,7 @@ bilibili.com##bili-open-app ~ bili-open-app
 re-katsu.jp##.appli
 taringa.net##div[data-id="BottomBanner_BottomBanner_div"]
 cimri.com###open-in-the-app
-speedtest.net##.modal-overlay
+europages.com.tr,speedtest.net##.modal-overlay
 speedtest.net##div[data-view-name^="mobile-pretest-"]
 raiffeisen.ua##.mobile-app-block
 echofm.online##.sc-1bb19780-0
@@ -51187,7 +51196,7 @@ news.abplive.com##._viewInApp
 reverso.net###home-badges-background
 reverso.net###home-badges-apps
 tutudao.net##a[href="/app/download/"]
-flipp.com,t20worldcup.com,justwatch.com,flvto.biz##.mobile-banner
+europages.com.tr,flipp.com,t20worldcup.com,justwatch.com,flvto.biz##.mobile-banner
 theinitium.com##.c-download-banner
 townwork.net#?#.TM-contentsTopBack:has(> div.TM-contentsTopBack__inner > div.TM-appBannerHasBadgeIcon)
 townwork.net##.jsc-hd-app-bnr
@@ -54401,6 +54410,7 @@ yasir252.com#%#document.addEventListener('DOMContentLoaded', function(){setTimeo
 ||trimay.ru/?
 !
 !
+ortadogugazetesi.com##.detailside-inner-ad
 euyansang.com##.fixed-footer-email-signup
 aiosearch.com##.v-tour > .v-step:has(> div.v-step__content > div > div > a[href="/login"])
 aiosearch.com##iframe[src="/ban/1.html"]
@@ -62499,7 +62509,7 @@ tokyo-sports.co.jp,news.dwango.jp#%#//scriptlet("remove-attr", "oncontextmenu", 
 mhwg.org,biyografi.info,seiya-saiga.com#%#//scriptlet("remove-attr", "oncontextmenu|onselectstart", "body")
 !
 !+ NOT_PLATFORM(ext_ff)
-mangaplus.shueisha.co.jp,otakuhg.site,megaplay.buzz,cloudnestra.com,rapid-cloud.co,ico3c.com,luluvdoo.com,sterham.net,animeshouse.net,animeunity.it,themeslide.com,orangespotlight.com,magdyman.com,topflix.*,poisonous-raspberry-fields.blogspot.com,redirdx.in,tmofans.com,thememazing.com,baan-series.com,baixarfilmetorrent.net,yourupload.com,wikitechy.com,windes.com.es,freecourser.com,audioreview.m1001.coreserver.jp,portalwrc.pl,themeslide.com#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
+savefiles.com,mangaplus.shueisha.co.jp,otakuhg.site,megaplay.buzz,cloudnestra.com,rapid-cloud.co,ico3c.com,luluvdoo.com,sterham.net,animeshouse.net,animeunity.it,themeslide.com,orangespotlight.com,magdyman.com,topflix.*,poisonous-raspberry-fields.blogspot.com,redirdx.in,tmofans.com,thememazing.com,baan-series.com,baixarfilmetorrent.net,yourupload.com,wikitechy.com,windes.com.es,freecourser.com,audioreview.m1001.coreserver.jp,portalwrc.pl,themeslide.com#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
 !--- HTML ----
 ! NOTE: Context menu - HTML
 ! NOTE: Context menu (mixed rules) end ⬆️
