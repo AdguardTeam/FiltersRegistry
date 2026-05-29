@@ -1,5 +1,5 @@
-! Checksum: S+9kWc8NG/Js1vQyVZ234Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1779947865-14400.patch
+! Checksum: MTIx3pVClssoRs79eHE0vg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1780034361-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.82
@@ -50,6 +50,7 @@ windll.com##.download-block
 windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
+||testedforyou.net^$all
 ||solvusoft.com^$document
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
@@ -1596,6 +1597,7 @@ msftconnecttest.com^$csp=upgrade-insecure-requests
 ://ww26.$document,domain=~ww26.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww27.$document,domain=~ww27.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww31.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww35.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww38.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww44.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1750,6 +1752,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##a[title="Share on WhatsApp" i]
 ##a[title^="Share to "]
 ##amp-social-share
+##button[aria-controls=ShareContainer]
 ##button[class*=ShareOverlayButton i]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
@@ -2682,6 +2685,7 @@ $removeparam=spMailingID
 $removeparam=spUserID
 $removeparam=spJobID
 $removeparam=spReportId
+$removeparam=track_click
 $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
@@ -2771,7 +2775,6 @@ $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
 $removeparam=dt_dapp
 $removeparam=dt_platform
-$removeparam=i_cid
 $removeparam=waad
 $removeparam=_gac
 $removeparam=af_medium
@@ -2818,9 +2821,6 @@ $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
 $document,removeparam=/^referer=prisjakt.*$/i
-$removeparam=cx_testId
-$removeparam=cx_testVariant
-$removeparam=cx_artPos
 $removeparam=belboon
 $removeparam=channable
 $removeparam=int_source
@@ -2836,6 +2836,7 @@ $removeparam=gaa_ts
 $removeparam=gaa_sig
 $removeparam=amp_gsa
 $removeparam=vgo_ee
+ref=prisjakt^$document,removeparam=ref
 $document,removeparam=/^amp;utm_.*$/
 $removeparam=sap-outbound-id
 $removeparam=analyticsCorrelationId
@@ -2980,8 +2981,6 @@ $removeparam=geniuslink
 ||amazon.$removeparam=maas
 ||amazon.$removeparam=/^aa_.*$/
 ||amazon.$removeparam=refinements
-||amazon.$removeparam=qsid
-||amazon.$removeparam=sres
 $removeparam=hvadid
 $removeparam=hvpos
 $removeparam=hvnetw
@@ -3253,7 +3252,6 @@ $removeparam=aff_click_id
 ||baidu.com/search/index?$removeparam=ct
 ||baidu.com^$removeparam=asctag
 ||baidu.com^$removeparam=rq
-||baidu.com^$removeparam=vslid
 ||baidu.com^$removeparam=idctag
 ||baidu.com^$removeparam=logid
 ||baidu.com^$removeparam=pageFrom
@@ -3331,6 +3329,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||iqiyi.com^$removeparam=r_area
 ||iqiyi.com^$removeparam=r_source
 ||iqiyi.com^$removeparam=stype
+||iqiyi.com^$removeparam=s_source
 ||iqiyi.com^$removeparam=source
 ||iqiyi.com^$removeparam=sr
 ||sogou.com^$removeparam=_asf
@@ -3394,7 +3393,6 @@ $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=refsec,domain=barrons.com
 $removeparam=hpt,domain=cnn.com
-||pbtech.$removeparam=qr
 ||paypal.com^$removeparam=calc
 $removeparam=ab_channel,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
