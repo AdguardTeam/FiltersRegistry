@@ -195,7 +195,7 @@ describe('build.js: cache flag handling', () => {
     });
 });
 
-const REAL_FILTER_DIR = path.resolve(__dirname, '../../../filters/filter_1_Russian');
+const REAL_FILTER_DIR = path.resolve(__dirname, 'resources/filter_test');
 
 const RULE_TO_FILTER = '||e2e-optimization-filtered.example^';
 const RULE_TO_KEEP = '||e2e-optimization-kept.example^';
