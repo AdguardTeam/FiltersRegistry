@@ -33,6 +33,7 @@ describe('parseFlags', () => {
 
         expect(flags.useCache).toBe(true);
         expect(flags.generateCache).toBe(true);
+        expect(flags.generateStatsFromCachedPercentJson).toBe(true);
         expect(flags.noPatchesPrepare).toBe(true);
         expect(flags.stripGeneratedMeta).toBe(true);
     });
@@ -94,6 +95,22 @@ describe('validateFlags', () => {
         expect(result?.type).toBe('error');
         expect(result?.message).toContain('--strip-generated-meta and --no-patches-prepare');
         expect(result?.message).toContain('are incompatible');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('rejects --use-cache combined with --generate-stats-from-cached-percent-json', () => {
+        const flags = parseFlags(['--use-cache', '--generate-stats-from-cached-percent-json']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('mutually exclusive');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('rejects --generate-cache combined with --generate-stats-from-cached-percent-json', () => {
+        const flags = parseFlags(['--generate-cache', '--generate-stats-from-cached-percent-json']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('mutually exclusive');
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
