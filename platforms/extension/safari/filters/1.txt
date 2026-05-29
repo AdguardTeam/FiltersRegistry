@@ -1,9 +1,9 @@
-! Checksum: a4Rgmbbge94Nk9lS0AKBRw
-! Diff-Path: ../patches/1/1-s-1780067718-3600.patch
+! Checksum: Or4AJT5XZgHjDkaN+7qoWQ
+! Diff-Path: ../patches/1/1-s-1780075161-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.6.11
-! TimeUpdated: 2026-05-29T15:11:31+00:00
+! Version: 2.1.6.12
+! TimeUpdated: 2026-05-29T17:15:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1441,6 +1441,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||placeholder.treeum.net^
 ||adpartner.pro^
 ||hello.vipapi.org^
 ||wishgofox.com^
@@ -6683,6 +6684,9 @@ mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,
 !
 ! NOTE: Specific rules
 !
+gordonua.com##div.ComponentManager_didInit:has(> div[class*="_code"] > div[id^="bn_"])
+gordonua.com##div.ComponentManager_didInit:has(> div[class*="_code"] > div.nts-ad)
+gordonua.com##div.ComponentManager_didInit:has(> div[class*="_code"] > div.GDN_VIDEO)
 fbc.biz.ua##a[href="https://vchasno.ua/"] > img
 fbc.biz.ua##.baner
 ||autoportal.ua/banner_app/
@@ -19800,6 +19804,9 @@ citrus.ua,xsport.ua,zi.dn.ua,zi.ua##img[src^="/upload/rk/"]
 !
 !
 !
+finance.ua##.fua-block-featured-product-list
+finance.ua##.fua-special-project[rel="nofollow noopener"]
+gagadget.com##div.friends-holder
 ||b-cdn.net/app/uploads/*.gif$image,domain=galka.if.ua
 galka.if.ua##.infoblock-href
 ||firtka.if.ua/data/images/banners/
