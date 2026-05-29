@@ -110,17 +110,14 @@ const prepareCachedFiltersDir = async () => {
  * Compiler entry point.
  */
 const buildFilters = async () => {
-    // When --generate-cache we only need to compile filters (which updates filter.txt),
-    // skip platform generation, patches preparation, and temp/platforms copying.
+    // When --generate-cache, download percent.json and per-filter stats.json to
+    // the local optimization config directory, then exit early.
     if (generateCache) {
         await fs.promises.rm(localOptimizationConfigPath, { recursive: true, force: true });
 
         await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
         // eslint-disable-next-line no-console
-        console.log(
-            `percent.json saved to ${localOptimizationConfigPath}.\n`
-                + 'Edit it if needed, then run "yarn generate-cache:stats".',
-        );
+        console.log(`percent.json saved to ${localOptimizationConfigPath}.`);
 
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
 

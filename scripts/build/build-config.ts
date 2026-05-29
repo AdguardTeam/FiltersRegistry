@@ -97,8 +97,8 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         return {
             type: 'error',
             message:
-                'Error: --use-cache'
-                    + `and --generate-stats-from-cached-percent-json are mutually exclusive.\n${hint}`,
+                'Error: --use-cache '
+                + `and --generate-stats-from-cached-percent-json are mutually exclusive.\n${hint}`,
         };
     }
 
@@ -107,7 +107,7 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
             type: 'error',
             message:
                 'Error: --generate-cache and '
-                    + `--generate-stats-from-cached-percent-json are mutually exclusive.\n${hint}`,
+                + `--generate-stats-from-cached-percent-json are mutually exclusive.\n${hint}`,
         };
     }
 
