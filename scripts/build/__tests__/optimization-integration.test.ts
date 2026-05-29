@@ -4,7 +4,7 @@ import {
 import { compile, localOptimizationConfig } from '@adguard/filters-compiler';
 import os from 'os';
 import path from 'path';
-import fs from 'fs';
+import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { findFiles } from '../../utils/find_files.js';
 
@@ -29,13 +29,13 @@ describe('build.js: cache flag handling', () => {
             },
         }));
         vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(false),
+        }));
+        vi.doMock('fs/promises', () => ({
             default: {
-                existsSync: vi.fn().mockReturnValue(false),
-                promises: {
-                    cp: vi.fn().mockResolvedValue(undefined),
-                    rm: vi.fn().mockResolvedValue(undefined),
-                    writeFile: vi.fn().mockResolvedValue(undefined),
-                },
+                cp: vi.fn().mockResolvedValue(undefined),
+                rm: vi.fn().mockResolvedValue(undefined),
+                writeFile: vi.fn().mockResolvedValue(undefined),
             },
         }));
         vi.doMock('../../utils/find_files.js', () => ({
@@ -142,13 +142,13 @@ describe('build.js: cache flag handling', () => {
 
     it('--use-cache with local cache: loads stats for all filters when no --include', async () => {
         vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(false),
+        }));
+        vi.doMock('fs/promises', () => ({
             default: {
-                existsSync: vi.fn().mockImplementation((p: string) => p.endsWith('percent.json')),
-                promises: {
-                    cp: vi.fn().mockResolvedValue(undefined),
-                    rm: vi.fn().mockResolvedValue(undefined),
-                    writeFile: vi.fn().mockResolvedValue(undefined),
-                },
+                cp: vi.fn().mockResolvedValue(undefined),
+                rm: vi.fn().mockResolvedValue(undefined),
+                writeFile: vi.fn().mockResolvedValue(undefined),
             },
         }));
         process.argv = ['node', 'build.js', '--use-cache'];
@@ -169,13 +169,13 @@ describe('build.js: cache flag handling', () => {
     it(`--use-cache with local cache and --include=${FILTER_ID}:`
          + ` loads stats for filter ${FILTER_ID} only`, async () => {
         vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(false),
+        }));
+        vi.doMock('fs/promises', () => ({
             default: {
-                existsSync: vi.fn().mockImplementation((p: string) => p.endsWith('percent.json')),
-                promises: {
-                    cp: vi.fn().mockResolvedValue(undefined),
-                    rm: vi.fn().mockResolvedValue(undefined),
-                    writeFile: vi.fn().mockResolvedValue(undefined),
-                },
+                cp: vi.fn().mockResolvedValue(undefined),
+                rm: vi.fn().mockResolvedValue(undefined),
+                writeFile: vi.fn().mockResolvedValue(undefined),
             },
         }));
         process.argv = ['node', 'build.js', '--use-cache', '--include=1'];
@@ -221,7 +221,7 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
     let statsContentBefore: string;
 
     beforeAll(async () => {
-        tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'filters-e2e-genstats-'));
+        tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'filters-e2e-genstats-'));
 
         const filtersDir = path.join(tmpDir, 'filters');
         optimizationDir = path.join(tmpDir, 'optimization_config');
@@ -230,21 +230,21 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
         const reportPath = path.join(tmpDir, 'report.txt');
 
         const filterDir = path.join(filtersDir, 'filter_1_Russian');
-        await fs.promises.mkdir(filterDir, { recursive: true });
+        await fs.mkdir(filterDir, { recursive: true });
 
-        await fs.promises.copyFile(path.join(REAL_FILTER_DIR, 'metadata.json'), path.join(filterDir, 'metadata.json'));
-        await fs.promises.copyFile(path.join(REAL_FILTER_DIR, 'revision.json'), path.join(filterDir, 'revision.json'));
+        await fs.copyFile(path.join(REAL_FILTER_DIR, 'metadata.json'), path.join(filterDir, 'metadata.json'));
+        await fs.copyFile(path.join(REAL_FILTER_DIR, 'revision.json'), path.join(filterDir, 'revision.json'));
 
-        await fs.promises.writeFile(
+        await fs.writeFile(
             path.join(filterDir, 'template.txt'),
             `! Title: E2E Optimization Test\n${RULE_TO_FILTER}\n${RULE_TO_KEEP}\n`,
             'utf-8',
         );
 
         const statsDir = path.join(optimizationDir, 'filters', String(FILTER_ID));
-        await fs.promises.mkdir(statsDir, { recursive: true });
+        await fs.mkdir(statsDir, { recursive: true });
 
-        await fs.promises.writeFile(
+        await fs.writeFile(
             path.join(optimizationDir, 'percent.json'),
             JSON.stringify({ config: [{ filterId: FILTER_ID }] }),
             'utf-8',
@@ -266,7 +266,7 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
             ],
         });
         const statsPath = path.join(statsDir, 'stats.json');
-        await fs.promises.writeFile(statsPath, statsJson, 'utf-8');
+        await fs.writeFile(statsPath, statsJson, 'utf-8');
         statsContentBefore = statsJson;
 
         localOptimizationConfig.useLocalConfig(optimizationDir);
@@ -276,12 +276,12 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
         const outputFiles: string[] = await findFiles(platformsDir, () => true);
         const optimizedFiles = outputFiles.filter((f) => f.endsWith('_optimized.txt'));
         expect(optimizedFiles.length).toBeGreaterThan(0);
-        allOutput = (await Promise.all(optimizedFiles.map((f) => fs.promises.readFile(f, 'utf-8')))).join('\n');
+        allOutput = (await Promise.all(optimizedFiles.map(async (f) => fs.readFile(f, 'utf-8')))).join('\n');
     }, 30_000);
 
     it('local stats.json is not modified by compile', async () => {
         const statsPath = path.join(tmpDir, 'optimization_config', 'filters', String(FILTER_ID), 'stats.json');
-        const statsContentAfter = await fs.promises.readFile(statsPath, 'utf-8');
+        const statsContentAfter = await fs.readFile(statsPath, 'utf-8');
         expect(statsContentAfter).toBe(statsContentBefore);
     });
 
@@ -295,6 +295,6 @@ describe('localOptimizationConfig: rules optimized from local cache', () => {
 
     afterAll(async () => {
         await localOptimizationConfig.reset(optimizationDir);
-        await fs.promises.rm(tmpDir, { recursive: true, force: true });
+        await fs.rm(tmpDir, { recursive: true, force: true });
     });
 });

@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import fs from 'fs';
+import { existsSync } from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { compile, localOptimizationConfig } from '@adguard/filters-compiler';
@@ -76,12 +77,10 @@ const SHADOW_TEMPLATE_CONTENT = '@include "./filter.txt"\n';
  */
 const prepareCachedFiltersDir = async () => {
     // Remove stale copy if exists
-    if (fs.existsSync(cachedFiltersDir)) {
-        await fs.promises.rm(cachedFiltersDir, { recursive: true });
-    }
+    await fs.rm(cachedFiltersDir, { recursive: true, force: true });
 
     // Full recursive copy
-    await fs.promises.cp(filtersDir, cachedFiltersDir, { recursive: true });
+    await fs.cp(filtersDir, cachedFiltersDir, { recursive: true });
 
     // Find all directories containing template.txt and replace with shadow templates
     const templatePaths = await findFiles(cachedFiltersDir, (p) => path.basename(p) === 'template.txt');
@@ -90,14 +89,14 @@ const prepareCachedFiltersDir = async () => {
         const dir = path.dirname(templatePath);
         const filterTxtPath = path.join(dir, 'filter.txt');
 
-        if (!fs.existsSync(filterTxtPath)) {
+        if (!existsSync(filterTxtPath)) {
             throw new Error(
                 `--use-cache: missing filter.txt in ${path.relative(cachedFiltersDir, dir)}. `
                 + 'Run "yarn generate-cache" first to generate cached filter files.',
             );
         }
 
-        await fs.promises.writeFile(templatePath, SHADOW_TEMPLATE_CONTENT, 'utf8');
+        await fs.writeFile(templatePath, SHADOW_TEMPLATE_CONTENT, 'utf8');
     }));
 
     console.log(`Prepared cached filters directory with ${templatePaths.length} shadow templates.`);
@@ -110,7 +109,7 @@ const buildFilters = async () => {
     // When --generate-cache, download percent.json and per-filter stats.json to
     // the local optimization config directory, then exit early.
     if (generateCache) {
-        await fs.promises.rm(localOptimizationConfigPath, { recursive: true, force: true });
+        await fs.rm(localOptimizationConfigPath, { recursive: true, force: true });
 
         await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
         console.log(`percent.json saved to ${localOptimizationConfigPath}.`);
@@ -128,18 +127,16 @@ const buildFilters = async () => {
     }
 
     // Clean temporary folder
-    if (fs.existsSync(copyPlatformsPath)) {
-        await fs.promises.rm(copyPlatformsPath, { recursive: true });
-    }
+    await fs.rm(copyPlatformsPath, { recursive: true, force: true });
 
     // Checks if this is the initial run of the compiler by verifying
     // the existence of platform files.
     let initialRun = false;
-    if (!fs.existsSync(platformsPath)) {
+    if (!existsSync(platformsPath)) {
         initialRun = true;
     } else if (!noPatchesPrepare) {
         // Make copy for future patches generation
-        await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
+        await fs.cp(platformsPath, copyPlatformsPath, { recursive: true });
     }
 
     // Determine which filtersDir to pass to the compiler
@@ -163,8 +160,8 @@ const buildFilters = async () => {
         );
     } finally {
         // Clean up temp filters copy
-        if (useCache && fs.existsSync(cachedFiltersDir)) {
-            await fs.promises.rm(cachedFiltersDir, { recursive: true });
+        if (useCache) {
+            await fs.rm(cachedFiltersDir, { recursive: true, force: true });
         }
     }
 
@@ -172,7 +169,7 @@ const buildFilters = async () => {
     // the temp folder to create the first empty patches for future versions
     if (initialRun && !noPatchesPrepare) {
         // Make copy for future patches generation
-        await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
+        await fs.cp(platformsPath, copyPlatformsPath, { recursive: true });
     }
 
     // Strip generated metadata (Checksum, Diff-Path, TimeUpdated, Version)
@@ -183,7 +180,7 @@ const buildFilters = async () => {
 
         // Also strip the old baseline copy so build:patches diffs
         // consistently-stripped content.
-        if (fs.existsSync(copyPlatformsPath)) {
+        if (existsSync(copyPlatformsPath)) {
             const oldCount = await stripGeneratedMetaFromDir(copyPlatformsPath);
             console.log(`Stripped generated meta from ${oldCount} old baseline file(s).`);
         }
