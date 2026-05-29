@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -20,7 +21,6 @@ const args = process.argv.slice(2);
 const red = (s) => `\x1b[31m${s}\x1b[0m`;
 const argsError = validateArgs(args);
 if (argsError) {
-    // eslint-disable-next-line no-console
     console.error(`${red(argsError)}\n`);
     process.exit(1);
 }
@@ -29,9 +29,7 @@ const flags = parseFlags(args);
 const validationResult = validateFlags(flags);
 
 if (validationResult) {
-    // eslint-disable-next-line no-console
     if (validationResult.type === 'error') {
-        // eslint-disable-next-line no-console
         console.error(`\n${red(validationResult.message)}\n`);
         process.exit(1);
     }
@@ -102,7 +100,6 @@ const prepareCachedFiltersDir = async () => {
         await fs.promises.writeFile(templatePath, SHADOW_TEMPLATE_CONTENT, 'utf8');
     }));
 
-    // eslint-disable-next-line no-console
     console.log(`Prepared cached filters directory with ${templatePaths.length} shadow templates.`);
 };
 
@@ -116,19 +113,16 @@ const buildFilters = async () => {
         await fs.promises.rm(localOptimizationConfigPath, { recursive: true, force: true });
 
         await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
-        // eslint-disable-next-line no-console
         console.log(`percent.json saved to ${localOptimizationConfigPath}.`);
 
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
 
-        // eslint-disable-next-line no-console
         console.log(`Optimization config cached to ${localOptimizationConfigPath}.`);
         return;
     }
 
     if (generateStatsFromCachedPercentJson) {
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
-        // eslint-disable-next-line no-console
         console.log(`Stats generated from cached percent.json at ${localOptimizationConfigPath}.`);
         return;
     }
@@ -154,7 +148,6 @@ const buildFilters = async () => {
     if (useCache) {
         await prepareCachedFiltersDir();
         localOptimizationConfig.useLocalConfig(localOptimizationConfigPath);
-        // eslint-disable-next-line no-console
         console.log(`Using local optimization config from: ${localOptimizationConfigPath}`);
     }
 
@@ -186,14 +179,12 @@ const buildFilters = async () => {
     // from compiled filter files so they don't pollute diff comparisons.
     if (stripGeneratedMeta) {
         const newCount = await stripGeneratedMetaFromDir(platformsPath);
-        // eslint-disable-next-line no-console
         console.log(`Stripped generated meta from ${newCount} new file(s).`);
 
         // Also strip the old baseline copy so build:patches diffs
         // consistently-stripped content.
         if (fs.existsSync(copyPlatformsPath)) {
             const oldCount = await stripGeneratedMetaFromDir(copyPlatformsPath);
-            // eslint-disable-next-line no-console
             console.log(`Stripped generated meta from ${oldCount} old baseline file(s).`);
         }
     }
