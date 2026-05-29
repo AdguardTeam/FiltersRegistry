@@ -98,6 +98,16 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
+    it('allows --generate-stats-from-cached-percent-json', () => {
+        const flags = parseFlags(['--generate-stats-from-cached-percent-json']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
+    it('allows --generate-stats-from-cached-percent-json with --include', () => {
+        const flags = parseFlags(['--generate-stats-from-cached-percent-json', '--include=1,2,3']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
     it('rejects --use-cache combined with --generate-stats-from-cached-percent-json', () => {
         const flags = parseFlags(['--use-cache', '--generate-stats-from-cached-percent-json']);
         const result = validateFlags(flags);
