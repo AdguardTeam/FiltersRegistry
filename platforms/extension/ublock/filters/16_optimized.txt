@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: j+40kfDPrgvB9doeK4/svQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1780024761-3600.patch
+! Checksum: xii9alcgb75o1N8AXdphcg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1780111046-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.62
@@ -611,7 +611,6 @@ luxauto.lu##section[data-scope="homepage-hot-ads"] .grid > .imu
 lessentiel.lu###prime__inside-top
 lessentiel.lu##div[class^="ad_adContainer_"]
 cyclismactu.net##a[href^="https://media.unibet.fr/redirect.aspx"]
-menu.lu##div[data-advertisement]
 batimag.ch##div[id^="docu-slot"]
 sncf-connect.com##.WLS_gtmBannerWrapper
 sncf-connect.com###WL_side_banner
@@ -717,6 +716,7 @@ moneyvox.fr##body .habpage
 cpasfini.me,cpasmieux.club##.report-pub
 monpetitforfait.com###banner-offer
 guideautoweb.com###bar > div[style="height: 700px"]
+numero.com##.loader-container
 developpez.com###gabarit_pubBB
 ||developpez.com/ws/offres?
 ecranlarge.com##+js(abort-on-property-write, __yget_ad_list)
@@ -1433,12 +1433,14 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://a.*/display?zone_id=
 ://a.*/interstitial?id=$script
 ://a.*/loader?*&keywords=$3p
+://aclick.
 ://act-http-ban.
 ://ad.*&sid=
 ://ad.*/ad/*.gif
 ://ad.*/adx/
 ://ad.*/dynamic/
 ://ad.*/embed.
+://ad.*?*&lazy=
 ://ad.*?pid=
 ://adg.*/pub/
 ://adscdn.
@@ -1489,6 +1491,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 =970x90&
 =970x90_
 =dynamic_banner&
+=GetAdHtml&
 =popunder&
 =publicite&
 =videoAd&
@@ -1592,6 +1595,7 @@ _ads_one_
 _ads_view/
 _adsens_
 _adspromo.
+_adstyle.
 _adunit=
 _adv_300.
 _adv_728.
@@ -1608,6 +1612,7 @@ _bnrrotator_
 _board_ad.
 _display_ad_
 _domain=ads.
+_epmads.
 _event_pub.
 _flash_ad_
 _fr/ads/
@@ -1744,7 +1749,6 @@ _build=iclick-$popup
 ||adserver.pm^$3p
 ||adsgarden.com^$3p
 ||adskom.com^$3p
-||adslead.com^$3p
 ||adsmmgp.com^$3p
 ||adspsp.com^$3p
 ||adsregieonline.com^$3p
@@ -2004,7 +2008,6 @@ _build=iclick-$popup
 ||announcenutshell.com^
 ||apl373.me^
 ||armataangrily.shop^
-||asmonfernor.com^
 ||atimaze.com^
 ||avaljumectk.com^
 ||avehospitablestrangers.com^
@@ -2670,6 +2673,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||be.com/wp-content/uploads/$3p
 ||bitport.io/assets/banners/
 ||brsimg.com/pub/
+||btc.com/poster/banner/
 ||camtempel.com/banner/
 ||cdn.citytourgirls.com/static/bn/
 ||cdn.escortdude.com/static/bn/
@@ -2792,7 +2796,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||tools.prnewswire.com^$3p
 ||torah-box.com/upl/ban/
 ||tounet.com/button.php
-||track.mdsmatch.com^
 ||tripadvisor.*/partner/$3p
 ||tudou.com^$subdocument
 ||turk-dreamworld.com/images/sponsor/
@@ -3101,6 +3104,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||pronosoft.com/img/pub/
 ||pub.le360.ma^
 ||qariya.info/adv/
+||qassa.fr/images/*/wallpaper/
 ||rajacasablanca.com/site/images/flash_banners/
 ||rapeporn.name^$script
 ||rapidgator.net/images/pics/
@@ -3311,6 +3315,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###partner-ads
 ###partner-ads2
 ###pavePub
+###pave_pub
 ###pavepub
 ###pie_pub_google
 ###play-advert
@@ -3428,6 +3433,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###publ1c1te_300_250
 ###publ1c1te_728_90
 ###publicidade
+###publicidadlateral2
 ###publicite
 ###publicite-bas
 ###publiciteHaut
@@ -3445,7 +3451,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###reklama3
 ###reklamarkaplan
 ###right-side-ad
-###rightReklamIc
 ###right_ad_3
 ###right_ad_4
 ###right_pub
@@ -3523,6 +3528,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.block-gc-ad
 ##.block-pub
 ##.block_pub
+##.block_small_pub
 ##.blockgrayad
 ##.blocpub
 ##.border_ads
@@ -3692,8 +3698,11 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.player-adx-block
 ##.player-sponsor-block
 ##.player__ads
+##.pmd-ads-300x600
+##.pmd-ads-desktop
 ##.pmd-ads-mobile
 ##.pmd_dfp_ad
+##.pmdfp_habillage
 ##.popupads
 ##.porn-videos-ads
 ##.position_pub
@@ -3798,12 +3807,14 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pub_topright
 ##.pub_vertical
 ##.pub_video
+##.pub_vignette
 ##.pub_visuel
 ##.pubaccueildroite1
 ##.pubads
 ##.pubadsense
 ##.pubb-336-1
 ##.pubimage
+##.pubind1
 ##.pubitem
 ##.publicidad
 ##.publicidade-rodape
@@ -4016,6 +4027,7 @@ easyvoyage.com###esv-pub-hp
 moov.mg###extruderLeft1
 amateur2sexe.fr###footer-boom
 hardware.fr###footer_img
+equirodi.be###ft_partners
 ca-sudrhonealpes.fr###fullscreen
 bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
@@ -4071,6 +4083,7 @@ net-iris.fr###promote
 aliasdmc.fr,allocine.fr,annuaire-streaming.com,blablastream.com,blablastream.space,centerblog.net,cocostream.rip,cpasfini.me,elbilad.net,film01stream.ws,flemmix.biz,iphonesoft.fr,jeux-2-filles.com,mac2sell.net,nrj.be,nrj.fr,nuked-klan.org,olivierdauvers.fr,orange.fr,planet-casio.com,redirection-web.net,science-et-vie.com,service-public.fr,sortir47.fr,streampourvous.lol,terre.tv,toutpratique.com,turf-fr.com,val-de-marne.gouv.fr,virtuoflash.com,voirfilms.live,wareziens.net###pub
 ledemondujeu.com,minuteur-en-ligne.fr,musculaction.com,planeterenault.com,quiveutdufromage.com###pub2
 musculaction.com###pub3
+tele.premiere.fr###pub_a2d_pave
 maxifoot-live.com###pub_bc
 emu-france.com###pub_casino_header
 entrecoquins.com###pub_club
@@ -4100,6 +4113,7 @@ wix.com###wixFooter
 wix.com###wixfooter
 cnews.fr###wrapper-banner
 casatv.ca###wrapperbanner
+troc-velo.com###xpubpart
 lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
@@ -4461,6 +4475,7 @@ superphysique.org##div[style*="text-align: center"][style*="width:250px"]
 judgehype.com##div[style*="width:300px;height:600px;"]
 echoroukonline.com,maxifoot.fr##div[style*="width:468px;"]
 forum.gsmhosting.com##div[style="float:right; width:336px; height:560px; margin-left:10px"]
+phpsources.org##div[style="margin-bottom:15px;"] > table > tbody
 geny.com##div[style^="width: 300px; height: 250px;"]
 poki.com##div[width="160"][height="600"]
 poki.com##div[width="300"][height="250"]
