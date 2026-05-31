@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.69.67",
-			"timeUpdated": "2026-05-31T09:08:58+0000",
+			"version": "2.4.69.68",
+			"timeUpdated": "2026-05-31T10:43:40+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.28.70",
-			"timeUpdated": "2026-05-29T15:11:58+0000",
+			"version": "2.1.28.71",
+			"timeUpdated": "2026-05-31T10:43:56+0000",
 			"languages": []
 		},
 		{
@@ -217,8 +217,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.64.66",
-			"timeUpdated": "2026-05-30T20:27:11+0000",
+			"version": "2.0.64.67",
+			"timeUpdated": "2026-05-31T10:44:14+0000",
 			"languages": [
 				"tr"
 			]
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.69.35",
-			"timeUpdated": "2026-05-30T20:27:18+0000",
+			"version": "2.2.69.36",
+			"timeUpdated": "2026-05-31T10:44:23+0000",
 			"languages": []
 		},
 		{
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.23.51",
-			"timeUpdated": "2026-05-31T09:09:42+0000",
+			"version": "2.1.23.52",
+			"timeUpdated": "2026-05-31T10:44:27+0000",
 			"languages": []
 		},
 		{
@@ -338,8 +338,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.44.95",
-			"timeUpdated": "2026-05-29T17:16:26+0000",
+			"version": "2.0.44.96",
+			"timeUpdated": "2026-05-31T10:44:36+0000",
 			"languages": []
 		},
 		{
@@ -1150,8 +1150,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.59.73",
-			"timeUpdated": "2026-05-31T05:38:05+0000",
+			"version": "2.1.59.74",
+			"timeUpdated": "2026-05-31T10:44:44+0000",
 			"languages": [
 				"zh"
 			]
