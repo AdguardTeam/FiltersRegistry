@@ -1,9 +1,9 @@
-! Checksum: 4jRLt3jp/z+pyxuMWOiWJQ
-! Diff-Path: ../patches/235_optimized/235_optimized-s-1780061966-14400.patch
+! Checksum: OKl4XM89xsMgcwD7R/Gw8Q
+! Diff-Path: ../patches/235_optimized/235_optimized-s-1780232561-14400.patch
 ! Title: Persian Blocker (Optimized)
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.6.28
-! TimeUpdated: 2026-05-29T13:36:39+00:00
+! Version: 2.0.6.29
+! TimeUpdated: 2026-05-31T12:59:52+00:00
 ! Expires: 10 days (update frequency)
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.site/"]
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.co/"]
@@ -747,7 +747,6 @@ downloadha.com##div.ads
 download.ir##article#post-fix-ads
 download.ir##div.top-full-ads
 download.ir##div.textwidget:has(> div.parsi-ads)
-web.eitaa.com##div.chatlist-parts > div.chatlist-top > ul.ads-dialog-box
 emojo.ir##.emojo-ad
 emojo.ir##.pzbkcvuqrn
 ||elmevarzesh.com/loader.js^$script
@@ -2634,6 +2633,7 @@ vigiato.net##.ad_728_90
 ||ahlolbait.com/ads/script.js^
 agahinet.com#@#.adv-box
 @@||agahinet.com/adv^
+web.eitaa.com##.ads-dialog-box
 ||metrix.ir^
 ||intrack.ir^
 ||usermap.net^
@@ -2688,6 +2688,7 @@ offerdaily.ir#%#//scriptlet('ubo-href-sanitizer', 'a[href^="https://offerdaily.i
 offerdaily.ir#%#//scriptlet('ubo-href-sanitizer', 'a[href^="https://dgkl.io/api/v1/Click/b/"][href*="?b64="]', '?b64 -base64')
 ||log.ahlolbait.com^
 ||matomo.parto.media^
+web.eitaa.com#%#//scriptlet('ubo-href-sanitizer', 'a[data-original-url]', '?url')
 www.google.com#$#span[jsaction] > a[href]:where([href*="namava.ir/"], [href*="sansorha.ir/"], [href*="karanmovie.org/"], [href*="vipofilm.com/"], [href*="fastmovie.ir/"], [href*="ir-dl.com/"], [href*="film2serial.ir/"], [href*="nama.tv/"], [href*="emimovie.com/"], [href*="donyamovie.ir/"], [href*="film2irani.ir/"], [href*="film2iranis.ir/"], [href*="netpaak.com/"], [href*="hexdownload.co/"], [href*="hexdl.com/"], [href*="filimserial.ir/"], [href*="naabmovie.ir/"], [href*="upera.tv/"], [href*="upera.shop/"], [href*="uptvs.com/"], [href*="filmr.ir/"], [href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"], [href*="film2movie.asia/"], [href*="skymovies.ir/"], [href*="filmzi.ir/"], [href*="movielandz.com/"], [href*="mer30download.com/"], [href*="disfilm.ir/"], [href*="upko.ir/"], [href*="filmekade.com/"], [href*="raycamovie.com/"], [href*="filmcase.ir/"], [href*="telvideo.ir/"], [href*="gameten.ir/"], [href*="danofilm.com/"], [href*="netpaak.ir/"], [href*="zflix.ir/"], [href*="icinemaa.com/"], [href*="filmnet.ir/"], [href*="tafrihicenter.ir/"], [href*="tvrooz.com/"], [href*="hastidl.ir/"], [href*="melofilm.ir/"], [href*="pelano.net/"], [href*="filmparsi.ir/"]) > h3::after { content: ' ✂️ (دارای حذفیات) ✂️ ' !important; color: red !important; font-weight: bold !important; }
 www.google.com#$#span[jsaction] > a[href]:where([href*="filmazon.my/"], [href*="animegate.ir/"], [href*="animegate.net/"]) > h3::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 www.google.com#$#div[data-snc] a[href]:where([href*="namava.ir/"], [href*="sansorha.ir/"], [href*="karanmovie.org/"], [href*="vipofilm.com/"], [href*="fastmovie.ir/"], [href*="ir-dl.com/"], [href*="film2serial.ir/"], [href*="nama.tv/"], [href*="emimovie.com/"], [href*="donyamovie.ir/"], [href*="film2irani.ir/"], [href*="film2iranis.ir/"], [href*="netpaak.com/"], [href*="hexdownload.co/"], [href*="hexdl.com/"], [href*="filimserial.ir/"], [href*="naabmovie.ir/"], [href*="upera.tv/"], [href*="upera.shop/"], [href*="uptvs.com/"], [href*="filmr.ir/"], [href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"], [href*="film2movie.asia/"], [href*="skymovies.ir/"], [href*="filmzi.ir/"], [href*="movielandz.com/"], [href*="mer30download.com/"], [href*="disfilm.ir/"], [href*="upko.ir/"], [href*="filmekade.com/"], [href*="raycamovie.com/"], [href*="filmcase.ir/"], [href*="telvideo.ir/"], [href*="gameten.ir/"], [href*="danofilm.com/"], [href*="netpaak.ir/"], [href*="zflix.ir/"], [href*="icinemaa.com/"], [href*="filmnet.ir/"], [href*="tafrihicenter.ir/"], [href*="tvrooz.com/"], [href*="hastidl.ir/"], [href*="melofilm.ir/"], [href*="pelano.net/"], [href*="filmparsi.ir/"]) div[role="link"] > span::after { content: ' ✂️ (دارای حذفیات) ✂️ ' !important; color: red !important; font-weight: bold !important; }
