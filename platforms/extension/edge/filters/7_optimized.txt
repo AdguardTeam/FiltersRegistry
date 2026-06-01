@@ -1,9 +1,9 @@
-! Checksum: eSTCEJhhS548rLAxWK1woA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1780315777-3600.patch
+! Checksum: 3F109fdjMCxVQnzKUkYUjg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1780337393-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.74.13
-! TimeUpdated: 2026-06-01T12:06:33+00:00
+! Version: 2.0.74.14
+! TimeUpdated: 2026-06-01T18:06:55+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||sankei.click^$all
@@ -1455,6 +1455,8 @@ city.aomori.aomori.jp,lg.jp,city.numata.gunma.jp,city.tokai.aichi.jp,city.noda.c
 city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.ikoma.lg.jp,city.higashiosaka.lg.jp,city.higashiomi.shiga.jp,city.ogaki.lg.jp,city.tama.lg.jp,city.inzai.lg.jp,city.kyotanabe.lg.jp,city.himeji.lg.jp,city.hirakata.osaka.jp,city.osaka.lg.jp,city.kyoto.lg.jp,city.maizuru.kyoto.jp,city.iga.lg.jp##.bana
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+gizmodo.jp##div[class^="cxenseAd"]
+gizmodo.jp##.gtm-recommend
 asahi.com#$#.border-t:has(> .section-container > div > #recommend_click) { margin-top: 16px !important; }
 asahi.com##.section-container:has(> div > #recommend_click)
 nogizaka46link.blog.jp##.include1_iframe1
@@ -2812,8 +2814,8 @@ weathernews.jp##article > section.block:has(> div[style] > div[id^="div-gpt-ad"]
 popteen.co.jp##iframe[src^="https://popteen.co.jp/media/wp-content/themes/magazine_theme/ad_logly/"]
 baseball-mag.net##div[style="width:692px;height:280px;margin:-8px auto 0 auto;"]
 sabatech.jp##.l-sidebar > aside.widget_media_image
-gizmodo.jp#$?#li[class*="-Ranking_TabItem"]:last-child:contains(Amazon) { remove: true; }
-gizmodo.jp#$?#div[class*="-Ranking_ListContainerWrapper"]:has(> .-amazon) { remove: true; }
+gizmodo.jp#$?#[class*="ranking_selectButton"]:last-child:contains(Amazon) { remove: true; }
+gizmodo.jp#$?#[class*="ranking_rankingList"]:has(> .gtm-rankingAmazon) { remove: true; }
 ||oricon.co.jp/js/amazon_bid_slots_
 ||oricon.co.jp/_ajax/job/get.php
 oricon.co.jp##.ttl-news-kjbox

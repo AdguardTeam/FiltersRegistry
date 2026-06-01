@@ -1,9 +1,9 @@
-! Checksum: UBtA+wAZMFd6Axr+A7wyCQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1780326825-3600.patch
+! Checksum: I8nognKoYVaxmUBt36c9mA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1780337426-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.64.72
-! TimeUpdated: 2026-06-01T15:09:56+00:00
+! Version: 2.0.64.73
+! TimeUpdated: 2026-06-01T18:07:01+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5444,8 +5444,11 @@ x.palv2.cfd###adPlayerBanner
 ||labvex.b-cdn.net/ads/
 !+ NOT_VALIDATE
 ||img.akamaicdn.work/ads/$domain=/turkifsa(lar)?\d+\.site$/
-[$domain=/turkifsa(lar)?\d+\.site$/]##div:has(> a[href^="https://cutt.ly/"])
+[$domain=/turkifsa(lar)?\d+\.site$/]##div[style^="min-height"]:has(> a[target="_blank"] > div.ad-banner-frame)
 [$domain=/turkifsa(lar)?\d+\.site$/]#%#//scriptlet('set-session-storage-item', 'preroll_view_count', '1')
+[$domain=/turkifsa\d+\.art$/]##div[style^="min-height"]:has(> a[target="_blank"] > div.ad-banner-frame)
+turkifsalar.site##div[class]:has(> a[href^="https://cutt.ly/"])
+[$domain=/turkifsa\d+\.art$/]##div[class]:has(> a[href^="https://cutt.ly/"])
 [$domain=/amatorifsa\d+\.com$/]##div[style="margin-bottom:14px; text-align:center;"]
 [$domain=/amatorifsa\d+\.com$/]##div[style="margin-top:14px; text-align:center;"]
 [$domain=/amatorifsa\d+\.com$/]##.row:has(> div.col-md-6 > a[href^="https://wipads.com/"])
@@ -5474,8 +5477,6 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turktube\d+\.online$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.ink$/]##a[href^="https://tinyurl.com/"]
 [$domain=/hdturkifsa\d+\.com$/]##a[href="https://t.me/alperkurt1"]
-turkifsalar.site##div[class]:has(> a[href^="https://cutt.ly/"])
-[$domain=/turkifsa\d+\.art$/]##div[class]:has(> a[href^="https://cutt.ly/"])
 !+ NOT_VALIDATE
 ||i.ibb.co/*.gif$domain=/softtv\d+\.com$/
 [$domain=/softtv\d+\.com$/]##.slot-header_banner
@@ -5545,8 +5546,8 @@ turkkizlar.com##div[class^="vid-promo"]
 [$domain=/patronmac\d+\.cfd$/]#$#.background-link { display: none !important; }
 [$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
 ||cdn.jsdelivr.net/*.mp4$domain=/patronmac\d+\.cfd$/
-||blogger.googleusercontent.com/img/$domain=patronmac87.cfd
-||cdn.jsdelivr.net/*.mp4$domain=patronmac87.cfd
+||blogger.googleusercontent.com/img/$domain=patronmac91.cfd
+||cdn.jsdelivr.net/*.mp4$domain=patronmac91.cfd
 ||turkifsaclub*.sbs/*.gif
 turkifsaclub.org##.ads-grid
 turkifsaclub.org#?#main > h3:contains(Sponsor Bannerlar)

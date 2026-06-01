@@ -1,8 +1,8 @@
-! Checksum: c+XUyWLN6SJxD4FDm3yd0A
+! Checksum: dt4WDVF9BjfNNbT4M0wIXw
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.74.13
-! TimeUpdated: 2026-06-01T12:06:33+00:00
+! Version: 2.0.74.14
+! TimeUpdated: 2026-06-01T18:06:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1906,6 +1906,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+gizmodo.jp##div[class^="cxenseAd"]
+gizmodo.jp##.gtm-recommend
 asahi.com#$#.border-t:has(> .section-container > div > #recommend_click) { margin-top: 16px !important; }
 asahi.com##.section-container:has(> div > #recommend_click)
 nogizaka46link.blog.jp##.include1_iframe1
@@ -3263,8 +3265,8 @@ weathernews.jp##article > section.block:has(> div[style] > div[id^="div-gpt-ad"]
 popteen.co.jp##iframe[src^="https://popteen.co.jp/media/wp-content/themes/magazine_theme/ad_logly/"]
 baseball-mag.net##div[style="width:692px;height:280px;margin:-8px auto 0 auto;"]
 sabatech.jp##.l-sidebar > aside.widget_media_image
-gizmodo.jp#$?#li[class*="-Ranking_TabItem"]:last-child:contains(Amazon) { remove: true; }
-gizmodo.jp#$?#div[class*="-Ranking_ListContainerWrapper"]:has(> .-amazon) { remove: true; }
+gizmodo.jp#$?#[class*="ranking_selectButton"]:last-child:contains(Amazon) { remove: true; }
+gizmodo.jp#$?#[class*="ranking_rankingList"]:has(> .gtm-rankingAmazon) { remove: true; }
 ||oricon.co.jp/js/amazon_bid_slots_
 ||oricon.co.jp/_ajax/job/get.php
 oricon.co.jp##.ttl-news-kjbox

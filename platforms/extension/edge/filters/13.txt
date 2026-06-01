@@ -1,9 +1,9 @@
-! Checksum: d4mF15o9ZbrE7YfoEviX1A
-! Diff-Path: ../patches/13/13-s-1780326784-3600.patch
+! Checksum: vJH19EnRnxXEFDn5kx+MZg
+! Diff-Path: ../patches/13/13-s-1780337388-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.64.72
-! TimeUpdated: 2026-06-01T15:09:56+00:00
+! Version: 2.0.64.73
+! TimeUpdated: 2026-06-01T18:07:01+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5978,8 +5978,17 @@ x.palv2.cfd###adPlayerBanner
 !+ NOT_VALIDATE
 ||img.akamaicdn.work/ads/$domain=/turkifsa(lar)?\d+\.site$/
 ! aglint-enable no-invalid-modifiers
-[$domain=/turkifsa(lar)?\d+\.site$/]##div:has(> a[href^="https://cutt.ly/"])
+[$domain=/turkifsa(lar)?\d+\.site$/]##div[style^="min-height"]:has(> a[target="_blank"] > div.ad-banner-frame)
 [$domain=/turkifsa(lar)?\d+\.site$/]#%#//scriptlet('set-session-storage-item', 'preroll_view_count', '1')
+!
+! Frequently changed domains: turkifsa*.art
+! Source: turkifsa25.art
+[$domain=/turkifsa\d+\.art$/]##div[style^="min-height"]:has(> a[target="_blank"] > div.ad-banner-frame)
+!
+! Frequently changed domains: turkifsa*.art
+! Source: turkifsa25.art
+turkifsalar.site##div[class]:has(> a[href^="https://cutt.ly/"])
+[$domain=/turkifsa\d+\.art$/]##div[class]:has(> a[href^="https://cutt.ly/"])
 !
 ! Frequently changed domains: amatorifsa*.com
 ! Source: amatorifsa4.com
@@ -6041,11 +6050,6 @@ x.palv2.cfd###adPlayerBanner
 ! Frequently changed domains: hdturkifsa*.com
 ! Source: hdturkifsa7.com
 [$domain=/hdturkifsa\d+\.com$/]##a[href="https://t.me/alperkurt1"]
-!
-! Frequently changed domains: turkifsa*.art
-! Source: turkifsa25.art
-turkifsalar.site##div[class]:has(> a[href^="https://cutt.ly/"])
-[$domain=/turkifsa\d+\.art$/]##div[class]:has(> a[href^="https://cutt.ly/"])
 !
 ! Frequently changed domains: softtv*.com
 ! Source: softtv2.com
@@ -6186,8 +6190,8 @@ turkkizlar.com##div[class^="vid-promo"]
 [$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
 ||cdn.jsdelivr.net/*.mp4$domain=/patronmac\d+\.cfd$/
 ! aglint-enable no-invalid-modifiers
-||blogger.googleusercontent.com/img/$domain=patronmac87.cfd
-||cdn.jsdelivr.net/*.mp4$domain=patronmac87.cfd
+||blogger.googleusercontent.com/img/$domain=patronmac91.cfd
+||cdn.jsdelivr.net/*.mp4$domain=patronmac91.cfd
 !
 ! Frequently changed domains: turkifsaclub*.sbs
 ! Source: turkifsaclub.org
