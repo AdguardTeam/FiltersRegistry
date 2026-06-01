@@ -1,5 +1,5 @@
-! Checksum: l4uu3SzDt6TAqYWOricHfw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1780277763-14400.patch
+! Checksum: Fax7fWwKYyGMrK5rbSJsUA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1780294610-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.86
@@ -20,7 +20,6 @@
 ||fileplanet.com^$document,popup
 windowsreport.com##.code-block
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
-ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.sidebar_download_inner
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_info_texts
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
@@ -35,6 +34,7 @@ drivereasy.com#?#.pakb-content p:contains(Driver Easy)
 drivereasy.com#?#.pakb-content div.info.note:contains(drivereasy.com)
 drivereasy.com#?#.pakb-content p:contains(the Pro version)
 drivereasy.com#?#.pakb-content p:contains(click Update All)
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk#?#a:contains(SpyHunter)
 howtoremove.guide##[id*="newage"]
 ||youtube.com/embed/KbGF_fvsRU4^$all
 sensorstechforum.com##tr:has([href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"])
@@ -548,6 +548,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||96.47.230.69^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||96.47.230.70^$document
+||kdtrk.net^$all,domain=~malware_redirection_trains.*
 ||kdmttk.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||31.220.27.134^$document
@@ -695,6 +696,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||208.91.196.46^$all
 /page/bouncy.php?$all
+||jsmcrptjmp.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||93.93.51.223^$all
 ||livejasmin.com/*&origin=$document
@@ -854,8 +856,8 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||appsontrcks.com^$all
 ||click-v4.*.com^$all
 ||downloadlocked.com^$all
-||junclikrmedi.com^$all
 ||locked3.com^$all
+||lockedapp.org^$all
 ||xrtdw.net^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||23.22.126.183^$all
@@ -873,7 +875,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||anrdoezrs.net^$all
 ||exmainclcknew.com^$all
 ||giantpanda.media^$all
-||junclikrmedi.com^$all
 ||martted.com^$all
 ||optvz.com^$all
 ||ourdreamersai.com^$all
@@ -888,7 +889,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ://15.204.160.216^$all
 ||howtofix.guide^$document
 ||separationreverttap.com^$all
-||uninvitedenvious.com^$all
 ||redirectme.net^$document,domain=~malware_redirection_trains.*
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||194.226.139.121^$all
@@ -1938,7 +1938,6 @@ wikia.org,fandom.com#$#.wds-global-footer__header { pointer-events: none !import
 fandom.com##.unified-search__layout__right-rail
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
-||wikia.com/*/images/*/Wiki-background^$domain=wikia.org|fandom.com
 fandom.com#$#.community-background { background-image: none !important }
 fandom.com#$#.background-image { background-image: none !important }
 fandom.com#$#:root { --oasis-community-background-image: none !important }
@@ -1963,6 +1962,7 @@ spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow'
 /particles.min.js^
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
+##div.snow-container:not(:empty)
 /snowfall.min.jquery.js
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
@@ -2375,8 +2375,6 @@ $document,removeparam=/^adjust.*$/,domain=~adj.st
 $document,removeparam=elq,domain=~comcast.com|~comcastforbusiness.com
 $document,removeparam=elqaid,domain=~comcast.com|~comcastforbusiness.com
 $document,removeparam=elqat
-$document,removeparam=elqcst
-$document,removeparam=elqcsid
 $document,removeparam=/^ga_.*$/
 $document,removeparam=_hsenc
 $removeparam=_hsmi
@@ -2394,6 +2392,7 @@ $removeparam=wbraid
 $removeparam=cvosrc
 $document,removeparam=/^affiliateID=.*$/i
 $removeparam=affiliate_id
+$removeparam=afn_sr
 $removeparam=cjdata
 $removeparam=click_id,domain=~bookings.beatthatflight.*
 $removeparam=cm_soc
@@ -2479,6 +2478,7 @@ $removeparam=cj_pid
 $removeparam=adj_campaign
 $removeparam=adj_adgroup
 $removeparam=adj_creative
+$removeparam=_vsrefdom
 $removeparam=ceneo_spo
 from=ceneo^$document,removeparam=from
 $removeparam=__s,document
@@ -2969,7 +2969,6 @@ $removeparam=share_link_id
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtu.be|zappos.com
 $removeparam=gtm
 $removeparam=referral,domain=tv2.no|spotify.com|yubo.live
-||open.spotify.com^$removeparam=uid
 ||aliexpress.*/item/$removeparam=pvid
 ||aliexpress.$removeparam=_t
 ||aliexpress.$removeparam=gps-id
@@ -3238,7 +3237,6 @@ $removeparam=site_id,domain=taskrabbit.com|kochava.com
 ||kochava.com^$removeparam=device_id
 ||skyscanner.$removeparam=redirectedFrom
 ||skyscanner.$removeparam=previousCultureSource
-$removeparam=site_refer,domain=saksfifthavenue.com|saksoff5th.com
 ||fubo.tv^$removeparam=irad
 ||fubo.tv^$removeparam=irmp
 ||fiverr.com^$removeparam=pckg_id

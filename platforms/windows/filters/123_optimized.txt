@@ -1,9 +1,9 @@
-! Checksum: 4fFDkDrItMwHUqSU/fUdMQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1780277782-14400.patch
+! Checksum: k7vYwRKpLzeaOI6nCSgXIA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1780294626-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.62.53
-! TimeUpdated: 2026-06-01T01:33:01+00:00
+! Version: 2.1.62.54
+! TimeUpdated: 2026-06-01T06:13:35+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -108,7 +108,6 @@
 /sme-facebook-likebox-sidebar/*
 /sns_naverband.png
 /social-footer.jpg
-/social-footer.png
 /Social-Sidebar.js
 /social2s.min.js
 /social_bookmarking/*$image
@@ -180,6 +179,9 @@ _social-bar/
 ###btn-share-email
 ###btn-share-fb
 ###btn-share-tele
+###btnShareFacebook
+###btnShareMessenger
+###btnShareTwitter
 ###cm-social-overlay
 ###content-share-top
 ###content-social
@@ -906,7 +908,6 @@ _social-bar/
 ##.article__share-buttons
 ##.article__share-title
 ##.article__sharebar
-##.article__shares
 ##.article__sharing
 ##.article__social
 ##.article__social-links
@@ -924,6 +925,7 @@ _social-bar/
 ##.aspexifblikebox
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
+##.at-share
 ##.at-share-btn
 ##.at4-jumboshare
 ##.au-share
@@ -1071,7 +1073,6 @@ _social-bar/
 ##.c-social-sharing
 ##.c-socialSharebar_container
 ##.c-social__list
-##.c-socialbar
 ##.c-socials
 ##.c-tools-share
 ##.cShareLink
@@ -1285,6 +1286,7 @@ _social-bar/
 ##.fb-send-to-messenger
 ##.fb-share
 ##.fb-share-button
+##.fb-share-button-static
 ##.fb-share-container
 ##.fb-slider
 ##.fb-subscribe
@@ -1309,7 +1311,6 @@ _social-bar/
 ##.fbbutton
 ##.fblbForm
 ##.fblikebox
-##.fbliketop
 ##.fblink
 ##.fbshare
 ##.fbsmallshare
@@ -1359,7 +1360,6 @@ _social-bar/
 ##.follow-us-icons
 ##.follow-us-on-twitter
 ##.follow-us-panel
-##.follow-us-twitter
 ##.follow-us-txt
 ##.follow-us-wrapper
 ##.follow-widget
@@ -1899,6 +1899,7 @@ _social-bar/
 ##.masthead-social
 ##.materna-shariff
 ##.mc-share-toggle
+##.md-list-share
 ##.md-social-toolbar-circle
 ##.mdi-facebook
 ##.mdi-share
@@ -1943,7 +1944,6 @@ _social-bar/
 ##.ml-footer-social-links
 ##.mng-follow
 ##.mobile-share-buttons-spacer
-##.mobile-sharing-tools
 ##.mobile-social
 ##.mobileShare
 ##.mod-facebook
@@ -2145,7 +2145,6 @@ _social-bar/
 ##.qticon-share
 ##.qw_social
 ##.r-footer--social
-##.ra-share
 ##.rambler-share
 ##.rc_social
 ##.react-share__ShareButton
@@ -2215,6 +2214,7 @@ _social-bar/
 ##.select-share
 ##.selectionSharer
 ##.selfPromo__box--social
+##.sequex-social-icons
 ##.sf-sharing
 ##.sf-social
 ##.sfmsb-follow-social-buttons
@@ -2441,6 +2441,7 @@ _social-bar/
 ##.shareBar
 ##.shareBlock
 ##.shareBox
+##.shareBox-article
 ##.shareBtm
 ##.shareBtn
 ##.shareBtnContainer
@@ -2466,7 +2467,6 @@ _social-bar/
 ##.shareHomeButtons
 ##.shareIcons
 ##.shareLeft
-##.shareLike
 ##.shareLink
 ##.shareLinks
 ##.shareList
@@ -2525,6 +2525,7 @@ _social-bar/
 ##.share_bubble
 ##.share_button
 ##.share_button_container
+##.share_button_google
 ##.share_buttons
 ##.share_buttons_container
 ##.share_center
@@ -2639,7 +2640,6 @@ _social-bar/
 ##.sharewidget
 ##.sharewrapper
 ##.sharewykop
-##.sharico2
 ##.shariff-button
 ##.sharify-btn-facebook
 ##.sharify-btn-linkedin
@@ -2697,6 +2697,7 @@ _social-bar/
 ##.side-social
 ##.side-social-links
 ##.side-socials
+##.side-sticky-share
 ##.side-twitter
 ##.sideBarShare
 ##.sideBarSocial
@@ -2981,6 +2982,7 @@ _social-bar/
 ##.social-share-google
 ##.social-share-group
 ##.social-share-head
+##.social-share-head-article
 ##.social-share-icons
 ##.social-share-link
 ##.social-share-links
@@ -3078,7 +3080,6 @@ _social-bar/
 ##.socialLabel
 ##.socialLink
 ##.socialLinks
-##.socialLinks-alt
 ##.socialLinksContainer
 ##.socialList
 ##.socialLogo
@@ -3182,6 +3183,7 @@ _social-bar/
 ##.socialmedia-buttons
 ##.socialmedia-container
 ##.socialmedia-footer
+##.socialmedia_float
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
@@ -3399,6 +3401,7 @@ _social-bar/
 ##.uix_socialMedia
 ##.uix_socialMediaLinks
 ##.ul-social
+##.ulSocialmedia
 ##.uptl_container-share
 ##.us_share
 ##.us_share_buttons
@@ -3843,7 +3846,6 @@ salon.com##.article__share
 wnep.com##.article__sharing
 news.tvbs.com.tw##.article_community_box
 financialexpress.com##.article_follow_us
-sciencex.com##.article_info-goog
 thespectator.com##.article_set_wrap
 news18.com##.article_socials
 news18.com##.artshare
@@ -3901,7 +3903,6 @@ news.usni.org##.component56--share
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
-dinneratthezoo.com##.cwp-food-footer
 drugs.com##.ddc-footer-column-social
 inews.co.uk##.dmg__post-section
 dailymail.co.uk##.dms-puff
@@ -3967,7 +3968,6 @@ cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
 bringmethenews.com,news18.com,thehindu.com##.google-btn
 pcguide.com,upworthy.com##.google-news
-thethaiger.com##.google-news-button-container
 alarabiya.net##.google-news-callout
 dailygalaxy.com,glassalmanac.com##.google-news-card
 cybernews.com,sammobile.com##.google-news-cta
@@ -3987,6 +3987,7 @@ scientificamerican.com##.google_cta-CuF5m
 gadgets360.com##.gsocialbar
 atlanticcouncil.org##.gta-hover-share-container
 theprint.in##.gw-follow-button
+egotastic.com,egotasticsports.com##.h-fixed-footer
 ndtv.com##.hdr-ss
 israelnationalnews.com##.header-nav-addons-link
 archaeology.org##.header-share
@@ -4073,7 +4074,6 @@ playbuzz.com##.pb-share-bar
 news18.com##.phtshare
 theroar.com.au##.pm-share-horizontal
 autoexpress.co.uk##.polaris__social
-tsunagujapan.com##.post-article_sns
 getcomics.org##.post-footer-shr
 wccftech.com##.post-google
 discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
@@ -4156,7 +4156,6 @@ gfinityesports.com,stealthoptional.com##.social-follow-unit
 vinepair.com##.social-footer-row
 digitimes.com##.social-frame
 firstpost.com##.social-ic-wrap
-actu.epfl.ch,brasil247.com,estadao.com.br,india.com,maketecheasier.com,news18.com,recipetineats.com,theshovel.com.au,wionews.com##.social-icon
 tmz.com##.social-item
 psychologytoday.com##.social-links-bottom
 complex.com##.social-links-top
@@ -4601,6 +4600,7 @@ publico.pt##.social-tools
 cnnbrasil.com.br##.social__footer
 rollingstone.com.br##.social_content_article
 tvi.iol.pt##.social_media_links
+record.pt##.social_stick
 meiobit.com##.socialfloating
 uol.com.br##.solar-header-columnist-socialmedia-content
 terra.com.br##.t360-sharebar__wrapper
@@ -4850,4 +4850,5 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||github.com^$generichide
 @@||github.io^$generichide
 @@||ifttt.com^$generichide
+@@||namechk.com^$generichide
 @@||zeplin.io^$generichide
