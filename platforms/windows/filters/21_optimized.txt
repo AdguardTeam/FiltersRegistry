@@ -1,9 +1,9 @@
-! Checksum: 4P0Lj+cFPoMa84RtavhctQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1780284096-3600.patch
+! Checksum: rcZoGQxPLgtuTVeql2ofRQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1780300841-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.44.96
-! TimeUpdated: 2026-05-31T10:44:36+00:00
+! Version: 2.0.44.97
+! TimeUpdated: 2026-06-01T07:57:23+00:00
 ! Expires: 12 hours (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -4520,7 +4520,7 @@ wowroms.com#%#document.addEventListener('DOMContentLoad', function() { setTimeou
 sfile.mobi#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/downloadButton/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 goodssh.com#%#//scriptlet("set-constant", "counter", "-1")
 a2zupload.com#%#//scriptlet("adjust-setInterval", "download", "", "0.02")
-katfile.cloud,katfile.com#%#//scriptlet("adjust-setTimeout", "#freebtn", "", "0.02")
+katfile.*#%#//scriptlet('adjust-setTimeout', '/#(freebtn|btn_download)/', '*', '0.001')
 !+ PLATFORM(windows, mac, android, cli)
 coolrom.com.au#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/download\(\)/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 !+ PLATFORM(windows, mac, android, cli)
