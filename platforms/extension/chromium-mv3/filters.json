@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.91.61",
-			"timeUpdated": "2026-06-02T17:54:51+0000",
+			"version": "2.1.91.62",
+			"timeUpdated": "2026-06-02T21:30:57+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.91.60",
-			"timeUpdated": "2026-06-02T17:54:52+0000",
+			"version": "2.1.91.61",
+			"timeUpdated": "2026-06-02T21:30:59+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1217,8 +1217,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@list-kr/filterslists@latest/dist/filterslist-AdGuard-classic.txt",
 			"trustLevel": "high",
-			"version": "2.0.24.27",
-			"timeUpdated": "2026-06-02T17:55:25+0000",
+			"version": "2.0.24.28",
+			"timeUpdated": "2026-06-02T21:31:34+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1345,8 +1345,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.50",
-			"timeUpdated": "2026-05-02T01:10:50+0000",
+			"version": "2.0.8.51",
+			"timeUpdated": "2026-06-02T21:31:50+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.84.92",
-			"timeUpdated": "2026-06-02T17:55:48+0000",
+			"version": "2.0.84.93",
+			"timeUpdated": "2026-06-02T21:31:56+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1510,8 +1510,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.20",
-			"timeUpdated": "2026-05-21T21:04:49+0000",
+			"version": "2.0.0.21",
+			"timeUpdated": "2026-06-02T21:32:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
