@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iKV3vcKIOlBScfAOlWW61g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780393056-3600.patch
+! Checksum: W2iGp2Mtt7wQkmogMi9chQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780400329-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.69.97
-! TimeUpdated: 2026-06-02T09:33:52+00:00
+! Version: 2.4.69.98
+! TimeUpdated: 2026-06-02T11:34:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,8 @@
 !
 !
 !
+||ecdwm.com^
+||breezebrowsing.com^
 ||wonderfulyesterday.com^
 ||hungry-exit.com^
 ||farflung-permission.com^
@@ -10199,10 +10201,10 @@ media1.hu,gameavenue.co,ftuapps.io,tutsnode.org,nakiny.com,linuxthebest.net,gunc
 !
 ! NOTE: Flashvars anti-adblock
 porn4fans.com##+js(addEventListener-defuser, load, adblock)
-fyxxr.to,porn4fans.com,porno24.to,viralxxxporn.com##+js(no-setTimeout-if, .style.visibility, 2000)
+camhub.one,camhub.*,fyxxr.to,porn4fans.com,porno24.to,viralxxxporn.com##+js(no-setTimeout-if, .style.visibility, 2000)
 boysxclusive.com,thothub.vip,yesporn.vip,85po.com,85po.net,85xo.com,85xo.com,wxx.wtf,camhub.cc,camhub.world,watchmdh.to,watchporn.to,viralpornhub.com,camwhoresbay.porn,ebalovo.*,camwhores.*,camlovers.tv,sexcams-24.com,camhub.tv,pornissimo.org,porntn.com,femdomtb.com,pornoham.me,tubsexer.com,homegrownfreaks.net,pornfd.com##+js(set-constant, flashvars.protect_block, '')
 viralxxxporn.com,thothub.vip,wxx.wtf,camhub.world##body iframe#ads_iframe[src*="/player_ads.html"]:style(display: block !important;)
-/player/stats.php$image,redirect-rule=1x1.gif,domain=camhub.world|wxx.wtf|porn4fans.com|fyxxr.to
+/player/stats.php$image,redirect-rule=1x1.gif,domain=camhub.world|wxx.wtf|porn4fans.com|fyxxr.to|camhub.*
 !
 ! NOTE: zdn-adblock-detector
 /wp-content/plugins/zdn-adblock-detector/*
@@ -10755,6 +10757,12 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232621
+openlua.cloud##div.fixed.backdrop-blur-xl
+openlua.cloud##+js(prevent-fetch, /confidecross\.com|invoke\.js/)
+openlua.cloud##+js(no-setInterval-if, contentDocument?.body?.querySelector)
+openlua.cloud##main > .hidden:has(> .shadow-lg > div[style] > iframe[title="Advertisement"]):style(display: none !important;)
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232356
 primetimer.com##div[id^="adwall-"]:style(display: none !important;)
 primetimer.com##body:style(overflow: auto !important;)
@@ -37284,6 +37292,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+/embed/*?c=object_container*&psid=
+||camhub.*/static/js/cc-kvs.js
+planetrugby.com##.ciam-article-pr > p > a[href^="https://www.ticketmaster.co.uk/event/"]
 rugbypass.com###snack-sticky
 phys.org##div[class*="ads-"]
 all.rugby##.reclameHead
@@ -39566,7 +39577,7 @@ genius.com###lyrics-root > div[data-exclude-from-selection="true"]:has(div[id^="
 genius.com###application > div[class^="sc-"]:has(div[id^="div-gpt-ad-"])
 xxbrits.com##.aside-spot
 xxbrits.com##.group-links > button.click-fun ~ button
-nikporn.com,fpoxxx1.com,xxbrits.com##.network
+fpo.xxx,nikporn.com,fpoxxx1.com,xxbrits.com##.network
 xxbrits.com##.top-header
 eporner.com###adstripe
 pornhits.com##.jw-hardlink-btn
@@ -42178,7 +42189,7 @@ livestreams.click##div[id^="iframe-container-"]
 namify.tech##.suggestion-rows .suggestion__namify-partner
 namify.tech##[class*="gtm-banner-"]
 xtvporn.com,stepsonporn.com,buddyporn.com,pornve.com,thothub.vip,yesporn.vip,asianporn.li,justporn.com,cremz.com,pusvid.com,kissjav.com,hentai4k.com,viralxxxporn.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.asside-link
-yesporn.org,yesporn.top,yesporn1.cc,hornyleak.tv,justporn.com,pusvid.com,kissjav.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.link-offer
+camhub.one,camhub.*,yesporn.org,yesporn.top,yesporn1.cc,hornyleak.tv,justporn.com,pusvid.com,kissjav.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.link-offer
 ||melban7.top^$domain=wcup.one
 ||afrikalyrics.com/images/download-vantaart-
 pornoxo.com,japan-whores.com,camwhoria.com,camwhores.ru.com,xxx-sex.fun##.fh-line

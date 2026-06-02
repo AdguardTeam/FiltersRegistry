@@ -1,9 +1,9 @@
-! Checksum: OmEj2xuh1BapSNhsS87CAg
-! Diff-Path: ../patches/224/224-s-1780393051-3600.patch
+! Checksum: yNmY1uSc86zfZBUMptC1oQ
+! Diff-Path: ../patches/224/224-s-1780400325-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.59.84
-! TimeUpdated: 2026-06-02T09:34:34+00:00
+! Version: 2.1.59.85
+! TimeUpdated: 2026-06-02T11:35:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -401,8 +401,7 @@ colamanga.com#$#div[class^="layui-layer-"]:not(#color) { display: none !importan
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||colamanga.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177065
-bilinovel.com#%#//scriptlet('set-constant', 'checkAndHandleAdBlock', 'undefined')
-bilinovel.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'pagead2.googlesyndication.com')
+bilinovel.com#%#//scriptlet('prevent-setTimeout', 'offsetHeig\'+\'ht\']')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=bilinovel.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176112
@@ -1169,6 +1168,9 @@ $script,xmlhttprequest,third-party,domain=00ksw.com|01zww.com|0biquge.com|114zw.
 !
 ! NOTE: Specific rules
 !
+||zudns.cn/uploads/*.gif$image,domain=tcptest.cn
+tcptest.cn##div.min-w-0 > .relative
+tcptest.cn##div.fixed.hidden
 xchina.co##.photo-items > div[class^="item auto-height"]
 techritual.com##.th-single-ad
 ||newtalk.tw/js/ad/
