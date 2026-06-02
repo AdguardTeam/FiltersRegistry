@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: W2iGp2Mtt7wQkmogMi9chQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780400329-3600.patch
+! Checksum: PNIIyGHt1FlkaZNl2psNNg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780406939-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.69.98
-! TimeUpdated: 2026-06-02T11:34:46+00:00
+! Version: 2.4.69.99
+! TimeUpdated: 2026-06-02T13:25:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||openmindedpassengerserr.com^
 ||ecdwm.com^
 ||breezebrowsing.com^
 ||wonderfulyesterday.com^
@@ -9564,6 +9565,7 @@ ad.broadstreetads.com
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||instaread-ads.s3.amazonaws.com^
 ||ads-banner.s3.ap-south-1.amazonaws.com^
 ||widget.revtrixjs.com^
 ||dump.mewcdn.online^
@@ -10895,6 +10897,7 @@ bysevepoin.com,arbitrarydecisions.com##+js(json-prune, adblock_detection force_d
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228712
 cloudfam.io##+js(prevent-fetch, adsbygoogle)
 @@||cloudfam.io^$generichide
+@@||cloudfam.io/assets/ads/adsense.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228716
 hentaitoon.tv##+js(no-setTimeout-if, container.remove)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228682
@@ -33974,9 +33977,6 @@ tpead.net,advertape.net,tapepops.com,watchadsontape.com,advertisertape.com,tapea
 usingenglish.com##+js(remove-class, hasad, .content)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88067
 zetporn.com##+js(no-window-open-if)
-! https://github.com/AdguardTeam/AdguardFilters/issues/94696
-! https://github.com/AdguardTeam/AdguardFilters/issues/87634
-onionplay.*##+js(remove-attr, href, a#clickfkplayer)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/87587
 cheatcc.com##+js(abort-current-script, $, window.open)
 ! popunder
@@ -34967,8 +34967,6 @@ pictoa.com##+js(abort-on-property-write, tiPopAction)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41797
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24886
 vivo.sx##+js(addEventListener-defuser, click, about:blank)
-! https://github.com/AdguardTeam/AdguardFilters/issues/24596
-onionplay.net##+js(set-constant, scds, 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24207
 pogo.com##+js(adjust-setTimeout, this.onComplete(), 20000, 0.02)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23887
@@ -36695,6 +36693,7 @@ _ad_content.
 !+ NOT_PLATFORM(ext_safari, ios)
 /tghr.js$script
 !
+/embed/*?c=object_container*&psid=
 .go?pid=*&spaceid=*&ctrlid=
 /vast.php?*&idzone=
 &ag_custom_vlmspot=
@@ -37292,7 +37291,12 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
-/embed/*?c=object_container*&psid=
+old-young.net##+js(no-window-open-if, _blank)
+electronicgroove.com##div[id^="advads_ad"]
+grandprix247.com##.raw-html-component:has(> div[id^="snack-"])
+grandprix247.com##.header + .w-full:has(> .flex_component > .raw-html-component > #snack-top)
+onionplay.st,onionplay.*##+js(remove-attr, href, #clickfakeplayer)
+onionplay.st,onionplay.*##+js(set-constant, scds, 0)
 ||camhub.*/static/js/cc-kvs.js
 planetrugby.com##.ciam-article-pr > p > a[href^="https://www.ticketmaster.co.uk/event/"]
 rugbypass.com###snack-sticky
@@ -37305,7 +37309,6 @@ bestbuy.com##li[data-testid="sponsored-listing"]
 soccerway.com##.zone__container
 soccerway.com##.boxOverContentRevive
 akirabox.to##+js(abort-current-script, Document.prototype.createElement, *)
-xhamster.com##.thumb-list > div:not([data-role="related-item"])
 apk.dog##.adv_text
 hltv.org##.match > div.match-bottom > div.match-fixtures
 songlyrics.com##.ad-zone-reserve
@@ -45714,7 +45717,6 @@ oceantogames.com,themorningtribune.com##center > a[target="_blank"]
 msguides.com##.homb
 nowlive.pro##.videoBoxContainer
 nuvid.com##.download_adv_text_photo
-||youtube.com/embed/$domain=onionplay.*
 redflagdeals.com##.sponsors_list_container
 worldsex.com##.center.da-by
 sexystars.online##a[href^="/red/red.php"]
@@ -63645,6 +63647,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232658
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232400
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232533
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232183

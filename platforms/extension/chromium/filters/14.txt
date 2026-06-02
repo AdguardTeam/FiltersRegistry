@@ -1,9 +1,9 @@
-! Checksum: 8572M0enbhiVgJ7VuUY/Xg
-! Diff-Path: ../patches/14/14-s-1780400304-3600.patch
+! Checksum: xtt05tEtvbW1SryAuxvElA
+! Diff-Path: ../patches/14/14-s-1780406909-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.49
-! TimeUpdated: 2026-06-02T11:35:28+00:00
+! Version: 2.2.69.50
+! TimeUpdated: 2026-06-02T13:25:45+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2611,6 +2611,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+tracxn.com##div[id^="tracxn-cookie"]
 tweakers.net#%#//scriptlet('trusted-click-element', '#pg-shadow-host-dom >>> button#pg-configure-btn, #pg-shadow-host-dom >>> button#pg-save-preferences-btn')
 cigarro.pl###cb-cookie
 antalyahurses.com##.ccbnr
@@ -31735,7 +31736,7 @@ scamadviser.com#$#body { overflow: auto !important; }
 drweb.de,khmertimeskh.com,cryptopotato.com,improveyoursocialskills.com##.moOptinForm
 vimeo.com#?#main ~ div[class]:has(> button + p:contains(/^Upload.*all\sin\sHD/))
 yggtorrent.li##.ad-alert-message
-maltadaily.mt,ntr-games.com,irliepaja.lv,asiatimes.com,8lordfilm-0.xyz,thedailybeast.com##.grecaptcha-badge[data-style="bottomright"]
+tracxn.com,maltadaily.mt,ntr-games.com,irliepaja.lv,asiatimes.com,8lordfilm-0.xyz,thedailybeast.com##.grecaptcha-badge[data-style^="bottom"]
 pinterest.*#?#body > div:has(> div[style="z-index: 4;"] div[data-test-id="UnauthDefaultModal"])
 pinterest.*#$#body { overflow: visible!important; touch-action: auto!important; }
 gsuitetips.com#$#body { overflow: auto !important; }
@@ -36500,7 +36501,7 @@ joyousapron.com#%#//scriptlet('trusted-set-local-storage-item', 'ck/forms/modal/
 wholesomeyum.com##.wy_save_recipe_content_form
 wholesomeyum.com#%#//scriptlet('set-cookie', 'cp_style_2633988', 'true')
 techgear.gr##.html-content > p:has(> b > a[href^="https://www.google.com/preferences/source?q="])
-unian.net##a.gn-button
+glavred.info,unian.net##a.gn-button
 ghacks.net##.google-preferred-source-badge
 karapaia.com##.c-secondary > section:has(> div.wp-block-jetpack-subscriptions)
 elle.com##section[data-vars-block-type="Newsletter"]
@@ -53909,6 +53910,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+sporty.com##a[href^="https://www.sportybet.com/"]
 ftm.nl##.trust-nugget-pp
 ftm.nl##.newsletter-pp
 ftm.nl##.collectionBundle
@@ -61037,8 +61039,6 @@ ph.samapkstore.com,safe.kangkimin.com,ph.tpaste.net,go.myviptuto.com,apps2app.co
 thesimarchitect.com#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/'#timer'/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41215
 file4go.com,file4go.net#%#//scriptlet("set-constant", "time", "0")
-! https://github.com/AdguardTeam/AdguardFilters/issues/38600
-onionplay.net#%#//scriptlet('trusted-click-element', 'button[onclick].redirect')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/127886
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38558
 boost.ink#%#(()=>{const a=new MutationObserver(function(){const b=document.querySelector("script[src^=\"/assets/js/unlock.js\"]");if(b){a.disconnect();let c;for(let a of b.attributes)if(a.textContent.includes("aHR0c")){c=a.textContent;break}c&&setTimeout(function(){location.assign(atob(c))},500)}});a.observe(document,{childList:!0,subtree:!0})})();

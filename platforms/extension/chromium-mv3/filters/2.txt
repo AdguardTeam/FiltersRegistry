@@ -1,8 +1,8 @@
-! Checksum: VBCuj864WRuyB+7fgc2yKA
+! Checksum: c2avk0c70nSoXafbZor9sw
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.69.98
-! TimeUpdated: 2026-06-02T11:34:46+00:00
+! Version: 2.4.69.99
+! TimeUpdated: 2026-06-02T13:25:12+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21,6 +21,7 @@
 !
 !
 !
+||openmindedpassengerserr.com^
 ||ecdwm.com^
 ||breezebrowsing.com^
 ||wonderfulyesterday.com^
@@ -9562,6 +9563,7 @@ ad.broadstreetads.com
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||instaread-ads.s3.amazonaws.com^
 ||ads-banner.s3.ap-south-1.amazonaws.com^
 ||widget.revtrixjs.com^
 ||dump.mewcdn.online^
@@ -11003,6 +11005,7 @@ bysevepoin.com,arbitrarydecisions.com#%#//scriptlet('json-prune', 'adblock_detec
 cloudfam.io#%#//scriptlet('prevent-element-src-loading', 'script', 'adsbygoogle')
 cloudfam.io#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 @@||cloudfam.io^$generichide
+@@||cloudfam.io/assets/ads/adsense.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228716
 hentaitoon.tv#%#//scriptlet('prevent-setTimeout', 'container.remove')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228682
@@ -34321,9 +34324,6 @@ noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,adblocktape
 usingenglish.com#%#//scriptlet('remove-class', 'hasad', '.content')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88067
 zetporn.com#%#//scriptlet('prevent-window-open')
-! https://github.com/AdguardTeam/AdguardFilters/issues/94696
-! https://github.com/AdguardTeam/AdguardFilters/issues/87634
-onionplay.*#%#//scriptlet("remove-attr", "href", "a#clickfkplayer")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/87587
 cheatcc.com#%#//scriptlet("abort-current-inline-script", "$", "window.open")
 ! popunder
@@ -35368,8 +35368,6 @@ vivo.sx#%#//scriptlet("prevent-addEventListener", "click", "about:blank")
 vivo.sx#%#(function(){var c=document.addEventListener;document.addEventListener=function(a,b,d,e){"click"!=a&&-1==b.toString().indexOf('about:blank')&&c(a,b,d,e)}.bind(document);})();
 vivo.sx#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/Object\[/.test(a.toString()))return b(a,c)};})();
 vivo.sx#%#(function(){Object.defineProperty(window,"open",{writable:!1,enumerable:!1,configurable:!1,value:window.open})})();
-! https://github.com/AdguardTeam/AdguardFilters/issues/24596
-onionplay.net#%#//scriptlet('set-constant', 'scds', '0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24207
 pogo.com#%#//scriptlet("adjust-setTimeout", "this.onComplete()", "20000", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23887
@@ -37135,6 +37133,7 @@ _ad_content.
 !+ NOT_PLATFORM(ext_safari, ios)
 /tghr.js$script
 !
+/embed/*?c=object_container*&psid=
 .go?pid=*&spaceid=*&ctrlid=
 /vast.php?*&idzone=
 &ag_custom_vlmspot=
@@ -38084,7 +38083,12 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
-/embed/*?c=object_container*&psid=
+old-young.net#%#//scriptlet('prevent-window-open', '_blank')
+electronicgroove.com##div[id^="advads_ad"]
+grandprix247.com##.raw-html-component:has(> div[id^="snack-"])
+grandprix247.com##.header + .w-full:has(> .flex_component > .raw-html-component > #snack-top)
+onionplay.st,onionplay.*#%#//scriptlet('remove-attr', 'href', '#clickfakeplayer')
+onionplay.st,onionplay.*#%#//scriptlet('set-constant', 'scds', '0')
 ||camhub.*/static/js/cc-kvs.js
 planetrugby.com##.ciam-article-pr > p > a[href^="https://www.ticketmaster.co.uk/event/"]
 rugbypass.com###snack-sticky
@@ -38097,7 +38101,6 @@ bestbuy.com##li[data-testid="sponsored-listing"]
 soccerway.com##.zone__container
 soccerway.com##.boxOverContentRevive
 akirabox.to#%#//scriptlet('abort-current-inline-script', 'Document.prototype.createElement', '*')
-xhamster.com##.thumb-list > div:not([data-role="related-item"])
 apk.dog##.adv_text
 hltv.org##.match > div.match-bottom > div.match-fixtures
 songlyrics.com##.ad-zone-reserve
@@ -46576,7 +46579,6 @@ oceantogames.com,themorningtribune.com##center > a[target="_blank"]
 msguides.com##.homb
 nowlive.pro##.videoBoxContainer
 nuvid.com##.download_adv_text_photo
-||youtube.com/embed/$domain=onionplay.*
 redflagdeals.com##.sponsors_list_container
 worldsex.com##.center.da-by
 sexystars.online##a[href^="/red/red.php"]
@@ -64515,6 +64517,8 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232658
+@@||letsgocdn*.shop/*.png$xmlhttprequest,stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232400
 @@||hakunaymatata.com/bt/*.mp4?sign=$stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232533
@@ -83705,6 +83709,7 @@ browsershots.org#@#.advert_area
 ||1lbk62l5c.de^
 ||1lj11b2ii.de^
 ||1m72cfole.de^
+||1m75n265ptqhpoztjn8c.rest^
 ||1mhr8byixlc864.cfd^
 ||1mrmsp0ki.de^
 ||1nfltpsbk.de^
@@ -84216,6 +84221,7 @@ browsershots.org#@#.advert_area
 ||5183078ff8.com^
 ||51f7cf32cd.com^
 ||51t64xheonig4f8.cfd^
+||520nexolola.com^
 ||526d43cc6c.com^
 ||527tollv.xyz^
 ||528b4dabec.com^
@@ -86577,6 +86583,7 @@ browsershots.org#@#.advert_area
 ||aphidididlety.cfd^
 ||aphoticlaiktinamou.qpon^
 ||api168168.com^
+||api540.net^
 ||apicesalmudedrest.cfd^
 ||apidata.info^
 ||apiecelee.com^
@@ -90076,6 +90083,7 @@ browsershots.org#@#.advert_area
 ||cestetrpset.shop^
 ||cestibegster.com^
 ||cetylmidipredry.cyou^
+||cetyltanachcobcab.qpon^
 ||ceuktgxqznmne.site^
 ||ceuuogduqksxv.online^
 ||cevxjorcuqsnr.website^
@@ -98692,6 +98700,7 @@ browsershots.org#@#.advert_area
 ||gwrqslmseajux.site^
 ||gwrsyyrghwnuo.space^
 ||gwvdcsktrvzjc.site^
+||gwxsyunijfafg.space^
 ||gwyltsmdekpgt.space^
 ||gwynorxqqcqxg.site^
 ||gwynovnrmibdt.online^
@@ -98751,6 +98760,7 @@ browsershots.org#@#.advert_area
 ||gyyzlvkb5ew3fkxh.cfd^
 ||gzberdhytgbsy.website^
 ||gzbivgztyxmdj.site^
+||gzcemlpnhojgs.space^
 ||gzclatfhwvpsk.space^
 ||gzcuxvtvjdxrz.site^
 ||gzdsnsgboqrbs.online^
@@ -100239,6 +100249,7 @@ browsershots.org#@#.advert_area
 ||i2qoohyfr49mtm.cfd^
 ||i4flmxi35rchf3759kv5mg2.cfd^
 ||i4hnft4cqz5yn2rpx8cxcqgf2e15lc3.cfd^
+||i4ihvfb44134k24.cfd^
 ||i4jxgewgl3rfgmgguhy899n8klpnn.cfd^
 ||i5lty436q2mgw1q.cfd^
 ||i5pm6w1o1xzo8nc.cfd^
@@ -100525,6 +100536,7 @@ browsershots.org#@#.advert_area
 ||igyswjdwkppmo.online^
 ||ih1k65g961twpctyhnw2841qi296qt.cfd^
 ||ihculppauwbhc.online^
+||ihcyifvchybxe.site^
 ||ihdqhjrqhovcp.today^
 ||ihewrbimklmug.online^
 ||ihfiutjmtfga.com^
@@ -102920,6 +102932,7 @@ browsershots.org#@#.advert_area
 ||kehalim.com^
 ||kehkbsknnedlv.site^
 ||kektds.com^
+||kellegkjuglar.cyou^
 ||kelliabyzant.com^
 ||kelpiesregna.com^
 ||kelvvhqaqbzty.site^
@@ -103968,6 +103981,7 @@ browsershots.org#@#.advert_area
 ||lcgvdkaclfzft.website^
 ||lcgwkdjniixjb.store^
 ||lchtraf.com^
+||lchytdsoecmax.site^
 ||lcitatocqjyjg.website^
 ||lclxufvsebuhi.space^
 ||lclzbtmahreqx.online^
@@ -105646,6 +105660,7 @@ browsershots.org#@#.advert_area
 ||mcfstats.com^
 ||mcgengegvbodx.online^
 ||mcgo2.com^
+||mchrwsniodaaa.online^
 ||mciipgsntyqok.site^
 ||mciymtdlsatav.world^
 ||mcizas.com^
@@ -105870,6 +105885,7 @@ browsershots.org#@#.advert_area
 ||metricswpsh.com^
 ||metrisesikhs.com^
 ||mettend-hamous.xyz^
+||meuafytwulnfpbm.com^
 ||meultomhbkptq.store^
 ||meuxdcfzpyipb.space^
 ||mevkylin.com^
@@ -105904,6 +105920,7 @@ browsershots.org#@#.advert_area
 ||mfqsxkywjoleq.site^
 ||mfrvwwyviutsk.website^
 ||mfrwyailfrrxm.website^
+||mfsctmnjhyyjb.site^
 ||mfsfjgsbov.com^
 ||mftnsjsenkwau.online^
 ||mfwbsveljxjsq.space^
@@ -106746,6 +106763,7 @@ browsershots.org#@#.advert_area
 ||msjdlpjdyorlv.store^
 ||msjyzcuvitsht.site^
 ||mskuqwmfjteb.com^
+||mslbcivzyzehy.website^
 ||mslhvnakjrwgl.store^
 ||mslimofdbkqsr.space^
 ||msnenkmvzkacs.site^
@@ -107751,6 +107769,7 @@ browsershots.org#@#.advert_area
 ||nkredir.com^
 ||nksbygyqqtnsn.site^
 ||nksrruchodgda.online^
+||nktmuyapmeohz.online^
 ||nkueonpkfsaiy.space^
 ||nkvnwcndhek.com^
 ||nkwampojlqbic.space^
@@ -108540,6 +108559,7 @@ browsershots.org#@#.advert_area
 ||obwguczcik.com^
 ||obwhpycr.in^
 ||obwmgyajhfsci.com^
+||obwojmsha.in^
 ||obydhwjzzxbpb.com^
 ||obzcawpipwt.in^
 ||obzpubutiwfeq.online^
@@ -116379,6 +116399,7 @@ browsershots.org#@#.advert_area
 ||scarvesrepaid.com^
 ||scary-ice.pro^
 ||scarycarriedgoniale.cfd^
+||scaselyhoptree.cfd^
 ||scashwl.com^
 ||scatterlusian.cyou^
 ||scattyyrbkagrito.cfd^
@@ -116812,6 +116833,7 @@ browsershots.org#@#.advert_area
 ||sepdwelling.cyou^
 ||sephiraasperly.com^
 ||sephiramaths.cfd^
+||sepiapewters.cyou^
 ||sepiarypooris.com^
 ||sepioidpuker.shop^
 ||sepocsusw.com^
@@ -119264,6 +119286,7 @@ browsershots.org#@#.advert_area
 ||suganslurps.shop^
 ||sugarmacro.shop^
 ||sugarruse.com^
+||suggestasmalte.shop^
 ||suggestbingo.com^
 ||suggestedeeriegoody.com^
 ||suggesthometown.com^
@@ -122720,6 +122743,7 @@ browsershots.org#@#.advert_area
 ||uncinchambash.com^
 ||uncleanwindups.shop^
 ||unclesnewspaper.com^
+||unclewhiteys.com^
 ||uncoilaoniancareen.cfd^
 ||uncoltahurapasis.cyou^
 ||uncomfortablevacation.com^
@@ -149693,7 +149717,7 @@ financemagnates.com##.article-sidebar__video-banner
 ibtimes.com,latintimes.com,sciencetimes.com##.article-videoplayer
 people.com##.article__broad-video
 thegrio.com##.aspect-ratio-box
-gizmodo.com##.aspect-video
+gizmodo.com,space.com##.aspect-video
 digitaltrends.com##.b-connatix
 bmwblog.com##.bmwbl-video-in-content
 ontvtonight.com##.body-container > div:has(script[src^="https://live.primis.tech/"])
@@ -149779,7 +149803,7 @@ gazette.com##.tnt-section-sponsored
 thegrio.com##.tpd-featured-video
 economictimes.indiatimes.com##.vdo_ai_can_ani
 bestlifeonline.com,eatthis.com,hellogiggles.com##.vi-video-wrapper
-gamesradar.com,tomsguide.com,tomshardware.com,whathifi.com##.vid-present
+gamesradar.com,guitarworld.com,pcgamer.com,techradar.com,tomsguide.com,tomshardware.com,whathifi.com,windowscentral.com##.vid-present
 mobafire.com##.vid-wrap
 soapcentral.com,sportskeeda.com##.vidazoo-player-container
 justthenews.com,polygon.com##.video
