@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: j9LmmU1Ixgro+qqmjK8ppQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1780294616-14400.patch
+! Checksum: FW0nALTI2ixaOn5XMq/e6g
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1780380445-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.86
@@ -51,6 +51,7 @@ appuals.com##p + div > div:first-of-type
 windll.com##.download-block
 windll.com##.dll > p
 softwaretested.com##.st-alternative
+softwaretested.com##.snippet-content
 ||outbyte.com^$document
 ||testedforyou.net^$all
 ||solvusoft.com^$document
@@ -461,7 +462,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||grabspeedometerponderous.com^$all
 ||delicioustightbronze.com^$all
 ||markswaitingrouge.com^$all
-||intriguingajar.com^$all
 ||antonyexpected.com^$all
 ||excessivelynell.com^$all
 ||pairturnnumerous.com^$all
@@ -521,6 +521,8 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||downloadlocked.com^$all
 ||locked3.com^$all
 ||lockedapp.org^$all
+||rewardspark.co^$all
+||shopgala.api.twyne.io^$all
 ||verificationcenter.top^$all
 ||xrtdw.net^$all
 ||23.22.126.183^$all
@@ -779,7 +781,6 @@ drvhub.net##.driver-item__install
 ||trckprf.com^$all
 ||watchnowclick.com^$all
 ||xmladsystem.com^$all
-||zentrixads.com^$all
 ||157.90.33.79^$all
 ||173.239.53.20^$all
 ||178.63.248.53^$all
@@ -2249,6 +2250,7 @@ $removeparam=gaa_ts
 $removeparam=gaa_sig
 $removeparam=amp_gsa
 $removeparam=vgo_ee
+$removeparam=rpcid
 ref=prisjakt^$document,removeparam=ref
 $document,removeparam=/^amp;utm_.*$/
 $removeparam=sap-outbound-id
@@ -2863,6 +2865,7 @@ $removeparam=mktvar002,domain=autodesk.com
 $removeparam=/^pubname=.*$/i,domain=anntaylor.com|ashford.com|backcountry.com|bloomingdales.com|dermstore.com|express.com|famousfootwear.com|farmandfleet.com|gucci.com|hottopic.com|loft.com|naturalizer.com|samsclub.com
 $document,removeparam=/^refID=.*$/i,domain=allmodern.com|calphalon.com|priceline.com|questrade.com|wayfair.*|yankeecandle.com
 $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|anntaylor.com|asos.com|awd-it.*|barenecessities.com|barrons.com|beautyencounter.com|buckle.com|burpee.com|chacos.com|coursera.org|dxl.com|dyson.com|ebay.*|famousfootwear.com|finishline.com|freetaxusa.com|gap.com|gapcanada.ca|gucci.com|hanes.com|hotwire.com|hulu.com|hunterboots.com|jcrew.com|josbank.com|kobo.com|lanebryant.com|laroche-posay.us|loft.com|magazines.com|marketwatch.com|maurices.com|merrell.com|newbalance.com|nordstrom.com|officedepot.com|onehanesplace.com|online4baby.com|radissonhotelsamericas.com|ralphlauren.com|saksfifthavenue.com|saksoff5th.com|samash.com|samsclub.com|saucony.com|sharperimage.com|skinceuticals.com|thingsremembered.com|thrifty.*|timeformecatalog.com|verabradley.com|vivaterra.com|wine.com|yoox.com
+$removeparam=pt,domain=apple.com|icedrive.net
 ||kohls.com^$removeparam=kls_sbp
 ||kohls.com^$removeparam=pfm
 ||kohls.com^$removeparam=prdPV
@@ -2894,6 +2897,7 @@ $removeparam=fm,domain=flipkart.com|shopbop.com
 $document,removeparam=cId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $document,removeparam=lId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $document,removeparam=/^src=Linkfire$/,domain=apple.com|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
+$document,removeparam=ct,domain=apple.com|bumble.com|newsroom.co.nz
 ||music.apple.com^$removeparam=itsct
 ||music.apple.com^$removeparam=itscg
 ||apple.com^$removeparam=/^ign-.*$/
@@ -3129,6 +3133,7 @@ $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com
 ||github.com^$removeparam=ref_page
 ||quizlet.com^$removeparam=funnelUUID
 $removeparam=qid,domain=bookdepository.com|eastday.com
+$removeparam=pk_vid,document
 ||xiaohongshu.com^$removeparam=app_platform,document
 ||xiaohongshu.com^$removeparam=app_version,document
 ||xiaohongshu.com^$removeparam=share_from_user_hidden,document
@@ -3333,6 +3338,7 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||microsoft^$removeparam=fromcode
 ||microsoft^$removeparam=refOrigin
 ||microsoft.com^$removeparam=refSource
+||microsoft.com^$removeparam=refPage
 $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com
 ||deezer.$removeparam=/^utm_.*$/
 ||duckduckgo.com/extension-success$document,removeparam=atb
@@ -4017,9 +4023,6 @@ fandom.com##.notifications-box
 flipkart.com##div[style^=flex-grow] div:first-of-type + div.col
 flipkart.com##footer section + div:last-of-type
 ###custom-css .vjs-loading-spinner
-valdemarsro.dk###after-recipe .content
-valdemarsro.dk##.kogebog-side
-valdemarsro.dk###recipe-intro p:last-of-type
 @@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script,domain=~support.google.com
 google.*#@##google-hats-survey
 ||appboycdn.com^$3p
