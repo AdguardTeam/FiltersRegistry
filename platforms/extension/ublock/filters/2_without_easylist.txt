@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 2XTcswWFOzXj2vTSHNzZwQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780494639-3600.patch
+! Checksum: WG8yrx7IiTn3ddI/6ne1mw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780501411-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.70.12
-! TimeUpdated: 2026-06-03T13:46:46+00:00
+! Version: 2.4.70.13
+! TimeUpdated: 2026-06-03T15:39:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27585,10 +27585,12 @@ satkurier.pl##div[style="width:300px;margin-left:auto;margin-right:auto;margin-b
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28059
 satkurier.pl#@#ins.adsbygoogle[data-ad-slot]
 satkurier.pl#@#ins.adsbygoogle[data-ad-client]
+satkurier.pl##+js(no-setTimeout-if, /\.offsetHeight === 0|blocked|detected/)
+satkurier.pl##+js(prevent-fetch, /pagead2\.googlesyndication\.com|getRandomBanner/)
+!+ NOT_OPTIMIZED
 satkurier.pl##.coverNews:style(display: none !important;)
+!+ NOT_OPTIMIZED
 satkurier.pl###newsContent[style*="height:"]:style(height: auto !important;)
-satkurier.pl##+js(no-setTimeout-if, .offsetHeight === 0)
-satkurier.pl##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122428
 ! https://github.com/AdguardTeam/AdguardFilters/issues/97571
 dyktanda.pl##a[href^="https://bit.ly/"].highlight
@@ -37297,6 +37299,10 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+nudeindian.net##.full-right-col
+nudeindian.net##.bar-items-block
+anal.media##.videoRecommendations:has(.thumb + a.external-link)
+||adultvideocdn.com/assets/aigf/
 metatft.com##.VideoAdContainer
 sportsdunia.com##.bg-\[\#FFFFFF1A\]
 sportsdunia.com##[class^="side-ad"]
