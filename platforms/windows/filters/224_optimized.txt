@@ -1,9 +1,9 @@
-! Checksum: loqnMAy7CD+ImIyZYmCpjQ
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1780501427-3600.patch
+! Checksum: paxnEbrUDw/ZQdEGic7MBA
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1780515059-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.59.91
-! TimeUpdated: 2026-06-03T15:40:42+00:00
+! Version: 2.1.59.92
+! TimeUpdated: 2026-06-03T19:27:46+00:00
 ! Expires: 12 hours (update frequency)
 ||umini.shujupie.com^
 ||rgzz3rs.icu^
@@ -246,8 +246,8 @@ wxredian.com#%#//scriptlet('set-constant', 'checkAdScript', 'noopFunc')
 jav224.shop,ttp229.shop,clp126.shop,hsq233.shop#@#.ad-unit:not(.textads)
 jav224.shop,ttp229.shop,clp126.shop,hsq233.shop#%#//scriptlet('prevent-setTimeout', '](getComputedStyle,')
 huaren.live,huavod.com#%#//scriptlet('prevent-setTimeout', 'bait.offsetHeight===0')
-huavod.top,huavod.net,huaren.live,huavod.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'showModal')
-huavod.top,huavod.net,huaren.live,huavod.com##div[id^="anti-adblock-"]
+huavod.cc,huavod.top,huavod.net,huaren.live,huavod.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'showModal')
+huavod.cc,huavod.top,huavod.net,huaren.live,huavod.com##div[id^="anti-adblock-"]
 huaren.live,huavod.com#@#.ad_unit
 ||static.okokserver.com/js/anti/adblocker.js
 verb.tw#$#.adsbygoogle.ad-slot.ad-banner.textads.banner-ads { display: block !important; }
@@ -756,7 +756,7 @@ jav224.shop,ttp229.shop,clp126.shop,hsq233.shop#%#//scriptlet('abort-current-inl
 surumi.shop###container > .art-video-player + div[id][style^="position: absolute;"][style*="z-index: 999"]
 wnacg.com##a[href*="erodatalabs.com"]
 free.com.tw##.advads-entity-placement
-huavod.top,huaren.live,huavod.com,huavod.net##a[href^="/go/baba/"]
+huavod.cc,huavod.top,huaren.live,huavod.com,huavod.net##a[href^="/go/baba/"]
 *$script,xmlhttprequest,third-party,domain=m.niupizhi.net
 ||m.niupizhi.net/lokedpgdjs
 ||cdn.rrmj.plus/c-next/mapp/*/layout-$script,replace=/firstAdMaxFreeTimes:\d+/firstAdMaxFreeTimes:30000/,domain=yichengwlkj.com
@@ -2752,10 +2752,13 @@ netfly.*,netfly.tv##.player-box > div.player-tt-rmm
 netfly.*,netfly.tv##.module-tg-box
 netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] > img
 netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] + span.tt-icon-close
-||static.okokserver.com/uploads/lesi/$xmlhttprequest,redirect=nooptext,domain=huaren.live|huavod.net|huavod.com|huavod.top
-huavod.top,huavod.net,huavod.com,huaren.live#%#//scriptlet('set-constant', 'ConFig.ad_duration_ms', '0')
-huavod.top,huavod.net,huavod.com,huaren.live#%#//scriptlet('trusted-set-constant', 'mac_player_info.from', 'ARTVIP')
-huavod.top,huavod.net,huavod.com,huaren.live#%#//scriptlet('trusted-set-constant', 'ConFig.config.ads', '{"pause":{"state":{}}}')
+||static.okokserver.com/uploads/lesi/$xmlhttprequest,redirect=nooptext,domain=huaren.live|huavod.net|huavod.com|huavod.top|huavod.cc
+huavod.cc,huavod.top,huavod.net,huavod.com,huaren.live#%#//scriptlet('set-constant', 'ConFig.ad_duration_ms', '0')
+huavod.cc,huavod.top,huavod.net,huavod.com,huaren.live#%#//scriptlet('trusted-set-constant', 'mac_player_info.from', 'ARTVIPA')
+huavod.cc,huavod.top,huavod.net,huavod.com,huaren.live#%#//scriptlet('trusted-set-constant', 'ConFig.config.ads', '{"pause":{"state":{}}}')
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
+huavod.cc#%#(()=>{if(!location.href.includes("://huavod.cc/player/index.php"))return;const e=()=>{const e=document.querySelector("body > center > h1");e?.textContent?.includes("404 Not Found")&&(()=>{const e=top.document.querySelector('#playleft > iframe[src^="https://newplayer.huaren.live/player/index.php"]');e&&(e.src=e.src.replace("huaren.live","huavod.top"))})()};"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e()})();
+||huavod.cc/player/$replace=/let ConFig/var ConFig/,document,subdocument
 ||huavod.top/player/$replace=/let ConFig/var ConFig/,document,subdocument
 ||huavod.net/player/$replace=/let ConFig/var ConFig/,document,subdocument
 ||huavod.com/player/$replace=/let ConFig/var ConFig/,document,subdocument

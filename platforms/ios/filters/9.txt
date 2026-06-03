@@ -1,9 +1,9 @@
-! Checksum: 9riPBI8WJshWDK5AtV5dgA
-! Diff-Path: ../patches/9/9-s-1780494645-3600.patch
+! Checksum: mVGmCQrpWsP93z7GwRnnBQ
+! Diff-Path: ../patches/9/9-s-1780515048-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.34.55
-! TimeUpdated: 2026-06-03T13:47:07+00:00
+! Version: 2.0.34.56
+! TimeUpdated: 2026-06-03T19:27:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -199,6 +199,10 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232488
+meuplayeronlinehd.com#%#//scriptlet('prevent-fetch', 'cloudfront.net')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||cloudfront.net^$xmlhttprequest,domain=meuplayeronlinehd.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232183
 ||sushianimes.com.br/app/theme/assets/js/oksua-v3.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232135
@@ -2422,6 +2426,8 @@ lusometeo.com,kltutors.com,eloutput.com,mundobytes.com,techondicas.com,jornalrep
 !
 ! NOTE: Specific rules
 !
+futemax.reise##.alertWS
+rde.lat#%#//scriptlet('prevent-window-open')
 vocesa.abril.com.br###relacionadas_marfeel_single
 vocesa.abril.com.br###mais_lidas_marfeel_single
 vocesa.abril.com.br###abrAdAnchor
