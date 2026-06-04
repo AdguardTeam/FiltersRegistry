@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: uoj8qCO/bUcrPhfIEXJurg
-! Diff-Path: ../patches/7/7-s-1780585879-3600.patch
+! Checksum: BhV0hyYN1KL/tWToc0JkBg
+! Diff-Path: ../patches/7/7-s-1780593141-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.74.21
-! TimeUpdated: 2026-06-04T15:08:02+00:00
+! Version: 2.0.74.22
+! TimeUpdated: 2026-06-04T17:08:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1816,8 +1816,8 @@ _co_jp.*.php$document,to=cc|com
 .asp?AC=*&IC=$document,to=com|fun|online|site
 /ap/signin/openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.co.jp$document,to=cn|top|xyz
 /index.php?route=product/product&product_id=$document,to=cyou|life|live|shop|xyz|~ocam.live
-/index.php?main_page=product_info*&cPath=$document,to=asia|baby|bar|beauty|best|biz|blog|bond|buzz|cam|cards|casa|cfd|click|cloud|club|cyou|fashion|fit|forum|fun|gay|hair|homes|icu|info|ink|lat|life|live|lol|love|ltd|makeup|me|mom|monster|my|one|online|pics|pro|qpon|quest|rent|rest|ru.com|run|sa.com|sale|sbs|shop|site|skin|space|store|team|today|tokyo|top|vu|website|wiki|work|xyz|yachts|yoga|za.com
-/index.php?main_page=product_info&products_id=$document,to=asia|baby|bar|beauty|best|biz|blog|bond|buzz|cam|cards|casa|cfd|click|cloud|club|cyou|fashion|fit|forum|fun|gay|hair|homes|icu|info|ink|lat|life|live|lol|love|ltd|makeup|me|mom|monster|my|one|online|pics|pro|qpon|quest|rent|rest|ru.com|run|sa.com|sale|sbs|shop|site|skin|space|store|team|today|tokyo|top|vu|website|wiki|work|xyz|yachts|yoga|za.com
+/index.php?main_page=product_info*&cPath=$document,to=asia|baby|bar|beauty|best|biz|blog|bond|buzz|cam|cards|casa|cfd|click|cloud|club|cyou|fashion|fit|forum|fun|gay|hair|homes|icu|info|ink|lat|life|live|lol|love|ltd|makeup|me|mom|monster|my|one|online|pics|pro|qpon|quest|rent|rest|ru.com|run|sa.com|sale|sbs|shop|site|skin|space|store|team|today|tokyo|top|vip|vu|website|wiki|work|xyz|yachts|yoga|za.com
+/index.php?main_page=product_info&products_id=$document,to=asia|baby|bar|beauty|best|biz|blog|bond|buzz|cam|cards|casa|cfd|click|cloud|club|cyou|fashion|fit|forum|fun|gay|hair|homes|icu|info|ink|lat|life|live|lol|love|ltd|makeup|me|mom|monster|my|one|online|pics|pro|qpon|quest|rent|rest|ru.com|run|sa.com|sale|sbs|shop|site|skin|space|store|team|today|tokyo|top|vip|vu|website|wiki|work|xyz|yachts|yoga|za.com
 /\.(?:club|cn|icu|top|pro|site|work)\/Personal\/member\/Login\/index\.php\?oneTimeAccessID=/$document,to=club|cn|icu|top|pro|site|work
 ! https://github.com/AdguardTeam/FiltersCompiler/issues/254
 /^https:\/\/(?:(?!www)[a-z]{3,5}|[ej][ac])\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9A-Za-z]{10}|\d{8}|[0-9a-f]{32})\.html$/$document,match-case,to=art|autos|baby|best|biz|blog|boats|buzz|cards|cc|cfd|click|cloud|club|cyou|eu|fit|fun|guru|hair|homes|info|ink|lat|life|live|lol|me|mom|my|one|online|pics|qpon|quest|rest|sale|sbs|shop|site|skin|space|store|today|top|wiki|work|world|xyz
@@ -1889,6 +1889,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+jp.motorsport.com##.photo-external-link[data-widget="image"][data-title^="【PR】"][data-link*="/?waad=&ugad=&suid="]
 sports.tv.rakuten.co.jp##div[id^="ad-banner-"]
 sports.tv.rakuten.co.jp##.swiper-container > div.swiper-wrapper > div.swiper-slide:has(> a[href="https://fumakilla.jp/playactive/momofuma/"])
 rancolle.com##div[style*="text-align:center;"]:has(> ins.adsbygoogle)
@@ -2283,6 +2284,7 @@ imas-db.jp##.d-flex.justify-content-center.mx-2.my-3.bg-body-secondary.rounded-1
 momoniji.com##div.sp[style]
 www.yahoo.co.jp##+js(href-sanitizer, a[href^="https://app.adjust.com/"], ?redirect)
 gamewith.jp##._area > a[href*=".onelink.me/"]
+||walkerplus.com/asset/jobbox/jobbox.js
 ||walkerplus.com/asset/diy/images/shared/mvtk_630_100x2.webp
 gdm.or.jp##.archive_ad_pressrelease
 gdm.or.jp##.parallax-container
@@ -8577,6 +8579,8 @@ game.oricon.co.jp,game.hiroba.dpoint.docomo.ne.jp,kantangame.com,kantan.game,yom
 traicy.com##.pc-ad-wide
 traicy.com##.sp-header-ad
 ||hochi.news/apps/js/ad_kb/
+hochi.news##.ad[style^="min-width:300px;min-height:250px"]
+hochi.news##div[style="display:flex;justify-content:space-around;"]
 hochi.news##.job-list-wrap
 hochi.news##.article-list__head:has(+ .job-list-wrap)
 hochi.news##.sub__head:has(+ .right_job-list-wrap)
@@ -9015,6 +9019,7 @@ j-cia.com###amazon-products
 creatorzine.jp,edtechzine.jp###AdSpecialContents
 jprime.jp##.--pr
 jprime.jp,koukouseishinbun.jp##.ad-col2
+natalie.mu##.NA_section-list:has(> div[id^="taboola-below-article-thumbnails"])
 natalie.mu##.NA_article + div.NA_section-list:has(> #taboola-below-article-thumbnails-desktop)
 natalie.mu##.NA_ad
 ||tinami.com/ad/
