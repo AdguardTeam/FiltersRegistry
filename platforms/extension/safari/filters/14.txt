@@ -1,9 +1,9 @@
-! Checksum: UxwhwkAOTcB60OH2qGLIdg
-! Diff-Path: ../patches/14/14-s-1780565355-3600.patch
+! Checksum: kPR02nFKHqsBXNnyDp0F+g
+! Diff-Path: ../patches/14/14-s-1780571584-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.68
-! TimeUpdated: 2026-06-04T09:26:12+00:00
+! Version: 2.2.69.69
+! TimeUpdated: 2026-06-04T11:09:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2614,6 +2614,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+sravni.id#%#//scriptlet('trusted-set-local-storage-item', 'sravni-cookies-policy', '{"isAgree":true,"timestamp":99999999999999}')
 realityjunkies.com,adultmobile.com###root > div[class^="sc-"]:has(> p[class^="sc-"] > a[href^="https://www."][href$="/legal/privacy"])
 summitracing.com###CookieConsentBannerPlaceholder
 42gears.com#%#//scriptlet('trusted-click-element', 'button[aria-label="Reject Non-Essential"][id^="ketch-banner-button-"]')
@@ -27442,6 +27443,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+caranddriver.com##li#shop-new-cars + div.react-tooltip
 drive-igora.ru##.timer-widget
 nbaanalysis.net#%#//scriptlet('trusted-set-local-storage-item', 'grv_identity_popup_ts', '99999999999999')
 hotcars.com#%#//scriptlet('set-cookie-reload', 'articleLimitCooldown', 'true')
@@ -36558,6 +36560,7 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 ! Genegic rules
 ! SECTION: Subscriptions - Generic
 !
+##.article__info-goog
 ##div[data-testid="google-news-widget"]
 ##.article-content__widget-group--newsletter-slot
 ##form[aria-label="Sign up for newsletter: Daily Briefing"]
@@ -36694,6 +36697,13 @@ autoevolution.com,onedio.co,sn-jp.com,games.gg,hongkongfp.com,computerbase.de,gz
 !
 ! SECTION: Subscriptions - Regular rules
 !
+allyoucanwatch.net###discordPop
+iflscience.com##.follow-button-text-wrapper
+iflscience.com#?#.article__bottom__meta__text:contains(Add us as a Google preferred source)
+motortrend.com##div[data-testid="content-newsletter"]
+just-auto.com##.gdm-newsletter-banner__container
+just-auto.com##.catfish
+caranddriver.com##section[data-vars-block-type="Newsletter"]
 autoevolution.com##a[href^="https://profile.google.com/cp/"]
 mainichi.jp##.mb-28 > p:has(> a[href^="https://www.google.com/preferences/source?q="])
 cakebycourtney.com##.no-raptive-ads
@@ -37062,7 +37072,6 @@ xxxfollow.com#%#//scriptlet('set-cookie', 'slide_signup', '1', '/', 'xxxfollow.c
 teremok.ru##.b-decor-box > div.b-decor-box__inner:has(> div.b-subs)
 kinoart.ru###app-root main > div[class]:has(> div[class] > form[novalidate] > div[class] > input[placeholder="Ваш адрес электронной почты"])
 blog.kilo.ai#%#//scriptlet('trusted-set-cookie-reload', 'intro_popup_last_hidden_at', '$currentISODate$')
-medicalxpress.com,phys.org##.article__info-goog
 pullandbear.com##newsletter-banner
 lifehacker.jp##div[class^="newsletterRegister_wrapper"]
 vesti.ru##.social-links
@@ -54266,6 +54275,8 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+just-auto.com###home-trusted-banner
+just-auto.com##.in-article-premium-insights
 chibanippo.co.jp##.block-views-blockteikimono-views-block-1
 chibanippo.co.jp##.block-views-blockteikimono-views-block-2
 kosht.media##.rek > a[href="https://kosht.media/rating/"]

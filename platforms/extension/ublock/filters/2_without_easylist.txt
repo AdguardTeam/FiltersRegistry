@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PavBD9c8n9vDvGx6u0g9+w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780565362-3600.patch
+! Checksum: C6D3qplKAtM+A5e1k6tvRQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780571592-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.70.23
-! TimeUpdated: 2026-06-04T09:25:44+00:00
+! Version: 2.4.70.24
+! TimeUpdated: 2026-06-04T11:09:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15157,6 +15157,7 @@ wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com##+js(abort-current-script, EventTarget.prototype.addEventListener, window.location.replace("/inc/embed/embed.html"))
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com##+js(remove-node-text, script, window.location.replace("/inc/embed/embed.html"))
 ||platform.pubadx.one/pubadx-ad.js$script,redirect=noop.js,domain=embed.wcostream.com
+@@||embed.wcostream.com/assets/ads/advertisement.js$domain=embed.wcostream.com
 @@||embed.wcostream.com/inc/embed/*.js$domain=embed.wcostream.com
 @@||embed.wcostream.com/ad-verify|$xhr,domain=embed.wcostream.com
 @@/inc/embed/*ads.js$domain=wcostream.org|watchanimesub.net|wco.tv|wcostream.net|wcostream.com|wcoforever.tv
@@ -37286,6 +37287,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+caranddriver.com##div[class^="css-"] > div[class^="css-"]:has(> div[class^="css-"] > div.ad-disclaimer)
+caranddriver.com##main > section:not([data-lazy-id]):has(> div[class^="css-"] > div.ad-disclaimer)
+carmagazine.co.uk###topAdContainerFullWidth
 tutorialspoint.com##.adp_top_ads
 tutorialspoint.com##a[href="https://www.tutorix.com/academic"] > img
 ||cdn.autoevolution.com/_js/prebid*.js
