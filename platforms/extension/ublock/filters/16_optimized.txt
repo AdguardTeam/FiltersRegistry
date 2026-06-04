@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: XNANq7N2uqCMhb6wRXsWDg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1780456834-3600.patch
+! Checksum: 4ZEgazbDnE8SgHoEhVhDYw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1780543234-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.65
@@ -641,7 +641,6 @@ lefigaro.fr##.fig-sticky-bottom-subscription-banner
 zeste.ca##.isPub
 zeste.ca##.wrapper-pub
 charentelibre.fr,sudouest.fr,techno-science.net##.pub
-paroles2chansons.lemonde.fr##div[style="min-height:280px;"]
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
 ||jobat.be^$subdocument,3p
@@ -1453,6 +1452,8 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://adss.
 ://adx.
 ://afflight.$3p
+://ar.ads.
+://banner-gateway.$3p
 ://banner.*click
 ://banner.*utm_
 ://banners2.$3p
@@ -1471,6 +1472,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://go.*&zoneid=
 ://install.*&clickid=
 ://link.*&siteid=$3p
+://look.*/offer?prod=
 ://pop.$script,subdocument,3p,xhr
 ://promo.*?site_id=
 ://promo2.$3p
@@ -1494,6 +1496,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 =728x90_
 =970x90&
 =970x90_
+=adunit/
 =dynamic_banner&
 =GetAdHtml&
 =popunder&
@@ -1530,6 +1533,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?r=*&zoneid=
 ?rand=*&blk=*&ref_
 ?redir=*/click?
+?runauction=
 ?size=728x90|$subdocument
 ?sponsor=*&sId=
 ?style=160x600-
@@ -1543,6 +1547,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?type=ads&
 ?ufuad=
 ?zoneid=*&ab=$script
+?zoneid=*&cid=$script
 ?zoneid=*&ext=$3p
 ?zoneid=*&placement=
 ?zoneid=*&r=
@@ -1573,6 +1578,7 @@ _480x250.
 _648x60_
 _725_90.
 _728-x-90_
+_728x350.
 _728x90@
 _728x90px_
 _728x90pxl_
@@ -1746,6 +1752,7 @@ _build=iclick-$popup
 ||admediaking.com^$3p
 ||admuncher.com^$3p
 ||admysports.com^$3p
+||adnplay.com^$3p
 ||adnsolution.net^$3p
 ||adnxtr.com^$3p
 ||adoftheyear.com^$3p
@@ -1796,6 +1803,7 @@ _build=iclick-$popup
 ||betterbannerscloud.com^$3p
 ||beurettemessenger.com^$3p
 ||broadcast.pm^$3p
+||camplace.com^$3p
 ||camsoda.com^$3p
 ||caramec.fr^$3p
 ||carasexe.name^$3p
@@ -2040,7 +2048,6 @@ _build=iclick-$popup
 ||bowgevyingly.com^
 ||bowlingunauthorized.com^
 ||brashstudiocrucial.com^
-||bravobusboy.com^
 ||brazilprocyon.com^
 ||brocardcored.com^
 ||broosnighed.com^
@@ -2300,7 +2307,6 @@ _build=iclick-$popup
 ||muskurahat.com^
 ||mutatesuet.com^
 ||mybestclick.net^
-||nahnoji.cz^
 ||namersreminds.com^
 ||nanouwho.com^
 ||naplpzlrgslcwj.com^
@@ -2542,6 +2548,7 @@ _build=iclick-$popup
 ||a-calc.de^$3p
 ||adless.io^$3p
 ||afminer.com^$3p
+||averoconnector.com^$3p
 ||binance.org^$3p
 ||browsealoud.com/plus/scripts/$script
 ||cnhv.co^$3p
@@ -3230,6 +3237,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###container-pub
 ###container_pub
 ###container_pub_left
+###content_pub
 ###contenu-text-publicite
 ###contenu_liens-sponso
 ###contextuel-publicite-video
@@ -3280,7 +3288,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###google-ads-3
 ###google-ads-4
 ###googleAdSense
-###gpt-ad-728x90-970x66-bottom
 ###gpt-ad-habillage
 ###gpt-ad-inread
 ###gpt-leaderboard-top
@@ -3304,6 +3311,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###js-MobileAd-insert
 ###keep-ads
 ###leaderboard.ads
+###left-ads-rail
 ###left_slide_pub
 ###lht-space-ad
 ###mb_video_syncad_bottom
@@ -3364,6 +3372,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###pubImg
 ###pubLeft
 ###pubRight
+###pubRight-show
 ###pubTop
 ###pubVideo
 ###pub_1
@@ -3373,6 +3382,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###pub_728x90
 ###pub_728x90-1
 ###pub_728x90-2
+###pub_articlefooter
 ###pub_banner
 ###pub_banniere_basse
 ###pub_banniere_haute
@@ -3647,6 +3657,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.lbl-ad
 ##.leaderboard728
 ##.leftSideAds
+##.lftBigAds
 ##.liens-sponsorises__external
 ##.line-adv
 ##.logo-right-ads
@@ -3668,10 +3679,12 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.modAd
 ##.modalPub
 ##.module-pub
+##.module_epg_publicite_level0
 ##.module_sponsored
 ##.mom-ads-wrap
 ##.mpu-adv-revamp
 ##.myAd
+##.native_ad2
 ##.nativeads
 ##.navAd
 ##.newads
@@ -3700,6 +3713,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.player-adx-block
 ##.player-sponsor-block
 ##.player__ads
+##.player_bg_ad
 ##.pmd-ads-300x600
 ##.pmd-ads-desktop
 ##.pmd-ads-mobile
@@ -3948,7 +3962,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.wrapper_pub_sidebar
 ##.xadv-invid2
 ##.xplayer-banner-bottom
-##.yourcolor-ads
 ##.zone_pub_orange
 ##.zonepub
 ##[class*="-ad-placeholder-"]
@@ -3990,7 +4003,6 @@ ahlaejaba.com,net-iris.fr,orange.fr,paruvendu.fr,radio.co.ma,zalotech.com###ad
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 akeo.fr###amazon
-upp-auteurs.fr###annonce_a
 lenouveleconomiste.fr###b_top
 commentcamarche.com,commentcamarche.net###ba_right
 manga-news.com###ban970250
@@ -4123,6 +4135,7 @@ wix.com###wixfooter
 cnews.fr###wrapper-banner
 casatv.ca###wrapperbanner
 troc-velo.com###xpubpart
+alloforfait.fr###zzone
 lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
@@ -4146,7 +4159,6 @@ statistiks.fr##.adz
 permaculteurs.com##.aff
 leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
-madagascar-tribune.com##.annonce
 centre-presse.fr,lamontagne.fr,larep.fr,le-pays.fr,leberry.fr,lechorepublicain.fr,lejdc.fr,lepopulaire.fr,lyonne.fr##.annonce_prompteur
 autojournal.fr,autoplus.fr##.annonces-container
 autojournal.fr,autoplus.fr##.annonces-container-sidebar
@@ -4412,6 +4424,7 @@ tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
 3dnatives.com##a[href*="/linkout/"]
 exefiles.com##a[href*="/recommended/"]
+booska-p.com##a[href*="/rf/"][style]
 1001ebooks.ws##a[href*="/telebooks.html"]
 seneweb.com##a[href*="/xban/"]
 rtl.be##a[href*="://ad.doubleclick.net/"]

@@ -1,5 +1,5 @@
-! Checksum: 9BxOcLekKZkeXyRH3xtU4w
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1780456827-3600.patch
+! Checksum: IVAcf0T0iILg5X8+Oai87Q
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1780543227-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.65
@@ -688,7 +688,6 @@ lefigaro.fr##.fig-sticky-bottom-subscription-banner
 zeste.ca##.isPub
 zeste.ca##.wrapper-pub
 charentelibre.fr,sudouest.fr,techno-science.net##.pub
-paroles2chansons.lemonde.fr##div[style="min-height:280px;"]
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
 ||jobat.be^$subdocument,third-party
@@ -1488,6 +1487,8 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://adss.
 ://adx.
 ://afflight.$third-party
+://ar.ads.
+://banner-gateway.$third-party
 ://banner.*click
 ://banner.*utm_
 ://banners2.$third-party
@@ -1506,6 +1507,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://go.*&zoneid=
 ://install.*&clickid=
 ://link.*&siteid=$third-party
+://look.*/offer?prod=
 ://pop.$script,subdocument,third-party,xmlhttprequest
 ://promo.*?site_id=
 ://promo2.$third-party
@@ -1529,6 +1531,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 =728x90_
 =970x90&
 =970x90_
+=adunit/
 =dynamic_banner&
 =GetAdHtml&
 =popunder&
@@ -1565,6 +1568,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?r=*&zoneid=
 ?rand=*&blk=*&ref_
 ?redir=*/click?
+?runauction=
 ?size=728x90|$subdocument
 ?sponsor=*&sId=
 ?style=160x600-
@@ -1578,6 +1582,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?type=ads&
 ?ufuad=
 ?zoneid=*&ab=$script
+?zoneid=*&cid=$script
 ?zoneid=*&ext=$third-party
 ?zoneid=*&placement=
 ?zoneid=*&r=
@@ -1608,6 +1613,7 @@ _480x250.
 _648x60_
 _725_90.
 _728-x-90_
+_728x350.
 _728x90@
 _728x90px_
 _728x90pxl_
@@ -1781,6 +1787,7 @@ _build=iclick-$popup
 ||admediaking.com^$third-party
 ||admuncher.com^$third-party
 ||admysports.com^$third-party
+||adnplay.com^$third-party
 ||adnsolution.net^$third-party
 ||adnxtr.com^$third-party
 ||adoftheyear.com^$third-party
@@ -1831,6 +1838,7 @@ _build=iclick-$popup
 ||betterbannerscloud.com^$third-party
 ||beurettemessenger.com^$third-party
 ||broadcast.pm^$third-party
+||camplace.com^$third-party
 ||camsoda.com^$third-party
 ||caramec.fr^$third-party
 ||carasexe.name^$third-party
@@ -2075,7 +2083,6 @@ _build=iclick-$popup
 ||bowgevyingly.com^
 ||bowlingunauthorized.com^
 ||brashstudiocrucial.com^
-||bravobusboy.com^
 ||brazilprocyon.com^
 ||brocardcored.com^
 ||broosnighed.com^
@@ -2335,7 +2342,6 @@ _build=iclick-$popup
 ||muskurahat.com^
 ||mutatesuet.com^
 ||mybestclick.net^
-||nahnoji.cz^
 ||namersreminds.com^
 ||nanouwho.com^
 ||naplpzlrgslcwj.com^
@@ -2577,6 +2583,7 @@ _build=iclick-$popup
 ||a-calc.de^$third-party
 ||adless.io^$third-party
 ||afminer.com^$third-party
+||averoconnector.com^$third-party
 ||binance.org^$third-party
 ||browsealoud.com/plus/scripts/$script
 ||cnhv.co^$third-party
@@ -3265,6 +3272,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###container-pub
 ###container_pub
 ###container_pub_left
+###content_pub
 ###contenu-text-publicite
 ###contenu_liens-sponso
 ###contextuel-publicite-video
@@ -3315,7 +3323,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###google-ads-3
 ###google-ads-4
 ###googleAdSense
-###gpt-ad-728x90-970x66-bottom
 ###gpt-ad-habillage
 ###gpt-ad-inread
 ###gpt-leaderboard-top
@@ -3339,6 +3346,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###js-MobileAd-insert
 ###keep-ads
 ###leaderboard.ads
+###left-ads-rail
 ###left_slide_pub
 ###lht-space-ad
 ###mb_video_syncad_bottom
@@ -3399,6 +3407,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pubImg
 ###pubLeft
 ###pubRight
+###pubRight-show
 ###pubTop
 ###pubVideo
 ###pub_1
@@ -3408,6 +3417,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub_728x90
 ###pub_728x90-1
 ###pub_728x90-2
+###pub_articlefooter
 ###pub_banner
 ###pub_banniere_basse
 ###pub_banniere_haute
@@ -3682,6 +3692,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.lbl-ad
 ##.leaderboard728
 ##.leftSideAds
+##.lftBigAds
 ##.liens-sponsorises__external
 ##.line-adv
 ##.logo-right-ads
@@ -3703,10 +3714,12 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.modAd
 ##.modalPub
 ##.module-pub
+##.module_epg_publicite_level0
 ##.module_sponsored
 ##.mom-ads-wrap
 ##.mpu-adv-revamp
 ##.myAd
+##.native_ad2
 ##.nativeads
 ##.navAd
 ##.newads
@@ -3735,6 +3748,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.player-adx-block
 ##.player-sponsor-block
 ##.player__ads
+##.player_bg_ad
 ##.pmd-ads-300x600
 ##.pmd-ads-desktop
 ##.pmd-ads-mobile
@@ -3983,7 +3997,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.wrapper_pub_sidebar
 ##.xadv-invid2
 ##.xplayer-banner-bottom
-##.yourcolor-ads
 ##.zone_pub_orange
 ##.zonepub
 ##[class*="-ad-placeholder-"]
@@ -4025,7 +4038,6 @@ ahlaejaba.com,net-iris.fr,orange.fr,paruvendu.fr,radio.co.ma,zalotech.com###ad
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 akeo.fr###amazon
-upp-auteurs.fr###annonce_a
 lenouveleconomiste.fr###b_top
 commentcamarche.com,commentcamarche.net###ba_right
 manga-news.com###ban970250
@@ -4158,6 +4170,7 @@ wix.com###wixfooter
 cnews.fr###wrapper-banner
 casatv.ca###wrapperbanner
 troc-velo.com###xpubpart
+alloforfait.fr###zzone
 lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
@@ -4181,7 +4194,6 @@ statistiks.fr##.adz
 permaculteurs.com##.aff
 leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
-madagascar-tribune.com##.annonce
 centre-presse.fr,lamontagne.fr,larep.fr,le-pays.fr,leberry.fr,lechorepublicain.fr,lejdc.fr,lepopulaire.fr,lyonne.fr##.annonce_prompteur
 autojournal.fr,autoplus.fr##.annonces-container
 autojournal.fr,autoplus.fr##.annonces-container-sidebar
@@ -4447,6 +4459,7 @@ tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
 3dnatives.com##a[href*="/linkout/"]
 exefiles.com##a[href*="/recommended/"]
+booska-p.com##a[href*="/rf/"][style]
 1001ebooks.ws##a[href*="/telebooks.html"]
 seneweb.com##a[href*="/xban/"]
 rtl.be##a[href*="://ad.doubleclick.net/"]
