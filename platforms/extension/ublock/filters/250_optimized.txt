@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: rMP8gu+P62epfwD/O2hWmw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1780467391-14400.patch
+! Checksum: WEu7puU+ON7maengV5IJjg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1780553492-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.87
@@ -406,6 +406,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||[2a02:b48:207:1::7]^$all
 ||[2a02:b48:207:1::8]^$all
 ||answers.agency^$all
+||exploreinquiry.com^$all
 ||inquirygrid.com^$all
 ||iyfubh.com^$all
 ||searchvity.com^$all
@@ -1451,7 +1452,6 @@ instacart.com##.AuthModal__Overlay:has(a[href$="/business"])
 mycarly.com##.chakra-dialog__backdrop:style(backdrop-filter:0!important)
 amazon.*##.nav-flyout.nav-signin-tt
 trello.com##.mod-warning.header-banner
-sentrylogin.com/sentry/scripts/*
 pinterest.*##div[data-test-id=giftWrap]
 addons.opera.com###overlay
 deezer.com###modal_login:upward(2)
@@ -1621,6 +1621,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@|https://raw.githubusercontent.com/DandelionSprout/adfilt/*
 @@||kaltura.com^
 @@.dna.ip-only.net^
+@@.in-addr.arpa|
 ||filters.adtidy.org^$badfilter
 ||reports.adguard.com^$badfilter
 ||adtidy.org^$badfilter
@@ -2071,6 +2072,7 @@ $removeparam=mclk
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
 $removeparam=exactag_uk
+$removeparam=LSID
 $removeparam=affuid
 $removeparam=icid2
 $removeparam=refclickid
@@ -2272,8 +2274,6 @@ $removeparam=as_channel
 $removeparam=as_source
 $removeparam=qq-pf-to
 $removeparam=mibextid
-$removeparam=li_source
-$removeparam=li_medium
 $document,removeparam=/^adppopup=[a-eg-zA-EG-Z0-9]/
 $removeparam=relatedposts_hit
 $removeparam=relatedposts_origin
@@ -2505,6 +2505,7 @@ $removeparam=cmpgn,domain=ebay.*
 ||ebay.$removeparam=segname
 ://www.ebay.$document,removeparam=/^itm[a-zA-Z0-9].*$/
 ||ebay.$removeparam=_skw
+$removeparam=hc_location
 $removeparam=sfnsn
 ?*__$~xhr,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
@@ -2723,7 +2724,6 @@ wenku.baidu.com##+js(set, history.replaceState, noopFunc)
 ||bilibili.com^$removeparam=refer_from
 ||bilibili.com^$removeparam=msource
 ||bilibili.com/bangumi$removeparam=theme
-||bilibili.com/audio/au*?$removeparam=type
 ^p=1^$removeparam=p,domain=bilibili.com
 ^t=0^$removeparam=t,domain=bilibili.com
 ||bilibili.com^$removeparam=-Arouter

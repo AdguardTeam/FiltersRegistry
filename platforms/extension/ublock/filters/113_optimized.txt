@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: rWc2J2FX161QkEh2oxe1oQ
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1780537222-14400.patch
+! Checksum: +7uUlZGI45Qowyh2jSGF3A
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1780553490-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.91.67
-! TimeUpdated: 2026-06-04T01:36:54+00:00
+! Version: 2.1.91.68
+! TimeUpdated: 2026-06-04T06:08:04+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -281,6 +281,8 @@
 ://adss.
 ://adx.
 ://afflight.$3p
+://ar.ads.
+://banner-gateway.$3p
 ://banner.*click
 ://banner.*utm_
 ://banners2.$3p
@@ -299,6 +301,7 @@
 ://go.*&zoneid=
 ://install.*&clickid=
 ://link.*&siteid=$3p
+://look.*/offer?prod=
 ://pop.$script,subdocument,3p,xhr
 ://promo.*?site_id=
 ://promo2.$3p
@@ -322,6 +325,7 @@
 =728x90_
 =970x90&
 =970x90_
+=adunit/
 =dynamic_banner&
 =GetAdHtml&
 =popunder&
@@ -358,6 +362,7 @@
 ?r=*&zoneid=
 ?rand=*&blk=*&ref_
 ?redir=*/click?
+?runauction=
 ?size=728x90|$subdocument
 ?sponsor=*&sId=
 ?style=160x600-
@@ -371,6 +376,7 @@
 ?type=ads&
 ?ufuad=
 ?zoneid=*&ab=$script
+?zoneid=*&cid=$script
 ?zoneid=*&ext=$3p
 ?zoneid=*&placement=
 ?zoneid=*&r=
@@ -401,6 +407,7 @@ _480x250.
 _648x60_
 _725_90.
 _728-x-90_
+_728x350.
 _728x90@
 _728x90px_
 _728x90pxl_
@@ -574,6 +581,7 @@ _build=iclick-$popup
 ||admediaking.com^$3p
 ||admuncher.com^$3p
 ||admysports.com^$3p
+||adnplay.com^$3p
 ||adnsolution.net^$3p
 ||adnxtr.com^$3p
 ||adoftheyear.com^$3p
@@ -624,6 +632,7 @@ _build=iclick-$popup
 ||betterbannerscloud.com^$3p
 ||beurettemessenger.com^$3p
 ||broadcast.pm^$3p
+||camplace.com^$3p
 ||camsoda.com^$3p
 ||caramec.fr^$3p
 ||carasexe.name^$3p
@@ -868,7 +877,6 @@ _build=iclick-$popup
 ||bowgevyingly.com^
 ||bowlingunauthorized.com^
 ||brashstudiocrucial.com^
-||bravobusboy.com^
 ||brazilprocyon.com^
 ||brocardcored.com^
 ||broosnighed.com^
@@ -1128,7 +1136,6 @@ _build=iclick-$popup
 ||muskurahat.com^
 ||mutatesuet.com^
 ||mybestclick.net^
-||nahnoji.cz^
 ||namersreminds.com^
 ||nanouwho.com^
 ||naplpzlrgslcwj.com^
@@ -1370,6 +1377,7 @@ _build=iclick-$popup
 ||a-calc.de^$3p
 ||adless.io^$3p
 ||afminer.com^$3p
+||averoconnector.com^$3p
 ||binance.org^$3p
 ||browsealoud.com/plus/scripts/$script
 ||cnhv.co^$3p
@@ -2204,6 +2212,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###pub728bas
 ###pubAside
 ###pubRight
+###pubTop
 ###pubVideo
 ###pub_1
 ###pub_300x250
@@ -2474,6 +2483,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pubTop
 ##.pubVideo
 ##.pub_banner
+##.pub_banner_bot
 ##.pub_banner_h
 ##.pub_banner_top
 ##.pub_carre
@@ -2524,7 +2534,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.reklamgec
 ##.removeAds
 ##.remove_ads
-##.rightPub
 ##.right_middle_ad
 ##.right_top_ad
 ##.river-ad
@@ -2532,6 +2541,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.section-ads-center
 ##.shareaholic-canvas
 ##.side-pub
+##.side-pub-img
 ##.sidebar-adv
 ##.sidebar-header-pub
 ##.sidebar_adds
@@ -2623,7 +2633,6 @@ ahlaejaba.com,net-iris.fr,orange.fr,paruvendu.fr,radio.co.ma,zalotech.com###ad
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 akeo.fr###amazon
-upp-auteurs.fr###annonce_a
 lenouveleconomiste.fr###b_top
 commentcamarche.com,commentcamarche.net###ba_right
 manga-news.com###ban970250
@@ -2756,6 +2765,7 @@ wix.com###wixfooter
 cnews.fr###wrapper-banner
 casatv.ca###wrapperbanner
 troc-velo.com###xpubpart
+alloforfait.fr###zzone
 lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
@@ -2779,7 +2789,6 @@ statistiks.fr##.adz
 permaculteurs.com##.aff
 leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
-madagascar-tribune.com##.annonce
 centre-presse.fr,lamontagne.fr,larep.fr,le-pays.fr,leberry.fr,lechorepublicain.fr,lejdc.fr,lepopulaire.fr,lyonne.fr##.annonce_prompteur
 autojournal.fr,autoplus.fr##.annonces-container
 autojournal.fr,autoplus.fr##.annonces-container-sidebar
@@ -3044,6 +3053,7 @@ tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
 3dnatives.com##a[href*="/linkout/"]
 exefiles.com##a[href*="/recommended/"]
+booska-p.com##a[href*="/rf/"][style]
 1001ebooks.ws##a[href*="/telebooks.html"]
 seneweb.com##a[href*="/xban/"]
 rtl.be##a[href*="://ad.doubleclick.net/"]
