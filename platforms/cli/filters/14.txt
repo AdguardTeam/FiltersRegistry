@@ -1,9 +1,9 @@
-! Checksum: FPVGe+CAGTG2/2gRzJYUhw
-! Diff-Path: ../patches/14/14-s-1780638031-3600.patch
+! Checksum: cHcJ//Q63aQjigtJTDhNPA
+! Diff-Path: ../patches/14/14-s-1780645269-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.78
-! TimeUpdated: 2026-06-05T05:38:02+00:00
+! Version: 2.2.69.79
+! TimeUpdated: 2026-06-05T07:38:31+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2613,6 +2613,10 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+blindtyping.com#%#//scriptlet('trusted-set-local-storage-item', 'BLINDTYPING.accepted-cookies', '{"essential":true,"analytics":false,"marketing":false}')
+talep.peugeot.com.tr##.ihm-popup-overlay
+talep.peugeot.com.tr##.ihm-popup
+peugeot.com.tr##._psaihm_css_collapse
 sostav.ru##body > div[style]:has(> p > a[href="https://www.sostav.ru/page/policy"])
 ispazio.net##div[id^="isp-consent-"]
 sravni.id#%#//scriptlet('trusted-set-local-storage-item', 'sravni-cookies-policy', '{"isAgree":true,"timestamp":99999999999999}')
@@ -2655,8 +2659,8 @@ kolaygelsin.com##div[class^="Box_container___"][data-testid="box-container"]:has
 expresskargo.com.tr##div[data-testid="cookie-banner-overlay"]
 opentix.life##.fix-bottom
 eker.com###eker-cerez-banner
-ukrinform.ua#$##cookie-banner { display: none !important; }
-ukrinform.ua#$#html { overflow: auto !important; }
+ukrinform.net,ukrinform.ua#$##cookie-banner { display: none !important; }
+ukrinform.net,ukrinform.ua#$#html { overflow: auto !important; }
 sushi-karate.ru##div[data-legal-panel]
 trhaber.com.tr##div.fixed:has(> div > p > a[href="/kurumsal/cerez-politikasi"])
 ||pcekspert.com/assets/pce-consent.js
@@ -19012,8 +19016,9 @@ focusme.com,one.com.mt#@#.cli-popupbar-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231983
 @@||cdn.cookielaw.org/consent/$domain=nypost.com
 @@||cdn.cookielaw.org/logos/$domain=nypost.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/232901
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231902
-ukrinform.ua#@##cookie-banner
+ukrinform.net,ukrinform.ua#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231984
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=tntsports.co.uk
 @@||cdn.cookielaw.org/consent/*.json$domain=tntsports.co.uk
@@ -24437,7 +24442,9 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
 dumpert.nl#%#//scriptlet('set-cookie', 'adblock-modal-declined', 'true')
-peacocktv.com##div[role="alert"][data-testid="notification-PlaybackAdBlocker"]
+peacocktv.com#@#.adsbox
+peacocktv.com#%#//scriptlet('trusted-replace-argument', 'Promise', '0', 'noopPromiseResolve', '/\|\|0===.\.offsetHeight|freewheel\.tv\/static\/creatives\/fw-ad/')
+||vi.freewheel.tv/static/creatives/fw-ad-300x250.jpg$image,redirect=2x2-transparent.png,domain=peacocktv.com
 fuucdayo.com#$#.fuuc-adblock-overlay { display: none !important; }
 fuucdayo.com#$#.fuuc-adblock-overlay-open { overflow: auto !important; }
 thesun.co.uk#%#//scriptlet('remove-node-text', 'script', 'ncuAb')
@@ -25966,7 +25973,6 @@ zkillboard.com###adsensetop
 ||ura-inform.com/img/ludynaroky2018.gif
 ||venea.net/js/ab.js
 ||venea.net/web/ab_message
-||vi.freewheel.tv/static/creatives/fw-ad-300x250.jpg$image,redirect=1x1-transparent.gif,domain=peacocktv.com
 ||vili.io/img/adblock-banner.gif
 ||vsthouse.ru/adregain-anti.js
 ||web.cofp.ru/templates/webcofp_new/js/cookie_check.min.js
@@ -27232,6 +27238,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+blindtyping.com##.Toastify__toast-container
 napensii.ua###elementor-popup-modal-411249
 toustream.xyz##div[style^="position: fixed; inset: 0px; background:"]
 caranddriver.com##li#shop-new-cars + div.react-tooltip
@@ -36479,13 +36486,14 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
 ! ##a[href^="https://www.google.com/preferences/source?q="]
-polygon.com,autoevolution.com,onedio.co,sn-jp.com,games.gg,hongkongfp.com,computerbase.de,gzt.com,crash.net,foxsports.com.mx,theguardian.com,star.com.tr,halktv.com.tr,zaxid.net,ballotpedia.org,timesofmalta.com,24tv.ua,thepost.co.nz,sportbible.com,washingtonpost.com,expert.in.ua,turkiyegazetesi.com.tr,aksam.com.tr,trhaber.com.tr,droidwin.com,onedio.com,cheezburger.com,tastesbetterfromscratch.com,techgear.gr,glavcom.ua,noticias.yahoo.com,hurriyet.com.tr,dexerto.com,saltandbaker.com,bbc.com,decrypt.co,uniladtech.com,mothership.sg,pcmag.com,coindesk.com,sammyfans.com,m9.news,crankers.com,asiaone.com,cbr.com,thedailyjagran.com,digitaltrends.com,hardwaretimes.com,www.yahoo.com,interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
+focus.ua,polygon.com,autoevolution.com,onedio.co,sn-jp.com,games.gg,hongkongfp.com,computerbase.de,gzt.com,crash.net,foxsports.com.mx,theguardian.com,star.com.tr,halktv.com.tr,zaxid.net,ballotpedia.org,timesofmalta.com,24tv.ua,thepost.co.nz,sportbible.com,washingtonpost.com,expert.in.ua,turkiyegazetesi.com.tr,aksam.com.tr,trhaber.com.tr,droidwin.com,onedio.com,cheezburger.com,tastesbetterfromscratch.com,techgear.gr,glavcom.ua,noticias.yahoo.com,hurriyet.com.tr,dexerto.com,saltandbaker.com,bbc.com,decrypt.co,uniladtech.com,mothership.sg,pcmag.com,coindesk.com,sammyfans.com,m9.news,crankers.com,asiaone.com,cbr.com,thedailyjagran.com,digitaltrends.com,hardwaretimes.com,www.yahoo.com,interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
 !
 ! NOTE: Popular rules ⬆️
 ! !SECTION: Subscriptions - Popular rules
 !
 ! SECTION: Subscriptions - Regular rules
 !
+gordonua.com##.socialSubscribeBanner
 dn.pt##div[class^="follow-us"]
 obozrevatel.com##.subscribeBanner
 nikvesti.com##.google-source-btn
@@ -37380,7 +37388,6 @@ gam3s.gg##.container > div.justify-center:has(> div.relative > form input[type="
 latimes.com##modality-custom-element[name="metering-bottompanel"]
 latimes.com##div[data-element^="newsletter-module-layout"]
 efsyn.gr##body > div[id^="popup-"]:has(iframe[src^="https://link.argoncrm.com/widget/form/"])
-123telugu.com##.elementor-widget-shortcode:has(> .elementor-shortcode > .mc-follow-wrap)
 prmira.ru##.tg-banner_mobile
 prmira.ru##.matter-after > .typo-class
 prmira.ru##.matter-after > div:not([class]):not([role]):has(> div[class^="Subscribe_subscribe"])
@@ -46095,6 +46102,8 @@ flightradar24.com##[data-id="a5b8151"][data-element_type="widget"]
 flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
+!+ NOT_OPTIMIZED
+123telugu.com##.elementor-widget-shortcode:has(> .elementor-shortcode > .mc-follow-wrap)
 !+ NOT_OPTIMIZED
 sostav.ru##.tgzen
 !+ NOT_OPTIMIZED
@@ -60092,8 +60101,11 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232888
+ipaomtk.com#%#//scriptlet('adjust-setInterval', 'timeLeft--', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232585
-wcostream.tv,wcoanimedub.tv,wcoflix.tv,wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com#%#(()=>{const e=()=>{const e=document.querySelector('iframe[src^="https://embed.wcostream.com/inc/embed/index.php?"]');if(e){const c=e.src.replace("://embed.wcostream.com/inc/embed/index.php","://embed.wcopremium.tv/inc/embed/video-js.php");e.src=c}};"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e()})();
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
+embed.wcostream.com#%#(()=>{if(!location.href.includes("://embed.wcostream.com/inc/embed/index.php?file="))return;const e=`/inc/embed/video-js-new.php${location.search}`;location.href=e})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232249
 techypopat.in#%#//scriptlet('adjust-setInterval', 'timeLeft', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231771
