@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1z5m3Xp8GQf4MclXZR3CwA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780645297-3600.patch
+! Checksum: eEtnu4b7i3JNM0fkH4Ip7w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1780651195-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.70.37
-! TimeUpdated: 2026-06-05T07:37:49+00:00
+! Version: 2.4.70.38
+! TimeUpdated: 2026-06-05T09:16:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||lustygg.com^$all
 ||fetchperiodic.com^
 ||betus.com.pa^$all
 ||aboveboardcomplicate.com^
@@ -10766,6 +10767,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232905
+freemagazines.top##+js(addEventListener-defuser, DOMContentLoaded, displayCfAbOverlay)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232886
 rtl.hr###adblock:remove()
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232779
@@ -15615,6 +15618,7 @@ tnaflix.com##.adsBox.pub_300x250m.pub_728x90.text-ad:style(display: block !impor
 ! https://github.com/AdguardTeam/AdguardFilters/issues/78775
 @@||10.com.au^$generichide
 @@||10play.com.au^$generichide
+10.com.au##+js(prevent-fetch, method:HEAD)
 10.com.au,10play.com.au##+js(spoof-css, .ad-test-element, display, block)
 10.com.au,10play.com.au##+js(prevent-fetch, /pagead2\.googlesyndication\.com|tag\/js\/gpt\.js|securepubads\.g\.doubleclick\.net\/static|pubads\.g\.doubleclick\.net\/gampad\/ads|prod\/utag\.js|tealiumiq\.com|analytics\.tiktok\.com|\/ads\/banner/)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xhr,redirect=noop.js,domain=10play.com.au|10.com.au,script
@@ -20044,7 +20048,7 @@ banglanews24.com##+js(abort-current-script, $, #myModal)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41233
 !
 !---------------------------------------------------------------------
-!----------------------------- Bulgarian -----------------------------
+!----------------------------- Bosnian -----------------------------
 !---------------------------------------------------------------------
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232877
 ||jagledam.com/js/ad-placement.js
@@ -20073,6 +20077,7 @@ fofmyanmar.com##center > a[rel="noopener noreferrer"] > img
 !
 ! NOTE: Croatian
 !
+index.hr##div.js-carousel-campaign
 dnevnik.hr##.banner-holder
 24sata.hr##.dfp_banner
 24sata.hr##.js_topProducts
@@ -37257,6 +37262,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+geeks3d.com##center[style^="width:"]:has(> .adsbygoogle)
+geeks3d.com##td[style*="background-color:"][style*="border:"] > a[target="_blank"] > img
 publishersweekly.com###bbstar-popin
 publishersweekly.com###right-column-boom-box
 ipaomtk.com##.ipaomtk-ad-slot
