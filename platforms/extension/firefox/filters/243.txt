@@ -1,14 +1,14 @@
-! Checksum: 1+6IdGvtUVkU/I1bLPAtBw
-! Diff-Path: ../patches/243/243-s-1780607350-14400.patch
+! Checksum: YK+lls8Wgushhrh6IEr4uQ
+! Diff-Path: ../patches/243/243-s-1780737650-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.65
-! TimeUpdated: 2026-06-04T21:06:31+00:00
+! Version: 2.0.24.66
+! TimeUpdated: 2026-06-06T09:18:15+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-06-04 20:31:50 CEST
+! Last modified: 2026-06-06 09:52:26 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -787,9 +787,11 @@ hockeynews.se##a[href*="/speltips"]
 hockeynews.se#$#div[class^="paywall"].hidden { display:unset!important; }
 hockeynews.se##div[style^="min-height"]:has(.maxetise)
 hockeynews.se#$#html.overflow-hidden { overflow:unset!important; }
+hockeynews.se##.fixed.bottom-0:has(a[href*="sesamy.com"])
 hockeynews.se##.fixed.z-50:has(a[href="/plus"])
 hockeynews.se##.h-\[152px\]:has(iframe)
 hockeynews.se##.items-center:has(a[target="_blank"])
+hockeynews.se##.readPeak-container-frontpage + div > .rounded-lg:has(img[src*="adform."])
 hockeynews.se##.rounded-lg.items-center:has(a[href*="/speltips"])
 hockeysverige.se##div[style*="min-height"]:has(.annons)
 hockeysverige.se##.Odds_Widget_Ad, div[class*="_panorama"], .category-sponsrade:not(body), div[class*="_in_article"], div[class*="desktop_sidebar"], div[class*="mobile_square"], figure a[target="_blank"] img, #seo-text-wrapper, div[id$="_leadeboard"]
@@ -1368,7 +1370,7 @@ skidspar.se#?#div[id^="div-gpt-ad"]:upward(1)
 skidspar.se#?#.MuiChip-label:contains(Sponsrat):upward(article)
 skidspar.se##.MuiDialog-root
 skillingaryd.nu##div[id$="banner-wrap"], div[class*="premium-banners"], .sidebar__ads
-skippo.se##a[href*="/sponsra"]
+skippo.se##a[href*="/sponsra"], div[data-post-url^="/sponsrat"]
 skogen.se##.jobslider.up
 skogsforum.se#$?##hqModal { remove: true; }
 skogsforum.se##.masthead, .col-right, a[href^="https://goo.gl/"], a[href*="//bit.ly/"], a[target="_blank"][onclick], #ap1, .modal, .modal-backdrop, div[style^="height"]:empty, .b1a, .col-left + div
@@ -1513,7 +1515,7 @@ tekniknytt.se##:is(.top-news, .big_article):has(img[src*="casino"], img[src*="su
 tekniksmart.se##:is(.elementor-widget-container, .elementor-widget-html):has(a[href*="casino"])
 teknikveckan.se##.no-ad
 teknikveckan.se#?#.pill:contains(/spons/i):upward(.grid-item, .pinned, .articleFlow-item)
-teknikveckan.se,di.se,dn.se,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,driva-eget.se,ifokus.se,sv.picmix.com,ifragasatt.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se,aktiespararna.se,receptfavoriter.se,tyda.se,mittforetag.com,lajvo.se,magazin24.se,aktuellsakerhet.se,itmag.se,affarerinorr.se,electronic.se,brukshunden.se,kopahund.se,ingenjoren.se,dietisten.net,styrelseguiden.se,maklarvarlden.se,vardfokus.se##.ad
+teknikveckan.se,di.se,dn.se,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,driva-eget.se,ifokus.se,sv.picmix.com,ifragasatt.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se,aktiespararna.se,receptfavoriter.se,tyda.se,mittforetag.com,lajvo.se,magazin24.se,aktuellsakerhet.se,itmag.se,affarerinorr.se,electronic.se,brukshunden.se,kopahund.se,ingenjoren.se,dietisten.net,styrelseguiden.se,maklarvarlden.se,vardfokus.se,hockeynews.se##.ad
 teknologiexperten.se##.item:has(img[src*=".se-www"])
 telgenytt.se##.tn-ad, .tn-ad-notice, #popup
 temaarkiv.se##.md\:mt-\[100px\]:has(script[data-adfscript])
@@ -2080,7 +2082,7 @@ zeromagazine.nu##div[id^="ads"]
 /adsaga.
 /adsense.index.js$domain=husbil.se
 /adsm.macro$script
-/ads$domain=allastudier.se|cirkulation.se|ordmedzcxy.se|rimlab.se|allaaktier.se|varldenom.com|kottchark.se|epochtimes.se
+/ads$domain=allastudier.se|cirkulation.se|ordmedzcxy.se|rimlab.se|allaaktier.se|varldenom.com|kottchark.se|epochtimes.se|skippo.se
 /ads-countdown.js$domain=aftonbladet.se
 /ads-dm.js
 /ads.for.me/jsa?$script
