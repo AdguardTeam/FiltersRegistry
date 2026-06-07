@@ -1,5 +1,5 @@
-! Checksum: muWW86GtoB9Q6y6PqRhjIA
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1780760110-3600.patch
+! Checksum: p8nu+qm3Ba+a9BcrnQVpJw
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1780802399-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.29.64
@@ -75,7 +75,6 @@ myacgmall.com.tw,olhelmets.com#?##root > .container-component .slide-push-menu ~
 vamprivet.ru##section[class^="styles-module__download_"]
 people.com##.promo-unit
 joysound.com##.jp-cmp-topics-ad-001
-joysound.com##.flex > div.w-full:has(> ul > li > a[data-app-id="karaoke"])
 jobs.meinestadt.de##.ms-promos-teaser
 google.com###js-qr-popup
 bandsintown.com##header > div > div:has(> svg > path[d^="M19.5 12.5V"])
@@ -195,7 +194,6 @@ tinybeans.com##.block-download-app
 delivery.com,mrdelivery.com#%#//scriptlet('trusted-set-local-storage-item', 'dcomApp-dcomApp', '{"androidBanner-closed":{"value":true,"expiration":null}}')
 seelow.de#%#//scriptlet('trusted-set-cookie', 'cookieconsentTimestamp', '$now$')
 seelow.de#%#//scriptlet('trusted-set-cookie', 'cookieconsent', 'technical')
-pay.yandex.ru##div[class*="QrCode_fixed"]
 avia.tutu.ru##.topBannerSection
 trip.com##div[module-name="flightPopup"]
 nzpost.co.nz###block-applaunchbanner
@@ -217,7 +215,6 @@ people.com##.people-sc-block-featuredlink--people-app-promo
 people.com##.puzzler-promo-unit--homepage
 people.com##.get-the-app-link
 rover.com##div[edge-id="app-install-banner"]
-books.yandex.ru##div[class^="ShowcaseAppOfferBanner_container"]
 books.yandex.ru##button[class*="DesktopHeaderPromoOrPlusButton"]
 paribucineverse.com###app-qr-modal
 hoff.ru##.suggest-wrapper
@@ -239,7 +236,6 @@ offerup.com##button[aria-label="Get the app"]
 offerup.com##.MuiGrid-direction-xs-column > div.MuiGrid-item:has(img[alt="Offerup application QR code"])
 burgerking.co.jp#%#//scriptlet('trusted-set-local-storage-item', 'is_mainpopup_opened', 'none_expired')
 kolesa.kz##.kolesa-app-promo
-m.olx.ua##div[class^="css-"]:has(> button[data-testid="app-install-banner-open"])
 chirashiplus.jp##.contents > a[href="https://app.chirashiplus.jp/"]
 hotokami.jp##a[onclick*="app"]
 suzuri.jp,zarahome.com,flipp.com##.download-app-banner
@@ -394,6 +390,8 @@ doordash.com#%#//scriptlet('trusted-set-local-storage-item', 'appDownloadPromptD
 t.shuqi.com##.ReaderFreeFixedGuideBtn
 enerjisa.com.tr,easy.co.il##.qr-container
 dhgate.com###J_appBanner
+gigabaito.com##.app_bottom_banner
+gigabaito.com##.app_cv_footer
 ivoox.com##.attached-app-qr
 search.brave.com##.download-cta
 search.brave.com##.mobile-promo-content-wrapper
@@ -596,6 +594,7 @@ level.travel#%#//scriptlet('trusted-set-cookie', 'lt_go_to_app_mobile_popup', 'h
 perekrestok.ru#%#//scriptlet('trusted-click-element', 'button.app-banner-close', '', '800')
 arabam.com,m.sonyunara.jp,magnit.ru##.install-app-banner
 navitime.co.jp###body-left > div.section:has(> a[href="https://www.navitime.co.jp/pcstorage/html/japan_travel/english/"])
+megamarket.ru##.header-entry-point__app > a
 sketch.pixiv.net##.stores > a > img
 msn.com##div[class^="weatherMobileUpsellContainer-"]
 digitimes.com.tw#%#//scriptlet('abort-current-inline-script', '$', 'apppromo')
@@ -831,6 +830,7 @@ games.dmm.co.jp#?#main > div[class] > div[class]:has(> div[class] > div[class] >
 bfmtv.com#$##android_banner { display: none!important; }
 bfmtv.com#%#//scriptlet('remove-class', 'app_banner', 'body')
 indiatimes.com##.site-header__getapp
+fressnapf.de#$#.smartbanner { display: none !important; }
 yimenapp.com##.widget_image_ad
 crmeb.com##body > div#side
 shafa.ua##.js-catalog-apps-promotion-banner
@@ -1248,7 +1248,6 @@ joongang.co.kr##.goto-app-btn
 kontramarka.ua##.header_top a.android-link
 transit.yahoo.co.jp###mdFatFooter > :not(.elmFooterNav)
 kurashiru.com##.HeroVideoPc
-paypayfleamarket.yahoo.co.jp#?#aside:has(> div > div > div[display="flex"] > div > a[href^="https://play.google.com/store/apps/"])
 house.goo.ne.jp##.r_ocn_banner > a[href^="https://goohouse.onelink.me/"]
 mecicolle.gnavi.co.jp#$#.fixed-banner { display: none !important; }
 mecicolle.gnavi.co.jp#$#body[data-fixed-banner-is-active="true"] #header { padding-top: 0 !important; }
@@ -1299,7 +1298,6 @@ aptoide.com##div[class^="aptoide-installer"]
 nbcnews.com##amp-list#branch-amp-journey
 kino.tricolor.tv#%#//scriptlet('remove-class', 'add_app-module', '.main')
 moovitapp.com##.qr-code-wrapper
-mixch.tv##.app-bnr
 bigo.tv##.load-box
 bigo.tv##.download-dialog
 hinative.com##.mod_banner_bestapp_footer
@@ -1376,6 +1374,7 @@ zavvi.com###productPromotionalMessage
 tenki.jp##.point-app-image-box
 tenki.jp##.ft-app
 calendar.yahoo.co.jp##.js-AppBanner
+search.shutoko-eng.jp##.androidBnr
 magickum.com##.banerpril
 ouest-france.fr##.bp-revive_x10_x14
 ouest-france.fr###bloc_x14
@@ -1408,11 +1407,6 @@ infobus.*##.application-brief
 booking.com##.appacq-banner-rating
 pepper.ru##div[data-track*="app_installs_banner"]
 haveagood.holiday#%#//scriptlet('remove-class', 'top-app-banner-exists', '#contentWrapper')
-asajikan.jp##.apri_b_pc
-asajikan.jp##.appdl1
-asajikan.jp##.appGuidanceArea
-asajikan.jp##.apri_a
-asajikan.jp##.apri_b_sp
 asajikan.jp#%#//scriptlet("set-cookie", "header-guidance-close", "true")
 m.guancha.cn##.g_swiper_container
 m.doviz.com,whowatch.tv,ebay.*,locari.jp##.app-download-banner
@@ -1803,6 +1797,7 @@ m.dm5.com,manhuaren.com###index-ad
 m.dm5.com,manhuaren.com##.ad-top-info
 gnavi.co.jp##.under-pager-edit-area a[href^="https://play.google.com/store"]
 olx.ua##.footerapps
+symbolab.com###itunesLink
 intertop.ua###plash_top_large
 weathernews.jp##aside#sub a[href="https://weathernews.jp/app/"]
 weathernews.jp###link_banner > ul.small > li.web
