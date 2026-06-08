@@ -12,6 +12,10 @@
 ! Bad: example.org###rek (should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/232549
+bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.pushState', '2', 'repl:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
+bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.replaceState', '2', 'repl:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
+!
 ! Youtube
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -182411,8 +182415,7 @@ giga.chat#%#//scriptlet('set-local-storage-item', '/DEVICE_ID/', '$remove$')
 ||common-api.rozetka.*/collect/
 ||aizhantj.com*/tjpv/?cc=
 ||goto.startracking.ru/api/v1/impression?aff_id=
-||users.videasy.to/api/track
-||users.videasy.net/api/track
+||users.videasy.*/api/track
 ||rs.kuper.ru/v*/track
 ||rs.kuper.ru/v*/batch|
 ||cpa.kuper.ru/api/tracker/
