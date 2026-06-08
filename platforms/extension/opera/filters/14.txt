@@ -1,9 +1,9 @@
-! Checksum: IvJlAmsoxlYVsV1l8N5V/w
-! Diff-Path: ../patches/14/14-s-1780919115-3600.patch
+! Checksum: QR7ObpHr+o9BxOWq7+Dxpw
+! Diff-Path: ../patches/14/14-s-1780925938-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.69.95
-! TimeUpdated: 2026-06-08T11:42:18+00:00
+! Version: 2.2.69.96
+! TimeUpdated: 2026-06-08T13:36:04+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7164,9 +7164,9 @@ bike24.*#%#//scriptlet('trusted-click-element', '.cookie-consent-modal-simple-fo
 newsflare.com##.nf-cookie-consent
 topsporter.net##.penci-wrap-gprd-law
 baltimoresun.com##.osano-cm-dialog-custom
-blue.vanmarcke.com#$##cookieModal { display: none !important; }
-blue.vanmarcke.com#$#.modal-backdrop { display: none !important; }
-blue.vanmarcke.com#$#body.modal-open { overflow: auto !important; }
+heveren.ee,blue.vanmarcke.com#$##cookieModal { display: none !important; }
+heveren.ee,blue.vanmarcke.com#$#.modal-backdrop { display: none !important; }
+heveren.ee,blue.vanmarcke.com#$#body.modal-open { overflow: auto !important; }
 withhive.com##.gdpr_cookie
 visme.co##.vismecookie
 aptelia.pl,dozapteka.pl#$#.popup-cookies { display: none !important; }
@@ -18913,6 +18913,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233132
+heveren.ee#@##cookieModal
 ! https://www.coolermaster.com/en-global broken
 coolermaster.com#@#.cookie-popup:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232332
@@ -27157,6 +27159,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+daily.dev#%#//scriptlet('set-constant', '__extensionScrollPopupInitialised', 'true')
 muko.kr###xt_join_site_addons
 archive.org##psa-banners
 archive.org#%#//scriptlet('hide-in-shadow-dom', 'psa-banners')
@@ -54031,6 +54034,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+reddit.com##advertise-button
 yoso.sp.netkeiba.com###NewPointAreaBaseBrowser
 legendei.net##center > a[target="_blank"] > picture > img
 modelviewer.lol##div.place-content-center:has(> div.items-center > div#ad-alternatives)
