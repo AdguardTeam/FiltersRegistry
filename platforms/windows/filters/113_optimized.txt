@@ -1,9 +1,9 @@
-! Checksum: 7uxu3n45GCX5yTkKNgl91A
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1780882527-14400.patch
+! Checksum: jmWRSTwkwZGMwif18jsGXg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1780899077-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.91.91
-! TimeUpdated: 2026-06-08T01:31:33+00:00
+! Version: 2.1.91.92
+! TimeUpdated: 2026-06-08T06:07:41+00:00
 ! Expires: 12 hours (update frequency)
 &ad_count=
 &ad_unit_
@@ -120,7 +120,6 @@
 /affiliates-landing-
 /amp-ad-exit-
 /api.*/ads?
-/api/publicities/*
 /bandeau-pub-
 /banner/*&site_id=
 /banner/*/300x250
@@ -266,6 +265,7 @@
 ://a.*/display?zone_id=
 ://a.*/interstitial?id=$script
 ://a.*/loader?*&keywords=$third-party
+://acces.*/a.php?
 ://aclick.
 ://act-http-ban.
 ://ad.*&sid=
@@ -299,6 +299,7 @@
 ://fr.*/ads?
 ://get.*&clickid=
 ://go.*&zoneid=
+://goto.*?zoneid=
 ://install.*&clickid=
 ://link.*&siteid=$third-party
 ://look.*/offer?prod=
@@ -567,6 +568,7 @@ _build=iclick-$popup
 ||shop^*?scontext_r=$popup
 ||shop^*cuid/?
 ||xyz^*&zoneid=$popup
+||2town.net^$third-party
 ||3xtraffic.com^$third-party
 ||acexedge.com^$third-party
 ||acxiom-online.com^$third-party
@@ -598,6 +600,7 @@ _build=iclick-$popup
 ||adsenseguard.com^$third-party
 ||adserver.pm^$third-party
 ||adsgarden.com^$third-party
+||adsixmedia.fr^$third-party
 ||adskom.com^$third-party
 ||adsmena.com^$third-party
 ||adsmmgp.com^$third-party
@@ -1106,7 +1109,6 @@ _build=iclick-$popup
 ||jvnpnyqoxoqx.com^
 ||kadam.net^
 ||kernh41.com^
-||khanshabus.com^
 ||klclick.com^
 ||kosseanmudpack.com^
 ||ladenapp.com^
@@ -1120,6 +1122,7 @@ _build=iclick-$popup
 ||limbecculvers.com^
 ||listelstucanae.com^
 ||littlegirlies.org^
+||livepartners.com^
 ||lloveonllne.com^
 ||lmboiwvudolya.com^
 ||loading-delivery2.com^
@@ -1616,7 +1619,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||imagefacile.com^$image
 ||img.root-top.com/topsite/$third-party
 ||img.webme.com/pic/p/piriketseverler/
-||jeu-legal-france.fr/sites/$third-party
 ||jolstatic.fr/www/skins/
 ||jumia.*/banners/
 ||kaltura.com^*/a.mp4|$media
@@ -1697,6 +1699,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||up-banner.wavecdn.net^
 ||vachvoi.cc/picture/files/
 ||vegemiam.fr/wp-content/uploads/$third-party
+||vendezvotrevoiture.fr^$subdocument,third-party
 ||vidazoo.com/aggregate?
 ||vidcoin.com^$domain=aufeminin.com
 ||viously.com/amp/szuG21KBA-F$domain=positivr.fr
@@ -2237,7 +2240,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub-sky
 ###pub-text
 ###pub-top
-###pub160
 ###pub300
 ###pub300x250
 ###pub468x60_text
@@ -2277,6 +2279,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub_pave_article
 ###pub_plop-1
 ###pub_ventre
+###pubbas
 ###pubdirecte
 ###pubdroite
 ###pubfooter
@@ -2297,6 +2300,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###reklama3
 ###reklamarkaplan
 ###right-side-ad
+###rightReklamIc
 ###rightrail-ad-2
 ###sagreklam
 ###shopper-widget-wrapper
@@ -2475,6 +2479,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pub-300x250
 ##.pub-728
 ##.pub-728x90
+##.pub-730x90
 ##.pub-970x90
 ##.pub-Adtech
 ##.pub-after-download
@@ -2627,6 +2632,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.widget_box_pub
 ##.widget_keleops-ad
 ##.widget_keleops-adhalfpage
+##.widget_publicite
 ##.widgetadv
 ##.widgetpub
 ##.window-ad-container
@@ -3068,7 +3074,6 @@ seloger.com##[data-testid="serp-inline-ad"]
 seloger.com##[data-testid="serp-masthead-testid"]
 seloger.com##[data-testid="serp-side-skyscraper"]
 seloger.com##[data-testid="serp-side-skyscraper-top"]
-toutvendre.fr##[href*=".kelkoogroup.net/"]
 fnac.com##[id$="-sponsored_products-0"]
 voyageforum.com##[id*="billboardArround"]
 blick.ch##[id^="appnexus-placement"]
@@ -3090,6 +3095,7 @@ free-reseau.fr##a[href*="&tag=freereseaufr-"]
 amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
+espritlib.com##a[href*="/goto_part.php?"]
 3dnatives.com##a[href*="/linkout/"]
 exefiles.com##a[href*="/recommended/"]
 booska-p.com##a[href*="/rf/"][style]

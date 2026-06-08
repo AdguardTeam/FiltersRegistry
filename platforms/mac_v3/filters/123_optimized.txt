@@ -1,9 +1,9 @@
-! Checksum: T8JPu74eVUNw5G9WcoxWuQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1780882524-14400.patch
+! Checksum: xNPyfV2h5X4bn884OnJnOg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1780899075-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.62.95
-! TimeUpdated: 2026-06-08T01:31:46+00:00
+! Version: 2.1.62.96
+! TimeUpdated: 2026-06-08T06:07:53+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -513,6 +513,7 @@ _social-bar/
 ###smthemes_share
 ###sns-btn
 ###sns_bar
+###sns_btns
 ###social-2
 ###social-actions
 ###social-badges
@@ -525,6 +526,7 @@ _social-bar/
 ###social-buttons-transporter
 ###social-col
 ###social-community-popup
+###social-dropdown-anchor
 ###social-email
 ###social-facebook
 ###social-fb
@@ -991,7 +993,6 @@ _social-bar/
 ##.bloc-social
 ##.bloc_float_share
 ##.block-addtoany
-##.block-facebook
 ##.block-sharebar
 ##.block-sharethis
 ##.block-shariff
@@ -1116,6 +1117,7 @@ _social-bar/
 ##.contSocial
 ##.contenedor_redes_sociales
 ##.content-footer-social
+##.content-share-article
 ##.content-share-wrap
 ##.contentShareLeft
 ##.contentSocialBar
@@ -1402,7 +1404,6 @@ _social-bar/
 ##.footer-bottom__social-links
 ##.footer-col-social
 ##.footer-connect
-##.footer-connect-links
 ##.footer-contact-social
 ##.footer-content-social
 ##.footer-facebook
@@ -1460,7 +1461,6 @@ _social-bar/
 ##.footerSocialIcons
 ##.footerSocialShares
 ##.footerSocials
-##.footerYouTube
 ##.footer__bottom-social
 ##.footer__content-social
 ##.footer__follow
@@ -1880,7 +1880,6 @@ _social-bar/
 ##.logo-social
 ##.logos_redes_sociais
 ##.lsi-social-icons
-##.lst-social
 ##.lst_social
 ##.lzd-follow-us-icon
 ##.m-footer-social
@@ -2232,6 +2231,7 @@ _social-bar/
 ##.sf-sharing
 ##.sf-social
 ##.sfmsb-follow-social-buttons
+##.sfsi_plus_widget
 ##.sfsi_widget
 ##.sfsiaftrpstwpr
 ##.sfsibeforpstwpr
@@ -3984,9 +3984,6 @@ indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 essentiallysports.com##.footer_topBand__VY_5P
 blog.mozilla.org##.ft-c-post-share
-citizen.co.za##.g-cta-sidebar
-citizen.co.za##.g-cta-single
-citizen.co.za##.g-cta-single-socials
 naval-technology.com,railway-technology.com,verdict.co.uk##.gdm-article-share
 news18.com##.gglebtn
 ghacks.net##.ghacks_share_widget
@@ -4000,6 +3997,7 @@ alarabiya.net##.google-news-callout
 dailygalaxy.com,glassalmanac.com##.google-news-card
 cybernews.com,sammobile.com##.google-news-cta
 phonearena.com,quiverquant.com##.google-news-follow
+barchart.com##.google-news-image-wrapper
 bleedingcool.com##.google-news-source
 essentiallysports.com##.google-perference_googlePerference__h94ae
 timesofisrael.com##.google-prefer-module
@@ -4032,7 +4030,6 @@ manutd.com##.home-content-panel__details-social__main-holder
 apa.org##.horizontal-icon-bar
 hrw.org##.hrw-share
 dictionary.cambridge.org##.i-facebook
-pcguide.com##.ic_google_news
 insideclimatenews.org##.icn-share-holder
 insideclimatenews.org##.icn-share-links
 atptour.com##.icon-email
@@ -4068,6 +4065,8 @@ consumerfinance.gov##.m-social-media
 insideevs.com,motor1.uol.com.br##.m1-article-meta_share
 morningstar.com##.mdc-social-share
 amazon.jobs##.media-icons
+middleeastmonitor.com##.memo-footer-social
+middleeastmonitor.com##.memo-top-social
 arabnews.com##.meta-area
 smashingmagazine.com##.meta-box--share
 businessinsider.com##.mi-logo-social-container
@@ -4134,7 +4133,7 @@ sleepfoundation.org##.sh_space.share
 onlinelibrary.wiley.com##.share-access__ctrl
 thedirect.com##.share-bar-2
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
-beincrypto.com##.share-block
+barchart.com,beincrypto.com##.share-block
 ibtimes.co.in##.share-btn-wrp
 dailygalaxy.com,glassalmanac.com##.share-buttons-toggler
 smithsonianmag.com##.share-control
@@ -4147,6 +4146,7 @@ digitimes.com##.share-frame
 cgtn.com,citynews.ca##.share-icon
 mymodernmet.com##.share-it-side
 dailymail.co.uk,fundrazr.com,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
+middleeastmonitor.com##.share-link-btn
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 euronews.rs,thenewstack.io##.share-media
 thehackernews.com##.share-open-modal
@@ -4280,7 +4280,6 @@ military.com,polygon.com##.w-google-addus-btn
 polygon.com##.w-sharing-bottom
 beincrypto.com##.want-to-know-more-block
 dailymail.co.uk,oogtv.nl##.whatsapp
-citizen.co.za##.whatsapp-ad
 aajtak.in,businesstoday.in##.whatsapp_channel
 business-standard.com##.whtsclick
 indiatoday.in##.whtspp_share
@@ -4890,4 +4889,5 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||github.io^$generichide
 @@||ifttt.com^$generichide
 @@||namechk.com^$generichide
+@@||restream.io^$generichide
 @@||zeplin.io^$generichide
