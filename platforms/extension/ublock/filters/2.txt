@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: UoT9AjaVNdthliqlQ0J5bg
-! Diff-Path: ../patches/2/2-s-1780905381-3600.patch
+! Checksum: jumIqekU/LFy/3wMgHwbNg
+! Diff-Path: ../patches/2/2-s-1780912021-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.70.93
-! TimeUpdated: 2026-06-08T07:52:39+00:00
+! Version: 2.4.70.94
+! TimeUpdated: 2026-06-08T09:43:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10920,8 +10920,10 @@ ftuapps.farlad.com##+js(remove-node-text, script, showAntiAdblockOverlay)
 torupload.com##body:style(overflow: auto !important;)
 torupload.com###adblockModal:style(display: none !important;)
 torupload.com##+js(set-constant, loadads, noopFunc)
+! https://github.com/AdguardTeam/AdguardFilters/issues/232976
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228579
-bysevepoin.com,arbitrarydecisions.com##+js(json-prune, adblock_detection force_disable_adblock)
+! Video player with [class^="adblock-notice-"]
+nzn3.org,bysevepoin.com,arbitrarydecisions.com##+js(json-prune, adblock_detection force_disable_adblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228712
 cloudfam.io##+js(prevent-fetch, adsbygoogle)
 @@||cloudfam.io^$generichide
@@ -14124,7 +14126,6 @@ paketmu.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! https://github.com/uBlockOrigin/uAssets/issues/16011
 motorsport.com##+js(abort-current-script, EventTarget.prototype.dispatchEvent, ms-article-comments)
 ||mstm.motorsport.com^$script,~3p,redirect-rule=noop.js
-motorsport.com##+js(addEventListener-defuser, gtmloaderror)
 !#safari_cb_affinity(privacy)
 @@||googletagmanager.com/gtm.js$domain=motorsport.com
 @@||mstm.motorsport.com/mstm.js
@@ -21664,6 +21665,7 @@ autopapa.ge##.top-rek
 !
 ! NOTE: Greek
 !
+spitogatos.gr##.property__deals__listing
 news247.gr##.phaistos_placeholder
 carandmotor.gr##.front-page-banner
 carandmotor.gr##.block-system > article ~ div.heading-container
@@ -37275,8 +37277,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
-wapt.com##.css-1tumxm
-wapt.com##article:has(> div.css-1tumxm)
+sportspyder.com##div[class^="_contentBanner_"]
+forgemods.de##.grid > div[class^="h-full "]:has(> a[target="_blank"])
 wiirom.com##center > div > button[onclick="goDownload()"]
 nine.com.au###desktop-header-ads
 motortrend.com##div.max-lg\:hidden:has(> div.items-center > div[data-ad])
@@ -43878,7 +43880,7 @@ ip.me##.pt-5 > div.col-md-6 > p > a[target="_blank"]
 ||game.downloadtanku.org/wp-content/plugins/cm-pop-up-banners/
 javguard.club,vidguardto.xyz,pistona.xyz,gaystream.click,gaystream.click,go-streamer.net,vgfplay.xyz,tioplayer.com,listeamed.net,bembed.net,embedv.net,vembed.net,vid-guard.com,v6embed.xyz,vgembed.com##body > div[class]:empty
 porntrex.com##iframe.ipp
-macheforum.com,techworm.net,thisisanfield.com,compsmag.com,thisisanfield.com,divernet.com##div[class^="ai-viewport-"]
+esladvice.com,macheforum.com,techworm.net,thisisanfield.com,compsmag.com,thisisanfield.com,divernet.com##div[class^="ai-viewport-"]
 magcourse.site,supjav.ru,umatechnology.org,3dvf.com,aimhaven.com,comicsuniverse.it,macmagazine.com.br,ubunlog.com,thesportsgrail.com,downtownbellevue.com,androidsis.com,voiceofmotown.com,thethaiger.com,unseki.co.jp,wikibio.us,nexus-games.net,freecoursesite.com,formu1a.uno,toolsai.net,rightrasta.com,kaystls.site,gamertweak.com,mrinformatico.it,pianetacellulare.it,inwepo.co,updoc.site,oliveoiltimes.com,cgmagonline.com,happymag.tv,cpophome.com##.code-block
 cpophome.com##.page_ad_container
 cpophome.com##.photo_right_ad
@@ -57459,6 +57461,8 @@ winaero.com##body > div[class] > #page .entry-content > .gad-gads:has(> .gad-gad
 ! winaero.com###custom_html-11
 !
 ! Hearst Television Inc
+gulfcoastnewsnow.com,wapt.com##div[class^="css-"]:has(> div[data-type] > div.ad-container)
+gulfcoastnewsnow.com,wapt.com##article:has(> div[class^="css-"] > div[data-type] > div.ad-container)
 4029tv.com,98online.com,abc-7.com,hearst.com,kcci.com,kcra.com,ketv.com,kmbc.com,koat.com,koco.com,ksbw.com,mor-tv.com,mynbc5.com,nbc-2.com,wapt.com,wbal.com,wbaltv.com,wcvb.com,wdsu.com,wesh.com,wgal.com,wisn.com,wjcl.com,wlky.com,wlwt.com,wmtw.com,wmur.com,wpbf.com,wptz.com,wtae.com,wvtm13.com,wxii12.com,wyff4.com##.listing-page-ad
 ! Other hearst.com sites
 theridgefieldpress.com,thetelegraph.com,beaumontenterprise.com,bigrapidsnews.com,chron.com,ctinsider.com,ctpost.com,darientimes.com,seattlepi.com,expressnews.com,fuelfix.com,greenwichtime.com,houstonchronicle.com,lakecountystar.com,lmtonline.com,manisteenews.com,michigansthumb.com,middletownpress.com,milfordmirror.com,mrt.com,myjournalcourier.com,myplainview.com,mysanantonio.com,ncadvertiser.com,newstimes.com,nhregister.com,ourmidland.com,recordpatriot.com,registercitizen.com,seattlepi.com,sfchronicle.com,sfgate.com,sheltonherald.com,smallbusiness.chron.com,stamfordadvocate.com,theheraldreview.com,thehour.com,theintelligencer.com,timesunion.com,trumbulltimes.com,weekand.com,wiltonbulletin.com,work.chron.com,yourconroenews.com##.ar16-9
@@ -81063,6 +81067,7 @@ browsershots.org#@#.advert_area
 ||12r8t4e28qwz8me12yb5q.rest^
 ||12xlwin4m.com^
 ||130gelh8q.de^
+||132delta.net^
 ||13372product.net^
 ||1337visualize.net^
 ||1338f95c76.com^
@@ -91520,6 +91525,7 @@ browsershots.org#@#.advert_area
 ||dspchided.com^
 ||dspktc.com^
 ||dspultra.com^
+||dspwdz.com^
 ||dsqdbi.com^
 ||dsqvcm.com^
 ||dsqyla.com^
@@ -101857,6 +101863,7 @@ browsershots.org#@#.advert_area
 ||kubicserves.icu^
 ||kubqfszekybaw.website^
 ||kucelglfptill.site^
+||kucyhafaatzxg.space^
 ||kudszedudxi.in^
 ||kudwmaucyncfk.website^
 ||kuebvpq7cej16ve1xpkow.rest^
@@ -103589,6 +103596,7 @@ browsershots.org#@#.advert_area
 ||lyophilhoolalgins.cyou^
 ||lyopieifcjaqb.site^
 ||lyosfxbkdwt.com^
+||lypchoanqfwqz.site^
 ||lypslljhdhveu.website^
 ||lyptaszfhobhx.site^
 ||lyqktmnzhoapj.online^
@@ -103826,6 +103834,7 @@ browsershots.org#@#.advert_area
 ||mannersportalchart.com^
 ||manorflounderheady.com^
 ||manorowlapprehension.com^
+||manropeespece.cfd^
 ||mansionappointmentmoon.com^
 ||mansoundug.com^
 ||manualchaosmartial.com^
@@ -106832,6 +106841,7 @@ browsershots.org#@#.advert_area
 ||nwpwfyhnvqmxd.website^
 ||nwpxuyrumutlj.store^
 ||nwryeirpkvato.one^
+||nwszpbqwkfhdm.site^
 ||nwtdvlersdowe.space^
 ||nwvkpbrceeutp.site^
 ||nwvptbbdwhxb.com^
@@ -107192,6 +107202,7 @@ browsershots.org#@#.advert_area
 ||oedazrjbdxygw.site^
 ||oefdjrivunaqq.website^
 ||oeg9k75z9njgwpj.cfd^
+||oeghfzriitzsz.online^
 ||oegjeeuyatxcm.website^
 ||oehbh5tmjz6lc44u943.cfd^
 ||oeheupxifmgtq.website^
@@ -107842,6 +107853,7 @@ browsershots.org#@#.advert_area
 ||opulent-agency.pro^
 ||opvanillishan.com^
 ||opvvrosxfrql.com^
+||opwcpsrmhs.com^
 ||opwgvbakasvqe.online^
 ||opxglqeagamku.space^
 ||opyavarfwqcpf.store^
@@ -109278,6 +109290,7 @@ browsershots.org#@#.advert_area
 ||piestprevot.com^
 ||pievsejhampai.online^
 ||piewifezeke.com^
+||piferocrozezmudz.cfd^
 ||pifferoengird.cyou^
 ||pifowotorfwvl.online^
 ||pifwtzenjvjnn.space^
@@ -112935,6 +112948,7 @@ browsershots.org#@#.advert_area
 ||rlogcejfsgtar.site^
 ||rlogscbdafnjf.site^
 ||rloqytup54ovpyz8hpb.cfd^
+||rlovygavhheuf.com^
 ||rlrsfxkewwgww.site^
 ||rlsnntgffqnli.online^
 ||rludahcaewkfd.online^
@@ -113069,6 +113083,7 @@ browsershots.org#@#.advert_area
 ||roikingdom.com^
 ||roilskokoon.cyou^
 ||rojakplatearoche.cyou^
+||rokeemidgety.qpon^
 ||rokeyhart.qpon^
 ||rokiiuauifitv.online^
 ||rokmewled.com^
@@ -116860,6 +116875,7 @@ browsershots.org#@#.advert_area
 ||tabloidincapable.com^
 ||taboredgoops.com^
 ||tabretwicht.com^
+||tachiolcoosers.cyou^
 ||tackdisillusion.com^
 ||tackfreed.com^
 ||tackletoumnah.cyou^
@@ -124513,6 +124529,7 @@ browsershots.org#@#.advert_area
 ||yteyqwqnejfxnbi.com^
 ||ytfikvbmz.com^
 ||ytfopunfosbhj.com^
+||ytibejpiwuucg.online^
 ||ytihp.com^
 ||ytinxswlejphn.space^
 ||ytiwffwzbqxya.site^
