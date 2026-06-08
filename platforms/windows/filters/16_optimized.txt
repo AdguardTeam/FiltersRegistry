@@ -1,5 +1,5 @@
-! Checksum: WeR7K4glzvrbyw+QBwdzSg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1780810903-3600.patch
+! Checksum: BvPqRS4oL18Yv49RRfW+Zg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1780888888-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.70
@@ -133,7 +133,6 @@ japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target
 japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
 @@||japscan.$generichide
-/^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.*
 $script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.*
 @@$image,domain=japscan.*
 @@||drive.google.com^$xmlhttprequest,domain=japscan.*
@@ -429,7 +428,6 @@ numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
-south-park-tv.fr##.king-ads
 south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
@@ -1329,7 +1327,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /affiliates-landing-
 /amp-ad-exit-
 /api.*/ads?
-/api/publicities/*
 /bandeau-pub-
 /banner/*&site_id=
 /banner/*/300x250
@@ -1474,6 +1471,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://a.*/display?zone_id=
 ://a.*/interstitial?id=$script
 ://a.*/loader?*&keywords=$third-party
+://acces.*/a.php?
 ://aclick.
 ://act-http-ban.
 ://ad.*&sid=
@@ -1507,6 +1505,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://fr.*/ads?
 ://get.*&clickid=
 ://go.*&zoneid=
+://goto.*?zoneid=
 ://install.*&clickid=
 ://link.*&siteid=$third-party
 ://look.*/offer?prod=
@@ -1775,6 +1774,7 @@ _build=iclick-$popup
 ||shop^*?scontext_r=$popup
 ||shop^*cuid/?
 ||xyz^*&zoneid=$popup
+||2town.net^$third-party
 ||3xtraffic.com^$third-party
 ||acexedge.com^$third-party
 ||acxiom-online.com^$third-party
@@ -1806,6 +1806,7 @@ _build=iclick-$popup
 ||adsenseguard.com^$third-party
 ||adserver.pm^$third-party
 ||adsgarden.com^$third-party
+||adsixmedia.fr^$third-party
 ||adskom.com^$third-party
 ||adsmena.com^$third-party
 ||adsmmgp.com^$third-party
@@ -2314,7 +2315,6 @@ _build=iclick-$popup
 ||jvnpnyqoxoqx.com^
 ||kadam.net^
 ||kernh41.com^
-||khanshabus.com^
 ||klclick.com^
 ||kosseanmudpack.com^
 ||ladenapp.com^
@@ -2328,6 +2328,7 @@ _build=iclick-$popup
 ||limbecculvers.com^
 ||listelstucanae.com^
 ||littlegirlies.org^
+||livepartners.com^
 ||lloveonllne.com^
 ||lmboiwvudolya.com^
 ||loading-delivery2.com^
@@ -2805,7 +2806,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||imagefacile.com^$image
 ||img.root-top.com/topsite/$third-party
 ||img.webme.com/pic/p/piriketseverler/
-||jeu-legal-france.fr/sites/$third-party
 ||jolstatic.fr/www/skins/
 ||jumia.*/banners/
 ||kaltura.com^*/a.mp4|$media
@@ -2842,7 +2842,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||proxy.ads.canalplus-bo.net^
 ||proxy.vidazoo.com^
 ||pub.groupe-ldlc.com^
-||r.kelkoo.com^$domain=toutvendre.fr
 ||ratehub.ca/widgets/$third-party
 ||recettes.de/images/logos/$third-party
 ||regie-agricole.com^*/pubs^$third-party
@@ -2879,6 +2878,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||up-banner.wavecdn.net^
 ||vachvoi.cc/picture/files/
 ||vegemiam.fr/wp-content/uploads/$third-party
+||vendezvotrevoiture.fr^$subdocument,third-party
 ||vidazoo.com/aggregate?
 ||vultr.com/?ref=$third-party
 ||vuplus-support.org/custom_files/banner.gif
@@ -3289,6 +3289,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###block-gc-ad-bloc-droite-1
 ###block-gc-ad-dhtml
 ###block-gc-ad-megaban-haut
+###block_pub
 ###bottom-adv
 ###bottom_pub
 ###bsa-block-125--125
@@ -3498,6 +3499,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pubarticle3
 ###pubbas
 ###pubcentrale
+###pubchageapresmiddle
 ###pubdirecte
 ###pubdroite
 ###pubflottante
@@ -3531,6 +3533,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###reklama3
 ###reklamarkaplan
 ###right-side-ad
+###rightReklamIc
 ###right_ad_3
 ###right_ad_4
 ###right_pub
@@ -3759,6 +3762,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.module_epg_publicite_level0
 ##.module_sponsored
 ##.mom-ads-wrap
+##.movie_728_90
 ##.mpu-adv-revamp
 ##.myAd
 ##.native_ad2
@@ -3800,6 +3804,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.porn-videos-ads
 ##.position_pub
 ##.propads
+##.pub-160-600
 ##.pub-300
 ##.pub-300-250
 ##.pub-300-250-600
@@ -3814,6 +3819,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pub-970
 ##.pub-970x90
 ##.pub-Adtech
+##.pub-adsn
 ##.pub-after-download
 ##.pub-ban
 ##.pub-banner
@@ -3957,6 +3963,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.sd-ad-container
 ##.section-ads-center
 ##.shareaholic-canvas
+##.shareaholic-dis-ad-col-2
 ##.shopperAds
 ##.shvertise-banner
 ##.side-pub
@@ -3976,6 +3983,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.smiliar_ads
 ##.soar-media-global
 ##.special-banner
+##.sponsored-amazon
 ##.sponsored-articles
 ##.sponsored-fly
 ##.sponsored-fly__brand
@@ -4483,7 +4491,6 @@ seloger.com##[data-testid="serp-inline-ad"]
 seloger.com##[data-testid="serp-masthead-testid"]
 seloger.com##[data-testid="serp-side-skyscraper"]
 seloger.com##[data-testid="serp-side-skyscraper-top"]
-toutvendre.fr##[href*=".kelkoogroup.net/"]
 fnac.com##[id$="-sponsored_products-0"]
 voyageforum.com##[id*="billboardArround"]
 blick.ch##[id^="appnexus-placement"]
@@ -4505,6 +4512,7 @@ free-reseau.fr##a[href*="&tag=freereseaufr-"]
 amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
+espritlib.com##a[href*="/goto_part.php?"]
 3dnatives.com##a[href*="/linkout/"]
 exefiles.com##a[href*="/recommended/"]
 booska-p.com##a[href*="/rf/"][style]

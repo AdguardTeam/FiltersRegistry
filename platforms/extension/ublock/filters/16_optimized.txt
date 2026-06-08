@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: f5c0gWwefcj2oC5bhe5ElQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1780810892-3600.patch
+! Checksum: jCL73vvcGRGJ4fN8faoDUA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1780888875-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.70
@@ -394,7 +394,6 @@ numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
-south-park-tv.fr##.king-ads
 south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
@@ -1294,7 +1293,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /affiliates-landing-
 /amp-ad-exit-
 /api.*/ads?
-/api/publicities/*
 /bandeau-pub-
 /banner/*&site_id=
 /banner/*/300x250
@@ -1439,6 +1437,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://a.*/display?zone_id=
 ://a.*/interstitial?id=$script
 ://a.*/loader?*&keywords=$3p
+://acces.*/a.php?
 ://aclick.
 ://act-http-ban.
 ://ad.*&sid=
@@ -1472,6 +1471,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://fr.*/ads?
 ://get.*&clickid=
 ://go.*&zoneid=
+://goto.*?zoneid=
 ://install.*&clickid=
 ://link.*&siteid=$3p
 ://look.*/offer?prod=
@@ -1740,6 +1740,7 @@ _build=iclick-$popup
 ||shop^*?scontext_r=$popup
 ||shop^*cuid/?
 ||xyz^*&zoneid=$popup
+||2town.net^$3p
 ||3xtraffic.com^$3p
 ||acexedge.com^$3p
 ||acxiom-online.com^$3p
@@ -1771,6 +1772,7 @@ _build=iclick-$popup
 ||adsenseguard.com^$3p
 ||adserver.pm^$3p
 ||adsgarden.com^$3p
+||adsixmedia.fr^$3p
 ||adskom.com^$3p
 ||adsmena.com^$3p
 ||adsmmgp.com^$3p
@@ -2279,7 +2281,6 @@ _build=iclick-$popup
 ||jvnpnyqoxoqx.com^
 ||kadam.net^
 ||kernh41.com^
-||khanshabus.com^
 ||klclick.com^
 ||kosseanmudpack.com^
 ||ladenapp.com^
@@ -2293,6 +2294,7 @@ _build=iclick-$popup
 ||limbecculvers.com^
 ||listelstucanae.com^
 ||littlegirlies.org^
+||livepartners.com^
 ||lloveonllne.com^
 ||lmboiwvudolya.com^
 ||loading-delivery2.com^
@@ -2770,7 +2772,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||imagefacile.com^$image
 ||img.root-top.com/topsite/$3p
 ||img.webme.com/pic/p/piriketseverler/
-||jeu-legal-france.fr/sites/$3p
 ||jolstatic.fr/www/skins/
 ||jumia.*/banners/
 ||kaltura.com^*/a.mp4|$media
@@ -2807,7 +2808,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||proxy.ads.canalplus-bo.net^
 ||proxy.vidazoo.com^
 ||pub.groupe-ldlc.com^
-||r.kelkoo.com^$domain=toutvendre.fr
 ||ratehub.ca/widgets/$3p
 ||recettes.de/images/logos/$3p
 ||regie-agricole.com^*/pubs^$3p
@@ -2844,6 +2844,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||up-banner.wavecdn.net^
 ||vachvoi.cc/picture/files/
 ||vegemiam.fr/wp-content/uploads/$3p
+||vendezvotrevoiture.fr^$subdocument,3p
 ||vidazoo.com/aggregate?
 ||vultr.com/?ref=$3p
 ||vuplus-support.org/custom_files/banner.gif
@@ -3254,6 +3255,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###block-gc-ad-bloc-droite-1
 ###block-gc-ad-dhtml
 ###block-gc-ad-megaban-haut
+###block_pub
 ###bottom-adv
 ###bottom_pub
 ###bsa-block-125--125
@@ -3463,6 +3465,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###pubarticle3
 ###pubbas
 ###pubcentrale
+###pubchageapresmiddle
 ###pubdirecte
 ###pubdroite
 ###pubflottante
@@ -3496,6 +3499,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###reklama3
 ###reklamarkaplan
 ###right-side-ad
+###rightReklamIc
 ###right_ad_3
 ###right_ad_4
 ###right_pub
@@ -3724,6 +3728,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.module_epg_publicite_level0
 ##.module_sponsored
 ##.mom-ads-wrap
+##.movie_728_90
 ##.mpu-adv-revamp
 ##.myAd
 ##.native_ad2
@@ -3765,6 +3770,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.porn-videos-ads
 ##.position_pub
 ##.propads
+##.pub-160-600
 ##.pub-300
 ##.pub-300-250
 ##.pub-300-250-600
@@ -3779,6 +3785,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pub-970
 ##.pub-970x90
 ##.pub-Adtech
+##.pub-adsn
 ##.pub-after-download
 ##.pub-ban
 ##.pub-banner
@@ -3922,6 +3929,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.sd-ad-container
 ##.section-ads-center
 ##.shareaholic-canvas
+##.shareaholic-dis-ad-col-2
 ##.shopperAds
 ##.shvertise-banner
 ##.side-pub
@@ -3941,6 +3949,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.smiliar_ads
 ##.soar-media-global
 ##.special-banner
+##.sponsored-amazon
 ##.sponsored-articles
 ##.sponsored-fly
 ##.sponsored-fly__brand
@@ -4448,7 +4457,6 @@ seloger.com##[data-testid="serp-inline-ad"]
 seloger.com##[data-testid="serp-masthead-testid"]
 seloger.com##[data-testid="serp-side-skyscraper"]
 seloger.com##[data-testid="serp-side-skyscraper-top"]
-toutvendre.fr##[href*=".kelkoogroup.net/"]
 fnac.com##[id$="-sponsored_products-0"]
 voyageforum.com##[id*="billboardArround"]
 blick.ch##[id^="appnexus-placement"]
@@ -4470,6 +4478,7 @@ free-reseau.fr##a[href*="&tag=freereseaufr-"]
 amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
+espritlib.com##a[href*="/goto_part.php?"]
 3dnatives.com##a[href*="/linkout/"]
 exefiles.com##a[href*="/recommended/"]
 booska-p.com##a[href*="/rf/"][style]
