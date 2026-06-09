@@ -1,9 +1,9 @@
-! Checksum: AVUqjuC5SEEILK9GdLJiqQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1780968297-14400.patch
+! Checksum: 39h/rabpSRid38az5cPOrA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1780984592-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.63.1
-! TimeUpdated: 2026-06-09T01:22:12+00:00
+! Version: 2.1.63.2
+! TimeUpdated: 2026-06-09T05:53:38+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -16,7 +16,6 @@
 -sharebar.
 -social-sidebar.
 -Social-Sidebar/
--social-slider/
 -sprite-social-
 .sharing.js
 /accesspress-social-counter/*
@@ -57,6 +56,7 @@
 /needsharebutton.js
 /needsharebutton.min.css
 /pandalocker.$script
+/pin_it_button.png
 /pinterest-footer-icon.svg
 /pinterest-for-woocommerce-save-button.min.js
 /pinterest-for-woocommerce-tracking.min.js
@@ -131,6 +131,7 @@
 /twitter_square.png
 /twitterfollow.png
 /videojs-share.js
+/vk_button.png
 /weiboshare.html
 /whatsapp-button.js
 /whatsapp_icon.png
@@ -245,7 +246,6 @@ _social-bar/
 ###fbbox1
 ###fblike
 ###fbshare
-###fbshare_container
 ###fcbk
 ###fdbk_tab
 ###float_fb_plugin
@@ -266,6 +266,8 @@ _social-bar/
 ###followUs
 ###follow_box
 ###follow_buttons
+###follow_facebook
+###follow_twitter
 ###follow_us
 ###followus
 ###foot-social
@@ -470,13 +472,13 @@ _social-bar/
 ###share_wrapper
 ###sharebar
 ###sharebarTop
+###sharebarx
 ###sharebox
 ###sharebtns
 ###sharebtnwrap
 ###sharebuttons
 ###sharecopy
 ###sharediv
-###sharefloat
 ###sharefooter
 ###shareicon
 ###shareicons
@@ -595,7 +597,6 @@ _social-bar/
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
-###socialMediaBar
 ###socialMediaFacebook
 ###socialMediaSection
 ###socialModal
@@ -691,8 +692,8 @@ _social-bar/
 ###twitter-button
 ###twitter-feed
 ###twitter-follow
+###twitter-promo
 ###twitter-share
-###twitter-sidebar
 ###twitter-social-tab
 ###twitter-widget
 ###twitter2
@@ -770,7 +771,6 @@ _social-bar/
 ##.SiteFooter__follow
 ##.Social-Media
 ##.Social-link
-##.SocialArticleIcons
 ##.SocialBar
 ##.SocialIcon
 ##.SocialIcons
@@ -818,6 +818,7 @@ _social-bar/
 ##.add-this
 ##.addsSocialItem
 ##.addthis-smartlayers
+##.addthis-wrapper
 ##.addthis:not(body)
 ##.addthis_button
 ##.addthis_button_compact
@@ -1197,6 +1198,7 @@ _social-bar/
 ##.entry-aside-shares
 ##.entry-content-share
 ##.entry-footer-share
+##.entry-meta-share
 ##.entry-meta-social
 ##.entry-share
 ##.entry-shares
@@ -1280,6 +1282,7 @@ _social-bar/
 ##.facebook_share
 ##.facebookbutton
 ##.facebooklike
+##.facebooklink
 ##.facebookshare
 ##.facewrapper
 ##.fastsocialshare_container
@@ -1322,7 +1325,6 @@ _social-bar/
 ##.fbbsb-button
 ##.fbbsb-buttons
 ##.fbbutton
-##.fblbForm
 ##.fblikebox
 ##.fblink
 ##.fbshare
@@ -2558,7 +2560,6 @@ _social-bar/
 ##.share_icons
 ##.share_icons_container
 ##.share_img_main
-##.share_index
 ##.share_line
 ##.share_link
 ##.share_linkedin
@@ -2589,6 +2590,7 @@ _social-bar/
 ##.share_w
 ##.share_wa
 ##.share_widget
+##.share_with_friends
 ##.share_wrap
 ##.share_wrapper
 ##.shareaholic-canvas
@@ -3856,7 +3858,6 @@ jpost.com##.article-buttons-wrap
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 essentiallysports.com##.article-head_es-share-container__Tkdfn
-gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.article-header-meta_discoverButton__58lwg
 greencars.com##.article-heading_share-component
 neowin.net,seattletimes.com,thecooldown.com##.article-share
 mymodernmet.com##.article-share-container
@@ -4002,7 +4003,6 @@ bleedingcool.com##.google-news-source
 essentiallysports.com##.google-perference_googlePerference__h94ae
 timesofisrael.com##.google-prefer-module
 ringsidenews.com,thehealthsite.com,tmz.com##.google-preferred-btn
-realestate.com.au##.google-preferred-link
 sammobile.com##.google-preferred-news-source-cta
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
 nypost.com##.google-preferred-sources
@@ -4015,7 +4015,6 @@ zeenews.india.com##.googleIcon
 cricketcountry.com##.googlePreferred
 wionews.com##.googleTrustedContainer-mid
 gadgets360.com##.gsocialbar
-atlanticcouncil.org##.gta-hover-share-container
 egotastic.com,egotasticsports.com##.h-fixed-footer
 ndtv.com##.hdr-ss
 israelnationalnews.com##.header-nav-addons-link
@@ -4118,7 +4117,6 @@ dailymail.co.uk##.prevNextWrapper-1Vg7e
 sports.ndtv.com##.pst_scl
 reason.com##.rcom-social-tools
 dermatologytimes.com,drive.com.au##.react-share__ShareButton
-the-gadgeteer.com##.review-price
 firstpost.com##.rhs-yt-ch-wrap
 aljazeera.com,aljazeera.net##.rich-share
 crealitycloud.com##.right-share-box
@@ -4187,7 +4185,6 @@ digitimes.com##.social-frame
 firstpost.com##.social-ic-wrap
 tmz.com##.social-item
 psychologytoday.com##.social-links-bottom
-complex.com##.social-links-top
 denofgeek.com##.social-links__anchor--sharing
 knowablemagazine.org,leouve.com.br,newskarnataka.com,ric.com.br,securityaffairs.com,ucl.ac.uk##.social-media-links
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
@@ -4432,7 +4429,6 @@ dagens.com,english.nv.ua,jenkemmag.com,jewishinsider.com,largus.fr,masterduelmet
 al-ain.com,al-sharq.com,cartacapital.com.br,cellulare-magazine.it,ocafezinho.com,ringsidenews.com,tv100.com##.google-news
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,electrek.co,searchengineland.com,spaceexplored.com##.google-news-link
 usnews.com,zerohedge.com##div[class*="SocialShar"]
-atlatszo.hu,atvavrupa.tv,avn.com,bostonmagazine.com,cas.sk,cloth5.com,commentwiki.fr,dzfoot.com,eldiariosur.com,epochtimes.it,hothardware.com,ikhwanonline.info,liganews.net,lonny.com,lovenature.com,malwaretips.com,mpasho.co.ke,niedziela.pl,northernvirginiamag.com,olhardigital.com.br,pnn.ps,precinctreporter.com,puntal.com.ar,radiojambo.co.ke,regione.abruzzo.it,sabah.com.tr,sneakernews.com,sourcefed.com,soutalomma.com,sudouest.fr,the-star.co.ke,transfermarkt.at,transfermarkt.ch,transfermarkt.co.uk,transfermarkt.com,transfermarkt.com.tr,transfermarkt.de,transfermarkt.es,transfermarkt.nl,transfermarkt.pl,transfermarkt.pt,vijesti.ba,wowhead.com,xn--tbnespaa-j3a.es##.header-social
 acordacidade.com.br,biobiochile.cl,crea-mexico.com,diarioelargentino.com,eleconomista.com.ar,elobservador.com.uy,elonce.com,expansion.com,futbol.com.uy,futbolred.com,harem69.com.br,humordaterra.com,jornaldocomercio.com,laverdad.com,lula.com.br,montevideo.com.uy,mvsnoticias.com,portalperifacon.com,pronto.com.ar,radiopopular.com,tecnoblog.net,tiempoar.com.ar,tiemposur.com.ar##.redes
 globalnews.ca###footer-social
 adblockplus.org###social-list
@@ -4476,7 +4472,6 @@ bild.de##.sharingbar
 mpg.de##.social-media-buttons
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
-barax.de##.twt-sharing-links
 watson.ch##.watson-sharebuttons
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
@@ -4536,7 +4531,6 @@ amarujala.com##.auw_event_share
 centrometeoitaliano.it,leggo.it###box-social
 liberoquotidiano.it###dropdown-trigger
 navigaweb.net###like
-wikihow.it###sf
 navigaweb.net###social3
 dissapore.com##._social-share
 raiplaysound.it##.banner-buttons
@@ -4614,8 +4608,6 @@ bcb.gov.br,correiodoestado.com.br,folhape.com.br,ocioso.com.br,opoder.com.br,por
 jovempan.com.br##.cta-model
 ndmais.com.br##.cta-whatsapp
 em.com.br##.edm-bottom-social
-em.com.br##.edm-right
-em.com.br##.edm-social-networks
 abril.com.br##.f-social
 fastcompanybrasil.com##.fcbr_social_share
 poder360.com.br##.fixed-list
@@ -4694,6 +4686,7 @@ diariopopular.com.ar##.detail-social-icons
 eldiario.es,eldiarioar.com##.edi-social-buttons
 a24.com,diariodecuyo.com.ar,perfil.com##.footer-redes
 ara.cat,europapress.es##.footer-rrss
+elonce.com,portafolio.co##.footer__redes
 sport.es##.ft-mol-rrss
 elperiodico.com,sport.es##.ft-mol-rrss-column
 diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,elcorreoweb.es,eldia.es,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondemurcia.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,regio7.cat,superdeporte.es##.ft-mol-rrss-column__items
@@ -4704,6 +4697,7 @@ elnorte.com,mural.com.mx,reforma.com##.gr_contenedor_redes_del_footer
 pronto.com.ar##.header--redes
 dolarhoy.com##.header__redes
 tn.com.ar##.horizontal-share
+milenio.com##.info-networks
 libertaddigital.com##.links_social
 milanuncios.com##.ma-AdDetailShare
 perfil.com##.main-footer__redes
