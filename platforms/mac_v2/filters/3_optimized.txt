@@ -1,9 +1,9 @@
-! Checksum: S2ZFPFHNosLrlGo08zmX7g
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1781018540-3600.patch
+! Checksum: dlppwynjC0TWi4snuNuaEg
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1781024615-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.5.45
-! TimeUpdated: 2026-06-09T15:18:39+00:00
+! Version: 2.1.5.46
+! TimeUpdated: 2026-06-09T17:00:03+00:00
 ! Expires: 12 hours (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -180782,6 +180782,7 @@ zonedirector.avadacom.com$image
 /^https:\/\/cs\d{3}\.\w+\.com\/cscript\/\d{3}\/[\w\d]+\.js$/$script,third-party,match-case
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
+.js?tg=$~third-party
 /advanced-ads-tracking/assets/dist/ga-tracking.js
 /hit-track.php
 /wp-content/plugins/jetpack/jetpack_vendor/automattic/woocommerce-analytics/*
@@ -181497,6 +181498,7 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+||shuba.life/api/views
 ||cdn.viberu.ru/dist/tracking.*.js
 ||rugbypass.com/api/tracking/
 ||static0.pocketlintimages.com/assets/sentinel-events-tracker.*.js
@@ -189585,6 +189587,7 @@ d4?appid*type*
 !### Temporary ###
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
 !#################
+@@||cdn.petametrics.com^$script,domain=meidasnews.com
 @@||smetrics.airmiles.ca/*identity/acquire?$domain=oauth.airmiles.ca
 @@||mpsnare.iesnare.com/snare.js$domain=aswbe.ana.co.jp
 @@||mpsnare.iesnare.com/script/logo.js$domain=aswbe.ana.co.jp
@@ -192897,6 +192900,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||idlecollect.com^
 ||illinvention.com^
 ||illustriousoatmeal.com^
+||imagebuffer.com^
 ||imagecutie.com^
 ||immensehoney.com^
 ||imminentshake.com^
