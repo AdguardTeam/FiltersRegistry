@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /u2vNcN1rN6WHscBxRCIrg
-! Diff-Path: ../patches/18/18-s-1781003521-3600.patch
+! Checksum: N0/kVHbazieaD5z+/+IlJw
+! Diff-Path: ../patches/18/18-s-1781018526-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.88.13
-! TimeUpdated: 2026-06-09T11:08:56+00:00
+! Version: 2.0.88.14
+! TimeUpdated: 2026-06-09T15:19:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2543,6 +2543,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+webtic.it##body.lock-scroll:style(overflow: auto !important;)
+webtic.it##.cookie-banner:not(body):not(html):style(display: none !important;)
 bellecarriere.jp##.-cookie
 statesman.com##+js(set-local-storage-item, austin_has_seen_privacy_policy_banner_812daa0fe70363264e5316a1cbbef2a72c184a32, true)
 auroramap.org###am-cookie-banner
@@ -2985,7 +2987,6 @@ satysfakcjazcorega.pl,przetestujkoloryzacje.pl###pop_up:has(.cookie_first_look)
 hirntot-shop.de,koffer.de,vansprint.de##+js(set-cookie, cookie-preference, 1)
 store.chelseafc.com##.marketing-cookies-banner
 trhaber.com##+js(set-local-storage-item, trhaber_cookie_consent, accepted)
-elxw.fa.em3.oraclecloud.com##.cookie-consent-modal
 chs.harvard.edu###block-hwp-hyard-cookieconsentbanner:remove()
 chs.harvard.edu##.hwp-no-scroll:style(overflow: auto !important;)
 mersinhaber.com###timNoticeBanner
@@ -3389,7 +3390,7 @@ skroutz.de##.js-global-skrp-messages:has(> .js-message > article > .actions > fo
 corp.asics.com##.o-gdpr-dialog
 porovnejsito.cz,upv.gov.cz##.scook
 mdron.pl##+js(set-cookie-reload, cookie_info_accepted, 1)
-kcci.com,gulfcoastnewsnow.com,wapt.com,watch.dropout.tv,larsondoors.com,equifax.ca##.ketch-fixed
+ketv.com,kcci.com,gulfcoastnewsnow.com,wapt.com,watch.dropout.tv,larsondoors.com,equifax.ca##.ketch-fixed
 aptacore.ac##.cookiesSec
 modivo.*##.consents:style(display: none !important;)
 modivo.*##+js(remove-class, _no-scroll, html, stay)
@@ -11753,7 +11754,7 @@ bmel.de##html:style(overflow: visible !important;)
 bmel.de##body > div[class^="mfp-"]:style(display: none !important;)
 studentbeans.com##._k28pg
 greblon.com##.lus-cookie-pre
-jobs.huk.de,tippmix.hu,fullbay.com,marksandspencer.com,tippmixpro.hu,szerencsejatek.hu,daemmen-und-sanieren.de,solaranlagen-portal.com##.cookie-consent-modal
+sigaa.ufrr.br,elxw.fa.em3.oraclecloud.com,jobs.huk.de,tippmix.hu,fullbay.com,marksandspencer.com,tippmixpro.hu,szerencsejatek.hu,daemmen-und-sanieren.de,solaranlagen-portal.com##.cookie-consent-modal
 newworld.com,amazongames.com###ags-CookieDisclaimer
 nowemiasteczko.pl##body > .navbar-fixed-bottom.navbar-inverse
 test-help.com##.ui-pnotify.stack-bottomleft
@@ -17619,6 +17620,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233170
+webtic.it#@#.cookie-banner:not(body):not(html)
 ! theweekjunior.com - broken age verification
 theweekjunior.com#@##cookieNotice
 theweekjunior.com#@#.cookieNotice:not(body):not(html)
