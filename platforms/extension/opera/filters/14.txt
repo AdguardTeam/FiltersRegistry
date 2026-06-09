@@ -1,9 +1,9 @@
-! Checksum: 1Hkq9hjys0DXLqUFnCvJaQ
-! Diff-Path: ../patches/14/14-s-1780983117-3600.patch
+! Checksum: hThNncV5egwRkVFsJuxkcw
+! Diff-Path: ../patches/14/14-s-1780989972-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.0
-! TimeUpdated: 2026-06-09T05:29:08+00:00
+! Version: 2.2.70.1
+! TimeUpdated: 2026-06-09T07:23:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18917,6 +18917,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! theweekjunior.com - broken age verification
+theweekjunior.com#@##cookieNotice
+theweekjunior.com#@#.cookieNotice:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233132
 heveren.ee#@##cookieModal
 ! https://www.coolermaster.com/en-global broken
@@ -27163,6 +27166,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+tver.jp#%#//scriptlet('trusted-set-local-storage-item', 'new-feature-history', '["arashi-collection-part3"]')
 daily.dev#%#//scriptlet('set-constant', '__extensionScrollPopupInitialised', 'true')
 paradoxscans.com#$##paradoxShield { display: none !important; }
 paradoxscans.com#$#body { overflow: auto !important; }
