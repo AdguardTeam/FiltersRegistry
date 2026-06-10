@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ukfcIuNPdFzAGpgz+HsBug
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781104477-3600.patch
+! Checksum: 6ODhu9W5Eoo8u97MrzMaWQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781118221-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.71.28
-! TimeUpdated: 2026-06-10T15:10:54+00:00
+! Version: 2.4.71.29
+! TimeUpdated: 2026-06-10T18:59:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,10 @@
 !
 !
 !
+||dclsrv.com^
+||dtasrvr.com^
+||gresrv.com^
+||srvgl.com^
 ||amkcuwli.in^
 ||aboveboardcomplicate.com^
 ||abjectionfreedpaying.com^
@@ -26270,6 +26274,10 @@ esportway.pl##.sidebar > div[id^="custom_html-"]:has(> .widget-title:contains(Re
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195904
 pepper.com,pepper.pl##.listLayout-box:has(> .ad:only-child)
 pepper.pl##div[id$="AdSlotPortal"]
+pepper.pl##.slot:has(div[id^="ad-"])
+pepper.pl##.box--content > .flex:has(> .slot--bg:only-child)
+pepper.pl###sidebarContentPortal .listLayout-box:has(> .slot)
+pepper.pl##.listLayout-side > .flex:has(> div[id$="AdSlotPortal"])
 pepper.pl##.listLayout-main > div:not([class], [id]) > .flex:has(> .ad--bg)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192795
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186722
@@ -27854,7 +27862,7 @@ niebezpiecznik.pl###main > .post + a[href^="https://niebezpiecznik.pl/"][href*="
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180763
 meczyki.pl##.screening
 meczyki.pl##.has-screening:style(background-image: none !important; cursor: auto !important;)
-meczyki.pl##+js(no-window-open-if, bit.ly)
+meczyki.pl##+js(no-window-open-if, /bit\.ly|\/link\/.* _blank/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139579
 meczyki.pl##.content > .grid-news-slider > :is(.large, .news-item):has(> a[rel] .ads-info)
 meczyki.pl##div[class^="col-md-"] > .row > div[class^="col"] > .widget-wrapper:has(> .widget-wrapper__header > h3[title="Bukmacherzy"])
@@ -37297,6 +37305,10 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||definebabe.com/sum.js
+web.nxsha.app##+js(no-window-open-if, _blank)
+seekyoursounds.com###leaderboard-master
+the-race.com##.tr-header-side-ad
 watchflix.to##.streame-banner-desktop
 ussoccer.com##div[class^="GoogleAd_"]
 hltv.org##.matchesTallWidget-reset
@@ -39293,6 +39305,7 @@ japan-whores.com##nav > div.item.header_link
 ashemaletv.com##.video__title-wrapper
 sex3.com##.block-info
 greekherald.com.au##.tdm-popup-modal-over-screen:has(> .tdm-popup-modal > .tdm-pm-body:empty)
+9gag.com##+js(abort-current-script, Math.random, moa_id)
 9gag.com##+js(json-prune, config.ad data.posts.[-].promoted.[=].1)
 livesoccertv.com##.r-sections > div[v-pre]
 hardreset.info##div[style="margin: 0 auto; min-height: 250px; max-height: 300px; width: 300px"]
