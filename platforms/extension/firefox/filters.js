@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.6.38",
-			"timeUpdated": "2026-06-10T07:37:17+0000",
+			"version": "2.1.6.39",
+			"timeUpdated": "2026-06-10T09:21:13+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.71.24",
-			"timeUpdated": "2026-06-10T07:37:30+0000",
+			"version": "2.4.71.25",
+			"timeUpdated": "2026-06-10T09:21:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.5.49",
-			"timeUpdated": "2026-06-09T23:33:21+0000",
+			"version": "2.1.5.50",
+			"timeUpdated": "2026-06-10T09:21:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.29.8",
-			"timeUpdated": "2026-06-10T07:37:42+0000",
+			"version": "2.1.29.9",
+			"timeUpdated": "2026-06-10T09:21:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.34.61",
-			"timeUpdated": "2026-06-08T18:56:35+0000",
+			"version": "2.0.34.62",
+			"timeUpdated": "2026-06-10T09:21:47+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.70.8",
-			"timeUpdated": "2026-06-10T07:37:58+0000",
+			"version": "2.2.70.9",
+			"timeUpdated": "2026-06-10T09:21:59+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.24.48",
-			"timeUpdated": "2026-06-10T05:38:59+0000",
+			"version": "2.1.24.49",
+			"timeUpdated": "2026-06-10T09:22:01+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.88.15",
-			"timeUpdated": "2026-06-10T07:38:03+0000",
+			"version": "2.0.88.16",
+			"timeUpdated": "2026-06-10T09:22:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.92",
-			"timeUpdated": "2026-06-10T07:38:04+0000",
+			"version": "2.0.76.93",
+			"timeUpdated": "2026-06-10T09:22:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.27",
-			"timeUpdated": "2026-06-09T15:19:09+0000",
+			"version": "2.0.45.28",
+			"timeUpdated": "2026-06-10T09:22:08+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -840,8 +840,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.8.53",
-			"timeUpdated": "2026-06-10T07:38:06+0000",
+			"version": "2.0.8.54",
+			"timeUpdated": "2026-06-10T09:22:09+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
@@ -1731,8 +1731,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.60.22",
-			"timeUpdated": "2026-06-10T05:39:15+0000",
+			"version": "2.1.60.23",
+			"timeUpdated": "2026-06-10T09:22:12+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
