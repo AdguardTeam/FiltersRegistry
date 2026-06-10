@@ -1,9 +1,9 @@
-! Checksum: ejkUYcMi24gXYYa84JS6zw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1781055042-14400.patch
+! Checksum: L/KiV9gm08LI8ueGE3VcWg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1781071416-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.63.7
-! TimeUpdated: 2026-06-10T01:27:10+00:00
+! Version: 2.1.63.8
+! TimeUpdated: 2026-06-10T06:00:13+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -24,7 +24,6 @@
 /ayoshare.js
 /common/sns/*
 /common/sns_
-/diggdigg-floating-bar.js
 /facebook-pagelike-widget/fb.js
 /facebook-side.png
 /facebook_footer.png
@@ -109,7 +108,6 @@
 /social-footer.jpg
 /Social-Sidebar.js
 /social2s.min.js
-/social_bookmarking/*$image
 /social_bookmarks/*
 /socialappsintegrator.
 /socialbar-sso.js
@@ -244,7 +242,6 @@ _social-bar/
 ###fb_video_link
 ###fbbox
 ###fbbox1
-###fblike
 ###fbshare
 ###fcbk
 ###fdbk_tab
@@ -606,6 +603,7 @@ _social-bar/
 ###socialShare
 ###socialSharing
 ###socialTwitter
+###socialWidgets
 ###socialWrap
 ###social_bar
 ###social_bkm_wrap_top
@@ -682,7 +680,6 @@ _social-bar/
 ###top-share
 ###topSocial
 ###top_share
-###topsocial
 ###tronReddiShare
 ###twShare
 ###tweet-button
@@ -939,6 +936,7 @@ _social-bar/
 ##.asset-inline-share-tools
 ##.at-share
 ##.at-share-btn
+##.au-share
 ##.author-bio__social
 ##.author-card__social
 ##.author-follow-button
@@ -1038,6 +1036,7 @@ _social-bar/
 ##.bt-share
 ##.btFacebook
 ##.btn--share
+##.btn-facebook-lg
 ##.btn-group-social
 ##.button-pinterest
 ##.button-share
@@ -1264,7 +1263,6 @@ _social-bar/
 ##.facebook-share-btn
 ##.facebook-share-button
 ##.facebook-share-link
-##.facebook-sharer
 ##.facebook-sidebar
 ##.facebook-social
 ##.facebookOuter
@@ -2430,6 +2428,7 @@ _social-bar/
 ##.share-tools
 ##.share-tools--secondary
 ##.share-tools-buttons-top
+##.share-tools-wrapper
 ##.share-topic
 ##.share-tw
 ##.share-twitter
@@ -2940,6 +2939,7 @@ _social-bar/
 ##.social-media-widget
 ##.social-media-wrapper
 ##.social-menu-item
+##.social-meta-item
 ##.social-methods
 ##.social-network-wrapper
 ##.social-network.widget
@@ -3346,7 +3346,6 @@ _social-bar/
 ##.totalShares
 ##.total_share
 ##.tpcrn-shr-post
-##.trigger-share-list
 ##.tronSocialShareIcon
 ##.tronWhatsappIcon
 ##.ts-share-bar
@@ -3426,7 +3425,6 @@ _social-bar/
 ##.user-share
 ##.usr-social
 ##.ut2-social-link-block
-##.utility-share
 ##.utility-social
 ##.vaShare
 ##.vbseo_share
@@ -3595,7 +3593,6 @@ _social-bar/
 ##a[href^="https://plus.google.com/share?"]
 ##a[href^="https://reddit.com/submit?"]
 ##a[href^="https://share.flipboard.com/bookmarklet/popout?"]
-##a[href^="https://simpleshare.io/go?"]
 ##a[href^="https://t.me/share/url?"]
 ##a[href^="https://telegram.me/share/url?"]
 ##a[href^="https://twitter.com/intent/tweet?"]
@@ -3732,7 +3729,6 @@ _social-bar/
 ||xing-share.com^$third-party
 ||yandex.st/share/
 ||youtube.com/subscribe_embed?$third-party
-||youtube.com/subscribe_widget$third-party
 ||people.com.cn/img/2020fenxiang/
 iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
@@ -3882,6 +3878,7 @@ telegraphindia.com##.astkysharebox
 secretchicago.com,secretldn.com##.author-share-buttons
 adweek.com##.aw-social-share-container
 bnnbloomberg.ca,cp24.com,ctvnews.ca,irishnews.com,thedailybeast.com,tsn.ca##.b-share-bar
+dxomark.com##.banner
 beebom.com##.beebom-social-share
 gobankingrates.com##.between-share-and-author
 military.com##.block--addtoanyadv
@@ -4166,7 +4163,7 @@ cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
 12tomatoes.com##.sharetocare-popup
-glassalmanac.com##.shhr-btn
+firstpost.com##.shr-ic
 welivesecurity.com##.sidebar-card-media
 pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
 streetsblog.org##.single_sharingInner__3IoQO
@@ -4185,6 +4182,7 @@ digitimes.com##.social-frame
 firstpost.com##.social-ic-wrap
 tmz.com##.social-item
 psychologytoday.com##.social-links-bottom
+complex.com##.social-links-top
 denofgeek.com##.social-links__anchor--sharing
 knowablemagazine.org,leouve.com.br,newskarnataka.com,ric.com.br,securityaffairs.com,ucl.ac.uk##.social-media-links
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
@@ -4202,7 +4200,6 @@ mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
 nist.gov##.social-twitter
 mmorpg.com##.social-web
-dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
 macrumors.com##.socialMedia--3i9tSnAb
 wionews.com##.socialShare_shareFixed__xNEGI
@@ -4219,6 +4216,7 @@ dailysabah.com,gmanetwork.com,pnn.ps##.social_media
 abplive.com,almayadeen.net,businesstoday.in,catracalivre.com.br,gamesindustry.biz,ilmeteo.it,news18.com##.social_share
 videocardz.com##.socialbar-sidebar
 firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.socials
+arabnews.com##.socials-btns
 overclock3d.net##.socials-container
 thehealthsite.com##.socialsIconBlackWhite
 ntvkenya.co.ke##.socials_bar
@@ -4473,6 +4471,7 @@ bild.de##.sharingbar
 mpg.de##.social-media-buttons
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
+barax.de##.twt-sharing-links
 watson.ch##.watson-sharebuttons
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
@@ -4573,6 +4572,7 @@ ilpost.it##div[class^="_share_"]
 nlab.itmedia.co.jp###my_social_top
 bizgate.nikkei.com##.c-single-sns
 univ-journal.jp##.snsSpace
+news.yahoo.co.jp##[class^="ArticleShare"]
 qiita.com##[class^="style-"] > [class^="style-"] > div[class^="style-"]:has(> button[aria-label][title][aria-describedby] + p[id][role="tooltip"])
 qiita.com##[href^="https://b.hatena.ne.jp/entry/"]
 qiita.com##div[id^="AdventCalendar"] hr ~ div[class^="style-"]:has(> button[class^="style-"][aria-label][title])
