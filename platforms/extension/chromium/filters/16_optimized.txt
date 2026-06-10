@@ -1,5 +1,5 @@
-! Checksum: rTLRAqzZJqyeNikmzzRZ6A
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1781053557-3600.patch
+! Checksum: YhdXn3kXbt4mNXvX5maf6Q
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1781061465-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.73
@@ -134,7 +134,6 @@ japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
 @@||japscan.$generichide
 @@||acscdn.com^$script,third-party,domain=japscan.*
-$script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.*
 @@$image,domain=japscan.*
 @@||drive.google.com^$xmlhttprequest,domain=japscan.*
 trustmyscience.com##.adb-border
@@ -644,7 +643,6 @@ luxauto.lu##section[data-scope="homepage-hot-ads"] .grid > .imu
 lessentiel.lu###prime__inside-top
 lessentiel.lu##div[class^="ad_adContainer_"]
 cyclismactu.net##a[href^="https://media.unibet.fr/redirect.aspx"]
-batimag.ch##div[id^="docu-slot"]
 sncf-connect.com##.WLS_gtmBannerWrapper
 sncf-connect.com###WL_side_banner
 lapresse.ca##.adsWrapper
@@ -662,6 +660,7 @@ universfreebox.com###free-mid-article-native
 meteofrance.com###block-bandeauadministrablepoi
 liberation.fr##div[class^="default__OutbrainWrapper-"]
 generation-nt.com###page-hp > div.pub.overflow-hidden
+/main.js$~third-party,domain=wawacity.*
 cnews.fr##.ban-top-habillage
 cnews.fr##div[id^="block-dm-ads-"]
 aufeminin.com###af_partnerBlock_seeAlso
@@ -1561,7 +1560,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?size=728x90|$subdocument
 ?sponsor=*&sId=
 ?style=300x250-
-?style=720x90-
 ?tag_id=*&sw_url=
 ?tour=*&campaign=$third-party
 ?type=ad;
@@ -1644,6 +1642,7 @@ _advertising_img.
 _affiliate.$subdocument
 _affiliate_banner_
 _alenty.js
+_ban-300x250.
 _banner-300x150.
 _banner.*?partner=
 _banner_pub.
@@ -1805,7 +1804,6 @@ _build=iclick-$popup
 ||adultwork.com^$third-party
 ||adverdata.net^$third-party
 ||adverline.com^$third-party
-||adverum.lt^$third-party
 ||advideo.ru^$third-party
 ||adwidecenter.com^$third-party
 ||adwise.bg^$third-party
@@ -1841,6 +1839,7 @@ _build=iclick-$popup
 ||click-fr.com^$third-party
 ||click2m.org^$third-party
 ||clickbank.net^$third-party
+||clickcashmoney.com^$third-party
 ||clickiocdn*.com^$third-party
 ||clickzzs.nl^$third-party
 ||clicmanager.fr^$third-party
@@ -1934,6 +1933,7 @@ _build=iclick-$popup
 ||opti-digital.com^$third-party
 ||orangepublicite.fr^$third-party
 ||ovnet.fr^$third-party
+||pee-puu-see.com^$third-party
 ||permato.com^$third-party
 ||pgflow.com^$third-party
 ||phuc.cc^$third-party
@@ -2024,7 +2024,6 @@ _build=iclick-$popup
 ||aanqylta.com^
 ||abdicatefluke.com^
 ||abedworthlesscure.com^
-||abistonfrau.com^
 ||abkajbvlymqmb.top^
 ||aboveaveragefinallycast.com^
 ||aboveboardcomplicate.com^
@@ -2873,6 +2872,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||kidioui.fr^$subdocument,third-party
 ||lafranceapoil.com/tools/
 ||laredoute.com/marketing/$third-party,domain=~laredoute.be|~laredoute.ch|~laredoute.co.uk|~laredoute.com|~laredoute.es|~laredoute.fr|~laredoute.gr|~laredoute.hr|~laredoute.it|~laredoute.kr|~laredoute.lu|~laredoute.ma|~laredoute.nl|~laredoute.pl|~laredoute.pt|~laredoute.ru|~laredouteliban.com
+||lautosurf.com/promo/
 ||linkshrink.net/content/img/$third-party
 ||loadshare.org/custom/
 ||logo.gralon.net/plogo-gralon-$third-party
@@ -3134,6 +3134,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||distrowatch.com/images/k/
 ||djelfa.info/logo/
 ||dl-protect.link/assets/$image
+||dynamique-mag.com/images/partenaire/
 ||editions-humanis.com/Pubs/
 ||egaliteetreconciliation.fr/img/
 ||elahmad.com/ads/
@@ -3373,7 +3374,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###container_pub
 ###container_pub_left
 ###content_pub
-###contenu-text-publicite
 ###contenu_liens-sponso
 ###contextuel-publicite-video
 ###custom-ad
@@ -3398,7 +3398,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###divHomeAd2
 ###divHomeAd3
 ###divPub
-###divPubAccueilGauche
 ###divPubEntete
 ###divPubRecettePortable
 ###divPublicityLateral
@@ -3583,6 +3582,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###publicite
 ###publicite-bas
 ###publiciteHaut
+###publicite_header
 ###publicite_right
 ###publicite_top
 ###pubright
@@ -4502,6 +4502,7 @@ beaute-test.com##.sidebar-sticky
 test-achats.be##.skin
 lequipement.fr##.skyscrapper-produit
 infoconcert.com##.slider.container
+ladiagonale.net##.slidingDiv2
 lepoint.fr##.slotadm
 boursorama.com##.smart
 lagazettedescommunes.com##.spons
@@ -4606,6 +4607,7 @@ skitour.fr##a[href^="divers/a/out.php?"]
 lefigaro.fr##a[href^="http://www.ticketac.com/?utm_source="]
 hentaifr.net##a[href^="https://drmanga.net"]
 condor.dz##a[href^="https://e-faciliti.dz/"]
+bleachmx.fr##a[href^="https://meccha-japan.com/"]
 appsystem.fr##a[href^="https://shop.appsystem.fr/"] > img
 journaldugeek.com##a[href^="https://shop.journaldugeek.com/go/"] > img
 toplien.fr##a[href^="https://track.effiliation.com/servlet/effi.click?"]
