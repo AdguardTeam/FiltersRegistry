@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SCuABxdRNRXC9xWa+/sKtA
-! Diff-Path: ../patches/9/9-s-1781083481-3600.patch
+! Checksum: qkL7OGqLx6vAFz1YSaor0w
+! Diff-Path: ../patches/9/9-s-1781164452-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.34.62
-! TimeUpdated: 2026-06-10T09:21:47+00:00
+! Version: 2.0.34.63
+! TimeUpdated: 2026-06-11T07:50:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2111,6 +2111,8 @@ lusometeo.com,kltutors.com,eloutput.com,mundobytes.com,techondicas.com,jornalrep
 !
 ! NOTE: Specific rules
 !
+audiolatinohd.com##.module_single_ads ~ a[target="_blank"]:is(.module_single_ads + a, .module_single_ads + a + a)
+devoracine.com###unlock-overlay
 embedplayer2.xyz,playerflixapi.com,superflixapi.fit##+js(no-window-open-if, _blank)
 ||developersone.com.br/load.php$domain=playerflixapi.com
 legendei.net##.entry-content > a[target="_blank"] > img
@@ -3104,9 +3106,11 @@ guiadasemana.com.br##.placement
 bajalogratis.com##a[href*="/redirect?tid="]
 bajalogratis.com##.separator > a[target="_blank"] > img
 bajalogratis.com##.cols-9 > .iconb-movi:has(+ .separator > a[target="_blank"] > img)
+tubeonline.net##.sheader > center > a[target="_blank"] > img
+tubeonline.net##.sheader > center > span:has(+ a[target="_blank"] > img)
 tubeonline.net##+js(abort-current-script, fetch, anuncios)
 tubeonline.net##:is(aside, .sheader) > center > div[id^="imagen-"]
-tubeonline.net##.content > center> span:has(> a[target="_blank"])
+tubeonline.net##.content > center > span:has(> a[target="_blank"])
 tubeonline.net##.widget:has(center > a[target="_blank"]:not([href*="tubeonline.net"],[href^="/"]))
 verpelis.gratis##.content > div[style] > a[href]
 peliculasonlinegratishd.com##.movie-image > a[target="_blank"]
