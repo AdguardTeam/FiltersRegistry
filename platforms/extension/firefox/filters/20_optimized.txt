@@ -1,5 +1,5 @@
-! Checksum: gY4/lwISk9TNu/9IgoPKng
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1781097733-3600.patch
+! Checksum: zXpJvelhSmbQKn3pls68ug
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1781147808-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.29.73
@@ -82,7 +82,6 @@ m.glassesusa.com##.hHF3La
 goal.com##.fco-app-promo-modal
 ||buy-eu.piano.io/checkout/template/cacheableShow.html*&offerId=fakeOfferId&experienceId=$subdocument,domain=kathimerini.gr
 kathimerini.gr##.app-holder
-myacgmall.com.tw,olhelmets.com#?##root > .container-component .slide-push-menu ~ div[class^="sc-"]:contains(Try the App)
 vamprivet.ru##section[class^="styles-module__download_"]
 people.com##.promo-unit
 joysound.com##.jp-cmp-topics-ad-001
@@ -151,6 +150,7 @@ wear.jp#%#//scriptlet('set-session-storage-item', 'showed_app_redirect_half_moda
 shufoo.net#%#//scriptlet('remove-class', 'is-hidden', 'body')
 ripley.cl##section[data-testid="marketing--popup"]
 pw.live##div[class^="deepLinks_getAppWrapper"]
+books.yandex.ru##div[class^="AppPromoDesktopBanner_"]
 papara.com###smart:has(> div.flex > [class^="styles_button"])
 tahtakalespot.com#$##anasayfaPopup { display: none !important; }
 tahtakalespot.com#$#body { overflow: auto !important; }
@@ -174,10 +174,9 @@ piraeusbank.gr##app-banner-tabs
 polis.ua##section[class^="AppsModule_contentWrapper"]
 megapteka.ru##ma-grid-list-item > ma-card-qr-code
 gate.com###downloadAppSpecial
+xo.gr##.mobile-apps
 megapteka.ru##.banner-podcast
-blog.espaces.com.br##a[href^="https://espaces.com.br/app"]
 jiotv.com##.bannerContainer
-jiotv.com##div[class^="CtaBanner_"]
 mega.nz##.application
 [$path=/maps]google.*##div[role="main"] > div.pL6he
 [$path=/maps]google.*##ul[role="list"] > li.bzdiDe
@@ -1049,6 +1048,7 @@ context.reverso.net##.app-promo-banner
 ali213.net##.newsapp
 finance.sina.com.cn##a[class^="tab_related_app_"]
 fitatu.com##.regular__content > div.regular__banner
+fitatu.com##.regular__content > div.regular__banner + div.regular__simple + div.regular__download
 fitatu.com##.product-page__section-container > aside.product-page__ad-container
 yapokupayu.ru##.popup-app-download
 bookwalker.jp##.p-app-bnr
@@ -1193,6 +1193,7 @@ dzen.ru##div[class^="news-site--web2app-advert-qr-banner__"]
 topperlearning.com,xiaohongshu.com##.open-app-btn
 rakuten.com.tw##.appBnFooter
 penangpropertytalk.com###text-31
+youdao.com##.top-download
 youdao.com#%#//scriptlet("set-cookie", "_yd_banner_day", "1")
 microsoft.com###app-link-banner
 microsoft.com##.mwf-area-heading-ctas
@@ -1202,6 +1203,7 @@ whatsmyip.org#?#main > section:has(> div.biglinks)
 ||japantaxi.jp/assets/images/*/bnr-go
 news.sky.com##div[data-component-name="sdc-article-custom-markup"]
 wallscloud.net##iframe[src^="https://wallscloud.net/themes/dark/assets/promo/single"]
+reforma.com##.container_publicidad2
 poczta.interia.pl##.header-container > .container-store
 ilkha.com##.backroundcolor-white-ss > h3.dowlandapptitle
 ilkha.com##.backroundcolor-white-ss > h3.dowlandapptitle + div.footer-download-store
@@ -1224,6 +1226,7 @@ comic-days.com##div[class^="Original_app_area_wrapper"]
 family.co.jp###sptabnemu
 slickdeals.net#$#.sdModalOverlay { display: none !important; }
 peple.com.tr##.footer-top
+mynet.com##img[alt$="mobil-banner"]
 oceans-nadia.com##div[class^="AppPopup_popUp"]
 finance.sina.com.cn,kashikoi.with.is,smsnator.online,emailnator.com##.top-banner
 pazarama.com#%#//scriptlet('set-cookie', 'prevent-in-app', 'true')
@@ -1381,7 +1384,6 @@ search.yahoo.co.jp##div[class^="AppPromo"]
 search.yahoo.co.jp###contentsInner > article[class^="W2ACarousel_"]
 finance.yahoo.co.jp##div[class^="_"] > a[href^="https://app.adjust.com/"]
 zaim.net##.top-fix
-mapion.co.jp##.btn-ptn2
 pizzahut.jp,noin.shop##.promote-app
 kuronekoyamato.co.jp##.customer-top-app
 kuronekoyamato.co.jp##.app-induction-inner
@@ -1586,6 +1588,7 @@ paypay.ne.jp##.stickyApp
 ||d-card.jp/st/smartbanner/
 atis.co.jp##.aside-app-banner
 tieba.baidu.com#$#.tb-backflow-defensive { display: none !important; }
+tieba.baidu.com##nav > div[class="w-row w-row-align-center w-row-justify-between nav-bar"]
 ||vitbichi.by/wp-content/uploads/*/banner_prilozhenie.jpg
 popdaily.com.tw#$##__next > div[class^="jsx-"] > div[class^="Container-sc-"]:first-child { display: none !important; }
 popdaily.com.tw#$##__next > div[class^="jsx-"] > div[class^="Container-sc-"]:first-child + div[class^="Background-"] { top: 0 !important; }
@@ -1737,6 +1740,8 @@ donanimhaber.com##div[class="sosyal-ag boya-6"]
 yahoo.co.jp##.sn-modAd
 yahoo.co.jp##.sn-modInterstitial
 chiebukuro.yahoo.co.jp###app_bnr
+headlines.yahoo.co.jp###peronArea .dressUp.tracked_mods
+login.yahoo.co.jp###appAndroid
 news.yahoo.co.jp###wrapper > #peron
 partner.yahoo.co.jp##.Rsab
 paypayfleamarket.yahoo.co.jp###appadbnr
