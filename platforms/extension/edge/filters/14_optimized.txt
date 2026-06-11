@@ -1,9 +1,9 @@
-! Checksum: i6wk93dRM4RQ+YwJg/QrgQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1781164430-3600.patch
+! Checksum: SNNlrwPgmRcEzsljPl9HNQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1781170806-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.16
-! TimeUpdated: 2026-06-11T07:50:53+00:00
+! Version: 2.2.70.17
+! TimeUpdated: 2026-06-11T09:37:24+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -13427,6 +13427,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !+ PLATFORM(ext_edge)
 #%#//scriptlet('set-constant', 'ms.auth.initialize', 'undefined')
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+threads.com#%#//scriptlet('set-session-storage-item', 'barcelona_mobile_upsell_state', '1')
+radio.yandex.ru#%#//scriptlet('trusted-click-element', 'div[class^="LoginPromptContent_"] > button')
 shkolkovo.online##div[class*="ModalVideoStyles_showWithCookies"]
 movilzona.es##.np-card--with-banner[data-mrf-recirculation^="news-promotion-card-"]
 theeburgerdude.com##.fd-is-open
@@ -22898,6 +22900,13 @@ buttondown.email#@##subscribe-form
 ##div[class^="smartbanner"][class*="-android"]
 ###smartbanner.ios
 rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+radio.yandex.ru##div[class^="DownloadAppBanner_"]
+tabletki.ua##.home-app-load
+tabletki.ua##.petition-preview
+telefonnyjdovidnyk.com.ua###ci-play-container
+telefonnyjdovidnyk.com.ua###news-line
+telefonnyjdovidnyk.com.ua##.android-wrapper
+telefonnyjdovidnyk.com.ua#?##sidebar > h2[style]:contains(Новинка – мобільний додаток для Android)
 ussoccer.com#?#main > div.w-screen:has(> div[class^="HeroHeader"] h2:contains(Soccer App))
 vbr.ru#?#article > div[class*="Paper_root"]:has(> div[class^="news-custom-banner_info"] > div[class^="news-custom-banner_subtitle"] > span:contains(Скачать приложение))
 rugbypass.com##.camp-spot
@@ -27330,6 +27339,7 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+dot.asahi.com##.m-trend
 ebay.*#$?#.x-vi-evo-main-container__top-panel div.x-pda-placements { visibility: hidden !important; margin-bottom: -24px !important; }
 shiksha.com##.recoWidgetSection
 shingakunet.com##.sectionCpModal

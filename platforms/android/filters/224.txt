@@ -1,9 +1,9 @@
-! Checksum: NsgX9mQmjQTATLW81+bslw
-! Diff-Path: ../patches/224/224-s-1781164418-3600.patch
+! Checksum: l3eZSvxvnC9M+8tvotFpUA
+! Diff-Path: ../patches/224/224-s-1781170795-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.60.29
-! TimeUpdated: 2026-06-11T07:51:13+00:00
+! Version: 2.1.60.30
+! TimeUpdated: 2026-06-11T09:37:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -866,6 +866,9 @@ msn.cn#%#//scriptlet('json-prune', 'configs.*.properties.slideshowWCSettings.int
 ||msn.cn/resolver/api/resolve/$jsonprune=\$.configs['SlideShow/ntpmsn'].properties.additionalChildExperiences..children..childExperienceConfigInfo.configRef[?(key-substr '\$' 'NativeAd')]
 ||assets.msn.cn/periconfigs/feature-configs/consumptionpage/gallery_default/config.json$jsonprune=\$.properties.componentConfigs.slideshowConfigs.interstitialNativeAds
 ||assets.msn.cn/periconfigs/feature-configs/consumptionpage/gallery_default/config.json$jsonprune=\$.properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds
+! https://github.com/AdguardTeam/AdguardFilters/issues/233247
+! TODO: use "trusted-json-set" once it will be available for all platforms
+v.youku.com#%#(()=>{const t={apply:(t,o,a)=>{try{const t=o?.[0]?.data?.data??o?.data;t?.ad&&(t.ad={}),t?.ykad&&(t.ykad={})}catch(t){}return Reflect.apply(t,o,a)}};window.Array.prototype.slice=new Proxy(window.Array.prototype.slice,t),window.Object.prototype.hasOwnProperty=new Proxy(window.Object.prototype.hasOwnProperty,t)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198422
 ! Rule below is required in case if DNS filtering is enabled.
 ! To play video website requires "cna" cookie (antiadblock/VPN message is displayed without this cookie)

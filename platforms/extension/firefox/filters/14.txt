@@ -1,9 +1,9 @@
-! Checksum: b/lpOTUaZEDIupZHpQqjMQ
-! Diff-Path: ../patches/14/14-s-1781164434-3600.patch
+! Checksum: QjFqaRVq1LmxzGphyiXqvw
+! Diff-Path: ../patches/14/14-s-1781170810-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.16
-! TimeUpdated: 2026-06-11T07:50:53+00:00
+! Version: 2.2.70.17
+! TimeUpdated: 2026-06-11T09:37:24+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27242,6 +27242,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+threads.com#%#//scriptlet('set-session-storage-item', 'barcelona_mobile_upsell_state', '1')
+radio.yandex.ru#%#//scriptlet('trusted-click-element', 'div[class^="LoginPromptContent_"] > button')
 shkolkovo.online##div[class*="ModalVideoStyles_showWithCookies"]
 movilzona.es##.np-card--with-banner[data-mrf-recirculation^="news-promotion-card-"]
 theeburgerdude.com##.fd-is-open
@@ -46328,6 +46330,13 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+radio.yandex.ru##div[class^="DownloadAppBanner_"]
+tabletki.ua##.home-app-load
+tabletki.ua##.petition-preview
+telefonnyjdovidnyk.com.ua###ci-play-container
+telefonnyjdovidnyk.com.ua###news-line
+telefonnyjdovidnyk.com.ua##.android-wrapper
+telefonnyjdovidnyk.com.ua#?##sidebar > h2[style]:contains(Новинка – мобільний додаток для Android)
 ussoccer.com#?#main > div.w-screen:has(> div[class^="HeroHeader"] h2:contains(Soccer App))
 vbr.ru#?#article > div[class*="Paper_root"]:has(> div[class^="news-custom-banner_info"] > div[class^="news-custom-banner_subtitle"] > span:contains(Скачать приложение))
 rugbypass.com##.camp-spot
@@ -55343,6 +55352,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+dot.asahi.com##.m-trend
 ebay.*#$?#.x-vi-evo-main-container__top-panel div.x-pda-placements { visibility: hidden !important; margin-bottom: -24px !important; }
 shiksha.com##.recoWidgetSection
 shingakunet.com##.sectionCpModal

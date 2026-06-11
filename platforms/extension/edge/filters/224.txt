@@ -1,9 +1,9 @@
-! Checksum: prr0bbzzyxjt/g0WtuWXzw
-! Diff-Path: ../patches/224/224-s-1781164432-3600.patch
+! Checksum: fYimOVLaxcKz39O06hO85g
+! Diff-Path: ../patches/224/224-s-1781170808-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.60.29
-! TimeUpdated: 2026-06-11T07:51:13+00:00
+! Version: 2.1.60.30
+! TimeUpdated: 2026-06-11T09:37:41+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -852,6 +852,9 @@ msn.cn#%#//scriptlet('json-prune', 'configs.*.properties.slideshowWCSettings.int
 ! Removes ad placeholders in sliders
 ! Current path is "properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"
 ! Other rules probably can be removed, but keep them just in case for some time
+! https://github.com/AdguardTeam/AdguardFilters/issues/233247
+! TODO: use "trusted-json-set" once it will be available for all platforms
+v.youku.com#%#(()=>{const t={apply:(t,o,a)=>{try{const t=o?.[0]?.data?.data??o?.data;t?.ad&&(t.ad={}),t?.ykad&&(t.ykad={})}catch(t){}return Reflect.apply(t,o,a)}};window.Array.prototype.slice=new Proxy(window.Array.prototype.slice,t),window.Object.prototype.hasOwnProperty=new Proxy(window.Object.prototype.hasOwnProperty,t)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198422
 ! Rule below is required in case if DNS filtering is enabled.
 ! To play video website requires "cna" cookie (antiadblock/VPN message is displayed without this cookie)
