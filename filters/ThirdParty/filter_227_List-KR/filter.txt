@@ -1,7 +1,7 @@
 !
 ! Title: List-KR classic filters list (AdGuard)
 ! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20614.0
+! OriginalVersion: 2026.20614.1
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/List-KR/List-KR
 ! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
@@ -1975,7 +1975,7 @@ namechart.kr##.container ~ .border-t:has(ins.adsbygoogle)
 dogdrip.net##.board-list .list > li:has(> #dogdripPowerLink, > #npl-list)
 m.search.naver.com##.square_tile_area .tile_area > .tile_list:has(._ad_icon)
 m.search.naver.com##.square_tile_area .tile_area > ._ad
-search.naver.com##li:is([data-nmb_hpl-doc-id*="_nad-"], [data-loc_plce-doc-id*="_nad-"], [data-slog-content*=":nad-"], [data-rbp_lpa-doc-id*="nad-"])
+search.naver.com##li:is([data-slog-content*="shs_lis:pmax-"], [data-nmb_hpl-doc-id*="_nad-"], [data-loc_plce-doc-id*="_nad-"], [data-slog-content*=":nad-"], [data-rbp_lpa-doc-id*="nad-"])
 search.naver.com###sub_pack > .brand_new_ui.searching_view
 url.kr##body > header ~ .py-4 ~ .container:has(~  .mt-5)
 url.kr##.alert-danger ~ .container
@@ -4595,7 +4595,7 @@ tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tv
 !#endif
 ! This file contains the trusted rules
 ! chzzk.naver.com#%#//scriptlet('trusted-replace-xhr-response', ',"adFree":false', ',"adFree":true', 'my-info')
-map.naver.com#%#//scriptlet('trusted-json-set', 'Array.prototype.find', '$..[adClickLog, adDescription, adId, adImages]', '$remove$', '', 'this')
+map.naver.com#%#//scriptlet('trusted-json-set', 'Array.prototype.find', '$.*.item.[adClickLog, adDescription, adId, adImages]', '$remove$', '', 'this')
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
 2798731938.zigcou.com#%#//scriptlet('trusted-replace-node-text', 'script', '{"props":{"pageProps":{"initialState":{', '"isClicked":false', '"isClicked":true')
 chzzkban.xyz#%#//scriptlet('trusted-suppress-native-method', 'Node.prototype.contains', '{"className":"adsbygoogle"}', 'abort')
