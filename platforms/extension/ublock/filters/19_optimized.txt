@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: c4+yDnK++Ey55Odb71uWng
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1781184683-3600.patch
+! Checksum: bjTLIEOwuozrpk+L1UXRJQ
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1781191173-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.77.1
-! TimeUpdated: 2026-06-11T13:28:37+00:00
+! Version: 2.0.77.2
+! TimeUpdated: 2026-06-11T15:16:23+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xhr,method=post
 meteum.ai,ya.ru,yandex.*##+js(abort-on-property-write, __pcodeAllActiveTestIds)
@@ -94,6 +94,10 @@ dzen.ru##div[class^="dzen-desktop--news-right-desktop-"]:has(> div > div:empty)
 dzen.ru##+js(set-constant, Object.prototype.initAdvManager, undefined)
 dzen.ru##div[class^="dzen-layout--desktop-page-layout__root-"] > div > div[data-appid^="dzen-desktop@"] div + div > div[style*="padding-top:"][style*="position:"]
 dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
+dzen.ru##:matches-path(/a) div[class*="bottomAdUnderComments-"]
+dzen.ru##:matches-path(/a) div[class*="ad-block__placeholder"]
+dzen.ru##:matches-path(/a) div[class*="articleLayout-"] > div[class*="Column-3P"] > div[class]:has(div:is([id*="-R-A-"][id*="-articleRight-"], [id^="default-"][id*="-articleRight-"]))
+dzen.ru##:matches-path(/a) div[class^="article-feed--redesign-feed"] div[class*="article-feed--base"] > div[id][class]:not(:has(> div[class^="article-feed-"][class*="_cardWrapper-"]))
 dzen.ru##div[id^="ad-"][class*="__isStretched"]
 dzen.ru##div[data-microappname="ContentMicroApp"] div:matches-attr("/.*/"="/placeholder/")
 dzen.ru##article:matches-attr("/.*/"="/skeleton/")
@@ -2575,8 +2579,9 @@ pdfcandy.com###ratingBox
 insales.ru##.register-bg
 insales.ru##.register-modal
 calltouch.ru###calltouch-podcast
-dzen.ru##div[class*="__pageContainer-"] > div[id$="-teaser"] + div[id$="-splashscreen"]
-dzen.ru##div[class*="__pageContainer-"] > div[id$="-popup"] > div > div[style="visibility: visible;"]
+dzen.ru##body:style(overflow: auto !important;)
+dzen.ru##div[id$="-teaser"] + div[id$="-splashscreen"]:style(display: none !important;)
+dzen.ru##div[id$="-teaser"][class^="dzen-desktop--distribution__"]
 pluska.sk##+js(remove-class, floating, .hero-video)
 keepstreams.com###activityNavBox:style(display: none !important;)
 keepstreams.com##+js(remove-class, normal-hasActivity-nav-page, .install-pages)
@@ -5871,7 +5876,7 @@ eldeber.com.bo,laarena.com.ar,lanacion.com.ar##.notificacion-modal
 /push.js$domain=51xiazai.cn|tsn.ua|sputnik.by|news.noteru.com|sputnik-georgia.ru|aksiyon.com.tr|infox.sg
 izlesene.com,doviz.com,sinemalar.com###x-comet-dialog
 ilbianconero.com,calciomercato.com###dialog-push-notification
-sbt.com.br,sports.ru,tribuna.com##.webpush
+sbt.com.br##.webpush
 steambalance.cc,paris2024.org,estadao.com.br##.push
 rbc.ru##.js-push-allow
 diets.ru,povarenok.ru###web-push-sub
@@ -6029,6 +6034,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il##div[class="tp-modal"][style^="z-index: 3000"]:style(display: none !important;)
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il##div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop:style(display: none !important;)
 movilzona.es,isinolsa.com,gendai.media,clutchpoints.com,newstime.joyn.de,hisse.net,gazetegercek.com.tr,focus.ua,polygon.com,autoevolution.com,onedio.co,sn-jp.com,games.gg,hongkongfp.com,computerbase.de,gzt.com,crash.net,foxsports.com.mx,theguardian.com,star.com.tr,halktv.com.tr,zaxid.net,ballotpedia.org,timesofmalta.com,24tv.ua,thepost.co.nz,sportbible.com,washingtonpost.com,expert.in.ua,turkiyegazetesi.com.tr,aksam.com.tr,trhaber.com.tr,droidwin.com,onedio.com,cheezburger.com,tastesbetterfromscratch.com,techgear.gr,glavcom.ua,noticias.yahoo.com,hurriyet.com.tr,dexerto.com,saltandbaker.com,bbc.com,decrypt.co,uniladtech.com,mothership.sg,pcmag.com,coindesk.com,sammyfans.com,m9.news,crankers.com,asiaone.com,cbr.com,thedailyjagran.com,digitaltrends.com,hardwaretimes.com,www.yahoo.com,interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
+yalispor.com.tr##.sidebar > div.widget:has(> form[data-ajaxform="true"])
+ukranews.com##.b-aside__subscribe
 promiflash.de##header > div[class] > h1 + .flex > .flex:has(> a[href^="https://www.google.com/preferences/source?q="])
 usnews.com##button[data-tracking-id="google_preferredsources"]
 incrypted.com##.inc-avanced-banner:has(a[href="https://t.me/Incrypted_bot?start=ZGw6MzE3MTc3"])
@@ -6117,7 +6124,7 @@ piunikaweb.com##.prefered-section
 footystats.org##body > div[class][style^="position:fixed;bottom:"]
 n-tv.de##div[class^="social-share_"]
 takvim.com.tr##.discover-link
-unian.net##.home-top-block > .main-unit:style(width: 100% !important;)
+unian.info,unian.ua,unian.net##.home-top-block > .main-unit:style(width: 100% !important;)
 volkskrant.nl###newsletterList
 volkskrant.nl##aside[data-test-id="temptation-ARTICLE_INLINE_MIDDLE"]
 volkskrant.nl##aside[data-test-id="temptation-OORTJE"]
@@ -6833,7 +6840,7 @@ tvtropes.org##.ad-caption-subscribe-wrapper:style(display: none !important;)
 kommersant.ru##.gs_subscribe
 onetz.de##.nl_signup_gmo_widget_article
 ura.news##a[href="https://max.ru/ura_ru"]
-indianexpress.com##.google-preferred
+ukranews.com,indianexpress.com##.google-preferred
 eltrecetv.com.ar##.brick-container:has(> .brick_full > .brickWhatsapp)
 europapress.es##.follow_boletin
 merrell.com###footer-email-signup
@@ -8545,7 +8552,7 @@ picofme.io##main > section[style="margin:0em 0 9.375em"]
 onlinegibdd.ru##+js(set-cookie, _showed_subscribeModal_og, 1)
 tulapressa.ru##.msg_fixed_top
 tulapressa.ru##.msg_fixed_bot
-log.com.tr##.google-news-subscribe
+ua-football.com,log.com.tr##.google-news-subscribe
 chip.com.tr##.top-fixed
 bel.biz,newgrodno.by##.subscribe__wrapper
 moneycontrol.com###all_login_popup:style(display: none !important;)
@@ -9228,7 +9235,7 @@ bcs-express.ru##div[data-id="subscribe"]
 moe-online.ru##.read-outside-site
 moe-online.ru##.a-ya-news
 moe-online.ru##.a-dzen
-tribuna.com,antalyahurses.com,demokratkocaeli.com,dts24.pl,playtech.ro##a[href^="https://news.google.com/search?"]
+antalyahurses.com,demokratkocaeli.com,dts24.pl,playtech.ro##a[href^="https://news.google.com/search?"]
 goal.com##body:style(overflow: auto !important;)
 thedailybeast.com##iframe[id^="offer"]
 motorsport-total.com##.pull-right > div.teaser_container:has(> div.f1de-container > div.block-title:contains(Newsletter))
@@ -9668,7 +9675,7 @@ tproger.ru,newsgram.com,paperpaper.*,deon.pl##aside .subscription-widget
 accordancebible.com##.flex-grow > div.bg-primary:has(> div.container div.newsletter-signup)
 try-it.jp##div[class^="register"]
 earth.com##div[class^="NewsSubscribeLg_"]
-ukrinform.pl,ukrinform.jp,ukrinform.fr,ukrinform.de,ukrinform.es,ukrinform.net##div[data-name="int_hidden"]
+ukrinform.ua,ukrinform.pl,ukrinform.jp,ukrinform.fr,ukrinform.de,ukrinform.es,ukrinform.net##div[data-name="int_hidden"]
 vnnews.ru##div[class^="telega_sub"]
 webcg.net##.mailmagazine-widget
 gooday.nikkei.co.jp##.gdy-side-sns

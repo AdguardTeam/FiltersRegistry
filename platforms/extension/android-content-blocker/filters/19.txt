@@ -1,8 +1,8 @@
-! Checksum: 38eUO6PSRwyeyo7dMcuqAA
+! Checksum: T23lO9hKLKcdAF2doAYW9A
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.77.1
-! TimeUpdated: 2026-06-11T13:28:37+00:00
+! Version: 2.0.77.2
+! TimeUpdated: 2026-06-11T15:16:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -166,6 +166,9 @@ mail.ru##div[slot="main-column"] > div.stripe-wrapper
 ! dzen.ru
 ! Main page
 dzen.ru##div[class^="dzen-layout--desktop-page-layout__root-"] > div > div[data-appid^="dzen-desktop@"] div + div > div[style*="padding-top:"][style*="position:"]
+! articles
+[$path=/a]dzen.ru##div[class*="bottomAdUnderComments-"]
+[$path=/a]dzen.ru##div[class*="ad-block__placeholder"]
 ! Ads in news
 dzen.ru##div[id^="ad-"][class*="__isStretched"]
 dzen.ru##div[class*="__forceShowPlaceholder-"]
@@ -3653,8 +3656,7 @@ insales.ru##.register-bg
 insales.ru##.register-modal
 calltouch.ru###calltouch-podcast
 calltouch.ru##.anons-container
-dzen.ru##div[class*="__pageContainer-"] > div[id$="-teaser"] + div[id$="-splashscreen"]
-dzen.ru##div[class*="__pageContainer-"] > div[id$="-popup"] > div > div[style="visibility: visible;"]
+dzen.ru##div[id$="-teaser"][class^="dzen-desktop--distribution__"]
 allgaeuer-zeitung.de###piano-sticky-bottom
 k-ps.ru##.modal-offer
 emails-checker.net##.custom-social-proof
@@ -8912,7 +8914,7 @@ youla.ru##.web_push_confirmation
 izlesene.com,doviz.com,sinemalar.com###x-comet-dialog
 stalkermods.ru,ucoz.net##.pshsndr
 ilbianconero.com,calciomercato.com###dialog-push-notification
-sbt.com.br,sports.ru,tribuna.com##.webpush
+sbt.com.br##.webpush
 eleman.net##.pushRegistrationDiv
 steambalance.cc,paris2024.org,estadao.com.br##.push
 ||static.shopback.net/tags/plugins/shoppush.js
@@ -9287,6 +9289,7 @@ movilzona.es,isinolsa.com,gendai.media,clutchpoints.com,newstime.joyn.de,hisse.n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+ukranews.com##.b-aside__subscribe
 usnews.com##button[data-tracking-id="google_preferredsources"]
 heavy.com###custom_html-27
 sport.ua##.news-google-subscr
@@ -10110,7 +10113,7 @@ onetz.de##.nl_signup_gmo_widget_article
 ura.news##.cR
 ura.news##.cS
 ura.news##a[href="https://max.ru/ura_ru"]
-indianexpress.com##.google-preferred
+ukranews.com,indianexpress.com##.google-preferred
 europapress.es##.follow_boletin
 merrell.com###footer-email-signup
 axios.com##div[data-vars-event-name="preferred_source_view"]
@@ -11909,7 +11912,7 @@ picofme.io##main > section[style="margin:0em 0 9.375em"]
 onlinegibdd.ru###subsribeDemoForm
 tulapressa.ru##.msg_fixed_top
 tulapressa.ru##.msg_fixed_bot
-log.com.tr##.google-news-subscribe
+ua-football.com,log.com.tr##.google-news-subscribe
 chip.com.tr##.top-fixed
 bel.biz,newgrodno.by##.subscribe__wrapper
 adpushup.com##.news-popup
@@ -12823,7 +12826,7 @@ moe-online.ru##.a-ya-news
 moe-online.ru##.a-dzen
 scatkings.com##.content > div.top
 die-deutsche-wirtschaft.de##div[consent-required] + div[id][style*="z-index"]
-tribuna.com,antalyahurses.com,demokratkocaeli.com,dts24.pl,playtech.ro##a[href^="https://news.google.com/search?"]
+antalyahurses.com,demokratkocaeli.com,dts24.pl,playtech.ro##a[href^="https://news.google.com/search?"]
 thedailybeast.com##iframe[id^="offer"]
 thedailybeast.com##div[class^="ProductCalloutButtonModule"]
 wonderzine.com,furfur.me###subscription_digest
@@ -13526,7 +13529,7 @@ thetimes.co.uk###paywall-portal-sale-modal
 ||edugram.com/partnersforms/widget/?component=popupEmailForm
 polaroid.com##body .privy
 pravda.com.ua##.block_post > div[style="margin-top: 25px;"]
-ukrinform.pl,ukrinform.jp,ukrinform.fr,ukrinform.de,ukrinform.es,ukrinform.net##div[data-name="int_hidden"]
+ukrinform.ua,ukrinform.pl,ukrinform.jp,ukrinform.fr,ukrinform.de,ukrinform.es,ukrinform.net##div[data-name="int_hidden"]
 vnnews.ru##div[class^="telega_sub"]
 ranak.me##.youtube-list > div.line
 webcg.net##.mailmagazine-widget

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: nt774zefYwihCVXA2ZoSng
-! Diff-Path: ../patches/1/1-s-1781184682-3600.patch
+! Checksum: OZffVKrMCJRJInGG3+PVCg
+! Diff-Path: ../patches/1/1-s-1781191171-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.6.46
-! TimeUpdated: 2026-06-11T13:27:47+00:00
+! Version: 2.1.6.47
+! TimeUpdated: 2026-06-11T15:15:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5325,8 +5325,6 @@ xporno.xxx##+js(set-cookie, pu_count, 1)
 sc2tv.ru##+js(remove-class, body--brranding, peka-app > div.body--brranding)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61395
 e1.ru##+js(remove-class, _branding, div[class*="-wrapper"])
-! top ad remains in nba section
-sports.ru,ua##+js(remove-class, branding_dfp)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59636
 flibusta.appspot.com##+js(set-constant, String.prototype.charCodeAt, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59782
@@ -5691,8 +5689,6 @@ simhost.org##.top_bg:style(height: 0 !important;)
 ! https://forum.adguard.com/index.php?threads/http-xlib-info-nsfw.43138/
 xlib.info##body:style(background-image: none !important; background-color: #FFFFFF !important;)
 lordfilm1.work##.wrap:style(padding-top: 0 !important;)
-! sports.ru - for apps. Sometimes banner is not hidden on the main page
-sports.ru##.nav-top-line__content-wrapper > div:not([class*="-"]):style(visibility: hidden!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/78290
 my.mosenergosbyt.ru##body > div[class="jss566 jss555 jss556"]:style(display: none!important;)
 my.mosenergosbyt.ru##body:style(overflow: visible!important;)
@@ -5722,8 +5718,6 @@ coop-land.ru##html > body > header[class="header"]:style(margin-bottom: auto !im
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122672
 rbc.ru##body div.topline__disable-adv:style(visibility: hidden !important;)
 rbc.ru##.js-news-feed > div.news-feed:style(position: inherit !important;)
-! tribuna.com - white space
-tribuna.com##div[data-content-piece="before-header"]:style(margin-bottom: 0 !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67614
 talkdevice.ru##div[class^="arcticmodal-"]:style(display: none!important;)
 talkdevice.ru##body:style(overflow: visible!important;)
@@ -6424,19 +6418,6 @@ roem.ru##body.branded:style(padding-top: 5px!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/62914
 province.ru##.flexbannergroup:style(visibility: hidden !important; height: 1px !important;)
 province.ru##body div#wrapper:style(margin-top: -175px !important;)
-!
-! sports.ru / ua.tribuna.com,by.tribuna.com
-! sports.ru top branding margin
-!+ NOT_PLATFORM(ios, android)
-sports.ru##.layout > div.branding-margin:style(padding-top: 24px!important)
-! https://forum.adguard.com/index.php?threads/27027/
-sports.ru###top-banner-place.dfp-banner.top-banner-place:style(display: block!important; position: absolute!important; left: -3000px!important;)
-! sports.ru - ad leftover at the bottom
-sports.ru##.adsbox:style(position: absolute!important; left: -3000px!important; display: block!important;)
-! sports.ru/tribuna.com - удаление брендированного фона, отступа сверху
-sports.ru,ua.tribuna.com,by.tribuna.com###branding-layout > div[style*="width:100%;height:100%;cursor:pointer"]:style(z-index: -99!important;)
-sports.ru,ua.tribuna.com,by.tribuna.com##body[class] > div#branding-layout:style(background: #e5e7e9 !important; margin-top: 0 !important; padding-top: 120px !important;)
-sports.ru##body > div.branding-margin:style(padding-top: 0!important;)
 ! kinobar.kz - удаление отступа сверху
 kinobar.kz##body:style(padding-top: 0px !important;)
 ! firepic.org - удаление брендированного фона, отступа сверху
@@ -6604,6 +6585,11 @@ mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,
 !
 ! NOTE: Specific rules
 !
+ua-football.com##.show-post > div[style]:has(> a[href^="https://ggbet.ua/"])
+ua-football.com##.show-post > div[style]:has(> strong > a[href^="https://sport.ua/go/sportlinks.info/"])
+ua-football.com##div.asside:has(> div.topBook)
+ua-football.com##.header-bonus
+tribuna.com##div[class$="__main_layout__empty_block"]
 rbc.ua##div[style="min-height:350px;"]
 ||enovosty.com/wp-content/uploads/*/klo_video_banner.mp4
 enovosty.com##.auto-banner
@@ -7117,7 +7103,6 @@ riamo.ru##article > div[style^="--"]:has(> div.js-setka-news[data-bid])
 riamo.ru##article > div[style^="--"]:has(> .smi24__informer)
 mpg.com/movie/files/episodes/*-RU.mp4|
 rutoro.info##.box_in > div[align="center"]:has(> a:not([class]) img)
-cyber.sports.ru##.structured-body-wrapper > p.sb-paragraph:has(> a[href^="https://go.redav.online/"])
 pikabu.ru##.promo-button
 pikabu.ru###branding_ad_header
 vedomosti.ru##.article__metrics
@@ -7133,7 +7118,6 @@ comss.ru##div[align="center"] > div[style="width:300px;"] > a > img
 cdncontent.top##.box:has(> a[href="https://www.liveinternet.ru/click"])
 ||cdncontent.top/img_full/jquery.min.java.js
 online.metro-cc.ru##.banner-retail-rocket
-sports.ru##.right-banner-element
 snob.ru##.top-bottom-block
 snob.ru##.in-content_ad
 cq.ru##.game-single__steam
@@ -7314,7 +7298,6 @@ gorodkirov.ru##.grid-main__left-promo
 gorodkirov.ru##.half-card-advert
 gazeta.ru###_id_rightcol > div[style]:not([class]):has(.banner)
 redheadsound.studio##div[style="color:#104d92;background-color:#e3f2fd;padding:0.7rem;"]
-sports.ru##.columns__alt-column > div.post-layout__frame:has(> div.ad-slot)
 cybersport.ru##.page-layout-content > div[data-fetch-key] > div[class*="hotLinks_"]
 xn--80ady2a0c.xn--p1ai##.l-a-fly
 ||vyksarf.ru^$image,xhr,domain=xn--80ady2a0c.xn--p1ai
@@ -7335,9 +7318,6 @@ loads.ati.su##+js(json-prune, params.*.advType params.*.advId params.*.cinn)
 loads.ati.su##div[class*="skeleton"]
 ||meduza.io/api/w*/banners
 promokodi.net##.cashback-store-leftcol-banner
-sports.ru##.layout-branding
-sports.ru##.odds-widget
-sports.ru##.online-layout__third-position > h2.widget-heading:contains(Коэффициенты)
 playground.ru###dfpPrerollDelay
 ||playground.ru/img/pg-bonus-promo.mp4
 sci.rambler.ru##div[style][class*=" "]:not([id]):has(> div[id^="adfox"])
@@ -7412,7 +7392,6 @@ mirf.ru##.advt
 remontcompa.ru##.full_content > div:not(:has(*)):contains(banner_google)
 b17.ru##div[id^="body_right_fly"]
 infox.sg##div[class^="adv"]
-sports.ru##div.news-layout__frame:has(> div.ad-slot)
 rlsnet.ru##.b-tile-banner-wrap
 ||wg*.price.ru/partners/js/app.js$3p
 fonwall.ru##div[class^="BreakpointGrid_container__"] > div[class^="BreakpointGrid_column__"]:has(div[data-sponsored-id])
@@ -7520,7 +7499,6 @@ calcus.ru##div[style="min-height: 300px"]
 calcus.ru##div[style="height: 180px; max-height: 180px; overflow: hidden"]
 myfin.by##.game--winline > div.game__label
 myfin.by##a[class^="khl-winline-"]
-sports.ru##.sb-linked-image
 softportal.com##div[style$="text-align: center;"] > span > a[rel="nofollow"]
 anilib.me##.page > div._container--indent > div[class$="_b"][style]
 ||bb.pln24.ru/roll/
@@ -7727,7 +7705,6 @@ sravni.ru##div[class^="article_spec-wrapper"]
 sravni.ru##article > div[class]:has(> div > div[class*="adfox"])
 overclockers.ru##body .top-an-underlogo
 overclockers.ru##.ad-sticly__parent
-sports.ru##.news-ad-inreads
 monetory.io##.rekl-banner
 dom.ru##div[data-test="header-hat"]
 interfax.ru##.toplogo__advertisement-wrap
@@ -9422,7 +9399,6 @@ kino-teatr.ru##div[class*="_dobro"]
 ||pimpletv.ru/wp-content/uploads/img/melbet-sidebar.png
 alexbruni.ru,incrypted.com##a[href^="https://bit.ly/"]
 regnum.ru##.article-footer-partner-wrapper
-tribuna.com##div[class^="Main_main-layout__empty-block__"]
 ~games.academic.ru,academic.ru###games
 ~games.academic.ru,academic.ru##a[href="https://games.academic.ru"]
 kinonews.ru##div[style^="text-align:"][style$="height:305px;"]
@@ -11120,7 +11096,6 @@ talks.by##.bottom-navigation__ul
 kupidonia.ru##.offer-bottom
 topwar.ru###google_full_story_mobile
 topcor.ru###google_full_story
-tribuna.com##.banner__annotation
 uznayvse.ru##.topadcategory
 uznayvse.ru##.ad336х280_desk
 uznayvse.ru##.direct_stat
@@ -13175,7 +13150,6 @@ rusvidos.com##.bc_teaser
 istoki.tv,ural56.ru##.beono-banner_slider
 sport-xl.org##.best-bookmakers
 pimpletv.ru##.bet-box
-tribuna.com##.bets-online
 vseprosport.ru##.betting-rates
 macdigger.ru##.bg-brand
 mobiltelefon.ru,sport365.ws##.bg_banner
@@ -14694,7 +14668,6 @@ od-news.com##aside > .textwidget > p > a[target="_blank"][rel="nofollow noopener
 bessarabiainform.com##aside#text-7
 samara24.ru##aside[class="rn-global-sidebar"]
 prestolov.ru##aside[class="widget group widget_execphp"]
-by.tribuna.com,ua.tribuna.com##aside[id$="-banner-place"]
 smartbobr.ru##aside[id^="advads_"]
 ebanoe.it##aside[id^="custom_html"]
 vinnytsianews.com##aside[id^="custom_html-"]
@@ -14926,7 +14899,6 @@ prophotos.ru##div[class^="branding"]
 iwantgames.ru##div[class^="brbad"]
 znanija.com##div[class^="brn-ads"]
 softconvert.ru##div[class^="cc_mod_"]
-tribuna.com##div[class^="clever-"]
 ircity.ru##div[class^="cr_advert"]
 trashbox.mobi##div[class^="div_landing_youtube_caption"]
 aif.ru##div[class^="doctors-widget"]
@@ -16544,13 +16516,6 @@ webware.ru/*/clients/
 ||s3.amazonaws.com/content.systemrequirementslab.com/cyri/assets/images/skin_$image,domain=systemrequirementslab.com
 ||s3.amazonaws.com/js-cache/$domain=nude-moon.com
 ||s4galaxy.ru/happy.js
-||s5o.ru/common/brandings/
-||s5o.ru/common/css/i/promo/
-||s5o.ru/source/_desktop/aliens/views/branding_$image
-||s5o.ru/source/_desktop/assets/redken.gif
-||s5o.ru/source/_desktop/build/banners/main.js
-||s5o.ru/source/_desktop/promo/$domain=sports.ru
-||s5o.ru/source/_desktop/promo/views/
 ||salda.ws/adv/
 ||saltday.ru/assets/images/baners
 ||sama-sama-sama.ru/reclam/
@@ -16616,9 +16581,6 @@ webware.ru/*/clients/
 ||sovsport.ru/?etc=$xhr
 ||sport-xl.org/images/240х400-
 ||sportlive365.net/pr/486*.gif
-||sports.ru/desktop/aliens/
-||sports.ru/desktop/special/$domain=sports.ru
-||sports.ru/i/promo/
 ||sportsweek.org/banner_js
 ||sprashivai.net/*/oops.png
 ||sprotyv.info/sites/sprotyv/files/images/2015/oshadbank_
@@ -18003,7 +17965,7 @@ gazeta.ru##.s-utm-links-partners-hor
 gazeta.ru##.smi2_incut
 ! END: gazeta.ru
 !
-! sports.ru / ua.tribuna.com / by.tribuna.com
+! sports.ru (tribuna.com is a separate project now)
 ! Clickable container for BG link -- found only with Safari
 sports.ru###branding-layout>.page-layout:empty
 ! start background images (no other way to get rid of them in Safari
@@ -18012,84 +17974,29 @@ sports.ru###branding-layout>.page-layout:empty
 ||dumpster.cdn.sports.ru/f/12/58a6c2d10270bbd4b54fcf107e185.svg
 ||dumpster.cdn.sports.ru/4/73/88d781ce68174f5e2c800639520e1.webp
 ! end of background images
-sports.ru##.branding-ad-link:remove()
-tribuna.com##div[class$="__main_layout__empty_block"]
-sports.ru##.ovechkin-promo-wrapper
-sports.ru##.columns-layout__main > div > div.carousel-of-cards:has(div[data-link])
-sports.ru##body[class] > div[id][class][style^="padding-top:"]:style(background: #e5e7e9 !important; margin-top: 0 !important; padding-top: 120px !important;)
-sports.ru##body[class] > div[class^="br-lt"]:style(background: #e5e7e9 !important; margin-top: 0 !important; padding-top: 120px !important;)
-sports.ru##div[class^="br-lt"] > div[class]:not(:has(div)):remove()
-sports.ru##.frame:has(> div[data-banner-type])
-sports.ru##div[data-content-name="banner-static"]
-||senoval.sports.ru/adblock-checker/analyticSender.es.js
-sports.ru##div[data-banner-type]
-sports.ru##.in-read-wrapper
-sports.ru###branding-layout > div.page-layout:not(:has(div)):remove()
-sports.ru##.js-ad-label
-cyber.sports.ru##.match-summary__betting-bar
-cyber.sports.ru##.match-teaser__betting-bar
-sports.ru##a[rel="nofollow"] > img[data-temp-id]
-sports.ru##.common-online__adv-label
-sports.ru##.comment-ads
-sports.ru##.float-block
-sports.ru##.adfox-banner
-sports.ru##div[data-control="Stat.WinlineButton"]
-sports.ru##.winline-teaser
-sports.ru##p > a[rel="nofollow"] > img[height][width]
-sports.ru,tribuna.com###branding-layout > *:not(div):not([class]):not(id):not(style)
-sports.ru##.ufc-wink
-sports.ru##.bookmaker-info
-sports.ru##.poll__bookmaker-link
-sports.ru##.news-item__poll
-sports.ru##div[data-is-ad-poll="1"]
-sports.ru##a[rel="nofollow"] > img[height="200"][width="470"]
-sports.ru##.adfox
-sports.ru##a[href^="https://redirect.appmetrica.yandex.com/serve/"]
-sports.ru##a[href^="https://trbna.co/"][rel="nofollow"] > img
-sports.ru##a[href^="https://l.linklyhq.com/"]
-sports.ru##.nav-top-line__content-wrapper > div:not([class*="-"])
-sports.ru##.nav-list__item .promo-block
-sports.ru##span[class^="match-summary__afterMatchBoard"] a[rel*="sponsored"] > img
-sports.ru##p > a > img[width="450"][height^="10"]
-sports.ru##a[href^="https://winline.ru/"]
-sports.ru##a[data-content-name="banner-static"] > img
-sports.ru##a[class^="winline-"]
-sports.ru##[data-control="Banners.DFP"]
-sports.ru##.vn-playback
-sports.ru##.news-item > .in-read-placement
-sports.ru##.comments-list__item_advert
-sports.ru###top-banner-place
-sports.ru##.accordion-group[data-content-name="banner-static"]
-sports.ru,ua.tribuna.com,by.tribuna.com##.place-for-ad
-ua.tribuna.com,by.tribuna.com##.newsline aside.aliens
-sports.ru,ua.tribuna.com,by.tribuna.com##.teaser-before-links
-sports.ru##.layout__branding
-sports.ru##.columns__alt-column > div.frame:has(> div.geo-banner)
-sports.ru##.record-widget__bookmaker
-sports.ru##.factoid-coefficient
-sports.ru,tribuna.com##.promo-link
-cyber.sports.ru##:matches-path(/news/) .box > .layout-columns > .rightPart:has(> .banner)
-!
-sports.ru##.broadcast > article.event-container:has(img[width="1100"][height="100"])
-sports.ru##.material-list--additional-block-reverse > article.material-list__item:has(> span:contains(/^Реклама$/))
-sports.ru##main > article:has(> a[rel*="sponsored"]):remove()
+sports.ru##+js(set-constant, Object.prototype.branding, '')
 sports.ru##.aside-news-list > li.aside-news-list__item:has(> span.aside-news-list__advert)
-sports.ru##.nav-items-list > li.nav-items-list__item:has(> div.nav-item > a.nav-item__banner)
-sports.ru##.columns-layout__right > section:has(> div.js-active > div[data-is-ad-poll="1"])
-sports.ru##main > article.material-list__item:has(> a[href^="https://redirect.appmetrica.yandex.com/"])
-sports.ru##.aside-news-list > li.aside-news-list__item:has(> a[href^="https://redirect.appmetrica.yandex.com/"])
-sports.ru##.columns-layout__right > section:has(> div[data-is-ad-poll="1"])
-!
-! https://uploads.adguard.com/up04_4x296_U_menya_ne_bombit_slishkom_silno._Ya_sidel_v_kresle_eksperta_i_vse_ponimayu_soobschaet_Lempard_o_kritike_ot_Mourinyu_-_Futbol_-_S.png
-sports.ru##.news-item__content > strong > a[href^="https://trbna.co/"]
-sports.ru##div[class*="news-item__content"] > p > a[href^="https://trbna.co/"]
-sports.ru##.news-item__content > a[href^="https://trbna.co/"]
-! VAST: https://uploads.adguard.com/up04_3dsdl_Sport_futbol_hokkei_basketbol_tennis_boks_biatlon_Formula-1__vse_novosti_sporta_na_Sports.ru.png
-||cdn.videonow.ru^$domain=ua.tribuna.com|by.tribuna.com
-!
+sports.ru##a[href^="https://redirect.appmetrica.yandex.com/serve/"]
+sports.ru###branding-layout > *:not(div):not([class]):not(id):not(style)
+sports.ru##.teaser-before-links
+sports.ru##.float-block
+sports.ru##.in-read-wrapper
+sports.ru##div[data-banner-type]
+sports.ru##a[href^="https://winline.ru/"]
+sports.ru##.right-banner-element
+sports.ru##.layout__branding
+sports.ru##.news-ad-inreads
+sports.ru##div.news-layout__frame:has(> div.ad-slot)
+sports.ru##.comment-ads
+sports.ru##.layout-branding
+sports.ru##.frame:has(> div[data-banner-type])
+cyber.sports.ru##.match-teaser__betting-bar
+sports.ru##.sb-linked-image
+sports.ru##body[class] > div#branding-layout:style(background: #e5e7e9 !important; margin-top: 0 !important; padding-top: 120px !important;)
+sports.ru##+js(remove-class, branding_dfp)
 !+ NOT_PLATFORM(windows, mac, android, cli)
 sports.ru##+js(set-constant, Object.prototype.branding, '')
-! END: sports.ru / ua.tribuna.com / by.tribuna.com
+! END: sports.ru
 !
 !
 ! shkulev media holding

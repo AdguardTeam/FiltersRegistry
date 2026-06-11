@@ -1,9 +1,9 @@
-! Checksum: xMHGdoUIoBVXgtfu5TRpZw
-! Diff-Path: ../patches/19/19-s-1781184666-3600.patch
+! Checksum: LZSD6jHqdUOlfWsT/psJOA
+! Diff-Path: ../patches/19/19-s-1781191148-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.77.1
-! TimeUpdated: 2026-06-11T13:28:37+00:00
+! Version: 2.0.77.2
+! TimeUpdated: 2026-06-11T15:16:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -247,6 +247,12 @@ dzen.ru##div[class^="dzen-desktop--news-right-desktop-"]:has(> div > div:empty)
 dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.initAdvManager', 'undefined')
 dzen.ru##div[class^="dzen-layout--desktop-page-layout__root-"] > div > div[data-appid^="dzen-desktop@"] div + div > div[style*="padding-top:"][style*="position:"]
 dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
+! articles
+[$path=/a]dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.rtb', 'undefined')
+[$path=/a]dzen.ru##div[class*="bottomAdUnderComments-"]
+[$path=/a]dzen.ru##div[class*="ad-block__placeholder"]
+[$path=/a]dzen.ru##div[class*="articleLayout-"] > div[class*="Column-3P"] > div[class]:has(div:is([id*="-R-A-"][id*="-articleRight-"], [id^="default-"][id*="-articleRight-"]))
+[$path=/a]dzen.ru##div[class^="article-feed--redesign-feed"] div[class*="article-feed--base"] > div[id][class]:not(:has(> div[class^="article-feed-"][class*="_cardWrapper-"]))
 ! Ads in news
 dzen.ru##div[id^="ad-"][class*="__isStretched"]
 dzen.ru#?#div[data-microappname="ContentMicroApp"] div:matches-attr("/.*/"="/placeholder/")
@@ -4889,8 +4895,9 @@ insales.ru##.register-bg
 insales.ru##.register-modal
 calltouch.ru###calltouch-podcast
 calltouch.ru##.anons-container
-dzen.ru##div[class*="__pageContainer-"] > div[id$="-teaser"] + div[id$="-splashscreen"]
-dzen.ru##div[class*="__pageContainer-"] > div[id$="-popup"] > div > div[style="visibility: visible;"]
+dzen.ru#$#body { overflow: auto !important; }
+dzen.ru#$#div[id$="-teaser"] + div[id$="-splashscreen"] { display: none !important; }
+dzen.ru##div[id$="-teaser"][class^="dzen-desktop--distribution__"]
 pluska.sk#%#//scriptlet('remove-class', 'floating', '.hero-video')
 allgaeuer-zeitung.de###piano-sticky-bottom
 keepstreams.com#$##activityNavBox { display: none !important; }
@@ -12216,7 +12223,7 @@ youla.ru##.web_push_confirmation
 izlesene.com,doviz.com,sinemalar.com###x-comet-dialog
 stalkermods.ru,ucoz.net##.pshsndr
 ilbianconero.com,calciomercato.com###dialog-push-notification
-sbt.com.br,sports.ru,tribuna.com##.webpush
+sbt.com.br##.webpush
 eleman.net##.pushRegistrationDiv
 steambalance.cc,paris2024.org,estadao.com.br##.push
 ||static.shopback.net/tags/plugins/shoppush.js
@@ -12600,6 +12607,8 @@ movilzona.es,isinolsa.com,gendai.media,clutchpoints.com,newstime.joyn.de,hisse.n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+yalispor.com.tr##.sidebar > div.widget:has(> form[data-ajaxform="true"])
+ukranews.com##.b-aside__subscribe
 promiflash.de##header > div[class] > h1 + .flex > .flex:has(> a[href^="https://www.google.com/preferences/source?q="])
 usnews.com##button[data-tracking-id="google_preferredsources"]
 incrypted.com##.inc-avanced-banner:has(a[href="https://t.me/Incrypted_bot?start=ZGw6MzE3MTc3"])
@@ -12691,7 +12700,7 @@ piunikaweb.com##.prefered-section
 footystats.org##body > div[class][style^="position:fixed;bottom:"]
 n-tv.de##div[class^="social-share_"]
 takvim.com.tr##.discover-link
-unian.net#$#.home-top-block > .main-unit { width: 100% !important; }
+unian.info,unian.ua,unian.net#$#.home-top-block > .main-unit { width: 100% !important; }
 volkskrant.nl###newsletterList
 volkskrant.nl##aside[data-test-id="temptation-ARTICLE_INLINE_MIDDLE"]
 volkskrant.nl##aside[data-test-id="temptation-OORTJE"]
@@ -13856,7 +13865,7 @@ thessaloniki.gr##.vc_column:has(> div.wpb_wrapper > div.newsletterbutton)
 ura.news##.cR
 ura.news##.cS
 ura.news##a[href="https://max.ru/ura_ru"]
-indianexpress.com##.google-preferred
+ukranews.com,indianexpress.com##.google-preferred
 eltrecetv.com.ar##.brick-container:has(> .brick_full > .brickWhatsapp)
 europapress.es##.follow_boletin
 merrell.com###footer-email-signup
@@ -16638,7 +16647,7 @@ onlinegibdd.ru#%#//scriptlet('set-cookie', '_showed_subscribeModal_og', '1')
 onlinegibdd.ru###subsribeDemoForm
 tulapressa.ru##.msg_fixed_top
 tulapressa.ru##.msg_fixed_bot
-log.com.tr##.google-news-subscribe
+ua-football.com,log.com.tr##.google-news-subscribe
 chip.com.tr##.top-fixed
 bel.biz,newgrodno.by##.subscribe__wrapper
 moneycontrol.com#$##all_login_popup { display: none !important; }
@@ -17924,7 +17933,7 @@ moe-online.ru##.a-ya-news
 moe-online.ru##.a-dzen
 scatkings.com##.content > div.top
 die-deutsche-wirtschaft.de##div[consent-required] + div[id][style*="z-index"]
-tribuna.com,antalyahurses.com,demokratkocaeli.com,dts24.pl,playtech.ro##a[href^="https://news.google.com/search?"]
+antalyahurses.com,demokratkocaeli.com,dts24.pl,playtech.ro##a[href^="https://news.google.com/search?"]
 goal.com#?#body > div[class^="modal"]:has(> div[class^="newsletter-popup_content-wrapper"])
 goal.com#$#body { overflow: auto !important; }
 thedailybeast.com##iframe[id^="offer"]
@@ -18848,7 +18857,7 @@ thetimes.co.uk###paywall-portal-sale-modal
 ||edugram.com/partnersforms/widget/?component=popupEmailForm
 polaroid.com##body .privy
 pravda.com.ua##.block_post > div[style="margin-top: 25px;"]
-ukrinform.pl,ukrinform.jp,ukrinform.fr,ukrinform.de,ukrinform.es,ukrinform.net##div[data-name="int_hidden"]
+ukrinform.ua,ukrinform.pl,ukrinform.jp,ukrinform.fr,ukrinform.de,ukrinform.es,ukrinform.net##div[data-name="int_hidden"]
 vnnews.ru##div[class^="telega_sub"]
 ranak.me##.youtube-list > div.line
 webcg.net##.mailmagazine-widget
