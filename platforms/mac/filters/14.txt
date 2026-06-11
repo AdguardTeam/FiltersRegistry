@@ -1,8 +1,8 @@
-! Checksum: revmjnxOWCppc0hyzIAJqQ
+! Checksum: lUNkOqylhpLAsYh6KKNJTA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.18
-! TimeUpdated: 2026-06-11T11:38:05+00:00
+! Version: 2.2.70.19
+! TimeUpdated: 2026-06-11T13:28:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4907,7 +4907,6 @@ allegutschein.de,rabattecode.de##.privacy-policy-moudle
 kupkolo.cz#$#div[data-modal-endpoint="cookiebar"] { display: none !important; }
 kupkolo.cz#$#body { overflow: auto !important; }
 ggmax.com.br##.component--page-cookies-consent
-x.com#%#//scriptlet('trusted-set-cookie', 'd_prefs', 'MToxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw')
 tablesgenerator.com##.consent-dialog
 gamesnacks.com##body > div[jsowner]:has(> div > div[role="dialog"] a[href^="https://policies.google.com/privacy"])
 istikbal.com.tr##df-cookie-element
@@ -6757,7 +6756,6 @@ sigaantenado.com.br###bar-lgpd
 archnet.org,solana.com##div[class*="CookieConsent_"]
 ||assets.investisdigital.com/cookiemanager/
 ||bettercollective.com/*/cookies.js
-x.com,twitter.com#%#//scriptlet('set-cookie', 'twtr_pixel_opt_in', 'N')
 myniacin.com##.nx-popup
 lebiscuit.com.br##div[class*="modalcookie"]
 budni.de#$##tc-privacy-wrapper { display: none !important; }
@@ -7798,8 +7796,9 @@ theprotocol.it#?#div[class*="ContainerElement_"] > div[class*="GridElement_"] > 
 theprotocol.it#?#div[class^="ContainerElement_"] > div:not([class]) > div[class^="Container_"]:has(> aside[data-test="section-cookieModal"])
 allenai.org,solanamobile.com,merlin.foyer.work##.rhc-banner
 teztour.ee##.dialog-window
-x.com,communitynotes.twitter.com#?##main > div[class^="wrapper__"]:has(> div[aria-labelledby^="notice"])
-x.com,communitynotes.twitter.com#?##main > div[class^="sc-"] > div[class^="src__InlineCalloutElement"]
+x.com##body > .flex > div[role="region"][aria-label]:has(> .flex-col.gap-2 > button.text-body.bg-white.border-transparent + button.text-body.bg-white.border-transparent)
+x.com,communitynotes.twitter.com###main > div[class^="wrapper__"]:has(> div[aria-labelledby^="notice"])
+x.com,communitynotes.twitter.com###main > div[class^="sc-"] > div[class^="src__InlineCalloutElement"]
 razpisanie.bdz.bg#$#body #cookieWarning { display: none !important; }
 razpisanie.bdz.bg#$#body { overflow: auto !important; padding-right: 0 !important; }
 razpisanie.bdz.bg#$#.modal-backdrop:not(.modal-backdrop + .modal-backdrop) { display: none !important; }
@@ -18787,7 +18786,6 @@ nacongaming.com#%#//scriptlet("set-constant", "tarteaucitron.cookie", "undefined
 intersport.nl,intersport.hu,intersport.nl,intersport.es,intersport.at#%#//scriptlet("abort-on-property-read", "window.Urls.cookiePopup")
 warsteiner.de##section:has(> div[class] > svg + div[class] > div > span > p > a[href="/datenschutz"])
 warsteiner-gruppe.de#%#//scriptlet('trusted-click-element', '#gdpr-preface__opt-in')
-x.com,twitter.com#%#document.cookie="eu_cn=1; path=/;";
 empik.com#%#//scriptlet('set-cookie', 'cp', '1')
 empik.com#%#//scriptlet('set-cookie', 'cc', '2')
 empik.com#%#//scriptlet('set-cookie', 'cva', '1')
@@ -19015,6 +19013,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233373
+@@||abs.twimg.com/x-web/*/cookie-banner-*.js$domain=x.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233170
 webtic.it#@#.cookie-banner:not(body):not(html)
 ! theweekjunior.com - broken age verification
@@ -35514,6 +35514,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+promiflash.de##body > .background > .shadow-lg:has(> .flex.gap-base > button.rounded-xl + button.rounded-xl)
 ||tycsports.com/cwvitals/v-1.7.0/js/webPushChunk
 tycsports.com###vanPushPermissionPromptRoot
 comments.ua###push_info
@@ -36523,6 +36524,8 @@ movilzona.es,isinolsa.com,gendai.media,clutchpoints.com,newstime.joyn.de,hisse.n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+promiflash.de##header > div[class] > h1 + .flex > .flex:has(> a[href^="https://www.google.com/preferences/source?q="])
+usnews.com##button[data-tracking-id="google_preferredsources"]
 incrypted.com##.inc-avanced-banner:has(a[href="https://t.me/Incrypted_bot?start=ZGw6MzE3MTc3"])
 tochka.net##.print-and-share + p > strong:has(> a[href="https://www.facebook.com/tochka.net"])
 heavy.com###custom_html-27
@@ -54226,6 +54229,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+soonersports.com##.s-top__ads
 incrypted.com##.inc-avanced-banner:has(a[href^="https://incrypted.com/"])
 mcmaison.ru##div[data-creative-container="hb-low-main"]
 dot.asahi.com##.m-trend

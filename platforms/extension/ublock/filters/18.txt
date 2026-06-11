@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sWqE4gQuS+vxNpOUnhgCZw
-! Diff-Path: ../patches/18/18-s-1781178062-3600.patch
+! Checksum: XDRLFrhDRpevq82wHuJErA
+! Diff-Path: ../patches/18/18-s-1781184683-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.88.23
-! TimeUpdated: 2026-06-11T11:38:11+00:00
+! Version: 2.0.88.24
+! TimeUpdated: 2026-06-11T13:28:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5917,7 +5917,6 @@ sigaantenado.com.br###bar-lgpd
 archnet.org,solana.com##div[class*="CookieConsent_"]
 ||assets.investisdigital.com/cookiemanager/
 ||bettercollective.com/*/cookies.js
-x.com,twitter.com##+js(set-cookie, twtr_pixel_opt_in, N)
 myniacin.com##.nx-popup
 lebiscuit.com.br##div[class*="modalcookie"]
 budni.de###tc-privacy-wrapper:style(display: none !important;)
@@ -6838,6 +6837,7 @@ theprotocol.it##div[class*="ContainerElement_"] > div[class*="GridElement_"] > d
 theprotocol.it##div[class^="ContainerElement_"] > div:not([class]) > div[class^="Container_"]:has(> aside[data-test="section-cookieModal"])
 allenai.org,solanamobile.com,merlin.foyer.work##.rhc-banner
 teztour.ee##.dialog-window
+x.com##body > .flex > div[role="region"][aria-label]:has(> .flex-col.gap-2 > button.text-body.bg-white.border-transparent + button.text-body.bg-white.border-transparent)
 x.com,communitynotes.twitter.com###main > div[class^="wrapper__"]:has(> div[aria-labelledby^="notice"])
 x.com,communitynotes.twitter.com###main > div[class^="sc-"] > div[class^="src__InlineCalloutElement"]
 razpisanie.bdz.bg##body #cookieWarning:style(display: none !important;)
@@ -17629,6 +17629,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233373
+@@||abs.twimg.com/x-web/*/cookie-banner-*.js$domain=x.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233170
 webtic.it#@#.cookie-banner:not(body):not(html)
 ! theweekjunior.com - broken age verification

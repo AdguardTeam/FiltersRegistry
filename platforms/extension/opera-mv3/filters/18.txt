@@ -1,8 +1,8 @@
-! Checksum: KlUpkEfpEM/wv07yoeznzA
+! Checksum: Ti4R3rARD9IWjKEJDqRe9w
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.88.23
-! TimeUpdated: 2026-06-11T11:38:11+00:00
+! Version: 2.0.88.24
+! TimeUpdated: 2026-06-11T13:28:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4905,7 +4905,6 @@ allegutschein.de,rabattecode.de##.privacy-policy-moudle
 kupkolo.cz#$#div[data-modal-endpoint="cookiebar"] { display: none !important; }
 kupkolo.cz#$#body { overflow: auto !important; }
 ggmax.com.br##.component--page-cookies-consent
-x.com#%#//scriptlet('trusted-set-cookie', 'd_prefs', 'MToxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw')
 tablesgenerator.com##.consent-dialog
 gamesnacks.com##body > div[jsowner]:has(> div > div[role="dialog"] a[href^="https://policies.google.com/privacy"])
 istikbal.com.tr##df-cookie-element
@@ -6755,7 +6754,6 @@ sigaantenado.com.br###bar-lgpd
 archnet.org,solana.com##div[class*="CookieConsent_"]
 ||assets.investisdigital.com/cookiemanager/
 ||bettercollective.com/*/cookies.js
-x.com,twitter.com#%#//scriptlet('set-cookie', 'twtr_pixel_opt_in', 'N')
 myniacin.com##.nx-popup
 lebiscuit.com.br##div[class*="modalcookie"]
 budni.de#$##tc-privacy-wrapper { display: none !important; }
@@ -7795,8 +7793,9 @@ theprotocol.it#?#div[class*="ContainerElement_"] > div[class*="GridElement_"] > 
 theprotocol.it#?#div[class^="ContainerElement_"] > div:not([class]) > div[class^="Container_"]:has(> aside[data-test="section-cookieModal"])
 allenai.org,solanamobile.com,merlin.foyer.work##.rhc-banner
 teztour.ee##.dialog-window
-x.com,communitynotes.twitter.com#?##main > div[class^="wrapper__"]:has(> div[aria-labelledby^="notice"])
-x.com,communitynotes.twitter.com#?##main > div[class^="sc-"] > div[class^="src__InlineCalloutElement"]
+x.com##body > .flex > div[role="region"][aria-label]:has(> .flex-col.gap-2 > button.text-body.bg-white.border-transparent + button.text-body.bg-white.border-transparent)
+x.com,communitynotes.twitter.com###main > div[class^="wrapper__"]:has(> div[aria-labelledby^="notice"])
+x.com,communitynotes.twitter.com###main > div[class^="sc-"] > div[class^="src__InlineCalloutElement"]
 razpisanie.bdz.bg#$#body #cookieWarning { display: none !important; }
 razpisanie.bdz.bg#$#body { overflow: auto !important; padding-right: 0 !important; }
 razpisanie.bdz.bg#$#.modal-backdrop:not(.modal-backdrop + .modal-backdrop) { display: none !important; }
@@ -18767,7 +18766,6 @@ nacongaming.com#%#//scriptlet("set-constant", "tarteaucitron.cookie", "undefined
 intersport.nl,intersport.hu,intersport.nl,intersport.es,intersport.at#%#//scriptlet("abort-on-property-read", "window.Urls.cookiePopup")
 warsteiner.de##section:has(> div[class] > svg + div[class] > div > span > p > a[href="/datenschutz"])
 warsteiner-gruppe.de#%#//scriptlet('trusted-click-element', '#gdpr-preface__opt-in')
-x.com,twitter.com#%#document.cookie="eu_cn=1; path=/;";
 empik.com#%#//scriptlet('set-cookie', 'cp', '1')
 empik.com#%#//scriptlet('set-cookie', 'cc', '2')
 empik.com#%#//scriptlet('set-cookie', 'cva', '1')
@@ -18935,6 +18933,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233373
+@@||abs.twimg.com/x-web/*/cookie-banner-*.js$domain=x.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233170
 webtic.it#@#.cookie-banner:not(body):not(html)
 ! theweekjunior.com - broken age verification

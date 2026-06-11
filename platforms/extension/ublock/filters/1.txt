@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1FvHA1uSZXhd69e+SFSOyg
-! Diff-Path: ../patches/1/1-s-1781178061-3600.patch
+! Checksum: nt774zefYwihCVXA2ZoSng
+! Diff-Path: ../patches/1/1-s-1781184682-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.6.45
-! TimeUpdated: 2026-06-11T11:37:22+00:00
+! Version: 2.1.6.46
+! TimeUpdated: 2026-06-11T13:27:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1456,6 +1456,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||go2net.com.ua^
 ||vrglcmzgbj.com^
 ||placeholder.treeum.net^
 ||adpartner.pro^
@@ -5325,7 +5326,7 @@ sc2tv.ru##+js(remove-class, body--brranding, peka-app > div.body--brranding)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61395
 e1.ru##+js(remove-class, _branding, div[class*="-wrapper"])
 ! top ad remains in nba section
-sports.ru,ua.tribuna.com,by.tribuna.com##+js(remove-class, branding_dfp)
+sports.ru,ua##+js(remove-class, branding_dfp)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59636
 flibusta.appspot.com##+js(set-constant, String.prototype.charCodeAt, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59782
@@ -6603,6 +6604,9 @@ mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,
 !
 ! NOTE: Specific rules
 !
+rbc.ua##div[style="min-height:350px;"]
+||enovosty.com/wp-content/uploads/*/klo_video_banner.mp4
+enovosty.com##.auto-banner
 stopcor.org##.idealmedia
 psm7.com###akurateco
 nikvesti.com##.desc-read-more-adv
@@ -12033,10 +12037,8 @@ football.kulichki.net##.vtop > table[width="100%"] > tbody > tr > td[valign="top
 rivne1.tv##.info > a[rel="nofollow"] > img
 smartbobr.ru###alioffer
 smartbobr.ru###servisybuttons
-tribuna.com##a[class^="branding_dfp_"]
 text-lyrics.ru##.right_bl_ad
 beejournal.ru##table[style="height: 250px; width: 100%;"]
-tribuna.com##.pari-match
 gdeposylka.ru##header > div.hidden-xs > a[rel="external"] > img
 gdeposylka.ru##.container > ul.navbar-right > li.hidden-xs > a:not([href="https://forum.gdeposylka.ru"])
 yandexsport.ru##.stream-watching__bet
@@ -18009,15 +18011,6 @@ sports.ru###branding-layout>.page-layout:empty
 ||dumpster.cdn.sports.ru/d/0d/0a7f418ea4ce61f1070bb186f88c0.webp
 ||dumpster.cdn.sports.ru/f/12/58a6c2d10270bbd4b54fcf107e185.svg
 ||dumpster.cdn.sports.ru/4/73/88d781ce68174f5e2c800639520e1.webp
-||s5o.ru/storage/simple/ru/edt/43/11/82/bc/rue92b5aab321.jpg
-||s5o.ru/storage/simple/ru/edt/e3/9d/ce/42/ruea3735fad78.jpg
-||s5o.ru/storage/simple/ru/edt/e5/c1/dd/ad/rue3e735f3338.jpg
-||s5o.ru/storage/simple/ru/edt/d7/6a/5a/9a/rue82db44e96b.jpg
-||s5o.ru/storage/simple/ru/edt/a5/2e/a7/e3/rue96e2218957.jpg
-||s5o.ru/storage/simple/ru/edt/63/b9/3e/77/rue532b31737f.jpg
-||s5o.ru/storage/simple/ru/edt/3b/5c/77/aa/rue3c23768886.jpg
-||s5o.ru/storage/simple/ru/edt/ea/bd/3c/ef/rue20c480ea77.jpg
-||s5o.ru/storage/simple/ru/edt/bd/05/61/db/ruee04afced56.jpg
 ! end of background images
 sports.ru##.branding-ad-link:remove()
 tribuna.com##div[class$="__main_layout__empty_block"]

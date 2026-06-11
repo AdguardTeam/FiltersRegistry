@@ -1,8 +1,8 @@
-! Checksum: sBd0iJ23Rf+XSPAI9bHLCA
+! Checksum: njagVZPlsLog5tTF8T1Vlw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.18
-! TimeUpdated: 2026-06-11T11:38:05+00:00
+! Version: 2.2.70.19
+! TimeUpdated: 2026-06-11T13:28:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5052,6 +5052,7 @@ czu.cz###webcore-widget-cookieOptIn
 grillfuerst.de###cb-overlay
 allenai.org,solanamobile.com,merlin.foyer.work##.rhc-banner
 teztour.ee##.dialog-window
+x.com,communitynotes.twitter.com###main > div[class^="sc-"] > div[class^="src__InlineCalloutElement"]
 architekturaibiznes.pl###popupzgody-wrapper-main
 migrationobservatory.ox.ac.uk###rb_cookie_popup
 bananathaischool.com###elementor-popup-modal-8419
@@ -12654,6 +12655,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233373
+@@||abs.twimg.com/x-web/*/cookie-banner-*.js$domain=x.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233170
 webtic.it#@#.cookie-banner:not(body):not(html)
 ! theweekjunior.com - broken age verification
@@ -27036,6 +27039,7 @@ movilzona.es,isinolsa.com,gendai.media,clutchpoints.com,newstime.joyn.de,hisse.n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+usnews.com##button[data-tracking-id="google_preferredsources"]
 heavy.com###custom_html-27
 sport.ua##.news-google-subscr
 sport.ua##.google-cta-preferred
@@ -41285,6 +41289,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+soonersports.com##.s-top__ads
 mcmaison.ru##div[data-creative-container="hb-low-main"]
 dot.asahi.com##.m-trend
 shiksha.com##.recoWidgetSection
