@@ -1,7 +1,7 @@
 !
 ! Title: List-KR classic filters list (AdGuard)
 ! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20615.2
+! OriginalVersion: 2026.20615.3
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/List-KR/List-KR
 ! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
@@ -661,6 +661,7 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 
+||nng-phinf.pstatic.net/*.PNG/PC_$domain=chzzk.naver.com,image
 ||muko.kr/files/attach/ads/
 ||static.fmkorea.com/modules/fmad/tpl/*/naver_power_link.
 ||jeongcheogi.edugamja.com/ads/
@@ -1806,6 +1807,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 
+chzzk.naver.com##div[class^="skin_container__"]
 m.ilbe.com##.cutin_banner_new
 aniwolf.com##.banner-area
 newautopost.co.kr###onesignal-slidedown-container
@@ -3392,6 +3394,9 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 !#endif
 
 !#if (adguard && !adguard_ext_android_cb)
+chzzk.naver.com#$#header#header[style^="transform"] { transform: none !important; }
+chzzk.naver.com#$#aside#sidebar[style^="transform"] { transform: translateY(50px) !important; }
+chzzk.naver.com#$#aside#sidebar[style^="transform"] + #layout-body { padding-top: 0px !important; }
 damoang.net#$#.mb-6.grid-cols-1.gap-4.sm\:grid-cols-3 { grid-template-columns: auto !important; }
 m.bustago.or.kr#$#.InquiryList { height: 100% !important; }
 dundam.xyz#$#.today-grade { width: 100% !important; }
