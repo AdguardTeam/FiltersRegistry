@@ -1,9 +1,9 @@
-! Checksum: DcbIVq1wxmSBkWNK9f7EgQ
-! Diff-Path: ../patches/9_optimized/9_optimized-s-1781270463-3600.patch
+! Checksum: 9rRlCRoIjRV7g+Ijc1awww
+! Diff-Path: ../patches/9_optimized/9_optimized-s-1781284131-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.34.64
-! TimeUpdated: 2026-06-12T13:17:57+00:00
+! Version: 2.0.34.65
+! TimeUpdated: 2026-06-12T17:05:51+00:00
 ! Expires: 5 days (update frequency)
 ||comprargratis.com.br^
 ||cdn-4k-webp.site^
@@ -1195,11 +1195,13 @@ receitasdocheff.online#%#//scriptlet('set-local-storage-item', 'last_ads', 'yes'
 uol.com.br#%#//scriptlet('set-constant', 'URL_VAST_YOUTUBE', 'emptyObj')
 uol.com.br#%#//scriptlet('set-constant', '__configuredDFPTags', 'emptyObj')
 ||mp.lura.live/vod/vast.info/
+||mp.lura.live/live/vast.meta
+vix.com#%#//scriptlet('json-prune', '*', 'vast_meta_url')
 vix.com#%#//scriptlet('json-prune', 'ads', 'ads.policy.skipMode')
 vix.com#%#//scriptlet('json-prune', 'vmap_ad_breaks interstitials')
 vix.com#%#//scriptlet('trusted-replace-xhr-response', '/"(interstitials)":|"(breaks)":/', '"no_ads":', '/\.m3u8|\.mpd/')
 vix.com#%#//scriptlet('m3u-prune', 'type=ad', '.m3u8')
-vix.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text(),".mp.lura.live/prod/")]] | //*[name()="MPD"]/@mediaPresentationDuration)', '', '.mpd')
+vix.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text(),".mp.lura.live/prod/")]] | //*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"][.//SegmentList[@presentationTimeOffset="0"]])', '', '.mpd')
 infohojeonline.blogspot.com#%#//scriptlet('adjust-setInterval', 'getid', '*', '0.001')
 guiasaude.info#%#//scriptlet('set-cookie', 'Ads', '2')
 warezstream.net#%#//scriptlet("prevent-window-open")

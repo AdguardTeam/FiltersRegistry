@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: UIUkrvb/EanOWhT9f7wBsA
-! Diff-Path: ../patches/9/9-s-1781270467-3600.patch
+! Checksum: X0+ZAPRKit7kuCk547ywSw
+! Diff-Path: ../patches/9/9-s-1781284135-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.34.64
-! TimeUpdated: 2026-06-12T13:17:57+00:00
+! Version: 2.0.34.65
+! TimeUpdated: 2026-06-12T17:05:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1563,10 +1563,12 @@ uol.com.br##+js(set-constant, __configuredDFPTags, {})
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224774
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166619
 ||mp.lura.live/vod/vast.info/
+||mp.lura.live/live/vast.meta
+vix.com##+js(json-prune, *, vast_meta_url)
 vix.com##+js(json-prune, ads, ads.policy.skipMode)
 vix.com##+js(json-prune, vmap_ad_breaks interstitials)
 vix.com##+js(m3u-prune, type=ad, .m3u8)
-vix.com##+js(xml-prune, xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text()\,".mp.lura.live/prod/")]] | //*[name()="MPD"]/@mediaPresentationDuration), , .mpd)
+vix.com##+js(xml-prune, xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text()\,".mp.lura.live/prod/")]] | //*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"][.//SegmentList[@presentationTimeOffset="0"]]), , .mpd)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165935
 infohojeonline.blogspot.com##+js(adjust-setInterval, getid, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165940
