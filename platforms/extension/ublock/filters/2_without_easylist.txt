@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 4dCjy/fqXV8QoBYJZWw9dw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781234378-3600.patch
+! Checksum: iOe5NV/BkIyvpDHYkiOE3g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781243076-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.71.50
-! TimeUpdated: 2026-06-12T03:16:30+00:00
+! Version: 2.4.71.51
+! TimeUpdated: 2026-06-12T05:40:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10781,6 +10781,15 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233444
+rscripts.net##+js(prevent-fetch, doubleclick)
+@@||rscripts.net^$generichide
+! https://github.com/AdguardTeam/AdguardFilters/issues/233435
+||gameinformer.com/libraries/adblock-checker/
+! https://github.com/AdguardTeam/AdguardFilters/issues/233439
+anime.uniquestream.net##+js(set-constant, __US_CONFIG__.ads, undefined)
+anime.uniquestream.net##+js(json-prune, ads)
+anime.uniquestream.net###__nuxt ~ div[aria-labelledby="usw-title"]:not([id])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233368
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=ultrapeli.com|worpress.seeks.cloud
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233331
@@ -37298,6 +37307,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||gameinformer.com/modules/custom/gi5_ads/js/content/
+||gameinformer.com/modules/custom/gi5_ads/js/*ads_video*
+||gameinformer.com/async-load/block?block_plugin_id=gi5_ads_content_article_
 pokde.net##.ai-dynamic > a[href^="https://my.asus.click/"]
 ok.co.uk##div[data-tmdatatrack-type="commercial"]
 ok.co.uk##div[class*="BoxStyles_commercial__"]
