@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iLPVy+fSIZqru9s4kvh7AA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781256912-3600.patch
+! Checksum: 1PSD6QbdL0/pfULWYRbd3Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781263531-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.71.53
-! TimeUpdated: 2026-06-12T09:31:30+00:00
+! Version: 2.4.71.54
+! TimeUpdated: 2026-06-12T11:21:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32691,6 +32691,10 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233166
+! Website creates iframe with blank source so AdGuard app does not inject content script into it
+! This rule overrides the src property of HTMLScriptElement in the iframe and replace it using property from the top window which is overridden by AdGuard
+! Required to fix video player
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231983
 ! Fixes delay in the video player
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225608
@@ -37309,8 +37313,10 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+thestar.com.my##.smg55-brandbar-link
 coinadster.com##.banner-container
 ||cineby.*/scripts/os.js
+||fmovies.nz/scripts/os.js
 kotaku.com##.bluesky-embed
 kotaku.com###app > div.hidden:has(> div.flex div[id^="optidigital-adslot"])
 ||gameinformer.com/modules/custom/gi5_ads/js/content/
