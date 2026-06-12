@@ -1,9 +1,9 @@
-! Checksum: KWWimZv9pAVRPPLnkk04Ew
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1781228136-14400.patch
+! Checksum: 5YRPSQuYdsPy4S/b+2tpUw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1781244399-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.63.19
-! TimeUpdated: 2026-06-12T01:32:53+00:00
+! Version: 2.1.63.20
+! TimeUpdated: 2026-06-12T06:03:33+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -24,6 +24,7 @@
 /ayoshare.js
 /common/sns/*
 /common/sns_
+/commons/social/*
 /facebook-pagelike-widget/fb.js
 /facebook-side.png
 /facebook_footer.png
@@ -171,7 +172,6 @@ _social-bar/
 ###block-socialmedialinks
 ###block-socialmedialinks-2
 ###block-socialmenu
-###block-socialsharingblock
 ###blog-follow-widget
 ###box_social
 ###btn-share-email
@@ -296,6 +296,7 @@ _social-bar/
 ###gkSocialAPI
 ###global-share
 ###globalSocialLinks
+###globalSocialPromoWrap
 ###h-social
 ###header-facebook-social-link
 ###header-social
@@ -441,7 +442,6 @@ _social-bar/
 ###shareTab
 ###shareTags
 ###shareToolBottom
-###shareTop
 ###shareTxt
 ###shareUrl
 ###share_bar
@@ -596,6 +596,7 @@ _social-bar/
 ###socialMedia
 ###socialMediaFacebook
 ###socialMediaSection
+###socialMediaShare
 ###socialModal
 ###socialNetworking
 ###socialNetworks
@@ -630,6 +631,7 @@ _social-bar/
 ###social_media_widget
 ###social_mobile
 ###social_panel
+###social_pi
 ###social_pinterest
 ###social_popup
 ###social_section
@@ -645,6 +647,7 @@ _social-bar/
 ###social_widget
 ###social_widget-4
 ###socialbar
+###socialbookmark
 ###socialbookmarks
 ###socialbox
 ###socialbuttons
@@ -1207,6 +1210,7 @@ _social-bar/
 ##.entry-socials
 ##.entryShare
 ##.entry__share
+##.entry_share
 ##.entypo-share
 ##.entypo-social
 ##.epcl-share-container
@@ -1253,7 +1257,6 @@ _social-bar/
 ##.facebook-image
 ##.facebook-like
 ##.facebook-like-box
-##.facebook-like-message-holder
 ##.facebook-like-static
 ##.facebook-messenger-avatar
 ##.facebook-modal
@@ -1350,6 +1353,7 @@ _social-bar/
 ##.floating-share-buttons
 ##.floating-social
 ##.floating-social-container
+##.floatingShare
 ##.fluid_share_container
 ##.fluid_share_wrapper
 ##.fly-text-share
@@ -1439,7 +1443,6 @@ _social-bar/
 ##.footer-social-heading
 ##.footer-social-icons-container
 ##.footer-social-links
-##.footer-social-n
 ##.footer-social-ul
 ##.footer-socialIcons
 ##.footer-sociallink
@@ -1723,7 +1726,6 @@ _social-bar/
 ##.index_sns
 ##.info-sns-list
 ##.info_share
-##.ing-social
 ##.inline-share
 ##.inline_socials
 ##.inner-header-social
@@ -1890,6 +1892,7 @@ _social-bar/
 ##.m-icon-youtube
 ##.m-share
 ##.m-share-bar__link
+##.m-share-list
 ##.m-sharing
 ##.m-sns
 ##.m-social-bar
@@ -1954,6 +1957,7 @@ _social-bar/
 ##.mks_social_widget
 ##.ml-footer-social-links
 ##.mng-follow
+##.mob-sharing
 ##.mobile-share-buttons-spacer
 ##.mobile-social
 ##.mobileShare
@@ -2549,6 +2553,7 @@ _social-bar/
 ##.share_digg
 ##.share_facebook
 ##.share_fb
+##.share_google
 ##.share_group
 ##.share_hidden
 ##.share_horizontal
@@ -3448,6 +3453,7 @@ _social-bar/
 ##.vjs-share-control
 ##.vjs-share-menu-button
 ##.vjs-social-share
+##.vjs-voc-social-share
 ##.vk-share
 ##.vlog-share-single
 ##.vlog-social-icons
@@ -3765,6 +3771,7 @@ digitaltrends.com###menu-2021-social
 timesnownews.com###native-share
 thefader.com###new_socials_bottom
 taylorfrancis.com###openShare
+globenewswire.com###pnr-global-social-media-sidebar-section
 mediaite.com###post-social
 bracketfights.com,ecuadoradio.ec,tiermaker.com###share-container
 aiseesoft.com###share-list
@@ -3984,6 +3991,7 @@ cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
 androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,fextralife.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,military.com,movieweb.com,pocket-lint.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com##.google-addus
 bringmethenews.com,news18.com,thehindu.com##.google-btn
+faroutmagazine.co.uk##.google-follow
 gamespot.com##.google-follow-us-wrapper
 pcguide.com,upworthy.com##.google-news
 alarabiya.net##.google-news-callout
@@ -4476,11 +4484,13 @@ bz-berlin.de##div[data-type="social-bar"]
 berliner-kurier.de##section[class^="article-top-panel_socials_"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
+l-eaualabouche.com##.Post-shares
 radiofrance.fr##.ShareManager
 radiofrance.fr##.StationFooter-social
 lalibre.be##.ap-Button
 dhnet.be,lalibre.be##.ap-FollowList
 boursedirect.fr##.content-social
+brocabrac.fr##.event-share
 lefigaro.fr##.fig-share-mobile-layer
 lefigaro.fr##.fig-sharebar
 bfmtv.com##.footer_social_media
@@ -4579,7 +4589,6 @@ knivesout.jp###Jtwitter
 srad.jp###article-bottom
 ntv.co.jp###sns
 news.j-wave.co.jp###snsLink
-biz-journal.jp###vertical_sns
 fnn.jp##.--share
 kakakumag.com##.article-sns-btm
 oricon.co.jp##.block-sub-sns
@@ -4597,6 +4606,7 @@ terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
 iclnoticias.com.br##.alerts-call
+brasil247.com##.article__notif
 uol.com.br##.blogger-social
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
@@ -4681,6 +4691,9 @@ adslzone.net##.comments-social-share
 wapa.pe##.container_shared--internal
 elcolombiano.com##.contenedor-google-noticias
 diariopopular.com.ar##.detail-social-icons
+qhubomedellin.com##.div_canal_telegram
+qhubomedellin.com##.div_canal_whatsapp
+qhubomedellin.com##.div_news_google
 eldiario.es,eldiarioar.com##.edi-social-buttons
 a24.com,diariodecuyo.com.ar,perfil.com##.footer-redes
 ara.cat,europapress.es##.footer-rrss
@@ -4707,6 +4720,7 @@ cooperativa.cl##.modulo-google-news
 depor.com##.nav__story-social-network
 vidaextra.com,xataka.com.mx##.post-comments-shortcut
 biobiochile.cl##.post-social-container
+qhubomedellin.com##.qh-social-icons-articulo
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
 elcomercio.pe,gestion.pe##.s-buttons
 infobae.com##.second-saved-buttons
