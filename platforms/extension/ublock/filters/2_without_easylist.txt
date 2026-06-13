@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: xFJjGY3GrNJ6zHvnmaA+Ng
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781368739-3600.patch
+! Checksum: Ud0uq5Y+ioPGlWwtIBR2Ew
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781372273-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.71.75
-! TimeUpdated: 2026-06-13T16:35:44+00:00
+! Version: 2.4.71.76
+! TimeUpdated: 2026-06-13T17:34:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37020,7 +37020,9 @@ smsonline.cloud##html[data-theme][lang] [id^="img_"][style]:has(iframe[framebord
 ! Common rules, which partially hide banners
 ||html-load.com/l/$xhr
 ||html-load.com^$image,~3p,domain=html-load.com,important
-~dogdrip.net,~smsonline.clou##ins[id][style*="--gn-ov-ad-height"]
+!+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
+~dogdrip.net,~smsonline.cloud##iframe[id][height^="  "]:style(visibility: hidden !important;)
+~dogdrip.net,~smsonline.cloud##ins[id][style*="--gn-ov-ad-height"]
 ~dogdrip.net,~smsonline.cloud##div[id][class][style^="display"][style*="hidden"][style*="width:   "]
 ~dogdrip.net,~smsonline.cloud##div[id^="img_"][style^="width: 100%;height: 90px;position: fixed;bottom: 0px;left: 0px;z-index:"]
 ~dogdrip.net,~smsonline.cloud##div[id^="img_"] > button.gCloseButton

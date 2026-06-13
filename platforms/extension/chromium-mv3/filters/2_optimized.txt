@@ -1,8 +1,8 @@
-! Checksum: J6PtYpQKaOYubnTzwwmk2Q
+! Checksum: UgRUMHIOYRLS1FDS1QYIcg
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.71.75
-! TimeUpdated: 2026-06-13T16:35:44+00:00
+! Version: 2.4.71.76
+! TimeUpdated: 2026-06-13T17:34:27+00:00
 ! Expires: 10 days (update frequency)
 ||twimg.cash^$all
 ||dclsrv.com^
@@ -10629,7 +10629,9 @@ pcgamebenchmark.com#%#//scriptlet('remove-class', 'sp-message-open', 'html.sp-me
 dogdrip.net#$?#html[lang="ko"] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 ||html-load.com/l/$xmlhttprequest
 ||html-load.com^$image,~third-party,domain=html-load.com,important
-~dogdrip.net,~smsonline.clou##ins[id][style*="--gn-ov-ad-height"]
+!+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
+~dogdrip.net,~smsonline.cloud#$#iframe[id][height^="  "] { visibility: hidden !important; }
+~dogdrip.net,~smsonline.cloud##ins[id][style*="--gn-ov-ad-height"]
 ~dogdrip.net,~smsonline.cloud##div[id][class][style^="display"][style*="hidden"][style*="width:   "]
 ~dogdrip.net,~smsonline.cloud##div[id] > div#gCloseButton
 ~dogdrip.net,~smsonline.cloud##div[id^="img_"][style$="display: block;"]
@@ -10639,12 +10641,14 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 /^https:\/\/loader\.[-0-9a-z]+\.[a-z][a-z][a-z]?\/loader\.min\.js$/$script,~third-party,match-case
 /^https:\/\/loader\.[-0-9a-z]+\.[a-z][a-z][a-z]?\/script\/www\.[-0-9a-z]+\.js$/$script,~third-party,match-case
 ##.is-sp[data-ad]
+##.kyuujinbox_recurit
 ##adfm-ad
 ##amp-ad-exit + div[class*=" "]:has(+ div[aria-hidden="true"] + amp-pixel + amp-pixel)
 ##amp-ad-exit + div[class*=" "]:has(+ div[aria-hidden="true"] + amp-pixel + div[style^="bottom:0;right:0;width"])
 ##amp-ad-exit + div[class*=" "]:has(+ div[aria-hidden="true"] + div[style^="bottom:0;right:0;width"])
 ##amp-img[class^="img_"][style="width:300px;height:250px;"]
 ##amp-img[class^="img_"][style="width:336px;height:280px;"]
+##amp-img[height^="   "]
 ##browsispot[style^="width:    100%;"]
 ##a[href*="html-load.com/"] > amp-img[src^="https://tpc.googlesyndication.com/"]
 ##a[href*="html-load.com/"]:has(+ amp-pixel + div[aria-hidden="true"]) > amp-img.aspw
@@ -10681,6 +10685,7 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##body[class^="img_"][style$="running none;"]
 ##body[class^="img_"][style^="background-color"]
 ##body[class^="img_"][style^="opacity: 1;"]
+##body[marginwidth="0"][marginheight="0"][style="background:transparent;line-height:0"] > div[id][class][style="overflow:hidden;position:absolute"]
 ##body[onclick="ExitApi.exit();"][style="cursor:pointer"] > a[href="javascript:(function(){open(window.clickTag)})()"]
 ##body[style$="transform-origin: left top;"] > div[id^="img_"]
 ##button[id^="img_"][onclick^="window.open"]
@@ -10701,6 +10706,7 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##div[class^="img_"][style^="width: 410px"] > div[class^="img_"] > lima-video
 ##div[class^="img_"][id^="img_"][active_view_class_name]
 ##div[class][id][style="width:    100%; height:    280px; overflow: hidden;"]
+##div[class][style="min-height:180px;"]:empty
 ##div[class][style="min-height:250px;margin:0 0 10px;"]
 ##div[class][style^="display: block; width:    100%;"][started]
 ##div[data-google-av-itpl]
@@ -10753,6 +10759,7 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##div[id^="img_"][x-frame-width="336"][x-frame-height="336"]
 ##div[id][align="center"][style="width: 100% !important; height: auto !important;"]
 ##div[id][class][style="display: block; right: 20px; bottom: 20px;"]:has(> iframe[id][srcdoc])
+##div[id][spottype="dynamic_mc"]
 ##div[id][style$="height:    90px; overflow: hidden;"]
 ##div[id][style$="width:    300px; height:    250px;"]
 ##div[id][style$="width:    300px; height:    600px;"]
@@ -10761,6 +10768,7 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##div[id][style$="width:    970px; height:    250px;"]
 ##div[id][style$="width:    970px; height:    90px;"]
 ##div[id][style$="width:336px; max-width:100%; min-height:250px; background-color:transparent;"]
+##div[id][style^="left:0px;top:0px;width:   100%;height:   100%"]
 ##div[id][style^="margin-top: 30px; text-align: center; width: 375px !important; max-width: 375px !important;"]
 ##div[id][style^="min-width: 300px; min-height: 250px"]
 ##div[id][style^="min-width: 728px; min-height: 90px"]
@@ -10770,6 +10778,7 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##div[id][style^="width:    375px; margin-left: 0px !important; height:    "]
 ##div[id][style^="width:   "][style$="overflow:hidden"]
 ##div[id][style^="width:   "][style$="overflow: hidden;"]
+##div[id][style="border: 0pt; max-height: none !important; max-width: 375px !important; padding: 0px !important; width: 375px !important;"]
 ##div[id][style="max-height: 180px; text-align: center; margin: 0px auto; display: block;"]
 ##div[id][style="width:    auto;"]
 ##div[id][style="width: 375px; height: 667px; background-color: transparent;"]
@@ -10798,6 +10807,7 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##gwd-google-ad
 ##head:has(> meta[name="as-inventory-frame-listener-added"]) + body[marginwidth="0"][marginheight="0"] > a[target="_blank"][rel="noopener noreferrer"][href*=".html-load.com/"]
 ##head:has(> meta[name="as-tester-handler-added"]) + body > a[target="_blank"][rel="noopener noreferrer"][href*=".html-load.com/"]
+##html[amp4ads=""][amp-version="2605071401000"]
 ##html[lang*="-"] > body[style="width:100%;height:100%;margin:0;"] > div[class^="img_"][style="width:100%; height:100%;"]
 ##iframe[src*="html-load.com/"] + div[id^="img_"]:empty
 ##iframe[src*="content-loader.com/"] + style + div
@@ -20651,7 +20661,6 @@ _800x80_
 ###adslot_1
 ###adslot_2
 ###adslot_top
-###adspace
 ###adspacer
 ###adtext
 ###adtop
@@ -27567,6 +27576,7 @@ browsershots.org#@#.advert_area
 ||byeepodgiercunonia.qpon^
 ||byehd3.life^
 ||byfkcpmbplhxvdh.com^
+||bygoingskeezix.cfd^
 ||bygoneudderpension.com^
 ||byicjjeln.com^
 ||bypassduehardly.com^
@@ -27619,6 +27629,7 @@ browsershots.org#@#.advert_area
 ||cadsecs.com^
 ||cadsimz.com^
 ||cadskiz.com^
+||cafardsluicerwho.cfd^
 ||cafenetwolfen.cyou^
 ||caffeicpiping.shop^
 ||cafhtritoma.qpon^
@@ -29124,6 +29135,7 @@ browsershots.org#@#.advert_area
 ||dibsemey.com^
 ||dicergirnstilbum.qpon^
 ||dicersburnets.cfd^
+||dichasbingos.cfd^
 ||dicingfulcra.qpon^
 ||diclotrans.com^
 ||dicnkachuzca.com^
@@ -33130,6 +33142,7 @@ browsershots.org#@#.advert_area
 ||kaolineunheler.shop^
 ||kaolinoleous.com^
 ||karaismagacant.com^
+||karatstankie.shop^
 ||karezmoonish.qpon^
 ||karlingglues.qpon^
 ||karthliunstagy.com^
@@ -33324,6 +33337,7 @@ browsershots.org#@#.advert_area
 ||koeulypcduie.com^
 ||kohjlmvc.com^
 ||koiaripolymny.com^
+||kokilamysel.shop^
 ||kontextua.com^
 ||konyakspaldersimplum.cfd^
 ||kookycommittee.com^
@@ -33402,6 +33416,7 @@ browsershots.org#@#.advert_area
 ||kuffobduumzwl.space^
 ||kukrosti.com^
 ||kulakswindows.com^
+||kulmetmincio.cfd^
 ||kulroakonsu.net^
 ||kumpulblogger.com^
 ||kumquatrepl.cyou^
@@ -33443,6 +33458,7 @@ browsershots.org#@#.advert_area
 ||kxqrazvta.com^
 ||kxrkzuhwrccpry.com^
 ||kxuhtwjaxfr.com^
+||kyanitebawra.cyou^
 ||kyatmilrind.qpon^
 ||kyikerhzcmleg.website^
 ||kyojisnccort.com^
@@ -37249,6 +37265,7 @@ browsershots.org#@#.advert_area
 ||ragmenarrect.cyou^
 ||ragofvgnatyup.online^
 ||ragulyenlink.cfd^
+||ragusyepongreenge.cfd^
 ||ragxtlbtbehwc.website^
 ||rainexceptionrabbit.com^
 ||raisingpeppermint.com^
@@ -38428,6 +38445,7 @@ browsershots.org#@#.advert_area
 ||signingunwilling.com^
 ||signingvehemenceraffle.com^
 ||signumvampingtiptoes.cyou^
+||siigduikqwuhh.space^
 ||sikarafenagle.com^
 ||siksznxfvksdm.space^
 ||silebu.xyz^
@@ -38593,6 +38611,7 @@ browsershots.org#@#.advert_area
 ||smkitluhhwvdo.space^
 ||smkwbcbomcpfuu.com^
 ||smljmp.com^
+||smlnhoxobxuun.site^
 ||smlypotr.net^
 ||smoggyfeed.com^
 ||smokerfiascos.cyou^
@@ -38873,6 +38892,7 @@ browsershots.org#@#.advert_area
 ||srcqrzgqlxjks.space^
 ||srerzvearemwq.site^
 ||srgojngoyrumb.com^
+||srgpgremgtlmi.space^
 ||srgtwfqptfcxf.online^
 ||sriramflex.cfd^
 ||srlofrogoqcxj.website^
@@ -39559,6 +39579,7 @@ browsershots.org#@#.advert_area
 ||ticielongsuched.com^
 ||tickersoficina.cfd^
 ||ticketswinning.com^
+||tictacsbigging.cyou^
 ||tidaltv.com^
 ||tide-cdn.lol^
 ||tide-cdn.online^
@@ -39616,6 +39637,7 @@ browsershots.org#@#.advert_area
 ||tjajxvdaqaywp.online^
 ||tjfxxsegfdjt.com^
 ||tjkcibklcapsx.space^
+||tjkdypxpsmnap.online^
 ||tjktbalmpgghx.space^
 ||tjorurgfq.com^
 ||tjqifkykxhhwfyg.com^
@@ -39678,6 +39700,7 @@ browsershots.org#@#.advert_area
 ||tohoef.com^
 ||toieetnnb.com^
 ||tokenads.com^
+||tolansgnash.cyou^
 ||toledoslongingrayas.qpon^
 ||tolerancewarily.com^
 ||tolerantignorancepicturesque.com^
@@ -40234,6 +40257,7 @@ browsershots.org#@#.advert_area
 ||unbraceindish.qpon^
 ||unbrenteffluve.qpon^
 ||unbrokeophryon.shop^
+||unbrokepinks.cyou^
 ||unbrownunflat.com^
 ||uncertainbill.com^
 ||unciteablutetercets.qpon^
@@ -40494,6 +40518,7 @@ browsershots.org#@#.advert_area
 ||uwoaptee.com^
 ||uwofgapznepjc.online^
 ||uwsolnysivq.com^
+||uwvlmbkscdfqm.com^
 ||uwxtoegtarqfw.online^
 ||ux67j6zv1gij9prnz29.rest^
 ||uxitlzusizsfk.space^
@@ -40825,6 +40850,7 @@ browsershots.org#@#.advert_area
 ||vntsm.io^
 ||vnumlkbuujd.com^
 ||vnvklhydurflj.online^
+||vnzwvnevgfemyz.com^
 ||vocalsharnpan.cfd^
 ||vocatpangas.cfd^
 ||vocularobtestseat.qpon^
@@ -44441,6 +44467,7 @@ lingojam.com###adsense-area-label
 194.233.68.230###adsimgxatass
 ip-address.org###adsleft
 indiatimes.com###adslot_wrapper
+ballroomdancers.com,digitimes.com,pintprice.com###adspace
 byjus.com###adtech-top-banner-container
 dict.leo.org###adv-drectangle1
 dict.leo.org###adv-drectangle2
