@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: BtfRM+NKsIbYmL8pWNBX8w
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1781320708-3600.patch
+! Checksum: nTMk2TJoymuTbjGiB7RI8A
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1781407228-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.52.28
@@ -389,8 +389,6 @@ essen-und-trinken.de##+js(no-setTimeout-if, s.call(null), 10)
 schnittmuster-datenbank.de##+js(abort-on-property-read, adsBlocked)
 ||ad-ipd.sxp.smartclip.net^$redirect=noop.txt,important,domain=plus.rtl.de,image,media,subdocument,stylesheet,script,xhr,other
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=mobile.de
-kinoking.cc##body:style(overflow: auto !important;)
-kinoking.cc###adblockOverlay:style(display: none !important;)
 kinoking.cc##+js(no-setTimeout-if, /adblock|\.offsetHeight === 0/)
 @@||static.classistatic.de/adv/public/js/nf/mobile-detect-adblock.js
 tarnkappe.info##+js(addEventListener-defuser, DOMContentLoaded, checkAdblocker)
@@ -1186,6 +1184,7 @@ promiflash.de###desktopTop
 promiflash.de##.hidden.sm\:flex:has(> div.hidden.sm\:block)
 rp-online.de##div.floated
 fernsehserien.de##.sky-anzeige
+hardwareluxx.de##div[style="height:200px;width:100%;"]:empty
 11880.com##.box-entry-detail--ad
 11880.com##div[id^="responsive-bhvr--ad-sidebar-"]
 chip.de##.Button--Clickout
@@ -1970,7 +1969,6 @@ amazon.de###productAlert_feature_div
 synology-forum.de##div[data-xf-init="sam-unit"]
 woxikon.de##.ads-marker
 woxikon.de##.ad-content-wrapper
-buffed.de,pcgames.de##.widget > .ratgeberWrapper
 pcgames.de###topBannerWrapper
 ||api.heise.de/svc/pvg-widget/
 web.de,gmx.net##div[data-service-slot][data-ac]
@@ -2189,7 +2187,6 @@ onlinetvrecorder.com###topbannerdiv
 ||static.onlinetvrecorder.com/images/*banner
 nnz-online.de##.bannerwrapper
 mopo.de##a[href*="advertorial"]
-kino.de###hockeystick
 stern.de##.stern-gutscheinbox
 focus.de##.ps-trackingposition_OrangerButton
 focus.de##.adsBlock
@@ -2331,7 +2328,6 @@ bmw-syndikat.de##.forum_show_main_banner_left
 n-tv.de,stern.de##.gujAd
 kreiszeitung.de,oktoberfest-live.de##.id-Container-headline--proBEEP
 pcgameshardware.de##.innerArticleModule.ghapi
-hifitest.de##.mainContent > .marginBottom30
 transfermarkt.de##.mobile-werbung-inrow
 tichyseinblick.de##.mod-cad2
 spielen.de##.mtAd
@@ -2765,7 +2761,6 @@ _woz_banner_vote.
 ###oms_gpt_billboard
 ###oms_gpt_outofpage
 ###oms_gpt_rectangle
-###oms_gpt_rectangle_halfpage
 ###oms_gpt_skyscraper
 ###oms_gpt_superbanner
 ###p-rechts-werbung
@@ -2877,14 +2872,11 @@ _woz_banner_vote.
 ##.widget-werbung
 ##a[aria-label="Werbelink"]
 ##a[href*=".prodtraff.com/"]
-##a[href^="http://landing.fickzeit.com/?ag="]
 ##a[href^="http://landing.parkplatzkartei.com/?ag="]
 ##a[href^="http://partners.adklick.de/tracking.php?"]
 ##a[href^="http://wittered-mainging.com/"]
-##a[href^="http://www.deinfickdate.com/?wm="]
 ##a[href^="http://www.deinsexdate.com/?wm="]
 ##a[href^="http://www.eis.de/index.phtml?refid="]
-##a[href^="http://www.heutenochficken.com/?wm="]
 ##a[href^="http://www.hw-area.com/?dp="]
 ##a[href^="http://www.ichwuerde.com/?ref="]
 ##a[href^="http://www.kontakt-vermittler.de/?wm="]
@@ -2895,19 +2887,14 @@ _woz_banner_vote.
 ##a[href^="https://bd742.com/"]
 ##a[href^="https://clicks.imaxcash.com/?aff_"]
 ##a[href^="https://dpm.affaire18.com/click.php?dp="]
-##a[href^="https://dpm.jungekontakte.com/click.php?dp="]
 ##a[href^="https://feed.solads.media/"]
 ##a[href^="https://maidings-mectland.com/"]
 ##a[href^="https://marketing.net.brillen.de/"]
 ##a[href^="https://media.datingpartner.com/click.php?dp="]
 ##a[href^="https://ofrbpu.smartbroker.de/"]
 ##a[href^="https://stream.justhdfilme.com/kkiste-kinox/"]
-##a[href^="https://t.trafai.com/"]
 ##a[href^="https://trk.imobtrk.com/"]
-##a[href^="https://www.handy-sextreffen.info/?c="]
-##a[href^="https://www.tik-tok-date.com/"]
 ##a[href^="https://www.tipico.com/?affiliateId="]
-##a[href^="https://www.wazazu.com/NWS/"]
 ping-timeout.de#@##Advertisements
 az.com.na#@##ad_block_1
 ad-tuning.de#@##ad_footer
@@ -3143,6 +3130,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||112-magazin.de/images/banners/
 ||3druck.com/wp-content/uploads/*/craftbot.jpg
 ||3druck.com/wp-content/uploads/*/da-vinci-color.jpg
+||6chat.org/b1a8/
 ||6navi.ch/banners/
 ||6profis.de/banner/
 ||a.zdg.de^
@@ -3174,6 +3162,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||borncity.com/blog/wp-content/uploads/*/W10Tricks1.jpg
 ||buffed.de/tsimg/topbanner/
 ||chartsurfer.de/getthead.php?
+||climbing.de/fileadmin/banner/
 ||code.alpin.de^
 ||code.bergsteigen.com^
 ||coincierge.de/wp-content/plugins/floating-banner/
@@ -3697,7 +3686,6 @@ mtb-news.de###header
 archiexpo.de,directindustry.de,medicalexpo.de,nauticexpo.de,rotelaterne.de###header-banner
 klamm.de###header_main
 amazon.de###heroQuickPromo_feature_div
-kino.de###hockeystick
 kleinanzeigen.de###home-billboard
 winfuture.de###homepage_rectangle
 finanzfluss.de###in-search-invesco-01-25
@@ -4054,7 +4042,6 @@ erotikforum.at##.bannerWrapper
 bluray-disc.de##.banner_container
 apotheke-adhoc.de##.banner_container__mobile_billboard
 hallelife.de##.banner_image
-prost-magazin.at##.bannerfullbanner
 112-magazin.de,bassprofessor.info,finews.ch,griechenland.net,hifistatement.net,highway-magazin.de,hitradio.com.na,kajak-magazin.com,kl-aktuell.de,loz-news.de,mef-line.de,motorradundreisen.de,naturundtherapie.at,osttirol-online.at,pc-experience.de,radio-oberland.de,sonic-seducer.de,speyer-report.de,spielbox.de,tennistraveller.net,tvbb.de,vorsprung-online.de,wahrschauer.net##.bannergroup
 eurogirlsescort.de,strafbock.ch##.banners
 lokalkompass.de##.bannerslot-centered
@@ -4283,7 +4270,6 @@ eurogirlsescort.de##.js-stt-click > picture
 lustmap.ch##.js_bns
 kauperts.de##.kca-wrapper
 kicker.de##.kick__ad-pos_wrapper
-euro.kicker.de##.kick__modul--euro__sponsor
 michaelsbund.de##.konpress-banner
 kochbar.de##.ks-ad:not([data-adslot="karotte"])
 swissfunddata.ch##.l-partnerSlideContainer
@@ -4626,13 +4612,13 @@ techbook.de##a[data-track^="stickybar.click.Simon.https://private.vodafone-affil
 dkamera.de,donau3fm.de,isaswomo.de,ofdb.de,picdumps.com,polizei.news,rechtsdepesche.de,spox.com,via-ferrata.de##a[href*="//bit.ly/"]
 hd-source.to##a[href*="/af.php"]
 ddl-warez.cc##a[href*="/azn/"] > img
+6chat.org##a[href*="/b1a8/"]
 amigafuture.de##a[href*="/boardheaderads/"]
 erogeschichten.com##a[href*="/go/"]
 osthessen-news.de##a[href*="/goto.php?"]
 tarnkappe.info##a[href*="/hide.me/de/?friend="]
 3druck.com,cannabis-special.com,supertipp-online.de##a[href*="/linkout/"]
 bild.de##a[href*="/partner/"]
-live.vodafone.de##a[href*="https://vflive.de/lotto24_desktop300x250-home"] > .card-promo
 finanzen.net##a[href="#p500Werbehinweis"]
 finanzen.ch##a[href="https://g.finanzen.net/bitpanda-finch_013-web-overall-btc_kaufen_navigation"]
 finanzen.ch##a[href="https://g.finanzen.net/ch-etoro-trading-button-navi"]
@@ -4686,7 +4672,6 @@ tweakpc.de##a[href^="https://www.tweakpc.de/rev3/www/delivery/"]
 beeg-pornos.com,deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-sexfilme.com,hdpornos.net,herzporno.com,lesbenhd.com,meinyouporn.com,milffabrik.com,nursexfilme.com,pornhub-sexfilme.net,pornoaffe.net,pornodavid.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohelm.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoleon.com,pornolisa.com,pornoritze.com,pornoschlange.com,pornosusi.com,pornotanja.com,pornotom.com,pornotommy.com,pornovideos-hd.com,pornozebra.com,sexente.com,sexfilme-gratis.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xnxx-porno.com,xnxx-pornos.xxx,xnxx-sexfilme.com##a[href^="https://www.visit-x.world/"]
 wallstreet-online.de##a[onclick*="'tableAd'"]
 wallstreet-online.de##a[onclick*="tableAd"] + span
-anisearch.de,herz-fuer-tiere.de,schweizer-illustrierte.ch##a[rel="sponsored"]
 ak-kurier.de,nr-kurier.de,ww-kurier.de##a[target="_new"][href^="inc/inc_link.php?id="]
 sporteurope.tv##app-top-banner
 otto.de##article[data-origin="sponsored"]
@@ -4745,7 +4730,6 @@ finanzfluss.de##div[data-cy="billboard-card"]
 finanzfluss.de##div[data-cy="sustainability-section-ad"]
 de.motor1.com##div[data-entrypoint="heycar-search-widget"]
 t-online.de##div[data-external-sdi-mark="banner-placeholder"]
-alles-mahlsdorf.de##div[data-id="904ffeb"]
 mobile.de##div[data-label="Anzeige"]
 kleinanzeigen.de##div[data-liberty-position-name*="srp"]
 kleinanzeigen.de##div[data-liberty-position-name="home-billboard"]
