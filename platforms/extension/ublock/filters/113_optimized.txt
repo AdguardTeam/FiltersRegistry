@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PtjV0jTZ60UNYyYWckkABQ
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1781401089-14400.patch
+! Checksum: /6UQuT+3HlysUWO0vVX2FQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1781417379-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.92.27
-! TimeUpdated: 2026-06-14T01:34:15+00:00
+! Version: 2.1.92.28
+! TimeUpdated: 2026-06-14T06:06:26+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -331,6 +331,7 @@
 =assignAds&
 =dynamic_banner&
 =GetAdHtml&
+=iframe_pub&
 =popunder&
 =publicite&
 =show_ads;
@@ -480,6 +481,7 @@ _program_ad.
 _pub.gif
 _publicite.
 _publicite_
+_publog_2.
 _regie/aff.
 _smads_
 _square_ads.
@@ -581,6 +583,7 @@ _build=iclick-$popup
 ||admark.fr^$3p
 ||admathhd.com^$3p
 ||admediaking.com^$3p
+||admitlead.ru^$3p
 ||admuncher.com^$3p
 ||admysports.com^$3p
 ||adnplay.com^$3p
@@ -659,6 +662,7 @@ _build=iclick-$popup
 ||d-1.co^$3p
 ||datingfactory.com^$3p
 ||datvantage.com^$3p
+||diffusionpub.com^$3p
 ||digidip.net^$3p
 ||digital-metric.com^$3p
 ||dolead.com^$3p
@@ -680,6 +684,7 @@ _build=iclick-$popup
 ||gestion2web.com^$3p
 ||getpublica.com^$3p
 ||getresponse.com^$3p
+||girlsmessenger.com^$3p
 ||globalrotator.com^$3p
 ||goracash.com^$3p
 ||hebdotop.com^$3p
@@ -1575,6 +1580,7 @@ _build=iclick-$popup
 ||freecontent.stream
 ||hostcontent.live
 ||trezor.io^$3p
+||tulip18.com^$3p
 ||7eer.net^$popup,3p
 ||absurdbatchconfess.com^$popup
 ||adjux.com^$popup,3p
@@ -1629,7 +1635,6 @@ _build=iclick-$popup
 ||pulseadnetwork.com^$popup
 ||redlightcenter.com^$popup,3p
 ||revsharecash.com^$popup,3p
-||schjmp.com^$popup
 ||sersh.com^$popup,3p
 ||slutroulette.com^$popup,3p
 ||stripchat.com^$popup,3p
@@ -2133,6 +2138,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||immoweb.be/*/sponsor?
 ||impimg.free.fr/pubs/
 ||iplocation.net/assets/images/banners/
+||itnewsinfo.com/pub/
 ||jackypc.com/bann*.swf
 ||jawharafm.net/*/upload/1579350911.png
 ||jeu-tarot-en-ligne.com/pubs/
@@ -2183,7 +2189,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||nestoria.fr/jsp/include/banners/
 ||nextwarez.com/wp-content/uploads/*-300x250.
 ||niooz.fr^$subdocument
-||notsmutty.com/notsmutty.
 ||openstreetmap.org/assets/banners/
 ||pagesjaunes-dz.com/pub/
 ||pagesjaunes.fr/js/pj_ad.js
@@ -2262,9 +2267,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||weshrak.com^*/imp.php?
 ||weshrak.com^*/pub.php?
 ||wiflix-*/voir/
-||wii-info.fr/ban/
-||wii-info.fr/bane/
-||wii-info.fr/p/
 ||winamax.fr/img/banners/
 ||winamax.fr/img/pub/
 ||winds-up.com/pub/
@@ -2574,6 +2576,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.headerPub
 ##.header_adv
 ##.header_sponsors
+##.hide-pub-1000x90
 ##.hmads_300x250
 ##.horizontal-pub
 ##.iklan
@@ -2582,6 +2585,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.in_stream_banner
 ##.inplayer_banners
 ##.inread_ads-wrapper
+##.insert_pub_center
 ##.inside-pub-container
 ##.it-sponsor-site
 ##.jeg_ad_module
@@ -2897,6 +2901,7 @@ orange.fr###commercial-links
 oujdacity.net###common-top-widget
 geny.com###containerBanniere1mois
 refurbgeneration.com###container_ebay
+guadeloupe-paradise.fr###content-shadow
 journaldunet.com###ctn_infeed
 lesmobiles.com###ctn_right
 lesmobiles.com###ctn_top
@@ -3049,6 +3054,7 @@ journaldemontreal.com##.bigbox-container
 autonews.fr##.bl-partner
 egora.fr##.block-egora-pub
 cotemaison.fr##.block_partners
+jardiner-malin.fr##.boutiqueAd
 techniques-ingenieur.fr##.boxPub
 lepoint.fr##.branding
 gamergen.com,generation-nt.com##.bup
@@ -3081,6 +3087,7 @@ doctissimo.fr##.doc-sticky-col-container
 echoroukonline.com##.ech-live__ads
 howtofix.guide##.eds-animate
 wp-infinity.com##.entry-featured
+jemangejemincis.fr##.entry-footer
 manga-news.com##.external-link
 sous-la-mer.com##.flexslider
 gameblog.fr##.footer__partners
@@ -3156,6 +3163,7 @@ ouest-france.fr##.ofm-widget
 ledenicheur.fr##.outsider-ads
 programme-television.org##.p-inread--placeholder
 planeterenault.com##.p300
+laposte.fr##.page-pub
 ouedkniss.com##.page-top.d-print-none
 monbestseller.com##.pane-mbspush
 jardiner-malin.fr##.parent-billboard
