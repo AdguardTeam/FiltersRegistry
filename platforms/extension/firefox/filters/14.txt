@@ -1,9 +1,9 @@
-! Checksum: 1KeQd2hGRS+xJwwFHpFZAA
-! Diff-Path: ../patches/14/14-s-1781541899-3600.patch
+! Checksum: QimKkXYrF6Rvn7fnx757hw
+! Diff-Path: ../patches/14/14-s-1781548704-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.43
-! TimeUpdated: 2026-06-15T16:42:09+00:00
+! Version: 2.2.70.44
+! TimeUpdated: 2026-06-15T18:36:09+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2615,6 +2615,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+ixbt.com##.ixbt-consent-banner
 etis.ee#%#//scriptlet('set-cookie', 'user-has-accepted-cookies', 'false')
 x5id.ru##div[class^="_cookieNoticeContainer_"]
 snookerist.ru###cookie_notifier
@@ -27265,6 +27266,9 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+gazetadopovo.com.br#$#.tp-modal { display: none !important; }
+gazetadopovo.com.br#$#.tp-backdrop { display: none !important; }
+gazetadopovo.com.br#$#.tp-scroll-prevented { overflow: auto !important; touch-action: auto !important; }
 strumyk.*###discord-popup
 thestar.com.my#%#//scriptlet('set-local-storage-item', 'nx_onboarding_seen_v1', '1')
 matchtv.ru##div[id^="webcaster_player"] > a[href^="https://matchtv.ru/subscriptions?"]
@@ -36532,6 +36536,7 @@ bsc.news,movilzona.es,isinolsa.com,gendai.media,clutchpoints.com,newstime.joyn.d
 !
 ! SECTION: Subscriptions - Regular rules
 !
+99bitcoins.com##.nnbtc-footer__subscription-form
 news.ru##.zen-subscribe-btn
 bsc.news##div[data-testid="newsletter-popup"]
 business-gazeta.ru##.invite-to-tg

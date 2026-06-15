@@ -3856,6 +3856,15 @@ newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,
 ! NOTE: UA rules copied to Ukrainian filter
 ! TODO: Remove not multi lang rules with .ua tld after splitting the filter (look at the end of file)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233664
+rr4farmtrof.com#%#//scriptlet('remove-node-text', 'script', '__skipAdwall')
+rr4farmtrof.com$$script:contains(skipAdwall)
+!#if (adguard_app_ios || adguard_ext_android_cb || ext_safari)
+@@||rr4farmtrof.com^$generichide
+@@||pagead2.googlesyndication.com/pagead/js/$domain=rr4farmtrof.com
+@@||securepubads.g.doubleclick.net/tag/js/$domain=rr4farmtrof.com
+@@||yandex.ru/ads/system/context.js$domain=rr4farmtrof.com
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233134
 evilmod.ru#@##reklama
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230714
@@ -7402,6 +7411,7 @@ uknig.com##.grid > div.col-sm-12:has(> div[caramel-id])
 oskol.city##a[href^="https://vepi.ru/"]
 sports.ru##div[data-control="Common.RbPromo"]
 ||special.matchtv.ru/api/widgets/bonuses
+sports.ru##.document-card-list__items > div.document-card:has(> div.document-card__body > div.document-card__content > a[href="https://sirena.world/newsf"])
 sports.ru##.card-odds
 sports.ru##.ad-banner
 sports.ru##.place-for-ad

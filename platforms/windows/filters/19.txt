@@ -1,9 +1,9 @@
-! Checksum: mXRBegmdGVyFxTUXdV2gbw
-! Diff-Path: ../patches/19/19-s-1781541936-3600.patch
+! Checksum: qUZsDX/8Hf8rxPZVx2ekFA
+! Diff-Path: ../patches/19/19-s-1781548723-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.77.18
-! TimeUpdated: 2026-06-15T16:42:17+00:00
+! Version: 2.0.77.19
+! TimeUpdated: 2026-06-15T18:36:16+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3360,6 +3360,9 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+gazetadopovo.com.br#$#.tp-modal { display: none !important; }
+gazetadopovo.com.br#$#.tp-backdrop { display: none !important; }
+gazetadopovo.com.br#$#.tp-scroll-prevented { overflow: auto !important; touch-action: auto !important; }
 strumyk.*###discord-popup
 thestar.com.my#%#//scriptlet('set-local-storage-item', 'nx_onboarding_seen_v1', '1')
 matchtv.ru##div[id^="webcaster_player"] > a[href^="https://matchtv.ru/subscriptions?"]
@@ -12628,6 +12631,7 @@ bsc.news,movilzona.es,isinolsa.com,gendai.media,clutchpoints.com,newstime.joyn.d
 !
 ! SECTION: Subscriptions - Regular rules
 !
+99bitcoins.com##.nnbtc-footer__subscription-form
 news.ru##.zen-subscribe-btn
 bsc.news##div[data-testid="newsletter-popup"]
 business-gazeta.ru##.invite-to-tg
