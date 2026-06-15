@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Sv2R5xJvEk7/i2i7g2EE1Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781503107-3600.patch
+! Checksum: hBoOUMt8Z+RM3R5zEFojBQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781511282-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.72.2
-! TimeUpdated: 2026-06-15T05:54:43+00:00
+! Version: 2.4.72.3
+! TimeUpdated: 2026-06-15T08:11:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||streamvault.top^
 ||twimg.cash^$all
 ||dclsrv.com^
 ||dtasrvr.com^
@@ -23761,6 +23762,9 @@ smellyfisher.com##.providers
 bestmovie.it,treccani.it##.gmp
 forum.fibra.click##.FibraClickAds-fake-poststream-item
 open.online##a[rel="sponsored"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/233528
+juventusonair.com###adblockNotice
+juventusonair.com##+js(abort-current-script, document.createElement, .offsetHeight === 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232795
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232732
 !+ NOT_OPTIMIZED
@@ -25416,9 +25420,6 @@ gry-online.pl###wykop-feed
 poranny.pl##.componentsListingLargeRow__content > div.atomsListingArticleTileWithSeparatedLink ~ div.componentsListingLargeRow__slotItem
 animewatch.pl##.video-content > div[id][style^="position:absolute;z-index:"]
 animewatch.pl###sidebar > .widget_text > .textwidget:has(> div[class^="myBanner"])
-||streamvault.top/z-*$domain=strumyk.icu
-!+ NOT_OPTIMIZED
-juvepoland.com###jedynka
 ||moja-ostroleka.pl/a-many
 ||moja-ostroleka.pl/a-single
 moja-ostroleka.pl##section[class]:has(> div:contains(/^Reklama$/))
@@ -25665,6 +25666,9 @@ bieganie.pl##.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/223442
+!+ NOT_OPTIMIZED
+juvepoland.com###jedynka
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233308
 ewybory.eu##+js(no-setTimeout-if, blocked)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230405
@@ -37317,6 +37321,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+pv-magazine.com##.pvmagazine-advert-group
 /^https:\/\/get[0-9]+\.host[0-9]+[a-z]\.cfd\/\?[a-z]+=[a-zA-Z0-9:_=-]+/$all,match-case
 thestar.com.my##.smg55-brandbar-link
 coinadster.com##.banner-container
@@ -37722,7 +37727,6 @@ urbandictionary.com###ud-root > div[class*="print:hidden"]:has(> .justify-center
 defence-industry.eu##.die-ad-bar
 defence-industry.eu##.die-sidebar-ad
 defence-industry.eu##.die-single-content > p:has(> ins.adsbygoogle)
-vik1ngfile.site##+js(abort-current-script, String.prototype.indexOf, (function()
 vik1ngfile.site##+js(addEventListener-defuser, DOMContentLoaded, document.createElement)
 vik1ngfile.site##+js(addEventListener-defuser, click, document.createElement)
 manoramamax.com##div[class^="GAds_"]
@@ -38679,6 +38683,9 @@ tabooporn.tv##.textlink a[target="blank"]
 platinsport.com##.pum-container
 platinsport.com##a[href^="https://1xlite-23411.bar/"]
 animeidhentai.com###promo-topbar
+animeidhentai.com##.intl-ad
+animeidhentai.com##.promo--isad
+animeidhentai.com##+js(adjust-setTimeout, /\(\)=>.\(.=>.-1\)/, *, 0.001)
 ||cdn.bestreviews.com/deals/main.bundle.js$3p
 browserscan.net##div > a[target="_blank"]:has( > span + img)
 moum.top##.MuiContainer-root > .MuiBox-root > .app-grid > .MuiBox-root > .MuiBox-root > .MuiBox-root:has(> span.MuiSkeleton-root:first-child + span.MuiSkeleton-root + span.MuiSkeleton-root:last-child)
@@ -58395,7 +58402,7 @@ forbes.com##.channel--ad
 stre4mpay.one,pooembed.eu,tpead.net,streamed.pk,bmovies.vip,sanet.st,yifysubtitles.ch,streamtape.com,streamtape.net,advertape.net,adblockeronstape.*,adblockplustape.*,adblockstreamtape.*,adblockstrtape.*,adblockstrtech.*,advertisertape.com,antiadtape.*,gettapeads.com,noblocktape.*,shavetape.*,stapadblockuser.*,stape.*,strcloud.*,streamadblocker.*,streamadblockplus.*,streamnoads.com,streamta.*,streamtapeadblock.*,streamtapeadblockuser.*,strtape.*,strtapeadblock.*,strtapeadblocker.*,strtapewithadblock.*,strtpe.*,tapeadsenjoyer.com,tapeadvertisement.com,tapeantiads.com,tapeblocker.com,tapelovesads.org,tapenoads.com,tapepops.com,tapewithadblock.org,watchadsontape.com,streamtape.*,wizja.cc,totalsportek.*,casthill.net,streamed.*,exposestrat.com,embedsports.top,nativesurge.net,yts.bz,yts.lt,yts.*,seir-sanduk.com,daddylive3.com,sterham.net,buffsports.io,soccerstreams7.com,loadvid.com,telewizjada.top,kaa.to,strumyk.net,ogladaj.in,istreameast.app,streamingnow.mov,watchug.to,primewire.tf,worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,flixrave.me,anime4i.com,cuttyy.com,daddyhd.com,daddylive.*,zavalise.com,wooflix.tv,yassflix.net,swipebreed.net,eurekaddl.lat,en.tgo-tv.xyz,miztv.shop,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,nepu.to,capo4play.com,wawacity.cfd,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,streameast.*,thestreameast.*,anroll.net,anarchy-stream.com,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,sportsonline.*,dl-protect.link,cricstreams.re,extreme-down.*,eztvx.to,skidrowreloaded.com,olympicstreams.*,streambucket.net,modsfire.com,official.nbabite.com,sportsonline.*##+js(abort-on-property-read, Adcash)
 totalsportek.*,casthill.net,nativesurge.net,embedtv-5.icu,animeunity.*,pornhoarder.*,dlhd.*,vidsrc.*,builddiamond.net,playdede.link,audioz.download,wavewalt.me,ricstream.me,anime4i.vip,vipleague.*,swipebreed.net,eurekaddl.lat,sanet.st,buffsports.*,olympicstreams.*##+js(abort-current-script, globalThis, adserverDomain)
 yifysubtitles.ch,exposestrat.com,embedsports.top,seir-sanduk.com,daddylive3.com,sterham.net,buffsports.io,soccerstreams7.com,loadvid.com,telewizjada.top,kaa.to,ogladaj.in,istreameast.app,streamingnow.mov,watchug.to,primewire.tf,worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,anime4i.com,cuttyy.com,puffytr.com,anizle.*,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,capo4play.com,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,sportsonline.*##+js(abort-on-stack-trace, Element.prototype.hasAttribute, isActionAllowedOnElement)
-powwideo.*,hornysimp.com,futemax.at,embdmstrplayer.com,pahe.ink,foulembeds.live,smksports.*,fileditchfiles.me,strumyk.cfd,dorawatch.one,streamingworld.xyz,streami.su,streamed.pk,streamed.*,visualnewshub.com,cloudnestra.com,cloudfam.io,thepibay.*,bypass.city,eztvx.to,ext.to,vidsrc.cc,sanet.st,yifysubtitles.ch,yts.bz,vinovo.to,livesporthub.shop,dstelemundo.site,7fractals.icu,epicplayplay.cfd,goalstreamer.shop,streameast7.com,buffztreamz.shop,rippleplay.shop,shd247.click,antenasport.top,gamestrend.net,cloudnestra.com,exposestrat.com,embedsports.top,seir-sanduk.com,embedtv-5.icu,daddylive3.com,sterham.net,animeunity.*,vixcloud.*,buffsports.io,soccerstreams7.com,loadvid.com,telewizjada.top,kaa.to,ogladaj.in,istreameast.app,streamingnow.mov,watchug.to,primewire.tf,worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,anime4i.com,cuttyy.com,puffytr.com,anizm.*,anizle.*##+js(abort-on-property-read, aclib)
+strumyk.*,powwideo.*,hornysimp.com,futemax.at,embdmstrplayer.com,pahe.ink,foulembeds.live,smksports.*,fileditchfiles.me,strumyk.cfd,dorawatch.one,streamingworld.xyz,streami.su,streamed.pk,streamed.*,visualnewshub.com,cloudnestra.com,cloudfam.io,thepibay.*,bypass.city,eztvx.to,ext.to,vidsrc.cc,sanet.st,yifysubtitles.ch,yts.bz,vinovo.to,livesporthub.shop,dstelemundo.site,7fractals.icu,epicplayplay.cfd,goalstreamer.shop,streameast7.com,buffztreamz.shop,rippleplay.shop,shd247.click,antenasport.top,gamestrend.net,cloudnestra.com,exposestrat.com,embedsports.top,seir-sanduk.com,embedtv-5.icu,daddylive3.com,sterham.net,animeunity.*,vixcloud.*,buffsports.io,soccerstreams7.com,loadvid.com,telewizjada.top,kaa.to,ogladaj.in,istreameast.app,streamingnow.mov,watchug.to,primewire.tf,worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,anime4i.com,cuttyy.com,puffytr.com,anizm.*,anizle.*##+js(abort-on-property-read, aclib)
 powwideo.*##+js(abort-on-property-read, AtcshAltNm)
 animeunity.*,vixcloud.*##+js(abort-on-stack-trace, setTimeout, runPop)
 animeunity.*,vixcloud.*##+js(no-window-open-if, !download)
@@ -63797,6 +63804,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233616
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232430
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233223
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232658
