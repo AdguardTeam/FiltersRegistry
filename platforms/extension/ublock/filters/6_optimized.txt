@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 6mvKRxfSX4EzUe5JzPvhwQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1781522031-3600.patch
+! Checksum: gL0KELpz7pgo0Xok4brlbA
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1781533090-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.52.29
-! TimeUpdated: 2026-06-15T11:10:54+00:00
+! Version: 2.0.52.30
+! TimeUpdated: 2026-06-15T14:14:46+00:00
 ! Expires: 5 days (update frequency)
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
@@ -387,7 +387,7 @@ t-online.de#@#div[class^="Tsshopst"]
 essen-und-trinken.de##+js(no-setTimeout-if, s.call(null), 10)
 /^https:\/\/www\.essen-und-trinken\.de\/[a-z]{10,}\.js$/$script,~3p,match-case
 schnittmuster-datenbank.de##+js(abort-on-property-read, adsBlocked)
-||ad-ipd.sxp.smartclip.net^$redirect=noop.txt,important,domain=plus.rtl.de,image,media,subdocument,stylesheet,script,xhr,other
+plus.rtl.de##+js(no-xhr-if, ad-ipd.sxp.smartclip.net)
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=mobile.de
 kinoking.cc##+js(no-setTimeout-if, /adblock|\.offsetHeight === 0/)
 @@||static.classistatic.de/adv/public/js/nf/mobile-detect-adblock.js
