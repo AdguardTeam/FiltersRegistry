@@ -1,9 +1,9 @@
-! Checksum: a+JyDuFmc8LRBqkiWjXw1A
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1781487615-14400.patch
+! Checksum: 1A4whp61RiVxD27Nw1Tddg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1781504456-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.63.37
-! TimeUpdated: 2026-06-15T01:36:57+00:00
+! Version: 2.1.63.38
+! TimeUpdated: 2026-06-15T06:17:42+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -18,6 +18,7 @@
 -Social-Sidebar/
 -social-slider/
 -sprite-social-
+.sharebar.js
 .sharing.js
 /accesspress-social-counter/*
 /addthis_widget.js
@@ -35,7 +36,6 @@
 /fb-pixel.js
 /fbshare.js
 /fbshare.png
-/fbshare2.png
 /floating-wpp.min.js
 /follow-twitter-
 /follow-twitter.
@@ -227,7 +227,6 @@ _social-bar/
 ###facebooktrend
 ###fan-exit
 ###fanback
-###favsocial-list
 ###fb-box
 ###fb-like
 ###fb-like-box
@@ -331,6 +330,9 @@ _social-bar/
 ###likeThisPost
 ###linkShare
 ###linkedin_share
+###lst-facebook
+###lst-instagram
+###lst-twitter
 ###mainShare
 ###menu-footer-social-links
 ###menu-footer_social
@@ -374,7 +376,6 @@ _social-bar/
 ###pinterest-link
 ###pinterest-share
 ###popup-social
-###popupFbLikeBox
 ###popup_social
 ###post-share-icons
 ###post-social
@@ -520,7 +521,6 @@ _social-bar/
 ###social-actions
 ###social-badges
 ###social-bar
-###social-bar-bottom
 ###social-border
 ###social-bottom
 ###social-box
@@ -900,7 +900,6 @@ _social-bar/
 ##.article-side-share
 ##.article-soc
 ##.article-social
-##.article-social-bar
 ##.article-social-btn
 ##.article-social-button
 ##.article-social-buttons
@@ -924,6 +923,7 @@ _social-bar/
 ##.article__shares
 ##.article__sharing
 ##.article__social
+##.article__social-icons
 ##.article__social-links
 ##.article__socials
 ##.article_bottom_share
@@ -974,7 +974,6 @@ _social-bar/
 ##.badge-pinterest-share
 ##.badge-share
 ##.banner-social
-##.bar-social
 ##.bc-author-socials
 ##.bc_social_icons
 ##.bctt-click-to-tweet
@@ -1037,6 +1036,7 @@ _social-bar/
 ##.box_social
 ##.boxsocial
 ##.brand-social
+##.brid-share-button-holder
 ##.brid-share-control
 ##.bt-share
 ##.btFacebook
@@ -1057,7 +1057,7 @@ _social-bar/
 ##.bx-social-share
 ##.byline-share
 ##.c-article-share
-##.c-blog-social
+##.c-aside--subscribe
 ##.c-footer-social
 ##.c-footer-social-link
 ##.c-footer-social-media
@@ -1342,7 +1342,6 @@ _social-bar/
 ##.fixed-share
 ##.fixed-social
 ##.fixed-social-media
-##.fixedsocial
 ##.fl-social-icons
 ##.flare-button-icon
 ##.flare-follow
@@ -1509,6 +1508,7 @@ _social-bar/
 ##.footersocial
 ##.footersociallinks
 ##.footsocial
+##.fr_sns
 ##.fshare
 ##.ftop-social
 ##.ftr-social
@@ -1596,6 +1596,7 @@ _social-bar/
 ##.headerSocialLinks
 ##.header__social
 ##.header__social-button
+##.header__social-buttons
 ##.header__social-icons
 ##.header__social-list
 ##.header__social-media
@@ -2469,7 +2470,6 @@ _social-bar/
 ##.shareContainer
 ##.shareControl
 ##.shareCount
-##.shareCta
 ##.shareDiv
 ##.shareDropDown
 ##.shareEmail
@@ -3080,7 +3080,6 @@ _social-bar/
 ##.socialFollow
 ##.socialFooter
 ##.socialHeader
-##.socialHolder
 ##.socialHubIcon
 ##.socialHubInnerDiv
 ##.socialHubWrapper
@@ -3093,6 +3092,7 @@ _social-bar/
 ##.socialItem
 ##.socialItems
 ##.socialLabel
+##.socialLikes
 ##.socialLink
 ##.socialLinks
 ##.socialLinksContainer
@@ -3348,7 +3348,6 @@ _social-bar/
 ##.ts-share-bar
 ##.ts-social
 ##.ts-socials
-##.tt-share
 ##.tve__info__share
 ##.tve_social_items
 ##.tw-share
@@ -3435,7 +3434,6 @@ _social-bar/
 ##.vf-share-bar-vertical
 ##.vf-share-icon
 ##.vf-share-option
-##.video--share
 ##.video-share
 ##.video-share-b
 ##.videoShare
@@ -3726,6 +3724,7 @@ _social-bar/
 ||xing-share.com^$third-party
 ||yandex.st/share/
 ||youtube.com/subscribe_embed?$third-party
+||youtube.com/subscribe_widget$third-party
 ||people.com.cn/img/2020fenxiang/
 iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
@@ -3816,7 +3815,6 @@ cnbc.com##.HighlightShare-container
 apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
-americanbanker.com##.Page-footer-social
 rbth.com##.Popup-telegram
 cricketcountry.com##.PreferredSourcesDesktop
 thehealthsite.com##.PreferredSourcesDetails
@@ -3853,7 +3851,6 @@ chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.article-google-preferred-button
 essentiallysports.com##.article-head_es-share-container__Tkdfn
-greencars.com##.article-heading_share-component
 neowin.net,seattletimes.com,thecooldown.com##.article-share
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
@@ -3891,7 +3888,6 @@ carnewschina.com##.block_social_media__content
 9to5linux.com##.bm-social-top
 breitbart.com##.bnn-social-share
 bom.gov.au##.bom-social-share
-essentiallysports.com##.brand-share-article-section_container__8e0V8
 businessinsider.com##.brands-social
 oilprice.com##.breakingNews__socialMedia
 agrimag.co.za,androidpolice.com,automart.co.za##.btn-facebook
@@ -4106,6 +4102,7 @@ cointelegraph.com##.post__socials-block
 pravda.com.ua##.post_social_item
 ipolitics.ca##.postshare
 tweaktown.com##.pr-p7.fsvgs
+atlantablackstar.com##.pre-footer
 lifestyleasia.com##.pre-footer_instagram
 gsmarena.com,torquenews.com##.preferred-source
 cnet.com##.preferred-source-button
@@ -4226,6 +4223,7 @@ nltimes.nl##.sourcebutton
 thestateofbrand.com##.sponsored_by-wrapper
 republicworld.com##.sponsors-container
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
+atlantablackstar.com##.stay-social
 vnexpress.net##.sticky
 rochester.edu##.sticky-header__list
 healthshots.com##.stickySocial
@@ -4568,6 +4566,7 @@ la7.it##.socialBtn
 davinotti.com##.social__variant
 ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
+tg.la7.it##.tgla7-condividi
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
 alfredopedulla.com##.tw-banner
@@ -4645,6 +4644,7 @@ uol.com.br##.solar-header-columnist-socialmedia-content
 terra.com.br##.t360-sharebar__wrapper
 tecmundo.com.br##.tec--didyouknow
 tecmundo.com.br##.tec--share__container
+ogol.com.br##.zz-header-social
 r7.com##[class*="article-fill-social-"]
 infomoney.com.br##[data-ds-element^="social-share-"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]

@@ -1,5 +1,5 @@
-! Checksum: urijZ/lqnVxeIaM6iSRtEA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1781417388-14400.patch
+! Checksum: QzbLB6a+SWzcMEB7I6NJ0w
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1781504474-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.96
@@ -104,6 +104,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 103.169.90.205$network
 !+ PLATFORM(windows, mac, android, cli)
 192.3.194.242$network
+||spnccrzone.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 23.94.26.138$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -126,7 +127,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 159.148.186.228$network
 ||yotube.com^$all
-&url_bnm_redirect=$all,domain=~malware_redirection_trains.*
 !+ PLATFORM(windows, mac, android, cli)
 198.23.255.14$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -145,6 +145,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 34.201.22.10$network
 !+ PLATFORM(windows, mac, android, cli)
 134.122.115.190$network
+||freeprosoftz.com^$all
 ||ru.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 141.8.226.34$network
@@ -331,10 +332,8 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||optvz.com^$all
 ||ourdreamersai.com^$all
 ||phrix-lnc.com^$all
-||privacy-webnetwork.com^$all
 ||pushub.net^$all
 ||sanynouncem.org^$all
-||securecontrolvpn.com^$all
 ||posthog.$all,domain=gov|loveisaskill.cloudflareaccess.com
 ||howtofix.guide^$document
 ||separationreverttap.com^$all
@@ -381,6 +380,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 158.222.7.83$network
 !+ PLATFORM(windows, mac, android, cli)
 95.214.26.78$network
+*yo.php?cname=*&cid=$all
 .aspx?cname=*&cid=$all
 !+ PLATFORM(windows, mac, android, cli)
 185.155.184.57$network
@@ -546,6 +546,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ||flash.cn^$all
 ||cprapid.com^$all
 ||crentgate.com^$all
+||displayoptoffers.com^$all
 ||redirekted.com^$all
 ||zonedummy.com^$all
 /^172\.255\.6\.(\d{1,2}|2.*|1[0-689].*|17[0-689])\$/$network
@@ -671,6 +672,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##button[class*=ShareOverlayButton i]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
+##button[title^="Del på "]
 ##button[title^="Share this "]
 ##div[button=share]
 ##div[class$=-sticky-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=post-with-stick])
@@ -1541,6 +1543,11 @@ $document,removeparam=/^source=pepperjam$/
 $document,removeparam=/^source=cj$/
 $removeparam=affil
 $removeparam=cjid
+$removeparam=cl_crtv
+$removeparam=cl_camp
+$removeparam=cl_aid
+$removeparam=cl_vend
+$removeparam=cl_ch
 $removeparam=irsharedid
 $removeparam=hvarAID
 $removeparam=sv_affiliate_id
@@ -1585,7 +1592,6 @@ $removeparam=track_click
 $removeparam=actId
 $removeparam=oly_anon_id
 $removeparam=s_cid
-$removeparam=ml_subscriber_hash
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
 $removeparam=vc_lpp
@@ -2295,6 +2301,7 @@ $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=token,domain=al.to|combat.pl|x-kom.pl
 $removeparam=refsec,domain=barrons.com
 $removeparam=hpt,domain=cnn.com
+||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
 $removeparam=ab_channel,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
@@ -2665,7 +2672,6 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||instagram.com^$removeparam=ig_rid
 ||cdninstagram.com^$removeparam=_nc_sid
 ||adguard.info^$removeparam=nc
-$document,removeparam=jp_cmp,domain=chase.com
 ||researchgate.net^$document,removeparam=_tp
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|sky.it
 ||xvideos.$document,removeparam=sxcaf
@@ -2679,6 +2685,7 @@ $removeparam=csrcl2
 ||mcafee.com^$removeparam=cctype
 ||mcafee.com^$removeparam=ccstype
 $document,removeparam=intc,domain=citi.com
+$document,removeparam=src,domain=citi.com
 $document,removeparam=selectedCCIndex,domain=citi.com
 $document,removeparam=aoOfferParams,domain=citi.com
 $removeparam=ProspectID,domain=citi.com
@@ -2794,7 +2801,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||roblox.$removeparam=friendshipSourceType
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=__ysp
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
-.com/*/status/$document,removeparam=t,domain=twitter.com|x.com
 ||qwant.com^$removeparam=hti
 ||finn.no^$removeparam=stored-id
 ||finn.no^$removeparam=nocache
@@ -2818,6 +2824,7 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 ||proton.me^$removeparam=url_id
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||click.linksynergy.com^$removeparam=mid
+||tubebuddy.com^$removeparam=a
 ||parallels.com^$removeparam=x-source
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof

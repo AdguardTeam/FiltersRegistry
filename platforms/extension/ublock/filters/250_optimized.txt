@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: jEmUuqRvHZakDCo94qxlrQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1781417381-14400.patch
+! Checksum: mk29IC/f1zZjhO2QpgIb/w
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1781504467-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.96
@@ -166,6 +166,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||190.238.183.5^$all
 ||27.220.253.78^$all
 ||192.3.194.242^$all
+||spnccrzone.com^$all
 /^(.*\.|.*//)?tkqlhce\.com/click-.*([?&][a-tv-z]{1,}(=[a-zA-Z0-9]{1,})?){1,}$/$document
 ||23.94.26.138^$all
 ||205.185.126.200^$all
@@ -230,7 +231,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||45.148.120.171^$all
 ||159.148.186.228^$all
 ||yotube.com^$all
-&url_bnm_redirect=$all,domain=~malware_redirection_trains.*
 ||103.233.216.77^$all
 ||106.86.172.194^$all
 ||110.167.64.171^$all
@@ -304,6 +304,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||124.163.130.175^$all
 ||118.75.87.102^$all
 ||134.122.115.190^$all
+||freeprosoftz.com^$all
 ||ru.com^$all
 ||141.8.226.34^$all
 ||91.240.118.172^$all
@@ -537,10 +538,8 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||optvz.com^$all
 ||ourdreamersai.com^$all
 ||phrix-lnc.com^$all
-||privacy-webnetwork.com^$all
 ||pushub.net^$all
 ||sanynouncem.org^$all
-||securecontrolvpn.com^$all
 ://15.204.140.239^$all
 ://15.204.160.216^$all
 ||posthog.$all,domain=gov|loveisaskill.cloudflareaccess.com
@@ -596,6 +595,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||158.222.7.83^$all
 ||95.214.26.78^$all
 /^(https?|tcp|iquic)://[a-z0-9.-]{1,}\.([a-z]{3,}|[a-z][a-tv-z]|[a-qs-z][a-z])/.*(go\.php|redirect|url=|\?re=).*\.(xn--p1ai|рф|%D1%80%D1%84)$/$document,domain=~malware_redirection_results.*
+*yo.php?cname=*&cid=$all
 .aspx?cname=*&cid=$all
 ||185.155.184.57^$all
 ||185.155.186.24^$all
@@ -1260,6 +1260,7 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ##button[class*=ShareOverlayButton i]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
+##button[title^="Del på "]
 ##button[title^="Share this "]
 ##div[button=share]
 ##div[class$=-sticky-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=post-with-stick])
@@ -2150,6 +2151,11 @@ $document,removeparam=/^source=pepperjam$/
 $document,removeparam=/^source=cj$/
 $removeparam=affil
 $removeparam=cjid
+$removeparam=cl_crtv
+$removeparam=cl_camp
+$removeparam=cl_aid
+$removeparam=cl_vend
+$removeparam=cl_ch
 $removeparam=irsharedid
 $removeparam=hvarAID
 $removeparam=sv_affiliate_id
@@ -2194,7 +2200,6 @@ $removeparam=track_click
 $removeparam=actId
 $removeparam=oly_anon_id
 $removeparam=s_cid
-$removeparam=ml_subscriber_hash
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
 $removeparam=vc_lpp
@@ -2904,6 +2909,7 @@ $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=token,domain=al.to|combat.pl|x-kom.pl
 $removeparam=refsec,domain=barrons.com
 $removeparam=hpt,domain=cnn.com
+||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
 $removeparam=ab_channel,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $~xhr,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
@@ -3274,7 +3280,6 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||instagram.com^$removeparam=ig_rid
 ||cdninstagram.com^$removeparam=_nc_sid
 ||adguard.info^$removeparam=nc
-$document,removeparam=jp_cmp,domain=chase.com
 ||researchgate.net^$document,removeparam=_tp
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|sky.it
 ||xvideos.$document,removeparam=sxcaf
@@ -3288,6 +3293,7 @@ $removeparam=csrcl2
 ||mcafee.com^$removeparam=cctype
 ||mcafee.com^$removeparam=ccstype
 $document,removeparam=intc,domain=citi.com
+$document,removeparam=src,domain=citi.com
 $document,removeparam=selectedCCIndex,domain=citi.com
 $document,removeparam=aoOfferParams,domain=citi.com
 $removeparam=ProspectID,domain=citi.com
@@ -3403,7 +3409,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||roblox.$removeparam=friendshipSourceType
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=__ysp
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
-.com/*/status/$document,removeparam=t,domain=twitter.com|x.com
 ||qwant.com^$removeparam=hti
 ||finn.no^$removeparam=stored-id
 ||finn.no^$removeparam=nocache
@@ -3427,6 +3432,7 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 ||proton.me^$removeparam=url_id
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||click.linksynergy.com^$removeparam=mid
+||tubebuddy.com^$removeparam=a
 ||parallels.com^$removeparam=x-source
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
@@ -3490,7 +3496,6 @@ pfu.ricoh.com##:is(body[onload*=ssacc i],body[onload*=ssacc i] :is(pre,iframe)):
 search.yurindo.bscentral.jp##:is(body,div,li,a,strong,dd,span:not([class*=material-icon]),p,h4):style(font-family:"Segoe UI",Calibri,Verdana,Ubuntu,"Noto Sans CJK JP","Noto Sans CJK","Hiragino Maru Gothic Pro W4","ヒラギノ丸ゴ W4","Hiragino Maru Gothic Pro W3","ヒラギノ丸ゴ W3","Ume Gothic","Ume UI Gothic","Yu Gothic","Yu Gothic UI",Meiryo,メイリオ,"BabelStone Han",Nishiki-teki,FRBTaiwaneseKana,"Malgun Gothic","맑은 고딕",NanumGothic,AppleSDGothicNeo,NanumBarumGothic,sandoll-gothicneo3,sandoll-gothicneo2,sandoll-gothicneo1,NanumSquareRoundB,sans-serif!important)
 www.svt.se##div[class*=TextContent_textContent__]:style(font-family:"Segoe UI Bold","Segoe UI",Calibri,Verdana,Ubuntu,sans-serif!important)
 www.pfu.ricoh.com##body[onload*=ssacc i]:style(font-family:"Segoe UI",Calibri,Verdana,Ubuntu,"Noto Sans CJK JP","Noto Sans CJK","Hiragino Maru Gothic Pro W4","ヒラギノ丸ゴ W4","Hiragino Maru Gothic Pro W3","ヒラギノ丸ゴ W3","Ume Gothic","Ume UI Gothic","Yu Gothic","Yu Gothic UI",Meiryo,メイリオ,"BabelStone Han",Nishiki-teki,FRBTaiwaneseKana,"Malgun Gothic","맑은 고딕",NanumGothic,AppleSDGothicNeo,NanumBarumGothic,sandoll-gothicneo3,sandoll-gothicneo2,sandoll-gothicneo1,NanumSquareRoundB,sans-serif!important)
-jp,xn--wgv71a,kyoto,nagoya,okinawa,osaka,ryukyu,tokyo,yokohama,~1000mg.jp,~10mtv.jp,~1geki.jp,~2nn.jp,~4travel.jp,~9db.jp,~account.nicovideo.jp,~altema.jp,~amiami.jp,~animate-onlineshop.jp,~applion.jp,~appmedia.jp,~ark-pc.co.jp,~ascii.jp,~asunaro.shop-pro.jp,~athome.co.jp,~atpress.ne.jp,~auone.jp,~bloomberg.co.jp,~bookoff.co.jp,~books-sanseido.jp,~castel.jp,~cdjapan.co.jp,~cero.gr.jp,~ch.nicovideo.jp,~cinematoday.jp,~club-animate.jp,~coat.co.jp,~cocreco.kodansha.co.jp,~conan-cafe.jp,~cosmeconcier.jp,~cosmospc.co.jp,~cyclowired.jp,~diamond.co.jp,~diamond.jp,~direct.sanwa.co.jp,~dmkt-sp.jp,~dmm.co.jp,~dokkyomed.ac.jp,~doope.jp,~doorblog.jp,~dpoint.docomo.ne.jp,~dto.jp,~eagate.573.jp,~eic.or.jp,~eikoh-prize.jp,~entabe.jp,~entamepost.jp,~eonet.jp,~epark.jp,~eposcard.co.jp,~estar.jp,~expo70-park.jp,~expresscard.jp,~expy.jp,~faq.radiko.jp,~ftnews.jp,~futtsu.lg.jp,~g123.jp,~gamefactory.jp,~gamepedia.jp,~gameranbu.jp,~gamewith.jp,~ganguoroshi.jp,~gch.jp,~geekjob.jp,~goguynet.jp,~granbluefantasy.jp,~gta5.jp,~h1g.jp,~hia-net.gr.jp,~hiltonjapan.co.jp,~hosyusokuhou.jp,~hotpepper.jp,~huffingtonpost.jp,~hulu.jp,~ib-game.jp,~impress.co.jp,~innervision.co.jp,~insightnow.jp,~iphone-mania.jp,~itmedia.co.jp,~jafp.or.jp,~japan-baseball.jp,~jetro.go.jp,~jfa.jp,~jgrants-portal.go.jp,~jitenon.jp,~jma.go.jp,~jmca.jp,~jmty.jp,~joshinweb.jp,~jri.co.jp,~k-manga.jp,~kabutan.jp,~kamigame.jp,~kanachu.jp,~kanno-novel.jp,~kawade.co.jp,~keio.co.jp,~kenko-tokina.co.jp,~kinokuniya.co.jp,~kinro.ntv.co.jp,~kitakyushu.lg.jp,~kntv.jp,~konoyubitomare.jp,~kotobank.jp,~koupenchan-store.jp,~library.city.kita.tokyo.jp,~livedoor.biz,~location.sevenbank.co.jp,~loft.co.jp,~maidonanews.jp,~mainichi.jp,~maonline.jp,~mapion.co.jp,~mayla.jp,~mechacomic.jp,~melonbooks.co.jp,~mext.go.jp,~mgjshop.co.jp,~mineo.jp,~mixi.jp,~mora.jp,~ms.bridgestone.co.jp,~n-kishou.co.jp,~namedic.jp,~naturum.ne.jp,~nazonazo.jp,~nec.co.jp,~neowing.co.jp,~netoff.co.jp,~news.infoseek.co.jp,~newsweekjapan.jp,~nicenature.top,~nijimen.kusuguru.co.jp,~nikkan.co.jp,~nikkeibp.co.jp,~nojima.co.jp,~novelgame.jp,~nta.co.jp,~ntj.jac.go.jp,~nttxstore.jp,~numata.gunma.jp,~number.bunshun.jp,~nwknews.jp,~ocn.ne.jp,~odakyu.jp,~odakyubus.co.jp,~omni7.jp,~onojibi.jp,~osawa-inc.co.jp,~otakomu.jp,~otanew.jp,~otona-novel.jp,~pex.jp,~point.recruit.co.jp,~qa.nicovideo.jp,~qoo10.jp,~rakuten.co.jp,~rank-king.jp,~recipe-blog.jp,~research-panel.jp,~rizzan.co.jp,~rtrp.jp,~rurubu.jp,~ryokan.or.jp,~sansokan.jp,~sanwa-d.co.jp,~secure.tw4.jp,~seesaa.jp,~seiga.nicovideo.jp,~sengokuixa.jp,~sentankyo.jp,~shidaikyo.or.jp,~shiki.jp,~shogakukan.co.jp,~shop.adidas.jp,~shop.hanshintigers.jp,~skima.jp,~sneakerwars.jp,~st-c.co.jp,~store-tsutaya.tsite.jp,~suruga-ya.jp,~suumo.jp,~syukatsu-kaigi.jp,~t-stamina.jp,~takaratomymall.jp,~takarazuka-an.co.jp,~taking-a-stand.jp,~tenki.jp,~tepco.co.jp,~timesclub.jp,~tokubai.co.jp,~tokyo-np.co.jp,~tokyodisneyresort.jp,~tokyubus.co.jp,~toonippo.co.jp,~tsukumo.co.jp,~tv-tokyo.co.jp,~umitenki.jp,~universal-music.co.jp,~vector.co.jp,~vippers.jp,~vpass.ne.jp,~walica.jp,~weathernews.jp,~web-ace.jp,~webcomics.jp,~weblio.jp,~westjr.co.jp,~woman.excite.co.jp,~wowgame.jp,~wowkorea.jp,~wowma.jp,~www.gpoint.co.jp,~www.homes.co.jp,~www.infoseek.co.jp,~www.jorudan.co.jp,~www.meti.go.jp,~www.swiki.jp,~www.yuzawaya.co.jp,~yachiyo.lg.jp,~yahoo.co.jp,~yamagata-np.jp,~yomiuri.co.jp##:is(body,div,li,a,strong,dd,span):matches-css(font-family: /^.*(ＭＳ|MS) ?[ＰP]ゴシック.*/i):style(font-family:"Segoe UI",Calibri,Verdana,Ubuntu,"Noto Sans CJK JP","Noto Sans CJK","Hiragino Maru Gothic Pro W4","ヒラギノ丸ゴ W4","Hiragino Maru Gothic Pro W3","ヒラギノ丸ゴ W3","Ume Gothic","Ume UI Gothic","Yu Gothic","Yu Gothic UI",Meiryo,メイリオ,"BabelStone Han",Nishiki-teki,FRBTaiwaneseKana,"Malgun Gothic","맑은 고딕",NanumGothic,AppleSDGothicNeo,NanumBarumGothic,sandoll-gothicneo3,sandoll-gothicneo2,sandoll-gothicneo1,NanumSquareRoundB,sans-serif!important)
 ###androidAppBanner
 ###AndroidMobileAppBanner
 ###app-badges
