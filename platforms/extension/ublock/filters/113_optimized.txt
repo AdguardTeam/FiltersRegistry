@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: yr53/l36flK3zwIGCZ+MMg
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1781573949-14400.patch
+! Checksum: cyUYCTKdNxg04iCZhAxYqg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1781590931-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.92.39
-! TimeUpdated: 2026-06-16T01:35:44+00:00
+! Version: 2.1.92.40
+! TimeUpdated: 2026-06-16T06:18:48+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -252,6 +252,7 @@
 /syndication.*&idzone=
 /trackads.
 /twitter-ads.
+/txt_publi_vert.
 /upload/ad/*
 /uploads/*/ads-
 /uploads/*/ads.
@@ -269,6 +270,7 @@
 ://acces.*/a.php?
 ://aclick.
 ://act-http-ban.
+://ad-start.
 ://ad.*&sid=
 ://ad.*/ad/*.gif
 ://ad.*/adx/
@@ -372,6 +374,7 @@
 ?size=728x90|$subdocument
 ?sponsor=*&sId=
 ?style=300x250-
+?style=720x90-
 ?tag_id=*&sw_url=
 ?tour=*&campaign=$3p
 ?type=ad;
@@ -380,7 +383,6 @@
 ?ufuad=
 ?zoneid=*&ab=$script
 ?zoneid=*&cid=$script
-?zoneid=*&ext=$3p
 ?zoneid=*&placement=
 ?zoneid=*&r=
 ?zoneid=*&serve=
@@ -483,8 +485,10 @@ _publicite.
 _publicite_
 _publog_2.
 _pubscript.
+_pubted.
 _regie/aff.
 _regiepub/
+_rivcash_banner_
 _smads_
 _square_ads.
 _werbebanner_
@@ -577,6 +581,7 @@ _build=iclick-$popup
 ||acxiom-online.com^$3p
 ||ad-spire.net^$3p
 ||ad6.fr^$3p
+||adbox.lt^$3p
 ||adhslx.com^$3p
 ||adintop.com^$3p
 ||adkontekst.pl^$3p
@@ -608,6 +613,7 @@ _build=iclick-$popup
 ||adskom.com^$3p
 ||adsmena.com^$3p
 ||adsmmgp.com^$3p
+||adsplius.lt^$3p
 ||adspsp.com^$3p
 ||adsregieonline.com^$3p
 ||adstract.com^$3p
@@ -630,6 +636,7 @@ _build=iclick-$popup
 ||afilio.com.br^$3p
 ||apypxl.com^$3p
 ||aquaplatform.com^$3p
+||arabyads.com^$3p
 ||askmecca.com^$3p
 ||atedra.com^$3p
 ||bazardux.com^$3p
@@ -688,6 +695,7 @@ _build=iclick-$popup
 ||gestion2web.com^$3p
 ||getpublica.com^$3p
 ||getresponse.com^$3p
+||gingermedia.com^$3p
 ||girlsmessenger.com^$3p
 ||globalrotator.com^$3p
 ||goracash.com^$3p
@@ -795,6 +803,7 @@ _build=iclick-$popup
 ||truenat.bid^$3p
 ||ulclick.ru^$3p
 ||viahelium.com^$3p
+||videoplaza.se^$~object,3p
 ||vyking.io^$3p
 ||wedoo.com^$3p
 ||widespace.com^$3p
@@ -850,6 +859,7 @@ _build=iclick-$popup
 ||admiredexcrete.com^
 ||adoptedablative.com^
 ||adslop.com^
+||adsratcarp.com^
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
 ||advancementcircuscaptured.com^
@@ -1002,7 +1012,6 @@ _build=iclick-$popup
 ||coprahsjivaran.top^
 ||corapeacoat.com^
 ||corvusbowknot.com^
-||cpasbien.do^
 ||cpmterra.com^
 ||cqtownist.cyou^
 ||crackyunfence.com^
@@ -1058,7 +1067,6 @@ _build=iclick-$popup
 ||dorpshexyls.com^
 ||dotomi.com^
 ||douveejoalastu.net^
-||dowabledecil.com^
 ||doxdynpvwvkcw.com^
 ||dpuplet.net^
 ||dq95d35.com^
@@ -1226,6 +1234,7 @@ _build=iclick-$popup
 ||lexintaria.com^
 ||lgxdwxzgfxvy.com^
 ||liasingmyxopod.com^
+||ligninkeftiu.com^
 ||lignitehelloed.com^
 ||limbecculvers.com^
 ||limereaps.cyou^
@@ -1246,6 +1255,7 @@ _build=iclick-$popup
 ||lykenphoby.com^
 ||lzexnxwjsmof.com^
 ||macawsconges.com^
+||macostruecloud.xyz^
 ||magetrigla.com^
 ||malthawhoop.cyou^
 ||maraywreath.com^
@@ -1388,6 +1398,7 @@ _build=iclick-$popup
 ||repunchcell.com^
 ||resteeppropmen.com^
 ||retinaesprent.com^
+||revsharecash.com^
 ||riamiavid.com^
 ||riskyfooster.qpon^
 ||rkvldurquedh.com^
@@ -1666,6 +1677,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||4k.video/*.php?
 ||4k.video/b.js
 ||50centfreedom.us^$image,3p
+||abc-du-gratuit.com^$image,3p
 ||abowman.com/widgets/
 ||actu-direct.fr/rep/rep_pub/
 ||ad.genybet.fr^
@@ -1703,6 +1715,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||brsimg.com/pub/
 ||btc.com/poster/banner/
 ||camtempel.com/banner/
+||cdn-dekbh.nitrocdn.com/*/wp-content/uploads/2021/04/*.kidludik-top.jpg
 ||cdn.citytourgirls.com/static/bn/
 ||cdn.escortdude.com/static/bn/
 ||cdn.playwire.com^$domain=filehippo.com
@@ -1906,13 +1919,13 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||safelinku.com^$script,3p
 ||shorte.st^$script,3p
 ||shortem.com^$script,subdocument,3p
+||tmearn.com^$script,3p
 ||hostpic.org^$domain=fdesouche.com
 ||i.ibb.co/5v8KJgY/nordvpn.jpg
 ||i.imgur.com/32xkKog.jpg
 ||i.imgur.com/4cUwoPk.gif
 ||i.imgur.com/LjJzcZk.png
 ||i.imgur.com^$domain=nintendo-master.com
-||images2.imgbox.com/c9/ea/LjZOipad_o.png
 ||lookimg.com/images/2021/12/20/PydgJE.png
 ||nsa40.casimages.com/img/2020/05/11/200511033032222532.png
 ||zupimages.net/up/21/14/7x9v.gif
@@ -2104,6 +2117,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||elahmad.com/js/extreme.js
 ||electromenager-compare.com/images/main/*/pub.jpg
 ||elheddaf.com/data/pub/
+||emploipartner.com/template/pubs/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
 ||fiches-auto.fr/_carre_300_
@@ -2522,12 +2536,14 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.bloc-pub2
 ##.blocPub
 ##.bloc_pub_250
+##.bloc_pub_300
 ##.block-advertising-insert
 ##.block-gc-ad
 ##.block-pub
 ##.block_pub
 ##.block_small_pub
 ##.blocpub
+##.border_ads
 ##.bottom-advertising
 ##.bottompub
 ##.box-centered-ads
@@ -2566,7 +2582,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.footerpubright
 ##.frame-ads-left
 ##.frame-ads-right
-##.frame-ads-top
 ##.full-width-add-footer
 ##.google_ad2
 ##.gptAd
@@ -2610,6 +2625,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.lbl-ad
 ##.leaderboard728
 ##.leftSideAds
+##.left_top_ad
 ##.lftBigAds
 ##.lien_sponso
 ##.liens-sponsorises__external
@@ -2735,6 +2751,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pubb-336-1
 ##.pubimage
 ##.pubind1
+##.pubind2
 ##.pubitem
 ##.publicidad
 ##.publicidade-rodape
@@ -2796,6 +2813,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.sponsorfooter
 ##.squareadboxext
 ##.srcPubZone
+##.stackcommerce-widget
 ##.standard_adv_link
 ##.sticky-ad-holder
 ##.structure_wrapper-ad
@@ -2882,6 +2900,7 @@ manga-news.com###bangeante
 appcake.net,boursier.com,lesaffaires.com,maliweb.net,nrj.fr###banner
 clubpoker.net###bannerTopWrapper
 lacanausurfinfo.com###banner_footer
+tirage-gagnant.com###banner_promo
 cowcotland.com###bannertop
 tetesaclaques.tv###bigBox
 gratuiciel.com,logitheque.com###bloc-droite-bas-250-250
@@ -2939,6 +2958,7 @@ madstef.com###idkey1ban
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
 jeuxvideo-live.com###jeuAssocie
+zdnet.fr###leaderTop
 agriaffaires.com,bloggif.com,lesoir.be,play3-live.com,topquizz.fr###leaderboard
 tiplanet.org###left_column > .archive:not([id])
 lachainemeteo.com###lig
@@ -2949,6 +2969,7 @@ hellokids.com###mask
 driverscloud.com###mc_cadretoppub
 jeuxvideo.com###mc_sponso
 sfr.fr###meeticWrapper
+channelbiz.fr,franceantilles.fr,franceguyane.fr,glenatbd.com,itespresso.fr,lerevenu.com,ventsdouest.com###megabanner
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_bottom
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_top
 leparisien.fr###meteo-immo
@@ -2989,6 +3010,7 @@ musculaction.com###pub3
 tele.premiere.fr###pub_a2d_pave
 maxifoot-live.com###pub_bc
 emu-france.com###pub_casino_header
+paris-communiques.com,plateformemedia.com###publaterale
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
 sante-dz.com###revenue-wrapper
 lesoir.be###rossel-imu-bottom
@@ -3035,10 +3057,13 @@ fusac.fr,laposte.fr,lebonfap.com,lefigaro.fr,letagparfait.com,rajacasablanca.com
 fipradio.fr,francemusique.fr,girlsgogames.fr,jeu.fr,lesoir.be,lestrepublicain.com,midilibre.fr,monpetitforfait.com##.advert
 ccm.net,commentcamarche.com,commentcamarche.net,latribune.fr,traildesforts.com##.advertising
 statistiks.fr##.adz
+aufeminin.com##.af-block-native
 permaculteurs.com##.aff
 leparking-moto.fr##.alter
 bons-plans-elise.fr##.amazon-products
 amazon.fr##.amzn-safe-frame-container
+sortir.eu##.annonce-container
+estrepublicain.fr##.annonceLoc
 centre-presse.fr,lamontagne.fr,larep.fr,le-pays.fr,leberry.fr,lechorepublicain.fr,lejdc.fr,lepopulaire.fr,lyonne.fr##.annonce_prompteur
 autojournal.fr,autoplus.fr##.annonces-container
 autojournal.fr,autoplus.fr##.annonces-container-sidebar
@@ -3118,9 +3143,11 @@ cbanque.com,clubpronostics.com,gratuiciel.com,lelogicielgratuit.com,logicielmac.
 le2minutes.com,senscritique.com##.habillage-left
 envertetcontretous.fr##.halfpage
 realite-virtuelle.com##.halfpageAd
+avis-express.com,lnr-dz.com##.header-banner
 europe1.fr##.header-space
 medialot.fr##.header-sub
 tvanouvelles.ca##.header-topBar-sticky
+geek-malin.fr##.header-widget-area
 ouedkniss.com##.home-land-header
 ouedkniss.com##.home-promo-header
 valeursactuelles.com##.horizons-va-sidebar
@@ -3185,6 +3212,7 @@ jardiner-malin.fr##.parent-billboard
 portail.free.fr,sante-dz.com##.partenaire
 boursorama.com,caradisiac.com,dunod.com,ficam.ma,lesechos.fr,lfp.fr,mangario.fr,nouvelobs.com,saint-etienne.fr##.partenaires
 constructeurdemaison.net,ffr.fr,gameblog.fr,lexpress.fr,mensup.fr,swissquote.ch,turbo.fr##.partner
+rtl.fr##.partner-mdl
 caci.dz,lavenir.net,nintendo-master.com,ogaming.tv,savefrom.net##.partners
 grands-reportages.com,montagnes-magazine.com##.pavepub
 footballclubdemarseille.fr##.pb-sidebar-article
@@ -3396,6 +3424,7 @@ ouest-france.fr##div[id^="pub_native"]
 ouest-france.fr##div[id^="pub_pave_article"]
 universfreebox.com##div[id^="publicite-"]
 musculaction.com##div[id^="pubsousmenu"]
+pagesjaunes.fr##div[id^="push"]
 zonebourse.com##div[id^="zpp"]
 impotsurlerevenu.org##div[style*="float:right;width:300px;"]
 androidpit.fr,forumpiscine.com##div[style*="min-height:90px;"]
@@ -3405,6 +3434,7 @@ echoroukonline.com,maxifoot.fr##div[style*="width:468px;"]
 voyageforum.com##div[style="display: block; margin-top: 0px; width: 836px; margin-bottom: -7px; height: 285px;"]
 forum.gsmhosting.com##div[style="float:right; width:336px; height:560px; margin-left:10px"]
 phpsources.org##div[style="margin-bottom:15px;"] > table > tbody
+supportduweb.com##div[style="margin:auto;margin-top:2px;width:728px;height:90px;"]
 geny.com##div[style^="width: 300px; height: 250px;"]
 poki.com##div[width="160"][height="600"]
 poki.com##div[width="300"][height="250"]
