@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.6.60",
-			"timeUpdated": "2026-06-16T10:40:59+0000",
+			"version": "2.1.6.61",
+			"timeUpdated": "2026-06-16T12:38:56+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.72.13",
-			"timeUpdated": "2026-06-16T10:41:11+0000",
+			"version": "2.4.72.14",
+			"timeUpdated": "2026-06-16T12:39:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.5.77",
-			"timeUpdated": "2026-06-16T10:41:22+0000",
+			"version": "2.1.5.78",
+			"timeUpdated": "2026-06-16T12:39:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.29.29",
-			"timeUpdated": "2026-06-16T10:41:25+0000",
+			"version": "2.1.29.30",
+			"timeUpdated": "2026-06-16T12:39:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.34.72",
-			"timeUpdated": "2026-06-16T10:41:33+0000",
+			"version": "2.0.34.73",
+			"timeUpdated": "2026-06-16T12:39:40+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.70.30",
-			"timeUpdated": "2026-06-16T10:41:35+0000",
+			"version": "2.0.70.31",
+			"timeUpdated": "2026-06-16T12:39:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.70.46",
-			"timeUpdated": "2026-06-16T10:41:44+0000",
+			"version": "2.2.70.47",
+			"timeUpdated": "2026-06-16T12:39:55+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.25.3",
-			"timeUpdated": "2026-06-16T10:41:47+0000",
+			"version": "2.1.25.4",
+			"timeUpdated": "2026-06-16T12:39:58+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -710,8 +710,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.13.49",
-			"timeUpdated": "2026-06-13T17:35:01+0000",
+			"version": "2.0.13.50",
+			"timeUpdated": "2026-06-16T12:40:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.21",
-			"timeUpdated": "2026-06-16T10:41:53+0000",
+			"version": "2.0.77.22",
+			"timeUpdated": "2026-06-16T12:40:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.44",
-			"timeUpdated": "2026-06-16T10:41:54+0000",
+			"version": "2.0.45.45",
+			"timeUpdated": "2026-06-16T12:40:08+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -840,8 +840,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.8.68",
-			"timeUpdated": "2026-06-16T10:41:56+0000",
+			"version": "2.0.8.69",
+			"timeUpdated": "2026-06-16T12:40:11+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
@@ -853,6 +853,27 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera/filters/23.txt"
+		},
+		{
+			"filterId": 25,
+			"name": "AdGuard Mail Tracking Protection filter",
+			"description": "This filter blocks tracking pixels in email clients.",
+			"timeAdded": "2026-05-14T07:28:02+0000",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 864000,
+			"displayNumber": 1,
+			"groupId": 2,
+			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/25.txt",
+			"trustLevel": "full",
+			"version": "2.0.0.1",
+			"timeUpdated": "2026-06-16T12:40:12+0000",
+			"deprecated": false,
+			"languages": [],
+			"tags": [
+				2,
+				10
+			],
+			"downloadUrl": "https://filters.adtidy.org/extension/opera/filters/25.txt"
 		},
 		{
 			"filterId": 101,

@@ -3925,7 +3925,7 @@
 			},
 			"be": {
 				"description": "Мае адпраўкі да фільтра EasyList Dutch",
-				"name": "Адпраўка да фільтра EasyList Dutch"
+				"name": "Адсылка да фільтра EasyList Dutch"
 			},
 			"bg": {
 				"description": "Има референции към EasyList Dutch филтър",
@@ -7054,7 +7054,7 @@
 				"name": "Specifiek Sloveenstalige adblocking"
 			},
 			"no": {
-				"description": "Designet spesielt for å blokkere annonser på Slovakiske nettsider",
+				"description": "Designet spesielt for å blokkere annonser på slovakiske nettsider",
 				"name": "Slovakisk språkspesifikk annonseblokkering"
 			},
 			"pl": {
@@ -11757,7 +11757,7 @@
 			},
 			"be": {
 				"description": "Мае адпраўкі да турэцкага фільтра AdGuard",
-				"name": "Адпраўка да турэцкага фільтра AdGuard"
+				"name": "Адсылка да турэцкага фільтра AdGuard"
 			},
 			"bg": {
 				"description": "Съдържа препратки към Турски филтър",
@@ -17624,6 +17624,184 @@
 			"zh_TW": {
 				"name": "AdGuard 烏克蘭文過濾器",
 				"description": "啟用於烏克蘭語網站上的廣告封鎖之過濾器。"
+			}
+		},
+		"25": {
+			"ar": {
+				"name": "فلتر حماية تتبع البريد من AdGuard",
+				"description": "يقوم هذا الفلتر بحظر بكسلات التتبع في عملاء البريد الإلكتروني."
+			},
+			"be": {
+				"name": "Фільтр абароны ад адсочвання пошты AdGuard",
+				"description": "Гэты фільтр блакіруе пікселі адсочвання ў кліентах электроннай пошты."
+			},
+			"bg": {
+				"name": "Филтър за защита от проследяване на пощата AdGuard",
+				"description": "Този филтър блокира пикселите за проследяване в пощенските клиенти."
+			},
+			"ca": {
+				"name": "Filtre de protecció de seguiment de correu d'AdGuard",
+				"description": "Aquest filtre bloqueja els píxels de seguiment en clients de correu electrónic."
+			},
+			"cs": {
+				"name": "Filtr ochrany proti sledování pošty AdGuard",
+				"description": "Tento filtr blokuje sledovací pixely v e-mailových klientech."
+			},
+			"da": {
+				"name": "AdGuard Mail Sporingsbeskyttelsesfilter",
+				"description": "Dette filter blokerer sporingspixels i e-mailklienter."
+			},
+			"de": {
+				"name": "AdGuard-Filter gegen E-Mail-Tracking",
+				"description": "Dieser Filter blockiert Tracking-Pixel in E-Mail-Clients."
+			},
+			"el": {
+				"name": "Φίλτρο προστασίας παρακολούθησης αλληλογραφίας AdGuard",
+				"description": "Αυτό το φίλτρο αποκλείει pixels παρακολούθησης σε πελάτες ηλεκτρονικού ταχυδρομείου."
+			},
+			"en": {
+				"name": "AdGuard Mail Tracking Protection filter",
+				"description": "This filter blocks tracking pixels in email clients."
+			},
+			"es": {
+				"name": "AdGuard Mail Tracking Protection filter",
+				"description": "Este filtro bloquea los píxeles de seguimiento en los clientes de correo electrónico"
+			},
+			"es_ES": {
+				"name": "AdGuard Mail Tracking Protection filter",
+				"description": "Este filtro bloquea los píxeles de seguimiento en los clientes de correo electrónico"
+			},
+			"fa": {
+				"name": "فیلتر محافظت ردیابی ایمیل AdGuard",
+				"description": "این فیلتر پیکسل‌های ردیابی را در کلاینت‌های رایانامه مسدود می‌کند."
+			},
+			"fi": {
+				"name": "AdGuard-sähköpostin seurannan suojaussuodatin",
+				"description": "Tämä suodatin estää pikselien seurantaa sähköpostiohjelmissa."
+			},
+			"fr": {
+				"name": "Filtre AdGuard Mail de protection contre le suivi",
+				"description": "Ce filtre bloque les pixels de suivi dans les clients de messagerie."
+			},
+			"he": {
+				"name": "מסנן ההגנה מפני מעקב בדואר של AdGuard",
+				"description": "מסנן זה חוסם פיקסלי מעקב בלקוחות דוא״ל."
+			},
+			"hi": {
+				"name": "AdGuard मेल ट्रैकिंग प्रोटेक्शन फ़िल्टर",
+				"description": "यह फ़िल्टर ईमेल ग्राहकों में नज़र रखने वाले पिक्सेल को अवरोधित करता है।"
+			},
+			"hr": {
+				"name": "AdGuard filter za zaštitu od praćenja putem e-pošte",
+				"description": "Ovaj filter blokira piksele za praćenje u klijentima e-pošte."
+			},
+			"hu": {
+				"name": "AdGuard Mail Követés Elleni szűrő",
+				"description": "Ez a szűrő blokkolja a követő pixeleket az email kliensekben."
+			},
+			"hy": {
+				"name": "AdGuard փոստի հետևման պաշտպանության ֆիլտր",
+				"description": "Այս զտիչը արգելափակում է հետևման պիքսելները էլփոստի հաճախորդներում։"
+			},
+			"id": {
+				"name": "Filter Perlindungan Pelacakan Surat AdGuard",
+				"description": "Filter ini memblokir piksel pelacakan di klien e-mail."
+			},
+			"it": {
+				"name": "Filtro AdGuard Mail Anti-Monitoraggio",
+				"description": "Questo filtro blocca i pixel di tracciamento nei client di posta elettronica."
+			},
+			"ja": {
+				"name": "AdGuard メール追跡防止フィルタ",
+				"description": "メールクライアント内のトラッキングピクセルをブロックしてくれるフィルタです。"
+			},
+			"ko": {
+				"name": "AdGuard Mail 추적 보호 필터",
+				"description": "이 필터는 이메일 클라이언트에서 추적 픽셀을 차단합니다."
+			},
+			"lt": {
+				"name": "AdGuard pašto sekimo apsaugos filtras",
+				"description": "Šis filtras blokuoja sekimo pikselius el. pašto klientuose."
+			},
+			"mk": {
+				"name": "Филтер за заштита од следење на пошта од AdGuard",
+				"description": "Овој филтер блокира пиксели за следење во клиенти за е-пошта."
+			},
+			"ms": {
+				"name": "Penapis Perlindungan Penjejakan E-mel AdGuard",
+				"description": "Penapis ini menyekat piksel penjejakan dalam klien emel."
+			},
+			"nl": {
+				"name": "AdGuard Mail Traceerbeschermingsfilter",
+				"description": "Dit filter blokkeert trackingpixels in e-mailclients."
+			},
+			"no": {
+				"name": "AdGuard-filter for e-postsporing",
+				"description": "Dette filteret blokkerer sporingspiksler i e-postklienter."
+			},
+			"pl": {
+				"name": "Filtr ochrony przed śledzeniem poczty AdGuard",
+				"description": "Ten filtr blokuje piksele śledzące w klientach email."
+			},
+			"pt": {
+				"name": "AdGuard Mail Tracking Protection filter",
+				"description": "Este filtro bloqueia os pixéis de rastreio em clientes de e-mail"
+			},
+			"pt_BR": {
+				"name": "AdGuard Mail Tracking Protection filter",
+				"description": "Este filtro bloqueia pixels de rastreamento em clientes de e-mail"
+			},
+			"pt_PT": {
+				"name": "AdGuard Mail Tracking Protection filter",
+				"description": "Este filtro bloqueia os pixéis de rastreio em clientes de e-mail"
+			},
+			"ro": {
+				"name": "Filtrul AdGuard Mail de protecție de urmărire",
+				"description": "Acest filtru blochează pixelii de urmărire în clienți de e-mail."
+			},
+			"ru": {
+				"name": "Фильтр счётчиков и систем аналитики AdGuard Mail",
+				"description": "Этот фильтр блокирует пиксели отслеживания в почтовых клиентах."
+			},
+			"sk": {
+				"name": "Filter ochrany proti sledovaniu pošty AdGuard",
+				"description": "Tento filter blokuje sledovacie pixely v e-mailových klientoch."
+			},
+			"sl": {
+				"name": "Filter za zaščito pred sledenjem pošte AdGuard",
+				"description": "Ta filter blokira sledilne piksle v odjemalcih e-pošte."
+			},
+			"sr": {
+				"name": "AdGuard filter za zaštitu od praćenja u e-poštiAdGuard filter za zaštitu od praćenja u e-pošti",
+				"description": "Ovaj filter blokira piksele za praćenje u email klijentima."
+			},
+			"sv": {
+				"name": "AdGuard-filter för e-postspårningsskydd",
+				"description": "Detta filter blockerar spårningspixlar i e-postklienter."
+			},
+			"th": {
+				"name": "ตัวกรองการป้องกันการติดตามอีเมลของ AdGuard",
+				"description": "ตัวกรองนี้บล็อกพิกเซลการติดตามในไคลเอนต์อีเมล"
+			},
+			"tr": {
+				"name": "AdGuard E-Posta İzleme Koruması filtresi",
+				"description": "Bu filtre, e-posta istemcilerindeki izleme etiketlerini engeller."
+			},
+			"uk": {
+				"name": "Фільтр захисту від відстеження пошти AdGuard",
+				"description": "Цей фільтр блокує пікселі відстеження у клієнтах електронної пошти."
+			},
+			"vi": {
+				"name": "Bộ lọc bảo vệ chống theo dõi email của AdGuard",
+				"description": "Bộ lọc này chặn các pixel theo dõi trong các client email."
+			},
+			"zh": {
+				"name": "AdGuard Mail 跟踪保护过滤器",
+				"description": "此过滤器用于拦截邮件客户端中的跟踪像素"
+			},
+			"zh_TW": {
+				"name": "AdGuard Mail 追蹤防護過濾器",
+				"description": "此過濾器用於封鎖郵件客戶端中的追蹤像素"
 			}
 		},
 		"101": {
