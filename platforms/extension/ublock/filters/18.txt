@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: AYbGcxEqCntLAENgARi0wg
-! Diff-Path: ../patches/18/18-s-1781597468-3600.patch
+! Checksum: 5Og/tMETG40zoscLG3qHWA
+! Diff-Path: ../patches/18/18-s-1781606689-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.88.39
-! TimeUpdated: 2026-06-16T08:08:02+00:00
+! Version: 2.0.88.40
+! TimeUpdated: 2026-06-16T10:41:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2545,6 +2545,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+24smi.net###root > div[class]:has(> div > a[href*="politika_obrabotki_faylov_cookie"])
 ||didomi.foodvisor.io^
 ||cookies.teraz.sk/main.js
 ||delivery.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/slovaklines/public/js/gdpr/
@@ -2953,7 +2954,7 @@ foodswinesfromspain.com##+js(set-local-storage-item, analytics_icex-foodswines, 
 foodswinesfromspain.com##+js(set-local-storage-item, advertising_icex-foodswines, rejected)
 evoto.ai##.cookie-drawer-container
 bonus.ebrokerpartner.pl##div[class$="-cookiesInfoContainer"]
-maxaudio.eu,dentis24.pl,higienamed.pl,voiceshop.pl,superrower.pl##.consents
+sklep.bacowkatowary.pl,maxaudio.eu,dentis24.pl,higienamed.pl,voiceshop.pl,superrower.pl##.consents
 landkreis-muenchen.de##.orejime-Banner
 renderforest.com##div[class^="styles_cookie-message-wrapper__"]
 sodimac.cl##footer > section:has(> button#testId-accept-cookies-btn)
@@ -4413,7 +4414,7 @@ cc.cz##.b-cookie-bar
 eleman.net##.privacy_disclaime
 magic-x-store.com##+js(set-cookie, accept_cookies_policy, accepted)
 epicdrama.eu##+js(set-cookie, cookies_popup, 0)
-store.insta360.com###CookieConsentBanner
+belmeta.com,store.insta360.com###CookieConsentBanner
 casamundo.*,home-to-go.ca,hometogo.*###htg-app > div.react-onclickoutside
 bremboparts.com##.cookie-toast-wrap
 levnelyze.cz,eski.sk,top-narty.pl,jpc.de###cookieconsent-container
@@ -17646,6 +17647,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233672
+@@||hooandja.ee/api/cookie-consent.data$domain=hooandja.ee
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233680
 mserwis.pl#@##cookieModal
 mserwis.pl#@##cookieFooter

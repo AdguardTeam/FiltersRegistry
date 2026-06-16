@@ -1,8 +1,8 @@
-! Checksum: uddr7uPixyKDFWGt1iVfFA
+! Checksum: mQmPbxb/wrD9/cxdVuZz/w
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.88.39
-! TimeUpdated: 2026-06-16T08:08:02+00:00
+! Version: 2.0.88.40
+! TimeUpdated: 2026-06-16T10:41:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2615,6 +2615,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+hooandja.ee#%#//scriptlet('trusted-click-element', 'div.flex > .bg-transparent.inline-flex:first-child')
+24smi.net###root > div[class]:has(> div > a[href*="politika_obrabotki_faylov_cookie"])
 ||didomi.foodvisor.io^
 ||cookies.teraz.sk/main.js
 ||delivery.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/slovaklines/public/js/gdpr/
@@ -3100,7 +3102,7 @@ epaper.kreiszeitung-wochenblatt.de#%#//scriptlet('trusted-click-element', 'div[a
 humanmade.jp#%#//scriptlet('trusted-click-element', '#consent-tracking .modal-footer .decline')
 platformaofertowa.pl#%#//scriptlet('trusted-click-element', 'div[data-testid="cookie_baner"] button[data-testid="cookie_baner--rejectCookie"]', '!localStorage:OpenNexus_Ofertowa--cookieAgreements')
 bonus.ebrokerpartner.pl##div[class$="-cookiesInfoContainer"]
-maxaudio.eu,dentis24.pl,higienamed.pl,voiceshop.pl,superrower.pl##.consents
+sklep.bacowkatowary.pl,maxaudio.eu,dentis24.pl,higienamed.pl,voiceshop.pl,superrower.pl##.consents
 landkreis-muenchen.de##.orejime-Banner
 renderforest.com##div[class^="styles_cookie-message-wrapper__"]
 sodimac.cl##footer > section:has(> button#testId-accept-cookies-btn)
@@ -4964,7 +4966,7 @@ magic-x-store.com#%#//scriptlet('set-cookie', 'accept_cookies_policy', 'accepted
 hisense.com#%#//scriptlet('trusted-click-element', 'app-gg-cookie-consent-management-banner button.btn-accept')
 perfumesclub.*#%#//scriptlet('trusted-set-cookie', 'PreferenciasCookies', 'PermiteAnaliticas=false&PermiteMarketing=false')
 epicdrama.eu#%#//scriptlet('set-cookie', 'cookies_popup', '0')
-store.insta360.com###CookieConsentBanner
+belmeta.com,store.insta360.com###CookieConsentBanner
 casamundo.*,home-to-go.ca,hometogo.*###htg-app > div.react-onclickoutside
 bremboparts.com##.cookie-toast-wrap
 levnelyze.cz,eski.sk,top-narty.pl,jpc.de###cookieconsent-container
@@ -19032,6 +19034,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233672
+@@||hooandja.ee/api/cookie-consent.data$domain=hooandja.ee
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233680
 mserwis.pl#@##cookieModal
 mserwis.pl#@##cookieFooter
