@@ -687,6 +687,11 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+gsmarena.com#$#html > body { overflow: auto !important; }
+gsmarena.com#$#body > div[class]:has(> div:not([class], [id]) > object[data^="https://fdn.gsmarena.com/"] ~ a[href="#"]) { display: none !important; }
+gsmarena.com#%#//scriptlet('remove-cookie', 'DeviceID')
+gsmarena.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', '/document\.currentScript[\s\S]*?\.innerHTML/')
+gsmarena.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '/0\s*==\s*.\.offfsetHeight[\s\S]*?String\.fromCharCode/')
 futureaudiophile.com#%#//scriptlet('prevent-eval-if', 'js_func_decode_base_64')
 futureaudiophile.com#@#.adslot_1
 futureaudiophile.com#@#.adslot
@@ -3752,6 +3757,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+vinnitsa.info#%#//scriptlet('set-local-storage-item', 'showPopup', 'true')
 sportsdunia.com##.bottom-4.fixed
 sapo.pt##body > #overlay:has(> #stage > #frogWrap)
 gazetadopovo.com.br#$#.tp-modal { display: none !important; }
@@ -13187,6 +13193,9 @@ sportsdunia.com,bsc.news,movilzona.es,isinolsa.com,gendai.media,clutchpoints.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+v-variant.com.ua##body > div.bg-primary:has(> div.container form > button[type="submit"])
+kiev.vgorode.ua##.p1
+vgorode.ua##.inner-news > p:has(> strong > a[href^="https://t.me/"])
 volynnews.com##.text_video_news2 > em:has(> a[href^="https://t.me/"])
 volynnews.com##.text_video_news2 > em:has(> a[href^="https://t.me/"]) + hr
 hooandja.ee##div.flex-col > div.py-8:has(> form[action="/api/newsletter/join"])

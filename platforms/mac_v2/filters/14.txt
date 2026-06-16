@@ -1,9 +1,9 @@
-! Checksum: Ohlwkr5IdbEle1rVxe3B/A
-! Diff-Path: ../patches/14/14-s-1781613793-3600.patch
+! Checksum: 6lb7fnAvPihQGvDkeqJ99Q
+! Diff-Path: ../patches/14/14-s-1781621089-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.47
-! TimeUpdated: 2026-06-16T12:39:55+00:00
+! Version: 2.2.70.48
+! TimeUpdated: 2026-06-16T14:41:41+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24498,6 +24498,11 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+gsmarena.com#$#html > body { overflow: auto !important; }
+gsmarena.com#$#body > div[class]:has(> div:not([class], [id]) > object[data^="https://fdn.gsmarena.com/"] ~ a[href="#"]) { display: none !important; }
+gsmarena.com#%#//scriptlet('remove-cookie', 'DeviceID')
+gsmarena.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', '/document\.currentScript[\s\S]*?\.innerHTML/')
+gsmarena.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '/0\s*==\s*.\.offfsetHeight[\s\S]*?String\.fromCharCode/')
 futureaudiophile.com#%#//scriptlet('prevent-eval-if', 'js_func_decode_base_64')
 futureaudiophile.com#@#.adslot_1
 futureaudiophile.com#@#.adslot
@@ -27301,6 +27306,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+vinnitsa.info#%#//scriptlet('set-local-storage-item', 'showPopup', 'true')
 sportsdunia.com##.bottom-4.fixed
 sapo.pt##body > #overlay:has(> #stage > #frogWrap)
 gazetadopovo.com.br#$#.tp-modal { display: none !important; }
@@ -36574,6 +36580,9 @@ sportsdunia.com,bsc.news,movilzona.es,isinolsa.com,gendai.media,clutchpoints.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+v-variant.com.ua##body > div.bg-primary:has(> div.container form > button[type="submit"])
+kiev.vgorode.ua##.p1
+vgorode.ua##.inner-news > p:has(> strong > a[href^="https://t.me/"])
 volynnews.com##.text_video_news2 > em:has(> a[href^="https://t.me/"])
 volynnews.com##.text_video_news2 > em:has(> a[href^="https://t.me/"]) + hr
 hooandja.ee##div.flex-col > div.py-8:has(> form[action="/api/newsletter/join"])
@@ -54328,6 +54337,8 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+v-variant.com.ua##.sv-banner
+v-variant.com.ua##.container > .flex-col:has(> a[href="/membership/"])
 ||static.portalmie.com/wp-content/themes/*/assets/js/floating-news.js
 portalmie.com###floating-most-read
 portalmie.com###floatingNews
@@ -61957,7 +61968,7 @@ tokyo-sports.co.jp,news.dwango.jp#%#//scriptlet("remove-attr", "oncontextmenu", 
 mhwg.org,biyografi.info,seiya-saiga.com#%#//scriptlet("remove-attr", "oncontextmenu|onselectstart", "body")
 !
 !+ NOT_PLATFORM(ext_ff)
-savefiles.com,mangaplus.shueisha.co.jp,otakuhg.site,megaplay.buzz,cloudnestra.com,rapid-cloud.co,ico3c.com,luluvdoo.com,sterham.net,animeshouse.net,animeunity.it,themeslide.com,orangespotlight.com,magdyman.com,topflix.*,poisonous-raspberry-fields.blogspot.com,redirdx.in,tmofans.com,thememazing.com,baan-series.com,baixarfilmetorrent.net,yourupload.com,wikitechy.com,windes.com.es,freecourser.com,audioreview.m1001.coreserver.jp,portalwrc.pl,themeslide.com#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
+vidmoly.*,vidmoly.biz,savefiles.com,mangaplus.shueisha.co.jp,otakuhg.site,megaplay.buzz,cloudnestra.com,rapid-cloud.co,ico3c.com,luluvdoo.com,sterham.net,animeshouse.net,animeunity.it,themeslide.com,orangespotlight.com,magdyman.com,topflix.*,poisonous-raspberry-fields.blogspot.com,redirdx.in,tmofans.com,thememazing.com,baan-series.com,baixarfilmetorrent.net,yourupload.com,wikitechy.com,windes.com.es,freecourser.com,audioreview.m1001.coreserver.jp,portalwrc.pl,themeslide.com#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
 !--- HTML ----
 ! NOTE: Context menu - HTML
 ||luluvdoo.com/player/jw8/jwplayer.js$replace=/else [a-z]\.el\.oncontextmenu=function\([a-z]\){return [a-z]\([a-z]\,[a-z]\,[a-z]\)\,\!1\}//

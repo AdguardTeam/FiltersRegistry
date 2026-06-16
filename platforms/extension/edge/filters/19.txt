@@ -1,9 +1,9 @@
-! Checksum: 2mrza6MTMZR1HK0UBXresA
-! Diff-Path: ../patches/19/19-s-1781613766-3600.patch
+! Checksum: Ds2GlaoGyskRHstOnsJP9g
+! Diff-Path: ../patches/19/19-s-1781621067-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.77.22
-! TimeUpdated: 2026-06-16T12:40:06+00:00
+! Version: 2.0.77.23
+! TimeUpdated: 2026-06-16T14:41:48+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -567,6 +567,11 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+gsmarena.com#$#html > body { overflow: auto !important; }
+gsmarena.com#$#body > div[class]:has(> div:not([class], [id]) > object[data^="https://fdn.gsmarena.com/"] ~ a[href="#"]) { display: none !important; }
+gsmarena.com#%#//scriptlet('remove-cookie', 'DeviceID')
+gsmarena.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', '/document\.currentScript[\s\S]*?\.innerHTML/')
+gsmarena.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '/0\s*==\s*.\.offfsetHeight[\s\S]*?String\.fromCharCode/')
 futureaudiophile.com#%#//scriptlet('prevent-eval-if', 'js_func_decode_base_64')
 futureaudiophile.com#@#.adslot_1
 futureaudiophile.com#@#.adslot
@@ -3358,6 +3363,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+vinnitsa.info#%#//scriptlet('set-local-storage-item', 'showPopup', 'true')
 sportsdunia.com##.bottom-4.fixed
 sapo.pt##body > #overlay:has(> #stage > #frogWrap)
 gazetadopovo.com.br#$#.tp-modal { display: none !important; }
@@ -12627,6 +12633,9 @@ sportsdunia.com,bsc.news,movilzona.es,isinolsa.com,gendai.media,clutchpoints.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+v-variant.com.ua##body > div.bg-primary:has(> div.container form > button[type="submit"])
+kiev.vgorode.ua##.p1
+vgorode.ua##.inner-news > p:has(> strong > a[href^="https://t.me/"])
 volynnews.com##.text_video_news2 > em:has(> a[href^="https://t.me/"])
 volynnews.com##.text_video_news2 > em:has(> a[href^="https://t.me/"]) + hr
 hooandja.ee##div.flex-col > div.py-8:has(> form[action="/api/newsletter/join"])
