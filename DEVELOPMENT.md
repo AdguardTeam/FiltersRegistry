@@ -194,7 +194,7 @@ It runs both branches in parallel via git worktrees so network-fetched content s
    git worktree remove /tmp/reg-changed-build
    ```
 
-#### Command Compatibility
+### Command Compatibility
 
 The following flags can be used with `yarn build` and `yarn build:local`:
 
