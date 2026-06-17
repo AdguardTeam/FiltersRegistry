@@ -1,9 +1,9 @@
-! Checksum: QLYu7w1XsOJ8csqKxbjw1g
-! Diff-Path: ../patches/14/14-s-1781683442-3600.patch
+! Checksum: qBAynYRaqyjtht7YLnOMZA
+! Diff-Path: ../patches/14/14-s-1781690035-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.54
-! TimeUpdated: 2026-06-17T08:01:02+00:00
+! Version: 2.2.70.55
+! TimeUpdated: 2026-06-17T09:50:56+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11102,7 +11102,7 @@ highlight-led.de###PrivacyCategoryAlert
 milopiwo.pl#?#footer > .configMessages__footer:has(> .configMessages__title > a[href^="polityka-prywatnosci"])
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##shreddit-cookie-banner
 industryarena.com###consent-cookie
-hrd-web.com,violity.com,login.concord.christianscience.com###cookieConsentPopup
+casper.com.tr,hrd-web.com,violity.com,login.concord.christianscience.com###cookieConsentPopup
 trade.bisonapp.com#?##root > div:has(> div[class] > a[href="https://bisonapp.com/cookie-hinweise-eu/"])
 app.traderepublic.com##.consentCard
 comcast.com##.c-top-banner
@@ -27296,6 +27296,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+casper.com.tr##body > div.custom-popup-wrapper:has(> div#popup-overlay > div#popup-modal iframe[src^="https://www.youtube.com/"])
 oriflame.*###buorg
 vinnitsa.info#%#//scriptlet('set-local-storage-item', 'showPopup', 'true')
 sportsdunia.com##.bottom-4.fixed
@@ -36571,6 +36572,8 @@ sportsdunia.com,bsc.news,movilzona.es,isinolsa.com,gendai.media,clutchpoints.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+gazlog.jp##.gaz-psc
+gazlog.jp##body::after
 hayatsu.com.tr#$##nxmDialogModal { display: none !important; }
 hayatsu.com.tr#$#.modal-backdrop { display: none !important; }
 hayatsu.com.tr#$#.modal-open { overflow: auto !important; }
@@ -51855,6 +51858,9 @@ instagram.com##._aagw:empty
 !
 !
 !
+! Copilot Search
+||bing.com/cmc/fetch?q=$xmlhttprequest
+bing.com##.copans_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233688
 ||catbox.moe/resources/pic.js
 ! sporx.com - animated AI summary
@@ -61504,6 +61510,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233761
+romsdroid.com#%#//scriptlet('adjust-setTimeout', 'download_loading', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233678
 cloudfam.io#%#//scriptlet('adjust-setInterval', 'remain--', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233481
