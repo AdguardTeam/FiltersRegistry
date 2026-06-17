@@ -113,23 +113,86 @@ combined:
 yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
 ```
 
-**Typical workflow — comparing two compiler versions:**
+**Typical workflow — comparing build results against master**
 
-1. Download and compile filter content into cache:
-   `yarn generate-cache`
-1. Build from cache with generated metadata lines stripped:
-   `yarn build:local --no-patches-prepare --strip-generated-meta`
-1. Rename the output: `mv platforms platforms_A`
-1. Switch to the other compiler version
-   (e.g. `yarn add @adguard/filters-compiler@...`)
-1. Build again with the same flags:
-   `yarn build:local --no-patches-prepare --strip-generated-meta`
-1. Rename the output: `mv platforms platforms_B`
-1. Diff the two directories (e.g. in Total Commander, WinMerge, or
-   with `diff -r`)
+Use this when branch changes may alter compiled rule output
+and you need a structured pass/fail comparison against master.
 
-Both runs use the exact same cached filter content and strip all volatile
-metadata, so any difference comes solely from the compiler.
+It runs both branches in parallel via git worktrees so network-fetched content stays in sync.
+
+1. Create worktrees for each branch and install dependencies:
+
+   ```bash
+   CHANGED_BRANCH=local_optimization_config  # replace with your feature branch
+   BUILD_LOCAL=false                          # set to 'true' to use generate-cache + build:local
+
+   MASTER_SHA=$(git rev-parse master)
+   CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
+
+   git worktree add --detach /tmp/reg-master-build  $MASTER_SHA
+   git worktree add --detach /tmp/reg-changed-build $CHANGED_SHA
+
+   yarn --cwd /tmp/reg-master-build  install &
+   yarn --cwd /tmp/reg-changed-build install &
+   wait
+   ```
+
+1. Sync both worktrees' `filters/` to the same baseline commit so
+   `revision.json` version counters start from the same point:
+
+   ```bash
+   git -C /tmp/reg-changed-build checkout $MASTER_SHA -- filters/
+   ```
+
+1. Build both branches in parallel:
+
+   ```bash
+   _build() {
+     local dir=$1
+     if [ "$BUILD_LOCAL" = "true" ]; then
+       yarn --cwd "$dir" generate-cache && \
+       yarn --cwd "$dir" build:local --no-patches-prepare --strip-generated-meta
+     else
+       yarn --cwd "$dir" build --no-patches-prepare --strip-generated-meta
+     fi
+   }
+
+   (
+     _build /tmp/reg-master-build > /tmp/log-master-build.txt 2>&1
+     EXIT=$?
+     [ $EXIT -eq 0 ] \
+       && cp -r /tmp/reg-master-build/platforms platforms_master_build \
+       && echo "[master] done" \
+       || echo "[master] FAILED (exit $EXIT)"
+   ) &
+
+   (
+     _build /tmp/reg-changed-build > /tmp/log-changed-build.txt 2>&1
+     EXIT=$?
+     [ $EXIT -eq 0 ] \
+       && cp -r /tmp/reg-changed-build/platforms platforms_changed_build \
+       && echo "[changed] done" \
+       || echo "[changed] FAILED (exit $EXIT)"
+   ) &
+
+   wait && echo "Both builds complete"
+   ```
+
+1. Generate the structured report:
+
+   ```bash
+   CHANGED_BRANCH=local_optimization_config bash scripts/build/__tests__/regression-test-against-master.sh
+   ```
+
+   The script compares all `.txt` rule files across every platform and
+   prints a pass/fail verdict.
+
+1. Clean up worktrees when done:
+
+   ```bash
+   git worktree remove /tmp/reg-master-build
+   git worktree remove /tmp/reg-changed-build
+   ```
 
 #### Command Compatibility
 
