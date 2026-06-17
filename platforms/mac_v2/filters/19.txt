@@ -1,9 +1,9 @@
-! Checksum: zG1WKfrQgEsW/Pu3OTiEWg
-! Diff-Path: ../patches/19/19-s-1781635040-3600.patch
+! Checksum: s+jgwD7fDoQE5v1oNdKXyg
+! Diff-Path: ../patches/19/19-s-1781683468-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.77.24
-! TimeUpdated: 2026-06-16T18:34:20+00:00
+! Version: 2.0.77.25
+! TimeUpdated: 2026-06-17T08:01:14+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3365,6 +3365,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+oriflame.*###buorg
 vinnitsa.info#%#//scriptlet('set-local-storage-item', 'showPopup', 'true')
 sportsdunia.com##.bottom-4.fixed
 sapo.pt##body > #overlay:has(> #stage > #frogWrap)
@@ -11628,6 +11629,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+exblog.jp##.web-push-popover
 hdrezka.ax##.push-perm-bar
 promiflash.de##body > .background > .shadow-lg:has(> .flex.gap-base > button.rounded-xl + button.rounded-xl)
 ||tycsports.com/cwvitals/v-1.7.0/js/webPushChunk
@@ -12639,6 +12641,9 @@ sportsdunia.com,bsc.news,movilzona.es,isinolsa.com,gendai.media,clutchpoints.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+hayatsu.com.tr#$##nxmDialogModal { display: none !important; }
+hayatsu.com.tr#$#.modal-backdrop { display: none !important; }
+hayatsu.com.tr#$#.modal-open { overflow: auto !important; }
 v-variant.com.ua##body > div.bg-primary:has(> div.container form > button[type="submit"])
 kiev.vgorode.ua##.p1
 vgorode.ua##.inner-news > p:has(> strong > a[href^="https://t.me/"])
