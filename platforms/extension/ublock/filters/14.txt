@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kXvX9QLMcZ9053O3tot/iw
-! Diff-Path: ../patches/14/14-s-1781658554-3600.patch
+! Checksum: hyRpHi5Jmyu04tWDpBh19Q
+! Diff-Path: ../patches/14/14-s-1781666336-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.51
-! TimeUpdated: 2026-06-17T01:06:08+00:00
+! Version: 2.2.70.52
+! TimeUpdated: 2026-06-17T03:16:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2545,6 +2545,9 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+internet.ee##+js(set-cookie, eis_ads, false)
+internet.ee##+js(set-cookie, eis_analytics, false)
+internet.ee##+js(set-cookie, eis_general, true)
 apilex.ai##+js(set-local-storage-item, apilex-cookie-consent, rejected)
 24smi.net###root > div[class]:has(> div > a[href*="politika_obrabotki_faylov_cookie"])
 ||didomi.foodvisor.io^
@@ -3624,7 +3627,7 @@ amnesty.or.jp,bellanapoli.com.pl##.dialog-cookie
 instamaterial.com###privacyPolicy
 canaries.co.uk##footer[data-fetch-key="PageFooter:0"] + div > .bottom-0 > div
 gamemarket.pl,gamemarket.hu,gamemarket.hr,gamemarket.si,lumea-jocurilor.ro,hernysvet.sk,herni-svet.cz###gdprDialog
-podspace.com,cartesia.ai##+js(set-local-storage-item, framerCookiesDismissed, true)
+iverify.io,podspace.com,cartesia.ai##+js(set-local-storage-item, framerCookiesDismissed, true)
 ||ubs.com/etc/designs/fit/includes/*/privacysettings/
 ||purevpn.*/wp-content/plugins/webtoffee-cookie-consent/
 russia-tv.online##+js(set-cookie, cookieIsAgree, 1)
@@ -17648,6 +17651,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233733
+internet.ee#@#.js-cookie-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233672
 @@||hooandja.ee/api/cookie-consent.data$domain=hooandja.ee
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233680
