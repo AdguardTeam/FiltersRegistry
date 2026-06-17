@@ -113,7 +113,7 @@ combined:
 yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
 ```
 
-**Typical workflow — comparing build results against master**
+### Typical workflow — comparing build results against master
 
 Use this when branch changes may alter compiled rule output
 and you need a structured pass/fail comparison against master.
