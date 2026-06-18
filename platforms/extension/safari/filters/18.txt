@@ -1,9 +1,9 @@
-! Checksum: tMb29xoB9fn0pvkwtWkFjw
-! Diff-Path: ../patches/18/18-s-1781788876-3600.patch
+! Checksum: EHWrXPgZhTguXzbuAmQDDw
+! Diff-Path: ../patches/18/18-s-1781795659-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.88.54
-! TimeUpdated: 2026-06-18T13:18:49+00:00
+! Version: 2.0.88.55
+! TimeUpdated: 2026-06-18T15:10:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2616,6 +2616,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+britannica.com#%#//scriptlet('trusted-click-element', '.cmppreviewroot >>> .cmpboxbtnyes')
 wnet.fm#%#//scriptlet('set-cookie', 'wnet_cookie_consent', '1')
 chargingtime.de##div[consent-skip-blocker]
 centrumxp.pl#%#//scriptlet('trusted-set-cookie', 'OnexStore_consent_mode_v2', '%7B%22ad_storage%22%3A%22denied%22%2C%22analytics_storage%22%3A%22denied%22%2C%22ad_user_data%22%3A%22denied%22%2C%22ad_personalization%22%3A%22denied%22%2C%22functionality_storage%22%3A%22granted%22%2C%22personalization_storage%22%3A%22denied%22%2C%22security_storage%22%3A%22granted%22%7D')
@@ -18976,6 +18977,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233829
+@@||d.delivery.consentmanager.net/delivery/cmp.php?$domain=britannica.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233733
 internet.ee#@#.js-cookie-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233672
