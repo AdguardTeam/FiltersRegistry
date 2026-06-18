@@ -387,7 +387,7 @@
 				"name": "วิดเจ็ตโซเชี่ยล"
 			},
 			"tr": {
-				"name": "Sosyal araçları"
+				"name": "Sosyal araçlar"
 			},
 			"uk": {
 				"name": "Віджети соціальних мереж"
@@ -1099,7 +1099,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Rusça filtresi",
-				"description": "Özellikle Rusça dilindeki sitelerde reklamları engelleyen filtre."
+				"description": "Rusça dilindeki sitelerde reklamları engelleyen filtre."
 			},
 			"uk": {
 				"name": "Російський фільтр AdGuard",
@@ -1277,7 +1277,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Temel filtresi",
-				"description": "EasyList + AdGuard Temel filtresi. Bu filtre kaliteli reklam engelleme için gereklidir."
+				"description": "EasyList + AdGuard Temel filtresi. Bu filtre, kaliteli reklam engelleme için gereklidir."
 			},
 			"uk": {
 				"name": "Основний фільтр AdGuard",
@@ -1302,7 +1302,7 @@
 				"description": "القائمة الأكثر شمولا من مختلف العدادات على الإنترنت وأدوات تحليلات الويب. استخدم هذا الفلتر ، إذا كنت لا تريد تتبع إجراءاتك على الإنترنت."
 			},
 			"be": {
-				"name": "Фільтр лічыльнікаў і сістэм аналітыкі",
+				"name": "Фільтр абароны ад адсочвання AdGuard",
 				"description": "Найболей поўны спіс розных інтэрнэт-лічыльнікаў і сістэм інтэрнэт-аналітыкі. Калі вы не жадаеце, каб за вашымі дзеяннямі ў інтэрнэце сачылі, скарыстайце гэты фільтр."
 			},
 			"bg": {
@@ -1633,7 +1633,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Sosyal Medya filtresi",
-				"description": "Sosyal ağ araçları (\"Beğen\" düğmeleri, vb.) için bir filtre."
+				"description": "Sosyal ağ araçları (\"Beğen\" düğmeleri vb.) için bir filtre."
 			},
 			"uk": {
 				"name": "Фільтр віджетів соцмереж AdGuard",
@@ -1989,7 +1989,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Almanca filtresi",
-				"description": "EasyList Germany + AdGuard Almanca filtresi. Özellikle Almanca dilindeki sitelerde reklamları kaldıran filtre listesi."
+				"description": "EasyList Germany + AdGuard Almanca filtresi. Almanca dilindeki sitelerde reklamları kaldıran filtre listesi."
 			},
 			"uk": {
 				"name": "Німецький фільтр AdGuard",
@@ -2167,7 +2167,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Japonca filtresi",
-				"description": "Özellikle Japonca dilindeki sitelerde reklamları engelleyen filtre."
+				"description": "Japonca dilindeki sitelerde reklamları engelleyen filtre."
 			},
 			"uk": {
 				"name": "Японський фільтр AdGuard",
@@ -2344,8 +2344,8 @@
 				"description": "ตัวกรอง EasyList Dutch + AdGuard Dutch รายการตัวกรองที่ลบโฆษณาบนเว็บไซต์ในภาษาดัตช์โดยเฉพาะ"
 			},
 			"tr": {
-				"name": "AdGuard Felemenkçe filtresi",
-				"description": "EasyList Dutch + AdGuard Felemenkçe filtresi. Özellikle Felemenkçe dilindeki sitelerde reklamları kaldıran filtre listesi."
+				"name": "AdGuard Hollandaca filtresi",
+				"description": "EasyList Dutch + AdGuard Hollandaca filtresi. Hollandaca dilindeki sitelerde reklamları kaldıran filtre listesi."
 			},
 			"uk": {
 				"name": "Голландський фільтр AdGuard",
@@ -2370,7 +2370,7 @@
 				"description": "قائمة الفلاتر التي تزيل على وجه التحديد الإعلانات الموجودة على مواقع الويب باللغات الإسبانية والبرتغالية والبرتغالية البرازيلية."
 			},
 			"be": {
-				"name": "Іспана-партугальскі фільтр",
+				"name": "Іспана-партугальскі фільтр AdGuard",
 				"description": "Спіс фільтраў, які спецыяльна выдаляе рэкламу на вэб-сайтах на іспанскай і партугальскай мовах."
 			},
 			"bg": {
@@ -2523,7 +2523,7 @@
 			},
 			"tr": {
 				"name": "AdGuard İspanyolca/Portekizce filtresi",
-				"description": "Özellikle İspanyolca, Portekizce ve Brezilya Portekizcesi dillerindeki sitelerdeki reklamları kaldıran filtre listesi."
+				"description": "İspanyolca, Portekizce ve Brezilya Portekizcesi dillerindeki sitelerde reklamları kaldıran filtre listesi."
 			},
 			"uk": {
 				"name": "Іспано-португальський фільтр AdGuard",
@@ -2700,8 +2700,8 @@
 				"description": "ตัวกรองที่ยกเลิกการปิดกั้นการค้นหา (Duckduckgo, Google, Bing, Yahoo) และโฆษณาแบบส่งเสริมการขายด้วยตนเอง คำจำกัดความการโปรโมตตนเอง: เมื่อโฆษณาบนเว็บไซต์กำลังโปรโมตเว็บไซต์นี้หรือเว็บไซต์/โซเชียลมีเดีย/อื่น ๆ ที่เกี่ยวข้องอย่างใกล้ชิดกับมันโฆษณาดังกล่าวถือเป็นการส่งเสริมตนเอง"
 			},
 			"tr": {
-				"name": "Arama motoru reklamları ve öz tanıtıma izin veren filtre",
-				"description": "Google, DuckDuckGo, Bing veya Yahoo'daki arama motoru reklamlarının ve sitelerdeki öz tanıtıma izin veren filtre."
+				"name": "Arama motoru reklamları ve öz tanıtım engelini kaldıran filtre",
+				"description": "Google, DuckDuckGo, Bing veya Yahoo'daki arama motoru reklamlarının ve sitelerdeki öz tanıtım engelini kaldıran filtre."
 			},
 			"uk": {
 				"name": "Фільтр розблокування корисної реклами",
@@ -3057,7 +3057,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Safari filtresi",
-				"description": "iOS ve macOS'ta Safari 9+ için özel filtre. Kural söz dizimimizi tam olarak desteklemediğinden Safari tarayıcısı için ayrı bir filtreye ihtiyacımız var."
+				"description": "iOS ve macOS'ta Safari 9+ için özel filtre. Safari tarayıcısı, kural söz dizimimizi tam olarak desteklemediğinden dolayı ayrı bir filtreye ihtiyacımız var."
 			},
 			"uk": {
 				"name": "Фільтр Safari",
@@ -3413,7 +3413,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Can Sıkıcı Öğeler filtresi",
-				"description": "Çerez bildirimleri, üçüncü taraf araçları ve sayfa içi açılır pencereler dâhil olmak üzere web sayfalarındaki sinir bozucu öğeleri engeller. Aşağıdaki AdGuard filtrelerini içerir: Çerez Bildirimleri, Açılır Pencereler, Mobil Uygulama Afişleri, Diğer Can Sıkıcı Öğeler ve Araçlar."
+				"description": "Çerez bildirimleri, üçüncü taraf araçları ve sayfa içi açılır pencereler dâhil olmak üzere web sayfalarındaki rahatsız edici öğeleri engeller. Aşağıdaki AdGuard filtrelerini içerir: Çerez Bildirimleri, Açılır Pencereler, Mobil Uygulama Afişleri, Diğer Can Sıkıcı Öğeler ve Araçlar."
 			},
 			"uk": {
 				"name": "Фільтр подразників AdGuard",
@@ -3591,7 +3591,7 @@
 			},
 			"tr": {
 				"name": "AdGuard DNS filtresi",
-				"description": "Temel olarak birkaç filtreyi birleştirir (AdGuard Temel filtresi, Sosyal Medya filtresi, İzleme Koruması filtresi, Mobil Reklam filtresi, EasyList ve EasyPrivacy) ve DNS düzeyinde reklam engellemeyle daha uyumlu olması için özel olarak basitleştirilmiştir."
+				"description": "Birkaç farklı filtrenin (AdGuard Temel filtresi, Sosyal Medya filtresi, İzleme Koruması filtresi, Mobil Reklam filtresi, EasyList ve EasyPrivacy) birleşiminden oluşan ve özellikle DNS düzeyinde reklam engelleme ile daha iyi uyumluluk sağlamak için sadeleştirilmiş filtre."
 			},
 			"uk": {
 				"name": "DNS-фільтр AdGuard",
@@ -3769,7 +3769,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Fransızca filtresi",
-				"description": "Liste FR + AdGuard Fransızca filtresi. Özellikle Fransızca dilindeki sitelerde reklamları kaldıran filtre listesi."
+				"description": "Liste FR + AdGuard Fransızca filtresi. Fransızca dilindeki sitelerde reklamları kaldıran filtre listesi."
 			},
 			"uk": {
 				"name": "Французький фільтр AdGuard",
@@ -4481,7 +4481,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Mobil Uygulama Afişleri filtresi",
-				"description": "Sitelerin mobil uygulamalarını tanıtan sinir bozucu afişleri engeller."
+				"description": "Sitelerin mobil uygulamalarını tanıtan rahatsız edici afişleri engeller."
 			},
 			"uk": {
 				"name": "Фільтр банерів мобільних додатків AdGuard",
@@ -4659,7 +4659,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Diğer Can Sıkıcı Öğeler filtresi",
-				"description": "Popüler can sıkıcı öğeler kategorilerine girmeyen web sayfalarındaki sinir bozucu öğeleri engeller."
+				"description": "Popüler can sıkıcı öğeler kategorilerine girmeyen web sayfalarındaki rahatsız edici öğeleri engeller."
 			},
 			"uk": {
 				"name": "Фільтр інших подразників AdGuard",
@@ -4837,7 +4837,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Araçlar filtresi",
-				"description": "Rahatsız edici üçüncü taraf araçlarını engeller: çevrimiçi asistanlar, canlı destek sohbetleri, vb."
+				"description": "Rahatsız edici üçüncü taraf araçları engeller: çevrimiçi asistanlar, canlı destek sohbetleri vb."
 			},
 			"uk": {
 				"name": "Фільтр віджетів AdGuard",
@@ -5015,7 +5015,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Ukraynaca filtresi",
-				"description": "Özellikle Ukraynaca dilindeki sitelerde reklamları engelleyen filtre."
+				"description": "Ukraynaca dilindeki sitelerde reklamları engelleyen filtre."
 			},
 			"uk": {
 				"name": "Український фільтр AdGuard",
@@ -5088,7 +5088,7 @@
 				"description": "Tämä suodatin estää pikselien seurantaa sähköpostiohjelmissa."
 			},
 			"fr": {
-				"name": "Filtre AdGuard Mail de protection contre le suivi",
+				"name": "Filtre de protection contre le suivi des e-mails d'AdGuard",
 				"description": "Ce filtre bloque les pixels de suivi dans les clients de messagerie."
 			},
 			"he": {
@@ -5116,7 +5116,7 @@
 				"description": "Filter ini memblokir piksel pelacakan di klien e-mail."
 			},
 			"it": {
-				"name": "Filtro AdGuard Mail Anti-Monitoraggio",
+				"name": "Filtro Anti-Monitoraggio delle e-mail di AdGuard",
 				"description": "Questo filtro blocca i pixel di tracciamento nei client di posta elettronica."
 			},
 			"ja": {
@@ -5371,7 +5371,7 @@
 			},
 			"tr": {
 				"name": "EasyList",
-				"description": "EasyList, İngilizce web sayfalarından reklamları kaldıran birincil aboneliktir. AdGuard Temel filtresine zaten dâhildir."
+				"description": "EasyList, İngilizce web sayfalarındaki reklamları kaldıran birincil aboneliktir. AdGuard Temel filtresine zaten dâhildir."
 			},
 			"uk": {
 				"name": "EasyList",
@@ -5549,7 +5549,7 @@
 			},
 			"tr": {
 				"name": "ABPindo",
-				"description": "Endonezce siteleri için ek filtre listesi."
+				"description": "Endonezce siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "ABPindo",
@@ -5727,7 +5727,7 @@
 			},
 			"tr": {
 				"name": "Bulgarian list",
-				"description": "Bulgarca siteleri için ek filtre listesi."
+				"description": "Bulgarca siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "Bulgarian list",
@@ -5905,7 +5905,7 @@
 			},
 			"tr": {
 				"name": "EasyList China",
-				"description": "Çince siteleri için ek filtre listesi. AdGuard Çince filtresine zaten dâhildir."
+				"description": "Çince siteler için ek filtre listesi. AdGuard Çince filtresine zaten dâhildir."
 			},
 			"uk": {
 				"name": "EasyList China",
@@ -6083,7 +6083,7 @@
 			},
 			"tr": {
 				"name": "EasyList Czech and Slovak",
-				"description": "Çekçe ve Slovakça siteleri için ek filtre listesi."
+				"description": "Çekçe ve Slovakça siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "EasyList Czech and Slovak",
@@ -6261,7 +6261,7 @@
 			},
 			"tr": {
 				"name": "EasyList Dutch",
-				"description": "Felemenkçe siteleri için ek filtre listesi. AdGuard Felemenkçe filtresine zaten dâhildir."
+				"description": "Hollandaca siteler için ek filtre listesi. AdGuard Hollandaca filtresine zaten dâhildir."
 			},
 			"uk": {
 				"name": "EasyList Dutch",
@@ -6439,7 +6439,7 @@
 			},
 			"tr": {
 				"name": "EasyList Germany",
-				"description": "Almanca siteleri için ek filtre listesi. AdGuard Almanca filtresine zaten dâhildir."
+				"description": "Almanca siteler için ek filtre listesi. AdGuard Almanca filtresine zaten dâhildir."
 			},
 			"uk": {
 				"name": "EasyList Germany",
@@ -6617,7 +6617,7 @@
 			},
 			"tr": {
 				"name": "EasyList Hebrew",
-				"description": "İbranice siteleri için ek filtre listesi."
+				"description": "İbranice siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "EasyList Hebrew",
@@ -6795,7 +6795,7 @@
 			},
 			"tr": {
 				"name": "EasyList Italy",
-				"description": "İtalyanca siteleri için ek filtre listesi."
+				"description": "İtalyanca siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "EasyList Italy",
@@ -6973,7 +6973,7 @@
 			},
 			"tr": {
 				"name": "EasyList Lithuania",
-				"description": "Litvanca siteleri için ek filtre listesi."
+				"description": "Litvanca siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "EasyList Lithuania",
@@ -7151,7 +7151,7 @@
 			},
 			"tr": {
 				"name": "Latvian List",
-				"description": "Letonca siteleri için ek filtre listesi."
+				"description": "Letonca siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "Latvian List",
@@ -7329,7 +7329,7 @@
 			},
 			"tr": {
 				"name": "Liste AR",
-				"description": "Arapça siteleri için ek filtre listesi."
+				"description": "Arapça siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "Liste AR",
@@ -7507,7 +7507,7 @@
 			},
 			"tr": {
 				"name": "Liste FR",
-				"description": "Fransızca siteleri için ek filtre listesi. AdGuard Fransızca filtresine zaten dâhildir."
+				"description": "Fransızca siteler için ek filtre listesi. AdGuard Fransızca filtresine zaten dâhildir."
 			},
 			"uk": {
 				"name": "Liste FR",
@@ -7685,7 +7685,7 @@
 			},
 			"tr": {
 				"name": "ROList",
-				"description": "Rumence siteleri için ek filtre listesi."
+				"description": "Rumence siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "ROList",
@@ -7863,7 +7863,7 @@
 			},
 			"tr": {
 				"name": "RU Adlist",
-				"description": "Rusça siteleri için ek filtre listesi."
+				"description": "Rusça siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "RU AdList",
@@ -8219,7 +8219,7 @@
 			},
 			"tr": {
 				"name": "Icelandic ABP List",
-				"description": "İzlandaca siteleri için ek filtre listesi."
+				"description": "İzlandaca siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "Icelandic ABP List",
@@ -8397,7 +8397,7 @@
 			},
 			"tr": {
 				"name": "AdBlockID",
-				"description": "Endonezce siteleri için ek filtre listesi."
+				"description": "Endonezce siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "AdBlockID",
@@ -8575,7 +8575,7 @@
 			},
 			"tr": {
 				"name": "Greek AdBlock Filter",
-				"description": "Yunanca siteleri için ek filtre listesi."
+				"description": "Yunanca siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "Greek AdBlock Filter",
@@ -9287,7 +9287,7 @@
 			},
 			"tr": {
 				"name": "Web Annoyances Ultralist",
-				"description": "Rahatsız edici internet öğelerini engeller ve kaybolan ekran alanını geri alır."
+				"description": "Rahatsız edici web öğelerini engeller ve kaybedilen ekran alanını geri kazandırır."
 			},
 			"uk": {
 				"name": "Web Annoyances Ultralist",
@@ -10177,7 +10177,7 @@
 			},
 			"tr": {
 				"name": "Adblock Warning Removal List",
-				"description": "Anti-adblock uyarılarını ve diğer rahatsız edici mesajları kaldırır."
+				"description": "Reklam engelleyici tespit uyarılarını ve diğer rahatsız edici mesajları kaldırır."
 			},
 			"uk": {
 				"name": "Adblock Warning Removal List",
@@ -11423,7 +11423,7 @@
 			},
 			"tr": {
 				"name": "Official Polish filters for AdBlock, uBlock Origin & AdGuard",
-				"description": "Lehçe siteleri için ek filtre listesi."
+				"description": "Lehçe siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "Official Polish filters for AdBlock, uBlock Origin & AdGuard",
@@ -12669,7 +12669,7 @@
 			},
 			"tr": {
 				"name": "Fanboy's Swedish",
-				"description": "İsveççe siteleri için filtre listesi."
+				"description": "İsveççe siteler için filtre listesi."
 			},
 			"uk": {
 				"name": "Fanboy's Swedish",
@@ -12847,7 +12847,7 @@
 			},
 			"tr": {
 				"name": "AdGuard Çince filtresi",
-				"description": "EasyList China + AdGuard Çince filtresi. Özellikle Çince dilindeki sitelerde reklamları kaldıran filtre listesi."
+				"description": "EasyList China + AdGuard Çince filtresi. Çince dilindeki sitelerde reklamları kaldıran filtre listesi."
 			},
 			"uk": {
 				"name": "Китайський фільтр AdGuard",
@@ -13203,7 +13203,7 @@
 			},
 			"tr": {
 				"name": "Fanboy's Vietnamese",
-				"description": "Vietnamca siteleri için filtre listesi."
+				"description": "Vietnamca siteler için filtre listesi."
 			},
 			"uk": {
 				"name": "Fanboy's Vietnamese",
@@ -13381,7 +13381,7 @@
 			},
 			"tr": {
 				"name": "List-KR Classic filter list",
-				"description": "AdGuard için List-KR Klasik filtre listesi, Korece siteler ve uygulamalarda reklamları engeller ve anti-reklam engelleyici komut dosyalarını devre dışı bırakır."
+				"description": "AdGuard için List-KR Klasik filtre listesi, Korece siteler ve uygulamalarda reklamları engeller ve reklam engelleyici tespit komut dosyalarını devre dışı bırakır."
 			},
 			"uk": {
 				"name": "List-KR Classic filter list",
@@ -13915,7 +13915,7 @@
 			},
 			"tr": {
 				"name": "Fanboy's Spanish/Portuguese",
-				"description": "İspanyolca ve Portekizce siteleri için filtre listesi."
+				"description": "İspanyolca ve Portekizce siteler için filtre listesi."
 			},
 			"uk": {
 				"name": "Fanboy's Spanish/Portuguese",
@@ -14093,7 +14093,7 @@
 			},
 			"tr": {
 				"name": "EasyList Spanish",
-				"description": "İspanyolca siteleri için ek filtre listesi."
+				"description": "İspanyolca siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "EasyList Spanish",
@@ -14297,7 +14297,7 @@
 			},
 			"be": {
 				"name": "Adblock List for Finland",
-				"description": "Фінскі фільтр для блакавання рэкламы."
+				"description": "Фінскі фільтр для блакіроўкі рэкламы."
 			},
 			"bg": {
 				"name": "Adblock List for Finland",
@@ -15161,7 +15161,7 @@
 			},
 			"tr": {
 				"name": "Polish Annoyances Filters",
-				"description": "Açılır pencereleri, araçları, haber bültenlerini, anlık bildirimlerini, okları, konu dışı etiketli dâhili bağlantıları ve diğer can sıkıcı öğeleri gizleyen ve engelleyen filtre listesi. Polish GDPR-Cookies Filters zaten bunun içindedir."
+				"description": "Açılır pencereleri, araçları, haber bültenlerini, anlık bildirimlerini, okları, konu dışı etiketli dâhili bağlantıları ve diğer can sıkıcı öğeleri gizleyen ve engelleyen filtre listesi. Polish GDPR-Cookies Filters zaten buna dâhildir."
 			},
 			"uk": {
 				"name": "Polish Annoyances Filters",
@@ -15339,7 +15339,7 @@
 			},
 			"tr": {
 				"name": "Polish Anti Adblock Filters",
-				"description": "Reklam engelleme uyarılarına karşı resmi Lehçe filtreler."
+				"description": "Reklam engelleyici uyarılarına karşı resmi Lehçe filtreleri."
 			},
 			"uk": {
 				"name": "Polish Anti Adblock Filters",
@@ -16585,7 +16585,7 @@
 			},
 			"tr": {
 				"name": "AlleBlock",
-				"description": "Lehçe e-ticaret sitelerden rahatsız edici öğeleri kaldıran filtre."
+				"description": "Lehçe e-ticaret sitelerindeki rahatsız edici öğeleri kaldıran filtre."
 			},
 			"uk": {
 				"name": "AlleBlock",
@@ -16763,7 +16763,7 @@
 			},
 			"tr": {
 				"name": "EasyList Polish",
-				"description": "Lehçe siteleri için ek filtre listesi."
+				"description": "Lehçe siteler için ek filtre listesi."
 			},
 			"uk": {
 				"name": "EasyList Polish",
@@ -17297,7 +17297,7 @@
 			},
 			"tr": {
 				"name": "Dandelion Sprout's Annoyances List",
-				"description": "Bu liste AdGuard'ın ve Fanboy's Annoyances listeleri tarzında yapılmıştır. Dandelion Sprout'un en gururlu ve en sık tutulan uluslararası listelerinden birçoğunu basitlik adına derlenmiş bir derleme olarak birleştirir."
+				"description": "Bu liste AdGuard'ın ve Fanboy's Annoyances listesi tarzında hazırlanmıştır. Kolaylık sağlamak amacıyla özenle seçilmiş bir derleme olarak, Dandelion Sprout'un en çok gurur duyduğu ve en sık güncellenen birçok uluslararası listesini birleştirir."
 			},
 			"uk": {
 				"name": "Dandelion Sprout's Annoyances List",
