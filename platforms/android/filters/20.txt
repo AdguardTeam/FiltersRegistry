@@ -1,9 +1,9 @@
-! Checksum: BYhaAbiPIUt2NSK0w9qLGQ
-! Diff-Path: ../patches/20/20-s-1781761509-3600.patch
+! Checksum: 84eIEmHTePyZ87tZIt8amA
+! Diff-Path: ../patches/20/20-s-1781769173-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.29.85
-! TimeUpdated: 2026-06-18T05:42:48+00:00
+! Version: 2.0.29.86
+! TimeUpdated: 2026-06-18T07:50:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -68,6 +68,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+ntv.com.tr##.inread-content-area > div.w-full:has(> div.relative a[href^="https://play.google.com/store/apps/details?id=com.dogus.ntv"])
 ionio.gr###app-wrap
 dominos.com.tr#%#//scriptlet('trusted-click-element', '.dp-h-banner-page-close')
 haokan.baidu.com###art-player-wrapper > div[class^="invoke-app_invoke-app-"]
@@ -4235,6 +4236,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~odaibako.net,~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+canva.com#$#body { overflow: auto !important; }
+canva.com#$#body > div[class][style="position: relative; z-index: 1;"]:has(a[href^="https://canva.me/homepage-app-choice"]) { display: none !important; }
 canva.com#%#//scriptlet('trusted-set-local-storage-item', 'mobile_link_choice_last_seen', '$now$')
 economx.hu##div[x-ref="hoverPromotion"]
 economx.hu##.economx-top-promotion
