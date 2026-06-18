@@ -1,9 +1,9 @@
-! Checksum: 1eyCYR37LEgvlwh+bdtWdA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1781746581-14400.patch
+! Checksum: RDdrK3c4dcyo5D98S2SXyw
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1781763142-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.92.51
-! TimeUpdated: 2026-06-18T01:32:45+00:00
+! Version: 2.1.92.52
+! TimeUpdated: 2026-06-18T06:09:04+00:00
 ! Expires: 10 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -293,6 +293,7 @@
 ://banners2.$third-party
 ://be.ads.
 ://block.*/rotator-$script
+://block.*/rotator/*.js|$script
 ://cdn.*/p/?zid=
 ://cdn.ad.
 ://cdn.ads.
@@ -372,7 +373,6 @@
 ?pub_id=
 ?r=*&zoneid=
 ?rand=*&blk=*&ref_
-?redir=*/click?
 ?runauction=
 ?size=728x90|$subdocument
 ?sponsor=*&sId=
@@ -814,7 +814,6 @@ _build=iclick-$popup
 ||widespace.com^$third-party
 ||wm.artcomix.com^$third-party
 ||xcamz.xyz^$third-party
-||xiepl.com^$third-party
 ||xn--ae-tja.ch^$third-party
 ||xpicw.top^$third-party
 ||yospace.com^$~object,third-party
@@ -835,6 +834,7 @@ _build=iclick-$popup
 ||lt45.net^$third-party
 ||newstat.net^$third-party
 ||static-dscn.net^$third-party
+||deskbabes.com^$third-party
 ||virtuagirl.com^$third-party
 ||0w1rqq69fi0e.com^
 ||1jsskipuf8sd.com^
@@ -1236,7 +1236,6 @@ _build=iclick-$popup
 ||langretsahibah.com^
 ||laserveradedomaina.com^
 ||leedsneurite.com^
-||lexintaria.com^
 ||lgxdwxzgfxvy.com^
 ||liasingmyxopod.com^
 ||ligninkeftiu.com^
@@ -1261,6 +1260,7 @@ _build=iclick-$popup
 ||lzexnxwjsmof.com^
 ||macawsconges.com^
 ||macostruecloud.xyz^
+||madamecam.com^
 ||magetrigla.com^
 ||malthawhoop.cyou^
 ||maraywreath.com^
@@ -1603,7 +1603,6 @@ _build=iclick-$popup
 ||absurdbatchconfess.com^$popup
 ||adjux.com^$popup,third-party
 ||admarketplace.net^$popup,third-party
-||affforce.com^$popup,third-party
 ||agileskincareunrented.com^$popup
 ||agkn.com^$popup,third-party
 ||alitems.com^$popup,third-party
@@ -2209,7 +2208,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||monpetitforfait.com/wp-content/uploads/*/ban
 ||moustiq.com^*/bans/
 ||musculaction.com/images/*-300x420.
-||mvideoporno.xxx/wp-content/uploads/*/porno
 ||neomag.fr/e-pubs/
 ||nestoria.fr/jsp/include/banners/
 ||nextwarez.com/wp-content/uploads/*-300x250.
@@ -2462,6 +2460,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub_dfp_flash_trans
 ###pub_droite
 ###pub_footer
+###pub_gauche
 ###pub_geante
 ###pub_haut
 ###pub_head
@@ -2498,6 +2497,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###right-side-ad
 ###rightReklamIc
 ###right_ad_3
+###right_pub
 ###rightrail-ad-2
 ###sagreklam
 ###shopper-widget-wrapper
@@ -2848,6 +2848,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.view-publicites
 ##.widget-advert
 ##.widget-pub
+##.widget_advncdads
 ##.widget_box_pub
 ##.widget_keleops-ad
 ##.widget_keleops-adhalfpage
@@ -2908,6 +2909,7 @@ grandecran.fr###ban_big
 degrouptest.com,lesmobiles.com###bandeauFooter
 manga-news.com###bangeante
 appcake.net,boursier.com,lesaffaires.com,maliweb.net,nrj.fr###banner
+lil-life.com###bannerRightTop
 clubpoker.net###bannerTopWrapper
 lacanausurfinfo.com###banner_footer
 tirage-gagnant.com###banner_promo
@@ -2924,7 +2926,6 @@ manga-news.com###block-up
 lanutrition.fr###block-views-remote-products-block-home
 cowcotland.com###blocpub1
 cowcotland.com###bottom_pubN2
-moov.mg###box-link-left
 algerie360.com###boxes
 darty.com###brand
 cine-torrent.org,frenchtorrent.cc,magnet-torrent.org,mania-torrent.org,warez-torrent.org,zktorrent.org###btvpn
@@ -2951,7 +2952,6 @@ guide-piscine.fr###devis-lien-popup
 maxifoot.fr###ep300z
 maxifoot.fr###ep728
 easyvoyage.com###esv-pub-hp
-moov.mg###extruderLeft1
 cultissime.cyou,liensporno.com###fakeplayer
 amateur2sexe.fr###footer-boom
 hardware.fr###footer_img
@@ -2979,6 +2979,7 @@ journaldugeek.com###linkhabillage
 cdiscount.com###lpHeadlineMain.headlineWithoutLogo
 laposte.net###lpn_pub_main
 hellokids.com###mask
+gulli.fr###masthead
 driverscloud.com###mc_cadretoppub
 jeuxvideo.com###mc_sponso
 sfr.fr###meeticWrapper
@@ -3158,7 +3159,6 @@ envertetcontretous.fr##.halfpage
 realite-virtuelle.com##.halfpageAd
 refurbgeneration.com##.head_ebay
 avis-express.com,lnr-dz.com##.header-banner
-europe1.fr##.header-space
 medialot.fr##.header-sub
 tvanouvelles.ca##.header-topBar-sticky
 geek-malin.fr##.header-widget-area
@@ -3252,7 +3252,6 @@ tvanouvelles.ca##.promo-tva-inner
 expressio.fr##.promoted-vcontainer
 ados.fr,afrik-foot.com,afrik.com,afrikeco.com,agoravox.fr,agoravox.tv,annuaire-streaming.com,bhmag.fr,bienpublic.com,cciaf.org,centerblog.net,cio-online.com,commentreparer.com,construiresamaison.com,cotemaison.fr,cuisineactuelle.fr,dictionnaire-synonymes.com,docteurclic.com,educatout.com,elbotola.com,elheddaf.com,ennaharonline.com,europages.ma,fan-de-cinema.com,foot01.com,franceinfo.fr,franceinter.fr,gratuiciel.com,hellokids.com,ici.tou.tv,igen.fr,infoconcert.com,internetparsatellite.net,iphonesoft.fr,iphonetweak.fr,jeux-hentai.com,jeux-mmorpg.com,ktotv.com,lacentrale.fr,ladepeche.fr,larousse.fr,lefigaro.fr,leprogres.fr,lesdebiles.com,lesechos.fr,lesoir.be,lexpress.fr,logicielmac.com,logitheque.com,loractu.fr,macg.co,macommune.info,mapiaule.com,maximiles.com,meilleurtaux.com,menara.ma,midilibre.fr,montelimar-news.fr,mots-croises.ch,nextinpact.com,nintendo-master.com,orange.fr,orange.mu,ouest-france.fr,over-blog.com,programme.tv,radio-monaco.com,radioclassique.fr,remede.org,sfr.fr,skirandomag.com,slate.fr,sofoot.com,soonnight.com,sudinfo.be,techno-science.net,telemb.be,telequebec.tv,tf1.fr,tsa-algerie.com,turbo.fr,vipsg.fr,watchgeneration.fr,xboxygen.com,yabiladi.com,zupimages.net##.pub
 challenges.fr,sciencesetavenir.fr##.pub-home
-lefigaro.fr##.pub-icone
 lequipement.fr##.pub-revendeur
 01net.com,bfmtv.com,pagesjaunes.fr##.pub-title
 fsolver.fr##.pubCLS
@@ -3275,7 +3274,6 @@ ouedkniss.com##.search-top-1
 educatout.com##.showpub
 beaute-test.com##.sidebar-sticky
 test-achats.be##.skin
-lequipement.fr##.skyscrapper-produit
 infoconcert.com##.slider.container
 ladiagonale.net##.slidingDiv2
 lepoint.fr##.slotadm
@@ -3338,7 +3336,6 @@ seloger.com##[data-testid="serp-side-skyscraper"]
 seloger.com##[data-testid="serp-side-skyscraper-top"]
 fnac.com##[id$="-sponsored_products-0"]
 voyageforum.com##[id*="billboardArround"]
-blick.ch##[id^="appnexus-placement"]
 3dnatives.com##[id^="dnati-"]
 jeuxvideomoinschers.fr,tahiti-infos.com##[id^="pub_"]
 moneyvox.fr##[mam-campaign="Ban"]
@@ -3413,6 +3410,7 @@ scan-manga.com##article[itemtype="https://schema.org/Product"]
 tchatche.com##banner
 agroligne.com,auto-utilitaire.com,mobilealgerie.com##body > a > img
 gamopat-forum.com##div#wrapper > div#right img[src*="/11/03/61/79/"]
+japscan.vip##div.container > [href]
 laprovence.com##div[class*="Ads_ad_"]
 newpharma.fr##div[class*="adh-banner"]
 gauleporno.xxx,pornburst.xxx##div[class*="banner"]
@@ -3432,6 +3430,7 @@ mahjong.fr##div[class^="sub_jeu_72890"]
 fnac.com##div[data-component-id="kamino"]
 e-monsite.com##div[data-role="sp"]
 e-monsite.com##div[data-role="sp2"]
+edcom.fr##div[data-target]
 maisonapart.com##div[id*="-pub-"]
 maisonapart.com##div[id*="-publi-"]
 welovetennis.fr##div[id*="banner-top"]
@@ -3611,7 +3610,6 @@ yggtorrent.support##html
 @@||hcaptcha.com/1/api.js?render=$script
 @@||hcaptcha.com/captcha/*&host=$subdocument
 @@||hcaptcha.com/captcha/*/hcaptcha.js$script
-@@||static.stormwall.pro/jsav1.3.js$script
 payfit.com#@#.publicity
 casualgame.hange.jp#@#a[href*="/adclick?"]
 newsdig.tbs.co.jp#@#div[data-ad]
