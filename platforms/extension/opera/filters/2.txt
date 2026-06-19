@@ -1,9 +1,9 @@
-! Checksum: UUb4F06f7p4FTGXY3jT+Yg
-! Diff-Path: ../patches/2/2-s-1781862603-3600.patch
+! Checksum: kWNORwBTy3/mqDFpw/YPLA
+! Diff-Path: ../patches/2/2-s-1781869233-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.72.55
-! TimeUpdated: 2026-06-19T09:45:49+00:00
+! Version: 2.4.72.56
+! TimeUpdated: 2026-06-19T11:37:04+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28893,8 +28893,6 @@ nieruchomosci.interia.pl##.hero-banner-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167005
 interia.pl##a[href^="https://ad.doubleclick.net/"]
 interia.pl##.wiadspec-ul > .wiadspec-li:has(> a[href^="https://ad.doubleclick.net/"])
-! https://github.com/AdguardTeam/AdguardFilters/issues/165456
-interia.pl,pomponik.pl#@%#//scriptlet('ubo-set.js', 'Inpl.Abd.onDetected', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148258
 interia.pl###desktopPhSitebranding
 interia.pl#$#.page-header-container.placeholder-sitebranding { min-height: 0 !important; }
@@ -33250,7 +33248,6 @@ bluedownload.*,urlbluemedia.*,bluemediadownload.*,bluemediafile.*,bluemediafiles
 soccerfullmatch.com,javhub.net,highporn.net,xxxparodyhd.net,uptobox.com,uptostream.com,pornkino.cc,watchpornfree.info,xxxmoviestream.xyz,mangoporn.co,xopenload.me,streamporn.pw#%#//scriptlet("abort-on-property-read", "jsUnda")
 !
 ! AdCash WebRTC popups
-animeid.tv,eztv.ag,noslocker.com,istockfile.com,upfile.mobi#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/RTCPeerConnection[\s\S]*?new MouseEvent\("click"/.test(a.toString()))return b(a,c)};})();
 !
 ! BetterJsPop
 cricfree.org,stream2watch.eu,sportlemon.net,amateurbusters.com,ilivestream.com,porn2dl.net,streamhunter.net,vipbox.biz,phimmup.net,firstrow.top,firstrows.net,sportlemons.net,firstsrowsports.eu,ilemi.co,wiziwigs.eu,sportlemons.org,goatd.me,firstsrow.eu,streamsport.eu,globaltravel.com,safelinking.net#%#//scriptlet('set-constant', 'BetterJsPop', 'noopFunc')
@@ -33775,7 +33772,7 @@ x-x-x.tube#%#//scriptlet('prevent-popads-net')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171300
 pluto.tv#%#//scriptlet('json-prune', 'adBreaks.*')
 !+ NOT_PLATFORM(ext_ublock)
-pluto.tv#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text(),"_ad%2Fcreative")]] | //*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"]/@start)', '', '/\/episode\/.+?\.mpd\?/')
+pluto.tv#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text(),"_ad")]] | //*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"]/@start)', '', '/\/episode\/.+?\.mpd\?/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170495
 hentai-moon.com#%#//scriptlet('set-constant', 'flashvars.adv_pre_html', '')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170827
@@ -38500,6 +38497,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+ratingfacts.com##.rf-ad
 xvideos.com##.remove-ads > *
 refactoring.guru###announcement-gitbybit2
 /vast.php$domain=xnxx.com
@@ -60980,8 +60978,6 @@ $script,third-party,domain=wecima.show,badfilter
 ! TODO: check the bug status 14.12.23
 ! https://github.com/AdguardTeam/CoreLibs/issues/1808
 ! TODO: Remove the following rules if the above issue is resolved.
-! https://github.com/AdguardTeam/AdguardFilters/issues/158932
-! TODO: Remove the following rules if https://github.com/AdguardTeam/Scriptlets/issues/349 is resolved and available in the platforms.
 ! https://github.com/AdguardTeam/CoreLibs/issues/1763
 ! Website checks Content-MD5 in response headers and if it's empty does not display a content
 @@||devfaq.ru/*/search?*&method=HEAD$xmlhttprequest,document
@@ -65117,6 +65113,8 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233911
+@@||cartaocontinente.pt^$stealth=flash|java
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233881
 @@||hotstar.com/api/internal$stealth=ip
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233892
@@ -65196,8 +65194,6 @@ implbits.com#@#.banner_container
 @@||walmart.com^$stealth=flash
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230705
 @@||iherb.com^$stealth=useragent
-! https://github.com/AdguardTeam/AdguardFilters/issues/230716
-@@||cartaocontinente.pt^$stealth=flash
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230670
 @@||codeberg.org^$stealth=ip|useragent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230628
@@ -85652,6 +85648,7 @@ browsershots.org#@#.advert_area
 ||ablybeastssarcastic.com^
 ||ablyguaranteeusage.com^
 ||abmkupxixavk.in^
+||abnkaidvayjmu.space^
 ||abnormalitylovingmammal.com^
 ||aboardstepbugs.com^
 ||abodedovaries.qpon^
@@ -87105,6 +87102,7 @@ browsershots.org#@#.advert_area
 ||alphonso.tv^
 ||alpidoveon.com^
 ||alpine-vpn.com^
+||alpyvupjggczt.space^
 ||alqzmnvaxvzcu.website^
 ||alsdebaticalfelixsto.org^
 ||alstsaaf.com^
@@ -87494,9 +87492,11 @@ browsershots.org#@#.advert_area
 ||apexneedful.com^
 ||apfjzhkkbguoc.site^
 ||apglinks.net^
+||apgmclzhlrxrm.online^
 ||apgnpaojkzre.in^
 ||aphacicaporoseminored.cyou^
 ||aphanesupwound.com^
+||aphfuwlngvcyx.space^
 ||aphidididlety.cfd^
 ||aphoticlaiktinamou.qpon^
 ||aphyricatossabuhr.cfd^
@@ -87608,6 +87608,7 @@ browsershots.org#@#.advert_area
 ||aqczcwemqgiga.website^
 ||aqdagjfc.com^
 ||aqdbfqsbnwpkb.website^
+||aqeognplbpirm.space^
 ||aqfifswfxjscsa.com^
 ||aqfxtibru.in^
 ||aqgcfebwdqgve.online^
@@ -88495,6 +88496,7 @@ browsershots.org#@#.advert_area
 ||badjocks.com^
 ||badlandlispyippee.com^
 ||badsllcvgillm.space^
+||baduogknkuvfl.online^
 ||baeizhplymdyc.site^
 ||baezlvydomldo.space^
 ||baf3838b31.com^
@@ -89504,6 +89506,7 @@ browsershots.org#@#.advert_area
 ||blicatedlitytleme.org^
 ||blickywharveswaregga.cyou^
 ||bliesthogmane.com^
+||blightiambijaseyed.qpon^
 ||blightseffatum.cyou^
 ||blind-poem.com^
 ||blind-trip.pro^
@@ -89668,6 +89671,7 @@ browsershots.org#@#.advert_area
 ||bnwqxlwbfyeho.online^
 ||bnynihjbciywe.online^
 ||boannre.com^
+||boarderoomph.cyou^
 ||boardingstocking.com^
 ||boarishshreddy.qpon^
 ||boarshrubforemost.com^
@@ -91022,6 +91026,7 @@ browsershots.org#@#.advert_area
 ||cb3a316b81.com^
 ||cb4g9qkov2q9p33oghne.cfd^
 ||cba-fed-igh.com^
+||cbayvxac.com^
 ||cbce918a9d.com^
 ||cbckftoaakcye.website^
 ||cbdedibles.site^
@@ -93755,6 +93760,7 @@ browsershots.org#@#.advert_area
 ||deepsathegoh.com^
 ||deepz.cyou^
 ||deerflybeefier.cfd^
+||defactoloupedbathing.cyou^
 ||defeature.xyz^
 ||defectspalt.com^
 ||defectsslatishquasher.qpon^
@@ -99694,6 +99700,7 @@ browsershots.org#@#.advert_area
 ||gledeguebucutamarao.cfd^
 ||gleedbusters.qpon^
 ||gleeful-metal.pro^
+||gleefulcousin.com^
 ||gleefulnote.com^
 ||gleefulsolvingsaxophone.com^
 ||gleefultable.pro^
@@ -122047,6 +122054,7 @@ browsershots.org#@#.advert_area
 ||tophaw.com^
 ||tophousblued.cfd^
 ||topiccorruption.com^
+||topicmagnitude.com^
 ||topincome.cc^
 ||topjyrdikvtlh.site^
 ||topmostshrink.com^
@@ -123820,6 +123828,7 @@ browsershots.org#@#.advert_area
 ||upcoverunwaved.com^
 ||upcuoicobbycl.site^
 ||updaight.com^
+||updartmoderne.qpon^
 ||updaterack.com^
 ||updragpellage.cyou^
 ||updservice.site^
@@ -124124,6 +124133,7 @@ browsershots.org#@#.advert_area
 ||uvmxflkoddohr.com^
 ||uvoyiosnw.com^
 ||uvpcsohrnfxqk.site^
+||uvpjqfkemvbgw.site^
 ||uvpwmzjuncdty.space^
 ||uvrggpvzkobmx.store^
 ||uvtbfriwugkhn.store^
@@ -127212,6 +127222,7 @@ browsershots.org#@#.advert_area
 ||xazafvbmicmi.com^
 ||xazextepdkarx.store^
 ||xbayupkogeuna.com^
+||xbbxljge.com^
 ||xbeaspolzddtc.space^
 ||xbfmunxzxsnso.site^
 ||xbfoaninfgolq.space^
@@ -127588,6 +127599,7 @@ browsershots.org#@#.advert_area
 ||xnfjictwvrnuz.site^
 ||xniyaklqxkech.website^
 ||xnkldnhifcdmr.site^
+||xnmwcknxoorlnax.com^
 ||xnocffar.com^
 ||xnqiswpbbsdkjij.com^
 ||xnqzisqoxmbwb.space^
@@ -129203,6 +129215,7 @@ browsershots.org#@#.advert_area
 ||zirdough.net^
 ||zireemilsoude.net^
 ||zitdither.com^
+||ziuofftam.com^
 ||ziupljvisonem.space^
 ||ziv96gcob9c8qxjh.cfd^
 ||zivn78n94fer88h5.cfd^
