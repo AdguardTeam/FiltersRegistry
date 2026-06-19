@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: RHQcWj4gGr/cgyuHfUcvaA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781856274-3600.patch
+! Checksum: m9TAP11ykwfFAbUW27IgXg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1781862614-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.72.54
-! TimeUpdated: 2026-06-19T08:00:45+00:00
+! Version: 2.4.72.55
+! TimeUpdated: 2026-06-19T09:45:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,8 @@
 !
 !
 !
+||tk6if76q.ab1n.net^
+||gs6ye5zj.ac1n.net^
 ||profitablecpmratenetwork.com^$all
 ||jcgdhqusv.com^
 ||vidwestxyz.com^
@@ -10792,6 +10794,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! xvideos.com - anti-adblock video ads
+xvideos.com#@#.remove-ads
+xvideos.com#@##video-right
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233816
 lihatgambar.my.id##+js(remove-node-text, script, adsbygoogle.push)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233755
@@ -36461,6 +36466,8 @@ neowin.net##div[class^="banner-"]:style(height: 0!important; min-height: 0!impor
 ! VIPRow streaming
 /partytown/partytown-sw.js
 ! Xvideos
+/affiliates/vast/?campaign=
+/vast.php?t=*&tags=exoxvideostargetting
 /vast.php?idzone=
 ! Scam
 ! https://grltds.com/*?external_id=*&sub_id_2=
@@ -37357,6 +37364,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+xvideos.com##.remove-ads > *
+refactoring.guru###announcement-gitbybit2
 /vast.php$domain=xnxx.com
 xnxx.com##+js(set-constant, xv.conf.dyn.ads, undefined)
 xnxx.com##+js(set-constant, xv.conf.dyn.excld, undefined)
@@ -38242,7 +38251,6 @@ malavida.com##+js(addEventListener-defuser, DOMContentLoaded, popupOn)
 malavida.com###installer-popup
 crackrelease.com##.monetumo-ad-slot
 interestingengineering.com##.t-grid iframe.undefined
-xvideos.*##body .exo-ad-ins-container
 milfcaps.com##.footer-ad-all
 milfcaps.com###menu-main-menu > li:has(> a[href="https://theporndude.com/"])
 file.supjavhd.to###poster
