@@ -1,8 +1,8 @@
-! Checksum: Zr/ksD+sZJyGxdUJEYF5dQ
+! Checksum: xxP6ZUDvxSP4nUMUCIAWow
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.69
-! TimeUpdated: 2026-06-19T03:16:55+00:00
+! Version: 2.2.70.70
+! TimeUpdated: 2026-06-19T05:50:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19049,6 +19049,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233884
+@@||sdk.privacy-center.org/*.js$script,domain=orange.pl
+||sdk.privacy-center.org/*/loader.js$script,redirect=didomi-loader,domain=orange.pl,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233829
 @@||d.delivery.consentmanager.net/delivery/cmp.php?$domain=britannica.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233733
@@ -35605,6 +35608,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+orange.pl##.snrs-container-webpush
 exblog.jp##.web-push-popover
 hdrezka.ax##.push-perm-bar
 promiflash.de##body > .background > .shadow-lg:has(> .flex.gap-base > button.rounded-xl + button.rounded-xl)
@@ -61086,8 +61090,6 @@ vipr.im#%#//scriptlet('set-cookie', 'overlay', 'true')
 joongang.co.kr#%#//scriptlet("abort-on-property-write", "history.pushState")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111851
 pahe.win#%#//scriptlet("adjust-setInterval", "count", "", "0.02")
-! https://github.com/AdguardTeam/AdguardFilters/issues/113148
-insurglobal.xyz#%#//scriptlet("adjust-setInterval", "yuidea-", "*", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163948
 premads.com#%#//scriptlet('adjust-setInterval', 'myCounter', '*', '0.001')
 infortechno.com#%#!function(){if(location.href.includes("wpsafelink")){var e=new MutationObserver((function(){try{var t=document.querySelector('form#landing > input[name="go"][value]'),n=document.querySelector("body > script");t&&t.value.startsWith("aHR0c")&&n&&n.textContent.includes("document.getElementById('landing').submit();")&&(n.remove(),e.disconnect(),location.assign(atob(t.value)))}catch(e){}}));e.observe(document,{childList:!0,subtree:!0}),setTimeout((function(){e.disconnect()}),1e4)}}();
@@ -64581,6 +64583,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+||spotfund-widget.s3.amazonaws.com/embed/large.js
 notepad.js.org###toastPopup
 medyascope.tv##.elementor-widget-wrap > div[data-element_type="widget"]:has(> div.elementor-widget-container > div.elementor-template > div[data-elementor-post-type="elementor_library"] > div[data-element_type="container"] > div.e-con-inner > div[data-element_type="container"] > div[data-element_type="widget"] > div.elementor-widget-container > div.elementor-button-wrapper > a[href="https://abonelik.medyascope.tv/"])
 serbestiyet.com###floating-donate-button

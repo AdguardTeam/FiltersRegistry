@@ -1,8 +1,8 @@
-! Checksum: tvjKEVXyiAzrFqxkaoTYPA
+! Checksum: Yz+0vHp55zQKJLP/tJPQkA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.69
-! TimeUpdated: 2026-06-19T03:16:55+00:00
+! Version: 2.2.70.70
+! TimeUpdated: 2026-06-19T05:50:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12677,6 +12677,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233884
+@@||sdk.privacy-center.org/*.js$script,domain=orange.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233829
 @@||d.delivery.consentmanager.net/delivery/cmp.php?$domain=britannica.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233733
@@ -26156,6 +26158,7 @@ labs.google.com#@##google-hats-survey
 !
 ! SECTION: Push notifications - Regular rules
 !
+orange.pl##.snrs-container-webpush
 exblog.jp##.web-push-popover
 hdrezka.ax##.push-perm-bar
 ||tycsports.com/cwvitals/v-1.7.0/js/webPushChunk
@@ -46478,7 +46481,6 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111584
 ! https://github.com/AdguardTeam/AdguardFilters/pull/110051
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111851
-! https://github.com/AdguardTeam/AdguardFilters/issues/113148
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163948
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111705
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110891
@@ -49091,6 +49093,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+||spotfund-widget.s3.amazonaws.com/embed/large.js
 notepad.js.org###toastPopup
 serbestiyet.com###floating-donate-button
 techxplore.com,phys.org,medicalxpress.com###donateMsgPopup

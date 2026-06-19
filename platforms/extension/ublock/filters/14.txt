@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kezatHOezwB+E/ac1aPy5w
-! Diff-Path: ../patches/14/14-s-1781839206-3600.patch
+! Checksum: ueyrlTpONW00AKockQtm+g
+! Diff-Path: ../patches/14/14-s-1781848384-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.70.69
-! TimeUpdated: 2026-06-19T03:16:55+00:00
+! Version: 2.2.70.70
+! TimeUpdated: 2026-06-19T05:50:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17659,6 +17659,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233884
+@@||sdk.privacy-center.org/*.js$script,domain=orange.pl
+||sdk.privacy-center.org/*/loader.js$script,redirect=didomi-loader,domain=orange.pl,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233829
 @@||d.delivery.consentmanager.net/delivery/cmp.php?$domain=britannica.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233733
@@ -34098,6 +34101,7 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 !
 ! SECTION: Push notifications - Regular rules
 !
+orange.pl##.snrs-container-webpush
 exblog.jp##.web-push-popover
 hdrezka.ax##.push-perm-bar
 promiflash.de##body > .background > .shadow-lg:has(> .flex.gap-base > button.rounded-xl + button.rounded-xl)
@@ -60403,8 +60407,6 @@ vipr.im##+js(set-cookie, overlay, true)
 joongang.co.kr##+js(abort-on-property-write, history.pushState)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111851
 pahe.win##+js(adjust-setInterval, count, , 0.02)
-! https://github.com/AdguardTeam/AdguardFilters/issues/113148
-insurglobal.xyz##+js(adjust-setInterval, yuidea-, *, 0.02)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163948
 premads.com##+js(adjust-setInterval, myCounter, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111705
@@ -63791,6 +63793,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+||spotfund-widget.s3.amazonaws.com/embed/large.js
 notepad.js.org###toastPopup
 medyascope.tv##.elementor-widget-wrap > div[data-element_type="widget"]:has(> div.elementor-widget-container > div.elementor-template > div[data-elementor-post-type="elementor_library"] > div[data-element_type="container"] > div.e-con-inner > div[data-element_type="container"] > div[data-element_type="widget"] > div.elementor-widget-container > div.elementor-button-wrapper > a[href="https://abonelik.medyascope.tv/"])
 serbestiyet.com###floating-donate-button
