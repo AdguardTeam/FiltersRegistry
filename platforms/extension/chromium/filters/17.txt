@@ -1,9 +1,9 @@
-! Checksum: WlZfJhyzD+QIQIHppaqZgQ
-! Diff-Path: ../patches/17/17-s-1781621063-3600.patch
+! Checksum: 07clxhqRbp16niJ/24n+mA
+! Diff-Path: ../patches/17/17-s-1781856256-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.51
-! TimeUpdated: 2026-06-16T14:41:46+00:00
+! Version: 2.0.13.52
+! TimeUpdated: 2026-06-19T08:01:32+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2837,7 +2837,6 @@ $removeparam=union_lens,domain=tmall.com|taobao.com
 ||aliexpress.$removeparam=pdp_npi
 ||aliexpress.$removeparam=aff_trace_key
 ||aliexpress.$removeparam=aff_platform
-||aliexpress.$removeparam=aff_short_key
 ||aliexpress.$removeparam=spm
 ||aliexpress.$removeparam=scm
 ||aliexpress.$removeparam=scm_id
@@ -2850,6 +2849,10 @@ $removeparam=union_lens,domain=tmall.com|taobao.com
 ||aliexpress.$removeparam=pvid
 ||aliexpress.$removeparam=dp
 ||aliexpress.$removeparam=sk
+! https://github.com/AdguardTeam/AdguardFilters/issues/233869
+! TODO: Remove platform restriction when MV3 supports allowlist rules for $removeparam
+!+ NOT_PLATFORM(ext_chromium_mv3)
+||aliexpress.$removeparam=aff_short_key
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108478
 ||agoda.com^$removeparam=tag
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106186
