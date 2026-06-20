@@ -1,5 +1,5 @@
-! Checksum: e0SDYNyRrtDxijf6rJjPgQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1781911861-3600.patch
+! Checksum: zCBRkBeABzL6eRRJ3ZNhHQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1781925480-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.82
@@ -196,6 +196,7 @@ lecourrier-du-soir.com#%#//scriptlet("prevent-addEventListener", "DOMContentLoad
 commentcamarche.net#%#//scriptlet("json-prune", "siteParams.aabMessage")
 commentcamarche.net#%#//scriptlet("set-constant", "integrityObserver.corrupted", "false")
 ||c.amazon-adsystem.com/aax2/apstag.js$script,redirect=noopjs,important,domain=commentcamarche.net
+@@||widgets.outbrain.com/outbrain.js$domain=commentcamarche.net
 ||widgets.outbrain.com/outbrain.js$script,redirect=noopjs,important,domain=commentcamarche.net
 9docu.org#$#.publicite.text-ad.adsbox { display: block !important; }
 9docu.org#%#//scriptlet("abort-on-property-read", "gothamBatAdblock")
@@ -1571,6 +1572,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?adprovider=
 ?adRef=
 ?adroll_adv_id=
+?adSelector=
 ?adTagId=
 ?advert_type=
 ?aff=*&roll=
@@ -1669,8 +1671,6 @@ _adsens_
 _adspromo.
 _adstyle.
 _adunit=
-_adv_300.
-_adv_728.
 _advertising_img.
 _affiliate.$subdocument
 _affiliate_banner_
@@ -1798,9 +1798,11 @@ _build=iclick-$popup
 ||xyz^*&zoneid=$popup
 ||2town.net^$third-party
 ||3xtraffic.com^$third-party
+||7x4.fr^$third-party
 ||acexedge.com^$third-party
 ||acxiom-online.com^$third-party
 ||ad-spire.net^$third-party
+||ad4link.com^$third-party
 ||ad6.fr^$third-party
 ||adbox.lt^$third-party
 ||adhslx.com^$third-party
@@ -1868,6 +1870,7 @@ _build=iclick-$popup
 ||broadcast.pm^$third-party
 ||camplace.com^$third-party
 ||camsoda.com^$third-party
+||captchme.net^$third-party
 ||caramec.fr^$third-party
 ||carasexe.name^$third-party
 ||carpediem.fr^$third-party
@@ -2102,7 +2105,6 @@ _build=iclick-$popup
 ||aenwynsol.com^
 ||aerithvel.com^
 ||aerydesorbs.top^
-||aesopicmalchus.com^
 ||affluentmirth.com^
 ||agatorkoaltor.com^
 ||agencybriefly.com^
@@ -2125,7 +2127,6 @@ _build=iclick-$popup
 ||almggvgovqvlb.top^
 ||alogiagramme.top^
 ||amarvelaether.shop^
-||amucresol.com^
 ||anadistil.com^
 ||analaxadulatory.com^
 ||anamfizzles.top^
@@ -2147,7 +2148,6 @@ _build=iclick-$popup
 ||aqqjqkqlbzbm.top^
 ||aqqzgvzvnbkwn.top^
 ||aralithmoon.com^
-||arcoaffray.com^
 ||armataangrily.shop^
 ||armillaboxcars.com^
 ||armscyeuchee.com^
@@ -2223,7 +2223,6 @@ _build=iclick-$popup
 ||bogiesmudrock.top^
 ||bogydompays.com^
 ||bolgboqwqjwoj.top^
-||bonzeryzephyr.shop^
 ||borucadowse.cyou^
 ||botkano.info^
 ||bottlestonightapp.com^
@@ -2269,7 +2268,6 @@ _build=iclick-$popup
 ||caubeenbolted.com^
 ||cbbvi.com^
 ||ccgcg.com^
-||cedinghavior.top^
 ||cemantical4.com^
 ||centalkochab.com^
 ||cgqhtithixi.com^
@@ -2446,7 +2444,6 @@ _build=iclick-$popup
 ||genmonet.com^
 ||geomalywigful.shop^
 ||gestyy.com^
-||ghurrytacoma.com^
 ||gigboost.me^
 ||ginnelhangle.com^
 ||giosany.com^
@@ -2629,7 +2626,6 @@ _build=iclick-$popup
 ||nvjqm.com^
 ||nwmum.com^
 ||oathoolroo.net^
-||ofchicks.com^
 ||offclaydolon.com^
 ||ojfjxzvm8bbcgcrgu.cfd^
 ||ojhniewdwtiuqd.com^
@@ -3143,7 +3139,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||netu.tv/js/restore_googl.js
 ||newsharecounts.s3-us-west-2.amazonaws.com/nsc.js
 ||nospartenaires.com/visuel$third-party
-||o*.txxx.com^
 ||offer.alibaba.com^$subdocument
 ||partenaires.feerik.com^$third-party
 ||philatelistes.net/liens/cptr/
@@ -4016,7 +4011,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.fig-ad
 ##.fix_reklama
 ##.fixedAd
-##.flash-ad
 ##.footer-pub
 ##.footerlinkad
 ##.footerpubright
@@ -4271,6 +4265,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.publicite3
 ##.publicite4
 ##.publiciteHeader
+##.publicite_1
 ##.publicite_droite_600
 ##.publicite_gauche
 ##.publicite_horizontale_well
@@ -4569,6 +4564,7 @@ tele.premiere.fr###pub_a2d_pave
 maxifoot-live.com###pub_bc
 emu-france.com###pub_casino_header
 paris-communiques.com,plateformemedia.com###publaterale
+algerie360.com###pubsousVid
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
 sante-dz.com###revenue-wrapper
 lesoir.be###rossel-imu-bottom
@@ -4712,7 +4708,6 @@ ouedkniss.com##.home-promo-header
 valeursactuelles.com##.horizons-va-sidebar
 xboxygen.com##.htpub
 2ememain.be##.hz-Banner
-lexpress.fr##.immo
 pagesblanches.be,rtbf.be##.imu
 hitek.fr##.incontent
 ##.incontent-promo-blitz-container
@@ -5088,6 +5083,7 @@ yggtorrent.support##html
 @@||code.jquery.com^$script,domain=adkami.com|ahvsh.com|animelek.tv|clickndownload.cfd|fanstream.us|filelions.com|filelions.site|flemmix.biz|french-anime.com|geneafrance.com|goodstream.one|hdss.at|indishare.org|japscan.vip|m1xdrop.net|mixdrop.ps|mixdrop.sb|mixdrop.sn|mp4upload.com|mxdrop.to|protect-mylinks.com|shahidlive.co|streamhide.com|streamhide.to|tntendirect.com|torlock.com|unblocked2.vip|uploadrar.com|vidmoly.to|voirfilms.live
 @@||film-francais-vf.com/assets/js/jquery-3.2.1.min.js$script,domain=saison-streaming.com
 @@||firebaseio.com/.lp?$script,domain=cam4.com|cam4.fr
+@@||fontawesome.com^$script,stylesheet,domain=7-up.net
 @@||fonts.googleapis.com/css$stylesheet,domain=gsurl.in|jetanimes.com|mavanimes.co|mega-p2p.net|onion.ly|protect-mylinks.com|tntendirect.com
 @@||js.txxx.tube/assets/$script,domain=txxx.com
 @@||js.txxx.tube/upd/*/static/js/$script,domain=txxx.com
