@@ -1,9 +1,9 @@
-! Checksum: wKuA8Kwp3KIICeJWKzsj7g
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1782005986-14400.patch
+! Checksum: 08gPIP/L8dE+jQ13MH89wA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1782022598-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.63.73
-! TimeUpdated: 2026-06-21T01:36:43+00:00
+! Version: 2.1.63.74
+! TimeUpdated: 2026-06-21T06:13:36+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -258,6 +258,7 @@ _social-bar/
 ###follow-icons
 ###follow-links
 ###follow-twitter
+###follow-us-block
 ###follow-us-box
 ###follow-us-footer
 ###follow-us-widget
@@ -698,7 +699,6 @@ _social-bar/
 ###twitter-follow
 ###twitter-promo
 ###twitter-share
-###twitter-social-tab
 ###twitter-widget
 ###twitter2
 ###twitterBtn
@@ -730,6 +730,7 @@ _social-bar/
 ###zoom-social-icons-widget-2
 ##.-movie-info-share
 ##.ActionButton--share
+##.Article-socialShare
 ##.ArticleView-bottomShares
 ##.ArticleView-shares
 ##.BtnShareGroup
@@ -1107,7 +1108,6 @@ _social-bar/
 ##.canvas-share-buttons
 ##.card-share
 ##.card__share
-##.category-share
 ##.cb-social-sharing
 ##.ccm-block-social-links
 ##.ccm_social_header
@@ -1238,7 +1238,6 @@ _social-bar/
 ##.et-social-google-plus
 ##.et-social-icon
 ##.et-social-icons
-##.et-social-links
 ##.et_pb_social_media_follow
 ##.et_social_facebook
 ##.et_social_flyin
@@ -1363,7 +1362,6 @@ _social-bar/
 ##.floating-header-share
 ##.floating-share
 ##.floating-share-bar
-##.floating-share-buttons
 ##.floating-social
 ##.floatingShare
 ##.fluid_share_container
@@ -1400,7 +1398,6 @@ _social-bar/
 ##.followTwitter
 ##.followUsBox
 ##.followUsLinks
-##.follow__item
 ##.followus_net
 ##.followuson
 ##.foo-facebook
@@ -1421,6 +1418,7 @@ _social-bar/
 ##.footer-col-social
 ##.footer-connect
 ##.footer-contact-social
+##.footer-contacts__socials
 ##.footer-content-social
 ##.footer-facebook
 ##.footer-facebook-icon
@@ -1538,6 +1536,7 @@ _social-bar/
 ##.gallery__share
 ##.gb-share
 ##.gd-social-share
+##.general_social_icons
 ##.generic_share
 ##.genericon-facebook
 ##.genericon-facebook-alt
@@ -1682,6 +1681,7 @@ _social-bar/
 ##.icon-holder-social
 ##.icon-icon_facebook
 ##.icon-icon_twitter
+##.icon-list--social
 ##.icon-meneame
 ##.icon-mixcloud
 ##.icon-odnoklassniki
@@ -1767,7 +1767,6 @@ _social-bar/
 ##.ishare
 ##.isocial
 ##.it-share
-##.it-social-tabs
 ##.item--social
 ##.item-facebook
 ##.item-share
@@ -1890,6 +1889,7 @@ _social-bar/
 ##.lo-header_social
 ##.logo-social
 ##.lsi-social-icons
+##.lst-social
 ##.lst_social
 ##.lzd-follow-us-icon
 ##.m-footer-social
@@ -2496,7 +2496,6 @@ _social-bar/
 ##.sharePanel
 ##.sharePinterest
 ##.sharePost
-##.sharePrint
 ##.shareRow
 ##.shareSide
 ##.shareSocial
@@ -2577,6 +2576,7 @@ _social-bar/
 ##.share_social
 ##.share_story
 ##.share_this
+##.share_this_content
 ##.share_three
 ##.share_toggle
 ##.share_tool
@@ -2717,7 +2717,6 @@ _social-bar/
 ##.side-sticky-share
 ##.side-twitter
 ##.sideBarShare
-##.sideBarSocial
 ##.sideShare
 ##.side_sns
 ##.side_twitter
@@ -3223,7 +3222,6 @@ _social-bar/
 ##.socialshares
 ##.socialsharing
 ##.socialside
-##.socialstuff
 ##.socialtab
 ##.socialtags
 ##.socialtools
@@ -3391,7 +3389,6 @@ _social-bar/
 ##.twitter_btn
 ##.twitter_feed
 ##.twitter_follow
-##.twitter_follow_button
 ##.twitter_icn
 ##.twitter_icon
 ##.twitter_link
@@ -3701,7 +3698,6 @@ _social-bar/
 ||po.st/static/$third-party
 ||reddit.com/api/info.json?$third-party
 ||reddit.com/static/$third-party
-||scoop.it^$third-party
 ||share.itraffic.su^$third-party
 ||shareaholic.com^$third-party
 ||sharedcount.com^$third-party
@@ -3858,7 +3854,6 @@ newrepublic.com,thetech.com##.article-social
 nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
 altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
-nationalreview.com##.article-utility-nav
 rt.com##.article__google-news
 noticiabrasil.net.br,noticiaslatam.lat,spnfa.ir,sputnik-abkhazia.info,sputnik-georgia.com,sputnik-ossetia.com,sputnik.af,sputnik.by,sputnik.kg,sputnik.kz,sputnik.tj,sputnikglobe.com,sputniknews.africa,sputniknews.cn,sputniknews.in,sputniknews.jp,sputniknews.ru,sputniknews.uz,sputnikportal.rs##.article__news-services-subscribe
 salon.com##.article__share
@@ -4697,7 +4692,6 @@ tn.com.ar##.horizontal-share
 milenio.com##.info-networks
 libertaddigital.com##.links_social
 milanuncios.com##.ma-AdDetailShare
-perfil.com##.main-footer__redes
 canalnet.tv##.main-video-single__socials
 genbeta.com,vidaextra.com,xataka.com.mx##.menu-follow
 lanacion.com.ar##.mod-share-container
@@ -4868,7 +4862,6 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||iconfinder.com/data/icons/$~third-party
 @@||instagram.com/p/$subdocument,third-party
 @@||jsdelivr.net/npm/sharer.js
-@@||logo.wine/a/logo/$image,~third-party
 @@||moneyweb.co.za^*/social-shares.min.js?
 @@||nhk.or.jp/common/sns/nol_share.js$script,~third-party
 @@||radio24.ilsole24ore.com/plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js$script,~third-party

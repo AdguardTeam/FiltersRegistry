@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 4QTisAGcbAhDzLVCYx6dwA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1781989056-14400.patch
+! Checksum: 1ZP/4fxeNSlM144T+titeQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1782022609-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.2
@@ -418,7 +418,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||jsmcrptjmp.com^$all
 ||93.93.51.223^$all
 ||livejasmin.com/*&origin=$document
-/^((https?|tcp|udp|i?quic|s?ftp)://|.*\.)?github\.([abd-z][a-z]{1,19}|c[a-np-z][a-z]{1,18})(/.*)?$/$document,match-case,~3p,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 ||103.174.102.240^$all
 ||38.180.96.244^$all
 ||34.195.224.242^$all
@@ -605,6 +604,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||185.155.184.57^$all
 ||185.155.186.24^$all
 ||209.74.107.131^$all
+||av-api.com^$all
 ||69.172.200.185^$all
 ||77.220.214.153^$all
 ://104.21.82.132^$document,popup
@@ -794,30 +794,8 @@ drvhub.net##.driver-item__install
 ||[2a01:4f8:2201:388a::2]^$all
 ||vfgth.com^$all
 ||185.7.99.190^$all
-||angrybirdsstarwars2.com^$all
-||mapmap.info^$all
-||onlineresultsfinder.com^$all
-||photovariants.com^$all
-||theritzygypsy.com^$all
-||thalesbaiao.com^$all
-||moyendadesigns.com^$all
-://64.190.63.$all
-://199.191.50.$all
-||michaelrinderle.com^
-||quickfindresults.com^$all
-||smorgasbordet.com^$all
-||xdelta.org^
 ||23.48.203.140^
 ||3.33.130.190^
-||[2a02:26f0:1700:11::b856:6790]^
-/^(.*://)?204\.11\.56\.\d{1,3}(/.*)?$/$all
-/^(.*://)?208\.91\.197\.\d{1,3}(/.*)?$/$all
-||grokvarum.com^$all
-||groktronum.com^$all
-||xaidash.app^$all
-||blogcryptoslate.com^$all
-||blogfxempire.com^$all
-||cointelegraphfeed.com^$all
 ||ai-stock-trading-bot.github.io^$all
 ||app-hub-desk.github.io^$all
 ||app-set-deploy.github.io^$all
@@ -1244,6 +1222,7 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ##[class*=social_share]:not(article,html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##[data-flip-widget=shareflip]:not(html,body,:empty)
 ##[socialshare]:not(html,body,:empty)
+##a[appshareclick]
 ##a[class$=-sharing-button__link]
 ##a[class$=sharebtn]
 ##a[class*=-socials__item]
@@ -1685,7 +1664,6 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no##+js(set, __INITIAL_STATE__.features.should-show-snow, false)
 /particles.min.js^
-##.snowflakes:not(html, body)
 /frosmo.easy.js^
 ##div.snow-container:not(:empty)
 /snowfall.min.jquery.js
@@ -1755,7 +1733,6 @@ reports.adguard.com$badfilter
 @@||github.githubassets.com/assets/react-core-$script,xhr
 @@||github.githubassets.com/assets/react-lib-$script,xhr
 @@||dns-clientinfo.
-##div[class*=news i] .prayer-times
 trgthaber.com.tr,haberturk.com##a[href$="namaz-vakitleri"]
 todaytime.ir##.navbar-nav [href="/اوقات-شرعی-اذان"]
 ##a[href$=PrayerTimes]
@@ -3373,6 +3350,9 @@ $document,removeparam=pk_cid
 ||qzone.qq.com^$document,removeparam=blog_photo
 ||qzone.qq.com^$document,removeparam=g
 ||qzone.qq.com^$document,removeparam=res_uin
+||qzone.qq.com^$document,removeparam=cellid
+||qzone.qq.com^$document,removeparam=subid
+||qzone.qq.com^$document,removeparam=bp1
 ||qzone.qq.com^$document,removeparam=bp2
 ||qzone.qq.com^$document,removeparam=bp7
 ||qzone.qq.com^$document,removeparam=g_f
@@ -3423,6 +3403,7 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
 .com/*/status/$document,removeparam=t,domain=twitter.com|x.com
 ||qwant.com^$removeparam=hti
+||instacart.com^$removeparam=improvedParams
 ||finn.no^$removeparam=stored-id
 ||finn.no^$removeparam=nocache
 ||instagram.com^$document,removeparam=entry_point
