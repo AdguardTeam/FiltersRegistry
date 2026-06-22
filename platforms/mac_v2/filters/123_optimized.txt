@@ -1,9 +1,9 @@
-! Checksum: h1AS8jiUpKHFpgKE4V2XlQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1782092423-14400.patch
+! Checksum: enMs2L4WgJXwHjjnD9Ojxw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1782109259-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.63.79
-! TimeUpdated: 2026-06-22T01:36:57+00:00
+! Version: 2.1.63.80
+! TimeUpdated: 2026-06-22T06:17:41+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -810,6 +810,7 @@ _social-bar/
 ##.a__share
 ##.ab-fb-page-plugin-container
 ##.abh_social
+##.above-content-sharebar
 ##.absurdsharediv
 ##.abtlikebox
 ##.action--share
@@ -880,6 +881,7 @@ _social-bar/
 ##.arqam-lite-widget-counter
 ##.arr--share
 ##.art-share
+##.art-share__list
 ##.art-social
 ##.artShare
 ##.arti-sharing-wrapper
@@ -1004,6 +1006,7 @@ _social-bar/
 ##.bloc-social
 ##.bloc_float_share
 ##.block-addtoany
+##.block-followus
 ##.block-sharebar
 ##.block-sharethis
 ##.block-shariff
@@ -1068,7 +1071,6 @@ _social-bar/
 ##.c-article-share
 ##.c-aside--subscribe
 ##.c-footer-social
-##.c-footer-social-link
 ##.c-footer-social-media
 ##.c-footer__follow-us
 ##.c-footer__social
@@ -1997,11 +1999,11 @@ _social-bar/
 ##.mvp-soc-mob-list
 ##.mvp-soc-mob-pin
 ##.mvp_facebook_widget
-##.nShare
 ##.native-share
 ##.native-share-buttons
 ##.native-share-wrapper
 ##.nav--social
+##.nav--socials
 ##.nav-footer-social
 ##.nav-share
 ##.nav-share-btn
@@ -2184,7 +2186,6 @@ _social-bar/
 ##.rrssb-buttons-container
 ##.rss-social
 ##.rt-social-buttons
-##.s-btns
 ##.s-f__social
 ##.s-facebook
 ##.s-instagram
@@ -2318,6 +2319,7 @@ _social-bar/
 ##.share-flat
 ##.share-flipboard
 ##.share-float
+##.share-floating
 ##.share-follow
 ##.share-footer
 ##.share-head
@@ -2783,6 +2785,7 @@ _social-bar/
 ##.snsPalette
 ##.snsWrapper
 ##.sns_box
+##.sns_box_single
 ##.sns_follow
 ##.sns_right
 ##.sns_share
@@ -3300,6 +3303,7 @@ _social-bar/
 ##.tdm-social-wrapper
 ##.tdm_block_socials
 ##.tds-social1
+##.teaser_social_block_trigger
 ##.tg-socialicons
 ##.tgla7-share
 ##.thb-social-links-container
@@ -3311,6 +3315,7 @@ _social-bar/
 ##.thread-share
 ##.thread-share-bar-buttons
 ##.tk-footer-social-icons
+##.tm-follow-link-site
 ##.tm-footer-social
 ##.tm-share-this
 ##.tool-share
@@ -3418,7 +3423,6 @@ _social-bar/
 ##.usr-social
 ##.ut2-social-link-block
 ##.utility-social
-##.vaShare
 ##.vbseo_share
 ##.vc_share_link_container
 ##.vc_social_button
@@ -3585,6 +3589,7 @@ _social-bar/
 ##a[href^="https://plus.google.com/share?"]
 ##a[href^="https://reddit.com/submit?"]
 ##a[href^="https://share.flipboard.com/bookmarklet/popout?"]
+##a[href^="https://simpleshare.io/go?"]
 ##a[href^="https://t.me/share/url?"]
 ##a[href^="https://telegram.me/share/url?"]
 ##a[href^="https://twitter.com/intent/tweet?"]
@@ -3831,7 +3836,6 @@ pixivision.net##._follow-us-card
 goldderby.com##._socialMedia_hgv74_1
 france24.com##.a-share-button
 tandfonline.com##.a2a_share_target
-marriott.com,sandiegouniontribune.com,walb.com##.action-bar
 greekcitytimes.com##.adasprso-inline-container
 wccftech.com##.add-google
 usmagazine.com##.add-to-google-banner
@@ -3847,7 +3851,6 @@ chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.article-google-preferred-button
 essentiallysports.com##.article-head_es-share-container__Tkdfn
-neowin.net,seattletimes.com,thecooldown.com##.article-share
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
 newrepublic.com,thetech.com##.article-social
@@ -3941,7 +3944,6 @@ techradar.com##.flipboard-icon
 thehackernews.com##.float-share
 nypost.com##.floating-share
 nypost.com##.floating-share-wrap
-upworthy.com##.floating-social-share-column
 news18.com##.flw
 sportskeeda.com##.follow-action
 thedirect.com##.follow-bar
@@ -3979,7 +3981,6 @@ bringmethenews.com,news18.com,thehindu.com##.google-btn
 responsiblestatecraft.org##.google-cta-infy
 faroutmagazine.co.uk##.google-follow
 gamespot.com##.google-follow-us-wrapper
-pcguide.com,upworthy.com##.google-news
 crypto.news##.google-news-banner
 alarabiya.net##.google-news-callout
 cybernews.com,sammobile.com##.google-news-cta
@@ -3993,7 +3994,6 @@ sammobile.com##.google-preferred-news-source-cta
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
 nypost.com##.google-preferred-sources
 www.channelnewsasia.com##.google-preferred__button-wrapper
-azfamily.com,bolde.com,walb.com##.google-source-button
 goal.com##.google-trusted-source
 wionews.com##.googleCTAContainer
 hindustantimes.com##.googleFollow
@@ -4018,7 +4018,6 @@ hrw.org##.hrw-share
 dictionary.cambridge.org##.i-facebook
 pcguide.com##.ic_google_news
 insideclimatenews.org##.icn-share-holder
-insideclimatenews.org##.icn-share-links
 atptour.com##.icon-email
 manutd.com##.icon-share-card-lite
 thedebrief.org##.icon-wrap
@@ -4287,7 +4286,6 @@ washingtonpost.com##.wpds-c-SnBxc
 freepressjournal.in##.wrap_cont
 firstpost.com##.yt-ch
 blog.youtube##.yt-social__list
-nypost.com##.zephrModal
 securityweek.com##.zox-foot-soc
 securityweek.com##.zox-post-soc-list
 securityweek.com##.zox-top-soc-wrap
@@ -4643,6 +4641,7 @@ lifehacker.ru##.share-button__container
 aif.ru##.sharing_item
 academic.ru##.smm
 glas-javnosti.rs##.row.pt-4.pb-4
+happytv.rs##.share-action-posts
 ta3.com##.detail_text_socials
 sme.sk##.social-dialog-wrapper
 24ur.com##.flex.flex-row.items-center.justify-center.md\:justify-start.p-16.md\:p-0
