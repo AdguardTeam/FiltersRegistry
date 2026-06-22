@@ -1,9 +1,9 @@
-! Checksum: D08Am5olFGiaZxYAE6oBEA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1782060101-3600.patch
+! Checksum: D4CThaTRxU5S1zCF83OqhA
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1782126308-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.55
-! TimeUpdated: 2026-06-21T16:38:45+00:00
+! Version: 2.0.13.56
+! TimeUpdated: 2026-06-22T11:01:45+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
@@ -336,6 +336,9 @@ $removeparam=erid
 $removeparam=oly_enc_id
 $removeparam=_ga
 $removeparam=tduid
+||cdn.modrinth.com/data/$removeparam=mr_download_reason
+||cdn.modrinth.com/data/$removeparam=mr_game_version
+||cdn.modrinth.com/data/$removeparam=mr_loader
 ||tally.so^$removeparam=version
 ||tally.so^$removeparam=device
 ||owlclick.com^$removeparam=source
