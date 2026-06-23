@@ -1,8 +1,9 @@
-! Checksum: wgSlEjA00o6Qj2pxeUbu+A
+! Checksum: fhWectc4zypeVfPW+ZT1Yg
+! Diff-Path: ../patches/260/260-s-1782235220-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.1
-! TimeUpdated: 2026-06-23T11:55:23+00:00
+! Version: 2.0.0.2
+! TimeUpdated: 2026-06-23T17:17:19+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -680,8 +681,8 @@ www.ebay.com##.srp-river-answer--FAQ_KW_SRP_MODULE
 ! ============
 ! == Ecosia ==
 ! ============
-! Disable AI Overviews
-ecosia.org#%#//scriptlet('ubo-set-cookie', 'ECAIO', 'false')
+! AI-free searching
+www.ecosia.org#%#//scriptlet('ubo-set-cookie', 'ECNOAI', 'true', '', 'reload', '1')
 ! -- https://www.ecosia.org/ (Homepage)
 ! "AI Chat" in search bar
 www.ecosia.org##.omnibox-search-form__ai-chat
@@ -1178,12 +1179,18 @@ console.cloud.google.com##.pcc-zero-state-products > .ng-star-inserted:has(searc
 ! ====================================
 ! == Google Developer Documentation ==
 ! ====================================
+! Remove AI sparkle from search icon
+! -- https://developer.chrome.com/docs/devtools
+! Navbar categories
+developer.chrome.com##tab:has(> [track-name="ai assistance"])
+developer.chrome.com##tab:has(> [track-name="for agents"])
+! AI section
+developer.chrome.com##.devsite-landing-row:has(#span-idaidebug-with-aispan)
 ! -- https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema (Documentation page)
 ! "Page Summary"
 developers.google.com##devsite-key-takeaways-panel
 ! Left sidebar > "Chat" (IE: Ask About this Page)
 developers.google.com##.devsite-concierge-ai-panel--menu-item
-! Remove AI sparkle from search icon
 ! -- https://developers.google.com/s/results?q=Test (Search results)
 ! "AI Powered" results
 developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com,web.dev##devsite-search-summary
@@ -2325,8 +2332,9 @@ www.reddit.com##search-telemetry-tracker[view-events="search/view/unit"]:has(sea
 ! -- https://www.reddit.com/r/discordapp/comments/1prg44a/comment/orvnqfu/
 ! "Reddit Answers" sparkle icon in header (Mobile only)
 www.reddit.com###answers-nav-button
-! Summary of comments
+! Comment summary
 www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp)
+www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp) + hr
 ! "People also ask about" section (Mobile only)
 www.reddit.com###answers-suggested-queries-m3
 ! Suggestions to repost to AI subreddit (If post was by current user)
@@ -3019,7 +3027,7 @@ www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
 www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
 ! * Focus search bar, Ask YouTube search suggestions
 www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
-! * Remove "or ask a question" from search bar placeholder (Enabled at https://www.youtube.com/new)
+! * Remove "or ask a question" from search bar placeholder
 ! -- https://www.youtube.com/watch?v=j9gZYYOIG-M (Video page)
 ! "Ask Questions" in description
 youtube.com##yt-video-description-youchat-section-view-model
@@ -3572,7 +3580,7 @@ rule34.xxx##li:has(> [rel="sponsored"])
 ! * Only hide if option has already been enabled
 rule34.xxx###displayOptions:has(#chkFilterAI[checked])
 ! Cookie to enable "Filter AI posts"
-rule34.xxx#%#//scriptlet('ubo-set-cookie', 'filter_ai', '1')
+rule34.xxx#%#//scriptlet('ubo-set-cookie', 'filter_ai', '1', '', 'reload', '1')
 ! -- My Account > My Favorites
 ! AI tagged images
 rule34.xxx###content > .image-list > span:has( > .thumb > a > img:is([title~="ai"], [title~="ai-assisted"], [title~="ai-created"], [title~="ai-generated"], [title~="ai_art"], [title~="ai_assisted"], [title~="ai_generated"], [title~="ai_voice"]))
