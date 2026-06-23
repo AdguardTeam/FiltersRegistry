@@ -1,5 +1,5 @@
-! Checksum: v5RDsdyeGMxIAwhK38bCMw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1782109249-14400.patch
+! Checksum: Q7p86nkF+sk8rl3kSr4OhQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1782194177-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.3
@@ -688,7 +688,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||exploreinquiry.com^$all
 ||inquirygrid.com^$all
 ||iyfubh.com^$all
-||searchvity.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||5.45.123.44^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1255,9 +1254,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 /adx_iframe_$third-party
 drvhub.net##.driver-item__install
 |https://undefined/
-||adzestocp.com^$all
 ||dollopsdigital.com^$all
-||epikads.com^$all
 ||filter.*.com/filter?q=^$all
 ||fo320odk.com^$all
 ||perfsimpl.com^$all
@@ -1296,12 +1293,9 @@ drvhub.net##.driver-item__install
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||3.33.130.190^
 ||admozartxml.com^$all
-||adxfactory.com^$all
 ||adzgame.com^$all
 ||bidmyadz.com^$all
-||eximdigital.com^$all
 ||explorads.com^$all
-||flurryad.com^$all
 ||gamesvot.com^$all
 ||mainexpclkdir.com^$all
 ||mobuppsrtb.com^$all
@@ -1912,6 +1906,7 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
+##.snowflakes:not(html, body)
 /frosmo.easy.js^
 ##div.snow-container:not(:empty)
 /snowfall.min.jquery.js
@@ -2012,6 +2007,7 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ##.elementor-spacer:not(html, body)
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 ##.et_pb_divider:not(html,body)
+###top_container_spacing:empty
 indiegogo.com#?#h3:contains(/^\xA0$/):not(:contains(/\S/))
 transfermarkt.com##.clearer
 freedownloadmanager.org###unite
@@ -2416,6 +2412,8 @@ $removeparam=spReportId
 $removeparam=track_click
 $removeparam=actId
 $removeparam=oly_anon_id
+$document,removeparam=/^wickedid=.*$/i
+$document,removeparam=/^wickedsource=.*$/i
 $removeparam=s_cid
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
@@ -2475,7 +2473,6 @@ $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
 $document,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
 $removeparam=paid
-$removeparam=pacid
 $removeparam=adtype
 $removeparam=n_cid
 $removeparam=awid
@@ -3112,13 +3109,13 @@ $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
 $removeparam=subid,domain=admitad.com|mintmobile.com|secretlab.*|webmasterplan.com
+$removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com|klink.no
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|duckduckgo.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com|duck.ai
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=token,domain=al.to|combat.pl|x-kom.pl
-$removeparam=refsec,domain=barrons.com
 $removeparam=hpt,domain=cnn.com
 ||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
@@ -3421,6 +3418,9 @@ $removeparam=srsltid,document
 ||dl-protect.$removeparam=rl
 ||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
+||malwarebytes.com^$removeparam=x-affid
+||malwarebytes.com^$removeparam=ADDITIONAL_AFFID
+$removeparam=x-wts
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
 $removeparam=link_source_user_id,domain=nextdoor.com
@@ -3472,7 +3472,6 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 ||open.substack.com^$removeparam=r,document
 ||businessinsider.com^$removeparam=op,document
 ref=spreadprivacy.com$removeparam=ref
-$removeparam=caniuse_source,document
 ||github.com^$removeparam=reference_location
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
@@ -3648,6 +3647,7 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||parallels.com^$removeparam=x-source
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
+ref=the-browser$document,removeparam=ref
 ||dell.com^$removeparam=lwp
 ||microsoft.com^$removeparam=srcref
 ||microsoft^$removeparam=fromcode
@@ -3667,7 +3667,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||youtube.com/@$document,removeparam=si
 ||youtube.com/post/$document,removeparam=si
 ||youtube.com/live/$document,removeparam=si
-||youtube.com/live/$document,removeparam=is
 ||youtu.be^$document,removeparam=is
 ||donmai.us^$removeparam=z
 ||pcoptimum.ca^$document,removeparam=moeq
