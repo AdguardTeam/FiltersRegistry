@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.92.85",
-			"timeUpdated": "2026-06-23T09:45:17+0000",
+			"version": "2.1.92.86",
+			"timeUpdated": "2026-06-23T11:54:27+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.92.84",
-			"timeUpdated": "2026-06-23T09:45:19+0000",
+			"version": "2.1.92.85",
+			"timeUpdated": "2026-06-23T11:54:28+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.86.16",
-			"timeUpdated": "2026-06-23T09:46:19+0000",
+			"version": "2.0.86.17",
+			"timeUpdated": "2026-06-23T11:55:17+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1539,6 +1539,26 @@
 				4
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/259.txt"
+		},
+		{
+			"filterId": 260,
+			"name": "Stevo's AI Blocklist",
+			"description": "A filter list that hides website features which use generative AI and AI-generated content.",
+			"timeAdded": "2026-06-16T11:14:46+0000",
+			"homepage": "https://github.com/Stevoisiak/Stevos-AI-Blocklist/",
+			"expires": 864000,
+			"displayNumber": 100,
+			"groupId": 4,
+			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
+			"trustLevel": "high",
+			"version": "2.0.0.1",
+			"timeUpdated": "2026-06-23T11:55:23+0000",
+			"deprecated": false,
+			"languages": [],
+			"tags": [
+				5
+			],
+			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/260.txt"
 		}
 	]
 }
