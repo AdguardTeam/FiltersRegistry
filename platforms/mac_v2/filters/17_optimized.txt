@@ -1,9 +1,9 @@
-! Checksum: D4CThaTRxU5S1zCF83OqhA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1782126308-3600.patch
+! Checksum: g3Mviw1TcDwQQDro9BkaoA
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1782213084-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.56
-! TimeUpdated: 2026-06-22T11:01:45+00:00
+! Version: 2.0.13.57
+! TimeUpdated: 2026-06-23T11:08:13+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
@@ -336,6 +336,7 @@ $removeparam=erid
 $removeparam=oly_enc_id
 $removeparam=_ga
 $removeparam=tduid
+||ups.com^$removeparam=src
 ||cdn.modrinth.com/data/$removeparam=mr_download_reason
 ||cdn.modrinth.com/data/$removeparam=mr_game_version
 ||cdn.modrinth.com/data/$removeparam=mr_loader
@@ -2177,6 +2178,9 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ||www.yandex.$removeparam=clid
 ://yandex.$removeparam=clid
 ://yandex.$removeparam=source
+||alice.yandex.ru^$removeparam=utm_to
+||alice.yandex.ru^$removeparam=device_id
+||alice.yandex.ru^$removeparam=uuid
 ||browser.yandex.ru^$removeparam=from
 ||docs.yandex.$removeparam=uid
 ||amc.yandex.ru^$removeparam=cmn_id
