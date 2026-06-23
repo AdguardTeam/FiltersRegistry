@@ -1,9 +1,9 @@
-! Checksum: 2O/EdmdDWBhzKDfTEr0CVQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1782109260-14400.patch
+! Checksum: mIV24puzC8lK2Wx1mR/3vA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1782208154-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.78
-! TimeUpdated: 2026-06-22T06:18:04+00:00
+! Version: 2.0.24.79
+! TimeUpdated: 2026-06-23T09:46:08+00:00
 ! Expires: 12 hours (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -114,7 +114,7 @@ aftonbladet.se#?#article[class^="article-wrapper"] strong:contains(/annons/i):up
 aftonbladet.se##aside > div[class^="_wrapper"]:has(div[class^="_adLabel"])
 aftonbladet.se##div[class^="stickylogin"]
 aftonbladet.se#?#div[class^="_adLabel"]:upward(1)
-aftonbladet.se##div[data-edition-name^="ab-native-premium"], div[class^="advertory-"]:not(.advertory-header-anchor), a[href*="/brandstudio"], a[href*="/brand-studio"],  a[href*="/casinoguide"]
+aftonbladet.se##div[data-edition-name^="ab-native-premium"], a[href*="/brandstudio"], a[href*="/brand-studio"],  a[href*="/casinoguide"], div[class*="panorama-wrapper"], div[class*="insider-wrapper"]
 aftonbladet.se##h2[data-test-tag="paragraph-header"]:has(a[aria-label*="ANNONS"])
 aftonbladet.se##section[class^="twocolumnlayout-main"] > div[class^="usermsgtoast-root"]:has(iframe)
 aftonbladet.se#?#.cd-title:contains(Annons):upward(.countdown__main)
@@ -2895,6 +2895,7 @@ zeromagazine.nu##div[id^="ads"]
 /_adsmodern/*$image
 /_astro/InitializeAdverts$domain=aftonbladet.se|svd.se
 /_astro/Sifo$domain=aftonbladet.se|svd.se
+/_astro/getPulseTracker$domain=aftonbladet.se|svd.se
 /_astro/glimr$domain=svd.se
 /_astro/initTracking$domain=aftonbladet.se|svd.se
 /_glimr$domain=tv.nu
