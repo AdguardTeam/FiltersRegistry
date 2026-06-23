@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ZFSnwOJdmZoLzJUmEbjqTA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1782213074-3600.patch
+! Checksum: Odxz977tjvMW1YwJU3NkXw
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1782227385-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.57
-! TimeUpdated: 2026-06-23T11:08:13+00:00
+! Version: 2.0.13.58
+! TimeUpdated: 2026-06-23T15:07:17+00:00
 ! Expires: 5 days (update frequency)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
@@ -170,6 +170,7 @@ $removeparam=hsa_src
 $removeparam=hsa_tgt
 $removeparam=hsa_ver
 $removeparam=hsCtaTracking
+$removeparam=clckid
 $removeparam=ysclid
 $removeparam=yclid
 $removeparam=ym_tracking_id
@@ -336,6 +337,8 @@ $denyallow=lifehacker.ru|forbes.ru|kommersant.ru,removeparam=erid
 $denyallow=greenbuildingadvisor.com,removeparam=oly_enc_id
 $denyallow=login.aliexpress.us|login.aliexpress.com,removeparam=_ga
 $denyallow=tradedoubler.com,removeparam=tduid
+||onetwotrip.com^$removeparam=meta_redirectid
+||onetwotrip.com^$removeparam=srcmarker2
 ||ups.com^$removeparam=src
 ||cdn.modrinth.com/data/$removeparam=mr_download_reason
 ||cdn.modrinth.com/data/$removeparam=mr_game_version

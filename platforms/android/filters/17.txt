@@ -1,9 +1,9 @@
-! Checksum: SiQkdCKWz2TvFXnu0RoZiA
-! Diff-Path: ../patches/17/17-s-1782213039-3600.patch
+! Checksum: I/5mdNEhrhfdT1yKofqMWw
+! Diff-Path: ../patches/17/17-s-1782227355-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.57
-! TimeUpdated: 2026-06-23T11:08:13+00:00
+! Version: 2.0.13.58
+! TimeUpdated: 2026-06-23T15:07:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -277,6 +277,7 @@ $removeparam=hsa_ver
 $removeparam=hsCtaTracking
 !
 ! Yandex Metrika
+$removeparam=clckid
 $removeparam=ysclid
 $removeparam=yclid
 $removeparam=ym_tracking_id
@@ -531,6 +532,9 @@ $removeparam=tduid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233935
+||onetwotrip.com^$removeparam=meta_redirectid
+||onetwotrip.com^$removeparam=srcmarker2
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-17402052
 ||ups.com^$removeparam=src
 ! https://www.reddit.com/r/uBlockOrigin/comments/1ubz0og/remove_download_tracking_from_modrinth/

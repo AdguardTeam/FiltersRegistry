@@ -1,9 +1,9 @@
-! Checksum: G7vAgPhGNPPikogky21fPw
-! Diff-Path: ../patches/7/7-s-1782149978-3600.patch
+! Checksum: dYeSCJiJq7DVneUCzTwHyQ
+! Diff-Path: ../patches/7/7-s-1782227358-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.74.50
-! TimeUpdated: 2026-06-22T17:36:43+00:00
+! Version: 2.0.74.51
+! TimeUpdated: 2026-06-23T15:06:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1906,6 +1906,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+becoolusers.com##.ad-text
 androplus.jp##fieldset:has(> legend + div[data-link-click])
 [$path=/\/[a-z]+\/\d+\/ad$/]solispia.com#%#//scriptlet('trusted-replace-node-text', 'script', 'openModal', '/document\.addEventListener\(\'DOMContentLoaded\', function[\S\s]+?(const novelId\s*=\s*\d+;\s*const targetUrl\s*=.+?\d+";)[\S\s]+?verifying = true;\s*(try \{[\S\s]+?ad_meta:)[\S\s]+?CMの準備中です...\'\);\s*.*?\s*(try \{\s*[\S\s]+?catch\s*\(\w*\)\s*\{)[\S\s]*/', 'document.addEventListener(\'DOMContentLoaded\', async function(){$1 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));$3 return;}await sleep(5000+Math.floor(Math.random()*3000));$2 {"type":"reward","amount": 2}})});if(!res.ok)throw res.status;const j=await res.json().catch(()=>null);if(j&&j.ok){window.location.href=targetUrl;}}catch(e){}})')
 solispia.com##.ad-large-a
