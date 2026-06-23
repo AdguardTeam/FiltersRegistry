@@ -396,8 +396,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.69.84",
-			"timeUpdated": "2026-06-22T21:23:58+0000",
+			"version": "2.1.69.85",
+			"timeUpdated": "2026-06-23T01:21:03+0000",
 			"languages": []
 		},
 		{
@@ -445,8 +445,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.64.77",
-			"timeUpdated": "2026-06-22T14:18:38+0000",
+			"version": "2.1.64.78",
+			"timeUpdated": "2026-06-23T01:21:07+0000",
 			"languages": []
 		},
 		{
@@ -478,8 +478,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.92.80",
-			"timeUpdated": "2026-06-22T21:24:03+0000",
+			"version": "2.1.92.81",
+			"timeUpdated": "2026-06-23T01:21:08+0000",
 			"languages": []
 		},
 		{
@@ -523,8 +523,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.92.82",
-			"timeUpdated": "2026-06-22T21:24:05+0000",
+			"version": "2.1.92.83",
+			"timeUpdated": "2026-06-23T01:21:11+0000",
 			"languages": [
 				"it"
 			]
@@ -568,8 +568,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.92.81",
-			"timeUpdated": "2026-06-22T21:24:06+0000",
+			"version": "2.1.92.82",
+			"timeUpdated": "2026-06-23T01:21:12+0000",
 			"languages": [
 				"ar"
 			]
@@ -587,8 +587,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.92.80",
-			"timeUpdated": "2026-06-22T21:24:08+0000",
+			"version": "2.1.92.81",
+			"timeUpdated": "2026-06-23T01:21:14+0000",
 			"languages": []
 		},
 		{
@@ -668,8 +668,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.66.50",
-			"timeUpdated": "2026-06-22T21:24:11+0000",
+			"version": "2.1.66.51",
+			"timeUpdated": "2026-06-23T01:21:18+0000",
 			"languages": []
 		},
 		{
@@ -734,8 +734,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.64.77",
-			"timeUpdated": "2026-06-22T14:18:59+0000",
+			"version": "2.1.64.78",
+			"timeUpdated": "2026-06-23T01:21:25+0000",
 			"languages": []
 		},
 		{
@@ -751,8 +751,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.63.84",
-			"timeUpdated": "2026-06-22T21:24:21+0000",
+			"version": "2.1.63.85",
+			"timeUpdated": "2026-06-23T01:21:26+0000",
 			"languages": []
 		},
 		{
@@ -768,8 +768,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.64.55",
-			"timeUpdated": "2026-06-22T21:24:22+0000",
+			"version": "2.0.64.56",
+			"timeUpdated": "2026-06-23T01:21:28+0000",
 			"languages": []
 		},
 		{
@@ -900,8 +900,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.92.81",
-			"timeUpdated": "2026-06-22T21:24:28+0000",
+			"version": "2.1.92.82",
+			"timeUpdated": "2026-06-23T01:21:34+0000",
 			"languages": []
 		},
 		{
@@ -913,8 +913,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
-			"version": "2.1.8.22",
-			"timeUpdated": "2026-06-22T01:37:05+0000",
+			"version": "2.1.8.23",
+			"timeUpdated": "2026-06-23T01:21:35+0000",
 			"languages": []
 		},
 		{
@@ -977,8 +977,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.92.7",
-			"timeUpdated": "2026-06-22T21:24:29+0000",
+			"version": "2.1.92.8",
+			"timeUpdated": "2026-06-23T01:21:36+0000",
 			"languages": []
 		},
 		{
@@ -1007,8 +1007,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
-			"version": "2.0.44.21",
-			"timeUpdated": "2026-06-22T18:01:43+0000",
+			"version": "2.0.44.22",
+			"timeUpdated": "2026-06-23T01:21:36+0000",
 			"languages": [
 				"vi"
 			]
@@ -1212,8 +1212,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@list-kr/filterslists@latest/dist/filterslist-AdGuard-classic.txt",
-			"version": "2.0.24.55",
-			"timeUpdated": "2026-06-22T06:17:55+0000",
+			"version": "2.0.24.56",
+			"timeUpdated": "2026-06-23T01:21:44+0000",
 			"languages": [
 				"ko"
 			]
@@ -1278,8 +1278,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.92.82",
-			"timeUpdated": "2026-06-22T21:24:37+0000",
+			"version": "2.1.92.83",
+			"timeUpdated": "2026-06-23T01:21:45+0000",
 			"languages": []
 		},
 		{
@@ -1295,8 +1295,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.85.49",
-			"timeUpdated": "2026-06-22T21:24:38+0000",
+			"version": "2.0.85.50",
+			"timeUpdated": "2026-06-23T01:21:46+0000",
 			"languages": []
 		},
 		{
@@ -1378,8 +1378,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "1.0.38.95",
-			"timeUpdated": "2026-06-22T21:24:42+0000",
+			"version": "1.0.38.96",
+			"timeUpdated": "2026-06-23T01:21:50+0000",
 			"languages": []
 		},
 		{
@@ -1444,8 +1444,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.69.7",
-			"timeUpdated": "2026-06-22T14:19:30+0000",
+			"version": "2.1.69.8",
+			"timeUpdated": "2026-06-23T01:21:53+0000",
 			"languages": []
 		},
 		{
@@ -1523,8 +1523,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.88.88",
-			"timeUpdated": "2026-06-22T21:24:47+0000",
+			"version": "2.1.88.89",
+			"timeUpdated": "2026-06-23T01:21:56+0000",
 			"languages": []
 		},
 		{
@@ -1626,8 +1626,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.86.13",
-			"timeUpdated": "2026-06-22T21:24:52+0000",
+			"version": "2.0.86.14",
+			"timeUpdated": "2026-06-23T01:22:03+0000",
 			"languages": [
 				"hi"
 			]
@@ -1656,8 +1656,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
-			"version": "2.0.15.68",
-			"timeUpdated": "2026-06-22T14:19:45+0000",
+			"version": "2.0.15.69",
+			"timeUpdated": "2026-06-23T01:22:08+0000",
 			"languages": []
 		},
 		{
