@@ -1,9 +1,9 @@
-! Checksum: iP7fZ9lKsgkNWc8PEIyWZA
-! Diff-Path: ../patches/260/260-s-1782264170-14400.patch
+! Checksum: 2xKakxkkSUOGTEzVfJfC4g
+! Diff-Path: ../patches/260/260-s-1782335221-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.4
-! TimeUpdated: 2026-06-24T01:20:22+00:00
+! Version: 2.0.0.5
+! TimeUpdated: 2026-06-24T21:04:37+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -161,9 +161,10 @@ www.android.com###ai-on-android
 ! ========================
 ! == Archive of Our Own ==
 ! ========================
-! Works with AI generated tag
-! * TODO: Add tags synonymized with AI
-archiveofourown.org##.blurb:has(.tag:is([href="/tags/AI-Generated%20Text/works"],[href="/tags/Created%20Using%20Generative%20AI/works"],[href="/tags/AI-Generated%20Images/works"]))
+! -- https://archiveofourown.org/tags/Created%20Using%20Generative%20AI/works
+! Works tagged as "Created Using Generative AI"
+! * There are nearly 700 synonyms for "Created Using Generative AI" and it's subtags. Blocking them all would result in 38kb for one filter. Instead, I've manually added synonymns that seem semi-common based on "Other tags to include". (Full filter can be found at https://gist.github.com/Stevoisiak/c4bf2acb2a1032370183ea9d03fe5816)
+archiveofourown.org##.blurb:has(.tag:is([href="/tags/AI%20Art/works"],[href="/tags/AI%20assisted%20writing/works"],[href="/tags/AI%20assisted/works"],[href="/tags/AI%20Dungeon%20Generated/works"],[href="/tags/AI%20Generated%20Art/works"],[href="/tags/AI%20Generated%20Fic/works"],[href="/tags/AI%20generated%20story/works"],[href="/tags/AI%20generated/works"],[href="/tags/AI%20Translation/works"],[href="/tags/AI%20used%20as%20an%20assistive%20tool/works"],[href="/tags/AI%20written/works"],[href="/tags/AI-Assisted%20Translation/works"],[href="/tags/AI-Assisted%20Writing/works"],[href="/tags/AI-Assisted/works"],[href="/tags/ai-edited/works"],[href="/tags/AI-Generated%20Images/works"],[href="/tags/AI-Generated%20Text/works"],[href="/tags/AI-Generated/works"],[href="/tags/ai-written/works"],[href="/tags/ChatGPT%20generated/works"],[href="/tags/ChatGPT/works"],[href="/tags/Co-Written%20with%20AI/works"],[href="/tags/Created%20Using%20Generative%20AI/works"],[href="/tags/InferKit/works"],[href="/tags/Made%20by%20AI/works"],[href="/tags/Midjourney/works"],[href="/tags/NovelAI/works"],[href="/tags/Written%20by%20AI/works"],[href="/tags/Written%20by%20an%20AI/works"],[href="/tags/Written%20in%20collaboration%20with%20an%20AI/works"],[href="/tags/written%20with%20AI/works"]))
 ! ====================
 ! == Automate Excel ==
 ! ====================
@@ -3125,6 +3126,8 @@ www.zoom.com##[data-primary="ai"]
 ! AI notetaker banner
 www.zoom.com##.fdn-alert-banner[href^="https://www.zoom.com/en/products/ai-assistant/"]
 www.zoom.com#$#.hero__content:has(> .fdn-alert-banner[href^="https://www.zoom.com/en/products/ai-assistant/"]) { padding-top: 60px !important }
+! Promo section for AI notetaker
+www.zoom.com##.module-columns:has(.zdcm-my-notes-showcase)
 ! Virtual Agent floating icon for support chatbot
 zoom.com,zoom.us##.livesdk__invitation
 ||zoom.us/*/web-sdk/chat-client.js$script,domain=www.zoom.com|zoom.us
