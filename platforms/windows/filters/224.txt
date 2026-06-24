@@ -1,9 +1,9 @@
-! Checksum: 2xVyBWVO9LGKdn28NsDW5A
-! Diff-Path: ../patches/224/224-s-1782299367-3600.patch
+! Checksum: UhkPcSxWHgCuM2TlyaOveQ
+! Diff-Path: ../patches/224/224-s-1782326716-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.60.91
-! TimeUpdated: 2026-06-24T11:06:58+00:00
+! Version: 2.1.60.92
+! TimeUpdated: 2026-06-24T18:42:29+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1144,6 +1144,7 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+fxshu.top##.com_t > div[id]:has(> div[style*="width: 100vw; position: relative;"] > span + img)
 assume.gguaklar.cc,51cg1.com,51baoliao01.com,91cg1.com##.recommend-layer
 assume.gguaklar.cc,51cg1.com,51baoliao01.com,91cg1.com###adFloat
 ||scriptcat.org/api/*/advertise?
@@ -3199,10 +3200,10 @@ $$div[style="display: none !important;"]:contains(!function(){function a(a){var 
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217901
 /^https:\/\/www\.xiguashuwu\.com\/[a-z]{15,20}\/[a-z]{15,20}\.js\?v=/$script,domain=xiguashuwu.com
 ! Specific rules to avoid redirects on tap with very similar scripts
-360lele.cc,huoqwk.com,wap.biqugewx.info#%#//scriptlet('prevent-setTimeout', 'addEventListener("touchstart"')
+fxshu.top,360lele.cc,huoqwk.com,wap.biqugewx.info#%#//scriptlet('prevent-setTimeout', 'addEventListener("touchstart"')
 enhuku.com#%#//scriptlet('set-constant', 'adObj', 'noopFunc')
 m.13xsw.com,wap.yushuwu.cloud#%#//scriptlet('prevent-addEventListener', 'touchend', 'clientheight')
-*$script,xmlhttprequest,image,third-party,domain=360lele.cc
+*$script,xmlhttprequest,image,third-party,domain=360lele.cc|fxshu.top
 *$script,xmlhttprequest,third-party,domain=m.1024txt.com
 *$script,third-party,domain=m.roushuwu.vip|xiaoaimh.com
 m.1024txt.com#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '/(?=^(?![\s\S]*(static|jquery)))/')
