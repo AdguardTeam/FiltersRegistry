@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SC4SXS58CnYdKna6DRS0Bg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1782264184-14400.patch
+! Checksum: UZKHwEoH++xhzgzRZkLohw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1782280503-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.63.92
-! TimeUpdated: 2026-06-24T01:19:31+00:00
+! Version: 2.1.63.93
+! TimeUpdated: 2026-06-24T05:51:54+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -247,6 +247,7 @@ _social_footer_
 ###fb_widget
 ###fbbox
 ###fbbox1
+###fblike
 ###fbshare
 ###fcbk
 ###fdbk_tab
@@ -318,6 +319,7 @@ _social_footer_
 ###headerSocialIcons
 ###headersocial
 ###highlight-share
+###hover_share
 ###hshare
 ###iNavSocial
 ###iconSocialFacebook
@@ -981,7 +983,6 @@ _social_footer_
 ##.b_socialbar
 ##.badge-pinterest-share
 ##.badge-share
-##.banner-social
 ##.bc-author-socials
 ##.bc_social_icons
 ##.bctt-click-to-tweet
@@ -997,7 +998,6 @@ _social_footer_
 ##.bgShare.twiiter
 ##.bgShare.youtube
 ##.bi-share
-##.big-share-button
 ##.bimber-microshare-item-share
 ##.bio-social
 ##.bloc-social
@@ -1184,7 +1184,6 @@ _social_footer_
 ##.ds-social
 ##.dshare
 ##.dt_social_single
-##.dtm-footer-social-link
 ##.dwg-footer-plank__social
 ##.ea-share-count-button
 ##.eapps-social-share-buttons
@@ -1197,6 +1196,7 @@ _social_footer_
 ##.eg-footer-icon-vk
 ##.eg-footer-icon-youtube
 ##.ekit_social_media
+##.el-icon-facebook
 ##.elem-info__share
 ##.elementor-social-icon
 ##.elementor-social-icons-wrapper
@@ -1328,6 +1328,7 @@ _social_footer_
 ##.fbShareTrigger
 ##.fb_bar
 ##.fb_like_and_share
+##.fb_like_box
 ##.fb_report_icon
 ##.fb_share
 ##.fb_share_link
@@ -1657,7 +1658,6 @@ _social_footer_
 ##.icon-delicious
 ##.icon-digg
 ##.icon-facebook-alt
-##.icon-facebook-box
 ##.icon-facebook-circle
 ##.icon-facebook-circled
 ##.icon-facebook-icon
@@ -1904,6 +1904,7 @@ _social_footer_
 ##.m-sns
 ##.m-social-bar
 ##.m-social-share
+##.m-socialbar
 ##.m-socials
 ##.m_share
 ##.main-article-share-count
@@ -2688,6 +2689,7 @@ _social_footer_
 ##.sharing-twitter
 ##.sharing-wrap
 ##.sharing-zone
+##.sharingBox
 ##.sharingButton
 ##.sharingList
 ##.sharingPanel
@@ -3273,6 +3275,7 @@ _social_footer_
 ##.sub_jeu_social_facebook
 ##.sub_jeu_social_twitter
 ##.sub_sns
+##.sub_socialMedia
 ##.subfooter-social
 ##.svp-share
 ##.synved-social-button
@@ -3450,7 +3453,6 @@ _social_footer_
 ##.voc-social
 ##.vp-share
 ##.vs-social
-##.vshare
 ##.vuukle-powerbar
 ##.w-share
 ##.w-sharing
@@ -4156,6 +4158,7 @@ firstpost.com##.shr-ic
 welivesecurity.com##.sidebar-card-media
 tribune.com.pk##.sidebar-social-icons
 pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
+news24online.com##.single_page-social-share
 streetsblog.org##.single_sharingInner__3IoQO
 dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.site-header__social
 news.sky.com,skysports.com##.site-share-wrapper
@@ -4280,7 +4283,6 @@ destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
 californiawaterblog.com,cheknews.ca,comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-sharing-buttons
 vice.com##.wp-block-jetpack-sharing-buttons-wrapper
 techcrunch.com##.wp-block-techcrunch-social-share
-washingtonpost.com##.wpds-c-SnBxc
 freepressjournal.in##.wrap_cont
 firstpost.com##.yt-ch
 blog.youtube##.yt-social__list
@@ -4306,7 +4308,6 @@ news.yahoo.com##[data-ylk="elm:partnercta;itc:0;sec:google-pub;"]
 mothership.sg##[height="73"]
 mothership.sg##[href="https://bit.ly/3KjTj94"]
 mothership.sg##[href="https://bit.ly/3qgqzHg"]
-windowslatest.com##[href^="https://google.com/preferences/source"]
 dataconomy.com,digitaltrends.com,driveteslacanada.ca,mothership.sg##[href^="https://www.google.com/preferences/source"]
 ynetnews.com##[style="display: flex; justify-content: center; width:100%;height:65px;border: 1px solid #e6e6e6;border-radius: 5px;background-color: #fff;box-sizing: border-box; margin: 20px auto;"]
 player.amperwavepodcasting.com,stockx.com##button[aria-label="Share"]
@@ -4855,6 +4856,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||arcgis.com/apps/Nearby/app/components/Share/$~3p
 @@||assets.msn.com/bundles/*/social-bar-$~3p
 @@||cdn.flowplayer.com^*/share.min.js
+@@||commonsensemedia.org/ajax/review/$~3p,xhr
 @@||gen.jut.su/jcdn/minify?charset=*/videojs-share.$script,stylesheet,domain=jut.su
 @@||iconfinder.com/data/icons/$~3p
 @@||instagram.com/p/$subdocument,3p

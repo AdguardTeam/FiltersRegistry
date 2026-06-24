@@ -1,5 +1,5 @@
-! Checksum: EKnSAEur8vcF3Vm6x1YfIg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1782235199-14400.patch
+! Checksum: 5K8gkEzZptHQYQQl+bDkqg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1782280498-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.4
@@ -872,6 +872,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||88.255.216.16^$all
 ||adtng.com^$all
 ||anrdoezrs.net^$all
+||exmainclcknew.com^$all
 ||junclikrmedi.com^$all
 ||leoyard.com^$all
 ||martted.com^$all
@@ -1306,7 +1307,6 @@ drvhub.net##.driver-item__install
 ||driverpack.io^$document,domain=~has_extreme_amounts_of_pup_in_it.*
 ||ey43.com^$all
 ||snowvan.xyz^$all
-||unofficialtwrp.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
 ||androidweblog.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
 ||ytechb.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
 $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|ufl.edu|oecd.org|bu.edu|wikidot.com|alternativenation.net|w3.com|idpf.org|ogp.me|schema.org|detectportal.firefox.com|ocsp.r2m04.amazontrust.com|f.c2r.ts.cdn.office.net|msftconnecttest.com|launcher.thesims3.com
@@ -1513,6 +1513,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##div[class*=social_sidebar]
 ##div[class*=social_slide]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=socials-share]
+##div[class^=icon-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class^=share-options]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class^=shareLinks]
 ##div[class^=social-like]
@@ -2009,6 +2010,8 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ##.et_pb_divider:not(html,body)
 ###top_container_spacing:empty
 indiegogo.com#?#h3:contains(/^\xA0$/):not(:contains(/\S/))
+kentonline.co.uk##.clearfix + .clearfix
+kentonline.co.uk##.line + .clearfix
 transfermarkt.com##.clearer
 freedownloadmanager.org###unite
 deviantart.com##iframe[title=DealerAdIframe]
@@ -2380,6 +2383,7 @@ $removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
 $removeparam=afflid
 $removeparam=mclk
+$document,removeparam=maid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
 $removeparam=exactag_uk
@@ -3020,6 +3024,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
+||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$document,removeparam=/^from.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
 ||bilibili.com^$removeparam=bbid
@@ -3247,10 +3252,12 @@ $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||apple.com^$removeparam=mttnsubad
 $removeparam=wfr,domain=weidian.com|baidu.com
 $removeparam=organic_search_click
+$removeparam=pop,domain=etsy.com
 $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
+$removeparam=share_time,domain=etsy.com
 $document,removeparam=iid,domain=cnn.com|time.com
 ||onbuy.com^$removeparam=stat
 ||despegar.$removeparam=/^clt_.*$/
@@ -3316,6 +3323,7 @@ $removeparam=mweb_loid,domain=reddit.app.link
 $removeparam=mweb_loid_created,domain=reddit.app.link
 $removeparam=tags,domain=reddit.app.link
 ||adjust.com^$removeparam=adgroup
+$removeparam=xcreo
 $removeparam=rffrid
 $removeparam=ad_name
 ||deezer.com^$removeparam=deferredFl
@@ -3756,7 +3764,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 ##.pub_300x250:not(html,body,:empty)
 #@#.pub_300x250m
 #@#.pub_728x90
-##.pub_728x90:not(html,body,:empty)
 #@#.text-ad
 ##.text-ad:not(html,body,:empty)
 #@#.text-ad-links
