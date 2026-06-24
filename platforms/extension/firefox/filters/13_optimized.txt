@@ -1,9 +1,9 @@
-! Checksum: kf3wHpZQ8XD4/rSXsfGSzA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1782233871-3600.patch
+! Checksum: a6oK71K9lApxl/h5Vz40IA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1782305743-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.65.26
-! TimeUpdated: 2026-06-23T16:54:51+00:00
+! Version: 2.0.65.27
+! TimeUpdated: 2026-06-24T12:52:52+00:00
 ! Expires: 10 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5504,7 +5504,12 @@ turkifsalar.site##div[class]:has(> a[href^="https://cutt.ly/"])
 [$domain=/turktube\d+\.site$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.online$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.ink$/]##a[href^="https://tinyurl.com/"]
-[$domain=/hdturkifsa\d+\.com$/]##a[href="https://t.me/alperkurt1"]
+!+ NOT_VALIDATE
+.gif|$domain=/hdturkifsa\d+\.lol$/
+[$domain=/hdturkifsa\d+\.lol$/]###tg-cta-container
+[$domain=/hdturkifsa\d+\.lol$/]##.banner-grid-wrap
+[$domain=/hdturkifsa\d+\.lol$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/hdturkifsa\d+\.lol$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
 !+ NOT_VALIDATE
 ||i.ibb.co/*.gif$domain=/softtv\d+\.com$/
 [$domain=/softtv\d+\.com$/]##.slot-header_banner
