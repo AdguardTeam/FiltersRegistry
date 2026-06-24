@@ -1,9 +1,9 @@
-! Checksum: Ah6YFvQGq9z+TZ5jPeWSwg
-! Diff-Path: ../patches/224/224-s-1782257521-3600.patch
+! Checksum: sbWcub7Bibd+GoTDoDMhAg
+! Diff-Path: ../patches/224/224-s-1782285757-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.60.89
-! TimeUpdated: 2026-06-23T23:29:34+00:00
+! Version: 2.1.60.90
+! TimeUpdated: 2026-06-24T07:20:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1153,6 +1153,8 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+assume.gguaklar.cc,51cg1.com,51baoliao01.com,91cg1.com##.recommend-layer
+assume.gguaklar.cc,51cg1.com,51baoliao01.com,91cg1.com###adFloat
 ||scriptcat.org/api/*/advertise?
 51cg1.com#%#//scriptlet('set-constant', 'DPLAYER_PREROLL_AD.attachPreRollAd', 'noopFunc')
 51cg1.com##.dplayer-pre-img
@@ -3300,7 +3302,6 @@ netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] + span.tt-icon-close
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219444
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210237
 ||static.okokserver.com/uploads/lesi/$xmlhttprequest,redirect=nooptext,domain=huaren.live|huavod.net|huavod.com|huavod.top|huavod.cc
-huavod.cc,huavod.top,huavod.net,huavod.com,huaren.live#%#//scriptlet('set-constant', 'ConFig.ad_duration_ms', '0')
 huavod.cc,huavod.top,huavod.net,huavod.com,huaren.live#%#//scriptlet('trusted-set-constant', 'ConFig.config.ads', '{"pause":{"state":{}}}')
 ! TODO: remove hints when this issue is resolved - https://github.com/AdguardTeam/Scriptlets/issues/517
 ||huavod.cc/player/$replace=/let ConFig/var ConFig/,document,subdocument

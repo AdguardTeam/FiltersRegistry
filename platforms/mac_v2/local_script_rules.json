@@ -454,10 +454,6 @@
             "script": "(()=>{const t=new Set([\"VP\",\"w3\",\"JW\"]),e=/\\{return\\(.{1,5}\\)\\(\\)===.\\..\\}/,n={apply:(t,n,r)=>{if(\"function\"!=typeof t)return Reflect.apply(t,n,r);const p=t.toString();return e.test(p)&&(t=function(){return!1}),Reflect.apply(t,n,r)}},r={apply:(t,e,r)=>{let p=Reflect.apply(t,e,r);return\"function\"==typeof p&&(p=new Proxy(p,n)),p}},p={apply:(e,n,p)=>{try{const o=p[1],c=p[2]?.get;if(!o||\"function\"!=typeof c)return Reflect.apply(e,n,p);t.has(o)&&/^\\(\\)=>.$/.test(c.toString())?p[2].get=function(){return function(){return!1}}:\"A\"===o&&c.toString().includes(\"()=>i\")&&(p[2].get=new Proxy(p[2].get,r))}catch(t){}return Reflect.apply(e,n,p)}};Object.defineProperty=new Proxy(Object.defineProperty,p)})();"
         },
         {
-            "domains": "kitsune-subs.anime-odcinki.pl",
-            "script": "window.showAds = true;"
-        },
-        {
             "domains": "wykop.pl",
             "script": "(()=>{const t={apply:(t,e,r)=>{const o=r[0]&&\"href\"===r[0],n=r[1];if(e&&e instanceof HTMLAnchorElement&&o&&n&&n.includes?.(\"https://wykop.pl/api/v3/ads/redirect?data=\"))try{const t=new URL(n).searchParams.get(\"data\"),e=atob(t),o=JSON.parse(e),p=decodeURIComponent(o.target_url);(t=>{let e;try{e=new URL(t)}catch(t){return!1}return\"http:\"===e.protocol||\"https:\"===e.protocol})(p)&&(r[1]=p)}catch(o){return Reflect.apply(t,e,r)}return Reflect.apply(t,e,r)}};window.Element.prototype.setAttribute=new Proxy(window.Element.prototype.setAttribute,t)})();"
         },

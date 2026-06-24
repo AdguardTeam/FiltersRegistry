@@ -1,8 +1,8 @@
-! Checksum: 4G8m+0emf18U+3caaqmKHA
+! Checksum: h9yOZIgIUBJ14nTbTD2Ocg
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.74.51
-! TimeUpdated: 2026-06-23T15:06:55+00:00
+! Version: 2.0.74.52
+! TimeUpdated: 2026-06-24T07:20:02+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -453,6 +453,12 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234232
+mangaruu.com#@#.ad-unit:not(.textads)
+mangaruu.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+mangaruu.com#$#body > .adsbygoogle.ad-unit[style] { display: block !important; }
+mangaruu.com#$#.adguard-overlay { display: none !important; }
+mangaruu.com#$##__next > div[style*="filter:"] { filter: none !important; pointer-events: auto !important; user-select: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233289
 /yamiisoku-anti-adblock/*$domain=monhan-soku.com|yamiisoku.com|genshin-soku.com
 ! classic anti-adb?
@@ -1878,6 +1884,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+jalan.net##.p-searchResults:not([id]):has(.p-searchResultItem__body > a[href^="javascript:doYadDetailAd"])
 becoolusers.com##.ad-text
 androplus.jp##fieldset:has(> legend + div[data-link-click])
 [$path=/\/[a-z]+\/\d+\/ad$/]solispia.com#%#//scriptlet('trusted-replace-node-text', 'script', 'openModal', '/document\.addEventListener\(\'DOMContentLoaded\', function[\S\s]+?(const novelId\s*=\s*\d+;\s*const targetUrl\s*=.+?\d+";)[\S\s]+?verifying = true;\s*(try \{[\S\s]+?ad_meta:)[\S\s]+?CMの準備中です...\'\);\s*.*?\s*(try \{\s*[\S\s]+?catch\s*\(\w*\)\s*\{)[\S\s]*/', 'document.addEventListener(\'DOMContentLoaded\', async function(){$1 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));$3 return;}await sleep(5000+Math.floor(Math.random()*3000));$2 {"type":"reward","amount": 2}})});if(!res.ok)throw res.status;const j=await res.json().catch(()=>null);if(j&&j.ok){window.location.href=targetUrl;}}catch(e){}})')

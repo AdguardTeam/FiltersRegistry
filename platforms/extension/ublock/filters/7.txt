@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: HtLVAaISPQP8m2tuR/QTRA
-! Diff-Path: ../patches/7/7-s-1782227388-3600.patch
+! Checksum: FxYKpWHD0v8Lp7+4FSHRtg
+! Diff-Path: ../patches/7/7-s-1782285775-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.74.51
-! TimeUpdated: 2026-06-23T15:06:55+00:00
+! Version: 2.0.74.52
+! TimeUpdated: 2026-06-24T07:20:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -455,6 +455,12 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234232
+mangaruu.com#@#.ad-unit:not(.textads)
+mangaruu.com##+js(prevent-fetch, pagead2.googlesyndication.com)
+mangaruu.com##body > .adsbygoogle.ad-unit[style]:style(display: block !important;)
+mangaruu.com##.adguard-overlay:style(display: none !important;)
+mangaruu.com###__next > div[style*="filter:"]:style(filter: none !important; pointer-events: auto !important; user-select: auto !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233289
 /yamiisoku-anti-adblock/*$domain=monhan-soku.com|yamiisoku.com|genshin-soku.com
 ! classic anti-adb?
@@ -1886,6 +1892,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+jalan.net##.p-searchResults:not([id]):has(.p-searchResultItem__body > a[href^="javascript:doYadDetailAd"])
 becoolusers.com##.ad-text
 androplus.jp##fieldset:has(> legend + div[data-link-click])
 solispia.com##.ad-large-a
