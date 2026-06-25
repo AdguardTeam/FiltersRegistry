@@ -1,9 +1,9 @@
-! Checksum: BEdcT3KOaP6L6HuvAq0cOw
-! Diff-Path: ../patches/2/2-s-1782378979-3600.patch
+! Checksum: GACQ5SCYUTmEmoxNYHxqQg
+! Diff-Path: ../patches/2/2-s-1782385501-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.73.57
-! TimeUpdated: 2026-06-25T09:12:59+00:00
+! Version: 2.4.73.58
+! TimeUpdated: 2026-06-25T11:01:55+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -33044,6 +33044,11 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234274
+! Fixes loading comments widget
+! The problem is that some scripts (like script related to cookie notice) are loaded from ad scripts, so it should fixes the problem without necessity to unblock them
+!+ NOT_PLATFORM(ext_ff)
+gocomics.com#%#(()=>{const e={cmpConsentVendors:",s2657,",event:"cmpEvent"},n=()=>{setTimeout((()=>{"function"==typeof window.dataLayer?.push&&window.dataLayer.push(e)}),1e3)};"loading"===document.readyState?window.addEventListener("load",n):n()})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233166
 ! Website creates iframe with blank source so AdGuard app does not inject content script into it
 ! This rule overrides the src property of HTMLScriptElement in the iframe and replace it using property from the top window which is overridden by AdGuard
@@ -38079,6 +38084,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||manganato.gg/js/ads/
+||manganato.gg/images/bns/common/shirley.png
+manganato.gg##.container-chapter-reader > div[class] > a[href^="https://flax.to/"]
+androidpolice.com,babygaga.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,moms.com,movieweb.com,pocket-lint.com,pocketnow.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com###secondary div[id^="sidebar-"]
 ||ashemaletube.com/api/tiles
 stuff.co.nz###cw-brand-banner
 stuff.co.nz###fisher-funds-banner
@@ -39292,7 +39301,7 @@ viralxxxporn.com##.sidebar-adv
 comix.to##.text-center > a[href*="?utm_source"]
 comix.to#%#//scriptlet('prevent-window-open')
 ||raw.githubusercontent.com^$media,redirect=noopmp3-0.1s,domain=vidify.top
-vidify.top#%#//scriptlet('set-constant', 'Object.prototype.adUrl', '')
+myflixerfree.org,vidify.top#%#//scriptlet('set-constant', 'vastAdData', 'undefined')
 porndd.com##.winter-topbar
 ||sea.onlyfuns.win/logo.svg$domain=mydiv.net.ua
 ||mydiv.net.ua/main.js
@@ -60623,10 +60632,11 @@ $popup,third-party,domain=dood.ws,badfilter
 securegames.iwin.com#%#//scriptlet('prevent-xhr', 'gtm.js')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234000
 @@||airfind.com^$image,domain=headlinelogic.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/234280
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234039
-@@||cdn.adsninja.ca/v*/an.js$domain=thegamer.com
-@@||cdn.adsninja.ca/v*/init.js$domain=thegamer.com
-@@||cdn.adsninja.ca/v*/valstream.js$domain=thegamer.com
+@@||cdn.adsninja.ca/v*/an.js$domain=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com
+@@||cdn.adsninja.ca/v*/init.js$domain=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com
+@@||cdn.adsninja.ca/v*/valstream.js$domain=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234024
 leaflet.pub#@#.pubContent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233839
@@ -64691,6 +64701,8 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234285
+@@||discord.com/api/*/quests/$stealth=useragent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234284
 @@||unifiedapicommerce-ca.axs.com/veritix/$stealth=ip
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234211
@@ -84411,6 +84423,7 @@ browsershots.org#@#.advert_area
 ||43t53c9e.de^
 ||43vxbiffnu5y1k.cfd^
 ||43xi7958mmhf8rf.cfd^
+||440emit.net^
 ||44216f3fdf.com^
 ||4444insettings.net^
 ||4446k.com^
@@ -86900,6 +86913,7 @@ browsershots.org#@#.advert_area
 ||amxdxahyhsvjpr.com^
 ||amxrtb.com^
 ||amxwubswyl.in^
+||amxxetzokeezx.space^
 ||amylaseredears.cyou^
 ||amyldiarian.cfd^
 ||amylojobbers.cyou^
@@ -87086,6 +87100,7 @@ browsershots.org#@#.advert_area
 ||anytimebananarecoil.com^
 ||anytimespurt.com^
 ||anzzixca.in^
+||aoajgwnhfzuww.website^
 ||aoakpnxffvpnb.online^
 ||aoalmfwinbsstec23.com^
 ||aocaxppjxvhfj.online^
@@ -88085,6 +88100,7 @@ browsershots.org#@#.advert_area
 ||azygotesonless.com^
 ||azzadgasf.in^
 ||azzncoswof.com^
+||azznwuc.com^
 ||azzpkuvm.in^
 ||azzulqlecucki.space^
 ||b-m.xyz^
@@ -91344,6 +91360,7 @@ browsershots.org#@#.advert_area
 ||cibctjgdc.com^
 ||cibhmyowgsmpa.store^
 ||cibolacybeletritest.qpon^
+||ciboriahulkier.cfd^
 ||cicamica.xyz^
 ||ciclagmbabdin.online^
 ||ciderconcluded.com^
@@ -91868,6 +91885,7 @@ browsershots.org#@#.advert_area
 ||coilaetian.com^
 ||coilapprobationbyword.com^
 ||coilerslimningworks.cyou^
+||coillenormerscamisia.qpon^
 ||coinad.media^
 ||coinadster.com^
 ||coinerstenailchekhov.qpon^
@@ -92778,6 +92796,7 @@ browsershots.org#@#.advert_area
 ||ctzsryncxsdkg.site^
 ||ctzzirfslkvcv.website^
 ||cubitalgigget.qpon^
+||cubyvsstoehos.online^
 ||cuckoldbeeswaxballoon.cyou^
 ||cuckooretire.com^
 ||cuckootomb.com^
@@ -100125,6 +100144,7 @@ browsershots.org#@#.advert_area
 ||grateful-desk.com^
 ||gratefulexamination.com^
 ||grateimperial.com^
+||gratesrhachi.cfd^
 ||gratiabehew.qpon^
 ||gratificationpotsstrode.com^
 ||gratinggutdeprive.com^
@@ -103808,6 +103828,7 @@ browsershots.org#@#.advert_area
 ||jagged-friendship.pro^
 ||jaggedsink.pro^
 ||jagisjbavpwdj.space^
+||jaguarinstils.cfd^
 ||jahvehzingare.cyou^
 ||jahwgcaskcxdl.space^
 ||jailishleggin.cyou^
@@ -105110,6 +105131,7 @@ browsershots.org#@#.advert_area
 ||kerbsboatmen.cfd^
 ||kercherbumpsy.com^
 ||kernelbudstwig.com^
+||kernespalatalthigger.cfd^
 ||kerot.xyz^
 ||kerriasoutliptreaty.cyou^
 ||kerricastesokras.cfd^
@@ -105925,6 +105947,7 @@ browsershots.org#@#.advert_area
 ||kyvaeggfnvefc.space^
 ||kyvnrifs.com^
 ||kywivixcdwbsm.online^
+||kywvfarsxnohn.com^
 ||kyxonasaiwycf.site^
 ||kzaflsrymgag.com^
 ||kzagvdulumvgl.site^
@@ -108693,6 +108716,7 @@ browsershots.org#@#.advert_area
 ||mlnadvertising.com^
 ||mlnbsdowzejzz.website^
 ||mlnkndrxf.com^
+||mlpstxhfndbzv.site^
 ||mlptyzbdtleiq.site^
 ||mlqcixbbgdwij.online^
 ||mlrhqstznhemx.site^
@@ -110167,6 +110191,7 @@ browsershots.org#@#.advert_area
 ||nifty-tomorrow.pro^
 ||nigelcrammer.cfd^
 ||nighedacutestfoxie.cfd^
+||nighswearily.cyou^
 ||nightbesties.com^
 ||nighter.club^
 ||nightmarenomad.com^
@@ -110507,6 +110532,7 @@ browsershots.org#@#.advert_area
 ||noosebanghad.com^
 ||nootkabonete.com^
 ||nopahaes.com^
+||nopalsabend.cfd^
 ||nope.xn--mgbkt9eckr.net^
 ||nope.xn--ygba1c.wtf^
 ||noqxfuqrbngpi.space^
@@ -110655,6 +110681,7 @@ browsershots.org#@#.advert_area
 ||nqdrbwtcsu.com^
 ||nqdxwmnpjpoiw.site^
 ||nqelooikvxcqw.space^
+||nqfckzg45ttu1uubkv2pfi57.cfd^
 ||nqfoqsnqemb.com^
 ||nqfwzphqxjbqo.store^
 ||nqgokpyktbkbm.space^
@@ -115093,6 +115120,7 @@ browsershots.org#@#.advert_area
 ||pxaukrkmuqmwbn.com^
 ||pxbjmbnllzvhl.site^
 ||pxctpszddyyan.site^
+||pxejwtuyml.com^
 ||pxekfmmylcrqo.space^
 ||pxgruigwgorib.website^
 ||pxgvyiizzmgqr.site^
@@ -116152,6 +116180,7 @@ browsershots.org#@#.advert_area
 ||ramppopulateresponse.com^
 ||ramtagustinghaviour.cfd^
 ||ramulussaip.com^
+||ranchmohawks.qpon^
 ||ranchsatin.com^
 ||rancidframingyet.com^
 ||rancidmorsel.com^
@@ -116953,6 +116982,7 @@ browsershots.org#@#.advert_area
 ||reverencepolite.com^
 ||reverendfry.com^
 ||reverents.xyz^
+||reversepatise.cyou^
 ||reversespelling.com^
 ||reversionprunesterrific.com^
 ||revfusion.net^
@@ -117156,6 +117186,7 @@ browsershots.org#@#.advert_area
 ||rightfullyincomparablefortnight.com^
 ||rightlanguage.pro^
 ||rightpiece.pro^
+||rightshymnic.cyou^
 ||rightyclasp.com^
 ||rightymatch.com^
 ||rigid-push.pro^
@@ -117988,6 +118019,7 @@ browsershots.org#@#.advert_area
 ||rxscledbyfgos.site^
 ||rxthdr.com^
 ||rxvglcimc.com^
+||rxvm745j7enijf6tup7e.rest^
 ||rxvyaqqvdnblc.space^
 ||rxwjetugafkwt.online^
 ||ryapalta.com^
@@ -118609,6 +118641,7 @@ browsershots.org#@#.advert_area
 ||sedatesturine.cfd^
 ||sedatingnews.com^
 ||sedativequickie.com^
+||sedgebkt.cyou^
 ||sedodna.com^
 ||seduceboozeblackmail.com^
 ||seducemover.com^
@@ -120523,6 +120556,7 @@ browsershots.org#@#.advert_area
 ||steakeffort.com^
 ||steakgrudgepaeon.cyou^
 ||steakordeal.com^
+||stealthbros.qpon^
 ||stealthtooting.com^
 ||steamabundanceslope.com^
 ||steednasalis.com^
@@ -122926,6 +122960,7 @@ browsershots.org#@#.advert_area
 ||trigami.com^
 ||trijetsnilrosters.qpon^
 ||trillisept.cyou^
+||trilobefdub.qpon^
 ||trim-bicycle.com^
 ||trim-tone.pro^
 ||trimchafegrove.com^
@@ -122949,6 +122984,7 @@ browsershots.org#@#.advert_area
 ||trissinted.com^
 ||tritoloarca.com^
 ||tritorboraxes.com^
+||tritylofays.qpon^
 ||triumphantthingsreading.com^
 ||triumphcommodity.com^
 ||triumphhello.com^
@@ -123315,6 +123351,7 @@ browsershots.org#@#.advert_area
 ||tvqrsvhqmcten.website^
 ||tvqxdpxygve.com^
 ||tvrqlfdtfxtsh.space^
+||tvsvowhcdfpar.space^
 ||tvtfozlff1iqj5f41vwot4bwuqr6.cfd^
 ||tvvbtwcvbcygh.online^
 ||tvvydeysyzwnl.site^
@@ -126596,6 +126633,7 @@ browsershots.org#@#.advert_area
 ||wendicrouthy.com^
 ||wendxktstjx.net^
 ||wengppoiyqsfd.site^
+||wenldltyvxwda.site^
 ||wenniergds.cfd^
 ||wenog.com^
 ||wenoolgo.icu^
@@ -127867,6 +127905,7 @@ browsershots.org#@#.advert_area
 ||xcpqcndbynfcv.website^
 ||xcqfaclqifemm.site^
 ||xcqnheljudxtrm.com^
+||xcrxijlvzxtbn.website^
 ||xcspiqvlapeted.com^
 ||xcuecskkzbqy.com^
 ||xcvfqnxr.net^

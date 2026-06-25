@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SZKl4GwgsVTfVgBUpBOhjA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782379000-3600.patch
+! Checksum: juxaZO9MejGSnhoEc0tZ0A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782385526-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.73.57
-! TimeUpdated: 2026-06-25T09:12:59+00:00
+! Version: 2.4.73.58
+! TimeUpdated: 2026-06-25T11:01:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32798,6 +32798,10 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234274
+! Fixes loading comments widget
+! The problem is that some scripts (like script related to cookie notice) are loaded from ad scripts, so it should fixes the problem without necessity to unblock them
+!+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233166
 ! Website creates iframe with blank source so AdGuard app does not inject content script into it
 ! This rule overrides the src property of HTMLScriptElement in the iframe and replace it using property from the top window which is overridden by AdGuard
@@ -37436,6 +37440,10 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||manganato.gg/js/ads/
+||manganato.gg/images/bns/common/shirley.png
+manganato.gg##.container-chapter-reader > div[class] > a[href^="https://flax.to/"]
+androidpolice.com,babygaga.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,moms.com,movieweb.com,pocket-lint.com,pocketnow.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com###secondary div[id^="sidebar-"]
 ||ashemaletube.com/api/tiles
 stuff.co.nz###cw-brand-banner
 stuff.co.nz###fisher-funds-banner
@@ -38637,7 +38645,7 @@ viralxxxporn.com##.sidebar-adv
 comix.to##.text-center > a[href*="?utm_source"]
 comix.to##+js(no-window-open-if)
 ||raw.githubusercontent.com^$media,redirect=noop-0.1s.mp3,domain=vidify.top
-vidify.top##+js(set-constant, Object.prototype.adUrl, '')
+myflixerfree.org,vidify.top##+js(set-constant, vastAdData, undefined)
 porndd.com##.winter-topbar
 ||sea.onlyfuns.win/logo.svg$domain=mydiv.net.ua
 ||mydiv.net.ua/main.js
@@ -59921,10 +59929,11 @@ $popup,3p,domain=dood.ws,badfilter
 securegames.iwin.com##+js(no-xhr-if, gtm.js)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234000
 @@||airfind.com^$image,domain=headlinelogic.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/234280
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234039
-@@||cdn.adsninja.ca/v*/an.js$domain=thegamer.com
-@@||cdn.adsninja.ca/v*/init.js$domain=thegamer.com
-@@||cdn.adsninja.ca/v*/valstream.js$domain=thegamer.com
+@@||cdn.adsninja.ca/v*/an.js$domain=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com
+@@||cdn.adsninja.ca/v*/init.js$domain=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com
+@@||cdn.adsninja.ca/v*/valstream.js$domain=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234024
 leaflet.pub#@#.pubContent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233839
@@ -64000,6 +64009,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234285
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234284
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234211
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234127
