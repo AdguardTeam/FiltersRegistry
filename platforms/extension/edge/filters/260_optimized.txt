@@ -1,9 +1,9 @@
-! Checksum: 4qKWela5OKHqt7KvBRT3fg
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1782393577-14400.patch
+! Checksum: 1o45h6WubCOvWJY7Br3ISQ
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1782407886-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.6
-! TimeUpdated: 2026-06-25T13:17:03+00:00
+! Version: 2.0.0.7
+! TimeUpdated: 2026-06-25T17:15:52+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -90,6 +90,7 @@ www.bing.com###b-scopeListItem-conv
 www.bing.com##.b_ans:has(.with_ai)
 ||www.bing.com/cmc/fetch$xmlhttprequest,domain=www.bing.com
 www.bing.com###b_copilot_search_container
+www.bing.com##[data-viewname="VerticalHeaderFlyout"]:has([href^="https://bing.com/tools/ai/"])
 www.bing.com##.b_ans.b_top:has(> .cht_container)
 www.bing.com##.b_ans .copans_ttl
 www.bing.com###imgcrtr_key
@@ -290,9 +291,6 @@ github.com##.ActionList-sectionDivider:has([data-command-name="search-copilot-ch
 github.com##.ActionList-sectionDivider:has(+ .ActionList-sectionDivider [data-command-name="search-copilot-chat"])
 github.com##[id$="-tab-copilot_chat_custom_instructions"]:has(.octicon-eye-closed)
 github.com##.copilotPreview__container
-github.com###feed-item-0 .mt-1.mb-1 > .tmp-px-3:has([data-hydro-click*='"card_type":"TRENDING_REPOSITORY"']:is([href^="/anthropics/claude"], [href="/anthropics/knowledge-work-plugins"], [href^="/Lum1104/Understand-Anything"], [href="/rohitg00/ai-engineering-from-scratch"]))
-github.com###feed-item-0 .mt-1.mb-1 > .tmp-px-3:has([data-hydro-click*='"card_type":"TRENDING_REPOSITORY"']:is([href^="/anthropics/claude"], [href="/anthropics/knowledge-work-plugins"], [href^="/Lum1104/Understand-Anything"], [href="/rohitg00/ai-engineering-from-scratch"])) + div > #feed-item-0 .tmp-mb-3.mt-2
-github.com###feed-item-0 #feed-item-0:has([data-hydro-click*='"card_type":"TRENDING_REPOSITORY"']:is([href^="/anthropics/claude"], [href="/anthropics/knowledge-work-plugins"], [href^="/Lum1104/Understand-Anything"], [href="/rohitg00/ai-engineering-from-scratch"]))
 github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
 github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has(:is([href*="claude"], [href*="copilot"], [href*="gemini"], [href*="gpt-"], [href*="grok"], [href*="opus"]))
