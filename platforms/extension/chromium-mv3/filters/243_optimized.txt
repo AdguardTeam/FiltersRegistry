@@ -1,8 +1,8 @@
-! Checksum: z1KwjBBkbwReTRHt7QawRg
+! Checksum: 6BggPDjqcJx/t/Ezou8uHQ
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.79
-! TimeUpdated: 2026-06-23T09:46:08+00:00
+! Version: 2.0.24.80
+! TimeUpdated: 2026-06-25T05:53:07+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -906,7 +906,7 @@ kingmagazine.se##.card-partner, .partner
 kingmagazine.se#?#.card-partner:upward(1)
 kingsizemag.se##div#video-overlay, div.sidebar_frame, #affiliates, #affiliates + .text, #popup-interstitial-overlay, .cu_banner, #interstitial-overlay, .kingsize-native, .kingsize-native-article
 kittad.se###header-top, div[data-hook="consent-banner-root"]
-klart.se##div[id^="sp_message_container"], #overlay, .-panorama-ad-wrapper
+klart.se##div[id^="sp_message_container"], #overlay, .-panorama-ad-wrapper, div[id^="ad-wrapper"]
 klart.se#%#//scriptlet('ubo-set', 'advertoryFluepapir', 'true')
 klart.se#?#.ad-text:contains(/annons/i):upward(.content-box-list__item)
 klart.se,hockeynews.se,fotbolltransfers.com,hitta.se,sverigerunt.se##a[rel*="sponsored"]
@@ -1246,15 +1246,13 @@ pressbladet.se,svenskpress.se,foretagsbladet.se,gestrikemagasinet.se,cfanytt.se,
 pricerunner.se##div[class$="ProductList-grid"] > div[class^="pr-"]:has(a[href*="/gotostore"][target="_blank"])
 pricerunner.se#?#span[class^="pr-"]:contains(ANNONS):upward(a)
 prisbot.se###hv-gdpr
-prisjakt.nu##.pjra-relative, .outsider-ads, div[class^="AdPlacementWrapper"], .pjra\:w-\[980px\].pjra\:h-\[240px\]
+prisjakt.nu##.pjra-relative, .outsider-ads, div[class^="AdPlacementWrapper"], .pjra\:w-\[980px\].pjra\:h-\[240px\], .max-skyscraper-ads\:hidden
 proletaren.se##.brxe-div:empty, .brx-popup
 proshop.se##.site-background-banner
 proshop.se#$#:is(body, .site-container-fullwidth) { background-image: none !important; }
 psykoterapicentrum.se#?#span[style="background-color: #FFFF00"]:contains(/annons/i):upward(1)
 psykoterapicentrum.se###omtag p[style^="margin-top"]:not([class]):has(a[target="_blank"])
 psykoterapicentrum.se##.textmenyspalt:has(img[src^="bilder/annons"])
-qasa.se##div[data-state="open"]:empty
-qasa.se#%#//scriptlet('ubo-aeld', 'wheel')
 quizza.nu,elbilen.se,ingenjorsjobb.se###takeover
 qx.se##.qxa-container, .leaky-popup-banner, .qxasection, a[href^="https://www.qx.se/native/"]
 rabattsok.se,prv.se###cookie-bar
@@ -2087,6 +2085,7 @@ zeromagazine.nu##div[id^="ads"]
 /adtracker$domain=beernews.se
 /adtrax/imp?
 /advertisement-dfp$script
+/advertising-podlet$domain=blocket.se
 /ad-render$domain=internetmedicin.se
 /ad-slider.js$domain=samtiden.nu
 /ad-takeover
@@ -2663,6 +2662,7 @@ zeromagazine.nu##div[id^="ads"]
 /publisher/asjs?$domain=bredband.se
 /pub.php$domain=svenskadating.com
 /pulsetracking$script
+/pulse-event-listener$domain=blocket.se
 /pum/*$domain=dagenslogistik.se|battrestadsdel.se|skaneplus.se|magasinetkonkret.se|tobaksfakta.se|a-traktorer.se
 /p/js/pa-$domain=feber.se|tjock.se
 /p/rp$xmlhttprequest,domain=feber.se|tjock.se
@@ -3213,7 +3213,6 @@ _banner.php?$domain=tvmatchen.nu
 ||gopeach.se^$third-party
 ||go.affiliationcloud.com^$third-party
 ||go.ezodn.com/hb/$domain=wernamaten.se|sanghafte.se|xn--gtboken-exa.se
-||go.qasa.se^$ping
 ||gravito.net^$domain=hitta.se|gp.se|bohuslaningen.se|stromstadstidning.se|markposten.se|harrydaposten.se|partilletidning.se|sttidningen.se|molndalsposten.se|kungalvsposten.se|kungsbackaposten.se|alingsastidning.se|ttela.se|hallandsposten.se|hn.se|mellerudsnyheter.se|moviezine.se
 ||growthbook.io^$domain=allas.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se|motherhood.se|lokalguiden.se
 ||gstatic.com/partners/badge$subdocument
@@ -3453,9 +3452,9 @@ _banner.php?$domain=tvmatchen.nu
 ||script.e-space.se^$third-party
 ||script.unseald.com/antenna
 ||sdkconfig.pulse.schibsted.io/js/config.json$xmlhttprequest,redirect=noopjson,domain=tv.nu
-||sdkconfig.pulse.schibsted.io^$domain=aftonbladet.se|omni.se|svd.se|prisjakt.nu|bytbil.com|klart.se|tv4.se|koket.se
+||sdkconfig.pulse.schibsted.io^$domain=aftonbladet.se|omni.se|svd.se|klart.se|tv4.se|koket.se
 ||sdk-cdn.pulse.m10s.io^$domain=blocket.se
-||sdk.pulse.schibsted.com^$script,domain=aftonbladet.se|~tv.aftonbladet.se|omni.se|svd.se|prisjakt.nu|bytbil.com
+||sdk.pulse.schibsted.com^$script,domain=aftonbladet.se|~tv.aftonbladet.se|omni.se|svd.se
 ||seenthis.co^$third-party
 ||seenthis.io^$third-party
 ||seenthis.se^$third-party
