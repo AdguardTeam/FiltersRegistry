@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: juxaZO9MejGSnhoEc0tZ0A
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782385526-3600.patch
+! Checksum: kRb/Z+ngoGkenk8RAsUc0Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782392256-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.73.58
-! TimeUpdated: 2026-06-25T11:01:55+00:00
+! Version: 2.4.73.59
+! TimeUpdated: 2026-06-25T12:53:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25461,7 +25461,7 @@ roweroweporady.pl#@#.ad_container
 wawa.info##.grid__ad
 wawa.info##.custom-html-box
 wawa.info##.adv
-przelom.pl##.baner
+tkn24.pl,przelom.pl##.baner
 miejskireporter.pl##.mr-ad-slot
 smaki.pl##.ad-aside
 smaki.pl###page-box-logotypes > .section-partners
@@ -25747,6 +25747,16 @@ bieganie.pl##.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/234319
+miastorumia.pl#@#.ad
+miastorumia.pl#@#.ads
+miastorumia.pl#@#.google-ad
+miastorumia.pl##+js(no-setTimeout-if, /adblock|\.offsetHeight[\s]*?===[\s]*?0/)
+miastorumia.pl##.banners
+miastorumia.pl###sidebar > a > img
+miastorumia.pl###sidebar #posts_custom_box > .content > a > img
+miastorumia.pl##+js(remove-node-text, #text, /^[\s]*?Reklama[\s]*?$/, #sidebar)
+miastorumia.pl##+js(remove-node-text, #text, /^[\s]*?Reklama[\s]*?$/, #sidebar #posts_custom_box > .content)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223442
 !+ NOT_OPTIMIZED
 juvepoland.com###jedynka
@@ -64009,6 +64019,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234321
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234285
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234284
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234211
