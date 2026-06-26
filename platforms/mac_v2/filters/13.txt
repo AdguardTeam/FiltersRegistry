@@ -1,9 +1,9 @@
-! Checksum: ZkCi1wJIuF1VbgYAnL+89g
-! Diff-Path: ../patches/13/13-s-1782472171-3600.patch
+! Checksum: BLJ9lV3kVnvYrEtLu1o0PA
+! Diff-Path: ../patches/13/13-s-1782478523-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.65.33
-! TimeUpdated: 2026-06-26T11:06:06+00:00
+! Version: 2.0.65.34
+! TimeUpdated: 2026-06-26T12:51:59+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5952,6 +5952,18 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: sadeceifsa*.lol
+! Source: sadeceifsa11.lol
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+.gif|$domain=/sadeceifsa\d+\.lol$/
+[$domain=/sadeceifsa\d+\.lol$/]###tg-cta-container
+[$domain=/sadeceifsa\d+\.lol$/]##.banner-grid-wrap
+[$domain=/sadeceifsa\d+\.lol$/]##article[data-ad-pos]
+[$domain=/sadeceifsa\d+\.lol$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/sadeceifsa\d+\.lol$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
+[$domain=/sadeceifsa\d+\.lol$/]$$script:contains(pickEngine)
+!
 ! Frequently changed domains: dizimor*.com.tr
 ! Source: dizimor1.com.tr
 x.palv2.cfd#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollVideoUrl', '/prerollVideoUrl = "https:.*\.mp4";/', 'prerollVideoUrl = "";')
@@ -6065,7 +6077,7 @@ turkifsalar.site##div[class]:has(> a[href^="https://cutt.ly/"])
 [$domain=/turktube\d+\.online$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.ink$/]##a[href^="https://tinyurl.com/"]
 !
-! Frequently changed domains: hdturkifsa*.lol
+! Frequently changed domains: hdturkifsa*.icu
 ! Source: hdturkifsa45.icu
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE

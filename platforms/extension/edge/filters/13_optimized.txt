@@ -1,9 +1,9 @@
-! Checksum: yy09GKlZOTwafGCyp65WPw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1782472144-3600.patch
+! Checksum: En1FlcSrZvYDj0CoKwRmyg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1782478495-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.65.33
-! TimeUpdated: 2026-06-26T11:06:06+00:00
+! Version: 2.0.65.34
+! TimeUpdated: 2026-06-26T12:51:59+00:00
 ! Expires: 10 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5421,6 +5421,13 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+!+ NOT_VALIDATE
+.gif|$domain=/sadeceifsa\d+\.lol$/
+[$domain=/sadeceifsa\d+\.lol$/]###tg-cta-container
+[$domain=/sadeceifsa\d+\.lol$/]##.banner-grid-wrap
+[$domain=/sadeceifsa\d+\.lol$/]##article[data-ad-pos]
+[$domain=/sadeceifsa\d+\.lol$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/sadeceifsa\d+\.lol$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
 x.palv2.cfd#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollVideoUrl', '/prerollVideoUrl = "https:.*\.mp4";/', 'prerollVideoUrl = "";')
 ||blogger.googleusercontent.com/img/$domain=x.palv2.cfd
 x.palv2.cfd###adPlayerBanner
