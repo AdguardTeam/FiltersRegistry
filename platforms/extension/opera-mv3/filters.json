@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.93.1",
-			"timeUpdated": "2026-06-25T21:05:13+0000",
+			"version": "2.1.93.2",
+			"timeUpdated": "2026-06-26T01:26:41+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.93.0",
-			"timeUpdated": "2026-06-25T21:05:15+0000",
+			"version": "2.1.93.1",
+			"timeUpdated": "2026-06-26T01:26:43+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1099,8 +1099,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.8.27",
-			"timeUpdated": "2026-06-25T13:16:14+0000",
+			"version": "2.1.8.28",
+			"timeUpdated": "2026-06-26T01:27:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.86.32",
-			"timeUpdated": "2026-06-25T21:06:10+0000",
+			"version": "2.0.86.33",
+			"timeUpdated": "2026-06-26T01:27:37+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1471,8 +1471,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.15.74",
-			"timeUpdated": "2026-06-25T13:16:59+0000",
+			"version": "2.0.15.75",
+			"timeUpdated": "2026-06-26T01:27:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
