@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 3mEYOW7rOfoOA6v55unDVw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1782372250-3600.patch
+! Checksum: mxZS8LnukYXBrQIVpHw+jg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1782443905-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.89
@@ -365,7 +365,6 @@ challenges.fr##.widget-poool-engage
 ||7cd77.v.fwmrm.net/ad/
 ||static.filecrypt.to/js/aaaaa*$script
 bonjour-ratp.fr###main > div:has([style*="placeholder_ad"])
-cimtchau.ca##.pub-box + p:contains(Publicité)
 europe1.fr##.ads-inread
 europe1.fr##.content-display[class*="ban-h"]
 europe1.fr###block-europe1-pubatfsidebar
@@ -1525,6 +1524,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 =assignAds&
 =dynamic_banner&
 =GetAdHtml&
+=goto_adv&
 =iframe_pub&
 =popunder&
 =publicite&
@@ -1622,6 +1622,7 @@ _ad160x600.
 _ad_agency_
 _ad_campaign_
 _ad_images_
+_ad_literature.
 _ad_top|
 _ad_unit.
 _ad_view_
@@ -1962,6 +1963,7 @@ _build=iclick-$popup
 ||popupmaker.com^$3p
 ||pornme.pm^$3p
 ||pprx.work^$3p
+||promo.alienbiz.com^$3p
 ||publy.net^$3p
 ||pubstack.io^$3p
 ||pwspace.com^$3p
@@ -2861,6 +2863,7 @@ _build=iclick-$popup
 ||rbfour.bid^
 ||rbone.link^
 ||rbp1.ru^
+||rbp2.ru^
 ||rbp2.site^
 ||rbp3.ru^
 ||rbp63841.ru^
@@ -3244,7 +3247,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
 ||annuaire-generaliste.fr/affiche_logo.php?
 ||api.gamerprices.com/compare/$3p
-||apycdn.com^*/banner/
 ||arc.io/widget$3p
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$3p
@@ -3356,7 +3358,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||placelibertine.com^$image,3p
 ||planete-hit.com/hit.php?
 ||pm.gamedistribution.com^
-||powerpress.fr/services/$3p
 ||prehraj.to^*/banner
 ||prettybigescorts.com/images/$3p
 ||promo.japanhdv.com^
@@ -3608,6 +3609,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||emploipartner.com/template/pubs/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
+||endurotribe.com/wp-content/uploads/*/fond-site-
 ||fiches-auto.fr/_carre_300_
 ||file-upload.net/include/$subdocument
 ||firebasestorage.googleapis.com^$domain=avito.ma
@@ -3727,6 +3729,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ||sexefelin.com/images/*.gif
 ||signification-prenom.com/Images/voyance-par-telephone.gif
 ||skitour.fr/divers/a/
+||sky-animes.com/scripts/liens.php
 ||slideplayer.*/*/*/|$image
 ||smoothpre.com/ad?
 ||sobusygirls.fr/uploads/editor/valentin.jpg
@@ -4095,7 +4098,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ###small-banner-ad
 ###solreklam
 ###sp-entete-pour-la-pub
-###spaceForPub
 ###splashbox-advcorner
 ###sponsor-block
 ###sponsor_google
@@ -4281,6 +4283,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.jnews_article_top_ads
 ##.job-ads
 ##.js-ads-imu-sticky
+##.jt-poublicidadContainer
 ##.la-une__mobile-ads
 ##.label-pub-span
 ##.labelPub
@@ -4298,7 +4301,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.liens-sponsorises__external
 ##.line-adv
 ##.logo-right-ads
-##.logo_pub
 ##.m-adbanner--megaban
 ##.map_fond_pub
 ##.marketing-container
@@ -4394,6 +4396,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.pub-label
 ##.pub-pave
 ##.pub-promo
+##.pub-push-produit
 ##.pub-replace
 ##.pub-right
 ##.pub-text
@@ -4518,6 +4521,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.removeAds
 ##.remove_ads
 ##.rightPub
+##.rightRailAdContainer
 ##.right_ad_box2
 ##.right_advertissment
 ##.right_middle_ad
@@ -4529,7 +4533,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.shareaholic-canvas
 ##.shareaholic-dis-ad-col-2
 ##.shopperAds
-##.shvertise-banner
 ##.side-pub
 ##.side-pub-img
 ##.side_slide_pub
@@ -4571,7 +4574,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.text_pub
 ##.texte_ads
 ##.texte_ads_plug
-##.threadSponsor
 ##.thumb_player_pub
 ##.timeline-media--ad
 ##.tipps-content-ad
@@ -4588,6 +4590,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.tradingCenterAd
 ##.txt-pub
 ##.txt-top-publicity
+##.unForceAdBlock
 ##.underplayer_banner
 ##.ustreklam
 ##.vda-block
@@ -4609,6 +4612,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|allviids.xyz
 ##.widgetadv
 ##.widgetpub
 ##.window-ad-container
+##.with-ad-top
 ##.wppasrotate
 ##.wrap-pub
 ##.wrapper.ad
@@ -4867,6 +4871,7 @@ darjadida.com##.banner_125x125
 bfmtv.com##.banner_top
 turf-fr.com##.banners-con
 multiup.io##.bg-info
+iladit.com##.bg-pub-interne
 ennaharonline.com##.big-ad2
 journaldemontreal.com##.bigbox-container
 autonews.fr##.bl-partner
@@ -4907,6 +4912,7 @@ howtofix.guide##.eds-animate
 wp-infinity.com##.entry-featured
 jemangejemincis.fr##.entry-footer
 manga-news.com##.external-link
+solvusoft.com##.fileviewpro
 sous-la-mer.com##.flexslider
 gameblog.fr##.footer__partners
 tukif.com##.footer_partner_container_wrapper
@@ -4961,7 +4967,6 @@ cdiscount.com##.lpMBan
 ma-reduc.com##.m-coveringIab
 cuisineactuelle.fr##.magazineBlock
 allocine.fr##.main-banner
-leparisien.fr##.marketingParisien
 driverscloud.com##.mcdescresumepubnews
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
@@ -4995,6 +5000,7 @@ jardiner-malin.fr##.parent-billboard
 portail.free.fr,sante-dz.com##.partenaire
 boursorama.com,caradisiac.com,dunod.com,ficam.ma,lesechos.fr,lfp.fr,mangario.fr,nouvelobs.com,saint-etienne.fr##.partenaires
 constructeurdemaison.net,ffr.fr,gameblog.fr,lexpress.fr,mensup.fr,swissquote.ch,turbo.fr##.partner
+lequotidiendumedecin.fr##.partner-container
 rtl.fr##.partner-mdl
 caci.dz,lavenir.net,nintendo-master.com,ogaming.tv,savefrom.net##.partners
 grands-reportages.com,montagnes-magazine.com##.pavepub
