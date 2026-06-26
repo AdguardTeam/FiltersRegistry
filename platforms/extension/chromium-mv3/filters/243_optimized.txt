@@ -1,8 +1,8 @@
-! Checksum: 6BggPDjqcJx/t/Ezou8uHQ
+! Checksum: Q4KlXMzIjru2ls6QUXV7Xw
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.80
-! TimeUpdated: 2026-06-25T05:53:07+00:00
+! Version: 2.0.24.81
+! TimeUpdated: 2026-06-26T09:44:51+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -113,13 +113,14 @@ aftonbladet.se#?#article[class^="article-wrapper"] strong:contains(/annons/i):up
 aftonbladet.se##aside > div[class^="_wrapper"]:has(div[class^="_adLabel"])
 aftonbladet.se##div[class^="stickylogin"]
 aftonbladet.se#?#div[class^="_adLabel"]:upward(1)
-aftonbladet.se##div[data-edition-name^="ab-native-premium"], a[href*="/brandstudio"], a[href*="/brand-studio"],  a[href*="/casinoguide"], div[class*="panorama-wrapper"], div[class*="insider-wrapper"]
+aftonbladet.se##div[data-edition-name^="ab-native-premium"], a[href*="/brandstudio"], a[href*="/brand-studio"],  a[href*="/casinoguide"], div[class*="panorama-wrapper"], div[class*="insider-wrapper"], #sps-bottombar-poster
 aftonbladet.se##h2[data-test-tag="paragraph-header"]:has(a[aria-label*="ANNONS"])
 aftonbladet.se##section[class^="twocolumnlayout-main"] > div[class^="usermsgtoast-root"]:has(iframe)
 aftonbladet.se#?#.cd-title:contains(Annons):upward(.countdown__main)
 aftonbladet.se#?#.label-medium:contains(/annonslänkar/i):upward(astro-island[component-url])
 aftonbladet.se#?#:is(aside[class^="twocolumnlayout-aside"], section[class^="twocolumnlayout-main"]) a[data-test-tag="internal-link"]:contains(/annonslänkar/i)
 aftonbladet.se,byggahus.se,expressen.se,elle.se,femina.se,svenskdam.se,galamagasin.se,rodeo.net,familjeliv.se,vitaestilo.se,golflivet.se,inredningsvis.se#%#//scriptlet('ubo-href-sanitizer', 'a[href*="/t?a="]', '?url')
+aftonbladet.se,klart.se#%#//scriptlet('ubo-set', 'advertoryFluepapir', 'true')
 aftonbladet.se,omni.se,svd.se#$#.sp-message-open body { overflow:initial!important; position:unset!important; margin-top:unset!important; }
 aftonbladet.se,stoppapressarna.se,langd.se,computersweden.se,thatsup.se,arbetaren.se,sjofartstidningen.se,restaurangvarlden.se,pressbladet.se,svenskpress.se,foretagsbladet.se,gestrikemagasinet.se,cfanytt.se,lasarnas.se,hembostad.nu,nojesmagasinet.nu,halsasverige.se,mandarinmedia.se,svenskmusik.nu,reklamedia.se,motormagasinet.nu,konstmagasinet.nu,allpressen.se,seniorpressen.se##.advert
 agriaffaires.se,truckscorner.se,machineryzone.se##.dp--mb, .dp--pave, .dp--ga, body#lg-annonces .right-container
@@ -907,7 +908,6 @@ kingmagazine.se#?#.card-partner:upward(1)
 kingsizemag.se##div#video-overlay, div.sidebar_frame, #affiliates, #affiliates + .text, #popup-interstitial-overlay, .cu_banner, #interstitial-overlay, .kingsize-native, .kingsize-native-article
 kittad.se###header-top, div[data-hook="consent-banner-root"]
 klart.se##div[id^="sp_message_container"], #overlay, .-panorama-ad-wrapper, div[id^="ad-wrapper"]
-klart.se#%#//scriptlet('ubo-set', 'advertoryFluepapir', 'true')
 klart.se#?#.ad-text:contains(/annons/i):upward(.content-box-list__item)
 klart.se,hockeynews.se,fotbolltransfers.com,hitta.se,sverigerunt.se##a[rel*="sponsored"]
 klendr.se#?#.adsbygoogle:upward(1)
@@ -2300,6 +2300,7 @@ zeromagazine.nu##div[id^="ads"]
 /gdpr-cookie-consent$script,domain=statensmusikverk.se
 /gdpr/*$domain=visitlulea.se|rotter.se|arkeologikonsult.se
 /getAdById.php?
+/getAdsConfig$domain=aftonbladet.se|svd.se
 /getCookieConsent$domain=krogguiden.se
 /getadd$domain=bovision.se
 /get.aspx?AdSlotID$script
@@ -2732,6 +2733,7 @@ zeromagazine.nu##div[id^="ads"]
 /sponsor$image,domain=matradion.se
 /sponsrade$xmlhttprequest,domain=hockeysverige.se
 /spotlight-ad_$image
+/sps-pulse-helpers$domain=aftonbladet.se|svd.se
 /ss_foundation/combined_li_tracking
 /static/js/loada.js
 /static/media/*casino$domain=dagenstv.com|kolla.tv
