@@ -1,9 +1,9 @@
-! Checksum: GgIPyTjX3VbaseKgIa0ReQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1782437423-14400.patch
+! Checksum: NY4G+5RJaATdrVDlBSOMWg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1782453494-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.64.4
-! TimeUpdated: 2026-06-26T01:26:57+00:00
+! Version: 2.1.64.5
+! TimeUpdated: 2026-06-26T05:54:57+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -35,6 +35,7 @@
 /fb-like-pop.js
 /fb-pixel.js
 /fbfooter.svg
+/fbshare.jpg
 /fbshare.js
 /fbshare.png
 /floating-wpp.min.js
@@ -115,7 +116,6 @@
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
-/socialbookmarks.js
 /socialcount.js
 /socialite.js
 /socialite.min.js
@@ -135,6 +135,7 @@
 /weiboshare.html
 /whatsapp-button.js
 /whatsapp_icon.png
+/whatsappshare.js
 /widget/share?
 /widgets/socials/*
 /wordpress-popup/*$domain=ahchealthenews.com
@@ -448,6 +449,7 @@ _social_footer_
 ###shareLink
 ###shareLinks
 ###shareMenu
+###shareOverlay
 ###sharePage
 ###sharePageControl
 ###sharePinterest
@@ -490,6 +492,7 @@ _social_footer_
 ###sharebtnwrap
 ###sharebuttons
 ###sharecopy
+###sharecount
 ###sharediv
 ###sharefooter
 ###shareicon
@@ -528,7 +531,6 @@ _social_footer_
 ###social-actions
 ###social-badges
 ###social-bar
-###social-border
 ###social-bottom
 ###social-box
 ###social-buttons-nav
@@ -689,7 +691,6 @@ _social_footer_
 ###tronReddiShare
 ###twShare
 ###tweet-button
-###tweetContainer
 ###twitter-2
 ###twitter-box
 ###twitter-button
@@ -754,7 +755,6 @@ _social_footer_
 ##.PostSocial
 ##.Share-buttons
 ##.Share-item
-##.Share-reveal
 ##.ShareBar
 ##.ShareBlock-isReact
 ##.ShareBox
@@ -977,7 +977,6 @@ _social_footer_
 ##.b_like
 ##.b_share
 ##.b_social
-##.b_socialbar
 ##.badge-pinterest-share
 ##.badge-share
 ##.bc-author-socials
@@ -1009,6 +1008,7 @@ _social_footer_
 ##.block-social-media-links
 ##.block-social-network
 ##.block-social-share
+##.block-social-share-block
 ##.block-social-share-links
 ##.block-socialmedia
 ##.block-socials
@@ -1170,6 +1170,7 @@ _social_footer_
 ##.divSocial
 ##.div_share
 ##.dmSocialHub
+##.document-share
 ##.dp-share
 ##.dpsp-network-btn
 ##.dpsp-networks-btns-share
@@ -1181,6 +1182,7 @@ _social_footer_
 ##.ds-social
 ##.dshare
 ##.dt_social_single
+##.dtm-footer-social-link
 ##.dwg-footer-plank__social
 ##.ea-share-count-button
 ##.eapps-social-share-buttons
@@ -1735,6 +1737,7 @@ _social_footer_
 ##.in_social
 ##.index_sns
 ##.info-sns-list
+##.info__share
 ##.info_share
 ##.inline-share
 ##.inline_socials
@@ -2380,6 +2383,7 @@ _social_footer_
 ##.share-network-whatsapp
 ##.share-on
 ##.share-on-title
+##.share-on-whsp
 ##.share-open-button
 ##.share-pannel
 ##.share-pictures-overlay
@@ -2400,6 +2404,7 @@ _social_footer_
 ##.share-single
 ##.share-sites-thumbs
 ##.share-sm-icons
+##.share-socBtns
 ##.share-social
 ##.share-social-bottom
 ##.share-social-box
@@ -2423,6 +2428,7 @@ _social_footer_
 ##.share-tiktok
 ##.share-title
 ##.share-to
+##.share-to-whatsapp-wrapper
 ##.share-toggle
 ##.share-toggle-button
 ##.share-tool
@@ -2724,7 +2730,6 @@ _social_footer_
 ##.sidebar-facebook
 ##.sidebar-share:not(#tab-sharing > .sidebar-share)
 ##.sidebar-social
-##.sidebar-social-btn
 ##.sidebar-socials
 ##.sidebar__share
 ##.sidebar_facebook
@@ -3046,7 +3051,6 @@ _social_footer_
 ##.social-strip
 ##.social-stripe
 ##.social-stroke-icon
-##.social-sub
 ##.social-subnav
 ##.social-subscribe
 ##.social-tab
@@ -3167,7 +3171,6 @@ _social_footer_
 ##.social_shares
 ##.social_sharing
 ##.social_sm
-##.social_tabs
 ##.social_tools
 ##.social_top
 ##.social_widget
@@ -3373,6 +3376,7 @@ _social_footer_
 ##.twitter-follow-box
 ##.twitter-followers
 ##.twitter-footer
+##.twitter-inner
 ##.twitter-popup
 ##.twitter-share
 ##.twitter-share-btn
@@ -3425,7 +3429,6 @@ _social_footer_
 ##.vbseo_share
 ##.vc_generic_sharre
 ##.vc_share_link_container
-##.vc_social_button
 ##.vc_social_icons
 ##.vce-share-bar
 ##.vce-share-items
@@ -3453,6 +3456,7 @@ _social_footer_
 ##.voc-social
 ##.vp-share
 ##.vs-social
+##.vsac-social
 ##.vuukle-powerbar
 ##.w-share
 ##.w-sharing
@@ -3816,8 +3820,8 @@ cricketcountry.com##.PreferredSourcesDesktop
 thehealthsite.com##.PreferredSourcesDetails
 ndtv.com##.SSR_drp
 abc.net.au##.ShareBanner_container__OX63I
+birminghammail.co.uk,bristolpost.co.uk,dailyrecord.co.uk,dailystar.co.uk,irishstar.com,liverpoolecho.co.uk,manchestereveningnews.co.uk,mirror.co.uk,stokesentinel.co.uk,themirror.com,walesonline.co.uk##.ShareBar_sharebar-inner-wrapper__D0YTf
 meduza.io##.SharePanel-module-root
-wbur.org##.Share_shareContainer__ZHMXj
 ynet.co.il,ynetnews.com##.SiteArticleSocialShareNew1280
 asahi.com##.SnsName
 asahi.com##.SnsUtilityArea
@@ -3985,7 +3989,6 @@ phonearena.com,quiverquant.com##.google-news-follow
 barchart.com##.google-news-image-wrapper
 bleedingcool.com##.google-news-source
 essentiallysports.com##.google-perference_googlePerference__h94ae
-timesofisrael.com##.google-prefer-module
 ringsidenews.com,thehealthsite.com,tmz.com##.google-preferred-btn
 sammobile.com##.google-preferred-news-source-cta
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
@@ -4136,6 +4139,7 @@ middleeastmonitor.com##.share-link-btn
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 euronews.rs,thenewstack.io##.share-media
 thehackernews.com##.share-open-modal
+ig.com.br,med.stanford.edu##.share-page
 alternet.org,audacy.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,physicsworld.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 forward.com##.share-post
 president.gov.ua##.share-selected-text-main-container
@@ -4231,7 +4235,6 @@ targettrend.com##.sws_supernormalaction
 thedailyadda.com##.t-shared-sec
 interestingengineering.com##.t-w-\[128px\]
 interestingengineering.com##.t-w-\[200px\]
-gamingbolt.com##.tag-social-media
 notthebee.com##.take-shareables
 firstpost.com##.tbl-cell-wp
 opindia.com##.tdi_134
@@ -4287,8 +4290,6 @@ freepressjournal.in##.wrap_cont
 firstpost.com##.yt-ch
 blog.youtube##.yt-social__list
 securityweek.com##.zox-foot-soc
-securityweek.com##.zox-post-soc-list
-securityweek.com##.zox-top-soc-wrap
 rnz.co.nz##[aria-label*="Share"]
 sfgate.com##[aria-label="Share from Email"]
 news.yahoo.com##[aria-label="Share"]
@@ -4310,6 +4311,7 @@ mothership.sg##[href="https://bit.ly/3KjTj94"]
 mothership.sg##[href="https://bit.ly/3qgqzHg"]
 dataconomy.com,digitaltrends.com,driveteslacanada.ca,mothership.sg##[href^="https://www.google.com/preferences/source"]
 ynetnews.com##[style="display: flex; justify-content: center; width:100%;height:65px;border: 1px solid #e6e6e6;border-radius: 5px;background-color: #fff;box-sizing: border-box; margin: 20px auto;"]
+hackster.io##a.social_icons__icon__BxTgB
 player.amperwavepodcasting.com,stockx.com##button[aria-label="Share"]
 nine.com.au##button[data-ui-testid="header-share-button"]
 theguardian.com##div > gu-island[name="ShareButton"]
@@ -4354,6 +4356,7 @@ heritagedaily.com#?#.tds-button:contains(FOLLOW ON GOOGLE NEWS)
 houstonchronicle.com,nhregister.com,registercitizen.com,sfchronicle.com,sfgate.com,stamfordadvocate.com#?#.deep:contains(Google)
 ign.com#?#.promo-card:contains(Follow us!)
 jacobin.com#?#.po-fr__heading:contains(Share this article)
+rule34.xxx##li:has(> [href="https://x.com/slayerduckie"])
 lifenews.com#?#.post_style_zk > p:contains(Please subscribe)
 livpost.co.uk#?#.kg-align-center.kg-button-card:contains(Share this story)
 nbcsports.com#?#p.cms-textAlign-center:contains(follow NBC Sports)
@@ -4438,7 +4441,6 @@ arbys.com##[class^="linkBlocks_linkBlock__"]:has(> [class^="linkBlocks_socialLin
 relationshiphero.com##div:has(+ .socialIcons)
 finanzfrage.net,gutefrage.net##.Bigfoot-socialLinks
 horizont.net##.SiteHeaderSticky_share
-achgut.com##.ag-teilen
 krone.at##.al__socials
 giga.de##.alice-push-channel
 pcgameshardware.de##.artSocialLinks
@@ -4456,7 +4458,6 @@ teltarif.de##.sbm
 orf.at##.share-dialog
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
 bild.de##.sharingbar
-mpg.de##.social-media-buttons
 kurier.at##.socialmedia-nav
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
@@ -4464,7 +4465,6 @@ barax.de##.twt-sharing-links
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
 bz-berlin.de##div[data-type="social-bar"]
-berliner-kurier.de##section[class^="article-top-panel_socials_"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 l-eaualabouche.com##.Post-shares
@@ -4485,6 +4485,7 @@ boursedirect.fr##.slide-share
 gameblog.fr##.social-button:not(.comment-button):not(.heart-button)
 phonandroid.com##.social-networks
 francetvinfo.fr##.social-zone__wrapper
+tv5monde.com##.tv5monde-footer-menu--social
 ||lequipe.fr/_nuxt/Share.
 ||radio-canada.ca/mp/modules.socialbar.executer.$script
 tportal.hr##.footer__social_media
@@ -4500,7 +4501,6 @@ people.com.cn##.section-common-share-wrap
 mingpao.com##.ssm
 ifeng.com##div[class^="index_share_box_"]
 idnes.cz,lidovky.cz,metro.cz##.artsum-social
-irozhlas.cz##.m-follow
 dr.dk##.dre-sticky-share-band
 telegraaf.nl##.SocialButtons
 nu.nl##.app-follow-us
@@ -4652,6 +4652,7 @@ europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
 adn40.mx##.ListSiguenos-SocialStrip
 elpais.com.uy##.Page-actions-wrapper
+elpais.com.uy##.SocialLink
 rpp.pe##.article__follow
 elfinanciero.com.mx##.b-footer__social-links-container
 estadiodeportivo.com##.boton-share
@@ -4700,6 +4701,7 @@ qhubomedellin.com##.qh-social-icons-articulo
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
 elcomercio.pe,gestion.pe##.s-buttons
 infobae.com##.second-saved-buttons
+elpais.com.uy##.section-rrss-wrapper
 as.com##.sh-bar
 infoenergia.info,infofranquicias.ar,infomendoza.info,infonegocios.barcelona,infonegocios.biz,infonegocios.com.py,infonegocios.info,infonegocios.madrid,infonegocios.miami,infonegociosgalicia.es,infonegociosvalencia.es,infostyle.info,infotecnologia.info,injujuy.info,inlitoral.info,inneuquen.info,inpatagonia.info,insalta.info,insanjuan.info,insantiagodelestero.info,intucuman.info##.share-amp
 infobae.com##.sharebar-buttons-container
@@ -4719,6 +4721,7 @@ mujerhoy.com##.voc-author-timesocial__social
 mujerhoy.com##.voc-footer-social
 elpais.com##.w_rs
 abc.com.py##.whatsapp-button-container
+montevideo.com.uy##.wsp
 trthaber.com##.social-links-container
 bigpara.hurriyet.com.tr##.socialIcons
 cumhuriyet.com.tr##.sosyal-medya
@@ -4874,4 +4877,3 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||ifttt.com^$generichide
 @@||namechk.com^$generichide
 @@||restream.io^$generichide
-@@||zeplin.io^$generichide

@@ -1,9 +1,9 @@
-! Checksum: FvcUL3VzdeneNgb4nNW+3Q
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1782437430-14400.patch
+! Checksum: E+HEuZxhR1us/zDhhzLCFg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1782453500-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.93.0
-! TimeUpdated: 2026-06-26T01:26:45+00:00
+! Version: 2.1.93.1
+! TimeUpdated: 2026-06-26T05:54:44+00:00
 ! Expires: 12 hours (update frequency)
 &ad_count=
 &ad_unit_
@@ -339,6 +339,7 @@
 =assignAds&
 =dynamic_banner&
 =GetAdHtml&
+=goto_adv&
 =iframe_pub&
 =popunder&
 =publicite&
@@ -436,6 +437,7 @@ _ad160x600.
 _ad_agency_
 _ad_campaign_
 _ad_images_
+_ad_literature.
 _ad_top|
 _ad_unit.
 _ad_view_
@@ -776,6 +778,7 @@ _build=iclick-$popup
 ||popupmaker.com^$third-party
 ||pornme.pm^$third-party
 ||pprx.work^$third-party
+||promo.alienbiz.com^$third-party
 ||publy.net^$third-party
 ||pubstack.io^$third-party
 ||pwspace.com^$third-party
@@ -1675,6 +1678,7 @@ _build=iclick-$popup
 ||rbfour.bid^
 ||rbone.link^
 ||rbp1.ru^
+||rbp2.ru^
 ||rbp2.site^
 ||rbp3.ru^
 ||rbp63841.ru^
@@ -2059,7 +2063,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
 ||annuaire-generaliste.fr/affiche_logo.php?
 ||api.gamerprices.com/compare/$third-party
-||apycdn.com^*/banner/
 ||arc.io/widget$third-party
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$third-party
@@ -2191,7 +2194,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||placelibertine.com^$image,third-party
 ||planete-hit.com/hit.php?
 ||pm.gamedistribution.com^
-||powerpress.fr/services/$third-party
 ||prehraj.to^*/banner
 ||prettybigescorts.com/images/$third-party
 ||promo.japanhdv.com^
@@ -2487,6 +2489,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||emploipartner.com/template/pubs/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
+||endurotribe.com/wp-content/uploads/*/fond-site-
 ||fiches-auto.fr/_carre_300_
 ||file-upload.net/include/$subdocument
 ||firebasestorage.googleapis.com^$domain=avito.ma
@@ -2606,6 +2609,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||sexefelin.com/images/*.gif
 ||signification-prenom.com/Images/voyance-par-telephone.gif
 ||skitour.fr/divers/a/
+||sky-animes.com/scripts/liens.php
 ||slideplayer.*/*/*/|$image
 ||smoothpre.com/ad?
 ||sobusygirls.fr/uploads/editor/valentin.jpg
@@ -2785,7 +2789,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub-droite
 ###pub-footer
 ###pub-haut
-###pub-haut-adblock
 ###pub-head
 ###pub-header
 ###pub-left
@@ -2826,6 +2829,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub_head
 ###pub_header
 ###pub_interstitiel
+###pub_left
 ###pub_megabanner
 ###pub_pave
 ###pub_pave2
@@ -2889,6 +2893,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.ad.billboard
 ##.ad.onlyMobile
 ##.ads-container
+##.ads-foot
 ##.ads-footerBanner
 ##.ads-group
 ##.adwrapper
@@ -3468,6 +3473,7 @@ darjadida.com##.banner_125x125
 bfmtv.com##.banner_top
 turf-fr.com##.banners-con
 multiup.io##.bg-info
+iladit.com##.bg-pub-interne
 ennaharonline.com##.big-ad2
 journaldemontreal.com##.bigbox-container
 autonews.fr##.bl-partner
@@ -3508,6 +3514,7 @@ howtofix.guide##.eds-animate
 wp-infinity.com##.entry-featured
 jemangejemincis.fr##.entry-footer
 manga-news.com##.external-link
+solvusoft.com##.fileviewpro
 sous-la-mer.com##.flexslider
 gameblog.fr##.footer__partners
 tukif.com##.footer_partner_container_wrapper
@@ -3561,7 +3568,6 @@ cdiscount.com##.lpMBan
 ma-reduc.com##.m-coveringIab
 cuisineactuelle.fr##.magazineBlock
 allocine.fr##.main-banner
-leparisien.fr##.marketingParisien
 driverscloud.com##.mcdescresumepubnews
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
@@ -3595,6 +3601,7 @@ jardiner-malin.fr##.parent-billboard
 portail.free.fr,sante-dz.com##.partenaire
 boursorama.com,caradisiac.com,dunod.com,ficam.ma,lesechos.fr,lfp.fr,mangario.fr,nouvelobs.com,saint-etienne.fr##.partenaires
 constructeurdemaison.net,ffr.fr,gameblog.fr,lexpress.fr,mensup.fr,swissquote.ch,turbo.fr##.partner
+lequotidiendumedecin.fr##.partner-container
 rtl.fr##.partner-mdl
 caci.dz,lavenir.net,nintendo-master.com,ogaming.tv,savefrom.net##.partners
 grands-reportages.com,montagnes-magazine.com##.pavepub
