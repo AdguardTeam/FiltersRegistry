@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.74.11",
-			"timeUpdated": "2026-06-28T01:50:34+0000",
+			"version": "2.4.74.12",
+			"timeUpdated": "2026-06-28T03:15:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
