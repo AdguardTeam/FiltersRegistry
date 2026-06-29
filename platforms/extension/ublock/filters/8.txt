@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cka7TGirRq2LLRSTvEvHlA
-! Diff-Path: ../patches/8/8-s-1782416562-3600.patch
+! Checksum: /KNwMlktgvH2LxtkKOMFkQ
+! Diff-Path: ../patches/8/8-s-1782719828-3600.patch
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.9.32
-! TimeUpdated: 2026-06-25T19:39:13+00:00
+! Version: 2.0.9.33
+! TimeUpdated: 2026-06-29T07:53:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1597,14 +1597,15 @@ forum.fok.nl##+js(no-setTimeout-if, ckad)
 forum.fok.nl#@##advertentie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202820
 autotrader.nl##+js(abort-on-property-read, Object.prototype.autoRecov)
+! https://github.com/AdguardTeam/AdguardFilters/issues/234442
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208455
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197442
-radio10.nl,kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl##+js(no-xhr-if, assets.prod.webx.talpa.digital/ad/view/)
+nieuwsvandedag.nl,radio10.nl,kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl##+js(no-xhr-if, assets.prod.webx.talpa.digital/ad/view/)
 !+ NOT_OPTIMIZED
 vandaaginside.nl,538.nl,hartvannederland.nl#@##topbanner_ad
 !+ NOT_OPTIMIZED
-@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl|538.nl|vandaaginside.nl
+@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl|538.nl|vandaaginside.nl|nieuwsvandedag.nl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178088
 topkleurplaat.nl##+js(no-setTimeout-if, .height() === 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177923
@@ -1632,7 +1633,7 @@ tweakers.net##+js(prevent-fetch, /a[ab]\.tweakers\.nl/)
 kijk.nl#@##topbanner_ad
 @@/prebid/ad.gif?user=*&adId=$domain=kijk.nl
 @@||ads-talpa.adhese.com/json/$domain=kijk.nl
-radio10.nl,kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl##body .pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links:style(display: initial !important;)
+nieuwsvandedag.nl,radio10.nl,kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl##body .pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links:style(display: initial !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215774
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167987
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=goplay.be|play.tv
@@ -1779,6 +1780,7 @@ omroepwest.nl##.adcontainer-Rectangle:style(position: absolute!important; left: 
 ! Good: example.org###rek; ||example.com/ads/
 ! Bad: example.org#@##banner_ad (for instance, should be in allowlist.txt or in antiadblock.txt)
 !
+iphoned.nl##div[data-name="dynamic-content"]:has(> div[data-id^="gpt-ad-"])
 iculture.nl##div[id^="gpt-ad-"]
 iculture.nl##div[data-name^="ad-"]
 buienradar.nl##.br-ad-slot
@@ -1820,7 +1822,7 @@ mijnwoordenboek.nl##div[style="min-height:270px"]
 ||ssl.p.jwpcdn.com/player/v/*/vast.js$domain=matele.be
 f1maximaal.nl##.raw-html-component:has(>div.Pnvp__ad)
 telegraaf.nl##.tik4-extension--inline-ad
-||ssl.p.jwpcdn.com/player/v/*/freewheel.js$domain=kijk.nl|hartvannederland.nl|538.nl|vandaaginside.nl|radio10.nl
+||ssl.p.jwpcdn.com/player/v/*/freewheel.js$domain=kijk.nl|hartvannederland.nl|538.nl|vandaaginside.nl|radio10.nl|nieuwsvandedag.nl
 f1maximaal.nl##.w-full[class*="flex"]:has(> .flex_component > .raw-html-component > .Pnvp__ad)
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=player.vrt.be
 ||zeilen.nl/builds/zeilen/assets/taboola-page-view-id-*.js

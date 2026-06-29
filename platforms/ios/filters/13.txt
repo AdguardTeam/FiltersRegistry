@@ -1,9 +1,9 @@
-! Checksum: iVZXDYMwS9Vo30Rkbqy1XA
-! Diff-Path: ../patches/13/13-s-1782657723-3600.patch
+! Checksum: gjBcsJYYxaeeOpyQ3u/Kow
+! Diff-Path: ../patches/13/13-s-1782719829-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.65.37
-! TimeUpdated: 2026-06-28T14:38:59+00:00
+! Version: 2.0.65.38
+! TimeUpdated: 2026-06-29T07:53:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -271,6 +271,13 @@
 ankarakampkafasi.com,zamaninvarken.com,kriptoradar.com,bakimlikadin.net,korsanedebiyat.com,genelpara.com,azbuz.org,mustafabukulmez.com#%#//scriptlet("prevent-setTimeout", "0===o.offsetLeft&&0===o.offsetTop")
 teknop.net,ozgunbilgi.com#%#//scriptlet("set-constant", "adblock.check", "noopFunc")
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234427
+dramadizilerim.com#@#.ad-slot
+dramadizilerim.com#$#body { overflow: auto !important; }
+dramadizilerim.com#$##sysOverlay99 { display: none !important; }
+dramadizilerim.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '/\.offsetHeight[\s]*?===[\s]*?0|pagead2\.googlesyndication\.com/')
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=dramadizilerim.com
+@@||googleads.g.doubleclick.net/pagead/viewthroughconversion/1/$xmlhttprequest,domain=dramadizilerim.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233080
 paradoxscans.com#%#//scriptlet('abort-on-property-write', 'detectAdBlock')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -1681,6 +1688,7 @@ teknoblog.com#$#.tbl-explore-more-has-overlay { overflow: auto !important; }
 gdh.digital##div.mx-auto:has(> ins.adsbygoogle)
 bbnhaber.com.tr##div[data-module-name="advert"]
 ||cdn.jsdelivr.net/gh/quantum-jquery/v*/ad-v*.min.js
+mynet.com##.home-mymani-widget
 mynet.com##.mymani-widget
 ||mymani.net/ajax/widget-data/$third-party
 hisse.net##.mycredit-widget-container
@@ -6037,8 +6045,8 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
-! Frequently changed domains: sadeceifsa*.lol
-! Source: sadeceifsa11.lol
+! Frequently changed domains: sadeceifsa*.lol; sadeceifsa*.icu
+! Source: sadeceifsa12.icu
 ! aglint-disable no-invalid-modifiers
 sadeceifsa12.icu###tg-cta-container
 sadeceifsa12.icu##.banner-grid-wrap

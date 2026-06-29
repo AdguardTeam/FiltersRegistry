@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ovIlTcZKAeKf35hBXNZrLw
-! Diff-Path: ../patches/13/13-s-1782657720-3600.patch
+! Checksum: tsSach596yDwbvuIdW9B4A
+! Diff-Path: ../patches/13/13-s-1782719824-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.65.37
-! TimeUpdated: 2026-06-28T14:38:59+00:00
+! Version: 2.0.65.38
+! TimeUpdated: 2026-06-29T07:53:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -272,6 +272,11 @@
 ankarakampkafasi.com,zamaninvarken.com,kriptoradar.com,bakimlikadin.net,korsanedebiyat.com,genelpara.com,azbuz.org,mustafabukulmez.com##+js(no-setTimeout-if, 0===o.offsetLeft&&0===o.offsetTop)
 teknop.net,ozgunbilgi.com##+js(set-constant, adblock.check, noopFunc)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234427
+dramadizilerim.com#@#.ad-slot
+dramadizilerim.com##body:style(overflow: auto !important;)
+dramadizilerim.com###sysOverlay99:style(display: none !important;)
+dramadizilerim.com##+js(abort-current-script, EventTarget.prototype.addEventListener, /\.offsetHeight[\s]*?===[\s]*?0|pagead2\.googlesyndication\.com/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233080
 paradoxscans.com##+js(abort-on-property-write, detectAdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233068
@@ -1573,6 +1578,7 @@ teknoblog.com##.tbl-explore-more-has-overlay:style(overflow: auto !important;)
 gdh.digital##div.mx-auto:has(> ins.adsbygoogle)
 bbnhaber.com.tr##div[data-module-name="advert"]
 ||cdn.jsdelivr.net/gh/quantum-jquery/v*/ad-v*.min.js
+mynet.com##.home-mymani-widget
 mynet.com##.mymani-widget
 ||mymani.net/ajax/widget-data/$3p
 hisse.net##.mycredit-widget-container
@@ -5927,16 +5933,16 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
-! Frequently changed domains: sadeceifsa*.lol
-! Source: sadeceifsa11.lol
+! Frequently changed domains: sadeceifsa*.lol; sadeceifsa*.icu
+! Source: sadeceifsa12.icu
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
-.gif|$domain=/sadeceifsa\d+\.lol$/
-/sadeceifsa\d+\.lol$/###tg-cta-container
-/sadeceifsa\d+\.lol$/##.banner-grid-wrap
-/sadeceifsa\d+\.lol$/##article[data-ad-pos]
-/sadeceifsa\d+\.lol$/##div[style]:has(> a[href^="https://bit.ly/"])
-/sadeceifsa\d+\.lol$/##+js(remove-node-text, script, pickEngine)
+.gif|$domain=/sadeceifsa\d+\.icu$/
+/sadeceifsa\d+\.icu$/###tg-cta-container
+/sadeceifsa\d+\.icu$/##.banner-grid-wrap
+/sadeceifsa\d+\.icu$/##article[data-ad-pos]
+/sadeceifsa\d+\.icu$/##div[style]:has(> a[href^="https://bit.ly/"])
+/sadeceifsa\d+\.icu$/##+js(remove-node-text, script, pickEngine)
 sadeceifsa12.icu###tg-cta-container
 sadeceifsa12.icu##.banner-grid-wrap
 sadeceifsa12.icu##article[data-ad-pos]

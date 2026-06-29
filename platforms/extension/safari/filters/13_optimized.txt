@@ -1,9 +1,9 @@
-! Checksum: W/GdTr4/vEhlmeZfyX5KXQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1782657717-3600.patch
+! Checksum: tDfPzSnSFos+3YaHr8F2qA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1782719821-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.65.37
-! TimeUpdated: 2026-06-28T14:38:59+00:00
+! Version: 2.0.65.38
+! TimeUpdated: 2026-06-29T07:53:44+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -233,6 +233,12 @@
 ||ttauri.livescience.com^
 ankarakampkafasi.com,zamaninvarken.com,kriptoradar.com,bakimlikadin.net,korsanedebiyat.com,genelpara.com,azbuz.org,mustafabukulmez.com#%#//scriptlet("prevent-setTimeout", "0===o.offsetLeft&&0===o.offsetTop")
 teknop.net,ozgunbilgi.com#%#//scriptlet("set-constant", "adblock.check", "noopFunc")
+dramadizilerim.com#@#.ad-slot
+dramadizilerim.com#$#body { overflow: auto !important; }
+dramadizilerim.com#$##sysOverlay99 { display: none !important; }
+dramadizilerim.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '/\.offsetHeight[\s]*?===[\s]*?0|pagead2\.googlesyndication\.com/')
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=dramadizilerim.com
+@@||googleads.g.doubleclick.net/pagead/viewthroughconversion/1/$xmlhttprequest,domain=dramadizilerim.com
 paradoxscans.com#%#//scriptlet('abort-on-property-write', 'detectAdBlock')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js|$domain=paradoxscans.com
@@ -1131,6 +1137,7 @@ teknoblog.com#$#.tbl-explore-more-has-overlay { overflow: auto !important; }
 gdh.digital##div.mx-auto:has(> ins.adsbygoogle)
 bbnhaber.com.tr##div[data-module-name="advert"]
 ||cdn.jsdelivr.net/gh/quantum-jquery/v*/ad-v*.min.js
+mynet.com##.home-mymani-widget
 mynet.com##.mymani-widget
 ||mymani.net/ajax/widget-data/$third-party
 hisse.net##.mycredit-widget-container
