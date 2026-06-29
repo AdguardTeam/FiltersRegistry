@@ -1,5 +1,5 @@
-! Checksum: yeKeJDZe/fxGG/bOEp7dzw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1782626519-14400.patch
+! Checksum: CFQpjjOiSh29Ne3W5on0GQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1782713403-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.6
@@ -29,6 +29,9 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.js-download_button_offer
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.primary_download
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-text
+drivereasy.com#?#.pakb-content p:contains(Driver Easy)
+drivereasy.com#?#.pakb-content p:contains(the Pro version)
+drivereasy.com#?#.pakb-content p:contains(click Update All)
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk#?#a:contains(SpyHunter)
 howtoremove.guide##[id*="newage"]
 cfoc.org###top_custom_banner
@@ -820,7 +823,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||139.45.197.106^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||43.128.142.70^$all
-||telemgram.cc^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||149.30.232.154^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -881,7 +883,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||phoneprivacycloud.com^$all
 ||phrix-lnc.com^$all
 ||pushub.net^$all
-||sanynouncem.org^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://15.204.140.239^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1964,7 +1965,6 @@ reports.adguard.com$badfilter
 @@||pgl.yoyo.org/adservers/serverlist.
 @@||someonewhocares.org/hosts/
 @@||fanboy.co.nz/*.txt^
-@@||github.githubassets.com/assets/app_assets_modules_github_behaviors_$script,xmlhttprequest
 @@||github.githubassets.com/assets/behaviors-$script,xmlhttprequest
 @@||github.githubassets.com/assets/element-registry-$script,xmlhttprequest
 @@||github.githubassets.com/assets/environment-$script,xmlhttprequest
@@ -2385,10 +2385,10 @@ $removeparam=mclk
 $document,removeparam=maid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
-$removeparam=exactag_uk
 $removeparam=LSID
 $removeparam=affuid
 $removeparam=refclickid
+$removeparam=irclid
 $removeparam=ad_id,domain=~olx.*
 $document,removeparam=/^affSource.*$/i
 $document,removeparam=/^_s=afl_impact$/
@@ -3243,6 +3243,8 @@ $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||apple.com^$removeparam=mttncc
 ||apple.com^$removeparam=mttnsiteid
 ||apple.com^$removeparam=mttnsubad
+||apple.com^$removeparam=mttnsubkw
+||apple.com^$removeparam=mttnsubplmnt
 $removeparam=wfr,domain=weidian.com|baidu.com
 $removeparam=organic_search_click
 $removeparam=pop,domain=etsy.com
@@ -3340,7 +3342,6 @@ $removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|s
 $removeparam=cxt,domain=twitter.com|x.com
 ||comodo.com^$removeparam=track
 $removeparam=af,domain=1fichier.com|comodo.com
-$removeparam=intcid,domain=cbsnews.com
 ||mercadolibre.com.mx^$removeparam=/^matt_.*$/
 ||lidl.$removeparam=flyx
 ||qwant.com^$removeparam=client
@@ -3467,7 +3468,6 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 ||whitepages.com^$document,removeparam=wp_term
 ||thisismoney.co.uk^$removeparam=molReferrerUrl
 ||sciencedirect.com/*?via%3D$removeparam=/^via%3D.*$/,document
-||iplt20.com^$document,removeparam=tagNames
 ||deepl.com^$document,removeparam=cta
 ||deepl.com/pro$removeparam=pdf
 ||kahoot.it^$removeparam=refer_method
@@ -3675,7 +3675,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||youtube.com/live/$document,removeparam=is
 ||youtu.be^$document,removeparam=is
 ||donmai.us^$removeparam=z
-||pcoptimum.ca^$document,removeparam=moeq
 ||userbenchmark.com^$removeparam=redirFrom
 ref=libreselfhosted.com$document,removeparam=ref
 ://browser.yandex.$removeparam=from
@@ -3791,7 +3790,6 @@ $third-party,denyallow=microsoft.com,domain=store.rg-adguard.net
 fandom.com##.notifications-box
 flipkart.com##div[style^=flex-grow] div:first-of-type + div.col
 flipkart.com##footer section + div:last-of-type
-###custom-css .vjs-loading-spinner
 @@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script,domain=~support.google.com
 google.*#@##google-hats-survey
 ||appboycdn.com^$third-party
