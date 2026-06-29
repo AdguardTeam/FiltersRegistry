@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: H1aAGsVTC/uPeUFL0Q4YCQ
-! Diff-Path: ../patches/236/236-s-1782727597-14400.patch
+! Checksum: fFVj2GYXEjqj6hhHTcBeIg
+! Diff-Path: ../patches/236/236-s-1782753960-14400.patch
 ! Title: road-block light
 ! Description: Romanian ad blocking filter subscription.
-! Version: 2.0.4.3
-! TimeUpdated: 2026-06-29T10:03:37+00:00
+! Version: 2.0.4.4
+! TimeUpdated: 2026-06-29T17:22:44+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ROU: Romanian Ad (ROad) Block List Light
@@ -1224,6 +1224,7 @@ actualitateavranceana.ro##[href^="https://www.sviatoacademy.ro/"]
 actualitateavranceana.ro##.widget_media_image
 ||florariafocsani.ro/image/catalog/ADV/$image,3p
 fileshare.ro##td[width="250"]:not(*:has([href*="fileshare.ro"]))
+fileshare.ro##tr:has([rel="sponsored"])
 ||fileshare.ro/banners$image
 ||simpatie.ro^$3p
 girlshare.ro##td > center:contains(Reclama)
@@ -1745,6 +1746,10 @@ transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://www.twe
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://tradesilvania.com/"]
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://www.completdental.ro/"]
 transilvaniaon.ro##.wp-block-paragraph:contains(Publicitate)
+banatulmeu.ro##[href]:not([href*="banatulmeu.ro"], [href*="youtube.com"], [href^="/"]):has([src])
+banatulmeu.ro##[href*="utm_campaign"]
+banatulazi.ro##[href]:not([href*="banatulazi.ro"], [href^="/"], [href*="#"]):has([src])
+ziarultimisoara.ro##.banneritem
 ! Title: Romanian specific uBO filters
 ! Expires: 3 days
 ! Issue tracker: https://github.com/tcptomato/ROad-Block/issues
@@ -1857,3 +1862,5 @@ tvmd.info##+js(rmnt, script, appendChild)
 @@||stay22.com/embed/$subdocument,domain=eventim.ro
 ! https://github.com/uBlockOrigin/uAssets/issues/33146
 canale-tv.net##+js(nowoif, , 1)
+! https://github.com/tcptomato/ROad-Block/issues/431#issuecomment-4831983334
+filmexxx.live,pizde.live##+js(nostif, appendChild)

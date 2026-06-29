@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ocWkve/jSDgDJYahHg3ahA
-! Diff-Path: ../patches/236_optimized/236_optimized-s-1782727597-14400.patch
+! Checksum: PpILlnxhocYmXIsEGQsYIw
+! Diff-Path: ../patches/236_optimized/236_optimized-s-1782753960-14400.patch
 ! Title: road-block light (Optimized)
 ! Description: Romanian ad blocking filter subscription.
-! Version: 2.0.4.3
-! TimeUpdated: 2026-06-29T10:03:37+00:00
+! Version: 2.0.4.4
+! TimeUpdated: 2026-06-29T17:22:44+00:00
 ! Expires: 5 days (update frequency)
 /plugins/footer-pop-up-banner/*
 /Reclama/*
@@ -1194,6 +1194,7 @@ actualitateavranceana.ro##[href^="https://www.sviatoacademy.ro/"]
 actualitateavranceana.ro##.widget_media_image
 ||florariafocsani.ro/image/catalog/ADV/$image,3p
 fileshare.ro##td[width="250"]:not(*:has([href*="fileshare.ro"]))
+fileshare.ro##tr:has([rel="sponsored"])
 ||fileshare.ro/banners$image
 ||simpatie.ro^$3p
 girlshare.ro##td > center:contains(Reclama)
@@ -1692,6 +1693,10 @@ transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://www.twe
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://tradesilvania.com/"]
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://www.completdental.ro/"]
 transilvaniaon.ro##.wp-block-paragraph:contains(Publicitate)
+banatulmeu.ro##[href]:not([href*="banatulmeu.ro"], [href*="youtube.com"], [href^="/"]):has([src])
+banatulmeu.ro##[href*="utm_campaign"]
+banatulazi.ro##[href]:not([href*="banatulazi.ro"], [href^="/"], [href*="#"]):has([src])
+ziarultimisoara.ro##.banneritem
 turdanews.net##+js(nostif, ai_)
 turdanews.net##+js(rmnt, script, adsbygoogle)
 nosteam.ro,nosteamgames.ro##+js(nowoif)
@@ -1766,3 +1771,4 @@ tvmd.info##+js(nowoif)
 tvmd.info##+js(rmnt, script, appendChild)
 @@||stay22.com/embed/$subdocument,domain=eventim.ro
 canale-tv.net##+js(nowoif, , 1)
+filmexxx.live,pizde.live##+js(nostif, appendChild)
