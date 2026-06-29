@@ -1,9 +1,9 @@
-! Checksum: D/LhDBAwqKj+vvQad11p/Q
-! Diff-Path: ../patches/14/14-s-1782752999-3600.patch
+! Checksum: 5ZzEhAKWb2f5MAKq89VPXA
+! Diff-Path: ../patches/14/14-s-1782759045-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.71.42
-! TimeUpdated: 2026-06-29T17:06:46+00:00
+! Version: 2.2.71.43
+! TimeUpdated: 2026-06-29T18:47:45+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2620,6 +2620,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+karrier.4ig.hu#%#//scriptlet('trusted-set-cookie-reload', 'accepted_cookies', 'functional')
+karrier.4ig.hu#%#//scriptlet('set-cookie-reload', 'cookie_terms_accepted', '1')
 nanasubs.com.pl##[class^="ns-cookies"]
 ab-in-den-urlaub.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button.uc-accept-button', '', '1000')
 heidejaeger.de#%#//scriptlet('remove-class', 'cmplz-banner-active', 'body')
@@ -4583,7 +4585,6 @@ content.techgig.com##div[class^="gdpr-info"]
 godo-steel.co.jp,nipponsteel.com##.mod_message
 nipponsteel.com###modal-overlay
 kraloyun.com#%#//scriptlet('trusted-set-local-storage-item', 'smb-alice-consent-gate', '{"value":"{\"GameDistribution\":true}","timestamp":1}')
-poizon.ru##.app-cookie-notification
 psd-hannover.de,psd-berlin-brandenburg.de,psdbank-ht.de,psd-muenchen.de,psd-nuernberg.de,psd-west.de#$#.cdk-global-scrollblock { position: static !important; }
 psd-hannover.de,psd-berlin-brandenburg.de,psdbank-ht.de,psd-muenchen.de,psd-nuernberg.de,psd-west.de#$#.cookie-notice-container { display: none !important; }
 ||banknorwegian.de/*/api/*/spaInitObject/cookieconsent?
@@ -17718,6 +17719,8 @@ befestigungsfuchs.de,jawoll.de,cafe-royal.com,campingplus.de,bikebox-shop.de,mli
 !
 !
 !+ NOT_OPTIMIZED
+poizon.ru##.app-cookie-notification
+!+ NOT_OPTIMIZED
 igetnow.com##app-cookie-banner-wrapper-component
 !+ NOT_OPTIMIZED
 gidadedektifi.com,gidadedektifi.net##div[class^="XCookieBanner"]
@@ -19042,6 +19045,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234463
+4ig.hu#@##cookie_layer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234512
 @@||cmp.usercentrics.eu^$domain=ab-in-den-urlaub.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234469

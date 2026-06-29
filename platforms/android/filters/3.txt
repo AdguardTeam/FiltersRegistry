@@ -1,9 +1,9 @@
-! Checksum: KuGeMNtUXZgBORSl1Q860g
-! Diff-Path: ../patches/3/3-s-1782746290-3600.patch
+! Checksum: kVUX0v107zwmXj2ujpMHKQ
+! Diff-Path: ../patches/3/3-s-1782759013-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.6.36
-! TimeUpdated: 2026-06-29T15:15:04+00:00
+! Version: 2.1.6.37
+! TimeUpdated: 2026-06-29T18:47:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -182273,6 +182273,8 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 !
 ! NOTE: Specific rules
 !
+||static.ridicdn.net/books-backend/*/tracking/ridi-tracking-sdk.js
+||ridibooks.com/_ext/g/js?id=
 mashable.com#%#//scriptlet('href-sanitizer', 'a[href^="https://zdcs.link/"]', '?u')
 mashable.com#%#//scriptlet('href-sanitizer', 'a[href^="https://cc.mashable.com/v1/otc/"]', '?url')
 ||nlab.itmedia.co.jp/scripts/cx.js
@@ -189047,6 +189049,10 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234433
+||ridibooks.com^$cookie=fingerprint
+||ridibooks.com^$cookie=attribution_tool_params
+||ridibooks.com^$cookie=pvid
 ! dugun.com
 ||dugun.com^$cookie=uniqueId
 ! matchtv.ru

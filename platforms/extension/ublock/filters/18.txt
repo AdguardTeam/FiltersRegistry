@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: D7zJ2XziKkHTVeYNqItUCw
-! Diff-Path: ../patches/18/18-s-1782752997-3600.patch
+! Checksum: WbpTalv9ijBnvOEtHv8RuQ
+! Diff-Path: ../patches/18/18-s-1782759042-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.89.12
-! TimeUpdated: 2026-06-29T17:06:52+00:00
+! Version: 2.0.89.13
+! TimeUpdated: 2026-06-29T18:47:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2545,6 +2545,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+karrier.4ig.hu##+js(set-cookie-reload, cookie_terms_accepted, 1)
 nanasubs.com.pl##[class^="ns-cookies"]
 heidejaeger.de##+js(remove-class, cmplz-banner-active, body)
 v-a-c.org,ges-2.org##+js(set-cookie, isCookieAccepted, true)
@@ -4091,7 +4092,6 @@ content.techgig.com##div[class^="gdpr-info"]
 ||jottacloud.com/webapp_static/jotta-consent.js
 godo-steel.co.jp,nipponsteel.com##.mod_message
 nipponsteel.com###modal-overlay
-poizon.ru##.app-cookie-notification
 psd-hannover.de,psd-berlin-brandenburg.de,psdbank-ht.de,psd-muenchen.de,psd-nuernberg.de,psd-west.de##.cdk-global-scrollblock:style(position: static !important;)
 psd-hannover.de,psd-berlin-brandenburg.de,psdbank-ht.de,psd-muenchen.de,psd-nuernberg.de,psd-west.de##.cookie-notice-container:style(display: none !important;)
 ||banknorwegian.de/*/api/*/spaInitObject/cookieconsent?
@@ -16715,6 +16715,8 @@ befestigungsfuchs.de,jawoll.de,cafe-royal.com,campingplus.de,bikebox-shop.de,mli
 !
 !
 !+ NOT_OPTIMIZED
+poizon.ru##.app-cookie-notification
+!+ NOT_OPTIMIZED
 igetnow.com##app-cookie-banner-wrapper-component
 !+ NOT_OPTIMIZED
 gidadedektifi.com,gidadedektifi.net##div[class^="XCookieBanner"]
@@ -17702,6 +17704,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234463
+4ig.hu#@##cookie_layer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234512
 @@||cmp.usercentrics.eu^$domain=ab-in-den-urlaub.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234469
