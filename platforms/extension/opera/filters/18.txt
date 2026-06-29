@@ -1,9 +1,9 @@
-! Checksum: e8D3VrJL6UAkiJ5bit3MKw
-! Diff-Path: ../patches/18/18-s-1782719817-3600.patch
+! Checksum: xUEQvYfo16rb60ys/RZ7aA
+! Diff-Path: ../patches/18/18-s-1782726404-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.89.7
-! TimeUpdated: 2026-06-29T07:53:58+00:00
+! Version: 2.0.89.8
+! TimeUpdated: 2026-06-29T09:43:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2617,6 +2617,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+cmp.novinky.cz#%#//scriptlet('trusted-click-element', '.szn-cmp-dialog-container >>> button[data-testid="cw-button-agree-with-ads"]', '', '5000')
 v-a-c.org,ges-2.org#%#//scriptlet('set-cookie', 'isCookieAccepted', 'true')
 career.hh.ru##div[data-qa="cp-cookies-policy"]
 autismjournal.help###__next > div[class^="sc-"]:has(> div[class^="sc-"] a[href="/misc/privacy_policy.pdf"])
@@ -4784,7 +4785,7 @@ hostzealot.*##div[x-data="gdprComponent"]
 publix.com##.tou-prompt-wrapper
 ptt.gov.tr##div[class^="styles_cookieBanner"]
 robolinkmarket.com##.w-full > div.fixed[class*="bottom-"]:has(a[href="https://robolinkmarket.com/pages/bilgi-guvenligi-politikasi"])
-auto-tech-news.com,candidcyber.com,talkbasket.net,wpbeginner.com,wpmailsmtp.com,sutlucekadayif.com,libretro.com,motopass.pl,classicsongoftheday.com,sectorcine.com,9to5linux.com###wpconsent-root
+wtnovels.com,auto-tech-news.com,candidcyber.com,talkbasket.net,wpbeginner.com,wpmailsmtp.com,sutlucekadayif.com,libretro.com,motopass.pl,classicsongoftheday.com,sectorcine.com,9to5linux.com###wpconsent-root
 tigo.com.gt,tigo.com.hn,tigo.com.ni,tigo.com.bo,tigo.com.py,tigo.com.sv,tigo.cr,tigo.com.co,tigo.com.pa##app-cookieconsent
 m3datarecovery.com###user_popup
 otpbank.md#$#body { overflow: auto !important; }
@@ -19006,6 +19007,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234469
+@@||cdn.cookielaw.org/consent/*.json$domain=editions.ajc.com
+@@||cdn.cookielaw.org/opt-out/otCCPAiab.js$domain=editions.ajc.com
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=editions.ajc.com
+@@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=editions.ajc.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234320
 polo-motorrad.pl#@##accept_cookies
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233998
