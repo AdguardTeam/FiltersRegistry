@@ -1,9 +1,9 @@
-! Checksum: IA+dRUHnyvsvMJGmbQacSw
-! Diff-Path: ../patches/18/18-s-1782733719-3600.patch
+! Checksum: D0D2XY9+F9h1/BSeieui6A
+! Diff-Path: ../patches/18/18-s-1782740424-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.89.9
-! TimeUpdated: 2026-06-29T11:45:32+00:00
+! Version: 2.0.89.10
+! TimeUpdated: 2026-06-29T13:37:26+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2618,6 +2618,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+ab-in-den-urlaub.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button.uc-accept-button', '', '1000')
+heidejaeger.de#%#//scriptlet('remove-class', 'cmplz-banner-active', 'body')
 cmp.novinky.cz#%#//scriptlet('trusted-click-element', '.szn-cmp-dialog-container >>> button[data-testid="cw-button-agree-with-ads"]', '', '5000')
 v-a-c.org,ges-2.org#%#//scriptlet('set-cookie', 'isCookieAccepted', 'true')
 career.hh.ru##div[data-qa="cp-cookies-policy"]
@@ -19097,6 +19099,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234512
+@@||cmp.usercentrics.eu^$domain=ab-in-den-urlaub.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234469
 @@||cdn.cookielaw.org/consent/*.json$domain=editions.ajc.com
 @@||cdn.cookielaw.org/opt-out/otCCPAiab.js$domain=editions.ajc.com

@@ -1,9 +1,9 @@
-! Checksum: RdNzDn6Jc6BY5KdYqoDunA
-! Diff-Path: ../patches/20/20-s-1782711881-3600.patch
+! Checksum: DLw/iYwWD4KmFkH4112T5g
+! Diff-Path: ../patches/20/20-s-1782740403-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.30.6
-! TimeUpdated: 2026-06-29T05:42:02+00:00
+! Version: 2.0.30.7
+! TimeUpdated: 2026-06-29T13:37:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -60,6 +60,12 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+ab-in-den-urlaub.de##.aidu-app-cta
+ab-in-den-urlaub.de#$#.pum-overlay[data-popmake*="app-popup"] { display: none !important; }
+ab-in-den-urlaub.de#$#html.pum-open.pum-open-overlay { overflow: auto !important; }
+ab-in-den-urlaub.de#$#html.pum-open.pum-open-overlay.pum-open-scrollable body > .page-wrapper { padding-right: 0 !important; }
+claude.ai##nav[aria-label="Sidebar"] div.relative:has(> div.relative.group > a[aria-label="Get apps and extensions"])
+claude.ai##button[data-testid="download-desktop-app"]
 energetycznykompas.pl##.download-stores
 planefinder.net###flight-advert
 kupibilet.ru##div[class^="ApplicationBanner_surferContainer"]
@@ -4237,6 +4243,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+claude.ai##main h2 ~ div:not([class*="#email"]):has(button[aria-label="Download the Claude app"])
 planefinder.net##.pf_modal_overlay:has(#app-feature-modal)
 planefinder.net###open-app-container
 wordcheats.com###appDialog

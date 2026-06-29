@@ -2619,6 +2619,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+ab-in-den-urlaub.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button.uc-accept-button', '', '1000')
+heidejaeger.de#%#//scriptlet('remove-class', 'cmplz-banner-active', 'body')
 cmp.novinky.cz#%#//scriptlet('trusted-click-element', '.szn-cmp-dialog-container >>> button[data-testid="cw-button-agree-with-ads"]', '', '5000')
 v-a-c.org,ges-2.org#%#//scriptlet('set-cookie', 'isCookieAccepted', 'true')
 career.hh.ru##div[data-qa="cp-cookies-policy"]
@@ -19190,6 +19192,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234512
+@@||cmp.usercentrics.eu^$domain=ab-in-den-urlaub.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234469
 @@||cdn.cookielaw.org/consent/*.json$domain=editions.ajc.com
 @@||cdn.cookielaw.org/opt-out/otCCPAiab.js$domain=editions.ajc.com
@@ -28239,11 +28243,12 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+claude.ai###credential_picker_iframe
 moneycontrol.com#$#.the_main_popup { display: none !important; }
 moneycontrol.com#$#.modal-open { display: none !important; }
 wtnovels.com#%#//scriptlet('prevent-setTimeout', 'showPopup(payload.popup)')
 anixx.fun#%#//scriptlet('set-session-storage-item', 'anixtv_bookmark_shown', 'true')
-androidpolice.com,babygaga.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,moms.com,movieweb.com,pocket-lint.com,pocketnow.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com###credential_picker_container
+claude.ai,androidpolice.com,babygaga.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,moms.com,movieweb.com,pocket-lint.com,pocketnow.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com###credential_picker_container
 nst.com.my##.summary-widget
 screenscape.me##body > div.fixed.bottom-4
 screenscape.me##[data-slot="sidebar-inset"] > div.fixed.bottom-4
@@ -47698,6 +47703,12 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+ab-in-den-urlaub.de##.aidu-app-cta
+ab-in-den-urlaub.de#$#.pum-overlay[data-popmake*="app-popup"] { display: none !important; }
+ab-in-den-urlaub.de#$#html.pum-open.pum-open-overlay { overflow: auto !important; }
+ab-in-den-urlaub.de#$#html.pum-open.pum-open-overlay.pum-open-scrollable body > .page-wrapper { padding-right: 0 !important; }
+claude.ai##nav[aria-label="Sidebar"] div.relative:has(> div.relative.group > a[aria-label="Get apps and extensions"])
+claude.ai##button[data-testid="download-desktop-app"]
 energetycznykompas.pl##.download-stores
 planefinder.net###flight-advert
 kupibilet.ru##div[class^="ApplicationBanner_surferContainer"]
@@ -51892,6 +51903,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~odaibako.net,~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+claude.ai##main h2 ~ div:not([class*="#email"]):has(button[aria-label="Download the Claude app"])
 planefinder.net##.pf_modal_overlay:has(#app-feature-modal)
 planefinder.net###open-app-container
 wordcheats.com###appDialog

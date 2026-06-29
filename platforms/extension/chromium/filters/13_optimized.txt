@@ -1,9 +1,9 @@
-! Checksum: HmEfTD+LdASA9Kse+qghOw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1782733684-3600.patch
+! Checksum: 8wVjeWsuuULNDI7tQQuT0A
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1782740398-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.65.40
-! TimeUpdated: 2026-06-29T11:45:17+00:00
+! Version: 2.0.65.41
+! TimeUpdated: 2026-06-29T13:37:12+00:00
 ! Expires: 10 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5492,12 +5492,19 @@ turkifsalar.site##div[class]:has(> a[href^="https://cutt.ly/"])
 [$domain=/turktube\d+\.online$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.ink$/]##a[href^="https://tinyurl.com/"]
 !+ NOT_VALIDATE
-.gif|$domain=/hdturkifsa\d+\.icu$/
-[$domain=/hdturkifsa\d+\.icu$/]###tg-cta-container
-[$domain=/hdturkifsa\d+\.icu$/]##.banner-grid-wrap
-[$domain=/hdturkifsa\d+\.icu$/]##article[data-ad-pos]
-[$domain=/hdturkifsa\d+\.icu$/]##div[style]:has(> a[href^="https://bit.ly/"])
-[$domain=/hdturkifsa\d+\.icu$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
+.gif|$domain=/hdturkifsa\d+\.(lol\|icu)$/
+[$domain=/hdturkifsa\d+\.(lol\|icu)$/]###tg-cta-container
+[$domain=/hdturkifsa\d+\.(lol\|icu)$/]##.banner-grid-wrap
+[$domain=/hdturkifsa\d+\.(lol\|icu)$/]##article[data-ad-pos]
+[$domain=/hdturkifsa\d+\.(lol\|icu)$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/hdturkifsa\d+\.(lol\|icu)$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
+!+ NOT_VALIDATE
+.gif|$domain=/arsivim\d*\.xyz$/
+[$domain=/arsivim\d*\.xyz$/]###tg-cta-container
+[$domain=/arsivim\d*\.xyz$/]##.banner-grid-wrap
+[$domain=/arsivim\d*\.xyz$/]##article[data-ad-pos]
+[$domain=/arsivim\d*\.xyz$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/arsivim\d*\.xyz$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
 !+ NOT_VALIDATE
 ||i.ibb.co/*.gif$domain=/softtv\d+\.com$/
 [$domain=/softtv\d+\.com$/]##.slot-header_banner
