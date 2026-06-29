@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ReG+455A7WyC3ptlEpihOA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782698190-3600.patch
+! Checksum: yCrZp3hnCReNHsL3t7dnyQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782703304-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.74.31
-! TimeUpdated: 2026-06-29T01:53:16+00:00
+! Version: 2.4.74.32
+! TimeUpdated: 2026-06-29T03:17:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37456,6 +37456,12 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||phncdn.com/*/pics/skins/
+pornhub.com###customSkin
+pornhub.com###customSkinCTA
+pornhub.com##a[href*=".com/smartpop/"]
+pornhub.com##.hd:has(> div > ins.adsbytrafficjunky)
+pornhub.com##.container:style(margin-top: 0 !important;)
 businesstoday.in##.storysecondads
 ||tosshub.com/sites/businesstoday/admanager/
 greatandhra.com##.entry-content > p > span[style="color: #ff0000;"]
@@ -37572,8 +37578,8 @@ gbnews.com##.desktop-billboard
 google.com###center_col > #gevUs > #topstuff:has(> div[class] > div[class] > h2 + ol[style])
 pv-magazine.com##.pvmagazine-advert-group
 pv-magazine.com##.advert-block__container
-/^https:\/\/[a-z]+[0-9]+\.[a-z]+\.cfd\/\?[a-z]+=[a-zA-Z0-9:_=-]+/$all,match-case
-/^https:\/\/[a-z]+[0-9]+\.host[0-9]+[a-z]\.cfd\/\?[a-z]+=[a-zA-Z0-9:_=-]+/$all,match-case
+/^https:\/\/[a-z0-9]+\.[a-z0-9]+\.cfd\/\?[a-z]+=[a-zA-Z0-9+/=:_-]+$/$3p,all,match-case
+||cfd^$3p,popup,domain=multiup.io
 thestar.com.my##.smg55-brandbar-link
 coinadster.com##.banner-container
 ||cineby.*/scripts/os.js
@@ -37663,7 +37669,7 @@ publishersweekly.com###bbstar-popin
 publishersweekly.com###right-column-boom-box
 ipaomtk.com##.ipaomtk-ad-slot
 wiirom.com##button.file-download-btnn
-multiup.io##+js(abort-current-script, document.defaultView.atob, /"\\|\\[ux]|\+\[\]/)
+multiup.io##+js(abort-current-script, document.defaultView.atob, )
 missav.*##div[style="width: 300px; height: 100px;"]
 onedio.co###masthead-background
 onedio.co###masthead-container
