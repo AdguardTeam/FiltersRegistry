@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: GnyW+O63jjMPTU31ndBqrw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782726416-3600.patch
+! Checksum: UfRai+p+Qw9GOXwIRVLIKw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782733708-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.74.35
-! TimeUpdated: 2026-06-29T09:42:51+00:00
+! Version: 2.4.74.36
+! TimeUpdated: 2026-06-29T11:44:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10806,6 +10806,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234532
+pornhex.com##+js(no-setTimeout-if, Adblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234561
 ||magesy.net/juan.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234477
@@ -26794,7 +26796,10 @@ bezprzeplacania.pl##img[width="160"][height="600"]
 bezprzeplacania.pl##div[style="text-align: center; margin: 0; padding: 0;"] > a[target="_blank"] > img
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139136
 polskiprzemysl.com.pl##.banner-full
+polskiprzemysl.com.pl##.above-header
 polskiprzemysl.com.pl##.baner-and-partners
+polskiprzemysl.com.pl##div[class^="box-magd-"]
+||polskiprzemysl.com.pl/wp-content/themes/wp_polskiprzemysl/js/fullscreen-ad.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139129
 fotopolis.pl##.cyfrowepl
 fotopolis.pl##.fotoforma
@@ -37460,6 +37465,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+jetpunk.com##.placement-outer
 sheepesports.com##.items-center[class*="border"]:has(> .w-full.relative.hidden > .absolute.items-center:only-child)
 sheepesports.com##.items-center[class*="border"]:has(> .w-full.relative.hidden > .absolute > div[id^="/"][id*="_"])
 moneycontrol.com##.cls_budget_adDiv

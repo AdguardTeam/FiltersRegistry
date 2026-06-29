@@ -1,9 +1,9 @@
-! Checksum: XucwwrbXNule8bLvcaZETw
-! Diff-Path: ../patches/9/9-s-1782660971-3600.patch
+! Checksum: Hw1WaXum9f7IHrx1P/zbfg
+! Diff-Path: ../patches/9/9-s-1782733726-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.34.86
-! TimeUpdated: 2026-06-28T15:32:56+00:00
+! Version: 2.0.34.87
+! TimeUpdated: 2026-06-29T11:45:14+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -199,6 +199,13 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234510
+lineup11.net#%#//scriptlet('prevent-addEventListener', 'visibilitychange', 'bs()')
+lineup11.net#%#//scriptlet('prevent-setTimeout', 'bs()')
+lineup11.net#%#//scriptlet('prevent-setInterval', 'bs()')
+! https://github.com/AdguardTeam/AdguardFilters/issues/234549
+videosad.net###adblock-wall
+videosad.net#%#//scriptlet('abort-current-inline-script', 'document.getElementById', '/pagead2\.googlesyndication\.com|adsbygoogle/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233534
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233550
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=sbt.com.br
@@ -2133,6 +2140,7 @@ lusometeo.com,kltutors.com,eloutput.com,mundobytes.com,techondicas.com,jornalrep
 !
 ! NOTE: Specific rules
 !
+videosad.net#%#//scriptlet('trusted-replace-node-text', 'script', 'showDownloadScreen', 'function handleWatch()', 'try{showDownloadScreen()}catch(e){}function handleWatch()')
 ||fucsia.co/pf/resources/js/arcads.js
 ||soho.co/pf/resources/js/arcads.js
 criptofacil.com##.criptofacil-ad-box
