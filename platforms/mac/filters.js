@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.6.99",
-			"timeUpdated": "2026-06-30T07:26:18+0000",
+			"version": "2.1.7.0",
+			"timeUpdated": "2026-06-30T12:48:30+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.74.52",
-			"timeUpdated": "2026-06-30T11:06:26+0000",
+			"version": "2.4.74.53",
+			"timeUpdated": "2026-06-30T12:48:44+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.6.41",
-			"timeUpdated": "2026-06-30T07:26:47+0000",
+			"version": "2.1.6.42",
+			"timeUpdated": "2026-06-30T12:48:56+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.71.49",
-			"timeUpdated": "2026-06-30T11:06:56+0000",
+			"version": "2.2.71.50",
+			"timeUpdated": "2026-06-30T12:49:26+0000",
 			"languages": []
 		},
 		{
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.26.43",
-			"timeUpdated": "2026-06-30T11:06:59+0000",
+			"version": "2.1.26.44",
+			"timeUpdated": "2026-06-30T12:49:29+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.77.98",
-			"timeUpdated": "2026-06-30T11:07:03+0000",
+			"version": "2.0.77.99",
+			"timeUpdated": "2026-06-30T12:49:36+0000",
 			"languages": []
 		},
 		{
@@ -338,8 +338,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.45.84",
-			"timeUpdated": "2026-06-30T11:07:04+0000",
+			"version": "2.0.45.85",
+			"timeUpdated": "2026-06-30T12:49:37+0000",
 			"languages": []
 		},
 		{
