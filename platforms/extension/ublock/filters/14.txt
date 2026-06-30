@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: fyoyfqHLTa9q8zYYP+TECw
-! Diff-Path: ../patches/14/14-s-1782789460-3600.patch
+! Checksum: 1PSJYrbbSYkmwVOvDUqIGA
+! Diff-Path: ../patches/14/14-s-1782797556-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.71.45
-! TimeUpdated: 2026-06-30T03:14:31+00:00
+! Version: 2.2.71.46
+! TimeUpdated: 2026-06-30T05:29:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2545,6 +2545,9 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+gorod.mos.ru##.ui-info-modal__wrapper
+skatteetaten.no###react-cookiebanner:style(display: none !important;)
+skatteetaten.no##body.cookie-open:style(overflow: auto !important;)
 dreamisland.ru##div[class^="CookiePanel_wrapper"]
 karrier.4ig.hu##+js(set-cookie-reload, cookie_terms_accepted, 1)
 nanasubs.com.pl##[class^="ns-cookies"]
@@ -17705,6 +17708,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234451
+skatteetaten.no#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234463
 4ig.hu#@##cookie_layer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234512
@@ -25488,7 +25493,7 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com###abd-container:style(display: block !impor
 ! map.naver.com
 ! chzzk.naver.com
 chzzk.naver.com##+js(spoof-css, .banner_ad_wrapper, display, block)
-chzzk.naver.com##+js(no-xhr-if, /veta.naver.com\/vas|veta.naver.com\/gfp|veta.naver.com\/call/ method:OPTIONS)
+chzzk.naver.com##+js(no-xhr-if, /(veta.naver.com\/vas|veta.naver.com\/gfp|veta.naver.com\/call)/ method:OPTIONS)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185974
 grabify.link##+js(set-cookie, ckstp, 1)
 grabify.link#@#.ad_container

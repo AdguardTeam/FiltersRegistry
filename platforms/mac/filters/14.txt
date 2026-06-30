@@ -1,8 +1,8 @@
-! Checksum: YhR0AxH25BzkSzYBogqPEg
+! Checksum: XLfdwSSV10ITMDfivrJaGA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.71.45
-! TimeUpdated: 2026-06-30T03:14:31+00:00
+! Version: 2.2.71.46
+! TimeUpdated: 2026-06-30T05:29:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2617,6 +2617,9 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+gorod.mos.ru##.ui-info-modal__wrapper
+skatteetaten.no#$##react-cookiebanner { display: none !important; }
+skatteetaten.no#$#body.cookie-open { overflow: auto !important; }
 dreamisland.ru##div[class^="CookiePanel_wrapper"]
 karrier.4ig.hu#%#//scriptlet('trusted-set-cookie-reload', 'accepted_cookies', 'functional')
 karrier.4ig.hu#%#//scriptlet('set-cookie-reload', 'cookie_terms_accepted', '1')
@@ -19103,6 +19106,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234451
+skatteetaten.no#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234463
 4ig.hu#@##cookie_layer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234512
@@ -27001,7 +27006,7 @@ map.naver.com#%#"use strict"; window.MutationObserver = new Proxy(window.Mutatio
 ! chzzk.naver.com
 chzzk.naver.com#%#//scriptlet('spoof-css', '.banner_ad_wrapper', 'display', 'block')
 chzzk.naver.com#%#//scriptlet('trusted-json-set-xhr-response', 'content.playerAdDisplayResponse', 'json:{"preRoll":false,"midRoll":false}', 'content.playerAdDisplayResponse.preRoll', '/ad/display-status')
-chzzk.naver.com#%#//scriptlet('prevent-xhr', '/veta.naver.com\/vas|veta.naver.com\/gfp|veta.naver.com\/call/ method:OPTIONS')
+chzzk.naver.com#%#//scriptlet('prevent-xhr', '/(veta.naver.com\/vas|veta.naver.com\/gfp|veta.naver.com\/call)/ method:OPTIONS')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185974
 grabify.link#%#//scriptlet('set-cookie', 'ckstp', '1')
 grabify.link#@#.ad_container
