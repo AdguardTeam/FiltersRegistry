@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zhflFB1zGvotweWS23KYBQ
-! Diff-Path: ../patches/19/19-s-1782804638-3600.patch
+! Checksum: jOyHnK+t1IiYVOsoi9Ti/Q
+! Diff-Path: ../patches/19/19-s-1782811084-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.77.96
-! TimeUpdated: 2026-06-30T07:27:29+00:00
+! Version: 2.0.77.97
+! TimeUpdated: 2026-06-30T09:14:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -83,10 +83,13 @@ mail.yandex.*##+js(json-prune, seatbid rtb)
 !
 ! Yandex.Search
 ! Main page under the search bar
+ya.ru##.search3__wrapper ~ div[class^="body__"]:has(> div > div > div > a[aria-labelledby="ad-mark__mark"])
 ya.ru##main[class="body__wrapper"] form ~ div[style^="--height-ratio:"]
 yandex.*##main[class="body__wrapper"] form ~ div > div[style^="--height-ratio:"]
 yandex.ru##.main__block-banner iframe[src]
 ! the ad is on the right side, which is mostly non-reproducible
+! In the feed
+ya.ru##.feed > div > ul > li.feed__item:has(div[id*="R-I-"])
 !
 ! Yandex.TV
 tv.yandex.*##+js(abort-on-property-read, Object.prototype.renderDirect)
