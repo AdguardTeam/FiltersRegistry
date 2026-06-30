@@ -1,9 +1,9 @@
-! Checksum: GCm5ZixgS3Pic5QuM/NArA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1782782802-14400.patch
+! Checksum: 7civro9mWIT8dpYhd91Fcw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1782799131-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.64.27
-! TimeUpdated: 2026-06-30T01:23:19+00:00
+! Version: 2.1.64.28
+! TimeUpdated: 2026-06-30T05:55:07+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -243,6 +243,7 @@ _social_footer_
 ###fb_link
 ###fb_share
 ###fb_share_btn
+###fb_social
 ###fb_video_link
 ###fb_widget
 ###fbbox
@@ -394,7 +395,6 @@ _social_footer_
 ###rightSocial
 ###rsociaux
 ###sb_instagram
-###scroll-social
 ###selectionShare
 ###share-area
 ###share-bar
@@ -570,7 +570,6 @@ _social_footer_
 ###social-pinterest
 ###social-plugins
 ###social-popup
-###social-profiles
 ###social-promo-flyin
 ###social-share
 ###social-share-bottom
@@ -663,7 +662,6 @@ _social_footer_
 ###socialbox
 ###socialbuttons
 ###socialbuttonsbox
-###socialdiv
 ###socialfooter
 ###socialicons
 ###sociallinks
@@ -728,6 +726,7 @@ _social_footer_
 ###wpcw_social-7
 ###xe-header-social-nav
 ###yt-widget
+###zoom-social-icons-widget-1
 ###zoom-social-icons-widget-2
 ##.-movie-info-share
 ##.ActionButton--share
@@ -1339,6 +1338,7 @@ _social_footer_
 ##.fblbForm
 ##.fblikebox
 ##.fblink
+##.fbpopup-container
 ##.fbshare
 ##.fbslideout
 ##.fbsmallshare
@@ -1572,6 +1572,7 @@ _social_footer_
 ##.hdr-social
 ##.hdsocial2
 ##.head-post-share
+##.head-social-links
 ##.header-facebook
 ##.header-follow-us
 ##.header-icon-instagram
@@ -1725,6 +1726,7 @@ _social_footer_
 ##.ig-share-button
 ##.ig_social
 ##.ikonz-social
+##.image-share
 ##.image-social
 ##.img-social
 ##.img__sharer
@@ -2419,7 +2421,6 @@ _social_footer_
 ##.share-this
 ##.share-this-page
 ##.share-this-popover
-##.share-this-post
 ##.share-tiktok
 ##.share-title
 ##.share-to
@@ -2740,6 +2741,8 @@ _social_footer_
 ##.single-sharing-btns
 ##.single-sidebar-share
 ##.single-social-button
+##.single-social-wrap
+##.singlePostShare
 ##.singleSocialShares
 ##.single__floating-share
 ##.single__share
@@ -2986,7 +2989,6 @@ _social_footer_
 ##.social-share-area
 ##.social-share-article
 ##.social-share-bar
-##.social-share-bar-container
 ##.social-share-block
 ##.social-share-box
 ##.social-share-btn
@@ -3154,7 +3156,6 @@ _social_footer_
 ##.social_menu_icon
 ##.social_popup
 ##.social_row
-##.social_sec
 ##.social_section
 ##.social_share_buttons
 ##.social_share_fb
@@ -3491,6 +3492,7 @@ _social_footer_
 ##.widget_facebook_likebox
 ##.widget_follow
 ##.widget_follow_button_widget
+##.widget_follow_us
 ##.widget_g1_socials
 ##.widget_jnews_social
 ##.widget_novashare_follow_widget
@@ -3500,7 +3502,6 @@ _social_footer_
 ##.widget_social
 ##.widget_social_counter
 ##.widget_social_links
-##.widget_social_media
 ##.widget_social_networks
 ##.widget_socialnetworklinks_widget
 ##.widget_socials
@@ -3521,6 +3522,7 @@ _social_footer_
 ##.wplogout-social-wrapper
 ##.wpusb-btn
 ##.wrap-social
+##.wrap__sns
 ##.wrapper-share
 ##.wrapper-share-social
 ##.wrapper_fb_like
@@ -4059,6 +4061,7 @@ nfl.com##.nfl-c-article__share-bar
 nhl.com##.nhl-o-sharebar
 nist.gov##.nist-social__wrapper
 infobyip.com##.noprint
+conservativebrief.com,karanpc.com,parlamentario.com,sexypedia.it##.ns-buttons
 foodnetwork.com##.o-SocialShare
 sheknows.com,spy.com##.o-social-list__item
 support.microsoft.com##.ocArticleFooterShareContainer
@@ -4198,7 +4201,6 @@ firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.s
 arabnews.com##.socials-btns
 overclock3d.net##.socials-container
 thehealthsite.com##.socialsIconBlackWhite
-ntvkenya.co.ke##.socials_bar
 nltimes.nl##.sourcebutton
 republicworld.com##.sponsors-container
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
@@ -4242,7 +4244,6 @@ news.sky.com##.ui-news-footer-social
 news.sky.com##.ui-news-footer-social-link
 hp.com##.ul_media_links
 aa.com.tr##.ustBar-sosyal
-trueachievements.com##.vc
 videocardz.com##.vc-google-icon
 apa.org##.vertical-icon-bar
 videogameschronicle.com##.vgc-branding__container > ul
@@ -4407,6 +4408,7 @@ dagens.com,english.nv.ua,jenkemmag.com,jewishinsider.com,largus.fr,masterduelmet
 al-ain.com,al-sharq.com,cartacapital.com.br,cellulare-magazine.it,ocafezinho.com,ringsidenews.com,tv100.com##.google-news
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,electrek.co,searchengineland.com,spaceexplored.com##.google-news-link
 usnews.com,zerohedge.com##div[class*="SocialShar"]
+atlatszo.hu,atvavrupa.tv,avn.com,bostonmagazine.com,cas.sk,cloth5.com,commentwiki.fr,dzfoot.com,eldiariosur.com,epochtimes.it,hothardware.com,ikhwanonline.info,liganews.net,lonny.com,lovenature.com,malwaretips.com,mpasho.co.ke,niedziela.pl,northernvirginiamag.com,olhardigital.com.br,pnn.ps,precinctreporter.com,puntal.com.ar,radiojambo.co.ke,regione.abruzzo.it,sabah.com.tr,sneakernews.com,sourcefed.com,soutalomma.com,sudouest.fr,the-star.co.ke,transfermarkt.at,transfermarkt.ch,transfermarkt.co.uk,transfermarkt.com,transfermarkt.com.tr,transfermarkt.de,transfermarkt.es,transfermarkt.nl,transfermarkt.pl,transfermarkt.pt,vijesti.ba,wowhead.com,xn--tbnespaa-j3a.es##.header-social
 acordacidade.com.br,biobiochile.cl,crea-mexico.com,diarioelargentino.com,eleconomista.com.ar,elobservador.com.uy,elonce.com,expansion.com,futbol.com.uy,futbolred.com,harem69.com.br,humordaterra.com,jornaldocomercio.com,laverdad.com,lula.com.br,montevideo.com.uy,mvsnoticias.com,portalperifacon.com,pronto.com.ar,radiopopular.com,tecnoblog.net,tiempoar.com.ar,tiemposur.com.ar##.redes
 globalnews.ca###footer-social
 adblockplus.org###social-list
@@ -4442,6 +4444,7 @@ teltarif.de##.sbm
 orf.at##.share-dialog
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
 bild.de##.sharingbar
+mpg.de##.social-media-buttons
 kurier.at##.socialmedia-nav
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
@@ -4627,7 +4630,6 @@ emol.com###cuDetalle_cuBarraSocial_redesSociales
 bandaancha.eu###shBt
 milenio.com###share-icons-container
 excelsior.com.mx###social-bottom-node
-forocoches.com###social-networks
 europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
 adn40.mx##.ListSiguenos-SocialStrip
@@ -4667,6 +4669,7 @@ tn.com.ar##.horizontal-share
 milenio.com##.info-networks
 libertaddigital.com##.links_social
 milanuncios.com##.ma-AdDetailShare
+perfil.com##.main-footer__redes
 canalnet.tv##.main-video-single__socials
 genbeta.com,vidaextra.com,xataka.com.mx##.menu-follow
 lanacion.com.ar##.mod-share-container
