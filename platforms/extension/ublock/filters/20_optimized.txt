@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: aQzJh44/jSglVZ449RF4ng
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1782752998-3600.patch
+! Checksum: W2qGxoay87aI6nDPVqT4nw
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1782789462-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.30.9
@@ -209,7 +209,6 @@ gate.com###downloadAppSpecial
 manhuarmtl.com###app-download-overlay
 xo.gr##.mobile-apps
 trendyol.com###smartbanner-wrapper
-megapteka.ru##.banner-podcast
 jiotv.com##.bannerContainer
 mega.nz##.application
 google.*##:matches-path(/maps) div[role="main"] > div.pL6he
@@ -229,7 +228,6 @@ radio.de,radio.at,radio.net##div:has(> div:first-child + div:last-child > .app-b
 radio.de,radio.at,radio.net##a[data-testid="open-app-button"]
 s7.ru##div[class^="ds-Modal-root ds-Popup-root ds-Dialog-root "]
 trip.com##.m-flightlist__chromepop
-rottentomatoes.com###main > overlay-base:style(display: none !important;)
 rottentomatoes.com##.scroll-lock:style(overflow: auto !important;)
 samsclub.com##.bottom-0.fixed
 tinyhouselistings.com##+js(set-local-storage-item, mobile-app-promotion, true)
@@ -383,6 +381,7 @@ visualcapitalist.com##div[style^="margin-bottom:"]:has(> p > a[href="https://www
 cloud.mail.ru##div[class^="ErrorPage__downloadAppContainer--"]
 nur.kz##.js-branding-top
 holidaycheck.de##.hc-footer__app-promo
+singlecare.com##.stickyAppPromoBanner
 substack.com##.pencraft > button:contains(/^Get (the )?app$/)
 bilibili.tv##.play-page-banner
 bilibili.tv##.bstar-header__actions > div.bstar-header__dropdown:has(> div > a.bstar-header__download-btn)
@@ -416,6 +415,7 @@ mega.lol###download-app-area
 elipshaber.com##.mb-3.p-3.bg-white:has(> #msk-mobil-app)
 donanimhaber.com##.uygulamayi-indir:style(visibility: hidden !important; height: 0 !important;)
 bristol.ru##.first-order-modal
+raycast.com##div[class^="GlobalBanner"]
 imdb.com##.imdb-header__app-button
 t.shuqi.com##.ReaderFreeFixedGuideBtn
 enerjisa.com.tr,easy.co.il##.qr-container
@@ -625,6 +625,7 @@ moises.ai##.relative > div.flex-col:has(> div[role="group"] > a[title="App Store
 moises.ai##footer + div.fixed
 codenames.game##a[href="https://cge.as/cnapp-store-download-cno"]
 v.daum.net##.box_floating:has(button[data-tiara-action-name="다음앱배너_클릭"])
+member.kms.kuronekoyamato.co.jp##.common-header ~ div > .overlay:has(> .open-app-area)
 camp-fire.jp###main ~ section > div[class]:has(> img[src*="_app"])
 hromadske.radio##div[class^="ModalBanner_modalBanner"]
 yamap.com##.Posts__Download__Section
@@ -707,6 +708,7 @@ m.economictimes.com##+js(set-session-storage-item, nudgeStickyBannerHide, true)
 m.economictimes.com##a[href*="app.goo.gl/?link="]
 zutool.jp##.column_app_box01
 zutool.jp##[class^="cmn_app_link"]
+vstat.info##.blockscr > div.install
 bundesliga.com##app-banner-wrapper
 realtor.com##div[class^="MobileBannerstyles"]
 gingersoftware.com##.gc-home-page > gc-new-banner-carousel:has(.icon-chrome-colored)
@@ -942,7 +944,6 @@ mymo-ibank.com##.l-footer-aplcation
 blog.terabox.com##.entry-content > div[style^="text-align:"]
 cenoteka.rs##+js(set-cookie-reload, android_download_hide, 1)
 baike.baidu.com##.wgt-baikeapp-promote-container
-kavkazr.com##.banner__a
 espreso.co.rs###installAndroidApp
 flagma.by##+js(set-cookie-reload, flagmajob_ads_shown, 1)
 pepper.pl##.js-threadList > .js-banner:has(img[alt$="-App"])
@@ -1050,7 +1051,6 @@ yapokupayu.ru##.popup-app-download
 bookwalker.jp##.p-app-bnr
 kinarino.jp##.p-download-app
 ||kinarino.k-img.com/assets/webpage/download-app/
-page.auctions.yahoo.co.jp##aside[class^="AppBanner_"]
 ||eow.alc.co.jp/content/img/footer_btn-googleplay.png
 ||eow.alc.co.jp/content/img/footer_btn-appstore.png
 51cto.com##.suspension-pendant_r
@@ -1225,6 +1225,7 @@ meetup.com##.z-modal.items-center > div[role="dialog"][draggable="false"][style=
 huashi6.com##.chuzhan-app-download
 xn--pckua2a7gp15o89zb.com##.p-appHeadBnr--fixed + .p-header:style(margin-top: 0 !important;)
 echofm.online##.support:has(> div[class^="sc-"] > div[class^="sc-"] > a[href^="https://apps.apple.com/ru/app/"])
+place.line.me###floating-root + nav[class^="_"][style="bottom: 0px;"] > div:not([id])[style="bottom: 0px;"]
 sp.nicovideo.jp##div[id$="BannerContainer"]
 runoob.com##.fixed-btn > .qrcode
 ynjn.jp##.applicationIntroduction
@@ -1813,6 +1814,7 @@ m.hh.ru##.application-promo
 radio.net##a[data-testid^="broadcast-appstore-"][title="Download now"]
 radio.net##section[data-testid="station-section-app"]
 emag.hu##a[href^="https://www.emag.hu/mobilalka"]
+y2mate.*###adInstallAndroid
 castbox.fm##.downloadPlay
 context.reverso.net##+js(set-constant, smartbanner_params, undefined)
 fdoctor.ru##section.app
