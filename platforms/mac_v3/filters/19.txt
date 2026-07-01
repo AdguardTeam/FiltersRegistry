@@ -1,9 +1,9 @@
-! Checksum: 6BaC1vMwz45C1BzDBe/w2g
-! Diff-Path: ../patches/19/19-s-1782831716-3600.patch
+! Checksum: xH25uIwh8veWRmy+qvDTRA
+! Diff-Path: ../patches/19/19-s-1782884533-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.78.1
-! TimeUpdated: 2026-06-30T14:58:54+00:00
+! Version: 2.0.78.2
+! TimeUpdated: 2026-07-01T05:39:23+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2966,7 +2966,9 @@ map.naver.com#%#"use strict"; window.MutationObserver = new Proxy(window.Mutatio
 ! chzzk.naver.com
 chzzk.naver.com#%#//scriptlet('spoof-css', '.banner_ad_wrapper', 'display', 'block')
 chzzk.naver.com#%#//scriptlet('trusted-json-set-xhr-response', 'content.playerAdDisplayResponse', 'json:{"preRoll":false,"midRoll":false}', 'content.playerAdDisplayResponse.preRoll', '/ad/display-status')
-chzzk.naver.com#%#//scriptlet('prevent-xhr', '/(veta.naver.com\/vas|veta.naver.com\/gfp|veta.naver.com\/call)/ method:OPTIONS')
+||nam.veta.naver.com/vas|$xmlhttprequest,domain=chzzk.naver.com,redirect=nooptext
+||nam.veta.naver.com/gfp$xmlhttprequest,domain=chzzk.naver.com,redirect=nooptext
+||nam.veta.naver.com/call|$xmlhttprequest,domain=chzzk.naver.com,redirect=nooptext
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185974
 grabify.link#%#//scriptlet('set-cookie', 'ckstp', '1')
 grabify.link#@#.ad_container
@@ -11665,6 +11667,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+meet.google.com##div[aria-label="Receive desktop notifications from Meet"]
 jornaldenegocios.pt##.notificacao
 ||stat.cloud-messenger.net/js/push_notification.js
 record.pt##.push-notifications
@@ -12682,6 +12685,7 @@ jornaldenegocios.pt,gigazine.net,football24.ua,47news.jp,stuff.co.nz,eleconomist
 !
 ! SECTION: Subscriptions - Regular rules
 !
+number.bunshun.jp##.google-search-follow
 myweekend.ru##.fixed_bottom__item--subscriptions_right
 myweekend.ru##.main_header__important_logo
 yummyanime.tv##.telega__full
