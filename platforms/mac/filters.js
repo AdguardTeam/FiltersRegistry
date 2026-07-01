@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.7.2",
-			"timeUpdated": "2026-06-30T14:57:54+0000",
+			"version": "2.1.7.3",
+			"timeUpdated": "2026-07-01T03:15:38+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.74.66",
-			"timeUpdated": "2026-07-01T01:53:54+0000",
+			"version": "2.4.74.67",
+			"timeUpdated": "2026-07-01T03:15:54+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.6.44",
-			"timeUpdated": "2026-07-01T01:54:05+0000",
+			"version": "2.1.6.45",
+			"timeUpdated": "2026-07-01T03:16:07+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.71.53",
-			"timeUpdated": "2026-06-30T15:57:53+0000",
+			"version": "2.2.71.54",
+			"timeUpdated": "2026-07-01T03:16:38+0000",
 			"languages": []
 		},
 		{
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.26.50",
-			"timeUpdated": "2026-07-01T01:54:28+0000",
+			"version": "2.1.26.51",
+			"timeUpdated": "2026-07-01T03:16:41+0000",
 			"languages": []
 		},
 		{
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.89.20",
-			"timeUpdated": "2026-06-30T15:58:01+0000",
+			"version": "2.0.89.21",
+			"timeUpdated": "2026-07-01T03:16:48+0000",
 			"languages": []
 		},
 		{
@@ -364,8 +364,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/23.txt",
-			"version": "2.0.8.86",
-			"timeUpdated": "2026-06-29T09:43:56+0000",
+			"version": "2.0.8.87",
+			"timeUpdated": "2026-07-01T03:16:54+0000",
 			"languages": [
 				"uk"
 			]

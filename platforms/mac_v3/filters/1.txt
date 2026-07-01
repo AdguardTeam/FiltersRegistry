@@ -1,9 +1,9 @@
-! Checksum: XWsZlUP5mHU3CFC7P44DfQ
-! Diff-Path: ../patches/1/1-s-1782831715-3600.patch
+! Checksum: fILdZKUREtGc70yKwasmIw
+! Diff-Path: ../patches/1/1-s-1782876006-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.7.2
-! TimeUpdated: 2026-06-30T14:57:54+00:00
+! Version: 2.1.7.3
+! TimeUpdated: 2026-07-01T03:15:38+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1457,6 +1457,8 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||adport.net^
+||vvapi.org^
 ||vipapi.me^
 ||veoapi.net^
 ||pressms.ru^$all
@@ -7135,6 +7137,9 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+kinob.net#%#//scriptlet('trusted-replace-argument', 'JSON.parse', '0', 'replace:/"vast":1,"prerolls":1/"vast":0,"prerolls":0/', 'prerolls')
+kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'prerolls', '0')
+kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'vast', '0')
 ||cdn.iz.ru/profiles/portal/themes/purple/js/ads-tools.js
 sports.ru,sovsport.ru##a[href*="winline.ru"]
 gazeta.press##div[id^="gazeta-adv-counter"]
