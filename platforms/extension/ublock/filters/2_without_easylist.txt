@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 66h6FLPoJRRpkbP/cVyO0Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782918623-3600.patch
+! Checksum: XE02MLTjB4pq+7m3SW4F2g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1782927978-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.74.73
-! TimeUpdated: 2026-07-01T15:04:35+00:00
+! Version: 2.4.74.74
+! TimeUpdated: 2026-07-01T17:40:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19647,6 +19647,9 @@ auto.am##.azd-top
 ##.ainsyndication
 az##.makerekframe
 !
+trend.az###masthead-strip:remove()
+trend.az##.banner-on-visible
+||qafqazinfo.az/public/site/js/reklam.js
 valyuta.com##body > div[class$="t-iaz"]
 ||fed.az/upload/banners/$image
 mast.az##.xendev-top-banners
@@ -20375,6 +20378,7 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
+kosicak.sk##div[style^="width:100%;min-height:"]
 prozeny.cz##div[data-e2e="ogm-branding"] > div[class]:has(> div:only-child > div:only-child > div[data-e2e="mol-advert"])
 prozeny.cz,garaz.cz##div[data-e2e="mol-advert"]
 playarcady.com###content-placeholder > div[style^="position: absolute; z-index: 9999; top: 0px; left: 0px;"]
@@ -25775,6 +25779,11 @@ bieganie.pl##.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/234740
+stalowemiasto.pl###m-adblock:style(display: none !important;)
+stalowemiasto.pl##html.blurred:style(overflow: auto !important;)
+stalowemiasto.pl##html.blurred > body > *:style(filter: none !important;)
+stalowemiasto.pl##+js(addEventListener-defuser, load, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234319
 miastorumia.pl#@#.ad
 miastorumia.pl#@#.ads
@@ -37487,6 +37496,19 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+tubeon.com,tubeon.net##div[class^="adv-"]
+tubeon.comtubeon.net##.thumb-link-rounded
+tubeon.com,tubeon.net##+js(remove-node-text, script, mobileAdvPop)
+tubeon.com,tubeon.net##section > div.container:has(> div#spot_video_livecams)
+tubeon.com,tubeon.net##.cams-opener
+tubeon.com,tubeon.net##.header_premium_bar
+tubeon.com,tubeon.net###spot_video_underplayer_livecams
+tubeon.com,tubeon.net##a[href^="https://go.xliiirdr.com/"]
+tubeon.com,tubeon.net##a[href^="https://fhgte.com/"]
+tubeon.com,tubeon.net###banner_overlay-postitial-video
+tubeon.com,tubeon.net##.player_premium_bar
+||tubeon.com/templates/base_master/js/jquery.ppdr2.min.js
+||tubeon.net/templates/base_master/js/jquery.ppdr2.min.js
 borntobefuck.com##.gate-layer
 borntobefuck.com###sidebar-card-portrait
 pornid.*##.slots-bottom
@@ -64204,6 +64226,7 @@ implbits.com#@#.banner_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228013
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228278
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228309
+! https://github.com/AdguardTeam/AdguardFilters/issues/234734
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234642
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234633
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233846
