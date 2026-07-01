@@ -1,9 +1,9 @@
-! Checksum: ly918oeZEPL7n2fZrCRlxg
-! Diff-Path: ../patches/14/14-s-1782904575-3600.patch
+! Checksum: L6voMHeFVgl9QDC0Mg+J2g
+! Diff-Path: ../patches/14/14-s-1782911721-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.71.58
-! TimeUpdated: 2026-07-01T11:11:28+00:00
+! Version: 2.2.71.59
+! TimeUpdated: 2026-07-01T13:04:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2617,6 +2617,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+sobaka.ru###acceptCookiesPopup
+7days.ru##body > div[style*="fixed"]:has(> div[style*="flex"] a[href="https://seven-days.ru/page.php?ID=400"])
 nfc24.pl##.left-0.right-0.z-50.p-4.md\:p-6
 oitr.jp##body > div.notice:has(a[href^="https://www.oitr.jp/cookie-policy/"])
 gazeta.press##.b_accept_cookies
@@ -3138,7 +3140,8 @@ motexc.by#%#//scriptlet('set-local-storage-item', 'motex-func-cookies-enabled', 
 motexc.by#%#//scriptlet('set-local-storage-item', 'motex-cookies-request-done', 'true')
 nordnet.se,nordnet.dk#%#//scriptlet('set-cookie', 'consent_cookie', 'necessary')
 shop.bmw.ua##.cookies-content
-reddit.com#$##data-protection-consent-dialog { display: none !important; }
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('remove-class', 'rpl-scroll-lock', 'body')
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$##data-protection-consent-dialog { display: none !important; }
 app.coderabbit.ai##p[class]:has(> a[href="https://coderabbit.ai/privacy-policy"])
 au.ru##div[id^="cookie-question_"]
 history.com#%#//scriptlet('trusted-click-element', 'body > div[data-sentry-source-file="box.tsx"] div[data-sentry-source-file="box.tsx"]:has(a[href="http://www.aegm.com/consumer-terms-of-use"]) ~ button', '!cookie:AETN-TOU')
@@ -27400,6 +27403,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+7days.ru###RutubeFlyroll
 diamond.jp##.sidefloat
 rocket-boys.co.jp#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'timeModal')
 vaughn.live##div[class^="vs_coachmark_"]
@@ -35691,6 +35695,8 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+||static.sobaka.ru/assets/*/push-subscription.js
+||cdn.7days.ru/bitrix/templates/7days-redesign-2021/js/SparrowPush.js
 ||teknoblog.com/wp-content/plugins/teknoblog-push/assets/tpush.js
 meet.google.com##div[aria-label="Receive desktop notifications from Meet"]
 jornaldenegocios.pt##.notificacao
@@ -36711,6 +36717,10 @@ donanimhaber.com,tokyo-sports.co.jp,searchengineland.com,jornaldenegocios.pt,gig
 !
 ! SECTION: Subscriptions - Regular rules
 !
+sobaka.ru##.b-post-view__smm-promo
+7days.ru##.material-7days__button-telegramm
+7days.ru##.material-7days__button-max
+7days.ru##a.header-7days__recommendation_item[href="https://max.ru/days7"]
 argumenti.ru###left_social
 argumenti.ru##.topanons > li:has(> a[href^="https://max.ru/argumenti_ru"])
 pnp.ru##.art_news_plus_wrap_second > div.infoblock_pub:has(> a[href="https://max.ru/parlament_novosti"])
