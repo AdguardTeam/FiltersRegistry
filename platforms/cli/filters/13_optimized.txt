@@ -1,9 +1,9 @@
-! Checksum: 6Qt0qd8KSnbdsEx9J56/rw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1782970053-3600.patch
+! Checksum: QTQN/+ojZMG2evuQ1h2cKg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1782996467-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.65.47
-! TimeUpdated: 2026-07-02T05:24:37+00:00
+! Version: 2.0.65.48
+! TimeUpdated: 2026-07-02T12:45:28+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -1813,7 +1813,9 @@ gazeteipekyol.com##.prospeed_demo_banner
 mackolik.com##div[class^="mpu"]
 ||digiturkburada.com.tr/images/digiturk-internet-banner-ns.png$third-party
 cioupdate.com.tr##a[target="_blank"] > img[alt]
-1000kitap.com#?#section.dr.w-full.min-h-100vh > div.relative:has(span:contains(Reklam))
+1000kitap.com##section.dr.w-full.min-h-100vh > div.relative a[target="_blank"]:has(> div > img)
+1000kitap.com#?#section.dr.w-full.min-h-100vh > div.relative div[style]:has(span:contains(Reklam))
+1000kitap.com##section.dr.w-full.min-h-100vh > div.relative div:not([class]) > div[class]:has(button[aria-label="Reklam"])
 uludagsozluk.com##div[class^="adulu_col-"]
 webtekno.com##.content-body__detail > p > a[href^="https://turk.net/gigafiber"]
 webtekno.com##.content-body__detail > p:has(> a.box-link ~ strong)
