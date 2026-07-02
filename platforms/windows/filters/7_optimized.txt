@@ -1,9 +1,9 @@
-! Checksum: J0vY5lbiZTNGIS+E6mObMQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1782927995-3600.patch
+! Checksum: S4/VleCblL8//iVXXbEmrg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1782970109-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.74.69
-! TimeUpdated: 2026-07-01T17:40:32+00:00
+! Version: 2.0.74.70
+! TimeUpdated: 2026-07-02T05:24:27+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||insiad.com^
@@ -408,6 +408,11 @@
 ||kok.eroterest.net^
 ||ad-hatena.com^
 ||advert.punyu.com^
+soraraw.net#%#//scriptlet('trusted-json-set-fetch-response', 'adBlockGuard', 'false', '', '/config.json')
+soraraw.net#@#.ad-unit:not(.textads)
+soraraw.net#@##AdBanner
+soraraw.net#$#.adguard-overlay { display: none !important; }
+soraraw.net#$##__next > div[style] { filter: none !important; pointer-events: auto !important; user-select: auto !important; }
 mangaruu.com#@#.ad-unit:not(.textads)
 mangaruu.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 mangaruu.com#$#body > .adsbygoogle.ad-unit[style] { display: block !important; }
@@ -8977,7 +8982,7 @@ kuruma-news.jp,urbanlife.tokyo,bike-news.jp##.left.box300
 chat.luvul.net,3751chat.com###chatroom_right
 jpon.xyz,gogo.gs##.ad4
 biz.hino-tama.com##span.lastChild.small_letter[style^="position:absolute;right:10px;"]
-hotondo.work,solodc2017.com,blog.kaerucloud.com,csharpprogram.com,economical.co.jp,tokyoupdate.jp,paso-kake.com,hoshujapan.jp,parlourfullslotl.com,nijisenmon.work,mayukitchen.com,xn--eckl0bk7f7cc4od8az005k0ssb.xyz,2week.net,nullnote.com###scrollad
+sanblo.com,hotondo.work,solodc2017.com,blog.kaerucloud.com,csharpprogram.com,economical.co.jp,tokyoupdate.jp,paso-kake.com,hoshujapan.jp,parlourfullslotl.com,nijisenmon.work,mayukitchen.com,xn--eckl0bk7f7cc4od8az005k0ssb.xyz,2week.net,nullnote.com###scrollad
 ||ac-affiliate.com/data.php?
 yugalab.net###navi_recommend
 yugalab.net##div[id$="_ads"]
