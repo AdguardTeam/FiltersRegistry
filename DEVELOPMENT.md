@@ -124,7 +124,7 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 
    ```bash
    CHANGED_BRANCH=local_optimization_config  # replace with your feature branch
-   BUILD_LOCAL=false                          # set to 'true' to use generate-cache + build:local
+   BUILD_LOCAL=true                          # set to 'true' to use generate-cache + build:local
 
    MASTER_SHA=$(git rev-parse master)
    CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
@@ -204,7 +204,7 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
-- `--generate-cache` — download `percent.json` and per-filter `stats.json` files
+- `--generate-cache` — compile filters to update `filter.txt` cache and download optimization stats
 - `--generate-stats-from-cached-percent-json` — download missing `stats.json` files using
   an existing local `percent.json` (edit it first if needed)
 

@@ -119,8 +119,7 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         const flagsStr = ignored.join(' and ');
         const verb = ignored.length > 1 ? 'are' : 'is';
         const msg = `Error: ${flagsStr} ${verb} incompatible with `
-            + '--generate-cache, which exits early without generating '
-            + 'platform files.';
+            + '--generate-cache, which does not produce platform output.';
 
         return {
             type: 'error',

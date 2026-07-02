@@ -106,8 +106,10 @@ const prepareCachedFiltersDir = async () => {
  * Compiler entry point.
  */
 const buildFilters = async () => {
-    // When --generate-cache, download percent.json and per-filter stats.json to
-    // the local optimization config directory, then exit early.
+    // When --generate-cache:
+    //   1. Download optimization stats (percent.json + per-filter stats.json).
+    //   2. Compile filter templates → writes filter.txt to each filters/<id>/ directory.
+    //      Passing null as platformsPath skips platform file generation entirely.
     if (generateCache) {
         await fs.rm(localOptimizationConfigPath, { recursive: true, force: true });
 
@@ -115,8 +117,17 @@ const buildFilters = async () => {
         console.log(`percent.json saved to ${localOptimizationConfigPath}.`);
 
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
-
         console.log(`Optimization config cached to ${localOptimizationConfigPath}.`);
+
+        await compile(
+            filtersDir,
+            logPath,
+            reportPath,
+            null, // null ⇒ generate() inside compiler returns early, no platform files
+            includedFilterIDs,
+            excludedFilterIDs,
+            CUSTOM_PLATFORMS_CONFIG,
+        );
         return;
     }
 
