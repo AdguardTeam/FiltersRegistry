@@ -129,8 +129,8 @@ It runs both branches in parallel via git worktrees so network-fetched content s
    MASTER_SHA=$(git rev-parse master)
    CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 
-   git worktree add --detach /tmp/reg-master-build  $MASTER_SHA
-   git worktree add --detach /tmp/reg-changed-build $CHANGED_SHA
+   git worktree add --detach /tmp/reg-master-build  $MASTER_SHA -f
+   git worktree add --detach /tmp/reg-changed-build $CHANGED_SHA -f
 
    yarn --cwd /tmp/reg-master-build  install &
    yarn --cwd /tmp/reg-changed-build install &
