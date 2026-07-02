@@ -65,7 +65,7 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedLocalOptimizationConfig.useLocalConfig)).toHaveBeenCalled();
     });
 
-    it('--generate-cache: downloads percent.json and stats, compile skipped', async () => {
+    it('--generate-cache: downloads percent.json and stats, then compiles with null platformsPath', async () => {
         process.argv = ['node', 'build.js', '--generate-cache'];
         await import('../build.js');
 
@@ -81,11 +81,20 @@ describe('build.js: cache flag handling', () => {
                 expectedLocalOptimizationConfigPath,
                 EMPTY_FILTER_IDS,
             );
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalledWith(
+                expect.any(String),
+                expect.any(String),
+                expect.any(String),
+                null,
+                EMPTY_FILTER_IDS,
+                EMPTY_FILTER_IDS,
+                expect.anything(),
+            );
         });
-        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
     });
 
-    it(`--generate-cache --include=${FILTER_ID}: scopes stats download to filter ${FILTER_ID}`, async () => {
+    it(`--generate-cache --include=${FILTER_ID}: scopes stats download to filter ${FILTER_ID},`
+        + ' compiles with null platformsPath', async () => {
         process.argv = ['node', 'build.js', '--generate-cache', `--include=${FILTER_ID}`];
         await import('../build.js');
 
@@ -98,8 +107,16 @@ describe('build.js: cache flag handling', () => {
                 expectedLocalOptimizationConfigPath,
                 [FILTER_ID],
             );
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalledWith(
+                expect.any(String),
+                expect.any(String),
+                expect.any(String),
+                null,
+                [FILTER_ID],
+                EMPTY_FILTER_IDS,
+                expect.anything(),
+            );
         });
-        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
     });
 
     it('--generate-stats-from-cached-percent-json: downloads stats only, compile skipped', async () => {
