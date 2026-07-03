@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: tviaVzsUTF9ZMfuE7eSQAQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783062953-3600.patch
+! Checksum: NWPyVr295zNRwCJBQNnTFA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783069973-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.75.5
-! TimeUpdated: 2026-07-03T07:11:58+00:00
+! Version: 2.4.75.6
+! TimeUpdated: 2026-07-03T09:09:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27591,8 +27591,10 @@ pasazer.com##+js(no-setTimeout-if, _checker())
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106182
 zamkomania.pl#@#.ad_box:not(.text-ad)
 zamkomania.pl##+js(no-setTimeout-if, advert)
+! https://github.com/AdguardTeam/AdguardFilters/issues/234861
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151164
 eurosport.tvn24.pl##.AdContainer
+eurosport.tvn24.pl##div[data-testid="marketing-hbo-max-block"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/104742
 viva.pl##.placement
 ! https://github.com/AdguardTeam/AdguardFilters/issues/104097
@@ -37493,6 +37495,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+shortlist.com##div[data-ad-slot-path]
+baked.live###adbanner
 archive.yota.ru##main[class^="_layout_"] > div[class^="_block_"][class*="_appear_"]:has(> div[class^="_cookie_"])
 ||streamfree.top/analytics.js
 streamfree.top##a[href^="https://hub.buzzaffiliates.com/"]
@@ -60072,6 +60076,8 @@ $popup,3p,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234817
+jamf.com#@#div.rendered[id][class*=" "]:not([id*="captcha"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234825
 ! It looks like a website issue. Injecting any stylesheet (even if not via an ad blocker)
 ! containing "[style]" inside ":has()" causes the website to freeze when the copy button is clicked

@@ -1,0 +1,19 @@
+d1 2
+a2 2
+! Checksum: MRZWc/+1aivJ04GC+u/CGg
+! Diff-Path: ../patches/17/17-s-1783069940-3600.patch
+d5 2
+a6 2
+! Version: 2.0.13.66
+! TimeUpdated: 2026-07-03T09:09:48+00:00
+a2401 10
+! https://github.com/AdguardTeam/AdguardFilters/issues/234858
+||tiktok.com^$removeparam=ug_btm
+||tiktok.com^$removeparam=user_id
+||tiktok.com^$removeparam=sec_user_id
+||tiktok.com^$removeparam=trackParams
+||tiktok.com^$removeparam=share_region
+||tiktok.com^$removeparam=social_share_type
+! When "share_app_id" parameter is removed and there is "referrer" in request header,
+! TikTok will show a "502 Bad Gateway" message. So we need to remove "referrer" in request header as well.
+||tiktok.com/view/product/$removeheader=request:referer
