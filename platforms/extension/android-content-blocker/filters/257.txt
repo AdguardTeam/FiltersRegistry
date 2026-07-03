@@ -1,8 +1,8 @@
-! Checksum: 54X+THQJn6cXt8X0ST5Xfw
+! Checksum: rFeHgDh43zEznlonE01ccg
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.11.82
-! TimeUpdated: 2026-07-02T17:05:41+00:00
+! Version: 2.0.11.83
+! TimeUpdated: 2026-07-03T09:37:44+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -7178,3 +7178,14 @@ top##body > center + .A + .post
 !+ NOT_OPTIMIZED
 ##html > #bw-cf-root
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234669
+! https://github.com/uBlockOrigin/uAssets/issues/33546
+! ClickFix Errtrafficv2
+! https://urlscan.io/result/019f0fdb-f020-775c-939d-f27f2e700a44/
+! https://www.sekoia.com/blog/unveiling-errtraffic-inside-a-growing-clickfix-malware-distribution-framework
+! https://github.com/uBlockOrigin/uAssets/pull/33530
+!+ NOT_OPTIMIZED
+/api/css.js^$third-party,script
+!+ NOT_OPTIMIZED
+||cloudproxy.digital^$third-party,xmlhttprequest
+!+ NOT_OPTIMIZED
+##html.canvas > body.wp-singular + div[popover="manual"]
