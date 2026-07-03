@@ -181,7 +181,7 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 1. Generate the structured report:
 
    ```bash
-   CHANGED_BRANCH=$(git branch --show-current) bash scripts/build/__tests__/regression-test-against-master.sh
+   bash scripts/build/__tests__/regression-test-against-master.sh
    ```
 
    The script compares all `.txt` rule files across every platform and

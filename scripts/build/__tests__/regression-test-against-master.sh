@@ -1,6 +1,3 @@
-MASTER_SHA=$(git rev-parse master)
-CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
-
 echo "=== Regression Test Report ==="
 echo "Branch (reference): master          @ $MASTER_SHA"
 echo "Branch (feature):   $CHANGED_BRANCH @ $CHANGED_SHA"
