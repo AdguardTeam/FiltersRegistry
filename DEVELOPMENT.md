@@ -187,11 +187,11 @@ It runs both branches in parallel via git worktrees so network-fetched content s
    The script compares all `.txt` rule files across every platform and
    prints a pass/fail verdict.
 
-5. Clean up worktrees and `filter/` changes when done:
+5. Clean up worktrees and current branch changes when done:
 
    ```bash
    git worktree remove /tmp/reg-master-build & git worktree remove /tmp/reg-changed-build
-   git reset --hard
+   git reset --hard && rm -rf platforms_master_build platforms_changed_build
    ```
 
 ### Command Compatibility
