@@ -190,7 +190,7 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 5. Clean up worktrees and current branch changes when done:
 
    ```bash
-   git worktree remove /tmp/reg-master-build & git worktree remove /tmp/reg-changed-build
+   git worktree remove /tmp/reg-master-build -f & git worktree remove /tmp/reg-changed-build -f
    git reset --hard && rm -rf platforms_master_build platforms_changed_build
    ```
 
