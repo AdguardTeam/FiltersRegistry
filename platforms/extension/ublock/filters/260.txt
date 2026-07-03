@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: gaVRSpdDko6B+5PN4sEUpQ
-! Diff-Path: ../patches/260/260-s-1783098109-14400.patch
+! Checksum: MeL2+dYjbjiQ/FmJuExrww
+! Diff-Path: ../patches/260/260-s-1783111916-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.21
-! TimeUpdated: 2026-07-03T16:59:12+00:00
+! Version: 2.0.0.22
+! TimeUpdated: 2026-07-03T20:49:21+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -565,6 +565,7 @@ design.dev##.sponsor-banner--coderabbit
 !   Otherwise, if an AI image is loaded via URL, the page gets stuck in loading animation.
 ! * Requires Javascript to be enabled
 ! Block images loaded when scrolling page, homepage sections, and related images.
+! (v2 compatible)
 ! -- https://www.deviantart.com/ (Homepage)
 ! Header - Image & video generators (escaped links apply when logged out)
 www.deviantart.com##.reset-link[href^="https://www.deviantart.com/dreamup"]
@@ -878,6 +879,7 @@ github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has(:is([href*="claude"], [href*="copilot"], [href*="gemini"], [href*="github-models"], [href*="gpt-"], [href*="grok"], [href*="opus"]))
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
+! (v2 compatible)
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com##command-palette-item[data-item-title="Copilot"]:remove()
@@ -3003,6 +3005,7 @@ yacy.net##.navbar-right > li:has(> [href="https://chatgpt.com/g/g-h7fLnaDuI-yacy
 ! Scout button on searchbar
 www.yahoo.com##[aria-label="Search with Yahoo Scout"]
 ! AI search suggestion
+! (v2 compatible)
 ! Yahoo Scout in "More" navbar menu
 www.yahoo.com##[role="menuitem"]:has(> [href^="https://scout.yahoo.com/"])
 ! Featured item from from Yahoo Scout below search bar
@@ -3096,6 +3099,8 @@ www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButt
 www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 ! * Remove "or ask a question" from search bar placeholder
 www.youtube.com##+js(set, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux, false)
+! * Autocomplete search suggestions
+www.youtube.com##+js(set, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client, false)
 ! -- https://www.youtube.com/watch?v=j9gZYYOIG-M (Video page)
 ! "Ask Questions" in description
 youtube.com##yt-video-description-youchat-section-view-model
@@ -3112,6 +3117,7 @@ www.youtube.com##.ytp-suggested-action-badge[aria-label="Ask about this video"]
 !   only one non-AI audio option exists. Does not work when loading videos directly from a URL.
 ! * Targets response from 'https://www.youtube.com/youtubei/v1/get_watch'
 ! * Filter by paintboth1234 (https://www.reddit.com/r/uBlockOrigin/comments/1npyxsc/comment/ng4kmje/)
+! (v2 compatible)
 ! * Backup to remove auto-dub menu options from settings menu when video loaded from URL and trusted filters are disabled.
 !   This will not prevent the auto-dubbed audio from playing as the default selection
 www.youtube.com##.ytp-menuitem-section-header

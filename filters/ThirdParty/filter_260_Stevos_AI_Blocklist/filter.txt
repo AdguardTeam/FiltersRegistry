@@ -636,8 +636,9 @@ www.deviantart.com#%#//scriptlet('ubo-json-prune', '@@entities.deviation.{-}.isA
 
 ! Block images loaded when scrolling page, homepage sections, and related images.
 !#if ext_ublock
+! (v2 compatible)
 !#else
-www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations.*[?.isAiGenerated==true]')
+www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations.[?@.isAiGenerated==true]')
 !#endif
 
 ! -- https://www.deviantart.com/ (Homepage)
@@ -996,8 +997,9 @@ github.com##.dashboard-changelog .TimelineItem:has(:is([href*="claude"], [href*=
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
 !#if ext_ublock
+! (v2 compatible)
 !#else
-github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results.[?.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
+github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 !#endif
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
@@ -3459,6 +3461,7 @@ yacy.net##.navbar-right > li:has(> [href="https://chatgpt.com/g/g-h7fLnaDuI-yacy
 www.yahoo.com##[aria-label="Search with Yahoo Scout"]
 ! AI search suggestion
 !#if ext_ublock
+! (v2 compatible)
 !#else
 www.yahoo.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.r[?@.m==89]')
 !#endif
@@ -3566,6 +3569,8 @@ www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButt
 www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 ! * Remove "or ask a question" from search bar placeholder
 www.youtube.com#%#//scriptlet('ubo-set', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
+! * Autocomplete search suggestions
+www.youtube.com#%#//scriptlet('ubo-set', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
 
 ! -- https://www.youtube.com/watch?v=j9gZYYOIG-M (Video page)
 ! "Ask Questions" in description
@@ -3585,9 +3590,10 @@ www.youtube.com##.ytp-suggested-action-badge[aria-label="Ask about this video"]
 ! * Targets response from 'https://www.youtube.com/youtubei/v1/get_watch'
 ! * Filter by paintboth1234 (https://www.reddit.com/r/uBlockOrigin/comments/1npyxsc/comment/ng4kmje/)
 !#if ext_ublock
+! (v2 compatible)
 !#else
 ! * Alternate filter for AdGuard support
-youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats.*[?.audioTrack.isAutoDubbed]')
+youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
 !#endif
 ! * Backup to remove auto-dub menu options from settings menu when video loaded from URL and trusted filters are disabled.
 !   This will not prevent the auto-dubbed audio from playing as the default selection

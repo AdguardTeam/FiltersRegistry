@@ -1,9 +1,9 @@
-! Checksum: E8bxNXlMZfdZVYtny1Hipw
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1783098102-14400.patch
+! Checksum: xx3z+MxGHwMfpp8qgQHUgA
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1783111910-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.21
-! TimeUpdated: 2026-07-03T16:59:12+00:00
+! Version: 2.0.0.22
+! TimeUpdated: 2026-07-03T20:49:21+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -183,7 +183,7 @@ www.dell.com##.tech-specs-faq:has(> .ai-prompt-header)
 www.dell.com###va-review-summary:has(> .ai-reviews-summary)
 design.dev##.sponsor-banner--coderabbit
 www.deviantart.com#%#//scriptlet('ubo-json-prune', '@@entities.deviation.{-}.isAiGenerated.[=].true', 'currentPageData')
-www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations.*[?.isAiGenerated==true]')
+www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations.[?@.isAiGenerated==true]')
 www.deviantart.com##.reset-link[href^="https://www.deviantart.com/dreamup"]
 www.deviantart.com##.reset-link[href="https://www.deviantart.com/studio/video"]
 www.deviantart.com##.reset-link[href*="https%3A%2F%2Fwww.deviantart.com%2Fdreamup"]
@@ -296,7 +296,7 @@ github.com##.copilotPreview__container
 github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
 github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has(:is([href*="claude"], [href*="copilot"], [href*="gemini"], [href*="github-models"], [href*="gpt-"], [href*="grok"], [href*="opus"]))
-github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results.[?.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
+github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
 github.com##.start-copilot-banner
@@ -1003,13 +1003,14 @@ www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
 www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
 www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 www.youtube.com#%#//scriptlet('ubo-set', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
+www.youtube.com#%#//scriptlet('ubo-set', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
 youtube.com##yt-video-description-youchat-section-view-model
 www.youtube.com###video-summary
 m.youtube.com##ytm-expandable-metadata-renderer:has(.expandableMetadataRendererCollapsedLeftSectionSummary)
 www.youtube.com##yt-button-view-model:has(> .you-chat-entrypoint-button)
 m.youtube.com,www.youtube.com##.you-chat-entrypoint-button
 www.youtube.com##.ytp-suggested-action-badge[aria-label="Ask about this video"]
-youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats.*[?.audioTrack.isAutoDubbed]')
+youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
 www.youtube.com##.ytp-menuitem-section-header
 www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="1080p"]]..adaptiveFormats.*[?.qualityLabel=="1080p"]')

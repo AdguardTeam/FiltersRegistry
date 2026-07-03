@@ -1,9 +1,9 @@
-! Checksum: C9rIoErlX+LZY7eGTI4aCg
-! Diff-Path: ../patches/260/260-s-1783098123-14400.patch
+! Checksum: U4HrHq0Li6Zy+jb5fBZKpQ
+! Diff-Path: ../patches/260/260-s-1783111928-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.21
-! TimeUpdated: 2026-07-03T16:59:12+00:00
+! Version: 2.0.0.22
+! TimeUpdated: 2026-07-03T20:49:21+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -565,7 +565,7 @@ design.dev##.sponsor-banner--coderabbit
 ! * Requires Javascript to be enabled
 www.deviantart.com#%#//scriptlet('ubo-json-prune', '@@entities.deviation.{-}.isAiGenerated.[=].true', 'currentPageData')
 ! Block images loaded when scrolling page, homepage sections, and related images.
-www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations.*[?.isAiGenerated==true]')
+www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations.[?@.isAiGenerated==true]')
 ! -- https://www.deviantart.com/ (Homepage)
 ! Header - Image & video generators (escaped links apply when logged out)
 www.deviantart.com##.reset-link[href^="https://www.deviantart.com/dreamup"]
@@ -879,7 +879,7 @@ github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has(:is([href*="claude"], [href*="copilot"], [href*="gemini"], [href*="github-models"], [href*="gpt-"], [href*="grok"], [href*="opus"]))
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
-github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results.[?.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
+github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
@@ -3098,6 +3098,8 @@ www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButt
 www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 ! * Remove "or ask a question" from search bar placeholder
 www.youtube.com#%#//scriptlet('ubo-set', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
+! * Autocomplete search suggestions
+www.youtube.com#%#//scriptlet('ubo-set', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
 ! -- https://www.youtube.com/watch?v=j9gZYYOIG-M (Video page)
 ! "Ask Questions" in description
 youtube.com##yt-video-description-youchat-section-view-model
@@ -3115,7 +3117,7 @@ www.youtube.com##.ytp-suggested-action-badge[aria-label="Ask about this video"]
 ! * Targets response from 'https://www.youtube.com/youtubei/v1/get_watch'
 ! * Filter by paintboth1234 (https://www.reddit.com/r/uBlockOrigin/comments/1npyxsc/comment/ng4kmje/)
 ! * Alternate filter for AdGuard support
-youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats.*[?.audioTrack.isAutoDubbed]')
+youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
 ! * Backup to remove auto-dub menu options from settings menu when video loaded from URL and trusted filters are disabled.
 !   This will not prevent the auto-dubbed audio from playing as the default selection
 www.youtube.com##.ytp-menuitem-section-header
