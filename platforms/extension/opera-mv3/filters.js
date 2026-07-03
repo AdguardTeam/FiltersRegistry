@@ -878,8 +878,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt",
 			"trustLevel": "high",
-			"version": "2.0.6.34",
-			"timeUpdated": "2026-06-14T13:06:09+0000",
+			"version": "2.0.6.35",
+			"timeUpdated": "2026-07-03T16:58:16+0000",
 			"deprecated": false,
 			"languages": [
 				"he"
@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.93.44",
-			"timeUpdated": "2026-07-03T13:09:16+0000",
+			"version": "2.1.93.45",
+			"timeUpdated": "2026-07-03T16:58:16+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.93.43",
-			"timeUpdated": "2026-07-03T13:09:18+0000",
+			"version": "2.1.93.44",
+			"timeUpdated": "2026-07-03T16:58:17+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.86.75",
-			"timeUpdated": "2026-07-03T13:10:19+0000",
+			"version": "2.0.86.76",
+			"timeUpdated": "2026-07-03T16:59:05+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1551,8 +1551,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.20",
-			"timeUpdated": "2026-07-03T01:06:28+0000",
+			"version": "2.0.0.21",
+			"timeUpdated": "2026-07-03T16:59:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
