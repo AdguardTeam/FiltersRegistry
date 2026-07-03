@@ -123,7 +123,7 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 1. Create worktrees for each branch and install dependencies:
 
    ```bash
-   CHANGED_BRANCH=local_optimization_config  # replace with your feature branch
+   CHANGED_BRANCH=$(git branch --show-current)
    BUILD_LOCAL=true                          # set to 'true' to use generate-cache + build:local
 
    MASTER_SHA=$(git rev-parse master)
@@ -181,7 +181,7 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 1. Generate the structured report:
 
    ```bash
-   CHANGED_BRANCH=local_optimization_config bash scripts/build/__tests__/regression-test-against-master.sh
+   CHANGED_BRANCH=$(git branch --show-current) bash scripts/build/__tests__/regression-test-against-master.sh
    ```
 
    The script compares all `.txt` rule files across every platform and
