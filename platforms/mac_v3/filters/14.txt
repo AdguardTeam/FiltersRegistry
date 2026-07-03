@@ -1,9 +1,9 @@
-! Checksum: 7XhhUO0iMU7q0kQaWnjmBQ
-! Diff-Path: ../patches/14/14-s-1783082891-3600.patch
+! Checksum: MlxzvrJMU6hTTI1iQNyuDg
+! Diff-Path: ../patches/14/14-s-1783090378-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.71.76
-! TimeUpdated: 2026-07-03T12:44:53+00:00
+! Version: 2.2.71.77
+! TimeUpdated: 2026-07-03T14:49:52+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6432,7 +6432,7 @@ remitly.com#%#//scriptlet('trusted-set-cookie', 'cookie_consent', '000')
 remitly.com#%#//scriptlet('trusted-set-local-storage-item', 'cookie_consent_date', '$now$')
 americanexpress.com#$##user-consent-management-granular-banner-overlay { display: none !important; }
 americanexpress.com#$#body { overflow: auto !important; }
-health.tvbs.com.tw#%#//scriptlet('set-cookie', 'cookie_accept', 'accept')
+health.tvbs.com.tw#%#//scriptlet('set-cookie', 'cookie_accept_health', 'accept')
 scaleway.com#%#//scriptlet('trusted-click-element', '.sc-dGCmGc.fJEvkp', '!localStorage:gbFeaturesCache')
 przewodnik-katolicki.pl##.ciastka
 ||teal.openbank.de/web-ok-de/prod/utag.js$domain=openbank.de
@@ -24631,6 +24631,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+the-sun.com#%#//scriptlet('prevent-setTimeout', 'gu(gh)')
 ip.sb##.wwads_abp
 jetpunk.com#%#//scriptlet('prevent-setTimeout', 'isAdblocker')
 ricardocuisine.com#%#//scriptlet('set-cookie', 'adblock-modal.ads', '1')
@@ -60200,8 +60201,8 @@ fossbytes.com##.td-ss-main-sidebar > .widget_execphp
 ! sputnik.ru- Sputnik browser
 sputnik.ru##.b-cover__box > div.b-panel.js-panel[data-sputnik][style]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4494
-msn.com#$##skypefredialogcontainer[data-aop="skypefredialog"] { display: none!important; }
-msn.com#$#body { overflow: initial!important; }
+msn.com#$##skypefredialogcontainer[data-aop="skypefredialog"] { display: none !important; }
+msn.com#$#body:not(#style_important) { overflow: initial !important; }
 ! https://forum.adguard.com/index.php?threads/11654/
 technet.microsoft.com##.RightAdRail > div > table[width="100%"]
 ! dailytelegraph.com.au - subscription overlay

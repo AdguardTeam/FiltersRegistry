@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ZTFDteg0H6lhTVIIAveX5g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783086015-3600.patch
+! Checksum: 1nWrtAP8WX3Naz95Jp5UZg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783090371-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.75.10
-! TimeUpdated: 2026-07-03T13:36:50+00:00
+! Version: 2.4.75.11
+! TimeUpdated: 2026-07-03T14:49:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -33715,12 +33715,13 @@ fuqqt.com,tubesafari.com,pornkai.com##+js(abort-on-property-read, ljcode)
 btvsports.lol##+js(remove-attr, href, .page-header a[href^="mailto:"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132285
 watchjavonline.com##+js(no-window-open-if)
+! https://github.com/AdguardTeam/AdguardFilters/issues/234892
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173054
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167668
 ! Removes ad placeholders in sliders
 ! Current path is "properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"
 ! Other paths probably can be removed, but keep them just in case for some time
-msn.com##+js(json-prune, configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.*.interstitialNativeAds configs.*.properties.componentConfigs.slideshowConfigs.*.interstitialNativeAds sections.[].cards.[].subCards.[-].type.[=].nativead sections.[].cards.[-].type.[=]./nativead|displayad/)
+msn.com##+js(json-prune, configs.[].properties.componentConfigs.articlePageConfig.nativeAdLoadingRules configs.[].properties.componentConfigs.articlePageConfig.slots.intraArticleNativeAd configs.[].properties.componentConfigs.endOfContentBlockConfigs.slots.endOfContentNativeAd configs.[].properties.slots.bannerAd configs.*.properties.adPlacementConfig.* configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.*.interstitialNativeAds configs.*.properties.componentConfigs.slideshowConfigs.*.interstitialNativeAds sections.[].cards.[].subCards.[-].type.[=].nativead sections.[].cards.[-].type.[=]./nativead|displayad/ sections.[].subSections.[].cards.[-].type.[=].cmsad)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167668
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146823
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136564
@@ -37499,6 +37500,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+the-sun.com##div[class$="billboard"]
 shortlist.com##div[data-ad-slot-path]
 baked.live###adbanner
 archive.yota.ru##main[class^="_layout_"] > div[class^="_block_"][class*="_appear_"]:has(> div[class^="_cookie_"])
@@ -60080,6 +60082,10 @@ $popup,3p,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234900
+collider.com#@#.ad-current
+collider.com#@#.adsninja-ad-zone
+collider.com#@#.ad-zone-container
 ! https://github.com/AdguardTeam/CoreLibs/issues/2084
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234491
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234817
