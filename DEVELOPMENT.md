@@ -137,14 +137,14 @@ It runs both branches in parallel via git worktrees so network-fetched content s
    wait
    ```
 
-1. Sync both worktrees' `filters/` to the same baseline commit so
+2. Sync both worktrees' `filters/` to the same baseline commit so
    `revision.json` version counters start from the same point:
 
    ```bash
    git -C /tmp/reg-changed-build checkout $MASTER_SHA -- filters/
    ```
 
-1. Build both branches in parallel:
+3. Build both branches in parallel:
 
    ```bash
    _build() {
@@ -178,7 +178,7 @@ It runs both branches in parallel via git worktrees so network-fetched content s
    wait && echo "Both builds complete"
    ```
 
-1. Generate the structured report:
+4. Generate the structured report:
 
    ```bash
    bash scripts/build/__tests__/regression-test-against-master.sh
@@ -187,7 +187,7 @@ It runs both branches in parallel via git worktrees so network-fetched content s
    The script compares all `.txt` rule files across every platform and
    prints a pass/fail verdict.
 
-1. Clean up worktrees when done:
+5. Clean up worktrees when done:
 
    ```bash
    git worktree remove /tmp/reg-master-build
