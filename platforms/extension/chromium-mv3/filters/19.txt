@@ -1,8 +1,8 @@
-! Checksum: 7Kty3H63CW/HSL7xSLhp4g
+! Checksum: Ne+o0ADy4fd9cEq0OkTAdQ
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.78.15
-! TimeUpdated: 2026-07-03T09:09:51+00:00
+! Version: 2.0.78.16
+! TimeUpdated: 2026-07-03T10:58:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3365,6 +3365,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+sportsbite.lol#%#//scriptlet('trusted-set-local-storage-item', 'discord_popup_v2', '{"lastShownAt":99999999999999}')
 gdebenz.ru###share-ask
 gdebenz.ru###sg-banner
 gdebenz.ru###safe-note
@@ -12683,6 +12684,9 @@ news.tv-asahi.co.jp,zakzak.co.jp,donanimhaber.com,tokyo-sports.co.jp,searchengin
 !
 ! SECTION: Subscriptions - Regular rules
 !
+pb.pl###article-piano-newsletter-box
+pb.pl#$#.tp-modal:has(> .tp-iframe-wrapper iframe[name^="offer-0-"]) { display: none !important; }
+pb.pl#$#.tp-modal:has(> .tp-iframe-wrapper iframe[name^="offer-0-"]) + .tp-backdrop { display: none !important; }
 shortlist.com##.widget-newsletter-slice
 shortlist.com###article-body > hr[id]
 shortlist.com###article-body > p[id]:has(> a[href^="https://news.google.com/publications/"])
