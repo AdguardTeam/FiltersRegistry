@@ -1,9 +1,9 @@
-! Checksum: naTcNSCbE/OgaFn3N57pAA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1783214023-14400.patch
+! Checksum: KVTOfO8fXrHzNQNTCkjryw
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1783230752-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.93.51
-! TimeUpdated: 2026-07-05T01:10:18+00:00
+! Version: 2.1.93.52
+! TimeUpdated: 2026-07-05T05:49:24+00:00
 ! Expires: 10 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -317,6 +317,7 @@
 ://promoimage.
 ://pub.*?zoneid=
 ://reclame.
+://report-ads-to.
 ://res.ads.
 ://rotator.
 ://sc.*/popper.
@@ -450,7 +451,6 @@ _ads/banner/
 _ads2-
 _ads4stream_
 _ads_*?pubId=
-_ads_2018.
 _ads_banner&
 _ads_banner/
 _ads_banner_
@@ -490,6 +490,7 @@ _personalized_ads
 _pop.php?z=
 _popads.
 _pub.gif
+_pub_col_
 _publicite.
 _publicite_
 _publog_2.
@@ -655,7 +656,6 @@ _build=iclick-$popup
 ||bestcontentwork.top^$third-party
 ||betterbannerscloud.com^$third-party
 ||broadcast.pm^$third-party
-||camplace.com^$third-party
 ||camsoda.com^$third-party
 ||captchme.net^$third-party
 ||caramec.fr^$third-party
@@ -677,6 +677,7 @@ _build=iclick-$popup
 ||conduit.com^$third-party
 ||cougar-rencontre.net^$third-party
 ||cpa-content.com^$third-party
+||cpabuild.com^$third-party
 ||cpaofferstat.com^$third-party
 ||cpmstar.com^$third-party
 ||crypto-adz.com^$third-party
@@ -700,7 +701,6 @@ _build=iclick-$popup
 ||ezstatic.com^$third-party
 ||fancybar.net^$third-party
 ||fgn.me^$third-party
-||fhserve.com^$third-party
 ||flinteractive.fr^$third-party
 ||frtyi.com^$third-party
 ||futureadlabs.com^$third-party
@@ -2375,6 +2375,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$third-party
 ||awin1.com/awclick.php?
+||awreferencement.com/conception_referencement_
 ||azurewebsites.net/widget/
 ||b.clc2l.com^
 ||b.clictoload.com^
@@ -2617,6 +2618,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||d1czd1q73kbu32.cloudfront.net^
 ||d1dli2tyorled9.cloudfront.net^
 ||d1i2v9a8xom2hy.cloudfront.net^
+||d1jq9nooxeft24.cloudfront.net^
 ||d1k0glcmk0b5rb.cloudfront.net^
 ||d1k3dpebxhgqjc.cloudfront.net^
 ||d1k4bi32qf3nf2.cloudfront.net/*/habillage_
@@ -2769,6 +2771,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||casavie.com/pubs/
 ||cdn-partners-references.lesoir.be^
 ||cdn.ouedkniss.com/medias/okps/
+||cdn.scanmanga.eu/*/hHUvc/
 ||cdn.tirage-gagnant.com/js/dynamic-ban-
 ||centerblog.net/cadre-*?zoneid=
 ||centerblog.net/cu.js
@@ -2821,6 +2824,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||handroit.com/upl/slideshows/
 ||hdss.*/voir/
 ||hearthstone-decks.com/pub2/
+||hentai-3x.com/images/out
 ||hentai-paradise.fr/getblock2
 ||hentai-paradise.fr/vast/
 ||hisse-et-oh.com/api/v1/neptune/
@@ -2934,7 +2938,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||tiplanet.org/forum/images/jarrety5.webp
 ||tiplanet.org/forum/images/navbar-sprite.gif
 ||tlemcen-electronic.com/forum/vf.gif
-||touslesprix.com/img_*/background/
 ||trafficzipper.com/rotatorShowBanners-
 ||trovit.*/index.php/cod.get_premium/$xmlhttprequest
 ||trovitargentina.*/index.php/cod.get_premium/
@@ -3255,7 +3258,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.frame-ads-left
 ##.frame-ads-right
 ##.frameForMoney
-##.full-width-add-footer
 ##.google_ad2
 ##.gptAd
 ##.green-ad
@@ -3298,7 +3300,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.leaderboard728
 ##.leftSideAds
 ##.left_top_ad
-##.lftBigAds
 ##.lien_sponso
 ##.liens-sponsorises__external
 ##.line-adv
@@ -3400,7 +3401,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pub_300_250
 ##.pub_article
 ##.pub_banner
-##.pub_banner_bot
 ##.pub_banner_h
 ##.pub_banner_top
 ##.pub_carre
@@ -3424,7 +3424,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pubaccueildroite1
 ##.pubb-336-1
 ##.pubimage
-##.pubind1
 ##.pubind2
 ##.pubitem
 ##.publicidad
@@ -3492,7 +3491,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.tag-adverline
 ##.tag-sponsored-content
 ##.text_pub
-##.texte_ads
 ##.texte_ads_plug
 ##.timeline-media--ad
 ##.top-banner-pub
@@ -3579,6 +3577,7 @@ lacanausurfinfo.com###banner_footer
 jeuxvideo.com###banner_jv
 tirage-gagnant.com###banner_promo
 cowcotland.com###bannertop
+actu-environnement.com,emploi-environnement.com###banniereRight
 neurozinzin.com###bigAdd
 tetesaclaques.tv###bigBox
 gratuiciel.com,logitheque.com###bloc-droite-bas-250-250
@@ -3620,18 +3619,15 @@ amateur2sexe.fr###footer-boom
 hardware.fr###footer_img
 equirodi.be###ft_partners
 centerblog.net###gauche > iframe[width="300"][height="250"]
-dsih.fr###hab
 bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
 banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comics-sanctuary.com,ffeminin.com,gamer-network.fr,jeux-mmorpg.fr,lequipement.fr,letelegramme.fr,nrj.fr###habillage
 besac.com###habillage_cliquable
 buzzdefou.com,gerardmerinfo.fr###habillage_site
 mobiles-actus.com###header3
-amateur2sexe.fr###home-p2
 leboncoin.fr###home-top-banner
 ma-reduc.com###home-top-offers
 videopornoinceste.xxx###horizontal-banner
-madstef.com###idkey1ban
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
 jeuxvideo-live.com###jeuAssocie
@@ -3919,7 +3915,6 @@ pagesjaunes.fr##.place-reservee
 lexpress.fr##.placeholder--ban-atf-wrapper
 turf-fr.com##.pmu-block
 leparking-moto.fr,leparking.fr##.premium
-kelkoo.fr##.priceminister
 boulanger.com##.product-list__item-sponsored-products
 lanutrition.fr##.product-shop
 leroymerlin.fr##.product-thumbnail[data-vzbl-id]
@@ -4120,7 +4115,6 @@ maisonapart.com##div[id*="-publi-"]
 welovetennis.fr##div[id*="banner-top"]
 vakarm.net##div[id][onclick][style]
 routard.com,sfr.fr##div[id^="A2dEmplacement"]
-korben.info##div[id^="alderaan-"]
 toutvendre.fr##div[id^="bup"]
 developpez.com,developpez.net##div[id^="gabarit_megaban"]
 lachainemeteo.com##div[id^="ob_footer"]
