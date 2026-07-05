@@ -1,9 +1,9 @@
-! Checksum: RSgkbV4pHsos3xREK8SLgw
-! Diff-Path: ../patches/260/260-s-1783230745-14400.patch
+! Checksum: 8+cVtem8T/JPzi/F53qRuA
+! Diff-Path: ../patches/260/260-s-1783284624-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.24
-! TimeUpdated: 2026-07-05T05:50:10+00:00
+! Version: 2.0.0.25
+! TimeUpdated: 2026-07-05T20:48:11+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -164,7 +164,7 @@ www.android.com###ai-on-android
 ! -- https://archiveofourown.org/tags/Created%20Using%20Generative%20AI/works
 ! Works tagged as "Created Using Generative AI"
 ! * There are nearly 700 synonyms for "Created Using Generative AI" and it's subtags. Blocking them all would result in 38kb for one filter. Instead, I've manually added synonymns that seem semi-common based on "Other tags to include". (Full filter can be found at https://gist.github.com/Stevoisiak/c4bf2acb2a1032370183ea9d03fe5816)
-archiveofourown.org##.blurb:has(.tag:is([href="/tags/AI%20Art/works"],[href="/tags/AI%20assisted%20writing/works"],[href="/tags/AI%20assisted/works"],[href="/tags/AI%20Dungeon%20Generated/works"],[href="/tags/AI%20Generated%20Art/works"],[href="/tags/AI%20Generated%20Fic/works"],[href="/tags/AI%20generated%20story/works"],[href="/tags/AI%20generated/works"],[href="/tags/AI%20Translation/works"],[href="/tags/AI%20used%20as%20an%20assistive%20tool/works"],[href="/tags/AI%20written/works"],[href="/tags/AI-Assisted%20Translation/works"],[href="/tags/AI-Assisted%20Writing/works"],[href="/tags/AI-Assisted/works"],[href="/tags/ai-edited/works"],[href="/tags/AI-Generated%20Images/works"],[href="/tags/AI-Generated%20Text/works"],[href="/tags/AI-Generated/works"],[href="/tags/ai-written/works"],[href="/tags/ChatGPT%20generated/works"],[href="/tags/ChatGPT/works"],[href="/tags/Co-Written%20with%20AI/works"],[href="/tags/Created%20Using%20Generative%20AI/works"],[href="/tags/InferKit/works"],[href="/tags/Made%20by%20AI/works"],[href="/tags/Midjourney/works"],[href="/tags/NovelAI/works"],[href="/tags/Written%20by%20AI/works"],[href="/tags/Written%20by%20an%20AI/works"],[href="/tags/Written%20in%20collaboration%20with%20an%20AI/works"],[href="/tags/written%20with%20AI/works"]))
+archiveofourown.org##.blurb:has(.tag:is([href="/tags/AI%20Art/works"],[href="/tags/AI%20assisted%20text/works"],[href="/tags/AI%20assisted%20writing/works"],[href="/tags/AI%20assisted/works"],[href="/tags/AI%20Dungeon%20Generated/works"],[href="/tags/AI%20Generated%20Art/works"],[href="/tags/AI%20Generated%20Fic/works"],[href="/tags/AI%20generated%20story/works"],[href="/tags/AI%20Generated%20Text/works"],[href="/tags/AI%20generated/works"],[href="/tags/AI%20Translation/works"],[href="/tags/AI%20used%20as%20an%20assistive%20tool/works"],[href="/tags/AI%20written/works"],[href="/tags/AI-Assisted%20Translation/works"],[href="/tags/AI-Assisted%20Writing/works"],[href="/tags/AI-Assisted/works"],[href="/tags/ai-edited/works"],[href="/tags/AI-Generated%20Images/works"],[href="/tags/AI-Generated%20Text/works"],[href="/tags/AI-Generated/works"],[href="/tags/ai-written/works"],[href="/tags/ChatGPT%20generated/works"],[href="/tags/ChatGPT/works"],[href="/tags/Co-Written%20with%20AI/works"],[href="/tags/Created%20Using%20Generative%20AI/works"],[href="/tags/InferKit/works"],[href="/tags/Made%20by%20AI/works"],[href="/tags/Midjourney/works"],[href="/tags/NovelAI/works"],[href="/tags/Written%20by%20AI/works"],[href="/tags/Written%20by%20an%20AI/works"],[href="/tags/Written%20in%20collaboration%20with%20an%20AI/works"],[href="/tags/written%20with%20AI/works"]))
 ! ====================
 ! == Automate Excel ==
 ! ====================
@@ -1402,7 +1402,9 @@ www.google.com,www.google.*##[jscontroller="DyTeib"]
 www.google.com,www.google.*##.pHiOh[href^="https://ai.google/"]
 ! Search bar - AI button (magnifying glass icon, mobile only)
 www.google.com,www.google.*##.xOchs
-! Autocomplete suggestions for AI mode (mobile only)
+! Autocomplete suggestions - AI Mode
+www.google.*#%#//scriptlet('ubo-json-prune', '$.*.*[?@.zp.udm=="50"]')
+! * Backup cosmetic filter for mobile
 www.google.com,www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 ! -- https://www.google.com/search?q=Why+are+we+here
 ! "AI Mode" tab in navbar
