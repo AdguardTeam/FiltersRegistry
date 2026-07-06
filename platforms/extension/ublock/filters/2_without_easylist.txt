@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Xc4XEKqmQwVyjVmaytxaYA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783316090-3600.patch
+! Checksum: 4GToL4xZxHeXAgSYF2/qlA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783323900-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.75.64
-! TimeUpdated: 2026-07-06T05:31:30+00:00
+! Version: 2.4.75.65
+! TimeUpdated: 2026-07-06T07:41:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||untimely-proof.pro^
 ||delightlintlunatic.com^
 ||impassableretainerexplained.com^
 ||adeqmedia.com^$3p
@@ -9617,6 +9618,7 @@ ad.broadstreetads.com
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||ad.sexplex.com^
 ||rtb-*.anysex.com^
 ||ads-configs-cdn.openweb.com^
 ||d318g7p3azvr44.cloudfront.net^
@@ -25854,10 +25856,13 @@ odleglosci.pl##+js(no-setTimeout-if, mka_od_06_t)
 odleglosci.pl##[class*="aside-"][class*="-750"]:has(> .adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209100
 wiadomoscispozywcze.pl#@#[class^="ad-"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/234966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207318
 jelonka.com#@#.ad-banner-2
 @@||static5.hsg.com.pl/adv-scroll-sidebar.js$domain=jelonka.com
+||jelonka.com/static/jelonka/js/news-ad-access-gate.js
 jelonka.com##+js(abort-current-script, document.createElement, ad-banner)
+jelonka.com##+js(abort-on-stack-trace, Node.prototype.appendChild, detectAdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206590
 mapy.meteo.pl#@#.project-title.control-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205628
@@ -27218,7 +27223,11 @@ goal.pl##.banner
 goal.pl##.widget-area > aside[id^="block"]:matches-css(after, content: /^reklama$/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/126477
 portalsamorzadowy.pl##.sad
+! https://github.com/AdguardTeam/AdguardFilters/issues/234972
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174690
+koty.pl,psy.pl#@#[class$="-ads"]
+koty.pl,psy.pl##.c-hd-desktop__ad
+koty.pl,psy.pl###main-content > .b-newest-posts::before
 koty.pl,psy.pl##main > section[class^="sc-"] > div:not([class]):has(> h2 ~ div[class^="sc-"] > pre:contains(/^Reklama$/))
 koty.pl,psy.pl##.portal-top-banner
 koty.pl,psy.pl##.portal-header + hr:empty
@@ -30378,6 +30387,7 @@ tvarenasport.com##a[class^="baner_"]
 !
 ! NOTE: Slovenian
 !
+zurnal24.si##.dfp_banner
 n1info.si##.linker-widget-col:has(> a[title="Sponzorirano"])
 n1info.si##.ad-loading-placeholder
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225117
@@ -37431,7 +37441,7 @@ thematureporn.net,oncams.tv,camporn.is,xxxn.club,camseek.tv,pornflix.to,theporng
 ! ##body .ad
 sleazyfork.org,bhg.com.au,power-technology.com,food.com,xataka.com.ar,xataka.com.co,3djuegosguias.com,directoalpaladar.com.mx,thefilibusterblog.com,optionsprofitcalculator.com,kimbino.*,eahentai.com,issitedownrightnow.com,terabox.*,fedscoop.com,statescoop.com,edscoop.com,defensescoop.com,cyberscoop.com,halotracker.com,battlefieldtracker.com,destinytracker.com,gocmod.com,ibelieve.com,bleacherreport.com,thewindowsclub.blog,lovetoknow.com,colorxs.com,imaging-resource.com,fieldmag.com,investorplace.com,prosettings.net,gifcandy.net,gingersoftware.com,bitsofco.de,crn.com,techlusive.in,thehentaiworld.com,winporn.net,airport-charles-de-gaulle.com,getdaytrends.com,theurbanlist.com,dynamicwallpaper.club,delfi.lt,updatestar.com,worldstarhiphop.com,pdf.io,online-audio-converter.com,appsious.com,pythontutorial.net,flightglobal.com,outsider.com,servers.fivem.net,psdetch.com,phoneky.com,newsd.in,indiatvnews.com,yokibu.com,macleans.ca,clevelandclinic.org,readingrockets.org,martech.org,earlygame.com,tripadvisor.*,myhoustonmajic.com,gmanetwork.com,businessinsider.com,bgr.in,online-video-cutter.com,alison.com,mysqltutorial.org,sqlservertutorial.net,picmix.com,aim400kg.com,justfall.lol,epson-event-manager-utility.en.lo4d.com,barchart.com,politico.eu,thelayoff.com,ehow.com,tvweb.com,hiperdex.com,infobyip.com,soundclouddownloader.org,r3sub.com,citra-emu.org,ipaddress.com,mobafire.com,movieweb.com,ndtv.com,trafficland.com,forvo.com,apornotube.net,instadp.com,elophant.com,thurrott.com,mtlblog.com,accuweather.com,narcity.com,mywebtimes.com,ancient.eu,gradesaver.com,nytimes.com,nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion,defensesystems.com,whatsmydns.net,newatlas.com,gtplanet.net,investopedia.com,mangafox.la,sexhoundlinks.com,ibc.org,dcode.fr,pinkvilla.com,ranker.com,pornhd.com,history.com,saavn.com,www-technologyreview-com.cdn.ampproject.org,bombhopper.io,worms.lol,satelite.io,javascripttutorial.net,jungle.lol,1v1.lol,tricksplit.io,filehippo.com,supersextube.pro,zipi.com,nejm.org,ertyu.org,howchoo.com,dvdsreleasedates.com##body .ad
 ! ##.ads
-etnowpolymers.com,femina.in,filmfare.com,goodhomes.co.in,grazia.co.in,themachinist.in,soopage.com,tokenview.io,xnview.com,apk4free.net,remixsearch.net,sexadultcomics.com,ourcoincash.xyz,nexusmods.com,techxplore.com,strats.gg,gtainside.com,mybestgames.dk,eshop-prices.com,quena.id,sexu.*,gameme.eu,pornwatch.ws,mollygram.com,onlinewebfonts.com,androjungle.com,filerice.com,10001.games,hoes.tube,i24news.tv,rpp.pe,4pig.com,love4porn.com,gametop.com,bluedollar.net,outlookindia.com,blabbermouth.net,ghettotube.com,mangoporn.net,javplay.me,jagranjosh.com,4kporn.xxx,bangkokpost.com,up-load.io,liveindex.org,freeshib.biz,apkmb.com,westkentuckystar.com,namekun.com,piliapp.com,photofunny.net,grazia.co.in,flightpedia.org,thelingerieaddict.com,banglanews24.com,swisscows.com,jagran.com,autocarindia.com,userupload.net,javbraze.com,laptrinhx.com,pinkvilla.com,youramateurporn.com,dausel.co,yesnetwork.com,indiatoday.in,appvn.com,tapas.io,freefrontend.com,myplaycity.com,mercadojobs.com,thepiratebay.org,sgxnifty.org,cyberscoop.com,filmcomment.com,youngpornvideos.com,eventcinemas.com.au,findyourlucky.com,linuxmint.com,mobafire.com,themepack.me,tmail.io##.ads
+sexplex.com,etnowpolymers.com,femina.in,filmfare.com,goodhomes.co.in,grazia.co.in,themachinist.in,soopage.com,tokenview.io,xnview.com,apk4free.net,remixsearch.net,sexadultcomics.com,ourcoincash.xyz,nexusmods.com,techxplore.com,strats.gg,gtainside.com,mybestgames.dk,eshop-prices.com,quena.id,sexu.*,gameme.eu,pornwatch.ws,mollygram.com,onlinewebfonts.com,androjungle.com,filerice.com,10001.games,hoes.tube,i24news.tv,rpp.pe,4pig.com,love4porn.com,gametop.com,bluedollar.net,outlookindia.com,blabbermouth.net,ghettotube.com,mangoporn.net,javplay.me,jagranjosh.com,4kporn.xxx,bangkokpost.com,up-load.io,liveindex.org,freeshib.biz,apkmb.com,westkentuckystar.com,namekun.com,piliapp.com,photofunny.net,grazia.co.in,flightpedia.org,thelingerieaddict.com,banglanews24.com,swisscows.com,jagran.com,autocarindia.com,userupload.net,javbraze.com,laptrinhx.com,pinkvilla.com,youramateurporn.com,dausel.co,yesnetwork.com,indiatoday.in,appvn.com,tapas.io,freefrontend.com,myplaycity.com,mercadojobs.com,thepiratebay.org,sgxnifty.org,cyberscoop.com,filmcomment.com,youngpornvideos.com,eventcinemas.com.au,findyourlucky.com,linuxmint.com,mobafire.com,themepack.me,tmail.io##.ads
 ! ##.banner-inner
 link.codevn.net,lnbz.la,oei.la,shortyget.com,clk.wiki,clk.asia,namaidani.com,bestcash2020.com,shrink.*,4cash.me,myshrinker.com,linkjust.com,vklinks.com,seulink.online,coinadfly.com,popimed.com,hoastie.com,forex-trnd.com,tui.click,linkebr.com,pnd.*,clik.pw,fir3.net,tii.ai,srt.leechpremium.link,link1s.*,stfly.me,oncehelp.com,shorterall.com,encurta.eu,stfly.io,shrtfly.net,fc.lc,icutlink.com,suqdz.com,tmearn.com##.banner-inner
 ! ###ad
@@ -37501,6 +37511,11 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+pawgpornstars.com##a[href^="https://www2.pornfidelity.com/track/"]
+pawgpornstars.com##a[href^="https://pawgpornstars.com/link/brazzers/"]
+||badvault.com/api/ads?type=hilltop
+badvault.com##.video-card-ad-wrapper
+badvault.com##.ad-slot-global-wrapper
 camsrip.com##.container-lg > div.row:has(> section > div[data-cl-spot])
 ||natomanga.com/images/bns/
 hqporner.com###nav > ul > li:has(> a[rel="sponsored"])
@@ -40429,7 +40444,6 @@ camslib.com##.my-2:has(> div.border-top > div.bg-white:contains(partners videos)
 camslib.com##.my-2:has(> div.border-top > div.bg-white:contains(partners videos)) + div.row:has(> iframe)
 ||thothub.info/fantasybi.gif
 ranobes.net##.free-support-top
-trannyvip.com##.banner-ads
 camclips.tv##a[href^="https://t.amyfc.link/"]
 civicclubtr.com,camclips.tv,thotvids.com,cambro.*##+js(remove-node-text, script, puURL)
 cambro.*##.primary > li:has(> a[href="https://theporndude.com/"])
@@ -43672,7 +43686,7 @@ definebabe.com##.videos > div.d-flex
 milffox.com,definebabe.com##.fp-ui > div[style^="position: absolute; inset: 0px; overflow: hidden;"]:not([class])
 forums.redflagdeals.com###primisPlayerContainerDiv
 sportnews.to,topsporter.net##.aoa_overlay
-topsporter.net##.banner-ads
+sexplex.com,trannyvip.com,topsporter.net##.banner-ads
 topsporter.net##.card[style*="height"]:has(> div[class]:only-child > div[class]:only-child > div[id^="div-gpt"])
 topsporter.net##.card[style*="height"]:has(> div[class]:only-child > div[class]:only-child > #fl-ai-widget-placement)
 topsporter.net##.card:has(> div[class]:only-child > div[class]:only-child > div[class]:only-child > .banner-ads)
@@ -45450,7 +45464,7 @@ xdcc.eu##.gb
 ||techclips.net/jqueri.php
 filmyzilla.*##a[href*="//whairtoa.com/"]
 sonichits.com##div[style="max-width: 98%; width:500px; margin: 0 auto"]
-traderie.com##div[class^="AdSlot__"]
+cardcluster.com,traderie.com##div[class^="AdSlot__"]
 pornstars.tube##.spot > .top
 pornstars.tube##a.btn-dvd[rel="sponsored"]
 pornstars.tube,pornmega.com##body .bottom-adv
@@ -45781,6 +45795,10 @@ herexxx.com###video-interlacing
 trend.az##.adv-wrapper-horizontal
 greekreporter.com##.td-all-devices > a[href][target="_blank"] > img
 livescore.com##div[id$="-ad-holder"]
+livescore.com##div[data-id^="ads-"]
+livescore.com##div[data-ad-unit-id]
+livescore.com##div[data-test-id="virtuoso-item-list"] > div[data-item-index] > div[data-index] > div[class]:last-child:empty
+||livescore.com/media/ad_configs/
 scmp.com##.page__header-ad-slot
 theporndude.com##.wrapper::before
 ||maturesex.fun/vcrtlrvw/fjhreiow.php
@@ -50798,7 +50816,7 @@ xdlab.ru##.row > .five.columns > div[align="center"] > p[style="text-align:cente
 antdm.forumactif.com###main-content > div[class][style="overflow:visible"] > .inner > div[style="position:relative;height:90px; min-width: 728px px;"]
 empressleak.biz###wnb-bar
 empressleak.biz###wpfront-notification-bar
-fpoxxx1.com,pornditt.com,hentaigem.com,pornify.tv,dafreeporn.com,pornolovers.net,hdporner.tv,transvids.tv,vipporns.com,thetranny.com,shemalesin.com,stileproject.com,pornbimbo.com,faptube.com,amateur8.com,maturetubehere.com,lesbian8.com,sortporn.com,bigtitslust.com,18pussy.porn,pornrabbit.com,love4porn.com,fpo.xxx,keekass.com##.footer-margin
+severeporn.com,fpoxxx1.com,pornditt.com,hentaigem.com,pornify.tv,dafreeporn.com,pornolovers.net,hdporner.tv,transvids.tv,vipporns.com,thetranny.com,shemalesin.com,stileproject.com,pornbimbo.com,faptube.com,amateur8.com,maturetubehere.com,lesbian8.com,sortporn.com,bigtitslust.com,18pussy.porn,pornrabbit.com,love4porn.com,fpo.xxx,keekass.com##.footer-margin
 bellesa.co##img[alt="Deeper Pause Ad"]
 bellesa.co##div[class*="Notifications__Wrapper-"]
 bellesa.co##div[data-label="Sponsor"]
@@ -52292,7 +52310,7 @@ rankedboost.com##.ArticleTopInsert
 rankedboost.com##div[class^="ArticleInsert"]
 ||playbuzz.com^$domain=javarevisited.blogspot.com|nsfwyoutube.com|sportsplays.com|dailyhive.com|straightdope.com
 ||speedporn.net/wp-content/themes/retrotube/nex1.js
-porntn.com,shareanynudes.com,camstreams.tv,teenager365.to,amateur8.com,nudespree.com##.top-links
+severeporn.com,porntn.com,shareanynudes.com,camstreams.tv,teenager365.to,amateur8.com,nudespree.com##.top-links
 nudespree.com##.main-menu > li > a[rel="nofollow"]
 ||animehub.ac/api/pop.php
 forebears.io##.banner-h
@@ -64193,6 +64211,7 @@ implbits.com#@#.banner_container
 ! NOTE: Specific rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235020
+! https://github.com/AdguardTeam/AdguardFilters/issues/235017
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234880
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234878
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234872
