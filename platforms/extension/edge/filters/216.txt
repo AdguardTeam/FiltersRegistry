@@ -1,9 +1,9 @@
-! Checksum: 1WuNpHHGxQphN8sYlowYxg
-! Diff-Path: ../patches/216/216-s-1779224639-14400.patch
+! Checksum: XXhpW8uunScG+vyYz4o8Ug
+! Diff-Path: ../patches/216/216-s-1782307212-14400.patch
 ! Title: Official Polish filters for AdBlock, uBlock Origin & AdGuard
 ! Description: Additional filter list for websites in Polish.
-! Version: 2.0.16.54
-! TimeUpdated: 2026-05-19T21:01:07+00:00
+! Version: 2.0.16.57
+! TimeUpdated: 2026-06-24T13:16:59+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Official Polish Filters for AdBlock, uBlock Origin & AdGuard
@@ -14,9 +14,9 @@
 ! Works best with EasyList - be sure to subscribe it as well!
 ! Działa najlepiej z EasyList - pamiętaj aby zasubskrybować!
 !   Patronite ==> https://patronite.pl/polskiefiltry
-! Last modified: 19 May 2026
+! Last modified: 24 June 2026
 ! Expires: 1 day
-! OriginalVersion: 2026051901
+! OriginalVersion: 2026062402
 ! Support:
 !   Email >> errorsfilters@certyficate.it
 !   Github >> https://github.com/MajkiIT/polish-ads-filter/issues
@@ -24,7 +24,7 @@
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright © 2026 Certyficate IT
 ! Najnowsza wersja zawsze na: https://www.certyficate.it/adblock
-! v.2026051901 aktualizacja: wt, 19 maja 2026, 20:35:00
+! v.2026062402 aktualizacja: sr, 24 czerwca 2026, 15:00:00
 !
 !
 !1#-----------------------General advert blocking filters-----------------------!
@@ -435,7 +435,7 @@ antyweb.pl##.group.no-margin.columns-wrapper > .group.no-margin.columns-wrapper
 antyweb.pl##.touch + IMG.notMobile[src*="/1200x400"]
 antyweb.pl##.transparent, .box-adv, .grid-item--height-2.grid-item--width-2.grid-item
 antyweb.pl##[class$="banner--place"]
-! aptekarski.com,swiatzdrowia.pl##.placement-item
+aptekarski.com##.placement-item
 apynews.pl##.featured-advert
 archiwum.wiesci.com.pl##table:nth-of-type(1) > tbody > tr > td:nth-of-type(3), table:nth-of-type(2) > tbody > tr > td:nth-of-type(3)
 arenadesign.pl##div.owl-item
@@ -2749,6 +2749,10 @@ oswiecimonline.pl##.vc_col-sm-12.vc_column_container.wpb_column > .vc_column-inn
 oswiecimskie24.pl##.noad
 otodom.pl###adsTopOD
 otodom.pl##div[data-cy="search.listing.promoted"]
+! Block the Masthead element
+otodom.pl##[data-sentry-component="Masthead"]
+! Remove the top padding from the NexusHeader element
+otodom.pl#$#[data-sentry-component="NexusHeader"] { padding-top: 0px !important }
 otomoto.pl##[data-testid="banner-link"]
 otopanorama.pl##.wpb_content_element.wpb_text_column
 ototorun.pl##.row:nth-of-type(6) > .fl.w1000
@@ -2961,6 +2965,7 @@ poranny.pl,polskatimes.pl##h2 > span
 portal.abczdrowie.pl##.a-ctn-d
 portal.librus.pl#?##synergiaLogin + div[class]:has(picture > source[srcset*="librus"] ~ img[src*="librus"])
 portal.region.info.pl##.et_pb_image.et_pb_module
+portal.librus.pl#$?#advertisement-module { remove: true; }
 portal24h.pl###rt-content-bottom
 portalgorski.pl,miedziowe.pl##[class*="banner"]
 portalkomunalny.pl##.pasinfotxt.above
@@ -4791,6 +4796,7 @@ www.wirtualnemedia.pl###wtg_art_full_service
 ||popclck.org/$script,domain=wrealu24.pl
 ||portalmorski.pl/images/banners/
 ||portalplock.pl/banery/
+||portal.librus.pl/ad^
 ||powernet.pl/mm/260/0/image_files/sidebar/$image
 ||powiat24.pl/photos/adv_$image
 ||pp.funhub.pl^$domain=naszemiasto.pl
@@ -5151,21 +5157,21 @@ www.wirtualnemedia.pl###wtg_art_full_service
 @@||cdn.onesignal.com/sdks/$script,domain=www.aptekarska.pl|aptekarski.com
 @@||onesignal.com/$domain=www.aptekarska.pl|aptekarski.com
 @@||region1.analytics.google.com/$domain=www.aptekarska.pl|aptekarski.com
-@@||region1.google-analytics.com/$domain=swiatzdrowia.pl
+!@@||region1.google-analytics.com/$domain=swiatzdrowia.pl
 @@||ulixes.pl/www/images/slider/$domain=aptekazawiszy.pl
-@@||doubleclick.net/$domain=swiatzdrowia.pl
-@@||www.google-analytics.com$domain=swiatzdrowia.pl
-@@||www.googletagmanager.com/$domain=swiatzdrowia.pl
-@@||region1.analytics.google.com$domain=swiatzdrowia.pl
-@@||consent.cookiefirst.com/sites/swiatzdrowia.pl*$script,domain=swiatzdrowia.pl
-@@||consent.cookiefirst.com/banner.no-autoblock.js$script,domain=swiatzdrowia.pl
-@@||consent.cookiefirst.com/sites/swiatzdrowia.pl*$xmlhttprequest,domain=swiatzdrowia.pl
-@@||edge.cookiefirst.com/prod/location?origin=swiatzdrowia.pl$xmlhttprequest,domain=swiatzdrowia.pl
-@@||consent.cookiefirst.com/bulk/bc-handler.min.js*$script,domain=swiatzdrowia.pl
-@@||consent.cookiefirst.com/banner/*$script,domain=swiatzdrowia.pl
-@@||consent.cookiefirst.com/banner/*$stylesheet,domain=swiatzdrowia.pl
-@@||consent.cookiefirst.com/banner/*$xmlhttprequest,domain=swiatzdrowia.pl
-@@/ads/ga-audiences$domain=swiatzdrowia.pl
+!@@||doubleclick.net/$domain=swiatzdrowia.pl
+!@@||www.google-analytics.com$domain=swiatzdrowia.pl
+!@@||www.googletagmanager.com/$domain=swiatzdrowia.pl
+!@@||region1.analytics.google.com$domain=swiatzdrowia.pl
+!@@||consent.cookiefirst.com/sites/swiatzdrowia.pl*$script,domain=swiatzdrowia.pl
+!@@||consent.cookiefirst.com/banner.no-autoblock.js$script,domain=swiatzdrowia.pl
+!@@||consent.cookiefirst.com/sites/swiatzdrowia.pl*$xhr,domain=swiatzdrowia.pl
+!@@||edge.cookiefirst.com/prod/location?origin=swiatzdrowia.pl$xhr,domain=swiatzdrowia.pl
+!@@||consent.cookiefirst.com/bulk/bc-handler.min.js*$script,domain=swiatzdrowia.pl
+!@@||consent.cookiefirst.com/banner/*$script,domain=swiatzdrowia.pl
+!@@||consent.cookiefirst.com/banner/*$stylesheet,domain=swiatzdrowia.pl
+!@@||consent.cookiefirst.com/banner/*$xhr,domain=swiatzdrowia.pl
+!@@/ads/ga-audiences$domain=swiatzdrowia.pl
 @@||spolecznosci.net$script,domain=www.donald.pl
 !
 !13#------------------------Whitelist specific element hiding rules------------------------!
@@ -5476,6 +5482,7 @@ filmyfilmy.pl###play
 ||vuuel.com^
 ||forcedgifting.com^
 ||dobrezrodla.com^
+||feji.io^
 !
 !24#--------------------------Rules for ublock, but can be use with adblock------------!
 ||imasdk.googleapis.com/js/core/bridge*.html$subdocument,domain=exs.pl,important

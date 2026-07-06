@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ACKuHBtK1mGizoUwCGwKwQ
-! Diff-Path: ../patches/22/22-s-1779860291-3600.patch
+! Checksum: nuyS3QzGP5tz7dAoe81Aiw
+! Diff-Path: ../patches/22/22-s-1782983613-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.14.10
-! TimeUpdated: 2026-05-27T05:35:11+00:00
+! Version: 2.0.14.35
+! TimeUpdated: 2026-07-02T09:10:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -90,6 +90,8 @@ nizimoenews.livedoor.blog,butumori.com,netizen-voice.blog.jp,ityouchannel.livedo
 !
 ! NOTE: Blogroll specific rules
 !
+monhan-soku.com##.gs-single-before-article
+monhan-soku.com##.yrss-list
 blog.domesoccer.jp###side > section:has(> div#rss_3site_frame)
 ||chaos-giga.com/wp-content/uploads/js/above-content-links_random.js
 ||chaos-giga.com/wp-content/uploads/js/link_random.js
@@ -1406,6 +1408,8 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (third-party services)
 !
+||widget.yourgood.app^
+||quizgo-widget.ru^$3p
 ||cdn.helvia.io^$3p
 ||lemrock.com^$3p
 ||tariffuxx.de^$3p
@@ -1962,6 +1966,8 @@ full-count.jp##section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND)
 ||comm100.com^$3p
 /livechat.ashx?siteId=$script,3p
 !
+||i.v*.flomni.com/chat.corner.js
+||viind.com/webchat^$3p
 ||app.davision.ai^$3p
 ||zdorovyak.com^$3p
 ||code.tidio.co^$3p
@@ -2031,6 +2037,9 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+||webchat-cdn.asksid.ai^$domain=himalayawellness.in
+microsoft.com###msChatContainer
+dtkt.ua##.ai-chat
 games-world4you.de###shopify-chat
 ianos.gr##chat-widget
 vit.ac.in###whatsapp-chat-widget
@@ -2201,11 +2210,16 @@ zebratechnologies.force.com##.zbrbot-container
 !
 !   SECTION: Uncategorized
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/233934
+||gist.ai^$domain=upi.com
+! nperf speedtest widget
+||ws.nperf.com^$3p
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232077
 posta.com.tr##.compatibility-widget
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229681
 ||power-technology.com/wp-content/plugins/sgpolls/
 ||survey.alchemer.eu^$subdocument,3p
+just-auto.com##iframe[src^="https://survey.alchemer.eu/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229092
 sn-jp.com##.br-vote-widget
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228367
@@ -2517,6 +2531,28 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+fourfourtwo.com##[id^="play-our-free-match-predictor-and-win-"]
+fourfourtwo.com##[id^="play-our-free-match-predictor-and-win-"] + div[style^="min-height:"][id*="-"]:has(> .kwizly-quiz)
+fourfourtwo.com###article-body > *:not([id*="-"]) + div[style^="min-height:"]:has(> .kwizly-quiz)
+||spotfund-widget.s3.amazonaws.com/embed/large.js
+notepad.js.org###toastPopup
+medyascope.tv##.elementor-widget-wrap > div[data-element_type="widget"]:has(> div.elementor-widget-container > div.elementor-template > div[data-elementor-post-type="elementor_library"] > div[data-element_type="container"] > div.e-con-inner > div[data-element_type="container"] > div[data-element_type="widget"] > div.elementor-widget-container > div.elementor-button-wrapper > a[href="https://abonelik.medyascope.tv/"])
+serbestiyet.com###floating-donate-button
+techxplore.com,phys.org,medicalxpress.com###donateMsgPopup
+techxplore.com,medicalxpress.com###js-popup-donate
+nikvesti.com##.main-post-content-text > div:has(> noindex > div.donation-box)
+nikvesti.com##.comments-intro-show-box:has(> a[href="/donate"])
+footystats.org##.appCta
+dailynewshungary.com##div.highlight-card:has(> div.highlight-card__inner > a[href="https://dailynewshungary.com/support/"])
+euromaidanpress.com##.patreon-ads-banner
+euromaidanpress.com##.hide-ads-banner
+euromaidanpress.com##.hide-ads-banner ~ div.overlay-bg
+serbestiyet.com##.single-post-support-block
+wyofile.com##.newspack-popup-container:has( > .wp-block-group > .wp-block-buttons > .wp-block-button > a[href="https://wyofile.fundjournalism.org/donate/?campaign=701Pl00001XSfmIIAT&_gl=1*ouvzxy*_ga_306KYTFJD8*czE3Nzk5Mzc4NjckbzEkZzEkdDE3Nzk5Mzg0NDkkajYwJGwwJGgw"])
+hongkongfp.com###block-85:has(> .wp-block-group > .wp-block-group__inner-container > .wp-block-paragraph > a[href="https://support.hongkongfp.com/"])
+montanafreepress.org##iframe[title="Persistent Donate Button"]
+chytomo.com##.donate-single
+chytomo.com##.donate-header
 kisadalga.net##.tp-patreon
 mind.ua##.donate__frame
 techblog.gr##.rrm-contribution
@@ -2567,7 +2603,6 @@ waterfordwhispersnews.com##.wwn-announcment-box
 echofm.online##div[class^="sc-"]:has(> a[href="/donation"])
 huffpost.com##.big-banner-container:has(.big-banner__support-button)
 ||videogameschronicle.com/wp-content/themes/alpha/dist/images/promos/*.mp4
-videogameschronicle.com##div[class^="house-patreon-"]
 modxvm.com##+js(addEventListener-defuser, DOMContentLoaded, checkAndShowDialog)
 thepage.ua##.w-full:has(> div.flex > a[href="https://thepage.ua/ua/donation"])
 dailykos.com##.donation-request
@@ -2664,7 +2699,7 @@ apnews.com###desktop-entitlements
 istories.media##div[class^="BeltsGrid-module-"] > div[class^="BeltOfThree-module-"]:has(> div[class^="BeltOfThree-module-"] > div[class^="DonationCard-module"])
 tvrain.tv##.article_paid__info:has(> a.article_paid__btn--donate)
 euromaidanpress.com###pa_banner_code
-roskomsvoboda.org##.donate
+stopcor.org,roskomsvoboda.org##.donate
 roskomsvoboda.org###donate
 vox.com##aside:has(> div > a[href^="https://vox.memberful.com/checkout"])
 freetp.org##noindex:has(> a[href="/donat.html"])
@@ -2780,7 +2815,7 @@ kill-the-hero.com##.kofi-button
 paperpaper.*##.post-info-block
 paperpaper.*##.stk-grid > div[class^="stk-theme"] > a[href^="http://paperpaper.site"]:upward(2)
 tsargrad.tv##.article__content > div.form
-unian.ua,unian.net##.support-post
+unian.info,unian.ua,unian.net##.support-post
 ||paywall.fewcents.co/static/js/paywall.js
 proagro.com.ua##.td-outer-container:style(background-image: none !important; cursor: default !important;)
 proagro.com.ua##+js(abort-on-property-read, wpsite_clickable_data)

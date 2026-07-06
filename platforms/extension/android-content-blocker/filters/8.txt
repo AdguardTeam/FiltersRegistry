@@ -1,8 +1,8 @@
-! Checksum: V8ikUDofvxfJ7EoeyFGstg
+! Checksum: 3FdtIss6Ur7T7lnJ6G/PUQ
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.9.23
-! TimeUpdated: 2026-05-22T07:22:11+00:00
+! Version: 2.0.9.35
+! TimeUpdated: 2026-06-30T03:14:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1307,6 +1307,7 @@ wielerflits.be,wielerflits.nl##.wielerflits_ros_bravo_rectangle-halfpage
 telegraaf.nl##.withBanners
 indebuurt.nl##.woty-banner
 streamwijzer.nl##.wp-block-buttons
+almelo1.nl##.wpcp-carousel-wrapper
 debestevpn.nl##.wpsm_promobox
 iphoned.nl##.wrap.hidden.lg\:flex.mt-8
 androidworld.nl##.wrap.overflow-hidden.relative.pt-5.z-30.sm\:h-\[90px\].sm\:pt-0
@@ -1549,7 +1550,6 @@ radio10.nl#@#.text_ad
 radio10.nl#@#.text_ads
 radio10.nl#@#.text-ads
 radio10.nl#@#.text-ad-links
-radio10.nl#@#.ad-text
 radio10.nl#@#.adSense
 radio10.nl#@#.adContent
 radio10.nl#@#.adBanner
@@ -1558,13 +1558,16 @@ radio10.nl#@##topbanner_ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203606
 forum.fok.nl#@##advertentie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202820
+! https://github.com/AdguardTeam/AdguardFilters/issues/234442
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208455
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197442
 !+ NOT_OPTIMIZED
 vandaaginside.nl,538.nl,hartvannederland.nl#@##topbanner_ad
 !+ NOT_OPTIMIZED
-@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl|538.nl|vandaaginside.nl
+@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl|538.nl|vandaaginside.nl|nieuwsvandedag.nl
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_safari)
+@@||nieuwsvandedag.nl^$generichide
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_safari)
 @@||538.nl^$generichide
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_safari)
@@ -1736,6 +1739,15 @@ icttipsandtricks.nl##body #adblock_screen
 ! Good: example.org###rek; ||example.com/ads/
 ! Bad: example.org#@##banner_ad (for instance, should be in allowlist.txt or in antiadblock.txt)
 !
+weeronline.nl##.fullScreenAdWrapper
+iculture.nl##div[id^="gpt-ad-"]
+iculture.nl##div[data-name^="ad-"]
+buienradar.nl##.br-ad-slot
+upcoming.nl,revu.nl,nouveau.nl,marieclaire.nl,happyinshape.nl,grazia.nl,gezondnu.nl,elegance.nl,beaumonde.nl,nautique.nl,golfersmagazine.nl,dingenvoorvrouwen.nl##div[data-aaad="true"][data-aa-adunit]
+upcoming.nl,revu.nl,nouveau.nl,marieclaire.nl,happyinshape.nl,grazia.nl,gezondnu.nl,elegance.nl,beaumonde.nl,nautique.nl,golfersmagazine.nl,dingenvoorvrouwen.nl##div[data-aaad="true"][data-aa-adunit] + .icn-close
+upcoming.nl,revu.nl,nouveau.nl,marieclaire.nl,happyinshape.nl,grazia.nl,gezondnu.nl,elegance.nl,beaumonde.nl,nautique.nl,golfersmagazine.nl,dingenvoorvrouwen.nl##.floating-sidebar[style^="min-width:"]
+volkskrant.nl##aside[data-test-id="temptation-TOP_OF_FOOTER"]
+redactie24.be###Mobile-Rectangle-Article-Low
 nederland.fm##div[class^="adv_"]
 telegraaf.nl##div[class^="page-layout_leadingAdContainer"]
 demorgen.be###main div[style*="--zone-column-"] > #r1
@@ -1759,7 +1771,7 @@ mijnwoordenboek.nl##div[id^="Mijnwoordenboek."]
 mijnwoordenboek.nl##div[style="min-height:270px"]
 ||ssl.p.jwpcdn.com/player/v/*/vast.js$domain=matele.be
 telegraaf.nl##.tik4-extension--inline-ad
-||ssl.p.jwpcdn.com/player/v/*/freewheel.js$domain=kijk.nl|hartvannederland.nl|538.nl|vandaaginside.nl|radio10.nl
+||ssl.p.jwpcdn.com/player/v/*/freewheel.js$domain=kijk.nl|hartvannederland.nl|538.nl|vandaaginside.nl|radio10.nl|nieuwsvandedag.nl
 ||zeilen.nl/builds/zeilen/assets/taboola-page-view-id-*.js
 zeilen.nl,wielerrevue.nl##div[data-aa-adunit]
 zeilen.nl,wielerrevue.nl##main .bg-reserved
@@ -1874,7 +1886,7 @@ itnijs.frl##.last.widget
 itnijs.frl##.widget-5 > div.banner
 ||itnijs.frl/wp-content/uploads/2017/10/bannerItNijs
 spiele.spiegel.de##div[id^="ad-gamepage"]
-kieskeurig.nl##.advertisement
+wielerflits.nl,kieskeurig.nl##.advertisement
 ad.nl##li[class^="tile tile tile--"]
 ad.nl##iframe[src^="https://cdn.reclamefolder.org/"]
 iculture.nl##div[style="min-height:250px"]
@@ -1968,7 +1980,7 @@ afkortingen.nu###link_unit
 fok.nl###mainContent > div.ad
 gezondheidsplein.nl,gelderlander.nl##.ad
 iphoned.nl##.advert-sidebar
-buienalarm.nl,nrc.nl,afkortingen.nu##.banner
+weerslag.nl,buienalarm.nl,nrc.nl,afkortingen.nu##.banner
 marktplaats.nl##.banner-vipbottom
 nu.nl##.block.advertoriallist
 televizier.nl,tvgids.nl##.interstitial_banner

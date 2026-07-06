@@ -1,20 +1,21 @@
-! Checksum: tD09/914OLMWR9DTIhnduw
-! Diff-Path: ../patches/212/212-s-1779875340-14400.patch
+! Checksum: Juy2VFTxiBtqCu4voKRlXA
+! Diff-Path: ../patches/212/212-s-1783331503-14400.patch
 ! Title: RU AdList: Counters
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.90.48
-! TimeUpdated: 2026-05-27T09:45:56+00:00
+! Version: 2.1.92.86
+! TimeUpdated: 2026-07-06T09:48:27+00:00
 ! Expires: 5 days (update frequency)
 !
-! Checksum: a5SArOF7nOhf62NHtSee+Q
-! OriginalVersion: 202605270931
+! Checksum: Mz/JEdnGLDsa5FsoTMcDwA
+! OriginalVersion: 202607060932
 ! Title: RU AdList: Counters
-! Last modified: 27 May 2026 09:31 UTC
+! Last modified: 06 Jul 2026 09:32 UTC
 ! Expires: 1 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
 !
 ! *** ruadlist:cntblock.txt ***
+! Last modified: 02 Jul 2026 14:49 UTC
 !
 ! Дополнительный список фильтров RU Adlist: Counters
 ! Лицензия CC-BY: http://creativecommons.org/licenses/by/3.0/
@@ -72,14 +73,13 @@
 @@||tele-sport.ru/api/front/counter/hit/$xmlhttprequest,domain=tele-sport.ru
 @@||tns-counter.ru/tcounter.js|$script,domain=motor.ru
 @@||tns-counter.ru^*/tmsec=yandex_videoplayershow/$object
-@@||top.mail.ru/counter?*;rand=$domain=kp.ru
 @@||yastatic.net/metrika/*/counters/$domain=metrika.yandex.ru
 @@||youtube.com/api/stats/watchtime?$image,domain=youtube.com
 !
 ! = Общие фильтры (блокировка по маске) =======================================
 .com/a.gif?
 .top100.$third-party
-/1x1.gif$domain=~idaprikol.ru|~londynek.net|~namethatporn.com|~thg.ru
+/1x1.gif$domain=~futabanet.jp|~idaprikol.ru|~londynek.net|~namethatporn.com|~thg.ru
 /1x1.png$domain=~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru
 /?local_ga_js=
 /?sentry_key=
@@ -207,6 +207,7 @@ _pagespeed_beacon?
 ##[title="uWeb Counter"]
 ##a#mobtop[title^="Рейтинг мобильных сайтов"]
 ##a[href*="//top.mail.ru/jump?"]
+~liveinternet.ru##a[href*="//www.liveinternet.ru/stat/"][aria-label="LiveInternet"]
 ##a[href*="/rating/"] > img[width="88"][height="31"]
 ~rambler.ru##a[href*="rambler.ru/top100/"]
 ~rambler.ru##a[href*="top100.rambler.ru/"]
@@ -279,7 +280,6 @@ _pagespeed_beacon?
 ||adx.com.ru^$third-party
 ||affilate.hh.ru^
 ||affiliates.rozetka.com.ua/tools/utm.php?r=
-||ag.ru/*/info/info.php?
 ||agropoisk.ru/getbanner.php?
 ||ainews.kz/api/metrics/
 ||ainews.kz/api/track/
@@ -1249,7 +1249,7 @@ avtorambler.com,rambler.ru#?#section > nav ~ div div:has(> div > [id^="rcmw-cont
 dzen.*#$?#.content-id-for-morda div:matches-attr(/./=top-content) > div + div { display: none !important }
 dzen.*#$?#[aria-label*="Лент"] article:has(> div:matches-css(display: none)) { display: none !important }
 dzen.*#$?#div:matches-attr(/[a-z0-9]/=/media-banner/) { display: none !important }
-dzen.*#$?#div:matches-attr(/data-[a-z0-9]/=/placeholder/) { display: none !important }
+dzen.*,sportsdzen.*#$?#div:matches-attr(/data-[a-z0-9]/=/placeholder/) { display: none !important }
 eda.yandex.ru##main#main main > div[style^="margin-bottom:"] [aria-label="Акция"]
 eda.yandex.ru#?#main#main main > div[style^="margin-bottom:"]:has([aria-label="Акция"])
 mail.yandex.*#?#.mail-Page-Body .Popup2 > .Tooltip-Content:contains(2025)
@@ -1271,21 +1271,21 @@ yandex.*#$?#.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-c
 @@||an.yandex.ru/mapuid/tnscounter/?from=yan_oo-rtb-direct|$xmlhttprequest,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
 @@||an.yandex.ru/mapuid/yandex/$image,domain=auto.ru|dzen.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||an.yandex.ru/meta/*target-ref=*pogoda$xmlhttprequest,domain=yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
-@@||an.yandex.ru/resource/spacer.gif|$image,domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
+@@||an.yandex.ru/resource/spacer.gif|$image,domain=dzen.ru|sportsdzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||an.yandex.ru/system/context.js|$domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||mc.yandex.ru/metrika/advert.gif|$xmlhttprequest,domain=dzen.ru|ya.ru|yandex.by|yandex.kz|yandex.ru|yandex.uz
-@@||static-mon.yandex.net/static/main.js?pid=$xmlhttprequest,domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
+@@||static-mon.yandex.net/static/main.js?pid=$xmlhttprequest,domain=dzen.ru|sportsdzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||yandex.ru/ads/page/*target-ref=*pogoda$xmlhttprequest,domain=yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||yandex.ru/ads/system/context.js?$script,domain=dzen.ru
 @@||yandex.ru/ads/system/context.js?|$script,domain=ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
-@@||yandex.ru/ads/system/context.js|$domain=auto.ru|dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
+@@||yandex.ru/ads/system/context.js|$domain=auto.ru|dzen.ru|sportsdzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||yandex.ru/ads/system/header-bidding.js|$xmlhttprequest,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
-@@||yandex.ru/ads/system/widget.js|$script,domain=dzen.ru
+@@||yandex.ru/ads/system/widget.js|$script,domain=dzen.ru|sportsdzen.ru
 @@||yastatic.net/daas/atom.js|$domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
 @@||yastatic.net/pcode/adfox/loader.js|$xmlhttprequest,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
-@@||yastatic.net/safeframe-bundles/*/host.js|$xmlhttprequest,domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
+@@||yastatic.net/safeframe-bundles/*/host.js|$xmlhttprequest,domain=dzen.ru|sportsdzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 ||yastatic.net/partner-code-bundles/$badfilter
-||yastatic.net/partner-code-bundles/$domain=~auto.ru|~dzen.ru
+||yastatic.net/partner-code-bundles/$domain=~auto.ru|~dzen.ru|~sportsdzen.ru
 !
 ! 4pda.to (ранее 4pda.ru)
 ! верхняя плашка

@@ -1,7 +1,7 @@
 ! .php?zoneid=$script is excluded by ".php?zoneid=" in exclusions.txt
 .php?zoneid=$script
-! ://ads.$popup,domain=~ad.olx.pl|~ads.mercadolibre.com.ar|~ads.mercadolibre.com.cl|~ads.mercadolibre.com.co|~ads.mercadolibre.com.ec|~ads.mercadolibre.com.mx|~ads.mercadolibre.com.pe|~ads.mercadolibre.com.ve|~ads.mercadolivre.com.br|~ads.umd.edu|~axon.ai|~kakaku.com|~reddit.com|~smartnews.com is excluded by "://ads.$popup" in exclusions.txt
-://ads.$popup,domain=~ad.olx.pl|~ads.mercadolibre.com.ar|~ads.mercadolibre.com.cl|~ads.mercadolibre.com.co|~ads.mercadolibre.com.ec|~ads.mercadolibre.com.mx|~ads.mercadolibre.com.pe|~ads.mercadolibre.com.ve|~ads.mercadolivre.com.br|~ads.umd.edu|~axon.ai|~kakaku.com|~reddit.com|~smartnews.com
+! ://ads.$popup,domain=~ad.olx.pl|~ads.mercadolibre.com.ar|~ads.mercadolibre.com.cl|~ads.mercadolibre.com.co|~ads.mercadolibre.com.ec|~ads.mercadolibre.com.mx|~ads.mercadolibre.com.pe|~ads.mercadolibre.com.ve|~ads.mercadolivre.com.br|~ads.openai.com|~ads.pandauth.com|~ads.umd.edu|~axon.ai|~kakaku.com|~reddit.com|~smartnews.com is excluded by "://ads.$popup" in exclusions.txt
+://ads.$popup,domain=~ad.olx.pl|~ads.mercadolibre.com.ar|~ads.mercadolibre.com.cl|~ads.mercadolibre.com.co|~ads.mercadolibre.com.ec|~ads.mercadolibre.com.mx|~ads.mercadolibre.com.pe|~ads.mercadolibre.com.ve|~ads.mercadolivre.com.br|~ads.openai.com|~ads.pandauth.com|~ads.umd.edu|~axon.ai|~kakaku.com|~reddit.com|~smartnews.com
 ! ://adv.$popup,domain=~adv.kompas.id|~adv.lack-girl.com is excluded by "/^:\/\/adv\.\$popup\,domain=~/" in exclusions.txt
 ://adv.$popup,domain=~adv.kompas.id|~adv.lack-girl.com
 ! ##.ad-unit is excluded by "/^(~.*)?##\.ad-unit$/" in exclusions.txt
@@ -28,6 +28,8 @@
 ||35.232.188.118^$popup
 ! ||redtube.com^$subdocument,~third-party is excluded by "||redtube.com^$subdocument,~third-party" in exclusions.txt
 ||redtube.com^$subdocument,~third-party
+! gamepadla.com#?#.pMain:has(div:-abp-properties(Partner)) is excluded by "-abp-properties" in exclusions.txt
+gamepadla.com#?#.pMain:has(div:-abp-properties(Partner))
 ! redtube.com,tube8.com,tube8.es,tube8.fr,xvideos.com,youjizz.com,youporn.com##:-abp-properties(*data:image*) is excluded by "-abp-properties" in exclusions.txt
 redtube.com,tube8.com,tube8.es,tube8.fr,xvideos.com,youjizz.com,youporn.com##:-abp-properties(*data:image*)
 ! redtube.com,tube8.com,tube8.es,tube8.fr,xvideos.com,youjizz.com,youporn.com##:-abp-properties(base64) is excluded by "-abp-properties" in exclusions.txt
@@ -56,8 +58,18 @@ redtube.com,tube8.com,tube8.es,tube8.fr,xvideos.com,youjizz.com,youporn.com##:-a
 ||cfgr3.com/videos/*.mp4$rewrite=abp-resource:blank-mp4,domain=hitbdsm.com
 ! Rule "||youjizz.com/KWIKY*.mp4$rewrite=abp-resource:blank-mp4,domain=youjizz.com" converted to: "||youjizz.com/KWIKY*.mp4$redirect=noopmp4-1s,domain=youjizz.com"
 ||youjizz.com/KWIKY*.mp4$rewrite=abp-resource:blank-mp4,domain=youjizz.com
+! Rule "cyberchef.org###workspace-wrapper > [id][style*="height"] {height: 100% !important}" converted to: "cyberchef.org#$##workspace-wrapper > [id][style*="height"] { height: 100% !important }"
+cyberchef.org###workspace-wrapper > [id][style*="height"] {height: 100% !important}
+! Rule "justjared.com##.banner-spacer-top {max-height: 50px !important;}" converted to: "justjared.com#$#.banner-spacer-top { max-height: 50px !important; }"
+justjared.com##.banner-spacer-top {max-height: 50px !important;}
+! Rule "justjared.com##[role="banner"] {top:0 !important}" converted to: "justjared.com#$#[role="banner"] { top:0 !important }"
+justjared.com##[role="banner"] {top:0 !important}
+! Rule "deliveroo.*#?#div[class^="HomeFeedScrollTracker-"]:has(span[class^="HomeFeedUILines-"]:has-text(Sponsored))" converted to: "deliveroo.*#?#div[class^="HomeFeedScrollTracker-"]:has(span[class^="HomeFeedUILines-"]:contains(Sponsored))"
+deliveroo.*#?#div[class^="HomeFeedScrollTracker-"]:has(span[class^="HomeFeedUILines-"]:has-text(Sponsored))
 ! Rule "advocate.com,out.com,pride.com#?#.component.module-headline:has-text(FROM OUR SPONSORS)" converted to: "advocate.com,out.com,pride.com#?#.component.module-headline:contains(FROM OUR SPONSORS)"
 advocate.com,out.com,pride.com#?#.component.module-headline:has-text(FROM OUR SPONSORS)
+! Rule "character.ai#?#.space-y-4 > .w-full:has-text(Advertisement)" converted to: "character.ai#?#.space-y-4 > .w-full:contains(Advertisement)"
+character.ai#?#.space-y-4 > .w-full:has-text(Advertisement)
 ! Rule "cjleo.com#?#.alt-widget-title:has-text(advertisement)" converted to: "cjleo.com#?#.alt-widget-title:contains(advertisement)"
 cjleo.com#?#.alt-widget-title:has-text(advertisement)
 ! Rule "fdiintelligence.com#?#.undefined:has-text(Advertisement)" converted to: "fdiintelligence.com#?#.undefined:contains(Advertisement)"
@@ -66,14 +78,18 @@ fdiintelligence.com#?#.undefined:has-text(Advertisement)
 findagrave.com#?#.rounded-pill:has-text(Remove Ads)
 ! Rule "gamepadla.com#?#.sliderBlock:has-text(ADS)" converted to: "gamepadla.com#?#.sliderBlock:contains(ADS)"
 gamepadla.com#?#.sliderBlock:has-text(ADS)
+! Rule "inc.com#?#.pr-\[25px\].py-\[27px\]:has-text(Apply Now)" converted to: "inc.com#?#.pr-\[25px\].py-\[27px\]:contains(Apply Now)"
+inc.com#?#.pr-\[25px\].py-\[27px\]:has-text(Apply Now)
+! Rule "interestingengineering.com#?#.overline-small:has-text(advertisement)" converted to: "interestingengineering.com#?#.overline-small:contains(advertisement)"
+interestingengineering.com#?#.overline-small:has-text(advertisement)
 ! Rule "livpost.co.uk#?#.kg-cta-link-accent:has-text(SPONSORED)" converted to: "livpost.co.uk#?#.kg-cta-link-accent:contains(SPONSORED)"
 livpost.co.uk#?#.kg-cta-link-accent:has-text(SPONSORED)
 ! Rule "star-history.com#?#.items-start.sidebar-sticky:has-text(Featured Products)" converted to: "star-history.com#?#.items-start.sidebar-sticky:contains(Featured Products)"
 star-history.com#?#.items-start.sidebar-sticky:has-text(Featured Products)
-! Rule "startuphub.ai#?#.p-4.rounded-xl:has-text(Sponsored)" converted to: "startuphub.ai#?#.p-4.rounded-xl:contains(Sponsored)"
-startuphub.ai#?#.p-4.rounded-xl:has-text(Sponsored)
-! Rule "startuphub.ai#?#a.block.group:has-text(Sponsored)" converted to: "startuphub.ai#?#a.block.group:contains(Sponsored)"
-startuphub.ai#?#a.block.group:has-text(Sponsored)
+! Rule "startuphub.ai#?#.duration-700.bg-card:has-text(Partner)" converted to: "startuphub.ai#?#.duration-700.bg-card:contains(Partner)"
+startuphub.ai#?#.duration-700.bg-card:has-text(Partner)
+! Rule "startuphub.ai#?#.group.block:has-text(Partner)" converted to: "startuphub.ai#?#.group.block:contains(Partner)"
+startuphub.ai#?#.group.block:has-text(Partner)
 ! Rule "woolworths.com.au#?#div[class^="recipe-card_component_recipe-card-container-"]:has-text(Sponsored)" converted to: "woolworths.com.au#?#div[class^="recipe-card_component_recipe-card-container-"]:contains(Sponsored)"
 woolworths.com.au#?#div[class^="recipe-card_component_recipe-card-container-"]:has-text(Sponsored)
 ! Rule "2fa.live#?#p:has-text(Advertising)" converted to: "2fa.live#?#p:contains(Advertising)"
@@ -250,6 +266,8 @@ foodlion.com#?#.product-grid-cell:has-text(Sponsored)
 freshdirect.com#?#.swiper-slide:has-text(Sponsored)
 ! Rule "fxempire.com#?#span[display="inline-block"]:has-text(Advertisement)" converted to: "fxempire.com#?#span[display="inline-block"]:contains(Advertisement)"
 fxempire.com#?#span[display="inline-block"]:has-text(Advertisement)
+! Rule "gamepadla.com#?#.pMain:has-text(Partner)" converted to: "gamepadla.com#?#.pMain:contains(Partner)"
+gamepadla.com#?#.pMain:has-text(Partner)
 ! Rule "gamersnexus.net#?#.moduleContent:has-text(Advertisement)" converted to: "gamersnexus.net#?#.moduleContent:contains(Advertisement)"
 gamersnexus.net#?#.moduleContent:has-text(Advertisement)
 ! Rule "ganjapreneur.com#?#.has-background:has-text(Featured whitepaper)" converted to: "ganjapreneur.com#?#.has-background:contains(Featured whitepaper)"
@@ -350,6 +368,8 @@ newegg.com#?#.product-banner:has-text(Sponsored)
 news.yahoo.com#?#div.md\:block:has-text(Advertisement)
 ! Rule "nextdoor.com#?#[data-v3-view-type="V3Wrapper"]:has(> [data-testid="feed-item-visibility-tracker"]:has-text(Sponsored))" converted to: "nextdoor.com#?#[data-v3-view-type="V3Wrapper"]:has(> [data-testid="feed-item-visibility-tracker"]:contains(Sponsored))"
 nextdoor.com#?#[data-v3-view-type="V3Wrapper"]:has(> [data-testid="feed-item-visibility-tracker"]:has-text(Sponsored))
+! Rule "nextdoor.com#?#div[data-testid="feed-item-card"]:has(span[class^="reset_"]:has-text(А⁠d))" converted to: "nextdoor.com#?#div[data-testid="feed-item-card"]:has(span[class^="reset_"]:contains(А⁠d))"
+nextdoor.com#?#div[data-testid="feed-item-card"]:has(span[class^="reset_"]:has-text(А⁠d))
 ! Rule "noelleeming.co.nz#?#div.product-tile:has(span:has-text(Sponsored))" converted to: "noelleeming.co.nz#?#div.product-tile:has(span:contains(Sponsored))"
 noelleeming.co.nz#?#div.product-tile:has(span:has-text(Sponsored))
 ! Rule "noon.com#?#.swiper-slide:has-text(Sponsored)" converted to: "noon.com#?#.swiper-slide:contains(Sponsored)"
@@ -652,6 +672,12 @@ hitomi.la##.top-content > div[class]:not([class*="-"]) {min-height:40px !importa
 myhentaicomics.com##.featured-manga, .header-spot, .pagination-image {min-height:0 !important;}
 ! Rule "otomi-games.com##.clean-grid-grid-post:has(> [id^="otomi-"] + .clean-grid-grid-post-details-full) {remove:true;}" converted to: "otomi-games.com#$?#.clean-grid-grid-post:has(> [id^="otomi-"] + .clean-grid-grid-post-details-full) { remove: true; }"
 otomi-games.com##.clean-grid-grid-post:has(> [id^="otomi-"] + .clean-grid-grid-post-details-full) {remove:true;}
+! cyberchef.org#$##workspace-wrapper > [id][style*="height"] { height: 100% !important } is excluded by "#$#" in exclusions-low.txt
+cyberchef.org#$##workspace-wrapper > [id][style*="height"] { height: 100% !important }
+! justjared.com#$#.banner-spacer-top { max-height: 50px !important; } is excluded by "#$#" in exclusions-low.txt
+justjared.com#$#.banner-spacer-top { max-height: 50px !important; }
+! justjared.com#$#[role="banner"] { top:0 !important } is excluded by "#$#" in exclusions-low.txt
+justjared.com#$#[role="banner"] { top:0 !important }
 ! 6abc.com,abc11.com,abc13.com,abc30.com,abc7.com,abc7chicago.com,abc7news.com,abc7ny.com,abcotvs.net#$#.nav.sticky { top:0px; } is excluded by "#$#" in exclusions-low.txt
 6abc.com,abc11.com,abc13.com,abc30.com,abc7.com,abc7chicago.com,abc7news.com,abc7ny.com,abcotvs.net#$#.nav.sticky { top:0px; }
 ! abcnews.com,abcnews.go.com#$#.navigation--has-subnav { top:0; } is excluded by "#$#" in exclusions-low.txt

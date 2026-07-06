@@ -1,20 +1,20 @@
-! Checksum: I2rqYl0wmAMGd0WPbfL4UA
-! Diff-Path: ../patches/259/259-s-1779397624-14400.patch
+! Checksum: sGA9lmEmfMbO1e3i2FLqBw
+! Diff-Path: ../patches/259/259-s-1783057808-14400.patch
 ! Title: Dandelion Sprout's Anti-Malware List
 ! Description: Blocks more malware than most other major anti-malware lists - domains and URL patterns used in malware redirection chains, IP addresses that are solely used by malware, PUP nags, and a few scammers. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.0.20
-! TimeUpdated: 2026-05-21T21:04:49+00:00
+! Version: 2.0.0.22
+! TimeUpdated: 2026-07-03T05:47:42+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 21May2026v1
+! OriginalVersion: 29June2026v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! Legitimate use is almost non-existent, but has a tiny userbase in Japan and among upstart coding experiments. Its extreme common-ness in malware redirections means that the entry will be kept forever.
-||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~yggleak.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top|~outlands.top|~tk-web.top|~qpmegathread.top|~qmk.top|~mgytr.top|~girlskissing.top|~luxferre.top
+||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~yggleak.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top|~outlands.top|~tk-web.top|~qpmegathread.top|~qmk.top|~mgytr.top|~girlskissing.top|~luxferre.top|~adderly.top
 ! (Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067)
 @@||masto*.top^$document
 @@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
@@ -1455,8 +1455,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||runmodes.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||91.121.67.60^$all
-!+ NOT_PLATFORM(windows, mac, android, cli)
-||172.67.186.189^$all
 ! https://scammer•info/t/mcafee-phish/83725
 ||securefirst.us-east-1.linodeobjects.com^$all
 ! https://www•virustotal•com/gui/file/4293c1d8574dc87c58360d6bac3daa182f64f7785c9d41da5e0741d2b1817fc7/community
@@ -10942,6 +10940,8 @@ http://secured21.*.com/|$all
 ://15.204.160.216^$all
 ://[2604:2dc0:100:4ed8::]^$all
 ://[2604:2dc0:104:da00::]^$all
+! According to https://thedreydossier•substack•com/p/i-found-a-second-votegov-and-its
+||posthog.$all,domain=gov|loveisaskill.cloudflareaccess.com
 ! ——— Standard malware that I stumbled upon on my own ———
 ! http://www•toorgle•net/results•php?q=fetishkitsch&security=666
 ||downloadprovider.me^$all
@@ -13401,6 +13401,155 @@ drvhub.net##.driver-item__install
 ||blogcryptoslate.com^$all
 ||blogfxempire.com^$all
 ||cointelegraphfeed.com^$all
+! Various fake download repos on GitHub (10/06/2026)
+||ai-stock-trading-bot.github.io^$all
+||app-hub-desk.github.io^$all
+||app-set-deploy.github.io^$all
+||applicatiltedmain.com^$all
+||basharasud.com^$all
+||berkowitzphotography.com^$all
+||best-tinted.com^$all
+||blakebennett2001v7.github.io^$all
+||bovrinshrekviz.com^$all
+||chef-infra-windows-automation-toolkit.github.io^$all
+||chromaticwebsolutions.com^$all
+||clair-obscur-expedition-33-download.github.io^$all
+||coreldraw-windows-download.github.io^$all
+||cryptowin.onelink.me^$all
+||cullagabby.com^$all
+||cyber-engine-tweaks-cyberpunk-menu.github.io^$all
+||cyberhost-vfra12.icu^$all
+||cynara7dragonpk.github.io^$all
+||daiseytriblett.github.io^$all
+||denonavr3312.com^$all
+||diagnostics-direction-kit.github.io^$all
+||diagnostics-pivot-kit.github.io^$all
+||digitalwavesway.com^$all
+||djukawasfi.github.io^$all
+||donggangnews.com^$all
+||dotcreattimonfake.com^$all
+||downloafiles.github.io^$all
+||drupal-download-tool1.github.io^$all
+||elevagedauteuil.fr^$all
+||embankfellerbunkum.com^$all
+||esp4valorant1pcweb0.github.io^$all
+||etboratem.github.io^$all
+||everyfflin.com^$all
+||fiseleonvizi.com^$all
+||git-hub-tools.github.io^$all
+||gnathogarbel.com^$all
+||gray-zone-warfare-kit.github.io^$all
+||greatfitnessresults.com^$all
+||hertharaimondi.github.io^$all
+||heygetaurarvitbar.com^$all
+||hromitasa.com^$all
+||hubset-desk.github.io^$all
+||huimanal939.github.io^$all
+||hydra-tools-pc.github.io^$all
+||influencersevent.com^$all
+||inkenshood.com^$all
+||jumanga-hrops.com^$all
+||justauroramaibart.com^$all
+||kiamatka.com^$all
+||kiamsiodkdf-ajjdhf2834.github.io^$all
+||kimtorsyu3984-kika.github.io^$all
+||leetify-download.github.io^$all
+||leofisevirekos.com^$all
+||liberiaairportcrshuttleservice.com^$all
+||lyytndxscsvkdym.github.io^$all
+||meteog2.com^$all
+||mjinga-frod.github.io^$all
+||moranheart06.github.io^$all
+||mouleridgy.com^$all
+||multicharts-download.github.io^$all
+||newkittaharaskill.github.io^$all
+||oberbrunnerjaime08.github.io^$all
+||ootypepidginoncost.com^$all
+||oxbirdrancho.com^$all
+||p0763235.github.io^$all
+||pdfshaper-pro-downloadtool.github.io^$all
+||pingerrimoseshorts.com^$all
+||plus500-app-for-desktop.github.io^$all
+||portal-cofig-manifest.github.io^$all
+||precision-performance-measurement-tools.github.io^$all
+||princess-peach-showtime-offline-free.github.io^$all
+||prissysilly.com^$all
+||pwin.onelink.me^$all
+||quickbooks-ultimate-downloadtool.github.io^$all
+||rekbovinyakvizros.com^$all
+||rendez-vousfilmfestival.com^$all
+||resource-governor-kit.github.io^$all
+||resource-scheduler-tools.github.io^$all
+||rowekenneth97.github.io^$all
+||serif-pageplus.github.io^$all
+||simplefax-without-subscriptions.github.io^$all
+||skew-download.github.io^$all
+||slack-communication-toolkit-download.github.io^$all
+||slime-rancher-offline-setup-assistant.github.io^$all
+||soft-mac-install.github.io^$all
+||soham-sn.com^$all
+||soldtimonfestival.com^$all
+||swindonfestivalofliterature.com^$all
+||system-cadence-tools.github.io^$all
+||system-radar-tools.github.io^$all
+||system-toolkit-core.github.io^$all
+||system-verifier-tools.github.io^$all
+||system-wave-kit.github.io^$all
+||taxbit-download.github.io^$all
+||tensorghost.github.io^$all
+||thomaskaren4480445.github.io^$all
+||tiranduman.github.io^$all
+||toastyspurgetiered.com^$all
+||tool-for-squad.github.io^$all
+||trambiaks21.github.io^$all
+||trinityketoacvgummies.com^$all
+||trojanonsolbot.com^$all
+||tunnelsandhalls.com^$all
+||ultraedit-downloadtool.github.io^$all
+||utility-tools-lab.github.io^$all
+||varholrehner.github.io^$all
+||venterda41.github.io^$all
+||vertie311.github.io^$all
+||vintagefarmall.com^$all
+||vmware-workstation-pro-download-tool.github.io^$all
+||windowtinted.com^$all
+||zoho-books-windows-app.github.io^$all
+-downloadtool.github.io/.github/home.html|$document,popup
+-mac-install.github.io/.github/home.html|$document,popup
+-windows-download.github.io/.github/home.html|$document,popup
+.github.io/.github/?offer=$document,popup
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||151.243.18.53^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||185.100.157.222^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||185.107.74.103^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||185.107.74.69^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||217.145.226.0^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.150.34.21^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.87.249.13^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||77.91.96.188^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||88.214.50.173^$all
+! Researching fonts for Taiwanese kana (19/06/2026)
+||mojikyo.org^$all
+||trekpeak.site^$all
+||upperch.site^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://172.232.7.47^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://172.234.216.100^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://172.237.146.46^$all
+://[2600:3c06::f03c:95ff:fed9:ce5e]^$all
+://[2600:3c06::f03c:95ff:fedc:7282]^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://35.71.155.166^$all
 ! ——— A hĳacked link that had previously been on https://sims•fandom•com/wiki/Game_guide:Fog_emitter ———
 ||0network.com^$all
 ||100conversions.com^$all
