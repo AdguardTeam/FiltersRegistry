@@ -1,9 +1,9 @@
-! Checksum: D0RyHaW75FaYVKthdcpwzA
-! Diff-Path: ../patches/19/19-s-1783330247-3600.patch
+! Checksum: ius3E+AROlbujl1jSOziwQ
+! Diff-Path: ../patches/19/19-s-1783344255-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.78.22
-! TimeUpdated: 2026-07-06T09:28:24+00:00
+! Version: 2.0.78.23
+! TimeUpdated: 2026-07-06T13:21:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -563,6 +563,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+1anime.app##div.fixed:has(> div > button[aria-label*="ad blocker"])
 the-sun.com#%#//scriptlet('prevent-setTimeout', 'gu(gh)')
 ip.sb##.wwads_abp
 jetpunk.com#%#//scriptlet('prevent-setTimeout', 'isAdblocker')
@@ -3380,6 +3381,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+2dhive.com##astro-island[component-url*="DiscordPopup"]
+fufuskitchen.com##.kadence-conversion-wrap
 amateurphotographer.com#$#.hustle-popup { display: none !important; }
 amateurphotographer.com#$#html.hustle-no-scroll:not(#style_important) { overflow: auto !important; }
 flixeo.tv##.fixed.right-4
@@ -12828,6 +12831,7 @@ news.tv-asahi.co.jp,zakzak.co.jp,donanimhaber.com,tokyo-sports.co.jp,searchengin
 !
 ! SECTION: Subscriptions - Regular rules
 !
+fufuskitchen.com###save-this-recipe
 koty.pl,psy.pl##.space-y-24 > div[class="max-lg:hidden"] > .overflow-hidden:has(> .px-16 > .newsletter-form)
 zurnal24.si##.js-google-preferred-source-wrapper
 north-herts.gov.uk#%#//scriptlet('trusted-set-local-storage-item', 'UKNORTHHERTS_subscribe_overlay', '9999999999999')
@@ -13634,9 +13638,6 @@ wrangler.com.tr,lee.com.tr##.ins-pos-middle-center
 wrangler.com.tr,lee.com.tr###ins-frameless-overlay
 fastcompany.co.za##div[class^="search_googlePreferred"]
 atorus.ru###block-visit-conditions
-sciencenews.org###content > div#newsletter-helper
-sciencenews.org###content > div#newsletter-helper + p[style="padding-left: 20px; margin: 0px; max-width: 900px; margin: auto"]
-sciencenews.org###content > div#newsletter-helper ~ div.zephr-form-container
 coingecko.com##.tw-flex-col.tw-text-center:has(> div[data-controller^="newsletter"])
 gartenforum.de###widget_ffnewsletter_guest_subscribe_form
 keychron.de##.footer-col--newsletter
@@ -22698,6 +22699,12 @@ flightradar24.com##[data-id="a5b8151"][data-element_type="widget"]
 flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
+!+ NOT_OPTIMIZED
+sciencenews.org###content > div#newsletter-helper
+!+ NOT_OPTIMIZED
+sciencenews.org###content > div#newsletter-helper + p[style="padding-left: 20px; margin: 0px; max-width: 900px; margin: auto"]
+!+ NOT_OPTIMIZED
+sciencenews.org###content > div#newsletter-helper ~ div.zephr-form-container
 !+ NOT_OPTIMIZED
 theinformation.com##aside[data-testid="lead-sticky-banner"]
 !+ NOT_OPTIMIZED
