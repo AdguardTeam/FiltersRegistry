@@ -1,9 +1,9 @@
-! Checksum: nbI+wcqGkw5Xz2Knruxmzg
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1783386690-14400.patch
+! Checksum: LXFwyfo5FX6/kP0YOtqBQQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1783403699-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.93.63
-! TimeUpdated: 2026-07-07T01:08:07+00:00
+! Version: 2.1.93.64
+! TimeUpdated: 2026-07-07T05:51:57+00:00
 ! Expires: 10 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -288,7 +288,6 @@
 ://adss.
 ://adx.
 ://afflight.$third-party
-://ar.ads.
 ://ashot.$script
 ://banner-gateway.$third-party
 ://banner.*click
@@ -349,6 +348,7 @@
 =show_ads;
 =videoAd&
 =WebAdsLinks&
+?*.popcash.
 ?160&600&
 ?468&60&
 ?728&90&
@@ -517,6 +517,7 @@ _werbebanner_
 /wp-content/themes/*/ads/*
 /wp-content/uploads/wp-banners/*
 /urlshortener.js
+/urlshortener.min.js
 /zerg-inf-multi.js
 /zerg-inf.js
 /ai/s/s/js/m/im.js
@@ -583,6 +584,7 @@ _werbebanner_
 _build=iclick-$popup
 ||club^*&zoneid=$popup
 ||cyou^*_$popup
+||online^*&zoneid=$popup
 ||shop^*&zoneid=$popup
 ||shop^*?scontext_r=$popup
 ||shop^*cuid/?
@@ -788,7 +790,6 @@ _build=iclick-$popup
 ||pubstack.io^$third-party
 ||pwspace.com^$third-party
 ||pxltgr.com^$third-party
-||quaelead.com^$third-party
 ||recoco.it^$third-party
 ||rederditium.com^$third-party
 ||regie24h00.com^$third-party
@@ -1722,7 +1723,6 @@ _build=iclick-$popup
 ||mignonsniper.com^
 ||minemytraffic.com^
 ||minergate.com^
-||minero.cc^
 ||mirakdunes.com^
 ||mirificoxims.com^
 ||missena.io^
@@ -2393,7 +2393,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||ctb.intersport.fr^
 ||ctrip.com/?TypeID=$third-party
 ||dailymotion.com^*autoplay=1$domain=gum-gum-streaming.com|hitek.fr|maison-travaux.fr|mavanimes.co
-||danseraparis.com/46860.gif
 ||delivery.vidible.tv^$domain=gamekult.com
 ||e-media-concept.com/medias/
 ||easy5now.com/images/b/
@@ -2507,7 +2506,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||sherpa.agoda.com^$third-party
 ||shop.mango.com^$third-party
 ||shop.pe/widget/
-||skrobs.com/pub/
 ||sle.pagesjaunes.fr^
 ||ssa.direct-running.fr^
 ||ssl-images-amazon.com^$domain=fdesouche.com|tempr.email|wikimonde.com
@@ -2581,7 +2579,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||i.imgur.com/32xkKog.jpg
 ||i.imgur.com/4cUwoPk.gif
 ||i.imgur.com/6pBbPcM.png
-||i.imgur.com/LjJzcZk.png
 ||i.imgur.com^$domain=nintendo-master.com
 ||lookimg.com/images/2021/12/20/PydgJE.png
 ||nsa40.casimages.com/img/2020/05/11/200511033032222532.png
@@ -2710,6 +2707,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||2ememain.be/lrp/api/complementary-listings?
 ||3dnatives.com/wp-content/uploads/*/banniere
 ||abellalist.com^$media,script
+||abidjan.net/public/img/logo/partenaire/
 ||ad.mailo.com^
 ||adn.porndig.com^
 ||adproxy.tf1.fr^
@@ -3151,6 +3149,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###shopper-widget-wrapper
 ###sideBar_pub2
 ###side_ad_container_B
+###sidebar_pub_top
 ###skin_container_sidebar_ad
 ###skin_td_sidebar_ad
 ###solreklam
@@ -3209,6 +3208,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.breaking-ad
 ##.bupgoogle
 ##.c-ads-sidebar
+##.carouselpub300
 ##.carrepub
 ##.column_in_pub
 ##.container-ad
@@ -3359,6 +3359,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pub-right
 ##.pub-text
 ##.pub-top
+##.pub-trailer
 ##.pub160x600
 ##.pub300
 ##.pub300250
@@ -3487,6 +3488,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.video_reklama
 ##.videocontrols-ads
 ##.view-publicites
+##.wgt-publicite-300-250
 ##.widget-advert
 ##.widget-pub
 ##.widget_advncdads
@@ -3556,6 +3558,7 @@ clubpoker.net###bannerTopWrapper
 lacanausurfinfo.com###banner_footer
 jeuxvideo.com###banner_jv
 tirage-gagnant.com###banner_promo
+aliceadsl.fr###bannershop
 cowcotland.com###bannertop
 actu-environnement.com,emploi-environnement.com###banniereRight
 neurozinzin.com###bigAdd
@@ -3672,11 +3675,13 @@ soonnight.com###pub_imu
 entrecoquins.com###pub_tatoo
 paris-communiques.com,plateformemedia.com###publaterale
 troc-velo.com###publine
+focus-numerique.com,lapresse.ca,les-terrains.com###pubs
 algerie360.com###pubsousVid
 lamanchelibre.fr###pubsuper
 liligo.fr###pulledbanner
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
 sante-dz.com###revenue-wrapper
+rugbyfederal.com###right_sky
 lesoir.be###rossel-imu-bottom
 maitresrestaurateurs.com###sliderPartenaire
 otaku-attitude.net###smart-bann
@@ -3721,6 +3726,7 @@ actustar.com,antoineguilbert.fr,clubic.com,cnews.fr,cvya.dz,envertetcontretous.f
 ennaharonline.com##.adus
 fusac.fr,laposte.fr,lebonfap.com,lefigaro.fr,letagparfait.com,rajacasablanca.com##.adv
 fipradio.fr,francemusique.fr,girlsgogames.fr,jeu.fr,lesoir.be,lestrepublicain.com,midilibre.fr,monpetitforfait.com##.advert
+lemoniteur.fr,skipass.com,telerama.fr##.advertisement
 ccm.net,commentcamarche.com,commentcamarche.net,latribune.fr,traildesforts.com##.advertising
 statistiks.fr##.adz
 aufeminin.com##.af-block-native
@@ -3813,7 +3819,6 @@ hitek.fr##.h_ad_970x250
 homecinema-fr.com##.hab_link
 cbanque.com,clubpronostics.com,gratuiciel.com,lelogicielgratuit.com,logicielmac.com,logitheque.com,made-in-algeria.com,made-in-tunisia.net,maghrebex.com,mediscom.com,quetelecharger.com,toucharger.com##.habillage
 le2minutes.com,senscritique.com##.habillage-left
-envertetcontretous.fr##.halfpage
 realite-virtuelle.com##.halfpageAd
 refurbgeneration.com##.head_ebay
 avis-express.com,lnr-dz.com##.header-banner
@@ -3896,6 +3901,7 @@ footballclubdemarseille.fr##.pb-sidebar-article
 ledenicheur.fr##.pjra-w-\[970px\]
 pagesjaunes.fr##.place-reservee
 lexpress.fr##.placeholder--ban-atf-wrapper
+presse-citron.net##.plan-list
 turf-fr.com##.pmu-block
 leparking-moto.fr,leparking.fr##.premium
 boulanger.com##.product-list__item-sponsored-products
@@ -4015,6 +4021,7 @@ free-reseau.fr##a[href*="&tag=freereseaufr-"]
 3dnatives.com,audiofanzine.com,lesimprimantes3d.fr##a[href*="&utm_"]
 1001ebooks.com,1337x.st,1337x.to,amairgil.cz,blablastream.com,cocostream.rip,cpasbien.fun,cpasfini.me,film01stream.com,film01stream.ws,filmzenstream.cloud,gogoflix.cyou,hds.quest,hdss.at,mistergeek.net,papystreaming.black,papystreaming.stream,sokrostream.tube,streamonsport.club,streampourvous.lol,supervideo.cc,topsddns.net,vfcomplet.vip,voirfilms.live,voirfilmstreaming.tv,wiflix-nouvelle-adresse.site,x1337x.eu,x1337x.ws,zt-za.fr##a[href*=".php"]
 7-up.net,abidjan.net,algerie-eco.com,algerie-focus.com,algerie360.com,bigbike-magazine.com,bismirabbika.com,brain-magazine.fr,cnetfrance.fr,doukkalia.press.ma,grimper.com,igen.fr,internetparsatellite.net,kiteboarder-mag.com,ktotv.com,lebonfap.com,letagparfait.com,macg.co,montagnes-magazine.com,mubawab.ma,nintendo-master.com,niveales.com,portail.free.fr,public.fr,radego.over-blog.com,skieur.com,skimagazine.fr,snowsurf.com,streaming-one.com,supmag.fr,tahiti-infos.com,telecharger-jeuxpc.fr,trekmag.com,unleashed.fr,upload.ac,vakarm.net,watchgeneration.fr,widermag.com,windmag.com##a[href*="//bit.ly/"]
+abidjan.net,algerie-focus.com,algerie360.com,bc.vc,bismirabbika.com,extratorrents.ch,gum-gum-streaming.com,igen.fr,instinct-voyageur.fr,israelmagazine.co.il,jeux.com,journaldumusulman.fr,lnc.nc,macg.co,orientation-chabab.com,proxylistpro.com,tendancehotellerie.fr,watchgeneration.fr##a[href*="//goo.gl/"]
 amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 webactus.net##a[href*="/?utm_source="]
 tube8.fr##a[href*="/_xa/ads?"]

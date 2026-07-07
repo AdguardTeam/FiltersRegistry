@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.93.65",
-			"timeUpdated": "2026-07-07T01:08:03+0000",
+			"version": "2.1.93.66",
+			"timeUpdated": "2026-07-07T05:51:54+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.93.64",
-			"timeUpdated": "2026-07-07T01:08:05+0000",
+			"version": "2.1.93.65",
+			"timeUpdated": "2026-07-07T05:51:56+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1025,8 +1025,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.29.57",
-			"timeUpdated": "2026-07-06T13:45:32+0000",
+			"version": "2.0.29.58",
+			"timeUpdated": "2026-07-07T05:52:02+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1120,8 +1120,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.44.49",
-			"timeUpdated": "2026-07-06T09:48:28+0000",
+			"version": "2.0.44.50",
+			"timeUpdated": "2026-07-07T05:52:17+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.86.96",
-			"timeUpdated": "2026-07-07T01:09:11+0000",
+			"version": "2.0.86.97",
+			"timeUpdated": "2026-07-07T05:52:41+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1491,8 +1491,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.8.16",
-			"timeUpdated": "2026-07-06T06:01:12+0000",
+			"version": "2.0.8.17",
+			"timeUpdated": "2026-07-07T05:52:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1511,8 +1511,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.11.85",
-			"timeUpdated": "2026-07-06T17:26:33+0000",
+			"version": "2.0.11.86",
+			"timeUpdated": "2026-07-07T05:52:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1551,8 +1551,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.28",
-			"timeUpdated": "2026-07-07T01:09:18+0000",
+			"version": "2.0.0.29",
+			"timeUpdated": "2026-07-07T05:52:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
