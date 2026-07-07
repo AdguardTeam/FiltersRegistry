@@ -1,9 +1,9 @@
-! Checksum: a0vAl8t92bvfqSvYfLd+lw
-! Diff-Path: ../patches/9/9-s-1783323898-3600.patch
+! Checksum: V2b23CO+ZaTLqH5RJFRW+g
+! Diff-Path: ../patches/9/9-s-1783415792-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.34.90
-! TimeUpdated: 2026-07-06T07:41:42+00:00
+! Version: 2.0.34.91
+! TimeUpdated: 2026-07-07T09:13:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2324,6 +2324,7 @@ lusometeo.com,kltutors.com,eloutput.com,mundobytes.com,techondicas.com,jornalrep
 !
 ! NOTE: Specific rules
 !
+||hentaisama.net/res/bl_1.php
 lance.com.br##a[data-ga4-param-label^="odds:"]
 guiamania.com##div.post-entry > div[class^="gm_css_place"]:has(> ins.adsbygoogle)
 videosad.net#%#//scriptlet('trusted-replace-node-text', 'script', 'showDownloadScreen', 'function handleWatch()', 'try{showDownloadScreen()}catch(e){}function handleWatch()')
@@ -6392,6 +6393,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/234929
+! caused by AG russian filter _ad.aspx
+@@||mincetur.gob.pe/webCasinos/Index.aspx?po=frmRegistros_AD.aspx$~third-party
+@@||mincetur.gob.pe/webCasinos/sistema/publico/frmRegistros_AD.aspx$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231825
 !+ PLATFORM(ios, ext_safari, ext_android_cb, ext_ublock)
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=nmas.com.mx
