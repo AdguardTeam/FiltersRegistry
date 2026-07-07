@@ -91,7 +91,7 @@ This compiles every filter from its `template.txt` and updates the corresponding
 `filter.txt` inside `filters/`. Platform-specific filters and patches are **not**
 generated. The resulting `filter.txt` files contain the fully resolved filter
 content (all `@include` and `!#include` directives expanded) and can be used to
-build filters from cache with `yarn build:local`.
+build filters from cache with `yarn build:local` and to download optimization stats.
 
 ### Building From Cache
 
