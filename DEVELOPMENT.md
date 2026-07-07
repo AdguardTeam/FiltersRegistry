@@ -123,8 +123,8 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 1. Create worktrees for each branch and install dependencies:
 
    ```bash
-   CHANGED_BRANCH=$(git branch --show-current)
-   BUILD_LOCAL=true                          # set to 'true' to use generate-cache + build:local
+   export CHANGED_BRANCH=$(git branch --show-current)
+   export BUILD_LOCAL=true                   # set to 'true' to use generate-cache + build:local
 
    export MASTER_SHA=$(git rev-parse master)
    export CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
