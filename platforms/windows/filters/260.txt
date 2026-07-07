@@ -1,9 +1,9 @@
-! Checksum: 9tKGipiwSo4QyuuE0ZM9NA
-! Diff-Path: ../patches/260/260-s-1783444754-14400.patch
+! Checksum: OUBNzenNlx5FUUHQjitD0Q
+! Diff-Path: ../patches/260/260-s-1783458378-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.30
-! TimeUpdated: 2026-07-07T17:16:18+00:00
+! Version: 2.0.0.31
+! TimeUpdated: 2026-07-07T21:03:39+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -258,8 +258,10 @@ www.bing.com##.cdxCopilotIconBg
 www.bing.com###aitools
 ! AI tools search suggestions (mobile only)
 www.bing.com###sa_ai_block
-! Microsoft Rewards > Try Bing Image Creator
+! Microsoft Rewards → Try Bing Image Creator
 www.bing.com##.gbfo_c_bsic_variant:has(> [href^="https://www.bing.com/images/create"])
+! ... → Microsoft 365 → M365 Copilot
+www.bing.com###m365copilot_overflow
 ! -- https://www.bing.com/search?q=mario+last+name
 ! "Search" tab in navbar below search bar
 www.bing.com###b-scopeListItem-copilotsearch
@@ -474,6 +476,19 @@ claimyr.com##.chat-container-container
 platform.claude.com###aiSearchResults__Item-__ask_ai__
 ! Search bar - Toggle AI mode
 platform.claude.com##.ikp-ai-search-input-group > [data-part="view_toggle"]
+! ================
+! == Codecademy ==
+! ================
+! Header > Catalog
+codecademy.com##[data-testid="marketing-banner"][href="https://www.codecademy.com/ai-builder"]
+codecademy.com##li:has(> [href="/catalog/subject/artificial-intelligence"])
+! Footer
+codecademy.com##li:has(> [href="/ai-builder"])
+! -- https://www.codecademy.com/
+! Top subject
+codecademy.com##.gamut-1efsrtw-Box:has(> [href="/catalog/subject/artificial-intelligence"])
+! Learn with AI builder
+codecademy.com##.ex43pi30:has(> [href="/ai-builder"])
 ! ===================
 ! == CoinMarketCap ==
 ! ===================
@@ -3015,9 +3030,12 @@ x.com##.css-175oi2r.r-rki7wi.r-1ba6zt5.r-u8s1d.r-c97pre:has([href^="https://grok
 ! -- https://x.com/grok/status/2021675529582039415
 ! "Ask Grok" button - below posts from Grok
 x.com##.css-175oi2r.r-1mmae3n:has(> [data-testid="grok_post_atgrok_button"])
-! -- https://x.com/soraofficialapp/status/2036546752535470382
-! Tweet with "Made with AI" disclosure
-x.com##[data-testid="tweet"]:has(.css-175oi2r.r-9aw3ui.r-7xmw5f.r-knv0ih):not([tabindex="-1"])
+! -- https://x.com/yee_22_/status/2068659455445873124
+! Posts by or mentioning Grok
+x.com##[data-testid="tweet"]:has([href="/grok"]):not([tabindex="-1"])
+! -- https://x.com/SpaceX/status/2074243929273250124
+! Tweet with AI label
+x.com##[data-testid="tweet"]:has(.r-knv0ih [d^="M12.998 1.94c.18 3.015 1.04 5.156 2.473 6.59 1.433"]):not([tabindex="-1"])
 ! -- https://x.com/Newgrounds
 ! "Profile Summary" button
 ! * Does not appear on profiles with a yellow verfication badge
