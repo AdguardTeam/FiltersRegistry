@@ -126,8 +126,8 @@ It runs both branches in parallel via git worktrees so network-fetched content s
    CHANGED_BRANCH=$(git branch --show-current)
    BUILD_LOCAL=true                          # set to 'true' to use generate-cache + build:local
 
-   MASTER_SHA=$(git rev-parse master)
-   CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
+   export MASTER_SHA=$(git rev-parse master)
+   export CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 
    git worktree add --detach /tmp/reg-master-build  $MASTER_SHA -f
    git worktree add --detach /tmp/reg-changed-build $CHANGED_SHA -f
