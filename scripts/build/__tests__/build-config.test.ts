@@ -26,14 +26,14 @@ describe('parseFlags', () => {
         const flags = parseFlags([
             '--use-cache',
             '--generate-cache',
-            '--generate-stats-from-cached-percent-json',
+            '--generate-stats',
             '--no-patches-prepare',
             '--strip-generated-meta',
         ]);
 
         expect(flags.useCache).toBe(true);
         expect(flags.generateCache).toBe(true);
-        expect(flags.generateStatsFromCachedPercentJson).toBe(true);
+        expect(flags.generateStats).toBe(true);
         expect(flags.noPatchesPrepare).toBe(true);
         expect(flags.stripGeneratedMeta).toBe(true);
     });
@@ -98,26 +98,26 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('allows --generate-stats-from-cached-percent-json', () => {
-        const flags = parseFlags(['--generate-stats-from-cached-percent-json']);
+    it('allows --generate-stats', () => {
+        const flags = parseFlags(['--generate-stats']);
         expect(validateFlags(flags)).toBeNull();
     });
 
-    it('allows --generate-stats-from-cached-percent-json with --include', () => {
-        const flags = parseFlags(['--generate-stats-from-cached-percent-json', '--include=1,2,3']);
+    it('allows --generate-stats with --include', () => {
+        const flags = parseFlags(['--generate-stats', '--include=1,2,3']);
         expect(validateFlags(flags)).toBeNull();
     });
 
-    it('rejects --use-cache combined with --generate-stats-from-cached-percent-json', () => {
-        const flags = parseFlags(['--use-cache', '--generate-stats-from-cached-percent-json']);
+    it('rejects --use-cache combined with --generate-stats', () => {
+        const flags = parseFlags(['--use-cache', '--generate-stats']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
         expect(result?.message).toContain('mutually exclusive');
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects --generate-cache combined with --generate-stats-from-cached-percent-json', () => {
-        const flags = parseFlags(['--generate-cache', '--generate-stats-from-cached-percent-json']);
+    it('rejects --generate-cache combined with --generate-stats', () => {
+        const flags = parseFlags(['--generate-cache', '--generate-stats']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
         expect(result?.message).toContain('mutually exclusive');

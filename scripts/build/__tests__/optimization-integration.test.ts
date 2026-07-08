@@ -119,8 +119,8 @@ describe('build.js: cache flag handling', () => {
         });
     });
 
-    it('--generate-stats-from-cached-percent-json: downloads stats only, compile skipped', async () => {
-        process.argv = ['node', 'build.js', '--generate-stats-from-cached-percent-json'];
+    it('--generate-stats: downloads stats only, compile skipped', async () => {
+        process.argv = ['node', 'build.js', '--generate-stats'];
         await import('../build.js');
 
         const {
@@ -137,9 +137,9 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
     });
 
-    it(`--generate-stats-from-cached-percent-json --include=${FILTER_ID}:`
+    it(`--generate-stats --include=${FILTER_ID}:`
         + ` scopes stats download to filter ${FILTER_ID}`, async () => {
-        process.argv = ['node', 'build.js', '--generate-stats-from-cached-percent-json',
+        process.argv = ['node', 'build.js', '--generate-stats',
             `--include=${FILTER_ID}`];
         await import('../build.js');
 

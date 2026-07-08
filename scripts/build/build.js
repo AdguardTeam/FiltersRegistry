@@ -42,7 +42,7 @@ const {
     rawReportPath,
     useCache,
     generateCache,
-    generateStatsFromCachedPercentJson,
+    generateStats,
     noPatchesPrepare,
     stripGeneratedMeta,
 } = flags;
@@ -131,7 +131,7 @@ const buildFilters = async () => {
         return;
     }
 
-    if (generateStatsFromCachedPercentJson) {
+    if (generateStats) {
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
         console.log(`Stats generated from cached percent.json at ${localOptimizationConfigPath}.`);
         return;

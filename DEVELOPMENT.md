@@ -205,8 +205,10 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
 - `--generate-cache` — compile filters to update `filter.txt` cache and download optimization stats
-- `--generate-stats-from-cached-percent-json` — download missing `stats.json` files using
-  an existing local `percent.json` (edit it first if needed)
+- `--generate-stats` — downloads per-filter `stats.json` files for filters
+  listed in the local `percent.json` cache; existing `stats.json` files are
+  skipped, not overwritten (edit `temp/optimization_config/percent.json`
+  first if you need different filters listed)
 
 **Valid combinations:**
 
@@ -238,8 +240,8 @@ yarn build --generate-cache --skip=12,24
 yarn build --generate-cache --report='report.txt'
 
 # Stats download from existing local percent.json
-yarn build --generate-stats-from-cached-percent-json
-yarn build --generate-stats-from-cached-percent-json --include=1,2,3
+yarn build --generate-stats
+yarn build --generate-stats --include=1,2,3
 ```
 
 **Invalid or ineffective combinations:**
@@ -247,8 +249,8 @@ yarn build --generate-stats-from-cached-percent-json --include=1,2,3
 ```bash
 # Mutually exclusive flags → script exits with error
 yarn build --use-cache --generate-cache
-yarn build --use-cache --generate-stats-from-cached-percent-json
-yarn build --generate-cache --generate-stats-from-cached-percent-json
+yarn build --use-cache --generate-stats
+yarn build --generate-cache --generate-stats
 
 # --generate-cache exits early; these flags are incompatible → script exits with error
 yarn build --generate-cache --strip-generated-meta
