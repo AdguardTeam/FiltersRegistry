@@ -85,7 +85,7 @@ for all supported AdGuard products.
 | `yarn auto-build` | Full automated build via `bash scripts/auto_build.sh` |
 | `yarn build:patches` | Build incremental patches |
 | `yarn generate-cache` | Refresh `filter.txt` cache and download optimization stats to `temp/optimization_config/` |
-| `yarn generate-cache:stats` | Download per-filter stats from cached `percent.json`; skip existing files (edit first if you need different filters listed) |
+| `yarn generate-cache:stats` | Download or updates per-filter stats from cached `percent.json`; (edit first if you need different filters listed) |
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |

@@ -205,10 +205,10 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
 - `--generate-cache` — compile filters to update `filter.txt` cache and download optimization stats
-- `--generate-stats` — downloads per-filter `stats.json` files for filters
-  listed in the local `percent.json` cache; existing `stats.json` files are
-  skipped, not overwritten (edit `temp/optimization_config/percent.json`
-  first if you need different filters listed)
+- `--generate-stats` — downloads or updates per-filter `stats.json` files for filters
+  listed in the local `percent.json` cache, overwriting any existing copies
+  (edit `temp/optimization_config/percent.json` first if you need different
+  filters listed)
 
 **Valid combinations:**
 
