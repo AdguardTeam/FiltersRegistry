@@ -1,5 +1,5 @@
-! Checksum: iq83CnkltksCHko9dwmcxQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1783466860-3600.patch
+! Checksum: ZQdrFSz0m1sbtuxeJ5BMiw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1783480363-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.1
@@ -444,7 +444,6 @@ gamekult.com##.gk__sidebar__list  > li:has(> .g2__a-dc)
 numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
-dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
 south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
@@ -1734,6 +1733,7 @@ _rivcash_banner_
 _sdk_ad_
 _smads_
 _square_ads.
+_waframedia_
 _werbebanner_
 /wp-content/*/bloc-partenaire-
 /wp-content/banners/*$third-party
@@ -2034,7 +2034,6 @@ _build=iclick-$popup
 ||sharemyads.com^$third-party
 ||slutroulette.com^$third-party
 ||smartclip.net^$~object,third-party
-||smartmovies.net^$third-party
 ||smartname.com^$third-party
 ||smartstream.tv^$third-party
 ||spacepush.ru^$third-party
@@ -3443,6 +3442,7 @@ _build=iclick-$popup
 ||ybnnocszmtuz.com^
 ||yeh8i2rwbonqmmxvf.cyou^
 ||yeukxysters.com^
+||ygg.re^
 ||yggtorrent.com^
 ||yggtorrent.org^
 ||yggtorrent.top^
@@ -3572,6 +3572,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 .php$script,domain=adf.ly|android-zone.ws|anime-loads.org|atomcurve.com|atominik.com|ay.gy|babblecase.com|babesxworld.com|bitigee.com|bluenik.com|casualient.com|cocogals.com|coginator.com|cogismith.com|cracksurl.com|gamecopyworld.eu|imgdrive.net|j.gs|kaitect.com|kializer.com|kibuilder.com|kimechanic.com|larati.net|microify.com|mmoity.com|picocurl.com|picons.eu|pintient.com|q.gs|quainator.com|quamiller.com|replaymod.com|riffhold.com|simizer.com|skamaker.com|skamason.com|tinyium.com|twineer.com|viahold.com|vializer.com|viwright.com|yabuilder.com|yamechanic.com|yoalizer.com|yobuilder.com|yoineer.com|yoitect.com|zipansion.com
 /sw.js$domain=1337x.st|1337x.to|2shrink.com|9xbuddy.com|9xbuddy.online|almstba.tv|bagas31.info|bestfreecams.club|clicksfly.com|clk.sh|dailyuploads.net|desiupload.co|desiupload.in|dood.work|downloadpirate.com|drop.download|dropapk.to|eio.io|gostreams.net|gsurl.in|hdvid.tv|indishare.org|istream2watch.com|keeplinks.org|ling-online.cc|media.cm|megaurl.in|multiup.eu|multiup.io|multiup.org|offmp3.net|oii.la|okanime.tv|ovid.tv|patchsoftwares.com|sadeempc.com|sendspace.com|sexu.com|sss.xxx|stream2watch.org|tntendirect.com|uii.io|up-load.io|upload.ac|upload4earn.org|uploadproper.net|uploadrar.com|voir-films.com|x1337x.eu|x1337x.ws|zippyshare.com
 ||2img.net/i/fa/banner/
+||2img.net/i/fa/partenaires/
 ||4k.video/*.htm
 ||4k.video/*.php?
 ||4k.video/b.js
@@ -3869,7 +3870,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||g2a.com/r/$popup
 ||google.com/favicon.ico$popup,third-party
 ||iqbroker.com/lp/$popup
-||jacquieetmicheltv.net^*?ref=$popup
 ||livejasmin.com^*&utm_$popup
 ||livejasmin.com^*?psid=$popup
 ||pornhub.com^*?utm_$popup
@@ -4169,7 +4169,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###block-gc-ad-bloc-droite-1
 ###block-gc-ad-dhtml
 ###block-gc-ad-megaban-haut
-###block_pub
 ###bottom-adv
 ###bottom_ad_space
 ###bottom_pub
@@ -4263,7 +4262,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###js-MobileAd-insert
 ###keep-ads
 ###leaderboard.ads
-###left-ads-rail
 ###left_slide_pub
 ###lht-space-ad
 ###mb_video_syncad_bottom
@@ -4649,6 +4647,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.map_fond_pub
 ##.marketing-container
 ##.mbanner-ad-wrapper
+##.mdmAd-inner
 ##.midads
 ##.mobile-ads__close
 ##.mobile-ads__main
@@ -4707,7 +4706,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.promo-google-300x600_new
 ##.propads
 ##.pub-1000x90
-##.pub-160-600
 ##.pub-300
 ##.pub-300-250
 ##.pub-300-250-600
@@ -4853,6 +4851,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pubsidebar
 ##.pubtexte
 ##.pubwrapper
+##.question_page_ad
 ##.quickads_table
 ##.r-pub--banniere
 ##.r-pub--inread
@@ -4867,6 +4866,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.reklamgec
 ##.removeAds
 ##.remove_ads
+##.right-advertising
 ##.rightPub
 ##.rightRailAdContainer
 ##.right_ad_box2
@@ -4921,7 +4921,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.tableAds
 ##.tag-adverline
 ##.tag-sponsored-content
-##.teaser-mpu
 ##.text_pub
 ##.texte_ads_plug
 ##.thumb_player_pub
@@ -5067,7 +5066,6 @@ guide-piscine.fr###devis-lien-popup
 japscan.foo###dlinkc
 maxifoot.fr###ep300z
 maxifoot.fr###ep728
-cultissime.cyou,liensporno.com###fakeplayer
 amateur2sexe.fr###footer-boom
 hardware.fr###footer_img
 equirodi.be###ft_partners
@@ -5222,6 +5220,7 @@ codeur.com##.badge-project-urgent
 cnews.fr##.ban-bottom-desktop
 bdgest.com,bedetheque.com##.ban-top
 cnews.fr##.ban-top-habillage
+agroligne.com##.ban_holder
 pornovore.fr##.bandeau-vertical
 handroit.com##.bandeau_header
 iphone4.fr,jeux-mmorpg.com##.baner
@@ -5497,7 +5496,6 @@ amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 webactus.net##a[href*="/?utm_source="]
 tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
-espritlib.com##a[href*="/goto_part.php?"]
 exefiles.com##a[href*="/recommended/"]
 booska-p.com##a[href*="/rf/"][style]
 1001ebooks.ws##a[href*="/telebooks.html"]
@@ -5529,7 +5527,6 @@ condor.dz##a[href^="https://e-faciliti.dz/"]
 bleachmx.fr##a[href^="https://meccha-japan.com/"]
 appsystem.fr##a[href^="https://shop.appsystem.fr/"] > img
 journaldugeek.com##a[href^="https://shop.journaldugeek.com/go/"] > img
-toplien.fr##a[href^="https://track.effiliation.com/servlet/effi.click?"]
 fdesouche.com,lacoccinelle.net,wikimonde.com##a[href^="https://www.amazon.fr/"]
 qwant.com##a[href^="https://www.bing.com/aclick?"]
 mega-p2p.net##a[href^="https://www.clictune.com/"]
