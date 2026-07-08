@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.76.8",
-			"timeUpdated": "2026-07-08T16:35:55+0000",
+			"version": "2.4.76.9",
+			"timeUpdated": "2026-07-08T17:34:07+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.52.57",
-			"timeUpdated": "2026-07-08T14:52:06+0000",
+			"version": "2.0.52.58",
+			"timeUpdated": "2026-07-08T17:34:22+0000",
 			"languages": [
 				"de"
 			]
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.70.75",
-			"timeUpdated": "2026-07-07T12:55:27+0000",
+			"version": "2.0.70.76",
+			"timeUpdated": "2026-07-08T17:34:29+0000",
 			"languages": []
 		},
 		{
@@ -217,8 +217,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.65.61",
-			"timeUpdated": "2026-07-08T13:38:10+0000",
+			"version": "2.0.65.62",
+			"timeUpdated": "2026-07-08T17:34:30+0000",
 			"languages": [
 				"tr"
 			]
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.72.14",
-			"timeUpdated": "2026-07-08T15:49:43+0000",
+			"version": "2.2.72.15",
+			"timeUpdated": "2026-07-08T17:34:37+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.78.38",
-			"timeUpdated": "2026-07-08T15:49:53+0000",
+			"version": "2.0.78.39",
+			"timeUpdated": "2026-07-08T17:34:46+0000",
 			"languages": []
 		},
 		{
@@ -325,8 +325,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.30.28",
-			"timeUpdated": "2026-07-08T11:38:19+0000",
+			"version": "2.0.30.29",
+			"timeUpdated": "2026-07-08T17:34:46+0000",
 			"languages": []
 		},
 		{
