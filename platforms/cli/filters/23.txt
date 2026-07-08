@@ -1,9 +1,9 @@
-! Checksum: GYER6CtQCVuTWyKhP83seA
-! Diff-Path: ../patches/23/23-s-1783357688-3600.patch
+! Checksum: wU7FMJqFz9zi/wo6BMc5IA
+! Diff-Path: ../patches/23/23-s-1783493987-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.8.93
-! TimeUpdated: 2026-07-06T17:05:49+00:00
+! Version: 2.0.8.94
+! TimeUpdated: 2026-07-08T06:57:18+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4412,7 +4412,6 @@ rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3
 kom-dir.ru,gd.ru,buhsoft.ru,dirklinik.ru,fd.ru,business.ru,pro-personal.ru,trudohrana.ru##.ASE_brandImage
 !
 ! kodik.cc
-kodikplayer.com#%#//scriptlet('json-prune-xhr-response', 'advert_script vast reserve_vast', '', '/ftor')
 ||kodik.info^$xmlhttprequest,jsonprune=\$..[vast\, "reserve_vast"]
 /vpaid^$xmlhttprequest,domain=kodik.biz|kodik.cc|kodik.info|vio.to|u-cdn.top|kodikdb.com
 /assets/vendor/*.xml?externalsubid=*&v=$domain=kodik.biz|kodik.cc|kodik.info|vio.to|u-cdn.top|kodikdb.com
@@ -4422,6 +4421,8 @@ kodikplayer.com#%#//scriptlet('json-prune-xhr-response', 'advert_script vast res
 kodik*/adv-vast/
 ||kodik.biz/vast/
 ||kodik.cc/vastadvert/
+!+ NOT_PLATFORM(ext_ublock)
+kodikplayer.com#%#//scriptlet('json-prune-xhr-response', 'advert_script vast reserve_vast', '', '/ftor')
 !
 !
 ! This section contains the list of domain-specific rules that block ads.

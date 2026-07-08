@@ -1,9 +1,9 @@
-! Checksum: xXiSm9VWNYa/Lm2mmyHR/w
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1783487514-3600.patch
+! Checksum: y0boGK21i9946meY077yxw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1783494023-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.72.4
-! TimeUpdated: 2026-07-08T05:08:41+00:00
+! Version: 2.2.72.5
+! TimeUpdated: 2026-07-08T06:57:04+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1654,6 +1654,7 @@ knusperstuebchen.net,intercraft.pl#%#//scriptlet('trusted-click-element', 'dialo
 tippsling.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:c82d723')
 wegwandern.ch,compact-online.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:f4adc5d')
 cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:0c09270')
+ixbt.games###consent-ru-banner
 santelab.pl#%#//scriptlet('trusted-click-element', '.items-end.justify-center.lg\:items-center .focus-visible\:outline-2.focus-visible\:outline-offset-2', 'containsText:Odmowa', '1500')
 zus.pl##body > p-dynamicdialog:has(> div > div[aria-labelledby="cookie-consent-modal"])
 testsieger.de#%#//scriptlet('trusted-click-element', 'button.cm__btn--secondary, button[data-role="necessary"]')
@@ -13041,6 +13042,7 @@ medicalnewstoday.com#%#//scriptlet('set-constant', '__bt_intrnl.aaDetectionResul
 iqiyi.com##iqpdiv[data-cupid=container]
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.parseXML", "noopFunc")
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.blackscreenDuration", "1")
+iqiyi.com#%#//scriptlet('trusted-json-set', 'Object.keys', '$.adSlots', '$remove$', '', 'arg')
 www.iqiyi.com#%#//scriptlet('trusted-replace-node-text', 'script', 'window.QiyiPlayerProphetData', '/(QiyiPlayerProphetData=.*?"a":.*?")data(":{)/', '$1no_ads$2')
 www.iqiyi.com#%#!function(){const e={apply:(e,t,o)=>{const i=o[1];if(!i||"object"!=typeof i.QiyiPlayerProphetData)return Reflect.apply(e,t,o)}};window.Object.defineProperties=new Proxy(window.Object.defineProperties,e)}();
 www.iqiyi.com,m.iqiyi.com,sports.iqiyi.com#%#!function(){const s={apply:(c,e,n)=>(n[0]?.adSlots&&(n[0].adSlots=[]),n[1]?.success&&(n[1].success=new Proxy(n[1].success,s)),Reflect.apply(c,e,n))};window.Object.assign=new Proxy(window.Object.assign,s)}();
@@ -26712,6 +26714,7 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+xbato.co.uk###xp-feature-popup
 filespayouts.com###premium_pro
 filespayouts.com###Prem_traffic
 mid-day.com##.rhselement > div.row:has(> div.text-center > a[href="https://epaper.mid-day.com/Package"])
