@@ -653,9 +653,8 @@ www.deviantart.com#%#//scriptlet('ubo-json-prune', '@@entities.deviation.{-}.isA
 
 ! Block images loaded when scrolling page, homepage sections, and related images.
 !#if ext_ublock
-! (v2 compatible)
 !#else
-www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations.[?@.isAiGenerated==true]')
+www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations[?@.isAiGenerated==true]')
 !#endif
 
 ! -- https://www.deviantart.com/ (Homepage)
@@ -1012,7 +1011,6 @@ github.com##.dashboard-changelog .TimelineItem:has(:is([href*="claude"], [href*=
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
 !#if ext_ublock
-! (v2 compatible)
 !#else
 github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 !#endif
@@ -3521,7 +3519,6 @@ yacy.net##.navbar-right > li:has(> [href="https://chatgpt.com/g/g-h7fLnaDuI-yacy
 www.yahoo.com##[aria-label="Search with Yahoo Scout"]
 ! AI search suggestion
 !#if ext_ublock
-! (v2 compatible)
 !#else
 www.yahoo.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.r[?@.m==89]')
 !#endif
