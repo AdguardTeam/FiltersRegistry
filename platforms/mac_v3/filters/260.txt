@@ -1,9 +1,9 @@
-! Checksum: zS8Gjl1v2+7igQkUxXyMPg
-! Diff-Path: ../patches/260/260-s-1783489099-14400.patch
+! Checksum: Mq9rBF0TuuW0N0t20z0D3A
+! Diff-Path: ../patches/260/260-s-1783530173-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.32
-! TimeUpdated: 2026-07-08T05:35:19+00:00
+! Version: 2.0.0.33
+! TimeUpdated: 2026-07-08T17:00:01+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -3099,14 +3099,24 @@ search.yahoo.co.jp##.AnswerAiNavigation__content
 ! ============
 ! == Yandex ==
 ! ============
-! -- https://yandex.com/search?text=test&promo=force_neuro (Search results)
+! ============
+! == Yandex ==
+! ============
+! -- https://ya.ru/
+ya.ru##.alice-ai-button__wrapper
+! -- https://yandex.com/search/?text=test&lr=202
 ! Navbar - yandex ai
+ya.ru##.HeaderNav-Tab[href^="//ya.ru/alice?"]
 yandex.com##.HeaderNav-Tab[href$="&promo=force_neuro"]
-! AI Summary (no longer used?)
-yandex.com##.Root-FuturisSearchOuter
-! Yandex AI answer box
-yandex.com##[data-fast-name="neuro_answer"]
+yandex.ru##.HeaderNav-Tab[href^="//yandex.ru/alice?"]
+! AI Summary
+ya.ru,yandex.com,yandex.ru##[data-lwfilxa-name="neuro_answer"]
+||ya.ru/search/generative_answer$xmlhttprequest,~third-party
 ||yandex.com/search/generative_answer$xmlhttprequest,~third-party
+||yandex.ru/search/generative_answer$xmlhttprequest,~third-party
+! -- https://yandex.com/search/touch/?text=test&lr=202
+! AI Summary
+ya.ru,yandex.com,yandex.ru##[data-qiuattq-name="neuro_answer"]
 ! =========
 ! == Yep ==
 ! =========
