@@ -1,10 +1,12 @@
-! Checksum: ZFxS+MHslIutsOhB1DzlbA
-! Diff-Path: ../patches/25_optimized/25_optimized-s-1783443268-3600.patch
+! Checksum: 3wCV2f7zw2GyBE5xEe+lOA
+! Diff-Path: ../patches/25_optimized/25_optimized-s-1783549719-3600.patch
 ! Title: AdGuard Mail Tracking Protection filter (Optimized)
 ! Description: This filter blocks tracking pixels in email clients.
-! Version: 2.0.0.2
-! TimeUpdated: 2026-07-07T16:51:49+00:00
+! Version: 2.0.0.3
+! TimeUpdated: 2026-07-08T22:26:10+00:00
 ! Expires: 10 days (update frequency)
+/tr/op/*-$image
+%2Ftr%2Fop%2F*-$image
 /m/opening/*$image
 %2Fm%2Fopening%2F$image
 /r/?id=$image
@@ -13,9 +15,8 @@
 .cc.rs6.net%2Fon.jsp$image
 /a360/public/statistic/*$image
 %2Fa360%2Fpublic%2Fstatistic%2F$image
+/t/*/a^$image
 %2Ft%*%2Fa^$image
-!+ NOT_PLATFORM(ios, ext_safari)
-/t/*/a^$image,domain=~permies.com
 /pix.gif?$image
 %2Fpix.gif%3F$image
 /oo/*/e.gif$image
@@ -52,6 +53,9 @@
 %2FCI0%2F0$image
 /ss/o/*/ho.gif$image
 %2Fss%2Fo%2F*%2Fho.gif$image
+sendy.*/t/$image
+sendy.*%2Ft%2F$image
+pixel.app.returnpath.net
 email.api.nhncloudservice.com/email/*/collectors/readCheck/$image
 email.api.nhncloudservice.com%2Femail%2F*%2Fcollectors%2FreadCheck%2F$image
 api-euo.temu.com/callback/doha/open/track?
@@ -493,3 +497,4 @@ nethunt.com/api/v1/track/email/$image
 |esv2.com^$third-party
 twitter.com/scribe/ibis?t=$image
 twitter.com%2Fscribe%2Fibis%3Ft%3D$image
+@@||permies.com/t/*/a/$image

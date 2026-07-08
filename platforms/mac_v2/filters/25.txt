@@ -1,9 +1,9 @@
-! Checksum: BUl9rL20rrEMMlYzDIeLGA
-! Diff-Path: ../patches/25/25-s-1783443294-3600.patch
+! Checksum: DhCRnhi/7kFP4Kb2J4nWMg
+! Diff-Path: ../patches/25/25-s-1783549732-3600.patch
 ! Title: AdGuard Mail Tracking Protection filter
 ! Description: This filter blocks tracking pixels in email clients.
-! Version: 2.0.0.2
-! TimeUpdated: 2026-07-07T16:51:49+00:00
+! Version: 2.0.0.3
+! TimeUpdated: 2026-07-08T22:26:10+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,9 @@
 !       %2Fpix.gif%3F$image
 ! Bad:  ||newegg.com/mr/ (for instance, should be in specific.txt)
 !
+! brevo.com / Sendinblue
+/tr/op/*-$image
+%2Ftr%2Fop%2F*-$image
 ! actito.be
 /m/opening/*$image
 %2Fm%2Fopening%2F$image
@@ -37,11 +40,8 @@
 /a360/public/statistic/*$image
 %2Fa360%2Fpublic%2Fstatistic%2F$image
 ! sendy.co
+/t/*/a^$image
 %2Ft%*%2Fa^$image
-! https://github.com/AdguardTeam/AdguardFilters/issues/220818
-! https://github.com/AdguardTeam/AdguardFilters/issues/219953
-!+ NOT_PLATFORM(ios, ext_safari)
-/t/*/a^$image,domain=~permies.com
 ! tinyemail.com, SNRbox and maybe other
 /pix.gif?$image
 %2Fpix.gif%3F$image
@@ -112,6 +112,11 @@
 ! Bad: ||example.org^$script (treated it as regular analytics and block it in the Tracking Protection filter,
 !      if a script in not proxied)
 !
+! sendy.co
+sendy.*/t/$image
+sendy.*%2Ft%2F$image
+! validity.com
+pixel.app.returnpath.net
 ! hackle.io
 email.api.nhncloudservice.com/email/*/collectors/readCheck/$image
 email.api.nhncloudservice.com%2Femail%2F*%2Fcollectors%2FreadCheck%2F$image
@@ -823,3 +828,5 @@ twitter.com%2Fscribe%2Fibis%3Ft%3D$image
 ! Good: @@ci3.googleusercontent.com/meips/*/wf/open?upn=$image,domain=mail.google.com
 ! Bad:  @@/wf/open?upn= (too wide, or must be removed)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220818
+@@||permies.com/t/*/a/$image
