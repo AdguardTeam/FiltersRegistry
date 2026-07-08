@@ -1,9 +1,9 @@
-! Checksum: t4+WZ9XGk1Gr0YgB6HVsNg
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1783472644-14400.patch
+! Checksum: QkzB3rpd5CQ5ewh6e9wLgw
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1783489077-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.93.69
-! TimeUpdated: 2026-07-08T01:00:28+00:00
+! Version: 2.1.93.70
+! TimeUpdated: 2026-07-08T05:34:12+00:00
 ! Expires: 10 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -502,6 +502,7 @@ _rivcash_banner_
 _sdk_ad_
 _smads_
 _square_ads.
+_waframedia_
 _werbebanner_
 /wp-content/*/bloc-partenaire-
 /wp-content/banners/*$third-party
@@ -802,7 +803,6 @@ _build=iclick-$popup
 ||sharemyads.com^$third-party
 ||slutroulette.com^$third-party
 ||smartclip.net^$~object,third-party
-||smartmovies.net^$third-party
 ||smartname.com^$third-party
 ||smartstream.tv^$third-party
 ||spacepush.ru^$third-party
@@ -2211,6 +2211,7 @@ _build=iclick-$popup
 ||ybnnocszmtuz.com^
 ||yeh8i2rwbonqmmxvf.cyou^
 ||yeukxysters.com^
+||ygg.re^
 ||yggtorrent.com^
 ||yggtorrent.org^
 ||yggtorrent.top^
@@ -2340,6 +2341,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 .php$script,domain=adf.ly|android-zone.ws|anime-loads.org|atomcurve.com|atominik.com|ay.gy|babblecase.com|babesxworld.com|bitigee.com|bluenik.com|casualient.com|cocogals.com|coginator.com|cogismith.com|cracksurl.com|gamecopyworld.eu|imgdrive.net|j.gs|kaitect.com|kializer.com|kibuilder.com|kimechanic.com|larati.net|microify.com|mmoity.com|picocurl.com|picons.eu|pintient.com|q.gs|quainator.com|quamiller.com|replaymod.com|riffhold.com|simizer.com|skamaker.com|skamason.com|tinyium.com|twineer.com|viahold.com|vializer.com|viwright.com|yabuilder.com|yamechanic.com|yoalizer.com|yobuilder.com|yoineer.com|yoitect.com|zipansion.com
 /sw.js$domain=1337x.st|1337x.to|2shrink.com|9xbuddy.com|9xbuddy.online|almstba.tv|bagas31.info|bestfreecams.club|clicksfly.com|clk.sh|dailyuploads.net|desiupload.co|desiupload.in|dood.work|downloadpirate.com|drop.download|dropapk.to|eio.io|gostreams.net|gsurl.in|hdvid.tv|indishare.org|istream2watch.com|keeplinks.org|ling-online.cc|media.cm|megaurl.in|multiup.eu|multiup.io|multiup.org|offmp3.net|oii.la|okanime.tv|ovid.tv|patchsoftwares.com|sadeempc.com|sendspace.com|sexu.com|sss.xxx|stream2watch.org|tntendirect.com|uii.io|up-load.io|upload.ac|upload4earn.org|uploadproper.net|uploadrar.com|voir-films.com|x1337x.eu|x1337x.ws|zippyshare.com
 ||2img.net/i/fa/banner/
+||2img.net/i/fa/partenaires/
 ||4k.video/*.htm
 ||4k.video/*.php?
 ||4k.video/b.js
@@ -2690,7 +2692,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||google.com/favicon.ico$popup,third-party
 ||gopro.com^$popup,domain=tignes.net
 ||iqbroker.com/lp/$popup
-||jacquieetmicheltv.net^*?ref=$popup
 ||jeodrive.com^$popup,domain=jheberg.net
 ||livecareer.fr^$popup,domain=pole-emploi.fr
 ||livejasmin.com^*&utm_$popup
@@ -3127,7 +3128,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ###pub_plop-1
 ###pub_right
 ###pub_ventre
-###pubbas
 ###pubdirecte
 ###pubdroite
 ###pubfooter
@@ -3339,6 +3339,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.pub-300-250
 ##.pub-300-250-600
 ##.pub-300x250
+##.pub-300x250-top
 ##.pub-728
 ##.pub-728x90
 ##.pub-730x90
@@ -3606,7 +3607,6 @@ guide-piscine.fr###devis-lien-popup
 japscan.foo###dlinkc
 maxifoot.fr###ep300z
 maxifoot.fr###ep728
-cultissime.cyou,liensporno.com###fakeplayer
 amateur2sexe.fr###footer-boom
 hardware.fr###footer_img
 equirodi.be###ft_partners
@@ -3761,6 +3761,7 @@ codeur.com##.badge-project-urgent
 cnews.fr##.ban-bottom-desktop
 bdgest.com,bedetheque.com##.ban-top
 cnews.fr##.ban-top-habillage
+agroligne.com##.ban_holder
 pornovore.fr##.bandeau-vertical
 handroit.com##.bandeau_header
 iphone4.fr,jeux-mmorpg.com##.baner
@@ -4035,7 +4036,6 @@ amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 webactus.net##a[href*="/?utm_source="]
 tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
-espritlib.com##a[href*="/goto_part.php?"]
 exefiles.com##a[href*="/recommended/"]
 booska-p.com##a[href*="/rf/"][style]
 1001ebooks.ws##a[href*="/telebooks.html"]
@@ -4067,7 +4067,6 @@ condor.dz##a[href^="https://e-faciliti.dz/"]
 bleachmx.fr##a[href^="https://meccha-japan.com/"]
 appsystem.fr##a[href^="https://shop.appsystem.fr/"] > img
 journaldugeek.com##a[href^="https://shop.journaldugeek.com/go/"] > img
-toplien.fr##a[href^="https://track.effiliation.com/servlet/effi.click?"]
 fdesouche.com,lacoccinelle.net,wikimonde.com##a[href^="https://www.amazon.fr/"]
 qwant.com##a[href^="https://www.bing.com/aclick?"]
 mega-p2p.net##a[href^="https://www.clictune.com/"]

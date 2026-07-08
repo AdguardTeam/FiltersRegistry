@@ -1,5 +1,5 @@
-! Checksum: dMICBz3AGkV2vxTBTfbrNg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1783403708-14400.patch
+! Checksum: TbW1gjor0nCKfSnqwHaD+Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1783489079-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.13
@@ -613,7 +613,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||54.219.218.169^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||209.141.51.49^$all
-||semygruja.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||208.88.225.116^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1437,6 +1436,7 @@ drvhub.net##.driver-item__install
 ||sportsvot.com^$all
 ||srvqck2.com^$all
 ||thenetwork18.com^$all
+||topsolutionsmedia.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||103.67.200.64^$all
 ||driverpack.io^$document,domain=~has_extreme_amounts_of_pup_in_it.*
@@ -1473,6 +1473,7 @@ msftconnecttest.com^$csp=upgrade-insecure-requests
 ://ww25.$document,domain=~ww25.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww26.$document,domain=~ww26.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww31.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww35.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww38.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww44.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -2073,7 +2074,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 @@://safeweb.norton.com^
 @@||sitecheck.sucuri.net^
 @@||safebrowsing.google.com^
-@@://global.sitesafety.trendmicro.com^
 @@://www.fortiguard.com^
 @@||urlscan.io^
 @@://wikipedia.org^
@@ -2144,7 +2144,6 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 ##.et_pb_divider:not(html,body)
 ###top_container_spacing:empty
-indiegogo.com#?#h3:contains(/^\xA0$/):not(:contains(/\S/))
 kentonline.co.uk##.clearfix + .clearfix
 kentonline.co.uk##.line + .clearfix
 transfermarkt.com##.clearer
@@ -2477,9 +2476,7 @@ $removeparam=o_xid
 $removeparam=wtExtndSource
 $removeparam=rfsn
 $removeparam=afsrc
-$removeparam=lctid
 $document,removeparam=lcid,domain=~rekono.si
-$removeparam=usource
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
@@ -2738,6 +2735,7 @@ $removeparam=hubspotUtk
 $removeparam=messagesUtk
 $removeparam=advUuid
 $document,removeparam=traceId
+$removeparam=refDomain
 $removeparam=criteoId
 $removeparam=dspCookie
 $document,removeparam=_rand,domain=~goofish.com
@@ -2778,6 +2776,8 @@ $removeparam=pv_ts
 $removeparam=bidswitch_ssp_id
 $removeparam=tgclid
 $removeparam=dlsi
+$removeparam=tmt_data
+$removeparam=tmt_ufp
 $removeparam=adset_id
 $removeparam=tw_source
 $removeparam=tw_adid
@@ -3282,6 +3282,7 @@ $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||newegg.com^$removeparam=nm_mc
 $removeparam=bsencid
 ||target.com^$removeparam=clkid
+$removeparam=adcampaigngroup
 ||dell.com^$removeparam=dgc
 ||dell.com^$removeparam=VEN1
 ||dell.com^$removeparam=gacd
@@ -3524,7 +3525,6 @@ $removeparam=ueid,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|d
 $removeparam=qo,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com|search.ask.com
 $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 ||baike.com^$removeparam=search_id
-||qvc.com^$removeparam=qq
 ||jcpenney.com^$removeparam=deptId
 ||jcpenney.com^$removeparam=catId
 ||jcpenney.com^$removeparam=urlState
@@ -3825,7 +3825,6 @@ weekend-reading-link-$document,removeparam=/^weekend-reading-link-\d{6}/
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
-||ikea.com/*/images/products^$removeparam=f
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set', 'GSvars.addressTracking', 'false')
 buffalonews.com#%#//scriptlet('ubo-set', 'lee_trkLinkSrc', 'noopFunc')
 @@||web.archive.org/*_/http$removeparam
