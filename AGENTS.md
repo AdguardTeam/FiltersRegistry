@@ -95,6 +95,7 @@ for all supported AdGuard products.
 | `yarn validate` | Validate platforms and locales |
 | `yarn validate:platforms` | Validate platform build outputs |
 | `yarn validate:locales` | Validate locale files |
+| `yarn compare-build-output` | Compare the build output against master |
 | `yarn update-wildcard-domains` | Scan filters for wildcard domains |
 | `yarn expand-wildcard-domains` | Expand wildcard domains in platform builds |
 | `yarn compress` | Compress repository data |

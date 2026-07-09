@@ -123,83 +123,29 @@ yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
 ### Typical workflow — comparing build results against master
 
 Use this when branch changes may alter compiled rule output
-and you need a structured pass/fail comparison against master.
+and you need a structured pass/fail comparison against master:
 
-It runs both branches in parallel via git worktrees so network-fetched content stays in sync.
+```bash
+yarn compare-build-output
+```
 
-1. Create worktrees for each branch and install dependencies:
+It prompts for the branch to compare (defaulting to the current branch;
+`master` itself is never offered as a choice), the build mode (plain `build`
+vs `generate-cache` + `build:local`), and whether to remove the build
+artifacts when done. Under the hood it builds `master` and the compare branch
+in parallel via git worktrees under `temp/`, showing a progress spinner
+during install and build; it also syncs the compare worktree's `filters/` to
+the same baseline commit as master first, so `revision.json` version
+counters start from the same point and don't show up as diff noise in the
+report.
 
-   ```bash
-   export CHANGED_BRANCH=$(git branch --show-current)
-   export BUILD_LOCAL=true                   # set to 'true' to use generate-cache + build:local
+Two conveniences on repeated runs:
 
-   export MASTER_SHA=$(git rev-parse master)
-   export CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
-
-   git worktree add --detach /tmp/reg-master-build  $MASTER_SHA -f
-   git worktree add --detach /tmp/reg-changed-build $CHANGED_SHA -f
-
-   yarn --cwd /tmp/reg-master-build  install &
-   yarn --cwd /tmp/reg-changed-build install &
-   wait
-   ```
-
-2. Sync both worktrees' `filters/` to the same baseline commit so
-   `revision.json` version counters start from the same point:
-
-   ```bash
-   git -C /tmp/reg-changed-build checkout $MASTER_SHA -- filters/
-   ```
-
-3. Build both branches in parallel:
-
-   ```bash
-   _build() {
-     local dir=$1
-     if [ "$BUILD_LOCAL" = "true" ]; then
-       yarn --cwd "$dir" generate-cache && \
-       yarn --cwd "$dir" build:local --no-patches-prepare --strip-generated-meta
-     else
-       yarn --cwd "$dir" build --no-patches-prepare --strip-generated-meta
-     fi
-   }
-
-   (
-     _build /tmp/reg-master-build > /tmp/log-master-build.txt 2>&1
-     EXIT=$?
-     [ $EXIT -eq 0 ] \
-       && cp -r /tmp/reg-master-build/platforms platforms_master_build \
-       && echo "[master] done" \
-       || echo "[master] FAILED (exit $EXIT)"
-   ) &
-
-   (
-     _build /tmp/reg-changed-build > /tmp/log-changed-build.txt 2>&1
-     EXIT=$?
-     [ $EXIT -eq 0 ] \
-       && cp -r /tmp/reg-changed-build/platforms platforms_changed_build \
-       && echo "[changed] done" \
-       || echo "[changed] FAILED (exit $EXIT)"
-   ) &
-
-   wait && echo "Both builds complete"
-   ```
-
-4. Generate the structured report:
-
-   ```bash
-   bash scripts/build/__tests__/regression-test-against-master.sh
-   ```
-
-   The script compares all `.txt` rule files across every platform and
-   prints a pass/fail verdict.
-
-5. Clean up worktrees and current branch changes when done:
-
-   ```bash
-   git worktree remove /tmp/reg-master-build -f & git worktree remove /tmp/reg-changed-build -f
-   git reset --hard && rm -rf platforms_master_build platforms_changed_build
-   ```
+- If `platforms_master_build/` and `platforms_changed_build/` already exist
+  from a previous run, it offers to generate the report from them instead of rebuilding.
+- If a worktree from a previous run is still present, it offers to reuse it
+  (keeping `node_modules`, skipping reinstall) instead of recreating it from
+  scratch.
 
 ### Command Compatibility
 
