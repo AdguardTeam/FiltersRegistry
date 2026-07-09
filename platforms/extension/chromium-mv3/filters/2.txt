@@ -1,8 +1,8 @@
-! Checksum: J2eNtS8r8cYWCEw2J9I9rw
+! Checksum: 74MemPbdDY8EyShpkkNBfA
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.76.21
-! TimeUpdated: 2026-07-09T09:11:24+00:00
+! Version: 2.4.76.22
+! TimeUpdated: 2026-07-09T11:05:25+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10931,6 +10931,10 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235327
+||fc2ppv.stream/upload/assets/js/anti-adblock.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/235341
+allinonerebornvip.blogspot.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'detectAdblock')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235080
 donghua-ar.me#%#//scriptlet('prevent-setTimeout', 'offsetHeight===0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235031
@@ -11209,7 +11213,7 @@ torupload.com#%#//scriptlet('prevent-element-src-loading', 'img', 'googlesyndica
 nzn3.org,bysevepoin.com,arbitrarydecisions.com#%#//scriptlet('json-prune', 'adblock_detection force_disable_adblock')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228712
 cloudfam.io#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&""===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.getComputedStyle=window.getComputedStyle)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
-cloudfam.io#%#//scriptlet('trusted-replace-argument', 'Blob', '0', 'emptyArr', '/fetch\(.+\.data\.url/')
+cloudfam.io#%#//scriptlet('trusted-replace-argument', 'Blob', '0', 'emptyArr', '/\(.+\.data\.url/')
 cloudfam.io#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '/openAdWithFallback|getNativeApis/')
 cloudfam.io#%#//scriptlet('prevent-fetch', 'method:HEAD')
 cloudfam.io#%#//scriptlet('prevent-element-src-loading', 'script', '/adsbygoogle|doubleclick/')
@@ -18253,6 +18257,10 @@ magesy.blog#%#//scriptlet("prevent-setTimeout", "keepChecking")
 @@||mage.si/advertisement.js
 @@||majesy.com/advertisement.js
 ||magesy.blog/dublocker.js
+/https?:\/\/magesy\.net\/[a-z]{1,5}_[a-zA-Z0-9]{15,35}\.js$/$domain=magesy.blog
+magesy.blog#$#body { overflow: auto !important; }
+magesy.blog#$#body > div[class][id][style*="display"]:has(> div[class] > div[class] > img[src*="/ADS-ONLY-ONE"]) { display: none !important; }
+magesy.blog#%#//scriptlet('trusted-replace-argument', 'Promise.prototype.then', '0', 'noopFunc', '/ADS-ONLY-ONE|epicMessages/')
 magesypro.com,magesy.blog###adb
 magesypro.com,magesy.blog###adBlockModal
 magesypro.com,magesy.blog###adblock-overlay
@@ -25865,10 +25873,10 @@ magazif.com##div[id^="magid-"]
 /static/files/inline_images/*$~third-party,domain=myslenice-itv.pl|kulisy.net|24wroclaw.pl|24jgora.pl|nowagazeta.pl|kuriergmin.pl
 nowagazeta.pl##.custom-html-box:has(> .box__container:only-child > div:only-child > h6:first-child + p)
 nowagazeta.pl#?#.custom-html-box:has(> .box__container:only-child > div:only-child > p:contains(reklama))
-kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,kulisy.net##.custom-html-box:has(> .box__container:only-child > div:only-child > p:only-child)
-kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,palukimogilno.pl,zycie.pl##.grid__container > div.grid__row:has(> div.grid__col > div.card > div.box > div.box__container > div[id^="bills_in_rotation_"])
-kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,palukimogilno.pl,zycie.pl##.adv
-kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,magazynnaszczycie.pl,palukimogilno.pl,zycie.pl##.grid__ad
+wm.pl,kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,kulisy.net##.custom-html-box:has(> .box__container:only-child > div:only-child > p:only-child)
+wm.pl,kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,palukimogilno.pl,zycie.pl##.grid__container > div.grid__row:has(> div.grid__col > div.card > div.box > div.box__container > div[id^="bills_in_rotation_"])
+wm.pl,kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,palukimogilno.pl,zycie.pl##.adv
+wm.pl,kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,magazynnaszczycie.pl,palukimogilno.pl,zycie.pl##.grid__ad
 palukimogilno.pl,zycie.pl##.news__read-more
 zzaoceanu.com,forex-nawigator.biz##.ads
 defence24.pl#?#main > section.block:has(> div > a > span > figure > figcaption:contains(Reklama))
@@ -28337,8 +28345,10 @@ film.org.pl##.pubs
 lpg-forum.pl#%#//scriptlet("prevent-setTimeout", "$('#overlay').fadeIn")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/83391
 niebezpiecznik.pl#?##sidebar > ul > li[id^="custom_html-"] > h2.widgettitle:contains(/^Reklama$/):upward(1)
+! https://github.com/AdguardTeam/AdguardFilters/issues/235329
 ! https://github.com/AdguardTeam/AdguardFilters/issues/116651
 lamoda.pl###ad-top-holder
+lamoda.pl##div[class*="content-['REKLAMA']"]
 @@||marketplace.ofeminin.pl/static/$domain=lamoda.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/83216
 lamoda.pl##.onet-ad
@@ -30125,6 +30135,8 @@ homebook.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.
 @@||tvn.adocean.pl/ad.xml$domain=miniminiplus.pl
 @@||tvn.adocean.pl^*/ad.xml$domain=miniminiplus.pl
 @@||miniminiplus.pl$generichide
+! https://github.com/AdguardTeam/AdguardFilters/issues/235330
+spidersweb.pl##div[data-prebid-slot]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122136
 spidersweb.pl##.ad-left + div[style="height: 250px;"]
 spidersweb.pl##.ad-left + div:not([class], [id]) > div[style="position: absolute; font-size: 12px;"]
@@ -38410,6 +38422,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+allinonerebornvip.blogspot.com#%#//scriptlet('prevent-window-open', '_blank', '2')
+allinonerebornvip.blogspot.com#%#//scriptlet('adjust-setInterval', 'countdownValue')
+||com/*?key=$subdocument,third-party,domain=allinonerebornvip.blogspot.com
 imgbox.com#%#//scriptlet('remove-attr', 'href', 'a[href^="https://adv.clickadu.net/"][onclick]', 'stay')
 imgbox.com#%#//scriptlet('remove-attr', 'href', 'a[href^="https://go.clickwhore.com/"][onclick]', 'stay')
 kagane.to#%#//scriptlet('prevent-window-open')
@@ -59864,6 +59879,8 @@ pahe.ink#%#//scriptlet('abort-current-inline-script', 'localStorage.getItem', 'a
 |https://undefined/|$script,redirect=noopjs
 ! remove domain part when working fine for other websites too (one exception for this rule so far)
 ||blockadsnot.com^$redirect=nooptext,important,domain=hislink.net
+! https://vidnest.fun/movie/760329
+/^https:\/\/[a-z]{6,}\.[a-z]{12,}\.(?:cfd|cyou)\/[a-z0-9]{1,2}\/[a-zA-Z0-9]{6,}\?[a-z0-9]{2,3}=ey/$xmlhttprequest,third-party,match-case
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59269
 ! Porn farming
@@ -84941,6 +84958,7 @@ browsershots.org#@#.advert_area
 ||3n2hf8kzowuur654mb.cfd^
 ||3nbf4.com^
 ||3ng6p6m0.de^
+||3nwiyujto9xmrxer.cfd^
 ||3pkf5m0gd.com^
 ||3qb2n7f295oyw18wukv6t.rest^
 ||3qfe1gfa.de^
@@ -87887,6 +87905,7 @@ browsershots.org#@#.advert_area
 ||asgarddeanbhunder.cyou^
 ||asgclick.com^
 ||asgmtwatson.qpon^
+||asgukrpapiiyp.online^
 ||ashamed-diamond.com^
 ||ashamed-temperature.com^
 ||ashamedleague.pro^
@@ -88013,6 +88032,7 @@ browsershots.org#@#.advert_area
 ||atdmt.com^
 ||atebanummaryamatols.cyou^
 ||atecomprisedispel.com^
+||atelicxerus.cfd^
 ||aterianbrisket.shop^
 ||atgsryac.in^
 ||atgvmlnbtnlxl.website^
@@ -88758,6 +88778,7 @@ browsershots.org#@#.advert_area
 ||baygpuglqgzoi.store^
 ||bayshorline.com^
 ||baywednesday.com^
+||baywoodflemish.cyou^
 ||bazaarssephen.cfd^
 ||bazamodov.ru^
 ||bb2c68869a.com^
@@ -89689,6 +89710,7 @@ browsershots.org#@#.advert_area
 ||bnhutpljwndgg.space^
 ||bnkofmbmxc.com^
 ||bnmqtggqjoqic.buzz^
+||bnowklkusdzwe.space^
 ||bnp3.com^
 ||bnpubjzodmhew.site^
 ||bnr.sys.lv^
@@ -90126,6 +90148,7 @@ browsershots.org#@#.advert_area
 ||briskyfab.cyou^
 ||brissdutchy.shop^
 ||bristlechurch.com^
+||bristolarchfoe.cfd^
 ||britageens.com^
 ||britainbetrayalbands.com^
 ||britainhands.com^
@@ -90792,6 +90815,7 @@ browsershots.org#@#.advert_area
 ||canesfederalnewspapers.com^
 ||canetonhappier.cfd^
 ||canganzimbi.com^
+||canguesyarpha.cfd^
 ||canidshigh.qpon^
 ||canionscowshut.shop^
 ||cank.xyz^
@@ -92594,6 +92618,7 @@ browsershots.org#@#.advert_area
 ||cqxstzfithstp.site^
 ||cqyitlvpkvyzf.site^
 ||cqzddfxybkwcw.online^
+||cqztaozubtltr.site^
 ||cr-brands.net^
 ||cr.adsappier.com^
 ||cr06.biz^
@@ -95158,6 +95183,7 @@ browsershots.org#@#.advert_area
 ||dvmblpxseuyuj.space^
 ||dvnhgkrzyxlzd.site^
 ||dvqldhfeowiyh.online^
+||dvsrjqjpzvesn.site^
 ||dvtndeuthhggb.com^
 ||dvuonsjkeeief.website^
 ||dvuvyrddiwxpr.site^
@@ -96815,6 +96841,7 @@ browsershots.org#@#.advert_area
 ||exweuxkvvckho.website^
 ||exxqwatyibrmj.site^
 ||exxtended-access.com^
+||exygzvytvsboj.site^
 ||exzocglvthjxr.space^
 ||exzumzcaqqdny.site^
 ||ey3jun9c55oov13uwvhoozxmbu.cfd^
@@ -97325,6 +97352,7 @@ browsershots.org#@#.advert_area
 ||feudalrival.com^
 ||feudistteuch.cyou^
 ||feuillearcs.cyou^
+||fevdissbagesem.com^
 ||feverfreeman.com^
 ||feversfewmand.com^
 ||fevfmquikbacu.online^
@@ -98059,6 +98087,7 @@ browsershots.org#@#.advert_area
 ||fosfrgpcqy.com^
 ||fossealible.cfd^
 ||fossesfyttes.qpon^
+||fostercraver.qpon^
 ||fostergurk.cyou^
 ||fotchpandar.cfd^
 ||fotherlamely.cyou^
@@ -100327,6 +100356,7 @@ browsershots.org#@#.advert_area
 ||haplessglochidloeing.qpon^
 ||haplitecauson.cfd^
 ||haploidtongueymeubles.cyou^
+||haplycozily.qpon^
 ||happedromany.cfd^
 ||happenedquantity.com^
 ||happensusan.com^
@@ -101586,6 +101616,7 @@ browsershots.org#@#.advert_area
 ||hxoewq.com^
 ||hxtvpdjsjgvvk.site^
 ||hxuaodojgvxbt.website^
+||hxvyagdlnvivr.site^
 ||hxvyvqgbyeryd.com^
 ||hxzdmcgrkmxsz.website^
 ||hyaccgrjkbsoz.online^
@@ -107037,6 +107068,7 @@ browsershots.org#@#.advert_area
 ||mdyjjnmwhhcpa.site^
 ||meadow-assets.click^
 ||mealdisparitydrip.com^
+||mealfonnish.shop^
 ||mealockcoucher.shop^
 ||meamdntykavo.com^
 ||meaningfromplatforms.com^
@@ -107157,6 +107189,7 @@ browsershots.org#@#.advert_area
 ||mentioneartabphrygia.cyou^
 ||mentionideablit.com^
 ||mentorremark.com^
+||menukipielet.cfd^
 ||meonehjvoopxlj8pk.rest^
 ||meoqrkio.com^
 ||meowadvertising.com^
@@ -108785,6 +108818,7 @@ browsershots.org#@#.advert_area
 ||nervessnugissues.com^
 ||nervestrained.com^
 ||nervesweedefeat.com^
+||nervoseboa.qpon^
 ||nervous-tell.com^
 ||nervousamount.com^
 ||nervousbelievable.com^
@@ -112697,6 +112731,7 @@ browsershots.org#@#.advert_area
 ||prankhistorian.com^
 ||pranktetui.cfd^
 ||pratscearin.shop^
+||prawntrahshagged.cfd^
 ||prayedcanezouformic.qpon^
 ||prayersoriginate.com^
 ||prayratesantibiotic.com^
@@ -118184,6 +118219,7 @@ browsershots.org#@#.advert_area
 ||spellingdelicatessenremove.com^
 ||spellingunforgivablesneak.com^
 ||spendsdetachment.com^
+||spendsmagilp.shop^
 ||spentgeographical.com^
 ||speragephallin.cfd^
 ||sperans-beactor.com^
@@ -118480,6 +118516,7 @@ browsershots.org#@#.advert_area
 ||stagepopkek.com^
 ||stagesepandit.cyou^
 ||stageseshoals.com^
+||stageynea.cfd^
 ||staggereddam.com^
 ||staggeredravehospitality.com^
 ||staggermeaningless.com^
@@ -119704,6 +119741,7 @@ browsershots.org#@#.advert_area
 ||teetingmaku.cfd^
 ||teetscaffer.qpon^
 ||teewunsvdpwcs.online^
+||tefcwqpuq.com^
 ||teflonmalie.com^
 ||tegmentlettrinclue.cfd^
 ||teimyesrhvruc.space^
@@ -120517,6 +120555,7 @@ browsershots.org#@#.advert_area
 ||towersflimsy.com^
 ||towghtruinershahs.cyou^
 ||townyomnist.shop^
+||towsygio.shop^
 ||toxanendhhcjx.site^
 ||toxauncouch.com^
 ||toxemiaseabags.com^
@@ -123916,6 +123955,7 @@ browsershots.org#@#.advert_area
 ||wealthn.com^
 ||wealthyvast.pro^
 ||weanerssouls.com^
+||weanyersociusnaggly.cfd^
 ||weaponschemicalenglish.com^
 ||weaponsrefused.com^
 ||wearbald.care^
@@ -124652,6 +124692,7 @@ browsershots.org#@#.advert_area
 ||wootmedia.net^
 ||woozleutahite.shop^
 ||woozy-save.pro^
+||woqje1u8f18rgo2u.rest^
 ||wordamazinglylamb.com^
 ||wordfence.me^
 ||wordishknag.qpon^
@@ -125680,6 +125721,7 @@ browsershots.org#@#.advert_area
 ||xwkvojadxcnyd.space^
 ||xwkwiakgumoyz.site^
 ||xwlketvkzf.com^
+||xwlpghhsnddie.site^
 ||xwlptajihmbkz.space^
 ||xwmcxqcxipcln.site^
 ||xwqvytuiko.com^
@@ -126248,6 +126290,7 @@ browsershots.org#@#.advert_area
 ||yonhelioliskor.com^
 ||yonicjumfru.com^
 ||yoomanies.com^
+||yoreeddic.cfd^
 ||yoresoryxesswang.qpon^
 ||yorkvillemarketing.net^
 ||yorubadisturb.cfd^
@@ -132941,6 +132984,7 @@ browsershots.org#@#.advert_area
 ||proto2ad.durasite.net^
 ||proxy6.net/static/img/b/
 ||proxysolutions.net/affiliates/
+||ptn.divulg.org^
 ||pub-81f2b77f5bc841c5ae64221394d67f53.r2.dev^
 ||pub.dv.tech^
 ||pub.neartonet.com^
@@ -144461,6 +144505,7 @@ aads.com,ad-maven.com,adcash.com,admitad.com,adskeeper.com,adspyglass.com,adsupp
 ##.ad-fallback
 ##.ad.reform-top
 ##.reform-top-container
+amazon.*###desktop-ad-btf
 amazon.*###faceoutContainer:has(> [class$="sponsored-label"])
 amazon.*###nav-swmslot
 amazon.*###sc-rec-bottom
@@ -144472,7 +144517,9 @@ amazon.*###typ-recommendations-stripe-1
 amazon.*###typ-recommendations-stripe-2
 amazon.*##.AdsCard_container__K6vmo
 amazon.*##.a-cardui[class*="_new-detail-faceout-box_"]:has(.dynamicSponsoredLabelClass)
+amazon.*##.ad-center
 amazon.*##.amzn-safe-frame-container
+amazon.*##.celwidget[data-ref_$="displayAds"]
 amazon.*##.dp-widget-card-deck:has([data-ad-placement-metadata])
 amazon.*##.s-result-item:has(.puis-sponsored-label-text)
 amazon.*##.s-result-item:has([data-ad-feedback-label-id])
