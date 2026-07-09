@@ -15,6 +15,13 @@ command -v yarn >/dev/null 2>&1 || { echo "Error: yarn not found on PATH." >&2; 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 cd "$REPO_ROOT" || exit 1
 
+# Removes worktree info for worktrees whose working trees are missing
+# (https://git-scm.com/docs/git-worktree#Documentation/git-worktree.txt-prune),
+# e.g. if temp/ was ever deleted manually instead of via `git worktree remove`.
+# To verify: `rm -rf temp/reg-master-build`, then rerun — `git worktree add`
+# would otherwise fail as "already registered".
+git worktree prune
+
 TEMP_DIR_NAME="temp"
 mkdir -p "$TEMP_DIR_NAME"
 
