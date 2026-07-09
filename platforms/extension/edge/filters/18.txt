@@ -1,9 +1,9 @@
-! Checksum: IhoYWHTH3ELTIu2Iqm6ECQ
-! Diff-Path: ../patches/18/18-s-1783595316-3600.patch
+! Checksum: vm0O2cowub/IZuDQYL5xmA
+! Diff-Path: ../patches/18/18-s-1783602725-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.89.70
-! TimeUpdated: 2026-07-09T11:06:00+00:00
+! Version: 2.0.89.71
+! TimeUpdated: 2026-07-09T13:09:21+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2618,6 +2618,12 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+din.de#%#//scriptlet('trusted-set-cookie', 'cookie_consent', 'MQ')
+din.de#%#//scriptlet('trusted-set-cookie', 'din-de_consent_de', 'eyJyZXF1aXJlZCI6dHJ1ZSwiZnVuY3Rpb25hbCI6dHJ1ZSwicGVyc29uYWxpemF0aW9uIjp0cnVlfQ')
+din.de#%#//scriptlet('trusted-set-cookie', 'din-en_consent_en', 'eyJyZXF1aXJlZCI6dHJ1ZSwiZnVuY3Rpb25hbCI6dHJ1ZSwicGVyc29uYWxpemF0aW9uIjp0cnVlfQ')
+alpinclub-berlin.de#$#body.cookie-scroll-locked { overflow: auto !important; position: static !important; }
+alpinclub-berlin.de#$##cookieBanner { display: none !important; }
+tbank.ru##div[aria-label="Баннер согласия использования cookies"]
 planetazdrowia.com#%#//scriptlet('set-cookie-reload', 'sStore_message', '1')
 halatargowa.pl#%#//scriptlet('trusted-set-local-storage-item', 'consent:cookies', '$currentDate$')
 arlamow.pl##div[data-el="cookie-monster"]
@@ -7791,7 +7797,7 @@ asfinag.at#$#body { overflow: auto !important; }
 remitly.com#?#div[class^="container_"] ~ div[class]:has([class] > a[href$="/home/cookies"])
 pfu.ricoh.com###name-cookie-accept-bar
 golang.org,go.dev##.Cookie-notice
-bashinform.ru,buffalowildwings.com##div[class^="cookieBanner_"]
+paulserban.eu,bashinform.ru,buffalowildwings.com##[class^="cookieBanner_"]
 portalridice.cz#$##cookiesModal { display: none !important; }
 portalridice.cz#$#.modal-backdrop { display: none !important; }
 portalridice.cz#$#body { overflow: auto !important; padding-right: 0 !important; }
@@ -8394,7 +8400,7 @@ apoya.canalred.tv#$#body::before { content: none !important; }
 apoya.canalred.tv#$?#body { overflow: auto !important; }
 apoya.canalred.tv#$#.aviso_cookies { display: none !important; }
 you-porn.com##.euCookieModal
-zelenaya-nit.ru,brobrolab.ru,miraxy.studio,vysotnygorod.ru,burovaya-kompaniya-spb.ru,nbcomgroup.ru,mixturabar.ru,berlinerdeutsch.ru,cloudkassir.ru,cloudtips.ru##div[data-storage-item^="t657cookiename_"]
+talkbank.io,zelenaya-nit.ru,brobrolab.ru,miraxy.studio,vysotnygorod.ru,burovaya-kompaniya-spb.ru,nbcomgroup.ru,mixturabar.ru,berlinerdeutsch.ru,cloudkassir.ru,cloudtips.ru##div[data-storage-item^="t657cookiename_"]
 mokkedano.net,takeharakankou.jp,okazaki-kanko.jp,nagaoka-navi.or.jp,kagoshima-yokanavi.jp,miyazaki-city.tourism.or.jp,at-nagasaki.jp,shikoku-tourism.com,kagoshima-kankou.com,crossroadfukuoka.jp,nagasaki-tabinet.com,my-kagawa.jp,iyokannet.jp,niigata-kankou.or.jp,kanko-miyazaki.jp,fujiyoshida.net##.common-gdpr-box
 shopee.com.br###main > div > div[style="z-index: 100000;"]
 lastpass.com###LPST_trustarc
@@ -12101,7 +12107,7 @@ buero-bedarf-thueringen.de###bbtCookieBG
 ruecken-zentrum.de###bho_infobar
 infotoday.eu##.cookie_sticky
 fom.de##.nf-procookie-wrapper
-dinmedia.de,beuth.de,din.de##.bwr-cookie
+dinmedia.de,beuth.de##.bwr-cookie
 ||gesundheitsamt-bw.de/typo3conf/*/cookieman/
 sendgrid.com##.notice-cookies
 pccwglobal.com,consoleconnect.com###cc-overlay
@@ -19075,6 +19081,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235357
+@@||pyur.com/assets/cookieConsent-*.js$domain=pyur.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/235280
+alpinclub-berlin.de#@##cookieBanner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235267
 @@||consent.cookiebot.com/uc.js$domain=compo.de
 @@||consentcdn.cookiebot.com^$domain=compo.de
