@@ -1,5 +1,5 @@
-! Checksum: YRSweXGVq8rXxi5GqFu+cQ
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1783535888-3600.patch
+! Checksum: 8w8pVFw9l4AJkbX92iphrA
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1783566863-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.30.30
@@ -140,6 +140,7 @@ pw.live##div[class^="appBanner_"]
 downdetector.com##div[data-testid="card"] > div > div.mx-auto:has(> div > div > a[href^="https://play.google.com/store/apps/details?id="])
 m.soundcloud.com##div[class^="Header_RightContainer"] > button:not([data-testid="sign-in-button"])
 m.soundcloud.com##div[class^="FooterStoreSection"]
+raysigorta.com.tr##.mobileapp-rayconnect
 online.anadolusigorta.com.tr##div[data-testid*="main-content"] > div[class]:has(> div[class] > img[alt="download_banner_logo"])
 trhaber.com.tr,trhaber.com#%#//scriptlet('set-session-storage-item', 'trhaber_app_banner_dismissed', 'true')
 jkanime.net##.appGlobalMsj
@@ -232,7 +233,6 @@ mega.nz##.application
 gmgn.ai#%#//scriptlet('trusted-set-local-storage-item', 'KEY_CLOSE_DOWNLOAD_APP_MODAL_TIME', '$now$')
 gmgn.ai#%#//scriptlet('trusted-set-local-storage-item', 'KEY_CLOSE_DOWNLOAD_APP_BANNER_TIME', '$now$')
 mdcalc.com#%#//scriptlet('set-cookie', 'mobile_cta_banner_dismissed', 'true')
-us.smartprix.com#$#sm-bottom-popup { display: none !important; }
 us.smartprix.com#$#body { overflow: auto !important; }
 trial-net.co.jp#$#.app-remind { display: none !important; }
 trial-net.co.jp#%#//scriptlet('remove-class', 'header-app-remind', 'header')
@@ -317,8 +317,8 @@ nintendo.com##a#Header_HeaderTop_HeaderBanner[href*="/app/"]
 enuygun.com##div[data-testid^="mobile-app-banner"]
 nbg.gr##app-slider-fancy-tabs
 bushikaku.net#%#//scriptlet('set-cookie', 'hide_fixed_bottom_app_banner', 'true')
+bootbarn.com##div[content-asset-id^="mobile-app-banner-"]
 grainger.com##.gcom__header-mobile
-shopcider.com#$#.web2app-banner-container { display: none !important; }
 shopcider.com#%#//scriptlet('remove-class', 'show-branch', '.header > .header-container')
 hh.ru##div[class^="footer-app-banner-"]
 www.dji.com#%#//scriptlet('trusted-click-element', '.universal-product-tip a.universal-product-tip-link[href^="https://cdp-vg.djiservice.org/"] ~ .close-icon')
@@ -358,7 +358,6 @@ bhaskar.com#%#(()=>{const t={apply:async(t,e,r)=>{try{const o=await Reflect.appl
 pizzaroni.ru##.fpsmart
 tipranks.com##.h12 > a.mobile_fontSize6small.mobile_px7
 alihelper.net##.mobile-modal__wrapper
-||anglers.jp/assets/download_banner-$image
 wink.ru##div[data-type="promo"]
 bing.com##div[id^="bnp.nid."][data-viewname="VerticalHeaderFlyout"] > div[id^="b_vfly_"] > div[id^="b_vfly_"]:has(> a[href^="https://bingapp.microsoft.com/bing"])
 bookwalker.jp##.t-c-detail-app-induction
@@ -438,7 +437,6 @@ startpage.com##.privacy-extension-and-app-widget
 [$path=/metro]yandex.*##.metro-sidebar-view__mobile-share-container
 uslugi.yandex.ru#%#//scriptlet('trusted-click-element', 'button.MobAppDistributionSlidingPanel-Close')
 tokopedia.com#$#body > div:has(> div[data-unify="Overlay"] + div > article[data-unify="Modal"] img[src^="https://p16-assets-sg.tokopedia-static.net/"][src$="/zeus/kratos/a79a26a0.png"]) { display: none !important; }
-books.yandex.ru##div[class^="app-offer-banner_container"]
 autotrader.com##.smartBannerPlaceholder
 autotrader.com###hpSmartBanner
 autotrader.com##.app-store-bar
@@ -483,6 +481,7 @@ op.gg##section + div[class]:has(> a[href^="https://op.gg/"] > img[alt="Download"
 livemint.com##.ECH_LM_MWEB_ALL_BUT_ATF5
 faz.net##a[track-label*="App"]
 bestbuy.com###smartbannerContainer
+education.yandex.ru##body > section[class*="styles_prompt__"]:has(> div[class] > div[class] + button)
 newsmax.com###dtnmapp
 calendar.yandex.ru###CalendarBanner
 rohlik.cz##section[data-test="app-promo-wrapper"]
@@ -525,7 +524,6 @@ web.joongna.com#$#.carouselWrapper + div > div.fixed.bg-white.justify-between.lg
 evroopt.by#$#a[href="/app-eplus/"] { visibility: hidden !important; }
 navitime.co.jp##a[href^="https://lp.koteihyo-cloud.navitime.co.jp"]
 navitime.co.jp##a[onclick*="app.adjust.com"]
-navitime.co.jp##.button:has(> a[onclick*="app.adjust.com"]:only-child)
 evroopt.by##div[id^="block-allWidthBanner-"]
 etsy.com##.chrome-footer__app-link
 etsy.com#$#.wt-body-no-scroll { overflow: auto !important; position: unset !important; }
@@ -650,6 +648,7 @@ xn--pckua2a7gp15o89zb.com##div[class^="p-home_"][class$="p-top_special"]
 sp.manga.nicovideo.jp##div.fixed.bottom-2
 hinatazaka46.com,businessinsider.com,sakurazaka46.com##.app-button
 hangikredi.com##div[class*="bg-bannerLeftGradient"]
+theportugalnews.com##header > .p-3 > .mx-auto > .row:has(> .col-8 > a.btn-download)
 level.travel#%#//scriptlet('trusted-set-cookie', 'lt_go_to_app_mobile_popup', 'hiding')
 perekrestok.ru#%#//scriptlet('trusted-click-element', 'button.app-banner-close', '', '800')
 arabam.com,m.sonyunara.jp,magnit.ru##.install-app-banner
@@ -992,7 +991,6 @@ baike.baidu.com##.wgt-baikeapp-promote-container
 outlook.live.com#%#//scriptlet('trusted-set-cookie', 'speedbumpShown', '$now$')
 espreso.co.rs###installAndroidApp
 flagma.by#%#//scriptlet('set-cookie-reload', 'flagmajob_ads_shown', '1')
-pepper.pl#?#.js-threadList > .js-banner:has(img[alt$="-App"])
 ithome.com##.down_app
 m.shein.com###branch-app
 anime-sharing.com##.js-installPromptContainer
@@ -1554,6 +1552,7 @@ france24.com##.o-self-promo--app
 nikkei.com##a[data-rn-track="open_in_app"]
 planetazdorovo.ru,nova.rs##.banner-footer
 meduza.io##body[class^="amp-"] div[class^="style__BannerTop-"]
+hipdf.com##.wsc-ad-plugin-container
 aliexpress.com,aliexpress.us#$#body.smartbanner-placeholder { padding-top: 0 !important; }
 aliexpress.com,aliexpress.us#%#//scriptlet('trusted-click-element', '#header-float-banner img[alt="Close button"]')
 golosameriki.com###wrowblock-27871_73
@@ -1577,6 +1576,7 @@ academia.edu#$#body { overflow: auto!important; }
 m.kuku.lu#?#table[width="100%"] > tbody > tr > td:has(> a[href^="https://play.google.com"])
 tapple.me#?##gatsby-focus-wrapper > div.py-10.pl-4.pr-16:has(> div > div > a.w-full[href^="https://go.onelink.me"])
 pairs.lv##.js-fixed-app-banner
+pairs.lv#$##headerBanner { display: none !important; }
 op.gg##.e6ayeey0
 banco.bradesco##a[href="modal/app.shtm"]
 banco.bradesco#$#body.mobile div#topBar.headertopBar { display: none !important; }
@@ -1699,7 +1699,6 @@ rei.com,ck101.com,av.movie,ettoday.net,portal.librus.pl###app-download
 portal.librus.pl##picture > img[src="https://portal.librus.pl/images/base/aplikacjamobilna.jpg"]
 ||portal.librus.pl/images/base/aplikacjamobilna.jpg
 reverso.net###home-badges
-ifunny.co#$#.promo-popup { display: none !important; }
 ifunny.co#$#body { overflow-y: auto !important; }
 emlakkatilim.com.tr##div[id$="ApplicationNitification"]
 gotradio.com##.leftColAd
@@ -1864,7 +1863,6 @@ vkusvill.ru##.NewAppBanner
 duckduckgo.com##.js-atb-banner
 businessinsider.com##.app-badges
 6030000.ru##.popup_is-active_mobile
-ze.tt##.store-links
 prostotech.com##.content a[href="https://play.google.com/store/apps/details?id=com.veboro.prostotech"]
 genius.com##.android_banner
 m.dm5.com,manhuaren.com###index-ad
@@ -1927,6 +1925,7 @@ oilprice.com,m.qidian.com##.app_download_ad
 zaycev.fm##div[class^="soft-promo"]
 /mobiquo/smartbanner/appbanner.js
 imageban.ru##img[alt="Get it on Google Play"]
+||ntv.com.tr/Content/img/promote.jpg
 rt.com###offers
 cnnbrasil.com.br#%#//scriptlet('set-cookie-reload', 'CNNsmartbanner', '1')
 izi.ua#%#//scriptlet('set-session-storage-item', 'hideMobilePopup', '1')
@@ -1947,7 +1946,6 @@ hinative.com##.l_sidebar_container .mod_banner_app_download_rectangle
 zalando.pl,vtm.be,schlaukopf.de#$#html { margin-top: 0!important; }
 nostalgie.be,nrj.be#$#.navbar-fixed-top { top: 0!important; }
 24h.pchome.com.tw#%#//scriptlet('remove-class', 'c-smartAppBanner', '.c-smartAppBanner')
-ecvip.pchome.com.tw,24h.m.pchome.com.tw#$##smartbanner[class*="shown"] + #WRAPPER .block_H { top: 0 !important; }
 9gag.com#$#.open-in-app { display: none !important; }
 9gag.com#$#body { overflow: auto !important; }
 aminoapps.com#%#//scriptlet('trusted-set-cookie', 'call2action_closed', '1')

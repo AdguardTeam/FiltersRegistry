@@ -1,5 +1,5 @@
-! Checksum: nGCWqQSLKY4WeRd9q4YZBQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1783549729-3600.patch
+! Checksum: lII+YCTZxqZ0OObw7Fz1Qg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1783566862-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.2
@@ -185,7 +185,6 @@ japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target
 japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
 @@||japscan.$generichide
-@@||acscdn.com^$script,third-party,domain=japscan.*
 @@$image,domain=japscan.*
 @@||netlify.app^$script,domain=japscan.*
 trustmyscience.com##.adb-border
@@ -615,7 +614,6 @@ tesla-mag.com##.sidebar-inner-wrap > section[id^="block-"]
 moneyvox.fr##.main div[class]:has(> img[mam-campaign="Ban"])
 lephoceen.fr##div[class^="layout_megabanTopContainer"]
 lesechos.fr#?#span[shape="circle"] + span:contains(Publicité):upward(2)
-nouvelobs.com##.dfp-unloaded
 nouvelobs.com##body .dfp-slot:not(#style_important)
 nouvelobs.com##.advertising
 nouvelobs.com##.sidecol > .pb-25:has(> .advertising)
@@ -898,6 +896,7 @@ meteomedia.com###featured_content #div-gpt-ad-lowerbox-featured
 universfreebox.com##div[id^="publicite-"]
 ||yggtorrent.gg/assets/img/banner.jpg
 linternaute.com##div[id^="Crt-"]
+nouvelobs.com##.ObsPartners
 latribunedelart.com##.encart_colonne
 latribunedelart.com##.encart_bandeau_haut
 iphonesoft.fr##.center.bigPub
@@ -1673,7 +1672,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://gateway-banner.
 ://get.*&clickid=
 ://go.*&zoneid=
-://goto.*?zoneid=
 ://link.*&siteid=$third-party
 ://pop.$script,subdocument,third-party,xmlhttprequest
 ://promo.*?site_id=
@@ -1833,7 +1831,6 @@ _ban-300x250.
 _banner-300x150.
 _banner.*?partner=
 _banner_pub.
-_bannerad2_
 _banniere-300.
 _banniere-728.
 _bnrrotator_
@@ -3034,7 +3031,6 @@ _build=iclick-$popup
 ||l6cbvk54qkc3r3.cyou^
 ||l8v469bu5eo99h.cyou^
 ||laikeeboathaip.com^
-||laizoochey.com^
 ||lakeletbothria.com^
 ||lanaofulfils.com^
 ||langretsahibah.com^
@@ -3816,7 +3812,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||mangatown.com^*/banners/
 ||maxannu.com^$image,third-party
 ||mdhcdn.com^*/banner_
-||medieval-war.com/banniere.jpg
 ||meilleurduweb.com/images/pub/
 ||membersrule.com/getimg.php$third-party
 ||mhcdn.net^*/banner/
@@ -4251,7 +4246,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ||winamax.fr/img/pub/
 ||winds-up.com/pub/
 ||xavbox.com/ban/
-||zbporn.com/xdman/
 ||zebest-3000.com/*.html
 ||zone-streaming.fr/wp-content/uploads/amazon-video.jpg
 ||zone911.com/images/logo-banniere/
@@ -4792,7 +4786,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.module-pub
 ##.module_sponsored
 ##.mom-ads-wrap
-##.movie_728_90
 ##.mpu-adv-revamp
 ##.myAd
 ##.nativeads
@@ -4824,7 +4817,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.player-screen-ads-wrapper
 ##.player-sponsor-block
 ##.player__ads
-##.player_bg_ad
 ##.pmd-ads-300x600
 ##.pmd-ads-desktop
 ##.pmd-ads-mobile
@@ -5008,7 +5000,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##.sd-ad-container
 ##.section-ads-center
 ##.shareaholic-canvas
-##.shareaholic-dis-ad-col-2
 ##.shopperAds
 ##.shvertise-banner
 ##.side-pub
@@ -5113,6 +5104,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|all
 ##a[href*=".antj.link/"]
 ##a[href*=".atimaze.com/"]
 ##a[href*=".digital2cloud.com/?"]
+##a[href*=".gkrtmc.com/"]
 ##a[href*=".irtyd.com/"]
 ##a[href*=".slext2.com/"]
 ##a[href*="//obqj2.com/"]
@@ -5219,7 +5211,6 @@ agriaffaires.com,bloggif.com,lesoir.be,play3-live.com,topquizz.fr###leaderboard
 tiplanet.org###left_column > .archive:not([id])
 lachainemeteo.com###lig
 journaldugeek.com###linkhabillage
-cdiscount.com###lpHeadlineMain.headlineWithoutLogo
 laposte.net###lpn_pub_main
 hellokids.com###mask
 gulli.fr###masthead
@@ -5257,12 +5248,10 @@ clicbienetre.com###popup
 aufeminin.com###precontent
 hellokids.com###preroll
 lequipement.fr###prixendirect_block
-bobvoyeur.com###products-export
 egaliteetreconciliation.fr###produits_en_vente
 lacanausurfinfo.com###promo
 ouedkniss.com###promo-header
 journaldemontreal.com###promo-pkp
-net-iris.fr###promote
 aliasdmc.fr,allocine.fr,annuaire-streaming.com,blablastream.com,centerblog.net,cocostream.rip,cpasfini.me,elbilad.net,film01stream.ws,flemmix.biz,iphonesoft.fr,jeux-2-filles.com,mac2sell.net,nrj.be,nrj.fr,nuked-klan.org,olivierdauvers.fr,orange.fr,planet-casio.com,redirection-web.net,science-et-vie.com,service-public.fr,sortir47.fr,streampourvous.lol,terre.tv,toutpratique.com,turf-fr.com,val-de-marne.gouv.fr,virtuoflash.com,voirfilms.live,wareziens.net###pub
 ledemondujeu.com,minuteur-en-ligne.fr,musculaction.com,planeterenault.com,quiveutdufromage.com###pub2
 musculaction.com###pub3
@@ -5309,6 +5298,7 @@ alloforfait.fr###zzone
 lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
+nouvelobs.com##.ObsPartners
 outlook.live.com##.Ogt7j[id*="-"]
 radiofrance.fr##.PopSlot
 marmiton.org##.RCP__sc-i1pqes-4
@@ -5403,6 +5393,7 @@ howtofix.guide##.eds-animate
 wp-infinity.com##.entry-featured
 jemangejemincis.fr##.entry-footer
 manga-news.com##.external-link
+humanite.fr##.field-name-pub-sidebar-first-content
 solvusoft.com##.fileviewpro
 gameblog.fr##.footer__partners
 orange.fr##.footer_autopromo
@@ -5563,7 +5554,6 @@ lefigaro.fr##.tvm-reagir__pub
 topito.com##.type-shopping
 autonews.fr##.uptogo
 amateur2sexe.fr,pornovore.fr##.video-pub
-valeursactuelles.com##.view-horizons-valeurs-actuelles
 mariefrance.fr,science-et-vie.com##.viously-player
 pornovore.fr,tukif.com##.vjs-toolbar
 positivr.fr##.vsly-player, .positivr-positivrtv-cta
@@ -5628,7 +5618,6 @@ webactus.net##a[href*="/?utm_source="]
 tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
 exefiles.com##a[href*="/recommended/"]
-booska-p.com##a[href*="/rf/"][style]
 1001ebooks.ws##a[href*="/telebooks.html"]
 seneweb.com##a[href*="/xban/"]
 rtl.be##a[href*="://ad.doubleclick.net/"]
@@ -5669,7 +5658,6 @@ mr-bricolage.fr##a[href^="https://www.velux.fr/campagnes/offre-jumo?utm_source="
 free-telecharger.click##a[onclick]
 petit-bulletin.fr##a[onclick^="_gaq.push(['_trackEvent'"]
 lejournaldelamaison.fr,maison-travaux.fr,mariefrance.fr,zoneadsl.com##a[rel="sponsored"]
-mega-p2p.net##a[style*="width: 98%; height: 100%; inset:"]
 jeu.video##a[style="position: fixed;top: 110px;left: 0;bottom: 0;width: 50%;"]
 israelmagazine.co.il##a[target="_blank"] > img[src$=".gif"]
 maliweb.net##a[target="_blank"] > img[width="300"][height="100"]
@@ -5758,7 +5746,6 @@ laredoute.fr##.pl-product:has(.sponsoredContent_label)
 frandroid.com##.post-card:has(a[href^="https://native.humanoid.fr/"])
 fr.shopping.rakuten.com##.prd_side:has(.gtm_ads_caption)
 carrefour.fr##.product-banner__products:has(.product-banner__advertising)
-carrefour.fr##.product-banner__slide:has(.product-banner__advertising-item)
 e.leclerc##.product-container:has(.ad-product)
 decathlon.fr##.product-grid li:has(.sponsored-header-tag)
 carrefour.fr##.product-list-grid__item:has([id*="data-advertising-sponsored-products"])
