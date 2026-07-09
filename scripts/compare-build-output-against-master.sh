@@ -25,6 +25,17 @@ git worktree prune
 TEMP_DIR_NAME="temp"
 mkdir -p "$TEMP_DIR_NAME"
 
+# Lives outside $TEMP_DIR_NAME (unlike the deterministic name, so cleanup_all's
+# `find $TEMP_DIR_NAME -mindepth 1 ...` never touches it while still held) and
+# guards against two concurrent runs corrupting the same shared worktrees/logs.
+LOCK_DIR="${TMPDIR:-/tmp}/compare-build-output-$(basename "$REPO_ROOT").lock"
+if ! mkdir "$LOCK_DIR" 2>/dev/null; then
+  echo "Error: another compare-build-output run appears to be in progress (lock: $LOCK_DIR)." >&2
+  echo "If you're sure none is running, remove that directory and retry." >&2
+  exit 1
+fi
+trap 'rm -rf "$LOCK_DIR"' EXIT
+
 MASTER_WORK_TREE="$TEMP_DIR_NAME/reg-${BASED_BRANCH}-build"
 CHANGED_WORK_TREE="$TEMP_DIR_NAME/reg-changed-build"
 META_FILE="$TEMP_DIR_NAME/reg-meta.env"
