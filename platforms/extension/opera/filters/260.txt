@@ -1,9 +1,9 @@
-! Checksum: JOBdsl3uO9Afq1tU7qa+XQ
-! Diff-Path: ../patches/260/260-s-1783543992-14400.patch
+! Checksum: k9uoyFishCVLCyZ7Pqtlpg
+! Diff-Path: ../patches/260/260-s-1783576734-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.34
-! TimeUpdated: 2026-07-08T20:50:46+00:00
+! Version: 2.0.0.35
+! TimeUpdated: 2026-07-09T05:56:10+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -775,20 +775,21 @@ www.facebook.com##.pageFooterLinkList > li:has(a[href^="https://www.meta.ai/"])
 ! -- https://www.facebook.com/ (Main feed - logged in)
 ! Top navbar > Menu > More from Meta ("Meta AI" and "Chat with AIs")
 ! * The "Meta AI" button changes href when hovered with mouse cursor, so we use `*=` instead of `^=`
-www.facebook.com##div[role="listitem"] > div > div > a:is([href*="www.meta.ai"], [href^="https://aistudio.facebook.com/"])
+www.facebook.com##[role="listitem"]:has([href*="www.meta.ai"], [href^="https://aistudio.facebook.com/"])
 ! Top navbar > Messenger > Meta AI
-www.facebook.com##div.html-div[role="gridcell"] > div > div > div > a[href="/messages/t/156025504001094/"]
+www.facebook.com##[role="link"][href="/messages/t/156025504001094/"]
 ! Left sidebar > "Meta AI" & "Chat with AIs" buttons
-www.facebook.com##div.x78zum5.xdt5ytf.x1iyjqo2.x1us19tq > div.x1iyjqo2 > div > ul > li.html-li > div > div > div > a[href*="www.meta.ai"]
-www.facebook.com##div.x78zum5.xdt5ytf.x1iyjqo2.x1us19tq > div.x1iyjqo2 > div > ul > li.html-li > div > div > div > a[href^="https://aistudio.facebook.com/"]
+www.facebook.com##[role="link"][href*="www.meta.ai"]
+www.facebook.com##[role="link"][href^="https://aistudio.facebook.com/"]
 ! Right Sidebar > Contacts > Meta AI
-www.facebook.com##div.xwib8y2.x1y1aw1k > div > ul.x1hc1fzr > li > div > div > div > a[role="link"][href="/messages/t/36327,2227039302/"]
+www.facebook.com##[role="link"][href="/messages/t/36327,2227039302/"]
 ! Compose post > Generate images button
-www.facebook.com##div[aria-label="Generate images using AI"]
+www.facebook.com##[aria-label="Generate images using AI"]
 ! Ads for AI product (Mobile only)
 facebook.com#?#[data-dcm-id="1"]:has(.rtl-ignore.f2.a:contains(/(Adobe Firefly|Meta AI)/))
-! -- https://www.facebook.com/groups/derbyposting/posts/1439861650942811 (Group post - logged out)
+! -- https://www.facebook.com/groups/810265769826493/posts/2180121562840900/ (Group post - logged out)
 ! AI post summary
+! TODO: Filter mobile version
 www.facebook.com##div:not([class]):has( > .x1g0dm76.xpdmqnj > .x1120s5i.xyamay9.x1n2onr6 > .html-div.xdj266r.x14z9mp.xat24cr.x1lziwak.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x78zum5.x1n2onr6.xh8yej3)
 ! -- https://www.facebook.com/help (Logged in, help center)
 ! Floating support assistant chatbox
