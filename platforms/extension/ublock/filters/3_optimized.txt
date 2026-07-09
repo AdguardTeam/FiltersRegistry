@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0o9PaTOiDiZq/iKxCSAF7A
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1783566861-3600.patch
+! Checksum: HnHwML6zE20HIHcLfgXv8A
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1783574894-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.6.86
-! TimeUpdated: 2026-07-09T03:10:42+00:00
+! Version: 2.1.6.87
+! TimeUpdated: 2026-07-09T05:24:35+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -210,6 +210,7 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||rum.catchmetrics.io^
 ||mradx.net^
 ||api.tblcontent.com^
 ||getjan.io^
@@ -180819,6 +180820,7 @@ zonedirector.avadacom.com$image
 /^https:\/\/cs\d{3}\.\w+\.com\/cscript\/\d{3}\/[\w\d]+\.js$/$script,3p,match-case
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
+/libtrc/tr5?type=*pixel*
 /code/e.js|$~3p
 /posthog-recorder.js
 .js?tg=$~3p
@@ -181532,10 +181534,10 @@ mexc.com##+js(set-local-storage-item, _yjsu_yjad, $remove$)
 /prod/dfm/t8y9347t.min.js$redirect=noop.txt,important,domain=dailycamera.com,image,media,subdocument,stylesheet,script,xhr,other
 ||google-analytics.com^$object,redirect=noop.js,script
 ||googletagmanager.com/gtag/$3p,object,redirect=noop.js,script
+||api.faphouse.com^$ping
 ||b2.mail.ru/count/$image
 ||cdn.fonts.net/t/1.css?
 compo.de##+js(set-local-storage-item, rid, $remove$)
-||static.tblcontent.com/libtrc/tr5?type=loaderpixel
 ||tengrinews.kz/build/assets/analytic-
 ||cdn.eu.amplitude.com/libs/analytics-browser-
 ||trip.com/*/monitor/log
