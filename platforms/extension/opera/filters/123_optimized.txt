@@ -1,9 +1,9 @@
-! Checksum: KByzxEn05elDe13WFl4IAw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1783645681-14400.patch
+! Checksum: 4W94LcPglY44GolM++0P9A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1783662735-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.64.84
-! TimeUpdated: 2026-07-10T01:04:46+00:00
+! Version: 2.1.64.85
+! TimeUpdated: 2026-07-10T05:48:41+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -386,6 +386,7 @@ _social_footer_
 ###post-share-icons
 ###post-social
 ###post_info_share
+###reseaux_sociaux
 ###rightSocial
 ###rsociaux
 ###sb_instagram
@@ -695,7 +696,6 @@ _social_footer_
 ###twitter-button
 ###twitter-feed
 ###twitter-follow
-###twitter-promo
 ###twitter-share
 ###twitter-widget
 ###twitter2
@@ -933,7 +933,6 @@ _social_footer_
 ##.article_share_buttons
 ##.article_social
 ##.articlesharebox
-##.aside-social
 ##.aspexifblikebox
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
@@ -1039,7 +1038,6 @@ _social_footer_
 ##.bt-share
 ##.btFacebook
 ##.btn--share
-##.btn-facebook-lg
 ##.btn-group-social
 ##.button-pinterest
 ##.button-share
@@ -1380,7 +1378,6 @@ _social_footer_
 ##.follow-us-icons
 ##.follow-us-on-twitter
 ##.follow-us-panel
-##.follow-us-twitter
 ##.follow-us-txt
 ##.follow-us-wrapper
 ##.follow-widget
@@ -1838,7 +1835,6 @@ _social_footer_
 ##.like_buttons
 ##.likebtn
 ##.likebutton
-##.likes-block
 ##.likes-block_left
 ##.line-btn-icon
 ##.line-social
@@ -1901,7 +1897,9 @@ _social_footer_
 ##.main-header__social
 ##.main-nav-social
 ##.main__share
-##.mashfs-popup-share
+##.mashicon-facebook
+##.mashicon-linkedin
+##.mashicon-twitter
 ##.mashsb-box
 ##.mashsb-container
 ##.masterSocialbutton
@@ -2285,6 +2283,7 @@ _social_footer_
 ##.share-buttons-top
 ##.share-buttons-wrapper
 ##.share-buttons__item
+##.share-circle
 ##.share-column
 ##.share-component
 ##.share-container.vertical
@@ -2376,6 +2375,7 @@ _social_footer_
 ##.share-pinterest-icon
 ##.share-platform
 ##.share-popup
+##.share-position
 ##.share-post
 ##.share-post-box
 ##.share-reddit
@@ -2814,7 +2814,6 @@ _social_footer_
 ##.social-badge
 ##.social-badges
 ##.social-banner
-##.social-banners
 ##.social-bar-sticky
 ##.social-bar-widget
 ##.social-bar-wrapper
@@ -2929,7 +2928,6 @@ _social_footer_
 ##.social-media-widget
 ##.social-media-wrapper
 ##.social-menu-item
-##.social-meta-item
 ##.social-methods
 ##.social-network-wrapper
 ##.social-network.widget
@@ -4080,7 +4078,6 @@ businesstoday.in##.rhs_fixwhtsapp
 aljazeera.com,aljazeera.net##.rich-share
 crealitycloud.com##.right-share-box
 reviewjournal.com##.rj-story-social
-outlookindia.com##.rm-social-share
 sordum.org##.sbar_social_div
 pornbox.com##.scene-data__share
 fortnitetracker.com,tracker.gg,tracker.network##.scl-buttons
@@ -4175,7 +4172,6 @@ abplive.com,almayadeen.net,businesstoday.in,catracalivre.com.br,gamesindustry.bi
 notebookcheck.net##.socialarea
 videocardz.com##.socialbar-sidebar
 downloadsource.net,firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.socials
-arabnews.com##.socials-btns
 overclock3d.net##.socials-container
 downloadsource.net##.socials-vertical
 republicworld.com##.sponsors-container
@@ -4264,7 +4260,6 @@ dw.com##[data-tracking-name^="sharing-icons-"]
 ynetnews.com##[style="display: flex; justify-content: center; width:100%;height:65px;border: 1px solid #e6e6e6;border-radius: 5px;background-color: #fff;box-sizing: border-box; margin: 20px auto;"]
 hackster.io##a.social_icons__icon__BxTgB
 player.amperwavepodcasting.com,stockx.com##button[aria-label="Share"]
-nine.com.au##button[data-ui-testid="header-share-button"]
 theguardian.com##div > gu-island[name="ShareButton"]
 fifa.com##div[class*="article-section_shareButton_"]
 theatlantic.com##div[class^="ArticleShare_"]
@@ -4514,7 +4509,6 @@ ilpost.it##div[class^="_share_"]
 nlab.itmedia.co.jp###my_social_top
 bizgate.nikkei.com##.c-single-sns
 univ-journal.jp##.snsSpace
-news.yahoo.co.jp##[class^="ArticleShare"]
 qiita.com##[class^="style-"] > [class^="style-"] > div[class^="style-"]:has(> button[aria-label][title][aria-describedby] + p[id][role="tooltip"])
 qiita.com##[href^="https://b.hatena.ne.jp/entry/"]
 qiita.com##div[id^="AdventCalendar"] hr ~ div[class^="style-"]:has(> button[class^="style-"][aria-label][title])
@@ -4540,6 +4534,7 @@ terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
 brasil247.com##.article__notif
+neofeed.com.br##.box-social-single
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
@@ -4628,6 +4623,7 @@ elonce.com,portafolio.co##.footer__redes
 sport.es##.ft-mol-rrss
 elperiodico.com,sport.es##.ft-mol-rrss-column
 diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,elcorreoweb.es,eldia.es,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondemurcia.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,regio7.cat,superdeporte.es##.ft-mol-rrss-column__items
+adnradio.cl##.gdisc-follow
 milenio.com##.google-news-follow
 pronto.com.ar##.header--redes
 dolarhoy.com##.header__redes
