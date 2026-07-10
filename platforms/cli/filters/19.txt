@@ -1,9 +1,9 @@
-! Checksum: aVMwXygqKnRyAF/vUEQbew
-! Diff-Path: ../patches/19/19-s-1783674878-3600.patch
+! Checksum: oY25+AuzZVfCs8hFjW2/eg
+! Diff-Path: ../patches/19/19-s-1783681698-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.78.50
-! TimeUpdated: 2026-07-10T09:11:58+00:00
+! Version: 2.0.78.51
+! TimeUpdated: 2026-07-10T11:05:35+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3384,6 +3384,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+getint.io#%#//scriptlet('remove-node-text', 'script', 'ebook_popup_shown')
+rambler.ru#%#//scriptlet('trusted-set-cookie', 'rhead-giga-accent', 'closed', '', '/', 'rambler.ru')
 sportmo.shop#%#//scriptlet('set-cookie-reload', 'iqitpopup_35251', '1')
 securitylab.ru##.header-social-links
 halatargowa.pl#%#//scriptlet('prevent-setTimeout', 'l.value=!0')
@@ -12725,6 +12727,9 @@ rotaborsa.com,mid-day.com,betaprofiles.com,news.tv-asahi.co.jp,zakzak.co.jp,dona
 !
 ! SECTION: Subscriptions - Regular rules
 !
+getint.io##.blog_newsletter_wrapper
+0115765.com##aside > div.columns.has-text-centered:has(> div.column > a[href^="https://line.me/"])
+0115765.com#?#aside > div.has-text-centered:contains(＼意外と"気になる"話題発信しています／)
 mobidea.com##.widget_subscribe_mailchimp
 pextra.cloud##.lm-backdrop
 credistory.ru##mt-post > section:has(ch-blog-subscribe-socials)
@@ -12747,6 +12752,7 @@ tomsguide.com###article-body > p[id^="elk-"]:has(> a[href^="https://news.google.
 kommersant.ru##.region_announce
 clutchpoints.com##.lg\:px-0:has(> div.rounded script[src^="https://subscribe-forms.beehiiv.com/"])
 fufuskitchen.com###save-this-recipe
+bbc.com###content-setter > div.tp-container-inner
 koty.pl,psy.pl##.space-y-24 > div[class="max-lg:hidden"] > .overflow-hidden:has(> .px-16 > .newsletter-form)
 zurnal24.si##.js-google-preferred-source-wrapper
 north-herts.gov.uk#%#//scriptlet('trusted-set-local-storage-item', 'UKNORTHHERTS_subscribe_overlay', '9999999999999')
