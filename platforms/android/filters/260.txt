@@ -1,9 +1,9 @@
-! Checksum: bS/iHm9irEWSmKjsZLVb8A
-! Diff-Path: ../patches/260/260-s-1783631080-14400.patch
+! Checksum: XvVLzLAestAqGMu6C7tOyg
+! Diff-Path: ../patches/260/260-s-1783689486-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.38
-! TimeUpdated: 2026-07-09T21:02:51+00:00
+! Version: 2.0.0.39
+! TimeUpdated: 2026-07-10T13:15:41+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -2125,10 +2125,15 @@ www.nate.com##.chat1
 ! ===========
 ! == Naver ==
 ! ===========
+! AI Chat tab on the search bar
+m.naver.com##[id^="MM_AI_TAB"]
+www.naver.com###search-ai-tab-button
 ! -- https://search.naver.com/search.naver?where=nexearch&query=test
 ! AI summary box
 search.naver.com##[data-meta-ssuid-extra="fender_renderer-ai_briefing"]
 ||aib-api.naver.com/aibrender.naver?where=nexearch&query=$xmlhttprequest,domain=search.naver.com
+! AI tab
+search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
 ! ==========
 ! == NDTV ==
 ! ==========
