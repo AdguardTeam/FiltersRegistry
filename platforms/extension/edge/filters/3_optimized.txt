@@ -1,9 +1,9 @@
-! Checksum: 8BKqaRr54TFsyverDI3h4w
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1783769336-3600.patch
+! Checksum: g7L3wIh9phGcgTpjOo5DmA
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1783783674-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.7.5
-! TimeUpdated: 2026-07-11T11:26:05+00:00
+! Version: 2.1.7.6
+! TimeUpdated: 2026-07-11T15:24:36+00:00
 ! Expires: 10 days (update frequency)
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.pushState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.replaceState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
@@ -181587,7 +181587,8 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 /prod/dfm/t8y9347t.min.js$redirect=nooptext,important,domain=dailycamera.com
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
-||x.com/i/api/1.1/flow/viewer.json
+x.com#%#//scriptlet('set-constant', '__INITIAL_STATE__.featureSwitch.defaultConfig.rweb_home_jot_context_enabled.value', 'false')
+x.com#%#//scriptlet('set-constant', '__INITIAL_STATE__.featureSwitch.user.config.rweb_home_jot_context_enabled.value', 'false')
 ||credistory.ru/api/Metrics/
 ||files.userlink.ai/public/tracking.js
 ||api.faphouse.com^$ping
@@ -187257,6 +187258,8 @@ dreamprogs.net##td[Width="88"][height="31"]
 ||ztat.net/*/webtrekk.min.js^
 ||google.com/log?$redirect=nooptext
 ||yandex.ru/clck/click|
+!+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
+||x.com/i/api/1.1/flow/viewer.json
 spletnik.ru#%#//scriptlet('set-local-storage-item', 'adrcid', '$remove$')
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 ||static.cloud.sbs.co.kr/common/js/*/sbs_log_module.min.js
@@ -194372,3 +194375,5 @@ bitdefender.com#$#body[style="opacity: 0;"] { opacity: 1 !important; }
 @@||google-analytics.com/analytics.js$redirect-rule,script,domain=mond.how
 ||curos.ca/res/*/resources/scripts/lib/fingerprint.js$important,redirect=fingerprintjs2,script
 ||metrics.streaks.jp^$redirect=nooptext,xmlhttprequest
+x.com#%#//scriptlet('ubo-set', '__INITIAL_STATE__.featureSwitch.defaultConfig.rweb_home_jot_context_enabled.value', 'false')
+x.com#%#//scriptlet('ubo-set', '__INITIAL_STATE__.featureSwitch.user.config.rweb_home_jot_context_enabled.value', 'false')
