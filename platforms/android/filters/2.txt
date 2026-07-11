@@ -1,9 +1,9 @@
-! Checksum: aUriC2ONF9sii7VAM8wa0A
-! Diff-Path: ../patches/2/2-s-1783755593-3600.patch
+! Checksum: Kymo/bq/76X5+hoaoI2Ksw
+! Diff-Path: ../patches/2/2-s-1783759286-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.76.56
-! TimeUpdated: 2026-07-11T07:36:28+00:00
+! Version: 2.4.76.57
+! TimeUpdated: 2026-07-11T08:38:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35954,7 +35954,7 @@ pinterest.*#%#//scriptlet('json-prune', 'resource_response.data.[-].ad_data')
 ! Blocking ads based on property
 pinterest.*#%#(()=>{let e=0;const i=[];new MutationObserver((function(){document.querySelectorAll("div[role='list'] > div[role='listitem']:not([style*='display: none']) div[data-test-id='pinWrapper'], div[role='list'] > div[role='listitem']:not([style*='display: none']) div[data-test-id='pinWrapper'] > div[data-test-id]").forEach((s=>{Object.keys(s).forEach((t=>{if(t.includes("__reactProps")){const r=s[t];try{if(r?.children?.props?.children?.props?.pinKey?.adDestinationUrl||r?.children[1]?.props?.children[1]?.props?.children?.props?.pinKey?.adDestinationUrl||r?.children[0]?.props?.children[1]?.props?.children[1]?.props?.children?.props?.pinKey?.adDestinationUrl){const t=s.closest("div[role='list'] > div[role='listitem']:not([style*='display: none'])");if(!t)return;t.style="display: none !important;",e++;const r=t.querySelector('div[data-test-id="pinrep-footer"] > div[class] > div[class] > div[class]:last-child > div[class] > a[aria-label][href][rel] > div[class] > div[class] > div[class]');r&&(i.push(["Ad blocked based on property ["+e+"] -> "+r.innerText]),console.table(i))}}catch(e){console.error(e)}}}))}))})).observe(document,{childList:!0,subtree:!0})})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225455
-facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion#%#(()=>{const t={apply:(t,n,e)=>{const o=Reflect.apply(t,n,e);try{o instanceof HTMLIFrameElement&&(""===o.src||"about:blank"===o.src)&&o.contentWindow&&(o.contentWindow.String=window.String,o.contentWindow.Function.prototype.call=window.Function.prototype.call,o.contentWindow.JSON.parse=window.JSON.parse,o.contentWindow.XMLHttpRequest.prototype=window.XMLHttpRequest.prototype)}catch(t){}return o}};window.Node.prototype.appendChild=new Proxy(window.Node.prototype.appendChild,t),window.Element.prototype.insertAdjacentElement=new Proxy(window.Element.prototype.insertAdjacentElement,t)})();
+facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion#%#(()=>{const t={apply:(t,e,o)=>{const n=Reflect.apply(t,e,o);try{n instanceof HTMLIFrameElement&&(""===n.src||"about:blank"===n.src)&&n.contentWindow&&(n.contentWindow.String=window.String,n.contentWindow.Function.prototype.call=window.Function.prototype.call,n.contentWindow.JSON.parse=window.JSON.parse,n.contentWindow.XMLHttpRequest.prototype=window.XMLHttpRequest.prototype)}catch(t){}return n}};window.Node.prototype.appendChild=new Proxy(window.Node.prototype.appendChild,t),window.Node.prototype.insertBefore=new Proxy(window.Node.prototype.insertBefore,t),window.Element.prototype.insertAdjacentElement=new Proxy(window.Element.prototype.insertAdjacentElement,t)})();
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion#%#(()=>{const e="SPONSORED",t="SponsoredData",r="AdsSideFeedUnit",n=e=>e?.__typename===r||Boolean(e?.item_collection?.nodes?.[0]?.sponsored_data?.ad_id),a=e=>Boolean(e)&&Object.values(e).some((e=>e?.__typename===t)),o={apply:(o,d,i)=>{let s;try{s=Reflect.apply(o,d,i);const l=JSON.stringify(s);return l?.includes?.(e)||l?.includes?.(t)||l?.includes?.(r)?(Array.isArray(s.require?.[0]?.[3]?.[0]?.__bbox?.require)&&s.require[0][3][0].__bbox.require.forEach((t=>{t[3]?.[1]?.__bbox?.result?.data?.category===e&&delete t[3][1].__bbox.result.data.node,a(t[3]?.[1]?.__bbox?.result?.data?.node)&&delete t[3][1].__bbox.result.data.node,((e,t=10)=>{const r=e[3]?.[1]?.__bbox?.result?.data?.viewer;if(!r)return;const a=new WeakSet,o=(e,t,r)=>{if(!(!e||"object"!=typeof e||r<0||a.has(e))){if(a.add(e),Array.isArray(e.nodes)&&e.nodes.filter(n).length>0)return void(e.nodes=e.nodes.filter((e=>!n(e))));Object.entries(e).forEach((([e,n])=>{o(n,`${t}.${e}`,r-1)}))}};o(r,"item[3][1].__bbox.result.data.viewer",t)})(t,10)})),Array.isArray(s.data?.viewer?.news_feed?.edges)&&(s.data.viewer.news_feed.edges=s.data.viewer.news_feed.edges.filter((t=>!a(t.node)&&t.category!==e))),a(s.data?.node)&&delete s.data.node,s.data?.category===e&&delete s.data.node,s):s}catch(e){return s??Reflect.apply(o,d,i)}}};window.JSON.parse=new Proxy(window.JSON.parse,o);const d={apply:(n,a,o)=>{try{const d=Reflect.apply(n,a,o);if(d?.startsWith?.("{")&&d?.endsWith?.("}")&&(d?.includes?.(e)||d?.includes?.(t)||d?.includes?.(r))){const e=JSON.parse(d);return JSON.stringify(e)}return d}catch(e){return Reflect.apply(n,a,o)}}};window.String=new Proxy(window.String,d);const i={apply:(e,r,n)=>{try{if(n[2]?.[0]&&n[2][0]?.includes?.(t)){const e=n[2][0],t=e.split(/\r?\n|\r/).map((e=>{if(""===e.trim())return e;try{return JSON.stringify(JSON.parse(e))}catch{return e}})).join("\r\n");n[2][0]=t}return Reflect.apply(e,r,n)}catch(t){return Reflect.apply(e,r,n)}}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,i)})();
 ! https://forum.adguard.com/index.php?threads/mac-adguard-2-4-3-718-facebook-sponsored-ads-are-not-blocked.37861
 ! update: 05.06.2020 (full rule)
@@ -87867,6 +87867,7 @@ browsershots.org#@#.advert_area
 ||ahuieohwuk.com^
 ||ahukfcpfknenp.website^
 ||ahuvgjyj.com^
+||ahvqvvjjlgntl.online^
 ||ahvqydcujtjgo.website^
 ||ahvxmwukrdlkk.website^
 ||ahwzqqlumpyba.website^
@@ -90191,6 +90192,7 @@ browsershots.org#@#.advert_area
 ||bftbphjlcefsk.site^
 ||bfwnbnerccsor.space^
 ||bfxytxdpnk.com^
+||bfyybnlyys.com^
 ||bfyydwxdkefev.online^
 ||bfyz-defender.pro^
 ||bfziqxsuvogng.space^
@@ -92562,6 +92564,7 @@ browsershots.org#@#.advert_area
 ||churnedtention.qpon^
 ||churnsrajasoddsman.qpon^
 ||churriplisping.cyou^
+||chvvodcmswbgfl.com^
 ||chwshxiyhbjgc.space^
 ||chxfqemkekb.com^
 ||chyeqolaelmpo.site^
@@ -101576,6 +101579,7 @@ browsershots.org#@#.advert_area
 ||hauntingreferencewire.com^
 ||hauntymimmest.com^
 ||hauufhgezl.com^
+||hauwnlgjcycnm.com^
 ||havagecarajoblazes.cfd^
 ||havboban.com^
 ||haveameet.com^
@@ -105442,6 +105446,7 @@ browsershots.org#@#.advert_area
 ||kcqbrwygxixdh.site^
 ||kcrojyldwmhig.site^
 ||kcsnecwd.com^
+||kctdkehlgoohq.online^
 ||kctmxmkmmvwbh.space^
 ||kcxljicqwzjfd.space^
 ||kcxumzypnrqwr.store^
@@ -106070,6 +106075,7 @@ browsershots.org#@#.advert_area
 ||krubutedessan.com^
 ||krudavmbgnwrc.website^
 ||krumanunsmote.com^
+||krwtcmlpcxknx.website^
 ||krwwcwlkiresb.site^
 ||krxwwojyad.com^
 ||kryvidmqdmlnm.space^
@@ -106425,6 +106431,7 @@ browsershots.org#@#.advert_area
 ||laptopchoose.com^
 ||laptopprivacyado.com^
 ||larajtfzeb.in^
+||larariawirdholiday.qpon^
 ||larasub.conxxx.pro^
 ||larchesrotates.com^
 ||lardylathercenter.com^
@@ -113983,6 +113990,7 @@ browsershots.org#@#.advert_area
 ||pptraggetykella.cfd^
 ||pptshwgmvfhie.website^
 ||pptulaljjijwq.space^
+||ppuvxjxlwxijr.site^
 ||ppuvyqbkphsqj.site^
 ||ppvnbnxoungqo.site^
 ||ppwbhkekhjhch.store^
@@ -115129,6 +115137,7 @@ browsershots.org#@#.advert_area
 ||qhqthxofmcdxl.site^
 ||qhrgkzpfvrtzm.online^
 ||qhsfpazesyczc.site^
+||qhvcdmbjobhoo.space^
 ||qhxrexamnxunp.site^
 ||qhycbngsymyq.com^
 ||qhyftzqknm.com^
