@@ -1,16 +1,16 @@
-! Checksum: T5p0ZouUDPLpJ077MYosBg
-! Diff-Path: ../patches/118/118-s-1783774265-14400.patch
+! Checksum: zZX6vZE5Q+cAlY1OuFD6aA
+! Diff-Path: ../patches/118/118-s-1783788622-14400.patch
 ! Title: EasyPrivacy
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.67.59
-! TimeUpdated: 2026-07-11T12:47:43+00:00
+! Version: 2.1.67.60
+! TimeUpdated: 2026-07-11T16:47:01+00:00
 ! Expires: 10 days (update frequency)
 !
-! OriginalVersion: 202607111233
+! OriginalVersion: 202607111635
 ! Title: EasyPrivacy
-! Last modified: 11 Jul 2026 12:33 UTC
+! Last modified: 11 Jul 2026 16:35 UTC
 ! Expires: 4 days (update frequency)
-! Commit: e583caa6c96143c2ad7a430df310c0afa91ebc24
+! Commit: 879c5bf1a537ce5a5e1af7086a4f51ed33426c8c
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -16776,7 +16776,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||x.com/1.1/graphql/user_flow.json
 ||x.com/1.1/jot
 ||x.com/9/measurement/
-! ||x.com/i/api/1.1/flow/viewer.json
+||x.com/i/api/1.1/flow/viewer.json
 ||x.com/i/api/1.1/graphql/app_context.json
 ||x.com/i/api/1.1/graphql/error_log.json
 ||x.com/i/api/1.1/graphql/user_flow.json
@@ -17297,7 +17297,10 @@ bitdefender.com#$#body[style="opacity: 0;"] { opacity: 1 !important; }
 ! https://github.com/uBlockOrigin/uAssets/issues/31330
 ||metrics.streaks.jp^$redirect=nooptext,xmlhttprequest
 ! https://github.com/uBlockOrigin/uAssets/issues/33072
-! x.com##+js(no-xhr-if, /i/api/1.1/flow/viewer.json)
+x.com#%#//scriptlet('ubo-set', '__INITIAL_STATE__.featureSwitch.defaultConfig.rweb_home_jot_context_enabled.value', 'false')
+x.com#%#//scriptlet('ubo-set', '__INITIAL_STATE__.featureSwitch.user.config.rweb_home_jot_context_enabled.value', 'false')
+! #if env_firefox
+! #endif
 ! -----------------Individual cname tracking systems-----------------!
 ! *** easylist:easyprivacy/easyprivacy_specific_cname_dataunlocker.txt ***
 ! easyprivacy_specific_cname_dataunlocker.txt

@@ -1,8 +1,8 @@
-! Checksum: WjEIvbxQ/oNd2+2VXlddOw
+! Checksum: qxC0/BlYEAgai7f+xUEBqQ
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.42
-! TimeUpdated: 2026-07-11T05:28:52+00:00
+! Version: 2.0.0.43
+! TimeUpdated: 2026-07-11T16:48:02+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1843,6 +1843,15 @@ www.macys.com##.generated-summary-main-container
 ! -- https://mailchimp.com/
 ! Ask Mailchimp Assistant
 mailchimp.com##.genAIAssistChatbotModule
+! ======================
+! == Manticore Search ==
+! ======================
+! -- https://manticoresearch.com/
+! Search tool
+widget.indexfox.ai##.ask-ai-button
+widget.indexfox.ai##.ask-response
+||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
+widget.indexfox.ai#?#.no-results > .svelte-1d6gie5:contains(" to ask AI a given question")
 ! =================
 ! == Mathrubhumi ==
 ! =================
@@ -2151,6 +2160,11 @@ www.ndtv.com##.ASum_wr.ASum_Mnon
 www.newegg.com##.floating-robot
 ! AI Expert
 www.newegg.com##.ek-sales-content
+! ============
+! == News18 ==
+! ============
+! Search - AI overview
+www.news18.com##.aiovwrp
 ! ==========
 ! == Nike ==
 ! ==========
@@ -3115,21 +3129,20 @@ search.yahoo.co.jp##.AnswerAiNavigation__content
 ! == Yandex ==
 ! ============
 ! -- https://ya.ru/
+! (no longer used?)
 ya.ru##.alice-ai-button__wrapper
 ! -- https://yandex.com/search/?text=test&lr=202
 ! Navbar - yandex ai
 ya.ru##.HeaderNav-Tab[href^="//ya.ru/alice?"]
 yandex.com##.HeaderNav-Tab[href$="&promo=force_neuro"]
 yandex.ru##.HeaderNav-Tab[href^="//yandex.ru/alice?"]
-! AI Summary
-ya.ru,yandex.com,yandex.ru##[data-lwfilxa-name="neuro_answer"]
+! AI summary
+! * class/attribute names can vary between sites and mobile/desktop
+ya.ru,yandex.com,yandex.ru##[class*="__futuris-snippet"]
 ya.ru,yandex.com,yandex.ru##[data-fast-name="neuro_answer"]
 ||ya.ru/search/generative_answer$xmlhttprequest,~third-party
 ||yandex.com/search/generative_answer$xmlhttprequest,~third-party
 ||yandex.ru/search/generative_answer$xmlhttprequest,~third-party
-! -- https://yandex.com/search/touch/?text=test&lr=202
-! AI Summary
-ya.ru,yandex.com,yandex.ru##[data-qiuattq-name="neuro_answer"]
 ! =========
 ! == Yep ==
 ! =========

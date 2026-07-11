@@ -1,9 +1,9 @@
-! Checksum: NdOGIlgSNdJPxlZswrF5Dw
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1783747886-14400.patch
+! Checksum: vXLDuzVKvKuchtbk2UvV4g
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1783788642-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.42
-! TimeUpdated: 2026-07-11T05:28:52+00:00
+! Version: 2.0.0.43
+! TimeUpdated: 2026-07-11T16:48:02+00:00
 ! Expires: 5 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -618,6 +618,10 @@ ludwig.guru###i-rewrite
 www.macys.com##.convo-commerce-wrapper:has(> #ask-ai-gecx-button)
 www.macys.com##.generated-summary-main-container
 mailchimp.com##.genAIAssistChatbotModule
+widget.indexfox.ai##.ask-ai-button
+widget.indexfox.ai##.ask-response
+||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
+widget.indexfox.ai#?#.no-results > .svelte-1d6gie5:contains(" to ask AI a given question")
 mathrubhumi.com##.summary-wrapper
 emedicine.medscape.com##.ai-mode-button
 emedicine.medscape.com#$#.header-row-bottom #search-input { width: 85% !important }
@@ -715,6 +719,7 @@ search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
 www.ndtv.com##.ASum_wr.ASum_Mnon
 www.newegg.com##.floating-robot
 www.newegg.com##.ek-sales-content
+www.news18.com##.aiovwrp
 www.nike.com##.nav-css-1f9nce4:has(> [data-testid="ask-nikeai-search-result"])
 www.nordstrom.com##.j_24W
 www.nutraingredients.com##.ask-ia-widget
@@ -1011,12 +1016,11 @@ ya.ru##.alice-ai-button__wrapper
 ya.ru##.HeaderNav-Tab[href^="//ya.ru/alice?"]
 yandex.com##.HeaderNav-Tab[href$="&promo=force_neuro"]
 yandex.ru##.HeaderNav-Tab[href^="//yandex.ru/alice?"]
-ya.ru,yandex.com,yandex.ru##[data-lwfilxa-name="neuro_answer"]
+ya.ru,yandex.com,yandex.ru##[class*="__futuris-snippet"]
 ya.ru,yandex.com,yandex.ru##[data-fast-name="neuro_answer"]
 ||ya.ru/search/generative_answer$xmlhttprequest,~third-party
 ||yandex.com/search/generative_answer$xmlhttprequest,~third-party
 ||yandex.ru/search/generative_answer$xmlhttprequest,~third-party
-ya.ru,yandex.com,yandex.ru##[data-qiuattq-name="neuro_answer"]
 yep.com##.css-1k0ztkl-button
 yep.com##.css-2p650t-sidebar
 ||api.yep.com/summary_v3$xmlhttprequest,~third-party
