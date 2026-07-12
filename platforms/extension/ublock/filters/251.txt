@@ -1,14 +1,14 @@
 ![Adblock Plus 2.0]
-! Checksum: Ne/k8N8C8qJTfrZwaWumxg
-! Diff-Path: ../patches/251/251-s-1783576741-14400.patch
+! Checksum: JVkCRDmr1gUgo8Ekr+MMRw
+! Diff-Path: ../patches/251/251-s-1783834927-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.2
-! TimeUpdated: 2026-07-09T05:56:02+00:00
+! Version: 2.0.10.3
+! TimeUpdated: 2026-07-12T05:39:22+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 08July2026v2
+! OriginalVersion: 12July2026v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1496,6 +1496,8 @@ $removeparam=imgtk
 ?ref=winget|$removeparam=/^ref=winget$/
 ! https://as•com/futbol/internacional/portazo-a-la-ley-wenger-f202601-n/?id_externo_rsoc=CM_ES_TW (20/01/2026)
 $removeparam=id_externo_rsoc
+! https://www•magicdesktop•com/get/kiosk?src=winget&v=11.5.0.52 (12/06/2025)
+$removeparam=/^src=winget$/
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -4470,6 +4472,22 @@ weekend-reading-link-$document,removeparam=/^weekend-reading-link-\d{6}/
 ://globalcdn.nuget.org/packages/*.nupkg?packageVersion=$removeparam=packageVersion
 ! https://hydejack.com/?ref=sqliteviewer.app
 ref=sqliteviewer.app$document,removeparam=ref
+! https://www•mcafee•com/support/s/article/000001616?language=en_US&msockid=2dd8dc14b3136b083171ca58b21c6a6e (12/07/2026)
+||mcafee.$removeparam=msockid
+! https://www•binaryfortress•com/Data/Download/?DownloadID=991e88a4-7f20-4c78-bae8-9fe466c31f86&Log=202 (29/12/2024)
+||binaryfortress.com/Data/Download^$removeparam=Log
+! https://www•draytek•co•uk/support/downloads/software?task=download.send&id=3897:smartvpnclient-570&catid=336
+||draytek.*/downloads/software^$removeparam=catid
+! https://org•downloadcenter•samsung•com/downloadfile/ContentsFile•aspx?CttFileID=9888595&CDCttType=SW&ModelType=C&ModelName=&VPath=SW/202409/20240925081145190/BASW-A3789A0A_1063•zip (28/11/2025)
+||org.downloadcenter.samsung.com/downloadfile^$removeparam=CttFileID
+||org.downloadcenter.samsung.com/downloadfile^$removeparam=CDCttType
+||org.downloadcenter.samsung.com/downloadfile^$removeparam=ModelType
+||org.downloadcenter.samsung.com/downloadfile^$removeparam=/^ModelName=$/
+! https://601905•app•netsuite•com/core/media/media.nl?id=138574113&c=601905&h=qN9rkbisEvH6HFqtqW7c0H9_VJmQqB5WxduEDt0dtr4dsWfZ&_xt=•zip (07/02/2026)
+||app.netsuite.com/core/media^$removeparam=c
+||app.netsuite.com/core/media^$removeparam=_xt
+! https://contourdesign•sharepoint•com/:u:/s/external/IQCEy2yMxnMnTIKUZtnppQj4AbxMnvnp5Rh4pb40X0kMNjY?e=FHdbCU&download=1 (11/06/2026)
+||sharepoint.com^$removeparam=e
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
