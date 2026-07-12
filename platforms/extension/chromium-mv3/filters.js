@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.93.98",
-			"timeUpdated": "2026-07-12T16:47:03+0000",
+			"version": "2.1.93.99",
+			"timeUpdated": "2026-07-12T20:45:40+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.93.97",
-			"timeUpdated": "2026-07-12T16:47:05+0000",
+			"version": "2.1.93.98",
+			"timeUpdated": "2026-07-12T20:45:41+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1025,8 +1025,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.29.77",
-			"timeUpdated": "2026-07-12T16:47:12+0000",
+			"version": "2.0.29.78",
+			"timeUpdated": "2026-07-12T20:45:49+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1144,8 +1144,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-adblock-filters/adblock.txt",
 			"trustLevel": "high",
-			"version": "2.0.16.57",
-			"timeUpdated": "2026-06-24T13:16:59+0000",
+			"version": "2.0.16.58",
+			"timeUpdated": "2026-07-12T20:46:11+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
@@ -1168,8 +1168,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/cookies_filters/adblock_cookies.txt",
 			"trustLevel": "high",
-			"version": "2.0.5.53",
-			"timeUpdated": "2026-06-04T09:47:31+0000",
+			"version": "2.0.5.54",
+			"timeUpdated": "2026-07-12T20:46:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.87.29",
-			"timeUpdated": "2026-07-12T16:47:59+0000",
+			"version": "2.0.87.30",
+			"timeUpdated": "2026-07-12T20:46:39+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1551,8 +1551,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.44",
-			"timeUpdated": "2026-07-11T20:46:20+0000",
+			"version": "2.0.0.45",
+			"timeUpdated": "2026-07-12T20:46:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
