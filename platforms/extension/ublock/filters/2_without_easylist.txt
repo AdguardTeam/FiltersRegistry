@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5MfbGRkqV3Rnnz02m+wWHw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783859206-3600.patch
+! Checksum: aACHZuGtUxFbDTTCSrxNzQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783863456-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.76.83
-! TimeUpdated: 2026-07-12T12:23:25+00:00
+! Version: 2.4.76.84
+! TimeUpdated: 2026-07-12T13:33:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,8 @@
 !
 !
 !
+||funny-tooth.com^
+||prizefamily.com^
 ||vivotzrigtry.com^
 ||sainwertapr.com^
 ||fluxivetsknummus.cyou^
@@ -10837,6 +10839,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235506
+dramaflix.cc##+js(prevent-fetch, adsbygoogle)
+dramaflix.cc##+js(no-setTimeout-if, offsetHeight)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235477
 ||555fap.com/upload/assets/js/anti-adblock.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235417
@@ -37559,6 +37564,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+dramaflix.cc##+js(no-window-open-if)
+dramaflix.cc##+js(abort-on-stack-trace, document.createElement, loadPopunder)
+linuxcommunity.io##.discourse-custom-ad-component
 dnsrobot.net##div[style^="min-height: "]:has(> ins.adsbygoogle)
 linuxblog.io##.hayden-after-paragraph
 timeextension.com##.insert-uplift
