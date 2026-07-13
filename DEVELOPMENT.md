@@ -88,10 +88,11 @@ yarn generate-cache
 ```
 
 This compiles every filter from its `template.txt` and updates the corresponding
-`filter.txt` inside `filters/`. Platform-specific filters and patches are **not**
-generated. The resulting `filter.txt` files contain the fully resolved filter
-content (all `@include` and `!#include` directives expanded) and can be used to
-build filters from cache with `yarn build:local` and to download optimization stats.
+`filter.txt` inside `filters/`, and downloads optimization stats for the included
+filters. Platform-specific filters and patches are **not** generated. The resulting
+`filter.txt` files contain the fully resolved filter content (all `@include` and
+`!#include` directives expanded) and can be used to build filters from cache with
+`yarn build:local`.
 
 ### Building From Cache
 
@@ -205,10 +206,9 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
 - `--generate-cache` — compile filters to update `filter.txt` cache and download optimization stats
-- `--generate-stats` — downloads or updates per-filter `stats.json` files for filters
-  listed in the local `percent.json` cache, overwriting any existing copies
-  (edit `temp/optimization_config/percent.json` first if you need different
-  filters listed)
+- `--generate-stats` — downloads per-filter `stats.json` files for the filters being built,
+  without recompiling `filter.txt`. Existing `stats.json` files are overwritten.
+  use `--include`/`--skip` to scope which filters are processed
 
 **Valid combinations:**
 
@@ -239,7 +239,7 @@ yarn build --generate-cache --include=1,2,3
 yarn build --generate-cache --skip=12,24
 yarn build --generate-cache --report='report.txt'
 
-# Stats download from existing local percent.json
+# Stats-only download, no recompile
 yarn build --generate-stats
 yarn build --generate-stats --include=1,2,3
 ```

@@ -113,11 +113,10 @@ const buildFilters = async () => {
     if (generateCache) {
         await fs.rm(localOptimizationConfigPath, { recursive: true, force: true });
 
+        // TODO: The two lines below will change to includedFilterIDs.length === 0 ? localOptimizationConfig.download(localOptimizationConfigPath) : localOptimizationConfig.download(localOptimizationConfigPath, includedFilterIDs)
         await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
-        console.log(`percent.json saved to ${localOptimizationConfigPath}.`);
-
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
-        console.log(`Optimization config cached to ${localOptimizationConfigPath}.`);
+        console.log(`optimization statistics generated at ${localOptimizationConfigPath}.`);
 
         await compile(
             filtersDir,
@@ -132,8 +131,9 @@ const buildFilters = async () => {
     }
 
     if (generateStats) {
+        // TODO: The two lines below will change to includedFilterIDs.length === 0 ? localOptimizationConfig.download(localOptimizationConfigPath) : localOptimizationConfig.download(localOptimizationConfigPath, includedFilterIDs)
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
-        console.log(`Stats generated from cached percent.json at ${localOptimizationConfigPath}.`);
+        console.log(`optimization statistics generated at ${localOptimizationConfigPath}.`);
         return;
     }
 
