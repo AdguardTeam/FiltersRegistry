@@ -26,14 +26,14 @@ describe('parseFlags', () => {
         const flags = parseFlags([
             '--use-cache',
             '--generate-cache',
-            '--generate-stats',
+            '--download-stats',
             '--no-patches-prepare',
             '--strip-generated-meta',
         ]);
 
         expect(flags.useCache).toBe(true);
         expect(flags.generateCache).toBe(true);
-        expect(flags.generateStats).toBe(true);
+        expect(flags.downloadStats).toBe(true);
         expect(flags.noPatchesPrepare).toBe(true);
         expect(flags.stripGeneratedMeta).toBe(true);
     });
@@ -98,26 +98,26 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('allows --generate-stats', () => {
-        const flags = parseFlags(['--generate-stats']);
+    it('allows --download-stats', () => {
+        const flags = parseFlags(['--download-stats']);
         expect(validateFlags(flags)).toBeNull();
     });
 
-    it('allows --generate-stats with --include', () => {
-        const flags = parseFlags(['--generate-stats', '--include=1,2,3']);
+    it('allows --download-stats with --include', () => {
+        const flags = parseFlags(['--download-stats', '--include=1,2,3']);
         expect(validateFlags(flags)).toBeNull();
     });
 
-    it('rejects --use-cache combined with --generate-stats', () => {
-        const flags = parseFlags(['--use-cache', '--generate-stats']);
+    it('rejects --use-cache combined with --download-stats', () => {
+        const flags = parseFlags(['--use-cache', '--download-stats']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
         expect(result?.message).toContain('mutually exclusive');
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects --generate-cache combined with --generate-stats', () => {
-        const flags = parseFlags(['--generate-cache', '--generate-stats']);
+    it('rejects --generate-cache combined with --download-stats', () => {
+        const flags = parseFlags(['--generate-cache', '--download-stats']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
         expect(result?.message).toContain('mutually exclusive');

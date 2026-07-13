@@ -206,7 +206,7 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
 - `--generate-cache` — compile filters to update `filter.txt` cache and download optimization stats
-- `--generate-stats` — downloads per-filter `stats.json` files for the filters being built,
+- `--download-stats` — downloads per-filter `stats.json` files for the filters being built,
   without recompiling `filter.txt`. Existing `stats.json` files are overwritten.
   use `--include`/`--skip` to scope which filters are processed
 
@@ -240,8 +240,8 @@ yarn build --generate-cache --skip=12,24
 yarn build --generate-cache --report='report.txt'
 
 # Stats-only download, no recompile
-yarn build --generate-stats
-yarn build --generate-stats --include=1,2,3
+yarn build --download-stats
+yarn build --download-stats --include=1,2,3
 ```
 
 **Invalid or ineffective combinations:**
@@ -249,8 +249,8 @@ yarn build --generate-stats --include=1,2,3
 ```bash
 # Mutually exclusive flags → script exits with error
 yarn build --use-cache --generate-cache
-yarn build --use-cache --generate-stats
-yarn build --generate-cache --generate-stats
+yarn build --use-cache --download-stats
+yarn build --generate-cache --download-stats
 
 # --generate-cache exits early; these flags are incompatible → script exits with error
 yarn build --generate-cache --strip-generated-meta

@@ -8,7 +8,7 @@ export interface BuildFlags {
     rawReportPath: string;
     useCache: boolean;
     generateCache: boolean;
-    generateStats: boolean;
+    downloadStats: boolean;
     noPatchesPrepare: boolean;
     stripGeneratedMeta: boolean;
 }
@@ -26,7 +26,7 @@ export function parseFlags(argv: string[]): BuildFlags {
         rawReportPath: '',
         useCache: false,
         generateCache: false,
-        generateStats: false,
+        downloadStats: false,
         noPatchesPrepare: false,
         stripGeneratedMeta: false,
     };
@@ -60,8 +60,8 @@ export function parseFlags(argv: string[]): BuildFlags {
             flags.generateCache = true;
         }
 
-        if (val === '--generate-stats') {
-            flags.generateStats = true;
+        if (val === '--download-stats') {
+            flags.downloadStats = true;
         }
 
         if (val === '--no-patches-prepare') {
@@ -93,17 +93,17 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         };
     }
 
-    if (flags.useCache && flags.generateStats) {
+    if (flags.useCache && flags.downloadStats) {
         return {
             type: 'error',
-            message: `Error: --use-cache and --generate-stats are mutually exclusive.\n${hint}`,
+            message: `Error: --use-cache and --download-stats are mutually exclusive.\n${hint}`,
         };
     }
 
-    if (flags.generateCache && flags.generateStats) {
+    if (flags.generateCache && flags.downloadStats) {
         return {
             type: 'error',
-            message: `Error: --generate-cache and --generate-stats are mutually exclusive.\n${hint}`,
+            message: `Error: --generate-cache and --download-stats are mutually exclusive.\n${hint}`,
         };
     }
 
@@ -135,7 +135,7 @@ const KNOWN_ARGS_PREFIXES = [
 const KNOWN_ARGS_EXACT = new Set([
     '--use-cache',
     '--generate-cache',
-    '--generate-stats',
+    '--download-stats',
     '--no-patches-prepare',
     '--strip-generated-meta',
 ]);

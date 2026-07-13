@@ -42,7 +42,7 @@ const {
     rawReportPath,
     useCache,
     generateCache,
-    generateStats,
+    downloadStats,
     noPatchesPrepare,
     stripGeneratedMeta,
 } = flags;
@@ -130,7 +130,7 @@ const buildFilters = async () => {
         return;
     }
 
-    if (generateStats) {
+    if (downloadStats) {
         // TODO: The two lines below will change to includedFilterIDs.length === 0 ? localOptimizationConfig.download(localOptimizationConfigPath) : localOptimizationConfig.download(localOptimizationConfigPath, includedFilterIDs)
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
         console.log(`optimization statistics generated at ${localOptimizationConfigPath}.`);
