@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LAez2RtXGNSJuLP3/BgjsQ
-! Diff-Path: ../patches/14/14-s-1783947500-3600.patch
+! Checksum: vmlx0laxOKBWUdU1cmCcNA
+! Diff-Path: ../patches/14/14-s-1783950517-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.72.58
-! TimeUpdated: 2026-07-13T12:55:07+00:00
+! Version: 2.2.72.59
+! TimeUpdated: 2026-07-13T13:45:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17759,6 +17759,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235617
+@@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=eurogamer.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235089
 fotbollskanalen.se#@##onetrust-consent-sdk
 @@||cdn.cookielaw.org/consent/*.json$domain=fotbollskanalen.se
@@ -34314,6 +34316,7 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 !
 ! SECTION: Push notifications - Regular rules
 !
+||front.dreamstime.com/new/process-assets/js/push.js$domain=dreamstime.com
 ||static.sobaka.ru/assets/*/push-subscription.js
 ||cdn.7days.ru/bitrix/templates/7days-redesign-2021/js/SparrowPush.js
 ||teknoblog.com/wp-content/plugins/teknoblog-push/assets/tpush.js
@@ -50651,6 +50654,9 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235614
+||front.dreamstime.com/new/process-assets/components/Popup/PopupSignup/PopupSignup.css$domain=dreamstime.com
+||front.dreamstime.com/new/process-assets/components/Popup/Popup.js$domain=dreamstime.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234864
 t24.com.tr###story-content-wrapper > table[style]:has(> tbody > tr > td > h3 > a[href="https://youtu.be/GUF0UD57Ois"])
 t24.com.tr###story-content-wrapper > p[style]:has(> iframe[src^="https://open.spotify.com/embed/episode/0rTrKtaUSMHb3fGGJGQC6G?"])

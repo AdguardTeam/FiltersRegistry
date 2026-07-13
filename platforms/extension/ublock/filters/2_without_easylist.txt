@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9FqLGZqyQdqiM9qqQc25vw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783947503-3600.patch
+! Checksum: cE4D4SMiucXFvvgKZZhfGw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783950520-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.77.2
-! TimeUpdated: 2026-07-13T12:54:28+00:00
+! Version: 2.4.77.3
+! TimeUpdated: 2026-07-13T13:45:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37571,6 +37571,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+gophersports.com###global-top-ad
+||assets.gnwcdn.com/prebid*.js
+||eurogamer.net/static/*/js/commercial.min.js
 esquire.com##.article-body-content > div.inline-content-module:has(div[class^="feature-version-"] .cx-flex-module)
 pornhub.org##.innerContainer
 dramaflix.cc##+js(no-window-open-if)
@@ -39109,7 +39112,7 @@ bscscan.com##.search-panel-ads
 solscan.io##div.items-stretch.shrink-0 > .box-border:has(> div.dark\:shadow-mDark > div.flex:contains(Sponsored))
 solscan.io###top-tx-overview > div.gap-y-0.items-stretch:has(> div > div.flex-wrap.justify-start:contains(Sponsored))
 etherscan.io,basescan.org##div.dropdown > div.dropdown-menu:contains(Sponsored)
-vidmatrixa.com,vidchampions.com,vidavaca.cc,xheti.net,verhentai.io,krx18.com,sht-link.com,viduro.top,vindaz.shop,xca.cymru,uiil.ink,pornwex.tv,manhuarmtl.com,vidara.to,vidara.so,krakenfiles.com,streamix.so,livecamrips.*##+js(addEventListener-defuser, click, window.open)
+movienig.ht,vidmatrixa.com,vidchampions.com,vidavaca.cc,xheti.net,verhentai.io,krx18.com,sht-link.com,viduro.top,vindaz.shop,xca.cymru,uiil.ink,pornwex.tv,manhuarmtl.com,vidara.to,vidara.so,krakenfiles.com,streamix.so,livecamrips.*##+js(addEventListener-defuser, click, window.open)
 rxbabu.com##.flotiads
 link.snipcash.com##+js(remove-node-text, script, urlPC)
 link.snipcash.com##+js(addEventListener-defuser, click, openOnce)
@@ -59774,6 +59777,9 @@ manhwa-raw.com##+js(abort-on-property-write, advads_passive_placements)
 terashare.co##+js(no-window-open-if, !/sharing/link)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176410
 ! generichide rule are not applied in Firefox — https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2757
+! https://github.com/AdguardTeam/AdguardFilters/issues/235617
+! Rule $referrerpolicy is required for apps, because source of some third party requests is not detected
+! and due to this it's not blocked
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232211
 ! Rule $referrerpolicy is required for apps, because source of vast.js is not detected and due to this it's not blocked
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219446
