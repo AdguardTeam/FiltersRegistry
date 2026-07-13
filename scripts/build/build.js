@@ -140,6 +140,7 @@ const buildFilters = async () => {
         //       localOptimizationConfigPath,
         //       includedFilterIDs.length === 0 ? undefined : includedFilterIDs,
         //   )
+        await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
         await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
         console.log(`optimization statistics generated at ${localOptimizationConfigPath}.`);
         return;
