@@ -1,9 +1,9 @@
-! Checksum: wDI+XI7mfLInyMNx1STfBg
-! Diff-Path: ../patches/260/260-s-1783963107-14400.patch
+! Checksum: 8HgWyzuvc3ZxTaOzf2IbwA
+! Diff-Path: ../patches/260/260-s-1783975846-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.46
-! TimeUpdated: 2026-07-13T17:16:02+00:00
+! Version: 2.0.0.47
+! TimeUpdated: 2026-07-13T20:48:26+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -546,6 +546,12 @@ www.crateandbarrel.com##.swat-review-summary-container-border
 ! -- https://cybernews.com/news/meta-pulls-controversial-ai-image-tool/
 ! Key takeaways with AI disclaimer
 cybernews.com##.key-takeaway-editorial:has(> .key-takeaway-editorial__disclaimer)
+! ==============
+! == DataCamp ==
+! ==============
+! -- https://www.datacamp.com/tutorial/sql-union-union-all
+! Explain code button & DataLab AI promo below code blocks
+www.datacamp.com##.code-block-footer
 ! ==============
 ! == DeepWiki ==
 ! ==============
@@ -2749,6 +2755,13 @@ www.testmuai.com##ai-seller-widget
 www.testmuai.com##.w-\[265px\].flex-shrink-0.desktop\:hidden > div > [title^="Open in "]
 ! Sidebar ad
 www.testmuai.com##.w-\[265px\].flex-shrink-0.desktop\:hidden .mt-20.flex-shrink-0
+! ==================
+! == The Atlantic ==
+! ==================
+! -- https://www.theatlantic.com/games/
+! Lemony Snicket LLM game
+www.theatlantic.com##[data-event-puzzle-name="lemony-snicket-suspicious-incident-dubious-park"]
+www.theatlantic.com##[class^="GamesHubLayout_featuredList__"]:has(> [data-event-puzzle-name="lemony-snicket-suspicious-incident-dubious-park"]:only-child)
 ! ===================
 ! == The New Stack ==
 ! ===================
@@ -2873,6 +2886,12 @@ education.illinois.edu#$#ilw-back-to-top { --ilw-back-to-top--right: 40px !impor
 ! Bottom right - "Ask UPS" chat button & chat window
 ups.com###digital-assistant-launcher
 ups.com###WACContainer
+! =============
+! == US News ==
+! =============
+! -- https://www.usnews.com/banking/articles/what-is-a-credit-union
+! Floating Ask AI button
+www.usnews.com##.MuiBox-root:has(> [aria-label="Ask U.S. News AI"])
 ! ============
 ! == Valnet ==
 ! ============
@@ -3173,16 +3192,19 @@ search.yahoo.co.jp##.AnswerAiNavigation__content
 ya.ru##.alice-ai-button__wrapper
 ! -- https://yandex.com/search/?text=test&lr=202
 ! Navbar - yandex ai
+ya.ru,yandex.com,yandex.ru##.HeaderNav-Tab[href$="&promo=force_neuro"]
 ya.ru##.HeaderNav-Tab[href^="//ya.ru/alice?"]
-yandex.com##.HeaderNav-Tab[href$="&promo=force_neuro"]
 yandex.ru##.HeaderNav-Tab[href^="//yandex.ru/alice?"]
 ! AI summary
 ! * class/attribute names can vary between sites and mobile/desktop
-ya.ru,yandex.com,yandex.ru##[class*="__futuris-snippet"]
-ya.ru,yandex.com,yandex.ru##[data-fast-name="neuro_answer"]
 ||ya.ru/search/generative_answer$xmlhttprequest,~third-party
 ||yandex.com/search/generative_answer$xmlhttprequest,~third-party
 ||yandex.ru/search/generative_answer$xmlhttprequest,~third-party
+ya.ru,yandex.com,yandex.ru##[class*="__futuris-snippet"]
+ya.ru,yandex.com,yandex.ru##[data-fast-name="neuro_answer"]
+ya.ru,yandex.com,yandex.ru##[class$="__card "]:has(> .Root-FuturisSearchOuter)
+! * Summary after clicking AI button on desktop english site
+ya.ru,yandex.com,yandex.ru##.Root-FuturisSearchOuter
 ! =========
 ! == Yep ==
 ! =========
