@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1c+snMwpHpRHv/dYsi1yQw
-! Diff-Path: ../patches/260/260-s-1783889383-14400.patch
+! Checksum: fNFLdzNDnkPxZ6ZyTALMPA
+! Diff-Path: ../patches/260/260-s-1783963129-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.45
-! TimeUpdated: 2026-07-12T20:46:46+00:00
+! Version: 2.0.0.46
+! TimeUpdated: 2026-07-13T17:16:02+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -816,6 +816,10 @@ facebook.com##[data-dcm-id="1"]:has(.rtl-ignore.f2.a:contains(/(Adobe Firefly|Me
 ! AI post summary
 ! TODO: Filter mobile version
 www.facebook.com##div:not([class]):has( > .x1g0dm76.xpdmqnj > .x1120s5i.xyamay9.x1n2onr6 > .html-div.xdj266r.x14z9mp.xat24cr.x1lziwak.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x78zum5.x1n2onr6.xh8yej3)
+! -- https://www.facebook.com/profile.php?id=61588534388215
+! Post with AI info disclaimer
+! * Won't hide posts if linked directly
+www.facebook.com##[role="main"] .x17zd0t2 > [role="button"]:contains(/(AI info|AI content)/):upward(.x1n2onr6.xh8yej3.x1ja2u2z):upward(3)
 ! -- https://www.facebook.com/help/437430672945092/
 ! Suggestion chips for AI assistant
 www.facebook.com##[role="main"] .x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w:has(> .xsag5q8.xz9dl7a [data-type="hscroll-child"] [aria-label="Meta AI icon"])
@@ -1578,7 +1582,7 @@ virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Get an AI Answer"]
 ! -- https://www.humblebundle.com/bundles
 ! Bundles involving AI
 ! * Exclude the "The Cybersecurity & AI Defense" bundle
-www.humblebundle.com##.bundle:is([href*="-ai-"], [href*="claude-code"], [href*="genai-"]):not([href*="cybersecurity"])
+www.humblebundle.com##.bundle:is([href*="/ai-"], [href*="-ai-"], [href*="claude-code"], [href*="genai-"]):not([href*="cybersecurity"])
 ! =========
 ! == IBM ==
 ! =========
