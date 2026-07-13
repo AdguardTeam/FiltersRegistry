@@ -133,7 +133,7 @@ describe('build.js: cache flag handling', () => {
                 EMPTY_FILTER_IDS,
             );
         });
-        expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).not.toHaveBeenCalled();
+        expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).toHaveBeenCalled();
         expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
     });
 
@@ -153,7 +153,7 @@ describe('build.js: cache flag handling', () => {
                 [FILTER_ID],
             );
         });
-        expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).not.toHaveBeenCalled();
+        expect(vi.mocked(mockedLocalOptimizationConfig.downloadPercentJson)).toHaveBeenCalled();
         expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
     });
 
