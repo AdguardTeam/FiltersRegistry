@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 2csBD+5nFMARAu8Ltb68Fg
-! Diff-Path: ../patches/14/14-s-1783927095-3600.patch
+! Checksum: THDUho1oq7VNguKFCTJOxA
+! Diff-Path: ../patches/14/14-s-1783934092-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.72.55
-! TimeUpdated: 2026-07-13T07:15:42+00:00
+! Version: 2.2.72.56
+! TimeUpdated: 2026-07-13T09:11:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2781,7 +2781,7 @@ de.ifixit.com##div[data-name="ConsentBanner"]
 every.to##.privacy-side-popup
 myrecipes.com##html:style(overflow: auto !important;)
 spravportal.ru###sp-cookie-banner
-manoramamax.com##div[class^="acceptCookies_accept_cookies"]
+ustvnow.com,manoramamax.com##div[class^="acceptCookies_accept_cookies"]
 classification.gov.au##.view-content > div.views-row:has(> div[style] > div.container a[href="https://www.communications.gov.au/privacy-policy#cookie"])
 job.wb.ru##wb-landing-feature-shell > div.modal-content:has(> div.wb-body > a[href^="https://legal.wildberries.ru/"])
 ||l8.nu/cookie/load.js
@@ -4508,7 +4508,7 @@ cabedelo.pb.gov.br###alert-privacy
 gol.ru,spbdnevnik.ru,gov.spb.ru,p100spb.ru,47channel.ru,expert.ru,interactivebrokers.com,sygic.com###cookie-modal
 fabrik-bayreuth.com,at-rs.de##.mod_privacy_optin
 hurtownia-spozywcza.pl##+js(set-cookie, cookies_message_bar_hidden, true)
-crunnchy.pl,roboczebhp.pl,explore.pl,sklepkawa.pl,perfumeriastyl.pl,wszystkodokawy.pl,trigar.pl,hortmasz.pl,takwiele.pl,nesea.pl,power-cube.pl,oferta.tech-poznan.pl,profitechnik.pl,agroserwisnysa.pl,laptok.com,sprzet-poz.pl,dobre.promo,drogeriaestetic.pl,foxkomputer.pl,proxima24.com,gitso.pl,cywersoft.pl,morenova.com.pl,strefasportu.pl,hermesplus.pl,ksiegralnia.pl,sklep.drabiny.info,bikerzyrardow.pl,praiastories.com,marbelo.pl,rowerynajtaniej.pl,markowetekstylia.pl,recea.pl,maliciekawscy.pl,outletka.com,tomarsport.pl,pieknybrzuszek.com,noclue.shop,e-kia.pl,eldom.eu,topcena24.pl##+js(set-local-storage-item, consents.show_consent_modal, 1)
+sklep-naszosie.pl,crunnchy.pl,roboczebhp.pl,explore.pl,sklepkawa.pl,perfumeriastyl.pl,wszystkodokawy.pl,trigar.pl,hortmasz.pl,takwiele.pl,nesea.pl,power-cube.pl,oferta.tech-poznan.pl,profitechnik.pl,agroserwisnysa.pl,laptok.com,sprzet-poz.pl,dobre.promo,drogeriaestetic.pl,foxkomputer.pl,proxima24.com,gitso.pl,cywersoft.pl,morenova.com.pl,strefasportu.pl,hermesplus.pl,ksiegralnia.pl,sklep.drabiny.info,bikerzyrardow.pl,praiastories.com,marbelo.pl,rowerynajtaniej.pl,markowetekstylia.pl,recea.pl,maliciekawscy.pl,outletka.com,tomarsport.pl,pieknybrzuszek.com,noclue.shop,e-kia.pl,eldom.eu,topcena24.pl##+js(set-local-storage-item, consents.show_consent_modal, 1)
 cc.cz##.b-cookie-bar
 eleman.net##.privacy_disclaime
 magic-x-store.com##+js(set-cookie, accept_cookies_policy, accepted)
@@ -8665,7 +8665,7 @@ pojezierze24.pl###privModal
 playtech.ro##.ot_cookie_settings_btn
 vrchat.com##div[aria-label*="COOKIE WARNING"]
 rmf24.pl,rmfclassic.pl,rmfmaxx.pl,rmf.fm,rmfmaxxx.pl###gr-consent-layer-area
-apator.com,airchina.com.cn,volvocars-partner.pl,stalirov.lawyer,billetter.drammensbadet.no,subtleartmovie.com,contexto.io,twojpsycholog.pl##div[class^="cookies_"]
+sonic-world.ru,apator.com,airchina.com.cn,volvocars-partner.pl,stalirov.lawyer,billetter.drammensbadet.no,subtleartmovie.com,contexto.io,twojpsycholog.pl##div[class^="cookies_"]
 kardiologiaprewencyjna.eu##div[id^="cp"][style*="position: fixed;"]
 sercedziecka.org.pl###cooModal:style(display: none !important;)
 nutricia.pl###cookie-first
@@ -17759,6 +17759,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235089
+fotbollskanalen.se#@##onetrust-consent-sdk
+@@||cdn.cookielaw.org/consent/*.json$domain=fotbollskanalen.se
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=fotbollskanalen.se
+@@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=fotbollskanalen.se
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235366
 privatesportshop.es#@##cookie-consent-banner
 @@||raven.privatesportshop.es/api/*/cookie-consent/$~3p
@@ -25988,6 +25993,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+flixer.cx##div.fixed.inset-0[role="presentation"]:has(> div[aria-labelledby="support-notice-title"])
+flixer.cx##+js(set-session-storage-item, backupBannerDismissed, true)
 dramaflix.cc##+js(set-session-storage-item, telegram_popup_v1, true)
 ||tally.so/widgets/embed.js$domain=nikvesti.com
 linuxblog.io###lcio-popup-overlay
@@ -35325,6 +35332,7 @@ kp.ua,rotaborsa.com,mid-day.com,betaprofiles.com,news.tv-asahi.co.jp,zakzak.co.j
 !
 ! SECTION: Subscriptions - Regular rules
 !
+twitchnosub.com###twitterBanner
 news.ksb.co.jp##.md-ad
 news.ksb.co.jp##.is-bgd-01:has(> .md-banner)
 ||e-hoi.de/?fuseaction=mod_newsletter.show*$domain=e-hoi.de
@@ -61288,7 +61296,7 @@ tr.link##+js(adjust-setInterval, timer, 700, 0.02)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56976
 akwam.*##+js(adjust-setInterval, clock(), 1000, 0.02)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56557
-apps2app.com##+js(adjust-setInterval, #countdown, , 0.02)
+apps2app.com##+js(adjust-setInterval, /#countdown|show_download_links/, *, 0.001)
 ! mage.si - skip timer
 mage.si##+js(adjust-setInterval, countdown, , 0.02)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56155
