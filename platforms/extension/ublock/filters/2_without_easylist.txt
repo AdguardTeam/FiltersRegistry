@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9+qZWO8porkBuemU2MUSQA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783912468-3600.patch
+! Checksum: 2dIt7kOlMhNetC6lfWtyLA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1783919896-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.76.97
-! TimeUpdated: 2026-07-13T03:09:56+00:00
+! Version: 2.4.76.98
+! TimeUpdated: 2026-07-13T05:14:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10840,6 +10840,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235551
+freegen.app##+js(abort-on-stack-trace, Promise.all, runCheck)
+freegen.app###adblockOverlay:style(display: none !important;)
+freegen.app##html, body:style(overflow: auto !important;)
+freegen.app#@#.ad_unit
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235506
 dramaflix.cc##+js(prevent-fetch, adsbygoogle)
 dramaflix.cc##+js(no-setTimeout-if, offsetHeight)
@@ -45141,7 +45146,7 @@ thebrighterside.news##div[data-testid="mesh-container-content"] > div[id^="comp-
 ||usrfiles.com/html/*.html$subdocument,domain=thebrighterside.news
 ||storage.googleapis.com/didna_hb/webifacts_llc/webifactsthebrighterside/didna_config.js
 forbes.com##.grid__ad-container--amp
-espncricinfo.com##.ci-story-content-ad
+cricinfo.com,espncricinfo.com##.ci-story-content-ad
 petkeen.com##.sidebar__opp
 andhrafriends.com###ipsLayout_mainArea > center > table
 a2zapk.dev##.RightAside
