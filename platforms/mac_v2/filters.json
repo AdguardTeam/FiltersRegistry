@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.77.30",
-			"timeUpdated": "2026-07-14T19:33:16+0000",
+			"version": "2.4.77.31",
+			"timeUpdated": "2026-07-14T20:28:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -642,8 +642,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.27.85",
-			"timeUpdated": "2026-07-14T18:29:39+0000",
+			"version": "2.1.27.86",
+			"timeUpdated": "2026-07-14T20:29:14+0000",
 			"languages": [],
 			"tags": [
 				45,
