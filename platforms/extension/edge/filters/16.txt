@@ -1,9 +1,9 @@
-! Checksum: AB2eUemG2DW8+hy4t3GVWw
-! Diff-Path: ../patches/16/16-s-1783912448-3600.patch
+! Checksum: nJy/ygIULP3yecHalwQVRg
+! Diff-Path: ../patches/16/16-s-1784025567-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.57.5
-! TimeUpdated: 2026-07-13T03:10:55+00:00
+! Version: 2.0.57.6
+! TimeUpdated: 2026-07-14T10:36:59+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -53,6 +53,8 @@
 ! Good: @@/adblocker/detect.js$domain=example.org
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
+! https://github.com/uBlockOrigin/uAssets/issues/17909
+@@||ads.videoadex.com/jw/advertisement.js$domain=rtl.be|ultimedia.com
 ! https://github.com/uBlockOrigin/uAssets/issues/33539
 chatnow.fr#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233537
@@ -920,7 +922,7 @@ voici.fr##.coreads-skin-wrapper
 lematin.ch##section[class*="ad-content-wrapper"] > div[class*="-1"]:has(div[data-ad-unit-id])
 sudinfo.be##.r-immoweb
 lesoir.be##.gr-panel:has(> #ctrmedia_links)
-sudinfo.be,lesoir.be##.r-mini-panel--pub-bas-article
+rtl.be,sudinfo.be,lesoir.be##.r-mini-panel--pub-bas-article
 pubeco.fr##.max-w-\[100vw\].justify-center
 nakastream.tv#%#//scriptlet('prevent-window-open')
 nakastream.tv#%#//scriptlet('set-session-storage-item', 'unblock-video', '1')
