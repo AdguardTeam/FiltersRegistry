@@ -1,9 +1,9 @@
-! Checksum: mzcDl6HxWdB0WpdOfMBTVQ
-! Diff-Path: ../patches/2/2-s-1784129843-3600.patch
+! Checksum: yEt8HtyhUu2BvL1SMvr9qQ
+! Diff-Path: ../patches/2/2-s-1784133506-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.77.48
-! TimeUpdated: 2026-07-15T15:34:28+00:00
+! Version: 2.4.77.49
+! TimeUpdated: 2026-07-15T16:35:02+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||whatdidheseehe.com^
 ||evolutionadv.it^
 ||dzqxwy.com^$all
 ||ormatenqron.com^$all
@@ -11019,6 +11020,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235721
+net77.cc#%#//scriptlet('prevent-addEventListener', 'load', 'showAdblockMessage')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235753
 7daystodie-servers.com#@##ad-banner-top
 7daystodie-servers.com#@#.ad-container
@@ -38670,6 +38673,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+net77.cc#%#//scriptlet('prevent-window-open')
 forgemods.de##div.grid > div.grid-cols-1:has(> div.thumbnails-section div.inset-0 > span.tracking-widest)
 xnxx.com##.help-wizard-cover
 onoflix.com,onoflix.live#%#//scriptlet('json-prune', 'adScript')
@@ -61578,6 +61582,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235466
+@@$popup,domain=datanodes.to,third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235087
 theanalyst.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"], [src*="player-widget.mixcloud.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234900
@@ -65844,6 +65850,8 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235513
+@@||etsy.com^$stealth=useragent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235760
 @@.mp4%3Fsign%3$third-party,media,stealth=referrer,domain=vidrock.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235467
