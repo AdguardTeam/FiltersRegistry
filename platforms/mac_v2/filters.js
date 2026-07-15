@@ -617,8 +617,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.72.85",
-			"timeUpdated": "2026-07-15T18:30:02+0000",
+			"version": "2.2.72.86",
+			"timeUpdated": "2026-07-15T19:31:53+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -723,8 +723,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.90.13",
-			"timeUpdated": "2026-07-15T18:30:11+0000",
+			"version": "2.0.90.14",
+			"timeUpdated": "2026-07-15T19:32:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
