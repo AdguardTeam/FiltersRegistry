@@ -114,14 +114,7 @@ www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 ! * Recieved from `https://www.amazon.com/suggestions`
 www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')
 ! Rufus chatbot in sidebar
-! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1thwnv1/block_rufus_sidebar_on_ublock_origin/
-www.amazon.*###nav-flyout-rufus
-www.amazon.*#$#body { padding-left: 0px !important }
-! * AdGuard compatibility
-! * Removing 'style' attribute isn't working on AdGuard, which can cause a white bar to appear the top of the page if Rufus is open and docked.
-!   The storage items below take care of this.
-www.amazon.*#%#//scriptlet('remove-class', 'rufus-docked-left|rufus-docked-right')
-! Default panel to closed on page load
+! * Requires trusted filters in AdGuard
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel:dockedState', 'null')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel', 'null')
 
@@ -1635,12 +1628,15 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 ! Search bar > "AI Mode" button
 www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Logo (Added during Olympics) (Separate filters for uBlock and AdGuard compatability)
+!#if ext_ublock
 ! * Desktop
-www.google.*#%#//scriptlet('remove-attr', 'href', '.k1zIA.kKvsb > a[href*="&udm=50"]')
 ! * Mobile
-www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 ! * Mobile search results page
+!#else
+www.google.*#%#//scriptlet('remove-attr', 'href', '.k1zIA.kKvsb > a[href*="&udm=50"]')
+www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
+!#endif
 ! Promo text below search bar mentioning AI
 www.google.*#?#promo-middle-slot:contains("/\bAI\b/")
 www.google.*#?#promo-middle-slot:contains(Gemini)

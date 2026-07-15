@@ -1,9 +1,9 @@
-! Checksum: P1LNmGxZg4t1NvwGtWDEvw
-! Diff-Path: ../patches/260/260-s-1784048169-14400.patch
+! Checksum: 5itWJj1fI0JSfipUL9NpoA
+! Diff-Path: ../patches/260/260-s-1784134678-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.51
-! TimeUpdated: 2026-07-14T16:53:25+00:00
+! Version: 2.0.0.52
+! TimeUpdated: 2026-07-15T16:55:56+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -108,14 +108,7 @@ www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 ! * Recieved from `https://www.amazon.com/suggestions`
 www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')
 ! Rufus chatbot in sidebar
-! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1thwnv1/block_rufus_sidebar_on_ublock_origin/
-www.amazon.*###nav-flyout-rufus
-www.amazon.*#$#body { padding-left: 0px !important }
-! * AdGuard compatibility
-! * Removing 'style' attribute isn't working on AdGuard, which can cause a white bar to appear the top of the page if Rufus is open and docked.
-!   The storage items below take care of this.
-www.amazon.*#%#//scriptlet('remove-class', 'rufus-docked-left|rufus-docked-right')
-! Default panel to closed on page load
+! * Requires trusted filters in AdGuard
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel:dockedState', 'null')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel', 'null')
 ! -- https://www.amazon.com/Celeste-Nintendo-Switch-Digital-Code/dp/B079Z1LPSP (Product page)
@@ -1437,11 +1430,8 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 ! Search bar > "AI Mode" button
 www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Logo (Added during Olympics) (Separate filters for uBlock and AdGuard compatability)
-! * Desktop
 www.google.*#%#//scriptlet('remove-attr', 'href', '.k1zIA.kKvsb > a[href*="&udm=50"]')
-! * Mobile
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
-! * Mobile search results page
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
 ! Promo text below search bar mentioning AI
 www.google.*#?#promo-middle-slot:contains("/\bAI\b/")
