@@ -1,5 +1,5 @@
-! Checksum: qIGMtNNAnXdtdMboVzhEOA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1784006492-14400.patch
+! Checksum: sgs9V/9u79HRgSUm8i7xYA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1784092940-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.17
@@ -259,7 +259,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||27.220.253.78^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||192.3.194.242^$all
-||spnccrzone.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||23.94.26.138^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -778,6 +777,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||208.91.189.203^$all
 ||commonjamknights.com^$all
 ||grievetube.com^$all
+||fluffyinfection.com^$all
 ||chatvanity.com^$all
 ||delicioustightbronze.com^$all
 ||markswaitingrouge.com^$all
@@ -875,7 +875,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||optvz.com^$all
 ||ourdreamersai.com^$all
 ||phoneprivacycloud.com^$all
-||phrix-lnc.com^$all
 ||pushub.net^$all
 ||rovno.xyz^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -969,7 +968,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||158.222.7.83^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||95.214.26.78^$all
-*yo.php?cname=*&cid=$all
 .aspx?cname=*&cid=$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||185.155.184.57^$all
@@ -1512,7 +1510,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ||flash.cn^$all
 ||cprapid.com^$all
 ||crentgate.com^$all
-||displayoptoffers.com^$all
 ||redirekted.com^$all
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
 ###ctoolbar
@@ -1610,6 +1607,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##[socialshare]:not(html,body,:empty)
 ##a[appshareclick]
 ##a[class$=-sharing-button__link]
+##a[class$=sharebtn]
 ##a[class*=-socials__item]
 ##a[class*=addthis_button]
 ##a[class*=share__button]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
@@ -1944,7 +1942,6 @@ pinterest.*##div[data-test-id=giftWrap]
 addons.opera.com###overlay
 quizlet.com##.LoginBottomBar
 quizlet.com#$#.SetPageTerm-largeSide { filter: none !important }
-feedspot.com##.regoverlay
 fm.to##.blockOverlay.blockUI
 dev.mysql.com##.login-callout
 investing.com###PromoteSignUpPopUp
@@ -2414,6 +2411,8 @@ $removeparam=adgroup_id
 $removeparam=rlsatarget
 $document,removeparam=targetid,domain=~myanonamouse.net
 $document,removeparam=elqCampaignId,domain=~comcast.com|~comcastforbusiness.com
+$removeparam=dc_campid
+$removeparam=dc_adgroupid
 $removeparam=adgroupid
 $removeparam=AFFNAME
 $removeparam=ACRID
@@ -2608,6 +2607,7 @@ $removeparam=af_adset_id
 $removeparam=af_c_id
 $removeparam=af_channel
 $removeparam=af_click_lookback
+$removeparam=af_cost_model
 $removeparam=af_force_deeplink
 $removeparam=af_keywords
 $removeparam=af_prt
@@ -2615,6 +2615,7 @@ $removeparam=af_referrer_customer_id
 $removeparam=af_referrer_uid
 $removeparam=af_siteid
 $document,removeparam=/^af_sub\d=.*$/
+$removeparam=af_sub_siteid
 $removeparam=is_retargeting
 $document,removeparam=shortlink
 $document,removeparam=/^pid=.*_int$/
@@ -3629,6 +3630,7 @@ $document,removeparam=intc,domain=citi.com
 $document,removeparam=selectedCCIndex,domain=citi.com
 $document,removeparam=aoOfferParams,domain=citi.com
 $removeparam=ProspectID,domain=citi.com
+$removeparam=BT_VanityDomain,domain=citi.com
 ||patreon.com/posts/$document,removeparam=token
 $document,removeparam=bpli,domain=blogger.com
 $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
@@ -3769,7 +3771,6 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 ||proton.me^$removeparam=url_id
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||click.linksynergy.com^$removeparam=mid
-||tubebuddy.com^$removeparam=a
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
 ||microsoft.com/*/download/details$removeparam=lc
@@ -3783,10 +3784,6 @@ ref=the-browser$document,removeparam=ref
 ||microsoft.com^$removeparam=refPage
 $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com
 ||duckduckgo.com/extension-success$document,removeparam=atb
-||duckduckgo.com/atb.js$document,removeparam=set_atb
-||duckduckgo.com/atb.js$document,removeparam=v
-||duckduckgo.com/atb.js$document,removeparam=bv
-||duckduckgo.com/atb.js$document,removeparam=browser
 ||github.com^$document,removeparam=email_source
 ||github.com^$document,removeparam=email_token
 ||youtube.com/shorts/$document,removeparam=si
@@ -3796,7 +3793,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||youtube.com/live/$document,removeparam=is
 ||youtu.be^$document,removeparam=is
 ||donmai.us^$removeparam=z
-||chexy.co^$document,removeparam=_caid
 ||www.dropbox.com^$document,removeparam=_ad
 ||www.dropbox.com^$document,removeparam=_camp
 ||photoshop.adobe.com^$removeparam=promoid
