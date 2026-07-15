@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.7.42",
-			"timeUpdated": "2026-07-15T16:34:48+0000",
+			"version": "2.1.7.43",
+			"timeUpdated": "2026-07-15T17:31:25+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.77.49",
-			"timeUpdated": "2026-07-15T16:35:02+0000",
+			"version": "2.4.77.50",
+			"timeUpdated": "2026-07-15T17:31:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
