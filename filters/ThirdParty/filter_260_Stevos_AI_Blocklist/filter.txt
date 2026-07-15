@@ -1423,11 +1423,15 @@ developer.chrome.com##tab:has(> [track-name="for agents"])
 ! AI section
 developer.chrome.com##.devsite-landing-row:has(#span-idaidebug-with-aispan)
 
-! -- https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema (Documentation page)
-! "Page Summary"
-developers.google.com##devsite-key-takeaways-panel
+! -- https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart
 ! Left sidebar > "Chat" (IE: Ask About this Page)
 developers.google.com##.devsite-concierge-ai-panel--menu-item
+! MCP server promo banner
+developers.google.com##.devsite-banner-announcement:has([href="/analytics/devguides/MCP"])
+! Page Summary
+developers.google.com##devsite-key-takeaways-panel
+! "Explain this code" on code block
+developers.google.com##.devsite-explain-code
 
 ! -- https://developers.google.com/s/results?q=Test (Search results)
 ! "AI Powered" results
@@ -1504,8 +1508,7 @@ docs.google.com##.goog-menuitem:has([aria-label^="Beautify this slide"]) + .goog
 ! "Create slide image" icon on top ribbon bar
 docs.google.com###openSidekickForSlideGenerationButton
 ! "Beautify this slide" notice below slide
-! * This leaves a blank space where the notice was. However, this remains even if the notice is manually closed by the user. Slide sizes are done dynamically via styles, so this may not be a solvable issue.
-docs.google.com##.appsSketchyGenerativeaiNudgesCanvasNudgeSurfaceAnchoredContainer
+! * Requires trusted filters
 
 ! -- https://docs.google.com/videos/u/0/create (Vids)
 ! - "Start a new video" window
@@ -3181,7 +3184,10 @@ www.theatlantic.com##[class^="GamesHubLayout_featuredList__"]:has(> [data-event-
 ||thenewstack.io/no-cache/vertex-answer/$xmlhttprequest,~third-party
 thenewstack.io###tns-search-overview
 thenewstack.io##.search-disclaimer
+!#if ext_ublock
+!#else
 thenewstack.io#%#//scriptlet('remove-attr', 'placeholder', '.search-input[placeholder="This is AI-powered search. Type a prompt."]')
+!#endif
 ! Remove AI sparkles from search icon
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
 

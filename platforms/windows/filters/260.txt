@@ -1,9 +1,9 @@
-! Checksum: 5itWJj1fI0JSfipUL9NpoA
-! Diff-Path: ../patches/260/260-s-1784134678-14400.patch
+! Checksum: tEtvjdueeJd8mf2k6yDL9A
+! Diff-Path: ../patches/260/260-s-1784148673-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.52
-! TimeUpdated: 2026-07-15T16:55:56+00:00
+! Version: 2.0.0.53
+! TimeUpdated: 2026-07-15T20:48:28+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1246,11 +1246,15 @@ developer.chrome.com##tab:has(> [track-name="ai assistance"])
 developer.chrome.com##tab:has(> [track-name="for agents"])
 ! AI section
 developer.chrome.com##.devsite-landing-row:has(#span-idaidebug-with-aispan)
-! -- https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema (Documentation page)
-! "Page Summary"
-developers.google.com##devsite-key-takeaways-panel
+! -- https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart
 ! Left sidebar > "Chat" (IE: Ask About this Page)
 developers.google.com##.devsite-concierge-ai-panel--menu-item
+! MCP server promo banner
+developers.google.com##.devsite-banner-announcement:has([href="/analytics/devguides/MCP"])
+! Page Summary
+developers.google.com##devsite-key-takeaways-panel
+! "Explain this code" on code block
+developers.google.com##.devsite-explain-code
 ! -- https://developers.google.com/s/results?q=Test (Search results)
 ! "AI Powered" results
 developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com,web.dev##devsite-search-summary
@@ -1321,8 +1325,7 @@ docs.google.com##.goog-menuitem:has([aria-label^="Beautify this slide"]) + .goog
 ! "Create slide image" icon on top ribbon bar
 docs.google.com###openSidekickForSlideGenerationButton
 ! "Beautify this slide" notice below slide
-! * This leaves a blank space where the notice was. However, this remains even if the notice is manually closed by the user. Slide sizes are done dynamically via styles, so this may not be a solvable issue.
-docs.google.com##.appsSketchyGenerativeaiNudgesCanvasNudgeSurfaceAnchoredContainer
+! * Requires trusted filters
 ! -- https://docs.google.com/videos/u/0/create (Vids)
 ! - "Start a new video" window
 ! "Let's start creating" intro popup - infocards ("Storyboard", "Veo", "AI Avatar")

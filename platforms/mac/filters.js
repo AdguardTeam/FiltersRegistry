@@ -396,8 +396,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.71.18",
-			"timeUpdated": "2026-07-15T16:54:44+0000",
+			"version": "2.1.71.19",
+			"timeUpdated": "2026-07-15T20:47:34+0000",
 			"languages": []
 		},
 		{
@@ -478,8 +478,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.94.14",
-			"timeUpdated": "2026-07-15T16:54:48+0000",
+			"version": "2.1.94.15",
+			"timeUpdated": "2026-07-15T20:47:37+0000",
 			"languages": []
 		},
 		{
@@ -523,8 +523,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.94.16",
-			"timeUpdated": "2026-07-15T16:54:50+0000",
+			"version": "2.1.94.17",
+			"timeUpdated": "2026-07-15T20:47:39+0000",
 			"languages": [
 				"it"
 			]
@@ -568,8 +568,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.94.15",
-			"timeUpdated": "2026-07-15T16:54:52+0000",
+			"version": "2.1.94.16",
+			"timeUpdated": "2026-07-15T20:47:40+0000",
 			"languages": [
 				"ar"
 			]
@@ -587,8 +587,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.94.14",
-			"timeUpdated": "2026-07-15T16:54:54+0000",
+			"version": "2.1.94.15",
+			"timeUpdated": "2026-07-15T20:47:41+0000",
 			"languages": []
 		},
 		{
@@ -668,8 +668,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.67.84",
-			"timeUpdated": "2026-07-15T16:54:57+0000",
+			"version": "2.1.67.85",
+			"timeUpdated": "2026-07-15T20:47:44+0000",
 			"languages": []
 		},
 		{
@@ -751,8 +751,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.65.18",
-			"timeUpdated": "2026-07-15T16:55:03+0000",
+			"version": "2.1.65.19",
+			"timeUpdated": "2026-07-15T20:47:53+0000",
 			"languages": []
 		},
 		{
@@ -768,8 +768,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.65.89",
-			"timeUpdated": "2026-07-15T16:55:05+0000",
+			"version": "2.0.65.90",
+			"timeUpdated": "2026-07-15T20:47:53+0000",
 			"languages": []
 		},
 		{
@@ -900,8 +900,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.94.15",
-			"timeUpdated": "2026-07-15T16:55:11+0000",
+			"version": "2.1.94.16",
+			"timeUpdated": "2026-07-15T20:47:58+0000",
 			"languages": []
 		},
 		{
@@ -977,8 +977,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.93.41",
-			"timeUpdated": "2026-07-15T16:55:13+0000",
+			"version": "2.1.93.42",
+			"timeUpdated": "2026-07-15T20:47:59+0000",
 			"languages": []
 		},
 		{
@@ -1278,8 +1278,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.94.16",
-			"timeUpdated": "2026-07-15T16:55:19+0000",
+			"version": "2.1.94.17",
+			"timeUpdated": "2026-07-15T20:48:06+0000",
 			"languages": []
 		},
 		{
@@ -1295,8 +1295,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.86.30",
-			"timeUpdated": "2026-07-15T16:55:20+0000",
+			"version": "2.0.86.31",
+			"timeUpdated": "2026-07-15T20:48:08+0000",
 			"languages": []
 		},
 		{
@@ -1523,8 +1523,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.90.22",
-			"timeUpdated": "2026-07-15T16:55:45+0000",
+			"version": "2.1.90.23",
+			"timeUpdated": "2026-07-15T20:48:17+0000",
 			"languages": []
 		},
 		{
@@ -1626,8 +1626,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.87.47",
-			"timeUpdated": "2026-07-15T16:55:51+0000",
+			"version": "2.0.87.48",
+			"timeUpdated": "2026-07-15T20:48:22+0000",
 			"languages": [
 				"hi"
 			]
@@ -1708,8 +1708,8 @@
 			"displayNumber": 100,
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
-			"version": "2.0.0.52",
-			"timeUpdated": "2026-07-15T16:55:56+0000",
+			"version": "2.0.0.53",
+			"timeUpdated": "2026-07-15T20:48:28+0000",
 			"languages": []
 		}
 	]
