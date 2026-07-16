@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.7.45",
-			"timeUpdated": "2026-07-16T10:42:07+0000",
+			"version": "2.1.7.46",
+			"timeUpdated": "2026-07-16T13:35:34+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.77.61",
-			"timeUpdated": "2026-07-16T12:38:57+0000",
+			"version": "2.4.77.62",
+			"timeUpdated": "2026-07-16T13:35:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -617,8 +617,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.72.93",
-			"timeUpdated": "2026-07-16T12:39:30+0000",
+			"version": "2.2.72.94",
+			"timeUpdated": "2026-07-16T13:36:16+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -723,8 +723,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.90.19",
-			"timeUpdated": "2026-07-16T12:39:38+0000",
+			"version": "2.0.90.20",
+			"timeUpdated": "2026-07-16T13:36:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -745,8 +745,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.78.90",
-			"timeUpdated": "2026-07-16T12:39:40+0000",
+			"version": "2.0.78.91",
+			"timeUpdated": "2026-07-16T13:36:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1745,8 +1745,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.61.99",
-			"timeUpdated": "2026-07-16T10:43:04+0000",
+			"version": "2.1.62.0",
+			"timeUpdated": "2026-07-16T13:36:28+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
