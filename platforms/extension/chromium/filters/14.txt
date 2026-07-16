@@ -1,9 +1,9 @@
-! Checksum: 7Ynwg8OsZ6CSayjkcVEUcA
-! Diff-Path: ../patches/14/14-s-1784188118-3600.patch
+! Checksum: isKVx9UUmdKpgC9RLlaYQA
+! Diff-Path: ../patches/14/14-s-1784195324-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.72.89
-! TimeUpdated: 2026-07-16T07:45:58+00:00
+! Version: 2.2.72.90
+! TimeUpdated: 2026-07-16T09:45:55+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -64,7 +64,7 @@
 ##.woodmart-cookies-popup
 ###consent-box-lgpd
 ##.Cookie--bottom
-###fupi_cookie_notice
+##html:not(.fupi_blur) aside#fupi_cookie_notice
 ##.bst-panel
 ###cookies-baner-wrapper
 ###stoppage
@@ -2620,6 +2620,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+makrogeo.pl,angelis-e.gr#$##fupi_cookie_notice { display: none !important; }
+makrogeo.pl,angelis-e.gr#$#html.fupi_blur body>:not(.fupi_noblur) { filter: none !important; }
 enkreis.de#%#//scriptlet('trusted-set-local-storage-item', 'cm_cookie_pref', '{"essential":true,"extern":false}')
 app.filen.io#%#//scriptlet('trusted-set-local-storage-item', 'cookieConsent', '"needed"')
 internet.tim.com.br##div.fixed.transform:has(> div > p.text-xs > a.underline[href="https://www.cssscript.com/privacy-policy/"])
@@ -35784,6 +35786,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+vibekilled.rip##main > div.glass.fixed
 newarab.com##.notification-prompt-modal
 newarab.com###notification-floating-btn
 ||front.dreamstime.com/new/process-assets/js/push.js$domain=dreamstime.com

@@ -1,9 +1,9 @@
-! Checksum: nkbvVAXqJ9cADraJxjzkOQ
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1784185153-3600.patch
+! Checksum: rI5WRM4mUoDYpr0ShItsnw
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1784195351-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.90.16
-! TimeUpdated: 2026-07-16T06:56:09+00:00
+! Version: 2.0.90.17
+! TimeUpdated: 2026-07-16T09:46:03+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -32,7 +32,7 @@
 ##.woodmart-cookies-popup
 ###consent-box-lgpd
 ##.Cookie--bottom
-###fupi_cookie_notice
+##html:not(.fupi_blur) aside#fupi_cookie_notice
 ##.bst-panel
 ###cookies-baner-wrapper
 ###stoppage
@@ -1502,6 +1502,8 @@ knusperstuebchen.net,intercraft.pl#%#//scriptlet('trusted-click-element', 'dialo
 tippsling.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:c82d723')
 wegwandern.ch,compact-online.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:f4adc5d')
 cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:0c09270')
+makrogeo.pl,angelis-e.gr#$##fupi_cookie_notice { display: none !important; }
+makrogeo.pl,angelis-e.gr#$#html.fupi_blur body>:not(.fupi_noblur) { filter: none !important; }
 enkreis.de#%#//scriptlet('trusted-set-local-storage-item', 'cm_cookie_pref', '{"essential":true,"extern":false}')
 app.filen.io#%#//scriptlet('trusted-set-local-storage-item', 'cookieConsent', '"needed"')
 internet.tim.com.br##div.fixed.transform:has(> div > p.text-xs > a.underline[href="https://www.cssscript.com/privacy-policy/"])
