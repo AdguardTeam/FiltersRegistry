@@ -1,9 +1,9 @@
-! Checksum: wPBjOq6MIA03wUTsutU5/A
-! Diff-Path: ../patches/260/260-s-1784307279-14400.patch
+! Checksum: zWDQmozqGAzdfpxixRyphw
+! Diff-Path: ../patches/260/260-s-1784321396-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.55
-! TimeUpdated: 2026-07-17T16:52:34+00:00
+! Version: 2.0.0.56
+! TimeUpdated: 2026-07-17T20:47:35+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -818,6 +818,12 @@ facebook.com#?#[data-dcm-id="1"]:has(.rtl-ignore.f2.a:contains(/(Adobe Firefly|M
 ! AI post summary
 ! TODO: Filter mobile version
 www.facebook.com##div:not([class]):has( > .x1g0dm76.xpdmqnj > .x1120s5i.xyamay9.x1n2onr6 > .html-div.xdj266r.x14z9mp.xat24cr.x1lziwak.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x78zum5.x1n2onr6.xh8yej3)
+! -- https://www.facebook.com/groups/1404116417142065/posts/1791850441701992/
+! * TODO:  Other Posts - Summarized by AI (logged out)
+! Post title generated with AI (logged in)
+www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has(.x15mokao.x1ga7v0g.x16uus16.xbiv7yw.x1b0d499.x1d69dk1[style*="background-image: url(\"https://static.xx.fbcdn.net/rsrc.php/yD/r/dVRMatSddQj.webp\");"])
+! "What people are saying" comment summary (logged in)
+www.facebook.com##[role="presentation"] .x1jx94hy.x1obq294.x5a5i1n.xde0f50.x15x8krk.xjf5wm9.xod5an3.x1tpqehw.x1wsuqlk.x14vqqas.xz9dl7a.xpdmqnj.xsag5q8.x1g0dm76:has(> .x6s0dn4.x78zum5.x1q0g3np.x1qughib [alt="Meta AI logo"])
 ! -- https://www.facebook.com/profile.php?id=61588534388215
 ! Post with AI info disclaimer
 ! * Won't hide posts if linked directly
@@ -1462,10 +1468,13 @@ www.google.*##[role="listitem"]:has(.olrp5b)
 !   Without this, a small blank space can get added to the top of search results.
 www.google.com#@$?#div[role="navigation"] span:contains(AI Mode):upward(5) { remove: true; }
 ! Main AI Overview
+||www.google.*/async/folsrch$xmlhttprequest,domain=www.google.*
 www.google.*##[data-attnms]
-! Blank space for AI Overview at top of search results
+! * Blank space for AI Overview at top of search results
 www.google.*##.Kevs9.SLPe5b:has([data-attnms])
 www.google.*##.YNk70c.EjQTId:has(+ div [data-attnms]) #oFNiHe:empty
+! * Blank space when in middle of search results (Ex: https://www.google.com/search?q=stevo%27s+genai+blocklist)
+www.google.*##.ULSxyf:has(> .MjjYud > .Wm5I1e.SePcAf[data-tma="80"] [data-attnms])
 ! * Fix conflict with laylavish's AI blocklist
 !   See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/52
 www.google.com#@$?#.YzCcne { remove: true; }
@@ -3228,18 +3237,34 @@ www.youdao.com##.product-item:has([src="https://ydlunacommon-cdn.nosdn.127.net/c
 ! =============
 ! == YouTube ==
 ! =============
+! -- General
 ! Experiment flags (part of A/B testing)
-! * Remove "or ask a question" from search bar placeholder
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
-! * Autocomplete search suggestions
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
-! * Ask YouTube button
+! * Hide Ask YouTube button
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_searchbox_entrypoint', 'false')
-! * Don't shift searchbox upwards when focused
+! * Remove "Search or ask a question" searchbar placeholder text
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
+! * Remove autocomplete search suggestions
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
+! * Don't shift searchbar upwards when focused
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_client_changes', 'false')
 ! * Don't darken background when search bar is focused
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_ui', 'false')
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_web_m0_fixes', 'false')
+! * Unknown purpose
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_ui', 'false')
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_innertube_m0_fixes, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_insert_section_operation, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_sticky_chips, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_web_m1_features, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_hidden_state, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_suggest_jumping_fix, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_suggest_chip_ui, false)
+! Backup cosmetic filters for search
+! * Ask YouTube button in search bar
+www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
+! * Focus search bar, Ask YouTube button
+www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
+! * Focus search bar, Ask YouTube search suggestions
+www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 ! -- https://www.youtube.com/ (Homepage - logged in)
 ! "Your custom home" chip
 www.youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer:has(.ytChipShapeStartIconPadding)
@@ -3247,13 +3272,6 @@ www.youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer:h
 www.youtube.com#?##chip-shape-container:contains(Your custom feed)
 ! "Ask for videos any way you like"
 www.youtube.com##ytd-talk-to-recs-flow-renderer
-! Ask YouTube
-! * Ask YouTube button in search bar
-www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
-! * Focus search bar, Ask YouTube button
-www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
-! * Focus search bar, Ask YouTube search suggestions
-www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 ! -- https://www.youtube.com/watch?v=j9gZYYOIG-M (Video page)
 ! "Ask Questions" in description
 youtube.com##yt-video-description-youchat-section-view-model

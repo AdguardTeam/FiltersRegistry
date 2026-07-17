@@ -1,9 +1,9 @@
-! Checksum: DSEsqHaABgdDHXqAWQTgmQ
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1784307286-14400.patch
+! Checksum: 4XVGH9GkGsqTUMrtOomN+Q
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1784321402-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.55
-! TimeUpdated: 2026-07-17T16:52:34+00:00
+! Version: 2.0.0.56
+! TimeUpdated: 2026-07-17T20:47:35+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -274,6 +274,8 @@ www.facebook.com##[role="link"][href="/messages/t/36327,2227039302/"]
 www.facebook.com##[aria-label="Generate images using AI"]
 facebook.com#?#[data-dcm-id="1"]:has(.rtl-ignore.f2.a:contains(/(Adobe Firefly|Meta AI)/))
 www.facebook.com##div:not([class]):has( > .x1g0dm76.xpdmqnj > .x1120s5i.xyamay9.x1n2onr6 > .html-div.xdj266r.x14z9mp.xat24cr.x1lziwak.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x78zum5.x1n2onr6.xh8yej3)
+www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has(.x15mokao.x1ga7v0g.x16uus16.xbiv7yw.x1b0d499.x1d69dk1[style*="background-image: url(\"https://static.xx.fbcdn.net/rsrc.php/yD/r/dVRMatSddQj.webp\");"])
+www.facebook.com##[role="presentation"] .x1jx94hy.x1obq294.x5a5i1n.xde0f50.x15x8krk.xjf5wm9.xod5an3.x1tpqehw.x1wsuqlk.x14vqqas.xz9dl7a.xpdmqnj.xsag5q8.x1g0dm76:has(> .x6s0dn4.x78zum5.x1q0g3np.x1qughib [alt="Meta AI logo"])
 www.facebook.com#?#[role="main"] .x17zd0t2 > [role="button"]:contains(/(AI info|AI content)/):upward(.x1n2onr6.xh8yej3.x1ja2u2z):upward(3)
 www.facebook.com##[role="main"] .x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w:has(> .xsag5q8.xz9dl7a [data-type="hscroll-child"] [aria-label="Meta AI icon"])
 www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x11lfxj5.x135b78x.xjkvuk6.x1iorvi4:has(> .x1i10hfl.xjqpnuy.xc5r6h4.xqeqjp1.x1phubyo.x13fuv20.x18b5jzi.x1q0q8m5.x1t7ytsu.x972fbf.x10w94by.x1qhh985.x14e42zd.x9f619.x1ypdohk.xdl72j9.x2lah0s.x3ct3a4.xdj266r.x14z9mp.xat24cr.x1lziwak.x2lwn1j.xeuugli.xexx8yu.x18d9i69.x1n2onr6.x16tdsg8.x1hl2dhg.xggy1nq.x1ja2u2z.x1t137rt.x1q0g3np.x87ps6o.x1lku1pv.x1a2a7pz.x6s0dn4.x1qhmfi1.x1i5p2am.x1whfx0g.xr2y4jy.x1ihp6rs.x3nfvp2.x1r1pt67.x1g0dm76.xpdmqnj [clip-path="url(#_clip)"])
@@ -501,9 +503,11 @@ www.google.*#%#//scriptlet('ubo-json-prune', '$.*.*[?@.zp.udm=="50"]')
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 www.google.*##[role="listitem"]:has(.olrp5b)
 www.google.com#@$?#div[role="navigation"] span:contains(AI Mode):upward(5) { remove: true; }
+||www.google.*/async/folsrch$xmlhttprequest,domain=www.google.*
 www.google.*##[data-attnms]
 www.google.*##.Kevs9.SLPe5b:has([data-attnms])
 www.google.*##.YNk70c.EjQTId:has(+ div [data-attnms]) #oFNiHe:empty
+www.google.*##.ULSxyf:has(> .MjjYud > .Wm5I1e.SePcAf[data-tma="80"] [data-attnms])
 www.google.com#@$?#.YzCcne { remove: true; }
 www.google.*##.oGdvd
 www.google.*##[jscontroller="Elkdbc"]
@@ -1045,18 +1049,18 @@ yep.com##.css-2p650t-sidebar
 www.youdao.com##.nav_item:has(> [href^="https://lobsterai.youdao.com/"])
 www.youdao.com##.swiper-slide:has(> [src="https://ydlunacommon-cdn.nosdn.127.net/460a5a719e1f7b60a49fbb220136b56c.png"])
 www.youdao.com##.product-item:has([src="https://ydlunacommon-cdn.nosdn.127.net/cc4afa89cc5497e23b355bc7436cb1c9.png"])
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_searchbox_entrypoint', 'false')
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_searchbox_entrypoint', 'false')
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_client_changes', 'false')
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_ui', 'false')
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_web_m0_fixes', 'false')
-www.youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer:has(.ytChipShapeStartIconPadding)
-www.youtube.com#?##chip-shape-container:contains(Your custom feed)
-www.youtube.com##ytd-talk-to-recs-flow-renderer
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_ui', 'false')
 www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
 www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
 www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
+www.youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer:has(.ytChipShapeStartIconPadding)
+www.youtube.com#?##chip-shape-container:contains(Your custom feed)
+www.youtube.com##ytd-talk-to-recs-flow-renderer
 youtube.com##yt-video-description-youchat-section-view-model
 www.youtube.com###video-summary
 m.youtube.com##ytm-expandable-metadata-renderer:has(.expandableMetadataRendererCollapsedLeftSectionSummary)

@@ -1,8 +1,8 @@
-! Checksum: CSKsrrwJqRl1o/EF4kW6jg
+! Checksum: wZTiWTEJazPhqxAYJLgpnQ
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.55
-! TimeUpdated: 2026-07-17T16:52:34+00:00
+! Version: 2.0.0.56
+! TimeUpdated: 2026-07-17T20:47:35+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -715,6 +715,10 @@ www.facebook.com##[aria-label="Generate images using AI"]
 ! -- https://www.facebook.com/groups/810265769826493/posts/2180121562840900/ (Group post - logged out)
 ! AI post summary
 ! TODO: Filter mobile version
+! -- https://www.facebook.com/groups/1404116417142065/posts/1791850441701992/
+! * TODO:  Other Posts - Summarized by AI (logged out)
+! Post title generated with AI (logged in)
+! "What people are saying" comment summary (logged in)
 ! -- https://www.facebook.com/profile.php?id=61588534388215
 ! Post with AI info disclaimer
 ! * Won't hide posts if linked directly
@@ -1252,8 +1256,10 @@ www.google.*##.xOchs
 ! * Fix conflict with laylavish's AI blocklist.
 !   Without this, a small blank space can get added to the top of search results.
 ! Main AI Overview
+||www.google.*/async/folsrch$xmlhttprequest,domain=www.google.*
 www.google.*##[data-attnms]
-! Blank space for AI Overview at top of search results
+! * Blank space for AI Overview at top of search results
+! * Blank space when in middle of search results (Ex: https://www.google.com/search?q=stevo%27s+genai+blocklist)
 ! * Fix conflict with laylavish's AI blocklist
 !   See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/52
 ! Web Guide
@@ -2813,24 +2819,33 @@ yep.com##.css-2p650t-sidebar
 ! =============
 ! == YouTube ==
 ! =============
+! -- General
 ! Experiment flags (part of A/B testing)
-! * Remove "or ask a question" from search bar placeholder
-! * Autocomplete search suggestions
-! * Ask YouTube button
-! * Don't shift searchbox upwards when focused
+! * Hide Ask YouTube button
+! * Remove "Search or ask a question" searchbar placeholder text
+! * Remove autocomplete search suggestions
+! * Don't shift searchbar upwards when focused
 ! * Don't darken background when search bar is focused
-! -- https://www.youtube.com/ (Homepage - logged in)
-! "Your custom home" chip
-! Custom feed chip
-! "Ask for videos any way you like"
-www.youtube.com##ytd-talk-to-recs-flow-renderer
-! Ask YouTube
+! * Unknown purpose
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_innertube_m0_fixes, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_insert_section_operation, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_sticky_chips, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_web_m1_features, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_hidden_state, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_suggest_jumping_fix, false)
+!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_suggest_chip_ui, false)
+! Backup cosmetic filters for search
 ! * Ask YouTube button in search bar
 www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
 ! * Focus search bar, Ask YouTube button
 www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
 ! * Focus search bar, Ask YouTube search suggestions
 www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
+! -- https://www.youtube.com/ (Homepage - logged in)
+! "Your custom home" chip
+! Custom feed chip
+! "Ask for videos any way you like"
+www.youtube.com##ytd-talk-to-recs-flow-renderer
 ! -- https://www.youtube.com/watch?v=j9gZYYOIG-M (Video page)
 ! "Ask Questions" in description
 youtube.com##yt-video-description-youchat-section-view-model
