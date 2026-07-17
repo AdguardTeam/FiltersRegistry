@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: RDRbHR8P4ySi6asskM5aGw
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1784250292-14400.patch
+! Checksum: hCUBQowO5VSyTTWRmTXkPA
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1784266314-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.94.22
-! TimeUpdated: 2026-07-17T01:00:54+00:00
+! Version: 2.1.94.23
+! TimeUpdated: 2026-07-17T05:28:30+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -273,6 +273,7 @@
 ://a.*/interstitial?id=$script
 ://a.*/loader?*&keywords=$3p
 ://aclick.
+://act-http-ban.
 ://ad-start.
 ://ad.*&sid=
 ://ad.*/ad/*.gif
@@ -339,7 +340,6 @@
 =adunit/
 =advertising-core-
 =ajaxGetAds&
-=assignAds&
 =dynamic_banner&
 =GetAdHtml&
 =goto_adv&
@@ -356,7 +356,6 @@
 ?ad_server_
 ?ad_sub=
 ?ADFassetID=
-?adnet=
 ?adprovider=
 ?adRef=
 ?adroll_adv_id=
@@ -457,7 +456,6 @@ _ads_banner_
 _ads_desktop.
 _ads_one_
 _ads_view/
-_adsens_
 _adspromo.
 _adunit=
 _advertising_img.
@@ -483,6 +481,7 @@ _isab.
 _jx.ads/
 _liens/banniere-
 _mobileAds|
+_nnads/$subdocument
 _pages_ad.
 _personalized_ads
 _pop.php?z=
@@ -596,6 +595,7 @@ _werbebanner_
 ||ad4link.com^$3p
 ||ad6.fr^$3p
 ||adbox.lt^$3p
+||adclick.lt^$3p
 ||adhslx.com^$3p
 ||adinlive.com^$3p
 ||adintop.com^$3p
@@ -616,6 +616,7 @@ _werbebanner_
 ||adpicker.net^$3p
 ||adrequest.net^$3p
 ||adrock.tv^$3p
+||ads-x.com^$3p
 ||adsb4trk.com^$3p
 ||adschoom.com^$3p
 ||adscoo.com^$3p
@@ -703,7 +704,6 @@ _werbebanner_
 ||gestion2web.com^$3p
 ||getpublica.com^$3p
 ||getresponse.com^$3p
-||gingermedia.com^$3p
 ||globalrotator.com^$3p
 ||goracash.com^$3p
 ||hebdotop.com^$3p
@@ -813,7 +813,6 @@ _werbebanner_
 ||truenat.bid^$3p
 ||vertoz.com^$3p
 ||viahelium.com^$3p
-||videoplaza.se^$~object,3p
 ||vyking.io^$3p
 ||wedoo.com^$3p
 ||widespace.com^$3p
@@ -1712,7 +1711,6 @@ _werbebanner_
 ||loveonlinee.net^
 ||lp9mc1488vu4h677c3479.cyou^
 ||lqbvjmkoomerm.top^
-||lrqpjl8blkhjpzcy8.rest^
 ||luffeddonkeys.cyou^
 ||lvkwz.com^
 ||lvtuucmyfpz.com^
@@ -2387,7 +2385,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||4k.video/*.htm
 ||4k.video/*.php?
 ||4k.video/b.js
-||abc-du-gratuit.com^$image,3p
 ||abowman.com/widgets/
 ||actu-direct.fr/rep/rep_pub/
 ||ad.genybet.fr^
@@ -2477,7 +2474,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||goo.gl^$domain=gum-gum-streaming.com
 ||gpaf.net/b/$3p
 ||gsmfastest.com/banners/
-||guide-hebergeur.fr/img/tophebergement.gif
 ||happyescorts.com/images/stories/banner/
 ||hashflare.eu/banners/
 ||hellobar.com^$domain=application-remuneratrice.com
@@ -2521,11 +2517,10 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||msecnd.net^*.gif$domain=jeux.com
 ||mym-db.com/storage/$3p
 ||mynudez.com^$media,script
-||mypayingads.com/img/banners/$3p
-||mypayingcryptoads.com/img/banners/$3p
 ||netcomvad.com/shop-promo/
 ||netu.tv/js/restore_googl.js
 ||newsharecounts.s3-us-west-2.amazonaws.com/nsc.js
+||noogle.fr/banner/
 ||nospartenaires.com/visuel$3p
 ||offer.alibaba.com^$subdocument
 ||partenaire.bemove.fr^
@@ -2623,7 +2618,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||safelinku.com^$script,3p
 ||shorte.st^$script,3p
 ||shortem.com^$script,subdocument,3p
-||tmearn.com^$script,3p
 ||hostpic.org^$domain=fdesouche.com
 ||i.imgur.com/32xkKog.jpg
 ||i.imgur.com/4cUwoPk.gif
@@ -2783,6 +2777,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||autojournal.fr/wp-content/uploads/autojournal/2022/04/300x160.jpg
 ||autoplus.fr/wp-content/plugins/voiture-occasion/
 ||autotracer.org/cnc/?
+||ballad-et-vous.fr/wp-content/uploads/*/pub-
 ||batiactu.com/cap_batiactu/
 ||batiactu.com/cap_pub/
 ||batiactu.com/images/pub/
@@ -2930,6 +2925,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||rapidgator.net/images/pics/
 ||realite-virtuelle.com/wp-content/cache/min/1/pub.
 ||redirection-web.net/img/ewr-marque-blanche.gif
+||redirection-web.net/img/google-a.gif
 ||regie.story-fr.com^
 ||rennes-infos-autrement.fr/wp-content/uploads/2022/02/une-
 ||roulettechat.fr^*/facebook-api-pub/
@@ -2947,7 +2943,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||sky-animes.com/scripts/liens.php
 ||slideplayer.*/*/*/|$image
 ||smoothpre.com/ad?
-||sobusygirls.fr/uploads/editor/valentin.jpg
 ||static.lefigaro.fr/figads/
 ||static.pornovore.fr/zboobz/
 ||storage.googleapis.com/kompagnion/$3p
@@ -3189,7 +3184,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ###reklama3
 ###reklamarkaplan
 ###right-side-ad
-###right_ad_3
 ###right_pub
 ###rightrail-ad-2
 ###rotate_textads_2
@@ -3428,7 +3422,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.pubTitle
 ##.pubTop
 ##.pubVideo
-##.pub_300_250
 ##.pub_article
 ##.pub_banner
 ##.pub_banner_h
@@ -3472,6 +3465,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.pubsidebar
 ##.pubtexte
 ##.pubwrapper
+##.push-service-pub
 ##.question_page_ad
 ##.quickads_table
 ##.r-pub--banniere
@@ -3512,7 +3506,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.sponsored_banner
 ##.sponsorfooter
 ##.srcPubZone
-##.stackcommerce-widget
 ##.standard_adv_link
 ##.sticky-ad-holder
 ##.structure_wrapper-ad
@@ -3700,6 +3693,7 @@ lacanausurfinfo.com###promo
 ouedkniss.com###promo-header
 journaldemontreal.com###promo-pkp
 aliasdmc.fr,allocine.fr,annuaire-streaming.com,blablastream.com,centerblog.net,cocostream.rip,cpasfini.me,elbilad.net,film01stream.ws,flemmix.biz,iphonesoft.fr,jeux-2-filles.com,mac2sell.net,nrj.be,nrj.fr,nuked-klan.org,olivierdauvers.fr,orange.fr,planet-casio.com,redirection-web.net,science-et-vie.com,service-public.fr,sortir47.fr,streampourvous.lol,terre.tv,toutpratique.com,turf-fr.com,val-de-marne.gouv.fr,virtuoflash.com,voirfilms.live,wareziens.net###pub
+jeu.net###pub0
 ledemondujeu.com,minuteur-en-ligne.fr,musculaction.com,planeterenault.com,quiveutdufromage.com###pub2
 musculaction.com###pub3
 info-clipper.com###pubBando
@@ -3772,7 +3766,6 @@ leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
 tourhebdo.com##.annemp
 madagascar-tribune.com##.annonce
-sortir.eu##.annonce-container
 centre-presse.fr,lamontagne.fr,larep.fr,le-pays.fr,leberry.fr,lechorepublicain.fr,lejdc.fr,lepopulaire.fr,lyonne.fr##.annonce_prompteur
 autojournal.fr,autoplus.fr##.annonces-container
 autojournal.fr,autoplus.fr##.annonces-container-sidebar
@@ -3869,7 +3862,6 @@ xboxygen.com##.htpub
 2ememain.be##.hz-Banner
 hitek.fr##.incontent
 quebeccoupongratuit.com##.inner-pub
-youscribe.com##.interpage
 maison-travaux.fr##.intersticiel_block
 viamichelin.be,viamichelin.ch,viamichelin.com,viamichelin.fr##.itinerary-index-advertising
 dealabs.com##.js-idealo-section
@@ -3955,6 +3947,7 @@ niooz.fr##.pubDiv
 science-et-vie.com##.pub_dfp
 winds-up.com##.pubhaut
 heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.publSibar
+jeuxvideo.com##.publi_info + ul
 lanutrition.fr##.push--shop
 flvto.biz##.push-offer
 souk.ma##.rbanner-wrap
@@ -4135,13 +4128,11 @@ ouest-france.fr##div[id^="pub_pave_article"]
 universfreebox.com##div[id^="publicite-"]
 zonebourse.com##div[id^="zpp"]
 androidpit.fr,forumpiscine.com##div[style*="min-height:90px;"]
-oxtorrent.my##div[style*="opacity:"]
 superphysique.org##div[style*="text-align: center"][style*="width:250px"]
 gamalive.com##div[style*="width:160px;height:600px;"]
 judgehype.com##div[style*="width:300px;height:600px;"]
 echoroukonline.com,maxifoot.fr##div[style*="width:468px;"]
 forum.gsmhosting.com##div[style="float:right; width:336px; height:560px; margin-left:10px"]
-supportduweb.com##div[style="margin:auto;margin-top:2px;width:728px;height:90px;"]
 geny.com##div[style^="width: 300px; height: 250px;"]
 poki.com##div[width="160"][height="600"]
 poki.com##div[width="300"][height="250"]
