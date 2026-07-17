@@ -1,9 +1,9 @@
-! Checksum: vxWpc0tdXcvvaPv5PX22vg
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1784257872-3600.patch
+! Checksum: qihMxgQBO8JF22BUaG5OVQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1784265073-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.72.97
-! TimeUpdated: 2026-07-16T16:33:42+00:00
+! Version: 2.2.72.98
+! TimeUpdated: 2026-07-17T05:07:43+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -39,7 +39,7 @@
 ##.woodmart-cookies-popup
 ###consent-box-lgpd
 ##.Cookie--bottom
-##html:not(.fupi_blur) aside#fupi_cookie_notice
+##html:not(.fupi_blur):not(.fupi_scroll_lock) aside#fupi_cookie_notice
 ##.bst-panel
 ###cookies-baner-wrapper
 ###stoppage
@@ -1642,6 +1642,10 @@ knusperstuebchen.net,intercraft.pl#%#//scriptlet('trusted-click-element', 'dialo
 tippsling.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:c82d723')
 wegwandern.ch,compact-online.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:f4adc5d')
 cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:0c09270')
+salaterka.pl#$##fupi_cookie_notice { display: none !important; }
+salaterka.pl#$#body { overflow: auto !important; }
+makeup.pl#$##GDPR { display: none !important; }
+makeup.pl#$#html, body { overflow: auto !important; touch-action: auto !important; overscroll-behavior: auto !important; }
 ||licytacje.komornik.pl/js/pol-cookies-consent-manager.js
 ovhcloud.com##.cmp-overlay
 ovhcloud.com##.cmp-consent-modal
@@ -6602,7 +6606,7 @@ veepn.com##.cookie_privacy
 366.ru,gorzdrav.org##.b-cookie-popup
 bundeswehrkarriere.de,beruferadar.de,karrierekaserne.de##.autoprivacy
 hydra.bot###__layout > div > .flex-wrap.items-center.rounded-lg.fixed.bottom-0.max-w-screen-md
-renewal.ru##div[data-cookie-banner]
+doppelherz.pl,doppelherz.*,renewal.ru##div[data-cookie-banner]
 skechers.com.tr###cl-cookie-settings
 realme.com##.r-cookie-footer ~ div.mask-untouch
 boxy-svg.com,checkpoint.com###notification
@@ -26616,6 +26620,7 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+legalbet.by,legalbet.*##.promo-articles
 wikiloc.com###view__adpremium
 wedevs.com##.campaign
 wishmaster.me##.blog-detail-delivery
