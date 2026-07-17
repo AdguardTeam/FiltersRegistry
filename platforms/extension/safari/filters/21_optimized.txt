@@ -1,9 +1,9 @@
-! Checksum: //RRg2Z37MSqJOdnfiXymw
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1784265062-3600.patch
+! Checksum: yhJbPMBUWM5aQRuKJgA+rg
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1784288145-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.46.30
-! TimeUpdated: 2026-07-17T05:07:55+00:00
+! Version: 2.0.46.31
+! TimeUpdated: 2026-07-17T11:33:24+00:00
 ! Expires: 5 days (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -1095,6 +1095,9 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+gq.com##.body__inner-container > div[class]:has(a[class^="InContentAnchor-"][href^="https://www.gq.com/v2/offers/"])
+gq.com##.journey-unit__container:has(a[aria-label="Opens in a new window"] img)
+gq.com##.nav-rollover__component:has(a[aria-label="Opens in a new window"] img)
 legalbet.by,legalbet.*##.promo-articles
 wikiloc.com###view__adpremium
 wedevs.com##.campaign
@@ -4023,6 +4026,7 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 !######### JS tweaks ##########
 !##############################
+moviebite.cc#%#//scriptlet('prevent-addEventListener', 'contextmenu', 'preventDefault')
 romsdroid.com#%#//scriptlet('adjust-setTimeout', 'download_loading', '*', '0.001')
 cloudfam.io#%#//scriptlet('adjust-setInterval', 'remain--', '*', '0.001')
 hanopatch4u.com#%#//scriptlet('adjust-setTimeout', 'elementor-invisible', '*', '0.001')
