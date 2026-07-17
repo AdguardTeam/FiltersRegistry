@@ -1,9 +1,9 @@
-! Checksum: AbONYctDn6kjmU5ljXeIag
-! Diff-Path: ../patches/236/236-s-1783921642-14400.patch
+! Checksum: U2+xRU4XZ7kRi3H1eupb+w
+! Diff-Path: ../patches/236/236-s-1784279874-14400.patch
 ! Title: road-block light
 ! Description: Romanian ad blocking filter subscription.
-! Version: 2.0.4.17
-! TimeUpdated: 2026-07-13T05:44:36+00:00
+! Version: 2.0.4.18
+! TimeUpdated: 2026-07-17T09:15:02+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ROU: Romanian Ad (ROad) Block List Light
@@ -39,7 +39,7 @@
 ||ads3-adnow.com^
 ||tesseradigital.com^
 ||observatorulph.ro/cdn-cgi/apps/*$script,~third-party
-observatorulph.ro##[class^="obser-internet_corp"]:has(.obser-adlabel)
+observatorulph.ro##[class*="obser-internet_corp"]:has(.obser-adlabel)
 ||thumbs.gfycat.com^$image,domain=deschide.md
 @@||s1.olx.ro/static/olxro/naspersclassifieds-regional/olxeu-atlas-web/static/js/tracking/ninja.js$script,domain=olx.ro
 ||ivm.antenaplay.ro/fadead_check.php$xmlhttprequest
@@ -153,11 +153,8 @@ zch.ro##.widget_sp_image-image-link
 zch.ro##.widget_sp_image
 zch.ro##.bookingaff
 ! https://ziartarguneamt.ro
-||ziartarguneamt.ro/wp-content/uploads/2020/08/ardealul.png$image
-ziartarguneamt.ro###block-3
-ziartarguneamt.ro###block-4
-ziartarguneamt.ro###block-6
-ziartarguneamt.ro###block-7
+ziartarguneamt.ro##[href]:not([href*="ziartarguneamt.ro"], [href^="/"], [href*="#"]):has([src])
+ziartarguneamt.ro#?#.primary-sidebar-widget:contains(publi)
 ! https://neamt24.ro
 ||neamt24.ro/wp-content/uploads/2020/02/mplus-fm-creative-print*.jpg$image
 ||neamt24.ro/wp-content/uploads/2020/02/WhatsApp-Image-2020-02-22-at-09.57.34*.jpeg$image
@@ -619,6 +616,7 @@ ziuanews.ro###pub-top-container
 ziuanews.ro##.ads-container
 ziuanews.ro##.adsz
 ziuanews.ro##.pub
+ziuanews.ro##[href]:not([href*="ziuanews.ro"], [href^="/"], [href*="#"]):has([src])
 ziaruldeiasi.ro##[href*="adclick"]
 asculta-live.com##.ad
 cetateanul.net##[href*="/?utm_source=cetateanul"]
@@ -1099,6 +1097,8 @@ turbomag.ro##.homepage-banner
 zvj.ro##[class*="banner"]
 zvj.ro#?#.boxstire2head:contains(Publicitate)
 ||confortmedia.ro^$third-party
+zvj.ro##[href]:not([href*="zvj.ro"], [href^="/"], [href*="#"]):has([src])
+zvj.ro#?#.titluboxdreapta:contains(/Pub|Promo/)
 vloggeri.com##[href^="https://event.2performant.com/"]
 ||damboviteanul.com^*.gif$image
 damboviteanul.com##.widget_custom_html:has([href][target="_blank"]):not(*:has([href*="damboviteanul.com"])):not(*:has([id="widget_container_curs"]))
@@ -1460,18 +1460,6 @@ turdainfo.ro##.module-inner
 turdainfo.ro##.banner
 ! detection ziaruldeiasi
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=ziaruldeiasi.ro
-!spam => https://publicrecord.ro/2024/10/22/caruta-cu-troli-din-caracal-si-teoriile-conspirationiste/
-||olt-media.ro^
-||romania-unita.ro^
-||romania-noastra.ro^
-||jurnalul-militar.ro^
-||romanulnationalist.ro^
-||gazeta-romaneasca.ro^
-||universul-stirilor.ro^
-||romanii-liberi.ro^
-||ziarul-democrat.ro^
-||oltenia-actualitati.ro^
-||rezistentaromanesca.ro^
 bihon.ro##[href^="https://www.melindainstal.ro/"]
 ! popunders
 ||gonowx.com/*?filmexxx.live$script,domain=filmexxx.live
@@ -1628,6 +1616,7 @@ tractionisti.ro##.stream-item:not([href*="tractionisti.ro"])
 obiectivderadauti.ro##.wpb_wrapper:not(*:has([href*="obiectivderadauti.ro"], [href*="facebook.com"], [href="#"])):has([href])
 ||obiectivdesuceava.ro/*banner$image
 ||obiectiv-mehedintean.ro/imgs/profin-small.jpg$image
+obiectiv-mehedintean.ro##.widgetcontainer:has([href*="profin"])
 2mnews.ro##.wpb_wrapper:not(*:has([href*="2mnews.ro"], [href*="facebook.com"], [href="#"])):has([href])
 2mnews.ro##.textwidget:not(*:has([href*="2mnews.ro"], [href*="facebook.com"], [href="#"])):has([href])
 ziuaveche.ro##[align="center"]:not(*:has([href*="ziuaveche.ro"], [href*="facebook.com"], [href="#"])):has([href])
@@ -1922,6 +1911,24 @@ stirilafixdb.ro##[href]:not([href*="stirilafixdb.ro"], [href^="/"], [href*="#"])
 incomod-media.ro##[href]:not([href*="incomod-media.ro"], [href*="incomod-media.blogspot.ro"], [href^="/"], [href*="#"]):has([src])
 incomod-media.ro#?#.mvp-widget-home-title:contains(PUB)
 radio.com.ro#?#.card-header:contains(Pub)
+! https://github.com/uBlockOrigin/uAssets/issues/33744
+||filmexxx.ro/*push
+||filmexxx.ro/assets/js/cxads.js
+filmexxx.ro##.videoPlayerAD
+cronicadeseverin.ro##.widget_custom_html
+ziaruldegarda.ro##[href]:not([href*="ziaruldegarda.ro"], [href^="/"], [href*="#"]):has([src])
+ziaruldegarda.ro##[id^="swiftadswidget"]
+ziaruldegarda.ro##.block.widget:has([href]:not([href*="ziaruldegarda.ro"], [href^="/"], [href*="#"]):has([src]))
+ziaruldeolt.ro##[style^="background-image"]
+zdp.ro##[href]:not([href*="zdp.ro"], [href^="/"], [href*="#"]):has([src])
+||zdp.ro/*banner_GME.jpg$image
+ziarulderoman.ro##[href]:not([href*="ziarulderoman.ro"], [href^="/"], [href*="#"]):has([src])
+ziarulderoman.ro##.banner-vertical
+ziarulderoman.ro##.custom-html-widget.textwidget
+ziarulderoman.ro##center:has([src*="gif"])
+||ziarulderoman.ro/wp-content/uploads/2016/05/danlinxxl.jpg$image
+ziaruldetulcea.ro##[href]:not([href*="ziaruldetulcea.ro"], [href^="/"], [href*="#"]):has([src])
+automotorsisport.ro##[href]:not([href*="automotorsisport.ro"], [href^="/"], [href*="#"]):has([src])
 ! Title: Romanian specific uBO filters
 ! Expires: 3 days
 ! Issue tracker: https://github.com/tcptomato/ROad-Block/issues
@@ -2044,3 +2051,6 @@ filmeonline123.com#%#//scriptlet('ubo-nowoif')
 buzau.net#%#//scriptlet('ubo-aeld', 'contextmenu')
 ! https://github.com/tcptomato/ROad-Block/issues/772
 vasluianul.ro#%#//scriptlet('ubo-nowoif')
+! https://github.com/uBlockOrigin/uAssets/issues/33744
+filmexxx.ro#%#//scriptlet('ubo-rmnt', 'script', 'window.location.href')
+filmexxx.ro#%#//scriptlet('ubo-no-fetch-if', 'php')
