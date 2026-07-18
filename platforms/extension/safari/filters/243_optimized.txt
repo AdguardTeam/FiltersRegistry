@@ -1,9 +1,9 @@
-! Checksum: ik9FsVj6+3fvyiky3H4nig
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1784193559-14400.patch
+! Checksum: C9preiEvy9D8s8whUFDkzg
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1784365679-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.24.97
-! TimeUpdated: 2026-07-16T09:16:20+00:00
+! Version: 2.0.24.98
+! TimeUpdated: 2026-07-18T09:05:07+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -1133,7 +1133,7 @@ naringsliv.ax,vdsvepet.se##.banner-block
 naturvetarna.se##.Advertisement
 netdoktor.se,netdoktorpro.se##.article-list__item:has(.bam-ad-slot, .article-list__item__box--sponsored, b-a-d)
 netdoktor.se,netdoktorpro.se##.article-list__item__link--sponsored, .ispanorama, #Popup, .ElementAdvertisement, #temporary-ad-take-over-container
-netflixguiden.se##div.lboard, div.instream-dynamic, #top-area-promo, div.sidebar div.sticky, .promo, .lboard-desktop, .lboard-mobile, #bottom-sticky-promo
+netflixguiden.se##div.lboard, div.instream-dynamic, #top-area-promo, div.sidebar div.sticky, .promo, .lboard-desktop, .lboard-mobile, #bottom-sticky-promo, .section.thanks
 news55.se##div.container:has(a[href="/author/news55-partner/"])
 newsner.com,humorbibeln.se,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibeln.se,nojeslivet.se###wsfb-container, .share-buttons, .ad-space, div[id^="ad-"], div[id*="banner"], div[id^="tower"], div[id^="box_"], div[id^="intext_"]
 newsner.com,humorbibeln.se,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibeln.se,nojeslivet.se##.ssp_divider:has(.sponsored-bar)
@@ -1256,7 +1256,7 @@ rabattsok.se,prv.se###cookie-bar
 racemagazine.se##article + div.bg-white:has(.ad-inner)
 racemagazine.se###sidebar > .h-full:has(#asideAD)
 racemagazine.se##.landing-ad
-radio-sveriges.se###original_taboola, #optimize_experiment
+radio-sveriges.se###original_taboola, #optimize_experiment, #appDownloadAd, .right-sidebar__ad, .radio-detail-mobile-mrec
 radio.se##div[data-testid="detail-player"] .hidden:has(.transition-colors)
 radio.se##div[data-testid="page-holder"] > section.content-visibility-auto:not([id]):has(.ad-container)
 radio.se###always-visible-banner-desktop-banner, #sticky-reklame-header
@@ -1536,6 +1536,7 @@ tidningensyre.se,landetsfria.nu,fempers.se,tidningenglobal.se#%#//scriptlet('ubo
 tidningensyre.se,landetsfria.nu,fempers.se,tidningenglobal.se#%#//scriptlet('ubo-remove-cookie', 'wordpress_sezz_id')
 tidningen.djurskyddet.se##.ai-track
 tidningen.se##.sidebar .widget_widget_code, .casino, .native-bg
+tidskriftenopera.se##div[id^="P_"]
 tidskriftenopera.se##.master-slider-parent:has(.ad-track)
 tillnyktrad.se,triartplay.se##.cookie-consent
 tobaksfakta.se,dagenslogistik.se,magasinetkonkret.se#$#.pum-open { overflow:auto!important }
@@ -1995,7 +1996,7 @@ zeromagazine.nu##div[id^="ads"]
 ##[class*="advads_ad_widget"]:not(body):not(html)
 ##[id^="adace_ads"]
 &displayMode=modal$domain=dagen.se
-*$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net|feber.se|tjock.se
+*$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net|feber.se|tjock.se|guldkanalen.se
 *$script,~third-party,domain=hrsvepet.se|cfosvepet.se|vdsvepet.se
 *$xmlhttprequest,third-party,domain=skargarden.se
 -VideoAD$domain=alekuriren.se
@@ -2328,6 +2329,7 @@ zeromagazine.nu##div[id^="ads"]
 /iframeadvloader.$script
 /illustrationer/annons_
 /images/BetLogos$domain=sporttv.nu
+/images/aff$domain=netflixguiden.se
 /images/annonser
 /images/banners$domain=alghundklubben.com|rivieraklubben.com
 /images/banner$domain=sporttv.nu
@@ -3235,6 +3237,7 @@ _banner.php?$domain=tvmatchen.nu
 ||images.woo.a2d.tv/creative_assets$image,domain=tv4play.se|tv4.se|fotbollskanalen.se|koket.se
 ||imgix.net^*/analytics.$script
 ||imgsct.cookiebot.com/1.gif
+||img.podcast24.org^$domain=podcasts.nu
 ||img.upsales.com/*/visit$script,important
 ||imp.laget.se^
 ||inboxads.com^$third-party
