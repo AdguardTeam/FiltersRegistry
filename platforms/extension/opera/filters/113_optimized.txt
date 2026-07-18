@@ -1,9 +1,9 @@
-! Checksum: qP50ZE5I3+L2/mI0+aGCoA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1784336574-14400.patch
+! Checksum: Lv8eZEh0hyL52LKpfM2ImQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1784352026-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.94.28
-! TimeUpdated: 2026-07-18T00:59:08+00:00
+! Version: 2.1.94.29
+! TimeUpdated: 2026-07-18T05:17:07+00:00
 ! Expires: 10 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -296,7 +296,6 @@
 ://banners2.$third-party
 ://be.ads.
 ://block.*/rotator-$script
-://block.*/rotator/*.js|$script
 ://cdn.*/p/?zid=
 ://cdn.ad.
 ://cdn.ads.
@@ -337,7 +336,6 @@
 =aadblock_
 =ad_leaderboard,
 =adunit/
-=advertising-core-
 =ajaxGetAds&
 =dynamic_banner&
 =GetAdHtml&
@@ -383,6 +381,7 @@
 ?style=300x250-
 ?style=720x90-
 ?tag_id=*&sw_url=
+?tgt=*&zoneid=
 ?tour=*&campaign=$third-party
 ?type=ad;
 ?type=ads&
@@ -649,6 +648,7 @@ _werbebanner_
 ||askmecca.com^$third-party
 ||atedra.com^$third-party
 ||bazardux.com^$third-party
+||beead.fr^$third-party
 ||best-deals-products.com^$third-party
 ||bestcontentwork.top^$third-party
 ||betterbannerscloud.com^$third-party
@@ -1726,7 +1726,6 @@ _werbebanner_
 ||lx1t1w6e4rk6tuhc.cyou^
 ||lzexnxwjsmof.com^
 ||mabblewows.qpon^
-||madamecam.com^
 ||magetrigla.com^
 ||magicalbifoil.shop^
 ||makranwide.qpon^
@@ -2622,7 +2621,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 /script.$domain=amateurfrancais.com|sexefelin.com|tootx.com|tubixe.com|twistedporn.com|vidsexe.com|webchoc.com
 /scriptpop.$domain=amateurfrancais.com|sexefelin.com|tootx.com|tubixe.com|twistedporn.com|vidsexe.com|webchoc.com
 /test.$domain=amateurfrancais.com|sexefelin.com|tootx.com|tubixe.com|twistedporn.com|vidsexe.com|webchoc.com
-||internal.terrafemina.com^
 ||bitly.com^$script,third-party
 ||cpmlink.net^$script,third-party
 ||link.tl^$script,third-party
@@ -3087,6 +3085,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###fake-player-wrapper
 ###fixed-ads
 ###foot_pub
+###footer-ad-formation
 ###footer_pub
 ###fragment-header-ad
 ###google-ads-1
@@ -3375,7 +3374,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.player__ads
 ##.playerpub
 ##.pmd-ads-mobile
-##.pmdfp_habillage
 ##.popupads
 ##.porn-videos-ads
 ##.position_pub
@@ -3435,6 +3433,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pubTitle
 ##.pubTop
 ##.pubVideo
+##.pub_160x600
 ##.pub_article
 ##.pub_banner
 ##.pub_banner_h
@@ -3542,7 +3541,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.widget-advert
 ##.widget-le_guide
 ##.widget-pub
-##.widget_advncdads
 ##.widget_box_pub
 ##.widget_keleops-ad
 ##.widget_keleops-adhalfpage
@@ -3552,6 +3550,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.wppasrotate
 ##.wrapper.ad
 ##.wrapperPub
+##.wrapper_pub_sidebar
 ##.xplayer-banner-bottom
 ##.zonepub
 ##[class*="-ad-placeholder-"]
@@ -3599,11 +3598,9 @@ grandecran.fr###ban_big
 degrouptest.com,edcom.fr,lesmobiles.com###bandeauFooter
 manga-news.com###bangeante
 appcake.net,boursier.com,lesaffaires.com,maliweb.net,nrj.fr###banner
-lil-life.com###bannerRightTop
 clubpoker.net###bannerTopWrapper
 lacanausurfinfo.com###banner_footer
 jeuxvideo.com###banner_jv
-tirage-gagnant.com###banner_promo
 aliceadsl.fr###bannershop
 cowcotland.com###bannertop
 actu-environnement.com,emploi-environnement.com###banniereRight
@@ -3656,6 +3653,7 @@ mobiles-actus.com###header3
 leboncoin.fr###home-top-banner
 ma-reduc.com###home-top-offers
 videopornoinceste.xxx###horizontal-banner
+madstef.com###idkey1ban
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
 jeuxvideo-live.com###jeuAssocie
@@ -3810,7 +3808,6 @@ journaldemontreal.com##.bigbox-container
 autonews.fr##.bl-partner
 egora.fr##.block-egora-pub
 cotemaison.fr##.block_partners
-jardiner-malin.fr##.boutiqueAd
 techniques-ingenieur.fr##.boxPub
 lepoint.fr##.branding
 gamergen.com,generation-nt.com##.bup
@@ -3862,7 +3859,6 @@ homecinema-fr.com##.hab_link
 cbanque.com,clubpronostics.com,gratuiciel.com,lelogicielgratuit.com,logicielmac.com,logitheque.com,made-in-algeria.com,made-in-tunisia.net,maghrebex.com,mediscom.com,quetelecharger.com,toucharger.com##.habillage
 le2minutes.com,senscritique.com##.habillage-left
 realite-virtuelle.com##.halfpageAd
-refurbgeneration.com##.head_ebay
 avis-express.com,lnr-dz.com##.header-banner
 medialot.fr##.header-sub
 tvanouvelles.ca##.header-topBar-sticky
@@ -4046,7 +4042,6 @@ basket-infos.com##a > img[alt^="Pub"]
 maligue2.fr##a > img[alt^="Sponsor"]
 medialot.fr##a > img[height="250"]
 cowcotland.com##a#habiclic
-voyageforum.com##a[class^="offer"]
 zdnet.fr##a[data-track-category="powercenter"]
 audiofanzine.com##a[href*="&ref="]
 free-reseau.fr##a[href*="&tag=freereseaufr-"]
@@ -4126,7 +4121,6 @@ mahjong.fr##div[class^="sub_jeu_72890"]
 fnac.com##div[data-component-id="kamino"]
 e-monsite.com##div[data-role="sp"]
 e-monsite.com##div[data-role="sp2"]
-edcom.fr##div[data-target]
 maisonapart.com##div[id*="-pub-"]
 maisonapart.com##div[id*="-publi-"]
 welovetennis.fr##div[id*="banner-top"]
@@ -4232,6 +4226,7 @@ yggtorrent.support##html
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,third-party,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,third-party
 @@||publicwww.com/images/labels.$image,~third-party
+@@||reseauforum.org/*/modules/ad/serve.php?$domain=reseauforum.org
 @@||ab.9xbud.com/extract|$xmlhttprequest,domain=9xbuddy.online
 @@||ab.9xbud.com/token|$xmlhttprequest,domain=9xbuddy.online
 @@||ajax.googleapis.com/ajax/libs/$script,domain=123chill.uk|4anime.to|9xbuddy.online|adf.ly|akumachi.com|android-zone.ws|anime-loads.org|atomcurve.com|atominik.com|ay.gy|babblecase.com|casualient.com|coginator.com|cogismith.com|cracksurl.com|crichd.com|crichd.live|dailyuploads.net|databasegdriveplayer.co|davioad.com|dlpsgame.com|ezie.cc|filmpornofrancais.fr|foumovies.net|gamecopyworld.eu|gdriveplayer.me|gdriveplayer.to|gnulahd.nu|gsurl.in|gum-gum-streaming.com|hglink.to|ithepiratebay.com|j.gs|kaitect.com|kializer.com|kibuilder.com|kickassanime.mx|kimechanic.com|kinovibe.co|koora.vip|larati.net|lelscanfr.com|listeamed.net|mavanimes.co|microify.com|mmoity.com|nortorrent.org|offmp3.com|onion.ly|ouo.io|ouo.press|picocurl.com|picons.eu|pintient.com|q.gs|quainator.com|quamiller.com|replaymod.com|riffhold.com|saison-streaming.com|segavid.com|shahidlive.co|shink.me|simizer.com|simkl.com|skamaker.com|skamason.com|softmaroc.org|speedtorrent.com|streamlive.to|syrialive.cc|syrialive.tv|taylorplayer.com|tinyium.com|toonanime.co|toonanime.xyz|torrentdownload.info|twineer.com|ukpass.co|unblocked2.fun|unblocked2.vip|uppit.com|viahold.com|vializer.com|vidnest.fun|vidsrc.fyi|vidsrc.me|vidsrc.mov|vidsrc.net|vidsrc.to|vidsrc.xyz|viwright.com|voirfilms.live|vsembed.ru|xfilesharing.com|yabuilder.com|yamechanic.com|yoalizer.com|yobuilder.com|yoineer.com|yoitect.com|zipansion.com
