@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: d02XTEorx9T/0U0cwmtYSg
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1784423095-14400.patch
+! Checksum: 1C0cKwROWF7YHouEwCmxOQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1784439477-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.94.34
-! TimeUpdated: 2026-07-19T01:01:02+00:00
+! Version: 2.1.94.35
+! TimeUpdated: 2026-07-19T05:34:28+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -226,7 +226,6 @@
 /pub_250_
 /pub_title.
 /publicidadsetup/*
-/publicit%c3%a9/*
 /publicite-$domain=~publicite-decor.fr|~publicite-lepeut-dole.fr
 /publicite.
 /publicite/*
@@ -254,6 +253,7 @@
 /simple/ads.js
 /skipad.
 /static.ads-
+/sw.*.js?promo=
 /syndication.*&idzone=
 /trackads.
 /twitter-ads.
@@ -270,7 +270,6 @@
 /wgAds.
 /widgets.stackcommerce.com/*
 ://a.*/display?zone_id=
-://a.*/interstitial?id=$script
 ://a.*/loader?*&keywords=$3p
 ://aclick.
 ://act-http-ban.
@@ -483,7 +482,6 @@ _mobileAds|
 _nnads/$subdocument
 _pages_ad.
 _personalized_ads
-_pop.php?z=
 _popads.
 _pub.gif
 _pub_col_
@@ -494,6 +492,7 @@ _pubscript.
 _regie/aff.
 _regiepub/
 _rivcash_banner_
+_sca_ads.
 _sdk_ad_
 _side_ads01.
 _smads_
@@ -661,6 +660,7 @@ _werbebanner_
 ||carpediem.fr^$3p
 ||cclpub.com^$3p
 ||cdn3.net^$3p
+||cfgr2.com^$3p
 ||circulate.com^$3p
 ||cityads.com^$3p
 ||clcktrax.com^$3p
@@ -839,7 +839,6 @@ _werbebanner_
 ||lt45.net^$3p
 ||newstat.net^$3p
 ||static-dscn.net^$3p
-||deskbabes.com^$3p
 ||virtuagirl.com^$3p
 ||0w1rqq69fi0e.com^
 ||167vxewyb4mbe7.rest^
@@ -950,7 +949,6 @@ _werbebanner_
 ||accostcrit.com^
 ||accreditedquite.com^
 ||achyrepeatitchy.com^
-||acidmercy.com^
 ||acoponposeur.com^
 ||actionrtb.com^
 ||acuchiunquert.com^
@@ -2340,6 +2338,7 @@ _werbebanner_
 ||daftsex.com^$popup
 ||diffusionsubletunnamed.com^$popup
 ||digital2cloud.com^$popup
+||djummer.com^$popup,3p
 ||dmsik.com^$popup
 ||dosya-indirici.online^$popup
 ||dropcatch.com^$popup,3p
@@ -2949,7 +2948,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||satim-dz.com/images2/
 ||securite.01net.com^
 ||seneweb.com/dynamic/modules/banners/
-||sexefelin.com/images/*.gif
 ||signification-prenom.com/Images/voyance-par-telephone.gif
 ||skitour.fr/divers/a/
 ||sky-animes.com/scripts/liens.php
@@ -3197,7 +3195,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ###reklama3
 ###reklamarkaplan
 ###right-side-ad
-###right_pub
 ###rightrail-ad-2
 ###rotate_textads_2
 ###sagreklam
@@ -3320,6 +3317,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.inside-pub-container
 ##.istdg-sponsored
 ##.it-sponsor-site
+##.item-pubb
 ##.jeg_ad_module
 ##.jeg_ads_hide_desktop
 ##.jeg_ads_hide_phone
@@ -3526,7 +3524,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.tag-sponsored-content
 ##.text_pub
 ##.top-banner-pub
-##.top-horizontal-pub
 ##.top-publicite
 ##.top-side-pub
 ##.topPub
@@ -3650,14 +3647,12 @@ bdgest.com,bedetheque.com###hab_click_side
 banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comics-sanctuary.com,ffeminin.com,gamer-network.fr,jeux-mmorpg.fr,lequipement.fr,letelegramme.fr,nrj.fr###habillage
 besac.com###habillage_cliquable
 buzzdefou.com,gerardmerinfo.fr###habillage_site
-mobiles-actus.com###header3
 leboncoin.fr###home-top-banner
 ma-reduc.com###home-top-offers
 videopornoinceste.xxx###horizontal-banner
 madstef.com###idkey1ban
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
-jeuxvideo-live.com###jeuAssocie
 lavenir.net###jobat_content
 whassup.fr###js-fixed-bar
 zdnet.fr###leaderBottom
@@ -3860,7 +3855,6 @@ homecinema-fr.com##.hab_link
 cbanque.com,clubpronostics.com,gratuiciel.com,lelogicielgratuit.com,logicielmac.com,logitheque.com,made-in-algeria.com,made-in-tunisia.net,maghrebex.com,mediscom.com,quetelecharger.com,toucharger.com##.habillage
 le2minutes.com,senscritique.com##.habillage-left
 realite-virtuelle.com##.halfpageAd
-avis-express.com,lnr-dz.com##.header-banner
 medialot.fr##.header-sub
 tvanouvelles.ca##.header-topBar-sticky
 igen.fr,macg.co,watchgeneration.fr##.hello-bar
@@ -3917,12 +3911,12 @@ ruedesjoueurs.com##.offretopsite
 ouest-france.fr##.ofm-widget
 ledenicheur.fr##.outsider-ads
 planeterenault.com##.p300
-laposte.fr##.page-pub
 ouedkniss.com##.page-top.d-print-none
 lefigaro.fr##.pane-bloc-ad
 monbestseller.com##.pane-mbspush
 jardiner-malin.fr##.parent-billboard
 portail.free.fr,sante-dz.com##.partenaire
+lachainemeteo.com##.partenaire_triple
 boursorama.com,caradisiac.com,dunod.com,ficam.ma,lesechos.fr,lfp.fr,mangario.fr,nouvelobs.com,saint-etienne.fr##.partenaires
 nouvelobs.com##.partenaires-services
 constructeurdemaison.net,ffr.fr,gameblog.fr,lexpress.fr,mensup.fr,swissquote.ch,turbo.fr##.partner
@@ -3960,7 +3954,6 @@ heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.publSibar
 jeuxvideo.com##.publi_info + ul
 lanutrition.fr##.push--shop
 flvto.biz##.push-offer
-souk.ma##.rbanner-wrap
 imobie.fr##.rec_download
 cdiscount.com##.regBloc
 endirect24.com##.rek
@@ -4137,7 +4130,6 @@ universfreebox.com##div[id^="publicite-"]
 zonebourse.com##div[id^="zpp"]
 androidpit.fr,forumpiscine.com##div[style*="min-height:90px;"]
 superphysique.org##div[style*="text-align: center"][style*="width:250px"]
-gamalive.com##div[style*="width:160px;height:600px;"]
 judgehype.com##div[style*="width:300px;height:600px;"]
 echoroukonline.com,maxifoot.fr##div[style*="width:468px;"]
 forum.gsmhosting.com##div[style="float:right; width:336px; height:560px; margin-left:10px"]
@@ -4176,6 +4168,7 @@ laredoute.fr##.pl-product:has(.sponsoredContent_label)
 frandroid.com##.post-card:has(a[href^="https://native.humanoid.fr/"])
 fr.shopping.rakuten.com##.prd_side:has(.gtm_ads_caption)
 carrefour.fr##.product-banner__products:has(.product-banner__advertising)
+e.leclerc##.product-container:has(.ad-product)
 decathlon.fr##.product-grid li:has(.sponsored-header-tag)
 carrefour.fr##.product-list-grid__item:has([id*="data-advertising-sponsored-products"])
 boulanger.com##.product-list__item:has(.product-list__product-sponsored)
