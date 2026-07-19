@@ -1,9 +1,9 @@
-! Checksum: MiWtzoyfDB9rbzxY7XpV9g
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1784425303-3600.patch
+! Checksum: NeIejhc9kB9sRGA8V0IJVw
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1784430696-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.7.55
-! TimeUpdated: 2026-07-19T01:38:24+00:00
+! Version: 2.1.7.56
+! TimeUpdated: 2026-07-19T03:08:44+00:00
 ! Expires: 12 hours (update frequency)
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.pushState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.replaceState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
@@ -181609,6 +181609,7 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+||abs.twimg.com/responsive-web/client-web/main.$script,replace=/\,_\.send\(e\.data\)/\,_.send()/
 ||abs.twimg.com/responsive-web/client-web/loader.HomeTimelineAdblockNotice
 ||na.web.skill.music.a2z.com/api/elementClicked
 ||na.web.skill.music.a2z.com/api/audioAdStarted
@@ -181636,7 +181637,6 @@ peacocktv.com#%#//scriptlet('set-local-storage-item', 'impressionTrackingSession
 biznesenter.pl#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'gtm.start')
 ||bifrost-api.hotstar.com/v*/events
 ||linuxcommunity.io/assets/google-universal-analytics-*.js
-x.com#%#//scriptlet('prevent-fetch', '/i/api/1.1/flow/viewer.json')
 ||credistory.ru/api/Metrics/
 ||files.userlink.ai/public/tracking.js
 ||api.faphouse.com^$ping
@@ -187310,8 +187310,6 @@ dreamprogs.net##td[width="88"][height="31"]
 ||ztat.net/*/webtrekk.min.js^
 ||google.com/log?$redirect=nooptext
 ||yandex.ru/clck/click|
-!+ NOT_PLATFORM(ios, ext_android_cb)
-||x.com/i/api/1.1/flow/viewer.json
 spletnik.ru#%#//scriptlet('set-local-storage-item', 'adrcid', '$remove$')
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 ||static.cloud.sbs.co.kr/common/js/*/sbs_log_module.min.js

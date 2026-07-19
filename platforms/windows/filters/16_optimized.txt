@@ -1,5 +1,5 @@
-! Checksum: 9lkRAR/0wh79CKpEDnz+/A
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1784344267-3600.patch
+! Checksum: VpLdDQ+mfVbR5uQZ9Cn0UA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1784430698-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.8
@@ -736,7 +736,6 @@ marianne.net##.sponsored
 ||videosxgays.com/*.php
 videosxgays.com##.player-right
 numerama.com##.is-original-antlion
-aeroports-voyages.fr##.adsenseContentBottom
 lalibre.be##.ap-AdContainer
 mariefrance.fr,closermag.fr###avantis_container
 closermag.fr,mariefrance.fr##html > body .placeholder-pub_dfp:not(#style_important)
@@ -1450,7 +1449,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /pub_250_
 /pub_title.
 /publicidadsetup/*
-/publicit%c3%a9/*
 /publicite-$domain=~publicite-decor.fr|~publicite-lepeut-dole.fr
 /publicite.
 /publicite/*
@@ -1478,6 +1476,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /simple/ads.js
 /skipad.
 /static.ads-
+/sw.*.js?promo=
 /syndication.*&idzone=
 /trackads.
 /twitter-ads.
@@ -1494,7 +1493,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /wgAds.
 /widgets.stackcommerce.com/*
 ://a.*/display?zone_id=
-://a.*/interstitial?id=$script
 ://a.*/loader?*&keywords=$third-party
 ://aclick.
 ://act-http-ban.
@@ -1707,7 +1705,6 @@ _mobileAds|
 _nnads/$subdocument
 _pages_ad.
 _personalized_ads
-_pop.php?z=
 _popads.
 _pub.gif
 _pub_col_
@@ -1718,6 +1715,7 @@ _pubscript.
 _regie/aff.
 _regiepub/
 _rivcash_banner_
+_sca_ads.
 _sdk_ad_
 _side_ads01.
 _smads_
@@ -1885,6 +1883,7 @@ _werbebanner_
 ||carpediem.fr^$third-party
 ||cclpub.com^$third-party
 ||cdn3.net^$third-party
+||cfgr2.com^$third-party
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
@@ -2063,7 +2062,6 @@ _werbebanner_
 ||lt45.net^$third-party
 ||newstat.net^$third-party
 ||static-dscn.net^$third-party
-||deskbabes.com^$third-party
 ||virtuagirl.com^$third-party
 ||0w1rqq69fi0e.com^
 ||167vxewyb4mbe7.rest^
@@ -2174,7 +2172,6 @@ _werbebanner_
 ||accostcrit.com^
 ||accreditedquite.com^
 ||achyrepeatitchy.com^
-||acidmercy.com^
 ||acoponposeur.com^
 ||actionrtb.com^
 ||acuchiunquert.com^
@@ -3564,6 +3561,7 @@ _werbebanner_
 ||daftsex.com^$popup
 ||diffusionsubletunnamed.com^$popup
 ||digital2cloud.com^$popup
+||djummer.com^$popup,third-party
 ||dmsik.com^$popup
 ||dosya-indirici.online^$popup
 ||dropcatch.com^$popup,third-party
@@ -3808,7 +3806,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||zone-hot.com/thumblink.php?
 ||platform.edisound.com^$domain=lejournaldelamaison.fr
 /acceptable.$~script
-/script.$domain=amateurfrancais.com|sexefelin.com|tootx.com|tubixe.com|twistedporn.com|vidsexe.com|webchoc.com
 ||bitly.com^$script,third-party
 ||cpmlink.net^$script,third-party
 ||link.tl^$script,third-party
@@ -4109,7 +4106,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||satim-dz.com/images2/
 ||securite.01net.com^
 ||seneweb.com/dynamic/modules/banners/
-||sexefelin.com/images/*.gif
 ||signification-prenom.com/Images/voyance-par-telephone.gif
 ||skitour.fr/divers/a/
 ||sky-animes.com/scripts/liens.php
@@ -4411,6 +4407,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###pub_pupop
 ###pub_right
 ###pub_slide_droite
+###pub_soonight
 ###pub_square
 ###pub_top
 ###pub_ventre
@@ -4553,7 +4550,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.box-pubb
 ##.boxAdLeft
 ##.boxAdRight
-##.box_publicites
 ##.box_publicites2
 ##.box_publicites3
 ##.box_publicites_bg
@@ -4873,6 +4869,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.publicity_link
 ##.publireportage
 ##.pubovh
+##.pubovh300
 ##.pubs_over1
 ##.pubsidebar
 ##.pubtexte
@@ -5094,14 +5091,12 @@ bdgest.com,bedetheque.com###hab_click_side
 banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comics-sanctuary.com,ffeminin.com,gamer-network.fr,jeux-mmorpg.fr,lequipement.fr,letelegramme.fr,nrj.fr###habillage
 besac.com###habillage_cliquable
 buzzdefou.com,gerardmerinfo.fr###habillage_site
-mobiles-actus.com###header3
 leboncoin.fr###home-top-banner
 ma-reduc.com###home-top-offers
 videopornoinceste.xxx###horizontal-banner
 madstef.com###idkey1ban
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
-jeuxvideo-live.com###jeuAssocie
 lavenir.net###jobat_content
 whassup.fr###js-fixed-bar
 zdnet.fr###leaderBottom
@@ -5304,7 +5299,6 @@ homecinema-fr.com##.hab_link
 cbanque.com,clubpronostics.com,gratuiciel.com,lelogicielgratuit.com,logicielmac.com,logitheque.com,made-in-algeria.com,made-in-tunisia.net,maghrebex.com,mediscom.com,quetelecharger.com,toucharger.com##.habillage
 le2minutes.com,senscritique.com##.habillage-left
 realite-virtuelle.com##.halfpageAd
-avis-express.com,lnr-dz.com##.header-banner
 medialot.fr##.header-sub
 tvanouvelles.ca##.header-topBar-sticky
 igen.fr,macg.co,watchgeneration.fr##.hello-bar
@@ -5362,12 +5356,12 @@ ruedesjoueurs.com##.offretopsite
 ouest-france.fr##.ofm-widget
 ledenicheur.fr##.outsider-ads
 planeterenault.com##.p300
-laposte.fr##.page-pub
 ouedkniss.com##.page-top.d-print-none
 lefigaro.fr##.pane-bloc-ad
 monbestseller.com##.pane-mbspush
 jardiner-malin.fr##.parent-billboard
 portail.free.fr,sante-dz.com##.partenaire
+lachainemeteo.com##.partenaire_triple
 boursorama.com,caradisiac.com,dunod.com,ficam.ma,lesechos.fr,lfp.fr,mangario.fr,nouvelobs.com,saint-etienne.fr##.partenaires
 nouvelobs.com##.partenaires-services
 constructeurdemaison.net,ffr.fr,gameblog.fr,lexpress.fr,mensup.fr,swissquote.ch,turbo.fr##.partner
@@ -5405,7 +5399,6 @@ heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.publSibar
 jeuxvideo.com##.publi_info + ul
 lanutrition.fr##.push--shop
 flvto.biz##.push-offer
-souk.ma##.rbanner-wrap
 imobie.fr##.rec_download
 cdiscount.com##.regBloc
 endirect24.com##.rek
@@ -5582,7 +5575,6 @@ universfreebox.com##div[id^="publicite-"]
 zonebourse.com##div[id^="zpp"]
 androidpit.fr,forumpiscine.com##div[style*="min-height:90px;"]
 superphysique.org##div[style*="text-align: center"][style*="width:250px"]
-gamalive.com##div[style*="width:160px;height:600px;"]
 judgehype.com##div[style*="width:300px;height:600px;"]
 echoroukonline.com,maxifoot.fr##div[style*="width:468px;"]
 forum.gsmhosting.com##div[style="float:right; width:336px; height:560px; margin-left:10px"]
@@ -5621,6 +5613,7 @@ laredoute.fr##.pl-product:has(.sponsoredContent_label)
 frandroid.com##.post-card:has(a[href^="https://native.humanoid.fr/"])
 fr.shopping.rakuten.com##.prd_side:has(.gtm_ads_caption)
 carrefour.fr##.product-banner__products:has(.product-banner__advertising)
+e.leclerc##.product-container:has(.ad-product)
 decathlon.fr##.product-grid li:has(.sponsored-header-tag)
 carrefour.fr##.product-list-grid__item:has([id*="data-advertising-sponsored-products"])
 boulanger.com##.product-list__item:has(.product-list__product-sponsored)
