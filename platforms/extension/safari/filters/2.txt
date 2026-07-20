@@ -1,9 +1,9 @@
-! Checksum: iFyYoZgL66uslRNaAsn42w
-! Diff-Path: ../patches/2/2-s-1784531791-3600.patch
+! Checksum: qLVWjqYbxY+Y2+k5FC8w8Q
+! Diff-Path: ../patches/2/2-s-1784538732-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.78.41
-! TimeUpdated: 2026-07-20T07:12:25+00:00
+! Version: 2.4.78.42
+! TimeUpdated: 2026-07-20T09:08:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11039,6 +11039,14 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/236111
+checkfiletype.com#%#//scriptlet('abort-current-inline-script', 'onload', 'offsetHeight')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+checkfiletype.com#@#.ad-slot
+! https://github.com/AdguardTeam/AdguardFilters/issues/236193
+@@||kickbd.org/ads/ad.js$domain=kickbd.org
+kickbd.org#@#.ad-unit:not(.textads)
+kickbd.org#@#.ad-space:not(.textads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236032
 cinefreak.nl#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 cinefreak.nl#%#//scriptlet('abort-current-inline-script', 'onload', 'adsbygoogle')
@@ -40089,6 +40097,9 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+blockexplorer.com##a[href^="https://vp.net/"]
+moneypantry.com##.mp-ad-slot
+blockexplorer.one##.navHeaderHolder
 ||file.galpic.xyz/axfile/*.gif$domain=ggbases.com
 pornleaks.in#%#//scriptlet('href-sanitizer', 'a[href^="https://comohoy.com/view/out.html?url2_1="]', '?url2_1', 'base64decode')
 nudostar.com##.nstar
@@ -41321,7 +41332,6 @@ blooloop.com##.placeholder-a-block
 streamdesi.com#%#//scriptlet('prevent-window-open')
 meteoblue.com##.ad1-box
 edumail.su##.ads-five
-pornhd4k.net,javhd4k.me,pornhd8k.me,en.javfun.me###invideo_wrapper
 comicbook.com##.lngtd-dynamic-inarticle
 geotastic.net##.publift-zone-container
 7mmtv.upns.live#%#//scriptlet("prevent-window-open")
@@ -44101,7 +44111,7 @@ hentaigasm.com##div[style*="width: 300px;"][style*="height:"]:has(> ins[data-zon
 clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.com,jalopnik.com,jezebel.com,kotaku.com,qz.com,theinventory.com,theonion.com,theroot.com,thetakeout.com##.js_sticky-second-scroll:has(> div:only-child > div:only-child > div:only-child > div[class*="horizontal-ad"])
 clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.com,jalopnik.com,jezebel.com,kotaku.com,qz.com,theinventory.com,theonion.com,theroot.com,thetakeout.com##div[class]:has(> div[class]:only-child > .ad-unit:only-child)
 clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.com,jalopnik.com,jezebel.com,kotaku.com,qz.com,theinventory.com,theonion.com,theroot.com,thetakeout.com##.js_ymal-below-post:empty
-usersdrive.com#%#//scriptlet('prevent-addEventListener', 'click', '/a.target/')
+usersdrive.com#%#//scriptlet('prevent-addEventListener', 'click')
 motorsport.com##.outstream_partner
 motorsport.com##.ms-ap-native
 allestoringen.be,allestoringen.nl,xn--allestrungen-9ib.at,xn--allestrungen-9ib.ch,xn--allestrungen-9ib.de,downdetector.ae,downdetector.ca,downdetector.co.nz,downdetector.co.uk,downdetector.co.za,downdetector.com.ar,downdetector.com.au,downdetector.com.br,downdetector.com.co,downdetector.com,downdetector.cz,downdetector.dk,downdetector.ec,downdetector.es,downdetector.fi,downdetector.fr,downdetector.gr,downdetector.hk,downdetector.hr,downdetector.hu,downdetector.id,downdetector.ie,downdetector.in,downdetector.it,downdetector.jp,downdetector.mx,downdetector.my,downdetector.no,downdetector.pe,downdetector.pk,downdetector.pl,downdetector.pt,downdetector.ro,downdetector.ru,downdetector.se,downdetector.sg,downdetector.sk,downdetector.web.tr#%#//scriptlet('set-constant', 'pbjs.onEvent', 'noopFunc')
@@ -61481,6 +61491,8 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 !
 !
 !+ NOT_OPTIMIZED
+pornhd4k.net,javhd4k.me,pornhd8k.me,en.javfun.me###invideo_wrapper
+!+ NOT_OPTIMIZED
 ios-repo-updates.com##.adsbygoogleblock
 !+ NOT_OPTIMIZED
 domainnamewire.com##.after-header
@@ -67141,6 +67153,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/236230
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235881
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235841
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235513
@@ -67627,6 +67640,7 @@ implbits.com#@#.banner_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188784
 ! dizipal*.com - frequently changed domains
 ! t.ly/dizipalgiris
+! https://github.com/AdguardTeam/AdguardFilters/issues/236229
 ! aglint-disable-next-line no-invalid-modifiers
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188449
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188363
@@ -94445,6 +94459,7 @@ browsershots.org#@#.advert_area
 ||bjdnqdbmktbhm.website^
 ||bjdsmnjybmjdl.site^
 ||bjgjunljwykym.space^
+||bjhpnzkjyibyx.site^
 ||bjjky.cfd^
 ||bjk3irj9inujonozb9k3qygw.cfd^
 ||bjlg2lhfw1vpo4.cfd^
@@ -96217,6 +96232,7 @@ browsershots.org#@#.advert_area
 ||ccgateway.net^
 ||ccgbernpkbwid.com^
 ||cchvgvgnqxrjr.space^
+||ccidedogerppw.space^
 ||cciqjddkvgljm.site^
 ||ccjfxvnyiqcfv.space^
 ||ccjkxpbgfjoiw.space^
@@ -96854,6 +96870,7 @@ browsershots.org#@#.advert_area
 ||ckmghmpfmdfvk.online^
 ||ckndisjiwbc.com^
 ||ckogfgjeuxixw.online^
+||ckogpjlm.com^
 ||ckp329gz98txo71crunvpeo.cfd^
 ||ckpchhhnhbsle.site^
 ||ckpyqgorlfdko.site^
@@ -100234,6 +100251,7 @@ browsershots.org#@#.advert_area
 ||dscpxz.com^
 ||dscsky.com^
 ||dscsqe.com^
+||dscsvtuvftoso.website^
 ||dsctja.com^
 ||dscuug.com^
 ||dscykd.com^
@@ -100315,6 +100333,7 @@ browsershots.org#@#.advert_area
 ||dslebb.com^
 ||dslgfw.com^
 ||dslqpa.com^
+||dslrix.com^
 ||dslrph.com^
 ||dslxrh.com^
 ||dsmbdi.com^
@@ -105838,6 +105857,7 @@ browsershots.org#@#.advert_area
 ||gutlessparsec.qpon^
 ||guttldzqtedhr.space^
 ||gutuymfvnw1bvpeg.cfd^
+||guuulmhvdijwj.space^
 ||guuzmczcfmhnt.com^
 ||guvmmaolnk.com^
 ||guwupmxscowhp.online^
@@ -109360,6 +109380,7 @@ browsershots.org#@#.advert_area
 ||jecisyqvowdzx.website^
 ||jeddingdelator.cyou^
 ||jedrgrklutyni.site^
+||jedwishersfurdel.cfd^
 ||jeemgurnntav.com^
 ||jeepearlobe.com^
 ||jeepviolinasoueef.qpon^
@@ -113817,6 +113838,7 @@ browsershots.org#@#.advert_area
 ||millsurfaces.com^
 ||millsuspect.com^
 ||milosdyvours.cfd^
+||miltingtuchitanthill.cfd^
 ||miltlametta.com^
 ||miltzuhmlwqrn.website^
 ||miluwo.com^
@@ -117195,6 +117217,7 @@ browsershots.org#@#.advert_area
 ||oppressiveindifferent.com^
 ||opskiwzwtvfic.store^
 ||opsonicchaharcraizey.cyou^
+||opsqbrqhqcamb.online^
 ||optad360.io^
 ||optad360.net^
 ||opticlygremio.com^
@@ -128323,6 +128346,7 @@ browsershots.org#@#.advert_area
 ||tsuhjkrwtayqx.space^
 ||tsuutrmpeop.com^
 ||tswanafldxt.com^
+||tswhilcaxlrnd.website^
 ||tswzrqpkvltnx.website^
 ||tsxccsxbdloxt.online^
 ||tsxrqncxqgcpl.online^
@@ -132696,6 +132720,7 @@ browsershots.org#@#.advert_area
 ||wxqhhskaltnbw.site^
 ||wxqlynazgmk.com^
 ||wxrgjdkxhegjn.online^
+||wxstlzxmilqom.website^
 ||wxtldkydabpmz.online^
 ||wxutv386vrm757.cfd^
 ||wxwdpvolofgdt.site^
