@@ -154,8 +154,6 @@ $doc,removeparam=hasha
 $doc,removeparam=hashb
 ! Rule "$doc,removeparam=hashc" converted to: "$document,removeparam=hashc"
 $doc,removeparam=hashc
-! Rule "$doc,removeparam=irgwc" converted to: "$document,removeparam=irgwc"
-$doc,removeparam=irgwc
 ! Rule "$doc,removeparam=/^clickid=.*$/i,domain=~discover.*" converted to: "$document,removeparam=/^clickid=.*$/i,domain=~discover.*"
 $doc,removeparam=/^clickid=.*$/i,domain=~discover.*
 ! Rule "$doc,removeparam=ito" converted to: "$document,removeparam=ito"
@@ -372,8 +370,6 @@ $doc,removeparam=/^src=rss$/
 $doc,removeparam=/^otm_.*$/
 ! Rule "$doc,removeparam=/^tracker=affiliatefuture$/i" converted to: "$document,removeparam=/^tracker=affiliatefuture$/i"
 $doc,removeparam=/^tracker=affiliatefuture$/i
-! Rule "$doc,removeparam=/^mtm_.*$/" converted to: "$document,removeparam=/^mtm_.*$/"
-$doc,removeparam=/^mtm_.*$/
 ! Rule "$doc,removeparam=/^matomo_.*$/" converted to: "$document,removeparam=/^matomo_.*$/"
 $doc,removeparam=/^matomo_.*$/
 ! Rule "$doc,removeparam=/^piwik_.*$/" converted to: "$document,removeparam=/^piwik_.*$/"
@@ -728,8 +724,6 @@ $doc,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepages.co
 ||deepl.com^$doc,removeparam=cta
 ! Rule "||substack.com^$removeparam=sd,doc" converted to: "||substack.com^$removeparam=sd,document"
 ||substack.com^$removeparam=sd,doc
-! Rule "||open.substack.com^$removeparam=r,doc" converted to: "||open.substack.com^$removeparam=r,document"
-||open.substack.com^$removeparam=r,doc
 ! Rule "||euromaidanpress.com^$removeparam=swcfpc,doc" converted to: "||euromaidanpress.com^$removeparam=swcfpc,document"
 ||euromaidanpress.com^$removeparam=swcfpc,doc
 ! Rule "||cnbc.com^$doc,removeparam=__source" converted to: "||cnbc.com^$document,removeparam=__source"
@@ -1184,8 +1178,8 @@ ref=dtf.ru$doc,removeparam=ref
 ||detail.chiebukuro.yahoo.co.jp^$doc,removeparam=fr
 ! Rule ".com/*/status/$doc,removeparam=t,domain=twitter.com|x.com" converted to: ".com/*/status/$document,removeparam=t,domain=twitter.com|x.com"
 .com/*/status/$doc,removeparam=t,domain=twitter.com|x.com
-! Rule "||instagram.com^$doc,removeparam=entry_point" converted to: "||instagram.com^$document,removeparam=entry_point"
-||instagram.com^$doc,removeparam=entry_point
+! Rule "$doc,removeparam=entry_point,domain=instagram.com|www.reddit.com" converted to: "$document,removeparam=entry_point,domain=instagram.com|www.reddit.com"
+$doc,removeparam=entry_point,domain=instagram.com|www.reddit.com
 ! Rule "||filestore.app^$doc,removeparam=/^client_ip=$/" converted to: "||filestore.app^$document,removeparam=/^client_ip=$/"
 ||filestore.app^$doc,removeparam=/^client_ip=$/
 ! Rule "$doc,removeparam=loclid" converted to: "$document,removeparam=loclid"
@@ -1238,8 +1232,6 @@ ref=the-browser$doc,removeparam=ref
 ||game.info.intel.com^$doc,removeparam=_scr
 ! Rule "ref=shadcn.com$doc,removeparam=ref" converted to: "ref=shadcn.com$document,removeparam=ref"
 ref=shadcn.com$doc,removeparam=ref
-! Rule "||www.reddit.com^$doc,removeparam=entry_point" converted to: "||www.reddit.com^$document,removeparam=entry_point"
-||www.reddit.com^$doc,removeparam=entry_point
 ! Rule "$doc,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com" converted to: "$document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com"
 $doc,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com
 ! Rule "||email-marriott.com^$doc,removeparam=__dU__" converted to: "||email-marriott.com^$document,removeparam=__dU__"
@@ -1270,8 +1262,6 @@ $doc,removeparam=sc_ichannel,domain=aws.eu|pages.awscloud.com
 $doc,removeparam=sc_icampaign,domain=aws.eu|pages.awscloud.com
 ! Rule "$doc,removeparam=sc_iplace,domain=aws.eu|pages.awscloud.com" converted to: "$document,removeparam=sc_iplace,domain=aws.eu|pages.awscloud.com"
 $doc,removeparam=sc_iplace,domain=aws.eu|pages.awscloud.com
-! Rule "||musescore.com^$doc,removeparam=feature" converted to: "||musescore.com^$document,removeparam=feature"
-||musescore.com^$doc,removeparam=feature
 ! Rule "$doc,removeparam=intid,domain=homedepot.*" converted to: "$document,removeparam=intid,domain=homedepot.*"
 $doc,removeparam=intid,domain=homedepot.*
 ! Rule "ref=theneedlenews.com$doc,removeparam=ref" converted to: "ref=theneedlenews.com$document,removeparam=ref"
@@ -1382,8 +1372,18 @@ buffalonews.com#%#//scriptlet('ubo-set', 'lee_trkLinkSrc', 'noopFunc')
 !!! forbesCOM##+js(set, trackingService.track, noopFunc)
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@$document,removeparam=/^.*_dest_url=.*$/"
 @@$document,removeparam=/^.*_dest_url=.*$/
+! Error: "Unknown modifier: hinta.fi|carrefoursa.com" in the rule: "$removeparam=v,hinta.fi|carrefoursa.com"
+$removeparam=v,hinta.fi|carrefoursa.com
+! Error: "Unknown modifier: malwarebytes.com|parallels.com" in the rule: "$removeparam=x-source,malwarebytes.com|parallels.com"
+$removeparam=x-source,malwarebytes.com|parallels.com
+! Error: "Unknown modifier: tradingview.com|musescore.com" in the rule: "$removeparam=feature,tradingview.com|musescore.com"
+$removeparam=feature,tradingview.com|musescore.com
+! Error: "Unknown modifier: redirect.appmetrica.yandex.com|blu-ray.com" in the rule: "$removeparam=c,redirect.appmetrica.yandex.com|blu-ray.com"
+$removeparam=c,redirect.appmetrica.yandex.com|blu-ray.com
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@/subscribe?$document,removeparam=user_email_address"
 @@/subscribe?$document,removeparam=user_email_address
+! Error: "Unknown modifier: landevei.no|thehill.com" in the rule: "$removeparam=email,landevei.no|thehill.com"
+$removeparam=email,landevei.no|thehill.com
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@/search.php$document,removeparam=sid"
 @@/search.php$document,removeparam=sid
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@/search-redirection$document,removeparam,domain=audible.*"
