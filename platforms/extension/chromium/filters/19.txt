@@ -1,9 +1,9 @@
-! Checksum: nrIZCUKOdj+LzXSJ57CWqw
-! Diff-Path: ../patches/19/19-s-1784538714-3600.patch
+! Checksum: z/sqLYuHIy7t6KQGevEApA
+! Diff-Path: ../patches/19/19-s-1784545665-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.79.7
-! TimeUpdated: 2026-07-20T09:09:18+00:00
+! Version: 2.0.79.8
+! TimeUpdated: 2026-07-20T11:05:06+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3435,7 +3435,8 @@ vaughn.live##div[class^="vs_coachmark_"]
 ||index.hu//assets/static/js.extra/one.js
 claude.ai###credential_picker_iframe
 moneycontrol.com#$#.the_main_popup { display: none !important; }
-moneycontrol.com#$#.modal-open { display: none !important; }
+moneycontrol.com#%#//scriptlet('remove-class', 'modal-open', 'body')
+moneycontrol.com#$#body[style] { padding-right: 0 !important; }
 wtnovels.com#%#//scriptlet('prevent-setTimeout', 'showPopup(payload.popup)')
 anixtv.pro,anixtv.in,anixtv.us.cc,anixx.fun#%#//scriptlet('set-session-storage-item', 'anixtv_bookmark_shown', 'true')
 claude.ai,androidpolice.com,babygaga.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,moms.com,movieweb.com,pocket-lint.com,pocketnow.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com###credential_picker_container
@@ -12742,6 +12743,8 @@ onejailbreak.com,progameguides.com,aydinlik.com.tr,euronews.com,rtl.be,dogruhabe
 !
 ! SECTION: Subscriptions - Regular rules
 !
+moneycontrol.com##.logo_fl > a[href="https://www.moneycontrol.com/promos/pro.php"]
+darkreading.com##.Sidebar > div.Sidebar-SidebarItem:has(> div.LinkedImage a[href^="https://google.com/preferences/source?q="])
 thecityreporter.nyc###h-subscribe-to-the-city-scoop
 thecityreporter.nyc##.wp-block-newspack-newsletters-subscribe
 thecityreporter.nyc##.wp-block-paragraph.font-georgia
@@ -15051,7 +15054,7 @@ ulefone.com###shopify-section-popup
 auto.ru##a[class*="PostFooterTelegram__card"]
 imf.org##.publication-promo:has(> div.publication-promo__wrapper > a[href="https://www.imf.org/en/Publications/Newsletter/registration"])
 liveball.uno##.tg_block
-liveball.uno###tg_block
+liveball.click,liveball.to,liveball.uno,liveball.*###tg_block
 dzen.ru##div[class^="news-site--modal__rootElement-"]:has(div[aria-label="Попап добавления СМИ в избранное"])
 chronicle.com##.SignupModule
 adindex.ru##.our-telegram-channels
