@@ -1,9 +1,9 @@
-! Checksum: SkffvuX2jGS7nXIpbH5PHw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1784559122-3600.patch
+! Checksum: Bx7F4Cd1ffwRsj6V9r4xyg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1784562169-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.73.26
-! TimeUpdated: 2026-07-20T14:49:10+00:00
+! Version: 2.2.73.27
+! TimeUpdated: 2026-07-20T15:40:03+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1649,6 +1649,7 @@ knusperstuebchen.net,intercraft.pl#%#//scriptlet('trusted-click-element', 'dialo
 tippsling.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:c82d723')
 wegwandern.ch,compact-online.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:f4adc5d')
 cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:0c09270')
+aviakassa.com###siteMainContent ~ div[class]:has(> div > span > a[href="/usefuldata/confidentiality"])
 tabor.ru##.site-policy-wrap
 brw.pl##.widget-recomended-product
 ||rameder.de/?cl=CookieManager
@@ -2222,8 +2223,6 @@ zarplata.ru###bottom-cookies-policy-informer
 thedailyjagran.com#%#//scriptlet('set-cookie', 'hide', 'true')
 velrix.net#%#//scriptlet('trusted-set-local-storage-item', 'velrix_cookie_consent', '{"decided":true,"timestamp":1770206291082,"categories":{"necessary":true,"analytics":false}}')
 kupibilet.ru##div[class^="CookiesAgreement_alertWrapper"]
-gamsgo.com#$#html.v-overlay-scroll-blocked { overflow: auto !important; position: static !important; }
-gamsgo.com#$#.v-overlay-container { display: none !important; }
 volumo.com##div[class^="_app_"] > div[class^="PopupBaseInternal_root__"]:has(> div[role="dialog"] div[class*="CookieVolumoPopup_"])
 supertext.com#%#//scriptlet('trusted-set-local-storage-item', 'tracking_consent', '{"necessary":true,"analytics":false,"advertising":false,"personalization":false}')
 viberate.com##.cookies-consent-v2
@@ -30595,6 +30594,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 !######### JS tweaks ##########
 !##############################
+melhoresreceitas.blog#%#//scriptlet('adjust-setInterval', 'clearInterval')
+melhoresreceitas.blog#%#//scriptlet('adjust-setTimeout', 'tick')
 moviebite.cc#%#//scriptlet('prevent-addEventListener', 'contextmenu', 'preventDefault')
 romsdroid.com#%#//scriptlet('adjust-setTimeout', 'download_loading', '*', '0.001')
 cloudfam.io#%#//scriptlet('adjust-setInterval', 'remain--', '*', '0.001')

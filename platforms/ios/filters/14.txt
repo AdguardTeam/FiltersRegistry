@@ -1,9 +1,9 @@
-! Checksum: T19aPhAIyZ8wavRvUskTBA
-! Diff-Path: ../patches/14/14-s-1784559145-3600.patch
+! Checksum: V2bT8++UmuLcJfyeL8bpUg
+! Diff-Path: ../patches/14/14-s-1784562189-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.73.26
-! TimeUpdated: 2026-07-20T14:49:10+00:00
+! Version: 2.2.73.27
+! TimeUpdated: 2026-07-20T15:40:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2628,6 +2628,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+aviakassa.com###siteMainContent ~ div[class]:has(> div > span > a[href="/usefuldata/confidentiality"])
 tabor.ru##.site-policy-wrap
 brw.pl##.widget-recomended-product
 ||rameder.de/?cl=CookieManager
@@ -3485,8 +3486,6 @@ kupibilet.ru##div[class^="CookiesAgreement_alertWrapper"]
 neftvodka.com##div.--framer-cookie-banner-container
 linkza.one,linklelo.in###ckWrap
 hakmar.com.tr,muffingroup.com##.mfn-cookies
-gamsgo.com#$#html.v-overlay-scroll-blocked { overflow: auto !important; position: static !important; }
-gamsgo.com#$#.v-overlay-container { display: none !important; }
 fibermall.com###WishCookieBox
 volumo.com##div[class^="_app_"] > div[class^="PopupBaseInternal_root__"]:has(> div[role="dialog"] div[class*="CookieVolumoPopup_"])
 supertext.com#%#//scriptlet('trusted-set-local-storage-item', 'tracking_consent', '{"necessary":true,"analytics":false,"advertising":false,"personalization":false}')
@@ -62833,6 +62832,9 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/235899
+melhoresreceitas.blog#%#//scriptlet('adjust-setInterval', 'clearInterval')
+melhoresreceitas.blog#%#//scriptlet('adjust-setTimeout', 'tick')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235632
 moviebite.cc#%#//scriptlet('prevent-addEventListener', 'contextmenu', 'preventDefault')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233761
