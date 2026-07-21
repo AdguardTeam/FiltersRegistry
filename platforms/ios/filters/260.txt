@@ -1,9 +1,9 @@
-! Checksum: NAKEZCa/GsGWn6kf5Bbu7A
-! Diff-Path: ../patches/260/260-s-1784653333-14400.patch
+! Checksum: /GY9ZK6wngl5PDdY+S0L/A
+! Diff-Path: ../patches/260/260-s-1784667295-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.61
-! TimeUpdated: 2026-07-21T16:59:21+00:00
+! Version: 2.0.0.62
+! TimeUpdated: 2026-07-21T20:52:19+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1562,6 +1562,11 @@ workspace.google.com##section[data-module="TemplateLocalizedModuleContainer"]:ha
 ! -- https://workspace.google.com/marketplace
 ! "Works with Gemini" app section
 workspace.google.com##.ORSkHc:has([data-appset-type="49"])
+! -- https://workspace.google.com/search/?q=What+AI+features+are+included+in+Workspace+plans%3F%3F
+! Removes AI followup question suggestions, slighly faster page loading speed
+||ai-search-dot-gsuite-staging.appspot.com/api/answer$xmlhttprequest,domain=workspace.google.com
+! AI search summary
+workspace.google.com##.summary
 ! ============
 ! == Healio ==
 ! ============
@@ -3188,6 +3193,9 @@ www.yahoo.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.r[?@.m==89]')
 www.yahoo.com##[role="menuitem"]:has(> [href^="https://scout.yahoo.com/"])
 ! Featured item from from Yahoo Scout below search bar
 www.yahoo.com###conbar-content > .group:has(.stretched-box[href^="https://scout.yahoo.com"])
+! -- https://www.yahoo.com/news/world/articles/china-cracking-down-ai-companions-113000440.html
+! Key takeaways
+www.yahoo.com##.relative.flex.flex-col.gap-1\.5.rounded-xl.bg-secondary.p-3.leading-5.mb-8:has(> [data-ylk*="ai-summary;"])
 ! -- https://search.yahoo.com/
 ! Yahoo Scout popup promo
 search.yahoo.com##.scoutPromoPopup
@@ -3205,6 +3213,10 @@ search.yahoo.com##.scout-tab
 search.yahoo.com##.searchLeftTop li:has(> [href^="https://shopping.yahoo.com/search"])
 ! "Explore AI results" in sidebar
 search.yahoo.com##.searchRightBottom:has(.AlsoTry_E):has([href^="https://scout.yahoo.com/chat"])
+! -- https://finance.yahoo.com/technology/ai/articles/us-threatens-sanctions-against-chinese-153705506.html
+! Mid-article "Ask Yahoo Scout"
+finance.yahoo.com##.dig-deeper-wrapper
+finance.yahoo.com##[data-testid="lazym-digDeeper"] + .skeleton-container
 ! -- https://search.yahoo.com/search?p=Women%27s+College+World+Series
 ! "Trending now" AI headline
 search.yahoo.com##.summary-container:has(> .ai-summary)
@@ -3324,8 +3336,8 @@ www.youtube.com##.ytp-suggested-action-badge[aria-label="Ask about this video"]
 ! * Filter by paintboth1234 (https://www.reddit.com/r/uBlockOrigin/comments/1npyxsc/comment/ng4kmje/)
 ! * Alternate filter for AdGuard support
 www.youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
-! * Backup to remove auto-dub menu options from settings menu when video loaded from URL and trusted filters are disabled.
-!   This will not prevent the auto-dubbed audio from playing as the default selection
+! * Backup to remove auto-dub menu options when video loaded directly via URL or trusted filters are disabled in AdGuard.
+!   This will not prevent the auto-dubbed audio from playing as the default selection.
 www.youtube.com##.ytp-menuitem-section-header
 www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 ! -- https://www.youtube.com/watch?v=oh5p5f5_-7A
