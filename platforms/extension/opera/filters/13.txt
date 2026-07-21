@@ -1,9 +1,9 @@
-! Checksum: qzhTVgUFbonbunSjnJ24FA
-! Diff-Path: ../patches/13/13-s-1784634116-3600.patch
+! Checksum: vu4oh2KOqknct4pF/RdNpQ
+! Diff-Path: ../patches/13/13-s-1784637620-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.3
-! TimeUpdated: 2026-07-21T11:38:49+00:00
+! Version: 2.0.66.4
+! TimeUpdated: 2026-07-21T12:37:19+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6055,18 +6055,20 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turkifsa\d+\.art$/]##div[class]:has(> a[href^="https://cutt.ly/"])
 !
 ! Frequently changed domains: amatorifsa*.com
-! Source: amatorifsa4.com
+! Source: amatorifsa36.com
 ! aglint-disable no-invalid-modifiers
-!+ NOT_VALIDATE NOT_PLATFORM(windows, mac, android, cli)
-||hdgifs.b-cdn.net^$media,domain=/amatorifsa\d+\.com$/
+!+ NOT_VALIDATE
+.gif|$image,domain=/amatorifsa\d+\.com$/
+!+ NOT_VALIDATE
+||pub-*.r2.dev/yenigif.mp4$domain=/amatorifsa\d+\.com$/
 ! aglint-enable no-invalid-modifiers
-[$domain=/amatorifsa\d+\.com$/]##div[style="margin-bottom:14px; text-align:center;"]
-[$domain=/amatorifsa\d+\.com$/]##div[style="margin-top:14px; text-align:center;"]
-[$domain=/amatorifsa\d+\.com$/]##.row:has(> div.col-md-6 > a[href^="https://wipads.com/"])
-[$domain=/amatorifsa\d+\.com$/]##a[href="https://t.me/+tLBtscezDLE0Yjk0"]
-[$domain=/amatorifsa\d+\.com$/]#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
-[$domain=/amatorifsa\d+\.com$/]#%#//scriptlet('trusted-click-element', 'button#preroll-skip', '', '1000')
-[$domain=/amatorifsa\d+\.com$/]#%#//scriptlet('prevent-window-open')
+[$domain=/amatorifsa\d+\.com$/]##.yenigif-wrap
+[$domain=/amatorifsa\d+\.com$/]##.banner-grid-wrap
+[$domain=/amatorifsa\d+\.com$/]###tg-cta-container
+[$domain=/amatorifsa\d+\.com$/]##div[style]:has(> a[href][target="_blank"][rel$="sponsored"])
+[$domain=/amatorifsa\d+\.com$/]##article[data-ad-pos]
+[$domain=/amatorifsa\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/amatorifsa\d+\.com$/]#$##mainVideo { display: block !important; }
 !
 ! Frequently changed domains: taraftarium*.xyz
 ! Source: https://trgoalsgiris.xyz
