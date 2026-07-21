@@ -1,14 +1,14 @@
-! Checksum: hTYlSt+qfmnzlXVV2j8W4Q
-! Diff-Path: ../patches/243/243-s-1784526538-14400.patch
+! Checksum: 3GnbJUfoQGygogNix3xCQw
+! Diff-Path: ../patches/243/243-s-1784612205-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.1
-! TimeUpdated: 2026-07-20T05:46:17+00:00
+! Version: 2.0.25.2
+! TimeUpdated: 2026-07-21T05:33:50+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-07-20 07:06:17 CEST
+! Last modified: 2026-07-21 05:37:43 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -810,10 +810,12 @@ humorbibeln.se,newsner.com,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibe
 hundnytt.se#$#html.g1-popup-visible { overflow:initial!important; }
 hundnytt.se##.g1-popup-newsletter
 husbilhusvagn.se,vibilagare.se##.article-native
-husbilskompisar.se##body > div + div:has(.mantine-Button-label)
-husbilskompisar.se##main > div:first-child:has(a[rel*="sponsored"])
+husbilskompisar.se#%#//scriptlet('ubo-json-prune', 'props.initialAds')
+husbilskompisar.se#%#//scriptlet('ubo-nostif', 'ad_location')
+husbilskompisar.se#%#//scriptlet('ubo-set-local-storage-item', 'cookie_consent', 'denied')
 husbilskompisar.se##.mantine-Modal-root, a[rel^="sponsored"]
-husbilsplats.se##div[id^="husbi-"]
+husbilskompisar.se##:is(main > div:first-child, div[style*="max-width: 300px"]):has(a[rel*="sponsored"])
+husbilsplats.se##div[id^="husbi-"], .mysticky-welcomebar-fixed
 husbilsplats.se,kandisvarlden.com#%#//scriptlet('ubo-acs', 'document.oncontextmenu')
 husbilsskolan.se##:is(.elementor-image, .elementor-widget-image) a[target="_blank"]
 husbil.se#?#.articleintroduction strong:contains(/samarbete/i):upward(li.item)
@@ -916,7 +918,7 @@ kingsizemag.se##div#video-overlay, div.sidebar_frame, #affiliates, #affiliates +
 kittad.se###header-top, div[data-hook="consent-banner-root"]
 klart.se##div[id^="sp_message_container"], #overlay, .-panorama-ad-wrapper, div[id^="ad-wrapper"]
 klart.se#?#.ad-text:contains(/annons/i):upward(.content-box-list__item)
-klart.se,hockeynews.se,fotbolltransfers.com,hitta.se,sverigerunt.se,tvmatchen.nu##a[rel*="sponsored"]
+klart.se,hockeynews.se,fotbolltransfers.com,hitta.se,sverigerunt.se,tvmatchen.nu,husbilskompisar.se##a[rel*="sponsored"]
 klendr.se#?#.adsbygoogle:upward(1)
 klimatnytt.se##div[id^="builderwidget"]:has(img[width="980"][height="120"])
 klimatnytt.se##.tm-cookie-banner
@@ -2075,7 +2077,7 @@ zeromagazine.nu##div[id^="ads"]
 /adsaga.
 /adsense.index.js$domain=husbil.se
 /adsm.macro$script
-/ads$domain=allastudier.se|cirkulation.se|ordmedzcxy.se|rimlab.se|allaaktier.se|varldenom.com|kottchark.se|epochtimes.se|skippo.se|inblick.se|magazin24.se
+/ads$domain=allastudier.se|cirkulation.se|ordmedzcxy.se|rimlab.se|allaaktier.se|varldenom.com|kottchark.se|epochtimes.se|skippo.se|inblick.se|magazin24.se|husbilskompisar.se
 /ads$xmlhttprequest,domain=stromsundsgratistidning.se
 /ads-countdown.js$domain=aftonbladet.se
 /ads-dm.js
@@ -2469,7 +2471,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/adlounge
 /plugins/adsanity
 /plugins/adsense%20click%20proctect
-/plugins/advanced-ads$script,domain=newsner.com|humorbibeln.se|sportbibeln.se|matbibeln.se|ettgottskratt.se|djurbibeln.se|nojeslivet.se|vegomagasinet.se|inkopsradet.se|orkesterjournalen.se|hallbartbyggande.com|marketmate.se|villatidningen.se|upphandling24.se
+/plugins/advanced-ads$script,domain=newsner.com|humorbibeln.se|sportbibeln.se|matbibeln.se|ettgottskratt.se|djurbibeln.se|nojeslivet.se|vegomagasinet.se|inkopsradet.se|orkesterjournalen.se|hallbartbyggande.com|marketmate.se|villatidningen.se|upphandling24.se|freedomtravel.se
 /plugins/ad-ace
 /plugins/ad-blocking-advisor
 /plugins/afp-default-pricetable/js/ga-tracking
@@ -2498,7 +2500,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/christmas-panda
 /plugins/cm-pop-up-banners
 /plugins/cm-takeover-ad
-/plugins/complianz-gdpr$script,domain=iconmagazine.se|signprint.se|vilaser.se|arjeplognytt.se|tidningenglobal.se|tidningensyre.se|landetsfria.nu|fempers.se|brollopsmagasinet.se|megafonen.se|kyrka.se|sjofartstidningen.se|pensionarsliv.se|aktuellsakerhet.se|maklarvarlden.se|sjomannen.se|livsmedelsnyheter.se|dovastidning.se|vgrfokus.se|samefolket.se|cirkusvenues.se|surfzone.se|magasinetkonkret.se|samerna.se|affarsstaden.se|livsmedelifokus.se|bodennytt.se|dialasen.com|aftonkuriren.com|samtiden.nu|alltomhallbarhet.se|luleapride.se|onkologiisverige.se|epilepsi.se|nyhetersto.se|opulens.se|orkesterjournalen.se|brafiler.se|funktionshinderpolitik.se|sjomatsframjandet.se|fastighetssverige.se|hotellorestaurang.se|citymark.today|byggvarlden.se|kurera.se
+/plugins/complianz-gdpr$script,domain=iconmagazine.se|signprint.se|vilaser.se|arjeplognytt.se|tidningenglobal.se|tidningensyre.se|landetsfria.nu|fempers.se|brollopsmagasinet.se|megafonen.se|kyrka.se|sjofartstidningen.se|pensionarsliv.se|aktuellsakerhet.se|maklarvarlden.se|sjomannen.se|livsmedelsnyheter.se|dovastidning.se|vgrfokus.se|samefolket.se|cirkusvenues.se|surfzone.se|magasinetkonkret.se|samerna.se|affarsstaden.se|livsmedelifokus.se|bodennytt.se|dialasen.com|aftonkuriren.com|samtiden.nu|alltomhallbarhet.se|luleapride.se|onkologiisverige.se|epilepsi.se|nyhetersto.se|opulens.se|orkesterjournalen.se|brafiler.se|funktionshinderpolitik.se|sjomatsframjandet.se|fastighetssverige.se|hotellorestaurang.se|citymark.today|byggvarlden.se|kurera.se|daisybeauty.com
 /plugins/consent-magic-pro$script,domain=namnmarkning.se|gobokhandeln.se
 /plugins/content-hub-wp-plugin/assets/js/hub-time-spent
 /plugins/convertplug
@@ -2772,7 +2774,6 @@ zeromagazine.nu##div[id^="ads"]
 /sv_se/metrics/*$script,xmlhttprequest
 /swg$script,domain=thelocal.se
 /synonymerse-adapter.js$domain=synonymer.se
-/t.hellofresh.se
 /tabs_hits_counter.php$image
 /takeover-ad.js$domain=ridsport.se
 /tarteaucitron.js$domain=sv.geneanet.org
@@ -2807,6 +2808,7 @@ zeromagazine.nu##div[id^="ads"]
 /tv/annons$domain=expressen.se
 /tv/brand-studio$domain=expressen.se
 /tv/sponsrat$domain=expressen.se
+/t-live.hellofresh.com
 /ub-ads/*$script
 /unica/html-banners
 /uploads/annonser
