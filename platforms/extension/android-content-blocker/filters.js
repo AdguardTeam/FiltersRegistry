@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.28.66",
-			"timeUpdated": "2026-07-21T20:31:36+0000",
+			"version": "2.1.28.67",
+			"timeUpdated": "2026-07-21T22:22:44+0000",
 			"languages": [],
 			"tags": [
 				45,
