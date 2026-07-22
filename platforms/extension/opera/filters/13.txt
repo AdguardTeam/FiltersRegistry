@@ -1,9 +1,9 @@
-! Checksum: +vi23mxFHLog6FriTIMiqg
-! Diff-Path: ../patches/13/13-s-1784684492-3600.patch
+! Checksum: tnYPVu9a0uyUk2ARQbZghQ
+! Diff-Path: ../patches/13/13-s-1784710871-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.5
-! TimeUpdated: 2026-07-22T01:38:39+00:00
+! Version: 2.0.66.6
+! TimeUpdated: 2026-07-22T08:58:02+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5984,16 +5984,19 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
-! Frequently changed domains: sadeceifsa*.lol; sadeceifsa*.icu
+! Frequently changed domains: sadeceifsa*.lol; sadeceifsa*.icu; sadeceifsa*.com
 ! Source: sadeceifsa12.icu
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
-.gif|$domain=/sadeceifsa\d+\.(lol\|icu)$/
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]###tg-cta-container
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]##.banner-grid-wrap
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]##article[data-ad-pos]
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]##div[style]:has(> a[href^="https://bit.ly/"])
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
+.gif|$domain=/sadeceifsa\d+\.com$/
+!+ NOT_VALIDATE
+||pub-*.r2.dev/yenigif.mp4$domain=/sadeceifsa\d+\.com$/
+[$domain=/sadeceifsa\d+\.com$/]##.yenigif-wrap
+[$domain=/sadeceifsa\d+\.com$/]###tg-cta-container
+[$domain=/sadeceifsa\d+\.com$/]##article[data-ad-pos]
+[$domain=/sadeceifsa\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/sadeceifsa\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/sadeceifsa\d+\.com$/]#$##mainVideo { display: block !important; }
 !
 ! Frequently changed domains: dizimor*.com.tr
 ! Source: dizimor1.com.tr
@@ -6176,9 +6179,9 @@ x.palv2.cfd###adPlayerBanner
 !
 ! Frequently changed domains: patronlive*.cfd
 ! Source: patronspor.is
-patrongol32.cfd,patrongol33.cfd##.background-link
-patrongol32.cfd,patrongol33.cfd##.top-banner-header
-||blogger.googleusercontent.com/img/$domain=patrongol32.cfd|patrongol33.cfd
+patrongol33.cfd##.background-link
+patrongol33.cfd##.top-banner-header
+||blogger.googleusercontent.com/img/$domain=patrongol33.cfd
 !
 ! Frequently changed domains: patronlive*.cfd
 ! Source: patronspor.is
@@ -6268,7 +6271,7 @@ yavasgir135.live#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "
 primeembedpanel.com#%#//scriptlet('prevent-window-open')
 ||primeembedpanel.com/ads/
 ||askimyavas*.*/wp-content/uploads/*.gif
-[$domain=/askimyavas\d+\.(com|live)/]###ads-inside-main
+[$domain=/askimyavas\d+\.(com\|live)/]###ads-inside-main
 !
 ! Frequently changed domains: gobtv*.com
 ||gobtv*.com/*.gif

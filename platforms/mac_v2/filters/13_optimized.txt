@@ -1,9 +1,9 @@
-! Checksum: 1+0f0T7VhiHZMFl3V5m9Nw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1784684508-3600.patch
+! Checksum: t9oUTWyg1mAOZX1UE5F8Wg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1784710883-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.5
-! TimeUpdated: 2026-07-22T01:38:39+00:00
+! Version: 2.0.66.6
+! TimeUpdated: 2026-07-22T08:58:02+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5456,13 +5456,15 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
 !+ NOT_VALIDATE
-.gif|$domain=/sadeceifsa\d+\.(lol\|icu)$/
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]###tg-cta-container
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]##.banner-grid-wrap
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]##article[data-ad-pos]
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]##div[style]:has(> a[href^="https://bit.ly/"])
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
-[$domain=/sadeceifsa\d+\.(lol\|icu)$/]$$script:contains(pickEngine)
+.gif|$domain=/sadeceifsa\d+\.com$/
+!+ NOT_VALIDATE
+||pub-*.r2.dev/yenigif.mp4$domain=/sadeceifsa\d+\.com$/
+[$domain=/sadeceifsa\d+\.com$/]##.yenigif-wrap
+[$domain=/sadeceifsa\d+\.com$/]###tg-cta-container
+[$domain=/sadeceifsa\d+\.com$/]##article[data-ad-pos]
+[$domain=/sadeceifsa\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/sadeceifsa\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/sadeceifsa\d+\.com$/]#$##mainVideo { display: block !important; }
 x.palv2.cfd#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollVideoUrl', '/prerollVideoUrl = "https:.*\.mp4";/', 'prerollVideoUrl = "";')
 ||blogger.googleusercontent.com/img/$domain=x.palv2.cfd
 x.palv2.cfd###adPlayerBanner
@@ -5554,9 +5556,9 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/restmacizle\d+\.cfd$/]##.header-nav > a[href="/"] ~ a[href][target="_blank"]
 [$domain=/tvakin\d?\.live$/]##div[onclick^="window.open('https://direk"]
 [$domain=/tvakin\d?\.live$/]##.marquee-banner
-patrongol32.cfd,patrongol33.cfd##.background-link
-patrongol32.cfd,patrongol33.cfd##.top-banner-header
-||blogger.googleusercontent.com/img/$domain=patrongol32.cfd|patrongol33.cfd
+patrongol33.cfd##.background-link
+patrongol33.cfd##.top-banner-header
+||blogger.googleusercontent.com/img/$domain=patrongol33.cfd
 patronlive48.cfd##.background-link
 patronlive48.cfd##.top-banner-header
 ||blogger.googleusercontent.com/img/$domain=patronlive46cfd
@@ -5605,7 +5607,7 @@ yavasgir135.live#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "
 primeembedpanel.com#%#//scriptlet('prevent-window-open')
 ||primeembedpanel.com/ads/
 ||askimyavas*.*/wp-content/uploads/*.gif
-[$domain=/askimyavas\d+\.(com|live)/]###ads-inside-main
+[$domain=/askimyavas\d+\.(com\|live)/]###ads-inside-main
 ||gobtv*.com/*.gif
 [$domain=/gobtv\d+\.com/]##a[href^="https://t2m.io/"]
 ||sahatv*.top/assets/img/*.gif

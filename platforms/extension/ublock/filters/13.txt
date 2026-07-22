@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JcBVwphSdBb670/m2sxeiQ
-! Diff-Path: ../patches/13/13-s-1784684500-3600.patch
+! Checksum: 9CvWTfyYegLK25huf0cbYQ
+! Diff-Path: ../patches/13/13-s-1784710877-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.5
-! TimeUpdated: 2026-07-22T01:38:39+00:00
+! Version: 2.0.66.6
+! TimeUpdated: 2026-07-22T08:58:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5952,21 +5952,25 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
-! Frequently changed domains: sadeceifsa*.lol; sadeceifsa*.icu
+! Frequently changed domains: sadeceifsa*.lol; sadeceifsa*.icu; sadeceifsa*.com
 ! Source: sadeceifsa12.icu
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
-.gif|$domain=/sadeceifsa\d+\.(lol\|icu)$/
-/sadeceifsa\d+\.(lol\|icu)$/###tg-cta-container
-/sadeceifsa\d+\.(lol\|icu)$/##.banner-grid-wrap
-/sadeceifsa\d+\.(lol\|icu)$/##article[data-ad-pos]
-/sadeceifsa\d+\.(lol\|icu)$/##div[style]:has(> a[href^="https://bit.ly/"])
-/sadeceifsa\d+\.(lol\|icu)$/##+js(remove-node-text, script, pickEngine)
+.gif|$domain=/sadeceifsa\d+\.com$/
+!+ NOT_VALIDATE
+||pub-*.r2.dev/yenigif.mp4$domain=/sadeceifsa\d+\.com$/
+/sadeceifsa\d+\.com$/##.yenigif-wrap
+/sadeceifsa\d+\.com$/###tg-cta-container
+/sadeceifsa\d+\.com$/##article[data-ad-pos]
+/sadeceifsa\d+\.com$/##div[style]:has(> a[href^="https://bit.ly/"])
+/sadeceifsa\d+\.com$/###prerollOverlay:style(display: none !important;)
+/sadeceifsa\d+\.com$/###mainVideo:style(display: block !important;)
+sadeceifsa10.com##.yenigif-wrap
 sadeceifsa10.com###tg-cta-container
-sadeceifsa10.com##.banner-grid-wrap
 sadeceifsa10.com##article[data-ad-pos]
 sadeceifsa10.com##div[style]:has(> a[href^="https://bit.ly/"])
-sadeceifsa10.com##+js(remove-node-text, script, pickEngine)
+sadeceifsa10.com###prerollOverlay:style(display: none !important;)
+sadeceifsa10.com###mainVideo:style(display: block !important;)
 !
 ! Frequently changed domains: dizimor*.com.tr
 ! Source: dizimor1.com.tr
@@ -6217,9 +6221,9 @@ tvakin.live,tvakin1.live,tvakin2.live,tvakin3.live,tvakin4.live,tvakin5.live,tva
 !
 ! Frequently changed domains: patronlive*.cfd
 ! Source: patronspor.is
-patrongol32.cfd,patrongol33.cfd##.background-link
-patrongol32.cfd,patrongol33.cfd##.top-banner-header
-||blogger.googleusercontent.com/img/$domain=patrongol32.cfd|patrongol33.cfd
+patrongol33.cfd##.background-link
+patrongol33.cfd##.top-banner-header
+||blogger.googleusercontent.com/img/$domain=patrongol33.cfd
 !
 ! Frequently changed domains: patronlive*.cfd
 ! Source: patronspor.is
@@ -6329,8 +6333,8 @@ yavasgir135.live##+js(addEventListener-defuser, DOMContentLoaded, openPopup)
 primeembedpanel.com##+js(no-window-open-if)
 ||primeembedpanel.com/ads/
 ||askimyavas*.*/wp-content/uploads/*.gif
-/askimyavas\d+\.(com|live)/###ads-inside-main
-askimyavas168.live###ads-inside-main
+/askimyavas\d+\.(com\|live)/###ads-inside-main
+askimyavas170.live###ads-inside-main
 !
 ! Frequently changed domains: gobtv*.com
 ||gobtv*.com/*.gif
