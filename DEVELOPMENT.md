@@ -107,7 +107,7 @@ Under the hood this copies `filters/` to `temp/filters_cached/`, replaces every
 `template.txt` with a single `@include "./filter.txt"` directive, and compiles
 from that copy. The original `filters/` directory is never modified.
 
-Optimization stats are picked up automatically: if `temp/optimization_config`
+Optimization stats are picked up automatically: if `temp/optimization/stats`
 (from a prior `yarn download-stats` run) exists, it's used as-is; otherwise
 stats are fetched from the remote server during the build.
 If a filter listed in the local cache is missing its `stats.json`, the build

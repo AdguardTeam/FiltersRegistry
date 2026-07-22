@@ -10,7 +10,7 @@ import { findFiles } from '../../utils/find_files.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const expectedLocalOptimizationConfigPath = path.resolve(__dirname, '../../../temp/optimization_config');
+const expectedLocalOptimizationConfigPath = path.resolve(__dirname, '../../../temp/optimization/stats');
 
 const EMPTY_FILTER_IDS = Object.freeze([]);
 const FILTER_ID = 1;

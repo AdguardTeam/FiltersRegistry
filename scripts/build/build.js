@@ -56,7 +56,7 @@ const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
 const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
 const tempDir = path.join(__dirname, '../../temp');
 const cachedFiltersDir = path.join(tempDir, 'filters_cached');
-const localOptimizationStatisticsBasePath = path.join(tempDir, 'optimization_config');
+const localOptimizationStatisticsBasePath = path.join(tempDir, 'optimization', 'stats');
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
