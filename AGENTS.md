@@ -81,10 +81,10 @@ for all supported AdGuard products.
 | Command | Description |
 | ------- | ----------- |
 | `yarn build` | Build all filters (`tsx scripts/build/build.js`) |
-| `yarn build:local` | Build filters from cached `filter.txt` files (`tsx scripts/build/build.js --use-cache`) |
+| `yarn build:local` | Build filters from cached `filter.txt` files (`tsx scripts/build/build.js --use-cache`); uses `temp/optimization_config/` for stats if present, otherwise fetches from the remote server |
 | `yarn auto-build` | Full automated build via `bash scripts/auto_build.sh` |
 | `yarn build:patches` | Build incremental patches |
-| `yarn generate-cache` | Refresh `filter.txt` cache and download optimization stats to `temp/optimization_config/` |
+| `yarn generate-cache` | Refresh `filter.txt` cache only; does not touch optimization stats |
 | `yarn download-stats` | Download per-filter `stats.json` files to `temp/optimization_config/`, without recompiling `filter.txt`; use `--include`/`--skip` to scope filters |
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |

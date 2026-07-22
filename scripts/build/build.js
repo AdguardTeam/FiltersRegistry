@@ -3,7 +3,7 @@ import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { compile, localOptimizationConfig } from '@adguard/filters-compiler';
+import { compile, localOptimizationStatistics, OptimizationStatsError } from '@adguard/filters-compiler';
 import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import { FOLDER_WITH_NEW_FILTERS, FOLDER_WITH_OLD_FILTERS } from './constants.js';
@@ -56,7 +56,7 @@ const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
 const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
 const tempDir = path.join(__dirname, '../../temp');
 const cachedFiltersDir = path.join(tempDir, 'filters_cached');
-const localOptimizationConfigPath = path.join(tempDir, 'optimization_config');
+const localOptimizationStatisticsBasePath = path.join(tempDir, 'optimization_config');
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -106,22 +106,11 @@ const prepareCachedFiltersDir = async () => {
  * Compiler entry point.
  */
 const buildFilters = async () => {
-    // When --generate-cache:
-    //   1. Download optimization stats (percent.json + per-filter stats.json).
-    //   2. Compile filter templates → writes filter.txt to each filters/<id>/ directory.
-    //      Passing null as platformsPath skips platform file generation entirely.
+    // --generate-cache compiles filter templates only, writing filter.txt to each
+    // filters/<id>/ directory. Passing null as platformsPath skips platform file
+    // generation entirely. It no longer touches optimization stats — use
+    // --download-stats for that.
     if (generateCache) {
-        await fs.rm(localOptimizationConfigPath, { recursive: true, force: true });
-
-        // TODO: The lines below will change to
-        //   localOptimizationConfig.download(
-        //       localOptimizationConfigPath,
-        //       includedFilterIDs.length === 0 ? undefined : includedFilterIDs,
-        //   )
-        await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
-        await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
-        console.log(`optimization statistics generated at ${localOptimizationConfigPath}.`);
-
         await compile(
             filtersDir,
             logPath,
@@ -135,14 +124,11 @@ const buildFilters = async () => {
     }
 
     if (downloadStats) {
-        // TODO: The lines below will change to
-        //   localOptimizationConfig.download(
-        //       localOptimizationConfigPath,
-        //       includedFilterIDs.length === 0 ? undefined : includedFilterIDs,
-        //   )
-        await localOptimizationConfig.downloadPercentJson(localOptimizationConfigPath);
-        await localOptimizationConfig.downloadStatsFromPercentJson(localOptimizationConfigPath, includedFilterIDs);
-        console.log(`optimization statistics generated at ${localOptimizationConfigPath}.`);
+        await localOptimizationStatistics.download(
+            localOptimizationStatisticsBasePath,
+            includedFilterIDs.length > 0 ? includedFilterIDs : undefined,
+        );
+        console.log(`optimization statistics generated at ${localOptimizationStatisticsBasePath}.`);
         return;
     }
 
@@ -164,8 +150,17 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
-        localOptimizationConfig.useLocalConfig(localOptimizationConfigPath);
-        console.log(`Using local optimization config from: ${localOptimizationConfigPath}`);
+
+        // If a local optimization stats cache exists, use it; otherwise fall back
+        // to fetching stats from the remote server (localOptimizationStatistics.use()
+        // simply isn't called in that case — that's already getOptimizationStatistics's
+        // default behavior).
+        if (existsSync(localOptimizationStatisticsBasePath)) {
+            localOptimizationStatistics.use(localOptimizationStatisticsBasePath);
+            console.log(`Using local optimization statistics from: ${localOptimizationStatisticsBasePath}`);
+        } else {
+            console.log('No local optimization statistics found; fetching stats from the remote server.');
+        }
     }
 
     try {
@@ -178,6 +173,12 @@ const buildFilters = async () => {
             excludedFilterIDs,
             CUSTOM_PLATFORMS_CONFIG,
         );
+    } catch (error) {
+        if (error instanceof OptimizationStatsError) {
+            console.error(error.message);
+            throw new Error('Run --download-stats to download the latest statistics.');
+        }
+        throw error;
     } finally {
         // Clean up temp filters copy
         if (useCache) {

@@ -88,11 +88,11 @@ yarn generate-cache
 ```
 
 This compiles every filter from its `template.txt` and updates the corresponding
-`filter.txt` inside `filters/`, and downloads optimization stats for the included
-filters. Platform-specific filters and patches are **not** generated. The resulting
-`filter.txt` files contain the fully resolved filter content (all `@include` and
-`!#include` directives expanded) and can be used to build filters from cache with
-`yarn build:local`.
+`filter.txt` inside `filters/`. It does not touch optimization stats — use
+`yarn download-stats` for that. Platform-specific filters and patches are **not**
+generated. The resulting `filter.txt` files contain the fully resolved filter
+content (all `@include` and `!#include` directives expanded) and can be used to
+build filters from cache with `yarn build:local`.
 
 ### Building From Cache
 
@@ -106,6 +106,12 @@ yarn build:local
 Under the hood this copies `filters/` to `temp/filters_cached/`, replaces every
 `template.txt` with a single `@include "./filter.txt"` directive, and compiles
 from that copy. The original `filters/` directory is never modified.
+
+Optimization stats are picked up automatically: if `temp/optimization_config`
+(from a prior `yarn download-stats` run) exists, it's used as-is; otherwise
+stats are fetched from the remote server during the build.
+If a filter listed in the local cache is missing its `stats.json`, the build
+fails with a message pointing at `yarn download-stats`.
 
 The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` flags can be
 combined:
@@ -205,7 +211,7 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
-- `--generate-cache` — compile filters to update `filter.txt` cache and download optimization stats
+- `--generate-cache` — compile filters to update the `filter.txt` cache only
 - `--download-stats` — downloads per-filter `stats.json` files for the filters being built,
   without recompiling `filter.txt`. Existing `stats.json` files are overwritten.
   use `--include`/`--skip` to scope which filters are processed
