@@ -1,9 +1,9 @@
-! Checksum: 6qooKgKObO2gLCc/zX/4mA
-! Diff-Path: ../patches/260/260-s-1784682151-14400.patch
+! Checksum: 4/2BuyRTLCxCv4HF2qd6xw
+! Diff-Path: ../patches/260/260-s-1784739715-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.63
-! TimeUpdated: 2026-07-22T00:59:41+00:00
+! Version: 2.0.0.64
+! TimeUpdated: 2026-07-22T16:59:41+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -3150,16 +3150,26 @@ x.com##button[aria-label*="Grok"]:has(.css-175oi2r.r-xoduu5.r-bnwqim)
 ! Floating Grok chat button in bottom right
 x.com##[data-testid="GrokDrawer"]
 ! - Promos
-! Main feed (Top) - "Create epic videos in cinematic quality" promo + separator
-x.com##[data-testid="cellInnerDiv"] > .css-175oi2r.r-1adg3ll.r-1ny4l3l > .css-175oi2r > .css-175oi2r.r-kemksi:has(> [data-testid="inlinePrompt"] > [data-testid="inlinePrompt-primaryAction"] > a[href="https://grok.com/imagine"])
-x.com##[data-testid="cellInnerDiv"]:has(> .css-175oi2r.r-1adg3ll.r-1ny4l3l > .css-175oi2r > .css-175oi2r.r-kemksi > [data-testid="inlinePrompt"] > [data-testid="inlinePrompt-primaryAction"] > a[href="https://grok.com/imagine"]) + [data-testid="cellInnerDiv"]:has(> .css-175oi2r.r-1adg3ll.r-1ny4l3l > .css-175oi2r.r-l00any.r-109y4c4.r-gu4em3)
-! Grok Build promo at top of home feed
-x.com##[data-testid="cellInnerDiv"]:has(> .css-175oi2r.r-1adg3ll.r-1ny4l3l [data-testid="inlinePrompt-primaryAction"] > [href="https://x.ai/cli?source=x_timeline_prompt"])
-x.com##[data-testid="cellInnerDiv"]:has(> .css-175oi2r.r-1adg3ll.r-1ny4l3l [data-testid="inlinePrompt-primaryAction"] > [href="https://x.ai/cli?source=x_timeline_prompt"]) + [data-testid="cellInnerDiv"] > .css-175oi2r.r-1adg3ll.r-1ny4l3l > .css-175oi2r.r-l00any.r-109y4c4.r-gu4em3:empty
+! Top of home feed - Promos for video generation and Grok Build
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href="https://grok.com/imagine"])
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href="https://grok.com/imagine"]) + [data-testid="cellInnerDiv"]:has(.r-gu4em3:empty)
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href="https://x.ai/cli?source=x_timeline_prompt"])
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href="https://x.ai/cli?source=x_timeline_prompt"]) + [data-testid="cellInnerDiv"]:has(.r-gu4em3:empty)
 ! Right sidebar - "Make videos in seconds" promo
 x.com##.css-175oi2r:has(> .r-kemksi.r-1ifxtd0 > aside[role="complementary"] > a[href="https://grok.com/imagine?referring_page=home_sidebar_grok_promo"])
+! -- Hiding specific tweets
+! * Also hides "is this post relevant to your search" notice
 ! Posts with AI art tags
-x.com##[data-testid="tweet"]:has([data-testid="tweetText"] :is([href^="/hashtag/aiart?"i], [href="/hashtag/aiartwork?"i], [href^="/hashtag/aiporn?"i])):not([tabindex="-1"])
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"]) [data-testid="tweetText"] :is([href^="/hashtag/aiart?"i], [href^="/hashtag/aiartwork?"i], [href^="/hashtag/aiporn?"i], [href="/i/communities/1876728323608338672/hashtag/aiart"i]))
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"]) [data-testid="tweetText"] :is([href^="/hashtag/aiart?"i], [href^="/hashtag/aiartwork?"i], [href^="/hashtag/aiporn?"i], [href="/i/communities/1876728323608338672/hashtag/aiart"i])) + [data-testid="cellInnerDiv"]:has(.r-cl2sl0.r-2sztyj.r-5kkj8d.r-1bq57o9)
+! - https://x.com/yee_22_/status/2068659455445873124
+! Posts by or mentioning Grok
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"]) [href="/grok"])
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"]) [href="/grok"]) + [data-testid="cellInnerDiv"]:has(.r-cl2sl0.r-2sztyj.r-5kkj8d.r-1bq57o9)
+! - https://x.com/SpaceX/status/2074243929273250124
+! Tweet with AI label
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"]) .r-knv0ih [d^="M12.998 1.94c.18 3.015 1.04 5.156 2.473 6.59 1.433"])
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"]) .r-knv0ih [d^="M12.998 1.94c.18 3.015 1.04 5.156 2.473 6.59 1.433"]) + [data-testid="cellInnerDiv"]:has(.r-cl2sl0.r-2sztyj.r-5kkj8d.r-1bq57o9)
 ! -- https://x.com/artsyomni/status/2039107622117183957
 ! Tweet - Actions menu - Edit image
 x.com##[role="menuitem"][href*="grok.com/imagine"]
@@ -3168,12 +3178,6 @@ x.com##.css-175oi2r.r-rki7wi.r-1ba6zt5.r-u8s1d.r-c97pre:has([href^="https://grok
 ! -- https://x.com/grok/status/2021675529582039415
 ! "Ask Grok" button - below posts from Grok
 x.com##.css-175oi2r.r-1mmae3n:has(> [data-testid="grok_post_atgrok_button"])
-! -- https://x.com/yee_22_/status/2068659455445873124
-! Posts by or mentioning Grok
-x.com##[data-testid="tweet"]:has([href="/grok"]):not([tabindex="-1"])
-! -- https://x.com/SpaceX/status/2074243929273250124
-! Tweet with AI label
-x.com##[data-testid="tweet"]:has(.r-knv0ih [d^="M12.998 1.94c.18 3.015 1.04 5.156 2.473 6.59 1.433"]):not([tabindex="-1"])
 ! -- https://x.com/Newgrounds
 ! "Profile Summary" button
 ! * Does not appear on profiles with a yellow verfication badge
