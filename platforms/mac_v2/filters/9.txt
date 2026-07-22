@@ -1,9 +1,9 @@
-! Checksum: 4IZr9COmjJjTmDU6C0BLeg
-! Diff-Path: ../patches/9/9-s-1784689954-3600.patch
+! Checksum: Ac3jboewScWq10CC5XIrRQ
+! Diff-Path: ../patches/9/9-s-1784748995-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.6
-! TimeUpdated: 2026-07-22T03:08:36+00:00
+! Version: 2.0.35.7
+! TimeUpdated: 2026-07-22T19:33:16+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1566,6 +1566,12 @@ uol.com.br#%#//scriptlet('set-constant', '__configuredDFPTags', 'emptyObj')
 vix.com#%#//scriptlet('json-prune', '*', 'vast_meta_url')
 vix.com#%#//scriptlet('json-prune', 'ads', 'ads.policy.skipMode')
 vix.com#%#//scriptlet('json-prune', 'vmap_ad_breaks interstitials')
+vix.com#%#//scriptlet('json-prune', 'vmap_ad_breaks preroll')
+vix.com#%#//scriptlet('json-prune', 'vmap_ad_breaks midroll-1')
+vix.com#%#//scriptlet('json-prune', 'vmap_ad_breaks midroll-2')
+vix.com#%#//scriptlet('json-prune', 'vmap_ad_breaks midroll-3')
+vix.com#%#//scriptlet('json-prune', 'vmap_ad_breaks midroll-4')
+vix.com#%#//scriptlet('json-prune', 'vmap_ad_breaks midroll-5')
 vix.com#%#//scriptlet('trusted-replace-xhr-response', '/"(interstitials)":|"(breaks)":/', '"no_ads":', '/\.m3u8|\.mpd/')
 vix.com#%#//scriptlet('m3u-prune', 'type=ad', '.m3u8')
 vix.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text(),".mp.lura.live/prod/")]] | //*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"][.//SegmentList[@presentationTimeOffset="0"]])', '', '.mpd')
@@ -2143,6 +2149,7 @@ proandroid.com,lusometeo.com,kltutors.com,eloutput.com,mundobytes.com,techondica
 !
 ! NOTE: Specific rules
 !
+vix.com##button[data-testid="player-up-sell-entry-button"]
 gazetadopovo.com.br##div[class^="outbrain"]
 gazetadopovo.com.br##div[class^="topBannerAd"]
 gazetadopovo.com.br##div[class$="postAsideBanner"]

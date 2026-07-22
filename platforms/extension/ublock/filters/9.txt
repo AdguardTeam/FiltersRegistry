@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: etKG5hHItdGhB6X7Btp84A
-! Diff-Path: ../patches/9/9-s-1784689945-3600.patch
+! Checksum: cF37QCa3CBFXd2Fhb9TT5w
+! Diff-Path: ../patches/9/9-s-1784748988-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.6
-! TimeUpdated: 2026-07-22T03:08:36+00:00
+! Version: 2.0.35.7
+! TimeUpdated: 2026-07-22T19:33:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1583,6 +1583,12 @@ uol.com.br##+js(set-constant, __configuredDFPTags, {})
 vix.com##+js(json-prune, *, vast_meta_url)
 vix.com##+js(json-prune, ads, ads.policy.skipMode)
 vix.com##+js(json-prune, vmap_ad_breaks interstitials)
+vix.com##+js(json-prune, vmap_ad_breaks preroll)
+vix.com##+js(json-prune, vmap_ad_breaks midroll-1)
+vix.com##+js(json-prune, vmap_ad_breaks midroll-2)
+vix.com##+js(json-prune, vmap_ad_breaks midroll-3)
+vix.com##+js(json-prune, vmap_ad_breaks midroll-4)
+vix.com##+js(json-prune, vmap_ad_breaks midroll-5)
 vix.com##+js(m3u-prune, type=ad, .m3u8)
 vix.com##+js(xml-prune, xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text()\,".mp.lura.live/prod/")]] | //*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"][.//SegmentList[@presentationTimeOffset="0"]]), , .mpd)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165935
@@ -2129,6 +2135,7 @@ proandroid.com,lusometeo.com,kltutors.com,eloutput.com,mundobytes.com,techondica
 !
 ! NOTE: Specific rules
 !
+vix.com##button[data-testid="player-up-sell-entry-button"]
 gazetadopovo.com.br##div[class^="outbrain"]
 gazetadopovo.com.br##div[class^="topBannerAd"]
 gazetadopovo.com.br##div[class$="postAsideBanner"]
