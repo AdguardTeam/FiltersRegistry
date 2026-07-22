@@ -1,9 +1,9 @@
-! Checksum: pljcfJbsZUJlKneh4eZACg
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1784717459-3600.patch
+! Checksum: luc0WeDGUF3TnmiBSgyygg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1784720485-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.7
-! TimeUpdated: 2026-07-22T10:47:16+00:00
+! Version: 2.0.66.8
+! TimeUpdated: 2026-07-22T11:38:13+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5538,13 +5538,14 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turktube\d+\.online$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.ink$/]##a[href^="https://tinyurl.com/"]
 !+ NOT_VALIDATE
-.gif|$domain=/hdturkifsa\d+\.(lol\|icu)$/
-[$domain=/hdturkifsa\d+\.(lol\|icu)$/]###tg-cta-container
-[$domain=/hdturkifsa\d+\.(lol\|icu)$/]##.banner-grid-wrap
-[$domain=/hdturkifsa\d+\.(lol\|icu)$/]##article[data-ad-pos]
-[$domain=/hdturkifsa\d+\.(lol\|icu)$/]##div[style]:has(> a[href^="https://bit.ly/"])
-[$domain=/hdturkifsa\d+\.(lol\|icu)$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
-[$domain=/hdturkifsa\d+\.(lol\|icu)$/]$$script:contains(pickEngine)
+.gif|$domain=/hdturkifsa\d+\.(lol\|icu|com)$/
+[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##a[rel="nofollow noopener noreferrer sponsored"]
+[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]###tg-cta-container
+[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##.banner-grid-wrap
+[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##article[data-ad-pos]
+[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
+[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]$$script:contains(pickEngine)
 !+ NOT_VALIDATE
 ||i.ibb.co/*.gif$domain=/softtv\d+\.com$/
 [$domain=/softtv\d+\.com$/]##.slot-header_banner
