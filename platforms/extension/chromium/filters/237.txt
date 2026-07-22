@@ -1,9 +1,9 @@
-! Checksum: puHXrc2dfJoCpl3mGeY11A
-! Diff-Path: ../patches/237/237-s-1784739699-14400.patch
+! Checksum: HREujvBCu/S8J66Us/KpHA
+! Diff-Path: ../patches/237/237-s-1784753607-14400.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.39.27
-! TimeUpdated: 2026-07-22T16:59:09+00:00
+! Version: 1.0.39.28
+! TimeUpdated: 2026-07-22T20:50:49+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -12,8 +12,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Wed, 22 Jul 2026, 18:53 UTC+02:00
-! OriginalVersion: 2026.7.22.0
+! Last modified: Wed, 22 Jul 2026, 22:35 UTC+02:00
+! OriginalVersion: 2026.7.22.1
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -22,7 +22,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: śro, 22 lip 2026, 18:53 UTC+02:00
+! Aktualizacja: śro, 22 lip 2026, 22:35 UTC+02:00
 !
 !
 ! Newslettery (nie popupy)
@@ -6741,6 +6741,7 @@ zyciepabianic.pl##.paper
 ##.callback-widget:lang(pl)
 ##.ceneo-widget
 ##.circle-cursor:lang(pl)
+##.cTopicPostArea:has(.cGuestTeaser)
 ##.custom-social-proof:lang(pl)
 ##.ekomi-widget-container:lang(pl)
 ##.elfisanta:lang(pl)
@@ -6786,7 +6787,9 @@ ch,com,cz,eu,farm,fm,group,info,io,it,me,net,org,promo,tv#$#.grecaptcha-badge:la
 ch,com,cz,eu,fm,info,io,it,me,net,org,to,tv#$#.custom-grecaptcha-badge:lang(pl) { visibility: hidden !important }
 com,eu,info,pl###content > div#ipl-loader
 com,eu,info,pl###content > div#primary span.ipl
+pl#$##shop-hcaptcha-badge-container { visibility: hidden !important }
 pl###tm-widget-alpaca
+pl#$#.CodeMirror-search-label ~ input.CodeMirror-search-field[style] { width: 60% !important }
 pl##.csocial-link[href*="olx.pl"]
 pl##.csocial-link[href*="otomoto.pl"]
 pl#$#.custom-grecaptcha-badge { visibility: hidden !important }
@@ -6794,12 +6797,17 @@ pl##.ratingBadgeWrapper
 pl##.rssocial-icons > li > a[href*="google.com/maps"]
 pl##.rssocial-icons > li > a[href*="google.pl/maps"]
 pl##.rssocial-icons > li > a[href*="maps.google."]
+pl#$#.smartbanner:not(body, html) { display: none !important }
 pl##.widget_times_social_widget a[href*="podcasts.google"]
+pl#$#.with-smartbanner .external-header { top: 0 !important }
+pl#$#.with-smartbanner .top-band { margin-top: 0 !important }
 pl##.x13socialfixed_links a[href*="allegro.pl/"]
 pl##a[data-st-area="goToSG"]
 pl##a[data-st-area="gotosg"]
 pl##a[data-st-area="xbal"]
+pl#$#body.smartbanner #smartbanner { display: none !important }
 pl##div[id^="___ratingbadge_"]
+pl#$#html[data-smartbanner-original-margin-top^="0"][style] { margin-top: 0 !important }
 pl##iframe[src^="https://esa.nask.pl/widget/"]
 !
 !
@@ -12619,14 +12627,6 @@ pecetowicz.pl#?#body:has(#elFullNotifications_menu:contains(Nie czekaj, zaloguj 
 pepper.pl#%#//scriptlet('ubo-href-sanitizer', 'a[href*="https://www.pepper.pl/visit/"][title^="https://"]', '[title]')
 photoblog.pl#$##frontpage .frontpage-teaser-photo-container[style*="background-image: url()"] h1 { margin-top: 45px !important }
 photoblog.pl#$##frontpage .frontpage-teaser-photo-container[style*="background-image: url()"] { height: 225px !important }
-pl#$##shop-hcaptcha-badge-container { visibility: hidden !important }
-pl#$#.CodeMirror-search-label ~ input.CodeMirror-search-field[style] { width: 60% !important }
-pl#?#.cTopicPostArea .cGuestTeaser:upward(.cTopicPostArea)
-pl##.smartbanner:not(body, html)
-pl#$#.with-smartbanner .external-header { top: 0 !important }
-pl#$#.with-smartbanner .top-band { margin-top: 0 !important }
-pl##body.smartbanner #smartbanner
-pl#$#html[data-smartbanner-original-margin-top^="0"][style] { margin-top: 0 !important }
 plus.pl#%#//scriptlet('ubo-set-cookie', 'isIplusClosed', 'true')
 poczta.interia.pl#$#@media (min-width: 1026px) { #main-app :is(#sitebar, #sitebar FORM) { width: 100% !important; max-width: 100% !important } }
 poczta.interia.pl#@$##main-app #sitebar, #main-app #sitebar FORM { width: 100% !important; max-width: 100% !important }
