@@ -1,9 +1,9 @@
-! Checksum: nLUTBuB94d0Zlooba3dtDA
-! Diff-Path: ../patches/13/13-s-1784710866-3600.patch
+! Checksum: POwnhNJNwjSFqD3/+SXu4Q
+! Diff-Path: ../patches/13/13-s-1784717424-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.6
-! TimeUpdated: 2026-07-22T08:58:02+00:00
+! Version: 2.0.66.7
+! TimeUpdated: 2026-07-22T10:47:16+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6026,18 +6026,31 @@ x.palv2.cfd###adPlayerBanner
 !+ NOT_VALIDATE
 ||img.akamaicdn.work/ads/$domain=/turkifsa(lar)?\d+\.site$/
 ! aglint-enable no-invalid-modifiers
-[$domain=/turkifsa(lar)?\d*\.site$/]##div[style^="min-height"]:has(> a[target="_blank"] > div.ad-banner-frame)
-[$domain=/turkifsa(lar)?\d*\.site$/]#%#//scriptlet('set-session-storage-item', 'preroll_view_count', '1')
+||turkifsa*.site/api/popunder-config
+||turkifsa*.site/api/preroll-event
+[$domain=/turkifsa(lar)?\d*\.site$/]##div[class]:has(> a:is([href^="https://cutt.ly/"],[href="https://denemebonusumi.com/"]))
+[$domain=/turkifsa(lar)?\d*\.site$/]##video + div.absolute
+[$domain=/turkifsa(lar)?\d*\.site$/]##.ad-banner-frame
+[$domain=/turkifsa(lar)?\d*\.site$/]##div[class][style^="min-height:"][style*="calc("]
 !
 ! Frequently changed domains: turkifsa*.art
 ! Source: turk-ifsa11.com
-[$domain=/turk-ifsa\d+\.com/]##div[style^="min-height"]:has(> a[target="_blank"] > div.ad-banner-frame)
-[$domain=/turk-ifsa\d+\.com/]##div[class]:has(> a[href^="https://cutt.ly/"])
+||img.dmcdn-mediastream.work/ads/
+||turk-ifsa*.com/api/popunder-config
+||turk-ifsa*.com/api/preroll-event
+[$domain=/turk-ifsa\d+\.com/]##div[class]:has(> a:is([href^="https://cutt.ly/"],[href="https://denemebonusumi.com/"]))
+[$domain=/turk-ifsa\d+\.com/]##video + div.absolute
+[$domain=/turk-ifsa\d+\.com/]##.ad-banner-frame
+[$domain=/turk-ifsa\d+\.com/]##div[class][style^="min-height:"][style*="calc("]
 !
 ! Frequently changed domains: turkifsa*.art
 ! Source: turkifsa25.art
-[$domain=/turkifsa\d+\.art$/]##div[style^="min-height"]:has(> a[target="_blank"] > div.ad-banner-frame)
-[$domain=/turkifsa\d+\.art$/]##div[class]:has(> a[href^="https://cutt.ly/"])
+||turkifsa*.art/api/popunder-config
+||turkifsa*.art/api/preroll-event
+[$domain=/turkifsa\d*\.art/]##div[class]:has(> a:is([href^="https://cutt.ly/"],[href="https://denemebonusumi.com/"]))
+[$domain=/turkifsa\d*\.art/]##video + div.absolute
+[$domain=/turkifsa\d*\.art/]##.ad-banner-frame
+[$domain=/turkifsa\d*\.art/]##div[class][style^="min-height:"][style*="calc("]
 !
 ! Frequently changed domains: amatorifsa*.com
 ! Source: amatorifsa36.com
