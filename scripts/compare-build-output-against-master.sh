@@ -74,7 +74,7 @@ fi
 ARROW="→"
 CHECK="✓"
 CROSS="✗"
-TOTAL_STEPS=9
+TOTAL_STEPS=11
 
 # Prints a blank line and a bold "Step N/9: <title>" header.
 step_header() {
@@ -168,7 +168,10 @@ generate_report() {
   echo "Branch (reference): $BASED_BRANCH          @ $MASTER_SHA"
   echo "Branch (feature):   $CHANGED_BRANCH @ $CHANGED_SHA"
   if [ "${BUILD_LOCAL:-false}" = "true" ]; then
-    build_cmd="generate-cache && yarn build:local $BUILD_FLAGS"
+    build_cmd=""
+    [ "${DO_GENERATE_CACHE:-false}" = "true" ] && build_cmd+="generate-cache && yarn "
+    [ "${DO_GENERATE_STATS:-false}" = "true" ] && build_cmd+="download-stats && yarn "
+    build_cmd+="build:local $BUILD_FLAGS"
   else
     build_cmd="build $BUILD_FLAGS"
   fi
@@ -324,15 +327,50 @@ step_header 2 "Build mode"
 echo "Use cached sources instead of a regular build?"
 if confirm default_no; then
   BUILD_LOCAL=true
-  echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (generate-cache + build:local)"
+  echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
 else
   BUILD_LOCAL=false
   echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
 fi
 
-# --- Step 3: cleanup preference ---
+# --- Step 3: generate cache? (cached mode only — not required every run, an
+# existing filter.txt cache can be reused) ---
 
-step_header 3 "Cleanup preference"
+step_header 3 "Generate cache"
+if [ "$BUILD_LOCAL" = "true" ]; then
+  echo "Regenerate filter.txt cache (yarn generate-cache)?"
+  if confirm default_no; then
+    DO_GENERATE_CACHE=true
+    echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
+  else
+    DO_GENERATE_CACHE=false
+    echo "${C_CYAN}${ARROW}${C_RESET} Skipping generate-cache, reusing existing cache"
+  fi
+else
+  DO_GENERATE_CACHE=false
+  echo "${C_DIM}Skipped — plain build mode selected.${C_RESET}"
+fi
+
+# --- Step 4: download stats? (cached mode only, independent of generate-cache) ---
+
+step_header 4 "Download stats"
+if [ "$BUILD_LOCAL" = "true" ]; then
+  echo "Refresh per-filter stats.json from the cached percent.json (yarn download-stats)?"
+  if confirm default_no; then
+    DO_GENERATE_STATS=true
+    echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
+  else
+    DO_GENERATE_STATS=false
+    echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats refresh"
+  fi
+else
+  DO_GENERATE_STATS=false
+  echo "${C_DIM}Skipped — plain build mode selected.${C_RESET}"
+fi
+
+# --- Step 5: cleanup preference ---
+
+step_header 5 "Cleanup preference"
 echo "Remove worktrees and platforms_*_build/ when done?"
 if confirm; then
   DO_CLEANUP=true
@@ -348,9 +386,9 @@ if ! MASTER_SHA=$(git rev-parse --verify "$BASED_BRANCH" 2>/dev/null); then
 fi
 CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 
-# --- Step 4: set up worktrees (reuse if already present) ---
+# --- Step 6: set up worktrees (reuse if already present) ---
 
-step_header 4 "Set up worktrees"
+step_header 6 "Set up worktrees"
 setup_worktree() {
   local label=$1
   local path=$2
@@ -386,10 +424,10 @@ setup_worktree() {
 setup_worktree "$BASED_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
-# --- Step 5: install deps in parallel ---
+# --- Step 7: install deps in parallel ---
 # Always runs, even for a reused worktree
 
-step_header 5 "Install dependencies"
+step_header 7 "Install dependencies"
 
 yarn --cwd "$MASTER_WORK_TREE" install > "$LOG_MASTER_INSTALL" 2>&1 &
 PID_MASTER_INSTALL=$!
@@ -405,20 +443,27 @@ if ! wait "$PID_CHANGED_INSTALL"; then
   die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
-# --- Step 6: sync changed worktree's filters/ to the $BASED_BRANCH baseline ---
+# --- Step 8: sync changed worktree's filters/ to the $BASED_BRANCH baseline ---
 
-step_header 6 "Sync filters/ baseline"
+step_header 8 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASED_BRANCH baseline" "$LOG_SYNC_BASELINE" \
   git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
   die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
-# --- Step 7: build both branches in parallel ---
+# --- Step 9: build both branches in parallel ---
 
-step_header 7 "Build both branches"
+step_header 9 "Build both branches"
 if [ "$BUILD_LOCAL" = "true" ]; then
   build_branch() {
-    yarn --cwd "$1" generate-cache && yarn --cwd "$1" build:local $BUILD_FLAGS
+    local dir=$1
+    if [ "$DO_GENERATE_CACHE" = "true" ]; then
+      yarn --cwd "$dir" generate-cache || return 1
+    fi
+    if [ "$DO_GENERATE_STATS" = "true" ]; then
+      yarn --cwd "$dir" download-stats || return 1
+    fi
+    yarn --cwd "$dir" build:local $BUILD_FLAGS
   }
 else
   build_branch() {
@@ -474,17 +519,19 @@ MASTER_SHA=$MASTER_SHA
 CHANGED_SHA=$CHANGED_SHA
 CHANGED_BRANCH=$CHANGED_BRANCH
 BUILD_LOCAL=$BUILD_LOCAL
+DO_GENERATE_CACHE=$DO_GENERATE_CACHE
+DO_GENERATE_STATS=$DO_GENERATE_STATS
 EOF
 
-# --- Step 8: report ---
+# --- Step 10: report ---
 
-step_header 8 "Report"
+step_header 10 "Report"
 generate_report
 REPORT_STATUS=$?
 
-# --- Step 9: cleanup ---
+# --- Step 11: cleanup ---
 
-step_header 9 "Cleanup"
+step_header 11 "Cleanup"
 cleanup_all() {
   git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
   git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
