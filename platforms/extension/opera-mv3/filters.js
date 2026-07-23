@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.94.63",
-			"timeUpdated": "2026-07-23T13:00:08+0000",
+			"version": "2.1.94.64",
+			"timeUpdated": "2026-07-23T16:59:56+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.94.62",
-			"timeUpdated": "2026-07-23T13:00:10+0000",
+			"version": "2.1.94.63",
+			"timeUpdated": "2026-07-23T16:59:58+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1025,8 +1025,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.29.98",
-			"timeUpdated": "2026-07-22T20:50:14+0000",
+			"version": "2.0.29.99",
+			"timeUpdated": "2026-07-23T17:00:06+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1263,8 +1263,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.12.44",
-			"timeUpdated": "2026-07-23T13:00:51+0000",
+			"version": "2.0.12.45",
+			"timeUpdated": "2026-07-23T17:00:37+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1339,8 +1339,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.2",
-			"timeUpdated": "2026-07-21T05:33:50+0000",
+			"version": "2.0.25.3",
+			"timeUpdated": "2026-07-23T17:00:47+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.87.94",
-			"timeUpdated": "2026-07-23T13:01:10+0000",
+			"version": "2.0.87.95",
+			"timeUpdated": "2026-07-23T17:00:58+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
