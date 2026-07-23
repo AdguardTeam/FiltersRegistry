@@ -22,7 +22,7 @@ cd "$REPO_ROOT" || exit 1
 # would otherwise fail as "already registered".
 git worktree prune
 
-TEMP_DIR_NAME="temp"
+TEMP_DIR_NAME="$REPO_ROOT/temp"
 mkdir -p "$TEMP_DIR_NAME"
 
 # Lives outside $TEMP_DIR_NAME (unlike the deterministic name, so cleanup_all's
@@ -39,8 +39,8 @@ trap 'rm -rf "$LOCK_DIR"' EXIT
 MASTER_WORK_TREE="$TEMP_DIR_NAME/reg-${BASED_BRANCH}-build"
 CHANGED_WORK_TREE="$TEMP_DIR_NAME/reg-changed-build"
 META_FILE="$TEMP_DIR_NAME/reg-meta.env"
-PLATFORMS_MASTER="platforms_${BASED_BRANCH}_build"
-PLATFORMS_CHANGED="platforms_changed_build"
+PLATFORMS_MASTER="$TEMP_DIR_NAME/platforms_${BASED_BRANCH}_build"
+PLATFORMS_CHANGED="$TEMP_DIR_NAME/platforms_changed_build"
 
 LOG_DIR_NAME="logs"
 mkdir -p "$TEMP_DIR_NAME/$LOG_DIR_NAME"
@@ -492,7 +492,6 @@ step_header 9 "Cleanup"
 cleanup_all() {
   git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
   git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
-  rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" "$META_FILE"
   # Remove everything under $TEMP_DIR_NAME except $LOG_DIR_NAME, so logs
   # from this run stay available for inspection after cleanup.
   find "$TEMP_DIR_NAME" -mindepth 1 -maxdepth 1 ! -name "$LOG_DIR_NAME" -exec rm -rf {} +
