@@ -1,9 +1,9 @@
-! Checksum: QHBtVXkZFo7PGjzU0tzoEw
-! Diff-Path: ../patches/13/13-s-1784797295-3600.patch
+! Checksum: UK/9CKoVmUtomva1n1XZmw
+! Diff-Path: ../patches/13/13-s-1784800632-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.13
-! TimeUpdated: 2026-07-23T08:58:38+00:00
+! Version: 2.0.66.14
+! TimeUpdated: 2026-07-23T09:53:59+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6205,15 +6205,21 @@ x.palv2.cfd###adPlayerBanner
 !
 ! Frequently changed domains: patronlive*.cfd
 ! Source: patronspor.is
-patrongol33.cfd##.background-link
-patrongol33.cfd##.top-banner-header
-||blogger.googleusercontent.com/img/$domain=patrongol33.cfd
+patrongol34.cfd##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
+patrongol34.cfd##.background-link
+patrongol34.cfd##.top-banner-header
+||blogger.googleusercontent.com/img/$domain=patrongol34.cfd
 !
 ! Frequently changed domains: patronlive*.cfd
 ! Source: patronspor.is
-patronlive48.cfd##.background-link
-patronlive48.cfd##.top-banner-header
-||blogger.googleusercontent.com/img/$domain=patronlive46cfd
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||blogger.googleusercontent.com/img/$domain=/patronlive\d+\.cfd$/
+! aglint-enable no-invalid-modifiers
+[$domain=/patronlive\d+\.cfd$/]##.background-link
+[$domain=/patronlive\d+\.cfd$/]##.top-banner-header
+[$domain=/patronlive\d+\.cfd$/]##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
+[$domain=/patronlive\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled: true', 'prerollEnabled: false')
 !
 ! Frequently changed domains: piabettv*.live
 ! Source: https://ksln.link/piatv
