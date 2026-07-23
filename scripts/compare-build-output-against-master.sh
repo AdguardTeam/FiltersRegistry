@@ -45,14 +45,14 @@ PLATFORMS_CHANGED="$TEMP_DIR_NAME/platforms_changed_build"
 LOG_DIR_NAME="logs"
 mkdir -p "$TEMP_DIR_NAME/$LOG_DIR_NAME"
 
-LOG_MASTER_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASED_BRANCH}-install.txt"
-LOG_CHANGED_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-install.txt"
-LOG_MASTER_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASED_BRANCH}-build.txt"
-LOG_CHANGED_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-build.txt"
-LOG_SYNC_BASELINE="$TEMP_DIR_NAME/$LOG_DIR_NAME/sync-baseline.txt"
-LOG_COPY_MASTER="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-${BASED_BRANCH}.txt"
-LOG_COPY_CHANGED="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-changed.txt"
-LOG_CLEANUP="$TEMP_DIR_NAME/$LOG_DIR_NAME/cleanup.txt"
+LOG_MASTER_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASED_BRANCH}-install.log"
+LOG_CHANGED_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-install.log"
+LOG_MASTER_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASED_BRANCH}-build.log"
+LOG_CHANGED_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-build.log"
+LOG_SYNC_BASELINE="$TEMP_DIR_NAME/$LOG_DIR_NAME/sync-baseline.log"
+LOG_COPY_MASTER="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-${BASED_BRANCH}.log"
+LOG_COPY_CHANGED="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-changed.log"
+LOG_CLEANUP="$TEMP_DIR_NAME/$LOG_DIR_NAME/cleanup.log"
 
 # Colors and symbols used throughout, disabled when not attached to a terminal.
 if [ -t 1 ]; then
@@ -347,7 +347,7 @@ setup_worktree() {
   # label is a branch name and may contain "/" (e.g. "feature/#1211"), which
   # would otherwise turn into a nonexistent subdirectory in the log path.
   local escaped_label="${label//\//-}"
-  local log_path="$TEMP_DIR_NAME/$LOG_DIR_NAME/worktree-$escaped_label.txt"
+  local log_path="$TEMP_DIR_NAME/$LOG_DIR_NAME/worktree-$escaped_label.log"
 
   if [ -e "$path/.git" ]; then
     echo "[$label] Existing worktree found at $path — reuse it instead of recreate from scratch?"
