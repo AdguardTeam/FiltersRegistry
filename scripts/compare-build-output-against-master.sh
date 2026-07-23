@@ -334,7 +334,10 @@ else
   echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: No"
 fi
 
-MASTER_SHA=$(git rev-parse "$BASED_BRANCH")
+if ! MASTER_SHA=$(git rev-parse --verify "$BASED_BRANCH" 2>/dev/null); then
+  echo "${C_RED}${CROSS} Error:${C_RESET} local branch '$BASED_BRANCH' not found. Fetch/checkout it first." >&2
+  exit 1
+fi
 CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 
 # --- Step 4: set up worktrees (reuse if already present) ---
