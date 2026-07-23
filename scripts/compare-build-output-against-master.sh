@@ -151,6 +151,13 @@ report_failure() {
   fi
 }
 
+# report_failure, then exit 1. For the steps where a failure can't be
+# recovered from and must stop the script immediately.
+die() {
+  report_failure "$1" "$2"
+  exit 1
+}
+
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
 # CHANGED_BRANCH / BUILD_LOCAL and the platforms_{master,changed}_build/ dirs.
 generate_report() {
@@ -372,8 +379,7 @@ setup_worktree() {
 
   if ! run_with_spinner "[$label] setting up worktree" "$log_path" \
     git worktree add --detach "$path" "$sha" -f; then
-    report_failure "[$label] worktree setup FAILED" "$log_path"
-    exit 1
+    die "[$label] worktree setup FAILED" "$log_path"
   fi
 }
 
@@ -393,12 +399,10 @@ PID_CHANGED_INSTALL=$!
 spinner_wait_all "$PID_MASTER_INSTALL:[${BASED_BRANCH}] install" "$PID_CHANGED_INSTALL:[$CHANGED_BRANCH] install"
 
 if ! wait "$PID_MASTER_INSTALL"; then
-  report_failure "[${BASED_BRANCH}] install FAILED" "$LOG_MASTER_INSTALL"
-  exit 1
+  die "[${BASED_BRANCH}] install FAILED" "$LOG_MASTER_INSTALL"
 fi
 if ! wait "$PID_CHANGED_INSTALL"; then
-  report_failure "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
-  exit 1
+  die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
 # --- Step 6: sync changed worktree's filters/ to the $BASED_BRANCH baseline ---
@@ -406,8 +410,7 @@ fi
 step_header 6 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASED_BRANCH baseline" "$LOG_SYNC_BASELINE" \
   git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
-  report_failure "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
-  exit 1
+  die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
 # --- Step 7: build both branches in parallel ---
