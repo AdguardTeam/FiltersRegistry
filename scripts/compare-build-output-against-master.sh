@@ -379,40 +379,25 @@ setup_worktree() {
 setup_worktree "$BASED_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
-# --- Step 5: install deps in parallel, skipping worktrees that kept node_modules ---
+# --- Step 5: install deps in parallel ---
+# Always runs, even for a reused worktree
 
 step_header 5 "Install dependencies"
-INSTALL_JOBS=()
-INSTALL_LOGS=()
 
-if [ ! -d "$MASTER_WORK_TREE/node_modules" ]; then
-  yarn --cwd "$MASTER_WORK_TREE" install > "$LOG_MASTER_INSTALL" 2>&1 &
-  INSTALL_JOBS+=("$!:[${BASED_BRANCH}] install")
-  INSTALL_LOGS+=("$LOG_MASTER_INSTALL")
-else
-  echo "${C_CYAN}${ARROW}${C_RESET} [${BASED_BRANCH}] node_modules present, skipping install"
+yarn --cwd "$MASTER_WORK_TREE" install > "$LOG_MASTER_INSTALL" 2>&1 &
+PID_MASTER_INSTALL=$!
+yarn --cwd "$CHANGED_WORK_TREE" install > "$LOG_CHANGED_INSTALL" 2>&1 &
+PID_CHANGED_INSTALL=$!
+
+spinner_wait_all "$PID_MASTER_INSTALL:[${BASED_BRANCH}] install" "$PID_CHANGED_INSTALL:[$CHANGED_BRANCH] install"
+
+if ! wait "$PID_MASTER_INSTALL"; then
+  report_failure "[${BASED_BRANCH}] install FAILED" "$LOG_MASTER_INSTALL"
+  exit 1
 fi
-
-if [ ! -d "$CHANGED_WORK_TREE/node_modules" ]; then
-  yarn --cwd "$CHANGED_WORK_TREE" install > "$LOG_CHANGED_INSTALL" 2>&1 &
-  INSTALL_JOBS+=("$!:[$CHANGED_BRANCH] install")
-  INSTALL_LOGS+=("$LOG_CHANGED_INSTALL")
-else
-  echo "${C_CYAN}${ARROW}${C_RESET} [$CHANGED_BRANCH] node_modules present, skipping install"
-fi
-
-if [ ${#INSTALL_JOBS[@]} -gt 0 ]; then
-  spinner_wait_all "${INSTALL_JOBS[@]}"
-  for idx in "${!INSTALL_JOBS[@]}"; do
-    job="${INSTALL_JOBS[$idx]}"
-    log="${INSTALL_LOGS[$idx]}"
-    pid="${job%%:*}"
-    label="${job#*:}"
-    if ! wait "$pid"; then
-      report_failure "$label FAILED" "$log"
-      exit 1
-    fi
-  done
+if ! wait "$PID_CHANGED_INSTALL"; then
+  report_failure "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
+  exit 1
 fi
 
 # --- Step 6: sync changed worktree's filters/ to the $BASED_BRANCH baseline ---
