@@ -313,8 +313,8 @@ echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 # --- Step 2: build mode ---
 
 step_header 2 "Build mode"
-echo "Use cached build (generate-cache + build:local) instead of a plain build?"
-if confirm; then
+echo "Use cached sources instead of a regular build?"
+if confirm default_no; then
   BUILD_LOCAL=true
   echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (generate-cache + build:local)"
 else
