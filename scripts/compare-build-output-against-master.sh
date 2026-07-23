@@ -7,6 +7,7 @@
 # Usage: yarn compare-build-output
 
 BASED_BRANCH="master"
+BUILD_FLAGS="--no-patches-prepare --strip-generated-meta"
 
 # Without this, a missing yarn only surfaces minutes later as an install/build
 # log failure instead of failing fast up front.
@@ -160,9 +161,9 @@ generate_report() {
   echo "Branch (reference): $BASED_BRANCH          @ $MASTER_SHA"
   echo "Branch (feature):   $CHANGED_BRANCH @ $CHANGED_SHA"
   if [ "${BUILD_LOCAL:-false}" = "true" ]; then
-    build_cmd="generate-cache && yarn build:local --no-patches-prepare --strip-generated-meta"
+    build_cmd="generate-cache && yarn build:local $BUILD_FLAGS"
   else
-    build_cmd="build --no-patches-prepare --strip-generated-meta"
+    build_cmd="build $BUILD_FLAGS"
   fi
   echo "Build command:      yarn $build_cmd"
   echo "Platforms compared: $(ls "$PLATFORMS_MASTER" | tr '\n' ' ')"
@@ -414,11 +415,11 @@ fi
 step_header 7 "Build both branches"
 if [ "$BUILD_LOCAL" = "true" ]; then
   build_branch() {
-    yarn --cwd "$1" generate-cache && yarn --cwd "$1" build:local --no-patches-prepare --strip-generated-meta
+    yarn --cwd "$1" generate-cache && yarn --cwd "$1" build:local $BUILD_FLAGS
   }
 else
   build_branch() {
-    yarn --cwd "$1" build --no-patches-prepare --strip-generated-meta
+    yarn --cwd "$1" build $BUILD_FLAGS
   }
 fi
 
