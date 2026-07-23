@@ -1,5 +1,5 @@
-! Checksum: UCsr0NYtAkIqdrzNgx5EYw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1784753615-14400.patch
+! Checksum: bKKQMas1sCnVgZqre5SLew
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1784785169-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.25
@@ -2095,6 +2095,7 @@ reports.adguard.com$badfilter
 @@||github.githubassets.com/assets/element-registry-$script,xmlhttprequest
 @@||github.githubassets.com/assets/environment-$script,xmlhttprequest
 @@||github.githubassets.com/assets/github-elements-$script,xmlhttprequest
+@@||github.githubassets.com/assets/keyboard-shortcuts-$script,xmlhttprequest
 @@||github.githubassets.com/assets/octicons-react-$script,xmlhttprequest
 @@||github.githubassets.com/assets/react-core-$script,xmlhttprequest
 @@||github.githubassets.com/assets/react-lib-$script,xmlhttprequest
@@ -2490,6 +2491,7 @@ $removeparam=mclk
 $document,removeparam=maid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
+$removeparam=LSID
 $removeparam=affuid
 $removeparam=refclickid
 $removeparam=irclid
@@ -2517,8 +2519,7 @@ $removeparam=spUserID
 $removeparam=spJobID
 $removeparam=spReportId
 $removeparam=actId
-$document,removeparam=/^wickedid=.*$/i
-$document,removeparam=/^wickedsource=.*$/i
+$removeparam=oly_anon_id
 $removeparam=s_cid
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
@@ -3219,7 +3220,6 @@ $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
 $removeparam=subid,domain=admitad.com|mintmobile.com|secretlab.*|webmasterplan.com
-$removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com|klink.no
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|duckduckgo.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com|duck.ai
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
@@ -3315,6 +3315,8 @@ $removeparam=redirect_source,domain=mozilla.org|firefox.com
 ||epicgames.com^$removeparam=epic_affiliate
 ||epicgames.com^$removeparam=epic_gameId
 $document,removeparam=cId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
+$document,removeparam=lId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
+$document,removeparam=/^src=Linkfire$/,domain=apple.com|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $document,removeparam=ct,domain=apple.com|bumble.com|newsroom.co.nz
 ||music.apple.com^$removeparam=itsct
 ||music.apple.com^$removeparam=itscg
@@ -3394,7 +3396,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||fiverr.com^$removeparam=bta
 ||fiverr.com^$removeparam=afp
 ||fiverr.com^$removeparam=cxd_token
-$removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
 ||walmart.$removeparam=wl11
@@ -3533,9 +3534,6 @@ $removeparam=srsltid,document
 ||dl-protect.$removeparam=rl
 ||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
-||malwarebytes.com^$removeparam=x-affid
-||malwarebytes.com^$removeparam=ADDITIONAL_AFFID
-$removeparam=x-wts
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
 $removeparam=link_source_user_id,domain=nextdoor.com
@@ -3755,6 +3753,8 @@ ref=the-browser$document,removeparam=ref
 ||microsoft.com^$removeparam=refSource
 ||microsoft.com^$removeparam=refPage
 $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com
+||deezer.$removeparam=host
+||deezer.$removeparam=/^utm_.*$/
 ||duckduckgo.com/extension-success$document,removeparam=atb
 ||github.com^$document,removeparam=email_source
 ||github.com^$document,removeparam=email_token

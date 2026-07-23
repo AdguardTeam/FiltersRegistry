@@ -1,9 +1,9 @@
-! Checksum: Hv/KQGOIBdSfX66gmvg2Jg
-! Diff-Path: ../patches/260/260-s-1784753608-14400.patch
+! Checksum: wh0FifJfn3rSwtyOU1LDPw
+! Diff-Path: ../patches/260/260-s-1784785163-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.65
-! TimeUpdated: 2026-07-22T20:51:14+00:00
+! Version: 2.0.0.66
+! TimeUpdated: 2026-07-23T05:37:02+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -735,7 +735,7 @@ www.ebay.com##.srp-river-answer--FAQ_KW_SRP_MODULE
 ! == Ecosia ==
 ! ============
 ! AI-free searching
-www.ecosia.org#%#//scriptlet('ubo-set-cookie', 'ECNOAI', 'true', '', 'reload', '1')
+www.ecosia.org#%#//scriptlet('set-cookie-reload', 'ECNOAI', 'true')
 ! -- https://www.ecosia.org/ (Homepage)
 ! "AI Chat" in search bar
 www.ecosia.org##.omnibox-search-form__ai-chat
@@ -3408,6 +3408,12 @@ studio.youtube.com###comment-smart-replies
 studio.youtube.com##[test-id="VIDEO_BRAINSTORM_IDEA"]
 ! "Get Suggestions" button for thumbnail
 studio.youtube.com##.ask-studio-container
+! ============
+! == Zocdoc ==
+! ============
+! AI Care Assistant
+www.zocdoc.com##.ai-search-hero__search-container-wrapper
+www.zocdoc.com##[data-test="ai-search-hero-quick-links"]
 ! ==========
 ! == Zoom ==
 ! ==========
@@ -3904,7 +3910,7 @@ rule34.xxx##li:has(> [rel="sponsored"])
 ! * Only hide if option has already been enabled
 rule34.xxx###displayOptions:has(#chkFilterAI[checked])
 ! Cookie to enable "Filter AI posts"
-rule34.xxx#%#//scriptlet('ubo-set-cookie', 'filter_ai', '1', '', 'reload', '1')
+rule34.xxx#%#//scriptlet('set-cookie-reload', 'filter_ai', '1')
 ! -- My Account > My Favorites
 ! AI tagged images
 rule34.xxx###content > .image-list > span:has( > .thumb > a > img:is([title~="ai"], [title~="ai-assisted"], [title~="ai-created"], [title~="ai-generated"], [title~="ai_art"], [title~="ai_assisted"], [title~="ai_generated"], [title~="ai_voice"]))
