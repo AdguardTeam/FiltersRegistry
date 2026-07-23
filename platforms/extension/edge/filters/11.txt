@@ -1,9 +1,9 @@
-! Checksum: KAZaR1w8oB+NtB6YwhHpSg
-! Diff-Path: ../patches/11/11-s-1784741747-3600.patch
+! Checksum: U9RyHbTiE5l17Lxybshe1g
+! Diff-Path: ../patches/11/11-s-1784814033-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.71.1
-! TimeUpdated: 2026-07-22T17:32:46+00:00
+! Version: 2.0.71.2
+! TimeUpdated: 2026-07-23T13:37:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1184,7 +1184,10 @@ ya.ru##div[class*="search"][class*="__wrapper"] + div[class*="-"]:has(> div > di
 ya.ru##services-feed div.banner
 !
 ! Yandex.Search
-! Update unblocking rule for the search ads in usefulads.txt
+! Update unblocking rule for the context ads in usefulads.txt
+ya.ru,yandex.*##div[id^="search-"] > div[class*="__card"] ul.UniSearchList > li.UniSearchList-Item:has(div.UniSearchAppsRating-Rmp > span)
+ya.ru,yandex.*##div[id^="search-"] > div[class*="__card"]:has(.Organic-AppHeader_extralinks)
+ya.ru,yandex.*##div[id^="search-"] > div[class*="__card"]:has(div.Organic-Subtitle > div.Organic-Path ~ div[class*=" Organic"] > span[class$="-Text"])
 yandex.*##div[class^="Direct "]
 ya.ru,yandex.*#$?##search-result > li:has(span:contains(/[PРeеkклaаmмaа]{7}/)) { remove: true; }
 ya.ru,yandex.*##.content__left > ul#search-result > li:has(> div.organic > div.OrganicTitle > a[href^="https://ya.ru/search/_crpd/"])
