@@ -358,6 +358,10 @@ setup_worktree() {
     fi
     echo "${C_CYAN}${ARROW}${C_RESET} [$label] recreating worktree at $path"
     git worktree remove "$path" -f 2>/dev/null || rm -rf "$path"
+  elif [ -e "$path" ]; then
+    echo "${C_CYAN}${ARROW}${C_RESET} [$label] removing leftover directory at $path (not a git worktree)"
+    rm -rf "$path"
+    echo "${C_CYAN}${ARROW}${C_RESET} [$label] creating worktree at $path"
   else
     echo "${C_CYAN}${ARROW}${C_RESET} [$label] creating worktree at $path"
   fi
