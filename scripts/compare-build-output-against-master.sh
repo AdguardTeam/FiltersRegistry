@@ -508,7 +508,11 @@ if [ "$DO_CLEANUP" = true ]; then
     report_failure "cleanup FAILED" "$LOG_CLEANUP"
   fi
 else
-  echo "${C_CYAN}${ARROW}${C_RESET} Kept for later use: $MASTER_WORK_TREE, $CHANGED_WORK_TREE, $PLATFORMS_MASTER, $PLATFORMS_CHANGED"
+  echo "${C_CYAN}${ARROW}${C_RESET} Cleanup skipped."
+  echo "  $MASTER_WORK_TREE"
+  echo "  $CHANGED_WORK_TREE"
+  echo "  $PLATFORMS_MASTER"
+  echo "  $PLATFORMS_CHANGED"
 fi
 
 exit "$REPORT_STATUS"
