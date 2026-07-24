@@ -1,9 +1,9 @@
-! Checksum: qNj4i/9L0d7QJiRnIgUi8A
-! Diff-Path: ../patches/20/20-s-1784900254-3600.patch
+! Checksum: reSMDgYJqljGePrQRCg95A
+! Diff-Path: ../patches/20/20-s-1784904123-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.30.74
-! TimeUpdated: 2026-07-24T13:35:18+00:00
+! Version: 2.0.30.75
+! TimeUpdated: 2026-07-24T14:39:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4314,6 +4314,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~odaibako.net,~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+reclameaqui.com.br#%#//scriptlet('set-session-storage-item', 'appHandoffSheet:dismissed', '1')
+reclameaqui.com.br#$#div[data-testid="complete-header"] > div[data-testid="banner-container"] { display: none !important; }
+reclameaqui.com.br#$#div[data-testid="complete-header"] > div[data-testid="banner-container"] + header > div[style^="top:"] { top: 0 !important; }
 bananamovies.org##.tr-install-banner
 m.vk.ru##.PageBottomBanner--unauth
 newsbreak.com##a[aria-label="Download App"]
@@ -4815,8 +4818,6 @@ temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector^="mobile-downlo
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector^="mobile-download-ui"] > div > button[aria-label^="close"]', '', '1500')
 temu.com###main > .loadable-container > div[role="main"] > div > div:not([class])> div[style^="height"]:empty + div[style^="position:"]:has(> div:not([class]) > div[style^="position:"] > div[style^="height"] > div[style^="height"] > div[js-selector="mobile-download-ui"])
 temu.com###main > .loadable-container > div[role="main"] > div > div:not([class])> div[style^="height"]:empty:has(+ div[style^="position:"] > div:not([class]) > div[style^="position:"] > div[style^="height"] > div[style^="height"] > div[js-selector="mobile-download-ui"])
-reclameaqui.com.br#$#div[data-testid="complete-header"] > div[data-testid="banner-container"] { display: none !important; }
-reclameaqui.com.br#$#div[data-testid="complete-header"] > div[data-testid="banner-container"] + header > div[style="top:90px"] { top: 0 !important; }
 my-best.com###__next > div.css-1pcjl0n > a[href="https://mybest.go.link/924F7"]
 esarj.com,tsurihack.com,teremok.ru,prioritypass.com,domainanalysis.io,finance.yahoo.com##.app-banner
 theinformation.com##a[data-testid="download-app"]
