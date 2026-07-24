@@ -1,9 +1,9 @@
-! Checksum: nxqIcjBEeaLjcgJd2vWbnw
-! Diff-Path: ../patches/260/260-s-1784912759-14400.patch
+! Checksum: x+Yp9u0jUY6ibULqDXoxRg
+! Diff-Path: ../patches/260/260-s-1784926499-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.70
-! TimeUpdated: 2026-07-24T17:03:16+00:00
+! Version: 2.0.0.71
+! TimeUpdated: 2026-07-24T20:52:11+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -2873,16 +2873,7 @@ www.thermofisher.com##.ask-ai-widget-container
 ! ============
 ! == TikTok ==
 ! ============
-! -- https://www.tiktok.com/@hobikumahalbro
-! Videos with AI Generated label
-! * Prevents videos from appearing when swiping or when loading a creators channel page
-! * AI videos can play if loaded directly from the URL
-! * Created with assistance from paintboth1234 (https://www.reddit.com/r/uBlockOrigin/comments/1t9pvef/comment/ol4f58p/)
-www.tiktok.com#%#//scriptlet('ubo-json-prune-fetch-response', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType', '', 'propsToMatch', '/item_list')
-! * Alternate filter for AdGuard support
 www.tiktok.com#%#//scriptlet('json-prune', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType')
-! Ad from AI company
-! * I wasn't able to get this ad to appear again, so this rule isn't fully tested
 www.tiktok.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/)')
 ! ==========
 ! == Time ==
@@ -2952,6 +2943,21 @@ turbotax.intuit.com###aic-entry
 tutorbin.com##[class^="dropdown_li__"]:has(> [class^="dropdown_ai_tool___"])
 ! AI Study Tools section
 tutorbin.com##section:has([href="/ai-homework-helper"] > [class^="Aisection_tryAiText__"])
+! ===========
+! == Udemy ==
+! ===========
+! -- https://www.udemy.com/
+! Footer - ChatGPT course
+www.udemy.com##.link[href="/topic/chatgpt/"]
+! Recommended courses about AI
+www.udemy.com#?##course-recommendations-section .course-card-title_course-title___sH9w:contains(/\b(Agentic|AI Engineer|ChatGPT|Claude)\b/):upward(.carousel_scroll-item__yo6VS)
+! -- https://www.udemy.com/course/apache-airflow/learn/lecture/17284974 (purchased course)
+! AI Assistant tab
+www.udemy.com##.ud-nav-button-container:has(svg.ud-icon.ud-icon-small.ud-icon-color-info)
+! -- https://www.udemy.com/courses/search/?src=ukw&q=testing
+! AI Overview
+||www.udemy.com/chatbot-realtime-gateway/api/v1/core/chats/stream?chat_name=agentic-search$xmlhttprequest,domain=www.udemy.com
+www.udemy.com##[data-purpose="ai-summary"]
 ! =================
 ! == Ulta Beauty ==
 ! =================

@@ -1,9 +1,9 @@
-! Checksum: B1wAO8hERXNhNC0U3KFk9w
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1784912736-14400.patch
+! Checksum: utYfylmnVRryufspYjpjuw
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1784926477-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.70
-! TimeUpdated: 2026-07-24T17:03:16+00:00
+! Version: 2.0.0.71
+! TimeUpdated: 2026-07-24T20:52:11+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -942,7 +942,6 @@ thenewstack.io##.search-disclaimer
 thenewstack.io#%#//scriptlet('remove-attr', 'placeholder', '.search-input[placeholder="This is AI-powered search. Type a prompt."]')
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
 www.thermofisher.com##.ask-ai-widget-container
-www.tiktok.com#%#//scriptlet('ubo-json-prune-fetch-response', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType', '', 'propsToMatch', '/item_list')
 www.tiktok.com#%#//scriptlet('json-prune', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType')
 www.tiktok.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/)')
 time.com###scale-agent-overlay-container
@@ -962,6 +961,11 @@ www.tunepocket.com#$##pageholder > #tp-main-head { margin-top: -5px !important }
 turbotax.intuit.com###aic-entry
 tutorbin.com##[class^="dropdown_li__"]:has(> [class^="dropdown_ai_tool___"])
 tutorbin.com##section:has([href="/ai-homework-helper"] > [class^="Aisection_tryAiText__"])
+www.udemy.com##.link[href="/topic/chatgpt/"]
+www.udemy.com#?##course-recommendations-section .course-card-title_course-title___sH9w:contains(/\b(Agentic|AI Engineer|ChatGPT|Claude)\b/):upward(.carousel_scroll-item__yo6VS)
+www.udemy.com##.ud-nav-button-container:has(svg.ud-icon.ud-icon-small.ud-icon-color-info)
+||www.udemy.com/chatbot-realtime-gateway/api/v1/core/chats/stream?chat_name=agentic-search$xmlhttprequest,domain=www.udemy.com
+www.udemy.com##[data-purpose="ai-summary"]
 www.ulta.com##chat-messenger[service*="commerce-ai"]
 ||lagoon-cloud.uhc.com/app/ce-genai/env/prod$xmlhttprequest,domain=member.uhc.com
 member.uhc.com##[data-test-id="global-nav-ask-ai"]
