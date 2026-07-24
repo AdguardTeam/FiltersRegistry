@@ -108,16 +108,16 @@ describe('validateFlags', () => {
         expect(validateFlags(flags)).toBeNull();
     });
 
-    it('rejects --use-cache combined with --download-stats', () => {
-        const flags = parseFlags(['--use-cache', '--download-stats']);
+    it('rejects --generate-cache combined with --download-stats', () => {
+        const flags = parseFlags(['--generate-cache', '--download-stats']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
         expect(result?.message).toContain('mutually exclusive');
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects --generate-cache combined with --download-stats', () => {
-        const flags = parseFlags(['--generate-cache', '--download-stats']);
+    it('rejects --use-cache combined with --download-stats', () => {
+        const flags = parseFlags(['--use-cache', '--download-stats']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
         expect(result?.message).toContain('mutually exclusive');
