@@ -1,9 +1,9 @@
-! Checksum: hfG0X69oeAhqXgiKmNHrQw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1784854966-14400.patch
+! Checksum: 9Dman0zzVkzGzzcUOrNq/A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1784871379-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.65.68
-! TimeUpdated: 2026-07-24T00:59:26+00:00
+! Version: 2.1.65.69
+! TimeUpdated: 2026-07-24T05:33:11+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -74,6 +74,7 @@
 /plugins/ultimate-social-media-plus/*$~stylesheet
 /prisna-social-counter.css
 /Resources/twitter-$~xmlhttprequest
+/share-bar/share-bar.js
 /share/footer/*
 /share42.js
 /share_button?
@@ -134,6 +135,7 @@
 /whatsappshare.js
 /widget/share?
 /widgets/socials/*
+/widgets/twitter/*
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
@@ -487,9 +489,9 @@ _social-bar/
 ###sharetools-masthead
 ###sharewrapper
 ###sharing-bar
-###sharing-box
 ###sharing-button
 ###sharing-buttons
+###sharing-icons
 ###sharing-options
 ###sharing-sidebar
 ###sharing_buttons
@@ -795,7 +797,6 @@ _social-bar/
 ##.a2a_vertical_style
 ##.a__share
 ##.abh_social
-##.above-content-sharebar
 ##.absurdsharediv
 ##.abtlikebox
 ##.action--share
@@ -1032,6 +1033,7 @@ _social-bar/
 ##.button-social
 ##.button-twitter
 ##.button__share
+##.button__social
 ##.button_share
 ##.button_twitter
 ##.buttons-share
@@ -1064,7 +1066,6 @@ _social-bar/
 ##.c-sns
 ##.c-social-bar
 ##.c-social-container
-##.c-social-menu
 ##.c-social-share
 ##.c-social-sharetool
 ##.c-social-sharing
@@ -1171,8 +1172,8 @@ _social-bar/
 ##.eg-footer-icon-vk
 ##.eg-footer-icon-youtube
 ##.ekit_social_media
-##.el-icon-facebook
 ##.elem-info__share
+##.element-share
 ##.elementor-social-icon
 ##.elementor-social-icons-wrapper
 ##.elementor-widget-facebook-page
@@ -1327,6 +1328,7 @@ _social-bar/
 ##.fixed-share
 ##.fixed-soc-icon
 ##.fixed-social
+##.fl-share
 ##.fl-social-icons
 ##.flare-button-icon
 ##.flare-follow
@@ -1529,6 +1531,7 @@ _social-bar/
 ##.gtm-clipboard-share-button
 ##.gtm-email-share-button
 ##.gtm-facebook-share-button
+##.gtm-twitter-share-button
 ##.gtm_footer_facebook
 ##.gtm_footer_instagram
 ##.gtm_footer_twitter
@@ -2009,6 +2012,7 @@ _social-bar/
 ##.omc-social-small
 ##.open-share
 ##.open-share-toolbar
+##.openshare
 ##.os-social-bar
 ##.overlay-open-share
 ##.ow-social-icons
@@ -2645,7 +2649,6 @@ _social-bar/
 ##.sharing-widget
 ##.sharing-wrap
 ##.sharing-zone
-##.sharingBox
 ##.sharingButton
 ##.sharingList
 ##.sharingPanel
@@ -2849,6 +2852,7 @@ _social-bar/
 ##.social-icons-list
 ##.social-icons-title
 ##.social-icons-top
+##.social-icons-v2
 ##.social-icons-white
 ##.social-icons-widget
 ##.social-icons-wrap
@@ -2884,6 +2888,7 @@ _social-bar/
 ##.social-media-header
 ##.social-media-li
 ##.social-media-list-container
+##.social-media-module
 ##.social-media-nav
 ##.social-media-nav__sticky
 ##.social-media-panel
@@ -3026,7 +3031,6 @@ _social-bar/
 ##.socialFollow
 ##.socialFooter
 ##.socialHeader
-##.socialHolder
 ##.socialHubIcon
 ##.socialHubInnerDiv
 ##.socialHubWrapper
@@ -3316,6 +3320,7 @@ _social-bar/
 ##.twitter-followers
 ##.twitter-footer
 ##.twitter-inner
+##.twitter-module
 ##.twitter-popup
 ##.twitter-share
 ##.twitter-share-btn
@@ -3342,7 +3347,6 @@ _social-bar/
 ##.twitter_icon
 ##.twitter_link
 ##.twitter_widget
-##.twitterbox
 ##.twitterbtn
 ##.twitterbutton
 ##.twitterfollow
@@ -3448,6 +3452,7 @@ _social-bar/
 ##.widget_follow_button_widget
 ##.widget_follow_us
 ##.widget_g1_socials
+##.widget_heateor_sssp_follow
 ##.widget_jnews_social
 ##.widget_novashare_follow_widget
 ##.widget_nypost_social_widget
@@ -3924,6 +3929,7 @@ phonearena.com,quiverquant.com##.google-news-follow
 bleedingcool.com##.google-news-source
 ringsidenews.com,thehealthsite.com,tmz.com##.google-preferred-btn
 sammobile.com##.google-preferred-news-source-cta
+cultofmac.com##.google-preferred-source
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
 nypost.com##.google-preferred-sources
 www.channelnewsasia.com##.google-preferred__button-wrapper
@@ -4313,7 +4319,6 @@ androidpolice.com,arylic.com,creditoagricola.pt,devex.com,electricfencing.co.uk,
 cp24.com,epochtimes.com.br,epochtimes.it,lagaceta.com.ar,n-tv.de,progressive.org,toyokeizai.net##.tools
 archifacile.fr,atomic-robo.com,autobelle.it,bollywoodhungama.com,chnetwork.org,classicreload.com,donnahay.com.au,fotografidigitali.it,gamingonlinux.com,joburg.org.za,lavoro.gov.it,ledpros.ca,meteovista.be,navigaweb.net,nexto.pl,phoronix.com,rasom.it,sfr.fr,telesatellite.com,ucl.ac.uk,weeronline.nl,whtop.com,zookeys.pensoft.net###social
 applesfera.com,espinof.com,genbeta.com,vidaextra.com,vitonica.com,xatakahome.com,xatakamovil.com,xatakandroid.com##.masthead-nav-social
-directoalpaladar.com,poprosa.com,trendencias.com##.head-nav-social
 allears.net,canadaradiostations.com,canli-radyo-dinle.com,cgtnturk.com,crimeonline.com,dezeen.com,diarioprimeralinea.com.ar,eandt.theiet.org,elfinanciero.com.mx,elheraldo.hn,emisoras-puertorico.com,emisorascolombianas.co,fivebooks.com,fmradiofree.com,fmuna.com.ar,foxsports.com.mx,img2go.com,informer.com,internetradio-horen.de,internetradio-schweiz.ch,laprensa.hn,laviola.it,open.online,opencritic.com,pdf2go.com,politicalflare.com,proteste.org.br,radio-ao-vivo.com,radio-australia.org,radio-belgie.be,radio-danmark.dk,radio-dominicana.com,radio-ecuador.org,radio-en-ligne.fr,radio-en-vivo.mx,radio-espana.es,radio-hk.com,radio-hrvatska.com,radio-italiane.it,radio-korea.com,radio-maroc.org,radio-nederland.nl,radio-norge.org,radio-osterreich.at,radio-philippines.com,radio-polska.pl,radio-singapore.com,radio-south-africa.co.za,radio-stations.co.nz,radio-suomi.com,radio-sveriges.se,radio-thai.com,radio-ua.com,radio-uk.co.uk,radioindia.in,radioindonesia.org,radiojapan.org,radiomalaysia.org,radios-argentinas.org,radios-bolivia.com,radios-chilenas.com,radios-guatemala.com,radios-online.pt,radios-uruguay.com,radios-venezuela.com,radiotaiwan.tw,rai.it,redvoicemedia.com,religionnews.com,tarreo.com,thecollegefix.com,upcomingvinyl.com##.social-buttons
 n1info.ba,n1info.hr,n1info.rs,n1info.si,nova.rs##.uc-social-bar-wrapper
 bestcarweb.jp,biglobe.ne.jp,hankooktire.com,jiji.com,joins.com,op.gg,theinvestor.co.kr,videor.co.jp##.sns
@@ -4402,7 +4407,6 @@ ifeng.com##div[class^="index_share_box_"]
 idnes.cz,lidovky.cz,metro.cz##.artsum-social
 dr.dk##.dre-sticky-share-band
 telegraaf.nl##.SocialButtons
-nu.nl##.app-follow-us
 bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_"]
 forssanlehti.fi##.herald-single-sticky:has(.herald-share)
 apotti.fi##.post-footer:has(> .share)
@@ -4474,7 +4478,6 @@ biz-journal.jp###vertical_sns
 fnn.jp##.--share
 kakakumag.com##.article-sns-btm
 oricon.co.jp##.block-sub-sns
-diners.co.jp##.dc__footer_sns
 fnn.jp##.footer-social
 kakakumag.com##.hd-sns
 zaikei.co.jp##.ninja_onebutton
@@ -4487,6 +4490,7 @@ gazetawroclawska.pl##.atomsArticleFoot__socialMedia
 terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
+dnoticias.pt##.article--aside_share
 neofeed.com.br##.box-social-single
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
@@ -4602,6 +4606,7 @@ burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiari
 mujerhoy.com##.voc-author-timesocial__social
 mujerhoy.com##.voc-footer-social
 elpais.com##.w_rs
+abc.com.py##.whatsapp-button-container
 montevideo.com.uy##.wsp
 trthaber.com##.social-links-container
 bigpara.hurriyet.com.tr##.socialIcons
@@ -4737,7 +4742,6 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||arcgis.com/apps/Nearby/app/components/Share/$~third-party
 @@||assets.msn.com/bundles/*/social-bar-$~third-party
 @@||cdn.flowplayer.com^*/share.min.js
-@@||commonsensemedia.org/ajax/review/$~third-party,xmlhttprequest
 @@||gen.jut.su/jcdn/minify?charset=*/videojs-share.$script,stylesheet,domain=jut.su
 @@||iconfinder.com/data/icons/$~third-party
 @@||instagram.com/p/$subdocument,third-party
