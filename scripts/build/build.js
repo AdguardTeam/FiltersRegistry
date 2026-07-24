@@ -174,9 +174,8 @@ const buildFilters = async () => {
             CUSTOM_PLATFORMS_CONFIG,
         );
     } catch (error) {
-        if (error instanceof OptimizationStatsError) {
-            console.error(error.message);
-            throw new Error('Run --download-stats to download the latest statistics.');
+        if (useCache && error instanceof OptimizationStatsError) {
+            throw new Error('Run --download-stats to download the latest statistics.', { cause: error });
         }
         throw error;
     } finally {
