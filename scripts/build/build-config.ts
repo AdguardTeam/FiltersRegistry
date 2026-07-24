@@ -123,6 +123,27 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         };
     }
 
+    if (
+        flags.downloadStats
+        && (flags.stripGeneratedMeta
+            || flags.noPatchesPrepare
+            || flags.excludedFilterIDs.length > 0)
+    ) {
+        const ignored: string[] = [];
+        if (flags.stripGeneratedMeta) ignored.push('--strip-generated-meta');
+        if (flags.noPatchesPrepare) ignored.push('--no-patches-prepare');
+        if (flags.excludedFilterIDs.length > 0) ignored.push('--skip');
+        const flagsStr = ignored.join(' and ');
+        const verb = ignored.length > 1 ? 'are' : 'is';
+        const msg = `Error: ${flagsStr} ${verb} incompatible with `
+            + '--download-stats, which does not produce platform output.';
+
+        return {
+            type: 'error',
+            message: `${msg}\n${hint}`,
+        };
+    }
+
     return null;
 }
 
