@@ -1,9 +1,9 @@
-! Checksum: fZ/RzfomphCRYg5n01rqGA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1784883567-3600.patch
+! Checksum: GVMMT/IR97qhlhk2PWonPg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1784900274-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.19
-! TimeUpdated: 2026-07-24T08:56:26+00:00
+! Version: 2.0.66.20
+! TimeUpdated: 2026-07-24T13:34:58+00:00
 ! Expires: 10 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5606,8 +5606,12 @@ turkkizlar.com##div[class^="vid-promo"]
 [$domain=/turkkizlar\d+\.com$/]##div[class^="vid-promo"]
 ||cimcime*.com/wp-content/uploads/*.gif
 [$domain=/cimcime\d+\.\w+$/]###ads-inside-main
-||dahahizli*.com/wp-content/uploads/*.gif
-[$domain=/dahahizli\d+\.com$/]###ads-inside-main
+||dahahizli*.*/wp-content/uploads/*.gif
+||dahahizli*.*/wp-content/uploads/*/denemeBonusuVerenSiteler-son.png
+||dahahizli*.*/wp-content/uploads/*/bycasino-masaustu-ban.png
+||dahahizli*.*/wp-content/uploads/*/Saha-468-in-60.jpg
+[$domain=/dahahizli\d+\.(com\|live)$/]###ads-inside-main
+[$domain=/dahahizli\d+\.(com\|live)$/]###video-player-ads
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/hepbetspor\d+\.cfd$/
 [$domain=/hepbetspor\d+\.cfd$/]##.background-link

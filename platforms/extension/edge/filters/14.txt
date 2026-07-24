@@ -1,9 +1,9 @@
-! Checksum: FfFZNJHz1BLA7A4WPi5JJw
-! Diff-Path: ../patches/14/14-s-1784896752-3600.patch
+! Checksum: p30Jd8Caxk01abMcs9wzSA
+! Diff-Path: ../patches/14/14-s-1784900265-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.73.75
-! TimeUpdated: 2026-07-24T12:36:34+00:00
+! Version: 2.2.73.76
+! TimeUpdated: 2026-07-24T13:35:06+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1736,6 +1736,7 @@
 !
 ! SECTION: Cookies - General URL
 !
+/assets/storefront/chunk-customer_privacy_initializer.
 ||app.cookiemate.pl^$third-party
 ||privacy.advancelocal.com^
 -cdn.consentmanager.net^
@@ -3898,7 +3899,7 @@ changelly.com#%#//scriptlet('set-local-storage-item', 'SET_COOKIES_APPROVED', 't
 skroutz.de##.js-global-skrp-messages:has(> .js-message > article > .actions > form[action="/privacy_policy"])
 corp.asics.com##.o-gdpr-dialog
 porovnejsito.cz,upv.gov.cz##.scook
-mdron.pl#%#//scriptlet('set-cookie-reload', 'cookie_info_accepted', '1')
+oponki24.com.pl,mdron.pl#%#//scriptlet('set-cookie-reload', 'cookie_info_accepted', '1')
 ksbw.com,kmbc.com,mynbc5.com,koat.com,ketv.com,kcci.com,gulfcoastnewsnow.com,wapt.com,watch.dropout.tv,larsondoors.com,equifax.ca##.ketch-fixed
 aptacore.ac##.cookiesSec
 lettera7.design#%#//scriptlet('trusted-set-local-storage-item', 'consent', '{"f":"d","e":"d","me":"d","ma":"d"}')
@@ -7555,7 +7556,7 @@ breitbart.com#%#//scriptlet('trusted-click-element', 'div[title="Click to Accept
 modapkvn.com,apkmodvn.com,apkmoddone.com###ckWrp
 cookpad.com###cookie_dialog
 cookpad.com##.shadow-top[data-controller*="cookies-consent"]
-carinet.pl,shopklima.pl,centrumzdrowegowlosa.pl###gmgdpr-overlay
+beautysupply.pl,carinet.pl,shopklima.pl,centrumzdrowegowlosa.pl###gmgdpr-overlay
 skratchlabs.com##div[aria-describedby^="cookieconsent"]
 citidirect.com###divCookieConsentBanner
 citibankonline.pl,citibank.pl#$#.CookieStyle { display: none !important; }
@@ -51004,6 +51005,11 @@ bookmate.ru##.app-banner
 !
 !
 !
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('prevent-addEventListener', 'touchmove', '.preventDefault()')
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('prevent-addEventListener', 'wheel', 'preventDefault()')
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#.rpl-scroll-lock:not(#style_important) { overflow: auto !important; }
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#.scroll-is-blocked:not(#style_important) { overflow: auto !important; touch-action: auto !important; }
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$##app-upsell-blocking-bottom-sheet-direct { display: none !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##[id^="xpromo-"]
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#shreddit-async-loader[paint-group="xpromo"][bundlename="app_selector"] { display: none !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('hide-in-shadow-dom', 'faceplate-tracker[source="xpromo"] #get-app')
@@ -51299,6 +51305,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+bananamovies.org##.tr-install-banner
 m.vk.ru##.PageBottomBanner--unauth
 newsbreak.com##a[aria-label="Download App"]
 tchibo.com.tr###app-install-banner

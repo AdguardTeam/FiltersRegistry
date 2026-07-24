@@ -1,9 +1,9 @@
-! Checksum: 2yeUG5ObCA/3Kb8wE46mZA
-! Diff-Path: ../patches/9/9-s-1784883567-3600.patch
+! Checksum: SqjzbZkIEvYYNyoxbTIR6g
+! Diff-Path: ../patches/9/9-s-1784900274-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.8
-! TimeUpdated: 2026-07-24T08:56:23+00:00
+! Version: 2.0.35.9
+! TimeUpdated: 2026-07-24T13:34:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,8 @@
 ! https://forum.adguard.com/index.php?threads/ivoox-com-podcasts-issues.29530/
 ! ||addevweb.com^$third-party
 !
+||chorumebbbbgoza.xyz^
+||superflixapi.pro/player/pop-signal?
 ||comprargratis.com.br^
 ||cdn-4k-webp.site^
 ||adzep.io^
@@ -201,6 +203,8 @@
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236135
 xataka.com#%#//scriptlet('prevent-setTimeout', 'offsetHeight===0')
+! https://github.com/AdguardTeam/AdguardFilters/issues/235399
+streamverde.net##body > div[id^="sys-notify-"] > div:has(> img[src="https://streamverde.net/wp-content/plugins/sv-gato-pidao/assets/buetas01.png"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235706
 lycantoons.com#%#//scriptlet('prevent-fetch', '/google-analytics\.com|pubadx\.one/')
 lycantoons.com#%#//scriptlet('prevent-setTimeout', 'offsetHeight')
@@ -2236,6 +2240,11 @@ proandroid.com,lusometeo.com,kltutors.com,eloutput.com,mundobytes.com,techondica
 !
 ltube.us###ad-pro-left-widget
 vix.com##button[data-testid="player-up-sell-entry-button"]
+streamverde.net###fwl-widget-box
+||azureedge-global-fastly-cloudfront-ondigitalocean-stackpathcdn.buzz^
+||streamverde.net/core-metrics.js
+xn--kcksk7a2bl5le7b6doc1h3f.com,superflixapi.pro,redeflixapi.store#%#//scriptlet('prevent-window-open')
+redeflixapi.store#%#//scriptlet('prevent-addEventListener', 'click', 'openFullscreenAdOnce')
 gazetadopovo.com.br##div[class^="outbrain"]
 gazetadopovo.com.br##div[class^="topBannerAd"]
 gazetadopovo.com.br##div[class$="postAsideBanner"]
