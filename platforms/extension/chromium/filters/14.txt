@@ -1,9 +1,9 @@
-! Checksum: 6KviZyBB4T0DPIE2lJMM/Q
-! Diff-Path: ../patches/14/14-s-1784911151-3600.patch
+! Checksum: sxH5FAHVoC3D0zMjVnrc7Q
+! Diff-Path: ../patches/14/14-s-1784914683-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.73.78
-! TimeUpdated: 2026-07-24T16:36:25+00:00
+! Version: 2.2.73.79
+! TimeUpdated: 2026-07-24T17:35:19+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24731,6 +24731,9 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+! archon.gg - site placeholder asking to disable AdBlock
+archon.gg##span[class^="Article_stickyFooterAd"]
+archon.gg##div[class^="Advertisements"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236551
 mtgcardsmith.com#%#//scriptlet('prevent-setTimeout', 'show(')
 citynews.ca#$##master-leaderboard-wrapper { display: none !important; }
@@ -36918,6 +36921,8 @@ fotomac.com.tr,dengarden.com,mako.co.il,ajansspor.com,gazetadopovo.com.br,onejai
 !
 ! SECTION: Subscriptions - Regular rules
 !
+glassdoor.de#$##unified-user-auth { display: none !important; }
+glassdoor.de#$#body { overflow: auto !important; position: unset !important; }
 bestfilm.pl#?#div.MuiGrid2-container > div.MuiGrid2-direction-xs-row:has(> h3:contains(Zapisz się do newslettera))
 spensen.com#%#//scriptlet('set-cookie', 'popupNews', '1')
 wydawnictwootwarte.pl#%#//scriptlet('trusted-set-cookie', 'meerkat', 'dontshow')
@@ -51380,6 +51385,11 @@ instagram.com##._aagw:empty
 !
 !
 !
+! glassdoor.de - unblur text descriptions on reviews
+glassdoor.de#$#.BlurredContent_sm__eeMJq { filter: none !important; }
+glassdoor.de#$#.ReviewText_isCollapsed__UW3By { -webkit-line-clamp: none !important; }
+glassdoor.de##.ReviewTextContainer_wrapper__HBdRQ
+glassdoor.de##button[data-test="blurred-login-overlay-button"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236497
 suwen.com.tr###pc_new_member_modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235614
