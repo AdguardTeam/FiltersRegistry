@@ -172,6 +172,11 @@ describe('validateFlags', () => {
         ]);
         expect(validateFlags(flags)).toBeNull();
     });
+
+    it('allows --use-cache with --strip-generated-meta and --no-patches-prepare', () => {
+        const flags = parseFlags(['--use-cache', '--strip-generated-meta', '--no-patches-prepare']);
+        expect(validateFlags(flags)).toBeNull();
+    });
 });
 
 describe('validateArgs', () => {
