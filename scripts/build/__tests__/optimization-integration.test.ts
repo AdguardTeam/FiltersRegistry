@@ -8,6 +8,22 @@ import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { findFiles } from '../../utils/find_files.js';
 
+// compile() always fetches percent.json remotely, even under use(). Mock only
+// that call so the suite below stays offline; everything else passes through.
+vi.mock('child_process', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('child_process')>();
+    return {
+        ...actual,
+        execFileSync: vi.fn((command: string, args: string[], options: unknown) => {
+            const url = args.find((arg) => typeof arg === 'string' && arg.includes('percent.json'));
+            if (url) {
+                return JSON.stringify({ config: [{ filterId: 1 }] });
+            }
+            return actual.execFileSync(command, args, options as never);
+        }),
+    };
+});
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const expectedLocalOptimizationConfigPath = path.resolve(__dirname, '../../../temp/optimization/stats');
@@ -208,10 +224,8 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
         const statsDir = path.join(optimizationDir, 'filters', String(FILTER_ID));
         await fs.mkdir(statsDir, { recursive: true });
 
-        // percent.json is never read from disk (always fetched from the remote
-        // server, even in local mode), so it's not written here. This test
-        // therefore depends on the real network and on filter 1 actually being
-        // listed in the live remote percent.json.
+        // percent.json isn't written locally — it's never read from disk, only
+        // fetched (and mocked above), so it's not needed here.
         const statsJson = JSON.stringify({
             percent: 40,
             minPercent: 25,
