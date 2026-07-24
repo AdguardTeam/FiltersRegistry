@@ -56,7 +56,7 @@ const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
 const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
 const tempDir = path.join(__dirname, '../../temp');
 const cachedFiltersDir = path.join(tempDir, 'filters_cached');
-const localOptimizationStatisticsBasePath = path.join(tempDir, 'optimization', 'stats');
+const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -125,10 +125,10 @@ const buildFilters = async () => {
 
     if (downloadStats) {
         await localOptimizationStatistics.download(
-            localOptimizationStatisticsBasePath,
+            optimizationStatsDir,
             includedFilterIDs.length > 0 ? includedFilterIDs : undefined,
         );
-        console.log(`optimization statistics generated at ${localOptimizationStatisticsBasePath}.`);
+        console.log(`Optimization statistics downloaded at ${optimizationStatsDir}.`);
         return;
     }
 
@@ -155,9 +155,9 @@ const buildFilters = async () => {
         // to fetching stats from the remote server (localOptimizationStatistics.use()
         // simply isn't called in that case — that's already getOptimizationStatistics's
         // default behavior).
-        if (existsSync(localOptimizationStatisticsBasePath)) {
-            localOptimizationStatistics.use(localOptimizationStatisticsBasePath);
-            console.log(`Using local optimization statistics from: ${localOptimizationStatisticsBasePath}`);
+        if (existsSync(optimizationStatsDir)) {
+            localOptimizationStatistics.use(optimizationStatsDir);
+            console.log(`Using local optimization statistics from: ${optimizationStatsDir}`);
         } else {
             console.log('No local optimization statistics found; fetching stats from the remote server.');
         }
