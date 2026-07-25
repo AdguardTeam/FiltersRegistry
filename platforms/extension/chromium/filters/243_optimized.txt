@@ -1,9 +1,9 @@
-! Checksum: a5zrXxVSc1sE5briY7mlpQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1784826205-14400.patch
+! Checksum: vcg1mq0R1C8EEOVgL+xqcw
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1784957607-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.3
-! TimeUpdated: 2026-07-23T17:00:47+00:00
+! Version: 2.0.25.4
+! TimeUpdated: 2026-07-25T05:30:34+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -299,7 +299,7 @@ bucketlistmagazine.se#?#.elementor-heading-title:contains(Annons):upward(a)
 bucketlistmagazine.se##.elementor-sticky
 bucketlistmagazine.se##.elementor-widget-image:has(a[target="_blank"])
 bukefalos.se,thaisnack.se,rollspel.nu,husbilsklubben.se,friaordet.org,xn--lnforum-exa.se,ihusbil.se,ham.se##.u-bottomFixer
-bulletin.nu##[class^="newsletter-subscribe"], div[class^="cookie-message"], div[role="presentation"]
+bulletin.nu##[class^="newsletter-subscribe"], div[class^="cookie-message"], div[role="presentation"], div[data-direct-ad]
 bulletin.nu,inredningsarkitektur.se,fof.se,allas.se,elle.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se,motherhood.se,aftonbladet.se,lchfarkivet.se,kollega.se,folkofolk.se,dagensarena.se,bokadirekt.se,samnytt.se,sjofartstidningen.se,mytaste.se,matklubben.se,vivavinomat.se,aktuellsakerhet.se,skidspar.se,hellofresh.se,goteborgco.se,maklarvarlden.se,utsidan.se,skogsforum.se,ratio.se,thefork.se#$#body { overflow:initial!important }
 bussmagasinet.se###page > div:not(.left):not(.right)
 bussmagasinet.se###titlebanner
@@ -1183,7 +1183,7 @@ nyhetersto.se##.site-branding a ~ p, .wp-block-jetpack-slideshow, .metaslider_im
 nyhetersto.se,bussmagasinet.se,brollopsmagasinet.se,borattforum.se,globalpolitics.se,batliv.se,em-fotboll.se,elinor.se,fotbollsresultat.com,vm-fotboll.se,vildmarken.se,fisheco.se,nyhetsbyranjarva.se,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,it-hallbarhet.se,battregolf.se,sporthalsa.se,revisionsvarlden.se##a.gofollow[data-track]
 nyheter.fiskejournalen.se,jaktjournalen.se#?#.kicker:is(.below, .above):contains(/annons/i):upward(article)
 nyheter.swebbtv.se#?#.recent-posts-widget-with-thumbnails:contains(/annonssamarbete|annons/i)
-nyheter.swebbtv.se##.wp-block-image a[target]:not([href*="nyheter.swebbtv.se"]), .mh-sidebar-2 .indexlink
+nyheter.swebbtv.se##.wp-block-image a[target]:not([href*="nyheter.swebbtv.se"]), .mh-sidebar-2 .indexlink, .mh-slider-widget
 nyhetsbyranjarva.se##div[style="display: flex; justify-content: center; flex-direction: column; align-items: center;"]
 nyhetsbyranjarva.se,nyan.ax,tv-kanal.se,golfguidenonline.se,rockbladet.se,vildmarken.se,nyhetersto.se,dagenslogistik.se,turismnytt.se,radiosol.se,cora.se,travelandtourworld.se,mallorcanyheter.com,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,it-hallbarhet.se,fisheco.se,opusmagasin.se,samefolket.se##.g
 nyteknik.se,lag-avtal.se,arbetarskydd.se##article:has(a[href*="/sponsrad"])
@@ -1448,7 +1448,7 @@ svenskfarmaci.se##.Dialog[data-dialog-skip-auto-open-for-utm-source-value="Newsl
 svenskfilmdatabas.se##.wt-cli-cookie-bar-container
 svenskfotboll.se##.news-multi-link--sponsor
 svenskgolf.se##.card:has(a[href*="/partner/"])
-svenskgolf.se,praktisktbatagande.se,akaskidor.se,utemagasinet.se,sportfack.se##.partnerCard, .partnerContent, .entry-content figure.wp-block-image, .category-partner, .ams-playad-injected, .partner, .streamline-ads-inside-sticky-wrapper, .panorama-container, .panorama-mobile-wrapper, .singleAdsBottom, .blurb--partner
+svenskgolf.se,praktisktbatagande.se,akaskidor.se,utemagasinet.se,sportfack.se,vagabond.se,cafe.se,automotorsport.se,kingmagazine.se##.partnerCard, .partnerContent, .entry-content figure.wp-block-image, .category-partner, .ams-playad-injected, .partner, .streamline-ads-inside-sticky-wrapper, .panorama-container, .panorama-mobile-wrapper, .singleAdsBottom, .blurb--partner
 svenskhistoria.se##.et_pb_column:has(.module-etads, a[href*="tradedoubler"])
 svenskhistoria.se##.widget_et_ads, .module-etads, #text-13, #block-4, a[target="_blank"][rel="noopener noreferrer"], a > img[width="300"][height="250"], a > img[width="800"][height="175"], a[href*="casino"], a[href*="poker"], a[href*="kasino"], a img[width="1000"][height="300"]
 svenskhistoria.se##.widget_text:has(a[href*="casino"])
@@ -2581,6 +2581,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/real-cookie-banner$domain=bebisvarlden.se|bluum.se
 /plugins/sandviks-weblog$script,domain=bebisvarlden.se
 /plugins/sassy-social-share/*$script,domain=~nova.rs
+/plugins/sdep-annons$script
 /plugins/sea-short-stats
 /plugins/seo-automated-link-building
 /plugins/setupad/*
@@ -2951,6 +2952,7 @@ _banner.php?$domain=tvmatchen.nu
 ||adonsales.com^$third-party
 ||adonstudio.com^$third-party
 ||ads.google.com^$third-party
+||ads.samnytt.se^
 ||adviral.s3.amazonaws.com/sponsored/
 ||advisa.se^$third-party
 ||advisible.com^$third-party
@@ -3332,6 +3334,7 @@ _banner.php?$domain=tvmatchen.nu
 ||mcgtrack.herokuapp.com^$third-party
 ||mediacreeper.com/image$image,redirect=32x32-transparent.png
 ||mediacreeper.se/image$image,redirect=32x32-transparent.png
+||mediaintelliview.com^$third-party
 ||mediakraft.se^$third-party
 ||mediaserver.gvcaffiliates.com.cdn.cloudflare.net^
 ||media.arto.se/*annons$image,domain=natursidan.se
@@ -3482,6 +3485,7 @@ _banner.php?$domain=tvmatchen.nu
 ||sitegainer.com/jsinsert/*/sitegainer$third-party
 ||skogsforum.pro/analytics
 ||skogsforum.se^$csp=worker-src 'none'
+||sleeknote.com/production/package-tracker.js
 ||sleeknote.com^$domain=gaffa.se
 ||smartstats.kla.tv^
 ||snapwidget.com/images/snapwidget_ad

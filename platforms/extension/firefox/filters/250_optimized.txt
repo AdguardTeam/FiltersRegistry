@@ -1,5 +1,5 @@
-! Checksum: ihOQLe4vcgmvzggNO1KLsA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1784871382-14400.patch
+! Checksum: GQJaGp4MmR+TfYejI3aAoA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1784957614-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.25
@@ -51,6 +51,7 @@ fix4dll.com#?#.sidebar__block:contains(Outbyte)
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
+||outbyte.com^$document
 ||testedforyou.net^$all
 ##.ym-p1-server-mode-outbyte
 ||solvusoft.com^$document
@@ -1608,6 +1609,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##a[class$=-sharing-button__link]
 ##a[class*=-socials__item]
 ##a[class*=addthis_button]
+##a[class*=BtnShare]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##a[class*=share__button]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##a[class^=share_btn]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##a[data-ss-ss-type]
@@ -2067,7 +2069,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 @@||consentmanager.net^$script,third-party,badfilter
 @@||www.joesandbox.com^
 @@||virustotal.com^
-@@||fortiguard.com^
 @@://safeweb.norton.com^
 @@||sitecheck.sucuri.net^
 @@||safebrowsing.google.com^
@@ -2093,7 +2094,6 @@ reports.adguard.com$badfilter
 @@||gitlab.com/*/raw/main/*$~third-party
 @@||cdn.jsdelivr.net/gh/*@master$~third-party
 @@||easylist.to/*.txt^
-@@||pgl.yoyo.org/adservers/serverlist.
 @@||someonewhocares.org/hosts/
 @@||fanboy.co.nz/*.txt^
 @@||github.githubassets.com/assets/behaviors-$script,xmlhttprequest
@@ -2206,6 +2206,8 @@ rule34.paheal.net###comment-list-recent
 rule34.xxx###comment-list
 e621.net,e926.net###comments
 ###hot-network-questions
+/api/amediacomments/*
+/commentsbutton.js$domain=nettavisen.no
 www.pixiv.net##div[data-ga4-label*=comment i]
 $removeparam=yclid
 $removeparam=gclid
@@ -2496,6 +2498,7 @@ $removeparam=mclk
 $document,removeparam=maid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
+$removeparam=exactag_uk
 $removeparam=LSID
 $removeparam=affuid
 $removeparam=refclickid
@@ -2515,6 +2518,7 @@ $removeparam=vero_conv
 $removeparam=vero_id
 $removeparam=a_aid
 $removeparam=otracker
+$removeparam=otracker1
 $removeparam=ft_source
 $removeparam=ft_medium
 $removeparam=ref_source
@@ -2562,7 +2566,10 @@ $document,removeparam=/^subid2=.*$/i
 $document,removeparam=/^subid3=.*$/i
 $document,removeparam=/^subid4=.*$/i
 $document,removeparam=/^subid5=.*$/i
+$removeparam=tid1
+$removeparam=tid2
 $removeparam=tid3
+$removeparam=tid4
 $removeparam=avad
 $removeparam=ckmc
 $removeparam=ckmsc
@@ -2685,6 +2692,7 @@ $removeparam=as_campaign
 $removeparam=as_camptype
 $removeparam=as_channel
 $removeparam=as_source
+$document,removeparam=/^source=igodigital$/
 $removeparam=qq-pf-to
 $removeparam=mibextid
 $document,removeparam=/^adppopup=[a-eg-zA-EG-Z0-9]/
@@ -2710,6 +2718,7 @@ $removeparam=vxii_pdid
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
+$removeparam=ssp_user_id
 $removeparam=adroll_fpc
 $removeparam=ad-session-id
 $removeparam=ga_cid
@@ -3406,7 +3415,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||walmart.$removeparam=/^ath.*$/
 $removeparam=refdomain,domain=bestbuy.com
 $removeparam=recs_source
-$removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
 ||market.yandex.ru^$removeparam=cpc
 ||everesttech.net^$removeparam=/^ev_.*$/
@@ -3496,6 +3504,7 @@ $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
 $removeparam=sub,domain=allboner.com|twinkvideos.com
 ||fandom.com^$removeparam=so
+||lindex.com^$removeparam=affiliate_source
 ||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
 ||tokopedia.com^$removeparam=extParam
@@ -3689,6 +3698,7 @@ $document,removeparam=pk_cid
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 ||www.roblox.com^$removeparam=treatmentType
+$document,removeparam=ucid,domain=unicredit.it|steampowered.com
 $document,removeparam=entrypoint,domain=bing.com
 $document,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
 $removeparam=email,domain=landevei.no|thehill.com
@@ -3758,6 +3768,10 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||deezer.$removeparam=host
 ||deezer.$removeparam=/^utm_.*$/
 ||duckduckgo.com/extension-success$document,removeparam=atb
+||duckduckgo.com/atb.js$document,removeparam=set_atb
+||duckduckgo.com/atb.js$document,removeparam=v
+||duckduckgo.com/atb.js$document,removeparam=bv
+||duckduckgo.com/atb.js$document,removeparam=browser
 ||github.com^$document,removeparam=email_source
 ||github.com^$document,removeparam=email_token
 ||youtube.com/shorts/$document,removeparam=si

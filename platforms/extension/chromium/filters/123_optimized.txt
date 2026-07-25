@@ -1,9 +1,9 @@
-! Checksum: tVoIjyfiloXVb1zAftdMrQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1784941493-14400.patch
+! Checksum: 638JX+/GIvCVBOb73Gp8Eg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1784957605-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.65.74
-! TimeUpdated: 2026-07-25T01:01:25+00:00
+! Version: 2.1.65.75
+! TimeUpdated: 2026-07-25T05:30:02+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -250,6 +250,7 @@ _social-bar/
 ###follow-footer
 ###follow-icons
 ###follow-links
+###follow-me
 ###follow-us-box
 ###follow-us-widget
 ###followBox
@@ -261,6 +262,7 @@ _social-bar/
 ###follow_us
 ###followus
 ###foot-social
+###footSocial
 ###footer-facebook
 ###footer-fb
 ###footer-follow-us
@@ -598,7 +600,6 @@ _social-bar/
 ###socialSidebar
 ###socialTwitter
 ###socialWidget
-###socialWidgets
 ###socialWrap
 ###social_bar
 ###social_bkm_wrap_top
@@ -623,7 +624,6 @@ _social-bar/
 ###social_media_container
 ###social_media_icons
 ###social_media_links
-###social_media_widget
 ###social_mobile
 ###social_panel
 ###social_pinterest
@@ -940,6 +940,7 @@ _social-bar/
 ##.b-advert-social-wrapper
 ##.b-article__social
 ##.b-event_links__share__block
+##.b-follow-us
 ##.b-footer__social
 ##.b-footer_social
 ##.b-header__social
@@ -1059,6 +1060,7 @@ _social-bar/
 ##.c-nav-social
 ##.c-navbar-primary__social
 ##.c-share
+##.c-share-article
 ##.c-share-tools
 ##.c-share1
 ##.c-sharebtn
@@ -1235,7 +1237,6 @@ _social-bar/
 ##.facebook-box
 ##.facebook-fans
 ##.facebook-follow
-##.facebook-follow-button
 ##.facebook-footer
 ##.facebook-hover
 ##.facebook-image
@@ -1278,7 +1279,6 @@ _social-bar/
 ##.fb-like-box
 ##.fb-like-box-wrapper
 ##.fb-like-container
-##.fb-like2
 ##.fb-msg
 ##.fb-page-like
 ##.fb-promo
@@ -1407,8 +1407,10 @@ _social-bar/
 ##.footer-secondary-social
 ##.footer-section-social
 ##.footer-share
+##.footer-share-button
 ##.footer-share-buttons
 ##.footer-share-list
+##.footer-share-section
 ##.footer-sharing
 ##.footer-site-social
 ##.footer-sns
@@ -1600,7 +1602,6 @@ _social-bar/
 ##.hola_share_player_btn
 ##.hola_share_player_btn_wrapper
 ##.home__social
-##.homepage-social
 ##.horizontal-share
 ##.horizontal.social
 ##.hover_share
@@ -1867,7 +1868,6 @@ _social-bar/
 ##.m-sns
 ##.m-social-bar
 ##.m-social-share
-##.m-socialbar
 ##.m-socials
 ##.m_share
 ##.main-article-share-count
@@ -1927,6 +1927,7 @@ _social-bar/
 ##.mh-share-buttons
 ##.mh-social-icons
 ##.mh-social-nav
+##.mini-share-post
 ##.mk-header-social
 ##.mkdf-social-icon-widget
 ##.mks_social_widget
@@ -2031,6 +2032,7 @@ _social-bar/
 ##.page-share
 ##.page-share-button
 ##.page-social
+##.pageHead-share
 ##.page_share
 ##.pane-social-links
 ##.panel-share-networks
@@ -2123,9 +2125,6 @@ _social-bar/
 ##.product-share
 ##.product-social-icon-wrapper
 ##.pswp__button--share
-##.pw-button-email
-##.pw-button-facebook
-##.pw-button-twitter
 ##.qlwapp-button
 ##.qodef-social-share
 ##.qt-sharepage
@@ -2415,6 +2414,7 @@ _social-bar/
 ##.share-wrap
 ##.share-wrapper
 ##.share-wx
+##.share-wx-item
 ##.share-youtube
 ##.share-zone
 ##.share42init
@@ -2666,7 +2666,6 @@ _social-bar/
 ##.sharrre
 ##.sharrre-container
 ##.sharrre_widget
-##.show-all-sharetool
 ##.show-share
 ##.showShareMore
 ##.shr-bookmarks
@@ -2717,7 +2716,6 @@ _social-bar/
 ##.site-footer__social-links
 ##.site-footer__social-list
 ##.site-footer__socials
-##.site-header__social-links
 ##.site-share-wrapper
 ##.site-social
 ##.site-social-menu
@@ -3390,6 +3388,7 @@ _social-bar/
 ##.video-share
 ##.video-share-b
 ##.videoShare
+##.videoShareBox
 ##.video_share
 ##.video_share_item
 ##.vjs-icon-share
@@ -3715,6 +3714,7 @@ analyticsinsight.net,biznews.com,dn.pt,newindianexpress.com,newsgram.com###heade
 medicalxpress.com,phys.org,techxplore.com###js-soc-panel
 listennotes.com###ln-side-share-div
 digitaltrends.com###menu-2021-social
+thefader.com###new_socials_bottom
 taylorfrancis.com###openShare
 globenewswire.com###pnr-global-social-media-sidebar-section
 mediaite.com###post-social
@@ -3778,6 +3778,7 @@ indiatoday.in##.Story_whatsapp_channel__6xdtB
 gulfnews.com##.Ub-Cr
 pixivision.net##._floated-bottom-bar
 pixivision.net##._follow-us-card
+tableconvert.com##._share-wrapper
 france24.com##.a-share-button
 tandfonline.com##.a2a_share_target
 usmagazine.com##.add-to-google-banner
@@ -3910,6 +3911,7 @@ argonauts.ca,cfl.ca##.footer1
 oilprice.com##.footerLogoBanner__socialMedia
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
+infoq.com##.footer__social-wrap
 indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
@@ -4058,6 +4060,7 @@ thedirect.com##.share-bar-2
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
 ibtimes.co.in##.share-btn-wrp
 smithsonianmag.com##.share-control
+paloaltonetworks.com##.share-copy-mail
 dailymail.co.uk,thisismoney.co.uk##.share-email
 dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
@@ -4376,7 +4379,6 @@ presseportal.de##.story-sharing
 barax.de##.twt-sharing-links
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
-bz-berlin.de##div[data-type="social-bar"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 radiofrance.fr##.ShareManager
@@ -4560,6 +4562,7 @@ cooperativa.cl##.botones-redes-sociales
 elplural.com##.btn-whatsapp
 eleconomista.com.mx##.c-detail__author__share
 cmmedia.es,diariodecastillayleon.es,diariodeleon.es,diariodevalladolid.es,elcorreodeburgos.com,eldebate.com,eleconomista.com.mx,heraldodiariodesoria.es,huffingtonpost.es,listindiario.com,segre.com##.c-detail__share
+cope.es##.c-detail__social
 eleconomista.com.mx##.c-detail__toolbar__share
 eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
 los40.com##.c-sha
@@ -4569,7 +4572,6 @@ ecologiaverde.com,el9nou.cat,elsaltodiario.com,infocatolica.com,lanacion.com.ar,
 wapa.pe##.container_shared--internal
 elcolombiano.com##.contenedor-google-noticias
 eldiario.es,eldiarioar.com##.edi-social-buttons
-a24.com,diariodecuyo.com.ar,perfil.com##.footer-redes
 ara.cat,europapress.es##.footer-rrss
 sport.es##.ft-mol-rrss
 elperiodico.com,sport.es##.ft-mol-rrss-column
@@ -4587,13 +4589,13 @@ lanacion.com.ar##.mod-share-container
 cooperativa.cl##.modulo-channels
 cooperativa.cl##.modulo-google-news
 depor.com##.nav__story-social-network
-noticiasargentinas.com##.news-follow
 biobiochile.cl##.post-social-container
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
 elcomercio.pe,gestion.pe##.s-buttons
 infobae.com##.second-saved-buttons
 elpais.com.uy##.section-rrss-wrapper
 as.com##.sh-bar
+heraldodemexico.com.mx##.share-comp
 elamaule.cl,elboyaldia.cl,elconcecuente.cl,elmagallanews.cl,elmartutino.cl,elmorrocotudo.cl,elnaveghable.cl,elnortero.cl,elobservatodo.cl,elquehaydecierto.cl,elrancahuaso.cl,elrepuertero.cl,elvacanudo.cl,laopinon.cl##.share-content
 infobae.com##.sharebar-buttons-container
 elcomercio.com##.single-layout__community-social
