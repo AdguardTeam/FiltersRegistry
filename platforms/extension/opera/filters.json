@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.79.52",
-			"timeUpdated": "2026-07-25T17:24:01+0000",
+			"version": "2.4.79.53",
+			"timeUpdated": "2026-07-25T18:22:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.29.9",
-			"timeUpdated": "2026-07-25T16:23:01+0000",
+			"version": "2.1.29.10",
+			"timeUpdated": "2026-07-25T18:23:14+0000",
 			"languages": [],
 			"tags": [
 				45,
