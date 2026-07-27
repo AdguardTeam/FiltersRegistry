@@ -338,7 +338,7 @@ fi
 
 step_header 3 "Generate cache"
 if [ "$BUILD_LOCAL" = "true" ]; then
-  echo "Regenerate filter.txt cache (yarn generate-cache)?"
+  echo "Generate filter.txt cache (yarn generate-cache)?"
   if confirm default_no; then
     DO_GENERATE_CACHE=true
     echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
@@ -355,13 +355,13 @@ fi
 
 step_header 4 "Download stats"
 if [ "$BUILD_LOCAL" = "true" ]; then
-  echo "Refresh per-filter stats.json from the cached percent.json (yarn download-stats)?"
+  echo "Download per-filter stats.json from the cached percent.json (yarn download-stats)?"
   if confirm default_no; then
     DO_GENERATE_STATS=true
     echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
   else
     DO_GENERATE_STATS=false
-    echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats refresh"
+    echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats download"
   fi
 else
   DO_GENERATE_STATS=false
