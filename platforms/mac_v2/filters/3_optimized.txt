@@ -1,9 +1,9 @@
-! Checksum: fdfWSc1Mmdj2zZ+PmkewlA
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1785113282-3600.patch
+! Checksum: 71ZZxJZ2n9ufdbgKvuzzAQ
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1785129906-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.8.6
-! TimeUpdated: 2026-07-27T00:44:46+00:00
+! Version: 2.1.8.7
+! TimeUpdated: 2026-07-27T05:21:32+00:00
 ! Expires: 12 hours (update frequency)
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.pushState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.replaceState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
@@ -256,6 +256,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||acv.mira-dsp.com^
 ||snippet.affilimate.io^
 ||mtag.markopolo.ai^
 ||external-tag.mysquadbeyond.com^
@@ -180896,6 +180897,7 @@ zonedirector.avadacom.com$image
 /^https:\/\/cs\d{3}\.\w+\.com\/cscript\/\d{3}\/[\w\d]+\.js$/$script,third-party,match-case
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
+&tag_exp=*&e=gtm.
 /0.gif?
 /internal-stats-lite/p.php?
 /internal-stats/pixel/*
@@ -181616,6 +181618,7 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+||mercari.com/gtm/
 ||vsonic.click/api/views/track
 ||xcafe.com/track/impression?
 ||archive.org/includes/athena.js
@@ -183573,7 +183576,6 @@ geinoukame.com##.ninja-recommend-block + hr
 ||anilibria.top/api/v1/ads/
 ||baitoru.com/*/adobe_send_tracking.js
 ||charmmy-api.line.me/api/*/bars/tracking
-||receptions.smart-bdash.com/receptions/action/click
 ||kojima.net/excludes/KPC/js/kjm_gtm.js
 ||korewaeroi.com/fukugan_$subdocument
 ||shopch.jp/com/js/analytics.js
