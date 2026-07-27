@@ -221,11 +221,10 @@ until the compression goal (defined in percentages) is achieved.
 
 > [!NOTE]
 > A rule can be excluded from this removal by marking it with the [`NOT_OPTIMIZED` hint][kb-hints].
-<!-- markdownlint-disable-next-line -->
+<!-- markdown-disable-line MD028/no-blanks-blockquote -->
 > [!NOTE]
 > However, these changes will only take effect after being uploaded to the server,
 > as `filters-compiler` does not use this file locally but retrieves it from the server.
-
 
 [kb-filter-statistics]: https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics/
 [kb-hints]: https://adguard.com/kb/general/ad-filtering/create-own-filters/#hints
