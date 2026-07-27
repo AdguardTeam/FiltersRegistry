@@ -1,8 +1,8 @@
-! Checksum: bJSZxTc9xh9+KACvNVPvVw
+! Checksum: JU4DGJNgfqozn/ra8/uzOg
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.22
-! TimeUpdated: 2026-07-27T05:21:45+00:00
+! Version: 2.0.66.23
+! TimeUpdated: 2026-07-27T13:09:29+00:00
 ! Expires: 10 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -1046,8 +1046,9 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+r10.net##.rPanel
+r10.net##.featuredAjaxContent > div.list > ul[data-id="sonAcilan"] > li[class*="thread"][data-ri]
 r10.net##.footerSponsors
-r10.net##.featuredAjaxContent > div.list > ul[data-id="sonAcilan"] > li[class^="thread "][data-ri]
 r10.net##.ozelKategori > a[href][rel*="sponsored"][target="_blank"]
 r10.net##.ozelKategori > a[href^="https://www.iyzico.com/"]
 ||selcuksports.*/uploads/*.gif
@@ -5455,6 +5456,17 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
 !+ NOT_VALIDATE
+.gif|$domain=/onlyifsa\d+\.com$/
+!+ NOT_VALIDATE
+||pub-*.r2.dev/yenigif.mp4$domain=/onlyifsa\d+\.com$/
+[$domain=/onlyifsa\d+\.com$/]##.yenimarka-wrap
+[$domain=/onlyifsa\d+\.com$/]##.yenigif-wrap
+[$domain=/onlyifsa\d+\.com$/]###tg-cta-container
+[$domain=/onlyifsa\d+\.com$/]##article[data-ad-pos]
+[$domain=/onlyifsa\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/onlyifsa\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/onlyifsa\d+\.com$/]#$##mainVideo { display: block !important; }
+!+ NOT_VALIDATE
 .gif|$domain=/sadeceifsa\d+\.com$/
 !+ NOT_VALIDATE
 ||pub-*.r2.dev/yenigif.mp4$domain=/sadeceifsa\d+\.com$/
@@ -5478,12 +5490,17 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet('remove-node-text', 'script', 'LAST_POP')
 [$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet("abort-current-inline-script", "document.createElement", "'script'")
 [$domain=/turkporoclub\d+\.sbs$/]##h3.section-title
-!+ NOT_VALIDATE NOT_PLATFORM(windows, mac, android, cli)
-||r2.dev/*.gif$image,domain=/hdifsaizle\d+\.icu$/
-[$domain=/hdifsaizle\d+\.icu$/]##.banner-grid-wrap
-[$domain=/hdifsaizle\d+\.icu$/]##a[href^="https://tinyurl.com/"]
-[$domain=/hdifsaizle\d+\.icu$/]###prerollOverlay
-[$domain=/hdifsaizle\d+\.icu$/]##article.hd-card:has(> a[href^="/api/ad-click/"])
+!+ NOT_VALIDATE
+.gif|$image,domain=/hdifsaizle\d+\.com$/
+!+ NOT_VALIDATE
+||pub-*.r2.dev/yeni*.mp4$domain=/hdifsaizle\d+\.com$/
+[$domain=/hdifsaizle\d+\.com$/]##.yenigif-wrap
+[$domain=/hdifsaizle\d+\.com$/]##.banner-grid-wrap
+[$domain=/hdifsaizle\d+\.com$/]##.yenimarka-wrap
+[$domain=/hdifsaizle\d+\.com$/]##.hd-row > article.hd-card ~ div.col-12
+[$domain=/hdifsaizle\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/hdifsaizle\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/hdifsaizle\d+\.com$/]#$##mainVideo { display: block !important; }
 ||labvex.b-cdn.net/ads/
 !+ NOT_VALIDATE
 ||img.akamaicdn.work/ads/$domain=/turkifsa(lar)?\d+\.site$/
@@ -5538,13 +5555,14 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turktube\d+\.online$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.ink$/]##a[href^="https://tinyurl.com/"]
 !+ NOT_VALIDATE
-.gif|$domain=/hdturkifsa\d+\.(lol\|icu|com)$/
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##a[rel="nofollow noopener noreferrer sponsored"]
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]###tg-cta-container
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##.banner-grid-wrap
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##article[data-ad-pos]
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##div[style]:has(> a[href^="https://bit.ly/"])
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
+.gif|$domain=/hdturkifsa\d+\.com$/
+[$domain=/hdturkifsa\d+\.com$/]##a[rel="nofollow noopener noreferrer sponsored"]
+[$domain=/hdturkifsa\d+\.com$/]###tg-cta-container
+[$domain=/hdturkifsa\d+\.com$/]##.banner-grid-wrap
+[$domain=/hdturkifsa\d+\.com$/]##article[data-ad-pos]
+[$domain=/hdturkifsa\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/hdturkifsa\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/hdturkifsa\d+\.com$/]#$##mainVideo { display: block !important; }
 !+ NOT_VALIDATE
 ||i.ibb.co/*.gif$domain=/softtv\d+\.com$/
 [$domain=/softtv\d+\.com$/]##.slot-header_banner
@@ -5587,8 +5605,6 @@ patrongol34.cfd##.top-banner-header
 [$domain=/papaztv\d?\.com$/]#$#body { overflow: auto !important; }
 turkkizlar.com##div[class^="vid-promo"]
 [$domain=/turkkizlar\d+\.com$/]##div[class^="vid-promo"]
-||cimcime*.com/wp-content/uploads/*.gif
-[$domain=/cimcime\d+\.\w+$/]###ads-inside-main
 ||dahahizli*.*/wp-content/uploads/*.gif
 ||dahahizli*.*/wp-content/uploads/*/denemeBonusuVerenSiteler-son.png
 ||dahahizli*.*/wp-content/uploads/*/bycasino-masaustu-ban.png
@@ -5626,8 +5642,8 @@ turkifsaclub.org#?#main > h3:contains(Sponsor Bannerlar)
 [$domain=/yavasgir\d+\.(com\|live)/]###ads-inside-main
 [$domain=/yavasgir\d+\.(com\|live)/]#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "openPopup")
 ||cimcime*.*/*.gif
-[$domain=/cimcime\d+\.(com\|live)/]###ads-inside-main
-[$domain=/cimcime\d+\.(com\|live)/]#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "openPopup")
+[$domain=/cimcime\d+\.\w+$/]###ads-inside-main
+[$domain=/cimcime\d+\.\w+$/]#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "openPopup")
 primeembedpanel.com#%#//scriptlet('prevent-window-open')
 ||primeembedpanel.com/ads/
 ||askimyavas*.*/wp-content/uploads/*.gif

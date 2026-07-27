@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: KylnVof3l7ylThB8xVDJGQ
-! Diff-Path: ../patches/7/7-s-1785143768-3600.patch
+! Checksum: ADnSgx2ppgaHA0VNeEMX2g
+! Diff-Path: ../patches/7/7-s-1785157980-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.75.12
-! TimeUpdated: 2026-07-27T09:12:48+00:00
+! Version: 2.0.75.13
+! TimeUpdated: 2026-07-27T13:09:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1911,6 +1911,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+9-gld.net##.catpost-cards > .c_linkto:has(> .adsbygoogle)
+9-gld.net##.normal-sidebar > .widget_text:has(> .textwidget > .adsbygoogle)
 tuma.jp##.pr-section
 japanmapcode.com##.flex-col > div:not([class]):has(> ins.adsbygoogle)
 suki-kira.com##+js(adjust-setInterval, #close-ad, 1000)
@@ -2542,7 +2544,6 @@ shinshi-manga.net##div[style^="position: absolute; width: 25px; height: 25px; te
 1geki.jp##.sponsor-ad
 sumaholife-plus.jp##div[style="min-height: 250px; width: 100%;"]
 arukikata.co.jp##div[class^="c-"][class*="-banner"]:not(:has(.popin))
-tuma.jp##.container > div.index_banner_space:has(> div.text-center ~ div.ad-sp)
 hb-nippon.com###videoAds
 awakest.net##body > .popup:has(> .popup__inner > .pr_tx)
 diskgarage.com##.inwrap:has(> ins.adsbygoogle)
@@ -4017,7 +4018,6 @@ otakuma.net###banner-article
 ch.nicovideo.jp##.ads_nicovideo
 tumadouga.jp##.index_banner_space > div.text-center.pt-3.pb-3:has(> a[id^="random_image"][style^="aspect-ratio: 728"])
 tuma.jp,tumadouga.jp##.index_banner_space > div[class^="ad-"]
-tuma.jp##.wrapper > div.shadow-box:has(> div.ad_sfr)
 lettuceclub.net###lcn-s_list_infeed1_gam
 pathee.com##header ~ div[class^="sc-"]:not([id]) > div[class^="sc-"]:not([id]) > div[class^="sc-"]:not([id]) > div[class^="sc-"]:not([id]):has(> div[style="min-height:250px"])
 odaibako.net,pathee.com##div[style="min-height:250px"]
@@ -4518,8 +4518,7 @@ eromanga-time.com##.code-block[style="margin: 8px 0; clear: both;"]
 dekiru.net##.article-header-ad-space
 cysoku.com##.right-container-ads + div.plugin-memo
 famitsu.com###detail-right-bottom-ad
-supleks.jp###contents-basic div[style="margin:10px 0;height:100px;"]
-supleks.jp##.div-responsive-horizontal
+supleks.jp##div[class^="JP_"][style]
 s.minkabu.jp###layout > div#layout + div > div.relative
 ||game8.jp/api/ad/advertisement_placements?
 ||assets.game8.jp/uploads/6699_
@@ -6477,10 +6476,10 @@ konyoku.net##.ta-c > hr[width="760"] ~ br:not(hr + br):not(font + br):not(font +
 erogif-eden.com,kyosui.net,best-hit.tv,hime.me,konyoku.net,toukou.tv,tuma.jp##a[href^="https://click.duga.jp"]
 tumadouga.jp,hime.me,konyoku.net,toukou.tv,tuma.jp##a[href^="https://mttag.com"]
 tumadouga.jp,hime.me,konyoku.net,toukou.tv,tuma.jp,doucolle.net,m4ex.com,i-bbs.sijex.net##a[href^="https://www.e-nls.com/access.php"]
-konyoku.net,toukou.tv,tuma.jp##table[width="780"][cellpadding="5"] tr:nth-child(2)
-konyoku.net,toukou.tv,tuma.jp##table[width="780"][cellpadding="5"] tr:last-child
+konyoku.net,toukou.tv##table[width="780"][cellpadding="5"] tr:nth-child(2)
+konyoku.net,toukou.tv##table[width="780"][cellpadding="5"] tr:last-child
 konyoku.net,tumadouga.jp##a[href^="https://happymail.co.jp"]
-tuma.jp,tumadouga.jp###index_banner_space_01 > div.text-center:has(> #random_image_2)
+tumadouga.jp###index_banner_space_01 > div.text-center:has(> #random_image_2)
 tumadouga.jp##.mt-4 + .index_banner_space_03
 tuma.jp,tumadouga.jp##.footer-links ~ .index_banner_space_07
 city.iwaki.lg.jp##div.slide_link + div.wrap > div.aside
@@ -9852,8 +9851,9 @@ ckworks.jp##div[style^="width:960px;height:320px"]
 newsclip.be,sp.uta-net.com###header_banner
 buskita.com,city.hiroshima.lg.jp,city.kitahiroshima.hokkaido.jp,town.yoichi.hokkaido.jp,sp.uta-net.com###footer_banner
 openload.mov###main > div[style^="margin: 0 auto 60px auto;"]
-freesoft.tvbok.com###main > div[class*="_div_center_w"]
-freesoft.tvbok.com,goguynet.jp##div[style="height:250px; width:300px;"]
+freesoft.tvbok.com##.ad_mid
+freesoft.tvbok.com##aside > div.c10_center.clear
+goguynet.jp##div[style="height:250px; width:300px;"]
 ||iwanichi.co.jp/wp-content/uploads/ad_management/
 iwanichi.co.jp##.gad_related
 iwanichi.co.jp##.ad_mcol_gad2
@@ -11188,7 +11188,6 @@ hime.me##body > center > table[width="807"]:has(a[href^="https://mttag.com"][rel
 konyoku.net##center > table[width="807"]:has(td[height="58"] > font[size="+2"] > a[href="happy/happy.html"][target="_blank"])
 hime.me,konyoku.net##table[width="451"] > tbody > tr > td[height^="6"]:has(td > a[target="_blank"]:is([href="happy/happy.html"], [href*="e-nls.com"], [href^="https://mttag.com"]))
 hime.me,konyoku.net##table[width="451"] > tbody > tr:has(+ tr > td[height^="6"] td > a[target="_blank"]:is([href="happy/happy.html"], [href*="e-nls.com"], [href^="https://mttag.com"]))
-tuma.jp##.ta-c font[size="+1"][color="#1a0dab"]:contains(セフレ)
 toukou.tv##table[border="0"][width="759"] > tbody > tr > td[align="center"]:has(a[target="_blank"]:is([href^="https://pcmax.jp"], [href^="https://happymail.co.jp"]))
 konyoku.net##.ta-c > b > font[size="+1"]:contains(PCMAX)
 konyoku.net##.ta-c > font[size="+1"] > b:contains(/バイアグラ|日本最大級の会員/)
@@ -11196,15 +11195,15 @@ konyoku.net##.ta-c > form > font[size="+1"] > b:contains(/会員数|ハッピー
 hime.me,konyoku.net##center > table[width="807"]:has(td[colspan] a[href^="http://click.duga.jp"])
 hime.me,konyoku.net##td[width="250"]:has(a[href^="https://happymail.co.jp"])
 hime.me,konyoku.net##td[width="250"]:has(a[href^="https://pcmax.jp"])
-konyoku.net,toukou.tv,tuma.jp##center > center > table[width="807"]:has([href^="https://mttag.com"][rel])
+konyoku.net,toukou.tv##center > center > table[width="807"]:has([href^="https://mttag.com"][rel])
 hime.me##center > table[width="807"]:has(td:not([class]) > a[href^="https://pcmax.jp/lp/"])
-konyoku.net,tuma.jp##center > center > table[width="807"]:has(td[bgcolor="#ffffff"] > [href^="https://pcmax.jp/lp/"])
-hime.me,konyoku.net,tuma.jp##table[width="807"]:has(td[bgcolor="#ffffff"] > a[href^="https://www.e-nls.com"])
+konyoku.net##center > center > table[width="807"]:has(td[bgcolor="#ffffff"] > [href^="https://pcmax.jp/lp/"])
+hime.me,konyoku.net##table[width="807"]:has(td[bgcolor="#ffffff"] > a[href^="https://www.e-nls.com"])
 toukou.tv##center > center > table[width="807"]:has(td[align="center"] > a[href^="https://pcmax.jp/lp/"])
 toukou.tv##table[width="807"]:has(td[colspan="5"] a[href^="https://www.e-nls.com"])
-toukou.tv,tuma.jp##table[width="446"] > tbody > tr:has(td > a[href^="https://www.e-nls.com"])
-toukou.tv,tuma.jp##table[width="446"] > tbody > tr:has(td > a[href^="https://mttag.com"])
-toukou.tv,tuma.jp##table[width="446"] > tbody > tr:contains(セックスライフ必需品)
+toukou.tv##table[width="446"] > tbody > tr:has(td > a[href^="https://www.e-nls.com"])
+toukou.tv##table[width="446"] > tbody > tr:has(td > a[href^="https://mttag.com"])
+toukou.tv##table[width="446"] > tbody > tr:contains(セックスライフ必需品)
 backsi.com##.box_round > p > small:not(:contains(配信))
 blog94.fc2.com##.menuProfBlock > div.menuText > div.plugin-freearea > ins.dmm-widget-placement:upward(3)
 blogterest.net##.blockSide > div.blockWrapper > div.blockBody > center > ins.dmm-widget-placement:upward(3)

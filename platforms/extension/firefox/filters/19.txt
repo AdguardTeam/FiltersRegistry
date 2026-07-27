@@ -1,9 +1,9 @@
-! Checksum: 2XEhvD1u3e77P4kzfON+mQ
-! Diff-Path: ../patches/19/19-s-1785150644-3600.patch
+! Checksum: 1HnpVFg5MTamgt6X8CL/gA
+! Diff-Path: ../patches/19/19-s-1785157962-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.79.45
-! TimeUpdated: 2026-07-27T11:07:47+00:00
+! Version: 2.0.79.46
+! TimeUpdated: 2026-07-27T13:09:51+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3402,6 +3402,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+||eowf.alc.co.jp/content/js/popup_control.js
+mail.ru#%#//scriptlet('set-cookie', 'search_tooltip', '1')
 sberbank.ru##.header-widget-personal-account__modal-window_onboarding
 multishows.top#%#//scriptlet('trusted-set-local-storage-item', 'ad_free_expiry', '9999999999999')
 streamsports99.ru##.aspect-video > div.absolute
@@ -3595,7 +3597,7 @@ duckduckgo.com##body > div[class] > span[data-testid="feedback-prompt"]
 bcs-express.ru#%#//scriptlet('trusted-set-local-storage-item', 'Express.popup_poll.MB-226566', '9999999999999')
 skroutz.gr##.onsite-notification-toast
 thedailycatch.org###meter-message
-hgtv.com###welcome-banner
+travelchannel.com,animalplanet.com,hgtv.com###welcome-banner
 ofuse.me#%#//scriptlet('set-local-storage-item', 'hasAboutFanLetterOpened', 'true')
 cinema.bz###root > div.min-h-screen > div.relative > div.fixed.max-w-sm:has(.lucide-bookmark)
 frankmedia.ru##.floating-panel
@@ -12410,7 +12412,9 @@ autocentrum.pl##.web-push-box
 diets.ru,povarenok.ru###web-push-sub
 travelplanet.pl##.fcx-push-modal
 gamestar.hu,pcworld.hu###web-push-popup
-meczyki.pl##.notifications-info
+meczyki.pl#$#body { overflow-y: auto !important; }
+meczyki.pl#$#body::after { display: none !important; }
+meczyki.pl#$#.notifications-info { display: none !important; }
 picodi.com###oneSignalBell
 migalhas.com.br,tuhentaionline.com,picodi.com###onesignal-bell-container
 antyradio.pl,chillizet.pl,radiozet.pl##.btn-notif
@@ -12784,6 +12788,8 @@ fotomac.com.tr,dengarden.com,mako.co.il,ajansspor.com,gazetadopovo.com.br,onejai
 !
 ! SECTION: Subscriptions - Regular rules
 !
+theouterhaven.net##.toh-google-source
+turizmgazetesi.com#%#//scriptlet('prevent-setTimeout', '#promoPopup')
 wphive.com##.single_subscribe_form
 rbc.ru##div.card-wrapper:has(> p > strong > a[href="https://max.ru/selfinvestor"])
 t-online.de##div[data-testid="NewsletterWidget.tagesanbruch"]

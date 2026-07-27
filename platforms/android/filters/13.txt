@@ -1,9 +1,9 @@
-! Checksum: GF4ahEKGi351Z2mxNYIhhQ
-! Diff-Path: ../patches/13/13-s-1785129863-3600.patch
+! Checksum: KmGuNWNFnYwiUiG6JuENBg
+! Diff-Path: ../patches/13/13-s-1785157938-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.22
-! TimeUpdated: 2026-07-27T05:21:45+00:00
+! Version: 2.0.66.23
+! TimeUpdated: 2026-07-27T13:09:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1573,8 +1573,9 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+r10.net##.rPanel
+r10.net##.featuredAjaxContent > div.list > ul[data-id="sonAcilan"] > li[class*="thread"][data-ri]
 r10.net##.footerSponsors
-r10.net##.featuredAjaxContent > div.list > ul[data-id="sonAcilan"] > li[class^="thread "][data-ri]
 r10.net##.ozelKategori > a[href][rel*="sponsored"][target="_blank"]
 r10.net##.ozelKategori > a[href^="https://www.iyzico.com/"]
 ||selcuksports.*/uploads/*.gif
@@ -5989,6 +5990,22 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: onlyifsa*.com
+! Source: onlyifsa12.icu
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+.gif|$domain=/onlyifsa\d+\.com$/
+!+ NOT_VALIDATE
+||pub-*.r2.dev/yenigif.mp4$domain=/onlyifsa\d+\.com$/
+! aglint-enable no-invalid-modifiers
+[$domain=/onlyifsa\d+\.com$/]##.yenimarka-wrap
+[$domain=/onlyifsa\d+\.com$/]##.yenigif-wrap
+[$domain=/onlyifsa\d+\.com$/]###tg-cta-container
+[$domain=/onlyifsa\d+\.com$/]##article[data-ad-pos]
+[$domain=/onlyifsa\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/onlyifsa\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/onlyifsa\d+\.com$/]#$##mainVideo { display: block !important; }
+!
 ! Frequently changed domains: sadeceifsa*.lol; sadeceifsa*.icu; sadeceifsa*.com
 ! Source: sadeceifsa12.icu
 ! aglint-disable no-invalid-modifiers
@@ -5996,6 +6013,7 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 .gif|$domain=/sadeceifsa\d+\.com$/
 !+ NOT_VALIDATE
 ||pub-*.r2.dev/yenigif.mp4$domain=/sadeceifsa\d+\.com$/
+! aglint-enable no-invalid-modifiers
 [$domain=/sadeceifsa\d+\.com$/]##.yenigif-wrap
 [$domain=/sadeceifsa\d+\.com$/]###tg-cta-container
 [$domain=/sadeceifsa\d+\.com$/]##article[data-ad-pos]
@@ -6035,11 +6053,18 @@ x.palv2.cfd###adPlayerBanner
 ! Frequently changed domains: hdifsaizle*.com
 ! Source: hdifsaizle4.com
 ! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+.gif|$image,domain=/hdifsaizle\d+\.com$/
+!+ NOT_VALIDATE
+||pub-*.r2.dev/yeni*.mp4$domain=/hdifsaizle\d+\.com$/
 ! aglint-enable no-invalid-modifiers
-[$domain=/hdifsaizle\d+\.icu$/]##.banner-grid-wrap
-[$domain=/hdifsaizle\d+\.icu$/]##a[href^="https://tinyurl.com/"]
-[$domain=/hdifsaizle\d+\.icu$/]###prerollOverlay
-[$domain=/hdifsaizle\d+\.icu$/]##article.hd-card:has(> a[href^="/api/ad-click/"])
+[$domain=/hdifsaizle\d+\.com$/]##.yenigif-wrap
+[$domain=/hdifsaizle\d+\.com$/]##.banner-grid-wrap
+[$domain=/hdifsaizle\d+\.com$/]##.yenimarka-wrap
+[$domain=/hdifsaizle\d+\.com$/]##.hd-row > article.hd-card ~ div.col-12
+[$domain=/hdifsaizle\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/hdifsaizle\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/hdifsaizle\d+\.com$/]#$##mainVideo { display: block !important; }
 !
 ! Frequently changed domains: turkifsa*.site; turkifsalar2.site
 ! Source: turkifsa40.site; turkifsalar2.site
@@ -6137,15 +6162,15 @@ x.palv2.cfd###adPlayerBanner
 ! Source: hdturkifsa46.icu
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
-.gif|$domain=/hdturkifsa\d+\.(lol\|icu|com)$/
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##a[rel="nofollow noopener noreferrer sponsored"]
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]###tg-cta-container
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##.banner-grid-wrap
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##article[data-ad-pos]
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]##div[style]:has(> a[href^="https://bit.ly/"])
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]#%#//scriptlet('remove-node-text', 'script', 'pickEngine')
-[$domain=/hdturkifsa\d+\.(lol\|icu|com)$/]$$script:contains(pickEngine)
-!
+.gif|$domain=/hdturkifsa\d+\.com$/
+! aglint-enable no-invalid-modifiers
+[$domain=/hdturkifsa\d+\.com$/]##a[rel="nofollow noopener noreferrer sponsored"]
+[$domain=/hdturkifsa\d+\.com$/]###tg-cta-container
+[$domain=/hdturkifsa\d+\.com$/]##.banner-grid-wrap
+[$domain=/hdturkifsa\d+\.com$/]##article[data-ad-pos]
+[$domain=/hdturkifsa\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
+[$domain=/hdturkifsa\d+\.com$/]#$##prerollOverlay { display: none !important; }
+[$domain=/hdturkifsa\d+\.com$/]#$##mainVideo { display: block !important; }
 !
 ! Frequently changed domains: softtv*.com
 ! Source: softtv2.com
@@ -6231,11 +6256,6 @@ patrongol34.cfd##.top-banner-header
 turkkizlar.com##div[class^="vid-promo"]
 [$domain=/turkkizlar\d+\.com$/]##div[class^="vid-promo"]
 !
-! Frequently changed domains: cimcime*.*
-! Source: cimcime56.com / cimcime133.live
-||cimcime*.com/wp-content/uploads/*.gif
-[$domain=/cimcime\d+\.\w+$/]###ads-inside-main
-!
 ! Frequently changed domains: dahahizli*.com; dahahizli*.live
 ! Source: dahahizli49.com
 ||dahahizli*.*/wp-content/uploads/*.gif
@@ -6296,11 +6316,11 @@ turkifsaclub.org#?#main > h3:contains(Sponsor Bannerlar)
 [$domain=/yavasgir\d+\.(com\|live)/]###ads-inside-main
 [$domain=/yavasgir\d+\.(com\|live)/]#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "openPopup")
 !
-! Frequently changed domains: cimcime*.live
+! Frequently changed domains: cimcime*.*
 ! Source: cimcime141.live
 ||cimcime*.*/*.gif
-[$domain=/cimcime\d+\.(com\|live)/]###ads-inside-main
-[$domain=/cimcime\d+\.(com\|live)/]#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "openPopup")
+[$domain=/cimcime\d+\.\w+$/]###ads-inside-main
+[$domain=/cimcime\d+\.\w+$/]#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "openPopup")
 !
 ! Frequently changed domains: askimyavas*.com
 ! Source: askimyavas.com
@@ -6479,7 +6499,6 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ||dizibox*.com/wp-content/themes/diziplus/images/bg.webp
 ! aglint-disable-next-line no-invalid-modifiers
 ||ssl.p.jwpcdn.com/player/*/vast.js$domain=/dizibox\d+\.com/
-! aglint-enable no-invalid-modifiers
 !
 ! Frequently changed domains: klasikfilmler*.cc
 [$domain=/klasikfilmler\d+\.cc/]#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'videotutucu')
@@ -6546,7 +6565,6 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ||belestepe*.sbs//wp-content/uploads/*.gif
 ! aglint-disable-next-line no-invalid-modifiers
 ||video.twimg.com/amplify_video/*/vid/*.mp4$domain=/^belestepe\d+\.sbs/
-! aglint-enable no-invalid-modifiers
 [$domain=/belestepe\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 [$domain=/belestepe\d+\.sbs/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 !
