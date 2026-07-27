@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: km4Cww14T8y4VEc9hv1aMQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1785157976-3600.patch
+! Checksum: tTXBZGrcy29agw6vIvDLwQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1785164855-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.73.90
-! TimeUpdated: 2026-07-27T13:09:39+00:00
+! Version: 2.2.73.91
+! TimeUpdated: 2026-07-27T15:04:29+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -746,6 +746,7 @@
 ###pnlCookieBanner
 ###pnlCookieWarning
 ###politicaCookies
+###polityka-cookie
 ###polityka-cookies
 ###popup-cookie
 ###popup-cookies
@@ -1615,6 +1616,8 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 gsweb.services,dr-traub.legal,isp.law,volksfest-grafenwoehr.de,ahoisauna.de,devowl.io,authentisch-maennlich.de,beamten-infoportal.de,bayreuth-region.de,ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net##div[consent-skip-blocker]:remove()
 gsweb.services,dr-traub.legal,isp.law,volksfest-grafenwoehr.de,ahoisauna.de,devowl.io,authentisch-maennlich.de,beamten-infoportal.de,bayreuth-region.de,ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net##body[style]:style(overflow: auto !important;)
 gsweb.services,dr-traub.legal,isp.law,volksfest-grafenwoehr.de,ahoisauna.de,devowl.io,authentisch-maennlich.de,beamten-infoportal.de,bayreuth-region.de,ra-hoernschemeyer.de,tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net##html[style]:style(overflow: auto !important;)
+nimaso.co.jp##body > div[id^="shopify-aura-connect-"]
+festivaldemalaga.com##.boxCookies
 lobehub.com##+js(set-cookie, LOBE_COOKIE_CONSENT, rejected)
 sutochno.ru##.modal-cookies__inner
 sberbank.ru##body > div[class^="sc-"]:has(> div[class^="sc-"] p > a[href="https://www.sberbank.ru/privacy/cookies"])
@@ -1658,7 +1661,7 @@ aviakassa.com###siteMainContent ~ div[class]:has(> div > span > a[href="/usefuld
 tabor.ru##.site-policy-wrap
 brw.pl##.widget-recomended-product
 ||rameder.de/?cl=CookieManager
-brainstormforce.com,wpschema.com,prestoplayer.com###surecookie-public-root
+wpastra.com,brainstormforce.com,wpschema.com,prestoplayer.com###surecookie-public-root
 baristina.com##beatle-anonymous-consent-management-banner-presentation
 e-domus.com.pl###ed-cookie-bar
 luggat.com###root > .slide-in-from-bottom-5
@@ -3553,7 +3556,6 @@ monzo.com##+js(set-cookie, _cookies_banner_dismissed, true)
 wiwo.de##div[id^="sp_message_container_"]:style(display: none !important;)
 wiwo.de##+js(remove-class, sp-message-open, html)
 infineon.com##.mi-consent-layer
-czerwionka-leszczyny.pl,powiat.kielce.pl,bip.lubuskie.uw.gov.pl,alba.com.pl,zdrowahuta.pl,wkatowicach.eu,zosolesnica.pl,olesnica.pl,metropoliagzm.pl,intracom.pl,sycow.pl,arn.nysa.pl###polityka-cookie
 iledefrance-mobilites.fr##html[class^="stopScroll"]:style(overflow: auto !important;)
 iledefrance-mobilites.fr##.cookies-banner:style(display: none !important;)
 bnews.com.br##.amdb-user-notification-container
@@ -12385,8 +12387,9 @@ officebusters.com###cleaning-mov
 eda.yandex.ru##section > div[class]:has(> div[class] > button[aria-label="Promo"][style^="background-image:"])
 technopark.ru##+js(set-cookie, promo500closed, true)
 oddsportal.com##+js(set-session-storage-item, bonusIcon, false)
-onlinetexttools.com,comodo.com##.modal:style(display: none !important;)
-onlinetexttools.com,comodo.com##body:style(overflow: auto !important; padding-right: 0 !important;)
+onlinetexttools.com##.modal:style(display: none !important;)
+onlinetexttools.com##.modal-backdrop:style(display: none !important;)
+onlinetexttools.com##body:style(overflow: auto !important; padding-right: 0 !important;)
 elcomercio.pe##div.tp-modal[style^="z-index: 300050;"]:style(display: none !important;)
 elcomercio.pe##.tp-backdrop:style(display: none !important;)
 elcomercio.pe##body.tp-modal-open:style(overflow: auto !important;)
@@ -21814,6 +21817,7 @@ jp,com##.header__banner[href="https://apps.apple.com/jp/app/fanmily/id1485686155
 ###appss
 ##[onclick="goAppHtml();"]
 rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+t-j.ru##div[class^="_commonNavItems_"] > a[href^="https://journal.onelink.me/"]
 sutochno.ru##.bookin-app
 cricinfo.com##.ds-flex > div.ds-cursor-pointer:has(> span:contains(Get the App))
 nius.de##div[class]:has(> div[class] > img[alt="NIUS App"])
@@ -23977,6 +23981,8 @@ honeysanime.com###header-line-2:style(margin-top: -60px !important;)
 honeysanime.com###wrap-app-notice:style(display: none !important;)
 !+ NOT_OPTIMIZED
 m.tokopedia.com##div[data-testid="divOverlay"]:style(display: none!important;)
+arubaito-ex.jp##.app-flow-banner
+travelist.jp###app > div.sticky:has(> div.bg-white > div.flex > a[href^="https://travelist.onelink.me/"])
 sutochno.ru##.get-cashback__right
 pickaboo.com##.application-banner
 reclameaqui.com.br##+js(set-session-storage-item, appHandoffSheet:dismissed, 1)

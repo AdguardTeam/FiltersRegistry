@@ -1,9 +1,9 @@
-! Checksum: jrDn12tIPRJO+hl+3SPhNQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1785157966-3600.patch
+! Checksum: 6rd0k8eEZy3Zby1YsWclCg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1785164846-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.73.90
-! TimeUpdated: 2026-07-27T13:09:39+00:00
+! Version: 2.2.73.91
+! TimeUpdated: 2026-07-27T15:04:29+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -745,6 +745,7 @@
 ###pnlCookieBanner
 ###pnlCookieWarning
 ###politicaCookies
+###polityka-cookie
 ###polityka-cookies
 ###popup-cookie
 ###popup-cookies
@@ -1668,6 +1669,8 @@ hotel-boeke-loerrach.de,knusperstuebchen.net,intercraft.pl#%#//scriptlet('truste
 tippsling.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:c82d723')
 wegwandern.ch,compact-online.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:f4adc5d')
 cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:0c09270')
+nimaso.co.jp#?#body > div[id^="shopify-aura-connect-"]
+festivaldemalaga.com##.boxCookies
 lobehub.com#%#//scriptlet('set-cookie', 'LOBE_COOKIE_CONSENT', 'rejected')
 sutochno.ru##.modal-cookies__inner
 auth.discoveryplus.com#%#//scriptlet('trusted-set-cookie', 'anonymousConsentElections', 'MjAyNi0wNy0yN1QxMDo1MDoxMFp8VVMtVkF8c0x8MVlZTg==')
@@ -1725,7 +1728,7 @@ tabor.ru##.site-policy-wrap
 brw.pl##.widget-recomended-product
 ||rameder.de/?cl=CookieManager
 4toys.pl#%#//scriptlet('trusted-click-element', '#RodoCookiesInfoFirst a[data-type="disable-cookies-button"]', '!cookie:AtomStore[COOKIES_ACCEPTED]', '1500')
-brainstormforce.com,wpschema.com,prestoplayer.com###surecookie-public-root
+wpastra.com,brainstormforce.com,wpschema.com,prestoplayer.com###surecookie-public-root
 autoteile-preiswert.de#%#//scriptlet('trusted-set-cookie', '4S_CookiePrivacy', '9435002725741796045:001')
 termika.eu#%#//scriptlet('trusted-set-cookie', 'fscb_cookieSettings', '%7B%22required-cookies%22%3A%221%22%2C%22analytical-cookies%22%3A%220%22%2C%22targeted-advertising-cookies%22%3A%220%22%7D')
 baristina.com##beatle-anonymous-consent-management-banner-presentation
@@ -4367,7 +4370,6 @@ monzo.com#%#//scriptlet('set-cookie', '_cookies_banner_dismissed', 'true')
 wiwo.de#$?#div[id^="sp_message_container_"] { display: none !important; }
 wiwo.de#%#//scriptlet('remove-class', 'sp-message-open', 'html')
 infineon.com##.mi-consent-layer
-czerwionka-leszczyny.pl,powiat.kielce.pl,bip.lubuskie.uw.gov.pl,alba.com.pl,zdrowahuta.pl,wkatowicach.eu,zosolesnica.pl,olesnica.pl,metropoliagzm.pl,intracom.pl,sycow.pl,arn.nysa.pl###polityka-cookie
 iledefrance-mobilites.fr#$#html[class^="stopScroll"] { overflow: auto !important; }
 iledefrance-mobilites.fr#$#.cookies-banner { display: none !important; }
 bnews.com.br##.amdb-user-notification-container
@@ -13815,8 +13817,9 @@ officebusters.com###cleaning-mov
 eda.yandex.ru##section > div[class]:has(> div[class] > button[aria-label="Promo"][style^="background-image:"])
 technopark.ru#%#//scriptlet('set-cookie', 'promo500closed', 'true')
 oddsportal.com#%#//scriptlet('set-session-storage-item', 'bonusIcon', 'false')
-onlinetexttools.com,comodo.com#$#.modal { display: none !important; }
-onlinetexttools.com,comodo.com#$#body { overflow: auto !important; padding-right: 0 !important; }
+onlinetexttools.com#$#.modal { display: none !important; }
+onlinetexttools.com#$#.modal-backdrop { display: none !important; }
+onlinetexttools.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 elcomercio.pe#$#div.tp-modal[style^="z-index: 300050;"] { display: none !important; }
 elcomercio.pe#$#.tp-backdrop { display: none !important; }
 elcomercio.pe#$#body.tp-modal-open { overflow: auto !important; }
@@ -23336,6 +23339,7 @@ buttondown.email#@##subscribe-form
 ##div[class^="smartbanner"][class*="-android"]
 ###smartbanner.ios
 rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+t-j.ru##div[class^="_commonNavItems_"] > a[href^="https://journal.onelink.me/"]
 sutochno.ru##.bookin-app
 cricinfo.com#?#.ds-flex > div.ds-cursor-pointer:has(> span:contains(Get the App))
 nius.de##div[class]:has(> div[class] > img[alt="NIUS App"])
