@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sBtCF8pYmTLT3x+S+mfGow
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1785129897-3600.patch
+! Checksum: /xqcWzfrewSlpJFRbKOmfg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1785136794-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.79.83
-! TimeUpdated: 2026-07-27T05:21:22+00:00
+! Version: 2.4.79.84
+! TimeUpdated: 2026-07-27T07:15:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28952,6 +28952,8 @@ czateria.interia.pl##body > .rodo-popup ~ div[style*="position: absolute;"][styl
 natemat.pl,aszdziennik.pl,innpoland.pl,mamadu.pl,dadhero.pl##+js(remove-class, belka-top--active|screening_wallpaper|adslot--tapeta, body[class])
 @@||video.onnetwork.tv/widget/$domain=natemat.pl
 natemat.pl##.art .lazyload-wrapper:has(> div[class] > div[class] > button.close + div[class] > a[href="/twoja-prywatnosc"])
+! https://github.com/AdguardTeam/AdguardFilters/issues/236676
+natemat.pl##.art div[class*="-"]:has(> a[data-analytics-name][target="_blank"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45113
 natemat.pl##div[class^="optad"]
 natemat.pl##div[class^="adslot"]
@@ -29291,6 +29293,7 @@ videostar.pl,pilot.wp.pl##+js(remove-class, async-hide, html)
 !+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136716
 ! TODO: remove if this issue will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/266
+! https://github.com/AdguardTeam/AdguardFilters/issues/236665
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61207
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53527
 benchmark.pl,select.wp.pl,so-magazyn.pl,kafeteria.pl,informacje.wp.pl,wplatform.media,pcformat.pl,staszownews.pl,zdrowienews.pl,kurierostrowiecki.pl,ostrowiec24.info,kielce112.pl,lublinnews.pl,lovelifestyle.pl,telefan24.pl,marketing-zone.pl,panoramaplock.pl,ipolska24.pl,dzieckopoznan.pl,historiapoznania.pl,sportpoznan.pl,pysznosci.pl,kultura.wp.pl,jastrzabpost.pl,wirtualnemedia.pl,open.fm,deliciousmagazine.pl,poczta.wp.pl,pilot.wp.pl,polygamia.pl,abczdrowie.pl,money.pl,dobreprogramy.pl,o2.pl,gadzetomania.pl,komorkomania.pl,autocentrum.pl,pudelek.pl,vpolshchi.pl,parenting.pl,autokult.pl,fotoblogia.pl,dom.wp.pl,pogoda.wp.pl,gry.wp.pl,wroclaw.wp.pl,moto.wp.pl,wideo.wp.pl,kuchnia.wp.pl,facet.wp.pl,sportowefakty.wp.pl,turystyka.wp.pl,magazyn.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,tech.wp.pl,opinie.wp.pl,teleshow.wp.pl,gwiazdy.wp.pl,film.wp.pl,wiadomosci.wp.pl,finanse.wp.pl##body > div[class]:has(> div[class] > div[class] > div[class] > h1:contains(Wyłącz adblocka i zezwól na reklamy))
@@ -33910,6 +33913,7 @@ hurawatch.at##+js(abort-current-script, window.onclick, https)
 tukipasti.com##+js(no-window-open-if)
 ! popunder
 alrincon.com##+js(abort-current-script, onload, window.open)
+! https://github.com/AdguardTeam/AdguardFilters/issues/236750
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185597
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192919
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170742
@@ -37619,6 +37623,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+freewebnovel.com##.slot-frame
+||peekvids.com/ads/
 ||jpopsingles.eu/ddl/dl-get.png
 tvnz.co.nz##+js(xml-prune, xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text()\,"https:")]]), , .mpd)
 ||sluts.wtf/static/ad/
@@ -39215,6 +39221,8 @@ tomshardware.com##.listingResult:has(> div.sponsored-post)
 80.lv##div[class^="_"]:has( > a[id^="Image_benr_"])
 ||cdn.ndtv.com/ui/budget/*/budget-sponsor.
 ndtv.com##.section:has(> div[data-ndsp-widget="sponsors"])
+zeenews.india.com##div[class*="_ads_box_"]
+zeenews.india.com##div[class*=" TopBanner-"]
 zeenews.india.com###Readmore_height.contentheight:style(height: 100% !important;)
 zeenews.india.com###read_button:style(display: none !important;)
 hexload.com##a[href*="?key="]
