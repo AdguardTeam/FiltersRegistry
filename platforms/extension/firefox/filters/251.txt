@@ -1,13 +1,13 @@
-! Checksum: 9quwzgYlN2luWwBrb8FPKw
-! Diff-Path: ../patches/251/251-s-1784753615-14400.patch
+! Checksum: WxNvadZwiNLODA1kPEoPjA
+! Diff-Path: ../patches/251/251-s-1785172340-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.7
-! TimeUpdated: 2026-07-22T20:51:04+00:00
+! Version: 2.0.10.8
+! TimeUpdated: 2026-07-27T17:09:34+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 22July2026v4
+! OriginalVersion: 27July2026v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1489,6 +1489,9 @@ $removeparam=imgtk
 $removeparam=id_externo_rsoc
 ! https://www•magicdesktop•com/get/kiosk?src=winget&v=11.5.0.52 (12/06/2025)
 $removeparam=/^src=winget$/
+! https://design•cricut•com/home?checkForDeferred=true&referrer=https%3A%2F%2Fwww•qwant•com%2F&visitorId=2de7f63d-0282-43e0-ac78-9ac4fe9ded8a&deepLinkGuid=c5605f61-9833-40ce-bd6d-93249770a851 (27/07/2026)
+$removeparam=checkForDeferred
+$removeparam=deepLinkGuid
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -4451,6 +4454,8 @@ ref=sqliteviewer.app$document,removeparam=ref
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-17733299
 ||fairstone.ca^$document,removeparam=adplacementid
 ||loan.fairstone.ca^$document,removeparam=jumpsource
+! https://design•cricut•com/home?checkForDeferred=true&referrer=https%3A%2F%2Fwww•qwant•com%2F&visitorId=2de7f63d-0282-43e0-ac78-9ac4fe9ded8a&deepLinkGuid=c5605f61-9833-40ce-bd6d-93249770a851 (27/07/2026)
+||cricut.$removeparam=visitorId
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au

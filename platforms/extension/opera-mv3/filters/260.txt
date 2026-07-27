@@ -1,8 +1,8 @@
-! Checksum: rkiWYiNuoAtLYlA8myOXpQ
+! Checksum: NEG40dDY164CKvcCdwjo5w
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.74
-! TimeUpdated: 2026-07-26T20:48:05+00:00
+! Version: 2.0.0.75
+! TimeUpdated: 2026-07-27T17:09:46+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -248,39 +248,53 @@ www.bestbuy.com##[data-component-name="AiReviewSummary"]
 ! == Bing ==
 ! ==========
 ! -- https://www.bing.com/ (Homepage)
-! "Copilot" tab in header on the left
+! Header - "Copilot" button
 www.bing.com###codex
+! Header - Microsoft Rewards → Try Bing Image Creator
+www.bing.com##.gbfo_c_bsic_variant:has(> [href^="https://www.bing.com/images/create"])
+! Header - ... → Microsoft 365 → M365 Copilot
+www.bing.com###m365copilot_overflow
 ! "M365" button to the right of search bar
 www.bing.com##.cdxCopilotIconBg
 ! "Image creator" and "Video creator" buttons below search bar
 www.bing.com###aitools
 ! AI tools search suggestions (mobile only)
 www.bing.com###sa_ai_block
-! Microsoft Rewards → Try Bing Image Creator
-www.bing.com##.gbfo_c_bsic_variant:has(> [href^="https://www.bing.com/images/create"])
-! ... → Microsoft 365 → M365 Copilot
-www.bing.com###m365copilot_overflow
-! -- https://www.bing.com/search?q=mario+last+name
-! "Search" tab in navbar below search bar
+! -- https://www.bing.com/search?q=test (generic search page)
+! Navbar tabs for "Search" and "Copilot"
 www.bing.com###b-scopeListItem-copilotsearch
-! "Copilot" tab in navbar below search bar
 www.bing.com###b-scopeListItem-conv
-! "Copilot Search" summary
-www.bing.com##.b_ans:has(.with_ai)
-||www.bing.com/cmc/fetch$xmlhttprequest,domain=www.bing.com
 ! "Ask a follow-up" at bottom of page
 www.bing.com###b_copilot_search_container
-! Popout promo for AI soccer
+! Popout promo for AI soccer (During world series)
 www.bing.com##[data-viewname="VerticalHeaderFlyout"]:has([href^="https://bing.com/tools/ai/"])
+! -- https://www.bing.com/search?q=mario+last+name
+! "Copilot Search" summary
+! * Don't filter on .b_topw, can have sponsored results
+www.bing.com##.b_ans:has(.with_ai)
+! * TODO: Re-check when this is used
+||www.bing.com/cmc/fetch$xmlhttprequest,domain=www.bing.com
+! Thumbs up/down for feedback
+||www.bing.com/feedback/entry/acfthumbsupdown?*&scenario=QnATuringGen$xmlhttprequest,domain=www.bing.com
 ! -- https://www.bing.com/search?q=best+companies
-! "Copilot Search" summary (again)
+! List of companies with AI info disclaimer
+! * Don't filter on .b_topw, can have sponsored results
+www.bing.com##.b_ans:has(> .utilAns)
+! Copilot summary (again)
+! * Hiding .b_ans instead of .cht_container removes extra space
 www.bing.com##.b_ans.b_top:has(> .cht_container)
+! -- https://www.bing.com/search?q=mario+last+name+when%3F
+! Seemingly used for "header-style" AI answer if there no cached AI answer.
+! Makes answer fallback to a simplified version.
+||www.bing.com/qna/fetchCodexQnA$xmlhttprequest,domain=www.bing.com
+! Thumbs up/down for feedback
+||www.bing.com/feedback/entry/acfthumbsupdown?*&scenario=QnACodexContainer$xmlhttprequest,domain=www.bing.com
+! -- https://www.bing.com/search?q=docker+for+windows+install
+! AI summary in slide
+www.bing.com##.slide:has(.rd_acf_info_icon)
 ! -- https://www.bing.com/search?q=Gemini
 ! "Meet your AI assistant" promo card at top of search results
 www.bing.com###ccpg-container:has(#b_cp_upsell_box_parent)
-! -- https://www.bing.com/search?q=gregorian+calendar+2026
-! "Copilot Search" logo on non-ai search result
-www.bing.com##.b_ans .copans_ttl
 ! -- https://www.bing.com/images
 ! "Create" chip below search bar
 www.bing.com###imgcrtr_key
