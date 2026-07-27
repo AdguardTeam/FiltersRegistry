@@ -214,9 +214,9 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--generate-cache` — compile filters to update the `filter.txt` cache only
 - `--download-stats` — downloads per-filter `stats.json` files for the filters being built,
   without recompiling `filter.txt`. Existing `stats.json` files are overwritten.
-  Use `--include` to scope which filters are downloaded; `--skip`,
-  `--strip-generated-meta`, and `--no-patches-prepare` all error here, since
-  none of them apply to a run that produces no platform output
+  Use `--include` or `--skip` to scope which filters are downloaded (not both
+  at once); `--strip-generated-meta` and `--no-patches-prepare` error here,
+  since neither applies to a run that produces no platform output
 
 **Valid combinations:**
 
@@ -250,6 +250,7 @@ yarn build --generate-cache --report='report.txt'
 # Stats-only download, no recompile
 yarn build --download-stats
 yarn build --download-stats --include=1,2,3
+yarn build --download-stats --skip=12,24
 ```
 
 **Invalid or ineffective combinations:**
@@ -265,9 +266,11 @@ yarn build --generate-cache --strip-generated-meta
 yarn build --generate-cache --no-patches-prepare
 
 # --download-stats produces no platform output; these flags are incompatible → script exits with error
-yarn build --download-stats --skip=12,24
 yarn build --download-stats --strip-generated-meta
 yarn build --download-stats --no-patches-prepare
+
+# --include and --skip are mutually exclusive under --download-stats → script exits with error
+yarn build --download-stats --include=1,2,3 --skip=2
 ```
 
 ### Automated Build

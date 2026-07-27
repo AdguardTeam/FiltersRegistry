@@ -126,7 +126,8 @@ const buildFilters = async () => {
     if (downloadStats) {
         await localOptimizationStatistics.download(
             optimizationStatsDir,
-            includedFilterIDs.length > 0 ? includedFilterIDs : undefined,
+            includedFilterIDs,
+            excludedFilterIDs,
         );
         console.log(`Optimization statistics downloaded at ${optimizationStatsDir}.`);
         return;

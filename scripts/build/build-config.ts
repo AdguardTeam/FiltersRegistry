@@ -125,14 +125,11 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
 
     if (
         flags.downloadStats
-        && (flags.stripGeneratedMeta
-            || flags.noPatchesPrepare
-            || flags.excludedFilterIDs.length > 0)
+        && (flags.stripGeneratedMeta || flags.noPatchesPrepare)
     ) {
         const ignored: string[] = [];
         if (flags.stripGeneratedMeta) ignored.push('--strip-generated-meta');
         if (flags.noPatchesPrepare) ignored.push('--no-patches-prepare');
-        if (flags.excludedFilterIDs.length > 0) ignored.push('--skip');
         const flagsStr = ignored.join(' and ');
         const verb = ignored.length > 1 ? 'are' : 'is';
         const msg = `Error: ${flagsStr} ${verb} incompatible with `
@@ -141,6 +138,17 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         return {
             type: 'error',
             message: `${msg}\n${hint}`,
+        };
+    }
+
+    if (
+        flags.downloadStats
+        && flags.includedFilterIDs.length > 0
+        && flags.excludedFilterIDs.length > 0
+    ) {
+        return {
+            type: 'error',
+            message: `Error: --include and --skip are mutually exclusive with --download-stats.\n${hint}`,
         };
     }
 

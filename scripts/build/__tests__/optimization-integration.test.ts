@@ -117,7 +117,8 @@ describe('build.js: cache flag handling', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
                 expectedLocalOptimizationConfigPath,
-                undefined,
+                EMPTY_FILTER_IDS,
+                EMPTY_FILTER_IDS,
             );
         });
         expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
@@ -134,6 +135,25 @@ describe('build.js: cache flag handling', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
                 expectedLocalOptimizationConfigPath,
+                [FILTER_ID],
+                EMPTY_FILTER_IDS,
+            );
+        });
+        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
+    });
+
+    it(`--download-stats --skip=${FILTER_ID}: excludes filter ${FILTER_ID} from stats download`, async () => {
+        process.argv = ['node', 'build.js', '--download-stats', `--skip=${FILTER_ID}`];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationStatistics: mockedStats,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
+                expectedLocalOptimizationConfigPath,
+                EMPTY_FILTER_IDS,
                 [FILTER_ID],
             );
         });

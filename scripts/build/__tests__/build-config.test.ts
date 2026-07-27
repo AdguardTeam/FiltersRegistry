@@ -108,6 +108,11 @@ describe('validateFlags', () => {
         expect(validateFlags(flags)).toBeNull();
     });
 
+    it('allows --download-stats with --skip', () => {
+        const flags = parseFlags(['--download-stats', '--skip=1,2']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
     it('errors on --download-stats combined with --strip-generated-meta', () => {
         const flags = parseFlags(['--download-stats', '--strip-generated-meta']);
         const result = validateFlags(flags);
@@ -126,25 +131,24 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('errors on --download-stats combined with --skip', () => {
-        const flags = parseFlags(['--download-stats', '--skip=1,2']);
-        const result = validateFlags(flags);
-        expect(result?.type).toBe('error');
-        expect(result?.message).toContain('incompatible');
-        expect(result?.message).toContain('DEVELOPMENT.md');
-    });
-
     it('errors on multiple incompatible flags with --download-stats', () => {
         const flags = parseFlags([
             '--download-stats',
             '--strip-generated-meta',
             '--no-patches-prepare',
-            '--skip=1,2',
         ]);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
-        expect(result?.message).toContain('--strip-generated-meta and --no-patches-prepare and --skip');
+        expect(result?.message).toContain('--strip-generated-meta and --no-patches-prepare');
         expect(result?.message).toContain('are incompatible');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('errors on --download-stats combined with both --include and --skip', () => {
+        const flags = parseFlags(['--download-stats', '--include=1,2,3', '--skip=1,2']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('--include and --skip are mutually exclusive');
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
