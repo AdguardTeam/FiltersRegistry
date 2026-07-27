@@ -215,15 +215,19 @@ Optimized version is much more lightweight and does not contain rules which are 
 Rules usage frequency comes from the collected [filter rules statistics][kb-filter-statistics],
 thanks to the volunteers who enabled it in their AdGuard.
 
-`optimization_config.json` - defines the target for the optimization process.
+[`optimization_config.json`](optimization_config.json) — defines the target for the optimization process.
 AdGuard will attempt to compress the lists by removing the least frequently used rules
 until the compression goal (defined in percentages) is achieved.
 
+> [!NOTE]
+> A rule can be excluded from this removal by marking it with the [`NOT_OPTIMIZED` hint][kb-hints].
+<!-- markdown-disable-line MD028/no-blanks-blockquote -->
 > [!NOTE]
 > However, these changes will only take effect after being uploaded to the server,
 > as `filters-compiler` does not use this file locally but retrieves it from the server.
 
 [kb-filter-statistics]: https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics/
+[kb-hints]: https://adguard.com/kb/general/ad-filtering/create-own-filters/#hints
 
 ### Compiler Customization
 
