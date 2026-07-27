@@ -221,7 +221,7 @@ until the compression goal (defined in percentages) is achieved.
 
 > [!NOTE]
 > A rule can be excluded from this removal by marking it with the [`NOT_OPTIMIZED` hint][kb-hints].
-
+<!-- markdownlint-disable-next-line -->
 > [!NOTE]
 > However, these changes will only take effect after being uploaded to the server,
 > as `filters-compiler` does not use this file locally but retrieves it from the server.
