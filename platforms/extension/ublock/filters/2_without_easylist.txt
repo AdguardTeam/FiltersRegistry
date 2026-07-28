@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: grP/YFI+iXo9JkoiqeRAUg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1785215432-3600.patch
+! Checksum: 3dVZaO4dyp5OcsX2x6Y1jQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1785222131-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.80.0
-! TimeUpdated: 2026-07-28T05:07:02+00:00
+! Version: 2.4.80.1
+! TimeUpdated: 2026-07-28T06:58:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25736,6 +25736,7 @@ forexclub.pl###a_flex
 ||pagead2.googlesyndication.com^$domain=listatv.pl,important
 ||portal.librus.pl/ad|
 obserwatorlogistyczny.pl##.obser-target
+trans.info##.pt-4 > aside:has(> .hidden > a[rel*="sponsored"])
 trans.info##a[href*="_banner_ad"][target="_blank"] > img
 trans.info##.font-normal:has(+ .hidden > a[href*="_banner_ad"][target="_blank"] > img)
 ||naszemiasto.pl/ads/_uuid/?id=pubcid
@@ -35207,8 +35208,9 @@ up-4ever.org##+js(remove-attr, onclick, a[onclick*="window.open"][data-target*="
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33663
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36247
 motherless.com##+js(set-constant, _ml_ads_ns, null)
+! https://github.com/AdguardTeam/AdguardFilters/issues/236645
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36105
-winporn.*##+js(set-constant, showspop, undefined)
+pornlib.com,pornlib.icu,winporn.*##+js(set-constant, showspop, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35342
 porndr.com##+js(abort-current-script, getCookie, popup_url)
 ! clk.ink - popups
@@ -38602,6 +38604,8 @@ myabandonware.com##.adm-passback
 xmoviesforyou.com##.relative.backdrop-blur-sm:has(a[href^="https://a.adtng.com/"])
 dokkandb.com##.home-ads-block
 ||workers.dev^$subdocument,domain=katfile.vip
+||plibcdn.com/templates/base_master/js/jquery.ppdr2.min.js
+pornlib.com,pornlib.icu##.sspots
 pornlib.com,pornlib.icu###lcams2
 pornlib.*##+js(no-window-open-if)
 hotchamas.com,fikfap.com##+js(no-window-open-if)
@@ -64486,6 +64490,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/236856
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236787
 ! https://github.com/AdguardTeam/AdguardFilters/pull/235401
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236466
