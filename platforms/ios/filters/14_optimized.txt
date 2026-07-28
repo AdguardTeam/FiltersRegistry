@@ -1,9 +1,9 @@
-! Checksum: 6saf9YN9oOEorBerQzzhMQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1785254061-3600.patch
+! Checksum: zWEX5GLZXIwJJF43kjGIHw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1785256843-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.74.6
-! TimeUpdated: 2026-07-28T15:50:30+00:00
+! Version: 2.2.74.7
+! TimeUpdated: 2026-07-28T16:37:12+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -12276,6 +12276,9 @@ yandex.kz##.main-home-banner
 [$path=/images]ya.ru,yandex.*##.AdvMastHead
 [$path=/images]ya.ru,yandex.*#$?#.RelatedImages [style="max-width: 100%; max-height: 250px;"] { remove: true; }
 ya.ru,yandex.*#$?#div[class^="ImagesViewer-"][style^="height:"] { remove: true; }
+yandex.*##.map-container ~ div.app div.business-card-overview-tab-view__content ._type_middle > div:not(._hidden)
+yandex.*##.map-container ~ div.app div.business-card-overview-tab-view__shrink > div._type_bottom > div:not(._hidden)
+yandex.*##.map-container ~ div.app div.business-card-view__main-wrapper > div._type_upper > div:not(._hidden)
 ya.ru,yandex.*##.sidebar-container div[id*="R-I-"]
 [$path=/\/(maps|navi|web-maps)/]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.isStickyAd', 'undefined')
 music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
