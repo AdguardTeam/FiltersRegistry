@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.94.92",
-			"timeUpdated": "2026-07-28T13:05:10+0000",
+			"version": "2.1.94.93",
+			"timeUpdated": "2026-07-28T16:59:55+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.94.91",
-			"timeUpdated": "2026-07-28T13:05:12+0000",
+			"version": "2.1.94.92",
+			"timeUpdated": "2026-07-28T16:59:57+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1025,8 +1025,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.30.5",
-			"timeUpdated": "2026-07-28T13:05:18+0000",
+			"version": "2.0.30.6",
+			"timeUpdated": "2026-07-28T17:00:04+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1397,8 +1397,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/SerboCroatianList.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.75",
-			"timeUpdated": "2026-07-20T09:37:33+0000",
+			"version": "2.0.0.76",
+			"timeUpdated": "2026-07-28T17:00:49+0000",
 			"deprecated": false,
 			"languages": [
 				"sr",
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.88.23",
-			"timeUpdated": "2026-07-28T13:06:10+0000",
+			"version": "2.0.88.24",
+			"timeUpdated": "2026-07-28T17:00:52+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1551,8 +1551,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.78",
-			"timeUpdated": "2026-07-28T13:06:18+0000",
+			"version": "2.0.0.79",
+			"timeUpdated": "2026-07-28T17:00:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
