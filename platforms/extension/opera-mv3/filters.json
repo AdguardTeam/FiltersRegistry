@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.94.93",
-			"timeUpdated": "2026-07-28T16:59:55+0000",
+			"version": "2.1.94.94",
+			"timeUpdated": "2026-07-28T20:51:06+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.94.92",
-			"timeUpdated": "2026-07-28T16:59:57+0000",
+			"version": "2.1.94.93",
+			"timeUpdated": "2026-07-28T20:51:08+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1263,8 +1263,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.12.52",
-			"timeUpdated": "2026-07-28T00:59:50+0000",
+			"version": "2.0.12.53",
+			"timeUpdated": "2026-07-28T20:51:51+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.88.24",
-			"timeUpdated": "2026-07-28T17:00:52+0000",
+			"version": "2.0.88.25",
+			"timeUpdated": "2026-07-28T20:52:12+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1551,8 +1551,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.79",
-			"timeUpdated": "2026-07-28T17:00:58+0000",
+			"version": "2.0.0.80",
+			"timeUpdated": "2026-07-28T20:52:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

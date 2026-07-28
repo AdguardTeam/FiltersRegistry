@@ -1,9 +1,9 @@
-! Checksum: N3wtF3FTm8KzavgSRb2rBg
-! Diff-Path: ../patches/260/260-s-1785258227-14400.patch
+! Checksum: GpADzLgBCYFurR1RDI8ZSw
+! Diff-Path: ../patches/260/260-s-1785272107-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.79
-! TimeUpdated: 2026-07-28T17:00:58+00:00
+! Version: 2.0.0.80
+! TimeUpdated: 2026-07-28T20:52:20+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -683,6 +683,13 @@ docs.docker.com##section:has(input[placeholder="Ask anything about Docker and ge
 ! -- https://docs.docker.com/desktop/setup/install/windows-install/
 ! "Ask Gordon" below article title
 docs.docker.com##[onclick="askGordon()"]
+! -- https://hub.docker.com/
+! Navbar - Gordon AI button
+hub.docker.com##div:has(> .MuiButtonBase-root > [data-testid="GordonIcon"])
+! Left sidebar - Generative AI
+hub.docker.com##.MuiAccordion-root:has([id="Generative AI-content"])
+! Machine Learning & AI section category
+hub.docker.com#?#.MuiTypography-h4:contains("Machine Learning & AI"):upward(.MuiStack-root.css-1hqz9cp)
 ! ===============
 ! == Drinkmate ==
 ! ===============
@@ -3000,6 +3007,8 @@ www.udemy.com##.banner-module--banner--Pcx17:has(.qa-banner--ai-banner-content--
 www.udemy.com##.question-overview--questions-block--vLXJq > button:has(svg.ud-icon.ud-icon-xsmall.m)
 ! Q&A tab → Ask a new question - Tip for AI Assistant
 www.udemy.com#?#.new-question--alert-banner--OOMck li:contains(Ask the AI Assistant for instant answers)
+! Quiz - "Explain this further" after submitting answer
+www.udemy.com##.mc-quiz-answer--answer-inner--Uz9E8 > .ud-text-sm:has(svg.ud-icon.ud-icon-xsmall.ud-icon-color-info.m)
 ! -- https://www.udemy.com/courses/search/?src=ukw&q=testing
 ! AI Overview
 ||www.udemy.com/chatbot-realtime-gateway/api/v1/core/chats/stream?chat_name=agentic-search$xmlhttprequest,domain=www.udemy.com
