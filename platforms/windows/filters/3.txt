@@ -1,9 +1,9 @@
-! Checksum: zyRGbA5tg8UI2PkD9PK1sg
-! Diff-Path: ../patches/3/3-s-1785229478-3600.patch
+! Checksum: P5OBe1d90o5cwBqA5477fQ
+! Diff-Path: ../patches/3/3-s-1785232992-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.8.17
-! TimeUpdated: 2026-07-28T09:00:54+00:00
+! Version: 2.1.8.18
+! TimeUpdated: 2026-07-28T09:59:43+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -561,6 +561,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 !
 !
 !
+||cdp.customer.io^
 ||cloud.monolytics.app^
 ||acv.mira-dsp.com^
 ||snippet.affilimate.io^
@@ -79326,6 +79327,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||flow-control.profitroom.net^
+||e2.sy-d.io^
 ||analytics.crewly.pl^
 ||d3lw7s0briwuoi.cloudfront.net^
 ||analytics.sutochno.ru^
@@ -182335,6 +182338,10 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 !
 ! NOTE: Specific rules
 !
+/e/*^ip=$domain=heygen.com
+||api2.heygen.com/v1/movio.batch_track
+||glutenfreeonashoestring.com/wp-content/*/analytics*.min.js
+||player.fabster.com/event/
 ||spolshy.com.ua/js/data|
 ||wpastra.com/wp-content/plugins/cross-domain-tracker-for-affiliatewp/
 ||autoline.link/weblog
@@ -191602,8 +191609,12 @@ d4?appid*type*
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/236828
+@@||rm.redbull.com/gtm.js$domain=redbull.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236879
 @@||googletagmanager.com/gtm.js$domain=candy-home.com
+!+ NOT_OPTIMIZED
+||candy-home.com^$referrerpolicy=origin
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236875
 @@||googletagmanager.com/gtm.js$domain=brita.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235752
