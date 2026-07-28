@@ -1,9 +1,9 @@
-! Checksum: Mo3hkOpGI15+O+9i4sMQGw
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1785185862-14400.patch
+! Checksum: v17fffjQFD6cR1tZkbk7UQ
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1785200588-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.76
-! TimeUpdated: 2026-07-27T20:54:48+00:00
+! Version: 2.0.0.77
+! TimeUpdated: 2026-07-28T01:00:17+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -335,7 +335,7 @@ github.com##.copilotPreview__container
 github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
 github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has([href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-github-models"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-opus"])
-github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
+github.com#%#//scriptlet('json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch')
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
 github.com##.start-copilot-banner
@@ -797,10 +797,10 @@ www.pcmag.com##div:has(> [data-element="embedded-unit"] > form[\@submit\.prevent
 medicalxpress.com,phys.org,techxplore.com##[data-target="#summary-modal"]
 pictory.ai###livex-chatbot-app
 www.pinterest.com#%#//scriptlet('ubo-json-prune', 'resource_response.data.results.[-].gen_ai_topics')
-www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch', '/ajax/')
-www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch', '/ajax/')
-www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..illust[?.aiType==2]', 'propsToMatch', '/ajax/')
-www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..content.thumbnails.[?.aiType==2]', 'propsToMatch', '/ajax/')
+www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch')
+www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch')
+www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..illust[?.aiType==2]', 'propsToMatch')
+www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..content.thumbnails.[?.aiType==2]', 'propsToMatch')
 www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..data.thumbnails[?.aiType==2]')
 www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..contents.[?.thumbnails.[?.aiType==2]]')
 www.pixiv.net##.sc-455f28d6-1:has(.sc-250a6a48-2.sc-250a6a48-4 > [href="https://www.pixiv.help/hc/articles/11866167926809"]) > figure
@@ -928,7 +928,7 @@ www.supersummary.com##[data-testid="story-recap-desktop-card"]
 www.supersummary.com##.MuiButtonBase-root[href$="#ai-tools-page-header"]
 www.supersummary.com##.edk5i7v1:has([data-testid="AutoFixHighOutlinedIcon"])
 www.supersummary.com##.e1jtsgu01:has(> [src="/ai-assistant-icon.svg"])
-talent.performyard.com#%#//scriptlet('ubo-json-prune-fetch-response', '*', '', 'propsToMatch', '/v1/ai/')
+talent.performyard.com#%#//scriptlet('json-prune-fetch-response', '*', '', '/v1/ai/')
 www.target.com##.sc-35985976-1
 www.target.com#?#[data-test="questionUserNickname"]:contains(AI Shopping Assistant):upward([data-test="question"])
 www.target.com##div:has(> [data-test="review-summary-title"])
@@ -952,7 +952,7 @@ thenewstack.io#%#//scriptlet('remove-attr', 'placeholder', '.search-input[placeh
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
 www.thermofisher.com##.ask-ai-widget-container
 www.tiktok.com#%#//scriptlet('json-prune', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType')
-www.tiktok.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/)')
+www.tiktok.com#%#//scriptlet('json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch')
 time.com###scale-agent-overlay-container
 www.todoist.com##message-banner[data-banner-name="ramble-1vv4lt6"]
 app.todoist.com##._3930afa0._650176bf._7246d092.abd5766f[aria-label*="Ramble"]
@@ -1066,7 +1066,7 @@ x.com##.css-175oi2r.r-1mmae3n:has(> [data-testid="grok_post_atgrok_button"])
 x.com##.r-1phboty.r-2yi16.r-1qi8awa:has(path[d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466"])
 yacy.net##.navbar-right > li:has(> [href="https://chatgpt.com/g/g-h7fLnaDuI-yacy-support"])
 www.yahoo.com##[aria-label="Search with Yahoo Scout"]
-www.yahoo.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.r[?@.m==89]')
+www.yahoo.com#%#//scriptlet('json-prune-fetch-response', '$.r[?@.m==89]')
 www.yahoo.com##[role="menuitem"]:has(> [href^="https://scout.yahoo.com/"])
 www.yahoo.com###conbar-content > .group:has(.stretched-box[href^="https://scout.yahoo.com"])
 www.yahoo.com##.relative.flex.flex-col.gap-1\.5.rounded-xl.bg-secondary.p-3.leading-5.mb-8:has(> [data-ylk*="ai-summary;"])
@@ -1088,6 +1088,7 @@ www.yahoo.co.jp##li:has(> [href^="https://search.yahoo.co.jp/aichat?"])
 search.yahoo.co.jp##.AiAssistant
 search.yahoo.co.jp##.VerticalTab__aiAssistButton
 search.yahoo.co.jp##.AnswerAiNavigation__content
+yandex.com##.search3__placeholder-label
 ya.ru##.alice-ai-button__wrapper
 ya.ru,yandex.com,yandex.ru##.HeaderNav-Tab[href$="&promo=force_neuro"]
 ya.ru##.HeaderNav-Tab[href^="//ya.ru/alice?"]

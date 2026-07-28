@@ -94,7 +94,7 @@ gitbook.com##button[aria-label="GitBook Assistant"]:remove()
 ||api.individual.githubcopilot.com/$xhr,domain=github.com
 ! Rule "github.com##+js(json-edit-fetch-response, v2:$.results[?@.action.path=="/copilot"], propsToMatch, /command_palette/jump_to_page_navigation)" converted to: "github.com#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')"
 github.com##+js(json-edit-fetch-response, v2:$.results[?@.action.path=="/copilot"], propsToMatch, /command_palette/jump_to_page_navigation)
-! Rule "github.com##+js(json-prune-fetch-response, $.results[?@.action.path=="/copilot"], propsToMatch, /command_palette/jump_to_page_navigation)" converted to: "github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')"
+! Rule "github.com##+js(json-prune-fetch-response, $.results[?@.action.path=="/copilot"], propsToMatch, /command_palette/jump_to_page_navigation)" converted to: "github.com#%#//scriptlet('json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch')"
 github.com##+js(json-prune-fetch-response, $.results[?@.action.path=="/copilot"], propsToMatch, /command_palette/jump_to_page_navigation)
 ! Rule "github.com##command-palette-item[data-item-title="Copilot"]:remove()" converted to: "github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }"
 github.com##command-palette-item[data-item-title="Copilot"]:remove()
@@ -212,13 +212,13 @@ www.pixiv.net##+js(json-edit, v2:$.street.latest.data.thumbnails[?@.aiType==2])
 www.pixiv.net##+js(json-edit-fetch-response, v2:$.body.contents[?@.thumbnails.*.aiType==2])
 ! Rule "www.pixiv.net##+js(json-edit, v2:$.street.forYou.contents[?@.thumbnails.*.aiType==2])" converted to: "www.pixiv.net#%#//scriptlet('ubo-json-edit', 'v2:$.street.forYou.contents[?@.thumbnails.*.aiType==2]')"
 www.pixiv.net##+js(json-edit, v2:$.street.forYou.contents[?@.thumbnails.*.aiType==2])
-! Rule "www.pixiv.net##+js(json-prune-fetch-response, "$..['body','data','illusts','popular','userIllusts','works'].*[?.aiType==2]", propsToMatch, /ajax/)" converted to: "www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch', '/ajax/')"
+! Rule "www.pixiv.net##+js(json-prune-fetch-response, "$..['body','data','illusts','popular','userIllusts','works'].*[?.aiType==2]", propsToMatch, /ajax/)" converted to: "www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch')"
 www.pixiv.net##+js(json-prune-fetch-response, "$..['body','data','illusts','popular','userIllusts','works'].*[?.aiType==2]", propsToMatch, /ajax/)
-! Rule "www.pixiv.net##+js(json-prune-fetch-response, "$..body.thumbnails.*.[?.aiType==2]", propsToMatch, /ajax/)" converted to: "www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch', '/ajax/')"
+! Rule "www.pixiv.net##+js(json-prune-fetch-response, "$..body.thumbnails.*.[?.aiType==2]", propsToMatch, /ajax/)" converted to: "www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch')"
 www.pixiv.net##+js(json-prune-fetch-response, "$..body.thumbnails.*.[?.aiType==2]", propsToMatch, /ajax/)
-! Rule "www.pixiv.net##+js(json-prune-fetch-response, "$..illust[?.aiType==2]", propsToMatch, /ajax/)" converted to: "www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..illust[?.aiType==2]', 'propsToMatch', '/ajax/')"
+! Rule "www.pixiv.net##+js(json-prune-fetch-response, "$..illust[?.aiType==2]", propsToMatch, /ajax/)" converted to: "www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..illust[?.aiType==2]', 'propsToMatch')"
 www.pixiv.net##+js(json-prune-fetch-response, "$..illust[?.aiType==2]", propsToMatch, /ajax/)
-! Rule "www.pixiv.net##+js(json-prune-fetch-response, $..content.thumbnails.[?.aiType==2], propsToMatch, /ajax/)" converted to: "www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..content.thumbnails.[?.aiType==2]', 'propsToMatch', '/ajax/')"
+! Rule "www.pixiv.net##+js(json-prune-fetch-response, $..content.thumbnails.[?.aiType==2], propsToMatch, /ajax/)" converted to: "www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..content.thumbnails.[?.aiType==2]', 'propsToMatch')"
 www.pixiv.net##+js(json-prune-fetch-response, $..content.thumbnails.[?.aiType==2], propsToMatch, /ajax/)
 ! Rule "www.pixiv.net##+js(json-prune, $..data.thumbnails[?.aiType==2])" converted to: "www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..data.thumbnails[?.aiType==2]')"
 www.pixiv.net##+js(json-prune, $..data.thumbnails[?.aiType==2])
@@ -242,7 +242,7 @@ www.scribd.com##[data-testid="mobile-actions-bottom-bar"] button:has-text("Ask A
 ||wenda.sogou.com/produce_ai_answer$xhr,domain=www.sogou.com
 ! Rule "support.spotify.com##.LegacyChip__LegacyChipComponent-sc-tzfq94-0:not(:has([data-encore-id="icon"])):style(flex-basis: 100% !important)" converted to: "support.spotify.com#$#.LegacyChip__LegacyChipComponent-sc-tzfq94-0:not(:has([data-encore-id="icon"])) { flex-basis: 100% !important }"
 support.spotify.com##.LegacyChip__LegacyChipComponent-sc-tzfq94-0:not(:has([data-encore-id="icon"])):style(flex-basis: 100% !important)
-! Rule "talent.performyard.com##+js(json-prune-fetch-response, *, , propsToMatch, /v1/ai/)" converted to: "talent.performyard.com#%#//scriptlet('ubo-json-prune-fetch-response', '*', '', 'propsToMatch', '/v1/ai/')"
+! Rule "talent.performyard.com##+js(json-prune-fetch-response, *, , propsToMatch, /v1/ai/)" converted to: "talent.performyard.com#%#//scriptlet('json-prune-fetch-response', '*', '', '/v1/ai/')"
 talent.performyard.com##+js(json-prune-fetch-response, *, , propsToMatch, /v1/ai/)
 ! Rule "www.target.com##[data-test="questionUserNickname"]:has-text(AI Shopping Assistant):upward([data-test="question"])" converted to: "www.target.com#?#[data-test="questionUserNickname"]:contains(AI Shopping Assistant):upward([data-test="question"])"
 www.target.com##[data-test="questionUserNickname"]:has-text(AI Shopping Assistant):upward([data-test="question"])
@@ -250,11 +250,11 @@ www.target.com##[data-test="questionUserNickname"]:has-text(AI Shopping Assistan
 www.telerik.com##.TK-Footer-Featured-Item:has-text("Complete AI Toolbox")
 ! Rule "||thenewstack.io/no-cache/vertex-answer/$xhr,1p" converted to: "||thenewstack.io/no-cache/vertex-answer/$xmlhttprequest,~third-party"
 ||thenewstack.io/no-cache/vertex-answer/$xhr,1p
-! Rule "www.tiktok.com##+js(json-prune-fetch-response, itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType, , propsToMatch, /item_list)" converted to: "www.tiktok.com#%#//scriptlet('ubo-json-prune-fetch-response', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType', '', 'propsToMatch', '/item_list')"
+! Rule "www.tiktok.com##+js(json-prune-fetch-response, itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType, , propsToMatch, /item_list)" converted to: "www.tiktok.com#%#//scriptlet('json-prune-fetch-response', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType', '', '/item_list')"
 www.tiktok.com##+js(json-prune-fetch-response, itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType, , propsToMatch, /item_list)
 ! Rule "www.tiktok.com##+js(json-edit-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/)" converted to: "www.tiktok.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/')"
 www.tiktok.com##+js(json-edit-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/)
-! Rule "www.tiktok.com##+js(json-prune-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/))" converted to: "www.tiktok.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/)')"
+! Rule "www.tiktok.com##+js(json-prune-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/))" converted to: "www.tiktok.com#%#//scriptlet('json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch')"
 www.tiktok.com##+js(json-prune-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/))
 ! Rule "www.tunepocket.com###pageholder > #tp-main-head:style(margin-top: -5px !important)" converted to: "www.tunepocket.com#$##pageholder > #tp-main-head { margin-top: -5px !important }"
 www.tunepocket.com###pageholder > #tp-main-head:style(margin-top: -5px !important)
@@ -286,7 +286,7 @@ www.washingtonpost.com##form > [aria-label="Washington Post site search"] [role=
 ||onlinelibrary.wiley.com/pb/widgets/article-assistant/initiate$xhr,domain=onlinelibrary.wiley.com
 ! Rule "www.yahoo.com##+js(json-edit-fetch-response, v2:$.r[?@.m==89], propsToMatch, /sugg/gossip/gossip-us-fastbreak)" converted to: "www.yahoo.com#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$.r[?@.m==89]', 'propsToMatch', '/sugg/gossip/gossip-us-fastbreak')"
 www.yahoo.com##+js(json-edit-fetch-response, v2:$.r[?@.m==89], propsToMatch, /sugg/gossip/gossip-us-fastbreak)
-! Rule "www.yahoo.com##+js(json-prune-fetch-response, $.r[?@.m==89])" converted to: "www.yahoo.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.r[?@.m==89]')"
+! Rule "www.yahoo.com##+js(json-prune-fetch-response, $.r[?@.m==89])" converted to: "www.yahoo.com#%#//scriptlet('json-prune-fetch-response', '$.r[?@.m==89]')"
 www.yahoo.com##+js(json-prune-fetch-response, $.r[?@.m==89])
 ! Rule "||ya.ru/search/generative_answer$xhr,1p" converted to: "||ya.ru/search/generative_answer$xmlhttprequest,~third-party"
 ||ya.ru/search/generative_answer$xhr,1p

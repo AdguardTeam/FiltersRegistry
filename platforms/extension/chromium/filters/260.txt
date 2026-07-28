@@ -1,9 +1,9 @@
-! Checksum: s3/dpgZ3NqDJl/8MrdnQZA
-! Diff-Path: ../patches/260/260-s-1785185831-14400.patch
+! Checksum: tU6BbdTm1P0Goawck7woXw
+! Diff-Path: ../patches/260/260-s-1785200554-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.76
-! TimeUpdated: 2026-07-27T20:54:48+00:00
+! Version: 2.0.0.77
+! TimeUpdated: 2026-07-28T01:00:17+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1002,7 +1002,7 @@ github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has([href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-github-models"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-opus"])
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
-github.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
+github.com#%#//scriptlet('json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch')
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
@@ -2434,10 +2434,10 @@ www.pinterest.com#%#//scriptlet('ubo-json-prune', 'resource_response.data.result
 ! Change search settings to hide AI
 ! * Alters search results instead of hiding items. Allows more non-ai results per page
 ! * Requires trust
-www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch', '/ajax/')
-www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch', '/ajax/')
-www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..illust[?.aiType==2]', 'propsToMatch', '/ajax/')
-www.pixiv.net#%#//scriptlet('ubo-json-prune-fetch-response', '$..content.thumbnails.[?.aiType==2]', 'propsToMatch', '/ajax/')
+www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch')
+www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch')
+www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..illust[?.aiType==2]', 'propsToMatch')
+www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..content.thumbnails.[?.aiType==2]', 'propsToMatch')
 www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..data.thumbnails[?.aiType==2]')
 www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..contents.[?.thumbnails.[?.aiType==2]]')
 ! -- https://www.pixiv.net/en/artworks/145900548
@@ -2839,7 +2839,7 @@ www.supersummary.com##.e1jtsgu01:has(> [src="/ai-assistant-icon.svg"])
 ! == Talent Yard ==
 ! =================
 ! Floating assistant icon
-talent.performyard.com#%#//scriptlet('ubo-json-prune-fetch-response', '*', '', 'propsToMatch', '/v1/ai/')
+talent.performyard.com#%#//scriptlet('json-prune-fetch-response', '*', '', '/v1/ai/')
 ! ============
 ! == Target ==
 ! ============
@@ -2912,7 +2912,7 @@ www.thermofisher.com##.ask-ai-widget-container
 ! == TikTok ==
 ! ============
 www.tiktok.com#%#//scriptlet('json-prune', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType')
-www.tiktok.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/)')
+www.tiktok.com#%#//scriptlet('json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch')
 ! ==========
 ! == Time ==
 ! ==========
@@ -3295,7 +3295,7 @@ yacy.net##.navbar-right > li:has(> [href="https://chatgpt.com/g/g-h7fLnaDuI-yacy
 ! Scout button on searchbar
 www.yahoo.com##[aria-label="Search with Yahoo Scout"]
 ! AI search suggestion
-www.yahoo.com#%#//scriptlet('ubo-json-prune-fetch-response', '$.r[?@.m==89]')
+www.yahoo.com#%#//scriptlet('json-prune-fetch-response', '$.r[?@.m==89]')
 ! Yahoo Scout in "More" navbar menu
 www.yahoo.com##[role="menuitem"]:has(> [href^="https://scout.yahoo.com/"])
 ! Featured item from from Yahoo Scout below search bar
@@ -3350,6 +3350,9 @@ search.yahoo.co.jp##.AnswerAiNavigation__content
 ! ============
 ! == Yandex ==
 ! ============
+! -- https://yandex.com/
+! "Search with Yandex AI" placeholder text
+yandex.com##.search3__placeholder-label
 ! -- https://ya.ru/
 ! (no longer used?)
 ya.ru##.alice-ai-button__wrapper
