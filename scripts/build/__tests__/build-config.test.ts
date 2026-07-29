@@ -68,7 +68,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects on --generate-cache combined with --strip-generated-meta', () => {
+    it('rejects --generate-cache combined with --strip-generated-meta', () => {
         const flags = parseFlags(['--generate-cache', '--strip-generated-meta']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
@@ -77,7 +77,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects on --generate-cache combined with --no-patches-prepare', () => {
+    it('rejects --generate-cache combined with --no-patches-prepare', () => {
         const flags = parseFlags(['--generate-cache', '--no-patches-prepare']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
@@ -85,7 +85,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects on multiple incompatible flags with --generate-cache', () => {
+    it('rejects multiple incompatible flags with --generate-cache', () => {
         const flags = parseFlags([
             '--generate-cache',
             '--strip-generated-meta',
@@ -113,7 +113,7 @@ describe('validateFlags', () => {
         expect(validateFlags(flags)).toBeNull();
     });
 
-    it('rejects on --download-stats combined with --strip-generated-meta', () => {
+    it('rejects --download-stats combined with --strip-generated-meta', () => {
         const flags = parseFlags(['--download-stats', '--strip-generated-meta']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
@@ -122,7 +122,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects on --download-stats combined with --no-patches-prepare', () => {
+    it('rejects --download-stats combined with --no-patches-prepare', () => {
         const flags = parseFlags(['--download-stats', '--no-patches-prepare']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
@@ -131,7 +131,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects on multiple incompatible flags with --download-stats', () => {
+    it('rejects multiple incompatible flags with --download-stats', () => {
         const flags = parseFlags([
             '--download-stats',
             '--strip-generated-meta',
@@ -144,7 +144,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('rejects on --download-stats combined with both --include and --skip', () => {
+    it('rejects --download-stats combined with both --include and --skip', () => {
         const flags = parseFlags(['--download-stats', '--include=1,2,3', '--skip=1,2']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
