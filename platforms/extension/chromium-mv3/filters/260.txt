@@ -1,8 +1,8 @@
-! Checksum: H0yDTb84LDGwlOcJeU+N5w
+! Checksum: zhoKNsCRSs600jl44+HiTw
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.83
-! TimeUpdated: 2026-07-29T16:57:22+00:00
+! Version: 2.0.0.84
+! TimeUpdated: 2026-07-29T20:48:08+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -28,8 +28,9 @@
 ! * Button potentially present on hundreds of child sites.
 !   See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/74
 ##.js--show.gen-ai
-! Floating Ask AI button
+! Floating AI buttons
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
+||widget.molin.ai/shop-ai.js$script,domain=benu.hu|euronics.hu|www.decathlon.hu
 ! ===============
 ! == 1Password ==
 ! ===============
@@ -1544,8 +1545,9 @@ www.google.*##[jscontroller="DyTeib"]
 www.google.*##.pHiOh[href^="https://ai.google/"]
 ! Search bar - AI button (magnifying glass icon, mobile only)
 www.google.*##.xOchs
-! Autocomplete suggestions - AI Mode
+! Autocomplete suggestions
 www.google.*#%#//scriptlet('ubo-json-prune', '$.*.*[?@.zp.udm=="50"]')
+www.google.*#%#//scriptlet('ubo-json-prune', '$.*[?@[?@.zf==86]]')
 ! * Backup cosmetic filter for mobile
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 ! -- https://www.google.com/search?q=Why+are+we+here
@@ -1827,6 +1829,11 @@ www.investing.com##[data-test="contextual-subscription-hook"]
 ! Investopedia Answers box
 www.investopedia.com##.askmiso-ask-query
 www.investopedia.com##.askmiso-ask-query-secondary
+! ==========
+! == iPon ==
+! ==========
+! Floating AI button
+||chat.ipon.hu/widget.js$script,~third-party
 ! =================
 ! == iShopChangi ==
 ! =================
