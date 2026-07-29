@@ -1,9 +1,9 @@
-! Checksum: N1+77u2X1Xp0RhP4luh9Tg
-! Diff-Path: ../patches/260/260-s-1785272077-14400.patch
+! Checksum: pE8SJow0FbUseW04OZgIPQ
+! Diff-Path: ../patches/260/260-s-1785286962-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.0.80
-! TimeUpdated: 2026-07-28T20:52:20+00:00
+! Version: 2.0.0.81
+! TimeUpdated: 2026-07-29T01:00:21+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1091,6 +1091,9 @@ github.com###automation > .lp-SectionTemplate > .lp-SectionBlock > .lp-SectionBl
 ! Footer - AI links
 github.com##.Link--secondary[href="/features/copilot"]
 github.com##.Link--secondary[href="/features/ai"]
+! -- https://github.com/apps/desktop
+! Header banner for GitHub Copilot app
+github.com##global-banner#desktop_copilot_app
 ! -- https://support.github.com/
 ! Header - Copilot button
 support.github.com##[data-fs="copilot_chat_nav"]
@@ -3268,10 +3271,10 @@ x.com##button[aria-label*="Grok"]:has(.css-175oi2r.r-xoduu5.r-bnwqim)
 x.com##[data-testid="GrokDrawer"]
 ! - Promos
 ! Top of home feed - Promos for video generation and Grok Build
-x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href="https://grok.com/imagine"])
-x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href="https://grok.com/imagine"]) + [data-testid="cellInnerDiv"]:has(.r-gu4em3:empty)
-x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href="https://x.ai/cli?source=x_timeline_prompt"])
-x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href="https://x.ai/cli?source=x_timeline_prompt"]) + [data-testid="cellInnerDiv"]:has(.r-gu4em3:empty)
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href^="https://grok.com/"])
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href^="https://grok.com/"]) + [data-testid="cellInnerDiv"]:has(.r-gu4em3:empty)
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href^="https://x.ai/"])
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt-primaryAction"] > [href^="https://x.ai/"]) + [data-testid="cellInnerDiv"]:has(.r-gu4em3:empty)
 ! Right sidebar - "Make videos in seconds" promo
 x.com##.css-175oi2r:has(> .r-kemksi.r-1ifxtd0 > aside[role="complementary"] > a[href="https://grok.com/imagine?referring_page=home_sidebar_grok_promo"])
 ! -- Hiding specific tweets
