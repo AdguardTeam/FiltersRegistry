@@ -74,7 +74,7 @@ fi
 ARROW="→"
 CHECK="✓"
 CROSS="✗"
-TOTAL_STEPS=11
+TOTAL_STEPS=9
 
 # Prints a blank line and a bold "Step N/9: <title>" header.
 step_header() {
@@ -328,16 +328,9 @@ echo "Use cached sources instead of a regular build?"
 if confirm default_no; then
   BUILD_LOCAL=true
   echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
-else
-  BUILD_LOCAL=false
-  echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
-fi
 
-# --- Step 3: generate cache? (cached mode only — not required every run, an
-# existing filter.txt cache can be reused) ---
-
-step_header 3 "Generate cache"
-if [ "$BUILD_LOCAL" = "true" ]; then
+  # Neither is required every run — an existing filter.txt cache and stats
+  # can be reused, so both default to skip.
   echo "Generate filter.txt cache (yarn generate-cache)?"
   if confirm default_no; then
     DO_GENERATE_CACHE=true
@@ -346,15 +339,7 @@ if [ "$BUILD_LOCAL" = "true" ]; then
     DO_GENERATE_CACHE=false
     echo "${C_CYAN}${ARROW}${C_RESET} Skipping generate-cache, reusing existing cache"
   fi
-else
-  DO_GENERATE_CACHE=false
-  echo "${C_DIM}Skipped — plain build mode selected.${C_RESET}"
-fi
 
-# --- Step 4: download stats? (cached mode only, independent of generate-cache) ---
-
-step_header 4 "Download stats"
-if [ "$BUILD_LOCAL" = "true" ]; then
   echo "Download per-filter stats.json from the cached percent.json (yarn download-stats)?"
   if confirm default_no; then
     DO_GENERATE_STATS=true
@@ -364,13 +349,15 @@ if [ "$BUILD_LOCAL" = "true" ]; then
     echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats download"
   fi
 else
+  BUILD_LOCAL=false
+  DO_GENERATE_CACHE=false
   DO_GENERATE_STATS=false
-  echo "${C_DIM}Skipped — plain build mode selected.${C_RESET}"
+  echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
 fi
 
-# --- Step 5: cleanup preference ---
+# --- Step 3: cleanup preference ---
 
-step_header 5 "Cleanup preference"
+step_header 3 "Cleanup preference"
 echo "Remove worktrees and platforms_*_build/ when done?"
 if confirm; then
   DO_CLEANUP=true
@@ -386,9 +373,9 @@ if ! MASTER_SHA=$(git rev-parse --verify "$BASED_BRANCH" 2>/dev/null); then
 fi
 CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 
-# --- Step 6: set up worktrees (reuse if already present) ---
+# --- Step 4: set up worktrees (reuse if already present) ---
 
-step_header 6 "Set up worktrees"
+step_header 4 "Set up worktrees"
 setup_worktree() {
   local label=$1
   local path=$2
@@ -424,10 +411,10 @@ setup_worktree() {
 setup_worktree "$BASED_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
-# --- Step 7: install deps in parallel ---
+# --- Step 5: install deps in parallel ---
 # Always runs, even for a reused worktree
 
-step_header 7 "Install dependencies"
+step_header 5 "Install dependencies"
 
 yarn --cwd "$MASTER_WORK_TREE" install > "$LOG_MASTER_INSTALL" 2>&1 &
 PID_MASTER_INSTALL=$!
@@ -443,17 +430,17 @@ if ! wait "$PID_CHANGED_INSTALL"; then
   die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
-# --- Step 8: sync changed worktree's filters/ to the $BASED_BRANCH baseline ---
+# --- Step 6: sync changed worktree's filters/ to the $BASED_BRANCH baseline ---
 
-step_header 8 "Sync filters/ baseline"
+step_header 6 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASED_BRANCH baseline" "$LOG_SYNC_BASELINE" \
   git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
   die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
-# --- Step 9: build both branches in parallel ---
+# --- Step 7: build both branches in parallel ---
 
-step_header 9 "Build both branches"
+step_header 7 "Build both branches"
 if [ "$BUILD_LOCAL" = "true" ]; then
   build_branch() {
     local dir=$1
@@ -523,15 +510,15 @@ DO_GENERATE_CACHE=$DO_GENERATE_CACHE
 DO_GENERATE_STATS=$DO_GENERATE_STATS
 EOF
 
-# --- Step 10: report ---
+# --- Step 8: report ---
 
-step_header 10 "Report"
+step_header 8 "Report"
 generate_report
 REPORT_STATUS=$?
 
-# --- Step 11: cleanup ---
+# --- Step 9: cleanup ---
 
-step_header 11 "Cleanup"
+step_header 9 "Cleanup"
 cleanup_all() {
   git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
   git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
