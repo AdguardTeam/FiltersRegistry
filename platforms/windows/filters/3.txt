@@ -1,9 +1,9 @@
-! Checksum: aJldezCTzUSIt/ybrbs6Aw
-! Diff-Path: ../patches/3/3-s-1785274333-3600.patch
+! Checksum: n/bktX/+8/Hzi0UwXTRG9w
+! Diff-Path: ../patches/3/3-s-1785301977-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.8.25
-! TimeUpdated: 2026-07-28T21:28:43+00:00
+! Version: 2.1.8.26
+! TimeUpdated: 2026-07-29T05:09:13+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -182338,6 +182338,7 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 !
 ! NOTE: Specific rules
 !
+itmedia.co.jp#%#//scriptlet('set-local-storage-item', 's_ubid', '$remove$')
 online.tokyu-dept.co.jp#%#//scriptlet('set-constant', 'addProductClickEventToTemplate', '', '', 'asFunction')
 online.tokyu-dept.co.jp#%#//scriptlet('set-constant', 'triggerGAEvent', 'noopFunc')
 ||online.tokyu-dept.co.jp/assets/common/js/googleAnalyticsEvent.js
@@ -189215,6 +189216,9 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! itmedia.co.jp
+||itmedia.co.jp^$cookie=s_vid
+||itmedia.co.jp^$cookie=s_ubid
 ! gamsgo.com
 ||gamsgo.com^$cookie=_gv_visit_tracking
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235441
