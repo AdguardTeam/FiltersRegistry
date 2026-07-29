@@ -144,8 +144,24 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
+    it('rejects --generate-cache combined with both --include and --skip', () => {
+        const flags = parseFlags(['--generate-cache', '--include=1,2,3', '--skip=1,2']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('--include and --skip are mutually exclusive');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
     it('rejects --download-stats combined with both --include and --skip', () => {
         const flags = parseFlags(['--download-stats', '--include=1,2,3', '--skip=1,2']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('--include and --skip are mutually exclusive');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('rejects --use-cache combined with both --include and --skip', () => {
+        const flags = parseFlags(['--use-cache', '--include=1,2,3', '--skip=1,2']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
         expect(result?.message).toContain('--include and --skip are mutually exclusive');

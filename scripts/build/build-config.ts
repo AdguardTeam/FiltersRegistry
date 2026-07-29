@@ -142,13 +142,11 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
     }
 
     if (
-        flags.downloadStats
-        && flags.includedFilterIDs.length > 0
-        && flags.excludedFilterIDs.length > 0
+        flags.includedFilterIDs.length > 0 && flags.excludedFilterIDs.length > 0
     ) {
         return {
             type: 'error',
-            message: `Error: --include and --skip are mutually exclusive with --download-stats.\n${hint}`,
+            message: `Error: --include and --skip are mutually exclusive.\n${hint}`,
         };
     }
 
