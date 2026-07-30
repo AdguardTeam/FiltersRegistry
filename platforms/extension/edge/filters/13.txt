@@ -1,9 +1,9 @@
-! Checksum: MRdyacX6cSlK12MBpipiug
-! Diff-Path: ../patches/13/13-s-1785402161-3600.patch
+! Checksum: /ivQXoMDypCkJdfxN2bFFw
+! Diff-Path: ../patches/13/13-s-1785405605-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.39
-! TimeUpdated: 2026-07-30T09:00:09+00:00
+! Version: 2.0.66.40
+! TimeUpdated: 2026-07-30T09:57:04+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1564,6 +1564,7 @@ filmzevkim.com##a[href="https://medyabayim.com/"]
 sinefilmizlesem.com##.reklam-yatay
 sinefilmizlesem.com#%#//scriptlet('remove-class', 'yildiz-pageskin', 'body')
 ||apkindir.com/yonlen111.js
+player01.cfd##body > a[style^="position:"][style*="z-index:"]
 player01.cfd#%#//scriptlet('prevent-window-open', '', '1')
 ||filmerotikizle.cc/ma5.js
 ||zevklifilm.com/ma5.js
@@ -5987,6 +5988,11 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 !          or add a last known domain
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
+!
+! Frequently changed domains: livosports*.live
+! Source: livosports30.live
+||livosports*.*/view/theme/ultimate/img/*.gif
+[$domain=/livosports\d+\.live$/]##div[class^="reklam-"]
 !
 ! Frequently changed domains: onlyifsa*.com
 ! Source: onlyifsa12.icu
