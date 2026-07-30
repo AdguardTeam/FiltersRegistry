@@ -1,9 +1,9 @@
-! Checksum: oVFUmn/sDezri0RJ7+sQTg
-! Diff-Path: ../patches/13/13-s-1785423199-3600.patch
+! Checksum: YM3vLKUEaXcEMz5YxnbjRA
+! Diff-Path: ../patches/13/13-s-1785426294-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.42
-! TimeUpdated: 2026-07-30T14:50:28+00:00
+! Version: 2.0.66.43
+! TimeUpdated: 2026-07-30T15:42:22+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6000,6 +6000,11 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: jtvkanal*.vip
+! Source: jtvkanal8.vip
+||jtvkanal*.vip/api/banner-img/
+[$domain=/jtvkanal\d+\.vip$/]##.banner
+!
 ! Frequently changed domains: *betine.live
 ! Source: 87betine.live
 ||*betine.live/view/theme/safir/img/betinepageskin.jpg
@@ -6660,9 +6665,10 @@ justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,
 ! aglint-enable no-invalid-modifiers
 [$domain=/selcuksports\d+\.com/]##img[id^="top-ads-"]
 ! CASE 3 - probably fake
-||taraftarium24pro*.vip/*.gif
-[$domain=/taraftarium24pro\d+\.vip$/]##.menu-banner-area
-[$domain=/taraftarium24pro\d+\.vip$/]##.below-player-banner
+||taraftarium24pro*.site/*.gif
+[$domain=/taraftarium24pro\d+\.site$/]##.below-player-banner
+[$domain=/taraftarium24pro\d+\.site$/]##.t24-sq-overlay
+[$domain=/taraftarium24pro\d+\.site$/]##.t24-sticky-ad
 taraftariumkral24.pro,selcuktvonline.me,selcukspor-hd.digital,netsportv.co##.alert
 ||taraftariumhdizle24.org/dimg/*.gif$image
 taraftariumhdizle24.org###pageskin-link
@@ -7078,6 +7084,7 @@ macizletaraftarium.online#%#//scriptlet('trusted-replace-node-text', 'script', '
 ! Frequently changed domains: inattvizle*.top
 ! Source: https://inatgiris.com/ => https://www.inattvizle480.top/
 ||inattvizle*.top/lib/uploads/r/
+[$domain=/inattvizle\d+\.top/]#%#//scriptlet('prevent-window-open')
 [$domain=/inattvizle\d+\.top/]##.dbad
 [$domain=/inattvizle\d+\.top/]##.under-vid-banner
 [$domain=/inattvizle\d+\.top/]#%#//scriptlet('adjust-setInterval', 'reklam_', '*', '0.001')
