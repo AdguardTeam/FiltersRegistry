@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: EpCk+bwsLiNbAxhJY+m65w
-! Diff-Path: ../patches/7/7-s-1785505247-3600.patch
+! Checksum: O3KoV2umjMYozVBparbq1w
+! Diff-Path: ../patches/7/7-s-1785509800-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.75.25
-! TimeUpdated: 2026-07-31T13:37:16+00:00
+! Version: 2.0.75.26
+! TimeUpdated: 2026-07-31T14:52:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27,6 +27,7 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$3p,domain=~rakuten-co.jp|~rakuten.ne.jp
 !
+||scrollpop.online^$3p
 ||insiad.com^
 ||dailyrumor-jp.co.in^$all
 ||sankei.click^$all
@@ -1957,7 +1958,8 @@ becoolusers.com##.ad-text
 androplus.jp##fieldset:has(> legend + div[data-link-click])
 solispia.com##.ad-large-a
 ||m.media-amazon.com/images/I/$image,redirect=1x1.gif,domain=fo76db.com
-fo76db.com##+js(addEventListener-defuser, DOMContentLoaded, /ads|AmazonCarousel/)
+fo76db.com###fo-ad-modal:style(display: none !important;)
+fo76db.com##body.swiper:style(overflow: auto !important; position: static !important;)
 fo76db.com##body > div#toast ~ *:not(div, link, script)
 genshin-soku.com##.yaab-swap-link
 genshin-soku.com##.plugin-memo:has(> div.side > a[href^="https://amzn.to"])
@@ -4953,7 +4955,7 @@ fob.jp###sidebar > div.widget_custom_html:has(+ div#fix_sidebar)
 city.kamisu.ibaraki.jp###topsadbg
 saku-city.mamafre.jp###bottomBanner
 ||city.saku.nagano.jp/banner/
-jmanga.care##div[style^="max-width:700px"]
+jmanga.loan##div[style^="max-width:700px"]
 gihyo.jp##.m-listitem--ad
 musicman.co.jp##.bannerBox
 ||tool2.nan-net.com/doujin/depression1.jpg
