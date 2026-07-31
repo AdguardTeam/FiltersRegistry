@@ -1,9 +1,9 @@
-! Checksum: cJNQy7XNNSvtF/A21VIWjQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1785303453-14400.patch
+! Checksum: D590rakd3N0sm6sdKxz0vA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1785476861-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.8
-! TimeUpdated: 2026-07-29T05:34:43+00:00
+! Version: 2.0.25.9
+! TimeUpdated: 2026-07-31T05:44:32+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -923,6 +923,7 @@ kolozzeum.com##td[width="305"], br + a[href*="/casino"]
 kompanjoner.se##.site-loader
 komponentkoll.se##.gdpr-wide
 konsten.net##div[id^="konst-"]
+konstperspektiv.nu##a[target="_blank"][rel]
 konsumentmagasinet.se##.pricerunner, #Conzent, .conzent-modal, .price-part
 korledare.myclub.se##.sponsors
 kristendate.se##div[id^="adv"], #site-right-col-wrapper a[target] img
@@ -1262,6 +1263,7 @@ radio.se##div[data-testid="page-holder"] > section.content-visibility-auto:not([
 radio.se###always-visible-banner-desktop-banner, #sticky-reklame-header
 radio.se#$#:is(a[data-testid="region-tag"], a[data-testid^="taglist-item"]) { background-image:none!important; background:rgb(2,114,140)!important; }
 raggningsboken.se,minip.nu,snapsvisor.eu##div[style^="min-height"]:has(.adsbygoogle)
+rakapuckar.com#?#a[href="https://rakapuckar.com/author/rakapuckar/"]:upward(.td-cpt-post)
 rakapuckar.com##.sidead_border, .bm-random-ads-wrapper
 ratio.se###consent-portal
 ratsit.se##.promo
@@ -2146,6 +2148,9 @@ zeromagazine.nu##div[id^="ads"]
 /atoms/images/*banner$domain=etc.se
 /a?callback=pfmod.saveadsettings
 /baibai$domain=teknikveckan.se
+/baibai-banners
+/baibai-external-tracker
+/baibai/external.jsp
 /bannerAd.js$domain=objektvision.se
 /bannersidor/*
 /banners$domain=magasinetparagraf.se|sporttv.nu|cykla.se|vatternrundan.se|dagenstv.com|sydkusten.es|pellesoft.se|dykarna.nu|varmepumpsforum.com|poolforum.se|classiccars.se|borsvarlden.com|nitroz.se|skargardenfinland.com|da.se|bobattre.se|thefork.se
@@ -2217,7 +2222,7 @@ zeromagazine.nu##div[id^="ads"]
 /cookies-and-content-security-policy$script,domain=cannabisifokus.se|futsalmagasinet.se|sd.se|cora.se|tfkriminalvard.se|sportbilen.se|fisheco.se|sparadkrona.se|handelskammaren.com
 /cookie-bar$script,domain=allergia.se|fl-net.se
 /cookie-consent$script,domain=minhembio.com|sjf.se|varldenom.com|fuska.se
-/cookie-law-info$script,domain=startaochdriva.se|sverige.nu|conpot.se|firstclassmagazine.se|kvalitetsmagasinet.se|miljo-utveckling.se|techtidningen.se|vdtidningen.se|gullislastips.se|nyfiknainvesterare.se|discoveringtheplanet.com|bussmagasinet.se|torbjornstips.se|dinbyggare.se|aktieskolan.se|insikt24.se|sulkysport.se|bitzmagasin.se|battrestadsdel.se|automatos.se|80-talet.se|goteborgnyheter.se|elitepadel.se|vetenskaphalsa.se|rakapuckar.com|konstperspektiv.nu|56kilo.se|surveyors.se|maximumsports.se|rucksack.se|frihetsnytt.se|globalportalen.org|juligen.se|sakerhund.se|radiosol.se|norrkopingsguiden.se|mustangclubsweden.org|mallorcanyheter.com|viivilla.se|teknikhype.se|kalmarposten.se|travelandtourworld.se|idrottsbranschen.se|bostadspolitik.se|hundguiden.com|hemslojd.se|utstallningskritik.se
+/cookie-law-info$script,domain=startaochdriva.se|sverige.nu|conpot.se|firstclassmagazine.se|kvalitetsmagasinet.se|miljo-utveckling.se|techtidningen.se|vdtidningen.se|gullislastips.se|nyfiknainvesterare.se|bussmagasinet.se|torbjornstips.se|dinbyggare.se|aktieskolan.se|insikt24.se|sulkysport.se|battrestadsdel.se|automatos.se|80-talet.se|goteborgnyheter.se|elitepadel.se|vetenskaphalsa.se|rakapuckar.com|surveyors.se|maximumsports.se|globalportalen.org|juligen.se|sakerhund.se|radiosol.se|norrkopingsguiden.se|mustangclubsweden.org|mallorcanyheter.com|viivilla.se|kalmarposten.se|travelandtourworld.se|bostadspolitik.se|hundguiden.com|hemslojd.se|utstallningskritik.se
 /cookie-manager$script,domain=si.se|sweden.se
 /cookie.min.js$domain=assistanskoll.se
 /cookie_consent.js$domain=djungeltrumman.se
@@ -2570,7 +2575,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/popups/*$script,domain=svenskhistoria.se|bugburger.se
 /plugins/popup$domain=ordfrontmagasin.se|snowmobile.se|forvaltarforum.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|jobsinsweden.se|magasinetkonkret.se
 /plugins/pressidium-cookie-consent$script,domain=undervarttak.se|radiotreby.se
-/plugins/proposition-cookie-consent$script,domain=samfalligheterna.se
+/plugins/proposition-cookie-consent$script,domain=samfalligheterna.se|idrottsbranschen.se
 /plugins/pum-$script,domain=snowmobile.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se
 /plugins/qte-native-ads$script
 /plugins/quantcast-choice$script,domain=javligtgott.se|villalivet.se
@@ -2617,7 +2622,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/wf-cookie-consent$script,domain=spelochfilm.se
 /plugins/woocommerce-google-adwords
 /plugins/wordpress-stats-manager-pro
-/plugins/wpconsent-cookies-banner$script,domain=kampsportnews.se
+/plugins/wpconsent-cookies-banner$script,domain=kampsportnews.se|teknikhype.se
 /plugins/wplinktrade
 /plugins/wpx-bannerize$script
 /plugins/wp-adsense
@@ -3080,6 +3085,7 @@ _banner.php?$domain=tvmatchen.nu
 ||cncptx.com^$third-party
 ||cncpt-central.com^$third-party
 ||cncpt.dk^$third-party
+||codedrink.com^$third-party
 ||collect.breakit.se^
 ||commercial-cms-prod.aller.se^
 ||comms.omnichannelengagementhub.com/*&telemetry=true
@@ -3567,6 +3573,7 @@ _banner.php?$domain=tvmatchen.nu
 ||viralize.tv/t-bid
 ||viralize.tv^$domain=tyda.se|sportlovin.se
 ||visbymaklarna.se^$third-party
+||visitors.now^$third-party
 ||vk.com^$domain=ungdomar.se
 ||vovve.net/i/sponsorer
 ||wayke.se^$third-party,domain=siljannews.se

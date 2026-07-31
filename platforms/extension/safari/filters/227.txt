@@ -1,14 +1,14 @@
-! Checksum: blPommWOopI8kyaM+bNc8A
-! Diff-Path: ../patches/227/227-s-1785444827-14400.patch
+! Checksum: h4aENhUn/dPShCMajxFIfg
+! Diff-Path: ../patches/227/227-s-1785476855-14400.patch
 ! Title: List-KR Classic filter list
 ! Description: The List-KR Сlassic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.24.80
-! TimeUpdated: 2026-07-30T20:50:56+00:00
+! Version: 2.0.24.81
+! TimeUpdated: 2026-07-31T05:44:19+00:00
 ! Expires: 1 day (update frequency)
 !
 ! Title: List-KR classic filters list (AdGuard)
 ! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20664.3
+! OriginalVersion: 2026.20665.0
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/List-KR/List-KR
 ! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
@@ -639,6 +639,7 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+||coucounews.com/coupas/
 ||handsfriend.com/mootoon-affiliate.js
 ||assets.cueknow.co.kr/script/phantomad.min.js
 ||82cook.com/imagedb/headline/nmain_banner
@@ -1736,6 +1737,11 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+coucounews.com##div[class$="continue_coupang"] div.mb-4.text-center:has(> img.inline-block[loading="lazy"][alt^="_"][src^="https://cdn.zigcou.com/"])
+coucounews.com##div[class$="continue_coupang"] div.mb-4.text-center:has(> img.inline-block[loading="lazy"][alt^="_"][src^="https://cdn.zigcou.com/"]) + div.cursor-pointer
+coucounews.com##main > div.px-2 > div:not([class]):not([style]) > div.text-left > div.grid > div:has(a[href^="https://blog.naver.com/byolla/"])
+coucounews.com##.post-contents > div.text-left > p > div[style="display: flex; justify-content: center; overflow: hidden;"]
+coucounews.com##.aceplanet-coupang-banner
 m.11st.co.kr#@#div[class$="-ad"]
 m.11st.co.kr##.card__item > .product > div[class^="product-thumbnail_"] > button[aria-label="광고 안내"]
 m.11st.co.kr##div[data-testid="Cap_Box_Ad"]:has(> .l-grid__col > .c-headline > .c-headline__text > .c-ad__btn) + div[data-testid="ProductCard_Compact"]
@@ -3727,6 +3733,7 @@ m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 !
+coucounews.com#%#//scriptlet('prevent-navigation', 's.click.aliexpress.com')
 www.naver.com#%#//scriptlet('set-constant', 'EAGER-DATA.CAS-MINICONTENT-PC-WHALE-BANNER-BOTTOM', 'null')
 vod.sooplive.com#%#//scriptlet('json-prune-xhr-response', 'data.adballoon', '', 'station/video/a/view')
 stock.naver.com#%#//scriptlet('set-constant', 'MobileDetect', 'noopFunc')
