@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 3gQYVjE4k470/iuUkIkqAg
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1785495647-3600.patch
+! Checksum: l6XCrvEbykiWweBXkUqWFg
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1785505246-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.8.42
-! TimeUpdated: 2026-07-31T10:57:11+00:00
+! Version: 2.1.8.43
+! TimeUpdated: 2026-07-31T13:37:04+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -180862,6 +180862,8 @@ zonedirector.avadacom.com$image
 /^https:\/\/cs\d{3}\.\w+\.com\/cscript\/\d{3}\/[\w\d]+\.js$/$script,3p,match-case
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
+/api-integration/ad-rotator/track/*
+/api-integration/ad-rotator/stats^
 &tag_exp=*&e=gtm.
 /0.gif?
 /internal-stats-lite/p.php?
@@ -181580,6 +181582,7 @@ mexc.com##+js(set-local-storage-item, _yjsu_yjad, $remove$)
 ||google-analytics.com^$object,redirect=noop.js,script
 ||googletagmanager.com/gtag/$3p,object,redirect=noop.js,script
 @@||nlog.naver.com/n|$domain=search.naver.com|www.naver.com
+||globes.co.il/news/scripts/fp2.min.js
 ||moika78.ru/wp-json/optimization-detective/v*/url-metrics
 theplayerstribune.com##+js(set-local-storage-item, userIdentifier, $remove$)
 ||aladinia.app/tracking.js
