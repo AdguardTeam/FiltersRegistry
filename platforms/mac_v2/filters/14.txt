@@ -1,9 +1,9 @@
-! Checksum: Qv+qMJmwS6PE+3sDPNx3Rg
-! Diff-Path: ../patches/14/14-s-1785591433-3600.patch
+! Checksum: fKJXxd4Ejq7oYcb7MH+kug
+! Diff-Path: ../patches/14/14-s-1785595045-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.74.40
-! TimeUpdated: 2026-08-01T13:33:55+00:00
+! Version: 2.2.74.41
+! TimeUpdated: 2026-08-01T14:34:15+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2630,6 +2630,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+airbnb.com##div[data-testid="main-cookies-banner-container"]
+elekta.com#%#//scriptlet('trusted-set-cookie', 'cookie-consent', '{"functional":false,"marketing":false}')
 history.com##body > div[data-sentry-element="Component"] > div:has(p > a[href="https://www.history.com/privacy-policy"])
 globes.co.il###cookiesConfirmDiv
 /ajax/popupcookies.html$domain=bildeleekspert.dk|autoteileprofi.de|piecesauto-pro.fr
@@ -3945,7 +3947,7 @@ aromatslowa.pl#%#//scriptlet('set-cookie', 'con_mngr_functional', 'allow')
 aromatslowa.pl#%#//scriptlet('set-cookie', 'con_mngr_marketing', 'deny')
 aromatslowa.pl#%#//scriptlet('set-cookie', 'con_mngr_preferences', 'deny')
 aromatslowa.pl#%#//scriptlet('set-cookie', 'con_mngr_statistics', 'deny')
-/modules/seigicookie/*$domain=eazymut.pl|medkon.pl|tomskor.pl|madani-sports.eu|riccardo.pl|audiopolis.pl|drukmistrz.pl|senpo.pl|pomelody.com
+/modules/seigicookie/*$domain=eazymut.pl|medkon.pl|tomskor.pl|madani-sports.eu|riccardo.pl|audiopolis.pl|drukmistrz.pl|senpo.pl|pomelody.com|comaxpc.pl
 oddstrader.com###CookiesAlert
 xplay.gg#%#//scriptlet('set-local-storage-item', 'cookieTypesList', 'emptyArr')
 oncf-voyages.ma#%#//scriptlet('trusted-set-cookie', 'CookieConsent', 'declined')
@@ -11556,7 +11558,7 @@ loft.com.br#?##__next > div.MuiGrid-root:has( > div.MuiGrid-root > div.MuiGrid-r
 iplogger.org###message
 myresume.ru##.rulesInfo
 galeriadaarquitetura.com.br###divPolitica
-anhangueraferramentas.com.br###box-cookie
+nkc1.co.jp,anhangueraferramentas.com.br###box-cookie
 ariel.co.uk##body #divOneTrustMainContainer:not(#style_important)
 career.lenta.com##.use-cookie-confirmation
 ||premierleague.com/resources/prod/tcf.json
@@ -19322,6 +19324,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/237224
+elekta.com#@##cookie-banner
+elekta.com#@##cookie-accept
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237050
 sunandsnow.pl#@#.cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237124
@@ -37127,6 +37132,7 @@ gamingbible.com,ladbible.com,sportbible.com,thecontentbible.com,tyla.com,unilad.
 !
 ! SECTION: Subscriptions - Regular rules
 !
+star-history.com##div.w-full > form.flex-col:has(> input[type="email"])
 idnes.cz##.catchbox-newsletter
 history.com##.digioh-inline-history-insidehistory
 ab-in-den-urlaub.de##a[href="/newsletter"]
@@ -37550,8 +37556,6 @@ allyoucanwatch.net###discordPop
 iflscience.com##.follow-button-text-wrapper
 iflscience.com#?#.article__bottom__meta__text:contains(Add us as a Google preferred source)
 motortrend.com##div[data-testid="content-newsletter"]
-just-auto.com##.gdm-newsletter-banner__container
-just-auto.com##.catfish
 caranddriver.com##section[data-vars-block-type="Newsletter"]
 indiatoday.in,clubic.com,semana.com,xataka.com.br,glavred.net,metropoles.com,autoevolution.com##a[href^="https://profile.google.com/cp/"]
 mainichi.jp##.mb-28 > p:has(> a[href^="https://www.google.com/preferences/source?q="])
@@ -37793,7 +37797,8 @@ bengo4.com###js-google-news-banner
 bengo4.com##.p-topics-about-google-news-banner
 thisoldhouse.com##.c-newsletter-signup-box
 thisoldhouse.com##.google-preferred-meta
-cnnturk.com,livelaw.in##.preferred-source-banner
+cnnturk.com##[class^="preferred-source-banner"]
+livelaw.in##.preferred-source-banner
 gamingonlinux.com###body .box > .group.announce
 techblog.gr##.nl-cta-card
 demorgen.be##aside.marketing-banner:has(> aside[data-module="temptation-module"] > div[data-pexi-template*="BROWSER_PUSH_CHECK"])
@@ -44981,7 +44986,7 @@ prodesigntools.com##.widget_essb_subscribe
 theplanetd.com##.inside-right-sidebar > #custom_html-10
 grottonetwork.com###trigger-newsletter
 prsport.net#?#iframe ~ p[style]:has(> em:contains(Подписывайтесь на нашу новостную ленту))
-senpo.pl,carinet.pl,skuteryimotocykle.eu,maxmoto.pl,bigriver.pl,vanguardia.com.mx,nailsup.ro,partyfiesta.com##.block_newsletter
+comaxpc.pl,senpo.pl,carinet.pl,skuteryimotocykle.eu,maxmoto.pl,bigriver.pl,vanguardia.com.mx,nailsup.ro,partyfiesta.com##.block_newsletter
 hpe.com##.subscribe-card-cta
 marktjagd.de##.component-newsletter
 handelsangebote.de,marktjagd.de##.wrapper-label-newsletter
@@ -47142,6 +47147,10 @@ flightradar24.com##[data-id="a5b8151"][data-element_type="widget"]
 flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
+!+ NOT_OPTIMIZED
+just-auto.com##.gdm-newsletter-banner__container
+!+ NOT_OPTIMIZED
+just-auto.com##.catfish
 !+ NOT_OPTIMIZED
 m9.news##.google-label-center
 !+ NOT_OPTIMIZED
@@ -55464,10 +55473,7 @@ ispazio.net##.isp-widget--spot
 ||gitflic.ru/static/image/sidebar/banner-pro.png
 gitflic.ru##.sidebar-single-banner
 onedio.co##.kesfet_promotion
-just-auto.com##.rhs-ic-banner
-just-auto.com##.gdm-orange-banner
 just-auto.com###home-trusted-banner
-just-auto.com##.in-article-premium-insights
 chibanippo.co.jp##.block-views-blockteikimono-views-block-1
 chibanippo.co.jp##.block-views-blockteikimono-views-block-2
 kosht.media##.rek > a[href="https://kosht.media/rating/"]
@@ -59103,6 +59109,12 @@ v.qq.com#?#div.nav-wrap > div > div:has(> a[href^="https://iwan.video.qq.com"])
 jorudan.co.jp##.com_bottom_banner
 !+ NOT_OPTIMIZED
 jorudan.co.jp##.com_lp_frame
+!+ NOT_OPTIMIZED
+just-auto.com##.rhs-ic-banner
+!+ NOT_OPTIMIZED
+just-auto.com##.gdm-orange-banner
+!+ NOT_OPTIMIZED
+just-auto.com##.in-article-premium-insights
 !
 ! NOTE: Regular rules end ⬆️
 ! !SECTION: Self-promo - Regular rules
