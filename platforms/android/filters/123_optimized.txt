@@ -1,9 +1,9 @@
-! Checksum: xBomLTZmOhKWsOnD7AlSCg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1785546288-14400.patch
+! Checksum: teyeguLRKyo9FSbSYWD5tA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1785562826-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.66.16
-! TimeUpdated: 2026-08-01T01:01:57+00:00
+! Version: 2.1.66.17
+! TimeUpdated: 2026-08-01T05:37:43+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -31,6 +31,7 @@
 /facebook_footer.png
 /facebook_footer.svg
 /facebook_like_button.png
+/facebook_social.png
 /fb-like-pop.js
 /fb-pixel.js
 /fb_modeles.css
@@ -145,7 +146,6 @@ _social-bar/
 ###FollowUs
 ###Followers1
 ###ShareButton
-###ShareEntryPoint
 ###ShareItemBtn
 ###SocialContainer
 ###SocialMedia
@@ -375,6 +375,7 @@ _social-bar/
 ###partShare
 ###pinterest-link
 ###pinterest-share
+###playerShare
 ###popup-social
 ###popupFbLikeBox
 ###post-share-icons
@@ -514,6 +515,7 @@ _social-bar/
 ###sidebar_share
 ###sidebar_social_icons
 ###single-share
+###single-social-media
 ###site-share
 ###site-social
 ###sm_share
@@ -604,7 +606,6 @@ _social-bar/
 ###socialNetworks
 ###socialShare
 ###socialSharing
-###socialSidebar
 ###socialTwitter
 ###socialWidget
 ###socialWrap
@@ -1259,6 +1260,7 @@ _social-bar/
 ##.facebook-popup
 ##.facebook-share-btn
 ##.facebook-share-button
+##.facebook-share-link
 ##.facebook-sharer
 ##.facebook-sidebar
 ##.facebook-social
@@ -1322,7 +1324,6 @@ _social-bar/
 ##.fbbsb-button
 ##.fbbsb-buttons
 ##.fbbutton
-##.fbfollow
 ##.fblikebox
 ##.fblink
 ##.fbpromo
@@ -1599,6 +1600,7 @@ _social-bar/
 ##.header_social
 ##.header_social_icon
 ##.headersocial:not(body):not(html)
+##.headersocials
 ##.headsocial
 ##.heateorSssSharingRound
 ##.heateorSsspSharing
@@ -1833,6 +1835,7 @@ _social-bar/
 ##.likebtn
 ##.likebutton
 ##.likes-block_left
+##.likes-box
 ##.line-btn-icon
 ##.line-social
 ##.link-facebook
@@ -1896,6 +1899,7 @@ _social-bar/
 ##.main-nav-social
 ##.main-single-share
 ##.main__share
+##.mashfs-popup-share
 ##.mashicon-facebook
 ##.mashicon-linkedin
 ##.mashicon-twitter
@@ -1903,6 +1907,7 @@ _social-bar/
 ##.mashsb-container
 ##.masterSocialbutton
 ##.masthead-social
+##.material-icons-share
 ##.materna-shariff
 ##.mc-share-toggle
 ##.md-social-toolbar-circle
@@ -2562,7 +2567,6 @@ _social-bar/
 ##.share_pinterest
 ##.share_post
 ##.share_row
-##.share_sidebar
 ##.share_social
 ##.share_story
 ##.share_this
@@ -2876,7 +2880,6 @@ _social-bar/
 ##.social-icons-title
 ##.social-icons-top
 ##.social-icons-v2
-##.social-icons-white
 ##.social-icons-widget
 ##.social-icons-wrap
 ##.social-icons-wrapper
@@ -3023,6 +3026,7 @@ _social-bar/
 ##.social-strip
 ##.social-stripe
 ##.social-stroke-icon
+##.social-sub
 ##.social-subscribe
 ##.social-tab
 ##.social-tab-i
@@ -3052,6 +3056,7 @@ _social-bar/
 ##.socialContacts
 ##.socialContainer
 ##.socialContainerWrap
+##.socialCount
 ##.socialEl
 ##.socialFacebook
 ##.socialFixed
@@ -3101,6 +3106,7 @@ _social-bar/
 ##.socialShareIcon
 ##.socialShareLinks
 ##.socialSharing
+##.socialSideBar
 ##.socialSticky
 ##.socialTab
 ##.socialToolbar
@@ -3143,7 +3149,6 @@ _social-bar/
 ##.social_share_wrapper
 ##.social_shares
 ##.social_sharing
-##.social_sticky
 ##.social_tools
 ##.social_top
 ##.social_widget
@@ -3244,7 +3249,6 @@ _social-bar/
 ##.story-tool-share
 ##.story__share
 ##.story__social
-##.story_share
 ##.stripe-social
 ##.sub_jeu_social_facebook
 ##.sub_jeu_social_twitter
@@ -3459,7 +3463,6 @@ _social-bar/
 ##.widget-follow
 ##.widget-follow-us
 ##.widget-share
-##.widget-share__social
 ##.widget-sharebar-container
 ##.widget-sharrre
 ##.widget-social
@@ -3716,6 +3719,7 @@ _social-bar/
 ||xing-share.com^$third-party
 ||yandex.st/share/
 ||youtube.com/subscribe_embed?$third-party
+||youtube.com/subscribe_widget$third-party
 ||people.com.cn/img/2020fenxiang/
 iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
@@ -3797,7 +3801,6 @@ birminghammail.co.uk,bristolpost.co.uk,dailyrecord.co.uk,dailystar.co.uk,irishst
 cnbc.com##.HighlightShare-container
 apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
-6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
 rbth.com##.Popup-telegram
 ndtv.com##.SSR_drp
 abc.net.au##.ShareBanner_container__OX63I
@@ -3833,6 +3836,7 @@ nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
 altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
 nationalreview.com##.article-utility-nav
+rt.com##.article__google-news
 noticiabrasil.net.br,noticiaslatam.lat,spnfa.ir,sputnik-abkhazia.info,sputnik-georgia.com,sputnik-ossetia.com,sputnik.af,sputnik.by,sputnik.kg,sputnik.kz,sputnik.tj,sputnikglobe.com,sputniknews.africa,sputniknews.cn,sputniknews.in,sputniknews.jp,sputniknews.ru,sputniknews.uz,sputnikportal.rs##.article__news-services-subscribe
 salon.com##.article__share
 wnep.com##.article__sharing
@@ -3862,7 +3866,6 @@ breitbart.com##.bnn-social-share
 bom.gov.au##.bom-social-share
 businessinsider.com##.brands-social
 oilprice.com##.breakingNews__socialMedia
-cgmagonline.com##.bricks-link-wrapper
 agrimag.co.za,androidpolice.com,automart.co.za##.btn-facebook
 androidpolice.com,givemesport.com##.btn-flipboard
 androidpolice.com##.btn-linkedIn
@@ -3885,7 +3888,6 @@ united24media.com##.c-post__props
 euroweeklynews.com,thisisfutbol.com,videocelts.com##.c-post__social
 kyivindependent.com##.c-share__wrapper
 mediaite.com##.c-youtube-subscribe
-briefly.co.za##.call_to_action
 cgdirector.com##.cgd-social-wrapper
 neatorama.com##.col-4
 goal.com##.component-share
@@ -3896,7 +3898,6 @@ cbsnews.com##.content__google
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
 euromaidanpress.com##.cs-meta-google-news
-thetab.com##.custom-box-desktop
 savingadvice.com##.custom-share
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
@@ -3916,7 +3917,6 @@ trueachievements.com##.fa-reddit
 techradar.com##.facebook-icon
 thefreedictionary.com##.fb-share
 eadaily.com##.feed
-ourworldindata.org##.feedbackPromptContainer
 lubuntu.me##.ff-social-icon
 testbook.com##.fl-social
 thejc.com##.flex.gap-16.lg\:gap-8.items-center
@@ -3935,6 +3935,7 @@ metoffice.gov.uk##.follow-icons
 windowsreport.com##.follow-more-news
 metro.co.uk##.follow-promo
 alarabiya.net,ausgamers.com,cgtn.com,cloudwards.net,crypto.news,exitoina.perfil.com,magazine.artstation.com,mensxp.com,notateslaapp.com,republicworld.com,timeslive.co.za,trueachievements.com,truetrophies.com##.follow-us
+kentonline.co.uk##.followbox
 rbth.com##.follows-channel
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
 meteoblue.com##.footer-options
@@ -3951,7 +3952,6 @@ pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,flamboroughtoday.com,griceconnect.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,newmarkettoday.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,vancouverisawesome.com,westernwheel.ca##.ft-social
 news18.com##.gglebtn
-felixbarbalet.com,freshfromcache.com##.gh-button-share
 ghacks.net##.ghacks_share_widget
 avaaz.org##.global-footer-connect
 cars.com##.global-footer-social-buttons
@@ -3971,9 +3971,7 @@ cultofmac.com##.google-preferred-source
 nypost.com##.google-preferred-sources
 www.channelnewsasia.com##.google-preferred__button-wrapper
 goal.com##.google-trusted-source
-wionews.com##.googleCTAContainer
 hindustantimes.com##.googleFollow
-wionews.com##.googleTrustedContainer-mid
 breitbart.com##.google_preferred_source_button
 gadgets360.com##.gsocialbar
 theprint.in##.gw-follow-button
@@ -4057,6 +4055,7 @@ omgubuntu.co.uk##.omg-hero-button__link
 omgubuntu.co.uk##.omg-socials
 latimes.com##.page-actions
 playbuzz.com##.pb-share-bar
+news18.com##.phtshare
 cbsnews.com##.player__social
 theroar.com.au##.pm-share-horizontal
 autoexpress.co.uk##.polaris__social
@@ -4155,16 +4154,15 @@ adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.
 iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
-arnnet.com.au,computerworld.com,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
 cnn.com##.social-share_labelled-list
 edition.cnn.com##.social-share_labelled-list__share-links
 bestnewshere.com,mediaweek.com.au##.social-sharing-bot
 bestnewshere.com,mediaweek.com.au##.social-sharing-top
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
+mmorpg.com##.social-web
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
 macrumors.com##.socialMedia--3i9tSnAb
-wionews.com##.socialShare_shareFixed__xNEGI
 jetphotos.com##.social__link--share
 newscientist.com##.social__links
 eurovisionworld.com##.social_a
@@ -4252,11 +4250,13 @@ rnz.co.nz##[aria-label*="Share"]
 sfgate.com##[aria-label="Share from Email"]
 thejc.com##[aria-label="Share this article"]
 breakingnews.ie,nhentai.net##[aria-label="Twitter"]
+techcommunity.microsoft.com##[class^="custom_widget_MicrosoftFooter_social-share_"]
 news.sky.com##[data-component-name="sdc-article-strapline"]
 latimes.com##[data-element="google-preferred-sources"]
 lifehacker.com##[data-ga-element="social-link"]
 cnet.com##[data-meta="footer-section-social"]
 cnet.com##[data-meta="footer-section-social"] + ul
+scmp.com##[data-qa="ArticleGoogleNewsButton-Container"]
 nytimes.com##[data-testid="social-group"]
 codecademy.com##[data-testid="social-share-dropdown"]
 dw.com##[data-tracking-name="footer-section-social-media"]
@@ -4423,7 +4423,6 @@ laprovence.com##.ContentFooter_social-footer___2tiv
 laprovence.com##.ShareBar_btn__ZO5cC
 radiofrance.fr##.ShareManager
 radiofrance.fr##.StationFooter-social
-dhnet.be,lalibre.be##.ap-FollowList
 boursedirect.fr##.content-social
 lefigaro.fr##.fig-share-mobile-layer
 lefigaro.fr##.fig-sharebar
@@ -4500,7 +4499,6 @@ davinotti.com##.social__variant
 ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
 macitynet.it##.tds-button
-tg.la7.it##.tgla7-condividi
 nurse24.it##.toolbar
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
@@ -4628,6 +4626,7 @@ lanacion.com.ar##.mod-share-container
 cooperativa.cl##.modulo-channels
 cooperativa.cl##.modulo-google-news
 depor.com##.nav__story-social-network
+diarioeldia.cl,elterritorio.com.ar##.noticia-social-share
 biobiochile.cl##.post-social-container
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
 elcomercio.pe,gestion.pe##.s-buttons
