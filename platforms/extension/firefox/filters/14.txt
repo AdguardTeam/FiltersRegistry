@@ -1,9 +1,9 @@
-! Checksum: mSNktMzYj7NzcRDo93jyhA
-! Diff-Path: ../patches/14/14-s-1785605253-3600.patch
+! Checksum: L3RMzoyk7VpIZqNXGNar7Q
+! Diff-Path: ../patches/14/14-s-1785634908-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.74.44
-! TimeUpdated: 2026-08-01T17:24:40+00:00
+! Version: 2.2.74.45
+! TimeUpdated: 2026-08-02T01:38:51+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -51555,6 +51555,10 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+mainichi.jp#$#.tp-modal:has(iframe[id^="offer_"][scrolling="no"][allowfullscreen="true"][style="overflow: hidden; background-color: transparent; border: 0px; width: 500px; height: 525px;"]) { display: none !important; }
+mainichi.jp#$#.tp-modal:has(iframe[id^="offer_"][scrolling="no"][allowfullscreen="true"][style="overflow: hidden; background-color: transparent; border: 0px; width: 500px; height: 525px;"]) ~ .tp-backdrop { display: none !important; }
+mainichi.jp#$#.tp-scroll-prevented { overflow: auto !important; height: unset !important; touch-action: auto !important; }
+mainichi.jp#$#html > body.tp-modal-open { overflow: auto !important; height: unset !important; touch-action: auto !important; }
 travelist.jp##.footerApp
 banki.ru#%#//scriptlet('trusted-set-cookie-reload', 'download_mobile_app_banner', 'never')
 hindustantimes.com###echosdk_click_overlay
@@ -64691,10 +64695,6 @@ moeimg.net###side-2 li.widget-container:has(#side-img-rss_frame)
 ||gazounabi.com/atcl_bottom_
 erologz.com##ul[class^="fl"]:not([class^="flex"])
 switchsoku.com##.l-main > div.dividerBottom:first-child:has(> aside.widget-main)
-nijimoemoe.com##.container-inner > aside.section-box > div.plugin-free_area
-nijimoemoe.com#?##more > .t_h:has(+ br + .oss1)
-nijimoemoe.com##.oss1
-nijimoemoe.com##.rsstuibi
 gamedaradara.doorblog.jp##div[id$="_rss"]
 gamedaradara.doorblog.jp#?#.article-body-inner b:has(+ div[id$="_rss"])
 burusoku-vip.com##.article-body-more > span[style="font-size: 18px;"]
@@ -64976,8 +64976,6 @@ otoko-honne.com,kijolifehack.com##.osusume_box
 ||kimagure-kijyo.com/js/kimagure_
 kijobibouroku.com,shuraba.net,uwasakijo.net,ikuji-news.com,kichimama.com,kijobibouroku.com,kimagure-kijyo.com##.ifram
 livejupiter2.blog.jp,jishin-yogen.com,shuraba.net,uwasakijo.net,ikuji-news.com,kichimama.com,kijobibouroku.com,kimagure-kijyo.com##.pickup
-nijimoemoe.com##.sine1 ~ div[class^="sine"]
-nijimoemoe.com#$#.raibudoasine { height: auto !important; }
 /kotei.js$domain=ikuji-news.com|kichimama-life.com|kichimama.net|kijonikki.net|kijyonohimitsu.com|kijyotown.net|kimagure-kijyo.com|romeodensetsu.com|shuraba-dendo.com|shuraba.net|shurabanote.com|sukashuraba.net|uwasakijo.net|densetsunokijo.net|kijyokaigi.com
 majikichi.com##div[class^="headline_"]
 majikichi.com#?##article-body > h3:has(+ div[class^="headline_"])
