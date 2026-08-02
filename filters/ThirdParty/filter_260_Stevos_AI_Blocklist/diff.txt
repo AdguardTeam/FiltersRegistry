@@ -102,6 +102,8 @@ github.com##+js(json-prune-fetch-response, $.results[?@.action.path=="/copilot"]
 github.com##command-palette-item[data-item-title="Copilot"]:remove()
 ! Rule "github.com##[data-testid="copilot-menu-items"]:remove()" converted to: "github.com#$?#[data-testid="copilot-menu-items"] { remove: true; }"
 github.com##[data-testid="copilot-menu-items"]:remove()
+! Rule "github.com##+js(json-edit-fetch-response, $.suggestions[?@.login=="Copilot"])" converted to: "github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.suggestions[?@.login=="Copilot"]')"
+github.com##+js(json-edit-fetch-response, $.suggestions[?@.login=="Copilot"])
 ! Rule "github.com##[role="menuitem"]:has(.octicon-copilot):remove()" converted to: "github.com#$?#[role="menuitem"]:has(.octicon-copilot) { remove: true; }"
 github.com##[role="menuitem"]:has(.octicon-copilot):remove()
 ! Rule "||api.github.com/copilot_internal/$xhr,domain=github.dev" converted to: "||api.github.com/copilot_internal/$xmlhttprequest,domain=github.dev"
@@ -396,6 +398,8 @@ www.deviantart.com#%#//scriptlet('ubo-json-edit', 'v2:$.currentPageData;$[\'@@en
 www.deviantart.com#%#//scriptlet('ubo-json-edit', 'v2:$..deviations[?@.isAiGenerated==true]')
 ! Error: "'ubo-json-edit-fetch-response' is not a known scriptlet name" in the rule: "github.com#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')"
 github.com#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
+! Error: "'ubo-json-edit-fetch-response' is not a known scriptlet name" in the rule: "github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.suggestions[?@.login=="Copilot"]')"
+github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.suggestions[?@.login=="Copilot"]')
 ! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "docs.github.com##input[aria-controls="search-suggestions-list"][placeholder*="Copilot"]:remove-attr(placeholder)"
 docs.github.com##input[aria-controls="search-suggestions-list"][placeholder*="Copilot"]:remove-attr(placeholder)
 ! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "www.google.*##.k1zIA.kKvsb > a[href*="&udm=50"]:remove-attr(href)"
