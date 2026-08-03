@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XMkxZtOhflbK73ozupUulQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1785719184-14400.patch
+! Checksum: Nq9dS+ahmrkBSjJ5Mtz1PA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1785736149-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.66.28
-! TimeUpdated: 2026-08-03T01:03:09+00:00
+! Version: 2.1.66.29
+! TimeUpdated: 2026-08-03T05:45:30+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -208,6 +208,7 @@ _social-bar/
 ###facebookLike
 ###facebookLikeButton
 ###facebookShareButton
+###facebookTab
 ###facebookWidget
 ###facebook_container
 ###facebook_like
@@ -488,7 +489,6 @@ _social-bar/
 ###sharebtnwrap
 ###sharebuttons
 ###sharecopy
-###sharecount
 ###sharediv
 ###sharefooter
 ###shareicon
@@ -595,7 +595,6 @@ _social-bar/
 ###socialFooter
 ###socialGoogle
 ###socialGrid
-###socialHeader
 ###socialHolder
 ###socialIcons
 ###socialLinks
@@ -762,7 +761,6 @@ _social-bar/
 ##.ShareButtons
 ##.ShareButtons__link
 ##.ShareLinks
-##.ShareLinksContainer
 ##.ShareList
 ##.ShareMenu
 ##.ShareRail
@@ -785,7 +783,6 @@ _social-bar/
 ##.SocialSection
 ##.SocialShare
 ##.SocialSharing
-##.SocialTwitter
 ##.Social_Widget
 ##.Socialbuttons
 ##.Socials
@@ -913,7 +910,6 @@ _social-bar/
 ##.article-subline-share
 ##.article-title-share
 ##.articleShare
-##.articleSocialMedia
 ##.article__header__share
 ##.article__likes
 ##.article__share
@@ -986,7 +982,6 @@ _social-bar/
 ##.bgShare.twiiter
 ##.bgShare.youtube
 ##.bi-share
-##.big-share-button
 ##.bimber-microshare-item-share
 ##.bio-social
 ##.bloc-share
@@ -1018,7 +1013,6 @@ _social-bar/
 ##.bottom-meta--share
 ##.bottom-share
 ##.bottom-share-buttons
-##.bottom-share-wrapper
 ##.bottom-shares
 ##.bottom-social
 ##.bottom-social-share
@@ -1829,6 +1823,7 @@ _social-bar/
 ##.leftside-socialshare
 ##.lets-social-count-wrap
 ##.lf-facebook
+##.lien-youtube
 ##.like-fb
 ##.like-share
 ##.like_block
@@ -1964,6 +1959,7 @@ _social-bar/
 ##.mobileShare
 ##.mod-facebook
 ##.mod-follow
+##.mod-social
 ##.mod-twitter
 ##.mod_footer_sociallist_iconlink
 ##.module--share
@@ -2065,7 +2061,6 @@ _social-bar/
 ##.panel-share-networks
 ##.par-footer-social
 ##.parent-shareBox
-##.parler-icon
 ##.partial-share
 ##.pathSocialIcons
 ##.pbtsharethisbutt
@@ -2112,6 +2107,7 @@ _social-bar/
 ##.polaris__social--icon
 ##.poll-share
 ##.popover-share
+##.post--share
 ##.post-content-share
 ##.post-footer-share
 ##.post-footer-social
@@ -2289,7 +2285,6 @@ _social-bar/
 ##.share-button-group
 ##.share-button-wrapper
 ##.share-buttons-2
-##.share-buttons-bar
 ##.share-buttons-bottom
 ##.share-buttons-box
 ##.share-buttons-container
@@ -3087,6 +3082,7 @@ _social-bar/
 ##.socialList
 ##.socialLogo
 ##.socialLogos
+##.socialM
 ##.socialMedia
 ##.socialMedia-linkedin
 ##.socialMediaBlock
@@ -3249,6 +3245,7 @@ _social-bar/
 ##.stickysocial
 ##.story-share
 ##.story-social
+##.story-social-share-fix
 ##.story-tool-share
 ##.story__share
 ##.story__social
@@ -3749,6 +3746,7 @@ cybermap.kaspersky.com###footer_social_channels
 eporner.com###footsocbuttons
 tasteofhome.com###gch-social-icons
 ndtv.com###googelPref
+seattletimes.com###google-preferred-btn
 bleedingcool.com###google_follow
 wccftech.com###google_preferred_source_box
 analyticsinsight.net,biznews.com,dn.pt,newindianexpress.com,newsgram.com###header-social-follow
@@ -3778,6 +3776,7 @@ news.crunchbase.com###ss-sticky-bar
 travelandtourworld.com###sticky-social-icons-container
 rfa.org###storytoptools
 osxdaily.com###subscribe_box
+technology.org###technology-org-application
 thenewstack.io###tns-footer-bar
 thenewstack.io###tns-post-body-sidebar-share
 reuters.com###toolbar-item-parent-share-12
@@ -3833,6 +3832,7 @@ jpost.com##.article-buttons-wrap
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.article-google-preferred-button
+neowin.net,seattletimes.com,thecooldown.com##.article-share
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
 newrepublic.com,thetech.com##.article-social
@@ -3891,6 +3891,8 @@ lawandcrime.com##.c-header-social-item
 united24media.com##.c-post__props
 euroweeklynews.com,thisisfutbol.com,videocelts.com##.c-post__social
 kyivindependent.com##.c-share__wrapper
+coolmaterial.com##.c-socials-share-box
+coolmaterial.com##.c-socials-share-section
 mediaite.com##.c-youtube-subscribe
 cgdirector.com##.cgd-social-wrapper
 goal.com##.component-share
@@ -4137,7 +4139,6 @@ streetsblog.org##.single_sharingInner__3IoQO
 dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.site-header__social
 news.sky.com,skysports.com##.site-share-wrapper
 archaeology.org##.site-socials
-leagle.com##.sm-btns
 buyee.jp##.sns_list
 firstpost.com##.so-ics
 macrumors.com##.social--159R8SRB
@@ -4408,6 +4409,7 @@ nn.de,nordbayern.de##.icon__social
 kicker.de##.kick__article__social
 ndr.de##.meta
 it-daily.net##.ns-buttons
+domradio.de##.page-tools
 teltarif.de##.sbm
 orf.at##.share-dialog
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
