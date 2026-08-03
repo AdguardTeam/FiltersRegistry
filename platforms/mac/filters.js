@@ -396,8 +396,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.72.27",
-			"timeUpdated": "2026-08-02T20:46:26+0000",
+			"version": "2.1.72.28",
+			"timeUpdated": "2026-08-03T01:02:45+0000",
 			"languages": []
 		},
 		{
@@ -478,8 +478,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.95.23",
-			"timeUpdated": "2026-08-02T20:46:30+0000",
+			"version": "2.1.95.24",
+			"timeUpdated": "2026-08-03T01:02:50+0000",
 			"languages": []
 		},
 		{
@@ -523,8 +523,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.95.25",
-			"timeUpdated": "2026-08-02T20:46:32+0000",
+			"version": "2.1.95.26",
+			"timeUpdated": "2026-08-03T01:02:53+0000",
 			"languages": [
 				"it"
 			]
@@ -568,8 +568,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.95.24",
-			"timeUpdated": "2026-08-02T20:46:34+0000",
+			"version": "2.1.95.25",
+			"timeUpdated": "2026-08-03T01:02:55+0000",
 			"languages": [
 				"ar"
 			]
@@ -587,8 +587,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.95.23",
-			"timeUpdated": "2026-08-02T20:46:35+0000",
+			"version": "2.1.95.24",
+			"timeUpdated": "2026-08-03T01:02:57+0000",
 			"languages": []
 		},
 		{
@@ -668,8 +668,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.68.93",
-			"timeUpdated": "2026-08-02T20:46:39+0000",
+			"version": "2.1.68.94",
+			"timeUpdated": "2026-08-03T01:03:01+0000",
 			"languages": []
 		},
 		{
@@ -751,8 +751,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.66.27",
-			"timeUpdated": "2026-08-02T20:46:49+0000",
+			"version": "2.1.66.28",
+			"timeUpdated": "2026-08-03T01:03:09+0000",
 			"languages": []
 		},
 		{
@@ -768,8 +768,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.66.98",
-			"timeUpdated": "2026-08-02T20:46:49+0000",
+			"version": "2.0.66.99",
+			"timeUpdated": "2026-08-03T01:03:11+0000",
 			"languages": []
 		},
 		{
@@ -900,8 +900,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.95.24",
-			"timeUpdated": "2026-08-02T20:46:56+0000",
+			"version": "2.1.95.25",
+			"timeUpdated": "2026-08-03T01:03:18+0000",
 			"languages": []
 		},
 		{
@@ -913,8 +913,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
-			"version": "2.1.8.86",
-			"timeUpdated": "2026-08-02T01:03:51+0000",
+			"version": "2.1.8.87",
+			"timeUpdated": "2026-08-03T01:03:19+0000",
 			"languages": []
 		},
 		{
@@ -977,8 +977,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.94.50",
-			"timeUpdated": "2026-08-02T20:46:59+0000",
+			"version": "2.1.94.51",
+			"timeUpdated": "2026-08-03T01:03:20+0000",
 			"languages": []
 		},
 		{
@@ -1278,8 +1278,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.95.25",
-			"timeUpdated": "2026-08-02T20:47:08+0000",
+			"version": "2.1.95.26",
+			"timeUpdated": "2026-08-03T01:03:30+0000",
 			"languages": []
 		},
 		{
@@ -1523,8 +1523,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.91.31",
-			"timeUpdated": "2026-08-02T20:47:22+0000",
+			"version": "2.1.91.32",
+			"timeUpdated": "2026-08-03T01:03:44+0000",
 			"languages": []
 		},
 		{
@@ -1626,8 +1626,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.88.56",
-			"timeUpdated": "2026-08-02T20:47:28+0000",
+			"version": "2.0.88.57",
+			"timeUpdated": "2026-08-03T01:03:51+0000",
 			"languages": [
 				"hi"
 			]
@@ -1656,8 +1656,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
-			"version": "2.0.16.50",
-			"timeUpdated": "2026-08-02T12:49:03+0000",
+			"version": "2.0.16.51",
+			"timeUpdated": "2026-08-03T01:03:56+0000",
 			"languages": []
 		},
 		{
@@ -1708,8 +1708,8 @@
 			"displayNumber": 100,
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
-			"version": "2.0.0.95",
-			"timeUpdated": "2026-08-02T20:47:36+0000",
+			"version": "2.0.0.96",
+			"timeUpdated": "2026-08-03T01:03:59+0000",
 			"languages": []
 		}
 	]
