@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 2D8xMhZd81uJ0mZ2yJW5tw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1785755523-3600.patch
+! Checksum: +0G9FZp+4WMo7nrLdHnrEw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1785762682-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.81.28
-! TimeUpdated: 2026-08-03T11:07:46+00:00
+! Version: 2.4.81.29
+! TimeUpdated: 2026-08-03T13:08:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11093,8 +11093,15 @@ skym3u.top##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232730
 acapellas.eu##+js(addEventListener-defuser, load, runCheck)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232621
+@@||confidecross.com^$domain=openlua.cloud
+@@||openlua.cloud/*.gif
+@@||openlua.cloud/ads-common.js
+@@||openlua.cloud/jquery.popunder.js
+@@||openlua.cloud/admanager.js
+@@||openlua.cloud/exitpopup.js
+@@||openlua.cloud/gpt-prebid.js
+openlua.cloud##a[href^="https://boostmania.gg/"]
 openlua.cloud##div.fixed.backdrop-blur-xl
-openlua.cloud##+js(prevent-fetch, /confidecross\.com|invoke\.js/)
 openlua.cloud##+js(no-setInterval-if, contentDocument?.body?.querySelector)
 openlua.cloud##main > .hidden:has(> .shadow-lg > div[style] > iframe[title="Advertisement"]):style(display: none !important;)
 !+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
@@ -30453,6 +30460,7 @@ a1.ro##.ima-ad-container
 !
 ! NOTE: Serbian
 !
+vijesti.me##.newsWrap + .v-slider
 halooglasi.com##.banner-list-item
 tanjug.rs##.banner
 ||tanjug.pages.dev/ads.js
@@ -37666,8 +37674,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
-myfoxzone.com,newswest9.com,12news.com,13newsnow.com,5newsonline.com,fox61.com##.grid__cell[data-columns]:has(> .grid__module:only-child > .grid__module-sizer_name_ad)
-myfoxzone.com,newswest9.com,12news.com,13newsnow.com,5newsonline.com,fox61.com##.grid__module:has(> .grid__module-sizer_name_ad)
+wqad.com,fox43.com,10tv.com,myfoxzone.com,newswest9.com,12news.com,13newsnow.com,5newsonline.com,fox61.com##.grid__cell[data-columns]:has(> .grid__module:only-child > .grid__module-sizer_name_ad)
+wqad.com,fox43.com,10tv.com,myfoxzone.com,newswest9.com,12news.com,13newsnow.com,5newsonline.com,fox61.com##.grid__module:has(> .grid__module-sizer_name_ad)
 ||weebcentral.com/static/henry_ads/
 weebcentral.com##a[rel="noopener noreferrer sponsored"]
 weebcentral.com##section[x-data*="sub_feed_shown"] + section > div.relative:has(> a[aria-label="AdChoices"])
@@ -40593,7 +40601,8 @@ clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.co
 gaystream.pro##+js(addEventListener-defuser, click, [native code], elements, document)
 gaystream.pro##+js(no-window-open-if)
 gaystream.pro##body > div[class]:empty
-peacocktv.com##+js(json-prune, avails dashAvailabilityStartTime hlsAnchorMediaSequenceNumber nextToken nonLinearAvails)
+watch.shudder.com,peacocktv.com##+js(json-prune, avails dashAvailabilityStartTime hlsAnchorMediaSequenceNumber nextToken nonLinearAvails)
+||mediatailor.*.amazonaws.com/v1/tracking/*/prod-shudder-mediatailor-config-via-sdk/$domain=watch.shudder.com
 ||cdn.peacocktv.com/pck-vod/*/tracking/
 telugubulletin.com##+js(adjust-setTimeout, window.location.href, 15000)
 buzzfeed.com##article .bf-cnx-override:has(> .bf-cnx-player:empty)
@@ -64618,6 +64627,9 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/236780
+! https://github.com/AdguardTeam/AdguardFilters/issues/237323
+! https://github.com/AdguardTeam/AdguardFilters/issues/236781
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237354
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237251
 ! https://github.com/AdguardTeam/AdguardFilters/pull/237126
