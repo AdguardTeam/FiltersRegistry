@@ -1,9 +1,9 @@
-! Checksum: ymkerhpHRfthNXZlwYcEow
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1785805400-14400.patch
+! Checksum: DQBJrOZyCD+4BsLQc0i6BA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1785821673-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.66.34
-! TimeUpdated: 2026-08-04T01:00:22+00:00
+! Version: 2.1.66.35
+! TimeUpdated: 2026-08-04T05:31:15+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -77,6 +77,7 @@
 /prisna-social-counter.css
 /Resources/twitter-$~xmlhttprequest
 /share-bar/share-bar.js
+/share/count?
 /share/footer/*
 /share42.js
 /share_button?
@@ -189,6 +190,7 @@ _social-bar/
 ###crestashareicon
 ###crestashareiconincontent
 ###custom-tweet-button
+###desktop-share-wrapper
 ###details-share-icon-link
 ###divSideShare
 ###embed-share
@@ -334,7 +336,6 @@ _social-bar/
 ###lst-facebook
 ###lst-instagram
 ###lst-twitter
-###main-social
 ###mainShare
 ###menu-footer-social-links
 ###menu-footer_social
@@ -750,7 +751,6 @@ _social-bar/
 ##.PageSharingMenu
 ##.PinItButton
 ##.PinterestButtonContainer
-##.RadSocialShare
 ##.Share-buttons
 ##.Share-item
 ##.ShareBar
@@ -2126,7 +2126,6 @@ _social-bar/
 ##.post-share-links
 ##.post-share-menu-item
 ##.post-share-panel
-##.post-share-social
 ##.post-share-twitter
 ##.post-share-widget
 ##.post-sharing
@@ -2267,7 +2266,6 @@ _social-bar/
 ##.share-bar__link
 ##.share-bar__list
 ##.share-bg
-##.share-bis-list
 ##.share-block
 ##.share-block-item
 ##.share-blog
@@ -2411,6 +2409,7 @@ _social-bar/
 ##.share-text
 ##.share-text-holder
 ##.share-this
+##.share-this-content
 ##.share-this-page
 ##.share-this-popover
 ##.share-tiktok
@@ -2450,6 +2449,7 @@ _social-bar/
 ##.shareArticle
 ##.shareBar
 ##.shareBlock
+##.shareBottom
 ##.shareBox
 ##.shareBtm
 ##.shareBtn
@@ -2782,7 +2782,6 @@ _social-bar/
 ##.soc-block
 ##.soc-btn
 ##.soc-btns
-##.soc-buttons-good
 ##.socButtons
 ##.socFbLikeShare
 ##.soc_btn
@@ -2914,7 +2913,6 @@ _social-bar/
 ##.social-media-module
 ##.social-media-nav
 ##.social-media-nav__sticky
-##.social-media-panel
 ##.social-media-share
 ##.social-media-share-buttons
 ##.social-media-share-links
@@ -3352,7 +3350,6 @@ _social-bar/
 ##.twitter-followers
 ##.twitter-footer
 ##.twitter-module
-##.twitter-popup
 ##.twitter-share
 ##.twitter-share-btn
 ##.twitter-share-button
@@ -3465,7 +3462,6 @@ _social-bar/
 ##.widget-sharrre
 ##.widget-social
 ##.widget-social-b
-##.widget-social-follower
 ##.widget-social-icons
 ##.widget-social-links
 ##.widget_FacebookLikeBox
@@ -3969,6 +3965,7 @@ gamespot.com##.google-follow-us-wrapper
 alarabiya.net##.google-news-callout
 cybernews.com,sammobile.com##.google-news-cta
 phonearena.com,quiverquant.com##.google-news-follow
+bleedingcool.com##.google-news-source
 ringsidenews.com,thehealthsite.com,tmz.com##.google-preferred-btn
 sammobile.com##.google-preferred-news-source-cta
 cultofmac.com##.google-preferred-source
@@ -4121,7 +4118,6 @@ audi-sport.net,overtake.gg##.shareButtons
 windowsreport.com##.shareMobile
 cbsnews.com##.sharebar
 mirror.co.uk,themirror.com##.sharebar-icon
-al.com,cleveland.com,lehighvalleylive.com,masslive.com,mlive.com,newyorkupstate.com,nj.com,oregonlive.com,pennlive.com,silive.com,syracuse.com##.sharebarBetaWrapper
 thehackernews.com##.sharebelow-twitter
 aftvnews.com,baptistnews.com,calmatters.org,cardinalnews.org,cartoonbrew.com,dailybulletin.com,jerseyvindicator.org,jta.org,mississippitoday.org,thefrisc.com,usmagazine.com,washingtoncitypaper.com,washingtoninformer.com##.sharedaddy
 cointelegraph.com##.shares-list__list
@@ -4204,6 +4200,7 @@ asiaone.com##.telegram-share-wrapper
 streamzy.to##.tg-banner
 streamzy.to##.tg-popup
 chinadaily.com.cn##.three-right
+favpng.com##.thumbnail_pinit
 adnkronos.com,stuff.co.nz##.tik4-sharing
 xbiz.com##.tool-list
 daily.jstor.org##.top-bar-right
@@ -4416,7 +4413,6 @@ bild.de##.sharingbar
 mpg.de##.social-media-buttons
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
-barax.de##.twt-sharing-links
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
 focus.de##.socFbLikeShare
@@ -4521,7 +4517,6 @@ knivesout.jp###Jfacebook
 srad.jp###article-bottom
 ntv.co.jp###sns
 news.j-wave.co.jp###snsLink
-biz-journal.jp###vertical_sns
 fnn.jp##.--share
 kakakumag.com##.article-sns-btm
 oricon.co.jp##.block-sub-sns
