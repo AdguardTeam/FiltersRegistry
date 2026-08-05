@@ -1,5 +1,5 @@
-! Checksum: nuAnZK7RpOMxyminSZvj3Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1785891733-14400.patch
+! Checksum: L/ajKCWQsKwhrSHf0F9P6w
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1785908047-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.33
@@ -251,6 +251,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 93.93.51.223$network
 ||livejasmin.com/*&origin=$document
+/^((https?|tcp|udp|i?quic|s?ftp)://|.*\.)?github\.([abd-z][a-z]{1,19}|c[a-np-z][a-z]{1,18})(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 !+ PLATFORM(windows, mac, android, cli)
 103.174.102.240$network
 ||topkeygen.com^$all
@@ -858,6 +859,7 @@ gamespot.com##.share--column
 forbes.com##.article-sharing
 ||syndication.twitter.com/srv/timeline-profile^$third-party
 ##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
+##.goo-pref:is(a,div)
 ##.chrome-footer:not(html, body)
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
@@ -2299,6 +2301,7 @@ $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2d
 $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
+$removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||apple.com^$removeparam=fnode
 ||microsoft.com^$removeparam=headerid
 ||microsoft.com^$removeparam=destrt
@@ -2375,6 +2378,8 @@ $removeparam=redirect_source,domain=mozilla.org|firefox.com
 ||epicgames.com^$removeparam=epic_affiliate
 ||epicgames.com^$removeparam=epic_gameId
 $document,removeparam=cId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
+$document,removeparam=lId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
+$document,removeparam=/^src=Linkfire$/,domain=apple.com|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $document,removeparam=ct,domain=apple.com|bumble.com|newsroom.co.nz
 ||music.apple.com^$removeparam=itsct
 ||music.apple.com^$removeparam=itscg
@@ -2505,6 +2510,7 @@ $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=rec,domain=argos.co.uk|roboform.com
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
+$removeparam=/^cid=DSS-Affiliate.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 $removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
@@ -2622,7 +2628,6 @@ $removeparam=qid,domain=bookdepository.com|eastday.com
 $removeparam=_1lr
 $removeparam=ymid
 $removeparam=via,domain=sincode.ai|skillshare.com|thedailybeast.com|raycast.com
-ref=troyhunt.com$document,removeparam=ref
 ||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
@@ -2828,7 +2833,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||photoshop.adobe.com^$removeparam=mv
 ://get.microsoft.com/installer/download^$removeparam=referrer
 ://get.microsoft.com/installer/download^$removeparam=source
-://globalcdn.nuget.org/packages/*.nupkg?packageVersion=$removeparam=packageVersion
 ref=sqliteviewer.app$document,removeparam=ref
 ||mcafee.$removeparam=msockid
 ||binaryfortress.com/Data/Download^$removeparam=Log
@@ -2854,7 +2858,6 @@ buffalonews.com#%#//scriptlet('ubo-set', 'lee_trkLinkSrc', 'noopFunc')
 @@||img*.nga$removeparam=cmpid
 @@/aff_c?$removeparam=/^aff_id\d?=.*$/i
 @@||hitta.se^$removeparam=ad_id
-@@||youtube.com/videoplayback$removeparam=source
 @@||facebook.com^$removeparam=__s
 @@||bing.*/ws/redirect/$removeparam
 @@||email-link.$removeparam

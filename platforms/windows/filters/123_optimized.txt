@@ -1,9 +1,9 @@
-! Checksum: KkrnP6VZIx676kyQ/7QeGQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1785891732-14400.patch
+! Checksum: wPNlAPk50S6YIIT6ADa8sQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1785908046-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.66.40
-! TimeUpdated: 2026-08-05T00:58:21+00:00
+! Version: 2.1.66.41
+! TimeUpdated: 2026-08-05T05:30:45+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -369,6 +369,7 @@ _social-bar/
 ###mvp-post-soc-wrap
 ###mvp-soc-mob-wrap
 ###mvp-top-nav-soc
+###native-addthis
 ###navbar-social
 ###newGigyaShareTop
 ###newGigyaShareTop-Holder
@@ -391,6 +392,7 @@ _social-bar/
 ###selectionShare
 ###share-area
 ###share-bar
+###share-below-desktop
 ###share-bottom
 ###share-buttons
 ###share-card
@@ -597,6 +599,7 @@ _social-bar/
 ###socialGrid
 ###socialHolder
 ###socialIcons
+###socialInstagram
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
@@ -882,6 +885,7 @@ _social-bar/
 ##.article-footer-social
 ##.article-footer__share
 ##.article-full__share
+##.article-head__share
 ##.article-header-social
 ##.article-header__share
 ##.article-icon-share
@@ -1347,7 +1351,6 @@ _social-bar/
 ##.floating-share-bar
 ##.floating-share-buttons
 ##.floating-social
-##.floatinglikebox
 ##.fluid_share_container
 ##.fluid_share_wrapper
 ##.fly-text-share
@@ -1420,7 +1423,6 @@ _social-bar/
 ##.footer-share-list
 ##.footer-share-section
 ##.footer-sharing
-##.footer-site-social
 ##.footer-sns
 ##.footer-social
 ##.footer-social-block
@@ -1619,6 +1621,7 @@ _social-bar/
 ##.icon--dailymotion
 ##.icon--facebook
 ##.icon--facebook-simple
+##.icon--flickr
 ##.icon--footer-social
 ##.icon--instagram
 ##.icon--linkedin
@@ -2009,10 +2012,7 @@ _social-bar/
 ##.news-detail-share
 ##.news-header-social
 ##.news-share
-##.news-share-article
 ##.news-share-button
-##.news-share-button-down
-##.news-social-container
 ##.news__share
 ##.nexstar-google-preferred-sources
 ##.nice-menu-menu-social-menu
@@ -2157,6 +2157,7 @@ _social-bar/
 ##.qticon-share
 ##.qw_social
 ##.r-footer--social
+##.r-likes-wrapper
 ##.rambler-share
 ##.rc_social
 ##.rcom-social-site-footer
@@ -2217,6 +2218,7 @@ _social-bar/
 ##.sd-social-icon-text
 ##.sdc-site-share
 ##.search-social
+##.sec_share
 ##.secondaryNav-social
 ##.section-follow
 ##.section-post-intro-share
@@ -2812,6 +2814,7 @@ _social-bar/
 ##.social-badge
 ##.social-badges
 ##.social-banner
+##.social-banners
 ##.social-bar-sticky
 ##.social-bar-widget
 ##.social-bar-wrapper
@@ -2857,6 +2860,7 @@ _social-bar/
 ##.social-header
 ##.social-home
 ##.social-horizontal
+##.social-hub
 ##.social-icon-ar
 ##.social-icon-bar
 ##.social-icon-group
@@ -3113,6 +3117,7 @@ _social-bar/
 ##.socialWrapper
 ##.social_b
 ##.social_bar
+##.social_bind
 ##.social_bookmark
 ##.social_bookmarks
 ##.social_bottom
@@ -3240,6 +3245,8 @@ _social-bar/
 ##.sticky-social-buttons
 ##.sticky-social-share
 ##.stickysocial
+##.stm-socials
+##.stm-socials__icon
 ##.story-share
 ##.story-social
 ##.story-social-share-fix
@@ -3389,7 +3396,6 @@ _social-bar/
 ##.ty-social-link-block
 ##.typcn-social-twitter
 ##.ui-share-page
-##.ui-socialbar-image
 ##.ui-socials
 ##.uix_socialMedia
 ##.uix_socialMediaLinks
@@ -3486,7 +3492,6 @@ _social-bar/
 ##.widget_nypost_social_widget
 ##.widget_siliconcounters
 ##.widget_social
-##.widget_social_counter
 ##.widget_social_links
 ##.widget_social_networks
 ##.widget_socialnetworklinks_widget
@@ -4067,7 +4072,6 @@ eurointegration.com.ua##.post__social
 cointelegraph.com##.post__socials-block
 pravda.com.ua##.post_social_item
 psypost.org##.pp-follow-card
-tweaktown.com##.pr-p7.fsvgs
 lifestyleasia.com##.pre-footer_instagram
 coywolf.com##.preferred
 gsmarena.com,ign.com,torquenews.com##.preferred-source
@@ -4249,6 +4253,9 @@ vice.com##.wp-block-jetpack-sharing-buttons-wrapper
 publichealthpolicyjournal.com,theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
 firstpost.com##.yt-ch
+securityweek.com##.zox-foot-soc
+securityweek.com##.zox-post-soc-list
+securityweek.com##.zox-top-soc-wrap
 rnz.co.nz##[aria-label*="Share"]
 sfgate.com##[aria-label="Share from Email"]
 thejc.com##[aria-label="Share this article"]
@@ -4420,6 +4427,7 @@ bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
+berliner-kurier.de##section[class^="article-top-panel_socials_"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 laprovence.com##.ContentFooter_social-footer___2tiv
@@ -4443,6 +4451,7 @@ francetvinfo.fr##.social-zone__wrapper
 ||lequipe.fr/_nuxt/Share.
 ||radio-canada.ca/mp/modules.socialbar.executer.$script
 tportal.hr##.footer__social_media
+hrt.hr##.h-screen
 jutarnji.hr##.item_social_share
 tportal.hr##.t-share
 storm.mg###article_sns_inner
