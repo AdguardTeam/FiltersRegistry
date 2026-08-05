@@ -1,9 +1,9 @@
-! Checksum: 3G40D87kDT0kwJSucs79Dw
-! Diff-Path: ../patches/19/19-s-1785920852-3600.patch
+! Checksum: JAlWTdvOaxn2Ta62ZCXNuQ
+! Diff-Path: ../patches/19/19-s-1785927378-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.80.7
-! TimeUpdated: 2026-08-05T09:05:09+00:00
+! Version: 2.0.80.8
+! TimeUpdated: 2026-08-05T10:53:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -71,6 +71,9 @@ music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 [$path=/pogoda]yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 !
 ! Yandex.Video
+! In search
+ya.ru,yandex.*##.AdvSnippetFeature-Item
+ya.ru,yandex.*##div[id^="search-list-"][id*="-R-I-"]
 ! ads near the player
 ya.ru,yandex.*##div[id^="Video-"] div[class*="VideoListPageDirect"]
 ya.ru,yandex.*##div[class*="-DirectSkeleton"]
@@ -101,8 +104,6 @@ yandex.ru##.main__block-banner iframe[src]
 [$path=/search]ya.ru,yandex.*#%#//scriptlet('remove-node-text', 'script', '/^window\.Ya.*pcodeParams.*renderTo/')
 ! In the feed
 ya.ru##.feed > div > ul > li.feed__item:has(div[id*="R-I-"])
-! Video search
-ya.ru,yandex.*##div[id^="search-list-"][id*="-R-I-"]
 !
 ! Yandex.TV
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
@@ -10743,7 +10744,7 @@ www.kinopoisk.ru#$#body[class*="styles_body"] { overflow: auto !important; }
 ! END: Yandex
 !
 ! Tegna Inc.
-myfoxzone.com,wtol.com,5newsonline.com,fox61.com,wthr.com,wqad.com,fox43.com,10tv.com,localmemphis.com,newswest9.com,weareiowa.com,krem.com,kcentv.com,cbs19.tv,kiiitv.com,12newsnow.com,cbs8.com,kvue.com,wbir.com,wltx.com,wgrz.com,newscentermaine.com,whas11.com,ktvb.com,13wmaz.com,firstcoastnews.com,wnep.com,wtsp.com,wfaa.com,kgw.com,king5.com,wcnc.com,kens5.com,ksdk.com,khou.com,wusa9.com,abc10.com,wwltv.com,11alive.com,wfmynews2.com,thv11.com,9news.com,wkyc.com,wzzm13.com,kare11.com,13newsnow.com,12news.com#$?#div[data-module="grid"] > dialog[data-name="exitInterstitial"] { remove: true; }
+11alive.com,myfoxzone.com,wtol.com,5newsonline.com,fox61.com,wthr.com,wqad.com,fox43.com,10tv.com,localmemphis.com,newswest9.com,weareiowa.com,krem.com,kcentv.com,cbs19.tv,kiiitv.com,12newsnow.com,cbs8.com,kvue.com,wbir.com,wltx.com,wgrz.com,newscentermaine.com,whas11.com,ktvb.com,13wmaz.com,firstcoastnews.com,wnep.com,wtsp.com,wfaa.com,kgw.com,king5.com,wcnc.com,kens5.com,ksdk.com,khou.com,wusa9.com,abc10.com,wwltv.com,11alive.com,wfmynews2.com,thv11.com,9news.com,wkyc.com,wzzm13.com,kare11.com,13newsnow.com,12news.com#$?#div[data-module="grid"] > dialog[data-name="exitInterstitial"] { remove: true; }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223480
 !+ NOT_OPTIMIZED
@@ -12664,7 +12665,7 @@ ndtv.com/js/notify.js
 ||zakon.kz/static_zakon/push-notifications/main.js
 !
 ! Tegna Inc.
-/notifications*.js$domain=myfoxzone.com|wtol.com|5newsonline.com|fox61.com|wthr.com|wqad.com|fox43.com|10tv.com|localmemphis.com|newswest9.com|weareiowa.com|krem.com|kcentv.com|cbs19.tv|kiiitv.com|12newsnow.com|cbs8.com|kvue.com|wbir.com|wltx.com|wgrz.com|newscentermaine.com|whas11.com|ktvb.com|13wmaz.com|firstcoastnews.com|wnep.com|wtsp.com|wfaa.com|kgw.com|king5.com|wcnc.com|kens5.com|ksdk.com|khou.com|wusa9.com|abc10.com|wwltv.com|11alive.com|wfmynews2.com|thv11.com|9news.com|wkyc.com|wzzm13.com|kare11.com|13newsnow.com|12news.com
+/notifications*.js$domain=myfoxzone.com|wtol.com|5newsonline.com|fox61.com|wthr.com|wqad.com|fox43.com|10tv.com|localmemphis.com|newswest9.com|weareiowa.com|krem.com|kcentv.com|cbs19.tv|kiiitv.com|12newsnow.com|cbs8.com|kvue.com|wbir.com|wltx.com|wgrz.com|newscentermaine.com|whas11.com|ktvb.com|13wmaz.com|firstcoastnews.com|wnep.com|wtsp.com|wfaa.com|kgw.com|king5.com|wcnc.com|kens5.com|ksdk.com|khou.com|wusa9.com|abc10.com|wwltv.com|11alive.com|wfmynews2.com|thv11.com|9news.com|wkyc.com|wzzm13.com|kare11.com|13newsnow.com|12news.com|11alive.com
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150086
 quizangel.com#%#//scriptlet('set-constant', 'arrJsConfig.enablePushNotification', '0')
@@ -12947,8 +12948,6 @@ superpower.com##.footer2_newsletter
 store.google.com##dialog[data-dialog-name="crm_crm_popup_center"]
 itmedia.co.jp##.-mailmagazine
 krolmateracy.pl##.bhr-board__overlay
-wltx.com,wgrz.com,wbir.com,kvue.com,cbs8.com,12newsnow.com,kiiitv.com,localmemphis.com,kcentv.com,wqad.com,fox43.com,10tv.com,myfoxzone.com,newswest9.com,12news.com,13newsnow.com,5newsonline.com,fox61.com##.grid__cell[data-columns]:has(> div[data-analytics-name="Braze Newsletter Signup-1"])
-wltx.com,wgrz.com,wbir.com,kvue.com,cbs8.com,12newsnow.com,kiiitv.com,localmemphis.com,kcentv.com,wqad.com,fox43.com,10tv.com,myfoxzone.com,wtol.com,9news.com,newswest9.com,weareiowa.com,krem.com,newscentermaine.com##.grid__main > div.grid__cell:has(> div.grid__module > div.grid__module-sizer_name_braze-signup)
 kod.ru##.site-banner
 lance.com.br##.paywall-content > p:has(a[href^="https://profile.google.com/cp/"])
 lance.com.br##.paywall-content > p:has(a[href^="https://whatsapp.com/channel/"])
@@ -22835,6 +22834,10 @@ ilfont.it##body div.popup-overlay-newsletter
 ||widget.manychat.com^$domain=ukrinform.ru
 ||widgets.contentfleet.com/newsletter/
 ||womenshealthmag.com/*/files/wh-newsletter-signup$image
+!
+! Tegna Inc.
+abc10.com,wwltv.com,wfmynews2.com,thv11.com,wzzm13.com,kare11.com,wkyc.com,localmemphis.com,kcentv.com,wtol.com,9news.com,newswest9.com,weareiowa.com,krem.com,newscentermaine.com,wltx.com,wgrz.com,kvue.com,cbs8.com,12newsnow.com,kiiitv.com,wqad.com,fox43.com,10tv.com,myfoxzone.com,12news.com,13newsnow.com,5newsonline.com,fox61.com##.grid__cell[data-columns]:has(> div[data-analytics-name="Braze Newsletter Signup-1"])
+abc10.com,wwltv.com,wfmynews2.com,thv11.com,wzzm13.com,kare11.com,wkyc.com,localmemphis.com,kcentv.com,wtol.com,9news.com,newswest9.com,weareiowa.com,krem.com,newscentermaine.com,wltx.com,wgrz.com,kvue.com,cbs8.com,12newsnow.com,kiiitv.com,wqad.com,fox43.com,10tv.com,myfoxzone.com,12news.com,13newsnow.com,5newsonline.com,fox61.com##.grid__main > div.grid__cell:has(> div.grid__module > div.grid__module-sizer_name_braze-signup)
 !
 ! Future Publishing Limited Quay House
 tomsguide.com,fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com###clubPopup
