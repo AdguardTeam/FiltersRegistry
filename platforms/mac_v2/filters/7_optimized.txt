@@ -1,9 +1,9 @@
-! Checksum: BkBYhL90vWdc0w/TXD84gg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1785927425-3600.patch
+! Checksum: Pu3k5TNsF1juSsNh98C6iA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1785951520-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.75.38
-! TimeUpdated: 2026-08-05T10:53:33+00:00
+! Version: 2.0.75.39
+! TimeUpdated: 2026-08-05T17:35:22+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||scrollpop.online^$third-party
@@ -7957,6 +7957,7 @@ medibang.com##.mdbnViewerLast__adBannerBox
 joker004.blog.fc2.com,medibang.com##div[style^="width:728px;height:90px"]
 medibang.com##div[style^="width: 970px;height: 90px;margin: 10px auto -10px"]
 medibang.com##div[class^="adBlock__"]
+[$path=/special/coupon]pointmall.rakuten.co.jp##div[id^="div-gpt-"]
 pointmall.rakuten.co.jp##.mallgacha-ads
 pointmall.rakuten.co.jp##.side-ad
 pointmall.rakuten.co.jp##style + div.side-box:has(> ul > li > a[href^="https://ac.ebis.ne.jp/tr_set.php"][target="_blank"][rel="noopener noreferrer"])
@@ -11702,6 +11703,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+@@||s-cdn.rmp.rakuten.co.jp/js/aa.js$domain=pointmall.rakuten.co.jp
+@@||s-ad.rmp.rakuten.co.jp/ad$domain=pointmall.rakuten.co.jp
 oricon.co.jp#%#//scriptlet('googletagservices-gpt')
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=sp.nicovideo.jp
 solispia.com#@##adModal
