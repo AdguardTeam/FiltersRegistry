@@ -1,9 +1,9 @@
-! Checksum: jOMWeskjiTXjxMp1OH1jWg
-! Diff-Path: ../patches/6/6-s-1785958611-3600.patch
+! Checksum: mkNyBUvwwt/uJxOfw6Z8aw
+! Diff-Path: ../patches/6/6-s-1785999826-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.52.90
-! TimeUpdated: 2026-08-05T19:33:59+00:00
+! Version: 2.0.52.91
+! TimeUpdated: 2026-08-06T07:00:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2123,6 +2123,7 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+||esut.de/wp-content/banners/$image
 eltern.de##.page__aside > .js-ob:empty
 eltern.de##.page__aside > .footer-teaserblock:not(:has(>*))
 eltern.de##.article__body > .multi-purpose-slot:has(> .multi-purpose-slot__static-content > .list-element > .ad-labels)
@@ -2321,7 +2322,7 @@ testsieger.de###sponsoredAdsHeader
 testsieger.de###offers
 testsieger.de###mainOfferCards
 testsieger.de##.ts-pdp-product-right-col > h4:has(+ #mainOfferCards)
-soldat-und-technik.de##.g:has(> .g-dyn > a[onclick*="advert_name"])
+esut.de,soldat-und-technik.de##.g:has(> .g-dyn > a[onclick*="advert_name"])
 evangelisch.de##.b-banner
 ||evangelisch.de/sites/default/files/banner/
 flashfussball.de##div[id^="zoneContainer-"]
@@ -6525,6 +6526,9 @@ amateurbusters.com#?#.sb_area > .sb_area_headline:contains(Urlaub)
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/237609
+! caused by external filter list BPC-clone
+||spiegel.de/public/shared/generated/js/commons.*.js$script,~third-party,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237283
 @@||ads.julephosting.de/podcasts/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231337
