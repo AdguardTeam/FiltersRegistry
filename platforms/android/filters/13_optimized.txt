@@ -1,9 +1,9 @@
-! Checksum: F1qbs1ba/BL1eYf/pz2KiA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1785945020-3600.patch
+! Checksum: voXZDtCZJUxYiOu8DLsIyA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1786007240-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.63
-! TimeUpdated: 2026-08-05T15:47:28+00:00
+! Version: 2.0.66.64
+! TimeUpdated: 2026-08-06T09:04:29+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5609,11 +5609,12 @@ patrongol34.cfd##.background-link
 patrongol34.cfd##.top-banner-header
 ||blogger.googleusercontent.com/img/$domain=patrongol34.cfd
 !+ NOT_VALIDATE
-||blogger.googleusercontent.com/img/$domain=/patronlive\d+\.cfd$/
-[$domain=/patronlive\d+\.cfd$/]##.background-link
-[$domain=/patronlive\d+\.cfd$/]##.top-banner-header
-[$domain=/patronlive\d+\.cfd$/]##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
-[$domain=/patronlive\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled: true', 'prerollEnabled: false')
+||blogger.googleusercontent.com/img/$domain=/patron(live\|futbol)\d+\.cfd$/
+[$domain=/patron(live\|futbol)\d+\.cfd$/]##.channel-ad-item
+[$domain=/patron(live\|futbol)\d+\.cfd$/]##.background-link
+[$domain=/patron(live\|futbol)\d+\.cfd$/]##.top-banner-header
+[$domain=/patron(live\|futbol)\d+\.cfd$/]##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
+[$domain=/patron(live\|futbol)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled: true', 'prerollEnabled: false')
 [$domain=/piabettv\d+\.live$/]##header > ul > li:not(:has(> a[href="/"]))
 ||papaztv*.com/assets/images/banners/
 [$domain=/papaztv\d?\.com$/]##div[class*="-banner"]
