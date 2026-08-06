@@ -1,9 +1,9 @@
-! Checksum: E7XCGWPEJrt+urj2pYZFfQ
-! Diff-Path: ../patches/13/13-s-1786007288-3600.patch
+! Checksum: CaaVwPoA/PD7VYS6PiOegg
+! Diff-Path: ../patches/13/13-s-1786013963-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.64
-! TimeUpdated: 2026-08-06T09:04:29+00:00
+! Version: 2.0.66.65
+! TimeUpdated: 2026-08-06T10:55:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1984,6 +1984,7 @@ hotstream.club###my-video_jw > .alert
 /pops*.js$domain=kuzufilmizle1.com|yavuzfilmm.com|kelebekfilmm1.com|erotikjam.com|yavuzfilmizle.com|filmkuzusu.vip|safirfilm.vip
 ||loanpaydayok.com/izin/
 loanpaydayok.com#$#body { background: transparent !important; }
+fotomac.com.tr##.advers-300-250
 fotomac.com.tr##a[href^="http://"] > span
 fotomac.com.tr##a[aria-label^="REKLAM - "]
 akyazihaber.com##body > div.container:has(> div.row > div.col-12 > div.ads)
@@ -6003,6 +6004,13 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: macvardi*.com
+! Source: macvardi281.com
+||macvardi*.com/*.gif
+[$domain=/macvardi\d+\.com$/]##div[style^="margin:"]:has(> a[href][target="_blank"])
+[$domain=/macvardi\d+\.com$/]##header > ul > li.blink:has(> a[href="/"]) ~ li.blink
+[$domain=/macvardi\d+\.com$/]##.footer-links
+!
 ! Frequently changed domains: baycontitv*.com
 ! Source: baycontitv14.com
 ||baycontitv*.com/view/theme/ultimate/img/*.gif
@@ -6641,6 +6649,9 @@ justintvizle730.top###video_reklam
 ! aglint-enable no-invalid-modifiers
 [$domain=/selcuksports\d+\.com/]##img[id^="top-ads-"]
 ! CASE 3 - probably fake
+taraftarium24bjk9.com###ad-pageskin
+taraftarium24bjk9.com##.listAd
+taraftarium24bjk9.com,justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
 ||taraftarium24pro*.site/*.gif
 [$domain=/taraftarium24pro\d+\.site$/]##.below-player-banner
 [$domain=/taraftarium24pro\d+\.site$/]##.t24-sq-overlay
@@ -6953,10 +6964,12 @@ webteizle3.xyz,webteizle4.xyz,webteizle5.xyz,webteizle6.xyz,webteizle7.xyz,webte
 sinefy3.com,sinefy4.com,sinefy5.com,sinefy6.com,sinefy7.com,sinefy8.com,sinefy9.com,sinefy10.com##a[href^="http://track.adform.net/"]
 !
 ! Frequently changed domains: sporligtv*.live
-! Source: https://t.co/SXTJpEknTQ
-||sporligtv*.live/superderbi.php
-[$domain=/(^\|.+\.)sporligtv\d+\.live/]###superderbi
-sporligtv480.live,sporligtv481.live,sporligtv482.live,sporligtv483.live,sporligtv484.live,sporligtv485.live,sporligtv486.live,sporligtv487.live,sporligtv488.live,sporligtv489.live,sporligtv490.live,sporligtv491.live,sporligtv492.live,sporligtv493.live,sporligtv494.live,sporligtv495.live,sporligtv496.live,sporligtv497.live,sporligtv498.live,sporligtv499.live,sporligtv500.live###superderbi
+! Source: sporligtv627.live
+||sporligtv*.live/banner/
+||sporligtv*.live/superderbi.php?
+[$domain=/sporligtv\d+\.live/]##div[id^="binxell"]
+[$domain=/sporligtv\d+\.live/]###ustbanner
+[$domain=/sporligtv\d+\.live/]###superderbi
 !
 ! Frequently changed domains: avrupabettv*.com
 ! Source: https://avrupabettv997.com/
