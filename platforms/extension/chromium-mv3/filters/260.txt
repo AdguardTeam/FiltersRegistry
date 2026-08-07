@@ -1,8 +1,8 @@
-! Checksum: ooeAQv9bGSc1xGW6TvcLYQ
+! Checksum: 4tLcCyK4khrblcYcuImxLw
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.3
-! TimeUpdated: 2026-08-06T13:06:45+00:00
+! Version: 2.0.1.4
+! TimeUpdated: 2026-08-07T01:36:23+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -39,6 +39,12 @@
 1password.com##.header-navigation__nav-banner-link[href="/product/unified-access"] > .box-decoration-clone
 ! AI promo
 1password.com#?#[data-testid="text-lockup"] .w-full.space-y-6.text-balance:contains(Secure access for every human and AI agent)
+! ===========================
+! == Aberdeen City Council ==
+! ===========================
+! -- https://www.aberdeencity.gov.uk/
+! Floating chatbot button
+www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
 ! ==================
 ! == Adblock Plus ==
 ! ==================
@@ -96,6 +102,7 @@ www.alibaba.com##.accio-wrapper
 ! -- https://www.aliexpress.us/item/3256808332164347.html
 ! AI Overview
 www.aliexpress.us##div:has(> [class^="seo-sellpoints--title--"])
+www.aliexpress.us##div:has(> [class^="seo-sellpoints--title--"]) + [class^="split-line--wrap--"]
 ! ==================
 ! == Alpha Coders ==
 ! ==================
@@ -123,6 +130,7 @@ www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')
 ! Rufus chatbot in sidebar
 ! * Requires trusted filters in AdGuard
+! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1pod2g6/comment/nuelobn/
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel:dockedState', 'null')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel', 'null')
 ! -- https://www.amazon.com/Celeste-Nintendo-Switch-Digital-Code/dp/B079Z1LPSP (Product page)
@@ -210,6 +218,11 @@ www.asus.com##.Header__menuOuter__xBkro:has(> #aiMenu)
 www.asus.com##.Header__menuOuter__xBkro:has(> #aiMenu) + .Header__spaceForMenuItem__14d_b
 ! Floating chatbot button
 www.asus.com###brandAssistant-root
+! =========
+! == B&Q ==
+! =========
+! Navbar > Hello B&Q button
+www.diy.com##[data-testid="hello-bq"]
 ! ==============
 ! == Backbone ==
 ! ==============
@@ -489,6 +502,14 @@ developer.cisco.com##.wrapper-dwc-notification:has([href="/codeexchange/ai/"])
 ! -- https://claimyr.com/government-services/irs/What-Business-Code-Should-I-Use-For-My-Content-Creator-Partnership-on-My-1099-MISC/2025-04-11
 ! IRS AI chatbot assistant
 claimyr.com##.chat-container-container
+! =============================
+! == Clarence Medical Centre ==
+! =============================
+! -- https://clarencemedicalrhyl.wales/
+! Floating AI chatbot
+clarencemedicalrhyl.wales###druidWebchatRoot_v2
+! * can also be blocked with network filter, but am unsure if this would break other elements on the site
+! ||druidapi.druidplatform.com/api/services/app/Bot/LoadConfiguration$xhr,domain=clarencemedicalrhyl.wales
 ! =================
 ! == Claude Docs ==
 ! =================
@@ -549,6 +570,15 @@ www.consumerreports.org##.cda-gnav__main-search-hints-semantic-askCR
 ! -- https://www.consumerreports.org/search/?query=test
 ! "AskCR" tab
 www.consumerreports.org###ask-cr-search-tab
+! =============
+! == Coolors ==
+! =============
+! Navbar > Tools > Color Bot
+coolors.co###megamenu_inner [href="/color-bot"]
+! -- https://coolors.co/generate
+! Toolbar AI button
+coolors.co###generator_ai-btn
+coolors.co###popover-hint:has(.icon-ai-sparkles-18px)
 ! ====================
 ! == Crate & Barrel ==
 ! ====================
@@ -1156,6 +1186,7 @@ support.github.com##.icXpMNcCnhao54vzcHSi:has(.prc-Flash-Flash-q6HW0)
 ! -- https://github.blog/
 ! Header - "Try Copilot" button
 github.blog##.Button[href^="https://github.com/features/copilot"]
+github.blog##.Button[href="https://github.com/features/ai/github-app"]
 ! ================
 ! == GitHub Dev ==
 ! ================
@@ -1632,6 +1663,7 @@ www.google.*##.oGdvd
 ! "Things to know" and "People also ask" sections
 ! * First filter hides list items, .cUnQKe hides header if all items are AI, .ULSxyf hides extra space if needed
 ! * Extra sanity checks on child elements of .ULSxyf to avoid overfiltering. (Example: https://www.google.com/search?q=world+cup+standing)
+! * Adapted from this thread (https://www.reddit.com/r/uBlockOrigin/comments/1u2k877/hiding_googles_things_to_know_section_if_all/)
 ! ** "Things to know"
 www.google.*##[jscontroller="Elkdbc"]
 www.google.*##.ULSxyf:has(> .MjjYud > div:not([class]) > [jsname="Ypkwb"] [jscontroller="Elkdbc"] > .EyBRub):not(:has(:not([jscontroller="Elkdbc"]) > .EyBRub))
@@ -3145,6 +3177,18 @@ www.udemy.com##.mc-quiz-answer--answer-inner--Uz9E8 > .ud-text-sm:has(svg.ud-ico
 ! AI Overview
 ||www.udemy.com/chatbot-realtime-gateway/api/v1/core/chats/stream?chat_name=agentic-search$xmlhttprequest,domain=www.udemy.com
 www.udemy.com##[data-purpose="ai-summary"]
+! ============
+! == uhomes ==
+! ============
+! -- https://en.uhomes.com/
+! Chat window when clicking floating AI button
+||sdk.uhzcdn.com/uhomes-ai-chat/$script,domain=uhomes.com
+! Floating chat bubble
+uhomes.com##.list-chat-icon-container
+! Search toggle for AI mode
+uhomes.com##.ai-search-toggle.mode-search > .toggle-pill
+! Footer > Support > uhomesAI
+uhomes.com##.ai-chat
 ! =================
 ! == Ulta Beauty ==
 ! =================
@@ -3189,7 +3233,6 @@ www.usnews.com##.MuiBox-root:has(> [aria-label="Ask U.S. News AI"])
 ! == Valnet ==
 ! ============
 ! Sites found via https://www.valnetinc.com/en/our-brands
-! * May also need to add backyardboss.net, fextralife.com, and therichest.com. Formatting was broken when initially checking
 ! -- https://www.howtogeek.com/repurposed-old-router-saved-20-dollars/
 ! AI summary button in left sidebar
 androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,fextralife.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,movieweb.com,pocket-lint.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com##.sensa-features
