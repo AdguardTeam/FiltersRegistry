@@ -1,9 +1,9 @@
-! Checksum: Mf14EzmJ4DjDRw2BkQn4uQ
-! Diff-Path: ../patches/260/260-s-1786121451-14400.patch
+! Checksum: v1f/VZKZVJ2/ZkEE7r8xVw
+! Diff-Path: ../patches/260/260-s-1786135752-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.5
-! TimeUpdated: 2026-08-07T16:48:01+00:00
+! Version: 2.0.1.6
+! TimeUpdated: 2026-08-07T20:46:19+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -2165,12 +2165,13 @@ support.microsoft.com,www.microsoft.com,www.xbox.com##li > a[href="https://www.m
 ! * Copilot tab
 support.microsoft.com,www.xbox.com##li > a[href="https://copilot.microsoft.com/"]
 ! Footer
-microsoft.com##li:has(> [href*="/microsoft-copilot/"])
-microsoft.com##li:has(> [href$="/microsoft-365-copilot?icid=DSM_Footer_Microsoft365Copilot"])
+blogs.windows.com,microsoft.com##li:has(> [href*="/microsoft-copilot/"])
+blogs.windows.com,microsoft.com##li:has(> [href$="/microsoft-365-copilot?icid=DSM_Footer_Microsoft365Copilot"])
+blogs.windows.com,microsoft.com##li:has(> [href$="/ai?icid=DSM_Footer_AI"])
+blogs.windows.com,microsoft.com##li:has(> [href="https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_Footer_SupportAIMarketplace&ocid=cmm3atxvn98"])
+blogs.windows.com,microsoft.com##li:has(> [href$="/education/ai-in-education"])
+! * No longer used?
 microsoft.com##li:has(> [href$="/windows/ai-features?icid=DSM_Footer_WhatsNew_AIinWindows"])
-microsoft.com##li:has(> [href$="/ai?icid=DSM_Footer_AI"])
-microsoft.com##li:has(> [href="https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_Footer_SupportAIMarketplace&ocid=cmm3atxvn98"])
-microsoft.com##li:has(> [href$="/education/ai-in-education"])
 ! "Store Assistant" chat box pinned to bottom right
 www.microsoft.com,www.xbox.com##.copilot-container
 !  -- https://www.microsoft.com/en-us (page specific)
@@ -3307,9 +3308,6 @@ www.walmart.com##[data-testid="bulleted-summary"]
 www.washingtonpost.com##[data-qa="product-nav-links-ul"] [href="https://www.washingtonpost.com/ask-the-post-ai/?itid=hp_top_nav_ask the post ai"]
 ! * Mobile version
 www.washingtonpost.com##[id$="-trigger-ask-the-post-ai"]
-! * Replace "Ask a question or search" text
-www.washingtonpost.com#$#form#search-form [role="label"] { font-size:0 !important; }
-www.washingtonpost.com#$#form#search-form [role="label"]::before { content:"Search"; font-size:16px; }
 ! -- https://www.washingtonpost.com/world/2026/05/26/us-renews-strikes-iran-citing-threats-posed-american-troops/
 ! Summary button in article header
 www.washingtonpost.com##[data-testid="ai-overview-btn"]
@@ -3319,10 +3317,8 @@ www.washingtonpost.com##[data-testid="subscribe-promo-button"][href="https://www
 www.washingtonpost.com##.wpds-c-kSOqLF-ijwAmXJ-css
 ! Comment summary
 www.washingtonpost.com##.wpds-c-bHXelH-igoXVOL-css
-! -- https://www.washingtonpost.com/opinions/2026/04/15/will-connecticut-crackdown-self-checkout-lanes/
-! Replace "Ask a question or search" text in search bar
-www.washingtonpost.com#$#form > [aria-label="Washington Post site search"] [role="label"] { font-size:0 !important; }
-www.washingtonpost.com#$#form > [aria-label="Washington Post site search"] [role="label"]::before { content:"Search"; font-size:16px; }
+! Comments > Conversation summary
+www.washingtonpost.com##.Highlights-singleCardContent-538a5c6f07095c4d6aed9dbfbed465fa
 ! -- https://www.washingtonpost.com/search/?query=What+is+2%2B2%3F
 ! AI Answer + disclaimer
 www.washingtonpost.com##.wpds-c-fixGjY-ihtVbxi-css
