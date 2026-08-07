@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PWKv/BfAn3HOxUFWlgvfag
-! Diff-Path: ../patches/19/19-s-1786101763-3600.patch
+! Checksum: DVd5E/DqFl/W0Zc8OV7SAw
+! Diff-Path: ../patches/19/19-s-1786105473-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.80.23
-! TimeUpdated: 2026-08-07T11:19:57+00:00
+! Version: 2.0.80.24
+! TimeUpdated: 2026-08-07T12:21:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -122,7 +122,7 @@ turbopages.org##+js(json-prune, *.blockId)
 !
 ! Kinopoisk
 www.kinopoisk.ru##+js(set-constant, Object.prototype.renderToNode, undefined)
-www.kinopoisk.ru##div[class^="styles_content_"][class*="styles_"][data-tid]
+www.kinopoisk.ru###modal-container div[class^="styles_content_"][class*="styles_"][data-tid]
 www.kinopoisk.ru##div[class^="toaster-container"]
 hd.kinopoisk.ru##.ReactModalPortal > div[class*=" styles_fixed__"]:has(> div > a[href$="/yandex-in-adblock.html"])
 kinopoisk.ru##div[class*="_adBlockWarningRoot__"]
@@ -3287,6 +3287,9 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+animex.one##div[aria-label="Changelog"]:style(display: none !important;)
+animex.one###bits-c14:style(display: none !important;)
+animex.one##+js(remove-attr, style, body[style*="overflow:"])
 cinevaro.app##.fixed.inset-x-0.bottom-4
 anikototv.to###ak-ci-bar
 society6.com##div[id^="alia-popup-root-alia-"]
@@ -3339,8 +3342,8 @@ flixer.gd,flixer.su,flixer.*##[class^="fixed z-[60]"]:has(> div.relative > butto
 dramaflix.cc##+js(set-session-storage-item, telegram_popup_v1, true)
 ||tally.so/widgets/embed.js$domain=nikvesti.com
 linuxblog.io###lcio-popup-overlay
-anikuro.ru##.anikuro-rewrite-popup
-anikuro.ru##.anikuro-rewrite-popup-backdrop
+anikuro.to,anikuro.ru##.anikuro-rewrite-popup
+anikuro.to,anikuro.ru##.anikuro-rewrite-popup-backdrop
 getint.io##+js(remove-node-text, script, ebook_popup_shown)
 sportmo.shop##+js(set-cookie-reload, iqitpopup_35251, 1)
 securitylab.ru##.header-social-links
@@ -12704,6 +12707,7 @@ heavyequipmentguide.ca##main > div[style="opacity: 1;"]:style(display: none !imp
 fortune.com###rightRail > div.margin-safe-area.flex-col:has(> button:contains(Add us on Google))
 velikiy-novgorod.beeline.ru##div[data-t-id="components-SubscriptionForms"]
 wefry.ru##.socials__subscribe
+sammobile.com##.google-preferred-news-source-cta
 sud.ua##.subscribe_tg
 superpower.com##.footer2_newsletter
 store.google.com##dialog[data-dialog-name="crm_crm_popup_center"]

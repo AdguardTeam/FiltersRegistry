@@ -1,9 +1,9 @@
-! Checksum: OOLCW5NcY/pa70Y8xza7AA
-! Diff-Path: ../patches/13/13-s-1786101738-3600.patch
+! Checksum: KUq9l/USQ+8aP8XtJbyXHA
+! Diff-Path: ../patches/13/13-s-1786105439-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.73
-! TimeUpdated: 2026-08-07T11:19:41+00:00
+! Version: 2.0.66.74
+! TimeUpdated: 2026-08-07T12:21:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6014,6 +6014,12 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: papaztv*.live
+! Source: papaztv7.live
+[$domain=/papaztv\d+\.live$/]##div[class^="reklam-"]
+[$domain=/papaztv\d+\.live$/]##body > header
+[$domain=/papaztv\d+\.live$/]##.footer-links
+!
 ! Frequently changed domains: kralsportshd*.xyz
 ! Source: kralsportshd3.xyz
 ! aglint-disable no-invalid-modifiers
@@ -6420,9 +6426,10 @@ primeembedpanel.com#%#//scriptlet('prevent-window-open')
 [$domain=/zeustv\d+\.com/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 [$domain=/zeustv\d+\.com/]##div[data-footer-4ds]
 !
-! Frequently changed domains: xsportv*.xyz
-[$domain=/xsportv\d+\.xyz/]##.betting-sites
-[$domain=/xsportv\d+\.xyz/]##a[href^="https://t2m.io/"]
+! Frequently changed domains: xsportv-*.xyz
+! Source: xsportv-de596bbe2f.xyz
+[$domain=/xsportv-[a-z0-9]+\.xyz$/]##.betting-sites
+[$domain=/xsportv-[a-z0-9]+\.xyz$/]##a[href^="https://bit.ly/"]
 !
 ! Frequently changed domains: vegatv*.shop
 ||vegatv*.shop/*.gif

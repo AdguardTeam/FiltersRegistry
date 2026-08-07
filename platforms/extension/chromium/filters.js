@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.7.94",
-			"timeUpdated": "2026-08-07T11:19:04+0000",
+			"version": "2.1.7.95",
+			"timeUpdated": "2026-08-07T12:20:21+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.82.2",
-			"timeUpdated": "2026-08-07T11:19:18+0000",
+			"version": "2.4.82.3",
+			"timeUpdated": "2026-08-07T12:20:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.75",
-			"timeUpdated": "2026-08-07T10:21:47+0000",
+			"version": "2.1.8.76",
+			"timeUpdated": "2026-08-07T12:20:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.66.73",
-			"timeUpdated": "2026-08-07T11:19:41+0000",
+			"version": "2.0.66.74",
+			"timeUpdated": "2026-08-07T12:21:12+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.75.2",
-			"timeUpdated": "2026-08-07T11:19:48+0000",
+			"version": "2.2.75.3",
+			"timeUpdated": "2026-08-07T12:21:21+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.30.50",
-			"timeUpdated": "2026-08-07T10:22:10+0000",
+			"version": "2.1.30.51",
+			"timeUpdated": "2026-08-07T12:21:25+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.80.23",
-			"timeUpdated": "2026-08-07T11:19:57+0000",
+			"version": "2.0.80.24",
+			"timeUpdated": "2026-08-07T12:21:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
