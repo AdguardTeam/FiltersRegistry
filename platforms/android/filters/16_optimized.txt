@@ -1,5 +1,5 @@
-! Checksum: eqZo8CzqrH01ZUjMh2nQnQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1786007242-3600.patch
+! Checksum: PEHciitjLUIdhz7x1YUBfg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1786072075-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.20
@@ -121,6 +121,7 @@ lameteoagricole.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.co
 meteo-grenoble.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 cinefil.com#%#//scriptlet('set-constant', 'checkDiv', 'noopFunc')
 @@||rustica.fr/*.iads.js
+@@||gift.ibon.com.tw/*/pub.js
 xn--mto-bmab.fr#@#.topbanneradvertise
 empire-streaming.*#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 empire-anime.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
@@ -702,6 +703,7 @@ mac4ever.com##.adContainer
 lefigaro.fr##.fig-sticky-bottom-subscription-banner
 zeste.ca##.isPub
 zeste.ca##.wrapper-pub
+paroles2chansons.lemonde.fr##.fixme-container
 charentelibre.fr,sudouest.fr,techno-science.net##.pub
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
@@ -1064,6 +1066,7 @@ mobimart.it#@##ad_global_below_navbar
 @@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=gala.fr
 ||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=gala.fr
 ||googletagmanager.com/gtm.js$script,redirect=google-analytics,domain=gala.fr
+||prismamedia-com.videoplayerhub.com/galleryplayer.js$script,redirect=noopjs,domain=gala.fr
 @@||content.uplynk.com/preplay/*/multiple.json*&ad.preroll$domain=fifa.com
 @@||google.com/recaptcha/api.js
 $popup,domain=mcloud.to,badfilter
@@ -1595,7 +1598,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?out=*&zone_id=
 ?Page=*&Width=300&
 ?promo=*&url=
-?promoTool=*&aff_sub=
 ?pub_id=
 ?r=*&zoneid=
 ?size=728x90|$subdocument
@@ -2158,7 +2160,6 @@ _werbebanner_
 ||atrennedemeorebeard.qpon^
 ||avaljumectk.com^
 ||avehospitablestrangers.com^
-||aveuglediking.com^
 ||awaregoo.shop^
 ||ayencc.top^
 ||aynhnrgxjxfv.com^
@@ -2965,6 +2966,7 @@ _werbebanner_
 ||averoconnector.com^$third-party
 ||binance.org^$third-party
 ||browsealoud.com/plus/scripts/$script
+||cfcdist.gdn^$third-party
 ||cnhv.co^$third-party
 ||coin-have.com^$third-party
 ||coinblind.com^$third-party
@@ -3082,7 +3084,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||alloref.com^$image,third-party
 ||ams.cdn.arkadiumhosted.com/advertisement/$media
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
-||annuaire-generaliste.fr/affiche_logo.php?
 ||api.gamerprices.com/compare/$third-party
 ||arc.io/widget$third-party
 ||asumi.shinobi.jp^
@@ -3264,7 +3265,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||lookimg.com/images/2021/12/20/PydgJE.png
 ||nsa40.casimages.com/img/2020/05/11/200511033032222532.png
 ||zupimages.net/up/21/14/7x9v.gif
-||amazonaws.com^$domain=anyanime.com|ay.gy|brain-magazine.fr|citethisforme.com|ddl1.best|despair-paradise.com|easybib.com|esgentside.com|gamecopyworld.eu|gentside.com|gentside.com.br|gentside.de|gogoanime.io|gorillavid.com|inkapelis.com|istream2watch.com|maquillage.com|maxisciences.com|namemc.com|ohmymag.com|ohmymag.com.br|ohmymag.de|pausefun.com|pausepeople.com|pelisplus.to|replaymod.com|solidfiles.com|stream2watch.org|tokenfly.pw|uploadcrazy.net|vercanalestv1.com|zippyshare.com|zlshorte.net
 ||cloudfront.net^$domain=anyanime.com|ay.gy|brain-magazine.fr|citethisforme.com|ddl1.best|despair-paradise.com|easybib.com|esgentside.com|gamecopyworld.eu|gentside.com|gentside.com.br|gentside.de|getpublica.com|gogoanime.io|gorillavid.com|inkapelis.com|istream2watch.com|maquillage.com|maxisciences.com|namemc.com|ohmymag.com|ohmymag.com.br|ohmymag.de|pausefun.com|pausepeople.com|pelisplus.to|remedes-de-grand-mere.com|replaymod.com|solidfiles.com|stream2watch.org|tokenfly.pw|uploadcrazy.net|vercanalestv1.com|zippyshare.com|zlshorte.net
 ||d138am4hd4ke4y.cloudfront.net^
 ||d13jhr4vol1304.cloudfront.net^
@@ -3372,7 +3372,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||ads.ennaharonline.com^
 ||adserve.lasentinelle.mu^
 ||adserver.icimedias.ca^
-||africaguinee.com/*/banner
 ||africaguinee.com/*/bannier
 ||agroligne.com/images/banners/
 ||algerie360.com/pub360/
@@ -3515,6 +3514,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||nestoria.fr/jsp/include/banners/
 ||nextwarez.com/wp-content/uploads/*-300x250.
 ||niooz.fr^$subdocument
+||openstreetmap.org/assets/banners/
 ||pagesjaunes-dz.com/pub/
 ||pagesjaunes.fr/js/pj_ad.js
 ||partenaire.leparticulier.fr^
@@ -3913,6 +3913,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###sponsor_google
 ###sponsor_sidebar
 ###sponsored-container
+###sponsoredContainer
 ###sponsoredProducts
 ###stickyDFP
 ###stop_ad
@@ -4063,6 +4064,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.hmads_1x1
 ##.hmads_300x250
 ##.horizontal-pub
+##.ibd-videos-paid-ad
 ##.iframe_pub
 ##.iframeads
 ##.iklan
@@ -4106,7 +4108,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.masthead-overHeader
 ##.mb_video_syncad
 ##.mbanner-ad-wrapper
-##.mdmAd-inner
 ##.media-pub-1-in-article-adsence
 ##.media-pub-2-in-article-adsence
 ##.midads
@@ -4183,7 +4184,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pub-728
 ##.pub-728-90
 ##.pub-728x90
-##.pub-960x90
 ##.pub-970x90
 ##.pub-Adtech
 ##.pub-after-download
@@ -4202,6 +4202,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pub-img
 ##.pub-index
 ##.pub-label
+##.pub-megabanner
 ##.pub-pave
 ##.pub-promo
 ##.pub-replace
@@ -4473,7 +4474,6 @@ clubpoker.net###bannerTopWrapper
 lacanausurfinfo.com###banner_footer
 jeuxvideo.com###banner_jv
 betaseries.com###banner_top
-aliceadsl.fr###bannershop
 cowcotland.com###bannertop
 jeux-gratuits.com###barre-partenaires
 tetesaclaques.tv###bigBox
@@ -4589,6 +4589,7 @@ radio-monaco.com###responsive-banner-slider
 sante-dz.com###revenue-wrapper
 rugbyfederal.com###right_sky
 lesoir.be###rossel-imu-bottom
+zapiks.fr###shop
 emu-france.com###sidebar-right a > img[style^="width:"]
 mobigeeks.fr###sidebar-shell-2
 lematin.ch###sidebarSky
@@ -4658,7 +4659,6 @@ codeur.com##.badge-project-urgent
 cnews.fr##.ban-bottom-desktop
 bdgest.com,bedetheque.com##.ban-top
 cnews.fr##.ban-top-habillage
-agroligne.com##.ban_holder
 pornovore.fr##.bandeau-vertical
 handroit.com##.bandeau_header
 01net.com,1001jeux.fr,2conv.com,afrik-foot.com,afrik.com,afrikeco.com,expressio.fr,flvto.biz,glenatbd.com,hdnumerique.com,jizzbunker.com,journaldugeek.com,lautomarche.com,manga-news.com,medialot.fr,mesbagages.com,mob.org,orientation-chabab.com,photofiltres.fr,solutions-numeriques.com,telquel.ma,textnow.com,ventsdouest.com##.banner
