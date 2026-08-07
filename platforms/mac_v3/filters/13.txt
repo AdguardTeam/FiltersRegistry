@@ -1,9 +1,9 @@
-! Checksum: VfQIY0OO7m/B+h1371F/0Q
-! Diff-Path: ../patches/13/13-s-1786105485-3600.patch
+! Checksum: aS6T7qhHyrRdyvpVeLnECQ
+! Diff-Path: ../patches/13/13-s-1786112909-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.74
-! TimeUpdated: 2026-08-07T12:21:12+00:00
+! Version: 2.0.66.75
+! TimeUpdated: 2026-08-07T14:25:16+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6167,6 +6167,15 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turk-ifsa\d+\.com/]##video + div.absolute
 [$domain=/turk-ifsa\d+\.com/]##.ad-banner-frame
 [$domain=/turk-ifsa\d+\.com/]##div[class][style^="min-height:"][style*="calc("]
+!
+! Frequently changed domains: turkifsa*.com
+! Source: turkifsa73.com
+||turkifsa*.com/api/popunder-config
+||turkifsa*.com/api/preroll-event
+[$domain=/turkifsa\d*\.com/]##div[class]:has(> a:is([href^="https://cutt.ly/"],[href="https://denemebonusumi.com/"]))
+[$domain=/turkifsa\d*\.com/]##video + div.absolute
+[$domain=/turkifsa\d*\.com/]##.ad-banner-frame
+[$domain=/turkifsa\d*\.com/]##div[class][style^="min-height:"][style*="calc("]
 !
 ! Frequently changed domains: turkifsa*.art
 ! Source: turkifsa25.art
