@@ -1,9 +1,9 @@
-! Checksum: hTpuM1q33vzMCKQG2jLwvQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1786088204-3600.patch
+! Checksum: ei7FbUayZEhcmay0MnRVNg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1786091498-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.69
-! TimeUpdated: 2026-08-07T07:33:48+00:00
+! Version: 2.0.66.70
+! TimeUpdated: 2026-08-07T08:28:35+00:00
 ! Expires: 10 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5502,6 +5502,9 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+!+ NOT_VALIDATE
+||blogger.googleusercontent.com/img/$domain=/kralsportshd\d+\.xyz$/
+[$domain=/kralsportshd\d+\.xyz$/]###splash-banner
 ||fixbettv*.com/*.gif
 ||fixbettv*.com/yayinonu.jpg
 [$domain=/fixbettv\d+\.com$/]##.ads-container
@@ -5543,7 +5546,9 @@ mahsunsports.xyz#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-vide
 ||*betine.live/view/theme/safir/img/*.gif
 [$domain=/\d+betine\.live$/]##.pageskin
 [$domain=/\d+betine\.live$/]##a[href^="https://t.ly/"]
-||livosports*.*/view/theme/ultimate/img/*.gif
+||livosports*.live/view/theme/ultimate/assets/js/rc.js
+||livosports*.live/view/theme/ultimate/img/*.gif
+[$domain=/livosports\d+\.live$/]##body > header
 [$domain=/livosports\d+\.live$/]##div[class^="reklam-"]
 x.palv2.cfd#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollVideoUrl', '/prerollVideoUrl = "https:.*\.mp4";/', 'prerollVideoUrl = "";')
 ||blogger.googleusercontent.com/img/$domain=x.palv2.cfd
@@ -5877,10 +5882,11 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ##a[target="_blank"] > img.justintvizle
 ##.justintvizle > a[target="_blank"]
 [$path=/channel.html?id=]#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
-||blogger.googleusercontent.com/img/$domain=melaniekannokada.com|taraftarium-24.pro|justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.com|taraftarium-24.co|tvjustin.*|sadeceiptv.com|justin-tv.pro|taraftarium24.xyz
-||cdn.jsdelivr.net^$media,redirect=noopmp3-0.1s,domain=melaniekannokada.com|taraftarium-24.pro|justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.co|taraftarium-24.com|tvjustin.*|sadeceiptv.com|justin-tv.pro|taraftarium24.xyz
-melaniekannokada.com,taraftarium-24.pro,taraftarium24.xyz,justin-tv.pro,tvjustin.*,taraftarium.is,sadeceiptv.com,taraftariumizle.org,taraftarium24.dev,taraftarium-24.com,taraftarium-24.co,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
-melaniekannokada.com,taraftarium-24.pro,taraftarium24.xyz,tvjustin.*,taraftarium.is,sadeceiptv.com,taraftariumizle.org,taraftarium24.dev,taraftarium-24.co,taraftarium-24.com,justin-tv.pro,taraftarium24.is,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*###splash-banner
+||blogger.googleusercontent.com/img/$domain=melaniekannokada.com|taraftarium-24.pro|justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.com|taraftarium-24.co|tvjustin.*|sadeceiptv.com|justin-tv.pro|taraftarium24.xyz|taraftarium.co
+||cdn.jsdelivr.net^$media,redirect=noopmp3-0.1s,domain=melaniekannokada.com|taraftarium-24.pro|justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.co|taraftarium-24.com|tvjustin.*|sadeceiptv.com|justin-tv.pro|taraftarium24.xyz|taraftarium.co
+melaniekannokada.com,taraftarium-24.pro,taraftarium24.xyz,justin-tv.pro,tvjustin.*,taraftarium.co,sadeceiptv.com,taraftariumizle.org,taraftarium24.dev,taraftarium-24.com,taraftarium-24.co,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
+taraftarium.co##.topDuyuru
+melaniekannokada.com,taraftarium-24.pro,taraftarium24.xyz,tvjustin.*,taraftarium.co,sadeceiptv.com,taraftariumizle.org,taraftarium24.dev,taraftarium-24.co,taraftarium-24.com,justin-tv.pro,taraftarium24.is,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*###splash-banner
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##div[class^="footer-"]
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##header > a[href="/"] + ul
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##.wpb_wrapper > center > a[target="_blank"]

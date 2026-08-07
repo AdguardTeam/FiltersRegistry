@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: gkn+1kua3Exqp/8g2H73yw
-! Diff-Path: ../patches/13/13-s-1786088216-3600.patch
+! Checksum: dE0JCWp2F2WlUpMKw/1Nhg
+! Diff-Path: ../patches/13/13-s-1786091509-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.69
-! TimeUpdated: 2026-08-07T07:33:48+00:00
+! Version: 2.0.66.70
+! TimeUpdated: 2026-08-07T08:28:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5981,6 +5981,16 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: kralsportshd*.xyz
+! Source: kralsportshd3.xyz
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||blogger.googleusercontent.com/img/$domain=/kralsportshd\d+\.xyz$/
+! aglint-enable no-invalid-modifiers
+/kralsportshd\d+\.xyz$/###splash-banner
+||blogger.googleusercontent.com/img/$domain=kralsportshd3.xyz
+kralsportshd3.xyz###splash-banner
+!
 ! Frequently changed domains: fixbettv*.com
 ! Source: fixbettv83.com
 ||fixbettv*.com/*.gif
@@ -6066,8 +6076,11 @@ jtvkanal8.vip##.banner
 !
 ! Frequently changed domains: livosports*.live
 ! Source: livosports30.live
-||livosports*.*/view/theme/ultimate/img/*.gif
+||livosports*.live/view/theme/ultimate/assets/js/rc.js
+||livosports*.live/view/theme/ultimate/img/*.gif
+/livosports\d+\.live$/##body > header
 /livosports\d+\.live$/##div[class^="reklam-"]
+livosports30.live##body > header
 livosports30.live##div[class^="reklam-"]
 !
 ! Frequently changed domains: dizimor*.com.tr
@@ -6821,9 +6834,10 @@ mactanmaca512.sbs##+js(set-cookie, reklamgosterimx, ok)
 ! For players in iframes
 ! justintv.shop
 ! CASE 1
-||blogger.googleusercontent.com/img/$domain=melaniekannokada.com|taraftarium-24.pro|justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.com|taraftarium-24.co|tvjustin.*|sadeceiptv.com|justin-tv.pro|taraftarium24.xyz
-||cdn.jsdelivr.net^$media,redirect=noop-0.1s.mp3,domain=melaniekannokada.com|taraftarium-24.pro|justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.co|taraftarium-24.com|tvjustin.*|sadeceiptv.com|justin-tv.pro|taraftarium24.xyz
-melaniekannokada.com,taraftarium-24.pro,taraftarium24.xyz,tvjustin.*,taraftarium.is,sadeceiptv.com,taraftariumizle.org,taraftarium24.dev,taraftarium-24.co,taraftarium-24.com,justin-tv.pro,taraftarium24.is,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*###splash-banner
+||blogger.googleusercontent.com/img/$domain=melaniekannokada.com|taraftarium-24.pro|justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.com|taraftarium-24.co|tvjustin.*|sadeceiptv.com|justin-tv.pro|taraftarium24.xyz|taraftarium.co
+||cdn.jsdelivr.net^$media,redirect=noop-0.1s.mp3,domain=melaniekannokada.com|taraftarium-24.pro|justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.co|taraftarium-24.com|tvjustin.*|sadeceiptv.com|justin-tv.pro|taraftarium24.xyz|taraftarium.co
+taraftarium.co##.topDuyuru
+melaniekannokada.com,taraftarium-24.pro,taraftarium24.xyz,tvjustin.*,taraftarium.co,sadeceiptv.com,taraftariumizle.org,taraftarium24.dev,taraftarium-24.co,taraftarium-24.com,justin-tv.pro,taraftarium24.is,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*###splash-banner
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##div[class^="footer-"]
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##header > a[href="/"] + ul
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##.wpb_wrapper > center > a[target="_blank"]
