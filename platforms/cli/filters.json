@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.82.19",
-			"timeUpdated": "2026-08-08T04:26:36+0000",
+			"version": "2.4.82.20",
+			"timeUpdated": "2026-08-08T05:19:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
