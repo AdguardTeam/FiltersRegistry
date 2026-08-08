@@ -1,9 +1,9 @@
-! Checksum: GIG4eB54uESoEcLGmwPzUg
-! Diff-Path: ../patches/260/260-s-1786135758-14400.patch
+! Checksum: WZvbp69k+9LHdLKdUwrSCQ
+! Diff-Path: ../patches/260/260-s-1786150268-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.6
-! TimeUpdated: 2026-08-07T20:46:19+00:00
+! Version: 2.0.1.7
+! TimeUpdated: 2026-08-08T00:48:23+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -222,7 +222,8 @@ www.asus.com###brandAssistant-root
 ! =========
 ! == B&Q ==
 ! =========
-! Navbar > Hello B&Q button
+! https://www.diy.com/
+! "Hello B&Q" AI assistant button on toolbar
 www.diy.com##[data-testid="hello-bq"]
 ! ==============
 ! == Backbone ==
@@ -574,10 +575,17 @@ www.consumerreports.org###ask-cr-search-tab
 ! =============
 ! == Coolors ==
 ! =============
-! Navbar > Tools > Color Bot
-coolors.co###megamenu_inner [href="/color-bot"]
+! -- https://coolors.co/
+! Color Bot in navbar Tools menu
+coolors.co###megamenu [href="/color-bot"]
+! Color Bot in mobile menu
+coolors.co###mobile-menu li:has(> [href="/color-bot"])
+! Color Bot button on the front page
+coolors.co##.homepage_tool[href="/color-bot"]
+! Color Bot in footer
+coolors.co###footer_menu [href="/color-bot"]
 ! -- https://coolors.co/generate
-! Toolbar AI button
+! Toolbar - AI tools button
 coolors.co###generator_ai-btn
 coolors.co###popover-hint:has(.icon-ai-sparkles-18px)
 ! ====================
@@ -2077,6 +2085,18 @@ blog.logrocket.com##.code-block:has(> .blog-plug)
 ! -- https://lokalise.com/blog/what-is-character-encoding-exploring-unicode-utf-8-ascii-and-more/
 ! AI translation in navbar
 lokalise.com##li.border-b-2:has(> [href="/blog/category/ai-translation/"])
+! =======================
+! == L'Oréal Paris USA ==
+! =======================
+! -- https://www.lorealparisusa.com/
+! Header - 'Beauty Genius' floating AI assistant button at top-left of page
+www.lorealparisusa.com##.oap-beauty-genius-header-icon
+! Header - Virtual Beauty Tools > 'Beauty Genius' AI assistant
+www.lorealparisusa.com##.oap-beauty-genius
+! 'Beauty Genius' AI floating chat modal
+www.lorealparisusa.com##.oap-beauty-genius-wrapper
+! Footer - 'Beauty Genius' AI assistant button
+www.lorealparisusa.com##.oap-beauty-genius-footer-module
 ! ===========
 ! == Lowes ==
 ! ===========
@@ -2145,6 +2165,12 @@ www.merriam-webster.com##.chatbot-nav-item
 ! -- https://www.messenger.com/ (logged in)
 ! - Chats - Meta AI
 www.messenger.com##div[role="gridcell"] > div > a[role="link"][href="/t/156025504001094/"]
+! ===========
+! == Metro ==
+! ===========
+! -- https://metro.co.uk/2023/06/02/do-you-get-charged-if-you-tap-in-and-out-of-the-same-station-18887918/
+! "Ask Metro" bubble in the middle of certain articles.
+metro.co.uk##.metro-answers
 ! ===============
 ! == Microsoft ==
 ! ===============
@@ -2896,6 +2922,14 @@ sogou.com##.searchnav > li:has(> #sogou_aimode)
 ! AI summary
 www.sogou.com##.reactResult
 ||wenda.sogou.com/produce_ai_answer$xmlhttprequest,domain=www.sogou.com
+! =======================
+! == Spaceship Domains ==
+! =======================
+! -- https://www.spaceship.com/
+! Header - 'Ask Alf' AI Assistant Button
+www.spaceship.com##[aria-label="Ask Alf"]
+! 'AI Website Builder' button on home screen (not logged in)
+www.spaceship.com##.hp-ai-website-builder-card
 ! =============
 ! == Spotify ==
 ! =============
@@ -3205,6 +3239,12 @@ www.ulta.com##chat-messenger[service*="commerce-ai"]
 ! "Ask Avery" button in header
 member.uhc.com##[data-test-id="global-nav-ask-ai"]
 ! ============================
+! == University of Aberdeen ==
+! ============================
+! -- https://www.abdn.ac.uk/study/undergraduate/degree-programmes/
+! Floating chat widget when searching for courses
+www.abdn.ac.uk##.gecko-chat-widget-app
+! ============================
 ! == University of Illinois ==
 ! ============================
 ! -- https://education.illinois.edu/about/news-events/news/article/2024/11/11/what-is-generative-ai-vs-ai
@@ -3428,6 +3468,12 @@ wordpress.com##.x-nav-footer--ai-website-builder-footer
 wordpress.com##.dashboard-add-new-site__menu-item[href^="https://wordpress.com/setup/ai-site-builder"]
 ! Sites - "Build with AI"
 wordpress.com##.icon-list-item:has(.components-button[href^="https://wordpress.com/setup/ai-site-builder"])
+! ====================
+! == World of Books ==
+! ====================
+! -- https://www.worldofbooks.com
+! AI recommendation snippets (Non-US users only)
+worldofbooks.com##.ai-recommendation-block
 ! ===============
 ! == X/Twitter ==
 ! ===============
