@@ -1,9 +1,9 @@
-! Checksum: LABTNdkGbrwiFqOvwsGB4A
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1786195506-3600.patch
+! Checksum: uBzDTB0OOIUHiIXHWlQQyA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1786198726-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.75.46
-! TimeUpdated: 2026-08-08T13:22:05+00:00
+! Version: 2.0.75.47
+! TimeUpdated: 2026-08-08T14:15:26+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||adwell.app^$third-party
@@ -1597,7 +1597,7 @@ jalan.net##.searchObj > div.featurePlan.rec
 jalan.net##.p-searchResults:not([id]):has(.p-searchResultItem__body > a[href^="javascript:doYadDetailAd"])
 becoolusers.com##.ad-text
 androplus.jp##fieldset:has(> legend + div[data-link-click])
-[$path=/\/[a-z]+\/\d+\/ad$/]solispia.com#%#//scriptlet('trusted-replace-node-text', 'script', 'openModal', '/document\.addEventListener\(\'DOMContentLoaded\', function[\S\s]+?(const novelId\s*=\s*\d+;\s*const targetUrl\s*=.+?\d+";)[\S\s]+?verifying = true;\s*(try \{[\S\s]+?ad_meta:)[\S\s]+?CMの準備中です...\'\);\s*.*?\s*(try \{\s*[\S\s]+?catch\s*\(\w*\)\s*\{)[\S\s]*/', 'document.addEventListener(\'DOMContentLoaded\', async function(){$1 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));$3 return;}await sleep(5000+Math.floor(Math.random()*3000));$2 {"type":"reward","amount": 2}})});if(!res.ok)throw res.status;const j=await res.json().catch(()=>null);if(j&&j.ok){window.location.href=targetUrl;}}catch(e){}})')
+[$path=/\/[a-z]+\/\d+\/ad$/]solispia.com#%#//scriptlet('trusted-replace-node-text', 'script', 'backToTitle', '/document\.addEventListener\(\'DOMContentLoaded\', function[\S\s]+?const novelId\s*=\s*(\d+);\s*const targetUrl\s*=.+?novel\\\/\d+";[\S\s]+?SolispiaRewardedAdGate\.init\(\{\s*cancelUrl: backToTitle[\S\s]+/', '!async function(){const e=$1,t=`https://solispia.com/novel/${e}`,o=document.querySelector(\'meta[name="csrf-token"]\')?.getAttribute("content")||"";try{const a=await fetch(`/api/ad/rewarded/start/${e}`,{method:"POST",headers:{"Content-Type":"application/json","X-CSRF-TOKEN":o,"X-Requested-With":"XMLHttpRequest"},body:JSON.stringify({})}),i=await a.json();if(!i?.ok)return;await(n=5e3+Math.floor(1e3*Math.random())+500,new Promise((e=>setTimeout(e,n))));const d=await fetch("/api/ad/rewarded/complete",{method:"POST",headers:{"Content-Type":"application/json","X-CSRF-TOKEN":o,"X-Requested-With":"XMLHttpRequest"},body:JSON.stringify({challenge_id:i.challenge_id,unlock_token:i.unlock_token,event_key:i.event_key,novel_id:e,ad_meta:{}})}),s=await d.json();s?.ok&&(window.location.href=t)}catch(e){}var n}();')
 solispia.com##.ad-large-a
 fo76db.com#$##fo-ad-modal { display: none !important; }
 fo76db.com#$#body.swiper { overflow: auto !important; position: static !important; }
