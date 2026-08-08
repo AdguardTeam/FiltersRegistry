@@ -1,9 +1,9 @@
-! Checksum: zd6NsffQpjhNzGgkg9Iazw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1786150231-14400.patch
+! Checksum: 5vgoz4HflKwFsIxJxDe+iA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1786164594-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.66.56
-! TimeUpdated: 2026-08-08T00:47:44+00:00
+! Version: 2.1.66.57
+! TimeUpdated: 2026-08-08T04:47:24+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -130,7 +130,6 @@
 /twitter-v2.png
 /twitter_footer.png
 /twitter_square.png
-/twitterlib.js
 /videojs-share.js
 /weiboshare.html
 /whatsapp-button.js
@@ -468,7 +467,6 @@ _social-bar/
 ###share_container
 ###share_div
 ###share_facebook
-###share_feed
 ###share_google
 ###share_icon
 ###share_linkedin
@@ -507,6 +505,7 @@ _social-bar/
 ###sharing-button
 ###sharing-buttons
 ###sharing-icons
+###sharing-options
 ###sharing-sidebar
 ###sharing_buttons
 ###sharingfooter
@@ -606,12 +605,14 @@ _social-bar/
 ###socialMediaBar
 ###socialMediaFacebook
 ###socialMediaSection
+###socialMediaShare
 ###socialModal
 ###socialNetworks
 ###socialShare
 ###socialSharing
 ###socialTwitter
 ###socialWidget
+###socialWidgets
 ###socialWrap
 ###social_bar
 ###social_bkm_wrap_top
@@ -879,7 +880,6 @@ _social-bar/
 ##.arti-sharing-wrapper
 ##.article--share
 ##.article-bottom-share
-##.article-bottom-social-share
 ##.article-content__share-group
 ##.article-footer-share
 ##.article-footer-social
@@ -888,7 +888,6 @@ _social-bar/
 ##.article-head__share
 ##.article-header-social
 ##.article-header__share
-##.article-icon-share
 ##.article-pic-soc
 ##.article-share
 ##.article-share__item
@@ -1433,7 +1432,6 @@ _social-bar/
 ##.footer-social-n
 ##.footer-social-ul
 ##.footer-socialIcons
-##.footer-sociallink
 ##.footer-sociallinks
 ##.footer-socialmedia
 ##.footer-socialmediaIcon
@@ -1585,6 +1583,7 @@ _social-bar/
 ##.headerFacebook
 ##.headerShare
 ##.headerSocialIcons
+##.headerSocialLink
 ##.headerSocialLinks
 ##.header__social
 ##.header__social-button
@@ -1937,6 +1936,7 @@ _social-bar/
 ##.menu-social-navigation-container
 ##.menu_share
 ##.menu_social
+##.menusocial
 ##.messageShareButtons
 ##.meta-share
 ##.meta-share-count
@@ -2102,6 +2102,7 @@ _social-bar/
 ##.pk-share-buttons-link
 ##.pk-share-buttons-wrap
 ##.player__share
+##.pn-social-icons
 ##.pocket-btn-icon
 ##.polaris__social--icon
 ##.poll-share
@@ -2210,7 +2211,6 @@ _social-bar/
 ##.scShareBoxRow
 ##.scShareText
 ##.scSocialIconsWidget
-##.sc_sns
 ##.scriptlesssocialsharing
 ##.sd-sharing
 ##.sd-social
@@ -2918,6 +2918,7 @@ _social-bar/
 ##.social-media-share
 ##.social-media-share-buttons
 ##.social-media-share-links
+##.social-media-sharer
 ##.social-media-sharing
 ##.social-media-twitter
 ##.social-media-widget
@@ -3184,6 +3185,7 @@ _social-bar/
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
+##.socialnetworkbox
 ##.socialno
 ##.socialplugins
 ##.socials-bar
@@ -3257,7 +3259,6 @@ _social-bar/
 ##.sub_jeu_social_facebook
 ##.sub_jeu_social_twitter
 ##.sub_sns
-##.sub_socialMedia
 ##.subfooter-social
 ##.synved-social-button
 ##.tags-share
@@ -3500,7 +3501,6 @@ _social-bar/
 ##.widget_twitter
 ##.widget_twitter_timeline
 ##.widget_wc_shortcodes_social_icons
-##.widget_weblizar_twitter
 ##.widget_wpcom_social_media_icons_widget
 ##.widget_wpgrade_social_links
 ##.wp-block-social-links
@@ -4082,7 +4082,6 @@ cointelegraph.com##.post__socials-block
 pravda.com.ua##.post_social_item
 psypost.org##.pp-follow-card
 lifestyleasia.com##.pre-footer_instagram
-coywolf.com##.preferred
 gsmarena.com,ign.com,torquenews.com##.preferred-source
 pcgamesn.com##.preferred-sources-button-container
 dailymail.co.uk##.prevNextWrapper-1Vg7e
@@ -4109,6 +4108,7 @@ ny1.com##.share-bar-container
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
 barchart.com,beincrypto.com,independentpersian.com,indyturk.com##.share-block
 ibtimes.co.in##.share-btn-wrp
+smithsonianmag.com##.share-control
 paloaltonetworks.com##.share-copy-mail
 dailymail.co.uk,thisismoney.co.uk##.share-email
 dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
@@ -4180,7 +4180,6 @@ gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gam
 macrumors.com##.socialMedia--3i9tSnAb
 jetphotos.com##.social__link--share
 newscientist.com##.social__links
-eurovisionworld.com##.social_a
 salon.com,snopes.com##.social_comments_app_wrapper
 ringsidenews.com##.social_holder
 commondreams.org,digit.in,hollywoodforevertv.com.br,twenteinsite.nl##.social_icon
@@ -4234,6 +4233,7 @@ unsw.edu.au##.uds-social-follow
 news.sky.com##.ui-news-footer-social
 news.sky.com##.ui-news-footer-social-link
 hp.com##.ul_media_links
+gamespot.com##.user-actions
 aa.com.tr##.ustBar-sosyal
 gothamist.com##.v-share-tools
 videocardz.com##.vc-google-icon
@@ -4278,7 +4278,6 @@ cnet.com##[data-meta="footer-section-social"]
 cnet.com##[data-meta="footer-section-social"] + ul
 scmp.com##[data-qa="ArticleGoogleNewsButton-Container"]
 nytimes.com##[data-testid="social-group"]
-codecademy.com##[data-testid="social-share-dropdown"]
 dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
 axios.com##[data-vars-event-name="preferred_source_view"]
@@ -4630,7 +4629,6 @@ eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
 adnradio.cl,cadenaser.com,caracol.com.co,los40.com,wradio.com.co,wradio.com.mx##.cnt-interaccion
 adslzone.net##.comments-social-share
 elsiglocoahuila.mx,elsiglodedurango.com.mx,elsiglodetorreon.com.mx##.comparte
-ecologiaverde.com,el9nou.cat,elsaltodiario.com,infocatolica.com,lanacion.com.ar,laverdad.com,psicologia-online.com,qmusica.tv,revistafamilia.ec##.compartir
 wapa.pe##.container_shared--internal
 elcolombiano.com##.contenedor-google-noticias
 eldiario.es,eldiarioar.com##.edi-social-buttons
@@ -4662,7 +4660,6 @@ infobae.com##.second-saved-buttons
 elpais.com.uy##.section-rrss-wrapper
 as.com##.sh-bar
 heraldodemexico.com.mx##.share-comp
-elamaule.cl,elboyaldia.cl,elconcecuente.cl,elmagallanews.cl,elmartutino.cl,elmorrocotudo.cl,elnaveghable.cl,elnortero.cl,elobservatodo.cl,elquehaydecierto.cl,elrancahuaso.cl,elrepuertero.cl,elvacanudo.cl,laopinon.cl##.share-content
 infobae.com##.sharebar-buttons-container
 elcomercio.com##.single-layout__community-social
 larazon.es##.site-footer__rrss
