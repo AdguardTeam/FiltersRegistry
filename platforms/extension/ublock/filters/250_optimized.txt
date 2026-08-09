@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: su1QdRDgbRLIZmmXvzQwKQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1786207691-14400.patch
+! Checksum: wbYPggn4Gzr5ny58ka6B+A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1786251317-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.34
@@ -57,13 +57,14 @@ processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ##.ym-p1-server-mode-outbyte
 ||solvusoft.com^$document
+exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
+exefiles.com##.row:has(a[href*="/recommended/"])
 /^(https?|tcp|iquic):\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php$/$document,domain=biz|fun|live
 coolrom.com.au,coolrom.com##.download_link
 addons.mozilla.org##li.SearchResult:contains(AdsBlocker)
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
-||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
 ||173.208.96.42^$all
 ||173.208.96.43^$all
 ||173.208.96.44^$all
@@ -461,6 +462,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||fluffyinfection.com^$all
 ||delicioustightbronze.com^$all
 ||markswaitingrouge.com^$all
+||clungfellow.com^$all
 ||aboveboardcomplicate.com^$all
 ||antonyexpected.com^$all
 ||excessivelynell.com^$all
@@ -2281,7 +2283,6 @@ $removeparam=_rlid
 $removeparam=ga_fc
 $removeparam=ga_client_id
 $removeparam=s_id
-$removeparam=_puid
 $removeparam=b_id
 $removeparam=kltstamp
 $removeparam=dspUserId
@@ -2447,7 +2448,6 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 $removeparam=_trkparms
 $removeparam=_from
 $removeparam=sacat
-$removeparam=amdata,domain=ebay.*
 $removeparam=hash,domain=ebay.*
 ||ebay.$removeparam=mkevt
 ||ebay.$removeparam=mkcid
@@ -2642,6 +2642,7 @@ $removeparam=aff_click_id
 ||baidu.com/search/index?$removeparam=ct
 ||baidu.com^$removeparam=asctag
 ||baidu.com^$removeparam=rq
+||baidu.com^$removeparam=vslid
 ||baidu.com^$removeparam=idctag
 ||baidu.com^$removeparam=logid
 ||baidu.com^$removeparam=pageFrom
@@ -2845,7 +2846,6 @@ $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|a
 $removeparam=pt,domain=apple.com|icedrive.net
 ||kohls.com^$removeparam=kls_sbp
 ||kohls.com^$removeparam=pfm
-||kohls.com^$removeparam=bdrecsId
 ||kohls.com^$removeparam=prdPV
 $removeparam=site_id,domain=taskrabbit.com|kochava.com
 ||kochava.com^$removeparam=network_id
@@ -3332,7 +3332,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||photoshop.adobe.com^$removeparam=mv
 ://get.microsoft.com/installer/download^$removeparam=referrer
 ://get.microsoft.com/installer/download^$removeparam=source
-ref=sqliteviewer.app$document,removeparam=ref
 ||mcafee.$removeparam=msockid
 ||binaryfortress.com/Data/Download^$removeparam=Log
 ||draytek.*/downloads/software^$removeparam=catid
