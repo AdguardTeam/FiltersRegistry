@@ -1,9 +1,9 @@
-! Checksum: kDWYhMhSl13GVMay5b3kAw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1786323099-14400.patch
+! Checksum: +eNKEx98Z0bm+2PJt0qEXA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1786338351-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.66.68
-! TimeUpdated: 2026-08-10T00:48:04+00:00
+! Version: 2.1.66.69
+! TimeUpdated: 2026-08-10T05:02:34+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -120,6 +120,7 @@
 /socialbookmarks.js
 /socialite.js
 /socialite.min.js
+/SocialMediaButtons/tracking.js
 /SocialSprite.
 /socialsprites.
 /socialstat?
@@ -801,7 +802,6 @@ _social-bar/
 ##.a-icon-share-twitter
 ##.a-link--facebook
 ##.a-picto-social
-##.a-share
 ##.a-social-btn
 ##.a2a_floating_style
 ##.a2a_vertical_style
@@ -886,7 +886,6 @@ _social-bar/
 ##.article-footer__share
 ##.article-full__share
 ##.article-head__share
-##.article-header-social
 ##.article-header__share
 ##.article-pic-soc
 ##.article-share
@@ -1098,7 +1097,6 @@ _social-bar/
 ##.card__social
 ##.cb-social-sharing
 ##.ccm-block-social-links
-##.ccm_social_header
 ##.cd-fb-like-widget
 ##.cff-share-container
 ##.cff-share-tooltip
@@ -1277,7 +1275,6 @@ _social-bar/
 ##.facebook_widget
 ##.facebookbox
 ##.facebooklike
-##.facebooklink
 ##.facebookshare
 ##.facewrapper
 ##.fastsocialshare_container
@@ -1540,6 +1537,7 @@ _social-bar/
 ##.gs-share
 ##.gs-sharebar
 ##.gs-social-popup-trigger
+##.gshare
 ##.gtm-clipboard-share-button
 ##.gtm-email-share-button
 ##.gtm-facebook-share-button
@@ -1897,9 +1895,6 @@ _social-bar/
 ##.main-single-share
 ##.main__share
 ##.mashfs-popup-share
-##.mashicon-facebook
-##.mashicon-linkedin
-##.mashicon-twitter
 ##.mashsb-box
 ##.mashsb-container
 ##.masterSocialbutton
@@ -1986,6 +1981,7 @@ _social-bar/
 ##.native-share
 ##.native-share-buttons
 ##.nav--social
+##.nav-footer-social
 ##.nav-share
 ##.nav-share-btn
 ##.nav-soc-but
@@ -2800,7 +2796,6 @@ _social-bar/
 ##.social--share
 ##.social--top
 ##.social--twitter
-##.social--vertical
 ##.social-action
 ##.social-addthis
 ##.social-apps
@@ -2931,6 +2926,7 @@ _social-bar/
 ##.social-networking
 ##.social-networks-container
 ##.social-networks-footer
+##.social-networks-link
 ##.social-networks-list
 ##.social-networks__item
 ##.social-news-buttons
@@ -3323,7 +3319,6 @@ _social-bar/
 ##.topbar-socials
 ##.topbar__social-media
 ##.topic-share
-##.topic-social__list
 ##.topshare
 ##.total-shares
 ##.totalShares
@@ -3419,7 +3414,6 @@ _social-bar/
 ##.vf-share-bar-vertical
 ##.vf-share-icon
 ##.vf-share-option
-##.vgc-social
 ##.video-share
 ##.video-share-b
 ##.videoShare
@@ -3480,7 +3474,7 @@ _social-bar/
 ##.widget_epcl_social
 ##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook_likebox
-##.widget_follow
+##.widget_facebook_page_plugin_widget
 ##.widget_follow_button_widget
 ##.widget_g1_socials
 ##.widget_heateor_sssp_follow
@@ -3539,7 +3533,6 @@ _social-bar/
 ##SHARE-BUTTON
 ##SOCIAL-SHARING
 ##TWITTER-SHARE-BUTTON
-##[data-social="share"]
 ##[data-target="share-review"]
 ##[data-testid="prism-share"]
 ##[data-xtclick^="social::"]
@@ -3755,7 +3748,6 @@ digitaltrends.com###menu-2021-social
 thefader.com###new_socials_bottom
 taylorfrancis.com###openShare
 tasteofhome.com###pch-social-icons
-globenewswire.com###pnr-global-social-media-sidebar-section
 mediaite.com###post-social
 bracketfights.com,ecuadoradio.ec,tiermaker.com###share-container
 aiseesoft.com###share-list
@@ -3863,6 +3855,7 @@ beebom.com##.beebom-social-share
 gobankingrates.com##.between-share-and-author
 military.com##.block--addtoanyadv
 csis.org##.block--social-sharing
+crash.net,nltimes.nl,ttnews.com##.block-better-social-sharing-buttons
 tastesbetterfromscratch.com##.block-follow-me
 tastesbetterfromscratch.com##.block-follow-updates
 crash.net##.block-preferred-source
@@ -3937,6 +3930,7 @@ news18.com##.flw
 sportskeeda.com##.follow-action
 thedirect.com##.follow-bar
 thehackernews.com##.follow-box
+carscoops.com##.follow-carscoops-container
 theprint.in##.follow-g
 metoffice.gov.uk##.follow-icons
 windowsreport.com##.follow-more-news
@@ -4084,6 +4078,8 @@ pcgamesn.com##.preferred-sources-button-container
 dailymail.co.uk##.prevNextWrapper-1Vg7e
 reason.com##.rcom-social-tools
 dermatologytimes.com,drive.com.au##.react-share__ShareButton
+newsukraine.rbc.ua##.read-in-google
+newsukraine.rbc.ua##.read-in-socials
 windowsreport.com##.reader-action-panel
 the-gadgeteer.com##.review-price
 firstpost.com##.rhs-yt-ch-wrap
@@ -4099,6 +4095,7 @@ kyivpost.com##.section-soc-icons
 sleepfoundation.org##.sh_space.share
 onlinelibrary.wiley.com##.share-access__ctrl
 hp.com##.share-action-button
+designboom.com,holyrood.com,rpgfan.com##.share-bar
 thedirect.com##.share-bar-2
 ny1.com##.share-bar-container
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
@@ -4207,7 +4204,6 @@ interestingengineering.com##.t-w-\[128px\]
 interestingengineering.com##.t-w-\[200px\]
 toucharcade.com##.ta_followWidget
 notthebee.com##.take-shareables
-firstpost.com##.tbl-cell-wp
 cybersecuritynews.com##.tdm-ii-wrap
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
@@ -4518,7 +4514,6 @@ ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
 secoloditalia.it##.stamp
 macitynet.it##.tds-button
-nurse24.it##.toolbar
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
 alfredopedulla.com##.tw-banner
@@ -4551,11 +4546,11 @@ mainichi.jp##.tool-facebook
 mainichi.jp##.tool-twitter
 auction.co.kr##.sare-sns
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
+gazetawroclawska.pl##.atomsArticleMediaTools__socialShare
 terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
 dnoticias.pt##.article--aside_share
-neofeed.com.br##.box-social-single
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
@@ -4586,6 +4581,7 @@ tecmundo.com.br##.tec--share__container
 r7.com##[class*="article-fill-social-"]
 infomoney.com.br##[data-ds-element^="social-share-"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]
+||harem69.com.br/img/social.png
 auto-bild.ro##.social > li:has(.icon.icon-outline)
 inforesist.org###push_notificationBlock
 sibnet.ru###telegram_push
