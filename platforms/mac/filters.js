@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.82.68",
-			"timeUpdated": "2026-08-10T08:36:45+0000",
+			"version": "2.4.82.69",
+			"timeUpdated": "2026-08-10T09:35:27+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.75.48",
-			"timeUpdated": "2026-08-09T17:12:36+0000",
+			"version": "2.0.75.49",
+			"timeUpdated": "2026-08-10T09:35:44+0000",
 			"languages": [
 				"ja"
 			]
@@ -217,8 +217,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.66.80",
-			"timeUpdated": "2026-08-10T04:35:19+0000",
+			"version": "2.0.66.81",
+			"timeUpdated": "2026-08-10T09:35:49+0000",
 			"languages": [
 				"tr"
 			]
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.75.19",
-			"timeUpdated": "2026-08-10T08:37:29+0000",
+			"version": "2.2.75.20",
+			"timeUpdated": "2026-08-10T09:35:56+0000",
 			"languages": []
 		},
 		{
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.91.76",
-			"timeUpdated": "2026-08-10T08:37:39+0000",
+			"version": "2.0.91.77",
+			"timeUpdated": "2026-08-10T09:36:02+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.80.31",
-			"timeUpdated": "2026-08-10T08:37:41+0000",
+			"version": "2.0.80.32",
+			"timeUpdated": "2026-08-10T09:36:03+0000",
 			"languages": []
 		},
 		{
@@ -338,8 +338,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.46.94",
-			"timeUpdated": "2026-08-10T04:35:37+0000",
+			"version": "2.0.46.95",
+			"timeUpdated": "2026-08-10T09:36:04+0000",
 			"languages": []
 		},
 		{

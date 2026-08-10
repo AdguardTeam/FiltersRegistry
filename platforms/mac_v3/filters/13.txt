@@ -1,9 +1,9 @@
-! Checksum: qXpQxuWVuLsCbGrLTGPabQ
-! Diff-Path: ../patches/13/13-s-1786336730-3600.patch
+! Checksum: 4PusB0I5bt1ZYroApaJGew
+! Diff-Path: ../patches/13/13-s-1786354735-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.66.80
-! TimeUpdated: 2026-08-10T04:35:19+00:00
+! Version: 2.0.66.81
+! TimeUpdated: 2026-08-10T09:35:49+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6145,8 +6145,8 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/hdifsaizle\d+\.com$/]#$##prerollOverlay { display: none !important; }
 [$domain=/hdifsaizle\d+\.com$/]#$##mainVideo { display: block !important; }
 !
-! Frequently changed domains: turkifsa*.site; turkifsalar2.site
-! Source: turkifsa40.site; turkifsalar2.site
+! Frequently changed domains: turkifsa*.site; turkifsalar*.site; turkifsalar*.art
+! Source: turkifsa40.site; turkifsalar2.site; turkifsalar.art
 ||labvex.b-cdn.net/ads/
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
@@ -6154,10 +6154,11 @@ x.palv2.cfd###adPlayerBanner
 ! aglint-enable no-invalid-modifiers
 ||turkifsa*.site/api/popunder-config
 ||turkifsa*.site/api/preroll-event
-[$domain=/turkifsa(lar)?\d*\.site$/]##div[class]:has(> a:is([href^="https://cutt.ly/"],[href="https://denemebonusumi.com/"]))
-[$domain=/turkifsa(lar)?\d*\.site$/]##video + div.absolute
-[$domain=/turkifsa(lar)?\d*\.site$/]##.ad-banner-frame
-[$domain=/turkifsa(lar)?\d*\.site$/]##div[class][style^="min-height:"][style*="calc("]
+[$domain=/turkifsa(lar)?\d*\.(site\|art)$/]##div[class]:has(> a:is([href^="https://cutt.ly/"],[href="https://denemebonusumi.com/"]))
+[$domain=/turkifsa(lar)?\d*\.(site\|art)$/]##video + div.absolute
+[$domain=/turkifsa(lar)?\d*\.(site\|art)$/]##.ad-banner-frame
+[$domain=/turkifsa(lar)?\d*\.(site\|art)$/]##div[class][style^="min-height:"][style*="calc("]
+[$domain=/turkifsa(lar)?\d*\.(site\|art)$/]#%#//scriptlet('set-session-storage-item', 'preroll_view_count', '4')
 !
 ! Frequently changed domains: turkifsa*.art
 ! Source: turk-ifsa11.com
@@ -6207,6 +6208,8 @@ x.palv2.cfd###adPlayerBanner
 ! Source: turkifsalife16.blog
 [$domain=/^turkifsalife\d+\.blog$/]#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'app_advert')
 [$domain=/^turkifsalife\d+\.blog$/]#%#//scriptlet('prevent-addEventListener', 'click', 'popUnder')
+[$domain=/^turkifsalife\d+\.blog$/]###block-2
+[$domain=/^turkifsalife\d+\.blog$/]#%#//scriptlet('prevent-addEventListener', 'click', 'tik_sayac')
 !
 ! Frequently changed domains: sotweturkifsa*.blog
 ! Source: sotweturkifsa8.blog
