@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /uOcjAazPljOKjjIefPDyg
-! Diff-Path: ../patches/14/14-s-1786361341-3600.patch
+! Checksum: j8YCVlFqyWTa5YyFM+29dQ
+! Diff-Path: ../patches/14/14-s-1786364654-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.75.22
-! TimeUpdated: 2026-08-10T11:26:10+00:00
+! Version: 2.2.75.23
+! TimeUpdated: 2026-08-10T12:21:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25,6 +25,7 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+###surecookie-public-root
 ##.gt-cookie-bar
 ##.gdpr_wrapper
 ###aos-CookiePolicy
@@ -1740,6 +1741,8 @@
 !
 ! SECTION: Cookies - General URL
 !
+/wp-content/plugins/surecookie/*
+/wp-content/plugins/surecookie-pro/*
 /assets/storefront/chunk-customer_privacy_initializer.
 ||app.cookiemate.pl^$3p
 ||privacy.advancelocal.com^
@@ -2555,6 +2558,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+digiturkplay.com##div[class^="cookie-module-"][class*="innerWrapper"]
 ludusengine.com##+js(set-cookie, cookieChoice, essential)
 store.playsum.live##astro-island > .bg-slate-100.dark\:bg-white.md\:items-center
 friedrichshafen.de##+js(set-cookie, cookieconsent_status, allow)
@@ -2673,7 +2677,6 @@ aviakassa.com###siteMainContent ~ div[class]:has(> div > span > a[href="/usefuld
 tabor.ru##.site-policy-wrap
 brw.pl##.widget-recomended-product
 ||rameder.de/?cl=CookieManager
-wpastra.com,brainstormforce.com,wpschema.com,prestoplayer.com###surecookie-public-root
 baristina.com##beatle-anonymous-consent-management-banner-presentation
 e-domus.com.pl###ed-cookie-bar
 luggat.com###root > .slide-in-from-bottom-5
@@ -26214,6 +26217,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 ! SECTION: Popups - Regular rules
 !
 asviva.de##.asv-trust-badges
+cinezo.org##+js(set-local-storage-item, cinezo_popup_dismissed, 1)
 finance.yahoo.com##+js(set-cookie, fes-ds-spotlight, 1)
 premierzal.ru##.modals > div#messageModal:has(a[href^="https://premierzal.ru/schedule/cmo1024of9ggn0829tu7fql0l"])
 animex.one##div[aria-label="Changelog"]:style(display: none !important;)
@@ -26282,7 +26286,6 @@ patronlig16.cfd##.footer-powered-by
 mangabuddy1.co.uk###xp-popup-container
 mangabuddy1.co.uk###xp-popup-backdrop
 finance.mail.ru##div[data-qa="Overlay"] + div[role="tooltip"]
-cinezo.net##.fixed.right-6
 sportsbull.jp##div[class^="CampaignPopup-module"]
 roliascan.com###welcome-modal
 teachmeanatomy.info###popupModal:style(display: none !important;)
@@ -35768,7 +35771,6 @@ tweaktown.com##.tt-follow-news
 bissell.pl##.footer-newsletter-text
 bissell.pl##.aw-footer-newsletter
 radiotimes.com##.post-header__promo
-cinezo.net##+js(set-local-storage-item, cinezo_popup_dismissed, 1)
 goated.cx##.fixed.inset-0.items-center
 twitchnosub.com###twitterBanner
 news.ksb.co.jp##.md-ad
