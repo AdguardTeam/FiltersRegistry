@@ -1,9 +1,9 @@
-! Checksum: ePLa0dmB2hbgLdRlBtrJNw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1786343911-3600.patch
+! Checksum: Lv3EEon+qEGomVs697QeSA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1786347495-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.82.66
-! TimeUpdated: 2026-08-10T06:34:40+00:00
+! Version: 2.4.82.67
+! TimeUpdated: 2026-08-10T07:35:34+00:00
 ! Expires: 5 days (update frequency)
 ||supersedeaccolade.com^
 ||supersedeaccolade.com^$popup
@@ -8823,12 +8823,23 @@ wm.pl,kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gaze
 tko.pl##div[id^="nol24-"]
 wieliczkacity.pl#@#A[target="_self"] > IMG
 stalowemiasto.pl#%#//scriptlet('prevent-addEventListener', 'load', 'adsbygoogle')
-miastorumia.pl#@#.ad
-miastorumia.pl#@#.ads
-miastorumia.pl#@#.google-ad
-miastorumia.pl#%#//scriptlet('prevent-setTimeout', '/adblock|\.offsetHeight[\s]*?===[\s]*?0/')
-miastorumia.pl#%#//scriptlet('remove-node-text', '#text', '/^[\s]*?Reklama[\s]*?$/', '#sidebar')
-miastorumia.pl#%#//scriptlet('remove-node-text', '#text', '/^[\s]*?Reklama[\s]*?$/', '#sidebar #posts_custom_box > .content')
+warszawa.in,miastorumia.pl#@#.ad
+warszawa.in,miastorumia.pl#@#.ads
+warszawa.in,miastorumia.pl#@#.google-ad
+warszawa.in,miastorumia.pl#$#body { overflow: auto !important; }
+warszawa.in,miastorumia.pl#$##adblock-info-overlay { display: none !important; }
+warszawa.in,miastorumia.pl#%#//scriptlet('prevent-setTimeout', '/adblock|\.offsetHeight\s*===\s*0\s*\|\|/')
+warszawa.in,miastorumia.pl##.banners
+warszawa.in,miastorumia.pl##header > .container > font
+warszawa.in,miastorumia.pl###sidebar > a > img
+warszawa.in,miastorumia.pl###sidebar > center > a > img
+warszawa.in,miastorumia.pl##.container > left > font
+warszawa.in,miastorumia.pl##.container > a[target="_blank"] > img
+warszawa.in,miastorumia.pl##center:has(> font ~ a[target="_blank"])
+warszawa.in,miastorumia.pl###sidebar #posts_custom_box > .content > a > img
+warszawa.in,miastorumia.pl###revive-responsive-top:has(> a[target="_blank"])
+warszawa.in,miastorumia.pl#%#//scriptlet('remove-node-text', '#text', '/^\s*Reklama\s*$/', '#sidebar')
+warszawa.in,miastorumia.pl#%#//scriptlet('remove-node-text', '#text', '/^\s*Reklama\s*$/', '#sidebar #posts_custom_box > .content')
 !+ NOT_OPTIMIZED
 juvepoland.com###jedynka
 ewybory.eu#%#//scriptlet('prevent-setTimeout', 'blocked')
@@ -13182,6 +13193,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com|zinchanmanga.com|yaoimangaonline.com|tututweak.app|mangaraw.ac|eromanga-show.com|hentai-one.com|hentaipaw.com|nukibooks.com|paipancon.com|jgvdata.com|youtubevanced.com|pandamtl.com|mangaplus.shueisha.tv|shueisharaw.tv
 ||linksconsole.com/ad-system/
+velomarkt.*##.banner-horizontal
+velomarkt.*###ads-gallery
 ||pxp.*/sp/$subdocument
 myanimelist.net#%#//scriptlet('trusted-replace-node-text', 'style', 'body:is(:not(.ownlist))', '/body:is\(:not\(\.ownlist\)\) \{ background-color: #[A-Z0-9]+;/g', '')
 myanimelist.net###contentWrapper ~ div[class]:not([id]):has(a.ga-click[href*="PDA"] img.ga-impression[src*="PDA"])
@@ -13941,7 +13954,8 @@ ext.to##body > #torrent-title-tooltip ~ div:not([class],[id])
 ||instant-gaming.com/api/banner/partner/loader.js
 camwhores.*#%#//scriptlet('set-constant', 'flashvars.adv_postpause_src', '')
 gupload.xyz##body > div[id^="vp-"]
-gupload.xyz#%#//scriptlet('prevent-addEventListener', '/click|DOMContentLoaded/', '/new MouseEvent|SPONSOR_LINKS|_url,|\[\'\x/')
+gupload.xyz##body > div[id][style^="position: fixed; inset: 0px; z-index: 9999;"]
+gupload.xyz#%#//scriptlet('prevent-addEventListener', '/click|DOMContentLoaded/', '/new MouseEvent|SPONSOR_LINKS|_url,|\[\'\\x/')
 gupload.xyz#%#//scriptlet('abort-current-inline-script', 'document.createElement', '/_url,|\[\'\x/')
 gupload.xyz#%#//scriptlet('prevent-window-open')
 gupload.xyz#%#//scriptlet('set-constant', 'Object.prototype.vastFallbackList', 'emptyArr')
@@ -31631,6 +31645,7 @@ browsershots.org#@#.advert_area
 ||ancientsnow.com^
 ||ancillammmm.com^
 ||andhrapanful.cfd^
+||andorsowarswillier.cfd^
 ||androidduvetscribble.com^
 ||aneathyocked.shop^
 ||anemiachoky.com^
@@ -37468,6 +37483,7 @@ browsershots.org#@#.advert_area
 ||ibcflijbwbhbx.space^
 ||ibeeckaidse.net^
 ||iberismoffish.cfd^
+||ibgog2fkc3hljn6f8tr79q13zv.rest^
 ||ibidemkorari.com^
 ||ibikini.cyou^
 ||ibkhearv.com^
@@ -39047,6 +39063,7 @@ browsershots.org#@#.advert_area
 ||lookandfind.me^
 ||looktotheright.com^
 ||lookymurva.cfd^
+||loopierwhither.qpon^
 ||loopme.me^
 ||loor38.com^
 ||loosebelt.com^
@@ -40315,6 +40332,7 @@ browsershots.org#@#.advert_area
 ||nspmotion.com^
 ||nspot.co^
 ||nspyqtvzssgca.site^
+||nsxalwpk.com^
 ||nszrgeiafoufh.website^
 ||ntcfkcmes.com^
 ||ntesgsght.com^
@@ -40727,6 +40745,7 @@ browsershots.org#@#.advert_area
 ||orexincrake.cyou^
 ||orgamyfeminiehatchet.cyou^
 ||organicowner.com^
+||organicparotisorias.cfd^
 ||organizationwoundedvast.com^
 ||orgassme.com^
 ||orgiacdoses.cyou^
@@ -43731,6 +43750,7 @@ browsershots.org#@#.advert_area
 ||sqpyclvkzpgnw.space^
 ||sqsiybcwedqej.space^
 ||square-smoke.pro^
+||squatlyteguima.qpon^
 ||squatsendplayswells.qpon^
 ||squattymaidly.com^
 ||squawkssuppost.qpon^
@@ -44348,6 +44368,7 @@ browsershots.org#@#.advert_area
 ||thrummysissify.cyou^
 ||thrumsagamid.qpon^
 ||thrustssacculi.cyou^
+||thsbmjrfuqilu.space^
 ||thubanoa.com^
 ||thujaskoroa.cyou^
 ||thulelendersvougeot.cfd^
@@ -44556,8 +44577,10 @@ browsershots.org#@#.advert_area
 ||tpmedia-reactads.com^
 ||tpmr.com^
 ||tpn134.com^
+||tpyacbtcjxcfo.site^
 ||tqavepkjscuoz.online^
 ||tqgyzwquwu.com^
+||tqhccanebnaom.online^
 ||tqicqsjehtegj.online^
 ||tqjaqgmgbv.com^
 ||tqobbmqmbhqlz.online^
@@ -45743,6 +45766,7 @@ browsershots.org#@#.advert_area
 ||wboptim.online^
 ||wbsleixbsbbrf.space^
 ||wbvxljdkzkfcm.online^
+||wbxyusccfitux.site^
 ||wc87322357rey4fz.cfd^
 ||wcddixtfgd.com^
 ||wchkbyhrxwtig.site^
@@ -45968,6 +45992,7 @@ browsershots.org#@#.advert_area
 ||wispierconceal.cyou^
 ||wisteinsight.com^
 ||wister.biz^
+||wisurestogy.cfd^
 ||witasix.com^
 ||withedforcene.qpon^
 ||witnessjacket.com^
