@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: M2dkbIjKNLd9PnWx5q+y2A
-! Diff-Path: ../patches/1/1-s-1786364654-3600.patch
+! Checksum: gyalCY/e/VYCFkHdMYpiKA
+! Diff-Path: ../patches/1/1-s-1786375730-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.7.97
-! TimeUpdated: 2026-08-10T12:20:35+00:00
+! Version: 2.1.7.98
+! TimeUpdated: 2026-08-10T15:25:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4938,7 +4938,8 @@ ya.ru,yandex.*##.services-feed > div[style^="--height-ratio:"]
 ya.ru,yandex.*##.services-feed_banner_yes
 ya.ru##.Skeleton_type_ad_search
 ya.ru,yandex.*##:matches-path(/search) .AdvMedia
-yandex.*##body:not([data-bem*="pogoda"]) .mini-suggest__popup-content > li[data-type="nav"]
+! in search suggestions in the search bar
+yandex.*##ul[class^="mini-suggest__"] > li[data-type="nav"]
 ! ad in the search results
 ya.ru##ul[id] > li[class*="Organic"]:has(> div.Root div[class*="-HeaderAd"] > span)
 ya.ru##[id^="search-"] > [data-fast="2"]
@@ -6999,6 +7000,7 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+ura.news##div[class*="_news-publication-divider__title"]
 iguides.ru##section.main-container > section.row:has(> section > #bxdynamic_banner-top_start)
 iguides.ru##section.main-container > section.row:has(> section > #bxdynamic_ADV_IG_TOP_start)
 iguides.ru##section.col-right:has(> #bxdynamic_ADV_IG_240_RIGHT_ASIDE_start)
