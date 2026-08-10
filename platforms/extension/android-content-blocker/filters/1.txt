@@ -1,8 +1,8 @@
-! Checksum: 61q4O1Pm5AzBXhSH8Ls4nQ
+! Checksum: XzrNy45LPZyi6AZufHZwWg
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.7.95
-! TimeUpdated: 2026-08-07T12:20:21+00:00
+! Version: 2.1.7.96
+! TimeUpdated: 2026-08-10T11:25:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3796,6 +3796,8 @@ wss://s.zmctrack.net/
 ! NOTE: UA rules copied to Ukrainian filter
 ! TODO: Remove not multi lang rules with .ua tld after splitting the filter (look at the end of file)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/237848
+||maket.laserbiz.ru/templates/androidus-warm/js/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237330
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 @@||pagead2.googlesyndication.com/pagead/js/$domain=mintmanga.com
@@ -6110,6 +6112,7 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+||zvuk.com/rambler|
 kinogo.tm##.ad-branding
 kinogo.tm##.kng-rekl
 lenta.ru##iframe[src="https://zvuk.com/rambler"]
@@ -6325,12 +6328,10 @@ lmusic.kz##.l-body__ad
 box.hitplayer.ru###billboard
 box.hitplayer.ru###DesktopInread
 box.hitplayer.ru###DesktopFooter
-gazeta.ru##.b_custom_logo
 mignews.com##.mig-ad-wrapper
 mignews.com##.custom-height-400
 xcelebs.ru##.asmus-money-overlay
 .xml?*mode=vast$domain=o4ko.com|pornushka.tv
-gazeta.ru##.b_exchange
 sportsdaily.ru##div[class^="bkPromo_bkPromo_"]
 pikabu.ru##.promo-button
 pikabu.ru###branding_ad_header
@@ -6728,7 +6729,6 @@ izvratfilm.com##img[width="300px"][height="250px"]
 habr.com##.tm-adfox-banner__container
 radiorecord.ru##.undefined
 lux.fm##app-adv-placeholder
-gazeta.ru##a[data-gazeta*="advbtn"]
 kg-portal.ru##.adex
 kinonews.ru,kinoafisha.info##advertronic-slot
 kinonews.ru##div[style="height:600px;"]
@@ -7047,8 +7047,6 @@ life.ru##a[class="wrapper"][target="_blank"]
 gorodovoy.ru,logist.today##.horizontal-banner
 logist.today##div[class|="article-sidebar__ad"]
 kp.ru##.afisha-r__block
-||static.gazeta.ru/nm2021/js/others_scripts_v1.js
-gazeta.ru##div[class^="unit-"][data-check][id]
 downradar.ru##a[href="https://pikadil.ru"]
 kanobu.ru##div[class^="LinkingButtonsOfArticle_root"]
 kino-teatr.ru##.page_content_block div[class="film_block"][style="background: none;"]
@@ -7217,7 +7215,6 @@ razlozhi.ru##a[href="https://puzzleheap.ru/"][target="_blank"]
 expertcen.ru##.promo-block
 expertcen.ru##.direct-ad
 ukraina.ru##div[data-type="banner"]
-gazeta.ru##a[href^="https://www.gazeta.ru/gazeta/adv/"]
 ||teleport2001.ru/serviceworker-advanced_pwa_js
 snob.ru##.entry__incut__promo-box
 teleport2001.ru##.views-row-banner
@@ -15991,6 +15988,13 @@ tv.rambler.ru##div[style^="min-height:"][style*="px"]
 ! END: rambler.ru
 !
 ! START: gazeta.ru
+gazeta.ru##iframe[src="https://zvuk.com/rambler"]
+gazeta.ru##.b_custom_logo
+gazeta.ru##.b_exchange
+gazeta.ru##a[data-gazeta*="advbtn"]
+||static.gazeta.ru/nm2021/js/others_scripts_v1.js
+gazeta.ru##div[class^="unit-"][data-check][id]
+gazeta.ru##a[href^="https://www.gazeta.ru/gazeta/adv/"]
 gazeta.ru##.b_rightcol > div[style="position:relative;height:30%;"]
 gazeta.ru##._is_adfree
 gazeta.ru##div[id^="smi2_"]
