@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.82.87",
-			"timeUpdated": "2026-08-11T03:35:26+0000",
+			"version": "2.4.82.88",
+			"timeUpdated": "2026-08-11T04:32:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.92",
-			"timeUpdated": "2026-08-11T00:23:31+0000",
+			"version": "2.1.8.93",
+			"timeUpdated": "2026-08-11T04:32:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.75.31",
-			"timeUpdated": "2026-08-11T03:35:57+0000",
+			"version": "2.2.75.32",
+			"timeUpdated": "2026-08-11T04:33:16+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.30.90",
-			"timeUpdated": "2026-08-11T01:35:29+0000",
+			"version": "2.1.30.91",
+			"timeUpdated": "2026-08-11T04:33:19+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -727,8 +727,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.80.37",
-			"timeUpdated": "2026-08-10T15:26:11+0000",
+			"version": "2.0.80.38",
+			"timeUpdated": "2026-08-11T04:33:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -749,8 +749,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.31.22",
-			"timeUpdated": "2026-08-10T10:32:03+0000",
+			"version": "2.0.31.23",
+			"timeUpdated": "2026-08-11T04:33:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1727,8 +1727,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.63.18",
-			"timeUpdated": "2026-08-11T01:35:41+0000",
+			"version": "2.1.63.19",
+			"timeUpdated": "2026-08-11T04:33:29+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
@@ -2417,7 +2417,7 @@
 		{
 			"filterId": 260,
 			"name": "Stevo's AI Blocklist",
-			"description": "A filter list that hides website features which use generative AI and AI-generated content.",
+			"description": "Hides website features which use generative AI and AI-generated content.",
 			"timeAdded": "2026-06-16T11:14:46+0000",
 			"homepage": "https://github.com/Stevoisiak/Stevos-AI-Blocklist/",
 			"expires": 432000,

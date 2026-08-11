@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.82.87",
-			"timeUpdated": "2026-08-11T03:35:26+0000",
+			"version": "2.4.82.88",
+			"timeUpdated": "2026-08-11T04:32:45+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.8.92",
-			"timeUpdated": "2026-08-11T00:23:31+0000",
+			"version": "2.1.8.93",
+			"timeUpdated": "2026-08-11T04:32:56+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.75.31",
-			"timeUpdated": "2026-08-11T03:35:57+0000",
+			"version": "2.2.75.32",
+			"timeUpdated": "2026-08-11T04:33:16+0000",
 			"languages": []
 		},
 		{
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.30.90",
-			"timeUpdated": "2026-08-11T01:35:29+0000",
+			"version": "2.1.30.91",
+			"timeUpdated": "2026-08-11T04:33:19+0000",
 			"languages": []
 		},
 		{
@@ -286,8 +286,8 @@
 				"ext_safari",
 				"ext_android_cb"
 			],
-			"version": "2.0.13.84",
-			"timeUpdated": "2026-08-10T11:26:15+0000",
+			"version": "2.0.13.85",
+			"timeUpdated": "2026-08-11T04:33:21+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.80.37",
-			"timeUpdated": "2026-08-10T15:26:11+0000",
+			"version": "2.0.80.38",
+			"timeUpdated": "2026-08-11T04:33:24+0000",
 			"languages": []
 		},
 		{
@@ -325,8 +325,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.31.22",
-			"timeUpdated": "2026-08-10T10:32:03+0000",
+			"version": "2.0.31.23",
+			"timeUpdated": "2026-08-11T04:33:25+0000",
 			"languages": []
 		},
 		{
@@ -1163,8 +1163,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.63.18",
-			"timeUpdated": "2026-08-11T01:35:41+0000",
+			"version": "2.1.63.19",
+			"timeUpdated": "2026-08-11T04:33:29+0000",
 			"languages": [
 				"zh"
 			]
@@ -1702,7 +1702,7 @@
 		{
 			"filterId": 260,
 			"name": "Stevo's AI Blocklist",
-			"description": "A filter list that hides website features which use generative AI and AI-generated content.",
+			"description": "Hides website features which use generative AI and AI-generated content.",
 			"homepage": "https://github.com/Stevoisiak/Stevos-AI-Blocklist/",
 			"expires": 432000,
 			"displayNumber": 100,
