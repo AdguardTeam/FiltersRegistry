@@ -1,15 +1,15 @@
-! Checksum: qqEqlPtHX4NDlFhfr4YXCA
-! Diff-Path: ../patches/233/233-s-1783284647-14400.patch
+! Checksum: 9CCHG96UapAogUWAUK2/fQ
+! Diff-Path: ../patches/233/233-s-1786193389-14400.patch
 ! Title: Adblock List for Finland
 ! Description: Finnish ad blocking filter list.
-! Version: 2.0.12.40
-! TimeUpdated: 2026-07-05T20:47:49+00:00
+! Version: 2.0.12.58
+! TimeUpdated: 2026-08-08T12:46:17+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Adblock List for Finland
 ! Description: Finnish adblock list
 ! Expires: 4 days
-! Last modified: Sun, 05 Jul 2026 19:56:44 +0300
+! Last modified: Sat, 08 Aug 2026 13:12:31 +0300
 ! Homepage: https://github.com/finnish-easylist-addition/finnish-easylist-addition
 ! License: https://unlicense.org/
 ! Raportoi mainoksenestoon liittyvistä ongelmista tai estämättömistä mainoksista täällä / Please report adblocking related issues or unblocked ads at:
@@ -55,9 +55,6 @@ www.suomi24.fi#$#[data-gtm-label="threadGridView"] > [class^="ThreadGridItemWrap
 www.suomi24.fi#$#[data-gtm-label="threadGridView"] > [class^="ThreadGridItemWrapper__CardCol"] > [class^="ThreadGridItemWrapper__CardWrapper"] { width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;margin:0!important;padding-left:0!important;padding-right:0!important;transform:none!important;left:auto!important;right:auto!important;top:auto!important }
 www.suomi24.fi#$#[data-gtm-label="threadGridView"] > [class^="ThreadGridItemWrapper__CardCol"] > [class^="ThreadGridItemWrapper__CardWrapper"] > * { position:static!important;transform:none!important;left:auto!important;right:auto!important;width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word!important }
 www.suomi24.fi#$#[data-gtm-label="threadGridView"] > [class^="ThreadGridItemWrapper__CardCol"] > [class^="ThreadGridItemWrapper__CardWrapper"] { border-right: none !important }
-! telsu.fi##a[href^="/"]:matches-css(font-size: /^[2-9][\d][\.\d]*px$/):upward(div[class])
-! telsu.fi##.pb_t:style(position: absolute !important)
-! telsu.fi##+js(acs, googlefc)
 ! Trick to overcome flickering issues caused by a slow procedural
 karjalainen.fi#@?#.breaking-news-container:contains(mainos:)
 karjalainen.fi##.breaking-news-container
@@ -79,6 +76,10 @@ findit.fi#%#//scriptlet('ubo-acs', 'testPrebid')
 happypancake.fi#%#//scriptlet('ubo-aopr', 'Object.prototype.adUnits')
 s-kaupat.fi#%#//scriptlet('ubo-json-prune', 'props.pageProps.contentfulState.frontPage.sections.[].fields.hasCitrusAdSlot props.pageProps.contentfulState.frontPage.sections.[].fields.isCitrusAdGrid')
 srk.fi#%#//scriptlet('ubo-set-cookie', 'cookielaw_accepted', '1', '', 'reload', '1')
+telsu.fi#%#//scriptlet('ubo-aeld', 'transitionend', '', 'elements', 'div[style*="-9999px"][style*="outline-offset"]')
+telsu.fi#%#//scriptlet('ubo-aost', 'Animation.prototype.finished', '/telsu\.fi\/js\/[a-z\d]+\.js\?v=\d+/')
+telsu.fi#%#//scriptlet('ubo-norafif', '/const\s+([$\w]+)=[$\w]+\(\)-[$\w]+;if\(\1>=[\s\S]*?\x2C\1>=[\s\S]*?\)\{[$\w]+\(\);return;\}window\[[^\]]+\]\([$\w]+\);/')
+telsu.fi#%#//scriptlet('ubo-nostif', '/const\s+([$\w]+)=\[(?:[$\w]+\x2C){3}[$\w]+\];for\(let\s+([$\w]+)=[^;]+;\2<\1\[[^\]]+\];\2\+\+\)if\(!\1\[\2\]\)return;[$\w]+\(\);/', '2600-3399')
 vauva.fi#%#//scriptlet('ubo-rmnt', 'script', 'async-hide')
 ! Fix YouTube videos on www.aalto.fi
 ! Example: https://www.aalto.fi/fi/koulutustarjonta/kiinteistotalous-ja-geoinformatiikka-tekniikan-kandidaatti-ja-diplomi-insinoori
@@ -91,8 +92,8 @@ aalto.fi#%#//scriptlet('ubo-set-cookie', 'cookiebot-consent--statistics', '0')
 ! mtv.fi & mtvuutiset.fi
 &browser=MozillaFirefox$xmlhttprequest,removeparam=browser,domain=mtv.fi|mtvuutiset.fi
 @@||fi-mtv3.videoplaza.tv/proxy/distributor$domain=mtv.fi|mtvuutiset.fi
-mtv.fi,mtvuutiset.fi#%#//scriptlet('ubo-json-prune-fetch-response', 'bumpers', '', 'propsToMatch', 'url:/playback2.a2d.tv\/play/')
-mtv.fi,mtvuutiset.fi#%#//scriptlet('ubo-json-prune-fetch-response', 'playbackItem.isStitched', '', 'propsToMatch', 'prism.a2d.tv')
+mtv.fi,mtvuutiset.fi#%#//scriptlet('json-prune-fetch-response', 'bumpers', '', 'url:/playback2.a2d.tv\/play/')
+mtv.fi,mtvuutiset.fi#%#//scriptlet('json-prune-fetch-response', 'playbackItem.isStitched', '', 'prism.a2d.tv')
 mtv.fi,mtvuutiset.fi#%#//scriptlet('ubo-xml-prune', 'MediaFile', '', 'fi-mtv3.videoplaza.tv/proxy/distributor')
 mtv.fi,mtvuutiset.fi#$?#.avod-web-player-csai { remove: true; }
 mtv.fi,mtvuutiset.fi##.avod-web-player-pause
@@ -584,6 +585,7 @@ is.fi##[data-testid|="laneitem"] > article:has(a[href^="https://media.sanoma.fi/
 is.fi##[data-testid|="laneitem"]:has(a[href^="/mainos/"])
 is.fi##[data-testid|="laneitem"]:has(a[href^="https://www.admanager.fi/"])
 is.fi##[href^="https://www.is.fi/tilaus/is-extra/"][href$="myyntitikkeri"]
+is.fi##a[href^="http://media.sanoma.fi/"][href*="admanager"]
 is.fi##article.teaser-m__border:has(a.block[href^="https://markkinoijalle.media.sanoma.fi/"])
 is.fi##div.sadblob-loading
 iskelma.fi##section.sbs-articleitems[data-module_position_id="814"]
@@ -1032,22 +1034,9 @@ sportti.com#?#tr:contains(.loadAd)
 sss.fi##.td_block_wrap:has([href="https://www.sss.fi/category/mainos/"])
 sss.fi##aside.widget_text:has([id^="sas_"])
 sss.fi#?#aside.widget_text:contains(MAINOS)
-stadissa.fi##.banner > a[href="/clickad.php?id=1016"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1264"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1337"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1480"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1513"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1529"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1532"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1540"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1543"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1554"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1557"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1566"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1574"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1577"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1578"]
+stadissa.fi##.article-video-ad
 stadissa.fi##[class|="juhlaviikot"]
+stadissa.fi##a[href^="/clickad.php?id="]:not(.rightbarTextLiftLink)
 styleroom.fi##.bg-box:has([id|=placement-ad-grid])
 suomen118.fi###layout-banner-right
 suomenautolehti.fi##.banner_wide
@@ -1113,7 +1102,8 @@ tekniikkatalous.fi,tivi.fi##[width]:has(.lazyload-wrapper)
 telsu.fi##.ch:has(em > a)
 telsu.fi##.dp
 telsu.fi##.pb
-telsu.fi#$#.pb_t { display: flex !important; height: 1px !important; min-height: 1px !important; max-height: 1px !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important; pointer-events: none !important; }
+telsu.fi#$?#.pb_t { remove: true; }
+telsu.fi#$?#i.pw { remove: true; }
 telsu.fi#?#.ch:contains(/SP(O|0)NSOROITU/)
 telsu.fi#?#.ch:contains(/SPON|SPONS|SPONSO|SPONSOR|SPONSORO|SPONSOROI|SPONSOROIT|SPONSOROITU/)
 temu.com##.EKDT7a3v:has([aria-label="Mainos"])
@@ -1160,6 +1150,7 @@ toimitilat.oikotie.fi##[analytics-impression="energy-promotion_listing-page_impr
 tori.fi###banner-top-container
 tori.fi###banner_panorama_bottom
 tori.fi###footer_partner_links
+tori.fi##.retail-media-ad-wrapper
 tori.fi##div#banner_panorama_topmost
 tori.fi##div#panorama_top
 tori.fi##div#panorama_topmost
@@ -1412,6 +1403,7 @@ _300x300_*.mp4$media,domain=futisfani.com|kiekkofani.com|penkkiurheilu.com|uutis
 ||stadissa.fi/images/stadissa/ads/*-980-200.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*-desktop.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*.gif$image,domain=stadissa.fi
+||stadissa.fi/images/stadissa/ads/*.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*_900.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*_980x200.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*_desk.jpg$image,domain=stadissa.fi
@@ -1534,12 +1526,6 @@ netticaravan.fi#@#article.ad
 ! 2024-04-23 https://elisa.fi/yhtiotieto/sijoittajille/
 ! "se: Frellwit's Swedish Filter" breaks this
 @@||publish.ne.cision.com/$xmlhttprequest,domain=elisa.fi
-! Allow opt-in in a cookieconsent-blocked element (for example, YouTube embeds)
-! Example page (YouTube embed): https://www.seurakuntalainen.fi/uutiset/jutta-urpilainen-arvotentissa-arvoni-pohjaavat-kristinuskoon-mutta-ovat-linjassa-sosiaalidemokratian-kanssa/
-@@||consent.cookiebot.com/uc.js$domain=www.seurakuntalainen.fi
-@@||consent.cookiebot.com/*/cc.js?renew=true$domain=www.seurakuntalainen.fi
-@@||consent.cookiebot.com/logconsent.ashx$domain=www.seurakuntalainen.fi
-www.seurakuntalainen.fi#@##CookieBanner
 ! Unbreak cookie consent, however this doesn't hide it
 ! uBO extras has set-cookie to automatically set a cookie to hide it
 ! https://srk.fi/fi/
@@ -1549,4 +1535,7 @@ srk.fi#@##CookielawBanner
 @@||googletagmanager.com/gtm.js$domain=pohjanmaanhyvinvointi.fi
 ! https://www.tek.fi/fi/palvelut-ja-edut/palkka/tilaa-palkkatietoa
 @@/eu_cookie_compliance.min.js$script,domain=www.tek.fi
+! Fixes site issue, sometimes huge white area appears at the bottom page
+bittimittari.fi,kyberturvallisuuskeskus.fi,saavutettavuusvaatimukset.fi,traficom.fi#$#html { height:auto !important }
+bittimittari.fi,kyberturvallisuuskeskus.fi,saavutettavuusvaatimukset.fi,traficom.fi#$#body.layout-root { height:auto !important }
 ! -----UNBREAK END-----

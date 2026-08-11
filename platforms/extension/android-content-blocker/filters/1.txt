@@ -1,8 +1,8 @@
-! Checksum: VFBH7AeQuekpJVIFkhsQJw
+! Checksum: sZzYd9UsxEpQlor/IUIBig
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.7.16
-! TimeUpdated: 2026-07-06T09:27:35+00:00
+! Version: 2.1.8.0
+! TimeUpdated: 2026-08-10T18:21:50+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35,6 +35,7 @@
 /lib/*.xml?fre=$xmlhttprequest
 ||vveu.*/files/episodes/*.mp4
 -22bet.mp4
+/files/series/*-RU.mp4|
 /files/episodes/*-RU.mp4|
 /^https:\/\/[a-z]+\.[a-z]+\.com\/api-integration\/[a-z]+\?[a-z]+=[a-z-0-9][a-z-0-9][a-z-0-9][a-z-0-9][a-z-0-9][a-z-0-9][a-z-0-9][a-z-0-9]-/
 /api-integration/somewhereelse?unique=
@@ -370,6 +371,7 @@ http://*.ru/leftunit.pl?
 ! Kadam ads
 /kadam.base.min.js?
 !
+/ay/loader.js?
 /img/sadse/*$subdocument
 ||vst.*/*?subid=
 /vast.php?partner_id=
@@ -1443,6 +1445,21 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||adlook.tv^$third-party
+||chernomaza.link^
+||getter.cfd^
+||svetoborka.link^
+||kudlavasta.link^
+||czxbcy.com^
+||alpharockone.com^
+||bearclonepeak.com^
+||adzone.ru^$third-party
+||surfy.space^
+||x.ctrltech.ai^
+||bs.serving-sys.ru^
+||adseedtech.com^
+||getandgo.ru^
+||onfeed.ru^
 ||distribrey.com^
 ||mimokrikodil.link^
 ||adport.net^
@@ -3780,6 +3797,11 @@ wss://s.zmctrack.net/
 ! NOTE: UA rules copied to Ukrainian filter
 ! TODO: Remove not multi lang rules with .ua tld after splitting the filter (look at the end of file)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/237848
+||maket.laserbiz.ru/templates/androidus-warm/js/advert.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/237330
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+@@||pagead2.googlesyndication.com/pagead/js/$domain=mintmanga.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234715
 ||sochi.camera/adblock-detector.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233664
@@ -3993,11 +4015,6 @@ vascak.cz##img[style="position:fixed; left:0px; top:300px; width:100vw; height:9
 @@||videoroll.net/js/vid_vpaut_script.js$domain=online-fix.me
 ! https://forum.adguard.com/index.php?threads/https-iptv-team.42948/
 @@||googleads.g.doubleclick.net^$xmlhttprequest,other,domain=channels247.net|iptv.team
-! https://github.com/AdguardTeam/AdguardFilters/issues/74593
-reshebnik.com#@##AdHeader
-reshebnik.com#@##AD_Top
-reshebnik.com#@##homead
-reshebnik.com#@##ad-lead
 ! 'flashvars.protect_block'
 @@/player/player_ads.html?advertising_id=$domain=smaxim.*|seksaed.com|meb.weaeko2es.com|private-records.com|russkoe21.com|camsclips.biz|bessporno.me|privat-zapisi.video|pornobomba.org|720video.me|720video.tv|bessporno.tv|ebalovo.*|lenkino.*|porno-tour.*|pornomoll.*|ru-xvideos.me|ebalovsk.com
 smaxim.*,seksaed.com,meb.weaeko2es.com,private-records.com,seksoeb.com,russkoe21.com,camsclips.biz,bessporno.me,privat-zapisi.video,pornobomba.org,ebalovsk.com,720video.me,720video.tv,bessporno.tv,ebalovo.*,lenkino.*,porno-tour.*,pornomoll.*,ru-xvideos.me#@##ads_iframe
@@ -4840,7 +4857,8 @@ satsis.ru##.adb
 ya.ru##.main-home-banner
 !
 ! Yandex.Search
-ya.ru##[id^="search-"] > [data-fast="2"]
+ya.ru,yandex.*##div[id^="search-"] div[style="width:240px"]
+ya.ru,yandex.*###search-result-aside div[style="width:240px"]
 yandex.*##.SerpListFeature div.Skeleton_type_ad_search
 ya.ru,yandex.*##.DirectFeature
 ya.ru##div[data-hydration-id] > style + div[style^="--image-aspect-ratio:"]
@@ -4850,9 +4868,13 @@ ya.ru,yandex.*##.services-feed > div[style^="--height-ratio:"]
 ya.ru,yandex.*##.services-feed_banner_yes
 ya.ru##.Skeleton_type_ad_search
 [$path=/search]ya.ru,yandex.*##.AdvMedia
-yandex.*##body:not([data-bem*="pogoda"]) .mini-suggest__popup-content > li[data-type="nav"]
+! in search suggestions in the search bar
+yandex.*##ul[class^="mini-suggest__"] > li[data-type="nav"]
 ! ad in the search results
+ya.ru##[id^="search-"] > [data-fast="2"]
+ya.ru,yandex.*##.RsyaOrganic
 ! ad in a search proposal
+ya.ru,yandex.*##.mini-suggest__popup > ul > li[data-suggest-counter] > a[target="_blank"]
 ya.ru,yandex.*##div[id^="suggest-item"] > a[href^="http://yabs."][href*="/count/"]
 ya.ru,yandex.*##div[id^="suggest-item"] > a[href^="https://yabs."][href*="/count/"]
 ya.ru,yandex.*##div[id^="suggest-item"] > a[href^="http://yandex"][href*="/clck/"]
@@ -4873,6 +4895,7 @@ ya.ru,yandex.*###search-result-aside > div[class*="_right_yes"]:not([aria-label]
 ! ya.ru,yandex.*##.content__right .serp-item > *
 !
 ! Yandex.Images
+[$path=/images]ya.ru,yandex.*##.AppAdvancedSearch + div[class*="-List"]
 ya.ru,yandex.*##.MMSidebar-Card_bottomAdv
 ya.ru,yandex.*##.ImagesViewer-SidebarAdv
 ya.ru,yandex.*##div[style^="max-width:"] > svg[width="100%"]
@@ -4900,12 +4923,15 @@ yandex.*##.card-header-media-view__list > div.card-header-media-view__advert-wra
 ! Yandex.Pogoda
 !
 ! Yandex.Market
+market.yandex.ru##div[data-zone-name="heroBannerCarousel"]
+market.yandex.ru##div[data-apiary-widget-name="@marketfront/RecomAdv"]
+market.yandex.ru##div[data-apiary-widget-name="@monetize/AdvStreamer"]
+market.yandex.ru##div[data-apiary-widget-name^="@monetize/HeroBannerCarousel"]
 market.yandex.*##div[data-apiary-widget-name^="@monetize/UrbanAds"]
 market.yandex.*##div[data-apiary-widget-name="@monetize/CreativeBanner"]
 market.yandex.*##div[data-apiary-widget-name="@monetize/MadvHeaderPromoStreamer"]
 market.yandex.*##div[data-apiary-widget-name="@marketfront/CreativeBanner"]
 market.yandex.*##div[data-apiary-widget-name="@monetize/RecomMediaAdv"]
-market.yandex.*##div[data-apiary-widget-name="@monetize/HeroBannerCarouselLazyCreator"]
 market.yandex.*###banner-streamer
 !
 ! Yandex.Video
@@ -4965,8 +4991,11 @@ rasp.yandex.*##.SearchSegmentsDirect
 travel.yandex.ru##noindex[id^="adfox_"]
 !
 ! Yandex.Realty
-realty.ya.*##div[class*="PostBlocks__ad"]
-realty.ya.ru##.OffersSerpPromoItem
+yandex.ru##.RealtyListing-SnippetsList > div[id*="__R_"]
+yandex.ru##.RealtyListing-AdfoxBanner
+yandex.ru##.AdvPremium-List
+yandex.ru##.RealtyListing-AdvItem_listingType_offer
+yandex.ru##.NewbuildingsPromo
 !
 ! Yandex.Travel
 !
@@ -5761,7 +5790,7 @@ ufacitynews.ru,sevastopol.su,zn.ua,pravo.ru,lubertsyriamo.ru,kommersant.ru,dvnov
 ! ##div[id^="unit_"]
 ngnovoros.ru,grozny.tv,newizv.ru,ura.news,ferra.ru,malls.ru,montecarlo.ru,hightech.fm,ngs24.ru,76.ru,msk1.ru,grozny-inform.ru,pnp.ru,ladys.media,pogovorim.by,umteh.com,newsarmenia.am,sib.fm,autoparus.by,ctv.by,hightech.plus,punkt-a.info,1yar.tv,baltnews.*,sm.news,politring.com,interfax.by,eadaily.com,golospravdy.eu,tayga.info,neg.by,kriminal.net.ua,rusvesna.su,365news.biz,mir24.tv,newsru.com,finam.info,mixnews.lv,russian.rt.com,steaklovers.menu,teleprogramma.pro,ua-football.com,vesti.uz,warhead.su,zakon.kz##div[id^="unit_"]
 ! ##div[id^="adfox_"]
-mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,gorodche.ru,smartpress.by,raenza.ru,eadaily.com,zakon.kz,svpressa.ru,udf.name,udf.by,baby.ru,pikabu.ru,thequestion.ru##div[id^="adfox_"]
+love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,gorodche.ru,smartpress.by,raenza.ru,eadaily.com,zakon.kz,svpressa.ru,udf.name,udf.by,baby.ru,pikabu.ru,thequestion.ru##div[id^="adfox_"]
 !
 ! For URL shorteners or simple sites with frequently changed ad servers.
 ! Incorrectly blocked domains can be excluded using regex(synchronize this regexp in all filters)
@@ -5777,6 +5806,15 @@ mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,
 !
 ! NOTE: Specific rules
 !
+liga.net##.remp-banner
+epravda.com.ua##div[style="height:290px; clear: both; margin-top: 10px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center;"]
+streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##.musiqly-ad
+legalbet.by,legalbet.*##.top-three-block > div
+legalbet.by,legalbet.*##.bookmakers-in-footer
+legalbet.by,legalbet.*##.other-bonuses
+grad.ua##.googleBnr
+grad.ua###post-entry > div.blok_header_title
+comments.ua###balu
 unian.net##div[id^="media_"][id$="_box"]
 ||cdn.lbs.pw/promo/
 liveball.sx###fullscreen
@@ -5790,7 +5828,6 @@ tribuna.com##div[class$="__main_layout__empty_block"]
 rbc.ua##div[style="min-height:350px;"]
 ||enovosty.com/wp-content/uploads/*/klo_video_banner.mp4
 enovosty.com##.auto-banner
-stopcor.org##.idealmedia
 psm7.com###akurateco
 nikvesti.com##.desc-read-more-adv
 fbc.biz.ua##a[href="https://vchasno.ua/"] > img
@@ -5914,7 +5951,7 @@ socportal.info##div[x-lazyload*="pagead2.googlesyndication.com"]
 socportal.info##div[x-lazyload*="ScriptRootC"]
 sib.fm##.partners-footer
 orda.kz##body .ad2
-food.obozrevatel.com##.idealmedia
+food.obozrevatel.com,stopcor.org##.idealmedia
 food.obozrevatel.com##.googleBanner
 doradvokat.com.ua###sidebar-right > div#media_image-40 ~ div.mg-widget
 nur.kz##.js-commercial-menu
@@ -6042,12 +6079,12 @@ gismeteo.ua##div[id="weather-rbkua"]
 ||static.hdrezka.ac/i/*ggbet*.gif
 ||static.hdrezka.ac/i/def_pointloto_0_top.jpeg
 hdrezka.ax##.page-container ~ div[style*="z-index:"]:not([class])
-rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##[style^="height: 250px;"][style*="width: 680px;"]
-rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag###player > a[id][href^="/help/aHR0c"][style*="background-image"]
-rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##.b-content__main > div[id][style="height: 250px; overflow: hidden;"]:not([class])
-rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##.b-content__main > div[id]:not([class]):empty
-rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##div[id^="bn_"]
-rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##.ad-branding
+rezka-tv.org,hdrezka.la,rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##[style^="height: 250px;"][style*="width: 680px;"]
+rezka-tv.org,hdrezka.la,rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag###player > a[id][href^="/help/aHR0c"][style*="background-image"]
+rezka-tv.org,hdrezka.la,rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##.b-content__main > div[id][style="height: 250px; overflow: hidden;"]:not([class])
+rezka-tv.org,hdrezka.la,rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##.b-content__main > div[id]:not([class]):empty
+rezka-tv.org,hdrezka.la,rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##div[id^="bn_"]
+rezka-tv.org,hdrezka.la,rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrezka.inc,hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##.ad-branding
 !
 ! Группа компаний Актион
 kom-dir.ru,gd.ru,buhsoft.ru,dirklinik.ru,fd.ru,business.ru,pro-personal.ru,trudohrana.ru##.ASE_brandImage
@@ -6078,6 +6115,45 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+ura.news##div[class*="_news-publication-divider__title"]
+||zvuk.com/rambler|
+kinogo.tm##.ad-branding
+kinogo.tm##.kng-rekl
+lenta.ru##iframe[src="https://zvuk.com/rambler"]
+/^https:\/\/happy-year\.narod\.ru\/\?[a-zA-Z0-9%]{100,150}$/$match-case,~third-party,subdocument,domain=happy-year.narod.ru
+happy-year.narod.ru##.ads-top-banner
+stolicaonego.ru###hideadvs
+stolicaonego.ru##.content_news_date[style^="margin-top:-20px; background-color:#fff;"]
+newsru.co.il##.in_text_video
+gogov.ru##.gg-dox
+||vod.smotrim.ru/vod/definst/*/playlist.m3u8?entity=announcement&
+euroauto.ru##.banner-in__wrapper
+||static2.tinkoffjournal.ru/creatives-core/v*/dist/index.js
+||rbc.ru/api/rbcnews/v*/topline-branding
+exnode.ru##div[class^="Banner_wrapper_"]
+psytests.org###nac_res
+libking.ru##div[class^="cpab"]
+monkrus.ws##center > a[href^="http://got.by/"]
+sports.ru##.news-layout__branding
+sports.ru##.post-layout__branding
+liveball.click,liveball.to,liveball.*###custom_brand
+ixbt.games##div[id^="ad-recommend"]
+neva.today##.intext-block
+sravni.ru##._1p39i0c
+sravni.ru##.common_rightColumn__dadCK
+euroauto.ru##.promo-container
+euroauto.ru##.promo-banner__container
+||file.euroauto.ru/*file/promotion/
+hightech.fm##a[href^="https://dum.ai/"]
+sports.ru##aside[data-control="Banners.DFP"]
+||cpa-elements.rambler.ru/info-banner/sdk.js
+||hi-fi.ru/js/bidding.js
+7kanal.co.il###banner-sticky
+kommersant.ru##.rubric_branding
+kommersant.ru##.adv_custom
+neva.today##.mix-news
+||neva.today/hamster/sonya/
+hi-fi.ru,scrubs-mtv.net##.ad-branding
 pay.cloudtips.ru##.card-banner
 sports.ru##.nav-left-banner
 sports.ru##.navigation-right-column-banner
@@ -6119,8 +6195,9 @@ sovsport.ru##div[class^="bonus-rating-widget_container"]
 sovsport.ru##.bonus-compilation-wrapper
 3d-galleru.ru##div[data-default-ads]
 sportcsat.ru###pc-container
+||fastpic.org/px/provider.js
 news.ru##.head-reban
-news.ru##.bnr
+info24.ru,news.ru##.bnr
 ||vendo.gazeta.bo/api/banner/show/
 business-gazeta.ru##a[data-slot]
 www1.ru##div[id^="ad-"]
@@ -6255,14 +6332,11 @@ lmusic.kz##.l-body__ad
 box.hitplayer.ru###billboard
 box.hitplayer.ru###DesktopInread
 box.hitplayer.ru###DesktopFooter
-gazeta.ru##.b_custom_logo
 mignews.com##.mig-ad-wrapper
 mignews.com##.custom-height-400
 xcelebs.ru##.asmus-money-overlay
 .xml?*mode=vast$domain=o4ko.com|pornushka.tv
-gazeta.ru##.b_exchange
 sportsdaily.ru##div[class^="bkPromo_bkPromo_"]
-mpg.com/movie/files/episodes/*-RU.mp4|
 pikabu.ru##.promo-button
 pikabu.ru###branding_ad_header
 vedomosti.ru##.article__metrics
@@ -6659,7 +6733,6 @@ izvratfilm.com##img[width="300px"][height="250px"]
 habr.com##.tm-adfox-banner__container
 radiorecord.ru##.undefined
 lux.fm##app-adv-placeholder
-gazeta.ru##a[data-gazeta*="advbtn"]
 kg-portal.ru##.adex
 kinonews.ru,kinoafisha.info##advertronic-slot
 kinonews.ru##div[style="height:600px;"]
@@ -6978,8 +7051,6 @@ life.ru##a[class="wrapper"][target="_blank"]
 gorodovoy.ru,logist.today##.horizontal-banner
 logist.today##div[class|="article-sidebar__ad"]
 kp.ru##.afisha-r__block
-||static.gazeta.ru/nm2021/js/others_scripts_v1.js
-gazeta.ru##div[class^="unit-"][data-check][id]
 downradar.ru##a[href="https://pikadil.ru"]
 kanobu.ru##div[class^="LinkingButtonsOfArticle_root"]
 kino-teatr.ru##.page_content_block div[class="film_block"][style="background: none;"]
@@ -7016,7 +7087,7 @@ abw.by##.r-header-wrapper
 abw.by##.article-content + .card-wrapper
 abw.by##.aside-promo
 /static\.abw\.by\/upload\/2023\/\d{2}\/\d{2}\/\d{2}[a-z0-9]{28,}(e|f)1\.webp$/$domain=abw.by
-redtorrent.org##a[href="/yan.php"]
+musictorrent.ru,redtorrent.org##a[href="/yan.php"]
 ||darktorrent.org/yabez*.png
 ont.by##.b-renommee__wrap
 rzd-partner.ru##.banner200
@@ -7148,7 +7219,6 @@ razlozhi.ru##a[href="https://puzzleheap.ru/"][target="_blank"]
 expertcen.ru##.promo-block
 expertcen.ru##.direct-ad
 ukraina.ru##div[data-type="banner"]
-gazeta.ru##a[href^="https://www.gazeta.ru/gazeta/adv/"]
 ||teleport2001.ru/serviceworker-advanced_pwa_js
 snob.ru##.entry__incut__promo-box
 teleport2001.ru##.views-row-banner
@@ -9048,8 +9118,6 @@ popasnaya.city##div[class^="mc-branding"]
 rf-cheats.ru###posts > center > table
 rf-cheats.ru##div[style="padding:0px 25px 0px 25px"] > center ~ center > br
 zorox.sex,pornogo.tube,zporno.sex##.hsd
-domporno.tv,analpornohd.com,pornomesto.net,pornogorod.net,russkoeporno.mobi##.full-bns-block
-russkoeporno.mobi##.brs-block
 russkoeporno.mobi##.video-wide-br
 wow-game.ru##.main-panel__announce > div.main-panel__logo:not([style^="background-image:"])
 masterinvest.info##.adbn
@@ -11133,7 +11201,7 @@ footbnews.ru##.background-cover
 myfin.by##.background_head > a[onclick^="ga('send', 'event', 'DeskAdv'"]
 nashaplaneta.net##.badv
 megatrest.ru##.badven
-sitv.ru,old-rozental.online,bestfree.ru,orthographia.ru##.ban
+pingvinus.ru,sitv.ru,old-rozental.online,bestfree.ru,orthographia.ru##.ban
 mgorod.kz##.ban-head
 iluki.ru##.ban-s
 theplace.ru##.ban-top-adaptive-wr
@@ -11198,7 +11266,7 @@ finam.info##.banner-right-second
 kinoprofi.vip##.banner-sidebar
 нашбийск.рф##.banner-src
 eva.ru##.banner-style
-tarakanov.net,mobdisc.com,mircsgo.org,blizko.by,ntsk.ru,orsk.ru,outsidethebox.ms##.banner-top
+7kanal.co.il,tarakanov.net,mobdisc.com,mircsgo.org,blizko.by,ntsk.ru,orsk.ru,outsidethebox.ms##.banner-top
 kinozz.club##.banner-under
 lifehacker.ru##.banner-under-header.show
 newkaliningrad.ru##.banner-w100
@@ -12775,7 +12843,7 @@ sobytiya.info##a[rel="nofollow"][alt] > img
 newtemplates.ru##a[rel="nofollow"][href^="http://newtemplates.ru/engine/go.php?url="] > img
 novostioede.ru##a[rel="nofolow"] > img
 loveradio.ru##a[style^="display:block;height:550px;;width:100%;"]
-winrar-all.ru,rivne.media,zlatopil.com##a[target="_blank"] > img
+diskographie.ru,winrar-all.ru,rivne.media,zlatopil.com##a[target="_blank"] > img
 x-torrent.pro##a[target="_blank"] > img[alt="Скачать"]
 uhta24.ru##a[target="_blank"]:not([href^="/"]) > img[alt]
 livelib.ru##a[target="_blank"][href*="www.livelib.ru/gopromo"]
@@ -15049,7 +15117,7 @@ astromeridian.ru##noindex > div
 gitjournal.tech,itechua.com,kerchinfo.com,proglib.io,windowslatest.com##.td-header-sp-recs
 chudesa.site,agrimpasa.com,dni24.com,every-holiday.ru,headinsider.net,hronika.info,likar.info,nashaplaneta.su,nerodiskrasivoitv.ru,newsyou.info,ovgorskiy.ru,pg11.ru,rusjev.net,superomsk.ru,uchastniki.com##div[id^="gnezdo_ru_"]
 cinetv.ru,vkpress.ru,otzyvy.by,bombardir.ru,echosevera.ru,emls.ru,gtavicecity.ru,kmory.ru,kubantv.ru,niasam.ru,ridus.ru,russian.rt.com,satsale.net,timeout.ru,www.vl.ru##.banners
-1progs.ru,techbriefly.com,etalongame.com,mapsworld.ru,crarena.ru,classicalmusicnews.ru,newhotgames.com,autotak.ru,geeker.ru,pcminipro.ru,losst.ru,bankstoday.net,gubdaily.ru,comp-profi.com,limelady.ru##.code-block
+movilforum.com,1progs.ru,techbriefly.com,etalongame.com,mapsworld.ru,crarena.ru,classicalmusicnews.ru,newhotgames.com,autotak.ru,geeker.ru,pcminipro.ru,losst.ru,bankstoday.net,gubdaily.ru,comp-profi.com,limelady.ru##.code-block
 novosti-n.org,coandroid.ru,soft-arhiv.com##a[target="_blank"][rel="nofollow"] > img
 ren.tv,tverigrad.ru##a[href^="http://smi2.net/"]
 itc.ua,devby.io,profile.ru,glavred.info,pushkino.tv,tglink.ru,mos.news,nvdaily.ru,objectiv.tv,warnet.ws##.partners
@@ -15415,6 +15483,8 @@ muzmo.org##.mm-listview > li > a.menu_item[href*="vpopke.org"]
 muzmo.org##.mm-listview > li > a.menu_item[href*="new.eromo.org"]
 !
 !+ NOT_OPTIMIZED
+||netmonet.co/last-page-banner-modal.
+!+ NOT_OPTIMIZED
 doctorpiter.ru##.creative-sticky
 !+ PLATFORM(ios, ext_android_cb)
 hentaiz.org##iframe[src*="bongacams.com/promo.php"]
@@ -15523,6 +15593,7 @@ mirtesen.aif.ru,mirtesen.profile.ru,mirtesen.sovsport.ru,mirtesen.spletnik.ru,mi
 ||static.t-ru.org/images/ali/
 /^(?!.*(brave\.com|google\.com|gstatic\.com|googleapis\.com|recaptcha\.net|ytimg\.com|dmca\.com|:\/\/static.)).*$/$third-party,script,_____,domain=rutracker.appspot.com|rutracker.lib|rutracker.net|rutracker.org
 /^https:\/\/rutrk.org(?!.*(\/logo\/)).*$/$domain=rutracker.appspot.com|rutracker.lib|rutracker.net|rutracker.org
+rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org###bn-top-right
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##.dl-btn-text-ad
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##.bn-bottom
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##.ref-1
@@ -15743,6 +15814,8 @@ youla.ru##.product_item--ad
 vfokuse.mail.ru##a[class^="rb-"][class*="branding"]
 !
 ! VK
+vk.com,vk.ru##.ConvoList__scrollbar-content > div[style]
+vk.com,vk.ru###l_invite_promo
 vk.com,vk.ru##section[class^="ImageBanner-module_"]
 vk.com,vk.ru###ads_left
 vk.com,vk.ru###apps_ads_wrap
@@ -15913,9 +15986,17 @@ weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,weather.rambler.ru,doctor.ram
 weather.rambler.ru##div[data-block="seo"]
 r0.ru##div[class^="News__adv"]
 ! https://github.com/AdguardTeam/CoreLibs/issues/1865
+tv.rambler.ru##div[style^="min-height:"][style*="px"]
 ! END: rambler.ru
 !
 ! START: gazeta.ru
+gazeta.ru##iframe[src="https://zvuk.com/rambler"]
+gazeta.ru##.b_custom_logo
+gazeta.ru##.b_exchange
+gazeta.ru##a[data-gazeta*="advbtn"]
+||static.gazeta.ru/nm2021/js/others_scripts_v1.js
+gazeta.ru##div[class^="unit-"][data-check][id]
+gazeta.ru##a[href^="https://www.gazeta.ru/gazeta/adv/"]
 gazeta.ru##.b_rightcol > div[style="position:relative;height:30%;"]
 gazeta.ru##._is_adfree
 gazeta.ru##div[id^="smi2_"]
@@ -15969,6 +16050,7 @@ sports.ru##.sb-linked-image
 !
 !
 ! shkulev media holding
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru##a[aria-label="Баннер"]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru##div[class^="plot_"] > a[target] > div[class^="image_"]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru##div[class^="topicsInlineAdv_"]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru##div[class^="articleBlockFullscreenGallery_"] > div[class^="wrapper_"] > div[class^="slider_"] + div[class^="px-4 d-flex align-items-c justify-content-c aside_"]
@@ -17530,6 +17612,8 @@ citrus.ua,xsport.ua,zi.dn.ua,zi.ua##img[src^="/upload/rk/"]
 !
 !
 !
+kurs.com.ua##.advertising:not(#bottomWrap)
+hotline.finance##.side-popup
 football24.ua##.external-content
 vidhuk.ua###google_recommended
 sport-express.ua##.best_game_grid_block
@@ -17688,7 +17772,7 @@ psm7.com##div[style="height: 60px;"]
 tech.liga.net##amp-iframe[src^="https://ad.vidverto.io/"]
 kurs.com.ua##body > div#catfishWrap
 nnews.com.ua###header-right-sidebar
-mmr.net.ua,itbusiness.com.ua,nnews.com.ua##.code-block
+cripo.com.ua,mmr.net.ua,itbusiness.com.ua,nnews.com.ua##.code-block
 root-nation.com##.tdi_31
 root-nation.com###tdi_29
 root-nation.com##body > a

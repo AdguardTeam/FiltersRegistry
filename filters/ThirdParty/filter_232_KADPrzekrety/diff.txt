@@ -24,10 +24,6 @@
 ||safeoffers.pro^$doc,frame,object
 ! Rule "||go.playoosh.com^$doc" converted to: "||go.playoosh.com^$document"
 ||go.playoosh.com^$doc
-! Rule "|http://auto.pl^$doc,to=auto.pl|~www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www."" converted to: "|http://auto.pl^$document,to=auto.pl|~www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www.""
-|http://auto.pl^$doc,to=auto.pl|~www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www."
-! Rule "|http://auto.pl^$frame,object,domain=auto.pl|~www.auto.pl" converted to: "|http://auto.pl^$subdocument,object,domain=auto.pl|~www.auto.pl"
-|http://auto.pl^$frame,object,domain=auto.pl|~www.auto.pl
 ! Rule "||cinkciarz.pl^$doc,to=cinkciarz.pl" converted to: "||cinkciarz.pl^$document,to=cinkciarz.pl"
 ||cinkciarz.pl^$doc,to=cinkciarz.pl
 ! Rule "||cinkciarz.pl^$doc,to=cinkciarz.pl,reason="1200 osób skarży się na internetowy kantor w prokuraturze"" converted to: "||cinkciarz.pl^$document,to=cinkciarz.pl,reason="1200 osób skarży się na internetowy kantor w prokuraturze""
@@ -112,6 +108,14 @@
 ?zoneid=*&cost=0.$doc
 ! Rule "^s1=*&click_id=$doc" converted to: "^s1=*&click_id=$document"
 ^s1=*&click_id=$doc
+! Rule "|http://auto.pl^$doc,to=auto.pl|~www.auto.pl|~km.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www."" converted to: "|http://auto.pl^$document,to=auto.pl|~www.auto.pl|~km.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www.""
+|http://auto.pl^$doc,to=auto.pl|~www.auto.pl|~km.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www."
+! Rule "|http://auto.pl^$frame,object,domain=auto.pl|~km.auto.pl|~www.auto.pl" converted to: "|http://auto.pl^$subdocument,object,domain=auto.pl|~km.auto.pl|~www.auto.pl"
+|http://auto.pl^$frame,object,domain=auto.pl|~km.auto.pl|~www.auto.pl
+! Rule "|http://www.auto.pl^$doc,to=www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia)"" converted to: "|http://www.auto.pl^$document,to=www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia)""
+|http://www.auto.pl^$doc,to=www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia)"
+! Rule "|http://www.auto.pl^$frame,object,domain=www.auto.pl" converted to: "|http://www.auto.pl^$subdocument,object,domain=www.auto.pl"
+|http://www.auto.pl^$frame,object,domain=www.auto.pl
 ! Rule "||lds.xyz/*&sbtag=$doc,to=xyz" converted to: "||lds.xyz/*&sbtag=$document,to=xyz"
 ||lds.xyz/*&sbtag=$doc,to=xyz
 ! Rule "||lds.xyz/*?sbtag=$doc,to=xyz" converted to: "||lds.xyz/*?sbtag=$document,to=xyz"
@@ -242,6 +246,10 @@
 ||ublockorigin.$doc,to=ublockorigin.com|ublockorigin.app,reason="To nie jest oficjalna strona uBlock Origin"
 ! Rule "~support.ublock.org,ublock.org##body main::before:style(content: 'uBlock nie jest powiązany z dobrze znanym uBlock Origin.' !important)" converted to: "~support.ublock.org,ublock.org#$#body main::before { content: 'uBlock nie jest powiązany z dobrze znanym uBlock Origin.' !important }"
 ~support.ublock.org,ublock.org##body main::before:style(content: 'uBlock nie jest powiązany z dobrze znanym uBlock Origin.' !important)
+! Error: Unable to convert rule to AdGuard syntax: "alexdent.waw.pl,krainaekozabawek.pl,tyfloswiat.pl##^responseheader(location)" due to error: Multiple domains are not supported yet
+alexdent.waw.pl,krainaekozabawek.pl,tyfloswiat.pl##^responseheader(location)
+! Rule "dobreprogramy.pl##a[href*="forum.dobreprogramy.pl/c/oprogramowanie-komputerowe"]:upward(div)" converted to: "dobreprogramy.pl#?#a[href*="forum.dobreprogramy.pl/c/oprogramowanie-komputerowe"]:upward(div)"
+dobreprogramy.pl##a[href*="forum.dobreprogramy.pl/c/oprogramowanie-komputerowe"]:upward(div)
 ! Rule "dobreprogramy.pl##article#main-content button:has-text(przy pomocy Asystenta pobierania)" converted to: "dobreprogramy.pl#?#article#main-content button:contains(przy pomocy Asystenta pobierania)"
 dobreprogramy.pl##article#main-content button:has-text(przy pomocy Asystenta pobierania)
 ! Rule "empik.com##div[class*="items"]:has(a[href*="/sklepy/net-s,8872,m"])::before:style(content: 'Zakupy na własną odpowiedzialność od dostawcy NET-S (KAD - STOP Przekrętom).' !important; margin: 15px 0 15px 15px !important; display: block !important; color: #f00 !important; font-weight: bold !important)" converted to: "empik.com#$#div[class*="items"]:has(a[href*="/sklepy/net-s,8872,m"])::before { content: 'Zakupy na własną odpowiedzialność od dostawcy NET-S (KAD - STOP Przekrętom).' !important; margin: 15px 0 15px 15px !important; display: block !important; color: #f00 !important; font-weight: bold !important }"
@@ -268,8 +276,6 @@ support.ublock.org##:root div.hero-unit > div.search-box--hero-unit::before:styl
 support.ublock.org##:root div.hero-unit > div.search-box--hero-unit::before:style(display: block !important; text-align: center !important)
 ! Rule "support.ublock.org##:root div.hero-unit > div.search-box--hero-unit:matches-media((min-width: 978px)):style(min-width: 900px !important)" converted to: "support.ublock.org#$#@media (min-width: 978px) { :root div.hero-unit > div.search-box--hero-unit { min-width: 900px !important } }"
 support.ublock.org##:root div.hero-unit > div.search-box--hero-unit:matches-media((min-width: 978px)):style(min-width: 900px !important)
-! Rule "tyfloswiat.pl##^responseheader(location)" converted to: "||tyfloswiat.pl^$removeheader=location"
-tyfloswiat.pl##^responseheader(location)
 ! Rule "ublockdns.com##:root main > section > div:first-child::before:style(content: 'Nie ma związku z uBlock Origin.' !important)" converted to: "ublockdns.com#$#:root main > section > div:first-child::before { content: 'Nie ma związku z uBlock Origin.' !important }"
 ublockdns.com##:root main > section > div:first-child::before:style(content: 'Nie ma związku z uBlock Origin.' !important)
 ! Rule "ublockdns.com##:root main > section > div:first-child::before:style(display: block !important; font-size: 32px !important; color: red !important; font-weight: bold !important)" converted to: "ublockdns.com#$#:root main > section > div:first-child::before { display: block !important; font-size: 32px !important; color: red !important; font-weight: bold !important }"
@@ -354,8 +360,6 @@ kadantiscam.netlify.app#%#//scriptlet('ubo-set', 'kadetect', 'true')
 ||vorwerk.*/*/zamow-prezentacje/poznaj-kobold|$document,to=vorwerk.com|vorwerk.pl,reason="Przemyśl zamówienie prezentacji"
 ! Error: "Unknown modifier: reason="Przemyśl zamówienie prezentacji"" in the rule: "||vorwerk.*/*/zamow-prezentacje/poznaj-thermomix|$document,to=vorwerk.com|vorwerk.pl,reason="Przemyśl zamówienie prezentacji""
 ||vorwerk.*/*/zamow-prezentacje/poznaj-thermomix|$document,to=vorwerk.com|vorwerk.pl,reason="Przemyśl zamówienie prezentacji"
-! Error: "Unknown modifier: reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www."" in the rule: "|http://auto.pl^$document,to=auto.pl|~www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www.""
-|http://auto.pl^$document,to=auto.pl|~www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www."
 ! Error: "Unknown modifier: reason="1200 osób skarży się na internetowy kantor w prokuraturze"" in the rule: "||cinkciarz.pl^$document,to=cinkciarz.pl,reason="1200 osób skarży się na internetowy kantor w prokuraturze""
 ||cinkciarz.pl^$document,to=cinkciarz.pl,reason="1200 osób skarży się na internetowy kantor w prokuraturze"
 ! Error: "Unknown modifier: reason="Podejrzane przekierowania z wyników wyszukiwarek" in the rule: "/fck_files/*.xml$document,to=m-vision.com.pl,reason="Podejrzane przekierowania z wyników wyszukiwarek,zachowaj ostrożność""
@@ -378,6 +382,10 @@ kadantiscam.netlify.app#%#//scriptlet('ubo-set', 'kadetect', 'true')
 /userfiles/*.xml$document,to=aquatech.com.pl|bartodzieje.medycyna.net.pl|bip.wuozprzemysl.pl|ekobarc.pl|everest-sport.pl|gdziezjesc.info|ikuchnia.com.pl|jta.com.pl|kamart.com.pl|kieryk.pl|kppzp.pl|muzeum.kety.pl|pomerania.org.pl|radecznica.pl|rbmtechnik.pl|serwisnawigacji.pl|sjo.uni.lodz.pl|sunrest.com.pl|warszawa-pragapoludnie.sr.gov.pl|wobo.com.pl|wodnik-tour.com.pl,reason="Podejrzane przekierowania z wyników wyszukiwarek,zachowaj ostrożność"
 ! Error: "Unknown modifier: reason="to może być phishing"" in the rule: "/ym.html?email=*@$document,reason="to może być phishing""
 /ym.html?email=*@$document,reason="to może być phishing"
+! Error: "Unknown modifier: reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www."" in the rule: "|http://auto.pl^$document,to=auto.pl|~www.auto.pl|~km.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www.""
+|http://auto.pl^$document,to=auto.pl|~www.auto.pl|~km.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia) ze subdomeną www."
+! Error: "Unknown modifier: reason="Sugerowane używanie HTTPS (szyfrowanego połączenia)"" in the rule: "|http://www.auto.pl^$document,to=www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia)""
+|http://www.auto.pl^$document,to=www.auto.pl,reason="Sugerowane używanie HTTPS (szyfrowanego połączenia)"
 ! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||inpost.pl-*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką""
 ||inpost.pl-*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką"
 ! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||inpost.pl.*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką""

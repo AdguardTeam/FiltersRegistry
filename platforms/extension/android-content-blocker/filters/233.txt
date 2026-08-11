@@ -1,14 +1,14 @@
-! Checksum: o/DGwcluG9J5xVaDRolYSQ
+! Checksum: guyMNFDv/w8Lfi1ahv8xwA
 ! Title: Adblock List for Finland
 ! Description: Finnish ad blocking filter list.
-! Version: 2.0.12.40
-! TimeUpdated: 2026-07-05T20:47:49+00:00
+! Version: 2.0.12.58
+! TimeUpdated: 2026-08-08T12:46:17+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Adblock List for Finland
 ! Description: Finnish adblock list
 ! Expires: 4 days
-! Last modified: Sun, 05 Jul 2026 19:56:44 +0300
+! Last modified: Sat, 08 Aug 2026 13:12:31 +0300
 ! Homepage: https://github.com/finnish-easylist-addition/finnish-easylist-addition
 ! License: https://unlicense.org/
 ! Raportoi mainoksenestoon liittyvistä ongelmista tai estämättömistä mainoksista täällä / Please report adblocking related issues or unblocked ads at:
@@ -22,8 +22,6 @@ metsastysjakalastus.fi,tekniikanmaailma.fi##.NoAdBlocker_main
 mobiili.fi##.header_ad, important
 outlook.live.com##div[aria-label=Siirtymisruutu] ~ div[data-max-width="2400"] + div[class]
 tiketti.fi###front_big_event
-! telsu.fi##.pb_t:style(position: absolute !important)
-! telsu.fi##+js(acs, googlefc)
 ! Trick to overcome flickering issues caused by a slow procedural
 karjalainen.fi##.breaking-news-container
 ! HTML filters for browsers that support them e.g. Firefox
@@ -425,6 +423,7 @@ irc-galleria.net,tilannehuone.fi##div[id^=Nostemedia_Desktop]
 is.fi##.teaser-ad__background
 is.fi##[data-testid="ad-position"]
 is.fi##[href^="https://www.is.fi/tilaus/is-extra/"][href$="myyntitikkeri"]
+is.fi##a[href^="http://media.sanoma.fi/"][href*="admanager"]
 is.fi##div.sadblob-loading
 iskelma.fi##section.sbs-articleitems[data-module_position_id="814"]
 jaakiekonmmkisat.com,jalkapallonmmkisat.com,ruuhkavuodet.fi##div[class|="g g"]
@@ -736,22 +735,9 @@ sportti.com##div[style="padding-bottom:10px;margin-bottom:6px;border-top:1px sol
 sportti.com##div[style="padding-bottom:10px;margin-bottom:6px;border-top:1px solid gray;margin-top:6px;"] + table[width="468"] + div
 sportti.com##script[src^="http://adserving.unibet.com/ad.aspx"] + div[style="padding-bottom:10px;margin-bottom:6px;border-top:1px solid gray;margin-top:6px;"]
 sportti.com##table[width="468"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1016"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1264"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1337"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1480"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1513"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1529"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1532"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1540"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1543"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1554"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1557"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1566"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1574"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1577"]
-stadissa.fi##.banner > a[href="/clickad.php?id=1578"]
+stadissa.fi##.article-video-ad
 stadissa.fi##[class|="juhlaviikot"]
+stadissa.fi##a[href^="/clickad.php?id="]:not(.rightbarTextLiftLink)
 suomen118.fi###layout-banner-right
 suomenautolehti.fi##.banner_wide
 suomenautolehti.fi##.site-footer__banners
@@ -819,6 +805,7 @@ toimitilat.oikotie.fi##[analytics-impression="energy-promotion_listing-page_impr
 tori.fi###banner-top-container
 tori.fi###banner_panorama_bottom
 tori.fi###footer_partner_links
+tori.fi##.retail-media-ad-wrapper
 tori.fi##div#banner_panorama_topmost
 tori.fi##div#panorama_top
 tori.fi##div#panorama_topmost
@@ -1024,6 +1011,7 @@ _300x300_*.mp4$media,domain=futisfani.com|kiekkofani.com|penkkiurheilu.com|uutis
 ||stadissa.fi/images/stadissa/ads/*-980-200.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*-desktop.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*.gif$image,domain=stadissa.fi
+||stadissa.fi/images/stadissa/ads/*.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*_900.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*_980x200.jpg$image,domain=stadissa.fi
 ||stadissa.fi/images/stadissa/ads/*_desk.jpg$image,domain=stadissa.fi
@@ -1121,12 +1109,6 @@ netticaravan.fi#@#article.ad
 ! 2024-04-23 https://elisa.fi/yhtiotieto/sijoittajille/
 ! "se: Frellwit's Swedish Filter" breaks this
 @@||publish.ne.cision.com/$xmlhttprequest,domain=elisa.fi
-! Allow opt-in in a cookieconsent-blocked element (for example, YouTube embeds)
-! Example page (YouTube embed): https://www.seurakuntalainen.fi/uutiset/jutta-urpilainen-arvotentissa-arvoni-pohjaavat-kristinuskoon-mutta-ovat-linjassa-sosiaalidemokratian-kanssa/
-@@||consent.cookiebot.com/uc.js$domain=www.seurakuntalainen.fi
-@@||consent.cookiebot.com/*/cc.js?renew=true$domain=www.seurakuntalainen.fi
-@@||consent.cookiebot.com/logconsent.ashx$domain=www.seurakuntalainen.fi
-www.seurakuntalainen.fi#@##CookieBanner
 ! Unbreak cookie consent, however this doesn't hide it
 ! uBO extras has set-cookie to automatically set a cookie to hide it
 ! https://srk.fi/fi/
@@ -1136,4 +1118,5 @@ srk.fi#@##CookielawBanner
 @@||googletagmanager.com/gtm.js$domain=pohjanmaanhyvinvointi.fi
 ! https://www.tek.fi/fi/palvelut-ja-edut/palkka/tilaa-palkkatietoa
 @@/eu_cookie_compliance.min.js$script,domain=www.tek.fi
+! Fixes site issue, sometimes huge white area appears at the bottom page
 ! -----UNBREAK END-----

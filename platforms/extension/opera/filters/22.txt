@@ -1,9 +1,9 @@
-! Checksum: GYQlhxGQ4vQIoMicFDf6Fg
-! Diff-Path: ../patches/22/22-s-1782983604-3600.patch
+! Checksum: n7NyjAu7iqdAQ4xCUD0fbg
+! Diff-Path: ../patches/22/22-s-1786243746-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.14.35
-! TimeUpdated: 2026-07-02T09:10:43+00:00
+! Version: 2.0.14.62
+! TimeUpdated: 2026-08-09T02:47:03+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -89,6 +89,13 @@ nizimoenews.livedoor.blog,butumori.com,netizen-voice.blog.jp,ityouchannel.livedo
 !
 ! NOTE: Blogroll specific rules
 !
+kankokunews.net##[src^="https://blogroll.livedoor.net/"]
+aurorascreen.org##.discord-popup
+lovelive-petitsoku.com###content-top.wwa > .content-top.wwa
+lovelive-petitsoku.com##.widget-below-comment-form
+24tv.ua##.whatsapp-subscribe-widget
+odessa.ua##div.maincont > div[style^="margin: "]:has(> a[href="https://t.me/slovo_odessa"])
+girlsvip-matome.com###kanren_box2
 monhan-soku.com##.gs-single-before-article
 monhan-soku.com##.yrss-list
 blog.domesoccer.jp###side > section:has(> div#rss_3site_frame)
@@ -163,7 +170,6 @@ alfalfalfa.com##aside.section-box:has(> div.plugin-blogroll)
 ||lovekoala.com/rss-$subdocument
 lovekoala.com##.lcmcolumn ~ div.mtxt
 ||hanshintigers1.blog.jp/include$subdocument,~third-party
-hanshintigers1.blog.jp##div[class^="include"]
 monst-news.net##div[id^="rss_wrap"]
 himasoku.com##.himajin-headline
 kalender.se##.hidden.justify-center > div[class*="min-h-[800px]"]
@@ -452,10 +458,6 @@ moeimg.net###side-2 li.widget-container:has(#side-img-rss_frame)
 ||gazounabi.com/atcl_bottom_
 erologz.com##ul[class^="fl"]:not([class^="flex"])
 switchsoku.com##.l-main > div.dividerBottom:first-child:has(> aside.widget-main)
-nijimoemoe.com##.container-inner > aside.section-box > div.plugin-free_area
-nijimoemoe.com#?##more > .t_h:has(+ br + .oss1)
-nijimoemoe.com##.oss1
-nijimoemoe.com##.rsstuibi
 gamedaradara.doorblog.jp##div[id$="_rss"]
 gamedaradara.doorblog.jp#?#.article-body-inner b:has(+ div[id$="_rss"])
 burusoku-vip.com##.article-body-more > span[style="font-size: 18px;"]
@@ -737,8 +739,6 @@ otoko-honne.com,kijolifehack.com##.osusume_box
 ||kimagure-kijyo.com/js/kimagure_
 kijobibouroku.com,shuraba.net,uwasakijo.net,ikuji-news.com,kichimama.com,kijobibouroku.com,kimagure-kijyo.com##.ifram
 livejupiter2.blog.jp,jishin-yogen.com,shuraba.net,uwasakijo.net,ikuji-news.com,kichimama.com,kijobibouroku.com,kimagure-kijyo.com##.pickup
-nijimoemoe.com##.sine1 ~ div[class^="sine"]
-nijimoemoe.com#$#.raibudoasine { height: auto !important; }
 /kotei.js$domain=ikuji-news.com|kichimama-life.com|kichimama.net|kijonikki.net|kijyonohimitsu.com|kijyotown.net|kimagure-kijyo.com|romeodensetsu.com|shuraba-dendo.com|shuraba.net|shurabanote.com|sukashuraba.net|uwasakijo.net|densetsunokijo.net|kijyokaigi.com
 majikichi.com##div[class^="headline_"]
 majikichi.com#?##article-body > h3:has(+ div[class^="headline_"])
@@ -1407,6 +1407,9 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (third-party services)
 !
+||robot-lc*.chaoxing.com/sdk/CxRobotSdkJs.js
+||prod.oddsmind.ai/js/oddsmind-chat.min.js$third-party
+||widster.ru^$third-party
 ||widget.yourgood.app^
 ||quizgo-widget.ru^$third-party
 ||cdn.helvia.io^$third-party
@@ -1564,6 +1567,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (specific)
 !
+mid-day.com##p[class^="article_shareyourfeedback_"]
 marks.com###kampyleButtonContainer
 ||ipbd.ru/34122*.js
 ||assets.bouyguestelecom.fr/Palpatine_Omnikit/omnikit@1/widget.init.js
@@ -1794,6 +1798,8 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 !
 !   SECTION: Widgets - Marketing - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/236492
+@@||ws.nperf.com^$domain=proof.ovh.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229403
 @@||api.popin.cc/searchbox/$domain=ampproject.net
 @@||api.popin.cc/images/logo.png$domain=ampproject.net
@@ -2037,6 +2043,17 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+asviva.de##.o-livechat-root
+dns-shop.ru###chat-button
+pacjent.gov.pl###sprintbot-chat
+careers.dhl.com##.phenom-chatbot-wrapper
+superpower.com###lorikeet-widget-shadow-host
+ab-in-den-urlaub.de###__next > button[class*="css-"]:has(> span > img[alt="Chat-Logo"])
+namesilo.com##.ai-chat-widget-container
+spolshy.com.ua##.phone-modal
+xbox.com##.copilot-container
+pickaboo.com##a[aria-label="Chat on WhatsApp"]
+rotaborsa.com##.kanews-chat
 ||webchat-cdn.asksid.ai^$domain=himalayawellness.in
 microsoft.com###msChatContainer
 dtkt.ua##.ai-chat
@@ -2531,6 +2548,8 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+archive.org##.js-donate-banner
+pureinfotech.com##.kofi-box
 fourfourtwo.com##[id^="play-our-free-match-predictor-and-win-"]
 fourfourtwo.com##[id^="play-our-free-match-predictor-and-win-"] + div[style^="min-height:"][id*="-"]:has(> .kwizly-quiz)
 fourfourtwo.com###article-body > *:not([id*="-"]) + div[style^="min-height:"]:has(> .kwizly-quiz)
@@ -2853,7 +2872,7 @@ infowars.com##.article-footer-details > a[href="https://www.infowarsstore.com/su
 dvdgayonline.com##.mtsnb-shown[style^="background-color:"]
 yam.com##a[href^="https://donate.yam.com/dq/Donateinfo"]
 yam.com###donateIframe
-archive.org###donate_banner
+||archive.org/includes/donate.js
 ||fosshub.com/index/donate
 fosshub.com##.download-dl-boxDN
 ||yoomoney.ru^$domain=samlab.ws
@@ -2861,7 +2880,7 @@ samlab.ws##iframe[src^="https://yoomoney.ru/"]
 ||yoomoney.ru/quickpay/shop-widget$domain=ovgorskiy.ru|blog.themarfa.name
 ||funding.webmoney.ru/widgets/$domain=ovgorskiy.ru|demek.ru|скачатьофис.рф
 ! Google Revenue Manager
-||news.google.com/swg/js/v1/swg-basic.js$domain=wololo.net|premierguitar.com|svetandroida.cz|12punto.com.tr|game-maps.com|tv5.com.tr|ginjfo.com
+||news.google.com/swg/js/v1/swg-basic.js$domain=wololo.net|premierguitar.com|svetandroida.cz|12punto.com.tr|game-maps.com|tv5.com.tr|ginjfo.com|zaytung.com
 ! The Moscow Times
 themoscowtimes.com##.preheader_advert
 themoscowtimes.com##.contribute-article
@@ -2878,6 +2897,8 @@ hromadske.ua#$#body { overflow: visible !important; }
 ! NOTE: Widgets - Another end ⬆️
 ! !SECTION: Widgets - Another
 !
+!+ NOT_OPTIMIZED
+hanshintigers1.blog.jp##div[class^="include"]
 !+ NOT_OPTIMIZED
 newsoku.blog##.headrsssp
 !+ NOT_OPTIMIZED

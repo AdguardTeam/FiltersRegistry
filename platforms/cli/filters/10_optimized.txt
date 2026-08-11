@@ -1,9 +1,9 @@
-! Checksum: G3tJrROIM63TgGLEfSSqAw
-! Diff-Path: ../patches/10_optimized/10_optimized-s-1782990082-3600.patch
+! Checksum: Dsn1DvQfgmrf9u+IkGvRqQ
+! Diff-Path: ../patches/10_optimized/10_optimized-s-1786375713-3600.patch
 ! Title: Filter unblocking search ads and self-promotion (Optimized)
 ! Description: Filter that unblocks search ads in Google, DuckDuckGo, Bing, or Yahoo and self-promotion on websites.
-! Version: 2.0.3.92
-! TimeUpdated: 2026-07-02T10:58:33+00:00
+! Version: 2.0.3.98
+! TimeUpdated: 2026-08-10T15:25:47+00:00
 ! Expires: 12 hours (update frequency)
 !#safari_cb_affinity(general)
 bing.com#@#li[class="b_ans"][data-partnertag]:has(> div[class^="b_bza_"])
@@ -89,12 +89,18 @@ google.*#@#c-wiz[jsrenderer="YTTf6c"] > .bhapoc.oJeWuf[jsname="bN97Pc"][data-ved
 @@||ask.com/web$document
 search.ask.com#@#.sponsoredTop
 search.ask.com#@##sponsoredTop
-yandex.*#@#body:not([data-bem*="pogoda"]) .mini-suggest__popup-content > li[data-type="nav"]
-[$path=/search]ya.ru,yandex.*#@#.content__left li.serp-item:not(.serp-item__futuris-snippet):has(> div[class] div.AdvLabel)
+yandex.*##ul[class^="mini-suggest__"] > li[data-type="nav"]
+ya.ru,yandex.*#@?#ul[id] > li:has(> div.Organic > div.Organic-Subtitle > div > span:contains(Промо))
+ya.ru,yandex.*#@#ul[id] > li:has(> div.Organic > div.Organic-ContentWrapper ~ div[class*=" Organic"] > span[class$="-Text"])
+ya.ru,yandex.*#@#ul[id] > li:has(> div.Organic > div.Organic-Subtitle > div.Organic-Path ~ div[class*=" Organic"] > span[class$="-Text"])
+ya.ru,yandex.*#@#ul[id] > li[class*="Organic"]:has(> div.Root a[href*="_crpd"] > div.Organic-OfferThumbWrap)
+ya.ru,yandex.*#@#.RsyaOrganic
+ya.ru,yandex.*#@#ul[id] > li:has(> div.Root_inited > div[class*="Organic"] > div[class$="-Header"] > h2 + div > span)
+ya.ru,yandex.*#@#.content__left li.serp-item:not(.serp-item__futuris-snippet):has(> div[class] div.AdvLabel)
 ya.ru,yandex.*#@##search-result > [class]:has(> div.Organic > div a[href*="_crpd"])
 yandex.*#@#.content__left > ul#search-result > li:has(> div.organic > div.OrganicTitle > a[href^="https://ya.ru/search/_crpd/"])
+ya.ru,yandex.*##div[id^="search-"] > div[class*="__card"]:has(div.Organic-Subtitle > div.Organic-Path ~ div[class*=" Organic"] > span[class$="-Text"])
 ya.ru,yandex.*#@$?##search-result > li:has(span:contains(/[PРeеkклaаmмaа]{7}/)) { remove: true; }
-ya.ru,yandex.*#@#div[class^="serp-list"] > div.serp-item:has(> div[data-bem*="organic"] > div[class^="Organic"] > div[class^="VanillaReact"] > a[data-event-required])
 amazon.*#@#div[data-card-metrics-id^="universal-hero-quick-promo_DetailPage_"]
 amazon.*#@##mobile-dp-ilm_feature_div_01
 amazon.*#@#.a-section:has(> div[cel_widget_id^="adplacements:"]:last-child)
