@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ajDNK5/w4Wmw8KYh6YT6nQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1786458721-3600.patch
+! Checksum: u4d92CMjsktNc6jsXrdDRQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1786465531-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.82.98
-! TimeUpdated: 2026-08-11T14:28:35+00:00
+! Version: 2.4.82.99
+! TimeUpdated: 2026-08-11T16:21:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,8 @@
 !
 !
 !
+||go.mobisla.com^$3p
+||go.mobtrks.com^$3p
 ||greatpuppydogs.com^
 ||tri-table.com^$3p
 ||supersedeaccolade.com^
@@ -10899,6 +10901,10 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238070
+aflamicose.com##+js(addEventListener-defuser, DOMContentLoaded, bait)
+! https://github.com/AdguardTeam/AdguardFilters/issues/238071
+skyblewx.com##+js(no-setTimeout-if, getComputedStyle, 500)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238012
 masrawytrend.com#@#.ad-unit:not(.textads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237796
@@ -14389,8 +14395,9 @@ imagetotext.info#@##top_ad
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137947
 ! UpFiles.com + related rules in specific.txt
-upfilesgo.com,upplinks.net,upfion.com,upfiles.app,upfiles-urls.com,falpus.com,fooak.com#@#.ad-inner
-upfilesgo.com,upplinks.net,upfion.com,upfiles.app,upfiles-urls.com,falpus.com,fooak.com#@#.ads-container
+@@||upfilesgo.com^$generichide
+upplinks.net,upfion.com,upfiles.app,upfiles-urls.com,falpus.com,fooak.com#@#.ad-inner
+upplinks.net,upfion.com,upfiles.app,upfiles-urls.com,falpus.com,fooak.com#@#.ads-container
 upfilesgo.com,upplinks.net,upfion.com,upfiles.app,upfiles-urls.com,falpus.com,fooak.com##.adsbygoogle.ads-container[style]:style(display: block !important;)
 upfilesgo.com,upplinks.net,upfion.com,upfiles.app,upfiles-urls.com,falpus.com,fooak.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! for DNS filtering
@@ -37704,7 +37711,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
-portlandtribune.com,beavertonvalleytimes.com##div[style="margin: 0px; height: 250px; width: 300px; overflow: hidden;"]
+cannainsider.com###content-banner
+hollywoodhinditracks2.blogspot.com##+js(abort-current-script, atob, decodeURIComponent)
+theoutlookonline.com,portlandtribune.com,beavertonvalleytimes.com##div[style="margin: 0px; height: 250px; width: 300px; overflow: hidden;"]
 123telugu.com##.pcsl-inner > div.pcsl-item:has(> div.pcsl-itemin a[aria-label^="Ad :"])
 xhamster.com##.thumb-list > div[class^="thumbContainer-"]:has(> div:only-child > a[target="_blank"]:not([href^="https://xhamster.com"]))
 masrawytrend.com##a[href^="https://reatasesetitoefa.com"]
@@ -38366,7 +38375,7 @@ zerohedge.com##div[class^="MMWidgetFeb12_container"]
 gamespot.com##.fandom-ad-sticky-container
 gamespot.com##.fandom-ad-wrapper
 sportspyder.com##div[class*="Wrap_"]:has(> div[id*="-box-ad-"])
-beavertonvalleytimes.com,sportspyder.com##div[data-stn-player]
+theoutlookonline.com,thebeenews.com,beavertonvalleytimes.com,sportspyder.com##div[data-stn-player]
 ||webapi.*/v1/seo_trending
 ||webapi.*/v1/seo_inter_network
 hola.com##div[class*="variation"]
@@ -39536,7 +39545,7 @@ uploadrar.com##.my-4 > form[method="POST"] > center
 uploadrar.com##center > a.btn:not([href*="uploadrar.com"])
 pdfdrive.to##.content > div.overlay:has(> div.banner)
 calgaryherald.com##.placeholder-inner
-portlandtribune.com,beavertonvalleytimes.com,tellows.net##.ad
+theoutlookonline.com,thebeenews.com,portlandtribune.com,beavertonvalleytimes.com,tellows.net##.ad
 totalprosports.com##.pw-leaderboard
 rogerebert.com##.roger-review-inline-1-2
 rogerebert.com##.roger-review-inline-2-2
