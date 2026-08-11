@@ -228,7 +228,6 @@ yarn build:local
 # Filter selection
 yarn build --include=1,2,3
 yarn build --skip=12,24
-yarn build --include=1,2,3 --skip=2   # intersection minus exclusion. Excessive, but it works
 
 # Report output
 yarn build --report='report-adguard.txt'
@@ -261,6 +260,12 @@ yarn build --use-cache --generate-cache
 yarn build --use-cache --download-stats
 yarn build --generate-cache --download-stats
 
+# --include and --skip are mutually exclusive → script exits with error
+yarn build --generate-cache --include=1,2,3 --skip=2
+yarn build --download-stats --include=1,2,3 --skip=2
+yarn build --use-cache --include=1,2,3 --skip=2
+yarn build --include=1,2,3 --skip=2
+
 # --generate-cache exits early; these flags are incompatible → script exits with error
 yarn build --generate-cache --strip-generated-meta
 yarn build --generate-cache --no-patches-prepare
@@ -268,9 +273,6 @@ yarn build --generate-cache --no-patches-prepare
 # --download-stats produces no platform output; these flags are incompatible → script exits with error
 yarn build --download-stats --strip-generated-meta
 yarn build --download-stats --no-patches-prepare
-
-# --include and --skip are mutually exclusive under --download-stats → script exits with error
-yarn build --download-stats --include=1,2,3 --skip=2
 ```
 
 ### Automated Build
