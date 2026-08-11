@@ -1,9 +1,9 @@
-! Checksum: sLPer6xZCBoTesS4UDvXqw
-! Diff-Path: ../patches/260/260-s-1786394900-14400.patch
+! Checksum: 3odrEcDp/H22oWMJgOGoaQ
+! Diff-Path: ../patches/260/260-s-1786409506-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.10
-! TimeUpdated: 2026-08-10T20:45:43+00:00
+! Version: 2.0.1.11
+! TimeUpdated: 2026-08-11T00:49:07+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1121,7 +1121,9 @@ github.com##.start-copilot-banner
 github.com##[data-testid="copilot-free-user-checklist"]
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/
 ! "Agents" tab in repository navbar (desktop & mobile)
-github.com##li:has(> [data-tab-item="agents"])
+! * Via https://www.reddit.com/r/uBlockOrigin/comments/1vkxr0j/comment/p2xake5/
+github.com#$#li:has(> [data-tab-item="agents"]) { max-width: 0px !important; margin-left: calc(0px - var(--stack-gap-condensed,.5rem)) !important; visibility: hidden !important; }
+github.com##[data-component="ActionList.Item"]:has(> [data-tab-item="agents"])
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
 ! File header - "Ask Copilot about this file" button
 github.com###blob-view-header-copilot-icon
@@ -2413,6 +2415,8 @@ www.mixscan.me##div.fixed:has(h2.font-pixel)
 ! ==============
 ! == Mockaroo ==
 ! ==============
+! Header - Databases (Promo for Fabricate)
+mockaroo.com##header [href="/databases"]
 ! Promo for Tonic Fabricate
 mockaroo.com##.jss239[href="/rest/links/fabricate"]
 ! "Generate fields using AI" button
