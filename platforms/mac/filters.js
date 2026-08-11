@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.82.90",
-			"timeUpdated": "2026-08-11T06:23:27+0000",
+			"version": "2.4.82.91",
+			"timeUpdated": "2026-08-11T07:30:23+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.8.94",
-			"timeUpdated": "2026-08-11T05:27:42+0000",
+			"version": "2.1.8.95",
+			"timeUpdated": "2026-08-11T07:30:35+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.30.95",
-			"timeUpdated": "2026-08-11T01:35:08+0000",
+			"version": "2.1.30.96",
+			"timeUpdated": "2026-08-11T07:30:38+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.75.34",
-			"timeUpdated": "2026-08-11T06:23:58+0000",
+			"version": "2.2.75.35",
+			"timeUpdated": "2026-08-11T07:31:04+0000",
 			"languages": []
 		},
 		{
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.91.83",
-			"timeUpdated": "2026-08-11T06:24:05+0000",
+			"version": "2.0.91.84",
+			"timeUpdated": "2026-08-11T07:31:11+0000",
 			"languages": []
 		},
 		{
@@ -338,8 +338,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.47.2",
-			"timeUpdated": "2026-08-11T03:36:05+0000",
+			"version": "2.0.47.3",
+			"timeUpdated": "2026-08-11T07:31:14+0000",
 			"languages": []
 		},
 		{
@@ -1702,7 +1702,7 @@
 		{
 			"filterId": 260,
 			"name": "Stevo's AI Blocklist",
-			"description": "Hides website features which use generative AI and AI-generated content.",
+			"description": "A filter list that hides website features which use generative AI and AI-generated content.",
 			"homepage": "https://github.com/Stevoisiak/Stevos-AI-Blocklist/",
 			"expires": 432000,
 			"displayNumber": 100,

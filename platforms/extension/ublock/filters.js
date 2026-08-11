@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.82.90",
-			"timeUpdated": "2026-08-11T06:23:27+0000",
+			"version": "2.4.82.91",
+			"timeUpdated": "2026-08-11T07:30:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.94",
-			"timeUpdated": "2026-08-11T05:27:42+0000",
+			"version": "2.1.8.95",
+			"timeUpdated": "2026-08-11T07:30:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.30.95",
-			"timeUpdated": "2026-08-11T01:35:08+0000",
+			"version": "2.1.30.96",
+			"timeUpdated": "2026-08-11T07:30:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.75.34",
-			"timeUpdated": "2026-08-11T06:23:58+0000",
+			"version": "2.2.75.35",
+			"timeUpdated": "2026-08-11T07:31:04+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.91.83",
-			"timeUpdated": "2026-08-11T06:24:05+0000",
+			"version": "2.0.91.84",
+			"timeUpdated": "2026-08-11T07:31:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.2",
-			"timeUpdated": "2026-08-11T03:36:05+0000",
+			"version": "2.0.47.3",
+			"timeUpdated": "2026-08-11T07:31:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2469,7 +2469,7 @@
 		{
 			"filterId": 260,
 			"name": "Stevo's AI Blocklist",
-			"description": "Hides website features which use generative AI and AI-generated content.",
+			"description": "A filter list that hides website features which use generative AI and AI-generated content.",
 			"timeAdded": "2026-06-16T11:14:46+0000",
 			"homepage": "https://github.com/Stevoisiak/Stevos-AI-Blocklist/",
 			"expires": 432000,
