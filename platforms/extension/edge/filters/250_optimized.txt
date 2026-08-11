@@ -1,5 +1,5 @@
-! Checksum: RwUpFD7x4GWFiLKZZydW8g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1786352589-14400.patch
+! Checksum: 4z9qKFcNOQDhNCqdRfpOHg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1786424254-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.36
@@ -639,6 +639,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||45.150.108.213^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||92.204.160.240^$all
+/land/*&afftrack=$document,domain=~likely_a_malware_redirection.*
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||34.200.46.148^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -812,7 +813,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||108.61.99.63^$all
 ||douveejoalastu.net^$all
 ||usheebainaut.com^$all
-||whomeenoaglauns.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||139.45.197.106^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1524,6 +1524,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##a[title^="Share to "]
 ##amp-social-share
 ##button[aria-controls=ShareContainer]
+##button[class*=ShareOverlayButton i]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
 ##button[title^="Del på "]
@@ -2179,6 +2180,7 @@ $document,removeparam=ranEAID
 $document,removeparam=ranSiteID
 $document,removeparam=xtor
 $document,removeparam=SRC
+$document,removeparam=ectrans
 $document,removeparam=bbaid
 ||paypal.$document,removeparam=ppid
 $document,removeparam=unptid
@@ -3421,7 +3423,6 @@ $removeparam=ueid,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|d
 $removeparam=qo,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com|search.ask.com
 $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 ||baike.com^$removeparam=search_id
-||qvc.com^$removeparam=qq
 ||jcpenney.com^$removeparam=deptId
 ||jcpenney.com^$removeparam=catId
 ||jcpenney.com^$removeparam=urlState
@@ -3463,7 +3464,6 @@ $removeparam=mar,domain=nextdoor.com
 ||verizon.com^$removeparam=campaignName
 ||verizon.com^$removeparam=campaignSource
 $removeparam=source_ve_path,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
-^ref=hackernoon.com^$removeparam=ref
 $removeparam=gspk,domain=notion.so|fastmail.com
 $removeparam=gsxid,domain=notion.so|fastmail.com
 $removeparam=pscd,domain=notion.so|fastmail.com
@@ -3540,7 +3540,6 @@ $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46q
 ||cimri.com^$document,removeparam=hasFavorite
 ||gitlab.com^$document,removeparam=nav_source
 $document,removeparam=af_reengagement_window
-||instagram.com^$document,removeparam=short_redirect
 ||privatbank.ua^$removeparam=visit_id
 ||yandex.com/portal/set/any$removeparam=sk
 ||wordpress.com^$document,removeparam=/^ref=[a-z-]{5,}$/
