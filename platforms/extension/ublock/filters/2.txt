@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: AYVGMNq/tLKLHItgFRp1jw
-! Diff-Path: ../patches/2/2-s-1786516654-3600.patch
+! Checksum: 2jPbc2K1s0TwTcNKm0cjrA
+! Diff-Path: ../patches/2/2-s-1786520281-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.83.13
-! TimeUpdated: 2026-08-12T06:33:57+00:00
+! Version: 2.4.83.14
+! TimeUpdated: 2026-08-12T07:34:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10347,6 +10347,7 @@ viralxxxporn.com,thothub.vip,wxx.wtf,camhub.world##body iframe#ads_iframe[src*="
 /player/stats.php$image,redirect-rule=1x1.gif,domain=camhub.world|wxx.wtf|porn4fans.com|fyxxr.to|camhub.*
 !
 ! NOTE: zdn-adblock-detector
+elaoffcial.com##+js(no-setTimeout-if, clientHeight)
 /wp-content/plugins/zdn-adblock-detector/*
 elaoffcial.com,europeelects.eu,telugusexkathalu.com,daemon-hentai.com,teamkong.rf.gd,ad4msan.com,ossels.ai,world-iptv.club###zdn-adblock-overlay
 telugusexkathalu.com,daemon-hentai.com,teamkong.rf.gd,ad4msan.com,rozgarnews.com,chat.irc.in.th,ossels.ai,world-iptv.club,edoga.biz.hr,radiofreehubcity.com,jobalertswithgbrar.com,spyro.blogu.co.uk,cybermania.ws,teamkong.tk##+js(abort-current-script, jQuery, #zdn-adblock-overlay)
@@ -11132,7 +11133,9 @@ idhubs.app##+js(remove-node-text, script, __AB_DET)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232440
 athlete-insurance.com###kk-adblock-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232905
-freemagazines.top##+js(addEventListener-defuser, DOMContentLoaded, displayCfAbOverlay)
+freemagazines.top###ublock-detector-modal:style(display: none !important;)
+freemagazines.top##html > body:not(#style_important):style(overflow: auto !important; pointer-events: auto !important;)
+freemagazines.top##+js(abort-current-script, EventTarget.prototype.addEventListener, .offsetHeight === 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232886
 rtl.hr###adblock:remove()
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232779
@@ -27114,8 +27117,11 @@ files4you.org###posts div[id^="post_message_"] div[align="center"] > div[style^=
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133914
 monitorfirm.pb.pl##.sas
 pb.pl##.n2pb-ad-container
+!+ NOT_OPTIMIZED
 pb.pl##.trinity-fab-overlay
+!+ NOT_OPTIMIZED
 pb.pl##body .n2pb-gad-container:not(#style_important)
+!+ NOT_OPTIMIZED
 pb.pl##div[class^="npb-"][class$="-adv"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133846
 24kurier.pl##.box_reklama_txt:style(visibility: hidden !important;)
@@ -37716,6 +37722,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+drtuber.desi,drtuber.com,drtuber.*###vb_rvt_2
+drtuber.desi,drtuber.com,drtuber.*##.wrapper_frame
+drtuber.desi,drtuber.com,drtuber.*##a[href*="drtuber.com/linkout/"]
 rtally.link##+js(no-window-open-if, !hubcloud.one)
 coinadster.com##body .banner-container
 coinadster.com##.cx-dash > div[style^="background:"]:has(> #ad_unit)
@@ -37899,8 +37908,7 @@ moviebite.cc##.site-ad-banner
 ||moviebite.cc/ads-config.js
 ||m.media-amazon.com/images/S/al-na-*.mp3/mp3_256kbps_14lufs.mp3$media,redirect=noop-0.1s.mp3,domain=music.amazon.com
 ||m.media-amazon.com/images/S/al-na-*.*_QL85_.jpg$domain=music.amazon.com
-nuvid.tv##.header_premium_bar
-nuvid.tv##.header_roulette_button
+drtuber.desi,drtuber.com,drtuber.*,nuvid.tv##.header_roulette_button
 nuvid.tv##.ID_live_cam_inner
 nuvid.tv##.footer-live-cam
 nuvid.tv##+js(no-window-open-if)
@@ -38060,7 +38068,6 @@ tubeon.comtubeon.net##.thumb-link-rounded
 tubeon.com,tubeon.net##+js(remove-node-text, script, mobileAdvPop)
 tubeon.com,tubeon.net##section > div.container:has(> div#spot_video_livecams)
 tubeon.com,tubeon.net##.cams-opener
-tubeon.com,tubeon.net##.header_premium_bar
 tubeon.com,tubeon.net###spot_video_underplayer_livecams
 tubeon.com,tubeon.net##a[href^="https://go.xliiirdr.com/"]
 tubeon.com,tubeon.net##a[href^="https://fhgte.com/"]
@@ -38500,8 +38507,8 @@ yeptube.*##.player-live-title
 yeptube.*###spot_video_underplayer_livecams
 yeptube.*##.main-frame > section:has(> div.container > div#spot_video_livecams)
 yeptube.*##.cams
-yeptube.*##.header_premium_bar
 yeptube.*##.navbar-pages > li.navbar-page:has(> a[href][target="_blank"][rel="nofollow"])
+drtuber.desi,drtuber.com,drtuber.*,nuvid.tv,tubeon.com,tubeon.net,yeptube.*##.header_premium_bar
 ebaumsworld.com##.large-ad-space
 thebaynet.com##a[href="https://www.owingsautomotive.com/"]
 thebaynet.com##a[href^="https://www.princegeorgescountymd.gov/"]
@@ -40196,8 +40203,8 @@ pornlib.com##div[id^="lcams"]
 pornlib.com##.spots
 pornlib.com##.row_content:has(> div:only-child > .spots:only-child)
 pornlib.com##.aside_content > div.row_content:has(> div.wrap_container > div.spots)
-pornlib.com##.spot-live-cam
 pornlib.com##.twocolumns > div.wrapper_content:has(> div.row_container div.live_cams_iframe)
+drtuber.desi,drtuber.com,drtuber.*,pornlib.com##.spot-live-cam
 uniteapi.dev##main > div[class*=" "] > div[class^="sc-"]:first-child:empty
 uniteapi.dev##main > div[class*=" "] > div[class^="sc-"]:has(> div:only-child > div[id^="nn_lb"])
 gpblog.com##.raw-html-component:has(> script[src*="aniview.com/"])
@@ -50267,8 +50274,8 @@ tutcourse.com###stream-item-widget-4
 ovagames.com###adter
 yespornpleasexxx.com##iframe[src^="https://creative.alxbgo.com/"]
 ||drtuber.desi/footer_tiz.php
+drtuber.desi,drtuber.com,drtuber.*##.livecams_main
 drtuber.desi##.aside_panel_video > div[class="heading fh"]
-drtuber.desi##.livecams_main
 drtuber.desi##div[class="footer f_width"] > div.item_box
 shootup.io###main-wrap > #left-wrap
 shootup.io###main-wrap > #bottom-wrap
@@ -89480,6 +89487,7 @@ browsershots.org#@#.advert_area
 ||colonyeducate.cfd^
 ||coloppelogis.shop^
 ||colorful-director.pro^
+||colorfuleconomy.pro^
 ||colorfullouderremnant.com^
 ||colorless-collar.pro^
 ||colorlesssir.pro^
@@ -98379,6 +98387,7 @@ browsershots.org#@#.advert_area
 ||hostcomplicatedspam.com^
 ||hostileconductive.com^
 ||hostingcloud.racing^
+||hostsyuponinbye.cyou^
 ||hot4k.org^
 ||hotbbuvifu.cc^
 ||hotbcivuya.today^
@@ -100667,6 +100676,7 @@ browsershots.org#@#.advert_area
 ||jltczmewqabda.online^
 ||jlutlocaj.com^
 ||jlvhwqtkmttgq.site^
+||jlvjdssnewmf.com^
 ||jlvsspddgklhp.space^
 ||jmadyknjxonua.website^
 ||jmbmhunbzvhrk.site^
@@ -105183,6 +105193,7 @@ browsershots.org#@#.advert_area
 ||mtdmvmzxctwtk.site^
 ||mtdutavlkpzzz.site^
 ||mthcplolzrszh.online^
+||mthwinydhnika.online^
 ||mtjglumdezujo.website^
 ||mtkfqq89yx51qye.cfd^
 ||mtklngjjpzpwq.space^
@@ -106024,6 +106035,7 @@ browsershots.org#@#.advert_area
 ||nicolocamalig.cyou^
 ||nicyosyoxyvvw.space^
 ||nidakcdk.com^
+||nidehetaira.com^
 ||nidfipgitrdhj.space^
 ||nidneqlowplax.online^
 ||nidushogtie.cfd^
@@ -106050,6 +106062,7 @@ browsershots.org#@#.advert_area
 ||nikkiexxxads.com^
 ||niktmeeqgvogw.online^
 ||nilgaisquipful.qpon^
+||nillsfaxes.cfd^
 ||nimble-bench.com^
 ||nimblecontest.com^
 ||nimhuemark.com^
@@ -106466,6 +106479,7 @@ browsershots.org#@#.advert_area
 ||nrkfcdbuor.com^
 ||nrlhvfqxwstsb.website^
 ||nrlomrdhcrrar.site^
+||nrlqjwqvdvgzh.site^
 ||nrnma.com^
 ||nrqihuzvyunel.website^
 ||nrrofvqgzprnb.space^
@@ -107359,6 +107373,7 @@ browsershots.org#@#.advert_area
 ||onclickpulse.com^
 ||onclicksuper.com^
 ||onclklnd.com^
+||ondingfoute.com^
 ||oneclck.net^
 ||onedmp.com^
 ||onedragon.win^
@@ -111129,6 +111144,7 @@ browsershots.org#@#.advert_area
 ||qutxilqcuqp.in^
 ||quuawwsijimlf.website^
 ||quueeswrbyjqg.space^
+||quuikzxik.com^
 ||quukmrgpcuyvm.online^
 ||quvxvyyaiksbe.site^
 ||quwtzyadstt.com^
@@ -120835,6 +120851,7 @@ browsershots.org#@#.advert_area
 ||whewhikrokartou.net^
 ||wheybkethenic.qpon^
 ||wheyeymesial.cfd^
+||whfambxpjlyos.online^
 ||whglicfodltns.space^
 ||whgugqkhydhg.net^
 ||which-impact.pro^
@@ -121441,6 +121458,7 @@ browsershots.org#@#.advert_area
 ||wqgkqkjxrhike.site^
 ||wqhcjdmfwykdm.site^
 ||wqhgmzdbdgasc.space^
+||wqhjyjjwwlhly.online^
 ||wqhlaexymgkyu.site^
 ||wqhphempltlfk.space^
 ||wqiiujtnlsita.website^
@@ -121665,6 +121683,7 @@ browsershots.org#@#.advert_area
 ||wwpvpbktgoets.space^
 ||wwqharkuwtwet.online^
 ||wwqtpcmsikcab.net^
+||wwrludqshknua.space^
 ||wwtfmeonvlazu.online^
 ||wwwadcntr.com^
 ||wwwdtpbjjlnlm.site^
