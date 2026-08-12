@@ -1,7 +1,7 @@
 !
 ! Title: List-KR classic filters list (AdGuard)
 ! Description: AdGuard용 List-KR 클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20677.0
+! OriginalVersion: 2026.20677.1
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/List-KR/List-KR
 ! Licence: https://github.com/List-KR/List-KR/blob/master/LICENSE
@@ -648,6 +648,7 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 !
 ! DOMAIN-REFRESHER: START
 !
+[$domain=/cokcok[0-9]+\.com/]###cpb-popup-banners
 [$domain=/xtoon[0-9]+\.com/]##.container > div.row > div > a[target="_blank"] > picture
 [$domain=/funbe[0-9]+\.com/]##.mobile-banner > div[class^="main_top_bann"]
 [$domain=/funbe[0-9]+\.com/]##.mobile-banner div.banner_m
@@ -665,9 +666,6 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 [$domain=/^tkor[0-9]+\.com/]##*[class*="top_bann"]
 [$domain=/^jusokorea[0-9]+\.com/]##div[class*="-ad-banner"]
 [$domain=/^torrentnx[0-9]+\.com/]##a[href*="/bbs/link.php"]
-[$domain=/^cokcoktv[0-9]+\.com/]###cpb-popup-banners
-[$domain=/^cokcoktv[0-9]+\.com/]###custom_banner_wrap
-[$domain=/^cokcoktv[0-9]+\.com/]##.custom_banner_wrap
 [$domain=/^tvwiki[0-9]+\.com/]##ul[class^="banner"]
 [$domain=/^sptv[0-9]+\.com/]##.modal_contents
 [$domain=/^torrentpi[0-9]+\.com/]##style ~ .basic-post-gallery
@@ -1626,6 +1624,7 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 !
 ! DOMAIN-REFRESHER: START
 !
+/^https:\/\/cdn[0-9]+\.cokcok\.[a-z0-9]+\/assets\/images\//$domain=/cokcok[0-9]+\.com/
 /^https:\/\/tkor[0-9]+\.com\/bann\//
 /^https:\/\/tkor[0-9]+\.com\/images\//
 *$image,denyallow=tvchak.live|smartnote.blog|wiselife.blog,domain=tvchak.live
@@ -1644,7 +1643,6 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /lover[0-9]\.net\/file\/tohotv\/.*\.gif$domain=/lover[0-9]\.net/
 /lover[0-9]\.net\/file\/1bet\/.*\.gif$domain=/lover[0-9]\.net/
 /lover[0-9]\.net\/file\/eve\/.*\.png$domain=/lover[0-9]\.net/
-||cokcok.stream/public/vast.php
 /^https:\/\/cdn[a-z0-9]+\.site\/data\/banner\//$domain=/tvwiki[0-9]+\.net/
 ||wdwd*.com/data/banner/
 ||static.tzstatic.top/z/*.gif
@@ -1669,7 +1667,6 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 ||mzgtoon.com/_next/image?url=https%*.mzgtoon.com%2Fbanner%2F%
 ||cdn.ksportscdn.com/data/popup/
 ||tvwiki*.com/AD
-||media.cokcok.vip/assets/images/
 /https:\/\/tvwiki[0-9]+\.com\/AD\//$domain=/tvwiki[0-9]+\.com/
 ||rj.filesbest.xyz/r/
 /^https:\/\/torrentrj[0-9]+\.com\/uploadfile\/up[0-9a-z]+\.gif/$domain=/^torrentrj[0-9]+\.com/
@@ -1731,9 +1728,6 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /^https:\/\/mkmk[0-9]+\.com\/img\/[a-z]+[0-9]+x[0-9]+\//
 /^https:\/\/mkmk[0-9]+\.com\/img\/[a-z0-9_-]+\.gif$/
 ||agitnovel.*/data/file/novel/banner/$domain=agitnovel.*
-||cokcok.*/wp-json/jt-bad-ux-popup/list/
-||cokcok.*/wp-admin/admin-ajax.php?action=jt_bad_ux_popup
-||cokcok.*/wp-admin/admin-ajax.php?action=load_random_banners
 ||jmana.*/resouce/img/adimg/
 /^https:\/\/ww[0-9]+\.torrentdin[0-9]+\.com\/data\/editor\/[0-9]+\/[a-z0-9]+_[a-z0-9]+_[a-z0-9]+\./
 /^https:\/\/ww[0-9]+\.torrentdin[0-9]+\.com\/data\/file\/ad\//
@@ -3341,7 +3335,6 @@ av19.gg###page ~ div[style^="min-height:"]#content.row
 agitwebtoon.*##.advx
 agitnovel.*##.banner
 spochak.com##.list-webzine .list-item
-cokcok.*##.custom_banner_item
 tvhot.*##div[id*="-banner-"]
 tvhot.*###body_wrap > div[class][style^="margin:"]
 sonagitv.*##a[href][target="_blank"] > img[src^="/images/banner/"]:not([src^="/images/banner/webtoon_"])
@@ -4699,6 +4692,7 @@ tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tv
 !#endif
 
 !#if (adguard && adguard_ext_chromium_mv3)
+/^https:\/\/cdn[0-9]+\.cokcok\.[a-z0-9]+\/assets\/images\//$domain=cokcok15.com|cokcok16.com|cokcok17.com|cokcok18.com|cokcok19.com|cokcok20.com|cokcok21.com|cokcok22.com|cokcok23.com
 /\/data\/apms\/banner\//$domain=mato05.com|mato06.com|mato07.com|mato08.com|mato09.com|mato10.com|mato11.com|mato12.com|mato13.com|mato14.com|mato15.com|mato16.com
 /\/data\/apms\/banner\//$domain=newto05.com|newto06.com|newto07.com|newto08.com|newto09.com|newto10.com|newto11.com|newto12.com|newto13.com|newto14.com|newto15.com|newto16.com
 /\/data\/apms\/banner\//$domain=bookto05.com|bookto06.com|bookto07.com|bookto08.com|bookto09.com|bookto10.com|bookto11.com|bookto12.com|bookto13.com|bookto14.com|bookto15.com|bookto16.com
@@ -4736,3 +4730,4 @@ tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv
 chzzkban.xyz#%#//scriptlet('trusted-suppress-native-method', 'Node.prototype.contains', '{"className":"adsbygoogle"}', 'abort')
 litomi.in#%#//scriptlet('trusted-create-element', 'head', 'script', '', '"use strict";const DocumentElement=document.documentElement,Observer=new MutationObserver(()=>{var e,t;const n=document.querySelector("main #juicy-ads-banner");if(!n)return;const o=Object.keys(n).find(e=>e.startsWith("__reactFiber$")),i=o?n[o]:void 0;"function"==typeof(null===(t=null===(e=null==i?void 0:i.child)||void 0===e?void 0:e.memoizedProps)||void 0===t?void 0:t.onAdClick)&&i.child.memoizedProps.onAdClick()});Observer.observe(DocumentElement,{childList:!0,subtree:!0,attributes:!0});')
 t.hi098123.com#%#//scriptlet('trusted-create-element', 'head', 'script', '', '"use strict";(()=>{const e=window.Function.prototype.toString,t=window.document.querySelector.bind(document),n=window.document.querySelectorAll.bind(document),r=window.String.prototype.indexOf,o=new Map,i=(e,t)=>(o.set(e,t),e);Function.prototype.toString=i(function(){return o.has(this)?`function ${o.get(this)}() { [native code] }`:e.call(this)},"toString"),o.set(e,"toString");new Set(["__defineGetter__","__defineSetter__","__lookupGetter__","__lookupSetter__"]);const c=i(function(){throw new TypeError("\'caller\' and \'arguments\' are restricted function properties")},"caller");function u(e,t,n){const r=void 0===t?e:e.bind(t),o=new Proxy(r,function(e){return{apply:(e,t,n)=>("string"==typeof t&&t.includes("Proxy.__defineGetter")&&(t=t.replaceAll("Proxy.",`${e.name}.`)),Reflect.apply(e,t,n)),get:(t,n,r)=>"toString"===n?i(function(){return`function ${e}() { [native code] }`},"toString"):"name"===n?e:"caller"===n||"arguments"===n?c:Reflect.get(t,n,r)}}(n));return i(o,n),void 0!==t&&i(r,n),o}const l=new Set(["ins",".hi___",".tabad"]);Object.defineProperty(document,"querySelector",{get:()=>u(function(e){return"string"==typeof e&&l.has(e)?null:t(e)},document,"querySelector"),configurable:!0,enumerable:!0});const d=/^(?:aswift_|google_esf)/;Object.defineProperty(document,"querySelectorAll",{get:()=>u(function(e){const t=n(e);return"iframe"!==e?t:[...t].filter(e=>!d.test(e.id))},document,"querySelectorAll"),configurable:!0,enumerable:!0}),Object.defineProperty(String.prototype,"indexOf",{get:()=>u(function(e,t){return e.includes("ht=")?1:r.call(this,e,t)},void 0,"indexOf"),configurable:!0,enumerable:!0})})();')
+cokcok.stream#%#//scriptlet('trusted-replace-node-text', 'script', '/const *_[a-z0-9]+ *= *{ *"media_file" *: *" *https:\\\/\\\/cdn[0-9]+\.cokcok\.[a-z0-9]+\\\/assets\\\/videos\\\/.+"click_through" *:.+};/', 'media_file', '')
