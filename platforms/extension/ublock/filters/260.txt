@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 4pf0SY9C62uM+sKyF5v8rw
-! Diff-Path: ../patches/260/260-s-1786553436-14400.patch
+! Checksum: rUvYhdNmzDJfa51lWuVSZQ
+! Diff-Path: ../patches/260/260-s-1786567765-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.14
-! TimeUpdated: 2026-08-12T16:48:03+00:00
+! Version: 2.0.1.15
+! TimeUpdated: 2026-08-12T20:46:34+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -216,6 +216,8 @@ www.autozone.com###custom-reviews-container [data-testid="st-view"]:has(> [data-
 ! == Astronomer ==
 ! ================
 ! -- https://www.astronomer.io/docs/learn/overview
+! Assistant button next to search bar
+www.astronomer.io###assistant-entry
 ! Copy page button - Ask AI menu options
 www.astronomer.io##[role="menuitem"]:has([d^="m50.228 170.321 50.357-28.257.843-2.463-.843-1.361h-2.462l-8.426-.518-28.775"])
 www.astronomer.io##[role="menuitem"]:has([d^="M21.55 10.004a5.416 5.416 0 00-.478-4.501c-1.217-2.09-3.662-3.166-6.05-2.66A5.59"])
@@ -953,7 +955,9 @@ www.extendoffice.com##.uk-margin-remove-last-child tr:has([href^="https://www.ex
 ! ==============
 ! -- https://www.facebook.com/ (Main page - logged out)
 ! Footer - "Meta AI" and "Meta AI more content"
-www.facebook.com##.pageFooterLinkList > li:has(a[href^="https://www.meta.ai/"])
+www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href^="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fai-glasses%2Fray-ban-meta"])
+www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href="https://www.meta.com/ai-glasses/ray-ban-meta/"])
+www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href*="www.meta.ai"])
 ! -- https://www.facebook.com/ (Main feed - logged in)
 ! Top navbar > Menu > More from Meta ("Meta AI" and "Chat with AIs")
 ! * The "Meta AI" button changes href when hovered with mouse cursor, so we use `*=` instead of `^=`
@@ -1590,22 +1594,26 @@ docs.google.com##[jsname="Vjwl5e"]:has(#getting-started-dialog-navigation-view)
 ! Some filters only apply to accounts with a Google Workspace or Google AI subscription
 ! AI requests for search
 ||appsgenaiserver-pa.clients6.google.com/v1/genai/$xhr,domain=drive.google.com
-! -- https://drive.google.com/drive/my-drive
+! -- https://drive.google.com/drive/ (All pages)
 ! "Ask Gemini" icon in header
 drive.google.com###WWNEkf
 ! "AI Overview search" sources icon in search bar
 drive.google.com##.p5rLxe.HBDJjb
-! "Summarize this file" in selection bar above files after selecting a file (Also matches "Catch me up")
-drive.google.com##.SMHH7
-! "Summarize this folder/file" in file "More actions" menu (⋮)
-! * TODO: Fix arrow key navigation. (:remove() doesn't fix it)
-drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y)
-drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y) + .h-Yo[role="separator"]
-! "Summarize this file" when hovering over file icon
-drive.google.com##.oaTPh
 ! New > More > Google AI Studio
 ! * Use 'remove()' to fix keyboard navigation
 drive.google.com##[role="menuitem"]:has(img[src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x16.png"]):remove()
+! -- https://drive.google.com/drive/home
+! "Ask Gemini" in "More actions" menu (⋮)
+! * TODO: Fix arrow key navigation. (:remove() doesn't fix it)
+drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y)
+drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y) + .h-Yo[role="separator"]
+! "Ask Gemini"/"Catch me up" buttons when a file is selected
+drive.google.com##.iQnZTe.SMHH7
+! -- https://drive.google.com/drive/my-drive
+! "Ask Gemini"/"Suggest file moves" button
+drive.google.com##[data-test-id="help-me-organize-chip-container"]
+! "Summarize this file" when hovering over file icon
+drive.google.com##.oaTPh
 ! Right click menu, New > More > Google AI Studio
 drive.google.com##.h-v:has([src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x32.png"])
 ! -- https://drive.google.com/drive/search?q=what%20is%20my%20biggest%20file%3F
@@ -1787,6 +1795,12 @@ www.healio.com###healio-ai-banner
 www.healio.com##body:style(padding-top: 0px !important)
 ! "Healio AI" in navbar
 www.healio.com##.ai-link
+! ==========
+! == Hevo ==
+! ==========
+! -- https://hevodata.com/learn/airflow-sql-server/
+! Explain code button
+hevodata.com##.code-example-wrapper
 ! ==============
 ! == HiNative ==
 ! ==============
