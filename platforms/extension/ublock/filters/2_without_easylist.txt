@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: B4GjYbVduqlKL346MQWWKA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1786537509-3600.patch
+! Checksum: 8FE2q9s/HkE8qOzdcIqU0Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1786541791-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.83.19
-! TimeUpdated: 2026-08-12T12:21:23+00:00
+! Version: 2.4.83.20
+! TimeUpdated: 2026-08-12T13:33:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10905,6 +10905,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238113
+xagemode.com##+js(prevent-fetch, adsbygoogle)
+! https://github.com/AdguardTeam/AdguardFilters/issues/238046
+fibwatch.art##+js(abort-on-property-write, showWarning)
+fibwatch.art##+js(abort-current-script, navigator, brave)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238114
 ecardcutter.in##+js(addEventListener-defuser, DOMContentLoaded, adblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238123
@@ -37731,6 +37736,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+arcadepunks.com##a[rel="noopener nofollow sponsored"]
+fibwatch.art##+js(href-sanitizer, a[href*="&url=https://"], ?url)
+fibwatch.art##+js(set-session-storage-item, no_ads, 1)
 entireweb.com##.topbar-ad
 entireweb.com##div[class^="ad-"]
 entireweb.com##.speedyads-container
@@ -40454,7 +40462,7 @@ xnxx.*##+js(addEventListener-defuser, DOMContentLoaded, /dyn\.ads|loadAdsDelayed
 transtxxx.com##a[href^="https://candyai.gg/"]
 transtxxx.com##+js(json-prune, video.channel)
 pornslash.com##+js(no-window-open-if)
-pxp.farm,pxp.porn,pornxp.org##.player_right
+pxp.pink,pxp.farm,pxp.porn,pornxp.org##.player_right
 topshare.in,tempmaile.me###Center-Close
 topshare.in,tempmaile.me###rtg-popup-Ads
 ||y2down.cc/images/banner-
