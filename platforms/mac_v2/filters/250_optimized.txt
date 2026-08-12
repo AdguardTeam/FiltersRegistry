@@ -1,5 +1,5 @@
-! Checksum: TXSg7gKE1Y6BFFY4kJ+I9Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1786495892-14400.patch
+! Checksum: OaaW0A/1suhRtFI0GCUPOg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1786511408-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.38
@@ -58,6 +58,7 @@ addons.mozilla.org#?#li.SearchResult:contains(AdsBlocker)
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
+||track.tkbo.com^$all,domain=~malware_redirection_trains.*
 ?bemobdata=$all
 [2600:1f18:43d1:2a04:ee05:261e:d408:7ba1]$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -196,7 +197,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^104\.160\.10\.[12]?\d?\d$/$network
 !+ PLATFORM(windows, mac, android, cli)
 /^165\.231\.154\.[12]?\d?\d$/$network
-||hokaoneone*$all,domain=~emailpowerreviews.com
 !+ PLATFORM(windows, mac, android, cli)
 185.155.184.98$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -326,7 +326,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||adtng.com^$all
 ||anrdoezrs.net^$all
 ||exmainclcknew.com^$all
-||geotrkclknow.com^$all
 ||giantpanda.media^$all
 ||junclikrmedi.com^$all
 ||martted.com^$all
@@ -334,6 +333,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ourdreamersai.com^$all
 ||pushub.net^$all
 ||rovno.xyz^$all
+||s24.cloud^$all
 ||sarai-tid.com^$all
 ||howtofix.guide^$document
 !+ PLATFORM(windows, mac, android, cli)
@@ -386,12 +386,12 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 !+ PLATFORM(windows, mac, android, cli)
 209.74.107.131$network
 ||afflat3a2.com^$all
+||afflat3b3.com^$all
 ||ffatric2.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 69.172.200.185$network
 !+ PLATFORM(windows, mac, android, cli)
 77.220.214.153$network
-google.*#?#div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
 [2606:4700:3030::6815:5284]$network
 [2606:4700:3037::ac43:9e39]$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -461,7 +461,6 @@ drvhub.net##.driver-item__install
 64.190.63.*$network
 !+ PLATFORM(windows, mac, android, cli)
 199.191.50.*$network
-||trekpeak.site^$all
 ||admozartxml.com^$all
 ||adzgame.com^$all
 ||benrif-solutions.com^$all
@@ -479,6 +478,7 @@ drvhub.net##.driver-item__install
 [2a00:8860:10d:1::2:b01]$network
 ||driverpack.io^$document,domain=~has_extreme_amounts_of_pup_in_it.*
 ||ey43.com^$all
+||rpcs4.com^$all
 ||rpcs5.com^$all
 ||androidweblog.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
 ||ytechb.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
@@ -1166,7 +1166,6 @@ kentonline.co.uk##.clearfix + .clearfix
 kentonline.co.uk##.line + .clearfix
 transfermarkt.com##.clearer
 freedownloadmanager.org###unite
-deviantart.com##iframe[title=DealerAdIframe]
 eeconomy.gr#$#.bgnav { max-height:40px!important }
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
@@ -1213,6 +1212,7 @@ word-edit.officeapps.live.com,word.cloud.microsoft##.BeforePageContent
 ~imdb.com##.imdb-score:not(html,body,:empty)
 ~imdb.com##.imdb-ic:not(html,body,:empty)
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
+~imdb.com##.imdbrating:not(html,body,:empty)
 bing.com#?#.b_algo:has(cite:contains(imdb.com)) .b_sritem
 rakuten.tv##a[href*=".imdb.com/title/"]
 www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
@@ -1490,7 +1490,6 @@ $removeparam=o_xid
 $removeparam=wtExtndSource
 $removeparam=rfsn
 $removeparam=afsrc
-$removeparam=lctid
 $document,removeparam=lcid,domain=~rekono.si
 $removeparam=usource
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
@@ -1571,7 +1570,6 @@ $removeparam=_kx
 $document,removeparam=/^affsrc=.*$/i
 $document,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
-$removeparam=atid
 $document,removeparam=/^clickref\d?=.*$/
 $removeparam=cuid,domain=~dynamicyield.com
 $removeparam=data1,domain=~web3.cmvm.pt
@@ -1580,7 +1578,6 @@ $removeparam=data3
 $removeparam=effi_id
 $removeparam=effi_id2
 $removeparam=fobs
-$removeparam=pubref
 $removeparam=sub1
 $removeparam=sub2,domain=~go.dgdp.net
 $removeparam=sub3
@@ -1806,7 +1803,6 @@ $removeparam=/^source=googleps$/
 $removeparam=duckai
 $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adressa.no|polarismedia.no|userbenchmark.com
 $removeparam=x-clickref
-$removeparam=/^src=winget$/
 $removeparam=checkForDeferred
 $removeparam=deepLinkGuid
 $removeparam=smcid
@@ -1851,9 +1847,6 @@ $removeparam=geniuslink
 ||amazon.$removeparam=maas
 ||amazon.$removeparam=/^aa_.*$/
 ||amazon.$removeparam=refinements
-||amazon.$removeparam=qsid
-||amazon.$removeparam=sres
-||amazon.$removeparam=srpt
 $removeparam=hvadid
 $removeparam=hvpos
 $removeparam=hvnetw
@@ -2706,6 +2699,7 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=activity
 !+ NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
+$document,domain=carousell.*,removeparam=/^t-referrer_/
 $document,removeparam=pk_cid
 ||qzone.qq.com^$document,removeparam=loginfrom
 ||qzone.qq.com^$document,removeparam=jumptoqzone
@@ -2817,14 +2811,9 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ://get.microsoft.com/installer/download^$removeparam=referrer
 ://get.microsoft.com/installer/download^$removeparam=source
 ||mcafee.$removeparam=msockid
-||binaryfortress.com/Data/Download^$removeparam=Log
-||draytek.*/downloads/software^$removeparam=catid
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=CttFileID
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=CDCttType
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=ModelType
-||org.downloadcenter.samsung.com/downloadfile^$removeparam=/^ModelName=$/
-||app.netsuite.com/core/media^$removeparam=c
-||app.netsuite.com/core/media^$removeparam=_xt
 ||learn.microsoft.com^$removeparam=redirectedfrom
 ||fairstone.ca^$document,removeparam=adplacementid
 ||loan.fairstone.ca^$document,removeparam=jumpsource
@@ -3127,6 +3116,7 @@ freelancer.com##.PageProjectViewLogout-freelancerInfo:has(.small-flag.bangladesh
 whynohttps.com##tbody > tr:has([src="/flags/4x3/cn.svg"])
 quora.com###mainContent > div > .qu-borderRadius--small:has(> [class=q-box])
 docs.google.com###docs-presence
+forums.lanik.us##div.bug
 ||freshports.org/images/notbug.gif^
 ://go.microsoft.com/fwlink/?LinkID=219472^$all
 foodora.*#$#.page-wrapper.order-component { margin-top: 128px !important }
