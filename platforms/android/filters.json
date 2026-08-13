@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.83.45",
-			"timeUpdated": "2026-08-13T15:24:02+0000",
+			"version": "2.4.83.46",
+			"timeUpdated": "2026-08-13T16:21:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.9.10",
-			"timeUpdated": "2026-08-13T15:24:13+0000",
+			"version": "2.1.9.11",
+			"timeUpdated": "2026-08-13T16:21:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.75.67",
-			"timeUpdated": "2026-08-13T15:24:40+0000",
+			"version": "2.2.75.68",
+			"timeUpdated": "2026-08-13T16:21:49+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.31.20",
-			"timeUpdated": "2026-08-13T15:24:43+0000",
+			"version": "2.1.31.21",
+			"timeUpdated": "2026-08-13T16:21:52+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.80.63",
-			"timeUpdated": "2026-08-13T15:24:51+0000",
+			"version": "2.0.80.64",
+			"timeUpdated": "2026-08-13T16:22:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1752,8 +1752,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.63.40",
-			"timeUpdated": "2026-08-13T13:33:48+0000",
+			"version": "2.1.63.41",
+			"timeUpdated": "2026-08-13T16:22:07+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
@@ -1793,14 +1793,14 @@
 		},
 		{
 			"filterId": 227,
-			"name": "List-KR Classic filter list",
-			"description": "The List-KR Сlassic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.",
+			"name": "filterslist-KO Classic filter list",
+			"description": "The filterslist-KO Classic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.",
 			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/List-KR/List-KR",
+			"homepage": "https://github.com/FilteringDev/filterslists-KO",
 			"expires": 86400,
 			"displayNumber": 2,
 			"groupId": 7,
-			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@list-kr/filterslists@latest/dist/filterslist-AdGuard-classic.txt",
+			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@filteringdev/filterslists-ko@latest/dist/filterslist-AdGuard-classic.txt",
 			"trustLevel": "high",
 			"version": "2.0.24.91",
 			"timeUpdated": "2026-08-13T05:07:55+0000",
