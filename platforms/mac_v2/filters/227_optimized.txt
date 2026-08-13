@@ -1,9 +1,9 @@
-! Checksum: p/BPJBGp9Pib+nzLbPbisQ
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1786539053-14400.patch
+! Checksum: tDs2JK5Y4681MLfeJ5HE7A
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1786597862-14400.patch
 ! Title: List-KR Classic filter list (Optimized)
 ! Description: The List-KR Сlassic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.24.90
-! TimeUpdated: 2026-08-12T12:47:35+00:00
+! Version: 2.0.24.91
+! TimeUpdated: 2026-08-13T05:07:55+00:00
 ! Expires: 12 hours (update frequency)
 ||api-external.adsvani.com^
 ||cdn.adsvani.com^
@@ -261,7 +261,6 @@
 ||ad.mojisead.co.kr^
 ||get*bannerads-6egeg2u34q-du.a.run.app^
 ||ad.kakaobank.com^
-||ad-pulse.kakaobank.cloud^
 ||dnzedhceh7nim.cloudfront.net^
 ||appmon.shinhan.com^
 ||ads.ahnlab.com^
@@ -686,6 +685,7 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+||img.danawa.com/img/m/prod/ajungdang_banner/
 ||coucounews.com/coupas/
 ||handsfriend.com/mootoon-affiliate.js
 ||assets.cueknow.co.kr/script/phantomad.min.js
@@ -1800,6 +1800,8 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+m.danawa.com##.banner_ajungdang
+m.danawa.com##.box__tooltip-internet
 m.bunjang.co.kr##main > div[class^="_container_"] + section:has(> span[class*="_adTitle_"])
 m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href^="https://link.coupang.com/"])
 m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href^="https://ader.naver.com/"])
@@ -3700,6 +3702,8 @@ mule.co.kr#$?#.section-lefttop-center:has(> .mule-today) { width: 100% !importan
 banhub.xyz#$#html { overflow: visible !important; }
 zzzz.lol#$?#.ent_wrapper.slide-vertical-effect .ent_news:not(:has(.ent_prefix:contains(ZZAPFLIX))) { remove: true; }
 aniya24.com#$?#div[class*="-player-wrapper"] > .play-media-control ~ div[class^="beeteam"][class*="-player-sub-element"] { remove: true; }
+namu.wiki#$?#div:has(> table a[href^="#s-"]:contains(/^(?:www\.)?(?:[a-z0-9-]+\.)+[a-z]{2,}(?:\/\S*)?$/i)):upward(1) { remove: true; }
+namu.wiki#$?##_gad_article_top:upward(2) { remove: true; }
 m.bunjang.co.kr#?#main > section:has(> div[class^="_titleContainer_"] > span:contains(AD))
 lottecinema.co.kr#?#.main_movie_list .owl-carousel .owl-item:has(> .item > .top_info > .poster_info > .num_info:contains(AD))
 m.ytn.co.kr#?#div:has(> h2:contains(실시간 정보))
@@ -3774,6 +3778,7 @@ m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html',
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
+m.danawa.com#%#//scriptlet('set-cookie', 'hideMainBottomSheet', 'Y')
 coucounews.com#%#//scriptlet('prevent-navigation', 's.click.aliexpress.com')
 www.naver.com#%#//scriptlet('set-constant', 'EAGER-DATA.CAS-MINICONTENT-PC-WHALE-BANNER-BOTTOM', 'null')
 vod.sooplive.com#%#//scriptlet('json-prune-xhr-response', 'data.adballoon', '', 'station/video/a/view')
