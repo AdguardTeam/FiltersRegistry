@@ -131,6 +131,15 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
+    it('rejects --download-stats combined with --report', () => {
+        const flags = parseFlags(['--download-stats', '--report=report.txt']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('--report');
+        expect(result?.message).toContain('incompatible');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
     it('rejects multiple incompatible flags with --download-stats', () => {
         const flags = parseFlags([
             '--download-stats',

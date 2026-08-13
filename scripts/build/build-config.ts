@@ -125,11 +125,12 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
 
     if (
         flags.downloadStats
-        && (flags.stripGeneratedMeta || flags.noPatchesPrepare)
+        && (flags.stripGeneratedMeta || flags.noPatchesPrepare || flags.rawReportPath)
     ) {
         const ignored: string[] = [];
         if (flags.stripGeneratedMeta) ignored.push('--strip-generated-meta');
         if (flags.noPatchesPrepare) ignored.push('--no-patches-prepare');
+        if (flags.rawReportPath) ignored.push('--report');
         const flagsStr = ignored.join(' and ');
         const verb = ignored.length > 1 ? 'are' : 'is';
         const msg = `Error: ${flagsStr} ${verb} incompatible with `
