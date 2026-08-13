@@ -1,9 +1,9 @@
-! Checksum: x4k7IDAXOdkmnLDWbks3ZA
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1786616992-3600.patch
+! Checksum: PEfBFJvY6izt/PUflII6Lg
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1786623893-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.31.33
-! TimeUpdated: 2026-08-13T10:27:12+00:00
+! Version: 2.0.31.34
+! TimeUpdated: 2026-08-13T12:22:40+00:00
 ! Expires: 10 days (update frequency)
 /js/jquery.smartbanner.js
 ##.duyuru_kutusu
@@ -2006,7 +2006,7 @@ disk.360.yandex.*##div[class^="download-mobile-qr-"]
 yandex.*##.yamb-chat-not-selected__download-app-section > a.yamb-desktop-app-link ~ *
 [$path=/games]yandex.*##.prowo-container
 market.yandex.*##div[data-apiary-widget-name="@marketfront/DistributionLoader"]
-market.yandex.*##div[data-apiary-widget-name*="/HeaderAppDistributionBanner"]
+market.yandex.*#$?#div[data-apiary-widget-name*="/HeaderAppDistributionBanner"] { remove: true; }
 realty.ya.*##aside > div.AddOfferAppPromo
 realty.ya.ru#%#//scriptlet('set-cookie', 'splash_banner_closed', '1')
 uslugi.yandex.ru##.DistributionCard-Container
@@ -2718,8 +2718,6 @@ profi.ru#$#div[class^="OpenInAppFullscreenBanner"] { display: none !important; }
 profi.ru#$#div[class*="TabDefault_mobile_kmp-blog"] { display: none !important; }
 ertecho.gr##.download-app-popup
 disk.yandex.*##.banner_install
-market.yandex.ru##div[id="/content/drawer"]:has(> div > div[aria-label="Закрыть"])
-market.yandex.ru##div[data-baobab-name="loginAgitation"]
 etsy.com##.download-app-takeover
 tutu.ru##div[data-ti="mobile_app_banner"]
 tutu.ru##div[class^="mainLayoutContainer_"] > div[class^="dBlock_"]:has(> a[href="https://tutu.onelink.me/CCCT/vboktiiu"])
