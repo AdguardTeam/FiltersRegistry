@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.95.87",
-			"timeUpdated": "2026-08-13T12:47:20+0000",
+			"version": "2.1.95.88",
+			"timeUpdated": "2026-08-13T16:47:09+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.95.86",
-			"timeUpdated": "2026-08-13T12:47:22+0000",
+			"version": "2.1.95.87",
+			"timeUpdated": "2026-08-13T16:47:11+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1238,8 +1238,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@filteringdev/filterslists-ko@latest/dist/filterslist-AdGuard-classic.txt",
 			"trustLevel": "high",
-			"version": "2.0.24.91",
-			"timeUpdated": "2026-08-13T05:07:55+0000",
+			"version": "2.0.24.92",
+			"timeUpdated": "2026-08-13T16:47:49+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.89.18",
-			"timeUpdated": "2026-08-13T12:48:26+0000",
+			"version": "2.0.89.19",
+			"timeUpdated": "2026-08-13T16:48:14+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1531,8 +1531,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.23",
-			"timeUpdated": "2026-07-09T09:45:58+0000",
+			"version": "2.0.0.24",
+			"timeUpdated": "2026-08-13T16:48:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1551,8 +1551,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.1.16",
-			"timeUpdated": "2026-08-13T00:48:56+0000",
+			"version": "2.0.1.17",
+			"timeUpdated": "2026-08-13T16:48:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

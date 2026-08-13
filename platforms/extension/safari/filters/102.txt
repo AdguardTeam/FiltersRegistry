@@ -1,15 +1,15 @@
-! Checksum: +Hwu7zeeYiIqsJ0QgbC3OA
-! Diff-Path: ../patches/102/102-s-1786539040-14400.patch
+! Checksum: pumpV1J/fpG2GCxpfKUiaw
+! Diff-Path: ../patches/102/102-s-1786639864-14400.patch
 ! Title: ABPindo
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.10.22
-! TimeUpdated: 2026-08-12T12:46:57+00:00
+! Version: 2.0.10.23
+! TimeUpdated: 2026-08-13T16:47:02+00:00
 ! Expires: 5 days (update frequency)
 !
-! OriginalVersion: 202608121240
+! OriginalVersion: 202608131400
 ! Title: ABPindo
 ! Description: Filter tambahan untuk EasyList memblokir iklan berbahasa Indonesia dan Malaysia.
-! Last modified: 12 Aug 2026 12:40 UTC
+! Last modified: 13 Aug 2026 14:00 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/ABPindo/indonesianadblockrules/
 ! License: https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/LICENSE
@@ -110,6 +110,7 @@
 ! Potential ad servers
 ||64p3am9x95ct.com^$popup,third-party
 ||9eb10b7a3d04a.com^$popup,third-party
+||a.magsrv.com^$third-party
 ||adplus.co.id^$third-party
 ||afbcashidr.com^$popup,third-party
 ||auredzeon.com^$popup,third-party
@@ -130,6 +131,7 @@
 ||lokeriklan.com^$third-party
 ||mousheen.net^$third-party
 ||octafx.com^$popup,third-party
+||poweredby.jads.co^$third-party
 ||promobagus.com^$third-party
 ||pusatiklan.com^$third-party
 ||realwap.net^$third-party
@@ -9766,6 +9768,7 @@ pemersatufun.com###advertisement
 bintangmawar.net###bmpop_adpB
 pemersatufun.*###btasd
 javsubindo.site###btm_banner
+kebokepanku.com###close-floatadsbawah
 pemersatufun.*###deskadmiddle
 pemersatufun.*###dooplay_player_response #myDiv:has(button[onclick*="-adblock" i])
 krx18.com###dynamic-image[alt=""]
@@ -9783,10 +9786,12 @@ matapria.cam###floating-top-banner
 kayatan.vip###floatingBanner
 ruangbokep.*,ruangbokep.com,ruangbokep.sbs,streamingbokeponline.*,streamingbokeponline.com###floating_bot
 tempatbokep.com###global-promo-wrapper
+! #kebokepanku.com-floatingadbanneratbottomofvideoplayer
 terviral.cam###lin-floating-ad
 rumahparaperjaka.*###modal
 bokep.pemersatu.top,pemersatufun.*###myDiv
 minioppai.org###overplay
+! #pemersatufun.com-anti-adblockagegate(Monetag/magsrv)
 iyottube.co,iyottube.com###playerOverlay
 javbabe.net,nekopoi.*###popup
 asiasizzle.com,flickerlust.com,indoxxihot.com,markasfilmhot.com###popup-banner-overlay
@@ -9816,6 +9821,7 @@ videocrot.*##.ads-720
 ayojatim.com##.adsbygoogle
 nekopoi.care##.adsgen
 lkprd.fun,lkprd.site##.adshu
+pemersatufun.com##.age-gate-ad-status
 pascol.*,sintube.*##.ays-pb-modals
 i-jav.space##.banner
 podjav.tv##.banner-ads
@@ -9888,6 +9894,10 @@ csnbiru.blog#$#.video-wrapper iframe { display: block !important; }
 semprot.com##.warning_iklan
 bokepvir.*##.widget_block.widget
 komikdewasa.art##.wp-image-80765.size-full.alignnone
+pemersatufun.com##[class*="age-gate"]
+pemersatufun.com##[class*="age-gate-adblock"]
+pemersatufun.com##[data-age-accept]
+pemersatufun.com##[data-age-adblock-link]
 kingbokep.*##[data-dgazzbdbfcbzagfz]
 i-jav.space##[href*="situsdepe4d"]
 i-jav.space##[href*="t.ly/depe4d"]
@@ -9906,6 +9916,7 @@ nokephub.com##a[href^="https://genec77.space/"]
 anoboy.*,manhwadesu.im,manhwadesu.org##a[href^="https://klik.gg/"]
 slurr.my.id##a[href^="https://scratchy-trick.com/"]
 18subindo.com##a[href^="https://tinyurl.com/"]
+kebokepanku.com##a[id="tracking-url"][target="_blank"]
 animekompi.*,artisbokep.*,komikdewasa.art,nekopoi.*,republikbokep.*,sebokep.vip,simontokx.tv,xbokepin.*##a[target*="blank"]:has(> img)
 kayatan.vip##aside > div > .mt-4
 komikpoi.com,rumahparaperjaka.*#$#body { overflow: auto !important; }
@@ -9918,6 +9929,7 @@ ayojatim.com##div[class*="adsbygoogle"]
 indoporntube.com##div[class*="backdrop-blur-sm"]
 nekopoi.care##div[class^="adsgen"] iframe
 nekopoi.care##div[class^="mobileads"]
+kebokepanku.com##div[id^="floatads"]
 kampungbokep.*##div[id^="wp5hpr_"][id$="_overlay"]
 tantecentil.fans##div[style*="z-index: 999999"]
 indobokepin.com##iframe[src*="dooods.pro/ads_banner"]
@@ -9931,7 +9943,12 @@ semprot.com##semprotnenenmontok_f
 indoporntube.com##svg.lucide-shield-alert
 igo.desu.xxx##uads_300x250
 kingbokep.*##video[src*=".webm"]:not(div[class*="video"] > img)
+! video.pemersatu.org - anti-adblock ad-gate (Monetag/magsrv + jads.co)
+video.pemersatu.org##.adsbygoogle
+video.pemersatu.org##.pmt-ad-gate
+video.pemersatu.org##[class*="pmt-ad-gate"]
 ! *** abpindo:src/adult/adult_thirdparty.txt ***
+! #putarvid.com/kebokepanku.com-popMagic/ExoClickpopup/popunderdomains
 ||32redpoker.com^$third-party
 ||4vbbb.com^$third-party
 ||88togel.com^$third-party
@@ -9957,6 +9974,7 @@ kingbokep.*##video[src*=".webm"]:not(div[class*="video"] > img)
 ||auredzetw.com^$third-party
 ||autocst.site^$third-party
 ||axes88.org^$third-party
+||badylenicesist.com^$third-party
 ||bandarjuditogel.com^$third-party
 ||baron777premium.com^$popup
 ||bbm88.org^$third-party
@@ -10000,6 +10018,10 @@ kingbokep.*##video[src*=".webm"]:not(div[class*="video"] > img)
 ||emputogel.com^$third-party
 ||europoker.com^$third-party
 ||everypoker.com^$third-party
+||exacdn.com^$third-party
+||exdynsrv.com^$third-party
+||exoclick.com^$third-party
+||exosrv.com^$third-party
 ||feltpoker.com^$third-party
 ||file-assist.xuzor.com^$third-party
 ||gembul.xyz^$third-party
@@ -10007,6 +10029,7 @@ kingbokep.*##video[src*=".webm"]:not(div[class*="video"] > img)
 ||goldentigerpoker.com^$third-party
 ||goldentoto.com^$third-party
 ||goldtoto.com^$third-party
+||histats.com^$third-party
 ||hokijudi99.com^$third-party
 ||hokitogel.com^$third-party
 ||homepokergames.com^$third-party
@@ -10031,6 +10054,7 @@ kingbokep.*##video[src*=".webm"]:not(div[class*="video"] > img)
 ||launchpoker.com^$third-party
 ||lazacasino.com^$image,third-party
 ||lazacasino.com^$popup
+||letterrecoveryunplanted.com^$third-party
 ||linkjalur.vip^$third-party
 ||lockerimage.com^$all
 ||login.ashk7.com^$third-party
@@ -10064,8 +10088,10 @@ kingbokep.*##video[src*=".webm"]:not(div[class*="video"] > img)
 ||online5poker.com^$third-party
 ||onlineactionpoker.com^$third-party
 ||onlinepoker66.com^$third-party
+||opoxv.com^$third-party
 ||pacificpoker.com^$third-party
 ||pandujudionline.com^$third-party
+||pemsrv.com^$third-party
 ||pkr-88.com^$third-party
 ||planettoto.com^$third-party
 ||playpokeronline.com^$third-party
@@ -10179,6 +10205,7 @@ kingbokep.*##video[src*=".webm"]:not(div[class*="video"] > img)
 ||whelmlegge.com^$third-party
 ||wigobet.com^$third-party
 ||win25keren.store^$third-party
+||wpadmngr.com^$third-party
 ||wprediscache.com^$third-party
 ||xjudi.com^$third-party
 ||yourpokercash.com^$third-party
