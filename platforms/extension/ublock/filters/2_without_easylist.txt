@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: q5m3BMWNbQKnHYwOfszfVA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1786623907-3600.patch
+! Checksum: 1t2jESmR54ujCo+8Z7H3CA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1786628202-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.83.43
-! TimeUpdated: 2026-08-13T12:21:45+00:00
+! Version: 2.4.83.44
+! TimeUpdated: 2026-08-13T13:32:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10905,6 +10905,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238074
+opentibiaserver.com##+js(no-setTimeout-if, checkAdblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238109
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238110
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238113
@@ -33876,7 +33878,9 @@ igg-games.com##+js(set-constant, advanced_ads_ready, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139672
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140973
 footybite.to,givemenbastreams.com##+js(abort-current-script, setTimeout, admc)
+! https://github.com/AdguardTeam/AdguardFilters/issues/237198
 ! https://github.com/AdguardTeam/AdguardFilters/pull/135052/
+netflix.com##+js(json-prune, result.adverts)
 ! Disabled due to https://github.com/AdguardTeam/AdguardFilters/issues/137980#issuecomment-1372856216
 ! Ads when pausing
 netflix.com##+js(json-prune, data.pinotPausedPlaybackPage)
@@ -37734,6 +37738,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+opentibiaserver.com##article.promoted-card
+opentibiaserver.com###btn-promoted
+opentibiaserver.com##a[onclick*="trackAdClick"]
 mail.aol.com###gpt-iframe-top_right-gam-display
 mail.aol.com##div[style^="padding:"] div[aria-hidden="true"]  div.mb-1.text-xs.font-medium
 rd.com##+js(href-sanitizer, a[href^="https://click.linksynergy.com/deeplink?id="], ?murl)

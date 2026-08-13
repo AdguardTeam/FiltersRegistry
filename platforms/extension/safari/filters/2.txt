@@ -1,9 +1,9 @@
-! Checksum: D9+DbeToKYz2sDuhjR4iIA
-! Diff-Path: ../patches/2/2-s-1786623903-3600.patch
+! Checksum: Z41ecRv80q9iU2I36xG9Iw
+! Diff-Path: ../patches/2/2-s-1786628198-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.83.43
-! TimeUpdated: 2026-08-13T12:21:45+00:00
+! Version: 2.4.83.44
+! TimeUpdated: 2026-08-13T13:32:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11087,6 +11087,10 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238074
+opentibiaserver.com#%#//scriptlet('prevent-setTimeout', 'checkAdblock')
+opentibiaserver.com#@#.google-ad
+opentibiaserver.com#@#.ad-banner-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238109
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238110
 thecourseforum.com,newsgrow.club#%#//scriptlet('prevent-element-src-loading', 'script', 'adsbygoogle')
@@ -35878,8 +35882,10 @@ igg-games.com#%#//scriptlet("set-constant", "advanced_ads_ready", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139672
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140973
 footybite.to,givemenbastreams.com#%#//scriptlet("abort-current-inline-script", "setTimeout", "admc")
+! https://github.com/AdguardTeam/AdguardFilters/issues/237198
 ! https://github.com/AdguardTeam/AdguardFilters/pull/135052/
-netflix.com#%#(() => { var ReplaceMap = {adBreaks: [], adState: null, currentAdBreak: 'undefined'}; Object.defineProperty = new Proxy(Object.defineProperty, { apply: (target, thisArg, ArgsList) => { var Original = Reflect.apply(target, thisArg, ArgsList); if (ArgsList[1] == 'getAdBreaks' || ArgsList[1] == 'getAdsDisplayStringParams') { return Original[ArgsList[1]] = function() {}; } else if (ArgsList[1] == 'adBreaks' || ArgsList[1] == 'currentAdBreak' || typeof Original['adBreaks'] !== 'undefined') { for (var [key, value] of Object.entries(Original)) { if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] !== 'undefined') { Original[key] = ReplaceMap[key]; } else if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] === 'undefined') { Original[key] = undefined; } } return Original; } else { return Original; }}})})();
+netflix.com#%#//scriptlet('json-prune', 'result.adverts')
+netflix.com#%#(()=>{const replaceMap={adBreaks:[],adState:null,currentAdBreak:"undefined"};Object.defineProperty=new Proxy(Object.defineProperty,{apply:(target,thisArg,ArgsList)=>{const original=Reflect.apply(target,thisArg,ArgsList);if("getAdBreaks"===ArgsList[1]||"getAdsDisplayStringParams"===ArgsList[1]||"_refreshAds"===ArgsList[1])return original[ArgsList[1]]=function(){};if("adBreaks"===ArgsList[1]||"currentAdBreak"===ArgsList[1]||void 0!==original.adBreaks){for(var[key,value]of Object.entries(original))void 0!==replaceMap[key]&&"undefined"!==replaceMap[key]?original[key]=replaceMap[key]:void 0!==replaceMap[key]&&"undefined"===replaceMap[key]&&(original[key]=void 0);return original}return original}})})();
 ! Disabled due to https://github.com/AdguardTeam/AdguardFilters/issues/137980#issuecomment-1372856216
 !netflix.com#%#//scriptlet('set-constant', 'netflix.appContext.state.model.models.truths.data.isAdsPlan', 'false')
 !netflix.com#%#//scriptlet('set-constant', 'netflix.appContext.state.model.models.playerModel.data.config.core.initParams.enableAdPlaygraphs', 'false')
@@ -40288,6 +40294,9 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+opentibiaserver.com##article.promoted-card
+opentibiaserver.com###btn-promoted
+opentibiaserver.com##a[onclick*="trackAdClick"]
 mail.aol.com###gpt-iframe-top_right-gam-display
 mail.aol.com##div[style^="padding:"] div[aria-hidden="true"]  div.mb-1.text-xs.font-medium
 rd.com#%#//scriptlet('href-sanitizer', 'a[href^="https://click.linksynergy.com/deeplink?id="]', '?murl')
@@ -90832,6 +90841,7 @@ browsershots.org#@#.advert_area
 ||abaolokyjmlvj.top^
 ||abaolokyjmryv.top^
 ||abaryoyidjcso.store^
+||abasedmeeds.cyou^
 ||abashfireworks.com^
 ||abassinbiomes.qpon^
 ||abateadversity.com^
@@ -92806,6 +92816,7 @@ browsershots.org#@#.advert_area
 ||arkharmonious.com^
 ||arklwdbnkkhj.com^
 ||arknightsendfield.site^
+||arkoseriotisemicra.cfd^
 ||arkwglkwhnhce.store^
 ||arlcumwyzkijq.site^
 ||arllzfdoodulm.space^
@@ -94169,6 +94180,7 @@ browsershots.org#@#.advert_area
 ||bfaubcoezrihe.site^
 ||bfblyaqvcnaat.space^
 ||bfe6b914a1.com^
+||bfeoncaflpt.in^
 ||bfetpjdaebmzl.space^
 ||bffigvvwoyybr.website^
 ||bffoytonrusbx.website^
@@ -99757,6 +99769,7 @@ browsershots.org#@#.advert_area
 ||dsmnpw.com^
 ||dsmtlxxmhsdea.site^
 ||dsmuvt.com^
+||dsmwju.com^
 ||dsmxnw.com^
 ||dsmzof.com^
 ||dsmzyk.com^
@@ -100587,6 +100600,7 @@ browsershots.org#@#.advert_area
 ||ehdmckprfptyg.store^
 ||ehdmskoumgzcv.online^
 ||ehegoajxjinwc.online^
+||ehesldqwosfjv.website^
 ||ehfeuvyalaxlm.online^
 ||ehftkujvqceyl.site^
 ||ehhgsjomfqqwu.online^
@@ -100618,6 +100632,7 @@ browsershots.org#@#.advert_area
 ||eiledstevermotorie.org^
 ||eiljtxtpaajoh.website^
 ||eilloupnjlzoj.site^
+||eimbrxlb.com^
 ||eimesthanzogt.space^
 ||eiotqjelvrceb.online^
 ||eipapwgvmipdi.online^
@@ -100635,6 +100650,7 @@ browsershots.org#@#.advert_area
 ||eiyyjstblubzo.website^
 ||eizcfqypdourg.online^
 ||eizgttovabu.com^
+||eizkswbhhnlsw.website^
 ||eizzih.com^
 ||ejadhobthckao.site^
 ||ejamnene.qpon^
@@ -100650,6 +100666,7 @@ browsershots.org#@#.advert_area
 ||ejnjjqepwavf.com^
 ||ejoanpaklnyrg.space^
 ||ejozbzeymccax.website^
+||ejpeyuforzksu.online^
 ||ejqmzpbhebimq.website^
 ||ejroldixhjqnu.online^
 ||ejrzeehyqboza.website^
@@ -101977,6 +101994,7 @@ browsershots.org#@#.advert_area
 ||fcjmpgwlxrzdv.space^
 ||fckhwsfvgsebk.website^
 ||fckrpxxsqai.com^
+||fclbiubcoldcy.space^
 ||fclgjprhbvbhjkp.com^
 ||fcmkibgfror.com^
 ||fcmsplqtivmls.space^
@@ -103055,6 +103073,7 @@ browsershots.org#@#.advert_area
 ||frjnnudnmborf.store^
 ||frjrwixwogqjt.site^
 ||frkyhxyvwrnrl.website^
+||frlybrblnhapd.website^
 ||frmhktwjerprp.store^
 ||frmirnvtgcgdu.online^
 ||frmorena.qpon^
@@ -103811,6 +103830,7 @@ browsershots.org#@#.advert_area
 ||gfhgxmczmrcda.site^
 ||gfhhghnduzqiq.site^
 ||gfjfixuvixtup.site^
+||gfkffnyncyicj.space^
 ||gfkfqilsulylx.website^
 ||gfkgmbwjfoem.com^
 ||gfoqmtwpoodsy.space^
@@ -104584,6 +104604,7 @@ browsershots.org#@#.advert_area
 ||grotesquefact.pro^
 ||grotesquephilosophy.com^
 ||grotzenzelotic.com^
+||grouchgraupel.shop^
 ||grouchyrecover.com^
 ||groundafreshjumped.com^
 ||groundedmine.com^
@@ -104705,6 +104726,7 @@ browsershots.org#@#.advert_area
 ||guehsgqmawega.online^
 ||guestconspiracy.com^
 ||guezvffghyoso.online^
+||gufarewake.qpon^
 ||gufferloliindan.cfd^
 ||guffoutbarmanifer.qpon^
 ||gughkbhwynapy.website^
@@ -104804,6 +104826,7 @@ browsershots.org#@#.advert_area
 ||gvyyuickvuwof.website^
 ||gvzdiuftzjhtq.online^
 ||gvztlapluvckr.online^
+||gwaevffiiyj.com^
 ||gwallet.com^
 ||gwaqanrpzkknt.website^
 ||gwiryqwgylcdq.online^
@@ -104908,6 +104931,7 @@ browsershots.org#@#.advert_area
 ||h345iggp8og961j2.cfd^
 ||h52ek3i.de^
 ||h5lwvwj.top^
+||h6671vcw5g2wtjhqp.cfd^
 ||h66niuy6.xyz^
 ||h69q7obn18uhjptlqkrhmr.cfd^
 ||h6irng4w1y99gbr9leu6vknf.cfd^
@@ -105569,6 +105593,7 @@ browsershots.org#@#.advert_area
 ||hillaryluvian.shop^
 ||hillghibli.shop^
 ||hillglamorous.com^
+||hillierbandala.qpon^
 ||hilltopads.com^
 ||hilltopads.net^
 ||hiltszbirzcky.store^
@@ -107642,6 +107667,7 @@ browsershots.org#@#.advert_area
 ||ivxwdikrmtzfc.online^
 ||ivynjtsidwnqh.online^
 ||ivyprolonginstalment.com^
+||iwabnicajsm.com^
 ||iwantuonly.com^
 ||iwbwthllmdfqw.space^
 ||iwdesqsrwxjwg.website^
@@ -111076,6 +111102,7 @@ browsershots.org#@#.advert_area
 ||luniestharr.com^
 ||lunlllxfmkvxr.site^
 ||lunlyqvavjkfc.website^
+||lunulesgnashed.qpon^
 ||lunygdgezgtnh.site^
 ||luoqdtopebadx.store^
 ||lupercigoa.cfd^
@@ -112656,6 +112683,7 @@ browsershots.org#@#.advert_area
 ||mpkfjptigpown.site^
 ||mplayeranyd.info^
 ||mpmlabizlyewq.website^
+||mpmnc6v4be4u5b.rest^
 ||mpmqzkienrxkm.website^
 ||mpniplgzpqmlx.website^
 ||mpnjigsicbtas.site^
@@ -114983,11 +115011,13 @@ browsershots.org#@#.advert_area
 ||onclickpulse.com^
 ||onclicksuper.com^
 ||onclklnd.com^
+||oncosisbedelve.qpon^
 ||ondingfoute.com^
 ||oneclck.net^
 ||onedmp.com^
 ||onedragon.win^
 ||onefoldonefoldmotorcycle.com^
+||onegitearguses.cyou^
 ||oneotheacon.cc^
 ||onerousgardening.com^
 ||onerousgathering.com^
@@ -116631,6 +116661,7 @@ browsershots.org#@#.advert_area
 ||piotedsanta.cyou^
 ||piovokqpethen.website^
 ||pip-pip-pop.com^
+||pipaenglue.cyou^
 ||pipeaota.com^
 ||piperharmfuldeclaration.com^
 ||piperscheapos.shop^
@@ -117045,6 +117076,7 @@ browsershots.org#@#.advert_area
 ||pomeloglinse.cfd^
 ||pomelring.shop^
 ||pompbeacon.com^
+||pompomspottled.shop^
 ||pompoverlax.qpon^
 ||pomprecognition.com^
 ||pomxd.com^
@@ -117539,6 +117571,7 @@ browsershots.org#@#.advert_area
 ||profileinsistnineteenth.com^
 ||profitable-balance.com^
 ||profitable-grocery.com^
+||profitable-purchase.pro^
 ||profitablebutton.com^
 ||profitablecpmgate.com^
 ||profitablecpmrate.com^
@@ -123145,6 +123178,7 @@ browsershots.org#@#.advert_area
 ||stoaijinked.qpon^
 ||stoajotdjrzyr.site^
 ||stoampaliy.net^
+||stoastenore.qpon^
 ||stobpennine.com^
 ||stockingchancymagically.com^
 ||stockingsfiddlesophisticated.com^
@@ -124003,6 +124037,7 @@ browsershots.org#@#.advert_area
 ||tavryuhcshdsr.website^
 ||tawersmylodonvoulge.qpon^
 ||tawnieracheron.shop^
+||tawtieratos.shop^
 ||taxaffections.com^
 ||taxdifferenceinvestor.com^
 ||taxemicmultum.qpon^
@@ -126249,6 +126284,7 @@ browsershots.org#@#.advert_area
 ||unfumedvamoses.com^
 ||ungagtangramfugate.cfd^
 ||ungatedthecoid.cfd^
+||ungirdplumply.qpon^
 ||ungirdsgnawn.qpon^
 ||ungrandswopped.cyou^
 ||ungyptrvngfqp.site^
@@ -126866,6 +126902,7 @@ browsershots.org#@#.advert_area
 ||uyybspugtnmit.website^
 ||uyzosjiuslcop.online^
 ||uzapgolabdiyl.site^
+||uzaronamazing.qpon^
 ||uzasjoeoqwruj.site^
 ||uzawebaho.sbs^
 ||uzcdyxkzovjyn.website^
@@ -128856,6 +128893,7 @@ browsershots.org#@#.advert_area
 ||witnessjacket.com^
 ||witnessportfoliolobes.com^
 ||witneymopier.cfd^
+||witsafenuddleunbaked.qpon^
 ||witssnoopacceleration.com^
 ||wittyinternet.com^
 ||witwayabide.com^

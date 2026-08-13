@@ -459,6 +459,7 @@ youporn.com,bztube.com,hotovs.com,insuredhome.org,nudegista.com,pornluck.com,vid
 pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('set-constant', 'page_params.holiday_promo_prem', 'true')
 pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('prevent-setTimeout', '\x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62')
 youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/')
+opentibiaserver.com#%#//scriptlet('prevent-setTimeout', 'checkAdblock')
 thecourseforum.com,newsgrow.club#%#//scriptlet('prevent-element-src-loading', 'script', 'adsbygoogle')
 xagemode.com#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 fibwatch.art#%#//scriptlet('abort-on-property-write', 'showWarning')
@@ -3666,7 +3667,8 @@ turbovid.vip,trailerhg.xyz,turboplayers.xyz,javggvideo.xyz,turtleviplay.xyz,find
 mega4upload.com#%#//scriptlet('remove-attr', 'onclick', '#direct_link > a[onclick]')
 igg-games.com#%#//scriptlet("set-constant", "advanced_ads_ready", "noopFunc")
 footybite.to,givemenbastreams.com#%#//scriptlet("abort-current-inline-script", "setTimeout", "admc")
-netflix.com#%#(() => { var ReplaceMap = {adBreaks: [], adState: null, currentAdBreak: 'undefined'}; Object.defineProperty = new Proxy(Object.defineProperty, { apply: (target, thisArg, ArgsList) => { var Original = Reflect.apply(target, thisArg, ArgsList); if (ArgsList[1] == 'getAdBreaks' || ArgsList[1] == 'getAdsDisplayStringParams') { return Original[ArgsList[1]] = function() {}; } else if (ArgsList[1] == 'adBreaks' || ArgsList[1] == 'currentAdBreak' || typeof Original['adBreaks'] !== 'undefined') { for (var [key, value] of Object.entries(Original)) { if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] !== 'undefined') { Original[key] = ReplaceMap[key]; } else if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] === 'undefined') { Original[key] = undefined; } } return Original; } else { return Original; }}})})();
+netflix.com#%#//scriptlet('json-prune', 'result.adverts')
+netflix.com#%#(()=>{const replaceMap={adBreaks:[],adState:null,currentAdBreak:"undefined"};Object.defineProperty=new Proxy(Object.defineProperty,{apply:(target,thisArg,ArgsList)=>{const original=Reflect.apply(target,thisArg,ArgsList);if("getAdBreaks"===ArgsList[1]||"getAdsDisplayStringParams"===ArgsList[1]||"_refreshAds"===ArgsList[1])return original[ArgsList[1]]=function(){};if("adBreaks"===ArgsList[1]||"currentAdBreak"===ArgsList[1]||void 0!==original.adBreaks){for(var[key,value]of Object.entries(original))void 0!==replaceMap[key]&&"undefined"!==replaceMap[key]?original[key]=replaceMap[key]:void 0!==replaceMap[key]&&"undefined"===replaceMap[key]&&(original[key]=void 0);return original}return original}})})();
 netflix.com#%#//scriptlet('json-prune', 'data.pinotPausedPlaybackPage')
 eroti.ga#%#//scriptlet("abort-current-inline-script", "eval", "popunder")
 uploadgig.com#%#//scriptlet('prevent-window-open')

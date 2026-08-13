@@ -699,7 +699,7 @@
         },
         {
             "domains": "netflix.com",
-            "script": "(() => { var ReplaceMap = {adBreaks: [], adState: null, currentAdBreak: 'undefined'}; Object.defineProperty = new Proxy(Object.defineProperty, { apply: (target, thisArg, ArgsList) => { var Original = Reflect.apply(target, thisArg, ArgsList); if (ArgsList[1] == 'getAdBreaks' || ArgsList[1] == 'getAdsDisplayStringParams') { return Original[ArgsList[1]] = function() {}; } else if (ArgsList[1] == 'adBreaks' || ArgsList[1] == 'currentAdBreak' || typeof Original['adBreaks'] !== 'undefined') { for (var [key, value] of Object.entries(Original)) { if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] !== 'undefined') { Original[key] = ReplaceMap[key]; } else if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] === 'undefined') { Original[key] = undefined; } } return Original; } else { return Original; }}})})();"
+            "script": "(()=>{const replaceMap={adBreaks:[],adState:null,currentAdBreak:\"undefined\"};Object.defineProperty=new Proxy(Object.defineProperty,{apply:(target,thisArg,ArgsList)=>{const original=Reflect.apply(target,thisArg,ArgsList);if(\"getAdBreaks\"===ArgsList[1]||\"getAdsDisplayStringParams\"===ArgsList[1]||\"_refreshAds\"===ArgsList[1])return original[ArgsList[1]]=function(){};if(\"adBreaks\"===ArgsList[1]||\"currentAdBreak\"===ArgsList[1]||void 0!==original.adBreaks){for(var[key,value]of Object.entries(original))void 0!==replaceMap[key]&&\"undefined\"!==replaceMap[key]?original[key]=replaceMap[key]:void 0!==replaceMap[key]&&\"undefined\"===replaceMap[key]&&(original[key]=void 0);return original}return original}})})();"
         },
         {
             "domains": "fifa.com",
