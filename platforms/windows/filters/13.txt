@@ -1,9 +1,9 @@
-! Checksum: D/VyHEhFXd0O1CNpYpbbLA
-! Diff-Path: ../patches/13/13-s-1786693061-3600.patch
+! Checksum: PxZFQzEaJvw71NBCbBOVVA
+! Diff-Path: ../patches/13/13-s-1786696540-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.0
-! TimeUpdated: 2026-08-14T07:34:14+00:00
+! Version: 2.0.67.1
+! TimeUpdated: 2026-08-14T08:32:16+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6016,6 +6016,16 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 !          or add a last known domain
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
+!
+! Frequently changed domains: bahisligatv*.com
+! Source: bahisligatv2.com
+||bahisligatv*.com/view/theme/ultimate/img/*.gif
+||bahisligatv*.com/view/theme/ultimate/assets/js/rc.js
+[$domain=/bahisligatv\d+\.com$/]##div[class^="reklam-"]
+[$domain=/bahisligatv\d+\.com$/]##body > header
+[$domain=/bahisligatv\d+\.com$/]##.odds-container
+[$domain=/bahisligatv\d+\.com$/]##.footer-links
+[$domain=/bahisligatv\d+\.com$/]##.header-top > div.header-text
 !
 ! Frequently changed domains: pasizle*.com
 ! Source: pasizle859.com
