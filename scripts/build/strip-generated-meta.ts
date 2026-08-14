@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 
 const FILTERS_DIR_NAME = 'filters';
 const TXT_FILE_EXTENSION = '.txt';
+const METADATA_FILE_NAMES = ['filters.json', 'filters.js'];
 
 /**
  * Lines starting with these prefixes are generated meta — they change on every build
@@ -18,6 +19,12 @@ const GENERATED_META_PREFIXES = [
 ] as const;
 
 /**
+ * Fields inside each entry of the `filters` array in filters.json/filters.js that are
+ * generated meta — same rationale as GENERATED_META_PREFIXES, but for the JSON metadata files.
+ */
+const GENERATED_META_FIELDS = ['version', 'timeUpdated'] as const;
+
+/**
  * Checks whether a line is a generated meta line that should be stripped.
  *
  * @param line - A single line from a filter file.
@@ -25,6 +32,39 @@ const GENERATED_META_PREFIXES = [
  */
 const isGeneratedMetaLine = (line: string): boolean => {
     return GENERATED_META_PREFIXES.some((prefix) => line.startsWith(prefix));
+};
+
+/**
+ * Strip generated version/timeUpdated fields from each entry of the `filters` array
+ * in a filters.json/filters.js metadata file, in-place.
+ *
+ * @param filePath - Absolute path to the filters.json or filters.js file.
+ * @returns True if the file was modified, false otherwise.
+ */
+const stripMetaFromMetadataFile = async (filePath: string): Promise<boolean> => {
+    const content = await fs.readFile(filePath, 'utf8');
+    const data = JSON.parse(content);
+
+    if (!Array.isArray(data.filters)) {
+        return false;
+    }
+
+    let modified = false;
+    data.filters.forEach((filter: Record<string, unknown>) => {
+        GENERATED_META_FIELDS.forEach((field) => {
+            if (field in filter) {
+                delete filter[field];
+                modified = true;
+            }
+        });
+    });
+
+    if (!modified) {
+        return false;
+    }
+
+    await fs.writeFile(filePath, JSON.stringify(data, null, '\t'), 'utf8');
+    return true;
 };
 
 /**
@@ -48,7 +88,8 @@ const stripGeneratedMeta = async (filePath: string): Promise<boolean> => {
 
 /**
  * Single-pass recursive walk: strips metadata from .txt files inside `filters/`
- * directories and counts modified files per `filters/` dir.
+ * directories, and from any `filters.json`/`filters.js` metadata files found
+ * anywhere under the root, counting modified files per `filters/` dir.
  *
  * When a directory named `filters` is encountered, all .txt files inside it are
  * processed immediately — no second traversal is needed.
@@ -64,10 +105,11 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
         const fullPath = path.join(dir, entry.name);
 
         if (!entry.isDirectory()) {
-            // Only process .txt files that are directly inside a `filters/` dir,
-            // which is guaranteed by the caller when dir itself is a filters dir.
             if (entry.name.endsWith(TXT_FILE_EXTENSION)) {
                 return (await stripGeneratedMeta(fullPath)) ? 1 : 0;
+            }
+            if (METADATA_FILE_NAMES.includes(entry.name)) {
+                return (await stripMetaFromMetadataFile(fullPath)) ? 1 : 0;
             }
             return 0;
         }
@@ -90,7 +132,8 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
 
 /**
  * Strip generated metadata lines from all .txt files inside all `filters/`
- * directories found recursively under the given root.
+ * directories, and generated version/timeUpdated fields from all
+ * `filters.json`/`filters.js` files, found recursively under the given root.
  *
  * @param rootDir - Root directory to search (e.g. `platforms/`).
  * @returns Number of files actually modified.

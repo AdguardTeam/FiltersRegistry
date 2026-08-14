@@ -361,18 +361,18 @@ generate_report() {
         "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" \
         | grep -cE "filters\.(json|js)" || true)
 
-    echo "${C_BOLD}--- Rule Files ---${C_RESET}"
-    echo "Total .txt files compared: $total"
-    echo "Files with diffs:          $rule_diffs"
-    [ -n "$diff_list" ] && printf '%b\n' "$diff_list"
-    echo ""
-    echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
-    echo "filters.json/filters.js diffs: $meta_diffs  (version counter noise, not a regression)"
-    echo ""
-    echo "${C_BOLD}--- Verdict ---${C_RESET}"
-    [ "$rule_diffs" -eq 0 ] \
-        && echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file diffs" \
-        || { echo "${C_RED}${CROSS} FAIL${C_RESET} — $rule_diffs rule file(s) differ"; return 1; }
+  echo "${C_BOLD}--- Rule Files ---${C_RESET}"
+  echo "Total .txt files compared: $total"
+  echo "Files with diffs:          $rule_diffs"
+  [ -n "$diff_list" ] && printf "$diff_list\n"
+  echo ""
+  echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
+  echo "filters.json/filters.js diffs: $meta_diffs (a nonzero count here signals a metadata change)"
+  echo ""
+  echo "${C_BOLD}--- Verdict ---${C_RESET}"
+  [ "$rule_diffs" -eq 0 ] \
+    && echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file diffs" \
+    || { echo "${C_RED}${CROSS} FAIL${C_RESET} — $rule_diffs rule file(s) differ"; return 1; }
 }
 
 # --- Step 0: reuse existing build output, if any ---

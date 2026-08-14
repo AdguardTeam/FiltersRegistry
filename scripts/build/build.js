@@ -197,7 +197,8 @@ const buildFilters = async () => {
     }
 
     // Strip generated metadata (Checksum, Diff-Path, TimeUpdated, Version)
-    // from compiled filter files so they don't pollute diff comparisons.
+    // from compiled filter files, and version/timeUpdated fields from
+    // filters.json/filters.js, so they don't pollute diff comparisons.
     if (stripGeneratedMeta) {
         const newCount = await stripGeneratedMetaFromDir(platformsPath);
         console.log(`Stripped generated meta from ${newCount} new file(s).`);

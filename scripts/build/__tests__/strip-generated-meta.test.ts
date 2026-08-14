@@ -117,4 +117,58 @@ describe('stripGeneratedMetaFromDir', () => {
         expect(oldContent.includes('! Version:')).toBe(false);
         expect(oldContent.includes('||example.com^')).toBe(true);
     });
+
+    it('strips version/timeUpdated fields from filters.json and filters.js', async () => {
+        const platformDir = path.join(testDir, 'json_root', 'platforms', 'cli');
+        await fs.mkdir(platformDir, { recursive: true });
+
+        const metadata = {
+            groups: [],
+            tags: [],
+            filters: [
+                {
+                    filterId: 1,
+                    name: 'Test filter',
+                    timeAdded: '2014-06-30T07:56:55+0000',
+                    version: '2.1.8.0',
+                    timeUpdated: '2026-08-10T18:21:50+0000',
+                    deprecated: false,
+                },
+            ],
+        };
+
+        const jsonFile = path.join(platformDir, 'filters.json');
+        const jsFile = path.join(platformDir, 'filters.js');
+        const content = JSON.stringify(metadata, null, '\t');
+
+        await fs.writeFile(jsonFile, content, 'utf8');
+        await fs.writeFile(jsFile, content, 'utf8');
+
+        const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root', 'platforms'));
+
+        expect(modified).toBe(2);
+
+        const jsonContent = JSON.parse(await fs.readFile(jsonFile, 'utf8'));
+        const jsContent = JSON.parse(await fs.readFile(jsFile, 'utf8'));
+
+        [jsonContent, jsContent].forEach((data) => {
+            expect(data.filters[0]).not.toHaveProperty('version');
+            expect(data.filters[0]).not.toHaveProperty('timeUpdated');
+            expect(data.filters[0].filterId).toBe(1);
+            expect(data.filters[0].name).toBe('Test filter');
+            expect(data.filters[0].timeAdded).toBe('2014-06-30T07:56:55+0000');
+        });
+    });
+
+    it('returns 0 for filters.json/filters.js with no version/timeUpdated fields', async () => {
+        const platformDir = path.join(testDir, 'json_root_clean', 'platforms', 'cli');
+        await fs.mkdir(platformDir, { recursive: true });
+
+        const metadata = { groups: [], tags: [], filters: [{ filterId: 1, name: 'Test filter' }] };
+        const jsonFile = path.join(platformDir, 'filters.json');
+        await fs.writeFile(jsonFile, JSON.stringify(metadata, null, '\t'), 'utf8');
+
+        const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root_clean', 'platforms'));
+        expect(modified).toBe(0);
+    });
 });
