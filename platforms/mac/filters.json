@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.83.59",
-			"timeUpdated": "2026-08-14T05:34:46+0000",
+			"version": "2.4.83.60",
+			"timeUpdated": "2026-08-14T06:34:27+0000",
 			"languages": []
 		},
 		{
@@ -158,8 +158,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.35.29",
-			"timeUpdated": "2026-08-13T06:35:47+0000",
+			"version": "2.0.35.30",
+			"timeUpdated": "2026-08-14T06:34:53+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -217,8 +217,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.66.98",
-			"timeUpdated": "2026-08-14T02:57:49+0000",
+			"version": "2.0.66.99",
+			"timeUpdated": "2026-08-14T06:34:57+0000",
 			"languages": [
 				"tr"
 			]
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.75.72",
-			"timeUpdated": "2026-08-14T05:35:32+0000",
+			"version": "2.2.75.73",
+			"timeUpdated": "2026-08-14T06:35:06+0000",
 			"languages": []
 		},
 		{
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.31.27",
-			"timeUpdated": "2026-08-14T04:38:02+0000",
+			"version": "2.1.31.28",
+			"timeUpdated": "2026-08-14T06:35:09+0000",
 			"languages": []
 		},
 		{
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.92.7",
-			"timeUpdated": "2026-08-14T02:58:04+0000",
+			"version": "2.0.92.8",
+			"timeUpdated": "2026-08-14T06:35:16+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.80.67",
-			"timeUpdated": "2026-08-14T05:35:45+0000",
+			"version": "2.0.80.68",
+			"timeUpdated": "2026-08-14T06:35:18+0000",
 			"languages": []
 		},
 		{
