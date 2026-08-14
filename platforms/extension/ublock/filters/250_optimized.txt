@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 7bMiJOn7Tw9OzLh1m6eJgg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1786654120-14400.patch
+! Checksum: ah92drAq3zNNONERZX12bA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1786684212-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.40
@@ -339,6 +339,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^http://imgblaze.net/[a-z0-9]{6}$/$3p,subdocument
 ||146.19.169.98^$document
 ||146.19.169.99^$document
+||pcmag.cm^$all
 ||69.162.80.56^$all
 ||162.241.124.200^$document
 ||157.90.71.190^$document
@@ -382,7 +383,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||194.63.140.103^$all
 ||194.63.143.61^$all
 ||194.63.143.96^$all
-||see-what-is-trending.com^$all
 ||37.48.80.112^$all
 ||109.206.168.16^$all
 ||109.206.168.17^$all
@@ -541,6 +541,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||rovno.xyz^$all
 ||s24.cloud^$all
 ||sarai-tid.com^$all
+||shopli.city^$all
 ://15.204.140.239^$all
 ://15.204.160.216^$all
 ||howtofix.guide^$document
@@ -1161,7 +1162,6 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ##div[class*=social_sidebar]
 ##div[class*=social_slide]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=socials-share]
-##div[class^=icon-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class^=share-options]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class^=shareLinks]
 ##div[class^=social-like]
@@ -1742,7 +1742,6 @@ e621.net,e926.net###comments
 ###hot-network-questions
 /api/amediacomments/*
 /commentsbutton.js$domain=nettavisen.no
-www.pixiv.net##div[data-ga4-label*=comment i]
 $removeparam=yclid
 $removeparam=gclid
 $removeparam=fbclid
@@ -1905,6 +1904,7 @@ $removeparam=ggntk
 $removeparam=ggplm
 $removeparam=ggtgt
 $removeparam=ftag
+$document,removeparam=/^__xts__.*$/
 $removeparam=akmClientCountry
 $removeparam=hss_channel
 $removeparam=ns_mchannel
@@ -1941,8 +1941,6 @@ $removeparam=adgroup_id
 $removeparam=rlsatarget
 $document,removeparam=targetid,domain=~myanonamouse.net
 $document,removeparam=elqCampaignId,domain=~comcast.com|~comcastforbusiness.com
-$removeparam=dc_campid
-$removeparam=dc_adgroupid
 $removeparam=adgroupid
 $removeparam=AFFNAME
 $removeparam=ACRID
@@ -2001,6 +1999,8 @@ $removeparam=o_lid
 $removeparam=o_sch
 $removeparam=o_xid
 $removeparam=wtExtndSource
+$removeparam=CAID
+$removeparam=FpAffiliate
 $removeparam=rfsn
 $removeparam=afsrc
 $document,removeparam=lcid,domain=~rekono.si
@@ -2793,6 +2793,8 @@ $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.c
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||apple.com^$removeparam=fnode
+||epidemicsound.com^$removeparam=_us
+||epidemicsound.com^$removeparam=_usx
 ||microsoft.com^$removeparam=headerid
 ||microsoft.com^$removeparam=destrt
 $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moosejaw.com|multitronic.fi|scandinavianphoto.fi|swamp.fi|ocado.com|ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
@@ -3294,7 +3296,12 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 ||threads.com^$removeparam=slof
 ||microsoft.com/*/download/details$removeparam=lc
 ref=aftermath.site$document,removeparam=ref
+||intel.com^$document,removeparam=campid
 ||intel.com^$document,removeparam=erpm_id
+||intel.com^$document,removeparam=mkt_cid
+||intel.com^$document,removeparam=programid
+||game.intel.com^$document,removeparam=em_id
+||game.intel.com^$document,removeparam=source_id
 ||dell.com^$removeparam=lwp
 ||microsoft.com^$removeparam=srcref
 ||microsoft^$removeparam=fromcode
@@ -3335,7 +3342,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||msn.com^$removeparam=bv
 ||store.epicgames.com^$document,removeparam=epic_creator_id
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
-$removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com##+js(set, GSvars.addressTracking, false)
