@@ -1,9 +1,9 @@
-! Checksum: dqG8moyeDoz5eLagxNdfcw
-! Diff-Path: ../patches/247/247-s-1786467089-14400.patch
+! Checksum: i4JkryQZtHHEbg3QtSJ2XA
+! Diff-Path: ../patches/247/247-s-1786783496-14400.patch
 ! Title: Polish Anti-Annoying Special Supplement
 ! Description: Filters that block and hide RSS elements and remnants of hidden newsletters combined with social elements on Polish websites.
-! Version: 2.0.4.83
-! TimeUpdated: 2026-08-11T16:47:51+00:00
+! Version: 2.0.4.84
+! TimeUpdated: 2026-08-15T08:42:31+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 Polski Antyirytujący Dodatek Specjalny
@@ -11,8 +11,8 @@
 ! Codename: PASS
 ! Description: Filtry blokujące i ukrywające elementy RSS oraz resztki po ukrytych newsletterach złączonych z elementami społecznościowymi na polskojęzycznych stronach.
 ! Używanie listy „Polski Antyirytujący Dodatek Specjalny" jest jednoznaczne ze świadomością, co do jej zawartości (co blokuje itp.) a twórcy nie ponoszą odpowiedzialności za niewiedzę użytkownika.
-! Last modified: Tue, 11 Aug 2026, 18:46 UTC+02:00
-! OriginalVersion: 2026.8.4
+! Last modified: Sat, 15 Aug 2026, 09:57 UTC+02:00
+! OriginalVersion: 2026.8.5
 ! Expires: 7 days
 ! Support:
 !   Github => https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement/issues
@@ -20,7 +20,7 @@
 ! Original creator: RikoDev
 ! Current maintainer: Filters Heroes
 ! Homepage: https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement
-! Aktualizacja: wto, 11 sie 2026, 18:46 UTC+02:00
+! Aktualizacja: sob, 15 sie 2026, 09:57 UTC+02:00
 !
 !
 ! Ogólne filtry ukrywające
@@ -37,6 +37,7 @@
 ~pl##li > a > .icon-rss:lang(pl)
 com,eu,info,pl##.prefer-google-source
 eu,info,pl##.google-news__button
+eu,pl##.atomsNavigationFooterSocialmedia__link:is([href*="feed"], [href*=".xml"])
 eu,pl##.componentsNavigationFooterNewExpanded__socialMediaLink:is([href*="google.com/publications/"], [href*="google.com/preferences/source"], [href*="profile.google.com/cp/"], [href*="msn.com/"])
 eu,pl##div[data-ea="google_discover"]
 info,pl##.stickySocialIcon a[href*=".xml"]
@@ -89,7 +90,7 @@ agnieszkawielobob.pl,glitch.com.pl,jsdn.pl,kuchniatruckera.pl,mvno-gsm.pl,prabut
 agora.pl,chceauto.pl,cmrev.com,copernicuscenter.edu.pl,copernicusfestival.com,eurogamer.pl,filozofiawnauce.pl,lookcam.com,lublin24.pl,mmorpg.org.pl,naukaireligia.pl##a[href^="/rss"]
 aiocollective.pl,boleslawiec.tv,bydgoszcz.com,cooltura24.co.uk,debica24.eu,djoles.com,dziennik.com,echotygodnik.info,gamedot.pl,gorlice.tv,halogorlice.info,koscierzyna24.info,kwidzyn1.pl,lokalna.news,lubelska.tv,namyslow.eu,narew.info,niedziela.pl,olesnica24.com,pgg.pl,pkobp.pl,portalpomorza.pl,poznan.pl,projektpraca.eu,sejny.info,srem.pl,tarnowska.tv,tczewska.pl,truso.tv,tvdami.eu,tvmaster.eu,wejherowo24.info##.icon-rss
 alejasztuki.com,forum-brukarskie.pl,gazetawiecborska.eu,ozonowanie-powietrza.pl,parafia.mechnica.pl,przeclaw24.pl,ringpolska.pl,smwarmia.pl,stosunki-miedzynarodowe.pl,xn--bolesawiec-e0b.pl##.art-rss-tag-icon
-aleksandrow-lodzki.pl,bezpieczenstwoxd.pl,deccoria.pl,hub.pl,i-systems.pl,interia.pl,konkretny.pl,kosmogadka.pl,moje.cert.pl,oswiecim.pl,polsat.pl,pomponik.pl,terazgotuje.pl,top.pl##a[href*="/feed"]
+aleksandrow-lodzki.pl,bezpieczenstwoxd.pl,chip.pl,deccoria.pl,hub.pl,i-systems.pl,interia.pl,konkretny.pl,kosmogadka.pl,moje.cert.pl,oswiecim.pl,polsat.pl,pomponik.pl,takietam.pl,terazgotuje.pl,top.pl##a[href*="/feed"]
 alertmedyczny.pl##.vc_column[class*="9"] > .wpb_wrapper > .tdm_block:has(+ .tdb-author-box):has(> div[class*="tdm"] a[href*="google.com/publications/"])
 alicjawkrainiegarow.blogspot.com###Subscribe1
 aliholik.pl###text-12
@@ -173,7 +174,6 @@ cert.pl,strajk.eu##.rss-icon
 cgm.pl##.menu-item > a[href*="/feed/rss/"]
 ch24.pl,zachod.pl##.social > li:nth-of-type(4)
 chemiabudowlana.info##.widget_chemia_right
-chip.pl##div[class^="fc-SocialsList"] > a[href*="/feed"]
 chwp.pl##a[href*="chwp.pl/feed/"]
 ciemnastrona.com.pl##a[href="/feed.xml"]
 citybuzz.pl,kapitanhack.pl,prnews.pl##a[href="/feed"]
@@ -194,10 +194,10 @@ czestochowskie24.pl##.item-feed, #social_icons_widget-4 > .widget-title
 dami24.pl,drohiczyn.info,hydro.com.pl,polsatsport.pl,twojapogoda.pl##.ico-rss
 dbamozeby.com,keko.pl###menu_blog_rss
 deccoria.pl###google-news-button
-deccoria.pl,hub.pl,interia.pl,polsat.pl,pomponik.pl,smaker.pl,terazgotuje.pl,top.pl##.google-news-container
-deccoria.pl,hub.pl,interia.pl,polsat.pl,pomponik.pl,smaker.pl,terazgotuje.pl,top.pl##.google-news-social-btn
-deccoria.pl,hub.pl,interia.pl,polsat.pl,pomponik.pl,smaker.pl,terazgotuje.pl,top.pl##.preferred-source
-deccoria.pl,hub.pl,interia.pl,~poczta.interia.pl,polsat.pl,pomponik.pl,smaker.pl,terazgotuje.pl,top.pl#?##react_component_article div[width="9"] div p:has(b:contains(Bądź na bieżąco) ~ a[href*="google.com/publications/"])
+deccoria.pl,hub.pl,interia.pl,polsat.pl,pomponik.pl,smaker.pl,takietam.pl,terazgotuje.pl,top.pl##.google-news-container
+deccoria.pl,hub.pl,interia.pl,polsat.pl,pomponik.pl,smaker.pl,takietam.pl,terazgotuje.pl,top.pl##.google-news-social-btn
+deccoria.pl,hub.pl,interia.pl,polsat.pl,pomponik.pl,smaker.pl,takietam.pl,terazgotuje.pl,top.pl##.preferred-source
+deccoria.pl,hub.pl,interia.pl,~poczta.interia.pl,polsat.pl,pomponik.pl,smaker.pl,takietam.pl,terazgotuje.pl,top.pl#?##react_component_article div[width="9"] div p:has(b:contains(Bądź na bieżąco) ~ a[href*="google.com/publications/"])
 demagog.org.pl##.dg-social_icons a[href*="/feed"]
 depesza.fm,zaradnakobieta.pl##div[class^="style_container_"]:has(> div[class^="style_content_"] > div[class^="style_imageContainer_"] [alt="Google news icon" i])
 developers.google.com##.devsite-footer-promos-list > li:has([href*="/feed"])
