@@ -1,9 +1,9 @@
-! Checksum: wDB8pr32es1yKFpleyWTWg
-! Diff-Path: ../patches/260/260-s-1786812210-14400.patch
+! Checksum: KCq8Cm/erg1co8VVBj0j+w
+! Diff-Path: ../patches/260/260-s-1786826531-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.22
-! TimeUpdated: 2026-08-15T16:40:29+00:00
+! Version: 2.0.1.23
+! TimeUpdated: 2026-08-15T20:39:24+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -63,36 +63,28 @@ help.adblockplus.org##ai-actions
 ! Floating "Ask a question" field. Appears after scrolling down
 ||www.adobe.com/libs/c2/blocks/brand-concierge/chat-ui-config.js$script,domain=www.adobe.com
 ! -- https://www.adobe.com/home (logged in)
+! * Accessing this URL directly redirects to Firefly. Can be accessed through /apps URL, then clicking home
 ! Promo bar for Firefly
 www.adobe.com#?#.promobar:contains(Adobe Firefly)
-! Image generation prompt
-www.adobe.com###promptbar-form
-! Loading placeholder for image generation prompt
-www.adobe.com##.-F_-FA92
 ! "Generative AI" action category
 www.adobe.com##[data-key="category-genai"]
 ! -- https://www.adobe.com/apps/all/all-platforms
-! "Advanced AI Tools" promo for Acrobat
-www.adobe.com##.undefined.section-card:has(img[src="https://odin.adobe.com/content/dam/ccsurfaces/AppsSkeleton/en_US/assets/custom-cards/Acrobat_Pro_Ai.png"])
+! Promo card for Firefly
+www.adobe.com##.section-card.double:has([aria-label="Experiment, imagine, and create images with Firefly"])
 ! -- https://www.adobe.com/create/featured
 ! "Generative AI" category button
 www.adobe.com##.tab-default-button-group[aria-label="Generative AI"]
-! "Experiment with new generative AI capabilities" section
-www.adobe.com##[route-id="featured-genai"]
 ! -- https://new.express.adobe.com/?locale=en-US
 ! AI Assistant toggle in header
 new.express.adobe.com##x-assistant-toggle
-! "Generate with AI" quickstart card
+! "Generate with AI" quickstart card (no longer used?)
 new.express.adobe.com##x-get-started-dialog-quickstart-card[type="create-with-ai"]
-! "Ways to Create" - "Generative AI"
+! "Ways to Create" section - "Generative AI"
 ! * There's a small empty space to the side. Getting rid of the parent element fixes it, but it's split by a #shadow-root
 new.express.adobe.com##.nav-tile[aria-label="Generative AI"]
 ! -- https://photoshop.adobe.com/
 ! "Generate an image" button under "Make a quick edit"
-photoshop.adobe.com##sp-action-button.quick-edit-button[label="Generate an image"]
-! "Create" button on left sidebar > "Tap into the power of generative AI" section
-photoshop.adobe.com##[data-testid="quick-actions-title-gen-ai"]
-photoshop.adobe.com##.genAICards
+photoshop.adobe.com##.promptbar-quick-edit-button[label="Generate an image"]
 ! =============
 ! == Alibaba ==
 ! =============
@@ -174,16 +166,6 @@ www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
 www.americanbanker.com##.miso-hybrid-search-combo__grid-answer
 ||api-edge.askmiso.com/v1/ask/questions/$xmlhttprequest,domain=www.americanbanker.com
 ! Remove sparkle from search icon
-! =============
-! == Android ==
-! =============
-! -- https://www.android.com/
-! AI promos in carousel
-www.android.com#?##create-and-share-jaw-dropping-images-straight-from-your-phone-4:upward(1)
-www.android.com#?##remix-any-photo-right-in-your-messages:upward(1)
-! AI Promo sections
-www.android.com###create-your-own-unique-android-bot
-www.android.com###ai-on-android
 ! ========================
 ! == Archive of Our Own ==
 ! ========================
@@ -1863,13 +1845,6 @@ www.homedepot.com###magic-apron-review-summary
 ! AI Assist button in initial options list
 virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Chat with HP's SupportGPT for AI Answers"]
 virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Get an AI Answer"]
-! ===================
-! == Humble Bundle ==
-! ===================
-! -- https://www.humblebundle.com/bundles
-! Bundles involving AI
-! * Exclude the "The Cybersecurity & AI Defense" bundle
-www.humblebundle.com##.bundle:is([href*="/ai-"], [href*="-ai-"], [href*="claude-code"], [href*="genai-"]):not([href*="cybersecurity"])
 ! =========
 ! == IBM ==
 ! =========
@@ -1906,6 +1881,8 @@ www.imdb.com##[data-testid="ai-review-summary"]
 ! -- https://imgflip.com/
 ! "AI Meme Generator" button
 imgflip.com##.home-create-btn[href="/ai-meme"]
+! "Imgflip AI" banners seen on homepage and in meme generator
+imgflip.com##.ai-banner
 ! -- https://imgflip.com/memegenerator
 ! * Credit to gittaca for pointing some of these out (https://codeberg.org/gittaca/gitludd-blocklist/src/commit/0ba96a400350599e325a6c6c4399f1c51b1b2e76/txt)
 ! "AI" template
@@ -4088,9 +4065,9 @@ www.drtuber.com##.header_premium_bar[href^="https://go.xliiirdr.com/ls"]
 ! == E-Hentai (NSFW) ==
 ! =====================
 ! Minimal/Minimal+/Compact/Extended view by title
-e-hentai.org,exhentai.org##.itg > tbody > tr:has(img:is([title*="ai generated" i], [title*="ai-generated" i], [title*="aigenerated" i]))
+e-hentai.org,exhentai.org##.itg > tbody > tr:has(img:is([title*="[ai]" i], [title*="ai generated" i], [title*="ai-generated" i], [title*="aigenerated" i]))
 ! Thumbnail view by title
-e-hentai.org,exhentai.org##.itg > div.gl1t:has(img:is([title*="ai generated" i], [title*="ai-generated" i], [title*="aigenerated" i]))
+e-hentai.org,exhentai.org##.itg > div.gl1t:has(img:is([title*="[ai]" i], [title*="ai generated" i], [title*="ai-generated" i], [title*="aigenerated" i]))
 ! Compact/Extended view by tag
 e-hentai.org,exhentai.org##.itg > tbody > tr:has(:is(.gt, gtl)[title="other:ai generated"])
 ! ====================
