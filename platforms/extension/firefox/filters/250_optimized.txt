@@ -1,5 +1,5 @@
-! Checksum: l4mUVBNoUG0sxv4NsoR/gQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1786855626-14400.patch
+! Checksum: Cg22GlBaHLuWvML9Sp6V0A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1786942107-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.40
@@ -53,7 +53,6 @@ processlibrary.com##.bottom > .row:last-of-type
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 coolrom.com.au,coolrom.com##.download_link
-addons.mozilla.org#?#li.SearchResult:contains(AdsBlocker)
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
@@ -1256,8 +1255,10 @@ drvhub.net##.driver-item__install
 ||adtube.media^$all
 ||adverttise.com^$all
 ||adzestocp.com^$all
+||epikads.com^$all
 ||filter.*.com/filter?q=^$all
 ||perfsimpl.com^$all
+||programmaticnexus.com^$all
 ||secprf2.com^$all
 ||tamping.net^$all
 ||trckprf.com^$all
@@ -1534,9 +1535,9 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##div[class*=_share_button]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=addthis]
 ##div[class*=article-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-article-share])
-##div[class*=box--share]
 ##div[class*=footer__share]
 ##div[class*=FooterShare i]
+##div[class*=iconShare]
 ##div[class*=post-sharing]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-post-sharing])
 ##div[class*=share-article]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-share-article])
 ##div[class*=social-panel]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-social-panel])
@@ -1953,7 +1954,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /snowstorm-min.js
 /snowstorm.js
 /christmas-snow.js
-@@||epochtimes.com.tw^
 @@||soundofhope.org^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||consentmanager.net^$script,third-party,badfilter
@@ -2172,6 +2172,7 @@ $document,removeparam=tt_content
 $document,removeparam=tt_medium
 $document,removeparam=scid,domain=~pnc.com
 $document,removeparam=awc
+$document,removeparam=exta
 $document,removeparam=ranMID
 $document,removeparam=ranEAID
 $document,removeparam=ranSiteID
@@ -2275,7 +2276,6 @@ $removeparam=ns_fee
 $removeparam=zanpid
 $removeparam=wgu
 $removeparam=wgexpiry
-$removeparam=fsrc
 $removeparam=Referrer
 $removeparam=algo_pvid
 $removeparam=spLa
@@ -2443,6 +2443,7 @@ $removeparam=_kx
 $document,removeparam=/^affsrc=.*$/i
 $document,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
+$removeparam=atid
 $document,removeparam=/^clickref\d?=.*$/
 $removeparam=cuid,domain=~dynamicyield.com
 $removeparam=data1,domain=~web3.cmvm.pt
@@ -2514,7 +2515,6 @@ $document,removeparam=/^sub_id\d=.*$/
 $removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
-$removeparam=i_cid
 $removeparam=waad
 $removeparam=_gac
 $removeparam=af_medium
@@ -2556,6 +2556,9 @@ $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
 ref=admitad^$document,removeparam=ref
+$removeparam=cx_testId
+$removeparam=cx_testVariant
+$removeparam=cx_artPos
 $removeparam=belboon
 $removeparam=channable
 $removeparam=int_source
@@ -2600,6 +2603,7 @@ $removeparam=relatedposts_origin
 $removeparam=relatedposts_position
 ref=itsfoss.com$document,removeparam=ref
 ref=news.itsfoss.com$document,removeparam=ref
+$removeparam=b_campaign
 $removeparam=gad_source
 $removeparam=tw_medium
 $removeparam=tw_profile_id
@@ -2672,7 +2676,6 @@ $removeparam=tw_adid
 $removeparam=retailerSlug
 $removeparam=uls_trackid
 $removeparam=gad_campaignid
-$removeparam=/^source=googleps$/
 $removeparam=duckai
 $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adressa.no|polarismedia.no|userbenchmark.com
 $removeparam=x-clickref
@@ -3011,8 +3014,12 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=frs
 ||baidu.com/link?$removeparam=eqid
 ||baidu.com/link?$removeparam=wd
+||map.baidu.com^$removeparam=compat
 ||map.baidu.com^$removeparam=da_src
 ||map.baidu.com^$removeparam=device_ratio
+||map.baidu.com^$removeparam=pcevaname
+||map.baidu.com^$removeparam=ugc_type
+||map.baidu.com^$removeparam=ugc_ver
 ||baidu.com^$removeparam=hl_tag
 ||zhidao.baidu.com^$removeparam=qbl
 ||baike.baidu.com^$removeparam=lemmaFrom
@@ -3270,6 +3277,7 @@ $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||apple.com^$removeparam=mttnsubplmnt
 $removeparam=wfr,domain=weidian.com|baidu.com
 $removeparam=organic_search_click
+$removeparam=pop,domain=etsy.com
 $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com

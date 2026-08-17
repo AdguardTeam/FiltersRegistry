@@ -1,15 +1,15 @@
 ![Adblock Plus 2.0]
-! Checksum: qO6f84C16gjZmhwpE4cAdA
-! Diff-Path: ../patches/243/243-s-1786783518-14400.patch
+! Checksum: WgSRvT1aWbGyMRNGe3ObsA
+! Diff-Path: ../patches/243/243-s-1786942117-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.20
-! TimeUpdated: 2026-08-15T08:42:28+00:00
+! Version: 2.0.25.21
+! TimeUpdated: 2026-08-17T04:45:38+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-08-15 09:22:50 CEST
+! Last modified: 2026-08-17 05:38:17 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -459,9 +459,10 @@ diversia.social##a[href*="?aktion=bannerclick"]
 di.se##.di_panorama-wrapper, .site-header__panorama, .di_panorama__isAdLabel, .discount-box, .campaign-ad-box, .di_start__teaser-placeholder, .di_teaser-flak-planbokskoll, .di_teaser-flak-container--native, .native-box, .bandit-box__teaser--native, a[href*="/brandstudio"], .service-box, .brand-studio-box, .native-article, .listing-box-native
 di.se##.market-start-top + div:not(.market-container__wrapper)
 djungeltrumman.se##div[align="center"] > a[href*="casino"]:upward(2)
-djungeltrumman.se###sponsored-posts, #right-banners, .banner-wrapper, .top-banner-label, .banner-label
+djungeltrumman.se###sponsored-posts, #right-banners, .banner-wrapper, .top-banner-label, .banner-label, article[data-section="sponsrat"]
 djungeltrumman.se##.item:has(a[href*="casino"])
 djungeltrumman.se##.post:has(.label-sponsored)
+djungeltrumman.se##.scroll-item:has(a[href*="/sponsrat/"])
 dn.se##body:style(position:unset!important;overflow-y:scroll!important;)
 dn.se##.article--native, .teaser-card--native, .ds-teaser--native, #dnse-popup, .bad, .campaign-holder
 dn.se,di.se##.teaser-native
@@ -1335,7 +1336,9 @@ schoolido.se##.so-cookie__area
 sdhl.se,ssl.se,storvretaibk.se##.rmss_module-block-linked_image, a[href*="svenskaspel.se"]
 sefnextgen.se##sponsor-block
 selectAdvertiserElement$domain=bebisvarlden.se
-senses.se##a[href*="spelsajt"], a[href*="betting"]
+senses.se##aside.widget_text:contains(Annonser:)
+senses.se##a[href*="spelsajt"], a[href*="betting"], .senses-feed-ad
+senses.se##li.grid-style:contains(/är en annons/i)
 senses.se##.footer-widget-wrapper aside:has(a[href*="casino"])
 sexpacket.se##+js(aeld, /contextmenu|cut|copy|paste/)
 sexpacket.se##.info_cookies
@@ -2447,7 +2450,7 @@ zeromagazine.nu##div[id^="ads"]
 /nexa.min.js$domain=hockeysverige.se
 /nivo-slider$script,domain=terrariedjur.se
 /nochain-sw.js$domain=skargarden.se
-/noview.$script,domain=trafikradion.se|goteborg.media
+/noview.$script,domain=trafikradion.se
 /nyheter/native.json$domain=epochtimes.se
 /nyhetsspalt_banner_js
 /offer?prod$popup
