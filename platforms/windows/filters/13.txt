@@ -1,9 +1,9 @@
-! Checksum: HwaDGSPN49hqzU3yOH4KTA
-! Diff-Path: ../patches/13/13-s-1786954885-3600.patch
+! Checksum: +YmtYvX/w1DNs6Bz5noWLw
+! Diff-Path: ../patches/13/13-s-1786958513-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.10
-! TimeUpdated: 2026-08-17T08:17:58+00:00
+! Version: 2.0.67.11
+! TimeUpdated: 2026-08-17T09:18:32+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6018,6 +6018,20 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+! Frequently changed domains: gizlidepo*.com
+! Source: gizlidepo.com
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+.gif|$domain=/gizlidepo\d*\.com$/
+! aglint-enable no-invalid-modifiers
+[$domain=/gizlidepo\d*\.com$/]##a[rel="nofollow noopener noreferrer sponsored"]
+[$domain=/gizlidepo\d*\.com$/]###tg-cta-container
+[$domain=/gizlidepo\d*\.com$/]##.banner-grid-wrap
+[$domain=/gizlidepo\d*\.com$/]###hcExit
+[$domain=/gizlidepo\d*\.com$/]##.pd-adbn
+[$domain=/gizlidepo\d*\.com$/]#$##offerBox { display: none !important; }
+[$domain=/gizlidepo\d*\.com$/]#$##mainVideo { display: block !important; }
+!
 ! Frequently changed domains: lionlinehd*.com
 ! Source: lionlinehd165.com
 [$domain=/lionlinehd\d+\.com$/]##header > ul
@@ -6200,22 +6214,6 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turkporoclub\d+\.sbs$/]#%#//scriptlet("abort-current-inline-script", "document.createElement", "'script'")
 [$domain=/turkporoclub\d+\.sbs$/]##h3.section-title
 !
-! Frequently changed domains: hdifsaizle*.com
-! Source: hdifsaizle4.com
-! aglint-disable no-invalid-modifiers
-!+ NOT_VALIDATE
-.gif|$image,domain=/hdifsaizle\d+\.com$/
-!+ NOT_VALIDATE
-||pub-*.r2.dev/yeni*.mp4$domain=/hdifsaizle\d+\.com$/
-! aglint-enable no-invalid-modifiers
-[$domain=/hdifsaizle\d+\.com$/]##.yenigif-wrap
-[$domain=/hdifsaizle\d+\.com$/]##.banner-grid-wrap
-[$domain=/hdifsaizle\d+\.com$/]##.yenimarka-wrap
-[$domain=/hdifsaizle\d+\.com$/]##.hd-row > article.hd-card ~ div.col-12
-[$domain=/hdifsaizle\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
-[$domain=/hdifsaizle\d+\.com$/]#$##prerollOverlay { display: none !important; }
-[$domain=/hdifsaizle\d+\.com$/]#$##mainVideo { display: block !important; }
-!
 ! Frequently changed domains: turkifsa*.site; turkifsalar*.site; turkifsalar*.art
 ! Source: turkifsa40.site; turkifsalar2.site; turkifsalar.art
 ||labvex.b-cdn.net/ads/
@@ -6303,20 +6301,6 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turktube\d+\.site$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.online$/]##a[href^="https://tinyurl.com/"]
 [$domain=/turktube\d+\.ink$/]##a[href^="https://tinyurl.com/"]
-!
-! Frequently changed domains: hdturkifsa*.lol; hdturkifsa*.icu; arsivim*.xyz
-! Source: hdturkifsa46.icu
-! aglint-disable no-invalid-modifiers
-!+ NOT_VALIDATE
-.gif|$domain=/hdturkifsa\d+\.com$/
-! aglint-enable no-invalid-modifiers
-[$domain=/hdturkifsa\d+\.com$/]##a[rel="nofollow noopener noreferrer sponsored"]
-[$domain=/hdturkifsa\d+\.com$/]###tg-cta-container
-[$domain=/hdturkifsa\d+\.com$/]##.banner-grid-wrap
-[$domain=/hdturkifsa\d+\.com$/]##article[data-ad-pos]
-[$domain=/hdturkifsa\d+\.com$/]##div[style]:has(> a[href^="https://bit.ly/"])
-[$domain=/hdturkifsa\d+\.com$/]#$##prerollOverlay { display: none !important; }
-[$domain=/hdturkifsa\d+\.com$/]#$##mainVideo { display: block !important; }
 !
 ! Frequently changed domains: softtv*.com
 ! Source: softtv2.com
