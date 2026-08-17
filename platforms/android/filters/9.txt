@@ -1,9 +1,9 @@
-! Checksum: s6pvR9sheeUt5MtvGxUsKA
-! Diff-Path: ../patches/9/9-s-1786689490-3600.patch
+! Checksum: H4MdPpkEVZP2gS9WoXC8Mg
+! Diff-Path: ../patches/9/9-s-1786954842-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.30
-! TimeUpdated: 2026-08-14T06:34:53+00:00
+! Version: 2.0.35.31
+! TimeUpdated: 2026-08-17T08:17:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -202,6 +202,10 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238502
+otakufilmes.org#$#body { overflow: auto !important; }
+otakufilmes.org#$##adblock-overlay { display: none !important; }
+otakufilmes.org#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'adblock')
 ! https://www.reddit.com/r/uBlockOrigin/comments/1vj17s5/adblock_detection_on_httpsdarkmahouio/
 darkmahou.io#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "adblock")
 darkmahou.io#@#.ad-slot
@@ -2158,6 +2162,9 @@ proandroid.com,lusometeo.com,kltutors.com,eloutput.com,mundobytes.com,techondica
 !
 ! NOTE: Specific rules
 !
+viatrolebus.com.br##div[data-elementor-post-type="page"] > div[data-element_type="container"]:has(> div.e-con-inner div.elementor-widget-container > div.ad-wrap)
+viatrolebus.com.br##div[data-elementor-post-type="page"] > div[data-element_type="container"]:has(> div.e-con-inner > a[href="https://trilhos.motiva.com.br/"])
+otakufilmes.org##.banners-inferiores
 jornaldenegocios.pt##.detalheAds
 anime-jl.top#%#//scriptlet('abort-on-stack-trace', 'open', 'openEnlace')
 sensacine.com.mx,sensacine.com,adorocinema.com##.main-banner

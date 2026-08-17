@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kBxk8MxbQCBfL+/orA1uNg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1786951689-3600.patch
+! Checksum: /qJ9SmIRiTvGWBTozrcGcA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1786954871-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.84.33
-! TimeUpdated: 2026-08-17T07:24:30+00:00
+! Version: 2.4.84.34
+! TimeUpdated: 2026-08-17T08:17:26+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||ashamed-employer.com^
 ||pubds.bid^
 ||ezojs.com^
 ||luugy.com^
@@ -11975,9 +11976,11 @@ general24news.in##+js(addEventListener-defuser, load, AdBDetected)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208142
 discover-sharm.com##.js-antiadblocker
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207996
+! https://github.com/AdguardTeam/AdguardFilters/issues/238308
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208014
 ||raw.githubusercontent.com/*.txt?$domain=nontonx.com
 nontonx.com###rules-nontonx
+!+ NOT_OPTIMIZED
 nontonx.com##body > div[style]:has(> div[style] > button[onclick="location.reload()"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207998
 @@||zeperfs.com^$generichide
@@ -37746,6 +37749,10 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+sxyprn.com,sxyprn.net##.extlinkn
+sxyprn.com,sxyprn.net##a[aria-label="AI TAB"]
+rule34video.co##.posts > div[style^="text-align:center;"]:has(> script[src][referrerpolicy="no-referrer-when-downgrade"])
+rule34video.co##+js(no-window-open-if)
 dawn.gg##.items-center[aria-label]:has(> .font-mc + div[id^="ad-"], div[style^="display:"] > div[id^="ad-"])
 stickyhentai.com##div[class]:has(> ins[data-zoneid])
 ||pexels.com/*/api/v3/getty-media/
