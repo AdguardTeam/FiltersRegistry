@@ -1,9 +1,9 @@
-! Checksum: 87O4g990+IIWp36qewM6qA
-! Diff-Path: ../patches/237_optimized/237_optimized-s-1787071593-14400.patch
+! Checksum: 0bccGhhDMM4c9W8Wz2CmEA
+! Diff-Path: ../patches/237_optimized/237_optimized-s-1787085803-14400.patch
 ! Title: Polish Annoyances Filters (Optimized)
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.39.53
-! TimeUpdated: 2026-08-18T16:43:30+00:00
+! Version: 1.0.39.54
+! TimeUpdated: 2026-08-18T20:40:12+00:00
 ! Expires: 10 days (update frequency)
 ||app*.salesmanago.pl/cf/*/zapis_na_newsletter_$subdocument
 ||app.getresponse.com/site2/newsletter-zapisy/$subdocument
@@ -29,6 +29,7 @@
 ||salonydenon.pl/modules/tvcmssingleblock/views/img/newsletter
 ||telewizja-cyfrowa.com/wp-content/uploads/20*/newsletter.png
 ||tomgast.pl/media/wysiwyg/baner_koszty_wysylik_newsletter2_prawy.jpg
+||toysplanet.pl/gfx/pol/newsleater.png
 ||upolujebooka.pl/_visual/_b/b_newsletter.jpg
 ||wodociagi.katowice.pl/*/baner_newsletter.png
 ||xiegarnia.pl/wp-content/themes/xiegarnia.pl-theme/assets/images/newsletter-label.png
@@ -1623,6 +1624,7 @@ topagrar.pl##.sidebar__box--newletter
 torimpex.pl##footer .row:first-child > div:has(.ucf--newsletter)
 totylkoteoria.pl##.newsletter__sidebar
 toys4boys.pl##.footer-container getresponse-form
+toysplanet.pl###footer > div:first-child > div + div > div > :is(span, form)
 tp-link.com##.tp-follow-subscribe
 tpi.com.pl##.cmn-newsletter
 traktor.com.pl##.footer-top4.col-md-3.col-sm-6.col-12
@@ -2510,6 +2512,7 @@ gu.com.pl##.acym__subscription__form__popup__overlay
 hael.pl,marenaspa.pl,modrzewiowy-dwor.pl,obtkarma.pl,stamary.pl,swiece-zaplonowe.pl##.fancybox-overlay
 hafija.pl##.dgd_overlay, .dgd_stb_box
 haftprojekt.pl###popup_newsltr
+hammerphones.com##body:not([style*="overflow"]) #o_shared_blocks:has(.o_newsletter_popup:only-child)
 hardreset.info###w6CybzT8tLqC > div.subscription-box > div.push-service-modal:last-child
 hebe.pl##.slide-desktop.image-responsive
 hebe.pl,modea.pl##.splash
@@ -3328,7 +3331,7 @@ radio.katowice.pl##div[id^="sidebar"].fixed-player
 radio.rzeszow.pl##div[id*="ytlive_"][id*="-floating"][aria-hidden="false"][style*="block"]
 rodzicielskieinspiracje.pl##div[id^="rehub_sticky_on_scroll-"].scrollsticky.stickyscroll_widget
 shopify.com##button[data-component-name="video-modal-pip-button"]:has(video)
-smaker.pl##.floatingvideo__wrapper.is-fixed
+skul.pl,smaker.pl##.floatingvideo__wrapper[class*="fixed"]
 softonic.pl##iframe.is-sticky-left-bottom.zeus_iframe
 telewizjarepublika.pl##.contentsystem-slide-sda, .contentsystem-slide-link, .tvrep-live-box
 telewizjatvt.pl##div[id^="elementor-popup-modal-"]:has(iframe[src*="/player/"])
@@ -4149,6 +4152,7 @@ sklepyinfo.pl##.direction-top.fixed-action-btn
 sklum.com##.js-goToTop
 skoda.pl##div[data-props*="MoveToTop"]
 skrzynie.com.pl###wsa_button_up
+skul.pl##.up--btn
 skutecznie.tv##.to_the_top
 slomski.us##.to-the-top
 smart-tel.pl##.gc__btt__btn
@@ -4552,6 +4556,7 @@ zooplus.pl##div:not([class*="sidebar"]) > div[id*="tracker_banner-yt-channel-"].
 ||connect.facebook.net/en_US/sdk/xfbml.customerchat.js$domain=salonroman.pl
 ||czater.pl/assets/sounds/*$media,domain=www.czater.pl
 ||google.com/shopping/customerreviews/badge$domain=specshop.pl
+||koda.ai^$script,domain=hammerphones.com
 ||livesupport.pl/chat/user*.js$script,domain=ekskluzywna.pl
 ||opineo.pl/gfx/frontend/side_slider_gfx.png
 ||papis.pl/livechat/php/app.php
@@ -11700,11 +11705,10 @@ arms.com.pl,chrisbenzshop.pl,e-forma.pl,homeoapteka.pl,meblezagrosze.pl,oponyalb
 ask.fm##.lightbox_overlay:has(> div.lightbox_container form#signupConversionForm)
 ask.fm#$#body.lightbox-open { overflow-y: auto !important }
 asta-net.pl###popup-call, #popup-call-shadow
-asta-net.pl#$#body[style*="overflow"], html[style*="overflow"] { overflow-y: auto !important }
+asta-net.pl,atakto.pl,mytrendyphone.pl#$#[style*="overflow"]:is(body, html) { overflow-y: auto !important }
 at-outlet.pl,bilscy.info,bobomio.pl,dlalakierni.pl,e-sas.pl,eoptic.pl,menspace.pl,nalepsze.pl,pantalerzyk.pl,pomady.pl,queshop.pl,selkar.pl,sklep.daisyzoologia.pl,sklep.technica.pl,sklepkamil.pl,zico-bike.pl##.newsletter-modal, .modal-backdrop
-atakto.pl,mypersonaltrainer.pl##.popup-container
+atakto.pl,mypersonaltrainer.pl##.popup-container, .yl-popup-wrapper
 atakto.pl,mytrendyphone.pl##div[id^="om-holder-campaign-"].om-holder-fixed.om-holder
-atakto.pl,mytrendyphone.pl#$#html[style*="overflow"], body[style*="overflow"] { overflow-y: auto !important }
 atthost.pl##.popexit_active.popexit_bg
 atthost.pl#$#html[style], body[style] { overflow-y: auto !important }
 auto-swiat.pl,businessinsider.com.pl,fakt.pl,komputerswiat.pl,medonet.pl,newsweek.pl,noizz.pl,onet.pl,plejada.pl#$#.tp-body-scroll-prevented[class] { touch-action: auto !important }
@@ -11865,6 +11869,9 @@ gromada.pl##.fancybox-overlay-fixed
 haart.pl###sgpb-popup-dialog-main-div-wrapper, .sgpb-popup-overlay
 haart.pl#$#.sgpb-overflow-hidden, .sgpb-overflow-hidden-body { overflow: auto !important }
 habys.pl##.fancybox-overlay:has(.sm-newsletter-popup)
+hammerphones.com###o_shared_blocks:has(.o_newsletter_popup:only-child)
+hammerphones.com###o_shared_blocks:has(set-cookie, sPopup1785237000496, true)
+hammerphones.com#$#body[style*="overflow"] { overflow-y: auto !important; padding-right: 0 !important; margin-right: 0 !important }
 hardreset.info###modal-facebook, .modal-backdrop
 hejto.pl#%#//scriptlet('ubo-set-cookie', 'homepage-dialog', '1')
 hejto.pl##.ReactModalPortal:has(> div.ReactModal__Overlay > div#RegisterDialog)
@@ -11921,6 +11928,7 @@ leftlane.pl#$#.modal-active { overflow: auto !important }
 lento.pl#%#//scriptlet('ubo-remove-node-text', 'script', 'showNotify()')
 lento.pl#%#//scriptlet('ubo-set-cookie', 'notifybox', '1')
 limango.pl##.js_welcome_background.background_overlay, .modal, .modal-backdrop
+lo1-kochanowski.pl,sp-7.pl#%#//scriptlet('ubo-set-cookie', 'tpgwcc', '1')
 logitechg.com##.email-subscription-modal
 lubimyczytac.pl###modalAdv, .modal-backdrop
 lubimyczytac.pl###modalZoom
