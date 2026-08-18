@@ -678,10 +678,6 @@
             "script": "(function(){window.twttr={conversion:{trackPid:function(){}}}})();"
         },
         {
-            "domains": "netflix.com",
-            "script": "(()=>{const replaceMap={adBreaks:[],adState:null,currentAdBreak:\"undefined\"};Object.defineProperty=new Proxy(Object.defineProperty,{apply:(target,thisArg,ArgsList)=>{const original=Reflect.apply(target,thisArg,ArgsList);if(\"getAdBreaks\"===ArgsList[1]||\"getAdsDisplayStringParams\"===ArgsList[1]||\"_refreshAds\"===ArgsList[1])return original[ArgsList[1]]=function(){};if(\"adBreaks\"===ArgsList[1]||\"currentAdBreak\"===ArgsList[1]||void 0!==original.adBreaks){for(var[key,value]of Object.entries(original))void 0!==replaceMap[key]&&\"undefined\"!==replaceMap[key]?original[key]=replaceMap[key]:void 0!==replaceMap[key]&&\"undefined\"===replaceMap[key]&&(original[key]=void 0);return original}return original}})})();"
-        },
-        {
             "domains": "fifa.com",
             "script": "(()=>{const a=window.fetch,b={apply:async(b,c,d)=>{const e=d[0]instanceof Request?d[0].url:d[0];if(\"string\"!=typeof e||0===e.length)return Reflect.apply(b,c,d);if(e.includes(\"uplynk.com/\")&&e.includes(\".m3u8\")){const b=await a(...d);let c=await b.text();return c=c.replaceAll(/#UPLYNK-SEGMENT: \\S*\\,ad\\s[\\s\\S]+?((#UPLYNK-SEGMENT: \\S+\\,segment)|(#EXT-X-ENDLIST))/g,\"$1\"),new Response(c)}return Reflect.apply(b,c,d)}};try{window.fetch=new Proxy(window.fetch,b)}catch(a){}})();"
         },
