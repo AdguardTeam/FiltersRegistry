@@ -205,10 +205,14 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 
 The following flags can be used with `yarn build` and `yarn build:local`:
 
-- `-i=`, `--include=` — comma-separated filter IDs to build (e.g., `--include=1,2,3`)
-- `-s=`, `--skip=` — comma-separated filter IDs to exclude (e.g., `--skip=12,24`).
-  Can be combined with `--include`: a filter is built only if it's in `--include`
-  and not in `--skip`.
+- `-i=`, `--include=` — comma- or whitespace-separated filter IDs to build
+  (e.g., `--include=1,2,3` or `--include="1 2 3"`)
+- `-s=`, `--skip=` — comma- or whitespace-separated filter IDs to exclude
+  (e.g., `--skip=12,24` or `--skip="12 24"`). Can be combined with
+  `--include`: a filter is built only if it's in `--include` and not in `--skip`.
+
+  Quote whitespace-separated values so shells pass them as one argument. This
+  format also handles commas converted to spaces by PowerShell `.cmd` shims.
 - `--report=` — custom report file name (e.g., `--report='report-adguard.txt'`)
 - `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
 - `--strip-generated-meta` — remove volatile metadata lines from built files
