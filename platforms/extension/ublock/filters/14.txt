@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +o1SkeYl1sOtXH/LXkRsxQ
-! Diff-Path: ../patches/14/14-s-1787020291-3600.patch
+! Checksum: wKDW3519DgwBDjY1iQBWmw
+! Diff-Path: ../patches/14/14-s-1787023475-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.75.99
-! TimeUpdated: 2026-08-18T02:28:11+00:00
+! Version: 2.2.76.0
+! TimeUpdated: 2026-08-18T03:21:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18664,6 +18664,8 @@ alexela.ee,alexela.lv#@#.c-cookie
 @@||cdn.cookielaw.org^$domain=people.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208495
 @@||medicoversport.pl/pakiety/public-shared/element/cookies-info/cookie-bar.js$domain=medicoversport.pl
+! https://github.com/AdguardTeam/AdguardFilters/issues/238572
+@@||cdn.cookielaw.org/consent/*.json$domain=instyle.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208314
 instyle.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208177
@@ -26249,6 +26251,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+muko.kr##+js(set-cookie, muko_gs_modal_dismissed, 1)
 polskiekoldry.pl,vegehome.pl##+js(set-cookie, apc_popup_session, 1)
 fireflix.pages.dev##div[aria-labelledby="discord-popup-title"]
 ||duplichecker.com/a6c2/tkkk.js
@@ -35678,6 +35681,9 @@ saopaulosecreto.com,urfanatik.com,stadt-bremerhaven.de,ekonomim.com,omgubuntu.co
 !
 ! SECTION: Subscriptions - Regular rules
 !
+kapital.kz##aside > div[data-size="common"]:has(> form[action$=".list-manage.com/subscribe"])
+kapital.kz##article > a[href="https://t.me/kapitalkz"]
+kazpravda.kz##.subscribe-teaser
 duplichecker.com##div.col-xs-12 > div.foot-last-zone:has(> img[alt="Subscribe"])
 ren.tv##div[class^="MaxBanner_"]
 qz.com##div[data-element-name="newsletter_signup_block"]

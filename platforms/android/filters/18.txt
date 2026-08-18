@@ -1,9 +1,9 @@
-! Checksum: WRaZJLoMH/3+iZiZCYdxSA
-! Diff-Path: ../patches/18/18-s-1787020249-3600.patch
+! Checksum: qN4GBJVR4/bdkP0GA4pc1g
+! Diff-Path: ../patches/18/18-s-1787023440-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.92.27
-! TimeUpdated: 2026-08-18T02:28:19+00:00
+! Version: 2.0.92.28
+! TimeUpdated: 2026-08-18T03:21:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2636,6 +2636,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+instyle.com#%#//scriptlet('trusted-set-cookie', 'OptanonConsent', 'groups=2%3A0%2C4%3A0%2C1%3A1%2C3%3A0', '', '/', 'instyle.com')
+instyle.com#%#//scriptlet('trusted-set-cookie', 'OptanonAlertBoxClosed', '$currentISODate$', '', '/', 'instyle.com')
 rapy.gg#%#//scriptlet('set-local-storage-item', 'cookies-accepted', 'true')
 xxlgamer.*##.cookie-consest
 reactor.pl##body > div[style^="position: fixed !important; top: 0px !important; left"]
@@ -20150,6 +20152,8 @@ alexela.ee,alexela.lv#@#.c-cookie
 @@||cdn.cookielaw.org^$domain=people.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208495
 @@||medicoversport.pl/pakiety/public-shared/element/cookies-info/cookie-bar.js$domain=medicoversport.pl
+! https://github.com/AdguardTeam/AdguardFilters/issues/238572
+@@||cdn.cookielaw.org/consent/*.json$domain=instyle.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208314
 instyle.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208177
