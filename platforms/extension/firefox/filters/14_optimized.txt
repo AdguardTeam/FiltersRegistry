@@ -1,9 +1,9 @@
-! Checksum: OkFVWLgC9j8wkNQKudrhyw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1787051583-3600.patch
+! Checksum: T8z8cWUk4cPlqbQT1pevww
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1787055331-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.76.7
-! TimeUpdated: 2026-08-18T11:09:51+00:00
+! Version: 2.2.76.8
+! TimeUpdated: 2026-08-18T12:12:32+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1704,6 +1704,8 @@ hotel-boeke-loerrach.de,knusperstuebchen.net,intercraft.pl#%#//scriptlet('truste
 tippsling.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:c82d723')
 wegwandern.ch,compact-online.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:f4adc5d')
 cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:0c09270')
+x.com##div[role="region"][aria-label*="cookie"]
+carsales.com.au#%#//scriptlet('trusted-click-element', '.cookieConsentBodyEu button')
 novodom.pl##.cookie-permission-container-outer
 academy-med.ru##div[data-name="cookies"]
 otovadeli.com###cookiespool-banner
@@ -5539,6 +5541,7 @@ pluspagos.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 pluspagos.com#$##cookiesPolicy ~ div.modal-backdrop { display: none !important; }
 melectronics.ch#?#.skel > script + div:has(> div > button)
 acs.org##.alert-banner__cookie
+tickety.top,edinburghgin.com##[class^="cookieConsent-"]
 nypost.com,pagesix.com#?#.zephr-component
 belinvestbank.by##.cookie-notification__block
 sportpari.by##.modal_cookies
@@ -23688,6 +23691,7 @@ buttondown.email#@##subscribe-form
 ##div[class^="smartbanner"][class*="-android"]
 ###smartbanner.ios
 rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+carsales.com.au##div[data-updatable-partial-id="smart-banner"]
 zstream.mov#%#//scriptlet('set-local-storage-item', 'zstream::apps-notice-dismissed', '1')
 finance.eastmoney.com##div[id^="ad_context"]:has(> a[href^="javascript:"], > div[class^="ad"] > img)
 manhuaren.com##.info-top-banner-card
@@ -25686,6 +25690,7 @@ uslugi.yandex.ru##.MobAppStoreLinks
 auto.ru#$#.page_freeze { overflow: auto !important; position: static !important; }
 bookmate.ru##.book-cover div.store-links
 bookmate.ru##.app-banner
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$##configured-xpromo-mweb3x_mid_funnel_blocking_v1_30s { display: none !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##.configured-xpromo
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('prevent-addEventListener', 'touchmove', '.preventDefault()')
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('prevent-addEventListener', 'wheel', 'preventDefault()')
@@ -27177,6 +27182,8 @@ yourchannel.blog.jp#@##app-follow-banner
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
 instagram.com#?#div[style*="opacity"] > div > div[class]:has(> div[class] > div[style] > div[style] > div[aria-labelledby] > div[class]:last-child > button)
 instagram.com##._aagw:empty
+seniorsdiscountclub.com.au##.card--register
+seniorsdiscountclub.com.au##.join-conversation
 reddit.com##faceplate-tracker[noun="static_left_rail_banner"]
 milliyet.com.tr##.news-inline-banner
 rajcet.com##.entry-content > [class^="wp-block-"]
@@ -32165,6 +32172,7 @@ allanime.day,vidbasic.live,embdmstrplayer.com,kisskh.*,anixtv.pro,anixtv.in,anix
 !### Weather, money exchange, 3rd-party feedbacks, #####
 !### 3rd-party assistants, etc #########################
 !#######################################################
+||ar-cdn.net^$third-party
 ||gamelog.apexlegends-leaksnews.com/api/widget/$third-party
 ||re.trigs-sockets.com^
 ||feedgrabbr.com^$third-party

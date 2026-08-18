@@ -1,9 +1,9 @@
-! Checksum: xLzhksXbKVmB0atYiNC8qw
-! Diff-Path: ../patches/14/14-s-1787051596-3600.patch
+! Checksum: edmyZn0JKKttK+wAsTcfgw
+! Diff-Path: ../patches/14/14-s-1787055351-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.76.7
-! TimeUpdated: 2026-08-18T11:09:51+00:00
+! Version: 2.2.76.8
+! TimeUpdated: 2026-08-18T12:12:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2638,6 +2638,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+x.com##div[role="region"][aria-label*="cookie"]
+carsales.com.au#%#//scriptlet('trusted-click-element', '.cookieConsentBodyEu button')
 novodom.pl##.cookie-permission-container-outer
 academy-med.ru##div[data-name="cookies"]
 otovadeli.com###cookiespool-banner
@@ -8388,7 +8390,7 @@ veepee.ch,htmlburger.com##.banner-policy
 melectronics.ch#?#.skel > script + div:has(> div > button)
 acs.org##.alert-banner__cookie
 tbszm.pl###pum-3750
-edinburghgin.com##div[class^="cookieConsent-"]
+tickety.top,edinburghgin.com##[class^="cookieConsent-"]
 bandwerk.de#$#.cc-window-wrapper,#gdpr-blocking-page-overlay { display: none !important; }
 bandwerk.de#$#body.cc-scrolling-disabled { overflow: auto !important; }
 nypost.com,pagesix.com#?#.zephr-component
@@ -48112,6 +48114,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+carsales.com.au##div[data-updatable-partial-id="smart-banner"]
 zstream.mov#%#//scriptlet('set-local-storage-item', 'zstream::apps-notice-dismissed', '1')
 finance.eastmoney.com##div[id^="ad_context"]:has(> a[href^="javascript:"], > div[class^="ad"] > img)
 manhuaren.com##.info-top-banner-card
@@ -52105,6 +52108,7 @@ bookmate.ru##.app-banner
 !
 !
 !
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$##configured-xpromo-mweb3x_mid_funnel_blocking_v1_30s { display: none !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##.configured-xpromo
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('prevent-addEventListener', 'touchmove', '.preventDefault()')
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('prevent-addEventListener', 'wheel', 'preventDefault()')
@@ -53726,6 +53730,9 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238375
+seniorsdiscountclub.com.au##.card--register
+seniorsdiscountclub.com.au##.join-conversation
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237614
 reddit.com##faceplate-tracker[noun="static_left_rail_banner"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237976
@@ -65170,6 +65177,7 @@ allanime.day,vidbasic.live,embdmstrplayer.com,kisskh.*,anixtv.pro,anixtv.in,anix
 ! SECTION: Widgets (sougo RSS) - Blogroll
 !
 ! NOTE: Blogroll generic
+||ar-cdn.net^$third-party
 ||gamelog.apexlegends-leaksnews.com/api/widget/$third-party
 ||re.trigs-sockets.com^
 ||feedgrabbr.com^$third-party
