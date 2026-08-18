@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: g0QODpEnr5JidjuWBNknHg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1786942117-14400.patch
+! Checksum: xdGQbtReuTYxIwAkv+VxVQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1787057381-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.21
-! TimeUpdated: 2026-08-17T04:45:38+00:00
+! Version: 2.0.25.22
+! TimeUpdated: 2026-08-18T12:46:38+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -965,7 +965,7 @@ lantbruksnytt.se##article:has(.ads_text)
 lantbruksnytt.se##aside.enhanced-text-widget:has(div[class^="square_rotate"])
 lantbruksnytt.se##aside.side-box:has(.adsbygoogle)
 lantbruksnytt.se###startpage-top-right, .ads_text + a, div[class*="square_rotate"], a[target="_blank"][rel="nofollow"], #ouibounce-modal, iframe[src*="iframebanner"], .widget_maskinstationer_widget, .ads_text + #articles-top
-laromedia.se##img[alt="Annons"] + .img-flipper
+laromedia.se##img[alt="Annons"] + .img-flipper, #banner-area
 lchfarkivet.se##.modal-wrapper, div#beskrivning[style="font-size: 10px; text-align: center; color: #8E8C8C; max-width: 700px;"], .recipe-ads
 lektionsbanken.se###partners_inside, #partners_right, #partners_top
 lektionsbanken.se##.footer-newsletter
@@ -1433,7 +1433,6 @@ styrelseguiden.se##.homeNoticeboxes:has(#linkToAdvertise)
 surfa.se##div[class*="-promo"], div[class*="prisjakt-"], .td-banner-wrap-full
 surfa.se,teknikfreak.se###loader-wrapper
 surveyors.se###custom_html-3
-svampguiden.com##.label-sponsor:upward(.panel)
 svartgul.se##li.embedded, footer li.long
 svartgul.se,eventeffect.se,executiveeffect.se,saleseffect.se###panorama
 svd.se##article:has(div[class^="NativeBarWrapper"])
@@ -2181,6 +2180,7 @@ zeromagazine.nu##div[id^="ads"]
 /bilder/samarbeten$domain=hojen.nu
 /bilder/sponsorer
 /bilder/*annons$domain=sfft.se
+/bildvaxlaren$domain=laromedia.se
 /bitcsys/js/bit.js
 /blekinge.min.js$domain=rakapuckar.com
 /block/samarbetspartners$image
@@ -2714,7 +2714,6 @@ zeromagazine.nu##div[id^="ads"]
 /se-ads-microservice
 /se-calico/bundle.js
 /se-ocelot/bundle.js
-/sg_reklam$domain=svampguiden.com
 /sh404sefsocial$script
 /sharedaddy/sharing.$script
 /shared/crm-campaign-handler.js$script
@@ -3299,6 +3298,7 @@ _banner.php?$domain=tvmatchen.nu
 ||kingsumo.com^$3p
 ||kit.com^$3p
 ||klaviyo.com^$3p,domain=~kmail-lists.com|~myklpages.com
+||klirly.io^$3p
 ||kolozzeum.com/forum/kollos$script
 ||konzilo.com/mtc.js
 ||konzilo.net/mtc.js
