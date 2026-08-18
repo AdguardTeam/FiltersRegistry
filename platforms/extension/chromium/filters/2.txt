@@ -1,9 +1,9 @@
-! Checksum: c7kScpuumpEPmQhgSOP4sw
-! Diff-Path: ../patches/2/2-s-1787023451-3600.patch
+! Checksum: j+r5TXN2D7GDr/kW2rpfdA
+! Diff-Path: ../patches/2/2-s-1787026787-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.84.49
-! TimeUpdated: 2026-08-18T03:20:23+00:00
+! Version: 2.4.84.50
+! TimeUpdated: 2026-08-18T04:16:16+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||dutchrelay.com^
 ||physicaldad.com^
 ||smallanywhere.com^
 ||shameful-farm.com^
@@ -13103,6 +13104,9 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238593
+moviesdl.cc#$#.vb-adblock-wall { display: none !important; }
+moviesdl.cc#$#html.native-ads-blocked { overflow: auto !important; }
 ! https://github.com/easylist/easylist/issues/24919
 modelviewer.lol#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'ad-alternatives')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238338
@@ -40546,6 +40550,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+nxsha.space,nxsha.*#%#//scriptlet('trusted-replace-argument', 'Storage.prototype.getItem', '0', 'replace:/nxsha_download_ad_seen:.+/nxsha_download_ad_seen/', 'nxsha_download_ad_seen:')
+nxsha.space,nxsha.*#%#//scriptlet('set-session-storage-item', 'nxsha_download_ad_seen', '1')
+nxsha.space,nxsha.*#%#//scriptlet('prevent-window-open')
+nhdapi.com#%#//scriptlet('prevent-window-open')
 reelsuites.tv##.rt-ad-slot
 reelsuites.tv##.rt-player-ad-slot
 fireflix.pages.dev#?#div.w-full:has(> div.mx-auto > div.relative > span:contains(Ad))
@@ -42620,7 +42628,7 @@ inquirer.net##.ztoop
 livecamrips.*#%#//scriptlet('prevent-window-open')
 livecamrips.*#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'clickadu')
 goonchan.org##iframe[src^="https://creative.mavrtracktor.com/"]
-goonchan.org#%#//scriptlet('abort-on-stack-trace', 'open', 'onClick')
+nxsha.space,goonchan.org#%#//scriptlet('abort-on-stack-trace', 'open', 'onClick')
 windowsonarm.org##tr.fui-TableRow:has(ins.adsbygoogle)
 windowsonarm.org##.fui-Card:has(ins.adsbygoogle)
 ||prm.staticstream.org^$popup
@@ -87239,6 +87247,7 @@ browsershots.org#@#.advert_area
 ||2997fa5a20.com^
 ||29apfjmg2.de^
 ||29s55bf2.de^
+||29z5ch85etcymjlk5k7o5l.cfd^
 ||2a2k3aom6.de^
 ||2a4snhmtm.de^
 ||2a7d908472.com^
@@ -97471,6 +97480,7 @@ browsershots.org#@#.advert_area
 ||dumfegs.cfd^
 ||dumkrizshgtse.website^
 ||dummyimpostorluke.com^
+||dumpokebrewedtripled.cyou^
 ||duncanknopper.cfd^
 ||duncherrants.shop^
 ||dunderaffiliates.com^
@@ -106570,6 +106580,7 @@ browsershots.org#@#.advert_area
 ||kitcatmincytippers.cfd^
 ||kiteateesscollop.cyou^
 ||kitemannishmine.cyou^
+||kitjdvkkhzwld.website^
 ||kitrigthy.com^
 ||kittlelivens.cfd^
 ||kittlybulgepep.cfd^
@@ -110971,6 +110982,7 @@ browsershots.org#@#.advert_area
 ||nhiaoadcolahl.website^
 ||nhiwyubasvwub.site^
 ||nhkstivqaqwvz.store^
+||nhlgurll98igk9gxirg6ylq5.rest^
 ||nhnkhosypgwvh.site^
 ||nhomgluxrcotw.space^
 ||nhonnlvjebaid.site^
@@ -111214,6 +111226,7 @@ browsershots.org#@#.advert_area
 ||nnhfyultzrtzn.space^
 ||nnidobzroskbh.site^
 ||nniksvbsaobu.com^
+||nnjhtcdsiictj.space^
 ||nnjizwcurchyp.online^
 ||nnkkwfcnwkzud.space^
 ||nnlsolccybrzf.site^
@@ -123441,6 +123454,7 @@ browsershots.org#@#.advert_area
 ||ukojrtbssuvae.space^
 ||ukp7vxzlfk36f1xvx.cfd^
 ||ukscpmptwial.com^
+||uksjvhcyqghrh.website^
 ||ukupwdygrdzfj.website^
 ||ukuzkpmv.com^
 ||ukvlnjcpnxsly.website^
@@ -128223,6 +128237,7 @@ browsershots.org#@#.advert_area
 ||yrfnjvrlyt.com^
 ||yrfyazdbylynj.space^
 ||yrixtfepqyfqx.site^
+||yrlkmglnttcve.online^
 ||yronesefurther.org^
 ||yrqwdbahejizo.website^
 ||yrsgvtfoigiii.online^
@@ -144495,6 +144510,7 @@ gamereactor.asia,gamereactor.cn,gamereactor.com.tr,gamereactor.cz,gamereactor.de
 desmoinesregister.com##.ymHyVK__ymHyVK
 shockwave.com##.ympb_target_banner
 saltwire.com##.youtube_article_ad
+yucatanmagazine.com##.yucat-entity-placement
 readneverland.com##.z-0
 buzzly.art##.z-10.w-max
 character.ai##.z-40.max-w-\[970px\]

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: EGgKS55KtXTZ/J4PfJvpgA
-! Diff-Path: ../patches/2/2-s-1787023476-3600.patch
+! Checksum: /7tp87SOGPZvdXS7gvGsMg
+! Diff-Path: ../patches/2/2-s-1787026806-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.84.49
-! TimeUpdated: 2026-08-18T03:20:23+00:00
+! Version: 2.4.84.50
+! TimeUpdated: 2026-08-18T04:16:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||dutchrelay.com^
 ||physicaldad.com^
 ||smallanywhere.com^
 ||shameful-farm.com^
@@ -13004,6 +13005,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238593
+moviesdl.cc##.vb-adblock-wall:style(display: none !important;)
+moviesdl.cc##html.native-ads-blocked:style(overflow: auto !important;)
 ! https://github.com/easylist/easylist/issues/24919
 modelviewer.lol##+js(addEventListener-defuser, DOMContentLoaded, ad-alternatives)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238338
@@ -39845,6 +39849,9 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+nxsha.space,nxsha.*##+js(set-session-storage-item, nxsha_download_ad_seen, 1)
+nxsha.space,nxsha.*##+js(no-window-open-if)
+nhdapi.com##+js(no-window-open-if)
 reelsuites.tv##.rt-ad-slot
 reelsuites.tv##.rt-player-ad-slot
 fireflix.pages.dev##div.w-full:has(> div.mx-auto > div.relative > span:contains(Ad))
@@ -41892,7 +41899,7 @@ inquirer.net##.ztoop
 livecamrips.*##+js(no-window-open-if)
 livecamrips.*##+js(abort-current-script, EventTarget.prototype.addEventListener, clickadu)
 goonchan.org##iframe[src^="https://creative.mavrtracktor.com/"]
-goonchan.org##+js(abort-on-stack-trace, open, onClick)
+nxsha.space,goonchan.org##+js(abort-on-stack-trace, open, onClick)
 windowsonarm.org##tr.fui-TableRow:has(ins.adsbygoogle)
 windowsonarm.org##.fui-Card:has(ins.adsbygoogle)
 ||prm.staticstream.org^$popup
@@ -84660,6 +84667,7 @@ browsershots.org#@#.advert_area
 ||2997fa5a20.com^
 ||29apfjmg2.de^
 ||29s55bf2.de^
+||29z5ch85etcymjlk5k7o5l.cfd^
 ||2a2k3aom6.de^
 ||2a4snhmtm.de^
 ||2a7d908472.com^
@@ -94892,6 +94900,7 @@ browsershots.org#@#.advert_area
 ||dumfegs.cfd^
 ||dumkrizshgtse.website^
 ||dummyimpostorluke.com^
+||dumpokebrewedtripled.cyou^
 ||duncanknopper.cfd^
 ||duncherrants.shop^
 ||dunderaffiliates.com^
@@ -103991,6 +104000,7 @@ browsershots.org#@#.advert_area
 ||kitcatmincytippers.cfd^
 ||kiteateesscollop.cyou^
 ||kitemannishmine.cyou^
+||kitjdvkkhzwld.website^
 ||kitrigthy.com^
 ||kittlelivens.cfd^
 ||kittlybulgepep.cfd^
@@ -108392,6 +108402,7 @@ browsershots.org#@#.advert_area
 ||nhiaoadcolahl.website^
 ||nhiwyubasvwub.site^
 ||nhkstivqaqwvz.store^
+||nhlgurll98igk9gxirg6ylq5.rest^
 ||nhnkhosypgwvh.site^
 ||nhomgluxrcotw.space^
 ||nhonnlvjebaid.site^
@@ -108635,6 +108646,7 @@ browsershots.org#@#.advert_area
 ||nnhfyultzrtzn.space^
 ||nnidobzroskbh.site^
 ||nniksvbsaobu.com^
+||nnjhtcdsiictj.space^
 ||nnjizwcurchyp.online^
 ||nnkkwfcnwkzud.space^
 ||nnlsolccybrzf.site^
@@ -120862,6 +120874,7 @@ browsershots.org#@#.advert_area
 ||ukojrtbssuvae.space^
 ||ukp7vxzlfk36f1xvx.cfd^
 ||ukscpmptwial.com^
+||uksjvhcyqghrh.website^
 ||ukupwdygrdzfj.website^
 ||ukuzkpmv.com^
 ||ukvlnjcpnxsly.website^
@@ -125644,6 +125657,7 @@ browsershots.org#@#.advert_area
 ||yrfnjvrlyt.com^
 ||yrfyazdbylynj.space^
 ||yrixtfepqyfqx.site^
+||yrlkmglnttcve.online^
 ||yronesefurther.org^
 ||yrqwdbahejizo.website^
 ||yrsgvtfoigiii.online^
@@ -141916,6 +141930,7 @@ gamereactor.asia,gamereactor.cn,gamereactor.com.tr,gamereactor.cz,gamereactor.de
 desmoinesregister.com##.ymHyVK__ymHyVK
 shockwave.com##.ympb_target_banner
 saltwire.com##.youtube_article_ad
+yucatanmagazine.com##.yucat-entity-placement
 readneverland.com##.z-0
 buzzly.art##.z-10.w-max
 character.ai##.z-40.max-w-\[970px\]
