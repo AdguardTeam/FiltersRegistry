@@ -8,6 +8,7 @@ import {
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
 import { findFiles } from '../utils/find_files.js';
+import { parseFilterIDs } from './filter-id-list.js';
 
 /**
  * Parse command-cli parameters -t|--time, -r|--resolution, -i|--include and -s|--skip
@@ -30,17 +31,13 @@ args.forEach((val) => {
     if (val.startsWith('-i=') || val.startsWith('--include=')) {
         const value = val.slice(val.indexOf('=') + 1);
 
-        includedFilterIDs = value
-            .split(',')
-            .map((x) => Number.parseInt(x, 10));
+        includedFilterIDs = parseFilterIDs(value, '--include');
     }
 
     if (val.startsWith('-s=') || val.startsWith('--skip=')) {
         const value = val.slice(val.indexOf('=') + 1);
 
-        excludedFilterIDs = value
-            .split(',')
-            .map((x) => Number.parseInt(x, 10));
+        excludedFilterIDs = parseFilterIDs(value, '--skip');
     }
 });
 
