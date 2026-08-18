@@ -1,9 +1,9 @@
-! Checksum: Zi5ge6i0eMlqnpid8RV1gQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1787047980-3600.patch
+! Checksum: o5YlywRdbwiK3kHjGKUFwA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1787051572-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.16
-! TimeUpdated: 2026-08-18T10:10:39+00:00
+! Version: 2.0.67.17
+! TimeUpdated: 2026-08-18T11:09:43+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5888,6 +5888,10 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 [$domain=/^(www\.)?sporcafe[a-z0-9-]+\.xyz$/]##div[class^="banner-"]
 !+ NOT_VALIDATE
 [$domain=/^(www\.)?sporcafe[a-z0-9-]+\.xyz$/]##header a[href]:not(.logo-link, [aria-label])
+!+ NOT_VALIDATE
+[$domain=/sporcafe\d+\.top/]##.dbad
+!+ NOT_VALIDATE
+[$domain=/sporcafe\d+\.top/]#%#//scriptlet('set-constant', 'puShown', 'true')
 ||selcuksporthd*.com/dosya/*.gif
 [$domain=/selcuksporthd\d+\.com/]##a[href^="https://bit.ly/"]
 [$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('prevent-window-open')
