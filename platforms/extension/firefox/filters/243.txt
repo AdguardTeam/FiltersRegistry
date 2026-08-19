@@ -1,14 +1,14 @@
-! Checksum: 5zZZAwNbgpqWW02dPEakjg
-! Diff-Path: ../patches/243/243-s-1787057369-14400.patch
+! Checksum: udnGkce8fCGLx7A7fJQ2dw
+! Diff-Path: ../patches/243/243-s-1787114904-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.22
-! TimeUpdated: 2026-08-18T12:46:38+00:00
+! Version: 2.0.25.23
+! TimeUpdated: 2026-08-19T04:45:39+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-08-18 07:35:20 CEST
+! Last modified: 2026-08-19 06:07:00 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -1173,7 +1173,7 @@ nordiskradio.se###cookieWindow
 nordiskskog.se##.templateHelannonsBOX
 norrahalland.se,bjarenu.se##.bannercontent
 norrortssporten.se##.vc_column_container:has(.td-adspot-title)
-nouw.com##div[style*="text-align: center"]:has(div[id*="panorama"], a:not([href*="nouw.com"], [href^="/"]), a[target="_blank"])
+nouw.com##.content > div[style^="text-align: center"]:has(a[href="https://nouw.com"])
 nouw.com##.post-grid-item:has(a[href*="poker"], a[href*="betting"], a[href*="casino"], a[href*="spelplat"])
 nyadagbladet.se#?#.site-main > div.widget_custom_html p[style^="text-align: center;"]:contains(/annonssamarbete/i):upward(div.widget_custom_html)
 nyadagbladet.se##.third-col, article[class*="sponsrad"], div[id^="nyd-"], .below_header_front_page, div[data-aeon-news-trackbid="1"], .aeon-news-widget, div[id^="aeon-news"]
@@ -1392,7 +1392,7 @@ skrattnet.se##.region-sidebar-second
 skrattsajten.com,norpan.se##.cookieScript
 skyltat.se##.sidebar
 skyscanner.se##div[data-testid="advert-card-gam"]
-skyscanner.se###modal-container:has(#cookieBannerContent)
+skyscanner.se###modal-container:has(#consentBannerTitle)
 skyttesport.se##.main-partners, .cooperation-partners
 snowmobile.se##div[itemtype="https://schema.org/WPAdBlock"], .bs-wrap-gdpr-law
 snowmobile.se,tobaksfakta.se,dagenslogistik.se,magasinetkonkret.se,a-traktorer.se##.pum-overlay
@@ -2285,7 +2285,7 @@ zeromagazine.nu##div[id^="ads"]
 /eu_cookie_notice$domain=yelp.se
 /events$domain=fastighetsvarlden.se
 /events.js$domain=forsvarstidningen.se|stromsundsgratistidning.se|sverigerunt.se|skargardsradion.se
-/event$ping,domain=lokalti.se
+/event$ping,xmlhttprequest,domain=lokalti.se|skyscanner.se
 /event-odds-banner$domain=tvmatchen.nu
 /event-tracker$domain=corren.se|folkbladet.se|mvt.se|nt.se|vt.se|vimmerbytidning.se|kuriren.nu|nsd.se|norran.se|pt.se|ekuriren.se|strengnastidning.se|kkuriren.se|sn.se|eposten.se|unt.se|helagotland.se|fastighetsvarlden.se
 /exposure$xmlhttprequest,domain=lokalguiden.se
@@ -2340,6 +2340,7 @@ zeromagazine.nu##div[id^="ads"]
 /gtagEventTracker.js
 /gtmmeasurement$domain=altinget.se
 /gtm$domain=lidl.se|global.morningstar.com
+/gtm-$domain=varden.se
 /gtm-*.appspot.com
 /gtm.*.js?id=GTM
 /gtm.*/g/collect?
@@ -2686,7 +2687,6 @@ zeromagazine.nu##div[id^="ads"]
 /profile$ping,domain=skippo.se|tasteline.com|marcusoscarsson.se|shl.se|hemhyra.se|qx.se|hockeynews.se|hockeyettan.se|tvsporten.nu|tvmatchen.nu
 /prylguiden-expressen$all
 /ps-partner$xmlhttprequest,domain=dagensps.se
-/public/log$domain=kalender.se
 /public/t/*$domain=tvmatchen.nu
 /publisher/asjs?$domain=bredband.se
 /pub.php$domain=svenskadating.com
@@ -3302,7 +3302,6 @@ _banner.php?$domain=tvmatchen.nu
 ||jwplayer.com/*/advertising$domain=allas.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se|motherhood.se
 ||k5a.io^$script,redirect-rule=noopjs,domain=tv2.no
 ||k5a.io^$third-party
-||kalender.se/analytics
 ||kamrat.com/js/cookiescript
 ||kaptenkryss.se^$third-party
 ||kingsizemag.se/content/

@@ -1,9 +1,9 @@
-! Checksum: 5VYPPhS7PWTBmUUjmk5/ZA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1787100660-14400.patch
+! Checksum: Xzh8AkwoXpFE+659TPd5cw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1787114906-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.67.20
-! TimeUpdated: 2026-08-19T00:47:28+00:00
+! Version: 2.1.67.21
+! TimeUpdated: 2026-08-19T04:44:42+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -221,6 +221,7 @@ _social-bar/
 ###facebookbox
 ###facebookbtn
 ###facebooklike
+###facebooklikebox-2
 ###facebooknotification
 ###facebookpopup-fan-exit
 ###facebookpopup-fanback
@@ -230,6 +231,7 @@ _social-bar/
 ###favsocial-list
 ###fb-box
 ###fb-like
+###fb-like-box
 ###fbDiv
 ###fbLike
 ###fbLikeButton
@@ -395,6 +397,7 @@ _social-bar/
 ###post_info_share
 ###rightSocial
 ###rsociaux
+###sb-social
 ###sb_instagram
 ###selectionShare
 ###share-area
@@ -725,7 +728,6 @@ _social-bar/
 ###v-share
 ###vbseo-likes
 ###vce_social_menu
-###vertical-share-wrapper
 ###verticalSnsBar
 ###viber_share
 ###whatsapp-share
@@ -1158,7 +1160,6 @@ _social-bar/
 ##.custom-sharing
 ##.custom-social
 ##.custom-social-share
-##.custom_share
 ##.custom_social
 ##.customsocial
 ##.d3-o-share-bar
@@ -1280,7 +1281,6 @@ _social-bar/
 ##.facebook-share-btn
 ##.facebook-share-button
 ##.facebook-share-link
-##.facebook-sharer
 ##.facebook-sidebar
 ##.facebook-social
 ##.facebookOuter
@@ -1622,7 +1622,6 @@ _social-bar/
 ##.herald-share-content
 ##.herald-soc-nav
 ##.hero-social
-##.hideSocial
 ##.hideshare-wrap
 ##.hola_share_player_btn
 ##.hola_share_player_btn_wrapper
@@ -1724,6 +1723,7 @@ _social-bar/
 ##.ig-share-button
 ##.ig_social
 ##.ikonz-social
+##.image-share
 ##.image-social
 ##.img-social
 ##.img__sharer
@@ -1901,7 +1901,6 @@ _social-bar/
 ##.m-share
 ##.m-share-bar
 ##.m-share-bar__link
-##.m-share-list
 ##.m-sharebar
 ##.m-sharing
 ##.m-sns
@@ -2134,6 +2133,7 @@ _social-bar/
 ##.post-footer-share
 ##.post-footer__share
 ##.post-like-share
+##.post-metasocial
 ##.post-share
 ##.post-share-b
 ##.post-share-bar
@@ -2383,6 +2383,7 @@ _social-bar/
 ##.share-network-email
 ##.share-network-facebook
 ##.share-network-linkedin
+##.share-network-messenger
 ##.share-network-tumblr
 ##.share-network-twitter
 ##.share-network-whatsapp
@@ -2505,7 +2506,6 @@ _social-bar/
 ##.sharePanel
 ##.sharePinterest
 ##.sharePost
-##.sharePrint
 ##.shareRow
 ##.shareSide
 ##.shareSocial
@@ -2733,6 +2733,7 @@ _social-bar/
 ##.sidebar-facebook
 ##.sidebar-share:not(#tab-sharing > .sidebar-share)
 ##.sidebar-social
+##.sidebar-social-btn
 ##.sidebar-socials
 ##.sidebar_social
 ##.sidebarsocial
@@ -3162,13 +3163,13 @@ _social-bar/
 ##.social_links_container
 ##.social_links_footer
 ##.social_links_top
+##.social_links_wrapper
 ##.social_media_share
 ##.social_menu_icon
 ##.social_popup
 ##.social_row
 ##.social_sec
 ##.social_section
-##.social_share_bar
 ##.social_share_box_wrapper
 ##.social_share_buttons
 ##.social_share_fb
@@ -3530,7 +3531,6 @@ _social-bar/
 ##.widget_twitter_timeline
 ##.widget_wc_shortcodes_social_icons
 ##.widget_wpcom_social_media_icons_widget
-##.widget_wpgrade_social_links
 ##.wp-block-social-links
 ##.wp-embed-share
 ##.wp-share
@@ -3833,6 +3833,7 @@ rbth.com##.Popup-telegram
 aerospaceglobalnews.com##.PostMetaBar__Social
 ndtv.com##.SSR_drp
 abc.net.au##.ShareBanner_container__OX63I
+birminghammail.co.uk,bristolpost.co.uk,dailyrecord.co.uk,dailystar.co.uk,irishstar.com,liverpoolecho.co.uk,manchestereveningnews.co.uk,mirror.co.uk,stokesentinel.co.uk,themirror.com,walesonline.co.uk##.ShareBar_sharebar-inner-wrapper__D0YTf
 sbs.com.au##.ShareButtons-module__yCNwyW__container
 meduza.io##.SharePanel-module-root
 ynet.co.il,ynetnews.com##.SiteArticleSocialShareNew1280
@@ -4111,6 +4112,7 @@ cointelegraph.com##.post__socials-block
 pravda.com.ua##.post_social_item
 koi.ai##.post_sticky-social
 psypost.org##.pp-follow-card
+atlantablackstar.com##.pre-footer
 lifestyleasia.com##.pre-footer_instagram
 gsmarena.com,ign.com,torquenews.com##.preferred-source
 pcgamesn.com##.preferred-sources-button-container
@@ -4178,6 +4180,7 @@ welivesecurity.com##.sidebar-card-media
 tribune.com.pk##.sidebar-social-icons
 pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
 streetsblog.org##.single_sharingInner__3IoQO
+nme.com,operawire.com,whoopsee.it##.site-footer-social
 dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.site-header__social
 news.sky.com,skysports.com##.site-share-wrapper
 archaeology.org##.site-socials
@@ -4234,6 +4237,7 @@ downloadsource.net##.socials-vertical
 ntvkenya.co.ke##.socials_bar
 republicworld.com##.sponsors-container
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
+atlantablackstar.com##.stay-social
 vnexpress.net##.sticky
 healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar

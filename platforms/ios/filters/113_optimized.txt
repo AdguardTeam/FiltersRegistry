@@ -1,9 +1,9 @@
-! Checksum: 7A5BC6iOTsKDSGXcdvb5vw
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1787100669-14400.patch
+! Checksum: 9CrpsXtxokVwEIeMYHv9HQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1787114912-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.96.16
-! TimeUpdated: 2026-08-19T00:47:14+00:00
+! Version: 2.1.96.17
+! TimeUpdated: 2026-08-19T04:44:30+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -365,6 +365,7 @@
 ?r=*&zoneid=
 ?size=728x90|$subdocument
 ?style=300x250-
+?style=468x60-
 ?style=720x90-
 ?tag_id=*&sw_url=
 ?tgt=*&zoneid=
@@ -373,14 +374,12 @@
 ?type=ads&
 ?ufuad=
 ?zoneid=*&ab=$script
-?zoneid=*&ext=$third-party
 ?zoneid=*&placement=
 ?zoneid=*&r=
 ?zoneid=*&serve=
 ?zones=*&blockcampaign=
 _1080x90.$image
 _1140x90.
-_160-x-600_
 _250x300_
 _300-x-250_
 _300_600.
@@ -492,7 +491,6 @@ _werbebanner_
 /wp-content/themes/*/ads/*
 /wp-content/uploads/wp-banners/*
 /urlshortener.js
-/urlshortener.min.js
 /zerg-inf-multi.js
 /ai/s/s/js/m/im.js
 /ai/s/s/js/ssu.v2.js
@@ -640,7 +638,6 @@ _werbebanner_
 ||cclpub.com^$third-party
 ||cdn3.net^$third-party
 ||cfgr2.com^$third-party
-||charmix.com^$third-party
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
@@ -1683,6 +1680,7 @@ _werbebanner_
 ||flashtalking.com^$popup,third-party
 ||flixtab.com^$popup
 ||getresponse.com^$popup
+||go.epn.bz^$popup,third-party
 ||grtyi.com^$popup,third-party
 ||gsurl.in^$popup
 ||iqoption.com^$popup
@@ -2160,6 +2158,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||ekipotel.net/_pub/
 ||elahmad.com/ads/
 ||elahmad.com/js/extreme.js
+||electromenager-compare.com/images/*?nzkcheck=
 ||electromenager-compare.com/images/main/*/pub.jpg
 ||elheddaf.com/data/pub/
 ||emploitic.com/images/banners/
@@ -2459,7 +2458,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###pub_728x90-2
 ###pub_banniere_basse
 ###pub_banniere_haute
-###pub_bas
 ###pub_bottom
 ###pub_brique
 ###pub_content
@@ -2683,6 +2681,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.position_pub
 ##.promo-partenaire
 ##.pstAd
+##.pub-290x80
 ##.pub-300
 ##.pub-300-250
 ##.pub-300-250-600
@@ -2715,10 +2714,12 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pub-rotate-bottom
 ##.pub-text
 ##.pub-top
+##.pub0-if-commerciales
 ##.pub160x600
 ##.pub300
 ##.pub300250
 ##.pub300x250
+##.pub336footer
 ##.pub728
 ##.pub728x90
 ##.pubAnnouncer
@@ -2749,7 +2750,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pub_pave
 ##.pub_rm_inter_posts_forum
 ##.pub_sky
-##.pub_skyscraper
 ##.pub_slot
 ##.pub_square
 ##.pub_tag
@@ -2875,6 +2875,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##a[href*="?bz=300*250"] > img[src*=".alicdn.com/"]
 ##a[href*="?bz=725*90"] > img[src*=".alicdn.com/"]
 ##a[href^="http://repslys.com/"]
+##a[href^="https://cosmicfundboost.com/trck/"]
 ##a[href^="https://pornworks.com/fr/undress/image?utm_source="]
 ##div[data-ad]
 ##div[data-iab-tag]
@@ -2888,6 +2889,7 @@ scan-manga.com###TOPAMZ720
 lepoint.fr###WRAP_BAN_ATF
 ahlaejaba.com,net-iris.fr,orange.fr,paruvendu.fr,radio.co.ma,zalotech.com###ad
 courrierlaval.com###add_bottom
+logitheque.com###adni_widgets-2
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 matchendirect.fr###akceloTopAdArea
@@ -2903,6 +2905,7 @@ clubpoker.net###bannerTopWrapper
 lacanausurfinfo.com###banner_footer
 betaseries.com###banner_top
 cowcotland.com###bannertop
+neurozinzin.com###bigAdd
 tetesaclaques.tv###bigBox
 gratuiciel.com,logitheque.com###bloc-droite-bas-250-250
 ouest-france.fr###bloc_partenaires_sport
@@ -3010,6 +3013,7 @@ ouest-france.fr###pub_wallpaper
 histoire-pour-tous.fr###pubbott
 paris-communiques.com,plateformemedia.com###publaterale
 focus-numerique.com,lapresse.ca,les-terrains.com###pubs
+gamaniak.com###pubtopmenu
 liligo.fr###pulledbanner
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
 radio-monaco.com###responsive-banner-slider
@@ -3189,6 +3193,7 @@ allocine.fr##.main-banner
 leparisien.fr##.marketingParisien
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
+topsante.com##.menu-btn-pub
 leparisien.fr##.moduleNew300
 ouedkniss.com##.mt-4.mt-md-6.home-front-store
 tvanouvelles.ca##.multiflex-banner-sticky-wrapper
@@ -3201,7 +3206,6 @@ lecho.be##.o-hpgrid__row-sponsoredcombo
 01net.com##.od-tlc
 01net.com,journaldugeek.com##.od-wrapper
 01net.com##.offers
-rakuten.com##.offersKelkoo
 moneyvox.fr##.offre-sticky
 ruedesjoueurs.com##.offretopsite
 ouest-france.fr##.ofm-widget
@@ -3446,6 +3450,7 @@ auchan.fr##.hp-banner:has(.hp-banner__message-sponsored)
 frandroid.com##.is-hidden-mobile:has([class^="Billboard"])
 carrefour.fr##.lc-banner:has([src*="ressources.luckycart.com"])
 radio-canada.ca##.max-w-150:has(.srcPubZone)
+frandroid.com##.ops-next-mobile:has(.sponsored-label)
 laredoute.fr##.pl-product:has(.sponsoredContent_label)
 frandroid.com##.post-card:has(a[href^="https://native.humanoid.fr/"])
 fr.shopping.rakuten.com##.prd_side:has(.gtm_ads_caption)
