@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: luHTti/yx46li+1VAuehhA
-! Diff-Path: ../patches/14/14-s-1787131112-3600.patch
+! Checksum: YwZA9M3oue8IiBGA0ladbw
+! Diff-Path: ../patches/14/14-s-1787134442-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.76.21
-! TimeUpdated: 2026-08-19T09:15:18+00:00
+! Version: 2.2.76.22
+! TimeUpdated: 2026-08-19T10:10:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2562,6 +2562,9 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+breitband-aurich.de,vej-bus.de##.cookie-background:style(display: none !important;)
+breitband-aurich.de,vej-bus.de###cookie:style(display: none !important;)
+breitband-aurich.de,vej-bus.de##body:style(overflow: auto !important;)
 pixpa.com##.pixpa-cookies-wrapper
 ||widget.legalniewsieci.pl/cookie-manager/
 help.instagram.com##div[aria-label="Cookie consent"]
@@ -3606,7 +3609,7 @@ ku.edu.tr,homary.com##.cookie-policy-modal
 gronkh.tv##+js(set-local-storage-item, grnk-cookies-accepted, false)
 marubun.co.jp##+js(set-cookie, accept, true)
 tarakanov.net###privacybottom
-myphone.pl,asviva.de,groupeapocom.com###website_cookies_bar
+hammerphones.com,myphone.pl,asviva.de,groupeapocom.com###website_cookies_bar
 biography.com##div[aria-label="Privacy Disclosure: Your privacy matters to us"]
 enthub.it##+js(set-local-storage-item, cookie-consent, 0)
 app.xcloud.host,dsgners.ru,kassir.ru##.fixed.bottom-6
@@ -4890,7 +4893,7 @@ boo.world##+js(set-cookie, cookieConsentCheck, true)
 bubilet.com.tr##.mobile-cookie
 galaxus.de##body[style^="overflow:"]:style(overflow: auto !important;)
 galaxus.de###__next > div:not([class], [id]):has(> div[role="dialog"][aria-labelledby="cookieBannerTitle"]):style(display: none !important;)
-api.de##.dp--cookie-consent::before
+bgk.pl,api.de##.dp--cookie-consent::before
 piotrovsky.store##.js-popup-cookie
 samfrew.com##+js(set-local-storage-item, gdpr_consent, accepted)
 foreignaffairs.com##._gdpr-banner
@@ -17250,6 +17253,8 @@ akku-maeser.at##+js(set-cookie-reload, cookies_confirmed_1, 1)
 ! TODO: replace by the scriptlet when https://github.com/AdguardTeam/Scriptlets/issues/423
 !       will be done and products with new Scriptlets lib will be released
 !
+bgk.pl##body:style(overflow: auto !important;)
+bgk.pl##.cc-floating:style(display: none !important;)
 atlas-diamant.de##+js(set-cookie, ckies_cookielaw, allow)
 atlas-diamant.de##+js(set-cookie, ckies_google_maps, allow)
 atlas-diamant.de##+js(set-cookie, ckies_youtu, allow)
@@ -17941,6 +17946,15 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/uBlockOrigin/uAssets/issues/34163
+breitband-aurich.de,vej-bus.de#@#.cookie-content
+breitband-aurich.de,vej-bus.de#@#.cookie-notice:not(body):not(html)
+! https://nv-allesbestens.de/
+nv-allesbestens.de#@##BorlabsCookieBox
+nv-allesbestens.de#@#.cookie-box:not(body):not(html)
+@@||nv-allesbestens.de/wp-content/*/borlabs-cookie/$domain=nv-allesbestens.de
+! https://github.com/AdguardTeam/AdguardFilters/issues/238707
+bgk.pl#@#.cc-floating
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238214
 @@||cdn.cookielaw.org/consent/*.json$domain=healthline.com
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=healthline.com
@@ -64636,6 +64650,7 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+||web.eu-pl.koda.ai/web.sdk.js$domain=hammerphones.com
 chatlab.com##.rcw-widget-container
 ||turkiyegazetesi.com.tr/s/js/ai-chat.js
 asviva.de##.o-livechat-root
