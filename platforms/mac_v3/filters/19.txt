@@ -1,9 +1,9 @@
-! Checksum: 934K2Ow5MR5dDaikJNjNpA
-! Diff-Path: ../patches/19/19-s-1787141756-3600.patch
+! Checksum: Kn92oKRdDZ48ryI5EbY8lg
+! Diff-Path: ../patches/19/19-s-1787145871-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.80.97
-! TimeUpdated: 2026-08-19T12:12:23+00:00
+! Version: 2.0.80.98
+! TimeUpdated: 2026-08-19T13:21:51+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3442,6 +3442,8 @@ lenta.ru##.twz-banner
 muko.kr##.muko-aa-join
 bsky.app#%#//scriptlet('trusted-set-local-storage-item', 'welcomeModalShown', 'true')
 moviebite.cc###root > div[role="status"]
+shiopa.com##body > div[class^="fixed inset-0 z-[100]"]:has(> div.w-full > div.overflow-hidden > img[alt="Poprink Discord"])
+shiopa.com#%#//scriptlet('set-local-storage-item', 'poprink_discord_invite_seen', 'true')
 asviva.de##.asv-trust-badges
 arrowtv.net##body > div[style^="position: fixed;"]:has(> div > span > a[href^="https://discord.gg/"])
 cinezo.org##main > div[class] > div.fixed:has(> div.p-5 > div.items-start > div.flex-1 > a[href="https://arrowtv.net/"])
@@ -12870,6 +12872,7 @@ haberx.com,timeturk.com,saopaulosecreto.com,urfanatik.com,stadt-bremerhaven.de,e
 !
 ! SECTION: Subscriptions - Regular rules
 !
+suspilne.media##.l-article-content__container-inner > p:has(> a[href^="https://t.me/suspilne"])
 haber365.com##.author-social > ul:has(> span.subscribe)
 timeturk.com##form[data-newsletter]
 therokuchannel.roku.com#%#//scriptlet('trusted-set-local-storage-item', 'nudge-last-shown', '$currentISODate$')
