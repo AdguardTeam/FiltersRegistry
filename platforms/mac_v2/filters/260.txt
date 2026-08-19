@@ -1,9 +1,9 @@
-! Checksum: jGt5ebkgfY4D5dML3BMEpQ
-! Diff-Path: ../patches/260/260-s-1787157992-14400.patch
+! Checksum: ju359UU68jt4CCXwvjyL4g
+! Diff-Path: ../patches/260/260-s-1787172285-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.30
-! TimeUpdated: 2026-08-19T16:43:32+00:00
+! Version: 2.0.1.31
+! TimeUpdated: 2026-08-19T20:41:59+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -951,6 +951,12 @@ emojicombos.com###introEl > [href="https://perchance.org/ai-chat"]
 ! -- https://emojicombos.com/dot-art-generator
 ! Tip for AI icon generator
 emojicombos.com##.step-body > div:has(> [href="https://perchance.org/ai-icon-generator"])
+! ===========
+! == eVero ==
+! ===========
+! -- https://devhome.evero.net/deployments
+! Executive AI Summary tab
+devhome.evero.net##[role="tablist"] > [id$="-trigger-aisummary"]
 ! ================
 ! == Emojipedia ==
 ! ================
@@ -1289,14 +1295,6 @@ github.blog##.Button[href^="https://github.com/features/ai/github-app"]
 ! == GitHub Dev ==
 ! ================
 ! Web version of VS Code used for editing files on GitHub
-! Part of user authentication for Copilot. Affects login status shown via Copilot icon in bottom status bar.
-||api.github.com/copilot_internal/$xmlhttprequest,domain=github.dev
-! Unsure. Returns list of AI chat models.
-! Initially thoought this would break sidebar chat.
-||main.vscode-cdn.net/extensions/chat.json$xmlhttprequest,domain=github.dev
-! Not sure what this does ¯\_(ツ)_/¯
-! It gets called when codespace page is opened. Copilot Chat is still listed in extensions list.
-||marketplace.visualstudio.com/_apis/public/gallery/vscode/github/copilot-chat/$xmlhttprequest,domain=github.dev
 ! Close sidebar panel for AI chat
 ! Source Control > Changes > Message bar - "Generate Commit Message" sparkle icon
 ! * Leaves behind an an invisible box which shows "click" mouse cursor when hovered. Clicking just focuses text box though.
