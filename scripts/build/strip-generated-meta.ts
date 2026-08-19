@@ -43,7 +43,16 @@ const isGeneratedMetaLine = (line: string): boolean => {
  */
 const stripMetaFromMetadataFile = async (filePath: string): Promise<boolean> => {
     const content = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(content);
+    let data: { filters?: unknown };
+
+    try {
+        data = JSON.parse(content) as { filters?: unknown };
+    } catch (error) {
+        const reason = error instanceof Error ? ` ${error.message}` : '';
+        throw new Error(
+            `Failed to parse metadata file at ${filePath}. The file must contain valid JSON.${reason}`,
+        );
+    }
 
     if (!Array.isArray(data.filters)) {
         return false;
