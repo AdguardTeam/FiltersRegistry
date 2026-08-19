@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9cBia1iNEiC9Rnzcqj06Kw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1787120206-3600.patch
+! Checksum: LU/3mFdp+GARzgmEDmfHBQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1787124206-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.84.75
-! TimeUpdated: 2026-08-19T06:13:00+00:00
+! Version: 2.4.84.76
+! TimeUpdated: 2026-08-19T07:19:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13005,6 +13005,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238680
+tap4porn.cc#@##ad-250
+tap4porn.cc#@#.ad-unit:not(.textads)
+tap4porn.cc#@#.ad-space:not(.textads)
+tap4porn.cc#@#.ad_unit
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238593
 moviesdl.cc##.vb-adblock-wall:style(display: none !important;)
 moviesdl.cc##html.native-ads-blocked:style(overflow: auto !important;)
@@ -35190,6 +35195,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238632
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234274
 ! Fixes loading comments widget
 ! The problem is that some scripts (like script related to cookie notice) are loaded from ad scripts, so it should fixes the problem without necessity to unblock them
@@ -39847,6 +39854,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+tap4porn.cc##.vp-sidebar
 ||player.vidlove.cc/rt.js
 67movies.net##+js(set-local-storage-item, sitePrefs, false)
 curiouspatch.com##div[data-id="related_links_container"]
