@@ -1,9 +1,9 @@
-! Checksum: UzKhIVjPsCO53e+gHSah/w
-! Diff-Path: ../patches/18/18-s-1787235586-3600.patch
+! Checksum: xZokwwD21t460i2zIQ2nQg
+! Diff-Path: ../patches/18/18-s-1787239041-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.92.57
-! TimeUpdated: 2026-08-20T14:16:49+00:00
+! Version: 2.0.92.58
+! TimeUpdated: 2026-08-20T15:14:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2638,6 +2638,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+stiftung-gesundheitswissen.de#%#//scriptlet('trusted-set-cookie', 'cookiefirst-consent', '%7B%22necessary%22%3Atrue%2C%22performance%22%3Afalse%2C%22functional%22%3Afalse%2C%22advertising%22%3Atrue%2C%22timestamp%22%3A1787237054%2C%22type%22%3A%22category%22%2C%22version%22%3A%223c9484a3-8b0c-4e23-bfe2-761d99031348%22%7D')
 promocja-optivital.pl###c_banner
 promocja-optivital.pl###c_message_bg
 biker-boarder.de#%#//scriptlet('trusted-click-element', '#privacymodal button#approve_all_all')
@@ -19392,6 +19393,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238813
+@@||consent.cookiefirst.com/sites/$domain=stiftung-gesundheitswissen.de
+@@||consent.cookiefirst.com/consentBanner.js$script,domain=stiftung-gesundheitswissen.de
+@@||consent.cookiefirst.com/banner/$script,domain=stiftung-gesundheitswissen.de
 ! https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy
 @@||privacyportal.onetrust.com/request/v*/consentreceipts$domain=ssga.com
 @@||cdn.cookielaw.org/consent/*.json$domain=ssga.com
