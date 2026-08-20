@@ -80,7 +80,8 @@ const stripMetaFromMetadataFile = async (filePath: string): Promise<boolean> => 
         return false;
     }
 
-    await fs.writeFile(filePath, JSON.stringify(data, null, '\t'), 'utf8');
+    const serialized = JSON.stringify(data, null, '\t');
+    await fs.writeFile(filePath, content.endsWith('\n') ? `${serialized}\n` : serialized, 'utf8');
     return true;
 };
 
