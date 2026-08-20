@@ -1,9 +1,9 @@
-! Checksum: q7vWiuOeFaP8KseAxiLLIQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1787242488-3600.patch
+! Checksum: STgddjKs+gSZHDnUceYY2Q
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1787263934-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.76.42
-! TimeUpdated: 2026-08-20T16:11:55+00:00
+! Version: 2.2.76.43
+! TimeUpdated: 2026-08-20T22:09:22+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -13683,6 +13683,7 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com#@#.ad-container
 @@||united.uimserv.net/*tagid$domain=web.de|gmx.net|gmx.at|gmx.ch|gmx.com
 !#safari_cb_affinity
 map.naver.com#%#"use strict"; window.MutationObserver = new Proxy(window.MutationObserver, { construct(Target, Args) { let Stringified = Args[0].toString(); if (Stringified.includes('cs:') && Stringified.includes('gl:') && Stringified.includes('ne:') && Stringified.includes('dg:')) { return Reflect.construct(Target, [() => {}]); } return Reflect.construct(Target, Args); } });
+chzzk.naver.com#%#//scriptlet('trusted-suppress-native-method', 'Function.prototype.call', ' |"setRequestHeader"', 'abort')
 chzzk.naver.com#%#//scriptlet('spoof-css', '.banner_ad_wrapper', 'display', 'block')
 chzzk.naver.com#%#//scriptlet('trusted-json-set-xhr-response', 'content.playerAdDisplayResponse', 'json:{"preRoll":false,"midRoll":false}', 'content.playerAdDisplayResponse.preRoll', '/ad/display-status')
 grabify.link#%#//scriptlet('set-cookie', 'ckstp', '1')
