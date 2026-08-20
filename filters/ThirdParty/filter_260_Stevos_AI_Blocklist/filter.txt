@@ -3367,10 +3367,14 @@ realpython.com#$#.card:has([href="/mentor/"]) { visibility: hidden }
 ! == Reddit ==
 ! ============
 ! -- https://www.reddit.com/
-! Search bar - "Ask" button in top search bar (no longer used?)
-www.reddit.com##.label-container > .trailing-divider
-www.reddit.com##.label-container > .trailing-content-container.has-trailing-content
-! Search bar - "Ask" button in focused search bar
+! Search bar - Revert to pre-ai version
+! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1vrytc2/comment/p4hb8ed/
+!#if ext_ublock
+!#else
+www.reddit.com#%#//scriptlet('remove-attr', 'expanded-composer-enabled', 'reddit-search-large[expanded-composer-enabled]')
+www.reddit.com#%#//scriptlet('remove-attr', 'expanded-composer-enabled', 'reddit-search-small[expanded-composer-enabled]')
+!#endif
+! * Backup ask button for AdGuard without trusted filters
 www.reddit.com##.expanded-composer-ask-pill
 ! Search bar - Trending summaries for subreddits
 ! * Also blocks weekly viewer count. Unclear if this can be avoided.

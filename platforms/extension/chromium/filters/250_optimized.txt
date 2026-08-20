@@ -1,5 +1,5 @@
-! Checksum: HZzPLXcY2PqcJQWZqxcoPA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1787114899-14400.patch
+! Checksum: kRsldWlW0/7P3M9Z7zfm/g
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1787201265-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.41
@@ -32,9 +32,7 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-text
 drivereasy.com#?#.pakb-content p:contains(Driver Easy)
 drivereasy.com#?#.pakb-content div.info.note:contains(drivereasy.com)
-drivereasy.com#?#.pakb-content p:contains(the FREE version)
 drivereasy.com#?#.pakb-content p:contains(the Pro version)
-drivereasy.com#?#.pakb-content p:contains(click Update All)
 ||google-analytics.com^$domain=sdi-tool.org
 howtoremove.guide##[id*="newage"]
 windowsreport.com##.bnr-block
@@ -53,9 +51,11 @@ processlibrary.com##.bottom > .row:last-of-type
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 coolrom.com.au,coolrom.com##.download_link
+addons.mozilla.org#?#li.SearchResult:contains(AdsBlocker)
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
+||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
 ||githu.com^$document,domain=~you-were-likely-looking-for-github.com
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||173.208.96.42^$all
@@ -142,7 +142,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||54.210.193.115^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||54.85.113.62^$document
-||bowlingunauthorized.com^$all
 ||connatedresspint.com^$all
 /scan-update-and-protect-your-browser.html$document
 /^(https?|tcp|iquic)://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
@@ -798,6 +797,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||185.196.9.222^$all
 ||dealshik.com^$all
 ||dealslandz.com^$all
+||webhop.me^$all
 ||x2lt.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||3.220.51.12^$all
@@ -1253,6 +1253,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 drvhub.net##.driver-item__install
 |https://undefined/
 /api/rtb-pops/go^$all
+||adexone.com^$all
 ||adquint.com^$all
 ||adtube.media^$all
 ||adverttise.com^$all
@@ -1653,6 +1654,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ~pinterest.*##a[data-pin-do=buttonPin]
 ~pinterest.*##a[href*="pinterest.com/pin/find/?"]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
+~pinterest.*##a[href="#pinit"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
 ~pinterest.*##a[title="Share on Pinterest" i]
 ~pinterest.*##button[data-href*="pinterest.com/pin/create/button/"]
@@ -2104,6 +2106,7 @@ rule34.paheal.net###comment-list-recent
 rule34.xxx###comment-list
 e621.net,e926.net###comments
 ###hot-network-questions
+||arstechnica.$removeparam=comments-page
 /api/amediacomments/*
 /commentsbutton.js$domain=nettavisen.no
 www.pixiv.net##.text-left.charcoal-clickable
@@ -2406,7 +2409,6 @@ $removeparam=exactag_uk
 $removeparam=LSID
 $removeparam=affuid
 $removeparam=refclickid
-$removeparam=irclid
 $removeparam=ad_id,domain=~olx.*
 $document,removeparam=/^affSource.*$/i
 $document,removeparam=/^_s=afl_impact$/
@@ -2561,7 +2563,6 @@ $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
-ref=admitad^$document,removeparam=ref
 $removeparam=cx_testId
 $removeparam=cx_testVariant
 $removeparam=cx_artPos
@@ -2696,7 +2697,6 @@ $document,removeparam=source,denyallow=googlevideo.com,domain=1sol.io|about.gitl
 $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|marketwatch.com|penews.com
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*|lookmovie211.xyz
 $removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|blockchair.com|cancam.jp|claude.ai|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|feeder.co|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|tvtropes.org|mideacomfort.us|yandex.com
-$removeparam=keyword,domain=bindright.com|lendgo.com|reddit.app.link|vitusapotek.no
 $removeparam=id,domain=go.redirectingat.com|go.skimlinks.com|go.skimresources.com|karkkainen.com|affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 $removeparam=offer_id,domain=catch.com.au|surfshark.com
 $document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
@@ -2770,6 +2770,7 @@ $removeparam=/^asc_.*$/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ||amazon.$removeparam=hvocijid
 ||amazon.$removeparam=hvexpln
 ||amazon.$removeparam=/^_encoding=UTF.*$/
+||media-amazon.com^$removeparam=aicid
 ||bing.com/?$removeparam=/^form=.*$/i
 ||bing.$removeparam=sp
 $removeparam=sc,document,domain=bing.com|qvc.com
@@ -3233,7 +3234,6 @@ $removeparam=fm,domain=flipkart.com|shopbop.com
 ||flipkart.com^$removeparam=ssid
 ||flipkart.com^$removeparam=store
 ||flipkart.com^$removeparam=marketplace
-$removeparam=redirect_source,domain=mozilla.org|firefox.com
 ||fiverr.com^$removeparam=funnel
 ||epicgames.com^$removeparam=epic_affiliate
 ||epicgames.com^$removeparam=epic_gameId
@@ -3316,9 +3316,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
 ||dw.com^$removeparam=maca
-||fiverr.com^$removeparam=bta
-||fiverr.com^$removeparam=afp
-||fiverr.com^$removeparam=cxd_token
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
 ||walmart.$removeparam=wl11
@@ -3352,7 +3349,6 @@ $removeparam=plink,domain=audible.*
 $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
-$removeparam=tag_ids,domain=shein.com|em.dynamicyield.com
 $removeparam=adp,domain=shein.com
 $document,removeparam=feature,domain=reddit.app.link
 $removeparam=mweb_loid,domain=reddit.app.link
@@ -3375,6 +3371,7 @@ $removeparam=feature,domain=tradingview.com|musescore.com
 ||emag.ro^$removeparam=scenario_ID
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=rec,domain=argos.co.uk|roboform.com
+$removeparam=clickPR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
 $removeparam=/^cid=DSS-Affiliate.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
@@ -3389,6 +3386,7 @@ $removeparam=af,domain=1fichier.com|comodo.com
 ||ecosia.org^$removeparam=addon
 $removeparam=referralInfo,domain=wix.com
 $removeparam=locale,domain=udemy.com
+||zoho.com^$removeparam=zsrc
 ||nortonsafe.search.ask.com^$removeparam=installsource
 ||nortonsafe.search.ask.com^$removeparam=os
 ||nortonsafe.search.ask.com^$removeparam=templatecat
@@ -3472,9 +3470,6 @@ $removeparam=mar,domain=nextdoor.com
 ||verizon.com^$removeparam=campaignName
 ||verizon.com^$removeparam=campaignSource
 $removeparam=source_ve_path,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
-$removeparam=gspk,domain=notion.so|fastmail.com
-$removeparam=gsxid,domain=notion.so|fastmail.com
-$removeparam=pscd,domain=notion.so|fastmail.com
 $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com|yiyouliao.com
 ||github.com^$removeparam=ref_cta
 ||github.com^$removeparam=ref_loc
@@ -3654,7 +3649,6 @@ $removeparam=a,domain=l.clips4sale.com|tubebuddy.com
 ||l.clips4sale.com^$removeparam=o
 ||substack.com^$removeparam=triedRedirect
 $removeparam=source,domain=search.brave.com|search.brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd.onion
-||ngfiles.com^$removeparam=/^f\d{4,}=$/
 $removeparam=/^has-promotion=$/
 ||hepsiburada.com^$removeparam=ftid
 ||cloud.microsoft^$removeparam=origindomain
@@ -3713,7 +3707,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||sonarsource.com^$document,removeparam=tidelift
 ||msn.com^$removeparam=bv
 ||store.epicgames.com^$document,removeparam=epic_creator_id
-$removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set', 'GSvars.addressTracking', 'false')

@@ -1,12 +1,13 @@
 !
 ! Title: filterslists-KO classic (AdGuard)
 ! Description: AdGuard용 filterslists-KO클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20684.5
+! OriginalVersion: 2026.20685.0
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/FilteringDev/filterslists-KO
 ! Licence: https://github.com/FilteringDev/filterslists-KO/blob/master/LICENSE
 
 !#if adguard
+||go.trvdp.com^
 ||priel.co.kr^$third-party
 ||api-external.adsvani.com^
 ||cdn.adsvani.com^
@@ -1909,7 +1910,7 @@ auto.danawa.com,m.sports.chosun.com,m.sportschosun.com,m.wowtv.co.kr,m.eye.seoul
 ! ##div[class*="ad_"]
 search.zum.com,philgo.com,vop.co.kr,paxnet.co.kr##div[class*="ad_"]
 ! ##div[class*="ad-"]
-sportschosun.com,lol.ps##div[class*="ad-"]
+mt.co.kr,sportschosun.com,lol.ps##div[class*="ad-"]
 ! ##div[id^="Banner"]
 jobkorea.co.kr##div[id^="Banner"]
 ! ##section[id*="_ads_"]
@@ -1917,6 +1918,10 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 
+loawa.com##div[data-ad-placement]
+inven.co.kr##div[style*="height:"]:has(> *[class^="ad-"])
+instiz.net##table[itemtype="http://schema.org/Article"] tr:has(> td[class^="view_"] ins.adsbygoogle)
+orbi.kr##div[style^="height:"]:has(ins[data-revive-zoneid])
 m.wikitree.co.kr##div[id^="wikitree_"][style^="min-height:"]
 m.etnews.com##ul[class^="ad-"]
 etnews.com##aside[class^="ad_"]
@@ -4007,6 +4012,7 @@ m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 !
+loawa.com#%#//scriptlet('set-cookie', 'ad_popup_hide_36', '1')
 goodmorningcc.com#%#//scriptlet('prevent-window-open', 'bannerpop/popup.html')
 m.danawa.com#%#//scriptlet('set-cookie', 'hideMainBottomSheet', 'Y')
 coucounews.com#%#//scriptlet('prevent-navigation', 's.click.aliexpress.com')
@@ -4709,49 +4715,9 @@ booktoki469.com,booktoki470.com,booktoki471.com,booktoki472.com,booktoki473.com,
 !#endif
 
 !#if (adguard && adguard_app_ios)
-/^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\/[a-z0-9-_]+\./$image,domain=wfwf449.com|wfwf450.com|wfwf451.com|wfwf452.com|wfwf453.com|wfwf454.com|wfwf455.com|wfwf456.com|wfwf457.com|wfwf458.com|wfwf459.com
-||i.imgur.com^$domain=yasyadong01.tv|yasyadong02.tv|yasyadong03.tv|yasyadong04.tv|yasyadong05.tv|yasyadong06.tv|yasyadong07.tv|yasyadong08.tv|yasyadong09.tv
-manatoki469.net,manatoki470.net,manatoki471.net,manatoki472.net,manatoki473.net,manatoki474.net,manatoki475.net,manatoki476.net,manatoki477.net##[style="margin-bottom: 20px;"].row.row-15
-manatoki469.net,manatoki470.net,manatoki471.net,manatoki472.net,manatoki473.net,manatoki474.net,manatoki475.net,manatoki476.net,manatoki477.net##.basic-banner.row.row-10
-manatoki469.net,manatoki470.net,manatoki471.net,manatoki472.net,manatoki473.net,manatoki474.net,manatoki475.net,manatoki476.net,manatoki477.net##.board-tail-banner
-tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tvwiki28.com,tvwiki29.com,tvwiki30.com,tvwiki31.com,tvwiki32.com,tvwiki33.com,tvwiki34.com##div[id] > ul:has(a[href] > img[src^="/AD/"])
-tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tvwiki28.com,tvwiki29.com,tvwiki30.com,tvwiki31.com,tvwiki32.com,tvwiki33.com,tvwiki34.com##ul[class^="banner"]
-/https:\/\/tvwiki[0-9]+\.com\/AD\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
-/https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
-||hoohootv*.*/static/bnner/$domain=hoohootv310.xyz|hoohootv311.xyz|hoohootv312.xyz|hoohootv313.xyz|hoohootv314.xyz|hoohootv315.xyz|hoohootv316.xyz|hoohootv317.xyz|hoohootv318.xyz|hoohootv319.xyz|hoohootv320.xyz|hoohootv321.xyz
-/^https:\/\/cdn[a-z0-9]+\.site\/data\/banner\//$domain=tvwiki18.net|tvwiki19.net|tvwik20.net|tvwik21.net|tvwik22.net|tvwik23.net|tvwik24.net|tvwik25.net|tvwik26.net|tvwiki27.net|tvwiki28.net|tvwiki29.net|tvwiki30.net|tvwiki31.net|tvwiki32.net
-/^https:\/\/nooo[0-9]+\.tv\/theme\/renew\/img\/banner\//$domain=nooo10.tv|nooo11.tv|nooo12.tv|nooo13.tv|nooo14.tv|nooo15.tv|nooo16.tv|nooo17.tv|nooo18.tv|nooo19.tv|nooo20.tv
 !#endif
 
 !#if (adguard && adguard_ext_chromium_mv3)
-/^https:\/\/cdn[0-9]+\.cokcok\.[a-z0-9]+\/assets\/images\//$domain=cokcok15.com|cokcok16.com|cokcok17.com|cokcok18.com|cokcok19.com|cokcok20.com|cokcok21.com|cokcok22.com|cokcok23.com
-/\/data\/apms\/banner\//$domain=mato05.com|mato06.com|mato07.com|mato08.com|mato09.com|mato10.com|mato11.com|mato12.com|mato13.com|mato14.com|mato15.com|mato16.com
-/\/data\/apms\/banner\//$domain=newto05.com|newto06.com|newto07.com|newto08.com|newto09.com|newto10.com|newto11.com|newto12.com|newto13.com|newto14.com|newto15.com|newto16.com
-/\/data\/apms\/banner\//$domain=bookto05.com|bookto06.com|bookto07.com|bookto08.com|bookto09.com|bookto10.com|bookto11.com|bookto12.com|bookto13.com|bookto14.com|bookto15.com|bookto16.com
-sbxh1.com,sbxh2.com,sbxh3.com,sbxh4.com,sbxh5.com,sbxh6.com,sbxh7.com,sbxh8.com,sbxh9.com,sbxh10.com,sbxh11.com,sbxh12.com##[data-brs][data-br]
-/^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\/[a-z0-9-_]+\./$image,domain=wfwf449.com|wfwf450.com|wfwf451.com|wfwf452.com|wfwf453.com|wfwf454.com|wfwf455.com|wfwf456.com|wfwf457.com|wfwf458.com|wfwf459.com
-||i.imgur.com^$domain=yasyadong01.tv|yasyadong02.tv|yasyadong03.tv|yasyadong04.tv|yasyadong05.tv|yasyadong06.tv|yasyadong07.tv|yasyadong08.tv|yasyadong09.tv
-/^https:\/\/(www\.)?yako[0-9]+\.com\/upload\/banner\//$domain=yako01.com|yako02.com|yako03.com|yako04.com|yako05.com|yako06.com|yako07.com|yako08.com|yako09.com|yako10.com|yako11.com|yako12.com|yako13.com
-lover937.net,lover938.net,lover939.net,lover940.net,lover941.net,lover942.net,lover943.net,lover944.net,lover945.net,lover946.net#%#//scriptlet('prevent-addEventListener', 'click', 'popMagic')
-lover937.net,lover938.net,lover939.net,lover940.net,lover941.net,lover942.net,lover943.net,lover944.net,lover945.net,lover946.net#%#//scriptlet('prevent-addEventListener', 'click', 'popMagic')
-lover937.net,lover938.net,lover939.net,lover940.net,lover941.net,lover942.net,lover943.net,lover944.net,lover945.net,lover946.net##.div-over
-/lover[0-9]\.net\/file\/tohotv\/.*\.gif$domain=lover937.net|lover938.net|lover939.net|lover940.net|lover941.net|lover942.net|lover943.net|lover944.net|lover945.net|lover946.net
-/lover[0-9]\.net\/file\/1bet\/.*\.gif$domain=lover937.net|lover938.net|lover939.net|lover940.net|lover941.net|lover942.net|lover943.net|lover944.net|lover945.net|lover946.net
-/lover[0-9]\.net\/file\/eve\/.*\.png$domain=lover937.net|lover938.net|lover939.net|lover940.net|lover941.net|lover942.net|lover943.net|lover944.net|lover945.net|lover946.net
-||i.imgur.com^$domain=torrentqq381.com|torrentqq382.com|torrentqq383.com|torrentqq384.com|torrentqq385.com|torrentqq386.com|torrentqq387.com|torrentqq388.com|torrentqq389.com
-.gif$domain=torrentpi150.com|torrentpi151.com|torrentpi152.com|torrentpi153.com|torrentpi154.com|torrentpi155.com|torrentpi156.com|torrentpi157.com|torrentpi158.com|torrentpi159.com|torrentpi160.com
-||torrentpi*.com/data/file/ad/$domain=torrentpi150.com|torrentpi151.com|torrentpi152.com|torrentpi153.com|torrentpi154.com|torrentpi155.com|torrentpi156.com|torrentpi157.com|torrentpi158.com|torrentpi159.com|torrentpi160.com
-torrentbot200.site,torrentbot201.site,torrentbot202.site,torrentbot203.site,torrentbot204.site,torrentbot205.site,torrentbot206.site,torrentbot207.site,torrentbot208.site##a[href^="/go/"][target="_blank"]
-torrentbot200.site,torrentbot201.site,torrentbot202.site,torrentbot203.site,torrentbot204.site,torrentbot205.site,torrentbot206.site,torrentbot207.site,torrentbot208.site##div[id^="ad_"]
-||i.imgur.com^$domain=torrentqq390.com|torrentqq391.com|torrentqq392.com|torrentqq393.com|torrentqq394.com|torrentqq395.com|torrentqq396.com|torrentqq397.com
-torrentqq390.com,torrentqq391.com,torrentqq392.com,torrentqq393.com,torrentqq394.com,torrentqq395.com,torrentqq396.com,torrentqq397.com##.row-banner
-torrentqq390.com,torrentqq391.com,torrentqq392.com,torrentqq393.com,torrentqq394.com,torrentqq395.com,torrentqq396.com,torrentqq397.com##.at-banner
-tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tvwiki28.com,tvwiki29.com,tvwiki30.com,tvwiki31.com,tvwiki32.com,tvwiki33.com,tvwiki34.com##div[id] > ul:has(a[href] > img[src^="/AD/"])
-tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tvwiki28.com,tvwiki29.com,tvwiki30.com,tvwiki31.com,tvwiki32.com,tvwiki33.com,tvwiki34.com##ul[class^="banner"]
-/https:\/\/tvwiki[0-9]+\.com\/AD\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
-/https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
-/^https:\/\/cdn[a-z0-9]+\.site\/data\/banner\//$domain=tvwiki18.net|tvwiki19.net|tvwik20.net|tvwik21.net|tvwik22.net|tvwik23.net|tvwik24.net|tvwik25.net|tvwik26.net|tvwiki27.net|tvwiki28.net|tvwiki29.net|tvwiki30.net|tvwiki31.net|tvwiki32.net
-/^https:\/\/nooo[0-9]+\.tv\/theme\/renew\/img\/banner\//$domain=nooo10.tv|nooo11.tv|nooo12.tv|nooo13.tv|nooo14.tv|nooo15.tv|nooo16.tv|nooo17.tv|nooo18.tv|nooo19.tv|nooo20.tv
 !#endif
 ! This file contains the trusted rules
 chzzk.naver.com#%#//scriptlet('trusted-set-local-storage-item', 'homeSkinCollapsedUntil', '9999999999999')
