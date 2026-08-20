@@ -3402,8 +3402,14 @@ www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-a
 ! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
 ! AI-linked keywords in comments
 ! * Based on https://www.reddit.com/r/uBlockOrigin/comments/1vt6sgy/comment/p4rdpz2/
-www.reddit.com#$#[slot="comment"] [href^="/answers/"] {  pointer-events: none !important; border: none !important; color: inherit !important;  }
-www.reddit.com##[slot="comment"] [href^="/answers/"] > span:has(> [icon-name="search-sparkle"])
+www.reddit.com#$#[slot="comment"] p > a.border-dotted { border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important; }
+www.reddit.com##[slot="comment"] p > a.border-dotted > span:has(> [icon-name="search-sparkle"])
+!#if ext_ublock
+!#else
+www.reddit.com#%#//scriptlet('remove-attr', 'href', '[slot="comment"] p > a.border-dotted')
+! * backup if trusted filters are not enabled
+www.reddit.com#$#[slot="comment"] p > a.border-dotted[href^="/answers/"] { pointer-events: none !important; }
+!#endif
 
 ! -- Advertisements
 ! Post feed

@@ -1,8 +1,8 @@
-! Checksum: J74Ye5vz5dUZZhKgeM728g
+! Checksum: MYBPP6MSxXqXX9K+esEKYg
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.34
-! TimeUpdated: 2026-08-20T12:46:33+00:00
+! Version: 2.0.1.35
+! TimeUpdated: 2026-08-20T16:45:14+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -2931,8 +2931,11 @@ www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-a
 ! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
 ! AI-linked keywords in comments
 ! * Based on https://www.reddit.com/r/uBlockOrigin/comments/1vt6sgy/comment/p4rdpz2/
-www.reddit.com#$#[slot="comment"] [href^="/answers/"] {  pointer-events: none !important; border: none !important; color: inherit !important;  }
-www.reddit.com##[slot="comment"] [href^="/answers/"] > span:has(> [icon-name="search-sparkle"])
+www.reddit.com#$#[slot="comment"] p > a.border-dotted { border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important; }
+www.reddit.com##[slot="comment"] p > a.border-dotted > span:has(> [icon-name="search-sparkle"])
+www.reddit.com#%#//scriptlet('remove-attr', 'href', '[slot="comment"] p > a.border-dotted')
+! * backup if trusted filters are not enabled
+www.reddit.com#$#[slot="comment"] p > a.border-dotted[href^="/answers/"] { pointer-events: none !important; }
 ! -- Advertisements
 ! Post feed
 www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title*="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"])
