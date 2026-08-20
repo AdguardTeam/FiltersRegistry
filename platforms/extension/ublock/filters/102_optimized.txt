@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: EX3nw2gZtNO4+ZICVS8AIA
-! Diff-Path: ../patches/102_optimized/102_optimized-s-1787187018-14400.patch
+! Checksum: NIfCqS4dBk5i7ZP2273kJA
+! Diff-Path: ../patches/102_optimized/102_optimized-s-1787230167-14400.patch
 ! Title: ABPindo (Optimized)
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.10.30
-! TimeUpdated: 2026-08-20T00:46:43+00:00
+! Version: 2.0.10.31
+! TimeUpdated: 2026-08-20T12:45:31+00:00
 ! Expires: 5 days (update frequency)
 ||accesstrade.co.id^$3p
 ||ad-loupe.com^$3p
@@ -121,7 +121,9 @@
 ||c-stat.eu^$3p
 ||cdnfgo.xyz^$3p
 ||code.global.giraff.io^$3p
+||embed.dugout.com^$3p
 ||enakslot.bio^$3p
+||gamma.cachefly.net/js/ad-exchange.js$3p
 ||gaza-88.com^$3p
 ||goid.space^$3p
 ||goratu.site^$3p
@@ -143,6 +145,7 @@
 ||rts.gdn^$3p
 ||safelinkearn.com^$3p
 ||sbobet.host^$3p
+||scripts.jixie.media^$3p
 ||shortbioo.com^$all
 ||statics1.tceru134gsur.ru^$3p
 ||sv.sleeklyyallaer.com^$3p
@@ -1136,6 +1139,7 @@ jalantikus.com###betweenParagraphFirstad300container00div-gpt-ad-1569380311053-0
 jalantikus.com###betweenParagraphNewmobilead300container00div-gpt-ad-1569380311053-0
 beritasatu.com,cnnindonesia.com,detik.com###billboard
 bioskop78.com,cnbcindonesia.com,detik.com###billboard_banner
+indosport.com###billboardad
 tirto.id###bkgOverlay
 hariankota.com###block-24 > .size-full.wp-block-image
 tirto.id###bn-premium
@@ -1199,6 +1203,7 @@ bioskop90.com###floating_banner_left
 bioskop90.com###floating_banner_right
 baladfilm.*,northridgeautospa.com,spucweb.com###floating_banner_top1
 bioskop78.com,nonton33.com###floating_banner_tops
+indosport.com###flyingcarpet-ad
 bareksa.com###footer_sticky
 gadgetren.com###footer_sticky_inside
 mamikos.com###footer_stickyexp
@@ -1404,8 +1409,11 @@ cantika.com##.ads-side-250
 cantika.com##.ads-side-600
 beautynesia.id,cnnindonesia.com,detik.com,disway.id,haibunda.com##.ads-slot
 theasianparent.com##.ads-slot-wrapper
+infotangerang.co.id##.ads-sticky-bottom
 inibaru.id##.ads-sticky-left
 inibaru.id##.ads-sticky-right
+infotangerang.id##.ads-sticky.ads-sticky-left
+infotangerang.id##.ads-sticky.ads-sticky-right
 optika.id##.ads-top-header-parallax-scroll-to-continue
 codingcertification.org##.ads-video-iklan
 thesmartlocal.my##.ads-wrapper
@@ -1537,7 +1545,7 @@ shinigami.*##.bg-base-card:has(img[alt*="-ad-"])
 inibaru.id##.bg-grey.text-center.p-0.mb-3.mt-3
 oploverz.*##.bg-opacity-70.bg-black.rounded-lg
 bharian.com.my##.bh-ad
-ceklissatu.com,goaceh.id##.billboard
+ceklissatu.com,goaceh.id,infotangerang.co.id,infotangerang.id##.billboard
 detik.com##.billboard-top
 thevocket.com##.billboard-wrap
 bisnis.com##.billboardBig.billboard
@@ -1664,7 +1672,7 @@ v7.kiryuu.to##.floating-ads
 kuramanime.*##.floating__footer
 nontonanimeid.*##.floating_footer
 okezone.com##.flying_ads
-katadata.co.id,kompas.com,optika.id##.flying_carpet_div
+indosport.com,katadata.co.id,kompas.com,optika.id##.flying_carpet_div
 bisnis.com,tek.id##.flying_carpet_show
 tek.id##.flying_carpet_show_fix
 bisnis.com,tek.id##.flying_carpet_show_inner
@@ -1731,6 +1739,7 @@ shinigami09.*,shinigami09.com##.iklannew-container
 cantika.com##.ikln
 animeindo.video##.in_up_ad-area
 cantika.com##.inner-ads-content-1
+infodesanews.com##.inner-floatbanner-bottom
 ulasan.co##.inner-floatleft
 ulasan.co##.inner-floatright
 elshinta.com##.inside-post-ad
@@ -1832,7 +1841,12 @@ kompas.com##.native-wrap
 dream.co.id##.nativescrollingKLYsticky-inner-video-iframe
 indomerdeka.com##.navbar-main-ads
 wowkeren.com##.ne-banner-layout1
-beritatotabuan.com##.newkarma-core-topbanner
+infodesanews.com##.newkarma-core-banner-aftercontent
+infodesanews.com##.newkarma-core-banner-beforecontent
+infodesanews.com##.newkarma-core-banner-insidecontent
+infodesanews.com##.newkarma-core-floatbanner-left
+infodesanews.com##.newkarma-core-floatbanner-right
+beritatotabuan.com,infodesanews.com##.newkarma-core-topbanner
 dailysocial.id##.news__detail-ads
 jurnalisindonesia.id##.nkt__stick
 grid.id,motorplus-online.com##.nkt__stick--left
@@ -1857,12 +1871,13 @@ gooto.com,tempo.co##.parallax-box
 infopublik.co,tangerangnews.co.id,tribunrakyat.com##.parallax.billboard
 haibunda.com##.parallax1
 republika.co.id##.parallax__container
-detik.com##.parallax_abs
-medcom.id##.parallax_ads
+detik.com,indosport.com##.parallax_abs
+indosport.com,medcom.id##.parallax_ads
+indosport.com##.parallax_fix
 beritasiber.com##.parallaxads
 beritasiber.com##.parallaxads-box
 cnnindonesia.com,detik.com,haibunda.com##.parallaxindetail
-tribunrakyat.com##.parallxads
+infotangerang.co.id,tribunrakyat.com##.parallxads
 narasi.tv##.pb-6.billboard
 insertlive.com##.pb-8 > .md\:px-4\.5.md\:max-w-7xl.mx-auto.relative.w-full
 bgibola.com##.pc-only.inline-banner
@@ -1954,7 +1969,7 @@ beritasiber.com##.sticky-ads-bottom
 kompas.com##.sticky-ads-close
 goaceh.id##.sticky-ads-left
 goaceh.id##.sticky-ads-right
-100kpj.com##.sticky-bottom
+100kpj.com,indosport.com##.sticky-bottom
 inews.id##.stickyAds
 jpnn.com,medcom.id##.sticky_bottom
 kabargames.id##.stickybanner
@@ -2202,12 +2217,15 @@ herworld.co.id##p:nth-of-type(2)
 jpnn.com##section.leaderboard
 jakartaglobe.id##style + .mt-2
 pojoksatu.id###gpt-passback-p5
-pojoksatu.id##.ads__stick--left
-pojoksatu.id##.ads__stick--right
+indonesians.id##.ads__box
+indonesians.id##.ads__horizontal
+indonesians.id,pojoksatu.id##.ads__stick--left
+indonesians.id,pojoksatu.id##.ads__stick--right
 pojoksatu.id##.ads__stick__fluid
 pojoksatu.id##.ads__sticky__bottom
-pojoksatu.id##.ads__sticky__bottom__wrapper
-pojoksatu.id##.ads__top
+indonesians.id,pojoksatu.id##.ads__sticky__bottom__wrapper
+indonesians.id,pojoksatu.id##.ads__top
+indonesians.id##.ads__tower
 pojoksatu.id##.flying_carpet_div
 pojoksatu.id##.sticky_bottom
 seputarforex.com,seputarforex.org##.siklmax
