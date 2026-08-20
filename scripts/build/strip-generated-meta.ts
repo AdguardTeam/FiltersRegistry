@@ -40,7 +40,7 @@ const isGeneratedMetaLine = (line: string): boolean => {
  * @returns True if every item in the array is a non-null object.
  */
 const isRecordArray = (value: unknown[]): value is Record<string, unknown>[] => {
-    return value.every((item) => typeof item === 'object' && item !== null);
+    return value.every((item) => typeof item === 'object' && item !== null && !Array.isArray(item));
 };
 
 /**
