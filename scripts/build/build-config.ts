@@ -142,15 +142,6 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         };
     }
 
-    if (
-        flags.includedFilterIDs.length > 0 && flags.excludedFilterIDs.length > 0
-    ) {
-        return {
-            type: 'error',
-            message: `Error: --include and --skip are mutually exclusive.\n${hint}`,
-        };
-    }
-
     return null;
 }
 

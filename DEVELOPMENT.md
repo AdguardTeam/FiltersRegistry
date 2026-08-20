@@ -206,7 +206,9 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 The following flags can be used with `yarn build` and `yarn build:local`:
 
 - `-i=`, `--include=` — comma-separated filter IDs to build (e.g., `--include=1,2,3`)
-- `-s=`, `--skip=` — comma-separated filter IDs to exclude (e.g., `--skip=12,24`)
+- `-s=`, `--skip=` — comma-separated filter IDs to exclude (e.g., `--skip=12,24`).
+  Can be combined with `--include`: a filter is built only if it's in `--include`
+  and not in `--skip`.
 - `--report=` — custom report file name (e.g., `--report='report-adguard.txt'`)
 - `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
 - `--strip-generated-meta` — remove volatile metadata lines from built files
@@ -214,8 +216,8 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--generate-cache` — compile filters to update the `filter.txt` cache only
 - `--download-stats` — downloads per-filter `stats.json` files for the filters being built,
   without recompiling `filter.txt`. Existing `stats.json` files are overwritten.
-  Use `--include` or `--skip` to scope which filters are downloaded (not both
-  at once); `--strip-generated-meta` and `--no-patches-prepare` error here,
+  Use `--include` and/or `--skip` to scope which filters are downloaded;
+  `--strip-generated-meta` and `--no-patches-prepare` error here,
   since neither applies to a run that produces no platform output
 
 **Valid combinations:**
@@ -239,6 +241,7 @@ yarn build --strip-generated-meta
 # Combined examples
 yarn build --include=1,2,3 --no-patches-prepare --strip-generated-meta
 yarn build:local --skip=12,24 --report='report.txt' --strip-generated-meta
+yarn build --include=1,2,3 --skip=2
 
 # Cache generation with filter selection
 yarn build --generate-cache
@@ -259,12 +262,6 @@ yarn build --download-stats --skip=12,24
 yarn build --use-cache --generate-cache
 yarn build --use-cache --download-stats
 yarn build --generate-cache --download-stats
-
-# --include and --skip are mutually exclusive → script exits with error
-yarn build --generate-cache --include=1,2,3 --skip=2
-yarn build --download-stats --include=1,2,3 --skip=2
-yarn build --use-cache --include=1,2,3 --skip=2
-yarn build --include=1,2,3 --skip=2
 
 # --generate-cache exits early; these flags are incompatible → script exits with error
 yarn build --generate-cache --strip-generated-meta
