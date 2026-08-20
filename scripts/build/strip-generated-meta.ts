@@ -52,16 +52,15 @@ const isRecordArray = (value: unknown[]): value is Record<string, unknown>[] => 
  */
 const stripMetaFromMetadataFile = async (filePath: string): Promise<boolean> => {
     const content = await fs.readFile(filePath, 'utf8');
-    let data: { filters?: unknown };
-
-    try {
-        data = JSON.parse(content) as { filters?: unknown };
-    } catch (error) {
-        const reason = error instanceof Error ? ` ${error.message}` : '';
-        throw new Error(
-            `Failed to parse metadata file at ${filePath}. The file must contain valid JSON.${reason}`,
-        );
+    if (typeof content !== 'string' ) {
+        return false;
     }
+
+    const parsed = JSON.parse(content) as unknown;
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+        return false;
+    }
+    const data = parsed as { filters?: unknown };
 
     if (!Array.isArray(data.filters) || !isRecordArray(data.filters)) {
         return false;
