@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.85.0",
-			"timeUpdated": "2026-08-20T09:13:58+0000",
+			"version": "2.4.85.1",
+			"timeUpdated": "2026-08-20T10:10:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.35.33",
-			"timeUpdated": "2026-08-18T08:13:15+0000",
+			"version": "2.0.35.34",
+			"timeUpdated": "2026-08-20T10:11:33+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.31.94",
-			"timeUpdated": "2026-08-20T08:15:53+0000",
+			"version": "2.1.31.95",
+			"timeUpdated": "2026-08-20T10:11:51+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -1379,44 +1379,6 @@
 				18
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/124.txt"
-		},
-		{
-			"filterId": 200,
-			"name": "(Obsolete) ABP Japanese Filters",
-			"description": "日本語",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://code.google.com/p/adblock-plus-japanese-filter/",
-			"expires": 432000,
-			"displayNumber": 100,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/k2jp/abp-japanese-filters/master/abpjf.txt",
-			"platformsExcluded": [
-				"android",
-				"cli",
-				"ext_chromium",
-				"ext_chromium_mv3",
-				"ext_edge",
-				"ext_ff",
-				"ext_opera",
-				"ext_opera_mv3",
-				"ext_safari",
-				"ext_ublock",
-				"ios",
-				"mac",
-				"windows"
-			],
-			"trustLevel": "low",
-			"version": "2.0.0.98",
-			"timeUpdated": "2026-08-19T20:18:03+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				2,
-				14,
-				45
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/200.txt"
 		},
 		{
 			"filterId": 201,
