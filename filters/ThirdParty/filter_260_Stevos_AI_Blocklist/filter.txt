@@ -1361,10 +1361,7 @@ github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has([href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
-!#if ext_ublock
-!#else
-github.com#%#//scriptlet('json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch')
-!#endif
+! * JSONPath v2 compatible
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
@@ -2011,12 +2008,7 @@ www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_camp
 ! Search bar - AI button (magnifying glass icon, mobile only)
 www.google.*##.xOchs
 ! Autocomplete suggestions
-!#if ext_ublock
-!#endif
-!#if adguard
-www.google.*#%#//scriptlet('ubo-json-prune', '$.*.*[?@.zp.udm=="50"]')
-www.google.*#%#//scriptlet('ubo-json-prune', '$.*[?@[?@.zf==86]]')
-!#endif
+! * JSONPath v2 compatible
 ! * Backup cosmetic filter for mobile
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 

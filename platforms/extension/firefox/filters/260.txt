@@ -1,9 +1,9 @@
-! Checksum: PBPTS1AbVto2vlOJJ/7S3g
-! Diff-Path: ../patches/260/260-s-1787273425-14400.patch
+! Checksum: mDsrfmD8xA9Hqrzgw1nmCQ
+! Diff-Path: ../patches/260/260-s-1787287675-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.37
-! TimeUpdated: 2026-08-21T00:48:13+00:00
+! Version: 2.0.1.38
+! TimeUpdated: 2026-08-21T04:45:28+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1191,7 +1191,7 @@ github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has([href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
-github.com#%#//scriptlet('json-prune-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch')
+! * JSONPath v2 compatible
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
@@ -1752,8 +1752,7 @@ www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_camp
 ! Search bar - AI button (magnifying glass icon, mobile only)
 www.google.*##.xOchs
 ! Autocomplete suggestions
-www.google.*#%#//scriptlet('ubo-json-prune', '$.*.*[?@.zp.udm=="50"]')
-www.google.*#%#//scriptlet('ubo-json-prune', '$.*[?@[?@.zf==86]]')
+! * JSONPath v2 compatible
 ! * Backup cosmetic filter for mobile
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 ! -- https://www.google.com/search?q=Why+are+we+here
