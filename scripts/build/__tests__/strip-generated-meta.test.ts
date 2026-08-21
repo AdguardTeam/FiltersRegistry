@@ -171,4 +171,20 @@ describe('stripGeneratedMetaFromDir', () => {
         const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root_clean', 'platforms'));
         expect(modified).toBe(0);
     });
+
+    it('throws and leaves the file untouched when filters.json contains invalid JSON', async () => {
+        const platformDir = path.join(testDir, 'json_root_invalid', 'platforms', 'cli');
+        await fs.mkdir(platformDir, { recursive: true });
+
+        const jsonFile = path.join(platformDir, 'filters.json');
+        const invalidContent = '{ "filters": [ invalid json here';
+        await fs.writeFile(jsonFile, invalidContent, 'utf8');
+
+        await expect(
+            stripGeneratedMetaFromDir(path.join(testDir, 'json_root_invalid', 'platforms')),
+        ).rejects.toThrow(/Failed to parse metadata file/);
+
+        const contentAfter = await fs.readFile(jsonFile, 'utf8');
+        expect(contentAfter).toBe(invalidContent);
+    });
 });
