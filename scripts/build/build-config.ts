@@ -86,6 +86,24 @@ export function parseFlags(argv: string[]): BuildFlags {
 export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; message: string } | null {
     const hint = 'See Command Compatibility in DEVELOPMENT.md for valid combinations.';
 
+    /**
+     * Builds an incompatibility error for flags ignored alongside a given output-skipping flag.
+     */
+    const buildIncompatibilityError = (
+        ignored: string[],
+        withFlag: string,
+    ): { type: 'error'; message: string } => {
+        const flagsStr = ignored.join(' and ');
+        const verb = ignored.length > 1 ? 'are' : 'is';
+        const msg = `Error: ${flagsStr} ${verb} incompatible with `
+            + `${withFlag}, which does not produce platform output.`;
+
+        return {
+            type: 'error',
+            message: `${msg}\n${hint}`,
+        };
+    };
+
     if (flags.useCache && flags.generateCache) {
         return {
             type: 'error',
@@ -112,15 +130,7 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         if (flags.stripGeneratedMeta) ignored.push('--strip-generated-meta');
         if (flags.noPatchesPrepare) ignored.push('--no-patches-prepare');
 
-        const flagsStr = ignored.join(' and ');
-        const verb = ignored.length > 1 ? 'are' : 'is';
-        const msg = `Error: ${flagsStr} ${verb} incompatible with `
-            + '--generate-cache, which does not produce platform output.';
-
-        return {
-            type: 'error',
-            message: `${msg}\n${hint}`,
-        };
+        return buildIncompatibilityError(ignored, '--generate-cache');
     }
 
     if (
@@ -131,15 +141,8 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         if (flags.stripGeneratedMeta) ignored.push('--strip-generated-meta');
         if (flags.noPatchesPrepare) ignored.push('--no-patches-prepare');
         if (flags.rawReportPath) ignored.push('--report');
-        const flagsStr = ignored.join(' and ');
-        const verb = ignored.length > 1 ? 'are' : 'is';
-        const msg = `Error: ${flagsStr} ${verb} incompatible with `
-            + '--download-stats, which does not produce platform output.';
 
-        return {
-            type: 'error',
-            message: `${msg}\n${hint}`,
-        };
+        return buildIncompatibilityError(ignored, '--download-stats');
     }
 
     return null;
