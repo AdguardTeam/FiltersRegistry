@@ -176,7 +176,10 @@ const buildFilters = async () => {
         );
     } catch (error) {
         if (useCache && error instanceof OptimizationStatsError) {
-            throw new Error('Run --download-stats to download the latest statistics.', { cause: error });
+            throw new Error(
+                `Run --download-stats to download the latest statistics. (${error.message})`,
+                { cause: error },
+            );
         }
         throw error;
     } finally {

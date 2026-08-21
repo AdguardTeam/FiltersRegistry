@@ -1,7 +1,7 @@
 import {
     describe, it, vi, expect, beforeEach, afterEach, beforeAll, afterAll,
 } from 'vitest';
-import { compile, localOptimizationStatistics } from '@adguard/filters-compiler';
+import { compile, localOptimizationStatistics, OptimizationStatsError } from '@adguard/filters-compiler';
 import os from 'os';
 import path from 'path';
 import fs from 'fs/promises';
@@ -192,6 +192,40 @@ describe('build.js: cache flag handling', () => {
         });
         expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedLocalOptimizationConfigPath);
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
+    });
+
+    it('--use-cache with missing stats.json: rethrows with --download-stats hint, keeps original message', async () => {
+        vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(true),
+        }));
+
+        const VIRTUAL_STATS_PATH = '/tmp/stats.json';
+
+        vi.doMock('@adguard/filters-compiler', () => ({
+            compile: vi.fn().mockRejectedValue(
+                new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH),
+            ),
+            localOptimizationStatistics: {
+                download: vi.fn().mockResolvedValue(undefined),
+                use: vi.fn(),
+                reset: vi.fn().mockResolvedValue(undefined),
+            },
+            OptimizationStatsError,
+        }));
+        process.argv = ['node', 'build.js', '--use-cache'];
+
+        const rejection = new Promise<unknown>((resolve) => {
+            process.once('unhandledRejection', resolve);
+            process.once('uncaughtException', resolve);
+        });
+        await import('../build.js');
+        const error = await rejection;
+
+        expect(error).toBeInstanceOf(Error);
+        expect((error as Error).message).toBe(
+            'Run --download-stats to download the latest statistics. '
+            + `(${new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH).message})`,
+        );
     });
 });
 
