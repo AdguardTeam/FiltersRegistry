@@ -1,9 +1,9 @@
-! Checksum: agtfyT+XTTw6V49f6GGaow
-! Diff-Path: ../patches/6/6-s-1787303974-3600.patch
+! Checksum: EZktJCttzoBupeP8nqwk5g
+! Diff-Path: ../patches/6/6-s-1787310834-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.3
-! TimeUpdated: 2026-08-21T09:16:12+00:00
+! Version: 2.0.53.4
+! TimeUpdated: 2026-08-21T11:10:13+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -372,6 +372,8 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238435
+wowtv.de#%#//scriptlet('set-constant', 'window.CONFIGURATION.features.enableAdBlockerDetection', 'false')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238226
 stadt-bremerhaven.de###cb-adblock-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238166
@@ -1509,6 +1511,7 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+wowtv.de#%#//scriptlet('set-constant', 'window.CONFIGURATION.adInsertion.enabled', 'false')
 ||meetingpoint-jl.de/uploads/*/ads/
 meetingpoint-jl.de##.p-adcol:not(:has(> div.weather-widget))
 meetingpoint-jl.de##.p-adcol > div.weather-widget ~ [class^="ad-"]
