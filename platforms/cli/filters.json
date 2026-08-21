@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.19",
-			"timeUpdated": "2026-08-20T14:15:48+0000",
+			"version": "2.1.8.20",
+			"timeUpdated": "2026-08-21T05:13:17+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.85.18",
-			"timeUpdated": "2026-08-21T04:16:59+0000",
+			"version": "2.4.85.19",
+			"timeUpdated": "2026-08-21T05:13:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.31.39",
-			"timeUpdated": "2026-08-20T16:11:27+0000",
+			"version": "2.1.31.40",
+			"timeUpdated": "2026-08-21T05:13:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.76.46",
-			"timeUpdated": "2026-08-21T04:17:45+0000",
+			"version": "2.2.76.47",
+			"timeUpdated": "2026-08-21T05:14:26+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -710,8 +710,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.13.89",
-			"timeUpdated": "2026-08-19T10:10:48+0000",
+			"version": "2.0.13.90",
+			"timeUpdated": "2026-08-21T05:14:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.81.15",
-			"timeUpdated": "2026-08-21T04:17:57+0000",
+			"version": "2.0.81.16",
+			"timeUpdated": "2026-08-21T05:14:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -840,8 +840,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.9.17",
-			"timeUpdated": "2026-08-17T09:18:53+0000",
+			"version": "2.0.9.18",
+			"timeUpdated": "2026-08-21T05:14:42+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
