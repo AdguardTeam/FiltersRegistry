@@ -160,6 +160,38 @@ describe('stripGeneratedMetaFromDir', () => {
         });
     });
 
+    it('preserves tab indentation and trailing-newline from filters.json and filters.js', async () => {
+        const preservedFilter = { filterId: 1, name: 'Test filter' };
+        const metadata = {
+            groups: [],
+            tags: [],
+            filters: [{ ...preservedFilter, version: '2.1.8.0', timeUpdated: '2026-08-10T18:21:50+0000' }],
+        };
+        const expectedSerialized = JSON.stringify({ ...metadata, filters: [preservedFilter] }, null, '\t');
+
+        const cases = [
+            { dirName: 'json_root_raw_no_newline', hasTrailingNewline: false },
+            { dirName: 'json_root_raw_with_newline', hasTrailingNewline: true },
+        ];
+
+        await Promise.all(cases.map(async ({ dirName, hasTrailingNewline }) => {
+            const platformsDir = path.join(testDir, dirName, 'platforms');
+            const platformDir = path.join(platformsDir, 'cli');
+            await fs.mkdir(platformDir, { recursive: true });
+
+            const serialized = JSON.stringify(metadata, null, '\t');
+            const content = hasTrailingNewline ? `${serialized}\n` : serialized;
+
+            const jsonFilePath = path.join(platformDir, 'filters.json');
+            await fs.writeFile(jsonFilePath, content, 'utf8');
+
+            await stripGeneratedMetaFromDir(platformsDir);
+
+            const rawContent = await fs.readFile(jsonFilePath, 'utf8');
+            expect(rawContent).toBe(hasTrailingNewline ? `${expectedSerialized}\n` : expectedSerialized);
+        }));
+    });
+
     it('returns 0 for filters.json/filters.js with no version/timeUpdated fields', async () => {
         const platformDir = path.join(testDir, 'json_root_clean', 'platforms', 'cli');
         await fs.mkdir(platformDir, { recursive: true });
