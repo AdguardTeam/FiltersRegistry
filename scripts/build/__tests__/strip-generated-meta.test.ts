@@ -187,4 +187,59 @@ describe('stripGeneratedMetaFromDir', () => {
         const contentAfter = await fs.readFile(jsonFile, 'utf8');
         expect(contentAfter).toBe(invalidContent);
     });
+
+    it('returns 0 and leaves the file untouched when the filters field is missing, null, or not an array', async () => {
+        const cases = [
+            { dirName: 'json_root_missing_filters', metadata: { groups: [], tags: [] } },
+            { dirName: 'json_root_null_filters', metadata: { groups: [], tags: [], filters: null } },
+            { dirName: 'json_root_nonarray_filters', metadata: { groups: [], tags: [], filters: 'not-an-array' } },
+        ];
+
+        await Promise.all(cases.map(async ({ dirName, metadata }) => {
+            const platformDir = path.join(testDir, dirName, 'platforms', 'cli');
+            await fs.mkdir(platformDir, { recursive: true });
+
+            const jsonFile = path.join(platformDir, 'filters.json');
+            const content = JSON.stringify(metadata, null, '\t');
+            await fs.writeFile(jsonFile, content, 'utf8');
+
+            const modified = await stripGeneratedMetaFromDir(path.join(testDir, dirName, 'platforms'));
+            expect(modified).toBe(0);
+
+            const contentAfter = await fs.readFile(jsonFile, 'utf8');
+            expect(contentAfter).toBe(content);
+        }));
+    });
+
+    it('returns 0 and leaves the file untouched when filters array entries are null or arrays', async () => {
+        const platformDir = path.join(testDir, 'json_root_bad_entries', 'platforms', 'cli');
+        await fs.mkdir(platformDir, { recursive: true });
+
+        const metadata = { groups: [], tags: [], filters: [null, ['nested', 'array']] };
+        const jsonFile = path.join(platformDir, 'filters.json');
+        const content = JSON.stringify(metadata, null, '\t');
+        await fs.writeFile(jsonFile, content, 'utf8');
+
+        const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root_bad_entries', 'platforms'));
+        expect(modified).toBe(0);
+
+        const contentAfter = await fs.readFile(jsonFile, 'utf8');
+        expect(contentAfter).toBe(content);
+    });
+
+    it('returns 0 and leaves the file untouched when the filters array is empty', async () => {
+        const platformDir = path.join(testDir, 'json_root_empty_filters', 'platforms', 'cli');
+        await fs.mkdir(platformDir, { recursive: true });
+
+        const metadata = { groups: [], tags: [], filters: [] };
+        const jsonFile = path.join(platformDir, 'filters.json');
+        const content = JSON.stringify(metadata, null, '\t');
+        await fs.writeFile(jsonFile, content, 'utf8');
+
+        const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root_empty_filters', 'platforms'));
+        expect(modified).toBe(0);
+
+        const contentAfter = await fs.readFile(jsonFile, 'utf8');
+        expect(contentAfter).toBe(content);
+    });
 });
