@@ -75,10 +75,10 @@ describe('stripGeneratedMetaFromDir', () => {
         // - old baseline copy (temp/platforms/)
         // and both need to be stripped consistently.
 
-        const oldRoot = path.join(testDir, 'old_root', 'platforms');
-        const newRoot = path.join(testDir, 'new_root', 'platforms');
-        const oldDir = path.join(oldRoot, 'filters');
-        const newDir = path.join(newRoot, 'filters');
+        const oldRootDir = path.join(testDir, 'old_root', 'platforms');
+        const newRootDir = path.join(testDir, 'new_root', 'platforms');
+        const oldDir = path.join(oldRootDir, 'filters');
+        const newDir = path.join(newRootDir, 'filters');
 
         await fs.mkdir(oldDir, { recursive: true });
         await fs.mkdir(newDir, { recursive: true });
@@ -93,22 +93,22 @@ describe('stripGeneratedMetaFromDir', () => {
             '',
         ].join('\n');
 
-        const oldFile = path.join(oldDir, 'test.txt');
-        const newFile = path.join(newDir, 'test.txt');
+        const oldFilePath = path.join(oldDir, 'test.txt');
+        const newFilePath = path.join(newDir, 'test.txt');
 
-        await fs.writeFile(oldFile, content, 'utf8');
-        await fs.writeFile(newFile, content, 'utf8');
+        await fs.writeFile(oldFilePath, content, 'utf8');
+        await fs.writeFile(newFilePath, content, 'utf8');
 
         // Strip from both directories as build.js does when --strip-generated-meta is set
-        const newCount = await stripGeneratedMetaFromDir(newRoot);
-        const oldCount = await stripGeneratedMetaFromDir(oldRoot);
+        const newCount = await stripGeneratedMetaFromDir(newRootDir);
+        const oldCount = await stripGeneratedMetaFromDir(oldRootDir);
 
         expect(newCount).toBe(1);
         expect(oldCount).toBe(1);
 
         // Verify both files are identically stripped
-        const oldContent = await fs.readFile(oldFile, 'utf8');
-        const newContent = await fs.readFile(newFile, 'utf8');
+        const oldContent = await fs.readFile(oldFilePath, 'utf8');
+        const newContent = await fs.readFile(newFilePath, 'utf8');
 
         expect(oldContent).toBe(newContent);
         expect(oldContent.includes('! Checksum:')).toBe(false);
@@ -137,19 +137,19 @@ describe('stripGeneratedMetaFromDir', () => {
             ],
         };
 
-        const jsonFile = path.join(platformDir, 'filters.json');
-        const jsFile = path.join(platformDir, 'filters.js');
+        const jsonFilePath = path.join(platformDir, 'filters.json');
+        const jsFilePath = path.join(platformDir, 'filters.js');
         const content = JSON.stringify(metadata, null, '\t');
 
-        await fs.writeFile(jsonFile, content, 'utf8');
-        await fs.writeFile(jsFile, content, 'utf8');
+        await fs.writeFile(jsonFilePath, content, 'utf8');
+        await fs.writeFile(jsFilePath, content, 'utf8');
 
         const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root', 'platforms'));
 
         expect(modified).toBe(2);
 
-        const jsonContent = JSON.parse(await fs.readFile(jsonFile, 'utf8'));
-        const jsContent = JSON.parse(await fs.readFile(jsFile, 'utf8'));
+        const jsonContent = JSON.parse(await fs.readFile(jsonFilePath, 'utf8'));
+        const jsContent = JSON.parse(await fs.readFile(jsFilePath, 'utf8'));
 
         [jsonContent, jsContent].forEach((data) => {
             expect(data.filters[0]).not.toHaveProperty('version');
@@ -197,8 +197,8 @@ describe('stripGeneratedMetaFromDir', () => {
         await fs.mkdir(platformDir, { recursive: true });
 
         const metadata = { groups: [], tags: [], filters: [{ filterId: 1, name: 'Test filter' }] };
-        const jsonFile = path.join(platformDir, 'filters.json');
-        await fs.writeFile(jsonFile, JSON.stringify(metadata, null, '\t'), 'utf8');
+        const jsonFilePath = path.join(platformDir, 'filters.json');
+        await fs.writeFile(jsonFilePath, JSON.stringify(metadata, null, '\t'), 'utf8');
 
         const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root_clean', 'platforms'));
         expect(modified).toBe(0);
@@ -208,15 +208,15 @@ describe('stripGeneratedMetaFromDir', () => {
         const platformDir = path.join(testDir, 'json_root_invalid', 'platforms', 'cli');
         await fs.mkdir(platformDir, { recursive: true });
 
-        const jsonFile = path.join(platformDir, 'filters.json');
+        const jsonFilePath = path.join(platformDir, 'filters.json');
         const invalidContent = '{ "filters": [ invalid json here';
-        await fs.writeFile(jsonFile, invalidContent, 'utf8');
+        await fs.writeFile(jsonFilePath, invalidContent, 'utf8');
 
         await expect(
             stripGeneratedMetaFromDir(path.join(testDir, 'json_root_invalid', 'platforms')),
         ).rejects.toThrow(/Failed to parse metadata file/);
 
-        const contentAfter = await fs.readFile(jsonFile, 'utf8');
+        const contentAfter = await fs.readFile(jsonFilePath, 'utf8');
         expect(contentAfter).toBe(invalidContent);
     });
 
@@ -231,14 +231,14 @@ describe('stripGeneratedMetaFromDir', () => {
             const platformDir = path.join(testDir, dirName, 'platforms', 'cli');
             await fs.mkdir(platformDir, { recursive: true });
 
-            const jsonFile = path.join(platformDir, 'filters.json');
+            const jsonFilePath = path.join(platformDir, 'filters.json');
             const content = JSON.stringify(metadata, null, '\t');
-            await fs.writeFile(jsonFile, content, 'utf8');
+            await fs.writeFile(jsonFilePath, content, 'utf8');
 
             const modified = await stripGeneratedMetaFromDir(path.join(testDir, dirName, 'platforms'));
             expect(modified).toBe(0);
 
-            const contentAfter = await fs.readFile(jsonFile, 'utf8');
+            const contentAfter = await fs.readFile(jsonFilePath, 'utf8');
             expect(contentAfter).toBe(content);
         }));
     });
@@ -248,14 +248,14 @@ describe('stripGeneratedMetaFromDir', () => {
         await fs.mkdir(platformDir, { recursive: true });
 
         const metadata = { groups: [], tags: [], filters: [null, ['nested', 'array']] };
-        const jsonFile = path.join(platformDir, 'filters.json');
+        const jsonFilePath = path.join(platformDir, 'filters.json');
         const content = JSON.stringify(metadata, null, '\t');
-        await fs.writeFile(jsonFile, content, 'utf8');
+        await fs.writeFile(jsonFilePath, content, 'utf8');
 
         const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root_bad_entries', 'platforms'));
         expect(modified).toBe(0);
 
-        const contentAfter = await fs.readFile(jsonFile, 'utf8');
+        const contentAfter = await fs.readFile(jsonFilePath, 'utf8');
         expect(contentAfter).toBe(content);
     });
 
@@ -264,14 +264,14 @@ describe('stripGeneratedMetaFromDir', () => {
         await fs.mkdir(platformDir, { recursive: true });
 
         const metadata = { groups: [], tags: [], filters: [] };
-        const jsonFile = path.join(platformDir, 'filters.json');
+        const jsonFilePath = path.join(platformDir, 'filters.json');
         const content = JSON.stringify(metadata, null, '\t');
-        await fs.writeFile(jsonFile, content, 'utf8');
+        await fs.writeFile(jsonFilePath, content, 'utf8');
 
         const modified = await stripGeneratedMetaFromDir(path.join(testDir, 'json_root_empty_filters', 'platforms'));
         expect(modified).toBe(0);
 
-        const contentAfter = await fs.readFile(jsonFile, 'utf8');
+        const contentAfter = await fs.readFile(jsonFilePath, 'utf8');
         expect(contentAfter).toBe(content);
     });
 });
