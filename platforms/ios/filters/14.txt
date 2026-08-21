@@ -1,9 +1,9 @@
-! Checksum: GivzBKj+w9FTYJPyY7F9DA
-! Diff-Path: ../patches/14/14-s-1787297077-3600.patch
+! Checksum: OEfwocYNh/EpatbVgVz39w
+! Diff-Path: ../patches/14/14-s-1787304005-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.76.48
-! TimeUpdated: 2026-08-21T07:21:16+00:00
+! Version: 2.2.76.49
+! TimeUpdated: 2026-08-21T09:16:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24734,6 +24734,7 @@ afisha.yandex.*#%#//scriptlet('prevent-eval-if', 'bidReqIdStr')
 docviewer.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.Rtb')
 !
 ! Yandex.Mail
+mail.yandex.*##div[data-testid="page-layout_body_container"] > div[class][style*="adaptive-width:"]:has(> div > a[href^="https://360.yandex.ru/"])
 mail.yandex.*##div[data-testid^="page-layout_right-column_container"]
 mail.yandex.*##div[class^="PageLayout-m__main--"][id="js-layout-inner"] + div[style="--bg-color: 255, 255, 255; overscroll-behavior: none;"]
 mail.yandex.*###js-mail-layout-content-header > div.message-list-banner-portal + div:not([class*="styles__"])
@@ -37879,6 +37880,8 @@ tsn.ua,haberx.com,timeturk.com,saopaulosecreto.com,urfanatik.com,stadt-bremerhav
 !
 ! SECTION: Subscriptions - Regular rules
 !
+patronlardunyasi.com##.subscribe-generalform
+patronlardunyasi.com##footer > div:has(> div.container input[type="email"])
 yorkregion.com##custom-tooltip[tooltip-id^="newsletter-desktop-"]
 pciconcursos.com.br###lateral_compartilhar
 sparhandy.de##main > div.MuiBox-root:has(> div.MuiContainer-root button[label="Mit E-Mail anmelden"])
@@ -40797,7 +40800,6 @@ nuvolari.biz##.wrapper-newsletter-block
 taming.io,tamming.io###exapush-popup
 ||allaboutcircuits.com/js/subscriber.newsletter.js
 comfy.ua#%#//scriptlet('hide-in-shadow-dom', '.weblayer--box-subscription-1')
-m.aksam.com.tr##section > ul.flex:has(> li > a[href^="https://news.google.com/publications/"])
 mashable.com##[data-ga-category="newsletters"]
 web-promo.ua###subscribe_banner_blog
 cointelegraph.com##form[data-ct-widget="newsletter-subscription-form"]
@@ -48008,6 +48010,8 @@ flightradar24.com##[data-id="a5b8151"][data-element_type="widget"]
 flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
+!+ NOT_OPTIMIZED
+m.aksam.com.tr##section > ul.flex:has(> li > a[href^="https://news.google.com/publications/"])
 !+ NOT_OPTIMIZED
 denizhaber.com,haberantalya.com,antalyahurses.com###newsletterPopup
 !+ NOT_OPTIMIZED
@@ -57516,6 +57520,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+meetingpoint-jl.de##.jobs-widget
 pciconcursos.com.br###preparacao
 donatov.net##.good-amount-discount
 thestage.co.uk###aos-OverlayPanel
