@@ -1,9 +1,9 @@
-! Checksum: iM7g1dNipGqTQQBMygzuFg
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1787303989-3600.patch
+! Checksum: u4Bx+nh8ZSFTEq62RL/Vqw
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1787318714-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.9.70
-! TimeUpdated: 2026-08-21T09:16:05+00:00
+! Version: 2.1.9.71
+! TimeUpdated: 2026-08-21T13:21:52+00:00
 ! Expires: 10 days (update frequency)
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.pushState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.replaceState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
@@ -101005,7 +101005,6 @@ prd.api.bleacherreport.com^
 ||analytics.raenonx.cc^
 ||analytics.vixcloud.co^
 ||plausible.pronouns.cc^
-||lptag.liveperson.net^
 ||sks.mrkhub.com^
 ||measuring-pixel-service.alza.cz^
 ||analytics.valotool.com^
@@ -313986,6 +313985,7 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.device_sr', '3840x2160', '$.evts[*].nlog_id', 'args', '', 'jsonpath')
 naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.br_sr', '3840x2160', '$.evts[*].nlog_id', 'args', '', 'jsonpath')
 @@||nlog.naver.com/n|$domain=search.naver.com|www.naver.com
+||yandex.ru/appcry/event|
 ||meetingpoint-jl.de/api/*-track|
 ||reader.hqread.cc/online/heartbeat
 ||thehealthy.com/wp-content/plugins/tmbi-amazon-affiliate/
@@ -315408,7 +315408,6 @@ allrecipes.com#%#//scriptlet('set-local-storage-item', '/_fpi|_duid/', '$remove$
 ||banking.dkb.de/api/metrics/$xmlhttprequest
 ||cdn.dsmcdn.com/sfx/mergen/
 ||cdn.dsmcdn.com/sfint/production/demeter-prod-*.umd.js
-||ing.de/*/*ebtrekk*
 ||ingwb.com/*/ingwb-webtrekk
 ||derstandard.*/qpkdl/
 ||duckduckgo.com/t.js?q=
@@ -319778,6 +319777,9 @@ dreamprogs.net##td[width="88"][height="31"]
 ||ztat.net/*/webtrekk.min.js^
 ||google.com/log?$redirect=nooptext
 ||yandex.ru/clck/click|
+||ing.de/*/*ebtrekk*
+ing.de#%#//scriptlet('set-constant', 'wt', 'emptyObj')
+ing.de#%#//scriptlet('set-constant', 'wt.sendinfo', 'noopFunc')
 spletnik.ru#%#//scriptlet('set-local-storage-item', 'adrcid', '$remove$')
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 ||static.cloud.sbs.co.kr/common/js/*/sbs_log_module.min.js
@@ -322369,7 +322371,6 @@ felixmobile.com.au#$##__next [style*="filter:blur"] { filter: none !important; }
 @@||optimizely.com^$image,domain=marinco.navico.com
 @@||adobedc.demdex.net^$xmlhttprequest,domain=sc.com
 @@||src.litix.io/*/bitmovin-mux.js$domain=shoof.alkass.net
-@@||lptag.liveperson.net^$domain=yesstyle.com
 @@||cdn.optimizely.com/datafiles/$domain=metro.at|metro.bg|metro-cc.hr|metro.fr|metro.it|metro-kz.com|metro.md|metro.pk|metro.ro|metro.rs|metro.sk|makro.es|metro-tr.com|metro.ua|makro.pt|metro.de
 @@||static.airbridge.io/sdk/latest/$domain=airbridge.io
 @@||samsclub.com/px/*/captcha/captcha.js$domain=samsclub.com
