@@ -1,9 +1,9 @@
-! Checksum: +VkRhXk8wXMy2rCPV7F7vw
-! Diff-Path: ../patches/11/11-s-1787282840-3600.patch
+! Checksum: edgPzu2oD/SNY4sq8fOpYQ
+! Diff-Path: ../patches/11/11-s-1787297045-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.71.46
-! TimeUpdated: 2026-08-21T03:24:26+00:00
+! Version: 2.0.71.47
+! TimeUpdated: 2026-08-21T07:21:07+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8718,7 +8718,8 @@ google.*##.gws-product_ads__close-button
 yandex.*#?#.infinity-zen__content div.feed-item:has(div[data-statlog="directfeed.title"])
 !
 ! Yandex.Eda
-eda.yandex.ru##main > div[style^="margin-bottom:"]:has(> div[class] div[class] > img[src*="get-market-adv"])
+eda.yandex.ru#$?#main > div[style^="margin-bottom:"]:has(> div[class] div[class] > img[src*="get-market-adv"]) { remove: true; }
+eda.yandex.ru##div[class]:has(> div[class] > div[class] > ul.scroll-snap-slider > li.scroll-snap-slide > div[style] > button[aria-label] > img[src^="https://avatars.mds.yandex.net/get-market-adv/"])
 !
 ! Yandex.Search
 ! Search mobile(not tablet)
