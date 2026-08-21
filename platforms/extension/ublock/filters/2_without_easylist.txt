@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: GwZB1wMUT7sdY583bNsa7g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1787310858-3600.patch
+! Checksum: MbqglwK5sULRUTLwVXrsOQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1787314545-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.85.24
-! TimeUpdated: 2026-08-21T11:09:45+00:00
+! Version: 2.4.85.25
+! TimeUpdated: 2026-08-21T12:11:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13011,6 +13011,13 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238454
+streamcash.to##+js(set-constant, __shown, 1)
+streamcash.to#@#.Footer_1-ad-holder
+streamcash.to###ab-wall
+! https://github.com/AdguardTeam/AdguardFilters/issues/238844
+satvoy.com##.adbCard
+satvoy.com##body > div[style^="position: fixed; inset: 0px;"][style*="backdrop-filter: blur"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238460
 kavero.biz##+js(abort-current-script, document.createElement, googima.js)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238680
@@ -14414,6 +14421,7 @@ twitch.tv##.video-player__overlay .player-overlay-background:has(> div[class^="L
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196789
 file-upload.net##+js(set-constant, advertisement3, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196799
+titans.com.au##+js(google-ima)
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=titans.com.au
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196663
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196673
@@ -39871,6 +39879,8 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+streamcash.to###player-wrap > #main-video ~ *
+streamcash.to##+js(json-prune, az gk pa pu sb sk, ad)
 mail.yahoo.com##div[data-test-id="virtual-list"] > ul > li > div > a[rel="noreferrer"]
 ||ngtv.io/v2/media$xhr,removeparam=ssaiProfile,domain=adultswim.com
 adultswim.com##.tui-ad-slate

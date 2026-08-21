@@ -13436,6 +13436,13 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238454
+streamcash.to#%#//scriptlet('set-constant', '__shown', '1')
+streamcash.to#@#.Footer_1-ad-holder
+streamcash.to###ab-wall
+! https://github.com/AdguardTeam/AdguardFilters/issues/238844
+satvoy.com##.adbCard
+satvoy.com##body > div[style^="position: fixed; inset: 0px;"][style*="backdrop-filter: blur"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238460
 kavero.biz#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'googima.js')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -15724,6 +15731,8 @@ file-upload.net#%#//scriptlet('set-constant', 'advertisement3', 'true')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||file-upload.net/include/adserver.js$domain=file-upload.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196799
+titans.com.au#%#//scriptlet('google-ima3')
+titans.com.au#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com')
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=titans.com.au
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=titans.com.au
@@ -45941,6 +45950,8 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+streamcash.to###player-wrap > #main-video ~ *
+streamcash.to#%#//scriptlet('json-prune', 'az gk pa pu sb sk', 'ad')
 mail.yahoo.com##div[data-test-id="virtual-list"] > ul > li > div > a[rel="noreferrer"]
 ||mail.yahoo.com$replace=/("adshield(Adblock|NativeAd)Recovery"):true/\$1:false/
 ||ngtv.io/v2/media$xmlhttprequest,removeparam=ssaiProfile,domain=adultswim.com
@@ -101803,6 +101814,7 @@ browsershots.org#@#.advert_area
 ||ashamed-temperature.com^
 ||ashamedleague.pro^
 ||ashamedresist.com^
+||ashcantextual.shop^
 ||ashcdn.com^
 ||ashhgo.com^
 ||ashlerskamao.qpon^
@@ -110642,6 +110654,7 @@ browsershots.org#@#.advert_area
 ||ewygczamczrrf.space^
 ||ewyjmkgvvtoxy.space^
 ||ewykdrcicvpob.online^
+||ewyvzyykjlpcu.site^
 ||exacdn.com^
 ||exactgodiva.qpon^
 ||exactlyrunlet.shop^
@@ -112365,6 +112378,7 @@ browsershots.org#@#.advert_area
 ||fugacyslatted.cfd^
 ||fuget.xyz^
 ||fugitivedepart.com^
+||fugitiverancidpry.com^
 ||fugmotts.cyou^
 ||fugsslosher.com^
 ||fuhzuajqwcmyl.site^
@@ -115612,6 +115626,7 @@ browsershots.org#@#.advert_area
 ||ibbdgcvtwtpuj.site^
 ||ibblkbommtctu.online^
 ||ibbnmezzazmbt.site^
+||ibbxszwdqhogc.site^
 ||ibceebobwbhdu.space^
 ||ibcflijbwbhbx.space^
 ||ibdhurhzedcpx.online^
@@ -121250,6 +121265,7 @@ browsershots.org#@#.advert_area
 ||mftnsjsenkwau.online^
 ||mftqdrlibjsfyq.com^
 ||mfuobqafq.in^
+||mfvmedrqqj.com^
 ||mfvskuommxwep.online^
 ||mfwbsveljxjsq.space^
 ||mfwjsoirqbdmg.com^
@@ -131151,6 +131167,7 @@ browsershots.org#@#.advert_area
 ||sharp-field.pro^
 ||sharplytopple.com^
 ||sharpofferlinks.com^
+||sharrahachtanan.cyou^
 ||sharryatomiesscatula.cyou^
 ||shaugacakro.net^
 ||shauladubhe.top^
@@ -140336,6 +140353,7 @@ browsershots.org#@#.advert_area
 ||ylligknjyhnpr.space^
 ||ylljzcijbxhpg.com^
 ||yllkvetehwuxg.online^
+||ylngawrywqhlt.site^
 ||ylodbhduliqpc.online^
 ||ylogepubxynzu.space^
 ||yloneengwaiym.site^
@@ -155458,6 +155476,7 @@ washingtonpost.com##.pb-sm.pt-sm.b
 publicbooks.org##.pb_ads_widget
 allthatsinteresting.com##.pbh_inline
 caixinglobal.com##.pc-ad-left01
+percentagecalculator.net##.pc-incontent
 serverstoplist.com##.pcOnly
 lazada.co.id,lazada.co.th,lazada.com.my,lazada.com.ph,lazada.sg,lazada.vn##.pdp-block__product-ads
 thefintechtimes.com##.penci-widget-sidebar
@@ -156676,6 +156695,7 @@ visualcapitalist.com##.visua-target
 roosterteeth.com##.vjs-marker
 koreaboo.com##.vm-ads-dynamic
 belloflostsouls.net,ginx.tv,paladins.guru,smite.guru,theloadout.com##.vm-placement
+aha-music.com##.vms-ad-wrap
 gosunoob.com##.vntsvideocontainer
 darkreader.org##.vpnwelt
 valueresearchonline.com##.vr-adv-container
@@ -159643,7 +159663,7 @@ temu.com#?#.splide__slide:contains(AD)
 theblock.co#?#.py-4.my-6:contains(Advertisement)
 thedailywtf.com#?#.article-body > div:contains([Advertisement])
 thingiverse.com#?#.item-card-container:contains(/^Ad$/)
-chatgpt.com#?##thread [class^="border-"]:not([class*="sidebar"]):contains(/Ad|Sponsored/)
+chatgpt.com#?##thread [class^="border-"]:contains(/Ad|Sponsored/):not([class*="sidebar"])
 timesofindia.indiatimes.com#?#div[data-type="in_view"]:has(> div > span:contains(Tired of too many ads?))
 tlgrm.eu#?#.cfeed-card:contains(Promoted post)
 tossinggames.com#?#tbody:contains(Please visit our below advertisers)
