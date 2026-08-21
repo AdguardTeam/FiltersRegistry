@@ -36,12 +36,12 @@ export function parseFlags(argv: string[]): BuildFlags {
     argv.forEach((val) => {
         if (val.startsWith('-i=') || val.startsWith('--include=')) {
             const value = val.slice(val.indexOf('=') + 1);
-            flags.includedFilterIDs = parseFilterIDs(value, '--include');
+            flags.includedFilterIDs = parseFilterIDs(value);
         }
 
         if (val.startsWith('-s=') || val.startsWith('--skip=')) {
             const value = val.slice(val.indexOf('=') + 1);
-            flags.excludedFilterIDs = parseFilterIDs(value, '--skip');
+            flags.excludedFilterIDs = parseFilterIDs(value);
         }
 
         if (val.startsWith('--report=')) {

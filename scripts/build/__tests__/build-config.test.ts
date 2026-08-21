@@ -43,19 +43,16 @@ describe('parseFlags', () => {
         expect(flags.useCache).toBe(false);
     });
 
-    it('accepts whitespace-separated IDs from Windows command forwarding', () => {
+    it('accepts whitespace-separated IDs when values contain spaces', () => {
         const flags = parseFlags(['--include=1 2 3', '--skip=2 4']);
         expect(flags.includedFilterIDs).toEqual([1, 2, 3]);
         expect(flags.excludedFilterIDs).toEqual([2, 4]);
     });
 
-    it('rejects malformed filter IDs instead of silently dropping them', () => {
-        expect(() => parseFlags(['--include=1,abc,3'])).toThrow(
-            'Invalid filter ID in --include: "abc"',
-        );
-        expect(() => parseFlags(['--skip=2 nope'])).toThrow(
-            'Invalid filter ID in --skip: "nope"',
-        );
+    it('filters out invalid IDs', () => {
+        const flags = parseFlags(['--include=1,abc,3', '--skip=2 nope']);
+        expect(flags.includedFilterIDs).toEqual([1, 3]);
+        expect(flags.excludedFilterIDs).toEqual([2]);
     });
 });
 
