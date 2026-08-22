@@ -1,5 +1,5 @@
-! Checksum: DTI5cnZn5HT/szz5KFRWJw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1787321950-3600.patch
+! Checksum: MneALV+1NwhYd7cP/8EmTw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1787365882-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.30
@@ -149,6 +149,7 @@ japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target
 japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
 @@||japscan.$generichide
+$script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.*
 @@$image,domain=japscan.*
 trustmyscience.com##.adb-border
 signal-arnaques.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
@@ -1519,6 +1520,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://ad.*/embed.
 ://ad.*?pid=
 ://adg.*/pub/
+://adlik.
 ://adscdn.
 ://adspaces.
 ://adss.
@@ -1709,7 +1711,6 @@ _publicite.
 _publicite_
 _regie/aff.
 _sca_ads.
-_sdk_ad_
 _smads_
 _square_ads.
 _strip_ad/
@@ -1729,6 +1730,7 @@ _werbebanner_
 /wp-content/uploads/wp-banners/*
 /urlshortener.js
 /zerg-inf-multi.js
+/zerg-inf.js
 /ai/s/s/js/m/im.js
 /ai/s/s/js/ssu.v2.js
 /ai/s/s/su.php?
@@ -1865,7 +1867,6 @@ _werbebanner_
 ||betfredaffiliates.com^$third-party
 ||betterbannerscloud.com^$third-party
 ||biznolimit.com^$third-party
-||blogbang.com^$third-party
 ||broadcast.pm^$third-party
 ||camsoda.com^$third-party
 ||caramec.fr^$third-party
@@ -2041,7 +2042,6 @@ _werbebanner_
 ||zytpirwai.net^$third-party
 ||compteurdevisite.com^$third-party
 ||contadorvisitasgratis.com^$third-party
-||contatoreaccessi.com^$third-party
 ||freecounterstat.com^$third-party
 ||statcounterfree.com^$third-party
 ||webcontadores.com^$third-party
@@ -3696,7 +3696,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###pubFrame
 ###pubHaut
 ###pubHeader
-###pubHorizontale
 ###pubImg
 ###pubLeft
 ###pubRight
@@ -4047,7 +4046,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.player-adv
 ##.player-adx-block
 ##.player-screen-ads-list
-##.player-screen-ads-wrapper
 ##.player-sponsor-block
 ##.player__ads
 ##.player_bg_ad
@@ -4500,14 +4498,12 @@ viewsurf.com###top-ban
 2ememain.be###top-banner-root
 liligo.fr###top-banner-smart
 ledevoir.com###top-publicite-placeholder
-gameblog.fr###top_sales_slider
 freepik.com###topbar
 flaticon.com###unicorn
 sibnet.ru###vjs-overlayclip-container-box
 rtl.be###w-leaderboard
 wix.com###wixFooter
 wix.com###wixfooter
-frequence-radio.com###wrap_pub_listing
 cnews.fr###wrapper-banner
 casatv.ca###wrapperbanner
 lequipe.fr##.AmPlaceholder
@@ -4609,7 +4605,6 @@ manga-news.com##.external-link
 orientation-chabab.com##.footer
 gameblog.fr##.footer__partners
 tukif.com##.footer_partner_container_wrapper
-realmadrid.com##.footer_sponsors
 positivr.fr##.front-page-featured_partnr-section-container
 algeriepatriotique.com,israelmagazine.co.il##.g-dyn
 gamekult.com##.g2__a-dc
@@ -4757,7 +4752,6 @@ mariefrance.fr,science-et-vie.com##.viously-player
 pornovore.fr,tukif.com##.vjs-toolbar
 positivr.fr##.vsly-player, .positivr-positivrtv-cta
 pornovore.fr##.webcams
-slappyto.net##.webrox._300x250.centered
 place4geek.com##.widget_text.widget.widget_custom_html
 macg.co##.wrapper > a
 boulistenaute.com##.xo-banner-ad-footer
@@ -4945,7 +4939,6 @@ latribune.fr#?#.article-wrapper:has(.subheading:contains(Partenaire))
 latribune.fr#?#.homepage-section.supplement-section:has(span:contains(Partenaires))
 farmaline.be,redcare-apotheke.ch,redcare-pharmacie.fr##li[data-qa-id="result-list-entry"]:has(a[href^="https://api.sae.systems/"])
 libhunt.com#?#.boxed:has(.tag:contains(Sponsored))
-macommune.info#?#.box_article:has(.is-text-publi-infos)
 mediamarkt.be#?#[data-index-number]:contains(Sponsorisé)
 nextinpact.com#?#app-home-item:has(.article:has(.sponsored))
 numerama.com#?#.post-card:has(span:contains(sponso))
