@@ -7,6 +7,8 @@ import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
+// eslint-disable-next-line import/no-unresolved
+import { parseFilterIDs } from './filter-id-list.ts';
 import { findFiles } from '../utils/find_files.js';
 
 /**
@@ -30,23 +32,13 @@ args.forEach((val) => {
     if (val.startsWith('-i=') || val.startsWith('--include=')) {
         const value = val.slice(val.indexOf('=') + 1);
 
-        includedFilterIDs = value
-            .split(',')
-            .join(' ')
-            .split(' ')
-            .map((x) => Number.parseInt(x, 10))
-            .filter((x) => !Number.isNaN(x));
+        includedFilterIDs = parseFilterIDs(value);
     }
 
     if (val.startsWith('-s=') || val.startsWith('--skip=')) {
         const value = val.slice(val.indexOf('=') + 1);
 
-        excludedFilterIDs = value
-            .split(',')
-            .join(' ')
-            .split(' ')
-            .map((x) => Number.parseInt(x, 10))
-            .filter((x) => !Number.isNaN(x));
+        excludedFilterIDs = parseFilterIDs(value);
     }
 });
 
