@@ -1,5 +1,5 @@
-! Checksum: 9GD/vHY+tgHegBSdZIHAjA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1787287667-14400.patch
+! Checksum: /tCKbqaI5mB+0j3pUxofsA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1787373993-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.41
@@ -46,6 +46,7 @@ windll.com##.dll > p
 softwaretested.com##.st-alternative
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
+||testedforyou.net^$all
 ##.ym-p1-server-mode-outbyte
 ||solvusoft.com^$document
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
@@ -978,7 +979,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||185.155.186.24^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||209.74.107.131^$all
-||afflat3a2.com^$all
 ||afflat3b2.com^$all
 ||afflat3b3.com^$all
 ||ffatric2.com^$all
@@ -1328,6 +1328,7 @@ drvhub.net##.driver-item__install
 ||adzgame.com^$all
 ||benrif-solutions.com^$all
 ||bidmyadz.com^$all
+||blastmedia.site^$all
 ||ctrtraffic.com^$all
 ||expialidosius.com^$all
 ||explorads.com^$all
@@ -1691,6 +1692,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##a[href*="twitter.com/share?url="]
 ##a[onclick*="twitter.com/share?"]
 ##a[title="Share on Twitter" i]
+##a[title="Tweet this post"]
 ##li[data-share=twitter]
 ~viber.com##a[href^="viber://forward?text"]
 ~vk.com##.share-vk:not(html,body,:empty)
@@ -2027,6 +2029,7 @@ autoplius.lt#%#//scriptlet('ubo-ra', 'target', '[target="_blank"]', 'stay')
 ||collector.schibsted.io^$third-party
 ~ru###preloader
 ~ru##div.preloader
+##app-loading-screen
 ##.loading-mask:not(html,body)
 ##div#loading
 *,~barter.vg#?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
@@ -2408,6 +2411,7 @@ $removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
 $removeparam=afflid
 $removeparam=mclk
+$document,removeparam=maid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
 $removeparam=exactag_uk
@@ -2433,6 +2437,7 @@ $removeparam=otracker1
 $removeparam=ft_source
 $removeparam=ft_medium
 $removeparam=ref_source
+$removeparam=ref_campaign
 $removeparam=spMailingID
 $removeparam=spUserID
 $removeparam=spJobID
@@ -3017,6 +3022,7 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=logid
 ||baidu.com^$removeparam=pageFrom
 ||baidu.com^$removeparam=srcp
+||baidu.com^$removeparam=ivk_sa
 ||baidu.com^$removeparam=sfrom
 ||haokan.baidu.com/v?$removeparam=pd
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaId
@@ -3180,7 +3186,6 @@ $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moose
 ||verizon.com^$removeparam=vendorid
 ||hp.com^$removeparam=jumpid
 ||walmart.com^$removeparam=veh
-$removeparam=v,domain=hinta.fi|carrefoursa.com
 ||bbc.$removeparam=at_campaign
 $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||gog.com^$removeparam=pp
@@ -3323,6 +3328,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
+$removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||dw.com^$removeparam=maca
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
@@ -3617,8 +3623,8 @@ $document,removeparam=s_campaign
 ||www.roblox.com^$document,removeparam=discoverPageSessionInfo
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
+||www.roblox.com^$removeparam=treatmentType
 $document,removeparam=ucid,domain=unicredit.it|steampowered.com
-$removeparam=email,domain=landevei.no|thehill.com
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
@@ -3683,7 +3689,6 @@ ref=aftermath.site$document,removeparam=ref
 ||microsoft.com^$removeparam=refSource
 ||microsoft.com^$removeparam=refPage
 $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com
-||deezer.$removeparam=host
 ||deezer.$removeparam=/^utm_.*$/
 ||duckduckgo.com/extension-success$document,removeparam=atb
 ||duckduckgo.com/atb.js$document,removeparam=set_atb
@@ -3710,8 +3715,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=CDCttType
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=ModelType
 ||learn.microsoft.com^$removeparam=redirectedfrom
-||fairstone.ca^$document,removeparam=adplacementid
-||loan.fairstone.ca^$document,removeparam=jumpsource
 ||cricut.$removeparam=visitorId
 ||sonarsource.com^$document,removeparam=tidelift
 ||msn.com^$removeparam=bv
