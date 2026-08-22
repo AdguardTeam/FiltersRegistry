@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.85.42",
-			"timeUpdated": "2026-08-22T07:15:45+0000",
+			"version": "2.4.85.43",
+			"timeUpdated": "2026-08-22T08:09:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.31.43",
-			"timeUpdated": "2026-08-21T13:21:55+0000",
+			"version": "2.1.31.44",
+			"timeUpdated": "2026-08-22T08:09:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.33",
-			"timeUpdated": "2026-08-21T19:14:01+0000",
+			"version": "2.0.67.34",
+			"timeUpdated": "2026-08-22T08:09:50+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.76.56",
-			"timeUpdated": "2026-08-21T19:14:11+0000",
+			"version": "2.2.76.57",
+			"timeUpdated": "2026-08-22T08:09:59+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.32.13",
-			"timeUpdated": "2026-08-22T06:11:49+0000",
+			"version": "2.1.32.14",
+			"timeUpdated": "2026-08-22T08:10:02+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.37",
-			"timeUpdated": "2026-08-21T16:11:29+0000",
+			"version": "2.0.47.38",
+			"timeUpdated": "2026-08-22T08:10:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1752,8 +1752,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.63.92",
-			"timeUpdated": "2026-08-22T05:11:16+0000",
+			"version": "2.1.63.93",
+			"timeUpdated": "2026-08-22T08:10:15+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
