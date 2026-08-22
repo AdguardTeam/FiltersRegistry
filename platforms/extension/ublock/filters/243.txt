@@ -1,15 +1,15 @@
 ![Adblock Plus 2.0]
-! Checksum: uhDU/dPo4zSlrQX0oLkEJQ
-! Diff-Path: ../patches/243/243-s-1787330867-14400.patch
+! Checksum: cSTXiozT58g+1f2J6rbdeA
+! Diff-Path: ../patches/243/243-s-1787416943-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.24
-! TimeUpdated: 2026-08-21T16:44:48+00:00
+! Version: 2.0.25.25
+! TimeUpdated: 2026-08-22T16:39:58+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-08-21 16:40:59 CEST
+! Last modified: 2026-08-22 16:30:26 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -1175,8 +1175,9 @@ nordiskradio.se###cookieWindow
 nordiskskog.se##.templateHelannonsBOX
 norrahalland.se,bjarenu.se##.bannercontent
 norrortssporten.se##.vc_column_container:has(.td-adspot-title)
-nouw.com##.content > div[style^="text-align: center"]:has(a[href="https://nouw.com"])
+nouw.com##+js(nosiif, iframe.space-frame)
 nouw.com##.post-grid-item:has(a[href*="poker"], a[href*="betting"], a[href*="casino"], a[href*="spelplat"])
+nouw.com##:is(.content-width, .content) div[style^="text-align: center"]:has(a[href="https://nouw.com"], iframe[title="Ad"], div[id*="panorama"], div[id*="nouw_mobil"])
 nyadagbladet.se##.site-main > div.widget_custom_html p[style^="text-align: center;"]:contains(/annonssamarbete/i):upward(div.widget_custom_html)
 nyadagbladet.se##.third-col, article[class*="sponsrad"], div[id^="nyd-"], .below_header_front_page, div[data-aeon-news-trackbid="1"], .aeon-news-widget, div[id^="aeon-news"]
 nyadagbladet.se##.widget_media_image:contains(/annons/i)
@@ -2024,7 +2025,7 @@ zeromagazine.nu##div[id^="ads"]
 &autoplay$subdocument,removeparam=autoplay,domain=di.se|expressen.se
 &displayMode=modal$domain=dagen.se
 *$subdocument,3p,redirect=click2load.html,domain=alltomsallskapsspel.se
-*$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net|feber.se|tjock.se|guldkanalen.se
+*$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net|feber.se|tjock.se|guldkanalen.se|butikstrender.se
 *$script,~3p,domain=hrsvepet.se|cfosvepet.se|vdsvepet.se
 *$script,redirect-rule=noop.js,domain=elevspel.se
 *$xhr,3p,domain=skargarden.se
@@ -2486,7 +2487,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/adlounge
 /plugins/adsanity
 /plugins/adsense%20click%20proctect
-/plugins/advanced-ads$script,domain=newsner.com|humorbibeln.se|sportbibeln.se|matbibeln.se|ettgottskratt.se|djurbibeln.se|nojeslivet.se|vegomagasinet.se|inkopsradet.se|orkesterjournalen.se|hallbartbyggande.com|marketmate.se|villatidningen.se|upphandling24.se|freedomtravel.se
+/plugins/advanced-ads$script,domain=newsner.com|humorbibeln.se|sportbibeln.se|matbibeln.se|ettgottskratt.se|djurbibeln.se|nojeslivet.se|vegomagasinet.se|inkopsradet.se|orkesterjournalen.se|hallbartbyggande.com|marketmate.se|villatidningen.se|upphandling24.se|freedomtravel.se|butikstrender.se
 /plugins/ad-ace
 /plugins/ad-blocking-advisor
 /plugins/afp-default-pricetable/js/ga-tracking
