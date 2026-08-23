@@ -1,9 +1,10 @@
-! Checksum: GTC4gWy9s6kfg3O8hTxlkA
+! Checksum: 0D+I/FppYMMHkCzK2nhL9w
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.67.45
-! TimeUpdated: 2026-08-23T00:47:16+00:00
+! Version: 2.1.67.46
+! TimeUpdated: 2026-08-23T04:44:38+00:00
 ! Expires: 5 days (update frequency)
+-facebook-share.
 -facebook-widget.
 -follow-icon-
 -share-buttons3/$~stylesheet
@@ -75,7 +76,6 @@
 /plugins/ultimate-social-media-plus/*$~stylesheet
 /prisna-social-counter.css
 /Resources/twitter-$~xmlhttprequest
-/share-bar/share-bar.js
 /share/count?
 /share/footer/*
 /share42.js
@@ -128,6 +128,7 @@
 /twitter-follow-
 /twitter-footer-
 /twitter-v2.png
+/twitter_follow.jpg
 /twitter_footer.png
 /twitter_square.png
 /videojs-share.js
@@ -138,17 +139,16 @@
 /whatsappshare.js
 /widget/share?
 /widgets/socials/*
-/widgets/twitter/*
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
+_share_widget_
 _social-bar/
 /jquery.bpopup.$script,domain=telechargerunevideo.com
 ###FollowUs
 ###Followers1
 ###ShareButton
 ###ShareItemBtn
-###SocialContainer
 ###SocialMedia
 ###SocialShare
 ###Socialize
@@ -432,6 +432,7 @@ _social-bar/
 ###shareArticle
 ###shareBadges
 ###shareBar
+###shareBarBottom
 ###shareBarTop
 ###shareBlock
 ###shareBottom
@@ -727,6 +728,7 @@ _social-bar/
 ###verticalSnsBar
 ###viber_share
 ###whatsapp-share
+###whatsappshare
 ###widget-social
 ###widget-twitter
 ###wp_fb_like_button
@@ -918,12 +920,12 @@ _social-bar/
 ##.article-social-container
 ##.article-social-icons
 ##.article-social-media
+##.article-social-section
 ##.article-social-share
 ##.article-social-sharing
 ##.article-social-top
 ##.article-social-wrapper
 ##.article-socials
-##.article-subline-share
 ##.article-title-share
 ##.articleShare
 ##.article__header__share
@@ -1400,7 +1402,6 @@ _social-bar/
 ##.footer--contact-social
 ##.footer--social
 ##.footer--social-icons
-##.footer--social-link
 ##.footer-bottom-social
 ##.footer-bottom__social
 ##.footer-bottom__social-links
@@ -1744,7 +1745,6 @@ _social-bar/
 ##.instagramicon
 ##.intro-social
 ##.ion-social-facebook
-##.ion-social-google
 ##.ion-social-linkedin
 ##.ion-social-twitter
 ##.ip-follow-us-popup
@@ -1995,6 +1995,7 @@ _social-bar/
 ##.nShare
 ##.native-share
 ##.native-share-buttons
+##.native-share-wrapper
 ##.nav--share
 ##.nav--social
 ##.nav-footer-social
@@ -2044,7 +2045,6 @@ _social-bar/
 ##.omc-social-small
 ##.open-share
 ##.open-share-toolbar
-##.openshare
 ##.os-social-bar
 ##.overlay-open-share
 ##.ow-social-icons
@@ -2894,7 +2894,6 @@ _social-bar/
 ##.social-icons-list
 ##.social-icons-title
 ##.social-icons-top
-##.social-icons-v2
 ##.social-icons-widget
 ##.social-icons-wrap
 ##.social-icons-wrapper
@@ -3222,6 +3221,7 @@ _social-bar/
 ##.socials_widget
 ##.socialshare
 ##.socialshare-wrapper
+##.socialshare2
 ##.socialsharebtm
 ##.socialshares
 ##.socialsharing
@@ -3405,6 +3405,7 @@ _social-bar/
 ##.twitter_icn
 ##.twitter_icon
 ##.twitter_link
+##.twitter_social
 ##.twitter_widget
 ##.twitterbox
 ##.twitterbtn
@@ -3461,7 +3462,6 @@ _social-bar/
 ##.vlog-share-single
 ##.vlog-social-icons
 ##.voc-social
-##.vpl_SharingBut
 ##.vs-social
 ##.vuukle-powerbar
 ##.w-share
@@ -4009,12 +4009,13 @@ phonearena.com,quiverquant.com##.google-news-follow
 bleedingcool.com##.google-news-source
 ringsidenews.com,thehealthsite.com,tmz.com##.google-preferred-btn
 sammobile.com##.google-preferred-news-source-cta
-cultofmac.com##.google-preferred-source
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
 nypost.com##.google-preferred-sources
 www.channelnewsasia.com##.google-preferred__button-wrapper
 goal.com##.google-trusted-source
+wionews.com##.googleCTAContainer
 hindustantimes.com##.googleFollow
+wionews.com##.googleTrustedContainer-mid
 breitbart.com##.google_preferred_source_button
 gadgets360.com##.gsocialbar
 atlanticcouncil.org##.gta-hover-share-container
@@ -4131,6 +4132,7 @@ businesstoday.in##.rhs_fixwhtsapp
 aljazeera.com,aljazeera.net##.rich-share
 crealitycloud.com##.right-share-box
 reviewjournal.com##.rj-story-social
+san.com##.san-share-button
 sordum.org##.sbar_social_div
 pornbox.com##.scene-data__share
 fortnitetracker.com,tracker.gg,tracker.network##.scl-buttons
@@ -4170,6 +4172,7 @@ windowsreport.com##.shareMobile
 independentarabia.com##.share_tools
 cbsnews.com##.sharebar
 mirror.co.uk,themirror.com##.sharebar-icon
+al.com,cleveland.com,lehighvalleylive.com,masslive.com,mlive.com,newyorkupstate.com,nj.com,oregonlive.com,pennlive.com,silive.com,syracuse.com##.sharebarBetaWrapper
 thehackernews.com##.sharebelow-twitter
 aftvnews.com,baptistnews.com,calmatters.org,cardinalnews.org,cartoonbrew.com,dailybulletin.com,jerseyvindicator.org,jta.org,mississippitoday.org,thefrisc.com,usmagazine.com,washingtoncitypaper.com,washingtoninformer.com##.sharedaddy
 videocardz.com##.shareon
@@ -4327,7 +4330,6 @@ axios.com##[data-vars-event-name="preferred_source_view"]
 axios.com##[data-vars-event-name="share_view"]
 datacamp.com##[data-waffles-component="social-sharer"]
 dexerto.com,newskarnataka.com,psypost.org##[href^="https://news.google.com/publications/"]
-hackster.io##a.social_icons__icon__BxTgB
 straitstimes.com##button.desktop\:block
 theguardian.com##div > gu-island[name="ShareButton"]
 theatlantic.com##div[class^="ArticleShare_"]
@@ -4558,7 +4560,6 @@ gazetawroclawska.pl##.atomsArticleMediaTools__socialShare
 terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
-dnoticias.pt##.article--aside_share
 uol.com.br##.blogger-social
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
@@ -4666,6 +4667,7 @@ as.com##.sh-bar
 heraldodemexico.com.mx##.share-comp
 infobae.com##.sharebar-buttons-container
 elcomercio.com##.single-layout__community-social
+motor.elpais.com##.site-footer__redes
 larazon.es##.site-footer__rrss
 eldiario.es,eldiarioar.com##.sn-buttons
 radioimagina.cl##.sn-single
