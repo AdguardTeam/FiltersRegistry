@@ -1,14 +1,14 @@
-! Checksum: GqQLW0f+jT9wfau+UstcBA
-! Diff-Path: ../patches/227/227-s-1787575736-14400.patch
+! Checksum: 3jLWcL1uTpK/9GI4DJcpWg
+! Diff-Path: ../patches/227/227-s-1787590072-14400.patch
 ! Title: filterslist-KO Classic filter list
 ! Description: The filterslist-KO Classic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.25.18
-! TimeUpdated: 2026-08-24T12:46:14+00:00
+! Version: 2.0.25.19
+! TimeUpdated: 2026-08-24T16:45:02+00:00
 ! Expires: 1 day (update frequency)
 !
 ! Title: filterslists-KO classic (AdGuard)
 ! Description: AdGuard용 filterslists-KO클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20689.3
+! OriginalVersion: 2026.20689.4
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/FilteringDev/filterslists-KO
 ! Licence: https://github.com/FilteringDev/filterslists-KO/blob/master/LICENSE
@@ -4060,8 +4060,6 @@ m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html',
 ! m.fmkorea.com
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 ! chzzk.naver.com
-chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
-chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 !
 loawa.com#%#//scriptlet('set-cookie', 'ad_popup_hide_36', '1')
 goodmorningcc.com#%#//scriptlet('prevent-window-open', 'bannerpop/popup.html')
@@ -4442,3 +4440,4 @@ chzzkban.xyz#%#//scriptlet('trusted-suppress-native-method', 'Node.prototype.con
 litomi.in#%#//scriptlet('trusted-create-element', 'head', 'script', '', '"use strict";const DocumentElement=document.documentElement,Observer=new MutationObserver(()=>{var e,t;const n=document.querySelector("main #juicy-ads-banner");if(!n)return;const o=Object.keys(n).find(e=>e.startsWith("__reactFiber$")),i=o?n[o]:void 0;"function"==typeof(null===(t=null===(e=null==i?void 0:i.child)||void 0===e?void 0:e.memoizedProps)||void 0===t?void 0:t.onAdClick)&&i.child.memoizedProps.onAdClick()});Observer.observe(DocumentElement,{childList:!0,subtree:!0,attributes:!0});')
 t.hi098123.com#%#//scriptlet('trusted-create-element', 'head', 'script', '', '"use strict";(()=>{const e=window.Function.prototype.toString,t=window.document.querySelector.bind(document),n=window.document.querySelectorAll.bind(document),r=window.String.prototype.indexOf,o=new Map,i=(e,t)=>(o.set(e,t),e);Function.prototype.toString=i(function(){return o.has(this)?`function ${o.get(this)}() { [native code] }`:e.call(this)},"toString"),o.set(e,"toString");new Set(["__defineGetter__","__defineSetter__","__lookupGetter__","__lookupSetter__"]);const c=i(function(){throw new TypeError("\'caller\' and \'arguments\' are restricted function properties")},"caller");function u(e,t,n){const r=void 0===t?e:e.bind(t),o=new Proxy(r,function(e){return{apply:(e,t,n)=>("string"==typeof t&&t.includes("Proxy.__defineGetter")&&(t=t.replaceAll("Proxy.",`${e.name}.`)),Reflect.apply(e,t,n)),get:(t,n,r)=>"toString"===n?i(function(){return`function ${e}() { [native code] }`},"toString"):"name"===n?e:"caller"===n||"arguments"===n?c:Reflect.get(t,n,r)}}(n));return i(o,n),void 0!==t&&i(r,n),o}const l=new Set(["ins",".hi___",".tabad"]);Object.defineProperty(document,"querySelector",{get:()=>u(function(e){return"string"==typeof e&&l.has(e)?null:t(e)},document,"querySelector"),configurable:!0,enumerable:!0});const d=/^(?:aswift_|google_esf)/;Object.defineProperty(document,"querySelectorAll",{get:()=>u(function(e){const t=n(e);return"iframe"!==e?t:[...t].filter(e=>!d.test(e.id))},document,"querySelectorAll"),configurable:!0,enumerable:!0}),Object.defineProperty(String.prototype,"indexOf",{get:()=>u(function(e,t){return e.includes("ht=")?1:r.call(this,e,t)},void 0,"indexOf"),configurable:!0,enumerable:!0})})();')
 cokcok.stream#%#//scriptlet('trusted-replace-node-text', 'script', '/const *_[a-z0-9]+ *= *{ *"media_file" *: *" *https:\\\/\\\/cdn[0-9]+\.cokcok\.[a-z0-9]+\\\/assets\\\/videos\\\/.+"click_through" *:.+};/', 'media_file', '')
+chzzk.naver.com#%#//scriptlet('trusted-replace-outbound-text', 'TextDecoder.prototype.decode', '/{"head" *: *{ *"version" *: *"[0-9.]+" *, *"description" *: *"[A-Za-z 0-9]+" *} *, *"requestId" *: *"vas-[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}" *, *"videoAdScheduleId" *: *"[A-Z_]+" *, *"adBreaks" *: *\[{[\[{\]},:" a-z0-9A-Z_-]+\\n?/', '{"head":{"version":"0.0.1","description":"GFP Video Ad Schedule"},"requestId":"vas-00000000-0000-0000-0000-000000000000","videoAdScheduleId":"","adBreaks":[}\n')
