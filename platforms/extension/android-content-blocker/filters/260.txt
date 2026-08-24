@@ -1,8 +1,8 @@
-! Checksum: V+LVK8x2Ee0YPqp2zkR7+g
+! Checksum: 2aRsE0rLi5t8yDJCmRwUqA
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.11
-! TimeUpdated: 2026-08-11T00:49:07+00:00
+! Version: 2.0.1.42
+! TimeUpdated: 2026-08-24T04:46:08+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -29,7 +29,7 @@
 !   See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/74
 ##.js--show.gen-ai
 ! Floating AI buttons
-||widget.kapa.ai/kapa-widget.bundle.js$script,domain=developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
+||widget.kapa.ai/kapa-widget.bundle.js$script,domain=arrow.apache.org|developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
 ||widget.molin.ai/shop-ai.js$script,domain=benu.hu|euronics.hu|www.decathlon.hu
 ! ===============
 ! == 1Password ==
@@ -37,7 +37,8 @@
 ! -- https://1password.com/
 ! Unified Access AI agent banner
 1password.com##.header-navigation__nav-banner-link[href="/product/unified-access"] > .box-decoration-clone
-! AI promo
+! -- https://www.1password.dev/ssh
+! Copy Page > LLM options
 ! ===========================
 ! == Aberdeen City Council ==
 ! ===========================
@@ -57,34 +58,26 @@ help.adblockplus.org##ai-actions
 ! Floating "Ask a question" field. Appears after scrolling down
 ||www.adobe.com/libs/c2/blocks/brand-concierge/chat-ui-config.js$script,domain=www.adobe.com
 ! -- https://www.adobe.com/home (logged in)
+! * Accessing this URL directly redirects to Firefly. Can be accessed through /apps URL, then clicking home
 ! Promo bar for Firefly
-! Image generation prompt
-www.adobe.com###promptbar-form
-! Loading placeholder for image generation prompt
-www.adobe.com##.-F_-FA92
 ! "Generative AI" action category
 www.adobe.com##[data-key="category-genai"]
 ! -- https://www.adobe.com/apps/all/all-platforms
-! "Advanced AI Tools" promo for Acrobat
+! Promo card for Firefly
 ! -- https://www.adobe.com/create/featured
 ! "Generative AI" category button
 www.adobe.com##.tab-default-button-group[aria-label="Generative AI"]
-! "Experiment with new generative AI capabilities" section
-www.adobe.com##[route-id="featured-genai"]
 ! -- https://new.express.adobe.com/?locale=en-US
 ! AI Assistant toggle in header
 new.express.adobe.com##x-assistant-toggle
-! "Generate with AI" quickstart card
+! "Generate with AI" quickstart card (no longer used?)
 new.express.adobe.com##x-get-started-dialog-quickstart-card[type="create-with-ai"]
-! "Ways to Create" - "Generative AI"
+! "Ways to Create" section - "Generative AI"
 ! * There's a small empty space to the side. Getting rid of the parent element fixes it, but it's split by a #shadow-root
 new.express.adobe.com##.nav-tile[aria-label="Generative AI"]
 ! -- https://photoshop.adobe.com/
 ! "Generate an image" button under "Make a quick edit"
-photoshop.adobe.com##sp-action-button.quick-edit-button[label="Generate an image"]
-! "Create" button on left sidebar > "Tap into the power of generative AI" section
-photoshop.adobe.com##[data-testid="quick-actions-title-gen-ai"]
-photoshop.adobe.com##.genAICards
+photoshop.adobe.com##.promptbar-quick-edit-button[label="Generate an image"]
 ! =============
 ! == Alibaba ==
 ! =============
@@ -119,7 +112,8 @@ www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 ! AI questions in autocomplete search suggestions
-! * Recieved from `https://www.amazon.com/suggestions`
+! * Received from `https://www.amazon.com/suggestions`
+! Search placeholder messages
 ! Rufus chatbot in sidebar
 ! * Requires trusted filters in AdGuard
 ! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1pod2g6/comment/nuelobn/
@@ -157,20 +151,42 @@ www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
 www.americanbanker.com##.miso-hybrid-search-combo__grid-answer
 ||api-edge.askmiso.com/v1/ask/questions/$xmlhttprequest,domain=www.americanbanker.com
 ! Remove sparkle from search icon
-! =============
-! == Android ==
-! =============
-! -- https://www.android.com/
-! AI promos in carousel
-! AI Promo sections
-www.android.com###create-your-own-unique-android-bot
-www.android.com###ai-on-android
 ! ========================
 ! == Archive of Our Own ==
 ! ========================
 ! -- https://archiveofourown.org/tags/Created%20Using%20Generative%20AI/works
 ! Works tagged as "Created Using Generative AI"
 ! * There are nearly 700 synonyms for "Created Using Generative AI" and it's subtags. Blocking them all would result in 38kb for one filter. Instead, I've manually added synonymns that seem semi-common based on "Other tags to include". (Full filter can be found at https://gist.github.com/Stevoisiak/c4bf2acb2a1032370183ea9d03fe5816)
+! ===============
+! == Atlassian ==
+! ===============
+! -- https://<yourdomain>.atlassian.net/browse/SUP-1 (Support - Task)
+! Automation button (lighting icon) - Build automations with AI
+! Right sidebar - Suggestions
+atlassian.net##[data-testid="servicedesk-ai-context-common.ui.ai-context-container.ai-container"]
+! Activity - Comments - Summarize comments button
+atlassian.net##[data-testid="servicedesk-smart-request-summary-trigger.ui.jira-smart-summary-standard-button"]
+! -- https://<yourdomain>.atlassian.net/jira/software/projects/KAN/boards/ (Spaces - Software Team - Board - Story)
+! Summarize work item button
+atlassian.net##[data-testid="issue.views.issue-details.issue-layout.left-most-column"] .css-1jkd4gw
+! Comment suggestions
+atlassian.net##[aria-label="Quick comments"]
+! Comment focused - Improve comment
+! Improve Story
+atlassian.net##[data-testid="issue.views.issue-base.foundation.status.improve-issue"]
+! -- https://<yourdomain>.atlassian.net/wiki/home (Confluence)
+! Focus search bar - Ask AI
+atlassian.net##[data-testid="ask-ai-button"]
+! Focus search bar - Try Atlassian Intelligence
+atlassian.net##[data-test-id="search-dialog-dialog-wrapper"] ._3iDTPbQ4SZ._0aFT5v1qpb._0hPCNLchRC._37wbyuI7V3._0KLXruB8KG._0Of8r2NHnM._1ZnuxbNHnM._1wydGWNHnM._2Zuz6QNHnM._313842TUhv
+! -- https://home.atlassian.com/
+! Play of the Day - AI Teammate
+home.atlassian.com##[data-sentry-element="Component"][href="https://www.atlassian.com/team-playbook/plays/ai-teammate"]
+! -- https://home.atlassian.com/projects
+! Updates - Draft with Rovio
+home.atlassian.com##[data-testid="project-update-composer"] > button._2hGPVj98eZ._2i3C1kYbGa._2kH23qT6kp._1ubuxoD6gn._34b3D2vc3e._1NDpvb6wH8._2wtOC9vc3e._3e11vU6wH8._0hSAgbHZdu._30huDKYbGa._24h04i2Njc._034jHtYbGa._0wOv4Q7zJH._0bjKvDKxmn._3vBAKH9r67._3hxITi6wH8._2V7sgONvrM._1mT5xdWVPG._1OKFqYNHnM._42Yu6B7dHp._0KLXru66of._1UtDYzKGUX._2nTuUYZpcK._10n1R5ZpcK._0clgaMZpcK._0CMRbkZpcK
+! Updates - "Post your update" is focused - Draft with Rovio
+! Updates - "Post your update" is focused - Shorten with Rovio
 ! ====================
 ! == Automate Excel ==
 ! ====================
@@ -192,12 +208,28 @@ www.autonocion.com###an-box-btn
 ! ==============
 ! -- https://www.autozone.com/p/duralast-platinum-battery-h7-agm/319458
 ! Review summary
+! ================
+! == Astronomer ==
+! ================
+! -- https://www.astronomer.io/docs/learn/overview
+! Assistant button next to search bar
+www.astronomer.io###assistant-entry
+! Copy page button - Ask AI menu options
 ! ==========
 ! == Asus ==
 ! ==========
 ! AI in header navbar
 ! Floating chatbot button
 www.asus.com###brandAssistant-root
+! =======================
+! == AWS Documentation ==
+! =======================
+! -- https://docs.aws.amazon.com/
+! "Docs AI" button when search bar is focused
+docs.aws.amazon.com##button[aria-label="Search with Docs AI"]
+! Remove purple glow from search bar
+! -- https://docs.aws.amazon.com/search/doc-search.html?searchQuery=test
+! "Docs AI" tab on search results page
 ! =========
 ! == B&Q ==
 ! =========
@@ -297,6 +329,8 @@ www.bing.com###b_copilot_search_container
 ! Seemingly used for "header-style" AI answer if there no cached AI answer.
 ! Makes answer fallback to a simplified version.
 ||www.bing.com/qna/fetchCodexQnA$xmlhttprequest,domain=www.bing.com
+! -- https://www.bing.com/search?q=apache+airflow+dag
+! AI summary
 ! -- https://www.bing.com/search?q=linux (mobile, user-specific?)
 ! -- https://www.bing.com/search?q=Gemini
 ! "Meet your AI assistant" promo card at top of search results
@@ -378,6 +412,14 @@ www.britannica.com##.category-link-CHATBOT
 www.britannica.com##.header-topic-britannica-ai-module
 ! Header after scrolling down
 www.britannica.com##.toc-sticky-header-ai-container
+! ==================
+! == BrowserStack ==
+! ==================
+! -- https://www.browserstack.com/guide/how-to-debug-on-iphone
+! Header banner for AI Leadership Summit
+! Header nav ai agent item
+! Footer - AI Agents
+www.browserstack.com###menu-item-153460
 ! ==============
 ! == Bunnings ==
 ! ==============
@@ -444,6 +486,12 @@ www.canva.com##[role="tabpanel"] .BMOCzQ.EC2pjw.LuBWVA > .sGm5Vw.ID9zAA > .nJVq1
 ! -- https://www.canva.com/templates
 ! AI video effects section
 ! * Match section containing "cloud cruise" AI effect
+! ==============
+! == CGTrader ==
+! ==============
+! -- https://www.cgtrader.com/
+! Header - Create with AI
+www.cgtrader.com##[aria-controls="navigation-create-ai-panel"]
 ! ==================
 ! == Cisco DevNet ==
 ! ==================
@@ -535,6 +583,16 @@ coolors.co###generator_ai-btn
 ! -- https://www.crateandbarrel.com/facette-white-vase-8.5-by-athena-calderone/s677502
 ! Review summary
 www.crateandbarrel.com##.swat-review-summary-container-border
+! ================
+! == Cribl Docs ==
+! ================
+! -- https://docs.cribl.io/stream/destinations-s3/
+! Copy for LLM menu options
+docs.cribl.io##[data-action="chatgpt"]
+docs.cribl.io##[data-action="claude"]
+docs.cribl.io##[data-action="copilot"]
+! Floating AI button
+docs.cribl.io###copilot
 ! ===============
 ! == Cybernews ==
 ! ===============
@@ -551,6 +609,9 @@ www.databricks.com##[data-promo-id="87eda153-219a-46c6-828a-9d54503f5adc"]
 ! ==============
 ! == DataCamp ==
 ! ==============
+! -- https://www.datacamp.com/
+! Banner for "Build your ultimate AI agent" event
+www.datacamp.com##.dc-ps-banner[data-trackid="claws-out-2026-banner"]
 ! -- https://www.datacamp.com/tutorial/sql-union-union-all
 ! Explore with AI buttons at top of article
 www.datacamp.com##[aria-labelledby="explore-with-ai-heading"]
@@ -589,6 +650,13 @@ www.dell.com##.sux-virtual-assistant
 www.dell.com##.dds__container-fluid > h2.dds__text-center
 www.dell.com##.dds__container-fluid > div > .chat-box
 www.dell.com##.dds__container-fluid > #divHomeMicromomentsContainer
+! ===========
+! == Delta ==
+! ===========
+! -- https://www.delta.com/sitesearch?searchTerm=Can%20I%20bring%20a%20parrot%3F
+! AI search summary
+! * Does not block network request
+www.delta.com##.site-search__answer
 ! ===============
 ! == Demócrata ==
 ! ===============
@@ -665,9 +733,10 @@ www.deviantart.com##div.VS2KXS.KQfkEY
 ! == Docker ==
 ! ============
 ! -- https://docs.docker.com/
+! Header - State of AI Agents report
 ! Navbar - Gordon button
 ! "Ask anything about docker" chatbox
-! -- https://docs.docker.com/desktop/setup/install/windows-install/
+! -- https://docs.docker.com/get-started/docker-overview/
 ! "Ask Gordon" below article title
 docs.docker.com##[onclick="askGordon()"]
 ! -- https://hub.docker.com/
@@ -773,6 +842,12 @@ www.ecosia.org##[data-test-id="search-navigation-item-chat"]
 emojicombos.com###introEl > [href="https://perchance.org/ai-chat"]
 ! -- https://emojicombos.com/dot-art-generator
 ! Tip for AI icon generator
+! ===========
+! == eVero ==
+! ===========
+! -- https://devhome.evero.net/deployments
+! Executive AI Summary tab
+devhome.evero.net##[role="tablist"] > [id$="-trigger-aisummary"]
 ! ================
 ! == Emojipedia ==
 ! ================
@@ -948,24 +1023,28 @@ gitbook.com##button[aria-label="GitBook Assistant"]
 ! Copilot network requests
 ! * Prevents Copilot-generated commit messages
 ||api.individual.githubcopilot.com/$xmlhttprequest,domain=github.com
-! -- https://github.com/ (logged out)
+! -- https://github.com/home
 ! Try Copilot button
 github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
+! Footer items
 ! -- https://github.com/ (logged in)
 ! Header - "Chat with Copilot" icon next to search bar
-! Header - left hamburger menu (≡) - "Copilot" button
-github.com##[data-testid="side-nav-menu-item-COPILOT"]
 ! Header - Search bar - Copilot autocomplete suggestion
 ! Header - Profile icon - Feature Preview - Organization Custom Instructions
 ! * Only applies if feature is already disabled
 ! Home feed - "Ask Copilot" prompt box
 github.com##.copilotPreview__container
 ! Home feed (w/ New Dashboard Experience enabled) - Floating Copilot icon when hovering over pull request or issue.
+! Left sidebar - Copilot button
+github.com##[data-testid="side-nav-menu-item-COPILOT"]
+! Left sidebar - MCP Registry
+github.com##[data-component="NavList.Item"][href="/mcp"]
 ! Right sidebar - Copilot promo banner
 github.com##.DashboardBannerCopilotApp
 ! Right sidebar - Changelog posts containing ai terms
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
+! * JSONPath v2 compatible
 github.com##command-palette-item[data-item-title="Copilot"]
 ! -- https://github.com/settings/copilot/features (Copilot features in account settings)
 ! Promo banner for GitHub Copilot (Doesn't appear for all users)
@@ -975,6 +1054,8 @@ github.com##[data-testid="copilot-free-user-checklist"]
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/
 ! "Agents" tab in repository navbar (desktop & mobile)
 ! * Via https://www.reddit.com/r/uBlockOrigin/comments/1vkxr0j/comment/p2xake5/
+! -- https://github.com/easylist/easylistchina
+! "Ask Copilot about this repository" if no README is present
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
 ! File header - "Ask Copilot about this file" button
 github.com###blob-view-header-copilot-icon
@@ -1047,19 +1128,12 @@ support.github.com##[data-fs="copilot_chat_nav"]
 ! -- https://github.blog/
 ! Header - "Try Copilot" button
 github.blog##.Button[href^="https://github.com/features/copilot"]
-github.blog##.Button[href="https://github.com/features/ai/github-app"]
+github.blog##.Button[href^="https://github.com/features/ai/github-app"]
 ! ================
 ! == GitHub Dev ==
 ! ================
 ! Web version of VS Code used for editing files on GitHub
-! Part of user authentication for Copilot. Affects login status shown via Copilot icon in bottom status bar.
-||api.github.com/copilot_internal/$xmlhttprequest,domain=github.dev
-! Unsure. Returns list of AI chat models.
-! Initially thoought this would break sidebar chat.
-||main.vscode-cdn.net/extensions/chat.json$xmlhttprequest,domain=github.dev
-! Not sure what this does ¯\_(ツ)_/¯
-! It gets called when codespace page is opened. Copilot Chat is still listed in extensions list.
-||marketplace.visualstudio.com/_apis/public/gallery/vscode/github/copilot-chat/$xmlhttprequest,domain=github.dev
+! Close sidebar panel for AI chat
 ! Source Control > Changes > Message bar - "Generate Commit Message" sparkle icon
 ! * Leaves behind an an invisible box which shows "click" mouse cursor when hovered. Clicking just focuses text box though.
 github.dev##.action-label.codicon.codicon-sparkle[role="button"]
@@ -1103,6 +1177,11 @@ docs.github.com##.SearchBarButton_searchInputButton__nAE_3[aria-label="Search or
 docs.github.com##[data-testid="ai-autocomplete-suggestions"]
 ! "Ask Copilot" answer after hitting "enter" to submit search
 docs.github.com##[data-testid="ask-ai"]
+! ===================
+! == GitHub Status ==
+! ===================
+! Copilot in footer
+www.githubstatus.com##.link-gray[href="https://github.com/features/copilot"]
 ! ============
 ! == GitLab ==
 ! ============
@@ -1354,18 +1433,22 @@ docs.google.com##[data-action-id="freebird-open-help-me-ask-from-icon"]
 ! Some filters only apply to accounts with a Google Workspace or Google AI subscription
 ! AI requests for search
 ||appsgenaiserver-pa.clients6.google.com/v1/genai/$xmlhttprequest,domain=drive.google.com
-! -- https://drive.google.com/drive/my-drive
+! -- https://drive.google.com/drive/ (All pages)
 ! "Ask Gemini" icon in header
 drive.google.com###WWNEkf
 ! "AI Overview search" sources icon in search bar
 drive.google.com##.p5rLxe.HBDJjb
-! "Summarize this file" in selection bar above files after selecting a file (Also matches "Catch me up")
-drive.google.com##.SMHH7
-! "Summarize this folder/file" in file "More actions" menu (⋮)
-! "Summarize this file" when hovering over file icon
-drive.google.com##.oaTPh
 ! New > More > Google AI Studio
 ! * Use 'remove()' to fix keyboard navigation
+! -- https://drive.google.com/drive/home
+! "Ask Gemini" in "More actions" menu (⋮)
+! "Ask Gemini"/"Catch me up" buttons when a file is selected
+drive.google.com##.iQnZTe.SMHH7
+! -- https://drive.google.com/drive/my-drive
+! "Ask Gemini"/"Suggest file moves" button
+drive.google.com##[data-test-id="help-me-organize-chip-container"]
+! "Summarize this file" when hovering over file icon
+drive.google.com##.oaTPh
 ! Right click menu, New > More > Google AI Studio
 ! -- https://drive.google.com/drive/search?q=what%20is%20my%20biggest%20file%3F
 ! AI Overview
@@ -1418,14 +1501,18 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 ! Search bar > "AI Mode" button
 www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Logo (Added during Olympics) (Separate filters for uBlock and AdGuard compatability)
+! AI buttons below search bar
+! * "Create images", "Ask about files", and "Brainstorm"
+! * These buttons replace the standard "Google Search" button.
 ! Promo text below search bar mentioning AI
 ! AI mode promo boxes
 www.google.*##[jscontroller="DyTeib"]
-! Footer - "Applying AI towards science and the environment"
-www.google.*##.pHiOh[href^="https://ai.google/"]
+! Footer - Promo text for AI tools
+www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_campaign=bottom-footer"]
 ! Search bar - AI button (magnifying glass icon, mobile only)
 www.google.*##.xOchs
 ! Autocomplete suggestions
+! * JSONPath v2 compatible
 ! * Backup cosmetic filter for mobile
 ! -- https://www.google.com/search?q=Why+are+we+here
 ! "AI Mode" tab in navbar
@@ -1514,6 +1601,12 @@ workspace.google.com##.summary
 www.healio.com###healio-ai-banner
 ! "Healio AI" in navbar
 www.healio.com##.ai-link
+! ==========
+! == Hevo ==
+! ==========
+! -- https://hevodata.com/learn/airflow-sql-server/
+! Explain code button
+hevodata.com##.code-example-wrapper
 ! ==============
 ! == HiNative ==
 ! ==============
@@ -1539,13 +1632,6 @@ www.homedepot.com###magic-apron-review-summary
 ! AI Assist button in initial options list
 virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Chat with HP's SupportGPT for AI Answers"]
 virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Get an AI Answer"]
-! ===================
-! == Humble Bundle ==
-! ===================
-! -- https://www.humblebundle.com/bundles
-! Bundles involving AI
-! * Exclude the "The Cybersecurity & AI Defense" bundle
-www.humblebundle.com##.bundle:is([href*="/ai-"], [href*="-ai-"], [href*="claude-code"], [href*="genai-"]):not([href*="cybersecurity"])
 ! =========
 ! == IBM ==
 ! =========
@@ -1582,6 +1668,8 @@ www.imdb.com##[data-testid="ai-review-summary"]
 ! -- https://imgflip.com/
 ! "AI Meme Generator" button
 imgflip.com##.home-create-btn[href="/ai-meme"]
+! "Imgflip AI" banners seen on homepage and in meme generator
+imgflip.com##.ai-banner
 ! -- https://imgflip.com/memegenerator
 ! * Credit to gittaca for pointing some of these out (https://codeberg.org/gittaca/gitludd-blocklist/src/commit/0ba96a400350599e325a6c6c4399f1c51b1b2e76/txt)
 ! "AI" template
@@ -1746,6 +1834,16 @@ kagi.com##.__sri_more_menu > .k_ui_dropdown_data_list > .list_items > ._0_discus
 ! -- https://www.kiehls.com/skincare/face-oils/midnight-recovery-concentrate-moisturizing-face-oil-serum/819.html
 ! Review summary
 www.kiehls.com##.swat-review-summary-container-border
+! ============
+! == Kohl's ==
+! ============
+! -- https://www.kohls.com/
+! Header - Ask Kohl's button
+! AI chat sidebar
+||gstatic.com/cloud/ai/commerce_ai_ui/1.0.0/static.js$domain=kohls.com
+! -- https://www.kohls.com/product/prd-3910467/mens-sonoma-goods-for-life-supersoft-essential-crewneck-tee.jsp
+! Shop Similar button
+www.kohls.com##button[aria-label="Shop Similar - Find similar products using AI assistance"]
 ! ==============
 ! == Langfuse ==
 ! ==============
@@ -1892,12 +1990,24 @@ www.merriam-webster.com##.chatbot-nav-item
 ! -- https://www.messenger.com/ (logged in)
 ! Chats - Meta AI
 www.messenger.com##div[role="gridcell"] > div > a[role="link"][href="/t/156025504001094/"]
+! =========================
+! == Meta for Developers ==
+! =========================
+! -- https://developers.facebook.com/documentation/instagram-platform
+! Copy for LLM button
 ! ===========
 ! == Metro ==
 ! ===========
 ! -- https://metro.co.uk/2023/06/02/do-you-get-charged-if-you-tap-in-and-out-of-the-same-station-18887918/
 ! "Ask Metro" bubble in the middle of certain articles.
 metro.co.uk##.metro-answers
+! ==============
+! == Michaels ==
+! ==============
+! Header - Ask Mike
+! -- https://www.michaels.com/product/bead-landing-earring-clip-on-rhodium-10443069
+! Review summary
+www.michaels.com##[data-bv-show="review-summaries"]
 ! ===============
 ! == Microsoft ==
 ! ===============
@@ -1908,6 +2018,7 @@ www.microsoft.com,cloud.microsoft##:is(#shellmenu_2, #shellmenu_2-mo)[href="http
 ! -- https://www.microsoft.com/en-us (general)
 ! - Header nav
 ! Copilot tab
+www.microsoft.com##.uhf-nav-link[href^="https://copilot.com/"]
 www.microsoft.com##.uhf-nav-link[href="https://copilot.microsoft.com/"]
 ! "All Microsoft" menu options
 ! * Microsoft AI
@@ -1995,8 +2106,12 @@ learn.microsoft.com##[id^="ai-answer-"]
 ! Use for web Office apps. Tested via SharePoint.
 ! Floating Copilot button in bottom right (After opening document)
 officeapps.live.com###CopilotDABContainer
-! -- https://word.cloud.microsoft/ (Microsoft Word)
-! "Try Copilot" suggestions (logged out)
+! -- https://word.cloud.microsoft/en-us/ (logged out)
+! Promo section for Copilot
+! -- https://word.cloud.microsoft/ (logged in)
+! Explore Copilot section
+word.cloud.microsoft##[aria-label="Explore Copilot section."]
+! "Try Copilot" suggestions (logged out) (No longer used?)
 word.cloud.microsoft##[role="region"][aria-label="Try Copilot"]
 ! "What would you like to create today" prompt box (logged in)
 word.cloud.microsoft##.___h6kil70[aria-label="copilot"]
@@ -2005,14 +2120,27 @@ word.cloud.microsoft##.___h6kil70[aria-label="copilot"]
 ! * Other languages (https://word.cloud.microsoft/es-ES/)
 ! -- With document open
 ! Navbar buttons (Home tab) for Copilot
-! -- https://excel.cloud.microsoft/ (Microsoft Excel)
+! -- https://excel.cloud.microsoft/en-us/ (logged out)
+! Copilot promo section
+! -- https://excel.cloud.microsoft/ (logged in)
+! Copilot section
+excel.cloud.microsoft##[role="region"][aria-label="Explore Copilot section."]
 ! "Copilot in Excel" recomended template (No longer used?)
-! -- With document opened
+! -- With document open
 ! Floating copilot button + network requests
 ||/officeonline/x/s/*__layouts/App_Scripts/rslc0/EwaTS.copilot*.js$script,domain=usc-excel.officeapps.live.com
 ! Copilot navbar button
-! -- https://powerpoint.cloud.microsoft/ (Microsoft PowerPoint)
+! -- https://powerpoint.cloud.microsoft/en-us/ (logged out)
+! Copilot promo section
+! -- https://powerpoint.cloud.microsoft/ (logged in)
+! "Create with Copilot" button
+powerpoint.cloud.microsoft##[aria-label="Create with Copilot"]
+! "Explore copilot" section
+powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
+! -- With document open
 ! * TODO: Copilot button briefly appears when PowerPoint is loading
+! -- https://onenote.cloud.microsoft/notebooks/
+! Header promo for Copilot Notebooks
 ! ==============================
 ! == Microsoft Power Automate ==
 ! ==============================
@@ -2050,7 +2178,9 @@ purview.microsoft.com###scc_oneShell-purview-copilot-button_container
 support.microsoft.com###buyInstallButton[href^="https://m365.cloud.microsoft/chat"]
 ! "Start your Copilot journey" section
 ! -- https://support.microsoft.com/en-us/office/create-professional-slide-layouts-with-designer-53c77d7b-dc40-45c2-b684-81415eac0617
-! "Need more help? Try Copilot" in sidebar
+! "Get help with Copilot" banner at top of article
+support.microsoft.com###copilotBanner
+! "Need more help? Try Copilot" in sidebar (no longer used?)
 support.microsoft.com###copilotRailBanner
 ! =====================
 ! == Microsoft Teams ==
@@ -2066,6 +2196,14 @@ teams.cloud.microsoft,teams.microsoft.com##[data-testid="list-item-metaos-copilo
 teams.cloud.microsoft,teams.microsoft.com##[data-tid="store-provider-app:co:copilotplugins"], [data-tid="store-provider-app:co:abc1"], [data-tid="store-provider-app:co:aiapps"]
 ! "Categories" in Apps sidebar ("Agents we love", "Boost productivity with agents")
 teams.cloud.microsoft,teams.microsoft.com##[data-tid="store-collection-app:co:featuredapps"], [data-tid="store-collection-app:co:abc1"]
+! ===========
+! == MinIO ==
+! ===========
+! -- https://docs.min.io/aistor/
+! AI on search results page
+||content-discoveryengine.googleapis.com/v1alpha/locations/global/widgetStreamAnswerQuery$xmlhttprequest,domain=docs.min.io
+docs.min.io##ucs-conversation
+docs.min.io##ucs-search-toolbar
 ! ==============
 ! == Mintlify ==
 ! ==============
@@ -2340,6 +2478,12 @@ www.priceline.com##[data-testid="poptip"]
 ! =============
 ! Header banner for AI Agents
 www.privacy.com##.click-promo-banner[href="https://agents.privacy.com"]
+! =============================
+! == ProProfs Knowledge Base ==
+! =============================
+! -- https://www.proprofskb.com/blog/developer-documentation/
+! AI Summary
+www.proprofskb.com##.quick_read_container
 ! ==============
 ! == ProQuest ==
 ! ==============
@@ -2357,6 +2501,10 @@ www.proquest.com###ra-panel-wrapper
 account.proton.me##.lumo-troubleshoot-launcher
 ! -- https://account.proton.me/apps
 ! Lumo app
+! ===============
+! == Pyrfecter ==
+! ===============
+! "For AI" code formatter in link nav
 ! ======================
 ! == Quicken Simplifi ==
 ! ======================
@@ -2398,10 +2546,9 @@ realpython.com##.sidebar-module > [href="/tutorials/ai/"]
 ! == Reddit ==
 ! ============
 ! -- https://www.reddit.com/
-! Search bar - "Ask" button in top search bar (no longer used?)
-www.reddit.com##.label-container > .trailing-divider
-www.reddit.com##.label-container > .trailing-content-container.has-trailing-content
-! Search bar - "Ask" button in focused search bar
+! Search bar - Revert to pre-ai version
+! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1vrytc2/comment/p4hb8ed/
+! * Backup ask button for AdGuard without trusted filters
 www.reddit.com##.expanded-composer-ask-pill
 ! Search bar - Trending summaries for subreddits
 ! * Also blocks weekly viewer count. Unclear if this can be avoided.
@@ -2417,6 +2564,10 @@ www.reddit.com###answers-nav-button
 ! "People also ask about" section (Mobile only)
 www.reddit.com###answers-suggested-queries
 ! Suggestions to repost to AI subreddit (If post was by current user)
+! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
+! AI-linked keywords in comments
+! * Based on https://www.reddit.com/r/uBlockOrigin/comments/1vt6sgy/comment/p4rdpz2/
+! * backup if trusted filters are not enabled
 ! -- Advertisements
 ! Post feed
 www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title*="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"])
@@ -2430,6 +2581,14 @@ www.reddit.com##shreddit-sidebar-ad:is(#t3_1tqih0v, #t3_1tr5maz)
 ! ============
 ! -- https://www.rediff.com/
 ! AI-Website Builder
+! ============
+! == Render ==
+! ============
+! -- https://render.com/docs/your-first-deploy
+! Ask button
+! Copy page > AI options
+render.com##.px-15[href^="https://chat.openai.com/?hints=search&prompt=Read%20from"]
+render.com##.px-15[href^="https://claude.ai/new?q=Read%20from"]
 ! ============
 ! == Replug ==
 ! ============
@@ -2572,6 +2731,12 @@ slickdeals.net##.commentsSummaryModuleV2 > .commentsSummaryModuleV2__header
 ! AI summary
 www.sogou.com##.reactResult
 ||wenda.sogou.com/produce_ai_answer$xmlhttprequest,domain=www.sogou.com
+! =================
+! == SourceForge ==
+! =================
+! -- https://sourceforge.net/
+! Google Cloud header promo
+sourceforge.net###google-cloud
 ! =======================
 ! == Spaceship Domains ==
 ! =======================
@@ -2636,14 +2801,6 @@ stackoverflow.com##.js-sofa-sidebar-promo
 ! Expandable sidebar, Products, "Vanish: Private AI"
 ! * TODO: Leaves blank space. Need to change spacing on prior element in list. (Different between desktop and mobile sites)
 www.startpage.com##.products-section > [href^="https://vanish.startpage.com/"]
-! ============
-! == Stripe ==
-! ============
-! -- https://docs.stripe.com/
-! "Ask AI" button in header next to search bar
-docs.stripe.com##[data-testid="StripeAssistant--Header-AskAI"]
-! AI search suggestions
-docs.stripe.com##[data-section-ask="true"]
 ! ====================
 ! == Strato Webmail ==
 ! ====================
@@ -2654,6 +2811,22 @@ webmail.strato.de##[aria-label="KI-Chat"]
 webmail.strato.de##[aria-label="KI-Integration"]
 ! "AI-Chat" app link in app menu
 webmail.strato.de##[data-app-name="io.ox/ai-chat"]
+! ============
+! == Stripe ==
+! ============
+! -- https://docs.stripe.com/
+! "Ask AI" button in header next to search bar
+docs.stripe.com##[data-testid="StripeAssistant--Header-AskAI"]
+! AI search suggestions
+docs.stripe.com##[data-section-ask="true"]
+! -- https://docs.stripe.com/api
+! Ask AI button
+docs.stripe.com##.⚙19ugdnr
+! Ask about this section & Copy for LLM
+docs.stripe.com##.⚙19wy2gp
+docs.stripe.com##.⚙ld2wwb
+docs.stripe.com##.⚙ld2wwb + [role="separator"]
+! Explain code block with AI
 ! =============
 ! == Studocu ==
 ! =============
@@ -2727,6 +2900,16 @@ www.testmuai.com##.w-\[265px\].flex-shrink-0.desktop\:hidden .mt-20.flex-shrink-
 ! -- https://www.theatlantic.com/games/
 ! Lemony Snicket LLM game
 www.theatlantic.com##[data-event-puzzle-name="lemony-snicket-suspicious-incident-dubious-park"]
+! =====================
+! == The Information ==
+! =====================
+! -- https://www.theinformation.com
+! Header button for deep research
+www.theinformation.com###global-nav [href="/deep-research"]
+! ≡ menu - Deep research (mobile size)
+! Header banner for deep research
+www.theinformation.com###ai-research-banner
+! Footer deep research
 ! ===================
 ! == The New Stack ==
 ! ===================
@@ -2806,6 +2989,12 @@ turbotax.intuit.com###aic-entry
 ! ==============
 ! Header - AI Study Tools
 ! AI Study Tools section
+! ============
+! == Twilio ==
+! ============
+! -- https://www.twilio.com/docs/sendgrid/api-reference
+! Copy as markdown > Open in assistant
+www.twilio.com##[data-paste-element="MENU_GROUP"][aria-label="Open in assistant"]
 ! ===========
 ! == Udemy ==
 ! ===========
@@ -3080,11 +3269,12 @@ x.com##nav > [href="/i/grok"]
 ! Compose post - Grok
 x.com##[data-testid="grokImgGen"]
 ! Tweet - Explain this post
+x.com##button[aria-label="Grok actions"]
 ! Floating Grok chat button in bottom right
 x.com##[data-testid="GrokDrawer"]
 ! - Promos
 ! Top of home feed - Promos for video generation and Grok Build
-! Right sidebar - "Make videos in seconds" promo
+! Right sidebar - Grok promos
 ! -- Hiding specific tweets
 ! * Also hides "is this post relevant to your search" notice
 ! Posts with AI art tags

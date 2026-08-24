@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: pL8I9Pj7UsSHtH6Nw2VUzw
-! Diff-Path: ../patches/1/1-s-1786386316-3600.patch
+! Checksum: 3SYYgxJSvCHK7ObrlJ8yDw
+! Diff-Path: ../patches/1/1-s-1787339875-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.0
-! TimeUpdated: 2026-08-10T18:21:50+00:00
+! Version: 2.1.8.22
+! TimeUpdated: 2026-08-21T19:13:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3847,12 +3847,16 @@ newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,
 ! NOTE: UA rules copied to Ukrainian filter
 ! TODO: Remove not multi lang rules with .ua tld after splitting the filter (look at the end of file)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/237818
+redheadsound.studio##+js(google-ima)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237848
 ||maket.laserbiz.ru/templates/androidus-warm/js/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237330
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234715
 ||sochi.camera/adblock-detector.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/238710
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233664
+@@||yandex.ru/ads/system/context.js$domain=rr4farmtrof.com
 rr4farmtrof.com##+js(remove-node-text, script, adwall)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233134
 evilmod.ru#@##reklama
@@ -6620,7 +6624,7 @@ ufacitynews.ru,sevastopol.su,zn.ua,pravo.ru,lubertsyriamo.ru,kommersant.ru,dvnov
 ! ##div[id^="unit_"]
 ngnovoros.ru,grozny.tv,newizv.ru,ura.news,ferra.ru,malls.ru,montecarlo.ru,hightech.fm,ngs24.ru,76.ru,msk1.ru,grozny-inform.ru,pnp.ru,ladys.media,pogovorim.by,umteh.com,newsarmenia.am,sib.fm,autoparus.by,ctv.by,hightech.plus,punkt-a.info,1yar.tv,baltnews.*,sm.news,politring.com,interfax.by,eadaily.com,golospravdy.eu,tayga.info,neg.by,kriminal.net.ua,rusvesna.su,365news.biz,mir24.tv,newsru.com,finam.info,mixnews.lv,russian.rt.com,steaklovers.menu,teleprogramma.pro,ua-football.com,vesti.uz,warhead.su,zakon.kz##div[id^="unit_"]
 ! ##div[id^="adfox_"]
-love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,gorodche.ru,smartpress.by,raenza.ru,eadaily.com,zakon.kz,svpressa.ru,udf.name,udf.by,baby.ru,pikabu.ru,thequestion.ru##div[id^="adfox_"]
+avtocod.ru,love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,gorodche.ru,smartpress.by,raenza.ru,eadaily.com,zakon.kz,svpressa.ru,udf.name,udf.by,baby.ru,pikabu.ru,thequestion.ru##div[id^="adfox_"]
 !
 ! For URL shorteners or simple sites with frequently changed ad servers.
 ! Incorrectly blocked domains can be excluded using regex(synchronize this regexp in all filters)
@@ -6636,6 +6640,8 @@ love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,
 !
 liga.net##.remp-banner
 epravda.com.ua##div[style="height:290px; clear: both; margin-top: 10px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center;"]
+streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*###main-content > div.container > div.grid div.border.bg-gradient-card:has(> div.flex > a[href^="https://billing.rocketstreams4k.com/"])
+streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##a[data-no-ad]
 streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##.musiqly-ad
 legalbet.by,legalbet.*##.top-three-block > div
 legalbet.by,legalbet.*##.bookmakers-in-footer
@@ -7002,6 +7008,24 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+profguide.io##.pg-banner-wrapper
+payberry.games##a[href^="https://share.flocktory.com/"]
+securitylab.ru###uber_banner
+securitylab.ru##.index-news-list > div.d-none:not([id]):has(> .news-card-banner)
+pg12.ru##div[class^="promo-"]
+pg12.ru##div[class*="Promo"]
+pg12.ru###promo-after-comments
+pg12.ru##.promoInnerArticleAfterTags
+pg12.ru##div[class^="project-col3-layout_row__"] > div[class^="project-col3-layout_contentRightStretch__"]:has(> div[class*="news-card_newsPreviewRight__"]:empty)
+tankist.net##.top-interesting
+web.epalovo.com###lb-side + div[class]
+||lenta.ru/fenwick|
+yuga.ru##.branding_wide
+yuga.ru##p:has(> a[href="https://www.yuga.ru/advertising/"])
+||js.yuga.ru/yuga_adfox_loader.js
+progorod43.ru##div[class^="article-content_articlePromoSlot"]
+progorod43.ru##div[class^="promo"]
+progorod43.ru##.contentRightMainPromo
 ura.news##div[class*="_news-publication-divider__title"]
 iguides.ru##section.main-container > section.row:has(> section > #bxdynamic_banner-top_start)
 iguides.ru##section.main-container > section.row:has(> section > #bxdynamic_ADV_IG_TOP_start)
@@ -7130,7 +7154,7 @@ fastpic.org##+js(addEventListener-defuser, , /window\.open\(AD\,|wpadmngr\.com|\
 fastpic.org##+js(abort-current-script, Date.prototype.toISOString, wpadmngr.com)
 fastpic.org##+js(abort-on-property-read, ExaQaAutomatizationFlag)
 fastpic.org##+js(abort-current-script, EventTarget.prototype.dispatchEvent, getexoloader)
-fastpic.org##+js(remove-node-text, script, /=document\["[\s\S]*?\.location\.href=|wpadmngr\.com|\[\'init\'\]|\]=\'async\'\,document/)
+fastpic.org##+js(remove-node-text, script, /=document\["[\s\S]*?\.location\.href=|wpadmngr\.com|\[\'init\'\]|\]=\'async\'\,document|ctrlKey/)
 ||fastpic.org/px/provider.js
 news.ru##.post-detail__content > div[style]:has(> div[id^="adfox_"])
 news.ru##.head-reban
@@ -7228,7 +7252,6 @@ spbdnevnik.ru##img.banner
 payment.wata.pro##.wata-pay_flocktory-container
 pornushka.tv##.pb-list-items > .row > div:not([data-key])
 detector404.ru##.qms
-afisha.ru##header div[class]:has(> a[href="/movie/"])
 film.ru##.online_button_kion
 film.ru##.platform_button_okko
 ruwiki.ru##.content__section--adv
@@ -8142,7 +8165,7 @@ happycoin.club##a[href][target="_blank"][rel="noopener"] > img[width][height]
 happycoin.club##.theiaStickySidebar > div.widget_text:has(> div.widget-title-cover > h5:contains(Реклама))
 ||myfanstv.net/uploads/*/baner/
 fanserials.vip##div[data-dlebclicks]
-lifehacker.ru,sport-express.ru,drive2.ru,zaycev.net,dni.ru,life.ru,asna.ru,fb.ru,cian.ru,vseinstrumenti.ru,onliner.by,iz.ru,fantworld.org,myfin.by,animeonline.cc##div[id^="adfox_"]
+lenta.ru,lifehacker.ru,sport-express.ru,drive2.ru,zaycev.net,dni.ru,life.ru,asna.ru,fb.ru,cian.ru,vseinstrumenti.ru,onliner.by,iz.ru,fantworld.org,myfin.by,animeonline.cc##div[id^="adfox_"]
 animeonline.cc###rkl-left
 myslo.ru##div[class^="myslo-banner-"]
 kinoafisha.info##.okko2024Btn
@@ -14201,7 +14224,7 @@ eparazit.ru##.sidebar a[target="_blank"] > canvas[width="300"]
 wd-x.ru##.sidebar a[target="_blank"] > img
 sadikionline.ru##.sidebar noindex > a > img
 sadikionline.ru##.sidebar noindex > iframe
-roscontrol.com,study.ru,kanobu.ru,mmorpg.su##.sidebar-banner
+securitylab.ru,roscontrol.com,study.ru,kanobu.ru,mmorpg.su##.sidebar-banner
 glavpost.com##.sidebar-banner-block
 ural56.ru##.sidebar-banner__item
 3dnews.ru##.sidebar-chunk > div.isspecial.sidebar-chunk
@@ -17188,7 +17211,7 @@ pgn21.ru,gorodkirov.ru,navigator-kirov.ru,pg11.ru,pg12.ru,pg13.ru,pg21.ru,proche
 !
 ! Mangalib
 yaoilib.net,hentailib.*,ranobelib.me,mangalib.*,anilib.me##div[data-home-block="slider"]:has(div[data-scroll-content] > a[target="_blank"])
-yaoilib.net,hentailib.*,ranobelib.me,mangalib.*,anilib.me##div[style="margin-top: 20px; margin-bottom: 20px;"]
+yaoilib.net,hentailib.*,ranobelib.me,mangalib.*,anilib.me##div[style*="margin-top:"][style*="; margin-bottom:"]
 yaoilib.net,hentailib.*,ranobelib.me,mangalib.*,anilib.me##div[data-reader-mode="vertical"] > div[style="margin-top: 8px; margin-bottom: 12px;"]
 !
 ! Sites of the same owner. Sometimes domains may be changed
@@ -17805,6 +17828,7 @@ mail.ru##+js(json-prune, result.status)
 auto.mail.ru##.daynews__inner > tbody > tr > td.daynews__spring
 auto.mail.ru##.sharelist + div.box_block
 !
+cloud.mail.ru##div[class^="Public__folderContent"]:style(padding-right: 0 !important;)
 cloud.mail.ru##a[href*="disable_ads_public"]
 cloud.mail.ru##div[class^="ErrorPage__advDesktop--"]
 cloud.mail.ru###sidebar-banner
@@ -18511,6 +18535,8 @@ lib.seu.edu.cn#@#.one-search
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! indochaska-nuernberg.de - pictures not showing for "Speisekarte"
+@@||d1e1kd3gffmhjg.cloudfront.net/bannerbottom/$domain=indochaska-nuernberg.de
 ! https://github.com/AdguardTeam/AdGuardExtra/issues/661
 ! aglint-disable-next-line
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230051
@@ -19607,6 +19633,11 @@ ex-press.live##div[data-content-hero-id="app-layout"]:style(background-image: no
 !
 ! NOTE: Specific
 !
+ulysmedia.kz##.adv-top-sec
+kapital.kz###ad-container
+kazpravda.kz##.container:has(> .top-banner)
+kazpravda.kz##.kp-sb
+||kazpravda.kz/media/banners/
 massaget.kz##div[class^="banners-"]
 massaget.kz##header:style(height: auto !important;)
 inbusiness.kz##div[class^="ad"]

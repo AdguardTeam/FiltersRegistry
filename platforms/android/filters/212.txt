@@ -1,21 +1,21 @@
-! Checksum: WwhDQAzNARpQqF9SHsCbjQ
-! Diff-Path: ../patches/212/212-s-1786409483-14400.patch
+! Checksum: VrrIZt+Y1OJRPQkH6FN7jQ
+! Diff-Path: ../patches/212/212-s-1787546874-14400.patch
 ! Title: RU AdList: Counters
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.94.97
-! TimeUpdated: 2026-08-11T00:48:17+00:00
+! Version: 2.1.95.75
+! TimeUpdated: 2026-08-24T04:45:35+00:00
 ! Expires: 5 days (update frequency)
 !
-! Checksum: w9Uw1ekvXKuCZR+teU/5Dw
-! OriginalVersion: 202608110041
+! Checksum: sf1YrjuwGzvq5ilpC+1KvQ
+! OriginalVersion: 202608240432
 ! Title: RU AdList: Counters
-! Last modified: 11 Aug 2026 00:41 UTC
+! Last modified: 24 Aug 2026 04:32 UTC
 ! Expires: 1 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
 !
 ! *** ruadlist:cntblock.txt ***
-! Last modified: Fri, 07 Aug 2026 10:44:06 +0000
+! Last modified: Sun, 23 Aug 2026 14:15:00 +0000
 !
 ! Дополнительный список фильтров RU Adlist: Counters
 ! Лицензия CC-BY: http://creativecommons.org/licenses/by/3.0/
@@ -490,7 +490,6 @@ _pagespeed_beacon?
 ||facebook.com/tr/?
 ||facebook.com/tr/|
 ||fastgoogle.ru/microcounter/$third-party
-||fastpic.org/*.gif?r=
 ||fastpic.org/viewed.php?url=/*.html&ref=$xmlhttprequest
 ||faststart.ru^$third-party
 ||feedburner.com/~r/
@@ -824,6 +823,7 @@ _pagespeed_beacon?
 ||rkn.gov.ru/5a71c95863f38b1dcfcbb763.js
 ||rktch.com^$third-party
 ||rlcdn.com^$third-party
+||rnti.online/api/tracking/
 ||rover.ebay.com^$image,object,script
 ||rpmstatic.net^$third-party
 ||rtb.com.ru^$third-party
@@ -1264,6 +1264,7 @@ eda.yandex.ru#?#main#main main > div[style^="margin-bottom:"]:has([aria-label="�
 mail.yandex.*#?#.mail-Page-Body .Popup2 > .Tooltip-Content:contains(/^© 202/)
 ya.*,yandex.*#$?#.content__right div:has(> div > button:matches-attr(/[a-z0-9]/=/advertiser/)) { display: none !important }
 ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-z0-9]/=/"type":"adv"|advertiser/)) { display: none !important }
+ya.ru##main > div > div[data-hydration-id]
 ||mail.yandex.*/u2709/$script,~third-party,redirect=noopjs
 ||strm.yandex.ru/get/$script,domain=yandex.ru|yastatic.net
 ||strm.yandex.ru/get/*?sid=*&vsid=
@@ -1322,6 +1323,7 @@ yandex.*#$?#.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-c
 ! Геоблокировки в плеерах
 ||allarknow.online/*block=$subdocument,removeparam=block
 ||aniqit.com/*geoblock=$subdocument,removeparam=geoblock
+||ashdi.vip/*geoblock=$subdocument,removeparam=geoblock
 ||kodik.cc/*geoblock=$subdocument,removeparam=geoblock
 ||kodik.info/*geoblock=$subdocument,removeparam=geoblock
 ||kodikdb.com/*geoblock=$subdocument,removeparam=geoblock
@@ -1432,7 +1434,6 @@ $removeparam=referrer_clid
 $removeparam=rtclick
 $removeparam=searchid,domain=kufar.by
 $removeparam=short_domain,domain=torbobit.net|tourbobit.com|tourbobit.net|turbobeet.net|turbobi.pw|turbobif.com|turbobit.net|turbobita.net|turbobits.cc|turbobits.net|turboobit.com
-$removeparam=sid,domain=nnm-club.me|nnmclub.ro|nnmclub.to
 $removeparam=source_ve_path,domain=youtube.com
 $removeparam=sub_confirmation,domain=youtube.com
 $removeparam=traffic_source
@@ -1471,12 +1472,11 @@ $removeparam=ysclid
 /?from_block=$document,removeparam=from_block,domain=www.kinopoisk.ru
 /?ref=tg$document,removeparam=ref
 ?es=smi2$document,removeparam=es
-?from=$document,removeparam=from,domain=3dnews.ru|7days.ru|~account.mail.ru|~auth.mail.ru|auto.ru|autodaily.ru|autonews.ru|autopilot.ru|habr.com|igromania.ru|klops.ru|kommersant.ru|kp.ru|mail.ru|metro-cc.ru|mk.ru|myweekend.ru|ntv.ru|ozon.ru|rbc.ru|rbcautonews.ru|rbclifemedia.ru|rbcrealty.ru|ridus.ru|sportmail.ru|sportrbc.ru|sports.ru|vkplay.ru
+?from=$document,removeparam=from,domain=3dnews.ru|7days.ru|~account.mail.ru|~auth.mail.ru|auto.ru|autodaily.ru|autonews.ru|autopilot.ru|habr.com|igromania.ru|klops.ru|kommersant.ru|kp.ru|~light.mail.ru|mail.ru|metro-cc.ru|mk.ru|myweekend.ru|ntv.ru|ozon.ru|peers.tv|rbc.ru|rbcautonews.ru|rbclifemedia.ru|rbcrealty.ru|ridus.ru|sportmail.ru|sportrbc.ru|sports.ru|vkplay.ru
 ?from=$document,xmlhttprequest,removeparam=from,domain=vedomosti.ru
 ?from=smi2agg$document,removeparam=from
 ?prov=ukrnet$removeparam=prov
 ?ruid=$document,removeparam=ruid,domain=autodaily.ru|autonews.ru|rbc.ru|sportrbc.ru
-@@/forum\/(login|release|torrent)\.php\?(logout|mode)\=/$document,domain=nnm-club.me|nnmclub.ro|nnmclub.to
 @@||youtube.com/signin?$removeparam,domain=youtube.com
 block_click=$removeparam=block_click,domain=rambler.ru
 fbclid=$document,removeparam=fbclid
@@ -1623,6 +1623,7 @@ $removeparam=fromprefix,domain=mail.ru|sportmail.ru
 $removeparam=fromwidget,domain=mail.ru|sportmail.ru
 $removeparam=mailday,domain=mail.ru|sportmail.ru
 $removeparam=md,domain=mail.ru|sportmail.ru
+$removeparam=octavius-snr,domain=e.mail.ru|octavius.mail.ru|vk.mail.ru
 $removeparam=ref,domain=mail.ru|sportmail.ru
 $removeparam=referrer_block,domain=mail.ru|sportmail.ru
 $removeparam=rf,domain=mail.ru|sportmail.ru

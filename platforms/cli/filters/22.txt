@@ -1,9 +1,9 @@
-! Checksum: dR2gmwL3JgfD1PlTv0g4ig
-! Diff-Path: ../patches/22/22-s-1786243737-3600.patch
+! Checksum: kMdCpb1k8uIbcW1KvvAfjQ
+! Diff-Path: ../patches/22/22-s-1787235573-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.14.62
-! TimeUpdated: 2026-08-09T02:47:03+00:00
+! Version: 2.0.14.72
+! TimeUpdated: 2026-08-20T14:16:52+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26,6 +26,7 @@
 ! SECTION: Widgets (sougo RSS) - Blogroll
 !
 ! NOTE: Blogroll generic
+||ar-cdn.net^$third-party
 ||gamelog.apexlegends-leaksnews.com/api/widget/$third-party
 ||re.trigs-sockets.com^
 ||feedgrabbr.com^$third-party
@@ -1388,6 +1389,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ~sinoptik.ua###SinoptikInformer
 ##a[title="WhatsApp Newsletter Marketing"]
 !
+/CxRobotSdkJs.js
 .az/livechat/
 /crm/site_button/loader_*.js$domain=~tvoe.live
 /edugram_chat.js
@@ -1407,7 +1409,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (third-party services)
 !
-||robot-lc*.chaoxing.com/sdk/CxRobotSdkJs.js
 ||prod.oddsmind.ai/js/oddsmind-chat.min.js$third-party
 ||widster.ru^$third-party
 ||widget.yourgood.app^
@@ -1798,6 +1799,8 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 !
 !   SECTION: Widgets - Marketing - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238674
+@@||secure.livechatinc.com/customer/action/open_chat?$domain=njumobile.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236492
 @@||ws.nperf.com^$domain=proof.ovh.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229403
@@ -2044,6 +2047,10 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+poro.gg##.BeaconFabButtonFrame
+||web.eu-pl.koda.ai/web.sdk.js$domain=hammerphones.com
+chatlab.com##.rcw-widget-container
+||turkiyegazetesi.com.tr/s/js/ai-chat.js
 asviva.de##.o-livechat-root
 dns-shop.ru###chat-button
 pacjent.gov.pl###sprintbot-chat
@@ -2457,6 +2464,7 @@ faz.net#?#.ctn-PlaceholderContent:has(> .ctn-GDPR)
 ##amp-iframe[src^="https://widget.civey.com"]
 ##iframe[src*="compass.pressekompass.net/compasses"]
 !
+||reposta.kz/widget/widget.js$third-party
 ||aflt.travel.yandex.ru^$script,third-party
 ||widget.justwatch.com^$third-party
 ||widgets.sprinkletxt.com^
@@ -2475,6 +2483,7 @@ faz.net#?#.ctn-PlaceholderContent:has(> .ctn-GDPR)
 !
 !   NOTE: Vacancy/job widgets
 !
+||webapi.dir.bg/worktalent
 ||nofluffjobs.com^$third-party
 ||cp-jobmacha-servicemacha-widgets.*.aliyuncs.com/chinapress-jobads-prod.js
 ||ziprecruiter.com/jobs-widget/$third-party
@@ -2549,6 +2558,8 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+bingebox.to#%#//scriptlet('set-session-storage-item', 'bingebox-donation-banner-dismissed', '1')
+dir.bg###doantion-banner-block
 archive.org##.js-donate-banner
 pureinfotech.com##.kofi-box
 fourfourtwo.com##[id^="play-our-free-match-predictor-and-win-"]
