@@ -52,6 +52,7 @@ describe('build.js: cache flag handling', () => {
                 cp: vi.fn().mockResolvedValue(undefined),
                 rm: vi.fn().mockResolvedValue(undefined),
                 writeFile: vi.fn().mockResolvedValue(undefined),
+                mkdir: vi.fn().mockResolvedValue(undefined),
             },
         }));
         vi.doMock('../../utils/find_files.js', () => ({
