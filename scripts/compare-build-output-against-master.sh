@@ -366,13 +366,19 @@ generate_report() {
   echo "Files with diffs:          $rule_diffs"
   [ -n "$diff_list" ] && printf "$diff_list\n"
   echo ""
-  echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
-  echo "filters.json/filters.js diffs: $meta_diffs (a nonzero count here signals a metadata change)"
+  echo "${C_BOLD}--- Metadata Files ---${C_RESET}"
+  echo "filters.json/filters.js diffs: $meta_diffs"
   echo ""
   echo "${C_BOLD}--- Verdict ---${C_RESET}"
-  [ "$rule_diffs" -eq 0 ] \
-    && echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file diffs" \
-    || { echo "${C_RED}${CROSS} FAIL${C_RESET} — $rule_diffs rule file(s) differ"; return 1; }
+  if [ "$rule_diffs" -eq 0 ] && [ "$meta_diffs" -eq 0 ]; then
+    echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file or metadata diffs"
+  else
+    local fail_reasons=""
+    [ "$rule_diffs" -gt 0 ] && fail_reasons="$fail_reasons $rule_diffs rule file(s) differ;"
+    [ "$meta_diffs" -gt 0 ] && fail_reasons="$fail_reasons $meta_diffs metadata file(s) differ;"
+    echo "${C_RED}${CROSS} FAIL${C_RESET} —$fail_reasons"
+    return 1
+  fi
 }
 
 # --- Step 0: reuse existing build output, if any ---
