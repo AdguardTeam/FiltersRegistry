@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: Qd/z4Ir5tMz8v3uRodNe3A
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1787503430-14400.patch
+! Checksum: 3SNV47yqEpQ6hRmf8bl1Zg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1787546897-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.43
@@ -408,6 +408,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||69.16.230.226^$all
 ||208.91.196.46^$all
 /page/bouncy.php?$all
+||certifiedblob.com^$all
 ||93.93.51.223^$all
 ||livejasmin.com/*&origin=$document
 ||103.174.102.240^$all
@@ -756,6 +757,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||[2a01:4f8:e0:19cb::1]^$all
 ||gettopple.com^$all
 ||st1net.com^$all
+||tf4srv.com^$all
 ||zlink0.com^$all
 ||95.211.229.247^$all
 ||88.208.22.1^$all
@@ -1024,6 +1026,7 @@ www.microsoft.com##.card[data-bi-cn*="jail break" i]
 ://ww9.$document,domain=~ww9.ikea.com|~ww9.tiki.ne.jp|~ww9.sakura.ne.jp|~ww9.generali.pt|~ww9.itau.com.br|~ww9.autotask.net|~ww9.pornhoarder.tv
 ://ww12.$document,domain=~ww12.autotask.net|~ww12.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww13.$document,domain=~ww13.autotask.net|~ww13.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww14.$document,domain=~ww14.autotask.net|~ww15.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww16.$document,domain=~ww16.autotask.net|~ww16.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww17.$document,domain=~ww17.autotask.net|~ww17.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww18.$document,domain=~ww18.autotask.net|~ww18.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
@@ -2011,6 +2014,8 @@ $document,removeparam=/^adjust.*$/,domain=~adj.st
 $document,removeparam=elq,domain=~comcast.com|~comcastforbusiness.com
 $document,removeparam=elqaid,domain=~comcast.com|~comcastforbusiness.com
 $document,removeparam=elqat
+$document,removeparam=elqcst
+$document,removeparam=elqcsid
 $document,removeparam=/^ga_.*$/
 $document,removeparam=_hsenc
 $removeparam=_hsmi
@@ -2109,6 +2114,7 @@ $removeparam=spJobID
 $removeparam=spReportId
 $removeparam=actId
 $removeparam=oly_anon_id
+$document,removeparam=/^wickedsource=.*$/i
 $removeparam=s_cid
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
@@ -2181,7 +2187,6 @@ $removeparam=af_adset_id
 $removeparam=af_c_id
 $removeparam=af_channel
 $removeparam=af_click_lookback
-$removeparam=af_cost_model
 $removeparam=af_force_deeplink
 $removeparam=af_keywords
 $removeparam=af_prt
@@ -2869,6 +2874,7 @@ $removeparam=x-source,domain=malwarebytes.com|parallels.com
 ||malwarebytes.com^$removeparam=ADDITIONAL_x-source
 ||ozon.ru^$removeparam=advert
 $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+||belk.com^$removeparam=start
 $removeparam=ia-pkpmtrack
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
@@ -3100,7 +3106,6 @@ $removeparam=c,domain=redirect.appmetrica.yandex.com|blu-ray.com
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
 ||fandom.com^$removeparam=so
-||lindex.com^$removeparam=affiliate_source
 ||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
 ||tokopedia.com^$removeparam=extParam
@@ -3293,7 +3298,6 @@ $document,removeparam=s_campaign
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 ||www.roblox.com^$removeparam=treatmentType
-$document,removeparam=ucid,domain=unicredit.it|steampowered.com
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
@@ -3361,10 +3365,6 @@ ref=aftermath.site$document,removeparam=ref
 $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com
 ||deezer.$removeparam=/^utm_.*$/
 ||duckduckgo.com/extension-success$document,removeparam=atb
-||duckduckgo.com/atb.js$document,removeparam=set_atb
-||duckduckgo.com/atb.js$document,removeparam=v
-||duckduckgo.com/atb.js$document,removeparam=bv
-||duckduckgo.com/atb.js$document,removeparam=browser
 ||github.com^$document,removeparam=email_source
 ||github.com^$document,removeparam=email_token
 ||youtube.com/shorts/$document,removeparam=si
