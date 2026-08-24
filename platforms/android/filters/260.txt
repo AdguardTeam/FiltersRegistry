@@ -1,9 +1,9 @@
-! Checksum: BgCIBXk/MEcTd5VqAaVV5g
-! Diff-Path: ../patches/260/260-s-1787503411-14400.patch
+! Checksum: pmmSerNz0hVftKAyCABjUA
+! Diff-Path: ../patches/260/260-s-1787532604-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.40
-! TimeUpdated: 2026-08-23T16:41:23+00:00
+! Version: 2.0.1.41
+! TimeUpdated: 2026-08-24T00:47:54+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -123,8 +123,9 @@ www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 ! AI questions in autocomplete search suggestions
-! * Recieved from `https://www.amazon.com/suggestions`
+! * Received from `https://www.amazon.com/suggestions`
 www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')
+! Search placeholder messages
 ! Rufus chatbot in sidebar
 ! * Requires trusted filters in AdGuard
 ! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1pod2g6/comment/nuelobn/
@@ -464,6 +465,16 @@ www.britannica.com##.category-link-CHATBOT
 www.britannica.com##.header-topic-britannica-ai-module
 ! Header after scrolling down
 www.britannica.com##.toc-sticky-header-ai-container
+! ==================
+! == BrowserStack ==
+! ==================
+! -- https://www.browserstack.com/guide/how-to-debug-on-iphone
+! Header banner for AI Leadership Summit
+www.browserstack.com###promo-notification:has([href^="https://www.browserstack.com/events/qa-leadership-summit-autumn-2026"])
+! Header nav ai agent item
+www.browserstack.com##.bstack-mm-li:has([data-title="AI Agents"])
+! Footer - AI Agents
+www.browserstack.com###menu-item-153460
 ! ==============
 ! == Bunnings ==
 ! ==============
@@ -1165,9 +1176,13 @@ gitbook.com#$?#button[aria-label="GitBook Assistant"] { remove: true; }
 ! Copilot network requests
 ! * Prevents Copilot-generated commit messages
 ||api.individual.githubcopilot.com/$xmlhttprequest,domain=github.com
-! -- https://github.com/ (logged out)
+! -- https://github.com/home
 ! Try Copilot button
 github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
+! Footer items
+github.com##[aria-labelledby="footer-title-platform"] li:has([href="/features/copilot"])
+github.com##[aria-labelledby="footer-title-platform"] li:has(> [href="/features/ai"])
+github.com##[aria-labelledby="footer-title-ecosystem"] li:has(> [href="/mcp"])
 ! -- https://github.com/ (logged in)
 ! Header - "Chat with Copilot" icon next to search bar
 github.com##[data-testid="top-bar-actions"] > .hide-md:has(> .CopilotItems-module__Wrapper__BFG9q)
@@ -2300,6 +2315,14 @@ developers.facebook.com##div:has(> .x1i10hfl.xjbqb8w.xjqpnuy.xc5r6h4.xqeqjp1.x1p
 ! -- https://metro.co.uk/2023/06/02/do-you-get-charged-if-you-tap-in-and-out-of-the-same-station-18887918/
 ! "Ask Metro" bubble in the middle of certain articles.
 metro.co.uk##.metro-answers
+! ==============
+! == Michaels ==
+! ==============
+! Header - Ask Mike
+www.michaels.com##div:has(> span > [aria-label="Open Ask Mike chat"])
+! -- https://www.michaels.com/product/bead-landing-earring-clip-on-rhodium-10443069
+! Review summary
+www.michaels.com##[data-bv-show="review-summaries"]
 ! ===============
 ! == Microsoft ==
 ! ===============
