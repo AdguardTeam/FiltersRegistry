@@ -1,9 +1,9 @@
-! Checksum: xkrc0zBR5YWEXMs/wV0gOg
-! Diff-Path: ../patches/6/6-s-1787649559-3600.patch
+! Checksum: jEXogOYL6k9WU2uGTJqPsg
+! Diff-Path: ../patches/6/6-s-1787664345-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.13
-! TimeUpdated: 2026-08-25T09:16:11+00:00
+! Version: 2.0.53.14
+! TimeUpdated: 2026-08-25T13:22:26+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1512,6 +1512,9 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+/^https:\/\/www\.igorslab\.de\/[0-9a-z]+\/[\/0-9A-Z_a-z-]+$/$image,~third-party,match-case
+igorslab.de##.herald-sticky
+igorslab.de##.herald-sidebar-right > .widget:not([id*="widget"])
 imagenetz.de##.ig-adbox
 hna.de##.wv_story_el_showHeroes
 ohn.haendlerbund.de#$##mainAdsBannerSection { display: none !important; }
@@ -11995,11 +11998,13 @@ schwulissimo.de##div[class^="news-group__side-"]:has(.news-group-ad-container)
 schwarzwald-aktuell.eu##div[data-element_type="widget"]:has(.schwa-adlabel)
 reitschuster.de##div[data-elementor-type="single-post"] a[target="_blank"]:has(> img)
 mediamarkt.*##div[data-test="mms-product-carousels"]:has(button[aria-label="Erfahre mehr über Produktsponsoring"])
+mobile.de##div[data-testid="result-list"] > article:has(span[data-testid="sponsored-badge"])
 docmorris.de##div[data-testid="search-grid-product-card-wrapper"]:has(a[data-testid="product-card-sponsored"])
 jungefreiheit.de##div[data-widget_type="shortcode.default"]:has(.adsbygoogle)
 mydealz.de##div[id^="customBannerList-id-"]:has(a[data-t="banner"])
 animalcrossingwiki.de##div[style*="repeating-linear-gradient"]:has(> [id$=".de_incontent"])
 mobile.de##div[style="min-height:250px"]:has(#SRP_BILLBOARD_ADSENSE)
+mobile.de##div[style="min-height:250px"]:has(div[data-testid="SRP_BILLBOARD-container"])
 techbook.de##div[style="min-width: 300px; min-height: 250px;"]:has(#mrec)
 jungefreiheit.de##div[style="text-align: center;"]:has(.adsbygoogle)
 windowspro.de##div[style]:has(a[onclick])
