@@ -1,9 +1,9 @@
-! Checksum: 6S33tMSzfaWNvKs3Qo91tw
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1787635068-3600.patch
+! Checksum: ZqkSUThA53TuMROpgPVFiQ
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1787642665-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.92.91
-! TimeUpdated: 2026-08-25T05:15:04+00:00
+! Version: 2.0.92.92
+! TimeUpdated: 2026-08-25T07:21:39+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -2064,7 +2064,7 @@ accounts.snapchat.com#%#//scriptlet('set-cookie', 'Marketing', 'false')
 accounts.snapchat.com#%#//scriptlet('set-cookie', 'Performance', 'false')
 accounts.snapchat.com#%#//scriptlet('set-cookie', 'Preferences', 'false')
 grok.com#%#//scriptlet('set-local-storage-item', 'privacy-policy-notice-dismissed', 'true')
-/plugins/complianz-gdpr*/cookiebanner/js/complianz.min.js$domain=peopleinside.it|stromausfall.org|betlewski.com|criptofacil.com|marciniwuc.com|loewen-umzuege.com|proandroid.com|futondor.com
+/plugins/complianz-gdpr*/cookiebanner/js/complianz.min.js$domain=peopleinside.it|stromausfall.org|betlewski.com|criptofacil.com|marciniwuc.com|loewen-umzuege.com|proandroid.com|futondor.com|dreame-polska.pl
 revolutionrace.de,revolutionrace.eu,revolutionrace.it,revolutionrace.co.uk,revolutionrace.cz,revolutionrace.dk,revolutionrace.fr,revolutionrace.nl,revolutionrace.no,revolutionrace.com#%#//scriptlet('trusted-set-cookie', 'CookieConsent_ConsentMode', '{"ad_storage":"denied","analytics_storage":"denied","functionality_storage":"denied","personalization_storage":"denied","security_storage":"granted"}')
 ||challenges.fr/consent/sdk/
 dominternet.ru##.ck-s
@@ -9394,11 +9394,6 @@ nonsolocap.it#%#//scriptlet("set-constant", "cookieChoices.showCookieConsent", "
 romeo.com#%#//scriptlet('set-local-storage-item', 'cookiesConsent', '1')
 torquato.de,bk-licht.eu,shirtlabor.de,vanlaack.com#%#//scriptlet("set-cookie", "cookie-preference", "1")
 boohooman.com#%#document.cookie="dw_cookies_accepted=D; path=/;";
-filmweb.pl#%#//scriptlet('adjust-setTimeout', '[native code]', '2000', '0.001')
-filmweb.pl#%#//scriptlet("set-constant", "rodo.waitForConsent", "noopPromiseResolve")
-filmweb.pl#%#//scriptlet("set-constant", "rodo.validateStoragePurpose", "noopPromiseResolve")
-filmweb.pl#%#//scriptlet("set-constant", "consentManagerIsOn", "false")
-filmweb.pl#%#//scriptlet("set-constant", "rodo.checkIsDidomiConsent", "noopFunc")
 saudia.com#%#//scriptlet("set-cookie", "sv_gdpr", "true")
 bethesda.net#%#//scriptlet("set-cookie", "user-seen-tos-update", "true")
 giochigratisonline.it#%#//scriptlet('set-cookie-reload', 'consensoCookie', 'yes')
@@ -9788,6 +9783,12 @@ kabeleinsdoku.at,kabeleinsdoku.de#%#//scriptlet('trusted-click-element', 'cmp-ba
 geberit.de#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-save-button"]')
 conrad.*,br.de,peri.lv,webasto-comfort.com,shop-apotheke.com,sennheiser.com,antenne.de,bechtle.com,hagebau.de#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-accept-all-button"]')
 hom.com,bonify.de,srf.ch,hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.nl,villeroy-boch.fr#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-deny-all-button"]')
+filmweb.pl#%#//scriptlet('adjust-setTimeout', '[native code]', '2000', '0.001')
+filmweb.pl#%#//scriptlet("set-constant", "rodo.waitForConsent", "noopPromiseResolve")
+filmweb.pl#%#//scriptlet("set-constant", "consentManagerIsOn", "false")
+filmweb.pl#%#//scriptlet("set-constant", "rodo.checkIsDidomiConsent", "noopFunc")
+!+ NOT_PLATFORM(ext_ublock)
+filmweb.pl#%#//scriptlet("set-constant", "rodo.validateStoragePurpose", "noopPromiseResolve")
 msn.com#%#(()=>{const e=document,t=new MutationObserver((()=>{const e=document.querySelector("#onetrust-accept-btn-handler");e&&(e.click(),t.disconnect())}));t.observe(e,{attributes:!0,childList:!0,subtree:!0}),setTimeout((()=>{t.disconnect()}),1e4)})();
 nowtv.com.tr#%#(()=>{const e=document,t=new MutationObserver((()=>{const e=document.querySelector("#onetrust-reject-all-handler");e&&(e.click(),t.disconnect())}));t.observe(e,{attributes:!0,childList:!0,subtree:!0}),setTimeout((()=>{t.disconnect()}),1e4)})();
 mediamarkt.de#%#(()=>{const t=document.documentElement,o=new MutationObserver((()=>{const t=document.querySelector('#mms-consent-portal-container button[data-test="pwa-consent-layer-deny-all"]');if(t&&typeof t.click !== 'undefined'){t.click();}}));o.observe(t,{attributes:!0,childList:!0,subtree:!0})})();

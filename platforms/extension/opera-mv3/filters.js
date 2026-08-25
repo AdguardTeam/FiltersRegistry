@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.86.8",
-			"timeUpdated": "2026-08-25T06:13:30+0000",
+			"version": "2.4.86.9",
+			"timeUpdated": "2026-08-25T07:20:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -619,8 +619,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.35",
-			"timeUpdated": "2026-08-24T16:14:45+0000",
+			"version": "2.0.57.36",
+			"timeUpdated": "2026-08-25T07:21:38+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -650,8 +650,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.13.92",
-			"timeUpdated": "2026-08-23T17:08:50+0000",
+			"version": "2.0.13.93",
+			"timeUpdated": "2026-08-25T07:21:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.92.91",
-			"timeUpdated": "2026-08-25T05:15:04+0000",
+			"version": "2.0.92.92",
+			"timeUpdated": "2026-08-25T07:21:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -736,8 +736,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.43",
-			"timeUpdated": "2026-08-25T05:15:07+0000",
+			"version": "2.0.47.44",
+			"timeUpdated": "2026-08-25T07:21:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1213,8 +1213,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.64.12",
-			"timeUpdated": "2026-08-25T06:14:21+0000",
+			"version": "2.1.64.13",
+			"timeUpdated": "2026-08-25T07:21:46+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
