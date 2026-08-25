@@ -1,9 +1,9 @@
-! Checksum: 2zsSPUOFcimNicK+dJ5wSQ
-! Diff-Path: ../patches/260/260-s-1787676524-14400.patch
+! Checksum: ooMJHNA/qgYvtwMOyTpdUQ
+! Diff-Path: ../patches/260/260-s-1787690725-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.47
-! TimeUpdated: 2026-08-25T16:46:22+00:00
+! Version: 2.0.1.48
+! TimeUpdated: 2026-08-25T20:42:47+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -588,6 +588,12 @@ cbc.ca##[class^="textToSpeech-"]
 ! -- https://www.cgtrader.com/
 ! Header - Create with AI
 www.cgtrader.com##[aria-controls="navigation-create-ai-panel"]
+! =================
+! == Chalet Farm ==
+! =================
+! Floating "AI Sales Associate" button
+||server.myrepai.com/web/load$xmlhttprequest,domain=chaletnursery.com
+chaletnursery.com###repWebClientContainer
 ! ==================
 ! == Cisco DevNet ==
 ! ==================
@@ -1419,6 +1425,16 @@ gitshare.me##.bg-brand\/5:has(>[href="/artifacts"])
 ! Promo sections
 gitshare.me##section#artifacts
 gitshare.me##section.border-border:has(.text-brand[href="/readme-generator"])
+! ===============
+! == Glassdoor ==
+! ===============
+! -- https://www.glassdoor.com/Job/test-jobs-SRCH_KO0,4.htm
+! "Tailor my resume" button
+glassdoor.com##[class^="ResumeTailor_coachmarkWrapper__"]
+! "Is your resume a good match?" notice to tailor resume
+glassdoor.com##[class^="AIRecruiterIntro_aiRecruiterIntroContainer__"]
+! AI questions below job sections
+glassdoor.com##[class^="ModernSection_footerWrapper__"]
 ! ============
 ! == Glyphy ==
 ! ============
@@ -1821,6 +1837,11 @@ www.google.*##.ULSxyf:has(> .MjjYud > .A6K0A > .cUnQKe [jsname="YrZdPb"][data-ev
 ! Loading placeholder for AI Generated topic info (in middle of search results)
 ! * May not appear when reloading page multiple times in a row
 www.google.*##[role="presentation"][data-md="50"]:has(.eaNXV[style*="animation-delay"])
+! -- https://www.google.com/search?q=staples
+! Right sidebar - Shopping/Ask button for store
+www.google.*##[data-id="SALES_ASSISTANT_BRAND_PROFILE_ENTRY_POINT"]
+! Right sidebar - Trending products - AI chip suggestions
+www.google.*##[data-id="PRODUCT_SHELF_SALES_ASSISTANT_ENTRY_CONTAINER"]
 ! -- https://www.google.com/search?q=tie (mobile only)
 ! AI generated overview container
 www.google.*##.iVzeVc:has([data-attrid="VisualDigestGeneratedDescription"])
@@ -1887,6 +1908,12 @@ workspace.google.com##.ORSkHc:has([data-appset-type="49"])
 ||ai-search-dot-gsuite-staging.appspot.com/api/answer$xmlhttprequest,domain=workspace.google.com
 ! AI search summary
 workspace.google.com##.summary
+! ======================
+! == Hardware Busters ==
+! ======================
+! -- https://hwbusters.com/news/comma-ai-egpu-dock-runs-open-source-firmware-249-bare-799-with-an-rx-9060/
+! Floating "Ask Buster" button
+hwbusters.com##.hwb-ai-root
 ! ============
 ! == Healio ==
 ! ============
@@ -2594,6 +2621,14 @@ docs.min.io##ucs-search-toolbar
 ##.z-10.select-none:has(> #ask-ai-code-block-button)
 ! Floating "Ask a question" chat box
 ##.chat-assistant-floating-input
+! ===========
+! == Mixam ==
+! ===========
+! Header sparkle button
+mixam.com##[data-controller="header--mixie"]
+! -- https://mixam.com/
+! "Get an Instant Quote" button
+mixam.com##[data-action="click->ai--mixie-banner#openHomepagePanel"]
 ! =============
 ! == Mixscan ==
 ! =============
@@ -2636,6 +2671,13 @@ www.msn.com##.me-stripe-tile-content:has(> .me-stripe-tile-button[aria-label="Mi
 ! ============================
 ! Floating Chatbot button
 ||www.chatbase.co/embed.min.js$script,domain=www.myonlinetraininghub.com
+! =========================
+! == Mydrivers (驱动之家) ==
+! =========================
+! -- https://news.mydrivers.com/1/1087/1087428.htm
+! Article summary
+news.mydrivers.com###AiSummaryLink
+||passport.mydrivers.com//V2/pc/AISummaryHandler.ashx$xmlhttprequest,domain=news.mydrivers.com
 ! ==========
 ! == Nate ==
 ! ==========
