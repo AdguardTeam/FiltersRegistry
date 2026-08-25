@@ -287,7 +287,7 @@ draw_branch_menu() {
   done
 }
 
-step_header 1 "Branch to compare against $BASED_BRANCH"
+step_header 1 "Local branch to compare against $BASED_BRANCH"
 echo "(↑/↓ to move, Enter to select):"
 if [ "$HAS_CURRENT_DEFAULT" = false ]; then
   echo "${C_DIM}No current branch to default to (detached HEAD or on $BASED_BRANCH) — defaulting to the first branch.${C_RESET}"
