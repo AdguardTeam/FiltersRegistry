@@ -650,6 +650,13 @@ www.canva.com##[role="tabpanel"] .BMOCzQ.EC2pjw.LuBWVA > .sGm5Vw.ID9zAA > .nJVq1
 www.canva.com##.SymshQ.BMOCzQ.LuBWVA:has([src="https://template.canva.com/EAHBDm46r7A/3/0/450w-4uCHha18X_U.jpg"])
 
 ! ==============
+! == CBC News ==
+! ==============
+! -- https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218
+! Listen to this article
+cbc.ca##[class^="textToSpeech-"]
+
+! ==============
 ! == CGTrader ==
 ! ==============
 ! -- https://www.cgtrader.com/
@@ -2010,12 +2017,15 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 ! -- https://www.google.com/ (Homepage)
 ! Search bar > "AI Mode" button
 www.google.*##.plR5qb
-! Remove AI hyperlinks from Google Logo (Added during Olympics) (Separate filters for uBlock and AdGuard compatability)
+! Remove AI hyperlinks from Google Doodle Logos
 !#if ext_ublock
 ! * Desktop
+! * Desktop (no longer used?)
 ! * Mobile
 ! * Mobile search results page
 !#else
+! AdGuard compatible
+www.google.*#%#//scriptlet('remove-attr', 'href', 'a[href*="&udm=50"]:has(#hplogo)')
 www.google.*#%#//scriptlet('remove-attr', 'href', '.k1zIA.kKvsb > a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')

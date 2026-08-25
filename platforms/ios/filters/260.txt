@@ -1,9 +1,9 @@
-! Checksum: lobefq2eVbW3BhEZpC2OQw
-! Diff-Path: ../patches/260/260-s-1787619056-14400.patch
+! Checksum: 2zsSPUOFcimNicK+dJ5wSQ
+! Diff-Path: ../patches/260/260-s-1787676524-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.46
-! TimeUpdated: 2026-08-25T00:48:12+00:00
+! Version: 2.0.1.47
+! TimeUpdated: 2026-08-25T16:46:22+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -576,6 +576,12 @@ www.canva.com##[role="tabpanel"] .BMOCzQ.EC2pjw.LuBWVA > .sGm5Vw.ID9zAA > .nJVq1
 ! AI video effects section
 ! * Match section containing "cloud cruise" AI effect
 www.canva.com##.SymshQ.BMOCzQ.LuBWVA:has([src="https://template.canva.com/EAHBDm46r7A/3/0/450w-4uCHha18X_U.jpg"])
+! ==============
+! == CBC News ==
+! ==============
+! -- https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218
+! Listen to this article
+cbc.ca##[class^="textToSpeech-"]
 ! ==============
 ! == CGTrader ==
 ! ==============
@@ -1756,7 +1762,9 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 ! -- https://www.google.com/ (Homepage)
 ! Search bar > "AI Mode" button
 www.google.*##.plR5qb
-! Remove AI hyperlinks from Google Logo (Added during Olympics) (Separate filters for uBlock and AdGuard compatability)
+! Remove AI hyperlinks from Google Doodle Logos
+! AdGuard compatible
+www.google.*#%#//scriptlet('remove-attr', 'href', 'a[href*="&udm=50"]:has(#hplogo)')
 www.google.*#%#//scriptlet('remove-attr', 'href', '.k1zIA.kKvsb > a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
