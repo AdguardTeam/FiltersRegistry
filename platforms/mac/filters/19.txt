@@ -1,8 +1,8 @@
-! Checksum: qVobO3Bkzj+WZOY279XUWQ
+! Checksum: 57bxhRzCgN7+wig5DTZUiw
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.81.35
-! TimeUpdated: 2026-08-24T18:12:24+00:00
+! Version: 2.0.81.36
+! TimeUpdated: 2026-08-25T03:23:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3020,6 +3020,8 @@ chzzk.naver.com#%#//scriptlet('trusted-suppress-native-method', 'Function.protot
 chzzk.naver.com#%#//scriptlet('spoof-css', '.banner_ad_wrapper', 'display', 'block')
 chzzk.naver.com#%#//scriptlet('trusted-json-set-xhr-response', 'content.playerAdDisplayResponse', 'json:{"preRoll":false,"midRoll":false}', 'content.playerAdDisplayResponse.preRoll', '/ad/display-status')
 chzzk.naver.com#%#//scriptlet('prevent-xhr', '/(veta.naver.com\/vas|veta.naver.com\/gfp|veta.naver.com\/call)/ method:OPTIONS')
+||api.chzzk.naver.com/service/v1/client-config$domain=chzzk.naver.com,xmlhttprequest,replace=/\,"tr":[0-9]+\,/\,"tr":0\,/
+||ssl.pstatic.net/static/nng/glive/resource/p/static/js/vendor-*.js$domain=chzzk.naver.com,script,replace=/(?!async *function *[a-zA-Z0-9]+) *\( *{ *[a-zA-Z0-9]+ *: *[a-zA-Z0-9]+ *= *![0-9] *\, *[a-zA-Z0-9]+ *: *[a-zA-Z0-9]+ *= *![0-9] *\, *[a-zA-Z0-9]+ *: *[a-zA-Z0-9]+ *= *![0-9] *\, *[a-zA-Z0-9]+ *: *[a-zA-Z0-9]+ *= *![0-9] * *} *\) *{ *.+[a-zA-Z0-9]+ *\|\| *[a-zA-Z0-9]+ *\|\| *[a-zA-Z0-9]+\.some *\( *[a-zA-Z0-9]+ *=> *[a-zA-Z0-9]+ *\) *}/(){return false}/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185974
 grabify.link#%#//scriptlet('set-cookie', 'ckstp', '1')
 grabify.link#@#.ad_container
