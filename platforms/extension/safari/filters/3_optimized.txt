@@ -1,9 +1,9 @@
-! Checksum: E+m2pXxo+x7lmHkpGbgTBw
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1787732480-3600.patch
+! Checksum: 7rlD5B+IHOzOhWpx6jhgBQ
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1787739520-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.10.0
-! TimeUpdated: 2026-08-26T08:18:17+00:00
+! Version: 2.1.10.1
+! TimeUpdated: 2026-08-26T10:14:54+00:00
 ! Expires: 5 days (update frequency)
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.pushState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.replaceState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
@@ -245,6 +245,10 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||eu-stsdk.vivoglobal.com^
+||eu-onrt-stsdk.vivoglobal.com^
+||eu-ort-stsdk.vivoglobal.com^
+||ex-adreq-asia.vivoglobal.com^
 ||beaconimages.netflix.net^
 ||xstats.st^$third-party
 ||sumetrika.com^
@@ -88717,6 +88721,7 @@ charlestownwyllie.oaklawnnonantum.com^
 /senddata?site=inpage
 ://ply.*/?v=$image,third-party
 /_/api/v2/analytics/?
+/sensorsdata/*
 /sensorsdata.min.js
 /analytics-reporter/*/event
 /p.php?action_name=
@@ -89144,6 +89149,7 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.device_sr', '3840x2160', '$.evts[*].nlog_id', 'args', '', 'jsonpath')
 naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.br_sr', '3840x2160', '$.evts[*].nlog_id', 'args', '', 'jsonpath')
 @@||nlog.naver.com/n|$domain=search.naver.com|www.naver.com
+||bitget.com/v*/monitor/events|
 ||techrepublic.com/api/ado/
 ||player.instaread.co/js/inarticle-metrics.js
 ||mediawatch.kr/weblog/gtracker.php
@@ -96279,6 +96285,8 @@ d4?appid*type*
 !### Temporary ###
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
 !#################
+@@||download.amd.com/js/analytics/analyticsinit.js$domain=amdgaming.com
+@@||download.amd.com/js/analytics/analyticscore-min.js$domain=amdgaming.com
 @@||js-cdn.dynatrace.com/jstag/$domain=fido.ca
 @@||googletagmanager.com/gtm.js$domain=talent.lowes.com
 @@||googletagmanager.com/gtm.js$domain=magasiner.familiprix.com
