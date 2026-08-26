@@ -388,7 +388,7 @@ setup_worktree() {
 
   if [ -e "$path/.git" ]; then
     echo "[$label] Existing worktree found at $path"
-    echo "Reuse it instead of recreating from scratch?"
+    echo "Reuse it instead of recreating?"
     if confirm default_no; then
       echo "${C_CYAN}${ARROW}${C_RESET} [$label] reusing existing worktree at $path"
       git -C "$path" checkout -f "$sha"
