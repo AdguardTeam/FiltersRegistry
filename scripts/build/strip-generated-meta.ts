@@ -47,6 +47,8 @@ const isRecordArray = (value: unknown[]): value is Record<string, unknown>[] => 
  * Strip generated version/timeUpdated fields from each entry of the `filters` array
  * in a filters.json/filters.js metadata file, in-place.
  *
+ * https://github.com/AdguardTeam/FiltersRegistry/issues/1208
+ *
  * @param filePath - Absolute path to the filters.json or filters.js file.
  * @returns True if the file was modified, false otherwise.
  */
