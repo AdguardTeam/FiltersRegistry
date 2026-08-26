@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.96.61",
-			"timeUpdated": "2026-08-26T00:46:57+0000",
+			"version": "2.1.96.62",
+			"timeUpdated": "2026-08-26T04:44:35+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.96.60",
-			"timeUpdated": "2026-08-26T00:46:59+0000",
+			"version": "2.1.96.61",
+			"timeUpdated": "2026-08-26T04:44:36+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1120,8 +1120,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.45.40",
-			"timeUpdated": "2026-08-25T16:45:47+0000",
+			"version": "2.0.45.41",
+			"timeUpdated": "2026-08-26T04:45:01+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1366,8 +1366,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.53",
-			"timeUpdated": "2026-07-03T05:47:30+0000",
+			"version": "2.0.8.54",
+			"timeUpdated": "2026-08-26T04:45:25+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.89.92",
-			"timeUpdated": "2026-08-26T00:47:52+0000",
+			"version": "2.0.89.93",
+			"timeUpdated": "2026-08-26T04:45:30+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1511,8 +1511,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.12.28",
-			"timeUpdated": "2026-08-25T16:46:21+0000",
+			"version": "2.0.12.29",
+			"timeUpdated": "2026-08-26T04:45:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1531,8 +1531,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.24",
-			"timeUpdated": "2026-08-13T16:48:21+0000",
+			"version": "2.0.0.25",
+			"timeUpdated": "2026-08-26T04:45:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
