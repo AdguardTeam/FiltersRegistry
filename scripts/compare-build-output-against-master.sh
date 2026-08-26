@@ -238,13 +238,14 @@ if [ -f "$META_FILE" ] && [ -d "$PLATFORMS_MASTER" ] && [ -d "$PLATFORMS_CHANGED
   source "$META_FILE"
   MODE_LABEL="plain"
   [ "$BUILD_LOCAL" = "true" ] && MODE_LABEL="cached"
-  echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL) — generate the report from it now instead of rebuilding?"
+  echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL)"
+  echo "Reuse it for generating the report right now?"
   if confirm; then
     echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL)"
     generate_report
     exit $?
   fi
-  echo "${C_CYAN}${ARROW}${C_RESET} Ignoring previous build output, rebuilding"
+  echo "${C_CYAN}${ARROW}${C_RESET} Removing previous build output, rebuilding"
 fi
 
 # --- Step 1: resolve branches ---
@@ -358,7 +359,7 @@ fi
 # --- Step 3: cleanup preference ---
 
 step_header 3 "Cleanup preference"
-echo "Remove worktrees and platforms_*_build/ when done?"
+echo "Remove worktrees and build output when done?"
 if confirm; then
   DO_CLEANUP=true
   echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: Yes"
@@ -386,7 +387,8 @@ setup_worktree() {
   local log_path="$TEMP_DIR_NAME/$LOG_DIR_NAME/worktree-$escaped_label.log"
 
   if [ -e "$path/.git" ]; then
-    echo "[$label] Existing worktree found at $path — reuse it instead of recreate from scratch?"
+    echo "[$label] Existing worktree found at $path"
+    echo "Reuse it instead of recreating from scratch?"
     if confirm default_no; then
       echo "${C_CYAN}${ARROW}${C_RESET} [$label] reusing existing worktree at $path"
       git -C "$path" checkout -f "$sha"
