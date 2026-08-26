@@ -1,9 +1,9 @@
-! Checksum: VBFTcf3hVb7qD09CZOBncA
-! Diff-Path: ../patches/25/25-s-1787688734-3600.patch
+! Checksum: 5DDZJgu2TRAnq2GNzk5z9g
+! Diff-Path: ../patches/25/25-s-1787732464-3600.patch
 ! Title: AdGuard Mail Tracking Protection filter
 ! Description: This filter blocks tracking pixels in email clients.
-! Version: 2.0.0.8
-! TimeUpdated: 2026-08-25T20:10:02+00:00
+! Version: 2.0.0.9
+! TimeUpdated: 2026-08-26T08:18:51+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,8 @@
 !       %2Fpix.gif%3F$image
 ! Bad:  ||newegg.com/mr/ (for instance, should be in specific.txt)
 !
+! Snowplow
+com.snowplowanalytics.iglu
 ! brevo.com / Sendinblue
 /tr/op/*-$image
 %2Ftr%2Fop%2F*-$image
@@ -112,6 +114,9 @@
 ! Bad: ||example.org^$script (treated it as regular analytics and block it in the Tracking Protection filter,
 !      if a script in not proxied)
 !
+! vk.ru
+vk.ru/email.php?t=$image
+vk.ru%2Femail.php%3Ft%3D$image
 ! tradingview.com
 snowplow-pixel.tradingview.com$image
 ! netflix.com
