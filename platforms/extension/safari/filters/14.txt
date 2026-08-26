@@ -1,9 +1,9 @@
-! Checksum: BYtg2aicsYsyzJ9luvkuXA
-! Diff-Path: ../patches/14/14-s-1787739516-3600.patch
+! Checksum: mRDXL80biXy3ePkU8vetdA
+! Diff-Path: ../patches/14/14-s-1787742926-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.77.5
-! TimeUpdated: 2026-08-26T10:15:14+00:00
+! Version: 2.2.77.6
+! TimeUpdated: 2026-08-26T11:12:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2641,6 +2641,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+mwinieta.pl#%#//scriptlet('trusted-set-local-storage-item', 'cookie-consent-v2', '{"essential":true,"analytics":false,"marketing":false}')
 qeeq.pl##.erc-modal
 bitget.com##.dp-cookie-dialog
 veranstaltungen.dresden.de#%#//scriptlet('trusted-set-local-storage-item', 'klaro', '%7B%22klaro%22%3Atrue%2C%22matomo%22%3Afalse%2C%22vimeo%22%3Atrue%2C%22youtube%22%3Atrue%2C%22mapbox%22%3Afalse%7D')
@@ -3348,7 +3349,7 @@ doutorfinancas.pt#%#//scriptlet('remove-class', 'cookie-overlay', 'body')
 nbki.ru###newcookies
 nikkinonline.com,ranking.sanrio.co.jp###datasign_cmp__host
 mosregtoday.ru##dialog[aria-label="cookie-agreement"]
-some.porn###app-cookie
+tickets.pl,some.porn###app-cookie
 evebattery.com##.t_main_privacy
 ||sdk.privacy-center.org/*/loader.js?target=www.index.hr
 ruplaymarket.ru,ruplay.market#%#//scriptlet('set-local-storage-item', 'policyAccepted', 'false')
@@ -37658,6 +37659,9 @@ beebom.com,techwiser.com,12punto.com.tr,infobae.com,fitbook.de,tsn.ua,haberx.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+mwinieta.pl#%#//scriptlet('trusted-set-cookie', 'mwi_popup_dismissed_at', '99999999999999')
+mwinieta.pl##section[aria-label="Darmowy e-book dla kierowców"]
+ondemand.st##a[href^="https://t.me/+"]
 natalie.mu##.NA_article_prefsource
 locopelis.com##.telegram-float
 techrepublic.com##astro-island[props*="newsletter"]
