@@ -1,9 +1,9 @@
-! Checksum: gStbxhP5P1ZhxrA3bXcygQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1787750905-3600.patch
+! Checksum: LqnWGrF4OVG5oq8sV4aNsw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1787754168-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.77.8
-! TimeUpdated: 2026-08-26T13:25:08+00:00
+! Version: 2.2.77.9
+! TimeUpdated: 2026-08-26T14:19:21+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1687,6 +1687,7 @@ hotel-boeke-loerrach.de,knusperstuebchen.net,intercraft.pl#%#//scriptlet('truste
 tippsling.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:c82d723')
 wegwandern.ch,compact-online.de#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:f4adc5d')
 cornhub.army#%#//scriptlet('trusted-click-element', 'dialog a[role="button"][data-order="0"][id]', '!real_cookie_banner-v:3_blog:1_path:0c09270')
+youdo.com##div[data-sentry-component="AccessCookies"]
 riamoneytransfer.com##body > div.fixed:has(section[aria-labelledby="consent-banner-title"])
 novakidschool.com#%#//scriptlet('trusted-set-cookie', 'consent', '{"functionality_storage":"granted","security_storage":"granted","ad_storage":"denied","analytics_storage":"denied","personalization_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}')
 parkingowo.pl##div[aria-labelledby="consent-banner-title"]
@@ -13718,6 +13719,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 klerk.ru#?#iframe[src^="https://autofill.yandex.ru/suggest?"][src*="widget"]
 sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+tv.mail.ru#$#html { overflow: auto !important; }
+tv.mail.ru#$#body > div[class^="ovr_"][id^="overlay_"][style="display: block;"] { display: none !important; }
 bintv.cc###bookmarkModalOverlay
 qeeq.pl##.J-seo-app-guide
 turkiyegazetesi.com.tr##.video_content.is-sticky
@@ -18439,7 +18442,7 @@ benuveny.hu##[class*="footer__newsletter"]
 ren.tv#%#//scriptlet('set-cookie', 'ren-max-messenger', '1')
 proshop.dk##.site-footer-newsletterContainer
 news.hada.io##.referrer-subscribe-banner
-mahsunsports50.xyz,mahsunsports80.xyz##.floating-telegram
+mahsunsports80.xyz##.floating-telegram
 discovery.com##.followus
 petersenshunting.com##.lity
 petersenshunting.com##.is-newsletter
