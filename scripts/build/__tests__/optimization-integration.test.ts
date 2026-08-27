@@ -195,7 +195,7 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
-    it('--use-cache with missing stats.json: rethrows with --download-stats hint, keeps original message', async () => {
+    it('--use-cache with missing stats.json: printing the --download-stats hint and original message', async () => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
         }));
@@ -215,18 +215,24 @@ describe('build.js: cache flag handling', () => {
         }));
         process.argv = ['node', 'build.js', '--use-cache'];
 
-        const rejection = new Promise<unknown>((resolve) => {
-            process.once('unhandledRejection', resolve);
-            process.once('uncaughtException', resolve);
-        });
-        await import('../build.js');
-        const error = await rejection;
+        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+        const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
 
-        expect(error).toBeInstanceOf(Error);
-        expect((error as Error).message).toBe(
-            'Run --download-stats to download the latest statistics. '
-            + `(${new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH).message})`,
+        await import('../build.js');
+
+        await vi.waitFor(() => {
+            expect(exitSpy).toHaveBeenCalledWith(1);
+        });
+
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+            expect.stringContaining(
+                'Run --download-stats to download the latest statistics. '
+                + `(${new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH).message})`,
+            ),
         );
+
+        consoleErrorSpy.mockRestore();
+        exitSpy.mockRestore();
     });
 });
 

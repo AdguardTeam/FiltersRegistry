@@ -211,4 +211,7 @@ const buildFilters = async () => {
     }
 };
 
-buildFilters();
+buildFilters().catch((e) => {
+    console.error(red(e.message));
+    process.exit(1);
+});
