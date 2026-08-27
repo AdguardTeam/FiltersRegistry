@@ -81,11 +81,11 @@ for all supported AdGuard products.
 | Command | Description |
 | ------- | ----------- |
 | `yarn build` | Build all filters (`tsx scripts/build/build.js`) |
-| `yarn build:local` | Build filters from cached `filter.txt` files (`tsx scripts/build/build.js --use-cache`); uses `temp/optimization/stats/` for stats if present, otherwise fetches from the remote server |
+| `yarn build:local` | Build from cached `filter.txt` (`build.js --use-cache`) |
 | `yarn auto-build` | Full automated build via `bash scripts/auto_build.sh` |
 | `yarn build:patches` | Build incremental patches |
 | `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
-| `yarn download-stats` | Download per-filter `stats.json` files to `temp/optimization/stats/`. Fetches into a temp directory and, once every fetch succeeds, replaces the whole stats directory. `--include` / `--skip` scope which filters are fetched, so a scoped `--download-stats` drops every other filter's cached stats; `--report` and `--strip-generated-meta` and `--no-patches-prepare` error here |
+| `yarn download-stats` | Download per-filter `stats.json` to `temp/optimization/stats/` |
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
@@ -98,6 +98,16 @@ for all supported AdGuard products.
 | `yarn update-wildcard-domains` | Scan filters for wildcard domains |
 | `yarn expand-wildcard-domains` | Expand wildcard domains in platform builds |
 | `yarn compress` | Compress repository data |
+
+`yarn build:local` reuses `temp/optimization/stats/` when present and otherwise fetches stats from the remote server.
+
+`yarn download-stats` stages fetches in a temp directory and swaps in the whole stats directory
+only after every fetch succeeds. `--include` / `--skip` scope which filters are fetched,
+so a scoped `yarn download-stats` drops every other filter's cached stats; `--report`,
+`--strip-generated-meta`, and `--no-patches-prepare` error when combined with it.
+
+See [DEVELOPMENT.md — Command Compatibility](DEVELOPMENT.md#command-compatibility)
+for which flag combinations are allowed.
 
 ## Contribution Instructions
 
