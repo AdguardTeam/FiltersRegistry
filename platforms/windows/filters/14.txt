@@ -1,9 +1,9 @@
-! Checksum: kbZtHvdXQpnYJe2R2T2+Pw
-! Diff-Path: ../patches/14/14-s-1787842199-3600.patch
+! Checksum: oVSxemnL84SNtUlsnIUGMA
+! Diff-Path: ../patches/14/14-s-1787856122-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.77.17
-! TimeUpdated: 2026-08-27T14:45:53+00:00
+! Version: 2.2.77.18
+! TimeUpdated: 2026-08-27T18:38:02+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2640,6 +2640,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+btgpactual.com##btg-privacy-policy
+spusu.de#%#//scriptlet('set-cookie', 'acceptSpusuCookies', 'necessary')
 catho.com.br###lgpd-consent-widget
 x.com#%#//scriptlet('trusted-set-cookie', 'd_prefs', 'MjoxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw')
 ||cartesia.ai/_astro/js.cookie
@@ -3342,7 +3344,7 @@ etermin.net###divCookieDlg
 kfc.by##.kfc-cookie-banner
 ||ec.yimg.com/didomi/*/loader.js$domain=aol.com
 ||freddy-fresh.de/main-lib/consent/cookieconsent.js
-originality.ai##.consent_banner
+visitarizona.com,originality.ai##.consent_banner
 blogs.windows.com##uhf-cookie-banner
 saby.ru##.sbis_ru-CookieAgreement
 ydns.io##.cookie-notice-outer
@@ -19496,6 +19498,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239510
+vodokanalrnd.ru#@#.popup-cookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239416
 @@||cdn.cookielaw.org^$domain=bluewin.ch
 bluewin.ch#@##onetrust-consent-sdk
@@ -36064,7 +36068,7 @@ labs.google.com#@##google-hats-survey
 ||puuush.me^
 ||push.reamaze.com^
 ||cdn.pushloop.io^$third-party
-||d335luupugsy2.cloudfront.net^
+||d335luupugsy2.cloudfront.net^$domain=~btgpactual.com
 ||kuolkoola.com^
 ||puhyjyf.com^
 ||speraspace.com^
@@ -37451,6 +37455,12 @@ empireonline.com,jiji.com,fictionhorizon.com,beebom.com,techwiser.com,12punto.co
 !
 ! SECTION: Subscriptions - Regular rules
 !
+manofmany.com##.mom-hidden-auth:has(> div[class] form > input[name="email"])
+manofmany.com##div.grid > div.mom-border:has(> div[class] > div.grid > a[href^="https://profile.google.com/cp/"])
+tob.news##.spc-social-follow-inline
+slashgear.com##.add-on-google-widget
+insider-gaming.com##.entry-content > figure.wp-block-embed ~ p:has(> a[href^="https://insider-gaming.com/subscribe"])
+marca.com##a[href^="https://www.google.es/preferences/source?q="]
 deview.co.jp##.to-lineguide-link
 thalia.at,thalia.de##newsletter-anmelden
 tokyo-np.co.jp##.google-ps-article-box
@@ -47815,6 +47825,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+insider-gaming.com##.wp-block-igha-ad-spot
 line-miniapp-weather.yahoo.co.jp##.footerInner
 jrepoint.jp##.c-mainContent_cnt > div[class="c-area"]:has(> section.c-area_inr a[href^="https://itunes.apple.com/jp/app/jre-point-apuri-jr-dong-ri/id1081293054?"])
 qeeq.pl##.J-seo-app-guide
@@ -52216,6 +52227,8 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239499
+insider-gaming.com##.entry-content > figure.wp-block-embed + p:has(> a[href^="https://discord.com/invite/"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239164
 turkiyegazetesi.com.tr##.article-recommended
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238375
@@ -62067,6 +62080,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/238935
+selfhostt.com#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238502
 otakufilmes.org#%#//scriptlet('adjust-setTimeout', 'Counter', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238012
