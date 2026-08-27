@@ -1,15 +1,15 @@
 ![Adblock Plus 2.0]
-! Checksum: Lr8/9/ldd0sm0otkC2YnEw
-! Diff-Path: ../patches/243/243-s-1787748562-14400.patch
+! Checksum: M22kYNkmBpaqmQPiQ2IZJQ
+! Diff-Path: ../patches/243/243-s-1787832131-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.27
-! TimeUpdated: 2026-08-26T12:46:35+00:00
+! Version: 2.0.25.28
+! TimeUpdated: 2026-08-27T11:59:19+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-08-26 13:04:17 CEST
+! Last modified: 2026-08-27 10:02:33 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -659,7 +659,7 @@ fragbite.se##.messageHolder ~ div[id*="viralize"][class*="brand-showheroes"]:rem
 fragbite.se##.module:has(a[href*="casino"])
 fragbite.se##.tn, .zooKeeper, #scraper, .subHeadSponsors
 framtid.se###siteflash, #customer-link-container
-fraser.nu##div[aria-label="Annonser"]
+fraser.nu##div[aria-label="Annonser"], .ad-reserved
 freedomtravel.se##.startpage-post:has(.has-sp)
 freedomtravel.se##.takeover-container, .ad-placement-group
 freeride.se##img[src*="/sponsor/"] + br + .boxlogo, .sidebar-front .boxen
@@ -772,7 +772,7 @@ hemnet.se###ad_unit_placeholder, div[class^="Panorama_panoramaAd"], .listing__pa
 hemnet.se##:is(article, li):has([class*="SponsoredLabel"], .article-card__sponsored-text)
 hemnet.se##:is(div[class^="Carousel"], #top_listing):has(div[class^="PaidPlacementLabel"])
 hemtrevligt.se##article[data-section="Partner"]
-hifitorget.se##.billboard_container, .billboard-style, a[href*="utm_"][target] img, .listing-ad-row
+hifitorget.se##div[data-sponsored-label], .ht-ad-divider, .anchor-ad-spacer, aside[aria-label="Annons"]
 hifitorget.se##:is(.row div[style^="min-height"], .row .h-100):has(.adsbygoogle, .billboard_container, div[id^="div-gpt-ad"])
 hippson.se##.font-bold:contains(SAMARBETE):upward(.rounded-xl)
 hippson.se##.my-8:empty, .ad-banner
@@ -2436,7 +2436,6 @@ zeromagazine.nu##div[id^="ads"]
 /melt-lib$domain=nyteknik.se|lag-avtal.se|arbetarskydd.se
 /metrics$domain=swebbtv.se
 /metrics/bambuser
-/min.t.$domain=aktieskolan.se
 /mod_carousel_banner$domain=bjuvsweek.se
 /monetization/ads-module/*
 /monetization/pixel-sdk/*
@@ -2844,7 +2843,7 @@ zeromagazine.nu##div[id^="ads"]
 /videojs-preroll$domain=himlentv7.se
 /videojs.ima.$domain=staylive.tv
 /viewed$xhr,domain=fotbolltransfers.com
-/view$xhr,domain=atl.nu|land.se
+/view$xhr,ping,domain=atl.nu|land.se|fraser.nu
 /view_count/view.php
 /view_count/view$domain=byggahus.se
 /visit/v.js
@@ -2992,6 +2991,7 @@ _banner.php?$domain=tvmatchen.nu
 ||ahody.com/insight
 ||ajs-assets.ftstatic.com/ftUtils.js
 ||akademiskahus.se/AddThis?$script
+||aktieskolan.se/?*=1&ver=$script
 ||allastudier.se/TrackingSearch
 ||allastudier.se/search-sponsor
 ||amazonaws.com/adn-tag
