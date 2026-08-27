@@ -85,7 +85,7 @@ for all supported AdGuard products.
 | `yarn auto-build` | Full automated build via `bash scripts/auto_build.sh` |
 | `yarn build:patches` | Build incremental patches |
 | `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
-| `yarn download-stats` | Download per-filter `stats.json` files to `temp/optimization/stats/`, without recompiling `filter.txt`; use `--include` or `--skip` to scope filters (not both at once). `--strip-generated-meta` and `--no-patches-prepare` error here |
+| `yarn download-stats` | Download per-filter `stats.json` files to `temp/optimization/stats/`. Fetches into a temp directory and, once every fetch succeeds, replaces the whole stats directory. `--include` / `--skip` scope which filters are fetched, so a scoped `--download-stats` drops every other filter's cached stats; `--report` and `--strip-generated-meta` and `--no-patches-prepare` error here |
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |

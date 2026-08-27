@@ -214,11 +214,13 @@ The following flags can be used with `yarn build` and `yarn build:local`:
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
 - `--generate-cache` — compile filters to update the `filter.txt` cache only
-- `--download-stats` — downloads per-filter `stats.json` files for the filters being built,
-  without recompiling `filter.txt`. Existing `stats.json` files are overwritten.
-  Use `--include` and/or `--skip` to scope which filters are downloaded;
-  `--strip-generated-meta` and `--no-patches-prepare` error here,
-  since neither applies to a run that produces no platform output
+- `--download-stats` — download each filter's `stats.json` without recompiling `filter.txt`.
+  Fetches into a temp directory and, once every fetch succeeds, replaces the whole local stats
+  directory — not a per-filter merge into the existing cache. `--include` / `--skip` scope which
+  filters are fetched, so a scoped `--download-stats` drops every other filter's cached stats;
+  pair it with an equally scoped build. `--report`, `--strip-generated-meta`, and
+  `--no-patches-prepare` error here, since none of them apply to a run that produces no
+  platform output.
 
 **Valid combinations:**
 
@@ -249,10 +251,11 @@ yarn build --generate-cache --include=1,2,3
 yarn build --generate-cache --skip=12,24
 yarn build --generate-cache --report='report.txt'
 
-# Stats-only download, no recompile
+# Stats-only download, no recompile (replaces the whole local stats cache)
 yarn build --download-stats
-yarn build --download-stats --include=1,2,3
-yarn build --download-stats --skip=12,24
+# Scoped download replaces the cache with just these filters — pair with a matching scoped build
+yarn build --download-stats --include=1,2,3 && yarn build:local --include=1,2,3
+yarn build --download-stats --skip=12,24 && yarn build:local --skip=12,24
 ```
 
 **Invalid or ineffective combinations:**
