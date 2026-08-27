@@ -1,9 +1,9 @@
-! Checksum: wVQuc2Y+M1iir/QCK0fxwA
-! Diff-Path: ../patches/260/260-s-1787813362-14400.patch
+! Checksum: C0ank/mI2pzPCh8a/wPXNQ
+! Diff-Path: ../patches/260/260-s-1787847523-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.52
-! TimeUpdated: 2026-08-27T06:47:06+00:00
+! Version: 2.0.1.53
+! TimeUpdated: 2026-08-27T16:16:19+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -2377,23 +2377,10 @@ www.microsoft.com,www.xbox.com##.copilot-container
 !  -- https://www.microsoft.com/en-us (page specific)
 ! Promotional banner for Copilot at top of page (no longer in use?)
 www.microsoft.com,cloud.microsoft###headerUniversalHeader > #epb:has(> .c-uhfh-alert > div > .c-paragraph > img[alt="Copilot logo"])
-! Carousel that contains an AI promo. (no longer in use?)
-! * data-oc='ocf19c': "The apps you know go further with Copilot"
-! * data-oc='ocaeae': "Meet the computer you can talk to"
-www.microsoft.com##reimagine-carousel:has(reimagine-hero-featured-slider-item:is([data-oc="ocf19c"], [data-oc="ocaeae"]))
 ! "How can we help" question prompt on top of page
 www.microsoft.com##store-heading-block[data-en-paragraph*="AI-powered suggestions"]
 www.microsoft.com##.chatonpage
 www.microsoft.com##.msstore-chatonpage
-! "For business" section > Promo cards
-! * US English site
-www.microsoft.com##reimagine-layout-column:has(reimagine-button[title="Learn more about Microsoft 365 Copilot"])
-www.microsoft.com##reimagine-layout-column:has(reimagine-button[title="Explore AI solutions"])
-! * Non-US languages (https://www.microsoft.com/zh-hk/)
-www.microsoft.com##.col:has(> [data-bi-assetid^="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-365-Copilot-COMMR-0625"])
-www.microsoft.com##.col:has(> [data-bi-assetid^="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom"])
-! "Get to know AI and Copilot" section
-www.microsoft.com##.featured:has(store-heading-block[data-en-title="Get to know AI and Copilot"])
 ! -- https://www.microsoft.com/en-us/edge/features/split-screen
 ! "Coilot" tab in header nav
 www.microsoft.com##.common-nav__menu-item:has([data-bi-id="Link-Navigate-Navbar-Copilot"])
@@ -3073,12 +3060,8 @@ help.salesforce.com##[data-testid="agent-root"]
 ! ===================
 ! == ScienceDirect ==
 ! ===================
-! -- https://www.sciencedirect.com/
-! LeapSpace carousel item.
-! * Checks for exactly 2 slides to avoid filtering if the layout changes in the future
-www.sciencedirect.com###bannerCarouselContent > .carousel-slides:has(:last-child:nth-child(2)) > #tabpanel-0:has(> .leapSpace-banner)
-www.sciencedirect.com#$##bannerCarouselContent > .carousel-slides:has(:last-child:nth-child(2)) > #tabpanel-0:has(> .leapSpace-banner) + #tabpanel-1 { display: block !important; }
-www.sciencedirect.com###bannerCarouselContent .carousel-indicators:has(:last-child:nth-child(2)) > li:nth-child(1):has(>[aria-label="LeapSpace slide"])
+! Header - LeapSpace
+www.sciencedirect.com##[aria-label="ai-links"]
 ! -- https://www.sciencedirect.com/science/article/pii/S0014579309010850
 ! "Reading assistant" box
 www.sciencedirect.com###reading-assistant-container
@@ -3538,6 +3521,12 @@ uhomes.com##.ai-chat
 ! =================
 ! Ulta AI floating button
 www.ulta.com##chat-messenger[service*="commerce-ai"]
+! =====================
+! == United Airlines ==
+! =====================
+! -- https://www.united.com/en/us
+! Search - Quick Answer
+www.united.com##[class*="app-containers-NewWebsiteSearch-components-CoveoGenAI-styles__genAIContainer--"]
 ! ======================
 ! == UnitedHealthCare ==
 ! ======================
