@@ -341,7 +341,8 @@ Run unit tests:
 yarn test
 ```
 
-Tests are located in `scripts/wildcard-domain-processor/__tests__/` and use Vitest.
+Tests use Vitest and live alongside the code they cover in `__tests__/` directories,
+currently `scripts/build/__tests__/` and `scripts/wildcard-domain-processor/__tests__/`.
 
 ### Validation
 
@@ -452,8 +453,8 @@ All build tooling lives under `scripts/`. After making changes:
 
 1. Run `yarn lint` — fix all errors.
 1. Run `yarn test` — all tests must pass.
-1. If you changed `scripts/wildcard-domain-processor/`, update tests in
-   `scripts/wildcard-domain-processor/__tests__/`.
+1. Update tests in the matching `__tests__/` directory for the code you changed
+   (`scripts/build/__tests__/`, `scripts/wildcard-domain-processor/__tests__/`).
 1. Run `yarn validate` if the change affects filter compilation or platform outputs.
 
 Build scripts under `scripts/` are written in JavaScript and TypeScript, executed
