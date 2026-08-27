@@ -158,7 +158,7 @@ const buildFilters = async () => {
         // default behavior).
         if (existsSync(optimizationStatsDir)) {
             localOptimizationStatistics.use(optimizationStatsDir);
-            console.log(`Using local optimization statistics from: ${optimizationStatsDir}`);
+            console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
         } else {
             console.log('No local optimization statistics found; fetching stats from the remote server.');
         }
