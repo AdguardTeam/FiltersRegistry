@@ -124,7 +124,6 @@ const buildFilters = async () => {
     }
 
     if (downloadStats) {
-        await fs.mkdir(optimizationStatsDir, { recursive: true });
         await localOptimizationStatistics.download(
             optimizationStatsDir,
             includedFilterIDs,
