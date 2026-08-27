@@ -1,9 +1,9 @@
-! Checksum: fz4aiFNPmWST3wibdoi4dg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1787802959-3600.patch
+! Checksum: VH8cdfjyNW8x36SmdISZGA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1787811346-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.75.93
-! TimeUpdated: 2026-08-27T03:51:47+00:00
+! Version: 2.0.75.94
+! TimeUpdated: 2026-08-27T06:11:59+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||adwell.app^$third-party
@@ -1498,6 +1498,13 @@ city.aomori.aomori.jp,lg.jp,city.numata.gunma.jp,city.tokai.aichi.jp,city.noda.c
 city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.ikoma.lg.jp,city.higashiosaka.lg.jp,city.higashiomi.shiga.jp,city.ogaki.lg.jp,city.tama.lg.jp,city.inzai.lg.jp,city.kyotanabe.lg.jp,city.himeji.lg.jp,city.hirakata.osaka.jp,city.osaka.lg.jp,city.kyoto.lg.jp,city.maizuru.kyoto.jp,city.iga.lg.jp##.bana
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+deview.co.jp##.banner-area-rs
+deview.co.jp##.pc-break-ad-text
+deview.co.jp##div[style="text-align:center;margin-bottom:10px;min-height:250px;"]
+famitsu.com#%#//scriptlet('json-prune', 'props.pageProps.article2ndBannerData')
+famitsu.com##div[class^="ArticleDetailBody_adContentItem"]
+jiji.com##.jobs-widget
+jiji.com##.sticky > aside.banner
 matomeantennahub.com###banner_popup
 doshinsports.com##.sidebar__ads-box
 jacom.or.jp#%#//scriptlet('json-prune', 'props.allAds')
@@ -1539,6 +1546,7 @@ itmedia.co.jp##.p-header-banner
 lovelive-petitsoku.com##.widget_custom_html a[href^="https://px.a8.net/svt/ejp?"]
 lovelive-petitsoku.com#%#//scriptlet('remove-node-text', '#text', '[PR]')
 jmedj.co.jp#$?#.ad-data:not([href*="jmedj.co.jp"]) { remove: true; }
+famitsu.com##div[class^="ArticleDetail_articleMainFooter"] > div[class^="CommonParts_commonPartsContainer"]:has(a[href^="https://link.amazon"])
 famitsu.com##div[class^="ArticleDetail_articleMainFooter"] > div[class^="CommonParts_commonPartsContainer"]:has(a[href^="https://amzn.to"])
 arekore.app##div[class^="ads"]
 automaton-media.com###custom-main-visual-clicker
@@ -5512,7 +5520,7 @@ moez-m.com##.solinkimag
 mantan-web.jp#%#//scriptlet('href-sanitizer', 'a[href^="https://af.moshimo.com/af/c/click?"][href*="&url="]', '?url')
 mantan-web.jp,hobbylabon.com,figsoku.net#%#//scriptlet('href-sanitizer', 'a[href^="https://al.dmm.com/?lurl="]', '?lurl')
 figsoku.net#%#//scriptlet('href-sanitizer', 'a[href^="https://affiliate.suruga-ya.jp/modules/af/af_jump.php?"]', '?goods_url')
-game8.jp,hayamimi-gunpla.com,chimolog.co,my-best.com,figsoku.net#%#//scriptlet('href-sanitizer', 'a[href*="hb.afl.rakuten.co.jp/"][href*="pc="]', '?pc')
+famitsu.com,game8.jp,hayamimi-gunpla.com,chimolog.co,my-best.com,figsoku.net#%#//scriptlet('href-sanitizer', 'a[href*="hb.afl.rakuten.co.jp/"][href*="pc="]', '?pc')
 hayamimi-gunpla.com,chimolog.co,livefans.jp,my-best.com,figsoku.net#%#//scriptlet('href-sanitizer', 'a[href*="ck.jp.ap.valuecommerce.com/servlet/referral?"][href*="&vc_url="]', '?vc_url')
 figsoku.net#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'randomad')
 figsoku.net##.pluginWrap[style^="width: 240px; height: 16px; "]
@@ -11737,6 +11745,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+s.mxtv.jp#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
 getnavi.jp#@#.hide_ad
 blog.nicovideo.jp#@#[name^="google_ads_iframe"]
 @@||gstatic.com/admanager/outstream/rewarded_web_video_ja.js$domain=blog.nicovideo.jp
