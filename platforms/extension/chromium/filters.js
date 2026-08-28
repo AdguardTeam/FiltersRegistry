@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.86.57",
-			"timeUpdated": "2026-08-28T16:17:40+0000",
+			"version": "2.4.86.58",
+			"timeUpdated": "2026-08-28T20:56:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.51",
-			"timeUpdated": "2026-08-28T11:58:10+0000",
+			"version": "2.0.67.52",
+			"timeUpdated": "2026-08-28T20:56:44+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.77.22",
-			"timeUpdated": "2026-08-28T16:18:29+0000",
+			"version": "2.2.77.23",
+			"timeUpdated": "2026-08-28T20:56:53+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.32.71",
-			"timeUpdated": "2026-08-28T11:58:20+0000",
+			"version": "2.1.32.72",
+			"timeUpdated": "2026-08-28T20:56:57+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -679,8 +679,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.40",
-			"timeUpdated": "2026-08-28T16:18:38+0000",
+			"version": "2.0.57.41",
+			"timeUpdated": "2026-08-28T20:56:59+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.81.66",
-			"timeUpdated": "2026-08-28T16:18:42+0000",
+			"version": "2.0.81.67",
+			"timeUpdated": "2026-08-28T20:57:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.59",
-			"timeUpdated": "2026-08-28T16:18:43+0000",
+			"version": "2.0.47.60",
+			"timeUpdated": "2026-08-28T20:57:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
