@@ -107,59 +107,40 @@ describe('build.js: cache flag handling', () => {
         });
     });
 
-    it('--download-stats: downloads stats for all filters, compile skipped', async () => {
-        process.argv = ['node', 'build.js', '--download-stats'];
-        await import('../build.js');
+    it.each([
+        ['downloads stats for all filters, compile skipped', {
+            args: [],
+            includedFilterIds: EMPTY_FILTER_IDS,
+            excludedFilterIds: EMPTY_FILTER_IDS,
+        }],
+        [`with --include=${FILTER_ID} downloads stats only for that filter`, {
+            args: [`--include=${FILTER_ID}`],
+            includedFilterIds: [FILTER_ID],
+            excludedFilterIds: EMPTY_FILTER_IDS,
+        }],
+        [`with --skip=${FILTER_ID} downloads stats for every other filter`, {
+            args: [`--skip=${FILTER_ID}`],
+            includedFilterIds: EMPTY_FILTER_IDS,
+            excludedFilterIds: [FILTER_ID],
+        }],
+    ])(
+        '--download-stats %s',
+        async (_, { args, includedFilterIds, excludedFilterIds }) => {
+            process.argv = ['node', 'build.js', '--download-stats', ...args];
+            await import('../build.js');
 
-        const {
-            compile: mockedCompile,
-            localOptimizationStatistics: mockedStats,
-        } = await import('@adguard/filters-compiler');
-        await vi.waitFor(() => {
-            expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
-                expectedOptimizationStatsBasePath,
-                EMPTY_FILTER_IDS,
-                EMPTY_FILTER_IDS,
-            );
-        });
-        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
-    });
+            const {
+                compile: mockedCompile,
+                localOptimizationStatistics: mockedStats,
+            } = await import('@adguard/filters-compiler');
 
-    it(`--download-stats --include=${FILTER_ID}: scopes stats download to filter ${FILTER_ID}`, async () => {
-        process.argv = ['node', 'build.js', '--download-stats', `--include=${FILTER_ID}`];
-        await import('../build.js');
-
-        const {
-            compile: mockedCompile,
-            localOptimizationStatistics: mockedStats,
-        } = await import('@adguard/filters-compiler');
-        await vi.waitFor(() => {
-            expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
-                expectedOptimizationStatsBasePath,
-                [FILTER_ID],
-                EMPTY_FILTER_IDS,
-            );
-        });
-        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
-    });
-
-    it(`--download-stats --skip=${FILTER_ID}: excludes filter ${FILTER_ID} from stats download`, async () => {
-        process.argv = ['node', 'build.js', '--download-stats', `--skip=${FILTER_ID}`];
-        await import('../build.js');
-
-        const {
-            compile: mockedCompile,
-            localOptimizationStatistics: mockedStats,
-        } = await import('@adguard/filters-compiler');
-        await vi.waitFor(() => {
-            expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
-                expectedOptimizationStatsBasePath,
-                EMPTY_FILTER_IDS,
-                [FILTER_ID],
-            );
-        });
-        expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
-    });
+            await vi.waitFor(() => {
+                expect(vi.mocked(mockedStats.download))
+                    .toHaveBeenCalledWith(expectedOptimizationStatsBasePath, includedFilterIds, excludedFilterIds);
+            });
+            expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
+        },
+    );
 
     it('--use-cache without a local optimization cache: compiles, does not call use()', async () => {
         // default beforeEach mock already makes existsSync() return false everywhere
