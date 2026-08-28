@@ -104,24 +104,16 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         };
     };
 
-    if (flags.useCache && flags.generateCache) {
+    const exclusiveModes: Array<[boolean, string]> = [
+        [flags.useCache, '--use-cache'],
+        [flags.generateCache, '--generate-cache'],
+        [flags.downloadStats, '--download-stats'],
+    ];
+    const active = exclusiveModes.filter(([on]) => on).map(([, name]) => name);
+    if (active.length > 1) {
         return {
             type: 'error',
-            message: `Error: --use-cache and --generate-cache are mutually exclusive.\n${hint}`,
-        };
-    }
-
-    if (flags.useCache && flags.downloadStats) {
-        return {
-            type: 'error',
-            message: `Error: --use-cache and --download-stats are mutually exclusive.\n${hint}`,
-        };
-    }
-
-    if (flags.generateCache && flags.downloadStats) {
-        return {
-            type: 'error',
-            message: `Error: --generate-cache and --download-stats are mutually exclusive.\n${hint}`,
+            message: `Error: ${active.join(' and ')} are mutually exclusive.\n${hint}`,
         };
     }
 
