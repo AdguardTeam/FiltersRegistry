@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mI4E0y5iud2KzZyFB18zOA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1787903069-3600.patch
+! Checksum: y9ahQ61FQOofxEv9ZnEZTQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1787918476-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.86.55
-! TimeUpdated: 2026-08-28T07:40:14+00:00
+! Version: 2.4.86.56
+! TimeUpdated: 2026-08-28T11:57:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35307,6 +35307,9 @@ popcornmovies.org##+js(json-prune, *, ppuClicks)
 !+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122087
 photopea.com##+js(set-constant, ___osw, undefined)
+photopea.com##body > div[class="flexrow app"] + div[style^="padding-top: 10px; overflow: hidden; padding-left: 0px; z-index: 0;"]:empty:style(display: none !important;)
+photopea.com##body > div[class="flexrow app"] + div[style^="padding-top: 10px; overflow: hidden; padding-left: 0px; z-index: 0;"]:has(> a[href*="/photopea-says-i-am-blocking-ads-but-i-am-not/"]):style(display: none !important;)
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211922
 ! TODO: remove hints when this issue is resolved and new scriptlets library is added for apps - https://github.com/AdguardTeam/Scriptlets/issues/517
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211507
@@ -39924,6 +39927,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+novelfire.net##div[style="padding-top: 0; padding-bottom: 250px;"]
 selfhostt.com##.bs-header > .code-block
 selfhostt.com##+js(no-window-open-if)
 tob.news##.smartmag-widget-codes
@@ -40388,7 +40392,8 @@ motherless.xxx##+js(abort-current-script, Math.floor, _0x)
 ||shorts.b-cdn.net/ads/$domain=shorts.xxx
 shorts.xxx##.adfiller
 shorts.xxx##.boxads2
-sbnation.com###content > div[class]:has(> div[data-concert="desktop_leaderboard_variable"])
+barcablaugranes.com,sbnation.com###content > div[class] > div[class*=" "]:has(> div[data-concert="desktop_leaderboard_variable"]:only-child)
+barcablaugranes.com,sbnation.com##.duet--layout--rail > div[class*=" "]:has(> div[class*=" "]:only-child > div[class*=" "][data-concert]:only-child)
 mlbtraderumors.com,hoopsrumors.com##.div-gpt-ad-post
 ||adultdeepfakes.com/static/ads/
 the-sun.com##div[class$="billboard"]
@@ -62850,6 +62855,10 @@ outlookindia.com##a[rel="sponsored nofollow"]
 ! ATTENTION: The rules in this section must be accompanied by a link of an issue, where the problem will be fixed
 ! or with clear description what to do next
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239572
+! https://github.com/AdguardTeam/PopupBlocker/issues/352
+! TODO: remove it after the issue above has been fixed
+! aglint-disable-next-line
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239409
 ! https://github.com/AdguardTeam/PopupBlocker/issues/351
 ! TODO: remove it after the issue above has been fixed
@@ -62962,6 +62971,8 @@ $popup,3p,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239554
+people.com#@#.mm-ads-leaderboard-spacer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239204
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238706
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238537
@@ -63000,7 +63011,7 @@ collider.com#@#.ad-zone-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236826
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234817
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235352
-windguru.cz,nordicsemi.com,learngerman.dw.com,jamf.com#@#div.rendered[id][class*=" "]:not([id*="captcha"]):not(.cell-container)
+fluidtopics.com,windguru.cz,nordicsemi.com,learngerman.dw.com,jamf.com#@#div.rendered[id][class*=" "]:not([id*="captcha"]):not(.cell-container)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234825
 ! It looks like a website issue. Injecting any stylesheet (even if not via an ad blocker)
 ! containing "[style]" inside ":has()" causes the website to freeze when the copy button is clicked
