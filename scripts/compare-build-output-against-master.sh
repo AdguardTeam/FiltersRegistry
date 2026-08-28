@@ -6,7 +6,7 @@
 #
 # Usage: yarn compare-build-output
 
-BASED_BRANCH="master"
+BASE_BRANCH="master"
 BUILD_FLAGS="--no-patches-prepare --strip-generated-meta"
 
 # Without this, a missing yarn only surfaces minutes later as an install/build
@@ -37,21 +37,21 @@ if ! mkdir "$LOCK_DIR" 2>/dev/null; then
 fi
 trap 'rm -rf "$LOCK_DIR"' EXIT
 
-MASTER_WORK_TREE="$TEMP_DIR_NAME/reg-${BASED_BRANCH}-build"
+MASTER_WORK_TREE="$TEMP_DIR_NAME/reg-${BASE_BRANCH}-build"
 CHANGED_WORK_TREE="$TEMP_DIR_NAME/reg-changed-build"
 META_FILE="$TEMP_DIR_NAME/reg-meta.env"
-PLATFORMS_MASTER="$TEMP_DIR_NAME/platforms_${BASED_BRANCH}_build"
+PLATFORMS_MASTER="$TEMP_DIR_NAME/platforms_${BASE_BRANCH}_build"
 PLATFORMS_CHANGED="$TEMP_DIR_NAME/platforms_changed_build"
 
 LOG_DIR_NAME="logs"
 mkdir -p "$TEMP_DIR_NAME/$LOG_DIR_NAME"
 
-LOG_MASTER_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASED_BRANCH}-install.log"
+LOG_MASTER_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASE_BRANCH}-install.log"
 LOG_CHANGED_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-install.log"
-LOG_MASTER_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASED_BRANCH}-build.log"
+LOG_MASTER_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASE_BRANCH}-build.log"
 LOG_CHANGED_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-build.log"
 LOG_SYNC_BASELINE="$TEMP_DIR_NAME/$LOG_DIR_NAME/sync-baseline.log"
-LOG_COPY_MASTER="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-${BASED_BRANCH}.log"
+LOG_COPY_MASTER="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-${BASE_BRANCH}.log"
 LOG_COPY_CHANGED="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-changed.log"
 LOG_CLEANUP="$TEMP_DIR_NAME/$LOG_DIR_NAME/cleanup.log"
 
@@ -165,7 +165,7 @@ generate_report() {
     local master_file rel changed_file changed_only_file
 
     echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
-    echo "Branch (reference): $BASED_BRANCH          @ $MASTER_SHA"
+    echo "Branch (reference): $BASE_BRANCH          @ $MASTER_SHA"
     echo "Branch (feature):   $CHANGED_BRANCH @ $CHANGED_SHA"
     if [ "${BUILD_LOCAL:-false}" = "true" ]; then
         build_cmd=""
@@ -238,10 +238,10 @@ if [ -f "$META_FILE" ] && [ -d "$PLATFORMS_MASTER" ] && [ -d "$PLATFORMS_CHANGED
     source "$META_FILE"
     MODE_LABEL="plain"
     [ "$BUILD_LOCAL" = "true" ] && MODE_LABEL="cached"
-    echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL)"
+    echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, $MODE_LABEL)"
     echo "Reuse it for generating the report right now?"
     if confirm; then
-        echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL)"
+        echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASE_BRANCH, $MODE_LABEL)"
         generate_report
         exit $?
     fi
@@ -254,10 +254,10 @@ CURRENT_BRANCH=$(git branch --show-current)
 BRANCHES=()
 while IFS= read -r branch_name; do
     BRANCHES+=("$branch_name")
-done < <(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -vx "$BASED_BRANCH")
+done < <(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -vx "$BASE_BRANCH")
 
 if [ ${#BRANCHES[@]} -eq 0 ]; then
-    echo "${C_RED}${CROSS} Error:${C_RESET} no local branches other than $BASED_BRANCH found to compare. Checkout a feature branch first." >&2
+    echo "${C_RED}${CROSS} Error:${C_RESET} no local branches other than $BASE_BRANCH found to compare. Checkout a feature branch first." >&2
     exit 1
 fi
 
@@ -288,10 +288,10 @@ draw_branch_menu() {
     done
 }
 
-step_header 1 "Local branch to compare against $BASED_BRANCH"
+step_header 1 "Local branch to compare against $BASE_BRANCH"
 echo "(↑/↓ to move, Enter to select):"
 if [ "$HAS_CURRENT_DEFAULT" = false ]; then
-    echo "${C_DIM}No current branch to default to (detached HEAD or on $BASED_BRANCH) — defaulting to the first branch.${C_RESET}"
+    echo "${C_DIM}No current branch to default to (detached HEAD or on $BASE_BRANCH) — defaulting to the first branch.${C_RESET}"
 fi
 draw_branch_menu "$SELECTED_INDEX"
 
@@ -368,8 +368,8 @@ else
     echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: No"
 fi
 
-if ! MASTER_SHA=$(git rev-parse --verify "$BASED_BRANCH" 2>/dev/null); then
-    echo "${C_RED}${CROSS} Error:${C_RESET} local branch '$BASED_BRANCH' not found. Fetch/checkout it first." >&2
+if ! MASTER_SHA=$(git rev-parse --verify "$BASE_BRANCH" 2>/dev/null); then
+    echo "${C_RED}${CROSS} Error:${C_RESET} local branch '$BASE_BRANCH' not found. Fetch/checkout it first." >&2
     exit 1
 fi
 CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
@@ -410,7 +410,7 @@ setup_worktree() {
     fi
 }
 
-setup_worktree "$BASED_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
+setup_worktree "$BASE_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
 # --- Step 5: install deps in parallel ---
@@ -423,19 +423,19 @@ PID_MASTER_INSTALL=$!
 yarn --cwd "$CHANGED_WORK_TREE" install > "$LOG_CHANGED_INSTALL" 2>&1 &
 PID_CHANGED_INSTALL=$!
 
-spinner_wait_all "$PID_MASTER_INSTALL:[${BASED_BRANCH}] install" "$PID_CHANGED_INSTALL:[$CHANGED_BRANCH] install"
+spinner_wait_all "$PID_MASTER_INSTALL:[${BASE_BRANCH}] install" "$PID_CHANGED_INSTALL:[$CHANGED_BRANCH] install"
 
 if ! wait "$PID_MASTER_INSTALL"; then
-    die "[${BASED_BRANCH}] install FAILED" "$LOG_MASTER_INSTALL"
+    die "[${BASE_BRANCH}] install FAILED" "$LOG_MASTER_INSTALL"
 fi
 if ! wait "$PID_CHANGED_INSTALL"; then
     die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
-# --- Step 6: sync changed worktree's filters/ to the $BASED_BRANCH baseline ---
+# --- Step 6: sync changed worktree's filters/ to the $BASE_BRANCH baseline ---
 
 step_header 6 "Sync filters/ baseline"
-if ! run_with_spinner "syncing filters/ to $BASED_BRANCH baseline" "$LOG_SYNC_BASELINE" \
+if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
     git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
     die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
@@ -465,7 +465,7 @@ PID_MASTER_BUILD=$!
 ( build_branch "$CHANGED_WORK_TREE" ) > "$LOG_CHANGED_BUILD" 2>&1 &
 PID_CHANGED_BUILD=$!
 
-spinner_wait_all "$PID_MASTER_BUILD:[$BASED_BRANCH] build" "$PID_CHANGED_BUILD:[$CHANGED_BRANCH] build"
+spinner_wait_all "$PID_MASTER_BUILD:[$BASE_BRANCH] build" "$PID_CHANGED_BUILD:[$CHANGED_BRANCH] build"
 
 BUILD_FAILED=false
 
@@ -473,15 +473,15 @@ if wait "$PID_MASTER_BUILD"; then
     # A prior kept run's output may still be here; cp -r would merge into it
     # rather than replace it, silently mixing stale files into the diff.
     rm -rf "$PLATFORMS_MASTER"
-    if run_with_spinner "[$BASED_BRANCH] copying platforms/ output" "$LOG_COPY_MASTER" \
+    if run_with_spinner "[$BASE_BRANCH] copying platforms/ output" "$LOG_COPY_MASTER" \
         cp -r "$MASTER_WORK_TREE/platforms" "$PLATFORMS_MASTER"; then
-        echo "${C_GREEN}${CHECK}${C_RESET} [$BASED_BRANCH] build done"
+        echo "${C_GREEN}${CHECK}${C_RESET} [$BASE_BRANCH] build done"
     else
-        report_failure "[$BASED_BRANCH] copying platforms/ output FAILED" "$LOG_COPY_MASTER"
+        report_failure "[$BASE_BRANCH] copying platforms/ output FAILED" "$LOG_COPY_MASTER"
         BUILD_FAILED=true
     fi
 else
-    report_failure "[$BASED_BRANCH] build FAILED" "$LOG_MASTER_BUILD"
+    report_failure "[$BASE_BRANCH] build FAILED" "$LOG_MASTER_BUILD"
     BUILD_FAILED=true
 fi
 
