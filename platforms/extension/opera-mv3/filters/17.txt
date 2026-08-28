@@ -1,8 +1,8 @@
-! Checksum: LJP/ZCD/sp7G6y49oVQOdA
+! Checksum: 41k870DA+W9uebQrpWDPUA
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.99
-! TimeUpdated: 2026-08-27T06:12:18+00:00
+! Version: 2.0.14.0
+! TimeUpdated: 2026-08-28T04:50:08+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -519,6 +519,13 @@ $denyallow=tradedoubler.com,removeparam=tduid
 ! Good: ||example.org^$removeparam=cx
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239549
+||dailyshincho.jp^$removeparam=ui_campaign
+||dailyshincho.jp^$removeparam=ui_medium
+||dailyshincho.jp^$removeparam=ui_source
+! https://github.com/AdguardTeam/AdguardFilters/issues/239550
+||detail.chiebukuro.yahoo.co.jp^$removeparam=__ysp
+||detail.chiebukuro.yahoo.co.jp^$removeparam=fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239451
 ||deview.co.jp^$removeparam=am_ko
 ||deview.co.jp^$removeparam=anc

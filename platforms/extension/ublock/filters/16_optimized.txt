@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: Cg28o1XT3HiqiO9z7Qoorg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1787811330-3600.patch
+! Checksum: zq5qRoYVH+HRMpSc/5B/lg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1787892880-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.39
@@ -361,7 +361,6 @@ fr.de##.id-Recommendation
 latribune.ca##article > div:has(> div.arcad-feature)
 latribune.ca##.arcad-feature
 journalmetro.com##div[data-sticky-ad-container]
-||player.fabster.com^$domain=ledemondujeu.com
 macg.co##.app-header > div.w-full:has(> .Billboard_1)
 jeuxvideo.com##a[rel="sponsored"]
 jeuxvideo.com##.anchorMiddleOne--banner
@@ -417,7 +416,6 @@ clubic.com##.ad-container:not(#style_important)
 hentaivost.fr##+js(remove-node-text, script, __ADX_slot_id)
 hentaivost.fr##.navbar-nav > li[id^="nav-menu-item-"] > a:not([href^="https://hentaivost.fr/"])
 ||hentaivost.fr/detect.js
-zone-telechargement.al##.body-clickable
 qwant.com##+js(json-prune, data.result.items.sidebar.[-].type.[=].advertiser_ads, data.search_id)
 qwant.com##.is-sidebar > div[class*=" "]:has(img[data-testid="advertiserAdsImage"])
 gamekult.com##.gk__sidebar__list  > li:has(> .g2__a-dc)
@@ -1580,7 +1578,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?style=468x60-
 ?style=720x90-
 ?tag_id=*&sw_url=
-?tgt=*&zoneid=
 ?tour=*&campaign=$3p
 ?type=ad;
 ?type=ads&
@@ -1592,6 +1589,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?zones=*&blockcampaign=
 _1080x90.$image
 _1140x90.
+_120x600banner.
 _250x300_
 _300-x-250_
 _300_600.
@@ -1662,6 +1660,7 @@ _code/*/goclick?
 _display_ad_
 _domain=ads.
 _event_pub.
+_fr/ads/
 _id=*&nads=
 _iframe728x90.
 _isab.
@@ -3073,7 +3072,6 @@ voethrusts.cfd
 ||jnbhi.com^$popup
 ||livepartners.com^$popup,3p
 ||max-adserv.com^$popup,3p
-||megafiles.xyz^$popup,3p
 ||monetizze.com.br^$popup,3p
 ||multiupload.com^$popup,3p
 ||mybestclick.net^$popup,3p
@@ -3834,7 +3832,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ###pubChronique
 ###pubHaut
 ###pubHeader
-###pubImg
 ###pubLeft
 ###pubRight
 ###pubTop
@@ -3971,6 +3968,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.ad.banner
 ##.ad.billboard
 ##.ad.onlyMobile
+##.ads-bloc
 ##.ads-container
 ##.ads-foot
 ##.ads-footerBanner
@@ -4113,7 +4111,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.jnews_article_bottom_ads
 ##.jnews_article_top_ads
 ##.job-ads
-##.jt-poublicidadContainer
 ##.label-pub-span
 ##.labelPub
 ##.label_advertising
@@ -4123,7 +4120,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.lbl-ad
 ##.leaderboard728
 ##.leftSideAds
-##.lien_sponso
 ##.liens-sponsorises__external
 ##.line-adv
 ##.link-pub
@@ -4132,7 +4128,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.m-adbanner--megaban
 ##.map_fond_pub
 ##.marketing-container
-##.masthead-overHeader
 ##.mb_video_syncad
 ##.mbanner-ad-wrapper
 ##.midads
@@ -4602,7 +4597,7 @@ sante-dz.com###revenue-wrapper
 zapiks.fr###shop
 emu-france.com###sidebar-right a > img[style^="width:"]
 mobigeeks.fr###sidebar-shell-2
-ezgif.com###sky
+lematin.ch###sidebarSky
 maitresrestaurateurs.com###sliderPartenaire
 otaku-attitude.net###smart-bann
 amazon.fr###sp_detail
@@ -5011,7 +5006,6 @@ tvanouvelles.ca##li.dfpMultiflexStickyBigBox
 leroymerlin.fr##li[data-product-list-id*="sponsored"]
 lesoir.be,sudinfo.be##r-pub
 bol.com##section.js_slot-sponsored-products
-dealabs.com##section[data-track*="widget_pirates_carousel"]
 solutions-numeriques.com##td[onclick^="window.open('https://www.solutions-numeriques.com/r/?"]
 wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.btnnew
 wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.sadst
@@ -5041,7 +5035,6 @@ intermarche.com##[id^="stime-product-item"]:has(.stime-product--details__sponsor
 search.lilo.org##a:has([data-testid="advertiserAdsSignature"])
 aliexpress.com,aliexpress.us##._2FypS:has(._1rKqn:contains(/AD|Annonce|إعلان/))
 auchan.fr##article.product-thumbnail:has(.product-thumbnail__sponsored)
-french-stream.*###banning
 cdiscount.com##section:has(> span:contains(/^Sponsorisé/))
 discordbots.org,top.gg##.bot-card:has(.lib:has(img))
 distrowatch.com##.News1:has(td:contains(Sponsored))
@@ -5072,14 +5065,12 @@ ouedkniss.com##.pg-top.d-print-none:style(height: 0px;)
 @@|blob:$popup,domain=caf.fr|cerise-prim.fr|particulier.edf.fr
 @@||d2rbodpj0xodc.cloudfront.net/stories/*x$image,domain=steller.co
 @@||francesurfinfo.com/affiliation/
-@@||gareautheatre.com^*/image_resize.php?img=*/$image
 @@||koifaire.com/upload/*/300x250-$image,~3p
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,3p,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,3p
 @@||premiere.fr/inextenso/uploads/300x150_$image,domain=premiere.fr
 @@||publicwww.com/images/labels.$image,~3p
 @@||quefaire.be/annonces/imgads/$image
-@@||rockman.fr/Ads/$image
 @@||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/hd-main.js?cache=$xhr,domain=gmx.at|gmx.net|web.de|welt.de
 @@||syndication.twitter.com/tweets.json?*&ids=*&lang=*&suppress_response_codes=$script
 @@||ab.9xbud.com/extract|$xhr,domain=9xbuddy.online
@@ -5146,3 +5137,4 @@ newsdig.tbs.co.jp#@#div[data-ad]
 /kill-adblock/*
 /noadblock.
 /wp-adblock-dedect/*
+_adblockdetector/
