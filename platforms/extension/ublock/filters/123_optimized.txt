@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LJMy0My+o36WBDvku7T/ug
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1787874469-14400.patch
+! Checksum: 6s9HEOcWWfoAPgJNXxMfGw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1787887957-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.67.74
-! TimeUpdated: 2026-08-27T23:44:19+00:00
+! Version: 2.1.67.75
+! TimeUpdated: 2026-08-28T03:29:08+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -119,6 +119,7 @@
 /socialbar-sso.js
 /socialbar.js
 /socialbookmarks.js
+/socialcount.js
 /socialite.js
 /socialite.min.js
 /SocialMediaButtons/tracking.js
@@ -132,6 +133,7 @@
 /twitter-v2.png
 /twitter_follow.jpg
 /twitter_footer.png
+/twitter_header.jpg
 /twitter_square.png
 /videojs-share.js
 /vk_button.png
@@ -391,6 +393,7 @@ _social-bar/
 ###rsociaux
 ###sb-social
 ###sb_instagram
+###scroll-social
 ###selectionShare
 ###share-area
 ###share-bar
@@ -1000,7 +1003,6 @@ _social-bar/
 ##.bio-social
 ##.bk-profile-socialicons
 ##.bk-socialicons-facebook
-##.bloc-share
 ##.bloc-social
 ##.bloc_float_share
 ##.block-addtoany
@@ -1028,6 +1030,7 @@ _social-bar/
 ##.blog_post_share
 ##.bloque-social
 ##.bookmark-share
+##.boton_twitter
 ##.bottom-footer__social
 ##.bottom-meta--share
 ##.bottom-share
@@ -1355,6 +1358,7 @@ _social-bar/
 ##.floating-header-share
 ##.floating-share
 ##.floating-share-bar
+##.floating-share-buttons
 ##.floating-social
 ##.fluid_share_container
 ##.fluid_share_wrapper
@@ -1876,9 +1880,7 @@ _social-bar/
 ##.m-footer-social
 ##.m-header--social-nav
 ##.m-icon-facebook
-##.m-icon-instagram
 ##.m-icon-tw
-##.m-icon-youtube
 ##.m-share
 ##.m-share-bar
 ##.m-share-bar__link
@@ -2156,7 +2158,6 @@ _social-bar/
 ##.r-toggle--share
 ##.rambler-share
 ##.rc_social
-##.rcom-social-site-footer
 ##.react-share__ShareButton
 ##.react_share_icons
 ##.redes-sociais
@@ -2366,7 +2367,6 @@ _social-bar/
 ##.share-network-twitter
 ##.share-network-whatsapp
 ##.share-on
-##.share-on-link
 ##.share-on-title
 ##.share-on-whsp
 ##.share-open-button
@@ -2591,6 +2591,7 @@ _social-bar/
 ##.sharebottom
 ##.sharebox
 ##.sharebtn
+##.sharebtns
 ##.sharebutt
 ##.sharebutton
 ##.sharebuttons
@@ -2646,7 +2647,6 @@ _social-bar/
 ##.sharewidget
 ##.sharewrapper
 ##.sharewykop
-##.sharico2
 ##.shariff-button
 ##.sharify-btn-facebook
 ##.sharify-btn-linkedin
@@ -2717,6 +2717,7 @@ _social-bar/
 ##.sidebar-social
 ##.sidebar-social-btn
 ##.sidebar-socials
+##.sidebar-twitter
 ##.sidebar_social
 ##.sidebarsocial
 ##.simple-share
@@ -3139,6 +3140,7 @@ _social-bar/
 ##.social_follow
 ##.social_footer
 ##.social_header
+##.social_icons_wrap
 ##.social_item
 ##.social_like
 ##.social_link_share
@@ -3370,6 +3372,7 @@ _social-bar/
 ##.twitter-btn-icon
 ##.twitter-custom
 ##.twitter-feed
+##.twitter-feed-wrapper
 ##.twitter-follow
 ##.twitter-follow-box
 ##.twitter-footer
@@ -3657,7 +3660,6 @@ _social-bar/
 ||b.st-hatena.com/js/$script,3p,domain=~b.hatena.ne.jp
 ||badge.facebook.com^$3p
 ||badges.instagram.com^$3p
-||bloglovin.com/widget/$3p
 ||bshare.cn^$3p
 ||button-share.zalo.me^$3p
 ||button.like.co^$3p
@@ -3862,6 +3864,7 @@ freebeacon.com##.article-share-icons
 newrepublic.com,thetech.com##.article-social
 nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
+nationalreview.com##.article-utility-nav
 rt.com##.article__google-news
 noticiabrasil.net.br,noticiaslatam.lat,spnfa.ir,sputnik-abkhazia.info,sputnik-georgia.com,sputnik-ossetia.com,sputnik.af,sputnik.by,sputnik.kg,sputnik.kz,sputnik.tj,sputnikglobe.com,sputniknews.africa,sputniknews.cn,sputniknews.in,sputniknews.jp,sputniknews.ru,sputniknews.uz,sputnikportal.rs##.article__news-services-subscribe
 salon.com##.article__share
@@ -3988,6 +3991,7 @@ indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,flamboroughtoday.com,griceconnect.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,newmarkettoday.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,vancouverisawesome.com,westernwheel.ca##.ft-social
+mlbtraderumors.com,prohockeyrumors.com##.fv_sharing_round
 news18.com##.gglebtn
 ghacks.net##.ghacks_share_widget
 cars.com##.global-footer-social-buttons
@@ -3995,7 +3999,6 @@ oneindia.com##.goog-one-news
 androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,fextralife.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,military.com,movieweb.com,pocket-lint.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com##.google-addus
 bringmethenews.com,news18.com,thehindu.com##.google-btn
 responsiblestatecraft.org##.google-cta-infy
-dailyartmagazine.com##.google-feed-row
 faroutmagazine.co.uk##.google-follow
 gamespot.com##.google-follow-us-wrapper
 alarabiya.net##.google-news-callout
@@ -4065,7 +4068,6 @@ smashingmagazine.com##.meta-box--share
 thejournal.ie##.metadata-csp-comments-share-container
 businessinsider.com##.mi-logo-social-container
 news18.com##.midgprfd
-military.com##.mlt-social-sharing-article-header
 lifewire.com##.mm-nav-footer__social
 autonocion.com##.mn-share
 boxofficemojo.com##.mojo-fb-logo
@@ -4153,7 +4155,6 @@ mymodernmet.com##.share-it-side
 dailymail.co.uk,fundrazr.com,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 thehackernews.com##.share-open-modal
-ig.com.br,med.stanford.edu##.share-page
 alternet.org,audacy.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,physicsworld.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 forward.com##.share-post
 dailymail.com##.share-snapchat
@@ -4691,6 +4692,7 @@ rpp.pe##.article__follow
 elfinanciero.com.mx##.b-footer__social-links-container
 estadiodeportivo.com##.boton-share
 de10.com.mx,dedinero.com.mx,elgrafico.mx##.botonGoogleNews
+gaceta.es##.botones-compartir
 biobiochile.cl##.botones-google-news-wsp
 cooperativa.cl##.botones-redes-sociales
 elplural.com##.btn-whatsapp
