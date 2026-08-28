@@ -1,9 +1,9 @@
-! Checksum: SqhtgoYZcnfhV+5QM1P2Ww
-! Diff-Path: ../patches/257/257-s-1787813397-14400.patch
+! Checksum: V3Lk6JQSEU4Xy4ToOrQvlw
+! Diff-Path: ../patches/257/257-s-1787900680-14400.patch
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.12.32
-! TimeUpdated: 2026-08-27T06:47:04+00:00
+! Version: 2.0.12.33
+! TimeUpdated: 2026-08-28T07:02:00+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -4848,6 +4848,15 @@ monster###bw-rc-host[style="position: fixed !important; inset: 0px !important; z
 ||faceit-account.com^$all
 !+ NOT_OPTIMIZED
 ||kook.bar^$all
+! https://www.netskope.com/blog/etherhiding-in-the-browser-clickfix-chain-ends-in-amatera
+!+ NOT_OPTIMIZED
+! [excluded by #%#//scriptlet] igualdad.iaa.csic.es#%#//scriptlet('ubo-acs', 'String.prototype.toLowerCase', 'Contract')
+!+ NOT_OPTIMIZED
+||igualdad.iaa.csic.es/nochain-sw.js
+!+ NOT_OPTIMIZED
+##html > #nochain-demo-frame:not(body)
+!+ NOT_OPTIMIZED
+##html > #nc-cover:not(body)
 ! !SECTION: ClickFix
 ! https://www.reddit.com/r/uBlockOrigin/comments/12ng4o8/
 ! https://www.virustotal.com/gui/url/fe6b4bc7a258a92a97ad3216c85d159857ccd581df9b31a50a308ca49f967e34
@@ -10088,3 +10097,6 @@ top##body > center + .A + .post
 ! https://www.reddit.com/r/Scams/comments/1vzdot7/us_is_httpswwwhokaukcom_a_scam_site_that_steals/
 !+ NOT_OPTIMIZED
 ||hoka-uk.com^$all
+! https://github.com/uBlockOrigin/uAssets/issues/34267
+!+ NOT_OPTIMIZED
+||nextsave.trenched.cfd^$document
