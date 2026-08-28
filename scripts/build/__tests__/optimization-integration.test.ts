@@ -26,7 +26,7 @@ vi.mock('child_process', async (importOriginal) => {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const expectedLocalOptimizationConfigPath = path.resolve(__dirname, '../../../temp/optimization/stats');
+const expectedOptimizationStatsBasePath = path.resolve(__dirname, '../../../temp/optimization/stats');
 
 const EMPTY_FILTER_IDS = Object.freeze([]);
 const FILTER_ID = 1;
@@ -117,7 +117,7 @@ describe('build.js: cache flag handling', () => {
         } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
             expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
-                expectedLocalOptimizationConfigPath,
+                expectedOptimizationStatsBasePath,
                 EMPTY_FILTER_IDS,
                 EMPTY_FILTER_IDS,
             );
@@ -135,7 +135,7 @@ describe('build.js: cache flag handling', () => {
         } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
             expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
-                expectedLocalOptimizationConfigPath,
+                expectedOptimizationStatsBasePath,
                 [FILTER_ID],
                 EMPTY_FILTER_IDS,
             );
@@ -153,7 +153,7 @@ describe('build.js: cache flag handling', () => {
         } = await import('@adguard/filters-compiler');
         await vi.waitFor(() => {
             expect(vi.mocked(mockedStats.download)).toHaveBeenCalledWith(
-                expectedLocalOptimizationConfigPath,
+                expectedOptimizationStatsBasePath,
                 EMPTY_FILTER_IDS,
                 [FILTER_ID],
             );
@@ -191,7 +191,7 @@ describe('build.js: cache flag handling', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
         });
-        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedLocalOptimizationConfigPath);
+        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedOptimizationStatsBasePath);
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
@@ -257,15 +257,15 @@ const TEST_PLATFORM_CONFIG: Record<string, Record<string, unknown>> = {
 
 describe('localOptimizationStatistics: rules optimized from local cache', () => {
     let tmpDir: string;
-    let optimizationDir: string;
+    let optimizationStatsBasePath: string;
     let allOutput: string;
     let statsContentBefore: string;
 
     beforeAll(async () => {
-        tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'filters-e2e-genstats-'));
+        tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'filters-e2e-optimized-rules-'));
 
         const filtersDir = path.join(tmpDir, 'filters');
-        optimizationDir = path.join(tmpDir, 'optimization_config');
+        optimizationStatsBasePath = path.join(tmpDir, 'optimization', 'stats');
         const platformsDir = path.join(tmpDir, 'platforms');
         const logPath = path.join(tmpDir, 'log.txt');
         const reportPath = path.join(tmpDir, 'report.txt');
@@ -282,7 +282,7 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
             'utf-8',
         );
 
-        const statsDir = path.join(optimizationDir, 'filters', String(FILTER_ID));
+        const statsDir = path.join(optimizationStatsBasePath, 'filters', String(FILTER_ID));
         await fs.mkdir(statsDir, { recursive: true });
 
         // percent.json isn't written locally — it's never read from disk, only
@@ -306,7 +306,7 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
         await fs.writeFile(statsPath, statsJson, 'utf-8');
         statsContentBefore = statsJson;
 
-        localOptimizationStatistics.use(optimizationDir);
+        localOptimizationStatistics.use(optimizationStatsBasePath);
 
         await compile(filtersDir, logPath, reportPath, platformsDir, [FILTER_ID], [], TEST_PLATFORM_CONFIG);
 
@@ -317,7 +317,7 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
     }, 30_000);
 
     it('local stats.json is not modified by compile', async () => {
-        const statsPath = path.join(tmpDir, 'optimization_config', 'filters', String(FILTER_ID), 'stats.json');
+        const statsPath = path.join(optimizationStatsBasePath, 'filters', String(FILTER_ID), 'stats.json');
         const statsContentAfter = await fs.readFile(statsPath, 'utf-8');
         expect(statsContentAfter).toBe(statsContentBefore);
     });
@@ -331,7 +331,7 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
     });
 
     afterAll(async () => {
-        await localOptimizationStatistics.reset(optimizationDir);
+        await localOptimizationStatistics.reset(optimizationStatsBasePath);
         await fs.rm(tmpDir, { recursive: true, force: true });
     });
 });
