@@ -31,9 +31,9 @@ mkdir -p "$TEMP_DIR_NAME"
 # guards against two concurrent runs corrupting the same shared worktrees/logs.
 LOCK_DIR="${TMPDIR:-/tmp}/compare-build-output-$(basename "$REPO_ROOT").lock"
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
-  echo "Error: another compare-build-output run appears to be in progress (lock: $LOCK_DIR)." >&2
-  echo "If you're sure none is running, remove that directory and retry." >&2
-  exit 1
+    echo "Error: another compare-build-output run appears to be in progress (lock: $LOCK_DIR)." >&2
+    echo "If you're sure none is running, remove that directory and retry." >&2
+    exit 1
 fi
 trap 'rm -rf "$LOCK_DIR"' EXIT
 
@@ -57,19 +57,19 @@ LOG_CLEANUP="$TEMP_DIR_NAME/$LOG_DIR_NAME/cleanup.log"
 
 # Colors and symbols used throughout, disabled when not attached to a terminal.
 if [ -t 1 ]; then
-  C_CYAN=$'\033[1;36m'
-  C_DIM=$'\033[2m'
-  C_BOLD=$'\033[1m'
-  C_GREEN=$'\033[1;32m'
-  C_RED=$'\033[1;31m'
-  C_RESET=$'\033[0m'
+    C_CYAN=$'\033[1;36m'
+    C_DIM=$'\033[2m'
+    C_BOLD=$'\033[1m'
+    C_GREEN=$'\033[1;32m'
+    C_RED=$'\033[1;31m'
+    C_RESET=$'\033[0m'
 else
-  C_CYAN=""
-  C_DIM=""
-  C_BOLD=""
-  C_GREEN=""
-  C_RED=""
-  C_RESET=""
+    C_CYAN=""
+    C_DIM=""
+    C_BOLD=""
+    C_GREEN=""
+    C_RED=""
+    C_RESET=""
 fi
 ARROW="→"
 CHECK="✓"
@@ -78,174 +78,174 @@ TOTAL_STEPS=9
 
 # Prints a blank line and a bold "Step N/9: <title>" header.
 step_header() {
-  echo ""
-  echo "${C_BOLD}Step $1/$TOTAL_STEPS: $2${C_RESET}"
+    echo ""
+    echo "${C_BOLD}Step $1/$TOTAL_STEPS: $2${C_RESET}"
 }
 
 # Prompts "[Y/N] (default: Y/N): " and reports whether the answer was yes.
 # Pass "default_no" to flip the default to No (still returns success only on
 # an explicit y/yes answer, never on the defaulted Enter).
 confirm() {
-  local mode=${1:-default_yes}
-  local reply
-  if [ "$mode" = default_no ]; then
-    read -r -p "[Y/N] (default: N): " reply
-    reply=${reply:-N}
-  else
-    read -r -p "[Y/N] (default: Y): " reply
-    reply=${reply:-Y}
-  fi
-  [[ "$reply" =~ ^[Yy] ]]
+    local mode=${1:-default_yes}
+    local reply
+    if [ "$mode" = default_no ]; then
+        read -r -p "[Y/N] (default: N): " reply
+        reply=${reply:-N}
+    else
+        read -r -p "[Y/N] (default: Y): " reply
+        reply=${reply:-Y}
+    fi
+    [[ "$reply" =~ ^[Yy] ]]
 }
 
 # Renders a single status line for one or more "pid:label" pairs until all
 # processes finish. Callers still need to `wait "$pid"` afterwards for exit codes.
 spinner_wait_all() {
-  local frames='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
-  local i=0
-  local all_done=0
-  while [ "$all_done" -eq 0 ]; do
-    i=$(( (i + 1) % ${#frames} ))
-    local frame="${frames:$i:1}"
-    local line=""
-    all_done=1
-    for pair in "$@"; do
-      local pid="${pair%%:*}"
-      local label="${pair#*:}"
-      if kill -0 "$pid" 2>/dev/null; then
-        line+="${C_CYAN}${frame}${C_RESET} $label   "
-        all_done=0
-      else
-        line+="${C_GREEN}${CHECK}${C_RESET} $label   "
-      fi
+    local frames='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+    local i=0
+    local all_done=0
+    while [ "$all_done" -eq 0 ]; do
+        i=$(( (i + 1) % ${#frames} ))
+        local frame="${frames:$i:1}"
+        local line=""
+        all_done=1
+        for pair in "$@"; do
+            local pid="${pair%%:*}"
+            local label="${pair#*:}"
+            if kill -0 "$pid" 2>/dev/null; then
+                line+="${C_CYAN}${frame}${C_RESET} $label   "
+                all_done=0
+            else
+                line+="${C_GREEN}${CHECK}${C_RESET} $label   "
+            fi
+        done
+        printf "\r%s" "$line"
+        sleep 0.1
     done
-    printf "\r%s" "$line"
-    sleep 0.1
-  done
-  printf "\n"
+    printf "\n"
 }
 
 # Runs a single command in the background with a spinner, output redirected
 # to a log file so it doesn't clobber the spinner line. Returns the command's
 # exit code.
 run_with_spinner() {
-  local label=$1
-  local log=$2
-  shift 2
-  "$@" > "$log" 2>&1 &
-  local pid=$!
-  spinner_wait_all "$pid:$label"
-  wait "$pid"
+    local label=$1
+    local log=$2
+    shift 2
+    "$@" > "$log" 2>&1 &
+    local pid=$!
+    spinner_wait_all "$pid:$label"
+    wait "$pid"
 }
 
 # Prints a failure line with the log path, plus the log's full content so the
 # actual error is visible without having to go open the file separately.
 report_failure() {
-  local message=$1
-  local log=$2
-  echo "${C_RED}${CROSS}${C_RESET} $message — see $log" >&2
-  if [ -s "$log" ]; then
-    echo "${C_DIM}--- $log ---${C_RESET}" >&2
-    cat "$log" >&2
-    echo "${C_DIM}--- end ---${C_RESET}" >&2
-  fi
+    local message=$1
+    local log=$2
+    echo "${C_RED}${CROSS}${C_RESET} $message — see $log" >&2
+    if [ -s "$log" ]; then
+        echo "${C_DIM}--- $log ---${C_RESET}" >&2
+        cat "$log" >&2
+        echo "${C_DIM}--- end ---${C_RESET}" >&2
+    fi
 }
 
 # report_failure, then exit 1. For the steps where a failure can't be
 # recovered from and must stop the script immediately.
 die() {
-  report_failure "$1" "$2"
-  exit 1
+    report_failure "$1" "$2"
+    exit 1
 }
 
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
 # CHANGED_BRANCH / BUILD_LOCAL and the platforms_{master,changed}_build/ dirs.
 generate_report() {
-  local build_cmd total rule_diffs diff_list meta_diffs
-  local master_file rel changed_file changed_only_file
+    local build_cmd total rule_diffs diff_list meta_diffs
+    local master_file rel changed_file changed_only_file
 
-  echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
-  echo "Branch (reference): $BASED_BRANCH          @ $MASTER_SHA"
-  echo "Branch (feature):   $CHANGED_BRANCH @ $CHANGED_SHA"
-  if [ "${BUILD_LOCAL:-false}" = "true" ]; then
-    build_cmd=""
-    [ "${DO_GENERATE_CACHE:-false}" = "true" ] && build_cmd+="generate-cache && yarn "
-    [ "${DO_GENERATE_STATS:-false}" = "true" ] && build_cmd+="download-stats && yarn "
-    build_cmd+="build:local $BUILD_FLAGS"
-  else
-    build_cmd="build $BUILD_FLAGS"
-  fi
-  echo "Build command:      yarn $build_cmd"
-  echo "Platforms compared: $(ls "$PLATFORMS_MASTER" | tr '\n' ' ')"
-  echo ""
-
-  # Total .txt files
-  total=$(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" | wc -l | tr -d ' ')
-
-  # Primary check — rule files
-  rule_diffs=0
-  diff_list=""
-
-  while IFS= read -r -d '' master_file; do
-    rel="${master_file#"$PLATFORMS_MASTER"/}"
-    changed_file="$PLATFORMS_CHANGED/${rel}"
-    if [ -f "$changed_file" ]; then
-      if ! diff -q "$master_file" "$changed_file" > /dev/null 2>&1; then
-        diff_list="$diff_list\n  DIFF: $rel"
-        rule_diffs=$((rule_diffs + 1))
-      fi
+    echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
+    echo "Branch (reference): $BASED_BRANCH          @ $MASTER_SHA"
+    echo "Branch (feature):   $CHANGED_BRANCH @ $CHANGED_SHA"
+    if [ "${BUILD_LOCAL:-false}" = "true" ]; then
+        build_cmd=""
+        [ "${DO_GENERATE_CACHE:-false}" = "true" ] && build_cmd+="generate-cache && yarn "
+        [ "${DO_GENERATE_STATS:-false}" = "true" ] && build_cmd+="download-stats && yarn "
+        build_cmd+="build:local $BUILD_FLAGS"
     else
-      diff_list="$diff_list\n  MISSING: $rel"
-      rule_diffs=$((rule_diffs + 1))
+        build_cmd="build $BUILD_FLAGS"
     fi
-  done < <(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" -print0)
+    echo "Build command:      yarn $build_cmd"
+    echo "Platforms compared: $(ls "$PLATFORMS_MASTER" | tr '\n' ' ')"
+    echo ""
 
-  # Reverse check — files that exist only on the compare branch's side.
-  # The loop above only walks $PLATFORMS_MASTER, so a file added purely by
-  # the compare branch would otherwise never surface in the report at all.
-  while IFS= read -r -d '' changed_only_file; do
-    rel="${changed_only_file#"$PLATFORMS_CHANGED"/}"
-    master_file="$PLATFORMS_MASTER/${rel}"
-    if [ ! -f "$master_file" ]; then
-      diff_list="$diff_list\n  ADDED: $rel"
-      rule_diffs=$((rule_diffs + 1))
-    fi
-  done < <(find "$PLATFORMS_CHANGED" -name "*.txt" ! -name "*.patch" -print0)
+    # Total .txt files
+    total=$(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" | wc -l | tr -d ' ')
 
-  # Secondary check — metadata
-  meta_diffs=$(diff -rq --exclude="*.txt" --exclude="*.patch" \
-    "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" \
-    | grep -cE "filters\.(json|js)" || true)
+    # Primary check — rule files
+    rule_diffs=0
+    diff_list=""
 
-  echo "${C_BOLD}--- Rule Files ---${C_RESET}"
-  echo "Total .txt files compared: $total"
-  echo "Files with diffs:          $rule_diffs"
-  [ -n "$diff_list" ] && printf "$diff_list\n"
-  echo ""
-  echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
-  echo "filters.json/filters.js diffs: $meta_diffs  (version counter noise, not a regression)"
-  echo ""
-  echo "${C_BOLD}--- Verdict ---${C_RESET}"
-  [ "$rule_diffs" -eq 0 ] \
-    && echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file diffs" \
-    || { echo "${C_RED}${CROSS} FAIL${C_RESET} — $rule_diffs rule file(s) differ"; return 1; }
+    while IFS= read -r -d '' master_file; do
+        rel="${master_file#"$PLATFORMS_MASTER"/}"
+        changed_file="$PLATFORMS_CHANGED/${rel}"
+        if [ -f "$changed_file" ]; then
+            if ! diff -q "$master_file" "$changed_file" > /dev/null 2>&1; then
+                diff_list="$diff_list\n  DIFF: $rel"
+                rule_diffs=$((rule_diffs + 1))
+            fi
+        else
+            diff_list="$diff_list\n  MISSING: $rel"
+            rule_diffs=$((rule_diffs + 1))
+        fi
+    done < <(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" -print0)
+
+    # Reverse check — files that exist only on the compare branch's side.
+    # The loop above only walks $PLATFORMS_MASTER, so a file added purely by
+    # the compare branch would otherwise never surface in the report at all.
+    while IFS= read -r -d '' changed_only_file; do
+        rel="${changed_only_file#"$PLATFORMS_CHANGED"/}"
+        master_file="$PLATFORMS_MASTER/${rel}"
+        if [ ! -f "$master_file" ]; then
+            diff_list="$diff_list\n  ADDED: $rel"
+            rule_diffs=$((rule_diffs + 1))
+        fi
+    done < <(find "$PLATFORMS_CHANGED" -name "*.txt" ! -name "*.patch" -print0)
+
+    # Secondary check — metadata
+    meta_diffs=$(diff -rq --exclude="*.txt" --exclude="*.patch" \
+        "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" \
+        | grep -cE "filters\.(json|js)" || true)
+
+    echo "${C_BOLD}--- Rule Files ---${C_RESET}"
+    echo "Total .txt files compared: $total"
+    echo "Files with diffs:          $rule_diffs"
+    [ -n "$diff_list" ] && printf "$diff_list\n"
+    echo ""
+    echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
+    echo "filters.json/filters.js diffs: $meta_diffs  (version counter noise, not a regression)"
+    echo ""
+    echo "${C_BOLD}--- Verdict ---${C_RESET}"
+    [ "$rule_diffs" -eq 0 ] \
+        && echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file diffs" \
+        || { echo "${C_RED}${CROSS} FAIL${C_RESET} — $rule_diffs rule file(s) differ"; return 1; }
 }
 
 # --- Step 0: reuse existing build output, if any ---
 
 if [ -f "$META_FILE" ] && [ -d "$PLATFORMS_MASTER" ] && [ -d "$PLATFORMS_CHANGED" ]; then
-  # shellcheck disable=SC1090
-  source "$META_FILE"
-  MODE_LABEL="plain"
-  [ "$BUILD_LOCAL" = "true" ] && MODE_LABEL="cached"
-  echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL)"
-  echo "Reuse it for generating the report right now?"
-  if confirm; then
-    echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL)"
-    generate_report
-    exit $?
-  fi
-  echo "${C_CYAN}${ARROW}${C_RESET} Removing previous build output, rebuilding"
+    # shellcheck disable=SC1090
+    source "$META_FILE"
+    MODE_LABEL="plain"
+    [ "$BUILD_LOCAL" = "true" ] && MODE_LABEL="cached"
+    echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL)"
+    echo "Reuse it for generating the report right now?"
+    if confirm; then
+        echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASED_BRANCH, $MODE_LABEL)"
+        generate_report
+        exit $?
+    fi
+    echo "${C_CYAN}${ARROW}${C_RESET} Removing previous build output, rebuilding"
 fi
 
 # --- Step 1: resolve branches ---
@@ -253,70 +253,70 @@ fi
 CURRENT_BRANCH=$(git branch --show-current)
 BRANCHES=()
 while IFS= read -r branch_name; do
-  BRANCHES+=("$branch_name")
+    BRANCHES+=("$branch_name")
 done < <(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -vx "$BASED_BRANCH")
 
 if [ ${#BRANCHES[@]} -eq 0 ]; then
-  echo "${C_RED}${CROSS} Error:${C_RESET} no local branches other than $BASED_BRANCH found to compare. Checkout a feature branch first." >&2
-  exit 1
+    echo "${C_RED}${CROSS} Error:${C_RESET} no local branches other than $BASED_BRANCH found to compare. Checkout a feature branch first." >&2
+    exit 1
 fi
 
 SELECTED_INDEX=0
 HAS_CURRENT_DEFAULT=false
 for i in "${!BRANCHES[@]}"; do
-  if [ "${BRANCHES[$i]}" = "$CURRENT_BRANCH" ]; then
-    SELECTED_INDEX=$i
-    HAS_CURRENT_DEFAULT=true
-    break
-  fi
+    if [ "${BRANCHES[$i]}" = "$CURRENT_BRANCH" ]; then
+        SELECTED_INDEX=$i
+        HAS_CURRENT_DEFAULT=true
+        break
+    fi
 done
 
 draw_branch_menu() {
-  local selected=$1
-  local i label
-  for i in "${!BRANCHES[@]}"; do
-    label="${BRANCHES[$i]}"
-    if [ "${BRANCHES[$i]}" = "$CURRENT_BRANCH" ]; then
-      label="$label${C_DIM} (current)${C_RESET}"
-    fi
-    [ -t 1 ] && printf "\r\033[K"
-    if [ "$i" -eq "$selected" ]; then
-      printf "  %s❯ %s%s\n" "$C_CYAN" "$label" "$C_RESET"
-    else
-      printf "    %s\n" "$label"
-    fi
-  done
+    local selected=$1
+    local i label
+    for i in "${!BRANCHES[@]}"; do
+        label="${BRANCHES[$i]}"
+        if [ "${BRANCHES[$i]}" = "$CURRENT_BRANCH" ]; then
+            label="$label${C_DIM} (current)${C_RESET}"
+        fi
+        [ -t 1 ] && printf "\r\033[K"
+        if [ "$i" -eq "$selected" ]; then
+            printf "  %s❯ %s%s\n" "$C_CYAN" "$label" "$C_RESET"
+        else
+            printf "    %s\n" "$label"
+        fi
+    done
 }
 
 step_header 1 "Local branch to compare against $BASED_BRANCH"
 echo "(↑/↓ to move, Enter to select):"
 if [ "$HAS_CURRENT_DEFAULT" = false ]; then
-  echo "${C_DIM}No current branch to default to (detached HEAD or on $BASED_BRANCH) — defaulting to the first branch.${C_RESET}"
+    echo "${C_DIM}No current branch to default to (detached HEAD or on $BASED_BRANCH) — defaulting to the first branch.${C_RESET}"
 fi
 draw_branch_menu "$SELECTED_INDEX"
 
 while true; do
-  IFS= read -rsn1 KEY
-  if [ "$KEY" = $'\x1b' ]; then
-    # bash on macOS (3.2) only accepts integer `read -t` timeouts, so this
-    # waits up to 1s for the rest of an arrow-key escape sequence (which
-    # arrives within milliseconds); a lone Esc keypress just waits it out.
-    read -rsn2 -t 1 KEY_REST
-    KEY+="$KEY_REST"
-  fi
-  case "$KEY" in
-    $'\x1b[A')
-      SELECTED_INDEX=$(( (SELECTED_INDEX - 1 + ${#BRANCHES[@]}) % ${#BRANCHES[@]} ))
-      ;;
-    $'\x1b[B')
-      SELECTED_INDEX=$(( (SELECTED_INDEX + 1) % ${#BRANCHES[@]} ))
-      ;;
-    "" | $'\n' | $'\r')
-      break
-      ;;
-  esac
-  [ -t 1 ] && printf "\033[%dA" "${#BRANCHES[@]}"
-  draw_branch_menu "$SELECTED_INDEX"
+    IFS= read -rsn1 KEY
+    if [ "$KEY" = $'\x1b' ]; then
+        # bash on macOS (3.2) only accepts integer `read -t` timeouts, so this
+        # waits up to 1s for the rest of an arrow-key escape sequence (which
+        # arrives within milliseconds); a lone Esc keypress just waits it out.
+        read -rsn2 -t 1 KEY_REST
+        KEY+="$KEY_REST"
+    fi
+    case "$KEY" in
+        $'\x1b[A')
+            SELECTED_INDEX=$(( (SELECTED_INDEX - 1 + ${#BRANCHES[@]}) % ${#BRANCHES[@]} ))
+            ;;
+        $'\x1b[B')
+            SELECTED_INDEX=$(( (SELECTED_INDEX + 1) % ${#BRANCHES[@]} ))
+            ;;
+        "" | $'\n' | $'\r')
+            break
+            ;;
+    esac
+    [ -t 1 ] && printf "\033[%dA" "${#BRANCHES[@]}"
+    draw_branch_menu "$SELECTED_INDEX"
 done
 
 CHANGED_BRANCH="${BRANCHES[$SELECTED_INDEX]}"
@@ -327,33 +327,33 @@ echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 step_header 2 "Build mode"
 echo "Use cached sources instead of a regular build?"
 if confirm default_no; then
-  BUILD_LOCAL=true
-  echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
+    BUILD_LOCAL=true
+    echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
 
-  # Neither is required every run — an existing filter.txt cache and stats
-  # can be reused, so both default to skip.
-  echo "Generate filter.txt cache (yarn generate-cache)?"
-  if confirm default_no; then
-    DO_GENERATE_CACHE=true
-    echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
-  else
-    DO_GENERATE_CACHE=false
-    echo "${C_CYAN}${ARROW}${C_RESET} Skipping generate-cache, reusing existing cache"
-  fi
+    # Neither is required every run — an existing filter.txt cache and stats
+    # can be reused, so both default to skip.
+    echo "Generate filter.txt cache (yarn generate-cache)?"
+    if confirm default_no; then
+        DO_GENERATE_CACHE=true
+        echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
+    else
+        DO_GENERATE_CACHE=false
+        echo "${C_CYAN}${ARROW}${C_RESET} Skipping generate-cache, reusing existing cache"
+    fi
 
-  echo "Download per-filter stats.json from the cached percent.json (yarn download-stats)?"
-  if confirm default_no; then
-    DO_GENERATE_STATS=true
-    echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
-  else
-    DO_GENERATE_STATS=false
-    echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats download"
-  fi
+    echo "Download per-filter stats.json from the cached percent.json (yarn download-stats)?"
+    if confirm default_no; then
+        DO_GENERATE_STATS=true
+        echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
+    else
+        DO_GENERATE_STATS=false
+        echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats download"
+    fi
 else
-  BUILD_LOCAL=false
-  DO_GENERATE_CACHE=false
-  DO_GENERATE_STATS=false
-  echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
+    BUILD_LOCAL=false
+    DO_GENERATE_CACHE=false
+    DO_GENERATE_STATS=false
+    echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
 fi
 
 # --- Step 3: cleanup preference ---
@@ -361,16 +361,16 @@ fi
 step_header 3 "Cleanup preference"
 echo "Remove worktrees and build output when done?"
 if confirm; then
-  DO_CLEANUP=true
-  echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: Yes"
+    DO_CLEANUP=true
+    echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: Yes"
 else
-  DO_CLEANUP=false
-  echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: No"
+    DO_CLEANUP=false
+    echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: No"
 fi
 
 if ! MASTER_SHA=$(git rev-parse --verify "$BASED_BRANCH" 2>/dev/null); then
-  echo "${C_RED}${CROSS} Error:${C_RESET} local branch '$BASED_BRANCH' not found. Fetch/checkout it first." >&2
-  exit 1
+    echo "${C_RED}${CROSS} Error:${C_RESET} local branch '$BASED_BRANCH' not found. Fetch/checkout it first." >&2
+    exit 1
 fi
 CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 
@@ -378,36 +378,36 @@ CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 
 step_header 4 "Set up worktrees"
 setup_worktree() {
-  local label=$1
-  local path=$2
-  local sha=$3
-  # label is a branch name and may contain "/" (e.g. "feature/#1211"), which
-  # would otherwise turn into a nonexistent subdirectory in the log path.
-  local escaped_label="${label//\//-}"
-  local log_path="$TEMP_DIR_NAME/$LOG_DIR_NAME/worktree-$escaped_label.log"
+    local label=$1
+    local path=$2
+    local sha=$3
+    # label is a branch name and may contain "/" (e.g. "feature/#1211"), which
+    # would otherwise turn into a nonexistent subdirectory in the log path.
+    local escaped_label="${label//\//-}"
+    local log_path="$TEMP_DIR_NAME/$LOG_DIR_NAME/worktree-$escaped_label.log"
 
-  if [ -e "$path/.git" ]; then
-    echo "[$label] Existing worktree found at $path"
-    echo "Reuse it instead of recreating?"
-    if confirm default_no; then
-      echo "${C_CYAN}${ARROW}${C_RESET} [$label] reusing existing worktree at $path"
-      git -C "$path" checkout -f "$sha"
-      return 0
+    if [ -e "$path/.git" ]; then
+        echo "[$label] Existing worktree found at $path"
+        echo "Reuse it instead of recreating?"
+        if confirm default_no; then
+            echo "${C_CYAN}${ARROW}${C_RESET} [$label] reusing existing worktree at $path"
+            git -C "$path" checkout -f "$sha"
+            return 0
+        fi
+        echo "${C_CYAN}${ARROW}${C_RESET} [$label] recreating worktree at $path"
+        git worktree remove "$path" -f 2>/dev/null || rm -rf "$path"
+    elif [ -e "$path" ]; then
+        echo "${C_CYAN}${ARROW}${C_RESET} [$label] removing leftover directory at $path (not a git worktree)"
+        rm -rf "$path"
+        echo "${C_CYAN}${ARROW}${C_RESET} [$label] creating worktree at $path"
+    else
+        echo "${C_CYAN}${ARROW}${C_RESET} [$label] creating worktree at $path"
     fi
-    echo "${C_CYAN}${ARROW}${C_RESET} [$label] recreating worktree at $path"
-    git worktree remove "$path" -f 2>/dev/null || rm -rf "$path"
-  elif [ -e "$path" ]; then
-    echo "${C_CYAN}${ARROW}${C_RESET} [$label] removing leftover directory at $path (not a git worktree)"
-    rm -rf "$path"
-    echo "${C_CYAN}${ARROW}${C_RESET} [$label] creating worktree at $path"
-  else
-    echo "${C_CYAN}${ARROW}${C_RESET} [$label] creating worktree at $path"
-  fi
 
-  if ! run_with_spinner "[$label] setting up worktree" "$log_path" \
-    git worktree add --detach "$path" "$sha" -f; then
-    die "[$label] worktree setup FAILED" "$log_path"
-  fi
+    if ! run_with_spinner "[$label] setting up worktree" "$log_path" \
+        git worktree add --detach "$path" "$sha" -f; then
+        die "[$label] worktree setup FAILED" "$log_path"
+    fi
 }
 
 setup_worktree "$BASED_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
@@ -426,38 +426,38 @@ PID_CHANGED_INSTALL=$!
 spinner_wait_all "$PID_MASTER_INSTALL:[${BASED_BRANCH}] install" "$PID_CHANGED_INSTALL:[$CHANGED_BRANCH] install"
 
 if ! wait "$PID_MASTER_INSTALL"; then
-  die "[${BASED_BRANCH}] install FAILED" "$LOG_MASTER_INSTALL"
+    die "[${BASED_BRANCH}] install FAILED" "$LOG_MASTER_INSTALL"
 fi
 if ! wait "$PID_CHANGED_INSTALL"; then
-  die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
+    die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
 # --- Step 6: sync changed worktree's filters/ to the $BASED_BRANCH baseline ---
 
 step_header 6 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASED_BRANCH baseline" "$LOG_SYNC_BASELINE" \
-  git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
-  die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
+    git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
+    die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
 # --- Step 7: build both branches in parallel ---
 
 step_header 7 "Build both branches"
 if [ "$BUILD_LOCAL" = "true" ]; then
-  build_branch() {
-    local dir=$1
-    if [ "$DO_GENERATE_CACHE" = "true" ]; then
-      yarn --cwd "$dir" generate-cache || return 1
-    fi
-    if [ "$DO_GENERATE_STATS" = "true" ]; then
-      yarn --cwd "$dir" download-stats || return 1
-    fi
-    yarn --cwd "$dir" build:local $BUILD_FLAGS
-  }
+    build_branch() {
+        local dir=$1
+        if [ "$DO_GENERATE_CACHE" = "true" ]; then
+            yarn --cwd "$dir" generate-cache || return 1
+        fi
+        if [ "$DO_GENERATE_STATS" = "true" ]; then
+            yarn --cwd "$dir" download-stats || return 1
+        fi
+        yarn --cwd "$dir" build:local $BUILD_FLAGS
+    }
 else
-  build_branch() {
-    yarn --cwd "$1" build $BUILD_FLAGS
-  }
+    build_branch() {
+        yarn --cwd "$1" build $BUILD_FLAGS
+    }
 fi
 
 ( build_branch "$MASTER_WORK_TREE" ) > "$LOG_MASTER_BUILD" 2>&1 &
@@ -470,37 +470,37 @@ spinner_wait_all "$PID_MASTER_BUILD:[$BASED_BRANCH] build" "$PID_CHANGED_BUILD:[
 BUILD_FAILED=false
 
 if wait "$PID_MASTER_BUILD"; then
-  # A prior kept run's output may still be here; cp -r would merge into it
-  # rather than replace it, silently mixing stale files into the diff.
-  rm -rf "$PLATFORMS_MASTER"
-  if run_with_spinner "[$BASED_BRANCH] copying platforms/ output" "$LOG_COPY_MASTER" \
-    cp -r "$MASTER_WORK_TREE/platforms" "$PLATFORMS_MASTER"; then
-    echo "${C_GREEN}${CHECK}${C_RESET} [$BASED_BRANCH] build done"
-  else
-    report_failure "[$BASED_BRANCH] copying platforms/ output FAILED" "$LOG_COPY_MASTER"
-    BUILD_FAILED=true
-  fi
+    # A prior kept run's output may still be here; cp -r would merge into it
+    # rather than replace it, silently mixing stale files into the diff.
+    rm -rf "$PLATFORMS_MASTER"
+    if run_with_spinner "[$BASED_BRANCH] copying platforms/ output" "$LOG_COPY_MASTER" \
+        cp -r "$MASTER_WORK_TREE/platforms" "$PLATFORMS_MASTER"; then
+        echo "${C_GREEN}${CHECK}${C_RESET} [$BASED_BRANCH] build done"
+    else
+        report_failure "[$BASED_BRANCH] copying platforms/ output FAILED" "$LOG_COPY_MASTER"
+        BUILD_FAILED=true
+    fi
 else
-  report_failure "[$BASED_BRANCH] build FAILED" "$LOG_MASTER_BUILD"
-  BUILD_FAILED=true
+    report_failure "[$BASED_BRANCH] build FAILED" "$LOG_MASTER_BUILD"
+    BUILD_FAILED=true
 fi
 
 if wait "$PID_CHANGED_BUILD"; then
-  rm -rf "$PLATFORMS_CHANGED"
-  if run_with_spinner "[$CHANGED_BRANCH] copying platforms/ output" "$LOG_COPY_CHANGED" \
-    cp -r "$CHANGED_WORK_TREE/platforms" "$PLATFORMS_CHANGED"; then
-    echo "${C_GREEN}${CHECK}${C_RESET} [$CHANGED_BRANCH] build done"
-  else
-    report_failure "[$CHANGED_BRANCH] copying platforms/ output FAILED" "$LOG_COPY_CHANGED"
-    BUILD_FAILED=true
-  fi
+    rm -rf "$PLATFORMS_CHANGED"
+    if run_with_spinner "[$CHANGED_BRANCH] copying platforms/ output" "$LOG_COPY_CHANGED" \
+        cp -r "$CHANGED_WORK_TREE/platforms" "$PLATFORMS_CHANGED"; then
+        echo "${C_GREEN}${CHECK}${C_RESET} [$CHANGED_BRANCH] build done"
+    else
+        report_failure "[$CHANGED_BRANCH] copying platforms/ output FAILED" "$LOG_COPY_CHANGED"
+        BUILD_FAILED=true
+    fi
 else
-  report_failure "[$CHANGED_BRANCH] build FAILED" "$LOG_CHANGED_BUILD"
-  BUILD_FAILED=true
+    report_failure "[$CHANGED_BRANCH] build FAILED" "$LOG_CHANGED_BUILD"
+    BUILD_FAILED=true
 fi
 
 if [ "$BUILD_FAILED" = true ]; then
-  exit 1
+    exit 1
 fi
 
 cat > "$META_FILE" <<EOF
@@ -522,25 +522,25 @@ REPORT_STATUS=$?
 
 step_header 9 "Cleanup"
 cleanup_all() {
-  git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
-  git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
-  # Remove everything under $TEMP_DIR_NAME except $LOG_DIR_NAME, so logs
-  # from this run stay available for inspection after cleanup.
-  find "$TEMP_DIR_NAME" -mindepth 1 -maxdepth 1 ! -name "$LOG_DIR_NAME" -exec rm -rf {} +
+    git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
+    git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
+    # Remove everything under $TEMP_DIR_NAME except $LOG_DIR_NAME, so logs
+    # from this run stay available for inspection after cleanup.
+    find "$TEMP_DIR_NAME" -mindepth 1 -maxdepth 1 ! -name "$LOG_DIR_NAME" -exec rm -rf {} +
 }
 
 if [ "$DO_CLEANUP" = true ]; then
-  if run_with_spinner "cleaning up worktrees and build output" "$LOG_CLEANUP" cleanup_all; then
-    rm -f "$LOG_CLEANUP"
-  else
-    report_failure "cleanup FAILED" "$LOG_CLEANUP"
-  fi
+    if run_with_spinner "cleaning up worktrees and build output" "$LOG_CLEANUP" cleanup_all; then
+        rm -f "$LOG_CLEANUP"
+    else
+        report_failure "cleanup FAILED" "$LOG_CLEANUP"
+    fi
 else
-  echo "${C_CYAN}${ARROW}${C_RESET} Cleanup skipped."
-  echo "  $MASTER_WORK_TREE"
-  echo "  $CHANGED_WORK_TREE"
-  echo "  $PLATFORMS_MASTER"
-  echo "  $PLATFORMS_CHANGED"
+    echo "${C_CYAN}${ARROW}${C_RESET} Cleanup skipped."
+    echo "  $MASTER_WORK_TREE"
+    echo "  $CHANGED_WORK_TREE"
+    echo "  $PLATFORMS_MASTER"
+    echo "  $PLATFORMS_CHANGED"
 fi
 
 exit "$REPORT_STATUS"
