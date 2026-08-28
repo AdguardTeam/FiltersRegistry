@@ -158,6 +158,17 @@ die() {
     exit 1
 }
 
+# Given a ref and the SHA a previous run recorded for it, returns a dim
+# "(now at <short>)" fragment when the ref has moved on since — appended to
+# that branch's line in the reuse prompt to show the kept output is stale.
+# Empty when the SHA still matches, or the ref no longer resolves.
+sha_drift_note() {
+    local ref=$1 recorded=$2 current
+    current=$(git rev-parse --verify --quiet "$ref" 2>/dev/null) || return 0
+    [ "$current" = "$recorded" ] && return 0
+    printf '%s' "  ${C_DIM}(now at ${current:0:9})${C_RESET}"
+}
+
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
 # CHANGED_BRANCH / BUILD_LOCAL and the platforms_{master,changed}_build/ dirs.
 generate_report() {
@@ -239,6 +250,8 @@ if [ -f "$META_FILE" ] && [ -d "$PLATFORMS_MASTER" ] && [ -d "$PLATFORMS_CHANGED
     MODE_LABEL="plain"
     [ "$BUILD_LOCAL" = "true" ] && MODE_LABEL="cached"
     echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, $MODE_LABEL)"
+    echo "  $BASE_BRANCH @ ${MASTER_SHA:0:9}$(sha_drift_note "$BASE_BRANCH" "$MASTER_SHA")"
+    echo "  $CHANGED_BRANCH @ ${CHANGED_SHA:0:9}$(sha_drift_note "$CHANGED_BRANCH" "$CHANGED_SHA")"
     echo "Reuse it for generating the report right now?"
     if confirm; then
         echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASE_BRANCH, $MODE_LABEL)"
