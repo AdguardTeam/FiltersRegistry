@@ -177,7 +177,7 @@ generate_report() {
 
     echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
     echo "Branch (reference): $BASE_BRANCH          @ $MASTER_SHA"
-    echo "Branch (feature):   $CHANGED_BRANCH @ $CHANGED_SHA"
+    echo "Branch (changed):   $CHANGED_BRANCH @ $CHANGED_SHA"
     if [ "${BUILD_LOCAL:-false}" = "true" ]; then
         build_cmd=""
         [ "${DO_GENERATE_CACHE:-false}" = "true" ] && build_cmd+="generate-cache && yarn "
