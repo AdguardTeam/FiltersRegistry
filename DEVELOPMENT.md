@@ -141,8 +141,9 @@ report.
 
 Two conveniences on repeated runs:
 
-- If `platforms_master_build/` and `platforms_changed_build/` already exist
-  from a previous run, it offers to generate the report from them instead of rebuilding.
+- If `temp/platforms_master_build/` and `temp/platforms_changed_build/`
+  already exist from a previous run, it offers to generate the report from
+  them instead of rebuilding.
 - If a worktree from a previous run is still present, it offers to reuse it
   (keeping `node_modules`, skipping reinstall) instead of recreating it from
   scratch.
