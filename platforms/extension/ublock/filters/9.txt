@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Lr6ZibnfStA9Qo2NQFPsPQ
-! Diff-Path: ../patches/9/9-s-1787869730-3600.patch
+! Checksum: ryMy/1dGQjmjovn8DwD8Xw
+! Diff-Path: ../patches/9/9-s-1788002076-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.45
-! TimeUpdated: 2026-08-27T22:25:16+00:00
+! Version: 2.0.35.46
+! TimeUpdated: 2026-08-29T11:11:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2647,7 +2647,8 @@ jilliandescribecompany.com##+js(no-window-open-if)
 sapo.pt,jn.pt,noticiasaominuto.com,noticiasaominuto.com.br##.pub-container
 sapo.pt###DetailContent > .article-pub
 play.mercadolibre.cl,play.mercadolivre.com.br,play.mercadolibre.com.ar##+js(set-constant, __PRELOADED_STATE__.view.components.player.playbackContext.ads, undefined)
-play.mercadolibre.cl,play.mercadolivre.com.br,play.mercadolibre.com.ar##+js(json-prune, adn_placement components.player.playbackContext.ads)
+play.mercadolibre.cl,play.mercadolivre.com.br,play.mercadolibre.com.ar##+js(json-prune, adn_placement components.player.playbackContext.ads adnPlacement avails.* dashAvailabilityStartTime hlsAnchorMediaSequenceNumber nextToken nonLinearAvails)
+play.mercadolibre.cl,play.mercadolivre.com.br,play.mercadolibre.com.ar##+js(xml-prune, xpath(//*[name()="Period"][./*[name()="EventStream"][contains(@schemeIdUri\, ":advertising-")]] | //*[name()="Period"]/@start), , .mpd)
 expansion.com##.l-top-ads
 pkproject.net,musica.com##div[data-fuse]
 musica.com,teletexto.com###widgetPeoople:empty
