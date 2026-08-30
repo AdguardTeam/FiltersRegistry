@@ -249,12 +249,12 @@ if [ -f "$META_FILE" ] && [ -d "$PLATFORMS_MASTER" ] && [ -d "$PLATFORMS_CHANGED
     source "$META_FILE"
     MODE_LABEL="plain"
     [ "$BUILD_LOCAL" = "true" ] && MODE_LABEL="cached"
-    echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, $MODE_LABEL)"
+    echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
     echo "  $BASE_BRANCH @ ${MASTER_SHA:0:9}$(sha_drift_note "$BASE_BRANCH" "$MASTER_SHA")"
     echo "  $CHANGED_BRANCH @ ${CHANGED_SHA:0:9}$(sha_drift_note "$CHANGED_BRANCH" "$CHANGED_SHA")"
     echo "Reuse it for generating the report right now?"
     if confirm; then
-        echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASE_BRANCH, $MODE_LABEL)"
+        echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
         generate_report
         exit $?
     fi
