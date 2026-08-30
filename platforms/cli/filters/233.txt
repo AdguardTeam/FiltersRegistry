@@ -1,15 +1,15 @@
-! Checksum: kdI4Kb6d1ast/u8Pqr+g6Q
-! Diff-Path: ../patches/233/233-s-1788107799-14400.patch
+! Checksum: zAqK+pAGposDTrDoQwniiA
+! Diff-Path: ../patches/233/233-s-1788122159-14400.patch
 ! Title: Adblock List for Finland
 ! Description: Finnish ad blocking filter list.
-! Version: 2.0.12.81
-! TimeUpdated: 2026-08-30T16:33:41+00:00
+! Version: 2.0.12.82
+! TimeUpdated: 2026-08-30T20:33:17+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Adblock List for Finland
 ! Description: Finnish adblock list
 ! Expires: 4 days
-! Last modified: Sun, 30 Aug 2026 17:45:54 +0300
+! Last modified: Sun, 30 Aug 2026 22:38:16 +0300
 ! Homepage: https://github.com/finnish-easylist-addition/finnish-easylist-addition
 ! License: https://unlicense.org/
 ! Raportoi mainoksenestoon liittyvistä ongelmista tai estämättömistä mainoksista täällä / Please report adblocking related issues or unblocked ads at:
@@ -821,12 +821,13 @@ ristinvoitto.fi##a[href*="subaction=bannerredirect"]:not(a[href*="-rv-tilaus"])
 rumba.fi##.bg-white.w-full.py-2.px-4:has(.poppartners)
 ruuhkavuodet.fi##.category-kaupallinen-yhteistyo
 s-kaupat.fi#?#[data-test-id="product-list-item"]:has([data-test-id="product-label"]:contains(Sponsoroitu))
+sanavelho.fi#?#p:contains(mainoksen)
 seiska.fi##div.box-border.after\:content-\[\'\'\].before\:bg-placeholder-gray.before\:content-\[\'\'\].text-placeholder-gray
 seura.fi##.grid__item_lg-1.grid__item_1:has(.dfp-advertisement)
 seura.fi##.wp-block-column:has(> [id|="dfp__native-card"])
 seura.fi##li:has(> [id|="dfp__native-card"])
 seura.fi#?#section[class=entry-body] > p:contains(/^\xA0$/)
-seurakuntalainen.fi##.article-item.column-mainospaikka
+seurakuntalainen.fi##.valu-large-ad
 seutumajakka.fi##.section--full-size-ad-carousel
 sevendays.vasabladet.fi##.AutomaticDfpWidget
 sevendays.vasabladet.fi##.DfpWidget
@@ -1182,15 +1183,16 @@ _300x300_*.mp4$media,domain=futisfani.com|kiekkofani.com|penkkiurheilu.com|uutis
 ||nelonenmedia-pmd-ads-*.nm-stream.nelonenmedia.fi^$media
 murha.info#@#.adsbygoogle
 @@||adserve.adcoin.com/display/ad_block/$xmlhttprequest,domain=verkkouutiset.fi
-||adform.net$xmlhttprequest,redirect=noopjs,domain=telsu.fi
 @@||puhelinvertailu.com^$generichide
 @@||dawn.fi^$generichide
 ! Redirect resources
+/adverts/*.mp4$media,redirect=noopmp3-0.1s,domain=totalvene.fi
+||adform.net$xmlhttprequest,redirect=noopjs,domain=telsu.fi
+||adsdk.bing.net/ast/ast.js$script,redirect=noopjs,domain=iltalehti.fi
 ||freewheel-jitt.sanoma.fi^$media,redirect=noopmp3-0.1s,domain=ruutu.fi
 ||nelonenmedia-pmd-ads-*.nm-stream.nelonenmedia.fi^$media,redirect=noopmp3-0.1s,domain=ruutu.fi|supla.fi
+||pubads.g.doubleclick.net/gampad/ads?*sanavelho*$xmlhttprequest,domain=imasdk.googleapis.com,redirect=noopjs
 ||sanoma-prod.integration-x.com^$media,redirect=noopmp3-0.1s,domain=ruutu.fi
-/adverts/*.mp4$media,redirect=noopmp3-0.1s,domain=totalvene.fi
-||adsdk.bing.net/ast/ast.js$script,redirect=noopjs,domain=iltalehti.fi
 ! -----UNSORTED END-----
 ! -----UNBREAK-----
 ! Unbreak kampanjat.hs.fi, the breaking filter should be checked
@@ -1224,8 +1226,6 @@ kampanjat.hs.fi#@#div[class] > a[href^="https://tilaa.sanoma.fi/"]
 ! To fix the opening of kauppa.dna.fi product links on hintaseuranta.fi
 @@||track.adform.net^*https://kauppa.dna.fi/tuote/$popup,domain=hintaseuranta.fi
 @@||googletagmanager.com/gtm.js?$third-party,domain=elisa.fi
-! Redundant? Videos seem to work on gamereactor.fi
-! @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=gamereactor.fi
 @@||power.fi/Umbraco/Api/Tracking/TrackOrder$xmlhttprequest,domain=power.fi
 @@||seiska.b-cdn.net/Mainos.mp4$media,domain=seiska.fi
 @@||tags.tiqcdn.com/utag/sanoma-fi/*/utag.js
@@ -1248,6 +1248,7 @@ srk.fi#@##CookielawBanner
 @@||googletagmanager.com/gtm.js$domain=pohjanmaanhyvinvointi.fi
 ! https://www.tek.fi/fi/palvelut-ja-edut/palkka/tilaa-palkkatietoa
 @@/eu_cookie_compliance.min.js$script,domain=www.tek.fi
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=sanavelho.fi
 ! Fixes site issue, sometimes huge white area appears at the bottom page
 bittimittari.fi,kyberturvallisuuskeskus.fi,saavutettavuusvaatimukset.fi,traficom.fi#$#html { height:auto !important }
 bittimittari.fi,kyberturvallisuuskeskus.fi,saavutettavuusvaatimukset.fi,traficom.fi#$#body.layout-root { height:auto !important }

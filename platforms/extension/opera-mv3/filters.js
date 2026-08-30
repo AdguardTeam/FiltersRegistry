@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.96.88",
-			"timeUpdated": "2026-08-30T16:32:59+0000",
+			"version": "2.1.96.89",
+			"timeUpdated": "2026-08-30T20:32:42+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.96.87",
-			"timeUpdated": "2026-08-30T16:33:01+0000",
+			"version": "2.1.96.88",
+			"timeUpdated": "2026-08-30T20:32:43+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1049,8 +1049,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist-thailand/easylist-thailand/master/subscription/easylist-thailand.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.29",
-			"timeUpdated": "2026-03-09T05:05:32+0000",
+			"version": "2.0.0.30",
+			"timeUpdated": "2026-08-30T20:33:01+0000",
 			"deprecated": false,
 			"languages": [
 				"th"
@@ -1263,8 +1263,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.12.81",
-			"timeUpdated": "2026-08-30T16:33:41+0000",
+			"version": "2.0.12.82",
+			"timeUpdated": "2026-08-30T20:33:17+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.90.19",
-			"timeUpdated": "2026-08-30T16:34:01+0000",
+			"version": "2.0.90.20",
+			"timeUpdated": "2026-08-30T20:33:34+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
