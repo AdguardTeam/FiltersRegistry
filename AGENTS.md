@@ -95,7 +95,7 @@ for all supported AdGuard products.
 | `yarn validate` | Validate platforms and locales |
 | `yarn validate:platforms` | Validate platform build outputs |
 | `yarn validate:locales` | Validate locale files |
-| `yarn compare-build-output` | Interactive build comparison vs. master. Requires manual input for branch/build mode/cleanup; unsuitable for CI or automation |
+| `yarn compare-build-output` | Build comparison vs. master. Requires interactive manual inputs; not for CI/automation |
 | `yarn update-wildcard-domains` | Scan filters for wildcard domains |
 | `yarn expand-wildcard-domains` | Expand wildcard domains in platform builds |
 | `yarn compress` | Compress repository data |
