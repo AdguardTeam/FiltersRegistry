@@ -1,5 +1,5 @@
-! Checksum: dnXOxPfXp8TrQ73izqQatg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1787970041-3600.patch
+! Checksum: JVs8xe6qN1xA+iuhSsucMQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1788056586-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.41
@@ -809,7 +809,6 @@ maisonapart.com###pub_MAP_ROTATION_PUB_EMPLACEMENT_TOPMAP
 onvasortir.com###pub_rectangle
 fr.tennistemple.com##.right > .box_nd > [id^="300x250"]
 replay.fr##.dfa
-||static.lequipe.fr/v6/js/popinVideo.js
 empire-streaming.*,empire-stream.*##iframe[src="/banner_ads"]
 ||empire-streaming.*/serviceWorker.js
 /neads.$domain=~neads.io|~neads.co
@@ -1074,7 +1073,6 @@ mobimart.it#@##ad_global_below_navbar
 @@||content.uplynk.com/preplay/*/multiple.json*&ad.preroll$domain=fifa.com
 @@||google.com/recaptcha/api.js
 $popup,domain=mcloud.to,badfilter
-@@$csp=worker-src 'none',domain=uptostream.com
 nova.rs#@#div[data-ad]
 $script,third-party,domain=onepiece-streaming.co,badfilter
 kodiefiles.nl#@#div[data-ad]
@@ -1640,7 +1638,6 @@ _468x60&
 _468x60@
 _468X60v2.
 _480x250.
-_60x468_
 _648x60_
 _725_90.
 _728-x-90_
@@ -1674,6 +1671,7 @@ _ads_banner_
 _ads_desktop.
 _ads_one_
 _ads_view/
+_adsens_
 _adspromo.
 _adunit=
 _advertising_img.
@@ -1711,10 +1709,9 @@ _publicitaire/
 _publicite.
 _publicite_
 _regie/aff.
+_sdk_ad_
 _smads_
 _square_ads.
-_strip_ad/
-_waframedia_
 _werbebanner_
 /wp-content/banners/*$third-party
 /wp-content/plugins/bazooka-shopping/*
@@ -1858,14 +1855,12 @@ _werbebanner_
 ||aquaplatform.com^$third-party
 ||askmecca.com^$third-party
 ||atedra.com^$third-party
-||avanis.fr^$third-party
 ||avantajadas.com.br^$third-party
 ||bazardux.com^$third-party
 ||best-deals-products.com^$third-party
 ||bestcontentwork.top^$third-party
 ||betfredaffiliates.com^$third-party
 ||betterbannerscloud.com^$third-party
-||biznolimit.com^$third-party
 ||broadcast.pm^$third-party
 ||camsoda.com^$third-party
 ||caramec.fr^$third-party
@@ -1935,7 +1930,6 @@ _werbebanner_
 ||ksplayer.com^$third-party
 ||kyoads.com^$third-party
 ||lafrancebdsm.com^$third-party
-||lcmarrero.com^$third-party
 ||lemrock.com^$third-party
 ||lexozfldkklgvc.com^$third-party
 ||lien-amateur.org^$third-party
@@ -3166,6 +3160,7 @@ voethrusts.cfd
 ||alitems.com^$popup,third-party
 ||amazing-dates.com^$popup
 ||anrdoezrs.net^$popup,third-party
+||antj.link^$popup
 ||badoink.com^$popup,third-party
 ||boonsex.com^$popup,third-party
 ||brightonclick.com^$popup,third-party
@@ -3263,6 +3258,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||b.clictoload.com^
 ||bandeiracorp.biz/images/$third-party
 ||be.com/wp-content/uploads/$third-party
+||booking.com/static/img/*_banners_
+||brfiles.com/static/pub/
 ||brsimg.com/pub/
 ||camtempel.com/banner/
 ||cdn.citytourgirls.com/static/bn/
@@ -3278,7 +3275,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||comdotcdn.com/hiqqu/files/widgets/
 ||ctb.intersport.fr^
 ||ctrip.com/?TypeID=$third-party
-||dditscdn.com^*&isPromo=
 ||devisprox-media.s3-website-eu-west-1.amazonaws.com^
 ||dial.rencontres-celibataires.info^
 ||e-media-concept.com/medias/
@@ -3569,7 +3565,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||bedetheque.com/javascript/campagne?
 ||bleachmx.fr/wp-content/uploads/bleach-
 ||boursier.com/illustrations/campaigns/
-||ca-sudrhonealpes.fr/content/binary/*_banniere_
 ||callistanise.com/ad?
 ||cambro.tv/player/html.php
 ||carrefour.fr/api/advertising/
@@ -3644,7 +3639,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||jeu-tarot-en-ligne.com/pubs/
 ||jeux.org/vda/
 ||judgehype.com/pub2/bg.php?
-||kiteboarder-mag.com/media/habillage/
 ||lacanausurfinfo.com/admin/images/pubs/
 ||lacasadeel.net/banners/
 ||lafranceapoil.com^*.php$script
@@ -3665,7 +3659,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||lesoir.be/*/banniere_
 ||lesoir.be/iframe/
 ||lexpress.fr/pub/
-||linternaute.fr/api/block/
 ||live.whassup.fr/*&campaign=
 ||location-etudiant.fr/pubs/
 ||maison-travaux.fr/wp-content/uploads/sites/8/2021/04/deco.jpg
@@ -3812,7 +3805,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###bsa-block-125--125
 ###bsa-block-1920--1200
 ###bsa-block-250--250
-###bsa-block-250--600
 ###bsa-block-300--250
 ###bsa-block-300--600
 ###bsa-block-336--280
@@ -3959,6 +3951,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###pubChronique
 ###pubHaut
 ###pubHeader
+###pubImg
 ###pubLeft
 ###pubRight
 ###pubTop
@@ -4309,7 +4302,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.promo-partenaire
 ##.propads
 ##.pstAd
-##.pub-1000x90-top
 ##.pub-290x80
 ##.pub-300
 ##.pub-300-250
@@ -4355,7 +4347,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pub300250
 ##.pub300_600
 ##.pub300_contenu
-##.pub300single
 ##.pub300x250
 ##.pub336footer
 ##.pub350x250left
@@ -4532,11 +4523,9 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.video-list-ads
 ##.video_reklama
 ##.view-publicites
-##.wid-sponsor-banner
 ##.widget-advert
 ##.widget-advert-300-600
 ##.widget-le_guide
-##.widget-paruvendu
 ##.widget-pub
 ##.widget_advncdads
 ##.widget_box_pub
@@ -4710,8 +4699,6 @@ gamer-network.fr###pubLarge
 tele.premiere.fr###pub_a2d_pave
 maxifoot-live.com###pub_bc
 emu-france.com###pub_casino_header
-ouest-france.fr###pub_wallpaper
-paris-communiques.com,plateformemedia.com###publaterale
 focus-numerique.com,lapresse.ca,les-terrains.com###pubs
 gamaniak.com###pubtopmenu
 liligo.fr###pulledbanner
@@ -4889,6 +4876,7 @@ ouedkniss.com##.my-4
 jetanimes.com##.mysticky-welcomebar-fixed
 tchatche.com##.native-banner
 porndoe.com##.news-ticker-wrap
+ad4.fr##.nicebtn
 nordicmag.info##.nordi-widget
 lecho.be##.o-hpgrid__row-sponsoredcombo
 01net.com##.od-tlc
@@ -4904,7 +4892,6 @@ monbestseller.com##.pane-mbspush
 jardiner-malin.fr##.parent-billboard
 portail.free.fr,sante-dz.com##.partenaire
 boursorama.com,caradisiac.com,dunod.com,ficam.ma,lesechos.fr,lfp.fr,mangario.fr,nouvelobs.com,saint-etienne.fr##.partenaires
-nouvelobs.com##.partenaires-services
 constructeurdemaison.net,ffr.fr,gameblog.fr,lexpress.fr,mensup.fr,swissquote.ch,turbo.fr##.partner
 caci.dz,lavenir.net,nintendo-master.com,ogaming.tv,savefrom.net##.partners
 grands-reportages.com,montagnes-magazine.com##.pavepub
@@ -4929,7 +4916,6 @@ tvanouvelles.ca##.promo-tva-inner
 expressio.fr##.promoted-vcontainer
 ados.fr,afrik-foot.com,afrik.com,afrikeco.com,agoravox.fr,agoravox.tv,annuaire-streaming.com,bhmag.fr,bienpublic.com,cciaf.org,centerblog.net,cio-online.com,commentreparer.com,construiresamaison.com,cotemaison.fr,cuisineactuelle.fr,dictionnaire-synonymes.com,docteurclic.com,educatout.com,elbotola.com,elheddaf.com,ennaharonline.com,europages.ma,fan-de-cinema.com,foot01.com,franceinfo.fr,franceinter.fr,gratuiciel.com,hellokids.com,ici.tou.tv,igen.fr,infoconcert.com,internetparsatellite.net,iphonesoft.fr,iphonetweak.fr,jeux-hentai.com,jeux-mmorpg.com,ktotv.com,lacentrale.fr,ladepeche.fr,larousse.fr,lefigaro.fr,leprogres.fr,lesdebiles.com,lesechos.fr,lesoir.be,lexpress.fr,logicielmac.com,logitheque.com,loractu.fr,macg.co,macommune.info,mapiaule.com,maximiles.com,meilleurtaux.com,menara.ma,midilibre.fr,montelimar-news.fr,mots-croises.ch,nextinpact.com,nintendo-master.com,orange.fr,ouest-france.fr,over-blog.com,programme.tv,radio-monaco.com,radioclassique.fr,remede.org,sfr.fr,skirandomag.com,slate.fr,sofoot.com,soonnight.com,sudinfo.be,techno-science.net,telemb.be,telequebec.tv,tf1.fr,tsa-algerie.com,turbo.fr,vipsg.fr,watchgeneration.fr,xboxygen.com,yabiladi.com,zupimages.net##.pub
 challenges.fr,sciencesetavenir.fr##.pub-home
-yabiladi.com##.pub-read
 lequipement.fr##.pub-revendeur
 01net.com,bfmtv.com,pagesjaunes.fr##.pub-title
 fsolver.fr##.pubCLS
