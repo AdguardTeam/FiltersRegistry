@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 3y+A4rqYVZC96PxLM8yNfg
-! Diff-Path: ../patches/1/1-s-1787842173-3600.patch
+! Checksum: 75k7uKuQ358X4URW2/Cg0A
+! Diff-Path: ../patches/1/1-s-1788117297-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.28
-! TimeUpdated: 2026-08-27T14:44:48+00:00
+! Version: 2.1.8.29
+! TimeUpdated: 2026-08-30T19:10:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1461,6 +1461,9 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||dteifi.com^$all
+||thtrck.com^$all
+||crmared.com^$all
 ||zcode19.com^$3p
 ||vnmfvnkd.win^
 ||aj0453.top^
@@ -7149,13 +7152,14 @@ sovsport.ru##p:has(> a[class^="bet-widget_link"])
 sportcsat.ru###pc-container
 sportcsat.ru,onlinestreams.ru##div[style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; cursor: pointer; z-index: 1000000; background: rgba(255, 255, 255, 0);"]:style(display: none !important;)
 sportcsat.ru,onlinestreams.ru###player:style(pointer-events: auto !important;)
+||fastpic.org/fpv.js
 fastpic.org##+js(abort-current-script, JSON, =document[")
 fastpic.org##+js(abort-current-script, navigator, =document[")
 fastpic.org##+js(addEventListener-defuser, , /window\.open\(AD\,|wpadmngr\.com|\[\'init\'\]|\]=\'async\'\,document/)
 fastpic.org##+js(abort-current-script, Date.prototype.toISOString, wpadmngr.com)
 fastpic.org##+js(abort-on-property-read, ExaQaAutomatizationFlag)
 fastpic.org##+js(abort-current-script, EventTarget.prototype.dispatchEvent, getexoloader)
-fastpic.org##+js(remove-node-text, script, /=document\["[\s\S]*?\.location\.href=|wpadmngr\.com|\[\'init\'\]|\]=\'async\'\,document|ctrlKey/)
+fastpic.org##+js(remove-node-text, script, /ctrlKey|exoload|}catch\(_\){}try{/)
 ||fastpic.org/px/provider.js
 news.ru##.post-detail__content > div[style]:has(> div[id^="adfox_"])
 news.ru##.head-reban
