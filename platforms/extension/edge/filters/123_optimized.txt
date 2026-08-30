@@ -1,9 +1,9 @@
-! Checksum: RKuZFVkL2Y9/qahUpHLO8A
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1788052340-14400.patch
+! Checksum: ZeYKtYz44TtumY+Nw7b1oQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1788064791-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.67.86
-! TimeUpdated: 2026-08-30T01:09:07+00:00
+! Version: 2.1.67.87
+! TimeUpdated: 2026-08-30T04:36:27+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -117,7 +117,6 @@
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
-/socialbookmarks.js
 /socialcount.js
 /socialite.js
 /socialite.min.js
@@ -139,7 +138,6 @@
 /weiboshare.html
 /whatsapp-button.js
 /whatsapp_icon.png
-/whatsappshare.js
 /widget/share?
 /widgets/socials/*
 /wordpress-popup/*$domain=ahchealthenews.com
@@ -216,7 +214,6 @@ _social-bar/
 ###facebookShareButton
 ###facebookTab
 ###facebookWidget
-###facebook_container
 ###facebook_like
 ###facebook_link
 ###facebook_overlay
@@ -225,6 +222,7 @@ _social-bar/
 ###facebookbtn
 ###facebooklike
 ###facebooklikebox-2
+###facebooknotification
 ###facebookpopup-fan-exit
 ###facebookpopup-fanback
 ###facebooktrend
@@ -333,9 +331,6 @@ _social-bar/
 ###likeThisPost
 ###linkShare
 ###linkedin_share
-###lst-facebook
-###lst-instagram
-###lst-twitter
 ###mainShare
 ###menu-footer-social-links
 ###menu-footer_social
@@ -819,7 +814,6 @@ _social-bar/
 ##.a2a_vertical_style
 ##.a__share
 ##.abh_social
-##.above-content-sharebar
 ##.absurdsharediv
 ##.abtlikebox
 ##.action--share
@@ -875,7 +869,6 @@ _social-bar/
 ##.ampz_twitter
 ##.anv-splash-share
 ##.aol-share
-##.app-list-share
 ##.app_btn_share
 ##.app_share_mod
 ##.aps-social-icon-wrapper
@@ -1482,7 +1475,6 @@ _social-bar/
 ##.footer__socials
 ##.footer_fb
 ##.footer_follow
-##.footer_right_social
 ##.footer_share
 ##.footer_social
 ##.footer_social-icon
@@ -1886,7 +1878,6 @@ _social-bar/
 ##.m-sns
 ##.m-social-bar
 ##.m-social-share
-##.m-socialbar
 ##.m-socials
 ##.m_share
 ##.main-article-share-count
@@ -2104,7 +2095,6 @@ _social-bar/
 ##.post--share
 ##.post-content-share
 ##.post-footer-share
-##.post-footer__share
 ##.post-like-share
 ##.post-meta-share
 ##.post-metasocial
@@ -2212,7 +2202,6 @@ _social-bar/
 ##.search-social
 ##.sec_share
 ##.secondaryNav-social
-##.section-follow
 ##.section-post-intro-share
 ##.section-social
 ##.section_footer-social-links
@@ -2364,7 +2353,6 @@ _social-bar/
 ##.share-network-whatsapp
 ##.share-on
 ##.share-on-title
-##.share-on-whsp
 ##.share-open-button
 ##.share-pannel
 ##.share-pictures-overlay
@@ -2373,7 +2361,6 @@ _social-bar/
 ##.share-pinterest-icon
 ##.share-platform
 ##.share-popup
-##.share-position
 ##.share-post
 ##.share-post-box
 ##.share-rail
@@ -2411,7 +2398,6 @@ _social-bar/
 ##.share-tiktok
 ##.share-title
 ##.share-to
-##.share-to-whatsapp-wrapper
 ##.share-toggle
 ##.share-tool
 ##.share-toolbar
@@ -2748,6 +2734,7 @@ _social-bar/
 ##.site-social
 ##.site-social-icon
 ##.site-social-menu
+##.site-social-networks
 ##.sitewide-social-media
 ##.slider-social
 ##.sm-page-widget-sociallinks
@@ -2958,7 +2945,6 @@ _social-bar/
 ##.social-right
 ##.social-rocket-inline-buttons
 ##.social-row
-##.social-scroll
 ##.social-sec
 ##.social-section-links
 ##.social-sendmail
@@ -3047,7 +3033,6 @@ _social-bar/
 ##.social-widget
 ##.social-widget-sidebar
 ##.social-widgets
-##.social-wrap-outer
 ##.social-wrp
 ##.social.social-facebook
 ##.social.social-twitter
@@ -3065,7 +3050,6 @@ _social-bar/
 ##.socialContainerWrap
 ##.socialCount
 ##.socialEl
-##.socialFacebook
 ##.socialFixed
 ##.socialFollow
 ##.socialFooter
@@ -3210,7 +3194,6 @@ _social-bar/
 ##.socialshare
 ##.socialshare-wrapper
 ##.socialshare2
-##.socialsharebtm
 ##.socialshares
 ##.socialsharing
 ##.socialside
@@ -3783,7 +3766,6 @@ animenewsnetwork.com###social-bookmarks
 breitbart.com###social-follow-sidebar-widget
 coindesk.com###social-icons-box
 1news.co.nz###socialListParent
-nerfnow.com###social_buttons
 salon.com###social_total
 nsctotal.com.br,pastebin.pl###socials
 motortrend.com###socialshare_title
@@ -4026,7 +4008,6 @@ apa.org##.horizontal-icon-bar
 hrw.org##.hrw-share
 noisypixel.net##.hw-el-share
 dictionary.cambridge.org##.i-facebook
-pcguide.com##.ic_google_news
 insideclimatenews.org##.icn-share-holder
 atptour.com##.icon-email
 manutd.com##.icon-share-card-lite
@@ -4088,6 +4069,7 @@ nhl.com##.nhl-o-sharebar
 nist.gov##.nist-social__wrapper
 infobyip.com##.noprint
 conservativebrief.com,jerseyvindicator.org,karanpc.com,parlamentario.com,sexypedia.it##.ns-buttons
+cyberinsider.com,origami.guide,thepeoplesvoice.tv##.ns-buttons-wrapper
 foodnetwork.com##.o-SocialShare
 sheknows.com,spy.com##.o-social-list__item
 support.microsoft.com##.ocArticleFooterShareContainer
@@ -4262,6 +4244,7 @@ thehackernews.com##.top-follow
 pastebin.com##.top-footer
 rottentomatoes.com##.trending-bar__social-link
 tweaktown.com##.tt-follow-news
+tweaktown.com##.tt-preferred-sources
 slashdot.org##.tw
 apptrigger.com,motherjones.com##.tweet
 videocardz.com##.twitter-follow-button
@@ -4555,6 +4538,7 @@ iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
 ansa.it##.fonti-preferite
+fanpage.it##.ft-icon
 agi.it##.hidden.xlarge\:flex.border-t.border-base-300.pt-2.core.items-center.justify-between
 ilfattoquotidiano.it##.ifq-news-meta__share
 ilfattoquotidiano.it##.ifq-post__share
@@ -4582,6 +4566,7 @@ hdblog.it,hdmotori.it##.social_links
 unionesarda.it##.socials-link
 secoloditalia.it##.stamp
 macitynet.it##.tds-button
+tg.la7.it##.tgla7-condividi
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
 alfredopedulla.com##.tw-banner
@@ -4597,6 +4582,7 @@ qiita.com##[class^="style-"] > [class^="style-"] > div[class^="style-"]:has(> bu
 qiita.com##[href^="https://b.hatena.ne.jp/entry/"]
 qiita.com##div[id^="AdventCalendar"] hr ~ div[class^="style-"]:has(> button[class^="style-"][aria-label][title])
 ||imyfone.com/assets/js/media_share/
+||line-scdn.net/line_add_friends/edge/btn/
 ||taishurx.jp/js/web/sns_header.js
 knivesout.jp###Jfacebook
 knivesout.jp###Jtwitter
@@ -4736,7 +4722,6 @@ elcomercio.com##.single-layout__community-social
 motor.elpais.com##.site-footer__redes
 larazon.es##.site-footer__rrss
 eldiario.es,eldiarioar.com##.sn-buttons
-radioimagina.cl##.sn-single
 larazon.es##.social-wrapper
 cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share

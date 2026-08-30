@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PRiP/WycAVu2voHJ3b/SFQ
-! Diff-Path: ../patches/260/260-s-1788035775-14400.patch
+! Checksum: HuEx1yqZcnTCzlsycNiL7A
+! Diff-Path: ../patches/260/260-s-1788064806-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.58
-! TimeUpdated: 2026-08-29T20:33:52+00:00
+! Version: 2.0.1.59
+! TimeUpdated: 2026-08-30T04:37:21+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1720,8 +1720,23 @@ drive.google.com##.h-v:has([src="https://ssl.gstatic.com/docs/doclist/images/med
 ! AI Overview
 drive.google.com##.De8rPe
 ! -- Viewing a file
-! "Ask Gemini" button in top right
+! "Ask Gemini" button in top right (no longer used?)
 drive.google.com###viewer-sidekick-button
+! -- With a PDF opened
+! Header - Gemini button
+drive.google.com##.TLiyPe
+! Menubar - Tools
+! * TODO: Breaks keyboard navigation of menubar
+drive.google.com##[role="menuitem"]:contains(Ask Gemini)
+drive.google.com##[role="menuitem"]:contains(Ask Gemini) + [role="separator"]
+drive.google.com##[role="menuitem"]:contains(Create an audio overview)
+! * Only hide if summaries are disbaled
+drive.google.com##[role="menu"] > [role="presentation"]:contains(Suggestion controls):contains(Enable PDF summary cards)
+drive.google.com##[role="menu"] > [role="presentation"]:contains(Suggestion controls):contains(Enable PDF summary cards) + [role="separator"]
+! Audio Overview
+drive.google.com##.DbMyfd.LOB30e:has([aria-label="Create an audio overview"])
+! Genini in sidebar
+drive.google.com##.equNN
 ! ====================
 ! == Google Flights ==
 ! ====================
@@ -2607,6 +2622,9 @@ mixam.com##[data-controller="header--mixie"]
 ! -- https://mixam.com/
 ! "Get an Instant Quote" button
 mixam.com##[data-action="click->ai--mixie-banner#openHomepagePanel"]
+! -- Order page
+! Header sparkle button
+mixam.com##[data-type="mixie-header-controls"]
 ! =============
 ! == Mixscan ==
 ! =============
