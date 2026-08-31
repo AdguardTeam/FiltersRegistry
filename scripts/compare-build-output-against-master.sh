@@ -274,7 +274,6 @@ generate_report() {
     done < <(build_subcommands)
     filter_args=$(filter_flags)
     echo "Build command:      $build_cmd${filter_args:+ $filter_args}"
-    [ -n "$filter_args" ] && echo "Filter selection:   $filter_args"
     echo "Platforms compared: $(ls "$PLATFORMS_MASTER" | tr '\n' ' ')"
     echo ""
 
