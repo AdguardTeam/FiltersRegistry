@@ -15,13 +15,7 @@ command -v yarn >/dev/null 2>&1 || { echo "Error: yarn not found on PATH." >&2; 
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 cd "$REPO_ROOT" || exit 1
-
-# Removes worktree info for worktrees whose working trees are missing
-# (https://git-scm.com/docs/git-worktree#Documentation/git-worktree.txt-prune),
-# e.g. if temp/ was ever deleted manually instead of via `git worktree remove`.
-# To verify: `rm -rf temp/reg-master-build`, then rerun — `git worktree add`
-# would otherwise fail as "already registered".
-git worktree prune
+GIT_COMMON_DIR=$(git rev-parse --git-common-dir)
 
 TEMP_DIR_NAME="$REPO_ROOT/temp"
 mkdir -p "$TEMP_DIR_NAME"
@@ -475,6 +469,17 @@ CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 # --- Step 5: set up worktrees (reuse if already present) ---
 
 step_header 5 "Set up worktrees"
+
+# Removes the admin entry for a worktree at $1, if it exists but the working tree is missing. Otherwise `git worktree add` will fail as "already registered".
+prune_stale_worktree() {
+    local path=$1 wt_admin
+    [ -e "$path/.git" ] && return 0
+    for wt_admin in "$GIT_COMMON_DIR"/worktrees/*/; do
+        [ -f "$wt_admin/gitdir" ] || continue
+        [ "$(cat "$wt_admin/gitdir" 2>/dev/null)" = "$path/.git" ] && rm -rf "$wt_admin"
+    done
+}
+
 setup_worktree() {
     local label=$1
     local path=$2
@@ -505,6 +510,7 @@ setup_worktree() {
         echo "${C_CYAN}${ARROW}${C_RESET} [$label] creating worktree at $path"
     fi
 
+    prune_stale_worktree "$path"
     if ! run_with_spinner "[$label] setting up worktree" "$log_path" \
         git worktree add --detach "$path" "$sha" -f; then
         die "[$label] worktree setup FAILED" "$log_path"
