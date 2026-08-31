@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1NFG9go7BvQ4+HTczJks+g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788168256-3600.patch
+! Checksum: dzICEM2pkbo9YCmcUBq6MA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788171559-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.87.15
-! TimeUpdated: 2026-08-31T09:20:03+00:00
+! Version: 2.4.87.16
+! TimeUpdated: 2026-08-31T10:16:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15593,13 +15593,14 @@ urlcut.ninja##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227521
 ! exe.io
 $script,3p,redirect=noop.js,domain=exeygo.com
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236095
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172589
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167165
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166454
 ! cuty.io
-@@||cuttlinks.com^$generichide
-@@||cuttty.com^$generichide
+*$script,redirect-rule=noop.js,domain=cuttlinks.com|exe-links.com|cuttty.com|cuttyy.com|cutynow.com|exnion.com|cutyion.com|jixo.online|exe-urls.com|evernia.site|ijvam.com|mrgec.com|emxaw.com|cety.app|cutnet.net
+@@*$generichide,domain=cuttlinks.com|exe-links.com|cuttty.com|cuttyy.com|cutynow.com|exnion.com|cutyion.com|jixo.online|exe-urls.com|evernia.site|ijvam.com|mrgec.com|emxaw.com|cety.app|cutnet.net
 @@||ads.pubmatic.com^|$xhr,domain=cuttlinks.com|exe-links.com|cuttty.com|cuttyy.com|cutynow.com|exnion.com|cutyion.com|jixo.online|exe-urls.com|evernia.site|ijvam.com|mrgec.com|emxaw.com|cety.app|cutnet.net
 @@||c.amazon-adsystem.com/aax2/apstag.js$xhr,domain=cuttlinks.com|exe-links.com|cuttty.com|cuttyy.com|cutynow.com|exnion.com|cutyion.com|jixo.online|exe-urls.com|evernia.site|ijvam.com|mrgec.com|emxaw.com|cety.app|cutnet.net
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=cuttlinks.com|exe-links.com|cuttty.com|cuttyy.com|cutynow.com|exnion.com|cutyion.com|jixo.online|exe-urls.com|evernia.site|ijvam.com|mrgec.com|emxaw.com|cety.app|cutnet.net
@@ -15608,6 +15609,7 @@ cuttlinks.com,exe-links.com,cuttty.com,cuttyy.com,cutynow.com,exnion.com,cutyion
 cuttlinks.com,exe-links.com,cuttty.com,cuttyy.com,cutynow.com,exnion.com,cutyion.com,jixo.online,exe-urls.com,evernia.site,ijvam.com,mrgec.com,emxaw.com,cety.app,cutnet.net##.adsbygoogle.ads-container[style]:style(display: block !important;)
 cuttlinks.com,exe-links.com,cuttty.com,cuttyy.com,cutynow.com,exnion.com,cutyion.com,jixo.online,exe-urls.com,evernia.site,ijvam.com,mrgec.com,emxaw.com,cety.app,cutnet.net##+js(prevent-fetch, pagead2.googlesyndication.com)
 cuttty.com##+js(prevent-fetch, /amazon-adsystem\.com|pubmatic\.com|ib\.adnxs\.com/)
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166266
 hax.co.id##+js(addEventListener-defuser, load, AdBlock)
 hax.co.id##+js(prevent-fetch, adsbygoogle)
@@ -39949,6 +39951,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+tech.co##.cta[data-eventcategory="banner-cta-rhs"]
 teamrankings.com##main > div[style]:has(> div[data-stn-player])
 ||hentaihaven.*/api/ads/?placement=
 sxyprn.net,sxyprn.com##+js(set-constant, use_vast, false)

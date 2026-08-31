@@ -1,9 +1,9 @@
-! Checksum: gOBBdWyMx8D6gQalkWTNbA
-! Diff-Path: ../patches/14/14-s-1788168228-3600.patch
+! Checksum: AymbAGX1wYpxS9ffYerw5g
+! Diff-Path: ../patches/14/14-s-1788171536-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.77.38
-! TimeUpdated: 2026-08-31T09:20:50+00:00
+! Version: 2.2.77.39
+! TimeUpdated: 2026-08-31T10:16:49+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1742,6 +1742,7 @@
 !
 ! SECTION: Cookies - General URL
 !
+||dadoslegais.com^$third-party
 ||cdn.jsdelivr.net/gh/orestbida/cookieconsent@*/dist/cookieconsent.umd.js
 ||team.epccm19.com^
 ||cookies.truecaller.com^
@@ -2640,6 +2641,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+bol.com#%#//scriptlet('trusted-click-element', '.consent > div > button', 'containsText:Weigeren')
 invenglobal.com#%#//scriptlet('trusted-set-cookie-reload', 'ige-cookie-preferences', '%7B%22version%22%3A1%2C%22categories%22%3A%7B%22necessary%22%3Atrue%2C%22performance%22%3Afalse%2C%22functional%22%3Atrue%2C%22targeting%22%3Afalse%2C%22social_media%22%3Atrue%7D%7D')
 ||kaucja.pl/app/views/primary/components/gcCookie/
 minigpt.org,flaq.ai,freeimgen.com##body > div.fixed.bottom-5:has(> div.backdrop-blur-lg > button)
@@ -37457,6 +37459,8 @@ yna.co.kr,pchocasi.com.tr,spidersweb.pl,empireonline.com,jiji.com,fictionhorizon
 !
 ! SECTION: Subscriptions - Regular rules
 !
+jota.info##h2:has(> a[href*="-newsletter-"])
+worldofsweets.de##.footer-newsletter-container
 tech.co##.lytics-newsletter-container
 transferfeed.com##div.text-center:has(> a#google-preferred-source)
 teamrankings.com##.newsletter-signup-box
@@ -55921,6 +55925,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+jota.info##a[data-testid="banner-top"]
 transferfeed.com###market-explorer-promo
 transferfeed.com###fan-scout-promo
 nikkei.com##.l-main_primary > .banner
