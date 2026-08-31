@@ -179,6 +179,13 @@ filter_flags() {
     printf '%s' "$flags"
 }
 
+# True when a copied platforms dir actually holds built filter files, not an
+# empty tree left by a previous run that died mid-build (which would otherwise
+# get reused and reported as PASS against another empty tree).
+has_built_output() {
+    [ -n "$(find "$1" -name '*.txt' ! -name '*.patch' -print -quit 2>/dev/null)" ]
+}
+
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
 # CHANGED_BRANCH / BUILD_LOCAL / INCLUDED_FILTER_IDS / EXCLUDED_FILTER_IDS and
 # the platforms_{master,changed}_build/ dirs.
@@ -257,7 +264,9 @@ generate_report() {
 
 # --- Step 0: reuse existing build output, if any ---
 
-if [ -f "$META_FILE" ] && [ -d "$PLATFORMS_MASTER" ] && [ -d "$PLATFORMS_CHANGED" ]; then
+if [ -f "$META_FILE" ] \
+    && has_built_output "$PLATFORMS_MASTER" \
+    && has_built_output "$PLATFORMS_CHANGED"; then
     # shellcheck disable=SC1090
     source "$META_FILE"
     # Step 8 deletes each worktree's platforms/ before building; restore it so
