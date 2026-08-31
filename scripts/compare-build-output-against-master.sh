@@ -222,6 +222,34 @@ collect_build() {
     echo "${C_GREEN}${CHECK}${C_RESET} [$label] build done"
 }
 
+# Removes the worktrees, the copied platforms output and the meta file.
+cleanup_all() {
+    git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
+    git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
+    rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED"
+    rm -f "$META_FILE"
+}
+
+# Honors DO_CLEANUP: either runs cleanup_all or prints what was kept and
+# where. Called from Step 10 and from the build-failure path, so a failed run
+# also respects the cleanup choice instead of always leaving state behind.
+run_cleanup() {
+    if [ "$DO_CLEANUP" = true ]; then
+        if run_with_spinner "cleaning up worktrees and build output" "$LOG_CLEANUP" cleanup_all; then
+            rm -f "$LOG_CLEANUP"
+        else
+            report_failure "cleanup FAILED" "$LOG_CLEANUP"
+        fi
+    else
+        echo "${C_CYAN}${ARROW}${C_RESET} Cleanup skipped. Kept:"
+        echo "  $MASTER_WORK_TREE"
+        echo "  $CHANGED_WORK_TREE"
+        echo "  $PLATFORMS_MASTER"
+        echo "  $PLATFORMS_CHANGED"
+        echo "  logs in $TEMP_DIR_NAME/$LOG_DIR_NAME"
+    fi
+}
+
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
 # CHANGED_BRANCH / BUILD_LOCAL / INCLUDED_FILTER_IDS / EXCLUDED_FILTER_IDS and
 # the platforms_{master,changed}_build/ dirs.
@@ -588,6 +616,8 @@ collect_build "$CHANGED_BRANCH" "$PID_CHANGED_BUILD" "$LOG_CHANGED_BUILD" \
     "$CHANGED_WORK_TREE" "$PLATFORMS_CHANGED" "$LOG_COPY_CHANGED"
 
 if [ "$BUILD_FAILED" = true ]; then
+    step_header 10 "Cleanup"
+    run_cleanup
     exit 1
 fi
 
@@ -611,25 +641,6 @@ REPORT_STATUS=$?
 # --- Step 10: cleanup ---
 
 step_header 10 "Cleanup"
-cleanup_all() {
-    git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
-    git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
-    rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED"
-    rm -f "$META_FILE"
-}
-
-if [ "$DO_CLEANUP" = true ]; then
-    if run_with_spinner "cleaning up worktrees and build output" "$LOG_CLEANUP" cleanup_all; then
-        rm -f "$LOG_CLEANUP"
-    else
-        report_failure "cleanup FAILED" "$LOG_CLEANUP"
-    fi
-else
-    echo "${C_CYAN}${ARROW}${C_RESET} Cleanup skipped."
-    echo "  $MASTER_WORK_TREE"
-    echo "  $CHANGED_WORK_TREE"
-    echo "  $PLATFORMS_MASTER"
-    echo "  $PLATFORMS_CHANGED"
-fi
+run_cleanup
 
 exit "$REPORT_STATUS"
