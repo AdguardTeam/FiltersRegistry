@@ -186,6 +186,20 @@ has_built_output() {
     [ -n "$(find "$1" -name '*.txt' ! -name '*.patch' -print -quit 2>/dev/null)" ]
 }
 
+# Loads the meta file written by Step 8 into its known variables. Parses
+# rather than `source`s it: CHANGED_BRANCH is a git refname and may legally
+# contain $(...) or backticks, which `source` would execute.
+load_meta() {
+    local _key _val
+    while IFS='=' read -r _key _val || [ -n "$_key" ]; do
+        case "$_key" in
+            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_LOCAL|DO_GENERATE_CACHE|DO_GENERATE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
+                printf -v "$_key" '%s' "$_val"
+                ;;
+        esac
+    done < "$1"
+}
+
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
 # CHANGED_BRANCH / BUILD_LOCAL / INCLUDED_FILTER_IDS / EXCLUDED_FILTER_IDS and
 # the platforms_{master,changed}_build/ dirs.
@@ -267,8 +281,7 @@ generate_report() {
 if [ -f "$META_FILE" ] \
     && has_built_output "$PLATFORMS_MASTER" \
     && has_built_output "$PLATFORMS_CHANGED"; then
-    # shellcheck disable=SC1090
-    source "$META_FILE"
+    load_meta "$META_FILE"
     # Step 8 deletes each worktree's platforms/ before building; restore it so
     # the worktrees are clean again for inspection or a fresh run.
     for _wt in "$MASTER_WORK_TREE" "$CHANGED_WORK_TREE"; do
