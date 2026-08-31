@@ -364,65 +364,37 @@ if [ ${#BRANCHES[@]} -eq 0 ]; then
     exit 1
 fi
 
-SELECTED_INDEX=0
-HAS_CURRENT_DEFAULT=false
+# Default the selection to the current branch when it's one of the choices.
+DEFAULT_INDEX=0
 for i in "${!BRANCHES[@]}"; do
     if [ "${BRANCHES[$i]}" = "$CURRENT_BRANCH" ]; then
-        SELECTED_INDEX=$i
-        HAS_CURRENT_DEFAULT=true
+        DEFAULT_INDEX=$i
         break
     fi
 done
 
-draw_branch_menu() {
-    local selected=$1
-    local i label
-    for i in "${!BRANCHES[@]}"; do
-        label="${BRANCHES[$i]}"
-        if [ "${BRANCHES[$i]}" = "$CURRENT_BRANCH" ]; then
-            label="$label${C_DIM} (current)${C_RESET}"
-        fi
-        [ -t 1 ] && printf "\r\033[K"
-        if [ "$i" -eq "$selected" ]; then
-            printf "  %s❯ %s%s\n" "$C_CYAN" "$label" "$C_RESET"
-        else
-            printf "    %s\n" "$label"
-        fi
-    done
-}
-
 step_header 1 "Local branch to compare against $BASE_BRANCH"
-echo "(↑/↓ to move, Enter to select):"
-if [ "$HAS_CURRENT_DEFAULT" = false ]; then
-    echo "${C_DIM}No current branch to default to (detached HEAD or on $BASE_BRANCH) — defaulting to the first branch.${C_RESET}"
-fi
-draw_branch_menu "$SELECTED_INDEX"
 
-while true; do
-    IFS= read -rsn1 KEY
-    if [ "$KEY" = $'\x1b' ]; then
-        # bash on macOS (3.2) only accepts integer `read -t` timeouts, so this
-        # waits up to 1s for the rest of an arrow-key escape sequence (which
-        # arrives within milliseconds); a lone Esc keypress just waits it out.
-        read -rsn2 -t 1 KEY_REST
-        KEY+="$KEY_REST"
-    fi
-    case "$KEY" in
-        $'\x1b[A')
-            SELECTED_INDEX=$(( (SELECTED_INDEX - 1 + ${#BRANCHES[@]}) % ${#BRANCHES[@]} ))
-            ;;
-        $'\x1b[B')
-            SELECTED_INDEX=$(( (SELECTED_INDEX + 1) % ${#BRANCHES[@]} ))
-            ;;
-        "" | $'\n' | $'\r')
+if [ ${#BRANCHES[@]} -eq 1 ]; then
+    CHANGED_BRANCH="${BRANCHES[0]}"
+    echo "${C_DIM}Only one branch available.${C_RESET}"
+else
+    for i in "${!BRANCHES[@]}"; do
+        marker=""
+        [ "${BRANCHES[$i]}" = "$CURRENT_BRANCH" ] && marker="${C_DIM} (current)${C_RESET}"
+        printf "  %2d) %s%s\n" "$((i + 1))" "${BRANCHES[$i]}" "$marker"
+    done
+    default_num=$((DEFAULT_INDEX + 1))
+    while true; do
+        read -r -p "Select a branch [1-${#BRANCHES[@]}] (default: $default_num): " choice
+        choice=${choice:-$default_num}
+        if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -ge 1 ] && [ "$choice" -le ${#BRANCHES[@]} ]; then
             break
-            ;;
-    esac
-    [ -t 1 ] && printf "\033[%dA" "${#BRANCHES[@]}"
-    draw_branch_menu "$SELECTED_INDEX"
-done
-
-CHANGED_BRANCH="${BRANCHES[$SELECTED_INDEX]}"
+        fi
+        echo "${C_RED}${CROSS}${C_RESET} Enter a number between 1 and ${#BRANCHES[@]}."
+    done
+    CHANGED_BRANCH="${BRANCHES[$((choice - 1))]}"
+fi
 echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 
 # --- Step 2: build mode ---
