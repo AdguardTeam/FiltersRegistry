@@ -454,7 +454,10 @@ setup_worktree() {
         echo "Reuse it instead of recreating?"
         if confirm default_no; then
             echo "${C_CYAN}${ARROW}${C_RESET} [$label] reusing existing worktree at $path"
-            git -C "$path" checkout -f "$sha"
+            if ! run_with_spinner "[$label] checking out $sha in reused worktree" "$log_path" \
+                git -C "$path" checkout -f "$sha"; then
+                die "[$label] checkout in reused worktree FAILED" "$log_path"
+            fi
             return 0
         fi
         echo "${C_CYAN}${ARROW}${C_RESET} [$label] recreating worktree at $path"
