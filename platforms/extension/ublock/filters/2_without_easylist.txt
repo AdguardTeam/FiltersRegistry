@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sk6knZ7Qp0eF2OFWhB8wQQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788158095-3600.patch
+! Checksum: r+6It0aaEVQCfr7Abz0WOQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788161107-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.87.12
-! TimeUpdated: 2026-08-31T06:30:33+00:00
+! Version: 2.4.87.13
+! TimeUpdated: 2026-08-31T07:22:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13030,6 +13030,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239859
+||app.diagnoseo.com/tools/common-js/dsn.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239762
 adslink.pw##+js(prevent-fetch, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239607
@@ -13236,6 +13238,7 @@ kodibeginner.com##+js(prevent-fetch, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234262
 xxvideoss.net##+js(no-setTimeout-if, _0x)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234349
+!+ NOT_OPTIMIZED
 ||wispbyte.com/client/scripts/wisp-cmp-bridge.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234288
 gvhot.net,gvhot.com###adblock-overlay
@@ -27916,7 +27919,9 @@ crystal-launcher.pl##.content > .ssw:has(> center:only-child > .adsbygoogle)
 crystal-launcher.pl###host > div[data-nosnippet]:has(> center:only-child > script[src*="/invoke.js"])
 blaskonline.pl##.banner-wrapper
 blaskonline.pl##.sponsor-banner
-blaskonline.pl##div[id^="optad_"]
+tysol.pl,blaskonline.pl##div[id^="optad_"]
+tysol.pl##.edito-banner:style(display: none !important;)
+tysol.pl##+js(remove-class, section-opt, #main-content .section-opt)
 forbot.pl##.targetDivClass > a[target="_blank"] > img
 forbot.pl##div[style*="margin: 0 auto; text-align: center; position: relative;"]:has(> .targetDivClass:only-child > a[target="_blank"] > img)
 chip.pl##.fc-Card14:has(> a[href="https://www.plus.pl/5g"])
@@ -29750,8 +29755,9 @@ xgp.pl###hdrbnr
 xgp.pl##div[id^="xgppl-"] > a[target="_blank"] > img
 xgp.pl##div[class^="adslot_"]
 xgp.pl##.entry-content > div[class$="-target"][style^="margin-left: auto; margin-right: auto; text-align: center;"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/239741
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119489
-donald.pl##ins[class^="staticpubads"]
+gosc.pl,donald.pl##ins[class^="staticpubads"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119486
 player.polskieradio.pl##div[class$="__advertisement"]
 player.polskieradio.pl##.app > .antena ~ div[style^="position: absolute; width: 100vw; height: 100vh;"]
@@ -39940,6 +39946,7 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+teamrankings.com##main > div[style]:has(> div[data-stn-player])
 ||hentaihaven.*/api/ads/?placement=
 sxyprn.net,sxyprn.com##+js(set-constant, use_vast, false)
 ||7reels.cc/promo/
