@@ -74,9 +74,9 @@ fi
 ARROW="→"
 CHECK="✓"
 CROSS="✗"
-TOTAL_STEPS=9
+TOTAL_STEPS=10
 
-# Prints a blank line and a bold "Step N/9: <title>" header.
+# Prints a blank line and a bold "Step N/10: <title>" header.
 step_header() {
     echo ""
     echo "${C_BOLD}Step $1/$TOTAL_STEPS: $2${C_RESET}"
@@ -169,10 +169,21 @@ sha_drift_note() {
     printf '%s' "  ${C_DIM}(now at ${current:0:9})${C_RESET}"
 }
 
+# Echoes the -i=/-s= flags for the current INCLUDED_FILTER_IDS /
+# EXCLUDED_FILTER_IDS selection, or nothing when neither is set. Passed
+# unquoted so it word-splits into separate args (or vanishes when empty).
+filter_flags() {
+    local flags=""
+    [ -n "$INCLUDED_FILTER_IDS" ] && flags="-i=$INCLUDED_FILTER_IDS"
+    [ -n "$EXCLUDED_FILTER_IDS" ] && flags="$flags${flags:+ }-s=$EXCLUDED_FILTER_IDS"
+    printf '%s' "$flags"
+}
+
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
-# CHANGED_BRANCH / BUILD_LOCAL and the platforms_{master,changed}_build/ dirs.
+# CHANGED_BRANCH / BUILD_LOCAL / INCLUDED_FILTER_IDS / EXCLUDED_FILTER_IDS and
+# the platforms_{master,changed}_build/ dirs.
 generate_report() {
-    local build_cmd total rule_diffs diff_list meta_diffs
+    local build_cmd filter_args total rule_diffs diff_list meta_diffs
     local master_file rel changed_file changed_only_file
 
     echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
@@ -186,7 +197,9 @@ generate_report() {
     else
         build_cmd="build $BUILD_FLAGS"
     fi
-    echo "Build command:      yarn $build_cmd"
+    filter_args=$(filter_flags)
+    echo "Build command:      yarn $build_cmd${filter_args:+ $filter_args}"
+    [ -n "$filter_args" ] && echo "Filter selection:   $filter_args"
     echo "Platforms compared: $(ls "$PLATFORMS_MASTER" | tr '\n' ' ')"
     echo ""
 
@@ -247,6 +260,11 @@ generate_report() {
 if [ -f "$META_FILE" ] && [ -d "$PLATFORMS_MASTER" ] && [ -d "$PLATFORMS_CHANGED" ]; then
     # shellcheck disable=SC1090
     source "$META_FILE"
+    # Step 8 deletes each worktree's platforms/ before building; restore it so
+    # the worktrees are clean again for inspection or a fresh run.
+    for _wt in "$MASTER_WORK_TREE" "$CHANGED_WORK_TREE"; do
+        [ -e "$_wt/.git" ] && git -C "$_wt" checkout -- platforms/ 2>/dev/null
+    done
     MODE_LABEL="plain"
     [ "$BUILD_LOCAL" = "true" ] && MODE_LABEL="cached"
     echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
@@ -369,9 +387,32 @@ else
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
 fi
 
-# --- Step 3: cleanup preference ---
+# --- Step 3: filter selection ---
+# Forwarded as -i=/-s= to generate-cache, download-stats and the build, so a
+# quick eval can build a handful of filters instead of the whole registry.
 
-step_header 3 "Cleanup preference"
+step_header 3 "Filter selection"
+INCLUDED_FILTER_IDS=""
+EXCLUDED_FILTER_IDS=""
+echo "Use filter selection?"
+if confirm default_no; then
+    echo "${C_CYAN}${ARROW}${C_RESET} Selecting filters"
+    read -r -p "Filter IDs to build — yarn --include (comma-separated, blank = all): " INCLUDED_FILTER_IDS
+    read -r -p "Filter IDs to exclude — yarn --skip (comma-separated, blank = none): " EXCLUDED_FILTER_IDS
+    INCLUDED_FILTER_IDS="${INCLUDED_FILTER_IDS// /}"
+    EXCLUDED_FILTER_IDS="${EXCLUDED_FILTER_IDS// /}"
+    for _ids in "$INCLUDED_FILTER_IDS" "$EXCLUDED_FILTER_IDS"; do
+        if [ -n "$_ids" ] && ! [[ "$_ids" =~ ^[0-9]+(,[0-9]+)*$ ]]; then
+            echo "${C_RED}${CROSS} Error:${C_RESET} filter IDs must be digits separated by commas: '$_ids'" >&2
+            exit 1
+        fi
+    done
+fi
+echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}] exclude=[${EXCLUDED_FILTER_IDS:-none}]"
+
+# --- Step 4: cleanup preference ---
+
+step_header 4 "Cleanup preference"
 echo "Remove worktrees and build output when done?"
 if confirm; then
     DO_CLEANUP=true
@@ -387,9 +428,9 @@ if ! MASTER_SHA=$(git rev-parse --verify "$BASE_BRANCH" 2>/dev/null); then
 fi
 CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
 
-# --- Step 4: set up worktrees (reuse if already present) ---
+# --- Step 5: set up worktrees (reuse if already present) ---
 
-step_header 4 "Set up worktrees"
+step_header 5 "Set up worktrees"
 setup_worktree() {
     local label=$1
     local path=$2
@@ -426,10 +467,10 @@ setup_worktree() {
 setup_worktree "$BASE_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
-# --- Step 5: install deps in parallel ---
+# --- Step 6: install deps in parallel ---
 # Always runs, even for a reused worktree
 
-step_header 5 "Install dependencies"
+step_header 6 "Install dependencies"
 
 yarn --cwd "$MASTER_WORK_TREE" install > "$LOG_MASTER_INSTALL" 2>&1 &
 PID_MASTER_INSTALL=$!
@@ -445,31 +486,43 @@ if ! wait "$PID_CHANGED_INSTALL"; then
     die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
-# --- Step 6: sync changed worktree's filters/ to the $BASE_BRANCH baseline ---
+# --- Step 7: sync changed worktree's filters/ to the $BASE_BRANCH baseline ---
 
-step_header 6 "Sync filters/ baseline"
+step_header 7 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
     git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
     die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
-# --- Step 7: build both branches in parallel ---
+# --- Step 8: build both branches in parallel ---
 
-step_header 7 "Build both branches"
+step_header 8 "Build both branches"
 if [ "$BUILD_LOCAL" = "true" ]; then
     build_branch() {
-        local dir=$1
+        local dir=$1 filter_args
+        filter_args=$(filter_flags)
+        # Build into a clean platforms/ so the copied output is exactly what
+        # this run produced; with a filter selection the rest would otherwise
+        # stay at the checked-out commit's files. Step 0 restores it next run.
+        rm -rf "$dir/platforms"
         if [ "$DO_GENERATE_CACHE" = "true" ]; then
-            yarn --cwd "$dir" generate-cache || return 1
+            # shellcheck disable=SC2086
+            yarn --cwd "$dir" generate-cache $filter_args || return 1
         fi
         if [ "$DO_GENERATE_STATS" = "true" ]; then
-            yarn --cwd "$dir" download-stats || return 1
+            # shellcheck disable=SC2086
+            yarn --cwd "$dir" download-stats $filter_args || return 1
         fi
-        yarn --cwd "$dir" build:local $BUILD_FLAGS
+        # shellcheck disable=SC2086
+        yarn --cwd "$dir" build:local $BUILD_FLAGS $filter_args
     }
 else
     build_branch() {
-        yarn --cwd "$1" build $BUILD_FLAGS
+        local dir=$1 filter_args
+        filter_args=$(filter_flags)
+        rm -rf "$dir/platforms"
+        # shellcheck disable=SC2086
+        yarn --cwd "$dir" build $BUILD_FLAGS $filter_args
     }
 fi
 
@@ -523,17 +576,19 @@ CHANGED_BRANCH=$CHANGED_BRANCH
 BUILD_LOCAL=$BUILD_LOCAL
 DO_GENERATE_CACHE=$DO_GENERATE_CACHE
 DO_GENERATE_STATS=$DO_GENERATE_STATS
+INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
+EXCLUDED_FILTER_IDS=$EXCLUDED_FILTER_IDS
 EOF
 
-# --- Step 8: report ---
+# --- Step 9: report ---
 
-step_header 8 "Report"
+step_header 9 "Report"
 generate_report
 REPORT_STATUS=$?
 
-# --- Step 9: cleanup ---
+# --- Step 10: cleanup ---
 
-step_header 9 "Cleanup"
+step_header 10 "Cleanup"
 cleanup_all() {
     git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
     git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
