@@ -152,6 +152,20 @@ die() {
     exit 1
 }
 
+# The yarn subcommands a build runs, in order, one per line. Single source of
+# truth for both the real build (Step 8) and the report's "Build command"
+# line, so the two can't drift. Reads BUILD_MODE / DO_GENERATE_CACHE /
+# DO_GENERATE_STATS.
+build_subcommands() {
+    if [ "${BUILD_MODE:-plain}" != "cached" ]; then
+        echo "build $BUILD_FLAGS"
+        return
+    fi
+    [ "${DO_GENERATE_CACHE:-false}" = "true" ] && echo "generate-cache"
+    [ "${DO_GENERATE_STATS:-false}" = "true" ] && echo "download-stats"
+    echo "build:local $BUILD_FLAGS"
+}
+
 # Given a ref and the SHA a previous run recorded for it, returns a dim
 # "(now at <short>)" fragment when the ref has moved on since — appended to
 # that branch's line in the reuse prompt to show the kept output is stale.
@@ -187,7 +201,7 @@ load_meta() {
     local _key _val
     while IFS='=' read -r _key _val || [ -n "$_key" ]; do
         case "$_key" in
-            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_LOCAL|DO_GENERATE_CACHE|DO_GENERATE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
+            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_GENERATE_CACHE|DO_GENERATE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
                 printf -v "$_key" '%s' "$_val"
                 ;;
         esac
@@ -245,25 +259,21 @@ run_cleanup() {
 }
 
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
-# CHANGED_BRANCH / BUILD_LOCAL / INCLUDED_FILTER_IDS / EXCLUDED_FILTER_IDS and
+# CHANGED_BRANCH / BUILD_MODE / INCLUDED_FILTER_IDS / EXCLUDED_FILTER_IDS and
 # the platforms_{master,changed}_build/ dirs.
 generate_report() {
-    local build_cmd filter_args total rule_diffs diff_list meta_diffs
+    local build_cmd build_sub filter_args total rule_diffs diff_list meta_diffs
     local master_file rel changed_file changed_only_file
 
     echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
     echo "Branch (reference): $BASE_BRANCH          @ $MASTER_SHA"
     echo "Branch (changed):   $CHANGED_BRANCH @ $CHANGED_SHA"
-    if [ "${BUILD_LOCAL:-false}" = "true" ]; then
-        build_cmd=""
-        [ "${DO_GENERATE_CACHE:-false}" = "true" ] && build_cmd+="generate-cache && yarn "
-        [ "${DO_GENERATE_STATS:-false}" = "true" ] && build_cmd+="download-stats && yarn "
-        build_cmd+="build:local $BUILD_FLAGS"
-    else
-        build_cmd="build $BUILD_FLAGS"
-    fi
+    build_cmd=""
+    while IFS= read -r build_sub; do
+        build_cmd+="${build_cmd:+ && }yarn $build_sub"
+    done < <(build_subcommands)
     filter_args=$(filter_flags)
-    echo "Build command:      yarn $build_cmd${filter_args:+ $filter_args}"
+    echo "Build command:      $build_cmd${filter_args:+ $filter_args}"
     [ -n "$filter_args" ] && echo "Filter selection:   $filter_args"
     echo "Platforms compared: $(ls "$PLATFORMS_MASTER" | tr '\n' ' ')"
     echo ""
@@ -331,8 +341,7 @@ if [ -f "$META_FILE" ] \
     for _wt in "$MASTER_WORK_TREE" "$CHANGED_WORK_TREE"; do
         [ -e "$_wt/.git" ] && git -C "$_wt" checkout -- platforms/ 2>/dev/null
     done
-    MODE_LABEL="plain"
-    [ "$BUILD_LOCAL" = "true" ] && MODE_LABEL="cached"
+    MODE_LABEL=${BUILD_MODE:-plain}
     echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
     echo "  $BASE_BRANCH @ ${MASTER_SHA:0:9}$(sha_drift_note "$BASE_BRANCH" "$MASTER_SHA")"
     echo "  $CHANGED_BRANCH @ ${CHANGED_SHA:0:9}$(sha_drift_note "$CHANGED_BRANCH" "$CHANGED_SHA")"
@@ -396,7 +405,7 @@ echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 step_header 2 "Build mode"
 echo "Use cached sources instead of a regular build?"
 if confirm default_no; then
-    BUILD_LOCAL=true
+    BUILD_MODE=cached
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
 
     # Neither is required every run — an existing filter.txt cache and stats
@@ -419,7 +428,7 @@ if confirm default_no; then
         echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats download"
     fi
 else
-    BUILD_LOCAL=false
+    BUILD_MODE=plain
     DO_GENERATE_CACHE=false
     DO_GENERATE_STATS=false
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
@@ -550,34 +559,18 @@ fi
 # --- Step 8: build both branches in parallel ---
 
 step_header 8 "Build both branches"
-if [ "$BUILD_LOCAL" = "true" ]; then
-    build_branch() {
-        local dir=$1 filter_args
-        filter_args=$(filter_flags)
-        # Build into a clean platforms/ so the copied output is exactly what
-        # this run produced; with a filter selection the rest would otherwise
-        # stay at the checked-out commit's files. Step 0 restores it next run.
-        rm -rf "$dir/platforms"
-        if [ "$DO_GENERATE_CACHE" = "true" ]; then
-            # shellcheck disable=SC2086
-            yarn --cwd "$dir" generate-cache $filter_args || return 1
-        fi
-        if [ "$DO_GENERATE_STATS" = "true" ]; then
-            # shellcheck disable=SC2086
-            yarn --cwd "$dir" download-stats $filter_args || return 1
-        fi
+build_branch() {
+    local dir=$1 filter_args build_sub
+    filter_args=$(filter_flags)
+    # Build into a clean platforms/ so the copied output is exactly what this
+    # run produced; with a filter selection the rest would otherwise stay at
+    # the checked-out commit's files. Step 0 restores it next run.
+    rm -rf "$dir/platforms"
+    while IFS= read -r build_sub; do
         # shellcheck disable=SC2086
-        yarn --cwd "$dir" build:local $BUILD_FLAGS $filter_args
-    }
-else
-    build_branch() {
-        local dir=$1 filter_args
-        filter_args=$(filter_flags)
-        rm -rf "$dir/platforms"
-        # shellcheck disable=SC2086
-        yarn --cwd "$dir" build $BUILD_FLAGS $filter_args
-    }
-fi
+        yarn --cwd "$dir" $build_sub $filter_args || return 1
+    done < <(build_subcommands)
+}
 
 ( build_branch "$MASTER_WORK_TREE" ) > "$LOG_MASTER_BUILD" 2>&1 &
 PID_MASTER_BUILD=$!
@@ -603,7 +596,7 @@ cat > "$META_FILE" <<EOF
 MASTER_SHA=$MASTER_SHA
 CHANGED_SHA=$CHANGED_SHA
 CHANGED_BRANCH=$CHANGED_BRANCH
-BUILD_LOCAL=$BUILD_LOCAL
+BUILD_MODE=$BUILD_MODE
 DO_GENERATE_CACHE=$DO_GENERATE_CACHE
 DO_GENERATE_STATS=$DO_GENERATE_STATS
 INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
