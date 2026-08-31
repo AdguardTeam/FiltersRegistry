@@ -200,6 +200,28 @@ load_meta() {
     done < "$1"
 }
 
+# Waits on one branch's build, then copies its platforms/ output into the
+# comparison dir. Sets BUILD_FAILED=true on any failure.
+# Args: label  pid  build_log  worktree  dest  copy_log
+collect_build() {
+    local label=$1 pid=$2 build_log=$3 worktree=$4 dest=$5 copy_log=$6
+    if ! wait "$pid"; then
+        report_failure "[$label] build FAILED" "$build_log"
+        BUILD_FAILED=true
+        return 1
+    fi
+    # A prior kept run's output may still be here; cp -r would merge into it
+    # rather than replace it, silently mixing stale files into the diff.
+    rm -rf "$dest"
+    if ! run_with_spinner "[$label] copying platforms/ output" "$copy_log" \
+        cp -r "$worktree/platforms" "$dest"; then
+        report_failure "[$label] copying platforms/ output FAILED" "$copy_log"
+        BUILD_FAILED=true
+        return 1
+    fi
+    echo "${C_GREEN}${CHECK}${C_RESET} [$label] build done"
+}
+
 # The existing pass/fail comparison report. Reads MASTER_SHA / CHANGED_SHA /
 # CHANGED_BRANCH / BUILD_LOCAL / INCLUDED_FILTER_IDS / EXCLUDED_FILTER_IDS and
 # the platforms_{master,changed}_build/ dirs.
@@ -560,35 +582,10 @@ spinner_wait_all "$PID_MASTER_BUILD:[$BASE_BRANCH] build" "$PID_CHANGED_BUILD:[$
 
 BUILD_FAILED=false
 
-if wait "$PID_MASTER_BUILD"; then
-    # A prior kept run's output may still be here; cp -r would merge into it
-    # rather than replace it, silently mixing stale files into the diff.
-    rm -rf "$PLATFORMS_MASTER"
-    if run_with_spinner "[$BASE_BRANCH] copying platforms/ output" "$LOG_COPY_MASTER" \
-        cp -r "$MASTER_WORK_TREE/platforms" "$PLATFORMS_MASTER"; then
-        echo "${C_GREEN}${CHECK}${C_RESET} [$BASE_BRANCH] build done"
-    else
-        report_failure "[$BASE_BRANCH] copying platforms/ output FAILED" "$LOG_COPY_MASTER"
-        BUILD_FAILED=true
-    fi
-else
-    report_failure "[$BASE_BRANCH] build FAILED" "$LOG_MASTER_BUILD"
-    BUILD_FAILED=true
-fi
-
-if wait "$PID_CHANGED_BUILD"; then
-    rm -rf "$PLATFORMS_CHANGED"
-    if run_with_spinner "[$CHANGED_BRANCH] copying platforms/ output" "$LOG_COPY_CHANGED" \
-        cp -r "$CHANGED_WORK_TREE/platforms" "$PLATFORMS_CHANGED"; then
-        echo "${C_GREEN}${CHECK}${C_RESET} [$CHANGED_BRANCH] build done"
-    else
-        report_failure "[$CHANGED_BRANCH] copying platforms/ output FAILED" "$LOG_COPY_CHANGED"
-        BUILD_FAILED=true
-    fi
-else
-    report_failure "[$CHANGED_BRANCH] build FAILED" "$LOG_CHANGED_BUILD"
-    BUILD_FAILED=true
-fi
+collect_build "$BASE_BRANCH" "$PID_MASTER_BUILD" "$LOG_MASTER_BUILD" \
+    "$MASTER_WORK_TREE" "$PLATFORMS_MASTER" "$LOG_COPY_MASTER"
+collect_build "$CHANGED_BRANCH" "$PID_CHANGED_BUILD" "$LOG_CHANGED_BUILD" \
+    "$CHANGED_WORK_TREE" "$PLATFORMS_CHANGED" "$LOG_COPY_CHANGED"
 
 if [ "$BUILD_FAILED" = true ]; then
     exit 1
