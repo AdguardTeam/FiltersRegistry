@@ -537,9 +537,8 @@ step_header 9 "Cleanup"
 cleanup_all() {
     git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
     git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
-    # Remove everything under $TEMP_DIR_NAME except $LOG_DIR_NAME, so logs
-    # from this run stay available for inspection after cleanup.
-    find "$TEMP_DIR_NAME" -mindepth 1 -maxdepth 1 ! -name "$LOG_DIR_NAME" -exec rm -rf {} +
+    rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED"
+    rm -f "$META_FILE"
 }
 
 if [ "$DO_CLEANUP" = true ]; then
