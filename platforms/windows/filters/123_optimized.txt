@@ -1,9 +1,9 @@
-! Checksum: nEr7xAsITMQrX/Qta5vnDA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1788138892-14400.patch
+! Checksum: vztIWuj2Ui1dapgjAy+0Fw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1788151373-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.67.92
-! TimeUpdated: 2026-08-31T01:11:01+00:00
+! Version: 2.1.67.93
+! TimeUpdated: 2026-08-31T04:39:36+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -25,7 +25,6 @@
 /addtoany.min.js
 /common/sns/*
 /common/sns_
-/diggdigg-floating-bar.js
 /facebook-pagelike-widget/fb.js
 /facebook-side.png
 /facebook_footer.png
@@ -38,6 +37,7 @@
 /fb_modeles.css
 /fbshare.js
 /fbshare.png
+/floating-social-bar/js/fsb.js
 /floating-wpp.min.js
 /follow-twitter-
 /follow-twitter.
@@ -255,7 +255,6 @@ _social-bar/
 ###follow-footer
 ###follow-icons
 ###follow-links
-###follow-me
 ###follow-twitter
 ###follow-us-box
 ###follow-us-footer
@@ -294,6 +293,7 @@ _social-bar/
 ###footer_social_instagram
 ###footer_social_youtube
 ###footer_socialmedia
+###fsb-social-bar
 ###getSocial
 ###gkSocial
 ###gkSocialAPI
@@ -519,7 +519,6 @@ _social-bar/
 ###sidebar-social
 ###sidebar-twitter
 ###sidebar-youtube
-###sidebar_share
 ###sidebar_social_icons
 ###single-share
 ###single-social-media
@@ -695,6 +694,7 @@ _social-bar/
 ###tronReddiShare
 ###twShare
 ###tweet-button
+###tweetContainer
 ###twitter-2
 ###twitter-box
 ###twitter-button
@@ -777,7 +777,6 @@ _social-bar/
 ##.SiteFooter__follow
 ##.Social-Media
 ##.Social-link
-##.SocialArticleIcons
 ##.SocialBar
 ##.SocialIcon
 ##.SocialIcons
@@ -1250,7 +1249,6 @@ _social-bar/
 ##.facebook-bg
 ##.facebook-block
 ##.facebook-box
-##.facebook-fans
 ##.facebook-follow
 ##.facebook-footer
 ##.facebook-hover
@@ -1266,7 +1264,6 @@ _social-bar/
 ##.facebook-section
 ##.facebook-share-btn
 ##.facebook-share-button
-##.facebook-share-link
 ##.facebook-sharer
 ##.facebook-sidebar
 ##.facebook-social
@@ -1328,6 +1325,7 @@ _social-bar/
 ##.fbpopup-container
 ##.fbshare
 ##.fbsmallshare
+##.fe-share
 ##.featuredPagesSocial
 ##.fi-social-facebook
 ##.fi-social-instagram
@@ -1589,7 +1587,6 @@ _social-bar/
 ##.header_social
 ##.header_social_icon
 ##.headersocial:not(body):not(html)
-##.headersocials
 ##.headsocial
 ##.heateorSssSharingRound
 ##.heateorSsspSharing
@@ -1888,12 +1885,10 @@ _social-bar/
 ##.main-header__social
 ##.main-nav-social
 ##.main-single-share
-##.mashfs-popup-share
 ##.mashsb-box
 ##.mashsb-container
 ##.masterSocialbutton
 ##.masthead-social
-##.material-icons-share
 ##.mc-share-toggle
 ##.md-social-toolbar-circle
 ##.mdi-facebook
@@ -2063,6 +2058,7 @@ _social-bar/
 ##.pgevoke-header-row2-right-social
 ##.photo-share
 ##.pic-share
+##.picto_twitter
 ##.pin-it
 ##.pin-it-button
 ##.pin-share
@@ -2077,7 +2073,6 @@ _social-bar/
 ##.pinterest-share-btn
 ##.pinterest-share-button
 ##.pinterest-sharetool
-##.pinterest-wrapper
 ##.pinterest.share
 ##.pinterestShare
 ##.pinterest_btn
@@ -2113,6 +2108,7 @@ _social-bar/
 ##.post-share-panel
 ##.post-share-twitter
 ##.post-share-widget
+##.post-share__sticky-wrapper
 ##.post-sharing
 ##.post-social
 ##.post-social-pin
@@ -2507,7 +2503,6 @@ _social-bar/
 ##.share_bar_wrapper
 ##.share_blk
 ##.share_block
-##.share_block_sub
 ##.share_bottom
 ##.share_box
 ##.share_box_text
@@ -3096,7 +3091,6 @@ _social-bar/
 ##.socialShareIcon
 ##.socialShareLinks
 ##.socialSharing
-##.socialSideBar
 ##.socialSite
 ##.socialSticky
 ##.socialTab
@@ -3376,6 +3370,7 @@ _social-bar/
 ##.twitter_btn
 ##.twitter_feed
 ##.twitter_follow
+##.twitter_footer
 ##.twitter_icn
 ##.twitter_icon
 ##.twitter_link
@@ -3952,7 +3947,6 @@ metoffice.gov.uk##.follow-icons
 windowsreport.com##.follow-more-news
 metro.co.uk##.follow-promo
 alarabiya.net,ausgamers.com,cgtn.com,cloudwards.net,crypto.news,exitoina.perfil.com,magazine.artstation.com,mensxp.com,notateslaapp.com,republicworld.com,timeslive.co.za,trueachievements.com,truetrophies.com##.follow-us
-kentonline.co.uk##.followbox
 rbth.com##.follows-channel
 telegraphindia.com##.followusbox
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
@@ -4150,6 +4144,7 @@ mirror.co.uk,themirror.com##.sharebar-icon
 al.com,cleveland.com,lehighvalleylive.com,masslive.com,mlive.com,newyorkupstate.com,nj.com,oregonlive.com,pennlive.com,silive.com,syracuse.com##.sharebarBetaWrapper
 thehackernews.com##.sharebelow-twitter
 aftvnews.com,baptistnews.com,calmatters.org,cardinalnews.org,cartoonbrew.com,dailybulletin.com,jerseyvindicator.org,jta.org,mississippitoday.org,thefrisc.com,usmagazine.com,washingtoncitypaper.com,washingtoninformer.com##.sharedaddy
+muscleandfitness.com##.sharedaddy__wrapper
 videocardz.com##.shareon
 cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
@@ -4191,7 +4186,6 @@ cnn.com##.social-share_labelled-list
 edition.cnn.com##.social-share_labelled-list__share-links
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
-mmorpg.com##.social-web
 cies.ch,dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 macrumors.com##.socialMedia--3i9tSnAb
 forbes.com##.socialShareContainer
