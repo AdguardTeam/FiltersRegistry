@@ -1,9 +1,9 @@
-! Checksum: nrUM2SN/zAZJf0zlTsyj+w
-! Diff-Path: ../patches/3/3-s-1788232942-3600.patch
+! Checksum: doPlG4NEpfF75+XGgksDUA
+! Diff-Path: ../patches/3/3-s-1788247130-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.10.41
-! TimeUpdated: 2026-09-01T03:19:03+00:00
+! Version: 2.1.10.42
+! TimeUpdated: 2026-09-01T07:16:19+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -314715,6 +314715,7 @@ naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.br_sr', '38
 !
 ! NOTE: Specific rules
 !
+wildberries.ru#%#//scriptlet('trusted-set-local-storage-item', 'wbAnalitic', '$now$')
 ||api.a-bly.com/api/*/retail_ad/display-event
 ||api.a-bly.com/api/*/ad/events/
 ||static.danawa.com/globaljs/static/bdl/dsas_client.min.js
@@ -321664,6 +321665,8 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! wildberries.ru
+||wildberries.ru^$cookie=_wbauid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239596
 ||a-bly.com^$cookie=AMP_
 ||a-bly.com^$cookie=device-id
