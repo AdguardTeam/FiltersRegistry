@@ -1,9 +1,9 @@
-! Checksum: ks15vGLuAHNGEpHACyNIIA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1788208646-14400.patch
+! Checksum: nyPRAxhMsPA7Ar3jgqBFUA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1788237622-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.67.97
-! TimeUpdated: 2026-08-31T20:33:58+00:00
+! Version: 2.1.67.98
+! TimeUpdated: 2026-09-01T04:37:34+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -228,7 +228,6 @@ _social-bar/
 ###facebooktrend
 ###fan-exit
 ###fanback
-###favsocial-list
 ###fb-box
 ###fb-like
 ###fb-like-box
@@ -315,7 +314,6 @@ _social-bar/
 ###hshare
 ###iNavSocial
 ###iconSocialFacebook
-###iconSocialInstagram
 ###iconSocialTwitter
 ###iconSocialYoutube
 ###index-social
@@ -521,7 +519,6 @@ _social-bar/
 ###sidebar-youtube
 ###sidebar_social_icons
 ###single-share
-###single-social-media
 ###site-share
 ###site-social
 ###sm_share
@@ -660,6 +657,7 @@ _social-bar/
 ###socialbox
 ###socialbuttons
 ###socialbuttonsbox
+###socialdiv
 ###socialfeed
 ###socialfooter
 ###socialicon
@@ -716,6 +714,7 @@ _social-bar/
 ###twitter_timeline-2
 ###twitter_widget
 ###twitterbtn
+###twitterlike
 ###v-share
 ###vbseo-likes
 ###vce_social_menu
@@ -736,6 +735,8 @@ _social-bar/
 ##.ArticleView-bottomShares
 ##.ArticleView-shares
 ##.BtnShareGroup
+##.ButtonSharing
+##.ButtonsSharing
 ##.DiggThisButton
 ##.FacebookLike
 ##.FacebookShare
@@ -755,6 +756,7 @@ _social-bar/
 ##.LineShareButton
 ##.ListSocial
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
+##.NavigationSharingFooter
 ##.PageSharingMenu
 ##.PinItButton
 ##.PinterestButtonContainer
@@ -1021,7 +1023,6 @@ _social-bar/
 ##.bookmark-share
 ##.boton_twitter
 ##.bottom-footer__social
-##.bottom-meta--share
 ##.bottom-share
 ##.bottom-share-buttons
 ##.bottom-shares
@@ -1089,7 +1090,6 @@ _social-bar/
 ##.c-socialSharebar_container
 ##.c-social__list
 ##.c-socials
-##.c-socialshare
 ##.c-tools-share
 ##.cShareLink
 ##.c_facebook
@@ -1149,6 +1149,7 @@ _social-bar/
 ##.custom-social-share
 ##.custom_social
 ##.customsocial
+##.d-share
 ##.d3-o-share-bar
 ##.dashicons-facebook
 ##.dashicons-twitter
@@ -1371,7 +1372,6 @@ _social-bar/
 ##.follow-us-on-twitter
 ##.follow-us-panel
 ##.follow-us-wrapper
-##.follow-widget
 ##.followSocial
 ##.followTwitter
 ##.followUsLinks
@@ -1875,6 +1875,7 @@ _social-bar/
 ##.m-sns
 ##.m-social-bar
 ##.m-social-share
+##.m-socialbar
 ##.m-socials
 ##.m_share
 ##.main-article-share-count
@@ -2090,6 +2091,7 @@ _social-bar/
 ##.post--share
 ##.post-content-share
 ##.post-footer-share
+##.post-footer-social
 ##.post-like-share
 ##.post-meta-share
 ##.post-metasocial
@@ -2150,6 +2152,7 @@ _social-bar/
 ##.reseaux-sociaux
 ##.reseaux-sociaux-list
 ##.resp-sharing-button
+##.rhd-social-box-wrapper
 ##.right-social
 ##.rmp-sharing
 ##.rn_SocialBookmarkLink
@@ -2368,6 +2371,7 @@ _social-bar/
 ##.share-set
 ##.share-show-modal
 ##.share-side
+##.share-signup
 ##.share-single
 ##.share-sites-thumbs
 ##.share-sm-icons
@@ -3012,7 +3016,6 @@ _social-bar/
 ##.social-strip
 ##.social-stripe
 ##.social-stroke-icon
-##.social-sub
 ##.social-subscribe
 ##.social-tab
 ##.social-tab-i
@@ -3169,7 +3172,6 @@ _social-bar/
 ##.socialmedia-container
 ##.socialmedia-footer
 ##.socialmedia_float
-##.socialmedia_link
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
@@ -3347,6 +3349,7 @@ _social-bar/
 ##.twitter-feed-wrapper
 ##.twitter-follow
 ##.twitter-follow-box
+##.twitter-followers
 ##.twitter-footer
 ##.twitter-module
 ##.twitter-popup
@@ -3610,7 +3613,6 @@ _social-bar/
 ##a[title="Suivez-nous sur Pinterest"]
 ##a[title="Suivez-nous sur Twitter"]
 ##amp-social-share
-##div[title="Partager sur Facebook"]
 ##img[alt="Connect with us on Facebook"]
 ##img[alt="Connect with us on LinkedIn"]
 ##img[alt="Connect with us on Twitter"]
@@ -3798,7 +3800,6 @@ apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
 rbth.com##.Popup-telegram
-aerospaceglobalnews.com##.PostMetaBar__Social
 ndtv.com##.SSR_drp
 abc.net.au##.ShareBanner_container__OX63I
 birminghammail.co.uk,bristolpost.co.uk,dailyrecord.co.uk,dailystar.co.uk,irishstar.com,liverpoolecho.co.uk,manchestereveningnews.co.uk,mirror.co.uk,stokesentinel.co.uk,themirror.com,walesonline.co.uk##.ShareBar_sharebar-inner-wrapper__D0YTf
@@ -4109,7 +4110,6 @@ firstpost.com##.rhs-yt-ch-wrap
 businesstoday.in##.rhs_fixwhtsapp
 aljazeera.com,aljazeera.net##.rich-share
 crealitycloud.com##.right-share-box
-reviewjournal.com##.rj-story-social
 san.com##.san-share-button
 sordum.org##.sbar_social_div
 pornbox.com##.scene-data__share
@@ -4198,6 +4198,7 @@ politico.com##.social-tools__list
 cies.ch,dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 macrumors.com##.socialMedia--3i9tSnAb
 forbes.com##.socialShareContainer
+carsdirect.com##.socialShareWidget
 jetphotos.com##.social__link--share
 newscientist.com##.social__links
 eurovisionworld.com##.social_a
@@ -4231,8 +4232,6 @@ npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
 hindustantimes.com##.subscribe-social
 locals.com##.support-now
 targettrend.com##.sws_supernormalaction
-interestingengineering.com##.t-w-\[128px\]
-interestingengineering.com##.t-w-\[200px\]
 notthebee.com##.take-shareables
 cybersecuritynews.com##.tdm-ii-wrap
 tecmint.com##.tecmint-float-social-wrapper
@@ -4297,7 +4296,6 @@ rnz.co.nz##[aria-label*="Share"]
 sfgate.com##[aria-label="Share from Email"]
 breakingnews.ie,nhentai.net##[aria-label="Twitter"]
 partiful.com##[class*="DisclosureBanner_root__"]
-techcommunity.microsoft.com##[class^="custom_widget_MicrosoftFooter_social-share_"]
 news.sky.com##[data-component-name="sdc-article-strapline"]
 latimes.com##[data-element="google-preferred-sources"]
 lifehacker.com##[data-ga-element="social-link"]
@@ -4710,7 +4708,6 @@ lanacion.com.ar##.mod-share-container
 cooperativa.cl##.modulo-channels
 cooperativa.cl##.modulo-google-news
 depor.com##.nav__story-social-network
-diarioeldia.cl,elterritorio.com.ar##.noticia-social-share
 vidaextra.com,xataka.com.mx##.post-comments-shortcut
 biobiochile.cl##.post-social-container
 quadratin.com.mx##.q-sharesocial
