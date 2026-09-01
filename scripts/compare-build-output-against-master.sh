@@ -47,6 +47,8 @@ LOG_CHANGED_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-build.log"
 LOG_SYNC_BASELINE="$TEMP_DIR_NAME/$LOG_DIR_NAME/sync-baseline.log"
 LOG_COPY_MASTER="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-${BASE_BRANCH}.log"
 LOG_COPY_CHANGED="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-changed.log"
+LOG_WIPE_PLATFORMS="$TEMP_DIR_NAME/$LOG_DIR_NAME/wipe-platforms.log"
+LOG_RESTORE_PLATFORMS="$TEMP_DIR_NAME/$LOG_DIR_NAME/restore-platforms.log"
 LOG_CLEANUP="$TEMP_DIR_NAME/$LOG_DIR_NAME/cleanup.log"
 
 # Colors and symbols used throughout, disabled when not attached to a terminal.
@@ -208,26 +210,43 @@ load_meta() {
     done < "$1"
 }
 
-# Waits on one branch's build, then copies its platforms/ output into the
-# comparison dir. Sets BUILD_FAILED=true on any failure.
+# Restores a worktree's platforms/ to its checked-out state, undoing the
+# Step 8 wipe and whatever the build wrote into it.
+restore_worktree_platforms() {
+    git -C "$1" checkout --quiet -- platforms/ &&
+        git -C "$1" clean --quiet -fd -- platforms/
+}
+
+# Waits on one branch's build, copies its platforms/ output into the
+# comparison directory, then restores the worktree's platforms/
+# Step 8 wipes it before building, and the built output is captured in $dest.
+# Sets BUILD_FAILED=true on any failure.
 # Args: label  pid  build_log  worktree  dest  copy_log
 collect_build() {
-    local label=$1 pid=$2 build_log=$3 worktree=$4 dest=$5 copy_log=$6
-    if ! wait "$pid"; then
+    local label=$1 pid=$2 build_log=$3 worktree=$4 dest=$5 copy_log=$6 rc=0
+    if wait "$pid"; then
+
+        # Delete the existing $dest directory first,
+        # to prevent cp -r from merging files and leaving stale data in the diff.
+        rm -rf "$dest"
+
+        if run_with_spinner "[$label] copying platforms/ output" "$copy_log" \
+            cp -r "$worktree/platforms" "$dest"; then
+            echo "${C_GREEN}${CHECK}${C_RESET} [$label] build done"
+        else
+            report_failure "[$label] copying platforms/ output FAILED" "$copy_log"
+            rc=1
+        fi
+    else
         report_failure "[$label] build FAILED" "$build_log"
-        BUILD_FAILED=true
-        return 1
+        rc=1
     fi
-    # A prior kept run's output may still be here; cp -r would merge into it
-    # rather than replace it, silently mixing stale files into the diff.
-    rm -rf "$dest"
-    if ! run_with_spinner "[$label] copying platforms/ output" "$copy_log" \
-        cp -r "$worktree/platforms" "$dest"; then
-        report_failure "[$label] copying platforms/ output FAILED" "$copy_log"
-        BUILD_FAILED=true
-        return 1
+    if ! run_with_spinner "[$label] restoring worktree platforms/" "$LOG_RESTORE_PLATFORMS" \
+        restore_worktree_platforms "$worktree"; then
+        die "[$label] restoring worktree platforms/ FAILED" "$LOG_RESTORE_PLATFORMS"
     fi
-    echo "${C_GREEN}${CHECK}${C_RESET} [$label] build done"
+    [ "$rc" -eq 0 ] || BUILD_FAILED=true
+    return "$rc"
 }
 
 # Removes the worktrees, the copied platforms output and the meta file.
@@ -335,11 +354,6 @@ if [ -f "$META_FILE" ] \
     && has_built_output "$PLATFORMS_MASTER" \
     && has_built_output "$PLATFORMS_CHANGED"; then
     load_meta "$META_FILE"
-    # Step 8 deletes each worktree's platforms/ before building; restore it so
-    # the worktrees are clean again for inspection or a fresh run.
-    for _wt in "$MASTER_WORK_TREE" "$CHANGED_WORK_TREE"; do
-        [ -e "$_wt/.git" ] && git -C "$_wt" checkout -- platforms/ 2>/dev/null
-    done
     MODE_LABEL=${BUILD_MODE:-plain}
     echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
     echo "  $BASE_BRANCH @ ${MASTER_SHA:0:9}$(sha_drift_note "$BASE_BRANCH" "$MASTER_SHA")"
@@ -558,13 +572,19 @@ fi
 # --- Step 8: build both branches in parallel ---
 
 step_header 8 "Build both branches"
+
+# Clear the platforms/ directory in each worktree to ensure the output
+# reflects only the current run. Without this, a filtered build would
+# stay at the checked-out commit's files. collect_build will restore the
+# original directories after the output is copied.
+if ! run_with_spinner "clearing platforms/ in both worktrees" "$LOG_WIPE_PLATFORMS" \
+    rm -rf "$MASTER_WORK_TREE/platforms" "$CHANGED_WORK_TREE/platforms"; then
+    die "clearing worktree platforms/ FAILED" "$LOG_WIPE_PLATFORMS"
+fi
+
 build_branch() {
     local dir=$1 filter_args build_sub
     filter_args=$(filter_flags)
-    # Build into a clean platforms/ so the copied output is exactly what this
-    # run produced; with a filter selection the rest would otherwise stay at
-    # the checked-out commit's files. Step 0 restores it next run.
-    rm -rf "$dir/platforms"
     while IFS= read -r build_sub; do
         # shellcheck disable=SC2086
         yarn --cwd "$dir" $build_sub $filter_args || return 1
