@@ -137,20 +137,31 @@ for an optional filter-ID selection (`--include` / `--skip`, forwarded to
 every build command so a quick check can build a handful of filters); and
 for whether to remove the build artifacts when finished. Under the hood it
 builds `master` and the compare branch
-in parallel via git worktrees under `temp/`, showing a progress spinner
-during install and build; it also syncs the compare worktree's `filters/` to
-the same baseline commit as master first, so `revision.json` version
-counters start from the same point and don't show up as diff noise in the
-report.
+in parallel via git worktrees under `temp/`, with a progress spinner on the
+slow steps (install, build, copy, restore, cleanup); it also syncs the
+compare worktree's `filters/` to the same baseline commit as master first, so
+`revision.json` version counters start from the same point and don't show up
+as diff noise in the report.
+
+Two more things it does around the build:
+
+- Each worktree's `platforms/` is emptied before its build and restored to
+  the checked-out state afterwards, so the copied output is only what this
+  run compiled (matters with a `--include` / `--skip` selection).
+- If cleanup was chosen, the last step removes the two worktrees, the two
+  `platforms_*_build/` directories and `temp/reg-meta.env`; `temp/logs/` is
+  always kept.
 
 Two conveniences on repeated runs:
 
-- If `temp/platforms_master_build/` and `temp/platforms_changed_build/`
-  already exist from a previous run, it offers to generate the report from
-  them instead of rebuilding.
+- If `temp/platforms_master_build/` and `temp/platforms_changed_build/` hold
+  built output from a previous run, it prints the branches, build mode and
+  the commit SHAs that output was built from — flagging any branch that has
+  moved on since — and offers to generate the report from them instead of
+  rebuilding.
 - If a worktree from a previous run is still present, it offers to reuse it
-  (keeping `node_modules`, skipping reinstall) instead of recreating it from
-  scratch.
+  instead of removing and re-adding it. `yarn install` still runs either way
+  (fast against the kept `node_modules`).
 
 ### Command Compatibility
 
