@@ -1278,6 +1278,10 @@
             "script": "window.pr_okvalida = true;"
         },
         {
+            "domains": "play.mercadolibre.cl,play.mercadolivre.com.br,play.mercadolibre.com.ar",
+            "script": "(()=>{const t=t=>{const e=t.match(/^P(?:(\\d+(?:\\.\\d+)?)D)?(?:T(?:(\\d+(?:\\.\\d+)?)H)?(?:(\\d+(?:\\.\\d+)?)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?$/);return e?86400*Number(e[1]||0)+3600*Number(e[2]||0)+60*Number(e[3]||0)+Number(e[4]||0):null},e=t=>`PT${Math.round(1e9*t)/1e9}S`,r={apply:(r,n,o)=>{try{o[0]instanceof Node&&(r=>{const n=r.nodeType===Node.DOCUMENT_NODE?r.documentElement:r;if(!n||\"MPD\"!==n.localName)return;const o=n.getAttribute(\"type\");if(o&&\"static\"!==o)return;const i=Array.from(n.children).filter(t=>\"Period\"===t.localName);if(0===i.length)return;const u=[];for(const e of i){const r=e.getAttribute(\"duration\"),n=null===r?null:t(r);if(null===n)return;u.push(n)}let a=0;for(const[t,r]of i.entries())r.setAttribute(\"start\",e(a)),a+=u[t];n.getAttribute(\"mediaPresentationDuration\");const l=e(a);n.setAttribute(\"mediaPresentationDuration\",l)})(o[0])}catch{}return Reflect.apply(r,n,o)}};window.XMLSerializer.prototype.serializeToString=new Proxy(window.XMLSerializer.prototype.serializeToString,r)})();"
+        },
+        {
             "domains": "enlacito.com",
             "script": "(()=>{document.addEventListener(\"DOMContentLoaded\",(()=>{try{let t;\"function\"==typeof decode_link&&\"string\"==typeof link_out&&(t=decode_link(atob(link_out)),location.assign(t)),\"string\"==typeof api_key&&(document.cookie=`${api_key}=Wn275; path=/`);const e=document.querySelector(\"* > .button#contador\");e&&t&&setTimeout((()=>{const o=e.cloneNode(!0);e.parentNode.replaceChild(o,e),o.addEventListener(\"click\",(function(){location.assign(t)}),!1)}),500)}catch(t){}}));})();"
         },

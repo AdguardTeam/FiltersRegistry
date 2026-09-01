@@ -458,6 +458,7 @@ youporn.com,bztube.com,hotovs.com,insuredhome.org,nudegista.com,pornluck.com,vid
 pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('set-constant', 'page_params.holiday_promo_prem', 'true')
 pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('prevent-setTimeout', '\x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62')
 youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/')
+1shortlink.com#%#//scriptlet('prevent-element-src-loading', 'script', 'adsbygoogle')
 adslink.pw#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 pitube.net#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'detectAdBlock')
 tradingref.com#%#//scriptlet('prevent-fetch', 'method:HEAD')
@@ -6773,6 +6774,7 @@ minhaconexao.com.br#%#//scriptlet('set-constant', 'canRunAds', 'true')
 diariodemallorca.es#%#window.pr_okvalida=true;
 holadoctor.com#%#window.isAdsDisplayed = true;
 farodevigo.es#%#window.pr_okvalida = true;
+play.mercadolibre.cl,play.mercadolivre.com.br,play.mercadolibre.com.ar#%#(()=>{const t=t=>{const e=t.match(/^P(?:(\d+(?:\.\d+)?)D)?(?:T(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?(?:(\d+(?:\.\d+)?)S)?)?$/);return e?86400*Number(e[1]||0)+3600*Number(e[2]||0)+60*Number(e[3]||0)+Number(e[4]||0):null},e=t=>`PT${Math.round(1e9*t)/1e9}S`,r={apply:(r,n,o)=>{try{o[0]instanceof Node&&(r=>{const n=r.nodeType===Node.DOCUMENT_NODE?r.documentElement:r;if(!n||"MPD"!==n.localName)return;const o=n.getAttribute("type");if(o&&"static"!==o)return;const i=Array.from(n.children).filter(t=>"Period"===t.localName);if(0===i.length)return;const u=[];for(const e of i){const r=e.getAttribute("duration"),n=null===r?null:t(r);if(null===n)return;u.push(n)}let a=0;for(const[t,r]of i.entries())r.setAttribute("start",e(a)),a+=u[t];n.getAttribute("mediaPresentationDuration");const l=e(a);n.setAttribute("mediaPresentationDuration",l)})(o[0])}catch{}return Reflect.apply(r,n,o)}};window.XMLSerializer.prototype.serializeToString=new Proxy(window.XMLSerializer.prototype.serializeToString,r)})();
 saopaulosecreto.com#%#//scriptlet('href-sanitizer', 'a[href^="https://adesampa.com.br/"]', '[href]', 'removeParam')
 ricoysuave.com#%#//scriptlet("set-constant", "dclm_ajax_var.disclaimer_redirect_url", "")
 enlacito.com#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{try{let t;"function"==typeof decode_link&&"string"==typeof link_out&&(t=decode_link(atob(link_out)),location.assign(t)),"string"==typeof api_key&&(document.cookie=`${api_key}=Wn275; path=/`);const e=document.querySelector("* > .button#contador");e&&t&&setTimeout((()=>{const o=e.cloneNode(!0);e.parentNode.replaceChild(o,e),o.addEventListener("click",(function(){location.assign(t)}),!1)}),500)}catch(t){}}));})();
