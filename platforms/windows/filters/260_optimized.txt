@@ -1,9 +1,9 @@
-! Checksum: 5GPYKYdWTSV4Fu2JVi0kUg
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1788237639-14400.patch
+! Checksum: 9XOO1XujxZChlK6d6ItLDQ
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1788281699-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.63
-! TimeUpdated: 2026-09-01T04:38:16+00:00
+! Version: 2.0.1.64
+! TimeUpdated: 2026-09-01T16:51:53+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=arrow.apache.org|developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -216,7 +216,10 @@ coinmarketcap.com##.SetAlertItem_set-alert-item__fVuCD
 coinmarketcap.com##.homepageAiInsights_questionItem__6Igst
 collabnix.com###docker-ai-book-banner
 www.collinsdictionary.com##.assistantIcon
+www.collinsdictionary.com#$?#.assistantMobile { remove: true; }
 www.collinsdictionary.com###assistant-link
+||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
+www.collinsdictionary.com##.assistant-sticky-bar
 www.computerworld.com##.section-block--announcementbar:has(.reset-button)
 www.consumerreports.org##.cda-gnav__main-search-askcr-ai
 www.consumerreports.org###mt-askcr-sf-abandon-footer
@@ -716,7 +719,7 @@ www.ishopchangi.com###chat-wrapper
 www.jimdo.com###companion
 www.johnhancock.com##.webchat
 ||api.mistral.ai/v1/fim/completions$xmlhttprequest,domain=jsfiddle.net
-jsfiddle.net#?##flash-messages > .error:contains("Can't complete code. Error code: Failed to fetch.")
+jsfiddle.net#?##flash-messages > .error:contains(Can't complete code. Error code: Failed to fetch.)
 jsfiddle.net##.si_ai
 www.jumpingrivers.com###banner[data-name="aip-2027-eb"]
 kagi.com##[href="/assistant"]
@@ -779,10 +782,11 @@ www.macys.com##.google-prompts
 www.macys.com##.ask-something-else
 www.macys.com##.generated-summary-main-container
 mailchimp.com##.genAIAssistChatbotModule
+||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
+widget.indexfox.ai#?#.no-results > p:contains(You can hit Enter to ask AI a given question)
 widget.indexfox.ai##.ask-ai-button
 widget.indexfox.ai##.ask-response
-||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
-widget.indexfox.ai#?#.no-results > .svelte-1d6gie5:contains(" to ask AI a given question")
+||api.indexfox.ai/api/6383989965980236728/summary$xmlhttprequest,domain=widget.indexfox.ai
 mathrubhumi.com##.summary-wrapper
 emedicine.medscape.com##.ai-mode-button
 emedicine.medscape.com#$#.header-row-bottom #search-input { width: 85% !important }
@@ -1022,7 +1026,7 @@ www.sciencedirect.com###reading-assistant-main-body-section
 www.flyscoot.com##.ai-trip-section
 www.flyscoot.com##.vertical-divider:has(+ .currency-section)
 www.scribd.com##[data-e2e="doc-actions-ask-ai-button-sticky_metadata_column"]
-www.scribd.com#?#[data-testid="mobile-actions-bottom-bar"] button:contains("Ask AI")
+www.scribd.com#?#[data-testid="mobile-actions-bottom-bar"] button:contains(Ask AI)
 www.semrush.com###vwo-ai-visibility-cta
 develop.sentry.dev,docs.sentry.io##.search_search-bar__XzLtg > .kapa-ai-class
 develop.sentry.dev,docs.sentry.io##.search_sgs-ai__2z63Q
@@ -1189,6 +1193,7 @@ vimeo.com##section.container-base[data-bp-cta-location-id="9c3e2300d913447a8224f
 vimeo.com##.text-footer-sub-content[href="/features/vimeo-ai"]
 vimeo.com##.text-footer-sub-content[href="/features/ai-translation"]
 www.virustotal.com##vt-crowdsourced-ai-gemini
+code.visualstudio.com##.updates-banner:has([href^="https://docs.github.com/en/copilot/"])
 code.visualstudio.com##.sidebar-try-this:has(> #sidebar-action-get-started-with-ai-0)
 developer.vonage.com##.ai-icon-group
 developer.vonage.com##[data-testid="copy-llm-btn"]

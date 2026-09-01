@@ -1,9 +1,9 @@
-! Checksum: TWPt52KV4Qmf/CSYeyti+Q
-! Diff-Path: ../patches/260/260-s-1788237636-14400.patch
+! Checksum: 6geJqxWRYLYFoYqhj0axKw
+! Diff-Path: ../patches/260/260-s-1788281696-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.63
-! TimeUpdated: 2026-09-01T04:38:16+00:00
+! Version: 2.0.1.64
+! TimeUpdated: 2026-09-01T16:51:53+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -666,8 +666,14 @@ collabnix.com###docker-ai-book-banner
 ! -- https://www.collinsdictionary.com/
 ! "AI Assistant" button next to search bar
 www.collinsdictionary.com##.assistantIcon
+! Header assistant button (mobile)
+www.collinsdictionary.com#$?#.assistantMobile { remove: true; }
 ! "Ask Collins Dictionary" in bottom-right corner
 www.collinsdictionary.com###assistant-link
+! -- https://www.collinsdictionary.com/dictionary/english/word
+! Footer - Ask me a question
+||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
+www.collinsdictionary.com##.assistant-sticky-bar
 ! ====================
 ! == Computer World ==
 ! ====================
@@ -2144,7 +2150,7 @@ www.johnhancock.com##.webchat
 ! Block API requests for AI code completion
 ||api.mistral.ai/v1/fim/completions$xmlhttprequest,domain=jsfiddle.net
 ! Error message about code completion request failing
-jsfiddle.net#?##flash-messages > .error:contains("Can't complete code. Error code: Failed to fetch.")
+jsfiddle.net#?##flash-messages > .error:contains(Can't complete code. Error code: Failed to fetch.)
 ! AI Code completion button in sidebar
 jsfiddle.net##.si_ai
 ! ====================
@@ -2335,11 +2341,13 @@ mailchimp.com##.genAIAssistChatbotModule
 ! == Manticore Search ==
 ! ======================
 ! -- https://manticoresearch.com/
-! Search tool
+! Search - Ask
+||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
+widget.indexfox.ai#?#.no-results > p:contains(You can hit Enter to ask AI a given question)
 widget.indexfox.ai##.ask-ai-button
 widget.indexfox.ai##.ask-response
-||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
-widget.indexfox.ai#?#.no-results > .svelte-1d6gie5:contains(" to ask AI a given question")
+! Search - Page summary
+||api.indexfox.ai/api/6383989965980236728/summary$xmlhttprequest,domain=widget.indexfox.ai
 ! =================
 ! == Mathrubhumi ==
 ! =================
@@ -3137,7 +3145,7 @@ www.flyscoot.com##.vertical-divider:has(+ .currency-section)
 ! Left sidebar - Ask AI button
 www.scribd.com##[data-e2e="doc-actions-ask-ai-button-sticky_metadata_column"]
 ! Bottom bar (small page size) - Ask AI button
-www.scribd.com#?#[data-testid="mobile-actions-bottom-bar"] button:contains("Ask AI")
+www.scribd.com#?#[data-testid="mobile-actions-bottom-bar"] button:contains(Ask AI)
 ! =============
 ! == Semrush ==
 ! =============
@@ -3682,6 +3690,9 @@ www.virustotal.com##vt-crowdsourced-ai-gemini
 ! ===================
 ! == Visual Studio ==
 ! ===================
+! -- https://code.visualstudio.com/docs/editor/glob-patterns
+! Header banner promo for GPT discount
+code.visualstudio.com##.updates-banner:has([href^="https://docs.github.com/en/copilot/"])
 ! -- https://code.visualstudio.com/docs/setup/copilot#_remove-ai-features-from-vs-code
 ! Sidebar - Try This - Get started with AI
 code.visualstudio.com##.sidebar-try-this:has(> #sidebar-action-get-started-with-ai-0)
