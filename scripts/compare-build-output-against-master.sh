@@ -279,6 +279,11 @@ cleanup_all() {
     rm -f "$META_FILE"
 }
 
+discard_previous_output() {
+    rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED"
+    rm -f "$META_FILE"
+}
+
 # Honors DO_CLEANUP: either runs cleanup_all or prints what was kept and
 # where. Called from Step 10 and from the build-failure path, so a failed run
 # also respects the cleanup choice instead of always leaving state behind.
@@ -386,7 +391,8 @@ if [ -f "$META_FILE" ] \
         generate_report
         exit $?
     fi
-    echo "${C_CYAN}${ARROW}${C_RESET} Removing previous build output, rebuilding"
+    echo "${C_CYAN}${ARROW}${C_RESET} Discarding previous build output, rebuilding"
+    discard_previous_output
 fi
 
 # --- Step 1: resolve branches ---
@@ -628,6 +634,7 @@ collect_build "$CHANGED_BRANCH" "$PID_CHANGED_BUILD" "$LOG_CHANGED_BUILD" \
     "$CHANGED_WORK_TREE" "$PLATFORMS_CHANGED" "$LOG_COPY_CHANGED"
 
 if [ "$BUILD_FAILED" = true ]; then
+    rm -f "$META_FILE"
     step_header 10 "Cleanup"
     run_cleanup
     exit 1
