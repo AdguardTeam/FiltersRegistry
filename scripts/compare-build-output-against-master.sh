@@ -67,6 +67,28 @@ else
     C_RED=""
     C_RESET=""
 fi
+# Background yarn/build children run with SIGINT ignored (job control is off
+# in scripts), so a terminal Ctrl-C would otherwise leave them compiling into
+# the worktrees while the script hangs in the spinner. On any stop signal,
+# kill the whole child tree, then let the EXIT trap release the lock.
+kill_tree() {
+    local pid child
+    for pid in "$@"; do
+        for child in $(pgrep -P "$pid" 2>/dev/null); do
+            kill_tree "$child"
+        done
+        kill "$pid" 2>/dev/null
+    done
+}
+on_interrupt() {
+    trap '' INT TERM HUP
+    printf '\n%sInterrupted — stopping builds and cleaning up.%s\n' "$C_RED" "$C_RESET" >&2
+    # shellcheck disable=SC2046
+    kill_tree $(jobs -p 2>/dev/null)
+    exit 130
+}
+trap on_interrupt INT TERM HUP
+
 ARROW="→"
 CHECK="✓"
 CROSS="✗"
