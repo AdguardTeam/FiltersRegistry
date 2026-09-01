@@ -364,7 +364,7 @@ generate_report() {
     echo "${C_BOLD}--- Rule Files ---${C_RESET}"
     echo "Total .txt files compared: $total"
     echo "Files with diffs:          $rule_diffs"
-    [ -n "$diff_list" ] && printf "$diff_list\n"
+    [ -n "$diff_list" ] && printf '%b\n' "$diff_list"
     echo ""
     echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
     echo "filters.json/filters.js diffs: $meta_diffs  (version counter noise, not a regression)"
