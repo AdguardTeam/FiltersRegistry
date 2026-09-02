@@ -1,9 +1,9 @@
-! Checksum: n/OKdlxlZ5ERZZGHTJQWqA
-! Diff-Path: ../patches/1/1-s-1787339895-3600.patch
+! Checksum: eUDOzFHr2bwLGBhsf8074g
+! Diff-Path: ../patches/1/1-s-1788254398-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.22
-! TimeUpdated: 2026-08-21T19:13:03+00:00
+! Version: 2.1.8.35
+! TimeUpdated: 2026-09-01T09:16:53+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1462,6 +1462,13 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||dteifi.com^$all
+||thtrck.com^$all
+||crmared.com^$all
+||zcode19.com^$third-party
+||vnmfvnkd.win^
+||aj0453.top^
+||adslb.cc^
 ||adlook.tv^$third-party
 ||chernomaza.link^
 ||getter.cfd^
@@ -3885,6 +3892,7 @@ mintmanga.com#%#//scriptlet('prevent-element-src-loading', 'script', 'adsbygoogl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238710
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233664
 @@||yandex.ru/ads/system/context.js$domain=rr4farmtrof.com
+@@||rr4farmtrof.com^$generichide
 rr4farmtrof.com#%#//scriptlet('remove-node-text', 'script', 'adwall')
 rr4farmtrof.com$$script:contains(adwall)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233134
@@ -4676,6 +4684,7 @@ otvet.mail.ru#%#//scriptlet('abort-on-property-read', 'window.vueApp.$adv.Adbloc
 otvet.mail.ru#%#//scriptlet('json-prune', 'baits css direct *.slot')
 otvet.mail.ru##div[class^="_Card_"]:has(> div[class^="adv-slot-"])
 !
+||e.mail.ru/api/v$xmlhttprequest,jsonprune=\$..json.result.body.direct
 ||e.mail.ru/api/v$xmlhttprequest,jsonprune=\$..slot
 @@||e.mail.ru^$generichide
 @@||octavius.mail.ru^$generichide
@@ -6832,12 +6841,6 @@ grad.ua##.googleBnr
 grad.ua###post-entry > div.blok_header_title
 comments.ua###balu
 unian.net##div[id^="media_"][id$="_box"]
-||cdn.lbs.pw/promo/
-liveball.sx###fullscreen
-liveball.sx##.catfish_sec
-liveball.sx###brandContainerGeo
-liveball.sx#$#main.main_div { margin-top: 0 !important; }
-liveball.sx#%#//scriptlet('remove-node-text', 'script', 'createAdManager')
 telegraf.ua##aside > div.c-r:has(> div.tgr-ads)
 gordonua.com##aside[aria-label="advertisement"]
 vikna.tv##.promo-sidebar
@@ -7193,6 +7196,17 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+fayneporno.com#?#.video-spot
+keeneticported.dev##.aside-block-img
+iphones.ru##.header__menu-project-cont
+iphones.ru##.postitem_ad_block
+mobile-review.com##.banner-hor--article
+mobile-review.com##.mainmenu__item--brands
+avito.ru##div[class*="advRootWidgetSlot"]
+avito.ru##div[class*="advMain-"]
+avito.ru##div[class^="wrapper-"][class*="adv-"]
+mt.today##a[href^="https://clck.ru/"]
+mt.today##.bigbeautifulbutton
 profguide.io##.pg-banner-wrapper
 payberry.games##a[href^="https://share.flocktory.com/"]
 securitylab.ru###uber_banner
@@ -7245,9 +7259,6 @@ libking.ru##div[class^="cpab"]
 monkrus.ws##center > a[href^="http://got.by/"]
 sports.ru##.news-layout__branding
 sports.ru##.post-layout__branding
-liveball.click,liveball.to,liveball.*###custom_brand
-liveball.click,liveball.to,liveball.*#$#main.main_div { margin-top: 0 !important; max-width: unset !important; }
-liveball.click,liveball.to,liveball.*#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'zone_')
 ixbt.games##div[id^="ad-recommend"]
 ixbt.games##div.not-prose:has(> div[id^="ad"])
 om1.ru##.row > div.col:has(> div.news-grid > div[id^="rastyagka_"])
@@ -7338,6 +7349,7 @@ sovsport.ru##p:has(> a[class^="bet-widget_link"])
 sportcsat.ru###pc-container
 sportcsat.ru,onlinestreams.ru#$#div[style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; cursor: pointer; z-index: 1000000; background: rgba(255, 255, 255, 0);"] { display: none !important; }
 sportcsat.ru,onlinestreams.ru#$##player { pointer-events: auto !important; }
+||fastpic.org/fpv.js
 fastpic.org#%#//scriptlet('abort-current-inline-script', 'JSON', '=document["')
 fastpic.org#%#//scriptlet('abort-current-inline-script', 'navigator', '=document["')
 fastpic.org#%#//scriptlet('prevent-addEventListener', '', '/window\.open\(AD,|wpadmngr\.com|\[\'init\'\]|\]=\'async\',document/')
@@ -7345,7 +7357,7 @@ fastpic.org#%#//scriptlet('abort-current-inline-script', 'Date.prototype.toISOSt
 fastpic.org#%#//scriptlet('abort-on-property-read', 'ExaQaAutomatizationFlag')
 fastpic.org#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.dispatchEvent', 'getexoloader')
 fastpic.org$$script:contains(/=document\["[\s\S]*?\.location\.href=|wpadmngr\.com|\['init'\]|\]='async',document|ctrlKey/)
-fastpic.org#%#//scriptlet('remove-node-text', 'script', '/=document\["[\s\S]*?\.location\.href=|wpadmngr\.com|\[\'init\'\]|\]=\'async\',document|ctrlKey/')
+fastpic.org#%#//scriptlet('remove-node-text', 'script', '/ctrlKey|exoload|}catch\(_\){}try{/')
 ||fastpic.org/px/provider.js
 news.ru##.post-detail__content > div[style]:has(> div[id^="adfox_"])
 news.ru##.head-reban
@@ -7634,7 +7646,6 @@ transportspb.com##.inner_route_social
 link.softoroom.org,losslessflac.ru##center > a[target="_blank"] > img
 motogonki.ru##div[style^="float:"]:has(> div[style] a[onclick*="/go/click.php?"])
 motogonki.ru##div[style^="float:"]:has(> div[style] > div[id^="yandex_rtb"])
-||tests.newsmedia.ru/t/$subdocument
 life.ru##div[class^="styles_rightColumn"]:has(> div[id^="adfox"])
 life.ru##div[class^="indentRules"]:has(> div[class*="styles_testNewsmedia"])
 nnmclub.to##a[name="pagestart"] + center > center > a > img
@@ -7899,7 +7910,6 @@ glav.su##.bl-m:has(> div > div > div[id^="js-hb-"] > div[id^="adfox_"])
 glav.su##.tbl:has(> tbody > tr > td > div[id^="js-hb-"])
 checko.ru##div[style^="min-height:"]:has(> div[id^="yandex_rtb"])
 checko.ru##article > section[class="x-section"]:has(> div[style^="min-height:"] > div[id^="yandex_rtb"])
-liveball.uno##.odds_section
 redheadsound.studio#?#.side-block > div.side-block:has(> div.side-block__title > p:contains(РЕКЛАМА))
 redheadsound.studio##div[id^="adfinity-"]
 sovsport.ru##div[class^="gift_bonusLogo"]
@@ -8288,8 +8298,6 @@ appstorrent.ru##.swiper-wrapper > div.swiper-slide:has(> img[alt="РЕКЛАМА
 player2.anitype.fun#%#!function(){const p={apply:(p,e,n)=>{const r=Reflect.apply(p,e,n),s=r?.[0]?.props?.data;return s&&null===s.user&&(r[0].props.data.user="guest"),r}};window.JSON.parse=new Proxy(window.JSON.parse,p)}();
 vedomosti.ru##.adfox--300x600:has(.teaser-partner)
 mignews.com,abw.by,lenta.ru##.custom-banner
-||liveball.uno/public/img/onewin_branding/
-liveball.uno#$?##custom_brand { remove: true; }
 kinoart.ru#?#.react-reveal  > div[class^="_"]:has(> div[rel="noopener noreferrer"]:empty)
 asn24.ru##.paid-area
 sport-express.ru,sport-express.net###_ad_container_
@@ -8400,7 +8408,7 @@ tengrisport.kz##.header_adv
 tengrisport.kz##.banner-tn_left
 ||asiaplustj.info/adfiles
 asiaplustj.info##.newsbox-outer-banner
-yablyk.com##.yandex-ad
+blitz-commander.by,yablyk.com##.yandex-ad
 forbes.ru##div[data-article] > div[class] > div[class] > div[class] > div:has(div[class^="infox_"])
 forbes.ru##div[data-article] > div[class] > div[class] > div:has(div[data-sparrow])
 forbes.ru##div[data-title-deleted="Реклама на Forbes"]
@@ -17373,6 +17381,19 @@ ren.tv,tverigrad.ru##a[href^="http://smi2.net/"]
 itc.ua,devby.io,profile.ru,glavred.info,pushkino.tv,tglink.ru,mos.news,nvdaily.ru,objectiv.tv,warnet.ws##.partners
 astromeridian.ru,forums.rusmedserv.com,gamemag.ru,igrigo.net,igru-xbox.net,itbukva.com,kinokrad.co,miytvideo.ru,repackov.net,seeyoupage.ru,torrentum.ru,tourister.ru,warfiles.ru##body > noindex
 !
+! LiveBall
+||cdn.lbs.pw/prm/
+||liveball.*/public/js/fcap.js
+liveball.click,liveball.to,liveball.*###custom_brand
+liveball.click,liveball.to,liveball.*##.prognoz
+liveball.click,liveball.to,liveball.*##.about_match
+liveball.click,liveball.to,liveball.*##.fullscreen-overlay
+liveball.click,liveball.to,liveball.*###fullscreen
+liveball.click,liveball.to,liveball.*##.catfish_sec
+liveball.click,liveball.to,liveball.*###brandContainerGeo
+liveball.click,liveball.to,liveball.*#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'zone_')
+liveball.click,liveball.to,liveball.*#%#//scriptlet('remove-node-text', 'script', 'createAdManager')
+!
 ! sport24.ru
 sport24.ru##main div[data-mobile-4]:has(> div[style] > a[class] > .bookmaker-rating)
 sport24.ru##div[style="height:3rem;margin-bottom:0.75rem"]
@@ -18138,6 +18159,7 @@ sportmail.ru##.daynews__inner > tbody > tr > td.daynews__spring
 sportmail.ru##.pm-toolbar__banner
 sportmail.ru#?#.cols > div.cols__wrapper:has(> div.cols__column_news-240x400)
 !
+tv.mail.ru##div:has(> div[data-rb-slot]:only-child)
 tv.mail.ru##.rb_right
 tv.mail.ru##.rb_body
 tv.mail.ru##div[data-module="SlotModel"][data-adq-id]
@@ -18165,7 +18187,7 @@ vfokuse.mail.ru##a[class^="rb-"][class*="branding"]
 vk.com,vk.ru##.ConvoList__scrollbar-content > div[style]
 vk.com,vk.ru#?#body > div.vkuiRootComponent__host:has(> div[aria-describedby="onboarding_tooltip_content"]):contains(Яндекс Браузер)
 vk.com,vk.ru###l_invite_promo
-vk.com,vk.ru##div[data-testid="feed_main_container"] > div[class^="vkit-"]:has(div.vkuiBanner__content)
+vk.com,vk.ru##.vkuiBanner__host
 vk.com,vk.ru##div[role="feed"] > article:has(span[aria-label="Реклама"])
 vk.com,vk.ru##div[role="feed"] > article:has(span[class^="AdBlockProtector__noVisible--"])
 vk.com,vk.ru##div[role="feed"] > article:has(div.vkuiRootComponent__host > span.vkuiCaption__sizeYCompact > span)
@@ -18786,6 +18808,9 @@ lib.seu.edu.cn#@#.one-search
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239480
+@@||yandex.ru/ads/system/context.js$domain=iphones.ru
+iphones.ru#@#div[id^="adfox"]
 ! indochaska-nuernberg.de - pictures not showing for "Speisekarte"
 @@||d1e1kd3gffmhjg.cloudfront.net/bannerbottom/$domain=indochaska-nuernberg.de
 ! https://github.com/AdguardTeam/AdGuardExtra/issues/661

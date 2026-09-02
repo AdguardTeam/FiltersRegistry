@@ -1,8 +1,8 @@
-! Checksum: 2aRsE0rLi5t8yDJCmRwUqA
+! Checksum: pDCZQITR4GiFA8C3lOpxDw
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.42
-! TimeUpdated: 2026-08-24T04:46:08+00:00
+! Version: 2.0.1.67
+! TimeUpdated: 2026-09-02T04:39:32+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -151,12 +151,23 @@ www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
 www.americanbanker.com##.miso-hybrid-search-combo__grid-answer
 ||api-edge.askmiso.com/v1/ask/questions/$xmlhttprequest,domain=www.americanbanker.com
 ! Remove sparkle from search icon
+! =====================
+! == Answer Overflow ==
+! =====================
+! -- https://www.answeroverflow.com/m/1402722130789011496
+! Floating "Ask a question" prompt
+! Resources - MCP Server
 ! ========================
 ! == Archive of Our Own ==
 ! ========================
 ! -- https://archiveofourown.org/tags/Created%20Using%20Generative%20AI/works
 ! Works tagged as "Created Using Generative AI"
 ! * There are nearly 700 synonyms for "Created Using Generative AI" and it's subtags. Blocking them all would result in 38kb for one filter. Instead, I've manually added synonymns that seem semi-common based on "Other tags to include". (Full filter can be found at https://gist.github.com/Stevoisiak/c4bf2acb2a1032370183ea9d03fe5816)
+! ============
+! == Aspose ==
+! ============
+! -- https://products.aspose.app/font/viewer/woff2
+! "Also try our new AI"
 ! ===============
 ! == Atlassian ==
 ! ===============
@@ -360,13 +371,7 @@ www.bloomberg.com##[data-testid="ai-takeaways"]
 ! "AI-Powered Analytics" sticky banner at top of page
 www.boldbi.com##.new-feature-banner.elementor-element-61515ce1
 ! Products > "AI-Powered Analytics" in navbar menu
-! Animated AI demo image
-www.boldbi.com##.elementor-element-6d83d9b2
-! "Get Instant Visuals with AI-Powered Analytics" section
-www.boldbi.com##.elementor-element-3d31878
-! Powerful Features - AI Powered Anaylytics
-www.boldbi.com##.elementor-element-59cecfb8
-! Products - "AI Analytics" by footer
+! Footer - Products - "AI Analytics"
 ! "Ask AI for a summary of Bold BI" at bottom of page
 www.boldbi.com##.elementor-element-6e4054b5
 ! AI chat assistant
@@ -404,7 +409,7 @@ www.thebricks.com##.Modal_container__jm1jX
 ! ================
 ! -- https://www.britannica.com/
 ! "Ask the Chatbot" button below search bar
-www.britannica.com##.category-link-CHATBOT
+! * Use style to prevent navigation arrow from covering other options
 ! -- https://www.britannica.com/chatbot
 ||www.britannica.com/chat-api/$xmlhttprequest,domain=www.britannica.com
 ! -- https://www.britannica.com/science/star-astronomy
@@ -412,6 +417,12 @@ www.britannica.com##.category-link-CHATBOT
 www.britannica.com##.header-topic-britannica-ai-module
 ! Header after scrolling down
 www.britannica.com##.toc-sticky-header-ai-container
+! -- https://www.britannica.com/plant/Bothrodendron
+! Quick Summary
+www.britannica.com##.ai-index-page-summary-module
+! -- https://www.britannica.com/plant/lower-vascular-plant
+! AI generated Top Questions
+www.britannica.com##.ai-qna-module
 ! ==================
 ! == BrowserStack ==
 ! ==================
@@ -454,44 +465,56 @@ www.businessinsider.com##.ai-summary-questions
 ! ===========
 ! == Canva ==
 ! ===========
+! -- https://www.canva.com/ (logged out)
+! Footer items
 ! -- https://www.canva.com/ (logged in)
-! "Sneak Peak" button in header
 ! Floating AI chat button
 www.canva.com##button[aria-label="Help Assistant"]
-! Sidebar, Create > For You > Quick Actions
+! Quick select - Canva code
+! Sidebar - Canva AI
+! Sidebar - More > Dream Lab
+www.canva.com##._B7XGQ [href="/dream-lab"]
+! -  Create menu
+! Create > For You > Quick Actions >
+! * Image to Layers
 ! * Canva Code
 ! * Magic Write
-! Sidebar, Create > Photo editor
-! Sidebar, Canva AI
-! Sidebar, More, Dream Lab
-www.canva.com##._B7XGQ [href="/dream-lab"]
-! -- https://www.canva.com/design?create&type=TAGyBJVQJvY (logged in, Canva Docs)
-! Magic Write button in toolbar
-! Magic Write in + menu next to cursor
-! * Use AI pencil icon to identify option
-! * FIXME: Button is selected by default for keyboard navigation.
-! Magic Write prompt box
-! * Box can steal typing focus even while hidden
-www.canva.com##._kI3Pw [class="JO7KyQ WdjJgQ gVW9og iO4bow BMOCzQ XxpeBg LuBWVA"]
-! Sidebar, Templates > Generate
-! Sidebar, Elements > Generate
-! Sidebar,  Apps > "AI generation" category filter
-! Sidebar, Apps > "AI generation" section
-! Sidebar, Apps > Magic Media
-! Sidebar, "Magic Media" tab
+! Create > Photo Editor
+! * Magic Eraser
+! * Background Generator
+! Create > Code
+! -- https://www.canva.com/design?create&type=TAGyBJVQJvY (Canva Docs)
+! Navbar - Magic Switch
+! Sidebar - Canva AI
+! Sidebar - Templates - Generate button
+! Sidebar - Apps - AI generation tab
+! TODO: AI section in app list
+! Toolbar - Ask Canva
 ! Replace "Start typing" text on blank document
-! -- https://www.canva.com/design?create&type=TAGcbLa0hys&category=tAEW8R8e5hc (Website builder)
-! Sidebar, Text > Magic Write
-www.canva.com##[role="tabpanel"] .BMOCzQ.EC2pjw.LuBWVA > .sGm5Vw.ID9zAA > .nJVq1A > .jv_R6g > .MCgm0w.Z3nT2A.LQzFZw.VgvqkQ._4_iekA._3oHQrw
+! Plus icon for quick actions menu
+! TODO: Typing / on blank line opens quick actions
+! -- https://www.canva.com/design?create&type=TAGcbLa0hys (Website Builder)
+! Sidebar > Text > Magic Write
 ! -- https://www.canva.com/templates
-! AI video effects section
-! * Match section containing "cloud cruise" AI effect
+! TODO: AI video effects section
+! ==============
+! == CBC News ==
+! ==============
+! -- https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218
+! Listen to this article
+cbc.ca##[class^="textToSpeech-"]
 ! ==============
 ! == CGTrader ==
 ! ==============
 ! -- https://www.cgtrader.com/
 ! Header - Create with AI
 www.cgtrader.com##[aria-controls="navigation-create-ai-panel"]
+! =================
+! == Chalet Farm ==
+! =================
+! Floating "AI Sales Associate" button
+||server.myrepai.com/web/load$xmlhttprequest,domain=chaletnursery.com
+chaletnursery.com###repWebClientContainer
 ! ==================
 ! == Cisco DevNet ==
 ! ==================
@@ -537,14 +560,25 @@ coinmarketcap.com##.FloatingAiChat_floatingAiChatContainer__YJK16
 coinmarketcap.com##.SetAlertItem_set-alert-item__fVuCD
 ! AI questions in news topics
 coinmarketcap.com##.homepageAiInsights_questionItem__6Igst
+! ===============
+! == Collabnix ==
+! ===============
+! -- https://collabnix.com/testcontainers-vs-docker-a-tale-of-two-containers/
+! Header banner for Docker AI book
+collabnix.com###docker-ai-book-banner
 ! ========================
 ! == Collins Dictionary ==
 ! ========================
 ! -- https://www.collinsdictionary.com/
 ! "AI Assistant" button next to search bar
 www.collinsdictionary.com##.assistantIcon
+! Header assistant button (mobile)
 ! "Ask Collins Dictionary" in bottom-right corner
 www.collinsdictionary.com###assistant-link
+! -- https://www.collinsdictionary.com/dictionary/english/word
+! Footer - Ask me a question
+||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
+www.collinsdictionary.com##.assistant-sticky-bar
 ! ====================
 ! == Computer World ==
 ! ====================
@@ -756,11 +790,6 @@ idrinkproducts.com###smart-bot-container
 ! Header - "Meet Dropbox Dash" sticky promo
 ! * We have 2 rules to hide and remove. Hide is immediate, but it leaves a gap. Remove is slower, but gets rid of the gap.
 ! Header nav > Products > AI links
-! "AI is coming to dropbox" promo
-www.dropbox.com##._mainContainer_yn2kq_11 > .dwg-hero-l3-plank__content-area > .dwg-box > .dwg-box > .dwg-stack > p
-! Promo video showing "Ask Dash"
-www.dropbox.com##._mainContainer_yn2kq_11 > .dwg-hero-l3-plank__media-area.dwg-flex-grid__cell.dwg-box
-! "Dash" promo section
 ! Footer - AI links
 ! -- https://www.dropbox.com/home (Home - Logged in)
 ! * TODO: Block AI feature promo notices that appear upon initial login. (Seemingly do not re-appear for a given account after being dismissed)
@@ -949,6 +978,11 @@ fandom.com##section.trfc161
 ! ========================
 ! Floating AI button
 fightthenewdrug.org###askFTND_button
+! ===============
+! == Firstpost ==
+! ===============
+! ≡ menu > "First AI" button
+firstpost.com###ia-search
 ! ==================
 ! == Food Network ==
 ! ==================
@@ -1118,6 +1152,11 @@ github.com##.Link--secondary[href="/features/ai"]
 ! -- https://github.com/apps/desktop
 ! Header banner for GitHub Copilot app
 github.com##global-banner#desktop_copilot_app
+! -- https://cli.github.com/
+! Header banner for GitHub Copilot CLI
+cli.github.com##.announcement-banner[href="https://github.com/features/copilot/cli"]
+! Navbar link for Copilot CLI
+cli.github.com##nav [href="https://github.com/features/copilot/cli"]
 ! -- https://support.github.com/
 ! Header - Copilot button
 support.github.com##[data-fs="copilot_chat_nav"]
@@ -1186,11 +1225,6 @@ www.githubstatus.com##.link-gray[href="https://github.com/features/copilot"]
 ! == GitLab ==
 ! ============
 ! -- https://about.gitlab.com/ (About page)
-! Header banner promos
-about.gitlab.com##.banner:is([data-ga-name="orbit"], [data-ga-name="transcend event"])
-! Promo card for "GitLab Duo Agent Platform"
-! GitLab Duo promo (no longer used?)
-about.gitlab.com##.card.card-1.gitlab-duo
 ! Footer - AI features
 about.gitlab.com##[data-ga-name="ai-assisted development"], [data-ga-name="ai for coding"], [data-ga-name="agentic ai"]
 ! -- https://gitlab.com/ (Homepage - logged in)
@@ -1208,6 +1242,16 @@ gitshare.me##nav > [href="/artifacts"]
 ! Header banner for agent share button
 ! Promo sections
 gitshare.me##section#artifacts
+! ===============
+! == Glassdoor ==
+! ===============
+! -- https://www.glassdoor.com/Job/test-jobs-SRCH_KO0,4.htm
+! "Tailor my resume" button
+glassdoor.com##[class^="ResumeTailor_coachmarkWrapper__"]
+! "Is your resume a good match?" notice to tailor resume
+glassdoor.com##[class^="AIRecruiterIntro_aiRecruiterIntroContainer__"]
+! AI questions below job sections
+glassdoor.com##[class^="ModernSection_footerWrapper__"]
 ! ============
 ! == Glyphy ==
 ! ============
@@ -1266,22 +1310,13 @@ www.godaddy.com##[data-cy="list-item"][aria-label="Logo Maker"]
 ! "Try Gemini" button in header
 ! * Applies to Docs, Drive, & Gmail
 google.com##[data-rp-placement-id="gemkick-pep-icon-callout-id"]
+! Profile icon menu > Get a Google AI plan
 ! ==================
 ! == Google About ==
 ! ==================
 ! -- https://about.google/
-! AI promo
-about.google##[data-section-header="Bring your AI memories and chat history to Gemini"]
-! Lyria 3 Pro section (Yes, the ID is misleading)
-about.google###how-ai-can-help-improve-breast-cancer-detection
 ! "Google AI" in footer
 about.google##.glue-footer__link[href^="https://ai.google/"]
-! -- https://about.google/products/
-! AI promo sections
-about.google##.glue-jumplinks__link[href="#try-ai-tools"]
-about.google###ai-technology
-about.google###try-ai-tools
-! Gemini in products list
 ! ================
 ! == Google Ads ==
 ! ================
@@ -1302,15 +1337,6 @@ analytics.google.com##ga-toolbar-icon-button-component.ga-intelligence-button
 ! =================
 ! == Google Blog ==
 ! =================
-! -- https://blog.google/
-! "Innovation & AI" in header nav
-! Featured article about Gemini
-! Section on "AI Impact Summit 2026"
-blog.google##section[data-analytics-module*="\"section_header\": \"AI Impact Summit 2026\""]
-! Remove sparkle from search icon
-! -- https://blog.google/search/?query=Why+am+I+here
-! AI summary in search
-blog.google##uni-search-ai-summary
 ! -- https://blog.google/products-and-platforms/products/search/search-live-global-expansion/
 ! "Read AI-generated summary"
 blog.google##[data-component="uni-ai-generated-summary"]
@@ -1338,7 +1364,6 @@ console.cloud.google.com###pcc-duet-chat-container
 ! Remove AI sparkle from search icon
 ! -- https://developer.chrome.com/docs/devtools
 ! Navbar categories
-! AI section
 ! -- https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart
 ! Left sidebar > "Chat" (IE: Ask About this Page)
 developers.google.com##.devsite-concierge-ai-panel--menu-item
@@ -1397,7 +1422,8 @@ docs.google.com##.building-blocks-promo-container
 ! Table categories with AI fields
 docs.google.com###feedback-sentiment-plus-classification-building-block, #expense-classification-building-block, #ad-generation-building-block, #email-generation-building-block, #call-summary-building-block
 ! -- https://docs.google.com/presentation/ (Slides)
-! * TODO: Filter more AI elements
+! Right sidebar - Slide button
+docs.google.com###content-library-rail-slide-generation-element
 ! Floating "refine" button when selecting a text box
 docs.google.com##.appsSketchyPluginsFloatingToolbarFloatingToolbarComponentGenerativeAiButton
 ! Menubar - "Insert" items
@@ -1441,6 +1467,7 @@ drive.google.com##.p5rLxe.HBDJjb
 ! New > More > Google AI Studio
 ! * Use 'remove()' to fix keyboard navigation
 ! -- https://drive.google.com/drive/home
+! Notice for access to audio overviews
 ! "Ask Gemini" in "More actions" menu (⋮)
 ! "Ask Gemini"/"Catch me up" buttons when a file is selected
 drive.google.com##.iQnZTe.SMHH7
@@ -1454,8 +1481,17 @@ drive.google.com##.oaTPh
 ! AI Overview
 drive.google.com##.De8rPe
 ! -- Viewing a file
-! "Ask Gemini" button in top right
+! "Ask Gemini" button in top right (no longer used?)
 drive.google.com###viewer-sidekick-button
+! -- With a PDF opened
+! Header - Gemini button
+drive.google.com##.TLiyPe
+! Menubar - Tools
+! * TODO: Breaks keyboard navigation of menubar
+! * Only hide if summaries are disbaled
+! Audio Overview
+! Genini in sidebar
+drive.google.com##.equNN
 ! ====================
 ! == Google Flights ==
 ! ====================
@@ -1500,7 +1536,8 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 ! -- https://www.google.com/ (Homepage)
 ! Search bar > "AI Mode" button
 www.google.*##.plR5qb
-! Remove AI hyperlinks from Google Logo (Added during Olympics) (Separate filters for uBlock and AdGuard compatability)
+! Remove AI hyperlinks from Google Doodle Logos
+! AdGuard compatible
 ! AI buttons below search bar
 ! * "Create images", "Ask about files", and "Brainstorm"
 ! * These buttons replace the standard "Google Search" button.
@@ -1540,12 +1577,19 @@ www.google.*##[jsname="YrZdPb"][data-evn]
 ! -- https://www.google.com/search?q=gachiakuta+game (mobile only)
 ! Loading placeholder for AI Generated topic info (in middle of search results)
 ! * May not appear when reloading page multiple times in a row
+! -- https://www.google.com/search?q=staples
+! Right sidebar - Shopping/Ask button for store
+www.google.*##[data-id="SALES_ASSISTANT_BRAND_PROFILE_ENTRY_POINT"]
+! Right sidebar - Trending products - AI chip suggestions
+www.google.*##[data-id="PRODUCT_SHELF_SALES_ASSISTANT_ENTRY_CONTAINER"]
 ! -- https://www.google.com/search?q=tie (mobile only)
 ! AI generated overview container
 ! -- https://www.google.com/search?q=tower+of+god
 ! AI generated topic overview
 www.google.*##[data-attrid="VisualDigestGeneratedDescription"]
 ! Remove images on desktop layout
+! -- https://www.google.com/search?q=spider+man+brand+new+day
+! Floating "Catch me up" button after activating Spiderman easter egg
 ! -- https://www.google.com/search?q=computer+repair
 ! Have AI check prices
 www.google.*##[jsname="lHCI7d"]
@@ -1593,6 +1637,12 @@ workspace.google.com##gws-card-wrapper:is([href="/solutions/ai/"], [href="/produ
 ||ai-search-dot-gsuite-staging.appspot.com/api/answer$xmlhttprequest,domain=workspace.google.com
 ! AI search summary
 workspace.google.com##.summary
+! ======================
+! == Hardware Busters ==
+! ======================
+! -- https://hwbusters.com/news/comma-ai-egpu-dock-runs-open-source-firmware-249-bare-799-with-an-rx-9060/
+! Floating "Ask Buster" button
+hwbusters.com##.hwb-ai-root
 ! ============
 ! == Healio ==
 ! ============
@@ -1625,6 +1675,12 @@ www.homedepot.com###product-section-magic-apron-qa-bot
 www.homedepot.com###beyond_bought_together
 ! Review summary
 www.homedepot.com###magic-apron-review-summary
+! =========================
+! == Hourglass Cosmetics ==
+! =========================
+! -- https://www.hourglasscosmetics.com/products/veil-hydrating-skin-tint
+! Review summary
+www.hourglasscosmetics.com##.yotpo-paragraph-summary-container
 ! ================
 ! == HP Support ==
 ! ================
@@ -1959,10 +2015,12 @@ mailchimp.com##.genAIAssistChatbotModule
 ! == Manticore Search ==
 ! ======================
 ! -- https://manticoresearch.com/
-! Search tool
+! Search - Ask
+||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
 widget.indexfox.ai##.ask-ai-button
 widget.indexfox.ai##.ask-response
-||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
+! Search - Page summary
+||api.indexfox.ai/api/6383989965980236728/summary$xmlhttprequest,domain=widget.indexfox.ai
 ! =================
 ! == Mathrubhumi ==
 ! =================
@@ -2033,17 +2091,10 @@ support.microsoft.com,www.xbox.com##li > a[href="https://copilot.microsoft.com/"
 www.microsoft.com,www.xbox.com##.copilot-container
 !  -- https://www.microsoft.com/en-us (page specific)
 ! Promotional banner for Copilot at top of page (no longer in use?)
-! Carousel that contains an AI promo. (no longer in use?)
-! * data-oc='ocf19c': "The apps you know go further with Copilot"
-! * data-oc='ocaeae': "Meet the computer you can talk to"
 ! "How can we help" question prompt on top of page
 www.microsoft.com##store-heading-block[data-en-paragraph*="AI-powered suggestions"]
 www.microsoft.com##.chatonpage
 www.microsoft.com##.msstore-chatonpage
-! "For business" section > Promo cards
-! * US English site
-! * Non-US languages (https://www.microsoft.com/zh-hk/)
-! "Get to know AI and Copilot" section
 ! -- https://www.microsoft.com/en-us/edge/features/split-screen
 ! "Coilot" tab in header nav
 ! "Learn with Copilot" button
@@ -2177,6 +2228,8 @@ purview.microsoft.com###scc_oneShell-purview-copilot-button_container
 ! * Backup cosmetic filter
 support.microsoft.com###buyInstallButton[href^="https://m365.cloud.microsoft/chat"]
 ! "Start your Copilot journey" section
+support.microsoft.com###start-your-copilot-journey-here
+support.microsoft.com###start-your-copilot-journey-here + .homePage-featureGrid
 ! -- https://support.microsoft.com/en-us/office/create-professional-slide-layouts-with-designer-53c77d7b-dc40-45c2-b684-81415eac0617
 ! "Get help with Copilot" banner at top of article
 support.microsoft.com###copilotBanner
@@ -2218,6 +2271,17 @@ docs.min.io##ucs-search-toolbar
 ! "Ask AI" button on code block
 ! Floating "Ask a question" chat box
 ##.chat-assistant-floating-input
+! ===========
+! == Mixam ==
+! ===========
+! Header sparkle button
+mixam.com##[data-controller="header--mixie"]
+! -- https://mixam.com/
+! "Get an Instant Quote" button
+mixam.com##[data-action="click->ai--mixie-banner#openHomepagePanel"]
+! -- Order page
+! Header sparkle button
+mixam.com##[data-type="mixie-header-controls"]
 ! =============
 ! == Mixscan ==
 ! =============
@@ -2253,6 +2317,13 @@ www.msn.com##fluent-button#codex-bing-button
 ! ============================
 ! Floating Chatbot button
 ||www.chatbase.co/embed.min.js$script,domain=www.myonlinetraininghub.com
+! =========================
+! == Mydrivers (驱动之家) ==
+! =========================
+! -- https://news.mydrivers.com/1/1087/1087428.htm
+! Article summary
+news.mydrivers.com###AiSummaryLink
+||passport.mydrivers.com//V2/pc/AISummaryHandler.ashx$xmlhttprequest,domain=news.mydrivers.com
 ! ==========
 ! == Nate ==
 ! ==========
@@ -2345,6 +2416,11 @@ op.gg##.flex-col.items-center.-mt-\[60px\] > .w-full.pb-2.md\:hidden.md\:pb-0
 ! =======================
 ! -- https://openjsf.org/blog/burnout-is-real-for-open-source-maintainers
 ! Summarize with AI
+! ===========
+! == Opera ==
+! ===========
+! -- https://www.opera.com/
+! Footer links
 ! =============
 ! == Outlook ==
 ! =============
@@ -2455,6 +2531,12 @@ pockit.tools##[href="/ai/"]
 ! ================
 ! -- https://docs.posit.co/
 ! "Ask AI" in navbar
+! ===========
+! == Posta ==
+! ===========
+! -- https://www.posta.com.mx/mexico/omar-garcia-harfuch-confirma-abatimiento-del-r5-lider-del-cartel-de-los-reyes-tras-operativo-en-michoacan/vl2249654
+! AI Summary
+www.posta.com.mx###qp-ia-wrapper
 ! =============
 ! == Postman ==
 ! =============
@@ -2501,6 +2583,13 @@ www.proquest.com###ra-panel-wrapper
 account.proton.me##.lumo-troubleshoot-launcher
 ! -- https://account.proton.me/apps
 ! Lumo app
+! ==============
+! == Pydantic ==
+! ==============
+! -- https://pydantic.dev/docs/
+! Header navbar items
+pydantic.dev##.library-nav > [href="/docs/ai/"]
+pydantic.dev##.library-nav > [href="/docs/logfire/"]
 ! ===============
 ! == Pyrfecter ==
 ! ===============
@@ -2600,6 +2689,11 @@ replug.io##.mantine-1fndqk8
 ! =================
 ! -- https://risingwave.com/blog/essential-guide-to-find-sql-server-hostname-and-port/
 ! Header promo banner
+! ===================
+! == Rock 30 Games ==
+! ===================
+! Floating AI assistant button
+rock30games.com##clever-search-toggler
 ! ==========
 ! == Rows ==
 ! ==========
@@ -2620,9 +2714,8 @@ help.salesforce.com##[data-testid="agent-root"]
 ! ===================
 ! == ScienceDirect ==
 ! ===================
-! -- https://www.sciencedirect.com/
-! LeapSpace carousel item.
-! * Checks for exactly 2 slides to avoid filtering if the layout changes in the future
+! Header - LeapSpace
+www.sciencedirect.com##[aria-label="ai-links"]
 ! -- https://www.sciencedirect.com/science/article/pii/S0014579309010850
 ! "Reading assistant" box
 www.sciencedirect.com###reading-assistant-container
@@ -2667,9 +2760,13 @@ sentry.zendesk.com##.ask-ai
 ! =============
 ! AI Beauty Chat in header
 www.sephora.com##[data-comp~="AIBeautyChatDrop"]
+! AI beauty button in footer (mobile)
+www.sephora.com##[data-at="ai_beauty_btn"]
 ! -- https://www.sephora.com/product/l-oreal-professionnel-absolut-repair-molecular-hair-mask-for-damaged-hair-P513135
 ! AI Beauty Chat
 www.sephora.com##.css-1drm495[data-comp~="ProductPage"]
+! Review summary
+www.sephora.com##[data-at="prs_summary_module"]
 ! ===================
 ! == Shop The Mint ==
 ! ===================
@@ -3031,6 +3128,15 @@ uhomes.com##.ai-chat
 ! =================
 ! Ulta AI floating button
 www.ulta.com##chat-messenger[service*="commerce-ai"]
+! -- https://www.ulta.com/p/teint-idole-ultra-wear-natural-matte-foundation-pimprod2039028
+! "How can I help" questions
+www.ulta.com##.DynamicPrompts
+! =====================
+! == United Airlines ==
+! =====================
+! -- https://www.united.com/en/us
+! Search - Quick Answer
+www.united.com##[class*="app-containers-NewWebsiteSearch-components-CoveoGenAI-styles__genAIContainer--"]
 ! ======================
 ! == UnitedHealthCare ==
 ! ======================
@@ -3065,6 +3171,8 @@ ups.com###WACContainer
 ! ======================
 ! Floating chatbox
 ||urbandictionary.ai/widget$subdocument,domain=www.urbandictionary.com
+! "Ask UD" button
+www.urbandictionary.com##.ud-ask
 ! =============
 ! == US News ==
 ! =============
@@ -3117,6 +3225,8 @@ www.virustotal.com##vt-crowdsourced-ai-gemini
 ! ===================
 ! == Visual Studio ==
 ! ===================
+! -- https://code.visualstudio.com/docs/editor/glob-patterns
+! Header banner promo for GPT discount
 ! -- https://code.visualstudio.com/docs/setup/copilot#_remove-ai-features-from-vs-code
 ! Sidebar - Try This - Get started with AI
 ! =============================
@@ -3137,6 +3247,9 @@ www.walmart.com##.unified-chat-component
 www.walmart.com###top-highlights-module
 ! Reviews summary
 www.walmart.com##[data-testid="bulleted-summary"]
+! Floating Sparky AI Chat
+! -- https://business.walmart.com/
+business.walmart.com##.sparky-fab-wrapper
 ! =====================
 ! == Washington Post ==
 ! =====================
@@ -3185,6 +3298,15 @@ webshapedesign.co.uk##.wsai-toggle-wrapper
 ! -- https://support.whoop.com/s/?language=en_US
 ! Floating support chatbot
 ||api.prod.whoop.com/ai-conversation-service/$xmlhttprequest,domain=support.whoop.com
+! ==========
+! == Wigs ==
+! ==========
+! Floating chat button
+||config.gorgias.chat/bundle-loader/shopify/wigscom.myshopify.com$script,domain=www.wigs.com
+www.wigs.com###chat-button
+! -- https://www.wigs.com/products/nyx-synthetic-wig-rene-of-paris
+! Review summary
+www.wigs.com##.oke-w-reviewsSummaryModule
 ! ==========================
 ! == Wiley Online Library ==
 ! ==========================
@@ -3369,6 +3491,10 @@ ya.ru,yandex.com,yandex.ru##[class*="__futuris-snippet"]
 ya.ru,yandex.com,yandex.ru##[data-fast-name="neuro_answer"]
 ! * Summary after clicking AI button on desktop english site
 ya.ru,yandex.com,yandex.ru##.Root-FuturisSearchOuter
+! ==========
+! == Yelp ==
+! ==========
+! Footer - Agentic AI
 ! =========
 ! == Yep ==
 ! =========
@@ -3667,6 +3793,13 @@ freeuseporn.com##.friends [href="https://www.nsfwlover.com/"]
 ! == GamCore (NSFW) ==
 ! ====================
 ! AI Jerk Off
+! ======================
+! == hanime.tv (NSFW) ==
+! ======================
+! Ourdream AI ad
+hanime.tv###LandingEventAd
+! AI girlfriend ad in anime & image list
+hanime.tv##.restricted-free-only
 ! ===========================
 ! == HD Porn Comics (NSFW) ==
 ! ===========================

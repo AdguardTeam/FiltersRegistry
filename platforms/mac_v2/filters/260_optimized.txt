@@ -1,9 +1,9 @@
-! Checksum: g1ZoVNcSg5pHtABrca6DlQ
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1787546903-14400.patch
+! Checksum: MYRIR14D+b007NKVOc9D9w
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1788324138-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.42
-! TimeUpdated: 2026-08-24T04:46:08+00:00
+! Version: 2.0.1.67
+! TimeUpdated: 2026-09-02T04:39:32+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=arrow.apache.org|developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -53,7 +53,10 @@ americanbanker.com##.miso-page-header-search
 www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
 www.americanbanker.com##.miso-hybrid-search-combo__grid-answer
 ||api-edge.askmiso.com/v1/ask/questions/$xmlhttprequest,domain=www.americanbanker.com
+www.answeroverflow.com##form:has([placeholder="Ask a question..."])
+answeroverflow.com#?#.text-left.w-full.pt-4.border-t:contains(MCP Server)
 archiveofourown.org##.blurb:has(.tag:is([href="/tags/AI%20Art/works"],[href="/tags/AI%20assisted%20text/works"],[href="/tags/AI%20assisted%20writing/works"],[href="/tags/AI%20assisted/works"],[href="/tags/AI%20Dungeon%20Generated/works"],[href="/tags/AI%20Generated%20Art/works"],[href="/tags/AI%20Generated%20Fic/works"],[href="/tags/AI%20generated%20story/works"],[href="/tags/AI%20Generated%20Text/works"],[href="/tags/AI%20generated/works"],[href="/tags/AI%20Translation/works"],[href="/tags/AI%20used%20as%20an%20assistive%20tool/works"],[href="/tags/AI%20written/works"],[href="/tags/AI-Assisted%20Translation/works"],[href="/tags/AI-Assisted%20Writing/works"],[href="/tags/AI-Assisted/works"],[href="/tags/ai-edited/works"],[href="/tags/AI-Generated%20Images/works"],[href="/tags/AI-Generated%20Text/works"],[href="/tags/AI-Generated/works"],[href="/tags/ai-written/works"],[href="/tags/ChatGPT%20generated/works"],[href="/tags/ChatGPT/works"],[href="/tags/Co-Written%20with%20AI/works"],[href="/tags/Created%20Using%20Generative%20AI/works"],[href="/tags/InferKit/works"],[href="/tags/Made%20by%20AI/works"],[href="/tags/Midjourney/works"],[href="/tags/NovelAI/works"],[href="/tags/Written%20by%20AI/works"],[href="/tags/Written%20by%20an%20AI/works"],[href="/tags/Written%20in%20collaboration%20with%20an%20AI/works"],[href="/tags/written%20with%20AI/works"]))
+products.aspose.app##a-overview p:has([href="https://products.aspose.ai/font/"])
 atlassian.net##[data-placement="bottom-end"] > div[class^="css-"] > div[class^="css-"]:has([href="https://support.atlassian.com/studio/docs/what-is-rovo-studio/"])
 atlassian.net##[data-testid="servicedesk-ai-context-common.ui.ai-context-container.ai-container"]
 atlassian.net##[data-testid="servicedesk-smart-request-summary-trigger.ui.jira-smart-summary-standard-button"]
@@ -136,9 +139,6 @@ www.bloomberg.com##.SummaryOnlyTakeaways_takeaways__8ayMD
 www.bloomberg.com##[data-testid="ai-takeaways"]
 www.boldbi.com##.new-feature-banner.elementor-element-61515ce1
 www.boldbi.com##.ekit-stylish-list-content-wrapper:has(> [href="/ai-analytics/"])
-www.boldbi.com##.elementor-element-6d83d9b2
-www.boldbi.com##.elementor-element-3d31878
-www.boldbi.com##.elementor-element-59cecfb8
 www.boldbi.com##.elementor-icon-list-item:has(> [href="/ai-analytics/"])
 www.boldbi.com##.elementor-element-6e4054b5
 www.boldbi.com###boldchat-host
@@ -152,10 +152,12 @@ www.thebricks.com###announcement-banner
 www.thebricks.com###sidebar-cta
 www.thebricks.com##.Cta1_container__T8L_e, .Cta2_container__dcad2, .Cta3_container__pjUHX, .Cta4_container__Ut98Y, .Cta5_container__8bABo
 www.thebricks.com##.Modal_container__jm1jX
-www.britannica.com##.category-link-CHATBOT
+www.britannica.com#$#.category-link-CHATBOT { visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; font-size: 0 !important; }
 ||www.britannica.com/chat-api/$xmlhttprequest,domain=www.britannica.com
 www.britannica.com##.header-topic-britannica-ai-module
 www.britannica.com##.toc-sticky-header-ai-container
+www.britannica.com##.ai-index-page-summary-module
+www.britannica.com##.ai-qna-module
 www.browserstack.com###promo-notification:has([href^="https://www.browserstack.com/events/qa-leadership-summit-autumn-2026"])
 www.browserstack.com##.bstack-mm-li:has([data-title="AI Agents"])
 www.browserstack.com###menu-item-153460
@@ -168,29 +170,36 @@ www.buzzfeed.com##.arcade_contentWrapper__3tHoG:has([clip-path="url(#clip0_850_8
 dictionary.cambridge.org##.hdib:has(> [href$="/assistant"])
 dictionary.cambridge.org##.lb-cm.hlh21:has(> [href$="/assistant"])
 ||dictionary.cambridge.org/api/assistant/$xmlhttprequest,domain=dictionary.cambridge.org
-www.canva.com##.q2xokA .eAUiHA:has(._5KtATA.LQzFZw.VgvqkQ._8ERLTg.MCgm0w.Z3nT2A.LQzFZw.VgvqkQ._4_iekA.j34Zww.aqbYPg._3FvZZg._zAZoQ.vH2lRg)
+www.canva.com##[role="list"] > li:has(> [href="https://www.canva.com/canva-ai/"])
+www.canva.com##[role="list"] > li:has(> [href="https://promptedpodcast.com/"])
+www.canva.com##[role="list"] > li:has(> [href="https://www.canva.com/safe-ai-canva-shield/"])
+www.canva.com##[role="list"] > li:has(> [href="https://www.canva.com/ai-logo-generator/"])
+www.canva.com##[role="list"] > li:has(> [href="https://www.canva.com/business-name-generator/"])
 www.canva.com##button[aria-label="Help Assistant"]
-www.canva.com##.zAWjSA.GLyNIw:has(.jyMing[href="/ai/code?forceOpen"])
-www.canva.com##.zAWjSA.GLyNIw:has(.jyMing[href="/design?create&type=TAFJi5FXMSs&category=tAFK2fpTBVQ&ui=eyJEIjp7IkgiOnsiRSI6eyJBPyI6IkEiLCJBIjp0cnVlfX19LCJBIjp7IkIiOnsiQiI6dHJ1ZX19LCJHIjp7IkIiOnRydWV9fQ"])
-www.canva.com##.zAWjSA.GLyNIw:has([src="https://static.canva.com/web/images/58eb8e48f401eb5dfa2cb723df801370.jpg"])
-www.canva.com##div.BMOCzQ.EC2pjw.LuBWVA:has(#assistant)
+www.canva.com##.zAWjSA.GLyNIw:has([href^="/design/editor/shell?create&type=TAG5rX9VMoM&category=tAG5rahqeWE"])
+www.canva.com##div:has(> #assistant)
 www.canva.com##._B7XGQ [href="/dream-lab"]
-www.canva.com##.nbY0vg > div:has([class="_5KtATA LQzFZw VgvqkQ _8ERLTg MCgm0w unS_Qw LQzFZw VgvqkQ f5yKmw j34Zww aqbYPg _3FvZZg DJfiQg"])
-www.canva.com##.nbY0vg > div:has([class="_5KtATA LQzFZw VgvqkQ _8ERLTg MCgm0w unS_Qw LQzFZw VgvqkQ f5yKmw j34Zww aqbYPg _3FvZZg DJfiQg"]) + .bm8JbQ
-www.canva.com##.jVQbrQ.k9r7kw [role="option"]:has([d^="M21.223 5.24a3.057 3.057 0 0 0-4.323 0L6.87 15.267a5.419 5.419 0 0 0-1.295 2.08l-1.12 3.282a1.087 1.087 0 0 0 1.378"])
-www.canva.com##._kI3Pw [class="JO7KyQ WdjJgQ gVW9og iO4bow BMOCzQ XxpeBg LuBWVA"]
-www.canva.com##[role="tabpanel"] .Ka9auQ > .aDc6Yg:has(> .MCgm0w.Z3nT2A.LQzFZw.VgvqkQ._4_iekA._3oHQrw)
-www.canva.com##[role="tabpanel"] .Ka9auQ > .aDc6Yg:has(> .UfYDHQ > .YVd8lA > .MCgm0w.Z3nT2A.LQzFZw.VgvqkQ._4_iekA._3oHQrw)
-www.canva.com##[role="tabpanel"] [role="tablist"] div:has(> [id$="_-tab-ai-generation"])
-www.canva.com#?#[role="tabpanel"] .GcyWAw > .jv_R6g > div:has( .liTStw.aZskFA.u16U_g.snQKTg:contains(AI generation))
-www.canva.com#?#[role="tabpanel"] .GArQ9w.TOWefw > li:contains(Magic Media)
-www.canva.com##.HqCA9g:has(> [role="tab"] > [aria-label="Magic Media"])
-www.canva.com#$?#.qiAA2Q:contains("Start typing or hit / for Magic Write"):upward(1) { --new-text: "Start typing"; }
-www.canva.com#$?#.qiAA2Q:contains("Start typing or hit / for Magic Write") { font-size: 0px !important; }
+www.canva.com##.zAWjSA.GLyNIw:has([src="https://content-management-files.canva.com/assets/en/8da12929-77b6-4790-9824-38061f1b67e7"])
+www.canva.com##.zAWjSA.GLyNIw:has([href="/ai/code?forceOpen"])
+www.canva.com##.zAWjSA.GLyNIw:has([href^="/design/editor/shell?create&type=TAFJi5FXMSs&category=tAFK2fpTBVQ"])
+www.canva.com##.zAWjSA.GLyNIw:has([src="https://static.canva.com/web/images/4798106e6919ec3efa713e286bc110d8.jpg"])
+www.canva.com##.zAWjSA.GLyNIw:has([src="https://static.canva.com/web/images/58eb8e48f401eb5dfa2cb723df801370.jpg"])
+www.canva.com#?#.x1ghz6dp.x1717udv.xng3xce.xc342km.xe8uvvx.x9dqhi0.x9f619.x1a2a7pz.a6ZJUw:contains(Code)
+www.canva.com#?#.x1ghz6dp.x1717udv.xng3xce.xc342km.xe8uvvx.x9dqhi0.x9f619.x1a2a7pz:has(> .xjp7ctv [role="menuitem"]):contains(Magic Switch)
+www.canva.com##.HqCA9g:has([aria-label="Canva AI"])
+www.canva.com##.x9f619.xeuugli.xnvo3vl.x1lca0qi.x10zg81t.xw36f2b.xn95wi4.x1mz2wy7.xxtcm4k.x1qyk479.x5lhr3w:has([aria-label="Generation options"])
+www.canva.com##div:has(> [id$="_-tab-ai-generation"])
+www.canva.com##.nbY0vg > div:has([aria-label="Ask Canva"])
+www.canva.com##.nbY0vg > div:has([aria-label="Ask Canva"]) + .bm8JbQ
+www.canva.com#$?#.qiAA2Q:contains("Start typing or ask Canva to generate"):upward(1) { --new-text: "Start typing"; }
+www.canva.com#$?#.qiAA2Q:contains("Start typing or ask Canva to generate") { font-size: 0px !important; }
 www.canva.com#$#.qiAA2Q::before { content: var(--new-text); font-size: 42.6667px; }
-www.canva.com##[role="tabpanel"] .BMOCzQ.EC2pjw.LuBWVA > .sGm5Vw.ID9zAA > .nJVq1A > .jv_R6g > .MCgm0w.Z3nT2A.LQzFZw.VgvqkQ._4_iekA._3oHQrw
-www.canva.com##.SymshQ.BMOCzQ.LuBWVA:has([src="https://template.canva.com/EAHBDm46r7A/3/0/450w-4uCHha18X_U.jpg"])
+www.canva.com##.lQmhtA:has([aria-label="Quick actions"])
+www.canva.com#?#button:contains(Magic Write)
+cbc.ca##[class^="textToSpeech-"]
 www.cgtrader.com##[aria-controls="navigation-create-ai-panel"]
+||server.myrepai.com/web/load$xmlhttprequest,domain=chaletnursery.com
+chaletnursery.com###repWebClientContainer
 developer.cisco.com##.wrapper-dwc-notification:has([href="/codeexchange/ai/"])
 claimyr.com##.chat-container-container
 clarencemedicalrhyl.wales###druidWebchatRoot_v2
@@ -205,8 +214,12 @@ coinmarketcap.com##.FloatingAiChat_floatingAiChatContainer__YJK16
 coinmarketcap.com#?#.BasePopover_with-arrow__66AQQ:contains(AI trained on the market)
 coinmarketcap.com##.SetAlertItem_set-alert-item__fVuCD
 coinmarketcap.com##.homepageAiInsights_questionItem__6Igst
+collabnix.com###docker-ai-book-banner
 www.collinsdictionary.com##.assistantIcon
+www.collinsdictionary.com#$?#.assistantMobile { remove: true; }
 www.collinsdictionary.com###assistant-link
+||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
+www.collinsdictionary.com##.assistant-sticky-bar
 www.computerworld.com##.section-block--announcementbar:has(.reset-button)
 www.consumerreports.org##.cda-gnav__main-search-askcr-ai
 www.consumerreports.org###mt-askcr-sf-abandon-footer
@@ -289,9 +302,6 @@ www.dropbox.com##._banner_1ozs8_1:has(> [data-trackingid="dwg_banner_plank-b6fbc
 www.dropbox.com#$?#._banner_1ozs8_1:has(> [data-trackingid="dwg_banner_plank-b6fbc6399b__meet-dropbox-dash-your-new-ai-teammate--1"]) { remove: true; }
 www.dropbox.com##.dwg-dropdown-list-item__container:has(> [role="menuitem"][data-trackingid="unav_product_Reclaim.ai"])
 www.dropbox.com##.dwg-dropdown-list-item__container:has(> [role="menuitem"][data-trackingid="unav_product_dash"])
-www.dropbox.com##._mainContainer_yn2kq_11 > .dwg-hero-l3-plank__content-area > .dwg-box > .dwg-box > .dwg-stack > p
-www.dropbox.com##._mainContainer_yn2kq_11 > .dwg-hero-l3-plank__media-area.dwg-flex-grid__cell.dwg-box
-www.dropbox.com##._plankFrame_mrwa9_13:has(.dwg-button2[href="https://dash.dropbox.com/"])
 www.dropbox.com##.dwg-footer-plank__link-list > .dwg-stack__item:has(> .dwg-text[data-uxa-log="dwg_footer_plank-9f13e0e16d__dash--14"])
 www.dropbox.com##.dwg-footer-plank__link-list > .dwg-stack__item:has(> .dwg-text[data-uxa-log="dwg_footer_plank-9f13e0e16d__reclaimai--15"])
 www.dropbox.com##.dwg-footer-plank__link-list > .dwg-stack__item:has(> .dwg-text[data-uxa-log="dwg_footer_plank-9f13e0e16d__ai-principles--33"])
@@ -364,6 +374,7 @@ www.facebook.com##.x1jx94hy.x8cjs6t.x3sou0m.x80vd3b.x12u81az.xbjudin.xnlwouz.xpp
 facebook.com##.m.nb[data-type="container"]:has([role="button"][aria-label="Meta AI"])
 fandom.com##section.trfc161
 fightthenewdrug.org###askFTND_button
+firstpost.com###ia-search
 www.foodnetwork.com##.reviewsSummary
 ful.io##nav li:has(> [href="https://chrome.google.com/webstore/detail/email-finder-powered-by-a/lhcmmncnljldcdeeheclgfidlgllgfhc"])
 ful.io##nav > .items-center:has(> [href="https://chrome.google.com/webstore/detail/fulio-free-real-time-sale/adfkbphmnebbfljcdcfjlckobbacdgfn"])
@@ -443,6 +454,8 @@ github.com###automation > .lp-SectionTemplate > .lp-SectionBlock > .lp-SectionBl
 github.com##.Link--secondary[href="/features/copilot"]
 github.com##.Link--secondary[href="/features/ai"]
 github.com##global-banner#desktop_copilot_app
+cli.github.com##.announcement-banner[href="https://github.com/features/copilot/cli"]
+cli.github.com##nav [href="https://github.com/features/copilot/cli"]
 support.github.com##[data-fs="copilot_chat_nav"]
 support.github.com##.icXpMNcCnhao54vzcHSi:has(.prc-Flash-Flash-q6HW0)
 github.blog##.Button[href^="https://github.com/features/copilot"]
@@ -468,9 +481,6 @@ docs.github.com##[data-testid="ai-autocomplete-suggestions"]
 docs.github.com##[data-component="ActionList.Divider"]:has(+[data-testid="ai-autocomplete-suggestions"])
 docs.github.com##[data-testid="ask-ai"]
 www.githubstatus.com##.link-gray[href="https://github.com/features/copilot"]
-about.gitlab.com##.banner:is([data-ga-name="orbit"], [data-ga-name="transcend event"])
-about.gitlab.com##.stacking-cards__card:has([data-ga-name="gitlab-duo"])
-about.gitlab.com##.card.card-1.gitlab-duo
 about.gitlab.com##[data-ga-name="ai-assisted development"], [data-ga-name="ai for coding"], [data-ga-name="agentic ai"]
 gitlab.com##.ai-panels
 gitlab.com##[data-testid="nav-item"]:has(> [data-track-label="orbit_menu"])
@@ -480,6 +490,9 @@ gitshare.me##nav > [href="/artifacts"]
 gitshare.me##.bg-brand\/5:has(>[href="/artifacts"])
 gitshare.me##section#artifacts
 gitshare.me##section.border-border:has(.text-brand[href="/readme-generator"])
+glassdoor.com##[class^="ResumeTailor_coachmarkWrapper__"]
+glassdoor.com##[class^="AIRecruiterIntro_aiRecruiterIntroContainer__"]
+glassdoor.com##[class^="ModernSection_footerWrapper__"]
 glyphy.io##li:has(> [href$="/name-generator"])
 glyphy.io##section[class^="NameGenerators_container__"]
 mail.google.com##.lRwCV
@@ -500,23 +513,14 @@ www.godaddy.com##[data-cy="footer-menu-item-link"]:has(> [href="https://www.goda
 www.godaddy.com#?#.block-promo-banner:contains(Let AI help you find the perfect domain name)
 ogs.google.*##.LVal7b:not(.nq7pOb) .j1ei8c:has(> [data-pid="658"], > [data-pid="666"])
 google.com##[data-rp-placement-id="gemkick-pep-icon-callout-id"]
-about.google##[data-section-header="Bring your AI memories and chat history to Gemini"]
-about.google###how-ai-can-help-improve-breast-cancer-detection
+ogs.google.com##.bwIQH:has([data-label="Get a Google AI plan"])
 about.google##.glue-footer__link[href^="https://ai.google/"]
-about.google##.glue-jumplinks__link[href="#try-ai-tools"]
-about.google###ai-technology
-about.google###try-ai-tools
-about.google##.product-filter__wrapper:has(> [href^="https://gemini.google.com/"])
 ads.google.com##.app-bar-icon:has(> .icon-ads-guide)
 analytics.google.com##gmp-chat-entry-point
 analytics.google.com##gmp-suggestion-dropdown > div:has(#ask-chatbotundefined)
 analytics.google.com##ga-toolbar-icon-button-component.ga-intelligence-button
 artsandculture.google.com##.toZRUd.BK2CBb:has([href^="/experiment/2gFc5DkygEURfw"])
 artsandculture.google.com##.toZRUd.BK2CBb:has([href^="/experiment/ZgG5_uTbBgTpIQ"])
-blog.google##.uni-main-menu__item:has(.uni-main-menu__submenu-item[aria-labelledby="uni-main-menu__submenu-item-label-innovation-ai-1"])
-blog.google##section:has(> [aria-label="Gemini 3.1 Pro"])
-blog.google##section[data-analytics-module*="\"section_header\": \"AI Impact Summit 2026\""]
-blog.google##uni-search-ai-summary
 blog.google##[data-component="uni-ai-generated-summary"]
 blog.google##.audio-player-tts__container:has(.audio-player-tts__disclaimer--icon)
 chat.google.com##.rHn5Xc.e5IPTd
@@ -526,7 +530,6 @@ console.cloud.google.com###pcc-duet-chat-container
 console.cloud.google.com##.pcc-zero-state-products > .ng-star-inserted:has(search-gemini-prompt-list)
 developer.chrome.com##tab:has(> [track-name="ai assistance"])
 developer.chrome.com##tab:has(> [track-name="for agents"])
-developer.chrome.com##.devsite-landing-row:has(#span-idaidebug-with-aispan)
 developers.google.com##.devsite-concierge-ai-panel--menu-item
 developers.google.com##.devsite-banner-announcement:has([href="/analytics/devguides/MCP"])
 developers.google.com##devsite-key-takeaways-panel
@@ -555,6 +558,7 @@ docs.google.com##.building-blocks-sidekick-entrypoint-button
 docs.google.com#$#.building-blocks-sidekick-scroll-top { top: 58px !important }
 docs.google.com##.building-blocks-promo-container
 docs.google.com###feedback-sentiment-plus-classification-building-block, #expense-classification-building-block, #ad-generation-building-block, #email-generation-building-block, #call-summary-building-block
+docs.google.com###content-library-rail-slide-generation-element
 docs.google.com##.appsSketchyPluginsFloatingToolbarFloatingToolbarComponentGenerativeAiButton
 docs.google.com##.goog-menuitem:has([aria-label^="Help me visualize"])
 docs.google.com##.goog-menuitem:has([aria-label^="Help me visualize"]) + .goog-menuseparator
@@ -577,6 +581,7 @@ docs.google.com##[jsname="Vjwl5e"]:has(#getting-started-dialog-navigation-view)
 drive.google.com###WWNEkf
 drive.google.com##.p5rLxe.HBDJjb
 drive.google.com#$?#[role="menuitem"]:has(img[src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x16.png"]) { remove: true; }
+drive.google.com##.j6o35e:has([aria-label="You now have promotional access to audio overviews in Drive"])
 drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y)
 drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y) + .h-Yo[role="separator"]
 drive.google.com##.iQnZTe.SMHH7
@@ -585,6 +590,14 @@ drive.google.com##.oaTPh
 drive.google.com##.h-v:has([src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x32.png"])
 drive.google.com##.De8rPe
 drive.google.com###viewer-sidekick-button
+drive.google.com##.TLiyPe
+drive.google.com#?#[role="menuitem"]:contains(Ask Gemini)
+drive.google.com#?#[role="menuitem"]:contains(Ask Gemini) + [role="separator"]
+drive.google.com#?#[role="menuitem"]:contains(Create an audio overview)
+drive.google.com#?#[role="menu"] > [role="presentation"]:contains(Suggestion controls):contains(Enable PDF summary cards)
+drive.google.com#?#[role="menu"] > [role="presentation"]:contains(Suggestion controls):contains(Enable PDF summary cards) + [role="separator"]
+drive.google.com##.DbMyfd.LOB30e:has([aria-label="Create an audio overview"])
+drive.google.com##.equNN
 www.google.com##.yVTUN:has(svg.fdpJhe)
 www.google.com##.kfgtbc:has([class="lHmueb"])
 www.google.com##[role="dialog"][aria-label="Ask anything about anywhere"]
@@ -594,6 +607,7 @@ www.google.com##[jsaction="navigationrail.askMaps"]
 meet.google.com#?#div[jsshadow][jscontroller="dGzwdb"]:contains(Express yourself with an AI-generated background)
 one.google.com##.aTVMOe.RLyrIe.KGSMie
 www.google.*##.plR5qb
+www.google.*#%#//scriptlet('remove-attr', 'href', 'a[href*="&udm=50"]:has(#hplogo)')
 www.google.*#%#//scriptlet('remove-attr', 'href', '.k1zIA.kKvsb > a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
@@ -619,9 +633,12 @@ www.google.*##[jsname="YrZdPb"][data-evn]
 www.google.*##.cUnQKe:has([jsname="YrZdPb"][data-evn]):not(:has([jsname="YrZdPb"]:not([data-evn])))
 www.google.*##.ULSxyf:has(> .MjjYud > .A6K0A > .cUnQKe [jsname="YrZdPb"][data-evn]):not(:has([jsname="YrZdPb"]:not([data-evn])))
 www.google.*##[role="presentation"][data-md="50"]:has(.eaNXV[style*="animation-delay"])
+www.google.*##[data-id="SALES_ASSISTANT_BRAND_PROFILE_ENTRY_POINT"]
+www.google.*##[data-id="PRODUCT_SHELF_SALES_ASSISTANT_ENTRY_CONTAINER"]
 www.google.*##.iVzeVc:has([data-attrid="VisualDigestGeneratedDescription"])
 www.google.*##[data-attrid="VisualDigestGeneratedDescription"]
 www.google.*##[data-ly="/desktop_aio_layout/GG/large_image"]:has([data-attrid="VisualDigestGeneratedDescription"])
+www.google.*##[jsname="s70iq"]:has([src="https://www.gstatic.com/delight/common/buttons/search_spark.png"])
 www.google.*##[jsname="lHCI7d"]
 www.google.*##[jsname="NoEzVd"]:has([jsname="lHCI7d"])
 www.google.*##[data-crust-trigger] > div:has(.k1U36b.OMMx3d)
@@ -640,6 +657,7 @@ workspace.google.com##section[data-module="TemplateLocalizedModuleContainer"]:ha
 workspace.google.com##.ORSkHc:has([data-appset-type="49"])
 ||ai-search-dot-gsuite-staging.appspot.com/api/answer$xmlhttprequest,domain=workspace.google.com
 workspace.google.com##.summary
+hwbusters.com##.hwb-ai-root
 www.healio.com###healio-ai-banner
 www.healio.com#$#body { padding-top: 0px !important }
 www.healio.com##.ai-link
@@ -649,6 +667,7 @@ www.homedepot.com###magic-apron-loader
 www.homedepot.com###product-section-magic-apron-qa-bot
 www.homedepot.com###beyond_bought_together
 www.homedepot.com###magic-apron-review-summary
+www.hourglasscosmetics.com##.yotpo-paragraph-summary-container
 virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Chat with HP's SupportGPT for AI Answers"]
 virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Get an AI Answer"]
 www.imb.com###ucx-symphony-webchat-host
@@ -764,10 +783,11 @@ www.macys.com##.google-prompts
 www.macys.com##.ask-something-else
 www.macys.com##.generated-summary-main-container
 mailchimp.com##.genAIAssistChatbotModule
+||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
+widget.indexfox.ai#?#.no-results > p:contains(You can hit Enter to ask AI a given question)
 widget.indexfox.ai##.ask-ai-button
 widget.indexfox.ai##.ask-response
-||api.indexfox.ai/api/6383989965980236728/ask$xmlhttprequest,domain=widget.indexfox.ai
-widget.indexfox.ai#?#.no-results > .svelte-1d6gie5:contains(" to ask AI a given question")
+||api.indexfox.ai/api/6383989965980236728/summary$xmlhttprequest,domain=widget.indexfox.ai
 mathrubhumi.com##.summary-wrapper
 emedicine.medscape.com##.ai-mode-button
 emedicine.medscape.com#$#.header-row-bottom #search-input { width: 85% !important }
@@ -793,15 +813,9 @@ blogs.windows.com,microsoft.com##li:has(> [href$="/education/ai-in-education"])
 microsoft.com##li:has(> [href$="/windows/ai-features?icid=DSM_Footer_WhatsNew_AIinWindows"])
 www.microsoft.com,www.xbox.com##.copilot-container
 www.microsoft.com,cloud.microsoft###headerUniversalHeader > #epb:has(> .c-uhfh-alert > div > .c-paragraph > img[alt="Copilot logo"])
-www.microsoft.com##reimagine-carousel:has(reimagine-hero-featured-slider-item:is([data-oc="ocf19c"], [data-oc="ocaeae"]))
 www.microsoft.com##store-heading-block[data-en-paragraph*="AI-powered suggestions"]
 www.microsoft.com##.chatonpage
 www.microsoft.com##.msstore-chatonpage
-www.microsoft.com##reimagine-layout-column:has(reimagine-button[title="Learn more about Microsoft 365 Copilot"])
-www.microsoft.com##reimagine-layout-column:has(reimagine-button[title="Explore AI solutions"])
-www.microsoft.com##.col:has(> [data-bi-assetid^="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-365-Copilot-COMMR-0625"])
-www.microsoft.com##.col:has(> [data-bi-assetid^="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom"])
-www.microsoft.com##.featured:has(store-heading-block[data-en-title="Get to know AI and Copilot"])
 www.microsoft.com##.common-nav__menu-item:has([data-bi-id="Link-Navigate-Navbar-Copilot"])
 www.microsoft.com##[data-bi-id="Button-Cta-SplitScreen-LearnWithCopilot"]
 azure.microsoft.com,www.microsoft.com##.uca-assistant-drawer-button
@@ -855,7 +869,8 @@ purview.microsoft.com###scc_oneShell-purview-copilot-button_container
 sharepoint.com#?#[data-automation-id="designIdeas"]:upward(1)
 support.microsoft.com#%#//scriptlet('ubo-json-prune', '$.ad[?@.overrideContentSelector=="#c-uhf-nav-cta"][?@.campaignId=="cmmd71pygu7"]')
 support.microsoft.com###buyInstallButton[href^="https://m365.cloud.microsoft/chat"]
-support.microsoft.com##.ocpSectionLayout:has(> #copilot)
+support.microsoft.com###start-your-copilot-journey-here
+support.microsoft.com###start-your-copilot-journey-here + .homePage-featureGrid
 support.microsoft.com###copilotBanner
 support.microsoft.com###copilotRailBanner
 teams.cloud.microsoft,teams.microsoft.com###b5abf2ae-c16b-4310-8f8a-d3bcdb52f162
@@ -871,6 +886,9 @@ docs.min.io##ucs-search-toolbar
 ###headlessui-portal-root [id^="headlessui-combobox-options"] > .text-sm ~ [role="option"]
 ##.z-10.select-none:has(> #ask-ai-code-block-button)
 ##.chat-assistant-floating-input
+mixam.com##[data-controller="header--mixie"]
+mixam.com##[data-action="click->ai--mixie-banner#openHomepagePanel"]
+mixam.com##[data-type="mixie-header-controls"]
 www.mixscan.me##div.fixed:has(h2.font-pixel)
 mockaroo.com##header [href="/databases"]
 mockaroo.com##.jss239[href="/rest/links/fabricate"]
@@ -883,6 +901,8 @@ www.mojeek.com##.llm-btn
 www.msn.com##fluent-button#codex-bing-button
 www.msn.com##.me-stripe-tile-content:has(> .me-stripe-tile-button[aria-label="Microsoft 365"])
 ||www.chatbase.co/embed.min.js$script,domain=www.myonlinetraininghub.com
+news.mydrivers.com###AiSummaryLink
+||passport.mydrivers.com//V2/pc/AISummaryHandler.ashx$xmlhttprequest,domain=news.mydrivers.com
 www.nate.com##.link-ngpt
 www.nate.com##.chat1
 ||azurefd.net/cdns/copilot_v3.min.js$script,domain=nus.edu.sg
@@ -909,6 +929,10 @@ onecompiler.com##button:has(> .lucide-sparkles)
 op.gg##.button-bold.rounded.size-\[40px\]:has(> .transition-all > .bg-animated-radial.duration-300)
 op.gg##.flex-col.items-center.-mt-\[60px\] > .w-full.pb-2.md\:hidden.md\:pb-0
 openjsf.org##.mt-2.flex.items-center.gap-2.text-gray-500.dark\:text-gray-400:has([href^="https://claude.ai/"])
+www.opera.com##li:has(> .hf__link[href="/features/opera-ai"])
+www.opera.com##li:has(> .hf__link[href="/features/browser-ai"])
+www.opera.com##li:has(> .hf__link[href="https://www.devicetest.ai/"])
+www.opera.com##li:has(> .hf__link[href="/ai/articles"])
 outlook.office.com##[data-app-section="CopilotDabRibbon"]
 outlook.office.com##.___77lcry0.f10pi13n[aria-label="Copilot"]
 outlook.office.com##.fai-CopilotProvider
@@ -939,6 +963,7 @@ www.plugshare.com###reviews-summary
 www.plugshare.com###checkins-summary
 pockit.tools##[href="/ai/"]
 docs.posit.co##.nav-item:has(#custom-ask-ai-button)
+www.posta.com.mx###qp-ia-wrapper
 ||app.qualified.com/w/1/*/messenger$subdocument,domain=www.postman.com
 www.priceline.com###penny-icon-module
 www.priceline.com##[data-testid="penny-fab-button"]
@@ -951,6 +976,8 @@ proton.me##main > .md\:dtc-pt-8.xl\:dtc-pt-12.dtc-pt-4.md\:dtc-pb-20.xl\:dtc-pb-
 proton.me##li:has(> [href="/lumo"])
 account.proton.me##.lumo-troubleshoot-launcher
 account.proton.me##.explore-apps-list-item:has(> [data-testid="explore-lumo"])
+pydantic.dev##.library-nav > [href="/docs/ai/"]
+pydantic.dev##.library-nav > [href="/docs/logfire/"]
 pyrfecter.com##nav li:has(> [href="/improve-ai-python-code/"])
 simplifi.quicken.com###topbar-nav-ai-button
 simplifi.quicken.com###ai-chat-launcher-container
@@ -990,28 +1017,29 @@ render.com##.px-15[href^="https://chat.openai.com/?hints=search&prompt=Read%20fr
 render.com##.px-15[href^="https://claude.ai/new?q=Read%20from"]
 replug.io##.mantine-1fndqk8
 risingwave.com##div.bg-\[\#3a88fe\]:has(+ header):has(a[href*="interactive-ai"])
+rock30games.com##clever-search-toggler
 rows.com##section._2XOGP._3hVT9:has([href="https://superhuman.com/products/coda"])
 help.salesforce.com##.contextnav__nav-items-list--cl1 > .contextnav__nav-item--cl1:first-child:has(> hgf-button)
 help.salesforce.com##[data-testid="agent-root"]
 ||bot-server.s3.amazonaws.com^$subdocument,script,domain=sbtnews.sbt.com.br
-www.sciencedirect.com###bannerCarouselContent > .carousel-slides:has(:last-child:nth-child(2)) > #tabpanel-0:has(> .leapSpace-banner)
-www.sciencedirect.com#$##bannerCarouselContent > .carousel-slides:has(:last-child:nth-child(2)) > #tabpanel-0:has(> .leapSpace-banner) + #tabpanel-1 { display: block !important; }
-www.sciencedirect.com###bannerCarouselContent .carousel-indicators:has(:last-child:nth-child(2)) > li:nth-child(1):has(>[aria-label="LeapSpace slide"])
+www.sciencedirect.com##[aria-label="ai-links"]
 www.sciencedirect.com###reading-assistant-container
 www.sciencedirect.com###reading-assistant-main-body-section
 ||www.sciencedirect.com/article/related/suggestedQuestions/pii/$xmlhttprequest,domain=www.sciencedirect.com
 www.flyscoot.com##.ai-trip-section
 www.flyscoot.com##.vertical-divider:has(+ .currency-section)
 www.scribd.com##[data-e2e="doc-actions-ask-ai-button-sticky_metadata_column"]
-www.scribd.com#?#[data-testid="mobile-actions-bottom-bar"] button:contains("Ask AI")
+www.scribd.com#?#[data-testid="mobile-actions-bottom-bar"] button:contains(Ask AI)
 www.semrush.com###vwo-ai-visibility-cta
 develop.sentry.dev,docs.sentry.io##.search_search-bar__XzLtg > .kapa-ai-class
 develop.sentry.dev,docs.sentry.io##.search_sgs-ai__2z63Q
 sentry.zendesk.com##.new-search-component-span
 sentry.zendesk.com##.ask-ai
 www.sephora.com##[data-comp~="AIBeautyChatDrop"]
+www.sephora.com##[data-at="ai_beauty_btn"]
 www.sephora.com##[comps="Divider"]:has(+ .css-1drm495[data-comp~="ProductPage"])
 www.sephora.com##.css-1drm495[data-comp~="ProductPage"]
+www.sephora.com##[data-at="prs_summary_module"]
 shopthemint.com##.fb_iframe_widget
 shopthemint.com###ai-chat-plugin-banner-container
 www.shopify.com##div.\[grid-area\:aside\] > ul > li:has(> a[href="/sidekick"])
@@ -1142,6 +1170,8 @@ uhomes.com##.list-chat-icon-container
 uhomes.com##.ai-search-toggle.mode-search > .toggle-pill
 uhomes.com##.ai-chat
 www.ulta.com##chat-messenger[service*="commerce-ai"]
+www.ulta.com##.DynamicPrompts
+www.united.com##[class*="app-containers-NewWebsiteSearch-components-CoveoGenAI-styles__genAIContainer--"]
 ||lagoon-cloud.uhc.com/app/ce-genai/env/prod$xmlhttprequest,domain=member.uhc.com
 member.uhc.com##[data-test-id="global-nav-ask-ai"]
 www.abdn.ac.uk##.gecko-chat-widget-app
@@ -1151,6 +1181,7 @@ education.illinois.edu#$#ilw-back-to-top { --ilw-back-to-top--right: 40px !impor
 ups.com###digital-assistant-launcher
 ups.com###WACContainer
 ||urbandictionary.ai/widget$subdocument,domain=www.urbandictionary.com
+www.urbandictionary.com##.ud-ask
 www.usnews.com##.MuiBox-root:has(> [aria-label="Ask U.S. News AI"])
 androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,fextralife.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,movieweb.com,pocket-lint.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com##.sensa-features
 androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,fextralife.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,movieweb.com,pocket-lint.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com##.action-bar-ai-feature
@@ -1165,12 +1196,14 @@ vimeo.com##section.container-base[data-bp-cta-location-id="9c3e2300d913447a8224f
 vimeo.com##.text-footer-sub-content[href="/features/vimeo-ai"]
 vimeo.com##.text-footer-sub-content[href="/features/ai-translation"]
 www.virustotal.com##vt-crowdsourced-ai-gemini
+code.visualstudio.com##.updates-banner:has([href^="https://docs.github.com/en/copilot/"])
 code.visualstudio.com##.sidebar-try-this:has(> #sidebar-action-get-started-with-ai-0)
 developer.vonage.com##.ai-icon-group
 developer.vonage.com##[data-testid="copy-llm-btn"]
 www.walmart.com##.unified-chat-component
 www.walmart.com###top-highlights-module
 www.walmart.com##[data-testid="bulleted-summary"]
+business.walmart.com##.sparky-fab-wrapper
 www.washingtonpost.com##[data-qa="product-nav-links-ul"] [href="https://www.washingtonpost.com/ask-the-post-ai/?itid=hp_top_nav_ask the post ai"]
 www.washingtonpost.com##[id$="-trigger-ask-the-post-ai"]
 www.washingtonpost.com##[data-testid="ai-overview-btn"]
@@ -1186,6 +1219,9 @@ www.webmd.com##.ai-ovw-wrapper
 ||www.webmd.com/kapi/secure/get_search_results_ai_overview$xmlhttprequest,domain=www.webmd.com
 webshapedesign.co.uk##.wsai-toggle-wrapper
 ||api.prod.whoop.com/ai-conversation-service/$xmlhttprequest,domain=support.whoop.com
+||config.gorgias.chat/bundle-loader/shopify/wigscom.myshopify.com$script,domain=www.wigs.com
+www.wigs.com###chat-button
+www.wigs.com##.oke-w-reviewsSummaryModule
 ||onlinelibrary.wiley.com/pb/widgets/article-assistant/initiate$xmlhttprequest,domain=onlinelibrary.wiley.com
 manage.wix.com##button.wds_1_256_0_ButtonCore__root.Yfr0Ty[data-hook="get-started-primary"]
 editor.wix.com##.SlXp2q
@@ -1267,6 +1303,7 @@ ya.ru,yandex.com,yandex.ru##[class*="__futuris-snippet"]
 ya.ru,yandex.com,yandex.ru##[data-fast-name="neuro_answer"]
 ya.ru,yandex.com,yandex.ru##[class$="__card "]:has(> .Root-FuturisSearchOuter)
 ya.ru,yandex.com,yandex.ru##.Root-FuturisSearchOuter
+www.yelp.com##li:has([href="https://business.yelp.com/data/products/fusion-ai/?utm_source=footer&utm_medium=www"])
 yep.com##.css-1k0ztkl-button
 yep.com##.css-2p650t-sidebar
 ||api.yep.com/summary_v3$xmlhttprequest,~third-party
@@ -1395,6 +1432,8 @@ watch.freehentaistream.com##[title="Watch AI Porn Videos!"]
 freeuseporn.com##.categories [href="https://a.logivanta42.com/2adfb4f8-4cfc-428e-84d3-c1149fc2126f?creative=ai_cum_sluts&spot=txt_button&adg=0"]
 freeuseporn.com##.friends [href="https://www.nsfwlover.com/"]
 gamcore.com##li:has(> [href="/fuckyou/713"])
+hanime.tv###LandingEventAd
+hanime.tv##.restricted-free-only
 hdporncomics.com###menu-item-231575, #menu-item-201810, #menu-item-212294
 hdporncomics.com##[data-ad-injected="true"]:has(> [href^="https://a.neurogrid7.com/"])
 hdporncomics.com##.type-post:is(.tag-ai-art, .tag-ai-generated)

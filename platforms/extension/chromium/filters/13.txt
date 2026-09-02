@@ -1,9 +1,9 @@
-! Checksum: 8l/KAu/z3eQtXJbEjquwZQ
-! Diff-Path: ../patches/13/13-s-1787497849-3600.patch
+! Checksum: gby6EraMNvYQtqmTFEDOKg
+! Diff-Path: ../patches/13/13-s-1788316810-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.37
-! TimeUpdated: 2026-08-23T15:07:59+00:00
+! Version: 2.0.67.63
+! TimeUpdated: 2026-09-02T02:37:09+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1562,6 +1562,18 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+yemek.com##.affiliate-end-of-detail-banner
+||donanimhaber.com/ads/
+donanimhaber.com##.dh-inline-ad
+donanimhaber.com##.dh-comments-ad
+donanimhaber.com##.dh-embed:has(> div.dh-embed__inner > div.empower-ad)
+tranimeizle.io,tranimeizle.*#$#.videoSource-playlist { display: block !important; }
+tranimeizle.io,tranimeizle.*#$#.videoSource-video { display: block !important; }
+tranimeizle.io,tranimeizle.*#$#.df-ad-ovrly { display: none !important; }
+rotaborsa.com##.sticky-top-ad
+rotaborsa.com#$#body { padding-top: 0 !important; }
+||istanbulticaretgazetesi.com/api/v*/ads/slot/
+mynet.com##.mynet-feed-ad
 ||podbeemedia.com/api/ads/
 ddizi.im##.df-ovrly-lnk-p1
 gezelim.com##.cs-custom-content-header-after
@@ -6043,19 +6055,18 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/pelitcanlitv\d*\.com$/]##.bg-link
 [$domain=/pelitcanlitv\d*\.com$/]##div[class^="ad-"]
 !
-! Frequently changed domains: gizlidepo*.com
-! Source: gizlidepo.com
-! aglint-disable no-invalid-modifiers
-!+ NOT_VALIDATE
-.gif|$domain=/gizlidepo\d*\.com$/
-! aglint-enable no-invalid-modifiers
-[$domain=/gizlidepo\d*\.com$/]##a[rel="nofollow noopener noreferrer sponsored"]
-[$domain=/gizlidepo\d*\.com$/]###tg-cta-container
-[$domain=/gizlidepo\d*\.com$/]##.banner-grid-wrap
-[$domain=/gizlidepo\d*\.com$/]###hcExit
-[$domain=/gizlidepo\d*\.com$/]##.pd-adbn
-[$domain=/gizlidepo\d*\.com$/]#$##offerBox { display: none !important; }
-[$domain=/gizlidepo\d*\.com$/]#$##mainVideo { display: block !important; }
+! Frequently changed domains: gunlukmola.com
+! Source: gunlukmola.com
+.gif|$domain=gunlukmola.com
+gunlukmola.com##.onwin-top-wrap
+gunlukmola.com##a[href^="/tk/siteleriniz"]
+gunlukmola.com##a[rel="nofollow noopener noreferrer sponsored"]
+gunlukmola.com###tg-cta-container
+gunlukmola.com##.banner-grid-wrap
+gunlukmola.com###hcExit
+gunlukmola.com##.pd-adbn
+gunlukmola.com#$##offerBox { display: none !important; }
+gunlukmola.com#$##mainVideo { display: block !important; }
 !
 ! Frequently changed domains: lionlinehd*.com
 ! Source: lionlinehd165.com
@@ -6106,12 +6117,6 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/taratv\d+\.shop$/]#%#//scriptlet('trusted-set-cookie', 'pop', '7')
 [$domain=/taratv\d+\.shop$/]##.pageskin-click
 [$domain=/taratv\d+\.shop$/]##.nk-nav-table > ul
-!
-! Frequently changed domains: gmatv*.live
-! Source: gmatv51.live
-||gmatv*.live/view/theme/ultimate/img/*.gif
-||gmatv*.live/view/theme/ultimate/assets/js/rc.js
-[$domain=/gmatv\d+\.live$/]##div[class^="reklam-"]
 !
 ! Frequently changed domains: porno*.shop
 ! Source: porno28.shop
@@ -6377,10 +6382,10 @@ x.palv2.cfd###adPlayerBanner
 !
 ! Frequently changed domains: patronlive*.cfd
 ! Source: patronspor.is
-patrongol34.cfd##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
-patrongol34.cfd##.background-link
-patrongol34.cfd##.top-banner-header
-||blogger.googleusercontent.com/img/$domain=patrongol34.cfd
+patrongol35.cfd##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
+patrongol35.cfd##.background-link
+patrongol35.cfd##.top-banner-header
+||blogger.googleusercontent.com/img/$domain=patrongol35.cfd
 !
 ! Frequently changed domains: patronlive*.cfd; patronfutbol*.cfd
 ! Source: patronspor.is
@@ -6454,8 +6459,8 @@ turkkizlar.com##div[class^="vid-promo"]
 [$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
 ||cdn.jsdelivr.net/*.mp4$domain=/patronmac\d+\.cfd$/
 ! aglint-enable no-invalid-modifiers
-||blogger.googleusercontent.com/img/$domain=patronmac100.cfd
-||cdn.jsdelivr.net/*.mp4$domain=patronmac100.cfd
+||blogger.googleusercontent.com/img/$domain=patronmac101.cfd
+||cdn.jsdelivr.net/*.mp4$domain=patronmac101.cfd
 !
 ! Frequently changed domains: turkifsaclub*.sbs
 ! Source: turkifsaclub.org
@@ -6776,7 +6781,7 @@ justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,
 tvjustin.*,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##a[target="_blank"][rel*="noopener"] > img
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 ! CASE 2
-justintvizle730.top###video_reklam
+justintvizle732.top###video_reklam
 ||justintvizle*.top/dimg/*.gif
 ||justintvizle*.top/cdn/r/
 ||selcuksports*.top/dimg/*.gif
@@ -6806,9 +6811,9 @@ justintvizle730.top###video_reklam
 taraftarium3-24.online##a[href="https://wa.me/447347044673"]
 taraftarium3-24.online,taraftariumhd61.live,taraftarium2spor.top,selcuksports.cv,taraftariumcanli2.site,justintvizle1.my,taraftarium24live.plus,taraftariumtr.cv,netspor54.buzz##.pageskin-container
 taraftarium3-24.online,taraftariumhd61.live,taraftarium2spor.top,selcuksports.cv,taraftariumcanli2.site,justintvizle1.my,taraftarium24live.plus,taraftariumtr.cv,netspor54.buzz##.player-ad-banner
-taraftarium24bjk12.com###ad-pageskin
-taraftarium24bjk12.com##.listAd
-taraftarium24bjk12.com,justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+taraftarium24bjk14.com###ad-pageskin
+taraftarium24bjk14.com##.listAd
+taraftarium24bjk14.com,justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
 ||taraftarium24pro*.site/*.gif
 [$domain=/taraftarium24pro\d+\.site$/]##.below-player-banner
 [$domain=/taraftarium24pro\d+\.site$/]##.t24-sq-overlay
@@ -6870,7 +6875,7 @@ hdfilmizleamk.net,birasyadizi.com,seyredeger.com#%#//scriptlet('abort-on-propert
 ! Frequently changed domains: royaltv*.com
 ||royaltv*.com/reklam*.gif
 [$domain=/royaltv\d+\.com/]##a[href^="https://t2ly.io/"]
-royaltv34.com##a[href^="https://t2ly.io/"]
+royaltv36.com##a[href^="https://t2ly.io/"]
 !
 ! Frequently changed domains: diziyou*.com
 ! Source: https://t.me/diziyoucom
@@ -7306,6 +7311,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239907
+@@||imasdk.googleapis.com/pal/sdkloader/pal.js$domain=beyaztv.com.tr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233906
 aspor.com.tr#@#.amp-ad-container
 aspor.com.tr#@#[class^="amp-ad-"]

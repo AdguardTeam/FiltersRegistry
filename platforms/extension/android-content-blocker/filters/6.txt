@@ -1,8 +1,8 @@
-! Checksum: 0QjN7sNrfvWueb6K/PRZVw
+! Checksum: MJnD7tlPdtPlVqrv7+tnCg
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.9
-! TimeUpdated: 2026-08-24T07:27:26+00:00
+! Version: 2.0.53.20
+! TimeUpdated: 2026-09-01T15:14:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
 ||ads.goldbach-germany.de^
+||remp-beam.golem.de^
 ||remp-campaign.golem.de^
 ||ad.dl.volksstimme.de^
 ||addefend-platform.com^
@@ -841,9 +842,14 @@ urbia.de,essen-und-trinken.de#@#.playerAd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238226
 stadt-bremerhaven.de###cb-adblock-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238166
+@@||ligainsider.de^$generichide
 ||ligainsider.de/public/*/js/li-probe-base.js
 ||ligainsider.de/li-probe.js
 ||ligainsider.de/public/*/js/li-wall.js
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js^$domain=ligainsider.de
+@@||securepubads.g.doubleclick.net/tag/js/gpt.js^$domain=ligainsider.de
+@@||bat.bing.com/bat.js$domain=ligainsider.de
+@@||cdn.taboola.com/libtrc/network/loader.js^$domain=ligainsider.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236444
 @@||profiseller.de/shop-banner/dsl/468x60.html$domain=adhs-zentrum.de
 @@||imagesrv.adition.com/banners/3202/syncbanners/DSL_Banner/dsl_an_468x60.gif$domain=adhs-zentrum.de
@@ -1658,6 +1664,7 @@ teleboy.ch#@#.adWrapper
 ! Bad: .org/ads/$domain=example.org (for instance, should be in speficic.txt)
 !
 !
+.de/VC/GetCommerceBannerViewComponent
 .de/bilder/*.jpg|$script,~third-party
 .at/bilder/*.jpg|$script,~third-party
 !---------------------------------------------------------------------------!
@@ -1800,6 +1807,11 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+fr.de##.id-StoryElement-embed
+fr.de##.id-Recommendation
+/^https:\/\/www\.igorslab\.de\/[0-9a-z]+\/[\/0-9A-Z_a-z-]+$/$image,~third-party,match-case
+igorslab.de##.herald-sticky
+igorslab.de##.herald-sidebar-right > .widget:not([id*="widget"])
 imagenetz.de##.ig-adbox
 hna.de##.wv_story_el_showHeroes
 ||meetingpoint-jl.de/uploads/*/ads/
@@ -3285,6 +3297,7 @@ bild.de###superbannerWrapper
 bild.de,rollingstone.de##div[id^="mrec"]
 spiele101.de##.MuiSkeleton-rect[style="width:300px;height:250px;"]
 mein-eigenheim.de##.htmlbanner
+n-tv.de##div[class^="Ada_wrapper_"][class*="Ada_superbanner-"]
 n-tv.de,wetter.com,winfuture.de,formel1.de##.OUTBRAIN
 praxistipps.focus.de##.FC__Container.min-height-250px-mu
 ratgeber.bunte.de,praxistipps.focus.de,chip.de##.Article__Ad
@@ -5436,6 +5449,9 @@ golem.de##.go-ad-slot
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239099
+!+ PLATFORM(ios, ext_android_cb)
+@@||th-rosenheim.de/splan/mobile/js/fingerprint.js$domain=th-rosenheim.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237609
 ! caused by external filter list BPC-clone
 ||spiegel.de/public/shared/generated/js/commons.*.js$script,~third-party,badfilter
@@ -6724,6 +6740,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||media*.s24.com^$third-party
 ||media.alphaload.com^
 ||medipreis.de/partner/$third-party
+||meinecloud.io/cms-standort-brb/ads/
 ||middleware.marktjagd.de^$third-party
 ||modellplan.de/banner/$third-party
 ||modules.wikifolio.com/v2/de/autocontent/stock/*?partner=
@@ -6731,7 +6748,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||monsterdealz.de/script.js
 ||monstersgame.net^*&vid=$third-party
 ||montessori-shop.de/banner/$third-party
-||mothor.de/webbanner/
+||mothor.de^*/webbanner/
 ||musica.at/banner/
 ||mydirtyhobby.de/track/$third-party
 ||nestoria.de^*?partner=$script,third-party
@@ -6838,6 +6855,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||wazazu.com/pimage/sdc/$third-party
 ||wazazu.com/pimage/visit-x/$third-party
 ||web-ads.10sq.net^
+||webbanner.mothor.de^$third-party
 ||weekli.de/widget-loader?$third-party
 ||weekli.pub/widget-loader?
 ||weekli.systems/www/widgets/$third-party
@@ -7568,9 +7586,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||media.outnow.ch/Site/Waerbig/
 ||mediaforum.ch/banner/
 ||mediaforum.ch/banner_
-||meetingpoint-brandenburg.de/bilder/*/kunden/
-||meetingpoint-brandenburg.de/bilder/*/werbung/
-||meetingpoint-brandenburg.de/upload/ads_
 ||mein-klagenfurt.at/fileadmin/banner/
 ||meinyouporn.com/img/linklist2/
 ||melodieundrhythmus.com^*/Granma-Abo.png
@@ -7716,6 +7731,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||picdumps.com/ddeal
 ||pics.computerbase.de/forum-teaser/
 ||pilotenboard.de/ad/
+||pipe.orf.at/admapper/
 ||plus.tourispo.com^
 ||pokerfirma.com^*-banner.
 ||pokerfirma.com^*/banner_
@@ -8801,8 +8817,6 @@ rezeptwelt.de###mso-dplusc-banner_1
 rezeptwelt.de###mso-dplusc-banner_2
 rezeptwelt.de###mso-dplusc-banner_5
 kleinanzeigen.de###my_ads-top-banner
-meetingpoint-brandenburg.de###myspacerinner
-meetingpoint-brandenburg.de###myspacerright
 wissens-quiz.de###naMediaAd_MR_WRAPPER
 fupa.net###nab_container
 utopia.de###native_ads2
@@ -9099,7 +9113,6 @@ belgieninfo.net###widget_sp_image-14
 travelguide-en.org###wn-insurance-quote-editor
 ariva.de###woAktieiF
 wetteronline.de###woFooterBillboard
-meetingpoint-brandenburg.de###wobra-suche
 it-boltwise.de###wonderwall_magazine_posts_list_widget-21
 it-boltwise.de###wonderwall_magazine_posts_list_widget-23
 digitalkamera.de###workshopWidget
@@ -9185,11 +9198,13 @@ apollo-news.net##.ad-home-feed-box
 apollo-news.net##.ad-in-article-box
 hallo-minden.de##.ad-info
 augsburger-allgemeine.de##.ad-list_small-native-container
-diegrenzgaenger.lu##.ad-listing
+chip.de,diegrenzgaenger.lu##.ad-listing
+meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##.ad-live
 spiesser.de##.ad-mark
 heise.de##.ad-mobile-group-1
 heise.de##.ad-mobile-group-3
 rheiderland.de##.ad-slider-image
+chip.de##.ad-slot
 abendblatt.de##.ad-slot-wrapper
 der-bank-blog.de##.ad-text
 finanztreff.de##.ad02p
@@ -9233,7 +9248,6 @@ glarus24.ch,radiocentral.ch,sunshine.ch##.ads-container
 ich-tanke.de##.ads-sticky-container
 6profis.de##.ads6p
 chefkoch.de##.ads__initialized
-meetingpoint-brandenburg.de##.ads_mobile
 eatsmarter.de,quoka.de##.adsense
 stereo.de##.adserver
 libble.de##.adserver-container1
@@ -9252,6 +9266,7 @@ sol.de##.advert__content
 sol.de##.advert__footer
 sol.de##.advert__native
 4investors.de,abendblatt.de,apotheken-umschau.de,az.com.na,dpd.de,extremnews.com,finanzen.ch,heise.de,iplayapps.de,tarnkappe.info,wetteronline.de##.advertisement
+sehnde-news.de##.advertisement-area
 kochrezepte.at##.advertisement_widget
 oefb.at,szbz.de,zeit.de##.advertising
 kauf6.com##.advertisments
@@ -9716,6 +9731,7 @@ arboe.at##.frame-type-mask_toolboxcontentad1
 it-boltwise.de##.freestock
 freenet.de##.frn_contAmazon
 woz.ch##.frontpage-card-banner
+chip.de##.ft-alts
 puls24.at##.fullbanner-wrapper
 raidrush.net##.funbox
 99ers.at##.fusion-builder-row-14
@@ -9806,6 +9822,7 @@ erotikinserate.ch##.inner
 blitzrechner.de##.inserter-5
 blitzrechner.de##.inserter[data-ai]
 xdate.ch##.interstitial
+meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##.intext-ad
 sueddeutsche.de##.iqad
 saechsische.de##.iqadtile-wrapper
 faz.net,spektrum.de,sueddeutsche.de,tagesspiegel.de,zeit.de##.iqdcontainer
@@ -10011,6 +10028,7 @@ oz-online.de##.ox
 happysex.ch##.p-banner-landscape-container
 6navi.ch##.p-banners-withborder
 emtb-news.de##.p-header
+meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##.p-notify
 augsburger-allgemeine.de##.p-swatch_top-nice--blank.p-blocklink
 kultur.bz.it##.page-banner
 finanzen.ch##.page-layout__ad-header-bottom
@@ -10085,6 +10103,7 @@ songtexte.com##.prmtnContentMin
 songtexte.com##.prmtnKeepHeight
 ariva.de##.prodo-shadow
 otto.de##.product.spa
+chip.de##.product__top-aside
 maclife.de##.productbox
 zentrum-der-gesundheit.de##.products-inarticle-slider--parent
 aktionspreis.de##.produkt_uebersicht > div > br.clear
@@ -10243,9 +10262,6 @@ finanzen100.de##.snippet--cta
 finanzen100.de##.snippet-container
 ladies.de##.sol-content
 4fansites.de##.spalten_33_werbung
-meetingpoint-brandenburg.de##.span > .white_bg[style="width: 100%; padding-right: 5px;"]
-meetingpoint-brandenburg.de##.span.white_bg[style="padding: 7px 2px; margin-left: 5px;"]
-meetingpoint-brandenburg.de##.span[style="width: 160px; margin-left: 5px;"]
 9monate.de##.spark-container-desktop
 9monate.de##.spark-container-mobile
 deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-sexfilme.com,hdpornos.net,herzporno.com,nursexfilme.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoschlange.com,pornotom.com,pornotommy.com,pornozebra.com,sexente.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xhamster-sexfilme.com,xnxx-porno.com,xnxx-sexfilme.com##.spc_height_80
@@ -10476,7 +10492,7 @@ usa-info.net##.widget_atkp_widget
 zueri6.ch##.widget_banner
 heimatreport.de##.widget_cfac
 diesachsen.de##.widget_commerce
-amigaland.de,autogazette.de,cyclingmagazine.de,marzahn-hellersdorf.com,radio-aktiv.de,schmunzelseite.de,signal-online.de,solaranlage-ratgeber.de,szene.link,unzensiert.ru,xxx-amateur.eu##.widget_custom_html
+amigaland.de,autogazette.de,cyclingmagazine.de,marzahn-hellersdorf.com,radio-aktiv.de,schmunzelseite.de,sehnde-news.de,signal-online.de,solaranlage-ratgeber.de,szene.link,unzensiert.ru,xxx-amateur.eu##.widget_custom_html
 nibelungen-kurier.de##.widget_dkge_wrapper
 freiluft-blog.de##.widget_links
 alps-magazine.com,hebelschein-spekulant.de,lokalo.de,marzahn-hellersdorf.com,mdz-moskau.eu,skynews.ch,werbestandard.de##.widget_media_image
@@ -11013,6 +11029,7 @@ finanzen.net##img[alt="Passende Produkte von Vontobel"]
 finanzen.net##img[alt="Passende Produkte von der Société Générale"]
 boerse.cx##img[alt="Promo"]
 finanzen.net##img[alt="Vontobel Banner"]
+sehnde-news.de##img[alt="Werben Sie bei Sehnde-News"]
 finanzen.ch##img[alt="vontobel-banner"]
 t-online.de,www-t--online-de.cdn.ampproject.org##img[alt^="Modetrends"]
 hallespektrum.de,kultur-port.de##img[alt^="Werbung"]
