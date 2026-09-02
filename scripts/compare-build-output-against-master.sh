@@ -119,12 +119,12 @@ confirm() {
 # Renders a single status line for one or more "pid:label" pairs until all
 # processes finish. Callers still need to `wait "$pid"` afterwards for exit codes.
 spinner_wait_all() {
-    local frames='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+    local frames=(⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏)
     local i=0
     local all_done=0
     while [ "$all_done" -eq 0 ]; do
-        i=$(( (i + 1) % ${#frames} ))
-        local frame="${frames:$i:1}"
+        i=$(( (i + 1) % ${#frames[@]} ))
+        local frame="${frames[$i]}"
         local line=""
         all_done=1
         for pair in "$@"; do
