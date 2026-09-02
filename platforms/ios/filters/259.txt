@@ -1,13 +1,13 @@
-! Checksum: k9VFK/64XdW2UBS6KnBSPg
-! Diff-Path: ../patches/259/259-s-1787719710-14400.patch
+! Checksum: vQrUtxolHcii4xRAjXzXBQ
+! Diff-Path: ../patches/259/259-s-1788079147-14400.patch
 ! Title: Dandelion Sprout's Anti-Malware List
 ! Description: Blocks more malware than most other major anti-malware lists - domains and URL patterns used in malware redirection chains, IP addresses that are solely used by malware, PUP nags, and a few scammers. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.0.25
-! TimeUpdated: 2026-08-26T04:45:38+00:00
+! Version: 2.0.0.26
+! TimeUpdated: 2026-08-30T08:36:29+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 23August2026v1
+! OriginalVersion: 30August2026v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
@@ -11460,8 +11460,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||netfiixhungary.net^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||95.214.26.78^$all
-! Overly dedicated E-mail spammers
-||wirexapp.africa.com^$all
 ! Google results for «SodaStream site:no cranberry»
 /^(https?|tcp|iquic)://[a-z0-9.-]{1,}\.([a-z]{3,}|[a-z][a-tv-z]|[a-qs-z][a-z])/.*(go\.php|redirect|url=|\?re=).*\.(xn--p1ai|рф|%D1%80%D1%84)\$/$document,domain=~malware_redirection_results.*
 ||adservice.google.*/ddm/clk/$document,domain=~malware_redirection_results.*
@@ -11556,14 +11554,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||77.220.214.153^$all
 ! More search terms than what can be counted with a supercomputer (11/03/2024)
 google.*#?#div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
-! Scam E-mails I've got
-||googleapis.com/nwfotrac^$all
-||googleapis.com/firsttimesolo^$all
-||googleapis.com/trjhrt3j1erh2fghrth^$all
-||googleapis.com/realizingcrasis^$all
-||googleapis.com/deasastercreations^$all
-||googleapis.com/alphafemale^$all
-||googleapis.com/beastlyendeavors^$all
 ! Visibly fake item descriptions and prices
 ! https://walyou•com/gameloft-dungeon-hunter-5-dragon-mania-legends-apple-tv-3029/
 ||empatiya.net^$all
@@ -13584,15 +13574,6 @@ drvhub.net##.driver-item__install
 ! https://github.com/DandelionSprout/adfilt/issues/1275
 ||tgdrive.app^$all
 ||tg-drive-bx4f.onrender.com^$all
-! E-mail spammers
-||austinpoolservices.com^$all
-||desernk.me^$all
-||qed.uk.com^$all
-||resultsfastfind.com^$all
-||resultsfinderonline.com^$all
-/^(.*[/@])?questionprov\d{5,6}\.com(/.*)?$/$all
-!+ NOT_PLATFORM(windows, mac, android, cli)
-||199.168.185.4^$all
 ! ——— A hĳacked link that had previously been on https://sims•fandom•com/wiki/Game_guide:Fog_emitter ———
 ||0network.com^$all
 ||100conversions.com^$all
@@ -14363,7 +14344,8 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 .to/popconsole.php|
 ! Sus(picious) search results for YouTube videos that claim to have craсks for Adоbe products. (https://github.com/DandelionSprout/adfilt/issues/1197)
 google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|d\ownl\oad).*$/i):contains(/^.*(ph\ot\osh\op|dav\inc\i|\il{2}ustrat\or).*$/i):contains(/^.*(fre{2}|(cr|h)ack).*$/i))
-! Various E-mail spams' links
+! ——— Various E-mail spams' links ———
+! Batch A
 ||statautos.com^$all
 /noo/taxx/*$document
 ||solitanh.site^$document
@@ -14377,13 +14359,31 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ||hxzf4er.com^$document
 ||k2krl7zj.com^$document
 ||mcafee.sjv.io^$document
-||ojrq.net^$document
 ||oninebest.com^$document
 ||ormediao.com^$document
 ||paramatise.com^$document
 ||watchterm.com^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||185.176.220.31^$document
+! Batch B
+||wirexapp.africa.com^$all
+! Batch C
+||googleapis.com/nwfotrac^$all
+||googleapis.com/firsttimesolo^$all
+||googleapis.com/trjhrt3j1erh2fghrth^$all
+||googleapis.com/realizingcrasis^$all
+||googleapis.com/deasastercreations^$all
+||googleapis.com/alphafemale^$all
+||googleapis.com/beastlyendeavors^$all
+! Batch D
+||austinpoolservices.com^$all
+||desernk.me^$all
+||qed.uk.com^$all
+||resultsfastfind.com^$all
+||resultsfinderonline.com^$all
+/^(.*[/@])?questionprov\d{5,6}\.com(/.*)?$/$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||199.168.185.4^$all
 ! ——— Entries that are and/or were in "uBlock Filters — Ads" and/or "uBlock Filters — Badware Risks" but which aren't in AdGuard Base or EasyList ———
 ! https://github.com/DandelionSprout/adfilt/pull/395
 ! https://www•huorong•cn/info/1531309921141.html

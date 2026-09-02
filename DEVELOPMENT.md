@@ -88,7 +88,8 @@ yarn generate-cache
 ```
 
 This compiles every filter from its `template.txt` and updates the corresponding
-`filter.txt` inside `filters/`. Platform-specific filters and patches are **not**
+`filter.txt` inside `filters/`. It does not touch optimization stats — use
+`yarn download-stats` for that. Platform-specific filters and patches are **not**
 generated. The resulting `filter.txt` files contain the fully resolved filter
 content (all `@include` and `!#include` directives expanded) and can be used to
 build filters from cache with `yarn build:local`.
@@ -106,6 +107,12 @@ Under the hood this copies `filters/` to `temp/filters_cached/`, replaces every
 `template.txt` with a single `@include "./filter.txt"` directive, and compiles
 from that copy. The original `filters/` directory is never modified.
 
+Optimization stats are picked up automatically: if `temp/optimization/stats`
+(from a prior `yarn download-stats` run) exists, it's used as-is; otherwise
+stats are fetched from the remote server during the build.
+If a filter listed in the local cache is missing its `stats.json`, the build
+fails with a message pointing at `yarn download-stats`.
+
 The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` flags can be
 combined:
 
@@ -113,35 +120,107 @@ combined:
 yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
 ```
 
-**Typical workflow — comparing two compiler versions:**
+### Typical workflow — comparing build results against master
 
-1. Download and compile filter content into cache:
-   `yarn generate-cache`
-1. Build from cache with generated metadata lines stripped:
-   `yarn build:local --no-patches-prepare --strip-generated-meta`
-1. Rename the output: `mv platforms platforms_A`
-1. Switch to the other compiler version
-   (e.g. `yarn add @adguard/filters-compiler@...`)
-1. Build again with the same flags:
-   `yarn build:local --no-patches-prepare --strip-generated-meta`
-1. Rename the output: `mv platforms platforms_B`
-1. Diff the two directories (e.g. in Total Commander, WinMerge, or
-   with `diff -r`)
+Use this when branch changes may alter compiled rule output
+and you need a structured pass/fail comparison against master.
 
-Both runs use the exact same cached filter content and strip all volatile
-metadata, so any difference comes solely from the compiler.
+It runs both branches in parallel via git worktrees so network-fetched content stays in sync.
 
-#### Command Compatibility
+1. Create worktrees for each branch and install dependencies:
+
+   ```bash
+   export CHANGED_BRANCH=$(git branch --show-current)
+   export BUILD_LOCAL=true                   # set to 'true' to use generate-cache + build:local
+
+   export MASTER_SHA=$(git rev-parse master)
+   export CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
+
+   git worktree add --detach /tmp/reg-master-build  $MASTER_SHA -f
+   git worktree add --detach /tmp/reg-changed-build $CHANGED_SHA -f
+
+   yarn --cwd /tmp/reg-master-build  install &
+   yarn --cwd /tmp/reg-changed-build install &
+   wait
+   ```
+
+2. Sync both worktrees' `filters/` to the same baseline commit so
+   `revision.json` version counters start from the same point:
+
+   ```bash
+   git -C /tmp/reg-changed-build checkout $MASTER_SHA -- filters/
+   ```
+
+3. Build both branches in parallel:
+
+   ```bash
+   _build() {
+     local dir=$1
+     if [ "$BUILD_LOCAL" = "true" ]; then
+       yarn --cwd "$dir" generate-cache && \
+       yarn --cwd "$dir" build:local --no-patches-prepare --strip-generated-meta
+     else
+       yarn --cwd "$dir" build --no-patches-prepare --strip-generated-meta
+     fi
+   }
+
+   (
+     _build /tmp/reg-master-build > /tmp/log-master-build.txt 2>&1
+     EXIT=$?
+     [ $EXIT -eq 0 ] \
+       && cp -r /tmp/reg-master-build/platforms platforms_master_build \
+       && echo "[master] done" \
+       || echo "[master] FAILED (exit $EXIT)"
+   ) &
+
+   (
+     _build /tmp/reg-changed-build > /tmp/log-changed-build.txt 2>&1
+     EXIT=$?
+     [ $EXIT -eq 0 ] \
+       && cp -r /tmp/reg-changed-build/platforms platforms_changed_build \
+       && echo "[changed] done" \
+       || echo "[changed] FAILED (exit $EXIT)"
+   ) &
+
+   wait && echo "Both builds complete"
+   ```
+
+4. Generate the structured report:
+
+   ```bash
+   bash scripts/build/__tests__/regression-test-against-master.sh
+   ```
+
+   The script compares all `.txt` rule files across every platform and
+   prints a pass/fail verdict.
+
+5. Clean up worktrees and current branch changes when done:
+
+   ```bash
+   git worktree remove /tmp/reg-master-build -f & git worktree remove /tmp/reg-changed-build -f
+   git reset --hard && rm -rf platforms_master_build platforms_changed_build
+   ```
+
+### Command Compatibility
 
 The following flags can be used with `yarn build` and `yarn build:local`:
 
 - `-i=`, `--include=` — comma-separated filter IDs to build (e.g., `--include=1,2,3`)
-- `-s=`, `--skip=` — comma-separated filter IDs to exclude (e.g., `--skip=12,24`)
+- `-s=`, `--skip=` — comma-separated filter IDs to exclude (e.g., `--skip=12,24`).
+  Can be combined with `--include`: a filter is built only if it's in `--include`
+  and not in `--skip`.
 - `--report=` — custom report file name (e.g., `--report='report-adguard.txt'`)
 - `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
 - `--strip-generated-meta` — remove volatile metadata lines from built files
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
-- `--generate-cache` — compile filters and update cache only (no platform files)
+- `--generate-cache` — compile filters to update the `filter.txt` cache only
+- `--download-stats` — download each filter's `stats.json` without recompiling `filter.txt`.
+  Fetches into a temp directory and, once every fetch succeeds, replaces the whole local stats
+  directory — not a per-filter merge into the existing cache. `--include` / `--skip` scope which
+  filters are fetched, so a scoped `--download-stats` drops every other filter's cached stats;
+  pair it with an equally scoped build. `--report`, `--strip-generated-meta`, and
+  `--no-patches-prepare` error here, since none of them apply to a run that produces no
+  platform output.
 
 **Valid combinations:**
 
@@ -153,7 +232,6 @@ yarn build:local
 # Filter selection
 yarn build --include=1,2,3
 yarn build --skip=12,24
-yarn build --include=1,2,3 --skip=2   # intersection minus exclusion. Excessive, but it works
 
 # Report output
 yarn build --report='report-adguard.txt'
@@ -165,12 +243,19 @@ yarn build --strip-generated-meta
 # Combined examples
 yarn build --include=1,2,3 --no-patches-prepare --strip-generated-meta
 yarn build:local --skip=12,24 --report='report.txt' --strip-generated-meta
+yarn build --include=1,2,3 --skip=2
 
 # Cache generation with filter selection
 yarn build --generate-cache
 yarn build --generate-cache --include=1,2,3
 yarn build --generate-cache --skip=12,24
 yarn build --generate-cache --report='report.txt'
+
+# Stats-only download, no recompile (replaces the whole local stats cache)
+yarn build --download-stats
+# Scoped download replaces the cache with just these filters — pair with a matching scoped build
+yarn build --download-stats --include=1,2,3 && yarn build:local --include=1,2,3
+yarn build --download-stats --skip=12,24 && yarn build:local --skip=12,24
 ```
 
 **Invalid or ineffective combinations:**
@@ -178,10 +263,16 @@ yarn build --generate-cache --report='report.txt'
 ```bash
 # Mutually exclusive flags → script exits with error
 yarn build --use-cache --generate-cache
+yarn build --use-cache --download-stats
+yarn build --generate-cache --download-stats
 
 # --generate-cache exits early; these flags are incompatible → script exits with error
 yarn build --generate-cache --strip-generated-meta
 yarn build --generate-cache --no-patches-prepare
+
+# --download-stats produces no platform output; these flags are incompatible → script exits with error
+yarn build --download-stats --strip-generated-meta
+yarn build --download-stats --no-patches-prepare
 ```
 
 ### Automated Build
@@ -250,7 +341,8 @@ Run unit tests:
 yarn test
 ```
 
-Tests are located in `scripts/wildcard-domain-processor/__tests__/` and use Vitest.
+Tests use Vitest and live alongside the code they cover in `__tests__/` directories,
+currently `scripts/build/__tests__/` and `scripts/wildcard-domain-processor/__tests__/`.
 
 ### Validation
 
@@ -361,8 +453,8 @@ All build tooling lives under `scripts/`. After making changes:
 
 1. Run `yarn lint` — fix all errors.
 1. Run `yarn test` — all tests must pass.
-1. If you changed `scripts/wildcard-domain-processor/`, update tests in
-   `scripts/wildcard-domain-processor/__tests__/`.
+1. Update tests in the matching `__tests__/` directory for the code you changed
+   (`scripts/build/__tests__/`, `scripts/wildcard-domain-processor/__tests__/`).
 1. Run `yarn validate` if the change affects filter compilation or platform outputs.
 
 Build scripts under `scripts/` are written in JavaScript and TypeScript, executed

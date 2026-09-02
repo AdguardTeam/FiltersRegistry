@@ -8,6 +8,7 @@ export interface BuildFlags {
     rawReportPath: string;
     useCache: boolean;
     generateCache: boolean;
+    downloadStats: boolean;
     noPatchesPrepare: boolean;
     stripGeneratedMeta: boolean;
 }
@@ -25,6 +26,7 @@ export function parseFlags(argv: string[]): BuildFlags {
         rawReportPath: '',
         useCache: false,
         generateCache: false,
+        downloadStats: false,
         noPatchesPrepare: false,
         stripGeneratedMeta: false,
     };
@@ -58,6 +60,10 @@ export function parseFlags(argv: string[]): BuildFlags {
             flags.generateCache = true;
         }
 
+        if (val === '--download-stats') {
+            flags.downloadStats = true;
+        }
+
         if (val === '--no-patches-prepare') {
             flags.noPatchesPrepare = true;
         }
@@ -80,10 +86,34 @@ export function parseFlags(argv: string[]): BuildFlags {
 export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; message: string } | null {
     const hint = 'See Command Compatibility in DEVELOPMENT.md for valid combinations.';
 
-    if (flags.useCache && flags.generateCache) {
+    /**
+     * Builds an incompatibility error for flags ignored alongside a given output-skipping flag.
+     */
+    const buildIncompatibilityError = (
+        ignored: string[],
+        withFlag: string,
+    ): { type: 'error'; message: string } => {
+        const flagsStr = ignored.join(' and ');
+        const verb = ignored.length > 1 ? 'are' : 'is';
+        const msg = `Error: ${flagsStr} ${verb} incompatible with `
+            + `${withFlag}, which does not produce platform output.`;
+
         return {
             type: 'error',
-            message: `Error: --use-cache and --generate-cache are mutually exclusive.\n${hint}`,
+            message: `${msg}\n${hint}`,
+        };
+    };
+
+    const exclusiveModes: Array<[boolean, string]> = [
+        [flags.useCache, '--use-cache'],
+        [flags.generateCache, '--generate-cache'],
+        [flags.downloadStats, '--download-stats'],
+    ];
+    const active = exclusiveModes.filter(([on]) => on).map(([, name]) => name);
+    if (active.length > 1) {
+        return {
+            type: 'error',
+            message: `Error: ${active.join(' and ')} are mutually exclusive.\n${hint}`,
         };
     }
 
@@ -92,16 +122,19 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
         if (flags.stripGeneratedMeta) ignored.push('--strip-generated-meta');
         if (flags.noPatchesPrepare) ignored.push('--no-patches-prepare');
 
-        const flagsStr = ignored.join(' and ');
-        const verb = ignored.length > 1 ? 'are' : 'is';
-        const msg = `Error: ${flagsStr} ${verb} incompatible with `
-            + '--generate-cache, which exits early without generating '
-            + 'platform files.';
+        return buildIncompatibilityError(ignored, '--generate-cache');
+    }
 
-        return {
-            type: 'error',
-            message: `${msg}\n${hint}`,
-        };
+    if (
+        flags.downloadStats
+        && (flags.stripGeneratedMeta || flags.noPatchesPrepare || flags.rawReportPath)
+    ) {
+        const ignored: string[] = [];
+        if (flags.stripGeneratedMeta) ignored.push('--strip-generated-meta');
+        if (flags.noPatchesPrepare) ignored.push('--no-patches-prepare');
+        if (flags.rawReportPath) ignored.push('--report');
+
+        return buildIncompatibilityError(ignored, '--download-stats');
     }
 
     return null;
@@ -116,6 +149,7 @@ const KNOWN_ARGS_PREFIXES = [
 const KNOWN_ARGS_EXACT = new Set([
     '--use-cache',
     '--generate-cache',
+    '--download-stats',
     '--no-patches-prepare',
     '--strip-generated-meta',
 ]);

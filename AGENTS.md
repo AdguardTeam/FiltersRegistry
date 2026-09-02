@@ -23,13 +23,14 @@ for all supported AdGuard products.
     - `zod` — schema validation
     - `crypto-js` — checksum computation
 - **Storage**: File-system based; no database
-- **Testing**: Vitest (unit tests for wildcard-domain-processor)
+- **Testing**: Vitest (unit + integration + e2e tests under `scripts/*/__tests__/`)
 - **Target Platform**: Node.js CLI tooling; build outputs target 8 top-level AdGuard product
   platforms (Android, CLI, Extension, iOS, Mac, Mac v2, Mac v3, Windows).
   The Extension platform has 9 sub-targets: Chromium, Chromium MV3, Edge, Firefox, Opera,
   Opera MV3, Safari, Android Content Blocker, uBlock.
 - **Project Type**: Single repository (build tooling + data)
-- **CI**: Two GitHub Actions workflows — `build-adguard.yaml` and `build-3p.yaml`
+- **CI**: Three GitHub Actions workflows — `build-adguard.yaml`, `build-3p.yaml`, and
+  `test.yaml` (runs `yarn test` on every pull request)
 - **Performance Goals**: N/A
 - **Constraints**: Filter lists must remain compatible with AdGuard's rule syntax;
   third-party filters follow an acceptance policy documented in README.md
@@ -80,10 +81,11 @@ for all supported AdGuard products.
 | Command | Description |
 | ------- | ----------- |
 | `yarn build` | Build all filters (`tsx scripts/build/build.js`) |
-| `yarn build:local` | Build filters from cached `filter.txt` files (`tsx scripts/build/build.js --use-cache`) |
+| `yarn build:local` | Build from cached `filter.txt` (`build.js --use-cache`) |
 | `yarn auto-build` | Full automated build via `bash scripts/auto_build.sh` |
 | `yarn build:patches` | Build incremental patches |
 | `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
+| `yarn download-stats` | Download per-filter `stats.json` to `temp/optimization/stats/` |
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
@@ -96,6 +98,16 @@ for all supported AdGuard products.
 | `yarn update-wildcard-domains` | Scan filters for wildcard domains |
 | `yarn expand-wildcard-domains` | Expand wildcard domains in platform builds |
 | `yarn compress` | Compress repository data |
+
+`yarn build:local` reuses `temp/optimization/stats/` when present and otherwise fetches stats from the remote server.
+
+`yarn download-stats` stages fetches in a temp directory and swaps in the whole stats directory
+only after every fetch succeeds. `--include` / `--skip` scope which filters are fetched,
+so a scoped `yarn download-stats` drops every other filter's cached stats; `--report`,
+`--strip-generated-meta`, and `--no-patches-prepare` error when combined with it.
+
+See [DEVELOPMENT.md — Command Compatibility](DEVELOPMENT.md#command-compatibility)
+for which flag combinations are allowed.
 
 ## Contribution Instructions
 
@@ -118,8 +130,10 @@ After completing any task that modifies code in `scripts/`:
     yarn test
     ```
 
-3. **Update tests for changed code.** If you modify logic in `scripts/wildcard-domain-processor/`,
-   add or update corresponding tests in `scripts/wildcard-domain-processor/__tests__/`.
+3. **Update tests for changed code.** Add or update tests in the `__tests__/` directory
+   alongside the code you changed:
+   - `scripts/wildcard-domain-processor/__tests__/` for wildcard-domain-processor changes
+   - `scripts/build/__tests__/` for build script changes
 
 4. **Validate platform outputs** if filters, templates, or build scripts changed.
 

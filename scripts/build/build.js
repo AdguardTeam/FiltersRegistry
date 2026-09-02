@@ -1,13 +1,12 @@
-import fs from 'fs';
+/* eslint-disable no-console */
+import { existsSync } from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { compile } from '@adguard/filters-compiler';
+import { compile, localOptimizationStatistics, OptimizationStatsError } from '@adguard/filters-compiler';
 import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
-import {
-    FOLDER_WITH_NEW_FILTERS,
-    FOLDER_WITH_OLD_FILTERS,
-} from './constants.js';
+import { FOLDER_WITH_NEW_FILTERS, FOLDER_WITH_OLD_FILTERS } from './constants.js';
 // eslint-disable-next-line import/no-unresolved
 import { parseFlags, validateFlags, validateArgs } from './build-config.ts';
 import { stripGeneratedMetaFromDir } from './strip-generated-meta.ts';
@@ -23,7 +22,6 @@ const args = process.argv.slice(2);
 const red = (s) => `\x1b[31m${s}\x1b[0m`;
 const argsError = validateArgs(args);
 if (argsError) {
-    // eslint-disable-next-line no-console
     console.error(`${red(argsError)}\n`);
     process.exit(1);
 }
@@ -32,9 +30,7 @@ const flags = parseFlags(args);
 const validationResult = validateFlags(flags);
 
 if (validationResult) {
-    // eslint-disable-next-line no-console
     if (validationResult.type === 'error') {
-        // eslint-disable-next-line no-console
         console.error(`\n${red(validationResult.message)}\n`);
         process.exit(1);
     }
@@ -46,6 +42,7 @@ const {
     rawReportPath,
     useCache,
     generateCache,
+    downloadStats,
     noPatchesPrepare,
     stripGeneratedMeta,
 } = flags;
@@ -57,7 +54,9 @@ const filtersDir = path.join(__dirname, '../../filters');
 const logPath = path.join(__dirname, '../../log.txt');
 const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
 const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
-const cachedFiltersDir = path.join(__dirname, '../../temp/filters_cached');
+const tempDir = path.join(__dirname, '../../temp');
+const cachedFiltersDir = path.join(tempDir, 'filters_cached');
+const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -78,12 +77,10 @@ const SHADOW_TEMPLATE_CONTENT = '@include "./filter.txt"\n';
  */
 const prepareCachedFiltersDir = async () => {
     // Remove stale copy if exists
-    if (fs.existsSync(cachedFiltersDir)) {
-        await fs.promises.rm(cachedFiltersDir, { recursive: true });
-    }
+    await fs.rm(cachedFiltersDir, { recursive: true, force: true });
 
     // Full recursive copy
-    await fs.promises.cp(filtersDir, cachedFiltersDir, { recursive: true });
+    await fs.cp(filtersDir, cachedFiltersDir, { recursive: true });
 
     // Find all directories containing template.txt and replace with shadow templates
     const templatePaths = await findFiles(cachedFiltersDir, (p) => path.basename(p) === 'template.txt');
@@ -92,17 +89,16 @@ const prepareCachedFiltersDir = async () => {
         const dir = path.dirname(templatePath);
         const filterTxtPath = path.join(dir, 'filter.txt');
 
-        if (!fs.existsSync(filterTxtPath)) {
+        if (!existsSync(filterTxtPath)) {
             throw new Error(
                 `--use-cache: missing filter.txt in ${path.relative(cachedFiltersDir, dir)}. `
                 + 'Run "yarn generate-cache" first to generate cached filter files.',
             );
         }
 
-        await fs.promises.writeFile(templatePath, SHADOW_TEMPLATE_CONTENT, 'utf8');
+        await fs.writeFile(templatePath, SHADOW_TEMPLATE_CONTENT, 'utf8');
     }));
 
-    // eslint-disable-next-line no-console
     console.log(`Prepared cached filters directory with ${templatePaths.length} shadow templates.`);
 };
 
@@ -110,8 +106,10 @@ const prepareCachedFiltersDir = async () => {
  * Compiler entry point.
  */
 const buildFilters = async () => {
-    // When --generate-cache we only need to compile filters (which updates filter.txt),
-    // skip platform generation, patches preparation, and temp/platforms copying.
+    // --generate-cache compiles filter templates only, writing filter.txt to each
+    // filters/<id>/ directory. Passing null as platformsPath skips platform file
+    // generation entirely. It no longer touches optimization stats — use
+    // --download-stats for that.
     if (generateCache) {
         await compile(
             filtersDir,
@@ -125,19 +123,27 @@ const buildFilters = async () => {
         return;
     }
 
-    // Clean temporary folder
-    if (fs.existsSync(copyPlatformsPath)) {
-        await fs.promises.rm(copyPlatformsPath, { recursive: true });
+    if (downloadStats) {
+        await localOptimizationStatistics.download(
+            optimizationStatsDir,
+            includedFilterIDs,
+            excludedFilterIDs,
+        );
+        console.log(`Optimization statistics downloaded at ${optimizationStatsDir}.`);
+        return;
     }
+
+    // Clean temporary folder
+    await fs.rm(copyPlatformsPath, { recursive: true, force: true });
 
     // Checks if this is the initial run of the compiler by verifying
     // the existence of platform files.
     let initialRun = false;
-    if (!fs.existsSync(platformsPath)) {
+    if (!existsSync(platformsPath)) {
         initialRun = true;
     } else if (!noPatchesPrepare) {
         // Make copy for future patches generation
-        await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
+        await fs.cp(platformsPath, copyPlatformsPath, { recursive: true });
     }
 
     // Determine which filtersDir to pass to the compiler
@@ -145,6 +151,17 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
+
+        // If a local optimization stats cache exists, use it; otherwise fall back
+        // to fetching stats from the remote server (localOptimizationStatistics.use()
+        // simply isn't called in that case — that's already getOptimizationStatistics's
+        // default behavior).
+        if (existsSync(optimizationStatsDir)) {
+            localOptimizationStatistics.use(optimizationStatsDir);
+            console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
+        } else {
+            console.log('No local optimization statistics found; fetching stats from the remote server.');
+        }
     }
 
     try {
@@ -157,10 +174,18 @@ const buildFilters = async () => {
             excludedFilterIDs,
             CUSTOM_PLATFORMS_CONFIG,
         );
+    } catch (error) {
+        if (useCache && error instanceof OptimizationStatsError) {
+            throw new Error(
+                `Run --download-stats to download the latest statistics. (${error.message})`,
+                { cause: error },
+            );
+        }
+        throw error;
     } finally {
         // Clean up temp filters copy
-        if (useCache && fs.existsSync(cachedFiltersDir)) {
-            await fs.promises.rm(cachedFiltersDir, { recursive: true });
+        if (useCache) {
+            await fs.rm(cachedFiltersDir, { recursive: true, force: true });
         }
     }
 
@@ -168,24 +193,25 @@ const buildFilters = async () => {
     // the temp folder to create the first empty patches for future versions
     if (initialRun && !noPatchesPrepare) {
         // Make copy for future patches generation
-        await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
+        await fs.cp(platformsPath, copyPlatformsPath, { recursive: true });
     }
 
     // Strip generated metadata (Checksum, Diff-Path, TimeUpdated, Version)
     // from compiled filter files so they don't pollute diff comparisons.
     if (stripGeneratedMeta) {
         const newCount = await stripGeneratedMetaFromDir(platformsPath);
-        // eslint-disable-next-line no-console
         console.log(`Stripped generated meta from ${newCount} new file(s).`);
 
         // Also strip the old baseline copy so build:patches diffs
         // consistently-stripped content.
-        if (fs.existsSync(copyPlatformsPath)) {
+        if (existsSync(copyPlatformsPath)) {
             const oldCount = await stripGeneratedMetaFromDir(copyPlatformsPath);
-            // eslint-disable-next-line no-console
             console.log(`Stripped generated meta from ${oldCount} old baseline file(s).`);
         }
     }
 };
 
-buildFilters();
+buildFilters().catch((e) => {
+    console.error(red(e.message));
+    process.exit(1);
+});

@@ -26,12 +26,14 @@ describe('parseFlags', () => {
         const flags = parseFlags([
             '--use-cache',
             '--generate-cache',
+            '--download-stats',
             '--no-patches-prepare',
             '--strip-generated-meta',
         ]);
 
         expect(flags.useCache).toBe(true);
         expect(flags.generateCache).toBe(true);
+        expect(flags.downloadStats).toBe(true);
         expect(flags.noPatchesPrepare).toBe(true);
         expect(flags.stripGeneratedMeta).toBe(true);
     });
@@ -66,7 +68,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('errors on --generate-cache combined with --strip-generated-meta', () => {
+    it('rejects --generate-cache combined with --strip-generated-meta', () => {
         const flags = parseFlags(['--generate-cache', '--strip-generated-meta']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
@@ -75,7 +77,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('errors on --generate-cache combined with --no-patches-prepare', () => {
+    it('rejects --generate-cache combined with --no-patches-prepare', () => {
         const flags = parseFlags(['--generate-cache', '--no-patches-prepare']);
         const result = validateFlags(flags);
         expect(result?.type).toBe('error');
@@ -83,7 +85,7 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
-    it('errors on multiple incompatible flags with --generate-cache', () => {
+    it('rejects multiple incompatible flags with --generate-cache', () => {
         const flags = parseFlags([
             '--generate-cache',
             '--strip-generated-meta',
@@ -96,12 +98,103 @@ describe('validateFlags', () => {
         expect(result?.message).toContain('DEVELOPMENT.md');
     });
 
+    it('allows --download-stats', () => {
+        const flags = parseFlags(['--download-stats']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
+    it('allows --download-stats with --include', () => {
+        const flags = parseFlags(['--download-stats', '--include=1,2,3']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
+    it('allows --download-stats with --skip', () => {
+        const flags = parseFlags(['--download-stats', '--skip=1,2']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
+    it('rejects --download-stats combined with --strip-generated-meta', () => {
+        const flags = parseFlags(['--download-stats', '--strip-generated-meta']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('--strip-generated-meta');
+        expect(result?.message).toContain('incompatible');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('rejects --download-stats combined with --no-patches-prepare', () => {
+        const flags = parseFlags(['--download-stats', '--no-patches-prepare']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('--no-patches-prepare');
+        expect(result?.message).toContain('incompatible');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('rejects --download-stats combined with --report', () => {
+        const flags = parseFlags(['--download-stats', '--report=report.txt']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('--report');
+        expect(result?.message).toContain('incompatible');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('rejects multiple incompatible flags with --download-stats', () => {
+        const flags = parseFlags([
+            '--download-stats',
+            '--strip-generated-meta',
+            '--no-patches-prepare',
+        ]);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('--strip-generated-meta and --no-patches-prepare');
+        expect(result?.message).toContain('are incompatible');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('allows --generate-cache combined with both --include and --skip', () => {
+        const flags = parseFlags(['--generate-cache', '--include=1,2,3', '--skip=1,2']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
+    it('allows --download-stats combined with both --include and --skip', () => {
+        const flags = parseFlags(['--download-stats', '--include=1,2,3', '--skip=1,2']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
+    it('allows --use-cache combined with both --include and --skip', () => {
+        const flags = parseFlags(['--use-cache', '--include=1,2,3', '--skip=1,2']);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
+    it('rejects --generate-cache combined with --download-stats', () => {
+        const flags = parseFlags(['--generate-cache', '--download-stats']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('mutually exclusive');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
+    it('rejects --use-cache combined with --download-stats', () => {
+        const flags = parseFlags(['--use-cache', '--download-stats']);
+        const result = validateFlags(flags);
+        expect(result?.type).toBe('error');
+        expect(result?.message).toContain('mutually exclusive');
+        expect(result?.message).toContain('DEVELOPMENT.md');
+    });
+
     it('allows multiple valid combinations', () => {
         const flags = parseFlags([
             '--include=1,2',
             '--no-patches-prepare',
             '--strip-generated-meta',
         ]);
+        expect(validateFlags(flags)).toBeNull();
+    });
+
+    it('allows --use-cache with --strip-generated-meta and --no-patches-prepare', () => {
+        const flags = parseFlags(['--use-cache', '--strip-generated-meta', '--no-patches-prepare']);
         expect(validateFlags(flags)).toBeNull();
     });
 });
@@ -115,6 +208,7 @@ describe('validateArgs', () => {
         expect(validateArgs(['--report=file.txt'])).toBeNull();
         expect(validateArgs(['--use-cache'])).toBeNull();
         expect(validateArgs(['--generate-cache'])).toBeNull();
+        expect(validateArgs(['--download-stats'])).toBeNull();
         expect(validateArgs(['--no-patches-prepare'])).toBeNull();
         expect(validateArgs(['--strip-generated-meta'])).toBeNull();
     });

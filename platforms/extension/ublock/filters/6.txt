@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: K6CiFJNJnVB2PIZb0ruo3Q
-! Diff-Path: ../patches/6/6-s-1787770033-3600.patch
+! Checksum: SX5QKk90nk2Egm+bAirBGg
+! Diff-Path: ../patches/6/6-s-1788275922-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.15
-! TimeUpdated: 2026-08-26T18:43:33+00:00
+! Version: 2.0.53.20
+! TimeUpdated: 2026-09-01T15:14:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,7 @@
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
 ||ads.goldbach-germany.de^
+||remp-beam.golem.de^
 ||remp-campaign.golem.de^
 ||ad.dl.volksstimme.de^
 ||addefend-platform.com^
@@ -451,6 +452,9 @@ wowtv.de##+js(set-constant, window.CONFIGURATION.features.enableAdBlockerDetecti
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238226
 stadt-bremerhaven.de###cb-adblock-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238166
+*$script,3p,redirect=noop.js,domain=ligainsider.de
+@@||ligainsider.de^$generichide
+ligainsider.de##+js(abort-on-property-read, LIDetector)
 ||ligainsider.de/public/*/js/li-probe-base.js
 ||ligainsider.de/li-probe.js
 ||ligainsider.de/public/*/js/li-wall.js
@@ -1566,6 +1570,10 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+fr.de##.id-StoryElement-embed
+fr.de##.id-Recommendation
+ligainsider.de##.feature_column:has(> div[id^="ad-rectangle"])
+ligainsider.de##.feature_holder > .feature:has(> div[id^="ad-rectangle"])
 bluewin.ch##.c-left-container > .justify-center:has(> div.shell > div.c-ad-container)
 bluewin.ch##.c-right-container:has(> div.w-full > div.shell > div.c-ad-container)
 /^https:\/\/www\.igorslab\.de\/[0-9a-z]+\/[\/0-9A-Z_a-z-]+$/$image,~3p,match-case
@@ -3384,6 +3392,7 @@ bild.de###superbannerWrapper
 bild.de,rollingstone.de##div[id^="mrec"]
 spiele101.de##.MuiSkeleton-rect[style="width:300px;height:250px;"]
 mein-eigenheim.de##.htmlbanner
+n-tv.de##div[class^="Ada_wrapper_"][class*="Ada_superbanner-"]
 n-tv.de,wetter.com,winfuture.de,formel1.de##.OUTBRAIN
 n-tv.de##div[class]:has(> .gujAd:only-child):remove()
 n-tv.de##section:has(> div[style="display: none !important;"]:only-child):remove()
@@ -8278,6 +8287,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||picdumps.com/ddeal
 ||pics.computerbase.de/forum-teaser/
 ||pilotenboard.de/ad/
+||pipe.orf.at/admapper/
 ||plus.tourispo.com^
 ||pokerfirma.com^*-banner.
 ||pokerfirma.com^*/banner_
@@ -9749,12 +9759,13 @@ apollo-news.net##.ad-home-feed-box
 apollo-news.net##.ad-in-article-box
 hallo-minden.de##.ad-info
 augsburger-allgemeine.de##.ad-list_small-native-container
-diegrenzgaenger.lu##.ad-listing
+chip.de,diegrenzgaenger.lu##.ad-listing
 meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##.ad-live
 spiesser.de##.ad-mark
 heise.de##.ad-mobile-group-1
 heise.de##.ad-mobile-group-3
 rheiderland.de##.ad-slider-image
+chip.de##.ad-slot
 abendblatt.de##.ad-slot-wrapper
 der-bank-blog.de##.ad-text
 finanztreff.de##.ad02p
@@ -10281,6 +10292,7 @@ arboe.at##.frame-type-mask_toolboxcontentad1
 it-boltwise.de##.freestock
 freenet.de##.frn_contAmazon
 woz.ch##.frontpage-card-banner
+chip.de##.ft-alts
 puls24.at##.fullbanner-wrapper
 raidrush.net##.funbox
 99ers.at##.fusion-builder-row-14
@@ -10653,6 +10665,7 @@ songtexte.com##.prmtnContentMin
 songtexte.com##.prmtnKeepHeight
 ariva.de##.prodo-shadow
 otto.de##.product.spa
+chip.de##.product__top-aside
 maclife.de##.productbox
 zentrum-der-gesundheit.de##.products-inarticle-slider--parent
 aktionspreis.de##.produkt_uebersicht > div > br.clear
@@ -11768,8 +11781,10 @@ ratehase.de##div[style="height: 90px; margin: 30px 0 30px 0; text-align: center;
 ratehase.de##div[style="text-align:center; min-height: 260px; height: 260px; margin: 0 auto 0 auto;"]
 t-online.de##section[data-stage-layout^="custom_nativendo_"]
 boersennews.de###bnTickerContainer:has(#bnTickerAdNotice)
+chip.de##.ChipArticleTeaser:has(.RUC-Badge--Secondary)
 baur.de##.MuiBox-root:has(a[href^="//b.fr3.eu.criteo.com/rm?"])
 mobile.de##.Q8G_R:has(div[data-testid="SRP_BILLBOARD-container"])
+chip.de##.RUC-List--Separated > li:has(.RUC-DownloadChartsBlock-AdLabel)
 berlinstadtservice.de##.a.block04:has(a[href^="https://www.awin1.com/"])
 finanzen.net##.ad-container:not(a#zero-web-header-button):not(a[href="https://g.finanzen.net/zero-web-header-button-krypto"]):not(#marketIndicationItemButton)
 achgut.com##.ag-slot:has(.ag-slot__eintrag:not(.ag-trf))
@@ -11904,6 +11919,7 @@ finanzen.net##article.page-content__item:has(img[alt="UBS"])
 imtest.de##article.type-post[data-post-id]:has(.sponsor-label)
 mobile.de##article[class^="contentBox-module__"]:has(span[data-testid="sponsored-badge"])
 abendzeitung-muenchen.de##article[class^="teaser nummer-"]:has(span.specialfeature)
+chip.de##article[data-element-tracking-channel="home"]:has(.RUC-Badge--Secondary)
 futurezone.de##article[data-post-id]:has(.sponsor-byline)
 diegrenzgaenger.lu##article[id^=post-]:has(.sponsored-indicator)
 az.com.na##aside:has(img[src*="/adverts/"])

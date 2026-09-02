@@ -1,9 +1,9 @@
-! Checksum: jeYVzUY6kQcUioFUjBD6Zg
-! Diff-Path: ../patches/17/17-s-1787732501-3600.patch
+! Checksum: kurNtRgX74i2RsGjUxUzCQ
+! Diff-Path: ../patches/17/17-s-1788265529-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.13.97
-! TimeUpdated: 2026-08-26T08:18:45+00:00
+! Version: 2.0.14.6
+! TimeUpdated: 2026-09-01T12:22:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -535,6 +535,27 @@ $removeparam=tduid
 ! Good: ||example.org^$removeparam=cx
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239916
+||smartnews.com^$removeparam=placement
+||smartnews.com^$removeparam=share_id
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18215392
+||resourify.com^$removeparam=ref
+! https://github.com/AdguardTeam/AdguardFilters/issues/239853
+||yna.co.kr^$removeparam=input
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18195079
+||compshare.cn^$removeparam=ytag
+! https://github.com/AdguardTeam/AdguardFilters/issues/239558
+||bg-mania.jp^$removeparam=in
+! https://github.com/AdguardTeam/AdguardFilters/issues/239549
+||dailyshincho.jp^$removeparam=ui_campaign
+||dailyshincho.jp^$removeparam=ui_medium
+||dailyshincho.jp^$removeparam=ui_source
+! https://github.com/AdguardTeam/AdguardFilters/issues/239550
+||detail.chiebukuro.yahoo.co.jp^$removeparam=__ysp
+||detail.chiebukuro.yahoo.co.jp^$removeparam=fr
+! https://github.com/AdguardTeam/AdguardFilters/issues/239451
+||deview.co.jp^$removeparam=am_ko
+||deview.co.jp^$removeparam=anc
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239319
 ||weathernews.jp^$removeparam=media
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239313
@@ -1294,6 +1315,8 @@ $removeparam=phfp,domain=protonvpn.com|proton.me
 ! ExpressVPN
 ||expressvpn.com^$removeparam=xvcid
 ||expressvpn.com^$removeparam=shareid
+! https://github.com/AdguardTeam/AdguardFilters/issues/239435
+||news.golfdigest.co.jp^$removeparam=ctid
 ! links on www.golfdigest.co.jp
 ||golfdigest.co.jp^$removeparam=car
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-12099447
@@ -2505,8 +2528,6 @@ $removeparam=ici,domain=shein.co.uk|shein.com
 ||brazzers.com^$removeparam=ats
 ! https://github.com/AdguardTeam/AdguardFilters/pull/140612
 ||whale.naver.com^$removeparam=wpid
-! https://github.com/AdguardTeam/AdguardFilters/issues/140300
-||wemakeprice.com^$removeparam=refer
 ! https://joshi-spa.jp/1213445?cx_clicks_art_mdl=2_title
 ||joshi-spa.jp^$removeparam=cx_clicks_art_mdl
 ||joshi-spa.jp^$removeparam=cx_clicks_sldbox
@@ -2961,6 +2982,9 @@ $removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||azby.fmworld.net^$removeparam=mc_pc
 ! https://toku.yahoo.co.jp/ytop202111/entry?fr=weather_right_column
 ||toku.yahoo.co.jp^$removeparam=fr
+! https://github.com/AdguardTeam/AdguardFilters/issues/239841
+||nikkei.com^$removeparam=ref
+||nikkei.com^$removeparam=extpf
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228387
 ||nikkei.com^$removeparam=n_tw
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106436
