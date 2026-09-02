@@ -239,6 +239,15 @@ restore_worktree_platforms() {
         git -C "$1" clean --quiet -fd -- platforms/
 }
 
+# Replaces the compare worktree's filters/ with the $BASE_BRANCH version.
+# `git rm` first so filter directories the branch *added* don't survive the
+# checkout — they would otherwise keep their own revision.json counters and
+# show up as diff noise in the report.
+sync_filters_baseline() {
+    git -C "$CHANGED_WORK_TREE" rm -r --quiet --ignore-unmatch -- filters &&
+        git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/
+}
+
 # Waits on one branch's build, copies its platforms/ output into the
 # comparison directory, then restores the worktree's platforms/
 # Step 8 wipes it before building, and the built output is captured in $dest.
@@ -593,7 +602,7 @@ fi
 
 step_header 7 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
-    git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
+    sync_filters_baseline; then
     die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
