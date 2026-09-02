@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: DQOj2v2S871RDI0NIxl+qw
-! Diff-Path: ../patches/14/14-s-1788358708-3600.patch
+! Checksum: vX6pZm40InqREjB73UlPvg
+! Diff-Path: ../patches/14/14-s-1788362501-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.77.69
-! TimeUpdated: 2026-09-02T14:14:57+00:00
+! Version: 2.2.77.70
+! TimeUpdated: 2026-09-02T15:18:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2565,6 +2565,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+lksfy.com###cookie-pop
 powtarzamy.pistacja.tv##main > div.shadow-popup:has(> div.flex > p > a[href="https://pistacja.tv/polityka-prywatnosci"])
 pistacja.tv##.pie-cookies
 dayone.me###app > div[class^="css-"]:has(> div[class^="css-"] a[href="https://dayoneapp.com/privacy-policy/"])
@@ -35871,6 +35872,10 @@ jprime.jp,laviola.it,fanipogody.pl,yna.co.kr,pchocasi.com.tr,spidersweb.pl,empir
 !
 ! SECTION: Subscriptions - Regular rules
 !
+recruitmentaim.in##div[class^="gb-element-"]:has(> a[href="https://news.google.com/"])
+recruitmentaim.in##.whatsapphighlight
+recruitmentaim.in##.telegramhighlight
+lksfy.com##a[href="https://telegram.me/linkshortify"]
 nefisyemektarifleri.com##.nyt-preferred-sources
 globo.com##.newsletter-g1
 banki.ru##div[class^="styled__CollectMailWrapper"]
@@ -60981,6 +60986,8 @@ eiga.com##.header-pure-banner
 !##############################
 ! SECTION: Tweaks - CSS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239808
+mahitiplus.com,recruitmentaim.in##+js(adjust-setInterval, timer, *, 0.001)
 ! https://github.com/uBlockOrigin/uAssets/issues/32331
 mundoperfecto.net###download:style(display: block !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227506
@@ -61437,8 +61444,9 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240012
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238935
-selfhostt.com##+js(adjust-setInterval, countdown, *, 0.001)
+cloudhostt.com,selfhostt.com##+js(adjust-setInterval, countdown, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238502
 otakufilmes.org##+js(adjust-setTimeout, Counter, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238012
