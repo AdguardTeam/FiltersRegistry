@@ -318,6 +318,7 @@ run_cleanup() {
 # the platforms_{master,changed}_build/ dirs.
 generate_report() {
     local build_cmd build_sub filter_args total rule_diffs diff_list meta_diffs
+    local added_count added_list
     local master_file rel changed_file changed_only_file
 
     echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
@@ -354,14 +355,14 @@ generate_report() {
     done < <(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" -print0)
 
     # Reverse check — files that exist only on the compare branch's side.
-    # The loop above only walks $PLATFORMS_MASTER, so a file added purely by
-    # the compare branch would otherwise never surface in the report at all.
+    added_count=0
+    added_list=""
     while IFS= read -r -d '' changed_only_file; do
         rel="${changed_only_file#"$PLATFORMS_CHANGED"/}"
         master_file="$PLATFORMS_MASTER/${rel}"
         if [ ! -f "$master_file" ]; then
-            diff_list="$diff_list\n  ADDED: $rel"
-            rule_diffs=$((rule_diffs + 1))
+            added_list="$added_list\n  ADDED: $rel"
+            added_count=$((added_count + 1))
         fi
     done < <(find "$PLATFORMS_CHANGED" -name "*.txt" ! -name "*.patch" -print0)
 
@@ -374,6 +375,10 @@ generate_report() {
     echo "Total .txt files compared: $total"
     echo "Files with diffs:          $rule_diffs"
     [ -n "$diff_list" ] && printf '%b\n' "$diff_list"
+    echo ""
+    echo "${C_BOLD}--- Added Files (informational) ---${C_RESET}"
+    echo "Files only on the changed side: $added_count  (new filters or platform targets, not a regression)"
+    [ -n "$added_list" ] && printf '%b\n' "$added_list"
     echo ""
     echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
     echo "filters.json/filters.js diffs: $meta_diffs  (version counter noise, not a regression)"
