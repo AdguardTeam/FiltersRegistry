@@ -215,7 +215,7 @@ filter_flags() {
 # empty tree left by a previous run that died mid-build (which would otherwise
 # get reused and reported as PASS against another empty tree).
 has_built_output() {
-    [ -n "$(find "$1" -name '*.txt' ! -name '*.patch' -print -quit 2>/dev/null)" ]
+    [ -n "$(find "$1" -name '*.txt' -print -quit 2>/dev/null)" ]
 }
 
 # Loads the meta file written by Step 8 into its known variables. Parses
@@ -334,7 +334,7 @@ generate_report() {
     echo ""
 
     # Total .txt files
-    total=$(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" | wc -l | tr -d ' ')
+    total=$(find "$PLATFORMS_MASTER" -name "*.txt" | wc -l | tr -d ' ')
 
     # Primary check — rule files
     rule_diffs=0
@@ -352,7 +352,7 @@ generate_report() {
             diff_list="$diff_list\n  MISSING: $rel"
             rule_diffs=$((rule_diffs + 1))
         fi
-    done < <(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" -print0)
+    done < <(find "$PLATFORMS_MASTER" -name "*.txt" -print0)
 
     # Reverse check — files that exist only on the compare branch's side.
     added_count=0
@@ -364,7 +364,7 @@ generate_report() {
             added_list="$added_list\n  ADDED: $rel"
             added_count=$((added_count + 1))
         fi
-    done < <(find "$PLATFORMS_CHANGED" -name "*.txt" ! -name "*.patch" -print0)
+    done < <(find "$PLATFORMS_CHANGED" -name "*.txt" -print0)
 
     # Secondary check — metadata
     meta_diffs=$(diff -rq --exclude="*.txt" --exclude="*.patch" \
