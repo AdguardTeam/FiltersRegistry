@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.97.4",
-			"timeUpdated": "2026-09-02T12:44:16+0000",
+			"version": "2.1.97.5",
+			"timeUpdated": "2026-09-02T16:36:49+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.97.3",
-			"timeUpdated": "2026-09-02T12:44:16+0000",
+			"version": "2.1.97.4",
+			"timeUpdated": "2026-09-02T16:36:50+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1049,8 +1049,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist-thailand/easylist-thailand/master/subscription/easylist-thailand.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.31",
-			"timeUpdated": "2026-09-02T12:44:34+0000",
+			"version": "2.0.0.32",
+			"timeUpdated": "2026-09-02T16:37:11+0000",
 			"deprecated": false,
 			"languages": [
 				"th"
@@ -1263,8 +1263,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.12.86",
-			"timeUpdated": "2026-09-01T20:35:25+0000",
+			"version": "2.0.12.87",
+			"timeUpdated": "2026-09-02T16:37:30+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.90.35",
-			"timeUpdated": "2026-09-02T12:45:06+0000",
+			"version": "2.0.90.36",
+			"timeUpdated": "2026-09-02T16:37:52+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1511,8 +1511,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.12.41",
-			"timeUpdated": "2026-09-02T04:39:30+0000",
+			"version": "2.0.12.42",
+			"timeUpdated": "2026-09-02T16:38:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
