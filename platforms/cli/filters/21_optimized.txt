@@ -1,9 +1,9 @@
-! Checksum: r5KpASyftf1C/F3QpULtPQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1788265482-3600.patch
+! Checksum: XAXgBusZMf9mZFwQa4xXVg
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1788316808-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.47.72
-! TimeUpdated: 2026-09-01T12:22:04+00:00
+! Version: 2.0.47.73
+! TimeUpdated: 2026-09-02T02:37:31+00:00
 ! Expires: 12 hours (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -86,6 +86,7 @@ bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion##z-recommended-se
 ||z-lib.*/components/z-recommended-search.js
 ||z-library.*/components/z-promotion.js
 ||z-library.*/components/z-recommended-search.js
+filmibeat.com##.fb-article-content-widget
 gamekult.com##.viously-ui-container.viously-sticked
 gamekult.com#%#//scriptlet('remove-class', 'viously-sticked|viously-sticked-bottom-right', '.viously-ui-container')
 beinsports.com#%#//scriptlet('trusted-replace-outbound-text', 'JSON.stringify', '"event":"pes_viewabilitychange"', '"event":""')
@@ -1062,7 +1063,6 @@ disk.yandex.by,disk.yandex.com,disk.yandex.com.tr,disk.yandex.fr,disk.yandex.kz,
 disk.yandex.ru#$#.InfoSpace__Footer > button.InfoSpace__Button { display: none !important; }
 disk.yandex.ru#%#//scriptlet('remove-attr', 'href', '.InfoSpace[href^="https://360.yandex."][href*="/premium-plans?"]')
 [$path=/images]ya.ru,yandex.*##.ImagesViewer-Products
-[$path=/maps]yandex.*##.business-card-view__offer-banner-wrapper
 [$path=/web-maps]yandex.*##.card-offer-view
 [$path=/maps]yandex.*##.business-card-view__section:has(> .business-ownership-view)
 [$path=/maps]yandex.*##.card-special-offers-view
@@ -1097,7 +1097,6 @@ practicum.yandex.*###frontend-developer
 rasp.yandex.*##.TravelHotelsBanner
 tv.yandex.*##.recommended-ott
 360.yandex.ru##div[data-test-id="promotopline"]
-[$path=/games]yandex.*##header + main.stack > div[class*="-disable-"]
 [$path=/games]yandex.*##header + main.stack > div > div[class*="-wrapper_promo"]
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { display: none !important; }
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
@@ -1105,6 +1104,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
 firstpost.com##.flntvdo
 kyodo.co.jp#?#.ranking_archive > div.ranking_archive__content:has(> div.ranking_archive__content--content > a.flex > span.pr:contains(広告))
+kyobobook.co.kr##body > .min-w-\[1440px\] .top_banner_inner
 jota.info##a[data-testid="banner-top"]
 transferfeed.com###market-explorer-promo
 transferfeed.com###fan-scout-promo
@@ -1431,7 +1431,6 @@ justwatch.com##.removal-container
 computerbase.de##.promobar
 arkm.com##div[class*="mfaBannerContainer"]
 xn--pckua2a7gp15o89zb.com##.s-modal-trigger_cmOnboarding
-sabah.com.tr##.market-banner
 ulketv.com##.imsakiye-widget
 bonappetit.com##figure[data-testid="cne-interlude-container"]
 automoto.it##.acard
@@ -1476,7 +1475,6 @@ lazada.com.ph##.pc-banner-slider-container
 indianexpress.com##.budget-band
 krakenfiles.com##.buy-premium-promo-file-banner
 journal.sovcombank.ru##div[data-track-name="block-text-halva_taxi"]
-sportsdaily.ru##div[class^="header_headerGift"]
 rollingstone.com###piano-sticky-footer
 zakzak.co.jp##.lazyload-wrapper:has(> div.story-card-feed > span > a[href="/economy/shopping/"])
 allowcopyplus.pidevex.com###santaBanner
@@ -1786,6 +1784,8 @@ thecode.media##.float-link
 avtocod.ru##div[id^="mntg-banner"]
 avtocod.ru###free-book-form
 mirf.ru##.right-stub-price
+play.esea.net##a[href="https://fce.gg/S53ESEAtakeover"]
+||play.esea.net/images/takeover.png
 cyber.sports.ru##.post-layout__teaser
 ||senoval.cdn.sports.ru/star/*-teaser.*.js$domain=cyber.sports.ru
 lootbar.gg#%#//scriptlet('set-constant', 'Object.prototype.getRegCouponDialog', 'undefined')
@@ -1849,7 +1849,6 @@ tp-link.com##.widgets-top-banner
 kupikod.com##.layout__banner
 polyhaven.com##div[class^="AssetPage_sidebarAd_"]
 young-machine.com##.widget_block > div > a[href^="/game/"]
-forum.adrenaline.com.br##.js-replyNewMessageContainer > div[style*="margin-"]:has(> center > a[target="_blank"] > img)
 dhgate.com##div[spm-c="topbanner"]
 nd-aktuell.de##freiwillig-zahlen
 sky.pro##a[href^="https://sky.pro/promo/media/"][target="_blank"]
@@ -2847,7 +2846,6 @@ ug.ru##.contact-form-link
 elle.de##.ab-products-entityType_not_set
 deepfakeporn.net##.notice
 gname.com##.swiper-container.min_banner
-gname.com##.footShow
 litcharts.com##.distance-learning-promo
 litcharts.com##.banner-promo
 tuoitre.vn##.boxraovat_catedetail
@@ -2860,7 +2858,6 @@ atida.fr##header .cmpt_flash_info
 atida.fr###top-info
 weather.yahoo.co.jp###rbnr > p[style="margin:0px 0px 20px 0px;text-align:center;"]
 bilibili.com##.video-page-special-card-small
-123pan.com##div[style="width:100%;position:fixed;bottom:80px"]
 getpocket.com#?##__next > aside:has(> div[class][style^="max-width:"] > div[class] > a[href^="https://getpocket.com/premium?"])
 answers.microsoft.com##.ucsUhfContainer
 naked-science.ru##.content > div.body > div.other-news-block
@@ -2925,6 +2922,7 @@ securityweek.com##.content > p:not([style]) + p[style="text-align: center;"]
 finance.yahoo.co.jp##section[id^="pr_main"]
 digitalocean.com#?#div[class^="TutorialTemplateStyles__StyledSidebarItem-"]:has(> div[class^="CommunityCTAStyles-sc-"])
 startpage.com##.widget-install-legacy
+yingav.net##.offer_intro
 newsweek.pl###tpTopBarSticky
 msn.com#%#//scriptlet('hide-in-shadow-dom', '.mail-signout-banner-container')
 shutterstock.com##div[data-automation="header-banner"]
@@ -3261,6 +3259,7 @@ hackers.co.kr##.floor_layer_pop
 twitch.tv##.side-info-container
 gemoo.com,imobie.com##.sprtadv
 expresso.pt##.remp-banner
+geeksforgeeks.org##a[href^="https://practice.geeksforgeeks.org/courses/dsa-self-paced?utm_source="] > img
 ihelper.mts.by##.main_baner
 belta.by##.main > div[class$="right_col"] > div.top_news + div[class]
 dic.academic.ru###skidki_hint
@@ -3712,7 +3711,6 @@ jiosaavn.com##.o-layout > .c-banner
 avito.ru##div[class^="create-promocode-banner"]
 finance.sina.com.cn###sina-pages-u
 ||rakuten.co.jp/sitemap/img/banner/
-pimylifeup.com###sidebar > section.widget_text > .textwidget > div[class^="easy_lbb_code_"] > a[href^="https://pimylifeup.com/subscribe/"] > img
 ||jugem.jp/user_blog/ad/
 similarsites.com##div[class^="HomepageBanner__"]
 similarsites.com##div[class^="SimilarSitesCardBanner__"]
@@ -3720,6 +3718,7 @@ similarsites.com##div[class^="FooterBanner__"]
 ||xtube.com/staticcdn/promotion/
 sendvid.com###vjs-logobrand
 sendvid.com###vjs-logo-top-bar
+quizizz.com##.spons-group-right
 ||cf.quizizz.com/img/super/ads/ads_banner*.png
 mail.yahoo.co.jp###mhd_uhd_pc
 yahoo.co.jp###msthdPrLink
@@ -3856,7 +3855,6 @@ nim.ru##.widget.banner
 ||nim.ru/i/1920_1101/banner/
 experts-exchange.com##.adBanner-comment
 ||contributions.guardianapis.com^
-banki.ru#?#div[data-test="news-all-markdown"] > p:has(> span[style] > span:contains(/^Дебетовая карта/)) ~ p:has(> a[href="https://www.banki.ru/news/daytheme/?id=11004160"])
 banki.ru##div[data-test="news-all-markdown"] > p:has(> a[href^="https://www.banki.ru/broker-mortgage/"])
 banki.ru##section[class^="HypothecOffers"]
 banki.ru##span[data-name="clip_top3debit"]

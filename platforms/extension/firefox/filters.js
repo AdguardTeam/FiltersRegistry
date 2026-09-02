@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.87.53",
-			"timeUpdated": "2026-09-02T01:24:11+0000",
+			"version": "2.4.87.54",
+			"timeUpdated": "2026-09-02T02:36:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.62",
-			"timeUpdated": "2026-09-01T15:15:03+0000",
+			"version": "2.0.67.63",
+			"timeUpdated": "2026-09-02T02:37:09+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.77.59",
-			"timeUpdated": "2026-09-01T20:15:22+0000",
+			"version": "2.2.77.60",
+			"timeUpdated": "2026-09-02T02:37:18+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.33.21",
-			"timeUpdated": "2026-09-02T01:24:49+0000",
+			"version": "2.1.33.22",
+			"timeUpdated": "2026-09-02T02:37:21+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -774,8 +774,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.31.77",
-			"timeUpdated": "2026-09-01T11:14:23+0000",
+			"version": "2.0.31.78",
+			"timeUpdated": "2026-09-02T02:37:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.72",
-			"timeUpdated": "2026-09-01T12:22:04+0000",
+			"version": "2.0.47.73",
+			"timeUpdated": "2026-09-02T02:37:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -818,8 +818,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.14.80",
-			"timeUpdated": "2026-09-01T20:15:34+0000",
+			"version": "2.0.14.81",
+			"timeUpdated": "2026-09-02T02:37:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
