@@ -528,7 +528,10 @@ if ! MASTER_SHA=$(git rev-parse --verify "$BASE_BRANCH" 2>/dev/null); then
     echo "${C_RED}${CROSS} Error:${C_RESET} local branch '$BASE_BRANCH' not found. Fetch/checkout it first." >&2
     exit 1
 fi
-CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
+if ! CHANGED_SHA=$(git rev-parse --verify "$CHANGED_BRANCH" 2>/dev/null); then
+    echo "${C_RED}${CROSS} Error:${C_RESET} branch '$CHANGED_BRANCH' could not be resolved (deleted since it was picked?)." >&2
+    exit 1
+fi
 
 # --- Step 5: set up worktrees (reuse if already present) ---
 
