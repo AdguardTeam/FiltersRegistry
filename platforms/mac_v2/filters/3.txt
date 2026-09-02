@@ -1,9 +1,9 @@
-! Checksum: EFeVsV0v3lwAKArqib6JJg
-! Diff-Path: ../patches/3/3-s-1788355129-3600.patch
+! Checksum: 2xrnagOjWMGSnmbTO68q+A
+! Diff-Path: ../patches/3/3-s-1788358721-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.10.57
-! TimeUpdated: 2026-09-02T13:14:41+00:00
+! Version: 2.1.10.58
+! TimeUpdated: 2026-09-02T14:14:37+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2394,7 +2394,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ||indexww.com^$third-party
 ||i.viafoura.co^
 ||adsrvr.org^$third-party
-||ipcheck.blogsys.jp^
+||ipcheck.blogsys.jp^$script,redirect=noopjs
 ||xlisting.jp^$third-party
 ||userreport.com^$third-party
 ||geoedge.be^$third-party
@@ -314011,6 +314011,10 @@ zonedirector.avadacom.com$image
 /com.snowplowanalytics.$domain=~snowplowanalytics.com
 .com.br/tracking.set^|
 .com.br/cliente/trackRemote^|
+! https://github.com/AdguardTeam/AdguardFilters/issues/240094
+! Used on random domains
+/impr-trck?
+/prgr-trk?
 ! Umami
 ||umami.
 ! Geo Targetly
@@ -318211,7 +318215,7 @@ newsdig.tbs.co.jp#?#.l-contents-wrap > div[v-scope^="Recommend"]:upward(1)
 ||kraken.com/js/sift.min.js
 ||instagram.com/ajax/bz
 ||javynow.com/ajax/access.php
-augsburger-allgemeine.de,nikkansports.com##div[id^="cx_"]
+augsburger-allgemeine.de##div[id^="cx_"]
 ||google.com/gsi/log?
 ||drop.com/statBeacon
 ||outlook-1.cdn.office.net/owamini/*/resources/analytics-ping.js
@@ -324123,6 +324127,8 @@ d4?appid*type*
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !
 !
+! clicking links doesn't work
+@@||googletagmanager.com/gtag/js$domain=gamelog.apexlegends-leaksnews.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239780
 @@||st-*.dynamicyield.com/st?sec=$domain=platekompaniet.no
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239341
@@ -325219,8 +325225,11 @@ abema.tv#%#//scriptlet('remove-node-text', 'script', 'NREUM')
 @@||cdn.cxense.com/cx.cce.js$domain=lopinion.fr
 @@||cdn.cxense.com/cx.js$domain=lopinion.fr
 @@||api.cxense.com/public/widget/data?$domain=lopinion.fr
+! https://github.com/uBlockOrigin/uAssets/issues/31127
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177332
+@@||cdn.cxense.com/cx.cce.js$domain=nikkansports.com
 @@||cdn.cxense.com/cx.js$domain=nikkansports.com
+@@||api.cxense.com/public/widget/data?json=$domain=nikkansports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163143
 @@||googletagmanager.com/gtm.js$domain=store-jp.nintendo.com
 @@||cdn.optimizely.com/js/$script,domain=store-jp.nintendo.com
@@ -330959,3 +330968,5 @@ bitdefender.com#$#body[style="opacity: 0;"] { opacity: 1 !important; }
 ! https://forum.ru-board.com/topic.cgi?forum=5&topic=51666&start=1420#14
 aliexpress.com,aliexpress.ru,aliexpress.us#%#//scriptlet('ubo-set', 'OfflineAudioContext', 'undefined')
 aliexpress.com,aliexpress.ru,aliexpress.us#%#//scriptlet('ubo-set', 'navigator.bluetooth', 'undefined')
+! alfalfalfa.com,matometanews.com
+||ipcheck.blogsys.jp^$redirect=noopjs,script
