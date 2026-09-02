@@ -104,7 +104,7 @@ step_header() {
 # Pass "default_no" to flip the default to No (still returns success only on
 # an explicit y/yes answer, never on the defaulted Enter).
 confirm() {
-    local mode=${1:-default_yes}
+    local mode=${1:-default_no}
     local reply
     if [ "$mode" = default_no ]; then
         read -r -p "[Y/N] (default: N): " reply
@@ -459,14 +459,14 @@ echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 
 step_header 2 "Build mode"
 echo "Use cached sources instead of a regular build?"
-if confirm default_no; then
+if confirm; then
     BUILD_MODE=cached
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
 
     # Neither is required every run — an existing filter.txt cache and stats
     # can be reused, so both default to skip.
     echo "Generate filter.txt cache (yarn generate-cache)?"
-    if confirm default_no; then
+    if confirm; then
         DO_GENERATE_CACHE=true
         echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
     else
@@ -475,7 +475,7 @@ if confirm default_no; then
     fi
 
     echo "Download per-filter stats.json from the cached percent.json (yarn download-stats)?"
-    if confirm default_no; then
+    if confirm; then
         DO_GENERATE_STATS=true
         echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
     else
@@ -497,7 +497,7 @@ step_header 3 "Filter selection"
 INCLUDED_FILTER_IDS=""
 EXCLUDED_FILTER_IDS=""
 echo "Use filter selection?"
-if confirm default_no; then
+if confirm; then
     echo "${C_CYAN}${ARROW}${C_RESET} Selecting filters"
     read -r -p "Filter IDs to build — yarn --include (comma-separated, blank = all): " INCLUDED_FILTER_IDS
     read -r -p "Filter IDs to exclude — yarn --skip (comma-separated, blank = none): " EXCLUDED_FILTER_IDS
@@ -515,13 +515,13 @@ echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}]
 # --- Step 4: cleanup preference ---
 
 step_header 4 "Cleanup preference"
-echo "Remove worktrees and build output when done?"
+echo "Keep worktrees and build output when done?"
 if confirm; then
-    DO_CLEANUP=true
-    echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: Yes"
-else
     DO_CLEANUP=false
     echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: No"
+else
+    DO_CLEANUP=true
+    echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: Yes"
 fi
 
 if ! MASTER_SHA=$(git rev-parse --verify "$BASE_BRANCH" 2>/dev/null); then
@@ -559,7 +559,7 @@ setup_worktree() {
     if [ -e "$path/.git" ]; then
         echo "[$label] Existing worktree found at $path"
         echo "Reuse it instead of recreating?"
-        if confirm default_no; then
+        if confirm; then
             echo "${C_CYAN}${ARROW}${C_RESET} [$label] reusing existing worktree at $path"
             if ! run_with_spinner "[$label] checking out $sha in reused worktree" "$log_path" \
                 git -C "$path" checkout -f "$sha"; then
