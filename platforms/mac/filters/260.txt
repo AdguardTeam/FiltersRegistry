@@ -1,8 +1,8 @@
-! Checksum: +ZKwaayK/xJ7QpVk1VRnsQ
+! Checksum: G37yVrK+WLg4h4rq4thfDg
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.67
-! TimeUpdated: 2026-09-02T04:39:32+00:00
+! Version: 2.0.1.68
+! TimeUpdated: 2026-09-02T08:41:16+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -125,6 +125,8 @@ www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 ! * Received from `https://www.amazon.com/suggestions`
 www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')
 ! Search placeholder messages
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
 ! Rufus chatbot in sidebar
 ! * Requires trusted filters in AdGuard
 ! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1pod2g6/comment/nuelobn/
@@ -1251,6 +1253,7 @@ github.com##.dashboard-changelog .TimelineItem:has([href*="-ai-"], [href*="-clau
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
 ! * JSONPath v2 compatible
+github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
@@ -1301,6 +1304,7 @@ github.com##[partial-name="copilot-assisted-review-upsell"]
 ! "Request review from Copilot" (enterprise only)
 github.com##.css-truncate > div:has([data-assignee-name="Copilot"])
 ! Suggested Reviewer Dropdown: Copilot (enterprise only)
+github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.suggestions[?@.login=="Copilot"]')
 ! Ask Copilot button above comment box (enterprise only)
 github.com###copilot-md-menu-anchor-new_comment_field
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/pull/13/changes (Viewing changed files of a pull request)
@@ -1819,6 +1823,8 @@ www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_camp
 www.google.*##.xOchs
 ! Autocomplete suggestions
 ! * JSONPath v2 compatible
+www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@.zp.udm=="50"]')
+www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@[?@.zf==86]]')
 ! * Backup cosmetic filter for mobile
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 ! -- https://www.google.com/search?q=Why+are+we+here

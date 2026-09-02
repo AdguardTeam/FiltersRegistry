@@ -136,6 +136,8 @@ www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 ! * Received from `https://www.amazon.com/suggestions`
 www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')
 ! Search placeholder messages
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
 ! Rufus chatbot in sidebar
 ! * Requires trusted filters in AdGuard
 ! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1pod2g6/comment/nuelobn/
@@ -933,7 +935,9 @@ design.dev##.sponsor-banner--coderabbit
 ! Initial page load
 ! * Checks for currentPageData to avoid filtering on deviation pages.
 !   Otherwise, if an AI image is loaded via URL, the page gets stuck in loading animation.
+www.deviantart.com#%#//scriptlet('ubo-json-edit', 'v2:$.currentPageData;$[\'@@entities\'].deviation[?@.isAiGenerated==true]')
 ! Images loaded when scrolling page, homepage sections, and related images.
+www.deviantart.com#%#//scriptlet('ubo-json-edit', 'v2:$..deviations[?@.isAiGenerated==true]')
 !#else
 www.deviantart.com#%#//scriptlet('ubo-json-prune', '@@entities.deviation.{-}.isAiGenerated.[=].true', 'currentPageData')
 www.deviantart.com#%#//scriptlet('ubo-json-prune', '$..deviations[?@.isAiGenerated==true]')
@@ -1432,6 +1436,7 @@ github.com##.dashboard-changelog .TimelineItem:has([href*="-ai-"], [href*="-clau
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
 ! * JSONPath v2 compatible
+github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
@@ -1491,6 +1496,7 @@ github.com##[partial-name="copilot-assisted-review-upsell"]
 ! "Request review from Copilot" (enterprise only)
 github.com##.css-truncate > div:has([data-assignee-name="Copilot"])
 ! Suggested Reviewer Dropdown: Copilot (enterprise only)
+github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.suggestions[?@.login=="Copilot"]')
 ! Ask Copilot button above comment box (enterprise only)
 github.com###copilot-md-menu-anchor-new_comment_field
 
@@ -2087,6 +2093,8 @@ www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_camp
 www.google.*##.xOchs
 ! Autocomplete suggestions
 ! * JSONPath v2 compatible
+www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@.zp.udm=="50"]')
+www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@[?@.zf==86]]')
 ! * Backup cosmetic filter for mobile
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 
@@ -2978,6 +2986,7 @@ sharepoint.com#?#[data-automation-id="designIdeas"]:upward(1)
 ! "Try Copilot Chat" button in header
 ! * Button starts as "Buy Microsoft 365", but may change into Copilot button during page load.
 !#if ext_ublock
+support.microsoft.com#%#//scriptlet('ubo-json-edit', '$.ad[?@.overrideContentSelector=="#c-uhf-nav-cta"][?@.campaignId=="cmmd71pygu7"]')
 !#else
 support.microsoft.com#%#//scriptlet('ubo-json-prune', '$.ad[?@.overrideContentSelector=="#c-uhf-nav-cta"][?@.campaignId=="cmmd71pygu7"]')
 !#endif
@@ -3342,9 +3351,15 @@ www.pinterest.com#%#//scriptlet('ubo-json-prune', 'resource_response.data.result
 ! Collection items - leaves blank space in image grid (illust, novel)
 ! -- https://www.pixiv.net/novel
 ! Popular original novels (novelSeries)
+www.pixiv.net#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$..[\'body\',\'data\',\'illust\',\'illusts\',\'novel\',\'novels\',\'novelSeries\',\'permanent\',\'recent\',\'userIllusts\',\'works\',\'zengoIdWorks\'][?@.aiType==2]')
+www.pixiv.net#%#//scriptlet('ubo-json-edit', 'v2:$..[\'data\',\'illust\',\'novel\'][?@.aiType==2]')
 ! -- https://www.pixiv.net/en/
 ! Homepage - Latest works for you
+www.pixiv.net#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$.body.content.thumbnails[?@.aiType==2]')
+www.pixiv.net#%#//scriptlet('ubo-json-edit', 'v2:$.street.latest.data.thumbnails[?@.aiType==2]')
 ! Homepage - Recommended works
+www.pixiv.net#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$.body.contents[?@.thumbnails.*.aiType==2]')
+www.pixiv.net#%#//scriptlet('ubo-json-edit', 'v2:$.street.forYou.contents[?@.thumbnails.*.aiType==2]')
 !#else
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch')
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch')
@@ -4043,6 +4058,7 @@ www.thermofisher.com##.ask-ai-widget-container
 www.tiktok.com#%#//scriptlet('json-prune-fetch-response', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType', '', '/item_list')
 ! Ad from AI company
 ! * I wasn't able to get this ad to appear again, so this rule isn't fully tested
+www.tiktok.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/')
 !#else
 www.tiktok.com#%#//scriptlet('json-prune', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType')
 www.tiktok.com#%#//scriptlet('json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch')
@@ -4567,6 +4583,7 @@ yacy.net##.navbar-right > li:has(> [href="https://chatgpt.com/g/g-h7fLnaDuI-yacy
 www.yahoo.com##[aria-label="Search with Yahoo Scout"]
 ! AI search suggestion
 !#if ext_ublock
+www.yahoo.com#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$.r[?@.m==89]', 'propsToMatch', '/sugg/gossip/gossip-us-fastbreak')
 !#else
 www.yahoo.com#%#//scriptlet('json-prune-fetch-response', '$.r[?@.m==89]')
 !#endif
@@ -4746,6 +4763,9 @@ m.youtube.com##.engagement-panel-section-list-footer-wrapper
 ! * Targets response from 'https://www.youtube.com/youtubei/v1/get_watch'
 ! * Filter by paintboth1234 (https://www.reddit.com/r/uBlockOrigin/comments/1npyxsc/comment/ng4kmje/)
 !#if ext_ublock
+www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
+www.youtube.com#%#//scriptlet('ubo-json-edit-xhr-response', 'v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed]', 'propsToMatch', '/youtubei')
+www.youtube.com#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed]', 'propsToMatch', '/youtubei')
 !#else
 ! * Alternate filter for AdGuard support
 www.youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
@@ -4759,6 +4779,8 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 ! Block AI upscaled "Super Resolution" quality options
 ! * May not work if video is loaded directly from URL
 !#if ext_ublock
+www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.*[?@.key=="1080p"];$..adaptiveFormats[?@.qualityLabel=="1080p"]')
+www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.*[?@.key=="720p"];$..adaptiveFormats[?@.qualityLabel=="720p"]')
 !#else
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="1080p"]]..adaptiveFormats.*[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="720p"]]..adaptiveFormats.*[?.qualityLabel=="720p"]')

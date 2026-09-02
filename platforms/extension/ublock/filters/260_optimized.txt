@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iwV0KC6xeSparE7EXaCJLQ
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1788324132-14400.patch
+! Checksum: nqOzhm5Gi3lHm4CkorPT/w
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1788338607-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.67
-! TimeUpdated: 2026-09-02T04:39:32+00:00
+! Version: 2.0.1.68
+! TimeUpdated: 2026-09-02T08:41:16+00:00
 ! Expires: 5 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=arrow.apache.org|developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -37,6 +37,8 @@ www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 www.amazon.*##+js(json-prune, suggestions.[-].widgetId)
+www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Ask Alexa a question"])
+www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Compare products with Alexa"])
 www.amazon.*##+js(set-session-storage-item, rufus:panel:dockedState, null)
 www.amazon.*##+js(set-session-storage-item, rufus:panel, null)
 www.amazon.*###rufus-ask-rufus-tooltip
@@ -266,6 +268,8 @@ www.democrata.es##.fren-inline
 www.democrata.es###fren_extracts
 www.democrata.es###quiz_section
 design.dev##.sponsor-banner--coderabbit
+www.deviantart.com##+js(json-edit, v2:$.currentPageData;$[\'@@entities\'].deviation[?@.isAiGenerated==true])
+www.deviantart.com##+js(json-edit, v2:$..deviations[?@.isAiGenerated==true])
 www.deviantart.com##.reset-link[href^="https://www.deviantart.com/dreamup"]
 www.deviantart.com##.reset-link[href="https://www.deviantart.com/studio/video"]
 www.deviantart.com##.reset-link[href*="https%3A%2F%2Fwww.deviantart.com%2Fdreamup"]
@@ -414,6 +418,7 @@ github.com##[data-testid="side-nav-menu-item-COPILOT"]
 github.com##[data-component="NavList.Item"][href="/mcp"]
 github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has([href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
+github.com##+js(json-edit-fetch-response, $.results[?@.action.path=="/copilot"], propsToMatch, /command_palette/jump_to_page_navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com##command-palette-item[data-item-title="Copilot"]:remove()
 github.com##.start-copilot-banner
@@ -434,6 +439,7 @@ github.com##.Footer-module__footerButtonWrapper__RL1TZUq
 github.com##.Footer-module__footerButtonWrapper__eCAAR
 github.com##[partial-name="copilot-assisted-review-upsell"]
 github.com##.css-truncate > div:has([data-assignee-name="Copilot"])
+github.com##+js(json-edit-fetch-response, $.suggestions[?@.login=="Copilot"])
 github.com###copilot-md-menu-anchor-new_comment_field
 github.com##[partial-name="copilot-code-chat"]
 github.com##.DiffLinesMenu-module__diff-button-container__vsLlS:has([data-testid="more-copilot-button"])
@@ -612,6 +618,8 @@ www.google.*##promo-middle-slot:contains(Gemini)
 www.google.*##[jscontroller="DyTeib"]
 www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_campaign=bottom-footer"]
 www.google.*##.xOchs
+www.google.*##+js(json-edit, $..[?@.zp.udm=="50"])
+www.google.*##+js(json-edit, $..[?@[?@.zf==86]])
 www.google.*##.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 www.google.*##[role="listitem"]:has(.olrp5b)
 www.google.com#@#div[role="navigation"] span:contains(AI Mode):upward(5):remove()
@@ -862,6 +870,7 @@ make.powerautomate.com##.wrapper-178[href="https://copilotstudio.microsoft.com"]
 admin.powerplatform.microsoft.com##button[value="/copilot/overview"]
 purview.microsoft.com###scc_oneShell-purview-copilot-button_container
 sharepoint.com##[data-automation-id="designIdeas"]:upward(1)
+support.microsoft.com##+js(json-edit, $.ad[?@.overrideContentSelector=="#c-uhf-nav-cta"][?@.campaignId=="cmmd71pygu7"])
 support.microsoft.com###buyInstallButton[href^="https://m365.cloud.microsoft/chat"]
 support.microsoft.com###start-your-copilot-journey-here
 support.microsoft.com###start-your-copilot-journey-here + .homePage-featureGrid
@@ -943,6 +952,12 @@ www.pcmag.com##div:has(> [data-element="embedded-unit"] > form[\@submit\.prevent
 medicalxpress.com,phys.org,techxplore.com##[data-target="#summary-modal"]
 pictory.ai###livex-chatbot-app
 www.pinterest.com##+js(json-prune, resource_response.data.results.[-].gen_ai_topics)
+www.pixiv.net##+js(json-edit-fetch-response, v2:$..[\'body\'\,\'data\'\,\'illust\'\,\'illusts\'\,\'novel\'\,\'novels\'\,\'novelSeries\'\,\'permanent\'\,\'recent\'\,\'userIllusts\'\,\'works\'\,\'zengoIdWorks\'][?@.aiType==2])
+www.pixiv.net##+js(json-edit, v2:$..[\'data\'\,\'illust\'\,\'novel\'][?@.aiType==2])
+www.pixiv.net##+js(json-edit-fetch-response, v2:$.body.content.thumbnails[?@.aiType==2])
+www.pixiv.net##+js(json-edit, v2:$.street.latest.data.thumbnails[?@.aiType==2])
+www.pixiv.net##+js(json-edit-fetch-response, v2:$.body.contents[?@.thumbnails.*.aiType==2])
+www.pixiv.net##+js(json-edit, v2:$.street.forYou.contents[?@.thumbnails.*.aiType==2])
 www.pixiv.net##.sc-455f28d6-1:has(.sc-250a6a48-2.sc-250a6a48-4 > [href="https://www.pixiv.help/hc/articles/11866167926809"]) > figure
 www.pixiv.net##.lptroa
 www.pixiv.net##.fDgtdo[href="/ranking.php?mode=daily_ai"]
@@ -1119,6 +1134,7 @@ thenewstack.io##.search-disclaimer
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
 www.thermofisher.com##.ask-ai-widget-container
 www.tiktok.com##+js(json-prune-fetch-response, itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType, , propsToMatch, /item_list)
+www.tiktok.com##+js(json-edit-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/)
 time.com###scale-agent-overlay-container
 www.todoist.com##message-banner[data-banner-name="ramble-1vv4lt6"]
 app.todoist.com##button[aria-label="Dictate tasks with Ramble"]
@@ -1251,6 +1267,7 @@ x.com##.css-175oi2r.r-1mmae3n:has(> [data-testid="grok_post_atgrok_button"])
 x.com##.r-1phboty.r-2yi16.r-1qi8awa:has(path[d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466"])
 yacy.net##.navbar-right > li:has(> [href="https://chatgpt.com/g/g-h7fLnaDuI-yacy-support"])
 www.yahoo.com##[aria-label="Search with Yahoo Scout"]
+www.yahoo.com##+js(json-edit-fetch-response, v2:$.r[?@.m==89], propsToMatch, /sugg/gossip/gossip-us-fastbreak)
 www.yahoo.com##[role="menuitem"]:has(> [href^="https://scout.yahoo.com/"])
 www.yahoo.com###conbar-content > .group:has(.stretched-box[href^="https://scout.yahoo.com"])
 www.yahoo.com##.relative.flex.flex-col.gap-1\.5.rounded-xl.bg-secondary.p-3.leading-5.mb-8:has(> [data-ylk*="ai-summary;"])
@@ -1310,8 +1327,13 @@ www.youtube.com##yt-button-view-model:has(> .you-chat-entrypoint-button)
 m.youtube.com,www.youtube.com##.you-chat-entrypoint-button
 www.youtube.com##.ytp-suggested-action-badge[aria-label="Ask about this video"]
 m.youtube.com##.engagement-panel-section-list-footer-wrapper
+www.youtube.com##+js(json-edit, v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed])
+www.youtube.com##+js(json-edit-xhr-response, v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed], propsToMatch, /youtubei)
+www.youtube.com##+js(json-edit-fetch-response, v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed], propsToMatch, /youtubei)
 www.youtube.com##.ytp-menuitem-section-header
 www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
+www.youtube.com##+js(json-edit, v2:$..paygatedQualitiesMetadata.*[?@.key=="1080p"];$..adaptiveFormats[?@.qualityLabel=="1080p"])
+www.youtube.com##+js(json-edit, v2:$..paygatedQualitiesMetadata.*[?@.key=="720p"];$..adaptiveFormats[?@.qualityLabel=="720p"])
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
 www.youtube.com##ytd-expandable-metadata-renderer[has-video-summary]
 www.youtube.com##[chip-style="STYLE_AI_MODE_CHIP"]

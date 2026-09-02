@@ -1,9 +1,9 @@
-! Checksum: 2Z9Hl8tFCRxPBRjJYFRHjQ
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1788324142-14400.patch
+! Checksum: 4SwoYvpOcxf0RIIQVzNjeg
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1788338614-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.67
-! TimeUpdated: 2026-09-02T04:39:32+00:00
+! Version: 2.0.1.68
+! TimeUpdated: 2026-09-02T08:41:16+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=arrow.apache.org|developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -36,6 +36,8 @@ www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel:dockedState', 'null')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel', 'null')
 www.amazon.*###rufus-ask-rufus-tooltip
@@ -415,6 +417,7 @@ github.com##[data-testid="side-nav-menu-item-COPILOT"]
 github.com##[data-component="NavList.Item"][href="/mcp"]
 github.com##.DashboardBannerCopilotApp
 github.com##.dashboard-changelog .TimelineItem:has([href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
+github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
 github.com##.start-copilot-banner
@@ -435,6 +438,7 @@ github.com##.Footer-module__footerButtonWrapper__RL1TZUq
 github.com##.Footer-module__footerButtonWrapper__eCAAR
 github.com##[partial-name="copilot-assisted-review-upsell"]
 github.com##.css-truncate > div:has([data-assignee-name="Copilot"])
+github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.suggestions[?@.login=="Copilot"]')
 github.com###copilot-md-menu-anchor-new_comment_field
 github.com##[partial-name="copilot-code-chat"]
 github.com##.DiffLinesMenu-module__diff-button-container__vsLlS:has([data-testid="more-copilot-button"])
@@ -617,6 +621,8 @@ www.google.*#?#promo-middle-slot:contains(Gemini)
 www.google.*##[jscontroller="DyTeib"]
 www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_campaign=bottom-footer"]
 www.google.*##.xOchs
+www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@.zp.udm=="50"]')
+www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@[?@.zf==86]]')
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 www.google.*##[role="listitem"]:has(.olrp5b)
 www.google.com#@$?#div[role="navigation"] span:contains(AI Mode):upward(5) { remove: true; }
