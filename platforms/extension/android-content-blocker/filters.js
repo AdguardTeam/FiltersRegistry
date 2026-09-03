@@ -940,8 +940,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.67.40",
-			"timeUpdated": "2026-09-02T12:44:12+0000",
+			"version": "2.1.67.41",
+			"timeUpdated": "2026-09-03T01:07:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1218,8 +1218,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.70.74",
-			"timeUpdated": "2026-09-02T20:35:13+0000",
+			"version": "2.1.70.75",
+			"timeUpdated": "2026-09-03T01:07:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1318,8 +1318,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.66.82",
-			"timeUpdated": "2026-09-02T20:35:19+0000",
+			"version": "2.1.66.83",
+			"timeUpdated": "2026-09-03T01:07:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1343,8 +1343,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.68.8",
-			"timeUpdated": "2026-09-02T20:35:21+0000",
+			"version": "2.1.68.9",
+			"timeUpdated": "2026-09-03T01:07:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1538,8 +1538,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.9.35",
-			"timeUpdated": "2026-09-02T12:44:37+0000",
+			"version": "2.1.9.36",
+			"timeUpdated": "2026-09-03T01:07:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1777,8 +1777,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@filteringdev/filterslists-ko@latest/dist/filterslist-AdGuard-classic.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.36",
-			"timeUpdated": "2026-09-02T08:40:46+0000",
+			"version": "2.0.25.37",
+			"timeUpdated": "2026-09-03T01:07:50+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1858,8 +1858,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.88.4",
-			"timeUpdated": "2026-09-02T20:35:38+0000",
+			"version": "2.0.88.5",
+			"timeUpdated": "2026-09-03T01:07:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2061,8 +2061,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.70.61",
-			"timeUpdated": "2026-09-02T20:35:46+0000",
+			"version": "2.1.70.62",
+			"timeUpdated": "2026-09-03T01:08:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2317,8 +2317,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.17.12",
-			"timeUpdated": "2026-09-02T12:45:10+0000",
+			"version": "2.0.17.13",
+			"timeUpdated": "2026-09-03T01:08:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2425,8 +2425,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.1.69",
-			"timeUpdated": "2026-09-02T20:36:00+0000",
+			"version": "2.0.1.70",
+			"timeUpdated": "2026-09-03T01:08:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

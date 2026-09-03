@@ -1,9 +1,9 @@
-! Checksum: Lle93lyweDwrv8ld2fpLUA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1788338593-14400.patch
+! Checksum: G+H30WycSkgShrr/87o4Gg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1788397846-14400.patch
 ! Title: filterslist-KO Classic filter list (Optimized)
 ! Description: The filterslist-KO Classic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.25.36
-! TimeUpdated: 2026-09-02T08:40:46+00:00
+! Version: 2.0.25.37
+! TimeUpdated: 2026-09-03T01:07:50+00:00
 ! Expires: 10 days (update frequency)
 ||mixtower.net^
 ||adflow.kr^
@@ -690,6 +690,8 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+/^https:\/\/(www\.)?busan\.com\/nas\/wcms\/public\/m\/images\/new\/[0-9]{6}[a-z]{2,3}\./$domain=busan.com
+||joinsmedia.sfo2.digitaloceanspaces.com/ad/
 ||graynews.co.kr/api/*/ads/imp
 ||graynews.co.kr/img/cms/*PC.$image
 ||img*.quasarzone.com/banner/
@@ -1825,6 +1827,9 @@ search.zum.com,philgo.com,vop.co.kr,paxnet.co.kr##div[class*="ad_"]
 mt.co.kr,sportschosun.com,lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 sports.donga.com##div[id*="_AD"]
+busan.com###container > div[style^="width:"]
+joinsmediacanada.com###popupNoticeWrap
+joinsmediacanada.com###aside.highChk
 graynews.co.kr##div[data-component="AdBanner"]
 graynews.co.kr##a[href^="/api/v2/ads/click?slot="]
 quasarzone.com##body > div[style^="min-height:"]
@@ -3342,6 +3347,7 @@ x86.co.kr#@#.download_ad
 @@||dasibogo.net/wp-content/uploads/sites/23/2024/04/dasibogologo$domain=dasibogo.net
 @@||ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js$domain=m.stock.naver.com
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
+joinsmediacanada.com#$##container.highChk { width: 100% !important; }
 quasarzone.com#$#.sponsor-banner-layer-container { width: 0px !important; }
 quasarzone.com#$#.sponsor-banner-layer-container * { width: 0px !important; padding: 0px !important; border: none !important; }
 mediapen.com#$#.article-content { width: 100% !important; }

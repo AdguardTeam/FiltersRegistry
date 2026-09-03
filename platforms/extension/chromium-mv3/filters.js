@@ -1099,8 +1099,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.9.35",
-			"timeUpdated": "2026-09-02T12:44:37+0000",
+			"version": "2.1.9.36",
+			"timeUpdated": "2026-09-03T01:07:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1238,8 +1238,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@filteringdev/filterslists-ko@latest/dist/filterslist-AdGuard-classic.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.36",
-			"timeUpdated": "2026-09-02T08:40:46+0000",
+			"version": "2.0.25.37",
+			"timeUpdated": "2026-09-03T01:07:50+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1471,8 +1471,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.17.12",
-			"timeUpdated": "2026-09-02T12:45:10+0000",
+			"version": "2.0.17.13",
+			"timeUpdated": "2026-09-03T01:08:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1551,8 +1551,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.1.69",
-			"timeUpdated": "2026-09-02T20:36:00+0000",
+			"version": "2.0.1.70",
+			"timeUpdated": "2026-09-03T01:08:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

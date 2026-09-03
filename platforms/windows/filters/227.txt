@@ -1,14 +1,14 @@
-! Checksum: wPeSU/sbhQmMwCD7GDUyzw
-! Diff-Path: ../patches/227/227-s-1788338615-14400.patch
+! Checksum: KM/wIgCR8BBchjytyt/9Qg
+! Diff-Path: ../patches/227/227-s-1788397876-14400.patch
 ! Title: filterslist-KO Classic filter list
 ! Description: The filterslist-KO Classic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.25.36
-! TimeUpdated: 2026-09-02T08:40:46+00:00
+! Version: 2.0.25.37
+! TimeUpdated: 2026-09-03T01:07:50+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: filterslists-KO classic (AdGuard)
 ! Description: AdGuard용 filterslists-KO클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20698.2
+! OriginalVersion: 2026.20699.0
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/FilteringDev/filterslists-KO
 ! Licence: https://github.com/FilteringDev/filterslists-KO/blob/master/LICENSE
@@ -799,6 +799,8 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+/^https:\/\/(www\.)?busan\.com\/nas\/wcms\/public\/m\/images\/new\/[0-9]{6}[a-z]{2,3}\./$domain=busan.com
+||joinsmedia.sfo2.digitaloceanspaces.com/ad/
 ||graynews.co.kr/api/*/ads/imp
 ||graynews.co.kr/img/cms/*PC.$image
 ||img*.quasarzone.com/banner/
@@ -2031,6 +2033,9 @@ jobkorea.co.kr##div[id^="Banner"]
 ! ##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+busan.com###container > div[style^="width:"]
+joinsmediacanada.com###popupNoticeWrap
+joinsmediacanada.com###aside.highChk
 graynews.co.kr##div[data-component="AdBanner"]
 graynews.co.kr##a[href^="/api/v2/ads/click?slot="]
 quasarzone.com##body > div[style^="min-height:"]
@@ -3568,6 +3573,7 @@ x86.co.kr#@#.download_ad
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ! TODO: remove the following filter if https://github.com/AdguardTeam/CoreLibs/issues/1831 is resolved.
 /^https:\/\/m[0-9]+\.kotbc\.com\/img\/[a-z0-9_/]+\.gif$/
+joinsmediacanada.com#$##container.highChk { width: 100% !important; }
 quasarzone.com#$#.sponsor-banner-layer-container { width: 0px !important; }
 quasarzone.com#$#.sponsor-banner-layer-container * { width: 0px !important; padding: 0px !important; border: none !important; }
 mediapen.com#$#.article-content { width: 100% !important; }
