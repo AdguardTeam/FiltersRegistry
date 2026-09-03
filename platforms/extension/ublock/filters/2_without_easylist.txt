@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 7Fu8RZU4Ziu5yc0dO9z3mQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788420020-3600.patch
+! Checksum: JNS2wb6GW3kfx2b/4bs17w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788423835-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.87.75
-! TimeUpdated: 2026-09-03T07:16:06+00:00
+! Version: 2.4.87.76
+! TimeUpdated: 2026-09-03T08:20:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27795,6 +27795,10 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xhr,redirect=noop.txt
 !
 !
+dziennikzwiazkowy.com,radiozamosc.pl,dziennikwschodni.pl##.tipad_tag
+radiolodz.pl##.elementor-widget-premium-carousel-widget
+radiolodz.pl##.elementor-element > div > figure:has(> a[target="_blank"] ~ figcaption)
+radiolodz.pl##.elementor-widget-wrap > div.elementor-element:has(> div.elementor-widget-container > h6)
 debica24.pl##.page > .grid > .grid__container > .grid__row:has(> .grid__col > .adv)
 debica24.pl##.page > .grid > .grid__container > .grid__row:contains(Reklama)
 ||debica24.pl/static/files/inline_images/*/inline__
@@ -27879,6 +27883,9 @@ animewatch.pl###sidebar > .widget_text > .textwidget:has(> div[class^="myBanner"
 ||moja-ostroleka.pl/a-single
 moja-ostroleka.pl##section[class]:has(> div:contains(/^Reklama$/))
 moja-ostroleka.pl##div[data-id]:has(> div:contains(/^REKLAMA$/)):remove()
+moja-ostroleka.pl##.recomended-news__list > div[id^="inside_"]
+moja-ostroleka.pl##div[class]:has(> div:first-child:not([class]) + div:last-child > div[data-id])
+moja-ostroleka.pl##div[class]:has(> div:first-child:not([class]) + div:last-child:is([id*="inside_"],[id^="bottom_"]))
 ||wizja.cc/embed/adsy/cache/theme-helper-v2.js
 autocentrum.pl##.saplConfigurator
 katowice24.info##.grid__row:has(> div.grid__col > div.card > div.box > div.box__container > div[id^="bills_in_rotation_"] > a[href^="https://www.sdsm.pl/"])
@@ -31482,7 +31489,7 @@ vibez.pl##style + div[class] > img[src^="https://v.wpimg.pl/"][alt]:first-child 
 ! https://github.com/AdguardTeam/AdguardFilters/issues/141635
 benchmark.pl##img[src="https://i.wpimg.pl/O/56x45/i.wp.pl/a/i/stg/pkf/bg.png"]:upward(1)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157605
-autocentrum.pl##style + div[class]:has(> script:first-child + img[src^="https://v.wpimg.pl/"][alt] + div[class]:last-child)
+autocentrum.pl##style + div[class]:has(> script:first-child + img[src^="https://v.wpimg.pl/"][alt] + div:last-child)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/82418
 kafeteria.pl,autokult.pl,fitness.wp.pl,komorkomania.pl,gadzetomania.pl,fotoblogia.pl##div[class*=" "] > div[class]:first-child + img[src^="https://i.wpimg.pl/100x0/"]:upward(1)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133884
