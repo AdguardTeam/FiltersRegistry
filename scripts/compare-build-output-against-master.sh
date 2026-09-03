@@ -597,13 +597,14 @@ setup_worktree "$BASE_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
 # --- Step 6: install deps in parallel ---
-# Always runs, even for a reused worktree
+# Always runs, even for a reused worktree.
+# --mutex network: https://classic.yarnpkg.com/en/docs/cli/#toc-concurrency-and-mutex
 
 step_header 6 "Install dependencies"
 
-yarn --cwd "$MASTER_WORK_TREE" install > "$LOG_MASTER_INSTALL" 2>&1 &
+yarn --cwd "$MASTER_WORK_TREE" install --mutex network > "$LOG_MASTER_INSTALL" 2>&1 &
 PID_MASTER_INSTALL=$!
-yarn --cwd "$CHANGED_WORK_TREE" install > "$LOG_CHANGED_INSTALL" 2>&1 &
+yarn --cwd "$CHANGED_WORK_TREE" install --mutex network > "$LOG_CHANGED_INSTALL" 2>&1 &
 PID_CHANGED_INSTALL=$!
 
 spinner_wait_all "$PID_MASTER_INSTALL:[${BASE_BRANCH}] install" "$PID_CHANGED_INSTALL:[$CHANGED_BRANCH] install"
