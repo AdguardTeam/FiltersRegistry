@@ -1,5 +1,5 @@
-! Checksum: nR3LeYw/cTVef5kJTnWN/Q
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1788387451-3600.patch
+! Checksum: ns+bX4kWA0ZTeZn2thNJ3Q
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1788402871-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.53.24
@@ -691,6 +691,7 @@ ad-hoc-news.de###billboardBottom
 ad-hoc-news.de##div[data-adserver]
 nzz.ch##div[data-source-element-widget]:has(> div[id^="adnz_native"]:only-child)
 t-online.de##aside[aria-label="Anzeige"]
+mopo.de##article:has(> a[href*="/advertorial/"])
 i-loadzone.com##.asioppsd
 i-loadzone.com##.galaksion-ad
 der-postillon.com###HTML9
@@ -776,7 +777,6 @@ playcentral.de###zk-merch
 goldesel.bz##body > div[class^="p"] > ul + div[class^="c"] > div:not([class^="d_17"]):has(> div[class^="d_"] > a > img)
 wg-gesucht.de###main_column #partners_wrapper
 jungefreiheit.de##div[style^="text-align: center;"]:has(ins.adsbygoogle)
-speisekarte.de##.ad-infinite
 speisekarte.de##.h5v-placeholder
 speisekarte.de##div[id^="sk_content_"]
 speisekarte.de##div[id^="skyscraperLeftWrap"]
@@ -2156,6 +2156,7 @@ focus.de##.tft_ads
 pcgames.de##.amazonAutoLink
 tichyseinblick.de##.adwidget_wrapper
 freizeitpartnerweb.de,outdoorpartner.net,urlaubspartner.net##.ad.text-uppercase
+briefwahl-beantragen.de##.stadt-panel-right > .stadt-panel.stadt-formular-panel
 ||widgets.outbrain.com^$domain=spiegel.de|manager-magazin.de|fnp.de
 borkenerzeitung.de,bbv-net.de###WallpaperBanner
 pfalz-express.de###alternative_footer
@@ -2861,6 +2862,7 @@ _woz_banner_vote.
 ##.sponsorlinkgruen
 ##.symplr-ad-holder
 ##.textlinkwerbung
+##.trm-anzeige-separator
 ##.wadtag
 ##.werb_textlink
 ##.werbebanner
@@ -2883,6 +2885,7 @@ _woz_banner_vote.
 ##.werbung-unten
 ##.werbung1
 ##.werbung2
+##.werbung280x70_wrap
 ##.werbung3
 ##.werbung301
 ##.werbungContainer
@@ -2904,6 +2907,7 @@ _woz_banner_vote.
 ##a[href^="http://www.rotlichtkartei.com/?sc="]
 ##a[href^="https://ads.sunmaker.com/tracking.php?"]
 ##a[href^="https://bd742.com/"]
+##a[href^="https://clicks.imaxcash.com/?aff_"]
 ##a[href^="https://dpm.affaire18.com/click.php?dp="]
 ##a[href^="https://dpm.jungekontakte.com/click.php?dp="]
 ##a[href^="https://feed.solads.media/"]
@@ -3018,7 +3022,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||ibanner.de^$third-party
 ||iqcontentplatform.de^$third-party
 ||itrack.it^$third-party
-||jink.de^$third-party
 ||jojoad.com^$third-party
 ||localpoint.ch^$third-party
 ||mirando.de^$third-party
@@ -3866,7 +3869,6 @@ kleinanzeigen.de###vip_pro-billboard
 games.ch###wallpaper
 koelner.de###wallpaper_left
 koelner.de###wallpaper_right
-beeg-pornos.com,deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-pornos.info,hd-sexfilme.com,hdpornos.net,herzporno.com,lesbenhd.com,meinyouporn.com,milffabrik.com,nursexfilme.com,pornhub-sexfilme.net,pornoaffe.net,pornodavid.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohelm.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoleon.com,pornolisa.com,pornoritze.com,pornoschlange.com,pornosusi.com,pornotanja.com,pornotom.com,pornotommy.com,pornovideos-hd.com,pornozebra.com,sexente.com,sexfilme-gratis.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xnxx-porno.com,xnxx-pornos.xxx,xnxx-sexfilme.com###wb_widget
 astronews.com###wcontent
 bayer04.de###web-trekk-pageupdate
 weltwoche.ch###werbungTop
@@ -4584,6 +4586,7 @@ zeno.org##.zenoLSInnerProductTableRightAmazon
 zwischengas.com##.zgsky
 heise.de##A-PATERNOSTER
 home24.de##[data-cnstrc-sl-campaign-owner]
+aerzteblatt.de##[data-cy="section-ad"]
 gmx.net##[data-sda-slot]
 skodacommunity.de##[id^="fh-afp_"]
 nebenwerte-magazin.com##a[aria-label="auvesta-gold-sparvertrag"]
@@ -4949,7 +4952,6 @@ heise.de##.bg-gray-50:has(div[id*="_Incontent-"])
 wallstreet-online.de##.breakingNewsOfferteBox:has(span.offerteFlag)
 sportscheck.com##.c-product-tile:has(div.c-product-tile__sponsored)
 googlewatchblog.de##.card-content > center:has(ins.adsbygoogle)
-wochenblatt-reporter.de##.content-card-wrap.pointer.outlined:has(.cmmrc-tag)
 nrwz.de##.elementor-element:has([id^="nrwzad-"])
 feuerwehrmagazin.de##.excerpt-tile.cell.small-12.medium-6:has(.advertorials)
 obi.*##.find-brandshop-grid:has([data-ui-name="find-artikelkachel-gesponsert-marker"])
@@ -5055,7 +5057,6 @@ hardwareluxx.de#?#.bg-gray-light:has(div.text-right:contains(Werbung))
 jungefreiheit.de#?#.elementor-element > .elementor-widget-container:has(.elementor-shortcode:contains(Anzeige))
 knuspr.de#?#div[data-test="whisperer-product-wrapper"]:contains(Gesponsert)
 koeln.de#?#.gb-container:contains(Anzeige)
-kurier.at#?#.gridContainer:contains(Sponsored Content)
 mediamarkt.*#?#[data-test="mms-base-teaser"]:contains(Gesponsert)
 mediamarkt.*,saturn.de#?#li:has(div[data-test="mms-product-card"]:has(span:contains(Gesponsert)))
 mmnews.de#?#.sp-module:has(span:contains(Kleinanzeigen))
