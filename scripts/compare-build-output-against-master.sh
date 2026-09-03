@@ -387,10 +387,9 @@ generate_report() {
     if [ "$rule_diffs" -eq 0 ] && [ "$meta_diffs" -eq 0 ]; then
         echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file or metadata diffs"
     else
-        local fail_reasons=""
-        [ "$rule_diffs" -gt 0 ] && fail_reasons="$fail_reasons $rule_diffs rule file(s) differ"
-        [ "$meta_diffs" -gt 0 ] && fail_reasons="${fail_reasons:+$fail_reasons; }$meta_diffs metadata file(s) differ"
-        echo "${C_RED}${CROSS} FAIL${C_RESET} —$fail_reasons"
+        echo "${C_RED}${CROSS} FAIL${C_RESET}"
+        [ "$rule_diffs" -gt 0 ] && echo "  $rule_diffs rule file(s) differ"
+        [ "$meta_diffs" -gt 0 ] && echo "  $meta_diffs metadata file(s) differ"
         return 1
     fi
 }
