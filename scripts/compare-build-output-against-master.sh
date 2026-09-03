@@ -371,11 +371,11 @@ generate_report() {
         changed_file="$PLATFORMS_CHANGED/${rel}"
         if [ -f "$changed_file" ]; then
             if ! diff -q "$master_file" "$changed_file" > /dev/null 2>&1; then
-                diff_list="$diff_list\n  DIFF: $rel"
+                diff_list+=$'\n'"  DIFF: $rel"
                 rule_diffs=$((rule_diffs + 1))
             fi
         else
-            diff_list="$diff_list\n  MISSING: $rel"
+            diff_list+=$'\n'"  MISSING: $rel"
             rule_diffs=$((rule_diffs + 1))
         fi
     done < <(find "$PLATFORMS_MASTER" -name "*.txt" -print0)
@@ -387,7 +387,7 @@ generate_report() {
         rel="${changed_only_file#"$PLATFORMS_CHANGED"/}"
         master_file="$PLATFORMS_MASTER/${rel}"
         if [ ! -f "$master_file" ]; then
-            added_list="$added_list\n  ADDED: $rel"
+            added_list+=$'\n'"  ADDED: $rel"
             added_count=$((added_count + 1))
         fi
     done < <(find "$PLATFORMS_CHANGED" -name "*.txt" -print0)
@@ -400,11 +400,11 @@ generate_report() {
     echo "${C_BOLD}--- Rule Files ---${C_RESET}"
     echo "Total .txt files compared: $total"
     echo "Files with diffs:          $rule_diffs"
-    [ -n "$diff_list" ] && printf '%b\n' "$diff_list"
+    [ -n "$diff_list" ] && printf '%s\n' "$diff_list"
     echo ""
     echo "${C_BOLD}--- Added Files (informational) ---${C_RESET}"
     echo "Files only on the changed side: $added_count  (new filters or platform targets, not a regression)"
-    [ -n "$added_list" ] && printf '%b\n' "$added_list"
+    [ -n "$added_list" ] && printf '%s\n' "$added_list"
     echo ""
     echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
     echo "filters.json/filters.js diffs: $meta_diffs  (version counter noise, not a regression)"
