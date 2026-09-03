@@ -336,6 +336,15 @@ generate_report() {
     # Total .txt files
     total=$(find "$PLATFORMS_MASTER" -name "*.txt" | wc -l | tr -d ' ')
 
+    # A build that succeeds but emits zero .txt files (empty/invalid filter-ID
+    # selection, silent build misconfig) would otherwise compare nothing against
+    # nothing and print PASS. Treat it as a failure.
+    if [ "$total" -eq 0 ]; then
+        echo "${C_RED}${CROSS} FAIL${C_RESET} — no .txt files under $PLATFORMS_MASTER;" \
+            "the build produced no output (check the filter-ID selection and build logs)"
+        return 1
+    fi
+
     # Primary check — rule files
     rule_diffs=0
     diff_list=""
