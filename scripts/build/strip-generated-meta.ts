@@ -135,7 +135,12 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
                 return (await stripGeneratedMeta(fullPath)) ? 1 : 0;
             }
             if (METADATA_FILE_NAMES.includes(entry.name)) {
-                return (await stripMetaFromMetadataFile(fullPath)) ? 1 : 0;
+                if (await stripMetaFromMetadataFile(fullPath)) {
+                    // eslint-disable-next-line no-console
+                    console.log(`${path.relative(rootDir, fullPath)}: stripped generated meta fields`);
+                    return 1;
+                }
+                return 0;
             }
             return 0;
         }
