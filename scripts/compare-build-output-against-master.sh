@@ -104,7 +104,7 @@ step_header() {
 # Pass "default_no" to flip the default to No (still returns success only on
 # an explicit y/yes answer, never on the defaulted Enter).
 confirm() {
-    local mode=${1:-default_yes}
+    local mode=${1:-default_no}
     local reply
     if [ "$mode" = default_no ]; then
         read -r -p "[Y/N] (default: N): " reply
@@ -119,12 +119,12 @@ confirm() {
 # Renders a single status line for one or more "pid:label" pairs until all
 # processes finish. Callers still need to `wait "$pid"` afterwards for exit codes.
 spinner_wait_all() {
-    local frames='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+    local frames=(⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏)
     local i=0
     local all_done=0
     while [ "$all_done" -eq 0 ]; do
-        i=$(( (i + 1) % ${#frames} ))
-        local frame="${frames:$i:1}"
+        i=$(( (i + 1) % ${#frames[@]} ))
+        local frame="${frames[$i]}"
         local line=""
         all_done=1
         for pair in "$@"; do
@@ -215,7 +215,7 @@ filter_flags() {
 # empty tree left by a previous run that died mid-build (which would otherwise
 # get reused and reported as PASS against another empty tree).
 has_built_output() {
-    [ -n "$(find "$1" -name '*.txt' ! -name '*.patch' -print -quit 2>/dev/null)" ]
+    [ -n "$(find "$1" -name '*.txt' -print -quit 2>/dev/null)" ]
 }
 
 # Loads the meta file written by Step 8 into its known variables. Parses
@@ -237,6 +237,15 @@ load_meta() {
 restore_worktree_platforms() {
     git -C "$1" checkout --quiet -- platforms/ &&
         git -C "$1" clean --quiet -fd -- platforms/
+}
+
+# Replaces the compare worktree's filters/ with the $BASE_BRANCH version.
+# `git rm` first so filter directories the branch *added* don't survive the
+# checkout — they would otherwise keep their own revision.json counters and
+# show up as diff noise in the report.
+sync_filters_baseline() {
+    git -C "$CHANGED_WORK_TREE" rm -r --quiet --ignore-unmatch -- filters &&
+        git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/
 }
 
 # Waits on one branch's build, copies its platforms/ output into the
@@ -309,6 +318,7 @@ run_cleanup() {
 # the platforms_{master,changed}_build/ dirs.
 generate_report() {
     local build_cmd build_sub filter_args total rule_diffs diff_list meta_diffs
+    local added_count added_list
     local master_file rel changed_file changed_only_file
 
     echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
@@ -324,7 +334,7 @@ generate_report() {
     echo ""
 
     # Total .txt files
-    total=$(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" | wc -l | tr -d ' ')
+    total=$(find "$PLATFORMS_MASTER" -name "*.txt" | wc -l | tr -d ' ')
 
     # Primary check — rule files
     rule_diffs=0
@@ -342,19 +352,19 @@ generate_report() {
             diff_list="$diff_list\n  MISSING: $rel"
             rule_diffs=$((rule_diffs + 1))
         fi
-    done < <(find "$PLATFORMS_MASTER" -name "*.txt" ! -name "*.patch" -print0)
+    done < <(find "$PLATFORMS_MASTER" -name "*.txt" -print0)
 
     # Reverse check — files that exist only on the compare branch's side.
-    # The loop above only walks $PLATFORMS_MASTER, so a file added purely by
-    # the compare branch would otherwise never surface in the report at all.
+    added_count=0
+    added_list=""
     while IFS= read -r -d '' changed_only_file; do
         rel="${changed_only_file#"$PLATFORMS_CHANGED"/}"
         master_file="$PLATFORMS_MASTER/${rel}"
         if [ ! -f "$master_file" ]; then
-            diff_list="$diff_list\n  ADDED: $rel"
-            rule_diffs=$((rule_diffs + 1))
+            added_list="$added_list\n  ADDED: $rel"
+            added_count=$((added_count + 1))
         fi
-    done < <(find "$PLATFORMS_CHANGED" -name "*.txt" ! -name "*.patch" -print0)
+    done < <(find "$PLATFORMS_CHANGED" -name "*.txt" -print0)
 
     # Secondary check — metadata
     meta_diffs=$(diff -rq --exclude="*.txt" --exclude="*.patch" \
@@ -451,14 +461,14 @@ echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 
 step_header 2 "Build mode"
 echo "Use cached sources instead of a regular build?"
-if confirm default_no; then
+if confirm; then
     BUILD_MODE=cached
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
 
     # Neither is required every run — an existing filter.txt cache and stats
     # can be reused, so both default to skip.
     echo "Generate filter.txt cache (yarn generate-cache)?"
-    if confirm default_no; then
+    if confirm; then
         DO_GENERATE_CACHE=true
         echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
     else
@@ -467,7 +477,7 @@ if confirm default_no; then
     fi
 
     echo "Download per-filter stats.json from the cached percent.json (yarn download-stats)?"
-    if confirm default_no; then
+    if confirm; then
         DO_GENERATE_STATS=true
         echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
     else
@@ -489,7 +499,7 @@ step_header 3 "Filter selection"
 INCLUDED_FILTER_IDS=""
 EXCLUDED_FILTER_IDS=""
 echo "Use filter selection?"
-if confirm default_no; then
+if confirm; then
     echo "${C_CYAN}${ARROW}${C_RESET} Selecting filters"
     read -r -p "Filter IDs to build — yarn --include (comma-separated, blank = all): " INCLUDED_FILTER_IDS
     read -r -p "Filter IDs to exclude — yarn --skip (comma-separated, blank = none): " EXCLUDED_FILTER_IDS
@@ -507,20 +517,23 @@ echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}]
 # --- Step 4: cleanup preference ---
 
 step_header 4 "Cleanup preference"
-echo "Remove worktrees and build output when done?"
+echo "Keep worktrees and build output when done?"
 if confirm; then
-    DO_CLEANUP=true
-    echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: Yes"
-else
     DO_CLEANUP=false
     echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: No"
+else
+    DO_CLEANUP=true
+    echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: Yes"
 fi
 
 if ! MASTER_SHA=$(git rev-parse --verify "$BASE_BRANCH" 2>/dev/null); then
     echo "${C_RED}${CROSS} Error:${C_RESET} local branch '$BASE_BRANCH' not found. Fetch/checkout it first." >&2
     exit 1
 fi
-CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
+if ! CHANGED_SHA=$(git rev-parse --verify "$CHANGED_BRANCH" 2>/dev/null); then
+    echo "${C_RED}${CROSS} Error:${C_RESET} branch '$CHANGED_BRANCH' could not be resolved (deleted since it was picked?)." >&2
+    exit 1
+fi
 
 # --- Step 5: set up worktrees (reuse if already present) ---
 
@@ -548,7 +561,7 @@ setup_worktree() {
     if [ -e "$path/.git" ]; then
         echo "[$label] Existing worktree found at $path"
         echo "Reuse it instead of recreating?"
-        if confirm default_no; then
+        if confirm; then
             echo "${C_CYAN}${ARROW}${C_RESET} [$label] reusing existing worktree at $path"
             if ! run_with_spinner "[$label] checking out $sha in reused worktree" "$log_path" \
                 git -C "$path" checkout -f "$sha"; then
@@ -599,7 +612,7 @@ fi
 
 step_header 7 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
-    git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/; then
+    sync_filters_baseline; then
     die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
