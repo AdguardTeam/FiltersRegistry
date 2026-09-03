@@ -138,10 +138,11 @@ every build command so a quick check can build a handful of filters); and
 for whether to remove the build artifacts when finished. Under the hood it
 builds `master` and the compare branch
 in parallel via git worktrees under `temp/`, with a progress spinner on the
-slow steps (install, build, copy, restore, cleanup); it also syncs the
-compare worktree's `filters/` to the same baseline commit as master first, so
-`revision.json` version counters start from the same point and don't show up
-as diff noise in the report.
+slow steps (install, build, copy, restore, cleanup); it also resets the
+compare worktree's `filters/` to the master version first, so `revision.json`
+version counters start from the same point and don't show up as diff noise in
+the report. With `filters/` pinned, the tool compares build-tooling changes
+through their effect on the platform output, not filter content.
 
 Two more things it does around the build:
 
