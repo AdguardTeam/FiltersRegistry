@@ -441,6 +441,10 @@ for i in "${!BRANCHES[@]}"; do
 done
 
 step_header 1 "Local branch to compare against $BASE_BRANCH"
+echo "${C_DIM}Each branch is built from its committed tip; uncommitted changes in this checkout are not included.${C_RESET}"
+if [ -n "$(git status --porcelain -- ':!platforms' ':!temp' 2>/dev/null)" ]; then
+    echo "${C_RED}!${C_RESET} This checkout has uncommitted changes (outside platforms/) — commit them, or the comparison won't see them."
+fi
 
 if [ ${#BRANCHES[@]} -eq 1 ]; then
     CHANGED_BRANCH="${BRANCHES[0]}"
