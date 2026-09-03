@@ -274,7 +274,8 @@ collect_build() {
     fi
     if ! run_with_spinner "[$label] restoring worktree platforms/" "$LOG_RESTORE_PLATFORMS" \
         restore_worktree_platforms "$worktree"; then
-        die "[$label] restoring worktree platforms/ FAILED" "$LOG_RESTORE_PLATFORMS"
+        report_failure "[$label] restoring worktree platforms/ FAILED" "$LOG_RESTORE_PLATFORMS"
+        rc=1
     fi
     [ "$rc" -eq 0 ] || BUILD_FAILED=true
     return "$rc"
