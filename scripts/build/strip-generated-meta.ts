@@ -36,6 +36,7 @@ const isGeneratedMetaLine = (line: string): boolean => {
 
 /**
  * Checks whether an array contains only non-null objects (i.e. records).
+ *
  * @param value - The array to check.
  * @returns True if every item in the array is a non-null object.
  */
