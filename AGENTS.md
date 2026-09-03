@@ -86,7 +86,7 @@ for all supported AdGuard products.
 | `yarn build:patches` | Build incremental patches |
 | `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
 | `yarn download-stats` | Download per-filter `stats.json` to `temp/optimization/stats/` |
-| `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
+| `yarn strip-generated-meta` | Strip meta lines from `.txt` files + `version`/`timeUpdated` from `filters.{json,js}` |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
 | `yarn lint:code` | ESLint check (`eslint . --ext .js,.ts`) |
