@@ -9,11 +9,15 @@
 BASE_BRANCH="master"
 BUILD_FLAGS="--no-patches-prepare --strip-generated-meta"
 
-# Without this, a missing yarn only surfaces minutes later as an install/build
-# log failure instead of failing fast up front.
+# Check prerequisites up front — otherwise a missing tool or the wrong
+# directory only surfaces later as a cryptic yarn/git error.
+command -v git >/dev/null 2>&1 || { echo "Error: git not found on PATH." >&2; exit 1; }
 command -v yarn >/dev/null 2>&1 || { echo "Error: yarn not found on PATH." >&2; exit 1; }
 
-REPO_ROOT=$(git rev-parse --show-toplevel)
+if ! REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null); then
+    echo "Error: run this from inside the FiltersRegistry git repository." >&2
+    exit 1
+fi
 cd "$REPO_ROOT" || exit 1
 GIT_COMMON_DIR=$(git rev-parse --git-common-dir)
 
