@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5BezKE5WFlmtBoHyArffOg
-! Diff-Path: ../patches/1/1-s-1788373357-3600.patch
+! Checksum: ueXEdiTgmFfMyZUDNKIPvg
+! Diff-Path: ../patches/1/1-s-1788438363-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.38
-! TimeUpdated: 2026-09-02T18:18:11+00:00
+! Version: 2.1.8.39
+! TimeUpdated: 2026-09-03T12:22:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5366,8 +5366,6 @@ allsports-tv.ru,channels247.net,sport7.biz,sporting77.com,barsportbar.com##+js(n
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74361
 penzainform.ru##+js(abort-on-property-write, u0)
 penzainform.ru##body:style(cursor: auto!important;)
-! fastpic - ad redirect
-fastpic.ru,fastpic.org##+js(abort-on-property-read, utrgLabel)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73296
 2ip.io,2ip.ru##+js(set-cookie, anonymizer_ads, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73390
@@ -7167,14 +7165,6 @@ sovsport.ru##p:has(> a[class^="bet-widget_link"])
 sportcsat.ru###pc-container
 sportcsat.ru,onlinestreams.ru##div[style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; cursor: pointer; z-index: 1000000; background: rgba(255, 255, 255, 0);"]:style(display: none !important;)
 sportcsat.ru,onlinestreams.ru###player:style(pointer-events: auto !important;)
-||fastpic.org/fpv.js
-fastpic.org##+js(abort-current-script, JSON, =document[")
-fastpic.org##+js(abort-current-script, navigator, =document[")
-fastpic.org##+js(addEventListener-defuser, , /window\.open\(AD\,|wpadmngr\.com|\[\'init\'\]|\]=\'async\'\,document/)
-fastpic.org##+js(abort-current-script, Date.prototype.toISOString, wpadmngr.com)
-fastpic.org##+js(abort-on-property-read, ExaQaAutomatizationFlag)
-fastpic.org##+js(abort-current-script, EventTarget.prototype.dispatchEvent, getexoloader)
-fastpic.org##+js(remove-node-text, script, /ctrlKey|exoload|}catch\(_\){}try{/)
 ||fastpic.org/px/provider.js
 news.ru##.post-detail__content > div[style]:has(> div[id^="adfox_"])
 news.ru##.head-reban
@@ -17419,6 +17409,12 @@ passion.ru##.sideColumn[style*="width:300px"]
 !
 ! fastpic.ru
 fastpic.org##nav > div:not(:has(*))
+fastpic.org##.overlay-banner-container
+fastpic.org##+js(no-window-open-if)
+||fastpic.org/fpv.js
+fastpic.org##+js(abort-on-property-read, ExaQaAutomatizationFlag)
+fastpic.org##+js(abort-current-script, EventTarget.prototype.dispatchEvent, getexoloader)
+fastpic.org##+js(remove-node-text, script, /ctrlKey|exoload|}catch\(_\){}try{/)
 fastpic.org##+js(set-constant, Element.prototype.attachShadow, noopFunc)
 ||fastpic.org/n/
 ||static.fastpic.org/css/exo.css

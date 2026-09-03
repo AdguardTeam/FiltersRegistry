@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: t8/rnHEinspnlPybq7Xl4A
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1788402854-3600.patch
+! Checksum: pkr6XTDt3af1+bTD1jb/aQ
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1788438364-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.38
-! TimeUpdated: 2026-09-02T18:18:11+00:00
+! Version: 2.1.8.39
+! TimeUpdated: 2026-09-03T12:22:03+00:00
 ! Expires: 5 days (update frequency)
 ?fre=*&nocredentials=1^$xhr,3p
 /jackets/0/*?widgetId=banners-place-content-
@@ -2418,7 +2418,6 @@ mmo13.ru##+js(remove-class, bnr, #page.bnr)
 allsports-tv.ru,channels247.net,sport7.biz,sporting77.com,barsportbar.com##+js(no-window-open-if)
 penzainform.ru##+js(abort-on-property-write, u0)
 penzainform.ru##body:style(cursor: auto!important;)
-fastpic.ru,fastpic.org##+js(abort-on-property-read, utrgLabel)
 2ip.io,2ip.ru##+js(set-cookie, anonymizer_ads, true)
 l2top.ru##+js(abort-current-script, $, cleanAndEval)
 93.88.74.236##+js(abort-on-property-read, open)
@@ -3066,14 +3065,6 @@ sovsport.ru##.bonus-compilation-wrapper
 sportcsat.ru###pc-container
 sportcsat.ru,onlinestreams.ru##div[style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; cursor: pointer; z-index: 1000000; background: rgba(255, 255, 255, 0);"]:style(display: none !important;)
 sportcsat.ru,onlinestreams.ru###player:style(pointer-events: auto !important;)
-||fastpic.org/fpv.js
-fastpic.org##+js(abort-current-script, JSON, =document[")
-fastpic.org##+js(abort-current-script, navigator, =document[")
-fastpic.org##+js(addEventListener-defuser, , /window\.open\(AD\,|wpadmngr\.com|\[\'init\'\]|\]=\'async\'\,document/)
-fastpic.org##+js(abort-current-script, Date.prototype.toISOString, wpadmngr.com)
-fastpic.org##+js(abort-on-property-read, ExaQaAutomatizationFlag)
-fastpic.org##+js(abort-current-script, EventTarget.prototype.dispatchEvent, getexoloader)
-fastpic.org##+js(remove-node-text, script, /ctrlKey|exoload|}catch\(_\){}try{/)
 ||fastpic.org/px/provider.js
 news.ru##.post-detail__content > div[style]:has(> div[id^="adfox_"])
 news.ru##.head-reban
@@ -6898,6 +6889,12 @@ echo.msk.ru##div[style="width:240px; max-height:400px; background:#F2F2F2; overf
 passion.ru##.sideColumn[style*="width: 300px"]
 passion.ru##.sideColumn[style*="width:300px"]
 fastpic.org##nav > div:not(:has(*))
+fastpic.org##.overlay-banner-container
+fastpic.org##+js(no-window-open-if)
+||fastpic.org/fpv.js
+fastpic.org##+js(abort-on-property-read, ExaQaAutomatizationFlag)
+fastpic.org##+js(abort-current-script, EventTarget.prototype.dispatchEvent, getexoloader)
+fastpic.org##+js(remove-node-text, script, /ctrlKey|exoload|}catch\(_\){}try{/)
 fastpic.org##+js(set-constant, Element.prototype.attachShadow, noopFunc)
 ||fastpic.*/g/
 ||fastpic.*/*.php|

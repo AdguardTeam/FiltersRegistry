@@ -1,9 +1,9 @@
-! Checksum: yHEriqVOwLEoOAeGUgTHRA
-! Diff-Path: ../patches/1/1-s-1788373354-3600.patch
+! Checksum: pNdcYC1jkjqZ3uusKwoqKg
+! Diff-Path: ../patches/1/1-s-1788438359-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.38
-! TimeUpdated: 2026-09-02T18:18:11+00:00
+! Version: 2.1.8.39
+! TimeUpdated: 2026-09-03T12:22:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5442,8 +5442,6 @@ allsports-tv.ru,channels247.net,sport7.biz,sporting77.com,barsportbar.com#%#//sc
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74361
 penzainform.ru#%#//scriptlet("abort-on-property-write", "u0")
 penzainform.ru#$#body { cursor: auto!important; }
-! fastpic - ad redirect
-fastpic.ru,fastpic.org#%#//scriptlet("abort-on-property-read", "utrgLabel")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73296
 2ip.io,2ip.ru#%#//scriptlet('set-cookie', 'anonymizer_ads', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73390
@@ -7257,14 +7255,6 @@ sovsport.ru##p:has(> a[class^="bet-widget_link"])
 sportcsat.ru###pc-container
 sportcsat.ru,onlinestreams.ru#$#div[style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; cursor: pointer; z-index: 1000000; background: rgba(255, 255, 255, 0);"] { display: none !important; }
 sportcsat.ru,onlinestreams.ru#$##player { pointer-events: auto !important; }
-||fastpic.org/fpv.js
-fastpic.org#%#//scriptlet('abort-current-inline-script', 'JSON', '=document["')
-fastpic.org#%#//scriptlet('abort-current-inline-script', 'navigator', '=document["')
-fastpic.org#%#//scriptlet('prevent-addEventListener', '', '/window\.open\(AD,|wpadmngr\.com|\[\'init\'\]|\]=\'async\',document/')
-fastpic.org#%#//scriptlet('abort-current-inline-script', 'Date.prototype.toISOString', 'wpadmngr.com')
-fastpic.org#%#//scriptlet('abort-on-property-read', 'ExaQaAutomatizationFlag')
-fastpic.org#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.dispatchEvent', 'getexoloader')
-fastpic.org#%#//scriptlet('remove-node-text', 'script', '/ctrlKey|exoload|}catch\(_\){}try{/')
 ||fastpic.org/px/provider.js
 news.ru##.post-detail__content > div[style]:has(> div[id^="adfox_"])
 news.ru##.head-reban
@@ -7692,7 +7682,6 @@ fost.ws##a[href^="https://sdertjnbv.xyz/"][target="_blank"]
 fontanka.ru##div[class^="topicsInlineAdv_"]
 aniliberty.top##.commercial-banner
 kodik.info#%#//scriptlet('json-prune', 'vast reserve_vast')
-fastpic.org#%#//scriptlet('trusted-replace-node-text', 'script', 'COOKIE_NAME', 'if(count>=', 'if(count<')
 fastpic.org###x9f8e2b
 fastpic.org##iframe[srcdoc*="https://jsc.adskeeper.com/"]
 ||xv-on.com/popunder.js
@@ -17486,6 +17475,13 @@ passion.ru##.sideColumn[style*="width:300px"]
 !
 ! fastpic.ru
 fastpic.org##nav > div:not(:has(*))
+fastpic.org##.overlay-banner-container
+fastpic.org#%#//scriptlet('prevent-window-open')
+fastpic.org#%#//scriptlet('prevent-navigation', '/^(?!fastpic\.org).*/')
+||fastpic.org/fpv.js
+fastpic.org#%#//scriptlet('abort-on-property-read', 'ExaQaAutomatizationFlag')
+fastpic.org#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.dispatchEvent', 'getexoloader')
+fastpic.org#%#//scriptlet('remove-node-text', 'script', '/ctrlKey|exoload|}catch\(_\){}try{/')
 fastpic.org#%#//scriptlet('set-constant', 'Element.prototype.attachShadow', 'noopFunc')
 ||fastpic.org/n/
 ||static.fastpic.org/css/exo.css

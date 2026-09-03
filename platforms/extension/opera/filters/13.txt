@@ -1,9 +1,9 @@
-! Checksum: PZIvWj5Wtoa0rvZRosr8hQ
-! Diff-Path: ../patches/13/13-s-1788434195-3600.patch
+! Checksum: a2hETTfb6ui8qeHTP8WBOg
+! Diff-Path: ../patches/13/13-s-1788438356-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.71
-! TimeUpdated: 2026-09-03T11:13:11+00:00
+! Version: 2.0.67.72
+! TimeUpdated: 2026-09-03T12:22:51+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6067,6 +6067,17 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 !          or add a last known domain
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
+!
+! Frequently changed domains: bahisotv*.com
+! Source: bahisotv35.com
+[$domain=/bahisotv\d+\.com$/]##div[style^="margin:"]:has(> a[href][target="_blank"])
+[$domain=/bahisotv\d+\.com$/]##header > ul > li.blink:has(> a[href="/"]) ~ li.blink
+[$domain=/bahisotv\d+\.com$/]##.footer-links
+!
+! Frequently changed domains: sampiyontv*.com
+! Source: sampiyontv2.com
+[$domain=/sampiyontv\d+\.com$/]##.srail
+[$domain=/sampiyontv\d+\.com$/]##.sband
 !
 ! Frequently changed domains: gmatv*.live
 ! Source: gmatv61.live / https://t.me/guncelmacanaliz
