@@ -445,8 +445,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.67.41",
-			"timeUpdated": "2026-09-03T01:07:10+0000",
+			"version": "2.1.67.42",
+			"timeUpdated": "2026-09-03T05:27:40+0000",
 			"languages": []
 		},
 		{
@@ -668,8 +668,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.70.75",
-			"timeUpdated": "2026-09-03T01:07:21+0000",
+			"version": "2.1.70.76",
+			"timeUpdated": "2026-09-03T05:27:51+0000",
 			"languages": []
 		},
 		{
@@ -734,8 +734,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.66.83",
-			"timeUpdated": "2026-09-03T01:07:29+0000",
+			"version": "2.1.66.84",
+			"timeUpdated": "2026-09-03T05:28:00+0000",
 			"languages": []
 		},
 		{
@@ -751,8 +751,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.68.9",
-			"timeUpdated": "2026-09-03T01:07:30+0000",
+			"version": "2.1.68.10",
+			"timeUpdated": "2026-09-03T05:28:01+0000",
 			"languages": []
 		},
 		{
@@ -1453,8 +1453,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
-			"version": "2.0.25.32",
-			"timeUpdated": "2026-09-01T08:41:43+0000",
+			"version": "2.0.25.33",
+			"timeUpdated": "2026-09-03T05:28:35+0000",
 			"languages": [
 				"sv"
 			]
@@ -1652,8 +1652,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
-			"version": "2.0.8.74",
-			"timeUpdated": "2026-09-02T08:41:13+0000",
+			"version": "2.0.8.75",
+			"timeUpdated": "2026-09-03T05:28:49+0000",
 			"languages": []
 		},
 		{

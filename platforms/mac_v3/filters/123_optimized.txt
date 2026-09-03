@@ -1,9 +1,9 @@
-! Checksum: AXAbMnisfVsJc3fmIzrehw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1788397872-14400.patch
+! Checksum: il9u/Laii+rcsZs8J/HHmA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1788413492-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.68.9
-! TimeUpdated: 2026-09-03T01:07:30+00:00
+! Version: 2.1.68.10
+! TimeUpdated: 2026-09-03T05:28:01+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -77,7 +77,7 @@
 /plugins/ultimate-social-media-plus/*$~stylesheet
 /prisna-social-counter.css
 /Resources/twitter-$~xmlhttprequest
-/share/count?
+/share-bar/share-bar.js
 /share/footer/*
 /share42.js
 /share_button?
@@ -299,7 +299,6 @@ _social-bar/
 ###globalSocialLinks
 ###h-social
 ###header-facebook-social-link
-###header-share
 ###header-social
 ###header-social-icons
 ###header-social-links
@@ -369,11 +368,11 @@ _social-bar/
 ###pShareContent
 ###page-share
 ###panel-social
+###partShare
 ###pinterest-link
 ###pinterest-share
 ###playerShare
 ###popup-social
-###popupFbLikeBox
 ###post-share-icons
 ###post-social
 ###post-social-wrap
@@ -468,6 +467,7 @@ _social-bar/
 ###share_linkedin
 ###share_links
 ###share_panel
+###share_social_buttons
 ###share_social_sidebar
 ###share_telegram
 ###share_this
@@ -502,6 +502,7 @@ _social-bar/
 ###sharing-bar
 ###sharing-button
 ###sharing-buttons
+###sharing-floater
 ###sharing-icons
 ###sharing-options
 ###sharing-sidebar
@@ -581,6 +582,7 @@ _social-bar/
 ###social2
 ###socialBanner
 ###socialBar
+###socialBookmarks
 ###socialButtonOnPage
 ###socialButtons
 ###socialConnect
@@ -735,6 +737,7 @@ _social-bar/
 ##.ButtonSharing
 ##.ButtonsSharing
 ##.DiggThisButton
+##.FBLikeBox
 ##.FacebookLike
 ##.FacebookShare
 ##.FacebookShareButton
@@ -1023,6 +1026,7 @@ _social-bar/
 ##.bottom-footer__social
 ##.bottom-share
 ##.bottom-share-buttons
+##.bottom-share-wrapper
 ##.bottom-shares
 ##.bottom-social
 ##.bottom-social-share
@@ -1185,6 +1189,8 @@ _social-bar/
 ##.eg-footer-icon-vk
 ##.eg-footer-icon-youtube
 ##.ekit_social_media
+##.el-icon-facebook
+##.el-icon-twitter
 ##.elem-info__share
 ##.element-share
 ##.elementor-social-icon
@@ -1550,6 +1556,7 @@ _social-bar/
 ##.hdr-social
 ##.hdsocial2
 ##.head-post-share
+##.head-social-links
 ##.header-facebook
 ##.header-icon-instagram
 ##.header-menu__social
@@ -1589,7 +1596,6 @@ _social-bar/
 ##.headersocial:not(body):not(html)
 ##.headsocial
 ##.heateorSssSharingRound
-##.heateorSsspSharing
 ##.heateor_sss_sharing_container
 ##.heateor_sss_sharing_ul
 ##.heateor_sssp_sharing_container
@@ -2004,7 +2010,6 @@ _social-bar/
 ##.node-share
 ##.node-social
 ##.normal_social
-##.noticia-social-share
 ##.novashare-buttons-wrapper
 ##.ns-social
 ##.nv-post-share
@@ -2086,7 +2091,6 @@ _social-bar/
 ##.polaris__social--icon
 ##.poll-share
 ##.popover-share
-##.post--share
 ##.post-content-share
 ##.post-footer-share
 ##.post-footer-social
@@ -2152,6 +2156,7 @@ _social-bar/
 ##.resp-sharing-button
 ##.rhd-social-box-wrapper
 ##.right-social
+##.rightShare
 ##.rmp-sharing
 ##.rn_SocialBookmarkLink
 ##.row-social
@@ -2279,6 +2284,7 @@ _social-bar/
 ##.share-data
 ##.share-desktop
 ##.share-dropdown
+##.share-element
 ##.share-elements
 ##.share-email
 ##.share-entry
@@ -2704,7 +2710,6 @@ _social-bar/
 ##.simplesocialbuttons
 ##.simplesocialbuttons_inline
 ##.single-post-meta-data__social-sharing
-##.single-post-meta-info-share
 ##.single-post-share
 ##.single-post-sharing-button
 ##.single-post-social
@@ -3988,6 +3993,7 @@ goal.com##.google-trusted-source
 wionews.com##.googleCTAContainer
 hindustantimes.com##.googleFollow
 wionews.com##.googleTrustedContainer-mid
+wrestletalk.com##.google_source_badge
 gadgets360.com##.gsocialbar
 atlanticcouncil.org##.gta-hover-share-container
 theprint.in##.gw-follow-button
@@ -4213,7 +4219,6 @@ clickhelp.com,downloadsource.net,firstthings.com,milanofinanza.it,mothership.sg,
 independentarabia.com,independentpersian.com,independenturdu.com,indyturk.com##.socials-area
 overclock3d.net##.socials-container
 ntvkenya.co.ke##.socials_bar
-republicworld.com##.sponsors-container
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
 atlantablackstar.com##.stay-social
 vnexpress.net##.sticky
@@ -4279,6 +4284,7 @@ californiawaterblog.com,cheknews.ca,comicbook.com,hyperallergic.com,reneweconomy
 vice.com##.wp-block-jetpack-sharing-buttons-wrapper
 publichealthpolicyjournal.com,theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
+securityweek.com##.wp-social-link
 washingtonpost.com##.wpds-c-SnBxc
 freepressjournal.in##.wrap_cont
 firstpost.com##.yt-ch
@@ -4719,7 +4725,6 @@ depor.com##.nav__story-social-network
 vidaextra.com,xataka.com.mx##.post-comments-shortcut
 biobiochile.cl##.post-social-container
 quadratin.com.mx##.q-sharesocial
-zocalo.com.mx##.red-social
 diarioelargentino.com,elsiglodetorreon.com.mx##.redes-footer
 posta.com.mx##.redes_footer
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
@@ -4896,6 +4901,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||wettercomassets.com/wcomv5/images/footer/$domain=wetter.com
 @@||yaplakal.com/html/static/$image,~third-party
 @@||yastatic.net/share2/share.js$script
+@@||archiveteam.org^$generichide
 @@||docs.qq.com^$generichide
 @@||fontawesome.com^$generichide
 @@||github.com^$generichide

@@ -1339,8 +1339,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.32",
-			"timeUpdated": "2026-09-01T08:41:43+0000",
+			"version": "2.0.25.33",
+			"timeUpdated": "2026-09-03T05:28:35+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1491,8 +1491,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.8.74",
-			"timeUpdated": "2026-09-02T08:41:13+0000",
+			"version": "2.0.8.75",
+			"timeUpdated": "2026-09-03T05:28:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
