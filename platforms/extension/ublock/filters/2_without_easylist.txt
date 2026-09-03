@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: G/G4sUrbpDoqH6UA8tIfPw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788410083-3600.patch
+! Checksum: 7Fu8RZU4Ziu5yc0dO9z3mQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788420020-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.87.74
-! TimeUpdated: 2026-09-03T04:30:39+00:00
+! Version: 2.4.87.75
+! TimeUpdated: 2026-09-03T07:16:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||waytogrow.com^$3p
 ||betamountwo.com^
 ||sharkvidskr.com^
 ||brightline.tv^$3p,xhr,redirect-rule=noop.json
@@ -27794,6 +27795,10 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xhr,redirect=noop.txt
 !
 !
+debica24.pl##.page > .grid > .grid__container > .grid__row:has(> .grid__col > .adv)
+debica24.pl##.page > .grid > .grid__container > .grid__row:contains(Reklama)
+||debica24.pl/static/files/inline_images/*/inline__
+skarbiec.biz##.side-right > .widget:has(> .ad)
 newsmed.pl##.page-layout > div.page-box:has(> div.wrapper > aside.ad-aside)
 newsmed.pl##.ad-aside
 newsmed.pl##.bli-ad
@@ -27828,9 +27833,7 @@ e-katalog.pl###r_slide > .text-center:has(> div[id][style] > a[target="_blank"])
 e-katalog.pl##+js(abort-current-script, $, show_banner)
 waw4free.pl##.zlokonieczne
 nanasubs.com.pl##.google-ad-desktop
-wawa.info##.grid__ad
 wawa.info##.custom-html-box
-wawa.info##.adv
 wawa.info##.grid__col > .card:has(> .box > .box__container > div[id^="bills_in_"])
 wawa.info##.grid__row > .grid__col > .card--box:has(> .custom-html-box > .podawacz-spots)
 tkn24.pl,przelom.pl##.baner
@@ -27840,8 +27843,6 @@ smaki.pl###page-box-logotypes > .section-partners
 smaki.pl##.right-column > .right-column-fix:has(div[data-ad])
 smaki.pl##.box-list > .box-list-item.box-list-item-type-rectangle:has(div[data-ad]):style(visibility: hidden !important;)
 ||smaki.pl/_static/ads-*.js
-goral24.pl##.adv
-goral24.pl##.grid__ad
 goral24.pl##.grid__col > div.card:has(> div.custom-html-box)
 ||podawacz.cmcmedia.pl^
 forex-nawigator.biz##div[role="main"] > div[class][style*="height: 250px;"]:has(> center > div[id^="div-gpt-"])
@@ -27880,8 +27881,6 @@ moja-ostroleka.pl##section[class]:has(> div:contains(/^Reklama$/))
 moja-ostroleka.pl##div[data-id]:has(> div:contains(/^REKLAMA$/)):remove()
 ||wizja.cc/embed/adsy/cache/theme-helper-v2.js
 autocentrum.pl##.saplConfigurator
-katowice24.info##.adv
-katowice24.info##.grid__ad
 katowice24.info##.grid__row:has(> div.grid__col > div.card > div.box > div.box__container > div[id^="bills_in_rotation_"] > a[href^="https://www.sdsm.pl/"])
 gratka.pl##.banner:empty
 depesza.fm,zaradnakobieta.pl##div[class*="adBlock__" i]
@@ -27895,8 +27894,8 @@ noweinfo.pl##.td-header-template-wrap .td-pb-row .wpb_wrapper > .td_block_title
 echopolski.pl##.brxe-container > .brxe-block > a.brxe-image[target="_blank"]
 pilkareczna.com##main > section > div.container > div.w-full:has(> div > div > div > ins.adsbygoogle[data-ad-slot])
 pilkareczna.com##div[style="min-height: 280px; min-width: 300px;"]
-gazetaolsztynska.pl##.grid__ad
-gazetaolsztynska.pl##.adv
+debica24.pl,wawa.info,goral24.pl,katowice24.info,gazetaolsztynska.pl##.grid__ad
+debica24.pl,wawa.info,goral24.pl,katowice24.info,gazetaolsztynska.pl##.adv
 bielskiedrogi.pl##div[data-ads-id]
 kronikidziejow.pl,spokojnieociazy.pl,fajnegotowanie.pl,aniaradzi.pl,fajnyzwierzak.pl,fajnyogrod.pl##.kba
 tygodnikszczytno.pl##.slitslider_container:has(> p[style]:contains(Reklama))
@@ -28642,6 +28641,9 @@ topnewsy.pl##.art div:not([class]) > .lazyload-wrapper:has(button.close + div[cl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173630
 fxmag.pl##text[class^="Ad_"]
 fxmag.pl##div[class^="Ad_bottom_"]
+fxmag.pl##div[class*="_header_ad"]
+fxmag.pl##text[class^="Ad-module-"]
+fxmag.pl##div[class^="SidebarWithAds-"][class*="__ad_"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173548
 franczyzawhandlu.pl##.top
 franczyzawhandlu.pl##div[class^="position_"][class$="top"]
@@ -32029,6 +32031,8 @@ animezone.pl##.category-description > #episode > .embed-container:has(> a[href][
 @@||skmedix.pl^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12308
 ||cache.splashandroll.com/handler.js?pub=
+||onnetwork.tv^$domain=mistrzowie.org|kwejk.pl
+mistrzowie.org,kwejk.pl##.ads
 kwejk.pl##.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links.adsbygoogle:style(display: block!important;)
 ! tvp.info - incorrect blocking on the main page, video player is not centered when ".ad_slot" is hidden
 tvp.info#@#.ad_slot

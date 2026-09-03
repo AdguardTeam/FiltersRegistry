@@ -1,9 +1,9 @@
-! Checksum: whvMBog6nQcH3th9773Y5w
-! Diff-Path: ../patches/17/17-s-1788416842-3600.patch
+! Checksum: PQZ/Uk/ZhoWleCNnTh8cfQ
+! Diff-Path: ../patches/17/17-s-1788419997-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.8
-! TimeUpdated: 2026-09-03T06:24:40+00:00
+! Version: 2.0.14.9
+! TimeUpdated: 2026-09-03T07:16:59+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -535,10 +535,6 @@ $removeparam=tduid
 ! Good: ||example.org^$removeparam=cx
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/240154
-||news.allabout.co.jp^$removeparam=utm_from
-||news.allabout.co.jp^$removeparam=af_type
-||news.allabout.co.jp^$removeparam=af_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240006
 ||video.unext.jp^$removeparam=abm
 ||video.unext.jp^$removeparam=adid
@@ -1885,6 +1881,10 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170635#issuecomment-1890590521
 ||gelocal.it^$removeparam=ref
 ||gelocal.it^$removeparam=cnt
+! https://github.com/AdguardTeam/AdguardFilters/issues/240154
+||allabout.co.jp^$removeparam=utm_from
+||allabout.co.jp^$removeparam=af_type
+||allabout.co.jp^$removeparam=af_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170366
 ||allabout.co.jp^$removeparam=FM
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169585
