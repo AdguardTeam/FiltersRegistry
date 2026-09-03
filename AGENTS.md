@@ -179,6 +179,21 @@ General code style guidelines for JavaScript are available via link:
 - All other style rules (indentation, line length, Airbnb conventions, etc.)
   are enforced by `.eslintrc.cjs`. Run `yarn lint` to check.
 
+### Runtime data validation (TypeScript/JavaScript)
+
+Before adding any runtime check, decide whether the data is trusted or external. Data the
+system itself produced — own build artifacts, generated JSON, config files the project owns —
+is trusted: JSON.parse + as cast and move on. If such data is malformed, the code SHOULD fail
+loudly; never silently skip, default, or return-early on an unexpected shape.
+
+Genuinely external input (user input, network responses, third-party files) gets validated
+ONCE at the boundary — with a schema library (zod/valibot) when the project already has one —
+and the parsed type is trusted downstream. Do not re-validate past the boundary.
+
+Never write hand-rolled type guards (`isRecord`, `typeof x === 'object' && x !== null && !Array.isArray(x)` chains).
+A guard justified only by a hypothetical "what if the data is corrupt" is a smell:
+answer whether that corruption is real for THIS data source before writing anything.
+
 ### Testing
 
 - Test framework: Vitest.

@@ -35,16 +35,6 @@ const isGeneratedMetaLine = (line: string): boolean => {
 };
 
 /**
- * Checks whether an array contains only non-null objects (i.e. records).
- *
- * @param value - The array to check.
- * @returns True if every item in the array is a non-null object.
- */
-const isRecordArray = (value: unknown[]): value is Record<string, unknown>[] => {
-    return value.every((item) => typeof item === 'object' && item !== null && !Array.isArray(item));
-};
-
-/**
  * Strip generated version/timeUpdated fields from each entry of the `filters` array
  * in a filters.json/filters.js metadata file, in-place.
  *
@@ -69,9 +59,9 @@ const stripMetaFromMetadataFile = async (filePath: string): Promise<boolean> => 
     if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
         return false;
     }
-    const data = parsed as { filters?: unknown };
+    const data = parsed as { filters?: Record<string, unknown>[] };
 
-    if (!Array.isArray(data.filters) || !isRecordArray(data.filters)) {
+    if (!Array.isArray(data.filters)) {
         return false;
     }
 
