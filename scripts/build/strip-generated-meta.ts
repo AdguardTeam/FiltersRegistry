@@ -41,7 +41,9 @@ const isGeneratedMetaLine = (line: string): boolean => {
  * https://github.com/AdguardTeam/FiltersRegistry/issues/1208
  *
  * @param filePath - Absolute path to the filters.json or filters.js file.
- * @returns True if the file was modified, false otherwise.
+ * @returns True if a field was removed and the file rewritten; false when the
+ * parsed content is not an object, has no `filters` array, or has nothing to strip.
+ * @throws If the file is not valid JSON.
  */
 const stripMetaFromMetadataFile = async (filePath: string): Promise<boolean> => {
     const content = await fs.readFile(filePath, 'utf8');
@@ -106,10 +108,11 @@ const stripGeneratedMeta = async (filePath: string): Promise<boolean> => {
 /**
  * Single-pass recursive walk: strips metadata from .txt files inside `filters/`
  * directories, and from any `filters.json`/`filters.js` metadata files found
- * anywhere under the root, counting modified files per `filters/` dir.
+ * anywhere under the root.
  *
  * When a directory named `filters` is encountered, all .txt files inside it are
- * processed immediately — no second traversal is needed.
+ * processed immediately — no second traversal is needed. `.txt` modifications are
+ * logged as an aggregate per `filters/` dir; each metadata file is logged on its own.
  *
  * @param dir - Current directory being walked.
  * @param rootDir - Top-level root (used only for log output).
