@@ -1,5 +1,7 @@
 #!/bin/bash
-SERVICE_URL="https://twosky.int.agrd.dev/api/v1/"
+set -euo pipefail
+# Allow overriding the service URL for testing; the default is the production gateway.
+SERVICE_URL="${SERVICE_URL:-https://twosky.int.agrd.dev/api/v1/}"
 workDir=../..
 
 # keep the list alphabetically sorted
@@ -52,7 +54,9 @@ locales=(
 for locale in "${locales[@]}"
 do
     echo "Download tags.json for $locale locale"
-    curl "${SERVICE_URL}download?format=strings&language=${locale}&filename=tags.json&project=filters-registry" -o messages.json
+    curl --fail --retry 3 \
+        "${SERVICE_URL}download?format=strings&language=${locale}&filename=tags.json&project=filters-registry" \
+        -o messages.json
 
     destinationLocale=$locale
     if [ "$locale" = "zh_CN" ]; then
@@ -85,7 +89,9 @@ done
 for locale in "${locales[@]}"
 do
     echo "Download groups.json for $locale locale"
-    curl "${SERVICE_URL}download?format=strings&language=${locale}&filename=groups.json&project=filters-registry" -o messages.json
+    curl --fail --retry 3 \
+        "${SERVICE_URL}download?format=strings&language=${locale}&filename=groups.json&project=filters-registry" \
+        -o messages.json
 
     destinationLocale=$locale
     if [ "$locale" = "zh_CN" ]; then
@@ -116,7 +122,9 @@ done
 for locale in "${locales[@]}"
 do
     echo "Download filters.json for $locale locale"
-    curl "${SERVICE_URL}download?format=strings&language=${locale}&filename=filters.json&project=filters-registry" -o messages.json
+    curl --fail --retry 3 \
+        "${SERVICE_URL}download?format=strings&language=${locale}&filename=filters.json&project=filters-registry" \
+        -o messages.json
 
     destinationLocale=$locale
     if [ "$locale" = "zh_CN" ]; then
