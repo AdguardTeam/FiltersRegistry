@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.88.2",
-			"timeUpdated": "2026-09-04T10:14:56+0000",
+			"version": "2.4.88.3",
+			"timeUpdated": "2026-09-04T11:13:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.10.75",
-			"timeUpdated": "2026-09-04T08:20:05+0000",
+			"version": "2.1.10.76",
+			"timeUpdated": "2026-09-04T11:13:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -617,8 +617,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.77.99",
-			"timeUpdated": "2026-09-04T10:15:42+0000",
+			"version": "2.2.78.0",
+			"timeUpdated": "2026-09-04T11:13:50+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -703,8 +703,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.14.10",
-			"timeUpdated": "2026-09-04T08:20:32+0000",
+			"version": "2.0.14.11",
+			"timeUpdated": "2026-09-04T11:13:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -723,8 +723,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.93.59",
-			"timeUpdated": "2026-09-04T10:15:52+0000",
+			"version": "2.0.93.60",
+			"timeUpdated": "2026-09-04T11:14:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -745,8 +745,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.82.13",
-			"timeUpdated": "2026-09-04T10:15:54+0000",
+			"version": "2.0.82.14",
+			"timeUpdated": "2026-09-04T11:14:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1745,8 +1745,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.64.71",
-			"timeUpdated": "2026-09-04T08:20:40+0000",
+			"version": "2.1.64.72",
+			"timeUpdated": "2026-09-04T11:14:11+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
