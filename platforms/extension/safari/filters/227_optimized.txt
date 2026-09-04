@@ -1,9 +1,9 @@
-! Checksum: iBUZy+1Uk9VApqGn9W+4WA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1789562896-14400.patch
+! Checksum: ep+NRPR5isswUwwbKA4MnQ
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1788439703-14400.patch
 ! Title: filterslist-KO Classic filter list (Optimized)
 ! Description: The filterslist-KO Classic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.25.51
-! TimeUpdated: 2026-09-16T12:45:03+00:00
+! Version: 2.0.25.38
+! TimeUpdated: 2026-09-03T12:45:19+00:00
 ! Expires: 1 day (update frequency)
 ||mixtower.net^
 ||adflow.kr^
@@ -255,8 +255,6 @@
 ||adservice.google.com^
 ||partner.googleadservices.com^
 ||ad.qanda.ai^
-||creative.mayzaent.com^
-||reebr.com^
 ||ntkimg.cloud^
 ||ttse.b-cdn.net^
 ||i.keezip.com^
@@ -624,9 +622,6 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
-ipokergosu.com/banner/$domain=pokergosu.com
-||amazing.today/_next/image?url=%2Fads%2F2
-||image.gamechosun.co.kr/ad_banner/
 ||file.chuchu.gg/*/pop_up_ad/
 /^https:\/\/(www\.)?busan\.com\/nas\/wcms\/public\/m\/images\/new\/[0-9]{6}[a-z]{2,3}\./$domain=busan.com
 ||joinsmedia.sfo2.digitaloceanspaces.com/ad/
@@ -1526,12 +1521,12 @@ ipokergosu.com/banner/$domain=pokergosu.com
 ||static.tzstatic.top/z/*.gif
 ||ddal.xyz/project/mc/js/nuevo.min.js
 ||img.mingk.xyz/data/file/passfree/
-||yasyadong.*/?_Action=adv&_Method$domain=yasyadong.*|/yasyadong[0-9]+\.tv/
+||yasyadong.*/?_Action=adv&_Method$domain=yasyadong.*
 /^https:\/\/(www\.)?aniya24\.com\/wp-content\/uploads\/[0-9]+\/[0-9]+\/[a-z]+[0-9]+x[0-9]+\./$domain=aniya24.com
 ||aniya24.com/wp-content/uploads/*.gif
 ||sutom.org/wp-content/uploads/*.webp
 ||nooo*.tv/theme/basic_player/img/banner/
-||blogger.googleusercontent.com/img/$domain=yasyadong.*|/yasyadong[0-9]+\.tv/
+||blogger.googleusercontent.com/img/$domain=yasyadong.*
 .gif^$image,domain=itrulli.com
 ||365tvda.com/data/file/bojng/
 ||xn--hy1bm2ltmr.com/img/banner/
@@ -1709,20 +1704,6 @@ search.zum.com,philgo.com,vop.co.kr,paxnet.co.kr##div[class*="ad_"]
 mt.co.kr,sportschosun.com,lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 sports.donga.com##div[id*="_AD"]
-lec.co.kr##aside.user-aside > div[style^="height:"]
-bananamall.co.kr###banner_header
-bananamall.co.kr##.banner_fan_meeting_review
-bananamall.co.kr##.banner_cntnt_right
-bananamall.co.kr##wrap_fixed_right_branches
-bananamall.co.kr###wrap_fixed_right_exhbt
-bananamall.co.kr##.srch_term
-bananamall.co.kr##.banner_evt
-bananamall.co.kr##.banner_cntnt_left
-bananamall.co.kr##.banner_evt_adult_day_2017
-bananamall.co.kr###wrap_banner_fixed_left
-bananamall.co.kr###wrap_fixed_left_review
-my.amazing.today##.relative.z-0.flex-1 #map ~ .absolute.z-10.flex.w-full
-gamechosun.co.kr##.top_event
 busan.com###container > div[style^="width:"]
 joinsmediacanada.com###popupNoticeWrap
 joinsmediacanada.com###aside.highChk
@@ -1785,7 +1766,6 @@ m.danawa.com##.box__tooltip-internet
 m.bunjang.co.kr##main > div[class^="_container_"] + section:has(> span[class*="_adTitle_"])
 m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href^="https://link.coupang.com/"])
 m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href^="https://ader.naver.com/"])
-m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href^="/products/"][href*="&ref_source=sa&"])
 m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href*="&ref_code=%22%7B%5C%22cntr%5C%22%3A%5C%22SIM3"])
 lottecinema.co.kr##.login_ad
 lottecinema.co.kr###main_top_of_top_banner
@@ -3795,6 +3775,12 @@ daum.net,kakao.com,namu.wiki#@##adContainer
 daum.net,kakao.com,namu.wiki#@#ins.kakao_ad_area
 daum.net,kakao.com,namu.wiki#@##adBlockPixelTag
 daum.net,kakao.com,namu.wiki#@#.banner_ad
+tv.kakao.com,play-tv.kakao.com,kakaotv.daum.net#%#//scriptlet('prevent-xhr', '/^https.\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]{1,2}\/vmap$/')
+tv.kakao.com,play-tv.kakao.com,kakaotv.daum.net#%#//scriptlet('prevent-fetch', '/^https.\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]{1,2}\/vmap$/')
+kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adContainer
+kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#ins.kakao_ad_area
+kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adBlockPixelTag
+kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#.banner_ad
 meeco.kr##body > div[class][style*="box-shadow:"]
 meeco.kr#@#.googleAd
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=meeco.kr
