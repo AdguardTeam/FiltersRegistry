@@ -1,8 +1,8 @@
-! Checksum: u0J0qa0aycVK0iqT5gMhGA
+! Checksum: hFRc4i8BWH6CXw+20txtAg
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.93.60
-! TimeUpdated: 2026-09-04T11:14:00+00:00
+! Version: 2.0.93.61
+! TimeUpdated: 2026-09-04T12:22:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2641,6 +2641,10 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+x.com##body > div[aria-label^="Cookie-"]
+top.kion.ru##kion-top-alert
+discovery.com###ltp-dialog
+eurotoptech.com##section[aria-label="Cookie consent"]
 showaround.com##div[class^="_GdprLine_"]
 infraveil.com#%#//scriptlet('set-cookie', 'infraveil_privacy_choice_v1', 'denied')
 tech-iq.ru###policy-cookie-note
@@ -4347,7 +4351,7 @@ belkacar.ru##.the-cookies
 asnbank.nl#%#//scriptlet('trusted-click-element', 'button#cookie-deny', '!cookie:CLC_GDPR')
 visitbursa.org#%#//scriptlet('set-cookie', 'cookiesPerm', 'false')
 ||cb.rollercoin.com/cookie_widget.min.js
-genesis-zone.com#%#//scriptlet('set-cookie-reload', 'cookies_initialized', '1')
+natec-zone.com,genesis-zone.com#%#//scriptlet('set-cookie-reload', 'cookies_initialized', '1')
 kod.ru##div[class^="Layout_cookies__"]
 hannan-u.ac.jp,hdk.ed.jp##.js_cookieBanner
 band.com.br##app-opt-in
@@ -19544,6 +19548,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240316
+natec-zone.com#@##cookies-modal
+natec-zone.com#@#.cookies-open
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240229
 autoland.de#@##cookie-consent
 autoland.de#@#.page-wrap--cookie-permission

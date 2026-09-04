@@ -1,9 +1,9 @@
-! Checksum: 7TBESPEr5LKaxRN7BLKQLg
-! Diff-Path: ../patches/18/18-s-1788520642-3600.patch
+! Checksum: 4d9jiFc3kr2HITRuDw4nYg
+! Diff-Path: ../patches/18/18-s-1788524657-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.93.60
-! TimeUpdated: 2026-09-04T11:14:00+00:00
+! Version: 2.0.93.61
+! TimeUpdated: 2026-09-04T12:22:00+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2641,6 +2641,10 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+x.com##body > div[aria-label^="Cookie-"]
+top.kion.ru##kion-top-alert
+discovery.com###ltp-dialog
+eurotoptech.com##section[aria-label="Cookie consent"]
 showaround.com##div[class^="_GdprLine_"]
 infraveil.com#%#//scriptlet('set-cookie', 'infraveil_privacy_choice_v1', 'denied')
 tech-iq.ru###policy-cookie-note
@@ -4347,7 +4351,7 @@ belkacar.ru##.the-cookies
 asnbank.nl#%#//scriptlet('trusted-click-element', 'button#cookie-deny', '!cookie:CLC_GDPR')
 visitbursa.org#%#//scriptlet('set-cookie', 'cookiesPerm', 'false')
 ||cb.rollercoin.com/cookie_widget.min.js
-genesis-zone.com#%#//scriptlet('set-cookie-reload', 'cookies_initialized', '1')
+natec-zone.com,genesis-zone.com#%#//scriptlet('set-cookie-reload', 'cookies_initialized', '1')
 kod.ru##div[class^="Layout_cookies__"]
 hannan-u.ac.jp,hdk.ed.jp##.js_cookieBanner
 band.com.br##app-opt-in
@@ -19455,6 +19459,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240316
+natec-zone.com#@##cookies-modal
+natec-zone.com#@#.cookies-open
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240229
 autoland.de#@##cookie-consent
 autoland.de#@#.page-wrap--cookie-permission

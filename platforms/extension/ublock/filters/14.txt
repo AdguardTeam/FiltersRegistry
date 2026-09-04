@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: rNE6o4Wxv3ZSpFyhq+h9EQ
-! Diff-Path: ../patches/14/14-s-1788520650-3600.patch
+! Checksum: KB4xAWc5NdPHtQrAkfdQrg
+! Diff-Path: ../patches/14/14-s-1788524662-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.78.0
-! TimeUpdated: 2026-09-04T11:13:50+00:00
+! Version: 2.2.78.1
+! TimeUpdated: 2026-09-04T12:21:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2565,6 +2565,10 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+x.com##body > div[aria-label^="Cookie-"]
+top.kion.ru##kion-top-alert
+discovery.com###ltp-dialog
+eurotoptech.com##section[aria-label="Cookie consent"]
 showaround.com##div[class^="_GdprLine_"]
 infraveil.com##+js(set-cookie, infraveil_privacy_choice_v1, denied)
 tech-iq.ru###policy-cookie-note
@@ -3915,7 +3919,7 @@ pacificparadiseindian.com.au###footer_cookie
 belkacar.ru##.the-cookies
 visitbursa.org##+js(set-cookie, cookiesPerm, false)
 ||cb.rollercoin.com/cookie_widget.min.js
-genesis-zone.com##+js(set-cookie-reload, cookies_initialized, 1)
+natec-zone.com,genesis-zone.com##+js(set-cookie-reload, cookies_initialized, 1)
 kod.ru##div[class^="Layout_cookies__"]
 hannan-u.ac.jp,hdk.ed.jp##.js_cookieBanner
 band.com.br##app-opt-in
@@ -18045,6 +18049,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240316
+natec-zone.com#@##cookies-modal
+natec-zone.com#@#.cookies-open
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240229
 autoland.de#@##cookie-consent
 autoland.de#@#.page-wrap--cookie-permission
@@ -60640,6 +60647,9 @@ theaustralian.com.au##body:style(overflow:visible!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100544
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41736
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29908#issuecomment-466136893
+allegro.pl##div[data-box-name="ads.wrapper.container"]
+allegro.pl##div[data-box-name="leftpanel_offers_ads"]
+allegro.pl##div[data-box-name^="leftpanel_"][data-analytics-groups*="sponsored_offers_"][data-analytics-groups*="_ads"]
 allegro.pl##div[data-analytics-tags*="TopHeader"][data-analytics-tags*="content-advertising"]
 allegro.pl##div[data-box-name*="Top Image Container"][data-analytics-tags*="content-advertising"]
 allegro.pl##div[data-box-name="premium.with.dfp.bottom"]
@@ -64967,6 +64977,7 @@ full-count.jp##section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND)
 ||comm100.com^$3p
 /livechat.ashx?siteId=$script,3p
 !
+||dante-ai.com^$3p
 ||i.v*.flomni.com/chat.corner.js
 ||viind.com/webchat^$3p
 ||app.davision.ai^$3p

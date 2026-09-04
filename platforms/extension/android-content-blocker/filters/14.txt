@@ -1,8 +1,8 @@
-! Checksum: mtSbQ9nzW1sJNx3IQ7jD4Q
+! Checksum: CnhbxwV0DZxrCdYmzNqmNA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.78.0
-! TimeUpdated: 2026-09-04T11:13:50+00:00
+! Version: 2.2.78.1
+! TimeUpdated: 2026-09-04T12:21:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2509,6 +2509,10 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+x.com##body > div[aria-label^="Cookie-"]
+top.kion.ru##kion-top-alert
+discovery.com###ltp-dialog
+eurotoptech.com##section[aria-label="Cookie consent"]
 showaround.com##div[class^="_GdprLine_"]
 tech-iq.ru###policy-cookie-note
 positronica.ru##.swal2-container_cookie
@@ -12946,6 +12950,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240316
+natec-zone.com#@##cookies-modal
+natec-zone.com#@#.cookies-open
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240229
 autoland.de#@##cookie-consent
 autoland.de#@#.page-wrap--cookie-permission
@@ -46812,6 +46819,9 @@ radiotunes.com##.content-box > p > a[href^="/premium"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100544
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41736
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29908#issuecomment-466136893
+allegro.pl##div[data-box-name="ads.wrapper.container"]
+allegro.pl##div[data-box-name="leftpanel_offers_ads"]
+allegro.pl##div[data-box-name^="leftpanel_"][data-analytics-groups*="sponsored_offers_"][data-analytics-groups*="_ads"]
 allegro.pl##div[data-analytics-tags*="TopHeader"][data-analytics-tags*="content-advertising"]
 allegro.pl##div[data-box-name*="Top Image Container"][data-analytics-tags*="content-advertising"]
 allegro.pl##div[data-box-name="premium.with.dfp.bottom"]
@@ -49803,6 +49813,7 @@ yukawanet.com###custom_html-27
 ||comm100.com^$third-party
 /livechat.ashx?siteId=$script,third-party
 !
+||dante-ai.com^$third-party
 ||i.v*.flomni.com/chat.corner.js
 ||viind.com/webchat^$third-party
 ||app.davision.ai^$third-party
