@@ -13,14 +13,14 @@ import { stripGeneratedMetaFromDir } from '../strip-generated-meta.js';
 describe('stripGeneratedMetaFromDir', () => {
     let testDir: string;
     let filtersDir: string;
-    let testFile: string;
+    let testFilePath: string;
 
     beforeAll(async () => {
         // Create a temporary directory structure mimicking the project layout
         testDir = await fs.mkdtemp(path.join(os.tmpdir(), 'strip-meta-test-'));
         filtersDir = path.join(testDir, 'filters');
         await fs.mkdir(filtersDir);
-        testFile = path.join(filtersDir, 'test.txt');
+        testFilePath = path.join(filtersDir, 'test.txt');
 
         // Create a test file with generated metadata lines
         const content = [
@@ -35,7 +35,7 @@ describe('stripGeneratedMetaFromDir', () => {
             '',
         ].join('\n');
 
-        await fs.writeFile(testFile, content, 'utf8');
+        await fs.writeFile(testFilePath, content, 'utf8');
     });
 
     afterAll(async () => {
@@ -75,7 +75,7 @@ describe('stripGeneratedMetaFromDir', () => {
 
         expect(modified).toBe(1);
 
-        const content = await fs.readFile(testFile, 'utf8');
+        const content = await fs.readFile(testFilePath, 'utf8');
         const lines = content.split('\n');
 
         // Generated meta lines should be removed
@@ -239,11 +239,12 @@ describe('stripGeneratedMetaFromDir', () => {
         expect(contentAfter).toBe(invalidContent);
     });
 
-    it('returns 0 and leaves the file untouched when the filters field is missing, null, or not an array', async () => {
+    it('returns 0 and leaves the file untouched when filters is missing, null, non-array, or empty', async () => {
         const cases = [
             { dirName: 'json_root_missing_filters', metadata: { groups: [], tags: [] } },
             { dirName: 'json_root_null_filters', metadata: { groups: [], tags: [], filters: null } },
             { dirName: 'json_root_nonarray_filters', metadata: { groups: [], tags: [], filters: 'not-an-array' } },
+            { dirName: 'json_root_empty_filters', metadata: { groups: [], tags: [], filters: [] } },
         ];
 
         await Promise.all(cases.map(async ({ dirName, metadata }) => {
@@ -259,20 +260,5 @@ describe('stripGeneratedMetaFromDir', () => {
             const contentAfter = await fs.readFile(jsonFilePath, 'utf8');
             expect(contentAfter).toBe(content);
         }));
-    });
-
-    it('returns 0 and leaves the file untouched when the filters array is empty', async () => {
-        const metadata = { groups: [], tags: [], filters: [] };
-        const content = JSON.stringify(metadata, null, '\t');
-        const {
-            platformsDir,
-            filePaths: [jsonFilePath],
-        } = await writeMetadataFiles('json_root_empty_filters', content);
-
-        const modified = await stripGeneratedMetaFromDir(platformsDir);
-        expect(modified).toBe(0);
-
-        const contentAfter = await fs.readFile(jsonFilePath, 'utf8');
-        expect(contentAfter).toBe(content);
     });
 });
