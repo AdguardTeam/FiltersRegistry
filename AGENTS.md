@@ -29,8 +29,11 @@ for all supported AdGuard products.
   The Extension platform has 9 sub-targets: Chromium, Chromium MV3, Edge, Firefox, Opera,
   Opera MV3, Safari, Android Content Blocker, uBlock.
 - **Project Type**: Single repository (build tooling + data)
-- **CI**: Three GitHub Actions workflows — `build-adguard.yaml`, `build-3p.yaml`, and
-  `test.yaml` (runs `yarn test` on every pull request)
+- **CI**: GitHub Actions workflows:
+    - `build-adguard.yaml`
+    - `build-3p.yaml`
+    - `test.yaml` (runs `yarn test` on every pull request)
+    - `update-translations.yaml` (weekly translations download that opens a PR)
 - **Performance Goals**: N/A
 - **Constraints**: Filter lists must remain compatible with AdGuard's rule syntax;
   third-party filters follow an acceptance policy documented in README.md
