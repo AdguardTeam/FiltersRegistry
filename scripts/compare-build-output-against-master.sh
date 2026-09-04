@@ -366,10 +366,12 @@ generate_report() {
         fi
     done < <(find "$PLATFORMS_CHANGED" -name "*.txt" -print0)
 
-    # Secondary check — metadata
+    # Secondary check — every generated non-rule file (filters*.json/.js,
+    # local_script_rules.json). Count only "Files X and Y differ"; "Only in ..."
+    # (present on one side only) is informational like added files above.
     meta_diffs=$(diff -rq --exclude="*.txt" --exclude="*.patch" \
         "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" \
-        | grep -cE "filters\.(json|js)" || true)
+        | grep -cE '^Files .* differ$' || true)
 
     echo "${C_BOLD}--- Rule Files ---${C_RESET}"
     echo "Total .txt files compared: $total"
@@ -381,7 +383,7 @@ generate_report() {
     [ -n "$added_list" ] && printf '%b\n' "$added_list"
     echo ""
     echo "${C_BOLD}--- Metadata Files ---${C_RESET}"
-    echo "filters.json/filters.js diffs: $meta_diffs"
+    echo "Non-rule file diffs (filters.json/.js, filters_i18n.json/.js, local_script_rules.json): $meta_diffs"
     echo ""
     echo "${C_BOLD}--- Verdict ---${C_RESET}"
     if [ "$rule_diffs" -eq 0 ] && [ "$meta_diffs" -eq 0 ]; then
