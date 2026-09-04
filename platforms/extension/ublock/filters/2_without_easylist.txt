@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 6KJJEa+Dm5jANWFYIJXnOw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788506408-3600.patch
+! Checksum: LlZIomFMKyKQ4j0D7ASccg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1788510224-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.87.99
-! TimeUpdated: 2026-09-04T07:15:42+00:00
+! Version: 2.4.88.0
+! TimeUpdated: 2026-09-04T08:19:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||fingerprint-veri.info^
 ||campingfinishvow.com^
 ||waytogrow.com^$3p
 ||betamountwo.com^
@@ -13043,6 +13044,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240004
+smallseotools.co.uk###adBlockerOverlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240201
 seturl.in###blocker-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240108
@@ -13238,10 +13241,11 @@ sportsbite.org,sportsbite.*#@#.ad_unit
 unicorn.asso.eu.org##+js(prevent-fetch, method:HEAD)
 unicorn.asso.eu.org##+js(set-constant, document.hidden, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234624
-leeapk.com##+js(no-setTimeout-if, bait)
+leeapk.com##+js(remove-node-text, script, baitCheck)
 ||leeapk.com/wp-content/plugins/leeapk-adblock-detector/
 leeapk.com###abd-overlay
-leeapk.com#@#.ad-banner
+@@||leeapk.com^$generichide
+@@||googleads.g.doubleclick.net/pagead/id?r=$domain=leeapk.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234582
 flacdownloader.com##+js(remove-node-text, script, baits)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234532
@@ -25098,6 +25102,7 @@ mbl.is##body > main#allt:style(margin-top: 0 !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238706
 airtelxstream.in##.vdo-player__wrapper:style(display: block !important;)
 !
+123telugu.com##+js(adjust-setTimeout, window.location.href = HOME, 15000, 0.001)
 greatandhra.com##.entry-content > p > span[style] > a[href^="https://urthindia.com/"]
 hindustantimes.com##.inArticleAdCarouselWrapper
 ||affliate-api.hindustantimes.com^$xhr
@@ -40001,6 +40006,16 @@ $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+dulo.gd###root > div[class] > .fixed.inset-x-3:has(h2:contains(ads))
+webrick.com##+js(abort-current-script, atob, new Uint8Array(_0x)
+||1rpc.io^$domain=webrick.com
+||rpc.ankr.com^$domain=webrick.com
+||polygon.drpc.org^$domain=webrick.com
+||polygon-public.nodies.app^$domain=webrick.com
+||polygon.gateway.tenderly.co^$domain=webrick.com
+||rpc-mainnet.matic.quiknode.pro^$domain=webrick.com
+||polygon-bor-rpc.publicnode.com^$domain=webrick.com
+||polygon-mainnet.public.blastapi.io^$domain=webrick.com
 xdabo.com##+js(no-window-open-if)
 fastcars1.com###popup
 fastcars1.com###adblock-modal

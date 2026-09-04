@@ -1,9 +1,9 @@
-! Checksum: uv8lAj4hjQ9SrHJeJuM1eA
-! Diff-Path: ../patches/19/19-s-1788506402-3600.patch
+! Checksum: yITB+vEMupg3l7ekRSv+9Q
+! Diff-Path: ../patches/19/19-s-1788510218-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.82.11
-! TimeUpdated: 2026-09-04T07:16:41+00:00
+! Version: 2.0.82.12
+! TimeUpdated: 2026-09-04T08:20:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -651,6 +651,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+xenvn.com#%#//scriptlet('prevent-setTimeout', 'i', '3000')
 getsubs.cc###captions > .alert:has(> button[onclick*="dismiss_ad"])
 compact-online.de##.compact-adblock-notice
 /rainbow/master-js|$script,domain=nairahost.com.ng|topranktech.com|toolszu.com|roxbold.com|seomagnifier.com|coolseotools.com|helperseotools.com|seovaro.com|digitalvimal.com|proseo.com.br|seoyandira.com|wapmastazone.com|bitfitxalltools.com|njjfeducationcenter.com
@@ -1124,7 +1125,6 @@ graphicget.com,udemy-downloader.com#$#.modal-backdrop { display: none !important
 graphicget.com,udemy-downloader.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 graphicget.com,udemy-downloader.com#%#//scriptlet('prevent-fetch', 'google-analytics.com')
 suche.web.de###abp
-xenvn.com#%#//scriptlet('prevent-addEventListener', 'load', 'XV.ad_block')
 collegepolltracker.com##.noticeBarAdBlocker
 ||es.memedroid.com/js/ads*.js
 ||homebank.free.fr/inc/js-adblocker-old.js
@@ -3375,6 +3375,10 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 ! SECTION[id=content_blockers]: Anti-adblock - The rules for content blockers only
 !#safari_cb_affinity(general)
 !
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=xenvn.com
+xenvn.com#@#ins.adsbygoogle[data-ad-slot]
+xenvn.com#@#ins.adsbygoogle[data-ad-client]
+xenvn.com#@#.ad_block
 @@||pagead2.googlesyndication.com/pagead/$domain=mtgcardsmith.com
 mtgcardsmith.com#@#ins.adsbygoogle[data-ad-slot]
 mtgcardsmith.com#@#ins.adsbygoogle[data-ad-client]
@@ -3630,6 +3634,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+ntv.co.jp##.ntv-float-movies
 teaserid.com#$#.popupVarkenBody { overflow: auto !important; }
 teaserid.com#$##tanitimPopModal { display: none !important; }
 tech-iq.ru###telegram-promo-banner
@@ -5902,7 +5907,7 @@ ggsel.net##.btn-page-circle
 ggsel.net##.raffle
 bookhodai.jp##.fixbanner
 gaishishukatsu.com###noLoginFixedBanner
-||smart-bdash.com^$domain=iface.com|type.jp
+||smart-bdash.com^$domain=iface.com|type.jp|hokkaido-np.co.jp
 healthline.com#%#//scriptlet('remove-class', 'jw-flag-floating|jw-flag-small-player')
 ||delivery.satr.jp^$domain=digima-news.com|cloudgate.jp|deech.co.jp
 map.baidu.com#%#//scriptlet('set-cookie', 'showLoginPopup', '1')

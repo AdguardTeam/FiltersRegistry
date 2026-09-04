@@ -1,9 +1,9 @@
-! Checksum: 3ZjBHtAlG3ojPm9WxHAUgA
-! Diff-Path: ../patches/2/2-s-1788506380-3600.patch
+! Checksum: CJ5J+oR8qWSTzLWUGxwKLA
+! Diff-Path: ../patches/2/2-s-1788510194-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.87.99
-! TimeUpdated: 2026-09-04T07:15:42+00:00
+! Version: 2.4.88.0
+! TimeUpdated: 2026-09-04T08:19:49+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||fingerprint-veri.info^
 ||campingfinishvow.com^
 ||waytogrow.com^$third-party
 ||betamountwo.com^
@@ -13142,6 +13143,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240004
+smallseotools.co.uk###adBlockerOverlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240201
 seturl.in###blocker-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240108
@@ -13352,11 +13355,12 @@ sportsbite.org,sportsbite.*#@#.ad_unit
 unicorn.asso.eu.org#%#//scriptlet('prevent-fetch', 'method:HEAD')
 unicorn.asso.eu.org#%#//scriptlet('set-constant', 'document.hidden', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234624
+leeapk.com#%#//scriptlet('remove-node-text', 'script', 'baitCheck')
 leeapk.com#%#//scriptlet('prevent-element-src-loading', 'script', 'adsbygoogle')
-leeapk.com#%#//scriptlet('prevent-setTimeout', 'bait')
 ||leeapk.com/wp-content/plugins/leeapk-adblock-detector/
 leeapk.com###abd-overlay
-leeapk.com#@#.ad-banner
+@@||leeapk.com^$generichide
+@@||googleads.g.doubleclick.net/pagead/id?r=$domain=leeapk.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234582
 flacdownloader.com#%#//scriptlet('remove-node-text', 'script', 'baits')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234532
@@ -25267,6 +25271,7 @@ mbl.is#$#body > main#allt { margin-top: 0 !important; }
 airtelxstream.in#%#//scriptlet('google-ima3-dai')
 airtelxstream.in#$#.vdo-player__wrapper { display: block !important; }
 !
+123telugu.com#%#//scriptlet('adjust-setTimeout', 'window.location.href = HOME', '15000', '0.001')
 greatandhra.com##.entry-content > p > span[style] > a[href^="https://urthindia.com/"]
 hindustantimes.com##.inArticleAdCarouselWrapper
 ||affliate-api.hindustantimes.com^$xmlhttprequest
@@ -40716,6 +40721,16 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+dulo.gd#?##root > div[class] > .fixed.inset-x-3:has(h2:contains(ads))
+webrick.com#%#//scriptlet('abort-current-inline-script', 'atob', 'new Uint8Array(_0x')
+||1rpc.io^$domain=webrick.com
+||rpc.ankr.com^$domain=webrick.com
+||polygon.drpc.org^$domain=webrick.com
+||polygon-public.nodies.app^$domain=webrick.com
+||polygon.gateway.tenderly.co^$domain=webrick.com
+||rpc-mainnet.matic.quiknode.pro^$domain=webrick.com
+||polygon-bor-rpc.publicnode.com^$domain=webrick.com
+||polygon-mainnet.public.blastapi.io^$domain=webrick.com
 seturl.in#%#//scriptlet('prevent-navigation', 'ey43.com')
 xdabo.com#%#//scriptlet('prevent-window-open')
 fastcars1.com###popup
@@ -90512,6 +90527,7 @@ browsershots.org#@#.advert_area
 ||aopwtbxzenjva.online^
 ||aortaremisesobtend.cfd^
 ||aorvgrrzkjras.store^
+||aoteasweats.com^
 ||aotewsxzxbnzj.space^
 ||aouuldqzry.com^
 ||aouvvblbuvhuo.online^
@@ -97892,6 +97908,7 @@ browsershots.org#@#.advert_area
 ||dougfructus.cyou^
 ||doughgenuinelypreviously.com^
 ||doupceticroyals.cfd^
+||dousingnoggen.qpon^
 ||dovecotplough.cfd^
 ||dovecyton.com^
 ||doveletasmearbotts.cfd^
@@ -102373,6 +102390,7 @@ browsershots.org#@#.advert_area
 ||gasehoauzxzzt.store^
 ||gaseitycabbala.cyou^
 ||gaseous-stroke.pro^
+||gaseousfunny.com^
 ||gasolineimproveabroad.com^
 ||gaspcommercehermione.com^
 ||gaspersingled.qpon^
@@ -107117,6 +107135,7 @@ browsershots.org#@#.advert_area
 ||jfuxevakslazy.site^
 ||jfvcvxdljdqxw.website^
 ||jfverzoeowotc.store^
+||jfvitjjsqxegmc.com^
 ||jfwaqjrsvshtl.online^
 ||jfwcflhysjjiq.space^
 ||jfwrongznqxwh.site^
@@ -115405,6 +115424,7 @@ browsershots.org#@#.advert_area
 ||palamounty.com^
 ||palateserious.com^
 ||palauvoltsyanquis.qpon^
+||palazzopaneslurred.cyou^
 ||palecount.com^
 ||palelitistsnick.com^
 ||palelouisalife.com^
@@ -125203,6 +125223,7 @@ browsershots.org#@#.advert_area
 ||toiletlaceier.shop^
 ||toiletpaper.life^
 ||toioptqrfyztj.website^
+||toitransit.com^
 ||tokbkljsqzntz.online^
 ||tokenads.com^
 ||tokensguggled.com^
@@ -129033,6 +129054,7 @@ browsershots.org#@#.advert_area
 ||wedauspicy.com^
 ||weddingtrap.com^
 ||wedgedinured.cyou^
+||wedgegestapocoiners.cyou^
 ||wedgehastily.com^
 ||wedgingfilaria.qpon^
 ||wednesdaydust.com^
@@ -132007,6 +132029,7 @@ browsershots.org#@#.advert_area
 ||zesainuxaimoots.net^
 ||zesrsywjvphmj.store^
 ||zestierjambone.com^
+||zesty-battle.com^
 ||zesty-lead.pro^
 ||zesty-schedule.pro^
 ||zestyfault.pro^
@@ -149098,6 +149121,7 @@ groupon.com##figure[data-clickurl^="https://api.groupon.com/sponsored/"]
 imgburn.com##font[face="Arial"][size="1"]
 realitytvworld.com##font[size="1"][color="gray"]
 dailydot.com##footer
+gamedev.net#?#.dark\:border-gray-700:contains(Advertisement)
 law.com,topcultured.com##h3
 kazwire.com##h3.tracking-widest
 drive.com.au##hr
