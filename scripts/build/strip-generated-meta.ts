@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 
 const FILTERS_DIR_NAME = 'filters';
 const TXT_FILE_EXTENSION = '.txt';
-const METADATA_FILE_NAMES = ['filters.json', 'filters.js'];
+const METADATA_FILE_NAMES: readonly string[] = ['filters.json', 'filters.js'];
 
 /**
  * Lines starting with these prefixes are generated meta — they change on every build
