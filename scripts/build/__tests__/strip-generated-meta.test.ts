@@ -200,13 +200,19 @@ describe('stripGeneratedMetaFromDir', () => {
         await Promise.all(cases.map(async ({ dirName, hasTrailingNewline }) => {
             const serialized = JSON.stringify(metadata, null, '\t');
             const content = hasTrailingNewline ? `${serialized}\n` : serialized;
+            const expected = hasTrailingNewline ? `${expectedSerialized}\n` : expectedSerialized;
 
-            const { platformsDir, filePaths: [jsonFilePath] } = await writeMetadataFiles(dirName, content);
+            const { platformsDir, filePaths } = await writeMetadataFiles(
+                dirName,
+                content,
+                ['filters.json', 'filters.js'],
+            );
 
             await stripGeneratedMetaFromDir(platformsDir);
 
-            const rawContent = await fs.readFile(jsonFilePath, 'utf8');
-            expect(rawContent).toBe(hasTrailingNewline ? `${expectedSerialized}\n` : expectedSerialized);
+            await Promise.all(filePaths.map(async (filePath) => {
+                expect(await fs.readFile(filePath, 'utf8')).toBe(expected);
+            }));
         }));
     });
 
