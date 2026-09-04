@@ -1,9 +1,9 @@
-! Checksum: HBZGaAtm7BUIW/4Fekca4g
-! Diff-Path: ../patches/14/14-s-1788542220-3600.patch
+! Checksum: OaW4xh5GXXrMdD5YrgV4yA
+! Diff-Path: ../patches/14/14-s-1788546035-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.78.3
-! TimeUpdated: 2026-09-04T17:13:30+00:00
+! Version: 2.2.78.4
+! TimeUpdated: 2026-09-04T18:17:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2641,6 +2641,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+vfa.de#%#//scriptlet('trusted-click-element', 'button.cm-btn-decline', 'containsText:Nur essenzielle')
+vfa.de#%#//scriptlet('trusted-click-element', 'div.klaro button.c-button--secondary', '', '1000')
 x.com##body > div[aria-label^="Cookie-"]
 top.kion.ru##kion-top-alert
 discovery.com###ltp-dialog
@@ -19469,6 +19471,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240342
+@@||sdk.privacy-center.org/*/loader.js^$domain=tf1info.fr
+@@||sdk.privacy-center.org/sdk/$domain=tf1info.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240316
 natec-zone.com#@##cookies-modal
 natec-zone.com#@#.cookies-open
@@ -27960,6 +27965,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+autouncle.de##div[role="status"]:has(> a[href^="https://google.com/preferences/source?q="])
 investidor10.com.br##div[data-key="buy_and_hold"]
 investidor10.com.br#$#.guest-user-banner-aon { display: none !important; }
 investidor10.com.br#%#//scriptlet('trusted-set-local-storage-item', 'guest_user_banner_aon_closed', '$now$')

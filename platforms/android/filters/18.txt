@@ -1,9 +1,9 @@
-! Checksum: o9E8hJdFhrkhKqsmxUotjw
-! Diff-Path: ../patches/18/18-s-1788542211-3600.patch
+! Checksum: tJdKBjuYGOuYILIEFwyF2A
+! Diff-Path: ../patches/18/18-s-1788546020-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.93.62
-! TimeUpdated: 2026-09-04T17:13:42+00:00
+! Version: 2.0.93.63
+! TimeUpdated: 2026-09-04T18:17:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2642,6 +2642,8 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+vfa.de#%#//scriptlet('trusted-click-element', 'button.cm-btn-decline', 'containsText:Nur essenzielle')
+vfa.de#%#//scriptlet('trusted-click-element', 'div.klaro button.c-button--secondary', '', '1000')
 x.com##body > div[aria-label^="Cookie-"]
 top.kion.ru##kion-top-alert
 discovery.com###ltp-dialog
@@ -19555,6 +19557,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240342
+@@||sdk.privacy-center.org/*/loader.js^$domain=tf1info.fr
+@@||sdk.privacy-center.org/sdk/$domain=tf1info.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240316
 natec-zone.com#@##cookies-modal
 natec-zone.com#@#.cookies-open
