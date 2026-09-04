@@ -1,9 +1,9 @@
-! Checksum: bRdH38S635GhUXNjRedzrQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1788484050-14400.patch
+! Checksum: 4h5RzlgenCRK6UJeU43Iig
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1788496841-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.68.15
-! TimeUpdated: 2026-09-04T01:04:20+00:00
+! Version: 2.1.68.16
+! TimeUpdated: 2026-09-04T04:37:44+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -42,6 +42,7 @@
 /follow-twitter-
 /follow-twitter.
 /follow-us.$~stylesheet
+/follow_instagram.png
 /highlight-and-share.js
 /icon_share_
 /icon_sns_
@@ -153,6 +154,7 @@ _social-bar/
 ###SocialMedia
 ###SocialShare
 ###Socialize
+###aI_sns
 ###action-share
 ###adbl-social-icons
 ###addThis
@@ -191,7 +193,6 @@ _social-bar/
 ###crestashareicon
 ###crestashareiconincontent
 ###custom-tweet-button
-###desktop-share-wrapper
 ###details-share-icon-link
 ###divShareText
 ###divSideShare
@@ -1386,6 +1387,7 @@ _social-bar/
 ##.followuson
 ##.foo_social
 ##.foot-share
+##.foot-soc-fb
 ##.foot-soc-list
 ##.foot-soc-twit
 ##.foot-social
@@ -1616,7 +1618,6 @@ _social-bar/
 ##.icon--app-store
 ##.icon--facebook
 ##.icon--facebook-simple
-##.icon--flickr
 ##.icon--footer-social
 ##.icon--instagram
 ##.icon--linkedin
@@ -1645,6 +1646,7 @@ _social-bar/
 ##.icon-facebook-squared
 ##.icon-facebook-white
 ##.icon-facebook2
+##.icon-fb-small
 ##.icon-fb2
 ##.icon-flickr
 ##.icon-flipboard
@@ -1692,6 +1694,7 @@ _social-bar/
 ##.icon-social-twitter-circle
 ##.icon-social-youtube
 ##.icon-soundcloud
+##.icona-social
 ##.icone-social
 ##.iconfacebook
 ##.iconinstagram
@@ -2396,7 +2399,6 @@ _social-bar/
 ##.share-text
 ##.share-text-holder
 ##.share-this
-##.share-this-content
 ##.share-this-page
 ##.share-this-popover
 ##.share-tiktok
@@ -2415,6 +2417,7 @@ _social-bar/
 ##.share-twitter
 ##.share-twitter-icon
 ##.share-vertical
+##.share-viber
 ##.share-video
 ##.share-video-link
 ##.share-weibo
@@ -2435,7 +2438,6 @@ _social-bar/
 ##.shareArticle
 ##.shareBar
 ##.shareBlock
-##.shareBottom
 ##.shareBox
 ##.shareBtm
 ##.shareBtn
@@ -2532,7 +2534,6 @@ _social-bar/
 ##.share_facebook
 ##.share_fb
 ##.share_google
-##.share_group
 ##.share_hidden
 ##.share_horizontal
 ##.share_icon
@@ -2571,6 +2572,7 @@ _social-bar/
 ##.share_wrapper
 ##.shareaholic-canvas
 ##.shareall
+##.shareb
 ##.sharebar
 ##.sharebg
 ##.sharebottom
@@ -2711,7 +2713,6 @@ _social-bar/
 ##.simplesocialbuttons_inline
 ##.single-post-meta-data__social-sharing
 ##.single-post-share
-##.single-post-sharing-button
 ##.single-post-social
 ##.single-share
 ##.single-share-bar
@@ -2748,10 +2749,8 @@ _social-bar/
 ##.sns-con
 ##.sns-fb
 ##.sns-link
-##.sns-link-wrap
 ##.sns-section
 ##.sns-share
-##.sns-share-area
 ##.sns-share-icon
 ##.sns-share02
 ##.sns-sharing
@@ -3242,8 +3241,6 @@ _social-bar/
 ##.stickysocial
 ##.stm-share
 ##.stm-shareble
-##.stm-socials
-##.stm-socials__icon
 ##.story-share
 ##.story-social
 ##.story-tool-share
@@ -3353,7 +3350,6 @@ _social-bar/
 ##.twitter-follow-box
 ##.twitter-followers
 ##.twitter-footer
-##.twitter-module
 ##.twitter-popup
 ##.twitter-share
 ##.twitter-share-btn
@@ -3538,6 +3534,7 @@ _social-bar/
 ##SHARE-BUTTON
 ##SOCIAL-SHARING
 ##TWITTER-SHARE-BUTTON
+##[data-social="share"]
 ##[data-target="share-review"]
 ##[data-testid="prism-share"]
 ##[eapps-link="share"]
@@ -3641,6 +3638,7 @@ _social-bar/
 ||button.like.co^$third-party
 ||buttons.github.io/buttons.js$third-party
 ||connect.ok.ru^$third-party
+||facebook.com/plugins/follow.php$third-party
 ||facebook.com/plugins/like.php?$third-party
 ||facebook.com/plugins/like_box.php$third-party
 ||facebook.com/plugins/page.php?$third-party
@@ -3758,6 +3756,7 @@ aiseesoft.com###share-list
 journals.aps.org,theintercept.com###share-menu-button
 theintercept.com###share-menu-top-button
 androidpolice.com###sharingButtonPopup
+perezhilton.com###side-follow
 jacobin.com###site-header-share
 coingape.com###social-ad-new
 animenewsnetwork.com###social-bookmarks
@@ -4015,7 +4014,6 @@ dictionary.cambridge.org##.i-facebook
 insideclimatenews.org##.icn-share-holder
 atptour.com##.icon-email
 manutd.com##.icon-share-card-lite
-thedebrief.org##.icon-wrap
 fincen.gov##.icons-footer
 financialexpress.com##.ie-google-news
 indianexpress.com##.ie-ie-share
@@ -4073,7 +4071,6 @@ nfl.com##.nfl-c-article__share-bar
 nhl.com##.nhl-o-sharebar
 nist.gov##.nist-social__wrapper
 infobyip.com##.noprint
-conservativebrief.com,jerseyvindicator.org,karanpc.com,parlamentario.com,sexypedia.it##.ns-buttons
 cyberinsider.com,origami.guide,thepeoplesvoice.tv##.ns-buttons-wrapper
 foodnetwork.com##.o-SocialShare
 sheknows.com,spy.com##.o-social-list__item
@@ -4148,7 +4145,6 @@ dailymail.co.uk,thisismoney.co.uk##.share-whatsapp
 citizen.org##.share1
 audi-sport.net,overtake.gg##.shareButtons
 windowsreport.com##.shareMobile
-independentarabia.com##.share_tools
 cbsnews.com##.sharebar
 mirror.co.uk,themirror.com##.sharebar-icon
 al.com,cleveland.com,lehighvalleylive.com,masslive.com,mlive.com,newyorkupstate.com,nj.com,oregonlive.com,pennlive.com,silive.com,syracuse.com##.sharebarBetaWrapper
@@ -4179,13 +4175,13 @@ gfinityesports.com,stealthoptional.com##.social-follow-unit
 vinepair.com##.social-footer-row
 digitimes.com##.social-frame
 hevodata.com##.social-handle
-siliconrepublic.com##.social-horizontal-container
 firstpost.com##.social-ic-wrap
 tmz.com##.social-item
 knewz.com,politico.eu,revolvermag.com##.social-items
 psychologytoday.com##.social-links-bottom
 complex.com##.social-links-top
 denofgeek.com##.social-links__anchor--sharing
+247sports.com##.social-media-list
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,browserstack.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,radioblog.eu,tvone.tv,ultiworld.com##.social-menu
 eltecolote.org,melmagazine.com,mississippifreepress.org,orlandoweekly.com,prismreports.org,sacurrent.com,thefrisc.com,worldcrunch.com##.social-navigation
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
@@ -4500,7 +4496,6 @@ francetvinfo.fr##.social-zone__wrapper
 almayadeen.net##.banner
 alaraby.com##.block-atv-google-news-button
 skynewsarabia.com##.sna-social
-hrt.hr##.h-screen
 jutarnji.hr##.item_social_share
 storm.mg###article_sns_inner
 ettoday.net###et_sticky_pc
