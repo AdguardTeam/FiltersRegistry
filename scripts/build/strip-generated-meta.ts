@@ -132,7 +132,7 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
                 const stripped = await stripMetaFromMetadataFile(fullPath);
                 if (stripped) {
                     // eslint-disable-next-line no-console
-                    console.log(`${path.relative(rootDir, fullPath)}: stripped generated meta fields`);
+                    console.log(`${path.relative(rootDir, fullPath)}: stripped generated meta`);
                 }
                 return stripped ? 1 : 0;
             }
@@ -144,7 +144,7 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
             const modified = await walkAndStrip(fullPath, rootDir);
             if (modified > 0) {
                 // eslint-disable-next-line no-console
-                console.log(`${path.relative(rootDir, fullPath)}: stripped metadata from ${modified} file(s)`);
+                console.log(`${path.relative(rootDir, fullPath)}: stripped generated meta from ${modified} file(s)`);
             }
             return modified;
         }
