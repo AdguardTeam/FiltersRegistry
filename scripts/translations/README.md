@@ -67,3 +67,11 @@ It's essential to import strings from the service before exporting them, as some
     ```
 
     It will validate the JSON schema of filter rules for different platforms in a project.
+
+## Automatic Updates
+
+The `Update translations` GitHub Actions workflow
+(`.github/workflows/update-translations.yaml`) runs `download.sh` weekly and on demand,
+validates the result with `yarn validate:locales`, and opens a pull request with the
+changes to `locales/`. Trigger it manually from the Actions tab. Uploading base English
+strings (`upload.sh`) stays a manual step.
