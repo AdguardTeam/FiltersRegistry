@@ -79,6 +79,28 @@ The `yarn build` command (and `yarn build:local`) also accepts:
   files in `platforms/` and `temp/platforms/`, and remove the `version`/`timeUpdated`
   fields from every entry in `filters.json`/`filters.js`. Useful when comparing outputs between builds.
 
+### Stripping Generated Metadata
+
+`--strip-generated-meta` runs this pass as part of a build. To run the same pass
+on an existing build-output directory without recompiling, use the standalone
+command:
+
+```bash
+yarn strip-generated-meta <dir>
+```
+
+It rewrites, in place, every `.txt` filter file and every `filters.json` /
+`filters.js` under `<dir>` — dropping the generated meta lines and the
+`version` / `timeUpdated` fields, exactly as the build flag does.
+
+The directory argument is **required**. The command mutates files in place, and
+defaulting to the tracked `platforms/` tree would make it easy to strip the
+committed metadata the products read. Point it at a throwaway copy instead:
+
+```bash
+yarn strip-generated-meta temp/platforms
+```
+
 ### Generating Filter Cache
 
 To update the cached `filter.txt` files in `filters/`, used for
@@ -174,7 +196,9 @@ The following flags can be used with `yarn build` and `yarn build:local`:
   and not in `--skip`.
 - `--report=` — custom report file name (e.g., `--report='report-adguard.txt'`)
 - `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
-- `--strip-generated-meta` — remove volatile metadata lines from built files
+- `--strip-generated-meta` — remove generated meta lines from `.txt` files and
+  `version`/`timeUpdated` from `filters.json`/`filters.js`
+  (see [Stripping Generated Metadata](#stripping-generated-metadata))
 - `--use-cache` — build from cached `filter.txt` (same as `yarn build:local`)
 - `--generate-cache` — compile filters to update the `filter.txt` cache only
 - `--download-stats` — download each filter's `stats.json` without recompiling `filter.txt`.

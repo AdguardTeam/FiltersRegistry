@@ -164,24 +164,27 @@ export const stripGeneratedMetaFromDir = async (rootDir: string): Promise<number
     return walkAndStrip(rootDir, rootDir);
 };
 
-// CLI entrypoint: strip generated meta from platform build outputs when run directly
+// CLI entrypoint: strip generated meta from a build-output dir when run directly.
+// The target must be explicit — this rewrites files in place, and the tracked
+// `platforms/` tree is a tempting default that would ship stripped metadata.
 if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
-    const rootDirs = process.argv[2]
-        ? [path.resolve(process.argv[2])]
-        : [path.resolve('platforms'), path.resolve('temp', 'platforms')];
+    const target = process.argv[2];
+    if (!target) {
+        // eslint-disable-next-line no-console
+        console.error('Usage: strip-generated-meta <dir>   (e.g. temp/platforms)');
+        // eslint-disable-next-line no-console
+        console.error('Rewrites .txt / filters.json / filters.js under <dir> in place.');
+        process.exit(1);
+    }
 
-    const results = await Promise.all(
-        rootDirs
-            .filter((dir) => existsSync(dir))
-            .map(async (rootDir) => {
-                const count = await stripGeneratedMetaFromDir(rootDir);
-                // eslint-disable-next-line no-console
-                console.log(`${path.relative('.', rootDir)}: ${count} file(s) modified.`);
-                return count;
-            }),
-    );
+    const rootDir = path.resolve(target);
+    if (!existsSync(rootDir)) {
+        // eslint-disable-next-line no-console
+        console.error(`strip-generated-meta: no such directory: ${rootDir}`);
+        process.exit(1);
+    }
 
-    const total = results.reduce((sum, count) => sum + count, 0);
+    const total = await stripGeneratedMetaFromDir(rootDir);
     // eslint-disable-next-line no-console
-    console.log(`Done. ${total} file(s) modified in total.`);
+    console.log(`Done. ${total} file(s) modified in ${path.relative('.', rootDir) || '.'}.`);
 }
