@@ -123,83 +123,46 @@ yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
 ### Typical workflow — comparing build results against master
 
 Use this when branch changes may alter compiled rule output
-and you need a structured pass/fail comparison against master.
+and you need a structured pass/fail comparison against master:
 
-It runs both branches in parallel via git worktrees so network-fetched content stays in sync.
+```bash
+yarn compare-build-output
+```
 
-1. Create worktrees for each branch and install dependencies:
+It prompts for the branch to compare (defaulting to the current branch;
+`master` itself is never offered as a choice); for the build mode — a plain
+`build`, or `build:local` from cached sources, the latter with separate
+follow-up prompts for running `generate-cache` and `download-stats` first;
+for an optional filter-ID selection (`--include` / `--skip`, forwarded to
+every build command so a quick check can build a handful of filters); and
+for whether to remove the build artifacts when finished. Under the hood it
+builds `master` and the compare branch
+in parallel via git worktrees under `temp/`, with a progress spinner on the
+slow steps (install, build, copy, restore, cleanup); it also resets the
+compare worktree's `filters/` to the master version first, so `revision.json`
+version counters start from the same point and don't show up as diff noise in
+the report. With `filters/` pinned, the tool compares build-tooling changes
+through their effect on the platform output, not filter content.
 
-   ```bash
-   export CHANGED_BRANCH=$(git branch --show-current)
-   export BUILD_LOCAL=true                   # set to 'true' to use generate-cache + build:local
+Two more things it does around the build:
 
-   export MASTER_SHA=$(git rev-parse master)
-   export CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
+- Each worktree's `platforms/` is emptied before its build and restored to
+  the checked-out state afterwards, so the copied output is only what this
+  run compiled (matters with a `--include` / `--skip` selection).
+- If cleanup was chosen, the last step removes the two worktrees, the two
+  `platforms_*_build/` directories and `temp/reg-meta.env`; `temp/logs/` is
+  always kept.
 
-   git worktree add --detach /tmp/reg-master-build  $MASTER_SHA -f
-   git worktree add --detach /tmp/reg-changed-build $CHANGED_SHA -f
+Two conveniences on repeated runs:
 
-   yarn --cwd /tmp/reg-master-build  install &
-   yarn --cwd /tmp/reg-changed-build install &
-   wait
-   ```
-
-2. Sync both worktrees' `filters/` to the same baseline commit so
-   `revision.json` version counters start from the same point:
-
-   ```bash
-   git -C /tmp/reg-changed-build checkout $MASTER_SHA -- filters/
-   ```
-
-3. Build both branches in parallel:
-
-   ```bash
-   _build() {
-     local dir=$1
-     if [ "$BUILD_LOCAL" = "true" ]; then
-       yarn --cwd "$dir" generate-cache && \
-       yarn --cwd "$dir" build:local --no-patches-prepare --strip-generated-meta
-     else
-       yarn --cwd "$dir" build --no-patches-prepare --strip-generated-meta
-     fi
-   }
-
-   (
-     _build /tmp/reg-master-build > /tmp/log-master-build.txt 2>&1
-     EXIT=$?
-     [ $EXIT -eq 0 ] \
-       && cp -r /tmp/reg-master-build/platforms platforms_master_build \
-       && echo "[master] done" \
-       || echo "[master] FAILED (exit $EXIT)"
-   ) &
-
-   (
-     _build /tmp/reg-changed-build > /tmp/log-changed-build.txt 2>&1
-     EXIT=$?
-     [ $EXIT -eq 0 ] \
-       && cp -r /tmp/reg-changed-build/platforms platforms_changed_build \
-       && echo "[changed] done" \
-       || echo "[changed] FAILED (exit $EXIT)"
-   ) &
-
-   wait && echo "Both builds complete"
-   ```
-
-4. Generate the structured report:
-
-   ```bash
-   bash scripts/build/__tests__/regression-test-against-master.sh
-   ```
-
-   The script compares all `.txt` rule files across every platform and
-   prints a pass/fail verdict.
-
-5. Clean up worktrees and current branch changes when done:
-
-   ```bash
-   git worktree remove /tmp/reg-master-build -f & git worktree remove /tmp/reg-changed-build -f
-   git reset --hard && rm -rf platforms_master_build platforms_changed_build
-   ```
+- If `temp/platforms_master_build/` and `temp/platforms_changed_build/` hold
+  built output from a previous run, it prints the branches, build mode and
+  the commit SHAs that output was built from — flagging any branch that has
+  moved on since — and offers to generate the report from them instead of
+  rebuilding.
+- If a worktree from a previous run is still present, it offers to reuse it
+  instead of removing and re-adding it. `yarn install` still runs either way
+  (fast against the kept `node_modules`).
 
 ### Command Compatibility
 
