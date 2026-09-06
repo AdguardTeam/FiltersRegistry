@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 1jqdFn/XYYAzhFo62lnqew
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1788642877-3600.patch
+! Checksum: 646NRr1X1EeIgPYz9/XY/A
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1788661343-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.61
@@ -24,9 +24,6 @@ sushiscan.st##.ad-wrap:style(display: none !important;)
 sushiscan.st##+js(abort-on-property-read, __vpx)
 sushiscan.st##+js(abort-current-script, Array.prototype.forEach, /bloqueur|amazon-adsystem\.com/)
 sushiscan.st##+js(no-setTimeout-if, /walled|adsbygoogle|new Image\(\)\.src|\)return;if\(_/)
-||sushiscan.st/js/g/v.js
-||sushiscan.st/js/g/m.js
-||sushiscan.st/js/g/t.js
 @@||ads.videoadex.com/jw/advertisement.js$domain=rtl.be|ultimedia.com
 chatnow.fr##+js(no-setTimeout-if, getComputedStyle)
 journalduweb.org#@#.ad-slot
@@ -120,7 +117,6 @@ lameteoagricole.net##+js(prevent-fetch, pagead2.googlesyndication.com)
 meteo-grenoble.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 cinefil.com##+js(set-constant, checkDiv, noopFunc)
 @@||rustica.fr/*.iads.js
-@@||gift.ibon.com.tw/*/pub.js
 xn--mto-bmab.fr#@#.topbanneradvertise
 empire-streaming.*##+js(no-xhr-if, pagead2.googlesyndication.com)
 empire-anime.com##+js(no-xhr-if, pagead2.googlesyndication.com)
@@ -1034,7 +1030,6 @@ mobimart.it#@##ad_global_below_navbar
 @@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=gala.fr
 ||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon_apstag.js,domain=gala.fr
 ||googletagmanager.com/gtm.js$script,redirect=google-analytics_analytics.js,domain=gala.fr
-||prismamedia-com.videoplayerhub.com/galleryplayer.js$script,redirect=noop.js,domain=gala.fr
 @@||content.uplynk.com/preplay/*/multiple.json*&ad.preroll$domain=fifa.com
 @@||google.com/recaptcha/api.js
 $popup,domain=mcloud.to,badfilter
@@ -1602,6 +1597,7 @@ _popads.
 _pub.gif
 _pub_iframe.
 _publ1c1te.
+_publicitaire/
 _publicite.
 _publicite_
 _regie/aff.
@@ -1737,8 +1733,10 @@ _werbebanner_
 ||affiliatable.io^$3p
 ||affility.com^$3p
 ||afilio.com.br^$3p
+||afromessenger.com^$3p
 ||apypxl.com^$3p
 ||aquaplatform.com^$3p
+||asiatmessenger.com^$3p
 ||askmecca.com^$3p
 ||atedra.com^$3p
 ||bazardux.com^$3p
@@ -1746,6 +1744,7 @@ _werbebanner_
 ||bestcontentwork.top^$3p
 ||betfredaffiliates.com^$3p
 ||betterbannerscloud.com^$3p
+||beurettemessenger.com^$3p
 ||broadcast.pm^$3p
 ||camsoda.com^$3p
 ||caramec.fr^$3p
@@ -1866,6 +1865,7 @@ _werbebanner_
 ||publy.net^$3p
 ||pubstack.io^$3p
 ||puls-dz.com^$3p
+||purlive.com^$~image,3p
 ||pwspace.com^$3p
 ||pxltgr.com^$3p
 ||recoco.it^$3p
@@ -1904,6 +1904,7 @@ _werbebanner_
 ||vyking.io^$3p
 ||wedoo.com^$3p
 ||widespace.com^$3p
+||wiztube.xyz^$3p
 ||xcamz.xyz^$3p
 ||xn--ae-tja.ch^$3p
 ||xpicw.top^$3p
@@ -1945,7 +1946,6 @@ voethrusts.cfd
 ||5mh7wp1gl3nvkx.cyou^
 ||5umpz4evlgkm.com^
 ||64p3am9x95ct.com^
-||693564ko1nupk3qfc.rest^
 ||69688qp.com^
 ||71692fai4cc0.com^
 ||9anime.to^
@@ -2919,6 +2919,7 @@ voethrusts.cfd
 ||tophoussapient.shop^
 ||toptierbroso.life^
 ||touringfewsome.rest^
+||trackrc.com^
 ||trammerepitaxy.cfd^
 ||trannysexx.com^
 ||transfto.com^
@@ -3022,7 +3023,6 @@ voethrusts.cfd
 ||xesjonlq.com^
 ||xhlxlywwbm.com^
 ||xihubo.click^
-||xofwgjbogybvi.site^
 ||xsaeafkfilbcur.com^
 ||xuxe3.com^
 ||xylitezigzag.cfd^
@@ -3055,7 +3055,6 @@ voethrusts.cfd
 ||averoconnector.com^$3p
 ||binance.org^$3p
 ||browsealoud.com/plus/scripts/$script
-||cfcdist.gdn^$3p
 ||cnhv.co^$3p
 ||coin-have.com^$3p
 ||coinblind.com^$3p
@@ -3270,6 +3269,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||nospartenaires.com/visuel$3p
 ||offer.alibaba.com^$subdocument
 ||ouo.press/images/*-ad.
+||p.porn.fr^
 ||partenaire.bemove.fr^
 ||partenaires.feerik.com^$3p
 ||philatelistes.net/liens/cptr/
@@ -3981,7 +3981,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ###sponsor_google
 ###sponsor_sidebar
 ###sponsored-container
-###sponsoredContainer
 ###sponsoredProducts
 ###stickyDFP
 ###stop_ad
@@ -4241,7 +4240,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.pub-img
 ##.pub-index
 ##.pub-label
-##.pub-megabanner
 ##.pub-partenaires
 ##.pub-pave
 ##.pub-promo
@@ -4518,6 +4516,7 @@ cowcotland.com###blocpub1
 cowcotland.com###bottom_pubN2
 darty.com###brand
 ktotv.com###campain-bandeau
+sexeautop.com###catcher
 sitedesmarques.com###check-also-box
 ruedesjoueurs.com###classmentMobile
 solutions-numeriques.com###clickable
@@ -4554,7 +4553,6 @@ tiplanet.org###left_column > .archive:not([id])
 journaldugeek.com###linkhabillage
 laposte.net###lpn_pub_main
 hellokids.com###mask
-driverscloud.com###mc_cadretoppub
 sfr.fr###meeticWrapper
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_bottom
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_top
@@ -4605,6 +4603,7 @@ gamaniak.com###pubtopmenu
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
 sante-dz.com###revenue-wrapper
 tomshardware.fr###rightcol_top_anchor
+slappyto.net###shadow
 zapiks.fr###shop
 mobigeeks.fr###sidebar-shell-2
 lematin.ch###sidebarSky
@@ -5080,7 +5079,6 @@ yggtorrent.lat,yggtorrent.support##html
 @@||partners.doctolib.fr^$subdocument,3p
 @@||premiere.fr/inextenso/uploads/300x150_$image,domain=premiere.fr
 @@||publicwww.com/images/labels.$image,~3p
-@@||quefaire.be/annonces/imgads/$image
 @@||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/hd-main.js?cache=$xhr,domain=gmx.at|gmx.net|web.de|welt.de
 @@||a.lulucdn.com/js/$script,domain=lulu.st|lulustream.com|luluvdo.com|luluvdoo.com|luluvid.com|pi2n3sqvwta6tnmr.org
 @@||a.lulucdn.com/player/$script,domain=lulu.st|lulustream.com|luluvdo.com|luluvdoo.com|luluvid.com|pi2n3sqvwta6tnmr.org

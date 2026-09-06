@@ -1,5 +1,5 @@
-! Checksum: kLcpsVS/0Bun8sjVto+YZw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1788625082-3600.patch
+! Checksum: pBLxhV7v3zqjcqolGDh6wg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1788661342-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.53.31
@@ -25,7 +25,6 @@
 ||widget.marktjagd.de^
 ||cwi.re^$third-party
 ||a.zdg.de^
-||cockpit.symplr.de^$third-party
 ||afl-static-cdn.newbiz-prod.stroeerws.de^$third-party
 ||embed.contentverticals.de^$third-party
 ||partners2.das-onlinespiel.de^$third-party
@@ -874,7 +873,6 @@ chip.de##.BestCheck
 ||esut.de/wp-content/banners/$image
 eltern.de##.page__aside > .js-ob:empty
 eltern.de##.page__aside > .footer-teaserblock:not(:has(>*))
-eltern.de##.article__body > .multi-purpose-slot:has(> .multi-purpose-slot__static-content > .list-element > .ad-labels)
 ad-hoc-news.de###billboardBottom
 ad-hoc-news.de##div[data-adserver]
 nzz.ch##div[data-source-element-widget]:has(> div[id^="adnz_native"]:only-child)
@@ -968,6 +966,7 @@ jungefreiheit.de##div[style^="text-align: center;"]:has(ins.adsbygoogle)
 speisekarte.de##.h5v-placeholder
 speisekarte.de##div[id^="sk_content_"]
 speisekarte.de##div[id^="skyscraperLeftWrap"]
+speisekarte.de##.justify-center > .w-full > .justify-center:has(> #sk_footer:only-child)
 berliner-kurier.de##div[id^="qmn-ad"]
 berliner-kurier.de###articleBody > div[class^="qmn_"][class*="-divider"]
 win-10-forum.de,winboard.org,pedelecforum.de,vermieter-forum.com##.fh-inside-post
@@ -2414,7 +2413,6 @@ seatforum.de###posts > ins[id^="AABI-"]
 abnehmen.com###posts > li.postbitlegacy.postcontainer.old:not([id^="post_"])
 hilfdirselbst.ch###r230
 hilfdirselbst.ch###r231
-xbox-passion.de###sidebar > #rectangle
 welt.de,stylebook.de,rollingstone.de,idea.de,3c.gmx.net,niederlausitz-aktuell.de,tonight.de,win-8-forum.net###superbanner
 tweakpc.de###wpl
 tweakpc.de###wpr
@@ -3052,7 +3050,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||windows-pro.net^
 ||wixnm.com^
 ||zazufi.com^
-||85.114.133.62^$third-party
 ||a.partner-versicherung.de^$third-party
 ||a3h.de^$third-party
 ||active-tracking.de^$third-party
@@ -3114,7 +3111,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||nonstoppartner.net^$third-party
 ||onlymega.com^$third-party
 ||playamedia.com^$third-party
-||profiliate.net^$third-party
 ||ptadsrv.de^$third-party
 ||qualitymedianetwork.de^$third-party
 ||revresrennab.de^$third-party
@@ -3394,7 +3390,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||musiksampler.de/cgi-bin/arlight/view.php
 ||my105.ch/fileadmin/sponsoren/
 ||mygully.com/f.php
-||nacktefoto.com/de-bonga.jpg
 ||nacktefoto.com/los-gif/
 ||neumarkt-tv.de/wp-content/uploads/*/bestercasinomentor-original.jpg
 ||nius.de/adsense.js
@@ -3435,6 +3430,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||pornohammer.com/img/linklist/
 ||pr.t-online.de^
 ||preispirat.ch^*/partner-ads/
+||privater.sex/images/banner/
 ||promiflash.de/static/js/pf-web-*.js|
 ||raidrush.net/js/wrpx.js
 ||realtotal.de/data/betrugstest-com.jpg
@@ -3531,6 +3527,7 @@ connextra.com##iframe[src^="https://ssl.connextra.com"]
 g.doubleclick.net###adunit
 |https:$domain=adfarm1.adition.com
 ||2mdn.net^$domain=autobild.de|imasdk.googleapis.com
+||a.df-srv.de^$domain=autobild.de
 ||ad.doubleclick.net^$domain=autobild.de
 ||adform.net^$domain=autobild.de|gofeminin.de|googlesyndication.com
 ||adition.com^$domain=autobild.de|g.doubleclick.net
@@ -3563,6 +3560,7 @@ g.doubleclick.net###adunit
 ||yieldlab.net^$domain=autobild.de
 ||flashtalking.com^$~media,domain=toggo.de
 ||smartclip.net^$~media,domain=toggo.de
+||deinesexfilme.com^*==/
 ||deinesexvideos.com^*==/
 ||halloporno.net^*==/
 ||hd-sexfilme.com^*==/
@@ -3573,6 +3571,7 @@ g.doubleclick.net###adunit
 ||pornohammer.com^*==/
 ||pornoklinge.com^*==/
 ||pornolisa.com^*==/
+||pornoschlange.com^*==/
 ||pornotom.com^*==/
 ||sexvideos-hd.com^*==/
 /^https?:\/\/.*\.(jpg|jpeg|gif|png|php|svg|ico|js|txt|css)/$popup,domain=190.115.18.20|aniworld.to|canna-power.to|canna.to|kinoger.com|kinoger.to|serien.cam|serienstream.to
@@ -3713,7 +3712,6 @@ ladies.de###content-solads
 einkochen.info,ipadblog.de,nh24.de,wiener-online.at###custom_html-2
 ipadblog.de,presse-nachrichten.de,urheberrecht.de###custom_html-4
 nachrichten.es,primavera24.de,radsportjournaltourman.com###custom_html-5
-eu-vertretung.de,kriegsberichterstattung.com,mixed.de###custom_html-9
 wochenblatt.pl###custom_post_widget-6
 city23.at###dabplusshop
 finanznachrichten.de,wallstreet-online.de###dban1
@@ -4089,6 +4087,7 @@ express.de##.background-ad-container
 finanzen.at##.background_purple
 1001spiele.de,3gewinntspiele.com,6navi.ch,akustik-gitarre.com,anixehd.tv,bankkaufmann.com,boxxx.ch,buchmarkt.de,deavita.com,erosclubs.ch,erosgirls.ch,flugblattangebote.at,fruchtportal.de,fussballgucken.info,goldseiten.de,hcb.net,jobagent.ch,journalismus-koepfe.de,juve.de,kartenspielen.de,knobelspiele.com,kradblatt.de,laufen.de,m.gota.ch,macerkopf.de,mein-wahres-ich.de,melodieundrhythmus.com,modhoster.de,nordicsports.de,oberpfalzecho.de,pfaffenhofen-today.de,prospektangebote.de,psi-magazin.de,regionews.at,rockland.de,salue.de,sexnews.ch,spieleklassiker.com,suedtirol.de,svs1916.de,urlaubsguru.de,wimmelbildspiele.de##.banner
 skipper-bootshandel.de,tvtoday.de##.banner-container
+privater.sex##.banner-content
 woz.ch##.banner-full
 wochenblatt.cc##.banner-header-left
 wochenblatt.cc##.banner-header-right
@@ -4339,7 +4338,6 @@ lustmap.ch##.js_bns
 kochbar.de##.kb-home-medrec-halfpage
 kauperts.de##.kca-wrapper
 kicker.de##.kick__ad-pos_wrapper
-1000ps.de##.kleinueber > .row + div > .topzubehoeranzeige-berichte
 kochbar.de##.ks-ad:not([data-adslot="karotte"])
 swissfunddata.ch##.l-partnerSlideContainer
 vol.at##.laendleimmo
@@ -4383,6 +4381,7 @@ gelbeseiten.de##.mod-RechteWerbespalteStartseite
 wohnglueck.de##.mod-adslot
 stuttgarter-zeitung.de##.mod-weekli
 basses-blatt.de,beobachter-online.de,blaue-blume.tv,einbecker-morgenpost.de,gandersheimer-kreisblatt.de,goldstar-tv.de,romance-tv.de,studio-magazin.de##.mod_banner
+versicherungsbote.de##.mod_code_wrapper
 aarauer-nachrichten.ch,st-galler-nachrichten.ch,wiler-nachrichten.ch,winterthurer-zeitung.ch,zugerwoche.ch##.mod_printanzeigen
 sol.de##.module--advert
 fc-union-berlin.de##.module-footer-sponsors
@@ -4581,7 +4580,6 @@ swp.de##.swp-adbox
 caraworld.de##.symplr-ad-holder
 t-online.de##.tMRM_billiger
 duden.de##.tabloid__side-column-top
-selbstaendig-im-netz.de##.tad1
 laola1.at##.tag-presented
 golem.de##.tags
 frustfrei-lernen.de##.tandem_right
@@ -5017,6 +5015,7 @@ t-online.de##div[data-testid^="Nativendo.ArticleFeed"]
 focus.de##div[id^="M_CONTENTAD"]
 focus.de##div[id^="M_TRSCT_hor"]
 t-online.de##div[id^="nativendo"]
+ratehase.de##div[style="height: 90px; margin: 30px 0 20px 0; text-align: center; width: 100%;"]
 t-online.de##section[data-stage-layout^="custom_nativendo_"]
 boersennews.de###bnTickerContainer:has(#bnTickerAdNotice)
 chip.de##.ChipArticleTeaser:has(.RUC-Badge--Secondary)
@@ -5048,7 +5047,6 @@ austriansoccerboard.at##.ipsWidget:has(.sidebar-partner)
 austriansoccerboard.at##.ipsWidget:has(.sidebar-partner-links)
 mobile.de##.mN_WC:has([data-testid="sponsored-badge"])
 mopo.de##.main-preview:has(.anzeige-label)
-finanzfluss.de##.news-card:has(.disclaimer-text)
 onvista.de##.ov-carousel__item:has(a + span + small)
 heise.de##.p-3.-mx-3.bg-gray-50:has(a[data-component="TeaserLinkContainer"]:not(a[href^="https://www.heise.de/api/accountservice/subscribe/"]))
 prad.de##.pd-teaser:has(a[href^="https://bit.ly/"])
