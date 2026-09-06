@@ -2,22 +2,21 @@
 /* eslint-disable no-await-in-loop */
 import fs from 'fs';
 import path from 'path';
-import { DiffBuilder } from '@adguard/diff-builder';
+import { DiffBuilder, type BuildDiffParams } from '@adguard/diff-builder';
 import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
-// eslint-disable-next-line import/no-unresolved
-import { parseFilterIDs } from './filter-id-list.ts';
+import { parseFilterIDs } from './filter-id-list.js';
 import { findFiles } from '../utils/find_files.js';
 
 /**
  * Parse command-cli parameters -t|--time, -r|--resolution, -i|--include and -s|--skip
  */
 let time = 60;
-let resolution = 'm';
-let includedFilterIDs = [];
-let excludedFilterIDs = [];
+let resolution: NonNullable<BuildDiffParams['resolution']> = 'm';
+let includedFilterIDs: number[] = [];
+let excludedFilterIDs: number[] = [];
 
 const args = process.argv.slice(2); // Get command line arguments
 args.forEach((val) => {
@@ -26,7 +25,7 @@ args.forEach((val) => {
     }
 
     if (val.startsWith('-r=') || val.startsWith('--resolution=')) {
-        resolution = val.slice(val.indexOf('=') + 1);
+        resolution = val.slice(val.indexOf('=') + 1) as NonNullable<BuildDiffParams['resolution']>;
     }
 
     if (val.startsWith('-i=') || val.startsWith('--include=')) {
@@ -45,11 +44,11 @@ args.forEach((val) => {
 /**
  * Main function to generate and copy patches for filter files.
  */
-const main = async () => {
+const main = async (): Promise<void> => {
     // Find all new filter files
     const newFilterFiles = await findFiles(
         FOLDER_WITH_NEW_FILTERS,
-        (file) => {
+        (file: string) => {
             // "/" for unix-like or "\\" for windows in path.
             const fileInFiltersFolder = file.includes('filters/') || file.includes('filters\\');
             const fileHasTxtExtension = file.endsWith('.txt');
