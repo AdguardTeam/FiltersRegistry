@@ -55,7 +55,7 @@ for all supported AdGuard products.
 │                                   #   opera, opera-mv3, safari, android-content-blocker, ublock
 ├── scripts/                        # All build and utility scripts
 │   ├── build/                      # build.js, build-config.ts, constants.js,
-│   │                               #   custom_platforms.js, patches.js, strip-generated-meta.ts
+│   │                               #   custom_platforms.js, patches.ts, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
 │   ├── repository/                 # compress.js — repository compression
 │   ├── translations/               # Locale download/upload tooling
