@@ -392,10 +392,12 @@ generate_report() {
         fi
     done < <(find "$PLATFORMS_CHANGED" -name "*.txt" -print0)
 
-    # Secondary check — metadata
+    # Secondary check — every generated non-rule file (filters*.json/.js,
+    # local_script_rules.json). Count only "Files X and Y differ"; "Only in ..."
+    # (present on one side only) is informational like added files above.
     meta_diffs=$(diff -rq --exclude="*.txt" --exclude="*.patch" \
         "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" \
-        | grep -cE "filters\.(json|js)" || true)
+        | grep -cE '^Files .* differ$' || true)
 
     echo "${C_BOLD}--- Rule Files ---${C_RESET}"
     echo "Total .txt files compared: $total"
@@ -406,13 +408,18 @@ generate_report() {
     echo "Files only on the changed side: $added_count  (new filters or platform targets, not a regression)"
     [ -n "$added_list" ] && printf '%s\n' "$added_list"
     echo ""
-    echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
-    echo "filters.json/filters.js diffs: $meta_diffs  (version counter noise, not a regression)"
+    echo "${C_BOLD}--- Metadata Files ---${C_RESET}"
+    echo "Non-rule file diffs (filters.json/.js, filters_i18n.json/.js, local_script_rules.json): $meta_diffs"
     echo ""
     echo "${C_BOLD}--- Verdict ---${C_RESET}"
-    [ "$rule_diffs" -eq 0 ] \
-        && echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file diffs" \
-        || { echo "${C_RED}${CROSS} FAIL${C_RESET} — $rule_diffs rule file(s) differ"; return 1; }
+    if [ "$rule_diffs" -eq 0 ] && [ "$meta_diffs" -eq 0 ]; then
+        echo "${C_GREEN}${CHECK} PASS${C_RESET} — no rule file or metadata diffs"
+    else
+        echo "${C_RED}${CROSS} FAIL${C_RESET}"
+        [ "$rule_diffs" -gt 0 ] && echo "  $rule_diffs rule file(s) differ"
+        [ "$meta_diffs" -gt 0 ] && echo "  $meta_diffs metadata file(s) differ"
+        return 1
+    fi
 }
 
 # --- Step 0: reuse existing build output, if any ---

@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 
 const FILTERS_DIR_NAME = 'filters';
 const TXT_FILE_EXTENSION = '.txt';
+const METADATA_FILE_NAMES: readonly string[] = ['filters.json', 'filters.js'];
 
 /**
  * Lines starting with these prefixes are generated meta — they change on every build
@@ -18,6 +19,12 @@ const GENERATED_META_PREFIXES = [
 ] as const;
 
 /**
+ * Fields inside each entry of the `filters` array in filters.json/filters.js that are
+ * generated meta — same rationale as GENERATED_META_PREFIXES, but for the JSON metadata files.
+ */
+const GENERATED_META_FIELDS = ['version', 'timeUpdated'] as const;
+
+/**
  * Checks whether a line is a generated meta line that should be stripped.
  *
  * @param line - A single line from a filter file.
@@ -25,6 +32,58 @@ const GENERATED_META_PREFIXES = [
  */
 const isGeneratedMetaLine = (line: string): boolean => {
     return GENERATED_META_PREFIXES.some((prefix) => line.startsWith(prefix));
+};
+
+/**
+ * Strip generated version/timeUpdated fields from each entry of the `filters` array
+ * in a filters.json/filters.js metadata file, in-place.
+ *
+ * https://github.com/AdguardTeam/FiltersRegistry/issues/1208
+ *
+ * @param filePath - Absolute path to the filters.json or filters.js file.
+ * @returns True if a field was removed and the file rewritten; false when the
+ * parsed content is not an object, has no `filters` array, or has nothing to strip.
+ * @throws If the file is not valid JSON.
+ */
+const stripMetaFromMetadataFile = async (filePath: string): Promise<boolean> => {
+    const content = await fs.readFile(filePath, 'utf8');
+
+    let parsed: unknown;
+    try {
+        parsed = JSON.parse(content);
+    } catch (error) {
+        const reason = error instanceof Error ? ` ${error.message}` : '';
+        throw new Error(
+            `Failed to parse metadata file at ${filePath}. The file must contain valid JSON.${reason}`,
+        );
+    }
+
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+        return false;
+    }
+    const data = parsed as { filters?: Record<string, unknown>[] };
+
+    if (!Array.isArray(data.filters)) {
+        return false;
+    }
+
+    let modified = false;
+    data.filters.forEach((filter) => {
+        GENERATED_META_FIELDS.forEach((field) => {
+            if (field in filter) {
+                delete filter[field];
+                modified = true;
+            }
+        });
+    });
+
+    if (!modified) {
+        return false;
+    }
+
+    const serialized = JSON.stringify(data, null, '\t');
+    await fs.writeFile(filePath, content.endsWith('\n') ? `${serialized}\n` : serialized, 'utf8');
+    return true;
 };
 
 /**
@@ -48,10 +107,12 @@ const stripGeneratedMeta = async (filePath: string): Promise<boolean> => {
 
 /**
  * Single-pass recursive walk: strips metadata from .txt files inside `filters/`
- * directories and counts modified files per `filters/` dir.
+ * directories, and from any `filters.json`/`filters.js` metadata files found
+ * anywhere under the root.
  *
  * When a directory named `filters` is encountered, all .txt files inside it are
- * processed immediately — no second traversal is needed.
+ * processed immediately — no second traversal is needed. `.txt` modifications are
+ * logged as an aggregate per `filters/` dir; each metadata file is logged on its own.
  *
  * @param dir - Current directory being walked.
  * @param rootDir - Top-level root (used only for log output).
@@ -64,10 +125,16 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
         const fullPath = path.join(dir, entry.name);
 
         if (!entry.isDirectory()) {
-            // Only process .txt files that are directly inside a `filters/` dir,
-            // which is guaranteed by the caller when dir itself is a filters dir.
             if (entry.name.endsWith(TXT_FILE_EXTENSION)) {
                 return (await stripGeneratedMeta(fullPath)) ? 1 : 0;
+            }
+            if (METADATA_FILE_NAMES.includes(entry.name)) {
+                const stripped = await stripMetaFromMetadataFile(fullPath);
+                if (stripped) {
+                    // eslint-disable-next-line no-console
+                    console.log(`${path.relative(rootDir, fullPath)}: stripped generated meta`);
+                }
+                return stripped ? 1 : 0;
             }
             return 0;
         }
@@ -77,7 +144,7 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
             const modified = await walkAndStrip(fullPath, rootDir);
             if (modified > 0) {
                 // eslint-disable-next-line no-console
-                console.log(`${path.relative(rootDir, fullPath)}: stripped metadata from ${modified} file(s)`);
+                console.log(`${path.relative(rootDir, fullPath)}: stripped generated meta from ${modified} file(s)`);
             }
             return modified;
         }
@@ -90,7 +157,8 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
 
 /**
  * Strip generated metadata lines from all .txt files inside all `filters/`
- * directories found recursively under the given root.
+ * directories, and generated version/timeUpdated fields from all
+ * `filters.json`/`filters.js` files, found recursively under the given root.
  *
  * @param rootDir - Root directory to search (e.g. `platforms/`).
  * @returns Number of files actually modified.
@@ -99,24 +167,27 @@ export const stripGeneratedMetaFromDir = async (rootDir: string): Promise<number
     return walkAndStrip(rootDir, rootDir);
 };
 
-// CLI entrypoint: strip generated meta from platform build outputs when run directly
+// CLI entrypoint: strip generated meta from a build-output dir when run directly.
+// The target must be explicit — this rewrites files in place, and the tracked
+// `platforms/` tree is a tempting default that would ship stripped metadata.
 if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
-    const rootDirs = process.argv[2]
-        ? [path.resolve(process.argv[2])]
-        : [path.resolve('platforms'), path.resolve('temp', 'platforms')];
+    const target = process.argv[2];
+    if (!target) {
+        // eslint-disable-next-line no-console
+        console.error('Usage: strip-generated-meta <dir>   (e.g. temp/platforms)');
+        // eslint-disable-next-line no-console
+        console.error('Rewrites .txt / filters.json / filters.js under <dir> in place.');
+        process.exit(1);
+    }
 
-    const results = await Promise.all(
-        rootDirs
-            .filter((dir) => existsSync(dir))
-            .map(async (rootDir) => {
-                const count = await stripGeneratedMetaFromDir(rootDir);
-                // eslint-disable-next-line no-console
-                console.log(`${path.relative('.', rootDir)}: ${count} file(s) modified.`);
-                return count;
-            }),
-    );
+    const rootDir = path.resolve(target);
+    if (!existsSync(rootDir)) {
+        // eslint-disable-next-line no-console
+        console.error(`strip-generated-meta: no such directory: ${rootDir}`);
+        process.exit(1);
+    }
 
-    const total = results.reduce((sum, count) => sum + count, 0);
+    const total = await stripGeneratedMetaFromDir(rootDir);
     // eslint-disable-next-line no-console
-    console.log(`Done. ${total} file(s) modified in total.`);
+    console.log(`Done. ${total} file(s) modified in ${path.relative('.', rootDir) || '.'}.`);
 }

@@ -86,7 +86,7 @@ for all supported AdGuard products.
 | `yarn build:patches` | Build incremental patches |
 | `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
 | `yarn download-stats` | Download per-filter `stats.json` to `temp/optimization/stats/` |
-| `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
+| `yarn strip-generated-meta <dir>` | Strip generated meta from `.txt`/`filters.json`/`filters.js` in `<dir>` in place |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
 | `yarn lint:code` | ESLint check (`eslint . --ext .js,.ts`) |
@@ -178,6 +178,21 @@ General code style guidelines for JavaScript are available via link:
   120-char line limit.
 - All other style rules (indentation, line length, Airbnb conventions, etc.)
   are enforced by `.eslintrc.cjs`. Run `yarn lint` to check.
+
+### Runtime data validation (TypeScript/JavaScript)
+
+Before adding any runtime check, decide whether the data is trusted or external. Data the
+system itself produced — own build artifacts, generated JSON, config files the project owns —
+is trusted: JSON.parse + as cast and move on. If such data is malformed, the code SHOULD fail
+loudly; never silently skip, default, or return-early on an unexpected shape.
+
+Genuinely external input (user input, network responses, third-party files) gets validated
+ONCE at the boundary — with a schema library (zod/valibot) when the project already has one —
+and the parsed type is trusted downstream. Do not re-validate past the boundary.
+
+Never write hand-rolled type guards (`isRecord`, `typeof x === 'object' && x !== null && !Array.isArray(x)` chains).
+A guard justified only by a hypothetical "what if the data is corrupt" is a smell:
+answer whether that corruption is real for THIS data source before writing anything.
 
 ### Testing
 
