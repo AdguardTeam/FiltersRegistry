@@ -183,9 +183,12 @@ report_failure() {
 }
 
 # report_failure, then exit 1. For the steps where a failure can't be
-# recovered from and must stop the script immediately.
+# recovered from and must stop the script immediately. Once Step 4 has set
+# the cleanup choice, honor it (or report what's left) on the way out, the
+# same as the build-failure path.
 die() {
     report_failure "$1" "$2"
+    [ -n "${DO_CLEANUP+x}" ] && run_cleanup
     exit 1
 }
 
