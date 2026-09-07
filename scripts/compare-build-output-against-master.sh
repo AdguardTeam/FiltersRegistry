@@ -341,12 +341,17 @@ generate_report() {
     echo "${C_BOLD}=== Regression Test Report ===${C_RESET}"
     echo "Branch (reference): $BASE_BRANCH          @ $MASTER_SHA"
     echo "Branch (changed):   $CHANGED_BRANCH @ $CHANGED_SHA"
-    build_cmd=""
-    while IFS= read -r build_sub; do
-        build_cmd+="${build_cmd:+ && }yarn $build_sub"
-    done < <(build_subcommands)
+    
     filter_args=$(filter_flags)
-    echo "Build command:      $build_cmd${filter_args:+ $filter_args}"
+    filter_args=${filter_args:+ $filter_args}
+
+    build_cmd=""
+
+    while IFS= read -r build_sub; do
+        build_cmd+="${build_cmd:+ && }yarn $build_sub$filter_args"
+    done < <(build_subcommands)
+
+    echo "Build command:      $build_cmd"
     echo "Platforms compared: $(ls "$PLATFORMS_MASTER" | tr '\n' ' ')"
     echo ""
 
