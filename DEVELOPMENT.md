@@ -161,8 +161,8 @@ Two conveniences on repeated runs:
   moved on since — and offers to generate the report from them instead of
   rebuilding.
 - If a worktree from a previous run is still present, it offers to reuse it
-  instead of removing and re-adding it. `yarn install` still runs either way
-  (fast against the kept `node_modules`).
+  instead of removing and re-adding it. `yarn install` still runs, but over
+  the kept `node_modules` it only reconciles what changed.
 
 ### Command Compatibility
 
