@@ -1,9 +1,9 @@
-! Checksum: Qj8yU7BGRg1myF1+tUNBQg
-! Diff-Path: ../patches/9/9-s-1788769548-3600.patch
+! Checksum: Oo2Ic9VVn3Pj2P1twMR9tg
+! Diff-Path: ../patches/9/9-s-1788787188-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.64
-! TimeUpdated: 2026-09-07T08:22:35+00:00
+! Version: 2.0.35.65
+! TimeUpdated: 2026-09-07T13:16:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -348,11 +348,9 @@ infomatricula.pt#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 infomatricula.pt#%#//scriptlet('prevent-setTimeout', '/=window\.setInterval\([\s\S]*?\.push\(/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220472
 darkmahou.io#%#//scriptlet('abort-on-stack-trace', 'document.getElementById', 'showAdblockAlert')
-! https://github.com/AdguardTeam/AdguardFilters/issues/229248
-3xyaoi.com#%#//scriptlet('prevent-setTimeout', 'bait')
-3xyaoi.com##div[id$="adblock-layer"]
-! https://github.com/uBlockOrigin/uAssets/issues/22957#issuecomment-3628711511
-3xyaoi.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
+! https://github.com/AdguardTeam/AdguardFilters/issues/240699
+3xyaoi.com$$script:contains(/_adBlockDetectorExecuted|checkForbiddenBrowsers/)
+3xyaoi.com#%#//scriptlet('remove-node-text', 'script', '/_adBlockDetectorExecuted|checkForbiddenBrowsers/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219700
 ||app.doramas.org/js/adb_plus.o.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219399
