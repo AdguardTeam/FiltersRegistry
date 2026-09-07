@@ -24,10 +24,8 @@ GIT_COMMON_DIR=$(git rev-parse --git-common-dir)
 TEMP_DIR_NAME="$REPO_ROOT/temp"
 mkdir -p "$TEMP_DIR_NAME"
 
-# Guards against two concurrent runs corrupting the shared worktrees/logs.
-# Lives under TMPDIR, outside the build tree.
-LOCK_KEY=$(printf '%s' "$REPO_ROOT" | cksum | cut -d' ' -f1)
-LOCK_DIR="${TMPDIR:-/tmp}/compare-build-output-$(basename "$REPO_ROOT")-$LOCK_KEY.lock"
+# Guards against two or more concurrent runs corrupting the shared worktrees/logs.
+LOCK_DIR="$TEMP_DIR_NAME/reg-run.lock"
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
     echo "Error: another compare-build-output run appears to be in progress (lock: $LOCK_DIR)." >&2
     echo "If you're sure none is running, remove that directory and retry." >&2
