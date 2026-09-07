@@ -115,18 +115,17 @@ step_header() {
 }
 
 # Prompts "[Y/N] (default: Y/N): " and reports whether the answer was yes.
-# Pass "default_no" to flip the default to No (still returns success only on
-# an explicit y/yes answer, never on the defaulted Enter).
+# Pass "default_yes" to default to Y instead of N.
 confirm() {
-    local mode=${1:-default_no}
-    local reply
-    if [ "$mode" = default_no ]; then
-        read -r -p "[Y/N] (default: N): " reply
-        reply=${reply:-N}
-    else
-        read -r -p "[Y/N] (default: Y): " reply
-        reply=${reply:-Y}
+    local mode=${1:-default_no} reply default
+    [ "$mode" = default_no ] && default=N || default=Y
+    # Aborts on EOF rather than silently taking the default
+    if ! read -r -p "[Y/N] (default: $default): " reply; then
+        echo "" >&2
+        echo "${C_RED}${CROSS}${C_RESET} No input (stdin closed) — aborting." >&2
+        exit 1
     fi
+    reply=${reply:-$default}
     [[ "$reply" =~ ^[Yy] ]]
 }
 
