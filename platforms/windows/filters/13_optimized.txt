@@ -1,9 +1,9 @@
-! Checksum: upLSFvDWormRxyaWd1/8/A
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1788870361-3600.patch
+! Checksum: q1+XIONXC2xmf00l2dXQhw
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1788877181-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.84
-! TimeUpdated: 2026-09-08T12:22:02+00:00
+! Version: 2.0.67.85
+! TimeUpdated: 2026-09-08T14:16:40+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -1062,6 +1062,9 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+||itemci.com/api/modal-advert?
+itemci.com##a[title="Reklam"]
+itemci.com##body > div.fixed:has(> a[title="Reklam"])
 mardinlife.com##body > div.container:has(> div.row > div.col-md-6 > a[href="https://www.artukbey.com/"])
 ||demolarim.sbs/popup.js
 youizleo.sbs#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
@@ -5553,8 +5556,6 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/bahisotv\d+\.com$/]##div[style^="margin:"]:has(> a[href][target="_blank"])
 [$domain=/bahisotv\d+\.com$/]##header > ul > li.blink:has(> a[href="/"]) ~ li.blink
 [$domain=/bahisotv\d+\.com$/]##.footer-links
-[$domain=/sampiyontv\d+\.com$/]##.srail
-[$domain=/sampiyontv\d+\.com$/]##.sband
 [$domain=/gmatv\d+\.live$/]##div[class^="reklam-"]
 ||pelitcanlitv.com/admin/uploads/*.gif
 ||pelitcanlitv.com/admin/uploads/TV-PAGESKIN.png
@@ -5581,13 +5582,6 @@ gecekulup.com#$##mainVideo { display: block !important; }
 [$domain=/kacakspor\d+\.com$/]###player-logo
 [$domain=/kacakspor\d+\.com$/]##.nav-menu > li:has(> a[href="https://bit.ly/BhsKa%C3%A7akspor"])
 [$domain=/kacakspor\d+\.com$/]###splash-banner
-||bahisligatv*.com/view/theme/ultimate/img/*.gif
-||bahisligatv*.com/view/theme/ultimate/assets/js/rc.js
-[$domain=/bahisligatv\d+\.com$/]##div[class^="reklam-"]
-[$domain=/bahisligatv\d+\.com$/]##body > header
-[$domain=/bahisligatv\d+\.com$/]##.odds-container
-[$domain=/bahisligatv\d+\.com$/]##.footer-links
-[$domain=/bahisligatv\d+\.com$/]##.header-top > div.header-text
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/pasizle\d+\.com$/
 [$domain=/pasizle\d+\.com$/]##.background-link
@@ -5601,7 +5595,6 @@ gecekulup.com#$##mainVideo { display: block !important; }
 [$domain=/taratv\d+\.shop$/]#%#//scriptlet('trusted-set-cookie', 'pop', '7')
 [$domain=/taratv\d+\.shop$/]##.pageskin-click
 [$domain=/taratv\d+\.shop$/]##.nk-nav-table > ul
-[$domain=/porno\d+\.shop$/]##div[rel="sponsored"]
 [$domain=/papaztv\d+\.live$/]##div[class^="reklam-"]
 [$domain=/papaztv\d+\.live$/]##body > header
 [$domain=/papaztv\d+\.live$/]##.footer-links
@@ -6013,9 +6006,7 @@ justintvizle732.top###video_reklam
 24taraftarium12.xyz##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
 .gif|$domain=24taraftarium12.xyz
 taraftarium3-24.online##a[href="https://wa.me/447347044673"]
-taraftarium24bjk14.com###ad-pageskin
-taraftarium24bjk14.com##.listAd
-taraftarium24bjk14.com,justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
 ||taraftarium24pro*.site/*.gif
 [$domain=/taraftarium24pro\d+\.site$/]##.below-player-banner
 [$domain=/taraftarium24pro\d+\.site$/]##.t24-sq-overlay

@@ -1,9 +1,9 @@
-! Checksum: ufTCkE7A9kqWo3rLYFUL1A
-! Diff-Path: ../patches/13/13-s-1788870361-3600.patch
+! Checksum: xA6qblMKCzDvro+7rGmkGg
+! Diff-Path: ../patches/13/13-s-1788877181-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.84
-! TimeUpdated: 2026-09-08T12:22:02+00:00
+! Version: 2.0.67.85
+! TimeUpdated: 2026-09-08T14:16:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1579,6 +1579,9 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+||itemci.com/api/modal-advert?
+itemci.com##a[title="Reklam"]
+itemci.com##body > div.fixed:has(> a[title="Reklam"])
 mardinlife.com##body > div.container:has(> div.row > div.col-md-6 > a[href="https://www.artukbey.com/"])
 ||demolarim.sbs/popup.js
 youizleo.sbs#%#//scriptlet('prevent-addEventListener', 'click', 'window.open')
@@ -6080,11 +6083,6 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/bahisotv\d+\.com$/]##header > ul > li.blink:has(> a[href="/"]) ~ li.blink
 [$domain=/bahisotv\d+\.com$/]##.footer-links
 !
-! Frequently changed domains: sampiyontv*.com
-! Source: sampiyontv2.com
-[$domain=/sampiyontv\d+\.com$/]##.srail
-[$domain=/sampiyontv\d+\.com$/]##.sband
-!
 ! Frequently changed domains: gmatv*.live
 ! Source: gmatv61.live / https://t.me/guncelmacanaliz
 [$domain=/gmatv\d+\.live$/]##div[class^="reklam-"]
@@ -6126,16 +6124,6 @@ gecekulup.com#$##mainVideo { display: block !important; }
 [$domain=/kacakspor\d+\.com$/]##.nav-menu > li:has(> a[href="https://bit.ly/BhsKa%C3%A7akspor"])
 [$domain=/kacakspor\d+\.com$/]###splash-banner
 !
-! Frequently changed domains: bahisligatv*.com
-! Source: bahisligatv2.com
-||bahisligatv*.com/view/theme/ultimate/img/*.gif
-||bahisligatv*.com/view/theme/ultimate/assets/js/rc.js
-[$domain=/bahisligatv\d+\.com$/]##div[class^="reklam-"]
-[$domain=/bahisligatv\d+\.com$/]##body > header
-[$domain=/bahisligatv\d+\.com$/]##.odds-container
-[$domain=/bahisligatv\d+\.com$/]##.footer-links
-[$domain=/bahisligatv\d+\.com$/]##.header-top > div.header-text
-!
 ! Frequently changed domains: pasizle*.com
 ! Source: pasizle859.com
 ! aglint-disable no-invalid-modifiers
@@ -6159,10 +6147,6 @@ gecekulup.com#$##mainVideo { display: block !important; }
 [$domain=/taratv\d+\.shop$/]#%#//scriptlet('trusted-set-cookie', 'pop', '7')
 [$domain=/taratv\d+\.shop$/]##.pageskin-click
 [$domain=/taratv\d+\.shop$/]##.nk-nav-table > ul
-!
-! Frequently changed domains: porno*.shop
-! Source: porno28.shop
-[$domain=/porno\d+\.shop$/]##div[rel="sponsored"]
 !
 ! Frequently changed domains: papaztv*.live
 ! Source: papaztv7.live
@@ -6849,9 +6833,7 @@ justintvizle732.top###video_reklam
 24taraftarium12.xyz##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
 .gif|$domain=24taraftarium12.xyz
 taraftarium3-24.online##a[href="https://wa.me/447347044673"]
-taraftarium24bjk14.com###ad-pageskin
-taraftarium24bjk14.com##.listAd
-taraftarium24bjk14.com,justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
 ||taraftarium24pro*.site/*.gif
 [$domain=/taraftarium24pro\d+\.site$/]##.below-player-banner
 [$domain=/taraftarium24pro\d+\.site$/]##.t24-sq-overlay
