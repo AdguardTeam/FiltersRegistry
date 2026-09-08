@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zMnLCzEqFTPPWnBPi7jPkw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1788779843-3600.patch
+! Checksum: 1ruV99LoAY211HjeRNEmcQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1788830948-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.32
-! TimeUpdated: 2026-09-07T11:13:45+00:00
+! Version: 2.0.53.33
+! TimeUpdated: 2026-09-08T01:25:16+00:00
 ! Expires: 5 days (update frequency)
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
@@ -564,6 +564,9 @@ teleboy.ch#@#.adWrapper
 !+ NOT_PLATFORM(ios)
 geo.de,brigitte.de,kicker.de,desired.de,pcgames.de,t-online.de,vox.de,spieletipps.de,wetter.de,golem.de,autobild.de,buffed.de,gamesaktuell.de,kino.de,pcgameshardware.de,videogameszone.de,familie.de,welt.de##+js(no-xhr-if, .damoh.)
 fitforfun.de,plus.rtl.de##+js(abort-on-stack-trace, Object.prototype.adReinsertion, createSdk)
+igorslab.de##+js(set-constant, loadProtectedMedia, noopFunc)
+igorslab.de##+js(set-constant, detachImageLinkTarget, noopFunc)
+igorslab.de##+js(set-constant, sourceFor, noopFunc)
 abendblatt.de##+js(set-constant, Spark.deactivateRubicon, true)
 !+ NOT_PLATFORM(ext_ff)
 promiflash.de##+js(set-constant, adHandler.service, {})
@@ -725,6 +728,16 @@ telepolis.de,finanzen.net,mainfranken24.de,jetzt.de,derwesten.de,eurosport.de,in
 stern.de,monopol-magazin.de,krone.at,cleverdialer.de,sueddeutsche.de,geo.de,northdata.de,losungencodycross.com,spieletipps.de,heise.de,netdoktor.de,aachener-zeitung.de,wissen.de##.ad-container
 winfuture.de,netzwelt.de,quoka.de,farmeramania.de,bravofly.de,computerbild.de,digitalfernsehen.de,hl-live.de,chinamobilemag.de,focus.de,pcwelt.de##.adsbygoogle
 it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpool.de,fnweb.de,laborjournal.de,deraktionaer.tv,morgenweb.de##.billboard
+igorslab.de##body > #content + div[class*=" "][class*="-"]:has(> div[id] span[style^="display:block;position:relative;width"])
+igorslab.de###related ~ div[class*="-"][id*="-"]:has(> div[id] div[style^="display:block;position:relative;width:"])
+||igorslab.de/wp-content/plugins/igorslab-ads-suite/
+/^https:\/\/www\.igorslab.de\/[a-zA-Z0-9]{8,}\/[a-zA-Z0-9_-]{20,}/$domain=igorslab.de,image,xhr
+igorslab.de##div[id][class*=" "]:has(> div[id][class*=" "] > div[class*=" "][style^="position:relative;display:inline-block;max-width"])
+igorslab.de##.herald-sidebar-right > div[id][class*=" "]
+igorslab.de##div[id][class*=" "]:has(> .herald-txt-module  div[id][class*=" "] > div[class*=" "][style^="position:relative;display:inline-block;max-width"])
+igorslab.de##.row > div[id][class*=" "]:has(> .herald-txt-module div[id*="-"][class])
+igorslab.de##.row  div[id][class]:not([class^="col-"]):is([class*=" "], [class*="-"]):has(> div[class*="-"] span[style^="display:block;position:relative;width"])
+igorslab.de##body > div[class*=" "][class*="-"]:not([style]):has(> div[id] div[style^="display:block;position:relative;width"])
 autohebdo.de##.stafepress-ad-wrapper
 ultimatesolver.com##div.div_1_center div.wbng:has(> a[href^="https://clk.tradedoubler.com/"])
 ms-aktuell.de##+js(abort-current-script, document.getElementById, flipAds)
