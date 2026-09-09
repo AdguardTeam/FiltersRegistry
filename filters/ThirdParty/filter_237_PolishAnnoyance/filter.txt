@@ -5,8 +5,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Tue, 08 Sep 2026, 20:50 UTC+02:00
-! OriginalVersion: 2026.9.8.0
+! Last modified: Tue, 08 Sep 2026, 21:46 UTC+00:00
+! OriginalVersion: 2026.9.8.2
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -15,7 +15,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: wto, 08 wrz 2026, 20:50 UTC+02:00
+! Aktualizacja: wto, 08 wrz 2026, 21:46 UTC+00:00
 !
 !
 ! Newslettery (nie popupy)
@@ -1356,6 +1356,7 @@ przepisnazdrowie.eu##.newsletter-mod
 przepisy.pl##.newsletter-wrapper-inner
 przewodnik-katolicki.pl##.news-stopka, .newsletter-belka
 przychodnie-grudziadz.pl###footer\#1
+psiurwa.com##shopify-forms-embed[id*="app-embed-container"]
 psycholog-pisze.pl###text-17
 psychologiazycia.com##.mymail-form, .newsletter > .title
 ptakmoda.com###newsletter_block_bottom
@@ -3833,6 +3834,9 @@ gunb.gov.pl##.slide-to-top
 gwarek.com.pl###nawigator
 hadexdevelopment.pl##.elementor-widget-button.elementor-fixed.elementor-widget-button:has(.e-fas-arrow-up.e-font-icon-svg)
 handen.pl##.mod_scrolltotop
+help.allegro.com##div[data-analytics-category="allegro.navigation.scrollTop"]
+help.allegro.com##div[data-box-name="SCROLL | Scroll to top"]
+help.allegro.com##div[data-prototype-id="allegro.navigation.scrollTop"]
 herbapol.krakow.pl###but_st_gora
 heuristic.pl###backtotop-box
 hihonor.com##.go-back-top
@@ -4808,7 +4812,7 @@ cafepads.pl###aa-supportallinone-wrapper
 canon.pl##.feedback-btn
 capcut.com##a[href*="whatsapp.com/send?"]
 carq.pl##div[id^="qc-quic-widget-"]
-carrefour.pl,czasnaherbate.net,doz.pl,wroclaw.pl##div[class*="kodabots-promo"], div[class*="kodabots-widget"]
+carrefour.pl,czasnaherbate.net,doz.pl,wroclaw.pl##div[class*="kodabots-promo"], div[class*="kodabots-widget"], button[class^="kodabots-widget-animated-"]
 caseczesci.pl##[href="https://www.caseczesci.pl/my-account/"]
 casedrop.eu##.support-floating-wrapper
 castorama.pl##.footer-additional > .pull-right
@@ -5885,6 +5889,7 @@ douglas.pl##.app-banner
 download.komputerswiat.pl###breadcrumbs_floating, #dl_breaking_news
 doz.pl##.product-card__about > .wrapper > #rich-content, a[href="#rich-content"]
 doz.pl##.product-list-item[class*=" "]:is([class*="from-tv"], [class*="of-the-week"], [class*="sponsored"])
+doz.pl##.product-tile:has([class*="from-tv"], [class*="of-the-week"], [class*="sponsored"])
 doz.pl#?#.product-tile:has(.text-primary-variant:contains(/Sponsor/i))
 drerowery.pl###caRatySideup
 dresowka.pl###newsletter-popup-box
@@ -7177,8 +7182,8 @@ polishannoyancefilters.netlify.app###pafdetect
 !@ Required: Do poprawnego działania wymagana jest lista EasyList Cookie List (EasyList - Cookie Notices) wraz z EasyList (Ads) lub AdGuard Base (w produktach AdGuard)!
 !@ Collaborators: MajkiIT, F4z, xxcriticxx, blocker999, hawkeye116477, krystian3w
 !@ Homepage: https://www.certyficate.it/
-!@ Version: 2026.9.6.0
-!@ Last modified: Sun, 06 Sep 2026, 20:58 UTC+00:00
+!@ Version: 2026.9.8.0
+!@ Last modified: Tue, 08 Sep 2026, 21:46 UTC+00:00
 !@ Expires: 2 days
 !@ Support:
 !@   Email => errorsfilters@certyficate.it
@@ -7190,7 +7195,7 @@ polishannoyancefilters.netlify.app###pafdetect
 !@ Copyright © 2026 Certyficate IT
 !@ Copyright © 2026 Filters Heroes
 !@ Najnowsza wersja zawsze na: https://www.certyficate.it/adblock/
-!@ v.2026.9.6.0 aktualizacja: nie, 06 wrz 2026, 20:58 UTC+00:00
+!@ v.2026.9.8.0 aktualizacja: wto, 08 wrz 2026, 21:46 UTC+00:00
 !@
 !@
 !@ Specyficzne filtry ukrywające
@@ -12830,6 +12835,8 @@ doz.pl#@%#//scriptlet('ubo-set-cookie', 'consent-granted-version', '24')
 !@
 !@ Komunikaty dot. 🍪, polityki prywatności/RODO i 🥛 🙂
 /wp-content/plugins/cookie-law-info/lite/frontend/js/script.min.js$important,domain=sztolnie.pl|zamekgrodno.pl
+@@/^https?:\/\/web\.archive\.org\/web\/[0-9]+\/https?:\/\/(?![^\/]+\.pl)/$generichide
+@@||web.archive.org^$badfilter,generichide
 ||cdn.ans-media.com/*/CookiesConsentPopUp$redirect=noopcss,stylesheet
 ||lajt-online.pl/api/terms/rodo$~third-party,important,redirect=noopjson,xmlhttprequest
 2bawsport.pl##.cookiesplus-modal, .modal-backdrop
