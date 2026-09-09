@@ -70,7 +70,7 @@ describe('stripGeneratedMetaFromDir', () => {
     });
 
     it('strips filters metadata consistently from two separate directory trees', async () => {
-        // Simulate the build.js scenario where we have:
+        // Simulate the build.ts scenario where we have:
         // - new build output (platforms/)
         // - old baseline copy (temp/platforms/)
         // and both need to be stripped consistently.
@@ -99,7 +99,7 @@ describe('stripGeneratedMetaFromDir', () => {
         await fs.writeFile(oldFile, content, 'utf8');
         await fs.writeFile(newFile, content, 'utf8');
 
-        // Strip from both directories as build.js does when --strip-generated-meta is set
+        // Strip from both directories as build.ts does when --strip-generated-meta is set
         const newCount = await stripGeneratedMetaFromDir(newRoot);
         const oldCount = await stripGeneratedMetaFromDir(oldRoot);
 
