@@ -1,9 +1,9 @@
-! Checksum: AMPxl7I+mOeeFBt7F4JN3A
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1788938414-3600.patch
+! Checksum: IyXEGeJ1GPdobUK9QB6dSA
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1788949094-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.11.1
-! TimeUpdated: 2026-09-09T07:16:09+00:00
+! Version: 2.1.11.2
+! TimeUpdated: 2026-09-09T10:14:43+00:00
 ! Expires: 12 hours (update frequency)
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.pushState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
 bilibili.com#%#//scriptlet('trusted-replace-argument', 'history.replaceState', '2', 'replace:/(?<=[?&])(?:vd_source|trackid|spm_id_from)=[^&#]*&?//g')
@@ -255,6 +255,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||lndrsapi.com^
 ||ac.conel.jp^
 ||migstat.com^
 ||kameleoon.io^
@@ -314013,6 +314014,8 @@ mexc.com#%#//scriptlet('set-local-storage-item', '_yjsu_yjad', '$remove$')
 naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.device_sr', '3840x2160', '$.evts[*].nlog_id', 'args', '', 'jsonpath')
 naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.br_sr', '3840x2160', '$.evts[*].nlog_id', 'args', '', 'jsonpath')
 @@||nlog.naver.com/n|$domain=search.naver.com|www.naver.com
+newsnow.com#%#//scriptlet('set-session-storage-item', 'nfPageCount', '$remove$')
+newsnow.com#%#//scriptlet('set-session-storage-item', 'pageCount', '$remove$')
 ||bwapi.irunfar.com/log/
 ||bwapi.irunfar.com/event/
 harpersbazaar.com##div[aria-labelledby="recirc-heading"]
@@ -320430,6 +320433,9 @@ $cookie=_pubcid
 $cookie=pbjs-unifiedid
 $cookie=bf_lead
 $cookie=bf_visit
+||newsnow.com^$cookie=nnusrst
+||newsnow.com^$cookie=nn_sid
+||newsnow.com^$cookie=nn_uid
 ||experience.tripster.ru^$cookie=device_id
 ||experience.tripster.ru^$cookie=gb_uid
 ||wildberries.ru^$cookie=_wbauid

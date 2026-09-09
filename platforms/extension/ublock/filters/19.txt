@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 3yreQR3nRsxYB4ViHFlPPg
-! Diff-Path: ../patches/19/19-s-1788945605-3600.patch
+! Checksum: eEqvwPZQuTIPfBqziD3y8g
+! Diff-Path: ../patches/19/19-s-1788949075-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.82.51
-! TimeUpdated: 2026-09-09T09:17:01+00:00
+! Version: 2.0.82.52
+! TimeUpdated: 2026-09-09T10:15:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -523,6 +523,11 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+uploadvr.com##body:style(position: initial !important;)
+uploadvr.com##div[id^="supportPrompt"]:style(display: none !important;)
+uploadvr.com##+js(no-setTimeout-if, displayAdPlaceholders)
+uploadvr.com##+js(set-constant, freestar.newAdSlots, noopFunc)
+uploadvr.com##+js(set-constant, freestar.initCallbackCalled, true)
 statlocker.gg##.profile-slot-frame
 vodafone.de###adbl
 xenvn.com##+js(no-setTimeout-if, i, 3000)
@@ -12785,6 +12790,8 @@ meteoweb.eu,businessinsider.jp,enikos.gr,ostdeutscheallgemeine.com,falstaff.com,
 !
 ! SECTION: Subscriptions - Regular rules
 !
+thenewregion.com##div[wire\:snapshot*="components.footer"] > div.bg-black.p-5
+abc7.com##.ScrollSpy_container > div[data-container="band"]:has(> div[class] form#signup_form)
 cdaction.pl##.cda-sources-box
 geekwire.com##body.gw-interstitial-open:style(overflow: auto !important;)
 geekwire.com###gw-interstitial-overlay:style(display: none !important;)
