@@ -1,4 +1,4 @@
-! Checksum: x4wY5arwxaha+nMdo3ovtA
+! Checksum: P7DxiftuHpsi3qMJpuUSQg
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.56
@@ -517,6 +517,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||ogp.me^$csp=upgrade-insecure-requests
 ||detectportal.firefox.com^$csp=upgrade-insecure-requests
 msftconnecttest.com^$csp=upgrade-insecure-requests
+www.microsoft.com##.card[data-bi-cn*="bus sim" i]
 !+ PLATFORM(windows, mac, android, cli)
 212.27.60.108$network
 ||amazonaws.com^$all,badfilter
@@ -890,7 +891,6 @@ forbes.com##.article-sharing
 rawstory.com##.share-popup.rm-stats-tracked
 ||syndication.twitter.com/srv/timeline-profile^$third-party
 ##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
-##.goo-pref:is(a,div)
 ##.chrome-footer:not(html, body)
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
@@ -1121,6 +1121,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 @@||bannedbook.org^
 @@||dongtaiwang.com^
 @@||ntdtv.com^
+@@||secretchina.com^
 @@||soundofhope.org^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||consentmanager.net^$script,third-party,badfilter
@@ -1737,7 +1738,6 @@ $removeparam=affcode
 $removeparam=cx_testId
 $removeparam=cx_testVariant
 $removeparam=cx_artPos
-$removeparam=belboon
 $removeparam=channable
 $removeparam=int_source
 $removeparam=int_medium
@@ -2379,6 +2379,7 @@ $removeparam=channelref,domain=asos.com
 $removeparam=cmp,domain=agentprovocateur.com|brooksbrothers.com|cbc.ca|hulu.com|bestbuy.com
 $removeparam=cp,domain=converse.com|nike.com|nextdoor.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
 $removeparam=mktvar002,domain=autodesk.com
+$removeparam=/^partnerid=.*$/i,domain=1800contacts.com|al.to|allenedmonds.com|bloomingdales.com|combat.pl|famousfootwear.com|johnstonprams.com|macys.com|naturalizer.com|shoes.com|sportler.com|x-kom.pl
 $removeparam=/^pubname=.*$/i,domain=anntaylor.com|ashford.com|backcountry.com|bloomingdales.com|dermstore.com|express.com|famousfootwear.com|farmandfleet.com|gucci.com|hottopic.com|loft.com|naturalizer.com|samsclub.com
 $removeparam=/^publisher=.*$/i,domain=asos.com|bose.*|dell.com|josbank.com|metmuseum.org|riteaid.com|shutterfly.com|tous.com|untilgone.com
 $removeparam=/^publisherId=.*$/i,domain=blissworld.com|burkesoutlet.com|dell.com|kipling-usa.com|lensrentals.com|petsupplies.com|phonesoap.com
@@ -2408,6 +2409,7 @@ $removeparam=fm,domain=flipkart.com|shopbop.com
 ||flipkart.com^$removeparam=ssid
 ||flipkart.com^$removeparam=store
 ||flipkart.com^$removeparam=marketplace
+$removeparam=redirect_source,domain=mozilla.org|firefox.com
 ||fiverr.com^$removeparam=funnel
 ||epicgames.com^$removeparam=epic_affiliate
 ||epicgames.com^$removeparam=epic_gameId
@@ -2834,7 +2836,6 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 ||proton.me^$removeparam=url_id
 ||proton.me^$removeparam=phfp
 ||click.linksynergy.com^$removeparam=mid
-||twitch.tv/activate^$removeparam=device-metadata
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
 ||microsoft.com/*/download/details$removeparam=lc
@@ -2852,6 +2853,8 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 $document,removeparam=refid,domain=press.aboutamazon.com|aws.amazon.com|aws.eu
 ||deezer.$removeparam=/^utm_.*$/
 ||duckduckgo.com/extension-success$document,removeparam=atb
+||github.com^$document,removeparam=email_source
+||github.com^$document,removeparam=email_token
 ||youtube.com/shorts/$document,removeparam=si
 ||youtube.com/@$document,removeparam=si
 ||youtube.com/post/$document,removeparam=si
@@ -3253,6 +3256,7 @@ www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/
 &client_ad_session_id=
 ||anyclip.com^$app=TETR.IO.exe
 duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##button:first-of-type + div:last-of-type[class*=" "]:has(button)
+www.qwant.com###root:has(a[href*=goo]) section div[class]:not([data-testid],[style],[class*=" "],[class*=_]):has([id^=Piwik_])
 adressa.no#$#.strom .overlay { background:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important }
 youtube.com#%#//scriptlet('ubo-json-edit', '..adaptiveFormats.*[?.audioTrack.isAutoDubbed]')
 youtube.com#%#//scriptlet('ubo-json-edit-xhr-response', '..adaptiveFormats.*[?.audioTrack.isAutoDubbed]', 'propsToMatch', '/youtubei')

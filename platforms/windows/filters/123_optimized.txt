@@ -1,9 +1,9 @@
-! Checksum: bxEk8kzipAYpsr1EbfHVCA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1788916185-14400.patch
+! Checksum: W3XgnC3ivsZEQpCf7bqlLg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1788928872-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.68.43
-! TimeUpdated: 2026-09-09T01:06:02+00:00
+! Version: 2.1.68.44
+! TimeUpdated: 2026-09-09T04:37:38+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -117,10 +117,10 @@
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
+/socialbookmarks.js
 /socialcount.js
 /socialite.js
 /socialite.min.js
-/SocialMediaButtons/tracking.js
 /SocialSprite.
 /socialsprites.
 /socialstat?
@@ -176,6 +176,7 @@ _social-bar/
 ###block-socialmedialinks
 ###block-socialmedialinks-2
 ###block-socialmenu
+###block-socialsharingblock
 ###blog-follow-widget
 ###bottom-share
 ###btn-share-email
@@ -212,6 +213,7 @@ _social-bar/
 ###facebookLikeBox
 ###facebookLikeButton
 ###facebookShareButton
+###facebookTab
 ###facebookWidget
 ###facebook_like
 ###facebook_link
@@ -258,6 +260,7 @@ _social-bar/
 ###follow-us-box
 ###follow-us-footer
 ###follow-us-widget
+###followBar
 ###followBox
 ###followTwitter
 ###followUs
@@ -886,6 +889,7 @@ _social-bar/
 ##.article-full__share
 ##.article-head__share
 ##.article-header__share
+##.article-page-share-buttons
 ##.article-pic-soc
 ##.article-share
 ##.article-share__item
@@ -991,6 +995,7 @@ _social-bar/
 ##.bk-socialicons-facebook
 ##.bloc-social
 ##.bloc_float_share
+##.bloc_social
 ##.block-addtoany
 ##.block-followus
 ##.block-share__item
@@ -1382,6 +1387,8 @@ _social-bar/
 ##.follow__list
 ##.followus_net
 ##.followuson
+##.foo-facebook
+##.foo-twitter
 ##.foo_social
 ##.foot-share
 ##.foot-soc-fb
@@ -1551,6 +1558,7 @@ _social-bar/
 ##.gtm_footer_twitter
 ##.h-c-social
 ##.h-share
+##.h5ab-print-button-container
 ##.has-button-share
 ##.hatena-bookmark-button
 ##.hatena-btn-icon
@@ -1614,7 +1622,6 @@ _social-bar/
 ##.horizontal.social
 ##.hover_share
 ##.hp-tab-share
-##.hs-blog-social-share
 ##.ht-share
 ##.icon--app-store
 ##.icon--facebook
@@ -2061,6 +2068,7 @@ _social-bar/
 ##.partial-share
 ##.pathSocialIcons
 ##.pen_social_networks
+##.penci-social-counter
 ##.penci-social-share-footer
 ##.penci-social__content
 ##.penci-social__item
@@ -2108,6 +2116,7 @@ _social-bar/
 ##.post-share
 ##.post-share-b
 ##.post-share-bar
+##.post-share-block
 ##.post-share-bot
 ##.post-share-box
 ##.post-share-buttons
@@ -2920,7 +2929,6 @@ _social-bar/
 ##.social-networking
 ##.social-networks-container
 ##.social-networks-footer
-##.social-networks-link
 ##.social-networks-list
 ##.social-networks__item
 ##.social-news-buttons
@@ -3083,6 +3091,7 @@ _social-bar/
 ##.socialNav
 ##.socialNetworks
 ##.socialPanel
+##.socialPopup
 ##.socialRoll
 ##.socialSection
 ##.socialShare
@@ -3465,7 +3474,6 @@ _social-bar/
 ##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook-like-box
 ##.widget_facebook_likebox
-##.widget_facebook_page_plugin_widget
 ##.widget_follow_button_widget
 ##.widget_g1_socials
 ##.widget_jnews_social
@@ -3702,6 +3710,7 @@ amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au
 torrentsafe.com###addthisimage
 9to5google.com,9to5mac.com,dronedj.com,electrek.co###after_disclaimer_placement
 autonocion.com###an-gfollow-wrap
+houstonpublicmedia.org,iclnoticias.com.br###article-share
 dailymail.co.uk###articleIconLinksContainer
 fastcompany.com,inc.com###article_share_button
 fastcompany.com,inc.com###article_share_google_icon
@@ -3716,7 +3725,6 @@ alltechnerd.com###custom_html-9
 dailymail.co.uk,thisismoney.co.uk###dms-txt
 imgflip.com###findUs
 memuplay.com###fixed-share
-thefreedictionary.com###fixedBlock
 empoweringparents.com,geraligado.blog.br,katholisch.de,tvmaze.com###follow
 openspeedtest.com###footBox2
 abebooks.com,atlasobscura.com###footer-social-list
@@ -4148,6 +4156,7 @@ streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
 12tomatoes.com##.sharetocare-popup
 hevodata.com##.sharing-options-list
+glassalmanac.com##.shhr-btn
 welivesecurity.com##.sidebar-card-media
 tribune.com.pk##.sidebar-social-icons
 streetsblog.org##.single_sharingInner__3IoQO
@@ -4306,6 +4315,7 @@ axios.com##[data-vars-event-name="share_view"]
 datacamp.com##[data-waffles-component="social-sharer"]
 dexerto.com,newskarnataka.com,psypost.org##[href^="https://news.google.com/publications/"]
 straitstimes.com##button.desktop\:block
+player.amperwavepodcasting.com,stockx.com##button[aria-label="Share"]
 theguardian.com##div > gu-island[name="ShareButton"]
 theatlantic.com##div[class^="ArticleShare_"]
 genius.com##div[class^="ShareButtons_"]
@@ -4594,9 +4604,13 @@ news.j-wave.co.jp###snsLink
 fnn.jp##.--share
 kakakumag.com##.article-sns-btm
 oricon.co.jp##.block-sub-sns
+tokyo-np.co.jp##.cmp-misc003
 diners.co.jp##.dc__footer_sns
 fnn.jp##.footer-social
 kakakumag.com##.hd-sns
+kai-you.net##.l-article-social-follow
+kai-you.net##.m-social-button-bottom-outer
+kai-you.net##.m-social-button-top-outer
 srad.jp##.synd
 mainichi.jp##.tool-facebook
 mainichi.jp##.tool-twitter
@@ -4604,13 +4618,13 @@ businesskorea.co.kr##.article-sns
 auction.co.kr##.sare-sns
 businesskorea.co.kr##.user-sns
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
-gazetawroclawska.pl##.atomsArticleMediaTools__socialShare
 terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
 gazetadigital.com.br###social-line-right
 tecnoblog.net###tb-banner-whatsapp
 maisfutebol.iol.pt##.barrawhatsappDesktop
 uol.com.br##.blogger-social
+independente.com.br##.box-whatsapp
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
@@ -4645,7 +4659,6 @@ r7.com##[class*="article-fill-social-"]
 infomoney.com.br##[data-ds-element^="social-share-"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]
 ingresso.com##div[data-mobile-app="btn_share"]
-||harem69.com.br/img/social.png
 ||opto.sic.pt/footer/socials/
 auto-bild.ro##.social > li:has(.icon.icon-outline)
 point.md##div[class^="ShareDropdown_"]
