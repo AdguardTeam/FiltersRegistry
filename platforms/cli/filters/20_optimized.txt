@@ -1,5 +1,5 @@
-! Checksum: dBEE1w2TS7dbnq4WDgCwgA
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1788914492-3600.patch
+! Checksum: h1auZa8hpWs7g7xDLw+b8w
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1788920593-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.31.95
@@ -112,6 +112,7 @@ sbs.com.au##div[data-testid="promo-block"]
 tengrinews.kz##body > div.button-install
 eapp.emart.com##.ern-appdown-check
 duck.ai##[aria-label="Duck.ai works best in our private and free DuckDuckGo app!"]
+unipolmove.it##.header-banner-app
 dailymail.com##.mol-app-btn
 gorod.mos.ru#%#//scriptlet('set-local-storage-item', 'downloadAppComplete', '1')
 imgur.com#%#(()=>{window.addEventListener("click",(function(t){const e=t?.target?.closest?.(".BottomRecirc a[href].Post-item");e&&(t.preventDefault(),location.assign(e.href))}),!0);})();
@@ -187,6 +188,7 @@ downdetector.com##div[data-testid="card"] > div > div.mx-auto:has(> div > div > 
 m.soundcloud.com##div[class^="Header_RightContainer"] > button:not([data-testid="sign-in-button"])
 m.soundcloud.com##div[class^="FooterStoreSection"]
 trhaber.com.tr,trhaber.com#%#//scriptlet('set-session-storage-item', 'trhaber_app_banner_dismissed', 'true')
+my.modulbank.ru#$#.auth__promo:has(.auth-promo--mobile-app) { display: none !important; }
 gazprombank.ru##div[data-code="mobile_app"]
 bestbuy.com#$#.small-header { position: initial !important; }
 linkedin.com#%#//scriptlet('trusted-click-element', '#promo-upsell button[data-tracking-control-name="mwlite_continue_mweb_click"]')
@@ -207,7 +209,6 @@ bankiros.ru##.xxx-app-banner-desc
 bankiros.ru##.xxx-app-banner-large
 merriam-webster.com##.home-general-promo-container > div.home-general-promo-item:has(> div.d-flex div.more-from-mw-app-links-list)
 myhentaigallery.com##center:has(> a[href="/page/17"])
-binance.com##.DownloadBarMobile
 binance.tr##.has-tip.home-m-download
 zarahome.com#%#//scriptlet('set-local-storage-item', 'native-app', 'true')
 super.com##.AtlasPromoBanner-root
@@ -432,7 +433,6 @@ wibes.ru##div[class^="DownloadAppBanner"]
 treccani.it###__next > div.MuiBox-root:has(> div.MuiBox-root > a > span[class*="DownloadAppHeader"])
 [$path=/maps]google.*#%#//scriptlet('set-local-storage-item', 'mapslitepromosdismissed', 'true')
 speedtest.cn##.speed-app
-temporary-mail.net###mobile-app-banner
 scheels.com##a[href*="/app"]
 scheels.com###pdp-items-list > li:has(> div[class]:only-child > a[href*="/app"]:only-child)
 cars.com##.global-footer-mobile-apps
@@ -1094,7 +1094,6 @@ clearnotebooks.com#?#.grid-notes_container > div.base-component:has(> div.base-c
 outstanding.kr##.open_in_app
 producthunt.com#%#//scriptlet('prevent-addEventListener', 'scroll', 'Math.round(e/n)!==r')
 weblio.jp##.weblio-apps
-yle.fi#?##main-bottom > div[class^="GridSystem"]:has(> div[data-analytics-headline-link="true"] > a[href^="https://yle.onelink.me/"])
 tokyo-calendar.jp#?#.sub-contents > div.sidebar-panel:has(> div > a[href="https://go.onelink.me/KVTI/5b7ff7e0"])
 tokyo-calendar.jp#?#.sub-contents > div.sidebar-panel:has(> div > img[alt="東京カレンダーアプリ"])
 tokyo-calendar.jp#?#.sub-contents > div.sidebar-panel:has(> div > img[alt="東京カレンダーアプリ"]) + div.app-dl-buttons
@@ -1112,7 +1111,6 @@ m.v.qq.com##.at-app-banner
 fontanka.ru##div[data-io-article-url] > div[class]:has(svg ~ a[href^="https://redirect.appmetrica.yandex.com/"] > span)
 m.11st.co.kr##.c-footer__app-download
 finance.sina.com.cn##.m-p1-lb2_5
-theinformation.com###ti-wrapper::after
 otvet.mail.ru#%#//scriptlet('set-cookie', 'OTVET-9223-shown', '1')
 editpad.org#?#.content > div[style^="display:"]:has(> a[href^="https://play.google.com/"])
 tokyostarbank.co.jp#%#//scriptlet('set-cookie', 'app-dl-banner', 'true')
@@ -1412,7 +1410,6 @@ swarmapp.com#%#//scriptlet('remove-class', 'pushDown', '#container.pushDown')
 nefisyemektarifleri.com##.app-presentation
 afternoon-tea.net#%#//scriptlet('remove-class', 'js-bannar-band', 'header')
 macaro-ni.jp##.globalFooter__appWrapper
-trtworld.com#$#body > #smartbanner ~ header.navbar { margin-top: 0 !important; }
 auto.ria.com##.entry-promo-app
 sankakucomplex.com###news-ticker
 spbdnevnik.ru#%#//scriptlet('set-local-storage-item', 'getAppAddsClosed', '1')
@@ -1694,6 +1691,7 @@ amiunique.org,receivefreesms.net,track24.net,angielskieespresso.pl,op.gg,cameral
 blocket.se##div[class^="AppLinks__"]
 drugs.com##.promo-content
 freeconvert.com,whoer.net##.app-popup
+misli.com##.smartBarWrapper
 gaode.com##.amap-app-download
 u.pcloud.link##.hidden-under.appear
 app.slack.com##.p-download_modal
@@ -1933,6 +1931,7 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#.rpl
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#.scroll-is-blocked:not(#style_important) { overflow: auto !important; touch-action: auto !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$##app-upsell-blocking-bottom-sheet-direct { display: none !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##[id^="xpromo-"]
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#shreddit-async-loader[paint-group="xpromo"][bundlename="app_selector"] { display: none !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('hide-in-shadow-dom', 'faceplate-tracker[source="xpromo"] #get-app')
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#body:not([style^="overflow:"]):not([class="rpl-scroll-lock"]) { pointer-events: auto !important; overflow: auto !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#?##nsfw-qr-dialog:contains(Scan this QR code to download the app now)
