@@ -339,10 +339,10 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/1.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.49",
-			"timeUpdated": "2026-09-09T13:13:52+0000",
+			"version": "2.1.8.50",
+			"timeUpdated": "2026-09-09T16:15:44+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -353,7 +353,7 @@
 				10,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/1.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/1_optimized.txt"
 		},
 		{
 			"filterId": 2,
@@ -364,10 +364,10 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 1,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.89.25",
-			"timeUpdated": "2026-09-09T15:13:39+0000",
+			"version": "2.4.89.26",
+			"timeUpdated": "2026-09-09T16:15:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -376,7 +376,7 @@
 				9,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2_optimized.txt"
 		},
 		{
 			"filterId": 3,
@@ -387,7 +387,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 2,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/3.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/3_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.1.11.5",
 			"timeUpdated": "2026-09-09T15:13:58+0000",
@@ -397,7 +397,7 @@
 				2,
 				10
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/3.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/3_optimized.txt"
 		},
 		{
 			"filterId": 4,
@@ -408,7 +408,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 3,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/4.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/4_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.1.32.21",
 			"timeUpdated": "2026-09-09T15:14:01+0000",
@@ -418,7 +418,7 @@
 				3,
 				10
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/4.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/4_optimized.txt"
 		},
 		{
 			"filterId": 5,
@@ -429,7 +429,7 @@
 			"expires": 432000,
 			"displayNumber": 4,
 			"groupId": 6,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/5.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/5_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.2.2",
 			"timeUpdated": "2026-09-07T17:12:55+0000",
@@ -438,7 +438,7 @@
 			"tags": [
 				45
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/5.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/5_optimized.txt"
 		},
 		{
 			"filterId": 6,
@@ -449,7 +449,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/6.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/6_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.53.37",
 			"timeUpdated": "2026-09-08T17:14:35+0000",
@@ -463,7 +463,7 @@
 				12,
 				13
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/6.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/6_optimized.txt"
 		},
 		{
 			"filterId": 7,
@@ -474,7 +474,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/7.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/7_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.76.34",
 			"timeUpdated": "2026-09-09T05:15:12+0000",
@@ -487,7 +487,7 @@
 				10,
 				14
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/7.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/7_optimized.txt"
 		},
 		{
 			"filterId": 8,
@@ -498,7 +498,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/8.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/8_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.9.44",
 			"timeUpdated": "2026-09-07T15:14:53+0000",
@@ -513,7 +513,7 @@
 				15,
 				16
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/8.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/8_optimized.txt"
 		},
 		{
 			"filterId": 9,
@@ -524,7 +524,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/9.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/9_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.35.69",
 			"timeUpdated": "2026-09-09T08:20:03+0000",
@@ -539,7 +539,7 @@
 				17,
 				18
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/9.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/9_optimized.txt"
 		},
 		{
 			"filterId": 10,
@@ -550,14 +550,14 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 6,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/10.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/10_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.3.99",
 			"timeUpdated": "2026-08-31T17:12:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/10.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/10_optimized.txt"
 		},
 		{
 			"filterId": 11,
@@ -568,7 +568,7 @@
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 1,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/11.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/11_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.71.87",
 			"timeUpdated": "2026-09-09T13:14:39+0000",
@@ -581,7 +581,7 @@
 				11,
 				19
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/11.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/11_optimized.txt"
 		},
 		{
 			"filterId": 13,
@@ -592,7 +592,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/13.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/13_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.67.90",
 			"timeUpdated": "2026-09-09T12:21:29+0000",
@@ -606,7 +606,7 @@
 				11,
 				24
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/13.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/13_optimized.txt"
 		},
 		{
 			"filterId": 14,
@@ -618,7 +618,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/14.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/14_optimized.txt",
 			"platformsExcluded": [
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
@@ -631,7 +631,7 @@
 				5,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/14.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/14_optimized.txt"
 		},
 		{
 			"filterId": 15,
@@ -643,14 +643,14 @@
 			"expires": 432000,
 			"displayNumber": 3,
 			"groupId": 6,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/15.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/15_optimized.txt",
 			"platformsExcluded": [
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.34.10",
-			"timeUpdated": "2026-09-09T15:14:31+0000",
+			"version": "2.1.34.11",
+			"timeUpdated": "2026-09-09T16:16:52+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -666,7 +666,7 @@
 				60,
 				61
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/15.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/15_optimized.txt"
 		},
 		{
 			"filterId": 16,
@@ -677,7 +677,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/16.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/16_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.57.68",
 			"timeUpdated": "2026-09-09T15:14:35+0000",
@@ -692,7 +692,7 @@
 				27,
 				28
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/16.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/16_optimized.txt"
 		},
 		{
 			"filterId": 18,
@@ -703,7 +703,7 @@
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.94.0",
 			"timeUpdated": "2026-09-09T15:14:37+0000",
@@ -714,7 +714,7 @@
 				10,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18_optimized.txt"
 		},
 		{
 			"filterId": 19,
@@ -725,7 +725,7 @@
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.82.53",
 			"timeUpdated": "2026-09-09T15:14:39+0000",
@@ -736,7 +736,7 @@
 				10,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19_optimized.txt"
 		},
 		{
 			"filterId": 20,
@@ -747,7 +747,7 @@
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/20.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/20_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.31.98",
 			"timeUpdated": "2026-09-09T13:14:59+0000",
@@ -758,7 +758,7 @@
 				10,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/20.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/20_optimized.txt"
 		},
 		{
 			"filterId": 21,
@@ -769,7 +769,7 @@
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/21.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/21_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.48.6",
 			"timeUpdated": "2026-09-09T13:15:00+0000",
@@ -780,7 +780,7 @@
 				10,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/21.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/21_optimized.txt"
 		},
 		{
 			"filterId": 22,
@@ -791,7 +791,7 @@
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/22.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/22_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.14.85",
 			"timeUpdated": "2026-09-04T12:22:03+0000",
@@ -802,7 +802,7 @@
 				10,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/22.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/22_optimized.txt"
 		},
 		{
 			"filterId": 23,
@@ -813,7 +813,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/23.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/23_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.9.23",
 			"timeUpdated": "2026-09-02T18:19:26+0000",
@@ -827,7 +827,7 @@
 				10,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/23.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/23_optimized.txt"
 		},
 		{
 			"filterId": 25,
@@ -838,7 +838,7 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 2,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/25.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/25_optimized.txt",
 			"trustLevel": "full",
 			"version": "2.0.0.9",
 			"timeUpdated": "2026-08-26T08:18:51+0000",
@@ -848,7 +848,7 @@
 				2,
 				10
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/25.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/25_optimized.txt"
 		},
 		{
 			"filterId": 101,
@@ -872,7 +872,7 @@
 			"tags": [
 				1
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/101.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/101_optimized.txt"
 		},
 		{
 			"filterId": 102,
@@ -898,7 +898,7 @@
 				9,
 				29
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/102.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/102_optimized.txt"
 		},
 		{
 			"filterId": 103,
@@ -923,7 +923,7 @@
 				10,
 				30
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/103.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/103_optimized.txt"
 		},
 		{
 			"filterId": 104,
@@ -949,7 +949,7 @@
 				9,
 				31
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/104.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/104_optimized.txt"
 		},
 		{
 			"filterId": 105,
@@ -976,7 +976,7 @@
 				32,
 				33
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/105.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/105_optimized.txt"
 		},
 		{
 			"filterId": 106,
@@ -1002,7 +1002,7 @@
 				9,
 				15
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/106.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/106_optimized.txt"
 		},
 		{
 			"filterId": 107,
@@ -1028,7 +1028,7 @@
 				9,
 				12
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/107.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/107_optimized.txt"
 		},
 		{
 			"filterId": 108,
@@ -1053,7 +1053,7 @@
 				10,
 				34
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/108.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/108_optimized.txt"
 		},
 		{
 			"filterId": 109,
@@ -1078,7 +1078,7 @@
 				10,
 				35
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/109.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/109_optimized.txt"
 		},
 		{
 			"filterId": 110,
@@ -1103,7 +1103,7 @@
 				10,
 				37
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/110.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/110_optimized.txt"
 		},
 		{
 			"filterId": 111,
@@ -1128,7 +1128,7 @@
 				10,
 				36
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/111.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/111_optimized.txt"
 		},
 		{
 			"filterId": 112,
@@ -1153,7 +1153,7 @@
 				10,
 				38
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/112.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/112_optimized.txt"
 		},
 		{
 			"filterId": 113,
@@ -1179,7 +1179,7 @@
 				9,
 				27
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/113.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/113_optimized.txt"
 		},
 		{
 			"filterId": 114,
@@ -1201,7 +1201,7 @@
 				9,
 				39
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/114.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/114_optimized.txt"
 		},
 		{
 			"filterId": 118,
@@ -1225,7 +1225,7 @@
 			"tags": [
 				2
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/118.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/118_optimized.txt"
 		},
 		{
 			"filterId": 119,
@@ -1251,7 +1251,7 @@
 				9,
 				42
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/119.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/119_optimized.txt"
 		},
 		{
 			"filterId": 120,
@@ -1275,7 +1275,7 @@
 				10,
 				29
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/120.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/120_optimized.txt"
 		},
 		{
 			"filterId": 121,
@@ -1301,7 +1301,7 @@
 				9,
 				44
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/121.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/121_optimized.txt"
 		},
 		{
 			"filterId": 122,
@@ -1326,7 +1326,7 @@
 				5,
 				9
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/122.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/122_optimized.txt"
 		},
 		{
 			"filterId": 123,
@@ -1351,7 +1351,7 @@
 				3,
 				9
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/123.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/123_optimized.txt"
 		},
 		{
 			"filterId": 124,
@@ -1378,7 +1378,7 @@
 				17,
 				18
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/124.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/124_optimized.txt"
 		},
 		{
 			"filterId": 201,
@@ -1402,7 +1402,7 @@
 			"tags": [
 				5
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/201.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/201_optimized.txt"
 		},
 		{
 			"filterId": 202,
@@ -1426,7 +1426,7 @@
 				10,
 				64
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/202.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/202_optimized.txt"
 		},
 		{
 			"filterId": 203,
@@ -1452,7 +1452,7 @@
 				48,
 				10
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/203.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/203_optimized.txt"
 		},
 		{
 			"filterId": 204,
@@ -1476,7 +1476,7 @@
 			"tags": [
 				2
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/204.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/204_optimized.txt"
 		},
 		{
 			"filterId": 206,
@@ -1501,7 +1501,7 @@
 				1,
 				35
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/206.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/206_optimized.txt"
 		},
 		{
 			"filterId": 207,
@@ -1525,7 +1525,7 @@
 			"tags": [
 				50
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/207.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/207_optimized.txt"
 		},
 		{
 			"filterId": 208,
@@ -1546,7 +1546,7 @@
 				10,
 				4
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/208.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/208_optimized.txt"
 		},
 		{
 			"filterId": 212,
@@ -1571,7 +1571,7 @@
 				2,
 				8
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/212.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/212_optimized.txt"
 		},
 		{
 			"filterId": 214,
@@ -1595,7 +1595,7 @@
 				52,
 				10
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/214.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/214_optimized.txt"
 		},
 		{
 			"filterId": 216,
@@ -1619,7 +1619,7 @@
 				10,
 				41
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/216.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/216_optimized.txt"
 		},
 		{
 			"filterId": 217,
@@ -1640,7 +1640,7 @@
 				6,
 				41
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/217.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/217_optimized.txt"
 		},
 		{
 			"filterId": 218,
@@ -1664,7 +1664,7 @@
 				1,
 				53
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/218.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/218_optimized.txt"
 		},
 		{
 			"filterId": 220,
@@ -1689,7 +1689,7 @@
 				5,
 				31
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/220.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/220_optimized.txt"
 		},
 		{
 			"filterId": 221,
@@ -1714,7 +1714,7 @@
 				3,
 				41
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/221.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/221_optimized.txt"
 		},
 		{
 			"filterId": 224,
@@ -1725,10 +1725,10 @@
 			"expires": 432000,
 			"displayNumber": 1,
 			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224.txt",
+			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.65.6",
-			"timeUpdated": "2026-09-09T12:21:52+0000",
+			"version": "2.1.65.7",
+			"timeUpdated": "2026-09-09T16:17:11+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
@@ -1739,7 +1739,7 @@
 				11,
 				31
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224_optimized.txt"
 		},
 		{
 			"filterId": 225,
@@ -1764,7 +1764,7 @@
 				2,
 				45
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/225.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/225_optimized.txt"
 		},
 		{
 			"filterId": 227,
@@ -1789,7 +1789,7 @@
 				56,
 				10
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/227.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/227_optimized.txt"
 		},
 		{
 			"filterId": 228,
@@ -1815,7 +1815,7 @@
 				1,
 				31
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/228.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/228_optimized.txt"
 		},
 		{
 			"filterId": 231,
@@ -1841,7 +1841,7 @@
 				9,
 				17
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/231.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/231_optimized.txt"
 		},
 		{
 			"filterId": 232,
@@ -1866,7 +1866,7 @@
 				4,
 				41
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/232.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/232_optimized.txt"
 		},
 		{
 			"filterId": 233,
@@ -1890,7 +1890,7 @@
 				10,
 				40
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/233.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/233_optimized.txt"
 		},
 		{
 			"filterId": 234,
@@ -1917,7 +1917,7 @@
 				39,
 				57
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/234.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/234_optimized.txt"
 		},
 		{
 			"filterId": 235,
@@ -1945,7 +1945,7 @@
 				69,
 				70
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/235.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/235_optimized.txt"
 		},
 		{
 			"filterId": 236,
@@ -1970,7 +1970,7 @@
 				1,
 				39
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/236.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/236_optimized.txt"
 		},
 		{
 			"filterId": 237,
@@ -1995,7 +1995,7 @@
 				41,
 				5
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/237.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/237_optimized.txt"
 		},
 		{
 			"filterId": 238,
@@ -2019,7 +2019,7 @@
 				50,
 				41
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/238.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/238_optimized.txt"
 		},
 		{
 			"filterId": 239,
@@ -2044,7 +2044,7 @@
 				2,
 				45
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/239.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/239_optimized.txt"
 		},
 		{
 			"filterId": 241,
@@ -2068,7 +2068,7 @@
 			"tags": [
 				6
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/241.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/241_optimized.txt"
 		},
 		{
 			"filterId": 243,
@@ -2095,7 +2095,7 @@
 				3,
 				55
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/243.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/243_optimized.txt"
 		},
 		{
 			"filterId": 244,
@@ -2120,7 +2120,7 @@
 				1,
 				56
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/244.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/244_optimized.txt"
 		},
 		{
 			"filterId": 246,
@@ -2146,7 +2146,7 @@
 				9,
 				41
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/246.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/246_optimized.txt"
 		},
 		{
 			"filterId": 247,
@@ -2172,7 +2172,7 @@
 				5,
 				62
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/247.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/247_optimized.txt"
 		},
 		{
 			"filterId": 249,
@@ -2203,7 +2203,7 @@
 				42,
 				63
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/249.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/249_optimized.txt"
 		},
 		{
 			"filterId": 250,
@@ -2230,7 +2230,7 @@
 				5,
 				11
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/250.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/250_optimized.txt"
 		},
 		{
 			"filterId": 252,
@@ -2256,7 +2256,7 @@
 				66,
 				10
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/252.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/252_optimized.txt"
 		},
 		{
 			"filterId": 253,
@@ -2280,7 +2280,7 @@
 				67,
 				10
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/253.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/253_optimized.txt"
 		},
 		{
 			"filterId": 254,
@@ -2304,7 +2304,7 @@
 				10,
 				71
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/254.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/254_optimized.txt"
 		},
 		{
 			"filterId": 255,
@@ -2324,7 +2324,7 @@
 			"tags": [
 				4
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/255.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/255_optimized.txt"
 		},
 		{
 			"filterId": 256,
@@ -2344,7 +2344,7 @@
 			"tags": [
 				4
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/256.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/256_optimized.txt"
 		},
 		{
 			"filterId": 257,
@@ -2364,7 +2364,7 @@
 			"tags": [
 				4
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/257.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/257_optimized.txt"
 		},
 		{
 			"filterId": 258,
@@ -2392,7 +2392,7 @@
 			"tags": [
 				2
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/258.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/258_optimized.txt"
 		},
 		{
 			"filterId": 259,
@@ -2412,7 +2412,7 @@
 			"tags": [
 				4
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/259.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/259_optimized.txt"
 		},
 		{
 			"filterId": 260,
@@ -2432,7 +2432,7 @@
 			"tags": [
 				5
 			],
-			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/260.txt"
+			"downloadUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/260_optimized.txt"
 		}
 	]
 }
