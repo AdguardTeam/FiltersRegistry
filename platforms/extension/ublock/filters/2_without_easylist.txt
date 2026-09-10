@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: lnf2D3GhlSMjJSfkYJP3iA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1789017495-3600.patch
+! Checksum: Or2k0BDY0yBEbL6QEF896A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1789021711-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.89.38
-! TimeUpdated: 2026-09-10T05:14:34+00:00
+! Version: 2.4.89.39
+! TimeUpdated: 2026-09-10T06:24:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16916,11 +16916,6 @@ ufacw.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129839
 beelink.pro###adb
 beelink.pro##+js(prevent-fetch, pagead2.googlesyndication.com)
-! https://github.com/AdguardTeam/AdguardFilters/issues/129838
-||makefreecallsonline.com/includes/AB-code.min.js
-makefreecallsonline.com##body:style(overflow: auto !important;)
-makefreecallsonline.com###adblockbyspider:style(display: none !important;)
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xhr,redirect=googlesyndication_adsbygoogle.js,domain=makefreecallsonline.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129829
 @@||tools.dik.si/assets/js/prebid-ads.js
 tools.dik.si##+js(set-constant, canRunAds, true)
@@ -17062,9 +17057,6 @@ iphoneincanada.ca##.slbElement
 ! https://github.com/AdguardTeam/AdguardFilters/issues/126202
 yt2save.com#@#.showads
 yt2save.com##+js(no-setTimeout-if, document.body.innerHTML)
-! https://github.com/AdguardTeam/AdguardFilters/issues/125474
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dogeen.xyz
-dogeen.xyz##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125610
 vods.tv##+js(prevent-fetch, www3.doubleclick.net)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125296
@@ -40066,6 +40058,8 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+tallycount.app##main div.leading-normal > div.text-center > a.inline-block[target="_blank"]:has(img)
+clashfox.com##a[rel="noopener sponsored"]
 earlygame.com##.header__topbar
 xvideos2.com###content > div.exo-ad-ins-container + div[class]:has(> a[href^="https://s.zline0.com/"][target="_blank"])
 vknsorgula.net##.adsense-container
@@ -63215,6 +63209,9 @@ $popup,3p,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240200
+speedy-links.com##+js(json-prune, $.*[?@.action_pixel_url])
+speedy-links.com##+js(set-local-storage-item, taboola_user_sync, 1)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240310
 pixiv.net#@#img[width="240"][height="400"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239554
