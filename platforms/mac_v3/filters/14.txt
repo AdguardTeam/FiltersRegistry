@@ -1,9 +1,9 @@
-! Checksum: dPJrBF29k4E3+xPfoSL0ew
-! Diff-Path: ../patches/14/14-s-1789053491-3600.patch
+! Checksum: 1E/9ui7zX15vgGzj8iCYsw
+! Diff-Path: ../patches/14/14-s-1789057138-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.78.74
-! TimeUpdated: 2026-09-10T15:14:37+00:00
+! Version: 2.2.78.75
+! TimeUpdated: 2026-09-10T16:15:09+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2644,6 +2644,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+shop.menshealth.de##body > section#shopify-pc__banner:has(> div.shopify-pc__banner__wrapper button.shopify-pc__banner__btn-manage-prefs)
 memos.work###flowappz-cookie-consent
 skazka.ai##.fixed.bottom-0:has(a[href="/pl/cookie"])
 t3.chat##.pointer-events-auto > div[data-slot="banner-wrapper"]:has(p > a[href="/privacy-policy"])
@@ -28170,6 +28171,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+ytv.co.jp##.follow-content
 worldjournal.com##.idle-views
 xcom-shop.ru###rec-tech-banner
 itemci.com###itemci-beta-notice
@@ -37677,6 +37679,10 @@ femmeactuelle.fr,from-ua.org,nikkansports.com,meteoweb.eu,businessinsider.jp,eni
 !
 ! SECTION: Subscriptions - Regular rules
 !
+winelab.ru##.subscription--footer
+jetstream.blog##.preferred-sources-banner-wrapper
+jetstream.blog##a[href="https://jetstream.blog/google-news-follow"]
+jetstream.blog##a[href="https://jetstream.blog/google-preferences-source/"]
 fanzade.com##.fz-article-youtube-cta
 carpatree.com#$#html { overflow: auto !important; }
 carpatree.com#$##__next > div[class^="sc-"]:has(> div#welcomeDialog) { display: none !important; }
@@ -48162,6 +48168,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+jetstream.blog###pwa-install-banner
 rostics.ru###links-menu + div[class]:has(> div[class] a[href="/legal/loyalty_program"])
 gipfel.ru##.main-mobile-app
 newspicks.com##div[class^="css-"]:has(> div > img[src="/resources/images/banner-app-download.png"])
@@ -56272,6 +56279,9 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+deviantart.com##body > div.ReactModalPortal ~ div[class]:not([id]):has(> dialog a[href^="https://www.deviantart.com/core-membership"])
+brasilescola.uol.com.br##.chat-interno
+brasilescola.uol.com.br##.side-ferramentas-area-lista
 saechsische.de##div[data-element-selector="main-content"] > div[class*="AutomaticWeekliWidgetstyled"]
 newstsukuba.jp##.nts-banner
 navalny.com##footer.bg-bg-tertiary > div.mx-auto > a.bg-gradient-turquoise[href*="/donate"]
@@ -65919,6 +65929,8 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 !
 !   SECTION: Widgets - Marketing - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240788
+@@||mod.calltouch.ru^$domain=winelab.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238674
 @@||secure.livechatinc.com/customer/action/open_chat?$domain=njumobile.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229403
