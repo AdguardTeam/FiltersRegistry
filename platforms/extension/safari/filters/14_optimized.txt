@@ -1,9 +1,9 @@
-! Checksum: 7+uGVb4Piv/jhi1cSXP3ww
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1789049886-3600.patch
+! Checksum: JPbL9zGcpPHMcmEQEgj+Vw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1789053474-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.78.73
-! TimeUpdated: 2026-09-10T14:14:32+00:00
+! Version: 2.2.78.74
+! TimeUpdated: 2026-09-10T15:14:37+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -12154,6 +12154,7 @@ www.kinopoisk.ru##.media-post-page > div[class*=" "][data-tid]:not([class*="medi
 www.kinopoisk.ru#?#div[class*="_"]:has(> div[aria-hidden][data-tid] > div[id][class][data-tid] + script:contains(/JSON\.parse\(\'\{\"containerId\"/))
 auto.ru#%#//scriptlet('json-prune', 'ads')
 auto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.RenderMarks')
+shedevrum.ai#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 shedevrum.ai#%#//scriptlet('set-constant', 'Object.prototype.isStickyAd', 'undefined')
 shedevrum.ai###app > div.z-\[12\].bg-white
 @@||shedevrum.ai^$generichide
@@ -12364,6 +12365,7 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 @@||search-module.s3.us-east-2.amazonaws.com/pubs/trib/adblockdetect.js
 !#safari_cb_affinity
 armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwesterndaily.com.au,crookwellgazette.com.au,dailyadvertiser.com.au,dailyliberal.com.au,examiner.com.au,illawarramercury.com.au,newcastleherald.com.au,portnews.com.au,thecourier.com.au,thesenior.com.au#%#//scriptlet('set-cookie', 'dismissCheck', '1')
+pagesix.com,nypost.com#%#//scriptlet('abort-current-inline-script', 'atob', 'parentNode.removeChild')
 clashfox.com#%#//scriptlet('prevent-setTimeout', 'offsetHeight')
 uploadvr.com#$#body { position: initial !important; }
 uploadvr.com#$#div[id^="supportPrompt"] { display: none !important; }
@@ -12416,10 +12418,6 @@ futureaudiophile.com#@#.ad_slot
 dumpert.nl#%#//scriptlet('set-cookie', 'adblock-modal-declined', 'true')
 peacocktv.com#@#.adsbox
 peacocktv.com#%#//scriptlet('trusted-replace-argument', 'Promise', '0', 'noopPromiseResolve', '/\|\|0===.\.offsetHeight|freewheel\.tv\/static\/creatives\/fw-ad|document\.body\.appendChild\(.*?,setTimeout\(\(\)=>{.*?,document\.body\.contains.*?&&document\.body\.removeChild|naturalWidth<=1|adBlockDetection/')
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub$domain=fuucdayo.com
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=fuucdayo.com
-fuucdayo.com#@#ins.adsbygoogle[data-ad-slot]
-fuucdayo.com#@#ins.adsbygoogle[data-ad-client]
 thesun.co.uk#%#//scriptlet('remove-node-text', 'script', 'ncuAb')
 crimsondesert.th.gl##.bg-card.shadow
 enternity.gr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', '/adblock|Blocking Ads/')
@@ -13182,9 +13180,6 @@ creativeuncut.com###g_abox
 toolskitpro.net#%#//scriptlet('prevent-setTimeout', 'ad_blocker')
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=toolskitpro.net
-nypost.com#%#//scriptlet('abort-current-inline-script', 'atob', 'parentNode.removeChild')
-!+ PLATFORM(ios, ext_safari, ext_android_cb)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=nypost.com
 mdislander.com,statesville.com,wacotrib.com#%#//scriptlet('abort-on-property-read', 'TNCMS.Access')
 mdislander.com#@#.ad_wrapper
 mdislander.com#@##ad_frame
@@ -13791,6 +13786,13 @@ aol.com#@#.adwrap
 !+ NOT_PLATFORM(windows, mac, android, cli)
 @@||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$domain=washingtonpost.com
 !#safari_cb_affinity(general)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=pagesix.com
+@@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=pagesix.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=nypost.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub$domain=fuucdayo.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=fuucdayo.com
+fuucdayo.com#@#ins.adsbygoogle[data-ad-slot]
+fuucdayo.com#@#ins.adsbygoogle[data-ad-client]
 clashfox.com#@#.ad-unit:not(.textads)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=xenvn.com
 xenvn.com#@#ins.adsbygoogle[data-ad-slot]
@@ -26693,6 +26695,7 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+saechsische.de##div[data-element-selector="main-content"] > div[class*="AutomaticWeekliWidgetstyled"]
 newstsukuba.jp##.nts-banner
 navalny.com##footer.bg-bg-tertiary > div.mx-auto > a.bg-gradient-turquoise[href*="/donate"]
 kinogo.org##.cshflow

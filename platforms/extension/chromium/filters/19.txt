@@ -1,9 +1,9 @@
-! Checksum: 9YRqDLg332CGNhLHk6DZmg
-! Diff-Path: ../patches/19/19-s-1789046252-3600.patch
+! Checksum: gMGXOhKSdqETeM6RenSLSg
+! Diff-Path: ../patches/19/19-s-1789053455-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.82.64
-! TimeUpdated: 2026-09-10T13:14:32+00:00
+! Version: 2.0.82.65
+! TimeUpdated: 2026-09-10T15:14:46+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -154,6 +154,7 @@ auto.ru#%#//scriptlet('json-prune', 'ads')
 auto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.RenderMarks')
 !
 ! shedevrum.ai
+shedevrum.ai#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 shedevrum.ai#%#//scriptlet('set-constant', 'Object.prototype.isStickyAd', 'undefined')
 shedevrum.ai###app > div.z-\[12\].bg-white
 @@||shedevrum.ai^$generichide
@@ -588,6 +589,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+pagesix.com,nypost.com#%#//scriptlet('abort-current-inline-script', 'atob', 'parentNode.removeChild')
 clashfox.com#%#//scriptlet('prevent-setTimeout', 'offsetHeight')
 uploadvr.com#$#body { position: initial !important; }
 uploadvr.com#$#div[id^="supportPrompt"] { display: none !important; }
@@ -2180,9 +2182,6 @@ creativeuncut.com###g_abox
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237040
 toolskitpro.net#%#//scriptlet('prevent-setTimeout', 'ad_blocker')
-!
-! https://github.com/AdguardTeam/AdguardFilters/issues/235514
-nypost.com#%#//scriptlet('abort-current-inline-script', 'atob', 'parentNode.removeChild')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167683
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169924
