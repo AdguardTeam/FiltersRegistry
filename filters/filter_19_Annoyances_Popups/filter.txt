@@ -67,8 +67,17 @@ music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 [$path=/pogoda]dzen.ru##.adv-ecom
 [$path=/pogoda|hava/]yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
 [$path=/pogoda|hava/]yandex.*#%#//scriptlet('json-prune', 'rtb')
-!+ PLATFORM(ios)
+!#if (adguard_app_ios || adguard_ext_safari)
+yandex.*##div[class^="MainPage_topBlockWithMoney_"]
+yandex.*##li[class^="AppForecastMoney_wrap_"]
 yandex.*##article[class^="AppMoney_wrap_"]
+yandex.*#%#//scriptlet('abort-on-property-write', 'ctxScript')
+dzen.ru###money-ecom
+dzen.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderData')
+dzen.ru##.adv-ecom
+yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
+yandex.*#%#//scriptlet('json-prune', 'rtb')
+!#endif
 ! TODO: remove after releasing new AdGuard 2.0 for Safari
 ! Breaks Yandex Mail in Safari due to a bug
 !+ NOT_PLATFORM(ext_safari)
@@ -119,6 +128,10 @@ ya.ru##.feed > div > ul > li.feed__item:has(div[id*="R-I-"])
 ! Yandex.TV
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 tv.yandex.*#%#//scriptlet('json-prune', 'rtb')
+!
+! Yandex.Translate
+!+ PLATFORM(ext_safari)
+translate.yandex.*##.page > div.side-block:has(> div[id] > div[class] div[id*="R-I-"][class])
 !
 ! Yandex.Realty
 realty.yandex.ru#%#//scriptlet('json-prune', 'rtb direct')
@@ -13507,6 +13520,7 @@ nikkansports.com,meteoweb.eu,businessinsider.jp,enikos.gr,ostdeutscheallgemeine.
 !
 ! SECTION: Subscriptions - Regular rules
 !
+invezz.com##.relative.text-white.rounded-lg:has(> form[x-data^="emailSubscribe"])
 inc.com##.article-container > div:not([class]):has(form[name="newsletterForm"])
 friday.kodansha.co.jp##div[class^="styles_wrapper"]:has(> a[class^="styles_googlePreferredSource"])
 fobizz.com##.newdesign_subscribe

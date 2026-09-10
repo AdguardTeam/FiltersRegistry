@@ -1,9 +1,9 @@
-! Checksum: pVo14ozH7CycdkFr5w3NHw
-! Diff-Path: ../patches/19/19-s-1789024808-3600.patch
+! Checksum: BmHHFeHm4JucCr0Qkq4qcw
+! Diff-Path: ../patches/19/19-s-1789028543-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.82.58
-! TimeUpdated: 2026-09-10T07:16:47+00:00
+! Version: 2.0.82.59
+! TimeUpdated: 2026-09-10T08:20:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -70,8 +70,15 @@ music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 [$path=/pogoda]dzen.ru##.adv-ecom
 [$path=/pogoda|hava/]yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
 [$path=/pogoda|hava/]yandex.*#%#//scriptlet('json-prune', 'rtb')
-!+ PLATFORM(ios)
+yandex.*##div[class^="MainPage_topBlockWithMoney_"]
+yandex.*##li[class^="AppForecastMoney_wrap_"]
 yandex.*##article[class^="AppMoney_wrap_"]
+yandex.*#%#//scriptlet('abort-on-property-write', 'ctxScript')
+dzen.ru###money-ecom
+dzen.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderData')
+dzen.ru##.adv-ecom
+yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
+yandex.*#%#//scriptlet('json-prune', 'rtb')
 ! TODO: remove after releasing new AdGuard 2.0 for Safari
 ! Breaks Yandex Mail in Safari due to a bug
 !+ NOT_PLATFORM(ext_safari)
@@ -122,6 +129,8 @@ ya.ru##.feed > div > ul > li.feed__item:has(div[id*="R-I-"])
 ! Yandex.TV
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 tv.yandex.*#%#//scriptlet('json-prune', 'rtb')
+!
+! Yandex.Translate
 !
 ! Yandex.Realty
 realty.yandex.ru#%#//scriptlet('json-prune', 'rtb direct')
@@ -13307,6 +13316,7 @@ nikkansports.com,meteoweb.eu,businessinsider.jp,enikos.gr,ostdeutscheallgemeine.
 !
 ! SECTION: Subscriptions - Regular rules
 !
+invezz.com##.relative.text-white.rounded-lg:has(> form[x-data^="emailSubscribe"])
 inc.com##.article-container > div:not([class]):has(form[name="newsletterForm"])
 friday.kodansha.co.jp##div[class^="styles_wrapper"]:has(> a[class^="styles_googlePreferredSource"])
 fobizz.com##.newdesign_subscribe
