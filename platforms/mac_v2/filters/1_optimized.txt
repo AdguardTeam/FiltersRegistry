@@ -1,9 +1,9 @@
-! Checksum: xzHKrNTxhm7GngrSRdCt8g
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1789043114-3600.patch
+! Checksum: 3+z/N+U5YaIWm0FcBY3vBw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1789046282-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.52
-! TimeUpdated: 2026-09-10T12:20:48+00:00
+! Version: 2.1.8.53
+! TimeUpdated: 2026-09-10T13:13:26+00:00
 ! Expires: 12 hours (update frequency)
 ?fre=*&nocredentials=1^$xmlhttprequest,third-party
 /jackets/0/*?widgetId=banners-place-content-
@@ -6957,11 +6957,13 @@ fastpic.org#%#//scriptlet('trusted-suppress-native-method', 'EventTarget.prototy
 fastpic.org##nav > div:not(:has(*))
 fastpic.org##.overlay-banner-container
 fastpic.org#%#//scriptlet('prevent-window-open')
-fastpic.org#%#//scriptlet('prevent-navigation', '/^(?!fastpic\.org).*/')
+fastpic.org#%#//scriptlet('prevent-navigation', '/^(?!(?:https?:\/\/)?(?:.{1,10}\.)?fastpic\.org).*/')
 ||fastpic.org/fpv.js
 fastpic.org#%#//scriptlet('abort-on-property-read', 'ExaQaAutomatizationFlag')
 fastpic.org#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.dispatchEvent', 'getexoloader')
 fastpic.org$$script:contains(/=document\["[\s\S]*?\.location\.href=|wpadmngr\.com|\['init'\]|\]='async',document|ctrlKey/)
+!+ PLATFORM(windows, mac, android, cli)
+fastpic.org#%#(()=>{const t=window.EventTarget.prototype,e={apply:(t,e,n)=>{const[c,o,l]=n;if("click"!==c||"function"!=typeof o||!(t=>null!=t&&(t===window||t===document||t===document.documentElement||t===document.body))(e))return Reflect.apply(t,e,n);const r=null!==l&&("object"==typeof l||"function"==typeof l),p=r?l.capture:l;r&&(n[2]=new Proxy(l,{get:(t,e)=>"capture"===e?p:Reflect.get(t,e,t)}));let u=!1;try{u=Boolean(p)&&e.onclick===o}catch{}if(!u)return Reflect.apply(t,e,n);n[1]=null;const y=Reflect.apply(t,e,n);try{e.onclick===o&&(e.onclick=null)}catch{}return y}};t.addEventListener=new Proxy(t.addEventListener,e)})();
 fastpic.org#%#//scriptlet('set-constant', 'Element.prototype.attachShadow', 'noopFunc')
 ||fastpic.*/g/
 ||fastpic.*/*.php|
