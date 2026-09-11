@@ -21,11 +21,15 @@ fi
 cd "$REPO_ROOT" || exit 1
 GIT_COMMON_DIR=$(git rev-parse --git-common-dir)
 
-TEMP_DIR_NAME="$REPO_ROOT/temp"
-mkdir -p "$TEMP_DIR_NAME"
+TEMP_DIR_NAME="temp"
+
+TEMP_DIR="$REPO_ROOT/$TEMP_DIR_NAME"
+mkdir -p "$TEMP_DIR"
+
+STATS_BASE_PATH_REL="$TEMP_DIR_NAME/optimization/stats"
 
 # Guards against two or more concurrent runs corrupting the shared worktrees/logs.
-LOCK_DIR="$TEMP_DIR_NAME/reg-run.lock"
+LOCK_DIR="$TEMP_DIR/reg-run.lock"
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
     echo "Error: another compare-build-output run appears to be in progress (lock: $LOCK_DIR)." >&2
     echo "If you're sure none is running, remove that directory and retry." >&2
@@ -33,33 +37,34 @@ if ! mkdir "$LOCK_DIR" 2>/dev/null; then
 fi
 trap 'rm -rf "$LOCK_DIR"' EXIT
 
-MASTER_WORK_TREE="$TEMP_DIR_NAME/reg-${BASE_BRANCH}-build"
-CHANGED_WORK_TREE="$TEMP_DIR_NAME/reg-changed-build"
-META_FILE="$TEMP_DIR_NAME/reg-meta.env"
-PLATFORMS_MASTER="$TEMP_DIR_NAME/platforms_${BASE_BRANCH}_build"
-PLATFORMS_CHANGED="$TEMP_DIR_NAME/platforms_changed_build"
+MASTER_WORK_TREE="$TEMP_DIR/reg-${BASE_BRANCH}-build"
+CHANGED_WORK_TREE="$TEMP_DIR/reg-changed-build"
+META_FILE="$TEMP_DIR/reg-meta.env"
+PLATFORMS_MASTER="$TEMP_DIR/platforms_${BASE_BRANCH}_build"
+PLATFORMS_CHANGED="$TEMP_DIR/platforms_changed_build"
 
 # Downloaded once here and copied into both worktrees, instead of each worktree
 # running its own download-stats — the remote data is the same regardless of
 # code changes, so a single shared snapshot keeps the two builds' stats
 # identical and the comparison reproducible.
-SHARED_STATS_DIR="$TEMP_DIR_NAME/optimization/stats"
+SHARED_STATS_DIR="$TEMP_DIR/optimization/stats"
 
 LOG_DIR_NAME="logs"
-mkdir -p "$TEMP_DIR_NAME/$LOG_DIR_NAME"
+LOG_DIR="$TEMP_DIR/$LOG_DIR_NAME"
+mkdir -p "$LOG_DIR"
 
-LOG_MASTER_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASE_BRANCH}-install.log"
-LOG_CHANGED_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-install.log"
-LOG_MASTER_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASE_BRANCH}-build.log"
-LOG_CHANGED_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-build.log"
-LOG_DOWNLOAD_STATS="$TEMP_DIR_NAME/$LOG_DIR_NAME/download-stats.log"
-LOG_COPY_STATS="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-stats.log"
-LOG_SYNC_BASELINE="$TEMP_DIR_NAME/$LOG_DIR_NAME/sync-baseline.log"
-LOG_COPY_MASTER="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-${BASE_BRANCH}.log"
-LOG_COPY_CHANGED="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-changed.log"
-LOG_WIPE_PLATFORMS="$TEMP_DIR_NAME/$LOG_DIR_NAME/wipe-platforms.log"
-LOG_RESTORE_PLATFORMS="$TEMP_DIR_NAME/$LOG_DIR_NAME/restore-platforms.log"
-LOG_CLEANUP="$TEMP_DIR_NAME/$LOG_DIR_NAME/cleanup.log"
+LOG_MASTER_INSTALL="$LOG_DIR/${BASE_BRANCH}-install.log"
+LOG_CHANGED_INSTALL="$LOG_DIR/changed-install.log"
+LOG_MASTER_BUILD="$LOG_DIR/${BASE_BRANCH}-build.log"
+LOG_CHANGED_BUILD="$LOG_DIR/changed-build.log"
+LOG_DOWNLOAD_STATS="$LOG_DIR/download-stats.log"
+LOG_COPY_STATS="$LOG_DIR/copy-stats.log"
+LOG_SYNC_BASELINE="$LOG_DIR/sync-baseline.log"
+LOG_COPY_MASTER="$LOG_DIR/copy-${BASE_BRANCH}.log"
+LOG_COPY_CHANGED="$LOG_DIR/copy-changed.log"
+LOG_WIPE_PLATFORMS="$LOG_DIR/wipe-platforms.log"
+LOG_RESTORE_PLATFORMS="$LOG_DIR/restore-platforms.log"
+LOG_CLEANUP="$LOG_DIR/cleanup.log"
 
 # Colors and symbols used throughout, disabled when not attached to a terminal.
 if [ -t 1 ]; then
@@ -273,9 +278,9 @@ sync_filters_baseline() {
 copy_shared_stats_into_worktrees() {
     local wt
     for wt in "$MASTER_WORK_TREE" "$CHANGED_WORK_TREE"; do
-        rm -rf "$wt/temp/optimization/stats"
-        mkdir -p "$wt/temp/optimization"
-        cp -r "$SHARED_STATS_DIR" "$wt/temp/optimization/stats" || return 1
+        rm -rf "$wt/$STATS_BASE_PATH_REL"
+        mkdir -p "$wt/$STATS_BASE_PATH_REL"
+        cp -r "$SHARED_STATS_DIR" "$wt/$STATS_BASE_PATH_REL" || return 1
     done
 }
 
@@ -341,7 +346,7 @@ run_cleanup() {
         echo "  $CHANGED_WORK_TREE"
         echo "  $PLATFORMS_MASTER"
         echo "  $PLATFORMS_CHANGED"
-        echo "  logs in $TEMP_DIR_NAME/$LOG_DIR_NAME"
+        echo "  logs in $LOG_DIR"
     fi
 }
 
@@ -585,7 +590,7 @@ setup_worktree() {
     # label is a branch name and may contain "/" (e.g. "feature/#1211"), which
     # would otherwise turn into a nonexistent subdirectory in the log path.
     local escaped_label="${label//\//-}"
-    local log_path="$TEMP_DIR_NAME/$LOG_DIR_NAME/worktree-$escaped_label.log"
+    local log_path="$LOG_DIR/worktree-$escaped_label.log"
 
     if [ -e "$path/.git" ]; then
         echo "[$label] Existing worktree found at $path"
@@ -597,7 +602,7 @@ setup_worktree() {
                 die "[$label] checkout in reused worktree FAILED" "$log_path"
             fi
             # remove the stale optimization stats; new ones must be copied from $SHARED_STATS_DIR.
-            rm -rf "$path/temp/optimization/stats"
+            rm -rf "$path/$STATS_BASE_PATH_REL"
             return 0
         fi
         echo "${C_CYAN}${ARROW}${C_RESET} [$label] recreating worktree at $path"
@@ -666,7 +671,7 @@ if confirm; then
         fi
         rm -rf "$SHARED_STATS_DIR"
         mkdir -p "$(dirname "$SHARED_STATS_DIR")"
-        cp -r "$MASTER_WORK_TREE/temp/optimization/stats" "$SHARED_STATS_DIR"
+        cp -r "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL" "$SHARED_STATS_DIR"
     else
         echo "${C_CYAN}${ARROW}${C_RESET} Reusing existing shared stats"
     fi
