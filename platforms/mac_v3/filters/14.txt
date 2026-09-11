@@ -1,9 +1,9 @@
-! Checksum: Run70z8vr/m8vEw5OykdRQ
-! Diff-Path: ../patches/14/14-s-1789103948-3600.patch
+! Checksum: H8F2IbepO2Y/yNpC2cWKCg
+! Diff-Path: ../patches/14/14-s-1789108081-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.78.81
-! TimeUpdated: 2026-09-11T05:15:13+00:00
+! Version: 2.2.78.82
+! TimeUpdated: 2026-09-11T06:24:20+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2644,6 +2644,7 @@ sabancivakfi.org###ez-banner[role="banner"]
 !
 ! NOTE: Regular rules
 !
+panaxgames.com#%#//scriptlet('set-cookie', 'fuze-cookie-consent', 'false')
 donaukurier.de#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> .cmpboxbtnyes')
 deva.com.tr###alt-cookies-consent-toast-overlay
 cantata.ru###__next > div[aria-labelledby="cantata-cookie-banner-title"]
@@ -3299,8 +3300,8 @@ kolaygelsin.com##div[class^="Box_container___"][data-testid="box-container"]:has
 expresskargo.com.tr##div[data-testid="cookie-banner-overlay"]
 opentix.life##.fix-bottom
 eker.com###eker-cerez-banner
-ukrinform.net,ukrinform.ua#$##cookie-banner { display: none !important; }
-ukrinform.net,ukrinform.ua#$#html { overflow: auto !important; }
+ukrinform.jp,ukrinform.net,ukrinform.ua#$##cookie-banner { display: none !important; }
+ukrinform.jp,ukrinform.net,ukrinform.ua#$#html { overflow: auto !important; }
 sushi-karate.ru##div[data-legal-panel]
 trhaber.com.tr##div.fixed:has(> div > p > a[href="/kurumsal/cerez-politikasi"])
 ||pcekspert.com/assets/pce-consent.js
@@ -6665,7 +6666,7 @@ sklep.car-zone.pl,wagner-autoteile.de#$#.modal-open { overflow: auto !important;
 strefakierowcy.pl#$#body[class*="overflow"] { overflow: auto !important; }
 strefakierowcy.pl#$#.cookies-popup { display: none !important; }
 tvpaint.com#%#//scriptlet('trusted-set-cookie', 'cookies_banner', '%7B%22completed%22%3Atrue%2C%22authorized_cookies%22%3A%5B%22googletagmanager%22%2C%22google_fonts%22%2C%22google_recaptcha%22%5D%2C%22consent%22%3A%7B%22ad_storage%22%3A%22denied%22%2C%22analytics_storage%22%3A%22denied%22%2C%22ad_user_data%22%3A%22denied%22%2C%22ad_personalization%22%3A%22denied%22%7D%7D')
-trendruum.com,stellaplayer.jp,ofd.beeline.ru,seven-sky.net,magentatv.pl,mojmaxtv.hrvatskitelekom.hr,gofiber.ph#%#//scriptlet('set-local-storage-item', 'cookieAccepted', 'true')
+nnwszkolne.compensa.pl,trendruum.com,stellaplayer.jp,ofd.beeline.ru,seven-sky.net,magentatv.pl,mojmaxtv.hrvatskitelekom.hr,gofiber.ph#%#//scriptlet('set-local-storage-item', 'cookieAccepted', 'true')
 hola.org##div[class^="allow_cookies_"]
 onesports.ph##.cookies-notif
 on1.com###on1-cookie-banner
@@ -19864,9 +19865,10 @@ focusme.com,one.com.mt#@#.cli-popupbar-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231983
 @@||cdn.cookielaw.org/consent/$domain=nypost.com
 @@||cdn.cookielaw.org/logos/$domain=nypost.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/241036
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232901
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231902
-ukrinform.net,ukrinform.ua#@##cookie-banner
+ukrinform.jp,ukrinform.net,ukrinform.ua#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231984
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=tntsports.co.uk
 @@||cdn.cookielaw.org/consent/*.json$domain=tntsports.co.uk
@@ -66720,6 +66722,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+||vx-piano.independent.co.uk/checkout/template/cacheableShow.html?*&offerId=fakeOfferId$subdocument,~third-party
 aniclipse.com##body > div.pointer-events-none.items-center
 artistgrid.cx#%#//scriptlet('trusted-click-element', 'dialog[aria-label="Announcement"] button.justify-center')
 bingebox.to#%#//scriptlet('set-session-storage-item', 'bingebox-donation-banner-dismissed', '1')
