@@ -63,82 +63,17 @@ jobs:
           title: Update translations
           body: Translations are downloaded from Crowdin by the "Update translations" workflow.
 
-      - name: Report validation failure on the PR
-        if: steps.validate.outcome == 'failure'
-        uses: actions/github-script@v8
-        with:
-          script: |
-            const fs = require('fs');
-            const path = require('path');
-            const { data: prs } = await github.rest.pulls.list({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              head: `${context.repo.owner}:update-translations`,
-              per_page: 1,
-            });
-            if (prs.length === 0) {
-              core.warning('No open translations PR found to report the validation failure');
-              return;
-            }
-            const prNumber = prs[0].number;
-
-            // Delete previous validation failure comments so that the new one
-            // acts as a reminder without cluttering the PR.
-            const MARKER = '<!-- update-translations:locales-validation-failure -->';
-            const comments = await github.paginate(github.rest.issues.listComments, {
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: prNumber,
-              per_page: 100,
-            });
-            for (const comment of comments) {
-              if (comment.body && comment.body.includes(MARKER)) {
-                await github.rest.issues.deleteComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  comment_id: comment.id,
-                });
-                core.info(`Deleted previous validation failure comment ${comment.id}`);
-              }
-            }
-
-            // Report names embed a DD-MM-YYYY_HH-MM-SS timestamp, so sorting is
-            // chronological and the last entry is the most recent report.
-            let report = '';
-            try {
-              const reports = fs.readdirSync(process.cwd())
-                .filter((name) => name.startsWith('report_locales_error_') && name.endsWith('.md'))
-                .sort();
-              if (reports.length > 0) {
-                report = fs.readFileSync(path.join(process.cwd(), reports[reports.length - 1]), 'utf8').trim();
-              }
-            } catch (e) {
-              core.warning(`Could not read the locales validation report: ${e.message}`);
-            }
-            // GitHub comment body limit is 65536 characters; keep the tail of the report.
-            const MAX_LOG_LENGTH = 60000;
-            if (report.length > MAX_LOG_LENGTH) {
-              report = `... (truncated) ...\n${report.slice(-MAX_LOG_LENGTH)}`;
-            }
-            const body = [
-              MARKER,
-              '**`yarn validate:locales` failed** for the downloaded translations.',
-              'The PR was created anyway so the changes can be inspected and fixed.',
-              '',
-              '<details><summary>Validation report</summary>',
-              '',
-              report || 'No validation report was captured.',
-              '',
-              '</details>',
-            ].join('\n');
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: prNumber,
-              body,
-            });
-            core.info(`Posted validation failure comment to PR #${prNumber}`);
+      # Refresh the validation comment whenever the translations PR exists (the
+      # action above outputs the PR number both when it creates and updates the
+      # PR; it is empty when there are no translation changes). On failure a
+      # fresh report comment is posted and previous ones are removed; on success
+      # stale failure comments are cleaned up so a fixed translation run does
+      # not leave outdated reminders on the PR.
+      - name: Report validation results on the PR
+        if: steps.create-pr.outputs.pull-request-number != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn tsx scripts/translations/report-validation.ts --pr-number ${{ steps.create-pr.outputs.pull-request-number }} --result ${{ steps.validate.outcome }}
 
       # Fail the job so the Slack notification still fires, but only after the branch
       # was pushed, the PR was created/updated, and the failure was reported above.
