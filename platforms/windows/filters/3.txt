@@ -1,9 +1,9 @@
-! Checksum: dq1fr2tHj2aoGKIKCH/asQ
-! Diff-Path: ../patches/3/3-s-1789090062-3600.patch
+! Checksum: qctoi4xXq8sm50F4MCLpuQ
+! Diff-Path: ../patches/3/3-s-1789103956-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.11.18
-! TimeUpdated: 2026-09-11T01:23:05+00:00
+! Version: 2.1.11.19
+! TimeUpdated: 2026-09-11T05:14:43+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -100552,6 +100552,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||7lzwgj.donaukurier.de^
 ||events.plutus.ninja^
 ||metrics.earlygame.com^
 ||pla.uqload.vc^
@@ -313902,6 +313903,7 @@ zonedirector.avadacom.com$image
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
 !
+/get/live/web/_/*$script,~third-party
 /wp-content/plugins/plausible-analytics/*
 /api-integration/ad-rotator/track/*
 /api-integration/ad-rotator/stats^
@@ -314740,11 +314742,13 @@ naver.com#%#//scriptlet('trusted-json-set', 'JSON.stringify', '$.env.br_sr', '38
 !
 ! NOTE: Specific rules
 !
+donaukurier.de##.landing-page__block:has(> .container > div[id^="piano_"] > .tp-cxense-placeholder-inline)
+donaukurier.de#%#//scriptlet('set-local-storage-item', 'glomexUser', '$remove$')
 ||leolist.cc/static/min/js/modules/bam-impressions-
 ||adverts.ie/5g8u/
 ||api.mindbox.ru/*/customer/track-visit?
 ||api.mindbox.ru/*/js/operations/async?*&trackerName
-roomie.jp##.r-article ~ .r-section:has(> div[id^="logly-lift-"])
+roomie.jp##.r-section:has(> div[id^="logly-lift-"])
 roomie.jp##.r-sidesection[data-google-interstitial]
 ||runtimewire.com/api/analytics/*/events|
 newsnow.com#%#//scriptlet('set-session-storage-item', 'nfPageCount', '$remove$')
