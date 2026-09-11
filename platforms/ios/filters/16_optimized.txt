@@ -1,5 +1,5 @@
-! Checksum: wJOBpoWBPDpNcJaxCkxJfw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1789078570-3600.patch
+! Checksum: TbS7WKeyEwqJnCGNJ7n4vA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1789093443-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.74
@@ -560,6 +560,9 @@ ici.radio-canada.ca##.adbox-cls
 cyclismactu.net#$#.stickySidePClong { min-height: auto !important; }
 cyclismactu.net#$#div[id^="ad-slot"] { display: none !important; }
 latribune.fr##div[id*="-ban"]
+bebesetmamans.20minutes.fr##.bannerdesktop
+bebesetmamans.20minutes.fr##.custombannerads
+bebesetmamans.20minutes.fr##div[class^="box_ban"]
 ||20minutes.fr/js/ads-*.min.js
 lesoir.be##.r-panel--bandeau
 clubic.com##.ad-container:not(#style_important)
@@ -572,7 +575,6 @@ gamekult.com##.gk__sidebar__list  > li:has(> .g2__a-dc)
 numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
-dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
 ||epic-funseduction.com/js/popunder.js
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
@@ -2011,6 +2013,7 @@ _werbebanner_
 ||missaffiliate.com^$third-party
 ||misstrends.com^$third-party
 ||mobileoffers-*-download.com^$third-party
+||mobligo.com^$third-party
 ||mobsuccess.com^$third-party
 ||mobvista.com^$third-party
 ||mochiads.com^$third-party
@@ -2058,7 +2061,6 @@ _werbebanner_
 ||shareaholic.com^$third-party
 ||sharemyads.com^$third-party
 ||smartclip.net^$~object,third-party
-||smartmovies.net^$third-party
 ||smartstream.tv^$third-party
 ||spacepush.ru^$third-party
 ||static-od.com^$third-party
@@ -3384,6 +3386,7 @@ voethrusts.cfd
 ||ztdog.com^
 ||zubplekl.com^
 ||zxvflioj.com^
+-monero-miner-
 .aspx?poolid=
 /coinhive.min.js
 /lhnhelpouttab-current.
@@ -3584,9 +3587,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||jumia.*/banners/
 ||kaltura.com^*/a.mp4|$media
 ||laredoute.com/marketing/$third-party,domain=~laredoute.be|~laredoute.ch|~laredoute.co.uk|~laredoute.com|~laredoute.es|~laredoute.fr|~laredoute.gr|~laredoute.hr|~laredoute.it|~laredoute.kr|~laredoute.lu|~laredoute.ma|~laredoute.nl|~laredoute.pl|~laredoute.pt|~laredoute.ru|~laredouteliban.com
-||les-meilleurs-plans.com^$script,subdocument,third-party
 ||lesplansduweb.com^$script,subdocument,third-party
-||lewebfacilement.com^$script,subdocument,third-party
 ||linkshrink.net/content/img/$third-party
 ||loadshare.org/custom/
 ||mangahome.com/store/banners/
@@ -3864,7 +3865,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||elheddaf.com/data/pub/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
-||entreprise-oran.com/file/*/creationsiteweb.
 ||fiches-auto.fr/_carre_300_
 ||file-upload.net/include/$subdocument
 ||firebasestorage.googleapis.com^$domain=avito.ma
@@ -4036,6 +4036,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||batiactu.com/cap_pub/$popup
 ||ddl-island.*/xxx/$popup
 ||permispratique.com/ads/$popup
+||rustica.fr/popunder/$popup
 ||temu.com^*_ads_$popup
 ||tube-teen.fr^$popup,script
 ||wawacity.al/a?$popup
@@ -4087,7 +4088,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###contenu_liens-sponso
 ###contextualAds
 ###contextuel-publicite-video
-###criteoDiv2
 ###custom-ad
 ###desktopAd
 ###desktopMessageAd
@@ -4540,7 +4540,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pjsleads
 ##.placeholder-pub_dfp
 ##.player-adv
-##.player-adx-block
 ##.player-sponsor-block
 ##.player__ads
 ##.player_bg_ad
@@ -4775,7 +4774,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.widget_box_pub
 ##.widget_keleops-ad
 ##.widget_keleops-adhalfpage
-##.widget_om_ads
 ##.widget_positivr-sponsored-posts
 ##.widgetadv
 ##.window-ad-container
@@ -4958,6 +4956,7 @@ animeka.com,europages.fr###sponsor
 ruedesjoueurs.com###supersticiel
 lelmanga.com###teaser3
 tech2tech.fr###text-html-widget-20
+frenchweb.fr###text-html-widget-324
 quick-tutoriel.com###the-post .warning
 plancul-gratuit.fr,plancul-gratuit.org###toast-container
 viewsurf.com###top-ban
@@ -5209,6 +5208,7 @@ gupy.fr##.vrd_label_sponsored
 gupy.fr##.vrd_tickets_sponsored
 positivr.fr##.vsly-player, .positivr-positivrtv-cta
 pornovore.fr##.webcams
+monpetitforfait.com##.widget_custom_html
 place4geek.com##.widget_text.widget.widget_custom_html
 macg.co##.wrapper > a
 boulistenaute.com##.xo-banner-ad-footer
