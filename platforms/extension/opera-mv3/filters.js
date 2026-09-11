@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.89.70",
-			"timeUpdated": "2026-09-11T13:14:27+0000",
+			"version": "2.4.89.71",
+			"timeUpdated": "2026-09-11T15:13:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.11.24",
-			"timeUpdated": "2026-09-11T13:14:51+0000",
+			"version": "2.1.11.25",
+			"timeUpdated": "2026-09-11T15:14:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.53.42",
-			"timeUpdated": "2026-09-11T05:14:51+0000",
+			"version": "2.0.53.43",
+			"timeUpdated": "2026-09-11T15:14:07+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.96",
-			"timeUpdated": "2026-09-11T12:22:14+0000",
+			"version": "2.0.67.97",
+			"timeUpdated": "2026-09-11T15:14:15+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -670,8 +670,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.94.25",
-			"timeUpdated": "2026-09-11T13:16:03+0000",
+			"version": "2.0.94.26",
+			"timeUpdated": "2026-09-11T15:14:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -692,8 +692,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.82.73",
-			"timeUpdated": "2026-09-11T11:14:16+0000",
+			"version": "2.0.82.74",
+			"timeUpdated": "2026-09-11T15:14:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -728,7 +728,7 @@
 		{
 			"filterId": 21,
 			"name": "AdGuard Other Annoyances filter",
-			"description": "Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.",
+			"description": "Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.",
 			"timeAdded": "2022-07-07T07:53:39+0000",
 			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
 			"expires": 864000,
@@ -736,8 +736,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.16",
-			"timeUpdated": "2026-09-11T10:15:39+0000",
+			"version": "2.0.48.17",
+			"timeUpdated": "2026-09-11T15:14:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
