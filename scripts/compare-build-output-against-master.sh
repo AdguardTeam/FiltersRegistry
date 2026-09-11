@@ -515,8 +515,6 @@ else
 fi
 echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 
-# --- Step 2: build mode ---
-
 step_header 2 "Build mode"
 echo "Use build:local (runs generate-cache first) instead of a regular build?"
 if confirm; then
@@ -527,11 +525,10 @@ else
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
 fi
 
-# --- Step 3: filter selection ---
+step_header 3 "Filter selection"
 # Forwarded as -i=/-s= to generate-cache, download-stats and the build, so a
 # quick eval can build a handful of filters instead of the whole registry.
 
-step_header 3 "Filter selection"
 INCLUDED_FILTER_IDS=""
 EXCLUDED_FILTER_IDS=""
 echo "Use filter selection?"
@@ -549,8 +546,6 @@ if confirm; then
     done
 fi
 echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}] exclude=[${EXCLUDED_FILTER_IDS:-none}]"
-
-# --- Step 4: cleanup preference ---
 
 step_header 4 "Cleanup preference"
 echo "Keep worktrees and build output when done?"
@@ -570,8 +565,6 @@ if ! CHANGED_SHA=$(git rev-parse --verify "$CHANGED_BRANCH" 2>/dev/null); then
     echo "${C_RED}${CROSS} Error:${C_RESET} branch '$CHANGED_BRANCH' could not be resolved (deleted since it was picked?)." >&2
     exit 1
 fi
-
-# --- Step 5: set up worktrees (reuse if already present) ---
 
 step_header 5 "Set up worktrees"
 
@@ -625,11 +618,10 @@ setup_worktree() {
 setup_worktree "$BASE_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
-# --- Step 6: install deps in parallel ---
-# Always runs, even for a reused worktree.
-# --mutex network: https://classic.yarnpkg.com/en/docs/cli/#toc-concurrency-and-mutex
 
 step_header 6 "Install dependencies"
+# Always runs, even for a reused worktree.
+# --mutex network: https://classic.yarnpkg.com/en/docs/cli/#toc-concurrency-and-mutex
 
 yarn --cwd "$MASTER_WORK_TREE" install --mutex network > "$LOG_MASTER_INSTALL" 2>&1 &
 PID_MASTER_INSTALL=$!
@@ -645,14 +637,12 @@ if ! wait "$PID_CHANGED_INSTALL"; then
     die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
-# --- Step 7: optimization stats (shared between both builds) ---
+step_header 7 "Optimization stats"
 # Downloaded once (via the $BASE_BRANCH worktree, now that deps are installed)
 # into SHARED_STATS_DIR, then copied into both worktrees. Running download-stats
 # separately per worktree would risk each one seeing a different remote
 # snapshot, adding noise to the diff that has nothing to do with the code change
 # being tested.
-
-step_header 7 "Optimization stats"
 echo "Use local optimization stats cache (shared across both builds)?"
 if confirm; then
     DO_USE_STATS=true
@@ -687,8 +677,6 @@ else
     DO_USE_STATS=false
     echo "${C_CYAN}${ARROW}${C_RESET} Skipping optimization stats"
 fi
-
-# --- Step 8: sync changed worktree's filters/ to the $BASE_BRANCH baseline ---
 
 step_header 8 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
@@ -749,13 +737,9 @@ INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
 EXCLUDED_FILTER_IDS=$EXCLUDED_FILTER_IDS
 EOF
 
-# --- Step 10: report ---
-
 step_header 10 "Report"
 generate_report
 REPORT_STATUS=$?
-
-# --- Step 11: cleanup ---
 
 step_header 11 "Cleanup"
 run_cleanup
