@@ -39,6 +39,12 @@ META_FILE="$TEMP_DIR_NAME/reg-meta.env"
 PLATFORMS_MASTER="$TEMP_DIR_NAME/platforms_${BASE_BRANCH}_build"
 PLATFORMS_CHANGED="$TEMP_DIR_NAME/platforms_changed_build"
 
+# Downloaded once here and copied into both worktrees, instead of each worktree
+# running its own download-stats — the remote data is the same regardless of
+# code changes, so a single shared snapshot keeps the two builds' stats
+# identical and the comparison reproducible.
+SHARED_STATS_DIR="$TEMP_DIR_NAME/optimization/stats"
+
 LOG_DIR_NAME="logs"
 mkdir -p "$TEMP_DIR_NAME/$LOG_DIR_NAME"
 
@@ -46,6 +52,8 @@ LOG_MASTER_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASE_BRANCH}-install.log"
 LOG_CHANGED_INSTALL="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-install.log"
 LOG_MASTER_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/${BASE_BRANCH}-build.log"
 LOG_CHANGED_BUILD="$TEMP_DIR_NAME/$LOG_DIR_NAME/changed-build.log"
+LOG_DOWNLOAD_STATS="$TEMP_DIR_NAME/$LOG_DIR_NAME/download-stats.log"
+LOG_COPY_STATS="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-stats.log"
 LOG_SYNC_BASELINE="$TEMP_DIR_NAME/$LOG_DIR_NAME/sync-baseline.log"
 LOG_COPY_MASTER="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-${BASE_BRANCH}.log"
 LOG_COPY_CHANGED="$TEMP_DIR_NAME/$LOG_DIR_NAME/copy-changed.log"
@@ -193,13 +201,11 @@ die() {
 }
 
 # The yarn subcommands a build runs, in order, one per line. Single source of
-# truth for both the real build (Step 8) and the report's "Build command"
-# line, so the two can't drift. Reads BUILD_MODE / DO_GENERATE_STATS.
+# truth for both the real build (Step 9) and the report's "Build command"
 build_subcommands() {
     local BUILD_MODE=${BUILD_MODE:-plain}
 
     [ "$BUILD_MODE" = "cached" ] && echo "generate-cache"
-    [ "${DO_GENERATE_STATS:-false}" = "true" ] && echo "download-stats"
     [ "$BUILD_MODE" = "plain" ] && echo "build $BUILD_FLAGS" || echo "build:local $BUILD_FLAGS"
 }
 
@@ -238,7 +244,7 @@ load_meta() {
     local _key _val
     while IFS='=' read -r _key _val || [ -n "$_key" ]; do
         case "$_key" in
-            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_GENERATE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
+            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_USE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
                 printf -v "$_key" '%s' "$_val"
                 ;;
         esac
@@ -259,6 +265,18 @@ restore_worktree_platforms() {
 sync_filters_baseline() {
     git -C "$CHANGED_WORK_TREE" rm -r --quiet --ignore-unmatch -- filters &&
         git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/
+}
+
+# Copies SHARED_STATS_DIR into both worktrees' temp/optimization/stats, so
+# build.js's existsSync() check picks it up via localOptimizationStatistics.use()
+# instead of each worktree fetching its own (possibly different) remote snapshot.
+copy_shared_stats_into_worktrees() {
+    local wt
+    for wt in "$MASTER_WORK_TREE" "$CHANGED_WORK_TREE"; do
+        rm -rf "$wt/temp/optimization/stats"
+        mkdir -p "$wt/temp/optimization"
+        cp -r "$SHARED_STATS_DIR" "$wt/temp/optimization/stats" || return 1
+    done
 }
 
 # Waits on one branch's build, copies its platforms/ output into the
@@ -343,12 +361,22 @@ generate_report() {
     filter_args=${filter_args:+ $filter_args}
 
     build_cmd=""
+    [ "${REFRESH_STATS:-false}" = true ] && build_cmd="yarn download-stats$filter_args"
 
     while IFS= read -r build_sub; do
         build_cmd+="${build_cmd:+ && }yarn $build_sub$filter_args"
     done < <(build_subcommands)
 
     echo "Build command:      $build_cmd"
+    if [ "$DO_USE_STATS" = true ]; then
+        if [ "${REFRESH_STATS:-false}" = true ]; then
+            echo "Optimization stats: downloaded to $SHARED_STATS_DIR, shared with both builds"
+        else
+            echo "Optimization stats: reused existing shared cache at $SHARED_STATS_DIR"
+        fi
+    else
+        echo "Optimization stats: not used"
+    fi
     echo "Platforms compared: $(ls "$PLATFORMS_MASTER" | tr '\n' ' ')"
     echo ""
 
@@ -499,21 +527,11 @@ else
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
 fi
 
-step_header 3 "Download per-filter stats"
-echo "Download per-filter stats.json from the percent.json (yarn download-stats)?"
-if confirm; then
-    DO_GENERATE_STATS=true
-    echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
-else
-    DO_GENERATE_STATS=false
-    echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats download"
-fi
-
-# --- Step 4: filter selection ---
+# --- Step 3: filter selection ---
 # Forwarded as -i=/-s= to generate-cache, download-stats and the build, so a
 # quick eval can build a handful of filters instead of the whole registry.
 
-step_header 4 "Filter selection"
+step_header 3 "Filter selection"
 INCLUDED_FILTER_IDS=""
 EXCLUDED_FILTER_IDS=""
 echo "Use filter selection?"
@@ -532,9 +550,9 @@ if confirm; then
 fi
 echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}] exclude=[${EXCLUDED_FILTER_IDS:-none}]"
 
-# --- Step 5: cleanup preference ---
+# --- Step 4: cleanup preference ---
 
-step_header 5 "Cleanup preference"
+step_header 4 "Cleanup preference"
 echo "Keep worktrees and build output when done?"
 if confirm; then
     DO_CLEANUP=false
@@ -553,9 +571,9 @@ if ! CHANGED_SHA=$(git rev-parse --verify "$CHANGED_BRANCH" 2>/dev/null); then
     exit 1
 fi
 
-# --- Step 6: set up worktrees (reuse if already present) ---
+# --- Step 5: set up worktrees (reuse if already present) ---
 
-step_header 6 "Set up worktrees"
+step_header 5 "Set up worktrees"
 
 # Removes the admin entry for a worktree at $1, if it exists but the working tree is missing. Otherwise `git worktree add` will fail as "already registered".
 prune_stale_worktree() {
@@ -607,11 +625,11 @@ setup_worktree() {
 setup_worktree "$BASE_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
-# --- Step 7: install deps in parallel ---
+# --- Step 6: install deps in parallel ---
 # Always runs, even for a reused worktree.
 # --mutex network: https://classic.yarnpkg.com/en/docs/cli/#toc-concurrency-and-mutex
 
-step_header 7 "Install dependencies"
+step_header 6 "Install dependencies"
 
 yarn --cwd "$MASTER_WORK_TREE" install --mutex network > "$LOG_MASTER_INSTALL" 2>&1 &
 PID_MASTER_INSTALL=$!
@@ -625,6 +643,49 @@ if ! wait "$PID_MASTER_INSTALL"; then
 fi
 if ! wait "$PID_CHANGED_INSTALL"; then
     die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
+fi
+
+# --- Step 7: optimization stats (shared between both builds) ---
+# Downloaded once (via the $BASE_BRANCH worktree, now that deps are installed)
+# into SHARED_STATS_DIR, then copied into both worktrees. Running download-stats
+# separately per worktree would risk each one seeing a different remote
+# snapshot, adding noise to the diff that has nothing to do with the code change
+# being tested.
+
+step_header 7 "Optimization stats"
+echo "Use local optimization stats cache (shared across both builds)?"
+if confirm; then
+    DO_USE_STATS=true
+    if [ -d "$SHARED_STATS_DIR" ] && [ -n "$(ls -A "$SHARED_STATS_DIR" 2>/dev/null)" ]; then
+        echo "Found existing shared stats at $SHARED_STATS_DIR."
+        echo "Refresh them (yarn download-stats) before building?"
+        if confirm; then REFRESH_STATS=true; else REFRESH_STATS=false; fi
+    else
+        echo "${C_CYAN}${ARROW}${C_RESET} No shared stats found; will download"
+        REFRESH_STATS=true
+    fi
+
+    if [ "$REFRESH_STATS" = true ]; then
+        STATS_FILTER_ARGS=$(filter_flags)
+        # shellcheck disable=SC2086
+        if ! run_with_spinner "downloading shared optimization stats" "$LOG_DOWNLOAD_STATS" \
+            yarn --cwd "$MASTER_WORK_TREE" download-stats $STATS_FILTER_ARGS; then
+            die "downloading optimization stats FAILED" "$LOG_DOWNLOAD_STATS"
+        fi
+        rm -rf "$SHARED_STATS_DIR"
+        mkdir -p "$(dirname "$SHARED_STATS_DIR")"
+        cp -r "$MASTER_WORK_TREE/temp/optimization/stats" "$SHARED_STATS_DIR"
+    else
+        echo "${C_CYAN}${ARROW}${C_RESET} Reusing existing shared stats"
+    fi
+
+    if ! run_with_spinner "copying shared stats into both worktrees" "$LOG_COPY_STATS" \
+        copy_shared_stats_into_worktrees; then
+        die "copying shared stats into worktrees FAILED" "$LOG_COPY_STATS"
+    fi
+else
+    DO_USE_STATS=false
+    echo "${C_CYAN}${ARROW}${C_RESET} Skipping optimization stats"
 fi
 
 # --- Step 8: sync changed worktree's filters/ to the $BASE_BRANCH baseline ---
@@ -683,7 +744,7 @@ MASTER_SHA=$MASTER_SHA
 CHANGED_SHA=$CHANGED_SHA
 CHANGED_BRANCH=$CHANGED_BRANCH
 BUILD_MODE=$BUILD_MODE
-DO_GENERATE_STATS=$DO_GENERATE_STATS
+DO_USE_STATS=$DO_USE_STATS
 INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
 EXCLUDED_FILTER_IDS=$EXCLUDED_FILTER_IDS
 EOF

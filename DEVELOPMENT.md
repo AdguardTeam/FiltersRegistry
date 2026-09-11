@@ -131,12 +131,14 @@ yarn compare-build-output
 
 It prompts for the branch to compare (defaulting to the current branch;
 `master` itself is never offered as a choice); for the build mode — a plain
-`build`, or `build:local` from cached sources, the latter with separate
-follow-up prompts for running `generate-cache` and `download-stats` first;
-for an optional filter-ID selection (`--include` / `--skip`, forwarded to
-every build command so a quick check can build a handful of filters); and
-for whether to remove the build artifacts when finished. Under the hood it
-builds `master` and the compare branch
+`build`, or `build:local` from cached sources, the latter with a follow-up
+prompt for running `generate-cache` first; for an optional filter-ID
+selection (`--include` / `--skip`, forwarded to every build command so a
+quick check can build a handful of filters); for whether to use optimization
+stats, downloaded once into a shared `temp/optimization/stats` and copied
+into both worktrees so both builds see the same snapshot instead of each
+fetching its own; and for whether to remove the build artifacts when
+finished. Under the hood it builds `master` and the compare branch
 in parallel via git worktrees under `temp/`, with a progress spinner on the
 slow steps (install, build, copy, restore, cleanup); it also resets the
 compare worktree's `filters/` to the master version first, so `revision.json`
