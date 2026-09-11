@@ -279,7 +279,7 @@ copy_shared_stats_into_worktrees() {
     local wt
     for wt in "$MASTER_WORK_TREE" "$CHANGED_WORK_TREE"; do
         rm -rf "$wt/$STATS_BASE_PATH_REL"
-        mkdir -p "$wt/$STATS_BASE_PATH_REL"
+        mkdir -p "$(dirname "$wt/$STATS_BASE_PATH_REL")"
         cp -r "$SHARED_STATS_DIR" "$wt/$STATS_BASE_PATH_REL" || return 1
     done
 }
@@ -668,6 +668,13 @@ if confirm; then
         if ! run_with_spinner "downloading shared optimization stats" "$LOG_DOWNLOAD_STATS" \
             yarn --cwd "$MASTER_WORK_TREE" download-stats $STATS_FILTER_ARGS; then
             die "downloading optimization stats FAILED" "$LOG_DOWNLOAD_STATS"
+        fi
+        # download-stats reported success but left nothing behind:
+        # Don't wipe the previous good shared snapshot for a broken one.
+        if [ ! -d "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL" ] \
+            || [ -z "$(ls -A "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL" 2>/dev/null)" ]; then
+            die "download-stats reported success but produced no stats at $MASTER_WORK_TREE/$STATS_BASE_PATH_REL" \
+                "$LOG_DOWNLOAD_STATS"
         fi
         rm -rf "$SHARED_STATS_DIR"
         mkdir -p "$(dirname "$SHARED_STATS_DIR")"
