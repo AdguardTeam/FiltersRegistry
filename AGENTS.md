@@ -100,7 +100,8 @@ for all supported AdGuard products.
 | `yarn expand-wildcard-domains` | Expand wildcard domains in platform builds |
 | `yarn compress` | Compress repository data |
 
-`yarn build:local` reuses `temp/optimization/stats/` when present and otherwise fetches stats from the remote server.
+`yarn build` and `yarn build:local` both reuse `temp/optimization/stats/` when present
+and otherwise fetch stats from the remote server.
 
 `yarn download-stats` stages fetches in a temp directory and swaps in the whole stats directory
 only after every fetch succeeds. `--include` / `--skip` scope which filters are fetched,

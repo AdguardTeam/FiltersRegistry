@@ -106,9 +106,9 @@ trap on_interrupt INT TERM HUP
 ARROW="→"
 CHECK="✓"
 CROSS="✗"
-TOTAL_STEPS=10
+TOTAL_STEPS=11
 
-# Prints a blank line and a bold "Step N/10: <title>" header.
+# Prints a blank line and a bold "Step N/TOTAL_STEPS: <title>" header.
 step_header() {
     echo ""
     echo "${C_BOLD}Step $1/$TOTAL_STEPS: $2${C_RESET}"
@@ -194,16 +194,13 @@ die() {
 
 # The yarn subcommands a build runs, in order, one per line. Single source of
 # truth for both the real build (Step 8) and the report's "Build command"
-# line, so the two can't drift. Reads BUILD_MODE / DO_GENERATE_CACHE /
-# DO_GENERATE_STATS.
+# line, so the two can't drift. Reads BUILD_MODE / DO_GENERATE_STATS.
 build_subcommands() {
-    if [ "${BUILD_MODE:-plain}" != "cached" ]; then
-        echo "build $BUILD_FLAGS"
-        return
-    fi
-    [ "${DO_GENERATE_CACHE:-false}" = "true" ] && echo "generate-cache"
+    local BUILD_MODE=${BUILD_MODE:-plain}
+
+    [ "$BUILD_MODE" = "cached" ] && echo "generate-cache"
     [ "${DO_GENERATE_STATS:-false}" = "true" ] && echo "download-stats"
-    echo "build:local $BUILD_FLAGS"
+    [ "$BUILD_MODE" = "plain" ] && echo "build $BUILD_FLAGS" || echo "build:local $BUILD_FLAGS"
 }
 
 # Given a ref and the SHA a previous run recorded for it, returns a dim
@@ -234,14 +231,14 @@ has_built_output() {
     [ -n "$(find "$1" -name '*.txt' -print -quit 2>/dev/null)" ]
 }
 
-# Loads the meta file written by Step 8 into its known variables. Parses
-# rather than `source`s it: CHANGED_BRANCH is a git refname and may legally
+# Loads the meta file into its known variables. Parses rather than `source`s it:
+# CHANGED_BRANCH is a git refname and may legally
 # contain $(...) or backticks, which `source` would execute.
 load_meta() {
     local _key _val
     while IFS='=' read -r _key _val || [ -n "$_key" ]; do
         case "$_key" in
-            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_GENERATE_CACHE|DO_GENERATE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
+            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_GENERATE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
                 printf -v "$_key" '%s' "$_val"
                 ;;
         esac
@@ -249,7 +246,7 @@ load_meta() {
 }
 
 # Restores a worktree's platforms/ to its checked-out state, undoing the
-# Step 8 wipe and whatever the build wrote into it.
+# Step 9 wipe and whatever the build wrote into it.
 restore_worktree_platforms() {
     git -C "$1" checkout --quiet -- platforms/ &&
         git -C "$1" clean --quiet -fd -- platforms/
@@ -266,7 +263,7 @@ sync_filters_baseline() {
 
 # Waits on one branch's build, copies its platforms/ output into the
 # comparison directory, then restores the worktree's platforms/
-# Step 8 wipes it before building, and the built output is captured in $dest.
+# Step 9 wipes it before building, and the built output is captured in $dest.
 # Sets BUILD_FAILED=true on any failure.
 # Args: label  pid  build_log  worktree  dest  copy_log
 collect_build() {
@@ -311,7 +308,7 @@ discard_previous_output() {
 }
 
 # Honors DO_CLEANUP: either runs cleanup_all or prints what was kept and
-# where. Called from Step 10 and from the build-failure path, so a failed run
+# where. Called from Step 11 and from the build-failure path, so a failed run
 # also respects the cleanup choice instead of always leaving state behind.
 run_cleanup() {
     if [ "$DO_CLEANUP" = true ]; then
@@ -493,42 +490,30 @@ echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 # --- Step 2: build mode ---
 
 step_header 2 "Build mode"
-echo "Use cached sources instead of a regular build?"
+echo "Use build:local (runs generate-cache first) instead of a regular build?"
 if confirm; then
     BUILD_MODE=cached
-    echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
-
-    # Neither is required every run — an existing filter.txt cache and stats
-    # can be reused, so both default to skip.
-    echo "Generate filter.txt cache (yarn generate-cache)?"
-    if confirm; then
-        DO_GENERATE_CACHE=true
-        echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
-    else
-        DO_GENERATE_CACHE=false
-        echo "${C_CYAN}${ARROW}${C_RESET} Skipping generate-cache, reusing existing cache"
-    fi
-
-    echo "Download per-filter stats.json from the cached percent.json (yarn download-stats)?"
-    if confirm; then
-        DO_GENERATE_STATS=true
-        echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
-    else
-        DO_GENERATE_STATS=false
-        echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats download"
-    fi
+    echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached"
 else
     BUILD_MODE=plain
-    DO_GENERATE_CACHE=false
-    DO_GENERATE_STATS=false
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
 fi
 
-# --- Step 3: filter selection ---
+step_header 3 "Download per-filter stats"
+echo "Download per-filter stats.json from the percent.json (yarn download-stats)?"
+if confirm; then
+    DO_GENERATE_STATS=true
+    echo "${C_CYAN}${ARROW}${C_RESET} Will run download-stats before build:local"
+else
+    DO_GENERATE_STATS=false
+    echo "${C_CYAN}${ARROW}${C_RESET} Skipping stats download"
+fi
+
+# --- Step 4: filter selection ---
 # Forwarded as -i=/-s= to generate-cache, download-stats and the build, so a
 # quick eval can build a handful of filters instead of the whole registry.
 
-step_header 3 "Filter selection"
+step_header 4 "Filter selection"
 INCLUDED_FILTER_IDS=""
 EXCLUDED_FILTER_IDS=""
 echo "Use filter selection?"
@@ -547,9 +532,9 @@ if confirm; then
 fi
 echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}] exclude=[${EXCLUDED_FILTER_IDS:-none}]"
 
-# --- Step 4: cleanup preference ---
+# --- Step 5: cleanup preference ---
 
-step_header 4 "Cleanup preference"
+step_header 5 "Cleanup preference"
 echo "Keep worktrees and build output when done?"
 if confirm; then
     DO_CLEANUP=false
@@ -568,9 +553,9 @@ if ! CHANGED_SHA=$(git rev-parse --verify "$CHANGED_BRANCH" 2>/dev/null); then
     exit 1
 fi
 
-# --- Step 5: set up worktrees (reuse if already present) ---
+# --- Step 6: set up worktrees (reuse if already present) ---
 
-step_header 5 "Set up worktrees"
+step_header 6 "Set up worktrees"
 
 # Removes the admin entry for a worktree at $1, if it exists but the working tree is missing. Otherwise `git worktree add` will fail as "already registered".
 prune_stale_worktree() {
@@ -622,11 +607,11 @@ setup_worktree() {
 setup_worktree "$BASE_BRANCH" "$MASTER_WORK_TREE" "$MASTER_SHA"
 setup_worktree "$CHANGED_BRANCH" "$CHANGED_WORK_TREE" "$CHANGED_SHA"
 
-# --- Step 6: install deps in parallel ---
+# --- Step 7: install deps in parallel ---
 # Always runs, even for a reused worktree.
 # --mutex network: https://classic.yarnpkg.com/en/docs/cli/#toc-concurrency-and-mutex
 
-step_header 6 "Install dependencies"
+step_header 7 "Install dependencies"
 
 yarn --cwd "$MASTER_WORK_TREE" install --mutex network > "$LOG_MASTER_INSTALL" 2>&1 &
 PID_MASTER_INSTALL=$!
@@ -642,17 +627,17 @@ if ! wait "$PID_CHANGED_INSTALL"; then
     die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
-# --- Step 7: sync changed worktree's filters/ to the $BASE_BRANCH baseline ---
+# --- Step 8: sync changed worktree's filters/ to the $BASE_BRANCH baseline ---
 
-step_header 7 "Sync filters/ baseline"
+step_header 8 "Sync filters/ baseline"
 if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
     sync_filters_baseline; then
     die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
-# --- Step 8: build both branches in parallel ---
+# --- Step 9: build both branches in parallel ---
 
-step_header 8 "Build both branches"
+step_header 9 "Build both branches"
 
 # Clear the platforms/ directory in each worktree to ensure the output
 # reflects only the current run. Without this, a filtered build would
@@ -688,7 +673,7 @@ collect_build "$CHANGED_BRANCH" "$PID_CHANGED_BUILD" "$LOG_CHANGED_BUILD" \
 
 if [ "$BUILD_FAILED" = true ]; then
     rm -f "$META_FILE"
-    step_header 10 "Cleanup"
+    step_header 11 "Cleanup"
     run_cleanup
     exit 1
 fi
@@ -698,21 +683,20 @@ MASTER_SHA=$MASTER_SHA
 CHANGED_SHA=$CHANGED_SHA
 CHANGED_BRANCH=$CHANGED_BRANCH
 BUILD_MODE=$BUILD_MODE
-DO_GENERATE_CACHE=$DO_GENERATE_CACHE
 DO_GENERATE_STATS=$DO_GENERATE_STATS
 INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
 EXCLUDED_FILTER_IDS=$EXCLUDED_FILTER_IDS
 EOF
 
-# --- Step 9: report ---
+# --- Step 10: report ---
 
-step_header 9 "Report"
+step_header 10 "Report"
 generate_report
 REPORT_STATUS=$?
 
-# --- Step 10: cleanup ---
+# --- Step 11: cleanup ---
 
-step_header 10 "Cleanup"
+step_header 11 "Cleanup"
 run_cleanup
 
 exit "$REPORT_STATUS"
