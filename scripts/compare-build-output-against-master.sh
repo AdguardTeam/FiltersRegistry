@@ -596,6 +596,8 @@ setup_worktree() {
                 git -C "$path" checkout -f "$sha"; then
                 die "[$label] checkout in reused worktree FAILED" "$log_path"
             fi
+            # remove the stale optimization stats; new ones must be copied from $SHARED_STATS_DIR.
+            rm -rf "$path/temp/optimization/stats"
             return 0
         fi
         echo "${C_CYAN}${ARROW}${C_RESET} [$label] recreating worktree at $path"
