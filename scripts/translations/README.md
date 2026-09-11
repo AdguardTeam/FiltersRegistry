@@ -4,7 +4,7 @@ The `/locales` directory contains translations for filters, groups, and tags.
 
 ## Requirements
 
-1. For third-party filters, only [`REQUIRED_LOCALES`](../validation/validate_locales.js) should be 100% complete.
+1. For third-party filters, only [`REQUIRED_LOCALES`](../validation/validate_locales.ts) should be 100% complete.
 
 1. For AdGuard filters, **all locales** are required, meaning they must be 100% translated.
 
