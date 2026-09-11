@@ -10,15 +10,16 @@ concurrency:
   group: update-translations
   cancel-in-progress: false
 
-permissions:
-  contents: write      # push the update-translations branch (default GITHUB_TOKEN)
-  pull-requests: write # create/update the translations PR
-  issues: write        # report locales validation failures as PR comments
-
 jobs:
   update:
     name: Download translations and open a PR
     runs-on: ubuntu-latest
+    # Push the update-translations branch, create/update the translations PR
+    # and post validation-failure comments with the default GITHUB_TOKEN.
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
@@ -29,6 +30,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -40,7 +42,7 @@ jobs:
       # Validation must not block PR creation: the branch is pushed and the PR is
       # opened regardless. Validation errors are reported as a PR comment below,
       # and the job is failed at the end to trigger the Slack notification.
-      # validate_locales.js writes the report to report_locales_error_<date>.md
+      # validate_locales.ts writes the report to report_locales_error_<date>.md
       # (gitignored) on failure and removes stale reports otherwise.
       - name: Validate locales
         id: validate
@@ -51,7 +53,8 @@ jobs:
       # single step; does nothing when there are no translation changes. The branch
       # is pushed and the PR is opened regardless of the validation result above.
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+        id: create-pr
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: 'skip ci: update translations'
           add-paths: locales
@@ -147,6 +150,10 @@ jobs:
     name: Send Slack notification on failure
     runs-on: ubuntu-latest
     needs: update
+    # The notification job only reads repo data, so the default read-only token
+    # is enough; do not grant it the write permissions of the update job.
+    permissions:
+      contents: read
     if:
       ${{
         always() &&
