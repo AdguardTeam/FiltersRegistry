@@ -1,8 +1,8 @@
-! Checksum: QdG8Qcd96WSz1nPOnGeQKA
+! Checksum: 81T84V4D3xTKYFjG0hh+pA
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.9
-! TimeUpdated: 2026-09-03T07:16:59+00:00
+! Version: 2.0.14.21
+! TimeUpdated: 2026-09-11T01:23:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -534,6 +534,27 @@ $removeparam=tduid
 ! Good: ||example.org^$removeparam=cx
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240997
+||myfans.jp^$removeparam=aff
+! https://github.com/AdguardTeam/AdguardFilters/issues/240949
+||asahi.com^$removeparam=oai
+! https://github.com/AdguardTeam/AdguardFilters/issues/240949
+||yomiuri.co.jp^$removeparam=from
+||yomiuri.co.jp^$removeparam=ref
+! https://github.com/AdguardTeam/AdguardFilters/issues/240762
+||sponichi.co.jp^$removeparam=nid
+||sponichi.co.jp^$removeparam=ref
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18320740
+||medal.tv^$removeparam=invite
+! https://github.com/AdguardTeam/AdguardFilters/issues/240640
+||rumble.com^$removeparam=e9s
+||rumble.com^$removeparam=sci
+! https://github.com/AdguardTeam/AdguardFilters/issues/240278
+||bookbang.jp^$removeparam=ui_campaign
+||bookbang.jp^$removeparam=ui_medium
+||bookbang.jp^$removeparam=ui_source
+! https://github.com/AdguardTeam/AdguardFilters/issues/240089
+||vivareal.com.br^$removeparam=source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240006
 ||video.unext.jp^$removeparam=abm
 ||video.unext.jp^$removeparam=adid
@@ -2084,10 +2105,10 @@ $removeparam=wgexpiry,domain=ibood.com|decathlon.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162003
 ||rapidgator.net^$removeparam=referer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161972
-||donation.yahoo.co.jp^$removeparam=cpt_n
-||donation.yahoo.co.jp^$removeparam=cpt_s
-||donation.yahoo.co.jp^$removeparam=cpt_m
-||donation.yahoo.co.jp^$removeparam=cpt_c
+.yahoo.co.jp^$removeparam=cpt_n
+.yahoo.co.jp^$removeparam=cpt_s
+.yahoo.co.jp^$removeparam=cpt_m
+.yahoo.co.jp^$removeparam=cpt_c
 ! tinkoff.ru
 ||tinkoff.ru^$removeparam=dsp_click_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161229
@@ -3208,6 +3229,7 @@ $removeparam=a_aid,domain=expressvpn.com|vpnarea.com|wook.pt|affiliate.privatevp
 ! kohls.com - counter
 ||kohls.com^$removeparam=CID
 ! instagram.com - share tracking
+||instagram.com^$removeparam=stkn
 ||instagram.com^$removeparam=ig_rid
 ||instagram.com^$removeparam=igsh
 $removeparam=igshid,domain=instagram.com|threads.com|threads.net
@@ -3344,8 +3366,6 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ||google.*/search$removeparam=oq
 ||google.*/search$removeparam=oe
 ||google.*/websearch$removeparam=visit_id
-||google.*/search$removeparam=biw
-||google.*/search$removeparam=bih
 ||google.*/search$removeparam=sa
 ||google.*/search$removeparam=source
 ||google.*/search$removeparam=aqs

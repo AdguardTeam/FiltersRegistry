@@ -1,9 +1,9 @@
-! Checksum: ho8BX9zE6edgQsf0keTLrg
-! Diff-Path: ../patches/260/260-s-1788453561-14400.patch
+! Checksum: fE1phyLiihhwOpR9nzdP/g
+! Diff-Path: ../patches/260/260-s-1789088805-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.71
-! TimeUpdated: 2026-09-03T16:36:58+00:00
+! Version: 2.0.1.84
+! TimeUpdated: 2026-09-11T01:04:36+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -85,6 +85,9 @@ new.express.adobe.com##.nav-tile[aria-label="Generative AI"]
 ! -- https://photoshop.adobe.com/
 ! "Generate an image" button under "Make a quick edit"
 photoshop.adobe.com##.promptbar-quick-edit-button[label="Generate an image"]
+! -- https://community.adobe.com/questions-729/can-t-reset-my-preferences-to-default-in-cs6-1389334
+! Sidebar - Adobe Firefly promo
+community.adobe.com##.Sidebarmodule > [data-css-anchor="widget-html_widget"]:has(.ffcg-card)
 ! =============
 ! == Alibaba ==
 ! =============
@@ -276,7 +279,10 @@ docs.aws.amazon.com##button[aria-label="Search with Docs AI"]
 docs.aws.amazon.com#$#div:has(> [data-testid="agentic-search-trigger"]) { background: #bbb !important }
 ! -- https://docs.aws.amazon.com/search/doc-search.html?searchQuery=test
 ! "Docs AI" tab on search results page
-docs.aws.amazon.com##.awsui_tabs-tab_14rmt_1cc6a_216:has([data-testid="ai"])
+docs.aws.amazon.com##[class^="awsui_tabs-tab_14rmt_"]:has([data-testid="ai"])
+! -- https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html
+! "Agent Setup" button
+docs.aws.amazon.com##[data-testid="agent-toolkit-setup-button"]
 ! =========
 ! == B&Q ==
 ! =========
@@ -364,6 +370,8 @@ www.bing.com##.cdxCopilotIconBg
 www.bing.com###aitools
 ! AI tools search suggestions (mobile only)
 www.bing.com###sa_ai_block
+! Autocomplete suggestion for "Image Creator"
+www.bing.com#%#//scriptlet('ubo-json-edit', '$.s[?@.t=="AI"]')
 ! -- https://www.bing.com/search?q=test (generic search page)
 ! Navbar tabs for "Search" and "Copilot"
 www.bing.com###b-scopeListItem-copilotsearch
@@ -411,6 +419,16 @@ www.bing.com#?##ShoppingLandingPage_ShoppingEducation:contains(Try it on Copilot
 ! -- https://rewards.bing.com/
 ! Earn > Microsoft Unlocked
 rewards.bing.com##mee-card:has([aria-label="Microsoft Unlocked, Stories from the heart and soul of AI innovation, Explore now"])
+! ===============
+! == Bitwarden ==
+! ===============
+! -- https://bitwarden.com/products/business/
+! Header banner for securing AI agents
+bitwarden.com###landing-page > .w-full.border-deepBlue:has([href="/solutions/agentic-ai-security/"])
+! Floating AI button
+bitwarden.com##button[aria-label="Open AI chat"]
+! -- https://bitwarden.com/help/
+bitwarden.com##button[aria-label^="Ask AI"]
 ! ===============
 ! == Bloomberg ==
 ! ===============
@@ -991,6 +1009,13 @@ www.dummies.com###engage-ai
 ! -- https://support-qa.eplus.jp/hc/ja
 ! Chatbot
 support-qa.eplus.jp##iframe[title="AI Chat Support"]
+! =================================
+! == East Herts District Council ==
+! =================================
+! -- https://www.eastherts.gov.uk/
+! Floating chatbot popup
+||messenger.ebiai.app/static/js/main.js$script,domain=www.eastherts.gov.uk
+www.eastherts.gov.uk###block-eastherts-chatbotebiai
 ! ==========
 ! == eBay ==
 ! ==========
@@ -1152,6 +1177,14 @@ firstpost.com###ia-search
 ! Review summary
 www.foodnetwork.com##.reviewsSummary
 ! ============
+! == Forbes ==
+! ============
+! -- https://www.forbes.com/sites/jonmarkman/2026/09/03/googles-gemini-38-flash-brings-frontier-level-work-to-its-cheap-tier/
+! Article voiceover
+www.forbes.com##.jwGQ_
+! Article summary
+www.forbes.com##.genAiSummary
+! ============
 ! == Ful.io ==
 ! ============
 ! -- https://ful.io/blog/top-5-json-viewer-chrome-extensions-you-need-to-check-out
@@ -1253,6 +1286,8 @@ github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > s
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
 ! Left sidebar - MCP Registry
 github.com##[data-component="NavList.Item"][href="/mcp"]
+! Right sidebar - GitHub Copilot Day
+github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
 ! Right sidebar - Copilot promo banner
 github.com##.DashboardBannerCopilotApp
 ! Right sidebar - Changelog posts containing ai terms
@@ -2054,6 +2089,11 @@ indianstartupnews.com###nudgeai-widget
 ! Hide AI tagged images
 ! * Will not filter front page. Only applies to search results.
 inkbunny.net##:is(.widget_thumbnailCompleteFromSubmission,.widget_thumbnailLargeCompleteFromSubmission,.widget_thumbnailHugeCompleteFromSubmission):has(img:is([title*="ai art"], [title*="ai assisted"], [title*="ai generated"], [title*="ai-generated"], [title*="aigenerated"], [title*="stable diffusion"]))
+! ================
+! == Inno Supps ==
+! ================
+! Floating chatbot
+||app.alhena.ai/ai_agents/shopify_script_tag.js$script,domain=www.innosupps.com
 ! =============
 ! == Insight ==
 ! =============
@@ -2430,11 +2470,11 @@ support.microsoft.com,www.microsoft.com,www.xbox.com##li > a[href="https://www.m
 ! * Copilot tab
 support.microsoft.com,www.xbox.com##li > a[href="https://copilot.microsoft.com/"]
 ! Footer
-blogs.windows.com,microsoft.com##li:has(> [href*="/microsoft-copilot/"])
-blogs.windows.com,microsoft.com##li:has(> [href$="/microsoft-365-copilot?icid=DSM_Footer_Microsoft365Copilot"])
-blogs.windows.com,microsoft.com##li:has(> [href$="/ai?icid=DSM_Footer_AI"])
-blogs.windows.com,microsoft.com##li:has(> [href="https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_Footer_SupportAIMarketplace&ocid=cmm3atxvn98"])
-blogs.windows.com,microsoft.com##li:has(> [href$="/education/ai-in-education"])
+blogs.windows.com,developercommunity.visualstudio.com,microsoft.com##li:has(> [href*="/microsoft-copilot/"])
+blogs.windows.com,developercommunity.visualstudio.com,microsoft.com##li:has(> [href$="/microsoft-365-copilot?icid=DSM_Footer_Microsoft365Copilot"])
+blogs.windows.com,developercommunity.visualstudio.com,microsoft.com##li:has(> [href$="/ai?icid=DSM_Footer_AI"])
+blogs.windows.com,developercommunity.visualstudio.com,microsoft.com##li:has(> [href="https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_Footer_SupportAIMarketplace&ocid=cmm3atxvn98"])
+blogs.windows.com,developercommunity.visualstudio.com,microsoft.com##li:has(> [href$="/education/ai-in-education"])
 ! * No longer used?
 microsoft.com##li:has(> [href$="/windows/ai-features?icid=DSM_Footer_WhatsNew_AIinWindows"])
 ! "Store Assistant" chat box pinned to bottom right
@@ -2456,7 +2496,7 @@ www.microsoft.com##[data-bi-id="Button-Cta-SplitScreen-LearnWithCopilot"]
 azure.microsoft.com,www.microsoft.com##.uca-assistant-drawer-button
 azure.microsoft.com,www.microsoft.com##.uca-assistant-drawer-panel
 ! "Ask Microsoft" in middle of page
-www.microsoft.com##.chatgpt-banner
+azure.microsoft.com,www.microsoft.com##.chatgpt-banner
 ! "Ask Microsoft" chat box that appears after a delay
 www.microsoft.com###uca-proactive-chat
 ! -- https://www.microsoft.com/en-us/microsoft-365
@@ -2468,6 +2508,9 @@ www.microsoft.com##.experiencefragment:has([data-component-id="01dbc0460ff412456
 ! -- https://www.microsoft.com/en-us/search/explore?q=How+do+I+update+windows (Search results)
 ! "AI Overview"
 www.microsoft.com###ai-overview-container
+! -- https://azure.microsoft.com/en-us
+! Header banner for GitHub Copilot enterprise plan
+azure.microsoft.com##.ocr-announcement-banner[data-component-id="01dbc0460ff412456ec49899ac06c10e"]
 ! ====================
 ! == Microsoft Azure ==
 ! ====================
@@ -2765,6 +2808,11 @@ www.nike.com##.nav-css-1f9nce4:has(> [data-testid="ask-nikeai-search-result"])
 ! ===============
 ! Shop with AI in header
 www.nordstrom.com##.j_24W
+! ================
+! == Northflank ==
+! ================
+! Header promo banner - AI SDLC
+northflank.com##aside:has(> [href="/blog/ai-sdlc"])
 ! ======================
 ! == NutraIngredients ==
 ! ======================
@@ -3033,6 +3081,22 @@ www.qwant.com##._1xQVj.cqvg5:has(> .B6E61)
 ! -- https://www.qwant.com/?q=test&t=web
 ! Flash Answer in search options
 www.qwant.com##._1xQVj.G-2qb.xsF9p.KC1qb:has(#llmMode)
+! ===============
+! == Rackspace ==
+! ===============
+! -- https://docs.rackspace.com/docs/clustering-concepts
+! Copy Page button > Open in AI options
+docs.rackspace.com##.Menu-Item[href^="https://chat.openai.com/?q="]
+docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="]
+docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="] + .Menu-Divider
+! ===========
+! == Razer ==
+! ===========
+! -- https://www.razer.com/
+! Header - Razer.AI
+www.razer.com##[data-more-menu-uid="mm-razer-ai-node"]
+! Footer - AI Gaming Newsletter
+www.razer.com##li:has(> [href="https://www.razer.com/newsletter/ai"])
 ! =============
 ! == Rambler ==
 ! =============
@@ -3044,10 +3108,20 @@ www.rambler.ru##.rc__788yz.rc__U-mRx.r-vvrm5f4e
 ! -- https://realpython.com/
 ! Navbar > Learn Python > Code Mentor
 realpython.com##.dropdown-item[href="/mentor/"]
-! Sidebar > AI topic
-realpython.com##.sidebar-module > [href="/tutorials/ai/"]
 ! Explore Real Python section > Code Mentor
 realpython.com#$#.card:has([href="/mentor/"]) { visibility: hidden }
+! =============
+! == Real.gr ==
+! =============
+! -- https://www.real.gr/kosmos/arthro/mazikes-apelaseis-kai-xechorista-scholeia-gia-prosfyges-to-orama-tou-afd-gia-ti-germania-915609/
+! Article summary
+www.real.gr###real-article-summary-holder
+! =============
+! == Red Hat ==
+! =============
+! -- https://docs.redhat.com/documentation/red_hat_enterprise_linux/5/html/cluster_suite_overview/index
+! Navbar - Ask AI button
+docs.redhat.com##.ask-red-hat-button-container
 ! ============
 ! == Reddit ==
 ! ============
@@ -3062,7 +3136,7 @@ www.reddit.com##.expanded-composer-ask-pill
 ! * Also blocks weekly viewer count. Unclear if this can be avoided.
 www.reddit.com##[data-testid="search-sdui-typeahead-suggestion"] .inline-block.text-neutral-content-weak
 ! Recommended posts from AI subreddits
-www.reddit.com#?#shreddit-post[recommendation-source]:matches-attr(subreddit-name="/^(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)$/")
+www.reddit.com#?#shreddit-post[recommendation-source]:matches-attr(subreddit-name="/^(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)$/")
 ! -- https://www.reddit.com/search/?q=legal+eagle+bricks+and+minifigs
 ! "What people are saying" section
 www.reddit.com##search-telemetry-tracker[view-events="search/view/unit"]:has(search-answers-expandable, search-answers-response-container-streaming, .search-answers-preview-section)
@@ -3075,9 +3149,9 @@ www.reddit.com###answers-nav-button
 www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp)
 www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp) + hr
 ! "People also ask about" section (Mobile only)
-www.reddit.com###answers-suggested-queries
+www.reddit.com##[id^="answers-suggested-queries"]
 ! Suggestions to repost to AI subreddit (If post was by current user)
-www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
+www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
 ! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
 ! AI-linked keywords in comments
 ! * Based on https://www.reddit.com/r/uBlockOrigin/comments/1vt6sgy/comment/p4rdpz2/
@@ -3268,6 +3342,18 @@ sleepopolis.com###art-chat-widget
 ! Comment summary
 slickdeals.net##.commentsSummaryModuleV2 > .commentsSummaryModuleV2__header
 slickdeals.net##.commentsSummaryModuleV2 > .commentsSummaryModuleV2__card:has(> .commentsSummaryModuleV2__summary)
+! ==============
+! == Softonic ==
+! ==============
+! Header category
+softonic.com##.js-menu-featured-item[data-track-section-id="ai"]
+! Trending content
+softonic.com##li:has(> [data-track-category-id="ai"])
+! Most popular categories
+softonic.com##li:has(> [data-meta="card-category"] > [href="https://en.softonic.com/ai/windows"])
+! Sidebar - Apps - AI
+softonic.com##li:has(> #ai-menu-status-id)
+softonic.com##li:has(> [data-track-category-id="ai-hub"])
 ! ===========
 ! == Sogou ==
 ! ===========
@@ -3409,11 +3495,23 @@ www.supersummary.com##.MuiButtonBase-root[href$="#ai-tools-page-header"]
 www.supersummary.com##.edk5i7v1:has([data-testid="AutoFixHighOutlinedIcon"])
 ! Floating "Ask SuperSummary" button
 www.supersummary.com##.e1jtsgu01:has(> [src="/ai-assistant-icon.svg"])
+! ==========
+! == Suse ==
+! ==========
+! Chatbot in sidebar
+||js.qualified.com$script,domain=www.suse.com
 ! =================
 ! == Talent Yard ==
 ! =================
 ! Floating assistant icon
 talent.performyard.com#%#//scriptlet('json-prune-fetch-response', '*', '', '/v1/ai/')
+! ============
+! == Sysdig ==
+! ============
+! Header promo for Sysdig AI
+www.sysdig.com##.cc-nav-announcement:has([href="/blog/introducing-sysdig-secure-ai"])
+! Floating chatbox
+www.sysdig.com###pfCfChatContainer
 ! ============
 ! == Target ==
 ! ============
@@ -3718,6 +3816,13 @@ vimeo.com##section.container-base[data-bp-cta-location-id="9c3e2300d913447a8224f
 ! Footer - Vimeo AI & AI Translation
 vimeo.com##.text-footer-sub-content[href="/features/vimeo-ai"]
 vimeo.com##.text-footer-sub-content[href="/features/ai-translation"]
+! =============
+! == Virtusa ==
+! =============
+! -- https://www.virtusa.com/
+! Search Summary
+||prod.agenticweb-marketing.com/gemini-ai/generate-summary$xmlhttprequest,domain=www.virtusa.com
+www.virtusa.com##[class*="__aiCard"]
 ! ================
 ! == VirusTotal ==
 ! ================
@@ -3945,6 +4050,8 @@ x.com##.css-175oi2r.r-1mmae3n:has(> [data-testid="grok_post_atgrok_button"])
 ! "Profile Summary" button
 ! * Does not appear on profiles with a yellow verfication badge
 x.com##.r-1phboty.r-2yi16.r-1qi8awa:has(path[d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466"])
+! Header - Grok button (logged out)
+x.com##button[aria-label="Grok"]
 ! ==========
 ! == YaCy ==
 ! ==========
@@ -4207,6 +4314,11 @@ zoom.us##.summary-container
 zoom.us##.next-step-wrapper
 ! -----------------------------------------------------------
 ! =======================
+! == 01tube.com (NSFW) ==
+! =======================
+! Navbar - AI porn
+01tube.com###tags-scroll > .tag__item:has(> [href^="https://b.chioclick.com"])
+! =======================
 ! == 3DPornDude (NSFW) ==
 ! =======================
 ! Header
@@ -4370,8 +4482,17 @@ www.fapcat.com##.nav-item:has(> [href="https://tsyndicate.com/api/v1/direct/3920
 ! ====================
 ! == Fapnado (NSFW) ==
 ! ====================
-! "AI Jerk Off" in navbar
-www.fapnado.xxx##.gngames[href="https://tsyndicate.com/api/v1/direct/9456ec3abb18461b91f4de5e492b0979?"]
+! -- https://www.fapnado.xxx/videos/313079/indian-village-couple-homemade-sex-filmed-in-night-time/
+! Header banner - AI Porn ad
+www.fapnado.xxx###hqbTopbar
+! Navbar - Sites - AI Girlfriend
+www.fapnado.xxx##.nav-link2[rel^="sponsored"]
+! Navbar - AI Jerk Off
+www.fapnado.xxx##.nav-play-sex-games
+! AI Girlfriend video overlay button
+www.fapnado.xxx##.fluid_video_wrapper .text_link_holder
+! Related videos - AI ad
+www.fapnado.xxx###list_videos_related_videos_items > .item:not(.relateditem):has(> [title*="AI"])
 ! ========================
 ! == Fetish Papa (NSFW) ==
 ! ========================
@@ -4445,7 +4566,13 @@ hentaiforce.net##.hf-btn2-special-wrapper:has(> [href="https://rr.rndomnm.com/69
 ! =======================
 ! == Hentai Fox (NSFW) ==
 ! =======================
+! AI tagged galleries
 hentaifox.com##.thumb[data-tags~="3298"]
+! ==========================
+! == Hentai Freak! (NSFW) ==
+! ==========================
+! Header - AI Porn Girls
+hentaifreak.org###site-header-main [href^="https://pornx.ai"]
 ! =========================
 ! == Hentai Haven (NSFW) ==
 ! =========================
@@ -4516,6 +4643,16 @@ hentaigasm.com###guest-nav:has(> [href="https://s.zlinkp.com/d.php?z=5442922"])
 ! =====================
 ! AI Porn in header nav
 hentaila.tv##.nav-link[href="https://pornhaven.ai/"]
+! =======================
+! == Hentaimama (NSFW) ==
+! =======================
+! Navbar - AI Hentai
+hentaimama.io##.dt-ad-menulink:has(> [href^="https://hentaihub.com"])
+! ======================
+! == HentaiPRN (NSFW) ==
+! ======================
+! Footer - AI Girlfriend
+hentaiprn.com##.menu-item:has(> [href="https://evolvewithai.net/"])
 ! =====================
 ! == HentaiRun (NSFW) ==
 ! =====================
@@ -4593,6 +4730,8 @@ multporn.net###menu-22549-1
 ! ====================
 ! == My Lust (NSFW) ==
 ! ====================
+! Sidebar - AI Porn Pics
+mylust.com##li:has(> [href="https://mylust.com/albums/categories/ai/"])
 ! -- https://mylust.com/categories/
 ! "AI Generated" category
 mylust.com##.item:has(> [data-id="307"])
@@ -4665,9 +4804,14 @@ pornone.com#?#.inline-block.vrazka:contains(AI Porn)
 ! == Porn Dude (NSFW) ==
 ! ======================
 ! AI site categories
-theporndude.com##.category-container:is([class^="ai-"], [class*=" ai-"], [class*="-ai-"])
+theporndude.com##.category-container:is([class*=" ai-"], [class*="-ai-"])
 ! Sites with AI categories
 theporndude.com##.category-item:has(> .ai-friendly-icon)
+! -- https://theporndude.com/hentai-streaming-sites
+! Sidebar categories
+theporndude.com##.category-list-item:is([class*=" ai-"], [class*="-ai-"])
+! Category cards
+theporndude.com##.category-top-card:is([class*=" ai-"], [class*="-ai-"])
 ! ========================
 ! == Reddit Tube (NSFW) ==
 ! ========================
@@ -4810,6 +4954,11 @@ thebestfetishsites.com##.homecatwrapper:has(> .homecategorytitle > [href="https:
 ! -- https://thebestfetishsites.com/top-hentai-porn-sites/
 ! Search categories
 thebestfetishsites.com##.internalcatwrapper[href^="https://thebestfetishsites.com/ai-"]
+! =============================
+! == The joi Database (NSFW) ==
+! =============================
+! Navbar - Uncensored AI
+www.the-joi-database.com##.advertisement[href="https://redvideo.ai/"]
 ! ==========================
 ! == The Porn List (NSFW) ==
 ! ==========================
@@ -4888,6 +5037,11 @@ txxx.com##[href="https://facemix.app/?utm_medium=txxx&utm_campaign=tubecorp"]
 ! ==============================
 ! AI Porn in navbar
 uncensoredhentai.xxx###menu-item-20697
+! ========================
+! == UnderHentai (NSFW) ==
+! ========================
+! Footer - WaifuAI Studio
+www.underhentai.net##.partners > [href="https://www.patreon.com/WaifuAIStudio"]
 ! ===================
 ! == VePorn (NSFW) ==
 ! ===================

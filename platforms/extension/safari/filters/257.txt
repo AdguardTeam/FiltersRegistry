@@ -1,9 +1,9 @@
-! Checksum: 4uLnnq+gucRWrO7Y8EtCcg
-! Diff-Path: ../patches/257/257-s-1788439704-14400.patch
+! Checksum: gYEDTGqM4DOzfJPON51wvQ
+! Diff-Path: ../patches/257/257-s-1788958015-14400.patch
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.12.43
-! TimeUpdated: 2026-09-03T12:45:49+00:00
+! Version: 2.0.12.49
+! TimeUpdated: 2026-09-09T12:44:18+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -1454,6 +1454,9 @@ cracksmid.com##div[style=""] > center > center
 ! https://github.com/uBlockOrigin/uAssets/issues/11394
 !+ NOT_OPTIMIZED
 ||theannoyingsite.com^$all
+! https://github.com/uBlockOrigin/uAssets/issues/34397
+!+ NOT_OPTIMIZED
+||ptoszek.pl^$all
 ! https://github.com/AdguardTeam/AdguardFilters/issues/109902
 !+ NOT_OPTIMIZED
 /vpnupdate/*/index.html?*p1=$document
@@ -1706,6 +1709,9 @@ cracksmid.com##div[style=""] > center > center
 ! https://x.com/masaomi346/status/2094718930770403336
 !+ NOT_OPTIMIZED
 ||cdn.streameet.top^$all
+! https://x.com/masaomi346/status/2096737331822870785
+!+ NOT_OPTIMIZED
+||new.point-youtools.com^$all
 ! scam sites
 !+ NOT_OPTIMIZED
 ||webuzz.me^$document
@@ -4887,7 +4893,21 @@ monster###bw-rc-host[style="position: fixed !important; inset: 0px !important; z
 ||sites.google.com/view/brewapp$document
 ! https://github.com/uBlockOrigin/uAssets/issues/34356
 !+ NOT_OPTIMIZED
+##.wp-singular > iframe[srcdoc][allowfullscreen][allow*="clipboard-write"][style*="2147483647"]
+!+ NOT_OPTIMIZED
+/^https:\/\/[a-z]{7}\.sbs\/[a-z0-9]{8}\.js$/$script,third-party,match-case,to=sbs
+!+ NOT_OPTIMIZED
 ||swewart.sbs^
+!+ NOT_OPTIMIZED
+||guiglen.sbs^
+! https://github.com/AdguardTeam/AdguardFilters/issues/240231
+!+ NOT_OPTIMIZED
+! [excluded by #%#//scriptlet] webrick.com#%#//scriptlet('ubo-acs', 'atob', 'Uint8Array')
+!+ NOT_OPTIMIZED
+##html > #bw-rc-host
+! https://github.com/uBlockOrigin/uAssets/issues/34424
+!+ NOT_OPTIMIZED
+||keelhaulably.com^
 ! !SECTION: ClickFix
 ! https://www.reddit.com/r/uBlockOrigin/comments/12ng4o8/
 ! https://www.virustotal.com/gui/url/fe6b4bc7a258a92a97ad3216c85d159857ccd581df9b31a50a308ca49f967e34
@@ -10148,10 +10168,11 @@ top##body > center + .A + .post
 !+ NOT_OPTIMIZED
 ||nextsave.trenched.cfd^$document
 ! https://socket.dev/blog/chrome-edge-extension-wallet-drainer
+! https://github.com/uBlockOrigin/uAssets/issues/34412
 !+ NOT_OPTIMIZED
 ||ggle-analytics.$all
 !+ NOT_OPTIMIZED
-||whale-alert.$all
+||whale-alert.$all,to=~whale-alert.io
 !+ NOT_OPTIMIZED
 ||cookie-whitelist.$all
 ! https://github.com/uBlockOrigin/uAssets/issues/34311
@@ -10174,3 +10195,11 @@ top##body > center + .A + .post
 /go/*^ref=*&subid1=*&subid2=$document
 !+ NOT_OPTIMIZED
 ^ofv_id=*&aff_pub_id=*&click_id=*&subid1=*&subid2=$document
+! https://github.com/feather-wallet/feather/issues/303
+!+ NOT_OPTIMIZED
+||featherswallet.org^$all
+! https://github.com/uBlockOrigin/uAssets/issues/34399
+!+ NOT_OPTIMIZED
+||aw-huorong.com.cn$all
+! https://github.com/uBlockOrigin/uAssets/issues/34430
+! https://www.virustotal.com/gui/file/1ef89f262d5b25d2279aee12c81e1767e6e58c367ac13756d391f2cb56022b22
