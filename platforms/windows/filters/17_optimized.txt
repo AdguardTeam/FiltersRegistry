@@ -1,9 +1,9 @@
-! Checksum: jleh6oDhaUGOXamD7F8lhQ
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1788420035-3600.patch
+! Checksum: SNc3Kf5P+Hwuh2P61ayiTw
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1789090060-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.9
-! TimeUpdated: 2026-09-03T07:16:59+00:00
+! Version: 2.0.14.21
+! TimeUpdated: 2026-09-11T01:23:43+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
@@ -339,6 +339,19 @@ $removeparam=erid
 $removeparam=oly_enc_id
 $removeparam=_ga
 $removeparam=tduid
+||myfans.jp^$removeparam=aff
+||asahi.com^$removeparam=oai
+||yomiuri.co.jp^$removeparam=from
+||yomiuri.co.jp^$removeparam=ref
+||sponichi.co.jp^$removeparam=nid
+||sponichi.co.jp^$removeparam=ref
+||medal.tv^$removeparam=invite
+||rumble.com^$removeparam=e9s
+||rumble.com^$removeparam=sci
+||bookbang.jp^$removeparam=ui_campaign
+||bookbang.jp^$removeparam=ui_medium
+||bookbang.jp^$removeparam=ui_source
+||vivareal.com.br^$removeparam=source
 ||video.unext.jp^$removeparam=abm
 ||video.unext.jp^$removeparam=adid
 ||video.unext.jp^$removeparam=cid
@@ -1396,10 +1409,10 @@ $removeparam=tag3,domain=ibood.com|decathlon.pl
 $removeparam=wgu,domain=ibood.com|decathlon.pl
 $removeparam=wgexpiry,domain=ibood.com|decathlon.pl
 ||rapidgator.net^$removeparam=referer
-||donation.yahoo.co.jp^$removeparam=cpt_n
-||donation.yahoo.co.jp^$removeparam=cpt_s
-||donation.yahoo.co.jp^$removeparam=cpt_m
-||donation.yahoo.co.jp^$removeparam=cpt_c
+.yahoo.co.jp^$removeparam=cpt_n
+.yahoo.co.jp^$removeparam=cpt_s
+.yahoo.co.jp^$removeparam=cpt_m
+.yahoo.co.jp^$removeparam=cpt_c
 ||tinkoff.ru^$removeparam=dsp_click_id
 ||yahoo.co.jp^$removeparam=ikCo
 ||yahoo.co.jp^$removeparam=sc_e
@@ -2168,6 +2181,7 @@ $removeparam=a_aid,domain=expressvpn.com|vpnarea.com|wook.pt|affiliate.privatevp
 ||wired.com^$removeparam=mbid
 ||wikihow.com^$removeparam=?utm_source
 ||kohls.com^$removeparam=CID
+||instagram.com^$removeparam=stkn
 ||instagram.com^$removeparam=ig_rid
 ||instagram.com^$removeparam=igsh
 $removeparam=igshid,domain=instagram.com|threads.com|threads.net
@@ -2266,8 +2280,6 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ||google.*/search$removeparam=oq
 ||google.*/search$removeparam=oe
 ||google.*/websearch$removeparam=visit_id
-||google.*/search$removeparam=biw
-||google.*/search$removeparam=bih
 ||google.*/search$removeparam=sa
 ||google.*/search$removeparam=source
 ||google.*/search$removeparam=aqs

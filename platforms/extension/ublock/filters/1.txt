@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: pLTAy3ry+CcB63Xku5bKkw
-! Diff-Path: ../patches/1/1-s-1788445152-3600.patch
+! Checksum: tZvLDASTea+wMJ87/9gJwg
+! Diff-Path: ../patches/1/1-s-1789046271-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.40
-! TimeUpdated: 2026-09-03T14:15:16+00:00
+! Version: 2.1.8.53
+! TimeUpdated: 2026-09-10T13:13:26+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3861,6 +3861,8 @@ newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,
 ! NOTE: UA rules copied to Ukrainian filter
 ! TODO: Remove not multi lang rules with .ua tld after splitting the filter (look at the end of file)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240854
+ritsatv.ru##+js(no-setTimeout-if, checkAds)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237818
 redheadsound.studio##+js(google-ima)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237848
@@ -3869,10 +3871,8 @@ redheadsound.studio##+js(google-ima)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234715
 ||sochi.camera/adblock-detector.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238710
-! https://github.com/AdguardTeam/AdguardFilters/issues/233664
-@@||yandex.ru/ads/system/context.js$domain=rr4farmtrof.com
-@@||rr4farmtrof.com^$generichide
-rr4farmtrof.com##+js(remove-node-text, script, adwall)
+||rr4farmtrof.com/api/log_adwall
+||rr4farmtrof.com/assets/js/ft-ad-proof-
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233134
 evilmod.ru#@##reklama
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230714
@@ -3908,9 +3908,6 @@ vuzopedia.ru###fab
 s3.gamepush.com##+js(abort-on-stack-trace, document.createElement, checkAdblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204523
 volley.ru##pjsdiv[style*="opacity: 1; font-size: 14px; line-height: 1em; pointer-events: none; display: block; visibility: visible;"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/199584
-ritsatv.ru##+js(addEventListener-defuser, load, initAdblockCheck)
-ritsatv.ru##+js(remove-node-text, script, script.onerror)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196802
 howdyho.net###nevermind:style(display: block !important;)
 howdyho.net###rustrover:style(display: none !important;)
@@ -5035,6 +5032,7 @@ eda.yandex.ru##main > div[style^="margin-bottom:"]:has(> div > div > button + di
 ! Yandex.Pogoda
 !
 ! Yandex.Market
+market.yandex.ru##div[data-apiary-widget-name="@monetize/HeroSlideshow"]
 market.yandex.ru##div[data-zone-name="heroBannerCarousel"]
 market.yandex.ru##div[data-apiary-widget-name="@marketfront/RecomAdv"]
 market.yandex.ru##div[data-apiary-widget-name="@monetize/AdvStreamer"]
@@ -5498,7 +5496,6 @@ fainaidea.com##+js(abort-on-property-read, td_ad_background_click_link)
 ! https://forum.adguard.com/index.php?threads/33157/
 @@||pr-cy.ru/js/ad1.js
 ! politeka.net - side banners
-! kinozal.me,kinozal.tv - break WS loader script
 ! http://forum.adguard.com/showthread.php?9737
 ! http://forum.adguard.com/showthread.php?9567
 ! clickunder
@@ -7014,6 +7011,11 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+remontka.pro##.rem_top_one
+remontka.pro##div.rightbar-container > .rightbar-wrapper:has(> div > div.widget_custom_html > div.rem_right_one)
+klerk.ru##.desktop\:top-pre-header-height:style(top: 0 !important;)
+klerk.ru##.h-pre-header-height:style(display: none !important;)
+klerk.ru##.sticky a[href^="https://eye.targetads.io/"]
 kassir.ru##div[data-selenide="bannerList"]
 kassir.ru##div[data-selenide="bannerMiniList"]
 kassir.ru##.swiper-wrapper > div.swiper-slide:has(> div.h-full noindex > div > p)
@@ -7057,8 +7059,7 @@ iguides.ru##section.col-right:has(> #bxdynamic_ADV_IG_240_RIGHT_ASIDE_start)
 iguides.ru##section.col-xl-right:has(> div[id^="comp_"])
 iguides.ru##div.order-md-last:has(> #V_iguides_D_728x90)
 ||zvuk.com/rambler|
-kinogo.tm##.ad-branding
-kinogo.tm##.kng-rekl
+kinogo.org,kinogo.tm##div[class^="ad-branding"]
 pingvinus.ru##+js(addEventListener-defuser, DOMContentLoaded, renderBanners)
 lenta.ru##iframe[src="https://zvuk.com/rambler"]
 filmix.gg,filmix.*##.page-wrapper:style(margin-top: 0 !important;)
@@ -7119,7 +7120,7 @@ sports.ru##.nav-left-banner
 sports.ru##.navigation-right-column-banner
 sports.ru##article[data-article-type="advert_material"]
 sports.ru##.mc-layout__top-ads
-gdebenz.ru##.marketly
+gdebenz.ru,gdebenz.org##.marketly
 5-tv.ru##div.cont:has(> div[id^="adfox_"])
 ren.tv##a[href^="https://www.sport-express.net/"]
 hellomagrussia.ru##.minheight610
@@ -7250,7 +7251,6 @@ ligazakon.net##.rekl_block_wrap
 the-day.ru##.creative-placeholder
 sravni.ru##div[class*="bordered-banner_withBorderRadius"]
 socportal.info##.bg-logo-ads
-saby.ru##.OFDCore__banner-View
 mosregtoday.ru##article > header button[class]:has(> svg > defs > path[id="news_svg__a"])
 ura.news##div[class^="adv-"]
 ura.news##div[class^="ad-divider"]
@@ -17411,14 +17411,13 @@ echo.msk.ru##div[style*="width: 970px; height: 90px;"]
 passion.ru##.sideColumn[style*="width: 300px"]
 passion.ru##.sideColumn[style*="width:300px"]
 !
-! fastpic.ru
+! fastpic
 fastpic.org##nav > div:not(:has(*))
 fastpic.org##.overlay-banner-container
 fastpic.org##+js(no-window-open-if)
 ||fastpic.org/fpv.js
 fastpic.org##+js(abort-on-property-read, ExaQaAutomatizationFlag)
 fastpic.org##+js(abort-current-script, EventTarget.prototype.dispatchEvent, getexoloader)
-fastpic.org##+js(remove-node-text, script, /ctrlKey|exoload|}catch\(_\){}try{/)
 fastpic.org##+js(set-constant, Element.prototype.attachShadow, noopFunc)
 ||fastpic.org/n/
 ||static.fastpic.org/css/exo.css
@@ -17648,6 +17647,8 @@ vio.to###payadvert
 !
 !
 !
+!+ NOT_OPTIMIZED
+saby.ru##.OFDCore__banner-View
 !+ NOT_OPTIMIZED
 ||netmonet.co/last-page-banner-modal.
 !+ NOT_PLATFORM(ios, android, ext_android_cb)

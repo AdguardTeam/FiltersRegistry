@@ -1,8 +1,8 @@
-! Checksum: pToJBfAdr1Y6aTpUOV47nQ
+! Checksum: W8KHqqP0eBM/X/FXNUuh5g
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.10.71
-! TimeUpdated: 2026-09-03T17:13:34+00:00
+! Version: 2.1.11.18
+! TimeUpdated: 2026-09-11T01:23:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -338,6 +338,12 @@
 !
 !
 !
+||disutgh7q0ncc.cloudfront.net^
+||zodalt.com^
+||rer4.com^
+||cloudx.io^
+||lndrsapi.com^
+||ac.conel.jp^
 ||migstat.com^
 ||kameleoon.io^
 ||cdnet.nasmob.com^
@@ -100277,6 +100283,20 @@
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||events.plutus.ninja^
+||metrics.earlygame.com^
+||pla.uqload.vc^
+||rta2.newscientist.com^
+||ureca.samsungapps.com^
+||orsdls.di.runestone.samsung.com^
+||shealth-analytics-api.samsunghealth.com^
+||sogu.tripster.ru^
+||a2.cineflix.st^
+||tracker.bigl.ua^
+||bigfluffycatexchange.crabdance.com^
+||tracking.vivareal.com.br^
+||lms.roblox.com^
+||stats.dulo.
 ||clientlog.wanmei.com^
 ||jnt.welt.de^
 ||agrau.aii.sh^
@@ -104700,10 +104720,27 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||leolist.cc/static/min/js/modules/bam-impressions-
+||adverts.ie/5g8u/
+||api.mindbox.ru/*/customer/track-visit?
+||api.mindbox.ru/*/js/operations/async?*&trackerName
+roomie.jp##.r-sidesection[data-google-interstitial]
+||runtimewire.com/api/analytics/*/events|
+||bwapi.irunfar.com/log/
+||bwapi.irunfar.com/event/
+harpersbazaar.com##div[aria-labelledby="recirc-heading"]
+||otrium.*/static/newrelic.js
+||otrium.*/measure/
+||tellows.jp/ping.php?p=
+||janitorai.com/jstats/
+.cineflix.st/api/script.js|
+||yalispor.com.tr/u966/
+||forums.digitalspy.com/api/v*/tick|
 ||journalreport.cn/mstatistics.js
 ||smartnews.com/*/monitoring?
 ||proson.gr/core/modules/statistics/
 ||pahe.plus/*/api/v1/event|
+||intercelestial.com/*/api/v1/event|
 ||samsungmagazine.eu/log_imps.php
 ||negocios.com/assets/js/onm/onm-stats.
 ||sidecar.unext.jp/track/
@@ -104773,7 +104810,6 @@ news.golfdigest.co.jp##.recommend_articles
 ||ucuztap.az/api/ads/track
 ||emrldtp.com/collect
 ||fortune.com/api/recommendations/feedback/view/
-||gdebenz.ru/api/rum
 ||data.storyeditor.eu/se_analytics.js
 ||dragon.pdf2go.com/api/z|
 ||dragon.pdf2go.com/api/bat|
@@ -104857,7 +104893,7 @@ gazetadopovo.com.br##section[class^="pianoRecommender"]
 ||czesciauto24.pl/p/g^
 ||hexa.su/script.js
 ||candytm.pl/gtmgateway/
-/^https?:\/\/(android\.com\.pl|biznesenter\.pl)\/[a-z0-9]{1,4}\/$/$script,~third-party,domain=android.com.pl|biznesenter.pl
+/^https?:\/\/(android\.com\.pl|biznesenter\.pl|invezz\.com)\/[a-z0-9]{1,4}\/$/$script,~third-party,domain=android.com.pl|biznesenter.pl|invezz.com
 ||bifrost-api.hotstar.com/v*/events
 ||linuxcommunity.io/assets/google-universal-analytics-*.js
 ||credistory.ru/api/Metrics/
@@ -104978,7 +105014,7 @@ gazetadopovo.com.br##section[class^="pianoRecommender"]
 ||cdn.viberu.ru/dist/tracking.*.js
 ||rugbypass.com/api/tracking/
 ||static0.pocketlintimages.com/assets/sentinel-events-tracker.*.js
-||dulo.tv/api/ping
+||dulo.*/api/ping
 ||happycow.net/analytics_socket|
 ||operationsports.com/plow-lite-bundle
 ||shingakunet.com/rnet/dlpo/
@@ -110853,11 +110889,15 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239398
+! newsnow.com
+! experience.tripster.ru
 ! wildberries.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239596
 ! news.golfdigest.co.jp
 ! 4media.com
 ! hna.de
+! https://github.com/AdguardTeam/AdguardFilters/issues/239398
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237741
 ! itmedia.co.jp
 ! gamsgo.com
@@ -112610,6 +112650,19 @@ d4?appid*type*
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240995
+@@||pub-static.fotor.com/static/web/lib/sensors/sensorsdata.min.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/240759
+! Fixed bookmark button on Japanese version
+@@||featureassets.org/v1/initialize?k=$domain=bloomberg.com
+@@||assetsconfigcdn.org/v1/initialize?k=$domain=bloomberg.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/240349
+! https://github.com/AdguardTeam/AdguardFilters/issues/240636
+@@||cdn.jsdelivr.net/npm/@thumbmarkjs/thumbmarkjs/dist/thumbmark.$domain=archive.is|archive.today|archive.ph
+! https://jbbs.shitaraba.net/bbs/read.cgi/internet/25463/1618326670/308
+@@||cdn.cxense.com/cx.cce.js$domain=j-cast.com
+@@||cdn.cxense.com/cx.js$domain=j-cast.com
+@@||api.cxense.com/public/widget/data?json=$domain=j-cast.com
 ! clicking links doesn't work
 @@||googletagmanager.com/gtag/js$domain=gamelog.apexlegends-leaksnews.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239780
@@ -117275,6 +117328,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||beautifulrope.com^
 ||beautylulu.com^
 ||becomemummy.com^
+||beddingdownbaby.com^
 ||bedsberry.com^
 ||beelinecolor.com^
 ||beewhispering.com^
@@ -117297,8 +117351,10 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||bigfishapparel.com^
 ||biggerbling.com^
 ||bighornbasin.net^
+||bigpicframing.com^
 ||bigwetbrush.com^
 ||bigworldfashion.com^
+||bijouxbee.com^
 ||bikeexerciser.com^
 ||bikepaws.com^
 ||bikesboard.com^
@@ -117310,6 +117366,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||binarykite.com^
 ||binspiredtees.com^
 ||biologylog.com^
+||biotechnologysciences.com^
 ||birthdaybelief.com^
 ||biscuitbox.net^
 ||biztoolsbrief.com^
@@ -117692,6 +117749,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||dicecandies.com^
 ||difficultfog.com^
 ||digestiondrawer.com^
+||digitalatticnewsletter.com^
 ||digitalblend.net^
 ||digithalo.com^
 ||digitizedcopy.com^
@@ -118187,7 +118245,6 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||internalsink.com^
 ||intricateberry.com^
 ||introjava.com^
-||inventorycache.com^$~xmlhttprequest
 ||inventtango.com^
 ||invoicetick.com^
 ||iotapool.com^
@@ -118893,6 +118950,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||sandboxbid.com^
 ||sandstrophies.com^
 ||sandypocket.com^
+||sandytaco.com^
 ||sapnest.com^
 ||satisfycork.com^
 ||savoryink.com^
@@ -118932,6 +118990,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||screechingfurniture.com^
 ||screechingstocking.com^
 ||screechingstove.com^
+||screenphotos.com^
 ||scribblestring.com^
 ||scrollservice.com^
 ||scrubswim.com^
@@ -119060,6 +119119,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||smoggysnakes.com^
 ||smoggysongs.com^
 ||smoggystation.com^
+||smoketester.com^
 ||snacksalive.com^
 ||snacktoken.com^
 ||snakenecklace.com^
@@ -119085,6 +119145,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||solarislabyrinth.com^
 ||solarrecharge.net^
 ||soleblinds.com^
+||solidfiles.net^
 ||solidsub.com^
 ||solosduetstrios.com^
 ||solsticeblack.com^
@@ -119116,6 +119177,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||specialscissors.com^
 ||specialtypin.com^
 ||spectacularstamp.com^
+||speedmethod.com^
 ||speedysteaks.com^
 ||spellingthoughts.com^
 ||spellknight.com^
@@ -119170,6 +119232,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||starrynets.com^
 ||starsmarter.com^
 ||startercost.com^
+||starwinmedia.com^
 ||statshunt.com^
 ||statuesqueship.com^
 ||statusinside.com^
@@ -119178,6 +119241,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||steadfastsound.com^
 ||steadfastsystem.com^
 ||stealsteel.com^
+||steelcasket.com^
 ||steelmaiden.com^
 ||steepsister.com^
 ||steepsquirrel.com^
@@ -119238,9 +119302,12 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||substantialgrade.com^
 ||successbuffet.com^
 ||successmenu.com^
+||successoutcome.com^
 ||suggestionbridge.com^
 ||sulkycook.com^
 ||summerobject.com^
+||sunflaggroup.com^
+||sunnylettings.com^
 ||sunsetcampfires.com^
 ||sunsetstatic.com^
 ||sunshinegates.com^
@@ -119254,6 +119321,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||surfacesmedia.com^
 ||surfform.com^
 ||surftogether.net^
+||sushivolant.com^
 ||sustaindenim.com^
 ||swankysquare.com^
 ||swanwebcreations.com^
@@ -119289,8 +119357,10 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||tealjewel.com^
 ||teamstatus.net^
 ||tearfulglass.com^
+||techcatcher.com^
 ||techconverter.com^
 ||techdrivethru.com^
+||techmix.net^
 ||tediousbear.com^
 ||tedioustooth.com^
 ||teejubilee.com^
@@ -119308,6 +119378,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||terriblethumb.com^
 ||test2.uat.mundi.work^
 ||testadmiral.com^
+||texturehunt.com^
 ||texturetrick.com^
 ||thebestpaints.com^
 ||thebigvan.com^
@@ -119365,6 +119436,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||toolforthought.com^
 ||topcrazypress.com^
 ||topicalcartel.com^
+||topicjungle.com^
 ||topsecretapp.net^
 ||topthrowbacks.com^
 ||tortoisepage.com^
@@ -119404,11 +119476,13 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||tuneupcoffee.com^
 ||tuplebar.com^
 ||turtleface.net^
+||tutorshelf.com^
 ||twelvedawn.com^
 ||twentyerr.com^
 ||twistloss.com^
 ||twisty.net^
 ||twochihuahuas.com^
+||twofishweb.com^
 ||typepredict.com^
 ||typewebsite.com^
 ||typicalairplane.com^
@@ -119442,6 +119516,7 @@ jolie.de/sites/default/files/google_tag/google_tag_manager/google_tag.script.js
 ||upsidebeauty.com^
 ||upsidehair.com^
 ||urbanlaurel.com^
+||urbanopus.net^
 ||usabilitybook.com^
 ||uselesslumber.com^
 ||userballot.com^

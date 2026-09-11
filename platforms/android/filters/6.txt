@@ -1,9 +1,9 @@
-! Checksum: BYu/e070JKEig/21nDdG3A
-! Diff-Path: ../patches/6/6-s-1788459656-3600.patch
+! Checksum: Lh6KvX+AUgpYt77+LBIxjg
+! Diff-Path: ../patches/6/6-s-1789064385-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.28
-! TimeUpdated: 2026-09-03T18:18:19+00:00
+! Version: 2.0.53.41
+! TimeUpdated: 2026-09-10T18:17:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -373,6 +373,17 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 ! NOTE: Regular rules
 !
 !
+! https://github.com/uBlockOrigin/uAssets/issues/34187
+||igorslab.de/wp-content/plugins/igorslab-ads-suite/
+igorslab.de#?#a[href^="https://www.igorslab.de/"][style][rel]:matches-attr(href="/^https:\/\/www\.igorslab\.de\/(?:[0-9a-z-]{7,32}\/)+$/")
+igorslab.de##span[style]:has(svg path)
+/^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g$/$image,~third-party,match-case
+/^https:\/\/www\.igorslab\.de\/[0-9a-z]{7,}\/A[\/0-9A-Z_a-z-]{100,}$/$image,~third-party,match-case
+igorslab.de$$script:has-text(WeakSet())
+igorslab.de#%#//scriptlet('remove-node-text', 'script', 'WeakSet()')
+igorslab.de##img[src^="blob:http"]
+igorslab.de##.herald-sticky
+igorslab.de##.herald-sidebar-right > .widget:not([id*="widget"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238435
 wowtv.de#%#//scriptlet('set-constant', 'window.CONFIGURATION.features.enableAdBlockerDetection', 'false')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238226
@@ -1000,6 +1011,10 @@ fitforfun.de,plus.rtl.de#%#//scriptlet('trusted-replace-xhr-response', 'true', '
 fitforfun.de,brigitte.de#%#//scriptlet('trusted-replace-xhr-response', 'true', 'false', 'global_config.json')
 fitforfun.de,plus.rtl.de#%#//scriptlet('abort-on-stack-trace', 'Object.prototype.adReinsertion', 'createSdk')
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240728
+igorslab.de#%#//scriptlet('set-constant', 'loadProtectedMedia', 'noopFunc')
+igorslab.de#%#//scriptlet('set-constant', 'detachImageLinkTarget', 'noopFunc')
+igorslab.de#%#//scriptlet('set-constant', 'sourceFor', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219375
 abendblatt.de#%#//scriptlet('set-constant', 'Spark.deactivateRubicon', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212667
@@ -1515,6 +1530,26 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+buchholz-aktuell.de##div.td-post-content > div.my-di-do-a
+gmx.net##.main > div[data-url][style="cursor: auto;"]:has(> div[data-url] > uim\:ad)
+gmx.net##.ad-banner
+china-gadgets.de##div[id^="trimexa-ads_d_incontent-rec"]
+china-gadgets.de###trimexa-ads_d_footer-wrapper
+china-gadgets.de###trimexa-ads_d_top
+igorslab.de##body > #content + div[class*=" "][class*="-"]:has(> div[id] span[style^="display:block;position:relative;width"])
+igorslab.de###related ~ div[class*="-"][id*="-"]:has(> div[id] div[style^="display:block;position:relative;width:"])
+||igorslab.de/wp-content/plugins/igorslab-ads-suite/
+/^https:\/\/www\.igorslab.de\/[a-zA-Z0-9]{8,}\/[a-zA-Z0-9_-]{20,}/$domain=igorslab.de,image,xmlhttprequest
+igorslab.de##div[id][class*=" "]:has(> div[id][class*=" "] > div[class*=" "][style^="position:relative;display:inline-block;max-width"])
+igorslab.de##.herald-sidebar-right > div[id][class*=" "]
+igorslab.de##div[id][class*=" "]:has(> .herald-txt-module  div[id][class*=" "] > div[class*=" "][style^="position:relative;display:inline-block;max-width"])
+igorslab.de##.row > div[id][class*=" "]:has(> .herald-txt-module div[id*="-"][class])
+igorslab.de##.row  div[id][class]:not([class^="col-"]):is([class*=" "], [class*="-"]):has(> div[class*="-"] span[style^="display:block;position:relative;width"])
+igorslab.de##body > div[class*=" "][class*="-"]:not([style]):has(> div[id] div[style^="display:block;position:relative;width"])
+autohebdo.de##.stafepress-ad-wrapper
+ultimatesolver.com##div.div_1_center div.wbng:has(> a[href^="https://clk.tradedoubler.com/"])
+ms-aktuell.de#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'flipAds')
+ms-aktuell.de#%#//scriptlet('abort-current-inline-script', 'Math.floor', 'updateBanner')
 welt.de##div[data-component="AdStage"]
 fr.de##.id-StoryElement-embed
 fr.de##.id-Recommendation
@@ -1522,9 +1557,6 @@ ligainsider.de##.feature_column:has(> div[id^="ad-rectangle"])
 ligainsider.de##.feature_holder > .feature:has(> div[id^="ad-rectangle"])
 bluewin.ch##.c-left-container > .justify-center:has(> div.shell > div.c-ad-container)
 bluewin.ch##.c-right-container:has(> div.w-full > div.shell > div.c-ad-container)
-/^https:\/\/www\.igorslab\.de\/[0-9a-z]+\/[\/0-9A-Z_a-z-]+$/$image,~third-party,match-case
-igorslab.de##.herald-sticky
-igorslab.de##.herald-sidebar-right > .widget:not([id*="widget"])
 imagenetz.de##.ig-adbox
 hna.de##.wv_story_el_showHeroes
 ohn.haendlerbund.de#$##mainAdsBannerSection { display: none !important; }
@@ -1888,7 +1920,7 @@ weser-kurier.de##.ad-sticky-footer-container-wk
 weser-kurier.de##section[data-contentport-name^="Werbung"]
 swp.de,lr-online.de###ms-edgeAd
 lr-online.de##.u-adSlot:not([class*="-sky-"])
-swp.de##.u-adSlot
+stuttgarter-zeitung.de,swp.de##.u-adSlot
 saechsische.de##div[class^="recommendationstyled__"]
 volksstimme.de##div[id*="articlead-"]
 ||dl.volksstimme.de/tm/
@@ -2116,7 +2148,7 @@ finanzen.net##.news-container__text > p > i:has(> a[href*="finanzen.net/"][targe
 aerotelegraph.com##.advert-inner
 kino.de##.teaserheld-header-wrapper
 kino.de#%#//scriptlet('remove-class', 'show-teaserheld-header', 'body')
-||toolbox.webediagaming.de^$domain=gamestar.de|gamepro.de|mein-mmo.de
+||toolbox.webediagaming.de^$domain=gamepro.de|mein-mmo.de
 gamepro.de##.row:has(> div:only-child > div:only-child > iframe[src*="toolbox.webediagaming.de"]:only-child)
 antenne.de##.o-reklame
 thueringer-allgemeine.de,waz.de,braunschweiger-zeitung.de,nrz.de,abendblatt.de##.ad-slot-wrapper
@@ -2843,7 +2875,7 @@ computerbase.de##.content-list > .article > a[href*="-anzeige-"] + .article__mai
 raetsel-hilfe.de##body .ad-container
 twitterperlen.de###ai_widget-2
 twitterperlen.de###ai_widget-5
-leckerschmecker.me,genialetricks.de,twitterperlen.de##body .code-block
+ms-aktuell.de,leckerschmecker.me,genialetricks.de,twitterperlen.de##body .code-block
 welt-der-bwl.de##div[class^="adunit-"]
 welt-der-bwl.de###block-block-24
 welt-der-bwl.de###block-block-25
@@ -9825,6 +9857,7 @@ brigitte.de,gala.de##.ad-element
 apollo-news.net##.ad-home-feed-box
 apollo-news.net##.ad-in-article-box
 hallo-minden.de##.ad-info
+telepolis.de##.ad-ldb-container
 augsburger-allgemeine.de##.ad-list_small-native-container
 chip.de,diegrenzgaenger.lu##.ad-listing
 meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##.ad-live
@@ -10699,7 +10732,7 @@ dererker.it##.partvert-right
 fla.de##.pbph
 otto.de##.pdp_reco-sponsored
 otto.de##.pdp_sda__slot
-heise.de##.perf-cls-reduc-leaderboard
+heise.de,telepolis.de##.perf-cls-reduc-leaderboard
 heise.de##.perf-cls-reduc-rectangle
 kino.de##.performance-pub
 goyellow.de##.phoneblockAd
@@ -11132,6 +11165,7 @@ bueroblog.ch,computerfachmagazin.de,office-roxx.de##.widget_metaslider_widget
 buongiornosuedtirol.it##.widget_random_banner_widget
 puschtra.it##.widget_sp_image
 hebelschein-spekulant.de##.widget_text
+windowspro.de##.wip-ad-block
 zitate-online.de##.witz > .bewertung + .detaillink + p:last-child
 zitate-online.de##.witz > .bewertung + p:last-child
 celleheute.de##.wixui-column-strip.wix-blog-hide-in-print

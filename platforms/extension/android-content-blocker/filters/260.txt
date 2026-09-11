@@ -1,8 +1,8 @@
-! Checksum: eUP+q52A5DfNRicWScZFZw
+! Checksum: PDcjRZsUOlexF+HKTtCGuQ
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.71
-! TimeUpdated: 2026-09-03T16:36:58+00:00
+! Version: 2.0.1.84
+! TimeUpdated: 2026-09-11T01:04:36+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -78,6 +78,8 @@ new.express.adobe.com##.nav-tile[aria-label="Generative AI"]
 ! -- https://photoshop.adobe.com/
 ! "Generate an image" button under "Make a quick edit"
 photoshop.adobe.com##.promptbar-quick-edit-button[label="Generate an image"]
+! -- https://community.adobe.com/questions-729/can-t-reset-my-preferences-to-default-in-cs6-1389334
+! Sidebar - Adobe Firefly promo
 ! =============
 ! == Alibaba ==
 ! =============
@@ -241,6 +243,9 @@ docs.aws.amazon.com##button[aria-label="Search with Docs AI"]
 ! Remove purple glow from search bar
 ! -- https://docs.aws.amazon.com/search/doc-search.html?searchQuery=test
 ! "Docs AI" tab on search results page
+! -- https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html
+! "Agent Setup" button
+docs.aws.amazon.com##[data-testid="agent-toolkit-setup-button"]
 ! =========
 ! == B&Q ==
 ! =========
@@ -320,6 +325,7 @@ www.bing.com##.cdxCopilotIconBg
 www.bing.com###aitools
 ! AI tools search suggestions (mobile only)
 www.bing.com###sa_ai_block
+! Autocomplete suggestion for "Image Creator"
 ! -- https://www.bing.com/search?q=test (generic search page)
 ! Navbar tabs for "Search" and "Copilot"
 www.bing.com###b-scopeListItem-copilotsearch
@@ -356,6 +362,15 @@ www.bing.com##.conversation_starters
 ! Copilot price insignhts (bottom)
 ! -- https://rewards.bing.com/
 ! Earn > Microsoft Unlocked
+! ===============
+! == Bitwarden ==
+! ===============
+! -- https://bitwarden.com/products/business/
+! Header banner for securing AI agents
+! Floating AI button
+bitwarden.com##button[aria-label="Open AI chat"]
+! -- https://bitwarden.com/help/
+bitwarden.com##button[aria-label^="Ask AI"]
 ! ===============
 ! == Bloomberg ==
 ! ===============
@@ -854,6 +869,13 @@ www.dummies.com###engage-ai
 ! -- https://support-qa.eplus.jp/hc/ja
 ! Chatbot
 support-qa.eplus.jp##iframe[title="AI Chat Support"]
+! =================================
+! == East Herts District Council ==
+! =================================
+! -- https://www.eastherts.gov.uk/
+! Floating chatbot popup
+||messenger.ebiai.app/static/js/main.js$script,domain=www.eastherts.gov.uk
+www.eastherts.gov.uk###block-eastherts-chatbotebiai
 ! ==========
 ! == eBay ==
 ! ==========
@@ -996,6 +1018,14 @@ firstpost.com###ia-search
 ! Review summary
 www.foodnetwork.com##.reviewsSummary
 ! ============
+! == Forbes ==
+! ============
+! -- https://www.forbes.com/sites/jonmarkman/2026/09/03/googles-gemini-38-flash-brings-frontier-level-work-to-its-cheap-tier/
+! Article voiceover
+www.forbes.com##.jwGQ_
+! Article summary
+www.forbes.com##.genAiSummary
+! ============
 ! == Ful.io ==
 ! ============
 ! -- https://ful.io/blog/top-5-json-viewer-chrome-extensions-you-need-to-check-out
@@ -1079,6 +1109,7 @@ github.com##.copilotPreview__container
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
 ! Left sidebar - MCP Registry
 github.com##[data-component="NavList.Item"][href="/mcp"]
+! Right sidebar - GitHub Copilot Day
 ! Right sidebar - Copilot promo banner
 github.com##.DashboardBannerCopilotApp
 ! Right sidebar - Changelog posts containing ai terms
@@ -1751,6 +1782,11 @@ indianstartupnews.com###nudgeai-widget
 ! -- https://inkbunny.net/submissionsviewall.php?rid=e6651baf27&mode=search&text=ai+generated&stringtype=and&keywords=yes&title=yes
 ! Hide AI tagged images
 ! * Will not filter front page. Only applies to search results.
+! ================
+! == Inno Supps ==
+! ================
+! Floating chatbot
+||app.alhena.ai/ai_agents/shopify_script_tag.js$script,domain=www.innosupps.com
 ! =============
 ! == Insight ==
 ! =============
@@ -2110,7 +2146,7 @@ www.microsoft.com##[data-bi-id="Button-Cta-SplitScreen-LearnWithCopilot"]
 azure.microsoft.com,www.microsoft.com##.uca-assistant-drawer-button
 azure.microsoft.com,www.microsoft.com##.uca-assistant-drawer-panel
 ! "Ask Microsoft" in middle of page
-www.microsoft.com##.chatgpt-banner
+azure.microsoft.com,www.microsoft.com##.chatgpt-banner
 ! "Ask Microsoft" chat box that appears after a delay
 www.microsoft.com###uca-proactive-chat
 ! -- https://www.microsoft.com/en-us/microsoft-365
@@ -2120,6 +2156,9 @@ www.microsoft.com###uca-proactive-chat
 ! -- https://www.microsoft.com/en-us/search/explore?q=How+do+I+update+windows (Search results)
 ! "AI Overview"
 www.microsoft.com###ai-overview-container
+! -- https://azure.microsoft.com/en-us
+! Header banner for GitHub Copilot enterprise plan
+azure.microsoft.com##.ocr-announcement-banner[data-component-id="01dbc0460ff412456ec49899ac06c10e"]
 ! ====================
 ! == Microsoft Azure ==
 ! ====================
@@ -2385,6 +2424,10 @@ www.news18.com##.aiovwrp
 ! ===============
 ! Shop with AI in header
 www.nordstrom.com##.j_24W
+! ================
+! == Northflank ==
+! ================
+! Header promo banner - AI SDLC
 ! ======================
 ! == NutraIngredients ==
 ! ======================
@@ -2623,6 +2666,21 @@ www.quora.com##.puppeteer_test_link[href="https://www.quora.com/ai_interviewer"]
 ! Promo box for Flash Answers
 ! -- https://www.qwant.com/?q=test&t=web
 ! Flash Answer in search options
+! ===============
+! == Rackspace ==
+! ===============
+! -- https://docs.rackspace.com/docs/clustering-concepts
+! Copy Page button > Open in AI options
+docs.rackspace.com##.Menu-Item[href^="https://chat.openai.com/?q="]
+docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="]
+docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="] + .Menu-Divider
+! ===========
+! == Razer ==
+! ===========
+! -- https://www.razer.com/
+! Header - Razer.AI
+www.razer.com##[data-more-menu-uid="mm-razer-ai-node"]
+! Footer - AI Gaming Newsletter
 ! =============
 ! == Rambler ==
 ! =============
@@ -2634,9 +2692,19 @@ www.rambler.ru##.rc__788yz.rc__U-mRx.r-vvrm5f4e
 ! -- https://realpython.com/
 ! Navbar > Learn Python > Code Mentor
 realpython.com##.dropdown-item[href="/mentor/"]
-! Sidebar > AI topic
-realpython.com##.sidebar-module > [href="/tutorials/ai/"]
 ! Explore Real Python section > Code Mentor
+! =============
+! == Real.gr ==
+! =============
+! -- https://www.real.gr/kosmos/arthro/mazikes-apelaseis-kai-xechorista-scholeia-gia-prosfyges-to-orama-tou-afd-gia-ti-germania-915609/
+! Article summary
+www.real.gr###real-article-summary-holder
+! =============
+! == Red Hat ==
+! =============
+! -- https://docs.redhat.com/documentation/red_hat_enterprise_linux/5/html/cluster_suite_overview/index
+! Navbar - Ask AI button
+docs.redhat.com##.ask-red-hat-button-container
 ! ============
 ! == Reddit ==
 ! ============
@@ -2657,7 +2725,7 @@ www.reddit.com##[data-testid="search-sdui-typeahead-suggestion"] .inline-block.t
 www.reddit.com###answers-nav-button
 ! Comment summary
 ! "People also ask about" section (Mobile only)
-www.reddit.com###answers-suggested-queries
+www.reddit.com##[id^="answers-suggested-queries"]
 ! Suggestions to repost to AI subreddit (If post was by current user)
 ! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
 ! AI-linked keywords in comments
@@ -2832,6 +2900,14 @@ sleepopolis.com###art-chat-widget
 ! -- https://slickdeals.net/f/19716039-new-eligible-former-subscribers-2-months-paramount-premium-no-ads-streaming-service-0-99-month-renews-at-13-99-mo-after-2-months
 ! Comment summary
 slickdeals.net##.commentsSummaryModuleV2 > .commentsSummaryModuleV2__header
+! ==============
+! == Softonic ==
+! ==============
+! Header category
+softonic.com##.js-menu-featured-item[data-track-section-id="ai"]
+! Trending content
+! Most popular categories
+! Sidebar - Apps - AI
 ! ===========
 ! == Sogou ==
 ! ===========
@@ -2955,10 +3031,21 @@ www.supersummary.com##[data-testid="story-recap-desktop-card"]
 www.supersummary.com##.MuiButtonBase-root[href$="#ai-tools-page-header"]
 ! Sidebar - Reading tools
 ! Floating "Ask SuperSummary" button
+! ==========
+! == Suse ==
+! ==========
+! Chatbot in sidebar
+||js.qualified.com$script,domain=www.suse.com
 ! =================
 ! == Talent Yard ==
 ! =================
 ! Floating assistant icon
+! ============
+! == Sysdig ==
+! ============
+! Header promo for Sysdig AI
+! Floating chatbox
+www.sysdig.com###pfCfChatContainer
 ! ============
 ! == Target ==
 ! ============
@@ -3234,6 +3321,13 @@ vimeo.com##section.container-base[data-bp-cta-location-id="9c3e2300d913447a8224f
 ! Footer - Vimeo AI & AI Translation
 vimeo.com##.text-footer-sub-content[href="/features/vimeo-ai"]
 vimeo.com##.text-footer-sub-content[href="/features/ai-translation"]
+! =============
+! == Virtusa ==
+! =============
+! -- https://www.virtusa.com/
+! Search Summary
+||prod.agenticweb-marketing.com/gemini-ai/generate-summary$xmlhttprequest,domain=www.virtusa.com
+www.virtusa.com##[class*="__aiCard"]
 ! ================
 ! == VirusTotal ==
 ! ================
@@ -3431,6 +3525,8 @@ x.com##[role="menuitem"][href*="grok.com/imagine"]
 ! -- https://x.com/Newgrounds
 ! "Profile Summary" button
 ! * Does not appear on profiles with a yellow verfication badge
+! Header - Grok button (logged out)
+x.com##button[aria-label="Grok"]
 ! ==========
 ! == YaCy ==
 ! ==========
@@ -3658,6 +3754,10 @@ zoom.us##.summary-container
 zoom.us##.next-step-wrapper
 ! -----------------------------------------------------------
 ! =======================
+! == 01tube.com (NSFW) ==
+! =======================
+! Navbar - AI porn
+! =======================
 ! == 3DPornDude (NSFW) ==
 ! =======================
 ! Header
@@ -3789,8 +3889,16 @@ www.erofus.com##.header-link a:is([href="https://crushon.ai/?mist=1&utm_source=e
 ! ====================
 ! == Fapnado (NSFW) ==
 ! ====================
-! "AI Jerk Off" in navbar
-www.fapnado.xxx##.gngames[href="https://tsyndicate.com/api/v1/direct/9456ec3abb18461b91f4de5e492b0979?"]
+! -- https://www.fapnado.xxx/videos/313079/indian-village-couple-homemade-sex-filmed-in-night-time/
+! Header banner - AI Porn ad
+www.fapnado.xxx###hqbTopbar
+! Navbar - Sites - AI Girlfriend
+www.fapnado.xxx##.nav-link2[rel^="sponsored"]
+! Navbar - AI Jerk Off
+www.fapnado.xxx##.nav-play-sex-games
+! AI Girlfriend video overlay button
+www.fapnado.xxx##.fluid_video_wrapper .text_link_holder
+! Related videos - AI ad
 ! ========================
 ! == Fetish Papa (NSFW) ==
 ! ========================
@@ -3854,7 +3962,13 @@ hdporn92.com###menu-item-202508
 ! =======================
 ! == Hentai Fox (NSFW) ==
 ! =======================
+! AI tagged galleries
 hentaifox.com##.thumb[data-tags~="3298"]
+! ==========================
+! == Hentai Freak! (NSFW) ==
+! ==========================
+! Header - AI Porn Girls
+hentaifreak.org###site-header-main [href^="https://pornx.ai"]
 ! =========================
 ! == Hentai Haven (NSFW) ==
 ! =========================
@@ -3912,6 +4026,14 @@ hentaifromhell.org##.textwidget > [href="https://undressaitool.ai/"] + br
 ! =====================
 ! AI Porn in header nav
 hentaila.tv##.nav-link[href="https://pornhaven.ai/"]
+! =======================
+! == Hentaimama (NSFW) ==
+! =======================
+! Navbar - AI Hentai
+! ======================
+! == HentaiPRN (NSFW) ==
+! ======================
+! Footer - AI Girlfriend
 ! =====================
 ! == HentaiRun (NSFW) ==
 ! =====================
@@ -3978,6 +4100,7 @@ multporn.net###menu-22549-1
 ! ====================
 ! == My Lust (NSFW) ==
 ! ====================
+! Sidebar - AI Porn Pics
 ! -- https://mylust.com/categories/
 ! "AI Generated" category
 ! ============================
@@ -4039,8 +4162,13 @@ www.pornhub.com##.uploadBtnContentSpicevids
 ! == Porn Dude (NSFW) ==
 ! ======================
 ! AI site categories
-theporndude.com##.category-container:is([class^="ai-"], [class*=" ai-"], [class*="-ai-"])
+theporndude.com##.category-container:is([class*=" ai-"], [class*="-ai-"])
 ! Sites with AI categories
+! -- https://theporndude.com/hentai-streaming-sites
+! Sidebar categories
+theporndude.com##.category-list-item:is([class*=" ai-"], [class*="-ai-"])
+! Category cards
+theporndude.com##.category-top-card:is([class*=" ai-"], [class*="-ai-"])
 ! ========================
 ! == Reddit Tube (NSFW) ==
 ! ========================
@@ -4156,6 +4284,11 @@ svscomics.com##.mainlinks > [href="/ai-porn-comics"]
 ! -- https://thebestfetishsites.com/top-hentai-porn-sites/
 ! Search categories
 thebestfetishsites.com##.internalcatwrapper[href^="https://thebestfetishsites.com/ai-"]
+! =============================
+! == The joi Database (NSFW) ==
+! =============================
+! Navbar - Uncensored AI
+www.the-joi-database.com##.advertisement[href="https://redvideo.ai/"]
 ! ==========================
 ! == The Porn List (NSFW) ==
 ! ==========================
@@ -4216,6 +4349,11 @@ txxx.com##[href="https://facemix.app/?utm_medium=txxx&utm_campaign=tubecorp"]
 ! ==============================
 ! AI Porn in navbar
 uncensoredhentai.xxx###menu-item-20697
+! ========================
+! == UnderHentai (NSFW) ==
+! ========================
+! Footer - WaifuAI Studio
+www.underhentai.net##.partners > [href="https://www.patreon.com/WaifuAIStudio"]
 ! ===================
 ! == VePorn (NSFW) ==
 ! ===================

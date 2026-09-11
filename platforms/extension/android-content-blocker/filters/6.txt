@@ -1,8 +1,8 @@
-! Checksum: Yn7cWJrAbc5h2vz7xw/q2Q
+! Checksum: gDAgnkcnfjmNeGrXrxE8Zw
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.28
-! TimeUpdated: 2026-09-03T18:18:19+00:00
+! Version: 2.0.53.41
+! TimeUpdated: 2026-09-10T18:17:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -838,6 +838,13 @@ urbia.de,essen-und-trinken.de#@#.playerAd
 ! NOTE: Regular rules
 !
 !
+! https://github.com/uBlockOrigin/uAssets/issues/34187
+||igorslab.de/wp-content/plugins/igorslab-ads-suite/
+/^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g$/$image,~third-party,match-case
+/^https:\/\/www\.igorslab\.de\/[0-9a-z]{7,}\/A[\/0-9A-Z_a-z-]{100,}$/$image,~third-party,match-case
+igorslab.de##img[src^="blob:http"]
+igorslab.de##.herald-sticky
+igorslab.de##.herald-sidebar-right > .widget:not([id*="widget"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238435
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238226
 stadt-bremerhaven.de###cb-adblock-overlay
@@ -1473,6 +1480,7 @@ teleboy.ch#@#.adWrapper
 ! can cause pause on video when ad video should be shown
 ! new version (both rules are working on their own)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240728
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219375
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212667
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198374
@@ -1807,12 +1815,18 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+buchholz-aktuell.de##div.td-post-content > div.my-di-do-a
+gmx.net##.ad-banner
+china-gadgets.de##div[id^="trimexa-ads_d_incontent-rec"]
+china-gadgets.de###trimexa-ads_d_footer-wrapper
+china-gadgets.de###trimexa-ads_d_top
+||igorslab.de/wp-content/plugins/igorslab-ads-suite/
+/^https:\/\/www\.igorslab.de\/[a-zA-Z0-9]{8,}\/[a-zA-Z0-9_-]{20,}/$domain=igorslab.de,image,xmlhttprequest
+igorslab.de##.herald-sidebar-right > div[id][class*=" "]
+autohebdo.de##.stafepress-ad-wrapper
 welt.de##div[data-component="AdStage"]
 fr.de##.id-StoryElement-embed
 fr.de##.id-Recommendation
-/^https:\/\/www\.igorslab\.de\/[0-9a-z]+\/[\/0-9A-Z_a-z-]+$/$image,~third-party,match-case
-igorslab.de##.herald-sticky
-igorslab.de##.herald-sidebar-right > .widget:not([id*="widget"])
 imagenetz.de##.ig-adbox
 hna.de##.wv_story_el_showHeroes
 ||meetingpoint-jl.de/uploads/*/ads/
@@ -2052,7 +2066,7 @@ weser-kurier.de##.ad-sticky-footer-container-wk
 weser-kurier.de##section[data-contentport-name^="Werbung"]
 swp.de,lr-online.de###ms-edgeAd
 lr-online.de##.u-adSlot:not([class*="-sky-"])
-swp.de##.u-adSlot
+stuttgarter-zeitung.de,swp.de##.u-adSlot
 saechsische.de##div[class^="recommendationstyled__"]
 volksstimme.de##div[id*="articlead-"]
 ||dl.volksstimme.de/tm/
@@ -2195,7 +2209,7 @@ justetf.com##.wAd
 finanzen.net##.sticky__container--mrec-big
 aerotelegraph.com##.advert-inner
 kino.de##.teaserheld-header-wrapper
-||toolbox.webediagaming.de^$domain=gamestar.de|gamepro.de|mein-mmo.de
+||toolbox.webediagaming.de^$domain=gamepro.de|mein-mmo.de
 antenne.de##.o-reklame
 thueringer-allgemeine.de,waz.de,braunschweiger-zeitung.de,nrz.de,abendblatt.de##.ad-slot-wrapper
 kurier.de,np-coburg.de,frankenpost.de##div[id^="leaderboard"]
@@ -2799,7 +2813,7 @@ computerbase.de##.content-list > .article > a[href*="-anzeige-"] + .article__mai
 raetsel-hilfe.de##body .ad-container
 twitterperlen.de###ai_widget-2
 twitterperlen.de###ai_widget-5
-leckerschmecker.me,genialetricks.de,twitterperlen.de##body .code-block
+ms-aktuell.de,leckerschmecker.me,genialetricks.de,twitterperlen.de##body .code-block
 welt-der-bwl.de##div[class^="adunit-"]
 welt-der-bwl.de###block-block-24
 welt-der-bwl.de###block-block-25
@@ -9198,6 +9212,7 @@ brigitte.de,gala.de##.ad-element
 apollo-news.net##.ad-home-feed-box
 apollo-news.net##.ad-in-article-box
 hallo-minden.de##.ad-info
+telepolis.de##.ad-ldb-container
 augsburger-allgemeine.de##.ad-list_small-native-container
 chip.de,diegrenzgaenger.lu##.ad-listing
 meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##.ad-live
@@ -10071,7 +10086,7 @@ dererker.it##.partvert-right
 fla.de##.pbph
 otto.de##.pdp_reco-sponsored
 otto.de##.pdp_sda__slot
-heise.de##.perf-cls-reduc-leaderboard
+heise.de,telepolis.de##.perf-cls-reduc-leaderboard
 heise.de##.perf-cls-reduc-rectangle
 kino.de##.performance-pub
 goyellow.de##.phoneblockAd
@@ -10504,6 +10519,7 @@ bueroblog.ch,computerfachmagazin.de,office-roxx.de##.widget_metaslider_widget
 buongiornosuedtirol.it##.widget_random_banner_widget
 puschtra.it##.widget_sp_image
 hebelschein-spekulant.de##.widget_text
+windowspro.de##.wip-ad-block
 zitate-online.de##.witz > .bewertung + .detaillink + p:last-child
 zitate-online.de##.witz > .bewertung + p:last-child
 celleheute.de##.wixui-column-strip.wix-blog-hide-in-print

@@ -13244,7 +13244,7 @@
 				"description": "Seznam filtrů filterslist-KO Classic pro AdGuard blokuje reklamy a vypíná skripty proti blokování reklam na korejských webech a v aplikacích."
 			},
 			"da": {
-				"name": "filterslist-KO Classic filter list",
+				"name": "filterslist-KO Classic-filterliste",
 				"description": "Filterlisten filterslist-KO Classic til AdGuard blokerer annoncer og deaktiverer anti-annonceblokeringsscripts på koreansksprogede websteder og i apps."
 			},
 			"de": {
@@ -13381,7 +13381,7 @@
 			},
 			"tr": {
 				"name": "filterslist-KO Classic filter list",
-				"description": "AdGuard için filterslist-KO Classic filtre listesi, Korece web siteleri ve uygulamalardaki reklamları engeller ve reklam engelleyici karşıtı komut dosyalarını devre dışı bırakır."
+				"description": "Filterslist-KO Classic filter list, AdGuard için Korece sitelerinde ve uygulamalarında reklamları engeller ve reklam engellemeye karşı komut dosyalarını devre dışı bırakır."
 			},
 			"uk": {
 				"name": "filterslist-KO Classic filter list",

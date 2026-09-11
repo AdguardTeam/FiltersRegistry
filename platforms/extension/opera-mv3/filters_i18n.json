@@ -1283,7 +1283,7 @@
 			},
 			"en": {
 				"description": "Designed to block ads online",
-				"name": "Ad Blocking"
+				"name": "Ad blocking"
 			},
 			"es": {
 				"description": "Diseñado para bloquear anuncios en línea",
@@ -2852,180 +2852,180 @@
 		},
 		"10": {
 			"ar": {
-				"description": "مانع الإعلانات AdGuard يوصى باستخدامها مع",
-				"name": "AdGuardتوصية"
+				"description": "معتمد للاستخدام من قِبل فريق AdGuard",
+				"name": "موصى به"
 			},
 			"be": {
-				"description": "Фільтр рэкамендуецца выкарыстоўваць з AdGuard",
-				"name": "Рэкамендацыя AdGuard"
+				"description": "Ухвалена камандай AdGuard",
+				"name": "Рэкамендавана"
 			},
 			"bg": {
-				"description": "Препоръчва се за използване с блокирача на реклами AdGuard",
-				"name": "Препоръка на AdGuard"
+				"description": "Одобрено от екипа на AdGuard",
+				"name": "Препоръчано"
 			},
 			"ca": {
-				"description": "Es recomana utilitzar amb el bloquejador d'anuncis AdGuard",
-				"name": "Recomanació d'AdGuard"
+				"description": "Aprovat per l'equip d'AdGuard",
+				"name": "Recomanat"
 			},
 			"cs": {
-				"description": "Doporučeno používat s blokátorem reklam AdGuard",
-				"name": "Doporučení AdGuard"
+				"description": "Schváleno týmem AdGuard k použití",
+				"name": "Doporučeno"
 			},
 			"da": {
-				"description": "Anbefalet til brug med AdGuard-adblocker",
-				"name": "AdGuard-anbefaling"
+				"description": "Godkendt til brug af AdGuard-teamet",
+				"name": "Anbefalet"
 			},
 			"de": {
-				"description": "Für die Verwendung mit AdGuard-Werbeblocker empfohlen.",
-				"name": "AdGuard-Empfehlung"
+				"description": "Vom AdGuard-Team zur Verwendung empfohlen",
+				"name": "Empfohlen"
 			},
 			"el": {
-				"description": "Συνιστάται να χρησιμοποιείται με το πρόγραμμα αποκλεισμού διαφημίσεων AdGuard",
-				"name": "Σύσταση AdGuard"
+				"description": "Εγκεκριμένο για χρήση από την ομάδα του AdGuard",
+				"name": "Συνιστάται"
 			},
 			"en": {
-				"description": "Recommended to use with AdGuard ad blocker",
-				"name": "AdGuard recommendation"
+				"description": "Approved for use by the AdGuard team",
+				"name": "Recommended"
 			},
 			"es": {
 				"description": "Recomendado para usar con el bloqueador de anuncios AdGuard",
-				"name": "Recomendación de AdGuard"
+				"name": "Recomendado"
 			},
 			"es_ES": {
 				"description": "Recomendado para usar con el bloqueador de anuncios AdGuard",
-				"name": "Recomendación de AdGuard"
+				"name": "Recomendado"
 			},
 			"fa": {
-				"description": "توصیه میشود با مسدودساز تبلیغ AdGuard استفاده شود",
-				"name": "AdGuard توصیه"
+				"description": "تأییدشده برای استفاده توسط تیم AdGuard",
+				"name": "پیشنهادشده"
 			},
 			"fi": {
-				"description": "Suositellaan käytettäväksi AdGuard Mainoseston kanssa.",
-				"name": "AdGuardin suositus"
+				"description": "AdGuard-tiimin hyväksymä käyttöön",
+				"name": "Suositeltu"
 			},
 			"fr": {
-				"description": "Utilisation recommandée avec bloqueur de publicités AdGuard",
-				"name": "Recommandé par AdGuard"
+				"description": "Approuvé pour utilisation par l’équipe AdGuard",
+				"name": "Recommandé"
 			},
 			"he": {
-				"description": "מומלץ לשימוש עם חוסם הפרסומות AdGuard",
-				"name": "המלצה מאת AdGuard"
+				"description": "אושר לשימוש על ידי צוות AdGuard",
+				"name": "מומלץ"
 			},
 			"hi": {
-				"description": "AdGuard विज्ञापन ब्लॉकर के साथ उपयोग करने की सिफारिश की",
-				"name": "AdGuard की सिफारिश"
+				"description": "AdGuard टीम द्वारा उपयोग के लिए स्वीकृत करें",
+				"name": "अनुशंसित"
 			},
 			"hr": {
-				"description": "Preporučeno koristiti zajedno s AdGuard blokerom oglasa",
-				"name": "AdGuard preporuka"
+				"description": "Odobrio AdGuard tim za upotrebu",
+				"name": "Preporučeno"
 			},
 			"hu": {
-				"description": "Ajánlott az AdGuard hirdetésblokkolóval együtt használni",
-				"name": "AdGuard ajánlás"
+				"description": "Az AdGuard csapata használatra jóváhagyta",
+				"name": "Ajánlott"
 			},
 			"hy": {
-				"description": "Recommended to use with AdGuard ad blocker",
-				"name": "AdGuard-ի առաջարկ"
+				"description": "Հաստատված է AdGuard-ի թիմի կողմից օգտագործման համար",
+				"name": "Առաջարկվող"
 			},
 			"id": {
-				"description": "Disarankan untuk digunakan dengan pemblokir iklan AdGuard",
-				"name": "Rekomendasi AdGuard"
+				"description": "Disetujui untuk digunakan oleh tim AdGuard",
+				"name": "Rekomendasi"
 			},
 			"it": {
-				"description": "Consigliato per l'utilizzo con il blocca-annunci AdGuard",
-				"name": "Consiglio AdGuard"
+				"description": "Approvato per l'uso dal gruppo AdGuard",
+				"name": "Consigliato"
 			},
 			"ja": {
-				"description": "AdGuardの広告ブロッカーを使用することをおすすめします",
-				"name": "AdGuard推奨"
+				"description": "AdGuardチームによる使用承認済み",
+				"name": "おすすめ"
 			},
 			"ko": {
-				"description": "AdGuard 광고 차단기와 함께 사용하기를 권장드립니다.",
-				"name": "AdGuard 권장"
+				"description": "AdGuard 팀에서 사용을 승인함",
+				"name": "추천"
 			},
 			"lt": {
-				"description": "Rekomenduojama naudoti su AdGuard ad blocker",
-				"name": "AdGuard rekomendacija"
+				"description": "Patvirtinta naudoti AdGuard komandos",
+				"name": "Rekomenduojama"
 			},
 			"mk": {
-				"description": "Се препорачува да се користи со блокатор на реклами AdGuard",
-				"name": "Препорака од AdGuard"
+				"description": "Одобрено за употреба од тимот на AdGuard",
+				"name": "Препорачано"
 			},
 			"ms": {
-				"description": "Disyorkan untuk digunakan bersama penapis iklan AdGuard",
-				"name": "Cadangan AdGuard"
+				"description": "Diluluskan untuk digunakan oleh pasukan AdGuard",
+				"name": "Disyorkan"
 			},
 			"nl": {
-				"description": "Aanbevolen om te gebruiken met AdGuard adblocker",
-				"name": "AdGuard aanbeveling"
+				"description": "Goedgekeurd voor gebruik door het AdGuard-team",
+				"name": "Aanbevolen"
 			},
 			"no": {
-				"description": "Anbefales for bruk med AdGuard-annonseblokkerer",
-				"name": "AdGuard-anbefaling"
+				"description": "Godkjent av AdGuard-teamet",
+				"name": "Anbefalt"
 			},
 			"pl": {
-				"description": "Zalecany do korzystania z AdGuardem",
-				"name": "Rekomendacja AdGuarda"
+				"description": "Zatwierdzone do użytku przez zespół AdGuard",
+				"name": "Polecane"
 			},
 			"pt": {
-				"description": "Recomendado para usar com bloqueador de publicidade do AdGuard",
-				"name": "Recomendação do AdGuard"
+				"description": "Utilização aprovada pela equipa do AdGuard",
+				"name": "Recomendado"
 			},
 			"pt_BR": {
-				"description": "Recomendado usar com o AdGuard bloqueador de anúncios",
-				"name": "Recomendação do AdGuard"
+				"description": "Aprovado para uso pela equipe do AdGuard",
+				"name": "Recomendado"
 			},
 			"pt_PT": {
-				"description": "Recomendado para usar com bloqueador de publicidade do AdGuard",
-				"name": "Recomendação do AdGuard"
+				"description": "Utilização aprovada pela equipa do AdGuard",
+				"name": "Recomendado"
 			},
 			"ro": {
-				"description": "Utilizare recomandată cu blocantul de reclame AdGuard",
-				"name": "Recomandare AdGuard"
+				"description": "Aprobat pentru utilizare de către echipa AdGuard",
+				"name": "Recomandat"
 			},
 			"ru": {
-				"description": "Фильтр рекомендуется использовать с AdGuard",
-				"name": "Рекомендация AdGuard"
+				"description": "Одобрен командой AdGuard",
+				"name": "Рекомендуемый"
 			},
 			"sk": {
-				"description": "Odporučené používať s AdGuard blokovačom reklamy",
-				"name": "Odporučené AdGuard"
+				"description": "Schválené tímom AdGuard",
+				"name": "Odporúčané"
 			},
 			"sl": {
-				"description": "Priporočljivo za uporabo z zaviralcem oglasov AdGuard",
-				"name": "Priporočilo AdGuarda"
+				"description": "Odobreno s strani ekipe AdGuard",
+				"name": "Priporočeno"
 			},
 			"sr": {
-				"description": "Preporučuje se korišćenje sa AdGuard blokatorom reklama",
-				"name": "AdGuard preporuka"
+				"description": "Odobreno za upotrebu od strane AdGuard tima",
+				"name": "Preporučeno"
 			},
 			"sv": {
-				"description": "Rekommenderas att användas tillsammans med AdGuard annonsblockerare",
-				"name": "AdGuardrekommendation"
+				"description": "Godkänt för användning av AdGuard-teamet",
+				"name": "Rekommenderad"
 			},
 			"th": {
-				"description": "แนะนำให้ใช้กับ AdGuard ตัวปิดกั้นโฆษณา",
-				"name": "คำแนะนำของ AdGuard"
+				"description": "ได้รับการอนุมัติให้ใช้งานโดยทีม AdGuard",
+				"name": "แนะนำ"
 			},
 			"tr": {
-				"description": "AdGuard reklam engelleyici ile kullanılması önerilir",
-				"name": "AdGuard'ın önerisi"
+				"description": "AdGuard ekibi tarafından kullanım için onaylandı",
+				"name": "Önerilen"
 			},
 			"uk": {
-				"description": "Рекомендовано до використання з AdGuard",
-				"name": "Рекомендація AdGuard"
+				"description": "Схвалено командою AdGuard",
+				"name": "Рекомендовано"
 			},
 			"vi": {
-				"description": "Được khuyến nghị sử dụng với trình chặn quảng cáo AdGuard",
-				"name": "Đề xuất AdGuard"
+				"description": "Được nhóm AdGuard chấp thuận cho sử dụng",
+				"name": "Được đề xuất"
 			},
 			"zh": {
-				"description": "建议与 AdGuard 广告拦截器配合使用",
-				"name": "AdGuard 推荐"
+				"description": "AdGuard 团队认可",
+				"name": "推荐"
 			},
 			"zh_TW": {
-				"description": "被建議與 AdGuard 廣告封鎖器一起使用",
-				"name": "AdGuard 建議"
+				"description": "AdGuard 團隊認可",
+				"name": "推薦"
 			}
 		},
 		"11": {
@@ -20674,7 +20674,7 @@
 				"description": "Seznam filtrů filterslist-KO Classic pro AdGuard blokuje reklamy a vypíná skripty proti blokování reklam na korejských webech a v aplikacích."
 			},
 			"da": {
-				"name": "filterslist-KO Classic filter list",
+				"name": "filterslist-KO Classic-filterliste",
 				"description": "Filterlisten filterslist-KO Classic til AdGuard blokerer annoncer og deaktiverer anti-annonceblokeringsscripts på koreansksprogede websteder og i apps."
 			},
 			"de": {
@@ -20811,7 +20811,7 @@
 			},
 			"tr": {
 				"name": "filterslist-KO Classic filter list",
-				"description": "AdGuard için filterslist-KO Classic filtre listesi, Korece web siteleri ve uygulamalardaki reklamları engeller ve reklam engelleyici karşıtı komut dosyalarını devre dışı bırakır."
+				"description": "Filterslist-KO Classic filter list, AdGuard için Korece sitelerinde ve uygulamalarında reklamları engeller ve reklam engellemeye karşı komut dosyalarını devre dışı bırakır."
 			},
 			"uk": {
 				"name": "filterslist-KO Classic filter list",

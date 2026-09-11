@@ -1,14 +1,14 @@
-! Checksum: gX9Nfbivy+P28IF3zgz7LQ
-! Diff-Path: ../patches/227/227-s-1788439681-14400.patch
+! Checksum: TnqXf2NRtivMmSmVTruRQw
+! Diff-Path: ../patches/227/227-s-1788928839-14400.patch
 ! Title: filterslist-KO Classic filter list
 ! Description: The filterslist-KO Classic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.25.38
-! TimeUpdated: 2026-09-03T12:45:19+00:00
+! Version: 2.0.25.46
+! TimeUpdated: 2026-09-09T04:37:56+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: filterslists-KO classic (AdGuard)
 ! Description: AdGuard용 filterslists-KO클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20699.2
+! OriginalVersion: 2026.20705.1
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/FilteringDev/filterslists-KO
 ! Licence: https://github.com/FilteringDev/filterslists-KO/blob/master/LICENSE
@@ -265,6 +265,8 @@
 !
 ! DOMAIN-REFRESHER: START
 !
+||creative.mayzaent.com^
+||reebr.com^
 ||ntkimg.cloud^
 ||ttse.b-cdn.net^
 ||i.keezip.com^
@@ -799,6 +801,8 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+||amazing.today/_next/image?url=%2Fads%2F2
+||image.gamechosun.co.kr/ad_banner/
 ||file.chuchu.gg/*/pop_up_ad/
 /^https:\/\/(www\.)?busan\.com\/nas\/wcms\/public\/m\/images\/new\/[0-9]{6}[a-z]{2,3}\./$domain=busan.com
 ||joinsmedia.sfo2.digitaloceanspaces.com/ad/
@@ -1700,6 +1704,8 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 ! DOMAIN-REFRESHER: START
 !
 ! aglint-disable-next-line no-invalid-modifiers
+/w[0-9]+\.apiapi[0-9]+\.com\/data\/banner\//$domain=/tvwiki[0-9]+\.net/
+! aglint-disable-next-line no-invalid-modifiers
 /^https:\/\/anilife[0-9]+\.tv\/tvwiki-banners\//$domain=/anilife[0-9]+\.tv/
 ! aglint-disable-next-line no-invalid-modifiers
 /^https:\/\/cdn[0-9]+\.cokcok\.[a-z0-9]+\/assets\/images\//$domain=/cokcok[0-9]+\.com/
@@ -2034,6 +2040,19 @@ jobkorea.co.kr##div[id^="Banner"]
 ! ##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+bananamall.co.kr###banner_header
+bananamall.co.kr##.banner_fan_meeting_review
+bananamall.co.kr##.banner_cntnt_right
+bananamall.co.kr##wrap_fixed_right_branches
+bananamall.co.kr###wrap_fixed_right_exhbt
+bananamall.co.kr##.srch_term
+bananamall.co.kr##.banner_evt
+bananamall.co.kr##.banner_cntnt_left
+bananamall.co.kr##.banner_evt_adult_day_2017
+bananamall.co.kr###wrap_banner_fixed_left
+bananamall.co.kr###wrap_fixed_left_review
+my.amazing.today##.relative.z-0.flex-1 #map ~ .absolute.z-10.flex.w-full
+gamechosun.co.kr##.top_event
 busan.com###container > div[style^="width:"]
 joinsmediacanada.com###popupNoticeWrap
 joinsmediacanada.com###aside.highChk
@@ -4166,16 +4185,6 @@ jootc.com,ehpub.co.kr#%#//scriptlet('abort-current-inline-script', 'ai_run_scrip
 ! fundingchoicesmessages.google.com
 ||fundingchoicesmessages.google.com^$domain=damoang.net|maplescouter.com|vivatv.cc|svrforum.com|singingdalong.blogspot.com|goodgag.net|bera.world|sellas.ink|hunigo.com|iteastory.com|snskeyboard.com|rdsong.com|mongri.net|meeco.kr|poketory.com|youthassembly.kr|kr.jugomobile.com|1412.live|pyrasis.com|oceansabyss.com|yongtj.com|dora-guide.com|tailstar.net|creativestudio.kr|gamejay.net|mksports.co.kr|sisamagazine.co.kr|dreamrail.co.kr|tistory.com|gukjenews.com|issuelink.co.kr|webtool.cusis.net|koreaminecraft.net
 ! Kakao TV
-! aglint-disable-next-line no-invalid-modifiers
-/^https:\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]+\/vmap/$redirect=nooptext,domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
-tv.kakao.com,play-tv.kakao.com,kakaotv.daum.net#%#//scriptlet('prevent-xhr', '/^https.\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]{1,2}\/vmap$/')
-! aglint-disable-next-line no-invalid-modifiers
-/embed/player/image/ads.png$redirect=2x2-transparent.png,domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
-tv.kakao.com,play-tv.kakao.com,kakaotv.daum.net#%#//scriptlet('prevent-fetch', '/^https.\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]{1,2}\/vmap$/')
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adContainer
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#ins.kakao_ad_area
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adBlockPixelTag
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#.banner_ad
 ! meeco.kr
 meeco.kr##body > div[class][style*="box-shadow:"]
 meeco.kr#@#.googleAd
