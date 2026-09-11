@@ -1,9 +1,9 @@
-! Checksum: LKUAUSscoxcLY3lmRYToUA
-! Diff-Path: ../patches/13/13-s-1789139897-3600.patch
+! Checksum: 379/9SGYJ5BsJHckbAAwwA
+! Diff-Path: ../patches/13/13-s-1789143626-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.97
-! TimeUpdated: 2026-09-11T15:14:15+00:00
+! Version: 2.0.67.98
+! TimeUpdated: 2026-09-11T16:16:23+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -674,6 +674,8 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ! Good: ##.adv
 ! Bad: example.org##.adv (should be in specific.txt)
 !
+! Streaming sites with casino ads
+##header > ul > li.blink > a[target]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219628#issuecomment-3645462129
 ##.playerTextReklam
 ! Turkish online cinema sites
@@ -1646,9 +1648,6 @@ fanatik.com.tr#?#.adRenderer
 aspor.com.tr##.layout-slot-square
 aspor.com.tr##.aside-slot
 ||720piz.org/prk1.js
-.gif$image,domain=betanotv2.site
-betanotv2.site##div.reklam-3
-betanotv2.site##a[href^="https://hemengit.link/"]
 cdnvexo.site###adOverlay
 ||sude.vxelo.org/mina.mp4$media,redirect=noopmp3-0.1s,domain=cdnvexo.site|utanmazkizlar.com
 polobettv.cc##header > ul > li:not(:has(> a[href="/"]))
@@ -4875,7 +4874,7 @@ fethiyehaber.com##a[href^=" https://www.ford-helvacioglu-mugla.com/"]
 cimri.com##div[id*="_MASTHEAD_DESKTOP_"]
 cimri.com##a[href^="https://www.trendyol.com?utm_source=aff_t&utm_medium=cpm&utm_campaign=cimri_sponsor_text_lin"]
 papajohns.com.tr##.popup-window
-betanotv2.site,betnistvizle.com,papajohns.com.tr##.popup-overlay
+betnistvizle.com,papajohns.com.tr##.popup-overlay
 gmdergi.com,ntv.com.tr,superfb.com,yeniisfikirleri.net##a[href^="http://bit.ly/"]
 -reklam.$domain=ruyatabirleri.blog|magazinizmir.com|arenabodrumhaber.com
 sanayigazetesi.com.tr,paraanaliz.com,thegeyik.com,yenikutahya.com,arenabodrumhaber.com###mvp-leader-wrap
@@ -6082,6 +6081,15 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+!
+! Frequently changed domains: betanotv*.site
+[$domain=/betanotv\d+\.site$/]##div[class^="reklam-"]
+[$domain=/betanotv\d+\.site$/]##body > header
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+.gif$domain=/betanotv\d+\.site$/
+! aglint-enable no-invalid-modifiers
+!
 ! Frequently changed domains: bovtv*.com
 ! Source: bovtv38.com
 ||bovtv*.com/BOVBETTV.webm
@@ -6120,7 +6128,6 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Frequently changed domains: bahisotv*.com
 ! Source: bahisotv35.com
 [$domain=/bahisotv\d+\.com$/]##div[style^="margin:"]:has(> a[href][target="_blank"])
-[$domain=/bahisotv\d+\.com$/]##header > ul > li.blink:has(> a[href="/"]) ~ li.blink
 [$domain=/bahisotv\d+\.com$/]##.footer-links
 !
 ! Frequently changed domains: gmatv*.live
@@ -6238,7 +6245,6 @@ mahsunsports.xyz#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-vide
 ! Source: macvardi281.com
 ||macvardi*.com/*.gif
 [$domain=/macvardi\d+\.com$/]##div[style^="margin:"]:has(> a[href][target="_blank"])
-[$domain=/macvardi\d+\.com$/]##header > ul > li.blink:has(> a[href="/"]) ~ li.blink
 [$domain=/macvardi\d+\.com$/]##.footer-links
 !
 ! Frequently changed domains: baycontitv*.com

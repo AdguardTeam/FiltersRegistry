@@ -1,8 +1,8 @@
-! Checksum: 766XI5M99IfwHvfc84Ipeg
+! Checksum: 9ZhnZQXQ6OgF92tkMdb99Q
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.97
-! TimeUpdated: 2026-09-11T15:14:15+00:00
+! Version: 2.0.67.98
+! TimeUpdated: 2026-09-11T16:16:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -653,6 +653,8 @@ kasvekuvvet.net##body > div[id][class][style*="z-index: 9999"]
 ! Good: ##.adv
 ! Bad: example.org##.adv (should be in specific.txt)
 !
+! Streaming sites with casino ads
+##header > ul > li.blink > a[target]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219628#issuecomment-3645462129
 ##.playerTextReklam
 ! Turkish online cinema sites
@@ -1346,9 +1348,6 @@ canlitvpap.com##.video-overlay-banner
 aspor.com.tr##.layout-slot-square
 aspor.com.tr##.aside-slot
 ||720piz.org/prk1.js
-.gif$image,domain=betanotv2.site
-betanotv2.site##div.reklam-3
-betanotv2.site##a[href^="https://hemengit.link/"]
 cdnvexo.site###adOverlay
 polobettv.cc##.odds-container
 ||30slotintv.live/view/theme/safir/img/pageskin0001.png
@@ -4130,7 +4129,7 @@ fethiyehaber.com##a[href^=" https://www.ford-helvacioglu-mugla.com/"]
 cimri.com##div[id*="_MASTHEAD_DESKTOP_"]
 cimri.com##a[href^="https://www.trendyol.com?utm_source=aff_t&utm_medium=cpm&utm_campaign=cimri_sponsor_text_lin"]
 papajohns.com.tr##.popup-window
-betanotv2.site,betnistvizle.com,papajohns.com.tr##.popup-overlay
+betnistvizle.com,papajohns.com.tr##.popup-overlay
 gmdergi.com,ntv.com.tr,superfb.com,yeniisfikirleri.net##a[href^="http://bit.ly/"]
 -reklam.$domain=ruyatabirleri.blog|magazinizmir.com|arenabodrumhaber.com
 sanayigazetesi.com.tr,paraanaliz.com,thegeyik.com,yenikutahya.com,arenabodrumhaber.com###mvp-leader-wrap
@@ -5275,6 +5274,14 @@ isguc.org##td[width="200"] a[target="_blank"] img[width="200"][alt]
 !          or add a last known domain
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
+!
+!
+! Frequently changed domains: betanotv*.site
+! aglint-disable no-invalid-modifiers
+! aglint-enable no-invalid-modifiers
+.gif$domain=betanotv5.site
+betanotv5.site##.reklam-3
+betanotv5.site##.popup-overla
 !
 ! Frequently changed domains: bovtv*.com
 ! Source: bovtv38.com

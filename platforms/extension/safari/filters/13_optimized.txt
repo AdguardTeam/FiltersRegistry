@@ -1,9 +1,9 @@
-! Checksum: QXmQluW1BTY4HzKzP6rqSw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1789139870-3600.patch
+! Checksum: 06n5n9jp30bPVSL2NZTM+w
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1789143604-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.67.97
-! TimeUpdated: 2026-09-11T15:14:15+00:00
+! Version: 2.0.67.98
+! TimeUpdated: 2026-09-11T16:16:23+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -537,6 +537,7 @@ mackolik.com,sahadan.com#%#var advertisement_not_blocked = 1;
 mackolik.com,sahadan.com#%#var criteo_medyanet_loaded = 1;
 r10.net#%#//scriptlet('abort-on-property-read', 'rTargets')
 r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
+##header > ul > li.blink > a[target]
 ##.playerTextReklam
 ##center > a[target="_blank"][style="color: red;"] > font[style="font-size: 15pt"]
 ##.pageskin-container
@@ -1190,9 +1191,6 @@ fanatik.com.tr#?#.adRenderer
 aspor.com.tr##.layout-slot-square
 aspor.com.tr##.aside-slot
 ||720piz.org/prk1.js
-.gif$image,domain=betanotv2.site
-betanotv2.site##div.reklam-3
-betanotv2.site##a[href^="https://hemengit.link/"]
 cdnvexo.site###adOverlay
 polobettv.cc##header > ul > li:not(:has(> a[href="/"]))
 polobettv.cc##.odds-container
@@ -4410,7 +4408,7 @@ fethiyehaber.com##a[href^=" https://www.ford-helvacioglu-mugla.com/"]
 cimri.com##div[id*="_MASTHEAD_DESKTOP_"]
 cimri.com##a[href^="https://www.trendyol.com?utm_source=aff_t&utm_medium=cpm&utm_campaign=cimri_sponsor_text_lin"]
 papajohns.com.tr##.popup-window
-betanotv2.site,betnistvizle.com,papajohns.com.tr##.popup-overlay
+betnistvizle.com,papajohns.com.tr##.popup-overlay
 gmdergi.com,ntv.com.tr,superfb.com,yeniisfikirleri.net##a[href^="http://bit.ly/"]
 -reklam.$domain=ruyatabirleri.blog|magazinizmir.com|arenabodrumhaber.com
 sanayigazetesi.com.tr,paraanaliz.com,thegeyik.com,yenikutahya.com,arenabodrumhaber.com###mvp-leader-wrap
@@ -5610,6 +5608,9 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+.gif$domain=betanotv5.site
+betanotv5.site##.reklam-3
+betanotv5.site##.popup-overla
 ||bovtv*.com/BOVBETTV.webm
 ||bovtv*.com/view/theme/ultimate/img/*.gif
 bovtv38.com##div[class^="reklam-"]
@@ -5632,7 +5633,6 @@ kodamantv21.com###splashAd
 kodamantv21.com###sabitFooter
 kodamantv21.com#%#//scriptlet('prevent-window-open')
 bahisotv36.com##div[style^="margin:"]:has(> a[href][target="_blank"])
-bahisotv36.com##header > ul > li.blink:has(> a[href="/"]) ~ li.blink
 bahisotv36.com##.footer-links
 gmatv61.live##div[class^="reklam-"]
 ||pelitcanlitv.com/admin/uploads/*.gif
@@ -5694,7 +5694,6 @@ www.galyatv6.com##.pageskin-click
 www.galyatv6.com##.nk-nav-logo ~ ul
 ||macvardi*.com/*.gif
 macvardi281.com##div[style^="margin:"]:has(> a[href][target="_blank"])
-macvardi281.com##header > ul > li.blink:has(> a[href="/"]) ~ li.blink
 macvardi281.com##.footer-links
 ||baycontitv*.com/view/theme/ultimate/img/*.gif
 ||baycontitv*.com/IMG_0060.MP4
