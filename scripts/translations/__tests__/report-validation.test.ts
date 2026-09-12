@@ -1,8 +1,8 @@
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
+import type { Octokit } from '@octokit/core';
 import {
-    afterEach,
     beforeEach,
     describe,
     expect,
@@ -24,21 +24,19 @@ import {
 const REPORT_PREFIX = 'report_locales_error_';
 
 /**
- * Creates a mock fetch Response with the given JSON body.
+ * Creates a mock Octokit request response with the given data and headers.
  *
- * @param body - Response body to serialize.
- * @param status - HTTP status code.
+ * @param data - Response body data.
  * @param headers - Extra response headers.
- * @returns A Response instance.
+ * @returns An object shaped like an Octokit response.
  */
-const jsonResponse = (
-    body: unknown,
-    status = 200,
+const octokitResponse = (
+    data: unknown,
     headers: Record<string, string> = {},
-): Response => new Response(
-    body === null || body === undefined ? null : JSON.stringify(body),
-    { status, headers },
-);
+): { data: unknown; headers: Record<string, string> } => ({
+    data,
+    headers,
+});
 
 /**
  * Creates a temp dir pre-populated with validation report files.
@@ -112,63 +110,72 @@ describe('report-validation utils', () => {
 });
 
 describe('GitHubClient', () => {
-    const mockFetch = vi.fn();
+    const requestMock = vi.fn();
 
     beforeEach(() => {
-        vi.stubGlobal('fetch', mockFetch);
+        requestMock.mockReset();
     });
 
-    afterEach(() => {
-        vi.unstubAllGlobals();
-        mockFetch.mockReset();
-    });
+    const client = (): GitHubClient => new GitHubClient(
+        { request: requestMock } as unknown as Octokit,
+        'o/r',
+    );
 
     it('lists comments following pagination', async () => {
-        mockFetch
-            .mockResolvedValueOnce(jsonResponse(
+        requestMock
+            .mockResolvedValueOnce(octokitResponse(
                 [{ id: 1, body: 'first page' }],
-                200,
                 { link: '<https://api.github.com/repos/o/r/issues/5/comments?page=2>; rel="next"' },
             ))
-            .mockResolvedValueOnce(jsonResponse([{ id: 2, body: 'second page' }]));
-        const client = new GitHubClient('token', 'o/r');
+            .mockResolvedValueOnce(octokitResponse([{ id: 2, body: 'second page' }]));
 
-        const comments = await client.listComments(5);
+        const comments = await client().listComments(5);
 
         expect(comments).toEqual([
             { id: 1, body: 'first page' },
             { id: 2, body: 'second page' },
         ]);
-        expect(mockFetch).toHaveBeenCalledTimes(2);
-        const firstCall = mockFetch.mock.calls[0];
-        expect(firstCall[0]).toContain('/repos/o/r/issues/5/comments?per_page=100');
-        expect(firstCall[1]?.headers.Authorization).toBe('Bearer token');
+        expect(requestMock).toHaveBeenCalledTimes(2);
+        expect(requestMock).toHaveBeenNthCalledWith(
+            1,
+            'GET /repos/{owner}/{repo}/issues/{issue_number}/comments',
+            expect.objectContaining({
+                owner: 'o',
+                repo: 'r',
+                issue_number: 5,
+                per_page: 100,
+                page: 1,
+            }),
+        );
+        expect(requestMock).toHaveBeenNthCalledWith(
+            2,
+            'GET /repos/{owner}/{repo}/issues/{issue_number}/comments',
+            expect.objectContaining({ page: 2 }),
+        );
     });
 });
 
 describe('reportValidation', () => {
-    const mockFetch = vi.fn();
+    const requestMock = vi.fn();
 
     beforeEach(() => {
-        vi.stubGlobal('fetch', mockFetch);
+        requestMock.mockReset();
     });
 
-    afterEach(() => {
-        vi.unstubAllGlobals();
-        mockFetch.mockReset();
-    });
-
-    const client = (): GitHubClient => new GitHubClient('token', 'o/r');
+    const client = (): GitHubClient => new GitHubClient(
+        { request: requestMock } as unknown as Octokit,
+        'o/r',
+    );
 
     it('deletes stale comments and posts a new failure comment', async () => {
         const dir = createReportDir([`${REPORT_PREFIX}01-01-2026_10-00-00.md`]);
-        mockFetch
-            .mockResolvedValueOnce(jsonResponse([
+        requestMock
+            .mockResolvedValueOnce(octokitResponse([
                 { id: 1, body: 'unrelated comment' },
                 { id: 2, body: `stale ${COMMENT_MARKER}` },
             ]))
-            .mockResolvedValueOnce(jsonResponse(null, 204))
-            .mockResolvedValueOnce(jsonResponse({}));
+            .mockResolvedValueOnce(octokitResponse({}))
+            .mockResolvedValueOnce(octokitResponse({}));
 
         await reportValidation({
             prNumber: 7,
@@ -177,15 +184,17 @@ describe('reportValidation', () => {
             client: client(),
         });
 
-        const deleteCall = mockFetch.mock.calls[1];
-        expect(deleteCall[0]).toContain('/repos/o/r/issues/comments/2');
-        expect(deleteCall[1]?.method).toBe('DELETE');
-        const createCall = mockFetch.mock.calls[2];
-        expect(createCall[0]).toContain('/repos/o/r/issues/7/comments');
-        expect(createCall[1]?.method).toBe('POST');
-        const createdBody = JSON.parse(createCall[1]?.body as string).body as string;
-        expect(createdBody).toContain(COMMENT_MARKER);
-        expect(createdBody).toContain('content of report_locales_error_01-01-2026_10-00-00.md');
+        expect(requestMock).toHaveBeenNthCalledWith(
+            2,
+            'DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}',
+            expect.objectContaining({ comment_id: 2 }),
+        );
+        const createCall = requestMock.mock.calls[2];
+        expect(createCall[0]).toBe('POST /repos/{owner}/{repo}/issues/{issue_number}/comments');
+        const createParams = createCall[1] as { issue_number: number; body: string };
+        expect(createParams.issue_number).toBe(7);
+        expect(createParams.body).toContain(COMMENT_MARKER);
+        expect(createParams.body).toContain('content of report_locales_error_01-01-2026_10-00-00.md');
         fs.rmSync(dir, {
             recursive: true,
             force: true,
@@ -194,9 +203,9 @@ describe('reportValidation', () => {
 
     it('only removes stale comments when validation succeeds', async () => {
         const dir = createReportDir([]);
-        mockFetch
-            .mockResolvedValueOnce(jsonResponse([{ id: 2, body: `stale ${COMMENT_MARKER}` }]))
-            .mockResolvedValueOnce(jsonResponse(null, 204));
+        requestMock
+            .mockResolvedValueOnce(octokitResponse([{ id: 2, body: `stale ${COMMENT_MARKER}` }]))
+            .mockResolvedValueOnce(octokitResponse({}));
 
         await reportValidation({
             prNumber: 7,
@@ -205,8 +214,12 @@ describe('reportValidation', () => {
             client: client(),
         });
 
-        expect(mockFetch).toHaveBeenCalledTimes(2);
-        expect(mockFetch.mock.calls[1][0]).toContain('/repos/o/r/issues/comments/2');
+        expect(requestMock).toHaveBeenCalledTimes(2);
+        expect(requestMock).toHaveBeenNthCalledWith(
+            2,
+            'DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}',
+            expect.objectContaining({ comment_id: 2 }),
+        );
         fs.rmSync(dir, {
             recursive: true,
             force: true,
@@ -215,9 +228,9 @@ describe('reportValidation', () => {
 
     it('posts a placeholder when validation failed but no report exists', async () => {
         const dir = createReportDir([]);
-        mockFetch
-            .mockResolvedValueOnce(jsonResponse([]))
-            .mockResolvedValueOnce(jsonResponse({}));
+        requestMock
+            .mockResolvedValueOnce(octokitResponse([]))
+            .mockResolvedValueOnce(octokitResponse({}));
 
         await reportValidation({
             prNumber: 7,
@@ -226,9 +239,8 @@ describe('reportValidation', () => {
             client: client(),
         });
 
-        const createCall = mockFetch.mock.calls[1];
-        const createdBody = JSON.parse(createCall[1]?.body as string).body as string;
-        expect(createdBody).toContain('No validation report was captured.');
+        const createParams = requestMock.mock.calls[1][1] as { body: string };
+        expect(createParams.body).toContain('No validation report was captured.');
         fs.rmSync(dir, {
             recursive: true,
             force: true,
