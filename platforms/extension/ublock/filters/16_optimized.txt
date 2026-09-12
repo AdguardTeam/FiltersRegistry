@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: r3oYzQ44rzSTWeJaPTPFOw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1789093440-3600.patch
+! Checksum: hpBaQgE34lp6P5pcvITk7Q
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1789179832-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.74
@@ -759,7 +759,6 @@ meteomedia.com###sidebar > #dv-gpt-ad-bigbox-wrap
 meteomedia.com###featured_content #div-gpt-ad-lowerbox-featured
 ||lindependant.fr/js/ab.*.js
 universfreebox.com##div[id^="publicite-"]
-maxiapple.com##.cegg_widget_products
 linternaute.com##div[id^="Crt-"]
 latribunedelart.com##.encart_colonne
 latribunedelart.com##.encart_bandeau_haut
@@ -1674,6 +1673,7 @@ _werbebanner_
 /splash.*?idzone=$popup
 /syndication.*&idzone=$popup
 ://ads.*/go/$popup
+://go.*?zoneid=$popup
 ://landing.*/?ats=$popup,3p
 ://syndication.$popup,3p
 ://xml.*/click?$popup
@@ -1891,7 +1891,6 @@ _werbebanner_
 ||stripcdn.com^$3p,domain=~xhamsterlive.com
 ||strpjmp.com^$3p
 ||sunmedia.tv^$3p
-||surfactif.fr^$3p
 ||svonm.com^$3p
 ||tagsrvcs.com^$3p
 ||tapub.fr^$3p
@@ -3279,7 +3278,6 @@ voethrusts.cfd
 ||iqoption.com^$popup
 ||jewhouca.net^$popup
 ||livepartners.com^$popup,3p
-||max-adserv.com^$popup,3p
 ||monetizze.com.br^$popup,3p
 ||multiupload.com^$popup,3p
 ||mybestclick.net^$popup,3p
@@ -3636,7 +3634,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||amateur2sexe.fr/include/$script
 ||andlil.com/prorealtime-trading-
 ||animeka.com/_img/cache/partner/
-||annonciaweb.com/ZZ-intr-*.
 ||apiclas.sofoot.com^
 ||aps.dz/images/banners/clients/
 ||archimag.com/sites/archimag.com/files/adds/
@@ -4039,6 +4036,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ###pub728bas
 ###pub728caracpub
 ###pub970acc
+###pubArticle
 ###pubAside
 ###pubBanner
 ###pubChronique
@@ -4215,7 +4213,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.bottom-advertising
 ##.bottom_ad_con
 ##.bottompub
-##.box-advertisement-top
 ##.box-centered-ads
 ##.box-pubb
 ##.boxAdRight
@@ -4228,6 +4225,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.buzz-ads
 ##.c-ads-sidebar
 ##.card--row-ads
+##.carre_pub
 ##.carrepub
 ##.catAds
 ##.co-ads
@@ -4335,6 +4333,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.mobile-ads__main
 ##.mobile_ad
 ##.mobile_adhesion
+##.mobile_instream_ad
 ##.mod-ad-middle
 ##.mod-ad-top
 ##.mod-ad-top-2
@@ -4370,7 +4369,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.player-adv
 ##.player-sponsor-block
 ##.player__ads
-##.player_bg_ad
 ##.playerpub
 ##.pmd-ads-mobile
 ##.popupads
@@ -4429,6 +4427,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.pub72890-forum
 ##.pub728c
 ##.pub728x90
+##.pub970x90
 ##.pubAnnouncer
 ##.pubBanner
 ##.pubBottomRight
@@ -4575,6 +4574,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.tag-adverline
 ##.tag-sponsored-content
 ##.text_pub
+##.texte_ads
 ##.texte_ads_plug
 ##.threadSponsor
 ##.titrePub
@@ -4737,7 +4737,6 @@ p-nintendo.com###network > ul > .jm
 vacanceo.com###new_travelbloc
 net-iris.fr###ni-barreGroup
 orange.fr###o_carrepub
-orange.fr###oan_ora_1_300x250_hp.prospects
 net-iris.fr###offer
 youtube.com###offer-module
 e-wok.tv,mp4upload.com###overlay

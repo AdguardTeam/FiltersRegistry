@@ -1,5 +1,5 @@
-! Checksum: kzvnV0B8VWISGC1qRjn+bw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1789093452-3600.patch
+! Checksum: YtdmLDD7szR57suXCbKXJA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1789179845-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.74
@@ -795,7 +795,6 @@ meteomedia.com###sidebar > #dv-gpt-ad-bigbox-wrap
 meteomedia.com###featured_content #div-gpt-ad-lowerbox-featured
 ||lindependant.fr/js/ab.*.js
 universfreebox.com##div[id^="publicite-"]
-maxiapple.com##.cegg_widget_products
 linternaute.com##div[id^="Crt-"]
 latribunedelart.com##.encart_colonne
 latribunedelart.com##.encart_bandeau_haut
@@ -1709,6 +1708,7 @@ _werbebanner_
 /splash.*?idzone=$popup
 /syndication.*&idzone=$popup
 ://ads.*/go/$popup
+://go.*?zoneid=$popup
 ://landing.*/?ats=$popup,third-party
 ://syndication.$popup,third-party
 ://xml.*/click?$popup
@@ -1926,7 +1926,6 @@ _werbebanner_
 ||stripcdn.com^$third-party,domain=~xhamsterlive.com
 ||strpjmp.com^$third-party
 ||sunmedia.tv^$third-party
-||surfactif.fr^$third-party
 ||svonm.com^$third-party
 ||tagsrvcs.com^$third-party
 ||tapub.fr^$third-party
@@ -3314,7 +3313,6 @@ voethrusts.cfd
 ||iqoption.com^$popup
 ||jewhouca.net^$popup
 ||livepartners.com^$popup,third-party
-||max-adserv.com^$popup,third-party
 ||monetizze.com.br^$popup,third-party
 ||multiupload.com^$popup,third-party
 ||mybestclick.net^$popup,third-party
@@ -3671,7 +3669,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||amateur2sexe.fr/include/$script
 ||andlil.com/prorealtime-trading-
 ||animeka.com/_img/cache/partner/
-||annonciaweb.com/ZZ-intr-*.
 ||apiclas.sofoot.com^
 ||aps.dz/images/banners/clients/
 ||archimag.com/sites/archimag.com/files/adds/
@@ -4074,6 +4071,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###pub728bas
 ###pub728caracpub
 ###pub970acc
+###pubArticle
 ###pubAside
 ###pubBanner
 ###pubChronique
@@ -4250,7 +4248,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.bottom-advertising
 ##.bottom_ad_con
 ##.bottompub
-##.box-advertisement-top
 ##.box-centered-ads
 ##.box-pubb
 ##.boxAdRight
@@ -4263,6 +4260,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.buzz-ads
 ##.c-ads-sidebar
 ##.card--row-ads
+##.carre_pub
 ##.carrepub
 ##.catAds
 ##.co-ads
@@ -4370,6 +4368,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.mobile-ads__main
 ##.mobile_ad
 ##.mobile_adhesion
+##.mobile_instream_ad
 ##.mod-ad-middle
 ##.mod-ad-top
 ##.mod-ad-top-2
@@ -4405,7 +4404,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.player-adv
 ##.player-sponsor-block
 ##.player__ads
-##.player_bg_ad
 ##.playerpub
 ##.pmd-ads-mobile
 ##.popupads
@@ -4464,6 +4462,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pub72890-forum
 ##.pub728c
 ##.pub728x90
+##.pub970x90
 ##.pubAnnouncer
 ##.pubBanner
 ##.pubBottomRight
@@ -4610,6 +4609,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.tag-adverline
 ##.tag-sponsored-content
 ##.text_pub
+##.texte_ads
 ##.texte_ads_plug
 ##.threadSponsor
 ##.titrePub
@@ -4772,7 +4772,6 @@ p-nintendo.com###network > ul > .jm
 vacanceo.com###new_travelbloc
 net-iris.fr###ni-barreGroup
 orange.fr###o_carrepub
-orange.fr###oan_ora_1_300x250_hp.prospects
 net-iris.fr###offer
 youtube.com###offer-module
 e-wok.tv,mp4upload.com###overlay
