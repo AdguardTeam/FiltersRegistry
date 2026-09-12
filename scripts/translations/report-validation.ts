@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { Octokit } from '@octokit/core';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -15,7 +16,8 @@ const REPORT_FILE_PREFIX = 'report_locales_error_';
 const REPORT_FILE_EXTENSION = '.md';
 // GitHub comment body limit is 65536 characters; keep the tail of the report.
 const MAX_REPORT_LENGTH = 60000;
-const DEFAULT_API_BASE_URL = 'https://api.github.com';
+// GitHub's maximum number of items per page.
+const COMMENTS_PER_PAGE = 100;
 
 /**
  * Outcome of the locales validation step in the workflow.
@@ -118,32 +120,24 @@ export const getNextPageUrl = (linkHeader: string | null): string | null => {
 };
 
 /**
- * Thin GitHub REST API client used to manage PR comments. Uses the global
- * fetch so no extra dependencies are needed.
+ * GitHub REST API client used to manage PR comments, backed by Octokit.
  */
 export class GitHubClient {
-    private readonly baseUrl: string;
+    private readonly owner: string;
 
-    private readonly headers: Record<string, string>;
+    private readonly repo: string;
+
+    private readonly octokit: Octokit;
 
     /**
      * Creates a client for the given repository.
      *
-     * @param token - GitHub token (e.g. the workflow GITHUB_TOKEN).
+     * @param octokit - Octokit instance, e.g. authenticated with a token.
      * @param repo - Repository in `owner/repo` form.
-     * @param baseUrl - API base URL; overridable for testing.
      */
-    constructor(
-        token: string,
-        private readonly repo: string,
-        baseUrl: string = DEFAULT_API_BASE_URL,
-    ) {
-        this.baseUrl = baseUrl;
-        this.headers = {
-            Accept: 'application/vnd.github+json',
-            Authorization: `Bearer ${token}`,
-            'X-GitHub-Api-Version': '2022-11-28',
-        };
+    constructor(octokit: Octokit, repo: string) {
+        [this.owner, this.repo] = repo.split('/');
+        this.octokit = octokit;
     }
 
     /**
@@ -153,28 +147,38 @@ export class GitHubClient {
      * @returns The list of comments.
      */
     async listComments(issueNumber: number): Promise<Comment[]> {
-        const firstPageUrl = `${this.baseUrl}/repos/${this.repo}/issues/${issueNumber}/comments?per_page=100`;
-        return this.collectCommentPages(firstPageUrl, []);
+        return this.collectCommentPages(issueNumber, 1, []);
     }
 
     /**
      * Collects comment pages recursively until the pagination chain ends.
      *
-     * @param url - URL of the page to fetch.
+     * @param issueNumber - Issue or pull request number.
+     * @param page - Page number to fetch.
      * @param comments - Comments collected so far.
      * @returns The full list of comments.
      */
-    private async collectCommentPages(url: string, comments: Comment[]): Promise<Comment[]> {
-        const response = await fetch(url, {
-            headers: this.headers,
-        });
-        if (!response.ok) {
-            throw new Error(`Failed to list comments: ${response.status} ${await response.text()}`);
-        }
-        const page = await response.json() as Comment[];
-        comments.push(...page);
-        const nextUrl = getNextPageUrl(response.headers.get('link'));
-        return nextUrl ? this.collectCommentPages(nextUrl, comments) : comments;
+    private async collectCommentPages(
+        issueNumber: number,
+        page: number,
+        comments: Comment[],
+    ): Promise<Comment[]> {
+        const response = await this.octokit.request(
+            'GET /repos/{owner}/{repo}/issues/{issue_number}/comments',
+            {
+                owner: this.owner,
+                repo: this.repo,
+                issue_number: issueNumber,
+                per_page: COMMENTS_PER_PAGE,
+                page,
+            },
+        );
+        comments.push(...response.data.map((comment) => ({
+            id: Number(comment.id),
+            body: comment.body ?? '',
+        })));
+        const nextUrl = getNextPageUrl(response.headers.link ?? null);
+        return nextUrl ? this.collectCommentPages(issueNumber, page + 1, comments) : comments;
     }
 
     /**
@@ -183,16 +187,14 @@ export class GitHubClient {
      * @param commentId - ID of the comment to delete.
      */
     async deleteComment(commentId: number): Promise<void> {
-        const response = await fetch(
-            `${this.baseUrl}/repos/${this.repo}/issues/comments/${commentId}`,
+        await this.octokit.request(
+            'DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}',
             {
-                method: 'DELETE',
-                headers: this.headers,
+                owner: this.owner,
+                repo: this.repo,
+                comment_id: commentId,
             },
         );
-        if (!response.ok) {
-            throw new Error(`Failed to delete comment ${commentId}: ${response.status} ${await response.text()}`);
-        }
     }
 
     /**
@@ -202,19 +204,15 @@ export class GitHubClient {
      * @param body - Comment body.
      */
     async createComment(issueNumber: number, body: string): Promise<void> {
-        const response = await fetch(
-            `${this.baseUrl}/repos/${this.repo}/issues/${issueNumber}/comments`,
+        await this.octokit.request(
+            'POST /repos/{owner}/{repo}/issues/{issue_number}/comments',
             {
-                method: 'POST',
-                headers: { ...this.headers, 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    body,
-                }),
+                owner: this.owner,
+                repo: this.repo,
+                issue_number: issueNumber,
+                body,
             },
         );
-        if (!response.ok) {
-            throw new Error(`Failed to create comment: ${response.status} ${await response.text()}`);
-        }
     }
 }
 
@@ -243,7 +241,7 @@ const buildDefaultClient = (): GitHubClient => {
     if (!repo) {
         throw new Error('GITHUB_REPOSITORY environment variable is required');
     }
-    return new GitHubClient(token, repo);
+    return new GitHubClient(new Octokit({ auth: token }), repo);
 };
 
 /**
