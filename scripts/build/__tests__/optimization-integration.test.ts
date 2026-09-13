@@ -142,9 +142,12 @@ describe('build.js: cache flag handling', () => {
         },
     );
 
-    it('--use-cache without a local optimization cache: compiles, does not call use()', async () => {
+    it.each([
+        ['--use-cache', ['--use-cache']],
+        ['plain build', []],
+    ])('%s without a cached local optimization: compiles, does not call use()', async (_, args) => {
         // default beforeEach mock already makes existsSync() return false everywhere
-        process.argv = ['node', 'build.js', '--use-cache'];
+        process.argv = ['node', 'build.js', ...args];
         await import('../build.js');
 
         const {
@@ -158,11 +161,14 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
-    it('--use-cache with a local optimization cache: calls use() before compiling', async () => {
+    it.each([
+        ['--use-cache', ['--use-cache']],
+        ['plain build', []],
+    ])('%s with a cached local optimization: calls use() before compiling', async (_, args) => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
         }));
-        process.argv = ['node', 'build.js', '--use-cache'];
+        process.argv = ['node', 'build.js', ...args];
         await import('../build.js');
 
         const {
@@ -176,7 +182,10 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
-    it('--use-cache with missing stats.json: printing the --download-stats hint and original message', async () => {
+    it.each([
+        ['--use-cache', ['--use-cache']],
+        ['plain build', []],
+    ])('%s with missing stats.json: printing the --download-stats hint and original message', async (_, args) => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
         }));
@@ -194,7 +203,7 @@ describe('build.js: cache flag handling', () => {
             },
             OptimizationStatsError,
         }));
-        process.argv = ['node', 'build.js', '--use-cache'];
+        process.argv = ['node', 'build.js', ...args];
 
         const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
         const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
