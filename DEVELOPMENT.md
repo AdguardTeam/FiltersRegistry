@@ -447,6 +447,12 @@ Translations live in `locales/` (45+ languages). See
 1. Edit strings in `locales/` as needed.
 1. Upload changes: `cd scripts/translations && ./upload.sh`
 
+The first two steps are automated: the `update-translations.yaml` workflow runs weekly
+(Mondays 06:00 UTC) and on manual dispatch, downloads translations via `download.sh`,
+validates them with `yarn validate:locales`, and opens a pull request with the changes
+to `locales/`. Merging is manual; the next regular build propagates new strings into
+`platforms/`.
+
 ### Modifying Build Scripts
 
 All build tooling lives under `scripts/`. After making changes:
