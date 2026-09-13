@@ -1,9 +1,9 @@
-! Checksum: Qod+/9wpJ9KvC8o6IIVCNw
-! Diff-Path: ../patches/7/7-s-1789287695-3600.patch
+! Checksum: 25jl9OqGsOrCKA4Jtafe+w
+! Diff-Path: ../patches/7/7-s-1789292493-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.76.44
-! TimeUpdated: 2026-09-13T08:17:50+00:00
+! Version: 2.0.76.45
+! TimeUpdated: 2026-09-13T09:38:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1997,6 +1997,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+video.twimg-image.com##.video-float-ad
 bestcarweb.jp#$#article.js-article > p.center:has(> a[class^="goonet-ad-below-"]) + p { margin-top: 40px !important; }
 jetstream.blog##.jetstream-ad-lazy-placeholder
 nikkansports.com##.side_reco-box:has(> a[href^="https://amzn.to/"])
@@ -2009,7 +2010,6 @@ sports.tv.rakuten.co.jp#$?#.swiper-wrapper > div.swiper-slide:has(> a[href^="htt
 animereact.hatenablog.com#?#.hatena-module-body > p:has(> strong:contains(/このマンガがすごい2026オトコ編 第1位|このマンガがすごい2026オンナ編 第1位/g))
 animereact.hatenablog.com#?#.hatena-module-body > p:has(> strong:contains(/このマンガがすごい2026オトコ編 第1位|このマンガがすごい2026オンナ編 第1位/g)) + p
 ananweb.jp##div[class^="styles_adBlock"]
-na2ka4.blog.fc2.com###inner2 > div.section2:has(> div.ninja-recommend-block)
 mania-of-football.com##.category-mlb > div.kizi-under-box:has(> div.textwidget ins.adsbygoogle)
 vogue.co.jp##div[class^="RecommendationsWrapper-"]
 fusetter.com##.min-h-screen > div.p-2.border-b.border-bg-line:has(> div[id^="div-gpt-"])
@@ -2870,7 +2870,9 @@ pingporn.ru##.asmr18
 plusdrive.link##div[style^="position: fixed; bottom: 0px; left: 0px; right: 0px; height: 110px;"]
 gizmodo.jp##div[class^="adDisplayhandler_"]
 gizmodo.jp##div[class="l-ad"]
-pon-navi.net###movie-pr-box
+pon-navi.net##.mv-box
+pon-navi.net##.archiveList > li:has(> ins.adsbygoogle)
+pon-navi.net##.list_adbox_t
 pon-navi.net##div[class^="adBox"]
 vook.vc##.note-main-spnsr a:not([href*="vook.vc"])
 vook.vc##.note-right-spnsr
