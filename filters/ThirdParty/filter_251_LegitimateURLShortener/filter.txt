@@ -1,6 +1,6 @@
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 12September2026v2
+! OriginalVersion: 13September2026v3
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -2356,6 +2356,8 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ! (https://github.com/DandelionSprout/adfilt/issues/1078 ...?)
 @@://www.google.*/maps^$removeparam=utm_campaign
 @@://ipv6.google.com/maps^$removeparam=utm_campaign
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18417720
+||support.google.com^$document,removeparam=ctx
 ! Should not be removed: dpr (Determines image search results' box sizes)
 !!! stick (Breaks boxart feeds on the top of movie-related searches)
 !!! prmd (Changes the displayed results from page ≥2 for no apparent reason.)
@@ -3325,6 +3327,7 @@ $removeparam=ab,domain=fanatics.com|hbr.org|nhl.com
 $removeparam=_ref,domain=fanatics.com|nhl.com
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1493321
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18418298
 ||xg4ken.com^$removeparam=prof
 ||xg4ken.com^$removeparam=kct
 ||xg4ken.com^$removeparam=kchid
@@ -3332,8 +3335,8 @@ $removeparam=_ref,domain=fanatics.com|nhl.com
 ||xg4ken.com^$removeparam=kpid
 ||xg4ken.com^$removeparam=criteriaid
 ||xg4ken.com^$removeparam=locphy
-||macys.com^$removeparam=trackingid
-$removeparam=/^m_.*$/,domain=macys.com|macysinc.com
+$document,removeparam=trackingid,domain=adobe.com|macys.com
+$document,removeparam=/^m_.*$/,domain=macys.com|macysinc.com
 $removeparam=CAGPSPN
 
 ! https://store•wsj•com/shop/apac/jp/jwsjss21/?inttrackingCode=aaqwimzi&icid=JJ_ON_JHP_ACQ_NA
@@ -5462,6 +5465,9 @@ ref=sqliteviewer.app$document,removeparam=ref
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18417614
 ||spotfund.com^$document,removeparam=SFID
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18421199
+||quora.com^$document,removeparam=qv_src
 
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !

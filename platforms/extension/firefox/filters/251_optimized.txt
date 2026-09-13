@@ -1,9 +1,9 @@
-! Checksum: wgZGzFkHUQDddnPuxVnw7Q
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1789274419-14400.patch
+! Checksum: m0fMzdIqckCSNgPkub7NDQ
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1789317463-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.26
-! TimeUpdated: 2026-09-13T04:37:41+00:00
+! Version: 2.0.10.27
+! TimeUpdated: 2026-09-13T16:34:58+00:00
 ! Expires: 10 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1365,6 +1365,7 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||workspace.google.com^$removeparam=from
 @@://www.google.*/maps^$removeparam=utm_campaign
 @@://ipv6.google.com/maps^$removeparam=utm_campaign
+||support.google.com^$document,removeparam=ctx
 ||tiktok.com^$removeparam=_r
 $removeparam=share_ab_group
 $removeparam=u_code
@@ -1941,8 +1942,8 @@ $removeparam=_ref,domain=fanatics.com|nhl.com
 ||xg4ken.com^$removeparam=kpid
 ||xg4ken.com^$removeparam=criteriaid
 ||xg4ken.com^$removeparam=locphy
-||macys.com^$removeparam=trackingid
-$removeparam=/^m_.*$/,domain=macys.com|macysinc.com
+$document,removeparam=trackingid,domain=adobe.com|macys.com
+$document,removeparam=/^m_.*$/,domain=macys.com|macysinc.com
 $removeparam=CAGPSPN
 ||wsj.com^$removeparam=inttrackingcode
 ||bindright.com^$removeparam=camp_id
@@ -2979,6 +2980,7 @@ ref=sqliteviewer.app$document,removeparam=ref
 ||canadapost-postescanada.ca^$document,removeparam=bid
 ||canadapost-postescanada.ca^$document,removeparam=rid
 ||spotfund.com^$document,removeparam=SFID
+||quora.com^$document,removeparam=qv_src
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu

@@ -2235,11 +2235,21 @@ www.google.com##.GS02Vb .mLFOe > .imucI + .ozDyDd.iRPzcb
 ! ====================
 ! == Google Support ==
 ! ====================
-! Google Support - AI "Help guide" chatbox
-! * TODO: Doesn't filter full-page version used in US. See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/194
-support.google.com##body.mobile:not([style="position: fixed;"]) .helpPanelContainerRoot
+! -- https://support.google.com/chrome/answer/6098869
+! Google Support - AI "Help guide"
+! * Floating chatbox
+support.google.com##html.hcfe:not([style="overflow: hidden;"]) .helpPanelContainerRoot
+!#if ext_ublock
+! * Full-page modal used in US. Excluded from AdGuard as we can't check if trusted filters are enabled to remove 'inert' attribute.
+!   See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/194 and https://github.com/AdguardTeam/AdguardForiOS/issues/2547
+support.google.com##html.hcfe[style="overflow: hidden;"] .helpPanelContainerRoot
+support.google.com#$#html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) { overflow: unset !important }
+support.google.com#$#html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) > body.mobile { position: unset !important }
+!#endif
 
 ! -- https://support.google.com/a/users/answer/15593939
+! Navbar - Gen AI tips tab
+support.google.com#?#.top-nav > li:contains("Gen AI tips")
 ! Notice promoting Workplace with Gemini
 support.google.com##.notification[data-name="Gemini_EN_RemoteWork_Covid19_NonEN"]
 
@@ -4676,8 +4686,6 @@ x.com##footer span.items-center:has(> [href="https://grok.com/"])
 x.com##nav > [href="/i/grok"]
 ! Compose post - Grok
 x.com##[data-testid="grokImgGen"]
-! Tweet - Explain this post
-x.com##button[aria-label="Grok actions"]
 ! Floating Grok chat button in bottom right
 x.com##[data-testid="GrokDrawer"]
 ! - Promos
@@ -4705,6 +4713,8 @@ x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"
 x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"]) .r-knv0ih [d^="M12.998 1.94c.18 3.015 1.04 5.156 2.473 6.59 1.433"]) + [data-testid="cellInnerDiv"]:has(.r-cl2sl0.r-2sztyj.r-5kkj8d.r-1bq57o9)
 
 ! -- https://x.com/artsyomni/status/2039107622117183957
+! Tweet - Explain this post
+x.com##[data-testid="tweet"] button[aria-label*="Grok"]
 ! Tweet - Actions menu - Edit image
 x.com##[role="menuitem"][href*="grok.com/imagine"]
 ! "Edit Image" when hovering over bottom right of image

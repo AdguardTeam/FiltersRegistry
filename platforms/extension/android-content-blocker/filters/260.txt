@@ -1,8 +1,8 @@
-! Checksum: 4yYv32XgQVihqRuB9rIvYA
+! Checksum: nYmP+YhoqgKzims5TyfYFg
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.87
-! TimeUpdated: 2026-09-12T04:37:22+00:00
+! Version: 2.0.1.88
+! TimeUpdated: 2026-09-13T16:35:08+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1651,10 +1651,12 @@ www.google.com##.GS02Vb .mLFOe > .imucI + .ozDyDd.iRPzcb
 ! ====================
 ! == Google Support ==
 ! ====================
-! Google Support - AI "Help guide" chatbox
-! * TODO: Doesn't filter full-page version used in US. See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/194
-support.google.com##body.mobile:not([style="position: fixed;"]) .helpPanelContainerRoot
+! -- https://support.google.com/chrome/answer/6098869
+! Google Support - AI "Help guide"
+! * Floating chatbox
+support.google.com##html.hcfe:not([style="overflow: hidden;"]) .helpPanelContainerRoot
 ! -- https://support.google.com/a/users/answer/15593939
+! Navbar - Gen AI tips tab
 ! Notice promoting Workplace with Gemini
 support.google.com##.notification[data-name="Gemini_EN_RemoteWork_Covid19_NonEN"]
 ! ======================
@@ -3508,8 +3510,6 @@ worldofbooks.com##.ai-recommendation-block
 x.com##nav > [href="/i/grok"]
 ! Compose post - Grok
 x.com##[data-testid="grokImgGen"]
-! Tweet - Explain this post
-x.com##button[aria-label="Grok actions"]
 ! Floating Grok chat button in bottom right
 x.com##[data-testid="GrokDrawer"]
 ! - Promos
@@ -3523,6 +3523,8 @@ x.com##[data-testid="GrokDrawer"]
 ! - https://x.com/SpaceX/status/2074243929273250124
 ! Tweet with AI label
 ! -- https://x.com/artsyomni/status/2039107622117183957
+! Tweet - Explain this post
+x.com##[data-testid="tweet"] button[aria-label*="Grok"]
 ! Tweet - Actions menu - Edit image
 x.com##[role="menuitem"][href*="grok.com/imagine"]
 ! "Edit Image" when hovering over bottom right of image
