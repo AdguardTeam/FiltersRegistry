@@ -1,9 +1,9 @@
-! Checksum: 8stvit0GRxOIB+yuEOm5VQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1789287715-3600.patch
+! Checksum: tdsou/6sln/qAxXmeVDClQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1789294983-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.46
-! TimeUpdated: 2026-09-13T08:17:47+00:00
+! Version: 2.0.53.47
+! TimeUpdated: 2026-09-13T10:19:16+00:00
 ! Expires: 12 hours (update frequency)
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
@@ -303,7 +303,6 @@ t-online.de#@#div[class^="Tsshopst"]
 essen-und-trinken.de#%#//scriptlet('prevent-setTimeout', 's.call(null)', '10')
 /^https:\/\/www\.essen-und-trinken\.de\/[a-z]{10,}\.js$/$script,~third-party,match-case
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
-igorslab.de#?#div[class]:matches-css(before, content: /^\s*\"(Advertise۞nt|Werbung|广告)\"\s*$/)
 ||igorslab.de/wp-content/plugins/igorslab-ads-suite/
 igorslab.de#?#a[href^="https://www.igorslab.de/"][style][rel]:matches-attr(href="/^https:\/\/www\.igorslab\.de\/(?:[0-9a-z-]{7,32}\/)+$/")
 igorslab.de#?#span[class]:contains(/^\s*(Advertisement|Werbung|广告)\s*$/)
@@ -496,9 +495,6 @@ geo.de,brigitte.de,kicker.de,desired.de,pcgames.de,t-online.de,vox.de,spieletipp
 fitforfun.de,plus.rtl.de#%#//scriptlet('trusted-replace-xhr-response', 'true', 'false', 'homadClientConfig-plusrtlde.json')
 fitforfun.de,brigitte.de#%#//scriptlet('trusted-replace-xhr-response', 'true', 'false', 'global_config.json')
 fitforfun.de,plus.rtl.de#%#//scriptlet('abort-on-stack-trace', 'Object.prototype.adReinsertion', 'createSdk')
-igorslab.de#%#//scriptlet('set-constant', 'loadProtectedMedia', 'noopFunc')
-igorslab.de#%#//scriptlet('set-constant', 'detachImageLinkTarget', 'noopFunc')
-igorslab.de#%#//scriptlet('set-constant', 'sourceFor', 'noopFunc')
 abendblatt.de#%#//scriptlet('set-constant', 'Spark.deactivateRubicon', 'true')
 !+ NOT_PLATFORM(ext_ff)
 player.motorsport-magazin.com#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{"function"==typeof initPage&&initPage()}));})();
@@ -676,16 +672,7 @@ gmx.net##.ad-banner
 china-gadgets.de##div[id^="trimexa-ads_d_incontent-rec"]
 china-gadgets.de###trimexa-ads_d_footer-wrapper
 china-gadgets.de###trimexa-ads_d_top
-igorslab.de##body > #content + div[class*=" "][class*="-"]:has(> div[id] span[style^="display:block;position:relative;width"])
-igorslab.de###related ~ div[class*="-"][id*="-"]:has(> div[id] div[style^="display:block;position:relative;width:"])
-||igorslab.de/wp-content/plugins/igorslab-ads-suite/
-/^https:\/\/www\.igorslab.de\/[a-zA-Z0-9]{8,}\/[a-zA-Z0-9_-]{20,}/$domain=igorslab.de,image,xmlhttprequest
-igorslab.de##div[id][class*=" "]:has(> div[id][class*=" "] > div[class*=" "][style^="position:relative;display:inline-block;max-width"])
 igorslab.de##.herald-sidebar-right > div[id][class*=" "]
-igorslab.de##div[id][class*=" "]:has(> .herald-txt-module  div[id][class*=" "] > div[class*=" "][style^="position:relative;display:inline-block;max-width"])
-igorslab.de##.row > div[id][class*=" "]:has(> .herald-txt-module div[id*="-"][class])
-igorslab.de##.row  div[id][class]:not([class^="col-"]):is([class*=" "], [class*="-"]):has(> div[class*="-"] span[style^="display:block;position:relative;width"])
-igorslab.de##body > div[class*=" "][class*="-"]:not([style]):has(> div[id] div[style^="display:block;position:relative;width"])
 autohebdo.de##.stafepress-ad-wrapper
 ultimatesolver.com##div.div_1_center div.wbng:has(> a[href^="https://clk.tradedoubler.com/"])
 ms-aktuell.de#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'flipAds')

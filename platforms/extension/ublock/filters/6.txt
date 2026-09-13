@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: uoIBeYYP5snStmAsMahyRw
-! Diff-Path: ../patches/6/6-s-1789287699-3600.patch
+! Checksum: DrzBRbBE99BQkBqyRAtlFg
+! Diff-Path: ../patches/6/6-s-1789294969-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.46
-! TimeUpdated: 2026-09-13T08:17:47+00:00
+! Version: 2.0.53.47
+! TimeUpdated: 2026-09-13T10:19:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -448,7 +448,6 @@ schnittmuster-datenbank.de##+js(abort-on-property-read, adsBlocked)
 !
 !
 ! https://github.com/uBlockOrigin/uAssets/issues/34187
-igorslab.de##div[class]:matches-css(before, content: /^\s*\"(Advertise۞nt|Werbung|广告)\"\s*$/)
 ||igorslab.de/wp-content/plugins/igorslab-ads-suite/
 igorslab.de##a[href^="https://www.igorslab.de/"][style][rel]:matches-attr(href="/^https:\/\/www\.igorslab\.de\/(?:[0-9a-z-]{7,32}\/)+$/")
 igorslab.de##span[class]:contains(/^\s*(Advertisement|Werbung|广告)\s*$/)
@@ -1078,10 +1077,6 @@ geo.de,brigitte.de,kicker.de,desired.de,pcgames.de,t-online.de,vox.de,spieletipp
 ! new version (both rules are working on their own)
 fitforfun.de,plus.rtl.de##+js(abort-on-stack-trace, Object.prototype.adReinsertion, createSdk)
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/240728
-igorslab.de##+js(set-constant, loadProtectedMedia, noopFunc)
-igorslab.de##+js(set-constant, detachImageLinkTarget, noopFunc)
-igorslab.de##+js(set-constant, sourceFor, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219375
 abendblatt.de##+js(set-constant, Spark.deactivateRubicon, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212667
@@ -1594,16 +1589,7 @@ gmx.net##.ad-banner
 china-gadgets.de##div[id^="trimexa-ads_d_incontent-rec"]
 china-gadgets.de###trimexa-ads_d_footer-wrapper
 china-gadgets.de###trimexa-ads_d_top
-igorslab.de##body > #content + div[class*=" "][class*="-"]:has(> div[id] span[style^="display:block;position:relative;width"])
-igorslab.de###related ~ div[class*="-"][id*="-"]:has(> div[id] div[style^="display:block;position:relative;width:"])
-||igorslab.de/wp-content/plugins/igorslab-ads-suite/
-/^https:\/\/www\.igorslab.de\/[a-zA-Z0-9]{8,}\/[a-zA-Z0-9_-]{20,}/$domain=igorslab.de,image,xhr
-igorslab.de##div[id][class*=" "]:has(> div[id][class*=" "] > div[class*=" "][style^="position:relative;display:inline-block;max-width"])
 igorslab.de##.herald-sidebar-right > div[id][class*=" "]
-igorslab.de##div[id][class*=" "]:has(> .herald-txt-module  div[id][class*=" "] > div[class*=" "][style^="position:relative;display:inline-block;max-width"])
-igorslab.de##.row > div[id][class*=" "]:has(> .herald-txt-module div[id*="-"][class])
-igorslab.de##.row  div[id][class]:not([class^="col-"]):is([class*=" "], [class*="-"]):has(> div[class*="-"] span[style^="display:block;position:relative;width"])
-igorslab.de##body > div[class*=" "][class*="-"]:not([style]):has(> div[id] div[style^="display:block;position:relative;width"])
 autohebdo.de##.stafepress-ad-wrapper
 ultimatesolver.com##div.div_1_center div.wbng:has(> a[href^="https://clk.tradedoubler.com/"])
 ms-aktuell.de##+js(abort-current-script, document.getElementById, flipAds)
