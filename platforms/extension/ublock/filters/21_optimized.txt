@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: QExKPq9FviEjUPlTyFSfGQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1789244200-3600.patch
+! Checksum: vGR06EjqJ8lK3jExXQsfCA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1789266237-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
 ! Version: 2.0.48.19
@@ -49,6 +49,7 @@ usmagazine.com##.link-related
 meduza.io##.GeneralMaterial-module-article > p[class^="SimpleBlock"]:has(> a[href^="https://onelink.to/"] + a[href="https://bit.ly/meduzamirror"])
 meduza.io##.GeneralMaterial-module-article > hr
 webtekno.com##.related-tag-posts-widget
+webtekno.com##.others-news
 webtekno.com##.category-most-read-widget
 bbc.com##main[role="main"] > section[aria-labelledby="recommendations-heading"][role="region"]
 muyinteresante.okdiario.com##+js(addEventListener-defuser, scroll, a.forEach(function(t))
@@ -85,7 +86,6 @@ gamekult.com##+js(remove-class, viously-sticked|viously-sticked-bottom-right, .v
 ahaber.com.tr##+js(addEventListener-defuser, /scroll|resize/, checkScroll)
 tele1.com.tr##+js(remove-attr, target, .col-lg-8 > .result-category + a.btn-more[href="javascript:void(0)"][target="_blank"])
 androidauthority.com##div[class*="_"]:not(#comments-section) > .viafoura:has(> vf-widget#vf-conversation-starter)
-ozon.ru##:matches-path(/my/orderlist) div[data-widget="skuShelfGoods"] ~ div[data-widget="skuGrid"]
 ||elements.video/player.js$domain=forbes.com
 forbes.com##div[class][style^="top:"]:has(+ div[data-testid="fbs-ad - rightRail"])
 travelandleisure.com##.mm-video-medianet-bytes
@@ -783,6 +783,7 @@ vuku.tv##div[class^="bookmarks_div"]
 g-tv.ru/videomore_gtv.php?video_id=*&auto_play=1$domain=kino-dom.tv
 24tv.ua##.programs_wrap
 sports.ru##.c-favorite-team
+sports.ru##.js_favteam > .tooltips
 ||sports.ru/censusbarca/*.js
 sports.ru##.news-item__sources
 cyber.sports.ru,m.sports.ru##.b-news-sources
@@ -914,7 +915,6 @@ news.cookpad.com##a[href="https://line.me/R/ti/p/%40oa-cookpadnews"]
 nv.ua##section[data-type="advertising"]
 nashkraj.by##.news_detail_social
 freetp.org##.pagebg:style(background: none !important;)
-smartme.pl##.c_ad__container
 nationalpost.com,financialpost.com,thegrowthop.com##.featured-video--fixed .player-wrapper:style(position: static !important;)
 zap-hosting.com###social-media-button-instance-container
 officelife.media##.social-btn
@@ -928,7 +928,6 @@ ichip.ru##.subscribe-content
 pixivision.net##._floated-bottom-bar
 news18.com##.newftrshare-fixed
 news18.com##.story-social-share-fix
-gameost.net##.tt-share
 turbopages.org##.fixed_widget-feedback
 climate.nasa.gov##.chertools_floater[data-react-props*="share"]
 4sysops.com###footer-sidebar-3
@@ -1461,12 +1460,13 @@ iwate-np.co.jp###sa-banner
 iwate-np.co.jp##.article-list > li:has(a[class^="ga_ad-"])
 edimdoma.ru##nav > ul.bg-bg-primary
 pulkovoairport.ru##.banner-top-prilet-vilet
+avia.tutu.ru##.bottomBannerSection
+lenta.com##lu-novice-offer-manager
 estadao.com.br##.main > div > div[class^="default__StyledWrapper-"]:has(> div.container div[class^="styles__OfferContainer-"] > div.container-text > button[data-component-name="clube_vantagens"])
 forbes.com##header a[href^="https://account.forbes.com/subscribe"]
 allegrolokalnie.pl##aside.mlc-top-header:has(> .mlc-top-header__inner > a[target="_blank"])
 cnews.ru###cnLike + noindex
 windguru.cz###forecasts-page-content > a[href="/help.php?sec=pro"]
-fissman.ru###popmechanic-snippet:style(display: none !important;)
 kinogo.*##.zplata
 itest.5ch.io##a[id^="link"] > img[src*="/assets/banner/"]
 mangadex.org##a[href="/advertise"]
@@ -1584,6 +1584,7 @@ stay.rakuten.co.jp##a[href^="https://network.mobile.rakuten.co.jp/campaign/"]
 nexusmods.com##free-trial-banner
 misskey.io,misskey.art,takusuki.com,torikago-suki.net,signalskey.signal-st.com,empire.miyaco.moe,stormskey.works,m.eskey.click,labo.wovs.tk,nukers-misskey.hpc-densi.f5.si,msk.kitamiss.com,uneune.one,posskey.com,redfuku.com,misskey.secinet.jp,msk.ilnk.info,uttaeruyo.com,xissmie.xfolio.jp,misskey.niri.la,kasei.ski,s.kitazawa.me,buttersc.one,invillage-outvillage.com,misskey.gamelore.fun,misskey.systems,mivatter.com,msk.kitazawa.me,oekakiskey.com,side.misskey.productions,sushi.ski,voskey.icalo.net,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe##+js(json-prune, ads.[].imageUrl)
 misskey.io,misskey.art,takusuki.com,torikago-suki.net,signalskey.signal-st.com,empire.miyaco.moe,stormskey.works,m.eskey.click,labo.wovs.tk,nukers-misskey.hpc-densi.f5.si,msk.kitamiss.com,uneune.one,posskey.com,redfuku.com,misskey.secinet.jp,msk.ilnk.info,uttaeruyo.com,xissmie.xfolio.jp,misskey.niri.la,kasei.ski,s.kitazawa.me,buttersc.one,invillage-outvillage.com,misskey.gamelore.fun,misskey.systems,mivatter.com,msk.kitazawa.me,oekakiskey.com,side.misskey.productions,sushi.ski,voskey.icalo.net,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe##div[class=""][data-scroll-anchor] > div[tabindex] + div[class]:has(> div > div[class] > a[href])
+findingpass.org###nordpassPopup
 live.bilibili.com##.left-container > .flip-view:has(> div.flip-view-image-ctnr > div.p-relative > a.item-wrapper > div[data-type="liveroom_banner_show"])
 rebates.jp###stickyFooter
 drone.rakuten.co.jp###pitari_area_mbz_header
@@ -1903,6 +1904,7 @@ elperiodico.com##iframe[id^="offer_"]
 template.net###pricing-banner
 template.net###business-pricing-banner
 template.net###banner-container
+template.net###btn-go-unlimited
 x.com,twitter.com##article[data-testid="tweet"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"]:has(> div[style^="background-color:"] > button ~ div[class^="css-"] > a[href="/i/account_analytics"])
 avito.ru##div[class^="top-banner-module-root-"]
 seekingalpha.com##div[data-campaign-id="337"]
@@ -2295,7 +2297,6 @@ vc.ru##.distribution
 kotsovolos.gr###top-pre-header
 videogameschronicle.com##.vgc-products
 kinoart.ru###issue_banner
-baseconnect.in##.add__wrapper
 wcoflix.tv,wcoanimesub.tv,wcoanimedub.tv,wco.tv##.saklasanabunu
 wco.tv##.header-tag ~ div:not([class], [id], [style]) > div[style*=" min-width:"][style*="height:"] > a[href*="wcopremium.tv"][target="_blank"]
 qjweb.jp##.l-aside_ad
@@ -2512,6 +2513,7 @@ altema.jp##.adsAll
 altema.jp###sidebar-50
 ||5ch.*/images/uplift-itest.png
 jetlearn.com##.static-cta-image
+questi.jp##.display-install-pwa
 twitch.tv##body div.subtember-gradient
 pixiv.net##.ciUaug > section:has(> div > div.gtm-toppage-premium-close)
 crunchyroll.com##.erc-upsell-popup > div.erc-upsell-popup-body
@@ -2953,7 +2955,6 @@ macbooster.net##.pop-midyear
 elementor.com##.sticky-banner
 neowin.net##div.trending-item-title[class*="w_stackcn"] > span[class*="rec"]
 geeksforgeeks.org##.text > h3[style="text-align:center"]
-analyticsvidhya.com##.banner-section-for-display
 baike.baidu.com##.BK-before-content-wrapper > div > a[target="_blank"][data-num][onclick^="page.Mixedor.mixedOpen("]
 g2.com##.product-listing--banner
 ufret.jp##.btn-lg[href="/signup.php"]
@@ -2979,7 +2980,6 @@ smartpress.by##body div.top-box
 koneta.nifty.com##.textwidget > a[href^="https://setsuzoku.nifty.com"] > img
 interviewbit.com##.ribbon-banner
 weather.smt.docomo.ne.jp###prlinksgtk
-opennet.ru##div[style="background-color: #E9EAD6; width:100%; height: 61px;"]
 mail.ru##.ph-project-promo-container
 zhidao.baidu.com##.earn-points-exchange-gifts-bubble
 price.ua##.top-categories-autoscroll
@@ -3056,7 +3056,6 @@ superprof.es##.cta-online
 superprof.es###cta-online-wrapper
 ||superprof.es/apuntes/wp-content/themes/sp_ressources/dist/videos/apprenez-a-la-maison-desktop.m4v
 chromewebstore.google.com,chrome.google.com##[role="dialog"][aria-labelledby="promo-header"]
-shin5noblog.com##.rank-guide
 yk.kz##.main_carousel
 wealthmanagement.com##.sponsored-articles-row
 thepostmillennial.com##.contributions-container
@@ -3233,7 +3232,6 @@ xtremetop100.com##a[href="/contact.php"][rel="nofollow"]
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##a[title*="AdChoices"]
 ||illicium.wmtransfer.com^
 ||illicium.web.money^
-vk.com###lovina_ads_row
 v.qq.com##div.nav-wrap > div > div:has(> a[href^="https://iwan.video.qq.com"])
 !+ NOT_OPTIMIZED
 rakko.tools###headerAnnounceArea

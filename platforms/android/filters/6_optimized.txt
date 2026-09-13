@@ -1,5 +1,5 @@
-! Checksum: Qsg9wbtEca+R9nXMtuk1oA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1789204618-3600.patch
+! Checksum: bXtdo4bjCPnKV+8cyO6zRw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1789266218-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.53.44
@@ -317,7 +317,6 @@ igorslab.de##img[src^="blob:http"]
 igorslab.de##.herald-sticky
 igorslab.de##.herald-sidebar-right > .widget:not([id*="widget"])
 wowtv.de#%#//scriptlet('set-constant', 'window.CONFIGURATION.features.enableAdBlockerDetection', 'false')
-stadt-bremerhaven.de###cb-adblock-overlay
 *$script,third-party,redirect=noopjs,domain=ligainsider.de
 @@||ligainsider.de^$generichide
 ligainsider.de#%#//scriptlet('prevent-element-src-loading', 'script', '/googlesyndication\.com|doubleclick\.net|bing\.com|taboola\.com/')
@@ -1719,6 +1718,7 @@ prad.de##div[data-tpl="Flat_box_horizontal_prad"]
 badische-zeitung.de##div[class$="-ad-holder"]
 kachelmannwetter.com##.dkpw-billboard-margin-fixed
 ecoreporter.de###banner-sidebar
+spiele.stern.de,spiele.bild.de##div[id^="ad-landingpage-"]
 spiele.stern.de,spiele.bild.de##div[id^="ad-gamepage-"]
 lte-anbieter.info##.teaser-wrapper
 chefkoch.de##guj-ad
@@ -2245,6 +2245,7 @@ seatforum.de###posts > ins[id^="AABI-"]
 abnehmen.com###posts > li.postbitlegacy.postcontainer.old:not([id^="post_"])
 hilfdirselbst.ch###r230
 hilfdirselbst.ch###r231
+edmontonjournal.com###section_2 + .pm_layouts_news_ticker
 welt.de,stylebook.de,rollingstone.de,idea.de,3c.gmx.net,niederlausitz-aktuell.de,tonight.de,win-8-forum.net###superbanner
 tweakpc.de###wpl
 tweakpc.de###wpr
@@ -2866,6 +2867,7 @@ _woz_banner_vote.
 ##.sponsorlinkgruen
 ##.symplr-ad-holder
 ##.textlinkwerbung
+##.topwerbung
 ##.trm-anzeige-separator
 ##.wadtag
 ##.werb_textlink
@@ -2879,6 +2881,7 @@ _woz_banner_vote.
 ##.werbung-1
 ##.werbung-box
 ##.werbung-container
+##.werbung-content
 ##.werbung-fullbanner
 ##.werbung-label
 ##.werbung-leiste
@@ -2915,7 +2918,6 @@ _woz_banner_vote.
 ##a[href^="https://bd742.com/"]
 ##a[href^="https://clicks.imaxcash.com/?aff_"]
 ##a[href^="https://dpm.affaire18.com/click.php?dp="]
-##a[href^="https://dpm.jungekontakte.com/click.php?dp="]
 ##a[href^="https://feed.solads.media/"]
 ##a[href^="https://marketing.net.brillen.de/"]
 ##a[href^="https://media.datingpartner.com/click.php?dp="]
@@ -3047,7 +3049,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||superclix.de^$third-party
 ||superpromo24.de^$third-party
 ||tagrpd.de^$third-party
-||target-video.com^$third-party
 ||trafficfabrik.com^$third-party
 ||trmads.eu^$third-party
 ||trmwidget.eu^$third-party
@@ -3104,10 +3105,8 @@ wetter.com#@#div[id^="div-gpt-"]
 ||modules.wikifolio.com/v2/de/autocontent/stock/*?partner=
 ||monsterdealz.de/images/$third-party
 ||mothor.de^*/webbanner/
-||om.dsl.1und1.de^$third-party
 ||partners2.das-onlinespiel.de/client.js?pid=*&_=2.12.3|$script,domain=games.focus.de|spiele.bild.de|spiele.stern.de
 ||phonepublisher.com/banner.do?
-||pm.fetischsexkontakte.com^$third-party
 ||publisher.outtra.com^$third-party
 ||qvid2.b-cdn.net^
 ||recht-aktuell.de/js.ads?
@@ -3223,6 +3222,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||finanznachrichten.de/w/ad_
 ||finanztreff.de^*/partner/
 ||finews.ch/images/banners/
+||foerde.news/assets/images/a/
 ||football-aktuell.de/rechts/
 ||free-gay.org^*/eaCtrl.js
 ||freenet.de^*/mail/ads/
@@ -3574,7 +3574,6 @@ dasoertliche.de###banner-right
 annos.de,chefkoch.de,dasoertliche.de,sexy-land.ch###banner-top
 testedich.ch,testedich.de###banner-top-all-viewports
 kriminalpolizei.de###banner-wrapper-right-v3
-altertuemliches.at###banner5
 all-in.de###banner6_container
 nrhz.de###banner_container_rc
 nrhz.de###banner_left_container_lc
@@ -3809,7 +3808,6 @@ kochrezepte.at###slot_middle
 kochrezepte.at###slot_middle_2
 mv-spion.de###spion_content_container
 chemnitzerfc.de,deutsche-mittelstands-nachrichten.de,games.ch###sponsor
-hsg-wetzlar.de###sponsor-slider
 itmagazine.ch###sponsorbutton_div
 digitalkamera.de,h-bw.de###sponsoren
 kleinanzeigen.de###srps-billboard
@@ -4202,7 +4200,6 @@ gruender.de##.gruender-banner
 gelbeseiten.de##.gs-searchblock--adContainer
 my-homo.net##.gstsk
 fussballtransfers.com##.gtag
-chefkoch.de##.gujad-wrapper
 my-homo.net##.gxt_banner
 my-homo.net##.gxt_feed
 qiez.de##.h5v
@@ -4251,7 +4248,6 @@ suedostschweiz.ch##.js-audienzz
 eurocampings.de##.js-mock-banner
 eurogirlsescort.de##.js-stt-click > picture
 lustmap.ch##.js_bns
-kochbar.de##.kb-home-medrec-halfpage
 kauperts.de##.kca-wrapper
 kicker.de##.kick__ad-pos_wrapper
 kochbar.de##.ks-ad:not([data-adslot="karotte"])
@@ -4351,7 +4347,6 @@ gmx.net,web.de##.partner-links
 herthabsc.com##.partner-main-footer
 finanzfluss.de##.partner-news-card
 finanzfluss.de##.partner-suggestion
-eintracht.com,finanzfluss.de##.partner-wrapper
 esports.ch,hannover96.de,p-stadtkultur.de,sihf.ch##.partners
 fla.de##.pbph
 otto.de##.pdp_reco-sponsored
@@ -4848,7 +4843,6 @@ sehnde-news.de##img[alt="Werben Sie bei Sehnde-News"]
 rc-news.de##img[class="bnr"]
 warez-ddl.net##img[height="90"]
 ak-kurier.de,nr-kurier.de,ww-kurier.de##img[name="banner"]
-data-load.me##img[style="width:270px;height:80px;"]
 darts1.de##img[width="120"]
 wirsiegen.de##img[width="140"][height="180"]
 kultur-port.de,utvmagazin.de##img[width="200"][height="600"]
@@ -4876,7 +4870,6 @@ grower.ch##table[width="195"]
 astronews.com##table[width="300px"][cellspacing="0"][cellpadding="0"][border="0"]
 wetterbote.de##table[width="738"][height="90"]
 ww3.cad.de##table[width="95%"][cellspacing="1"][border="0"] > tbody > tr > td[valign="top"]:first-child + td[style="vertical-align: top;"]:last-child
-eishockey-magazin.de##tr > th
 ww3.cad.de##tr:first-child:last-child > td[valign="top"]:first-child + td[width="152"][valign="top"][align="center"]:last-child
 onvista.de##tr[class="bg-primary-detail !border-b-0"]
 onvista.de##tr[class="ov-table-row--height border-b border-b-neutral-3 !bg-primary-detail"]
@@ -4984,7 +4977,6 @@ wallstreet-online.de##.teaser:has(span.generalAdTag)
 fuersie.de##.teaser__item:has(.teaser__adtype)
 meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##.tile > .tile-body:has(.tile-meta-ad)
 immobilienscout24.de##.touchpoint-space:has(div[data-testid="dsa-link"])
-regensburg-digital.de##.uk-panel-box:has(.uk-badge-warning)
 notebooksbilliger.de##.vue-cherry:has(a[href*="/adnuntius"])
 onvista.de##.w-full.flex-col.items-center:has(div.lg\:min-w-\[480px\])
 connect.de##.wkTeaser:has(.promolabel)
