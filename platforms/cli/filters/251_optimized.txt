@@ -1,9 +1,9 @@
-! Checksum: zN4TNWFqcVx2UzrZByUjfQ
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1789317454-14400.patch
+! Checksum: O1m/EZ/lQZxUoI+Cpqo9oA
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1789348522-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.27
-! TimeUpdated: 2026-09-13T16:34:58+00:00
+! Version: 2.0.10.28
+! TimeUpdated: 2026-09-14T01:12:47+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1363,8 +1363,6 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ://www.google.$removeparam=ntc
 ://ipv6.google.com^$removeparam=ntc
 ||workspace.google.com^$removeparam=from
-@@://www.google.*/maps^$removeparam=utm_campaign
-@@://ipv6.google.com/maps^$removeparam=utm_campaign
 ||support.google.com^$document,removeparam=ctx
 ||tiktok.com^$removeparam=_r
 $removeparam=share_ab_group
@@ -2981,6 +2979,15 @@ ref=sqliteviewer.app$document,removeparam=ref
 ||canadapost-postescanada.ca^$document,removeparam=rid
 ||spotfund.com^$document,removeparam=SFID
 ||quora.com^$document,removeparam=qv_src
+$document,removeparam=CLRTags,domain=microsoft.com|windows.com
+||americanexpress.com^$document,removeparam=inav
+||ecoflow.com^$document,removeparam=sc_src
+||ecoflow.com^$document,removeparam=sc_lid
+||ecoflow.com^$document,removeparam=sc_llid
+||adobe.com^$document,removeparam=correlationId
+||ck12.org^$document,removeparam=_mid
+||ck12.org^$document,removeparam=_eid
+||getquip.com^$document,removeparam=syclid
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu

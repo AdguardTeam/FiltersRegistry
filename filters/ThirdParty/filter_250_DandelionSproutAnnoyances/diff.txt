@@ -2744,6 +2744,10 @@ $doc,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||www.google.$doc,removeparam=sstk
 ! Rule "||ipv6.google.com^$doc,removeparam=sstk" converted to: "||ipv6.google.com^$document,removeparam=sstk"
 ||ipv6.google.com^$doc,removeparam=sstk
+! Rule "@@://www.google.*/maps^$doc,removeparam=/^\??utm_.*$/i" converted to: "@@://www.google.*/maps^$document,removeparam=/^\??utm_.*$/i"
+@@://www.google.*/maps^$doc,removeparam=/^\??utm_.*$/i
+! Rule "@@://ipv6.google.com/maps^$doc,removeparam=/^\??utm_.*$/i" converted to: "@@://ipv6.google.com/maps^$document,removeparam=/^\??utm_.*$/i"
+@@://ipv6.google.com/maps^$doc,removeparam=/^\??utm_.*$/i
 ! Rule "||support.google.com^$doc,removeparam=ctx" converted to: "||support.google.com^$document,removeparam=ctx"
 ||support.google.com^$doc,removeparam=ctx
 ! Rule "||tiktok.com^$doc,removeparam=user_id" converted to: "||tiktok.com^$document,removeparam=user_id"
@@ -3574,6 +3578,24 @@ ref=sqliteviewer.app$doc,removeparam=ref
 ||spotfund.com^$doc,removeparam=SFID
 ! Rule "||quora.com^$doc,removeparam=qv_src" converted to: "||quora.com^$document,removeparam=qv_src"
 ||quora.com^$doc,removeparam=qv_src
+! Rule "$doc,removeparam=CLRTags,domain=microsoft.com|windows.com" converted to: "$document,removeparam=CLRTags,domain=microsoft.com|windows.com"
+$doc,removeparam=CLRTags,domain=microsoft.com|windows.com
+! Rule "||americanexpress.com^$doc,removeparam=inav" converted to: "||americanexpress.com^$document,removeparam=inav"
+||americanexpress.com^$doc,removeparam=inav
+! Rule "||ecoflow.com^$doc,removeparam=sc_src" converted to: "||ecoflow.com^$document,removeparam=sc_src"
+||ecoflow.com^$doc,removeparam=sc_src
+! Rule "||ecoflow.com^$doc,removeparam=sc_lid" converted to: "||ecoflow.com^$document,removeparam=sc_lid"
+||ecoflow.com^$doc,removeparam=sc_lid
+! Rule "||ecoflow.com^$doc,removeparam=sc_llid" converted to: "||ecoflow.com^$document,removeparam=sc_llid"
+||ecoflow.com^$doc,removeparam=sc_llid
+! Rule "||adobe.com^$doc,removeparam=correlationId" converted to: "||adobe.com^$document,removeparam=correlationId"
+||adobe.com^$doc,removeparam=correlationId
+! Rule "||ck12.org^$doc,removeparam=_mid" converted to: "||ck12.org^$document,removeparam=_mid"
+||ck12.org^$doc,removeparam=_mid
+! Rule "||ck12.org^$doc,removeparam=_eid" converted to: "||ck12.org^$document,removeparam=_eid"
+||ck12.org^$doc,removeparam=_eid
+! Rule "||getquip.com^$doc,removeparam=syclid" converted to: "||getquip.com^$document,removeparam=syclid"
+||getquip.com^$doc,removeparam=syclid
 ! Rule "actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com##+js(set, GSvars.addressTracking, false)" converted to: "actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set', 'GSvars.addressTracking', 'false')"
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com##+js(set, GSvars.addressTracking, false)
 ! Rule "buffalonews.com##+js(set, lee_trkLinkSrc, noopFunc)" converted to: "buffalonews.com#%#//scriptlet('ubo-set', 'lee_trkLinkSrc', 'noopFunc')"
@@ -3584,8 +3606,6 @@ buffalonews.com##+js(set, lee_trkLinkSrc, noopFunc)
 @@/search.php$doc,removeparam=sid
 ! Rule "@@/search-redirection$doc,removeparam,domain=audible.*" converted to: "@@/search-redirection$document,removeparam,domain=audible.*"
 @@/search-redirection$doc,removeparam,domain=audible.*
-! Rule "@@||google.*/maps$doc,removeparam=utm_campaign" converted to: "@@||google.*/maps$document,removeparam=utm_campaign"
-@@||google.*/maps$doc,removeparam=utm_campaign
 ! Rule "@@/remote_interaction$doc,removeparam=ap_id" converted to: "@@/remote_interaction$document,removeparam=ap_id"
 @@/remote_interaction$doc,removeparam=ap_id
 ! Rule "@@/admin/object$doc,removeparam=ap_id" converted to: "@@/admin/object$document,removeparam=ap_id"
@@ -5782,14 +5802,16 @@ www.google.*,ipv6.google.com##a[data-ved][jsaction*="focus:trigger"]:remove-attr
 ##p:-moz-only-whitespace
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@$document,removeparam=/^.*_dest_url=.*$/"
 @@$document,removeparam=/^.*_dest_url=.*$/
+! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@://www.google.*/maps^$document,removeparam=/^\??utm_.*$/i"
+@@://www.google.*/maps^$document,removeparam=/^\??utm_.*$/i
+! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@://ipv6.google.com/maps^$document,removeparam=/^\??utm_.*$/i"
+@@://ipv6.google.com/maps^$document,removeparam=/^\??utm_.*$/i
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@/subscribe?$document,removeparam=user_email_address"
 @@/subscribe?$document,removeparam=user_email_address
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@/search.php$document,removeparam=sid"
 @@/search.php$document,removeparam=sid
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@/search-redirection$document,removeparam,domain=audible.*"
 @@/search-redirection$document,removeparam,domain=audible.*
-! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@||google.*/maps$document,removeparam=utm_campaign"
-@@||google.*/maps$document,removeparam=utm_campaign
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@/remote_interaction$document,removeparam=ap_id"
 @@/remote_interaction$document,removeparam=ap_id
 ! Error: "$removeparam rules are not compatible with some other modifiers" in the rule: "@@/admin/object$document,removeparam=ap_id"
