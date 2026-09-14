@@ -135,7 +135,8 @@ It prompts for the branch to compare (defaulting to the current branch;
 prompt for running `generate-cache` first; for an optional filter-ID
 selection (`--include` / `--skip`, forwarded to every build command so a
 quick check can build a handful of filters); for whether to use optimization
-stats, downloaded once into a shared `temp/optimization/stats` and copied
+stats, downloaded once into a shared `temp/reg-stats` (deliberately separate
+from the main checkout's `temp/optimization/stats`) and copied
 into both worktrees so both builds see the same snapshot instead of each
 fetching its own; and for whether to remove the build artifacts when
 finished. Under the hood it builds `master` and the compare branch

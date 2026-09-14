@@ -43,11 +43,11 @@ META_FILE="$TEMP_DIR/reg-meta.env"
 PLATFORMS_MASTER="$TEMP_DIR/platforms_${BASE_BRANCH}_build"
 PLATFORMS_CHANGED="$TEMP_DIR/platforms_changed_build"
 
-# Downloaded once here and copied into both worktrees, instead of each worktree
-# running its own download-stats — the remote data is the same regardless of
-# code changes, so a single shared snapshot keeps the two builds' stats
-# identical and the comparison reproducible.
-SHARED_STATS_DIR="$TEMP_DIR/optimization/stats"
+# Downloaded once and copied into both worktrees' $STATS_BASE_PATH_REL, so both
+# builds see the same snapshot. Kept out of $REPO_ROOT/$STATS_BASE_PATH_REL —
+# a scoped (--include/--skip) download would otherwise overwrite the main
+# checkout's real cache with a partial one.
+SHARED_STATS_DIR="$TEMP_DIR/reg-stats"
 
 LOG_DIR_NAME="logs"
 LOG_DIR="$TEMP_DIR/$LOG_DIR_NAME"
