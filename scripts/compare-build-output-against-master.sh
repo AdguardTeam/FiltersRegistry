@@ -119,7 +119,7 @@ trap on_interrupt INT TERM HUP
 ARROW="→"
 CHECK="✓"
 CROSS="✗"
-TOTAL_STEPS=11
+TOTAL_STEPS=10
 
 # Prints a blank line and a bold "Step N/TOTAL_STEPS: <title>" header.
 step_header() {
@@ -206,7 +206,7 @@ die() {
 }
 
 # The yarn subcommands a build runs, in order, one per line. Single source of
-# truth for both the real build (Step 9) and the report's "Build command"
+# truth for both the real build (Step 8) and the report's "Build command"
 build_subcommands() {
     local BUILD_MODE=${BUILD_MODE:-plain}
 
@@ -704,15 +704,12 @@ else
     echo "${C_CYAN}${ARROW}${C_RESET} Skipping optimization stats"
 fi
 
-step_header 8 "Sync filters/ baseline"
+step_header 8 "Build both branches"
+
 if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
     sync_filters_baseline; then
     die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
-
-# --- Step 9: build both branches in parallel ---
-
-step_header 9 "Build both branches"
 
 # Clear the platforms/ directory in each worktree to ensure the output
 # reflects only the current run. Without this, a filtered build would
@@ -748,7 +745,7 @@ collect_build "$CHANGED_BRANCH" "$PID_CHANGED_BUILD" "$LOG_CHANGED_BUILD" \
 
 if [ "$BUILD_FAILED" = true ]; then
     rm -f "$META_FILE"
-    step_header 11 "Cleanup"
+    step_header 9 "Cleanup"
     run_cleanup
     exit 1
 fi
@@ -763,11 +760,11 @@ INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
 EXCLUDED_FILTER_IDS=$EXCLUDED_FILTER_IDS
 EOF
 
-step_header 10 "Report"
+step_header 9 "Report"
 generate_report
 REPORT_STATUS=$?
 
-step_header 11 "Cleanup"
+step_header 10 "Cleanup"
 run_cleanup
 
 exit "$REPORT_STATUS"
