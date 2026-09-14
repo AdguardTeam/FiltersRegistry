@@ -645,18 +645,29 @@ if ! wait "$PID_CHANGED_INSTALL"; then
 fi
 
 step_header 7 "Optimization stats"
-# Downloaded once (via the $BASE_BRANCH worktree, now that deps are installed)
-# into SHARED_STATS_DIR, then copied into both worktrees. Running download-stats
-# separately per worktree would risk each one seeing a different remote
-# snapshot, adding noise to the diff that has nothing to do with the code change
-# being tested.
+# Downloaded once (via the $BASE_BRANCH worktree) into SHARED_STATS_DIR, then
+# copied into both worktrees, so they see the same snapshot instead of each
+# fetching its own.
+
+# download-stats scopes what it fetches to --include/--skip, so a snapshot
+# downloaded under one selection is invalid for another; recorded here and
+# checked below.
+SHARED_STATS_SCOPE_FILE="$SHARED_STATS_DIR.scope"
+CURRENT_STATS_SCOPE="include=$INCLUDED_FILTER_IDS;exclude=$EXCLUDED_FILTER_IDS"
+
 echo "Use local optimization stats cache (shared across both builds)?"
 if confirm; then
     DO_USE_STATS=true
     if [ -d "$SHARED_STATS_DIR" ] && [ -n "$(ls -A "$SHARED_STATS_DIR" 2>/dev/null)" ]; then
-        echo "Found existing shared stats at $SHARED_STATS_DIR."
-        echo "Refresh them (yarn download-stats) before building?"
-        if confirm; then REFRESH_STATS=true; else REFRESH_STATS=false; fi
+        if [ -f "$SHARED_STATS_SCOPE_FILE" ] && [ "$(cat "$SHARED_STATS_SCOPE_FILE")" = "$CURRENT_STATS_SCOPE" ]; then
+            echo "Found existing shared stats at $SHARED_STATS_DIR (same filter selection)."
+            echo "Reuse them (yarn download-stats) before building?"
+            if confirm; then REFRESH_STATS=false; else REFRESH_STATS=true; fi
+        else
+            echo "${C_CYAN}${ARROW}${C_RESET} Existing shared stats at $SHARED_STATS_DIR were downloaded" \
+                "under a different filter selection; refreshing"
+            REFRESH_STATS=true
+        fi
     else
         echo "${C_CYAN}${ARROW}${C_RESET} No shared stats found; will download"
         REFRESH_STATS=true
@@ -679,6 +690,7 @@ if confirm; then
         rm -rf "$SHARED_STATS_DIR"
         mkdir -p "$(dirname "$SHARED_STATS_DIR")"
         cp -r "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL" "$SHARED_STATS_DIR"
+        printf '%s' "$CURRENT_STATS_SCOPE" > "$SHARED_STATS_SCOPE_FILE"
     else
         echo "${C_CYAN}${ARROW}${C_RESET} Reusing existing shared stats"
     fi
