@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: BDc2nPYgv6X3I+Z4+6pzQg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1789402780-3600.patch
+! Checksum: MHD4+7pyuiqQC8mtcy9Q1g
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1789406188-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.76.53
-! TimeUpdated: 2026-09-14T16:15:34+00:00
+! Version: 2.0.76.54
+! TimeUpdated: 2026-09-14T17:12:51+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$3p,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||tomonavi.xyz^$all
@@ -396,18 +396,11 @@
 pointmall.aeon.co.jp##+js(prevent-fetch, /geniee\.jp|securepubads\.g\.doubleclick\.net/)
 pointmall.aeon.co.jp##.adsbox.ad-unit.adsbygoogle:style(display: block !important;)
 soraro.tonuriaz.info###AdBanner.adsbox.ad-banner.ad-placement.adsbygoogle.ad-unit.pub_300x250.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads:style(display: block !important;)
-rawfree.top##+js(no-setTimeout-if, adsbygoogle)
 skyscrapers-and-urbandevelopment.com##+js(addEventListener-defuser, DOMContentLoaded, isAllowedBrowser)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication_adsbygoogle.js,domain=e-words.jp
 e-words.jp###abmessage
-soraraw.net#@#.ad-unit:not(.textads)
-soraraw.net##.adguard-overlay:style(display: none !important;)
-soraraw.net###__next > div[style]:style(filter: none !important; pointer-events: auto !important; user-select: auto !important;)
-mangaruu.com#@#.ad-unit:not(.textads)
-mangaruu.com##+js(prevent-fetch, pagead2.googlesyndication.com)
-mangaruu.com##body > .adsbygoogle.ad-unit[style]:style(display: block !important;)
-mangaruu.com##.adguard-overlay:style(display: none !important;)
-mangaruu.com###__next > div[style*="filter:"]:style(filter: none !important; pointer-events: auto !important; user-select: auto !important;)
+mangaruu.com,rawfree.top,soraraw.*##+js(prevent-fetch, ?abg=)
+mangaruu.com,rawfree.top,soraraw.*##+js(set-constant, navigator.brave, undefined)
 /yamiisoku-anti-adblock/*$domain=monhan-soku.com|yamiisoku.com|genshin-soku.com
 plus.fm-p.jp#@#.ad_overlay
 spotvnow.jp##+js(prevent-fetch, adsbygoogle)
