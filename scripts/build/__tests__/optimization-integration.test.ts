@@ -31,7 +31,7 @@ const expectedOptimizationStatsBasePath = path.resolve(__dirname, '../../../temp
 const EMPTY_FILTER_IDS = Object.freeze([]);
 const FILTER_ID = 1;
 
-describe('build.js: cache flag handling', () => {
+describe('build.ts: cache flag handling', () => {
     const originalArgv = process.argv;
 
     beforeEach(() => {
@@ -67,7 +67,7 @@ describe('build.js: cache flag handling', () => {
     });
 
     it('--generate-cache: compiles with null platformsPath, does not touch optimization stats', async () => {
-        process.argv = ['node', 'build.js', '--generate-cache'];
+        process.argv = ['node', 'build.ts', '--generate-cache'];
         await import('../build.js');
 
         const {
@@ -90,7 +90,7 @@ describe('build.js: cache flag handling', () => {
     });
 
     it(`--generate-cache --include=${FILTER_ID}: compiles scoped to filter ${FILTER_ID}`, async () => {
-        process.argv = ['node', 'build.js', '--generate-cache', `--include=${FILTER_ID}`];
+        process.argv = ['node', 'build.ts', '--generate-cache', `--include=${FILTER_ID}`];
         await import('../build.js');
 
         const { compile: mockedCompile } = await import('@adguard/filters-compiler');
@@ -126,7 +126,7 @@ describe('build.js: cache flag handling', () => {
     ])(
         '--download-stats %s',
         async (_, { args, includedFilterIds, excludedFilterIds }) => {
-            process.argv = ['node', 'build.js', '--download-stats', ...args];
+            process.argv = ['node', 'build.ts', '--download-stats', ...args];
             await import('../build.js');
 
             const {
@@ -144,7 +144,7 @@ describe('build.js: cache flag handling', () => {
 
     it('--use-cache without a local optimization cache: compiles, does not call use()', async () => {
         // default beforeEach mock already makes existsSync() return false everywhere
-        process.argv = ['node', 'build.js', '--use-cache'];
+        process.argv = ['node', 'build.ts', '--use-cache'];
         await import('../build.js');
 
         const {
@@ -158,11 +158,39 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
+    it('--use-cache prepares filters and metadata in a self-contained cache root', async () => {
+        process.argv = ['node', 'build.ts', '--use-cache'];
+        await import('../build.js');
+
+        const { compile: mockedCompile } = await import('@adguard/filters-compiler');
+        const mockedFs = (await import('fs/promises')).default;
+
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalledWith(
+                expect.stringMatching(/temp[/\\]filters_cached[/\\]filters$/),
+                expect.any(String),
+                expect.any(String),
+                expect.any(String),
+                EMPTY_FILTER_IDS,
+                EMPTY_FILTER_IDS,
+                expect.anything(),
+            );
+        });
+
+        ['filters', 'groups', 'tags', 'locales'].forEach((directory) => {
+            expect(vi.mocked(mockedFs.cp)).toHaveBeenCalledWith(
+                expect.stringMatching(new RegExp(`${directory}$`)),
+                expect.stringMatching(new RegExp(`temp[/\\\\]filters_cached[/\\\\]${directory}$`)),
+                { recursive: true },
+            );
+        });
+    });
+
     it('--use-cache with a local optimization cache: calls use() before compiling', async () => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
         }));
-        process.argv = ['node', 'build.js', '--use-cache'];
+        process.argv = ['node', 'build.ts', '--use-cache'];
         await import('../build.js');
 
         const {
@@ -194,7 +222,7 @@ describe('build.js: cache flag handling', () => {
             },
             OptimizationStatsError,
         }));
-        process.argv = ['node', 'build.js', '--use-cache'];
+        process.argv = ['node', 'build.ts', '--use-cache'];
 
         const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
         const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);

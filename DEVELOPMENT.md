@@ -103,9 +103,11 @@ external filters, run:
 yarn build:local
 ```
 
-Under the hood this copies `filters/` to `temp/filters_cached/`, replaces every
-`template.txt` with a single `@include "./filter.txt"` directive, and compiles
-from that copy. The original `filters/` directory is never modified.
+Under the hood this creates a self-contained cache in `temp/filters_cached/`
+containing `filters/`, `groups/`, `tags/`, and `locales/`. It replaces every
+cached `template.txt` with a single `@include "./filter.txt"` directive and
+compiles from the cached `filters/` directory. The original source directories
+are never modified.
 
 Optimization stats are picked up automatically: if `temp/optimization/stats`
 (from a prior `yarn download-stats` run) exists, it's used as-is; otherwise
