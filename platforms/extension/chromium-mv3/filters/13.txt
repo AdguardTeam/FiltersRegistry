@@ -1,8 +1,8 @@
-! Checksum: 1RH2/wcgIXVZOoB+ZZoVuQ
+! Checksum: gx0H+JjKJXMiaJx//YJ6Iw
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.2
-! TimeUpdated: 2026-09-14T08:22:53+00:00
+! Version: 2.0.68.3
+! TimeUpdated: 2026-09-14T09:20:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1572,6 +1572,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+canlitvvolo.com##.mobile-top-ads
+canlitvvolo.com##.container [style]:has(> .adsbygoogle:only-child)
 cizgivedizi.com#%#//scriptlet('prevent-window-open', '_blank')
 cizgivedizi.com##.custom-ad-overlay
 kralsportshd.com#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
@@ -6074,6 +6076,17 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! except some sites that use non-template domain names of mirror sites
 !
 !
+! Frequently changed domains: ibizatv*.com
+! Source: ibizatv1.com
+||ibizatv*.com/view/theme/ultimate/img/*.gif
+||ibizatv*.com/view/theme/ultimate/assets/js/rc.js
+[$domain=/ibizatv\d+\.com$/]##.popup-overlay
+[$domain=/ibizatv\d+\.com$/]##div[class^="reklam-"]
+[$domain=/ibizatv\d+\.com$/]##body > header
+[$domain=/ibizatv\d+\.com$/]##.footer-links
+[$domain=/ibizatv\d+\.com$/]##.header-top > div.header-text
+[$domain=/ibizatv\d+\.com$/]##.odds-container
+!
 ! Frequently changed domains: betanotv*.site
 [$domain=/betanotv\d+\.site$/]##div[class^="reklam-"]
 [$domain=/betanotv\d+\.site$/]##body > header
@@ -6249,16 +6262,6 @@ mahsunsports.xyz#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-vide
 [$domain=/baycontitv\d+\.com$/]##div[class^="reklam-"]
 [$domain=/baycontitv\d+\.com$/]##body > header
 [$domain=/baycontitv\d+\.com$/]##.footer-links
-!
-! Frequently changed domains: ibizacanli*.com
-! Source: ibizacanli16.com
-||ibizacanli*.com/view/theme/ultimate/img/*.gif
-||ibizacanli*.com/view/theme/ultimate/img/700x600sss.png
-||ibizacanli*.com/view/theme/ultimate/assets/js/rc.js
-[$domain=/ibizacanli\d+\.com$/]##.popup-overlay
-[$domain=/ibizacanli\d+\.com$/]##div[class^="reklam-"]
-[$domain=/ibizacanli\d+\.com$/]##body > header
-[$domain=/ibizacanli\d+\.com$/]##.footer-links
 !
 ! Frequently changed domains: jtvkanal*.vip
 ! Source: jtvkanal8.vip

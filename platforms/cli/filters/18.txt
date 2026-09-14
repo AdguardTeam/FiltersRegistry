@@ -1,9 +1,9 @@
-! Checksum: 6MGu9FRQHj005qmEvZ08gw
-! Diff-Path: ../patches/18/18-s-1789374310-3600.patch
+! Checksum: jUueR6fhXJZ0cSZhdI/ksQ
+! Diff-Path: ../patches/18/18-s-1789377808-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.94.39
-! TimeUpdated: 2026-09-14T08:23:06+00:00
+! Version: 2.0.94.40
+! TimeUpdated: 2026-09-14T09:20:38+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2651,6 +2651,7 @@ superbutelki.pl,polskibanan.pl,woolona.pl,evertrek.pl,71store.pl,paczkaurody.pl,
 !
 ! NOTE: Regular rules
 !
+cryptoquant.com##.ant-row
 tjrn.jus.br###__next > div:has(> div > div > p > a[href="https://tjrn.jus.br/lgpd/"])
 ispazio.net#$#div[id^="isp-consent-"] { display: none !important; }
 ispazio.net#%#//scriptlet('remove-class', 'isp-consent-locked', 'html')
@@ -2669,8 +2670,13 @@ libraries.kingston.gov.uk#?#.cc-overlay
 rbkc.gov.uk##.eu-cookie-compliance-status-null > div#sliding-popup
 ||cloudstorage.secureserver.net/recomm-assets/privacy-modal-v1.0.min.js$domain=df.eu
 99app.com##.shadow-top-99-cookies-banner
+autoplaza.com.pl#$#body.has-open-modal { overflow: auto !important; }
+autoplaza.com.pl#$##cookie-consent-modal { display: none !important; }
 recargapay.com.br###message-cookies
 elamber.pl##.container:has(> div.cookie-message-opener-ui)
+karo.waw.pl#$##cookies-message-modal { display: none !important; }
+karo.waw.pl#$#.modal-backdrop { display: none !important; }
+karo.waw.pl#$#body { overflow: auto !important; padding-right: 0 !important; }
 fly.io###ph-consent-banner
 folplex.pl##.jcc-show
 ||king-komp.com/bitrix/*/swipeteam.cookieconsent/
@@ -2713,6 +2719,8 @@ astrill.com###astrill-cc
 nexos.ai##astro-island[props*="cookie-settings-trigger"]
 hola.org##div[class^="content_of_consent"]
 eurobrick.co.uk###cookie_wrap
+gls-pakete.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button#uc-category-functional-toggle[aria-checked="false"]')
+gls-pakete.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button.uc-save-button', '2000')
 weissmann.ai#%#//scriptlet('set-local-storage-item', 'wm-consent', 'denied')
 patmos.tech##div[style$="width: 100%; visibility: visible; pointer-events: auto; opacity: 1;"]
 goldenglobes.com##.js-privacy-compliance-banner
@@ -5303,8 +5311,6 @@ cherryxtrfy.com##div[class^="cookies-policy"]
 flipsnack.com#%#//scriptlet('trusted-set-cookie', 'agree_cookie_policy_v', '{"v":2,"p":0,"a":0}')
 hs-rm.de#%#//scriptlet('trusted-set-cookie', 'in2cookiemodal-selection', '[%22essential%22]')
 unimedodonto.com.br,segurosunimed.com.br##unimed-cookie-consent
-emailoctopus.com#$##cookie-consent-modal { display: none !important; }
-emailoctopus.com#$#body.fixed { overflow: auto !important; }
 microsoft.design##div[data-m*="cookiebanner"]
 jeep.com.br##.hub-info-bar-vue:has(a[href*="/politica-de-privacidade.html"])
 2gis.ae#%#//scriptlet('trusted-set-cookie-reload', 'dg5_jur', '%7B%22uae%22%3A%7B%22status%22%3A%22agree%22%7D%7D')
@@ -13375,7 +13381,6 @@ sound-effects.bbcrewind.co.uk###root > div[class="fixed bottom-0 z-50 w-full bg-
 ubuntu18.com##.footer > div.notice
 johannische-kirche.org#$##cookie-manager { display: none !important; }
 johannische-kirche.org#$#body.noscroll { overflow: auto!important; }
-cryptoquant.com##.ant-row-center[style$="display: block; color: rgb(255, 255, 255); padding: 20px; width: 100%; z-index: 10;"]
 wieland-electric.com##wieland-cookie-banner
 bmel.de#$#html { overflow: visible !important; }
 bmel.de#$#body > div[class^="mfp-"] { display: none !important; }
@@ -14266,7 +14271,6 @@ melectronics.ch##.iA-DTEA
 prittworld.ch##.cookieacceptance__base
 dijitalders.com###CerezUyari
 airbnb.az,airbnb.co.id,airbnb.ba,airbnb.cat,airbnb.cz,airbnb.me,airbnb.dk,airbnb.de,airbnb.at,airbnb.ch,airbnb.com.ee,airbnb.com.au,airbnb.ca,airbnb.ie,airbnb.co.nz,airbnb.com.sg,airbnb.ae,airbnb.co.uk,airbnb.com.ar,airbnb.com.bz,airbnb.com.bo,airbnb.cl,airbnb.co.cr,airbnb.com.ec,airbnb.com.sv,airbnb.es,airbnb.com.gt,airbnb.com.hn,airbnb.com.co,airbnb.mx,airbnb.com.ni,airbnb.com.pa,airbnb.com.py,airbnb.com.pe,airbnb.co.ve,airbnb.be,airbnb.fr,airbnb.co.za,airbnb.is,airbnb.it,airbnb.lv,airbnb.lt,airbnb.hu,airbnb.pl,airbnb.com.mt,airbnb.com.my,airbnb.nl,airbnb.no,airbnb.com.br,airbnb.pt,airbnb.com.ro,airbnb.si,airbnb.rs,airbnb.fi,airbnb.se,airbnb.com.ph,airbnb.com.vn,airbnb.com.tr,airbnb.gr,airbnb.ru,airbnb.com.ua,airbnb.am,airbnb.co.in,airbnb.co.kr,airbnb.jp,airbnb.com.hk,airbnb.com.tw##div[data-testid="main-cookies-banner-container"]
-atlasobscura.com#$##cookie-consent-modal { display: none !important; }
 pixers.com.tr,iauto.lv,visitgdansk.com,jestemzgdanska.pl,kartamundurowa.pl,mconvert.net,mobiflip.de,kartalodzianina.pl###cookieConsentModal
 jestemzgdanska.pl###cookieConsentButton
 faberlic.com##.cookies-accepted
@@ -17276,7 +17280,7 @@ ganassurances.fr###gan_privacy
 gopro.com###gpl-flashes
 techxplore.com###header > section.notice
 lovescout24.de###i-cookie-cnil
-tennisaddict.fr###infoCookies
+rcm.com.pl,tennisaddict.fr###infoCookies
 onvasortir.com###infocookies
 monsterboard.nl###interMsgsW
 arpaceramiche.it###jbcookies
@@ -19676,6 +19680,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/241088
+@@||cdn.cookielaw.org/consent/*.json$domain=eurosport.de
 ! https://www.allrecipes.com/video
 @@||cdn.cookielaw.org/consent/*.json$domain=allrecipes.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241024
@@ -19683,6 +19689,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240710
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240597
 karolinmazowsze.pl#@#.js-cookies
+! https://github.com/AdguardTeam/AdguardFilters/issues/240846
+@@||web.cmp.usercentrics.eu/ui/$script,domain=gls-pakete.de
+@@||api.service.cmp.usercentrics.eu/latest/$xmlhttprequest,domain=gls-pakete.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240603
 artma-zaproszenia.pl#@##consent-manager
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240596
