@@ -1,9 +1,9 @@
-! Checksum: gk3NZZmbv8JYp+FbvVZTjw
-! Diff-Path: ../patches/13/13-s-1789377819-3600.patch
+! Checksum: I9avj14e/4CwvxCteXm89A
+! Diff-Path: ../patches/13/13-s-1789381114-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.3
-! TimeUpdated: 2026-09-14T09:20:23+00:00
+! Version: 2.0.68.4
+! TimeUpdated: 2026-09-14T10:15:21+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1571,6 +1571,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+yirmidort.tv##div[style="width:300px;height:250px;min-height:250px;"]
 canlitvvolo.com##.mobile-top-ads
 canlitvvolo.com##.container [style]:has(> .adsbygoogle:only-child)
 cizgivedizi.com#%#//scriptlet('prevent-window-open', '_blank')
@@ -6074,6 +6075,10 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+!
+! Frequently changed domains: sampiyontv*.xyz
+! Source: sampiyontv2.xyz
+[$domain=/sampiyontv\d+\.xyz$/]##a[rel="nofollow sponsored noopener"]
 !
 ! Frequently changed domains: ibizatv*.com
 ! Source: ibizatv1.com
