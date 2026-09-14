@@ -1,5 +1,5 @@
-! Checksum: r/ADn4nD96mmfZghHB3A0A
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1789348538-14400.patch
+! Checksum: QTkwz/Fqg8Ljc/lgnIDEQg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1789361047-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.60
@@ -570,7 +570,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||146.19.169.98^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||146.19.169.99^$document
-||pcmag.cm^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||69.162.80.56^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1257,7 +1256,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||154.223.16.232^$all
 /adx_iframe_$third-party
-||az-partners.net^
 drvhub.net##.driver-item__install
 |https://undefined/
 /api/rtb-pops/go^$all
@@ -1749,7 +1747,6 @@ www.microsoft.com##.card[data-bi-cn*="bus sim" i]
 ##.share-tw:not(html,body,article)
 ~flipboard.com##.share-flipboard:not(html,body,article)
 ~bsky.social##.share-bluesky:not(html,body,article)
-##a[data-testid^=ShareModal-ShareLink]
 ##a.x-share
 ~bsky.*,~bluesky.*##a[href^="https://bsky.app/intent/compose?text="]
 ~threads.net##a[href^="https://threads.net/intent/post?text="]
@@ -1766,6 +1763,7 @@ forbes.com##.article-sharing
 rawstory.com##.share-popup.rm-stats-tracked
 ||syndication.twitter.com/srv/timeline-profile^$third-party
 ##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
+##.google-addus:is(a,div)
 ##.chrome-footer:not(html, body)
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
@@ -2403,8 +2401,6 @@ $removeparam=o_lid
 $removeparam=o_sch
 $removeparam=o_xid
 $removeparam=wtExtndSource
-$removeparam=CAID
-$removeparam=FpAffiliate
 $removeparam=rfsn
 $removeparam=bclid
 $removeparam=afsrc
@@ -2483,7 +2479,6 @@ $removeparam=_branch_referrer
 $removeparam=vc_lpp
 $removeparam=aff_track
 $removeparam=cj_aid
-$removeparam=cj_cid
 $removeparam=cj_pid
 $removeparam=adj_campaign
 $removeparam=adj_adgroup
@@ -2534,7 +2529,6 @@ $document,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
 $document,removeparam=/^from=kelkoo.*$/
 $removeparam=paid
 $removeparam=pacid
-$removeparam=pa-partnerid
 $removeparam=thg_ppc_campaign
 $removeparam=adtype
 $removeparam=tmad
@@ -3072,6 +3066,7 @@ $removeparam=aff_click_id
 ||map.baidu.com^$removeparam=ugc_ver
 ||baidu.com^$removeparam=hl_tag
 ||zhidao.baidu.com^$removeparam=qbl
+||wenku.baidu.com/search?$removeparam=cc
 ||baike.baidu.com^$removeparam=lemmaFrom
 ||wenku.baidu.com^$removeparam=_wkts_
 wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
@@ -3539,10 +3534,10 @@ $removeparam=pk_vid,document
 ||xiaohongshu.com^$removeparam=share_channel,document
 ||login.afreecatv.com^$removeparam=szFrom
 ||typeform.com^$removeparam=typeform-source
+$removeparam=natb,domain=duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
 $removeparam=_1lr
 $removeparam=ymid
 $removeparam=via,domain=datafa.st|sincode.ai|skillshare.com|thedailybeast.com|raycast.com
-$removeparam=sdsrc,document
 ref=troyhunt.com$document,removeparam=ref
 ||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
@@ -3803,6 +3798,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 @@/favicon1.ico|
 @@://adserver.advertising.adtech.$third-party
 #@#.adSense
+##.adSense:not(html,body,:empty)
 #@#.adContent
 #@#.ad-text
 ##.ad-text:not(html,body,:empty)
