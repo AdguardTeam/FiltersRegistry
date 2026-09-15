@@ -1,9 +1,9 @@
-! Checksum: kH4jgrkHKG3hW6J6OpvWFA
-! Diff-Path: ../patches/17/17-s-1789442448-3600.patch
+! Checksum: EjG4nmPuORCo2hVA0RdFuw
+! Diff-Path: ../patches/17/17-s-1789445997-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.32
-! TimeUpdated: 2026-09-15T03:18:27+00:00
+! Version: 2.0.14.33
+! TimeUpdated: 2026-09-15T04:17:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -535,6 +535,11 @@ $removeparam=tduid
 ! Good: ||example.org^$removeparam=cx
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/241040#issuecomment-5673451428
+||president.jp^$removeparam=cx_referrertype
+||president.jp^$removeparam=yhref
+! https://github.com/AdguardTeam/AdguardFilters/issues/241378
+||jp.reuters.com^$removeparam=rpc
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241379
 ||huffingtonpost.jp^$removeparam=utm_hp_ref
 ! links on YahooJP
