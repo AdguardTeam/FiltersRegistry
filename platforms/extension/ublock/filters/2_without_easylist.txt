@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: eyCgrk19r75p5maJPMgiOg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1789467559-3600.patch
+! Checksum: gbHo2wXUCAcU9gicys12yA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1789471066-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.90.61
-! TimeUpdated: 2026-09-15T10:15:06+00:00
+! Version: 2.4.90.62
+! TimeUpdated: 2026-09-15T11:13:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22687,7 +22687,6 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
-||svetserialu.to/assets/js/ads.js
 svetserialu.to##.alert_premiumExpired
 svetserialu.to##body > .loader ~ div[class][style*="z-index"]:not([id])
 infotbal.cz##div[data-elementor-type="wp-page"] > .elementor-section[data-settings*="background_background"]:has(.reklama-wrapper)
@@ -22754,7 +22753,6 @@ titulky.com###brds
 @@||vlm-ads.aimatch.com/vlm/jserver/$domain=titulky.com
 titulky.com###head > div[style^="margin: auto; width: "]:style(max-height: 20px !important;)
 titulky.com##a[href="/internetova-reklama/"]
-! titulky.com#$##head { height: 70px !important; }
 dennikn.sk##.t_promo
 cnews.cz##.promo-in-article
 cnews.cz###iinfoOutstreamPosition
@@ -22791,6 +22789,11 @@ extra.cz##[data-advert-container]
 rychlost.cz##.t-ban
 olympijskytym.cz##div.bg-texture:has(> div[class^="ad-"])
 akcniceny.cz,autojournal.cz,idos.cz,impuls.cz,lidovky.cz,idnes.cz,expres.cz,antiyoutuber.cz##body .r-main
+! https://github.com/AdguardTeam/AdguardFilters/issues/241026
+svetserialu.to#@##ads-banner
+svetserialu.to#@##google-ads
+||svetserialu.to/assets/js/popads.js
+||svetserialu.to/assets/js/ads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/231189
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=cnews.cz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230488
@@ -40099,6 +40102,9 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*###main-content > div.container > div.grid div.border.bg-gradient-card:has(> div.flex > a[href^="https://billing.rocketstreams4k.com/"])
+streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##a[data-no-ad]
+streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##.musiqly-ad
 chatgpt.com##div[data-conversation-screenshot-content] > div.pointer-events-none.-mb-px.h-px.w-full.opacity-0 + div.transition-opacity.duration-300.ease-out.motion-reduce\:transition-none.starting\:opacity-0 > span + div[class*="_"]
 hotukdeals.com###eventBannerPortal
 ||streamex.hn/pop.js
@@ -56210,7 +56216,7 @@ apkpure.*##.left > .box[style="overflow: hidden; padding-bottom: 20px"]
 alphaporno.com##.movies-block > div[style*="text-align:center;"]
 ||celebrity-leaks.net/*.php$script
 ||thefrappening.so/sproject/sproject.php
-.com/ads/$domain=hdbraze.com
+.com/ads/$domain=hdbraze.com|livelive24.com
 aruble.net###middle-adspace
 ||static.nitropay.com/nads^
 sorcerers.net##td.right_nav > .nocontent ~ .nocontent ~ table.right_nav
@@ -67434,6 +67440,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/241026
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241303
 ! aglint-disable no-invalid-modifiers
 ! aglint-enable no-invalid-modifiers
