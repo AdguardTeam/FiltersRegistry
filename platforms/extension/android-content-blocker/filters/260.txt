@@ -1,8 +1,8 @@
-! Checksum: kigvYGJJCvEekvR5tYpXng
+! Checksum: s8byxB7Xi9vHiTgZxCZboA
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.93
-! TimeUpdated: 2026-09-15T04:39:08+00:00
+! Version: 2.0.1.94
+! TimeUpdated: 2026-09-15T16:38:03+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -45,12 +45,12 @@
 ! -- https://www.aberdeencity.gov.uk/
 ! Floating chatbot button
 www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
-! ==================
-! == Adblock Plus ==
-! ==================
+! ==========================
+! == AdBlock/Adblock Plus ==
+! ==========================
 ! -- https://help.adblockplus.org/adblock-plus-help-center/how-to-write-filters
 ! "Use with AI" button
-help.adblockplus.org##ai-actions
+help.adblockplus.org,helpcenter.getadblock.com##ai-actions
 ! ===========
 ! == Adobe ==
 ! ===========
@@ -144,15 +144,18 @@ health.amazon.com##[data-hcr-token-id="{{health.ai.widget.upsell.banner}}"]
 ! =====================
 ! == American Banker ==
 ! =====================
-! -- https://www.americanbanker.com/search?q=test
-! Restore non-ai search bar
+! -- https://www.americanbanker.com/
+! Header - Restore non-ai search button
 ! * Created by AchernarB (https://www.reddit.com/r/uBlockOrigin/comments/1te8z0m/comment/om1ap7p/)
 americanbanker.com##.miso-page-header-search
+! -- https://www.americanbanker.com/search?q=test
+! Remove sparkle from icon in search bar
 ! AI Answer
 www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
 www.americanbanker.com##.miso-hybrid-search-combo__grid-answer
 ||api-edge.askmiso.com/v1/ask/questions/$xmlhttprequest,domain=www.americanbanker.com
-! Remove sparkle from search icon
+! Promo for AI Answer
+www.americanbanker.com##.miso-hybrid-search-combo__answers-promo
 ! =====================
 ! == Answer Overflow ==
 ! =====================
@@ -371,9 +374,14 @@ app.bitly.com##.nav-ai-assist
 ! Promo for "Upgrade to Create with AI"
 app.bitly.com##.ai-create-module
 ! Connect your account - AI tab
+! Chat side panel
+app.bitly.com##.chat-side-panel
 ! -- https://app.bitly.com/[ID]/analytics/
 ! Analyze with AI button
 app.bitly.com##button[aria-label="Analyze with AI"]
+! -- https://app.bitly.com/[ID]/custom-domains
+! "Find a domain with AI"
+app.bitly.com##.domain-search-type-wrapper
 ! -- https://app.bitly.com/[ID]/links/create
 ! Generate back-half button
 app.bitly.com##.link-info--generate-backhalf
@@ -1478,7 +1486,7 @@ docs.google.com##.waffle-unified-formula-help-gemini-button-only
 docs.google.com##.waffleGriddySuggestionsBubbleGeminiUi
 ! Bottom bar - Canvas menu
 docs.google.com##.docs-sheet-canvas-button
-! - Table options (Insert > Pre-built tables)
+! - Table options (Menubar > Insert > Pre-built tables)
 ! "Help me create a table" button
 docs.google.com##.building-blocks-sidekick-entrypoint-button
 ! "AI enhanced tables" promo
@@ -2775,7 +2783,7 @@ www.reddit.com##[id^="answers-suggested-queries"]
 ! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
 ! AI-linked keywords in comments
 ! * Based on https://www.reddit.com/r/uBlockOrigin/comments/1vt6sgy/comment/p4rdpz2/
-! * backup if trusted filters are not enabled
+! * backup for AdGuard w/o trusted filters and Adblock Plus
 ! -- Advertisements
 ! Post feed
 www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"])

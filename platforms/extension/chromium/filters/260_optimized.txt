@@ -1,9 +1,9 @@
-! Checksum: 1nvYIcyKYDGJn9Ya8v3ulg
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1789447287-14400.patch
+! Checksum: JQsb5IQDmib991+xvfuJog
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1789490431-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.93
-! TimeUpdated: 2026-09-15T04:39:08+00:00
+! Version: 2.0.1.94
+! TimeUpdated: 2026-09-15T16:38:03+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,domain=arrow.apache.org|developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
@@ -14,7 +14,7 @@ www.1password.dev#?#[role="menuitem"]:contains(Copy MCP Server URL to clipboard)
 www.1password.dev#?#[role="menuitem"]:contains(Install MCP Server)
 www.1password.dev#?#[role="menuitem"]:contains(Ask questions about this page)
 www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
-help.adblockplus.org##ai-actions
+help.adblockplus.org,helpcenter.getadblock.com##ai-actions
 ||www.adobe.com/libs/c2/blocks/brand-concierge/chat-ui-config.js$script,domain=www.adobe.com
 www.adobe.com#?#.promobar:contains(Adobe Firefly)
 www.adobe.com##[data-key="category-genai"]
@@ -51,11 +51,13 @@ health.amazon.com##.pui-sub-nav-health-ai-button
 health.amazon.com##.link-container[href^="https://health.amazon.com/prime/onemedical/membership/health-ai/"]
 health.amazon.com##.flex-container.margin-bottom-small > .flex-justify-content-flex-start.ap-container-nowrap:has(#health-ai-ask-widget)
 health.amazon.com##[data-hcr-token-id="{{health.ai.widget.upsell.banner}}"]
-americanbanker.com#$#body[data-toggle-header="search-overlay"] .Page-header-search-overlay, .Page-header-search {  display: flex !important;  }
+americanbanker.com#$#body[data-toggle-header="search-overlay"] .Page-header-search-overlay { display: flex !important }
+americanbanker.com#$#.Page-header-search { display: flex !important }
 americanbanker.com##.miso-page-header-search
 www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
 www.americanbanker.com##.miso-hybrid-search-combo__grid-answer
 ||api-edge.askmiso.com/v1/ask/questions/$xmlhttprequest,domain=www.americanbanker.com
+www.americanbanker.com##.miso-hybrid-search-combo__answers-promo
 www.answeroverflow.com##form:has([placeholder="Ask a question..."])
 answeroverflow.com#?#.text-left.w-full.pt-4.border-t:contains(MCP Server)
 archiveofourown.org##.blurb:has(.tag:is([href="/tags/AI%20Art/works"],[href="/tags/AI%20assisted%20text/works"],[href="/tags/AI%20assisted%20writing/works"],[href="/tags/AI%20assisted/works"],[href="/tags/AI%20Dungeon%20Generated/works"],[href="/tags/AI%20Generated%20Art/works"],[href="/tags/AI%20Generated%20Fic/works"],[href="/tags/AI%20generated%20story/works"],[href="/tags/AI%20Generated%20Text/works"],[href="/tags/AI%20generated/works"],[href="/tags/AI%20Translation/works"],[href="/tags/AI%20used%20as%20an%20assistive%20tool/works"],[href="/tags/AI%20written/works"],[href="/tags/AI-Assisted%20Translation/works"],[href="/tags/AI-Assisted%20Writing/works"],[href="/tags/AI-Assisted/works"],[href="/tags/ai-edited/works"],[href="/tags/AI-Generated%20Images/works"],[href="/tags/AI-Generated%20Text/works"],[href="/tags/AI-Generated/works"],[href="/tags/ai-written/works"],[href="/tags/ChatGPT%20generated/works"],[href="/tags/ChatGPT/works"],[href="/tags/Co-Written%20with%20AI/works"],[href="/tags/Created%20Using%20Generative%20AI/works"],[href="/tags/InferKit/works"],[href="/tags/Made%20by%20AI/works"],[href="/tags/Midjourney/works"],[href="/tags/NovelAI/works"],[href="/tags/Written%20by%20AI/works"],[href="/tags/Written%20by%20an%20AI/works"],[href="/tags/Written%20in%20collaboration%20with%20an%20AI/works"],[href="/tags/written%20with%20AI/works"]))
@@ -143,7 +145,12 @@ rewards.bing.com##mee-card:has([aria-label="Microsoft Unlocked, Stories from the
 app.bitly.com##.nav-ai-assist
 app.bitly.com##.ai-create-module
 app.bitly.com##.swiper-slide:has([data-testid="chatgpt"]):has([data-testid="claude"]):has([data-testid="copilot"])
+app.bitly.com##.chat-side-panel
+app.bitly.com#$#.layout--wrapper.chat-panel-open { padding-right: inherit !important }
 app.bitly.com##button[aria-label="Analyze with AI"]
+app.bitly.com##.domain-search-type-wrapper
+app.bitly.com##.domain-search-container:has(.search-form-ai)
+app.bitly.com#$#.domain-search-container:has(.search-form) { display: initial !important }
 app.bitly.com##.link-info--generate-backhalf
 bitwarden.com###landing-page > .w-full.border-deepBlue:has([href="/solutions/agentic-ai-security/"])
 bitwarden.com##button[aria-label="Open AI chat"]
@@ -166,7 +173,7 @@ www.thebricks.com###announcement-banner
 www.thebricks.com###sidebar-cta
 www.thebricks.com##.Cta1_container__T8L_e, .Cta2_container__dcad2, .Cta3_container__pjUHX, .Cta4_container__Ut98Y, .Cta5_container__8bABo
 www.thebricks.com##.Modal_container__jm1jX
-www.britannica.com#$#.category-link-CHATBOT { visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; font-size: 0 !important; }
+www.britannica.com#$#.category-link-CHATBOT { visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; font-size: 0 !important }
 ||www.britannica.com/chat-api/$xmlhttprequest,domain=www.britannica.com
 www.britannica.com##.header-topic-britannica-ai-module
 www.britannica.com##.toc-sticky-header-ai-container
@@ -493,7 +500,7 @@ github.dev##.codicon-preferences-ai-results
 github.dev###chat\.statusBarEntry[aria-label="Sign In"]
 github.dev###chat\.statusBarEntry:has(.codicon-copilot-unavailable)
 github.dev##.agent-status-badge-section > .action-container
-github.dev#$#.agent-status-badge-section .codicon-chevron-down { margin-left: 0px !important; }
+github.dev#$#.agent-status-badge-section .codicon-chevron-down { margin-left: 0px !important }
 github.dev##.command-center .codicon-chat-sparkle
 github.dev##.monaco-menu .actions-container:has([aria-label="Learn How to Hide AI Features"]) > .action-item:not(:has([aria-label="Learn How to Hide AI Features"]))
 github.dev##.action-item.menu-entry:has(> .codicon-chat-sparkle)
@@ -1043,10 +1050,10 @@ www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp)
 www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp) + hr
 www.reddit.com##[id^="answers-suggested-queries"]
 www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
-www.reddit.com#$#[slot="comment"] p > a.border-dotted { border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important; }
+www.reddit.com#$#[slot="comment"] p > a.border-dotted { border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important }
 www.reddit.com##[slot="comment"] p > a.border-dotted > span:has(> [icon-name="search-sparkle"])
 www.reddit.com#%#//scriptlet('remove-attr', 'href', '[slot="comment"] p > a.border-dotted')
-www.reddit.com#$#[slot="comment"] p > a.border-dotted[href^="/answers/"] { pointer-events: none !important; }
+www.reddit.com#$#[slot="comment"] p > a.border-dotted[href^="/answers/"] { pointer-events: none !important }
 www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"])
 www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"]) + hr
 www.reddit.com##shreddit-comments-page-ad:is([domain$=".ai"], [domain="apollo.io"], [domain="hyperagent.com"], #t3_1tr5mav, [title~="AI"])

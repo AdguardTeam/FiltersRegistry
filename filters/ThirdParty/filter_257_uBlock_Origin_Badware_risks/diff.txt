@@ -3216,6 +3216,8 @@ howtoremove.guide###alt_content_main_div > p:has-text(SpyHunter)
 ||azurefd.net/Win20Errfb020/index.html$doc
 ! Rule "||ipwho.is^$xhr,domain=web.core.windows.net" converted to: "||ipwho.is^$xmlhttprequest,domain=web.core.windows.net"
 ||ipwho.is^$xhr,domain=web.core.windows.net
+! Rule "||amplifyapp.com/support.js|$1p" converted to: "||amplifyapp.com/support.js|$~third-party"
+||amplifyapp.com/support.js|$1p
 ! Rule "||netlify.app/text.js|$1p" converted to: "||netlify.app/text.js|$~third-party"
 ||netlify.app/text.js|$1p
 ! Rule "||github.io/my-new-app/text.js$1p" converted to: "||github.io/my-new-app/text.js$~third-party"
@@ -3274,10 +3276,14 @@ igualdad.iaa.csic.es##+js(acs, String.prototype.toLowerCase, Contract)
 cizitensports.com##+js(rmnt, script, randomUUID)
 ! Rule "||sites.google.com/view/brewapp$doc" converted to: "||sites.google.com/view/brewapp$document"
 ||sites.google.com/view/brewapp$doc
-! Rule "/^https:\/\/[a-z]{7,}\.sbs\/[a-z0-9]{8}\.js$/$script,3p,match-case,to=sbs" converted to: "/^https:\/\/[a-z]{7,}\.sbs\/[a-z0-9]{8}\.js$/$script,third-party,match-case,to=sbs"
-/^https:\/\/[a-z]{7,}\.sbs\/[a-z0-9]{8}\.js$/$script,3p,match-case,to=sbs
+! Rule "/^https:\/\/[a-z]{7,}\.[a-z]{3,4}\/[a-z0-9]{8}\.js$/$script,3p,match-case,to=club|sbs" converted to: "/^https:\/\/[a-z]{7,}\.[a-z]{3,4}\/[a-z0-9]{8}\.js$/$script,third-party,match-case,to=club|sbs"
+/^https:\/\/[a-z]{7,}\.[a-z]{3,4}\/[a-z0-9]{8}\.js$/$script,3p,match-case,to=club|sbs
+! Rule "/\/[a-z0-9]{8}\.js$/$script,3p,match-case,domain=testmyspeed.com" converted to: "/\/[a-z0-9]{8}\.js$/$script,third-party,match-case,domain=testmyspeed.com"
+/\/[a-z0-9]{8}\.js$/$script,3p,match-case,domain=testmyspeed.com
 ! Rule "webrick.com##+js(acs, atob, Uint8Array)" converted to: "webrick.com#%#//scriptlet('ubo-acs', 'atob', 'Uint8Array')"
 webrick.com##+js(acs, atob, Uint8Array)
+! Rule "aspireatlas.com##+js(rmnt, script, String.fromCharCode)" converted to: "aspireatlas.com#%#//scriptlet('ubo-rmnt', 'script', 'String.fromCharCode')"
+aspireatlas.com##+js(rmnt, script, String.fromCharCode)
 ! Rule "pentest.blog##+js(rmnt, script, (self);)" converted to: "pentest.blog#%#//scriptlet('ubo-rmnt', 'script', '(self);')"
 pentest.blog##+js(rmnt, script, (self);)
 ! Rule "pentest.blog##+js(acs, atob, new )" converted to: "pentest.blog#%#//scriptlet('ubo-acs', 'atob', 'new')"
@@ -5334,6 +5340,8 @@ igualdad.iaa.csic.es#%#//scriptlet('ubo-acs', 'String.prototype.toLowerCase', 'C
 cizitensports.com#%#//scriptlet('ubo-rmnt', 'script', 'randomUUID')
 ! webrick.com#%#//scriptlet('ubo-acs', 'atob', 'Uint8Array') is excluded by "#%#//scriptlet" in exclusions-low.txt
 webrick.com#%#//scriptlet('ubo-acs', 'atob', 'Uint8Array')
+! aspireatlas.com#%#//scriptlet('ubo-rmnt', 'script', 'String.fromCharCode') is excluded by "#%#//scriptlet" in exclusions-low.txt
+aspireatlas.com#%#//scriptlet('ubo-rmnt', 'script', 'String.fromCharCode')
 ! pentest.blog#%#//scriptlet('ubo-rmnt', 'script', '(self);') is excluded by "#%#//scriptlet" in exclusions-low.txt
 pentest.blog#%#//scriptlet('ubo-rmnt', 'script', '(self);')
 ! pentest.blog#%#//scriptlet('ubo-acs', 'atob', 'new') is excluded by "#%#//scriptlet" in exclusions-low.txt

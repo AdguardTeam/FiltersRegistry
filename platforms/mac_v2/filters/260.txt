@@ -1,9 +1,9 @@
-! Checksum: 2HUnIActp/w1xbeNDpoh3g
-! Diff-Path: ../patches/260/260-s-1789447310-14400.patch
+! Checksum: ntTd3LkrZLeAhoRkXGYtwg
+! Diff-Path: ../patches/260/260-s-1789490451-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.93
-! TimeUpdated: 2026-09-15T04:39:08+00:00
+! Version: 2.0.1.94
+! TimeUpdated: 2026-09-15T16:38:03+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -50,12 +50,12 @@ www.1password.dev#?#[role="menuitem"]:contains(Ask questions about this page)
 ! -- https://www.aberdeencity.gov.uk/
 ! Floating chatbot button
 www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
-! ==================
-! == Adblock Plus ==
-! ==================
+! ==========================
+! == AdBlock/Adblock Plus ==
+! ==========================
 ! -- https://help.adblockplus.org/adblock-plus-help-center/how-to-write-filters
 ! "Use with AI" button
-help.adblockplus.org##ai-actions
+help.adblockplus.org,helpcenter.getadblock.com##ai-actions
 ! ===========
 ! == Adobe ==
 ! ===========
@@ -162,16 +162,20 @@ health.amazon.com##[data-hcr-token-id="{{health.ai.widget.upsell.banner}}"]
 ! =====================
 ! == American Banker ==
 ! =====================
-! -- https://www.americanbanker.com/search?q=test
-! Restore non-ai search bar
+! -- https://www.americanbanker.com/
+! Header - Restore non-ai search button
 ! * Created by AchernarB (https://www.reddit.com/r/uBlockOrigin/comments/1te8z0m/comment/om1ap7p/)
-americanbanker.com#$#body[data-toggle-header="search-overlay"] .Page-header-search-overlay, .Page-header-search {  display: flex !important;  }
+americanbanker.com#$#body[data-toggle-header="search-overlay"] .Page-header-search-overlay { display: flex !important }
+americanbanker.com#$#.Page-header-search { display: flex !important }
 americanbanker.com##.miso-page-header-search
+! -- https://www.americanbanker.com/search?q=test
+! Remove sparkle from icon in search bar
 ! AI Answer
 www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
 www.americanbanker.com##.miso-hybrid-search-combo__grid-answer
 ||api-edge.askmiso.com/v1/ask/questions/$xmlhttprequest,domain=www.americanbanker.com
-! Remove sparkle from search icon
+! Promo for AI Answer
+www.americanbanker.com##.miso-hybrid-search-combo__answers-promo
 ! =====================
 ! == Answer Overflow ==
 ! =====================
@@ -429,9 +433,17 @@ app.bitly.com##.nav-ai-assist
 app.bitly.com##.ai-create-module
 ! Connect your account - AI tab
 app.bitly.com##.swiper-slide:has([data-testid="chatgpt"]):has([data-testid="claude"]):has([data-testid="copilot"])
+! Chat side panel
+app.bitly.com##.chat-side-panel
+app.bitly.com#$#.layout--wrapper.chat-panel-open { padding-right: inherit !important }
 ! -- https://app.bitly.com/[ID]/analytics/
 ! Analyze with AI button
 app.bitly.com##button[aria-label="Analyze with AI"]
+! -- https://app.bitly.com/[ID]/custom-domains
+! "Find a domain with AI"
+app.bitly.com##.domain-search-type-wrapper
+app.bitly.com##.domain-search-container:has(.search-form-ai)
+app.bitly.com#$#.domain-search-container:has(.search-form) { display: initial !important }
 ! -- https://app.bitly.com/[ID]/links/create
 ! Generate back-half button
 app.bitly.com##.link-info--generate-backhalf
@@ -509,7 +521,7 @@ www.thebricks.com##.Modal_container__jm1jX
 ! -- https://www.britannica.com/
 ! "Ask the Chatbot" button below search bar
 ! * Use style to prevent navigation arrow from covering other options
-www.britannica.com#$#.category-link-CHATBOT { visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; font-size: 0 !important; }
+www.britannica.com#$#.category-link-CHATBOT { visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; font-size: 0 !important }
 ! -- https://www.britannica.com/chatbot
 ||www.britannica.com/chat-api/$xmlhttprequest,domain=www.britannica.com
 ! -- https://www.britannica.com/science/star-astronomy
@@ -1462,7 +1474,7 @@ github.dev###chat\.statusBarEntry:has(.codicon-copilot-unavailable)
 ! Toggle Chat button in header next to search bar
 github.dev##.agent-status-badge-section > .action-container
 ! * Fix spacing on ∨ submenu
-github.dev#$#.agent-status-badge-section .codicon-chevron-down { margin-left: 0px !important; }
+github.dev#$#.agent-status-badge-section .codicon-chevron-down { margin-left: 0px !important }
 ! * Loading placeholder
 github.dev##.command-center .codicon-chat-sparkle
 ! * All chat menu options other than "Learn how to hide AI Features"
@@ -1723,7 +1735,7 @@ docs.google.com##.waffle-unified-formula-help-gemini-button-only
 docs.google.com##.waffleGriddySuggestionsBubbleGeminiUi
 ! Bottom bar - Canvas menu
 docs.google.com##.docs-sheet-canvas-button
-! - Table options (Insert > Pre-built tables)
+! - Table options (Menubar > Insert > Pre-built tables)
 ! "Help me create a table" button
 docs.google.com##.building-blocks-sidekick-entrypoint-button
 docs.google.com#$#.building-blocks-sidekick-scroll-top { top: 58px !important }
@@ -3205,11 +3217,11 @@ www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-a
 ! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
 ! AI-linked keywords in comments
 ! * Based on https://www.reddit.com/r/uBlockOrigin/comments/1vt6sgy/comment/p4rdpz2/
-www.reddit.com#$#[slot="comment"] p > a.border-dotted { border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important; }
+www.reddit.com#$#[slot="comment"] p > a.border-dotted { border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important }
 www.reddit.com##[slot="comment"] p > a.border-dotted > span:has(> [icon-name="search-sparkle"])
 www.reddit.com#%#//scriptlet('remove-attr', 'href', '[slot="comment"] p > a.border-dotted')
-! * backup if trusted filters are not enabled
-www.reddit.com#$#[slot="comment"] p > a.border-dotted[href^="/answers/"] { pointer-events: none !important; }
+! * backup for AdGuard w/o trusted filters and Adblock Plus
+www.reddit.com#$#[slot="comment"] p > a.border-dotted[href^="/answers/"] { pointer-events: none !important }
 ! -- Advertisements
 ! Post feed
 www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"])
