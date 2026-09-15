@@ -890,8 +890,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.74.80",
-			"timeUpdated": "2026-09-15T16:36:39+0000",
+			"version": "2.1.74.81",
+			"timeUpdated": "2026-09-15T20:33:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1018,8 +1018,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.97.76",
-			"timeUpdated": "2026-09-15T16:36:43+0000",
+			"version": "2.1.97.77",
+			"timeUpdated": "2026-09-15T20:33:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1091,8 +1091,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.97.78",
-			"timeUpdated": "2026-09-15T16:36:45+0000",
+			"version": "2.1.97.79",
+			"timeUpdated": "2026-09-15T20:33:52+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -1166,8 +1166,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.97.78",
-			"timeUpdated": "2026-09-15T16:36:46+0000",
+			"version": "2.1.97.79",
+			"timeUpdated": "2026-09-15T20:33:54+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1195,8 +1195,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.97.77",
-			"timeUpdated": "2026-09-15T16:36:47+0000",
+			"version": "2.1.97.78",
+			"timeUpdated": "2026-09-15T20:33:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1243,8 +1243,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.71.49",
-			"timeUpdated": "2026-09-15T16:36:51+0000",
+			"version": "2.1.71.50",
+			"timeUpdated": "2026-09-15T20:34:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1343,8 +1343,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.67.18",
-			"timeUpdated": "2026-09-15T12:44:06+0000",
+			"version": "2.1.67.19",
+			"timeUpdated": "2026-09-15T20:34:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1368,8 +1368,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.68.83",
-			"timeUpdated": "2026-09-15T16:37:01+0000",
+			"version": "2.1.68.84",
+			"timeUpdated": "2026-09-15T20:34:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1393,8 +1393,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.69.52",
-			"timeUpdated": "2026-09-15T16:37:01+0000",
+			"version": "2.0.69.53",
+			"timeUpdated": "2026-09-15T20:34:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1543,8 +1543,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.97.78",
-			"timeUpdated": "2026-09-15T16:37:07+0000",
+			"version": "2.1.97.79",
+			"timeUpdated": "2026-09-15T20:34:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1588,8 +1588,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.97.4",
-			"timeUpdated": "2026-09-15T16:37:09+0000",
+			"version": "2.1.97.5",
+			"timeUpdated": "2026-09-15T20:34:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1857,8 +1857,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.97.78",
-			"timeUpdated": "2026-09-15T16:37:19+0000",
+			"version": "2.1.97.79",
+			"timeUpdated": "2026-09-15T20:34:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1883,8 +1883,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.88.45",
-			"timeUpdated": "2026-09-15T16:37:21+0000",
+			"version": "2.0.88.46",
+			"timeUpdated": "2026-09-15T20:34:36+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1987,8 +1987,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.0.4.33",
-			"timeUpdated": "2026-09-12T20:35:12+0000",
+			"version": "2.0.4.34",
+			"timeUpdated": "2026-09-15T20:34:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2012,8 +2012,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "1.0.39.92",
-			"timeUpdated": "2026-09-15T01:07:33+0000",
+			"version": "1.0.39.93",
+			"timeUpdated": "2026-09-15T20:34:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2086,8 +2086,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.70.90",
-			"timeUpdated": "2026-09-15T12:44:34+0000",
+			"version": "2.1.70.91",
+			"timeUpdated": "2026-09-15T20:34:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2162,8 +2162,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.93.84",
-			"timeUpdated": "2026-09-15T16:37:34+0000",
+			"version": "2.1.93.85",
+			"timeUpdated": "2026-09-15T20:34:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2321,8 +2321,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.91.9",
-			"timeUpdated": "2026-09-15T16:37:40+0000",
+			"version": "2.0.91.10",
+			"timeUpdated": "2026-09-15T20:34:58+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -2449,8 +2449,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.1.94",
-			"timeUpdated": "2026-09-15T16:38:03+0000",
+			"version": "2.0.1.95",
+			"timeUpdated": "2026-09-15T20:35:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
