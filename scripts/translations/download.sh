@@ -54,7 +54,10 @@ locales=(
 for locale in "${locales[@]}"
 do
     echo "Download tags.json for $locale locale"
-    curl --fail --retry 3 \
+    # Fail on HTTP errors, retry transient failures (refusing connections too),
+    # and bound connect and total time so a stalled connection cannot hang the
+    # workflow job.
+    curl --fail --retry 3 --retry-connrefused --connect-timeout 10 --max-time 120 \
         "${SERVICE_URL}download?format=strings&language=${locale}&filename=tags.json&project=filters-registry" \
         -o messages.json
 
@@ -89,7 +92,7 @@ done
 for locale in "${locales[@]}"
 do
     echo "Download groups.json for $locale locale"
-    curl --fail --retry 3 \
+    curl --fail --retry 3 --retry-connrefused --connect-timeout 10 --max-time 120 \
         "${SERVICE_URL}download?format=strings&language=${locale}&filename=groups.json&project=filters-registry" \
         -o messages.json
 
@@ -122,7 +125,7 @@ done
 for locale in "${locales[@]}"
 do
     echo "Download filters.json for $locale locale"
-    curl --fail --retry 3 \
+    curl --fail --retry 3 --retry-connrefused --connect-timeout 10 --max-time 120 \
         "${SERVICE_URL}download?format=strings&language=${locale}&filename=filters.json&project=filters-registry" \
         -o messages.json
 
