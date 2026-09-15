@@ -1,9 +1,9 @@
-! Checksum: oB62RCWYVKmaRYqxRkCwzQ
-! Diff-Path: ../patches/19/19-s-1789471046-3600.patch
+! Checksum: crQLsbQo1Y5OEgLf+m6UFw
+! Diff-Path: ../patches/19/19-s-1789475093-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.83.3
-! TimeUpdated: 2026-09-15T11:14:31+00:00
+! Version: 2.0.83.4
+! TimeUpdated: 2026-09-15T12:21:43+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -588,6 +588,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+vaughn.live#%#//scriptlet('trusted-set-local-storage-item', 'vs_notice_last_shown_8', '$now$')
 cyberscore.live##.modal-partner-rb-wrapper
 cyberscore.live##.border:has(> img.partner-rb:first-child + div:last-child)
 cyberscore.live##.border:has(> .text-center[data-nosnippet]:only-child > .font-bold:only-child)
@@ -635,7 +636,6 @@ the-sun.com#%#//scriptlet('prevent-setTimeout', 'gu(gh)')
 ip.sb##.wwads_abp
 jetpunk.com#%#//scriptlet('prevent-setTimeout', 'isAdblocker')
 ricardocuisine.com#%#//scriptlet('set-cookie', 'adblock-modal.ads', '1')
-vaughn.live#%#//scriptlet('trusted-set-local-storage-item', 'vs_notice_last_shown2', '99999999999999')
 thestar.com.my##.widgettop
 sport-express.ru##.se-bn2-notice
 gsmarena.com#$#html > body { overflow: auto !important; }
@@ -2980,6 +2980,8 @@ forbes.com#@#.AD300x250
 forbes.com#@#.AD300Block
 forbes.com#@#.AD-label300x250
 forbes.com#@#.AD-Rotate
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/241413
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79903
 offertoro.com#@#.ads
@@ -12950,6 +12952,7 @@ mainichikirei.jp,secretmelbourne.com,spur.hpplus.jp,spiegel.de,itmedia.co.jp,han
 !
 ! SECTION: Subscriptions - Regular rules
 !
+streameast.ga##.nl-inform
 telepolis.de##div[data-module-name="NewsletterModule"]
 mainichi.jp##.articledetail-subcontents > .mb-48:has(> p.text-center > a#mai-pref-src)
 chollometro.com###telegramWidgetPortal
@@ -12958,6 +12961,7 @@ pepperdeals.com###customBannerList-id-4
 pepperdeals.se,preisjaeger.at,dealabs.com,hotukdeals.com,mydealz.de###newsletterWidgetPortal
 smart-flash.jp##.preferredButton
 jysk.de##div[data-jysk-react-component="FooterNewsletter"]
+oberpfalzecho.de##section > div[style^="padding: 2px;"][style*="text-align: center;"]:has(> small a[href^="https://www.google.com/preferences/source?q="])
 cultofmac.com##body > div.center-modal-popup.show
 cultofmac.com##section.section-posts-suggestions > div.wrapper:has(> div.more-link-wrapper > a[href="//newsletters.cultofmac.com/"])
 dsogaming.com##div.widget-area > aside.widget > div.textwidget
