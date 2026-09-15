@@ -1,9 +1,9 @@
-! Checksum: 6OSpRVqrarzr+6k9lvVF0g
-! Diff-Path: ../patches/14/14-s-1789475076-3600.patch
+! Checksum: RbL2M3mTj8NDE3bIdHyqPg
+! Diff-Path: ../patches/14/14-s-1789478303-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.79.29
-! TimeUpdated: 2026-09-15T12:21:33+00:00
+! Version: 2.2.79.30
+! TimeUpdated: 2026-09-15T13:15:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2651,7 +2651,7 @@ superbutelki.pl,polskibanan.pl,woolona.pl,evertrek.pl,71store.pl,paczkaurody.pl,
 !
 ! NOTE: Regular rules
 !
-lewin-brzeski.pl#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'showCookieModal')
+lewin-brzeski.pl#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'showCookieModal', '', '', 'true')
 eclat.hpplus.jp##.c-cookie-inquiry
 gamesnostalgia.net###gncb
 ||landingpage.axa.de/assets/js/privacy_
@@ -28267,6 +28267,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+tv.yandex.ru#%#//scriptlet('trusted-click-element', 'html.device_svg .modal button.fullscreen-notification__secondaryButton', 'containsText:Не сейчас', '500')
 runnet.jp##div[class^="p-float-banner"]
 zoho.com##.zwc-zmodal
 proton.me##.fixed.inset-0.z-modal
@@ -57833,6 +57834,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+mercadobitcoin.com.br##a[href^="https://www.mercadobitcoin.com.br/campanhas/"] > img
 vaughn.live##.vs_v9_footer3_goal
 sport1.de##.wp-block-image > a[href*="-partner-brands"][target="_blank"] > img
 estadao.com.br##.paragraph > div[class^="styles__TouchpointContainerStyled"]:has(> .container-lazy > .touchpoint-banner)
@@ -67747,13 +67749,17 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 !   !SECTION: Widgets - Chats (generic)
 !
 !   SECTION: Widgets - Chats (specific)
-!   NOTE: chatango.com widget
+!
+! chatango.com widget
 ||st.chatango.com^$domain=descargaseriestv.com|mysocceraustralia.com|xtapes.to|neonime.site|shirainime.com|daemon-hentai.com|seirsanduk.us|139.99.120.222|neonime.vip|snahp.it|worldcupfootball.me|freestreams-live.my|daddyhd.com
 shirainime.com,daemon-hentai.com,seirsanduk.us,139.99.120.222,freestreams-live.my##iframe[src*="chatango.com"]
 139.99.120.222##.chatango-btn
 descargaseriestv.com###block-4
 freestreams-live.my###custom_html-9
 daddyhd.com##.sidebar__inner
+! Discord
+||discord.com/api/guilds/*/widget.json|$domain=streamed.*
+||discord.com/widget?id=$domain=hentaiz.org|demonicscans.org
 !
 ! Blocking these chat widgets if they are really annoying
 ||webagent.bedore.jp^$domain=ajinomoto.co.jp
@@ -68103,8 +68109,6 @@ milliyet.com.tr##.hadi-bilgi-yarismasi
 apollo.pl##.thulium-chat-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31944
 ||leaselink.pl/js/slide-button-shoper.js
-! block Discord widget
-||discord.com/widget?id=$domain=hentaiz.org|demonicscans.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26435
 ||sumo.com^$third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51400

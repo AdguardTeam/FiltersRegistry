@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: n/RbSlArcYD9KPhpfxAncw
-! Diff-Path: ../patches/22/22-s-1789471066-3600.patch
+! Checksum: bemmois0inkbKWVhFVOUTQ
+! Diff-Path: ../patches/22/22-s-1789478348-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.14.95
-! TimeUpdated: 2026-09-15T11:14:33+00:00
+! Version: 2.0.14.96
+! TimeUpdated: 2026-09-15T13:15:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2035,13 +2035,17 @@ full-count.jp##section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND)
 !   !SECTION: Widgets - Chats (generic)
 !
 !   SECTION: Widgets - Chats (specific)
-!   NOTE: chatango.com widget
+!
+! chatango.com widget
 ||st.chatango.com^$domain=descargaseriestv.com|mysocceraustralia.com|xtapes.to|neonime.site|shirainime.com|daemon-hentai.com|seirsanduk.us|139.99.120.222|neonime.vip|snahp.it|worldcupfootball.me|freestreams-live.my|daddyhd.com
 shirainime.com,daemon-hentai.com,seirsanduk.us,139.99.120.222,freestreams-live.my##iframe[src*="chatango.com"]
 139.99.120.222##.chatango-btn
 descargaseriestv.com###block-4
 freestreams-live.my###custom_html-9
 daddyhd.com##.sidebar__inner
+! Discord
+||discord.com/api/guilds/*/widget.json|$domain=streamed.*
+||discord.com/widget?id=$domain=hentaiz.org|demonicscans.org
 !
 ! Blocking these chat widgets if they are really annoying
 ||webagent.bedore.jp^$domain=ajinomoto.co.jp
@@ -2391,8 +2395,6 @@ milliyet.com.tr##.hadi-bilgi-yarismasi
 apollo.pl##.thulium-chat-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31944
 ||leaselink.pl/js/slide-button-shoper.js
-! block Discord widget
-||discord.com/widget?id=$domain=hentaiz.org|demonicscans.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26435
 ||sumo.com^$3p
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51400

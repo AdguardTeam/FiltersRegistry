@@ -1,9 +1,9 @@
-! Checksum: Snz4iOaa4n9p9hao17o74w
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1789453732-3600.patch
+! Checksum: Jn4kM17fkDh5pAhAzKOL2w
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1789478345-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.76.56
-! TimeUpdated: 2026-09-15T06:25:18+00:00
+! Version: 2.0.76.57
+! TimeUpdated: 2026-09-15T13:15:17+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||tomonavi.xyz^$all
@@ -391,6 +391,9 @@
 ||kok.eroterest.net^
 ||ad-hatena.com^
 ||advert.punyu.com^
+bm.best-hit.tv#$#.ad.ads.adsbygoogle.ad-space.adbox.ad-banner.amp_ad.file-display-area { display: block !important; }
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||bm.best-hit.tv^$generichide
 ||ka-chanblog.com/wp-content/themes/kachan-tarkov-theme/assets/js/adblock-wall.js
 pointmall.aeon.co.jp#%#//scriptlet('prevent-fetch', '/geniee\.jp|securepubads\.g\.doubleclick\.net/')
 pointmall.aeon.co.jp#$#.adsbox.ad-unit.adsbygoogle { display: block !important; }
@@ -531,7 +534,6 @@ tuyano.com#@#.adspace
 hatenablog.com#@##adframe:not(frameset)
 mx2b.nan-net.jp###adblock_guide_mask
 mx2b.nan-net.jp##.adblock_guide_box
-b.best-hit.tv#$#.ad.ads.adsbygoogle.ad1.ad-space.adbox.imggif.ad-banner.amp_ad.file-display-area { display: block !important; }
 success-corp.co.jp#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=success-corp.co.jp
 nieru.net#@#.ad-space

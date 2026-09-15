@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.90.63",
-			"timeUpdated": "2026-09-15T12:20:47+0000",
+			"version": "2.4.90.64",
+			"timeUpdated": "2026-09-15T13:14:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.11.51",
-			"timeUpdated": "2026-09-15T12:21:06+0000",
+			"version": "2.1.11.52",
+			"timeUpdated": "2026-09-15T13:15:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.32.55",
-			"timeUpdated": "2026-09-15T12:21:09+0000",
+			"version": "2.1.32.56",
+			"timeUpdated": "2026-09-15T13:15:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.56",
-			"timeUpdated": "2026-09-15T06:25:18+0000",
+			"version": "2.0.76.57",
+			"timeUpdated": "2026-09-15T13:15:17+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.35.76",
-			"timeUpdated": "2026-09-14T11:14:27+0000",
+			"version": "2.0.35.77",
+			"timeUpdated": "2026-09-15T13:15:20+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.79.29",
-			"timeUpdated": "2026-09-15T12:21:33+0000",
+			"version": "2.2.79.30",
+			"timeUpdated": "2026-09-15T13:15:34+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.34.81",
-			"timeUpdated": "2026-09-15T10:15:59+0000",
+			"version": "2.1.34.82",
+			"timeUpdated": "2026-09-15T13:15:37+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.94.55",
-			"timeUpdated": "2026-09-15T12:21:40+0000",
+			"version": "2.0.94.56",
+			"timeUpdated": "2026-09-15T13:15:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.83.4",
-			"timeUpdated": "2026-09-15T12:21:43+0000",
+			"version": "2.0.83.5",
+			"timeUpdated": "2026-09-15T13:15:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.29",
-			"timeUpdated": "2026-09-15T12:21:44+0000",
+			"version": "2.0.48.30",
+			"timeUpdated": "2026-09-15T13:15:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -818,8 +818,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.14.95",
-			"timeUpdated": "2026-09-15T11:14:33+0000",
+			"version": "2.0.14.96",
+			"timeUpdated": "2026-09-15T13:15:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1752,8 +1752,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.65.33",
-			"timeUpdated": "2026-09-15T05:16:16+0000",
+			"version": "2.1.65.34",
+			"timeUpdated": "2026-09-15T13:15:51+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
