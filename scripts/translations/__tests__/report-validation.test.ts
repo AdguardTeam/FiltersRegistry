@@ -12,16 +12,15 @@ import {
 import {
     buildCommentBody,
     COMMENT_MARKER,
-    findLatestReportFile,
     getNextPageUrl,
     GitHubClient,
     isValidationComment,
-    readLatestReport,
+    readReport,
     reportValidation,
     truncateReport,
 } from '../report-validation.js';
 
-const REPORT_PREFIX = 'report_locales_error_';
+const REPORT_FILE_NAME = 'report_locales_error.md';
 
 /**
  * Creates a mock Octokit request response with the given data and headers.
@@ -76,25 +75,23 @@ describe('report-validation utils', () => {
         expect(buildCommentBody('')).toContain('No validation report was captured.');
     });
 
-    it('finds the most recent report file by name order', () => {
+    it('reads the fixed-name report file', () => {
         const dir = createReportDir([
-            `${REPORT_PREFIX}01-01-2026_10-00-00.md`,
-            `${REPORT_PREFIX}01-01-2026_11-00-00.md`,
+            REPORT_FILE_NAME,
+            'report_locales_error_01-01-2026_10-00-00.md',
             'unrelated.md',
         ]);
         try {
-            expect(findLatestReportFile(dir)).toBe(`${REPORT_PREFIX}01-01-2026_11-00-00.md`);
-            expect(readLatestReport(dir)).toBe('content of report_locales_error_01-01-2026_11-00-00.md');
+            expect(readReport(dir)).toBe('content of report_locales_error.md');
         } finally {
             fs.rmSync(dir, { recursive: true, force: true });
         }
     });
 
-    it('returns null when no report exists', () => {
-        const dir = createReportDir([]);
+    it('returns an empty string when no report exists', () => {
+        const dir = createReportDir(['unrelated.md']);
         try {
-            expect(findLatestReportFile(dir)).toBeNull();
-            expect(readLatestReport(dir)).toBe('');
+            expect(readReport(dir)).toBe('');
         } finally {
             fs.rmSync(dir, { recursive: true, force: true });
         }
@@ -167,14 +164,14 @@ describe('reportValidation', () => {
         'o/r',
     );
 
-    it('deletes stale comments and posts a new failure comment', async () => {
-        const dir = createReportDir([`${REPORT_PREFIX}01-01-2026_10-00-00.md`]);
+    it('posts a new failure comment and then removes stale comments', async () => {
+        const dir = createReportDir([REPORT_FILE_NAME]);
         requestMock
+            .mockResolvedValueOnce(octokitResponse({}))
             .mockResolvedValueOnce(octokitResponse([
                 { id: 1, body: 'unrelated comment' },
                 { id: 2, body: `stale ${COMMENT_MARKER}` },
             ]))
-            .mockResolvedValueOnce(octokitResponse({}))
             .mockResolvedValueOnce(octokitResponse({}));
 
         await reportValidation({
@@ -184,17 +181,17 @@ describe('reportValidation', () => {
             client: client(),
         });
 
-        expect(requestMock).toHaveBeenNthCalledWith(
-            2,
-            'DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}',
-            expect.objectContaining({ comment_id: 2 }),
-        );
-        const createCall = requestMock.mock.calls[2];
+        const createCall = requestMock.mock.calls[0];
         expect(createCall[0]).toBe('POST /repos/{owner}/{repo}/issues/{issue_number}/comments');
         const createParams = createCall[1] as { issue_number: number; body: string };
         expect(createParams.issue_number).toBe(7);
         expect(createParams.body).toContain(COMMENT_MARKER);
-        expect(createParams.body).toContain('content of report_locales_error_01-01-2026_10-00-00.md');
+        expect(createParams.body).toContain('content of report_locales_error.md');
+        expect(requestMock).toHaveBeenNthCalledWith(
+            3,
+            'DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}',
+            expect.objectContaining({ comment_id: 2 }),
+        );
         fs.rmSync(dir, {
             recursive: true,
             force: true,
@@ -216,6 +213,11 @@ describe('reportValidation', () => {
 
         expect(requestMock).toHaveBeenCalledTimes(2);
         expect(requestMock).toHaveBeenNthCalledWith(
+            1,
+            'GET /repos/{owner}/{repo}/issues/{issue_number}/comments',
+            expect.objectContaining({ issue_number: 7 }),
+        );
+        expect(requestMock).toHaveBeenNthCalledWith(
             2,
             'DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}',
             expect.objectContaining({ comment_id: 2 }),
@@ -229,8 +231,8 @@ describe('reportValidation', () => {
     it('posts a placeholder when validation failed but no report exists', async () => {
         const dir = createReportDir([]);
         requestMock
-            .mockResolvedValueOnce(octokitResponse([]))
-            .mockResolvedValueOnce(octokitResponse({}));
+            .mockResolvedValueOnce(octokitResponse({}))
+            .mockResolvedValueOnce(octokitResponse([]));
 
         await reportValidation({
             prNumber: 7,
@@ -239,8 +241,30 @@ describe('reportValidation', () => {
             client: client(),
         });
 
-        const createParams = requestMock.mock.calls[1][1] as { body: string };
+        const createParams = requestMock.mock.calls[0][1] as { body: string };
         expect(createParams.body).toContain('No validation report was captured.');
+        fs.rmSync(dir, {
+            recursive: true,
+            force: true,
+        });
+    });
+
+    it('still posts the report when stale comment cleanup fails', async () => {
+        const dir = createReportDir([REPORT_FILE_NAME]);
+        requestMock
+            .mockResolvedValueOnce(octokitResponse({}))
+            .mockResolvedValueOnce(octokitResponse([{ id: 2, body: `stale ${COMMENT_MARKER}` }]))
+            .mockRejectedValueOnce(new Error('transient API error'));
+
+        await expect(reportValidation({
+            prNumber: 7,
+            result: 'failure',
+            repoRoot: dir,
+            client: client(),
+        })).resolves.toBeUndefined();
+
+        const createParams = requestMock.mock.calls[0][1] as { body: string };
+        expect(createParams.body).toContain('content of report_locales_error.md');
         fs.rmSync(dir, {
             recursive: true,
             force: true,

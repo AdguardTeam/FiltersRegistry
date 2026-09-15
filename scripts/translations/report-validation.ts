@@ -12,8 +12,9 @@ const __filename = fileURLToPath(import.meta.url);
  */
 export const COMMENT_MARKER = '<!-- update-translations:locales-validation-failure -->';
 
-const REPORT_FILE_PREFIX = 'report_locales_error_';
-const REPORT_FILE_EXTENSION = '.md';
+// The report file name is fixed: validate_locales.ts removes stale reports
+// before writing, so at most one report exists in the repo root at a time.
+const REPORT_FILE_NAME = 'report_locales_error.md';
 // GitHub comment body limit is 65536 characters; keep the tail of the report.
 const MAX_REPORT_LENGTH = 60000;
 // GitHub's maximum number of items per page.
@@ -72,33 +73,17 @@ export const buildCommentBody = (report: string): string => {
 };
 
 /**
- * Finds the most recent validation report file in the given directory.
+ * Reads the validation report from the given directory.
  *
- * Report names embed a DD-MM-YYYY_HH-MM-SS timestamp, so sorting is
- * chronological and the last entry is the most recent report.
- *
- * @param dir - Directory to scan for report files.
- * @returns The report file name, or null when no report exists.
- */
-export const findLatestReportFile = (dir: string): string | null => {
-    const reports = fs.readdirSync(dir)
-        .filter((name) => name.startsWith(REPORT_FILE_PREFIX) && name.endsWith(REPORT_FILE_EXTENSION))
-        .sort();
-    return reports.length > 0 ? reports[reports.length - 1] : null;
-};
-
-/**
- * Reads the most recent validation report from the given directory.
- *
- * @param dir - Directory to scan for report files.
+ * @param dir - Directory to scan for the report file.
  * @returns The report content, or an empty string when no report exists.
  */
-export const readLatestReport = (dir: string): string => {
-    const reportFile = findLatestReportFile(dir);
-    if (!reportFile) {
+export const readReport = (dir: string): string => {
+    const reportPath = path.join(dir, REPORT_FILE_NAME);
+    if (!fs.existsSync(reportPath)) {
         return '';
     }
-    return fs.readFileSync(path.join(dir, reportFile), 'utf8').trim();
+    return fs.readFileSync(reportPath, 'utf8').trim();
 };
 
 /**
@@ -247,10 +232,9 @@ const buildDefaultClient = (): GitHubClient => {
 /**
  * Refreshes the validation comment on the translations pull request.
  *
- * Previous comments posted by this workflow are always removed: on failure a
- * fresh comment with the latest report is posted, on success the cleanup
- * alone ensures that a fixed translation run does not leave stale failure
- * reminders on the PR.
+ * On failure a fresh comment with the latest report is posted; stale comments
+ * posted by previous runs are always removed best-effort, so a fixed
+ * translation run does not leave outdated failure reminders on the PR.
  *
  * @param options - PR number, validation outcome and optional overrides.
  */
@@ -262,14 +246,19 @@ export const reportValidation = async (options: ReportValidationOptions): Promis
         client = buildDefaultClient(),
     } = options;
 
-    const comments = await client.listComments(prNumber);
-    const staleComments = comments.filter((comment) => isValidationComment(comment.body));
-    await Promise.all(staleComments.map((comment) => client.deleteComment(comment.id)));
-
+    // Post the fresh report before cleaning up stale comments, so that a
+    // transient API error during cleanup cannot leave the PR without a report.
     if (result === 'failure') {
-        const report = readLatestReport(repoRoot);
+        const report = readReport(repoRoot);
         await client.createComment(prNumber, buildCommentBody(report));
     }
+
+    // Cleanup is best-effort: Promise.allSettled swallows transient API errors
+    // (the workflow step also has continue-on-error), so a single failed
+    // deletion cannot fail an otherwise successful run.
+    const comments = await client.listComments(prNumber);
+    const staleComments = comments.filter((comment) => isValidationComment(comment.body));
+    await Promise.allSettled(staleComments.map((comment) => client.deleteComment(comment.id)));
 };
 
 interface CliArgs {
