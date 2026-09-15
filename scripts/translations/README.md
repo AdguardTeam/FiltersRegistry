@@ -75,3 +75,7 @@ The `Update translations` GitHub Actions workflow
 validates the result with `yarn validate:locales`, and opens a pull request with the
 changes to `locales/`. Trigger it manually from the Actions tab. Uploading base English
 strings (`upload.sh`) stays a manual step.
+
+The pull request is created with the default `GITHUB_TOKEN`, so it does not trigger the
+regular CI workflows; the update job itself runs `yarn validate:locales`, `yarn lint`,
+and `yarn test`, and reports failures via the Slack notification.

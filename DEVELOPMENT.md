@@ -453,6 +453,12 @@ validates them with `yarn validate:locales`, and opens a pull request with the c
 to `locales/`. Merging is manual; the next regular build propagates new strings into
 `platforms/`.
 
+The auto-created PR is opened with the default `GITHUB_TOKEN`, so GitHub does not run
+`test.yaml`/`build-adguard` on it (events raised with that token do not start workflow
+runs). The update job itself runs `yarn validate:locales`, `yarn lint`, and `yarn test`
+and fails the job — triggering the Slack notification — when any of them fail; these
+checks are the only gate for the translations PR.
+
 ### Modifying Build Scripts
 
 All build tooling lives under `scripts/`. After making changes:
