@@ -5,15 +5,15 @@ import {
     validateLocales,
     type ValidateLocalesResult,
 } from '@adguard/filters-compiler';
-import { formatDate } from '../utils/strings.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const LOCALES_DIR_PATH = '../../locales';
-// Follows the report_partial_<date>.txt naming convention; the .gitignore
-// entry for it lives in the repo root .gitignore.
-const REPORT_FILE_PREFIX = 'report_locales_error_';
+// Follows the report_partial_*.txt naming convention; the .gitignore entry
+// for it lives in the repo root .gitignore. The name is fixed because
+// removeStaleReports() below leaves at most one report in the repo root.
+const REPORT_FILE_NAME = 'report_locales_error.md';
 
 const REQUIRED_LOCALES = [
     // keep base locale here as well
@@ -42,15 +42,16 @@ const localesDirPath = path.join(__dirname, LOCALES_DIR_PATH);
  */
 const removeStaleReports = (): void => {
     const staleReports = fs.readdirSync(repoRootPath)
-        .filter((name) => name.startsWith(REPORT_FILE_PREFIX) && name.endsWith('.md'));
+        .filter((name) => name.startsWith('report_locales_error') && name.endsWith('.md'));
     staleReports.forEach((name) => fs.rmSync(path.join(repoRootPath, name), { force: true }));
 };
 
-// The published @adguard/filters-compiler types do not include the logFormat
-// argument yet; it is added by the counterpart compiler PR
-// (https://github.com/AdGuardSoftwareLimited/ext-compiler/pull/20).
-// TODO: drop this wrapper once the compiler version with the markdown log
-// format is released and the dependency is bumped in package.json.
+// The `logFormat` argument is added by the counterpart compiler PR
+// (https://github.com/AdGuardSoftwareLimited/ext-compiler/pull/20), which is
+// merged and released before this PR. This PR bumps @adguard/filters-compiler
+// to that release; until the bump lands, the published types lack the argument,
+// hence the cast below.
+// FIXME: drop the cast after the dependency bump in package.json.
 type ValidateLocalesWithFormat = (
     localesDirPath: string,
     requiredLocales: string[],
@@ -64,10 +65,7 @@ const localesValidation = validateLocalesWithFormat(localesDirPath, REQUIRED_LOC
 removeStaleReports();
 
 if (!localesValidation.ok) {
-    const reportPath = path.join(
-        repoRootPath,
-        `${REPORT_FILE_PREFIX}${formatDate(new Date())}.md`,
-    );
+    const reportPath = path.join(repoRootPath, REPORT_FILE_NAME);
     fs.writeFileSync(reportPath, `${localesValidation.log}\n`);
     throw new Error(`Invalid locales messages, see ${path.relative(process.cwd(), reportPath)}`);
 }
