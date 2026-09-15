@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.97.76",
-			"timeUpdated": "2026-09-15T08:41:24+0000",
+			"version": "2.1.97.77",
+			"timeUpdated": "2026-09-15T12:43:52+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.97.76",
-			"timeUpdated": "2026-09-15T08:41:25+0000",
+			"version": "2.1.97.77",
+			"timeUpdated": "2026-09-15T12:43:53+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1099,8 +1099,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.9.55",
-			"timeUpdated": "2026-09-15T01:07:17+0000",
+			"version": "2.1.9.56",
+			"timeUpdated": "2026-09-15T12:44:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1144,8 +1144,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-adblock-filters/adblock.txt",
 			"trustLevel": "high",
-			"version": "2.0.16.67",
-			"timeUpdated": "2026-09-08T08:40:17+0000",
+			"version": "2.0.16.68",
+			"timeUpdated": "2026-09-15T12:44:18+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
@@ -1168,8 +1168,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/cookies_filters/adblock_cookies.txt",
 			"trustLevel": "high",
-			"version": "2.0.5.56",
-			"timeUpdated": "2026-08-16T12:45:13+0000",
+			"version": "2.0.5.57",
+			"timeUpdated": "2026-09-15T12:44:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.91.7",
-			"timeUpdated": "2026-09-15T08:42:25+0000",
+			"version": "2.0.91.8",
+			"timeUpdated": "2026-09-15T12:44:43+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1471,8 +1471,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.17.36",
-			"timeUpdated": "2026-09-15T01:07:51+0000",
+			"version": "2.0.17.37",
+			"timeUpdated": "2026-09-15T12:44:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1511,8 +1511,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.12.56",
-			"timeUpdated": "2026-09-14T16:36:38+0000",
+			"version": "2.0.12.57",
+			"timeUpdated": "2026-09-15T12:44:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
