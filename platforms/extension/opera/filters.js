@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.90.66",
-			"timeUpdated": "2026-09-15T15:14:16+0000",
+			"version": "2.4.90.67",
+			"timeUpdated": "2026-09-15T16:15:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.11.54",
-			"timeUpdated": "2026-09-15T15:14:34+0000",
+			"version": "2.1.11.55",
+			"timeUpdated": "2026-09-15T16:15:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.58",
-			"timeUpdated": "2026-09-15T15:14:43+0000",
+			"version": "2.0.76.59",
+			"timeUpdated": "2026-09-15T16:15:37+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.3",
-			"timeUpdated": "2026-09-15T14:16:24+0000",
+			"version": "2.0.72.4",
+			"timeUpdated": "2026-09-15T16:15:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.79.31",
-			"timeUpdated": "2026-09-15T15:14:57+0000",
+			"version": "2.2.79.32",
+			"timeUpdated": "2026-09-15T16:16:00+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.34.83",
-			"timeUpdated": "2026-09-15T15:15:00+0000",
+			"version": "2.1.34.84",
+			"timeUpdated": "2026-09-15T16:16:04+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.94.56",
-			"timeUpdated": "2026-09-15T13:15:42+0000",
+			"version": "2.0.94.57",
+			"timeUpdated": "2026-09-15T16:16:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
