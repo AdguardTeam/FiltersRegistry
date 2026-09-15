@@ -1,9 +1,9 @@
-! Checksum: SNc3Kf5P+Hwuh2P61ayiTw
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1789090060-3600.patch
+! Checksum: hVpdbyG8Xw/MiKibkmpjcQ
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1789449602-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.21
-! TimeUpdated: 2026-09-11T01:23:43+00:00
+! Version: 2.0.14.34
+! TimeUpdated: 2026-09-15T05:16:05+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
@@ -339,6 +339,32 @@ $removeparam=erid
 $removeparam=oly_enc_id
 $removeparam=_ga
 $removeparam=tduid
+||mainichikirei.jp^$removeparam=ext_m
+||president.jp^$removeparam=cx_referrertype
+||president.jp^$removeparam=yhref
+||jp.reuters.com^$removeparam=rpc
+||huffingtonpost.jp^$removeparam=utm_hp_ref
+||jisin.jp^$removeparam=rf
+||newsdig.tbs.co.jp^$removeparam=ex_position
+||newsdig.tbs.co.jp^$removeparam=ex_id
+||jprime.jp^$removeparam=display
+||jprime.jp^$removeparam=from
+||ck12.org^$document,removeparam=referrer
+||ck12.org^$document,removeparam=_eid
+||ck12.org^$document,removeparam=_mid
+||newspicks.com^$removeparam=invoker
+$removeparam=ro,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.jp|yorozoonews.jp|news.ksb.co.jp
+$removeparam=ri,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.jp|yorozoonews.jp|news.ksb.co.jp
+||spotfund.com^$removeparam=source
+||spotfund.com^$removeparam=share_location
+||spotfund.com^$removeparam=SFID
+||canadapost-postescanada.ca^$removeparam=abid
+||canadapost-postescanada.ca^$removeparam=bid
+||canadapost-postescanada.ca^$removeparam=rid
+||minkara.carview.co.jp^$removeparam=cid
+||note.com^$removeparam=external_type
+||note.com^$removeparam=external_position
+||note.com^$removeparam=rt
 ||myfans.jp^$removeparam=aff
 ||asahi.com^$removeparam=oai
 ||yomiuri.co.jp^$removeparam=from
@@ -1189,9 +1215,11 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ||lancasterarchery.com^$removeparam=af_lnk
 ||lancasterarchery.com^$removeparam=dt_id
 ||lenta.ru^$removeparam=es
-||finance.yahoo.co.jp^$removeparam=cpt_m
-||finance.yahoo.co.jp^$removeparam=cpt_n
-||finance.yahoo.co.jp^$removeparam=cpt_s
+||yahoo.co.jp^$removeparam=cpt_n
+||yahoo.co.jp^$removeparam=cpt_m
+||yahoo.co.jp^$removeparam=cpt_s
+||yahoo.co.jp^$removeparam=cpt_c
+||yahoo.co.jp^$removeparam=fr
 ||sbisec.co.jp^$removeparam=waad
 ||ejje.weblio.jp^$removeparam=erl
 ||map.yahoo.co.jp^$removeparam=from_srv
@@ -2033,8 +2061,8 @@ $removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||nikkei.com^$removeparam=ref
 ||nikkei.com^$removeparam=extpf
 ||nikkei.com^$removeparam=n_tw
-||nikkei.com^$removeparam=i_cid
-||nikkei.com^$removeparam=n_cid
+$removeparam=i_cid,domain=nikkei.com|nikkei.co.jp
+$removeparam=n_cid,domain=nikkei.com|nikkei.co.jp
 ||nikkeibp.co.jp^$removeparam=i_cid
 ||cyberlink.com^$removeparam=affid
 ||zestradar.com^$removeparam=adclid

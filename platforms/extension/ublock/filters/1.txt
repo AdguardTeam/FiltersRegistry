@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: tZvLDASTea+wMJ87/9gJwg
-! Diff-Path: ../patches/1/1-s-1789046271-3600.patch
+! Checksum: bXT3VIdCKPn8v1HB4xVfsQ
+! Diff-Path: ../patches/1/1-s-1789471064-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.53
-! TimeUpdated: 2026-09-10T13:13:26+00:00
+! Version: 2.1.8.64
+! TimeUpdated: 2026-09-15T11:13:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -34,7 +34,11 @@
 ! BASE64 = 'scope":"VAST"}'
 ?token=*c2NvcGUiOiJWQVNUIn0
 /kinogo/js/ads/*
-! Kinogo etc.
+! Kinogo etc. (api*.rstprgapipt.com)
+/^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z]$/$xhr,other,media,3p
+/^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][a-z]$/$xhr,other,media,3p
+/^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][?&]/$xhr,other,media,3p
+/^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][a-z][?&]/$xhr,other,media,3p
 /vast/ad-rotator/*
 /lib/*.xml?fre=$xhr
 ||vveu.*/files/episodes/*.mp4
@@ -2195,7 +2199,7 @@ ucoz.ru/informer/
 ||fqwgi.com^$3p
 ||admediator.ru^$3p
 ||cdn.hunteryvely.com^$3p
-||skwstat.ru^$3p
+||skwstat.ru^
 ||kinoaction.ru^$3p
 ||onemontay.ru^$3p
 ||xyz0k4gfs.xyz^$3p
@@ -3872,7 +3876,14 @@ redheadsound.studio##+js(google-ima)
 ||sochi.camera/adblock-detector.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238710
 ||rr4farmtrof.com/api/log_adwall
-||rr4farmtrof.com/assets/js/ft-ad-proof-
+@@||rr4farmtrof.com^$generichide
+||strm.yandex.ru/vh-canvas-converted/$domain=rr4farmtrof.com
+@@||yandex.ru/ads/system/context.js$domain=rr4farmtrof.com
+@@||yandex.ru/ads/system/ap-loader.js$domain=rr4farmtrof.com
+!#safari_cb_affinity(privacy)
+@@||mc.yandex.ru/metrika/tag.js$domain=rr4farmtrof.com
+@@||mc.yandex.com/watch/*?wmode=*&page-url=
+!#safari_cb_affinity
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233134
 evilmod.ru#@##reklama
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230714
@@ -4603,6 +4614,7 @@ dzen.ru##:matches-path(/video) .panel-loadable-view__feed > div:not([class]):not
 @@||ad.mail.ru/static/admanhtml/rbadman-html5.min.js$domain=dzen.ru
 !
 ! mail.ru
+news.mail.ru,e.mail.ru,octavius.mail.ru##+js(abort-on-stack-trace, Promise, onSlotRender)
 mail.ru##.box_double
 mail.ru##div[data-logger="partnerNews"]
 mail.ru##.mailru-visibility-check
@@ -6647,11 +6659,9 @@ avtocod.ru,love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,del
 !
 ! NOTE: Specific rules
 !
+fakty.ua##.nts-ad
 liga.net##.remp-banner
 epravda.com.ua##div[style="height:290px; clear: both; margin-top: 10px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center;"]
-streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*###main-content > div.container > div.grid div.border.bg-gradient-card:has(> div.flex > a[href^="https://billing.rocketstreams4k.com/"])
-streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##a[data-no-ad]
-streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##.musiqly-ad
 legalbet.by,legalbet.*##.top-three-block > div
 legalbet.by,legalbet.*##.bookmakers-in-footer
 legalbet.by,legalbet.*##.other-bonuses
@@ -7011,6 +7021,9 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+food.ru###__next > div[class^="styles_root___"]:has(> div > a[target="_blank"])
+catalog.onliner.by##.google-banner_wide
+bryansktoday.ru###adv_top_0
 remontka.pro##.rem_top_one
 remontka.pro##div.rightbar-container > .rightbar-wrapper:has(> div > div.widget_custom_html > div.rem_right_one)
 klerk.ru##.desktop\:top-pre-header-height:style(top: 0 !important;)
@@ -17422,6 +17435,7 @@ fastpic.org##+js(set-constant, Element.prototype.attachShadow, noopFunc)
 ||fastpic.org/n/
 ||static.fastpic.org/css/exo.css
 ||fastpic.org/zzz/cache/
+://fastpic.org/q*.gif?
 ||static.fastpic.*/if_*.html
 ||fastpic.*/g/
 ||fastpic.*/*.php|
@@ -18007,6 +18021,7 @@ youla.ru##.product_item--ad
 vfokuse.mail.ru##a[class^="rb-"][class*="branding"]
 !
 ! VK
+vk.com,vk.ru##div[role="feed"] > article:has(> div[data-testid^="post"] div[id^="subtitle-"] > div.vkuiFlex__host > div.vkuiRootComponent__host > div.vkuiFlex__host > div.vkuiRootComponent__host > span:not([aria-label]):not([data-testid="post-header-subtitle-geo"]))
 vk.com,vk.ru##.ConvoList__scrollbar-content > div[style]
 vk.com,vk.ru##body > div.vkuiRootComponent__host:has(> div[aria-describedby="onboarding_tooltip_content"]):contains(Яндекс Браузер)
 vk.com,vk.ru###l_invite_promo

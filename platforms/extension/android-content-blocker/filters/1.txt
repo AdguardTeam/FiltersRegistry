@@ -1,8 +1,8 @@
-! Checksum: QeIyDtnmpHiSlHQYT0gYzw
+! Checksum: uAuzlER/y5TzFASQg4JKPg
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.53
-! TimeUpdated: 2026-09-10T13:13:26+00:00
+! Version: 2.1.8.64
+! TimeUpdated: 2026-09-15T11:13:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32,7 +32,11 @@
 ! BASE64 = 'scope":"VAST"}'
 ?token=*c2NvcGUiOiJWQVNUIn0
 /kinogo/js/ads/*
-! Kinogo etc.
+! Kinogo etc. (api*.rstprgapipt.com)
+/^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z]$/$xmlhttprequest,other,media,third-party
+/^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][a-z]$/$xmlhttprequest,other,media,third-party
+/^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][?&]/$xmlhttprequest,other,media,third-party
+/^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][a-z][?&]/$xmlhttprequest,other,media,third-party
 /vast/ad-rotator/*
 /lib/*.xml?fre=$xmlhttprequest
 ||vveu.*/files/episodes/*.mp4
@@ -2154,7 +2158,7 @@ ucoz.ru/informer/
 ||fqwgi.com^$third-party
 ||admediator.ru^$third-party
 ||cdn.hunteryvely.com^$third-party
-||skwstat.ru^$third-party
+||skwstat.ru^
 ||kinoaction.ru^$third-party
 ||onemontay.ru^$third-party
 ||xyz0k4gfs.xyz^$third-party
@@ -3822,11 +3826,14 @@ wss://s.zmctrack.net/
 ||sochi.camera/adblock-detector.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238710
 ||rr4farmtrof.com/api/log_adwall
-||rr4farmtrof.com/assets/js/ft-ad-proof-
-@@||yandex.ru/ads/system/context.js$domain=rr4farmtrof.com
 @@||rr4farmtrof.com^$generichide
-@@||pagead2.googlesyndication.com/pagead/js/$domain=rr4farmtrof.com
-@@||securepubads.g.doubleclick.net/tag/js/$domain=rr4farmtrof.com
+||strm.yandex.ru/vh-canvas-converted/$domain=rr4farmtrof.com
+@@||yandex.ru/ads/system/context.js$domain=rr4farmtrof.com
+@@||yandex.ru/ads/system/ap-loader.js$domain=rr4farmtrof.com
+!#safari_cb_affinity(privacy)
+@@||mc.yandex.ru/metrika/tag.js$domain=rr4farmtrof.com
+@@||mc.yandex.com/watch/*?wmode=*&page-url=
+!#safari_cb_affinity
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233134
 evilmod.ru#@##reklama
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230714
@@ -5820,10 +5827,9 @@ avtocod.ru,love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,del
 !
 ! NOTE: Specific rules
 !
+fakty.ua##.nts-ad
 liga.net##.remp-banner
 epravda.com.ua##div[style="height:290px; clear: both; margin-top: 10px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center;"]
-streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##a[data-no-ad]
-streamsports99.cx,streamsports99.tv,streamsports99.su,streamsports99.ru,streamsports99.*##.musiqly-ad
 legalbet.by,legalbet.*##.top-three-block > div
 legalbet.by,legalbet.*##.bookmakers-in-footer
 legalbet.by,legalbet.*##.other-bonuses
@@ -6126,6 +6132,8 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+catalog.onliner.by##.google-banner_wide
+bryansktoday.ru###adv_top_0
 remontka.pro##.rem_top_one
 klerk.ru##.sticky a[href^="https://eye.targetads.io/"]
 kassir.ru##div[data-selenide="bannerList"]
@@ -15344,6 +15352,7 @@ fastpic.org##.overlay-banner-container
 ||fastpic.org/n/
 ||static.fastpic.org/css/exo.css
 ||fastpic.org/zzz/cache/
+://fastpic.org/q*.gif?
 ||static.fastpic.*/if_*.html
 ||fastpic.*/g/
 ||fastpic.*/*.php|

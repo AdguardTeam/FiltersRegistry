@@ -50,8 +50,8 @@ search.brave.com##+js(set-cookie, summarizer, 0)
 www.britannica.com##.category-link-CHATBOT:style(visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; font-size: 0 !important;)
 ! Rule "||www.britannica.com/chat-api/$xhr,domain=www.britannica.com" converted to: "||www.britannica.com/chat-api/$xmlhttprequest,domain=www.britannica.com"
 ||www.britannica.com/chat-api/$xhr,domain=www.britannica.com
-! Rule "||www.businessinsider.com/ajax/$xhr,domain=www.businessinsider.com" converted to: "||www.businessinsider.com/ajax/$xmlhttprequest,domain=www.businessinsider.com"
-||www.businessinsider.com/ajax/$xhr,domain=www.businessinsider.com
+! Rule "||www.businessinsider.com/ajax/stream-ai-search$xhr,domain=www.businessinsider.com" converted to: "||www.businessinsider.com/ajax/stream-ai-search$xmlhttprequest,domain=www.businessinsider.com"
+||www.businessinsider.com/ajax/stream-ai-search$xhr,domain=www.businessinsider.com
 ! Rule "||dictionary.cambridge.org/api/assistant/$xhr,domain=dictionary.cambridge.org" converted to: "||dictionary.cambridge.org/api/assistant/$xmlhttprequest,domain=dictionary.cambridge.org"
 ||dictionary.cambridge.org/api/assistant/$xhr,domain=dictionary.cambridge.org
 ! Rule "www.canva.com##.x1ghz6dp.x1717udv.xng3xce.xc342km.xe8uvvx.x9dqhi0.x9f619.x1a2a7pz.a6ZJUw:has-text(Code)" converted to: "www.canva.com#?#.x1ghz6dp.x1717udv.xng3xce.xc342km.xe8uvvx.x9dqhi0.x9f619.x1a2a7pz.a6ZJUw:contains(Code)"
@@ -178,6 +178,12 @@ www.google.com#@#div[role="navigation"] span:has-text(AI Mode):upward(5):remove(
 ||www.google.*/async/folsrch$xhr,domain=www.google.*
 ! Rule "www.google.com#@#.YzCcne:remove()" converted to: "www.google.com#@$?#.YzCcne { remove: true; }"
 www.google.com#@#.YzCcne:remove()
+! Rule "support.google.com##html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot):style(overflow: unset !important)" converted to: "support.google.com#$#html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) { overflow: unset !important }"
+support.google.com##html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot):style(overflow: unset !important)
+! Rule "support.google.com##html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) > body.mobile:style(position: unset !important)" converted to: "support.google.com#$#html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) > body.mobile { position: unset !important }"
+support.google.com##html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) > body.mobile:style(position: unset !important)
+! Rule "support.google.com##.top-nav > li:has-text("Gen AI tips")" converted to: "support.google.com#?#.top-nav > li:contains("Gen AI tips")"
+support.google.com##.top-nav > li:has-text("Gen AI tips")
 ! Rule "workspace.google.com##div._innerGrid_1u063_113 > div._card_1u063_136:has-text(Premium AI built-in)" converted to: "workspace.google.com#?#div._innerGrid_1u063_113 > div._card_1u063_136:contains(Premium AI built-in)"
 workspace.google.com##div._innerGrid_1u063_113 > div._card_1u063_136:has-text(Premium AI built-in)
 ! Rule "||ai-search-dot-gsuite-staging.appspot.com/api/answer$xhr,domain=workspace.google.com" converted to: "||ai-search-dot-gsuite-staging.appspot.com/api/answer$xmlhttprequest,domain=workspace.google.com"
@@ -418,10 +424,12 @@ www.americanbanker.com#%#//scriptlet('trusted-set-attr', 'use[href="#miso-arizen
 github.dev#%#//scriptlet('trusted-click-element', '.basepanel[data-active-composite="workbench.panel.chat"] .codicon-auxiliarybar-close')
 ! docs.github.com#%#//scriptlet('trusted-set-attr', 'input[placeholder="Search or ask Copilot"]', 'placeholder', 'Search') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
 docs.github.com#%#//scriptlet('trusted-set-attr', 'input[placeholder="Search or ask Copilot"]', 'placeholder', 'Search')
-! mail.google.com#%#//scriptlet('trusted-set-attr', '.gb_Oe.gb_Pe.bEP > svg', 'viewBox', '0 0 24 24') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
-mail.google.com#%#//scriptlet('trusted-set-attr', '.gb_Oe.gb_Pe.bEP > svg', 'viewBox', '0 0 24 24')
-! mail.google.com#%#//scriptlet('trusted-set-attr', '.gb_Oe.gb_Pe.bEP > svg > path', 'd', 'M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
-mail.google.com#%#//scriptlet('trusted-set-attr', '.gb_Oe.gb_Pe.bEP > svg > path', 'd', 'M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z')
+! mail.google.com#%#//scriptlet('trusted-set-attr', '.searchboxInputFontClass[placeholder="Ask Gmail"]', 'placeholder', 'Search mail') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
+mail.google.com#%#//scriptlet('trusted-set-attr', '.searchboxInputFontClass[placeholder="Ask Gmail"]', 'placeholder', 'Search mail')
+! mail.google.com#%#//scriptlet('trusted-set-attr', 'button[aria-label="Search mail"] > svg[viewBox="0 -960 960 960"]', 'viewBox', '0 0 24 24') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
+mail.google.com#%#//scriptlet('trusted-set-attr', 'button[aria-label="Search mail"] > svg[viewBox="0 -960 960 960"]', 'viewBox', '0 0 24 24')
+! mail.google.com#%#//scriptlet('trusted-set-attr', 'button[aria-label="Search mail"] path', 'd', 'M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
+mail.google.com#%#//scriptlet('trusted-set-attr', 'button[aria-label="Search mail"] path', 'd', 'M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z')
 ! developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com#%#//scriptlet('trusted-set-attr', '.devsite-search-ai-image [d^="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925"]', 'd', 'M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
 developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com#%#//scriptlet('trusted-set-attr', '.devsite-search-ai-image [d^="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925"]', 'd', 'M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z')
 ! docs.google.com#%#//scriptlet('trusted-click-element', '.appsElementsGenerativeAiNudgeButtonNudgeDismissButton') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
@@ -434,8 +442,8 @@ www.nike.com#%#//scriptlet('trusted-set-attr', '#nav-search-icon path', 'stroke'
 www.nike.com#%#//scriptlet('trusted-set-attr', '#nav-search-icon path', 'stroke-width', '1.5')
 ! www.nike.com#%#//scriptlet('trusted-set-attr', '#nav-search-icon path', 'fill', '') is excluded by "#%#//scriptlet('trusted-" in exclusions-high.txt
 www.nike.com#%#//scriptlet('trusted-set-attr', '#nav-search-icon path', 'fill', '')
-! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "docs.github.com##input[aria-controls="search-suggestions-list"][placeholder*="Copilot"]:remove-attr(placeholder)"
-docs.github.com##input[aria-controls="search-suggestions-list"][placeholder*="Copilot"]:remove-attr(placeholder)
+! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "docs.github.com##input[aria-controls="search-suggestions-list"][placeholder~="Copilot"]:remove-attr(placeholder)"
+docs.github.com##input[aria-controls="search-suggestions-list"][placeholder~="Copilot"]:remove-attr(placeholder)
 ! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "www.google.*##a[href*="&udm=50"]:has(#hplogo):remove-attr(href)"
 www.google.*##a[href*="&udm=50"]:has(#hplogo):remove-attr(href)
 ! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "www.google.*##.k1zIA.kKvsb > a[href*="&udm=50"]:remove-attr(href)"
@@ -444,6 +452,8 @@ www.google.*##.k1zIA.kKvsb > a[href*="&udm=50"]:remove-attr(href)
 www.google.*###hplogoo a[href*="&udm=50"]:remove-attr(href)
 ! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "www.google.*###mlogo[href*="&udm=50"]:remove-attr(href)"
 www.google.*###mlogo[href*="&udm=50"]:remove-attr(href)
+! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "support.google.com##html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) [inert]:remove-attr(inert)"
+support.google.com##html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) [inert]:remove-attr(inert)
 ! Error: "Unknown modifier: uritransform=/ai_type=0/ai_type=1/" in the rule: "||pixiv.net/ajax/search/$xmlhttprequest,uritransform=/ai_type=0/ai_type=1/"
 ||pixiv.net/ajax/search/$xmlhttprequest,uritransform=/ai_type=0/ai_type=1/
 ! Error: "Unsupported pseudo-class: ':remove-attr'" in the rule: "www.reddit.com##reddit-search-large[expanded-composer-enabled]:remove-attr(expanded-composer-enabled)"
