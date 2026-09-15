@@ -471,6 +471,25 @@ www.bing.com#?##ShoppingLandingPage_ShoppingEducation:contains(Try it on Copilot
 ! Earn > Microsoft Unlocked
 rewards.bing.com##mee-card:has([aria-label="Microsoft Unlocked, Stories from the heart and soul of AI innovation, Explore now"])
 
+! ===========
+! == Bitly ==
+! ===========
+! -- https://app.bitly.com/ (logged in - home)
+! Navbar - Chat button
+app.bitly.com##.nav-ai-assist
+! Promo for "Upgrade to Create with AI"
+app.bitly.com##.ai-create-module
+! Connect your account - AI tab
+app.bitly.com##.swiper-slide:has([data-testid="chatgpt"]):has([data-testid="claude"]):has([data-testid="copilot"])
+
+! -- https://app.bitly.com/[ID]/analytics/
+! Analyze with AI button
+app.bitly.com##button[aria-label="Analyze with AI"]
+
+! -- https://app.bitly.com/[ID]/links/create
+! Generate back-half button
+app.bitly.com##.link-info--generate-backhalf
+
 ! ===============
 ! == Bitwarden ==
 ! ===============
@@ -597,7 +616,7 @@ www.bunnings.com.au##[aria-label="Ask Bunnings AI"]
 ! ======================
 ! -- https://www.businessinsider.com/
 ! "Your briefing" content & summaries on search result pages
-||www.businessinsider.com/ajax/$xmlhttprequest,domain=www.businessinsider.com
+||www.businessinsider.com/ajax/stream-ai-search$xmlhttprequest,domain=www.businessinsider.com
 ! "Your Briefing" button
 www.businessinsider.com##.catch-me-up-quickly
 
@@ -742,6 +761,23 @@ clarencemedicalrhyl.wales###druidWebchatRoot_v2
 platform.claude.com###aiSearchResults__Item-__ask_ai__
 ! Search bar - Toggle AI mode
 platform.claude.com##.ikp-ai-search-input-group > [data-part="view_toggle"]
+
+! ============
+! == CodeAI ==
+! ============
+! -- https://code.org/en-US
+! Navbar - Hour of AI
+code.org##.MuiButton-root[href="/hour-of-ai"]
+
+! -- https://studio.code.org/users/sign_in (logged out)
+! Navbar  - Hour of AI
+studio.code.org###header-hoa
+! "AI for Oceans" exercise
+studio.code.org##.courseblock-tall:has(> [href="//code.org/oceans"])
+
+! -- https://studio.code.org/home (logged in as student)
+! Introducing Mix & Move with AI
+studio.code.org###marketing-announcement-banner:has(#mix-move-ai-launch-2025)
 
 ! ================
 ! == Codecademy ==
@@ -1750,7 +1786,7 @@ glyphy.io##section[class^="NameGenerators_container__"]
 mail.google.com##.lRwCV
 ! Header - Ask Gemini icon
 mail.google.com##.Zmxtcf
-! Remove sparkle from search icon (trusted filter)
+! Remove "Ask Gmail" and sparkle from search bar
 
 ! -- Composing an email
 ! "Help me write" icon next to "Send" button
@@ -2235,10 +2271,21 @@ www.google.com##.GS02Vb .mLFOe > .imucI + .ozDyDd.iRPzcb
 ! ====================
 ! == Google Support ==
 ! ====================
-! Google Support - AI "Help guide" chatbox
-support.google.com##div.helpPanelContainerRoot
+! -- https://support.google.com/chrome/answer/6098869
+! Google Support - AI "Help guide"
+! * Floating chatbox
+support.google.com##html.hcfe:not([style="overflow: hidden;"]) .helpPanelContainerRoot
+!#if ext_ublock
+! * Full-page modal used in US. Excluded from AdGuard as we can't check if trusted filters are enabled to remove 'inert' attribute.
+!   See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/194 and https://github.com/AdguardTeam/AdguardForiOS/issues/2547
+support.google.com##html.hcfe[style="overflow: hidden;"] .helpPanelContainerRoot
+support.google.com#$#html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) { overflow: unset !important }
+support.google.com#$#html.hcfe[style="overflow: hidden;"]:has(.helpPanelContainerRoot) > body.mobile { position: unset !important }
+!#endif
 
 ! -- https://support.google.com/a/users/answer/15593939
+! Navbar - Gen AI tips tab
+support.google.com#?#.top-nav > li:contains("Gen AI tips")
 ! Notice promoting Workplace with Gemini
 support.google.com##.notification[data-name="Gemini_EN_RemoteWork_Covid19_NonEN"]
 
@@ -2443,6 +2490,12 @@ www.instagram.com##div.html-div.xdj266r.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x9f619.
 ! -- https://developerdocs.instructure.com/
 ! Search bar - "Find the answer with AI"
 developerdocs.instructure.com##[data-testid="search-ask-question"]
+
+! ================
+! == Inter Door ==
+! ================
+! Floating Chat icon
+konfigurator.interdoor.pl##.fixed:has(> [aria-label="Otwórz czat AI"])
 
 ! ============
 ! == Intuit ==
@@ -2870,7 +2923,7 @@ www.microsoft.com###uca-proactive-chat
 
 ! -- https://www.microsoft.com/en-us/microsoft-365
 ! Copilot promo banner
-www.microsoft.com##.ocr-announcement-banner:has(.link-inline[aria-label*="Copilot"])
+www.microsoft.com##.ocr-announcement-banner:has(.link-inline[aria-label~="Copilot"])
 
 ! -- https://www.microsoft.com/en-us/microsoft-365/onedrive/onedrive-for-business
 ! "Discover Microsoft 365 Copilot" promo banner
@@ -2958,7 +3011,7 @@ word.cloud.microsoft##.___h6kil70[aria-label="copilot"]
 ! * English (No longer used?)
 word.cloud.microsoft##[role="tabpanel"]:has(img[alt="Quickstart guide to Copilot in Word null modern simple"])
 ! * Other languages (https://word.cloud.microsoft/es-ES/)
-word.cloud.microsoft##.f10pi13n.fly5x3f.f1gl81tg.f22iagw.f1vx9l62.fnkimw8.f70vs8p.f1jh79k8.tile:has(> [aria-label*="Copilot"])
+word.cloud.microsoft##.f10pi13n.fly5x3f.f1gl81tg.f22iagw.f1vx9l62.fnkimw8.f70vs8p.f1jh79k8.tile:has(> [aria-label~="Copilot"])
 
 ! -- With document open
 ! Navbar buttons (Home tab) for Copilot
@@ -3262,6 +3315,13 @@ www.nxcode.io###inline-article-cta
 www.nxcode.io##.fixed.right-8:has(> [aria-label="Start Free"])
 www.nxcode.io##.mt-16.pt-8.border-t.border-gray-200:has([aria-label="Start Free"])
 www.nxcode.io##.mt-16.pt-8.border-t.border-gray-200:has([placeholder="Describe your app idea..."])
+
+! ==============
+! == Oloygeia ==
+! ==============
+! -- https://www.oloygeia.gr/diatrofi/galaktokomika-lipara-ereyna/
+! Article summary
+www.oloygeia.gr###real-article-summary-holder
 
 ! =============
 ! == OnBoard ==
@@ -3590,6 +3650,18 @@ docs.rackspace.com##.Menu-Item[href^="https://chat.openai.com/?q="]
 docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="]
 docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="] + .Menu-Divider
 
+! =============
+! == Rambler ==
+! =============
+! AI news overview
+www.rambler.ru##.rc__788yz.rc__U-mRx.r-vvrm5f4e
+
+! =============
+! == Raycast ==
+! =============
+! Chat with Raycast AI button
+manual.raycast.com##[class^="button-module__"][href^="raycast://extensions/raycast/ai/ai-chat?"]
+
 ! ===========
 ! == Razer ==
 ! ===========
@@ -3598,12 +3670,6 @@ docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="] + .Menu-Divider
 www.razer.com##[data-more-menu-uid="mm-razer-ai-node"]
 ! Footer - AI Gaming Newsletter
 www.razer.com##li:has(> [href="https://www.razer.com/newsletter/ai"])
-
-! =============
-! == Rambler ==
-! =============
-! AI news overview
-www.rambler.ru##.rc__788yz.rc__U-mRx.r-vvrm5f4e
 
 ! =================
 ! == Real Python ==
@@ -3678,8 +3744,8 @@ www.reddit.com#$#[slot="comment"] p > a.border-dotted[href^="/answers/"] { point
 
 ! -- Advertisements
 ! Post feed
-www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title*="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"])
-www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title*="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"]) + hr
+www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"])
+www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"]) + hr
 ! Comments
 www.reddit.com##shreddit-comments-page-ad:is([domain$=".ai"], [domain="apollo.io"], [domain="hyperagent.com"], #t3_1tr5mav, [title~="AI"])
 ! Sidebar
@@ -4669,8 +4735,6 @@ x.com##footer span.items-center:has(> [href="https://grok.com/"])
 x.com##nav > [href="/i/grok"]
 ! Compose post - Grok
 x.com##[data-testid="grokImgGen"]
-! Tweet - Explain this post
-x.com##button[aria-label="Grok actions"]
 ! Floating Grok chat button in bottom right
 x.com##[data-testid="GrokDrawer"]
 ! - Promos
@@ -4698,6 +4762,8 @@ x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"
 x.com##[data-testid="cellInnerDiv"]:has([data-testid="tweet"]:not([tabindex="-1"]) .r-knv0ih [d^="M12.998 1.94c.18 3.015 1.04 5.156 2.473 6.59 1.433"]) + [data-testid="cellInnerDiv"]:has(.r-cl2sl0.r-2sztyj.r-5kkj8d.r-1bq57o9)
 
 ! -- https://x.com/artsyomni/status/2039107622117183957
+! Tweet - Explain this post
+x.com##[data-testid="tweet"] button[aria-label~="Grok"]
 ! Tweet - Actions menu - Edit image
 x.com##[role="menuitem"][href*="grok.com/imagine"]
 ! "Edit Image" when hovering over bottom right of image
@@ -5232,7 +5298,7 @@ www.fapnado.xxx##.nav-play-sex-games
 ! AI Girlfriend video overlay button
 www.fapnado.xxx##.fluid_video_wrapper .text_link_holder
 ! Related videos - AI ad
-www.fapnado.xxx###list_videos_related_videos_items > .item:not(.relateditem):has(> [title*="AI"])
+www.fapnado.xxx###list_videos_related_videos_items > .item:not(.relateditem):has(> [title~="AI"])
 
 ! ========================
 ! == Fetish Papa (NSFW) ==
@@ -5350,7 +5416,7 @@ hentai-moon.com##li:has(> [href^="https://www.ggptnetwork.com/"])
 ! Navbar
 hentai-moon.com##li:has(> [href^="https://secrets.ai/"])
 ! Ad
-hentai-moon.com##.item:has(> [title*="your AI Slut"])
+hentai-moon.com##.item:has(> [title^="Create and Fuck your AI Slut"])
 
 ! =======================
 ! == Hentai Pro (NSFW) ==
@@ -5521,6 +5587,18 @@ mylust.com##.item:has(> [data-id="307"])
 ! ============================
 ! Advert for AI GF
 mymangacomics.com##.item.image-block:has(iframe)
+
+! ============================
+! == MyHentaiGallery (NSFW) ==
+! ============================
+! Navbar - AI Jerk Off
+myhentaigallery.com##.main-menu li:has(> [href="https://myhentaicomics.com/mainmenu"])
+! Header & footer ads
+||myhentaicomics.com/maincandy$subdocument
+myhentaigallery.com##center:has(> div > ins[data-revive-zoneid])
+myhentaigallery.com##center:has(> div > iframe)
+! Floating ad
+myhentaigallery.com###Slider
 
 ! ========================
 ! == nhentai.xxx (NSFW) ==

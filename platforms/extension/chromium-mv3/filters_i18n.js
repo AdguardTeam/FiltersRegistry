@@ -16917,179 +16917,179 @@
 		"21": {
 			"ar": {
 				"name": "مرشح مضايقات أخرى AdGuard",
-				"description": "حظر العناصر المزعجة على صفحات الويب التي لا تندرج ضمن الفئات الشائعة للإزعاج."
+				"description": "يحظر العناصر المزعجة التي لا تندرج ضمن الفئات الشائعة للإزعاجات، مثل العروض الترويجية للموقع والقيود المفروضة على النسخ وتحديد النص."
 			},
 			"be": {
 				"name": "Фільтр іншых раздражняльнікаў AdGuard",
-				"description": "Блакіруе раздражняльныя элементы на вэб-старонках, якія не падпадаюць пад папулярныя катэгорыі раздражнення."
+				"description": "Блакіруе раздражняльныя элементы, якія не падпадаюць пад папулярныя катэгорыі раздражняльнікаў, такія як рэкламныя прапановы вэб-сайтаў і абмежаванні на капіраванне і вылучэнне тэксту."
 			},
 			"bg": {
 				"name": "Филтър за досадни реклами AdGuard",
-				"description": "Блокира дразнещи елементи в уеб страници, които не попадат в популярните категории за дразнене."
+				"description": "Блокира дразнещи елементи, които не попадат в популярните категории дразнители, като например промоционални оферти на уебсайтове и ограничения за копиране и маркиране на текст."
 			},
 			"ca": {
 				"name": "Filtre d'altres molèsties d'AdGuard",
-				"description": "Bloqueja els elements irritants de les pàgines web que no entren dins de les categories populars de molèsties."
+				"description": "Bloqueja elements molestos que no pertanyen a les categories habituals de molèsties, com ara les ofertes promocionals de llocs web i les restriccions a la còpia i selecció de text."
 			},
 			"cs": {
 				"name": "Filtr ostatních obtěžujících prvků AdGuard",
-				"description": "Blokuje dráždivé prvky na webových stránkách, které nespadají do kategorií obtěžování."
+				"description": "Blokuje rušivé prvky, které nespadají do běžných kategorií obtěžujících prvků, jako jsou např. propagační nabídky na webových stránkách a omezení kopírování a výběru textu."
 			},
 			"da": {
 				"name": "AdGuard Irritationsfilter",
-				"description": "Blokerer irriterende websideelementer, som ikke falder ind under de populære irritationskategorier."
+				"description": "Blokerer irriterende elementer, som ikke falder ind under populære irritationskategorier, såsom webstedskampagnetilbud og restriktioner på kopiering og tekstvalg."
 			},
 			"de": {
 				"name": "AdGuard-Filter gegen andere Belästigungen",
-				"description": "Blockiert störende Elemente auf Websites, die nicht unter die gängigen Kategorien von Belästigungen fallen."
+				"description": "Blockiert störende Elemente, die nicht unter gängige Kategorien von Belästigungen fallen, wie etwa Website-Werbeangebote und Einschränkungen beim Kopieren und Auswählen von Text."
 			},
 			"el": {
 				"name": "Φίλτρο AdGuard Άλλες ενοχλήσεις",
-				"description": "Αποκλείει ενοχλητικά στοιχεία σε ιστοσελίδες που δεν εμπίπτουν στις δημοφιλείς κατηγορίες ενοχλήσεων."
+				"description": "Αποκλείει ενοχλητικά στοιχεία που δεν εμπίπτουν στις δημοφιλείς κατηγορίες ενοχλητικών, όπως προωθητικές προσφορές ιστοσελίδων και περιορισμούς στην αντιγραφή και την επιλογή κειμένου."
 			},
 			"en": {
 				"name": "AdGuard Other Annoyances filter",
-				"description": "Blocks irritating elements on web pages that do not fall under the popular categories of annoyances."
+				"description": "Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection."
 			},
 			"es": {
 				"name": "Filtro de otros elementos molestos",
-				"description": "Bloquea elementos irritantes en sitios web que no entran en las categorías populares de elementos molestos."
+				"description": "Bloquea elementos irritantes que no se ajustan a las categorías más comunes de molestias, como las ofertas promocionales de los sitios web y las restricciones a la copia y la selección de texto."
 			},
 			"es_ES": {
 				"name": "Filtro de otros elementos molestos",
-				"description": "Bloquea elementos irritantes en sitios web que no entran en las categorías populares de elementos molestos."
+				"description": "Bloquea elementos irritantes que no se ajustan a las categorías más comunes de molestias, como las ofertas promocionales de los sitios web y las restricciones a la copia y la selección de texto."
 			},
 			"fa": {
 				"name": "فیلتر AdGuard سایر مزاحمت ها",
-				"description": "عناصر تحریک کننده را در صفحات وب که در دسته بندی محبوب مزاحم قرار نمی گیرند مسدود می کند."
+				"description": "اجزاء آزاردهنده‌ای را که در دسته‌بندی‌های رایج موارد آزاردهنده قرار نمی‌گیرند، مانند پیشنهادهای تبلیغاتی تارنما و محدودیت‌های کپی و انتخاب متن، مسدود می‌کند."
 			},
 			"fi": {
 				"name": "AdGuardin muiden ärsykkeiden suodatin",
-				"description": "Estää sivuilta ärsyttäviä elementtejä, jotka eivät sovi yleisten ärsykeluokkien alle."
+				"description": "Estää ärsyttävät elementit, jotka eivät kuulu yleisiin ärsyttävyysluokkiin, kuten verkkosivustojen tarjoukset sekä kopioinnin ja tekstin valinnan rajoitukset."
 			},
 			"fr": {
 				"name": "Filtre AdGuard Other Annoyances",
-				"description": "Bloque les éléments irritants sur les pages web qui ne relèvent pas des catégories populaires de nuisances."
+				"description": "Bloque les éléments gênants qui n'entrent pas dans les catégories habituelles de nuisances, tels que les offres promotionnelles des sites web et les restrictions relatives à la copie et à la sélection de texte."
 			},
 			"he": {
 				"name": "מסנן הטרדות אחרות של AdGuard",
-				"description": "חוסם אלמנטים מעצבנים בדפי אינטרנט שאינם נכנסים לקטגוריות הפופולריות של מטרדים."
+				"description": "חוסם אלמנטים מרגיזים שאינם נכללים בקטגוריות נפוצות של מטרדים, כגון הצעות קידום מכירות באתר והגבלות על העתקה ובחירת טקסט."
 			},
 			"hi": {
 				"name": "AdGuard अन्य परेशानियाँ फ़िल्टर",
-				"description": "वेब पृष्ठों पर ऐसे परेशान करने वाले तत्वों को ब्लॉक करता है जो सामान्य परेशानियों की लोकप्रिय श्रेणियों में नहीं आते।"
+				"description": "उन कष्टप्रद तत्वों को अवरोधित करता है जो झुंझलाहट की लोकप्रिय श्रेणियों के अंतर्गत नहीं आते हैं, जैसे कि वेबसाइट प्रचार ऑफ़र और कॉपी करने तथा टेक्स्ट चयन पर प्रतिबंध।"
 			},
 			"hr": {
 				"name": "Filtar koji filtrira ostale iritirajuće elemente AdGuarda",
-				"description": "Blokira iritantne elemente na web stranicama koji ne spadaju u popularne kategorije smetnji."
+				"description": "Blokira iritirajuće elemente koji ne spadaju u popularne kategorije smetnji, kao što su promotivne ponude web stranica i ograničenja kopiranja i odabira teksta."
 			},
 			"hu": {
 				"name": "AdGuard Egyéb Kellemetlenségek elleni szűrő",
-				"description": "Blokkolja a weboldalak olyan zavaró elemeit, amelyek nem tartoznak a népszerű zavaró kategóriákba."
+				"description": "Blokkolja azokat az irritáló elemeket, amelyek nem tartoznak a bosszúságok népszerű kategóriáiba, mint például a weboldalak promóciós ajánlatai, valamint a másolásra és a szövegkijelölésre vonatkozó korlátozások."
 			},
 			"hy": {
 				"name": "AdGuard Այլ անհանգստացնողները",
-				"description": "Արգելում է անհանգստացնող տարրերը վեբ էջերում, որոնք չեն դասվում հանրաճանաչ անհանգստացնող կատեգորիաների մեջ։"
+				"description": "Արգելափակում է նյարդայնացնող տարրերը, որոնք չեն մտնում նյարդայնացնող բաների տարածված կատեգորիաների մեջ, ինչպիսիք են կայքի գովազդային առաջարկները և պատճենման ու տեքստի ընտրության սահմանափակումները։"
 			},
 			"id": {
 				"name": "Filter Gangguan Lainnya AdGuard",
-				"description": "Memblokir elemen menjengkelkan di halaman web yang tidak termasuk dalam kategori gangguan populer."
+				"description": "Memblokir elemen-elemen yang mengganggu yang tidak termasuk dalam kategori gangguan umum, seperti penawaran promosi di situs web serta pembatasan penyalinan dan pemilihan teks."
 			},
 			"it": {
 				"name": "Filtro AdGuard Other Annoyances",
-				"description": "Blocca gli elementi irritanti sulle pagine web che non rientrano nelle popolari categorie di fastidi."
+				"description": "Blocca gli elementi fastidiosi che non rientrano nelle categorie più comuni di fastidi, come le offerte promozionali dei siti web e le restrizioni sulla copia e sulla selezione del testo."
 			},
 			"ja": {
 				"name": "AdGuard その他の迷惑要素フィルタ",
-				"description": "一般的な迷惑要素に該当しない迷惑な要素をWebページ上でブロックします。"
+				"description": "一般的な迷惑要素カテゴリに該当しない要素（テキストのコピーや選択が制限されている場合やウェブサイトの自己宣伝広告など）をブロックします。"
 			},
 			"ko": {
 				"name": "AdGuard 기타 방해 요소 필터",
-				"description": "사용자가 자주 찾지 않는 웹 페이지의 성가신 요소를 차단합니다. AdGuard 방해 요소 필터에 이미 포함되어 있습니다."
+				"description": "웹사이트 프로모션 행사나 복사 및 텍스트 선택 제한과 같이 일반적인 성가신 요소 범주에 속하지 않는 거슬리는 요소를 차단합니다."
 			},
 			"lt": {
 				"name": "AdGuard kitų trukdžių filtras",
-				"description": "Blokuoja erzinančius elementus svetainėse, kurie nepriklauso populiarioms trukdžių kategorijoms."
+				"description": "Blokuoja erzinančius elementus, kurie nepatenka į populiarias erzinančių elementų kategorijas, tokius kaip svetainės reklaminiai pasiūlymai ir kopijavimo bei teksto žymėjimo apribojimai."
 			},
 			"mk": {
 				"name": "Филтер за досадни реклами",
-				"description": "Блокира иритирачки елементи на веб-страници кои не спаѓаат во популарните категории на вознемирувања."
+				"description": "Блокира иритирачки елементи кои не спаѓаат во популарните категории на вознемирувања, како што се промотивните понуди на веб-страниците и ограничувањата за копирање и избирање текст."
 			},
 			"ms": {
 				"name": "Penapis Gangguan Lain AdGuard",
-				"description": "Menyekat elemen yang mengganggu di laman web yang tidak tergolong dalam kategori gangguan yang popular."
+				"description": "Menyekat unsur menjengkelkan yang tidak termasuk dalam kategori gangguan popular, seperti tawaran promosi laman web dan sekatan ke atas penyalinan serta pemilihan teks."
 			},
 			"nl": {
 				"name": "AdGuard Andere ergernissen filter",
-				"description": "Blokkeert irritante elementen op webpagina's die niet onder de populaire ergernissen vallen."
+				"description": "Blokkeert storende elementen die niet onder de gangbare categorieën van ergernissen vallen, zoals promotionele aanbiedingen op websites en beperkingen op het kopiëren en selecteren van tekst."
 			},
 			"no": {
 				"name": "AdGuard Andre irritasjonsfilter",
-				"description": "Blokkerer irriterende elementer på nettsider som ikke faller inn under de populære kategoriene irritasjonsmomenter."
+				"description": "Blokkerer irriterende elementer som ikke faller inn under populære kategorier av irritasjonsmomenter, slik som kampanjetilbud på nettsteder og begrensninger på kopiering og tekstmarkering."
 			},
 			"pl": {
 				"name": "Filtr innych irytujących elementów AdGuard",
-				"description": "Blokuje irytujące elementy na stronach internetowych, które nie należą do popularnych kategorii irytacji. Już zawarte w filtrze AdGuard Annoyances."
+				"description": "Blokuje irytujące elementy, które nie należą do popularnych kategorii elementów irytujących, takie jak oferty promocyjne na stronach internetowych oraz ograniczenia dotyczące kopiowania i zaznaczania tekstu."
 			},
 			"pt": {
 				"name": "Filtro de outros aborrecimentos do AdGuard",
-				"description": "Bloqueia elementos irritantes em páginas web que não se enquadram nas categorias populares de aborrecimentos."
+				"description": "Bloqueia elementos irritantes que não se enquadram nas categorias comuns de incómodos, como ofertas promocionais de sites e restrições à cópia e seleção de texto."
 			},
 			"pt_BR": {
 				"name": "Filtro de outros aborrecimentos do AdGuard",
-				"description": "Bloqueia elementos irritantes em páginas web que não se enquadram nas categorias populares de aborrecimentos."
+				"description": "Bloqueia elementos irritantes que não se enquadram em categorias populares de aborrecimentos, como ofertas promocionais de sites e restrições de cópia e seleção de texto."
 			},
 			"pt_PT": {
 				"name": "Filtro de outros aborrecimentos do AdGuard",
-				"description": "Bloqueia elementos irritantes em páginas web que não se enquadram nas categorias populares de aborrecimentos."
+				"description": "Bloqueia elementos irritantes que não se enquadram nas categorias comuns de incómodos, como ofertas promocionais de sites e restrições à cópia e seleção de texto."
 			},
 			"ro": {
 				"name": "AdGuard Other Annoyances filter",
-				"description": "Blochează elementele iritante de pe paginile web și care nu se încadrează în categoriile populare de deranjări."
+				"description": "Blochează elementele iritante care nu se încadrează în categoriile populare de elemente deranjante, cum ar fi ofertele promoționale ale site-urilor web și restricțiile privind copierea și selectarea textului."
 			},
 			"ru": {
 				"name": "Фильтр других раздражителей",
-				"description": "Блокирует раздражающие элементы на веб-страницах, не включённые в популярные категории раздражителей."
+				"description": "Блокирует элементы, которые не подпадают под распространённые категории раздражителей: например, рекламу сайтов и ограничения на копирование и выделение текста."
 			},
 			"sk": {
 				"name": "AdGuard filter iných obťažujúcich prvkov",
-				"description": "Blokuje obťažujúce prvky na webových stránkach, ktoré nepatria do obľúbených kategórií. Už je zahrnutý vo filtri AdGuard Annoyances."
+				"description": "Blokuje rušivé prvky, ktoré nepatria do bežných kategórií rušivých prvkov, ako sú napríklad propagačné ponuky na webových stránkach a obmedzenia na kopírovanie a výber textu."
 			},
 			"sl": {
 				"name": "Filter drugih motenj AdGuard",
-				"description": "Onemogoča moteče elemente na spletnih straneh, ki ne spadajo v priljubljene kategorije motenj."
+				"description": "Blokira moteče elemente, ki ne spadajo v običajne kategorije nadlog, kot so promocijske ponudbe spletnih strani ter omejitve kopiranja in izbire besedila."
 			},
 			"sr": {
 				"name": "AdGuard filter za druge smetnje",
-				"description": "Blokira iritirajuće elemente na Web stranicama koji ne spadaju u popularne kategorije smetnji."
+				"description": "Blokira iritirajuće elemente koji ne spadaju u popularne kategorije smetnji, kao što su promotivne ponude veb-sajtova i ograničenja kopiranja i označavanja teksta."
 			},
 			"sv": {
 				"name": "AdGuard filter för andra störningar",
-				"description": "Blockerar irriterande element på webbsidor som inte hör till de populära kategorierna av irriterande element."
+				"description": "Blockerar irriterande element som inte faller under populära kategorier av irritationsmoment, såsom kampanjerbjudanden på en webbplats och begränsningar för kopiering och textmarkering."
 			},
 			"th": {
 				"name": "ตัวกรองสิ่งรบกวนอื่นๆของ AdGuard",
-				"description": "ปิดกั้นองค์ประกอบที่น่ารำคาญในหน้าเว็บที่ไม่อยู่ในหมวดหมู่ที่เป็นที่นิยมของสิ่งรบกวน"
+				"description": "บล็อกองค์ประกอบที่น่ารำคาญซึ่งไม่จัดอยู่ในหมวดหมู่สิ่งรบกวนยอดนิยม เช่น ข้อเสนอโปรโมชันของเว็บไซต์ และการจำกัดการคัดลอกและการเลือกข้อความ"
 			},
 			"tr": {
 				"name": "AdGuard Diğer Can Sıkıcı Öğeler filtresi",
-				"description": "Popüler can sıkıcı öğeler kategorilerine girmeyen web sayfalarındaki rahatsız edici öğeleri engeller."
+				"description": "Site promosyon teklifleri ile kopyalama ve metin seçimi kısıtlamaları gibi popüler can sıkıcı öğe kategorilerine girmeyen rahatsız edici öğeleri engeller."
 			},
 			"uk": {
 				"name": "Фільтр інших подразників AdGuard",
-				"description": "Блокує дратівні елементи, які не входять до жодної іншої популярної категорії подразників."
+				"description": "Блокує надокучливі елементи, які не підпадають під популярні категорії подразників, як-от акційні пропозиції сайтів та обмеження на копіювання й виділення тексту."
 			},
 			"vi": {
 				"name": "Bộ lọc Những phiền toái khác của AdGuard",
-				"description": "Chặn các yếu tố gây khó chịu trên các trang web không thuộc các danh mục gây khó chịu phổ biến."
+				"description": "Chặn các yếu tố gây khó chịu không thuộc các danh mục làm phiền nổi tiếng, chẳng hạn như các ưu đãi quảng cáo của trang và những hạn chế đối với việc sao chép và chọn văn bản."
 			},
 			"zh": {
 				"name": "AdGuard 其他恼人广告过滤器",
-				"description": "拦截网页上不属于流行的“烦人类别”的恼人元素。"
+				"description": "拦截不属于常见干扰类别的烦人元素，例如网站促销优惠，以及对复制和文本选择的限制。"
 			},
 			"zh_TW": {
 				"name": "AdGuard 其它惱人的事物過濾器",
-				"description": "封鎖於網頁上之令人惱怒的元件，其不屬於惱人的事物之流行類別。"
+				"description": "封鎖不屬於常見干擾類別的惱人元素，例如網站促銷優惠，以及對複製和文字選取的限制。"
 			}
 		},
 		"22": {
