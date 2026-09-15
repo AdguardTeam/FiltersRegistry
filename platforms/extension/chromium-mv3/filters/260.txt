@@ -1,8 +1,8 @@
-! Checksum: SFVB8eFg//wZDLbcu4gRpA
+! Checksum: 9ly905JRlxf4S10iUDcreQ
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.91
-! TimeUpdated: 2026-09-14T16:36:40+00:00
+! Version: 2.0.1.92
+! TimeUpdated: 2026-09-15T01:07:53+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -418,6 +418,22 @@ www.bing.com#?##ShoppingLandingPage_ShoppingEducation:contains(Try it on Copilot
 ! -- https://rewards.bing.com/
 ! Earn > Microsoft Unlocked
 rewards.bing.com##mee-card:has([aria-label="Microsoft Unlocked, Stories from the heart and soul of AI innovation, Explore now"])
+! ===========
+! == Bitly ==
+! ===========
+! -- https://app.bitly.com/ (logged in - home)
+! Navbar - Chat button
+app.bitly.com##.nav-ai-assist
+! Promo for "Upgrade to Create with AI"
+app.bitly.com##.ai-create-module
+! Connect your account - AI tab
+app.bitly.com##.swiper-slide:has([data-testid="chatgpt"]):has([data-testid="claude"]):has([data-testid="copilot"])
+! -- https://app.bitly.com/[ID]/analytics/
+! Analyze with AI button
+app.bitly.com##button[aria-label="Analyze with AI"]
+! -- https://app.bitly.com/[ID]/links/create
+! Generate back-half button
+app.bitly.com##.link-info--generate-backhalf
 ! ===============
 ! == Bitwarden ==
 ! ===============
@@ -527,7 +543,7 @@ www.bunnings.com.au##[aria-label="Ask Bunnings AI"]
 ! ======================
 ! -- https://www.businessinsider.com/
 ! "Your briefing" content & summaries on search result pages
-||www.businessinsider.com/ajax/$xmlhttprequest,domain=www.businessinsider.com
+||www.businessinsider.com/ajax/stream-ai-search$xmlhttprequest,domain=www.businessinsider.com
 ! "Your Briefing" button
 www.businessinsider.com##.catch-me-up-quickly
 ! -- https://www.businessinsider.com/aging-retirement-vibe-coding-ai-lovable-chatgpt-claude-security-cameras-2026-3
@@ -2145,6 +2161,11 @@ www.instagram.com##div.html-div.xdj266r.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x9f619.
 ! -- https://developerdocs.instructure.com/
 ! Search bar - "Find the answer with AI"
 developerdocs.instructure.com##[data-testid="search-ask-question"]
+! ================
+! == Inter Door ==
+! ================
+! Floating Chat icon
+konfigurator.interdoor.pl##.fixed:has(> [aria-label="Otwórz czat AI"])
 ! ============
 ! == Intuit ==
 ! ============
@@ -4768,6 +4789,17 @@ mylust.com##.item:has(> [data-id="307"])
 ! ============================
 ! Advert for AI GF
 mymangacomics.com##.item.image-block:has(iframe)
+! ============================
+! == MyHentaiGallery (NSFW) ==
+! ============================
+! Navbar - AI Jerk Off
+myhentaigallery.com##.main-menu li:has(> [href="https://myhentaicomics.com/mainmenu"])
+! Header & footer ads
+||myhentaicomics.com/maincandy$subdocument
+myhentaigallery.com##center:has(> div > ins[data-revive-zoneid])
+myhentaigallery.com##center:has(> div > iframe)
+! Floating ad
+myhentaigallery.com###Slider
 ! ========================
 ! == nhentai.xxx (NSFW) ==
 ! ========================
