@@ -225,6 +225,22 @@ describe('platforms-patcher', () => {
                 const patchedRule = expandWildcardsInRule(rule, wildcardDomains);
                 expect(patchedRule).toEqual('test$domain=example.com|example.org');
             });
+
+            it('should expand each domain modifier independently', () => {
+                const wildcardDomains = { 'example.*': ['example.com', 'example.org'] };
+
+                const domainFirst = 'test$domain=example.*,denyallow=a.com';
+                expect(expandWildcardsInRule(domainFirst, wildcardDomains))
+                    .toEqual('test$domain=example.com|example.org,denyallow=a.com');
+
+                const denyallowFirst = 'test$denyallow=a.com,domain=example.*';
+                expect(expandWildcardsInRule(denyallowFirst, wildcardDomains))
+                    .toEqual('test$denyallow=a.com,domain=example.com|example.org');
+
+                const bothWildcards = 'test$domain=example.*,denyallow=test.*|a.com';
+                expect(expandWildcardsInRule(bothWildcards, { ...wildcardDomains, 'test.*': ['test.net'] }))
+                    .toEqual('test$domain=example.com|example.org,denyallow=test.net|a.com');
+            });
         });
     });
 
