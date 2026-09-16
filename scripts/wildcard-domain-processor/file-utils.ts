@@ -1,6 +1,10 @@
 /* eslint-disable no-await-in-loop,no-restricted-syntax */
 import { promises as fs } from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Checks if a file path matches the given ending pattern.
