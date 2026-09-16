@@ -1,14 +1,14 @@
-! Checksum: SKfsS7CUioWPHuNvB94a/g
-! Diff-Path: ../patches/227/227-s-1789230991-14400.patch
+! Checksum: q3sMfTMr7UA65U308rRTIQ
+! Diff-Path: ../patches/227/227-s-1789548303-14400.patch
 ! Title: filterslist-KO Classic filter list
 ! Description: The filterslist-KO Classic filter list for AdGuard blocks ads and disables anti-adblock scripts on Korean-language websites and apps.
-! Version: 2.0.25.49
-! TimeUpdated: 2026-09-12T16:33:43+00:00
+! Version: 2.0.25.50
+! TimeUpdated: 2026-09-16T08:42:10+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: filterslists-KO classic (AdGuard)
 ! Description: AdGuard용 filterslists-KO클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20708.0
+! OriginalVersion: 2026.20712.0
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/FilteringDev/filterslists-KO
 ! Licence: https://github.com/FilteringDev/filterslists-KO/blob/master/LICENSE
@@ -611,6 +611,8 @@ namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[c
 ! DOMAIN-REFRESHER: START
 !
 ! aglint-disable-next-line no-invalid-modifiers
+[$domain=/yasyadong[0-9]+\.tv/]##.top-ad-padding
+! aglint-disable-next-line no-invalid-modifiers
 [$domain=/anilife[0-9]+\.tv/]##*[class^="partner-banner-"]
 ! aglint-disable-next-line no-invalid-modifiers
 [$domain=/cokcok[0-9]+\.com/]###cpb-popup-banners
@@ -801,6 +803,7 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+ipokergosu.com/banner/$domain=pokergosu.com
 ||amazing.today/_next/image?url=%2Fads%2F2
 ||image.gamechosun.co.kr/ad_banner/
 ||file.chuchu.gg/*/pop_up_ad/
@@ -1753,14 +1756,16 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 ||img.mingk.xyz/data/file/passfree/
 ! aglint-disable-next-line no-invalid-modifiers
 ||mingk*.net/theme/BS4-Basic/js/pf-loader.js$domain=/^mingky[0-9]+\.net/
-||yasyadong.*/?_Action=adv&_Method$domain=yasyadong.*
+! aglint-disable-next-line no-invalid-modifiers
+||yasyadong.*/?_Action=adv&_Method$domain=yasyadong.*|/yasyadong[0-9]+\.tv/
 ! aglint-disable-next-line no-invalid-modifiers
 /https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=/tvwiki[0-9]+\.com/
 /^https:\/\/(www\.)?aniya24\.com\/wp-content\/uploads\/[0-9]+\/[0-9]+\/[a-z]+[0-9]+x[0-9]+\./$domain=aniya24.com
 ||aniya24.com/wp-content/uploads/*.gif
 ||sutom.org/wp-content/uploads/*.webp
 ||nooo*.tv/theme/basic_player/img/banner/
-||blogger.googleusercontent.com/img/$domain=yasyadong.*
+! aglint-disable-next-line no-invalid-modifiers
+||blogger.googleusercontent.com/img/$domain=yasyadong.*|/yasyadong[0-9]+\.tv/
 .gif^$image,domain=itrulli.com
 ||365tvda.com/data/file/bojng/
 ||xn--hy1bm2ltmr.com/img/banner/
