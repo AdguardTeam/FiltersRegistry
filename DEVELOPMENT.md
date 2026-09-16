@@ -107,11 +107,15 @@ Under the hood this copies `filters/` to `temp/filters_cached/`, replaces every
 `template.txt` with a single `@include "./filter.txt"` directive, and compiles
 from that copy. The original `filters/` directory is never modified.
 
-Optimization stats are picked up automatically: if `temp/optimization/stats`
-(from a prior `yarn download-stats` run) exists, it's used as-is; otherwise
-stats are fetched from the remote server during the build.
-If a filter listed in the local cache is missing its `stats.json`, the build
-fails with a message pointing at `yarn download-stats`.
+Optimization stats are picked up automatically: `yarn download-stats` records
+the `--include`/`--skip` selection it was run with in a sibling
+`temp/optimization/stats.scope` marker. A build reuses `temp/optimization/stats`
+only when that marker matches its own selection — or was a full, unscoped
+download, which covers any selection. A mismatched or missing marker doesn't
+fail the build; it just falls back to fetching stats from the remote server,
+with a log message explaining why.
+If a filter's `stats.json` is missing under a cache that *did* match, the
+build fails with a message pointing at `yarn download-stats`.
 
 The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` flags can be
 combined:
@@ -166,6 +170,10 @@ Two conveniences on repeated runs:
 - If a worktree from a previous run is still present, it offers to reuse it
   instead of removing and re-adding it. `yarn install` still runs, but over
   the kept `node_modules` it only reconciles what changed.
+- If `temp/reg-stats` already holds a snapshot downloaded under the same
+  filter selection (tracked via a sibling `temp/reg-stats.scope`, copied
+  alongside the snapshot into both worktrees), it offers to reuse it instead
+  of running `download-stats` again; a different selection forces a refresh.
 
 ### Command Compatibility
 
