@@ -1,9 +1,9 @@
-! Checksum: dhCh48J1aWCIK8TTkZeHSw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1789547070-3600.patch
+! Checksum: HKqwoP1/7x44mAv3LC5gEg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1789553891-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.13
-! TimeUpdated: 2026-09-16T08:20:48+00:00
+! Version: 2.0.68.14
+! TimeUpdated: 2026-09-16T10:15:33+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5569,6 +5569,11 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+!+ NOT_VALIDATE
+.gif|$domain=/macboxtv\d+\.xyz$/
+[$domain=/macboxtv\d+\.xyz$/]#%#//scriptlet('set-attr', '.player-box', 'data-preroll-enabled', '0')
+[$domain=/macboxtv\d+\.xyz$/]##.be-pageskin
+[$domain=/macboxtv\d+\.xyz$/]###gif-banner
 [$domain=/sampiyontv\d+\.xyz$/]##a[rel="nofollow sponsored noopener"]
 ||ibizatv*.com/view/theme/ultimate/img/*.gif
 ||ibizatv*.com/view/theme/ultimate/assets/js/rc.js
@@ -5742,7 +5747,7 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/taraftarium\d+\.xyz$/]##a[href="https://t.co/2nHFzBJcJJ"]
 [$domain=/taraftarium\d+\.xyz$/]##.ads-container
 [$domain=/taraftarium\d+\.xyz$/]##.pageskin-wrapper
-[$domain=/taraftarium\d+\.xyz$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+[$domain=/taraftarium\d+\.xyz$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled:\s*true/', 'prerollEnabled:false')
 [$domain=/^turkzzersifsa\d+\.blog$/]#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'app_advert')
 [$domain=/^turkzzersifsa\d+\.blog$/]#%#//scriptlet('prevent-addEventListener', 'click', 'popUnder')
 [$domain=/^turkifsalife\d+\.(blog\|lat)$/]#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'app_advert')
@@ -5790,7 +5795,7 @@ patrongol35.cfd##.top-banner-header
 [$domain=/patron(live\|futbol)\d+\.cfd$/]##.background-link
 [$domain=/patron(live\|futbol)\d+\.cfd$/]##.top-banner-header
 [$domain=/patron(live\|futbol)\d+\.cfd$/]##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
-[$domain=/patron(live\|futbol)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled: true', 'prerollEnabled: false')
+[$domain=/patron(live\|futbol)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 [$domain=/piabettv\d+\.live$/]##header > ul > li:not(:has(> a[href="/"]))
 ||papaztv*.com/assets/images/banners/
 [$domain=/papaztv\d?\.com$/]##div[class*="-banner"]
@@ -5823,7 +5828,7 @@ turkkizlar.com##div[class^="vid-promo"]
 ||blogger.googleusercontent.com/img/$domain=/patronmac\d+\.cfd$/
 [$domain=/patronmac\d+\.cfd$/]#$#body { background-image: none !important; }
 [$domain=/patronmac\d+\.cfd$/]#$#.background-link { display: none !important; }
-[$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+[$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ||cdn.jsdelivr.net/*.mp4$domain=/patronmac\d+\.cfd$/
 ||blogger.googleusercontent.com/img/$domain=patronmac101.cfd
 ||cdn.jsdelivr.net/*.mp4$domain=patronmac101.cfd
@@ -6041,7 +6046,7 @@ justintvizle732.top###video_reklam
 !+ NOT_VALIDATE
 ||placehold.co^$domain=/selcuksports\d+\.com/
 [$domain=/selcuksports\d+\.com/]##img[id^="top-ads-"]
-taraftarium24bjk17.com,taraftarium24tvizle.com#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled: true', 'prerollEnabled: false')
+taraftarium24bjk17.com,taraftarium24tvizle.com#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 taraftarium24bjk17.com,taraftarium24tvizle.com###ad-pageskin
 taraftarium24bjk17.com,taraftarium24tvizle.com##.playerStrip
 taraftarium24tvizle.com##.listAd
@@ -6051,7 +6056,7 @@ taraftarium24tvizle.com##.listAd
 24taraftarium12.xyz##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
 .gif|$domain=24taraftarium12.xyz
 taraftarium3-24.online##a[href="https://wa.me/447347044673"]
-justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ||taraftarium24pro*.site/*.gif
 [$domain=/taraftarium24pro\d+\.site$/]##.below-player-banner
 [$domain=/taraftarium24pro\d+\.site$/]##.t24-sq-overlay
@@ -6329,7 +6334,7 @@ sezonlukdizi3.com,sezonlukdizi5.com,sezonlukdizi6.com,sezonlukdizi7.com,sezonluk
 ||hdfilmcehennemi*.org/wp-content/themes/diziplus/js/pld.j
 [$domain=/inattv\d+\.xyz/]##.ads-container
 [$domain=/inattv\d+\.xyz/]##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
-[$domain=/inattv\d+\.xyz/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled:\s*true/', 'prerollEnabled:false')
+[$domain=/inattv\d+\.xyz/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/inattv\d+\.xyz/
 [$path=/^\/$/]itemci.com#%#//scriptlet('trusted-click-element', 'div[style^="background"][style*="https://cdn.itemci.com/assets/images/site_login_image.jpg"] > button.close', '', '3000')
@@ -6342,7 +6347,7 @@ sezonlukdizi3.com,sezonlukdizi5.com,sezonlukdizi6.com,sezonlukdizi7.com,sezonluk
 [$domain=/trgoals\d+\.xyz$/]##.rnd-qwert
 [$domain=/trgoals\d+\.xyz$/]##body > div[style^="position:fixed;"]
 [$domain=/trgoals\d+\.xyz$/]#$#.player-poster { background-image: none !important; }
-[$domain=/trgoals\d+\.xyz$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+[$domain=/trgoals\d+\.xyz$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 [$domain=/trgoals\d+\.xyz$/]#%#//scriptlet('set-constant', 'config.adv', 'emptyObj')
 [$domain=/trgoals\d+\.xyz$/]#%#//scriptlet("set-constant", "isShow", "true")
 [$domain=/trgoals\d+\.xyz$/]##div[style^="bottom:0;height:50px;left:0;position:fixed;"]
@@ -6354,7 +6359,7 @@ sezonlukdizi3.com,sezonlukdizi5.com,sezonlukdizi6.com,sezonlukdizi7.com,sezonluk
 [$domain=/trgoals\d+\.xyz$/]##.contentReklam
 noingoaithatgiare.com##.contentReklam
 noingoaithatgiare.com##.fixedFooterAd
-macizletaraftarium.online#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+macizletaraftarium.online#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ||blogger.googleusercontent.com/img/$domain=noingoaithatgiare.com|macizletaraftarium.online
 ||trgoals*.top/lib/uploads/r/$image
 [$domain=/^www\.trgoals\d+\.top$/]#%#//scriptlet('set-constant', 'video_shown', '1')

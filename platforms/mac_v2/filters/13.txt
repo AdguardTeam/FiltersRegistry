@@ -1,9 +1,9 @@
-! Checksum: ORuWy7DhpTgKippj42kt7g
-! Diff-Path: ../patches/13/13-s-1789547070-3600.patch
+! Checksum: kmdVd3R0CyC/bvABn7DfiA
+! Diff-Path: ../patches/13/13-s-1789553891-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.13
-! TimeUpdated: 2026-09-16T08:20:48+00:00
+! Version: 2.0.68.14
+! TimeUpdated: 2026-09-16T10:15:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6096,6 +6096,16 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! except some sites that use non-template domain names of mirror sites
 !
 !
+! Frequently changed domains: macboxtv*.xyz
+! Source: macboxtv29.xyz
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+.gif|$domain=/macboxtv\d+\.xyz$/
+! aglint-enable no-invalid-modifiers
+[$domain=/macboxtv\d+\.xyz$/]#%#//scriptlet('set-attr', '.player-box', 'data-preroll-enabled', '0')
+[$domain=/macboxtv\d+\.xyz$/]##.be-pageskin
+[$domain=/macboxtv\d+\.xyz$/]###gif-banner
+!
 ! Frequently changed domains: sampiyontv*.xyz
 ! Source: sampiyontv2.xyz
 [$domain=/sampiyontv\d+\.xyz$/]##a[rel="nofollow sponsored noopener"]
@@ -6379,7 +6389,7 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/turkifsa\d*\.art/]##div[class][style^="min-height:"][style*="calc("]
 !
 ! Frequently changed domains: taraftarium*.xyz
-! Source: https://trgoalsgiris.xyz
+! Source: https://taraftarium24.ch
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/taraftarium\d+\.xyz$/
@@ -6387,7 +6397,7 @@ x.palv2.cfd###adPlayerBanner
 [$domain=/taraftarium\d+\.xyz$/]##a[href="https://t.co/2nHFzBJcJJ"]
 [$domain=/taraftarium\d+\.xyz$/]##.ads-container
 [$domain=/taraftarium\d+\.xyz$/]##.pageskin-wrapper
-[$domain=/taraftarium\d+\.xyz$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+[$domain=/taraftarium\d+\.xyz$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled:\s*true/', 'prerollEnabled:false')
 !
 ! Frequently changed domains: turkzzersifsa*.blog
 ! Source: turkzzersifsa3.blog
@@ -6483,7 +6493,7 @@ patrongol35.cfd##.top-banner-header
 [$domain=/patron(live\|futbol)\d+\.cfd$/]##.background-link
 [$domain=/patron(live\|futbol)\d+\.cfd$/]##.top-banner-header
 [$domain=/patron(live\|futbol)\d+\.cfd$/]##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
-[$domain=/patron(live\|futbol)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled: true', 'prerollEnabled: false')
+[$domain=/patron(live\|futbol)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 !
 ! Frequently changed domains: piabettv*.live
 ! Source: https://ksln.link/piatv
@@ -6542,7 +6552,7 @@ turkkizlar.com##div[class^="vid-promo"]
 ||blogger.googleusercontent.com/img/$domain=/patronmac\d+\.cfd$/
 [$domain=/patronmac\d+\.cfd$/]#$#body { background-image: none !important; }
 [$domain=/patronmac\d+\.cfd$/]#$#.background-link { display: none !important; }
-[$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+[$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ||cdn.jsdelivr.net/*.mp4$domain=/patronmac\d+\.cfd$/
 ! aglint-enable no-invalid-modifiers
 ||blogger.googleusercontent.com/img/$domain=patronmac101.cfd
@@ -6891,7 +6901,7 @@ justintvizle732.top###video_reklam
 ! aglint-enable no-invalid-modifiers
 [$domain=/selcuksports\d+\.com/]##img[id^="top-ads-"]
 ! CASE 3 - probably fake
-taraftarium24bjk17.com,taraftarium24tvizle.com#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled: true', 'prerollEnabled: false')
+taraftarium24bjk17.com,taraftarium24tvizle.com#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 taraftarium24bjk17.com,taraftarium24tvizle.com###ad-pageskin
 taraftarium24bjk17.com,taraftarium24tvizle.com##.playerStrip
 taraftarium24tvizle.com##.listAd
@@ -6901,7 +6911,7 @@ taraftarium24tvizle.com##.listAd
 24taraftarium12.xyz##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
 .gif|$domain=24taraftarium12.xyz
 taraftarium3-24.online##a[href="https://wa.me/447347044673"]
-justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+justintaraftarium.net#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ||taraftarium24pro*.site/*.gif
 [$domain=/taraftarium24pro\d+\.site$/]##.below-player-banner
 [$domain=/taraftarium24pro\d+\.site$/]##.t24-sq-overlay
@@ -7272,7 +7282,7 @@ sezonlukdizi3.com,sezonlukdizi5.com,sezonlukdizi6.com,sezonlukdizi7.com,sezonluk
 ! Source: https://inattvgiris.one/ => https://inattv1298.xyz/
 [$domain=/inattv\d+\.xyz/]##.ads-container
 [$domain=/inattv\d+\.xyz/]##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
-[$domain=/inattv\d+\.xyz/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled:\s*true/', 'prerollEnabled:false')
+[$domain=/inattv\d+\.xyz/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/inattv\d+\.xyz/
@@ -7296,7 +7306,7 @@ sezonlukdizi3.com,sezonlukdizi5.com,sezonlukdizi6.com,sezonlukdizi7.com,sezonluk
 [$domain=/trgoals\d+\.xyz$/]##.rnd-qwert
 [$domain=/trgoals\d+\.xyz$/]##body > div[style^="position:fixed;"]
 [$domain=/trgoals\d+\.xyz$/]#$#.player-poster { background-image: none !important; }
-[$domain=/trgoals\d+\.xyz$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+[$domain=/trgoals\d+\.xyz$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 [$domain=/trgoals\d+\.xyz$/]#%#//scriptlet('set-constant', 'config.adv', 'emptyObj')
 [$domain=/trgoals\d+\.xyz$/]#%#//scriptlet("set-constant", "isShow", "true")
 [$domain=/trgoals\d+\.xyz$/]##div[style^="bottom:0;height:50px;left:0;position:fixed;"]
@@ -7309,7 +7319,7 @@ sezonlukdizi3.com,sezonlukdizi5.com,sezonlukdizi6.com,sezonlukdizi7.com,sezonluk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224233
 noingoaithatgiare.com##.contentReklam
 noingoaithatgiare.com##.fixedFooterAd
-macizletaraftarium.online#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', 'prerollEnabled:true', 'prerollEnabled:false')
+macizletaraftarium.online#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ||blogger.googleusercontent.com/img/$domain=noingoaithatgiare.com|macizletaraftarium.online
 !
 ! Frequently changed domains: trgoals*.top
