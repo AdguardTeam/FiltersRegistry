@@ -151,17 +151,13 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
+    }
 
-        // If a local optimization stats cache exists, use it; otherwise fall back
-        // to fetching stats from the remote server (localOptimizationStatistics.use()
-        // simply isn't called in that case — that's already getOptimizationStatistics's
-        // default behavior).
-        if (existsSync(optimizationStatsDir)) {
-            localOptimizationStatistics.use(optimizationStatsDir);
-            console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
-        } else {
-            console.log('No local optimization statistics found; fetching stats from the remote server.');
-        }
+    if (existsSync(optimizationStatsDir)) {
+        localOptimizationStatistics.use(optimizationStatsDir);
+        console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
+    } else {
+        console.log('No local optimization statistics found; fetching stats from the remote server.');
     }
 
     try {
@@ -175,7 +171,7 @@ const buildFilters = async () => {
             CUSTOM_PLATFORMS_CONFIG,
         );
     } catch (error) {
-        if (useCache && error instanceof OptimizationStatsError) {
+        if (error instanceof OptimizationStatsError) {
             throw new Error(
                 `Run --download-stats to download the latest statistics. (${error.message})`,
                 { cause: error },
