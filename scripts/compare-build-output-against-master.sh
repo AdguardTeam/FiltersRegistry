@@ -99,7 +99,7 @@ kill_tree() {
 }
 on_interrupt() {
     trap '' INT TERM HUP
-    printf '\n%sInterrupted — stopping builds and cleaning up.%s\n' "$C_RED" "$C_RESET" >&2
+    printf '\n%sInterrupted — stopping builds.%s\n' "$C_RED" "$C_RESET" >&2
     # shellcheck disable=SC2046
     kill_tree -TERM $(jobs -p 2>/dev/null)
     # Give the builds up to ~3s to exit on SIGTERM, then SIGKILL the rest, so
@@ -112,6 +112,10 @@ on_interrupt() {
     # shellcheck disable=SC2046
     kill_tree -KILL $(jobs -rp 2>/dev/null)
     wait 2>/dev/null
+    # Honor the cleanup choice on the way out too, same as die() — otherwise
+    # an interrupt after answering "Cleanup after run: Yes" still leaves the
+    # worktrees behind.
+    [ -n "${DO_CLEANUP+x}" ] && run_cleanup
     exit 130
 }
 trap on_interrupt INT TERM HUP
@@ -136,6 +140,8 @@ confirm() {
     if ! read -r -p "[Y/N] (default: $default): " reply; then
         echo "" >&2
         echo "${C_RED}${CROSS}${C_RESET} No input (stdin closed) — aborting." >&2
+        # Same as die(): honor whatever cleanup choice was already made.
+        [ -n "${DO_CLEANUP+x}" ] && run_cleanup
         exit 1
     fi
     reply=${reply:-$default}
