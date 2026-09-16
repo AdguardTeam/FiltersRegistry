@@ -1,9 +1,9 @@
-! Checksum: Lr3No8UMl+20tY8ID+e6qA
-! Diff-Path: ../patches/2/2-s-1789547068-3600.patch
+! Checksum: 7m++EVDDDyv8//2HF+Z2yw
+! Diff-Path: ../patches/2/2-s-1789550417-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.90.83
-! TimeUpdated: 2026-09-16T08:20:10+00:00
+! Version: 2.4.90.84
+! TimeUpdated: 2026-09-16T09:15:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -38489,8 +38489,6 @@ bitchute.com#%#//scriptlet('trusted-replace-fetch-response', '/"video_url":"http
 letscast.pro,livestreams.click,topstreams.info#%#//scriptlet('remove-node-text', 'script', 'selAdTypeParam')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197546
 camhub.cc#%#//scriptlet("abort-on-property-read", "initPop")
-! https://github.com/AdguardTeam/AdguardFilters/issues/197753
-akirabox.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '?pub=')
 ! https://github.com/uBlockOrigin/uAssets/issues/27018
 javtrailers.com#%#//scriptlet('remove-attr', 'href', '#videoPlayerContainer a[target="_blank"]')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196780
@@ -42291,6 +42289,10 @@ neowin.net#$#div[class^="banner-"] { height: 0!important; min-height: 0!importan
 ! /asset/jquery/slim-3.2.min.js$domain=avple.video|javhdfree.icu|nekolink.site|mambast.tk|netflav.com|fembed-hd.com|ndrama.xyz|pornhole.club|ffem.club|jvembed.com|dzmdplay.xyz|jav247.top|yuistream.xyz|javfu.net|iframe2videos.xyz|viplayer.cc|watchjavnow.xyz|cdn-myhdjav.info|embed-media.com|fembed9hd.com|cloudrls.com|vidgo.top
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/239799
+! Malware ads
+! https://checking-id-l67h.rjd1sgn.store/?_ba44b4=b4154554&data=eyJpZCI6Imw0M***
+-id-*/?_*=*&data=eyJpZCI6$document
 ! xHamster
 /vast?spot=*xh_spot_id
 /sdk/v1/dd.interstitial.ts.js
@@ -43731,6 +43733,16 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+gloucestershirelive.co.uk#$#div[data-tmdatatrack-type="commercial"] { display: none !important; height: 0 !important; }
+gloucestershirelive.co.uk#$#header.tab-focus-all-elems { top: 0 !important; }
+gloucestershirelive.co.uk##.commercial-gpt-style
+gloucestershirelive.co.uk##div.commercial-label-style.aGsgs
+gloucestershirelive.co.uk##div[data-testid^="commercial-"]
+cheshire-live.co.uk##div[data-testid^="ncu-"]
+cheshire-live.co.uk##div[class*="BoxStyles_commercial_"]
+cheshire-live.co.uk##div[data-testid="commercial-label-gpt"]
+cheshire-live.co.uk#$#header[data-testid="header"] { top: 0 !important; }
+cheshire-live.co.uk#$#div[data-tmdatatrack-type="commercial"] { display: none !important; }
 ||wargamings.net^$third-party,script
 yesporn.vip###wb
 hooporn.com##nav[aria-label="Page navigation"] ~ div
@@ -44681,7 +44693,7 @@ peachify.top#%#//scriptlet('prevent-addEventListener', 'click', '_blank')
 bestbuy.com##li[data-testid="sponsored-listing"]
 soccerway.com##.zone__container
 soccerway.com##.boxOverContentRevive
-akirabox.to#%#//scriptlet('abort-current-inline-script', 'Document.prototype.createElement', '*')
+akirabox.com,akirabox.to#%#//scriptlet('abort-on-stack-trace', 'atob', '<anonymous>')
 apk.dog##.adv_text
 hltv.org##.match > div.match-bottom > div.match-fixtures
 songlyrics.com##.ad-zone-reserve
@@ -49282,15 +49294,6 @@ javbrazez.com##.right > div.content:has(> div.ads)
 ungeek.ph##.ungee-bottom-sticky-ad
 ungeek.ph##div[class^="ungee-sidebar-ad-"]
 asia.nikkei.com##.o-ads
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,liverpoolecho.co.uk##div[class*="BoxStyles_commercial"]
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,liverpoolecho.co.uk##div[class^="Article_below-article-commercial-box"]
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##.commercial-box-style
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##section[data-testid^="commercial-"]
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##div[data-testid^="commercial-"]
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##aside span > span.react-loading-skeleton
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##aside > div[class^="sc-"]:has(> span > span.react-loading-skeleton)
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk#$#header[data-testid="header"] { top: 0 !important; }
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk#$#div[data-testid^="commercial-above-header-box-"] { display: none !important; }
 typingtest.com##.result #middle-banner-unit
 typingtest.com#$##middle-banner-unit { height: 30px !important; }
 anitrendz.net###at-ads-back
@@ -64398,6 +64401,20 @@ circleofcricket.com#$#.modal-backdrop { display: none !important; }
 circleofcricket.com#$##myModal { display: none !important; }
 circleofcricket.com##div.container-full.add:has(> a[href]:first-child)
 ||circleofcricket.com/assets/adv/
+!
+! Reach plc
+lancs.live##div[data-tmdatatrack-id="placeholder"]
+lancs.live##.topbox-cls-placeholder
+rsvplive.ie,lancs.live##aside[class^="RHRBlock_right-aside-wrapper"]
+rsvplive.ie,lancs.live,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,liverpoolecho.co.uk##div[class*="BoxStyles_commercial"]
+rsvplive.ie,lancs.live,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,liverpoolecho.co.uk##div[class^="Article_below-article-commercial-box"]
+rsvplive.ie,lancs.live,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##.commercial-box-style
+dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##section[data-testid^="commercial-"]
+rsvplive.ie,lancs.live,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##div[data-testid^="commercial-"]
+rsvplive.ie,lancs.live,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##aside span > span.react-loading-skeleton
+lancs.live,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##aside > div[class^="sc-"]:has(> span > span.react-loading-skeleton)
+rsvplive.ie,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk#$#header[data-testid="header"] { top: 0 !important; }
+rsvplive.ie,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk#$#div[data-testid^="commercial-above-header-box-"] { display: none !important; }
 !
 ! MixDrop
 miixdrop.top,miiixdrop.net,miiixdrop.com,miixdrop.net,vinovo.to,xpornium.net,mdy48tn97.com#%#//scriptlet('prevent-window-open')
@@ -99467,6 +99484,7 @@ browsershots.org#@#.advert_area
 ||bttpolwqviovn.site^
 ||bttrack.com^
 ||bttzjdxxmazye.site^
+||btubwiduatjyr.space^
 ||btuebtacnueoy.website^
 ||btvhdscr.com^
 ||btvnamzxzbjce.online^
@@ -108473,6 +108491,7 @@ browsershots.org#@#.advert_area
 ||gcgrabxewyxwe.website^
 ||gchqofbpwsvhz.website^
 ||gclvy39hhyzqxn151ojq.rest^
+||gcmjujmizyphz.space^
 ||gcmwodwqcaqjw.space^
 ||gcommyuhgnk.com^
 ||gcotjvflmlxkw.space^
@@ -113508,6 +113527,7 @@ browsershots.org#@#.advert_area
 ||jqdphtvtvyvwd.online^
 ||jqfffomcfppgu.space^
 ||jqhxsrqhvztee.site^
+||jqioregvpxgte.website^
 ||jqjpdxlywnqam.site^
 ||jqlpnqzcnehhb.site^
 ||jqluayokcswse.website^
@@ -114253,6 +114273,7 @@ browsershots.org#@#.advert_area
 ||khlhqwlnesbbm.space^
 ||khocclzjcykbk.site^
 ||khodjajettylysines.cyou^
+||khodjawhosen.qpon^
 ||khokaniworden.cyou^
 ||khondpavis.cyou^
 ||khqjazypcaqmk.space^
@@ -122513,6 +122534,7 @@ browsershots.org#@#.advert_area
 ||playerhq.co^
 ||playerseo.club^
 ||playeverlustinglife.space^
+||playful-unit.pro^
 ||playfulletooer.qpon^
 ||playhere.win^
 ||playhubconnect.com^
@@ -129507,6 +129529,7 @@ browsershots.org#@#.advert_area
 ||stringbuild.com^
 ||stringroadway.com^
 ||stringshypnotize.com^
+||striped-depth.com^
 ||striptammeter.qpon^
 ||stripwedding.com^
 ||strivespeavy.cyou^
@@ -132513,6 +132536,7 @@ browsershots.org#@#.advert_area
 ||ukzbcqrufjkrk.site^
 ||ulaodqkxrgard.website^
 ||ulbruiqadlmaa.online^
+||ulcgaqxlzxcko.site^
 ||ulcvtuslxtkxx.site^
 ||uldhyajkjmcdw.online^
 ||ulesxbo.com^
@@ -134571,6 +134595,7 @@ browsershots.org#@#.advert_area
 ||vxgqnsrhfgsrh.online^
 ||vxhwpdsfbarhv.online^
 ||vxjxzbznuzeeo.website^
+||vxknlxopiymepb.com^
 ||vxkqazollahft.store^
 ||vxmgwfvl.net^
 ||vxmhdaxyfjlmq.online^
@@ -137426,6 +137451,7 @@ browsershots.org#@#.advert_area
 ||yldmgrimg.net^
 ||yldxtcgvchrck.site^
 ||ylgdgagginpkp.website^
+||ylhcmalddcqmq.website^
 ||yliawdutzwwsd.space^
 ||ylih6ftygq7.com^
 ||yljhcklmakgbn.website^
@@ -138363,6 +138389,7 @@ browsershots.org#@#.advert_area
 ||zoiixfvrxcxlp.online^
 ||zoilgdkoyuosa.website^
 ||zoine.net^
+||zoisiteheddleralgodon.qpon^
 ||zokapwppblsly.website^
 ||zokfgnvzcdimh.website^
 ||zokqlomqkmwqw.top^
@@ -138694,6 +138721,7 @@ browsershots.org#@#.advert_area
 ||zzpgiredutflq.space^
 ||zzqolojazoawq.top^
 ||zzrazrolqaqmo.top^
+||zztcrnayqaj.com^
 ||zztnrtsicjmhc.online^
 ||zzveirrwywhgc.store^
 ||zzvuvnvgfamfy.online^
