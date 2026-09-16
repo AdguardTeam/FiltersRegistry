@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax,no-await-in-loop */
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 import {
     AdblockSyntax,
@@ -14,10 +15,13 @@ import { PIPE_MODIFIER_SEPARATOR, NEGATION_MARKER } from '@adguard/agtree/utils'
 import { FilterListGenerator, RuleGenerator } from '@adguard/agtree/generator';
 import { FilterListParser, DomainListParser, defaultParserOptions } from '@adguard/agtree/parser';
 import { findFilterFiles, readFile, writeFile } from './file-utils.js';
-import { type AliveWildcardDomains } from './wildcard-domains-updater.js';
+import { parseAliveWildcardDomains, type AliveWildcardDomains } from './wildcard-domains-updater.js';
 import { DOMAIN_MODIFIERS } from './domain-extractor.js';
 import { utils } from './utils.js';
 import { updateContentChecksum } from '../checksum/index.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const EMPTY = '';
 
@@ -296,7 +300,7 @@ export async function expandWildcardDomains(platformsDir: string, wildcardDomain
 
     const wildcardDomainsFilename = path.resolve(__dirname, wildcardDomainsPath);
     const wildcardDomainsJson = await readFile(wildcardDomainsFilename);
-    const wildcardDomains = JSON.parse(wildcardDomainsJson);
+    const wildcardDomains = parseAliveWildcardDomains(wildcardDomainsJson);
 
     for (const filterPath of filterPaths) {
         const filter = await readFile(filterPath);

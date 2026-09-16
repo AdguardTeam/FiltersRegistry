@@ -1,11 +1,15 @@
 /* eslint-disable no-await-in-loop,no-restricted-syntax,no-console */
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 // @ts-expect-error there is no type definition available for the following import
 import { findDeadDomains } from '@adguard/dead-domains-linter/src/urlfilter';
 import { getDomains } from './domain-extractor.js';
 import { utils } from './utils.js';
 import { TOP_LEVEL_DOMAIN_LIST } from './top-tld.js';
 import { findFilterFiles, readFile, writeFile } from './file-utils.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const TIME_UPDATED_KEY = 'timeUpdated';
 const ALIVE_DOMAINS_KEY = 'alive';
@@ -144,6 +148,22 @@ async function getJson(filename: string): Promise<AliveWildcardDomains | Wildcar
  */
 function isNewFormatData(obj: AliveWildcardDomains | WildcardDomains): obj is WildcardDomains {
     return ALIVE_DOMAINS_KEY in obj;
+}
+
+/**
+ * Extracts the map of alive wildcard domains from the raw contents of the wildcard domains JSON file.
+ *
+ * The file written by {@link updateWildcardDomains} stores that map under the 'alive' key, next to
+ * 'timeUpdated' and 'dead', so the parsed object cannot be used as a lookup map as is.
+ * Data in the old format, which is the map itself, is returned unchanged.
+ *
+ * @param json Raw contents of the wildcard domains JSON file.
+ * @returns A map of wildcard domains to their non-wildcard equivalents.
+ */
+export function parseAliveWildcardDomains(json: string): AliveWildcardDomains {
+    const parsed: AliveWildcardDomains | WildcardDomains = JSON.parse(json);
+
+    return isNewFormatData(parsed) ? parsed[ALIVE_DOMAINS_KEY] : parsed;
 }
 
 /**
