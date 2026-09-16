@@ -695,7 +695,10 @@ if confirm; then
         fi
         rm -rf "$SHARED_STATS_DIR"
         mkdir -p "$(dirname "$SHARED_STATS_DIR")"
-        cp -r "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL" "$SHARED_STATS_DIR"
+        if ! run_with_spinner "copying refreshed stats to $SHARED_STATS_DIR" "$LOG_DOWNLOAD_STATS" \
+            cp -r "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL" "$SHARED_STATS_DIR"; then
+            die "copying refreshed stats to $SHARED_STATS_DIR FAILED" "$LOG_DOWNLOAD_STATS"
+        fi
         printf '%s' "$CURRENT_STATS_SCOPE" > "$SHARED_STATS_SCOPE_FILE"
     else
         echo "${C_CYAN}${ARROW}${C_RESET} Reusing existing shared stats"
