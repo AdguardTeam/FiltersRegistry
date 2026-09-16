@@ -689,7 +689,7 @@ if confirm; then
     if [ -d "$SHARED_STATS_DIR" ] && [ -n "$(ls -A "$SHARED_STATS_DIR" 2>/dev/null)" ]; then
         if [ -f "$SHARED_STATS_SCOPE_FILE" ] && [ "$(cat "$SHARED_STATS_SCOPE_FILE")" = "$CURRENT_STATS_SCOPE" ]; then
             echo "Found existing shared stats at $SHARED_STATS_DIR (same filter selection)."
-            echo "Reuse them (yarn download-stats) before building?"
+            echo "Reuse them (downloaded from yarn download-stats) before building?"
             if confirm; then REFRESH_STATS=false; else REFRESH_STATS=true; fi
         else
             echo "${C_CYAN}${ARROW}${C_RESET} Existing shared stats at $SHARED_STATS_DIR were downloaded" \
