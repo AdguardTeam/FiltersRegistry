@@ -13,12 +13,11 @@ const FILTERS_REQUIRED_AMOUNT = 80;
 
 const args = process.argv.slice(2);
 
-let platforms = args[0];
-if (!platforms) {
-    platforms = '../../platforms';
-}
-
-const platformsPath = path.join(__dirname, platforms);
+// A path given on the command line is resolved against the current working
+// directory, the default one against this script.
+const platformsPath = args[0]
+    ? path.resolve(args[0])
+    : path.join(__dirname, '../../platforms');
 
 const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
 if (!validationResult) {
