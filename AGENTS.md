@@ -29,8 +29,11 @@ for all supported AdGuard products.
   The Extension platform has 9 sub-targets: Chromium, Chromium MV3, Edge, Firefox, Opera,
   Opera MV3, Safari, Android Content Blocker, uBlock.
 - **Project Type**: Single repository (build tooling + data)
-- **CI**: Three GitHub Actions workflows — `build-adguard.yaml`, `build-3p.yaml`, and
-  `test.yaml` (runs `yarn test` on every pull request)
+- **CI**: GitHub Actions workflows:
+    - `build-adguard.yaml`
+    - `build-3p.yaml`
+    - `test.yaml` (runs `yarn test` on every pull request)
+    - `update-translations.yaml` (weekly translations download that opens a PR)
 - **Performance Goals**: N/A
 - **Constraints**: Filter lists must remain compatible with AdGuard's rule syntax;
   third-party filters follow an acceptance policy documented in README.md
@@ -58,9 +61,9 @@ for all supported AdGuard products.
 │   │                               #   custom_platforms.js, patches.js, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
 │   ├── repository/                 # compress.js — repository compression
-│   ├── translations/               # Locale download/upload tooling
+│   ├── translations/               # Locale download/upload tooling, PR validation reporting
 │   ├── utils/                      # Shared utilities (find_files.js, splitter.ts, strings.js)
-│   ├── validation/                 # validate_platforms.js, validate_locales.js
+│   ├── validation/                 # validate_platforms.js, validate_locales.ts
 │   ├── wildcard-domain-processor/  # TS module with CLI, unit tests (__tests__/)
 │   └── auto_build.sh               # Automated build entry point
 ├── locales/                        # Translations (45+ language dirs)
