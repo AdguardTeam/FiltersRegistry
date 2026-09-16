@@ -299,15 +299,20 @@ collect_build() {
     local label=$1 pid=$2 build_log=$3 worktree=$4 dest=$5 copy_log=$6 rc=0
     if wait "$pid"; then
 
-        # Delete the existing $dest directory first,
-        # to prevent cp -r from merging files and leaving stale data in the diff.
-        rm -rf "$dest"
+        # Copy into a temp dir first and swap it into place only on success,
+        # so an interrupt mid-copy can't leave $dest half-populated (and
+        # still passing has_built_output on a later run) or destroy a
+        # still-good previous $dest before the new copy is confirmed good.
+        rm -rf "$dest.tmp"
 
         if run_with_spinner "[$label] copying platforms/ output" "$copy_log" \
-            cp -r "$worktree/platforms" "$dest"; then
+            cp -r "$worktree/platforms" "$dest.tmp"; then
+            rm -rf "$dest"
+            mv "$dest.tmp" "$dest"
             echo "${C_GREEN}${CHECK}${C_RESET} [$label] build done"
         else
             report_failure "[$label] copying platforms/ output FAILED" "$copy_log"
+            rm -rf "$dest.tmp"
             rc=1
         fi
     else
