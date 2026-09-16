@@ -1,9 +1,9 @@
-! Checksum: rxU3kkSN0Y3kgZFtlGU3ig
-! Diff-Path: ../patches/260/260-s-1789504644-14400.patch
+! Checksum: kgNA/q+nPhAlKR3MzqKMXQ
+! Diff-Path: ../patches/260/260-s-1789521005-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.95
-! TimeUpdated: 2026-09-15T20:35:06+00:00
+! Version: 2.0.1.96
+! TimeUpdated: 2026-09-16T01:07:34+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -578,8 +578,11 @@ www.buzzfeed.com##.arcade_contentWrapper__3tHoG:has([clip-path="url(#clip0_850_8
 dictionary.cambridge.org##.hdib:has(> [href$="/assistant"])
 ! "AI Assistant" in left sidebar menu (☰)
 dictionary.cambridge.org##.lb-cm.hlh21:has(> [href$="/assistant"])
-! -- https://dictionary.cambridge.org/assistant
-||dictionary.cambridge.org/api/assistant/$xmlhttprequest,domain=dictionary.cambridge.org
+! Fixed footer - AI Assistant bar (mobile)
+dictionary.cambridge.org##.ai-bar
+! -- https://dictionary.cambridge.org/dictionary/english/test
+! Fixed footer - AI Assistant button
+dictionary.cambridge.org##.ai-bar-button
 ! ===========
 ! == Canva ==
 ! ===========
@@ -1797,6 +1800,7 @@ docs.google.com##[jsname="Vjwl5e"]:has(#getting-started-dialog-navigation-view)
 drive.google.com###WWNEkf
 ! "AI Overview search" sources icon in search bar
 drive.google.com##.p5rLxe.HBDJjb
+! Remove "Get answers from Drive" placeholder and sparkle from search bar
 ! New > More > Google AI Studio
 ! * Use 'remove()' to fix keyboard navigation
 drive.google.com#$?#[role="menuitem"]:has(img[src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x16.png"]) { remove: true; }
@@ -2248,15 +2252,6 @@ www.jimdo.com###companion
 ! ==================
 ! Floating chatbot icon
 www.johnhancock.com##.webchat
-! ==============
-! == JSFiddle ==
-! ==============
-! Block API requests for AI code completion
-||api.mistral.ai/v1/fim/completions$xmlhttprequest,domain=jsfiddle.net
-! Error message about code completion request failing
-jsfiddle.net#?##flash-messages > .error:contains("Can't complete code. Error code: Failed to fetch.")
-! AI Code completion button in sidebar
-jsfiddle.net##.si_ai
 ! ====================
 ! == Jumping Rivers ==
 ! ====================
@@ -4818,6 +4813,12 @@ myhentaigallery.com##center:has(> div > ins[data-revive-zoneid])
 myhentaigallery.com##center:has(> div > iframe)
 ! Floating ad
 myhentaigallery.com###Slider
+! ===========================
+! == nhentai (togo) (NSFW) ==
+! ===========================
+! -- https://nhentai.to/go
+! AI roleplay banner
+nhentai.to###nb-band
 ! ========================
 ! == nhentai.xxx (NSFW) ==
 ! ========================
