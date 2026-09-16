@@ -281,12 +281,18 @@ sync_filters_baseline() {
 # Copies SHARED_STATS_DIR into both worktrees' temp/optimization/stats, so
 # build.js's existsSync() check picks it up via localOptimizationStatistics.use()
 # instead of each worktree fetching its own (possibly different) remote snapshot.
+# The sibling .scope marker travels with it — build.js now refuses to use() a
+# stats dir whose .scope doesn't match (or isn't a full download), so leaving
+# it behind here would make every worktree fall back to remote regardless.
 copy_shared_stats_into_worktrees() {
     local wt
     for wt in "$MASTER_WORK_TREE" "$CHANGED_WORK_TREE"; do
-        rm -rf "$wt/$STATS_BASE_PATH_REL"
+        rm -rf "$wt/$STATS_BASE_PATH_REL" "$wt/$STATS_BASE_PATH_REL.scope"
         mkdir -p "$(dirname "$wt/$STATS_BASE_PATH_REL")"
         cp -r "$SHARED_STATS_DIR" "$wt/$STATS_BASE_PATH_REL" || return 1
+        if [ -f "$SHARED_STATS_DIR.scope" ]; then
+            cp "$SHARED_STATS_DIR.scope" "$wt/$STATS_BASE_PATH_REL.scope" || return 1
+        fi
     done
 }
 
@@ -624,7 +630,7 @@ setup_worktree() {
                 die "[$label] checkout in reused worktree FAILED" "$log_path"
             fi
             # remove the stale optimization stats; new ones must be copied from $SHARED_STATS_DIR.
-            rm -rf "$path/$STATS_BASE_PATH_REL"
+            rm -rf "$path/$STATS_BASE_PATH_REL" "$path/$STATS_BASE_PATH_REL.scope"
             return 0
         fi
         echo "${C_CYAN}${ARROW}${C_RESET} [$label] recreating worktree at $path"

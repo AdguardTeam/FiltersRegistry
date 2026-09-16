@@ -57,6 +57,18 @@ const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS)
 const tempDir = path.join(__dirname, '../../temp');
 const cachedFiltersDir = path.join(tempDir, 'filters_cached');
 const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
+// Captured on every --download-stats run; checked prior to use(), since
+// applying a stats cache outside the allowed --include/--skip scope results
+// will trigger a hard failure in compile().
+const optimizationStatsScopeFile = `${optimizationStatsDir}.scope`;
+
+/**
+ * Generates a scope flag string for the compiler based on included and excluded filter IDs.
+ * @param {number[]} included - Array of included filter IDs
+ * @param {number[]} excluded - Array of excluded filter IDs
+ * @returns {string}
+ */
+export const scopeFlagsFor = (included, excluded) => `include=${included.join(',')};exclude=${excluded.join(',')}`;
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -129,6 +141,11 @@ const buildFilters = async () => {
             includedFilterIDs,
             excludedFilterIDs,
         );
+        await fs.writeFile(
+            optimizationStatsScopeFile,
+            scopeFlagsFor(includedFilterIDs, excludedFilterIDs),
+            'utf8',
+        );
         console.log(`Optimization statistics downloaded at ${optimizationStatsDir}.`);
         return;
     }
@@ -153,9 +170,33 @@ const buildFilters = async () => {
         await prepareCachedFiltersDir();
     }
 
-    if (existsSync(optimizationStatsDir)) {
-        localOptimizationStatistics.use(optimizationStatsDir);
-        console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
+    const optimizationStatsFiltersPath = path.join(optimizationStatsDir, 'filters');
+
+    const statsDirHasContent = existsSync(optimizationStatsFiltersPath)
+        && (await fs.readdir(optimizationStatsFiltersPath)).length > 0;
+
+    if (statsDirHasContent) {
+        let cachedScopeFlags = null;
+        try {
+            cachedScopeFlags = await fs.readFile(optimizationStatsScopeFile, 'utf8');
+        } catch {
+            // No scope marker — either a legacy cache or one download-stats
+            // itself failed to finish writing. Treated as unknown below.
+        }
+        const currentScopeFlags = scopeFlagsFor(includedFilterIDs, excludedFilterIDs);
+        const unscopedFlags = scopeFlagsFor([], []);
+
+        const isScopeIdentical = cachedScopeFlags === currentScopeFlags;
+        if (isScopeIdentical || cachedScopeFlags === unscopedFlags) {
+            localOptimizationStatistics.use(optimizationStatsDir);
+            console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
+        } else {
+            console.log(
+                `Local optimization statistics at ${optimizationStatsDir} don't match this build's filter `
+                + 'selection (or predate scope tracking); fetching stats from the remote server instead. '
+                + 'Run --download-stats with the same --include/--skip to reuse the local cache.',
+            );
+        }
     } else {
         console.log('No local optimization statistics found; fetching stats from the remote server.');
     }
