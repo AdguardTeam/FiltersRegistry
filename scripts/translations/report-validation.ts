@@ -187,9 +187,10 @@ export class GitHubClient {
      *
      * @param issueNumber - Issue or pull request number.
      * @param body - Comment body.
+     * @returns The id of the created comment.
      */
-    async createComment(issueNumber: number, body: string): Promise<void> {
-        await this.octokit.request(
+    async createComment(issueNumber: number, body: string): Promise<number> {
+        const response = await this.octokit.request(
             'POST /repos/{owner}/{repo}/issues/{issue_number}/comments',
             {
                 owner: this.owner,
@@ -198,6 +199,7 @@ export class GitHubClient {
                 body,
             },
         );
+        return Number(response.data.id);
     }
 }
 
@@ -248,17 +250,37 @@ export const reportValidation = async (options: ReportValidationOptions): Promis
 
     // Post the fresh report before cleaning up stale comments, so that a
     // transient API error during cleanup cannot leave the PR without a report.
+    // The fresh comment is excluded from cleanup below: GET returns it too, and
+    // deleting every marked comment would remove the report we just posted.
+    let freshCommentId: number | null = null;
     if (result === 'failure') {
         const report = readReport(repoRoot);
-        await client.createComment(prNumber, buildCommentBody(report));
+        freshCommentId = await client.createComment(prNumber, buildCommentBody(report));
     }
 
-    // Cleanup is best-effort: Promise.allSettled swallows transient API errors
-    // (the workflow step also has continue-on-error), so a single failed
-    // deletion cannot fail an otherwise successful run.
-    const comments = await client.listComments(prNumber);
-    const staleComments = comments.filter((comment) => isValidationComment(comment.body));
-    await Promise.allSettled(staleComments.map((comment) => client.deleteComment(comment.id)));
+    // Cleanup is best-effort: failures while listing or deleting comments are
+    // caught and logged (the workflow step also has continue-on-error), so a
+    // single failed request cannot fail an otherwise successful run.
+    let comments: Comment[] = [];
+    try {
+        comments = await client.listComments(prNumber);
+    } catch (error) {
+        console.error('Failed to list comments for cleanup:', error);
+    }
+    const staleComments = comments.filter(
+        (comment) => comment.id !== freshCommentId && isValidationComment(comment.body),
+    );
+    const deletions = await Promise.allSettled(
+        staleComments.map((comment) => client.deleteComment(comment.id)),
+    );
+    deletions.forEach((outcome, index) => {
+        if (outcome.status === 'rejected') {
+            console.error(
+                `Failed to delete stale comment ${staleComments[index].id}:`,
+                outcome.reason,
+            );
+        }
+    });
 };
 
 interface CliArgs {
@@ -285,6 +307,8 @@ const parseArgs = (argv: string[]): CliArgs => {
     }
     return { prNumber, result };
 };
+
+export { parseArgs };
 
 // Only run the command-line interface if the script is executed directly
 if (process.argv[1] === __filename) {
