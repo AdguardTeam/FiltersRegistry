@@ -332,13 +332,13 @@ collect_build() {
 cleanup_all() {
     git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
     git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
-    rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED"
-    rm -f "$META_FILE"
+    rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" "$PLATFORMS_MASTER.tmp" "$PLATFORMS_CHANGED.tmp"
+    rm -f "$META_FILE" "$META_FILE.tmp"
 }
 
 discard_previous_output() {
-    rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED"
-    rm -f "$META_FILE"
+    rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" "$PLATFORMS_MASTER.tmp" "$PLATFORMS_CHANGED.tmp"
+    rm -f "$META_FILE" "$META_FILE.tmp"
 }
 
 # Honors DO_CLEANUP: either runs cleanup_all or prints what was kept and
@@ -467,18 +467,29 @@ if [ -f "$META_FILE" ] \
     && has_built_output "$PLATFORMS_MASTER" \
     && has_built_output "$PLATFORMS_CHANGED"; then
     load_meta "$META_FILE"
-    MODE_LABEL=${BUILD_MODE:-plain}
-    echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
-    echo "  $BASE_BRANCH @ ${MASTER_SHA:0:9}$(sha_drift_note "$BASE_BRANCH" "$MASTER_SHA")"
-    echo "  $CHANGED_BRANCH @ ${CHANGED_SHA:0:9}$(sha_drift_note "$CHANGED_BRANCH" "$CHANGED_SHA")"
-    echo "Reuse it for generating the report right now?"
-    if confirm; then
-        echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
-        generate_report
-        exit $?
+    if [ -n "$MASTER_SHA" ] && [ -n "$CHANGED_SHA" ] && [ -n "$CHANGED_BRANCH" ]; then
+        MODE_LABEL=${BUILD_MODE:-plain}
+        echo "Found build output from a previous run ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
+        echo "  $BASE_BRANCH @ ${MASTER_SHA:0:9}$(sha_drift_note "$BASE_BRANCH" "$MASTER_SHA")"
+        echo "  $CHANGED_BRANCH @ ${CHANGED_SHA:0:9}$(sha_drift_note "$CHANGED_BRANCH" "$CHANGED_SHA")"
+        echo "Reuse it for generating the report right now?"
+        if confirm; then
+            echo "${C_CYAN}${ARROW}${C_RESET} Reusing previous build output ($CHANGED_BRANCH vs $BASE_BRANCH, build mode: $MODE_LABEL)"
+            generate_report
+            exit $?
+        fi
+        echo "${C_CYAN}${ARROW}${C_RESET} Discarding previous build output, rebuilding"
+    else
+        echo "${C_CYAN}${ARROW}${C_RESET} Found a previous run's meta file but it's incomplete (likely an" \
+            "interrupted write); discarding"
     fi
-    echo "${C_CYAN}${ARROW}${C_RESET} Discarding previous build output, rebuilding"
     discard_previous_output
+elif [ -f "$META_FILE" ]; then
+    # A meta file with no matching built output on one or both sides — from
+    # an interrupted run, or output removed by hand. Left in place it would
+    # just sit there unused until output happens to reappear; clear it now
+    # instead of relying on that coincidence.
+    rm -f "$META_FILE"
 fi
 
 # --- Step 1: resolve branches ---
@@ -764,7 +775,10 @@ if [ "$BUILD_FAILED" = true ]; then
     exit 1
 fi
 
-cat > "$META_FILE" <<EOF
+# Written to a temp file and swapped into place so an interrupt mid-write
+# can't leave $META_FILE half-written (load_meta would then load blank
+# SHAs/branch, and Step 0 could offer that as a valid run to reuse).
+cat > "$META_FILE.tmp" <<EOF
 MASTER_SHA=$MASTER_SHA
 CHANGED_SHA=$CHANGED_SHA
 CHANGED_BRANCH=$CHANGED_BRANCH
@@ -773,6 +787,7 @@ DO_USE_STATS=$DO_USE_STATS
 INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
 EXCLUDED_FILTER_IDS=$EXCLUDED_FILTER_IDS
 EOF
+mv "$META_FILE.tmp" "$META_FILE"
 
 step_header 9 "Report"
 generate_report
