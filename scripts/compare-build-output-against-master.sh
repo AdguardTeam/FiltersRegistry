@@ -746,6 +746,7 @@ if confirm; then
             die "copying refreshed stats to $SHARED_STATS_DIR FAILED" "$LOG_DOWNLOAD_STATS"
         fi
         if [ ! -f "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" ]; then
+            rm -rf "$SHARED_STATS_DIR.tmp"
             die "download-stats succeeded but wrote no .scope marker at $MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" \
                 "$LOG_DOWNLOAD_STATS"
         fi
