@@ -1,5 +1,33 @@
 !
-@include "https://easylist-downloads.adblockplus.org/easyprivacy.txt" /exclude="../../exclusions.txt"
+@include "https://easylist.to/easylist/easyprivacy.txt" /exclude="../../exclusions.txt"
 !
-! https://forum.adguard.com/index.php?threads/rutracker-org.24062/
-@@/tracker.php?$domain=rutracker.lib|maintracker.org|rutracker.cr|rutracker.net|rutracker.org
+! https://github.com/AdguardTeam/AdguardFilters/issues/103955
+!#if (adguard_ext_safari || adguard_app_ios)
+@@||ups.com/track?$domain=ups.com
+@@||parcelapp.net/webtrack.$domain=parcelapp.net
+!#endif
+! https://github.com/AdguardTeam/AdguardFilters/issues/86351
+!+ PLATFORM(ios, ext_safari)
+@@||toloka.to/tracker.php?$domain=toloka.to
+! https://github.com/AdguardTeam/AdguardFilters/issues/81810
+!+ PLATFORM(ios, ext_safari)
+@@||app.tookanapp.com/tracking/index.html$domain=tookanapp.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/80453
+!+ PLATFORM(ios, ext_safari)
+@@||uniconsent.com^$domain=xda-developers.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/79058
+!+ PLATFORM(ios, ext_safari)
+@@*.list-manage.com^$domain=list-manage.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/76563
+!+ PLATFORM(ios, ext_safari)
+@@||click.email.wbez.org^$domain=click.email.wbez.org
+! https://github.com/AdguardTeam/AdguardFilters/issues/71151
+!+ PLATFORM(ios, ext_safari)
+@@||medallia.com^$domain=medallia.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/70449
+!+ PLATFORM(ios, ext_safari)
+@@||nimiq.com^$domain=nimiq.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/31746
+@@||cbc.ca/g/stats/js/cbc-stats-top.js
+! Fixing search on rutracker.org and mirrors
+@@rutracker.*/tracker.php?

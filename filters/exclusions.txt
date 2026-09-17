@@ -1,99 +1,498 @@
+!##################################################
+!############### General exclusions ###############
+!##################################################
 ! Exluding rules that looks like JS/CSS injections and $replace rules:
-#%#
-#@%#
-replace=
+! #%# - processed by trust-levels
+! #@%# - processed by trust-levels
+! replace= - processed by trust-levels
 ! Exluding unsupported ABP rules
-#?#
-[-abp-properties
-! Exluding uBlock script rules
-##script:contains
-##script:inject
+! https://github.com/AdguardTeam/ExtendedCss/issues/6#issuecomment-242328295
+-abp-properties
 ! Excluding redirect instructions
-Redirect:
-redirect:
+! $redirect= - processed by trust-levels
+! ,redirect= - processed by trust-levels
+/^\!\s*(R|r)edirect:/
+!
+! Excluding foreign Extended CSS rules for Facebook
+facebook.com#?#
+facebook.com,facebookcorewwwi.onion#?#
 !
 ! Fixing $popup rules from EasyList
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/1566
 $popup,~third-party
 !
-|http://*
-|http:$
-|https:$
 /pb-ads/*
 ://ads.$popup
 !
-adguard
-! 
-! https://github.com/AdguardTeam/AdguardFilters/issues/8172
-@@||investopedia.com^$elemhide
-! https://github.com/AdguardTeam/AdguardFilters/issues/7371
-@@||idnes.cz$generichide,genericblock
+/adguard.
+!
+!##################################################
+!
+!*** Add new exlusions as:
+!***  !### Filter name ###
+!***  ! Issue link
+!***  `exclusion`
+!
+!
+!### Anti-adblock baits ###
+! all filters
+/^(~.*)?###adcontent$/
+/^(~.*)?##\.banner-ads$/
+/^(~.*)?##\.banner_ads$/
+/^(~.*)?##\.adsbygoogle$/
+/^(~.*)?###banner_ad$/
+/^(~.*)?##\.adsbox$/
+/^(~.*)?##\.afs_ads$/
+!
+!### ADgk Mobile China list ###
+/^\$\$div\[class="-ad-"\]$/
+! End: ADgk Mobile China list
+!###################
+!
+!### cname-trackers problems ###
+! https://github.com/AdguardTeam/AdguardFilters/issues/227440
+||subscriptions.costco.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/209795
+||sstats.bitdefender.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/207941
+||sstats.adobe.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/207905
+||dogo.intel.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/194839
+||data-3cd8fb3825.kicker.de^
+||data-e69b3d32a9.kicker.de^
+! https://github.com/AdguardTeam/AdguardFilters/issues/185762
+||tubestatic.usco1621-b.com^
+! https://github.com/AdguardTeam/cname-trackers/issues/96
+||medlemskap.fagforbundet.no^
+! https://github.com/AdguardTeam/AdguardFilters/issues/175337
+||mbox.wegmans.com^
+! https://github.com/AdguardTeam/AdGuardSDNSFilter/issues/1631
+||tms.capitalone.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/166702
+||omns.americanexpress.com^
+! Used in shopping emails
+||data.digital.costco.ca^
+||data.digital.costco.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/162672
+||explore.agilent.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/160473
+||go.oracle.com^
+! https://github.com/hagezi/dns-blocklists/issues/1453
+||data.ubi.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/159117
+||data-60d896f23d.radio.net^
+! unblock https://form.ict-toshiba.jp/contact_form_recipewizard
+||form.ict-toshiba.jp^
+! cart blocked at www.matsuzaka-steak.com
+||cart.matsuzaka-steak.com^
+! End: cname-trackers problems
+!###############################
+!
+!### Easylist ###
+!
+! Prevent any Discord breakage caused by Fanboynz's automatic script issue
+||discord.com^
+! We have ##.ad-unit:not(.textads) in our filters
+/^(~.*)?##\.ad-unit$/
+! Causes many problems, especially in Safari
+/^:\/\/adv\.\$popup\,domain=~/
+! Moved to Tracking Protection filter
+||adjust.com^$third-party
+! fixing prime video app: https://uploads.adguard.com/2020-10-04_03.18.16.jpg
+/^/ad24/\*$/
+! https://github.com/AdguardTeam/AdguardFilters/issues/55609
+! https://github.com/AdguardTeam/AdguardFilters/issues/55478#issuecomment-629828357
+/^https?:\/\/.*[&%+=]/$popup,domain=
+/^https?:\/\/.*[&|%|+|=]/$popup,domain=
+! https://github.com/AdguardTeam/AdguardForAndroid/issues/3438
+! breaks the sites in AdGuard for Windows 7.3
+/^https:\/\/([a-z]+\.)?sythe\.org\/\[=%#@$&!^].*[\w\W]{20,}/$image
+! Excluding the rules which are used too often by adblock detectors
+/^##\.myTestAd$/
+/^##\.adsbox$/
+/adframe.
+! Excluding Google Contributor anti-adblock baits
+/^##\[class\^="div-gpt-ad"\]$/
+/^##div\[class\^="div-gpt-ad"\]$/
+/^##\.div-gpt-ad$/
+! https://github.com/easylist/easylist/commit/e2efe2c3686cf6192f4e2d6a944ebe092c06f27a
+! Excluding the rule which breaks youtube embedded video player
+||youtube.com/get_video_info?$domain=youtube.com
+! Excluding /google_ad_ because it gives a false positive on https://www.theregister.co.uk/2019/09/19/google_ad_blockers/
+! and it is not really useful according to stats
+/google_ad_
+! https://github.com/AdguardTeam/FiltersRegistry/issues/260
+! Blocking these IP address were also breaking legitimate websites:
+! Spotify, Pokemon Go
+||35.
+||104.
+||130.211.
+||216.21.
+! https://github.com/AdguardTeam/AdguardFilters/issues/42485
+||feadrope.net^$document
+! https://github.com/AdguardTeam/AdGuardSDNSFilter/issues/116
+||gvt1.com^$third-party
+! https://github.com/AdguardTeam/AdguardFilters/issues/31239
+||hdzog.com^$~third-party,xmlhttprequest
+! https://github.com/AdguardTeam/AdguardFilters/issues/31447
+ebay.com#?#li.s-item:-abp-has(.s-item__title-tag)
+! https://github.com/AdguardTeam/AdguardFilters/issues/25529
+||3p.ampproject.net^$script
+! https://github.com/AdguardTeam/AdguardFilters/issues/16453
+@@||cnbc.com^$generichide
+! https://github.com/AdguardTeam/AdguardFilters/issues/7377
+kbb.com###New-spotlights
 ! https://forum.adguard.com/index.php?threads/26006/
 @@||mirrorcreator.com^$script,~third-party,xmlhttprequest
+! e.mail.ru - preventing adblock detection
+mail.ru##.slot_left
+! https://forum.adguard.com/index.php?threads/10523/
+.com/ad.$domain=~ad-tuning.de
+! https://forum.adguard.com/index.php?threads/11577/
+@@||play-old-pc-games.com^$generichide
+! adf.ly - unnecessary exclusion
+@@||adf.ly^$generichide
+! Fix https://liveclasses.ru/gift/w-advertising_shot_beer/
+/^-advertising_$/
 ! https://forum.adguard.com/index.php?threads/16312/
 @@||zedo.com/asw/$script,domain=intoday.in
 @@||zedo.com/client/xp1/fmos.js$domain=intoday.in
 @@||zedo.com/jsc/d2/fo.js$domain=intoday.in
 @@||intoday.in^$generichide
-! https://forum.adguard.com/index.php?threads/22268/
-@@/^((?!.*\.(amazonaws|cloudfront|mobicow|puhtml)\W?).)*$/$script,domain=uploadocean.com
-! https://forum.adguard.com/index.php?threads/13935/
-! Adblock-Persian list
-sendspace.com#@#*[class$="_ads"]:not(body):not(input)
-!!! Liste FR (iOS issue, )
-! https://github.com/AdguardTeam/AdguardFilters/issues/3103
-/\/[a-z0-9_]+\.[a-z0-9-]+\.[a-z]{2,}\/.*?\w{30,}/$object-subrequest,xmlhttprequest,domain=exclusivomen.com|gentside.com|gentside.com.br|gentside.de|maxisciences.com|ohmirevista.com|ohmymag.com|ohmymag.com.br|ohmymag.de|simplyvoyage.com
-/\/[a-z0-9_]+\.[a-z0-9-]+\.[a-z]{2,}\/.*[a-zA-Z0-9]{40,}/$object-subrequest,domain=wat.tv
-@@/\.palmshapednontransferable\.com/[a-zA-Z0-9]{340,380}$/$xmlhttprequest,domain=exclusivomen.com|gentside.com|gentside.com.br|gentside.de|maxisciences.com|ohmirevista.com|ohmymag.com|ohmymag.com.br|ohmymag.de|simplyvoyage.com
-!
-!!! EasyList
-! https://github.com/AdguardTeam/AdguardFilters/issues/3044
-! unnecessary exclusion
-@@||psarips.com^$script
 ! ozon.ru is broken by content blocker
 ||ozon.ru^$third-party
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1436
 @@||www.google.*/search?$subdocument,~third-party
+! https://github.com/AdguardTeam/AdguardForWindows/issues/1566
+$popup,~third-party
+! Broken mobile app
+! https://github.com/AdguardTeam/AdguardForAndroid/issues/587
+/ad/logo/*
+! http://forum.adguard.com/showthread.php?9766
+biggestplayer.me##.adblock1
+! https://github.com/AdguardTeam/AdguardForWindows/issues/910
+! https://github.com/AdguardTeam/ExperimentalFilter/issues/1645
+||lockerdome.com^$third-party
+! http://forum.adguard.com/showthread.php?8542
+@@||spiegel.de^$genericblock,generichide
+! Fixing exclusions for adfox.ru
+@@||adfox.ru^$~third-party
+! Fixing redtube.com on android
+||redtube.com^$subdocument,~third-party
+! Fixing adwolf.ru. Replaced to /adwolf.$domain=~adwolf.ru
+/adwolf.
+! From EasyList. Replace on ||bubblesmedia.ru^$third-party,popup
+||bubblesmedia.ru^$third-party
+! This rule interrupt $popup For example onclickads.net/afu.php?zoneid=
+.php?zoneid=
+! End: Easylist
+!################
 !
-!!! https://github.com/AdguardTeam/AdguardForWindows/issues/490
+!### EasyList Italy ###
+||calabriareportage.it^+-Banner-
+!######################
 !
-! Anti-Adblock Killer Reek
-! https://github.com/reek/anti-adblock-killer/issues/1446
-player.pl###vod
-! Liste AR
+!### EasyPrivacy ###
+/generate_204$
+! https://github.com/AdguardTeam/AdguardFilters/issues/112370
+||znctrack.net^$third-party
+! End: EasyPrivacy
+!###################
+!
+!### Liste AR ###
+! https://github.com/AdguardTeam/AdguardFilters/issues/35459
+$popup,domain=123moviesjr.cc|
+! End: Liste AR
+!################
+!
+!### Liste FR ###
+! Too wide rules
+##a[href*=".taobao.com/"]
++Popunder+$popup
+/^https?:\/\/(www\.)?([a-z0-9]{3,10}\.)?[a-z0-9]{5,25}\.(click|co|club|com|bid|date|download|men|net|network|online|party|pw|racing|review|site|space|stream|top|trade|webcam|website|win|xyz)\/([a-z0-9]{2,3}\/){3}[a-f0-9]{32}\.js$/$script,xmlhttprequest
+-Block-ads-
+/click/*$subdocument
+=adblock_
+://partner.$third-party
+! anOptions andiadblock script baits
+/##\.an-advert-banner$/
+/##\.an-sponsored$/
+! https://github.com/AdguardTeam/FiltersRegistry/issues/392
+/^(https?|wss?):\/\/([0-9a-z\-]+\.)?([0-9a-z\-]+\.)(accountant|
+! https://github.com/AdguardTeam/AdguardFilters/issues/41309
+/^\|\|out\.pladform\.ru\^$/
+! https://github.com/AdguardTeam/AdguardFilters/issues/27226
+||netdna-ssl.com^$popup,third-party
+! https://forum.adguard.com/index.php?threads/26731/
+||kiev.ua^$third-party
+! Fixing a lot of issues, caused by $popup rules with Adguard app
+! https://forum.adguard.com/index.php?threads/16793/
+|http://$popup,domain=
+|https://$popup,domain=
+/^\$popup,domain=[\s\S]*\|hqq\.tv\|[\s\S]*\|tinypic\.com\|/
+! This rule breaks the sites with ads, which are loaded through this domain
 ||piguiqproxy.com^$third-party
-!!! START: ABP Japanese Filter
+||amgload.net^$third-party
+! End: Liste FR
+!################
+!
+!### EasyList Germany ###
+! Unnecessary exclusions
+@@||focus.de^$genericblock
+@@||transfermarkt.de^$genericblock,generichide
+@@||autobild.de^$genericblock,generichide
+@@||gofeminin.de^$genericblock
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/13389
+||hd-world.org^$subdocument,domain=hd-world.org
+! Fixing gamona.de anti-adblock
+||freenet.de/www/export/$script
+! End: EasyList Germany
+!###########################
+!
+!### ABP Japanese Filter ###
 ^aff.$popup
 _campaign=$popup
+! https://github.com/AdguardTeam/AdguardFilters/issues/28868
+##[class*="-ADS-"]:not(:root):not(body):not(input)
+##[class*="-ADs-"]:not(:root):not(body):not(input)
+##[class*="-ads-"]:not(:root):not(body):not(input)
 ! For OneSkyApp
 ||cloudfront.net^$popup
 ||akamaihd.net^$popup
-!!! END: ABP Japanese Filter
+! End: ABP Japanese Filter
+!###########################
 !
-!!! Safari doesn't support '{digit}' in regular expressions
-!{6,8}
-!{2,9}
-!{2,5}
-!!!
-! EasyList China blocks banking authorization
-|http://acs.
-! http://forum.adguard.com/showthread.php?6808
-||hwcdn.net^$third-party
+!### ChinaList+EasyList ###
+! https://github.com/AdguardTeam/SafariConverterLib/issues/4
+/g\.alicdn\.com\/mm\/yksdk\/0\.2\.\d+\/playersdk\.js/
+! End: ChinaList+EasyList
+!################
 !
-! EasyList Czech and Slovak
-.cz/ads/$~object_subrequest,domain=~hcplzen.cz
-! Fixing RUAdlist
+!### RU AdList ###
+! https://github.com/AdguardTeam/SafariConverterLib/issues/4
+||xyz^$third-party,script,xmlhttprequest,domain=
 ! censor.net.ua - site is blocked in Safari($subdocument is not supported)
 ||censor.net.ua^$subdocument,domain=censor.net.ua
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1430
 ||tapochek.net^$subdocument
+! End: RU AdList
+!#################
 !
-!!! Invalid rules from third-party filters
+!### Korean Adblock List ###
+||yandex.ru^$third-party
+!###########################
 !
-! void.gr - reported https://www.void.gr/kargig/blog/greek-adblock-plus-filter/comment-page-1/#comment-489688
-||www.dwrean.net##a[href="http://www.kratisinow.gr"]
-||www.dwrean.net##iframe[src="http://kratisinow.digitup.eu/widget/widget-artists"]
-! filtros (dead)
-||judgeporn.com/video_pop.php?$$image,~image,popup
-! persian (dead)
-||digiato.com##.author-banner FIGCAPTION
+!### xinggsf ###
+! https://github.com/xinggsf/Adblock-Plus-Rule/issues/112
+/^\*\/ad-\$\~stylesheet$/
+/^\*-ads-\$script$/
+!
+/^\*\/ads\.$/
+/^\*\/ad\.$/
+#%#//scriptlet('ubo-json-prune.js', '[].playerResponse.adPlacements [].playerResponse.playerAds playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds')
+/##\[id\|=ad\]$/
+/##\.adsbygoogle,\.ads$/
+*/market-$script
+! https://github.com/AdguardTeam/FiltersRegistry/issues/983
+/^g\.163\.com$/
+! https://github.com/AdguardTeam/AdguardFilters/issues/180570
+*/js/118.
+! https://github.com/xinggsf/Adblock-Plus-Rule/issues/23
+||acs.$domain=~youku.com|~tudou.com
+!###############
+!
+!### NoCoin Filter List ###
+||github.io^$third-party,xmlhttprequest,domain=~facebook.com|~gametactic.org|~github.com|~github.io|~tumblr.com|~wottactic.com
+!###########################
+!
+!### Hungarian filter ###
+! https://github.com/AdguardTeam/AdguardFilters/issues/84173
+/^##\.ad$/
+!###############
+!
+!### YousList ###
+||youtube.com/get_midroll_info^
+||youtube.com/get_video_info?*el=adunit
+||youtube.com/youtubei/v1/player/ad_break^
+||google.com/jsapi?autoload=*%22ads%22$script,domain=youtube.com
+youtube.com##div#feed-pyv-container
+youtube.com##div#footer-ads
+/^youtube\.com##div#masthead-ad$/
+youtube.com##div#player-ads
+youtube.com##div#video-masthead
+/youtube\.com##div\.ad-div/
+youtube.com##ytd-display-ad-renderer
+youtube.com##ytd-video-masthead-ad-renderer
+!###############
+!
+!
+!### Invalid rules ###
+!
+! Known invalid rules, which, after a long time, have not been fixed by the authors of the filters
+! or just incompatible with AdGuard
+! We remove them to improve the readability of the log
+!
+! Known unsupported rules:
+! - "redirect=****:99" - redirect priority is not support by tsurlfilter
+! - ":watch-attr()" - not implemented, questionable
+! - ":others()" - not implemented, questionable
+! - "$popunder" - not implemented, questionable
+!
+! Filter name: ADgk Mobile China list
+||189.gd/$popunder
+51cto.com###top_banner,#top_banner .ban2{height: 26px;}.top_bg,.top_bg .wrap{height: 76px;}
+blog.163.com##.wrapperbg{height: 151px;}
+bokon.net##.DivMainLeft{width: 990px;}
+book.qidian.com##.crumbs-nav.top-op {margin: 16px auto 20px;}
+chinanews.com##.enter_top {    width: 100%;    height: 154px;    background: #fff;}
+eeyy.com##.ad-top{margin-top: 10px;}
+epinv.com##[class="eprand"],[class="leftside epdown"],.yin,.huadong{height:1px;}
+gaoqing.la##body.custom-background{background-image:url('');}
+hiapk.com##.header{height: 100px;}
+thegreatdaily.com/cat##.col-lg-8.col-md-8{width:1190px;}
+tieba.baidu.com###plat_recom_carousel,.head_banner{height:75px;}
+wise99.com###top_menu01{height: 130px;}
+yxdown.com###topsearch{top: 100px;}
+||1122dk.com/js/$scipt
+||56.com##.xiu_mm,#appBanner
+||avgle.##[style*="width: 300px; height: 250px;"],.pblf-banner,[id^="divExoLayerWrapper"],center
+||jav##[id^="divExoLayerWrapper"],[id^="playertopads"],[class*="ui-widget"],[height="60"],.textwidget
+||tv.sohu.com##[width="640"][height="100"],.adv
+book.qidian.com##A.jumpWrap,DIV.left-game,DIV.right-game,DIV.games-op-wrap,DIV.right-op-wrap mb10,#j-top^Bo
+www.tyzrcs.com###__^HFa,DIV.box top_box
+||ott.cibntv.net/youku/*.mp4*&ctype=$m@res:block/null.mp4
+tieba.baidu.com##DIV.panel_bottom,LI.tl_shadow tl_shadow_new ^
+||greenet.cn/$popunder
+||189.gd/$popunder"
+||click.taobao.com/$third-party,popunder
+||com/ads *_350_330.$image
+oScript6205.type = 'text/javascript';
+oHead6205.appendChild( oScript6205);
+||pipipan.com##A[class='btn btn-yellow btn-block']
+||pipipan.com##DIV[class='alert alert-block ']
+||pipipan.com##IMG[style='width: 100%; margin: 5px 0;']
+s.parentNode.insertBefore(hm, s);
+r1eadS= null;
+!
+! Filter name: Liste AR
+! ,arabseed.tv,arbcinema.com,ce4arab.com,e-tejara.com,edlibre.com,el-ahly.com,elconsolto.com,khaberni.com,wattan.net##a[href*="://bit.ly/"]
+/^\,arabseed.tv/
+!
+! Filter name: Estonian List
+! /js/ads.
+/^\/js\/ads\.$/
+!
+! Filter name: Polish GDPR-Cookies Filters
+! ||web.archive.org/web/*/http*://*.pl/*$generichide,important,domain=web.archive.org
+/^\|\|web.archive.org\/web\/\*\/http\*:\/\/\*.pl\/\*\$generichide\,important\,domain=web.archive.org/
+!
+! Filter name: RU AdList: Counters
+! #?#+js()
+joyreactor.cc,pornreactor.cc,reactor.cc#?#+js(abort-on-property-read, Joyreactor.show_ads)
+game4you.top,games-pc.top,innal.top,naylo.top,rustorka.com,rustorka.net,rustorka.top,rustorkacom.lib#?#+js(abort-on-stack-trace, document.querySelectorAll, tick)
+otvet.mail.ru#?#+js(addEventListener-defuser, click, externalLink)
+go.mail.ru#?#+js(addEventListener-defuser, mousedown, [native code])
+auto.ru#?#+js(cookie-remover, /bltsr|crookie/)
+auto.ru#?#+js(json-prune, ads)
+online-fix.me#?#+js(no-setTimeout-if, / d[0-9]{1}/)
+buhgalter.com.ua#?#+js(no-setTimeout-if, /b-buy-access/)
+search.ukr.net#?#+js(remove-attr, data-cturl, .searchresults a, stay)
+mail.ukr.net#?#+js(remove-attr, data-safe-proxy-url, a, stay)
+rutr.life,rutracker.lib,rutracker.net,rutracker.nl,rutracker.org#?#+js(set-constant, BB.disableRefLinks, true)
+ivi.ru#?#+js(set-constant, Object.prototype.canShowMoreAds, noopFunc)
+ivi.ru#?#+js(set-constant, Object.prototype.hasAdv, noopFunc)
+dzen.*,frontend.vh.yandex.ru,widgets.kinopoisk.ru,yastatic.net#?#+js(set-constant, Object.prototype.hasPreroll, null)
+horoscopes.rambler.*#?#+js(set-constant, Object.prototype.needShowAlicePopup, null)
+lena-miro.ru,levik.blog,livejournal.*,olegmakarenko.ru,periskop.su,shakko.ru,shiro-kino.ru,vadimrazumov.ru#?#+js(set-constant, Object.prototype.Begun, undefined)
+lena-miro.ru,levik.blog,livejournal.*,olegmakarenko.ru,periskop.su,shakko.ru,shiro-kino.ru,vadimrazumov.ru#?#+js(set-constant, Object.prototype.antiadblock, false)
+nova.rambler.*#?#+js(abort-on-property-read, Object.prototype.AdvManager)
+razlozhi.*#?#+js(abort-on-property-read, yaContextCb)
+razlozhi.*#?#+js(no-setTimeout-if, X-Set-Adblock)
+rp5.*#?#+js(setTimeout-defuser, xvb)
+~vp.rambler.ru,~id.rambler.ru,www.afisha.*,autorambler.*,championat.com,eda.ru,gazeta.ru,lenta.ru,letidor.*,motor.*,passion.*,quto.*,rambler.*,wmj.*#?#+js(abort-on-stack-trace, Object.prototype.getBaseFingerprint, inlineScript)
+~vp.rambler.ru,~id.rambler.ru,www.afisha.*,autorambler.*,championat.com,eda.ru,gazeta.ru,lenta.ru,letidor.*,motor.*,passion.*,quto.*,rambler.*,wmj.*#?#+js(json-prune, Blocks)
+~vp.rambler.ru,~id.rambler.ru,www.afisha.*,autorambler.*,championat.com,eda.ru,gazeta.ru,lenta.ru,letidor.*,motor.*,passion.*,quto.*,rambler.*,wmj.*#?#^script:has-text('getPrefixes')
+dzen.*,~yandex.net,yandex.*#?#+js(json-prune, direct rtb seatbid)
+frontend.vh.yandex.*#?#+js(set-constant, Object.prototype.getAutoplay, noopFunc)
+frontend.vh.yandex.*#?#+js(set-constant, Object.prototype.initialAutoplay, false)
+mail.yandex.*#?#+js(remove-attr, data-link-id, a, stay)
+mail.yandex.by,mail.yandex.kz,mail.yandex.ru,mail.yandex.uz,mail.yandex.*#?#+js(set-constant, Daria.AdvPresenter._config, {})
+music.yandex.*#?#+js(set-constant, Object.prototype.showBranding, noopFunc)
+~mail.yandex.*,~vh.yandex.ru,~yandex.net,yandex.*#?#+js(no-setTimeout-if, t.apply(n, 25)
+~mail.yandex.*,~vh.yandex.ru,~yandex.net,yandex.*#?#+js(no-setTimeout-if, Ya.Rum.getSetting, 15)
+~vh.yandex.ru,~yandex.net,yandex.*#?#+js(abort-on-property-read, Ya.loaderVer)
+~yandex.net,yandex.*#?#+js(abort-on-property-read, yaads.renderBlock)
+~yandex.net,yandex.*#?#+js(abort-on-property-read, yaads.renderWidget)
+~yandex.net,yandex.*#?#+js(cookie-remover, tvoid)
+~yandex.net,yandex.*#?#+js(remove-attr, data-counter, .serp-list a)
+~yandex.net,yandex.*#?#+js(set-constant, __AAB__, false)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype._getAdConfig, noopFunc)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype._hasAdblock, noopFunc)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype.getHoneypot, null)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype.getYaads, null)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype.initWidgetBlock, falseFunc)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype.isOpenImageUnauthPopupEnabled, false)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype.loaderVer, noopFunc)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype.los, null)
+~yandex.net,yandex.*#?#+js(set-constant, Object.prototype.useAbdBundle, false)
+~yandex.net,yandex.*#?#+js(set-constant, home.export.adb, {})
+!
+! Filter name: Official Polish filters for AdBlock, uBlock Origin & AdGuard
+www.dobreprogramy.pl##+js(nano-remove-elements-onready.js, #phContent_avastBadge)
+filmweb.pl##+js(nano-remove-elements-onready.js, #skyBanner)
+$popunder,domain=rabatio.com|alerabat.com|salesandshopping.pl|kodyrabatowe.olx.pl|kod.rabatowy.pl
+polygamia.pl##+js(nano-remove-elements-onready.js, .screening)
+napiprojekt.pl##+js(insert-iframe, 1, honeypot, https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993), width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important)
+ppe.pl##+js(ac, active, #m_hot_1)
+ppe.pl##+js(ac, box_active, #hot_1)
+money.pl##div[class]:if(>div[class]:first-child:has-text(REKLAMA):if-not(>*))
+!
+! Filter name: road-block light
+science.hotnews.ro###\$\{tile\.name\}_\$\{tile\.id\}"
+!
+!
+! Filter name: Polish Anti Adblock Filters
+magazyn.wp.pl#@#+js(overlay-buster)
+!
+! Filter name: Xfiles
+3bmeteo.com##.4wNET
+ansa.it##.4wNET
+milanolife.it##.4wNET
+notizie.it##.4wNET
+||widgets.outbrain.com/outbrain.js$script,redirect=widgets.outbrain.com/outbrain.js
+@@##.qc-cmp2-container$domain=~ilbianconero.com
+@@##.qc-cmp2-main$domain=~ilbianconero.com
+@@###qc-cmp2-main$domain=~ilbianconero.com
+!
+! Filter name: Dandelion Sprout's Nordic Filters
+vgtv.no##+js(golem.de.js)
+!
+! Filter name: Persian Blocker
+opizo.me##.text-left:has-text(/ثانیه|رد تبلیغ/):others()
+xip.li##.form-inline:others()
+!
+!
+!
+! Deprecated $collapse and $object-subrequest modifiers
+! https://blog.adblockplus.org/development-builds/removed-support-for-the-collapse-and-object-subrequest-filter-options
+$collapse
+$~collapse
+,~collapse
+$object-subrequest
+$~object-subrequest
+,object-subrequest
+!#####################
+!
+!### EasyList Czech and Slovak ###
+! https://github.com/AdguardTeam/AdguardFilters/issues/174196
+/^(~.*)?##\.r-main$/
+! End: EasyList Czech and Slovak
+!###########################
+!
+!----- TEMPORARY -----
+! https://github.com/AdguardTeam/FiltersRegistry/issues/1107
+! TODO: remove after publishing a release with a bug fix
+dawn.fi##:not(:matches-path(/^/$/)) .header:not(:matches-media((min-width: 750px))) + div[class] + div[class] .mobile-top-ad:style(margin: -10px auto !important)
+!----- TEMPORARY -----

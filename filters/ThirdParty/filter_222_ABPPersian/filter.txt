@@ -1,10 +1,41 @@
 !
-! Contains invalid rules. For example - `-`
 ! @include "https://ideone.com/plain/K452p" /exclude="../../exclusions.txt"
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/81637
+@@-230x230.$domain=songsara.net
+! https://github.com/AdguardTeam/AdguardFilters/issues/53500
+@@||gamepedia.com/load.php?
+! Attention: check if these rules are removed after update this filter
+! https://github.com/AdguardTeam/AdguardFilters/issues/53365
+! ||digikala.com^$third-party
+!
+! /affiliate/*
+! ##.ads:not(.adf):not(.adn)
+! ##*[class$="_ads"]:not(body):not(input)
+! ##*[class^="ads-"]:not(body):not(input)
+! ##*[class^="ads_"]:not(body):not(input)
+! ##*[id$="_ads"]:not(body):not(input)
+! ##*[id^="ads_"]:not(body):not(input)
+! *Mobile&utm_medium
+! *utm_medium
+! *utm_source
+! *web&utm_campaign
+! /ads.$script,image
+! find without domains, by selector
+! ~accuweather.com##*[id*="sponsor"]:not(body):not(input)
+! ~flickr.com##*[class$="-ads"]:not(body):not(input)
+! ~flickr.com##*[class$="-ads"]:not(body):not(input)
+! ~gamespot.com,~megaupload.com##*[class*="_ad_"]:not(body):not(input)
+! ~mobile01.com##*[id$="-ads"]:not(body):not(input)
+! ~slideboom.com##*[class*="advertisement"]:not(body):not(input)
+!
+! Title: Adblock-Persian list
+! Expires: 4 days (update frequency)
 ! ---------- Generic Blocking Rules ----------
 .ir/baner
 /banner.js
+*/redirect/ads*
+redirect/ads
 images/banner*.gif
 *CornerBanner*
 banner-group.gif
@@ -29,8 +60,8 @@ _468x120
 .ir/laser*.*gif
 /Adver/
 /image/ad/*
-/ads.$script,image
 120_240
+468x60
 170x70
 582x85-
 _237x90
@@ -72,7 +103,6 @@ _storm.gif
 .com/AnnouncementsResources/
 /haraj/*
 /adv/*
-/affiliate/*
 /tablighpic/*
 /tabligh/*
 *tabliq*
@@ -102,7 +132,9 @@ _vps-banner*.gif
 ||apktops.ir/*.swf
 ||apktops.ir/wp-content/uppic/*
 ||ads.virlan.co/*
+||arga-mag.com*gif
 ||ads.iran-forum.ir/banner/
+||ariamovie.ir^$third-party
 ||asandownload.com/shop/
 ||accfile.com*.swf
 ||anaj.ir*.swf
@@ -114,6 +146,7 @@ _vps-banner*.gif
 ||androidiha.com/tellcharger.gif
 ||and-roid.ir/Mine/*
 ||ashiyane.org/banner/*
+||asriran.com/*/adv*
 ||akharinnews.com/*.swf
 ||akhbar-rooz.com/user/albums/a_0005/*
 ||alef.ir/1388/promo/
@@ -122,6 +155,7 @@ _vps-banner*.gif
 ||asandownload.com/asan/
 ||bhh27766.com/nabimages/HB/
 ||bike20.ir/*/banner/*
+||beytoote.com/images/banners/*
 ||bin-shop.com/
 ||bloghaa.com/*/shop*.gif
 ||behtarinfun.com/uploads/admin
@@ -161,7 +195,9 @@ _vps-banner*.gif
 ||emalls.ir/src/*
 ||emalls.ir/ads/
 ||farsnews.com/Banner/MainPage/Left/
+||media.farsnews.com*Test.gif
 ||media.farsnews.com/*_Test.gif
+||files.namnak.com/aup/*.gif
 ||fars3da.net/*/banner*.gif
 ||files.irzaban.com/pic/
 ||file.downallfa.com/img/*
@@ -171,11 +207,16 @@ _vps-banner*.gif
 ||funpatogh.com/images/*
 ||forum.persiantools.com/*.swf
 ||forums.mihandownload.com/uploaded/*
+||khabaronline.ir/*/ads*
+||khabaronline.ir/*gif*
 ||forum.mobilestan.net/*/tablighat/*
 ||forum.persiantools.com/images/bm/*
 ||footiran.com/images2/SlideShow_Banner/*
 ||footiran.com/images2/special/gold.png
 ||freeshare.ir/images/5iqs4ck8nq9h3zouvwan.gif
+||film2movie.*.gif
+||namnak.com/*.gif
+||gamefa.com/wp-content/*.gif
 ||gamefa.com/*baner*
 ||gamefa.com/*bener*
 ||gamefa.com/*banner*
@@ -191,7 +232,9 @@ _vps-banner*.gif
 ||digiato.com/wp-content/uploads*.gif
 ||155x155.gif
 ||digiato.com/*bahar-155-155*
+||155x155.gif
 ||digiato.com/*baner*
+||digiato.com/*swf
 ||google-analytics.com^
 ||iransetup.com/*.swf
 ||shop.ir-dl.com/*
@@ -231,12 +274,14 @@ _vps-banner*.gif
 ||khabaremruz.com/*banner*
 ||khabarpu.com/banner/*
 ||kamyabonline.com/picture/Pic/*
+||khabaronline.ir/*/ads/*
 ||kamyabonline.com/picture/*
 ||kocholo.*/img/images/*
 ||image.kocholo.*/logo/*
 ||livedata.ir*.swf
 ||lxl.ir/upload/uploads/*
 ||logo.tafrihi.com/shop/*
+||niniban.com*adv/
 ||makki.ir/*.swf
 ||machinemag.com/*/flash/*
 ||mahblog.com/adsimg/
@@ -263,8 +308,7 @@ _vps-banner*.gif
 ||multi-download.com/wp-content/pic/banner/*
 ||narenji.ir/*.swf
 ||nardebaan.ir/sites/default/files/images/b/*
-||www.noandishaan.com/*.gif
-@@http://w...content-available-to-author-only...n.com/forums/
+||noandishaan.com/*.gif
 ||narenji.ir/sites/default/files/images/b/*
 ||naghdnews.ir/uploadcenter/*.swf
 ||naghola.com/tabligh*/
@@ -286,6 +330,7 @@ _vps-banner*.gif
 ||persian-star.net/template/*
 ||persian-star.*/shop/*
 ||persian-star.*/fal/*
+||persianmob.net/imgb/*
 ||perspolisnews.com/images/M_images/*
 ||p30click.ir/*.swf
 ||p30download.com/tabliq/banner/*.gif
@@ -298,12 +343,14 @@ _vps-banner*.gif
 ||p30day.com/images/shop/
 ||p30world.com/tablighat*/
 ||p30world.com/images/link2english/*
+||patoghu.com/new/*.gif
 ||pnu-club.com/up/images/*
 ||rasashop.com/
 ||shahrsakhtafzar.com*/*.swf
 ||setap.biz/images2/Untitled-4.png
 ||sefr.ir/tabadol/*
 ||sibdownload.com/I-Shop/*
+||setare.com/files/adv/*
 ||sibkharid.com/file/*
 ||shop.p30world.com/*
 ||sourceable.net/*Banner*
@@ -320,6 +367,7 @@ _vps-banner*.gif
 ||soft98.ir*.swf
 ||soft98.ir/android*.jpg
 ||sekehfa.com/*.swf
+||tabnak.ir/*/adv/*
 ||tafrihi.com/toplink/shop1.htm
 ||triggers.wp.bandoo.com/signature_001.gif
 ||tehran98.com/*.swf
@@ -358,17 +406,19 @@ _vps-banner*.gif
 ! ---------- 3rd party blocking rules ----------
 !
 ||adweb.ir^$third-party
+||static1.farakav.com/$third-party
 ||alborzdownload.com^$third-party
 ||avaserver.com^$third-party
 ||ashiyane.org^$third-party
 ||arzoonkala.com^$third-party
+||sabavision.com^$third-party
 ||abanfi.com^$third-party
 ||bikalak.com/img/shop/$third-party
 ||blograh.com^$third-party
 ||chare.in^$third-party
 ||cloob.com^$third-party
+||chare.in^$third-party
 ||dabi.ir$~third-party
-||digikala.com^$third-party
 ||delearia.org^$third-party
 ||dude-club.com^$third-party
 ||bezoodi.com^$third-party
@@ -382,7 +432,6 @@ _vps-banner*.gif
 ||irancloop.net^$third-party
 ||iraneshgh.net^$third-party
 ||iransetup.com^$third-party
-||jamnews.ir^$third-party
 ||linkbolic.com^$third-party
 ||101kala.info^$third-party
 ||mihankar.com^$third-party
@@ -405,6 +454,7 @@ _vps-banner*.gif
 ||shop.mobilestan.net^$third-party
 ||superfish.com^$third-party
 ||salijoon.*^$third-party
+||sheypoor.com/$third-party
 ||tehrankids.com^$third-party
 ||tem98.ir^$third-party
 ||vatandownload.com^$third-party
@@ -418,10 +468,12 @@ _vps-banner*.gif
 ||seemorgh.com^$third-party
 ||tabliq.com^$third-party
 ||taktemp.com^$third-party
+||yektanet.com/$third-party
 ||vidasms.com$third-party
 ||xs-games.ir^$third-party
 !
 ||cyberad.ir^$third-party
+||tabliq.com^$third-party
 ||tablighcity.com^$third-party
 !
 ----------3rdpartyblockinghealthysite----------
@@ -431,13 +483,18 @@ _vps-banner*.gif
 ||picofile.com^$domain=7irani.ir
 ||picofile.com^$domain=p9q.ir
 ||khandeha.ir^$domain=7irani.ir
+||tabnak.ir^$domain=sheypoor.com
 ||nextag.com^$domain=head-fi.org
 ||vbfarsi.net^$domain=mobilestan.net
 ||dropboxusercontent.com^$domain=ieclub.ir
+*Mobile&utm_medium=DisplayWeb&utm
 !---------- Trackers ------------
 !
 ||ad.adtube.ir^
+||azki.com^
 ||eshopcomp.com^
+||adnegah.net$third-party
+||kaprila.com^
 ||irna.ir/Counter.aspx
 ||stats.mehrnews.com^
 ||tinystat.*^$third-party
@@ -456,13 +513,16 @@ _vps-banner*.gif
 ||countomat.com^$third-party
 ||fastwebcounter.com^$third-party
 ||fastonlineusers.com^$third-party
+||countomat.com^$third-party
 ||utop.ir^$third-party
 /counter.$domain=~cnbeta.com|~dl.pconline.com.cn|~shooter.cn
 /stat.$~script,domain=~ameba.jp|~ameblo.jp|~zcool.com.cn
 ||melatstat.com^
+||mediaad.org^
 ||clickyab.com^
 //tracking.$third-party
 ||adpersia.com^$third-party
+||google-analytics.com^
 ||vatanclick.ir^
 !
 !---------- Whitelists ----------
@@ -482,6 +542,7 @@ _vps-banner*.gif
 @@||ansarbank.com^
 @@||tpnu.ac.ir^
 @@||tejaratbank.ir^
+@@noandishaan.com/forums/
 @@||ensani.ir^
 @@||srbiau.ac.ir^
 @@||dl2.mobfa.org/Autumn-90-mamadstiler/
@@ -610,12 +671,14 @@ saveinter.net##HTML
 ||booof.ir^
 ||bziran.com^
 ||bermoda.ir^
+||blog4i.com^
 ||cafeserial.ir^
 ||cddarya.ir^
 ||cityshop.ir^
 ||chango.com^
 ||cheshmnavaz.com^
 ||downloadaneh.com^
+||davoodonline.com^
 ||domain.com^
 ||daraje1.com^
 ||drbuy.info^
@@ -721,7 +784,9 @@ saveinter.net##HTML
 ||brainyday.com^
 !
 !
+||tehranshoping.in^
 ||melimarket.com^
+||marketshoping.com^
 ||payamshop.com^
 ||hamkaran.biz^
 !
@@ -752,7 +817,6 @@ saveinter.net##HTML
 ||takshop91.biz$popup
 ||bebinin.com$popup
 !
------Restrict to domain------
 !
 ||takhfifan.com$domain=fararu.com
 !
@@ -770,6 +834,7 @@ saveinter.net##HTML
 ###plusone
 ##.plus1
 ##.ggoogle
+##.ggoogle
 ##.Gbutton
 ##.gplusboxh
 ##.kadr
@@ -778,7 +843,6 @@ saveinter.net##HTML
 ##.sidebar-textads
 ##a[href*="?aff="]
 ##a[href*="/affiliate.php?"]
-##.ads:not(.adf):not(.adn)
 ##.guestwarn
 ##a[href*="-ad."]
 ##a[href*="/ad/"]
@@ -799,19 +863,7 @@ saveinter.net##HTML
 ##.home_adv
 ###pbAds
 ###pbTopAds
-##*[id^="ads_"]:not(body):not(input)
-##*[id$="_ads"]:not(body):not(input)
-##*[class^="ads_"]:not(body):not(input)
-##*[class$="_ads"]:not(body):not(input)
-##*[class^="ads-"]:not(body):not(input)
 ###PopUpFad
-!
-~accuweather.com##*[id*="sponsor"]:not(body):not(input)
-~flickr.com##*[class$="-ads"]:not(body):not(input)
-~slideboom.com##*[class*="advertisement"]:not(body):not(input)
-~gamespot.com,~megaupload.com##*[class*="_ad_"]:not(body):not(input)
-~mobile01.com##*[id$="-ads"]:not(body):not(input)
-~t-mobile.co.uk,~channel4.com,~amusingplanet.com,~apple.com,~sportsdirect.com,~burningcamel.com,~prosperitybanktx.com,~repubblica.it,~mail.google.com##.ads
 !
 us.mg5.mail.yahoo.com##P[align="center"]
 36ohk6dgmcd1n.yom.mail.yahoo.net###yui_3_2_0_5_13102684919344953
@@ -948,7 +1000,6 @@ forum.farspatogh.com###lwflotante
 forum.p30world.com##IMG[src="http://w...content-available-to-author-only...d.com/nw_imgs/jz-download.gif"]
 forum.p30world.com##.blocked
 forum.p30world.com,forum.p30world.net,forum.p30world.ir##[id^="navbar_notice_"]
-forum.p30world.com##yui-gen0,#yui-gen30,#yui-gen31,#yui-gen32,#yui-gen33,#yui-gen34,#yui-gen35,#yui-gen36gen37,#yui-gen38,##yui-gen39,#yui-gen40,#yui-gen41,#yui-gen42,#yui-gen43,#yui-gen44,#yui-gen45,#yui-gen46,#yui-gen47,#yui-gen48,#yui-gen49,#yui-gen50,#yui-gen51,#yui-gen52,#yui-gen53,#yui-gen54,#yui-gen55,#yui-gen56,#yui-gen57,#yui-gen58,#yui-gen59,#yui-gen60,#yui-gen61,#yui-gen62,#yui-gen63,#yui-gen64,#yui-gen65,#yui-gen66,#yui-gen67,#yui-gen68,#yui-gen69,#yui-gen70
 forum.p30world.com##DIV#pagetitle
 ###navbar_notice_50
 forum.p30world.com###navbar_notice_61
@@ -977,6 +1028,7 @@ generaleshop.com###reklam01
 generaleshop.com##.ggoogle
 gooyait.com##.content-ads2
 gooyait.com###top-left
+gamefa.com###ad_bb1
 !
 gsm.ir###MainAd
 ###ad2_inline
@@ -1006,7 +1058,9 @@ iran-forum.ir##DIV[onclick="MyAdvertisements.do_click(1);"]
 iran-forum.ir##A[href="http://i...content-available-to-author-only...p.ir/Register-To-Yahoo-Group.html"]
 iran-forum.ir###reklam01
 iran-forum.ir##A[style="display:block;position:fixed;left:5px;bottom:0px;padding:5px 10px 6px 130px;color:#fff;background:#000;border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0; -moz-opacity:0.7; opacity:0.7;"]
+iran-forum.ir###reklam01
 iran-forum.ir##A[href="http://w...content-available-to-author-only...o.com"]
+iran-forum.ir##A[style="display:block;position:fixed;left:5px;bottom:0px;padding:5px 10px 6px 130px;color:#fff;background:#000;border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0; -moz-opacity:0.7; opacity:0.7;"]
 !
 ir-dl.com##.jcarousel-container.jcarousel-container-horizontal.jcarousel-direction-rtl
 ir-dl.com##.post.shop
@@ -1016,6 +1070,7 @@ jaleb.ir##[id^="adver"]
 jaleb.ir##[class="select_text_body2"]
 jaleb.ir##[id^="ADVER"]
 jaleb.ir###LEFT_S_ADVER
+jaleb.ir##[id^="adver"]
 jaleb.ir##[id^="text_adver"]
 !
 nice.3jokes.com##IFRAME[src="http://w...content-available-to-author-only...s.com/data/a_side.html"]
@@ -1032,8 +1087,12 @@ ketabeavval.ir###ad-carousel
 ketabeavval.ir##DIV[align="center"]:first-child
 konjkav.com##TD[style="width:140px;"]
 kojaro.com##[data-bind="with: advertisementManagerViewModel"] *
+syria.liveuamap.com##.phones.footer-news
+syria.liveuamap.com###modalWrapA
+liveuamap.com##.passby
 mahdaviat.org###theLayer
 makki.ir##IMG[src="http://m...content-available-to-author-only...i.ir/pic/1.jpg"]
+mehrnews.com###ads-container
 mihandownload.com##DIV[style="border: 1px solid rgb(255, 172, 145); padding: 3px; font-size: 8pt; color: rgb(0, 0, 0); font-family: Tahoma; background-color: rgb(251, 234, 234); text-align: right;"]
 mihandownload.com###entry-24620
 mihandownload.com###entry-24736
@@ -1078,6 +1137,8 @@ naghdnews.ir##DIV[style="text-align: center"]
 negahbaan.ir###tabliq-right
 negahbaan.ir###tabliq1
 negahbaan.ir###tabliq-left
+namnak.com###sidebar
+namnak.com##.mbox
 ofoghnews.ir##.advetises
 picofile.com###ads
 p30click.ir##.sidebar-textads
@@ -1138,6 +1199,9 @@ roozeshadi.com##.post:first-child
 rozblog.com##.adsa
 shahrsakhtafzar.com##CENTER
 softgozar.com##TABLE[style="background-color: #FEFF49; color: #03215D; text-align: center; border: solid 1px #FFBF00"]
+softgozar.com##.desc_add_text
+softgozar.com##.adv_text_ttl
+softgozar.com##li[style="font-size: 9pt;"]
 sibdownload.com###120-240
 sibdownload.com###amazon_scroller2
 sibdownload.com##.amazon_scroller
@@ -1146,28 +1210,14 @@ sibdownload.com##.slide2 + .post + .post > .wg-c-sabet + .wg-c-content
 stereophile.com###sub_pop
 sakhtemoon.com###jGrowl
 shahrekhabar.com##.sidebar.left
-!
 softgozar.com###ctl00_dtlAdvertiseRightPan
 ##TABLE[width="140px"]
 softgozar.com###backgray-layout
 softgozar.com##[href="http://w...content-available-to-author-only...e.ir"] > IMG
-!
 softgozar.com###dtlAdvertiseBan
-soft98.ir##.ss_topwhite[style="padding:10px 2px 10px 5px"]
-soft98.ir##.shad
-soft98.ir##.block_h_1.block_f_t
-soft98.ir##[style="width:195px"] > *
-soft98.ir##TABLE[style="width: 100%"]
-soft98.ir##TABLE[style="width: 100%;"]
-soft98.ir##P[align="center"]
-soft98.ir##P[style="font-family:Tahoma;font-size:11px"]
-soft98.ir##.elan.boxi + * + * > .block_asli
-soft98.ir##.elan.boxi
-soft98.ir###left > .elan.boxi + * > .block_asli
-soft98.ir##.shad2
-soft98.ir##.shad2.tinrnmnyveoccoyxgxpw
-soft98.ir##:first-child + .block_h_1.block_f_t + * + DIV.block_asli
-soft98.ir##:first-child > .block_h_1.block_f_t + * + .block_asli + * + * + DIV
+soft98.ir##.adx-image
+soft98.ir###toast
+soft98.ir###tooltip650625
 shop.mobilestan.net##.lProLayer
 takhfifan.com##DIV[class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable"]
 takhfifan.com##DIV[class="ui-widget-overlay"]
@@ -1184,6 +1234,7 @@ taksong.ir##P[style="text-align: center;"]
 trainbit.com##A[style="  border: 1px solid #AAAAAA;display: block;margin: 0 auto;width: 700px;"]
 taksong.ir##DIV[align="center"]:first-child
 tabnak.ir##[class^="txt_adv_"]
+tabnak.ir##.visible-xs.hidden-lg.hidden-md.hidden-sm.hidden-ms.adv_fixed_bottom + * + * IFRAME
 tooptarinha.com##DIV[style="position: fixed; right: 0px; bottom: 0px; z-index: 1000;"]
 tooptarinha.com###topbar
 tooptarinha.com##[align="center"]:last-child
@@ -1205,12 +1256,10 @@ vatandownload.com##.ads
 vazeh.com##.side
 weblogina.com###reportaj
 zaminblog.com###table6
-!
 zoomit.ir##.bannergroup
 zoomit.ir##.h_iframe-sabavision_responsive_ads_300x250 > *
 zoomit.ir##.h_iframe-sabavision_responsive_ads_728x90 > [style="display: block; padding-top: 12.362637362637363%;"]
 zoomit.ir##[class*="_ads_"] > *
-!
 zibasho.com###text-4
 zohur12.ir##DIV[class="ADS021"]
 yekmobile.com##UL

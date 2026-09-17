@@ -1,48 +1,65 @@
-! Homepage: http://adguard.com/filters.html#russian
-! License: http://creativecommons.org/licenses/by-sa/3.0/
+! Homepage: https://github.com/AdguardTeam/AdGuardFilters
+! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
+!
 !
 !-------------------------------------------------------------------------------!
-!------------------ General JS API ---------------------------------------------!
+!------------------ Common banner names ----------------------------------------!
 !-------------------------------------------------------------------------------!
-@include ../general_js_api.txt
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/common-sections/general_url.txt"
+!-------------------------------------------------------------------------------!
+!------------------ Common general hiding rules---------------------------------!
+!-------------------------------------------------------------------------------!
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/common-sections/general_elemhide.txt"
+!
 !-------------------------------------------------------------------------------!
 !------------------ Advertising networks ---------------------------------------!
 !-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/adservers.txt"
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/adservers_firstparty.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/common-sections/adservers.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/common-sections/adservers_firstparty.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/RussianFilter/sections/adservers_firstparty.txt"
 !-------------------------------------------------------------------------------!
-!------------------ Common anti-adblock ----------------------------------------!
+!------------------ Anti-adblock rules -----------------------------------------!
 !-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/antiadblock.txt"
-!-------------------------------------------------------------------------------!
-!------------------ Extended CSS rules -----------------------------------------!
-!-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/css_extended.txt"
-!-------------------------------------------------------------------------------!
-!------------------ General hiding rules----------------------------------------!
-!-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/general_elemhide.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/common-sections/antiadblock.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/RussianFilter/sections/antiadblock.txt"
 !-------------------------------------------------------------------------------!
 !------------------ General javascript, CSS and HTML extensions ----------------!
 !-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/general_extensions.txt"
-!-------------------------------------------------------------------------------!
-!------------------ Banner names -----------------------------------------------!
-!-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/general_url.txt"
-!-------------------------------------------------------------------------------!
-!------------------ News exchange ----------------------------------------------!
-!-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/news_exchange.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/common-sections/general_extensions.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/RussianFilter/sections/general_extensions.txt"
 !-------------------------------------------------------------------------------!
 !------------------ Rules for specific web sites  ------------------------------!
 !-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/specific.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/common-sections/specific.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/RussianFilter/sections/specific.txt"
 !-------------------------------------------------------------------------------!
 !------------------ Content replacement rules ----------------------------------!
 !-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/replace.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/RussianFilter/sections/replace.txt"
 !-------------------------------------------------------------------------------!
-!------------------ White list (exceptions list)  ------------------------------!
+!-------------- Fixing filtration errors (false-positive) ----------------------!
 !-------------------------------------------------------------------------------!
-@include "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/RussianFilter/sections/whitelist.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/common-sections/allowlist.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/RussianFilter/sections/allowlist.txt"
+!-------------------------------------------------------------------------------!
+!-------------- Belarusian filter ----------------------------------------------!
+!-------------------------------------------------------------------------------!
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/Belarusian/sections/filter.txt"
+!-------------------------------------------------------------------------------!
+!-------------- Kazakh filter --------------------------------------------------!
+!-------------------------------------------------------------------------------!
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/Kazakh/sections/filter.txt"
+!-------------------------------------------------------------------------------!
+!
+! TODO: remove inclusions below after releasing 'AdGuard for Safari' and 'Content Blocker for Android'
+! Before deleting, check if enough users were upgraded to the version with the new filter
+!
+! AdGuard Ukrainian filter
+!#if (adguard_ext_safari || adguard_ext_android_cb)
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/UkrainianFilter/sections/adservers_firstparty.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/UkrainianFilter/sections/antiadblock.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/UkrainianFilter/sections/general_extensions.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/UkrainianFilter/sections/specific.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/UkrainianFilter/sections/replace.txt"
+@include "https://adguardteam.github.io/AdguardFilters/CyrillicFilters/UkrainianFilter/sections/allowlist.txt"
+!#endif
