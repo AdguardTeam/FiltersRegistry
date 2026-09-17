@@ -8,6 +8,7 @@
 
 BASE_BRANCH="master"
 BUILD_FLAGS="--no-patches-prepare --strip-generated-meta"
+ESCAPED_BASE_BRANCH="${BASE_BRANCH//\//-}"
 
 # Check prerequisites up front — otherwise a missing tool or the wrong
 # directory only surfaces later as a cryptic yarn/git error.
@@ -37,10 +38,10 @@ if ! mkdir "$LOCK_DIR" 2>/dev/null; then
 fi
 trap 'rm -rf "$LOCK_DIR"' EXIT
 
-MASTER_WORK_TREE="$TEMP_DIR/reg-${BASE_BRANCH}-build"
+MASTER_WORK_TREE="$TEMP_DIR/reg-${ESCAPED_BASE_BRANCH}-build"
 CHANGED_WORK_TREE="$TEMP_DIR/reg-changed-build"
 META_FILE="$TEMP_DIR/reg-meta.env"
-PLATFORMS_MASTER="$TEMP_DIR/platforms_${BASE_BRANCH}_build"
+PLATFORMS_MASTER="$TEMP_DIR/platforms_${ESCAPED_BASE_BRANCH}_build"
 PLATFORMS_CHANGED="$TEMP_DIR/platforms_changed_build"
 
 # Downloaded once and copied into both worktrees' $STATS_BASE_PATH_REL, so both
@@ -53,14 +54,14 @@ LOG_DIR_NAME="logs"
 LOG_DIR="$TEMP_DIR/$LOG_DIR_NAME"
 mkdir -p "$LOG_DIR"
 
-LOG_MASTER_INSTALL="$LOG_DIR/${BASE_BRANCH}-install.log"
+LOG_MASTER_INSTALL="$LOG_DIR/${ESCAPED_BASE_BRANCH}-install.log"
 LOG_CHANGED_INSTALL="$LOG_DIR/changed-install.log"
-LOG_MASTER_BUILD="$LOG_DIR/${BASE_BRANCH}-build.log"
+LOG_MASTER_BUILD="$LOG_DIR/${ESCAPED_BASE_BRANCH}-build.log"
 LOG_CHANGED_BUILD="$LOG_DIR/changed-build.log"
 LOG_DOWNLOAD_STATS="$LOG_DIR/download-stats.log"
 LOG_COPY_STATS="$LOG_DIR/copy-stats.log"
 LOG_SYNC_BASELINE="$LOG_DIR/sync-baseline.log"
-LOG_COPY_MASTER="$LOG_DIR/copy-${BASE_BRANCH}.log"
+LOG_COPY_MASTER="$LOG_DIR/copy-${ESCAPED_BASE_BRANCH}.log"
 LOG_COPY_CHANGED="$LOG_DIR/copy-changed.log"
 LOG_WIPE_PLATFORMS="$LOG_DIR/wipe-platforms.log"
 LOG_RESTORE_PLATFORMS="$LOG_DIR/restore-platforms.log"
