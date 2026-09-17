@@ -8,7 +8,9 @@ import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import { FOLDER_WITH_NEW_FILTERS, FOLDER_WITH_OLD_FILTERS } from './constants.js';
 // eslint-disable-next-line import/no-unresolved
-import { parseFlags, validateFlags, validateArgs } from './build-config.ts';
+import {
+    parseFlags, validateFlags, validateArgs, scopeFlagsFor,
+} from './build-config.ts';
 import { stripGeneratedMetaFromDir } from './strip-generated-meta.ts';
 import { findFiles } from '../utils/find_files.js';
 
@@ -61,14 +63,6 @@ const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
 // applying a stats cache outside the allowed --include/--skip scope results
 // will trigger a hard failure in compile().
 const optimizationStatsScopeFile = `${optimizationStatsDir}.scope`;
-
-/**
- * Generates a scope flag string for the compiler based on included and excluded filter IDs.
- * @param {number[]} included - Array of included filter IDs
- * @param {number[]} excluded - Array of excluded filter IDs
- * @returns {string}
- */
-export const scopeFlagsFor = (included, excluded) => `include=${included.join(',')};exclude=${excluded.join(',')}`;
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt

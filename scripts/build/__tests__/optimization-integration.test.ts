@@ -7,7 +7,8 @@ import path from 'path';
 import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { findFiles } from '../../utils/find_files.js';
-import { scopeFlagsFor } from '../build.js';
+// eslint-disable-next-line import/no-unresolved
+import { scopeFlagsFor } from '../build-config.js';
 
 const unscopedFlags = scopeFlagsFor([], []);
 
