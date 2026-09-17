@@ -747,7 +747,11 @@ if confirm; then
         fi
         rm -rf "$SHARED_STATS_DIR"
         mv "$SHARED_STATS_DIR.tmp" "$SHARED_STATS_DIR"
-        printf '%s' "$CURRENT_STATS_SCOPE" > "$SHARED_STATS_SCOPE_FILE.tmp"
+        if [ ! -f "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" ]; then
+            die "download-stats succeeded but wrote no .scope marker at $MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" \
+                "$LOG_DOWNLOAD_STATS"
+        fi
+        cp "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" "$SHARED_STATS_SCOPE_FILE.tmp"
         mv "$SHARED_STATS_SCOPE_FILE.tmp" "$SHARED_STATS_SCOPE_FILE"
     else
         echo "${C_CYAN}${ARROW}${C_RESET} Reusing existing shared stats"
