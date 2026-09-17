@@ -1,12 +1,12 @@
-! Checksum: DfGqmuJeFwMNNqBLle3jwA
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1789663215-14400.patch
+! Checksum: i7JYgaZF6BwLeFcU/bg3HA
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1789677562-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.0
-! TimeUpdated: 2026-09-17T16:37:36+00:00
+! Version: 2.0.2.1
+! TimeUpdated: 2026-09-17T20:36:41+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
-||widget.kapa.ai/kapa-widget.bundle.js$script,domain=arrow.apache.org|developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
+||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
 ||widget.molin.ai/shop-ai.js$script,domain=benu.hu|euronics.hu|www.decathlon.hu
 1password.com##.header-navigation__nav-banner-link[href="/product/unified-access"] > .box-decoration-clone
 www.1password.dev#?#[role="menuitem"]:contains(Copy page as Markdown for LLMs)
@@ -177,7 +177,6 @@ www.thebricks.com###sidebar-cta
 www.thebricks.com##.Cta1_container__T8L_e, .Cta2_container__dcad2, .Cta3_container__pjUHX, .Cta4_container__Ut98Y, .Cta5_container__8bABo
 www.thebricks.com##.Modal_container__jm1jX
 www.britannica.com#$#.category-link-CHATBOT { visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; font-size: 0 !important }
-||www.britannica.com/chat-api/$xmlhttprequest,domain=www.britannica.com
 www.britannica.com##.header-topic-britannica-ai-module
 www.britannica.com##.toc-sticky-header-ai-container
 www.britannica.com##.ai-index-page-summary-module
@@ -434,10 +433,6 @@ gitbook.com##[data-testid="ai-chat-button"]
 gitbook.com##button[aria-label="GitBook Assistant"]
 gitbook.com#$?#button[aria-label="GitBook Assistant"] { remove: true; }
 ||api.individual.githubcopilot.com/$xmlhttprequest,domain=github.com
-github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
-github.com##[aria-labelledby="footer-title-platform"] li:has([href="/features/copilot"])
-github.com##[aria-labelledby="footer-title-platform"] li:has(> [href="/features/ai"])
-github.com##[aria-labelledby="footer-title-ecosystem"] li:has(> [href="/mcp"])
 github.com##[data-testid="top-bar-actions"] > .hide-md:has(> .CopilotItems-module__Wrapper__BFG9q)
 github.com##[data-component="ActionList.Group"]:has([data-testid="quick-search-suggestion"][href="/copilot"])
 github.com##[data-component="ActionList.Divider"]:has(+ [data-component="ActionList.Group"] [data-testid="quick-search-suggestion"][href="/copilot"])
@@ -482,13 +477,14 @@ github.com#$?#[role="menuitem"]:has(.octicon-copilot) { remove: true; }
 github.com##[data-component="ActionList.Divider"]:last-child
 github.com##[data-component="ActionList.Divider"] + [data-component="ActionList.Divider"]
 github.com##[data-test-id="copilot-actions-chat-button"]
-github.com##li:has(> div[class^="NavGroup-module__group"] a[href="https://github.com/features/copilot"])
-github.com##li:has(> a[class^="NavLink-module__link"][href="https://github.com/resources/articles?topic=ai"])
+github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
+github.com##li:has(> div[class^="NavGroup-module__group"]):has([href="https://github.com/features/copilot"]):has([href="https://github.com/features/ai/github-app"]):has([href="https://github.com/mcp"])
+github.com##li:has(> [href="https://github.com/resources/articles?topic=ai"][class^="Primer_Brand__Link-module__Link___"])
+github.com##li:has(> [href="https://github.com/features/copilot/copilot-business"][class^="Primer_Brand__Link-module__Link___"])
 github.com##.Primer_Brand__Button-module__Button___lDruK[href="/github-copilot/pro"]
-github.com##[data-testid="Grid-_R_12b_"]
-github.com###automation > .lp-SectionTemplate > .lp-SectionBlock > .lp-SectionBlock-content > :is(.lp-SectionIntro, .lp-SectionHero)
-github.com##.Link--secondary[href="/features/copilot"]
-github.com##.Link--secondary[href="/features/ai"]
+github.com##[aria-labelledby="footer-title-platform"] li:has([href="/features/copilot"])
+github.com##[aria-labelledby="footer-title-platform"] li:has(> [href="/features/ai"])
+github.com##[aria-labelledby="footer-title-ecosystem"] li:has(> [href="/mcp"])
 github.com##global-banner#desktop_copilot_app
 cli.github.com##.announcement-banner[href="https://github.com/features/copilot/cli"]
 cli.github.com##nav [href="https://github.com/features/copilot/cli"]
@@ -1031,6 +1027,9 @@ docs.rackspace.com##.Menu-Item[href^="https://chat.openai.com/?q="]
 docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="]
 docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="] + .Menu-Divider
 www.rambler.ru##.rc__788yz.rc__U-mRx.r-vvrm5f4e
+www.raspberrypi.com##.search-or
+www.raspberrypi.com##.ask-ai-trigger
+www.raspberrypi.com##.DocSearch-HitsFooter:has(> .DocSearch-AskAI)
 manual.raycast.com##[class^="button-module__"][href^="raycast://extensions/raycast/ai/ai-chat?"]
 www.razer.com##[data-more-menu-uid="mm-razer-ai-node"]
 www.razer.com##li:has(> [href="https://www.razer.com/newsletter/ai"])
