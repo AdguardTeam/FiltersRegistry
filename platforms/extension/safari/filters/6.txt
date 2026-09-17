@@ -1,9 +1,9 @@
-! Checksum: xtVhReCLAh0dD5850W2YWg
-! Diff-Path: ../patches/6/6-s-1789629721-3600.patch
+! Checksum: Eoaq0u4KGpRX8Mi+zRYgXQ
+! Diff-Path: ../patches/6/6-s-1789647922-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.62
-! TimeUpdated: 2026-09-17T07:18:27+00:00
+! Version: 2.0.53.63
+! TimeUpdated: 2026-09-17T12:22:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -479,11 +479,15 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 !
 !
 ! https://github.com/uBlockOrigin/uAssets/issues/34187
+igorslab.de#?#div[class]:matches-attr("/^data-[0-9a-z]{3,}-[0-9a-z]{3,}/"="/[0-9A-Za-z]{27}\.[0-9A-Za-z]{32}$/")
+igorslab.de#?#.ilgha-scale-frame:contains(/Similar products|Ähnliche Artikel|相似产品/)
+igorslab.de##[aria-label="Advertisement" i] + svg
+igorslab.de##[aria-label="Werbung" i] + svg
+igorslab.de##[aria-label="广告"] + svg
+igorslab.de##div[style*="width:100%;max-width:980px"]
+igorslab.de##a[href^="/"][href$="/"][style][rel][target]
 ||igorslab.de/wp-content/plugins/igorslab-ads-suite/
-igorslab.de#?#a[href^="https://www.igorslab.de/"][style][rel]:matches-attr(href="/^https:\/\/www\.igorslab\.de\/(?:[0-9a-z-]{7,32}\/)+$/")
-igorslab.de#?#span[class]:contains(/^\s*(Advertisement|Werbung|广告)\s*$/)
-igorslab.de##span[style]:has(svg path)
-/^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g$/$image,~third-party,match-case
+/^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g(?:\?[0-9a-z-]{7,16}=[0-9a-z-]{7,16})?$/$image,~third-party,match-case
 /^https:\/\/www\.igorslab\.de\/[0-9a-z]{7,}\/A[\/0-9A-Z_a-z-]{100,}$/$image,~third-party,match-case
 igorslab.de#%#//scriptlet('remove-node-text', 'script', 'WeakSet()')
 igorslab.de##img[src^="blob:http"]
