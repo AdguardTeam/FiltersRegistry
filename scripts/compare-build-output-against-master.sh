@@ -555,8 +555,12 @@ else
     while true; do
         read -r -p "Select a branch [1-${#BRANCHES[@]}] (default: $default_num): " choice
         choice=${choice:-$default_num}
-        if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -ge 1 ] && [ "$choice" -le ${#BRANCHES[@]} ]; then
-            break
+        if [[ "$choice" =~ ^[0-9]+$ ]]; then
+            # A leading zero (e.g. "010") would otherwise be read as octal by the arithmetic below.
+            choice=$((10#$choice))
+            if [ "$choice" -ge 1 ] && [ "$choice" -le ${#BRANCHES[@]} ]; then
+                break
+            fi
         fi
         echo "${C_RED}${CROSS}${C_RESET} Enter a number between 1 and ${#BRANCHES[@]}."
     done
