@@ -105,7 +105,10 @@ jobs:
     needs: update
     # The notification job only reads repo data, so the default read-only token
     # is enough; do not grant it the write permissions of the update job.
+    # `actions: read` is still needed: action-slack resolves the `job` field
+    # through the Actions API, and unlisted permission scopes default to none.
     permissions:
+      actions: read
       contents: read
     if:
       ${{
