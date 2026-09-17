@@ -241,6 +241,22 @@ filter_flags() {
     printf '%s' "$flags"
 }
 
+# Normalizes a comma-separated filter-ID list the same way build.js's
+# scopeFlagsFor() does (Number.parseInt), e.g. "01,2" -> "1,2" — so a scope
+# string built from it compares equal to one build.js wrote, even if the
+# filter-selection prompt let a leading zero through.
+normalize_filter_ids() {
+    local ids=$1 id out=""
+    [ -z "$ids" ] && return 0
+    local IFS=','
+    # shellcheck disable=SC2086
+    set -- $ids
+    for id in "$@"; do
+        out="${out:+$out,}$((10#$id))"
+    done
+    printf '%s' "$out"
+}
+
 # True when a copied platforms dir actually holds built filter files, not an
 # empty tree left by a previous run that died mid-build (which would otherwise
 # get reused and reported as PASS against another empty tree).
@@ -577,6 +593,8 @@ if confirm; then
             exit 1
         fi
     done
+    INCLUDED_FILTER_IDS=$(normalize_filter_ids "$INCLUDED_FILTER_IDS")
+    EXCLUDED_FILTER_IDS=$(normalize_filter_ids "$EXCLUDED_FILTER_IDS")
 fi
 echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}] exclude=[${EXCLUDED_FILTER_IDS:-none}]"
 
