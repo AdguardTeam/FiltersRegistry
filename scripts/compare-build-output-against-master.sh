@@ -715,13 +715,22 @@ if confirm; then
             die "download-stats reported success but produced no stats at $MASTER_WORK_TREE/$STATS_BASE_PATH_REL" \
                 "$LOG_DOWNLOAD_STATS"
         fi
-        rm -rf "$SHARED_STATS_DIR"
+        # Copy into a temp dir and swap it into place only on success, so an
+        # interrupt mid-copy can't destroy a still-good previous snapshot or
+        # leave a partial one that a later run's scope check would accept —
+        # the old dir (and its .scope, untouched until the swap) stays valid
+        # until the new one is fully ready.
+        rm -rf "$SHARED_STATS_DIR.tmp"
         mkdir -p "$(dirname "$SHARED_STATS_DIR")"
         if ! run_with_spinner "copying refreshed stats to $SHARED_STATS_DIR" "$LOG_DOWNLOAD_STATS" \
-            cp -r "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL" "$SHARED_STATS_DIR"; then
+            cp -r "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL" "$SHARED_STATS_DIR.tmp"; then
+            rm -rf "$SHARED_STATS_DIR.tmp"
             die "copying refreshed stats to $SHARED_STATS_DIR FAILED" "$LOG_DOWNLOAD_STATS"
         fi
-        printf '%s' "$CURRENT_STATS_SCOPE" > "$SHARED_STATS_SCOPE_FILE"
+        rm -rf "$SHARED_STATS_DIR"
+        mv "$SHARED_STATS_DIR.tmp" "$SHARED_STATS_DIR"
+        printf '%s' "$CURRENT_STATS_SCOPE" > "$SHARED_STATS_SCOPE_FILE.tmp"
+        mv "$SHARED_STATS_SCOPE_FILE.tmp" "$SHARED_STATS_SCOPE_FILE"
     else
         echo "${C_CYAN}${ARROW}${C_RESET} Reusing existing shared stats"
     fi
