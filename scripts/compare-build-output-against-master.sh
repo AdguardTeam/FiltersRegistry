@@ -221,13 +221,13 @@ build_subcommands() {
     [ "$BUILD_MODE" = "plain" ] && echo "build $BUILD_FLAGS" || echo "build:local $BUILD_FLAGS"
 }
 
-# Given a ref and the SHA a previous run recorded for it, returns a dim
-# "(now at <short>)" fragment when the ref has moved on since — appended to
-# that branch's line in the reuse prompt to show the kept output is stale.
-# Empty when the SHA still matches, or the ref no longer resolves.
+# Given a branch name and the SHA a previous run recorded for it, returns a
+# dim "(now at <short>)" fragment when the branch has moved on since —
+# appended to that branch's line in the reuse prompt to show the kept output
+# is stale. Empty when the SHA still matches, or the branch no longer exists.
 sha_drift_note() {
-    local ref=$1 recorded=$2 current
-    current=$(git rev-parse --verify --quiet "$ref" 2>/dev/null) || return 0
+    local branch=$1 recorded=$2 current
+    current=$(git rev-parse --verify --quiet "refs/heads/$branch" 2>/dev/null) || return 0
     [ "$current" = "$recorded" ] && return 0
     printf '%s' "  ${C_DIM}(now at ${current:0:9})${C_RESET}"
 }
@@ -613,11 +613,11 @@ else
     echo "${C_CYAN}${ARROW}${C_RESET} Cleanup after run: Yes"
 fi
 
-if ! MASTER_SHA=$(git rev-parse --verify "$BASE_BRANCH" 2>/dev/null); then
+if ! MASTER_SHA=$(git rev-parse --verify "refs/heads/$BASE_BRANCH" 2>/dev/null); then
     echo "${C_RED}${CROSS} Error:${C_RESET} local branch '$BASE_BRANCH' not found. Fetch/checkout it first." >&2
     exit 1
 fi
-if ! CHANGED_SHA=$(git rev-parse --verify "$CHANGED_BRANCH" 2>/dev/null); then
+if ! CHANGED_SHA=$(git rev-parse --verify "refs/heads/$CHANGED_BRANCH" 2>/dev/null); then
     echo "${C_RED}${CROSS} Error:${C_RESET} branch '$CHANGED_BRANCH' could not be resolved (deleted since it was picked?)." >&2
     exit 1
 fi
