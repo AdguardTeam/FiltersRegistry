@@ -745,12 +745,12 @@ if confirm; then
             rm -rf "$SHARED_STATS_DIR.tmp"
             die "copying refreshed stats to $SHARED_STATS_DIR FAILED" "$LOG_DOWNLOAD_STATS"
         fi
-        rm -rf "$SHARED_STATS_DIR"
-        mv "$SHARED_STATS_DIR.tmp" "$SHARED_STATS_DIR"
         if [ ! -f "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" ]; then
             die "download-stats succeeded but wrote no .scope marker at $MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" \
                 "$LOG_DOWNLOAD_STATS"
         fi
+        rm -rf "$SHARED_STATS_DIR"
+        mv "$SHARED_STATS_DIR.tmp" "$SHARED_STATS_DIR"
         cp "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" "$SHARED_STATS_SCOPE_FILE.tmp"
         mv "$SHARED_STATS_SCOPE_FILE.tmp" "$SHARED_STATS_SCOPE_FILE"
     else
