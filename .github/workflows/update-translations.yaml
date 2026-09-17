@@ -110,10 +110,13 @@ jobs:
     permissions:
       actions: read
       contents: read
+    # `always()` keeps the alert on any non-success outcome; `!= 'success'`
+    # also covers runs stopped by timeout-minutes, which GitHub reports as
+    # 'cancelled' rather than 'failure'.
     if:
       ${{
         always() &&
-        needs.update.result == 'failure' &&
+        needs.update.result != 'success' &&
         github.repository == 'AdguardTeam/FiltersRegistry'
       }}
     steps:
