@@ -1,9 +1,9 @@
-! Checksum: RT0AVI5D+23MwQYowTFntw
-! Diff-Path: ../patches/260/260-s-1789663233-14400.patch
+! Checksum: OH2sBj+dYzC9XhKu5QLoWw
+! Diff-Path: ../patches/260/260-s-1789677579-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.0
-! TimeUpdated: 2026-09-17T16:37:36+00:00
+! Version: 2.0.2.1
+! TimeUpdated: 2026-09-17T20:36:41+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -30,7 +30,7 @@
 !   See https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/74
 ##.js--show.gen-ai
 ! Floating AI buttons
-||widget.kapa.ai/kapa-widget.bundle.js$script,domain=arrow.apache.org|developer.vonage.com|developers.reddit.com|docs.posit.co|kapa.ai|sentry.zendesk.com
+||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
 ||widget.molin.ai/shop-ai.js$script,domain=benu.hu|euronics.hu|www.decathlon.hu
 ! ===============
 ! == 1Password ==
@@ -532,8 +532,6 @@ www.thebricks.com##.Modal_container__jm1jX
 ! "Ask the Chatbot" button below search bar
 ! * Use style to prevent navigation arrow from covering other options
 www.britannica.com#$#.category-link-CHATBOT { visibility: hidden !important; height: 0 !important; width: 0 !important; padding: 0 !important; margin: 0 !important; font-size: 0 !important }
-! -- https://www.britannica.com/chatbot
-||www.britannica.com/chat-api/$xmlhttprequest,domain=www.britannica.com
 ! -- https://www.britannica.com/science/star-astronomy
 ! Buttons at top of article
 www.britannica.com##.header-topic-britannica-ai-module
@@ -1317,13 +1315,6 @@ gitbook.com#$?#button[aria-label="GitBook Assistant"] { remove: true; }
 ! Copilot network requests
 ! * Prevents Copilot-generated commit messages
 ||api.individual.githubcopilot.com/$xmlhttprequest,domain=github.com
-! -- https://github.com/home
-! Try Copilot button
-github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
-! Footer items
-github.com##[aria-labelledby="footer-title-platform"] li:has([href="/features/copilot"])
-github.com##[aria-labelledby="footer-title-platform"] li:has(> [href="/features/ai"])
-github.com##[aria-labelledby="footer-title-ecosystem"] li:has(> [href="/mcp"])
 ! -- https://github.com/ (logged in)
 ! Header - "Chat with Copilot" icon next to search bar
 github.com##[data-testid="top-bar-actions"] > .hide-md:has(> .CopilotItems-module__Wrapper__BFG9q)
@@ -1429,20 +1420,20 @@ github.com##[data-component="ActionList.Divider"] + [data-component="ActionList.
 ! "Explain error" button
 github.com##[data-test-id="copilot-actions-chat-button"]
 ! -- https://github.com/home
-! Header - Platform >  "AI Code Creation" section
-! * This filter might hide more than intended if the Copilot button gets moved to a column with non-ai features
-github.com##li:has(> div[class^="NavGroup-module__group"] a[href="https://github.com/features/copilot"])
-! Header - Resources > Explore by Topic > "AI" link
-github.com##li:has(> a[class^="NavLink-module__link"][href="https://github.com/resources/articles?topic=ai"])
-! "Try GitHub Copilot free" button
+! Try Copilot button (No longer used?)
+github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
+! Navbar - Platform - "AI Code Creation" section
+github.com##li:has(> div[class^="NavGroup-module__group"]):has([href="https://github.com/features/copilot"]):has([href="https://github.com/features/ai/github-app"]):has([href="https://github.com/mcp"])
+! Navbar - Resources - AI
+github.com##li:has(> [href="https://github.com/resources/articles?topic=ai"][class^="Primer_Brand__Link-module__Link___"])
+! Navbar - Enterprise - Copilot for Business
+github.com##li:has(> [href="https://github.com/features/copilot/copilot-business"][class^="Primer_Brand__Link-module__Link___"])
+! "Try GitHub Copilot free" button (No longer used?)
 github.com##.Primer_Brand__Button-module__Button___lDruK[href="/github-copilot/pro"]
-! "Your AI Partner everywhere" section
-github.com##[data-testid="Grid-_R_12b_"]
-! "Accelerate your entire workflow" section
-github.com###automation > .lp-SectionTemplate > .lp-SectionBlock > .lp-SectionBlock-content > :is(.lp-SectionIntro, .lp-SectionHero)
-! Footer - AI links
-github.com##.Link--secondary[href="/features/copilot"]
-github.com##.Link--secondary[href="/features/ai"]
+! Footer items
+github.com##[aria-labelledby="footer-title-platform"] li:has([href="/features/copilot"])
+github.com##[aria-labelledby="footer-title-platform"] li:has(> [href="/features/ai"])
+github.com##[aria-labelledby="footer-title-ecosystem"] li:has(> [href="/mcp"])
 ! -- https://github.com/apps/desktop
 ! Header banner for GitHub Copilot app
 github.com##global-banner#desktop_copilot_app
@@ -3156,6 +3147,15 @@ docs.rackspace.com##.Menu-Item[href^="https://claude.ai/new?q="] + .Menu-Divider
 ! =============
 ! AI news overview
 www.rambler.ru##.rc__788yz.rc__U-mRx.r-vvrm5f4e
+! ==================
+! == Raspberry Pi ==
+! ==================
+! -- https://www.raspberrypi.com/documentation/
+! Search "or Ask a question"
+www.raspberrypi.com##.search-or
+www.raspberrypi.com##.ask-ai-trigger
+! Search suggestion for "Ask a question about"
+www.raspberrypi.com##.DocSearch-HitsFooter:has(> .DocSearch-AskAI)
 ! =============
 ! == Raycast ==
 ! =============
