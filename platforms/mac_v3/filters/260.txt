@@ -1,9 +1,9 @@
-! Checksum: cCDgnWdFssPIKwqnEe0+Zg
-! Diff-Path: ../patches/260/260-s-1789649341-14400.patch
+! Checksum: uxR8xsfNH7nHnai1P5LJPw
+! Diff-Path: ../patches/260/260-s-1789663230-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.1.99
-! TimeUpdated: 2026-09-17T12:46:02+00:00
+! Version: 2.0.2.0
+! TimeUpdated: 2026-09-17T16:37:36+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1081,7 +1081,7 @@ www.ebay.com##.srp-river-answer--FAQ_KW_SRP_MODULE
 ! == Ecosia ==
 ! ============
 ! AI-free searching
-www.ecosia.org#%#//scriptlet('set-cookie-reload', 'ECNOAI', 'true')
+www.ecosia.org#%#//scriptlet('ubo-set-cookie-reload', 'ECNOAI', 'true')
 ! -- https://www.ecosia.org/ (Homepage)
 ! "AI Chat" in search bar
 www.ecosia.org##.omnibox-search-form__ai-chat
@@ -3786,6 +3786,14 @@ www.ulta.com##chat-messenger[service*="commerce-ai"]
 ! -- https://www.ulta.com/p/teint-idole-ultra-wear-natural-matte-foundation-pimprod2039028
 ! "How can I help" questions
 www.ulta.com##.DynamicPrompts
+! ==============
+! == Unbounce ==
+! ==============
+! -- https://unbounce.com/landing-page-articles/what-is-a-landing-page/
+! Product list & Footer - MCP
+unbounce.com##.menu-mcp
+! Footer - "Ask AI how Unbounce scales your marketing"
+unbounce.com##.footer-ai-nav
 ! =====================
 ! == United Airlines ==
 ! =====================
@@ -4922,7 +4930,7 @@ rule34.xxx##li:has(> [rel="sponsored"])
 ! * Only hide if option has already been enabled
 rule34.xxx###displayOptions:has(#chkFilterAI[checked])
 ! Cookie to enable "Filter AI posts"
-rule34.xxx#%#//scriptlet('set-cookie-reload', 'filter_ai', '1')
+rule34.xxx#%#//scriptlet('ubo-set-cookie-reload', 'filter_ai', '1')
 ! -- My Account > My Favorites
 ! AI tagged images
 rule34.xxx###content > .image-list > span:has( > .thumb > a > img:is([title~="ai"], [title~="ai-assisted"], [title~="ai-created"], [title~="ai-generated"], [title~="ai_art"], [title~="ai_assisted"], [title~="ai_generated"], [title~="ai_voice"]))
