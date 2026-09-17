@@ -1,9 +1,9 @@
-! Checksum: bA7rYh9s3gbetluE3VIlrA
-! Diff-Path: ../patches/14/14-s-1789615259-3600.patch
+! Checksum: vrmIddxQKgLUw1t/9xFs8Q
+! Diff-Path: ../patches/14/14-s-1789618842-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.79.52
-! TimeUpdated: 2026-09-17T03:18:05+00:00
+! Version: 2.2.79.53
+! TimeUpdated: 2026-09-17T04:17:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2651,6 +2651,8 @@ superbutelki.pl,polskibanan.pl,woolona.pl,evertrek.pl,71store.pl,paczkaurody.pl,
 !
 ! NOTE: Regular rules
 !
+consent-cdn.sueddeutscher-verlag.de#%#//scriptlet('trusted-click-element', 'button[title="Einstellungen"]', '', '3500')
+consent-cdn.sueddeutscher-verlag.de#%#//scriptlet('trusted-click-element', 'button[title="Auswahl speichern"]', '', '6500')
 geekom.co.uk#%#//scriptlet('set-cookie', 'geekom_consent_mode', 'denied')
 tncfoods.com#%#//scriptlet('trusted-set-local-storage-item', 'dismissed_cookie_notice', '{"value":true,"expires":null}')
 igitems.com##div.fixed.bottom-3:has(a[href="/legal/privacy-policy#pp-cookies"])
@@ -37792,6 +37794,7 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 ! Genegic rules
 ! SECTION: Subscriptions - Generic
 !
+##.id-Story-googleFollowButton
 ##a[href^="https://yandex.ru/news/?favid="]
 ##.google-preferred-source
 ##.article__info-goog
