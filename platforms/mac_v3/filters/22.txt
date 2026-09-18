@@ -1,9 +1,9 @@
-! Checksum: h7sQ0STP6xNdqKUvJorPqA
-! Diff-Path: ../patches/22/22-s-1788524672-3600.patch
+! Checksum: pYiB/cAeGI0duerbq6YU4Q
+! Diff-Path: ../patches/22/22-s-1789730225-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.14.85
-! TimeUpdated: 2026-09-04T12:22:03+00:00
+! Version: 2.0.14.98
+! TimeUpdated: 2026-09-18T11:13:30+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -91,6 +91,7 @@ itsoku.org,nizimoenews.livedoor.blog,butumori.com,netizen-voice.blog.jp,ityoucha
 !
 ! NOTE: Blogroll specific rules
 !
+red4-kaigaimatome.com##.my-rss-scroll
 ||gundamlog.com/damepo.html
 mutyun.com##.widget_mutyun_rss_widget
 kankokunews.net##[src^="https://blogroll.livedoor.net/"]
@@ -1369,7 +1370,7 @@ blog.livedoor.jp##.RSS04 + div[style^="width:720px;height:160px"]
 [$path=/itsoku]blog.livedoor.jp##.mtm-roll
 ||blog.livedoor.jp/goldennews/js/inlink_main12.js
 ||blog.livedoor.jp/goldennews/js/inlink_mainlast.js
-blog.livedoor.jp###main-column > div.kiziue
+blog.jp,blog.livedoor.jp###main-column > div.kiziue
 blog.livedoor.jp##div[style="margin:0px;padding:0px;line-height:1.4;width:100%;background-color:#ddf4e1;"]
 ||blog.livedoor.jp/*/js/kijisita.js
 ||blog.livedoor.jp/*/js/top_post.js
@@ -1570,6 +1571,8 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (specific)
 !
+fragrantica.com###idIframeEAB
+||c.fimgs.net/*&itemId=$subdocument
 mid-day.com##p[class^="article_shareyourfeedback_"]
 marks.com###kampyleButtonContainer
 ||ipbd.ru/34122*.js
@@ -1801,6 +1804,8 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 !
 !   SECTION: Widgets - Marketing - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240788
+@@||mod.calltouch.ru^$domain=winelab.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238674
 @@||secure.livechatinc.com/customer/action/open_chat?$domain=njumobile.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229403
@@ -2034,13 +2039,17 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 !   !SECTION: Widgets - Chats (generic)
 !
 !   SECTION: Widgets - Chats (specific)
-!   NOTE: chatango.com widget
+!
+! chatango.com widget
 ||st.chatango.com^$domain=descargaseriestv.com|mysocceraustralia.com|xtapes.to|neonime.site|shirainime.com|daemon-hentai.com|seirsanduk.us|139.99.120.222|neonime.vip|snahp.it|worldcupfootball.me|freestreams-live.my|daddyhd.com
 shirainime.com,daemon-hentai.com,seirsanduk.us,139.99.120.222,freestreams-live.my##iframe[src*="chatango.com"]
 139.99.120.222##.chatango-btn
 descargaseriestv.com###block-4
 freestreams-live.my###custom_html-9
 daddyhd.com##.sidebar__inner
+! Discord
+||discord.com/api/guilds/*/widget.json|$domain=streamed.*
+||discord.com/widget?id=$domain=hentaiz.org|demonicscans.org
 !
 ! Blocking these chat widgets if they are really annoying
 ||webagent.bedore.jp^$domain=ajinomoto.co.jp
@@ -2050,6 +2059,12 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+iphone-mania.jp###custom-chat-embed-v3-root
+cyberscore.live##body > div.cursor-pointer.items-center[class*="mb:right-"]:has(+ .chat)
+zap-hosting.com###sticky-support-container > button[style]:has(> div[onclick^="openCookiePopup"])
+digital-razor.ru##.assistant-widget__message
+royal-computers.ru##div[data-chat-widget-b24u]
+royal-computers.ru##.chat-app
 nefisyemektarifleri.com##.nyt-chatbot-tooltip
 nefisyemektarifleri.com##.nyt-chatbot-toggle
 isinolsa.com###isinolsa-ai-btn
@@ -2246,6 +2261,7 @@ zebratechnologies.force.com##.zbrbot-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233934
 ||gist.ai^$domain=upi.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232077
+!+ NOT_OPTIMIZED
 posta.com.tr##.compatibility-widget
 ! https://github.com/AdguardTeam/AdguardFilters/issues/229681
 ||power-technology.com/wp-content/plugins/sgpolls/
@@ -2383,8 +2399,6 @@ milliyet.com.tr##.hadi-bilgi-yarismasi
 apollo.pl##.thulium-chat-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31944
 ||leaselink.pl/js/slide-button-shoper.js
-! block Discord widget
-||discord.com/widget?id=$domain=hentaiz.org|demonicscans.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26435
 ||sumo.com^$third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51400
@@ -2564,7 +2578,9 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+||vx-piano.independent.co.uk/checkout/template/cacheableShow.html?*&offerId=fakeOfferId$subdocument,~third-party
 aniclipse.com##body > div.pointer-events-none.items-center
+animegratis.net###ag-costs-notice
 artistgrid.cx#%#//scriptlet('trusted-click-element', 'dialog[aria-label="Announcement"] button.justify-center')
 bingebox.to#%#//scriptlet('set-session-storage-item', 'bingebox-donation-banner-dismissed', '1')
 dir.bg###doantion-banner-block

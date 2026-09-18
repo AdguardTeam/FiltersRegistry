@@ -1,8 +1,8 @@
-! Checksum: +qHWhgP+fc5fMdbCay6yhg
+! Checksum: 51zLNY92CESRkiTToWGI1Q
 ! Title: AdGuard Other Annoyances filter
-! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.47.89
-! TimeUpdated: 2026-09-04T15:15:12+00:00
+! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
+! Version: 2.0.48.48
+! TimeUpdated: 2026-09-18T20:15:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -38,6 +38,14 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/240263
+comparema.ru##.timeout__vw-location-topright
+! https://github.com/AdguardTeam/AdguardFilters/issues/241301
+yirmidort.tv###embedVideoFooter
+! Hdrezka
+! https://github.com/AdguardTeam/AdguardFilters/issues/240379
+! https://github.com/AdguardTeam/AdguardFilters/issues/240772
+newscientist.com##.read-more__standard
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239499
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239164
 turkiyegazetesi.com.tr##.article-recommended
@@ -2699,6 +2707,8 @@ rbc.ua##.telegram-link
 ||trimay.ru/?
 !
 !
+codeberg.org###tou-announcement
+tv100.com##.widget-partnership
 ortadogugazetesi.com##.detailside-inner-ad
 euyansang.com##.fixed-footer-email-signup
 aiosearch.com##iframe[src="/ban/1.html"]
@@ -3081,6 +3091,8 @@ ya.ru,yandex.*##.simple-popup__overlay_shown_true
 !
 ! Yandex.Search
 yandex.com.tr##.IntYandexAIPromo
+[$path=/products]ya.ru,yandex.*##.EProductCard-Item_type_ecom-recommendations
+[$path=/search]ya.ru,yandex.*##.EProductSnippet2_offerAdv
 [$path=/search]ya.ru,yandex.*##.AdvOffers
 [$path=/search]ya.ru,yandex.*##.EContent.SearchPage-RMG
 [$path=/search]ya.ru,yandex.*##.serp-item[data-fast-subtype="product_tiles_adv"]
@@ -3181,6 +3193,50 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+deepl.com##.below-navigation-banner-wrapper
+deepl.com##div[class^="homeExperience-module"]
+aptoide.com##div[page="appcoins-bundle"]
+gori.me##.post-reactions
+gori.me##.gorime-cta
+komputronik.pl###sidebar-banner
+lewdcorner.com##div.stfrtDonateBubble
+mercadobitcoin.com.br##a[href^="https://www.mercadobitcoin.com.br/campanhas/"] > img
+vaughn.live##.vs_v9_footer3_goal
+sport1.de##.wp-block-image > a[href*="-partner-brands"][target="_blank"] > img
+estadao.com.br##.testeira-assine
+foxreport.gr###promo-banner
+finanztip.de##.book-banner--component
+bbc.com##div[class^="Byline-styles__GooglePreferredButtonContainerStyled-sc-"]
+aniwixi.xyz##.wixi-donate-inner
+gazeta.ru##.b_promo_twz
+||marketing.mgbayern.de^
+brasilescola.uol.com.br##.chat-interno
+brasilescola.uol.com.br##.side-ferramentas-area-lista
+saechsische.de##div[data-element-selector="main-content"] > div[class*="AutomaticWeekliWidgetstyled"]
+newstsukuba.jp##.nts-banner
+navalny.com##footer.bg-bg-tertiary > div.mx-auto > a.bg-gradient-turquoise[href*="/donate"]
+kinogo.org##.cshflow
+kinogo.tm##.kng-rekl
+newsnow.com##.site-ribbon--essential-promo
+bananamall.co.kr###banner_spot_txt
+football-zone.net###c2_click_pc_side_banner_JFA_adidas
+football-zone.net###c2_click_pc_side_banner_JFC
+football-zone.net###c2_click_endofarticle_JFA_adidas_pc
+haber.sol.org.tr###block-sol-soladvertsfooter
+fukuoka-navi.jp###commonBnner
+fukuoka-navi.jp###fixed-banner
+||times.applied-net.jp/wp-content/themes/*/js/common_banners/$domain=fukuoka-navi.jp
+||fukuoka-navi.jp/wp-content/themes/fukuoka-navi2017/images/ad/$domain=fukuoka-navi.jp
+ukaudiomart.com,usaudiomart.com,canuckaudiomart.com##div[style="max-width:900px;margin-left:auto;margin-right:auto;"]
+autohebdo.de###before-footer-autopromo
+autohebdo.de##.home-cta-push
+autohebdo.de###home-autopromo
+winningpc.com##.wpc-promo-bar
+handelsblatt.com##app-commercial-teaser-group
+economia.uol.com.br##.uol-campaign-image
+forbes.com##article .paywall_ribbon
+fi.google.com##dialog[data-dialog-name="crm_fi-variant2-5seconds-centered-crm-popup-us"]
+fi.google.com###fi-pixel11-series-global-banner
 faphouse4k.com##.tour__join-section
 faphouse4k.com##.fh-join-banner
 faphouse4k.com##div[data-main-page-join-source="banner"]
@@ -3542,7 +3598,7 @@ abc.com.py##.banner-juegos-spc
 mail.google.com##div[data-pep-id="global-pep-gmail"]
 justwatch.com##.mrr-banner
 justwatch.com##.removal-container
-computerbase.de##.promobar
+mediaexpert.pl,computerbase.de##.promobar
 arkm.com##div[class*="mfaBannerContainer"]
 xn--pckua2a7gp15o89zb.com##.s-modal-trigger_cmOnboarding
 manzoku.or.jp###scrollbox-non
@@ -3621,7 +3677,7 @@ style.potepan.com##.ArticleContents a.ArticleBody__link-button
 style.potepan.com##.GuidanceToCamp
 style.potepan.com##.ArticleBanner
 style.potepan.com##.Banner
-||smart-bdash.com^$domain=type.jp
+||smart-bdash.com^$domain=type.jp|hokkaido-np.co.jp
 observer.co.uk,jutarnji.hr###piano_inline > .tp-container-inner
 newegg.com##.category-banner
 yesporn.vip##.spot_index
@@ -3666,6 +3722,7 @@ mail.yandex.*##.promozavr-anchor-carousel-banner > div
 cloud.ru##div[data-test-id="advertising-banner-wrapper-el"]
 animakima.ru##.vip-banner
 ||s.avto.ru/_autoru-frontend/AdminsMarketingSplash_
+posta.com.tr##.gps-container
 ddxfitness.ru##.blog__detail-banner
 ||hollywoodmedia.hollywoodbets.net/images/cms/new-registration-site/images/mob-sa-reg.
 gramota.ru##.global-horizontal-banner
@@ -3758,7 +3815,7 @@ ugreen.com###shopify-section-top-activity-bar
 sciencealert.com##.post-content a[href="https://www.sciencealert.com/spark-into-space-comp"] > img
 yts-official.mx##img[src="/static/images/blank-yts.gif"]
 smart.dhgate.com##body > #floating-card
-dailywire.com##div[class^="global-banner"]
+ficbook.net,dailywire.com##div[class^="global-banner"]
 berlingske.dk##div[class^="tp-modal"][style^="z-index: 300050; display: block;"]
 criticker.com##.tr_ad
 anker.com##div[id^="TopBanner"]
@@ -5867,7 +5924,7 @@ neilpatel.com##.widget-glbg
 iptv.team###promooverlay
 answers.microsoft.com##.rail-banner
 in.news.yahoo.com###module-featurebar
-rlsbb.ru##.information
+rlsbb.ru,rlsbb.cc,rlsbb.to,rlsbb.in##.information
 ruhrnachrichten.de##.topOfferContainer
 ruhrnachrichten.de##img[title="BVB-Abo"]
 peoplematters.in##.w-news-stand
@@ -6251,6 +6308,10 @@ just-auto.com##.in-article-premium-insights
 ! !SECTION: Self-promo - Regular rules
 !
 !
+! shellshock.io and mirrors
+! https://shellshock.io/unblocked/json/proxy-list.json
+##.cta-welcome-bundle
+##.cta-vip-promo
 ! ozon.ru
 ozon.ru##div[data-widget-disallow] > div.rtb_n6
 ozon.ru##div[style*="_counter_embed_desktop_lastDayBackground_"]
@@ -7846,6 +7907,7 @@ eiga.com##.header-pure-banner
 !##############################
 ! SECTION: Tweaks - CSS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/241238
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239808
 ! https://github.com/uBlockOrigin/uAssets/issues/32331
 ! https://github.com/AdguardTeam/AdguardFilters/issues/227506
@@ -7958,7 +8020,6 @@ news.kstyle.com##div[style*="width:640px;"][style*="height:253px;"] + aside > di
 ! https://github.com/AdguardTeam/AdguardFilters/issues/112415
 ! https://github.com/AdguardTeam/AdguardFilters/issues/112175
 ! go.insurance-space.xyz/?link=XBST
-! https://github.com/AdguardTeam/AdguardFilters/issues/108330
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108210
 ! circumvent countdown
 ! https://www.reddit.com/r/uBlockOrigin/comments/r43gcd/how_do_i_prevent_the_adblock_detector_and_the/
@@ -8059,6 +8120,7 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/241754
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240012
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238935
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238502
@@ -8160,7 +8222,6 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197048
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197068
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196388
-! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/3089
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195744
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195185
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194436
@@ -8211,7 +8272,6 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171550
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170596
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170389
-! https://github.com/AdguardTeam/AdguardFilters/issues/170143
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170094
 ! https://github.com/AdguardTeam/AdguardFilters/issues/116036
 ! Streamplay - speed up loading captcha
@@ -8253,7 +8313,6 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156256
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155841
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155666
-! https://github.com/AdguardTeam/AdguardFilters/issues/155761
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166097
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156959
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154877
@@ -8267,8 +8326,6 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151095
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150962
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150865
-! https://github.com/AdguardTeam/AdguardFilters/issues/150233
-! https://github.com/AdguardTeam/AdguardFilters/issues/150234
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149734
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148864
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148761
@@ -8362,7 +8419,6 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/115679
 ! https://github.com/AdguardTeam/AdguardFilters/issues/115711
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114874
-! https://github.com/AdguardTeam/AdguardFilters/issues/114408
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114082
 ! https://github.com/AdguardTeam/AdguardFilters/issues/113948
 ! https://github.com/AdguardTeam/AdguardFilters/issues/112849
