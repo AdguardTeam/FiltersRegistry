@@ -11,7 +11,7 @@ crowdinConfig="$workDir/crowdin.yml"
 # keep the list alphabetically sorted; the dir names are the repo locale dirs
 # after the languages_mapping in crowdin.yml (zh-CN is stored as `zh`)
 locales=(
-    "ar" "be" "bg" "ca" "cs" "da" "de" "el" "es"
+    "ar" "be" "bg" "ca" "cs" "da" "de" "el" "en" "es"
     "fa" "fi" "fr" "he" "hi" "hr" "hu" "hy" "id" "it"
     "ja" "ko" "lt" "mk" "ms" "nl" "no" "pl" "pt" "pt_BR"
     "pt_PT" "ro" "ru" "sk" "sl" "sr" "sv" "th" "tr" "uk"
