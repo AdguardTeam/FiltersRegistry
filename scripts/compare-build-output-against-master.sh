@@ -807,9 +807,16 @@ if [ "$DO_USE_STATS" = true ]; then
                 "$LOG_DOWNLOAD_STATS"
         fi
         rm -rf "$SHARED_STATS_DIR"
-        mv "$SHARED_STATS_DIR.tmp" "$SHARED_STATS_DIR"
-        cp "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" "$SHARED_STATS_SCOPE_FILE.tmp"
-        mv "$SHARED_STATS_SCOPE_FILE.tmp" "$SHARED_STATS_SCOPE_FILE"
+        if ! mv "$SHARED_STATS_DIR.tmp" "$SHARED_STATS_DIR"; then
+            die "swapping in refreshed stats at $SHARED_STATS_DIR FAILED" "$LOG_DOWNLOAD_STATS"
+        fi
+        # Unguarded, these two would leave a stale .scope next to the new
+        # snapshot on failure — both worktrees would then silently mismatch
+        # and fall back to remote while the report still claims "shared".
+        if ! cp "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" "$SHARED_STATS_SCOPE_FILE.tmp" \
+            || ! mv "$SHARED_STATS_SCOPE_FILE.tmp" "$SHARED_STATS_SCOPE_FILE"; then
+            die "writing $SHARED_STATS_SCOPE_FILE FAILED" "$LOG_DOWNLOAD_STATS"
+        fi
     fi
 
     if ! run_with_spinner "copying shared stats into both worktrees" "$LOG_COPY_STATS" \
