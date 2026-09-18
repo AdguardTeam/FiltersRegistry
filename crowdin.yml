@@ -1,0 +1,76 @@
+project_id: "17570"
+api_token_env: "CROWDIN_PERSONAL_TOKEN"
+preserve_hierarchy: true
+
+# Keep the download limited to the locales this repo tracks; the codes are the
+# same ones the Twosky-based download.sh used.
+export_languages:
+  - ar
+  - be
+  - bg
+  - ca
+  - cs
+  - da
+  - de
+  - el
+  - es
+  - fa
+  - fi
+  - fr
+  - he
+  - hi
+  - hr
+  - hu
+  - hy
+  - id
+  - it
+  - ja
+  - ko
+  - lt
+  - mk
+  - ms
+  - nl
+  - no
+  - pl
+  - pt
+  - pt-BR
+  - pt-PT
+  - ro
+  - ru
+  - sk
+  - sl
+  - sr
+  - sv
+  - th
+  - tr
+  - uk
+  - vi
+  - zh-CN
+  - zh-TW
+
+# Map Crowdin language codes to the locale directory names used in this repo:
+# pt-BR/pt-PT use underscores and zh-CN is stored as `zh` (the old download.sh
+# renamed zh_CN the same way). es-ES is mapped defensively so it cannot collide
+# with `es` under the two-letters-code placeholder.
+# Note: &/* is Yaml anchor syntax: https://support.atlassian.com/bitbucket-cloud/docs/yaml-anchors/
+languages_mapping: &languages_mapping
+  two_letters_code:
+    pt-BR: pt_BR
+    pt-PT: pt_PT
+    zh-CN: zh
+    zh-TW: zh_TW
+    es-ES: es_ES
+
+files:
+  - source: /temp/crowdin/source/tags.json
+    dest: /miscellaneous/filters-registry/tags.json
+    translation: /temp/crowdin/%two_letters_code%/tags.json
+    languages_mapping: *languages_mapping
+  - source: /temp/crowdin/source/groups.json
+    dest: /miscellaneous/filters-registry/groups.json
+    translation: /temp/crowdin/%two_letters_code%/groups.json
+    languages_mapping: *languages_mapping
+  - source: /temp/crowdin/source/filters.json
+    dest: /miscellaneous/filters-registry/filters.json
+    translation: /temp/crowdin/%two_letters_code%/filters.json
+    languages_mapping: *languages_mapping
