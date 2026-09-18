@@ -18,6 +18,12 @@ locales=(
     "vi" "zh" "zh_TW"
 )
 
+# Clean up the previous download first: a file the current run no longer
+# produces (removed from the project, locale dropped) would otherwise stay
+# in temp/crowdin and be re-imported, keeping stale translations alive.
+echo "Cleaning previous downloads"
+rm -rf "$crowdinDir"
+
 echo "Downloading translations"
 # --all makes the CLI match the configured files against the server-side
 # project files (by dest) instead of the local source paths, which are not
