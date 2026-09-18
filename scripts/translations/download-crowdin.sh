@@ -3,6 +3,7 @@ set -euo pipefail
 # Downloads translations from Crowdin via the Crowdin CLI instead of the
 # Twosky gateway. Requires the CROWDIN_PERSONAL_TOKEN environment variable
 # (see crowdin.yml api_token_env). Run from the scripts/translations dir.
+# Uploading strings to the service is a manual step done via upload.sh.
 workDir=../..
 crowdinDir="$workDir/temp/crowdin"
 crowdinConfig="$workDir/crowdin.yml"
@@ -16,18 +17,6 @@ locales=(
     "pt_PT" "ro" "ru" "sk" "sl" "sr" "sv" "th" "tr" "uk"
     "vi" "zh" "zh_TW"
 )
-
-# Stage the en source files in the strings format Crowdin stores; the CLI
-# resolves the project files against these paths (see `dest` in crowdin.yml)
-# and uploads them so the export patterns stay in sync with the translation
-# pattern (see the "Downloaded translations don't match" CLI FAQ).
-mkdir -p "$crowdinDir/source"
-for file in tags groups filters; do
-    node converter.js export "$workDir/locales/en/$file.json" en "$crowdinDir/source/$file.json"
-done
-
-echo "Uploading sources"
-yarn -s crowdin upload sources --config "$crowdinConfig"
 
 echo "Downloading translations"
 yarn -s crowdin download --config "$crowdinConfig"
