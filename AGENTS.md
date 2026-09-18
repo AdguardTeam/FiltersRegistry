@@ -33,7 +33,10 @@ for all supported AdGuard products.
     - `build-adguard.yaml`
     - `build-3p.yaml`
     - `test.yaml` (runs `yarn test` on every pull request)
-    - `update-translations.yaml` (weekly translations download that opens a PR)
+    - `update-translations.yaml` (weekly translations download from Crowdin that opens a PR;
+      requires the `CROWDIN_PERSONAL_TOKEN` secret)
+    - Uploading strings to the translation service is **manual only**, via the legacy
+      `scripts/translations/upload.sh` (there is no automated or Crowdin-CLI-based upload)
 - **Performance Goals**: N/A
 - **Constraints**: Filter lists must remain compatible with AdGuard's rule syntax;
   third-party filters follow an acceptance policy documented in README.md
@@ -70,6 +73,7 @@ for all supported AdGuard products.
 ├── groups/                         # Filter group definitions (metadata.json)
 ├── tags/                           # Filter tag taxonomy (metadata.json)
 ├── temp/                           # Temporary build artifacts
+├── crowdin.yml                     # Crowdin project config (project 17570, folder miscellaneous/filters-registry)
 ├── package.json                    # Project manifest and scripts
 ├── tsconfig.json                   # TypeScript config (ES2022, nodenext)
 ├── vitest.config.ts                # Test runner config

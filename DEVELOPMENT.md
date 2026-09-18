@@ -442,13 +442,20 @@ After this procedure, the Git repository size will be reduced.
 Translations live in `locales/` (45+ languages). See
 [scripts/translations/README.md](scripts/translations/README.md) for the full workflow:
 
-1. Download latest translations: `cd scripts/translations && ./download.sh`
+1. Download latest translations: `cd scripts/translations && CROWDIN_PERSONAL_TOKEN=... ./download-crowdin.sh`
 1. Validate: `yarn validate:locales`
 1. Edit strings in `locales/` as needed.
-1. Upload changes: `cd scripts/translations && ./upload.sh`
+1. Upload changes (manual only): `cd scripts/translations && ./upload.sh`
+
+Translations are stored in the Crowdin project `adguard-applications` (project ID 17570) under
+`miscellaneous/filters-registry`; downloads use the Crowdin CLI configured in the root
+`crowdin.yml`. The legacy Twosky-based `download.sh`/`upload.sh` scripts are kept for reference;
+uploading strings to the service is done manually via `upload.sh` only — there is no
+Crowdin-CLI-based upload script.
 
 The first two steps are automated: the `update-translations.yaml` workflow runs weekly
-(Mondays 06:00 UTC) and on manual dispatch, downloads translations via `download.sh`,
+(Mondays 06:00 UTC) and on manual dispatch, downloads translations via `download-crowdin.sh`
+(authenticated with the `CROWDIN_PERSONAL_TOKEN` repository secret),
 validates them with `yarn validate:locales`, and opens a pull request with the changes
 to `locales/`. Merging is manual; the next regular build propagates new strings into
 `platforms/`.
