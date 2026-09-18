@@ -1,0 +1,25 @@
+name: Debug twosky 403
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe twosky endpoint
+        run: |
+          echo "== curl version =="
+          curl --version | head -2
+          echo
+          echo "== GET response headers =="
+          curl -sSI 'https://twosky.int.agrd.dev/api/v1/download?format=strings&language=ar&filename=tags.json&project=filters-registry'
+          echo
+          echo "== GET response body + code =="
+          curl -sS -w '\nHTTP_CODE:%{http_code}\n' 'https://twosky.int.agrd.dev/api/v1/download?format=strings&language=ar&filename=tags.json&project=filters-registry' | head -40
+          echo
+          echo "== GET with default empty UA =="
+          curl -sS -A '' -w '\nHTTP_CODE:%{http_code}\n' 'https://twosky.int.agrd.dev/api/v1/download?format=strings&language=ar&filename=tags.json&project=filters-registry' | head -40
+          echo
+          echo "== GET with browser UA =="
+          curl -sS -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36' -w '\nHTTP_CODE:%{http_code}\n' 'https://twosky.int.agrd.dev/api/v1/download?format=strings&language=ar&filename=tags.json&project=filters-registry' | head -40
