@@ -19,7 +19,10 @@ locales=(
 )
 
 echo "Downloading translations"
-yarn -s crowdin download --config "$crowdinConfig"
+# --all makes the CLI match the configured files against the server-side
+# project files (by dest) instead of the local source paths, which are not
+# staged in this repo (there is no upload step).
+yarn -s crowdin download --all --config "$crowdinConfig"
 
 for locale in "${locales[@]}"; do
     echo "Importing $locale locale"
