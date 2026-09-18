@@ -632,12 +632,18 @@ if confirm; then
     # recorded here and checked below.
     SHARED_STATS_SCOPE_FILE="$SHARED_STATS_DIR.scope"
     CURRENT_STATS_SCOPE="include=$INCLUDED_FILTER_IDS;exclude=$EXCLUDED_FILTER_IDS"
+    # A full, unscoped download is valid for any selection — mirrors build.js's
+    # own scopeFlagsFor([], []) acceptance. Without this, a scoped rerun after a
+    # full download would report "different filter selection" and overwrite the
+    # full snapshot with a partial one.
+    UNSCOPED_STATS_SCOPE="include=;exclude="
 
     echo "Use local optimization stats cache (shared across both builds)?"
     if confirm; then
         DO_USE_STATS=true
         if [ -d "$SHARED_STATS_DIR" ] && [ -n "$(ls -A "$SHARED_STATS_DIR" 2>/dev/null)" ]; then
-            if [ -f "$SHARED_STATS_SCOPE_FILE" ] && [ "$(cat "$SHARED_STATS_SCOPE_FILE")" = "$CURRENT_STATS_SCOPE" ]; then
+            EXISTING_STATS_SCOPE=$([ -f "$SHARED_STATS_SCOPE_FILE" ] && cat "$SHARED_STATS_SCOPE_FILE")
+            if [ "$EXISTING_STATS_SCOPE" = "$CURRENT_STATS_SCOPE" ] || [ "$EXISTING_STATS_SCOPE" = "$UNSCOPED_STATS_SCOPE" ]; then
                 echo "Found existing shared stats at $SHARED_STATS_DIR (same filter selection)."
                 echo "Reuse them (downloaded from yarn download-stats) before building?"
                 if confirm; then
