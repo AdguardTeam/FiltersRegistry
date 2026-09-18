@@ -360,10 +360,14 @@ collect_build() {
 }
 
 # Removes the worktrees, the copied platforms output and the meta file.
+# $SHARED_STATS_DIR itself is left alone — it's a persistent cache meant to
+# survive across runs — but a stranded .tmp from an interrupted stats refresh
+# swap (Step 7) is never a valid state to keep, so it's always removed here.
 cleanup_all() {
     git worktree remove "$MASTER_WORK_TREE" -f 2>/dev/null || rm -rf "$MASTER_WORK_TREE"
     git worktree remove "$CHANGED_WORK_TREE" -f 2>/dev/null || rm -rf "$CHANGED_WORK_TREE"
     rm -rf "$PLATFORMS_MASTER" "$PLATFORMS_CHANGED" "$PLATFORMS_MASTER.tmp" "$PLATFORMS_CHANGED.tmp"
+    rm -rf "$SHARED_STATS_DIR.tmp" "$SHARED_STATS_DIR.scope.tmp"
     rm -f "$META_FILE" "$META_FILE.tmp"
 }
 
