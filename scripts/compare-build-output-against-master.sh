@@ -319,7 +319,8 @@ copy_shared_stats_into_worktrees() {
 }
 
 # Waits on one branch's build, copies its platforms/ output into the
-# comparison directory, then restores the worktree's platforms/
+# comparison directory, then restores the worktree's platforms/ (skipped when
+# DO_CLEANUP will remove the whole worktree anyway).
 # Step 7 wipes it before building, and the built output is captured in $dest.
 # Sets BUILD_FAILED=true on any failure.
 # Args: label  pid  build_log  worktree  dest  copy_log
@@ -347,10 +348,12 @@ collect_build() {
         report_failure "[$label] build FAILED" "$build_log"
         rc=1
     fi
-    if ! run_with_spinner "[$label] restoring worktree platforms/" "$LOG_RESTORE_PLATFORMS" \
-        restore_worktree_platforms "$worktree"; then
-        report_failure "[$label] restoring worktree platforms/ FAILED" "$LOG_RESTORE_PLATFORMS"
-        rc=1
+    if [ "${DO_CLEANUP:-false}" != true ]; then
+        if ! run_with_spinner "[$label] restoring worktree platforms/" "$LOG_RESTORE_PLATFORMS" \
+            restore_worktree_platforms "$worktree"; then
+            report_failure "[$label] restoring worktree platforms/ FAILED" "$LOG_RESTORE_PLATFORMS"
+            rc=1
+        fi
     fi
     [ "$rc" -eq 0 ] || BUILD_FAILED=true
     return "$rc"
