@@ -34,9 +34,15 @@ program
     });
 
 const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Only run the command-line interface if the script is executed directly
-if (process.argv[1] === __filename) {
+// Only run the command-line interface if the script is executed directly.
+// The entry point is this file when it is passed explicitly, and its directory
+// when the module is invoked by directory name, which is how the
+// `update-wildcard-domains` and `expand-wildcard-domains` package scripts run it.
+const entryPoint = process.argv[1] ? path.resolve(process.argv[1]) : '';
+
+if (entryPoint === __filename || entryPoint === __dirname) {
     program.parse(process.argv);
 }
 
