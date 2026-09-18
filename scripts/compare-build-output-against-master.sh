@@ -277,7 +277,7 @@ load_meta() {
     local _key _val
     while IFS='=' read -r _key _val || [ -n "$_key" ]; do
         case "$_key" in
-            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_GENERATE_CACHE|DO_USE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
+            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_GENERATE_CACHE|DO_USE_STATS|REFRESH_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
                 printf -v "$_key" '%s' "$_val"
                 ;;
         esac
@@ -416,7 +416,7 @@ generate_report() {
 
     echo "Build command:      $build_cmd"
     if [ "$DO_USE_STATS" = true ]; then
-        if [ "${REFRESH_STATS:-false}" = true ]; then
+        if [ "$REFRESH_STATS" = true ]; then
             echo "Optimization stats: downloaded to $SHARED_STATS_DIR, shared with both builds"
         else
             echo "Optimization stats: reused existing shared cache at $SHARED_STATS_DIR"
@@ -868,6 +868,7 @@ CHANGED_BRANCH=$CHANGED_BRANCH
 BUILD_MODE=$BUILD_MODE
 DO_GENERATE_CACHE=$DO_GENERATE_CACHE
 DO_USE_STATS=$DO_USE_STATS
+REFRESH_STATS=${REFRESH_STATS:-false}
 INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
 EXCLUDED_FILTER_IDS=$EXCLUDED_FILTER_IDS
 EOF
