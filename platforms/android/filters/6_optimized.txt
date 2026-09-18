@@ -1,5 +1,5 @@
-! Checksum: FQXxbhmi4JVMYwENvO3Ifw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1789658328-3600.patch
+! Checksum: DAnrEoBopod8HdecOzn0Xg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1789698215-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.53.65
@@ -326,9 +326,6 @@ wowtv.de#%#//scriptlet('set-constant', 'window.CONFIGURATION.features.enableAdBl
 @@||ligainsider.de^$generichide
 ligainsider.de#%#//scriptlet('prevent-element-src-loading', 'script', '/googlesyndication\.com|doubleclick\.net|bing\.com|taboola\.com/')
 ligainsider.de#%#//scriptlet('abort-on-property-read', 'LIDetector')
-||ligainsider.de/public/*/js/li-probe-base.js
-||ligainsider.de/li-probe.js
-||ligainsider.de/public/*/js/li-wall.js
 adhs-zentrum.de#%#//scriptlet('prevent-navigation', 'werbeblocker')
 chatgptdeutsch.info#%#//scriptlet('prevent-setTimeout', '[native code]', '1200')
 chatgptdeutsch.info#%#//scriptlet('prevent-fetch', 'adsbygoogle')
@@ -803,8 +800,6 @@ linguee.de##.lMainNavbar__left > a[href^="https://www.DeepL.com/"]
 linguee.de###DeepLAppPromoStartPage
 hartpunkt.de##.tdb_single_content > .tdb-block-inner > .g
 boomlify.com##.lg\:flex.hidden
-playcentral.de###stream-item-widget-2
-playcentral.de###zk-merch
 /^https:\/\/goldesel\.bz\/img\/[a-f0-9]{34}\./$domain=goldesel.bz,image
 goldesel.bz##body > div[class^="p"] > ul + div[class^="c"] > div:not([class^="d_17"]):has(> div[class^="d_"] > a > img)
 wg-gesucht.de###main_column #partners_wrapper
@@ -815,6 +810,8 @@ speisekarte.de##div[id^="skyscraperLeftWrap"]
 speisekarte.de##.justify-center > .w-full > .justify-center:has(> #sk_footer:only-child)
 berliner-kurier.de##div[id^="qmn-ad"]
 berliner-kurier.de###articleBody > div[class^="qmn_"][class*="-divider"]
+vermieter-forum.com##[id*="_mpu"]
+vermieter-forum.com##[id^="fh-"]
 win-10-forum.de,winboard.org,pedelecforum.de,vermieter-forum.com##.fh-inside-post
 win-10-forum.de,winboard.org,pedelecforum.de##.fh-sidebar
 dasheimwerkerforum.de,uhrforum.de,win-10-forum.de,winboard.org,pedelecforum.de###fh-inside-bottom
@@ -823,6 +820,7 @@ focus.de##.Ad-Slot-Sticky-Container
 focus.de##article[data-element-tracking-property*="Admanager"]
 bussgeldkatalog.de##.slideIn
 testsieger.de###sponsoredProductPdp
+heise.de##.swvzinfobox + hr
 heise.de##.article-sidebar > div[class]:has(> .ad-label:first-child + .ad:last-child)
 heise.de##div[class]:has(> .downloads-container:only-child > div:only-child > .ad-label)
 20min.ch##div[id*="/inside-full-recommender-pos"]
@@ -1316,7 +1314,6 @@ volksfreund.de#?#section:has(> .park-html:only-child > .weekli-widget)
 berliner-zeitung.de##div[data-component-type="ad-slot"] + div[data-component-type="ad-slot"] + div[data-component-type="section-separator"]
 sky.de#?#div[class^="site-component-vertical"]:has(> div[data-ad-format]:only-child)
 reviersport.de##.rs-ad-init
-tellows.at#?##singlecomments > li:not([id]):has( > .comment-body > div[id^="adngin-"])
 businessinsider.de##a[href^="https://www.businessinsider.de/sponsored"]
 bild.de##.article-text-link--ad
 berliner-kurier.de##div[data-testid^="ad-slot"] + div[data-testid^="separator"]
@@ -2725,6 +2722,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /Werbung/*_banner_
 /werbung/banner/*
 /werbung/banner_
+/werbung2^
 /werbung5jw/*
 /werbung90.
 /werbung__
@@ -2820,7 +2818,6 @@ _woz_banner_vote.
 ###werbungsky
 ##.Werbelabel
 ##.Werbung
-##._werbung
 ##.ad_platzhalter
 ##.ads-anzeige
 ##.ads_bueroklammer
@@ -3808,7 +3805,6 @@ stuttgarter-zeitung.de###taboola-mhsd
 giga.de,kino.de,watson.de###teaserheld-header
 tennisnet.com###tennisnetWidget
 eishockey-magazin.de###text-10
-hockey-news.info###text-12
 computerschach.de,nachrichten.es,nh24.de,randombrick.de,tollabea.de###text-2
 nh24.de###text-26
 bitcoinnews.ch,nh24.de###text-28
@@ -3917,7 +3913,6 @@ administrator.de##.ads-300x600-wrapper
 ukraine-nachrichten.de##.ads-336
 efahrer.chip.de##.ads-alignment
 administrator.de##.ads-below-comments
-glarus24.ch,radiocentral.ch,sunshine.ch##.ads-container
 ich-tanke.de##.ads-sticky-container
 6profis.de##.ads6p
 chefkoch.de##.ads__initialized
