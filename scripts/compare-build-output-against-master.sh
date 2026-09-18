@@ -124,7 +124,7 @@ trap on_interrupt INT TERM HUP
 ARROW="→"
 CHECK="✓"
 CROSS="✗"
-TOTAL_STEPS=10
+TOTAL_STEPS=9
 
 # Prints a blank line and a bold "Step N/TOTAL_STEPS: <title>" header.
 step_header() {
@@ -213,12 +213,17 @@ die() {
 }
 
 # The yarn subcommands a build runs, in order, one per line. Single source of
-# truth for both the real build (Step 8) and the report's "Build command"
+# truth for both the real build (Step 7) and the report's "Build command"
+# line, so the two can't drift.
 build_subcommands() {
     local BUILD_MODE=${BUILD_MODE:-plain}
 
-    [ "$BUILD_MODE" = "cached" ] && echo "generate-cache"
-    [ "$BUILD_MODE" = "plain" ] && echo "build $BUILD_FLAGS" || echo "build:local $BUILD_FLAGS"
+    if [ "$BUILD_MODE" != "cached" ]; then
+        echo "build $BUILD_FLAGS"
+        return
+    fi
+    [ "${DO_GENERATE_CACHE:-false}" = "true" ] && echo "generate-cache"
+    echo "build:local $BUILD_FLAGS"
 }
 
 # Given a branch name and the SHA a previous run recorded for it, returns a
@@ -272,7 +277,7 @@ load_meta() {
     local _key _val
     while IFS='=' read -r _key _val || [ -n "$_key" ]; do
         case "$_key" in
-            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_USE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
+            MASTER_SHA|CHANGED_SHA|CHANGED_BRANCH|BUILD_MODE|DO_GENERATE_CACHE|DO_USE_STATS|INCLUDED_FILTER_IDS|EXCLUDED_FILTER_IDS)
                 printf -v "$_key" '%s' "$_val"
                 ;;
         esac
@@ -280,7 +285,7 @@ load_meta() {
 }
 
 # Restores a worktree's platforms/ to its checked-out state, undoing the
-# Step 9 wipe and whatever the build wrote into it.
+# Step 7 wipe and whatever the build wrote into it.
 restore_worktree_platforms() {
     git -C "$1" checkout --quiet -- platforms/ &&
         git -C "$1" clean --quiet -fd -- platforms/
@@ -315,7 +320,7 @@ copy_shared_stats_into_worktrees() {
 
 # Waits on one branch's build, copies its platforms/ output into the
 # comparison directory, then restores the worktree's platforms/
-# Step 9 wipes it before building, and the built output is captured in $dest.
+# Step 7 wipes it before building, and the built output is captured in $dest.
 # Sets BUILD_FAILED=true on any failure.
 # Args: label  pid  build_log  worktree  dest  copy_log
 collect_build() {
@@ -365,7 +370,7 @@ discard_previous_output() {
 }
 
 # Honors DO_CLEANUP: either runs cleanup_all or prints what was kept and
-# where. Called from Step 11 and from the build-failure path, so a failed run
+# where. Called from Step 9 and from the build-failure path, so a failed run
 # also respects the cleanup choice instead of always leaving state behind.
 run_cleanup() {
     if [ "$DO_CLEANUP" = true ]; then
@@ -569,19 +574,11 @@ else
 fi
 echo "${C_CYAN}${ARROW}${C_RESET} Comparing against branch: $CHANGED_BRANCH"
 
-step_header 2 "Build mode"
-echo "Use build:local (runs generate-cache first) instead of a regular build?"
-if confirm; then
-    BUILD_MODE=cached
-    echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached"
-else
-    BUILD_MODE=plain
-    echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
-fi
-
-step_header 3 "Filter selection"
+step_header 2 "Filter selection"
 # Forwarded as -i=/-s= to generate-cache, download-stats and the build, so a
 # quick eval can build a handful of filters instead of the whole registry.
+# Decided before Build mode below, since Build mode's optimization-stats
+# scope check needs the final filter selection.
 
 INCLUDED_FILTER_IDS=""
 EXCLUDED_FILTER_IDS=""
@@ -602,6 +599,70 @@ if confirm; then
     EXCLUDED_FILTER_IDS=$(normalize_filter_ids "$EXCLUDED_FILTER_IDS")
 fi
 echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}] exclude=[${EXCLUDED_FILTER_IDS:-none}]"
+
+step_header 3 "Build mode"
+echo "Use cached sources instead of a regular build?"
+if confirm; then
+    BUILD_MODE=cached
+    echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
+
+    # Not required every run — an existing filter.txt cache can be reused,
+    # so this defaults to skip.
+    echo "Generate filter.txt cache (yarn generate-cache)?"
+    if confirm; then
+        DO_GENERATE_CACHE=true
+        echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
+    else
+        DO_GENERATE_CACHE=false
+        echo "${C_CYAN}${ARROW}${C_RESET} Skipping generate-cache, reusing existing cache"
+    fi
+
+    # Downloaded once (via the $BASE_BRANCH worktree) into SHARED_STATS_DIR,
+    # then copied into both worktrees, so they see the same snapshot instead
+    # of each fetching its own — build.js only applies a local stats cache
+    # under --use-cache, so this is only offered here. Decided now, but
+    # actually run only after Step 6 has installed deps into
+    # $MASTER_WORK_TREE, since yarn download-stats needs node_modules.
+    #
+    # download-stats scopes what it fetches to --include/--skip, so a
+    # snapshot downloaded under one selection is invalid for another;
+    # recorded here and checked below.
+    SHARED_STATS_SCOPE_FILE="$SHARED_STATS_DIR.scope"
+    CURRENT_STATS_SCOPE="include=$INCLUDED_FILTER_IDS;exclude=$EXCLUDED_FILTER_IDS"
+
+    echo "Use local optimization stats cache (shared across both builds)?"
+    if confirm; then
+        DO_USE_STATS=true
+        if [ -d "$SHARED_STATS_DIR" ] && [ -n "$(ls -A "$SHARED_STATS_DIR" 2>/dev/null)" ]; then
+            if [ -f "$SHARED_STATS_SCOPE_FILE" ] && [ "$(cat "$SHARED_STATS_SCOPE_FILE")" = "$CURRENT_STATS_SCOPE" ]; then
+                echo "Found existing shared stats at $SHARED_STATS_DIR (same filter selection)."
+                echo "Reuse them (downloaded from yarn download-stats) before building?"
+                if confirm; then
+                    REFRESH_STATS=false
+                    echo "${C_CYAN}${ARROW}${C_RESET} Will reuse existing shared stats"
+                else
+                    REFRESH_STATS=true
+                    echo "${C_CYAN}${ARROW}${C_RESET} Will refresh shared stats before building"
+                fi
+            else
+                echo "${C_CYAN}${ARROW}${C_RESET} Existing shared stats at $SHARED_STATS_DIR were downloaded" \
+                    "under a different filter selection; will refresh before building"
+                REFRESH_STATS=true
+            fi
+        else
+            echo "${C_CYAN}${ARROW}${C_RESET} No shared stats found; will download before building"
+            REFRESH_STATS=true
+        fi
+    else
+        DO_USE_STATS=false
+        echo "${C_CYAN}${ARROW}${C_RESET} Skipping optimization stats"
+    fi
+else
+    BUILD_MODE=plain
+    DO_GENERATE_CACHE=false
+    DO_USE_STATS=false
+    echo "${C_CYAN}${ARROW}${C_RESET} Build mode: plain"
+fi
 
 step_header 4 "Cleanup preference"
 echo "Keep worktrees and build output when done?"
@@ -695,35 +756,12 @@ if ! wait "$PID_CHANGED_INSTALL"; then
     die "[$CHANGED_BRANCH] install FAILED" "$LOG_CHANGED_INSTALL"
 fi
 
-step_header 7 "Optimization stats"
-# Downloaded once (via the $BASE_BRANCH worktree) into SHARED_STATS_DIR, then
-# copied into both worktrees, so they see the same snapshot instead of each
-# fetching its own.
+step_header 7 "Build both branches"
 
-# download-stats scopes what it fetches to --include/--skip, so a snapshot
-# downloaded under one selection is invalid for another; recorded here and
-# checked below.
-SHARED_STATS_SCOPE_FILE="$SHARED_STATS_DIR.scope"
-CURRENT_STATS_SCOPE="include=$INCLUDED_FILTER_IDS;exclude=$EXCLUDED_FILTER_IDS"
-
-echo "Use local optimization stats cache (shared across both builds)?"
-if confirm; then
-    DO_USE_STATS=true
-    if [ -d "$SHARED_STATS_DIR" ] && [ -n "$(ls -A "$SHARED_STATS_DIR" 2>/dev/null)" ]; then
-        if [ -f "$SHARED_STATS_SCOPE_FILE" ] && [ "$(cat "$SHARED_STATS_SCOPE_FILE")" = "$CURRENT_STATS_SCOPE" ]; then
-            echo "Found existing shared stats at $SHARED_STATS_DIR (same filter selection)."
-            echo "Reuse them (downloaded from yarn download-stats) before building?"
-            if confirm; then REFRESH_STATS=false; else REFRESH_STATS=true; fi
-        else
-            echo "${C_CYAN}${ARROW}${C_RESET} Existing shared stats at $SHARED_STATS_DIR were downloaded" \
-                "under a different filter selection; refreshing"
-            REFRESH_STATS=true
-        fi
-    else
-        echo "${C_CYAN}${ARROW}${C_RESET} No shared stats found; will download"
-        REFRESH_STATS=true
-    fi
-
+# Performing Step 3's optimization-stats decision: deferred until now since
+# yarn download-stats needs node_modules in $MASTER_WORK_TREE, only ready
+# after Step 6 installed deps.
+if [ "$DO_USE_STATS" = true ]; then
     if [ "$REFRESH_STATS" = true ]; then
         STATS_FILTER_ARGS=$(filter_flags)
         # shellcheck disable=SC2086
@@ -759,20 +797,13 @@ if confirm; then
         mv "$SHARED_STATS_DIR.tmp" "$SHARED_STATS_DIR"
         cp "$MASTER_WORK_TREE/$STATS_BASE_PATH_REL.scope" "$SHARED_STATS_SCOPE_FILE.tmp"
         mv "$SHARED_STATS_SCOPE_FILE.tmp" "$SHARED_STATS_SCOPE_FILE"
-    else
-        echo "${C_CYAN}${ARROW}${C_RESET} Reusing existing shared stats"
     fi
 
     if ! run_with_spinner "copying shared stats into both worktrees" "$LOG_COPY_STATS" \
         copy_shared_stats_into_worktrees; then
         die "copying shared stats into worktrees FAILED" "$LOG_COPY_STATS"
     fi
-else
-    DO_USE_STATS=false
-    echo "${C_CYAN}${ARROW}${C_RESET} Skipping optimization stats"
 fi
-
-step_header 8 "Build both branches"
 
 if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
     sync_filters_baseline; then
@@ -826,17 +857,18 @@ MASTER_SHA=$MASTER_SHA
 CHANGED_SHA=$CHANGED_SHA
 CHANGED_BRANCH=$CHANGED_BRANCH
 BUILD_MODE=$BUILD_MODE
+DO_GENERATE_CACHE=$DO_GENERATE_CACHE
 DO_USE_STATS=$DO_USE_STATS
 INCLUDED_FILTER_IDS=$INCLUDED_FILTER_IDS
 EXCLUDED_FILTER_IDS=$EXCLUDED_FILTER_IDS
 EOF
 mv "$META_FILE.tmp" "$META_FILE"
 
-step_header 9 "Report"
+step_header 8 "Report"
 generate_report
 REPORT_STATUS=$?
 
-step_header 10 "Cleanup"
+step_header 9 "Cleanup"
 run_cleanup
 
 exit "$REPORT_STATUS"

@@ -162,37 +162,37 @@ const buildFilters = async () => {
 
     if (useCache) {
         await prepareCachedFiltersDir();
-    }
 
-    const optimizationStatsFiltersPath = path.join(optimizationStatsDir, 'filters');
+        const optimizationStatsFiltersPath = path.join(optimizationStatsDir, 'filters');
 
-    const statsDirHasContent = existsSync(optimizationStatsFiltersPath)
-        && (await fs.readdir(optimizationStatsFiltersPath)).length > 0;
+        const statsDirHasContent = existsSync(optimizationStatsFiltersPath)
+            && (await fs.readdir(optimizationStatsFiltersPath)).length > 0;
 
-    if (statsDirHasContent) {
-        let cachedScopeFlags = null;
-        try {
-            cachedScopeFlags = await fs.readFile(optimizationStatsScopeFile, 'utf8');
-        } catch {
-            // No scope marker — either a legacy cache or one download-stats
-            // itself failed to finish writing. Treated as unknown below.
-        }
-        const currentScopeFlags = scopeFlagsFor(includedFilterIDs, excludedFilterIDs);
-        const unscopedFlags = scopeFlagsFor([], []);
+        if (statsDirHasContent) {
+            let cachedScopeFlags = null;
+            try {
+                cachedScopeFlags = await fs.readFile(optimizationStatsScopeFile, 'utf8');
+            } catch {
+                // No scope marker — either a legacy cache or one download-stats
+                // itself failed to finish writing. Treated as unknown below.
+            }
+            const currentScopeFlags = scopeFlagsFor(includedFilterIDs, excludedFilterIDs);
+            const unscopedFlags = scopeFlagsFor([], []);
 
-        const isScopeIdentical = cachedScopeFlags === currentScopeFlags;
-        if (isScopeIdentical || cachedScopeFlags === unscopedFlags) {
-            localOptimizationStatistics.use(optimizationStatsDir);
-            console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
+            const isScopeIdentical = cachedScopeFlags === currentScopeFlags;
+            if (isScopeIdentical || cachedScopeFlags === unscopedFlags) {
+                localOptimizationStatistics.use(optimizationStatsDir);
+                console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
+            } else {
+                console.log(
+                    `Local optimization statistics at ${optimizationStatsDir} don't match this build's filter `
+                    + 'selection (or predate scope tracking); fetching stats from the remote server instead. '
+                    + 'Run --download-stats with the same --include/--skip to reuse the local cache.',
+                );
+            }
         } else {
-            console.log(
-                `Local optimization statistics at ${optimizationStatsDir} don't match this build's filter `
-                + 'selection (or predate scope tracking); fetching stats from the remote server instead. '
-                + 'Run --download-stats with the same --include/--skip to reuse the local cache.',
-            );
+            console.log('No local optimization statistics found; fetching stats from the remote server.');
         }
-    } else {
-        console.log('No local optimization statistics found; fetching stats from the remote server.');
     }
 
     try {
@@ -206,7 +206,7 @@ const buildFilters = async () => {
             CUSTOM_PLATFORMS_CONFIG,
         );
     } catch (error) {
-        if (error instanceof OptimizationStatsError) {
+        if (useCache && error instanceof OptimizationStatsError) {
             throw new Error(
                 `Run --download-stats to download the latest statistics. (${error.message})`,
                 { cause: error },

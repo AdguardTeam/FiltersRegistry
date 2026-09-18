@@ -168,10 +168,7 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
-    it.each([
-        ['--use-cache', ['--use-cache']],
-        ['plain build', []],
-    ])('%s with a cached local optimization: calls use() before compiling', async (_, args) => {
+    it('--use-cache with a cached local optimization: calls use() before compiling', async () => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
         }));
@@ -179,7 +176,7 @@ describe('build.js: cache flag handling', () => {
             readdir: vi.fn().mockResolvedValue([String(FILTER_ID)]),
             readFile: vi.fn().mockResolvedValue(unscopedFlags),
         }));
-        process.argv = ['node', 'build.js', ...args];
+        process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
         const {
@@ -190,6 +187,30 @@ describe('build.js: cache flag handling', () => {
             expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
         });
         expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedOptimizationStatsBasePath);
+        expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
+    });
+
+    it('plain build with a cached local optimization present: does not call use(), fetches remotely', async () => {
+        // build.js only applies a local stats cache under --use-cache; a
+        // plain build must ignore it even when a matching cache exists.
+        vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(true),
+        }));
+        vi.doMock('fs/promises', () => mockFsPromises({
+            readdir: vi.fn().mockResolvedValue([String(FILTER_ID)]),
+            readFile: vi.fn().mockResolvedValue(unscopedFlags),
+        }));
+        process.argv = ['node', 'build.js'];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationStatistics: mockedStats,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
+        });
+        expect(vi.mocked(mockedStats.use)).not.toHaveBeenCalled();
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
@@ -204,7 +225,7 @@ describe('build.js: cache flag handling', () => {
             readFile: vi.fn().mockResolvedValue(differentScopeFlags),
         }));
 
-        process.argv = ['node', 'build.js'];
+        process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
         const {
@@ -225,7 +246,7 @@ describe('build.js: cache flag handling', () => {
             readdir: vi.fn().mockResolvedValue([String(FILTER_ID)]),
             readFile: vi.fn().mockResolvedValue(unscopedFlags),
         }));
-        process.argv = ['node', 'build.js', `--include=${FILTER_ID}`];
+        process.argv = ['node', 'build.js', '--use-cache', `--include=${FILTER_ID}`];
         await import('../build.js');
 
         const {
@@ -245,7 +266,7 @@ describe('build.js: cache flag handling', () => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn((checkedPath: string) => checkedPath === expectedOptimizationStatsBasePath),
         }));
-        process.argv = ['node', 'build.js'];
+        process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
 
         const {
@@ -258,10 +279,7 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedStats.use)).not.toHaveBeenCalled();
     });
 
-    it.each([
-        ['--use-cache', ['--use-cache']],
-        ['plain build', []],
-    ])('%s with missing stats.json: printing the --download-stats hint and original message', async (_, args) => {
+    it('--use-cache with missing stats.json: printing the --download-stats hint and original message', async () => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
         }));
@@ -283,7 +301,7 @@ describe('build.js: cache flag handling', () => {
             },
             OptimizationStatsError,
         }));
-        process.argv = ['node', 'build.js', ...args];
+        process.argv = ['node', 'build.js', '--use-cache'];
 
         const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
         const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
