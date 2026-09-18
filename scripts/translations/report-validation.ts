@@ -28,15 +28,25 @@ export type ValidationResult = 'failure' | 'success';
 interface Comment {
     id: number;
     body: string;
+    // The GitHub API reports 'Bot' for comments posted by the workflow's
+    // GITHUB_TOKEN (github-actions[bot]) and 'User' for human authors.
+    user: { type: string } | null;
 }
 
 /**
- * Checks whether a comment body was posted by this workflow.
+ * Checks whether a comment was posted by this workflow.
  *
- * @param body - Comment body to check.
- * @returns True when the body contains the workflow marker.
+ * The body must start with the workflow marker (buildCommentBody always places
+ * it first) and the author must be a bot account. Requiring both keeps the
+ * stale-comment cleanup from deleting a maintainer's quote reply: quoting
+ * copies the marker into the body, but the author type stays 'User'.
+ *
+ * @param comment - Comment to check.
+ * @returns True when the comment was posted by this workflow.
  */
-export const isValidationComment = (body: string): boolean => body.includes(COMMENT_MARKER);
+export const isValidationComment = (comment: Pick<Comment, 'body' | 'user'>): boolean => {
+    return comment.user?.type === 'Bot' && comment.body.startsWith(COMMENT_MARKER);
+};
 
 /**
  * Truncates the report to the maximum safe comment length, keeping the tail.
@@ -161,6 +171,7 @@ export class GitHubClient {
         comments.push(...response.data.map((comment) => ({
             id: Number(comment.id),
             body: comment.body ?? '',
+            user: comment.user ? { type: comment.user.type } : null,
         })));
         const nextUrl = getNextPageUrl(response.headers.link ?? null);
         return nextUrl ? this.collectCommentPages(issueNumber, page + 1, comments) : comments;
@@ -268,7 +279,7 @@ export const reportValidation = async (options: ReportValidationOptions): Promis
         console.error('Failed to list comments for cleanup:', error);
     }
     const staleComments = comments.filter(
-        (comment) => comment.id !== freshCommentId && isValidationComment(comment.body),
+        (comment) => comment.id !== freshCommentId && isValidationComment(comment),
     );
     const deletions = await Promise.allSettled(
         staleComments.map((comment) => client.deleteComment(comment.id)),
