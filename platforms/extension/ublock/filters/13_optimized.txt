@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XZCSoNQkN9iE36XBYsmBZQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1789730204-3600.patch
+! Checksum: SZm/RUvC96fVsMljk7d1mg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1789734273-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.19
-! TimeUpdated: 2026-09-18T11:13:11+00:00
+! Version: 2.0.68.20
+! TimeUpdated: 2026-09-18T12:20:58+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$3p
 ||rtb-stack.com^
@@ -480,6 +480,7 @@ baho.com.tr##.adsmd:style(height: 1px!important;)
 @@||static.origins.web.tv/scripts/ads.js
 r10.net##+js(abort-on-property-read, rTargets)
 r10.net##+js(abort-on-property-write, rInt)
+##a[class="current-address-link"]
 ##header > ul > li.blink > a[target]
 ##.playerTextReklam
 ##center > a[target="_blank"][style="color: red;"] > font[style="font-size: 15pt"]
@@ -1060,6 +1061,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 kiraztv.com##.kiraz-ad-reserve
 kiraztv.com##.kiraztv-player-alt-ad
 harbitv.site##a[href^="https://harbilink.pro"]
+bc4liveiframecdn.shop###promo-banner
+bc4liveiframecdn.shop###logo
 ||compare.busbud.com/x/pas?placementId=
 yirmidort.tv##div[style="width:300px;height:250px;min-height:250px;"]
 canlitvvolo.com##.mobile-top-ads
@@ -5574,6 +5577,8 @@ piatv2.site##.footer-links
 macboxtv29.xyz##+js(set-attr, .player-box, data-preroll-enabled, 0)
 macboxtv29.xyz##.be-pageskin
 macboxtv29.xyz###gif-banner
+/roma\d+tv\.com$/###imagePopup
+roma725tv.com###imagePopup
 /sampiyontv\d+\.xyz$/##a[rel="nofollow sponsored noopener"]
 sampiyontv2.xyz,sampiyontv3.xyz##a[rel="nofollow sponsored noopener"]
 ||ibizatv*.com/view/theme/ultimate/img/*.gif
@@ -6237,9 +6242,6 @@ hdselcuksports368.top##+js(no-window-open-if)
 belestepe549.sbs##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 belestepe549.sbs##+js(set-constant, config.advertisement.enabled, false)
 ||video.twimg.com/amplify_video/*/vid/*.mp4$domain=belestepe549.sbs
-/izlemac\d+\.sbs/##+js(set-constant, adscfg.enabled, false)
-/izlemac\d+\.sbs/##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-||izlemac*.sbs/wp-content/uploads/*.gif
 ||mactanmaca*.sbs/wp-content/*.gif|$image
 /mactanmaca\d+\.sbs/##+js(set-constant, config.advertisement.enabled, false)
 /mactanmaca\d+\.sbs/##div[data-isbd-main-container] > section > div.hidden-xs.text-center
@@ -6650,10 +6652,10 @@ noingoaithatgiare.com##.fixedFooterAd
 /^www\.trgoals\d+\.top$/##+js(set-constant, puShown, true)
 /^www\.trgoals\d+\.top$/##.under-vid-banner
 /^www\.trgoals\d+\.top$/##.dbad
-trgoals78.top,trgoals79.top,trgoals80.top,trgoals81.top,trgoals82.top,trgoals83.top,trgoals84.top,trgoals85.top,trgoals86.top,trgoals87.top,trgoals88.top,trgoals89.top,trgoals90.top,trgoals91.top,trgoals92.top,trgoals93.top,trgoals94.top,trgoals95.top,trgoals96.top,trgoals97.top,trgoals98.top,trgoals99.top,trgoals100.top,trgoals101.top,trgoals102.top,trgoals103.top,trgoals104.top,trgoals105.top,trgoals106.top,trgoals107.top,trgoals108.top,trgoals109.top,trgoals110.top,trgoals111.top,trgoals112.top,trgoals113.top,trgoals114.top,trgoals115.top,trgoals116.top,trgoals117.top,trgoals118.top,trgoals119.top,trgoals120.top,trgoals121.top,trgoals122.top,trgoals123.top,trgoals124.top,trgoals125.top,trgoals126.top,trgoals127.top,trgoals128.top##+js(set-constant, video_shown, 1)
-trgoals78.top,trgoals79.top,trgoals80.top,trgoals81.top,trgoals82.top,trgoals83.top,trgoals84.top,trgoals85.top,trgoals86.top,trgoals87.top,trgoals88.top,trgoals89.top,trgoals90.top,trgoals91.top,trgoals92.top,trgoals93.top,trgoals94.top,trgoals95.top,trgoals96.top,trgoals97.top,trgoals98.top,trgoals99.top,trgoals100.top,trgoals101.top,trgoals102.top,trgoals103.top,trgoals104.top,trgoals105.top,trgoals106.top,trgoals107.top,trgoals108.top,trgoals109.top,trgoals110.top,trgoals111.top,trgoals112.top,trgoals113.top,trgoals114.top,trgoals115.top,trgoals116.top,trgoals117.top,trgoals118.top,trgoals119.top,trgoals120.top,trgoals121.top,trgoals122.top,trgoals123.top,trgoals124.top,trgoals125.top,trgoals126.top,trgoals127.top,trgoals128.top##+js(set-constant, puShown, true)
-trgoals78.top,trgoals79.top,trgoals80.top,trgoals81.top,trgoals82.top,trgoals83.top,trgoals84.top,trgoals85.top,trgoals86.top,trgoals87.top,trgoals88.top,trgoals89.top,trgoals90.top,trgoals91.top,trgoals92.top,trgoals93.top,trgoals94.top,trgoals95.top,trgoals96.top,trgoals97.top,trgoals98.top,trgoals99.top,trgoals100.top,trgoals101.top,trgoals102.top,trgoals103.top,trgoals104.top,trgoals105.top,trgoals106.top,trgoals107.top,trgoals108.top,trgoals109.top,trgoals110.top,trgoals111.top,trgoals112.top,trgoals113.top,trgoals114.top,trgoals115.top,trgoals116.top,trgoals117.top,trgoals118.top,trgoals119.top,trgoals120.top,trgoals121.top,trgoals122.top,trgoals123.top,trgoals124.top,trgoals125.top,trgoals126.top,trgoals127.top,trgoals128.top##.under-vid-banner
-trgoals78.top,trgoals79.top,trgoals80.top,trgoals81.top,trgoals82.top,trgoals83.top,trgoals84.top,trgoals85.top,trgoals86.top,trgoals87.top,trgoals88.top,trgoals89.top,trgoals90.top,trgoals91.top,trgoals92.top,trgoals93.top,trgoals94.top,trgoals95.top,trgoals96.top,trgoals97.top,trgoals98.top,trgoals99.top,trgoals100.top,trgoals101.top,trgoals102.top,trgoals103.top,trgoals104.top,trgoals105.top,trgoals106.top,trgoals107.top,trgoals108.top,trgoals109.top,trgoals110.top,trgoals111.top,trgoals112.top,trgoals113.top,trgoals114.top,trgoals115.top,trgoals116.top,trgoals117.top,trgoals118.top,trgoals119.top,trgoals120.top,trgoals121.top,trgoals122.top,trgoals123.top,trgoals124.top,trgoals125.top,trgoals126.top,trgoals127.top,trgoals128.top##.dbad
+trgoals183.top##+js(set-constant, video_shown, 1)
+trgoals183.top##+js(set-constant, puShown, true)
+trgoals183.top##.under-vid-banner
+trgoals183.top##.dbad
 ||inattvizle*.top/lib/uploads/r/
 /inattvizle\d+\.top/##+js(set-constant, puShown, true)
 /inattvizle\d+\.top/##+js(no-window-open-if)

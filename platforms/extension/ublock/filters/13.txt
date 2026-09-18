@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Ch1FMJuyq17coSuwLly8RA
-! Diff-Path: ../patches/13/13-s-1789730204-3600.patch
+! Checksum: whhZk/Uave0XUrylHbDo8A
+! Diff-Path: ../patches/13/13-s-1789734273-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.19
-! TimeUpdated: 2026-09-18T11:13:11+00:00
+! Version: 2.0.68.20
+! TimeUpdated: 2026-09-18T12:20:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -685,6 +685,7 @@ r10.net##+js(abort-on-property-write, rInt)
 ! Bad: example.org##.adv (should be in specific.txt)
 !
 ! Streaming sites with casino ads
+##a[class="current-address-link"]
 ##header > ul > li.blink > a[target]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219628#issuecomment-3645462129
 ##.playerTextReklam
@@ -1571,6 +1572,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 kiraztv.com##.kiraz-ad-reserve
 kiraztv.com##.kiraztv-player-alt-ad
 harbitv.site##a[href^="https://harbilink.pro"]
+bc4liveiframecdn.shop###promo-banner
+bc4liveiframecdn.shop###logo
 ||compare.busbud.com/x/pas?placementId=
 yirmidort.tv##div[style="width:300px;height:250px;min-height:250px;"]
 canlitvvolo.com##.mobile-top-ads
@@ -6107,6 +6110,11 @@ macboxtv29.xyz##+js(set-attr, .player-box, data-preroll-enabled, 0)
 macboxtv29.xyz##.be-pageskin
 macboxtv29.xyz###gif-banner
 !
+! Frequently changed domains: roma*tv.com
+! Source: roma725tv.com
+/roma\d+tv\.com$/###imagePopup
+roma725tv.com###imagePopup
+!
 ! Frequently changed domains: sampiyontv*.xyz
 ! Source: sampiyontv2.xyz
 /sampiyontv\d+\.xyz$/##a[rel="nofollow sponsored noopener"]
@@ -7075,12 +7083,6 @@ belestepe549.sbs##div[data-isbd-main-container] > section > div.hidden-xs.text-c
 belestepe549.sbs##+js(set-constant, config.advertisement.enabled, false)
 ||video.twimg.com/amplify_video/*/vid/*.mp4$domain=belestepe549.sbs
 !
-! Frequently changed domains: izlemac*.sbs
-! Random numbers
-/izlemac\d+\.sbs/##+js(set-constant, adscfg.enabled, false)
-/izlemac\d+\.sbs/##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-||izlemac*.sbs/wp-content/uploads/*.gif
-!
 ! Frequently changed domains: mactanmaca*.sbs
 ||mactanmaca*.sbs/wp-content/*.gif|$image
 /mactanmaca\d+\.sbs/##+js(set-constant, config.advertisement.enabled, false)
@@ -7614,16 +7616,16 @@ noingoaithatgiare.com##.fixedFooterAd
 ||blogger.googleusercontent.com/img/$domain=noingoaithatgiare.com|macizletaraftarium.online
 !
 ! Frequently changed domains: trgoals*.top
-! Source: https://www.trgoals78.top/
+! Source: trgoals183.top
 ||trgoals*.top/lib/uploads/r/$image
 /^www\.trgoals\d+\.top$/##+js(set-constant, video_shown, 1)
 /^www\.trgoals\d+\.top$/##+js(set-constant, puShown, true)
 /^www\.trgoals\d+\.top$/##.under-vid-banner
 /^www\.trgoals\d+\.top$/##.dbad
-trgoals78.top,trgoals79.top,trgoals80.top,trgoals81.top,trgoals82.top,trgoals83.top,trgoals84.top,trgoals85.top,trgoals86.top,trgoals87.top,trgoals88.top,trgoals89.top,trgoals90.top,trgoals91.top,trgoals92.top,trgoals93.top,trgoals94.top,trgoals95.top,trgoals96.top,trgoals97.top,trgoals98.top,trgoals99.top,trgoals100.top,trgoals101.top,trgoals102.top,trgoals103.top,trgoals104.top,trgoals105.top,trgoals106.top,trgoals107.top,trgoals108.top,trgoals109.top,trgoals110.top,trgoals111.top,trgoals112.top,trgoals113.top,trgoals114.top,trgoals115.top,trgoals116.top,trgoals117.top,trgoals118.top,trgoals119.top,trgoals120.top,trgoals121.top,trgoals122.top,trgoals123.top,trgoals124.top,trgoals125.top,trgoals126.top,trgoals127.top,trgoals128.top##+js(set-constant, video_shown, 1)
-trgoals78.top,trgoals79.top,trgoals80.top,trgoals81.top,trgoals82.top,trgoals83.top,trgoals84.top,trgoals85.top,trgoals86.top,trgoals87.top,trgoals88.top,trgoals89.top,trgoals90.top,trgoals91.top,trgoals92.top,trgoals93.top,trgoals94.top,trgoals95.top,trgoals96.top,trgoals97.top,trgoals98.top,trgoals99.top,trgoals100.top,trgoals101.top,trgoals102.top,trgoals103.top,trgoals104.top,trgoals105.top,trgoals106.top,trgoals107.top,trgoals108.top,trgoals109.top,trgoals110.top,trgoals111.top,trgoals112.top,trgoals113.top,trgoals114.top,trgoals115.top,trgoals116.top,trgoals117.top,trgoals118.top,trgoals119.top,trgoals120.top,trgoals121.top,trgoals122.top,trgoals123.top,trgoals124.top,trgoals125.top,trgoals126.top,trgoals127.top,trgoals128.top##+js(set-constant, puShown, true)
-trgoals78.top,trgoals79.top,trgoals80.top,trgoals81.top,trgoals82.top,trgoals83.top,trgoals84.top,trgoals85.top,trgoals86.top,trgoals87.top,trgoals88.top,trgoals89.top,trgoals90.top,trgoals91.top,trgoals92.top,trgoals93.top,trgoals94.top,trgoals95.top,trgoals96.top,trgoals97.top,trgoals98.top,trgoals99.top,trgoals100.top,trgoals101.top,trgoals102.top,trgoals103.top,trgoals104.top,trgoals105.top,trgoals106.top,trgoals107.top,trgoals108.top,trgoals109.top,trgoals110.top,trgoals111.top,trgoals112.top,trgoals113.top,trgoals114.top,trgoals115.top,trgoals116.top,trgoals117.top,trgoals118.top,trgoals119.top,trgoals120.top,trgoals121.top,trgoals122.top,trgoals123.top,trgoals124.top,trgoals125.top,trgoals126.top,trgoals127.top,trgoals128.top##.under-vid-banner
-trgoals78.top,trgoals79.top,trgoals80.top,trgoals81.top,trgoals82.top,trgoals83.top,trgoals84.top,trgoals85.top,trgoals86.top,trgoals87.top,trgoals88.top,trgoals89.top,trgoals90.top,trgoals91.top,trgoals92.top,trgoals93.top,trgoals94.top,trgoals95.top,trgoals96.top,trgoals97.top,trgoals98.top,trgoals99.top,trgoals100.top,trgoals101.top,trgoals102.top,trgoals103.top,trgoals104.top,trgoals105.top,trgoals106.top,trgoals107.top,trgoals108.top,trgoals109.top,trgoals110.top,trgoals111.top,trgoals112.top,trgoals113.top,trgoals114.top,trgoals115.top,trgoals116.top,trgoals117.top,trgoals118.top,trgoals119.top,trgoals120.top,trgoals121.top,trgoals122.top,trgoals123.top,trgoals124.top,trgoals125.top,trgoals126.top,trgoals127.top,trgoals128.top##.dbad
+trgoals183.top##+js(set-constant, video_shown, 1)
+trgoals183.top##+js(set-constant, puShown, true)
+trgoals183.top##.under-vid-banner
+trgoals183.top##.dbad
 !
 ! Frequently changed domains: inattvizle*.top
 ! Source: https://inatgiris.com/ => https://www.inattvizle480.top/
