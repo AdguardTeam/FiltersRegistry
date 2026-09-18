@@ -24,6 +24,8 @@ echo "Downloading translations"
 # staged in this repo (there is no upload step).
 yarn -s crowdin download --all --config "$crowdinConfig"
 
+imported=0
+skipped=0
 for locale in "${locales[@]}"; do
     echo "Importing $locale locale"
     for spec in "tags.json:tag." "groups.json:group." "filters.json:filter."; do
@@ -31,12 +33,14 @@ for locale in "${locales[@]}"; do
         mask="${spec##*:}"
         if [ ! -f "$crowdinDir/$locale/$file" ]; then
             echo "Skip $locale/$file: not downloaded"
+            skipped=$((skipped + 1))
             continue
         fi
         node converter.js import "$crowdinDir/$locale/$file" "$locale" converted.json "$mask"
         mkdir -p "$workDir/locales/$locale"
         cp -f converted.json "$workDir/locales/$locale/$file"
         rm converted.json
+        imported=$((imported + 1))
     done
 
     # es_ES is a copy of es; pt_PT also receives pt's tags and groups as a
@@ -58,4 +62,9 @@ for locale in "${locales[@]}"; do
     fi
 done
 
-echo "Import finished"
+if [ "$imported" -eq 0 ]; then
+    echo "Error: no translations were downloaded" >&2
+    exit 1
+fi
+
+echo "Import finished: $imported files imported, $skipped skipped"
