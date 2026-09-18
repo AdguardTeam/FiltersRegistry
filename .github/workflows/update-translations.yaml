@@ -14,6 +14,11 @@ jobs:
   update:
     name: Download translations and open a PR
     runs-on: ubuntu-latest
+    # Only run on the master branch: a manual dispatch from a feature branch
+    # would check out that branch and create the update-translations PR from
+    # its HEAD into master. Schedules only fire on the default branch anyway,
+    # and the repository check keeps forks from running the workflow at all.
+    if: github.ref == 'refs/heads/master' && github.repository == 'AdguardTeam/FiltersRegistry'
     # The download step performs 129 sequential curl calls; cap the job runtime
     # so a stalled connection cannot hold the update-translations concurrency
     # group for the GitHub 6-hour default and delay subsequent weekly runs.
@@ -112,11 +117,14 @@ jobs:
       contents: read
     # `always()` keeps the alert on any non-success outcome; `!= 'success'`
     # also covers runs stopped by timeout-minutes, which GitHub reports as
-    # 'cancelled' rather than 'failure'.
+    # 'cancelled' rather than 'failure'. `!= 'skipped'` excludes runs where the
+    # update job did not run at all (e.g. a manual dispatch from a feature
+    # branch, guarded above), so they do not raise a false alert.
     if:
       ${{
         always() &&
         needs.update.result != 'success' &&
+        needs.update.result != 'skipped' &&
         github.repository == 'AdguardTeam/FiltersRegistry'
       }}
     steps:
