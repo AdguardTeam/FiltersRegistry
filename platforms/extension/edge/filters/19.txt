@@ -1,9 +1,9 @@
-! Checksum: wkRAMZ+2caM/i01fAHd/SQ
-! Diff-Path: ../patches/19/19-s-1789715985-3600.patch
+! Checksum: FgKtEJvlScJOe3YOlTX/DA
+! Diff-Path: ../patches/19/19-s-1789719702-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.83.36
-! TimeUpdated: 2026-09-18T07:17:22+00:00
+! Version: 2.0.83.37
+! TimeUpdated: 2026-09-18T08:19:45+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3445,6 +3445,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+leeapk.com###accordion-versions ~ div.text-center > a[target="_blank"]
 senshi.to##.fixed.inset-0.items-center
 stellar.gdn##div[aria-label="Ads notice"]
 stellar.gdn##div[class^="fixed inset-0 z-[9999]"]
@@ -11922,8 +11923,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
-||haberler.com/static/js/medya-push.js
-||sondakika.com/static/js/medya-push.js
+/static/js/medya-push.js$domain=haberler.com|sondakika.com
 meteoweb.eu#$##notificationModal { display: none !important; }
 meteoweb.eu#$#.modal-backdrop { display: none !important; }
 meteoweb.eu#$#body { overflow: visible !important; padding-right: 0 !important; }
