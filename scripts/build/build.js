@@ -165,8 +165,13 @@ const buildFilters = async () => {
 
         const optimizationStatsFiltersPath = path.join(optimizationStatsDir, 'filters');
 
-        const statsDirHasContent = existsSync(optimizationStatsFiltersPath)
-            && (await fs.readdir(optimizationStatsFiltersPath)).length > 0;
+        let statsDirHasContent = false;
+        try {
+            statsDirHasContent = existsSync(optimizationStatsFiltersPath)
+                && (await fs.readdir(optimizationStatsFiltersPath)).length > 0;
+        } catch {
+            // Fall through with statsDirHasContent = false.
+        }
 
         if (statsDirHasContent) {
             let cachedScopeFlags = null;
