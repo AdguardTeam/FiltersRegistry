@@ -2,9 +2,10 @@ project_id: "17570"
 api_token_env: "CROWDIN_PERSONAL_TOKEN"
 preserve_hierarchy: true
 
-# Keep the download limited to the locales this repo tracks; the codes are the
-# same ones the Twosky-based download.sh used, with `en` included like in the
-# old script.
+# Keep the download limited to the locales this repo tracks. The codes are
+# Crowdin language IDs; the Twosky codes es/pt/sv/hy are es-ES/pt-PT/sv-SE/
+# hy-AM in Crowdin (the CLI hard-fails on codes the project does not have).
+# `en` is downloaded like in the old download.sh.
 export_languages:
   - ar
   - be
@@ -15,7 +16,7 @@ export_languages:
   - de
   - el
   - en
-  - es
+  - es-ES
   - fa
   - fi
   - fr
@@ -23,7 +24,7 @@ export_languages:
   - hi
   - hr
   - hu
-  - hy
+  - hy-AM
   - id
   - it
   - ja
@@ -34,7 +35,6 @@ export_languages:
   - nl
   - no
   - pl
-  - pt
   - pt-BR
   - pt-PT
   - ro
@@ -42,7 +42,7 @@ export_languages:
   - sk
   - sl
   - sr
-  - sv
+  - sv-SE
   - th
   - tr
   - uk
@@ -51,9 +51,8 @@ export_languages:
   - zh-TW
 
 # Map Crowdin language codes to the locale directory names used in this repo:
-# pt-BR/pt-PT use underscores and zh-CN is stored as `zh` (the old download.sh
-# renamed zh_CN the same way). es-ES is mapped defensively so it cannot collide
-# with `es` under the two-letters-code placeholder.
+# es-ES/pt-PT/pt-BR use underscores, zh-CN is stored as `zh`, and the
+# two-letter repo dirs sv/hy keep their names (sv-SE -> sv, hy-AM -> hy).
 # Note: &/* is Yaml anchor syntax: https://support.atlassian.com/bitbucket-cloud/docs/yaml-anchors/
 languages_mapping: &languages_mapping
   two_letters_code:
@@ -62,6 +61,8 @@ languages_mapping: &languages_mapping
     zh-CN: zh
     zh-TW: zh_TW
     es-ES: es_ES
+    sv-SE: sv
+    hy-AM: hy
 
 files:
   - source: /temp/crowdin/source/tags.json
