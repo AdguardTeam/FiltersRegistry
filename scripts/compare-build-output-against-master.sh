@@ -606,15 +606,15 @@ if confirm; then
     BUILD_MODE=cached
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
 
-    # Not required every run — an existing filter.txt cache can be reused,
-    # so this defaults to skip.
+    # Not required every run — the committed filter.txt is usually current
+    # enough, so this defaults to skip.
     echo "Generate filter.txt cache (yarn generate-cache)?"
     if confirm; then
         DO_GENERATE_CACHE=true
         echo "${C_CYAN}${ARROW}${C_RESET} Will run generate-cache before build:local"
     else
         DO_GENERATE_CACHE=false
-        echo "${C_CYAN}${ARROW}${C_RESET} Skipping generate-cache, reusing existing cache"
+        echo "${C_CYAN}${ARROW}${C_RESET} Skipping generate-cache, building from the committed filter.txt"
     fi
 
     # Downloaded once (via the $BASE_BRANCH worktree) into SHARED_STATS_DIR,
