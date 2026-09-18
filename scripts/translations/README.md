@@ -10,6 +10,15 @@ The `/locales` directory contains translations for filters, groups, and tags.
 
 ## Integration with Translation Service
 
+Translations are stored in the Crowdin project `adguard-applications` (project ID 17570) under
+the `miscellaneous/filters-registry` folder. The Crowdin CLI (configured in the root `crowdin.yml`)
+is used to download and upload strings; the legacy Twosky-based `download.sh`/`upload.sh` scripts
+are kept for reference but no longer used by the CI workflow.
+
+The Crowdin CLI reads the API token from the `CROWDIN_PERSONAL_TOKEN` environment variable, so it
+must be set before running the scripts (in CI it is provided by the `CROWDIN_PERSONAL_TOKEN`
+repository secret).
+
 It's essential to import strings from the service before exporting them, as some changes may be lost otherwise.
 
 1. **Install dependencies in the root directory:**
@@ -24,8 +33,12 @@ It's essential to import strings from the service before exporting them, as some
 
     ```bash
     cd scripts/translations
-    ./download.sh
+    CROWDIN_PERSONAL_TOKEN="YOURTOKEN" ./download-crowdin.sh
     ```
+
+    The script stages the `en` source files, uploads them to Crowdin (to keep the export pattern
+    in sync with `crowdin.yml`), downloads translations for all configured locales, and converts
+    them into the repo format under `locales/`.
 
 1. **Validate Translations:**
 
@@ -55,8 +68,10 @@ It's essential to import strings from the service before exporting them, as some
     To export strings to the service, navigate to the `/translations` scripts directory and run the following command:
 
     ```bash
-    ./upload.sh
+    CROWDIN_PERSONAL_TOKEN="YOURTOKEN" ./upload-crowdin.sh
     ```
+
+    The script converts the `en` source files from `locales/en/` and uploads them to Crowdin.
 
 1. (optional) **Validate builded platforms:**
 
@@ -71,10 +86,11 @@ It's essential to import strings from the service before exporting them, as some
 ## Automatic Updates
 
 The `Update translations` GitHub Actions workflow
-(`.github/workflows/update-translations.yaml`) runs `download.sh` weekly and on demand,
+(`.github/workflows/update-translations.yaml`) runs `download-crowdin.sh` weekly and on demand
+(authenticated with the `CROWDIN_PERSONAL_TOKEN` repository secret),
 validates the result with `yarn validate:locales`, and opens a pull request with the
 changes to `locales/`. Trigger it manually from the Actions tab. Uploading base English
-strings (`upload.sh`) stays a manual step.
+strings (`upload-crowdin.sh`) stays a manual step.
 
 The pull request is created with the default `GITHUB_TOKEN`, so it does not trigger the
 regular CI workflows; the update job itself runs `yarn validate:locales`, `yarn lint`,
