@@ -10,6 +10,7 @@ export default defineConfig({
         include: [
             'scripts/wildcard-domain-processor/__tests__/*.test.ts',
             'scripts/build/__tests__/*.test.ts',
+            'scripts/translations/__tests__/*.test.ts',
         ],
         watch: false,
         silent: true,
