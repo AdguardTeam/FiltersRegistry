@@ -445,12 +445,13 @@ Translations live in `locales/` (45+ languages). See
 1. Download latest translations: `cd scripts/translations && CROWDIN_PERSONAL_TOKEN=... ./download-crowdin.sh`
 1. Validate: `yarn validate:locales`
 1. Edit strings in `locales/` as needed.
-1. Upload changes: `cd scripts/translations && CROWDIN_PERSONAL_TOKEN=... ./upload-crowdin.sh`
+1. Upload changes (manual only): `cd scripts/translations && ./upload.sh`
 
 Translations are stored in the Crowdin project `adguard-applications` (project ID 17570) under
-`miscellaneous/filters-registry` and are synced with the Crowdin CLI configured in the root
-`crowdin.yml`. The legacy Twosky-based `download.sh`/`upload.sh` scripts are kept for reference but
-no longer used by CI.
+`miscellaneous/filters-registry`; downloads use the Crowdin CLI configured in the root
+`crowdin.yml`. The legacy Twosky-based `download.sh`/`upload.sh` scripts are kept for reference;
+uploading strings to the service is done manually via `upload.sh` only — there is no
+Crowdin-CLI-based upload script.
 
 The first two steps are automated: the `update-translations.yaml` workflow runs weekly
 (Mondays 06:00 UTC) and on manual dispatch, downloads translations via `download-crowdin.sh`

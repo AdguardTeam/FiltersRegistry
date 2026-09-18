@@ -12,8 +12,9 @@ The `/locales` directory contains translations for filters, groups, and tags.
 
 Translations are stored in the Crowdin project `adguard-applications` (project ID 17570) under
 the `miscellaneous/filters-registry` folder. The Crowdin CLI (configured in the root `crowdin.yml`)
-is used to download and upload strings; the legacy Twosky-based `download.sh`/`upload.sh` scripts
-are kept for reference but no longer used by the CI workflow.
+is used to download strings; the legacy Twosky-based `download.sh`/`upload.sh` scripts are kept
+for reference, and `upload.sh` remains the only way to upload strings to the service (a manual
+step, see below).
 
 The Crowdin CLI reads the API token from the `CROWDIN_PERSONAL_TOKEN` environment variable, so it
 must be set before running the scripts (in CI it is provided by the `CROWDIN_PERSONAL_TOKEN`
@@ -36,9 +37,8 @@ It's essential to import strings from the service before exporting them, as some
     CROWDIN_PERSONAL_TOKEN="YOURTOKEN" ./download-crowdin.sh
     ```
 
-    The script stages the `en` source files, uploads them to Crowdin (to keep the export pattern
-    in sync with `crowdin.yml`), downloads translations for all configured locales, and converts
-    them into the repo format under `locales/`.
+    The script downloads translations for all configured locales and converts them into the repo
+    format under `locales/`.
 
 1. **Validate Translations:**
 
@@ -63,15 +63,17 @@ It's essential to import strings from the service before exporting them, as some
     yarn validate:locales
     ```
 
-1. **Upload Strings:**
+1. **Upload Strings (manual only):**
 
-    To export strings to the service, navigate to the `/translations` scripts directory and run the following command:
+    Uploading strings to the translation service is a manual step, done with the legacy Twosky-based
+    `upload.sh` script (it must be run from the `scripts/translations` directory):
 
     ```bash
-    CROWDIN_PERSONAL_TOKEN="YOURTOKEN" ./upload-crowdin.sh
+    ./upload.sh
     ```
 
-    The script converts the `en` source files from `locales/en/` and uploads them to Crowdin.
+    There is intentionally no Crowdin-CLI-based upload script: uploads happen only via `upload.sh`,
+    on demand.
 
 1. (optional) **Validate builded platforms:**
 
@@ -90,7 +92,7 @@ The `Update translations` GitHub Actions workflow
 (authenticated with the `CROWDIN_PERSONAL_TOKEN` repository secret),
 validates the result with `yarn validate:locales`, and opens a pull request with the
 changes to `locales/`. Trigger it manually from the Actions tab. Uploading base English
-strings (`upload-crowdin.sh`) stays a manual step.
+strings (`upload.sh`) stays a manual step, outside the workflow.
 
 The pull request is created with the default `GITHUB_TOKEN`, so it does not trigger the
 regular CI workflows; the update job itself runs `yarn validate:locales`, `yarn lint`,
