@@ -11,10 +11,10 @@ crowdinConfig="$workDir/crowdin.yml"
 # keep the list alphabetically sorted; the dir names are the repo locale dirs
 # after the languages_mapping in crowdin.yml (zh-CN is stored as `zh`)
 locales=(
-    "ar" "be" "bg" "ca" "cs" "da" "de" "el" "en" "es"
+    "ar" "be" "bg" "ca" "cs" "da" "de" "el" "en" "es_ES"
     "fa" "fi" "fr" "he" "hi" "hr" "hu" "hy" "id" "it"
-    "ja" "ko" "lt" "mk" "ms" "nl" "no" "pl" "pt" "pt_BR"
-    "pt_PT" "ro" "ru" "sk" "sl" "sr" "sv" "th" "tr" "uk"
+    "ja" "ko" "lt" "mk" "ms" "nl" "no" "pl" "pt_BR" "pt_PT"
+    "ro" "ru" "sk" "sl" "sr" "sv" "th" "tr" "uk"
     "vi" "zh" "zh_TW"
 )
 
@@ -42,24 +42,6 @@ for locale in "${locales[@]}"; do
         rm converted.json
         imported=$((imported + 1))
     done
-
-    # es_ES is a copy of es; pt_PT also receives pt's tags and groups as a
-    # fallback when the pt-PT language has no own download (mirrors download.sh).
-    if [ "$locale" = "es" ]; then
-        echo "Copying es translations to es_ES"
-        mkdir -p "$workDir/locales/es_ES"
-        for file in tags.json groups.json filters.json; do
-            cp -f "$workDir/locales/es/$file" "$workDir/locales/es_ES/$file"
-        done
-    fi
-
-    if [ "$locale" = "pt" ]; then
-        echo "Copying pt translations to pt_PT"
-        mkdir -p "$workDir/locales/pt_PT"
-        for file in tags.json groups.json; do
-            cp -f "$workDir/locales/pt/$file" "$workDir/locales/pt_PT/$file"
-        done
-    fi
 done
 
 if [ "$imported" -eq 0 ]; then
