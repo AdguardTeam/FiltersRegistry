@@ -1,9 +1,9 @@
-! Checksum: nMK8Qql2sPX4/0mdWgomQA
-! Diff-Path: ../patches/233_optimized/233_optimized-s-1789749578-14400.patch
+! Checksum: RgLlYEIMMEGoVI9i6zQ98g
+! Diff-Path: ../patches/233_optimized/233_optimized-s-1789821838-14400.patch
 ! Title: Adblock List for Finland (Optimized)
 ! Description: Finnish ad blocking filter list.
-! Version: 2.0.13.3
-! TimeUpdated: 2026-09-18T16:36:15+00:00
+! Version: 2.0.13.4
+! TimeUpdated: 2026-09-19T12:40:32+00:00
 ! Expires: 12 hours (update frequency)
 ampparit.com##.ad-slot
 iijokiseutu.fi,ilkkapohjalainen.fi,jarviseutu-lehti.fi,jurvansanomat.fi,kaleva.fi,koillissanomat.fi,komiat.fi,lapinkansa.fi,pohjoisenpolut.fi,pyhajokiseutu.fi,raahenseutu.fi,rantalakeus.fi,siikajokilaakso.fi,suupohjansanomat.fi,viiskunta.fi#$?#.m-managedListing__column:has(.m-contentListItem__advertisement) { remove: true; }
@@ -861,9 +861,10 @@ tehylehti.fi##.commercial_wrapper
 tehylehti.fi##.node-promoted.node-teaser
 tehylehti.fi##.paragraph--type-ad
 teknavi.fi##[class|=adform]
-telsu.fi#$#[id="prg"] > [class~="ch"] { anchor-name:--telsu-k!important; }
-telsu.fi#$#[id="prg"] > [class~="katsomo"] ~ [class~="ch"] { anchor-name:none!important; }
-telsu.fi#$#body:has([id="prg"] > [class~="katsomo"])::after { content:""!important; position:absolute!important; position-anchor:--telsu-k!important; top:anchor(top)!important; left:anchor(left)!important; width:anchor-size(width)!important; height:anchor-size(height)!important; background:var(--bg-body)!important; z-index:4999!important; pointer-events:auto!important; }
+telsu.fi#$#[id="prg"] > [class~="ch"] { position:relative!important; }
+telsu.fi#$#[id="prg"] > [class~="ch"]::after { content:""!important; position:absolute!important; inset:0!important; pointer-events:none!important; }
+telsu.fi#$#[id="prg"] > [class~="katsomo"] { pointer-events:none!important; }
+telsu.fi#$#[id="prg"] > [class~="katsomo"]::after { background:var(--bg-body)!important; z-index:1001!important; pointer-events:auto!important; }
 telsu.fi##.dets.pop > .pb_d
 telsu.fi##.dp
 telsu.fi##.pb
