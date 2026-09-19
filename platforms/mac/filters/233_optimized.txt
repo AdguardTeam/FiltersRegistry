@@ -1,8 +1,8 @@
-! Checksum: 8amxOFHDPa/xnagp/70Fng
+! Checksum: rhHEqfXfmnNOgXas/9IW1A
 ! Title: Adblock List for Finland (Optimized)
 ! Description: Finnish ad blocking filter list.
-! Version: 2.0.13.4
-! TimeUpdated: 2026-09-19T12:40:32+00:00
+! Version: 2.0.13.5
+! TimeUpdated: 2026-09-19T20:33:59+00:00
 ! Expires: 5 days (update frequency)
 ampparit.com##.ad-slot
 iijokiseutu.fi,ilkkapohjalainen.fi,jarviseutu-lehti.fi,jurvansanomat.fi,kaleva.fi,koillissanomat.fi,komiat.fi,lapinkansa.fi,pohjoisenpolut.fi,pyhajokiseutu.fi,raahenseutu.fi,rantalakeus.fi,siikajokilaakso.fi,suupohjansanomat.fi,viiskunta.fi#$?#.m-managedListing__column:has(.m-contentListItem__advertisement) { remove: true; }
@@ -860,10 +860,8 @@ tehylehti.fi##.commercial_wrapper
 tehylehti.fi##.node-promoted.node-teaser
 tehylehti.fi##.paragraph--type-ad
 teknavi.fi##[class|=adform]
-telsu.fi#$#[id="prg"] > [class~="ch"] { position:relative!important; }
-telsu.fi#$#[id="prg"] > [class~="ch"]::after { content:""!important; position:absolute!important; inset:0!important; pointer-events:none!important; }
-telsu.fi#$#[id="prg"] > [class~="katsomo"] { pointer-events:none!important; }
-telsu.fi#$#[id="prg"] > [class~="katsomo"]::after { background:var(--bg-body)!important; z-index:1001!important; pointer-events:auto!important; }
+telsu.fi#$#[id="prg"] > [class~="ch"]:has(+ [class~="katsomo"]) { position:relative!important; z-index:1001!important; }
+telsu.fi#$#[id="prg"] > [class~="ch"]:has(+ [class~="katsomo"])::after { content:""!important; position:absolute!important; top:0!important; left:calc(100% + 5px)!important; width:100%!important; height:100%!important; background:var(--bg-body)!important; pointer-events:auto!important; }
 telsu.fi##.dets.pop > .pb_d
 telsu.fi##.dp
 telsu.fi##.pb
