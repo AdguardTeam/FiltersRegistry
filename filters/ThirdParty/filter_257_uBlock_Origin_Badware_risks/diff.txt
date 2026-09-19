@@ -3290,6 +3290,14 @@ aspireatlas.com##+js(rmnt, script, String.fromCharCode)
 pentest.blog##+js(rmnt, script, (self);)
 ! Rule "pentest.blog##+js(acs, atob, new )" converted to: "pentest.blog#%#//scriptlet('ubo-acs', 'atob', 'new')"
 pentest.blog##+js(acs, atob, new )
+! Rule "/captcha/api|$script,3p" converted to: "/captcha/api|$script,third-party"
+/captcha/api|$script,3p
+! Rule "||guildpass.one^$doc,reason=malicious" converted to: "||guildpass.one^$document,reason=malicious"
+||guildpass.one^$doc,reason=malicious
+! Rule "||guildbase.org^$doc,reason=malicious" converted to: "||guildbase.org^$document,reason=malicious"
+||guildbase.org^$doc,reason=malicious
+! Rule "||guildkit.org^$doc,reason=malicious" converted to: "||guildkit.org^$document,reason=malicious"
+||guildkit.org^$doc,reason=malicious
 ! Rule ".com/api/users*^pii=&in=false^$doc" converted to: ".com/api/users*^pii=&in=false^$document"
 .com/api/users*^pii=&in=false^$doc
 ! Rule ".com/api/users*^in=false&pii=$doc" converted to: ".com/api/users*^in=false&pii=$document"
@@ -5370,6 +5378,12 @@ ublockdns.com#$#main>section>div:first-child::before { content: 'Not related to 
 ublockorigin.app#$##main::before { content: 'This is not the official uBlock Origin site.' !important; font-size: 32px !important; color: red !important; font-weight: bold !important; }
 ! Error: "Unknown modifier: ipaddress=185.100.85.248" in the rule: "$document,ipaddress=185.100.85.248"
 $document,ipaddress=185.100.85.248
+! Error: "Unknown modifier: reason=malicious" in the rule: "||guildpass.one^$document,reason=malicious"
+||guildpass.one^$document,reason=malicious
+! Error: "Unknown modifier: reason=malicious" in the rule: "||guildbase.org^$document,reason=malicious"
+||guildbase.org^$document,reason=malicious
+! Error: "Unknown modifier: reason=malicious" in the rule: "||guildkit.org^$document,reason=malicious"
+||guildkit.org^$document,reason=malicious
 ! Error: "Unknown modifier: from=~fitgirl-repacks.site" in the rule: "||fitgirl-repacks.$all,from=~fitgirl-repacks.site,to=~fitgirl-repacks.site"
 ||fitgirl-repacks.$all,from=~fitgirl-repacks.site,to=~fitgirl-repacks.site
 ! Error: "Unknown modifier: strict1p" in the rule: "/\/wap\/api\/(?:activity\/)?[a-zA-Z]+![-_a-zA-Z]+\.action\?/$xmlhttprequest,~third-party,strict1p,match-case"
