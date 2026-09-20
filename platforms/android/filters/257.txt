@@ -1,9 +1,9 @@
-! Checksum: 12guPP+8VPXyrUH48ezsJw
-! Diff-Path: ../patches/257/257-s-1789850184-14400.patch
+! Checksum: EohF52ZzJiVImadgTMektQ
+! Diff-Path: ../patches/257/257-s-1789908214-14400.patch
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.12.66
-! TimeUpdated: 2026-09-19T20:34:24+00:00
+! Version: 2.0.12.67
+! TimeUpdated: 2026-09-20T12:41:14+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -4843,6 +4843,11 @@ monster###bw-rc-host[style="position: fixed !important; inset: 0px !important; z
 ! [excluded by #%#//scriptlet] darumasushiantofagasta.cl#%#//scriptlet('ubo-aost', 'Function', '/bxslider|wow/')
 !+ NOT_OPTIMIZED
 ||cloudflare-check.net^$all
+! https://x.com/fr0gger_/status/2101505589964874104
+!+ NOT_OPTIMIZED
+/\/t\.js\?site=[a-f0-9]{32}\b/$script,third-party,match-case
+!+ NOT_OPTIMIZED
+##body.wp-singular > div[id$="-overlay"] > div[id$="-container"] > div[class*="-container"] > div[id$="-checkbox-window"]
 ! !SECTION: ClickFix
 ! https://www.reddit.com/r/uBlockOrigin/comments/12ng4o8/
 ! https://www.virustotal.com/gui/url/fe6b4bc7a258a92a97ad3216c85d159857ccd581df9b31a50a308ca49f967e34
@@ -7146,6 +7151,17 @@ monster###bw-rc-host[style="position: fixed !important; inset: 0px !important; z
 ||gitconnect-online.web.app^$all
 !+ NOT_OPTIMIZED
 ||officialgitechpage.web.app^$all
+! ledger
+! https://github.com/uBlockOrigin/uAssets/issues/30162
+!+ NOT_OPTIMIZED
+-ledger.live^$document
+!+ NOT_OPTIMIZED
+||guardan.io^$all
+! https://github.com/uBlockOrigin/uAssets/issues/34559
+!+ NOT_OPTIMIZED
+||check-products.org^$all
+!+ NOT_OPTIMIZED
+||en-ledger.com^$all
 ! swan.com
 ! https://www.reddit.com/r/Scams/comments/1o1muxh/us_has_anyone_ever_heard_of_httpsswan9topassets/
 !+ NOT_OPTIMIZED
@@ -8788,11 +8804,6 @@ webflow.io##html.w-mod-js:not(.wf-active) > body:not([class]):not([id]) > a[clas
 ! https://github.com/uBlockOrigin/uAssets/issues/30153
 ! https://github.com/uBlockOrigin/uAssets/issues/30149
 !+ NOT_OPTIMIZED
-! https://github.com/uBlockOrigin/uAssets/issues/30162
-!+ NOT_OPTIMIZED
--ledger.live^$document
-!+ NOT_OPTIMIZED
-||guardan.io^$all
 ! https://x.com/masaomi346/status/1971010622897914055
 !+ NOT_OPTIMIZED
 /^https:\/\/[a-z]{5,10}\.[a-z]{5,10}\.[a-z]{3}\/y1\.html$/$document,match-case,to=com|top|~weebly.com
@@ -10023,3 +10034,6 @@ top##body > center + .A + .post
 ! https://github.com/uBlockOrigin/uAssets/issues/34512
 !+ NOT_OPTIMIZED
 ||flingtrainer.io^$all
+! https://www.reddit.com/r/Scams/comments/1wkoejl/us_simple_modern_impersonator_website/
+!+ NOT_OPTIMIZED
+||simplemobgtnc.shop^$all
