@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /LpeCVukiciM1EumZk4tQg
-! Diff-Path: ../patches/7/7-s-1789762698-3600.patch
+! Checksum: 29eHVSkC07GIDrMwgAv9HQ
+! Diff-Path: ../patches/7/7-s-1789899389-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.76.67
-! TimeUpdated: 2026-09-18T20:14:35+00:00
+! Version: 2.0.76.68
+! TimeUpdated: 2026-09-20T10:13:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1901,6 +1901,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+koubo.jp##.lg\:tw-min-h-\[600px\]
+koubo.jp##.md\:tw-min-h-\[280px\]
 eiga.com##.article-wrap__powered
 nogizaka46-matome.jp##.plugin-memo:has(> div.side > table a[href^="https://hb.afl.rakuten.co.jp"])
 nogizaka46-matome.jp##.plugin-memo:has(> div.side > br + a[target="_blank"])
@@ -1995,6 +1997,7 @@ bengo4.com##div[class^="p-static-banner-area"]
 javmix.tv###main > div.pop--excl > div[style*="margin: 0 auto 50px auto;"]
 momon-ga.com,javmix.tv##.pop--excl:has(div[id^="bnc_ad"])
 posfie.com,togetter.com##.amazon_bulk_box
+pdftoshokan.com##+js(no-window-open-if, /ok_|pemsrv\.com/)
 pdftoshokan.com##.post[style="margin-bottom: 1rem; opacity: 1; transition: opacity 0.5s ease-in;"]
 hanasone.mainichi.jp##.p-article-trend-lists
 ai-ssr.com##.grid > div:has(> a[href^="https://al.fanza.co.jp"][target="_blank"])
@@ -12251,7 +12254,10 @@ adverts.ie#@#.my_ads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238404
 getnavi.jp#@#.hide_ad
 ! https://blog.nicovideo.jp/niconews/549
+blog.nicovideo.jp###creative.creative
+blog.nicovideo.jp#@#div[id^="ad_position_"]
 blog.nicovideo.jp#@#[name^="google_ads_iframe"]
+@@||tpc.googlesyndication.com/pagead/js/*_fy2021.js$domain=blog.nicovideo.jp
 @@||gstatic.com/admanager/outstream/rewarded_web_video_ja.js$domain=blog.nicovideo.jp
 @@||g.doubleclick.net/pagead/images/gmob/close-circle-30x30.png$domain=blog.nicovideo.jp
 ! https://pointmall.rakuten.co.jp/special/coupon/index_pc.html contents blocked

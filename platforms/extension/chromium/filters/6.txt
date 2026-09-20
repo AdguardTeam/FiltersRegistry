@@ -1,9 +1,9 @@
-! Checksum: VW8ozrdOAW9fg9tSX6+jWA
-! Diff-Path: ../patches/6/6-s-1789799146-3600.patch
+! Checksum: tC0++Y1SnPuBzBsabXTflw
+! Diff-Path: ../patches/6/6-s-1789899376-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.69
-! TimeUpdated: 2026-09-19T06:22:32+00:00
+! Version: 2.0.53.70
+! TimeUpdated: 2026-09-20T10:13:17+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -371,14 +371,14 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241691
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=dailyme.de
 ! https://github.com/uBlockOrigin/uAssets/issues/34187
-igorslab.de##svg:has(~ [aria-label])
-igorslab.de#?#div[class]:matches-attr("/^[0-9a-z]{5,}-[0-9a-z]{3,}$/")
+igorslab.de##svg:has(~ * [aria-label])
+igorslab.de#?#div[class]:matches-attr("/^[0-9a-z]{5,}[-_][0-9a-z]{3,}$/")
 igorslab.de#?#.ilgha-scale-frame:contains(/Similar products|Ähnliche Artikel|相似产品/)
 igorslab.de##[aria-label="Advertisement" i] + svg
 igorslab.de##[aria-label="Werbung" i] + svg
 igorslab.de##[aria-label="广告"] + svg
-igorslab.de##div[style*="width:100%;max-width:980px"]
-igorslab.de##a[href^="/"][href*="?"][style][rel][target]
+igorslab.de##div[style*="max-width:980px;"]
+igorslab.de##a[href^="/"][style][rel][target]
 ||igorslab.de/wp-content/plugins/igorslab-ads-suite/
 /^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g(?:\?[0-9_a-z-]{7,}=[0-9_a-z-]{7,})?$/$image,~third-party,match-case
 igorslab.de#%#//scriptlet('remove-node-text', 'script', 'WeakSet()')
