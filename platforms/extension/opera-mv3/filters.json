@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.8",
-			"timeUpdated": "2026-09-20T16:34:14+0000",
+			"version": "2.1.98.9",
+			"timeUpdated": "2026-09-20T20:33:33+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.8",
-			"timeUpdated": "2026-09-20T16:34:15+0000",
+			"version": "2.1.98.9",
+			"timeUpdated": "2026-09-20T20:33:34+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1397,8 +1397,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/SerboCroatianList.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.81",
-			"timeUpdated": "2026-09-16T12:45:22+0000",
+			"version": "2.0.0.82",
+			"timeUpdated": "2026-09-20T20:34:35+0000",
 			"deprecated": false,
 			"languages": [
 				"sr",
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.91.39",
-			"timeUpdated": "2026-09-20T16:34:57+0000",
+			"version": "2.0.91.40",
+			"timeUpdated": "2026-09-20T20:34:38+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
