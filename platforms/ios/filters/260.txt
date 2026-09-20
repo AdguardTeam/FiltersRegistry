@@ -1,9 +1,9 @@
-! Checksum: GTuIfLBy+0puhHvkHE7MDQ
-! Diff-Path: ../patches/260/260-s-1789780112-14400.patch
+! Checksum: Ny7KTymeenzTb8gj6Jl+pw
+! Diff-Path: ../patches/260/260-s-1789866960-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.4
-! TimeUpdated: 2026-09-19T01:05:33+00:00
+! Version: 2.0.2.5
+! TimeUpdated: 2026-09-20T01:13:04+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -963,7 +963,7 @@ www.diffchecker.com##button.bg-surface-purple:has([clip-path="url(#sparkle_svg__
 ! ============
 ! -- https://docs.docker.com/
 ! Header - State of AI Agents report
-docs.docker.com###docker-announcement-bar:has([href="https://www.docker.com/resources/the-state-of-agentic-ai-white-paper/"])
+docs.docker.com,hub.docker.com###docker-announcement-bar:has([href="https://www.docker.com/resources/the-state-of-agentic-ai-white-paper/"])
 ! Navbar - Gordon button
 docs.docker.com##[data-tooltip-wrapper]:has(> [aria-describedby="gordon-tooltip"])
 ! "Ask anything about docker" chatbox
@@ -974,6 +974,8 @@ docs.docker.com##[onclick="askGordon()"]
 ! -- https://hub.docker.com/
 ! Navbar - Gordon AI button
 hub.docker.com##div:has(> .MuiButtonBase-root > [data-testid="GordonIcon"])
+! Search - "Chat with Gordon" autocomplete suggestion
+hub.docker.com###header-search-dialog-gordon-cta
 ! Left sidebar - Generative AI
 hub.docker.com##.MuiAccordion-root:has([id="Generative AI-content"])
 ! Machine Learning & AI section category
@@ -1945,6 +1947,9 @@ www.google.com#@$?#.YzCcne { remove: true; }
 ! * Only applies if Web Guide is enabled in Google Labs
 www.google.*##.oGdvd
 ! -- https://www.google.com/search?q=caine
+! AI Overview header logo (mobile)
+! * Non-AI pieces like images can stay, but use :has() to make sure the actual AI element is something we caught in other filters
+www.google.com##.MjjYud:has(+ .MjjYud [data-attnms]) [data-prvwid="HEADER"] > .Ws2DOe
 ! "Things to know" and "People also ask" sections
 ! * First filter hides list items, .cUnQKe hides header if all items are AI, .ULSxyf hides extra space if needed
 ! * Extra sanity checks on child elements of .ULSxyf to avoid overfiltering. (Example: https://www.google.com/search?q=world+cup+standing)

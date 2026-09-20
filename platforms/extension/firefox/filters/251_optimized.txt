@@ -1,9 +1,9 @@
-! Checksum: Bj9aQXEBIzKQl6GR1hIaFQ
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1789850195-14400.patch
+! Checksum: iUn0z4UtoMtt2D+y7VuQ0Q
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1789866942-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.29
-! TimeUpdated: 2026-09-19T20:34:16+00:00
+! Version: 2.0.10.30
+! TimeUpdated: 2026-09-20T01:12:50+00:00
 ! Expires: 10 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1284,6 +1284,7 @@ $removeparam=_rdc
 ||instagram.com^$document,removeparam=igsi
 ||instagram.com^$document,removeparam=stkn
 ||instagram.com^$document,removeparam=click_source
+||instagram.com^$document,removeparam=ndid
 $removeparam=cp_ksver
 $removeparam=biw
 $removeparam=bih
@@ -2995,10 +2996,10 @@ $document,removeparam=CLRTags,domain=microsoft.com|windows.com
 ||qobuz.com^$document,removeparam=qbzs
 ||weather.com^$document,removeparam=aw_campaign
 ||weather.com^$document,removeparam=Campaign_Name
-||weather.com^$document,removeparam=lctg
+$document,removeparam=lctg,domain=bleacherreport.com|weather.com
 $document,removeparam=rilt,domain=shutterfly.com|shutterflyinc.com
 $document,removeparam=mpch,domain=shutterfly.com|shutterflyinc.com
-||weather.com^$document,removeparam=enc_em
+$document,removeparam=enc_em,domain=bleacherreport.com|weather.com
 ||cnn.com^$document,removeparam=Profile
 ||microsoft.com^$document,removeparam=UID
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
