@@ -1,5 +1,5 @@
-! Checksum: hkeAaxsMHH2zOTWoaTSNQw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1789866938-14400.patch
+! Checksum: W8X/M88UxPu+JEeV51ENNA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1789879261-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.63
@@ -41,6 +41,7 @@ appuals.com##p + div > div:first-of-type
 ||driver-soft.com^$document
 windll.com##.download-block
 windll.com##.dll > p
+fix4dll.com#?#.sidebar__block:contains(Outbyte)
 softwaretested.com##.st-alternative
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
@@ -771,6 +772,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||commonjamknights.com^$all
 ||grievetube.com^$all
 ||anadissolvedless.com^$all
+||fluffyinfection.com^$all
 ||delicioustightbronze.com^$all
 ||markswaitingrouge.com^$all
 ||absurditycanal.com^$all
@@ -1381,7 +1383,6 @@ www.microsoft.com##.card[data-bi-cn*="bus sim" i]
 ://ww5.$document,domain=~ww5.ikea.com|~ww5.msu.ac.zw|~ww5.autotask.net|~ww5.pornhoarder.tv
 ://ww6.$document,domain=~ww6.generali.pt|~ww6.autotask.net|~ww6.pornhoarder.org
 ://ww7.$document,domain=~ww7.be|~ww7.readsnk.com|~ww7.autotask.net|~ww7.pornhoarder.tv
-://ww9.$document,domain=~ww9.ikea.com|~ww9.tiki.ne.jp|~ww9.sakura.ne.jp|~ww9.generali.pt|~ww9.itau.com.br|~ww9.autotask.net|~ww9.pornhoarder.tv
 ://ww10.$document,domain=~ww10.autotask.net|~ww10.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww11.$document,domain=~ww11.autotask.net|~ww11.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww12.$document,domain=~ww12.autotask.net|~ww12.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
@@ -1554,7 +1555,6 @@ www.microsoft.com##.card[data-bi-cn*="bus sim" i]
 ##a[title="Share on WhatsApp" i]
 ##a[title^="Share to "]
 ##amp-social-share
-##button[aria-controls=ShareContainer]
 ##button[class*=ShareOverlayButton i]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
@@ -1675,7 +1675,6 @@ www.microsoft.com##.card[data-bi-cn*="bus sim" i]
 ~pinterest.*##a[data-pin-do=buttonPin]
 ~pinterest.*##a[href*="pinterest.com/pin/find/?"]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
-~pinterest.*##a[href="#pinit"]
 ~pinterest.*##a[href="/#pinterest"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
 ~pinterest.*##a[title="Share on Pinterest" i]
@@ -2095,7 +2094,6 @@ tv.nrk.no#$#:is(.episode-info-gradient,.tv-layout-fill) { background:unset!impor
 *#$#.playkit-bottom-bar { background: none !important }
 *#$#.playkit-top-bar { background: none !important }
 ##.c-controls__background:not(html, body)
-www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class*="-gradient-bottom "]
 www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class$=-gradient-bottom]
 ##div[class^=ytp-gradient-]
 www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com#$#.ytp-time-display > span { font-weight: 800 !important; text-shadow: black 0 0 3px !important }
@@ -2406,6 +2404,7 @@ $document,removeparam=lcid,domain=~rekono.si
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
+$removeparam=om_mmc
 $removeparam=k_clickid
 $removeparam=affiliateCustomId
 $removeparam=CJAID
@@ -2694,6 +2693,7 @@ $removeparam=client-ts
 $removeparam=tp_uid
 $removeparam=ft_section
 $removeparam=correlator
+$document,removeparam=ap_id
 $removeparam=ucf_user_id
 $removeparam=yandexuid
 $removeparam=google_nid
@@ -3272,7 +3272,6 @@ $removeparam=fm,domain=flipkart.com|shopbop.com
 ||flipkart.com^$removeparam=ssid
 ||flipkart.com^$removeparam=store
 ||flipkart.com^$removeparam=marketplace
-$removeparam=redirect_source,domain=mozilla.org|firefox.com
 ||fiverr.com^$removeparam=funnel
 ||epicgames.com^$removeparam=epic_affiliate
 ||epicgames.com^$removeparam=epic_gameId
@@ -3424,7 +3423,6 @@ $removeparam=af,domain=1fichier.com|comodo.com
 ||qwant.com^$removeparam=client
 ||ecosia.org^$removeparam=addon
 $removeparam=referralInfo,domain=wix.com
-$removeparam=searchResultPosition,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=locale,domain=udemy.com
 ||zoho.com^$removeparam=zsrc
 ||nortonsafe.search.ask.com^$removeparam=installsource
@@ -3662,6 +3660,7 @@ $document,removeparam=s_campaign
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 ||www.roblox.com^$removeparam=treatmentType
+ref=producthunt$document,removeparam=ref
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
@@ -3722,6 +3721,10 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunity.com
 $document,removeparam=refid,domain=press.aboutamazon.com|aws.amazon.com|aws.eu
 ||duckduckgo.com/extension-success$document,removeparam=atb
+||duckduckgo.com/atb.js$document,removeparam=set_atb
+||duckduckgo.com/atb.js$document,removeparam=v
+||duckduckgo.com/atb.js$document,removeparam=bv
+||duckduckgo.com/atb.js$document,removeparam=browser
 ||github.com^$document,removeparam=email_source
 ||github.com^$document,removeparam=email_token
 ||youtube.com/shorts/$document,removeparam=si
