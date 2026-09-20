@@ -1,5 +1,5 @@
-! Checksum: GDoua6PDcHOhroj0rqNXbg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1789799162-3600.patch
+! Checksum: Dg9dYncxZ1vTkXnKzrcneA
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1789871015-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.53.69
@@ -968,6 +968,7 @@ t-rocforum.de#%#//scriptlet("abort-current-inline-script", "$", "!document.getEl
 @@||motorsport-total.com^$generichide
 @@||motorsport-total.com/img/teaser/
 wetteronline.at,wetteronline.de#%#//scriptlet("abort-on-property-write", "googletag.defineSlot")
+@@||stats.t-online.de/js/ads/adex.js
 t-online.de#%#//scriptlet("set-constant", "abp", "false")
 @@||photovoltaikforum.com/*/adsbygoogle.js
 photovoltaikforum.com#%#//scriptlet("set-constant", "adblockDisabled", "true")
@@ -1412,14 +1413,12 @@ spiegel.de##div[x-data^="{adIndex:"]
 speedweek.com##div[class*="_bannerContainer"]
 speedweek.com##div[class^="_headerPlacementsContainer_"]
 speedweek.com##div[class^="_ad"]
-mothergrid.de##.preheader-ad
 gartenforum.de#%#//scriptlet('remove-attr', 'href', 'a[href][class^="amazon-affiliate"]')
 gartenforum.de#%#//scriptlet('remove-class', 'amazon-affiliate')
 gartenforum.de##.adsense_inpost
 gartenforum.de###gartenforum\.de_mr_2
 gartenforum.de###gartenforum\.de_mr_1
 digital-eliteboard.com##div[class^="debAd-"]
-abg-net.de##.accordion-news
 amazon.de#$#div[class="react-aria-ModalOverlay"][data-rac]:has(div[data-testid="skip-message"]) { display: none !important; }
 amazon.de#$#html { overflow: auto !important; padding-right: 0 !important; }
 businessinsider.de##div[data-remove-type-no-ads]
@@ -1496,6 +1495,7 @@ mein-schoener-garten.de##div[data-testid="ParagraphAdSlot"]
 mein-schoener-garten.de##div[data-testid="ParagraphOutbrain"]
 eisbaeren.de##.full_column > div#slide_260
 eisbaeren.de##.full_column > div.content_item:has(> div > div.ad_serve > script)
+tarnkappe.info##.container .is-one-third:has(a[href^="https://"][target="_blank"])
 ||techbook.de/wp-json/gutenberg/v1/html/embed/
 otz.de#%#//scriptlet('trusted-replace-fetch-response', '/ads\.julephosting\.de/g', 'cdn.julephosting.de', '/-episode\.json/')
 focus.de,bunte.de##div[id*="AdSlot"]
@@ -2710,7 +2710,6 @@ spilcloud.com##div[data-size="300x250"]
 finanzen.at,finanzen.ch##.equalheights > .col-md-4.col-xs-12 .dynamic-content
 ffh.de###omsRectangleChannel
 moz.de,lr-online.de,swp.de##.swp-adbox
-swp.de##.swp-adbox-container
 wallstreet-online.de##div[id^="sban"]
 finanz-tools.de##.sidebar.nur_desktop
 buzer.de##.anz_unten
@@ -3348,7 +3347,6 @@ _woz_banner_vote.
 ###werbung_leaderboard_screen
 ###werbung_mitte
 ###werbung_oben
-###werbung_right
 ###werbung_skyscraper_bottom
 ###werbung_superbanner
 ###werbung_top
@@ -3454,6 +3452,7 @@ _woz_banner_vote.
 ##a[href^="https://marketing.net.brillen.de/"]
 ##a[href^="https://media.datingpartner.com/click.php?dp="]
 ##a[href^="https://trk.imobtrk.com/"]
+##a[href^="https://www.tik-tok-date.com/"]
 ##a[href^="https://www.tipico.com/?affiliateId="]
 ping-timeout.de#@##Advertisements
 az.com.na#@##ad_block_1
@@ -4124,8 +4123,6 @@ it-boltwise.de###block-31
 jungle.world###block-anzeige
 macgadget.de###block-anzeige2
 hoerzu.de###block-block-218
-fachzeitungen.de###block-block-32
-fachzeitungen.de###block-block-5
 buecher-magazin.de,online-webradio.com###block-block-7
 buecher-magazin.de###block-block-8
 duden.de###block-dudende-d-970x250-1billboard
@@ -4211,6 +4208,7 @@ bz-berlin.de###inpage
 golem.de###iqadtile5
 ariva.de,handelsblatt.com###iqd_mainAd
 rp-online.de###ir_rpd_lb
+focus.de###isl-31-AdSlot
 juraforum.de###jf-stroer-sky
 juraforum.de###jf-stroer-superbanner
 klamm.de###klamm\.de_incontent_1
@@ -4534,7 +4532,6 @@ moviejones.de##.bannerInfo
 erotikforum.at##.bannerWrapper
 bluray-disc.de##.banner_container
 apotheke-adhoc.de##.banner_container__mobile_billboard
-archzine.net##.banner_sidebar
 handy-player.de##.bannerbox
 112-magazin.de,bassprofessor.info,finews.ch,griechenland.net,hifistatement.net,highway-magazin.de,hitradio.com.na,kajak-magazin.com,kl-aktuell.de,loz-news.de,motorradundreisen.de,naturundtherapie.at,osttirol-online.at,pc-experience.de,radio-oberland.de,sonic-seducer.de,speyer-report.de,spielbox.de,tennistraveller.net,tvbb.de,vorsprung-online.de,wahrschauer.net##.bannergroup
 tobitech.de##.bannergroupimgframe
@@ -5297,7 +5294,6 @@ playfront.de##div[id^="playf-"]
 20min.ch##div[id^="prime__inside-"]
 handballecke.de##div[id^="promotionHeader"]
 berliner-zeitung.de##div[id^="qmn-ad-"]
-reisetopia.ch,reisetopia.de##div[id^="reise-"]
 persoenlich.com##div[id^="ring-slot-"]
 fitundgesund.at,ichkoche.at,metal-hammer.de##div[id^="sas_"]
 20min.ch##div[id^="schweiz__inside-"]
@@ -5452,7 +5448,6 @@ wallstreet-online.de##.breakingNewsOfferteBox:has(span.offerteFlag)
 sportscheck.com##.c-product-tile:has(div.c-product-tile__sponsored)
 googlewatchblog.de##.card-content > center:has(ins.adsbygoogle)
 wochenblatt-reporter.de##.content-card-wrap.pointer.outlined:has(.cmmrc-tag)
-nrwz.de##.elementor-element:has([id^="nrwzad-"])
 feuerwehrmagazin.de##.excerpt-tile.cell.small-12.medium-6:has(.advertorials)
 obi.*##.find-brandshop-grid:has([data-ui-name="find-artikelkachel-gesponsert-marker"])
 prad.de##.first-list > li:has(a[href^="https://bit.ly/"])
