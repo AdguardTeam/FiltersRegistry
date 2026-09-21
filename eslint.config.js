@@ -95,6 +95,7 @@ export default tseslint.config(
             'no-continue': 'off',
             'strict': 'off',
             'no-bitwise': 'off',
+            'preserve-caught-error': 'off',
             'no-underscore-dangle': 'off',
             '@typescript-eslint/explicit-function-return-type': 'off',
             '@typescript-eslint/no-explicit-any': 'error',

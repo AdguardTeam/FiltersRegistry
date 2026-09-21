@@ -127,12 +127,10 @@ async function getAliveDomains(domains: string[]): Promise<string[]> {
  * @throws Error if the file cannot be read or parsed.
  */
 async function getJson(filename: string): Promise<AliveWildcardDomains | WildcardDomains> {
-    let oldJson: AliveWildcardDomains | WildcardDomains = {};
     try {
         const filePath = path.resolve(__dirname, filename);
         const json = await readFile(filePath);
-        oldJson = JSON.parse(json);
-        return oldJson;
+        return JSON.parse(json);
     } catch (e) {
         throw new Error(`Error reading old JSON file: ${e}`);
     }
