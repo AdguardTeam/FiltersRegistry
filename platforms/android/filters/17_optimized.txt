@@ -1,9 +1,9 @@
-! Checksum: 3/N3eNiPSSpOZ+cCRfnuXQ
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1789719695-3600.patch
+! Checksum: NbhZynKWlkrsHT0o0F9sWg
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1790000429-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.39
-! TimeUpdated: 2026-09-18T08:19:43+00:00
+! Version: 2.0.14.43
+! TimeUpdated: 2026-09-21T14:16:51+00:00
 ! Expires: 5 days (update frequency)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
@@ -339,6 +339,13 @@ $removeparam=erid
 $removeparam=oly_enc_id
 $removeparam=_ga
 $removeparam=tduid
+||cnn.com^$removeparam=source
+||baseballking.jp^$removeparam=yahoo
+||volleyballking.jp^$removeparam=yahoo
+||okinawatimes.co.jp^$removeparam=yahoo
+||bloomberg.com^$removeparam=amp;utm_medium
+||bloomberg.com^$removeparam=amp;utm_campaign
+||basketball-zine.com^$removeparam=e
 ||maps.app.goo.gl^$removeparam=g_st
 ||oita-press.co.jp^$removeparam=yh
 ||eiga.com^$removeparam=cid
@@ -356,7 +363,6 @@ $removeparam=tduid
 ||jisin.jp^$removeparam=rf
 ||newsdig.tbs.co.jp^$removeparam=ex_position
 ||newsdig.tbs.co.jp^$removeparam=ex_id
-||jprime.jp^$removeparam=display
 ||jprime.jp^$removeparam=from
 ||ck12.org^$document,removeparam=referrer
 ||ck12.org^$document,removeparam=_eid
@@ -416,7 +422,7 @@ $removeparam=ri,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.
 ||adesampa.com.br^$removeparam=suid
 ||bandsintown.com^$removeparam=actor_id
 ||bandsintown.com^$removeparam=affil_code
-||bandsintown.com^$removeparam=app_id
+||bandsintown.com^$removeparam=app_id,document
 ||bandsintown.com^$removeparam=came_from
 ||bandsintown.com^$removeparam=signature
 ||bandsintown.com^$removeparam=spn
@@ -586,6 +592,7 @@ ref=shadcn.com^$removeparam=ref
 ||urban-vpn.com^$removeparam=cid
 ||oricon.co.jp^$removeparam=ref
 ||carviewform.yahoo.co.jp^$removeparam=src
+||mynoise.net^$removeparam=l
 ||kaigonoshigoto.jp^$removeparam=scid
 ||coco.fun/share/$removeparam=share_to
 ||coco.fun/share/$removeparam=m
