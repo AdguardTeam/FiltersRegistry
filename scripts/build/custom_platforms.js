@@ -492,7 +492,8 @@ const EXTENDED_CSS_RULES_PATTERNS = [
 
 /**
  * Used for `EXTENSION_CHROMIUM`, `EXTENSION_CHROMIUM_MV3`, `EXTENSION_EDGE`,
- * `EXTENSION_OPERA`, and `EXTENSION_OPERA_MV3` platforms.
+ * `EXTENSION_EDGE_MV3`, `EXTENSION_OPERA`, and `EXTENSION_OPERA_MV3`
+ * platforms.
  */
 const CHROMIUM_BASED_EXTENSION_PATTERNS = [
     ...HTML_FILTERING_MODIFIER_PATTERNS,
@@ -683,6 +684,24 @@ export const CUSTOM_PLATFORMS_CONFIG = {
             'adguard': true,
             'adguard_ext_edge': true,
             'adguard_ext_chromium': true,
+        },
+    },
+    'EXTENSION_EDGE_MV3': {
+        'platform': 'ext_edge_mv3',
+        'path': 'extension/edge-mv3',
+        'expires': '10 days',
+        'configuration': {
+            'removeRulePatterns': [
+                ...CHROMIUM_BASED_EXTENSION_PATTERNS,
+                ...REDIRECT_RULE_MODIFIER_PATTERNS,
+            ],
+            'replacements': null,
+            'ignoreRuleHints': false,
+        },
+        'defines': {
+            'adguard': true,
+            'adguard_ext_edge_mv3': true,
+            'adguard_ext_chromium_mv3': true,
         },
     },
     'EXTENSION_OPERA': {
