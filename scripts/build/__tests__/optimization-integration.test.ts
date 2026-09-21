@@ -185,7 +185,7 @@ describe('build.js: cache flag handling', () => {
 
         vi.doMock('@adguard/filters-compiler', () => ({
             compile: vi.fn().mockRejectedValue(
-                new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH),
+                new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH, 'retrieval'),
             ),
             localOptimizationStatistics: {
                 download: vi.fn().mockResolvedValue(undefined),
@@ -208,7 +208,7 @@ describe('build.js: cache flag handling', () => {
         expect(consoleErrorSpy).toHaveBeenCalledWith(
             expect.stringContaining(
                 'Run --download-stats to download the latest statistics. '
-                + `(${new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH).message})`,
+                + `(${new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH, 'retrieval').message})`,
             ),
         );
 
