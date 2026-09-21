@@ -1,9 +1,9 @@
-! Checksum: VQ9K0OXsMbBpbmNQ6UlMWA
-! Diff-Path: ../patches/6/6-s-1789737446-3600.patch
+! Checksum: XKLpi+C1zvEEWe1H6HYeLg
+! Diff-Path: ../patches/6/6-s-1790003869-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.68
-! TimeUpdated: 2026-09-18T13:14:03+00:00
+! Version: 2.0.53.75
+! TimeUpdated: 2026-09-21T15:14:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -378,13 +378,14 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241691
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=dailyme.de
 ! https://github.com/uBlockOrigin/uAssets/issues/34187
-igorslab.de#?#div[class]:matches-attr("/^[a-z]-[0-9a-z]+-[0-9a-z]+$/")
+igorslab.de#?#[style*="!important"]
+igorslab.de##span > svg
+igorslab.de#?#div[class]:matches-attr("/^[0-9a-z]{5,}[-_][0-9a-z]{3,}$/")
+igorslab.de#?#div[class]:matches-attr("/^[0-9a-z]{5,}$/"="/^[0-9A-Z_a-z]+_/")
 igorslab.de#?#.ilgha-scale-frame:contains(/Similar products|Ähnliche Artikel|相似产品/)
-igorslab.de##[aria-label="Advertisement" i] + svg
-igorslab.de##[aria-label="Werbung" i] + svg
-igorslab.de##[aria-label="广告"] + svg
-igorslab.de##div[style*="width:100%;max-width:980px"]
-igorslab.de##a[href^="/"][href*="#"][style][rel][target]
+igorslab.de##div[style*="max-width:980px;"]
+igorslab.de#?#a[href^="/"][rel="noopener"][target]
+igorslab.de##a[href^="/"][rel="noopener"][target]
 ||igorslab.de/wp-content/plugins/igorslab-ads-suite/
 /^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g(?:\?[0-9_a-z-]{7,}=[0-9_a-z-]{7,})?$/$image,~third-party,match-case
 igorslab.de$$script[id="advanced-ads"]
@@ -1536,6 +1537,8 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+fupa.net##div[data-sentry-source-file="DistrictMainPage.tsx"] div[data-sentry-component="AdSlotContainer"]
+fupa.net#$##fupa-content > div[data-sentry-component="AdSlotContainer"] { height: 0 !important; }
 ||teltarif.de/img/$script,domain=teltarif.de
 finanzen.net##.sponsored-area
 ||mens-mental-health.de/wp-content/uploads/genderfrei_button.png
@@ -2978,6 +2981,8 @@ augsburger-allgemeine.de##div[class="p-vlist p-vlist--stretch"] > a > img[width=
 augsburger-allgemeine.de##div[class="p-vlist p-vlist--stretch"] > div.p-width_third
 heidelberg24.de,extratipp.com,fr.de,hna.de,tz.de##.wv_story_el_billboard
 freiepresse.de###NAT4
+moviepilot.de##div[class^="sc-"]:not([id]):has(> div[id^="dfp-"]:only-child)
+moviepilot.de##div[class^="sc-"]:not([id]):has(> div[class^="sc-"]:not([id]):only-child > div[id^="dfp-"]:only-child)
 moviepilot.de###consumptions
 moviepilot.de###OUTBRAIN-TITLE
 freiepresse.de##.rgt
@@ -7075,7 +7080,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||adspirit.net^$third-party
 ||adsplash.de^$third-party
 ||adsushi.de^$third-party
-||advendi.de^$third-party
 ||advert-layer.de^$third-party
 ||advolution.de^$third-party
 ||adworx.at^$third-party
@@ -7246,7 +7250,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||zieltracker.de^$third-party
 ||zuppelzockt.com^$third-party
 ||zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcbazyxwvutsrqp.de^$third-party
-||avault.net^$third-party
 ||recognified.net^$third-party
 ||ad.de.doubleclick.net^$popup,third-party
 ||adperform.de^$popup,third-party
@@ -7392,7 +7395,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||js.stroeermediabrands.de^$third-party
 ||kai-homilius-verlag.de/bilder/banner/$third-party
 ||kein-dsl.de/banner/$third-party
-||kfz-gutachter-service.de/kfz.jpg
 ||klasse2000.de/fileadmin/user_upload/webbanner/$third-party
 ||koketti.com/ib/
 ||konsi-shop.de/images/banner/
@@ -11185,6 +11187,7 @@ buongiornosuedtirol.it##.widget_random_banner_widget
 puschtra.it##.widget_sp_image
 hebelschein-spekulant.de##.widget_text
 windowspro.de##.wip-ad-block
+windowspro.de##.wip-ad-php-loaded
 zitate-online.de##.witz > .bewertung + .detaillink + p:last-child
 zitate-online.de##.witz > .bewertung + p:last-child
 celleheute.de##.wixui-column-strip.wix-blog-hide-in-print

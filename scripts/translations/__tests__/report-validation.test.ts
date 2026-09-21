@@ -52,8 +52,32 @@ const createReportDir = (reportNames: string[]): string => {
 
 describe('report-validation utils', () => {
     it('detects comments posted by this workflow', () => {
-        expect(isValidationComment(`text ${COMMENT_MARKER} text`)).toBe(true);
-        expect(isValidationComment('ordinary comment')).toBe(false);
+        expect(isValidationComment({
+            body: `${COMMENT_MARKER}\nreport`,
+            user: { type: 'Bot' },
+        })).toBe(true);
+        expect(isValidationComment({
+            body: 'ordinary comment',
+            user: { type: 'User' },
+        })).toBe(false);
+    });
+
+    it('never treats a maintainer quote reply as a workflow comment', () => {
+        // A maintainer's reply that quotes the marker keeps author type 'User'.
+        expect(isValidationComment({
+            body: `> ${COMMENT_MARKER}\nmy reply`,
+            user: { type: 'User' },
+        })).toBe(false);
+        // The marker must be at the very start of the body, not anywhere in it.
+        expect(isValidationComment({
+            body: `text ${COMMENT_MARKER}`,
+            user: { type: 'Bot' },
+        })).toBe(false);
+        // Comments without an author (e.g. from deleted accounts) are not ours.
+        expect(isValidationComment({
+            body: `${COMMENT_MARKER}`,
+            user: null,
+        })).toBe(false);
     });
 
     it('truncates long reports keeping the tail', () => {
@@ -168,8 +192,8 @@ describe('GitHubClient', () => {
         const comments = await client().listComments(5);
 
         expect(comments).toEqual([
-            { id: 1, body: 'first page' },
-            { id: 2, body: 'second page' },
+            { id: 1, body: 'first page', user: null },
+            { id: 2, body: 'second page', user: null },
         ]);
         expect(requestMock).toHaveBeenCalledTimes(2);
         expect(requestMock).toHaveBeenNthCalledWith(
@@ -193,7 +217,7 @@ describe('GitHubClient', () => {
 
 interface StatefulComments {
     /** Comments stored on the "server side" of the mock. */
-    comments: Array<{ id: number; body: string }>;
+    comments: Array<{ id: number; body: string; user: { type: 'User' | 'Bot' } | null }>;
     /** Ids passed to DELETE, in call order. */
     deletedIds: number[];
 }
@@ -206,12 +230,16 @@ interface StatefulComments {
  * @returns The client plus handles to inspect and pre-populate the mock state.
  */
 const createStatefulClient = (): StatefulComments & { client: GitHubClient } => {
-    const comments: Array<{ id: number; body: string }> = [];
+    const comments: Array<{ id: number; body: string; user: { type: 'User' | 'Bot' } | null }> = [];
     const deletedIds: number[] = [];
     let nextId = 1;
     const request = vi.fn(async (route: string, params: Record<string, unknown>) => {
         if (route === 'POST /repos/{owner}/{repo}/issues/{issue_number}/comments') {
-            const comment = { id: nextId, body: String(params.body) };
+            const comment = {
+                id: nextId,
+                body: String(params.body),
+                user: { type: 'Bot' } as const,
+            };
             nextId += 1;
             comments.push(comment);
             return octokitResponse({ ...comment });
@@ -252,8 +280,8 @@ describe('reportValidation', () => {
     it('leaves exactly one marked comment after a failure run (regression)', async () => {
         const dir = createReportDir([REPORT_FILE_NAME]);
         const { client: statefulClient, comments, deletedIds } = createStatefulClient();
-        comments.push({ id: 100, body: `stale ${COMMENT_MARKER}` });
-        comments.push({ id: 101, body: 'unrelated comment' });
+        comments.push({ id: 100, body: `${COMMENT_MARKER} stale`, user: { type: 'Bot' } });
+        comments.push({ id: 101, body: 'unrelated comment', user: { type: 'User' } });
         try {
             await reportValidation({
                 prNumber: 7,
@@ -262,7 +290,7 @@ describe('reportValidation', () => {
                 client: statefulClient,
             });
 
-            const markedComments = comments.filter((comment) => isValidationComment(comment.body));
+            const markedComments = comments.filter((comment) => isValidationComment(comment));
             // The fresh report comment survives the cleanup of the same run.
             expect(markedComments).toHaveLength(1);
             expect(markedComments[0].body).toContain('content of report_locales_error.md');
@@ -277,9 +305,9 @@ describe('reportValidation', () => {
     it('removes every stale marked comment when validation succeeds', async () => {
         const dir = createReportDir([]);
         const { client: statefulClient, comments, deletedIds } = createStatefulClient();
-        comments.push({ id: 100, body: `stale ${COMMENT_MARKER}` });
-        comments.push({ id: 101, body: `stale too ${COMMENT_MARKER}` });
-        comments.push({ id: 102, body: 'unrelated comment' });
+        comments.push({ id: 100, body: `${COMMENT_MARKER} stale`, user: { type: 'Bot' } });
+        comments.push({ id: 101, body: `${COMMENT_MARKER} stale too`, user: { type: 'Bot' } });
+        comments.push({ id: 102, body: 'unrelated comment', user: { type: 'User' } });
         try {
             await reportValidation({
                 prNumber: 7,
@@ -288,9 +316,39 @@ describe('reportValidation', () => {
                 client: statefulClient,
             });
 
-            expect(comments.filter((comment) => isValidationComment(comment.body))).toHaveLength(0);
+            expect(comments.filter((comment) => isValidationComment(comment))).toHaveLength(0);
             expect(deletedIds).toEqual([100, 101]);
             expect(comments.map((comment) => comment.id)).toEqual([102]);
+        } finally {
+            fs.rmSync(dir, { recursive: true, force: true });
+        }
+    });
+
+    it('does not delete a maintainer reply that quotes the marker (regression)', async () => {
+        const dir = createReportDir([]);
+        const { client: statefulClient, comments, deletedIds } = createStatefulClient();
+        comments.push({
+            id: 100,
+            body: `${COMMENT_MARKER}\nworkflow comment`,
+            user: { type: 'Bot' },
+        });
+        comments.push({
+            id: 101,
+            body: `> ${COMMENT_MARKER}\nmaintainer reply`,
+            user: { type: 'User' },
+        });
+        try {
+            await reportValidation({
+                prNumber: 7,
+                result: 'success',
+                repoRoot: dir,
+                client: statefulClient,
+            });
+
+            // Only the bot-authored workflow comment is deleted; the maintainer
+            // reply survives even though it contains the marker.
+            expect(deletedIds).toEqual([100]);
+            expect(comments.map((comment) => comment.id)).toEqual([101]);
         } finally {
             fs.rmSync(dir, { recursive: true, force: true });
         }
@@ -346,8 +404,8 @@ describe('reportValidation', () => {
         requestMock
             .mockResolvedValueOnce(octokitResponse({ id: 42, body: 'created comment' }))
             .mockResolvedValueOnce(octokitResponse([
-                { id: 42, body: `fresh ${COMMENT_MARKER}` },
-                { id: 2, body: `stale ${COMMENT_MARKER}` },
+                { id: 42, body: `${COMMENT_MARKER} fresh`, user: { type: 'Bot' } },
+                { id: 2, body: `${COMMENT_MARKER} stale`, user: { type: 'Bot' } },
             ]))
             .mockRejectedValueOnce(new Error('transient API error'));
         try {

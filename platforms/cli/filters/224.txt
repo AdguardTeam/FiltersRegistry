@@ -1,9 +1,9 @@
-! Checksum: Ja7bMREfP90wWcnw3+HQ0w
-! Diff-Path: ../patches/224/224-s-1789741082-3600.patch
+! Checksum: AbKylJqyo/W+Wny5Rp5mYw
+! Diff-Path: ../patches/224/224-s-1790003872-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.65.57
-! TimeUpdated: 2026-09-18T14:15:18+00:00
+! Version: 2.1.65.72
+! TimeUpdated: 2026-09-21T15:15:05+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1160,6 +1160,12 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+.gif^$image,third-party,domain=4hu.tv|g655p8.com|d44t95.com
+g655p8.com,d44t95.com,4hu.tv##div[class^="pg-v-sec-"]
+g655p8.com,d44t95.com,4hu.tv###__nuxt ~ div[data-tag]
+g655p8.com,d44t95.com,4hu.tv#%#//scriptlet('set-local-storage-item', '/^__ad/', '$remove$')
+g655p8.com,d44t95.com,4hu.tv#%#//scriptlet('set-constant', 'Object.prototype.getAd', 'noopFunc')
+g655p8.com,d44t95.com,4hu.tv#%#//scriptlet('prevent-setTimeout', 'getAd')
 ikanbot.com#%#//scriptlet('prevent-window-open', '_blank')
 ||ikanbot.com/resources/common.js?v=$script
 huangguoai.com##.hg-ssp-slot
@@ -5505,6 +5511,32 @@ newduba.cn###jq_youxi
 .z.dkt-ib.com
 ||cnzz.trafficmanager.net^
 ||cupfox.app^$third-party
+||gangplank39.com^
+||ug2k8bslb.com^
+||vzzvfpvwyyhfvo.com^
+||cqg8zmtt3.com^
+||zyy25t69u.com^
+||dzz8yyd41.com^
+||pxvoyuez.com^
+||wz2jy3t94.com^
+||altitude52.com^
+||gunwale68.top^
+||pmt0g2rugw.com^
+||xwddvfoasvtxjo.com^
+||mv3yrsh593.com^
+||hatchway14.com^
+||g4d2cox74f.com^
+||fx0blb9zp4.com^
+||99d8z9oqnu.com^
+||0hr4wyjfv3.com^
+||4ikj2pbeqb.com^
+||v2bo21e4k.com^
+||gef153x1u.com^
+||rthijnsymshxxi.com^
+||fk0hwmdoh.com^
+||wgkga5oh0.com^
+||wwyoqaf3g.com^
+||sjujmxg6d.com^
 ||95d684gnf.com^
 ||ec00t7oue1.com^
 ||4kngwxegq5.com^
@@ -13709,6 +13741,7 @@ meijutt.*/js/pcjs/
 ||qunar.com/vataframe/b.html?
 ||qunlove.com^*.gif
 ||qwblog.cn/localfile/20200612230036.gif
+||qy0.ru/data/t/*.gif
 ||qy0.ru/data/game/
 ||qy1.ru/data/game/
 ||qyun.vip/pic/*.gif
