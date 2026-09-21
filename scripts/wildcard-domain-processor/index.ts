@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { Command } from 'commander';
 import path from 'path';
 import { fileURLToPath } from 'url';

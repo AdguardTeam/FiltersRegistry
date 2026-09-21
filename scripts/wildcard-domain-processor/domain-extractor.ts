@@ -122,7 +122,6 @@ export function getDomains(rule: string): string[] {
     try {
         ruleAst = RuleParser.parse(rule);
     } catch (e) {
-        // eslint-disable-next-line no-console
         console.log(`Unable to parse rule: "${rule}", because of the error: ${e}`);
         return [];
     }

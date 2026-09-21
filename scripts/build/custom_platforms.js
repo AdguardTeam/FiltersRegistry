@@ -280,7 +280,6 @@ const JSONPRUNE_MODIFIER_PATTERNS = [
     '\\$(?!#|(path|domain)=.*]|.*removeparam=).*jsonprune(,|=|$)',
 ];
 
-/* eslint-enable max-len */
 
 /**
  * Pattern to check if rule contains `$removeparam` modifier
@@ -548,7 +547,6 @@ const SAFARI_BASED_EXTENSION_PATTERNS = [
 const CSS_MATCHES_PROPERTY_RULES_PATTERNS = [
     ':matches-property\\(',
 ];
-/* eslint-enable max-len */
 
 /**
  * Pattern to detect generic CSS rules

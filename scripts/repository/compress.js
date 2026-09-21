@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import simpleGit from 'simple-git';
 
 let commitsToKeep = 10000;
@@ -71,7 +70,6 @@ async function squashAndPush() {
 
     // Step 6: Create a commit for squashed history
     await git.commit(`squashed history from ${firstCommitHash} to ${squashedCommitHash}`);
-    // eslint-disable-next-line @stylistic/max-len
     console.log(`Step 6: Created commit for squashed history from ${firstCommitHash} to ${squashedCommitHash}`);
 
     // Step 7: Cherry-pick the commits you want to store
@@ -92,7 +90,6 @@ async function squashAndPush() {
         // Save original commit date.
         git.env('GIT_COMMITTER_DATE', date);
 
-        /* eslint-disable no-await-in-loop */
         try {
             // Use git cherry-pick command for each commit to cherry-pick.
             await git.raw(['cherry-pick', hash, '--strategy-option', 'theirs']);
@@ -106,7 +103,6 @@ async function squashAndPush() {
 
             throw e;
         }
-        /* eslint-enable no-await-in-loop */
     }
 
     // Step 8: Return to the 'master' branch

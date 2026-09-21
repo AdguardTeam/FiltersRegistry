@@ -13,9 +13,6 @@ export default tseslint.config(
         ],
     },
     {
-        linterOptions: {
-            reportUnusedDisableDirectives: 'off',
-        },
         languageOptions: {
             globals: globals.node,
             parserOptions: {

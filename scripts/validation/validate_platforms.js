@@ -36,7 +36,6 @@ if (!validationResult) {
  * @returns A promise that resolves when the validation is complete.
  */
 const validatePatchesFolder = async (dir) => {
-    // eslint-disable-next-line no-console
     console.log(`Validating ${dir}`);
 
     const files = await fs.promises.readdir(dir);
@@ -50,11 +49,9 @@ const validatePatchesFolder = async (dir) => {
         }
 
         const filePath = path.join(dir, file);
-        // eslint-disable-next-line no-await-in-loop
         const stat = await fs.promises.stat(filePath);
 
         if (stat.isDirectory()) {
-            // eslint-disable-next-line no-await-in-loop
             await validatePatchesFolder(filePath);
             continue;
         }

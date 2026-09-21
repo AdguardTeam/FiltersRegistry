@@ -18,7 +18,6 @@ export function expandWildcardsInRule(rule: string, wildcardDomains: AliveWildca
     try {
         ast = RuleParser.parse(rule);
     } catch (e) {
-        // eslint-disable-next-line no-console
         console.debug(`Was unable to parse rule: ${rule}, because of: ${e}`);
         return rule;
     }

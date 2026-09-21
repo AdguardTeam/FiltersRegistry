@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax,no-await-in-loop */
 import path from 'path';
 
 import {
@@ -63,7 +62,6 @@ function expandWildcardsInNetworkRules(
                 PIPE_MODIFIER_SEPARATOR,
             );
         } catch (e) {
-            // eslint-disable-next-line no-console
             console.log(`Can not parse domains in the rule: ${ast.raws?.text}, because of error ${e}`);
             continue;
         }
@@ -108,7 +106,7 @@ function expandWildcardsInNetworkRules(
             }
         }
 
-        // eslint-disable-next-line @typescript-eslint/naming-convention,@typescript-eslint/no-unused-vars
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         for (const [_, restrictedValue] of newRestrictedDomains) {
             newDomains.push(restrictedValue);
         }
@@ -192,7 +190,7 @@ function expandWildcardsInCosmeticRules(
         }
     }
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention,@typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     for (const [_, restrictedValue] of newRestrictedDomains) {
         newDomains.push(restrictedValue);
     }

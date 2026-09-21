@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop,no-restricted-syntax,no-console */
 import * as path from 'path';
 // @ts-expect-error there is no type definition available for the following import
 import { findDeadDomains } from '@adguard/dead-domains-linter/src/urlfilter';
