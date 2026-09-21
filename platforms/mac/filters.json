@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.91.94",
-			"timeUpdated": "2026-09-21T03:19:00+0000",
+			"version": "2.4.91.95",
+			"timeUpdated": "2026-09-21T04:18:33+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.11.89",
-			"timeUpdated": "2026-09-21T03:19:19+0000",
+			"version": "2.1.11.90",
+			"timeUpdated": "2026-09-21T04:18:52+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.32.81",
-			"timeUpdated": "2026-09-21T02:23:37+0000",
+			"version": "2.1.32.82",
+			"timeUpdated": "2026-09-21T04:18:55+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.53.71",
-			"timeUpdated": "2026-09-20T14:13:08+0000",
+			"version": "2.0.53.72",
+			"timeUpdated": "2026-09-21T04:18:59+0000",
 			"languages": [
 				"de"
 			]
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.79.88",
-			"timeUpdated": "2026-09-21T03:19:49+0000",
+			"version": "2.2.79.89",
+			"timeUpdated": "2026-09-21T04:19:19+0000",
 			"languages": []
 		},
 		{
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.94.91",
-			"timeUpdated": "2026-09-21T00:41:49+0000",
+			"version": "2.0.94.92",
+			"timeUpdated": "2026-09-21T04:19:29+0000",
 			"languages": []
 		},
 		{
@@ -312,8 +312,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.83.45",
-			"timeUpdated": "2026-09-21T02:24:04+0000",
+			"version": "2.0.83.46",
+			"timeUpdated": "2026-09-21T04:19:31+0000",
 			"languages": []
 		},
 		{
