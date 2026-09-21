@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: i2udASGMFjb7RSW6ls/d4g
-! Diff-Path: ../patches/14/14-s-1789985896-3600.patch
+! Checksum: YwIis54vQV0+waxCUaTFOw
+! Diff-Path: ../patches/14/14-s-1789989469-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.79.95
-! TimeUpdated: 2026-09-21T10:15:36+00:00
+! Version: 2.2.79.96
+! TimeUpdated: 2026-09-21T11:14:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1731,6 +1731,8 @@
 ##.cookie-banner:not(body):not(html)
 !+ NOT_OPTIMIZED
 ###cookie-law-info-bar
+! Reach plc
+###gpp-container
 ! It's not a typo and it's required for apps on some websites
 ! It's the same as just ###shopify-pc__banner, but adding ID twice causes that "specificity" is higher
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222642
@@ -2602,7 +2604,6 @@ igitems.com##div.fixed.bottom-3:has(a[href="/legal/privacy-policy#pp-cookies"])
 gorbilet.ru###__next > div[class^="css-"]:has(> div[class^="css-"] > a[href="/pages/polzovatelskoe-soglashenie/"])
 liferay.atlassian.net###page-layout\.banner
 wehype.com##div[style^="width: 100%; bottom: 0px; box-sizing: border-box; position: fixed;"]
-lancs.live###gpp-container
 glosmyslowic.pl##div[id^="foobar_cookie_"]
 lewin-brzeski.pl##+js(addEventListener-defuser, DOMContentLoaded, showCookieModal, , , true)
 eclat.hpplus.jp##.c-cookie-inquiry
@@ -36072,6 +36073,9 @@ aol.com##.banner-active:style(margin-top: 0 !important;)
 ##.save-recipe
 ##.seva-overlay
 !
+! Reach plc
+##section[data-testid="inline-google-preferred-source-ncu"]
+!
 /wp-content/plugins/mailoptin/*
 !
 ||voltmail.io/static/js/form-embed.js$3p
@@ -36204,7 +36208,6 @@ modernretail.co###lead_newsletter
 rsvplive.ie,lancs.live##section[class^="GooglePreferredSource"]
 rsvplive.ie,lancs.live##main section[class^="SocialFollowBar"]
 rsvplive.ie##article p[data-tmdatatrack-type="paragraph"]:has(> em strong > a[href^="https://www.google.com/preferences/source?q="])
-gloucestershirelive.co.uk##section[data-testid="inline-google-preferred-source-ncu"]
 lancs.live##section[class^="GooglePreferredSource"]
 lancs.live##article p[data-tmdatatrack-type="paragraph"]:has(> a:is([href^="https://www.lancs.live/newsletter-preference-centre/?"], [href="https://www.reachplc.com/site-services/privacy-policy"]))
 lancs.live##aside[class^="Factbox_"]
@@ -37131,8 +37134,6 @@ france24.com##div[data-article-content] > div.t-content__body:has(> p > a[href="
 freshbeanbakery.com##.pum-overlay.auto_open:style(display: none !important;)
 freshbeanbakery.com##html.pum-open-overlay:style(overflow: auto !important;)
 football.london,dailystar.co.uk,birminghammail.co.uk##div[data-testid^="non-commercial-"]
-dailystar.co.uk,birminghammail.co.uk,liverpoolecho.co.uk,manchestereveningnews.co.uk##a[data-testid="premium-button"][href="/subscribe"]
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,liverpoolecho.co.uk,manchestereveningnews.co.uk##section[class^="GooglePreferredSource_wrapper__"]
 rimworldbase.com##.elementor-element:has(> .elementor-widget-form > form[aria-label="Mailchimp Subscription"])
 ctinsider.com##.mb32 > .bg-white:has(> a[href^="https://www.google.com/preferences/source?q="])
 timeshighereducation.com##.student-cta-spacing

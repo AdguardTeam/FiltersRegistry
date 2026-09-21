@@ -1,9 +1,9 @@
-! Checksum: aEkCVIoksxUTgcOs/AFPxA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1789985900-3600.patch
+! Checksum: W+R98N1k8W2JmH+NBQuRjA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1789989474-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.79.95
-! TimeUpdated: 2026-09-21T10:15:36+00:00
+! Version: 2.2.79.96
+! TimeUpdated: 2026-09-21T11:14:34+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1062,6 +1062,7 @@
 ##.cookie-banner:not(body):not(html)
 !+ NOT_OPTIMIZED
 ###cookie-law-info-bar
+###gpp-container
 ###shopify-pc__banner#shopify-pc__banner
 !#######################################################
 !######### General URL blocking rules ##################
@@ -1653,7 +1654,6 @@ gorbilet.ru###__next > div[class^="css-"]:has(> div[class^="css-"] > a[href="/pa
 liferay.atlassian.net###page-layout\.banner
 wehype.app#%#//scriptlet('trusted-click-element', '#dialogs input[name="analytics"], #dialogs button[aria-label="Save current cookie selection"')
 wehype.com##div[style^="width: 100%; bottom: 0px; box-sizing: border-box; position: fixed;"]
-lancs.live###gpp-container
 glosmyslowic.pl##div[id^="foobar_cookie_"]
 koblenz.de#%#//scriptlet('trusted-click-element', '.cookie-consent-dialogue .cookie-consent-form__reject-button, .cookie-consent-dialogue .cookie-consent-form__save-button', '!localStorage:PrivacyPolicy[][core]')
 spdfraktion.de#%#//scriptlet('trusted-set-cookie', 'klaro', '%7B%22matomo%22%3Atrue%2C%22cms%22%3Atrue%2C%22klaro%22%3Atrue%2C%22video%22%3Afalse%2C%22googlemaps%22%3Afalse%7D')
@@ -18408,6 +18408,7 @@ techxplore.com,phys.org###subscribeToWebPush
 ###savetherecipe
 ##.save-recipe
 ##.seva-overlay
+##section[data-testid="inline-google-preferred-source-ncu"]
 /wp-content/plugins/mailoptin/*
 ||voltmail.io/static/js/form-embed.js$third-party
 ||zeropartyforms.com/*/lightbox.js
@@ -18489,7 +18490,6 @@ modernretail.co###lead_newsletter
 rsvplive.ie,lancs.live##section[class^="GooglePreferredSource"]
 rsvplive.ie,lancs.live##main section[class^="SocialFollowBar"]
 rsvplive.ie##article p[data-tmdatatrack-type="paragraph"]:has(> em strong > a[href^="https://www.google.com/preferences/source?q="])
-gloucestershirelive.co.uk##section[data-testid="inline-google-preferred-source-ncu"]
 lancs.live##section[class^="GooglePreferredSource"]
 lancs.live##article p[data-tmdatatrack-type="paragraph"]:has(> a:is([href^="https://www.lancs.live/newsletter-preference-centre/?"], [href="https://www.reachplc.com/site-services/privacy-policy"]))
 lancs.live##aside[class^="Factbox_"]
@@ -19099,8 +19099,6 @@ hokkaido-np.co.jp##.hn-google-link
 hokkaido-np.co.jp###bnr_nl_b
 pureinfotech.com##.inpost-newsletter
 football.london,dailystar.co.uk,birminghammail.co.uk##div[data-testid^="non-commercial-"]
-dailystar.co.uk,birminghammail.co.uk,liverpoolecho.co.uk,manchestereveningnews.co.uk##a[data-testid="premium-button"][href="/subscribe"]
-dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,liverpoolecho.co.uk,manchestereveningnews.co.uk##section[class^="GooglePreferredSource_wrapper__"]
 rimworldbase.com##.elementor-element:has(> .elementor-widget-form > form[aria-label="Mailchimp Subscription"])
 peterburgregiongaz.ru###ms-subscription_form
 bengo4.com##.p-google-news-banner-footer
