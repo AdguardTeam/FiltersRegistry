@@ -1,7 +1,7 @@
 import {
     describe, it, expect,
 } from 'vitest';
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import-x/no-unresolved
 import { parseFlags, validateFlags, validateArgs } from '../build-config.js';
 
 describe('parseFlags', () => {

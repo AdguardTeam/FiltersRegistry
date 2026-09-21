@@ -7,7 +7,7 @@ import { compile, localOptimizationStatistics, OptimizationStatsError } from '@a
 import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import { FOLDER_WITH_NEW_FILTERS, FOLDER_WITH_OLD_FILTERS } from './constants.js';
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import-x/no-unresolved
 import { parseFlags, validateFlags, validateArgs } from './build-config.ts';
 import { stripGeneratedMetaFromDir } from './strip-generated-meta.ts';
 import { findFiles } from '../utils/find_files.js';
