@@ -92,7 +92,7 @@ for all supported AdGuard products.
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
-| `yarn lint:code` | ESLint check (`eslint . --ext .js,.ts`) |
+| `yarn lint:code` | ESLint check (`eslint .`) |
 | `yarn lint:types` | TypeScript type check (`tsc --noEmit`) |
 | `yarn lint:md` | Markdown lint (`markdownlint **/*.md`) |
 | `yarn validate` | Validate platforms and locales |
