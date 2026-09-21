@@ -74,7 +74,7 @@ for all supported AdGuard products.
 ├── tsconfig.json                   # TypeScript config (ES2022, nodenext)
 ├── vitest.config.ts                # Test runner config
 ├── optimization_config.json        # Per-filter optimization parameters
-├── .eslintrc.cjs                   # ESLint config (airbnb-typescript)
+├── eslint.config.js                # ESLint flat config (typescript-eslint, import-x, stylistic)
 ├── .markdownlint.json              # Markdownlint config
 └── README.md                       # Project documentation
 ```
@@ -92,7 +92,7 @@ for all supported AdGuard products.
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
-| `yarn lint:code` | ESLint check (`eslint . --ext .js,.ts`) |
+| `yarn lint:code` | ESLint check (`eslint .`) |
 | `yarn lint:types` | TypeScript type check (`tsc --noEmit`) |
 | `yarn lint:md` | Markdown lint (`markdownlint **/*.md`) |
 | `yarn validate` | Validate platforms and locales |
@@ -178,8 +178,8 @@ General code style guidelines for JavaScript are available via link:
 - **TypeScript**: Strict mode enabled (`strict: true` in tsconfig). Use proper types; avoid `any`.
 - **Markdown**: Follow `.markdownlint.json` — dash-style unordered lists, asterisk emphasis,
   120-char line limit.
-- All other style rules (indentation, line length, Airbnb conventions, etc.)
-  are enforced by `.eslintrc.cjs`. Run `yarn lint` to check.
+- All other style rules (indentation, line length, import rules, etc.)
+  are enforced by `eslint.config.js`. Run `yarn lint` to check.
 
 ### Testing
 
