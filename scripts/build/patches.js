@@ -59,6 +59,7 @@ const main = async () => {
             const isChromiumMv3 = file.includes('/chromium-mv3/') || file.includes('\\chromium-mv3\\');
             const isOperaMv3 = file.includes('/opera-mv3/') || file.includes('\\opera-mv3\\');
             const isEdgeMv3 = file.includes('/edge-mv3/') || file.includes('\\edge-mv3\\');
+
             const isMv3 = isChromiumMv3 || isOperaMv3 || isEdgeMv3;
 
             if (isMv3) {
