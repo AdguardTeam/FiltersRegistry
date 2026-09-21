@@ -12,7 +12,7 @@ for all supported AdGuard products.
 
 ## Technical Context
 
-- **Language / Version**: TypeScript and JavaScript, Node.js >= 22, ESM (`"type": "module"`).
+- **Language / Version**: TypeScript and JavaScript, Node.js >= 24, ESM (`"type": "module"`).
   New code must be written in TypeScript. The project is gradually migrating all scripts to
   TypeScript; existing `.js` files should be converted to `.ts` when touched.
 - **Primary Dependencies**:
@@ -192,7 +192,7 @@ General code style guidelines for JavaScript are available via link:
 
 ### Other
 
-- **Node.js version**: >= 22. Do not use APIs unavailable in Node 22.
+- **Node.js version**: >= 24. Do not use APIs unavailable in Node 24.
 - **Script execution**: Use `tsx` to run TypeScript scripts directly (do not pre-compile).
 - **No `packageManager` field**: Do not add the `packageManager` field to `package.json`.
   The repository uses yarn 1 (classic), which ignores the field; it may confuse

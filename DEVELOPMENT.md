@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- **Node.js** >= 22
+- **Node.js** >= 24
 - **Yarn** (Classic, v1.x)
 - **Git**
 
