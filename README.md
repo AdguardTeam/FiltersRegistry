@@ -231,7 +231,7 @@ until the compression goal (defined in percentages) is achieved.
 
 ### Compiler Customization
 
-Script located in `scripts/build/custom_platforms.js` customizes the way filters are compiled for certain platforms.
+Script located in `scripts/build/custom_platforms.ts` customizes the way filters are compiled for certain platforms.
 We should use it if we need to temporarily change rules for a platform.
 In all other cases, we should prefer the default configuration.
 

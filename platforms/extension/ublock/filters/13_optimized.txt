@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Re0FQr0N7umCqb1Fi1wcEA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1789762694-3600.patch
+! Checksum: aMOV++BpQTCAAyKdjnayVQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1790089761-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.23
-! TimeUpdated: 2026-09-18T20:14:44+00:00
+! Version: 2.0.68.31
+! TimeUpdated: 2026-09-22T15:06:17+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$3p
 ||rtb-stack.com^
@@ -242,8 +242,9 @@ dramadizilerim.com#@#.ad-slot
 dramadizilerim.com##body:style(overflow: auto !important;)
 dramadizilerim.com###sysOverlay99:style(display: none !important;)
 dramadizilerim.com##+js(abort-current-script, EventTarget.prototype.addEventListener, /\.offsetHeight[\s]*?===[\s]*?0|pagead2\.googlesyndication\.com/)
-dramadizilerim.com##+js(abort-current-script, document.documentElement.setAttribute, data-drama-access-state)
-||dramadizilerim.com/assets/js/playback-guard.js
+dramadizilerim.com##+js(prevent-fetch, llvpn.com/tag.min.js)
+@@||dramadizilerim.com/assets/js/admanager.js$~3p
+@@||dramadizilerim.com^$generichide
 paradoxscans.com##+js(abort-on-property-write, detectAdBlock)
 eczacidergisi.com.tr#@#.ad-slot
 eczacidergisi.com.tr#@#.ads-banner
@@ -5564,10 +5565,10 @@ golbettv6.com##.bnr
 /bahsinetv\d+\.site$/##body > a[target="_blank"]
 /bahsinetv\d+\.site$/##body > div[class^="reklam-"]
 /bahsinetv\d+\.site$/##.footer-links
-bahsinetv8.site##.popup-overlay
-bahsinetv8.site##body > a[target="_blank"]
-bahsinetv8.site##body > div[class^="reklam-"]
-bahsinetv8.site##.footer-links
+bahsinetv9.site##.popup-overlay
+bahsinetv9.site##body > a[target="_blank"]
+bahsinetv9.site##body > div[class^="reklam-"]
+bahsinetv9.site##.footer-links
 /piatv\d+\.site$/##.footer-links
 piatv2.site##.footer-links
 !+ NOT_VALIDATE
@@ -5611,11 +5612,11 @@ betanotv5.site##.popup-overla
 /bovtv\d+\.com$/##.footer-links
 /bovtv\d+\.com$/##.odds-container
 /bovtv\d+\.com$/##.header-top > div.header-text
-bovtv39.com##div[class^="reklam-"]
-bovtv39.com##body > header
-bovtv39.com##.footer-links
-bovtv39.com##.odds-container
-bovtv39.com##.header-top > div.header-text
+bovtv40.com##div[class^="reklam-"]
+bovtv40.com##body > header
+bovtv40.com##.footer-links
+bovtv40.com##.odds-container
+bovtv40.com##.header-top > div.header-text
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/restizle\d+\.com$/
 /restizle\d+\.com$/##.background-link
@@ -5658,16 +5659,16 @@ gmatv61.live##div[class^="reklam-"]
 pelitcanlitv.com###promoPopup
 pelitcanlitv.com##.bg-link
 pelitcanlitv.com##div[class^="ad-"]
-.gif|$domain=afyonakhaber.com
-afyonakhaber.com##.onwin-top-wrap
-afyonakhaber.com##a[href^="/tk/siteleriniz"]
-afyonakhaber.com##a[rel="nofollow noopener noreferrer sponsored"]
-afyonakhaber.com###tg-cta-container
-afyonakhaber.com##.banner-grid-wrap
-afyonakhaber.com###hcExit
-afyonakhaber.com##.pd-adbn
-afyonakhaber.com###offerBox:style(display: none !important;)
-afyonakhaber.com###mainVideo:style(display: block !important;)
+.gif|$domain=mercanoda.com
+mercanoda.com##.onwin-top-wrap
+mercanoda.com##a[href^="/tk/siteleriniz"]
+mercanoda.com##a[rel="nofollow noopener noreferrer sponsored"]
+mercanoda.com###tg-cta-container
+mercanoda.com##.banner-grid-wrap
+mercanoda.com###hcExit
+mercanoda.com##.pd-adbn
+mercanoda.com###offerBox:style(display: none !important;)
+mercanoda.com###mainVideo:style(display: block !important;)
 /lionlinehd\d+\.com$/##header > ul
 /lionlinehd\d+\.com$/##.odds-container
 /lionlinehd\d+\.com$/##.header-top > div.header-text
@@ -5718,8 +5719,8 @@ papaztv8.live##.footer-links
 ||blogger.googleusercontent.com/img/$domain=/kralsportshd\d+\.xyz$/
 ||kralsportshd*.xyz/arkaplan.webp
 /kralsportshd\d+\.xyz$/###splash-banner
-||blogger.googleusercontent.com/img/$domain=kralsportshd5.xyz
-kralsportshd5.xyz###splash-banner
+||blogger.googleusercontent.com/img/$domain=kralsportshd6.xyz
+kralsportshd6.xyz###splash-banner
 ||fixbettv*.com/*.gif
 ||fixbettv*.com/yayinonu.jpg
 /fixbettv\d+\.com$/##.ads-container
@@ -5756,12 +5757,12 @@ macvardi282.com##.footer-links
 /baycontitv\d+\.com$/##div[class^="reklam-"]
 /baycontitv\d+\.com$/##body > header
 /baycontitv\d+\.com$/##.footer-links
-baycontitv14.com##.odds-container
-baycontitv14.com##a[href="https://t2m.io/BayContiTV"]
-baycontitv14.com##.reklamalani:remove()
-baycontitv14.com##div[class^="reklam-"]
-baycontitv14.com##body > header
-baycontitv14.com##.footer-links
+baycontitv15.com##.odds-container
+baycontitv15.com##a[href="https://t2m.io/BayContiTV"]
+baycontitv15.com##.reklamalani:remove()
+baycontitv15.com##div[class^="reklam-"]
+baycontitv15.com##body > header
+baycontitv15.com##.footer-links
 ||jtvkanal*.vip/api/banner-img/
 /jtvkanal\d+\.vip$/##.banner
 jtvkanal8.vip##.banner
@@ -5868,10 +5869,10 @@ turkzzersifsa3.blog,turkzzersifsa4.blog,turkzzersifsa5.blog,turkzzersifsa6.blog,
 /^turkifsalife\d+\.(blog\|lat)$/##+js(addEventListener-defuser, click, popUnder)
 /^turkifsalife\d+\.(blog\|lat)$/###block-2
 /^turkifsalife\d+\.(blog\|lat)$/##+js(addEventListener-defuser, click, tik_sayac)
-turkifsalife56.lat##+js(addEventListener-defuser, DOMContentLoaded, app_advert)
-turkifsalife56.lat##+js(addEventListener-defuser, click, popUnder)
-turkifsalife56.lat###block-2
-turkifsalife56.lat##+js(addEventListener-defuser, click, tik_sayac)
+turkifsalife57.lat##+js(addEventListener-defuser, DOMContentLoaded, app_advert)
+turkifsalife57.lat##+js(addEventListener-defuser, click, popUnder)
+turkifsalife57.lat###block-2
+turkifsalife57.lat##+js(addEventListener-defuser, click, tik_sayac)
 /^sotweturkifsa\d+\.blog$/##+js(addEventListener-defuser, DOMContentLoaded, app_advert)
 /^sotweturkifsa\d+\.blog$/##+js(addEventListener-defuser, click, popUnder)
 /^sotweturkifsa\d+\.blog$/##.entry-content > div:has(> a[href="https://t.me/turkifsalifevip"])
@@ -5932,9 +5933,9 @@ patrongol35.cfd##.top-banner-header
 /patron(live\|futbol)\d+\.cfd$/##.background-link
 /patron(live\|futbol)\d+\.cfd$/##.top-banner-header
 /patron(live\|futbol)\d+\.cfd$/##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
-patronlive52.cfd##.background-link
-patronlive52.cfd##.top-banner-header
-patronlive52.cfd##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
+patronlive52.cfd,patronlive53.cfd##.background-link
+patronlive52.cfd,patronlive53.cfd##.top-banner-header
+patronlive52.cfd,patronlive53.cfd##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
 patronfutbol59.cfd##.channel-ad-item
 patronfutbol59.cfd##.background-link
 patronfutbol59.cfd##.top-banner-header
@@ -5959,8 +5960,8 @@ turkkizlar31.com,turkkizlar32.com,turkkizlar33.com,turkkizlar34.com,turkkizlar35
 ||dahahizli*.*/wp-content/uploads/*/Saha-468-in-60.jpg
 /dahahizli\d+\.(com\|live)$/###ads-inside-main
 /dahahizli\d+\.(com\|live)$/###video-player-ads
-dahahizli147.live###ads-inside-main
-dahahizli147.live###video-player-ads
+dahahizli148.live###ads-inside-main
+dahahizli148.live###video-player-ads
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/hepbetspor\d+\.cfd$/
 /hepbetspor\d+\.cfd$/##.background-link
@@ -5998,8 +5999,8 @@ turkifsaclub.org##.ads-grid
 turkifsaclub.org##main > h3:contains(Sponsor Bannerlar)
 /turkifsaclub\d+\.sbs/##.ads-grid
 /turkifsaclub\d+\.sbs/##main > h3:contains(Sponsor Bannerlar)
-turkifsaclub130.sbs,turkifsaclub176.sbs,turkifsaclub177.sbs,turkifsaclub131.sbs,turkifsaclub132.sbs,turkifsaclub133.sbs,turkifsaclub134.sbs,turkifsaclub135.sbs,turkifsaclub136.sbs,turkifsaclub137.sbs,turkifsaclub138.sbs,turkifsaclub139.sbs,turkifsaclub140.sbs,turkifsaclub141.sbs,turkifsaclub142.sbs,turkifsaclub143.sbs,turkifsaclub144.sbs,turkifsaclub145.sbs,turkifsaclub146.sbs,turkifsaclub147.sbs,turkifsaclub148.sbs,turkifsaclub149.sbs,turkifsaclub150.sbs,turkifsaclub151.sbs,turkifsaclub152.sbs,turkifsaclub153.sbs,turkifsaclub154.sbs,turkifsaclub155.sbs,turkifsaclub156.sbs,turkifsaclub157.sbs,turkifsaclub158.sbs,turkifsaclub159.sbs,turkifsaclub160.sbs,turkifsaclub161.sbs,turkifsaclub162.sbs,turkifsaclub163.sbs,turkifsaclub164.sbs,turkifsaclub165.sbs,turkifsaclub166.sbs,turkifsaclub167.sbs,turkifsaclub168.sbs,turkifsaclub169.sbs,turkifsaclub170.sbs,turkifsaclub171.sbs,turkifsaclub172.sbs,turkifsaclub173.sbs,turkifsaclub174.sbs,turkifsaclub175.sbs,turkifsaclub178.sbs,turkifsaclub179.sbs,turkifsaclub180.sbs,turkifsaclub181.sbs,turkifsaclub182.sbs,turkifsaclub183.sbs,turkifsaclub184.sbs,turkifsaclub185.sbs,turkifsaclub186.sbs,turkifsaclub187.sbs,turkifsaclub189.sbs,turkifsaclub191.sbs,turkifsaclub192.sbs,turkifsaclub193.sbs,turkifsaclub194.sbs,turkifsaclub195.sbs,turkifsaclub196.sbs,turkifsaclub197.sbs,turkifsaclub198.sbs,turkifsaclub199.sbs,turkifsaclub200.sbs,turkifsaclub201.sbs,turkifsaclub202.sbs,turkifsaclub203.sbs##.ads-grid
-turkifsaclub130.sbs,turkifsaclub176.sbs,turkifsaclub177.sbs,turkifsaclub131.sbs,turkifsaclub132.sbs,turkifsaclub133.sbs,turkifsaclub134.sbs,turkifsaclub135.sbs,turkifsaclub136.sbs,turkifsaclub137.sbs,turkifsaclub138.sbs,turkifsaclub139.sbs,turkifsaclub140.sbs,turkifsaclub141.sbs,turkifsaclub142.sbs,turkifsaclub143.sbs,turkifsaclub144.sbs,turkifsaclub145.sbs,turkifsaclub146.sbs,turkifsaclub147.sbs,turkifsaclub148.sbs,turkifsaclub149.sbs,turkifsaclub150.sbs,turkifsaclub151.sbs,turkifsaclub152.sbs,turkifsaclub153.sbs,turkifsaclub154.sbs,turkifsaclub155.sbs,turkifsaclub156.sbs,turkifsaclub157.sbs,turkifsaclub158.sbs,turkifsaclub159.sbs,turkifsaclub160.sbs,turkifsaclub161.sbs,turkifsaclub162.sbs,turkifsaclub163.sbs,turkifsaclub164.sbs,turkifsaclub165.sbs,turkifsaclub166.sbs,turkifsaclub167.sbs,turkifsaclub168.sbs,turkifsaclub169.sbs,turkifsaclub170.sbs,turkifsaclub171.sbs,turkifsaclub172.sbs,turkifsaclub173.sbs,turkifsaclub174.sbs,turkifsaclub175.sbs,turkifsaclub178.sbs,turkifsaclub179.sbs,turkifsaclub180.sbs,turkifsaclub181.sbs,turkifsaclub182.sbs,turkifsaclub183.sbs,turkifsaclub184.sbs,turkifsaclub185.sbs,turkifsaclub186.sbs,turkifsaclub187.sbs,turkifsaclub189.sbs,turkifsaclub191.sbs,turkifsaclub192.sbs,turkifsaclub193.sbs,turkifsaclub194.sbs,turkifsaclub195.sbs,turkifsaclub196.sbs,turkifsaclub197.sbs,turkifsaclub198.sbs,turkifsaclub199.sbs,turkifsaclub200.sbs,turkifsaclub201.sbs,turkifsaclub202.sbs,turkifsaclub203.sbs##main > h3:contains(Sponsor Bannerlar)
+turkifsaclub130.sbs,turkifsaclub176.sbs,turkifsaclub177.sbs,turkifsaclub131.sbs,turkifsaclub132.sbs,turkifsaclub133.sbs,turkifsaclub134.sbs,turkifsaclub135.sbs,turkifsaclub136.sbs,turkifsaclub137.sbs,turkifsaclub138.sbs,turkifsaclub139.sbs,turkifsaclub140.sbs,turkifsaclub141.sbs,turkifsaclub142.sbs,turkifsaclub143.sbs,turkifsaclub144.sbs,turkifsaclub145.sbs,turkifsaclub146.sbs,turkifsaclub147.sbs,turkifsaclub148.sbs,turkifsaclub149.sbs,turkifsaclub150.sbs,turkifsaclub151.sbs,turkifsaclub152.sbs,turkifsaclub153.sbs,turkifsaclub154.sbs,turkifsaclub155.sbs,turkifsaclub156.sbs,turkifsaclub157.sbs,turkifsaclub158.sbs,turkifsaclub159.sbs,turkifsaclub160.sbs,turkifsaclub161.sbs,turkifsaclub162.sbs,turkifsaclub163.sbs,turkifsaclub164.sbs,turkifsaclub165.sbs,turkifsaclub166.sbs,turkifsaclub167.sbs,turkifsaclub168.sbs,turkifsaclub169.sbs,turkifsaclub170.sbs,turkifsaclub171.sbs,turkifsaclub172.sbs,turkifsaclub173.sbs,turkifsaclub174.sbs,turkifsaclub175.sbs,turkifsaclub178.sbs,turkifsaclub179.sbs,turkifsaclub180.sbs,turkifsaclub181.sbs,turkifsaclub182.sbs,turkifsaclub183.sbs,turkifsaclub184.sbs,turkifsaclub185.sbs,turkifsaclub186.sbs,turkifsaclub187.sbs,turkifsaclub189.sbs,turkifsaclub191.sbs,turkifsaclub192.sbs,turkifsaclub193.sbs,turkifsaclub194.sbs,turkifsaclub195.sbs,turkifsaclub196.sbs,turkifsaclub197.sbs,turkifsaclub198.sbs,turkifsaclub199.sbs,turkifsaclub200.sbs,turkifsaclub201.sbs,turkifsaclub202.sbs,turkifsaclub203.sbs,turkifsaclub204.sbs##.ads-grid
+turkifsaclub130.sbs,turkifsaclub176.sbs,turkifsaclub177.sbs,turkifsaclub131.sbs,turkifsaclub132.sbs,turkifsaclub133.sbs,turkifsaclub134.sbs,turkifsaclub135.sbs,turkifsaclub136.sbs,turkifsaclub137.sbs,turkifsaclub138.sbs,turkifsaclub139.sbs,turkifsaclub140.sbs,turkifsaclub141.sbs,turkifsaclub142.sbs,turkifsaclub143.sbs,turkifsaclub144.sbs,turkifsaclub145.sbs,turkifsaclub146.sbs,turkifsaclub147.sbs,turkifsaclub148.sbs,turkifsaclub149.sbs,turkifsaclub150.sbs,turkifsaclub151.sbs,turkifsaclub152.sbs,turkifsaclub153.sbs,turkifsaclub154.sbs,turkifsaclub155.sbs,turkifsaclub156.sbs,turkifsaclub157.sbs,turkifsaclub158.sbs,turkifsaclub159.sbs,turkifsaclub160.sbs,turkifsaclub161.sbs,turkifsaclub162.sbs,turkifsaclub163.sbs,turkifsaclub164.sbs,turkifsaclub165.sbs,turkifsaclub166.sbs,turkifsaclub167.sbs,turkifsaclub168.sbs,turkifsaclub169.sbs,turkifsaclub170.sbs,turkifsaclub171.sbs,turkifsaclub172.sbs,turkifsaclub173.sbs,turkifsaclub174.sbs,turkifsaclub175.sbs,turkifsaclub178.sbs,turkifsaclub179.sbs,turkifsaclub180.sbs,turkifsaclub181.sbs,turkifsaclub182.sbs,turkifsaclub183.sbs,turkifsaclub184.sbs,turkifsaclub185.sbs,turkifsaclub186.sbs,turkifsaclub187.sbs,turkifsaclub189.sbs,turkifsaclub191.sbs,turkifsaclub192.sbs,turkifsaclub193.sbs,turkifsaclub194.sbs,turkifsaclub195.sbs,turkifsaclub196.sbs,turkifsaclub197.sbs,turkifsaclub198.sbs,turkifsaclub199.sbs,turkifsaclub200.sbs,turkifsaclub201.sbs,turkifsaclub202.sbs,turkifsaclub203.sbs,turkifsaclub204.sbs##main > h3:contains(Sponsor Bannerlar)
 ||yavasgir*.*/*.gif
 /yavasgir\d+\.(com\|live)/###ads-inside-main
 /yavasgir\d+\.(com\|live)/##+js(addEventListener-defuser, DOMContentLoaded, openPopup)
@@ -6008,8 +6009,8 @@ yavasgir136.live,yavasgir137.live,yavasgir138.live,yavasgir139.live,yavasgir140.
 ||cimcime*.*/*.gif
 /cimcime\d+\.\w+$/###ads-inside-main
 /cimcime\d+\.\w+$/##+js(addEventListener-defuser, DOMContentLoaded, openPopup)
-cimcime159.live###ads-inside-main
-cimcime159.live##+js(addEventListener-defuser, DOMContentLoaded, openPopup)
+cimcime160.live###ads-inside-main
+cimcime160.live##+js(addEventListener-defuser, DOMContentLoaded, openPopup)
 primeembedpanel.com##+js(no-window-open-if)
 ||primeembedpanel.com/ads/
 ||askimyavas*.*/wp-content/uploads/*.gif
@@ -6023,7 +6024,7 @@ gobtv3.com,gobtv4.com,gobtv5.com,gobtv6.com,gobtv7.com,gobtv8.com,gobtv9.com,gob
 sahatv2.top,sahatv3.top,sahatv4.top,sahatv5.top,sahatv6.top,sahatv7.top,sahatv8.top,sahatv9.top,sahatv10.top,sahatv11.top,sahatv12.top,sahatv13.top,sahatv14.top,sahatv15.top,sahatv16.top,sahatv17.top,sahatv18.top,sahatv19.top,sahatv20.top,sahatv21.top,sahatv22.top,sahatv23.top,sahatv24.top,sahatv25.top,sahatv26.top,sahatv27.top,sahatv28.top,sahatv29.top,sahatv30.top,sahatv31.top,sahatv32.top,sahatv33.top,sahatv34.top,sahatv35.top,sahatv36.top##header > a + ul
 ||trgooltv*.top/assets/img/*.gif
 /trgooltv\d+\.top/##div[style^="position:fixed;"][style*="z-index:999999;"]
-trgooltv69.top##div[style^="position:fixed;"][style*="z-index:999999;"]
+trgooltv73.top##div[style^="position:fixed;"][style*="z-index:999999;"]
 ||netsportv*.top/assets/img/*.gif
 /netsportv\d+\.top/##div[style="margin: 10px; text-align: center;"]
 /netsportv\d+\.top/##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
@@ -6241,16 +6242,16 @@ hdselcuksports368.top##+js(no-window-open-if)
 ||video.twimg.com/amplify_video/*/vid/*.mp4$domain=/^belestepe\d+\.sbs/
 /belestepe\d+\.sbs/##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 /belestepe\d+\.sbs/##+js(set-constant, config.advertisement.enabled, false)
-belestepe549.sbs##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-belestepe549.sbs##+js(set-constant, config.advertisement.enabled, false)
-||video.twimg.com/amplify_video/*/vid/*.mp4$domain=belestepe549.sbs
+belestepe635.sbs##div[data-isbd-main-container] > section > div.hidden-xs.text-center
+belestepe635.sbs##+js(set-constant, config.advertisement.enabled, false)
+||video.twimg.com/amplify_video/*/vid/*.mp4$domain=belestepe635.sbs
 ||mactanmaca*.sbs/wp-content/*.gif|$image
 /mactanmaca\d+\.sbs/##+js(set-constant, config.advertisement.enabled, false)
 /mactanmaca\d+\.sbs/##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 /mactanmaca\d+\.sbs/##+js(set-cookie, reklamgosterimx, ok)
-mactanmaca549.sbs##+js(set-constant, config.advertisement.enabled, false)
-mactanmaca549.sbs##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-mactanmaca549.sbs##+js(set-cookie, reklamgosterimx, ok)
+mactanmaca605.sbs##+js(set-constant, config.advertisement.enabled, false)
+mactanmaca605.sbs##div[data-isbd-main-container] > section > div.hidden-xs.text-center
+mactanmaca605.sbs##+js(set-cookie, reklamgosterimx, ok)
 /sultansportv\d+\.com/##body > a[target="_blank"]
 ||justintv*.pro/izinler/*.gif
 ||justintv*.pro/izinler/ultrabetpage.
@@ -6496,10 +6497,10 @@ dizipal1555.com,dizipal1556.com,dizipal1557.com,dizipal1558.com,dizipal1559.com,
 dizipal1555.com,dizipal1556.com,dizipal1557.com,dizipal1558.com,dizipal1559.com,dizipal1560.com,dizipal1561.com,dizipal1562.com,dizipal1563.com,dizipal1564.com,dizipal1565.com,dizipal1566.com,dizipal1567.com,dizipal1568.com,dizipal1569.com,dizipal1570.com,dizipal1571.com,dizipal1572.com,dizipal1573.com,dizipal1574.com,dizipal1575.com,dizipal1576.com,dizipal1577.com,dizipal1578.com,dizipal1579.com,dizipal1580.com,dizipal1581.com,dizipal1582.com,dizipal1583.com,dizipal1584.com,dizipal1585.com,dizipal1586.com,dizipal1587.com,dizipal1588.com,dizipal1589.com,dizipal1590.com,dizipal1591.com,dizipal1592.com,dizipal1593.com,dizipal1594.com,dizipal1595.com,dizipal1596.com,dizipal1597.com,dizipal1598.com,dizipal1599.com,dizipal1600.com##div.banner-slot
 dizipal1555.com,dizipal1556.com,dizipal1557.com,dizipal1558.com,dizipal1559.com,dizipal1560.com,dizipal1561.com,dizipal1562.com,dizipal1563.com,dizipal1564.com,dizipal1565.com,dizipal1566.com,dizipal1567.com,dizipal1568.com,dizipal1569.com,dizipal1570.com,dizipal1571.com,dizipal1572.com,dizipal1573.com,dizipal1574.com,dizipal1575.com,dizipal1576.com,dizipal1577.com,dizipal1578.com,dizipal1579.com,dizipal1580.com,dizipal1581.com,dizipal1582.com,dizipal1583.com,dizipal1584.com,dizipal1585.com,dizipal1586.com,dizipal1587.com,dizipal1588.com,dizipal1589.com,dizipal1590.com,dizipal1591.com,dizipal1592.com,dizipal1593.com,dizipal1594.com,dizipal1595.com,dizipal1596.com,dizipal1597.com,dizipal1598.com,dizipal1599.com,dizipal1600.com##a.st-bg
 dizipal1555.com,dizipal1556.com,dizipal1557.com,dizipal1558.com,dizipal1559.com,dizipal1560.com,dizipal1561.com,dizipal1562.com,dizipal1563.com,dizipal1564.com,dizipal1565.com,dizipal1566.com,dizipal1567.com,dizipal1568.com,dizipal1569.com,dizipal1570.com,dizipal1571.com,dizipal1572.com,dizipal1573.com,dizipal1574.com,dizipal1575.com,dizipal1576.com,dizipal1577.com,dizipal1578.com,dizipal1579.com,dizipal1580.com,dizipal1581.com,dizipal1582.com,dizipal1583.com,dizipal1584.com,dizipal1585.com,dizipal1586.com,dizipal1587.com,dizipal1588.com,dizipal1589.com,dizipal1590.com,dizipal1591.com,dizipal1592.com,dizipal1593.com,dizipal1594.com,dizipal1595.com,dizipal1596.com,dizipal1597.com,dizipal1598.com,dizipal1599.com,dizipal1600.com###psContainer
-dizipal2089.com,dizipal2091.com,dizipal2098.com,dizipal2100.com,dizipal2101.com,dizipal2200.com,dizipal2203.com,dizipal2204.com,dizipal2205.com,dizipal2207.com,dizipal2107.com,dizipal2108.com,dizipal2109.com,dizipal2214.com,dizipal2110.com,dizipal2215.com,dizipal2111.com,dizipal2112.com,dizipal2106.com,dizipal2113.com,dizipal2096.com,dizipal2097.com,dizipal2090.com,dizipal2099.com,dizipal2114.com,dizipal2115.com,dizipal2116.com,dizipal2117.com,dizipal2118.com,dizipal2119.com,dizipal2120.com,dizipal2121.com,dizipal2122.com,dizipal2123.com,dizipal2124.com,dizipal2125.com,dizipal2126.com,dizipal2127.com,dizipal2128.com,dizipal2129.com,dizipal2130.com,dizipal2206.com,dizipal2208.com,dizipal2209.com,dizipal2210.com,dizipal2211.com,dizipal2212.com,dizipal2213.com,dizipal2216.com,dizipal2218.com,dizipal2219.com,dizipal2220.com##body a[class^="pageskin-"]
-dizipal2089.com,dizipal2091.com,dizipal2098.com,dizipal2100.com,dizipal2101.com,dizipal2200.com,dizipal2203.com,dizipal2204.com,dizipal2205.com,dizipal2207.com,dizipal2107.com,dizipal2108.com,dizipal2109.com,dizipal2214.com,dizipal2110.com,dizipal2215.com,dizipal2111.com,dizipal2112.com,dizipal2106.com,dizipal2113.com,dizipal2096.com,dizipal2097.com,dizipal2090.com,dizipal2099.com,dizipal2114.com,dizipal2115.com,dizipal2116.com,dizipal2117.com,dizipal2118.com,dizipal2119.com,dizipal2120.com,dizipal2121.com,dizipal2122.com,dizipal2123.com,dizipal2124.com,dizipal2125.com,dizipal2126.com,dizipal2127.com,dizipal2128.com,dizipal2129.com,dizipal2130.com,dizipal2206.com,dizipal2208.com,dizipal2209.com,dizipal2210.com,dizipal2211.com,dizipal2212.com,dizipal2213.com,dizipal2216.com,dizipal2218.com,dizipal2219.com,dizipal2220.com##a[target="_blank"][rel="nofollow"]
-dizipal2089.com,dizipal2091.com,dizipal2098.com,dizipal2100.com,dizipal2101.com,dizipal2200.com,dizipal2203.com,dizipal2204.com,dizipal2205.com,dizipal2207.com,dizipal2107.com,dizipal2108.com,dizipal2109.com,dizipal2214.com,dizipal2110.com,dizipal2215.com,dizipal2111.com,dizipal2112.com,dizipal2106.com,dizipal2113.com,dizipal2096.com,dizipal2097.com,dizipal2090.com,dizipal2099.com,dizipal2114.com,dizipal2115.com,dizipal2116.com,dizipal2117.com,dizipal2118.com,dizipal2119.com,dizipal2120.com,dizipal2121.com,dizipal2122.com,dizipal2123.com,dizipal2124.com,dizipal2125.com,dizipal2126.com,dizipal2127.com,dizipal2128.com,dizipal2129.com,dizipal2130.com,dizipal2206.com,dizipal2208.com,dizipal2209.com,dizipal2210.com,dizipal2211.com,dizipal2212.com,dizipal2213.com,dizipal2216.com,dizipal2218.com,dizipal2219.com,dizipal2220.com##.video-wrapper > a[href][target="_blank"]
-||blogger.googleusercontent.com/img/$domain=dizipal2089.com|dizipal2091.com|dizipal2098.com|dizipal2100.com|dizipal2101.com|dizipal2200.com|dizipal2203.com|dizipal2204.com|dizipal2205.com|dizipal2207.com|dizipal2107.com|dizipal2108.com|dizipal2109.com|dizipal2214.com|dizipal2110.com|dizipal2215.com|dizipal2111.com|dizipal2112.com|dizipal2106.com|dizipal2113.com|dizipal2096.com|dizipal2097.com|dizipal2090.com|dizipal2099.com|dizipal2114.com|dizipal2115.com|dizipal2116.com|dizipal2117.com|dizipal2118.com|dizipal2119.com|dizipal2120.com|dizipal2121.com|dizipal2122.com|dizipal2123.com|dizipal2124.com|dizipal2125.com|dizipal2126.com|dizipal2127.com|dizipal2128.com|dizipal2129.com|dizipal2130.com|dizipal2206.com|dizipal2208.com|dizipal2209.com|dizipal2210.com|dizipal2211.com|dizipal2212.com|dizipal2213.com|dizipal2216.com|dizipal2218.com|dizipal2219.com|dizipal2220.com
+dizipal2089.com,dizipal2091.com,dizipal2098.com,dizipal2100.com,dizipal2101.com,dizipal2200.com,dizipal2203.com,dizipal2204.com,dizipal2205.com,dizipal2207.com,dizipal2107.com,dizipal2108.com,dizipal2109.com,dizipal2214.com,dizipal2110.com,dizipal2215.com,dizipal2111.com,dizipal2112.com,dizipal2106.com,dizipal2113.com,dizipal2096.com,dizipal2097.com,dizipal2090.com,dizipal2099.com,dizipal2114.com,dizipal2115.com,dizipal2116.com,dizipal2117.com,dizipal2118.com,dizipal2119.com,dizipal2120.com,dizipal2121.com,dizipal2122.com,dizipal2123.com,dizipal2124.com,dizipal2125.com,dizipal2126.com,dizipal2127.com,dizipal2128.com,dizipal2129.com,dizipal2130.com,dizipal2206.com,dizipal2208.com,dizipal2209.com,dizipal2210.com,dizipal2211.com,dizipal2212.com,dizipal2213.com,dizipal2216.com,dizipal2218.com,dizipal2219.com,dizipal2220.com,dizipal2131.com,dizipal2132.com,dizipal2133.com,dizipal2221.com##body a[class^="pageskin-"]
+dizipal2089.com,dizipal2091.com,dizipal2098.com,dizipal2100.com,dizipal2101.com,dizipal2200.com,dizipal2203.com,dizipal2204.com,dizipal2205.com,dizipal2207.com,dizipal2107.com,dizipal2108.com,dizipal2109.com,dizipal2214.com,dizipal2110.com,dizipal2215.com,dizipal2111.com,dizipal2112.com,dizipal2106.com,dizipal2113.com,dizipal2096.com,dizipal2097.com,dizipal2090.com,dizipal2099.com,dizipal2114.com,dizipal2115.com,dizipal2116.com,dizipal2117.com,dizipal2118.com,dizipal2119.com,dizipal2120.com,dizipal2121.com,dizipal2122.com,dizipal2123.com,dizipal2124.com,dizipal2125.com,dizipal2126.com,dizipal2127.com,dizipal2128.com,dizipal2129.com,dizipal2130.com,dizipal2206.com,dizipal2208.com,dizipal2209.com,dizipal2210.com,dizipal2211.com,dizipal2212.com,dizipal2213.com,dizipal2216.com,dizipal2218.com,dizipal2219.com,dizipal2220.com,dizipal2131.com,dizipal2132.com,dizipal2133.com,dizipal2221.com##a[target="_blank"][rel="nofollow"]
+dizipal2089.com,dizipal2091.com,dizipal2098.com,dizipal2100.com,dizipal2101.com,dizipal2200.com,dizipal2203.com,dizipal2204.com,dizipal2205.com,dizipal2207.com,dizipal2107.com,dizipal2108.com,dizipal2109.com,dizipal2214.com,dizipal2110.com,dizipal2215.com,dizipal2111.com,dizipal2112.com,dizipal2106.com,dizipal2113.com,dizipal2096.com,dizipal2097.com,dizipal2090.com,dizipal2099.com,dizipal2114.com,dizipal2115.com,dizipal2116.com,dizipal2117.com,dizipal2118.com,dizipal2119.com,dizipal2120.com,dizipal2121.com,dizipal2122.com,dizipal2123.com,dizipal2124.com,dizipal2125.com,dizipal2126.com,dizipal2127.com,dizipal2128.com,dizipal2129.com,dizipal2130.com,dizipal2206.com,dizipal2208.com,dizipal2209.com,dizipal2210.com,dizipal2211.com,dizipal2212.com,dizipal2213.com,dizipal2216.com,dizipal2218.com,dizipal2219.com,dizipal2220.com,dizipal2131.com,dizipal2132.com,dizipal2133.com,dizipal2221.com##.video-wrapper > a[href][target="_blank"]
+||blogger.googleusercontent.com/img/$domain=dizipal2089.com|dizipal2091.com|dizipal2098.com|dizipal2100.com|dizipal2101.com|dizipal2200.com|dizipal2203.com|dizipal2204.com|dizipal2205.com|dizipal2207.com|dizipal2107.com|dizipal2108.com|dizipal2109.com|dizipal2214.com|dizipal2110.com|dizipal2215.com|dizipal2111.com|dizipal2112.com|dizipal2106.com|dizipal2113.com|dizipal2096.com|dizipal2097.com|dizipal2090.com|dizipal2099.com|dizipal2114.com|dizipal2115.com|dizipal2116.com|dizipal2117.com|dizipal2118.com|dizipal2119.com|dizipal2120.com|dizipal2121.com|dizipal2122.com|dizipal2123.com|dizipal2124.com|dizipal2125.com|dizipal2126.com|dizipal2127.com|dizipal2128.com|dizipal2129.com|dizipal2130.com|dizipal2206.com|dizipal2208.com|dizipal2209.com|dizipal2210.com|dizipal2211.com|dizipal2212.com|dizipal2213.com|dizipal2216.com|dizipal2218.com|dizipal2219.com|dizipal2220.com|dizipal2131.com|dizipal2132.com|dizipal2133.com|dizipal2221.com
 ||wtsdde.cfd/player/jw8/vast.js
 /(\d+)?dizipal(\d+)?\.live/##.fb-popup:style(display: none !important;)
 /(\d+)?dizipal(\d+)?\.live/##header.header:style(margin-top: 0 !important;)
@@ -6573,9 +6574,9 @@ sinefy3.com,sinefy4.com,sinefy5.com,sinefy6.com,sinefy7.com,sinefy8.com,sinefy9.
 /sporligtv\d+\.live/##div[id^="binxell"]
 /sporligtv\d+\.live/###ustbanner
 /sporligtv\d+\.live/###superderbi
-sporligtv628.live##div[id^="binxell"]
-sporligtv628.live###ustbanner
-sporligtv628.live###superderbi
+sporligtv629.live##div[id^="binxell"]
+sporligtv629.live###ustbanner
+sporligtv629.live###superderbi
 ||avrupabettv*.com/wp-content/uploads/
 avrupabettv1.com,avrupabettv2.com,avrupabettv3.com,avrupabettv4.com,avrupabettv5.com,avrupabettv6.com,avrupabettv7.com,avrupabettv8.com,avrupabettv9.com,avrupabettv10.com,avrupabettv11.com,avrupabettv12.com,avrupabettv13.com,avrupabettv14.com,avrupabettv15.com,avrupabettv16.com,avrupabettv17.com,avrupabettv18.com,avrupabettv19.com,avrupabettv20.com,avrupabettv21.com,avrupabettv22.com##.pageskin
 ||rekortv*.com/wp-content/uploads/

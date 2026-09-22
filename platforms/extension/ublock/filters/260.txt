@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: OPr5+zDOKPxfufSYxS9PsA
-! Diff-Path: ../patches/260/260-s-1789763889-14400.patch
+! Checksum: 4HnHeU0NgIzbrnxieT6jFA
+! Diff-Path: ../patches/260/260-s-1790109808-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.3
-! TimeUpdated: 2026-09-18T20:35:24+00:00
+! Version: 2.0.2.10
+! TimeUpdated: 2026-09-22T20:40:37+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -127,8 +127,7 @@ www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
 ! AI questions in autocomplete search suggestions
-! * Received from `https://www.amazon.com/suggestions`
-www.amazon.*##+js(json-prune, suggestions.[-].widgetId)
+www.amazon.*##+js(json-prune-xhr-response, suggestions.[-].widgetId, , propsToMatch, /suggestions)
 ! Search placeholder messages
 www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Ask Alexa a question"])
 www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Compare products with Alexa"])
@@ -386,7 +385,7 @@ www.bing.com###aitools
 ! AI tools search suggestions (mobile only)
 www.bing.com###sa_ai_block
 ! Autocomplete suggestion for "Image Creator"
-www.bing.com##+js(json-edit, $.s[?@.t=="AI"])
+www.bing.com##+js(json-edit-xhr-response, $.s[?@.t=="AI"], propsToMatch, /AS/Suggestions)
 ! -- https://www.bing.com/search?q=test (generic search page)
 ! Navbar tabs for "Search" and "Copilot"
 www.bing.com###b-scopeListItem-copilotsearch
@@ -502,11 +501,15 @@ www.booking.com##[data-testid="filters-search-widget"]
 ! ==================
 ! == Brave Search ==
 ! ==================
+! -- https://search.brave.com/ (General)
+! Disable AI summarizer
+search.brave.com##+js(set-cookie, summarizer, 0)
+! Navbar - Settings - Answer with AI toggle
+! * Only hide if setting is disabled
+search.brave.com##.settings-content > .card > section:has([href="/help/ai"]):has(input[type="checkbox"]:not(:checked))
 ! -- https://search.brave.com/ (Homepage)
 ! Purple "Ask" button in search bar
 search.brave.com###submit-llm-button
-! Disable AI summarizer
-search.brave.com##+js(set-cookie, summarizer, 0)
 ! -- https://search.brave.com/search?q=Why+are+we+here (Search results)
 ! "Ask" tab in navbar
 search.brave.com##.tab-item:has(> a[href^="/ask"])
@@ -514,6 +517,10 @@ search.brave.com##.tab-item:has(> a[href^="/ask"])
 search.brave.com###llm-snippet
 ! * Block generating answer for non-pre-generated responses
 ||search.brave.com/api/chatllm/with_ask$xhr,domain=search.brave.com
+! -- https://search.brave.com/search?q=define+test
+! Digest button below word definition
+search.brave.com##.footer-button:has(> svg > [d^="M11.352 2.005a2.234 2.234 0 0 0-2.168"])
+search.brave.com##.footer-button:has(> svg > [d^="M11.352 2.005a2.234 2.234 0 0 0-2.168"]) + .spacing
 ! ============
 ! == Bricks ==
 ! ============
@@ -806,6 +813,21 @@ docs.cribl.io##[data-action="claude"]
 docs.cribl.io##[data-action="copilot"]
 ! Floating AI button
 docs.cribl.io###copilot
+! =============
+! == Crowdin ==
+! =============
+! -- https://crowdin.com/
+! Navbar - AI
+crowdin.com##li:has(> [href="/features/ai-translation"])
+! -- https://crowdin.com/profile (logged in)
+! Header - Extensions - Crowdin Copilot
+crowdin.com##.dropdown-item:has(> img[src^="https://crowdin-copilot.app.crowdin.net/logo.svg"])
+! -- https://crowdin.com/editor (After selecting a file)
+! Sidebar - Crowdin Copilot
+crowdin.com##[role="listitem"]:has(> #crowdin-copilot¦crowdin-copilot-editor-panels)
+! Automated suggestions
+crowdin.com##.suggestions_separator:has(> #automated-suggestions-toggler)
+crowdin.com##.suggestions_separator:has(> #automated-suggestions-toggler) + div:has(> .string-suggestions-wrapper)
 ! ===============
 ! == Cybernews ==
 ! ===============
@@ -968,7 +990,7 @@ www.diffchecker.com##button.bg-surface-purple:has([clip-path="url(#sparkle_svg__
 ! ============
 ! -- https://docs.docker.com/
 ! Header - State of AI Agents report
-docs.docker.com###docker-announcement-bar:has([href="https://www.docker.com/resources/the-state-of-agentic-ai-white-paper/"])
+docs.docker.com,hub.docker.com###docker-announcement-bar:has([href="https://www.docker.com/resources/the-state-of-agentic-ai-white-paper/"])
 ! Navbar - Gordon button
 docs.docker.com##[data-tooltip-wrapper]:has(> [aria-describedby="gordon-tooltip"])
 ! "Ask anything about docker" chatbox
@@ -979,6 +1001,8 @@ docs.docker.com##[onclick="askGordon()"]
 ! -- https://hub.docker.com/
 ! Navbar - Gordon AI button
 hub.docker.com##div:has(> .MuiButtonBase-root > [data-testid="GordonIcon"])
+! Search - "Chat with Gordon" autocomplete suggestion
+hub.docker.com###header-search-dialog-gordon-cta
 ! Left sidebar - Generative AI
 hub.docker.com##.MuiAccordion-root:has([id="Generative AI-content"])
 ! Machine Learning & AI section category
@@ -1153,6 +1177,14 @@ portal.expressvpn.com##.group\/collapsible:has([href="/expressai"])
 www.extendoffice.com##.uk-margin-remove-last-child:has([src="//cdn.extendoffice.com/images/stories/ads-siluvia/kte-ads/kutools-for-excel-ai-1.png"])
 ! "Kutools AI Aide" in "Best Office Productivity Tools"
 www.extendoffice.com##.uk-margin-remove-last-child tr:has([href^="https://www.extendoffice.com/product/kutools-for-excel/kutools-excel-ai-assistant.html"])
+! =============
+! == F-Droid ==
+! =============
+! -- https://fdroid.gitlab.io/fdroid-website/en/packages/
+! AI Chat app category
+f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"])
+f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"])
+f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"])
 ! ==============
 ! == Facebook ==
 ! ==============
@@ -1674,6 +1706,11 @@ chat.google.com##.rHn5Xc.e5IPTd
 chat.google.com##.SDFSsb.oMuP2d:has([role="dialog"][data-promotype="19"])
 ! "Summarize" button on message
 chat.google.com##.pYTkkf-Bz112c-LgbsSe.sgwC2b.q5K0Kc.sd47rd
+! ======================
+! == Google Classroom ==
+! ======================
+! "Gemini" button on leftmost sidebar
+classroom.google.com##[role="menuitem"][href="/ai"]
 ! ==================
 ! == Google Cloud ==
 ! ==================
@@ -1822,6 +1859,9 @@ drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y)
 drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y) + .h-Yo[role="separator"]
 ! "Ask Gemini"/"Catch me up" buttons when a file is selected
 drive.google.com##.iQnZTe.SMHH7
+! Right click file > Ask Gemini
+drive.google.com##span[data-is-tooltip-wrapper]:has([aria-label^="Ask Gemini"])
+drive.google.com##li[role="separator"]:has(+ span[data-is-tooltip-wrapper] [aria-label^="Ask Gemini"])
 ! -- https://drive.google.com/drive/my-drive
 ! "Ask Gemini"/"Suggest file moves" button
 drive.google.com##[data-test-id="help-me-organize-chip-container"]
@@ -1831,10 +1871,15 @@ drive.google.com##.oaTPh
 drive.google.com##.h-v:has([src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x32.png"])
 ! -- https://drive.google.com/drive/search?q=what%20is%20my%20biggest%20file%3F
 ! AI Overview
+||appsgenaiserver-pa.clients6.google.com/v1/genai/$xhr,domain=drive.google.com
 drive.google.com##.De8rPe
 ! -- Viewing a file
 ! "Ask Gemini" button in top right (no longer used?)
 drive.google.com###viewer-sidekick-button
+! -- Viewing a video file
+! Autogenerated chapters
+drive.google.com##.ux0ck:has([aria-label="Chapters"])
+||workspacevideo-pa.clients6.google.com/v1/drive/media/*/chapterInfo:generateChapters$xhr,domain=drive.google.com
 ! -- With a PDF opened
 ! Header - Gemini button
 drive.google.com##.TLiyPe
@@ -1850,6 +1895,9 @@ drive.google.com##[role="menu"] > [role="presentation"]:contains(Suggestion cont
 drive.google.com##.DbMyfd.LOB30e:has([aria-label="Create an audio overview"])
 ! Genini in sidebar
 drive.google.com##.equNN
+! -- https://drive.google.com/file/d/[id]/view (Direct file link)
+! "Gemini for all your Drive files" modal dialog
+drive.google.com##[data-dialog-id]:has([href="https://support.google.com/drive?p=gemini_drive_pdf"])
 ! ====================
 ! == Google Flights ==
 ! ====================
@@ -1901,7 +1949,6 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Doodle Logos
 ! * Desktop
-! * Desktop (no longer used?)
 ! * Mobile
 ! * Mobile search results page
 ! AI buttons below search bar
@@ -1944,6 +1991,9 @@ www.google.com#@#.YzCcne:remove()
 ! * Only applies if Web Guide is enabled in Google Labs
 www.google.*##.oGdvd
 ! -- https://www.google.com/search?q=caine
+! AI Overview header logo (mobile)
+! * Non-AI pieces like images can stay, but use :has() to make sure the actual AI element is something we caught in other filters
+www.google.com##.MjjYud:has(+ .MjjYud [data-attnms]) [data-prvwid="HEADER"] > .Ws2DOe
 ! "Things to know" and "People also ask" sections
 ! * First filter hides list items, .cUnQKe hides header if all items are AI, .ULSxyf hides extra space if needed
 ! * Extra sanity checks on child elements of .ULSxyf to avoid overfiltering. (Example: https://www.google.com/search?q=world+cup+standing)
@@ -3055,6 +3105,15 @@ www.pixiv.net##.fDgtdo[href="/ranking.php?mode=daily_ai"]
 www.plugshare.com###review-summary
 www.plugshare.com###reviews-summary
 www.plugshare.com###checkins-summary
+! ==========
+! == pnpm ==
+! ==========
+! -- https://pnpm.io/motivation
+! Copy Page - "Open in" AI
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M22 12.2H13.4V3.7l-1.4 1.2V12.2H3.4l8.6"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M16 8.016A8.522 8.522 0 008.016 16h-.032A8.521"])
 ! ============
 ! == Pockit ==
 ! ============
@@ -4305,6 +4364,7 @@ www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 www.youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer:has(.ytChipShapeStartIconPadding)
 ! Custom feed chip
 www.youtube.com###chip-shape-container:contains(Your custom feed)
+! * Experiment from https://www.youtube.com/new
 www.youtube.com##yt-chip-cloud-chip-renderer:contains(Add Custom Feed)
 ! "Ask for videos any way you like"
 www.youtube.com##ytd-talk-to-recs-flow-renderer
@@ -4389,6 +4449,14 @@ studio.youtube.com##[test-id="VIDEO_BRAINSTORM_IDEA"]
 ! "Get Suggestions" button for thumbnail
 studio.youtube.com##.ask-studio-container
 ! ============
+! == Zillow ==
+! ============
+! Floating chatbot icon
+! * Appears during searches. Does not appear for all users.
+www.zillow.com##.voyager-omnibutton
+! * Appears in popout for individual search results
+www.zillow.com##[data-testid="voyager-omni-button"]
+! ============
 ! == Zocdoc ==
 ! ============
 ! AI Care Assistant
@@ -4408,6 +4476,8 @@ www.zoom.com##.module-columns:has(.zdcm-my-notes-showcase)
 ! Virtual Agent floating icon for support chatbot
 zoom.com,zoom.us##.livesdk__invitation
 ||zoom.us/*/web-sdk/chat-client.js$script,domain=www.zoom.com|zoom.us
+! Footer - AI Research
+www.zoom.com##.zdcm-module-footer-nav__item:has(> [href="https://www.zoom.com/en/ai-research/"])
 ! -- https://zoom.us/signin
 ! Misc AI related resources (js and css file)
 ||zoom.us/fe-static/fe-frame-popups/*/app-ai-companion*$script,stylesheet,domain=zoom.us
@@ -4947,7 +5017,8 @@ www.reddvideo.tube##.nav-item:has(> [href="https://www.gptgirlfriend.online/"])
 www.redgifs.com##.aTab:contains(AI Porn)
 ! ☰ menu - AI Porn
 www.redgifs.com##.burgerMenuItem:has([href^="https://a.aivanta76.com/"])
-! Recommended videos when scrolling (May not apply to first few videos)
+! -- https://www.redgifs.com/gifs/ai-generated
+! Search results, recommended videos when scrolling (May not apply to first few videos)
 www.redgifs.com##+js(json-edit, $.gifs[?@.tags[?@=="Ai Generated"]])
 ! ====================
 ! == RedTube (NSFW) ==

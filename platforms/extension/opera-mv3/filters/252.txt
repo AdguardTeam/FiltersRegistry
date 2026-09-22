@@ -1,14 +1,14 @@
-! Checksum: AW1Oaogs/xPKxlPHQQ0tVA
+! Checksum: 5VTiafLNT5KD9bwoj/Vdgw
 ! Title: Dandelion Sprout's Serbo-Croatian List
 ! Description: A filter list for websites in Serbian, Montenegrin, Croatian, and Bosnian.
-! Version: 2.0.0.81
-! TimeUpdated: 2026-09-16T12:45:22+00:00
+! Version: 2.0.0.83
+! TimeUpdated: 2026-09-22T20:40:28+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: 🏀 Dandelion Sprout's Serbo-Croatian filters
 ! Title 🇭🇷 🇧🇦: Srpskohrvatski filtri Dandelion Sprouta
 ! Title 🇷🇸: Српскохрватски филтери Dandelion Sprout-а
-! OriginalVersion: 16September2026v1
+! OriginalVersion: 22September2026v1
 ! Expires: 3 days
 ! Description: For the first time in known history, this is a filterlist for websites in Serbian, Montenegrin, Croatian, and Bosnian. This means that all significant language groups in Europe now have filterlists for them.
 ! Description 🇭🇷: Prvi put u povijesti dostupna je lista filtara za web-lokacĳe na srpskom, hrvatskom, bosanskom i crnogorskom. Sad sve veće skupine jezika u Europi imaju svoje liste.
@@ -19,8 +19,9 @@
 ! Note to self: The amount of Kosovo-Serbian newssites that are actually based _within Kosovo_ can be counted on one hand, with all but info-ks being ad-free due to stipends from USA and/or Serbia. Such sites should therefore not be a core focus to research.
 ! Notes to self 2: No newssites in Slavomolisano are known to exist. The one Austrian Serbo-Croatian newssite I could find was ad-free. The sole Serbo-Croatian newssite in Hungary is already covered.
 ! Thanks to Rancher on Crowdin for description translations, and technically also bzzrak despite him never reaching out to me to say he had done translations.
-! Note 1: Any problem reports sent directly to this list, _must_ be proven to occur on MV2 or Firefox. If the problem _only_ occurs on MV3, then this list will not handle such problems, and they must instead be submitted to https://reports.adguard.com/new_issue.html or https://github.com/uBlockOrigin/uAssets/issues.
+! Note 1: Any problem reports sent directly to this list,   m u s t   be proven to occur on MV2 or Firefox. If the problem   o n l y   occurs on MV3, then this list will not handle such problems, and they must instead be submitted to https://reports.adguard.com/new_issue.html or https://github.com/uBlockOrigin/uAssets/issues.
 ! Note 2: If you view this file through filters.adtity.org and there's a lot of broken text in the file view, feel free to give an upvote to https://github.com/AdguardTeam/FiltersRegistry/issues/1142 if you wish to.
+! Note 3, 20th of September 2026: The entries in the bottom section that are borrowed from AdGuard Base Filter / AdGuard Osnovni filtar/filter / ЕдГард основни филтер, are now set to not be used by this list in AdGuard tools for logistical reasons.
 ! ——————————
 ! Specific entries for sites, or blocking-entries
 015.xn--90a3ac###media_image-2:has(> img[src*="/oglas-"])
@@ -326,6 +327,10 @@ portal.hr##.above-component:has(+ article)
 portal.hr##.sp-module:has(ins)
 portal.hr##.sp-module:has(span[class^=m_banner_]):not(:has(.kastelamodul))
 index.hr##.reserve-height-with-disclaimer
+index.hr##[class^=adList__ads__ i]
+index.hr##div[style^="margin-top:"]:has(>[class*=googleAds i])
+baustela.hr,mirovina.hr,srednja.hr##.banner
+baustela.hr,mirovina.hr,srednja.hr##.ticker
 ||glasistre.hr/SliderBanner^
 ||avalaads.com^$third-party
 ||linker.hr^
@@ -490,7 +495,7 @@ hr###plodine-widget
 ##.item__ad-center:not(html,body,:empty)
 ! https://forum•pcekspert•com/ (22. 8. 2026)
 ##.pce-ad:not(html,body,:empty)
-! https://www.portal.hr/en/novosti/aktualnosti/112868-kastelima-krenula-gradnja-mcdonald-nudit-prostranu-terasu (7. 9. 2026)
+! https://www•portal•hr/en/novosti/aktualnosti/112868-kastelima-krenula-gradnja-mcdonald-nudit-prostranu-terasu (7. 9. 2026)
 .hr/images/banners^$image
 ! ——————————
 ! Whitelistings to fix sites
@@ -498,75 +503,4 @@ hr###plodine-widget
 ! ekskluzivaBA
 @@||vidverto.io/*/invocation.
 ! ——————————
-! Borrowed from https://github.com/AdguardTeam/AdguardFilters/blob/master/BaseFilter/sections/foreign.txt (which is licenced as GPL-3.0) with minor modifications
-blic.rs##.banner-top
-blic.rs##.banner__placeholder
-bosnainfo.ba###Billboard_UnderArticle
-dnevno.hr##.mj-pf-widget
-dnevno.hr##.wpipa-container
-domaceserije.net##[id^=MyAdsId]
-filmoviplex.com###vivadice
-filmoviplex.com###wrapper > div[style="overflow:hidden;"]
-filmoviplex.com##a[target=_blank] > img[style="max-width: 100%;"]
-glasistre.hr##.row:has(> div[class^=col-] > style + div > div > div.ponuda)
-gledajcrtace.xyz###header-wrap-reklama
-gledajcrtace.xyz###sidebar > #HTML8
-gledajcrtace.xyz###sidebar-two > #HTML4
-gledajcrtace.xyz###sidebar-two > #HTML5
-informer.rs##.related-news
-jockantv.com###Dialog1
-jockantv.com###Toast1
-jutarnji.hr##.container--break[class*=break_]
-jutarnji.hr##.feroterm.products
-jutarnji.hr##.lidl.products
-jutarnji.hr##.position_item_right_01_top
-jutarnji.hr##.position_item_textend_top
-jutarnji.hr##.promo_heading_fix img
-kupujemprodajem.com###__next div[class^=Banner]:has(a[href^="https://novi.kupujemprodajem.com/bClick.php"])
-mondo.me##.js-gpt-ad
-n1info.hr##.ad-loading-placeholder
-net.hr###head_aside
-net.hr###kaufland
-net.hr###might_be_interested_and_ad + div[class^=css-]
-net.hr###sliding_wrapper
-net.hr##.category__ads-listing
-net.hr##.groupWrapper > div[class^=css-] > div[class^=css-][style^="display:flex;"]:not([data-upscore-zone])
-net.hr##.VoyoSlider_container
-net.hr##div[class*=__ads-]
-net.hr##div[style="display: flex; flex-direction: column; align-items: center; justify-content: center; align-self: stretch; padding: 0px; margin: 0rem -0.9375rem;"]
-net.hr##div[style="padding:0;margin:0;position:relative;width:100%;height:100%"]
-net.hr###jos_iz_rubrike_wrapper + div[class^=css-]:has(> div[class^=css-] a[id^=placeholder_container_])
-net.hr###might_be_interested_and_ad > div#desktopScaleDown:has(> div[class^=css-] a[id^=placeholder_container_])
-net.hr##.cls_frame:has(> div > iframe[title*=banner])
-net.hr##.cls_frame:has(> div[class^=css-] > div.Wallpaper_container)
-net.hr##.cls_frame:has(> div[class^=css-] > iframe[title=admiral-widget])
-net.hr##.sectionTitle_wrapper ~ div[class^=css-]:has(> div[class^=css-] a[id^=placeholder_container_])
-net.hr#?#article > div[class^=css-]:has(> span.SlotContainer_title:contains(Tekst se nastavlja ispod oglasa))
-novilist.hr##.more-news
-olx.ba#%#//scriptlet('set-constant', 'googletag.destroySlots', 'noopFunc')
-politika.rs##.article-sidebar-banner
-politika.rs##.story-details-banners-row
-rezultati.com##.detailLeaderboard
-sd.rs##.sd-banners-zone-responsive-footer
-slobodnadalmacija.hr##.container--break
-slobodnadalmacija.hr##.item__ad-center
-sportal.blic.rs##div.container:has(> div#Billboard_Desktop)
-story.hr#$#.pg-story-page div.c-wallpaper-ad-wrapper { display: none!important }
-story.hr#$#.pg-story-page div.wallpaper-help-wrapper { top: 60px !important }
-telegram.hr##.banner-separator
-telegram.hr##.banner-separator + div.full
-telegram.hr##.single-top-banner
-telegram.hr##div[id^=intext_midas]
-tportal.hr##.kaufland-w
-tportal.hr#$#.gpElementAdvertising { display: none !important }
-vecernji.hr##div[data-client=vecernji_hr_spotlight]
-vecernji.hr#$?#.js_bannerWrapper.gallery__banner { remove: true; }
-zagreb.info##.td-is-sticky div[align=center] > a > img
-zagreb.info##.td-ss-main-sidebar div[align=center] > a > img
-||adriamediacontent.com/js/pubjelly/main/pubjelly.js
-||bug.hr/ads/
-||contentexchange.me^$domain=nova.rs
-||ocdn.eu/mis/wrapper/nin.rs/*/ads.js
-||sultanovic.info/?*%$script
-||widget.marktjagd.de^
 !
