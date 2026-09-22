@@ -3,8 +3,13 @@
  * @see {@link https://github.com/AdguardTeam/FiltersCompiler/blob/master/src/main/platforms-config.js}
  *
  * IMPORTANT: During making any changes in this file,
- * the default configuration should also be updated through PR on BitBucket.
+ * the default configuration should also be updated through ext-compiler PR.
+ *
+ * This file is a full mirror of the compiler's `platforms-config.js` and must
+ * stay in sync with it. Do not remove platforms from this file even when their
+ * configuration is identical to the compiler default (e.g. `EXTENSION_EDGE_MV3`).
  */
+import type { CustomPlatformsConfig } from '@adguard/filters-compiler';
 
 /**
  * Pattern to check if rule contains `$domain` modifier with regular expression
@@ -563,7 +568,7 @@ const CSS_GENERIC_RULES_PATTERNS = [
     '^#\\$#',
 ];
 
-export const CUSTOM_PLATFORMS_CONFIG = {
+export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
     'WINDOWS': {
         'platform': 'windows',
         'path': 'windows',
