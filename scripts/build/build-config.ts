@@ -2,6 +2,8 @@
  * Build configuration parser and validator.
  */
 
+import { parseFilterIDs } from './filter-id-list.js';
+
 export interface BuildFlags {
     includedFilterIDs: number[];
     excludedFilterIDs: number[];
@@ -34,18 +36,12 @@ export function parseFlags(argv: string[]): BuildFlags {
     argv.forEach((val) => {
         if (val.startsWith('-i=') || val.startsWith('--include=')) {
             const value = val.slice(val.indexOf('=') + 1);
-            flags.includedFilterIDs = value
-                .split(',')
-                .map((x) => Number.parseInt(x, 10))
-                .filter((x) => !Number.isNaN(x));
+            flags.includedFilterIDs = parseFilterIDs(value);
         }
 
         if (val.startsWith('-s=') || val.startsWith('--skip=')) {
             const value = val.slice(val.indexOf('=') + 1);
-            flags.excludedFilterIDs = value
-                .split(',')
-                .map((x) => Number.parseInt(x, 10))
-                .filter((x) => !Number.isNaN(x));
+            flags.excludedFilterIDs = parseFilterIDs(value);
         }
 
         if (val.startsWith('--report=')) {
