@@ -1,8 +1,8 @@
-! Checksum: lB1Efgb+NGAnP0RQ255wDA
+! Checksum: UedLarhWJq84N6VHLY/GTw
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.12.7
-! TimeUpdated: 2026-09-22T18:07:00+00:00
+! Version: 2.1.12.8
+! TimeUpdated: 2026-09-22T19:05:09+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -100569,6 +100569,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||bzr.openai.com^
 ||rlog.baifentan.com^
 ||analytics.laxamentum.tech^
 ||e.missav.
@@ -111176,6 +111177,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Bad:  ||example.com^$cookie=flat_r_mb (should be in cookies_specific.txt)
 !
 !
+! OpenAI
+! https://developers.openai.com/ads/conversions-api
+$cookie=__obref
 ! tags.creativecdn.com
 $cookie=__rtbh.lid
 $cookie=__rtbh.uid
@@ -112070,6 +112074,8 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! OpenAI
+$cookie=__oailb,domain=chatgpt.com|openai.com
 ! oita-press.co.jp
 ||oita-press.co.jp^$cookie=guid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241391
