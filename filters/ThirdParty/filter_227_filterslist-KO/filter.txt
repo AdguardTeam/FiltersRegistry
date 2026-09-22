@@ -1,7 +1,7 @@
 !
 ! Title: filterslists-KO classic (AdGuard)
 ! Description: AdGuard용 filterslists-KO클래식 필터 리스트입니다. 한국어권 웹 페이지 및 앱에 있는 광고와 거부되지 않은 안티 애드블록을 차단합니다.
-! OriginalVersion: 2026.20698.0
+! OriginalVersion: 2026.20717.3
 ! Expires: 1 day (update frequency)
 ! Homepage: https://github.com/FilteringDev/filterslists-KO
 ! Licence: https://github.com/FilteringDev/filterslists-KO/blob/master/LICENSE
@@ -260,6 +260,8 @@
 !
 ! DOMAIN-REFRESHER: START
 !
+||creative.mayzaent.com^
+||reebr.com^
 ||ntkimg.cloud^
 ||ttse.b-cdn.net^
 ||i.keezip.com^
@@ -653,6 +655,8 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 ! DOMAIN-REFRESHER: START
 !
 ! aglint-disable-next-line no-invalid-modifiers
+[$domain=/yasyadong[0-9]+\.tv/]##.top-ad-padding
+! aglint-disable-next-line no-invalid-modifiers
 [$domain=/anilife[0-9]+\.tv/]##*[class^="partner-banner-"]
 ! aglint-disable-next-line no-invalid-modifiers
 [$domain=/cokcok[0-9]+\.com/]###cpb-popup-banners
@@ -847,6 +851,17 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 
+||ds-cdn.inicis.com/ad/$image
+||scripts.mediavine.com/creativeBlocks
+||pam-assets.dak.gg/creatives/
+ipokergosu.com/banner/$domain=pokergosu.com
+||amazing.today/_next/image?url=%2Fads%2F2
+||image.gamechosun.co.kr/ad_banner/
+||file.chuchu.gg/*/pop_up_ad/
+/^https:\/\/(www\.)?busan\.com\/nas\/wcms\/public\/m\/images\/new\/[0-9]{6}[a-z]{2,3}\./$domain=busan.com
+||joinsmedia.sfo2.digitaloceanspaces.com/ad/
+||graynews.co.kr/api/*/ads/imp
+||graynews.co.kr/img/cms/*PC.$image
 ||img*.quasarzone.com/banner/
 ||api.a-bly.com/api/*/retail_ad/
 ||search.danawa.com/js/elevenStAd.min.js
@@ -1744,6 +1759,10 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 !
 ! DOMAIN-REFRESHER: START
 !
+||lover*.net/staticwrite/vmplayer0.js
+||lover*.net/staticwrite/videoplaymasterfile.js
+! aglint-disable-next-line no-invalid-modifiers
+/w[0-9]+\.apiapi[0-9]+\.com\/data\/banner\//$domain=/tvwiki[0-9]+\.net/
 ! aglint-disable-next-line no-invalid-modifiers
 /^https:\/\/anilife[0-9]+\.tv\/tvwiki-banners\//$domain=/anilife[0-9]+\.tv/
 ! aglint-disable-next-line no-invalid-modifiers
@@ -1792,14 +1811,16 @@ nightofpeace.com,ilovebees.io##.e-grid.e-con-full.e-con.e-child:has(a[target="_b
 ||img.mingk.xyz/data/file/passfree/
 ! aglint-disable-next-line no-invalid-modifiers
 ||mingk*.net/theme/BS4-Basic/js/pf-loader.js$domain=/^mingky[0-9]+\.net/
-||yasyadong.*/?_Action=adv&_Method$domain=yasyadong.*
+! aglint-disable-next-line no-invalid-modifiers
+||yasyadong.*/?_Action=adv&_Method$domain=yasyadong.*|/yasyadong[0-9]+\.tv/
 ! aglint-disable-next-line no-invalid-modifiers
 /https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=/tvwiki[0-9]+\.com/
 /^https:\/\/(www\.)?aniya24\.com\/wp-content\/uploads\/[0-9]+\/[0-9]+\/[a-z]+[0-9]+x[0-9]+\./$domain=aniya24.com
 ||aniya24.com/wp-content/uploads/*.gif
 ||sutom.org/wp-content/uploads/*.webp
 ||nooo*.tv/theme/basic_player/img/banner/
-||blogger.googleusercontent.com/img/$domain=yasyadong.*
+! aglint-disable-next-line no-invalid-modifiers
+||blogger.googleusercontent.com/img/$domain=yasyadong.*|/yasyadong[0-9]+\.tv/
 .gif^$image,domain=itrulli.com
 ||365tvda.com/data/file/bojng/
 ||xn--hy1bm2ltmr.com/img/banner/
@@ -2030,7 +2051,7 @@ economist.co.kr,itcm.co.kr,news.jtbc.co.kr,m.ytn.co.kr,isplus.com,munhwa.com,spo
 ! ##div[class^="ad_"]
 biz.sbs.co.kr,investchosun.com,stoo.com,kyeongin.com,bemil.chosun.com,kjwwang.com,ggoorr.net,health.chosun.com,beautynury.com,donga.com,news.zum.com,m.heraldpop.com,m.jjang0u.com,compuzone.co.kr,dak.gg,osmanias.com,imnews.imbc.com,edaily.co.kr,mk.co.kr,v.daum.net,humoruniv.com,etoday.co.kr,kukinews.com,nesin.com,search.naver.com,encar.com,m.todayhumor.co.kr,zdnet.co.kr,m.search.daum.net,teamblind.com,unsin.co.kr,m.mk.co.kr,m.cafe.naver.com,nocutnews.co.kr,news.sbs.co.kr,mbiz.heraldcorp.com,m.starnewskorea.com,etnews.com,sedaily.com,m.danawa.com,sportalkorea.com,news.jtbc.co.kr,ohmynews.com,hankyung.com,news1.kr,asiae.co.kr,khan.co.kr,kmib.co.kr,prod.danawa.com,news.v.daum.net,joongang.co.kr##div[class^="ad_"]:not(.ad_lst)
 ! ##div[class^="ad-"]
-futurekorea.co.kr,nbiznews.net,itssa.co.kr,wikidocs.net,bosik.kr,khan.co.kr,fnnews.com,tenasia.co.kr,m.dcinside.com,osen.co.kr,url.kr,polinews.co.kr,teamblind.com,shinailbo.co.kr,pointe.co.kr,dealsite.co.kr,besteleven.com,getnews.co.kr,tgdaily.co.kr,eanews.kr,lifedesk.co.kr,newdailyhealth.co.kr,daejonilbo.com,chungnamilbo.co.kr,incheonilbo.com,ggilbo.com,bloter.net,sportsseoul.com,nbnbiz.co.kr,enetnews.co.kr,newsnjoy.or.kr,mediaus.co.kr,ziksir.com,daily.hankooki.com,ccdailynews.com,topstarnews.net,spotvnews.co.kr,foodnews.co.kr,hankooki.com,spochoo.com,digitaltoday.co.kr,orbi.kr,weekly.chosun.com,nzkoreapost.com,pinpointnews.co.kr,huffingtonpost.kr,eroun.net,cnet.co.kr,hogangnono.com,ppomppu.co.kr,interfootball.co.kr,police112.co.kr,dpg.danawa.com,m.danawa.com,kimpga.com,youthassembly.kr,algumon.com,dailysecu.com,hankyung.com,m.etnews.com,hankookilbo.com,newspim.com##div[class^="ad-"]
+chuchu.gg,futurekorea.co.kr,nbiznews.net,itssa.co.kr,wikidocs.net,bosik.kr,khan.co.kr,fnnews.com,tenasia.co.kr,m.dcinside.com,osen.co.kr,url.kr,polinews.co.kr,teamblind.com,shinailbo.co.kr,pointe.co.kr,dealsite.co.kr,besteleven.com,getnews.co.kr,tgdaily.co.kr,eanews.kr,lifedesk.co.kr,newdailyhealth.co.kr,daejonilbo.com,chungnamilbo.co.kr,incheonilbo.com,ggilbo.com,bloter.net,sportsseoul.com,nbnbiz.co.kr,enetnews.co.kr,newsnjoy.or.kr,mediaus.co.kr,ziksir.com,daily.hankooki.com,ccdailynews.com,topstarnews.net,spotvnews.co.kr,foodnews.co.kr,hankooki.com,spochoo.com,digitaltoday.co.kr,orbi.kr,weekly.chosun.com,nzkoreapost.com,pinpointnews.co.kr,huffingtonpost.kr,eroun.net,cnet.co.kr,hogangnono.com,ppomppu.co.kr,interfootball.co.kr,police112.co.kr,dpg.danawa.com,m.danawa.com,kimpga.com,youthassembly.kr,algumon.com,dailysecu.com,hankyung.com,m.etnews.com,hankookilbo.com,newspim.com##div[class^="ad-"]
 ! ##.banner
 newdaily.co.kr,land.naver.com,m.inven.co.kr,lolchess.gg,healtho.co.kr,economist.co.kr,m.comic.naver.com,sports.news.naver.com,ebn.co.kr,paxnet.co.kr,ajl.co.kr,yhinews.com,funshop.co.kr,m.sedaily.com,bloter.net,mosen.mt.co.kr,hinfomax.kr,hinfomax.co.kr,pressian.com,kukinews.com##.banner
 ! ##div[class$="_banner"]
@@ -2081,6 +2102,31 @@ jobkorea.co.kr##div[id^="Banner"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 
+stdpay.inicis.com###leftBnr
+stdpay.inicis.com###rightBnr
+stdpay.inicis.com###bannerBottomSection
+stdpay.inicis.com###noticeSection
+maple.gg##div[class*=" "][style]:has(> div[class^="ad-"])
+maple.gg##body > div[data-pam-popup="main-popup"]:has(> div[role="dialog"][aria-label="애니모"])
+lec.co.kr##aside.user-aside > div[style^="height:"]
+bananamall.co.kr###banner_header
+bananamall.co.kr##.banner_fan_meeting_review
+bananamall.co.kr##.banner_cntnt_right
+bananamall.co.kr##wrap_fixed_right_branches
+bananamall.co.kr###wrap_fixed_right_exhbt
+bananamall.co.kr##.srch_term
+bananamall.co.kr##.banner_evt
+bananamall.co.kr##.banner_cntnt_left
+bananamall.co.kr##.banner_evt_adult_day_2017
+bananamall.co.kr###wrap_banner_fixed_left
+bananamall.co.kr###wrap_fixed_left_review
+my.amazing.today##.relative.z-0.flex-1 #map ~ .absolute.z-10.flex.w-full
+gamechosun.co.kr##.top_event
+busan.com###container > div[style^="width:"]
+joinsmediacanada.com###popupNoticeWrap
+joinsmediacanada.com###aside.highChk
+graynews.co.kr##div[data-component="AdBanner"]
+graynews.co.kr##a[href^="/api/v2/ads/click?slot="]
 quasarzone.com##body > div[style^="min-height:"]
 kyobobook.co.kr##.z-notification.fixed
 kyobobook.co.kr##a[href^="http://imac.kyobobook.co.kr/click/"]
@@ -2138,6 +2184,7 @@ m.danawa.com##.box__tooltip-internet
 m.bunjang.co.kr##main > div[class^="_container_"] + section:has(> span[class*="_adTitle_"])
 m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href^="https://link.coupang.com/"])
 m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href^="https://ader.naver.com/"])
+m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href^="/products/"][href*="&ref_source=sa&"])
 m.bunjang.co.kr##div[data-grid-size] > div:has(> a[href*="&ref_code=%22%7B%5C%22cntr%5C%22%3A%5C%22SIM3"])
 ! lottecinema.co.kr desktop
 lottecinema.co.kr##.login_ad
@@ -3655,6 +3702,7 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 !#endif
 
 !#if (adguard && !adguard_ext_android_cb)
+joinsmediacanada.com#$##container.highChk { width: 100% !important; }
 quasarzone.com#$#.sponsor-banner-layer-container { width: 0px !important; }
 quasarzone.com#$#.sponsor-banner-layer-container * { width: 0px !important; padding: 0px !important; border: none !important; }
 mediapen.com#$#.article-content { width: 100% !important; }
@@ -3662,7 +3710,7 @@ bosik.kr#$#div[class*="padright-"] ~ .float-right { width: 100% !important; }
 m.megabox.co.kr#$#.ad-popup2 { display: none !important }
 m.megabox.co.kr#$#.layer-dimmed { display: none !important; }
 mhnse.com#$##main.news-view-wrap { padding-top: 0px !important; }
-chzzk.naver.com#$##viewport-box + div:has(> a[href="https://chzzk.naver.com/home/sports/fifa-worldcup-2026"]) { display: none !important; }
+chzzk.naver.com#$##viewport-box + div:has(> a[href^="https://chzzk.naver.com/home/sports/"]) { display: none !important; }
 chzzk.naver.com#$##header { transform: initial !important; }
 chzzk.naver.com#$##sidebar { transform: translateY(60px) !important; height: 100% !important; }
 chzzk.naver.com#$##layout-body { padding-top: 0 !important; height: 100% !important; }
@@ -4165,6 +4213,8 @@ m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html',
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 ! chzzk.naver.com
 !
+stdpay.inicis.com#%#//scriptlet('prevent-window-open', 'ds-cdn.inicis.com/ad/')
+chuchu.gg#%#//scriptlet('set-cookie', 'daily_ad_closed', 'true')
 loawa.com#%#//scriptlet('set-cookie', 'ad_popup_hide_36', '1')
 goodmorningcc.com#%#//scriptlet('prevent-window-open', 'bannerpop/popup.html')
 m.danawa.com#%#//scriptlet('set-cookie', 'hideMainBottomSheet', 'Y')
@@ -4277,16 +4327,6 @@ daum.net,kakao.com,namu.wiki#@#ins.kakao_ad_area
 daum.net,kakao.com,namu.wiki#@##adBlockPixelTag
 daum.net,kakao.com,namu.wiki#@#.banner_ad
 !#endif
-! aglint-disable-next-line no-invalid-modifiers
-/^https:\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]+\/vmap/$redirect=nooptext,domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
-tv.kakao.com,play-tv.kakao.com,kakaotv.daum.net#%#//scriptlet('prevent-xhr', '/^https.\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]{1,2}\/vmap$/')
-! aglint-disable-next-line no-invalid-modifiers
-/embed/player/image/ads.png$redirect=2x2-transparent.png,domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
-tv.kakao.com,play-tv.kakao.com,kakaotv.daum.net#%#//scriptlet('prevent-fetch', '/^https.\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]{1,2}\/vmap$/')
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adContainer
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#ins.kakao_ad_area
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adBlockPixelTag
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#.banner_ad
 ! meeco.kr
 meeco.kr##body > div[class][style*="box-shadow:"]
 meeco.kr#@#.googleAd
@@ -4633,14 +4673,6 @@ lover932.net,lover933.net,lover934.net,lover935.net,lover936.net,lover937.net,lo
 !#if (adguard && adguard_ext_android_cb)
 ! fundingchoicesmessages.google.com
 ||fundingchoicesmessages.google.com^$domain=damoang.net|maplescouter.com|vivatv.cc|singingdalong.blogspot.com|goodgag.net|bera.world|sellas.ink|hunigo.com|iteastory.com|snskeyboard.com|rdsong.com|mongri.net|meeco.kr|poketory.com|youthassembly.kr|kr.jugomobile.com|1412.live|pyrasis.com|oceansabyss.com|yongtj.com|dora-guide.com|tailstar.net|creativestudio.kr|gamejay.net|mksports.co.kr|sisamagazine.co.kr|dreamrail.co.kr|tistory.com|gukjenews.com|issuelink.co.kr|webtool.cusis.net|koreaminecraft.net
-! Kakao TV
-@@||kakaotv.daum.net/embed/player/image/ads.png$domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adContainer
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#ins.kakao_ad_area
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adBlockPixelTag
-kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#.banner_ad
-@@||tv.kakao.com/embed/player/image/ads.png$domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
-@@||videoads.kakao.com/adserver/api/v2/vmap$domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
 ! Umanle S.R.L
 @@||arca.live^$generichide,domain=arca.live
 @@||newliweb.com/$subdocument,script,domain=namu.wiki|~board.namu.wiki
@@ -4826,7 +4858,6 @@ stockinfo7.com#@#ins.adsbygoogle[data-ad-slot]
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=noonnu.cc
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=ff14angler.com
 ff14angler.com#@#ins.adsbygoogle[data-ad-slot]
-@@||videoads.kakao.com/adserver/api/v2/vmap$domain=tv.kakao.com|play-tv.kakao.com|entertain.daum.net
 
 !#endif
 
@@ -4966,7 +4997,8 @@ booktoki469.com,booktoki470.com,booktoki471.com,booktoki472.com,booktoki473.com,
 !#endif
 
 !#if (adguard && adguard_app_ios)
-/^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\/[a-z0-9-_]+\./$image,domain=wfwf487.com
+/w[0-9]+\.apiapi[0-9]+\.com\/data\/banner\//$domain=tvwiki88.net
+/^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\/[a-z0-9-_]+\./$image,domain=wfwf492.com
 ||i.imgur.com^$domain=yasyadong01.tv|yasyadong02.tv|yasyadong03.tv|yasyadong04.tv|yasyadong05.tv|yasyadong06.tv|yasyadong07.tv|yasyadong08.tv|yasyadong09.tv
 linkbbg7.com##[style="margin-bottom: 20px;"].row.row-15
 linkbbg7.com##.basic-banner.row.row-10
@@ -4977,10 +5009,11 @@ tvwiki41.com##ul[class^="banner"]
 /https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=tvwiki41.com
 ||hoohootv*.*/static/bnner/$domain=hoohootv341.xyz
 /^https:\/\/cdn[a-z0-9]+\.site\/data\/banner\//$domain=tvwik20.net|tvwik21.net|tvwik22.net|tvwik23.net|tvwik24.net|tvwik25.net|tvwik26.net|tvwiki88.net
-/^https:\/\/nooo[0-9]+\.tv\/theme\/renew\/img\/banner\//$domain=nooo31.tv
+/^https:\/\/nooo[0-9]+\.tv\/theme\/renew\/img\/banner\//$domain=nooo32.tv
 !#endif
 
 !#if (adguard && adguard_ext_chromium_mv3)
+/w[0-9]+\.apiapi[0-9]+\.com\/data\/banner\//$domain=tvwiki88.net
 anilife1.tv,anilife2.tv,anilife3.tv,anilife4.tv,anilife5.tv,anilife6.tv,anilife7.tv,anilife8.tv,anilife9.tv,anilife10.tv,anilife11.tv,anilife12.tv,anilife13.tv,anilife14.tv##*[class^="partner-banner-"]
 /^https:\/\/anilife[0-9]+\.tv\/tvwiki-banners\//$domain=anilife1.tv|anilife2.tv|anilife3.tv|anilife4.tv|anilife5.tv|anilife6.tv|anilife7.tv|anilife8.tv|anilife9.tv|anilife10.tv|anilife11.tv|anilife12.tv|anilife13.tv|anilife14.tv
 /^https:\/\/cdn[0-9]+\.cokcok\.[a-z0-9]+\/assets\/images\//$domain=cokcok15.com|cokcok16.com|cokcok17.com|cokcok18.com|cokcok19.com|cokcok20.com|cokcok21.com|cokcok22.com|cokcok23.com
@@ -4988,9 +5021,9 @@ anilife1.tv,anilife2.tv,anilife3.tv,anilife4.tv,anilife5.tv,anilife6.tv,anilife7
 /\/data\/apms\/banner\//$domain=newto65.com
 /\/data\/apms\/banner\//$domain=bookto05.com|bookto06.com|bookto07.com|bookto08.com|bookto09.com|bookto10.com|bookto11.com|bookto12.com|bookto13.com|bookto14.com|bookto15.com|bookto16.com
 sbxh1.com,sbxh2.com,sbxh3.com,sbxh4.com,sbxh5.com,sbxh6.com,sbxh7.com,sbxh8.com,sbxh9.com,sbxh10.com,sbxh11.com,sbxh12.com##[data-brs][data-br]
-/^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\/[a-z0-9-_]+\./$image,domain=wfwf487.com
+/^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\/[a-z0-9-_]+\./$image,domain=wfwf492.com
 ||i.imgur.com^$domain=yasyadong01.tv|yasyadong02.tv|yasyadong03.tv|yasyadong04.tv|yasyadong05.tv|yasyadong06.tv|yasyadong07.tv|yasyadong08.tv|yasyadong09.tv
-/^https:\/\/(www\.)?yako[0-9]+\.com\/upload\/banner\//$domain=yako24.com
+/^https:\/\/(www\.)?yako[0-9]+\.com\/upload\/banner\//$domain=yako26.com
 lover937.net,lover938.net,lover939.net,lover940.net,lover941.net,lover942.net,lover943.net,lover944.net,lover945.net,lover946.net#%#//scriptlet('prevent-addEventListener', 'click', 'popMagic')
 lover937.net,lover938.net,lover939.net,lover940.net,lover941.net,lover942.net,lover943.net,lover944.net,lover945.net,lover946.net#%#//scriptlet('prevent-addEventListener', 'click', 'popMagic')
 lover937.net,lover938.net,lover939.net,lover940.net,lover941.net,lover942.net,lover943.net,lover944.net,lover945.net,lover946.net##.div-over
@@ -5010,7 +5043,7 @@ tvwiki41.com##ul[class^="banner"]
 /https:\/\/tvwiki[0-9]+\.com\/AD\//$domain=tvwiki41.com
 /https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=tvwiki41.com
 /^https:\/\/cdn[a-z0-9]+\.site\/data\/banner\//$domain=tvwik20.net|tvwik21.net|tvwik22.net|tvwik23.net|tvwik24.net|tvwik25.net|tvwik26.net|tvwiki88.net
-/^https:\/\/nooo[0-9]+\.tv\/theme\/renew\/img\/banner\//$domain=nooo31.tv
+/^https:\/\/nooo[0-9]+\.tv\/theme\/renew\/img\/banner\//$domain=nooo32.tv
 !#endif
 ! This file contains the trusted rules
 chzzk.naver.com#%#//scriptlet('trusted-set-local-storage-item', 'homeSkinCollapsedUntil', '9999999999999')

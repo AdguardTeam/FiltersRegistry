@@ -1,9 +1,9 @@
-! Checksum: Ihl8O1hFqE+/hA53VPZWUA
-! Diff-Path: ../patches/8/8-s-1788128196-3600.patch
+! Checksum: 3ttEOI/4XBKy1Dwd55vR3A
+! Diff-Path: ../patches/8/8-s-1788794281-3600.patch
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.9.42
-! TimeUpdated: 2026-08-30T22:13:00+00:00
+! Version: 2.0.9.44
+! TimeUpdated: 2026-09-07T15:14:53+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1487,6 +1487,7 @@ krefel.be#?#div[class^="Flex-styled__StyledFlex-"]:has(h3:contains(Gesponsorde p
 bol.com##li.js_item_root:has(.dsa__list-padding)
 farmaline.be##li[data-qa-id="result-list-entry"]:has(a[href^="https://api.sae.systems/"])
 marktplaats.nl#?#.hz-Listing--list-item:contains(Topadvertentie)
+mediamarkt.*##aside[aria-label="Gesponsorde inhoud"]
 feijenoordnieuws.nl##.cv-table-left > a:not([target="_blank"]):not([rel="nofollow"]):not(a[href^="https://feijenoordnieuws.nl/"])
 autobahn.eu##.d-none.d-md-block.mb-3:has(a[target="_blank"][rel="noopener"])
 weer.nl##.shadow-lvl-2:has(a[href^="https://www.voordeeluitjes.nl/"])
@@ -1785,6 +1786,8 @@ omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -40
 ! Good: example.org###rek; ||example.com/ads/
 ! Bad: example.org#@##banner_ad (for instance, should be in allowlist.txt or in antiadblock.txt)
 !
+autoweek.nl##.teaser-group__items > a.teaser-tile ~ div
+autoweek.nl##.powered-by
 weeronline.nl#$#.adWrapper { height: 0px !important; }
 weeronline.nl##.fullScreenAdWrapper
 iphoned.nl##div[data-name="dynamic-content"]:has(> div[data-id^="gpt-ad-"])
@@ -1869,7 +1872,7 @@ geenstijl.nl#%#//scriptlet('prevent-element-src-loading', 'script', 'instream/ht
 geenstijl.nl#%#//scriptlet('adjust-setTimeout', 'function () { [native code] }', '6000', '0.001')
 autoblog.nl##div[class^="ndm-min-"]
 autoblog.nl##.widget_ab_sidebar
-autoweek.nl##.advertise
+autoweek.nl,autoweek.nl##.advertise
 iphoned.nl##.no-content-styles
 puna.nl##.raw-html-component:has(> div[class^="r89-"])
 puna.nl##.raw-html-component:has(> div[id^="div-gpt-ad"])
@@ -2084,7 +2087,7 @@ iphoned.nl###featured-header
 tvgids.nl###ligatus_under_content
 afkortingen.nu###link_unit
 fok.nl###mainContent > div.ad
-gezondheidsplein.nl,gelderlander.nl##.ad
+autoblog.nl,gezondheidsplein.nl,gelderlander.nl##.ad
 iphoned.nl##.advert-sidebar
 iex.nl,buienalarm.be,weerslag.nl,buienalarm.nl,nrc.nl,afkortingen.nu##.banner
 marktplaats.nl##.banner-vipbottom
