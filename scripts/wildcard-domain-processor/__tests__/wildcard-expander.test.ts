@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { RuleParser } from '@adguard/agtree/parser';
+import { AnyRule } from '@adguard/agtree';
 import { RuleGenerator } from '@adguard/agtree/generator';
 import path from 'path';
 import { expandWildcardDomainsInFilter, expandWildcardsInAst } from '../wildcard-expander.js';
@@ -13,7 +14,7 @@ import { readFile } from '../file-utils.js';
  * @returns The updated rule string with expanded wildcards, or null if no valid domains are left.
  */
 export function expandWildcardsInRule(rule: string, wildcardDomains: AliveWildcardDomains): string {
-    let ast = null;
+    let ast: AnyRule;
     try {
         ast = RuleParser.parse(rule);
     } catch (e) {

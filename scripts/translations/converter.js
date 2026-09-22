@@ -20,7 +20,7 @@ const converter = (() => {
     const readFile = (filePath) => {
         try {
             return fs.readFileSync(filePath, { encoding: 'utf-8' });
-        } catch (e) {
+        } catch {
             return null;
         }
     };
