@@ -608,7 +608,7 @@ fi
 echo "${C_CYAN}${ARROW}${C_RESET} Filters: include=[${INCLUDED_FILTER_IDS:-all}] exclude=[${EXCLUDED_FILTER_IDS:-none}]"
 
 step_header 3 "Build mode"
-echo "Use cached sources instead of a regular build?"
+echo "Use yarn build:local instead of regular build?"
 if confirm; then
     BUILD_MODE=cached
     echo "${C_CYAN}${ARROW}${C_RESET} Build mode: cached (build:local)"
