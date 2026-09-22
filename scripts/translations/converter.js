@@ -58,10 +58,12 @@ const converter = (() => {
      * @param mask Mask to identify the object — 'filter' or 'group' or 'tag'.
      */
     const importFile = (locale, file, outFile, mask) => {
+        // eslint-disable-next-line no-console
         console.log(`Importing file for locale: ${locale}`);
 
         const source = readFile(file);
         if (!source) {
+            // eslint-disable-next-line no-console
             console.warn('File is empty');
             return;
         }
@@ -69,6 +71,7 @@ const converter = (() => {
         const json = JSON.parse(source);
 
         const map = new Map();
+        // eslint-disable-next-line no-restricted-syntax, guard-for-in
         for (const p in json) {
             const info = parseInfo(p, mask);
             let item = map.get(info.id);
@@ -84,6 +87,7 @@ const converter = (() => {
         const result = [];
         map.forEach((value, key) => {
             const o = {};
+            // eslint-disable-next-line no-restricted-syntax, guard-for-in
             for (const p in value) {
                 o[`${mask}${key}.${p}`] = value[p].replace(/\n/g, '');
             }
@@ -92,6 +96,7 @@ const converter = (() => {
 
         writeFile(outFile, JSON.stringify(result, null, '\t'));
 
+        // eslint-disable-next-line no-console
         console.log(`Importing file for locale: ${locale} ok!`);
     };
 
@@ -103,6 +108,7 @@ const converter = (() => {
      * @param outFile
      */
     const exportFile = (locale, file, outFile) => {
+        // eslint-disable-next-line no-console
         console.log(`Exporting for locale: ${locale}`);
 
         const source = readFile(file);
@@ -110,6 +116,7 @@ const converter = (() => {
 
         const result = {};
         json.forEach((o) => {
+            // eslint-disable-next-line no-restricted-syntax, guard-for-in
             for (const p in o) {
                 result[p] = {
                     message: o[p],

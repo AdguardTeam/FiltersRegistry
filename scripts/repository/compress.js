@@ -1,4 +1,5 @@
-import simpleGit from 'simple-git';
+/* eslint-disable no-console */
+import { simpleGit } from 'simple-git';
 
 let commitsToKeep = 10000;
 
@@ -90,6 +91,7 @@ async function squashAndPush() {
         // Save original commit date.
         git.env('GIT_COMMITTER_DATE', date);
 
+        /* eslint-disable no-await-in-loop */
         try {
             // Use git cherry-pick command for each commit to cherry-pick.
             await git.raw(['cherry-pick', hash, '--strategy-option', 'theirs']);
@@ -103,6 +105,7 @@ async function squashAndPush() {
 
             throw e;
         }
+        /* eslint-enable no-await-in-loop */
     }
 
     // Step 8: Return to the 'master' branch

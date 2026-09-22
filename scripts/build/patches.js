@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-await-in-loop */
 import fs from 'fs';
 import path from 'path';
 import { DiffBuilder } from '@adguard/diff-builder';

@@ -76,6 +76,7 @@ const walkAndStrip = async (dir: string, rootDir: string): Promise<number> => {
             // Process all .txt files inside this `filters/` dir in one pass.
             const modified = await walkAndStrip(fullPath, rootDir);
             if (modified > 0) {
+                // eslint-disable-next-line no-console
                 console.log(`${path.relative(rootDir, fullPath)}: stripped metadata from ${modified} file(s)`);
             }
             return modified;
@@ -109,11 +110,13 @@ if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
             .filter((dir) => existsSync(dir))
             .map(async (rootDir) => {
                 const count = await stripGeneratedMetaFromDir(rootDir);
+                // eslint-disable-next-line no-console
                 console.log(`${path.relative('.', rootDir)}: ${count} file(s) modified.`);
                 return count;
             }),
     );
 
     const total = results.reduce((sum, count) => sum + count, 0);
+    // eslint-disable-next-line no-console
     console.log(`Done. ${total} file(s) modified in total.`);
 }

@@ -180,6 +180,8 @@ General code style guidelines for JavaScript are available via link:
   120-char line limit.
 - All other style rules (indentation, line length, import rules, etc.)
   are enforced by `eslint.config.js`. Run `yarn lint` to check.
+  See [DEVELOPMENT.md — ESLint configuration](DEVELOPMENT.md#eslint-configuration) for how that file
+  relates to the project's pre-migration ESLint 8 configuration.
 
 ### Testing
 

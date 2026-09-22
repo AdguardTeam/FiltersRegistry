@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax,no-await-in-loop */
 import path from 'path';
 
 import {
@@ -62,6 +63,7 @@ function expandWildcardsInNetworkRules(
                 PIPE_MODIFIER_SEPARATOR,
             );
         } catch (e) {
+            // eslint-disable-next-line no-console
             console.log(`Can not parse domains in the rule: ${ast.raws?.text}, because of error ${e}`);
             continue;
         }

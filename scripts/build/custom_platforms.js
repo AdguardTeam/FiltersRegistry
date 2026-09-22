@@ -240,7 +240,7 @@ const REPLACE_MODIFIER_PATTERNS = [
     '\\$(?!#|(path|domain)=.*]|.*removeparam=).*replace(,|=|$)',
 ];
 
-/* eslint-disable @stylistic/max-len */
+/* eslint-disable max-len */
 
 /**
  * Pattern to check if rule contains `$hls` modifier
@@ -280,7 +280,7 @@ const JSONPRUNE_MODIFIER_PATTERNS = [
     '\\$(?!#|(path|domain)=.*]|.*removeparam=).*jsonprune(,|=|$)',
 ];
 
-/* eslint-enable @stylistic/max-len */
+/* eslint-enable max-len */
 
 /**
  * Pattern to check if rule contains `$removeparam` modifier
@@ -534,7 +534,7 @@ const SAFARI_BASED_EXTENSION_PATTERNS = [
     ...JSONPRUNE_MODIFIER_PATTERNS,
 ];
 
-/* eslint-disable @stylistic/max-len */
+/* eslint-disable max-len */
 /**
  * Pattern to detect Extended CSS `:matches-property()` rules
  *
@@ -548,7 +548,7 @@ const SAFARI_BASED_EXTENSION_PATTERNS = [
 const CSS_MATCHES_PROPERTY_RULES_PATTERNS = [
     ':matches-property\\(',
 ];
-/* eslint-enable @stylistic/max-len */
+/* eslint-enable max-len */
 
 /**
  * Pattern to detect generic CSS rules

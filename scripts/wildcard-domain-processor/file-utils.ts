@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop,no-restricted-syntax */
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -40,6 +41,7 @@ export async function findFilterFiles(dir: string, ending: string | RegExp): Pro
             }
         }
     } catch (e) {
+        // eslint-disable-next-line no-console
         console.log(`Error processing directory ${dir}: ${e}`);
         throw e;
     }
