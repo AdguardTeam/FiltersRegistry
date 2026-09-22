@@ -1,9 +1,9 @@
-! Checksum: TTicjDqMU7xuoZ2WE7MhNQ
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1790023032-14400.patch
+! Checksum: aVBw4Ab5f2xCqWDnbJavEg
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1790039419-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.8
-! TimeUpdated: 2026-09-21T20:35:04+00:00
+! Version: 2.0.2.9
+! TimeUpdated: 2026-09-22T01:07:25+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -36,7 +36,7 @@ www.amazon.*##.nav-li:has([data-csa-c-content-id$="_cs_health_ai"])
 www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
-www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')
+www.amazon.*#%#//scriptlet('json-prune-xhr-response', 'suggestions.[-].widgetId', '', '/suggestions')
 www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
 www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel:dockedState', 'null')
@@ -126,7 +126,7 @@ www.bing.com###m365copilot_overflow
 www.bing.com##.cdxCopilotIconBg
 www.bing.com###aitools
 www.bing.com###sa_ai_block
-www.bing.com#%#//scriptlet('ubo-json-edit', '$.s[?@.t=="AI"]')
+www.bing.com#%#//scriptlet('ubo-json-edit-xhr-response', '$.s[?@.t=="AI"]', 'propsToMatch', '/AS/Suggestions')
 www.bing.com###b-scopeListItem-copilotsearch
 www.bing.com###b-scopeListItem-conv
 www.bing.com###b_copilot_search_container
@@ -167,11 +167,14 @@ www.boldbi.com##.elementor-element-6e4054b5
 www.boldbi.com###boldchat-host
 cloud.boldbi.com###bold-ai
 www.booking.com##[data-testid="filters-search-widget"]
-search.brave.com###submit-llm-button
 search.brave.com#%#//scriptlet('ubo-set-cookie', 'summarizer', '0')
+search.brave.com##.settings-content > .card > section:has([href="/help/ai"]):has(input[type="checkbox"]:not(:checked))
+search.brave.com###submit-llm-button
 search.brave.com##.tab-item:has(> a[href^="/ask"])
 search.brave.com###llm-snippet
 ||search.brave.com/api/chatllm/with_ask$xmlhttprequest,domain=search.brave.com
+search.brave.com##.footer-button:has(> svg > [d^="M11.352 2.005a2.234 2.234 0 0 0-2.168"])
+search.brave.com##.footer-button:has(> svg > [d^="M11.352 2.005a2.234 2.234 0 0 0-2.168"]) + .spacing
 www.thebricks.com###announcement-banner
 www.thebricks.com###sidebar-cta
 www.thebricks.com##.Cta1_container__T8L_e, .Cta2_container__dcad2, .Cta3_container__pjUHX, .Cta4_container__Ut98Y, .Cta5_container__8bABo
@@ -620,12 +623,16 @@ drive.google.com##.j6o35e:has([aria-label="You now have promotional access to au
 drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y)
 drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y) + .h-Yo[role="separator"]
 drive.google.com##.iQnZTe.SMHH7
+drive.google.com##span[data-is-tooltip-wrapper]:has([aria-label^="Ask Gemini"])
+drive.google.com##li[role="separator"]:has(+ span[data-is-tooltip-wrapper] [aria-label^="Ask Gemini"])
 drive.google.com##[data-test-id="help-me-organize-chip-container"]
 drive.google.com##.oaTPh
 drive.google.com##.h-v:has([src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x32.png"])
 ||appsgenaiserver-pa.clients6.google.com/v1/genai/$xmlhttprequest,domain=drive.google.com
 drive.google.com##.De8rPe
 drive.google.com###viewer-sidekick-button
+drive.google.com##.ux0ck:has([aria-label="Chapters"])
+||workspacevideo-pa.clients6.google.com/v1/drive/media/*/chapterInfo:generateChapters$xmlhttprequest,domain=drive.google.com
 drive.google.com##.TLiyPe
 drive.google.com#?#[role="menuitem"]:contains(Ask Gemini)
 drive.google.com#?#[role="menuitem"]:contains(Ask Gemini) + [role="separator"]
@@ -634,6 +641,7 @@ drive.google.com#?#[role="menu"] > [role="presentation"]:contains(Suggestion con
 drive.google.com#?#[role="menu"] > [role="presentation"]:contains(Suggestion controls):contains(Enable PDF summary cards) + [role="separator"]
 drive.google.com##.DbMyfd.LOB30e:has([aria-label="Create an audio overview"])
 drive.google.com##.equNN
+drive.google.com##[data-dialog-id]:has([href="https://support.google.com/drive?p=gemini_drive_pdf"])
 www.google.com##.yVTUN:has(svg.fdpJhe)
 www.google.com##.kfgtbc:has([class="lHmueb"])
 www.google.com##[role="dialog"][aria-label="Ask anything about anywhere"]
@@ -1193,8 +1201,8 @@ thenewstack.io##.search-disclaimer
 thenewstack.io#%#//scriptlet('remove-attr', 'placeholder', '.search-input[placeholder="This is AI-powered search. Type a prompt."]')
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
 www.thermofisher.com##.ask-ai-widget-container
-www.tiktok.com#%#//scriptlet('json-prune', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType')
-www.tiktok.com#%#//scriptlet('json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch')
+www.tiktok.com#%#//scriptlet('json-prune-fetch-response', 'itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType', '', '/item_list')
+www.tiktok.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/')
 time.com###scale-agent-overlay-container
 tms-outsource.com##.menu-item:has(> [href="https://tms-outsource.com/blog/category/ai-coding/"])
 www.todoist.com##message-banner[data-banner-name="ramble-1vv4lt6"]
