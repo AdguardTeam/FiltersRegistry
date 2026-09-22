@@ -26,8 +26,8 @@ for all supported AdGuard products.
 - **Testing**: Vitest (unit + integration + e2e tests under `scripts/*/__tests__/`)
 - **Target Platform**: Node.js CLI tooling; build outputs target 8 top-level AdGuard product
   platforms (Android, CLI, Extension, iOS, Mac, Mac v2, Mac v3, Windows).
-  The Extension platform has 9 sub-targets: Chromium, Chromium MV3, Edge, Firefox, Opera,
-  Opera MV3, Safari, Android Content Blocker, uBlock.
+  The Extension platform has 10 sub-targets: Chromium, Chromium MV3, Edge, Edge MV3,
+  Firefox, Opera, Opera MV3, Safari, Android Content Blocker, uBlock.
 - **Project Type**: Single repository (build tooling + data)
 - **CI**: GitHub Actions workflows:
     - `build-adguard.yaml`
@@ -54,11 +54,11 @@ for all supported AdGuard products.
 │       ├── patches/                # Incremental diff patches
 │       ├── filters.json            # Filter metadata for the platform
 │       ├── filters_i18n.json       # Localized filter metadata
-│       └── <sub-target>/           # extension/ only: chromium, chromium-mv3, edge, firefox,
-│                                   #   opera, opera-mv3, safari, android-content-blocker, ublock
+│       └── <sub-target>/           # extension/ only: chromium, chromium-mv3, edge, edge-mv3,
+│                                   #   firefox, opera, opera-mv3, safari, android-content-blocker, ublock
 ├── scripts/                        # All build and utility scripts
 │   ├── build/                      # build.js, build-config.ts, constants.js,
-│   │                               #   custom_platforms.js, patches.ts, strip-generated-meta.ts
+│   │                               #   custom_platforms.ts, patches.ts, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
 │   ├── repository/                 # compress.js — repository compression
 │   ├── translations/               # Locale download/upload tooling, PR validation reporting
