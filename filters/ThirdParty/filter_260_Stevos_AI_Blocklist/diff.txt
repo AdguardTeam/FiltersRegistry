@@ -12,8 +12,8 @@ www.1password.dev##[role="menuitem"]:has-text(Ask questions about this page)
 www.adobe.com##.promobar:has-text(Adobe Firefly)
 ! Rule "||www.amazon.*/rufus/$xhr,domain=www.amazon.*" converted to: "||www.amazon.*/rufus/$xmlhttprequest,domain=www.amazon.*"
 ||www.amazon.*/rufus/$xhr,domain=www.amazon.*
-! Rule "www.amazon.*##+js(json-prune, suggestions.[-].widgetId)" converted to: "www.amazon.*#%#//scriptlet('ubo-json-prune', 'suggestions.[-].widgetId')"
-www.amazon.*##+js(json-prune, suggestions.[-].widgetId)
+! Rule "www.amazon.*##+js(json-prune-xhr-response, suggestions.[-].widgetId, , propsToMatch, /suggestions)" converted to: "www.amazon.*#%#//scriptlet('json-prune-xhr-response', 'suggestions.[-].widgetId', '', '/suggestions')"
+www.amazon.*##+js(json-prune-xhr-response, suggestions.[-].widgetId, , propsToMatch, /suggestions)
 ! Rule "www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Ask Alexa a question"])" converted to: "www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')"
 www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Ask Alexa a question"])
 ! Rule "www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Compare products with Alexa"])" converted to: "www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')"
@@ -34,8 +34,8 @@ answeroverflow.com##.text-left.w-full.pt-4.border-t:has-text(MCP Server)
 docs.aws.amazon.com##div:has(> [data-testid="agentic-search-trigger"]) {background: #bbb !important}
 ! Rule "www.baidu.com##area[href^="//chat.baidu.com/"]:remove()" converted to: "www.baidu.com#$?#area[href^="//chat.baidu.com/"] { remove: true; }"
 www.baidu.com##area[href^="//chat.baidu.com/"]:remove()
-! Rule "www.bing.com##+js(json-edit, $.s[?@.t=="AI"])" converted to: "www.bing.com#%#//scriptlet('ubo-json-edit', '$.s[?@.t=="AI"]')"
-www.bing.com##+js(json-edit, $.s[?@.t=="AI"])
+! Rule "www.bing.com##+js(json-edit-xhr-response, $.s[?@.t=="AI"], propsToMatch, /AS/Suggestions)" converted to: "www.bing.com#%#//scriptlet('ubo-json-edit-xhr-response', '$.s[?@.t=="AI"]', 'propsToMatch', '/AS/Suggestions')"
+www.bing.com##+js(json-edit-xhr-response, $.s[?@.t=="AI"], propsToMatch, /AS/Suggestions)
 ! Rule "||www.bing.com/cmc/fetch$xhr,domain=www.bing.com" converted to: "||www.bing.com/cmc/fetch$xmlhttprequest,domain=www.bing.com"
 ||www.bing.com/cmc/fetch$xhr,domain=www.bing.com
 ! Rule "||www.bing.com/qna/fetchCodexQnA$xhr,domain=www.bing.com" converted to: "||www.bing.com/qna/fetchCodexQnA$xmlhttprequest,domain=www.bing.com"
@@ -154,6 +154,8 @@ docs.google.com###docs-banner-container:has-text(Upgrade to elevate your videos 
 drive.google.com##[role="menuitem"]:has(img[src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x16.png"]):remove()
 ! Rule "||appsgenaiserver-pa.clients6.google.com/v1/genai/$xhr,domain=drive.google.com" converted to: "||appsgenaiserver-pa.clients6.google.com/v1/genai/$xmlhttprequest,domain=drive.google.com"
 ||appsgenaiserver-pa.clients6.google.com/v1/genai/$xhr,domain=drive.google.com
+! Rule "||workspacevideo-pa.clients6.google.com/v1/drive/media/*/chapterInfo:generateChapters$xhr,domain=drive.google.com" converted to: "||workspacevideo-pa.clients6.google.com/v1/drive/media/*/chapterInfo:generateChapters$xmlhttprequest,domain=drive.google.com"
+||workspacevideo-pa.clients6.google.com/v1/drive/media/*/chapterInfo:generateChapters$xhr,domain=drive.google.com
 ! Rule "drive.google.com##[role="menuitem"]:has-text(Ask Gemini)" converted to: "drive.google.com#?#[role="menuitem"]:contains(Ask Gemini)"
 drive.google.com##[role="menuitem"]:has-text(Ask Gemini)
 ! Rule "drive.google.com##[role="menuitem"]:has-text(Ask Gemini) + [role="separator"]" converted to: "drive.google.com#?#[role="menuitem"]:contains(Ask Gemini) + [role="separator"]"
@@ -318,8 +320,6 @@ www.telerik.com##.TK-Footer-Featured-Item:has-text(Complete AI Toolbox)
 www.tiktok.com##+js(json-prune-fetch-response, itemList.[-].aigcLabelType itemList.[-].moderationAigcLabelType, , propsToMatch, /item_list)
 ! Rule "www.tiktok.com##+js(json-edit-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/)" converted to: "www.tiktok.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch', '/api/recommend/item_list/')"
 www.tiktok.com##+js(json-edit-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/)
-! Rule "www.tiktok.com##+js(json-prune-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/))" converted to: "www.tiktok.com#%#//scriptlet('json-prune-fetch-response', '$.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"]', 'propsToMatch')"
-www.tiktok.com##+js(json-prune-fetch-response, $.itemList.[?.ad_info][?.author.uniqueId=="lovart_ai"], propsToMatch, /api/recommend/item_list/))
 ! Rule "www.tunepocket.com###pageholder > #tp-main-head {margin-top: -5px !important}" converted to: "www.tunepocket.com#$##pageholder > #tp-main-head { margin-top: -5px !important }"
 www.tunepocket.com###pageholder > #tp-main-head {margin-top: -5px !important}
 ! Rule "www.udemy.com###course-recommendations-section .course-card-title_course-title___sH9w:has-text(/\b(Agentic|AI Engineer|ChatGPT|Claude)\b/):upward(.carousel_scroll-item__yo6VS)" converted to: "www.udemy.com#?##course-recommendations-section .course-card-title_course-title___sH9w:contains(/\b(Agentic|AI Engineer|ChatGPT|Claude)\b/):upward(.carousel_scroll-item__yo6VS)"
