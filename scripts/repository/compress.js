@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import simpleGit from 'simple-git';
+import { simpleGit } from 'simple-git';
 
 let commitsToKeep = 10000;
 
@@ -71,7 +71,6 @@ async function squashAndPush() {
 
     // Step 6: Create a commit for squashed history
     await git.commit(`squashed history from ${firstCommitHash} to ${squashedCommitHash}`);
-    // eslint-disable-next-line max-len
     console.log(`Step 6: Created commit for squashed history from ${firstCommitHash} to ${squashedCommitHash}`);
 
     // Step 7: Cherry-pick the commits you want to store

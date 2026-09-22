@@ -108,7 +108,7 @@ function expandWildcardsInNetworkRules(
             }
         }
 
-        // eslint-disable-next-line @typescript-eslint/naming-convention,@typescript-eslint/no-unused-vars
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         for (const [_, restrictedValue] of newRestrictedDomains) {
             newDomains.push(restrictedValue);
         }
@@ -192,7 +192,7 @@ function expandWildcardsInCosmeticRules(
         }
     }
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention,@typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     for (const [_, restrictedValue] of newRestrictedDomains) {
         newDomains.push(restrictedValue);
     }

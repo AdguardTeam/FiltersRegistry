@@ -1,7 +1,6 @@
 /* eslint-disable no-await-in-loop,no-restricted-syntax,no-console */
 import * as path from 'path';
-// There is no type definition available for the following import.
-// @ts-ignore
+// @ts-expect-error there is no type definition available for the following import
 import { findDeadDomains } from '@adguard/dead-domains-linter/src/urlfilter';
 import { getDomains } from './domain-extractor.js';
 import { utils } from './utils.js';
@@ -128,12 +127,10 @@ async function getAliveDomains(domains: string[]): Promise<string[]> {
  * @throws Error if the file cannot be read or parsed.
  */
 async function getJson(filename: string): Promise<AliveWildcardDomains | WildcardDomains> {
-    let oldJson: AliveWildcardDomains | WildcardDomains = {};
     try {
         const filePath = path.resolve(__dirname, filename);
         const json = await readFile(filePath);
-        oldJson = JSON.parse(json);
-        return oldJson;
+        return JSON.parse(json);
     } catch (e) {
         throw new Error(`Error reading old JSON file: ${e}`);
     }

@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- **Node.js** >= 22
+- **Node.js** >= 24
 - **Yarn** (Classic, v1.x)
 - **Git**
 
@@ -205,10 +205,14 @@ It runs both branches in parallel via git worktrees so network-fetched content s
 
 The following flags can be used with `yarn build` and `yarn build:local`:
 
-- `-i=`, `--include=` — comma-separated filter IDs to build (e.g., `--include=1,2,3`)
-- `-s=`, `--skip=` — comma-separated filter IDs to exclude (e.g., `--skip=12,24`).
-  Can be combined with `--include`: a filter is built only if it's in `--include`
-  and not in `--skip`.
+- `-i=`, `--include=` — comma- or whitespace-separated filter IDs to build
+  (e.g., `--include=1,2,3` or `--include="1 2 3"`)
+- `-s=`, `--skip=` — comma- or whitespace-separated filter IDs to exclude
+  (e.g., `--skip=12,24` or `--skip="12 24"`). Can be combined with
+  `--include`: a filter is built only if it's in `--include` and not in `--skip`.
+
+  Quote whitespace-separated values so shells pass them as one argument. This
+  format also handles commas converted to spaces by PowerShell `.cmd` shims.
 - `--report=` — custom report file name (e.g., `--report='report-adguard.txt'`)
 - `--no-patches-prepare` — skip copying `platforms/` to `temp/platforms/`
 - `--strip-generated-meta` — remove volatile metadata lines from built files
@@ -332,6 +336,42 @@ yarn lint:code  # ESLint
 yarn lint:types # TypeScript type check (tsc --noEmit)
 yarn lint:md    # Markdownlint
 ```
+
+#### ESLint configuration
+
+`eslint.config.js` is a native flat config with no dependency on `eslint-config-airbnb-base` or
+`eslint-config-airbnb-typescript`. Those packages cannot run on ESLint 10: `airbnb-typescript` is pinned to
+`@typescript-eslint` v7, whose `LegacyESLint` class ESLint 10 removed, and `eslint-plugin-import` (which
+`airbnb-base` depends on) calls a `SourceCode` method ESLint 10 also removed.
+
+Rather than replace the project's rule set, it was ported: the rules were captured from the project's own
+effective configuration under ESLint 8 (`airbnb-base` 15.0.0 + `airbnb-typescript` 18.0.0 plus every
+project-specific override the former `.eslintrc.cjs` carried) and written directly into `eslint.config.js`. This
+was a one-time migration step, verified with a one-off config-and-lint comparison; the file is self-contained
+and is not regenerated from the airbnb packages at lint time or in CI.
+
+A few rule ids changed on the way in, with no change in behaviour:
+
+- Formatting rules that `@typescript-eslint` v7 shipped and v8 dropped (`brace-style`, `comma-dangle`,
+  `comma-spacing`, `func-call-spacing`, `indent`, `keyword-spacing`, `lines-between-class-members`,
+  `no-extra-parens`, `no-extra-semi`, `object-curly-spacing`, `quotes`, `semi`, `space-before-blocks`,
+  `space-before-function-paren`, `space-infix-ops`) now live under `@stylistic/*`.
+- `@typescript-eslint/no-throw-literal` is now `@typescript-eslint/only-throw-error`.
+- `import/*` is now `import-x/*`, since `eslint-plugin-import-x` is the maintained fork used in place of
+  `eslint-plugin-import`.
+
+Two known, intentional differences from the old ESLint 8 configuration:
+
+- `import-x/no-cycle`'s `disableScc` option no longer exists in the current rule's schema, so that one key was
+  dropped from its options; the rest of the rule's configuration (`maxDepth`, `ignoreExternal`, etc.) is
+  unchanged.
+- A handful of rules gained additional options with their own defaults in newer plugin releases (for example
+  `no-shadow-restricted-names` now also reports `globalThis` by default). These are additive; nothing that was
+  previously enabled was turned off or loosened.
+
+Rule ids and options are otherwise identical to the pre-migration configuration. There is no automated check
+enforcing this going forward — treat any future ESLint or plugin upgrade as a normal config change, and update
+this section if a rule's behaviour needs to diverge from what is documented here.
 
 ### Testing
 
