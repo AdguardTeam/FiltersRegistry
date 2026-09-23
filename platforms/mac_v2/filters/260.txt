@@ -1,9 +1,9 @@
-! Checksum: LpBpwZurSM4UozXowah0AA
-! Diff-Path: ../patches/260/260-s-1790109814-14400.patch
+! Checksum: gJXs3GuCosz7zwx5R1a+1w
+! Diff-Path: ../patches/260/260-s-1790125985-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.10
-! TimeUpdated: 2026-09-22T20:40:37+00:00
+! Version: 2.0.2.11
+! TimeUpdated: 2026-09-23T01:09:57+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1177,9 +1177,9 @@ www.extendoffice.com##.uk-margin-remove-last-child tr:has([href^="https://www.ex
 ! =============
 ! -- https://fdroid.gitlab.io/fdroid-website/en/packages/
 ! AI Chat app category
-f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"])
-f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"])
-f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"])
+f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"]:only-child)
 ! ==============
 ! == Facebook ==
 ! ==============
@@ -1356,20 +1356,10 @@ github.com##[data-component="ActionList.Divider"]:has(+ [data-component="ActionL
 ! Header - Profile icon - Feature Preview - Organization Custom Instructions
 ! * Only applies if feature is already disabled
 github.com##[id$="-tab-copilot_chat_custom_instructions"]:has(.octicon-eye-closed)
-! Home feed - "Ask Copilot" prompt box
-github.com##.copilotPreview__container
-! Home feed (w/ New Dashboard Experience enabled) - Floating Copilot icon when hovering over pull request or issue.
-github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
 ! Left sidebar - Copilot button
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
 ! Left sidebar - MCP Registry
 github.com##[data-component="NavList.Item"][href="/mcp"]
-! Right sidebar - GitHub Copilot Day
-github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
-! Right sidebar - Copilot promo banner
-github.com##.DashboardBannerCopilotApp
-! Right sidebar - Changelog posts containing ai terms
-github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
 ! * JSONPath v2 compatible
@@ -1377,6 +1367,20 @@ github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.results[?@.action.pa
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
+! Copilot Chat sidebar panel
+! * Opens with Shift+D shortcut
+github.com##[data-component="SplitPageLayout.Sidebar"]:has(> [data-testid="copilot-code-view-side-panel"])
+! -- https://github.com/dashboard
+! Home feed - "Ask Copilot" prompt box
+github.com##.copilotPreview__container
+! Home feed (w/ New Dashboard Experience enabled) - Floating Copilot icon when hovering over pull request or issue.
+github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
+! Right sidebar - GitHub Copilot Day
+github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
+! Right sidebar - Copilot promo banner
+github.com##.DashboardBannerCopilotApp
+! Right sidebar - Changelog posts containing ai terms
+github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 ! -- https://github.com/settings/copilot/features (Copilot features in account settings)
 ! Promo banner for GitHub Copilot (Doesn't appear for all users)
 github.com##.start-copilot-banner
