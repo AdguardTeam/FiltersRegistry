@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.92.48",
-			"timeUpdated": "2026-09-23T10:05:34+0000",
+			"version": "2.4.92.49",
+			"timeUpdated": "2026-09-23T11:05:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.12.10",
-			"timeUpdated": "2026-09-23T05:06:00+0000",
+			"version": "2.1.12.11",
+			"timeUpdated": "2026-09-23T11:05:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.80.20",
-			"timeUpdated": "2026-09-23T10:06:15+0000",
+			"version": "2.2.80.21",
+			"timeUpdated": "2026-09-23T11:06:09+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.35.76",
-			"timeUpdated": "2026-09-23T09:06:39+0000",
+			"version": "2.1.35.77",
+			"timeUpdated": "2026-09-23T11:06:12+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -681,8 +681,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.79",
-			"timeUpdated": "2026-09-22T10:07:04+0000",
+			"version": "2.0.57.80",
+			"timeUpdated": "2026-09-23T11:06:15+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -732,8 +732,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.12",
-			"timeUpdated": "2026-09-23T10:06:22+0000",
+			"version": "2.0.95.13",
+			"timeUpdated": "2026-09-23T11:06:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -754,8 +754,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.83.66",
-			"timeUpdated": "2026-09-23T09:06:44+0000",
+			"version": "2.0.83.67",
+			"timeUpdated": "2026-09-23T11:06:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
