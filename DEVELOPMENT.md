@@ -107,11 +107,15 @@ Under the hood this copies `filters/` to `temp/filters_cached/`, replaces every
 `template.txt` with a single `@include "./filter.txt"` directive, and compiles
 from that copy. The original `filters/` directory is never modified.
 
-Optimization stats are picked up automatically: if `temp/optimization/stats`
-(from a prior `yarn download-stats` run) exists, it's used as-is; otherwise
-stats are fetched from the remote server during the build.
-If a filter listed in the local cache is missing its `stats.json`, the build
-fails with a message pointing at `yarn download-stats`.
+Optimization stats are picked up automatically: `yarn download-stats` records
+the `--include`/`--skip` selection it was run with in a sibling
+`temp/optimization/stats.scope` marker. A build reuses `temp/optimization/stats`
+only when that marker matches its own selection — or was a full, unscoped
+download, which covers any selection. A mismatched or missing marker doesn't
+fail the build; it just falls back to fetching stats from the remote server,
+with a log message explaining why.
+If a filter's `stats.json` is missing under a cache that *did* match, the
+build fails with a message pointing at `yarn download-stats`.
 
 The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` flags can be
 combined:
@@ -123,83 +127,59 @@ yarn build:local -i=1,2,3 --no-patches-prepare --strip-generated-meta
 ### Typical workflow — comparing build results against master
 
 Use this when branch changes may alter compiled rule output
-and you need a structured pass/fail comparison against master.
+and you need a structured pass/fail comparison against master:
 
-It runs both branches in parallel via git worktrees so network-fetched content stays in sync.
+```bash
+yarn compare-build-output
+```
 
-1. Create worktrees for each branch and install dependencies:
+It walks through a few prompts, in order:
 
-   ```bash
-   export CHANGED_BRANCH=$(git branch --show-current)
-   export BUILD_LOCAL=true                   # set to 'true' to use generate-cache + build:local
+1. The branch to compare (defaulting to the current branch; `master` itself
+  is never offered as a choice).
+2. An optional filter-ID selection (`--include` / `--skip`, forwarded to
+  every build command so a quick check can build a handful of filters).
+3. The build mode — a plain `build`, or `build:local` from cached sources.
+  Choosing cached mode adds two follow-up prompts: whether to run
+  `generate-cache` first, and whether to use optimization stats. Stats are
+  cached-mode only (`build.js` only applies a local stats cache under
+  `--use-cache`); when used, they're downloaded once into a shared
+  `temp/reg-stats` (kept separate from the main checkout's
+  `temp/optimization/stats`) and copied into both worktrees, so both builds
+  see the same snapshot instead of each fetching its own.
+4. Whether to remove the build artifacts when finished.
 
-   export MASTER_SHA=$(git rev-parse master)
-   export CHANGED_SHA=$(git rev-parse "$CHANGED_BRANCH")
+Under the hood it builds `master` and the compare branch
+in parallel via git worktrees under `temp/`, with a progress spinner on the
+slow steps (install, build, copy, restore, cleanup); it also resets the
+compare worktree's `filters/` to the master version first, so `revision.json`
+version counters start from the same point and don't show up as diff noise in
+the report. With `filters/` pinned, the tool compares build-tooling changes
+through their effect on the platform output, not filter content.
 
-   git worktree add --detach /tmp/reg-master-build  $MASTER_SHA -f
-   git worktree add --detach /tmp/reg-changed-build $CHANGED_SHA -f
+Two more things it does around the build:
 
-   yarn --cwd /tmp/reg-master-build  install &
-   yarn --cwd /tmp/reg-changed-build install &
-   wait
-   ```
+- Each worktree's `platforms/` is emptied before its build and restored to
+  the checked-out state afterwards, so the copied output is only what this
+  run compiled (matters with a `--include` / `--skip` selection).
+- If cleanup was chosen, the last step removes the two worktrees, the two
+  `platforms_*_build/` directories and `temp/reg-meta.env`; `temp/logs/` is
+  always kept.
 
-2. Sync both worktrees' `filters/` to the same baseline commit so
-   `revision.json` version counters start from the same point:
+Two conveniences on repeated runs:
 
-   ```bash
-   git -C /tmp/reg-changed-build checkout $MASTER_SHA -- filters/
-   ```
-
-3. Build both branches in parallel:
-
-   ```bash
-   _build() {
-     local dir=$1
-     if [ "$BUILD_LOCAL" = "true" ]; then
-       yarn --cwd "$dir" generate-cache && \
-       yarn --cwd "$dir" build:local --no-patches-prepare --strip-generated-meta
-     else
-       yarn --cwd "$dir" build --no-patches-prepare --strip-generated-meta
-     fi
-   }
-
-   (
-     _build /tmp/reg-master-build > /tmp/log-master-build.txt 2>&1
-     EXIT=$?
-     [ $EXIT -eq 0 ] \
-       && cp -r /tmp/reg-master-build/platforms platforms_master_build \
-       && echo "[master] done" \
-       || echo "[master] FAILED (exit $EXIT)"
-   ) &
-
-   (
-     _build /tmp/reg-changed-build > /tmp/log-changed-build.txt 2>&1
-     EXIT=$?
-     [ $EXIT -eq 0 ] \
-       && cp -r /tmp/reg-changed-build/platforms platforms_changed_build \
-       && echo "[changed] done" \
-       || echo "[changed] FAILED (exit $EXIT)"
-   ) &
-
-   wait && echo "Both builds complete"
-   ```
-
-4. Generate the structured report:
-
-   ```bash
-   bash scripts/build/__tests__/regression-test-against-master.sh
-   ```
-
-   The script compares all `.txt` rule files across every platform and
-   prints a pass/fail verdict.
-
-5. Clean up worktrees and current branch changes when done:
-
-   ```bash
-   git worktree remove /tmp/reg-master-build -f & git worktree remove /tmp/reg-changed-build -f
-   git reset --hard && rm -rf platforms_master_build platforms_changed_build
-   ```
+- If `temp/platforms_master_build/` and `temp/platforms_changed_build/` hold
+  built output from a previous run, it prints the branches, build mode and
+  the commit SHAs that output was built from — flagging any branch that has
+  moved on since — and offers to generate the report from them instead of
+  rebuilding.
+- If a worktree from a previous run is still present, it offers to reuse it
+  instead of removing and re-adding it. `yarn install` still runs, but over
+  the kept `node_modules` it only reconciles what changed.
+- If `temp/reg-stats` already holds a snapshot downloaded under the same
+  filter selection (tracked via a sibling `temp/reg-stats.scope`, copied
+  alongside the snapshot into both worktrees), it offers to reuse it instead
+  of running `download-stats` again; a different selection forces a refresh.
 
 ### Command Compatibility
 
