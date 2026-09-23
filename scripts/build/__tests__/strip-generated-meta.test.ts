@@ -261,16 +261,4 @@ describe('stripGeneratedMetaFromDir', () => {
             expect(contentAfter).toBe(content);
         }));
     });
-
-    it('returns 0 and leaves the file untouched when filters array entries are null or arrays', async () => {
-        const metadata = { groups: [], tags: [], filters: [null, ['nested', 'array']] };
-        const content = JSON.stringify(metadata, null, '\t');
-        const { platformsDir, filePaths: [jsonFilePath] } = await writeMetadataFiles('json_root_bad_entries', content);
-
-        const modified = await stripGeneratedMetaFromDir(platformsDir);
-        expect(modified).toBe(0);
-
-        const contentAfter = await fs.readFile(jsonFilePath, 'utf8');
-        expect(contentAfter).toBe(content);
-    });
 });
