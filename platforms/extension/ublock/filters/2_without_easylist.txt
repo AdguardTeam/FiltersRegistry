@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sZcWsJKDZyl8b9wwfo/eYg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790140195-3600.patch
+! Checksum: 17AAQnvkTf6hJOMCacGI/A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790143912-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.92.43
-! TimeUpdated: 2026-09-23T05:05:42+00:00
+! Version: 2.4.92.44
+! TimeUpdated: 2026-09-23T06:07:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13146,6 +13146,7 @@ adslink.pw##+js(prevent-fetch, adsbygoogle)
 .srnky.com^
 .clksz.com^
 .aii.sh^
+/^(?!.*(\/cdn-cgi\/|\.js\?ver=)).*$/$~3p,script,domain=aii.sh|intercelestial.com
 srnky.com,lnbz.la,clksz.com,aii.sh,intercelestial.com##+js(prevent-fetch, googlesyndication)
 srnky.com,lnbz.la,clksz.com,aii.sh,intercelestial.com##body > div[id][style*="revert;"]:style(display: none !important;)
 srnky.com,lnbz.la,clksz.com,aii.sh,intercelestial.com##html:style(overflow: auto !important;)
@@ -28228,6 +28229,10 @@ bieganie.pl##.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/242258
+zlotascena.pl##+js(no-setTimeout-if, siteAccess)
+zlotascena.pl#@#.ads-banner
+zlotascena.pl#@#.ad-slot
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242081
 walbrzyszek.com#@#.advertisement-box
 walbrzyszek.com#@#.ad-banner-300x250
