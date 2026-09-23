@@ -76,7 +76,8 @@ The `yarn build` command (and `yarn build:local`) also accepts:
   (`yarn build:patches`) is not needed afterwards.
 - `--strip-generated-meta` — after compilation, remove generated meta lines
   (`! Checksum`, `! Diff-Path`, `! TimeUpdated`, `! Version`) from all filter
-  files in `platforms/` and `temp/platforms/`. Useful when comparing outputs between builds.
+  files in `platforms/` and `temp/platforms/`, and remove the `version`/`timeUpdated`
+  fields from every entry in `filters.json`/`filters.js`. Useful when comparing outputs between builds.
 
 ### Generating Filter Cache
 

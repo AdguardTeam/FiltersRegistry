@@ -488,7 +488,7 @@ generate_report() {
     [ -n "$added_list" ] && printf '%s\n' "$added_list"
     echo ""
     echo "${C_BOLD}--- Metadata Files (informational) ---${C_RESET}"
-    echo "filters.json/filters.js diffs: $meta_diffs  (version counter noise, not a regression)"
+  echo "filters.json/filters.js diffs: $meta_diffs (a nonzero count here signals a metadata change)"
     echo ""
     echo "${C_BOLD}--- Verdict ---${C_RESET}"
     [ "$rule_diffs" -eq 0 ] \
