@@ -878,8 +878,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt",
 			"trustLevel": "high",
-			"version": "2.0.6.49",
-			"timeUpdated": "2026-09-20T12:40:07+0000",
+			"version": "2.0.6.50",
+			"timeUpdated": "2026-09-23T16:42:50+0000",
 			"deprecated": false,
 			"languages": [
 				"he"
@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.25",
-			"timeUpdated": "2026-09-23T12:49:18+0000",
+			"version": "2.1.98.26",
+			"timeUpdated": "2026-09-23T16:42:51+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -978,8 +978,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.25",
-			"timeUpdated": "2026-09-23T12:49:20+0000",
+			"version": "2.1.98.26",
+			"timeUpdated": "2026-09-23T16:42:51+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1120,8 +1120,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.45.97",
-			"timeUpdated": "2026-09-23T08:46:14+0000",
+			"version": "2.0.45.98",
+			"timeUpdated": "2026-09-23T16:43:14+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1263,8 +1263,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.13.9",
-			"timeUpdated": "2026-09-22T16:42:35+0000",
+			"version": "2.0.13.10",
+			"timeUpdated": "2026-09-23T16:43:25+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1423,8 +1423,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.91.56",
-			"timeUpdated": "2026-09-23T12:50:17+0000",
+			"version": "2.0.91.57",
+			"timeUpdated": "2026-09-23T16:43:43+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
