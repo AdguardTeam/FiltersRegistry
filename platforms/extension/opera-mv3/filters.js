@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.92.40",
-			"timeUpdated": "2026-09-23T02:06:56+0000",
+			"version": "2.4.92.41",
+			"timeUpdated": "2026-09-23T03:06:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
