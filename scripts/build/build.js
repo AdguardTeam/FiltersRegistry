@@ -211,10 +211,11 @@ const buildFilters = async () => {
         );
     } catch (error) {
         if (useCache && error instanceof OptimizationStatsError) {
-            throw new Error(
-                `Run --download-stats to download the latest statistics. (${error.message})`,
-                { cause: error },
-            );
+            const hint = error.code === 'OPTIMIZATION_STATS_INVALID'
+                ? 'The cached optimization stats are invalid. Inspect the file, or run '
+                + '--download-stats to try refreshing it from the remote server.'
+                : 'Run --download-stats to download the latest statistics.';
+            throw new Error(`${hint} (${error.message})`, { cause: error });
         }
         throw error;
     } finally {
