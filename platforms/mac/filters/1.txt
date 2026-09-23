@@ -1,8 +1,8 @@
-! Checksum: nQVGLFlnZBta1at4NNSW9w
+! Checksum: Aoc4FXIwt2P8KMCul8f60w
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.70
-! TimeUpdated: 2026-09-21T14:15:49+00:00
+! Version: 2.1.8.72
+! TimeUpdated: 2026-09-22T20:04:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1467,6 +1467,8 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||nevalyashka.link^
+||aj2663.bid^
 ||sentry.rstprgapipt.com^
 ||vertiguzha.link^
 ||dteifi.com^$all
@@ -6841,6 +6843,7 @@ avtocod.ru,love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,del
 !
 ! NOTE: Specific rules
 !
+kinobase.org##div[id^="ad"]
 fakty.ua##.nts-ad
 liga.net##.remp-banner
 epravda.com.ua##div[style="height:290px; clear: both; margin-top: 10px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center;"]
@@ -7174,6 +7177,12 @@ rezka-tv.org,hdrezka.la,rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrez
 [$domain=/rezka/]##.ad-branding
 [$domain=/rezka/]#%#//scriptlet('remove-class', 'active-brand', 'body')
 !
+! Hdrezka, Kinogo, etc.
+.bid^$xmlhttprequest,domain=mentalist-hdrezka.net|glee-hdrezka.net
+.link^$xmlhttprequest,third-party,domain=mentalist-hdrezka.net|glee-hdrezka.net|kinovod.pro
+kinovod.pro,glee-hdrezka.net,mentalist-hdrezka.net,hdrezka-ted-lasso.net,kinob.net,kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'vast', '0', 'vast')
+kinovod.pro,glee-hdrezka.net,mentalist-hdrezka.net,hdrezka-ted-lasso.net,kinob.net,kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'prerolls', '0', 'prerolls')
+!
 ! Группа компаний Актион
 kom-dir.ru,gd.ru,buhsoft.ru,dirklinik.ru,fd.ru,business.ru,pro-personal.ru,trudohrana.ru##.ASE_brandImage
 !
@@ -7301,6 +7310,7 @@ euroauto.ru##.promo-container
 euroauto.ru##.promo-banner__container
 ||file.euroauto.ru/*file/promotion/
 ||st.spads.me/video/*/*.mp4$domain=video.sports.ru,redirect=noopmp4-1s
+||st.ads.prod.vdsprts.ru/video/*.mp4$domain=video.sports.ru,redirect=noopmp4-1s
 nikvesti.com##.homepage-main-text-item:has(> ins.adsbygoogle)
 hightech.fm##a[href^="https://dum.ai/"]
 sports.ru##.news-list > article.document-card:has(> a[href^="https://sirena.world/"])
@@ -7331,8 +7341,6 @@ ren.tv##a[href^="https://www.sport-express.net/"]
 hellomagrussia.ru##.minheight610
 argumenti.ru##.block_112
 pnp.ru##article > div.full_width_hr:has(> a[href="https://www.pnp.ru/static/advertising/"])
-hdrezka-ted-lasso.net,kinob.net,kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'vast', '0', 'vast')
-hdrezka-ted-lasso.net,kinob.net,kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'prerolls', '0', 'prerolls')
 ||cdn.iz.ru/profiles/portal/themes/purple/js/ads-tools.js
 sports.ru,sovsport.ru##a[href*="winline.ru"]
 gazeta.press##div[id^="gazeta-adv-counter"]
@@ -10378,7 +10386,6 @@ floristics.info##.rmgm
 floristics.info###adb-aft-art
 floristics.info##.native-ads
 synthira.ru##.shief
-kinobase.org##div[id^="ad"]
 khl.ru##.lk-go
 khl.ru##.b-matches_data + table.b-matches_data
 khl.ru##.m-bnr
@@ -18841,6 +18848,8 @@ lib.seu.edu.cn#@#.one-search
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/241950
+@@||membrana.media^$domain=sondakika.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239480
 @@||yandex.ru/ads/system/context.js$domain=iphones.ru
 iphones.ru#@#div[id^="adfox"]

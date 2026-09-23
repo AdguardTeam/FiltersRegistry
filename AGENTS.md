@@ -12,7 +12,7 @@ for all supported AdGuard products.
 
 ## Technical Context
 
-- **Language / Version**: TypeScript and JavaScript, Node.js >= 22, ESM (`"type": "module"`).
+- **Language / Version**: TypeScript and JavaScript, Node.js >= 24, ESM (`"type": "module"`).
   New code must be written in TypeScript. The project is gradually migrating all scripts to
   TypeScript; existing `.js` files should be converted to `.ts` when touched.
 - **Primary Dependencies**:
@@ -26,8 +26,8 @@ for all supported AdGuard products.
 - **Testing**: Vitest (unit + integration + e2e tests under `scripts/*/__tests__/`)
 - **Target Platform**: Node.js CLI tooling; build outputs target 8 top-level AdGuard product
   platforms (Android, CLI, Extension, iOS, Mac, Mac v2, Mac v3, Windows).
-  The Extension platform has 9 sub-targets: Chromium, Chromium MV3, Edge, Firefox, Opera,
-  Opera MV3, Safari, Android Content Blocker, uBlock.
+  The Extension platform has 10 sub-targets: Chromium, Chromium MV3, Edge, Edge MV3,
+  Firefox, Opera, Opera MV3, Safari, Android Content Blocker, uBlock.
 - **Project Type**: Single repository (build tooling + data)
 - **CI**: GitHub Actions workflows:
     - `build-adguard.yaml`
@@ -54,11 +54,11 @@ for all supported AdGuard products.
 │       ├── patches/                # Incremental diff patches
 │       ├── filters.json            # Filter metadata for the platform
 │       ├── filters_i18n.json       # Localized filter metadata
-│       └── <sub-target>/           # extension/ only: chromium, chromium-mv3, edge, firefox,
-│                                   #   opera, opera-mv3, safari, android-content-blocker, ublock
+│       └── <sub-target>/           # extension/ only: chromium, chromium-mv3, edge, edge-mv3,
+│                                   #   firefox, opera, opera-mv3, safari, android-content-blocker, ublock
 ├── scripts/                        # All build and utility scripts
 │   ├── build/                      # build.js, build-config.ts, constants.js,
-│   │                               #   custom_platforms.js, patches.js, strip-generated-meta.ts
+│   │                               #   custom_platforms.ts, patches.ts, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
 │   ├── repository/                 # compress.js — repository compression
 │   ├── translations/               # Locale download/upload tooling, PR validation reporting
@@ -74,7 +74,7 @@ for all supported AdGuard products.
 ├── tsconfig.json                   # TypeScript config (ES2022, nodenext)
 ├── vitest.config.ts                # Test runner config
 ├── optimization_config.json        # Per-filter optimization parameters
-├── .eslintrc.cjs                   # ESLint config (airbnb-typescript)
+├── eslint.config.js                # ESLint flat config (typescript-eslint, import-x, stylistic)
 ├── .markdownlint.json              # Markdownlint config
 └── README.md                       # Project documentation
 ```
@@ -92,7 +92,7 @@ for all supported AdGuard products.
 | `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
-| `yarn lint:code` | ESLint check (`eslint . --ext .js,.ts`) |
+| `yarn lint:code` | ESLint check (`eslint .`) |
 | `yarn lint:types` | TypeScript type check (`tsc --noEmit`) |
 | `yarn lint:md` | Markdown lint (`markdownlint **/*.md`) |
 | `yarn validate` | Validate platforms and locales |
@@ -183,8 +183,10 @@ General code style guidelines for JavaScript are available via link:
 - **TypeScript**: Strict mode enabled (`strict: true` in tsconfig). Use proper types; avoid `any`.
 - **Markdown**: Follow `.markdownlint.json` — dash-style unordered lists, asterisk emphasis,
   120-char line limit.
-- All other style rules (indentation, line length, Airbnb conventions, etc.)
-  are enforced by `.eslintrc.cjs`. Run `yarn lint` to check.
+- All other style rules (indentation, line length, import rules, etc.)
+  are enforced by `eslint.config.js`. Run `yarn lint` to check.
+  See [DEVELOPMENT.md — ESLint configuration](DEVELOPMENT.md#eslint-configuration) for how that file
+  relates to the project's pre-migration ESLint 8 configuration.
 
 ### Testing
 
@@ -195,7 +197,7 @@ General code style guidelines for JavaScript are available via link:
 
 ### Other
 
-- **Node.js version**: >= 22. Do not use APIs unavailable in Node 22.
+- **Node.js version**: >= 24. Do not use APIs unavailable in Node 24.
 - **Script execution**: Use `tsx` to run TypeScript scripts directly (do not pre-compile).
 - **No `packageManager` field**: Do not add the `packageManager` field to `package.json`.
   The repository uses yarn 1 (classic), which ignores the field; it may confuse

@@ -1,7 +1,6 @@
 import {
     describe, it, expect,
 } from 'vitest';
-// eslint-disable-next-line import/no-unresolved
 import { parseFlags, validateFlags, validateArgs } from '../build-config.js';
 
 describe('parseFlags', () => {
@@ -43,9 +42,16 @@ describe('parseFlags', () => {
         expect(flags.useCache).toBe(false);
     });
 
-    it('filters out NaN from invalid IDs', () => {
-        const flags = parseFlags(['--include=1,abc,3']);
+    it('accepts whitespace-separated IDs when values contain spaces', () => {
+        const flags = parseFlags(['--include=1 2 3', '--skip=2 4']);
+        expect(flags.includedFilterIDs).toEqual([1, 2, 3]);
+        expect(flags.excludedFilterIDs).toEqual([2, 4]);
+    });
+
+    it('filters out invalid IDs', () => {
+        const flags = parseFlags(['--include=1,abc,3', '--skip=2 nope']);
         expect(flags.includedFilterIDs).toEqual([1, 3]);
+        expect(flags.excludedFilterIDs).toEqual([2]);
     });
 });
 

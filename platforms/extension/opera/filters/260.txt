@@ -1,9 +1,9 @@
-! Checksum: EPnQsaXbU51SaEhGxQsW4A
-! Diff-Path: ../patches/260/260-s-1790039402-14400.patch
+! Checksum: Nwy+awFfFCPgmlD5pMZ6MQ
+! Diff-Path: ../patches/260/260-s-1790125968-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.9
-! TimeUpdated: 2026-09-22T01:07:25+00:00
+! Version: 2.0.2.11
+! TimeUpdated: 2026-09-23T01:09:57+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -812,6 +812,21 @@ docs.cribl.io##[data-action="claude"]
 docs.cribl.io##[data-action="copilot"]
 ! Floating AI button
 docs.cribl.io###copilot
+! =============
+! == Crowdin ==
+! =============
+! -- https://crowdin.com/
+! Navbar - AI
+crowdin.com##li:has(> [href="/features/ai-translation"])
+! -- https://crowdin.com/profile (logged in)
+! Header - Extensions - Crowdin Copilot
+crowdin.com##.dropdown-item:has(> img[src^="https://crowdin-copilot.app.crowdin.net/logo.svg"])
+! -- https://crowdin.com/editor (After selecting a file)
+! Sidebar - Crowdin Copilot
+crowdin.com##[role="listitem"]:has(> #crowdin-copilot¦crowdin-copilot-editor-panels)
+! Automated suggestions
+crowdin.com##.suggestions_separator:has(> #automated-suggestions-toggler)
+crowdin.com##.suggestions_separator:has(> #automated-suggestions-toggler) + div:has(> .string-suggestions-wrapper)
 ! ===============
 ! == Cybernews ==
 ! ===============
@@ -1157,6 +1172,14 @@ portal.expressvpn.com##.group\/collapsible:has([href="/expressai"])
 www.extendoffice.com##.uk-margin-remove-last-child:has([src="//cdn.extendoffice.com/images/stories/ads-siluvia/kte-ads/kutools-for-excel-ai-1.png"])
 ! "Kutools AI Aide" in "Best Office Productivity Tools"
 www.extendoffice.com##.uk-margin-remove-last-child tr:has([href^="https://www.extendoffice.com/product/kutools-for-excel/kutools-excel-ai-assistant.html"])
+! =============
+! == F-Droid ==
+! =============
+! -- https://fdroid.gitlab.io/fdroid-website/en/packages/
+! AI Chat app category
+f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"]:only-child)
 ! ==============
 ! == Facebook ==
 ! ==============
@@ -1333,20 +1356,10 @@ github.com##[data-component="ActionList.Divider"]:has(+ [data-component="ActionL
 ! Header - Profile icon - Feature Preview - Organization Custom Instructions
 ! * Only applies if feature is already disabled
 github.com##[id$="-tab-copilot_chat_custom_instructions"]:has(.octicon-eye-closed)
-! Home feed - "Ask Copilot" prompt box
-github.com##.copilotPreview__container
-! Home feed (w/ New Dashboard Experience enabled) - Floating Copilot icon when hovering over pull request or issue.
-github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
 ! Left sidebar - Copilot button
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
 ! Left sidebar - MCP Registry
 github.com##[data-component="NavList.Item"][href="/mcp"]
-! Right sidebar - GitHub Copilot Day
-github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
-! Right sidebar - Copilot promo banner
-github.com##.DashboardBannerCopilotApp
-! Right sidebar - Changelog posts containing ai terms
-github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
 ! * JSONPath v2 compatible
@@ -1354,6 +1367,20 @@ github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.results[?@.action.pa
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
+! Copilot Chat sidebar panel
+! * Opens with Shift+D shortcut
+github.com##[data-component="SplitPageLayout.Sidebar"]:has(> [data-testid="copilot-code-view-side-panel"])
+! -- https://github.com/dashboard
+! Home feed - "Ask Copilot" prompt box
+github.com##.copilotPreview__container
+! Home feed (w/ New Dashboard Experience enabled) - Floating Copilot icon when hovering over pull request or issue.
+github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
+! Right sidebar - GitHub Copilot Day
+github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
+! Right sidebar - Copilot promo banner
+github.com##.DashboardBannerCopilotApp
+! Right sidebar - Changelog posts containing ai terms
+github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 ! -- https://github.com/settings/copilot/features (Copilot features in account settings)
 ! Promo banner for GitHub Copilot (Doesn't appear for all users)
 github.com##.start-copilot-banner
@@ -1922,7 +1949,6 @@ www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Doodle Logos
 ! AdGuard compatible
 www.google.*#%#//scriptlet('remove-attr', 'href', 'a[href*="&udm=50"]:has(#hplogo)')
-www.google.*#%#//scriptlet('remove-attr', 'href', '.k1zIA.kKvsb > a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
 ! AI buttons below search bar
@@ -3058,6 +3084,15 @@ www.pixiv.net##.fDgtdo[href="/ranking.php?mode=daily_ai"]
 www.plugshare.com###review-summary
 www.plugshare.com###reviews-summary
 www.plugshare.com###checkins-summary
+! ==========
+! == pnpm ==
+! ==========
+! -- https://pnpm.io/motivation
+! Copy Page - "Open in" AI
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M22 12.2H13.4V3.7l-1.4 1.2V12.2H3.4l8.6"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M16 8.016A8.522 8.522 0 008.016 16h-.032A8.521"])
 ! ============
 ! == Pockit ==
 ! ============
