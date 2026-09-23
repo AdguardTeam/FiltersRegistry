@@ -136,6 +136,18 @@ export function validateFlags(flags: BuildFlags): { type: 'error' | 'warning'; m
     return null;
 }
 
+/**
+ * Builds the scope string a stats cache's --include/--skip selection is
+ * recorded and compared under (e.g. by download-stats and its .scope marker).
+ *
+ * @param included - Included filter IDs.
+ * @param excluded - Excluded filter IDs.
+ * @returns The scope string, e.g. "include=1,2;exclude=".
+ */
+export function scopeFlagsFor(included: number[], excluded: number[]): string {
+    return `include=${included.join(',')};exclude=${excluded.join(',')}`;
+}
+
 const KNOWN_ARGS_PREFIXES = [
     '--include=', '-i=',
     '--skip=', '-s=',
