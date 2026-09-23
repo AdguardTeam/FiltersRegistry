@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zU3jMDy5mb/1ZFV85t74ag
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790161789-3600.patch
+! Checksum: wIvoNMhA+g4se4O2iVeayA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790165489-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.92.49
-! TimeUpdated: 2026-09-23T11:05:22+00:00
+! Version: 2.4.92.50
+! TimeUpdated: 2026-09-23T12:07:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,8 @@
 !
 !
 !
+||jazz.abovesave.com^
+||shrillypants.com^
 ||wanlycoxier.com^
 ||salungavine.com^
 ||studdisablerely.com^
@@ -40162,6 +40164,9 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+bluebirdbanter.com##div[data-concert="leaderboard_top_tablet_desktop"]
+bluebirdbanter.com##main > div > div[class]:has(> div:is([data-concert="desktop_leaderboard_variable"], [data-concert="frontpage_hero_desktop"]))
+bluebirdbanter.com##.duet--layout--rail > div[class]:has(> div[class] > div[data-concert="medium_rectangle_variable"])
 thesundevils.com##.static-header__ads
 modsfire.com##mf-offer
 kshow123.tv###ads-top-player
@@ -63401,6 +63406,11 @@ $popup,3p,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/241987
+@@||embed.sendtonews.com/player3/$domain=bluebirdbanter.com
+@@||mp.mmvideocdn.com/mini-player/$domain=bluebirdbanter.com
+@@||vms-videos.minutemediaservices.com^$xhr,media,domain=bluebirdbanter.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$redirect=google-ima.js,domain=bluebirdbanter.com,script
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241727
 oregonlive.com#@#+js(aost, decodeURI, /(?=^(?!.*\.js))/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240988
