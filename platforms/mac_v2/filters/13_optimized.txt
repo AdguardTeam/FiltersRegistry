@@ -1,9 +1,9 @@
-! Checksum: cWEIzz3p9ARzvv19TB8xrA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1790136644-3600.patch
+! Checksum: g9yp8H2kc7nVbtqxVliLww
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1790147521-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.32
-! TimeUpdated: 2026-09-23T04:06:51+00:00
+! Version: 2.0.68.33
+! TimeUpdated: 2026-09-23T07:08:30+00:00
 ! Expires: 12 hours (update frequency)
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -475,6 +475,7 @@ mackolik.com,sahadan.com#%#var criteo_medyanet_loaded = 1;
 r10.net#%#//scriptlet('abort-on-property-read', 'rTargets')
 r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ||mail.yandex.*/*/*/*/*$replace=/.*"adIds":.*"imptrackers":.*//,xmlhttprequest,domain=mail.yandex.*
+##.channel-area ~ div.popup-overlay
 ##a[class="current-address-link"]
 ##header > ul > li.blink > a[target]
 ##.playerTextReklam
@@ -1068,6 +1069,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+||sohobettv*.com/view/theme/*.gif
 kiraztv.com##.kiraz-ad-reserve
 kiraztv.com##.kiraztv-player-alt-ad
 harbitv.site##a[href^="https://harbilink.pro"]
@@ -4375,7 +4377,7 @@ fethiyehaber.com##a[href^=" https://www.ford-helvacioglu-mugla.com/"]
 cimri.com##div[id*="_MASTHEAD_DESKTOP_"]
 cimri.com##a[href^="https://www.trendyol.com?utm_source=aff_t&utm_medium=cpm&utm_campaign=cimri_sponsor_text_lin"]
 papajohns.com.tr##.popup-window
-betnistvizle.com,papajohns.com.tr##.popup-overlay
+papajohns.com.tr##.popup-overlay
 gmdergi.com,ntv.com.tr,superfb.com,yeniisfikirleri.net##a[href^="http://bit.ly/"]
 -reklam.$domain=ruyatabirleri.blog|magazinizmir.com|arenabodrumhaber.com
 sanayigazetesi.com.tr,paraanaliz.com,thegeyik.com,yenikutahya.com,arenabodrumhaber.com###mvp-leader-wrap
@@ -5577,7 +5579,6 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
 [$domain=/golbettv\d+\.com$/]##body > a[target="_blank"]
 [$domain=/golbettv\d+\.com$/]##.bnr
-[$domain=/bahsinetv\d+\.site$/]##.popup-overlay
 [$domain=/bahsinetv\d+\.site$/]##body > a[target="_blank"]
 [$domain=/bahsinetv\d+\.site$/]##body > div[class^="reklam-"]
 [$domain=/bahsinetv\d+\.site$/]##.footer-links
@@ -5589,14 +5590,6 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/macboxtv\d+\.xyz$/]###gif-banner
 [$domain=/roma\d+tv\.com$/]###imagePopup
 [$domain=/sampiyontv\d+\.xyz$/]##a[rel="nofollow sponsored noopener"]
-||ibizatv*.com/view/theme/ultimate/img/*.gif
-||ibizatv*.com/view/theme/ultimate/assets/js/rc.js
-[$domain=/ibizatv\d+\.com$/]##.popup-overlay
-[$domain=/ibizatv\d+\.com$/]##div[class^="reklam-"]
-[$domain=/ibizatv\d+\.com$/]##body > header
-[$domain=/ibizatv\d+\.com$/]##.footer-links
-[$domain=/ibizatv\d+\.com$/]##.header-top > div.header-text
-[$domain=/ibizatv\d+\.com$/]##.odds-container
 [$domain=/betanotv\d+\.site$/]##div[class^="reklam-"]
 [$domain=/betanotv\d+\.site$/]##body > header
 !+ NOT_VALIDATE

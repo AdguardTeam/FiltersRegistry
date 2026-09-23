@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: RJXGUP47w90BhBFKCtmEbw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1790136638-3600.patch
+! Checksum: K0WO5RTkUWWSNUsEwVBCog
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1790147512-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.32
-! TimeUpdated: 2026-09-23T04:06:51+00:00
+! Version: 2.0.68.33
+! TimeUpdated: 2026-09-23T07:08:30+00:00
 ! Expires: 5 days (update frequency)
 ||adcluster.com.tr^$3p
 ||rtb-stack.com^
@@ -483,6 +483,7 @@ baho.com.tr##.adsmd:style(height: 1px!important;)
 @@||static.origins.web.tv/scripts/ads.js
 r10.net##+js(abort-on-property-read, rTargets)
 r10.net##+js(abort-on-property-write, rInt)
+##.channel-area ~ div.popup-overlay
 ##a[class="current-address-link"]
 ##header > ul > li.blink > a[target]
 ##.playerTextReklam
@@ -1061,6 +1062,7 @@ $xhr,3p,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|dood
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xhr,redirect=noop.txt,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+||sohobettv*.com/view/theme/*.gif
 kiraztv.com##.kiraz-ad-reserve
 kiraztv.com##.kiraztv-player-alt-ad
 harbitv.site##a[href^="https://harbilink.pro"]
@@ -4357,7 +4359,7 @@ fethiyehaber.com##a[href^=" https://www.ford-helvacioglu-mugla.com/"]
 cimri.com##div[id*="_MASTHEAD_DESKTOP_"]
 cimri.com##a[href^="https://www.trendyol.com?utm_source=aff_t&utm_medium=cpm&utm_campaign=cimri_sponsor_text_lin"]
 papajohns.com.tr##.popup-window
-betnistvizle.com,papajohns.com.tr##.popup-overlay
+papajohns.com.tr##.popup-overlay
 gmdergi.com,ntv.com.tr,superfb.com,yeniisfikirleri.net##a[href^="http://bit.ly/"]
 -reklam.$domain=ruyatabirleri.blog|magazinizmir.com|arenabodrumhaber.com
 sanayigazetesi.com.tr,paraanaliz.com,thegeyik.com,yenikutahya.com,arenabodrumhaber.com###mvp-leader-wrap
@@ -5561,11 +5563,9 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 /golbettv\d+\.com$/##.bnr
 golbettv6.com##.popup-overlay
 golbettv6.com##.bnr
-/bahsinetv\d+\.site$/##.popup-overlay
 /bahsinetv\d+\.site$/##body > a[target="_blank"]
 /bahsinetv\d+\.site$/##body > div[class^="reklam-"]
 /bahsinetv\d+\.site$/##.footer-links
-bahsinetv9.site##.popup-overlay
 bahsinetv9.site##body > a[target="_blank"]
 bahsinetv9.site##body > div[class^="reklam-"]
 bahsinetv9.site##.footer-links
@@ -5584,20 +5584,6 @@ macboxtv29.xyz###gif-banner
 roma725tv.com###imagePopup
 /sampiyontv\d+\.xyz$/##a[rel="nofollow sponsored noopener"]
 sampiyontv2.xyz,sampiyontv3.xyz##a[rel="nofollow sponsored noopener"]
-||ibizatv*.com/view/theme/ultimate/img/*.gif
-||ibizatv*.com/view/theme/ultimate/assets/js/rc.js
-/ibizatv\d+\.com$/##.popup-overlay
-/ibizatv\d+\.com$/##div[class^="reklam-"]
-/ibizatv\d+\.com$/##body > header
-/ibizatv\d+\.com$/##.footer-links
-/ibizatv\d+\.com$/##.header-top > div.header-text
-/ibizatv\d+\.com$/##.odds-container
-ibizatv1.com##.popup-overlay
-ibizatv1.com##div[class^="reklam-"]
-ibizatv1.com##body > header
-ibizatv1.com##.footer-links
-ibizatv1.com##.header-top > div.header-text
-ibizatv1.com##.odds-container
 /betanotv\d+\.site$/##div[class^="reklam-"]
 /betanotv\d+\.site$/##body > header
 !+ NOT_VALIDATE
@@ -6179,11 +6165,11 @@ klasikfilmler1.cc,klasikfilmler2.cc,klasikfilmler3.cc,klasikfilmler4.cc,klasikfi
 /canlimacizlemax\d+\.top/##.iframe_728
 /canlimacizlemax\d+\.top/##div#stream_holder > iframe#video_reklam
 /canlimacizlemax\d+\.top/##+js(set-constant, puShown, true)
-canlimacizlemax446.top,canlimacizlemax447.top,canlimacizlemax448.top,canlimacizlemax449.top,canlimacizlemax450.top,canlimacizlemax451.top,canlimacizlemax452.top,canlimacizlemax453.top,canlimacizlemax454.top,canlimacizlemax455.top,canlimacizlemax456.top,canlimacizlemax457.top,canlimacizlemax458.top,canlimacizlemax459.top,canlimacizlemax460.top,canlimacizlemax461.top,canlimacizlemax462.top,canlimacizlemax463.top,canlimacizlemax464.top,canlimacizlemax465.top,canlimacizlemax466.top,canlimacizlemax467.top,canlimacizlemax468.top,canlimacizlemax469.top,canlimacizlemax470.top,canlimacizlemax471.top,canlimacizlemax472.top,canlimacizlemax473.top,canlimacizlemax474.top,canlimacizlemax475.top,canlimacizlemax476.top,canlimacizlemax477.top,canlimacizlemax478.top,canlimacizlemax479.top##.header_r
-canlimacizlemax446.top,canlimacizlemax447.top,canlimacizlemax448.top,canlimacizlemax449.top,canlimacizlemax450.top,canlimacizlemax451.top,canlimacizlemax452.top,canlimacizlemax453.top,canlimacizlemax454.top,canlimacizlemax455.top,canlimacizlemax456.top,canlimacizlemax457.top,canlimacizlemax458.top,canlimacizlemax459.top,canlimacizlemax460.top,canlimacizlemax461.top,canlimacizlemax462.top,canlimacizlemax463.top,canlimacizlemax464.top,canlimacizlemax465.top,canlimacizlemax466.top,canlimacizlemax467.top,canlimacizlemax468.top,canlimacizlemax469.top,canlimacizlemax470.top,canlimacizlemax471.top,canlimacizlemax472.top,canlimacizlemax473.top,canlimacizlemax474.top,canlimacizlemax475.top,canlimacizlemax476.top,canlimacizlemax477.top,canlimacizlemax478.top,canlimacizlemax479.top##.w100p
-canlimacizlemax446.top,canlimacizlemax447.top,canlimacizlemax448.top,canlimacizlemax449.top,canlimacizlemax450.top,canlimacizlemax451.top,canlimacizlemax452.top,canlimacizlemax453.top,canlimacizlemax454.top,canlimacizlemax455.top,canlimacizlemax456.top,canlimacizlemax457.top,canlimacizlemax458.top,canlimacizlemax459.top,canlimacizlemax460.top,canlimacizlemax461.top,canlimacizlemax462.top,canlimacizlemax463.top,canlimacizlemax464.top,canlimacizlemax465.top,canlimacizlemax466.top,canlimacizlemax467.top,canlimacizlemax468.top,canlimacizlemax469.top,canlimacizlemax470.top,canlimacizlemax471.top,canlimacizlemax472.top,canlimacizlemax473.top,canlimacizlemax474.top,canlimacizlemax475.top,canlimacizlemax476.top,canlimacizlemax477.top,canlimacizlemax478.top,canlimacizlemax479.top##.iframe_728
-canlimacizlemax446.top,canlimacizlemax447.top,canlimacizlemax448.top,canlimacizlemax449.top,canlimacizlemax450.top,canlimacizlemax451.top,canlimacizlemax452.top,canlimacizlemax453.top,canlimacizlemax454.top,canlimacizlemax455.top,canlimacizlemax456.top,canlimacizlemax457.top,canlimacizlemax458.top,canlimacizlemax459.top,canlimacizlemax460.top,canlimacizlemax461.top,canlimacizlemax462.top,canlimacizlemax463.top,canlimacizlemax464.top,canlimacizlemax465.top,canlimacizlemax466.top,canlimacizlemax467.top,canlimacizlemax468.top,canlimacizlemax469.top,canlimacizlemax470.top,canlimacizlemax471.top,canlimacizlemax472.top,canlimacizlemax473.top,canlimacizlemax474.top,canlimacizlemax475.top,canlimacizlemax476.top,canlimacizlemax477.top,canlimacizlemax478.top,canlimacizlemax479.top##div#stream_holder > iframe#video_reklam
-canlimacizlemax446.top,canlimacizlemax447.top,canlimacizlemax448.top,canlimacizlemax449.top,canlimacizlemax450.top,canlimacizlemax451.top,canlimacizlemax452.top,canlimacizlemax453.top,canlimacizlemax454.top,canlimacizlemax455.top,canlimacizlemax456.top,canlimacizlemax457.top,canlimacizlemax458.top,canlimacizlemax459.top,canlimacizlemax460.top,canlimacizlemax461.top,canlimacizlemax462.top,canlimacizlemax463.top,canlimacizlemax464.top,canlimacizlemax465.top,canlimacizlemax466.top,canlimacizlemax467.top,canlimacizlemax468.top,canlimacizlemax469.top,canlimacizlemax470.top,canlimacizlemax471.top,canlimacizlemax472.top,canlimacizlemax473.top,canlimacizlemax474.top,canlimacizlemax475.top,canlimacizlemax476.top,canlimacizlemax477.top,canlimacizlemax478.top,canlimacizlemax479.top##+js(set-constant, puShown, true)
+canlimacizlemax667.top##.header_r
+canlimacizlemax667.top##.w100p
+canlimacizlemax667.top##.iframe_728
+canlimacizlemax667.top##div#stream_holder > iframe#video_reklam
+canlimacizlemax667.top##+js(set-constant, puShown, true)
 ||hdselcuksports*.top/cdn/r/$image
 /hdselcuksports\d+\.top/###video_reklam
 /hdselcuksports\d+\.top/##+js(set-constant, puShown, true)
