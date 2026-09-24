@@ -13,6 +13,17 @@ crowdinConfig="$workDir/crowdin.yml"
 files=("tags.json" "groups.json" "filters.json")
 masks=("tag." "group." "filter.")
 
+# Locales this repo keeps under a second, base alias dir next to the Crowdin
+# one: the Twosky-based download.sh fetched es/pt and copied them to
+# es_ES/pt_PT, and the base dirs are still required by validate_locales.ts and
+# consumed by the compiler. The freshly imported regional files are copied back
+# to the aliases after the import, so the aliases cannot go stale.
+# Format: <imported locale>:<base alias>
+baseLocaleAliases=(
+    "es_ES:es"
+    "pt_PT:pt"
+)
+
 # Clean up the previous download first: a file the current run no longer
 # produces (removed from the project, locale dropped) would otherwise stay
 # in temp/crowdin and be re-imported, keeping stale translations alive.
@@ -32,7 +43,9 @@ fi
 
 imported=0
 skipped=0
+aliased=0
 importedLocales=""
+aliasedLocales=""
 emptyLocales=""
 
 # Import the locale dirs the download produced. `export_languages` and
@@ -78,6 +91,41 @@ if [ -n "$emptyLocales" ]; then
     exit 1
 fi
 
+# Refresh the base alias locales (see baseLocaleAliases). The copies happen
+# here, after the import, and are skipped when the alias dir was downloaded on
+# its own, so a genuine download can never be overwritten by an alias copy.
+for alias in "${baseLocaleAliases[@]}"; do
+    aliasSource="${alias%%:*}"
+    aliasTarget="${alias##*:}"
+    aliasTargetDownloaded=false
+    for file in "${files[@]}"; do
+        if [ -f "$crowdinDir/$aliasTarget/$file" ]; then
+            aliasTargetDownloaded=true
+        fi
+    done
+    if [ "$aliasTargetDownloaded" = true ]; then
+        echo "Skip $aliasTarget alias: downloaded on its own"
+        continue
+    fi
+    missingSource=false
+    for file in "${files[@]}"; do
+        if [ ! -f "$workDir/locales/$aliasSource/$file" ]; then
+            echo "Error: cannot refresh the $aliasTarget locale: $aliasSource/$file was not imported" >&2
+            missingSource=true
+        fi
+    done
+    if [ "$missingSource" = true ]; then
+        exit 1
+    fi
+    echo "Copying $aliasSource translations to the base $aliasTarget locale"
+    mkdir -p "$workDir/locales/$aliasTarget"
+    for file in "${files[@]}"; do
+        cp -f "$workDir/locales/$aliasSource/$file" "$workDir/locales/$aliasTarget/$file"
+    done
+    aliased=$((aliased + 1))
+    aliasedLocales="$aliasedLocales $aliasTarget"
+done
+
 # Report the repo locale dirs this run did not refresh. A locale Crowdin stops
 # exporting (dropped from export_languages, no longer translated) would
 # otherwise keep its committed translations forever without any signal, as
@@ -88,7 +136,7 @@ for localeDir in "$workDir"/locales/*/; do
         continue
     fi
     localeName="$(basename "$localeDir")"
-    case " $importedLocales " in
+    case " $importedLocales $aliasedLocales " in
         *" $localeName "*) ;;
         *) staleLocales="$staleLocales $localeName" ;;
     esac
@@ -100,4 +148,4 @@ if [ -n "$staleLocales" ]; then
 fi
 
 echo "Imported locales:$importedLocales"
-echo "Import finished: $imported files imported, $skipped skipped"
+echo "Import finished: $imported files imported, $skipped skipped, $aliased base locales refreshed"
