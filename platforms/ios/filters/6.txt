@@ -1,9 +1,9 @@
-! Checksum: 4MXAix/KF7Y7LIFtz2GH7Q
-! Diff-Path: ../patches/6/6-s-1790266432-3600.patch
+! Checksum: cyHGXDparhLaiCozHpPlKw
+! Diff-Path: ../patches/6/6-s-1790269806-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.83
-! TimeUpdated: 2026-09-24T16:11:06+00:00
+! Version: 2.0.53.84
+! TimeUpdated: 2026-09-24T17:05:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -869,17 +869,15 @@ xboxdynasty.de#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototy
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=dailyme.de
 ! https://github.com/uBlockOrigin/uAssets/issues/34187
+igorslab.de##div[style="height: 90 px; text-align: left;"]
 igorslab.de#?#div[class]:matches-css(before, content: /(Advertisement|Werbung|广告)/)
-igorslab.de#?#[style*="!important"]
+igorslab.de##[style*="aspect-ratio"]
 igorslab.de##span > svg
-igorslab.de#?#div[class]:matches-attr("/^[0-9a-z]{5,}[-_][0-9a-z]{3,}$/")
-igorslab.de#?#div[class]:matches-attr("/^[0-9a-z]{5,}$/"="/^[0-9A-Z_a-z]+_/")
 igorslab.de#?#.ilgha-scale-frame:contains(/Similar products|Ähnliche Artikel|相似产品/)
 igorslab.de##div[style*="max-width:980px;"]
-igorslab.de#?#a[href^="/"][rel="noopener"][target]
-igorslab.de##a[href^="/"][rel="noopener"][target]
+igorslab.de##a[href^="https://www.igorslab.de"][href*="?"][rel][target]:not([target$="blank"])
 ||igorslab.de/wp-content/plugins/igorslab-ads-suite/
-/^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g(?:\?[0-9_a-z-]{7,}=[0-9_a-z-]{7,})?$/$image,xmlhttprequest,~third-party,match-case
+/^https:\/\/www\.igorslab\.de\/(?:[0-9a-z]+-[0-9a-z]+\/)+A[\/0-9A-Z_a-z-]{100,}/$image,script,xmlhttprequest,~third-party,match-case
 igorslab.de#%#//scriptlet('remove-node-text', 'script', 'WeakSet()')
 igorslab.de##img[src^="blob:http"]
 igorslab.de##.herald-sticky
@@ -2179,7 +2177,6 @@ frankenpost.de##.brickgroup[data-upscore-zone="Magazine"]
 oberpfalzecho.de##.deluxe-rubrik-kombi
 runnersworld.de##div[data-static-banner]
 dmax.de##section:has(> div.carousel > div.swiper a[href*="bigpoint.com"])
-igorslab.de##.ilgha-scale-frame:has(.ilgha-related-similar)
 minecraft-serverlist.net##div[class^="adzone"]
 minecraft-serverlist.net###tabbody > tr:not([class]):has(> td > div[id^="nerdic_content_"])
 morgenpost.de##.article-body > aside:has(> iframe[src^="https://comparison.financeads.net"])
