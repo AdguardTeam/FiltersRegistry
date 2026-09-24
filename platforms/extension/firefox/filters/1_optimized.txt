@@ -1,5 +1,5 @@
-! Checksum: TKjOybxGK1IuI5zRMch54g
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1790129365-3600.patch
+! Checksum: hKjwfeNSrxXUBVl1/TFmNQ
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1790215896-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.8.72
@@ -58,7 +58,6 @@
 /clan.su\/\?[A-Za-z0-9]+%21.+%5E/$script
 /porebl/?Izo84uQ4=*%$script
 /tG3a8U7s/?x37gWsOk=
-/dear_code/*/goclick?t=*&ref=
 ://*.pp.ua^$script,third-party
 .info/show/?*=*&*=*&*=*%20*%20*&$third-party
 .ru/show/?*=*&*=*&*=*%20*%20*&$script,third-party
@@ -78,7 +77,6 @@
 .site/show/?id=*&r=
 /sovetnik.webpartner.
 .com/inc/angular.js
-/static/foobar.js?p=*&b=
 /show/?block_id=
 /js/sjplugin.js
 .com/player/|$third-party
@@ -168,7 +166,6 @@ http://*.ru/leftunit.pl?
 .ru/rtr/7
 .ru/rtr/8
 .ru/rtr/9
-.tv/rtr/1
 .tv/rtr/4
 .txtfull.com/script.
 .ua/banners
@@ -242,6 +239,7 @@ http://*.ru/leftunit.pl?
 /afisha_banner/*
 /app/ads.js
 /baner1.gif
+/baner_final.gif
 /baneru/*
 /bannar.jpg
 /banner/functions.js
@@ -344,7 +342,6 @@ http://*.ru/leftunit.pl?
 /smartlinks.
 /spc.php?
 /spcjs.php?
-/sponsor-right.
 /sponsor-top.
 /sponsor_images/*
 /sponsoring/*
@@ -1152,7 +1149,6 @@ ucoz.ru/informer/
 ||adfinity.pro^$third-party
 ||portakamus.com^$third-party
 ||jmpmedia.club^$third-party
-||bestdealfor1.life^$all
 ||admitad-connect.com^$third-party
 ||banners.adfox.ru^$third-party
 ||hdbcode.com^$third-party
@@ -1434,7 +1430,6 @@ ucoz.ru/informer/
 ||jsc.idealmedia.io^$third-party
 ||jsn.24smi.org/
 ||kadam.net^$third-party
-||kdsk32lfa.xyz^$third-party
 ||kinder.ru/buttons/*.asp?
 ||klonedaset.org^
 ||kont-news.com^$third-party
@@ -1534,7 +1529,6 @@ ucoz.ru/informer/
 ||popunder.$third-party
 ||prcy-info.ru/informer.php?
 ||protoplex.ru/images/rating/
-||protovid.com^$third-party
 ||puls.lv/$third-party
 ||qkffv.com^$third-party
 ||quisma.com^$third-party
@@ -2357,6 +2351,7 @@ mail.yandex.*##div[data-testid="content-header_container"] > div[class]:has(> di
 mail.yandex.*###js-layout-inner ~ div[class^="Loading-m__root--"]
 mail.yandex.*##div[class*="disableAdsContainer"]
 mail.yandex.*##.DirectLine
+rasp.yandex.*##.PartnerPromoHeaderLogo
 rasp.yandex.*##.Direct
 rasp.yandex.*##.ThreadLayout__topDirect
 rasp.yandex.*##.SearchSegmentsDirect
@@ -2976,11 +2971,7 @@ gismeteo.ru##.flexbox > div.right_col_1 > div.wrap_small.__frame > div:not([clas
 gismeteo.ru##.flexbox > div.right_col_2
 gismeteo.ru##.media_with_map > div.media_left
 gismeteo.ru##div[data-type="rbc"]
-gismeteo.ru###weather-gis-news-alter
 gismeteo.ua##.wrap > div#w-hor
-gismeteo.ru##.wrap > div#weather-lb.rframe
-gismeteo.ru##.wrap > div#weather-left.rframe
-gismeteo.kz,gismeteo.md,gismeteo.ru,gismeteo.ua##div#weather-right[id="weather-right"]
 gismeteo.ru##div[class^="media_frame"]
 gismeteo.ua##div[id="weather-rbkua"]
 ||static.hdrezka.ac/i/*ggbet*.gif
@@ -3056,8 +3047,6 @@ progorod43.ru##div[class^="article-content_articlePromoSlot"]
 progorod43.ru##div[class^="promo"]
 progorod43.ru##.contentRightMainPromo
 ura.news##div[class*="_news-publication-divider__title"]
-iguides.ru##section.main-container > section.row:has(> section > #bxdynamic_banner-top_start)
-iguides.ru##section.main-container > section.row:has(> section > #bxdynamic_ADV_IG_TOP_start)
 iguides.ru##section.col-right:has(> #bxdynamic_ADV_IG_240_RIGHT_ASIDE_start)
 iguides.ru##section.col-xl-right:has(> div[id^="comp_"])
 iguides.ru##div.order-md-last:has(> #V_iguides_D_728x90)
@@ -3069,7 +3058,6 @@ stolicaonego.ru###hideadvs
 stolicaonego.ru##.content_news_date[style^="margin-top:-20px; background-color:#fff;"]
 newsru.co.il##.in_text_video
 gogov.ru##.gg-dox
-||vod.smotrim.ru/vod/definst/*/playlist.m3u8?entity=announcement&
 smotrim.ru#%#//scriptlet('json-prune', 'data.adverts')
 euroauto.ru##.banner-in__wrapper
 ||static2.tinkoffjournal.ru/creatives-core/v*/dist/index.js
@@ -3276,6 +3264,7 @@ o4ko.com#%#//scriptlet('set-constant', 'AD_DISABLED', 'true')
 apteka.ru#%#//scriptlet('set-cookie', 'mayBeInteresting', '1')
 sportsdaily.ru##div[class^="bkPromo_bkPromo_"]
 riamo.ru##body > div[class^="_1"] > div[class^="_1"]  > div[class*="_1"][style^="--"]:has(> div[id^="sbo_"])
+riamo.ru##article > div[style^="--"]:has(> div.js-setka-news[data-bid])
 riamo.ru##article > div[style^="--"]:has(> .smi24__informer)
 rutoro.info##.box_in > div[align="center"]:has(> a:not([class]) img)
 pikabu.ru##.promo-button
@@ -3331,7 +3320,6 @@ forbes.ru##ul > li > div[class] > div[style="min-height: 64px;"]
 forbes.ru#$#.jNJtr { height: calc(var(--vh, 1vh) * 100) !important; }
 vgr.by##.dmi-grid-banners
 afisha.ru##.slider > div[class]:has(> picture > img[src="https://s5.afisha.ru/mediastorage/60/b2/cb576fe8877c42f8a06457f3b260.png"])
-afisha.ru##nav[data-test="HEADER-MENU"] div[data-index="4"]:has(> a[href="/movie/"])
 business-gazeta.ru##.unitindent:has(> .js-slot)
 lrepacks.net#%#//scriptlet('prevent-addEventListener', 'click', 'pop()')
 slo.ru##.download-box > div[class="tb"]
@@ -3772,7 +3760,6 @@ softportal.com##.TblOBan
 ||i38.ru/images/stories/vidget/$image
 prmira.ru,mkset.ru,bel.ru,rosbalt.ru##div[data-provider="adfox"]
 cq.ru#%#//scriptlet("set-constant", "initBanners", "noopFunc")
-pb.wtf##table > tbody[id^="post_"]:has(.post_pp > a[target="_blank"])
 regnum.ru#$#.page-column > div[class*="-adv-container"][style^="top:"] { top: auto !important; }
 regnum.ru##.articles-list-wrapper > div.news-wrapper.feed-item
 zelenograd.ru##noindex > div.row:has(> div.row__col > div.news-item > div[id^="adfox_"])
@@ -4241,7 +4228,6 @@ soft.mydiv.net#?#div[itemprop="mainEntity"] > div[style]:has(> div > a[onclick*=
 soft.mydiv.net#?#.app-page__left > div[style*="height"]:has(> div.inban)
 tkaner.com#?#body > div.wrap:has(> div[id^="yandex_rtb"])
 ||vrubcovske.ru/antiko.jpg
-vrubcovske.ru##.sidebar > center
 ||weblion777.github.io/hdvb_new.js
 beautyinsider.ru##div[id^="bi-js-ad-"]
 kinoafisha.info##.filmInfo_bannerLast
@@ -4475,6 +4461,7 @@ super.kg##.col-lg-12.h-200px
 smartpress.by##.long_banner
 smartpress.by##.side_banners
 ||m24.ru/js/m.24.adwrap*.js
+||static.wmbcdn.com/uniweb/js/modern/YandexAds.client.*.js
 mamba.ru##div[data-name="search-banner"]
 classicalmusicnews.ru###after-menu
 shazoo.ru##a[href^="https://shazoo.ru/click/"]
@@ -4551,7 +4538,6 @@ kino-teatr.ru##div[class*="_dobro"]
 alexbruni.ru,incrypted.com##a[href^="https://bit.ly/"]
 ~games.academic.ru,academic.ru###games
 ~games.academic.ru,academic.ru##a[href="https://games.academic.ru"]
-footballua.tv##.news-popular
 sslkn.*##.sticker_wrap
 ukrrudprom.com##div[id^="textads"]
 rutracker.ru##td[style="logoads"]
@@ -5930,6 +5916,7 @@ citydog.io,citydog.by,friday.ru##.banner240x400
 steaklovers.menu,filmz.ru##.banner3
 tvzvezda.ru##.banner_300x600
 torrent-pirat.com##.banner_88x31
+prosecrets.pro##.banner_banner
 studfile.net##.banner_bottom_preview
 autostat.ru,vdvsn.ru##.banner_content
 promokodus.com,vseprosport.ru##.banner_link
@@ -6687,6 +6674,7 @@ sport24.ru#?#div[class][aria-expanded="false"]:contains(Реклама 18+.)
 sport24.ru#?#div[data-content-tag-ids] > p:has(> a.a-underline:contains(/промокод(ом)? SPORT24/))
 sport24.ru##header ~ div[class] div.right-scroll-bar-position
 /userfiles/b/*$domain=gorodkirov.ru|navigator-kirov.ru|pg11.ru|pg12.ru|pg13.ru|pg21.ru|prochepetsk.ru|prodzer.ru|progorod33.ru|progorod43.ru|progorod58.ru|progorod59.ru|progorod62.ru|progorod76.ru|progorodnn.ru|progorodnsk.ru|progorodsamara.ru|progoroduhta.ru|pgn21.ru
+pgn21.ru,gorodkirov.ru,navigator-kirov.ru,pg11.ru,pg12.ru,pg13.ru,pg21.ru,prochepetsk.ru,prodzer.ru,progorod33.ru,progorod43.ru,progorod58.ru,progorod59.ru,progorod62.ru,progorod76.ru,progorodnn.ru,progorodnsk.ru,progorodsamara.ru,progoroduhta.ru##div[class^="article-social"]
 pgn21.ru,gorodkirov.ru,navigator-kirov.ru,pg11.ru,pg12.ru,pg13.ru,pg21.ru,prochepetsk.ru,prodzer.ru,progorod33.ru,progorod43.ru,progorod58.ru,progorod59.ru,progorod62.ru,progorod76.ru,progorodnn.ru,progorodnsk.ru,progorodsamara.ru,progoroduhta.ru##div[class^="article-social_articleSocial"]
 pgn21.ru,gorodkirov.ru,navigator-kirov.ru,pg11.ru,pg12.ru,pg13.ru,pg21.ru,prochepetsk.ru,prodzer.ru,progorod33.ru,progorod43.ru,progorod58.ru,progorod59.ru,progorod62.ru,progorod76.ru,progorodnn.ru,progorodnsk.ru,progorodsamara.ru,progoroduhta.ru##div[class^="banner"]
 pgn21.ru,gorodkirov.ru,navigator-kirov.ru,pg11.ru,pg12.ru,pg13.ru,pg21.ru,prochepetsk.ru,prodzer.ru,progorod33.ru,progorod43.ru,progorod58.ru,progorod59.ru,progorod62.ru,progorod76.ru,progorodnn.ru,progorodnsk.ru,progorodsamara.ru,progoroduhta.ru##div[class^="loader_"]
@@ -7311,7 +7299,6 @@ dtf.ru#?#.feed-page__content-list > div.content-list > div.content + div[class][
 dtf.ru,vc.ru##.content-list > div[class]:has(> a[href^="https://booster.osnova.io/a/redirect"])
 vc.ru##a[href="https://vc.ru/special/fifty-todo"]
 dtf.ru,vc.ru##[data-analytics^="Entry native"]
-vc.ru##a[class^="vc-results-of-the-year"]
 vc.ru,dtf.ru##div[air-module="module.boosterPromo"]
 dtf.ru##a.azur-games-button
 dtf.ru##a[href^="https://clck.ru/"]
