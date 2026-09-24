@@ -121,16 +121,16 @@ for alias in "${baseLocaleAliases[@]}"; do
         echo "Skip $aliasTarget alias: downloaded on its own"
         continue
     fi
-    missingSource=false
-    for file in "${files[@]}"; do
-        if [ ! -f "$workDir/locales/$aliasSource/$file" ]; then
-            echo "Error: cannot refresh the $aliasTarget locale: $aliasSource/$file was not imported" >&2
-            missingSource=true
-        fi
-    done
-    if [ "$missingSource" = true ]; then
-        exit 1
-    fi
+    # Only refresh the alias from files this run actually imported: the
+    # committed locales/ dirs always exist in a checkout, so checking them
+    # could never fire and stale files would be copied over silently.
+    case " $importedLocales " in
+        *" $aliasSource "*) ;;
+        *)
+            echo "Error: cannot refresh the $aliasTarget locale: $aliasSource was not imported by this run" >&2
+            exit 1
+            ;;
+    esac
     echo "Copying $aliasSource translations to the base $aliasTarget locale"
     mkdir -p "$workDir/locales/$aliasTarget"
     for file in "${files[@]}"; do
