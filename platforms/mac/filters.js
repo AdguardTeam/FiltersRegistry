@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.92.73",
-			"timeUpdated": "2026-09-24T11:05:13+0000",
+			"version": "2.4.92.74",
+			"timeUpdated": "2026-09-24T12:07:09+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.12.19",
-			"timeUpdated": "2026-09-24T11:05:29+0000",
+			"version": "2.1.12.20",
+			"timeUpdated": "2026-09-24T12:07:27+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.32.96",
-			"timeUpdated": "2026-09-24T11:05:31+0000",
+			"version": "2.1.32.97",
+			"timeUpdated": "2026-09-24T12:07:30+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.76.79",
-			"timeUpdated": "2026-09-24T09:05:56+0000",
+			"version": "2.0.76.80",
+			"timeUpdated": "2026-09-24T12:07:35+0000",
 			"languages": [
 				"ja"
 			]
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.80.33",
-			"timeUpdated": "2026-09-24T11:05:51+0000",
+			"version": "2.2.80.34",
+			"timeUpdated": "2026-09-24T12:07:48+0000",
 			"languages": []
 		},
 		{
@@ -256,8 +256,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.35.89",
-			"timeUpdated": "2026-09-24T11:05:54+0000",
+			"version": "2.1.35.90",
+			"timeUpdated": "2026-09-24T12:07:52+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.83.75",
-			"timeUpdated": "2026-09-24T11:06:00+0000",
+			"version": "2.0.83.76",
+			"timeUpdated": "2026-09-24T12:07:57+0000",
 			"languages": []
 		},
 		{
@@ -341,8 +341,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.48.61",
-			"timeUpdated": "2026-09-24T11:06:02+0000",
+			"version": "2.0.48.62",
+			"timeUpdated": "2026-09-24T12:07:58+0000",
 			"languages": []
 		},
 		{
@@ -354,8 +354,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/22.txt",
-			"version": "2.0.15.1",
-			"timeUpdated": "2026-09-24T08:08:08+0000",
+			"version": "2.0.15.2",
+			"timeUpdated": "2026-09-24T12:07:59+0000",
 			"languages": []
 		},
 		{
@@ -385,6 +385,36 @@
 			"version": "2.0.0.9",
 			"timeUpdated": "2026-08-26T08:18:51+0000",
 			"languages": []
+		},
+		{
+			"filterId": 26,
+			"name": "AdGuard Italian filter",
+			"description": "EasyList Italy + AdGuard Italian filter. Filter list that specifically removes ads on websites in the Italian language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 432000,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/26.txt",
+			"version": "2.0.0.1",
+			"timeUpdated": "2026-09-24T12:08:01+0000",
+			"languages": [
+				"it"
+			]
+		},
+		{
+			"filterId": 27,
+			"name": "AdGuard Polish filter",
+			"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 432000,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/27.txt",
+			"version": "2.0.0.1",
+			"timeUpdated": "2026-09-24T12:08:04+0000",
+			"languages": [
+				"pl"
+			]
 		},
 		{
 			"filterId": 101,
@@ -533,9 +563,7 @@
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"version": "2.1.98.30",
 			"timeUpdated": "2026-09-24T08:47:01+0000",
-			"languages": [
-				"it"
-			]
+			"languages": []
 		},
 		{
 			"filterId": 110,
@@ -1052,9 +1080,7 @@
 			"subscriptionUrl": "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-adblock-filters/adblock.txt",
 			"version": "2.0.16.68",
 			"timeUpdated": "2026-09-15T12:44:18+0000",
-			"languages": [
-				"pl"
-			]
+			"languages": []
 		},
 		{
 			"filterId": 217,
