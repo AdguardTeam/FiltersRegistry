@@ -1,9 +1,9 @@
-! Checksum: qgUBRBT2+gMsop0uxd/cYw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1790215898-3600.patch
+! Checksum: 0LXa3M9KPqWVb7em04TMoQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1790269783-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.81
-! TimeUpdated: 2026-09-23T20:06:20+00:00
+! Version: 2.0.53.84
+! TimeUpdated: 2026-09-24T17:05:46+00:00
 ! Expires: 10 days (update frequency)
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
@@ -792,17 +792,15 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 xboxdynasty.de###xd-adblock-wall:not(#style_important)
 xboxdynasty.de#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '-adblock-')
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=dailyme.de
+igorslab.de##div[style="height: 90 px; text-align: left;"]
 igorslab.de#?#div[class]:matches-css(before, content: /(Advertisement|Werbung|广告)/)
-igorslab.de#?#[style*="!important"]
+igorslab.de##[style*="aspect-ratio"]
 igorslab.de##span > svg
-igorslab.de#?#div[class]:matches-attr("/^[0-9a-z]{5,}[-_][0-9a-z]{3,}$/")
-igorslab.de#?#div[class]:matches-attr("/^[0-9a-z]{5,}$/"="/^[0-9A-Z_a-z]+_/")
 igorslab.de#?#.ilgha-scale-frame:contains(/Similar products|Ähnliche Artikel|相似产品/)
 igorslab.de##div[style*="max-width:980px;"]
-igorslab.de#?#a[href^="/"][rel="noopener"][target]
-igorslab.de##a[href^="/"][rel="noopener"][target]
+igorslab.de##a[href^="https://www.igorslab.de"][href*="?"][rel][target]:not([target$="blank"])
 ||igorslab.de/wp-content/plugins/igorslab-ads-suite/
-/^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g(?:\?[0-9_a-z-]{7,}=[0-9_a-z-]{7,})?$/$image,~third-party,match-case
+/^https:\/\/www\.igorslab\.de\/(?:[0-9a-z]+-[0-9a-z]+\/)+A[\/0-9A-Z_a-z-]{100,}/$image,script,xmlhttprequest,~third-party,match-case
 igorslab.de#%#//scriptlet('remove-node-text', 'script', 'WeakSet()')
 igorslab.de##img[src^="blob:http"]
 igorslab.de##.herald-sticky
@@ -1205,7 +1203,6 @@ frankenpost.de##.brickgroup[data-upscore-zone="Magazine"]
 oberpfalzecho.de##.deluxe-rubrik-kombi
 runnersworld.de##div[data-static-banner]
 dmax.de##section:has(> div.carousel > div.swiper a[href*="bigpoint.com"])
-igorslab.de##.ilgha-scale-frame:has(.ilgha-related-similar)
 minecraft-serverlist.net##div[class^="adzone"]
 minecraft-serverlist.net###tabbody > tr:not([class]):has(> td > div[id^="nerdic_content_"])
 morgenpost.de##.article-body > aside:has(> iframe[src^="https://comparison.financeads.net"])
@@ -5126,10 +5123,12 @@ bazar.at,dibeo.at##bb-gpt-ad
 ww3.cad.de##body > table[width="100%"][border="0"]:first-child
 chefkoch.de##consent-for
 winfuture.de##div[align="center"][style="min-height: 320px;"]
+windowspro.de##div[class*="-ad-"]
 shop.rewe.de##div[class*="Product_productSpecialTile"]
 onlinehaendler-news.de##div[class*="adplacement_"]
 chartsurfer.de##div[class*="adszone-"]
 amazona.de##div[class*="fnetbr"]
+windowspro.de##div[class*="sponsored"]
 homegate.ch##div[class^="AdSlotContainer_"]
 stol.it##div[class^="AdSuperBanner_"]
 stol.it##div[class^="AdUnit_"]
@@ -5337,6 +5336,7 @@ tuhlteim.de##ins[style*="width: 300px; height: 250px;"]
 fuersie.de,idee-fuer-mich.de,jolie.de,leben-und-erziehen.de,maedchen.de,ok-magazin.de,petra.de,vital.de##kas
 vital.de##kas[type="placement"]
 kleinanzeigen.de##li[data-liberty-position-name^="home-teaser-ads-"]
+finanzfluss.de##li[id*="-Insearchad-"]
 kleinanzeigen.de##li[id^="home-teaser-ads-"]
 nau.ch##nau-external-content-lazy
 ariva.de##span[onpointerdown^="countClickOnGAorEs("]
@@ -5463,6 +5463,7 @@ flaconi.de##[data-product-list-id]:has([data-badge-type="sponsored"])
 redcare-apotheke.ch,shop-apotheke.*##[data-qa-id="cross-sell-widget"] li:has(> [data-as-xsell-product-id])
 mediamarkt.*,saturn.de##[data-test="mms-product-card"]:has(div[data-test="mms-plp-sponsored"])
 obi.*##[data-track-section^="home-topteaser"]:has(hobi-advertiser-tag)
+chip.de##article.download-item:has(.download-item__image:not([data-nuxt-img]))
 finanzen.net##article.page-content__item:has(img[alt="UBS"])
 meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##article:has(.tile-link[rel*="sponsored"])
 abendzeitung-muenchen.de##article[class^="teaser nummer-"]:has(span.specialfeature)

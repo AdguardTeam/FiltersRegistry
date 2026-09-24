@@ -1,9 +1,9 @@
-! Checksum: o1+UBewbosFzQgYenHtpNw
-! Diff-Path: ../patches/21/21-s-1790187010-3600.patch
+! Checksum: esMaTVHeNn1m9tdRLb7+ng
+! Diff-Path: ../patches/21/21-s-1790269823-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
-! Version: 2.0.48.59
-! TimeUpdated: 2026-09-23T18:07:29+00:00
+! Version: 2.0.48.64
+! TimeUpdated: 2026-09-24T17:06:17+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -315,10 +315,7 @@ forbes.com#$##forbes-dv { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196958
 ctvnews.ca##.b-alert-bar-wrapper-custom
 ! Google Search - AI Overview
-google.*##div:not([role]) > div[data-hveid] div[style^="margin-bottom:"][data-hveid]:has(div[id^="folsrch"])
-google.*##style + div[data-mcpr][style^="margin-bottom:"]:has(div[data-async-type="folsrch"])
-google.*##style + div[data-mcpr][style^="margin-bottom:"] div[data-async-type="folsrch"]
-google.*##div[data-lhcontainer="1"][eid][data-ved] > div > div > div[jsname] > div[style="display:contents"]
+google.*##div[style^="margin-bottom:"] > div[style^="font-family:Google Sans,"][style*="position:relative"]:has(div[data-async-type="folsrch"])
 ://www.google.*/async/folsrch?*&async=_basejs:*,_basecomb:*&q=$xmlhttprequest
 google.*##div[data-q][data-al]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197075
@@ -3759,6 +3756,11 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+popcornmovies.ac##.inset-x-3.fixed
+wallpapers.com#%#//scriptlet('trusted-set-attr', 'button[class="cd-free-dl-btn"][data-dl-gate="free"]', 'data-dl-gate', 'premium')
+3dmgame.com##.Content_L > a[href^="https://mall.3dmgame.hk/?"]
+xenospectrum.com##aside.article-inline-nudge:has(> a[href="/support/?from=article_inline_nudge"])
+xenospectrum.com##aside.article-cta:has(> div.article-cta__state--supporter)
 wallpapers.com##.wpc-topad--house
 wallpapers.com##.wpc-ad--filled
 wallpapers.com##.wpc-internal-ad
@@ -3797,7 +3799,7 @@ brasilescola.uol.com.br##.side-ferramentas-area-lista
 saechsische.de##div[data-element-selector="main-content"] > div[class*="AutomaticWeekliWidgetstyled"]
 newstsukuba.jp##.nts-banner
 navalny.com##footer.bg-bg-tertiary > div.mx-auto > a.bg-gradient-turquoise[href*="/donate"]
-kinogo.org##.cshflow
+uakinogo.org,kinogo.org##.cshflow
 kinogo.tm##.kng-rekl
 newsnow.com##.site-ribbon--essential-promo
 fnn.jp##.m-special > .m-article-item:has(> .m-article-item__link > .m-article-item-imgwrap > span.m-special__label)
@@ -4116,7 +4118,6 @@ bubilet.com.tr#%#//scriptlet('trusted-set-local-storage-item', 'superTicketGuest
 wildberries.ru##.main-page__tv-media-placements
 temu.com###RecommendedRef div[data-id="list0"] > div[class^="columnWrap-"] > div[class][data-uniqid]:has(> div[class^="item-"] div[class^="adTag-"])
 check.lenta.com###otzyv
-kinzhal.media##div[class^="float-link-"]
 igroray.ru##.announcement-bar
 ishiguro-gr.com###block-ishiguro-content > p:has(> a[href] img)
 xvideos.es,xvideos.com,xnxx.*,xv-ru.com,xnxx-ru.com##.premium-results-line
@@ -7681,6 +7682,8 @@ pixiv.net##section.popular-introduction
 ||mpgh.net/images/mini_offur.png
 vk.com###lovina_ads_row
 v.qq.com#?#div.nav-wrap > div > div:has(> a[href^="https://iwan.video.qq.com"])
+!+ NOT_OPTIMIZED
+kinzhal.media##div[class^="float-link-"]
 !+ NOT_OPTIMIZED
 rakko.tools###headerAnnounceArea
 !+ NOT_OPTIMIZED
