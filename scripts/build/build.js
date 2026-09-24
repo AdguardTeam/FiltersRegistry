@@ -52,11 +52,19 @@ const {
  * Set all relative paths needed for compiler
  */
 const filtersDir = path.join(__dirname, '../../filters');
+const groupsDir = path.join(__dirname, '../../groups');
+const tagsDir = path.join(__dirname, '../../tags');
+const localesDir = path.join(__dirname, '../../locales');
 const logPath = path.join(__dirname, '../../log.txt');
 const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
 const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
 const tempDir = path.join(__dirname, '../../temp');
+
 const cachedFiltersDir = path.join(tempDir, 'filters_cached');
+const cachedGroupsDir = path.join(tempDir, 'groups');
+const cachedTagsDir = path.join(tempDir, 'tags');
+const cachedLocalesDir = path.join(tempDir, 'locales');
+
 const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
 // Captured on every --download-stats run; checked prior to use(), since
 // applying a stats cache outside the allowed --include/--skip scope results
@@ -72,20 +80,43 @@ const reportPath = rawReportPath !== ''
 const SHADOW_TEMPLATE_CONTENT = '@include "./filter.txt"\n';
 
 /**
+ * Cleans the cached filters directory by removing all cached files.
+ *
+ * @returns {Promise<void[]>}
+ */
+const cleanCachedFiltersDir = async () => Promise.all([
+    fs.rm(cachedFiltersDir, { recursive: true, force: true }),
+    fs.rm(cachedGroupsDir, { recursive: true, force: true }),
+    fs.rm(cachedTagsDir, { recursive: true, force: true }),
+    fs.rm(cachedLocalesDir, { recursive: true, force: true }),
+]);
+
+/**
  * Prepare a temporary copy of the filters directory with shadow templates.
  *
  * Copies `filters/` → `temp/filters_cached/`, then replaces the content of every
  * `template.txt` with a single-line local include pointing to the cached `filter.txt`.
  * Validates that every filter directory with a `template.txt` also has a `filter.txt`.
  *
+ * Also copies `groups/`, `tags/`, and `locales/` next to `temp/filters_cached/`
+ * (i.e. to `temp/groups`, `temp/tags`, `temp/locales`), since the compiler's
+ * `writeFiltersMetadata()`/`loadLocales()` resolve them as siblings of whatever
+ * `filtersDir` it's given — without them, `filters.json`/`filters.js` are
+ * silently omitted from the build output.
+ *
  * @returns {Promise<void>}
  */
 const prepareCachedFiltersDir = async () => {
-    // Remove stale copy if exists
-    await fs.rm(cachedFiltersDir, { recursive: true, force: true });
+    // Remove stale copies if they exist
+    await cleanCachedFiltersDir();
 
     // Full recursive copy
-    await fs.cp(filtersDir, cachedFiltersDir, { recursive: true });
+    await Promise.all([
+        fs.cp(filtersDir, cachedFiltersDir, { recursive: true }),
+        fs.cp(groupsDir, cachedGroupsDir, { recursive: true }),
+        fs.cp(tagsDir, cachedTagsDir, { recursive: true }),
+        fs.cp(localesDir, cachedLocalesDir, { recursive: true }),
+    ]);
 
     // Find all directories containing template.txt and replace with shadow templates
     const templatePaths = await findFiles(cachedFiltersDir, (p) => path.basename(p) === 'template.txt');
@@ -220,7 +251,7 @@ const buildFilters = async () => {
     } finally {
         // Clean up temp filters copy
         if (useCache) {
-            await fs.rm(cachedFiltersDir, { recursive: true, force: true });
+            await cleanCachedFiltersDir();
         }
     }
 
@@ -232,7 +263,8 @@ const buildFilters = async () => {
     }
 
     // Strip generated metadata (Checksum, Diff-Path, TimeUpdated, Version)
-    // from compiled filter files so they don't pollute diff comparisons.
+    // from compiled filter files, and version/timeUpdated fields from
+    // filters.json/filters.js, so they don't pollute diff comparisons.
     if (stripGeneratedMeta) {
         const newCount = await stripGeneratedMetaFromDir(platformsPath);
         console.log(`Stripped generated meta from ${newCount} new file(s).`);
