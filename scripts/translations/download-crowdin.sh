@@ -2,11 +2,21 @@
 set -euo pipefail
 # Downloads translations from Crowdin via the Crowdin CLI instead of the
 # Twosky gateway. Requires the CROWDIN_PERSONAL_TOKEN environment variable
-# (see crowdin.yml api_token_env). Run from the scripts/translations dir.
+# (see crowdin.yml api_token_env). The script resolves every path from its own
+# location, so it can be run from any directory (CI runs it from
+# scripts/translations, `yarn run` from the repo root).
 # Uploading strings to the service is a manual step done via upload.sh.
-workDir=../..
+
+# The repo root, resolved from the script's own location.
+scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$scriptDir"
+workDir="$(cd "$scriptDir/../.." && pwd)"
 crowdinDir="$workDir/temp/crowdin"
 crowdinConfig="$workDir/crowdin.yml"
+# converter.js resolves its file arguments against scripts/translations
+# (path.join(__dirname, file)), so the paths passed to it must be relative.
+crowdinDirRel="../../temp/crowdin"
+convertedFile="converted.json"
 
 # The files exported per locale and the converter.js mask for each of them.
 # Keep in sync with the `files:` section of crowdin.yml.
@@ -64,10 +74,10 @@ while IFS= read -r locale; do
             skipped=$((skipped + 1))
             continue
         fi
-        node converter.js import "$crowdinDir/$locale/$file" "$locale" converted.json "${masks[$i]}"
+        node "$scriptDir/converter.js" import "$crowdinDirRel/$locale/$file" "$locale" "$convertedFile" "${masks[$i]}"
         mkdir -p "$workDir/locales/$locale"
-        cp -f converted.json "$workDir/locales/$locale/$file"
-        rm converted.json
+        cp -f "$convertedFile" "$workDir/locales/$locale/$file"
+        rm -f "$convertedFile"
         imported=$((imported + 1))
         localeImported=$((localeImported + 1))
     done
