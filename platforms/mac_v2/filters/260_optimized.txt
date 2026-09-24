@@ -1,9 +1,9 @@
-! Checksum: aVBw4Ab5f2xCqWDnbJavEg
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1790039419-14400.patch
+! Checksum: Q7Phy0HIEcffw9rtasgJXQ
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1790196217-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.9
-! TimeUpdated: 2026-09-22T01:07:25+00:00
+! Version: 2.0.2.12
+! TimeUpdated: 2026-09-23T20:40:48+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -267,6 +267,11 @@ docs.cribl.io##[data-action="chatgpt"]
 docs.cribl.io##[data-action="claude"]
 docs.cribl.io##[data-action="copilot"]
 docs.cribl.io###copilot
+crowdin.com##li:has(> [href="/features/ai-translation"])
+crowdin.com##.dropdown-item:has(> img[src^="https://crowdin-copilot.app.crowdin.net/logo.svg"])
+crowdin.com##[role="listitem"]:has(> #crowdin-copilot¦crowdin-copilot-editor-panels)
+crowdin.com##.suggestions_separator:has(> #automated-suggestions-toggler)
+crowdin.com##.suggestions_separator:has(> #automated-suggestions-toggler) + div:has(> .string-suggestions-wrapper)
 cybernews.com##.key-takeaway-editorial:has(> .key-takeaway-editorial__disclaimer)
 www.databricks.com##[data-cy="AiSummary"]
 www.databricks.com##[data-promo-id="87eda153-219a-46c6-828a-9d54503f5adc"]
@@ -383,6 +388,9 @@ exceljet.net##.chatbot-callout
 portal.expressvpn.com##.group\/collapsible:has([href="/expressai"])
 www.extendoffice.com##.uk-margin-remove-last-child:has([src="//cdn.extendoffice.com/images/stories/ads-siluvia/kte-ads/kutools-for-excel-ai-1.png"])
 www.extendoffice.com##.uk-margin-remove-last-child tr:has([href^="https://www.extendoffice.com/product/kutools-for-excel/kutools-excel-ai-assistant.html"])
+f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"]:only-child)
 www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href^="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fai-glasses%2Fray-ban-meta"])
 www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href="https://www.meta.com/ai-glasses/ray-ban-meta/"])
 www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href*="www.meta.ai"])
@@ -441,16 +449,17 @@ github.com##[data-testid="top-bar-actions"] > .hide-md:has(> .CopilotItems-modul
 github.com##[data-component="ActionList.Group"]:has([data-testid="quick-search-suggestion"][href="/copilot"])
 github.com##[data-component="ActionList.Divider"]:has(+ [data-component="ActionList.Group"] [data-testid="quick-search-suggestion"][href="/copilot"])
 github.com##[id$="-tab-copilot_chat_custom_instructions"]:has(.octicon-eye-closed)
-github.com##.copilotPreview__container
-github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
 github.com##[data-component="NavList.Item"][href="/mcp"]
-github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
-github.com##.DashboardBannerCopilotApp
-github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
+github.com##[data-component="SplitPageLayout.Sidebar"]:has(> [data-testid="copilot-code-view-side-panel"])
+github.com##.copilotPreview__container
+github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
+github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
+github.com##.DashboardBannerCopilotApp
+github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 github.com##.start-copilot-banner
 github.com##[data-testid="copilot-free-user-checklist"]
 github.com#$#li:has(> [data-tab-item="agents"]) { max-width: 0px !important; margin-left: calc(0px - var(--stack-gap-condensed,.5rem)) !important; visibility: hidden !important; }
@@ -652,7 +661,6 @@ meet.google.com#?#div[jsshadow][jscontroller="dGzwdb"]:contains(Express yourself
 one.google.com##.aTVMOe.RLyrIe.KGSMie
 www.google.*##.plR5qb
 www.google.*#%#//scriptlet('remove-attr', 'href', 'a[href*="&udm=50"]:has(#hplogo)')
-www.google.*#%#//scriptlet('remove-attr', 'href', '.k1zIA.kKvsb > a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
 www.google.com##[class="jLddNe"][role="button"]:has(> .DUGvJe)
@@ -786,6 +794,8 @@ kagi.com##.__sri_more_menu > .k_ui_dropdown_data_list > .list_items > ._0_discus
 kahoot.com##.menu-item:has(> [href^="https://kahoot.com/kahoot-study/notes-to-flashcards/"])
 discover.kahoot.it##[data-functional-selector="native-carousel-item"]:has([class^="styles_AiAssisted__"])
 karmasearch.org###search-other-menu .flex-col:has([src="/_nuxt/img/ai.85b95e0.svg"])
+www.kathimerini.gr##.text-to-speech-wrap
+www.kathimerini.gr###gas-summary-root
 www.kiehls.com##.swat-review-summary-container-border
 www.kohls.com##div:has(> button[aria-label="Ask Kohl's"])
 ||gstatic.com/cloud/ai/commerce_ai_ui/1.0.0/static.js$domain=kohls.com
@@ -1011,6 +1021,10 @@ www.pixiv.net##.fDgtdo[href="/ranking.php?mode=daily_ai"]
 www.plugshare.com###review-summary
 www.plugshare.com###reviews-summary
 www.plugshare.com###checkins-summary
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M22 12.2H13.4V3.7l-1.4 1.2V12.2H3.4l8.6"])
+pnpm.io###copy-page-button-container [class^="dropdownItem_"]:has([d^="M16 8.016A8.522 8.522 0 008.016 16h-.032A8.521"])
 pockit.tools##[href="/ai/"]
 docs.posit.co##.nav-item:has(#custom-ask-ai-button)
 www.posta.com.mx###qp-ia-wrapper

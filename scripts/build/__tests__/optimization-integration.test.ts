@@ -7,6 +7,19 @@ import path from 'path';
 import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { findFiles } from '../../utils/find_files.js';
+import { scopeFlagsFor } from '../build-config.js';
+
+const unscopedFlags = scopeFlagsFor([], []);
+
+const mockFsPromises = (overrides: Record<string, unknown> = {}): { default: Record<string, unknown> } => ({
+    default: {
+        cp: vi.fn().mockResolvedValue(undefined),
+        rm: vi.fn().mockResolvedValue(undefined),
+        writeFile: vi.fn().mockResolvedValue(undefined),
+        mkdir: vi.fn().mockResolvedValue(undefined),
+        ...overrides,
+    },
+});
 
 // compile() always fetches percent.json remotely, even under use(). Mock only
 // that call so the suite below stays offline; everything else passes through.
@@ -47,14 +60,7 @@ describe('build.js: cache flag handling', () => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(false),
         }));
-        vi.doMock('fs/promises', () => ({
-            default: {
-                cp: vi.fn().mockResolvedValue(undefined),
-                rm: vi.fn().mockResolvedValue(undefined),
-                writeFile: vi.fn().mockResolvedValue(undefined),
-                mkdir: vi.fn().mockResolvedValue(undefined),
-            },
-        }));
+        vi.doMock('fs/promises', () => mockFsPromises());
         vi.doMock('../../utils/find_files.js', () => ({
             findFiles: vi.fn().mockResolvedValue([]),
         }));
@@ -142,9 +148,12 @@ describe('build.js: cache flag handling', () => {
         },
     );
 
-    it('--use-cache without a local optimization cache: compiles, does not call use()', async () => {
+    it.each([
+        ['--use-cache', ['--use-cache']],
+        ['plain build', []],
+    ])('%s without a cached local optimization: compiles, does not call use()', async (_, args) => {
         // default beforeEach mock already makes existsSync() return false everywhere
-        process.argv = ['node', 'build.js', '--use-cache'];
+        process.argv = ['node', 'build.js', ...args];
         await import('../build.js');
 
         const {
@@ -158,9 +167,13 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
-    it('--use-cache with a local optimization cache: calls use() before compiling', async () => {
+    it('--use-cache with a cached local optimization: calls use() before compiling', async () => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
+        }));
+        vi.doMock('fs/promises', () => mockFsPromises({
+            readdir: vi.fn().mockResolvedValue([String(FILTER_ID)]),
+            readFile: vi.fn().mockResolvedValue(unscopedFlags),
         }));
         process.argv = ['node', 'build.js', '--use-cache'];
         await import('../build.js');
@@ -176,9 +189,102 @@ describe('build.js: cache flag handling', () => {
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
+    it('plain build with a cached local optimization present: does not call use(), fetches remotely', async () => {
+        // build.js only applies a local stats cache under --use-cache; a
+        // plain build must ignore it even when a matching cache exists.
+        vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(true),
+        }));
+        vi.doMock('fs/promises', () => mockFsPromises({
+            readdir: vi.fn().mockResolvedValue([String(FILTER_ID)]),
+            readFile: vi.fn().mockResolvedValue(unscopedFlags),
+        }));
+        process.argv = ['node', 'build.js'];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationStatistics: mockedStats,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
+        });
+        expect(vi.mocked(mockedStats.use)).not.toHaveBeenCalled();
+        expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
+    });
+
+    it('cached stats downloaded under a different filter selection: falls back to remote, no use()', async () => {
+        const differentScopeFlags = scopeFlagsFor([FILTER_ID + 1], []);
+
+        vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(true),
+        }));
+        vi.doMock('fs/promises', () => mockFsPromises({
+            readdir: vi.fn().mockResolvedValue([String(FILTER_ID)]),
+            readFile: vi.fn().mockResolvedValue(differentScopeFlags),
+        }));
+
+        process.argv = ['node', 'build.js', '--use-cache'];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationStatistics: mockedStats,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
+        });
+        expect(vi.mocked(mockedStats.use)).not.toHaveBeenCalled();
+    });
+
+    it('cached local optimization stats downloaded for all filters: calls use() even for a scoped build', async () => {
+        vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(true),
+        }));
+        vi.doMock('fs/promises', () => mockFsPromises({
+            readdir: vi.fn().mockResolvedValue([String(FILTER_ID)]),
+            readFile: vi.fn().mockResolvedValue(unscopedFlags),
+        }));
+        process.argv = ['node', 'build.js', '--use-cache', `--include=${FILTER_ID}`];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationStatistics: mockedStats,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
+        });
+        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedOptimizationStatsBasePath);
+    });
+
+    it('stats dir exists but its filters/ subfolder is missing: falls back to remote, does not crash', async () => {
+        // Only the base stats dir "exists"; the nested filters/ subfolder
+        // readdir() actually reads does not. Guards against reintroducing an
+        // unguarded readdir() on a path existsSync() never checked.
+        vi.doMock('fs', () => ({
+            existsSync: vi.fn((checkedPath: string) => checkedPath === expectedOptimizationStatsBasePath),
+        }));
+        process.argv = ['node', 'build.js', '--use-cache'];
+        await import('../build.js');
+
+        const {
+            compile: mockedCompile,
+            localOptimizationStatistics: mockedStats,
+        } = await import('@adguard/filters-compiler');
+        await vi.waitFor(() => {
+            expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
+        });
+        expect(vi.mocked(mockedStats.use)).not.toHaveBeenCalled();
+    });
+
     it('--use-cache with missing stats.json: printing the --download-stats hint and original message', async () => {
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
+        }));
+        vi.doMock('fs/promises', () => mockFsPromises({
+            readdir: vi.fn().mockResolvedValue([String(FILTER_ID)]),
+            readFile: vi.fn().mockResolvedValue(unscopedFlags),
         }));
 
         const VIRTUAL_STATS_PATH = '/tmp/stats.json';

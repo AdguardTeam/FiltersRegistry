@@ -1,9 +1,9 @@
-! Checksum: Wqv08IGgDZRMg3CQ0LOhaQ
-! Diff-Path: ../patches/121_optimized/121_optimized-s-1789763882-14400.patch
+! Checksum: H29CDs1frQXMUJ5lZvVnTQ
+! Diff-Path: ../patches/121_optimized/121_optimized-s-1790109801-14400.patch
 ! Title: Greek AdBlock Filter (Optimized)
 ! Description: Additional filter list for websites in Greek.
-! Version: 2.0.1.27
-! TimeUpdated: 2026-09-18T20:34:15+00:00
+! Version: 2.0.1.28
+! TimeUpdated: 2026-09-22T20:39:47+00:00
 ! Expires: 10 days (update frequency)
 ||2mdn.net/2629844/
 ||2810.gr/images/2810photo/pelates1/
@@ -89,6 +89,8 @@
 ||defencenet.gr/defence/images/banners/
 ||deliver.mediacdn.com/live24/itrofi-wide.jpg$image
 ||dev.realize.gr/temp/away.swf?*
+||diastixo.gr/images/banners$image
+||diastixo.gr/images/*-banner-*$image
 ||dikaiologitika.gr/images/banners/defence1.gif
 ||e-cannibals.gr/blog/wp-content/uploads/kanivaloiAD.jpg^
 ||e-cannibals.gr/blog/wp-content/uploads/sm_kanivaloiAD.jpg^
@@ -105,6 +107,11 @@
 ||egnatiapost.gr/images/banners/
 ||egob2.feed.gr/filesystem/images/20130927/low/*
 ||eleftheria.gr/IMAGES/BANNERS^
+||elniplex.com/*_BANNERS_*$image
+||elniplex.com/*/BANNER_*$image
+||elniplex.com/*banner_*$image
+||elniplex.com/*/dioptra_*$image
+||elniplex.com/*/mobile_popup_*.jpg$image
 ||emea.gr/banner.php
 ||emea.gr/ftp_files/
 ||enikos.gr/banners/bg/
@@ -568,6 +575,12 @@ derby.gr##A[href*="http://www.bet-at-home.com/"]
 dialogos.com.cy##a.adv-link
 dialogos.com.cy##a.notrack
 dialogos.com.cy##aside
+diastixo.gr#$?#.ifancybox-lock { overflow: auto !important; }
+diastixo.gr##.artspr
+diastixo.gr##.item-page > p:has(> a[href] > img[src*="banner"])
+diastixo.gr##.resmenu > li:has(> a[href="https://artspr.gr/"])
+diastixo.gr###yt_spotlight3
+diastixo.gr##div[id^="ads"]
 dokari.gr##.side
 dokari.gr##.static
 dwrean.net##a[href="http://www.kratisinow.gr"]
@@ -605,6 +618,10 @@ eleftheria.gr##[src*="/banners/"]
 eleftheria.gr##div.title.sp-module:nth-of-type(5)
 eleftherostypos.gr##.ads-after-article-body
 elektronikosanagnostis.blogspot.com###crosscol-overflow
+elniplex.com##.elementor-popup-modal
+elniplex.com##.cent-ad
+elniplex.com##.tdc-row:has(.wpb_wrapper > .td-a-rec .n2_clear)
+elniplex.com##[id^="divFLRA"]
 emvolos.gr###text-10
 emvolos.gr###text-16
 emvolos.gr##.td_block_widget
@@ -968,7 +985,6 @@ pcsteps.gr###text-65
 pcsteps.gr##div.single-subscribe-block
 philenews.com##aside
 pitsirikos.net###text-19
-player.real.gr##.advertisement
 politic.gr##.code-block
 politic.gr##.sticky-sidebar
 politic.gr###ad-container
@@ -1005,6 +1021,7 @@ queen.gr##.wide-banner
 real.gr###realTopBanner
 real.gr###realTopBannerGap
 real.gr##.banner-wrapper
+real.gr##.advertisement
 realestatenews.gr###right_col
 realestatenews.gr##.gk_tab_container0-style1
 realestatenews.gr##.gk_tab_wrap-style1
