@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.92.76",
-			"timeUpdated": "2026-09-24T17:05:21+0000",
+			"version": "2.4.92.77",
+			"timeUpdated": "2026-09-24T18:06:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.29",
-			"timeUpdated": "2026-09-24T16:11:13+0000",
+			"version": "2.0.72.30",
+			"timeUpdated": "2026-09-24T18:07:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -814,56 +814,6 @@
 				10
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/25.txt"
-		},
-		{
-			"filterId": 26,
-			"name": "AdGuard Italian filter",
-			"description": "EasyList Italy + AdGuard Italian filter. Filter list that specifically removes ads on websites in the Italian language.",
-			"timeAdded": "2026-09-17T11:02:06+0000",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 864000,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/26.txt",
-			"trustLevel": "full",
-			"version": "2.0.0.1",
-			"timeUpdated": "2026-09-24T12:08:01+0000",
-			"deprecated": false,
-			"languages": [
-				"it"
-			],
-			"tags": [
-				1,
-				10,
-				11,
-				35
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/26.txt"
-		},
-		{
-			"filterId": 27,
-			"name": "AdGuard Polish filter",
-			"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.",
-			"timeAdded": "2026-09-17T11:02:06+0000",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 864000,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/27.txt",
-			"trustLevel": "full",
-			"version": "2.0.0.2",
-			"timeUpdated": "2026-09-24T17:06:25+0000",
-			"deprecated": false,
-			"languages": [
-				"pl"
-			],
-			"tags": [
-				1,
-				10,
-				11,
-				41
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/27.txt"
 		},
 		{
 			"filterId": 103,
