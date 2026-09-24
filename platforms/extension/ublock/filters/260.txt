@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: TYZNn9F3L/PQ8PsgDeCGcQ
-! Diff-Path: ../patches/260/260-s-1790196211-14400.patch
+! Checksum: OzxUJ+X8/WCuys4x7ujBhQ
+! Diff-Path: ../patches/260/260-s-1790268337-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.12
-! TimeUpdated: 2026-09-23T20:40:48+00:00
+! Version: 2.0.2.14
+! TimeUpdated: 2026-09-24T16:42:52+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1586,6 +1586,15 @@ gitshare.me##.bg-brand\/5:has(>[href="/artifacts"])
 gitshare.me##section#artifacts
 gitshare.me##section.border-border:has(.text-brand[href="/readme-generator"])
 ! ===============
+! == GiveRadar ==
+! ===============
+! -- https://giveradar.com/
+! "Use GiveRadar with AI" button
+giveradar.com##.gr-ai-chip
+! -- https://giveradar.com/charity/the-trevor-project-inc/
+! "Ask AI" button on a charities page
+giveradar.com##div[x-data="{ showAi: false }"]
+! ===============
 ! == Glassdoor ==
 ! ===============
 ! -- https://www.glassdoor.com/Job/test-jobs-SRCH_KO0,4.htm
@@ -2308,6 +2317,31 @@ www.investopedia.com##.askmiso-ask-query-secondary
 ! -- https://www.ishopchangi.com/en/home
 ! Chatbot icon
 www.ishopchangi.com###chat-wrapper
+! ===============
+! == JetBrains ==
+! ===============
+! Header - Products - AI TOOLS section
+www.jetbrains.com##[data-test-marker="Products"] [data-test$="menu-column-title"]:contains("AI TOOLS"):upward(1)
+! Header - Products - JetBrains Air promo
+www.jetbrains.com##[data-test="main-submenu-banner"]:has(> [href="/air/"])
+! Header - For Business - "AI for teams" promo
+www.jetbrains.com##[data-test="main-submenu-banner"]:has(> [href="/agentic-software-development/"])
+! Header - For Business - "AI for teams and organizations" link
+www.jetbrains.com##[data-test="main-submenu-item"]:has(> [href="/agentic-software-development/"])
+! Header - Solutions - Jetbrains AI Solutions
+www.jetbrains.com##[data-test="main-submenu-item"]:has(> [href="/ai/"])
+! Footer - AI Section
+www.jetbrains.com##.jb-footer-catalog h2:contains(AI):upward(.jb-footer-catalog__item)
+! Footer - AI Agents Hub
+www.jetbrains.com##.jb-footer-catalog-links__item:has(> [href="/pages/ai-agents/"])
+! -- https://www.jetbrains.com/ (Landing page)
+! JetBrains Air promo
+www.jetbrains.com##div[class^="_hero_"]:has([type="button"][href="/air/"])
+! "Professional AI Coding" promo card
+www.jetbrains.com##a[href="/business/"][class^="_card_"]
+! -- https://jetbrains.com/ides/
+! "Natively integrated AI" section
+www.jetbrains.com##section:has(> div > #ai)
 ! ===========
 ! == Jimdo ==
 ! ===========
@@ -3009,6 +3043,8 @@ outlook.office.com##.fai-CopilotProvider
 ! -- https://academic.oup.com/
 ! "AI Discovery Assistant" by searchbar
 academic.oup.com##.ai
+! Header - Sparkle icon for AI assistant (mobile)
+academic.oup.com##.oup-header-menu-item:has(.navbar-ai-assistant-link)
 ! -- https://academic.oup.com/search-results?q=test
 ! "AI Discovery Assistant" in navbar
 academic.oup.com##.navbar-ai-assistant-container.navbar-menu
@@ -3960,6 +3996,13 @@ androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers
 app.vanta.com##[data-testid="global-vanta-ai-button"]
 ! Vanta agent in sidebar
 app.vanta.com###vanta-agent
+! ===============================
+! == Veldach Szczecin (Polish) ==
+! ===============================
+! Floating chat widget
+||widget.wenetasystent.ai/page/$subdocument,domain=www.veldach.com.pl
+www.veldach.com.pl##.assistant-widget-container
+www.veldach.com.pl##.assistant-widget-drawer-content
 ! ============
 ! == Vercel ==
 ! ============
