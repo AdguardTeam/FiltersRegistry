@@ -37,8 +37,10 @@ It's essential to import strings from the service before exporting them, as some
     CROWDIN_PERSONAL_TOKEN="YOURTOKEN" ./download-crowdin.sh
     ```
 
-    The script downloads translations for all configured locales and converts them into the repo
-    format under `locales/`.
+    The script downloads translations for all locales listed in `crowdin.yml`
+    (`export_languages`) and converts them into the repo format under `locales/`. `crowdin.yml` is
+    the only place that lists the locales: the script imports exactly the locale dirs the download
+    produces, so adding a language there is enough.
 
 1. **Validate Translations:**
 
