@@ -163,6 +163,13 @@ After completing any task that modifies code in `scripts/`:
     - Update the *Command Compatibility* section in `DEVELOPMENT.md`.
     - Never merge CLI changes without matching tests and documentation.
 
+9. **Coordinate new filters with the MV3 browser extension.** When adding a new filter
+   (new `filterId`), keep it out of the MV3 extension platforms (`ext_chromium_mv3`,
+   `ext_edge_mv3`, `ext_opera_mv3`) via `platformsExcluded` in its `metadata.json` until
+   `@adguard/dnr-rulesets` includes the new ruleset (`tasks/validator-data.json` and
+   related files updated) *and* an MV3 extension release bundling it has shipped.
+   See [DEVELOPMENT.md — Adding a New Filter](DEVELOPMENT.md#adding-a-new-filter).
+
 ## Code Guidelines
 
 ### Architecture
