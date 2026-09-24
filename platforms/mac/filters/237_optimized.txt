@@ -1,8 +1,8 @@
-! Checksum: zYGOe9GuyAfu1yfAS4d3nA
+! Checksum: bI11Hswknf068ArqaA5dPg
 ! Title: Polish Annoyances Filters (Optimized)
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.40.3
-! TimeUpdated: 2026-09-23T16:43:31+00:00
+! Version: 1.0.40.4
+! TimeUpdated: 2026-09-24T01:10:32+00:00
 ! Expires: 5 days (update frequency)
 ||app*.salesmanago.pl/cf/*/zapis_na_newsletter_$subdocument
 ||app.getresponse.com/site2/newsletter-zapisy/$subdocument
@@ -8329,7 +8329,7 @@ futurefarm24.pl###queryModalRODO
 gabinetodzaplecza.pl,high-med.pl,konferencja.amoz.edu.pl,modnepodlogi.pl,neuca.pl,odbiormieszkan.dekra.pl,symposium.pl,tipmedia.pl##.landend-infobar-light, .landend-infobar-dark
 gaj-stal.com,polonia.nl###pasek
 galaxy-centrum.pl###gdpr-window
-galgan.shop##.cookies-header
+galgan.shop,nomoreransom.org##.cookie-popup
 gamasalon.pl###scc
 gamasalon.pl###scc_powiadomienie
 gamedot.pl##.policy_warning
@@ -9215,7 +9215,6 @@ nobiles.pl##.cookies__alert
 noblehealth.pl##.cookie-promotion
 nokia.com,vertedrzwi.eu##.cookie_container
 nomi.pl##div#Messenger-Special
-nomoreransom.org##.cookie-popup
 nonsa.pl,nonsensopedia.org##.mw-cookiewarning-container
 nordglass.pl##.rodoBox--visible.rodoBox
 north.pl###cookie-offcanvas
@@ -10656,7 +10655,6 @@ pl/tcf/cookie.js$script,domain=pl
 ~pl##.modal-cookies.open:lang(pl)
 ~pl##a[href="javascript:CookieScript.instance.show()"]:lang(pl)
 ~pl##body > div#cookie[class=""]
-~pl##body:lang(pl):has(.cmplz-cookiebanner.cmplz-show)::before
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) #ck_dsclr:lang(pl)
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) div[id][class*="iai_cookie"]:lang(pl)
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) div[id^="ck_dsclr"][class*="ck_dsclr"]:lang(pl)
@@ -10667,16 +10665,11 @@ com###msccBanner:not(body, html)
 com##.cnil-banner-v2:not(body, html)
 com##.cnil-banner:not(body, html)
 com,eu,pl###cookie-notice:not(body, html)
+com,eu,pl##.cc-revoke:not(body, html)
 com,eu,pl##.cli-modal-backdrop
 com,eu,pl##.cli-popupbar-overlay
 com,eu,pl##body:not(.cli-barmodal-open) #cookie-law-info-again
 com,eu,pl##body:not(.cli-barmodal-open) #cookie-law-info-bar
-com,pl##.cc-revoke:not(body, html)
-eu,pl#$##cmplz-manage-consent:not(body, html) { display: none !important }
-eu,pl#$#body #cmplz-cookiebanner-container { display: none !important }
-eu,pl#$#body.cmplz-banner-active :not(.cmplz-cookiebanner):not(.cmplz-cookiebanner *) { filter: none !important; pointer-events: auto !important; user-select: auto !important }
-eu,pl#$#body:has(.cmplz-cookiebanner.cmplz-show) > :not(#cmplz-cookiebanner-container) { filter: none !important; pointer-events: auto !important; user-select: auto !important }
-eu,pl##body:has(.cmplz-cookiebanner.cmplz-show)::before
 org,pl##html:not(.i-amphtml-scroll-disabled) #amp-user-notification1
 org,pl##html:not(.i-amphtml-scroll-disabled) amp-consent
 pl###accept-cookies-question:not(body, html)
@@ -11147,7 +11140,7 @@ pl##.cookie-compliance-desk:not(body, html)
 pl##.cookie-compliance-message:not(body, html)
 pl##.cookie-compliance:not(body, html)
 pl##.cookie-consent-dialogue:not(body, html)
-pl##.cookie-consent:not(body, html, .paragraph)
+pl##.cookie-consent:not(body, html, .paragraph):not(:has(> .cookie-consent__summary[hidden]))
 pl##.cookie-container:not(body, html)
 pl##.cookie-container_:not(body, html)
 pl##.cookie-disclaimer:not(body, html)
@@ -11341,6 +11334,7 @@ pl##.wpgdprc-consent-bar:not(body, html)
 pl##.wrap-cookie-info:not(body, html)
 pl##[class*="cookie-policy"]:not(body, html)
 pl##[class^="box-cookie"]:not(body, html)
+pl#$#[data-cookie-consent]:not([hidden]) ~ .cookie-settings-trigger { display: block !important }
 pl##[id^="topInfo"]:not(body, html)
 pl##a[href*="javascript:CookieScript.instance.show()"]
 pl##aside[class*="Cookie"]
@@ -11480,10 +11474,12 @@ wolframalpha.com##footer ~ section
 ##.eu-cookie-bar-notification ~ .toggle-panel-overlay
 ##.manage-consent-button
 ##body.cky-cookie-visible::before
+##body:not(.cmplz-noscroll) :is(#cmplz-cookiebanner-container, #cmplz-manage-consent)
 ##body:not(.sf-lockscroll) .sf-consent
 #@##acceptCookie
 #@##ba_eu_cookie_law
 #@##ck_dsclr_v2
+#@##cmplz-cookiebanner-container
 #@##cookieBackdrop
 #@##cookieBanner
 #@##gdpr_consent
@@ -11541,8 +11537,6 @@ danio.com.pl#@#.cookies-modal:not(body):not(html)
 danio.com.pl#@#.cookies-text
 danio.com.pl,nat.pl,pl.genesis-zone.com#@##cookies-modal
 dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl#@#.cookie-statement
-dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl,sense7.eu,wskoczpokase.pl#@##cmplz-cookiebanner-container
-dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl,sense7.eu,wskoczpokase.pl#@##cmplz-manage-consent
 dpcraft.pl#@#.cookiesBackground
 dpcraft.pl#@#.cookiesPopup
 dpcraft.pl#@#div#cookiePopup
@@ -12369,7 +12363,7 @@ akademiasmaku.pl,contentstandard.pl,komerso.pl,mobileclick.pl,socialpress.pl#$#b
 al.to#%#//scriptlet('ubo-set-cookie', 'trackingPermissionValueCookie', 'true')
 al.to##div[class*="ReactModal_"]:has(a[href="/cookies"])
 al.to,autohero.com,dopesnow.com,kanga.exchange,la-le.pl,longines.com,otoagent.pl,paczki.zabka.pl,pointpack.pl,powiadomienia.gis.gov.pl,timsport.pl#$#body[style] { overflow-y: auto !important; padding-right: 0 !important }
-albamar.pl,azb-cuw.pl###cookies-modal, .modal-backdrop
+albamar.pl,azb-cuw.pl,pl.natec-zone.com###cookies-modal, .modal-backdrop
 albeco.com.pl#$##content { filter: none !important }
 albeco.com.pl###pol-background, #pol-c
 aldi.pl,cewe.pl,conrad.pl,country.db.com,dm.pl,festool.pl,foto.auchan.pl,fotojoker.pl,gerryweber.com,gigaset.com,handelextra.pl,harting.com,loberon.pl,lotto.pl,parfumdreams.pl,pinkorblue.pl,sharpconsumer.pl,traktorpool.pl,trefl.com###usercentrics-root
@@ -12626,7 +12620,12 @@ empik.com#$#:root.cookies-consent-component__prevent-scroll { overflow-y: auto !
 empik.com##body.cookies-consent-component__prevent-scroll #app > div[class$="-wrapper"]:has(> div[class$="-background"]:empty:first-child + div[class$="-containerInfo-CookiesConsentsBannerRodoHelper"]:last-child)
 empik.com##body.cookies-consent-component__prevent-scroll footer ~ div[class$="-wrapper"]:has(> div[class$="-background"]:empty:first-child + div[class$="-containerInfo-CookiesConsentsBannerRodoHelper"]:last-child)
 emuia1.gugik.gov.pl#%#//scriptlet('ubo-set-cookie', 'cookieMessageHide', 'true')
-entra.pl,grupabiwakowa.pl,nowymarketing.pl#%#//scriptlet('ubo-set-cookie', 'cmplz_banner-status', 'dismissed')
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com#%#//scriptlet('ubo-set-cookie', 'cmplz_banner-status', 'dismissed')
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com#%#//scriptlet('ubo-set-cookie', 'cmplz_functional', 'allow')
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com#%#//scriptlet('ubo-set-cookie', 'cmplz_marketing', 'allow')
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com#%#//scriptlet('ubo-set-cookie', 'cmplz_preferences', 'deny')
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com#%#//scriptlet('ubo-set-cookie', 'cmplz_statistics', 'deny')
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com##div#cmplz-cookiebanner-container
 epenta.pl###I6-cookieConsent
 epenta.pl,wagrowiecmiasto.konsultacjejst.pl#$#body.noscroll { overflow-y: auto !important }
 epicdrama.pl##.ui-modal[id^="modal_cookie"]
@@ -12639,7 +12638,6 @@ eschenker.dbschenker.com#$#.es-shell-global-scrollblock { overflow-y: auto !impo
 eschenker.dbschenker.com#$#[style*="pointer-events"][style*="none"] { pointer-events: auto !important }
 etsy.com###gdpr-single-choice-overlay
 etsy.com#$#:root > body[class*="body-no-scroll"] { position: static !important; overflow-y: auto !important; padding-right: 0 !important }
-eu,pl#@##cmplz-cookiebanner-container
 fabrykacukiernika.pl#$#.rodo-on { overflow-y: auto !important }
 fabrykacukiernika.pl##.rodo-popup
 fc.pl#$?#body > #container > #content > div:not([id]):not([class]):last-child:contains(plików cookies) > * { color: initial }
@@ -12684,9 +12682,6 @@ gitara-sklep.pl#$#body { padding-top: 0 !important }
 gmina-aleksandrow.pl,grabow.pl,raciazek.pl###g_toplayer
 gomez.pl###cookieModalInfo, .modal-backdrop
 goonline.bnpparibas.pl#%#//scriptlet('ubo-set-local-storage-item', 'cookie-policy-accept-date', 'true')
-grupabiwakowa.pl##div#cmplz-cookiebanner-container
-grupabiwakowa.pl,nowymarketing.pl#%#//scriptlet('ubo-set-cookie', 'cmplz_functional', 'allow')
-grupabiwakowa.pl,nowymarketing.pl#%#//scriptlet('ubo-set-cookie', 'cmplz_marketing', 'allow')
 grupapsb.com.pl###js_CookiesHeader
 grupapsb.com.pl#$#.cookies-glass-overlay { overflow-y: auto !important }
 grupapsb.com.pl,mrowka.com.pl#%#//scriptlet('ubo-set-local-storage-item', 'CookiesAcceptedv2', 'true')
@@ -12804,6 +12799,8 @@ m.leroymerlin.pl#?#.ReactModalPortal:contains(Polityka prywatności)
 m.leroymerlin.pl#$#body.drawer-is-open, body.ReactModal__Body--open { overflow-y: auto !important }
 magboss.pl#?#footer ~ div[class]:has(h1:contains(o plikach Cookie))
 mago.com###yl-popup-wrapper-popupRodo, #yl-popup-shadow-popupRodo
+makeup.pl###GDPR
+makeup.pl#$#:root[class*=" "], :root[class*=" "] body { overflow-y: auto !important; touch-action: auto !important; overscroll-behavior: auto !important }
 makro.pl##.cookie-law-modal
 mapa.szukacz.pl#%#//scriptlet('ubo-set-cookie', 'gdprid', '1')
 mapy.geoportal.gov.pl#%#//scriptlet('ubo-set-cookie', 'regulationsAccepted', 'true')
@@ -12883,8 +12880,6 @@ neon24.pl#%#//scriptlet('ubo-aopr', 'Service.cookieMonster')
 neopak.pl,zawojski.pl##.privacy-box-visible .privacy-box
 nike.com#$#.nds-no-scroll { overflow-y: auto !important }
 nike.com##div#modal-root:has(> div > div > div > div > .cookie-dialog-base)
-nowymarketing.pl#%#//scriptlet('ubo-set-cookie', 'cmplz_preferences', 'deny')
-nowymarketing.pl#%#//scriptlet('ubo-set-cookie', 'cmplz_statistics', 'deny')
 obpon.pl#$#.menu-flashmessages { top: 0 !important }
 obywatel.gov.pl###modal-rodo, .modal-backdrop
 odrabiamy.pl##.rodo-modal-blur
@@ -12944,6 +12939,7 @@ pl.dbcargo.com#%#//scriptlet('ubo-set-cookie', 'consent_matomo', '0')
 pl.factcool.com#%#//scriptlet('ubo-set-cookie', 'cookieconsent_dismissed', 'yes')
 pl.kruk.eu##.cookie-agreement
 pl.kruk.eu#$#.cookie-open { position: static !important }
+pl.natec-zone.com#$#.cookies__modal-open { overflow: auto !important }
 pl.pinterest.com##:root > body > div[class]:has(span > a[href*="/policy/cookie"])
 pl.pinterest.com#$#:root:not([style]) body[style] { overflow-y: auto !important; margin-inline-end: 0 !important }
 pl.tommy.com#$#.cookie-notice { visibility: hidden !important }

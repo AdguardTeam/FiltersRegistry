@@ -1,9 +1,9 @@
-! Checksum: M9XtBgFTaAMeTZ4X2c/LAQ
-! Diff-Path: ../patches/237_optimized/237_optimized-s-1790182001-14400.patch
+! Checksum: B3dYz3yISqvG6H6LkMnr/Q
+! Diff-Path: ../patches/237_optimized/237_optimized-s-1790212408-14400.patch
 ! Title: Polish Annoyances Filters (Optimized)
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.40.3
-! TimeUpdated: 2026-09-23T16:43:31+00:00
+! Version: 1.0.40.4
+! TimeUpdated: 2026-09-24T01:10:32+00:00
 ! Expires: 5 days (update frequency)
 ||app*.salesmanago.pl/cf/*/zapis_na_newsletter_$subdocument
 ||app.getresponse.com/site2/newsletter-zapisy/$subdocument
@@ -8330,7 +8330,7 @@ futurefarm24.pl###queryModalRODO
 gabinetodzaplecza.pl,high-med.pl,konferencja.amoz.edu.pl,modnepodlogi.pl,neuca.pl,odbiormieszkan.dekra.pl,symposium.pl,tipmedia.pl##.landend-infobar-light, .landend-infobar-dark
 gaj-stal.com,polonia.nl###pasek
 galaxy-centrum.pl###gdpr-window
-galgan.shop##.cookies-header
+galgan.shop,nomoreransom.org##.cookie-popup
 gamasalon.pl###scc
 gamasalon.pl###scc_powiadomienie
 gamedot.pl##.policy_warning
@@ -9216,7 +9216,6 @@ nobiles.pl##.cookies__alert
 noblehealth.pl##.cookie-promotion
 nokia.com,vertedrzwi.eu##.cookie_container
 nomi.pl##div#Messenger-Special
-nomoreransom.org##.cookie-popup
 nonsa.pl,nonsensopedia.org##.mw-cookiewarning-container
 nordglass.pl##.rodoBox--visible.rodoBox
 north.pl###cookie-offcanvas
@@ -10648,7 +10647,6 @@ pl/tcf/cookie.js$script,domain=pl
 ~pl##.modal-cookies.open:lang(pl)
 ~pl##a[href="javascript:CookieScript.instance.show()"]:lang(pl)
 ~pl##body > div#cookie[class=""]
-~pl##body:lang(pl):has(.cmplz-cookiebanner.cmplz-show)::before
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) #ck_dsclr:lang(pl)
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) div[id][class*="iai_cookie"]:lang(pl)
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) div[id^="ck_dsclr"][class*="ck_dsclr"]:lang(pl)
@@ -10659,16 +10657,11 @@ com###msccBanner:not(body, html)
 com##.cnil-banner-v2:not(body, html)
 com##.cnil-banner:not(body, html)
 com,eu,pl###cookie-notice:not(body, html)
+com,eu,pl##.cc-revoke:not(body, html)
 com,eu,pl##.cli-modal-backdrop
 com,eu,pl##.cli-popupbar-overlay
 com,eu,pl##body:not(.cli-barmodal-open) #cookie-law-info-again
 com,eu,pl##body:not(.cli-barmodal-open) #cookie-law-info-bar
-com,pl##.cc-revoke:not(body, html)
-eu,pl#$##cmplz-manage-consent:not(body, html) { display: none !important }
-eu,pl#$#body #cmplz-cookiebanner-container { display: none !important }
-eu,pl#$#body.cmplz-banner-active :not(.cmplz-cookiebanner):not(.cmplz-cookiebanner *) { filter: none !important; pointer-events: auto !important; user-select: auto !important }
-eu,pl#$#body:has(.cmplz-cookiebanner.cmplz-show) > :not(#cmplz-cookiebanner-container) { filter: none !important; pointer-events: auto !important; user-select: auto !important }
-eu,pl##body:has(.cmplz-cookiebanner.cmplz-show)::before
 org,pl##html:not(.i-amphtml-scroll-disabled) #amp-user-notification1
 org,pl##html:not(.i-amphtml-scroll-disabled) amp-consent
 pl###accept-cookies-question:not(body, html)
@@ -11139,7 +11132,7 @@ pl##.cookie-compliance-desk:not(body, html)
 pl##.cookie-compliance-message:not(body, html)
 pl##.cookie-compliance:not(body, html)
 pl##.cookie-consent-dialogue:not(body, html)
-pl##.cookie-consent:not(body, html, .paragraph)
+pl##.cookie-consent:not(body, html, .paragraph):not(:has(> .cookie-consent__summary[hidden]))
 pl##.cookie-container:not(body, html)
 pl##.cookie-container_:not(body, html)
 pl##.cookie-disclaimer:not(body, html)
@@ -11333,6 +11326,7 @@ pl##.wpgdprc-consent-bar:not(body, html)
 pl##.wrap-cookie-info:not(body, html)
 pl##[class*="cookie-policy"]:not(body, html)
 pl##[class^="box-cookie"]:not(body, html)
+pl#$#[data-cookie-consent]:not([hidden]) ~ .cookie-settings-trigger { display: block !important }
 pl##[id^="topInfo"]:not(body, html)
 pl##a[href*="javascript:CookieScript.instance.show()"]
 pl##aside[class*="Cookie"]
@@ -11472,10 +11466,12 @@ wolframalpha.com##footer ~ section
 ##.eu-cookie-bar-notification ~ .toggle-panel-overlay
 ##.manage-consent-button
 ##body.cky-cookie-visible::before
+##body:not(.cmplz-noscroll) :is(#cmplz-cookiebanner-container, #cmplz-manage-consent)
 ##body:not(.sf-lockscroll) .sf-consent
 #@##acceptCookie
 #@##ba_eu_cookie_law
 #@##ck_dsclr_v2
+#@##cmplz-cookiebanner-container
 #@##cookieBackdrop
 #@##cookieBanner
 #@##gdpr_consent
@@ -11533,8 +11529,6 @@ danio.com.pl#@#.cookies-modal:not(body):not(html)
 danio.com.pl#@#.cookies-text
 danio.com.pl,nat.pl,pl.genesis-zone.com#@##cookies-modal
 dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl#@#.cookie-statement
-dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl,sense7.eu,wskoczpokase.pl#@##cmplz-cookiebanner-container
-dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl,sense7.eu,wskoczpokase.pl#@##cmplz-manage-consent
 dpcraft.pl#@#.cookiesBackground
 dpcraft.pl#@#.cookiesPopup
 dpcraft.pl#@#div#cookiePopup
