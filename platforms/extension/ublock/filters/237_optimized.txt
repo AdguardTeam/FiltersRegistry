@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1ojtueBaS0nKauvU4p1xLA
-! Diff-Path: ../patches/237_optimized/237_optimized-s-1790181998-14400.patch
+! Checksum: Z32aw7hDyhjLjYm5Tf9J6Q
+! Diff-Path: ../patches/237_optimized/237_optimized-s-1790212404-14400.patch
 ! Title: Polish Annoyances Filters (Optimized)
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.40.3
-! TimeUpdated: 2026-09-23T16:43:31+00:00
+! Version: 1.0.40.4
+! TimeUpdated: 2026-09-24T01:10:32+00:00
 ! Expires: 5 days (update frequency)
 ||app*.salesmanago.pl/cf/*/zapis_na_newsletter_$subdocument
 ||app.getresponse.com/site2/newsletter-zapisy/$subdocument
@@ -8331,7 +8331,7 @@ futurefarm24.pl###queryModalRODO
 gabinetodzaplecza.pl,high-med.pl,konferencja.amoz.edu.pl,modnepodlogi.pl,neuca.pl,odbiormieszkan.dekra.pl,symposium.pl,tipmedia.pl##.landend-infobar-light, .landend-infobar-dark
 gaj-stal.com,polonia.nl###pasek
 galaxy-centrum.pl###gdpr-window
-galgan.shop##.cookies-header
+galgan.shop,nomoreransom.org##.cookie-popup
 gamasalon.pl###scc
 gamasalon.pl###scc_powiadomienie
 gamedot.pl##.policy_warning
@@ -9217,7 +9217,6 @@ nobiles.pl##.cookies__alert
 noblehealth.pl##.cookie-promotion
 nokia.com,vertedrzwi.eu##.cookie_container
 nomi.pl##div#Messenger-Special
-nomoreransom.org##.cookie-popup
 nonsa.pl,nonsensopedia.org##.mw-cookiewarning-container
 nordglass.pl##.rodoBox--visible.rodoBox
 north.pl###cookie-offcanvas
@@ -10658,7 +10657,6 @@ pl/tcf/cookie.js$script,domain=pl
 ~pl##.modal-cookies.open:lang(pl)
 ~pl##a[href="javascript:CookieScript.instance.show()"]:lang(pl)
 ~pl##body > div#cookie[class=""]
-~pl##body:lang(pl):has(.cmplz-cookiebanner.cmplz-show)::before
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) #ck_dsclr:lang(pl)
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) div[id][class*="iai_cookie"]:lang(pl)
 ~pl##body:not([class*="cookie-overflow"], [class*="freeze_bcg"]) div[id^="ck_dsclr"][class*="ck_dsclr"]:lang(pl)
@@ -10669,16 +10667,11 @@ com###msccBanner:not(body, html)
 com##.cnil-banner-v2:not(body, html)
 com##.cnil-banner:not(body, html)
 com,eu,pl###cookie-notice:not(body, html)
+com,eu,pl##.cc-revoke:not(body, html)
 com,eu,pl##.cli-modal-backdrop
 com,eu,pl##.cli-popupbar-overlay
 com,eu,pl##body:not(.cli-barmodal-open) #cookie-law-info-again
 com,eu,pl##body:not(.cli-barmodal-open) #cookie-law-info-bar
-com,pl##.cc-revoke:not(body, html)
-eu,pl###cmplz-manage-consent:not(body, html):style(display: none !important)
-eu,pl##body #cmplz-cookiebanner-container:style(display: none !important)
-eu,pl##body.cmplz-banner-active :not(.cmplz-cookiebanner):not(.cmplz-cookiebanner *):style(filter: none !important; pointer-events: auto !important; user-select: auto !important)
-eu,pl##body:has(.cmplz-cookiebanner.cmplz-show) > :not(#cmplz-cookiebanner-container):style(filter: none !important; pointer-events: auto !important; user-select: auto !important)
-eu,pl##body:has(.cmplz-cookiebanner.cmplz-show)::before
 org,pl##html:not(.i-amphtml-scroll-disabled) #amp-user-notification1
 org,pl##html:not(.i-amphtml-scroll-disabled) amp-consent
 pl###accept-cookies-question:not(body, html)
@@ -11149,7 +11142,7 @@ pl##.cookie-compliance-desk:not(body, html)
 pl##.cookie-compliance-message:not(body, html)
 pl##.cookie-compliance:not(body, html)
 pl##.cookie-consent-dialogue:not(body, html)
-pl##.cookie-consent:not(body, html, .paragraph)
+pl##.cookie-consent:not(body, html, .paragraph):not(:has(> .cookie-consent__summary[hidden]))
 pl##.cookie-container:not(body, html)
 pl##.cookie-container_:not(body, html)
 pl##.cookie-disclaimer:not(body, html)
@@ -11343,6 +11336,7 @@ pl##.wpgdprc-consent-bar:not(body, html)
 pl##.wrap-cookie-info:not(body, html)
 pl##[class*="cookie-policy"]:not(body, html)
 pl##[class^="box-cookie"]:not(body, html)
+pl##[data-cookie-consent]:not([hidden]) ~ .cookie-settings-trigger:style(display: block !important)
 pl##[id^="topInfo"]:not(body, html)
 pl##a[href*="javascript:CookieScript.instance.show()"]
 pl##aside[class*="Cookie"]
@@ -11482,10 +11476,12 @@ wolframalpha.com##footer ~ section
 ##.eu-cookie-bar-notification ~ .toggle-panel-overlay
 ##.manage-consent-button
 ##body.cky-cookie-visible::before
+##body:not(.cmplz-noscroll) :is(#cmplz-cookiebanner-container, #cmplz-manage-consent)
 ##body:not(.sf-lockscroll) .sf-consent
 #@##acceptCookie
 #@##ba_eu_cookie_law
 #@##ck_dsclr_v2
+#@##cmplz-cookiebanner-container
 #@##cookieBackdrop
 #@##cookieBanner
 #@##gdpr_consent
@@ -11543,8 +11539,6 @@ danio.com.pl#@#.cookies-modal:not(body):not(html)
 danio.com.pl#@#.cookies-text
 danio.com.pl,nat.pl,pl.genesis-zone.com#@##cookies-modal
 dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl#@#.cookie-statement
-dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl,sense7.eu,wskoczpokase.pl#@##cmplz-cookiebanner-container
-dji-polska.pl,grupabiwakowa.pl,mamstartup.pl,nowymarketing.pl,sense7.eu,wskoczpokase.pl#@##cmplz-manage-consent
 dpcraft.pl#@#.cookiesBackground
 dpcraft.pl#@#.cookiesPopup
 dpcraft.pl#@#div#cookiePopup
@@ -12313,7 +12307,7 @@ akademiasmaku.pl,contentstandard.pl,komerso.pl,mobileclick.pl,socialpress.pl##bo
 al.to##+js(set-cookie, trackingPermissionValueCookie, true)
 al.to##div[class*="ReactModal_"]:has(a[href="/cookies"])
 al.to,autohero.com,dopesnow.com,kanga.exchange,la-le.pl,longines.com,otoagent.pl,paczki.zabka.pl,pointpack.pl,powiadomienia.gis.gov.pl,timsport.pl##body[style]:style(overflow-y: auto !important; padding-right: 0 !important)
-albamar.pl,azb-cuw.pl###cookies-modal, .modal-backdrop
+albamar.pl,azb-cuw.pl,pl.natec-zone.com###cookies-modal, .modal-backdrop
 albeco.com.pl###content:style(filter: none !important)
 albeco.com.pl###pol-background, #pol-c
 aldi.pl,cewe.pl,conrad.pl,country.db.com,dm.pl,festool.pl,foto.auchan.pl,fotojoker.pl,gerryweber.com,gigaset.com,handelextra.pl,harting.com,loberon.pl,lotto.pl,parfumdreams.pl,pinkorblue.pl,sharpconsumer.pl,traktorpool.pl,trefl.com###usercentrics-root
@@ -12570,7 +12564,12 @@ empik.com##:root.cookies-consent-component__prevent-scroll:style(overflow-y: aut
 empik.com##body.cookies-consent-component__prevent-scroll #app > div[class$="-wrapper"]:has(> div[class$="-background"]:empty:first-child + div[class$="-containerInfo-CookiesConsentsBannerRodoHelper"]:last-child)
 empik.com##body.cookies-consent-component__prevent-scroll footer ~ div[class$="-wrapper"]:has(> div[class$="-background"]:empty:first-child + div[class$="-containerInfo-CookiesConsentsBannerRodoHelper"]:last-child)
 emuia1.gugik.gov.pl##+js(set-cookie, cookieMessageHide, true)
-entra.pl,grupabiwakowa.pl,nowymarketing.pl##+js(set-cookie, cmplz_banner-status, dismissed)
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com##+js(set-cookie, cmplz_banner-status, dismissed)
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com##+js(set-cookie, cmplz_functional, allow)
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com##+js(set-cookie, cmplz_marketing, allow)
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com##+js(set-cookie, cmplz_preferences, deny)
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com##+js(set-cookie, cmplz_statistics, deny)
+entra.pl,grupabiwakowa.pl,nowymarketing.pl,ollopetfood.com##div#cmplz-cookiebanner-container
 epenta.pl###I6-cookieConsent
 epenta.pl,wagrowiecmiasto.konsultacjejst.pl##body.noscroll:style(overflow-y: auto !important)
 epicdrama.pl##.ui-modal[id^="modal_cookie"]
@@ -12583,7 +12582,6 @@ eschenker.dbschenker.com##.es-shell-global-scrollblock:style(overflow-y: auto !i
 eschenker.dbschenker.com##[style*="pointer-events"][style*="none"]:style(pointer-events: auto !important)
 etsy.com###gdpr-single-choice-overlay
 etsy.com##:root > body[class*="body-no-scroll"]:style(position: static !important; overflow-y: auto !important; padding-right: 0 !important)
-eu,pl#@##cmplz-cookiebanner-container
 fabrykacukiernika.pl##.rodo-on:style(overflow-y: auto !important)
 fabrykacukiernika.pl##.rodo-popup
 fc.pl##body > #container > #content > div:not([id]):not([class]):last-child:contains(plików cookies) > *:style(color: initial)
@@ -12628,9 +12626,6 @@ gitara-sklep.pl##body:style(padding-top: 0 !important)
 gmina-aleksandrow.pl,grabow.pl,raciazek.pl###g_toplayer
 gomez.pl###cookieModalInfo, .modal-backdrop
 goonline.bnpparibas.pl##+js(set-local-storage-item, cookie-policy-accept-date, true)
-grupabiwakowa.pl##div#cmplz-cookiebanner-container
-grupabiwakowa.pl,nowymarketing.pl##+js(set-cookie, cmplz_functional, allow)
-grupabiwakowa.pl,nowymarketing.pl##+js(set-cookie, cmplz_marketing, allow)
 grupapsb.com.pl###js_CookiesHeader
 grupapsb.com.pl##.cookies-glass-overlay:style(overflow-y: auto !important)
 grupapsb.com.pl,mrowka.com.pl##+js(set-local-storage-item, CookiesAcceptedv2, true)
@@ -12748,6 +12743,8 @@ m.leroymerlin.pl##.ReactModalPortal:contains(Polityka prywatności)
 m.leroymerlin.pl##body.drawer-is-open, body.ReactModal__Body--open:style(overflow-y: auto !important)
 magboss.pl##footer ~ div[class]:has(h1:contains(o plikach Cookie))
 mago.com###yl-popup-wrapper-popupRodo, #yl-popup-shadow-popupRodo
+makeup.pl###GDPR
+makeup.pl##:root[class*=" "], :root[class*=" "] body:style(overflow-y: auto !important; touch-action: auto !important; overscroll-behavior: auto !important)
 makro.pl##.cookie-law-modal
 mapa.szukacz.pl##+js(set-cookie, gdprid, 1)
 mapy.geoportal.gov.pl##+js(set-cookie, regulationsAccepted, true)
@@ -12827,8 +12824,6 @@ neon24.pl##+js(aopr, Service.cookieMonster)
 neopak.pl,zawojski.pl##.privacy-box-visible .privacy-box
 nike.com##.nds-no-scroll:style(overflow-y: auto !important)
 nike.com##div#modal-root:has(> div > div > div > div > .cookie-dialog-base)
-nowymarketing.pl##+js(set-cookie, cmplz_preferences, deny)
-nowymarketing.pl##+js(set-cookie, cmplz_statistics, deny)
 obpon.pl##.menu-flashmessages:style(top: 0 !important)
 obywatel.gov.pl###modal-rodo, .modal-backdrop
 odrabiamy.pl##.rodo-modal-blur
@@ -12888,6 +12883,7 @@ pl.dbcargo.com##+js(set-cookie, consent_matomo, 0)
 pl.factcool.com##+js(set-cookie, cookieconsent_dismissed, yes)
 pl.kruk.eu##.cookie-agreement
 pl.kruk.eu##.cookie-open:style(position: static !important)
+pl.natec-zone.com##.cookies__modal-open:style(overflow: auto !important)
 pl.pinterest.com##:root > body > div[class]:has(span > a[href*="/policy/cookie"])
 pl.pinterest.com##:root:not([style]) body[style]:style(overflow-y: auto !important; margin-inline-end: 0 !important)
 pl.tommy.com##.cookie-notice:style(visibility: hidden !important)
@@ -13240,6 +13236,14 @@ purepc.pl##.cookiesinfo:remove()
 ||cdn.cookielaw.org^$important,redirect=noop.js,script,domain=open.spotify.com
 4fund.com##+js(set-cookie-reload, cookie_preferences, true, , dontOverwrite, 1)
 biuroprasowe.porta.com.pl##+js(set-cookie-reload, cookies-agreement, true, , dontOverwrite, 1)
+com,eu,pl###cmplz-manage-consent:not(body, html)
+com,eu,pl##body #cmplz-cookiebanner-container
+com,eu,pl##body .cmplz-cookiebanner.cmplz-show:remove()
+com,eu,pl##body.cmplz-noscroll:style(overflow-y: auto !important; padding-right: 0 !important; margin-right: 0 !important)
+com,eu,pl##body[class*="shop" i] div.consents
+com,eu,pl##body[style*="overflow"][style*="padding"]:has(h-portal-target .consents-modal [aria-label="Ustawienia plików cookies"]):style(overflow-y: auto !important; padding-right: 0 !important)
+com,eu,pl##h-backdrop
+com,eu,pl##h-portal-target:has(.consents-modal [aria-label="Ustawienia plików cookies"])
 doz.pl##+js(set-cookie-reload, consent-granted, 1)
 espedytor.pl##+js(set-cookie-reload, zgodaRODO, true)
 kts.weszlo.com##+js(set-cookie-reload, cookiesActive, false)
@@ -13251,9 +13255,9 @@ plenti.app##.fixed:empty
 plenti.app##div[role="dialog"].fixed:has(a[href*="/pl/terms/regulamin/"])
 ubi2.wit.edu.pl##+js(set-cookie-reload, GPRD, 128)
 www.zus.pl##:matches-path(/ezus/ustawienia-polityki-cookies) .p-dialog-mask-scrollblocker:has(> .cookie-consent-modal):style(display: flex !important)
-aedmax24.pl,agro-ogrodniczy.pl,agroapteka.pl,alltronix.pl,amb.net.pl,amled.pl,arenalazienek.pl,audiotop.pl,bakeshop.pl,balneokosmetyki.pl,bike-rs.pl,biosklep.com.pl,blosmi.com,camtrade.com.pl,cebit.pl,centrumgrodzenia.pl,cerfarsklep.pl,cicius.pl,cleanmed.com.pl,csk-med.pl,cyrulicy.pl,dekomotyw.pl,deluxury.pl,dlabrodacza.pl,dlagentlemana.pl,dobre-zamki.pl,dobreliski.pl,drogbit.pl,dropply.pl,e-dewocjonalia.eu,e-hortico.pl,ebratek.pl,eco-serwet.pl,ecobella.pl,ekosynergia.sklep.pl,estetic-dent-sklep.pl,ettiene.pl,fhgerman.pl,filatelistyczny.pl,filtrdodomu.pl,fitness-home.pl,fly-desk.com,fragrant.pl,friser.pl,gbs.pl,gps.lodz.pl,granitnaturalny.pl,groszekdt.pl,herbataikawa.pl,homeandgarden24.pl,hurtzniczy.pl,huzaro.pl,icentrumsklep.pl,italwaxpolska.pl,japoniacentralna.pl,jarmarknatury.pl,kim24.pl,klamki-drzwiowe.com,koreahouse.pl,kozak.pl,kreatorium.com,kupujdrzwi.pl,kwiatowapokusa.com,lian-art.pl,lidia.pl,lignum-sklep.pl,mchome.pl,meble.expert,megasam24.pl,mikavi.sklep.pl,militarymarket.pl,miodykrupiec.pl,modnakiecka.pl,morowo.com.pl,moskitiery-sklep.pl,mozz.com.pl,mr-gadzet.pl,ms70.pl,mykorea.pl,nadrogi.pl,najlepsze-alkomaty.pl,ogrodolandia.pl,olko24.pl,pamietaj.sklep.pl,pandawanda.pl,perfektmarket.com.pl,pergo24.pl,planszostrefa.pl,plus-market.pl,pomadziarz.pl,pracowniaozdob.pl,profil-hurt.pl,prorowery.pl,przetwory.com,przywarski.pl,questsport.shop,r-kom.pl,rajogrodnika.pl,rebelelectro.com,remedial.sklep.pl,retio.pl,rmdbike.com,ronomed.com.pl,segal.pl,shop.tagatic.com,sioubiz.pl,skarbyroztocza.com,skarpetkowyszop.pl,sklep.fresso.pl,sklep.rolmat.pl,sklep.sigmaagro.pl,sklep.slawex24.pl,sklep.zniczebartek.pl,sklepdrogowy.pl,sklepkawa.pl,sklepsativa.pl,sklepsoltech.pl,sklepzycia.pl,softmm.com.pl,srodki-czystosci.eu,stalowelove.com.pl,stylion.pl,suprabike.pl,swiatmuzyki-sklep.pl,szczoteczki24.pl,taniauprawa.pl,teesa.pl,terjansklep.com.pl,torbygospodarcze.pl,traffx.pl,traktorki.com,traumakit.pl,trigar.pl,wideorejestratory24.pl,wimetoznakowanie.pl,winbudkosztorys.pl,wkdzik.pl,wlodekrysuje.com,yummo.pl,zegarkinareke.pl,zenwire.eu,znakidrogowe24.pl##+js(set-local-storage-item, show_consent_modal, 1)
-aedmax24.pl,agro-ogrodniczy.pl,agroapteka.pl,alltronix.pl,amb.net.pl,amled.pl,arenalazienek.pl,audiotop.pl,bakeshop.pl,balneokosmetyki.pl,bike-rs.pl,biosklep.com.pl,blosmi.com,camtrade.com.pl,cebit.pl,centrumgrodzenia.pl,cerfarsklep.pl,cicius.pl,cleanmed.com.pl,csk-med.pl,cyrulicy.pl,dekomotyw.pl,deluxury.pl,dlabrodacza.pl,dlagentlemana.pl,dobre-zamki.pl,dobreliski.pl,drogbit.pl,dropply.pl,e-dewocjonalia.eu,e-hortico.pl,ebratek.pl,eco-serwet.pl,ecobella.pl,ekosynergia.sklep.pl,estetic-dent-sklep.pl,ettiene.pl,fhgerman.pl,filatelistyczny.pl,filtrdodomu.pl,fitness-home.pl,fly-desk.com,fragrant.pl,friser.pl,gbs.pl,gps.lodz.pl,granitnaturalny.pl,groszekdt.pl,herbataikawa.pl,homeandgarden24.pl,hurtzniczy.pl,huzaro.pl,icentrumsklep.pl,italwaxpolska.pl,japoniacentralna.pl,jarmarknatury.pl,kim24.pl,klamki-drzwiowe.com,koreahouse.pl,kozak.pl,kreatorium.com,kupujdrzwi.pl,kwiatowapokusa.com,lian-art.pl,lidia.pl,lignum-sklep.pl,mchome.pl,meble.expert,megasam24.pl,mikavi.sklep.pl,militarymarket.pl,miodykrupiec.pl,modnakiecka.pl,morowo.com.pl,moskitiery-sklep.pl,mozz.com.pl,mr-gadzet.pl,ms70.pl,mykorea.pl,nadrogi.pl,najlepsze-alkomaty.pl,ogrodolandia.pl,olko24.pl,pamietaj.sklep.pl,pandawanda.pl,perfektmarket.com.pl,pergo24.pl,planszostrefa.pl,plus-market.pl,pomadziarz.pl,pracowniaozdob.pl,profil-hurt.pl,prorowery.pl,przetwory.com,przywarski.pl,questsport.shop,r-kom.pl,rajogrodnika.pl,rebelelectro.com,remedial.sklep.pl,retio.pl,rmdbike.com,ronomed.com.pl,segal.pl,shop.tagatic.com,sioubiz.pl,skarbyroztocza.com,skarpetkowyszop.pl,sklep.fresso.pl,sklep.rolmat.pl,sklep.sigmaagro.pl,sklep.slawex24.pl,sklep.zniczebartek.pl,sklepdrogowy.pl,sklepkawa.pl,sklepsativa.pl,sklepsoltech.pl,sklepzycia.pl,softmm.com.pl,srodki-czystosci.eu,stalowelove.com.pl,stylion.pl,suprabike.pl,swiatmuzyki-sklep.pl,szczoteczki24.pl,taniauprawa.pl,teesa.pl,terjansklep.com.pl,torbygospodarcze.pl,traffx.pl,traktorki.com,traumakit.pl,trigar.pl,wideorejestratory24.pl,wimetoznakowanie.pl,winbudkosztorys.pl,wkdzik.pl,wlodekrysuje.com,yummo.pl,zegarkinareke.pl,zenwire.eu,znakidrogowe24.pl##+js(set-local-storage-item, user_consents, [])
-aedmax24.pl,agro-ogrodniczy.pl,agroapteka.pl,alltronix.pl,amb.net.pl,amled.pl,arenalazienek.pl,audiotop.pl,bakeshop.pl,balneokosmetyki.pl,bike-rs.pl,biosklep.com.pl,blosmi.com,camtrade.com.pl,cebit.pl,centrumgrodzenia.pl,cerfarsklep.pl,cicius.pl,cleanmed.com.pl,csk-med.pl,cyrulicy.pl,dekomotyw.pl,deluxury.pl,dlabrodacza.pl,dlagentlemana.pl,dobre-zamki.pl,dobreliski.pl,drogbit.pl,dropply.pl,e-dewocjonalia.eu,e-hortico.pl,ebratek.pl,eco-serwet.pl,ecobella.pl,ekosynergia.sklep.pl,estetic-dent-sklep.pl,ettiene.pl,fhgerman.pl,filatelistyczny.pl,filtrdodomu.pl,fitness-home.pl,fly-desk.com,fragrant.pl,friser.pl,gbs.pl,gps.lodz.pl,granitnaturalny.pl,groszekdt.pl,herbataikawa.pl,homeandgarden24.pl,hurtzniczy.pl,huzaro.pl,icentrumsklep.pl,italwaxpolska.pl,japoniacentralna.pl,jarmarknatury.pl,kim24.pl,klamki-drzwiowe.com,koreahouse.pl,kozak.pl,kreatorium.com,kupujdrzwi.pl,kwiatowapokusa.com,lian-art.pl,lidia.pl,lignum-sklep.pl,mchome.pl,meble.expert,megasam24.pl,mikavi.sklep.pl,militarymarket.pl,miodykrupiec.pl,modnakiecka.pl,morowo.com.pl,moskitiery-sklep.pl,mozz.com.pl,mr-gadzet.pl,ms70.pl,mykorea.pl,nadrogi.pl,najlepsze-alkomaty.pl,ogrodolandia.pl,olko24.pl,pamietaj.sklep.pl,pandawanda.pl,perfektmarket.com.pl,pergo24.pl,planszostrefa.pl,plus-market.pl,pomadziarz.pl,pracowniaozdob.pl,profil-hurt.pl,prorowery.pl,przetwory.com,przywarski.pl,questsport.shop,r-kom.pl,rajogrodnika.pl,rebelelectro.com,remedial.sklep.pl,retio.pl,rmdbike.com,ronomed.com.pl,segal.pl,shop.tagatic.com,sioubiz.pl,skarbyroztocza.com,skarpetkowyszop.pl,sklep.fresso.pl,sklep.rolmat.pl,sklep.sigmaagro.pl,sklep.slawex24.pl,sklep.zniczebartek.pl,sklepdrogowy.pl,sklepkawa.pl,sklepsativa.pl,sklepsoltech.pl,sklepzycia.pl,softmm.com.pl,srodki-czystosci.eu,stalowelove.com.pl,stylion.pl,suprabike.pl,swiatmuzyki-sklep.pl,szczoteczki24.pl,taniauprawa.pl,teesa.pl,terjansklep.com.pl,torbygospodarcze.pl,traffx.pl,traktorki.com,traumakit.pl,trigar.pl,wideorejestratory24.pl,wimetoznakowanie.pl,winbudkosztorys.pl,wkdzik.pl,wlodekrysuje.com,yummo.pl,zegarkinareke.pl,zenwire.eu,znakidrogowe24.pl##a[href="#cookies-settings"]
+@@#cookies-settings$specifichide
+aedmax24.pl,agro-ogrodniczy.pl,agroapteka.pl,alltronix.pl,amb.net.pl,amled.pl,arenalazienek.pl,audiotop.pl,bakeshop.pl,balneokosmetyki.pl,bike-rs.pl,biosklep.com.pl,blosmi.com,camtrade.com.pl,cebit.pl,centrumgrodzenia.pl,cerfarsklep.pl,cicius.pl,cleanmed.com.pl,csk-med.pl,cyrulicy.pl,dekomotyw.pl,deluxury.pl,dlabrodacza.pl,dlagentlemana.pl,dobre-zamki.pl,dobreliski.pl,drogbit.pl,dropply.pl,e-dewocjonalia.eu,e-hortico.pl,ebratek.pl,eco-serwet.pl,ecobella.pl,ekosynergia.sklep.pl,estetic-dent-sklep.pl,ettiene.pl,fhgerman.pl,filatelistyczny.pl,filtrdodomu.pl,fitness-home.pl,fly-desk.com,fragrant.pl,friser.pl,gbs.pl,gps.lodz.pl,granitnaturalny.pl,groszekdt.pl,herbataikawa.pl,homeandgarden24.pl,hurtzniczy.pl,huzaro.pl,icentrumsklep.pl,italwaxpolska.pl,japoniacentralna.pl,jarmarknatury.pl,kim24.pl,klamki-drzwiowe.com,koreahouse.pl,kozak.pl,kreatorium.com,kupujdrzwi.pl,kwiatowapokusa.com,lian-art.pl,lidia.pl,lignum-sklep.pl,mchome.pl,meble.expert,megasam24.pl,mikavi.sklep.pl,militarymarket.pl,miodykrupiec.pl,modnakiecka.pl,morowo.com.pl,moskitiery-sklep.pl,mozz.com.pl,mr-gadzet.pl,ms70.pl,mykorea.pl,nadrogi.pl,najlepsze-alkomaty.pl,ogrodolandia.pl,olko24.pl,pamietaj.sklep.pl,pandawanda.pl,perfektmarket.com.pl,pergo24.pl,planszostrefa.pl,plus-market.pl,pomadziarz.pl,pracowniaozdob.pl,profil-hurt.pl,prorowery.pl,przetwory.com,przywarski.pl,questsport.shop,r-kom.pl,rajogrodnika.pl,rebelelectro.com,remedial.sklep.pl,retio.pl,rmdbike.com,ronomed.com.pl,segal.pl,shop.tagatic.com,sioubiz.pl,skarbyroztocza.com,skarpetkowyszop.pl,sklep.fresso.pl,sklep.gs.net.pl,sklep.rolmat.pl,sklep.sigmaagro.pl,sklep.slawex24.pl,sklep.zniczebartek.pl,sklepdrogowy.pl,sklepkawa.pl,sklepsativa.pl,sklepsoltech.pl,sklepzycia.pl,softmm.com.pl,srodki-czystosci.eu,stalowelove.com.pl,stylion.pl,suprabike.pl,swiatmuzyki-sklep.pl,szczoteczki24.pl,taniauprawa.pl,teesa.pl,terjansklep.com.pl,torbygospodarcze.pl,traffx.pl,traktorki.com,traumakit.pl,trigar.pl,wideorejestratory24.pl,wimetoznakowanie.pl,winbudkosztorys.pl,wkdzik.pl,wlodekrysuje.com,yummo.pl,zegarkinareke.pl,zenwire.eu,znakidrogowe24.pl##+js(set-local-storage-item, show_consent_modal, 1)
+aedmax24.pl,agro-ogrodniczy.pl,agroapteka.pl,alltronix.pl,amb.net.pl,amled.pl,arenalazienek.pl,audiotop.pl,bakeshop.pl,balneokosmetyki.pl,bike-rs.pl,biosklep.com.pl,blosmi.com,camtrade.com.pl,cebit.pl,centrumgrodzenia.pl,cerfarsklep.pl,cicius.pl,cleanmed.com.pl,csk-med.pl,cyrulicy.pl,dekomotyw.pl,deluxury.pl,dlabrodacza.pl,dlagentlemana.pl,dobre-zamki.pl,dobreliski.pl,drogbit.pl,dropply.pl,e-dewocjonalia.eu,e-hortico.pl,ebratek.pl,eco-serwet.pl,ecobella.pl,ekosynergia.sklep.pl,estetic-dent-sklep.pl,ettiene.pl,fhgerman.pl,filatelistyczny.pl,filtrdodomu.pl,fitness-home.pl,fly-desk.com,fragrant.pl,friser.pl,gbs.pl,gps.lodz.pl,granitnaturalny.pl,groszekdt.pl,herbataikawa.pl,homeandgarden24.pl,hurtzniczy.pl,huzaro.pl,icentrumsklep.pl,italwaxpolska.pl,japoniacentralna.pl,jarmarknatury.pl,kim24.pl,klamki-drzwiowe.com,koreahouse.pl,kozak.pl,kreatorium.com,kupujdrzwi.pl,kwiatowapokusa.com,lian-art.pl,lidia.pl,lignum-sklep.pl,mchome.pl,meble.expert,megasam24.pl,mikavi.sklep.pl,militarymarket.pl,miodykrupiec.pl,modnakiecka.pl,morowo.com.pl,moskitiery-sklep.pl,mozz.com.pl,mr-gadzet.pl,ms70.pl,mykorea.pl,nadrogi.pl,najlepsze-alkomaty.pl,ogrodolandia.pl,olko24.pl,pamietaj.sklep.pl,pandawanda.pl,perfektmarket.com.pl,pergo24.pl,planszostrefa.pl,plus-market.pl,pomadziarz.pl,pracowniaozdob.pl,profil-hurt.pl,prorowery.pl,przetwory.com,przywarski.pl,questsport.shop,r-kom.pl,rajogrodnika.pl,rebelelectro.com,remedial.sklep.pl,retio.pl,rmdbike.com,ronomed.com.pl,segal.pl,shop.tagatic.com,sioubiz.pl,skarbyroztocza.com,skarpetkowyszop.pl,sklep.fresso.pl,sklep.gs.net.pl,sklep.rolmat.pl,sklep.sigmaagro.pl,sklep.slawex24.pl,sklep.zniczebartek.pl,sklepdrogowy.pl,sklepkawa.pl,sklepsativa.pl,sklepsoltech.pl,sklepzycia.pl,softmm.com.pl,srodki-czystosci.eu,stalowelove.com.pl,stylion.pl,suprabike.pl,swiatmuzyki-sklep.pl,szczoteczki24.pl,taniauprawa.pl,teesa.pl,terjansklep.com.pl,torbygospodarcze.pl,traffx.pl,traktorki.com,traumakit.pl,trigar.pl,wideorejestratory24.pl,wimetoznakowanie.pl,winbudkosztorys.pl,wkdzik.pl,wlodekrysuje.com,yummo.pl,zegarkinareke.pl,zenwire.eu,znakidrogowe24.pl##+js(set-local-storage-item, user_consents, [])
 akcesoriameskie.pl,akjap.com.pl,bayadera.pl,butico.pl,butoholiczka.pl,chili24.pl,czerwonatwierdza.pl,czystelle.pl,dobre.promo,drogeriaestetic.pl,e-clematis.com,e-ogrodniczy.pl,eldom.eu,expert.istore.pl,frajdomania.pl,gratis.net.pl,hi-lashes.pl,ilapka.pl,japoniacentralna.pl,krainazabawek.com.pl,kupzabawke.pl,kwiatowapolanka.pl,kwiaty.pro,laptok.com,maliciekawscy.pl,margoshoes.pl,mensura.pl,millushop.pl,miners.pl,narzedziabudowlane.pl,nesea.pl,parasoledlaciebie.pl,perfumik.pl,perfumygm.pl,polskikoszyk.pl,profitechnik.pl,przydatny.pl,redragon.shop,rodajaslo.com.pl,roydental.pl,skladczesci.pl,sklep-ewa.pl,sklep.bispol.pl,sklep.instato.pl,sprzet-poz.pl,strefachemii.pl,sushi-sklep.pl,topcena24.pl,wallflower.pl,zabawkinaczasie.pl,zakazanyogrod.pl,zasiejpole.pl,zniczeflamma.pl,zniczownia.pl,zoo24.pl##+js(set-local-storage-item, consents.show_consent_modal, 1)
 akcesoriameskie.pl,akjap.com.pl,bayadera.pl,butico.pl,butoholiczka.pl,chili24.pl,czerwonatwierdza.pl,czystelle.pl,dobre.promo,drogeriaestetic.pl,e-clematis.com,e-ogrodniczy.pl,eldom.eu,expert.istore.pl,frajdomania.pl,gratis.net.pl,hi-lashes.pl,ilapka.pl,japoniacentralna.pl,krainazabawek.com.pl,kupzabawke.pl,kwiatowapolanka.pl,kwiaty.pro,laptok.com,maliciekawscy.pl,margoshoes.pl,mensura.pl,millushop.pl,miners.pl,narzedziabudowlane.pl,nesea.pl,parasoledlaciebie.pl,perfumik.pl,perfumygm.pl,polskikoszyk.pl,profitechnik.pl,przydatny.pl,redragon.shop,rodajaslo.com.pl,roydental.pl,skladczesci.pl,sklep-ewa.pl,sklep.bispol.pl,sklep.instato.pl,sprzet-poz.pl,strefachemii.pl,sushi-sklep.pl,topcena24.pl,wallflower.pl,zabawkinaczasie.pl,zakazanyogrod.pl,zasiejpole.pl,zniczeflamma.pl,zniczownia.pl,zoo24.pl##+js(set-local-storage-item, consents.user_consents, [])
 4fun.tv###qc-cmp2-main
