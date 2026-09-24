@@ -19,7 +19,9 @@ crowdinDirRel="../../temp/crowdin"
 convertedFile="converted.json"
 
 # The files exported per locale and the converter.js mask for each of them.
-# Keep in sync with the `files:` section of crowdin.yml.
+# Keep in sync with the `files:` section of crowdin.yml: an unexpected file in
+# a downloaded locale dir is a hard error, so a file added to the config but
+# not to this list fails the run instead of being silently skipped.
 files=("tags.json" "groups.json" "filters.json")
 masks=("tag." "group." "filter.")
 
@@ -52,11 +54,9 @@ if [ ! -d "$crowdinDir" ]; then
 fi
 
 imported=0
-skipped=0
-aliased=0
 importedLocales=""
+aliased=0
 aliasedLocales=""
-emptyLocales=""
 
 # Import the locale dirs the download produced. `export_languages` and
 # `languages_mapping` in crowdin.yml decide which locales are exported and how
@@ -66,38 +66,42 @@ emptyLocales=""
 # (`source` is the config's source dir, not a locale.)
 while IFS= read -r locale; do
     echo "Importing $locale locale"
-    localeImported=0
+    # Fail on files this script does not know: a file added to the `files:`
+    # section of crowdin.yml would otherwise be downloaded but silently not
+    # imported, so the config and this script would drift apart.
+    unexpected=""
+    for downloadedFile in "$crowdinDir/$locale"/*; do
+        [ -f "$downloadedFile" ] || continue
+        name="$(basename "$downloadedFile")"
+        case " ${files[*]} " in
+            *" $name "*) ;;
+            *) unexpected="$unexpected $name" ;;
+        esac
+    done
+    if [ -n "$unexpected" ]; then
+        echo "Error: unexpected file(s) in the downloaded $locale dir:$unexpected" >&2
+        echo 'Check the "files" section of crowdin.yml against the "files" list in this script' >&2
+        exit 1
+    fi
+
     for i in "${!files[@]}"; do
         file="${files[$i]}"
         if [ ! -f "$crowdinDir/$locale/$file" ]; then
-            echo "Skip $locale/$file: not downloaded"
-            skipped=$((skipped + 1))
-            continue
+            echo "Error: $locale/$file was not downloaded (missing from $crowdinDir/$locale)" >&2
+            echo 'Check the "files" section of crowdin.yml against the downloaded archive' >&2
+            exit 1
         fi
         node "$scriptDir/converter.js" import "$crowdinDirRel/$locale/$file" "$locale" "$convertedFile" "${masks[$i]}"
         mkdir -p "$workDir/locales/$locale"
         cp -f "$convertedFile" "$workDir/locales/$locale/$file"
         rm -f "$convertedFile"
         imported=$((imported + 1))
-        localeImported=$((localeImported + 1))
     done
-    if [ "$localeImported" -eq 0 ]; then
-        # A downloaded locale dir without a single expected file means the
-        # archive layout no longer matches this script.
-        emptyLocales="$emptyLocales $locale"
-    else
-        importedLocales="$importedLocales $locale"
-    fi
+    importedLocales="$importedLocales $locale"
 done < <(find "$crowdinDir" -mindepth 1 -maxdepth 1 -type d ! -name source -exec basename {} \; | sort)
 
 if [ "$imported" -eq 0 ]; then
     echo "Error: no translations were downloaded" >&2
-    exit 1
-fi
-
-if [ -n "$emptyLocales" ]; then
-    echo "Error: no expected file found in the downloaded dirs of:$emptyLocales" >&2
-    echo 'Check the "files" section of crowdin.yml against the downloaded archive' >&2
     exit 1
 fi
 
@@ -158,4 +162,4 @@ if [ -n "$staleLocales" ]; then
 fi
 
 echo "Imported locales:$importedLocales"
-echo "Import finished: $imported files imported, $skipped skipped, $aliased base locales refreshed"
+echo "Import finished: $imported files imported, $aliased base locales refreshed"
