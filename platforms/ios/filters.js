@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.92.70",
-			"timeUpdated": "2026-09-24T08:07:07+0000",
+			"version": "2.4.92.71",
+			"timeUpdated": "2026-09-24T09:05:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.32.94",
-			"timeUpdated": "2026-09-24T07:08:34+0000",
+			"version": "2.1.32.95",
+			"timeUpdated": "2026-09-24T09:05:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.78",
-			"timeUpdated": "2026-09-24T05:05:58+0000",
+			"version": "2.0.76.79",
+			"timeUpdated": "2026-09-24T09:05:56+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.80.31",
-			"timeUpdated": "2026-09-24T08:07:54+0000",
+			"version": "2.2.80.32",
+			"timeUpdated": "2026-09-24T09:06:10+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.35.87",
-			"timeUpdated": "2026-09-24T07:09:09+0000",
+			"version": "2.1.35.88",
+			"timeUpdated": "2026-09-24T09:06:13+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.83.73",
-			"timeUpdated": "2026-09-24T08:08:06+0000",
+			"version": "2.0.83.74",
+			"timeUpdated": "2026-09-24T09:06:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1748,8 +1748,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.65.89",
-			"timeUpdated": "2026-09-24T08:08:14+0000",
+			"version": "2.1.65.90",
+			"timeUpdated": "2026-09-24T09:06:25+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
