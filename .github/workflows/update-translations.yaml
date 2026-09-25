@@ -2,9 +2,14 @@ name: Update translations
 
 on:
   workflow_dispatch:
-  schedule:
-    # Run every Monday at 06:00 UTC
-    - cron: '0 6 * * 1'
+  # Disabled until the Crowdin token issue is fixed (see AG-59539):
+  # the weekly run fails at the Download translations step with
+  # "Failed to fetch project info. Forbidden" (HTTP 403), so it only
+  # produces failure notifications. Re-enable once the
+  # CROWDIN_PERSONAL_TOKEN secret grants access to project 17570.
+  # schedule:
+  #   # Run every Monday at 06:00 UTC
+  #   - cron: '0 6 * * 1'
 
 concurrency:
   group: update-translations
