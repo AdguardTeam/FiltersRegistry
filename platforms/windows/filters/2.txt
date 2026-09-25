@@ -1,9 +1,9 @@
-! Checksum: Yg92wlLQoqp/EwWm//Ttbg
-! Diff-Path: ../patches/2/2-s-1790327433-3600.patch
+! Checksum: boK7XpVrhZ8Rxv6SOmTqzA
+! Diff-Path: ../patches/2/2-s-1790330920-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.92.91
-! TimeUpdated: 2026-09-25T09:05:54+00:00
+! Version: 2.4.92.92
+! TimeUpdated: 2026-09-25T10:05:38+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,8 @@
 !
 !
 !
+||delivery.viewsense.ai^
+||rtb.viewsense.ai^
 ||nicelymodulo.com^
 ||fairycarboys.qpon^
 ||tilerypursers.qpon^
@@ -33230,6 +33232,7 @@ exsite.pl#%#window.ab = false;
 !
 ! NOTE: Romanian
 !
+romstal.ro##.custom-images-payment
 softinfo.ro##.mow_fn_banner__listpost_btwn
 softinfo.ro##[href^="https://l.profitshare.ro/"]
 ||profitshare.ro^
@@ -36141,6 +36144,9 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/242497
+vexfile.com#%#(()=>{const R=/https:\/\/vexfile\.com\/download\/[A-Za-z0-9_-]+\/[A-Za-z0-9_-]+/,M='You must visit the pre-download page (click) and complete the CAPTCHA to access the download.';let u=null,k=0,b=null,m=null;const g=()=>{const s=document.querySelectorAll('script:not([src])');for(const x of s){const q=x.textContent.match(R);if(q)return q[0]}return null},a=()=>{if(!b)return;if(k&&u){b.href=u;b.classList.remove('dl-locked');b.style.opacity='1';b.style.cursor='pointer';if(m)m.style.display='none'}else{b.removeAttribute('href');b.classList.add('dl-locked');b.style.opacity='.5';b.style.cursor='not-allowed'}},h=()=>{if(!m)return;m.textContent=M;m.style.display='block';m.scrollIntoView({block:'center',behavior:'smooth'})},c=()=>{const t=document.querySelector('.container_theme');if(!t||t.querySelector('.dl-bypass'))return;b=document.createElement('a');b.className='btn-download dl-bypass';b.innerHTML='<span style="position:relative;z-index:0">Download a file</span>';b.style.cssText='margin:0 auto;padding:16px 30px;border-radius:15px;display:table;overflow:hidden;background:linear-gradient(135deg,rgba(165,32,228,1) 0%,rgba(0,224,184,1) 100%);font-size:18px;font-weight:500;font-family:Poppins;color:rgb(255,255,255);position:relative;border:none;transition:.4s linear;-webkit-transition:.4s linear;margin-top:10px;margin-bottom:10px;min-width:270px;text-align:center;';b.addEventListener('click',e=>{if(!k||!u){e.preventDefault();h()}});m=document.createElement('div');m.className='dl-msg';m.style.cssText='display:none;margin:10px auto;padding:10px;border:1px solid rgb(255,107,107);border-radius:8px;color:rgb(255,107,107);background:rgba(255,107,107,.1);font-size:14px;text-align:center;';t.prepend(b);t.insertBefore(m,b.nextSibling);a()},d=()=>{if(k)return;const z=g();if(!z)return;k=1;u=z;a()},f=window.fetch,j=()=>{const z=g();if(z){u=z;document.querySelectorAll('a.offer-link').forEach(e=>{e.href=z})}c()};window.fetch=function(){const p=f.apply(this,arguments);try{const x=typeof arguments[0]==='string'?arguments[0]:(arguments[0]&&arguments[0].url)||'';if(x.indexOf('/verify-cf-captcha')!==-1){p.then(r=>r.clone().json()).then(v=>{if(v&&v.success)d()}).catch(()=>{})}}catch(e){}return p};new MutationObserver(j).observe(document.documentElement,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',j);j()})();
+vexfile.com#$#.upload-btn-wrapper:has(> button:is(.btn-download.blocked, .btn-download.btn_get_offers)) { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240506
 ! Removes Philo ads and adjusts video and thumbnail timelines to keep playback and seeking aligned
 philo.com#%#(()=>{const e=JSON.parse,t=Response.prototype.json,r=new WeakSet,s=e=>null!==e&&"object"==typeof e,a=e=>{if(!Array.isArray(e))return[];const t=e=>"number"==typeof e||"string"==typeof e&&""!==e.trim()?Number(e):NaN,r=e.filter(s).map(({start:e,end:r})=>({start:t(e),end:t(r)})).filter(({start:e,end:t})=>Number.isFinite(e)&&Number.isFinite(t)&&e>=0&&t>e).sort((e,t)=>e.start-t.start),a=[];for(const e of r){const t=a.at(-1);t&&e.start<=t.end?t.end=Math.max(t.end,e.end):a.push(e)}return a},n=(e,t)=>e.reduce((e,{start:r,end:s})=>e+Math.max(0,Math.min(s,t)-r),0),i=(e,t)=>e.reduce((e,{start:r,end:s})=>s<=t+1e-6?e+s-r:e,0),o=e=>"urn:com:philo:event:ad:regions"===e?.uri||"string"==typeof e?.messageData&&e.messageData.includes('"ad_breaks"'),u=(t,r)=>{if(!Array.isArray(t.periods)||!t.periods.every(s))return!1;const u=[];for(const r of t.periods)if(Array.isArray(r.eventStreams))for(const t of r.eventStreams)if(o(t)&&"string"==typeof t.messageData)try{const r=Reflect.apply(e,JSON,[t.messageData]);u.push(...a(r?.ad_breaks))}catch{}const d=a(u);return!!d.length&&(t.periods=t.periods.filter((e,t)=>!(e=>Array.isArray(e.adaptationSets)&&e.adaptationSets.some(e=>"string"==typeof e?.timeline?.segmentURLTemplate&&e.timeline.segmentURLTemplate.includes("/ad/")))(e)),t.periods.forEach((e,t)=>{if(Number.isFinite(e.startTime)){const t=e.startTime;e.startTime=t-i(d,t)}"index"in e&&(e.index=t),Array.isArray(e.eventStreams)&&(e.eventStreams=e.eventStreams.filter((e,t)=>!o(e)))}),Number.isFinite(t.duration)&&(t.duration-=n(d,t.duration)),!0)},d=(e,t)=>{if(!e||"object"!=typeof e||r.has(e))return e;const o=u(e),d=(e=>{if(!s(e.url_to_thumbs)||Array.isArray(e.url_to_thumbs)||!Array.isArray(e.ad_breaks))return!1;const t=a(e.ad_breaks);if(!t.length)return!1;for(const r of Object.keys(e.url_to_thumbs)){if(r.includes("/ad/")){delete e.url_to_thumbs[r];continue}const s=e.url_to_thumbs[r];if(Array.isArray(s))for(const e of s)if(Number.isFinite(e?.pt)){const r=e.pt;e.pt=r-i(t,r)}}return delete e.ad_breaks,Number.isFinite(e.available_duration_seconds)&&(e.available_duration_seconds-=n(t,e.available_duration_seconds)),!0})(e);return(o||d)&&r.add(e),e},c={apply:(e,t,r)=>{const s=Reflect.apply(e,t,r);try{return d(s)}catch(e){return s}}};JSON.parse=new Proxy(e,c);const p={apply:async(e,t,r)=>{const s=await Reflect.apply(e,t,r);try{return d(s)}catch(e){return s}}};Response.prototype.json=new Proxy(t,p)})();
@@ -91461,6 +91467,7 @@ browsershots.org#@#.advert_area
 ||agore.xyz^
 ||agorotainu.cyou^
 ||agort.xyz^
+||agoutabinzuru.cfd^
 ||agowtayufyalh.online^
 ||agqftrjeizj.com^
 ||agqmshrhkvitr.com^
@@ -95000,6 +95007,7 @@ browsershots.org#@#.advert_area
 ||bowersorgamy.com^
 ||bowerywill.com^
 ||bowingsobrien.cfd^
+||bowingsphymata.cyou^
 ||bowldescended.com^
 ||bowlegbistort.cfd^
 ||bowlegtierras.cyou^
@@ -95830,6 +95838,7 @@ browsershots.org#@#.advert_area
 ||cafeqnugevtpm.website^
 ||cafewarriors.com^
 ||caffeicmoonlit.qpon^
+||cafhunsawedpaik.cyou^
 ||cafqzdbebpxqo.site^
 ||cagealas.com^
 ||cagesoutatebarleys.cfd^
@@ -100267,6 +100276,7 @@ browsershots.org#@#.advert_area
 ||dqehbfjzdopdg.online^
 ||dqeozccymwpqw.online^
 ||dqfpvzhybefeh.space^
+||dqfrysozguqah.online^
 ||dqfzbnhbqeqox.space^
 ||dqgjkrsabhnqd.space^
 ||dqhepocpcwspj.space^
@@ -107019,6 +107029,7 @@ browsershots.org#@#.advert_area
 ||hfgvzpatnjoti.website^
 ||hfhmqcggyjcne.online^
 ||hfkamhcbicmqe.space^
+||hflksbttglwou.com^
 ||hflpchbqhobkg.website^
 ||hflxmfjkugjeh.site^
 ||hfnfoupaytndf.space^
@@ -110787,6 +110798,7 @@ browsershots.org#@#.advert_area
 ||kalmukhydra.cfd^
 ||kalsnyivgripw.site^
 ||kalwarsandawe.cfd^
+||kamaogutsy.qpon^
 ||kamberro.lol^
 ||kamiasamable.cyou^
 ||kaminari.space^
@@ -110884,6 +110896,7 @@ browsershots.org#@#.advert_area
 ||kcgjjpqihtwly.online^
 ||kcgqumopgkwtv.online^
 ||kchhccjmzipel.site^
+||kchvtjeojkjuj.site^
 ||kcjmivforjixu.online^
 ||kcldlqybhdgdk.site^
 ||kcoktkhntiubu.online^
@@ -111069,6 +111082,7 @@ browsershots.org#@#.advert_area
 ||kfvtvbihzxkck.website^
 ||kfvv-defender.pro^
 ||kfwjshzimnivy.space^
+||kfwmyqyxjsice.space^
 ||kfwyfnlamzeth.site^
 ||kgbfawlsumiyn.space^
 ||kgbgcuabndbjw.store^
@@ -113150,6 +113164,7 @@ browsershots.org#@#.advert_area
 ||losobo.xyz^
 ||lossessambas.shop^
 ||lossierobconic.cyou^
+||lost-spray.com^
 ||lostinfuture.com^
 ||lotadversaryvolatile.com^
 ||lotamemorda.cfd^
@@ -113633,6 +113648,7 @@ browsershots.org#@#.advert_area
 ||m32.media^
 ||m38qv4rv1tp68wtw.rest^
 ||m3te2te7ml914e.cfd^
+||m4ytiolyp22po5t.cfd^
 ||m56eijr84q3841q32ujz9wut.rest^
 ||m5kbpv3vmhy71kbltz3ik.cfd^
 ||m5z7hjy1bp8hfez8.rest^
@@ -114022,6 +114038,7 @@ browsershots.org#@#.advert_area
 ||maturityrigourwits.com^
 ||matzwvmgoppak.site^
 ||maulersoutgaze.qpon^
+||maunchesudser.qpon^
 ||maundysinon.cyou^
 ||mautheroursels.cfd^
 ||mavisesdogskin.qpon^
@@ -115044,6 +115061,7 @@ browsershots.org#@#.advert_area
 ||moocherouch.shop^
 ||mooddivided.com^
 ||moodierholibut.qpon^
+||moodiermenial.qpon^
 ||moodytrustworthy.com^
 ||moogratkzvmwt.online^
 ||mookie1.com^
@@ -125631,6 +125649,7 @@ browsershots.org#@#.advert_area
 ||shroffecbdarbha.cyou^
 ||shrogfurialtwiggy.cyou^
 ||shrubburlyjaunty.com^
+||shrubbyumbonal.qpon^
 ||shrubsconfused.com^
 ||shrubspirate.com^
 ||shruffpansied.qpon^
@@ -125660,6 +125679,7 @@ browsershots.org#@#.advert_area
 ||shutedanios.cyou^
 ||shutingsickingdirt.qpon^
 ||shutloneliness.com^
+||shutoutpercept.cfd^
 ||shutterfissile.cyou^
 ||shwafogbowcecitis.cfd^
 ||shwnoyrwgmyli.online^
@@ -135279,6 +135299,7 @@ browsershots.org#@#.advert_area
 ||xwlptajihmbkz.space^
 ||xwnakfcdldo.com^
 ||xwnfmfvkxzbti.site^
+||xwpinrkebxzph.space^
 ||xwpjrdbaijfwz.online^
 ||xwqvytuiko.com^
 ||xwqxwfzhjsxom.space^
@@ -135754,6 +135775,7 @@ browsershots.org#@#.advert_area
 ||yjhallzqjulyh.site^
 ||yjhcwchynwgko.website^
 ||yjiqwytzluwhs.site^
+||yjjcz9rj73eq88q.rest^
 ||yjjfvcbzbrppe.store^
 ||yjjolfvavjvff.space^
 ||yjjrrfnlgkopz.space^
@@ -135952,6 +135974,7 @@ browsershots.org#@#.advert_area
 ||youlamedia.com^
 ||youlouk.com^
 ||young-expert.pro^
+||youngerupbears.cyou^
 ||youngfun.pro^
 ||youngsoutloveamuguis.cyou^
 ||youngstermansionphrase.com^
