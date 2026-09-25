@@ -1,5 +1,5 @@
-! Checksum: fF9U42b5cIJKGLZlnUwtSg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1790215916-3600.patch
+! Checksum: cWiEYimFGYND6oBE5YKQ4g
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1790302212-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.80
@@ -276,7 +276,6 @@ $script,redirect-rule=noopjs,domain=tf1info.fr
 !+ NOT_OPTIMIZED
 @@||ads.stickyadstv.com^|$xmlhttprequest,domain=tf1.fr|tf1info.fr
 !#safari_cb_affinity
-##.rwad-with-placeholder
 tf1info.fr#%#//scriptlet('adjust-setInterval', 'defaultConsentString', '*', '0.001')
 !+ NOT_PLATFORM(ext_ff)
 tf1info.fr#%#(()=>{const e=function(){};window.tC={privacy:{getOptinCategories:e,cookieData:[]},addConsentChangeListener:e,removeConsentChangeListener:e,container:{reload:e}},window.tc_events_global=e})();
@@ -397,6 +396,7 @@ opex360.com##.sidebar-content > div.widget_custom_html:has(div.ad-container)
 clubic.com##aside div[id^="sidebarPos"]:has(a.un-styled-linked[target="_blank"] img)
 latribune.ca##article > div:has(> div.arcad-feature)
 latribune.ca##.arcad-feature
+journalmetro.com##div[data-sticky-ad-container]
 macg.co##.app-header > div.w-full:has(> .Billboard_1)
 jeuxvideo.com##a[rel="sponsored"]
 jeuxvideo.com##.anchorMiddleOne--banner
@@ -1503,7 +1503,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://adx.$domain=~adx.systems
 ://afflight.$third-party
 ://banners2.$third-party
-://be.ads.
 ://cdn.*/p/?zid=
 ://cdn.ad.
 ://cdn.ads.
@@ -3051,7 +3050,6 @@ _werbebanner_
 ||wizenboyaux.shop^
 ||wooden-comfort.com^
 ||wyveplanked.com^
-||xajibur.ru^
 ||xclick24.com^
 ||xdowl0adxd0wnloadx.com^
 ||xeiidlkuxsos.com^
@@ -3087,6 +3085,7 @@ _werbebanner_
 ||adless.io^$third-party
 ||afminer.com^$third-party
 ||averoconnector.com^$third-party
+||bestsrv.de^$third-party
 ||binance.org^$third-party
 ||browsealoud.com/plus/scripts/$script
 ||cnhv.co^$third-party
@@ -3178,6 +3177,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 .php$script,domain=adf.ly|android-zone.ws|anime-loads.org|atomcurve.com|atominik.com|ay.gy|babblecase.com|babesxworld.com|bitigee.com|bluenik.com|casualient.com|cocogals.com|coginator.com|cogismith.com|cracksurl.com|gamecopyworld.eu|imgdrive.net|j.gs|kaitect.com|kializer.com|kibuilder.com|kimechanic.com|larati.net|microify.com|mmoity.com|picocurl.com|picons.eu|pintient.com|q.gs|quainator.com|quamiller.com|replaymod.com|riffhold.com|simizer.com|skamaker.com|skamason.com|tinyium.com|twineer.com|viahold.com|vializer.com|viwright.com|yabuilder.com|yamechanic.com|yoalizer.com|yobuilder.com|yoineer.com|yoitect.com|zipansion.com
 /sw.js$domain=1337x.st|1337x.to|9xbuddy.com|9xbuddy.online|almstba.tv|bagas31.info|bestfreecams.club|clicksfly.com|clk.sh|dailyuploads.net|desiupload.co|dood.work|downloadpirate.com|drop.download|dropapk.to|eio.io|gostreams.net|gsurl.in|hdvid.tv|indishare.org|istream2watch.com|keeplinks.org|media.cm|multiup.eu|multiup.io|multiup.org|offmp3.net|oii.la|okanime.tv|ovid.tv|patchsoftwares.com|sadeempc.com|sendspace.com|sexu.com|sss.xxx|stream2watch.org|tntendirect.com|uii.io|up-load.io|upload.ac|upload4earn.org|uploadproper.net|uploadrar.com|voir-films.com|x1337x.eu|x1337x.ws|zippyshare.com
 ||2img.net/i/fa/banner/
+||2img.net/i/fa/partenaires/
 ||4k.video/*.htm
 ||4k.video/*.php?
 ||4k.video/b.js
@@ -3766,7 +3766,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###container_pub
 ###container_pub_left
 ###contenu_liens-sponso
-###contextualAds
 ###contextuel-publicite-video
 ###custom-ad
 ###desktopAd
@@ -4358,7 +4357,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.r-pub--inread
 ##.r-pub--leader
 ##.rd-widget-ads
-##.regiePub728
 ##.reklam-gizle
 ##.reklam728x90
 ##.reklam_300x250
@@ -4450,7 +4448,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.wrapper.ad
 ##.wrapperPub
 ##.wrapper_pub_sidebar
-##.xadv-invid
 ##.xplayer-banner-bottom
 ##.yourcolor-ads
 ##.zone_annonceurs
@@ -4540,7 +4537,6 @@ hardware.fr###footer_img
 bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
 banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comics-sanctuary.com,ffeminin.com,gamer-network.fr,jeux-mmorpg.fr,lequipement.fr,letelegramme.fr,nrj.fr###habillage
-autobip.com###habillage_b
 buzzdefou.com,gerardmerinfo.fr###habillage_site
 mobiles-actus.com###header3
 lyonmag.com###header_empl
