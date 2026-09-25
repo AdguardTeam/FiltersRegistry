@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: i1Fl5hChd520npA8X9tQ5w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790320423-3600.patch
+! Checksum: nmXVrMYHnupy57pEDrt9gw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790323890-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.92.89
-! TimeUpdated: 2026-09-25T07:09:20+00:00
+! Version: 2.4.92.90
+! TimeUpdated: 2026-09-25T08:07:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13100,6 +13100,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/242498
+||up-4ever.net/js/dlcheck.js
+up-4ever.net##+js(abort-on-property-write, __u4AbInit)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242528
 ||cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/dist/antiAdBlocker.min.ob.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242522
@@ -40193,6 +40196,8 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+pluto.tv##.pause-panel-ad-container
+kaliscan.com##div[class][style="width: 100vw; height: 100dvh;"]:has(> div.notranslate > iframe[sandbox*="allow-popups"])
 minecraft-heads.com##body [id^="ad-"]
 movie-box.tv,movie-box.*##.third-party-script-ad
 movie-box.tv,movie-box.*##.site-guide

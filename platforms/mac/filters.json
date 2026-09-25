@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.92.89",
-			"timeUpdated": "2026-09-25T07:09:20+0000",
+			"version": "2.4.92.90",
+			"timeUpdated": "2026-09-25T08:07:00+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.12.25",
-			"timeUpdated": "2026-09-25T07:09:38+0000",
+			"version": "2.1.12.26",
+			"timeUpdated": "2026-09-25T08:07:19+0000",
 			"languages": []
 		},
 		{
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.72.31",
-			"timeUpdated": "2026-09-25T07:09:54+0000",
+			"version": "2.0.72.32",
+			"timeUpdated": "2026-09-25T08:07:36+0000",
 			"languages": []
 		},
 		{
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.80.40",
-			"timeUpdated": "2026-09-25T07:10:04+0000",
+			"version": "2.2.80.41",
+			"timeUpdated": "2026-09-25T08:07:46+0000",
 			"languages": []
 		},
 		{
@@ -302,8 +302,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.95.27",
-			"timeUpdated": "2026-09-25T07:10:13+0000",
+			"version": "2.0.95.28",
+			"timeUpdated": "2026-09-25T08:07:56+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.83.81",
-			"timeUpdated": "2026-09-25T07:10:14+0000",
+			"version": "2.0.83.82",
+			"timeUpdated": "2026-09-25T08:07:58+0000",
 			"languages": []
 		},
 		{
@@ -1214,8 +1214,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.65.96",
-			"timeUpdated": "2026-09-25T05:06:30+0000",
+			"version": "2.1.65.97",
+			"timeUpdated": "2026-09-25T08:08:12+0000",
 			"languages": [
 				"zh"
 			]
