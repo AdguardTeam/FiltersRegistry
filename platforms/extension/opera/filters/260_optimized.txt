@@ -1,9 +1,9 @@
-! Checksum: 6f38/ZcFPOSknO9Ce1yuag
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1790282697-14400.patch
+! Checksum: wGewY1u696Htq5sI/42adg
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1790298803-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.15
-! TimeUpdated: 2026-09-24T20:42:53+00:00
+! Version: 2.0.2.16
+! TimeUpdated: 2026-09-25T01:11:07+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -1442,6 +1442,8 @@ www.youtube.com##.ytp-menuitem-section-header
 www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="1080p"]]..adaptiveFormats.*[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="720p"]]..adaptiveFormats.*[?.qualityLabel=="720p"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
 www.youtube.com##ytd-expandable-metadata-renderer[has-video-summary]
 www.youtube.com##[chip-style="STYLE_AI_MODE_CHIP"]
@@ -1510,6 +1512,12 @@ allporncomic.com##.menu-item:has(> [href="https://allporncomic.com/ai-artists/"]
 allporncomic.com##.menu-item:has(> [href="https://s.zlink7.com/v1/d.php?z=5605532"])
 allporncomic.com##.genres__collapse .col-6.col-sm-4.col-md-2:has(> [href="https://allporncomic.com/porncomicgenre/ai-gen/"])
 animeidhentai.com###promo-topbar
+animeidhentai.com##.topbar-ai
+animeidhentai.com##.promo
+animeidhentai.com##.nav-group:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(> [href="https://aipenly.com/"])
+animeidhentai.com##.nav-sect:has(+ .nav-group > [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(+ .nav-group > [href="https://aipenly.com/"])
+animeidhentai.com##.footer-list > li:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"])
+animeidhentai.com##.aigen
 anysex.com##li:has(> [href="https://anysex.com/photos/categories/ai/"])
 anysex.com##li:has(> [href^="https://rtb-6.anysex.com/bid?spot_id[]=171"])
 www.ashemaletube.com##.navmenu > li:has(> [title="AI Lover"])
