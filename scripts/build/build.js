@@ -7,7 +7,9 @@ import { compile, localOptimizationStatistics, OptimizationStatsError } from '@a
 import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.ts';
 import { formatDate } from '../utils/strings.js';
 import { FOLDER_WITH_NEW_FILTERS, FOLDER_WITH_OLD_FILTERS } from './constants.js';
-import { parseFlags, validateFlags, validateArgs } from './build-config.ts';
+import {
+    parseFlags, validateFlags, validateArgs, scopeFlagsFor,
+} from './build-config.ts';
 import { stripGeneratedMetaFromDir } from './strip-generated-meta.ts';
 import { findFiles } from '../utils/find_files.js';
 
@@ -56,6 +58,10 @@ const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS)
 const tempDir = path.join(__dirname, '../../temp');
 const cachedFiltersDir = path.join(tempDir, 'filters_cached');
 const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
+// Captured on every --download-stats run; checked prior to use(), since
+// applying a stats cache outside the allowed --include/--skip scope results
+// will trigger a hard failure in compile().
+const optimizationStatsScopeFile = `${optimizationStatsDir}.scope`;
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -128,6 +134,11 @@ const buildFilters = async () => {
             includedFilterIDs,
             excludedFilterIDs,
         );
+        await fs.writeFile(
+            optimizationStatsScopeFile,
+            scopeFlagsFor(includedFilterIDs, excludedFilterIDs),
+            'utf8',
+        );
         console.log(`Optimization statistics downloaded at ${optimizationStatsDir}.`);
         return;
     }
@@ -151,13 +162,38 @@ const buildFilters = async () => {
     if (useCache) {
         await prepareCachedFiltersDir();
 
-        // If a local optimization stats cache exists, use it; otherwise fall back
-        // to fetching stats from the remote server (localOptimizationStatistics.use()
-        // simply isn't called in that case — that's already getOptimizationStatistics's
-        // default behavior).
-        if (existsSync(optimizationStatsDir)) {
-            localOptimizationStatistics.use(optimizationStatsDir);
-            console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
+        const optimizationStatsFiltersPath = path.join(optimizationStatsDir, 'filters');
+
+        let statsDirHasContent = false;
+        try {
+            statsDirHasContent = existsSync(optimizationStatsFiltersPath)
+                && (await fs.readdir(optimizationStatsFiltersPath)).length > 0;
+        } catch {
+            // Fall through with statsDirHasContent = false.
+        }
+
+        if (statsDirHasContent) {
+            let cachedScopeFlags = null;
+            try {
+                cachedScopeFlags = await fs.readFile(optimizationStatsScopeFile, 'utf8');
+            } catch {
+                // No scope marker — either a legacy cache or one download-stats
+                // itself failed to finish writing. Treated as unknown below.
+            }
+            const currentScopeFlags = scopeFlagsFor(includedFilterIDs, excludedFilterIDs);
+            const unscopedFlags = scopeFlagsFor([], []);
+
+            const isScopeIdentical = cachedScopeFlags === currentScopeFlags;
+            if (isScopeIdentical || cachedScopeFlags === unscopedFlags) {
+                localOptimizationStatistics.use(optimizationStatsDir);
+                console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
+            } else {
+                console.log(
+                    `Local optimization statistics at ${optimizationStatsDir} don't match this build's filter `
+                    + 'selection (or predate scope tracking); fetching stats from the remote server instead. '
+                    + 'Run --download-stats with the same --include/--skip to reuse the local cache.',
+                );
+            }
         } else {
             console.log('No local optimization statistics found; fetching stats from the remote server.');
         }

@@ -1,9 +1,9 @@
-! Checksum: m/R257Nes5rr4dFPbnRyYg
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1790109811-14400.patch
+! Checksum: FgBDYbJh2f8VYTaBgGLttg
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1790298811-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.10
-! TimeUpdated: 2026-09-22T20:40:37+00:00
+! Version: 2.0.2.16
+! TimeUpdated: 2026-09-25T01:11:07+00:00
 ! Expires: 5 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -388,9 +388,9 @@ exceljet.net##.chatbot-callout
 portal.expressvpn.com##.group\/collapsible:has([href="/expressai"])
 www.extendoffice.com##.uk-margin-remove-last-child:has([src="//cdn.extendoffice.com/images/stories/ads-siluvia/kte-ads/kutools-for-excel-ai-1.png"])
 www.extendoffice.com##.uk-margin-remove-last-child tr:has([href^="https://www.extendoffice.com/product/kutools-for-excel/kutools-excel-ai-assistant.html"])
-f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"])
-f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"])
-f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"])
+f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"]:only-child)
 www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href^="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fai-glasses%2Fray-ban-meta"])
 www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href="https://www.meta.com/ai-glasses/ray-ban-meta/"])
 www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x1icxu4v.x25sj25.x10b6aqq.xyamay9:has([href*="www.meta.ai"])
@@ -420,6 +420,7 @@ firstpost.com###ia-search
 www.foodnetwork.com##.reviewsSummary
 www.forbes.com##.jwGQ_
 www.forbes.com##.genAiSummary
+fritz.com###chat-widget-root
 ful.io##nav li:has(> [href="https://chrome.google.com/webstore/detail/email-finder-powered-by-a/lhcmmncnljldcdeeheclgfidlgllgfhc"])
 ful.io##nav > .items-center:has(> [href="https://chrome.google.com/webstore/detail/fulio-free-real-time-sale/adfkbphmnebbfljcdcfjlckobbacdgfn"])
 ful.io##.dropdown .border-t:has(+ li > [href^="https://chatgpt.com/"])
@@ -449,16 +450,17 @@ github.com##[data-testid="top-bar-actions"] > .hide-md:has(> .CopilotItems-modul
 github.com##[data-component="ActionList.Group"]:has([data-testid="quick-search-suggestion"][href="/copilot"])
 github.com##[data-component="ActionList.Divider"]:has(+ [data-component="ActionList.Group"] [data-testid="quick-search-suggestion"][href="/copilot"])
 github.com##[id$="-tab-copilot_chat_custom_instructions"]:has(.octicon-eye-closed)
-github.com##.copilotPreview__container
-github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
 github.com##[data-component="NavList.Item"][href="/mcp"]
-github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
-github.com##.DashboardBannerCopilotApp
-github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.results[?@.action.path=="/copilot"]', 'propsToMatch', '/command_palette/jump_to_page_navigation')
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
+github.com##[data-component="SplitPageLayout.Sidebar"]:has(> [data-testid="copilot-code-view-side-panel"])
+github.com##.copilotPreview__container
+github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
+github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
+github.com##.DashboardBannerCopilotApp
+github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 github.com##.start-copilot-banner
 github.com##[data-testid="copilot-free-user-checklist"]
 github.com#$#li:has(> [data-tab-item="agents"]) { max-width: 0px !important; margin-left: calc(0px - var(--stack-gap-condensed,.5rem)) !important; visibility: hidden !important; }
@@ -535,6 +537,8 @@ gitshare.me##nav > [href="/artifacts"]
 gitshare.me##.bg-brand\/5:has(>[href="/artifacts"])
 gitshare.me##section#artifacts
 gitshare.me##section.border-border:has(.text-brand[href="/readme-generator"])
+giveradar.com##.gr-ai-chip
+giveradar.com##div[x-data="{ showAi: false }"]
 glassdoor.com##[class^="ResumeTailor_coachmarkWrapper__"]
 glassdoor.com##[class^="AIRecruiterIntro_aiRecruiterIntroContainer__"]
 glassdoor.com##[class^="ModernSection_footerWrapper__"]
@@ -774,6 +778,16 @@ www.investopedia.com##.askmiso-ask-query
 www.investopedia.com##.askmiso-ask-query-secondary
 ||chat.ipon.hu/widget.js$script,~third-party
 www.ishopchangi.com###chat-wrapper
+www.jetbrains.com#?#[data-test-marker="Products"] [data-test$="menu-column-title"]:contains("AI TOOLS"):upward(1)
+www.jetbrains.com##[data-test="main-submenu-banner"]:has(> [href="/air/"])
+www.jetbrains.com##[data-test="main-submenu-banner"]:has(> [href="/agentic-software-development/"])
+www.jetbrains.com##[data-test="main-submenu-item"]:has(> [href="/agentic-software-development/"])
+www.jetbrains.com##[data-test="main-submenu-item"]:has(> [href="/ai/"])
+www.jetbrains.com#?#.jb-footer-catalog h2:contains(AI):upward(.jb-footer-catalog__item)
+www.jetbrains.com##.jb-footer-catalog-links__item:has(> [href="/pages/ai-agents/"])
+www.jetbrains.com##div[class^="_hero_"]:has([type="button"][href="/air/"])
+www.jetbrains.com##a[href="/business/"][class^="_card_"]
+www.jetbrains.com##section:has(> div > #ai)
 www.jimdo.com###companion
 www.johnhancock.com##.webchat
 www.jumpingrivers.com###banner[data-name="aip-2027-eb"]
@@ -793,6 +807,8 @@ kagi.com##.__sri_more_menu > .k_ui_dropdown_data_list > .list_items > ._0_discus
 kahoot.com##.menu-item:has(> [href^="https://kahoot.com/kahoot-study/notes-to-flashcards/"])
 discover.kahoot.it##[data-functional-selector="native-carousel-item"]:has([class^="styles_AiAssisted__"])
 karmasearch.org###search-other-menu .flex-col:has([src="/_nuxt/img/ai.85b95e0.svg"])
+www.kathimerini.gr##.text-to-speech-wrap
+www.kathimerini.gr###gas-summary-root
 www.kiehls.com##.swat-review-summary-container-border
 www.kohls.com##div:has(> button[aria-label="Ask Kohl's"])
 ||gstatic.com/cloud/ai/commerce_ai_ui/1.0.0/static.js$domain=kohls.com
@@ -994,6 +1010,7 @@ outlook.office.com##[data-app-section="CopilotDabRibbon"]
 outlook.office.com##.___77lcry0.f10pi13n[aria-label="Copilot"]
 outlook.office.com##.fai-CopilotProvider
 academic.oup.com##.ai
+academic.oup.com##.oup-header-menu-item:has(.navbar-ai-assistant-link)
 academic.oup.com##.navbar-ai-assistant-container.navbar-menu
 www.oed.com###AIOverlay
 www.paychex.com###q-messenger-frame
@@ -1267,6 +1284,9 @@ androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers
 androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,fextralife.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,movieweb.com,pocket-lint.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com##.action-bar-ai-feature
 app.vanta.com##[data-testid="global-vanta-ai-button"]
 app.vanta.com###vanta-agent
+||widget.wenetasystent.ai/page/$subdocument,domain=www.veldach.com.pl
+www.veldach.com.pl##.assistant-widget-container
+www.veldach.com.pl##.assistant-widget-drawer-content
 vercel.com##button[type="submit"][data-cdp-track*="\"header_ask_ai_clicked\""]
 vercel.com##[aria-label="Ask AI"]
 vercel.com#?#.mt-3 button:contains(Ask AI)
@@ -1277,6 +1297,8 @@ vimeo.com##.text-footer-sub-content[href="/features/vimeo-ai"]
 vimeo.com##.text-footer-sub-content[href="/features/ai-translation"]
 ||prod.agenticweb-marketing.com/gemini-ai/generate-summary$xmlhttprequest,domain=www.virtusa.com
 www.virtusa.com##[class*="__aiCard"]
+www.virustotal.com##fab-container
+www.virustotal.com###ai-virustotal-footer
 www.virustotal.com##vt-crowdsourced-ai-gemini
 www.croeso.cymru#?#.o-important-notification-banner:contains(Mae Gwydion, Asiant AI Newydd AI Croeso Cymru)
 www.visitwales.com#?#.o-important-notification-banner:contains(Gwydion, Visit Wales’ new AI Agent)
@@ -1397,14 +1419,13 @@ www.youdao.com##.nav_item:has(> [href^="https://lobsterai.youdao.com/"])
 www.youdao.com##.swiper-slide:has(> [src="https://ydlunacommon-cdn.nosdn.127.net/460a5a719e1f7b60a49fbb220136b56c.png"])
 www.youdao.com##.product-item:has([src="https://ydlunacommon-cdn.nosdn.127.net/cc4afa89cc5497e23b355bc7436cb1c9.png"])
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_searchbox_entrypoint', 'false')
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_client_changes', 'false')
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_web_m0_fixes', 'false')
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_ui', 'false')
 www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
 www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
 www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_client_changes', 'false')
+www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_web_m0_fixes', 'false')
 www.youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer:has(.ytChipShapeStartIconPadding)
 www.youtube.com#?##chip-shape-container:contains(Your custom feed)
 www.youtube.com#?#yt-chip-cloud-chip-renderer:contains(Add Custom Feed)
@@ -1421,6 +1442,8 @@ www.youtube.com##.ytp-menuitem-section-header
 www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="1080p"]]..adaptiveFormats.*[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="720p"]]..adaptiveFormats.*[?.qualityLabel=="720p"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
 www.youtube.com##ytd-expandable-metadata-renderer[has-video-summary]
 www.youtube.com##[chip-style="STYLE_AI_MODE_CHIP"]
@@ -1489,6 +1512,12 @@ allporncomic.com##.menu-item:has(> [href="https://allporncomic.com/ai-artists/"]
 allporncomic.com##.menu-item:has(> [href="https://s.zlink7.com/v1/d.php?z=5605532"])
 allporncomic.com##.genres__collapse .col-6.col-sm-4.col-md-2:has(> [href="https://allporncomic.com/porncomicgenre/ai-gen/"])
 animeidhentai.com###promo-topbar
+animeidhentai.com##.topbar-ai
+animeidhentai.com##.promo
+animeidhentai.com##.nav-group:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(> [href="https://aipenly.com/"])
+animeidhentai.com##.nav-sect:has(+ .nav-group > [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(+ .nav-group > [href="https://aipenly.com/"])
+animeidhentai.com##.footer-list > li:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"])
+animeidhentai.com##.aigen
 anysex.com##li:has(> [href="https://anysex.com/photos/categories/ai/"])
 anysex.com##li:has(> [href^="https://rtb-6.anysex.com/bid?spot_id[]=171"])
 www.ashemaletube.com##.navmenu > li:has(> [title="AI Lover"])

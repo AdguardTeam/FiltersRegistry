@@ -1,9 +1,9 @@
-! Checksum: MCXZZSeV2r1QTAykLgGOEw
-! Diff-Path: ../patches/260/260-s-1790109791-14400.patch
+! Checksum: JieGiYqENGUf5LsCpbCcfg
+! Diff-Path: ../patches/260/260-s-1790298791-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.10
-! TimeUpdated: 2026-09-22T20:40:37+00:00
+! Version: 2.0.2.16
+! TimeUpdated: 2026-09-25T01:11:07+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1177,9 +1177,9 @@ www.extendoffice.com##.uk-margin-remove-last-child tr:has([href^="https://www.ex
 ! =============
 ! -- https://fdroid.gitlab.io/fdroid-website/en/packages/
 ! AI Chat app category
-f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"])
-f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"])
-f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"])
+f-droid.org,fdroid.gitlab.io##.post-content > h3:has(+ #package-list + p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > #package-list:has(+ p > [href$="/categories/ai-chat/"]:only-child)
+f-droid.org,fdroid.gitlab.io##.post-content > p:has(> [href$="/categories/ai-chat/"]:only-child)
 ! ==============
 ! == Facebook ==
 ! ==============
@@ -1270,6 +1270,12 @@ www.forbes.com##.jwGQ_
 ! Article summary
 www.forbes.com##.genAiSummary
 ! ============
+! == FRITZ! ==
+! ============
+! -- https://fritz.com/en/pages/service
+! FRITZ!-Bot AI chat
+fritz.com###chat-widget-root
+! ============
 ! == Ful.io ==
 ! ============
 ! -- https://ful.io/blog/top-5-json-viewer-chrome-extensions-you-need-to-check-out
@@ -1356,20 +1362,10 @@ github.com##[data-component="ActionList.Divider"]:has(+ [data-component="ActionL
 ! Header - Profile icon - Feature Preview - Organization Custom Instructions
 ! * Only applies if feature is already disabled
 github.com##[id$="-tab-copilot_chat_custom_instructions"]:has(.octicon-eye-closed)
-! Home feed - "Ask Copilot" prompt box
-github.com##.copilotPreview__container
-! Home feed (w/ New Dashboard Experience enabled) - Floating Copilot icon when hovering over pull request or issue.
-github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
 ! Left sidebar - Copilot button
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
 ! Left sidebar - MCP Registry
 github.com##[data-component="NavList.Item"][href="/mcp"]
-! Right sidebar - GitHub Copilot Day
-github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
-! Right sidebar - Copilot promo banner
-github.com##.DashboardBannerCopilotApp
-! Right sidebar - Changelog posts containing ai terms
-github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
 ! * JSONPath v2 compatible
@@ -1377,6 +1373,20 @@ github.com#%#//scriptlet('ubo-json-edit-fetch-response', '$.results[?@.action.pa
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
 github.com#$?#command-palette-item[data-item-title="Copilot"] { remove: true; }
+! Copilot Chat sidebar panel
+! * Opens with Shift+D shortcut
+github.com##[data-component="SplitPageLayout.Sidebar"]:has(> [data-testid="copilot-code-view-side-panel"])
+! -- https://github.com/dashboard
+! Home feed - "Ask Copilot" prompt box
+github.com##.copilotPreview__container
+! Home feed (w/ New Dashboard Experience enabled) - Floating Copilot icon when hovering over pull request or issue.
+github.com##.DashboardListView-module__contextBubbleMenu__q0zmI:has(> button > svg.octicon-copilot)
+! Right sidebar - GitHub Copilot Day
+github.com##[partial-name="sidebar-nudge"]:has([data-test-selector="general_ipm_github_copilot_day_2026"])
+! Right sidebar - Copilot promo banner
+github.com##.DashboardBannerCopilotApp
+! Right sidebar - Changelog posts containing ai terms
+github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-ai-"], [href*="-claude"], [href*="-copilot"], [href*="-gemini"], [href*="-gpt-"], [href*="-grok"], [href*="-mcp-"], [href*="-model"], [href*="-opus"])
 ! -- https://github.com/settings/copilot/features (Copilot features in account settings)
 ! Promo banner for GitHub Copilot (Doesn't appear for all users)
 github.com##.start-copilot-banner
@@ -1576,6 +1586,15 @@ gitshare.me##.bg-brand\/5:has(>[href="/artifacts"])
 ! Promo sections
 gitshare.me##section#artifacts
 gitshare.me##section.border-border:has(.text-brand[href="/readme-generator"])
+! ===============
+! == GiveRadar ==
+! ===============
+! -- https://giveradar.com/
+! "Use GiveRadar with AI" button
+giveradar.com##.gr-ai-chip
+! -- https://giveradar.com/charity/the-trevor-project-inc/
+! "Ask AI" button on a charities page
+giveradar.com##div[x-data="{ showAi: false }"]
 ! ===============
 ! == Glassdoor ==
 ! ===============
@@ -2295,6 +2314,31 @@ www.investopedia.com##.askmiso-ask-query-secondary
 ! -- https://www.ishopchangi.com/en/home
 ! Chatbot icon
 www.ishopchangi.com###chat-wrapper
+! ===============
+! == JetBrains ==
+! ===============
+! Header - Products - AI TOOLS section
+www.jetbrains.com#?#[data-test-marker="Products"] [data-test$="menu-column-title"]:contains("AI TOOLS"):upward(1)
+! Header - Products - JetBrains Air promo
+www.jetbrains.com##[data-test="main-submenu-banner"]:has(> [href="/air/"])
+! Header - For Business - "AI for teams" promo
+www.jetbrains.com##[data-test="main-submenu-banner"]:has(> [href="/agentic-software-development/"])
+! Header - For Business - "AI for teams and organizations" link
+www.jetbrains.com##[data-test="main-submenu-item"]:has(> [href="/agentic-software-development/"])
+! Header - Solutions - Jetbrains AI Solutions
+www.jetbrains.com##[data-test="main-submenu-item"]:has(> [href="/ai/"])
+! Footer - AI Section
+www.jetbrains.com#?#.jb-footer-catalog h2:contains(AI):upward(.jb-footer-catalog__item)
+! Footer - AI Agents Hub
+www.jetbrains.com##.jb-footer-catalog-links__item:has(> [href="/pages/ai-agents/"])
+! -- https://www.jetbrains.com/ (Landing page)
+! JetBrains Air promo
+www.jetbrains.com##div[class^="_hero_"]:has([type="button"][href="/air/"])
+! "Professional AI Coding" promo card
+www.jetbrains.com##a[href="/business/"][class^="_card_"]
+! -- https://jetbrains.com/ides/
+! "Natively integrated AI" section
+www.jetbrains.com##section:has(> div > #ai)
 ! ===========
 ! == Jimdo ==
 ! ===========
@@ -2351,6 +2395,14 @@ discover.kahoot.it##[data-functional-selector="native-carousel-item"]:has([class
 ! -- https://karmasearch.org/search?q=test
 ! Navbar > Try with.. > AI
 karmasearch.org###search-other-menu .flex-col:has([src="/_nuxt/img/ai.85b95e0.svg"])
+! =================
+! == Kathimerini ==
+! =================
+! -- https://www.kathimerini.gr/k/k-magazine/564470962/mipos-to-echoyme-parakanei-me-tin-psychotherapeia/
+! AI Audio
+www.kathimerini.gr##.text-to-speech-wrap
+! AI Summary
+www.kathimerini.gr###gas-summary-root
 ! ============
 ! == Kiehls ==
 ! ============
@@ -2988,6 +3040,8 @@ outlook.office.com##.fai-CopilotProvider
 ! -- https://academic.oup.com/
 ! "AI Discovery Assistant" by searchbar
 academic.oup.com##.ai
+! Header - Sparkle icon for AI assistant (mobile)
+academic.oup.com##.oup-header-menu-item:has(.navbar-ai-assistant-link)
 ! -- https://academic.oup.com/search-results?q=test
 ! "AI Discovery Assistant" in navbar
 academic.oup.com##.navbar-ai-assistant-container.navbar-menu
@@ -3929,6 +3983,13 @@ androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers
 app.vanta.com##[data-testid="global-vanta-ai-button"]
 ! Vanta agent in sidebar
 app.vanta.com###vanta-agent
+! ===============================
+! == Veldach Szczecin (Polish) ==
+! ===============================
+! Floating chat widget
+||widget.wenetasystent.ai/page/$subdocument,domain=www.veldach.com.pl
+www.veldach.com.pl##.assistant-widget-container
+www.veldach.com.pl##.assistant-widget-drawer-content
 ! ============
 ! == Vercel ==
 ! ============
@@ -3962,6 +4023,11 @@ www.virtusa.com##[class*="__aiCard"]
 ! ================
 ! == VirusTotal ==
 ! ================
+! -- https://www.virustotal.com/gui/home/upload
+! Floating assistant icon
+www.virustotal.com##fab-container
+! Footer - VirusTotalAI
+www.virustotal.com###ai-virustotal-footer
 ! -- https://www.virustotal.com/gui/file/40b8fe7d0867307fdb399371dc9d749baaf237d57a978f1e0527a0c199183b34
 ! Code insights
 www.virustotal.com##vt-crowdsourced-ai-gemini
@@ -4313,33 +4379,20 @@ www.youdao.com##.product-item:has([src="https://ydlunacommon-cdn.nosdn.127.net/c
 ! == YouTube ==
 ! =============
 ! -- General
-! Experiment flags (part of A/B testing)
-! * Hide Ask YouTube button
+! Search bar (includes backup cosmetic filters)
+! * Ask YouTube button
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_searchbox_entrypoint', 'false')
-! * Remove "Search or ask a question" searchbar placeholder text
+www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
+www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
+! * "Search or ask a question" placeholder text
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_ux', 'false')
-! * Remove autocomplete search suggestions
+! * Autocomplete suggestions
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_suggest_client', 'false')
+www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 ! * Don't shift searchbar upwards when focused
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_client_changes', 'false')
 ! * Don't darken background when search bar is focused
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_web_m0_fixes', 'false')
-! * Unknown purpose
-www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_ui', 'false')
-!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_innertube_m0_fixes, false)
-!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_insert_section_operation, false)
-!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_sticky_chips, false)
-!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_search_web_m1_features, false)
-!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_hidden_state, false)
-!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_searchbox_suggest_jumping_fix, false)
-!www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_suggest_chip_ui, false)
-! Backup cosmetic filters for search
-! * Ask YouTube button in search bar
-www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
-! * Focus search bar, Ask YouTube button
-www.youtube.com##.ytSearchboxComponentActions > .ytSearchboxComponentActionsButton[client-ve-type]
-! * Focus search bar, Ask YouTube search suggestions
-www.youtube.com##.ytSearchboxComponentAiSuggestionsContainer
 ! -- https://www.youtube.com/ (Homepage - logged in)
 ! "Your custom home" chip
 www.youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer:has(.ytChipShapeStartIconPadding)
@@ -4378,6 +4431,11 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 ! * May not work if video is loaded directly from URL
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="1080p"]]..adaptiveFormats.*[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="720p"]]..adaptiveFormats.*[?.qualityLabel=="720p"]')
+! -- https://m.youtube.com/watch?v=oh5p5f5_-7A (mobile)
+! "Ask" slide in comment carousel below video
+! * Does not work on AdGuard for iOS
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
 ! -- Livestream
 ! Chat summary
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
@@ -4544,6 +4602,18 @@ allporncomic.com##.genres__collapse .col-6.col-sm-4.col-md-2:has(> [href="https:
 ! ==========================
 ! AI GF promo banner
 animeidhentai.com###promo-topbar
+! Header - AI Hentai
+animeidhentai.com##.topbar-ai
+! Sponsored banner - AI Girlfriend
+animeidhentai.com##.promo
+! Sidebar - Partners
+animeidhentai.com##.nav-group:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(> [href="https://aipenly.com/"])
+animeidhentai.com##.nav-sect:has(+ .nav-group > [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(+ .nav-group > [href="https://aipenly.com/"])
+! Footer - AI Hentai Generator
+animeidhentai.com##.footer-list > li:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"])
+! -- https://animeidhentai.com/31715/imaizumin-chi-wa-douyara-gal-no-tamariba-ni-natteru-rashii-episode-1-subbed
+! AI Hentai Generator
+animeidhentai.com##.aigen
 ! ===================
 ! == AnySex (NSFW) ==
 ! ===================
