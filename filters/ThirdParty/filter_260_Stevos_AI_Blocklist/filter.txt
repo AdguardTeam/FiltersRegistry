@@ -5157,6 +5157,12 @@ www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="720p"]]..adaptiveFormats.*[?.qualityLabel=="720p"]')
 !#endif
 
+! -- https://m.youtube.com/watch?v=oh5p5f5_-7A (mobile)
+! "Ask" slide in comment carousel below video
+! * Does not work on AdGuard for iOS
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+
 ! -- Livestream
 ! Chat summary
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
@@ -5345,6 +5351,19 @@ allporncomic.com##.genres__collapse .col-6.col-sm-4.col-md-2:has(> [href="https:
 ! ==========================
 ! AI GF promo banner
 animeidhentai.com###promo-topbar
+! Header - AI Hentai
+animeidhentai.com##.topbar-ai
+! Sponsored banner - AI Girlfriend
+animeidhentai.com##.promo
+! Sidebar - Partners
+animeidhentai.com##.nav-group:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(> [href="https://aipenly.com/"])
+animeidhentai.com##.nav-sect:has(+ .nav-group > [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(+ .nav-group > [href="https://aipenly.com/"])
+! Footer - AI Hentai Generator
+animeidhentai.com##.footer-list > li:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"])
+
+! -- https://animeidhentai.com/31715/imaizumin-chi-wa-douyara-gal-no-tamariba-ni-natteru-rashii-episode-1-subbed
+! AI Hentai Generator
+animeidhentai.com##.aigen
 
 ! ===================
 ! == AnySex (NSFW) ==

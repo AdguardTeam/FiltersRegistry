@@ -1,9 +1,9 @@
-! Checksum: coLraRa2eb8V8KQgMsWf5A
-! Diff-Path: ../patches/260/260-s-1790282690-14400.patch
+! Checksum: P/zYAoIO2ljTfKchZ61R2Q
+! Diff-Path: ../patches/260/260-s-1790298794-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.15
-! TimeUpdated: 2026-09-24T20:42:53+00:00
+! Version: 2.0.2.16
+! TimeUpdated: 2026-09-25T01:11:07+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -4431,6 +4431,11 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 ! * May not work if video is loaded directly from URL
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="1080p"]]..adaptiveFormats.*[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="720p"]]..adaptiveFormats.*[?.qualityLabel=="720p"]')
+! -- https://m.youtube.com/watch?v=oh5p5f5_-7A (mobile)
+! "Ask" slide in comment carousel below video
+! * Does not work on AdGuard for iOS
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
 ! -- Livestream
 ! Chat summary
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
@@ -4597,6 +4602,18 @@ allporncomic.com##.genres__collapse .col-6.col-sm-4.col-md-2:has(> [href="https:
 ! ==========================
 ! AI GF promo banner
 animeidhentai.com###promo-topbar
+! Header - AI Hentai
+animeidhentai.com##.topbar-ai
+! Sponsored banner - AI Girlfriend
+animeidhentai.com##.promo
+! Sidebar - Partners
+animeidhentai.com##.nav-group:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(> [href="https://aipenly.com/"])
+animeidhentai.com##.nav-sect:has(+ .nav-group > [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(+ .nav-group > [href="https://aipenly.com/"])
+! Footer - AI Hentai Generator
+animeidhentai.com##.footer-list > li:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"])
+! -- https://animeidhentai.com/31715/imaizumin-chi-wa-douyara-gal-no-tamariba-ni-natteru-rashii-episode-1-subbed
+! AI Hentai Generator
+animeidhentai.com##.aigen
 ! ===================
 ! == AnySex (NSFW) ==
 ! ===================
