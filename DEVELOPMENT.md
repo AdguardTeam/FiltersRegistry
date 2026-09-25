@@ -457,6 +457,49 @@ After this procedure, the Git repository size will be reduced.
 1. Build to regenerate platform outputs: `yarn build --include=<filterID>`.
 1. Validate: `yarn validate`.
 
+### Adding a New Filter
+
+Registering a brand-new filter (new `filterId`) takes more than creating
+`filters/filter_<ID>_<Name>/`: downstream products must be ready for the new ID
+*before* the filter is compiled into their platform outputs.
+
+1. Create the filter directory (`template.txt`, `metadata.json` with a unique
+   `filterId`, `timeAdded`, `groupId`, tags, etc.). Register new tags or groups
+   in `tags/metadata.json` / `groups/metadata.json` if needed.
+1. **Check MV3 browser extension readiness.** The MV3 browser extension
+   (Chromium MV3, Edge MV3, Opera MV3) reads the platform `filters.json`
+   metadata, but its bundled DNR rulesets come from the `@adguard/dnr-rulesets`
+   package (ext-tsurlfilter monorepo), and only the ruleset IDs allowlisted in
+   its `tasks/validator-data.json` are included. If a new filter reaches the
+   `ext_chromium_mv3` / `ext_edge_mv3` / `ext_opera_mv3` outputs before the
+   extension ships the matching bundled ruleset, it appears in the extension UI
+   but cannot be enabled (`RulesetCounter for filterId <ID> not found`) — this
+   happened with filters 26 and 27, see
+   [#1260](https://github.com/AdguardTeam/FiltersRegistry/pull/1260).
+
+   The extension is *ready* for a new filter only when **both** are true:
+    - `@adguard/dnr-rulesets` includes the new ruleset — `validator-data.json`
+      and related files are updated per the "Managing `validator-data.json`"
+      guide in the dnr-rulesets README, and
+    - an MV3 extension release bundling the updated rulesets has shipped.
+      Manifest `rule_resources` changes require a full store review, so this
+      cannot ride an auto-publish.
+
+   Until then, exclude the filter from the MV3 platforms in its `metadata.json`:
+
+    ```json
+    "platformsExcluded": [
+        "ext_chromium_mv3",
+        "ext_edge_mv3",
+        "ext_opera_mv3"
+    ]
+    ```
+
+   Remove the exclusion only *after* that extension release has shipped;
+   removing it earlier brings the phantom entries back.
+1. Build to regenerate platform outputs: `yarn build --include=<filterID>`.
+1. Validate: `yarn validate`.
+
 ### Working with Translations
 
 Translations live in `locales/` (45+ languages). See
