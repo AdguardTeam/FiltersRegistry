@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Wkl541fls/ROFoG4Tg6OLw
-! Diff-Path: ../patches/2/2-s-1790338307-3600.patch
+! Checksum: mOdM7mKpNWZHgdxTprxdpw
+! Diff-Path: ../patches/2/2-s-1790341834-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.92.94
-! TimeUpdated: 2026-09-25T12:07:50+00:00
+! Version: 2.4.92.95
+! TimeUpdated: 2026-09-25T13:06:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11879,6 +11879,7 @@ ad.broadstreetads.com
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||lobe.scv.public.sse-prod-eks-euw1.futureplc.engineering^
 ||gray.unlikebuck.com^
 ||valentine.xhamster.*^
 ||serve.omr.com^
@@ -39876,7 +39877,7 @@ endfield.gg,expedition33.gg,cookierun.gg,dcworldscollide.gg,destiny2zone.com,dig
 !
 ! Bild group
 !
-! Future PLC
+! Future Publishing Limited Quay House / Future PLC
 !
 ! Advergame Technologies Pvt. Ltd
 !
@@ -40078,6 +40079,10 @@ m.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, playerRespon
 ! Fix SSAP ads
 www.youtube.com##+js(adjust-setTimeout, [native code], 17000, 0.001)
 ! Fix ads with a specific Google account and for case when JSON.stringify is not writable
+! Some platforms cannot download the new JS rules, so we need to keep the previous rules for them and disable them for other platforms
+! TODO: Remove the exceptions and rules above once all platforms include the new rules
+! Updated rules
+! Fix fake buffering on the initial load
 ! Fix ads on https://www.youtube.com/shorts/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1991263854
 ! TODO: remove the hints and JavaScript rule when Safari uses the latest scriptlets library (v2.2.7 or above)
@@ -40230,9 +40235,11 @@ animetoki.com###frame:has(> iframe[src^="//acceptable.a-ads.com/"])
 1024teradl.com##.tracking-wider
 wallpapers.com##.cd-top-ad
 gsmarena.com##.price-chart-widget
+||futureplc.engineering/v1/get-user-campaigns
 bluebirdbanter.com##div[data-concert="leaderboard_top_tablet_desktop"]
 bluebirdbanter.com##main > div > div[class]:has(> div:is([data-concert="desktop_leaderboard_variable"], [data-concert="frontpage_hero_desktop"]))
 bluebirdbanter.com##.duet--layout--rail > div[class]:has(> div[class] > div[data-concert="medium_rectangle_variable"])
+skyscanner.at,skyscanner.cz,skyscanner.de,skyscanner.dk,skyscanner.fi,skyscanner.ie,skyscanner.no,skyscanner.pl,skyscanner.se,skyscanner.net,skyscanner.*###flights-results-list > div[role="listitem"]:has(> div > div[class^="InlinePlus_container__"])
 thesundevils.com##.static-header__ads
 zlive.st##.mx-auto:has(> div.nm-pop)
 modsfire.com##mf-offer
@@ -60935,6 +60942,9 @@ circleofcricket.com###myModal:style(display: none !important;)
 circleofcricket.com##div.container-full.add:has(> a[href]:first-child)
 ||circleofcricket.com/assets/adv/
 !
+! Future Publishing Limited Quay House / Future PLC
+toptenreviews.com,guitarplayer.com,goodto.com,techlearning.com,shortlist.com,realhomes.com,nexttv.com,musicradar.com,gardeningknowhow.com,countrylife.co.uk,tomsguide.com,fourfourtwo.com,musicradar.com,gardeningknowhow.com,techradar.com,gamesradar.com,livescience.com,windowscentral.com,pcgamer.com,tomshardware.com##.widget-hero > div.widget-header
+!
 ! Shrinkbixby
 loanbixby.com,financeguidz.com,srnky.com,clksz.com##+js(no-window-open-if)
 srnky.com,clksz.com,oii.la,tpi.li,tvi.la,oei.la,tii.la,iir.ai###link-view a[target="_blank"] > img
@@ -67610,8 +67620,8 @@ implbits.com#@#.banner_container
 !
 !############### TEMPORARY ###############
 !
+! BUG: https://github.com/AdguardTeam/CoreLibs/issues/2102 (blank and unresponsive)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242052
-! Probably a bug
 ! BUG: https://github.com/AdguardTeam/CoreLibs/issues/1970 (any/no option)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200850
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168834
@@ -67623,6 +67633,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/241312
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242414
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241968
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242294
@@ -86238,6 +86249,7 @@ browsershots.org#@#.advert_area
 ||8s32e590un.com^
 ||8s5s.com^
 ||8sfdladng.xyz^
+||8tb11bh7ig8wpufwrt6zb8torymq1b1xp.cfd^
 ||8uy9oc8g6gwm9l.rest^
 ||8wl57n3vciqi6bcw4wo2zylux1bi9x5pc.cfd^
 ||8wmkofykbyf5gt5.rest^
@@ -92487,6 +92499,7 @@ browsershots.org#@#.advert_area
 ||ceerrvzdgucqs.online^
 ||ceesequiped.qpon^
 ||cefazaaycjdqi.store^
+||cegcetbxwrc.com^
 ||ceget.xyz^
 ||cegnhoqdhvjou.space^
 ||cegwdxrlymdbm.space^
@@ -105571,6 +105584,7 @@ browsershots.org#@#.advert_area
 ||iwdnwghcijrff.space^
 ||iwdstbdbjevqp.online^
 ||iwewagkgjkrqq.site^
+||iwfdbwwacsqvx.space^
 ||iwffbjlwvwloq.online^
 ||iwfitgdwowfjp.space^
 ||iwgsincqiidjv.site^
@@ -105735,6 +105749,7 @@ browsershots.org#@#.advert_area
 ||jakeconventconcerned.com^
 ||jakedefy.com^
 ||jakobcia.qpon^
+||jakocxxpvbvsw.site^
 ||jakrkwyjptezk.site^
 ||jalfcdcfediox.com^
 ||jalkarsontag.cyou^
@@ -105848,6 +105863,7 @@ browsershots.org#@#.advert_area
 ||jbyajwmnljpsy.site^
 ||jbzmwqmwqyejw.top^
 ||jbzmwqmwqyzaz.top^
+||jbzmwqwljyaql.top^
 ||jbzmwqwljyazw.top^
 ||jcajuesjvxlqy.store^
 ||jcavguudmzlif.site^
@@ -107798,6 +107814,7 @@ browsershots.org#@#.advert_area
 ||ktnwsfisfbvjl.space^
 ||ktocmwvtlivyq.site^
 ||ktpzzvnffdttj.site^
+||ktqihtrrmslbx.site^
 ||ktrcoublzmdhh.space^
 ||ktrejeujbewdo.site^
 ||ktreyujtfvaxp.space^
@@ -111542,6 +111559,7 @@ browsershots.org#@#.advert_area
 ||mujeresstyrax.shop^
 ||mujhetfonkjnt.website^
 ||mujnvzqpnzxet.site^
+||mujrtojiwpwjx.online^
 ||mujwqivmsqpzf.site^
 ||mukrirumpy.cyou^
 ||muktizlotych.qpon^
@@ -114407,6 +114425,7 @@ browsershots.org#@#.advert_area
 ||otowlgplnxtmk.website^
 ||otqbmlcodvbqg.website^
 ||otqmunvibzp.in^
+||otrzgsnwrrwhk.com^
 ||otsoasxgsyabr.online^
 ||otsujszdyleem.website^
 ||otswhtxkfprcy.online^
@@ -116169,6 +116188,7 @@ browsershots.org#@#.advert_area
 ||plumbertowards.com^
 ||plumbogcrepy.shop^
 ||plumierunkirk.qpon^
+||plumingsaeume.com^
 ||plummeteffront.shop^
 ||plump-drawing.pro^
 ||plump-message.pro^
@@ -117731,6 +117751,7 @@ browsershots.org#@#.advert_area
 ||qfhvdwqycveuf.site^
 ||qfiiabgqceggh.site^
 ||qfiobhon.com^
+||qfioxlrke.in^
 ||qfjgcntbdvthn.online^
 ||qflcnpyfqxedr.space^
 ||qfmovdyoatupg.store^
@@ -126321,6 +126342,7 @@ browsershots.org#@#.advert_area
 ||tycvwvpsgxvzd.website^
 ||tydiejoyweed.shop^
 ||tydrumgmari.org^
+||tyeemegrimgelds.qpon^
 ||tyeupgpxarrgq.site^
 ||tyfwdtaynqoss.online^
 ||tyhvohmkmnitu.space^
@@ -132744,6 +132766,7 @@ browsershots.org#@#.advert_area
 ||zidaunsoud.net^
 ||ziddichqrttva.online^
 ||ziddlzeeddlmv.website^
+||ziehx3ltb55ryu81xvic.rest^
 ||zieifgajfzyvs.space^
 ||ziekvasufucub.website^
 ||zifrppvunuhag.site^
@@ -135090,6 +135113,7 @@ browsershots.org#@#.advert_area
 ||videostep.com^$3p
 ||vidoomy.com^$3p
 ||vidverto.io^$3p
+||viewsense.ai^$3p
 ||viewtraff.com^$3p
 ||viralnugget.com^$3p
 ||vistarsagency.com^$3p
