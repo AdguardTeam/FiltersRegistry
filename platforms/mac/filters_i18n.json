@@ -5525,11 +5525,11 @@
 			},
 			"ru": {
 				"name": "Польский фильтр AdGuard",
-				"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + польский фильтр AdGuard. Эти фильтры удаляют рекламу на сайтах на польском языке."
+				"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + Польский фильтр AdGuard. Эти фильтры удаляют рекламу на сайтах на польском языке."
 			},
 			"sk": {
 				"name": "Poľský filter AdGuard",
-				"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + poľský filter AdGuard. Zoznam filtrov, ktoré konkrétne odstraňujú reklamy na webových stránkach v poľskom jazyku."
+				"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + Poľský filter AdGuard. Zoznam filtrov, ktoré konkrétne odstraňujú reklamy na webových stránkach v poľskom jazyku."
 			},
 			"sl": {
 				"name": "AdGuard Poljski filter",
@@ -5553,7 +5553,7 @@
 			},
 			"uk": {
 				"name": "Польський фільтр AdGuard",
-				"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + польський фільтр AdGuard. Список фільтрів, який спеціально видаляє рекламу на сайтах польською мовою."
+				"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + Польський фільтр AdGuard. Список фільтрів, який спеціально видаляє рекламу на сайтах польською мовою."
 			},
 			"vi": {
 				"name": "Bộ lọc tiếng Ba Lan",
