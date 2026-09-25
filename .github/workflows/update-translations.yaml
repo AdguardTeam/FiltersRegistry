@@ -19,9 +19,11 @@ jobs:
     # its HEAD into master. Schedules only fire on the default branch anyway,
     # and the repository check keeps forks from running the workflow at all.
     if: github.ref == 'refs/heads/master' && github.repository == 'AdguardTeam/FiltersRegistry'
-    # The download step performs 129 sequential curl calls; cap the job runtime
-    # so a stalled connection cannot hold the update-translations concurrency
-    # group for the GitHub 6-hour default and delay subsequent weekly runs.
+    # The download step is network-bound (a single Crowdin CLI call, unlike
+    # the 129 sequential curl calls of the Twosky-based download.sh); cap the
+    # job runtime so a stalled connection cannot hold the update-translations
+    # concurrency group for the GitHub 6-hour default and delay subsequent
+    # weekly runs.
     timeout-minutes: 30
     # Push the update-translations branch, create/update the translations PR
     # and post validation-failure comments with the default GITHUB_TOKEN.
@@ -44,9 +46,15 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      # Downloads translations from the Crowdin project (adguard-applications,
+      # folder miscellaneous/filters-registry) via the Crowdin CLI, bypassing
+      # the Twosky gateway that blocks GitHub Actions runner IPs. The token
+      # must be added to the repository secrets.
       - name: Download translations
-        run: ./download.sh
+        run: ./download-crowdin.sh
         working-directory: scripts/translations
+        env:
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
       # Validation must not block PR creation: the branch is pushed and the PR is
       # opened regardless. Validation errors are reported as a PR comment below,
