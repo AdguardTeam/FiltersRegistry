@@ -1,9 +1,9 @@
-! Checksum: hU8LlaglxTZ003Q7/ri5+A
-! Diff-Path: ../patches/14/14-s-1790356109-3600.patch
+! Checksum: dnbuKY+nzJKM9W9WiITEUw
+! Diff-Path: ../patches/14/14-s-1790403098-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.80.49
-! TimeUpdated: 2026-09-25T17:05:45+00:00
+! Version: 2.2.80.50
+! TimeUpdated: 2026-09-26T06:08:25+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2663,6 +2663,7 @@ korona-kielce.pl,mmacity.pl,zadzior.pl,tiptop24.pl,superbutelki.pl,polskibanan.p
 !
 ! NOTE: Regular rules
 !
+my.tickmill.com##div[class*="_isCookiesNotice_"]
 hasepost.de#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> .cmpboxbtns > span#cmpwelcomebtnyes > a')
 powerwatch.jp#%#//scriptlet('trusted-click-element', '#zigzag-worldshopping-checkout >>> #zigzag-test__cookie-banner-accept-all', '', '500')
 ||heizung-billiger.de/themes/heizung/assets/js/consent.js
@@ -5566,7 +5567,7 @@ usatoday.com##.gnt_pu
 pepper.pl#$#body.overflow--hidden { overflow-y: auto !important; }
 pepper.pl#$#.zIndex--modal.popover--layout-fixed-bottomSheet:has(.vue-portal-target > .flex > button[data-t="showCookiesSettings"]) { display: none !important; }
 pepper.pl#$#.popover-cover.zIndex--modal:empty:has(+ .zIndex--modal.popover--layout-fixed-bottomSheet .vue-portal-target > .flex > button[data-t="showCookiesSettings"]) { display: none !important; }
-sberbank.ru,sberbank.com#%#//scriptlet('set-cookie', 'sbrf.pers_notice', '1')
+sber.ru,sberbank.ru,sberbank.com#%#//scriptlet('set-cookie', 'sbrf.pers_notice', '1')
 pionergame.com#%#//scriptlet('set-cookie', 'ca', 'true')
 bluemail.me,chargeandsleep.com,thingtesting.com##div[aria-label="Cookie notice"]
 brandirectory.com##.app-cookie-banner--banner
@@ -48488,6 +48489,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+doctornow.co.kr#%#//scriptlet('trusted-set-local-storage-item', 'appInstallSheetAutoOpen', '{"state":{"hasAutoOpened":true},"version":1}')
 white-pages.gr##.info:has(> div#ci-play-container)
 1024teradl.com##.uppercase.tracking-wider
 bluebirdbanter.com##section[aria-labelledby="sbn-app-promo-title"]
@@ -52843,6 +52845,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+wanted.co.kr#$#body { overflow: auto !important; position: static !important; }
+wanted.co.kr#$#div[data-cy="appDownloadPopup"] { display: none !important; }
+webtoon.kakao.com##.fixed.bottom-0.z-toastMinus1
 m.youtube.com##.mobile-topbar-header-sign-in-button
 sat24.com##DIV[data-component="SnippetTextBlock"]:has(a[href="https://play.google.com/store/apps/details?id=com.meteoplaza.flash"])
 kikkoman.co.jp##.js-cmn-homecook-search-nav-banner
