@@ -1,13 +1,13 @@
-! Checksum: jV0lIg7pOW8zI2Ni22pWhg
-! Diff-Path: ../patches/251/251-s-1790138776-14400.patch
+! Checksum: fu2leY9SuAUGKfmZmrO5NQ
+! Diff-Path: ../patches/251/251-s-1790398041-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.33
-! TimeUpdated: 2026-09-23T04:44:10+00:00
+! Version: 2.0.10.34
+! TimeUpdated: 2026-09-26T04:44:09+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 23September2026v1
+! OriginalVersion: 25September2026v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1535,7 +1535,7 @@ $removeparam=id,domain=go.redirectingat.com|go.skimlinks.com|go.skimresources.co
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1726383
 $removeparam=offer_id,domain=catch.com.au|surfshark.com
 ! https://tenshoku•nikkei•co•jp/lp/15002/?n_cid=TPRN0002&waad=Ujim9yQ8&adid=NK_L2_T_shortlink_Sun_diagnosis&utm_source=NKdenshiban&utm_medium=content-text&utm_content=text&utm_campaign=shortlink_Sun_diagnosis (Can't be made generic due to: finnNO, willhabenAT, kijijiCA, https://github.com/DandelionSprout/adfilt/issues/601)
-$document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
+$document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com|harborfreight.com
 !! ——— Rules for heavily covered sites ———
 !!! ——— Amazon ———
 ! Filters known to be problematic
@@ -3637,7 +3637,8 @@ $removeparam=ymid
 ^z=*&var=$removeparam=var,document
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-5498306
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-17886709
-$removeparam=via,domain=datafa.st|sincode.ai|skillshare.com|thedailybeast.com|raycast.com
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18607681
+$document,removeparam=via,domain=datafa.st|sincode.ai|skillshare.com|thedailybeast.com|raycast.com|matrix.to|matrix.org
 ! https://www•onlyandsons•com/fi-fi/product/22022876_207/regular-fit-housut?rm=R2V0UmVsYXRlZEl0ZW1z
 $removeparam=rm,domain=jackjones.com|jjxx.com|mamalicious.com|only.com|onlyandsons.com|veromoda.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-5555484
@@ -4550,6 +4551,8 @@ $document,removeparam=enc_em,domain=bleacherreport.com|weather.com
 ||norton.com^$document,removeparam=om_ext_cid
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18539702
 ||harborfreight.com^$document,removeparam=mi_u
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18559456
+||harborfreight.com^$document,removeparam=adsetid
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
