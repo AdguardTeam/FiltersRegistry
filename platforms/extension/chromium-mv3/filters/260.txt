@@ -1,8 +1,8 @@
-! Checksum: Unby9Tv4vKmvNb69O3r+9w
+! Checksum: XOHXYAlLSmQnFGgD/TCcnQ
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.20
-! TimeUpdated: 2026-09-26T20:40:25+00:00
+! Version: 2.0.2.21
+! TimeUpdated: 2026-09-27T01:19:25+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -4011,6 +4011,12 @@ vercel.com##[aria-label="Ask AI"]
 ! "Ask AI about this page" + separator
 vercel.com#?#.mt-3 button:contains(Ask AI)
 vercel.com#?#.mt-3 div:has(+ button:contains(Ask AI))
+! =============
+! == Verizon ==
+! =============
+! Floating chatbot
+www.verizon.com###vz-gpt-flare-button
+||chatbot-exp.verizon.com/chatbot/nsa/nos/h8sv-vzwcb-onebot-proxy/eksprod/public/askverizon.js$script,domain=www.verizon.com
 ! ===========
 ! == Vimeo ==
 ! ===========
@@ -4462,6 +4468,11 @@ www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.
 ! * Does not work on AdGuard for iOS
 m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
 m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+! -- https://www.youtube.com/watch?v=1K55xVb6qhY
+! Automatic video chapters
+! * May not work for all users
+! * TODO: Remove "View Chapters" button & chapters for "In this video" sidebar
+www.youtube.com#%#//scriptlet('ubo-json-edit', '$..playerOverlays..[?@.visibleOnLoad.key=="AUTO_CHAPTERS"]')
 ! -- Livestream
 ! Chat summary
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
