@@ -1,10 +1,11 @@
-! Checksum: fpFauEKTjAhGWRcAVtpw5Q
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1790366851-3600.patch
+! Checksum: dFyzIL3gHmhQin/7QZXW1Q
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1790503707-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.44
-! TimeUpdated: 2026-09-25T20:05:14+00:00
+! Version: 2.0.68.45
+! TimeUpdated: 2026-09-27T10:05:51+00:00
 ! Expires: 12 hours (update frequency)
+||remotedesk.life^
 ||zentryx.space^
 ||adcluster.com.tr^$third-party
 ||rtb-stack.com^
@@ -5579,6 +5580,12 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+[$domain=/dizipalorjinal\d+\.com$/]##body > a[class^="pageskin-"]
+[$domain=/dizipalorjinal\d+\.com$/]#$#.has-pageskin { background-image: none !important; }
+[$domain=/dizipalorjinal\d+\.com$/]##[aria-label="Reklam"]
+videoplays.cfd##.vast-ad-overlay
+/rek.xml|$domain=videoplays.cfd
+videoplays.cfd#%#//scriptlet('abort-on-stack-trace', 'document.createElement', 'getAdMountPoint')
 [$domain=/golbettv\d+\.com$/]##body > a[target="_blank"]
 [$domain=/golbettv\d+\.com$/]##.bnr
 [$domain=/bahsinetv\d+\.site$/]##body > a[target="_blank"]
