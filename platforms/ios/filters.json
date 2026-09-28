@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.78",
-			"timeUpdated": "2026-09-28T07:23:56+0000",
+			"version": "2.1.8.79",
+			"timeUpdated": "2026-09-28T15:05:44+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.93.67",
-			"timeUpdated": "2026-09-28T14:06:08+0000",
+			"version": "2.4.93.68",
+			"timeUpdated": "2026-09-28T15:05:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.93",
-			"timeUpdated": "2026-09-28T11:06:11+0000",
+			"version": "2.0.76.94",
+			"timeUpdated": "2026-09-28T15:06:29+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.80.73",
-			"timeUpdated": "2026-09-28T14:06:49+0000",
+			"version": "2.2.80.74",
+			"timeUpdated": "2026-09-28T15:06:47+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.36.38",
-			"timeUpdated": "2026-09-28T13:08:59+0000",
+			"version": "2.1.36.39",
+			"timeUpdated": "2026-09-28T15:06:51+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.84.1",
-			"timeUpdated": "2026-09-28T14:06:57+0000",
+			"version": "2.0.84.2",
+			"timeUpdated": "2026-09-28T15:06:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -817,8 +817,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/23_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.9.30",
-			"timeUpdated": "2026-09-26T06:08:37+0000",
+			"version": "2.0.9.31",
+			"timeUpdated": "2026-09-28T15:07:02+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
