@@ -1,5 +1,5 @@
-! Checksum: APuM6ZNsmeJr19V2n5Qcow
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1790475192-3600.patch
+! Checksum: 1BOh2Gd3d7WeBOhjVjFW0Q
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1790565237-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.8.77
@@ -806,6 +806,7 @@ ucoz.ru/informer/
 ||tlxjuj.com^$third-party
 ||dpjrba.com^
 ||appcodedark.com^
+||appcodepnik^
 ||flyroll.ru^$third-party
 ||adstreamer.ru^$third-party
 ||videohead.tech^
@@ -1261,7 +1262,6 @@ ucoz.ru/informer/
 ||adone.ru^$third-party
 ||adpod.in^$third-party
 ||adserver1.
-||adservone.com^$third-party
 ||adsmmgp.com^$third-party
 ||adstock.pro^$third-party
 ||adtelligent.com^$third-party
@@ -1476,7 +1476,6 @@ ucoz.ru/informer/
 ||mp-https.info^$third-party
 ||mrbasic.com^
 ||myanimetop.com/button.php?
-||mypagerank.*/*?
 ||n1307adserv.xyz^
 ||n161adserv.com^$third-party
 ||nadavi.net^$third-party
@@ -1919,7 +1918,6 @@ gorodrabot.by#%#//scriptlet('abort-on-stack-trace', 'Promise', 'loadAdvManager')
 sweet-tv.net#%#//scriptlet('set-constant', 'canRunAds', 'true')
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=limehd.tv
 @@||yandex.ru/ads/system/adsdk.js$domain=limehd.tv
-||texnic.ru/jq/san.js
 @@||fireman.club/wp-content/themes/fireman/js/prebid-ads.js$domain=fireman.club
 ||patents.su/assets/themes/patents/js/main/ads.js
 patents.su#%#//scriptlet("abort-on-property-read", "adsBlocked")
@@ -2983,6 +2981,7 @@ stolicaonego.ru###hideadvs
 stolicaonego.ru##.content_news_date[style^="margin-top:-20px; background-color:#fff;"]
 newsru.co.il##.in_text_video
 gogov.ru##.gg-dox
+||vod.smotrim.ru/vod/definst/*/playlist.m3u8?entity=announcement&
 smotrim.ru#%#//scriptlet('json-prune', 'data.adverts')
 euroauto.ru##.banner-in__wrapper
 ||static2.tinkoffjournal.ru/creatives-core/v*/dist/index.js
@@ -3005,7 +3004,6 @@ euroauto.ru##.promo-banner__container
 ||file.euroauto.ru/*file/promotion/
 ||st.spads.me/video/*/*.mp4$domain=video.sports.ru,redirect=noopmp4-1s
 ||st.ads.prod.vdsprts.ru/video/*.mp4$domain=video.sports.ru,redirect=noopmp4-1s
-hightech.fm##a[href^="https://dum.ai/"]
 ||cpa-elements.rambler.ru/info-banner/sdk.js
 ||hi-fi.ru/js/bidding.js
 7kanal.co.il###banner-sticky
@@ -3016,7 +3014,6 @@ api.ortified.ws#%#//scriptlet('set-constant', 'adsConfig.nonLinear', 'emptyObj')
 kommersant.ru##.rubric_branding
 kommersant.ru##.adv_custom
 hi-fi.ru,scrubs-mtv.net##.ad-branding
-pay.cloudtips.ru##.card-banner
 sports.ru##.nav-left-banner
 sports.ru##.navigation-right-column-banner
 sports.ru##article[data-article-type="advert_material"]
@@ -3127,7 +3124,6 @@ daily.afisha.ru##div[class^="EntryBlocks_HeadSkeleton"]
 aviasales.ru#%#//scriptlet('set-cookie', 'uncheck_hotel_cookie', 'true')
 vesti.ru##.top-block
 vesti.ru##.nested-page-top
-meteovesti.ru#?#main > div > div > section.d-block[data-fetch-key]:contains(Реклама)
 meteovesti.ru##main > section:not([class]):has(> .container > div[data-fetch-key] > .mx-auto > div[id^="adfox_"])
 meteovesti.ru###adv-slot
 bankiros.ru##div[data-params*="bank-currency-banner"]
@@ -3229,7 +3225,6 @@ rg.ru##div[class*="PageArticle_partner__"]
 planetazdorovo.ru##.pre-header-banner-full
 planetazdorovo.ru##.main-first
 livelib.ru##.prm-block
-livelib.ru##main > article.main-slider
 ru.kinorium.com###bwnurid
 ||musiceffect.ru/promo/
 pikabu.ru##.external_branding
@@ -4767,7 +4762,6 @@ tarotman.ru##.theiaStickySidebar > div.widget_custom_html
 tarotman.ru##.block-custom-content
 ||player.twitch.tv/js/embed/$domain=online-fix.me
 online-fix.me##.site-team
-||agronews.com/js/bannermanager.js
 ||9tv.co.il/home/kupiCarousel
 9tv.co.il###kupi_slider
 linux.org.ru##a[href="http://qrator.net/"] > img
@@ -5784,7 +5778,6 @@ slovarozhegova.ru##.advlinks
 noi.md##.adw
 politeka.net,xt.ht##.ai-placement
 thg.ru##.aio_banner
-drom.ru##.amayamaTire
 cmlt.ru##.an-pic-top-container
 footballua.tv,gp.by##.article-banner
 new-team.org##.attach > tbody > tr[class="row3 tCenter"][style="height:22px;"]:last-child
@@ -6265,7 +6258,6 @@ tushkan.club##iframe[src^="https://keitush.ru/"]
 elec.ru##iframe[width="234"]
 elec.ru##iframe[width="240"]
 vz.ru##iframe[width="240"][height="200"]
-yarportal.ru##iframe[width="480"][height="100"]
 mezha.media,good73.net,usionline.com,volzsky.ru##img[alt="Реклама"]
 volzsky.ru##img[alt="реклама"]
 ap22.ru##img[class$="Recbanner"]
