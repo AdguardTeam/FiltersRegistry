@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zfCFY9VRlp5XOlwy/OFslw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790572252-3600.patch
+! Checksum: BAzZ5k9HDI9WUCnZg0T68A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790576011-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.93.58
-! TimeUpdated: 2026-09-28T05:06:09+00:00
+! Version: 2.4.93.59
+! TimeUpdated: 2026-09-28T06:10:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||engine.camconnections.live^
 ||desk.unlesscool.com^
 ||delivery.viewsense.ai^
 ||rtb.viewsense.ai^
@@ -13106,6 +13107,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/242780
+sexwebseries.com,nxxn.live##+js(no-setTimeout-if, .clientHeight)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242809
 sporteurope.tv##+js(google-ima)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242383
@@ -40218,6 +40221,7 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+gayporntube.com##+js(set-constant, Object.prototype.findRoll, [], , asFunction)
 mangatrend.org##+js(remove-node-text, script, shown_at)
 sortiraparis.com##div[class*="margin-"][style^="overflow: hidden; min-height:"]
 pluto.tv##.pause-panel-ad-container
@@ -40548,6 +40552,7 @@ bingebox.to##+js(json-prune, $..popupHtml)
 ||api.redgifs.com/v*/adv/
 redgifs.com##.AnnouncementBar
 redgifs.com##.topNav-wrap button.aTab
+/^https:\/\/engine\.[a-z]+\.live\/\?[0-9]+$/$xhr,3p
 /^https:\/\/engine\.[a-z]+\.com\/\?[0-9]+$/$xhr,3p
 armidaleexpress.com.au##div.viafoura > div.mx-auto > #story-comment-container:has(> div[class] > span:contains(Ad))
 ernax.pro##.fixed.z-\[9981\]
