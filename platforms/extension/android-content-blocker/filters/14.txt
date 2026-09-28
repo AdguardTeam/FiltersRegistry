@@ -1,8 +1,8 @@
-! Checksum: vI55xkJCXIOLxfdLwwg2dw
+! Checksum: AE927tdTR7VlTEzxFNUeZg
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.80.64
-! TimeUpdated: 2026-09-28T04:07:37+00:00
+! Version: 2.2.80.65
+! TimeUpdated: 2026-09-28T05:07:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2528,6 +2528,9 @@ softimi.pl,yarnpower.pl,baumgart-kaffee.pl,decorlabs.pl,werbus.pl,xeromania.pl,d
 !
 ! NOTE: Regular rules
 !
+123drukuj.pl##div[data-test="cookie-popup"]
+sellpy.pl###app > div[style] ~ div[class^="sc-"]:empty
+sellpy.pl###app > div[style] ~ div[class^="sc-"]:empty + div[class^="sc-"]
 radom.pl##.elementor-8775
 gazetawielicka.pl##.fcm-banner
 sklep.elus.pl##.cookie-message-popup-lq
@@ -5781,7 +5784,6 @@ makeship.com##.consent-wrapper
 correosaduanas.es##.loadingCookies
 obi.pl##.disc-cp
 pelikan.com##.activebar-container._privacy_fix
-orange.pl###opl-cookie-wrapper
 gowork.pl##.g-cookies-bar
 sbt.com.br,supermedia.pl,lesoleil.com,ledroit.com,lenouvelliste.ca,lequotidien.com,latribune.ca,lavoixdelest.ca##div[class^="cookies-banner"]
 blinkcats.co.uk##div[style^="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index:"]
@@ -6157,7 +6159,7 @@ cntraveler.com##div[class^="MessageBannerWrapper"]
 yenisafak.com##.ys-cookie-modal
 thecompleteuniversityguide.co.uk##.cookie_lbox
 socofe.pzu.pl##pfs-cookie-info
-doladowania.a2mobile.pl,doladowania.t-mobile.pl,njumobile.pl,doladuj.plus.pl,doladuj.heyah.pl,doladowania.wrodzinie.com.pl,orange.pl##.bm-privacy
+doladowania.a2mobile.pl,doladowania.t-mobile.pl,njumobile.pl,doladuj.plus.pl,doladuj.heyah.pl,doladowania.wrodzinie.com.pl##.bm-privacy
 mysellix.io,sellix.io##.sellix-cookie-container
 dts24.pl###elementor-popup-modal-304563
 zinio.com##div[class^="CookiePolicyContainer-"]
@@ -6951,7 +6953,6 @@ ign.com,speedtest.net###zdcFloatingBtn
 companyofheroes.com###cookies-settings
 companyofheroes.com##div[id^="privacy-policy-"]
 ||zurich.it/*/cookies/cookies.js
-orange.pl##div[id^="CookiesPopup_"]
 herne.de###cookie_hinweis_box
 trauer.gn-online.de###gncookiebanner
 geiger-edelmetalle.de##div[class^="gei-cookie-consent-"]
@@ -7488,7 +7489,6 @@ preplounge.com##.modal-cookie-privacy-settings
 preplounge.com##.js-site-overlay
 qwanturankpro.net,powietrze.gios.gov.pl,developers.mews.com,tenpoznan.pl##.cmplz-cookiebanner
 binnopharmgroup.ru###cookie_disclamer
-tvgo.orange.pl###analyticsModal
 gopro.com##div[class^="GDPRCookieNotification_"]
 ithillel.ua##.cookie-ntf
 euromoney.com##.CookiePromo
@@ -13068,6 +13068,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/242796
+advocado.de#@##cookieNoticePro
+advocado.de#@##cookieAccept
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242488
 @@||delivery.consentmanager.net/delivery/cmp.php$domain=hasepost.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242520
@@ -27957,6 +27960,8 @@ komputerswiat.pl,sportingnews.com,polskiobserwator.de,wiemy.to,wiwo.de,mainichik
 !
 ! SECTION: Subscriptions - Regular rules
 !
+defence-network.com###cpmst
+defence-network.com##.cpm-drb
 igeeksblog.com##.from-footer-cta-from
 mc-web.jp,relazo.net,japan.hani.co.kr,stadt-bremerhaven.de##div[google-add-preferred-source-btn]
 relazo.net##.dividerBottom > p[style="margin-top:12px;"]
@@ -42950,6 +42955,7 @@ apteki.yandex.ru##div[data-qa="BannerSlider"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+kami-labs.fr###kl-tpb-bottom
 aol.com###m-dispatcher-sticky-footer
 romstal.ro###cs-popup-overlay
 popcornmovies.ac##.inset-x-3.fixed
