@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SVQ7Jx5aSKx3Tx7GXkHF/w
-! Diff-Path: ../patches/19/19-s-1790666246-3600.patch
+! Checksum: DDwlNZ9hsCZHp3bIaNPsuw
+! Diff-Path: ../patches/19/19-s-1790669529-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.84.8
-! TimeUpdated: 2026-09-29T07:13:48+00:00
+! Version: 2.0.84.9
+! TimeUpdated: 2026-09-29T08:08:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3324,6 +3324,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+pasazer.com##.pz-tg-open
 infranken.de##turbo-glomex-player-ui[controls-breakpoint="xsmall"]:remove()
 123pan.cn##.ant-modal-root:style(display: none!important;)
 123pan.cn##html body:style(overflow-y: auto!important;)
@@ -11796,6 +11797,7 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 !
 ! SECTION: Push notifications - Regular rules
 !
+||pasazer.com/push-subscribe.js
 stiga.com##.am-notification-wrapper
 /static/js/medya-push.js$domain=haberler.com|sondakika.com
 meteoweb.eu###notificationModal:style(display: none !important;)
@@ -12863,6 +12865,8 @@ defence-network.com##.cpm-drb
 igeeksblog.com##.from-footer-cta-from
 igeeksblog.com##.mt-space-8.sm\:mt-space-10:has(input[placeholder="Enter your email"])
 mc-web.jp,relazo.net,japan.hani.co.kr,stadt-bremerhaven.de##div[google-add-preferred-source-btn]
+||v.daum.net/banner/$subdocument,domain=joongdo.co.kr
+||dn.joongdo.co.kr/mnt/images/popup/2025/05/20250519_jd_qrcode.png
 relazo.net##.dividerBottom > p[style="margin-top:12px;"]
 sortiraparis.com##div[id^="unq_fmt_"]
 bunshun.jp##.article-follow-button
@@ -13525,7 +13529,6 @@ applesfera.com,xatakamovil.com###wes-popup
 vidaextra.com,directoalpaladar.com###wes-popupF
 naturallieplantbased.com##.wprm-recipe-container > .kb-row-layout-wrap:has(.spotlight-subscribe)
 naturallieplantbased.com##.wprm-recipe > div[style]:not([class], [id]):has(> .wpforms-container)
-merlininkazani.com##.google-follow-actions
 futura-sciences.com##.single-sharing-container
 thestreet.com##div[class^="styles_articleTagGroup__"] > .tool-tip-wrapper:has(> div[class^="styles_articleTagGroupButtons"] .tool-tip-wrapper > button[class^="styles_followButtonLabel"])
 ||thestreet.com/.api/newsletters?productItemIds=
@@ -15142,7 +15145,7 @@ tutu.ru##div[data-kind="grid-col"] > div[class^="view__wrapper"]:has(> div[data-
 rtl.be##box-newsletters
 lesoir.be###block_marketing_imu_nextgen
 lesoir.be##.r-mini-panel--section:has(.r-froomle--anonyme > .r-froomle--register)
-pbs.org##.newsletter-inline
+pasazer.com,pbs.org##.newsletter-inline
 pobreflixtv.*,vizertv.*##.ipsAlert
 pobreflixtv.*,vizertv.*##.ipsModal
 clickpetroleoegas.com.br##a[href^="https://news.google.com/s/"]
@@ -23147,6 +23150,8 @@ flightradar24.com##[data-id="a5b8151"][data-element_type="widget"]
 flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
+!+ NOT_OPTIMIZED
+merlininkazani.com##.google-follow-actions
 !+ NOT_OPTIMIZED
 technopat.net##.tp-gnews-follow
 !+ NOT_OPTIMIZED
