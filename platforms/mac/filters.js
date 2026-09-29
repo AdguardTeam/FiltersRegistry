@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.93.86",
-			"timeUpdated": "2026-09-29T09:06:41+0000",
+			"version": "2.4.93.87",
+			"timeUpdated": "2026-09-29T10:06:06+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.53.93",
-			"timeUpdated": "2026-09-29T08:08:16+0000",
+			"version": "2.0.53.94",
+			"timeUpdated": "2026-09-29T10:06:33+0000",
 			"languages": [
 				"de"
 			]
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.76.94",
-			"timeUpdated": "2026-09-28T15:06:29+0000",
+			"version": "2.0.76.95",
+			"timeUpdated": "2026-09-29T10:06:35+0000",
 			"languages": [
 				"ja"
 			]
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.80.84",
-			"timeUpdated": "2026-09-29T09:07:23+0000",
+			"version": "2.2.80.85",
+			"timeUpdated": "2026-09-29T10:06:53+0000",
 			"languages": []
 		},
 		{
@@ -302,8 +302,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.95.56",
-			"timeUpdated": "2026-09-29T09:07:30+0000",
+			"version": "2.0.95.57",
+			"timeUpdated": "2026-09-29T10:07:01+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.84.10",
-			"timeUpdated": "2026-09-29T09:07:31+0000",
+			"version": "2.0.84.11",
+			"timeUpdated": "2026-09-29T10:07:03+0000",
 			"languages": []
 		},
 		{
@@ -341,8 +341,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.48.78",
-			"timeUpdated": "2026-09-29T09:07:32+0000",
+			"version": "2.0.48.79",
+			"timeUpdated": "2026-09-29T10:07:05+0000",
 			"languages": []
 		},
 		{
