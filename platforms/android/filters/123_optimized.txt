@@ -1,9 +1,9 @@
-! Checksum: AFSLTJBiEqLaRZxHzjKIFA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1790644774-14400.patch
+! Checksum: mRaMOm4D+fk6/e91kpGwow
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1790657335-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.69.63
-! TimeUpdated: 2026-09-29T01:16:18+00:00
+! Version: 2.1.69.64
+! TimeUpdated: 2026-09-29T04:45:56+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -24,6 +24,7 @@
 /addtoany.min.js
 /badge_twitter.png
 /banner-social.jpg
+/bottom-facebook.png
 /common/sns/*
 /common/sns_
 /facebook-pagelike-widget/fb.js
@@ -255,6 +256,8 @@ _social-bar/
 ###follow-us-widget
 ###followBar
 ###followBox
+###followFB
+###followFBSvg
 ###followTwitter
 ###followUs
 ###follow_buttons
@@ -1073,6 +1076,7 @@ _social-bar/
 ##.cff-share-tooltip
 ##.ci-socials-ignited
 ##.cmg-share-bar
+##.col-fb
 ##.col-sharing
 ##.col-social
 ##.column-social
@@ -1084,6 +1088,7 @@ _social-bar/
 ##.comments-share
 ##.comments__likes
 ##.common-social-link
+##.common_share
 ##.component-social
 ##.connect-with-us
 ##.contenedor_redes_sociales
@@ -1162,6 +1167,7 @@ _social-bar/
 ##.email-share
 ##.email-share-link
 ##.email_share
+##.end-social
 ##.entry-aside-shares
 ##.entry-footer-share
 ##.entry-meta-share
@@ -1224,7 +1230,6 @@ _social-bar/
 ##.facebook-share-btn
 ##.facebook-share-button
 ##.facebook-share-link
-##.facebook-sharer
 ##.facebook-sidebar
 ##.facebook-social
 ##.facebookOuter
@@ -1259,6 +1264,7 @@ _social-bar/
 ##.fb-share
 ##.fb-share-button
 ##.fb-share-container
+##.fb-slider
 ##.fb-subscribe
 ##.fb-twitter
 ##.fb-widget
@@ -1791,6 +1797,7 @@ _social-bar/
 ##.leftsharebtn
 ##.leftside-socialshare
 ##.lf-facebook
+##.like-box-wrap
 ##.like-fb
 ##.like-layer
 ##.like-share
@@ -1866,6 +1873,7 @@ _social-bar/
 ##.mashsb-container
 ##.masterSocialbutton
 ##.masthead-social
+##.materna-shariff
 ##.mc-share-post
 ##.mc-share-toggle
 ##.md-social-toolbar-circle
@@ -2228,6 +2236,7 @@ _social-bar/
 ##.share-button--twitter
 ##.share-button-group
 ##.share-button-wrapper
+##.share-buttons-2
 ##.share-buttons-bottom
 ##.share-buttons-box
 ##.share-buttons-container
@@ -2276,6 +2285,7 @@ _social-bar/
 ##.share-icons-sticky-box
 ##.share-icons-wrapper
 ##.share-in-footer
+##.share-indicator
 ##.share-inner
 ##.share-inner-wrp
 ##.share-instagram
@@ -2364,7 +2374,6 @@ _social-bar/
 ##.share-tools
 ##.share-tools--secondary
 ##.share-tools-buttons-top
-##.share-tools-wrapper
 ##.share-topic
 ##.share-tw
 ##.share-twitter
@@ -4001,7 +4010,6 @@ omgubuntu.co.uk##.omg-socials
 latimes.com##.page-actions
 operawire.com##.page-social-share
 theroar.com.au##.pm-share-horizontal
-autoexpress.co.uk##.polaris__social
 getcomics.org##.post-footer-shr
 wccftech.com##.post-google
 androidheadlines.com,bitcoinworld.co.in,bukvy.org,digitalinformationworld.com,douglasnow.com,earthsky.org,energy-reporters.com,gidhaur.com,san.com,watchinamerica.com##.post-share
@@ -4059,6 +4067,7 @@ dailymail.co.uk,thisismoney.co.uk##.share-twitter
 dailymail.co.uk,thisismoney.co.uk##.share-whatsapp
 audi-sport.net,overtake.gg##.shareButtons
 windowsreport.com##.shareMobile
+economictimes.indiatimes.com##.sharePbanner
 cbsnews.com##.sharebar
 mirror.co.uk,themirror.com##.sharebar-icon
 al.com,cleveland.com,lehighvalleylive.com,masslive.com,mlive.com,newyorkupstate.com,nj.com,oregonlive.com,pennlive.com,silive.com,syracuse.com##.sharebarBetaWrapper
@@ -4467,7 +4476,6 @@ iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
 ansa.it##.fonti-preferite
-fanpage.it##.ft-icon
 agi.it##.hidden.xlarge\:flex.border-t.border-base-300.pt-2.core.items-center.justify-between
 ilfattoquotidiano.it##.ifq-news-meta__share
 ilfattoquotidiano.it##.ifq-post__share
@@ -4496,7 +4504,6 @@ hdblog.it,hdmotori.it##.social_links
 unionesarda.it##.socials-link
 secoloditalia.it##.stamp
 macitynet.it##.tds-button
-tg.la7.it##.tgla7-condividi
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-footer-social
 sorrisi.com##.tvsc-social-share
@@ -4505,7 +4512,6 @@ mymovies.it##.vota-pul-consiglio
 virgilio.it##.vv-shr
 ilgiorno.it,ilrestodelcarlino.it,iltelegrafolivorno.it,lanazione.it,quotidiano.net##div[class^="SocialShare_"]
 ilpost.it##div[class^="_share_"]
-liberoquotidiano.it##img[id^="social-"]
 nlab.itmedia.co.jp###my_social_top
 bizgate.nikkei.com##.c-single-sns
 univ-journal.jp##.snsSpace
@@ -4672,7 +4678,6 @@ cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
 nationalgeographic.com.es##.top-share-article
 elmundo.es##.ue-c-article__share-tools
-burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-btn--2
 elpais.com##.w_rs
 abc.com.py##.whatsapp-button-container
 montevideo.com.uy##.wsp
