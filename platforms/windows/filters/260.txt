@@ -1,9 +1,9 @@
-! Checksum: KCWASHgZLhAr4YEiSL1DVA
-! Diff-Path: ../patches/260/260-s-1790686764-14400.patch
+! Checksum: yjNFeeC1peJVEYiRUyrCgw
+! Diff-Path: ../patches/260/260-s-1790700562-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.23
-! TimeUpdated: 2026-09-29T12:56:15+00:00
+! Version: 2.0.2.24
+! TimeUpdated: 2026-09-29T16:46:25+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -3186,6 +3186,15 @@ prezi.com##[role="dialog"] [href^="/features/ai/"]
 ! -- https://prezi.com/ow6xuab8wglg/cat-no-banana/
 ! Powered by AI - "Create your own" subscription promo
 prezi.com##div[class*="lg:"]:has(> div.rounded-xl > button path[d^="M7 14C8.05 9.8 9.8 8.05 14 7C9.8 5.95 8.05"])
+! -- https://prezi.com/dashboard/ (logged in)
+! Modal - "New Prezi AI experience is here"
+prezi.com#?##modal-root:contains(New Prezi AI experience is here)
+! Header - Get unlimited AI
+prezi.com##[class^="GetUnlimitedCreditsButton__Container"]
+! Header - AI credits
+prezi.com##[class^="CreditCountIndicator__Container"]
+! "Create with AI" text box
+prezi.com##section[class^="TomorrowMachineRolloutBanner__BannerContainerWithWave"]
 ! ===============
 ! == Priceline ==
 ! ===============
@@ -3455,6 +3464,11 @@ www.scribd.com#?#[data-testid="mobile-actions-bottom-bar"] button:contains(Ask A
 docs.scylladb.com##biel-button
 ! TODO: Hide AI in search results. Prevent it from opening when hitting Enter.
 ! =============
+! == SecNews ==
+! =============
+! Floating AI chatbot button
+www.secnews.gr##[id^="sngai-"]
+! =============
 ! == Semrush ==
 ! =============
 ! -- https://www.semrush.com/blog/google-tag-manager/
@@ -3520,6 +3534,12 @@ online-store-web.shopifyapps.com##.Polaris-Layout__Section:has(._generationsCont
 ! -- https://www.shopify.com/website/builder (Website builder promo)
 ! "Create a custom website with AI" promo
 www.shopify.com##.hero-second-panel:has(a[data-component-name="ai-store-builder"])
+! ================
+! == Shutterfly ==
+! ================
+! Navbar - Ask Paige
+www.shutterfly.com###paige-ai-chatbot-button-desktop
+www.shutterfly.com###paige-ai-chatbot-button-mobile
 ! ========================
 ! == Singapore Airlines ==
 ! ========================
@@ -4307,7 +4327,8 @@ x.com##.css-175oi2r.r-1mmae3n:has(> [data-testid="grok_post_atgrok_button"])
 ! -- https://x.com/Newgrounds
 ! "Profile Summary" button
 ! * Does not appear on profiles with a yellow verfication badge
-x.com##.r-1phboty.r-2yi16.r-1qi8awa:has(path[d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466"])
+x.com##button.r-1phboty.r-2yi16.r-1qi8awa:has(path[d^="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938"])
+x.com##[data-testid="TopNavBar"] button:has(path[d^="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938"])
 ! Header - Grok button (logged out)
 x.com##button[aria-label="Grok"]
 ! ==========
