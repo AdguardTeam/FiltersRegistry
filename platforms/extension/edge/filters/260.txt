@@ -1,9 +1,9 @@
-! Checksum: +chx2avRogIUFOnAyTkS8Q
-! Diff-Path: ../patches/260/260-s-1790628387-14400.patch
+! Checksum: ZFkj3SVgbQWz5YnedsPc0Q
+! Diff-Path: ../patches/260/260-s-1790686732-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.22
-! TimeUpdated: 2026-09-28T20:43:59+00:00
+! Version: 2.0.2.23
+! TimeUpdated: 2026-09-29T12:56:15+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -3176,6 +3176,16 @@ www.posta.com.mx###qp-ia-wrapper
 ! =============
 ! Floating chatbot
 ||app.qualified.com/w/1/*/messenger$subdocument,domain=www.postman.com
+! ===========
+! == Prezi ==
+! ===========
+! Header/Footer - Prezi AI
+prezi.com##nav [href^="/features/ai/"]
+! Header - Hamburger menu ≡ - Prezi AI (mobile)
+prezi.com##[role="dialog"] [href^="/features/ai/"]
+! -- https://prezi.com/ow6xuab8wglg/cat-no-banana/
+! Powered by AI - "Create your own" subscription promo
+prezi.com##div[class*="lg:"]:has(> div.rounded-xl > button path[d^="M7 14C8.05 9.8 9.8 8.05 14 7C9.8 5.95 8.05"])
 ! ===============
 ! == Priceline ==
 ! ===============
