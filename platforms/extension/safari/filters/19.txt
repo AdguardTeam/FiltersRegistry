@@ -1,9 +1,9 @@
-! Checksum: qP6JrFhETAlkH7NwQkIbeg
-! Diff-Path: ../patches/19/19-s-1790698210-3600.patch
+! Checksum: MRJLIe/Xpvqde0+b21Xn4w
+! Diff-Path: ../patches/19/19-s-1790701776-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.84.15
-! TimeUpdated: 2026-09-29T16:06:58+00:00
+! Version: 2.0.84.16
+! TimeUpdated: 2026-09-29T17:06:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -672,6 +672,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+mgsm.pl#%#//scriptlet('prevent-setTimeout', 'AdBlock', '2000')
 colnect.com###pageContent > div[style^="position: fixed; left: 0px;"][style*="z-index: 12000;"]:has(> div[style] > a[href*="/help/collecting/premium_join"])
 meteoservice.ru###page-error-msg
 nexusmangas.com#%#//scriptlet('prevent-setTimeout', '/\(\)=>\{.{1,5}\.then\(.{1,5}=>\{.{1,5}\|\|.{1,5}\}\)\}/')
@@ -3414,6 +3415,12 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 ! SECTION[id=content_blockers]: Anti-adblock - The rules for content blockers only
 !#safari_cb_affinity(general)
 !
+mgsm.pl#@#[class^="ad-"]
+mgsm.pl#@#div[id^="div-gpt-"]
+mgsm.pl#@#[class^="advertisement"]
+mgsm.pl#@#div[id^="div-gpt-"]
+mgsm.pl#@#[id^="div-gpt-ad"]
+mgsm.pl#@#.ad-placement
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=pagesix.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=pagesix.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=nypost.com
@@ -13235,6 +13242,7 @@ gardenbetty.com,komputerswiat.pl,sportingnews.com,polskiobserwator.de,wiemy.to,w
 !
 ! SECTION: Subscriptions - Regular rules
 !
+ullstein.de##section[class^="ull-StyledSocialTeaser"]
 ||link*.blick.ch/join/*/signup-
 blick.ch##div:has(> iframe[src*="/signup-"])
 box.blick.ch##.iframe-container--newsletter

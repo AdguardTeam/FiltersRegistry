@@ -1,9 +1,9 @@
-! Checksum: GFtgm1C/2T1SHvEYRiXM/g
-! Diff-Path: ../patches/14/14-s-1790698209-3600.patch
+! Checksum: jW8Jk3qhZrOGrljRE7UodA
+! Diff-Path: ../patches/14/14-s-1790701774-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.80.90
-! TimeUpdated: 2026-09-29T16:06:50+00:00
+! Version: 2.2.80.91
+! TimeUpdated: 2026-09-29T17:06:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25610,6 +25610,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+mgsm.pl#%#//scriptlet('prevent-setTimeout', 'AdBlock', '2000')
 colnect.com###pageContent > div[style^="position: fixed; left: 0px;"][style*="z-index: 12000;"]:has(> div[style] > a[href*="/help/collecting/premium_join"])
 meteoservice.ru###page-error-msg
 nexusmangas.com#%#//scriptlet('prevent-setTimeout', '/\(\)=>\{.{1,5}\.then\(.{1,5}=>\{.{1,5}\|\|.{1,5}\}\)\}/')
@@ -28352,6 +28353,12 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 ! SECTION[id=content_blockers]: Anti-adblock - The rules for content blockers only
 !#safari_cb_affinity(general)
 !
+mgsm.pl#@#[class^="ad-"]
+mgsm.pl#@#div[id^="div-gpt-"]
+mgsm.pl#@#[class^="advertisement"]
+mgsm.pl#@#div[id^="div-gpt-"]
+mgsm.pl#@#[id^="div-gpt-ad"]
+mgsm.pl#@#.ad-placement
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=pagesix.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=pagesix.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=nypost.com
@@ -38173,6 +38180,7 @@ gardenbetty.com,komputerswiat.pl,sportingnews.com,polskiobserwator.de,wiemy.to,w
 !
 ! SECTION: Subscriptions - Regular rules
 !
+ullstein.de##section[class^="ull-StyledSocialTeaser"]
 ||link*.blick.ch/join/*/signup-
 blick.ch##div:has(> iframe[src*="/signup-"])
 box.blick.ch##.iframe-container--newsletter
