@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qKMoyZfr/c1gGbzdnj6lLw
-! Diff-Path: ../patches/14/14-s-1790687546-3600.patch
+! Checksum: 0FvlKRyrdPzkjSNwPhxbzA
+! Diff-Path: ../patches/14/14-s-1790694598-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.80.88
-! TimeUpdated: 2026-09-29T13:09:58+00:00
+! Version: 2.2.80.89
+! TimeUpdated: 2026-09-29T15:06:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2589,6 +2589,7 @@ nowakmeble.eu,korona-kielce.pl,mmacity.pl,zadzior.pl,tiptop24.pl,superbutelki.pl
 !
 ! NOTE: Regular rules
 !
+letsdomains.com##+js(set-cookie, acceptCookies, 4)
 ostrowlubelski.pl##+js(set-cookie, itlu_cookie_2d1eaf83341ca4b8, true)
 mzps.pl##.mzps-cookie-banner
 jalmilelife.jal.co.jp##.c-privacy-notice
@@ -17792,7 +17793,6 @@ mackeeper.com##+js(set-session-storage-item, gdprBannerClosed, true)
 superjob.ru##+js(set-cookie-reload, cookies_policy_accept, true)
 harrisscarfe.com.au##+js(set-cookie, hideCookiesNotification_AU_en, 1)
 hellotickets.com,pharmvestnik.ru,scheels.com##+js(set-cookie, cookiesAccepted, true)
-reshade.me##+js(set-cookie-reload, plg_system_eprivacy, 1)
 littleusaworld.com##+js(set-cookie, mnd-cookie-accepted-wwwlittleusaworldcom1, 1)
 realme.com##+js(set-cookie, cookie-privacy-accept, true)
 icentre.hu,azb-cuw.pl##+js(set-cookie, cookie, 1)
@@ -36238,6 +36238,12 @@ gardenbetty.com,komputerswiat.pl,sportingnews.com,polskiobserwator.de,wiemy.to,w
 !
 ! SECTION: Subscriptions - Regular rules
 !
+latimes.com##ps-google-preferred-sources
+secnews.gr##.secnews-nl
+secnews.gr##div[data-sticky-enabled-on] > div.vc_raw_html:has(input[type="email"])
+techmaniacs.gr##section[aria-labelledby="techmaniacs-follow-google-heading"]
+techmaniacs.gr##section[aria-labelledby="techmaniacs-follow-heading"]
+techmaniacs.gr##section[aria-labelledby="techmaniacs-single-reviews-heading"]
 gamedaily.com##div[class^="styles_preferredSource"]
 moz.de##.u-google-add-button
 goguynet.jp##.preferred-source-button
@@ -46737,6 +46743,8 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+furusato-tax.jp##.app-promotion-modal
+furusato-tax.jp##.top-app-download
 netkeiba.com##.banner320
 igeeksblog.com##.section-below-fold.section-ebooks
 web.joongna.com##.min-h-screen .hidden.sm\:block.bottom-\[88px\]:has(img[alt="app-download-qr-code"])
@@ -55844,7 +55852,9 @@ ya.ru,yandex.*##.AliceFabPromo
 ! Yandex.Afisha
 !
 ! Yandex.Dostavka
+dostavka.yandex.ru##:matches-path(/route) .antltbv
 dostavka.yandex.ru##:matches-path(/route) .RumObservableRoot > div > div[dir="ltr"] ~ div[class] > div[class] > div[class] > div[class]:has(> div[class][tabindex] > section[class] > div[class] > div[class] > div[class] > div[style*="-urbanads-"])
+dostavka.yandex.ru##:matches-path(/route) .RumObservableRoot > div[style] > div > div[class][style] > div[class] > div[class] > div[class] > div[class] > div[class]:has(> section[class] > div[class] > div[class] > div[class] > div[style*="-urbanads-"])
 !
 ! Yandex.Disk
 disk.yandex.*##div[class^="icloud-transfer-promo"]
