@@ -3406,6 +3406,12 @@ $doc,ipaddress=185.100.85.248
 .monster/index*.php?flow_id=$doc
 ! Rule "||sites.google.com/view/codex-desktop-app$doc" converted to: "||sites.google.com/view/codex-desktop-app$document"
 ||sites.google.com/view/codex-desktop-app$doc
+! Rule "/\/t\.js\?site=[a-f0-9]{32}\b/$script,3p,match-case" converted to: "/\/t\.js\?site=[a-f0-9]{32}\b/$script,third-party,match-case"
+/\/t\.js\?site=[a-f0-9]{32}\b/$script,3p,match-case
+! Rule "/\/t\.js\?site=[0-9-a-f]{19,}$/$script,3p,match-case" converted to: "/\/t\.js\?site=[0-9-a-f]{19,}$/$script,third-party,match-case"
+/\/t\.js\?site=[0-9-a-f]{19,}$/$script,3p,match-case
+! Rule "/\/t\.js\?site=[0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f]$/$script,3p,match-case" converted to: "/\/t\.js\?site=[0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f]$/$script,third-party,match-case"
+/\/t\.js\?site=[0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f][0-9-a-f]$/$script,3p,match-case
 ! Rule "gemfellowship.org##+js(rmnt, script, TextDecoder)" converted to: "gemfellowship.org#%#//scriptlet('ubo-rmnt', 'script', 'TextDecoder')"
 gemfellowship.org##+js(rmnt, script, TextDecoder)
 ! Rule "longhall.consulting##+js(rmnt, script, /document\.currentScript\.remove|0x0/)" converted to: "longhall.consulting#%#//scriptlet('ubo-rmnt', 'script', '/document\.currentScript\.remove|0x0/')"
@@ -3458,8 +3464,6 @@ pentest.blog##+js(acs, atob, new )
 ||guildkit.org^$doc,reason=malicious
 ! Rule "darumasushiantofagasta.cl##+js(aost, Function, /bxslider|wow/)" converted to: "darumasushiantofagasta.cl#%#//scriptlet('ubo-aost', 'Function', '/bxslider|wow/')"
 darumasushiantofagasta.cl##+js(aost, Function, /bxslider|wow/)
-! Rule "/\/t\.js\?site=[a-f0-9]{32}\b/$script,3p,match-case" converted to: "/\/t\.js\?site=[a-f0-9]{32}\b/$script,third-party,match-case"
-/\/t\.js\?site=[a-f0-9]{32}\b/$script,3p,match-case
 ! Rule "/^https:\/\/[a-z]{15,}\.[a-z]{3,}\/embed\.js\?v=\d+$/$script,3p,match-case,to=~com|~net|~org" converted to: "/^https:\/\/[a-z]{15,}\.[a-z]{3,}\/embed\.js\?v=\d+$/$script,third-party,match-case,to=~com|~net|~org"
 /^https:\/\/[a-z]{15,}\.[a-z]{3,}\/embed\.js\?v=\d+$/$script,3p,match-case,to=~com|~net|~org
 ! Rule "/^https:\/\/[a-z]{8,}\.[a-z]+\/[a-zA-Z][a-z]+_[Pp]roliv\/api\?ver=\d\.\d\.\d$/$script,3p,match-case" converted to: "/^https:\/\/[a-z]{8,}\.[a-z]+\/[a-zA-Z][a-z]+_[Pp]roliv\/api\?ver=\d\.\d\.\d$/$script,third-party,match-case"
@@ -3468,6 +3472,8 @@ darumasushiantofagasta.cl##+js(aost, Function, /bxslider|wow/)
 /^https:\/\/[-a-z]{9,}\.net\/embed\/[a-f0-9]{16}\?embed=1&host=/$frame,3p,match-case,to=net
 ! Rule "/checking?domain=*&captchashowed=$xhr,3p" converted to: "/checking?domain=*&captchashowed=$xmlhttprequest,third-party"
 /checking?domain=*&captchashowed=$xhr,3p
+! Rule "||precisionproving.com^$3p" converted to: "||precisionproving.com^$third-party"
+||precisionproving.com^$3p
 ! Rule ".com/api/users*^pii=&in=false^$doc" converted to: ".com/api/users*^pii=&in=false^$document"
 .com/api/users*^pii=&in=false^$doc
 ! Rule ".com/api/users*^in=false&pii=$doc" converted to: ".com/api/users*^in=false&pii=$document"
