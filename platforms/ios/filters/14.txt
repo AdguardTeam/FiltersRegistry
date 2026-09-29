@@ -1,9 +1,9 @@
-! Checksum: e6W3Wu4FMjXSmV/14R7Nlg
-! Diff-Path: ../patches/14/14-s-1790662375-3600.patch
+! Checksum: 3YjYPRK5DsAPFV8Lkzvr0w
+! Diff-Path: ../patches/14/14-s-1790666249-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.80.81
-! TimeUpdated: 2026-09-29T06:09:12+00:00
+! Version: 2.2.80.82
+! TimeUpdated: 2026-09-29T07:13:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4989,7 +4989,7 @@ shtrafy-gibdd.ru###useCookieBanner
 ||assets.prod.abebookscdn.com/*/scripts/utilities/global/cookie-consent-util-
 ||assets.prod.abebookscdn.com/*/scripts/utilities/global/AbeCookie-
 ||assets.prod.abebookscdn.com/*/scripts/components/cookieconsentV2-
-faktykrakowa.pl,kobe-u.ac.jp,it-and-security.pl,pkgs.org###consent-notice
+wiadomosciolsztyn.pl,faktykrakowa.pl,kobe-u.ac.jp,it-and-security.pl,pkgs.org###consent-notice
 sinara.ru##.popups-cookies
 watch.dropout.tv,zed.dev#%#//scriptlet('trusted-click-element', 'button[aria-label="Reject All"]', '', '500')
 crunchyroll.com#%#//scriptlet('trusted-set-cookie', 'anonymous_consent_tos', '$now$')
@@ -19716,6 +19716,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/242887
+@@||cdn.cookielaw.org/consent/*/otSDKStub.js$domain=stacktv.ca
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242796
 advocado.de#@##cookieNoticePro
 advocado.de#@##cookieAccept
@@ -38461,6 +38463,7 @@ gardenbetty.com,komputerswiat.pl,sportingnews.com,polskiobserwator.de,wiemy.to,w
 !
 ! SECTION: Subscriptions - Regular rules
 !
+gamedaily.com##div[class^="styles_preferredSource"]
 moz.de##.u-google-add-button
 goguynet.jp##.preferred-source-button
 infranken.de##.text_col > div.social > div.g-button-container
@@ -53431,6 +53434,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
 nol.yanolja.com#%#//scriptlet('set-cookie', 'top-smart-banner', 'Y', '/', 'yanolja.com')
+kream.co.kr#$#.header-wrapper { z-index: 3; width: 100%; position: fixed; top: 0; left: 0; }
+kream.co.kr##.top-app-download-banner
+kream.co.kr#%#//scriptlet('set-cookie', 'web_to_app_dismiss', 'true')
 m.wavve.com##.mobile-to-app
 wanted.co.kr#$#body { overflow: auto !important; position: static !important; }
 wanted.co.kr#$#div[data-cy="appDownloadPopup"] { display: none !important; }
