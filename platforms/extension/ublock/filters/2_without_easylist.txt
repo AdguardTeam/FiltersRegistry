@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0fUxxOmF8SA0Z/hQfJzrUg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790680891-3600.patch
+! Checksum: /ODHpOgqHy/PD3kNe4r9Eg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1790683895-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.93.88
-! TimeUpdated: 2026-09-29T11:05:21+00:00
+! Version: 2.4.93.89
+! TimeUpdated: 2026-09-29T12:07:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -40111,7 +40111,8 @@ www.youtube.com##+js(json-prune, ytInitialData.contents.twoColumnBrowseResultsRe
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3911413190
 www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.web_streaming_watch, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3902013966
-www.youtube.com##+js(no-setTimeout-if, ()\,a\,b), 5000)
+! https://github.com/AdguardTeam/AdguardFilters/issues/239516#issuecomment-5747844181
+! Viewer count and other elements are not updating automatically when rule below is applied
 ! Fix fake buffering on mobile website
 m.youtube.com##+js(json-prune, playerResponse.messages.[].youThereRenderer)
 ! This one may be unnecessary:
@@ -40228,6 +40229,8 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+avscan.cc##.sp-rail
+avscan.cc###sponsor-ad
 love4porn.com##.top-links
 letras.com##.an
 *$script,3p,domain=scnlog.me
