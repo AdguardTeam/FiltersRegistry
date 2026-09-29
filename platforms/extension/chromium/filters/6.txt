@@ -1,9 +1,9 @@
-! Checksum: 9eWXgMYg23D3vxc98bJHIQ
-! Diff-Path: ../patches/6/6-s-1790676611-3600.patch
+! Checksum: aH6R1VDdWPSRs4Ca7sMX1g
+! Diff-Path: ../patches/6/6-s-1790698193-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.53.94
-! TimeUpdated: 2026-09-29T10:06:33+00:00
+! Version: 2.0.53.95
+! TimeUpdated: 2026-09-29T16:06:37+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1526,6 +1526,9 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+||box.blick.ch/iframes/promoframe
+blick.ch##div:has(> iframe[src*="box.blick.ch/iframes/promoframe"]:only-child)
+box.blick.ch##div:has(> div[id*="-MR"])
 nordisch.info##aside.widget_custom_html:has(> .custom-html-widget > .as-sidebar > div[data-slot])
 defence-network.com##.defen-billboard-artikel
 hasepost.de##.hasepost-ad-slot
@@ -1929,8 +1932,7 @@ weser-kurier.de###msn-ads-top
 weser-kurier.de##.ad-sticky-footer-container-wk
 weser-kurier.de##section[data-contentport-name^="Werbung"]
 swp.de,lr-online.de###ms-edgeAd
-lr-online.de##.u-adSlot:not([class*="-sky-"])
-stuttgarter-zeitung.de,swp.de##.u-adSlot
+lr-online.de,stuttgarter-zeitung.de,swp.de##.u-adSlot
 saechsische.de##div[class^="recommendationstyled__"]
 volksstimme.de##div[id*="articlead-"]
 ||dl.volksstimme.de/tm/
@@ -1943,7 +1945,7 @@ nwzonline.de##.ad-sticky-footer-container-nwz
 moz.de##aside[data-ad-unit-large="d_billboard"]
 moz.de##aside[data-ad-unit-small]
 moz.de##.u-outbrain
-moz.de##.u-free-html:has(> #bluum)
+lr-online.de,swp.de,moz.de##.u-free-html:has(> #bluum)
 noz.de##.ad-sticky-footer
 noz.de##section[data-nozmhn-lab*="Advertorials"]
 noz.de##main > section.content--group:has(> div.ad_label)
