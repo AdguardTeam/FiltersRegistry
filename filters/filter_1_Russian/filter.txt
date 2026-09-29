@@ -3907,6 +3907,14 @@ newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,
 ! NOTE: UA rules copied to Ukrainian filter
 ! TODO: Remove not multi lang rules with .ua tld after splitting the filter (look at the end of file)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/242938
+questtime.net#%#//scriptlet('abort-on-property-read', 'pageVars.itemAc')
+!#if (adguard_app_ios || adguard_ext_android_cb)
+questtime.net#@#.ad-unit:not(.textads)
+questtime.net#@#.ad-zone
+questtime.net#@#.ads-banner
+@@||yandex.ru/ads/system/context.js$domain=questtime.net
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240854
 ritsatv.ru#%#//scriptlet('prevent-setTimeout', 'checkAds')
 !#if (adguard_app_ios || adguard_ext_android_cb)
@@ -3933,6 +3941,8 @@ rr4farmtrof.com#%#//scriptlet('prevent-navigation', '?ft_client_block=1')
 ||strm.yandex.ru/vh-canvas-converted/$domain=rr4farmtrof.com
 @@||yandex.ru/ads/system/context.js$domain=rr4farmtrof.com
 @@||yandex.ru/ads/system/ap-loader.js$domain=rr4farmtrof.com
+@@||yastatic.net/partner-code-bundles/*.js^$domain=rr4farmtrof.com
+@@||yandex.ru/ads/meta/*?target-ref=$domain=rr4farmtrof.com
 !#safari_cb_affinity(privacy)
 @@||mc.yandex.ru/metrika/tag.js$domain=rr4farmtrof.com
 @@||mc.yandex.com/watch/*?wmode=*&page-url=
@@ -7501,6 +7511,8 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+||yastatic.net/partner-code-bundles/
+||yandex.ru/ads/meta/
 ||mirf.ru/img/advt/
 mirf.ru##.advt-simb-ad
 4gameground.ru##.ya-ad-wrapper

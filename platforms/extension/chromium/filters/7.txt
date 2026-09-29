@@ -1,9 +1,9 @@
-! Checksum: efHwDXrAQCfKIX79z6UGRw
-! Diff-Path: ../patches/7/7-s-1790683878-3600.patch
+! Checksum: OrkVr/+5SQfRZ+knhKgVTQ
+! Diff-Path: ../patches/7/7-s-1790687531-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.76.96
-! TimeUpdated: 2026-09-29T12:08:17+00:00
+! Version: 2.0.76.97
+! TimeUpdated: 2026-09-29T13:09:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26,6 +26,7 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 !
+||hmshanyin.com^$all
 ||ee.nukido.net^$third-party
 ||pa.wew.jp^$third-party
 ||tomonavi.xyz^$all
@@ -442,6 +443,8 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/242937
+onepiecelabs.tonuriaz.info#%#//scriptlet('prevent-setTimeout', '/resolve|native/', '300')
 ! fuucdayo.com anti-adb
 fuucdayo.com#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/241657
@@ -1830,7 +1833,7 @@ _co_jp.*.php$document,domain=cc|com
 ://eki-net-*.*/Perosnal_member/$document,domain=cn|net
 /?Rfunccode=*&nextfunc=$document,domain=cn|com|top
 /brand/detail/m*.html?zenid=$document,domain=asia|cfd|fun|qpon|sale|shop|space|top|vu|world|xyz
-/shopping/item/m*/?zenid=$document,domain=asia|casa|cfd|click|cv|fun|life|lifestyle|pics|qpon|sale|shop|space|top|vu|world|xyz
+/shopping/item/m*/?zenid=$document,domain=asia|casa|cfd|click|cv|fun|life|lifestyle|luxe|pics|qpon|sale|shop|space|top|vu|world|xyz
 /mall/*.html?zenid=$document,domain=asia|cfd|fun|qpon|sale|shop|space|top|world|xyz
 /mart/*.html?zenid=$document,domain=asia|cfd|fun|qpon|sale|shop|space|top|world|xyz
 /^https?:\/\/(?:[-0-9a-z]{3,}\.)?[a-z]{5,}\.[a-z]{3,7}\/product\/\d{4,7}(\.html)?$/$document,domain=baby|blog|bond|cam|casa|club|fun|homes|online|rest|sbs|shop|surf|top|website|yoga
