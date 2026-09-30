@@ -1,0 +1,50 @@
+d1 2
+a2 2
+! Checksum: +1ybDPQXIEPgctCHW5cLvQ
+! Diff-Path: ../patches/2/2-s-1790752649-3600.patch
+d5 2
+a6 2
+! Version: 2.4.94.7
+! TimeUpdated: 2026-09-30T07:13:13+00:00
+d38322 1
+a38322 1
+facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion#%#(()=>{const e="SPONSORED",t="SponsoredData",r="AdsSideFeedUnit",n="MarketplaceFeedAdStory",o=[e,t,r],i=[t,n],a=window.String.prototype.split,p=window.String.prototype.trim,s=new WeakMap,l=new WeakSet,d=(e,t,r=Proxy)=>{const n=new r(e,t);return s.set(n,s.get(e)??e),n},y=(e,t)=>e?.length>300&&t.some(t=>e?.includes?.(t)),c=e=>y(e,o),w=e=>Boolean(e?.startsWith?.("{")&&e?.endsWith?.("}")||e?.startsWith?.("[")&&e?.endsWith?.("]")),f=e=>w(e)&&c(e),u=e=>{try{e.JSON.parse=d(e.JSON.parse,W,e.Proxy),e.String.prototype.split=d(e.String.prototype.split,H,e.Proxy),e.String=d(e.String,U,e.Proxy),e.String.prototype.constructor=e.String,e.Function.prototype.call=d(e.Function.prototype.call,Y,e.Proxy),e.Function.prototype.toString=d(e.Function.prototype.toString,ee,e.Proxy)}catch(e){}},g=e=>Boolean(e instanceof HTMLIFrameElement&&(""===e.src||e?.src?.startsWith("about:blank"))&&e.contentWindow),h=new Set(["append","prepend","before","after","insertNode","replaceWith","replaceChild","replaceChildren"]),{apply:_}={apply(e,t,r){const n=Reflect.apply(e,t,r);try{g(n)?u(n.contentWindow):h.has(e.name)&&r.forEach(e=>{g(e)&&u(e.contentWindow)})}catch(e){}return n}},S={apply:_};window.Node.prototype.appendChild=d(window.Node.prototype.appendChild,S),window.Node.prototype.insertBefore=d(window.Node.prototype.insertBefore,S),window.Node.prototype.replaceChild=d(window.Node.prototype.replaceChild,S),window.Element.prototype.append=d(window.Element.prototype.append,S),window.Element.prototype.prepend=d(window.Element.prototype.prepend,S),window.Element.prototype.replaceChildren=d(window.Element.prototype.replaceChildren,S),window.Element.prototype.replaceWith=d(window.Element.prototype.replaceWith,S),window.Element.prototype.before=d(window.Element.prototype.before,S),window.Element.prototype.after=d(window.Element.prototype.after,S),window.Element.prototype.insertAdjacentElement=d(window.Element.prototype.insertAdjacentElement,S),window.Range.prototype.insertNode=d(window.Range.prototype.insertNode,S),window.CharacterData.prototype.replaceWith=d(window.CharacterData.prototype.replaceWith,S);const b=e=>Boolean(e)&&Object.values(e).some(e=>e?.__typename===t),m=(e,t)=>{if(!e||"object"!=typeof e||Array.isArray(e))return!1;const r=Object.keys(e);return r.length===t.length&&t.every(e=>r.includes(e))},A=e=>m(e,["node"])&&m(e.node,["s"])&&m(e.node.s,["__typename"])&&e.node.s.__typename===t,E=e=>{const t=Array.isArray(e)&&1===e.length?e[0]:e;if(!t||"object"!=typeof t||Array.isArray(t))return!1;const r="string"==typeof t.p?"p":"z9";if("string"!=typeof t[r])return!1;const n=["data","edges","require",r];if(Object.hasOwn(t,"extensions")){if(!(m(t.extensions,[])||m(t.extensions,["is_final"])&&!0===t.extensions.is_final))return!1;n.push("extensions")}return m(t,n)&&A(t.data)&&Array.isArray(t.edges)&&1===t.edges.length&&A(t.edges[0])&&Array.isArray(t.require)&&1===t.require.length&&A(t.require[0])},N=(e,t,n,o)=>{if(!e||"object"!=typeof e||n<0)return!1;let i=!1;if(Array.isArray(e.nodes)){const t=e.nodes.filter(e=>!(e=>{const t=e?.item_collection?.nodes;return e?.__typename===r||Array.isArray(t)&&t.some(e=>e?.sponsored_data?.ad_id)})(e));e.nodes.length-t.length>0&&(e.nodes=t,i=!0)}return Object.entries(e).forEach(([e,r])=>{i=N(r,`${t}.${e}`,n-1,o)||i}),i},x=(e,t=10)=>{const r=e?.data?.viewer,n=r??e?.[3]?.[1]?.__bbox?.result?.data?.viewer;if(!n)return!1;return N(n,r?"data.viewer":"item[3][1].__bbox.result.data.viewer",t,e)},O=(t,r=10,n=new WeakMap)=>{if(!t||"object"!=typeof t||r<0)return!1;const o=n.get(t);if(void 0!==o&&o>=r)return!1;if(n.set(t,r),E(t))return!1;let i=((t,r)=>{if(!t||"object"!=typeof t)return!1;let n=!1;try{if(r){if(Array.isArray(t.require?.[0]?.[3]?.[0]?.__bbox?.require)&&t.require[0][3][0].__bbox.require.forEach(t=>{t[3]?.[1]?.__bbox?.result?.data?.category===e&&(delete t[3][1].__bbox.result.data.node,n=!0),b(t[3]?.[1]?.__bbox?.result?.data?.node)&&(delete t[3][1].__bbox.result.data.node,n=!0),n=x(t)||n}),Array.isArray(t.data?.viewer?.auxColumnUnits?.nodes)&&(n=x(t)||n),Array.isArray(t.data?.viewer?.news_feed?.edges)){const r=t.data.viewer.news_feed.edges.length;t.data.viewer.news_feed.edges=t.data.viewer.news_feed.edges.filter(t=>!b(t.node)&&t.category!==e),n=n||t.data.viewer.news_feed.edges.length!==r}b(t.data?.node)&&(delete t.data.node,n=!0),t.data?.category===e&&(delete t.data.node,n=!0)}}catch(e){}return n})(t,!0);return 0===r||Object.values(t).forEach(e=>{i=O(e,r-1,n)||i}),i},v=(e,t)=>{try{const r="string"==typeof t;if(r&&!c(t))return e;if(E(e))return e;if(!r&&!c(JSON.stringify(e)))return e;O(e)&&e&&"object"==typeof e&&l.add(e)}catch(e){}return e},{apply:j}={apply(e,t,r){L();const n=Reflect.apply(e,t,r);return v(n,r[0])}},W={apply:j};window.JSON.parse=d(window.JSON.parse,W);const J=(e,t,r)=>{if(!e||!t.some(t=>"function"==typeof e[t]&&!s.has(e[t])))return;const n=new Map;t.forEach(t=>{const r=e[t];"function"==typeof r&&s.has(r)&&n.set(s.get(r),r)}),t.forEach(t=>{const o=e[t];if("function"!=typeof o||s.has(o))return;let i=n.get(o);if(!i){const{apply:e}={apply(e,t,n){const o=Reflect.apply(e,t,n);return r?v(o,n[0]):v(o)}};i=d(o,{apply:e}),n.set(o,i)}e[t]=i})},R=["parse","parseText"],q=["ghlParseServerJSPayload","readBootPayload"],P=[[["json5"],e=>J(e,R,!0)],[["GHLServerJSParse"],e=>J(e,q,!1)]],C=e=>{Array.isArray(e)&&P.forEach(t=>{e.some(e=>e?.[1]===t[1])||e.push(t)})};let F=null,k=!1,M=!1;const B=new Map,z=P.map(([[e],t])=>r=>{B.set(e,r),t(r)}),D=()=>{if(!k&&"function"==typeof window.require){k=!0;const e=window.require("ifRequired");"function"==typeof e&&(F=e)}return F},L=()=>{if(!M)try{for(let e=0;e<P.length;e+=1){const[[t],r]=P[e],n=B.get(t);if(void 0===n){if(null===D())return;F(t,z[e])}else r(n)}}catch(e){M=!0}},{apply:$}={apply(e,t,r){let n;L();try{if(w(t),f(t)){const e=JSON.parse(t);l.has(e)&&(n=JSON.stringify(e))}}catch(e){}return Reflect.apply(e,n??t,r)}},H={apply:$};window.String.prototype.split=d(window.String.prototype.split,H),window.String.prototype.substring=d(window.String.prototype.substring,H);const{apply:T}={apply(e,t,r){L();const n=Reflect.apply(e,t,r);try{if(f(n)){const e=JSON.parse(n);if(l.has(e)){return JSON.stringify(e)}}}catch(e){}return n}},U={apply:T};window.String=d(window.String,U),window.String.prototype.constructor=window.String;const G=new Map,I=e=>{const t=G.get(e);if(void 0!==t)return t;let r=e;try{const t=e.match(/^[\t ]*\/\/[^\r\n]*(?:\r\n?|\n)/)?.[0]??"",n=e.slice(t.length),o=n.search(/(?:\r\n?|\n)[\t ]*\/\/[^\r\n]*(?:[\r\n][\t ]*)*$/),i=-1===o?n:n.slice(0,o),a=n.slice(i.length),s=Reflect.apply(p,i,[]);if(w(s)&&c(e)){const e=JSON.parse(i);l.has(e)&&(r=t+JSON.stringify(e)+a)}}catch(e){}return((e,t)=>{if(G.size>=2){const e=G.keys().next().value;G.delete(e)}return G.set(e,t),t})(e,r)},{apply:K}={apply(e,t,r){let n=t;try{"string"==typeof t&&t.length>300&&(n=I(t))}catch(e){}return Reflect.apply(e,n,r)}},Q={apply:K};window.String.prototype.charAt=d(window.String.prototype.charAt,Q);const V=e=>{const t=e?.data?.viewer?.marketplace_feed_stories;if(!Array.isArray(t?.edges))return!1;const r=t.edges.filter(e=>!(e=>{const t=e?.__typename;return"string"==typeof t&&t.includes(n)})(e?.node));return r.length!==t.edges.length&&(t.edges=r,!0)},{apply:X}={apply(e,t,r){const n=r[2]?.[0];if(y(n,i))try{const e=(e=>{let t=!1;const r=Reflect.apply(a,e,[/\r?\n|\r/]).map(e=>{if(""===e.trim())return e;let r;try{r=JSON.parse(e)}catch{return e}const n=l.has(r),o=V(r);return n||o?(t=!0,JSON.stringify(r)):e});return t?r.join("\r\n"):e})(n);if(e!==n){const t=r[2].slice();t[0]=e,r[2]=t}}catch(e){}return Reflect.apply(e,t,r)}},Y={apply:X};window.Function.prototype.call=d(window.Function.prototype.call,Y);const{apply:Z}={apply:(e,t,r)=>Reflect.apply(e,s.get(t)??t,r)},ee={apply:Z};window.Function.prototype.toString=d(window.Function.prototype.toString,ee),(()=>{const e=window.__rl_stub;if("function"==typeof window.requireLazy&&!Array.isArray(e))return void P.forEach(([e,t])=>{window.requireLazy(e,t)});let t=Array.isArray(e)?e:[];C(t);try{Object.defineProperty(window,"__rl_stub",{configurable:!0,enumerable:!0,get:()=>t,set(e){t=e,C(e)}})}catch(e){window.__rl_stub=t}})()})();
+a42755 1
+sourceforge.net##[id][data-mobile-slot]:not(#style_important):has(> span.close + .linkrow)
+a42759 2
+sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> .row > [class*="-row"] > [class*="-inner"] > button[data-url])
+sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> div[class*="sticky"] + button:is([class*="-close"], [id*="close"], [class*="dismiss"]))
+d44275 1
+a44275 1
+femdomvc.com,fpo.xxx,nikporn.com,fpoxxx1.com,xxbrits.com##.network
+d54851 1
+a54851 1
+femdomvc.com,hentai-moon.com,faptor.com,fapnow.xxx,fapnado.xxx,severeporn.com,fpoxxx1.com,pornditt.com,hentaigem.com,pornify.tv,dafreeporn.com,pornolovers.net,hdporner.tv,transvids.tv,vipporns.com,thetranny.com,shemalesin.com,stileproject.com,pornbimbo.com,faptube.com,amateur8.com,maturetubehere.com,lesbian8.com,sortporn.com,bigtitslust.com,18pussy.porn,pornrabbit.com,love4porn.com,fpo.xxx,keekass.com##.footer-margin
+a88730 1
+||7f8pmzuyz9qp1q3qo1ku.cfd^
+a98830 1
+||eixefloolsv.com^
+a98944 1
+||elementarycustomer.pro^
+a100727 1
+||fluoranentases.cyou^
+a105344 1
+||iqgyjcdyojkjp.online^
+a106292 1
+||jothupdftjxhv.site^
+a109055 1
+||lumpmanloammichekan.qpon^
+a112644 1
+||ogsfuqozzf.in^
+a115706 1
+||pudhmbpdlliky.space^
+a116132 1
+||qfjggtpggwnjh.site^
+a116312 1
+||qnjwkwywbkhuq.online^
+a121644 1
+||szsiedxxsmjhm.site^
+a125857 1
+||w5cm1tq39pgp2mx1e48ec.rest^
+a129258 1
+||zjgdqfrizhwdp.online^
