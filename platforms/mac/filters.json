@@ -440,8 +440,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.75.67",
-			"timeUpdated": "2026-09-30T04:46:18+0000",
+			"version": "2.1.75.68",
+			"timeUpdated": "2026-09-30T08:50:14+0000",
 			"languages": []
 		},
 		{
@@ -525,8 +525,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.63",
-			"timeUpdated": "2026-09-30T04:46:22+0000",
+			"version": "2.1.98.64",
+			"timeUpdated": "2026-09-30T08:50:17+0000",
 			"languages": []
 		},
 		{
@@ -571,8 +571,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.98.65",
-			"timeUpdated": "2026-09-30T04:46:25+0000",
+			"version": "2.1.98.66",
+			"timeUpdated": "2026-09-30T08:50:20+0000",
 			"languages": []
 		},
 		{
@@ -614,8 +614,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.98.65",
-			"timeUpdated": "2026-09-30T04:46:26+0000",
+			"version": "2.1.98.66",
+			"timeUpdated": "2026-09-30T08:50:22+0000",
 			"languages": [
 				"ar"
 			]
@@ -634,8 +634,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.64",
-			"timeUpdated": "2026-09-30T04:46:28+0000",
+			"version": "2.1.98.65",
+			"timeUpdated": "2026-09-30T08:50:24+0000",
 			"languages": []
 		},
 		{
@@ -719,8 +719,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.72.36",
-			"timeUpdated": "2026-09-30T04:46:32+0000",
+			"version": "2.1.72.37",
+			"timeUpdated": "2026-09-30T08:50:27+0000",
 			"languages": []
 		},
 		{
@@ -806,8 +806,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.69.70",
-			"timeUpdated": "2026-09-30T04:46:41+0000",
+			"version": "2.1.69.71",
+			"timeUpdated": "2026-09-30T08:50:34+0000",
 			"languages": []
 		},
 		{
@@ -824,8 +824,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.70.39",
-			"timeUpdated": "2026-09-30T04:46:42+0000",
+			"version": "2.0.70.40",
+			"timeUpdated": "2026-09-30T08:50:35+0000",
 			"languages": []
 		},
 		{
@@ -944,8 +944,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.65",
-			"timeUpdated": "2026-09-30T04:46:47+0000",
+			"version": "2.1.98.66",
+			"timeUpdated": "2026-09-30T08:50:41+0000",
 			"languages": []
 		},
 		{
@@ -1024,8 +1024,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.97.91",
-			"timeUpdated": "2026-09-30T04:46:49+0000",
+			"version": "2.1.97.92",
+			"timeUpdated": "2026-09-30T08:50:43+0000",
 			"languages": []
 		},
 		{
@@ -1055,8 +1055,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
-			"version": "2.0.46.7",
-			"timeUpdated": "2026-09-30T04:46:49+0000",
+			"version": "2.0.46.8",
+			"timeUpdated": "2026-09-30T08:50:44+0000",
 			"languages": [
 				"vi"
 			]
@@ -1334,8 +1334,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.65",
-			"timeUpdated": "2026-09-30T04:46:58+0000",
+			"version": "2.1.98.66",
+			"timeUpdated": "2026-09-30T08:50:52+0000",
 			"languages": []
 		},
 		{
@@ -1589,8 +1589,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.94.71",
-			"timeUpdated": "2026-09-30T04:47:10+0000",
+			"version": "2.1.94.72",
+			"timeUpdated": "2026-09-30T08:51:03+0000",
 			"languages": []
 		},
 		{
@@ -1695,8 +1695,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.91.96",
-			"timeUpdated": "2026-09-30T04:47:17+0000",
+			"version": "2.0.91.97",
+			"timeUpdated": "2026-09-30T08:51:09+0000",
 			"languages": [
 				"hi"
 			]
