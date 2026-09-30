@@ -1,9 +1,9 @@
-! Checksum: An5Tlli3OB1Wvxc+2WuLsw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1790731290-14400.patch
+! Checksum: olPM6B4YXHj2a+xoHlLwLA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1790743797-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.69.69
-! TimeUpdated: 2026-09-30T01:18:31+00:00
+! Version: 2.1.69.70
+! TimeUpdated: 2026-09-30T04:46:41+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -37,7 +37,6 @@
 /fb-pixel.js
 /fbshare.js
 /fbshare.png
-/floating-social-bar/js/fsb.js
 /floating-wpp.min.js
 /follow-twitter-
 /follow-twitter.
@@ -218,7 +217,6 @@ _social-bar/
 ###facebook_subscribe
 ###facebookbtn
 ###facebooklike
-###facebooknotification
 ###facebookpopup-fan-exit
 ###facebookpopup-fanback
 ###facebooktrend
@@ -291,7 +289,6 @@ _social-bar/
 ###footer_social_instagram
 ###footer_social_youtube
 ###footer_socialmedia
-###fsb-social-bar
 ###getSocial
 ###gkSocial
 ###gkSocialAPI
@@ -315,6 +312,7 @@ _social-bar/
 ###index-social
 ###instagram-link
 ###js-Social-Share-0
+###js-Social-Share-1
 ###js-SocialWidget-Container
 ###js-Stay-Connected-Container-0
 ###js-Stay-Connected-Container-2
@@ -580,6 +578,7 @@ _social-bar/
 ###socialHeader
 ###socialHolder
 ###socialIcons
+###socialInstagram
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
@@ -590,6 +589,7 @@ _social-bar/
 ###socialNetworks
 ###socialShare
 ###socialSharing
+###socialSidebar
 ###socialTwitter
 ###socialWrap
 ###social_bar
@@ -1227,6 +1227,7 @@ _social-bar/
 ##.facebook-messenger-avatar
 ##.facebook-page-plugin
 ##.facebook-popup
+##.facebook-recommend
 ##.facebook-share-btn
 ##.facebook-share-button
 ##.facebook-share-link
@@ -1243,6 +1244,7 @@ _social-bar/
 ##.facebook_logo
 ##.facebook_net
 ##.facebook_share
+##.facebookbox
 ##.facebooklike
 ##.facebookshare
 ##.facewrapper
@@ -1337,6 +1339,7 @@ _social-bar/
 ##.follow-us-icons
 ##.follow-us-on-twitter
 ##.follow-us-panel
+##.follow-us-txt
 ##.follow-us-wrapper
 ##.follow-widget
 ##.followSocial
@@ -1767,7 +1770,6 @@ _social-bar/
 ##.js-social-twitter
 ##.js-social-widgets
 ##.js-socialise
-##.js-socialise-wrapper
 ##.js-socials
 ##.js-sticky-social-widget
 ##.js-triggerShare
@@ -1852,7 +1854,6 @@ _social-bar/
 ##.m-icon-fb
 ##.m-icon-tw
 ##.m-share
-##.m-share-bar
 ##.m-share-bar__link
 ##.m-sharing
 ##.m-sns
@@ -2105,6 +2106,7 @@ _social-bar/
 ##.prettySocial
 ##.pri-share
 ##.print-share
+##.product-info-social
 ##.product-share
 ##.product-social-icon-wrapper
 ##.pswp__button--share
@@ -2171,6 +2173,7 @@ _social-bar/
 ##.sd-social
 ##.sd-social-icon-text
 ##.sdc-site-share
+##.sdw-share
 ##.search-social
 ##.secondaryNav-social
 ##.section-post-intro-share
@@ -2248,6 +2251,7 @@ _social-bar/
 ##.share-circle
 ##.share-column
 ##.share-component
+##.share-contain
 ##.share-container.vertical
 ##.share-count
 ##.share-counters
@@ -2693,7 +2697,6 @@ _social-bar/
 ##.site-social
 ##.site-social-icon
 ##.site-social-menu
-##.site-social-networks
 ##.sitewide-social-media
 ##.sn-share
 ##.snapchat-share-button
@@ -3180,7 +3183,6 @@ _social-bar/
 ##.stm-socials
 ##.stm-socials__icon
 ##.story-share
-##.story-social
 ##.story-social-share-fix
 ##.story-tool-share
 ##.story__share
@@ -3224,7 +3226,6 @@ _social-bar/
 ##.theChampSharing
 ##.the_champ_sharing_container
 ##.the_champ_sharing_ul
-##.thirdShareBox
 ##.thread-share
 ##.thread-share-bar-buttons
 ##.tk-footer-social-icons
@@ -3391,6 +3392,7 @@ _social-bar/
 ##.whatsapp_share
 ##.widget--twitter
 ##.widget-ahsocial
+##.widget-easy-twitter-feed-widget-container
 ##.widget-follow
 ##.widget-follow-us
 ##.widget-share
@@ -3840,6 +3842,7 @@ aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.
 anthropocenemagazine.org##.dssb_sharing_buttons
 theverge.com,vox.com##.duet--article--share-buttons
 breakingdefense.com##.ea-share-count-wrap
+sfist.com##.edition-social
 bdonline.co.uk,dailymail.co.uk,flightglobal.com,screendaily.com##.email
 cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
@@ -4012,6 +4015,7 @@ operawire.com##.page-social-share
 theroar.com.au##.pm-share-horizontal
 getcomics.org##.post-footer-shr
 wccftech.com##.post-google
+sfist.com##.post-preferred-source
 androidheadlines.com,bitcoinworld.co.in,bukvy.org,digitalinformationworld.com,douglasnow.com,earthsky.org,energy-reporters.com,gidhaur.com,san.com,watchinamerica.com##.post-share
 discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
 hakaimagazine.com##.post-story-social-sharing
@@ -4118,6 +4122,7 @@ iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
 arnnet.com.au,computerworld.com,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
+rappler.com##.social-share__actions
 cnn.com##.social-share_labelled-list
 edition.cnn.com##.social-share_labelled-list__share-links
 mirror.co.uk,themirror.com##.social-sites
@@ -4413,7 +4418,6 @@ bild.de##.sharingbar
 mpg.de##.social-media-buttons
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
-watson.ch##.watson-sharebuttons
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
 focus.de##.socFbLikeShare
@@ -4516,7 +4520,6 @@ nlab.itmedia.co.jp###my_social_top
 bizgate.nikkei.com##.c-single-sns
 univ-journal.jp##.snsSpace
 qiita.com##[class^="style-"] > [class^="style-"] > div[class^="style-"]:has(> button[aria-label][title][aria-describedby] + p[id][role="tooltip"])
-qiita.com##[href^="https://b.hatena.ne.jp/entry/"]
 qiita.com##div[id^="AdventCalendar"] hr ~ div[class^="style-"]:has(> button[class^="style-"][aria-label][title])
 ||imyfone.com/assets/js/media_share/
 ||line-scdn.net/line_add_friends/edge/btn/
@@ -4632,7 +4635,6 @@ elcolombiano.com##.contenedor-google-noticias
 highxtar.com,motor.elpais.com##.content__compartir
 posta.com.mx##.discover-promo
 a24.com,diariodecuyo.com.ar,perfil.com##.footer-redes
-ara.cat,europapress.es##.footer-rrss
 sport.es##.ft-mol-rrss
 elperiodico.com,sport.es##.ft-mol-rrss-column
 diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,elcorreoweb.es,eldia.es,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondemurcia.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,regio7.cat,superdeporte.es##.ft-mol-rrss-column__items
