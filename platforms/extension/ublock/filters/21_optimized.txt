@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: gfyg5ScPc3eIzlwZlw6gMQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1790698214-3600.patch
+! Checksum: pxzR1MhW+aag2AA1Maepvg
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1790734630-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
 ! Version: 2.0.48.82
@@ -39,6 +39,7 @@ bing.com##body#bpage:not(.ShowSelAns) #copans_container
 m.sporx.com###sporxAiBox
 sporx.com##.sporx-ai-box
 gbnews.com##.trending-wrapper
+gbnews.com##.latest-development
 gbnews.com##.embed-dontmiss
 radiotimes.com##.highlight-box
 euromaidanpress.com##.explore-further
@@ -209,7 +210,6 @@ ac-illust.com##.belt-banner
 stereogum.com##.subscribe-article
 agar.io##div[id^="agar-io_"]:style(display: none !important;)
 agar.io##+js(remove-node-text, style, var(--bottom-banner-height))
-ga.de##.js-article-content > div[data-cy="article-content"]:has(#glomexdiv)
 ||player.glomex.com^$domain=ga.de
 mirror.xyz##div[class]:has(> div[class]:only-child > div[class]:first-child + form:last-child > div[class]:first-child > input[name="email"])
 lavoixdunord.fr##+js(set-constant, ultimediaVisiblePlayer.scrollVisiblePlayer, noopFunc)
@@ -1365,6 +1365,7 @@ s7.ru##.content-container > div:not(.html-text-container):has(> a.ds-Link-root)
 lookmovie2.la,lookmovie2.to,lookmovie2.*###floating-ads-internal
 gamesradar.com##.kwizly-poll
 gemini.google.com##.upgrade-container
+n11.com##a[data-banner-type="promotion"]
 jitenon.jp##.register_ad
 ign.com##section.box-wrapper.grid-break:has(> .poll)
 ign.com##.card.das-block
@@ -1731,7 +1732,6 @@ onedrive.live.com##+js(set-session-storage-item, oneDriveQuotaDialogdefault-9391
 any.run##.slot-banner
 derstandard.de,derstandard.at##.article-body > #piano-supporter-inline-container
 sueddeutsche.de##div[id^="end-of-article-joboffers"]
-cybernews.com##.partner-content-block
 kimbino.*##html.modal-open:style(overflow: auto !important;)
 investors.com##.market-banner-container
 investors.com##.market-promo
@@ -3409,8 +3409,6 @@ watch.impress.co.jp##.amazon-aff
 fmv-mypage.fmworld.net##.home-news-pr-text
 thepythoncode.com##.col-md-3 a[href*="&utm_medium=banner"][target="_blank"] > img
 ||newsstat.dallasnews.com^
-kumin.news###ad-article-bottom
-kumin.news##.main-container > h3:contains(PR記事)
 vox.com##.c-compact-river > .c-compact-river__entry:has(> div[data-native-ad-id])
 blog.jp.square-enix.com###bannerList li:not(:has(a[href*="/nier"]))
 ||yimg.jp/images/realestate/special/*compTopImpact_$image,domain=realestate.yahoo.co.jp
@@ -3632,6 +3630,7 @@ pixiv.net##section[class] aside[class*="-0 "] > iframe[src^="https://imp.pixiv.n
 elnortedecastilla.es##body:style(overflow: auto !important;)
 investors.com##.wrapper .broadcast-text
 imgur.com##.FastGrid > .Grid-column > div[style*="height:"]:has(> a[href] > .Post-item-container > .Post-item-meta > .Post-item-external-ad)
+wpolityce.pl##.nu-header-with-boost > section[class="nu-header-boost nu-header-boost--sp"]:style(display: none!important;)
 mt.de###paywall-footer-slider
 findaphd.com###billboard-inner
 smartydns.com##.boxzilla-overlay
