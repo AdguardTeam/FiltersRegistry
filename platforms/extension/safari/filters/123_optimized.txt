@@ -1,9 +1,9 @@
-! Checksum: ygu0wyUaNThHxfjiX8claw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1790818134-14400.patch
+! Checksum: L3zWwuwrkE3HSHx4o9X+iQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1790830241-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.69.75
-! TimeUpdated: 2026-10-01T01:25:45+00:00
+! Version: 2.1.69.76
+! TimeUpdated: 2026-10-01T04:47:16+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -17,7 +17,6 @@
 -Social-Sidebar/
 -social-slider/
 -sprite-social-
-.sharebar.js
 .sharing.js
 /accesspress-social-counter/*
 /addthis_widget.js
@@ -109,6 +108,7 @@
 /sme-facebook-likebox-sidebar/*
 /sns_naverband.png
 /social-footer.jpg
+/social-footer.png
 /Social-Sidebar.js
 /social2s.min.js
 /social_bookmarks/*
@@ -260,6 +260,7 @@ _social-bar/
 ###followUs
 ###follow_buttons
 ###follow_us
+###followlinks
 ###followus
 ###foot-social
 ###footer-facebook
@@ -426,6 +427,7 @@ _social-bar/
 ###shareIcons
 ###shareId
 ###shareImg
+###shareIt
 ###shareLink
 ###shareLinks
 ###shareMenu
@@ -633,7 +635,6 @@ _social-bar/
 ###socialbox
 ###socialbuttons
 ###socialbuttonsbox
-###socialdiv
 ###socialfooter
 ###socialicons
 ###socialleft
@@ -669,7 +670,6 @@ _social-bar/
 ###tronReddiShare
 ###twShare
 ###tweet-button
-###tweetContainer
 ###twitter-2
 ###twitter-box
 ###twitter-button
@@ -708,8 +708,6 @@ _social-bar/
 ##.ArticleView-bottomShares
 ##.ArticleView-shares
 ##.BtnShareGroup
-##.ButtonSharing
-##.ButtonsSharing
 ##.DiggThisButton
 ##.FBLikeBox
 ##.FacebookLike
@@ -729,7 +727,6 @@ _social-bar/
 ##.LineShareButton
 ##.ListSocial
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
-##.NavigationSharingFooter
 ##.PageSharingMenu
 ##.PinItButton
 ##.PinterestButtonContainer
@@ -964,6 +961,7 @@ _social-bar/
 ##.bloc-social
 ##.bloc_float_share
 ##.bloc_social
+##.block--social-share
 ##.block-addtoany
 ##.block-followus
 ##.block-share__item
@@ -1115,7 +1113,6 @@ _social-bar/
 ##.custom-social
 ##.custom-social-share
 ##.customsocial
-##.d-share
 ##.d3-o-share-bar
 ##.dashicons-facebook
 ##.dashicons-twitter
@@ -1156,7 +1153,6 @@ _social-bar/
 ##.el-icon-facebook
 ##.el-icon-twitter
 ##.elem-info__share
-##.element-share
 ##.element-share-block
 ##.elementor-social-icon
 ##.elementor-social-icons-wrapper
@@ -1482,6 +1478,7 @@ _social-bar/
 ##.gallery__share
 ##.gb-share
 ##.gd-social-share
+##.general_social_icons
 ##.generic_share
 ##.genericon-facebook
 ##.genericon-facebook-alt
@@ -1770,6 +1767,7 @@ _social-bar/
 ##.js-social-twitter
 ##.js-social-widgets
 ##.js-socialise
+##.js-socialise-wrapper
 ##.js-socials
 ##.js-sticky-social-widget
 ##.js-triggerShare
@@ -2129,7 +2127,6 @@ _social-bar/
 ##.reseaux-sociaux
 ##.reseaux-sociaux-list
 ##.resp-sharing-button
-##.rhd-social-box-wrapper
 ##.right-social
 ##.rightShare
 ##.rmp-sharing
@@ -2163,6 +2160,7 @@ _social-bar/
 ##.sb_share
 ##.sc--twitter
 ##.sc-button-share
+##.sc-social
 ##.sc-social-links
 ##.scShareBoxRow
 ##.scShareText
@@ -3664,6 +3662,7 @@ dailymail.co.uk,thisismoney.co.uk###dms-txt
 imgflip.com###findUs
 memuplay.com###fixed-share
 thefreedictionary.com###fixedBlock
+empoweringparents.com,geraligado.blog.br,katholisch.de,tvmaze.com###follow
 openspeedtest.com###footBox2
 abebooks.com,atlasobscura.com###footer-social-list
 aimp.ru###footer_counter
@@ -3695,7 +3694,6 @@ coingape.com###social-ad-new
 animenewsnetwork.com###social-bookmarks
 breitbart.com###social-follow-sidebar-widget
 coindesk.com###social-icons-box
-bizwest.com,cyclingstage.com###social-media
 salon.com###social_total
 achievementhunting.com###socialmedia
 nsctotal.com.br,pastebin.pl###socials
@@ -3708,7 +3706,6 @@ thenewstack.io###tns-footer-bar
 thenewstack.io###tns-post-body-sidebar-share
 reuters.com###toolbar-item-parent-share-12
 yardbarker.com###top-nav-soc
-labex.io###tutorial-detail-sidebar > .mb-10
 pcgamer.com,tomshardware.com###utility-bar
 gamesradar.com,tomsguide.com,windowscentral.com###utilitybar__button--share
 videocardz.com###vc-index-google-follow
@@ -3774,7 +3771,6 @@ salon.com##.article__share
 wnep.com##.article__sharing
 news.tvbs.com.tw##.article_community_box
 financialexpress.com##.article_follow_us
-checkyourmath.com,techonthenet.com##.article_footer
 thespectator.com##.article_set_wrap
 news18.com##.article_socials
 insider-gaming.com##.aspect-1660-250
@@ -3876,7 +3872,6 @@ windowsreport.com##.follow-more-news
 metro.co.uk##.follow-promo
 alarabiya.net,ausgamers.com,cgtn.com,cloudwards.net,crypto.news,exitoina.perfil.com,magazine.artstation.com,mensxp.com,notateslaapp.com,republicworld.com,timeslive.co.za,trueachievements.com,truetrophies.com##.follow-us
 rbth.com##.follows-channel
-flyfrontier.com##.foot-nav__social
 gagadget.com##.footer-content__ext
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
 meteoblue.com##.footer-options
@@ -3895,7 +3890,6 @@ adguard.com##.footer__socials
 indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
-ampav.com##.ft_sns
 gematsu.com##.gematsu-footer__social
 blackmagicdesign.com##.gf-socials
 news18.com##.gglebtn
@@ -3903,7 +3897,6 @@ ghacks.net##.ghacks_share_widget
 usps.com##.global-footer--social
 avaaz.org##.global-footer-connect
 cars.com##.global-footer-social-buttons
-montgomerycollege.edu##.globalFooter__socialMedia
 oneindia.com##.goog-one-news
 androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,fextralife.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,military.com,movieweb.com,pocket-lint.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com##.google-addus
 bringmethenews.com,news18.com,thehindu.com##.google-btn
@@ -4124,13 +4117,10 @@ cio.com##.social-share-sticky-menu
 arnnet.com.au,computerworld.com,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
 rappler.com##.social-share__actions
 cnn.com##.social-share_labelled-list
-edition.cnn.com##.social-share_labelled-list__share-links
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
-cies.ch,dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 macrumors.com##.socialMedia--3i9tSnAb
 forbes.com##.socialShareContainer
-carsdirect.com##.socialShareWidget
 jetphotos.com##.social__link--share
 newscientist.com##.social__links
 eurovisionworld.com##.social_a
@@ -4159,6 +4149,7 @@ wccftech.com##.story-share-bottom
 tribune.com.pk##.story-social-icons
 gadgets360.com##.story_social_share
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
+tradersunion.com##.subscribe-news
 hindustantimes.com##.subscribe-social
 locals.com##.support-now
 targettrend.com##.sws_supernormalaction
@@ -4175,6 +4166,7 @@ xbiz.com##.tool-list
 daily.jstor.org##.top-bar-right
 thehackernews.com##.top-follow
 pastebin.com##.top-footer
+community.firstinspires.org##.topic-share-container
 rottentomatoes.com##.trending-bar__social-link
 tweaktown.com##.tt-preferred-sources
 apptrigger.com,motherjones.com##.tweet
@@ -4203,7 +4195,6 @@ business-standard.com##.whtsclick
 indiatoday.in##.whtspp_share
 androidheadlines.com##.widget-ahcount
 trustedreviews.com##.widget-social-b
-vashivisuals.com##.widget_cnss_widget
 fandom.com##.wikia-bar-anon
 windowslatest.com##.wl-floatbar
 attackofthefanboy.com,destructoid.com,gamepur.com,gamerjournalist.com,gameskinny.com,operationsports.com,touchtapplay.com,twinfinite.net,wegotthiscovered.com##.wp-block-gamurs-footer-nav__website-info__socials
@@ -4462,6 +4453,7 @@ bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_
 forssanlehti.fi##.herald-single-sticky:has(.herald-share)
 mobiili.fi##.mobsome_icons
 apotti.fi##.post-footer:has(> .share)
+enternity.gr###enternity_social_dialog
 capital.gr##.controls
 telex.hu##.fb-box
 index.hu,totalcar.hu,velvet.hu##.megoszt
@@ -4683,7 +4675,6 @@ canalnet.tv##.the-single-body__share
 nationalgeographic.com.es##.top-share-article
 elmundo.es##.ue-c-article__share-tools
 elpais.com##.w_rs
-abc.com.py##.whatsapp-button-container
 montevideo.com.uy##.wsp
 posta.com.mx##img[alt="Síguenos en Google News"]
 trthaber.com##.social-links-container
