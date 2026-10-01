@@ -1,9 +1,9 @@
-! Checksum: zkdlDg3ZwaU7jFCKc4ExWw
-! Diff-Path: ../patches/260/260-s-1790818149-14400.patch
+! Checksum: p3f9lS9J/Ju2TNsVXFWKzQ
+! Diff-Path: ../patches/260/260-s-1790873220-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.29
-! TimeUpdated: 2026-10-01T01:26:31+00:00
+! Version: 2.0.2.30
+! TimeUpdated: 2026-10-01T16:44:02+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -3536,28 +3536,29 @@ shopthemint.com###ai-chat-plugin-banner-container
 ! =============
 ! == Shopify ==
 ! =============
-! -- https://www.shopify.com/ (logged out)
-! Header navbar > Why Shopify > Sidekick
-www.shopify.com##div.\[grid-area\:aside\] > ul > li:has(> a[href="/sidekick"])
-! Header navbar > Products (Sidekick, AI Chats)
-www.shopify.com##ul.\[grid-area\:items\] > li > ul.level3-container > li > a:is([href="/magic"], [href="/chatgpt"])
-! Body > "AI designed for commerce" section
-! * Ideally we'd block at the div.shadow-card level to avoid removing the "Shopify Editions" promo box. However,
-!   hiding the "magic" shadowcard breaks the text positioning on the "editions" box. This is probably fixable, but figuring
-!   that out seems like a lot of effort to preserve promotional materials, so I hid the whole section instead.  ¯\_(ツ)_/¯
-www.shopify.com##div.container:has(> div.flex > div.shadow-card > div > div > p.richtext > a[data-component-name="cta-magic"][href="/magic"])
-! -- https://admin.shopify.com/ (Store homepage - logged in)
-! Header - AI Chat button & placeholder box when page is loading
-admin.shopify.com##._ButtonWrapper_1zyxe_4
-admin.shopify.com##.Polaris-Box > .Polaris-InlineStack > ._Avatar_iv0hk_7
-! AI Chatbot in right sidebar
-admin.shopify.com##._Sidebar_xdtqe_5
-! Left sidebar > Online Store > Themes - "Design your store in seconds" prompt
-! * Item is in an iframe with a different domain
-online-store-web.shopifyapps.com##.Polaris-Layout__Section:has(._generationsContainer_8uqbi_1)
-! -- https://www.shopify.com/website/builder (Website builder promo)
-! "Create a custom website with AI" promo
-www.shopify.com##.hero-second-panel:has(a[data-component-name="ai-store-builder"])
+! -- https://admin.shopify.com/ (logged in)
+! Sidekick chat messages
+! TODO: Sidebar can still open when clicking items on home tab
+||sidekick.shopify.com/api/store/*/conversations/$xmlhttprequest,domain=admin.shopify.com
+||sidekick.shopify.com/api/store/*/messages$xmlhttprequest,domain=admin.shopify.com
+! Header - Sidekick button
+admin.shopify.com##button[aria-controls="sidekick"]
+! Sidebar - Sidekick conversations
+admin.shopify.com#?#[class^="_SubSection_"][data-variant="platform"]:contains(Sidekick conversations)
+! -- https://admin.shopify.com/store/[id] (home - logged in)
+! Chat textbox
+admin.shopify.com##div[class^="_SidekickField_"][data-sidekick-field]
+! -- https://admin.shopify.com/store/[id]/products/new
+! Generate text button for description
+admin.shopify.com##[class^="_ControlsContainer_"] > [class*="_SectionBreak_"]:has(#sidekick-field-activator)
+[class^="_Section_"]
+! -- https://admin.shopify.com/store/[id]/settings/general/store-contact-details
+! Store name - Get name ideas from Sidekick
+admin.shopify.com##[data-component-name="store-name-suggestion-footer"]
+! -- https://shopify.dev/docs
+! Header - Ask Assistant
+! TODO: Remove AI hotkey for `/`
+shopify.dev##li[class*="_ActionAskAssistant_"]:has(> #open-assistant)
 ! ================
 ! == Shutterfly ==
 ! ================

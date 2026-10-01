@@ -1,0 +1,33 @@
+d1 2
+a2 2
+! Checksum: uNgMxT+M0Y3y/Md0ijyI8Q
+! Diff-Path: ../patches/260/260-s-1790873194-14400.patch
+d5 2
+a6 2
+! Version: 2.0.2.30
+! TimeUpdated: 2026-10-01T16:44:02+00:00
+d3539 22
+a3560 23
+! -- https://admin.shopify.com/ (logged in)
+! Sidekick chat messages
+! TODO: Sidebar can still open when clicking items on home tab
+||sidekick.shopify.com/api/store/*/conversations/$xmlhttprequest,domain=admin.shopify.com
+||sidekick.shopify.com/api/store/*/messages$xmlhttprequest,domain=admin.shopify.com
+! Header - Sidekick button
+admin.shopify.com##button[aria-controls="sidekick"]
+! Sidebar - Sidekick conversations
+admin.shopify.com#?#[class^="_SubSection_"][data-variant="platform"]:contains(Sidekick conversations)
+! -- https://admin.shopify.com/store/[id] (home - logged in)
+! Chat textbox
+admin.shopify.com##div[class^="_SidekickField_"][data-sidekick-field]
+! -- https://admin.shopify.com/store/[id]/products/new
+! Generate text button for description
+admin.shopify.com##[class^="_ControlsContainer_"] > [class*="_SectionBreak_"]:has(#sidekick-field-activator)
+[class^="_Section_"]
+! -- https://admin.shopify.com/store/[id]/settings/general/store-contact-details
+! Store name - Get name ideas from Sidekick
+admin.shopify.com##[data-component-name="store-name-suggestion-footer"]
+! -- https://shopify.dev/docs
+! Header - Ask Assistant
+! TODO: Remove AI hotkey for `/`
+shopify.dev##li[class*="_ActionAskAssistant_"]:has(> #open-assistant)
