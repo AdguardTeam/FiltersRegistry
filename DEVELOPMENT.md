@@ -405,6 +405,10 @@ yarn validate:platforms ./platforms  # explicit path (optional)
 yarn validate:locales
 ```
 
+`yarn validate:platforms` also simulates a client patch update: for every filter file changed relative
+to git HEAD on a patch-enabled platform, it applies the patch named by the committed `! Diff-Path` and
+requires the result to match the built file. This requires a git checkout with a valid `HEAD`.
+
 ### Repository Compression
 
 Once a year, we will compress the repository to reduce its size.
