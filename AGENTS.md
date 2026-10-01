@@ -66,7 +66,7 @@ for all supported AdGuard products.
 │   ├── repository/                 # compress.js — repository compression
 │   ├── translations/               # Locale download/upload tooling, PR validation reporting
 │   ├── utils/                      # Shared utilities (find_files.js, splitter.ts, strings.js)
-│   ├── validation/                 # validate_platforms.js, validate_locales.ts
+│   ├── validation/                 # validate_platforms.ts, validate_locales.ts
 │   ├── wildcard-domain-processor/  # TS module with CLI, unit tests (__tests__/)
 │   └── auto_build.sh               # Automated build entry point
 ├── locales/                        # Translations (45+ language dirs)
