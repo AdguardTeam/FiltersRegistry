@@ -56,13 +56,21 @@ const MV3_PLATFORM_DIRS = ['chromium-mv3', 'opera-mv3', 'edge-mv3'];
  * @param file - Path of the platform filter file.
  * @param includedFilterIDs - Filter IDs to include; empty (default) processes all.
  * @param excludedFilterIDs - Filter IDs to exclude; empty (default) excludes none.
+ * @param quiet - Whether to suppress logging of skipped files; false (default) logs.
  * @returns True if a patch should be generated for the file.
  */
 export const shouldGeneratePatch = (
     file: string,
     includedFilterIDs: number[],
     excludedFilterIDs: number[],
+    quiet = false,
 ): boolean => {
+    const log = (message: string): void => {
+        if (!quiet) {
+            console.log(message);
+        }
+    };
+
     // "/" for unix-like or "\\" for windows in path.
     const fileInFiltersFolder = file.includes('filters/') || file.includes('filters\\');
     const fileHasTxtExtension = file.endsWith('.txt');
@@ -73,14 +81,14 @@ export const shouldGeneratePatch = (
     ));
 
     if (isMv3) {
-        console.log('Skipped generating patch for MV3 extension');
+        log('Skipped generating patch for MV3 extension');
         return false;
     }
 
     const isAndroidContentBlocker = file.includes('/android-content-blocker/')
         || file.includes('\\android-content-blocker\\');
     if (isAndroidContentBlocker) {
-        console.log('Skipped generating patch for android-content-blocker');
+        log('Skipped generating patch for android-content-blocker');
         return false;
     }
 
@@ -88,7 +96,7 @@ export const shouldGeneratePatch = (
     // but not by `mac` (v1)
     const isOldMac = file.includes('/mac/') || file.includes('\\mac\\');
     if (isOldMac) {
-        console.log('Skipped generating patch for old mac');
+        log('Skipped generating patch for old mac');
         return false;
     }
 
@@ -99,7 +107,7 @@ export const shouldGeneratePatch = (
     if (!/\d+(_optimized|_without_easylist)?\.txt/.test(filename)) {
         // Skip printing logs for non ".txt" files as redundant.
         if (fileHasTxtExtension) {
-            console.log(`Skipped generating patch for: ${file}`);
+            log(`Skipped generating patch for: ${file}`);
         }
 
         return false;
@@ -119,7 +127,7 @@ export const shouldGeneratePatch = (
     if (!res) {
         // Skip printing logs for non ".txt" files as redundant.
         if (fileHasTxtExtension) {
-            console.log(`Skipped generating patch for: ${file}`);
+            log(`Skipped generating patch for: ${file}`);
         }
     }
 

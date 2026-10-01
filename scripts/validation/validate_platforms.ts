@@ -36,7 +36,8 @@ const GIT_MAX_BUFFER = 100 * 1024 * 1024;
  * @param filterContent Filter file content.
  *
  * @returns Patch path relative to the filter file directory, or null when the
- * tag is absent. A `#resourceName` suffix is not part of the path.
+ * tag is absent or has an empty value. A `#resourceName` suffix is not part of
+ * the path.
  */
 export const parseDiffPath = (filterContent: string): string | null => {
     const lines = filterContent.split('\n');
@@ -51,8 +52,9 @@ export const parseDiffPath = (filterContent: string): string | null => {
         }
 
         const tagValue = line.substring(tagIndex + DIFF_PATH_TAG_PREFIX.length).trim();
+        const patchPath = tagValue.split('#')[0];
 
-        return tagValue.split('#')[0];
+        return patchPath.length > 0 ? patchPath : null;
     }
 
     return null;
@@ -135,17 +137,22 @@ const getChangedFiles = (repoRoot: string, dir: string): string[] => {
  * @param relativePath Path relative to the repository root.
  *
  * @returns File content, or null when the file does not exist at HEAD.
+ *
+ * @throws {Error} If the file exists at HEAD but cannot be read.
  */
 const readHeadFileContent = (repoRoot: string, relativePath: string): Buffer | null => {
     try {
-        return execFileSync(
-            'git',
-            ['show', `HEAD:${relativePath}`],
-            { cwd: repoRoot, maxBuffer: GIT_MAX_BUFFER },
-        );
+        execFileSync('git', ['cat-file', '-e', `HEAD:${relativePath}`], { cwd: repoRoot });
     } catch {
+        // The file is not present at HEAD (a new filter).
         return null;
     }
+
+    return execFileSync(
+        'git',
+        ['show', `HEAD:${relativePath}`],
+        { cwd: repoRoot, maxBuffer: GIT_MAX_BUFFER },
+    );
 };
 
 /**
@@ -158,16 +165,23 @@ const readHeadFileContent = (repoRoot: string, relativePath: string): Buffer | n
  * `Diff-Path`, new filters, and filters whose patch target is absent (the
  * deliberate full-download transition, AG-59498).
  *
+ * @param platformsDir Directory with built platforms, absolute or relative to
+ * the repository root.
+ *
  * @throws {Error} If a patch is empty while the filter changed, or if applying
  * a non-empty patch does not produce the built filter content.
  */
-export const validatePlatformPatches = async (): Promise<void> => {
+export const validatePlatformPatches = async (
+    platformsDir: string = FOLDER_WITH_NEW_FILTERS,
+): Promise<void> => {
     const repoRoot = getRepoRoot();
-    const changedFiles = getChangedFiles(repoRoot, FOLDER_WITH_NEW_FILTERS);
+    // `git diff` expects a path relative to the repository root.
+    const dir = path.isAbsolute(platformsDir) ? path.relative(repoRoot, platformsDir) : platformsDir;
+    const changedFiles = getChangedFiles(repoRoot, dir);
 
     // eslint-disable-next-line no-restricted-syntax
     for (const relativePath of changedFiles) {
-        if (!shouldGeneratePatch(relativePath, [], [])) {
+        if (!shouldGeneratePatch(relativePath, [], [], true)) {
             continue;
         }
 
@@ -277,7 +291,7 @@ const main = async (): Promise<void> => {
     }
 
     await validatePatches();
-    await validatePlatformPatches();
+    await validatePlatformPatches(platformsPath);
 };
 
 // CLI entrypoint: run validation when executed directly.

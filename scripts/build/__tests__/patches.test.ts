@@ -2,6 +2,7 @@ import {
     describe,
     it,
     expect,
+    vi,
 } from 'vitest';
 import { shouldGeneratePatch } from '../patches.js';
 
@@ -75,5 +76,25 @@ describe('shouldGeneratePatch', () => {
         expect(shouldGeneratePatch(file, [1], EMPTY_FILTER_IDS)).toBe(true);
         expect(shouldGeneratePatch(file, [2], EMPTY_FILTER_IDS)).toBe(false);
         expect(shouldGeneratePatch(file, EMPTY_FILTER_IDS, [1])).toBe(false);
+    });
+
+    it('logs skipped files by default', () => {
+        const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+        const file = 'platforms/extension/edge-mv3/filters/1.txt';
+
+        expect(shouldGeneratePatch(file, EMPTY_FILTER_IDS, EMPTY_FILTER_IDS)).toBe(false);
+        expect(logSpy).toHaveBeenCalledWith('Skipped generating patch for MV3 extension');
+
+        logSpy.mockRestore();
+    });
+
+    it('suppresses skip logs in quiet mode', () => {
+        const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+        const file = 'platforms/extension/edge-mv3/filters/1.txt';
+
+        expect(shouldGeneratePatch(file, EMPTY_FILTER_IDS, EMPTY_FILTER_IDS, true)).toBe(false);
+        expect(logSpy).not.toHaveBeenCalled();
+
+        logSpy.mockRestore();
     });
 });

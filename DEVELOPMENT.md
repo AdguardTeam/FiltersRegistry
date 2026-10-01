@@ -407,7 +407,9 @@ yarn validate:locales
 
 `yarn validate:platforms` also simulates a client patch update: for every filter file changed relative
 to git HEAD on a patch-enabled platform, it applies the patch named by the committed `! Diff-Path` and
-requires the result to match the built file. This requires a git checkout with a valid `HEAD`.
+requires the result to match the built file. Files without a committed `! Diff-Path`, new filters, and
+filters whose patch target is absent (the full-download transition) are skipped. This requires a git
+checkout with a valid `HEAD`.
 
 ### Repository Compression
 

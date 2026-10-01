@@ -15,6 +15,8 @@ const gitMock = vi.hoisted(() => ({
     repoRoot: '',
     changedFiles: [] as string[],
     headContents: new Map<string, string>(),
+    showErrors: new Map<string, Error>(),
+    diffDir: '',
 }));
 
 vi.mock('child_process', async (importOriginal) => {
@@ -31,11 +33,29 @@ vi.mock('child_process', async (importOriginal) => {
             }
 
             if (args[0] === 'diff') {
+                const [, , , , dir] = args;
+                gitMock.diffDir = dir;
                 return gitMock.changedFiles.join('\n');
+            }
+
+            if (args[0] === 'cat-file') {
+                const relativePath = args[2].replace(/^HEAD:/, '');
+
+                if (!gitMock.headContents.has(relativePath)) {
+                    throw new Error(`File is not present at HEAD: ${relativePath}`);
+                }
+
+                return Buffer.alloc(0);
             }
 
             if (args[0] === 'show') {
                 const relativePath = args[1].replace(/^HEAD:/, '');
+                const showError = gitMock.showErrors.get(relativePath);
+
+                if (showError !== undefined) {
+                    throw showError;
+                }
+
                 const content = gitMock.headContents.get(relativePath);
 
                 if (content === undefined) {
@@ -71,6 +91,10 @@ describe('parseDiffPath', () => {
 
     it('returns null when the tag is absent', () => {
         expect(parseDiffPath('! Title: Test\n')).toBeNull();
+    });
+
+    it('returns null when the tag value is empty', () => {
+        expect(parseDiffPath('! Diff-Path: #resource\n')).toBeNull();
     });
 
     it('does not look for the tag beyond the first 50 lines', () => {
@@ -148,6 +172,8 @@ describe('validatePlatformPatches', () => {
         gitMock.repoRoot = repoRoot;
         gitMock.changedFiles = [];
         gitMock.headContents = new Map<string, string>();
+        gitMock.showErrors = new Map<string, Error>();
+        gitMock.diffDir = '';
     });
 
     afterEach(async () => {
@@ -235,6 +261,40 @@ describe('validatePlatformPatches', () => {
         await writeRepoFile('platforms/windows/filters/1.txt', '! Version: 1\n');
 
         await expect(validatePlatformPatches()).resolves.toBeUndefined();
+    });
+
+    it('propagates git errors other than a file missing at HEAD', async () => {
+        const relativePath = 'platforms/windows/filters/1.txt';
+
+        gitMock.changedFiles = [relativePath];
+        gitMock.headContents.set(relativePath, '! Diff-Path: ../patches/1/1-s-1-3600.patch\n');
+        gitMock.showErrors.set(relativePath, new Error('fatal: unable to read tree HEAD'));
+        await writeRepoFile(relativePath, '! Version: 2\n');
+
+        await expect(validatePlatformPatches()).rejects.toThrow('fatal: unable to read tree HEAD');
+    });
+
+    it('validates the platforms directory passed explicitly', async () => {
+        await expect(validatePlatformPatches('custom/platforms')).resolves.toBeUndefined();
+
+        expect(gitMock.diffDir).toBe('custom/platforms');
+    });
+
+    it('resolves an absolute platforms directory relative to the repository root', async () => {
+        await expect(validatePlatformPatches(path.join(repoRoot, 'platforms'))).resolves.toBeUndefined();
+
+        expect(gitMock.diffDir).toBe('platforms');
+    });
+
+    it('does not log patch-generation noise for skipped files', async () => {
+        const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+
+        gitMock.changedFiles = ['platforms/mac/filters/1.txt'];
+
+        await expect(validatePlatformPatches()).resolves.toBeUndefined();
+        expect(logSpy).not.toHaveBeenCalled();
+
+        logSpy.mockRestore();
     });
 
     it('skips platforms without patch support', async () => {
