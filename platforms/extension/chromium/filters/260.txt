@@ -1,9 +1,9 @@
-! Checksum: 2ragHbswJ9jQGje7pQPLqg
-! Diff-Path: ../patches/260/260-s-1790801138-14400.patch
+! Checksum: Sk4pFBgHsqsjKV8sFzxbWA
+! Diff-Path: ../patches/260/260-s-1790818123-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.28
-! TimeUpdated: 2026-09-30T20:43:12+00:00
+! Version: 2.0.2.29
+! TimeUpdated: 2026-10-01T01:26:31+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1574,7 +1574,8 @@ www.githubstatus.com##.link-gray[href="https://github.com/features/copilot"]
 about.gitlab.com##[data-ga-name="ai-assisted development"], [data-ga-name="ai for coding"], [data-ga-name="agentic ai"]
 ! -- https://gitlab.com/ (Homepage - logged in)
 ! Right sidebar panel for Gitlab Duo
-gitlab.com##.ai-panels
+! TODO: Look into reclaiming padded sidebar space
+gitlab.com##.ai-navigation-rail
 ! Left Sidebar - Orbit
 gitlab.com##[data-testid="nav-item"]:has(> [data-track-label="orbit_menu"])
 ! Profile icon > What's new for you > Duo items in sidebar
@@ -1812,6 +1813,9 @@ docs.google.com#$#.building-blocks-sidekick-scroll-top { top: 58px !important }
 docs.google.com##.building-blocks-promo-container
 ! Table categories with AI fields
 docs.google.com###feedback-sentiment-plus-classification-building-block, #expense-classification-building-block, #ad-generation-building-block, #email-generation-building-block, #call-summary-building-block
+! -- https://docs.google.com/document/d/1jVsd5qwnA3uR_oPdK-7vuIccVmr_b-4EirMFMsIs6Js/edit?tab=t.jc7r5j4mtrrn
+! Transient notification for "Listen to document summary"
+docs.google.com#?#.appsElementsCalloutTitle:contains(Listen to document summary):upward(.appsElementsCowCalloutContainer)
 ! -- https://docs.google.com/presentation/ (Slides)
 ! Right sidebar - Slide button
 docs.google.com###content-library-rail-slide-generation-element
@@ -2158,6 +2162,15 @@ www.hourglasscosmetics.com##.yotpo-paragraph-summary-container
 ! AI Assist button in initial options list
 virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Chat with HP's SupportGPT for AI Answers"]
 virtualagent.hpcloud.hp.com##.ac-actionSet > [aria-label="Get an AI Answer"]
+! =========
+! == HPE ==
+! =========
+! Floating AI Assistant button
+community.networking.hpe.com##.AiFab
+! -- https://community.networking.hpe.com/search?executeSearch=true&SearchTerm=test
+! AI Search chatbox
+||www.hpe.com/global/metrics/chat/chat-init/chat-init.js$script,domain=community.networking.hpe.com
+community.networking.hpe.com##.AiSearchResult
 ! =========
 ! == IBM ==
 ! =========
@@ -3082,6 +3095,14 @@ myapps.paychex.com##png-fab-help-chat-card
 ! Customer Review Summary (appears twice)
 www.pbtech.co.nz,www.pbtech.com##.ai-summary
 www.pbtech.co.nz,www.pbtech.com###aiReviewCard
+! ===============
+! == PC Health ==
+! ===============
+! -- https://www.pchealth.ca/en/health/pharmacist-vaccinations-injections/book-flu-shot-vaccine-appointment-near-me/
+! Ask PC Chat
+||mypharmacy.pchealth.ca/remedy?variant=pchChat$subdocument,domain=www.pchealth.ca
+||mypharmacy.pchealth.ca/remedy?variant=entry$subdocument,domain=www.pchealth.ca
+www.pchealth.ca##.remedy-chatbot-landing
 ! ===========
 ! == PCMag ==
 ! ===========
@@ -3855,6 +3876,12 @@ www.todoist.com##message-banner[data-banner-name="ramble-1vv4lt6"]
 ! -- https://app.todoist.com/app/upcoming
 ! Ramble button
 app.todoist.com##button[aria-label="Dictate tasks with Ramble"]
+! ============
+! == TrialX ==
+! ============
+! -- https://www.trialx.com/clinical-trials/listings/273100/early-detection-of-endometrialovarian/
+! AI simplified article
+www.trialx.com##.ai-options-tab:has(.active[data-showme="original"])
 ! ==============
 ! == Trip.com ==
 ! ==============
