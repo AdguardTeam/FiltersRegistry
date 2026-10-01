@@ -1,9 +1,9 @@
-! Checksum: 4woe4GzNiegDXpmAENQj7g
-! Diff-Path: ../patches/14/14-s-1790856733-3600.patch
+! Checksum: ZtvSFlTkc2an9lHIGC+12g
+! Diff-Path: ../patches/14/14-s-1790860447-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.81.11
-! TimeUpdated: 2026-10-01T12:08:44+00:00
+! Version: 2.2.81.12
+! TimeUpdated: 2026-10-01T13:11:10+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25139,8 +25139,7 @@ dzen.ru#$?##LayoutTopMicroRoot div[style^="padding-top:"][style*="position: rela
 ! https://m.dzen.ru/articles
 m.dzen.ru##div[class^="desktop2--redesign-feed__"] div:has(> article[class*="--card-rtb__"])
 ! Ads in the feed
-dzen.ru##div[class^="dzen-desktop--"][class*="__topContent-"] > div[class^="dzen-desktop--top-sidebar-desktop-"] > article[style]
-dzen.ru##div[class^="dzen-desktop--feed__itemWrap-"] div[class^="dzen-desktop--"][class*="__cardWrapper-"] ~ article:has([class*="__adBox-"])
+dzen.ru###ArticleFeedMicroApp div[class*="--base__"] > div:has(> article[class][style] > div[data-allowed-click])
 m.dzen.ru##div[aria-label="Лента Дзена"] div + article[class*="--card-rtb__"]
 ! Sportsdzen
 sportsdzen.ru##div[class*="sports-button-ad"]
@@ -56648,6 +56647,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+easypay.ua##.header-promo
 startpage.com#%#//scriptlet('trusted-set-local-storage-item', 'sp_ad_free_promo_card_dismissed', '$now$')
 glam.jp##.advads-entity-placement:has(> a[href="https://www.glam.jp/shortstoryline_cp/"])
 glam.jp##.article-banners

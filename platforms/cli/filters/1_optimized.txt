@@ -1,9 +1,9 @@
-! Checksum: oY1lyqXAVGUFfgzp2mwqLg
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1790842257-3600.patch
+! Checksum: +E6JXrv/C5xpnnC1FW++Yw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1790860435-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.89
-! TimeUpdated: 2026-10-01T08:07:09+00:00
+! Version: 2.1.8.90
+! TimeUpdated: 2026-10-01T13:10:09+00:00
 ! Expires: 12 hours (update frequency)
 ?fre=*&nocredentials=1^$xmlhttprequest,third-party
 /jackets/0/*?widgetId=banners-place-content-
@@ -2134,16 +2134,16 @@ $cookie=/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/,domain=dzen.ru|baby.ru|business
 ://dzen.ru^$document,replace=/Ya.\w+.\w+.render/Ya.render/
 $script,xmlhttprequest,domain=dzen.ru|dzeninfra.ru,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
 dzen.ru#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
-dzen.ru##div[data-testid="trends-entry-desktop"]
-dzen.ru###ya-dist-splashscreen
-dzen.ru###ya-dist-popup
-dzen.ru###ya-dist-teaser
-dzen.ru##div[class*="bannerMain"]
+dzen.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.findSsrAd')
+dzen.ru##div[class^="dzen-desktop--desktop-skeleton__"]
+dzen.ru##div[class^="dzen-desktop--horizontal-article-skeleton__"]
+dzen.ru##div[class^="dzen-desktop--feed-one-column-right-skeleton__"]
+dzen.ru##div[class^="dzen-desktop--feed-one-column-right-skeleton__card-"]
+dzen.ru##div[class^="dzen-desktop--feed-one-column__skeletonAnchor-"]
 [$path=/^\/$|\/\?/]dzen.ru###ya-dist
 dzen.ru##div[class^="dzen-desktop__widgetContainer-"] div[class*=" dzen-desktop__"] > div[style^="padding-top:"]
 ://dzen.ru^$cookie=rec-tech
-dzen.ru##div[class*="--top-micro-app__"] > div[style$="position: relative; height: 0;"] > div[style^="margin-top:"] > div:not([style])
-dzen.ru#$#div[class*="--top-micro-app__"] > div[style$="position: relative; height: 0;"] { padding-top: 0 !important; }
+dzen.ru##div[id*="MicroRoot"] > div[style] div[id][class] > div[style*="position: relative; height:"]
 dzen.ru##.news-mt-advert
 dzen.ru##.mg-advert > div[class*="loader"]
 [$path=/pogoda]dzen.ru##.adv_type_rtb

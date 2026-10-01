@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0PLdZM55aLSxdnLl00dQgQ
-! Diff-Path: ../patches/1/1-s-1790842284-3600.patch
+! Checksum: E8nwOZ83FSIa+Ed37NGj1w
+! Diff-Path: ../patches/1/1-s-1790860453-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.8.89
-! TimeUpdated: 2026-10-01T08:07:09+00:00
+! Version: 2.1.8.90
+! TimeUpdated: 2026-10-01T13:10:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4611,17 +4611,16 @@ dzen.ru,auto.ru,avito.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,f
 dzen.ru##+js(remove-cookie, /blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/)
 !
 ! Dzen main page
-dzen.ru##div[data-testid="trends-entry-desktop"]
-dzen.ru##a[class*="flash-modal__marketing-"]
-dzen.ru###ya-dist-splashscreen
-dzen.ru###ya-dist-popup
-dzen.ru###ya-dist-teaser
-dzen.ru##div[class*="bannerMain"]
+dzen.ru##+js(abort-on-property-read, Object.prototype.findSsrAd)
+dzen.ru##div[class^="dzen-desktop--desktop-skeleton__"]
+dzen.ru##div[class^="dzen-desktop--horizontal-article-skeleton__"]
+dzen.ru##div[class^="dzen-desktop--feed-one-column-right-skeleton__"]
+dzen.ru##div[class^="dzen-desktop--feed-one-column-right-skeleton__card-"]
+dzen.ru##div[class^="dzen-desktop--feed-one-column__skeletonAnchor-"]
 dzen.ru##:matches-path(/^\\/$|\\/\\?/) #ya-dist
 dzen.ru##div[class^="dzen-desktop__widgetContainer-"] div[class*=" dzen-desktop__"] > div[style^="padding-top:"]
 ! Under the search
-dzen.ru##div[class*="--top-micro-app__"] > div[style$="position: relative; height: 0;"] > div[style^="margin-top:"] > div:not([style])
-dzen.ru##div[class*="--top-micro-app__"] > div[style$="position: relative; height: 0;"]:style(padding-top: 0 !important;)
+dzen.ru##div[id*="MicroRoot"] > div[style] div[id][class] > div[style*="position: relative; height:"]
 ! Banners in the feed
 !
 ! Dzen News
