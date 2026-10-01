@@ -440,8 +440,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.75.76",
-			"timeUpdated": "2026-10-01T16:42:48+0000",
+			"version": "2.1.75.77",
+			"timeUpdated": "2026-10-01T20:44:02+0000",
 			"languages": []
 		},
 		{
@@ -525,8 +525,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.72",
-			"timeUpdated": "2026-10-01T16:42:53+0000",
+			"version": "2.1.98.73",
+			"timeUpdated": "2026-10-01T20:44:07+0000",
 			"languages": []
 		},
 		{
@@ -571,8 +571,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.98.74",
-			"timeUpdated": "2026-10-01T16:42:56+0000",
+			"version": "2.1.98.75",
+			"timeUpdated": "2026-10-01T20:44:10+0000",
 			"languages": []
 		},
 		{
@@ -614,8 +614,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.98.74",
-			"timeUpdated": "2026-10-01T16:42:58+0000",
+			"version": "2.1.98.75",
+			"timeUpdated": "2026-10-01T20:44:12+0000",
 			"languages": [
 				"ar"
 			]
@@ -634,8 +634,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.73",
-			"timeUpdated": "2026-10-01T16:43:00+0000",
+			"version": "2.1.98.74",
+			"timeUpdated": "2026-10-01T20:44:14+0000",
 			"languages": []
 		},
 		{
@@ -719,8 +719,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.72.45",
-			"timeUpdated": "2026-10-01T16:43:04+0000",
+			"version": "2.1.72.46",
+			"timeUpdated": "2026-10-01T20:44:18+0000",
 			"languages": []
 		},
 		{
@@ -806,8 +806,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.69.79",
-			"timeUpdated": "2026-10-01T16:43:13+0000",
+			"version": "2.1.69.80",
+			"timeUpdated": "2026-10-01T20:44:27+0000",
 			"languages": []
 		},
 		{
@@ -824,8 +824,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.70.48",
-			"timeUpdated": "2026-10-01T16:43:14+0000",
+			"version": "2.0.70.49",
+			"timeUpdated": "2026-10-01T20:44:29+0000",
 			"languages": []
 		},
 		{
@@ -944,8 +944,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.74",
-			"timeUpdated": "2026-10-01T16:43:21+0000",
+			"version": "2.1.98.75",
+			"timeUpdated": "2026-10-01T20:44:35+0000",
 			"languages": []
 		},
 		{
@@ -1024,8 +1024,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.0",
-			"timeUpdated": "2026-10-01T16:43:23+0000",
+			"version": "2.1.98.1",
+			"timeUpdated": "2026-10-01T20:44:38+0000",
 			"languages": []
 		},
 		{
@@ -1334,8 +1334,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.98.74",
-			"timeUpdated": "2026-10-01T16:43:34+0000",
+			"version": "2.1.98.75",
+			"timeUpdated": "2026-10-01T20:44:49+0000",
 			"languages": []
 		},
 		{
@@ -1352,8 +1352,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.88.95",
-			"timeUpdated": "2026-10-01T16:43:36+0000",
+			"version": "2.0.88.96",
+			"timeUpdated": "2026-10-01T20:44:51+0000",
 			"languages": []
 		},
 		{
@@ -1589,8 +1589,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.94.80",
-			"timeUpdated": "2026-10-01T16:43:47+0000",
+			"version": "2.1.94.81",
+			"timeUpdated": "2026-10-01T20:45:02+0000",
 			"languages": []
 		},
 		{
@@ -1695,8 +1695,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.92.5",
-			"timeUpdated": "2026-10-01T16:43:54+0000",
+			"version": "2.0.92.6",
+			"timeUpdated": "2026-10-01T20:45:10+0000",
 			"languages": [
 				"hi"
 			]
@@ -1777,8 +1777,8 @@
 			"displayNumber": 100,
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
-			"version": "2.0.2.30",
-			"timeUpdated": "2026-10-01T16:44:02+0000",
+			"version": "2.0.2.31",
+			"timeUpdated": "2026-10-01T20:45:18+0000",
 			"languages": []
 		}
 	]
