@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: U3ev2l1QMtUD1VHDBrvzlw
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1790835179-3600.patch
+! Checksum: ge+s/0cGR2ViQ+aEZKQlbw
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1790842286-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.32.53
-! TimeUpdated: 2026-10-01T06:09:39+00:00
+! Version: 2.0.32.54
+! TimeUpdated: 2026-10-01T08:08:11+00:00
 ! Expires: 5 days (update frequency)
 /js/jquery.smartbanner.js
 ##.duyuru_kutusu
@@ -31,6 +31,8 @@ smule.com##div[class]:has(> div[class] > a[href^="https://app.adjust.com"])
 mobile.a-bly.com##div:has(> div > div[data-testid="앱에서 더 많은 상품을 볼 수 있어요!"])
 cmjornal.pt##.widget--bar
 ubiz.ua##.pwa-install-promt
+zigzag.kr##main > button:has(> img[alt="landing-banner"])
+zigzag.kr##main > div[bottomoffset]:has(> div[class] > svg[data-zds-icon="IconLongArrowRightBold"])
 furusato-tax.jp##.app-promotion-modal
 furusato-tax.jp##.top-app-download
 netkeiba.com##.banner320
@@ -2120,6 +2122,10 @@ m.megabox.co.kr##+js(set-cookie, MAIN_APPINS_POP, Y)
 m.saramin.co.kr###wrap_app_banner:style(display: none !important;)
 m.saramin.co.kr###app_banner_dimmed:style(display: none !important;)
 m.saramin.co.kr##body[style^="overflow:"]:style(overflow: auto !important;)
+idus.com##.appContainer:has(.appHeader > .TheBanner > .BannerAppDownload):style(--app-bar-height: 48px !important;)
+idus.com##.appHeader > .TheBanner:has(> .BannerAppDownload):style(display: none !important;)
+idus.com##body:style(position: static !important; overflow: auto !important;)
+idus.com##.BaseDialog:has(.BaseDialog__contentsInner > .DialogAppDownload):style(display: none !important;)
 clientsecure.me##.ember-application > div.ember-view:has(> div.banner-container)
 nol.yanolja.com##+js(set-cookie, top-smart-banner, Y, /, yanolja.com)
 kream.co.kr##.header-wrapper:style(z-index: 3; width: 100%; position: fixed; top: 0; left: 0;)
