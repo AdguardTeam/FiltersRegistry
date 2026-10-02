@@ -1,9 +1,9 @@
-! Checksum: J3iPF+cD09BdnTxXn9F5Gg
-! Diff-Path: ../patches/14/14-s-1790960935-3600.patch
+! Checksum: g3SYl5xNZ3FOuB8bx2xrfQ
+! Diff-Path: ../patches/14/14-s-1790964656-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.81.31
-! TimeUpdated: 2026-10-02T17:05:57+00:00
+! Version: 2.2.81.32
+! TimeUpdated: 2026-10-02T18:07:48+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2672,6 +2672,12 @@ kanken.pl,zlotywidelec.pl,sklep.rowery.pl,ketabike.pl,bikerstudio.com.pl,nowakme
 !
 ! NOTE: Regular rules
 !
+shaver-spares.co.uk###kcookieinfo
+invicta.pl###ab-cookiemodule
+arcraiders.com#%#//scriptlet('trusted-click-element', 'div[data-testid="consent-banner-footer"] button[data-testid="consent-banner-customize-button"], button[data-testid="consent-widget-switch-marketing"], button[data-testid="consent-widget-footer-save-button"]')
+tygodnikziemiopolskiej.info#$##rodoModal { display: none !important; }
+tygodnikziemiopolskiej.info#$##rodoModal ~ .modal-backdrop { display: none !important; }
+tygodnikziemiopolskiej.info#$#.modal-open { overflow:visible!important; }
 chametw.com##div[style="width: 900px;"][placement="bottom"]
 zajo.com##.main-cookies
 stenger-bike.de#$#body { overflow: auto !important; padding-right: 0 !important; }
@@ -3339,7 +3345,7 @@ webull.com#%#//scriptlet('trusted-set-local-storage-item', 'web_consent_mode', '
 webull.com#%#//scriptlet('trusted-set-local-storage-item', 'web_consent_mode_effective_date', '$now$')
 pck.pl##div[class^="Cookies__StyledCollapsedWrapper-"]
 gct.pl##.cookie-alert-content
-crist.com.pl###ab-cookiemodule-opc
+invicta.pl,crist.com.pl###ab-cookiemodule-opc
 5-tv.ru###Zakon
 sobaka.ru###acceptCookiesPopup
 7days.ru##body > div[style*="fixed"]:has(> div[style*="flex"] a[href="https://seven-days.ru/page.php?ID=400"])
@@ -7365,7 +7371,7 @@ helix-pflanzen.de###cconsent-modal.ccm--visible
 eurogamer.pt#%#//scriptlet('trusted-click-element', '.message-component > button[title="Manage Cookie Settings"]')
 eurogamer.pt#%#//scriptlet('trusted-click-element', '.message-component > button[title="Reject All"]')
 bestreviews.guide,miles-mobility.com##div[data-testid="cookie-consent"]
-selected.site,runey.app,fintables.com,evbgroup.pl,appnetica.com,downornot.net,gooddaysaver.com,tiun.io,attio.com,itbooster.ru,console.upstage.ai,rackgenius.com,curator.pro,midas.app,asiaon.top,svgcreator.com,luvvoice.com,prmira.ru,docs.roadrunner.dev,newsnn.ru,dust.tt,tagilcity.ru##.fixed.bottom-4
+numitracker.com,selected.site,runey.app,fintables.com,evbgroup.pl,appnetica.com,downornot.net,gooddaysaver.com,tiun.io,attio.com,itbooster.ru,console.upstage.ai,rackgenius.com,curator.pro,midas.app,asiaon.top,svgcreator.com,luvvoice.com,prmira.ru,docs.roadrunner.dev,newsnn.ru,dust.tt,tagilcity.ru##.fixed.bottom-4
 riester.pl,sklep.toma.com.pl,filtry.sklep.pl,hurtownia-spozywcza.pl,dentalstore.pl,sklep-internet.pl#%#//scriptlet('set-cookie', 'cookies_message_bar_hidden', 'true')
 oklink.com##.cookieTips
 burgerking.pl##div[data-testid="footer"] > div[class^="styles__Container-"]:has(> div[class^="styles__ButtonsContainer-"] > button[data-testid="close-cookies-button"])
@@ -37860,6 +37866,7 @@ tavovaikas.lt,thehill.com,gardenbetty.com,komputerswiat.pl,sportingnews.com,pols
 !
 ! SECTION: Subscriptions - Regular rules
 !
+tygodnikziemiopolskiej.info##.my-lg-0:has(> div.extended > a[href="/newsletter"])
 imore.com###utility-bar
 machineryline.*##.subscriptions-proposal-wrapper
 elmundo.es##.ue-c-google-follow
