@@ -469,9 +469,6 @@ www.bing.com##.b_ans.b_top:has(> .cht_container)
 ! AI summary
 www.bing.com##.b_ans:has(> #b_wpt_container_ml)
 
-! -- https://www.bing.com/search?q=linux (mobile, user-specific?)
-www.bing.com##.b_ans:has(> #copans_container)
-
 ! -- https://www.bing.com/search?q=Gemini
 ! "Meet your AI assistant" promo card at top of search results
 www.bing.com###ccpg-container:has(#b_cp_upsell_box_parent)
@@ -1324,7 +1321,6 @@ www.etsy.com##[data-appears-component-name="reviews_feature_tags"]
 exceladept.com##div > [href^="https://chat.openai.com/"]
 exceladept.com##div > [href^="https://www.perplexity.ai/"]
 exceladept.com##div > [href^="https://x.com/i/grok"]
-exceladept.com##div > [href^="https://www.perplexity.ai/"]
 exceladept.com##div > [href^="https://www.google.com/search?udm=50"]
 
 ! ==============
@@ -2136,9 +2132,6 @@ docs.google.com##[jsname="Vjwl5e"]:has(#getting-started-dialog-navigation-view)
 ! == Google Drive ==
 ! ==================
 ! Some filters only apply to accounts with a Google Workspace or Google AI subscription
-
-! AI requests for search
-||appsgenaiserver-pa.clients6.google.com/v1/genai/$xmlhttprequest,domain=drive.google.com
 
 ! -- https://drive.google.com/drive/ (All pages)
 ! "Ask Gemini" icon in header
@@ -5300,24 +5293,22 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 ! Block AI upscaled "Super Resolution" quality options
 ! * May not work if video is loaded directly from URL
 !#if ext_ublock
-www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.*[?@.key=="1080p"];$..adaptiveFormats[?@.qualityLabel=="1080p"]')
-www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.*[?@.key=="720p"];$..adaptiveFormats[?@.qualityLabel=="720p"]')
+www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.qualityDetails[?@.key=="1080p"];$..adaptiveFormats[?@.qualityLabel=="1080p"]')
+www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.qualityDetails[?@.key=="720p"];$..adaptiveFormats[?@.qualityLabel=="720p"]')
 !#else
-www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="1080p"]]..adaptiveFormats.*[?.qualityLabel=="1080p"]')
-www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="720p"]]..adaptiveFormats.*[?.qualityLabel=="720p"]')
+www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="1080p"]]..adaptiveFormats[?.qualityLabel=="1080p"]')
+www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="720p"]]..adaptiveFormats[?.qualityLabel=="720p"]')
 !#endif
+! Automatic video chapters
+! * May not work for all users
+! * TODO: Remove "View Chapters" button & chapters for "In this video" sidebar
+www.youtube.com#%#//scriptlet('ubo-json-edit', '$..playerBar[?@.visibleOnLoad.key=="AUTO_CHAPTERS"]')
 
 ! -- https://m.youtube.com/watch?v=oh5p5f5_-7A (mobile)
 ! "Ask" slide in comment carousel below video
 ! * Does not work on AdGuard for iOS
-m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
-m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
-
-! -- https://www.youtube.com/watch?v=1K55xVb6qhY
-! Automatic video chapters
-! * May not work for all users
-! * TODO: Remove "View Chapters" button & chapters for "In this video" sidebar
-www.youtube.com#%#//scriptlet('ubo-json-edit', '$..playerOverlays..[?@.visibleOnLoad.key=="AUTO_CHAPTERS"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..carouselTitles[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..carouselTitles[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
 
 ! -- Livestream
 ! Chat summary

@@ -1,9 +1,9 @@
-! Checksum: DWHv/VUuadyIdeYQ9FrrkA
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1790887652-14400.patch
+! Checksum: bGFpomsBiI00B0maFbNaPw
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1790916554-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.31
-! TimeUpdated: 2026-10-01T20:45:18+00:00
+! Version: 2.0.2.32
+! TimeUpdated: 2026-10-02T04:47:09+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -138,7 +138,6 @@ www.bing.com##.b_ans:has(> .utilAns)
 www.bing.com##.b_ans.b_top:has(> .cht_container)
 ||www.bing.com/qna/fetchCodexQnA$xmlhttprequest,domain=www.bing.com
 www.bing.com##.b_ans:has(> #b_wpt_container_ml)
-www.bing.com##.b_ans:has(> #copans_container)
 www.bing.com###ccpg-container:has(#b_cp_upsell_box_parent)
 www.bing.com###imgcrtr_key
 www.bing.com#?#.slide:has(.gtxmd-cm.button.lkmd-cm:contains(Try it on Copilot))
@@ -381,7 +380,6 @@ www.etsy.com##[data-appears-component-name="reviews_feature_tags"]
 exceladept.com##div > [href^="https://chat.openai.com/"]
 exceladept.com##div > [href^="https://www.perplexity.ai/"]
 exceladept.com##div > [href^="https://x.com/i/grok"]
-exceladept.com##div > [href^="https://www.perplexity.ai/"]
 exceladept.com##div > [href^="https://www.google.com/search?udm=50"]
 exceljet.net##.hero-chatbot-link
 exceljet.net##.block-chatbot-cta
@@ -629,7 +627,6 @@ docs.google.com##[data-action-id="freebird-open-help-me-ask-from-icon"]
 docs.google.com##[role="menuitem"]:has(> [data-action-id="freebird-open-help-me-ask-from-icon"])
 docs.google.com##[role="menuitem"]:has(> [data-action-id="freebird-open-help-me-ask-from-icon"]) + [role="separator"]
 docs.google.com##[jsname="Vjwl5e"]:has(#getting-started-dialog-navigation-view)
-||appsgenaiserver-pa.clients6.google.com/v1/genai/$xmlhttprequest,domain=drive.google.com
 drive.google.com###WWNEkf
 drive.google.com##.p5rLxe.HBDJjb
 drive.google.com#$?#[role="menuitem"]:has(img[src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x16.png"]) { remove: true; }
@@ -1486,11 +1483,11 @@ m.youtube.com##.engagement-panel-section-list-footer-wrapper
 www.youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
 www.youtube.com##.ytp-menuitem-section-header
 www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
-www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="1080p"]]..adaptiveFormats.*[?.qualityLabel=="1080p"]')
-www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.*[?.key=="720p"]]..adaptiveFormats.*[?.qualityLabel=="720p"]')
-m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
-m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
-www.youtube.com#%#//scriptlet('ubo-json-edit', '$..playerOverlays..[?@.visibleOnLoad.key=="AUTO_CHAPTERS"]')
+www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="1080p"]]..adaptiveFormats[?.qualityLabel=="1080p"]')
+www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="720p"]]..adaptiveFormats[?.qualityLabel=="720p"]')
+www.youtube.com#%#//scriptlet('ubo-json-edit', '$..playerBar[?@.visibleOnLoad.key=="AUTO_CHAPTERS"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..carouselTitles[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..carouselTitles[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"]')
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
 www.youtube.com##ytd-expandable-metadata-renderer[has-video-summary]
 www.youtube.com##[chip-style="STYLE_AI_MODE_CHIP"]
