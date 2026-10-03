@@ -1,9 +1,9 @@
-! Checksum: /A0omF/deuq/CjzYbTiYmw
-! Diff-Path: ../patches/260/260-s-1790990142-14400.patch
+! Checksum: Ci/UwY0Lh4wTqwplVLWtUQ
+! Diff-Path: ../patches/260/260-s-1791002897-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.34
-! TimeUpdated: 2026-10-03T01:13:35+00:00
+! Version: 2.0.2.35
+! TimeUpdated: 2026-10-03T04:46:33+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -3447,8 +3447,12 @@ rock30games.com##clever-search-toggler
 ! == Rows ==
 ! ==========
 ! -- https://rows.com/docs/aj-filtering-with-jsonpath
-! "Your new AI Data Analyst" at bottom of article
-rows.com##section._2XOGP._3hVT9:has([href="https://superhuman.com/products/coda"])
+! "Your new AI Data Analyst" promo at bottom of article
+! * Also hides empty table cells that take up space where promo used to be on desktop layout
+rows.com##footer div:has(> section [href="https://superhuman.com/docs"])
+rows.com##footer [role="list"]:has(section [href="https://superhuman.com/docs"]) > [role="listitem"]:has( ~ div > section [href="https://superhuman.com/docs"])
+! Footer - Rows AI
+rows.com##[role="listitem"] > [href="/ai"]
 ! ================
 ! == Salesforce ==
 ! ================
