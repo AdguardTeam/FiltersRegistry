@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.84",
-			"timeUpdated": "2026-10-03T08:47:29+0000",
+			"version": "2.1.98.85",
+			"timeUpdated": "2026-10-03T14:17:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -975,8 +975,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.84",
-			"timeUpdated": "2026-10-03T08:47:30+0000",
+			"version": "2.1.98.85",
+			"timeUpdated": "2026-10-03T14:17:51+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1096,8 +1096,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.9.84",
-			"timeUpdated": "2026-10-03T01:13:00+0000",
+			"version": "2.1.9.85",
+			"timeUpdated": "2026-10-03T14:18:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1257,8 +1257,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.13.11",
-			"timeUpdated": "2026-09-27T16:41:56+0000",
+			"version": "2.0.13.12",
+			"timeUpdated": "2026-10-03T14:18:35+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1417,8 +1417,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.92.15",
-			"timeUpdated": "2026-10-03T08:48:15+0000",
+			"version": "2.0.92.16",
+			"timeUpdated": "2026-10-03T14:18:57+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1465,8 +1465,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.17.71",
-			"timeUpdated": "2026-10-03T01:13:33+0000",
+			"version": "2.0.17.72",
+			"timeUpdated": "2026-10-03T14:19:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1505,8 +1505,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.12.77",
-			"timeUpdated": "2026-10-03T01:13:34+0000",
+			"version": "2.0.12.78",
+			"timeUpdated": "2026-10-03T14:19:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
