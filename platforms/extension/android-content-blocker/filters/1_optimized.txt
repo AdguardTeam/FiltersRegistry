@@ -1,4 +1,4 @@
-! Checksum: NWCLa13pHtRavgd2LZ+6Cw
+! Checksum: wjtO1nrqDZNwGryqm2o3Ng
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.8.92
@@ -16,7 +16,6 @@
 /^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][a-z][?&]/$xmlhttprequest,other,media,third-party
 .link/*?*=*&referer=$xmlhttprequest
 /[_-].*\.(jpg|jpeg|png|webp)/$media
--22bet.mp4
 /files/series/*-RU.mp4|
 /code/video-steam/?id=*&vast=
 /nadavi-api/?p4g3=js/api/widget.js
@@ -311,7 +310,6 @@ http://*.ru/leftunit.pl?
 /mirmaek/*.gif$image
 /mnetorfad.js
 /netcat/modules/banner/*
-/news/?ref=*&mobtop=
 /oasisi-*.php?
 /openx/www/*
 /OurBanners/*
@@ -340,6 +338,7 @@ http://*.ru/leftunit.pl?
 /smartlinks.
 /spc.php?
 /spcjs.php?
+/specials/htads/*
 /sponsor-top.
 /sponsor_images/*
 /sponsoring/*
@@ -420,7 +419,7 @@ ucoz.ru/informer/
 ###Adfox_Banner
 ###Advertisement
 ###BannerDiv
-###PopWin
+###BannerGTop
 ###ad-content
 ###ad-slides
 ###ad-wrapper
@@ -561,7 +560,6 @@ ucoz.ru/informer/
 ##.banner_place
 ##.bannerblock
 ##.bannerhead
-##.bannerin
 ##.banners-top
 ##.banners1
 ##.banners2
@@ -1253,6 +1251,7 @@ ucoz.ru/informer/
 ||skwstat.ru^
 ||xyz0k4gfs.xyz^$third-party
 ||kipyn.com^$third-party
+||gold-mir.com^$third-party
 ||xoor.ru^$third-party
 ||5visions.com^$third-party
 ||jkhad.com^$third-party
@@ -1310,6 +1309,7 @@ ucoz.ru/informer/
 ||advmaker.su^$third-party
 ||adwidgets.ru^$third-party
 ||adwolf.ru^$third-party
+||adxxx.com^$third-party
 ||adylalahb.ru^$third-party
 ||affiliate.astraweb.com^
 ||affiliates.a2hosting.com^
@@ -1624,7 +1624,6 @@ ucoz.ru/informer/
 ||svk-native.ru^$third-party
 ||t.proext.com^$third-party
 ||targetix.net^$third-party
-||teasermedia.net^$third-party
 ||testsbox.ru^$third-party
 ||teststudio.ru/in?
 ||texto.click^$third-party
@@ -1878,7 +1877,6 @@ questtime.net#@#.ads-banner
 evilmod.ru#@##reklama
 evribiont.ru#@#.AdSense
 @@||sovcombank.ru^$generichide
-@@||magnit.ru/scripts/prebid.js$domain=magnit.ru
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pervyi-tv.online^$generichide
 dtf.ru#@#.ad.banner
@@ -2145,7 +2143,6 @@ mail.ru##.mailru-visibility-check
 mail.ru##div[class*="rb-slot_plug"]
 mail.ru,sportmail.ru##div[class*="m-fixed-panel__box"]
 @@||ad.mail.ru/adp/?_SITEZONE=$domain=mail.ru
-mail.ru##div[slot="main-column"] > article[class]:empty
 my.mail.ru##.l-music__banner-728x90
 my.mail.ru##.sp-video__billboard
 love.mail.ru###adblock-in-browser
@@ -2338,7 +2335,6 @@ avtocod.ru,love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,del
 fakty.ua##.nts-ad
 legalbet.by,legalbet.*##.top-three-block > div
 legalbet.by,legalbet.*##.bookmakers-in-footer
-legalbet.by,legalbet.*##.other-bonuses
 unian.net##div[id^="media_"][id$="_box"]
 gordonua.com##aside[aria-label="advertisement"]
 vikna.tv##.promo-sidebar
@@ -2353,7 +2349,6 @@ itc.ua###execphp-24
 itc.ua###text-10
 bessarabia.ua##.rekBlock
 xsport.ua##.advertising
-||spdmpgcdn.com^$media,domain=temptcdn.com
 ||cinemar.cc/api/player/vast
 technopark.ru##.catalog-banner
 tsn.ua##[data-ad-container]
@@ -2729,6 +2724,7 @@ rg.ru##div[class^="PageArticleSecondList_partner"]
 realty.yandex.ru##div[class*="OfferCardAd"]
 ||mt.today/js/yandexloader.js
 tarakanov.net##.hasmobads
+enthub.it##main > div.block > div.bg-background + div:not([class]):not([id])
 ||a.trbcdn.net/lib/release/web/*/ad-sdk.js
 ||iptv2021.com/api/*/ads-banners$domain=russia-tv.online
 cian.ru##[class*="--special-promo"]
@@ -2749,7 +2745,6 @@ pikabu.ru##.external_branding
 eapteka.ru##div[id*="/app-marketing-system/Placement"]
 banki24.by##.konverter-brand
 vedomosti.ru##.hide-offer
-eapteka.ru##.partition--banner-in-listing
 abw.by##.fox-wrapper
 forbes.ru##.rLcXj
 forbes.ru##ul > li > div[class] > div[style="min-height: 64px;"]
@@ -2844,15 +2839,18 @@ infox.sg##div[class^="adv"]
 rlsnet.ru##.b-tile-banner-wrap
 ||wg*.price.ru/partners/js/app.js$third-party
 zoneofgames.ru##td[valign="top"][width="367"]
-newdeaf-online.club##.vidrnet
 ||nvworld.ru/img/a/daf9531777b743269344c7aeb5c8c5c8.gif
 gorodkirov.ru,news-komi.ru##.interesting
+||podarkus.ru/bnrs/
 vestivrn.ru##.other-news
 lgz.ru##.bottom
 lgz.ru##[data-placeholder]
 tatar-inform.ru##.widget-any
 ||multi-admin.ru/media_banner/$domain=radio1.ru
+iptvx.one##a[href^="https://go.iptvx.one/"]
+iptvx.one##.widgb
 ||iptvx.one/imgz/cblng1.gif
+iptvx.one,epgx.club###formatted-banner
 .gif|$domain=iptvx.one|epgx.club
 petstory.ru##div[onclick*="swapBanners"]
 fishki.net###rutube-block
@@ -3302,7 +3300,6 @@ apteka.ru##.OrderCreatedPopup__banner
 kino-teatr.ru###top_line
 pornoxata.net##.video-holder > a[href^="/images/obmen/pu01.php"]
 pornomobi.xyz##.rbox
-hqporn.one##.lds-hourglass
 ||trafficcardinal.com/uploads/*/banner_image/
 trafficcardinal.com##.banner-popup-small
 trafficcardinal.com##.afterNavBan
@@ -3740,6 +3737,7 @@ geekhacker.ru###rehub_sticky_on_scroll-2
 attention.plus,vnimanie.pro,teleprogramma.pro##.dna-adfox-block
 playground.ru##.page-aside > div.sticky
 playground.ru##.mezzanine > div.mezzanine-center > div:not([class])
+||cdng.apigodata.com/uploads/pics/originals$domain=sportplus.live
 ||37.1.217.113^$domain=new-rutor.org|37.1.207.65
 remanga.org##img[alt$="banner"]
 fomag.ru##.popular-art-head
@@ -4094,6 +4092,7 @@ old-games.ru##li[data-author='Ads Master']
 ||storage.pravo.ru/file/banner/
 ||service.pravo.ru/pravo/banner/
 betonmobile.ru##.g_leon_dop_bon
+/inoe/player/*.mp4$domain=erocadr.com|xcadr.tv
 akket.com##.adsense
 russianemirates.com##.head_pict
 forum.cxem.net##div[align="center"][style="margin-top: -30px;"] > a > img
@@ -4785,6 +4784,7 @@ sletat.ru###banners-after-search-form
 picage.ru###bb[style="display: block;"]
 ntv.ru###bg250
 horrorzone.ru,astromeridian.ru,oper.ru###bglink
+sumypost.com###big-column > div.left img
 anti-malware.ru###block-block-1
 anti-malware.ru###block-block-33
 soccer.ru###block-block-99
@@ -4799,6 +4799,7 @@ ria-m.tv###cbanners
 uhta24.ru###centrcol > p > a > img
 yaplakal.com,yap.ru###clk-lt
 yaplakal.com,yap.ru###clk-rt
+buzzle.biz###close_button
 smebel.su###column-right
 tree.tv###commercial_link
 tofight.ru###container > div#header
@@ -5042,6 +5043,7 @@ finam.ru,ikinohd.com##.counters
 fishki.net##.cycle-carousel-wrap > a[id^="id_ap_"]
 ykt.ru##.d-advs
 euroki.org##.desktop_banners
+thequestion.ru##.dfp-answers-horizontal-banner-wrapper
 forums.playground.ru,playground.ru##.dfp-container
 qna.habr.com,toster.ru##.dfp_label
 sibnet.ru,topic.lt##.directadvert-block
@@ -5051,7 +5053,6 @@ trashbox.ru##.div_branding_left
 trashbox.ru##.div_branding_top
 do.ngs.ru##.do-velum
 zagranitsa.com##.double-click
-1progs.ru##.entry-content > a[rel="nofollow"] > img
 vsimse.ru##.entry-content > div[style*="text-align: center"] > a[target="_blank"] > img
 russian.rt.com##.external-widget_today-media
 fishki.net##.fixed-promo
@@ -5258,6 +5259,7 @@ newsru.co.il##.zahav_inner
 /jsoutasync.php?$domain=amvnews.ru
 /rover/*.js$domain=noob-club.ru
 cybersport.ru##[class^="moonsun--"]
+nikvesti.com##[id^="banner_"]
 syclub.ru##[style="padding-left: 10px;"][width="245"]
 cheb.ru##[width="*"][id="user2s"]
 alib.ru##[width="234"]
@@ -5533,6 +5535,7 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||exmo.me/static/img/affiliate/$third-party
 ||f-picture.net/Misc/JumpClick$popup
 ||finam.ru/data/js/
+||fishki.net/informer/gazeta
 ||fonarevka.ru$domain=kerio-rus.ru
 ||footballhd.ru/templates/ball/images/rec/
 ||forum-treiderov.com/styles/partner/
@@ -5601,7 +5604,6 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||pajero4x4.ru/cgi-bin/*.pl^
 ||pcpro100.info/wp-content/themes/pcpro100/images/top-ban.gif
 ||pedsovet.su/rtr/
-||penza-press.ru/images/uploads/useradv/
 ||peterburg.ru/*banner
 ||photo-monster.ru/*/rotor.js
 ||photo-monster.ru/images/fantastish.png
@@ -6102,6 +6104,7 @@ vk.com,vk.ru##._ads_promoted_post
 otzovik.com##.produkt-cobtent div.product-nav-wrap + div[class] ~ div[class]:not([style]):not([class="bottom-row"])
 otzovik.com##.produkt-cobtent div.product-nav-wrap + div[class] > noindex + div[class] > div[class]:not([itemprop])
 otzovik.com##.produkt-cobtent div.product-header > span.identifier + div + div[class]
+otzovik.com##.produkt-cobtent div.product-header ~ div[style^="position:"] ~ div[class]
 otzovik.com##.produkt-cobtent div.review-contents + [class]
 otzovik.com##.produkt-cobtent div.review-contents > div.review-body > span[style]
 otzovik.com##.adbroun_block
