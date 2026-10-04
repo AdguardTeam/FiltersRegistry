@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.88",
-			"timeUpdated": "2026-10-04T01:42:35+0000",
+			"version": "2.1.98.89",
+			"timeUpdated": "2026-10-04T06:10:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -975,8 +975,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.88",
-			"timeUpdated": "2026-10-04T01:42:37+0000",
+			"version": "2.1.98.89",
+			"timeUpdated": "2026-10-04T06:10:47+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1333,8 +1333,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.53",
-			"timeUpdated": "2026-10-02T16:46:23+0000",
+			"version": "2.0.25.54",
+			"timeUpdated": "2026-10-04T06:11:21+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1417,8 +1417,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.92.19",
-			"timeUpdated": "2026-10-04T01:43:16+0000",
+			"version": "2.0.92.20",
+			"timeUpdated": "2026-10-04T06:11:29+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1485,8 +1485,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.9.5",
-			"timeUpdated": "2026-10-03T04:46:31+0000",
+			"version": "2.0.9.6",
+			"timeUpdated": "2026-10-04T06:11:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1525,8 +1525,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.27",
-			"timeUpdated": "2026-09-19T20:34:25+0000",
+			"version": "2.0.0.28",
+			"timeUpdated": "2026-10-04T06:11:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

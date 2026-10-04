@@ -1,9 +1,9 @@
-! Checksum: M2xjJ6Q4XKPSBErDOGa78g
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1791078306-14400.patch
+! Checksum: L95PyzMrsC+hWokvf3hiWg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1791094400-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.69.93
-! TimeUpdated: 2026-10-04T01:42:47+00:00
+! Version: 2.1.69.94
+! TimeUpdated: 2026-10-04T06:10:55+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -40,7 +40,6 @@
 /follow-twitter-
 /follow-twitter.
 /follow-us.$~stylesheet
-/follow_instagram.png
 /highlight-and-share.js
 /icon_share_
 /icon_sns_
@@ -217,6 +216,7 @@ _social-bar/
 ###facebook_subscribe
 ###facebookbtn
 ###facebooklike
+###facebooknotification
 ###facebookpopup-fan-exit
 ###facebookpopup-fanback
 ###facebooktrend
@@ -452,6 +452,7 @@ _social-bar/
 ###share_facebook
 ###share_google
 ###share_icon
+###share_it
 ###share_linkedin
 ###share_links
 ###share_panel
@@ -484,6 +485,7 @@ _social-bar/
 ###sharer
 ###sharethis
 ###sharing-bar
+###sharing-box
 ###sharing-button
 ###sharing-buttons
 ###sharing-sidebar
@@ -496,6 +498,7 @@ _social-bar/
 ###sidebar-socials
 ###sidebar-twitter
 ###sidebar-youtube
+###sidebar_share
 ###sidebar_social_icons
 ###single-share
 ###site-share
@@ -540,6 +543,7 @@ _social-bar/
 ###social-pinterest
 ###social-plugins
 ###social-popup
+###social-rail
 ###social-share
 ###social-share-bottom
 ###social-share-buttons
@@ -1210,6 +1214,7 @@ _social-bar/
 ##.facebook-like-box
 ##.facebook-like-static
 ##.facebook-messenger-avatar
+##.facebook-modal
 ##.facebook-page-plugin
 ##.facebook-popup
 ##.facebook-recommend
@@ -1305,6 +1310,7 @@ _social-bar/
 ##.fluid_share_wrapper
 ##.fly-text-share
 ##.fn-header-social-links
+##.fo-Footer_Container_Social
 ##.follow-bar
 ##.follow-facebook
 ##.follow-instagram
@@ -2099,6 +2105,7 @@ _social-bar/
 ##.qt-sharepage
 ##.qt-socialicon
 ##.qticon-share
+##.quick-links__social
 ##.qw_social
 ##.r-footer--social
 ##.rambler-share
@@ -2524,7 +2531,6 @@ _social-bar/
 ##.share_wrapper
 ##.shareaholic-canvas
 ##.shareall
-##.shareb
 ##.sharebar
 ##.sharebg
 ##.sharebottom
@@ -2775,6 +2781,7 @@ _social-bar/
 ##.social-counters
 ##.social-cta
 ##.social-ext
+##.social-fixed-bar
 ##.social-float
 ##.social-floating
 ##.social-follow
@@ -2806,7 +2813,6 @@ _social-bar/
 ##.social-icons-header
 ##.social-icons-links
 ##.social-icons-list
-##.social-icons-sticky
 ##.social-icons-title
 ##.social-icons-top
 ##.social-icons-v2
@@ -3212,6 +3218,7 @@ _social-bar/
 ##.the_champ_sharing_ul
 ##.thread-share
 ##.thread-share-bar-buttons
+##.titleSocial
 ##.tk-footer-social-icons
 ##.tm-footer-social
 ##.tm-share-this
@@ -3558,7 +3565,6 @@ _social-bar/
 ||button.like.co^$third-party
 ||buttons.github.io/buttons.js$third-party
 ||connect.ok.ru^$third-party
-||facebook.com/plugins/follow.php$third-party
 ||facebook.com/plugins/like.php?$third-party
 ||facebook.com/plugins/like_box.php$third-party
 ||facebook.com/plugins/page.php?$third-party
@@ -3633,7 +3639,6 @@ iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
 torrentsafe.com###addthisimage
 9to5google.com,9to5mac.com,dronedj.com,electrek.co###after_disclaimer_placement
-autonocion.com###an-gfollow-wrap
 houstonpublicmedia.org,iclnoticias.com.br###article-share
 dailymail.co.uk###articleIconLinksContainer
 fastcompany.com,inc.com###article_share_button
@@ -3674,7 +3679,6 @@ aiseesoft.com###share-list
 journals.aps.org,theintercept.com###share-menu-button
 theintercept.com###share-menu-top-button
 androidpolice.com###sharingButtonPopup
-perezhilton.com###side-follow
 coingape.com###social-ad-new
 animenewsnetwork.com###social-bookmarks
 breitbart.com###social-follow-sidebar-widget
@@ -3693,7 +3697,6 @@ reuters.com###toolbar-item-parent-share-12
 yardbarker.com###top-nav-soc
 pcgamer.com,tomshardware.com###utility-bar
 gamesradar.com,tomsguide.com,windowscentral.com###utilitybar__button--share
-videocardz.com###vc-index-google-follow
 videocardz.com###welcome-modal
 tennis.com##.-sharebar
 askubuntu.com,mathoverflow.net,nhl.com,petri.com,serverfault.com,stackexchange.com,stackoverflow.com,superuser.com##.-social
@@ -3804,7 +3807,6 @@ mediaite.com##.c-youtube-subscribe
 cgdirector.com##.cgd-social-wrapper
 goal.com##.component-share
 goal.com##.component-social-twitter
-news.usni.org##.component56--share
 earthsky.org##.connect-2
 dailymail.co.uk##.container-3zJLP
 cbsnews.com##.content__google
@@ -3953,7 +3955,6 @@ smashingmagazine.com##.meta-box--share
 businessinsider.com##.mi-logo-social-container
 news18.com##.midgprfd
 lifewire.com##.mm-nav-footer__social
-autonocion.com##.mn-share
 travelandleisure.com##.mntl-footer__social
 boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
@@ -4479,7 +4480,6 @@ la7.it##.socialBtn
 davinotti.com##.social__variant
 ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
-unionesarda.it##.socials-link
 secoloditalia.it##.stamp
 macitynet.it##.tds-button
 fastweb.it##.tutplus-socials
