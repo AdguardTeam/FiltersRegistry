@@ -903,8 +903,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.87",
-			"timeUpdated": "2026-10-03T21:36:12+0000",
+			"version": "2.1.98.88",
+			"timeUpdated": "2026-10-04T01:42:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -975,8 +975,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.98.87",
-			"timeUpdated": "2026-10-03T21:36:14+0000",
+			"version": "2.1.98.88",
+			"timeUpdated": "2026-10-04T01:42:37+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1417,8 +1417,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.92.18",
-			"timeUpdated": "2026-10-03T21:37:07+0000",
+			"version": "2.0.92.19",
+			"timeUpdated": "2026-10-04T01:43:16+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1465,8 +1465,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.17.72",
-			"timeUpdated": "2026-10-03T14:19:02+0000",
+			"version": "2.0.17.73",
+			"timeUpdated": "2026-10-04T01:43:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1545,8 +1545,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.2.37",
-			"timeUpdated": "2026-10-03T21:37:13+0000",
+			"version": "2.0.2.38",
+			"timeUpdated": "2026-10-04T01:43:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
