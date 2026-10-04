@@ -5327,9 +5327,13 @@ www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="720p"]]..adaptiveFormats[?.qualityLabel=="720p"]')
 !#endif
 ! Automatic video chapters
-! * May not work for all users
-! * TODO: Remove "View Chapters" button & chapters for "In this video" sidebar
-www.youtube.com#%#//scriptlet('ubo-json-edit', '$..playerBar[?@.visibleOnLoad.key=="AUTO_CHAPTERS"]')
+! * Playback bar chapter segments
+m.youtube.com,www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.playerBar.multiMarkersPlayerBarRenderer.visibleOnLoad.key=="AUTO_CHAPTERS"]')
+! * "In this video" sidebar chapters + backup for playback bar
+m.youtube.com,www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.panelIdentifier=="engagement-panel-macro-markers-auto-chapters"]')
+! * Chapter cards in description
+www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[0].updateEngagementPanelContentCommand.contentSourcePanelIdentifier.tag=="engagement-panel-macro-markers-auto-chapters"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[2].engagementPanelHeaderShowNavigationButtonCommand.targetId=="engagement-panel-macro-markers-auto-chapters"]')
 
 ! -- https://m.youtube.com/watch?v=oh5p5f5_-7A (mobile)
 ! "Ask" slide in comment carousel below video

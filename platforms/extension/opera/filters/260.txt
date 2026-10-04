@@ -1,9 +1,9 @@
-! Checksum: LkFxhSr/QYCBH9zY3Fwe5w
-! Diff-Path: ../patches/260/260-s-1791078315-14400.patch
+! Checksum: k0fPUUeRRElXaT6TBmARYQ
+! Diff-Path: ../patches/260/260-s-1791124195-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.38
-! TimeUpdated: 2026-10-04T01:43:21+00:00
+! Version: 2.0.2.39
+! TimeUpdated: 2026-10-04T14:27:21+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -4581,9 +4581,13 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="1080p"]]..adaptiveFormats[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="720p"]]..adaptiveFormats[?.qualityLabel=="720p"]')
 ! Automatic video chapters
-! * May not work for all users
-! * TODO: Remove "View Chapters" button & chapters for "In this video" sidebar
-www.youtube.com#%#//scriptlet('ubo-json-edit', '$..playerBar[?@.visibleOnLoad.key=="AUTO_CHAPTERS"]')
+! * Playback bar chapter segments
+m.youtube.com,www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.playerBar.multiMarkersPlayerBarRenderer.visibleOnLoad.key=="AUTO_CHAPTERS"]')
+! * "In this video" sidebar chapters + backup for playback bar
+m.youtube.com,www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.panelIdentifier=="engagement-panel-macro-markers-auto-chapters"]')
+! * Chapter cards in description
+www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[0].updateEngagementPanelContentCommand.contentSourcePanelIdentifier.tag=="engagement-panel-macro-markers-auto-chapters"]')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[2].engagementPanelHeaderShowNavigationButtonCommand.targetId=="engagement-panel-macro-markers-auto-chapters"]')
 ! -- https://m.youtube.com/watch?v=oh5p5f5_-7A (mobile)
 ! "Ask" slide in comment carousel below video
 ! * Does not work on AdGuard for iOS
