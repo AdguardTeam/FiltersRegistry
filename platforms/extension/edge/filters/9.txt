@@ -1,9 +1,9 @@
-! Checksum: 93wqY5xStxbpryw2p1jk4w
-! Diff-Path: ../patches/9/9-s-1791039348-3600.patch
+! Checksum: 2RhDn+wI0Ivte2/zNtnGAw
+! Diff-Path: ../patches/9/9-s-1791104835-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.93
-! TimeUpdated: 2026-10-03T14:52:16+00:00
+! Version: 2.0.35.94
+! TimeUpdated: 2026-10-04T09:03:56+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -225,8 +225,9 @@ portalyaoi.com###lbl-interaction-trigger
 portalyaoi.com###lbl-block-overlay-x92
 portalyaoi.com###lbl-block-modal-x92
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239899
-minhatela.xyz#$##root > div.inset-0.fixed { display: none !important; }
-minhatela.xyz#$#body { overflow: auto !important; }
+minhatela.xyz#%#//scriptlet('prevent-fetch', 'mode:no-cors')
+@@||minhatela.xyz/sticky_ads.js$domain=minhatela.xyz
+minhatela.xyz#@#.ad-slot
 ! https://community.brave.app/t/ad-blocker-detected-in-brave-shields/657106
 hardwarepremium.com#%#//scriptlet('prevent-setTimeout', 'adsenseCargo')
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=hardwarepremium.com
