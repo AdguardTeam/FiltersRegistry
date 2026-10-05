@@ -1,9 +1,9 @@
-! Checksum: 2lMIN2epvCr+k9oiyYLaEw
-! Diff-Path: ../patches/13/13-s-1791216644-3600.patch
+! Checksum: k1Qj1Vry5XbZP4qj9w8ttw
+! Diff-Path: ../patches/13/13-s-1791220191-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.71
-! TimeUpdated: 2026-10-05T16:07:07+00:00
+! Version: 2.0.68.72
+! TimeUpdated: 2026-10-05T17:05:52+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6339,11 +6339,6 @@ mahsunsports.xyz#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-vide
 [$domain=/baycontitv\d+\.com$/]##body > header
 [$domain=/baycontitv\d+\.com$/]##.footer-links
 !
-! Frequently changed domains: jtvkanal*.vip
-! Source: jtvkanal8.vip
-||jtvkanal*.vip/api/banner-img/
-[$domain=/jtvkanal\d+\.vip$/]##.banner
-!
 ! Frequently changed domains: *betine.live
 ! Source: 87betine.live
 ||*betine.live/view/theme/safir/img/betinepageskin.jpg
@@ -6538,10 +6533,6 @@ patrongol37.cfd##.top-banner-header
 [$domain=/patron(live\|futbol)\d+\.cfd$/]##.top-banner-header
 [$domain=/patron(live\|futbol)\d+\.cfd$/]##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
 [$domain=/patron(live\|futbol)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
-!
-! Frequently changed domains: piabettv*.live
-! Source: https://ksln.link/piatv
-[$domain=/piabettv\d+\.live$/]##header > ul > li:not(:has(> a[href="/"]))
 !
 ! Frequently changed domains: papaztv*.com
 ! Source: papaztv.com
@@ -6864,19 +6855,6 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ! It seems the next 3 sites use the same template. Most likely, there are more such sites
 ! Let's test one generic rule
 ##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-!
-! Frequently changed domains: belestepe*.sbs
-||belestepe*.sbs//wp-content/uploads/*.gif
-! aglint-disable-next-line no-invalid-modifiers
-||video.twimg.com/amplify_video/*/vid/*.mp4$domain=/^belestepe\d+\.sbs/
-[$domain=/belestepe\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-[$domain=/belestepe\d+\.sbs/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
-!
-! Frequently changed domains: mactanmaca*.sbs
-||mactanmaca*.sbs/wp-content/*.gif|$image
-[$domain=/mactanmaca\d+\.sbs/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
-[$domain=/mactanmaca\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-[$domain=/mactanmaca\d+\.sbs/]#%#//scriptlet('set-cookie', 'reklamgosterimx', 'ok')
 !
 ! Frequently changed domains: sultansportv*.com
 ! Randomized of too fast changing
