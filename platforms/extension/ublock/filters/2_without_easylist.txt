@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: IAfnyxjuSdPChbABqvFvLA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1791191775-3600.patch
+! Checksum: 5hZ3qSA2Go50uJuWJEVWWA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1791195185-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.95.14
-! TimeUpdated: 2026-10-05T09:12:27+00:00
+! Version: 2.4.95.15
+! TimeUpdated: 2026-10-05T10:09:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13220,11 +13220,13 @@ adslink.pw##+js(prevent-fetch, adsbygoogle)
 .srnky.com^
 .clksz.com^
 .aii.sh^
+lnbz.la,clksz.com,aii.sh,srnky.com##+js(abort-on-property-read, atob)
 @@||intercelestial.com^$generichide
 @@/^https:\/\/intercelestial\.com\/[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]\//$domain=intercelestial.com
-/^(?!.*(\/cdn-cgi\/|\.js\?ver)).*$/$~3p,script,domain=aii.sh|srnky.com|clksz.com|lnbz.la
+/^(?!(https:\/\/[a-z]{3,5}\.[a-z]{2,3}\/cdn-cgi\/|https:\/\/[a-z]{3,5}\.[a-z]{2,3}\/cloud_theme\/build\/js\/script\.min\.js)).*$/$~3p,script,domain=aii.sh|srnky.com|clksz.com|lnbz.la
 srnky.com,lnbz.la,clksz.com,aii.sh,intercelestial.com##+js(prevent-fetch, googlesyndication)
-intercelestial.com,srnky.com,lnbz.la,clksz.com,aii.sh##body > script + div:not([class]):style(display: none !important;)
+srnky.com,lnbz.la,clksz.com,aii.sh##iframe + [style]:not([class]):style(display: none !important;)
+srnky.com,lnbz.la,clksz.com,aii.sh##slot + div:not([class]):style(display: none !important;)
 intercelestial.com,srnky.com,lnbz.la,clksz.com,aii.sh##html:style(overflow: auto !important;)
 $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|linegee.net|clksz.com|srnky.com|lnbz.la
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239240
@@ -67667,6 +67669,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! Shrinkbixby
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242238
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242879
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242809
