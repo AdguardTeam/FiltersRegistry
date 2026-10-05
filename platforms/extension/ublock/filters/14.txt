@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: luqnIKYLv9Re2rDdmQM+8w
-! Diff-Path: ../patches/14/14-s-1791185477-3600.patch
+! Checksum: AmGPm/vJlQhitikNRWDwCg
+! Diff-Path: ../patches/14/14-s-1791191772-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.81.45
-! TimeUpdated: 2026-10-05T07:27:51+00:00
+! Version: 2.2.81.46
+! TimeUpdated: 2026-10-05T09:13:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2593,6 +2593,7 @@ kanken.pl,zlotywidelec.pl,sklep.rowery.pl,ketabike.pl,bikerstudio.com.pl,nowakme
 !
 ! NOTE: Regular rules
 !
+milfed.com###root > div:has(> p > a[href="https://www.milfed.com/legal/privacy"])
 ||modivoplatform.com/assets/ConsentManager/
 ||modivo.*/wp-content/plugins/jet-cookie-banner/srcFrontend/dist/jet-cookie-banner.js
 icemobility.com##.cookie-pop-up-wrapper
@@ -7887,8 +7888,7 @@ wefashion.nl,wefashion.de,wefashion.be,wefashion.ch,wefashion.at##.consent-track
 wefashion.nl,wefashion.de,wefashion.be,wefashion.ch,wefashion.at##.modal-open > div.veil
 dobro.ru##div[class^="CookiesModal_cookies__"]
 hemea.com###rgpdModal
-viabcp.com##.bcp_politica_uso_cookieAdobe:style(display: none !important;)
-viabcp.com##body:style(overflow: auto !important;)
+viabcp.com##.bcp-politica-uso-cookie-adobe
 1password.com##div > main + div.fixed.bottom-0.block
 gyakorikerdesek.hu###stialert
 kodinerds.net###adConsent
@@ -25052,7 +25052,10 @@ pastedownload.com##.hemmm
 pastedownload.com##.jegulo
 pastedownload.com##.aadb-overlay
 pastedownload.com###fc-main-dialog
+pastedownload.com###pdq-main-dialog
 pastedownload.com##+js(no-setTimeout-if, this.run())
+pastedownload.com##+js(no-setInterval-if, ExoSupport)
+pastedownload.com##+js(set-constant, __aadb_trigger, noopFunc)
 ||pastedownload.com/template/nova/js/okagame.js
 pastenow.ru###google-block
 pcinvasion.com##.execphpwidget > div[style="min-height: 250px;"]
@@ -26769,6 +26772,7 @@ pasazer.com##.pz-tg-open
 vecteezy.com###bundles-promo
 vecteezy.com##.ez-promo-popup
 infranken.de##turbo-glomex-player-ui[controls-breakpoint="xsmall"]:remove()
+m.lotteimall.com###randomPopup
 123pan.cn##.ant-modal-root:style(display: none!important;)
 123pan.cn##html body:style(overflow-y: auto!important;)
 wavve.com##+js(set-cookie, close-popup, 1, /, .wavve.com)
@@ -46860,6 +46864,7 @@ hdqwalls.com###related_wallpapers > .panel:has(> .panel-body > .hdq-app-widget-w
 anisuge.tv###installPwaPopup
 open.proptech.ru##footer > div.bg-banner
 trip.com##+js(set-cookie, ibu-h5-pop-hotel, 0)
+heydealer.com##button[style^="position:relative;"]:has(> svg[viewBox="0 0 61 61"][role="img"] > path[shape-rendering="crispEdges"])
 smule.com##div[class]:has(> div[class] > a[href^="https://app.adjust.com"])
 mobile.a-bly.com##div:has(> div > div[data-testid="앱에서 더 많은 상품을 볼 수 있어요!"])
 cmjornal.pt##.widget--bar
@@ -51155,6 +51160,9 @@ m.tokopedia.com##div[data-testid="divOverlay"]:style(display: none!important;)
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+m.lotteimall.com##appdownPopTop
+heydealer.com##main > div[style] > div[class]:has(> a[href="https://applink.heydealer.com/QbFw/HomepageMobile"])
+heydealer.com##main section[class] > div[class]:has(> a[href^="https://applink.heydealer.com/QbFw/OfficialMarket?"])
 moneydj.com##.f1a_appBar
 hdqwalls.com###app-promo-banner
 m.megabox.co.kr##.induceBanner:style(display: none !important;)
@@ -65899,6 +65907,7 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+heydealer.com##button[style^="position: relative;"]:has(img[src^="https://static.web.heydealer.com/_next/static/media/manager."])
 iphone-mania.jp###custom-chat-embed-v3-root
 cyberscore.live##body > div.cursor-pointer.items-center[class*="mb:right-"]:has(+ .chat)
 zap-hosting.com###sticky-support-container > button[style]:has(> div[onclick^="openCookiePopup"])
