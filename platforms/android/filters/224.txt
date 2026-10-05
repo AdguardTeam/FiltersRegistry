@@ -1,9 +1,9 @@
-! Checksum: b2QyZBee8jRyLUkEuI8q2Q
-! Diff-Path: ../patches/224/224-s-1791188304-3600.patch
+! Checksum: +91NQ/J2pPp7kC3GWUDAnQ
+! Diff-Path: ../patches/224/224-s-1791191746-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.66.72
-! TimeUpdated: 2026-10-05T08:15:47+00:00
+! Version: 2.1.66.73
+! TimeUpdated: 2026-10-05T09:13:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1169,6 +1169,11 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+global.hk01.com#$#div[class^="placeholder-ad-"] { min-height: 0 !important; }
+global.hk01.com##div[class*="_.js-ad-slot]"]
+global.hk01.com##.cmp-article-detail > .flex:has(> .lazyload-wrapper > div:is(.js-ad-slot, [data-id="lazyload-placeholder"]))
+global.hk01.com##.hidden[class*="col-span-4"] > div[class^="min-h-250px w-full"]:has(> .flex > .lazyload-wrapper > .js-ad-slot)
+global.hk01.com##.fixed[aria-labelledby="hot-news-dialog-title"] .items-stretch > .shrink-0:has(> .sticky > .flex > .lazyload-wrapper > .js-ad-slot)
 vikacg.com##.arco-carousel
 vikacg.com##.contents:has(> a[class="w-full"][href^="http"][target="_blank"] > img[src*="/assets/moonlight/"])
 vikacg.com#%#//scriptlet('json-prune', 'data.item data.ads')
