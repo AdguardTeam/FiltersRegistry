@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.95.14",
-			"timeUpdated": "2026-10-05T09:12:27+0000",
+			"version": "2.4.95.15",
+			"timeUpdated": "2026-10-05T10:09:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.12.80",
-			"timeUpdated": "2026-10-05T04:11:54+0000",
+			"version": "2.1.12.81",
+			"timeUpdated": "2026-10-05T10:09:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.7",
-			"timeUpdated": "2026-10-05T07:27:35+0000",
+			"version": "2.0.77.8",
+			"timeUpdated": "2026-10-05T10:09:39+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.81.46",
-			"timeUpdated": "2026-10-05T09:13:01+0000",
+			"version": "2.2.81.47",
+			"timeUpdated": "2026-10-05T10:09:54+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -732,8 +732,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.98",
-			"timeUpdated": "2026-10-05T09:13:07+0000",
+			"version": "2.0.95.99",
+			"timeUpdated": "2026-10-05T10:10:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -754,8 +754,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.84.48",
-			"timeUpdated": "2026-10-05T09:13:08+0000",
+			"version": "2.0.84.49",
+			"timeUpdated": "2026-10-05T10:10:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -798,8 +798,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.90",
-			"timeUpdated": "2026-10-04T21:01:12+0000",
+			"version": "2.0.48.91",
+			"timeUpdated": "2026-10-05T10:10:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
