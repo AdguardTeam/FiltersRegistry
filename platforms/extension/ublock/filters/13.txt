@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zsF/nGljPRsxvJHNsPbQrw
-! Diff-Path: ../patches/13/13-s-1791295795-3600.patch
+! Checksum: s6fO5tu1AXD1DbRbdjAKvQ
+! Diff-Path: ../patches/13/13-s-1791299443-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.68.73
-! TimeUpdated: 2026-10-06T14:06:49+00:00
+! Version: 2.0.68.74
+! TimeUpdated: 2026-10-06T15:06:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -690,6 +690,7 @@ r10.net##+js(abort-on-property-write, rInt)
 ! Bad: example.org##.adv (should be in specific.txt)
 !
 ! Streaming sites with casino ads
+##.background-link > a[target="_blank"]
 ##.channel-area ~ div.popup-overlay
 ##a[class="current-address-link"]
 ##header > ul > li.blink > a[target]
@@ -6089,6 +6090,13 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! except some sites that use non-template domain names of mirror sites
 !
 !
+! Frequently changed domains: patronlig*.cfd
+! Source: patronspor.is
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||blogger.googleusercontent.com/img/$domain=/patronlig\d+\.cfd$/
+! aglint-enable no-invalid-modifiers
+patronlig20.cfd##.footer-links
 ! Frequently changed domains: hadibettv*.com
 ! Source: hadibettv6.com
 /hadibettv\d+\.com$/##.footer-links
