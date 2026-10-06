@@ -1,8 +1,8 @@
-! Checksum: 05EQD1ix2QQ1tNwUZ0uWGQ
+! Checksum: AVVeag/yGPFbQkhCjUystQ
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.46
-! TimeUpdated: 2026-10-06T16:46:24+00:00
+! Version: 2.0.2.47
+! TimeUpdated: 2026-10-06T20:44:54+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -700,22 +700,28 @@ coolors.co###generator_ai-btn
 ! == Cortex Docs ==
 ! =================
 ! -- https://cortex-docs.paloaltonetworks.com/
+! -- https://gitbook.com/docs
 ! Header - AI button
-cortex-docs.paloaltonetworks.com##[data-testid="ai-chat-button"]
+cortex-docs.paloaltonetworks.com,gitbook.com##[data-testid="ai-chat-button"]
 ! "How can I help you today" AI chatbox
 cortex-docs.paloaltonetworks.com###how-can-i-help-you-today
 ! # TODO: Search bar autocomplete suggestions if AI was previously used
 ! -- https://cortex-docs.paloaltonetworks.com/?q=test
-! Search autocomplete option for "Ask AI Assistant"
+! -- https://gitbook.com/docs?q=test
+! Search autocomplete option to "Ask AI Assistant"
 ! TODO: Inivsible option selectable with arrow keys or via Ctrl+I
-cortex-docs.paloaltonetworks.com##[data-testid="search-ask-question"]
+cortex-docs.paloaltonetworks.com,gitbook.com##[data-testid="search-ask-question"]
 ! -- https://cortex-docs.paloaltonetworks.com/cortex-cloud-runtime-security
-! Ask button & sparkle that appears when hovering over text
+! -- https://gitbook.com/docs/getting-started/quickstart
+! Ask button at top of article & sparkle that appears when hovering over text
 ! TODO: Arrow "more" menu missing left border. Can't use "remove" because it can cause page error
 !       if "Ask AI" option selected and deselected with keyboard in search menu
-cortex-docs.paloaltonetworks.com##button[aria-label="Ask"]
+cortex-docs.paloaltonetworks.com,gitbook.com##button[aria-label="Ask"]
 ! "More" ask arrow dropdown options
-! TODO: Search autocomplete options
+! * AI Assistant logo
+! * ChatGPT logo
+! * Claude logo
+! * MCP logo
 ! ====================
 ! == Crate & Barrel ==
 ! ====================
@@ -906,8 +912,7 @@ idrinkproducts.com###smart-bot-container
 ! == Dropbox ==
 ! =============
 ! -- https://www.dropbox.com/ (Main page - logged out)
-! Header - "Meet Dropbox Dash" sticky promo
-! * We have 2 rules to hide and remove. Hide is immediate, but it leaves a gap. Remove is slower, but gets rid of the gap.
+! Header banner for ChatGPT webinar
 ! Header nav > Products > AI links
 ! Footer - AI links
 ! -- https://www.dropbox.com/home (Home - Logged in)
@@ -1187,14 +1192,6 @@ www.gettyimages.com##[data-testid="AIGenerator"]
 ! ===============
 ! -- https://www.gigasheet.com/sample-data/clean-web-adblock-filters
 ! Sheet Assistant
-! ===========================
-! == GitBook Documentation ==
-! ===========================
-! -- https://gitbook.com/docs/developers
-! "Ask" button next to search bar
-gitbook.com##[data-testid="ai-chat-button"]
-! "Ask" button by documentation header
-gitbook.com##button[aria-label="GitBook Assistant"]
 ! ============
 ! == GitHub ==
 ! ============
@@ -1789,6 +1786,12 @@ support.google.com##html.hcfe:not([style="overflow: hidden;"]) .helpPanelContain
 ! Navbar - Gen AI tips tab
 ! Notice promoting Workplace with Gemini
 support.google.com##.notification[data-name="Gemini_EN_RemoteWork_Covid19_NonEN"]
+! ===================
+! == Google Trends ==
+! ===================
+! -- https://trends.google.com/explore
+! "Suggest search terms" button
+trends.google.com##button[aria-label="Suggest search terms"]
 ! ======================
 ! == Google Workspace ==
 ! ======================
