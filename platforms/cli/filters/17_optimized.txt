@@ -1,9 +1,9 @@
-! Checksum: w8LCNDdVAlCEd/kLJbnJxQ
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1791274283-3600.patch
+! Checksum: HKlSOtjLTVDizvOMka/FIA
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1791284959-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.59
-! TimeUpdated: 2026-10-06T08:08:24+00:00
+! Version: 2.0.14.60
+! TimeUpdated: 2026-10-06T11:06:21+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
@@ -2637,6 +2637,11 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+@@||archive.*^$removeparam
+@@||wayback.archive-it.org^$removeparam
+@@||warp.ndl.go.jp^$removeparam
+@@||gyo.tc^$removeparam
+@@||megalodon.jp^$removeparam
 @@||eneba.com^$removeparam=utm_source
 @@$removeparam=utm_medium,domain=hobbygames.ru
 @@$removeparam=utm_campaign,domain=hobbygames.ru
