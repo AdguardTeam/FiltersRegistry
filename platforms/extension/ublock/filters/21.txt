@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 92QAn6etejXnZZ545ox1yw
-! Diff-Path: ../patches/21/21-s-1791227449-3600.patch
+! Checksum: m4hwWj+fXdyXWgYOfd1beA
+! Diff-Path: ../patches/21/21-s-1791281391-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
-! Version: 2.0.48.95
-! TimeUpdated: 2026-10-05T19:08:17+00:00
+! Version: 2.0.48.96
+! TimeUpdated: 2026-10-06T10:06:26+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3709,6 +3709,9 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+ratatype.com##a[href="/es/ratatype-plus/"]
+ratatype.com##.not-prose
+ratatype.com###header > div.message
 trafficnews.jp##.premium-banner-sp
 emmikochteinfach.de##section:has(> div.container a[href="https://emmikochteinfach.de/mein-kochbuch/"])
 emmikochteinfach.de##section.section_author:has(> div.container > div.author-block)
@@ -11174,6 +11177,7 @@ codedosa.com###wpcp-error-message
 !--- CSS ---
 ! NOTE: Context menu - CSS
 !
+s.awa.fm##div[unselectable="on"] p:style(user-select: text !important; -webkit-user-select: text !important; -moz-user-select: text !important; -webkit-touch-callout: default !important;)
 music.apple.com##div[data-testid="credits__lyrics-snippet"] > p:style(user-select: text !important; -webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text!important;)
 shogaisha-techo.com##body:style(-webkit-touch-callout: default !important; -webkit-user-select: auto !important;-moz-user-select: text !important; -ms-user-select: text !important; user-select: auto !important; -webkit-tap-highlight-color: black !important;)
 joysound.com###lyrics:style(user-select: auto !important;)
@@ -11285,6 +11289,7 @@ kpopjjang.com,hinfomax.co.kr,britg.kr,sexpox.com,47news.jp,learn-from-homey.blog
 dora-guide.com,codedosa.com,gradium.co.kr,semesters.in##+js(set-constant, disable_copy, noopFunc)
 dora-guide.com,codedosa.com,gradium.co.kr,semesters.in##+js(set-constant, disable_copy_ie, noopFunc)
 !
+s.awa.fm##+js(addEventListener-defuser, contextmenu, , elements, #__next)
 templetoons.com##+js(addEventListener-defuser, contextmenu, e.preventDefault)
 divatoon.com,templetoons.com##+js(addEventListener-defuser, contextmenu, [native code])
 tv-tokyo.co.jp##+js(json-prune, preventCopy)
