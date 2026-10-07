@@ -1,9 +1,9 @@
-! Checksum: kreJ0QT4ZjMqiSol2AFosQ
-! Diff-Path: ../patches/260/260-s-1791319611-14400.patch
+! Checksum: r8eftq8iR1AdJm+Fb4VvRg
+! Diff-Path: ../patches/260/260-s-1791348617-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.47
-! TimeUpdated: 2026-10-06T20:44:54+00:00
+! Version: 2.0.2.48
+! TimeUpdated: 2026-10-07T04:48:17+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -2156,6 +2156,28 @@ workspace.google.com##.summary
 ! Mid-article AI Agent promos
 www.graphed.com##[data-sentry-component="BlogCTADashboard"]
 www.graphed.com##[data-sentry-component="BlogCTAPdf"]
+! ==================
+! == Grafana Labs ==
+! ==================
+! -- https://grafana.com/
+! AI question prompt
+grafana.com##.first-section-class:has([aria-label="Ask AI question input"])
+! Footer - "Still have questions?"
+grafana.com#$##marketing-ui-footer .gmui\:xl\:col-span-2:has([alt="Ask AI icon"]) { visibility: hidden }
+! Footer items
+grafana.com##li:has(> [data-plcmt="footer-nav"][href^="/products/cloud/ai-assistant"])
+grafana.com##li:has(> [data-plcmt="footer-nav"][href^="/products/cloud/agent-observability"])
+grafana.com##li:has(> [data-plcmt="footer-nav"][href^="/products/cloud/investigations"])
+grafana.com##li:has(> [data-plcmt="footer-nav"][href^="/products/cloud/ai-tools-for-observability"])
+grafana.com##li:has(> [data-plcmt="footer-nav"][href^="/ai-info"])
+! -- https://grafana.com/docs/
+! "Ask Grot" button
+grafana.com##.ask-ai-button
+! "Ask AI" when search bar is focused
+grafana.com##button:has(> [src="https://a-us.storyblok.com/f/567658451994139/14x14/71b3167fed/ai-icon.svg"])
+! -- https://community.grafana.com/
+! Header - Ask Grot AI
+community.grafana.com##.mega-menu__nav > [href^="https://grafana.com/grot/"]
 ! ======================
 ! == Hardware Busters ==
 ! ======================
