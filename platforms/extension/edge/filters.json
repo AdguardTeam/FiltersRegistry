@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.95.63",
-			"timeUpdated": "2026-10-07T11:05:11+0000",
+			"version": "2.4.95.64",
+			"timeUpdated": "2026-10-07T12:08:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.33.57",
-			"timeUpdated": "2026-10-07T11:05:31+0000",
+			"version": "2.1.33.58",
+			"timeUpdated": "2026-10-07T12:08:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.18",
-			"timeUpdated": "2026-10-07T08:07:59+0000",
+			"version": "2.0.77.19",
+			"timeUpdated": "2026-10-07T12:08:39+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.81.81",
-			"timeUpdated": "2026-10-07T11:05:51+0000",
+			"version": "2.2.81.82",
+			"timeUpdated": "2026-10-07T12:09:01+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -732,8 +732,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.24",
-			"timeUpdated": "2026-10-07T11:05:58+0000",
+			"version": "2.0.96.25",
+			"timeUpdated": "2026-10-07T12:09:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -754,8 +754,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.84.75",
-			"timeUpdated": "2026-10-07T11:06:00+0000",
+			"version": "2.0.84.76",
+			"timeUpdated": "2026-10-07T12:09:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -923,8 +923,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.0.26",
-			"timeUpdated": "2026-10-07T09:08:47+0000",
+			"version": "2.0.0.27",
+			"timeUpdated": "2026-10-07T12:09:23+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
