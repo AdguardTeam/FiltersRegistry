@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FYhLUbGCKtVwqORxdKrbHw
-! Diff-Path: ../patches/3/3-s-1791357475-3600.patch
+! Checksum: hYbWOV9Lpp2/HmIxRknW5A
+! Diff-Path: ../patches/3/3-s-1791360644-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.13.0
-! TimeUpdated: 2026-10-07T07:13:48+00:00
+! Version: 2.1.13.1
+! TimeUpdated: 2026-10-07T08:07:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -100518,6 +100518,8 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||gtm.ground.news^
+||d.ground.news^
 ||data.petri.com^
 ||c3.wildwolf.name^
 ||tips.delt.io^
@@ -314730,6 +314732,10 @@ mexc.com##+js(set-local-storage-item, _yjsu_yjad, $remove$)
 !
 ! NOTE: Specific rules
 !
+||niketalk.com/gtag/
+||ground.news/monitoring
+||ground.news/api/posthog/
+ground.news##+js(set-local-storage-item, anon-user-info, $remove$)
 ||collector-pxebumdlwe.px-cloud.net/b/s/beacon
 ||isratrip.net/platform/api/pub_funnel.php
 ||a.nel.cloudflare.com/report/
@@ -321768,6 +321774,7 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||api-sdk-tracking.beaconbank.jp^
 ||api-sdk.beaconbank.jp^
 ||stream-log.profilepassport.jp^
 ||nt-stream-log.profilepassport.jp^

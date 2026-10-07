@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 8WvU5R09neO+PkA5rd4O9w
-! Diff-Path: ../patches/18/18-s-1791357473-3600.patch
+! Checksum: 8uqUfLKlAPsJlJcTnIVsrA
+! Diff-Path: ../patches/18/18-s-1791360642-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.96.20
-! TimeUpdated: 2026-10-07T07:14:16+00:00
+! Version: 2.0.96.21
+! TimeUpdated: 2026-10-07T08:08:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2593,6 +2593,13 @@ military24.pl,softimi.pl,yarnpower.pl,baumgart-kaffee.pl,decorlabs.pl,werbus.pl,
 !
 ! NOTE: Regular rules
 !
+rewards.vredestein.com##body.modal-open:style(overflow: auto !important;)
+rewards.vredestein.com###cookieModal-backdrop:style(display: none !important;)
+rewards.vredestein.com###cookiesForm:style(display: none !important;)
+pitprojekt.pl###wCookieOverlay
+pitprojekt.pl###wCookiePopup
+app.finom.co##.uc-cookie-consent
+web.bunq.com##.min-h-screen.gap-8 > .z-10.bottom-12.mb-6:has(div[aria-label="Show cookie preferences"])
 bunq.com##div[aria-labelledby^="modal-cookies-dialog-heading-"]
 ||cfrcalatori.ro/wp-content/themes/cfr-companie/assets/js/cfr-consent.js
 isratrip.net###it-consent
@@ -17218,6 +17225,7 @@ play.google.com###gba.gb_hg:style(height: 60px!important;)
 maisonapart.com###accept-top
 maisonapart.com##html:style(margin-top: auto!important;)
 !
+community.ebay.*##.cookie-manager
 ebay.co.uk,ebay.it,ebay.de,ebay.be##body > div#gh-gb.gh-banner-active.gh-gb-shadow:style(display: none!important;)
 ebay.co.uk,ebay.it,ebay.de,ebay.be##.gh-banner-active #gh:style(margin: 0 0 0 0!important; max-width: none!important;)
 !
@@ -18297,6 +18305,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/243532
+rewards.vredestein.com#@##cookieModal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243333
 isratrip.net##+js(set-constant, IsraTripConsent, {})
 isratrip.net##+js(set-constant, IsraTripConsent.whenAllowed, noopFunc)
