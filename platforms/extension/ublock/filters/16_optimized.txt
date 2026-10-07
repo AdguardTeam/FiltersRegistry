@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: iQIWn7zpeyFLG559cB+PMA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1791252963-3600.patch
+! Checksum: J0dj2Y48q71ImfInRppxhg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1791339635-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.89
@@ -1604,6 +1604,7 @@ _board_ad.
 _display_ad_
 _domain=ads.
 _event_pub.
+_fr/ads/
 _id=*&nads=
 _iframe728x90.
 _liens/banniere-
@@ -1613,7 +1614,6 @@ _personalized_ads
 _popads.
 _pub.gif
 _pub_728.
-_publicitaire/
 _publicite.
 _publicite1.
 _publicite_
@@ -1807,6 +1807,7 @@ _werbebanner_
 ||e-mailit.com^$3p
 ||easysexe.com^$3p
 ||ebuzzing.fr^$3p
+||ebzfbiueubria.com^$3p
 ||echangedebannieres.fr^$3p
 ||egnatius-ear.com^$3p
 ||eurolive.com^$~image,3p
@@ -2282,7 +2283,6 @@ _werbebanner_
 ||benchergodpapa.com^
 ||bestcontentcost.top^
 ||bestfreecounterstat.com^
-||bettingoffer.xyz^
 ||betulinherl.shop^
 ||bharsilked.com^
 ||biokrfvnvs.com^
@@ -2453,7 +2453,6 @@ _werbebanner_
 ||garthsava.com^
 ||genmonet.com^
 ||gestyy.com^
-||ghurrytacoma.com^
 ||gifrelicts.shop^
 ||ginnelhangle.com^
 ||giosany.com^
@@ -3135,7 +3134,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||shop.mango.com^$3p
 ||shop.pe/widget/
 ||sle.pagesjaunes.fr^
-||spgeng.rosselcdn.net/sites/default/files/mediastore/1776328738_imu.png
 ||ssa.direct-running.fr^
 ||static.hugedomains.com/images/$3p
 ||static.k2s.cc/images/i/
@@ -3364,10 +3362,8 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||file-upload.net/include/$subdocument
 ||firebasestorage.googleapis.com^$domain=avito.ma
 ||forexalgerie.com/img/pub/
-||forum-xiaomi.com/as/
 ||forumconstruire.com/img/letsgo/
 ||forumconstruire.com/letsgo/
-||forumconstruire.com/pubs/
 ||france-troc.com/includes/inc_bandeau.php?
 ||frandroid.com/plsbl/
 ||free-reseau.fr/images/ban_
@@ -3752,7 +3748,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ###pub_pave_article
 ###pub_plop-1
 ###pub_right
-###pub_soonight
 ###pub_square
 ###pub_top
 ###pub_ventre
@@ -3799,9 +3794,9 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ###sagreklam
 ###shopper-widget-wrapper
 ###sideBar_pub2
+###side_pub
 ###sidead2
 ###sidebar-pub
-###sidebar_advert_widget
 ###sidebar_pub_top
 ###sitePubTop
 ###skin_container_sidebar_ad
@@ -3842,7 +3837,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.ad.banner
 ##.ad.billboard
 ##.ad.onlyMobile
-##.ads-bloc
 ##.ads-container
 ##.ads-foot
 ##.ads-footerBanner
@@ -3946,6 +3940,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.gtm-pub
 ##.gutter-ads-container
 ##.hb__ad--header
+##.head-advrtsmnt
 ##.head-pub
 ##.header-adds
 ##.header-blocked-ad
@@ -4434,6 +4429,8 @@ plancul-gratuit.fr,plancul-gratuit.org###toast-container
 viewsurf.com###top-ban
 2ememain.be###top-banner-root
 ledevoir.com###top-publicite-placeholder
+turbo.fr###topShopper
+webstar-auto.com###top_body_right
 freepik.com###topbar
 flaticon.com###unicorn
 sibnet.ru###vjs-overlayclip-container-box
@@ -4468,6 +4465,7 @@ statistiks.fr##.adz
 permaculteurs.com##.aff
 leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
+estrepublicain.fr##.annonceLoc
 centre-presse.fr,lamontagne.fr,larep.fr,le-pays.fr,leberry.fr,lechorepublicain.fr,lejdc.fr,lepopulaire.fr,lyonne.fr##.annonce_prompteur
 autojournal.fr,autoplus.fr##.annonces-container
 autojournal.fr,autoplus.fr##.annonces-container-sidebar
@@ -4602,6 +4600,7 @@ footballclubdemarseille.fr##.pb-sidebar-article
 ledenicheur.fr##.pjra-w-\[970px\]
 pagesjaunes.fr##.place-reservee
 lexpress.fr##.placeholder--ban-atf-wrapper
+pausefun.com##.plugin_sidebar
 turf-fr.com##.pmu-block
 leparking-moto.fr,leparking.fr##.premium
 boulanger.com##.product-list__item-sponsored-products
@@ -4611,6 +4610,7 @@ nitrotype.com##.profile-ad
 codeur.com##.project-option-premium
 heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.promSB
 deco.fr,euro-2016-france.net,pokaa.fr##.promo
+challenges.fr,nouvelobs.com##.promo-bottom-art
 gauleporno.xxx,pornburst.xxx##.promo-gauleporno
 ouedkniss.com##.promo-loader
 ouedkniss.com##.promo-loader-interstitial
@@ -4781,6 +4781,7 @@ une-recette.com##div[class^="banniere"]
 gamekult.com##div[class^="gk__ads"]
 une-recette.com##div[class^="milieubanniere"]
 algerie360.com##div[class^="pub300"]
+leboncoin.fr##div[class^="styles_ad"]#generic
 mahjong.fr##div[class^="sub_jeu_160"]
 mahjong.fr##div[class^="sub_jeu_300"]
 mahjong.fr##div[class^="sub_jeu_72890"]
@@ -4859,7 +4860,6 @@ latribune.fr##.article-wrapper:has(.subheading:contains(Partenaire))
 latribune.fr##.homepage-section.supplement-section:has(span:contains(Partenaires))
 farmaline.be,redcare-apotheke.ch,redcare-pharmacie.fr##li[data-qa-id="result-list-entry"]:has(a[href^="https://api.sae.systems/"])
 libhunt.com##.boxed:has(.tag:contains(Sponsored))
-libhunt.com##.repo-component:has(label:contains(sponsored))
 mediamarkt.be##[data-index-number]:contains(Sponsorisé)
 numerama.com##.post-card:has(span:contains(sponso))
 on-mag.fr##.uk-margin-remove-last-child:has(div:has(span:contains(PUBLICITÉ)))
