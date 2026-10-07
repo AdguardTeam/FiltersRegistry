@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ML/w3vDauG6tgSLjmic7dw
-! Diff-Path: ../patches/9/9-s-1791274307-3600.patch
+! Checksum: Rbus/d5iJLVOOyxf0Zg62w
+! Diff-Path: ../patches/9/9-s-1791357477-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.96
-! TimeUpdated: 2026-10-06T08:08:04+00:00
+! Version: 2.0.35.97
+! TimeUpdated: 2026-10-07T07:13:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -817,15 +817,14 @@ oliberal.com##+js(abort-current-script, $, blockWall)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158243
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139850
 @@||suaurl.com^$generichide
-@@||reidoplacar.com^$generichide
 @@||suaads.com^$generichide
-suaurl.com,reidoplacar.com,suaads.com##+js(prevent-fetch, pagead2.googlesyndication.com)
-$xhr,redirect-rule=noop.txt,domain=suaurl.com|reidoplacar.com|suaads.com
-suaads.com,reidoplacar.com,suaurl.com##+js(prevent-fetch, /^(?!.*(chrome-extension:)).*$/ method:HEAD)
-suaads.com,reidoplacar.com,suaurl.com##+js(no-setTimeout-if, Por favor\, desative)
-suaads.com,reidoplacar.com,suaurl.com##+js(no-setInterval-if, /adblock|Por favor\, desative|adsbygoogle\.js/)
-suaads.com,reidoplacar.com,suaurl.com##+js(set-constant, cdo, 0)
-suaads.com,reidoplacar.com,suaurl.com##+js(abort-current-script, document.addEventListener, .innerHTML)
+suaurl.com,suaads.com##+js(prevent-fetch, pagead2.googlesyndication.com)
+$xhr,redirect-rule=noop.txt,domain=suaurl.com|suaads.com
+suaads.com,suaurl.com##+js(prevent-fetch, /^(?!.*(chrome-extension:)).*$/ method:HEAD)
+suaads.com,suaurl.com##+js(no-setTimeout-if, Por favor\, desative)
+suaads.com,suaurl.com##+js(no-setInterval-if, /adblock|Por favor\, desative|adsbygoogle\.js/)
+suaads.com,suaurl.com##+js(set-constant, cdo, 0)
+suaads.com,suaurl.com##+js(abort-current-script, document.addEventListener, .innerHTML)
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||suaads.com/peel1-ad-300x250.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138441
@@ -1694,7 +1693,7 @@ cuevana2.*,pelispedia.life,cuevana3.*,gnula.*,poseidonhd2.co,cuevana2espanol.*,c
 cuevana2.*,pelispedia.life,cuevana3.*,gnula.*,poseidonhd2.co,cuevana2espanol.*,cuevana.*##+js(abort-on-property-read, cJsEdge)
 player.cuevana2.*,xupalace.org,player.cuevana3.*,player.gnula.*,player.poseidonhd2.co,player.cuevana2espanol.*,player.cuevana.*##+js(adjust-setInterval, countdown, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139850
-suaurl.com,reidoplacar.com##+js(set-constant, acdl, noopFunc)
+suaurl.com##+js(set-constant, acdl, noopFunc)
 suaurl.com##+js(no-setTimeout-if, window.location.href)
 suaurl.com##+js(abort-current-script, $, notficationAd)
 suaurl.com##+js(abort-current-script, open, document.getElementById)
