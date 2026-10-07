@@ -1,9 +1,9 @@
-! Checksum: WWO+kCAaiKggbD0vANT8jA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1791299456-3600.patch
+! Checksum: NPNF+JTNtjRMiqnqD5/2ig
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1791360648-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.61
-! TimeUpdated: 2026-10-06T15:07:03+00:00
+! Version: 2.0.14.62
+! TimeUpdated: 2026-10-07T08:08:15+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
@@ -339,6 +339,13 @@ $removeparam=erid
 $removeparam=oly_enc_id
 $removeparam=_ga
 $removeparam=tduid
+||search.yahoo.co.jp^$removeparam=frtype
+||paypaygourmet.yahoo.co.jp^$removeparam=CosNo
+||restaurant.ikyu.com^$removeparam=CosNo
+||restaurant.ikyu.com^$removeparam=CosUrl
+||bangumi.org^$removeparam=and_yjweb
+||yahoo-mbga.jp^$removeparam=_ref
+||retty.me^$removeparam=utm_y_smt_top
 ||boots.com^$removeparam=affwin
 ||boots.com^$removeparam=sv1
 ||boots.com^$removeparam=sv_campaign_id
@@ -1203,7 +1210,6 @@ ref=producthunt^$removeparam=ref
 ||samsung.com^$removeparam=cid
 ||nikkansports.com^$removeparam=nsgid
 ||game.hiroba.dpoint.docomo.ne.jp^$removeparam=mks_referer_event
-||news.yahoo.co.jp^$removeparam=source
 ||news.yahoo.co.jp^$removeparam=dv
 ||news.yahoo.co.jp^$removeparam=mid
 ||news.yahoo.co.jp^$removeparam=date
@@ -1269,6 +1275,7 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ||lancasterarchery.com^$removeparam=af_lnk
 ||lancasterarchery.com^$removeparam=dt_id
 ||lenta.ru^$removeparam=es
+||yahoo.co.jp^$removeparam=source
 ||yahoo.co.jp^$removeparam=cpt_n
 ||yahoo.co.jp^$removeparam=cpt_m
 ||yahoo.co.jp^$removeparam=cpt_s
