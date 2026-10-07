@@ -1,9 +1,9 @@
-! Checksum: 8Oq76SNPpTOWOsPB7eqy2g
-! Diff-Path: ../patches/9/9-s-1791274317-3600.patch
+! Checksum: HiFeW483fneQAE6AHj8DyA
+! Diff-Path: ../patches/9/9-s-1791357492-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.35.96
-! TimeUpdated: 2026-10-06T08:08:04+00:00
+! Version: 2.0.35.97
+! TimeUpdated: 2026-10-07T07:13:58+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -838,16 +838,15 @@ oliberal.com#%#//scriptlet("abort-current-inline-script", "$", "blockWall")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158243
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139850
 @@||suaurl.com^$generichide
-@@||reidoplacar.com^$generichide
 @@||suaads.com^$generichide
-suaurl.com,reidoplacar.com,suaads.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
-suaurl.com,reidoplacar.com,suaads.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-$xmlhttprequest,redirect-rule=nooptext,domain=suaurl.com|reidoplacar.com|suaads.com
-suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('prevent-fetch', '/^(?!.*(chrome-extension:)).*$/ method:HEAD')
-suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('prevent-setTimeout', 'Por favor, desative')
-suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('prevent-setInterval', '/adblock|Por favor, desative|adsbygoogle\.js/')
-suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('set-constant', 'cdo', '0')
-suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '.innerHTML')
+suaurl.com,suaads.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+suaurl.com,suaads.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+$xmlhttprequest,redirect-rule=nooptext,domain=suaurl.com|suaads.com
+suaads.com,suaurl.com#%#//scriptlet('prevent-fetch', '/^(?!.*(chrome-extension:)).*$/ method:HEAD')
+suaads.com,suaurl.com#%#//scriptlet('prevent-setTimeout', 'Por favor, desative')
+suaads.com,suaurl.com#%#//scriptlet('prevent-setInterval', '/adblock|Por favor, desative|adsbygoogle\.js/')
+suaads.com,suaurl.com#%#//scriptlet('set-constant', 'cdo', '0')
+suaads.com,suaurl.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '.innerHTML')
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||suaads.com/peel1-ad-300x250.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138441
@@ -1687,7 +1686,7 @@ player.cuevana2.*,player.cuevana3.*,player.gnula.*,player.poseidonhd2.co,player.
 player.cuevana2.*,player.cuevana3.*,player.gnula.*,player.poseidonhd2.co,player.cuevana2espanol.*,player.cuevana.*#%#//scriptlet('trusted-replace-node-text', 'script', 'loadRedirect', 'vastPlayer.onCompletedCallback', 'try{loadRedirect()}catch(ex){};vastPlayer.onCompletedCallback')
 xupalace.org#%#//scriptlet('trusted-replace-node-text', 'script', 'VASTVideoPlayer', 'startPlay', 'adsCompleted')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139850
-suaurl.com,reidoplacar.com#%#//scriptlet('set-constant', 'acdl', 'noopFunc')
+suaurl.com#%#//scriptlet('set-constant', 'acdl', 'noopFunc')
 suaurl.com#%#//scriptlet('prevent-setTimeout', 'window.location.href')
 suaurl.com#%#//scriptlet('abort-current-inline-script', '$', 'notficationAd')
 suaurl.com#%#//scriptlet('abort-current-inline-script', 'open', 'document.getElementById')
