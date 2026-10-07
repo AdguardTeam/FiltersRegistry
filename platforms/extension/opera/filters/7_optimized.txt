@@ -1,9 +1,9 @@
-! Checksum: KDDxz1RCqMMV/VTSHoxyZA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1791375156-3600.patch
+! Checksum: tj1N626XVT8KjjffGQujkA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1791378924-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.19
-! TimeUpdated: 2026-10-07T12:08:39+00:00
+! Version: 2.0.77.20
+! TimeUpdated: 2026-10-07T13:11:45+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||hmshanyin.com^$all
@@ -1469,6 +1469,7 @@ city.aomori.aomori.jp,lg.jp,city.numata.gunma.jp,city.tokai.aichi.jp,city.noda.c
 city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.ikoma.lg.jp,city.higashiosaka.lg.jp,city.higashiomi.shiga.jp,city.ogaki.lg.jp,city.tama.lg.jp,city.inzai.lg.jp,city.kyotanabe.lg.jp,city.himeji.lg.jp,city.hirakata.osaka.jp,city.osaka.lg.jp,city.kyoto.lg.jp,city.maizuru.kyoto.jp,city.iga.lg.jp##.bana
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+financial-field.com##.speee-logly
 tver.jp##main > div[class^="Series_svodLis"]:has(> div[class^="SvodList_caption"])
 tver.jp##div[class^="Series_episodeListAndSvodInfo"] > div[class^="SvodInfo_container"]
 sara-mac.com##.sara-mac-fftrans-banner
@@ -1599,10 +1600,12 @@ bengo4.com##div[class^="p-static-banner-area"]
 javmix.tv###main > div.pop--excl > div[style*="margin: 0 auto 50px auto;"]
 momon-ga.com,javmix.tv##.pop--excl:has(div[id^="bnc_ad"])
 posfie.com,togetter.com##.amazon_bulk_box
-pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'parseInt', '0', '1800000000000', '/^(179\d{10}|null)$/')
+pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'Math.abs', '0', '120000', '/^179\d{10}$/')
 pdftoshokan.com#%#//scriptlet('trusted-replace-outbound-text', 'atob', '/^https:\/\/s\.pemsrv\.com.+/', 'window.location.href')
+pdftoshokan.com#%#//scriptlet('set-constant', 'doAdRedirect', 'noopFunc')
 pdftoshokan.com#%#//scriptlet('prevent-window-open', '/ok_|pemsrv\.com/')
-pdftoshokan.com##.post[style="margin-bottom: 1rem; opacity: 1; transition: opacity 0.5s ease-in;"]
+pdftoshokan.com##.post[style="margin-bottom:1rem;"]:has(> #myIframe2)
+pdftoshokan.com###ad-containerx
 hanasone.mainichi.jp##.p-article-trend-lists
 ai-ssr.com##.grid > div:has(> a[href^="https://al.fanza.co.jp"][target="_blank"])
 ai-ssr.com##section:has(> div > h2 + a[href="/fanza"])
@@ -11539,7 +11542,7 @@ rocketnews24.com,youpouch.com##.misc > #div-gpt-ad-header
 youpouch.com###header-main > div.ad
 youpouch.com##.widget_text:first-child
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari, ext_chromium_mv3, ext_ublock)
-/^https?:\/\/[0-9a-z-]{5,10}\.duckdns/$document,domain=duckdns.org
+/^https?:\/\/[0-9a-z-]{5,12}\.duckdns/$document,domain=duckdns.org
 blog.livedoor.jp###main > .column-inner > .column-inner-2 > span[style="font-size: 85%;"] + table[cellpadding="0"][cellspacing="0"]:has(> tbody > tr > td > a[href^="https://al."][target="_blank"] > img.pict)
 blog.livedoor.jp###main.column > a[href^="https://amzn.to"][title] > img.pict[height="200"][width="800"]
 blog.livedoor.jp##div[class^="amastep0"]

@@ -1,8 +1,8 @@
-! Checksum: vcWnIAl80pmw56BHSCT6Hw
+! Checksum: gWFsGAi5nkQjA5SgZ5wU6Q
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.19
-! TimeUpdated: 2026-10-07T12:08:39+00:00
+! Version: 2.0.77.20
+! TimeUpdated: 2026-10-07T13:11:45+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1909,6 +1909,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+financial-field.com##.speee-logly
 tver.jp##main > div[class^="Series_svodLis"]:has(> div[class^="SvodList_caption"])
 tver.jp##div[class^="Series_episodeListAndSvodInfo"] > div[class^="SvodInfo_container"]
 sara-mac.com##.sara-mac-fftrans-banner
@@ -2039,10 +2040,14 @@ bengo4.com##div[class^="p-static-banner-area"]
 javmix.tv###main > div.pop--excl > div[style*="margin: 0 auto 50px auto;"]
 momon-ga.com,javmix.tv##.pop--excl:has(div[id^="bnc_ad"])
 posfie.com,togetter.com##.amazon_bulk_box
-pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'parseInt', '0', '1800000000000', '/^(179\d{10}|null)$/')
+! aglint-disable no-invalid-modifiers
+! aglint-enable no-invalid-modifiers
+pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'Math.abs', '0', '120000', '/^179\d{10}$/')
 pdftoshokan.com#%#//scriptlet('trusted-replace-outbound-text', 'atob', '/^https:\/\/s\.pemsrv\.com.+/', 'window.location.href')
+pdftoshokan.com#%#//scriptlet('set-constant', 'doAdRedirect', 'noopFunc')
 pdftoshokan.com#%#//scriptlet('prevent-window-open', '/ok_|pemsrv\.com/')
-pdftoshokan.com##.post[style="margin-bottom: 1rem; opacity: 1; transition: opacity 0.5s ease-in;"]
+pdftoshokan.com##.post[style="margin-bottom:1rem;"]:has(> #myIframe2)
+pdftoshokan.com###ad-containerx
 hanasone.mainichi.jp##.p-article-trend-lists
 ai-ssr.com##.grid > div:has(> a[href^="https://al.fanza.co.jp"][target="_blank"])
 ai-ssr.com##section:has(> div > h2 + a[href="/fanza"])
@@ -11987,7 +11992,7 @@ youpouch.com##.widget_text:first-child
 ! https://github.com/AdguardTeam/AdguardFilters/issues/116832
 ! Duck DNS phishing domains
 !+ PLATFORM(ext_chromium_mv3, ext_ublock)
-/^https?:\/\/[0-9a-z-]{5,10}\.duckdns/$document,to=duckdns.org
+/^https?:\/\/[0-9a-z-]{5,12}\.duckdns/$document,to=duckdns.org
 !
 !
 blog.livedoor.jp###main > .column-inner > .column-inner-2 > span[style="font-size: 85%;"] + table[cellpadding="0"][cellspacing="0"]:has(> tbody > tr > td > a[href^="https://al."][target="_blank"] > img.pict)
