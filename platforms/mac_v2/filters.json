@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.95.89",
-			"timeUpdated": "2026-10-08T14:06:20+0000",
+			"version": "2.4.95.90",
+			"timeUpdated": "2026-10-08T15:06:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.13.14",
-			"timeUpdated": "2026-10-08T14:06:38+0000",
+			"version": "2.1.13.15",
+			"timeUpdated": "2026-10-08T15:06:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.26",
-			"timeUpdated": "2026-10-08T13:11:58+0000",
+			"version": "2.0.77.27",
+			"timeUpdated": "2026-10-08T15:06:39+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.68.81",
-			"timeUpdated": "2026-10-08T13:12:07+0000",
+			"version": "2.0.68.82",
+			"timeUpdated": "2026-10-08T15:06:49+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -618,8 +618,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.82.1",
-			"timeUpdated": "2026-10-08T14:07:04+0000",
+			"version": "2.2.82.2",
+			"timeUpdated": "2026-10-08T15:06:59+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -644,8 +644,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.37.51",
-			"timeUpdated": "2026-10-08T13:12:20+0000",
+			"version": "2.1.37.52",
+			"timeUpdated": "2026-10-08T15:07:02+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -725,8 +725,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.40",
-			"timeUpdated": "2026-10-08T14:07:11+0000",
+			"version": "2.0.96.41",
+			"timeUpdated": "2026-10-08T15:07:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -958,7 +958,7 @@
 		{
 			"filterId": 102,
 			"name": "ABPindo",
-			"description": "Additional filter list for websites in Indonesian.",
+			"description": "Additional filter list for websites in Indonesian and Malay.",
 			"timeAdded": "2014-06-30T07:56:55+0000",
 			"homepage": "https://github.com/ABPindo/indonesianadblockrules",
 			"expires": 43200,
@@ -1341,7 +1341,7 @@
 		{
 			"filterId": 120,
 			"name": "AdBlockID",
-			"description": "Additional filter list for websites in Indonesian.",
+			"description": "Additional filter list for websites in Indonesian and Malay.",
 			"timeAdded": "2019-10-18T07:59:54+0000",
 			"homepage": "https://github.com/realodix/AdBlockID",
 			"expires": 43200,
