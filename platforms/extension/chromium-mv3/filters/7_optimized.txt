@@ -1,8 +1,8 @@
-! Checksum: IjaJKVGfz4B5zQRclSNUBw
+! Checksum: MDxFCdvhSlh/ky1VGu5d7g
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.23
-! TimeUpdated: 2026-10-07T17:14:09+00:00
+! Version: 2.0.77.24
+! TimeUpdated: 2026-10-08T11:06:15+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||hmshanyin.com^$all
@@ -1462,8 +1462,6 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 bestcalendar.jp#$#body > div[style^="min-height: "]:has(> ins.adsbygoogle) { min-height: 0 !important; height: 0 !important; }
 baseballchannel.jp#$#.mlb-wrap > .mlb-card > div[style="width: 100%; min-height: 380px;"] { min-height: 0 !important; }
 baseballchannel.jp##div[id^="ats-insert_ads_"]
-news.cookpad.com##div[data-track-section="campaign_banner"]
-financial-field.com##.speee-logly
 tver.jp##main > div[class^="Series_svodLis"]:has(> div[class^="SvodList_caption"])
 sara-mac.com##.sara-mac-fftrans-banner
 lovelive-petitsoku.com##.content-bottom.wwa
@@ -1592,10 +1590,10 @@ bengo4.com##div[class^="p-static-banner-area"]
 javmix.tv###main > div.pop--excl > div[style*="margin: 0 auto 50px auto;"]
 momon-ga.com,javmix.tv##.pop--excl:has(div[id^="bnc_ad"])
 posfie.com,togetter.com##.amazon_bulk_box
-pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'Math.abs', '0', '120000', '/^179\d{10}$/')
+pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'Number', '0', '1800000000000', '/^179\d{10}$/')
 pdftoshokan.com#%#//scriptlet('trusted-replace-outbound-text', 'atob', '/^https:\/\/s\.pemsrv\.com.+/', 'window.location.href')
 pdftoshokan.com#%#//scriptlet('set-constant', 'doAdRedirect', 'noopFunc')
-pdftoshokan.com#%#//scriptlet('prevent-window-open', '/ok_|pemsrv\.com/')
+pdftoshokan.com#%#//scriptlet('prevent-window-open', '/ok_|pemsrv\.com|window\.location\.href/')
 pdftoshokan.com##.post[style="margin-bottom:1rem;"]:has(> #myIframe2)
 pdftoshokan.com###ad-containerx
 hanasone.mainichi.jp##.p-article-trend-lists
@@ -1687,13 +1685,18 @@ fo76db.com#$##fo-ad-modal { display: none !important; }
 fo76db.com#$#body.swiper { overflow: auto !important; position: static !important; }
 fo76db.com#%#//scriptlet('trusted-replace-node-text', 'script', 'ads', '/ ads\.map[\S\s\n]+?join\(\'\'\)/', '')
 fo76db.com##body > div#toast ~ *:not(div, link, script)
+/admin-ajax.php?$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 /yamiisoku-product-link/*$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 /wp-json/*$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
-genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##.pdx-catalog-widget
-genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##.rkx-catalog-sections
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[class*="pdx-"]
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#?#a:not(.yrss-list__a):matches-attr("href"="/^.{100,}/")
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#?#a:matches-attr("/^data-/")
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##a[rel*="sponsored"]:not(.aedr-form__purchase[href="https://amzn.to/4g4yOhg"])
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="aHR0"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="amazon.co.jp" i]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="amzn.to" i]:not(.aedr-form__purchase[href="https://amzn.to/4g4yOhg"])
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="link.amazon" i]
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[id*="-remote"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[class*="-remote"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site##.promo-box
 monhan-soku.com###ymsa-full-zucks

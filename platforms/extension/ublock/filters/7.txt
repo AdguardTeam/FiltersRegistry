@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sdszPpdv9jsAN6H0vh3L5Q
-! Diff-Path: ../patches/7/7-s-1791393500-3600.patch
+! Checksum: dfelvyyzKLwMOs7rSnsA4Q
+! Diff-Path: ../patches/7/7-s-1791457808-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.23
-! TimeUpdated: 2026-10-07T17:14:09+00:00
+! Version: 2.0.77.24
+! TimeUpdated: 2026-10-08T11:06:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1917,8 +1917,6 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 bestcalendar.jp##body > div[style^="min-height: "]:has(> ins.adsbygoogle):style(min-height: 0 !important; height: 0 !important;)
 baseballchannel.jp##.mlb-wrap > .mlb-card > div[style="width: 100%; min-height: 380px;"]:style(min-height: 0 !important;)
 baseballchannel.jp##div[id^="ats-insert_ads_"]
-news.cookpad.com##div[data-track-section="campaign_banner"]
-financial-field.com##.speee-logly
 tver.jp##main > div[class^="Series_svodLis"]:has(> div[class^="SvodList_caption"])
 sara-mac.com##.sara-mac-fftrans-banner
 lovelive-petitsoku.com##.content-bottom.wwa
@@ -2050,7 +2048,7 @@ posfie.com,togetter.com##.amazon_bulk_box
 ! aglint-disable no-invalid-modifiers
 ! aglint-enable no-invalid-modifiers
 pdftoshokan.com##+js(set-constant, doAdRedirect, noopFunc)
-pdftoshokan.com##+js(no-window-open-if, /ok_|pemsrv\.com/)
+pdftoshokan.com##+js(no-window-open-if, /ok_|pemsrv\.com|window\.location\.href/)
 pdftoshokan.com##.post[style="margin-bottom:1rem;"]:has(> #myIframe2)
 pdftoshokan.com###ad-containerx
 hanasone.mainichi.jp##.p-article-trend-lists
@@ -2140,13 +2138,20 @@ solispia.com##.ad-large-a
 fo76db.com###fo-ad-modal:style(display: none !important;)
 fo76db.com##body.swiper:style(overflow: auto !important; position: static !important;)
 fo76db.com##body > div#toast ~ *:not(div, link, script)
+! aglint-disable no-invalid-modifiers
+! aglint-enable no-invalid-modifiers
+/admin-ajax.php?$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 /yamiisoku-product-link/*$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 /wp-json/*$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
-genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##.pdx-catalog-widget
-genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##.rkx-catalog-sections
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[class*="pdx-"]
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##a:not(.yrss-list__a):matches-attr("href"="/^.{100,}/")
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##a:matches-attr("/^data-/")
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##a[rel*="sponsored"]:not(.aedr-form__purchase[href="https://amzn.to/4g4yOhg"])
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="aHR0"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="amazon.co.jp" i]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="amzn.to" i]:not(.aedr-form__purchase[href="https://amzn.to/4g4yOhg"])
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="link.amazon" i]
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[id*="-remote"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[class*="-remote"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site##.promo-box
 monhan-soku.com###ymsa-full-zucks
