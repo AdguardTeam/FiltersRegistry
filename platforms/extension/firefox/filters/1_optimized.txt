@@ -1,5 +1,5 @@
-! Checksum: 32PTXt8a1FccxDz24/rB8A
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1791403840-3600.patch
+! Checksum: E3/VI0Lx/FRNsqrZiYSjBg
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1791426020-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.8.98
@@ -317,6 +317,7 @@ http://*.ru/leftunit.pl?
 /js/clk.js|
 /js/pop-up.js$third-party
 /js/rek.js|
+/js/vk.php$third-party
 /mainbanner.gif
 /mirmaek/*.gif$image
 /mnetorfad.js
@@ -1141,6 +1142,7 @@ ucoz.ru/informer/
 ||murqyi.com^$third-party
 ||cszz.ru^$third-party
 ||m62rtkpf.de^$third-party
+||go2of.com^$third-party
 ||clx.ru^$third-party
 ||pdvacde.com^$third-party
 ||rkft2sdl8b.ru^$third-party
@@ -1279,7 +1281,6 @@ ucoz.ru/informer/
 ||xyz0k4gfs.xyz^$third-party
 ||kipyn.com^$third-party
 ||gold-mir.com^$third-party
-||xoor.ru^$third-party
 ||5visions.com^$third-party
 ||jkhad.com^$third-party
 ||zyf03k.xyz^$third-party
@@ -3144,7 +3145,6 @@ api.ortified.ws#%#//scriptlet('set-constant', 'adsConfig.nonLinear', 'emptyObj')
 kommersant.ru##.rubric_branding
 kommersant.ru##.adv_custom
 hi-fi.ru,scrubs-mtv.net##.ad-branding
-pay.cloudtips.ru##.card-banner
 sports.ru##.nav-left-banner
 sports.ru##.navigation-right-column-banner
 sports.ru##article[data-article-type="advert_material"]
@@ -3484,6 +3484,7 @@ cursorinfo.co.il##.atf_news_p
 radiobells.com##.ads_left_block
 ||cdn.u-mama.ru/assets/js/adv/
 mirf.ru##.advt
+remontcompa.ru#?#.full_content > div:not(:has(*)):contains(banner_google)
 b17.ru##div[id^="body_right_fly"]
 infox.sg##div[class^="adv"]
 rlsnet.ru##.b-tile-banner-wrap
@@ -4194,6 +4195,7 @@ cian.ru###adfox-stretch-banner
 cian.ru##div[data-name="TgbBottomBannersContainer"]
 newslab.ru##.yandex-ad-wrapper
 newslab.ru##.b-banner-wrapper
+gp.by##img[width="305"][height="213"]
 gp.by##div[id^="banner_bottom_"]
 ||hcdinamo.by/img/winline
 oborot.ru##[class^="banner"]
@@ -4444,6 +4446,7 @@ app-s.ru#?##sidebar > div.sidebar_block:has(> div[id^="yandex_rtb"])
 app-s.ru#?##sidebar > div.sidebar_block:has(> ins.adsbygoogle)
 iz.ru#?#.block-container > div.clearfix + div[class] > div[class^="margin"] div[id^="adfox"]:upward(2)
 rustxt.ru#?#body > div.container > div.row > div[class]:has(> ins.adsbygoogle)
+mobzon.ru#?#.leftbigger > div.moduletable:has(span.backh3:contains(/(Блок ссылок)|(Блок Google)|(Рекламный блок)/))
 gamebomb.ru#?#ins.adsbygoogle[data-ad-slot]:upward(1)
 allcalc.ru#?#.content > div[style]:has(> div[id^="yandex_rtb"])
 novate.ru,kulturologia.ru#?##right > h2:contains(Рекомендуем)
@@ -5550,7 +5553,6 @@ gorodarmavir.ru##div[id^="banner-slider-"]
 shostka.info###news-inside > div[id="dont_copy"] + div[class][style]
 shostka.info##aside[id^="aside"] > div.sb-element.media
 banki.ru##div[data-header-banner]
-sims3pack.ru##main[class="st-br__page border"]
 akniga.org##.container__ad
 kerch.fm##.awdbsmrt
 rus-media.org##a[href^="https://ubar-pro4.ru/"]
@@ -5640,7 +5642,6 @@ optimakomp.ru,sorus.ucoz.ru##a[href^="https://ya-distrib.ru/"]
 grodnonews.by##.no-main > section[class="two"] > div.container > div.owl-carousel
 wday.ru##.layout-wrapper > div.grid-row > article + aside[class]
 business.ru##.rightSidebar div.StatBlockWidget > noindex > a[target="_blank"] > img
-||gba.guru^$domain=business.ru
 exefiles.com##.CTA-bar-wrap
 exefiles.com##img[alt="RocketPC"]
 howdyho.net##.g-ads
@@ -5751,7 +5752,6 @@ orakul.com###advLeftZone
 orakul.com###advRightZone
 haqqin.az###aside-right > .banner
 tabsbook.ru###b-ads
-gorod55.ru###ban1Container
 meteonova.ru###ban_500
 rsdn.org###banner-box
 apii.ru,selcdn.ru###bannerTop
@@ -6041,7 +6041,6 @@ elevatorist.com##.footer__agricultural__list > a[target="_blank"]
 veseloeradio.ru##.footer__banners-wrapper
 bezdna.su##.footer_advert
 objectiv.tv##.foreign_news
-1track.ru##.form-group > div.point-type[style^="text-align: right;"]
 reviewdetector.ru##.forumdesc > a > img[onmouseout="this.className='CImgBrNo'"]
 fex.net##.fs-table__ads-wrapper
 gmt-max.net##.full_news_content > center > a > img
@@ -6573,7 +6572,6 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||opennet.ru/img/bsh_
 ||orer.am/banners/
 ||osd.ru/RCL/BAN/
-||out.pladform.ru/getVast?*adformat=
 ||ovgorskiy.ru/images/rambler.png
 ||ovgorskiy.ru/images/yandex.png
 ||ozersk74.ru/upload/banners/
@@ -6706,12 +6704,9 @@ movilforum.com,1progs.ru,techbriefly.com,etalongame.com,mapsworld.ru,crarena.ru,
 novosti-n.org,coandroid.ru,soft-arhiv.com##a[target="_blank"][rel="nofollow"] > img
 itc.ua,devby.io,profile.ru,glavred.info,pushkino.tv,tglink.ru,mos.news,nvdaily.ru,objectiv.tv,warnet.ws##.partners
 astromeridian.ru,forums.rusmedserv.com,gamemag.ru,igrigo.net,igru-xbox.net,itbukva.com,kinokrad.co,miytvideo.ru,repackov.net,seeyoupage.ru,torrentum.ru,tourister.ru,warfiles.ru##body > noindex
-||cdn.lbs.pw/prm/
 ||liveball.*/public/js/fcap.js
 liveball.click,liveball.to,liveball.*###custom_brand
-liveball.click,liveball.to,liveball.*##.prognoz
 liveball.click,liveball.to,liveball.*##.about_match
-liveball.click,liveball.to,liveball.*##.fullscreen-overlay
 liveball.click,liveball.to,liveball.*#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'zone_')
 liveball.click,liveball.to,liveball.*#%#//scriptlet('remove-node-text', 'script', 'createAdManager')
 sport24.ru##main div[data-mobile-4]:has(> div[style] > a[class] > .bookmaker-rating)
@@ -6762,7 +6757,6 @@ ozon.ru##div[data-widget="bannerCarousel"]
 ||2gis.*/ads/advise/
 2gis.ru#?#div[data-scroll="true"] > div[style] div._3hmsj:has(> div > header:contains(Реклама))
 2gis.*##._1xza2sg
-||ads.adfox.ru/*/getCode?$domain=pikabu.ru
 pikabu.ru##.comments__adv
 [$path=/^\/$|\/\?|best/]pikabu.ru##article[data-author-name="specials"]
 pikabu.ru##.sidebar-block_placeholder
@@ -7339,6 +7333,7 @@ strip2.co##div[style^="min-height:"]:has(> script)
 strip2.co##.tiled_cap:empty
 spaces.im,spcs.*,strip2.in##div > div:has(> a[title="Отключить рекламу"])
 /resources/js/sticker.js$domain=spaces.im|spcs.*|strip2.in
+spaces.im,spcs.*,strip2.in###siteContent > div.relative ~ div[class]:has(> table[style] > tbody > tr > td[class] > div[class] > a[title="Отключить рекламу"])
 spaces.im,spcs.*,strip2.in##div:has(> a[title="Отключить рекламу"])
 adme.media##div[data-test-id="article-content"] > div[class*=" "]:not([tabindex]):empty
 ||api.dtf.ru/*/distribution?place=
