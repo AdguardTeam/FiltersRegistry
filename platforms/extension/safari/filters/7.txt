@@ -1,9 +1,9 @@
-! Checksum: Ty9FCQVD+8vja4pZ8dC8eg
-! Diff-Path: ../patches/7/7-s-1791558567-3600.patch
+! Checksum: TnlZ0VA5P2aqCY7DwLO3OA
+! Diff-Path: ../patches/7/7-s-1791562200-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.32
-! TimeUpdated: 2026-10-09T15:06:02+00:00
+! Version: 2.0.77.33
+! TimeUpdated: 2026-10-09T16:06:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1989,6 +1989,10 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 ! NOTE: Specific rules
 !
 matsukiyococokara-online.com##.p-section__inner[class$="-000"]:has(> div.p-contentblock > div.p-bgc div.p-contentblock__box > div.p-bnrlist > div[id^="div-gpt-ad"])
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||vw.mangaz.com/navi/$urltransform=/navi(\/\d+(?:\/i:\d+)?)/virgo\/view\$1/
+! aglint-enable no-invalid-modifiers
 mangaz.com#%#//scriptlet('trusted-click-element', '#instWrapper > div > a.btn')
 mangaruu.com,rawfree.top,soraraw.*##div[class^="ReactionPanel_chapterEndAd"]
 androplus.jp##.post_content > fieldset:has(> div.please-dont-block)
@@ -2122,6 +2126,10 @@ javmix.tv###main > div.pop--excl > div[style*="margin: 0 auto 50px auto;"]
 momon-ga.com,javmix.tv##.pop--excl:has(div[id^="bnc_ad"])
 posfie.com,togetter.com##.amazon_bulk_box
 ! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||pdftoshokan.com/window.location.href$urltransform=/window\.location\.href//
+!+ NOT_VALIDATE
+||pdftoshokan.com/manga/window.location.href$urltransform=/manga\/window\.location\.href//
 ! aglint-enable no-invalid-modifiers
 pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'parseFloat', '0', '1800000000000', '/^(179\d{10}|null)$/')
 pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'Number', '0', '1800000000000', '/^179\d{10}$/')
@@ -2219,6 +2227,8 @@ fo76db.com#$#body.swiper { overflow: auto !important; position: static !importan
 fo76db.com#%#//scriptlet('trusted-replace-node-text', 'script', 'ads', '/ ads\.map[\S\s\n]+?join\(\'\'\)/', '')
 fo76db.com##body > div#toast ~ *:not(div, link, script)
 ! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+/?catalog_visit=$urltransform=/\?catalog_visit=.+//,domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 ! aglint-enable no-invalid-modifiers
 /admin-ajax.php?$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 /yamiisoku-product-link/*$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
