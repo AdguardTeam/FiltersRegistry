@@ -1,8 +1,8 @@
-! Checksum: VcNLH/ZU2moCTLODfM4FXg
+! Checksum: TIuE2MLHswzgiVQtHvjhsg
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.32
-! TimeUpdated: 2026-10-09T15:06:02+00:00
+! Version: 2.0.77.33
+! TimeUpdated: 2026-10-09T16:06:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1619,6 +1619,10 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||vw.mangaz.com/navi/$urltransform=/navi(\/\d+(?:\/i:\d+)?)/virgo\/view\$1/
+! aglint-enable no-invalid-modifiers
 mangaruu.com,rawfree.top,soraraw.*##div[class^="ReactionPanel_chapterEndAd"]
 sara-mac.com##.sara-mac-fftrans-banner
 lovelive-petitsoku.com##.content-bottom.wwa
@@ -1707,6 +1711,10 @@ bengo4.com##div[class^="p-static-banner-area"]
 javmix.tv###main > div.pop--excl > div[style*="margin: 0 auto 50px auto;"]
 posfie.com,togetter.com##.amazon_bulk_box
 ! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||pdftoshokan.com/window.location.href$urltransform=/window\.location\.href//
+!+ NOT_VALIDATE
+||pdftoshokan.com/manga/window.location.href$urltransform=/manga\/window\.location\.href//
 ! aglint-enable no-invalid-modifiers
 pdftoshokan.com###ad-containerx
 hanasone.mainichi.jp##.p-article-trend-lists
@@ -1773,6 +1781,8 @@ becoolusers.com##.ad-text
 solispia.com##.ad-large-a
 fo76db.com##body > div#toast ~ *:not(div, link, script)
 ! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+/?catalog_visit=$urltransform=/\?catalog_visit=.+//,domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 ! aglint-enable no-invalid-modifiers
 /admin-ajax.php?$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 /yamiisoku-product-link/*$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
