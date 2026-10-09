@@ -1,9 +1,9 @@
-! Checksum: 4vNa9O+z+RcoluAb/HrChQ
-! Diff-Path: ../patches/4/4-s-1791555012-3600.patch
+! Checksum: zDI670USW8DBjBwQc5327g
+! Diff-Path: ../patches/4/4-s-1791565743-3600.patch
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.33.67
-! TimeUpdated: 2026-10-09T14:07:12+00:00
+! Version: 2.1.33.68
+! TimeUpdated: 2026-10-09T17:05:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -670,6 +670,7 @@ cogconnected.com,echofm.online,antirez.com,comicbook.com,alexp.pl,2ality.com,sma
 !
 ! NOTE: Specific rules
 !
+cdn.vuukle.com##button[class^="_social-button"]:not(.social-button--link)
 diamond.jp##.share-article > div:not(.sa-clip, .sa-copy, .sa-print)
 paperpaper.io##.main-socials
 paperpaper.io##.text__content > p:has(> a[href="https://www.youtube.com/paperpapertv"])
@@ -4501,7 +4502,6 @@ m.10000recipe.com##a[onclick="snsUtil.show()"]
 umteh.com#?##dle-content > center:has(> div.ya-share2)
 ukraina.ru##.article__sharebar-line
 m.163.com##.operate-share
-cdn.vuukle.com##.social-button
 cdn.vuukle.com##.sharebar-popover-button
 sueddeutsche.de##.sharing-module
 h-ken.net##.snsButtonList
@@ -16530,6 +16530,8 @@ bomb01.com#$#.modal-open { overflow: visible!important; }
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/237550#issuecomment-6084889517
+cdn.vuukle.com#@#[id^="social-button-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242302
 diamond.jp#@#.share-article
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240194
