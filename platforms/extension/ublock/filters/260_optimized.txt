@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: QDQ1PLDZYXd6NegPFbdiXQ
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1791521577-14400.patch
+! Checksum: XbEVRTHsZ3SSG3ShZNhxbg
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1791564556-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.53
-! TimeUpdated: 2026-10-09T04:50:10+00:00
+! Version: 2.0.2.54
+! TimeUpdated: 2026-10-09T16:46:29+00:00
 ! Expires: 5 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,3p
@@ -1546,6 +1546,12 @@ m.youtube.com,www.youtube.com##+js(json-edit, $..[?@.playerBar.multiMarkersPlaye
 m.youtube.com,www.youtube.com##+js(json-edit, $..[?@.panelIdentifier=="engagement-panel-macro-markers-auto-chapters"])
 www.youtube.com##+js(json-edit, $..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[0].updateEngagementPanelContentCommand.contentSourcePanelIdentifier.tag=="engagement-panel-macro-markers-auto-chapters"])
 m.youtube.com##+js(json-edit, $..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[2].engagementPanelHeaderShowNavigationButtonCommand.targetId=="engagement-panel-macro-markers-auto-chapters"])
+www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytp-tooltip-progress-bar-pill-title
+www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytp-chapter-container
+www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) ytd-horizontal-card-list-renderer[modern-chapters]
+www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytChipBarViewModelChipWrapper:has(button[aria-label="Chapters"][aria-selected="false"])
+www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) chip-bar-view-model:has(button[aria-label="Chapters"][aria-selected="false"]):has(.ytChipBarViewModelChipWrapper:last-child:nth-child(2))
+www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) [data-target-id="PAmodern_transcript_view"] yt-item-section-renderer > #header
 m.youtube.com##+js(json-edit, $..carouselTitles[?@.carouselTitleViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"])
 m.youtube.com##+js(json-edit, $..carouselItems[?@.carouselItemViewModel.teaserType=="WATCH_UI_TEASER_TYPE_CONVERSATIONAL_BOT"])
 www.youtube.com##yt-live-chat-banner-manager:has(yt-live-chat-banner-chat-summary-renderer)
