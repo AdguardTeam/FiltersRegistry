@@ -43,8 +43,6 @@ function expandWildcardsInNetworkRules(
     }
 
     const modifiers = ast.modifiers.children;
-    const newPermittedDomains = new Map();
-    const newRestrictedDomains = new Map();
     const newModifiers = [];
     let hadWildcard = false;
 
@@ -68,11 +66,16 @@ function expandWildcardsInNetworkRules(
             continue;
         }
 
+        // Domains are collected per modifier, so that e.g. `domain=` values never end up in `denyallow=`.
+        const newPermittedDomains = new Map();
+        const newRestrictedDomains = new Map();
+        let modifierHadWildcard = false;
+
         for (const domain of domainList.children) {
             const isWildcard = utils.isWildcardDomain(domain.value);
             const nonWildcardDomains = wildcardDomains[domain.value];
             if (isWildcard && nonWildcardDomains) {
-                hadWildcard = true;
+                modifierHadWildcard = true;
                 for (const nonWildcardDomain of nonWildcardDomains) {
                     const newDomainValue = {
                         ...domain,
@@ -94,9 +97,12 @@ function expandWildcardsInNetworkRules(
             }
         }
 
-        if (!hadWildcard) {
-            return null;
+        if (!modifierHadWildcard) {
+            newModifiers.push(modifier);
+            continue;
         }
+
+        hadWildcard = true;
 
         const newDomains = [];
 
@@ -128,6 +134,10 @@ function expandWildcardsInNetworkRules(
             .join(PIPE_MODIFIER_SEPARATOR);
 
         newModifiers.push(newDomainsModifier);
+    }
+
+    if (!hadWildcard) {
+        return null;
     }
 
     const newAst = structuredClone(ast);
