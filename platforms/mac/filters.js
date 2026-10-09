@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.96.1",
-			"timeUpdated": "2026-10-09T08:08:58+0000",
+			"version": "2.4.96.2",
+			"timeUpdated": "2026-10-09T09:08:43+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.13.17",
-			"timeUpdated": "2026-10-09T08:09:16+0000",
+			"version": "2.1.13.18",
+			"timeUpdated": "2026-10-09T09:09:01+0000",
 			"languages": []
 		},
 		{
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.72.60",
-			"timeUpdated": "2026-10-08T12:08:56+0000",
+			"version": "2.0.72.61",
+			"timeUpdated": "2026-10-09T09:09:13+0000",
 			"languages": []
 		},
 		{
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.82.6",
-			"timeUpdated": "2026-10-09T08:09:41+0000",
+			"version": "2.2.82.7",
+			"timeUpdated": "2026-10-09T09:09:21+0000",
 			"languages": []
 		},
 		{
@@ -256,8 +256,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.37.57",
-			"timeUpdated": "2026-10-09T08:09:44+0000",
+			"version": "2.1.37.58",
+			"timeUpdated": "2026-10-09T09:09:25+0000",
 			"languages": []
 		},
 		{
@@ -289,8 +289,8 @@
 				"ext_safari",
 				"ext_android_cb"
 			],
-			"version": "2.0.14.65",
-			"timeUpdated": "2026-10-08T10:07:36+0000",
+			"version": "2.0.14.66",
+			"timeUpdated": "2026-10-09T09:09:30+0000",
 			"languages": []
 		},
 		{
@@ -328,8 +328,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.32.83",
-			"timeUpdated": "2026-10-09T08:09:52+0000",
+			"version": "2.0.32.84",
+			"timeUpdated": "2026-10-09T09:09:33+0000",
 			"languages": []
 		},
 		{
@@ -354,8 +354,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/22.txt",
-			"version": "2.0.15.13",
-			"timeUpdated": "2026-10-09T08:09:53+0000",
+			"version": "2.0.15.14",
+			"timeUpdated": "2026-10-09T09:09:34+0000",
 			"languages": []
 		},
 		{
@@ -1214,8 +1214,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.67.1",
-			"timeUpdated": "2026-10-09T08:10:02+0000",
+			"version": "2.1.67.2",
+			"timeUpdated": "2026-10-09T09:09:43+0000",
 			"languages": [
 				"zh"
 			]
@@ -1444,7 +1444,7 @@
 		},
 		{
 			"filterId": 238,
-			"name": "Polish Anti Adblock Filters",
+			"name": "(Obsolete) Polish Anti Adblock Filters",
 			"description": "Official Polish filters against Adblock alerts.",
 			"homepage": "https://github.com/olegwukr/polish-privacy-filters",
 			"expires": 432000,
@@ -1453,9 +1453,7 @@
 			"subscriptionUrl": "https://raw.githubusercontent.com/olegwukr/polish-privacy-filters/master/anti-adblock.txt",
 			"version": "2.0.3.58",
 			"timeUpdated": "2026-09-02T08:40:55+0000",
-			"languages": [
-				"pl"
-			]
+			"languages": []
 		},
 		{
 			"filterId": 239,
