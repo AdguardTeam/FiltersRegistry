@@ -1,5 +1,5 @@
-! Checksum: ToYsREH9UmS6gK97YnWWgA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1791479457-3600.patch
+! Checksum: tpro1p6335buDZGYKA7dQQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1791533625-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.54.11
@@ -833,6 +833,8 @@ gamepro.de##.box-reload > div[style="display: none !important;"] + hr
 comicschau.de##.lolwhut-widget
 ||radioforen.de/index.php?sam-item
 autonotizen.de##div[id^="gtag_adslot"]
+forum.amateurpin.xxx##.banner-box
+forum.amateurpin.xxx###footer_iframe_wrapper
 lowbeats.de###text-html-widget-2
 dejure.org##.doctrine_item
 wetter.de##div[class]:has(> div[class]:only-child > .outbrain-ad-slot)
@@ -853,6 +855,7 @@ welt.de##div[data-component="AffiliateBoxTeaser"]
 wiesn.tv#%#//scriptlet('trusted-dispatch-event', 'ended', '#preRollVideo')
 wiesn.tv#%#//scriptlet('trusted-replace-node-text', 'script', 'preRollVideos', 'preRollSource.src = ', '//preRollSource.src =')
 n-tv.de##.comparison-table
+cosmopolitan.de##div[data-testid="ad-slot"]
 schnelle-online.info##ins[data-ad-client]
 schnelle-online.info#%#//scriptlet('set-constant', 'initOwnAds', 'noopFunc')
 tutti.ch##.MuiBox-root:has(> div[class] > div[data-ad-unit-id])
@@ -1930,6 +1933,7 @@ web.de,gmx.net##div[\:data-service-slot][data-ac]
 web.de,gmx.net##div[data-container="right"]
 web.de,gmx.net##.main-content > div[data-service-slot="middle"][data-ac="middle"][data-block-number]
 ||secure.spox.com/daznpic/daznwidget.js$third-party
+gamez.de##.mm-button-container
 ga.de##div[data-host="general-anzeiger-bonn.weekli.de"]
 heise.de##div[id^="wtma_teaser"]
 administrator.de##.ads-300x600-wrapper
@@ -2051,6 +2055,7 @@ computerbild.de##div[id^="rectangleAdTeaser"]
 focus.de##.articleContent > .BC-Container[data-bc-query-offerlimit]
 forum.frag-mutti.de##.post-entry-ad
 frag-mutti.de###commentblock > .comment:not(.hide-comment):not([id])
+||volksfreund.de/javascripts/tssjs.js
 forum.golem.de###screen > #forum-bread + .g6
 verkehrsportal.de##td[id^="post-main-"] > div[id^="post-"] > table[cellspacing="0"][cellpadding="0"][border="0"][align="left"]
 onmeda.de,ecowoman.de##.ad-info
@@ -2702,6 +2707,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /_werbung/*
 /banners/werbung-
 /esel.js
+/getwerbung.
 /grafik/ads/*
 /images/werbung.
 /images/werbung/*
@@ -2853,6 +2859,7 @@ _woz_banner_vote.
 ##.content_header_werbung
 ##.content_right_side_werbewrapper
 ##.dk-ad-ident
+##.fusszeile_ads
 ##.nfy-sebo-ad
 ##.nfy-slim-ad
 ##.orbitsoft-ad
@@ -2983,7 +2990,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||a3h.de^$third-party
 ||active-tracking.de^$third-party
 ||ad-mix.de^$third-party
-||ad-pay.de^$third-party
 ||ad-sun.de^$third-party
 ||ad4m.at^$third-party
 ||ad4mat.de^$third-party
@@ -3053,6 +3059,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||trmads.eu^$third-party
 ||trmwidget.eu^$third-party
 ||twiago.com^$third-party
+||viralmails.de^$third-party
 ||werbeflut.net^$third-party
 ||wowpornlist.xyz^$third-party
 ||yoomedia.de^$third-party
@@ -3086,11 +3093,14 @@ wetter.com#@#div[id^="div-gpt-"]
 ||datingpartner.com/medien/$third-party
 ||dragonbox.de/img/banner/$third-party
 ||edgar.de/img/partner/$third-party
+||erotik1.de^*.php?$subdocument,third-party
 ||fantecio.com/ib/$third-party
 ||fastad.beepworld.de^
+||fs-location.de/img/partner/
 ||funke.code.outtra.com/outtra-
 ||getdigital.de/banner/$third-party
 ||gpaf.net/b/$third-party
+||hofmann.info^$subdocument,domain=sgf1903.de
 ||hubu.cloud/vast/
 ||hyp-tech.com/img/$third-party
 ||imaxcdn.com/promotool/banner/$third-party
@@ -3353,7 +3363,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||raidrush.net/js/wrpx.js
 ||realtotal.de/data/betrugstest-com.jpg
 ||regionews.at/data/banner/
-||res.ki.de^
 ||rittnerbuam.com/images/sponsor_
 ||rotehaus.net/kittys-tipps/tippseiten/bilder/
 ||ruhrbarone.de^*/bang.gif
@@ -3405,6 +3414,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||vfl.de^*_sponsoren_
 ||viralize.tv^$domain=n-tv.de
 ||vorsprung-online.de^*/Werbung/
+||wallis24.it/images/banners/
 ||wcm.at/images/attingo.gif
 ||websingles.at/pages/site/de/images/logos/
 ||webwiki.de/images/seobility_
@@ -3618,7 +3628,9 @@ onlinereports.ch###content-banner1
 onlinereports.ch###content-banner3
 dasoertliche.de###content-billboard
 ladies.de###content-solads
+tarnkappe.info###custom_html-144
 einkochen.info,ipadblog.de,nh24.de,wiener-online.at###custom_html-2
+andalusien-aktuell.es###custom_html-22
 ipadblog.de,presse-nachrichten.de,urheberrecht.de###custom_html-4
 nachrichten.es,primavera24.de,radsportjournaltourman.com###custom_html-5
 wochenblatt.pl###custom_post_widget-6
@@ -4053,7 +4065,6 @@ e-formel.de##.ce_plista
 utopia.de##.channel-logo-desc
 my105.ch##.channel-sponsor
 rewe.de##.checkout-overview-showroom-ad-container
-beeg-pornos.com,deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-pornos.info,hd-sexfilme.com,hdpornos.net,herzporno.com,lesbenhd.com,meinyouporn.com,milffabrik.com,nursexfilme.com,pornhub-sexfilme.net,pornoaffe.net,pornodavid.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohelm.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoleon.com,pornolisa.com,pornoritze.com,pornoschlange.com,pornosusi.com,pornotanja.com,pornotom.com,pornotommy.com,pornovideos-hd.com,pornozebra.com,sexente.com,sexfilme-gratis.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xnxx-porno.com,xnxx-pornos.xxx,xnxx-sexfilme.com##.chn_center
 14-tage-wettervorhersage.de##.clearit_s
 wg-gesucht.de##.clicked_partner
 focus.de##.cls_ver_prnt
@@ -4958,6 +4969,8 @@ flaconi.de##[data-product-list-id]:has([data-badge-type="sponsored"])
 redcare-apotheke.ch,shop-apotheke.*##[data-qa-id="cross-sell-widget"] li:has(> [data-as-xsell-product-id])
 mediamarkt.*,saturn.de##[data-test="mms-product-card"]:has(div[data-test="mms-plp-sponsored"])
 obi.*##[data-track-section^="home-topteaser"]:has(hobi-advertiser-tag)
+t3n.de##article.c-pin:has(div.c-badge + span.u-text-extrasmall)
+hamburg-magazin.de,kiel-magazin.de,luebeck-magazin.de##article.card:has(.with-ad-marker)
 chip.de##article.download-item:has(.download-item__image:not([data-nuxt-img]))
 finanzen.net##article.page-content__item:has(img[alt="UBS"])
 meetingpoint-brandenburg.de,meetingpoint-dahme-spreewald.de,meetingpoint-jl.de,meetingpoint-magdeburg.de,meetingpoint-potsdam.de,meetingpoint-stadtnachrichten.de##article:has(.tile-link[rel*="sponsored"])

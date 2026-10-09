@@ -1,9 +1,9 @@
-! Checksum: I2mVMxp40X5gwmuxFMu/Bg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1791475906-3600.patch
+! Checksum: luFu6h42lGXca0ovl0x7dA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1791533632-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.28
-! TimeUpdated: 2026-10-08T16:07:48+00:00
+! Version: 2.0.77.29
+! TimeUpdated: 2026-10-09T08:09:25+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||hmshanyin.com^$all
@@ -1484,6 +1484,7 @@ city.aomori.aomori.jp,lg.jp,city.numata.gunma.jp,city.tokai.aichi.jp,city.noda.c
 city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.ikoma.lg.jp,city.higashiosaka.lg.jp,city.higashiomi.shiga.jp,city.ogaki.lg.jp,city.tama.lg.jp,city.inzai.lg.jp,city.kyotanabe.lg.jp,city.himeji.lg.jp,city.hirakata.osaka.jp,city.osaka.lg.jp,city.kyoto.lg.jp,city.maizuru.kyoto.jp,city.iga.lg.jp##.bana
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+androplus.jp##.post_content > fieldset:has(> div.please-dont-block)
 bestcalendar.jp#$#body > div[style^="min-height: "]:has(> ins.adsbygoogle) { min-height: 0 !important; height: 0 !important; }
 baseballchannel.jp#$#.mlb-wrap > .mlb-card > div[style="width: 100%; min-height: 380px;"] { min-height: 0 !important; }
 baseballchannel.jp##div[id^="ats-insert_ads_"]
@@ -1615,11 +1616,13 @@ bengo4.com##div[class^="p-static-banner-area"]
 javmix.tv###main > div.pop--excl > div[style*="margin: 0 auto 50px auto;"]
 momon-ga.com,javmix.tv##.pop--excl:has(div[id^="bnc_ad"])
 posfie.com,togetter.com##.amazon_bulk_box
+||pdftoshokan.com^$script,replace=/if\s*\(\s*\(\s*[-\$0-9A-Z_a-z]+\s*-\s*[-\$0-9A-Z_a-z]+\s*\)\s*\/\s*\d+(e\d)?\s*>\s*[-\$0-9A-Z_a-z]+\s*\)//
 ||pdftoshokan.com^$script,replace=/if\s*\(\s*[-\$0-9A-Z_a-z]+-[-\$0-9A-Z_a-z]+\s*>\s*[-\$0-9A-Z_a-z]+\s*\*\d+(e\d)?\s*\)/if(0)/
 !+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||pdftoshokan.com/window.location.href$urltransform=/window\.location\.href//
 !+ NOT_VALIDATE PLATFORM(windows, mac, android, cli)
 ||pdftoshokan.com/manga/window.location.href$urltransform=/manga\/window\.location\.href//
+pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'parseFloat', '0', '1800000000000', '/^(179\d{10}|null)$/')
 pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'Number', '0', '1800000000000', '/^179\d{10}$/')
 pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'parseInt', '0', '1800000000000', '/^(179\d{10}|null)$/')
 pdftoshokan.com#%#//scriptlet('trusted-replace-outbound-text', 'atob', '/^https:\/\/s\.pemsrv\.com.+/', 'window.location.href')
@@ -1720,18 +1723,22 @@ fo76db.com##body > div#toast ~ *:not(div, link, script)
 /admin-ajax.php?$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 /yamiisoku-product-link/*$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
 /wp-json/*$domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|yamiisoku.com
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#%#//scriptlet('trusted-suppress-native-method', 'DOMParser.prototype.parseFromString', '/<[Aa]/')
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#%#//scriptlet('prevent-fetch', 'method:POST')
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#%#//scriptlet('json-prune', 'html')
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#%#//scriptlet('prevent-innerHTML')
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##.catalog-content
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[class*="pdx-"]
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#?#a:matches-attr("href"="/=[0-9a-f]{32}$/")
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#?#a:not(.yrss-list__a):matches-attr("href"="/^.{100,}/")
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com#?#a:matches-attr("/^data-/")
-genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##a:has(img[src^="https://m.media-amazon.com"])
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##a:has(img[src^="https://m.media-amazon.com" i])
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##a[rel*="sponsored"]:not(.aedr-form__purchase[href="https://amzn.to/4g4yOhg"])
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="aHR0"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="amazon.co.jp" i]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="amzn.to" i]:not(.aedr-form__purchase[href="https://amzn.to/4g4yOhg"])
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[href*="link.amazon" i]
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[id*="-sale"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[id*="-remote"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com##[class*="-remote"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site##.promo-box
@@ -7945,7 +7952,7 @@ warorince.com###sidemenu_widget-2 ~ .widget_st_custom_html_widget.ad
 doktornakanoblog.com##.mainbox > .adbox + .widget_text
 gfoodd.com,fo76db.com,daidaidiary.com,grasoku.com,cherio199.blog.fc2.com,hobbylog.jp,netizen-voice.blog.jp,kinsoku.blog.jp##a[href^="https://amzn.to"]
 rare-zaiko.blog.jp,aikodemoneyfactory.dreamlog.jp,eddiarchive.com,jumpsokuhou.com,burusoku-vip.com,ganohr.net,betweenjpandkr.blog,vip-jikkyo.net,abc-by.com,travel-nippon.net##a[href^="https://px.a8.net/svt/ejp"]
-mori-k3.blog,gadget.hyakkaidan.com,anime-rating.com,cybersocean.net,e-penguiner.com,napgames.jp,spla3sokuhou.games,hegtel.com,fpsjp.net##.pochipp-box
+androplus.jp,mori-k3.blog,gadget.hyakkaidan.com,anime-rating.com,cybersocean.net,e-penguiner.com,napgames.jp,spla3sokuhou.games,hegtel.com,fpsjp.net##.pochipp-box
 valorantnews.jp##.wp-block-columns
 manabi.benesse.ne.jp###spNonDispSuperBannerArea
 ||benesse.jp/teikitest/common/js/floatad.js
