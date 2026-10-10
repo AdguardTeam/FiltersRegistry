@@ -1,9 +1,9 @@
-! Checksum: Xspo2KMp/NPAS6T5IzPKMg
-! Diff-Path: ../patches/260/260-s-1791578858-14400.patch
+! Checksum: Tmqc2hPWCpPB4EXNbqnn4Q
+! Diff-Path: ../patches/260/260-s-1791607789-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.55
-! TimeUpdated: 2026-10-09T20:45:16+00:00
+! Version: 2.0.2.56
+! TimeUpdated: 2026-10-10T04:47:21+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -830,9 +830,10 @@ cortex-docs.paloaltonetworks.com,gitbook.com##[data-testid="search-ask-question"
 ! -- https://cortex-docs.paloaltonetworks.com/cortex-cloud-runtime-security
 ! -- https://gitbook.com/docs/getting-started/quickstart
 ! Ask button at top of article & sparkle that appears when hovering over text
-! TODO: Arrow "more" menu missing left border. Can't use "remove" because it can cause page error
-!       if "Ask AI" option selected and deselected with keyboard in search menu
 cortex-docs.paloaltonetworks.com,gitbook.com##button[aria-label="Ask"]
+! Fix borders for "more" arrow box
+cortex-docs.paloaltonetworks.com#$#.float-right button[aria-label="More"] { border-left-width: 1px !important; border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important }
+gitbook.com#$#.float-right button[aria-label="More"] { border-left-width: 1px !important; border-top-left-radius: 24px !important; border-bottom-left-radius: 24px !important }
 ! "More" ask arrow dropdown options
 ! * AI Assistant logo
 cortex-docs.paloaltonetworks.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M326.6 204.1L465.2 256 326.6 307.9c-8.7"])
