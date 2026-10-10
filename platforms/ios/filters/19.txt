@@ -1,9 +1,9 @@
-! Checksum: NLS55wqY9fngGneEsQEJ9w
-! Diff-Path: ../patches/19/19-s-1791626987-3600.patch
+! Checksum: +CfqAp5doy2nZCbKUbMH8Q
+! Diff-Path: ../patches/19/19-s-1791644980-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.85.1
-! TimeUpdated: 2026-10-10T10:06:26+00:00
+! Version: 2.0.85.2
+! TimeUpdated: 2026-10-10T15:06:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -684,6 +684,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+bolognatoday.it#%#//scriptlet('prevent-setTimeout', 'adblock')
 igorslab.de##.ilab-adblocker-notice
 komiku.org#$##ab-overlay { display: none !important; }
 komiku.org#$#body { overflow: auto !important; }
@@ -3447,6 +3448,18 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 ! SECTION[id=content_blockers]: Anti-adblock - The rules for content blockers only
 !#safari_cb_affinity(general)
 !
+bolognatoday.it#@#.ad-unit:not(.textads)
+bolognatoday.it#@##ad_banner
+bolognatoday.it#@#div[id^="div-gpt-"]
+bolognatoday.it#@##ad-top
+bolognatoday.it#@#.ad-slot
+bolognatoday.it#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
+bolognatoday.it#@#.ad-leaderboard
+bolognatoday.it#@#.advertisement:not(html,body,:empty,[class~=ads])
+bolognatoday.it#@#.sponsored-ad
+bolognatoday.it#@#[id^="aswift_"]
+bolognatoday.it#@#[id^="google_ads_iframe_"]
+bolognatoday.it#@#[id^="div-gpt-ad"]
 mgsm.pl#@#[class^="ad-"]
 mgsm.pl#@#div[id^="div-gpt-"]
 mgsm.pl#@#[class^="advertisement"]
@@ -13425,6 +13438,7 @@ przegladsportowy.onet.pl,dailymail.com,tavovaikas.lt,thehill.com,gardenbetty.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+bolognatoday.it##a[href^="//www.google.com/preferences/source?q="]
 cheerfulcook.com##div.wprm-recipe > div.fluentform_wrapper_3.ffs_custom_wrap
 emogram.sankei.com##.area-google_preferred
 vice.com##.wp-block-button--google-cta
