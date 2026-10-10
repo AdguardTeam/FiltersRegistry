@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: qsKRZM6dBiXS/+69USZ0IQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1791521576-14400.patch
+! Checksum: 0dwjpPMGl12nIT91Z6eFdg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1791607809-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.82
@@ -109,6 +109,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||[2600:1f18:43d1:2a04:ee05:261e:d408:7ba1]^$document
 ||acceptablefabric.com^$all
 ||connatedresspint.com^$all
+/^((https?|tcp|iquic)://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 /^(https?|tcp|iquic)://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 ||134.209.136.174^$document
 ||178.128.142.109^$document
@@ -813,7 +814,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||ogp.me^$csp=upgrade-insecure-requests
 ||detectportal.firefox.com^$csp=upgrade-insecure-requests
 msftconnecttest.com^$csp=upgrade-insecure-requests
-www.microsoft.com##.card[data-bi-cn*="bus sim" i]
 ||212.27.60.108^$all
 ||oxtop.ru^
 ||fotoredactor.com^
@@ -1121,7 +1121,6 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ##div[class*=social_sidebar]
 ##div[class*=social_slide]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=socials-share]
-##div[class^=icon-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class^=share-options]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class^=shareLinks]
 ##div[class^=social-like]
@@ -1284,7 +1283,6 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ##.share-tw:not(html,body,article)
 ~flipboard.com##.share-flipboard:not(html,body,article)
 ~bsky.social##.share-bluesky:not(html,body,article)
-##a.x-share
 ~bsky.*,~bluesky.*##a[href^="https://bsky.app/intent/compose?text="]
 ~threads.net##a[href^="https://threads.net/intent/post?text="]
 ##[class*=socialshare i]:not(html,body,article,[class*=body i],[id*=body i])
@@ -1399,7 +1397,6 @@ vk.com###page_bottom_banners_root
 substack.com,microsoftsecurityinsights.com,chipstrat.com##div[class^=subscribe-]
 substack.com,microsoftsecurityinsights.com,chipstrat.com##.subscription-widget-wrap > .show-subscribe
 instacart.com##.AuthModal__Overlay:has(a[href$="/business"])
-mycarly.com##.chakra-dialog__positioner
 mycarly.com##.chakra-dialog__backdrop:style(backdrop-filter:0!important)
 amazon.*##.nav-flyout.nav-signin-tt
 trello.com##.mod-warning.header-banner
@@ -1437,8 +1434,6 @@ trade.tmall.com##.show-cross-btn
 ctrip.com###fl_wrap_default
 smzdm.com##.qr-buy-container
 12306.cn##.fixed-right-menu > li.menu-item:nth-of-type(3)
-58.com##.app.rightbtn
-58.com##.wx-xcx-qrcode
 amap.com###amapAppDownload
 amap.com###to_lushu
 coolapk.com##.apk_topba_code
@@ -2149,7 +2144,6 @@ $removeparam=af_campaign
 $removeparam=aftr
 $removeparam=aftr_source
 $removeparam=ko_click_id
-$removeparam=nrtv_cid
 $removeparam=trk_ref
 $removeparam=ircid
 $document,removeparam=/^src=rss$/
@@ -2777,7 +2771,6 @@ $~xhr,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com|subst
 ||humblebundle.com^$removeparam=mcID
 ||artstation.com^$removeparam=/^\d.*$/
 $removeparam=context,domain=imdb.com|fiverr.com|spotify.com|avito.ru|avito.ma
-$removeparam=action,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=module,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|scmp.com
 $removeparam=pgtype,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|scmp.com
 $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
@@ -2793,7 +2786,6 @@ $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moose
 ||verizon.com^$removeparam=vendorid
 ||hp.com^$removeparam=jumpid
 ||walmart.com^$removeparam=veh
-$removeparam=at_medium,domain=bbc.*|cardif.fr
 ||bbc.$removeparam=at_campaign
 $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||gog.com^$removeparam=pp
@@ -2824,7 +2816,6 @@ $removeparam=camp,domain=amazon.*|calvinklein.*|dickssportinggoods.com|dockers.c
 $removeparam=channelref,domain=asos.com
 $document,removeparam=cmp,domain=agentprovocateur.com|brooksbrothers.com|cbc.ca|cox.com|hulu.com|bestbuy.com|verizon.com
 $removeparam=cp,domain=converse.com|nike.com|nextdoor.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
-$removeparam=mc,domain=bose.*|hallmark.com
 $removeparam=mid,domain=agentprovocateur.com|change.org|columbia.com|dxl.com|facebook.com|hanes.com|instagram.com|josbank.com|links.e.malwarebytes.com|onehanesplace.com|productshopper.*|columbiasportswear.*|saksfifthavenue.com|saksoff5th.com|staples.com|sorel.com|lookmovie211.xyz|tiktok.com|verabradley.com|x.com
 $removeparam=mktvar002,domain=autodesk.com
 $removeparam=/^partnerid=.*$/i,domain=1800contacts.com|al.to|allenedmonds.com|bloomingdales.com|combat.pl|famousfootwear.com|johnstonprams.com|macys.com|naturalizer.com|shoes.com|sportler.com|x-kom.pl
