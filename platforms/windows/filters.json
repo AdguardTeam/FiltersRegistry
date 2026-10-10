@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.96.37",
-			"timeUpdated": "2026-10-10T20:05:54+0000",
+			"version": "2.4.96.38",
+			"timeUpdated": "2026-10-10T21:05:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.37.74",
-			"timeUpdated": "2026-10-10T19:05:56+0000",
+			"version": "2.1.37.75",
+			"timeUpdated": "2026-10-10T21:06:12+0000",
 			"languages": [],
 			"tags": [
 				45,
