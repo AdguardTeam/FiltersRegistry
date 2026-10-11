@@ -1,9 +1,9 @@
-! Checksum: zwIB8fcNdouziu2U7uG9aw
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1791492544-14400.patch
+! Checksum: KGui92c/q2nJkTeBoH7aHA
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1791751626-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.45
-! TimeUpdated: 2026-10-08T20:46:19+00:00
+! Version: 2.0.10.46
+! TimeUpdated: 2026-10-11T20:44:13+00:00
 ! Expires: 10 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1384,14 +1384,21 @@ $removeparam=sender_web_id
 $removeparam=share_app_id
 $removeparam=share_item_id
 $removeparam=share_link_id
-||tiktok.com^$~xmlhttprequest,removeparam=referer_url
-||tiktok.com^$~xmlhttprequest,removeparam=referer_video_id
-||tiktok.com^$~xmlhttprequest,removeparam=refer
+||tiktok.com^$document,removeparam=referer_url
+||tiktok.com^$document,removeparam=referer_video_id
+||tiktok.com^$document,removeparam=refer
 ||tiktok.com^$removeparam=checksum
 ||tiktok.com^$removeparam=sec_uid
 ||tiktok.com^$removeparam=share_author_id
-$removeparam=/^web_id\d+/,domain=tiktok.com
+$document,removeparam=/^web_id\d+/,domain=tiktok.com
 ||tiktok.com^$removeparam=embed_source
+||instagram.com^$document,removeparam=psln
+||instagram.com^$document,removeparam=rpxt
+||instagram.com^$document,removeparam=srtk
+||instagram.com^$document,removeparam=obrf
+||instagram.com^$document,removeparam=cplk
+||instagram.com^$document,removeparam=dlrf
+||instagram.com^$document,removeparam=xtok
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtu.be|zappos.com
 ||open.spotify.com^$removeparam=/^.*advertising_partner_name=.*$/i
 ||open.spotify.com^$removeparam=%243p

@@ -1,13 +1,13 @@
-! Checksum: OOtsf9glCMxuiseurNhykg
-! Diff-Path: ../patches/251/251-s-1791492559-14400.patch
+! Checksum: 3G0eBeQ5jSY/JfViwyRyHQ
+! Diff-Path: ../patches/251/251-s-1791751650-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.45
-! TimeUpdated: 2026-10-08T20:46:19+00:00
+! Version: 2.0.10.46
+! TimeUpdated: 2026-10-11T20:44:13+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 08October2026v1
+! OriginalVersion: 10October2026v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -2037,9 +2037,9 @@ $removeparam=share_app_id
 $removeparam=share_item_id
 $removeparam=share_link_id
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-783185
-||tiktok.com^$~xmlhttprequest,removeparam=referer_url
-||tiktok.com^$~xmlhttprequest,removeparam=referer_video_id
-||tiktok.com^$~xmlhttprequest,removeparam=refer
+||tiktok.com^$document,removeparam=referer_url
+||tiktok.com^$document,removeparam=referer_video_id
+||tiktok.com^$document,removeparam=refer
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-810773
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-974118
 ||tiktok.com^$removeparam=checksum
@@ -2047,9 +2047,17 @@ $removeparam=share_link_id
 ||tiktok.com^$removeparam=sec_uid
 ||tiktok.com^$removeparam=share_author_id
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1979025
-$removeparam=/^web_id\d+/,domain=tiktok.com
+$document,removeparam=/^web_id\d+/,domain=tiktok.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4978150
 ||tiktok.com^$removeparam=embed_source
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18824994
+||instagram.com^$document,removeparam=psln
+||instagram.com^$document,removeparam=rpxt
+||instagram.com^$document,removeparam=srtk
+||instagram.com^$document,removeparam=obrf
+||instagram.com^$document,removeparam=cplk
+||instagram.com^$document,removeparam=dlrf
+||instagram.com^$document,removeparam=xtok
 !!! ——— 🔊 Spotify ———
 ! https://open•spotify•com/playlist/37i9dQZF1DWXRvPx3nttRN?si=asdf1234567890
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtu.be|zappos.com
