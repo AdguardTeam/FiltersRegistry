@@ -1,9 +1,9 @@
-! Checksum: 0+Tsn/zF1Jesh+cEEjRZMw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1791607821-14400.patch
+! Checksum: 1t/eq+/D6Ceiw3BT92j8rw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1791751660-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.20.82
-! TimeUpdated: 2026-10-08T20:46:18+00:00
+! Version: 2.0.20.83
+! TimeUpdated: 2026-10-11T20:44:12+00:00
 ! Expires: 12 hours (update frequency)
 ||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~yggleak.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top|~outlands.top|~tk-web.top|~qpmegathread.top|~qmk.top|~mgytr.top|~girlskissing.top|~luxferre.top|~adderly.top|~supremecloud.top|~cldev.top|~medoed.top|~tooru.top|~wodepa.top|~rank.top|~vino.top
 @@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
@@ -99,8 +99,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 94.130.185.237$network
 !+ PLATFORM(windows, mac, android, cli)
 94.130.186.231$network
-||track.vcdc.com^$all,domain=~malware_redirection_trains.*
-||track.tkbo.com^$all,domain=~malware_redirection_trains.*
 ?bemobdata=$all
 !+ PLATFORM(windows, mac, android, cli)
 /^142\.91\.159\.[12]?\d?\d$/$network
@@ -407,7 +405,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 159.148.186.228$network
 ||yotube.com^$all
-/beep.mp3^$domain=xyz|club|pro
 !+ PLATFORM(windows, mac, android, cli)
 103.233.216.77$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -1683,10 +1680,8 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##a[title="Share on WhatsApp" i]
 ##a[title^="Share to "]
 ##amp-social-share
-##button[aria-controls=ShareContainer]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
-##button[title^="Del på "]
 ##button[title^="Share this "]
 ##div[button=share]
 ##div[class$=-sticky-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=post-with-stick])
@@ -2457,7 +2452,6 @@ $removeparam=campaign_id,domain=~kochava.com|~unisportstore.*
 $removeparam=wmlspartner
 $removeparam=sscid
 $removeparam=rmmds
-$removeparam=utmid
 $removeparam=msclkid
 $removeparam=litb_from
 $removeparam=ftag
@@ -2516,6 +2510,7 @@ $document,removeparam=/^outputType=amp$/
 $removeparam=orig_referrer
 $removeparam=ncid
 $document,removeparam=/^ecid=.*$/i,domain=~account.microsoft.com
+$removeparam=adcid
 $removeparam=mkt_tok
 @@^mkt_unsubscribe=$removeparam=mkt_tok
 $removeparam=affname
@@ -2574,7 +2569,6 @@ $removeparam=REFERRAL_ID
 $removeparam=impradid
 $removeparam=impradname
 $removeparam=cm_type
-Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=pepperjam$/
 $document,removeparam=/^source=cj$/
 $removeparam=affil
@@ -2591,7 +2585,6 @@ $removeparam=sv_campaign_id
 $document,removeparam=/^sv_tax.*$/
 $document,removeparam=/^icid_.*$/
 $removeparam=LSNSUBSITE
-$removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
 $removeparam=afflid
 $removeparam=mclk
@@ -2837,7 +2830,6 @@ $removeparam=dspUserId
 $removeparam=tpmn_buid
 $removeparam=adsafe_type
 $removeparam=beeswax_id
-$removeparam=ses_id
 $removeparam=_gfid
 $removeparam=mt_exid
 $removeparam=_sid
@@ -3120,13 +3112,21 @@ $removeparam=sender_device
 $removeparam=share_app_id
 $removeparam=share_item_id
 $removeparam=share_link_id
-||tiktok.com^$~xmlhttprequest,removeparam=referer_url
-||tiktok.com^$~xmlhttprequest,removeparam=referer_video_id
-||tiktok.com^$~xmlhttprequest,removeparam=refer
+||tiktok.com^$document,removeparam=referer_url
+||tiktok.com^$document,removeparam=referer_video_id
+||tiktok.com^$document,removeparam=refer
 ||tiktok.com^$removeparam=checksum
 ||tiktok.com^$removeparam=sec_uid
 ||tiktok.com^$removeparam=share_author_id
+$document,removeparam=/^web_id\d+/,domain=tiktok.com
 ||tiktok.com^$removeparam=embed_source
+||instagram.com^$document,removeparam=psln
+||instagram.com^$document,removeparam=rpxt
+||instagram.com^$document,removeparam=srtk
+||instagram.com^$document,removeparam=obrf
+||instagram.com^$document,removeparam=cplk
+||instagram.com^$document,removeparam=dlrf
+||instagram.com^$document,removeparam=xtok
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtu.be|zappos.com
 $removeparam=gtm
 $removeparam=referral,domain=tv2.no|spotify.com|yubo.live
@@ -3196,6 +3196,7 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=logid
 ||baidu.com^$removeparam=pageFrom
 ||baidu.com^$removeparam=srcp
+||baidu.com^$removeparam=ivk_sa
 ||baidu.com^$removeparam=sfrom
 ||haokan.baidu.com/v?$removeparam=pd
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaId
@@ -3275,7 +3276,6 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||iqiyi.com^$removeparam=r_area
 ||iqiyi.com^$removeparam=r_source
 ||iqiyi.com^$removeparam=stype
-||iqiyi.com^$removeparam=source
 ||sogou.com^$removeparam=_asf
 ||sogou.com^$removeparam=_ast
 ||sogou.com^$removeparam=lkt
@@ -3546,7 +3546,6 @@ $removeparam=rec,domain=argos.co.uk|roboform.com
 $removeparam=clickPR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
-$removeparam=/^cid=DSS-Affiliate.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 $removeparam=/^cid=DSS-Search-.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
@@ -4042,6 +4041,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 ##.ad-banners:not(html,body,:empty)
 #@#.ad-below
 #@#.ad-display
+##.ad-display:not(html,body,:empty)
 #@#.ad-displayed
 #@#.ad-item
 ##.ad-item:not(html,body,:empty)
