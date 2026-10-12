@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.96.75",
-			"timeUpdated": "2026-10-12T10:12:00+0000",
+			"version": "2.4.96.76",
+			"timeUpdated": "2026-10-12T11:07:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.37",
-			"timeUpdated": "2026-10-11T08:07:41+0000",
+			"version": "2.0.77.38",
+			"timeUpdated": "2026-10-12T11:07:57+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.82.36",
-			"timeUpdated": "2026-10-12T10:12:35+0000",
+			"version": "2.2.82.37",
+			"timeUpdated": "2026-10-12T11:08:18+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.37.93",
-			"timeUpdated": "2026-10-12T09:17:41+0000",
+			"version": "2.1.37.94",
+			"timeUpdated": "2026-10-12T11:08:22+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -712,8 +712,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.14.69",
-			"timeUpdated": "2026-10-12T05:13:19+0000",
+			"version": "2.0.14.70",
+			"timeUpdated": "2026-10-12T11:08:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -754,8 +754,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.85.8",
-			"timeUpdated": "2026-10-12T10:12:42+0000",
+			"version": "2.0.85.9",
+			"timeUpdated": "2026-10-12T11:08:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1827,8 +1827,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.67.28",
-			"timeUpdated": "2026-10-12T09:17:57+0000",
+			"version": "2.1.67.29",
+			"timeUpdated": "2026-10-12T11:08:50+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
