@@ -1,9 +1,9 @@
-! Checksum: pS7NSZ/7Zn1Q6h10E2hOgw
-! Diff-Path: ../patches/27/27-s-1791626982-3600.patch
+! Checksum: mXFIGAaxjHJlp3C9ugyAMg
+! Diff-Path: ../patches/27/27-s-1791790396-3600.patch
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.36
-! TimeUpdated: 2026-10-10T10:06:34+00:00
+! Version: 2.0.0.37
+! TimeUpdated: 2026-10-12T07:31:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -43,6 +43,8 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/243947
+anime-odcinki.pl#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'onAdBlock')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243774
 phototrans.pl,phototrans.eu#%#//scriptlet('prevent-setTimeout', '.removeChild')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -83,6 +85,7 @@ tygodnikziemiopolskiej.info#%#//scriptlet('google-ima3')
 !
 ! NOTE: Specific rules
 !
+anime-odcinki.pl##.vod-sidebar > .vod-card:has(> .site-content > a[target="_blank"], script:only-child)
 ofeminin.pl##.placeholder
 ofeminin.pl##.articleBg:has(> .leftColumn > .placeholder)
 phototrans.pl,phototrans.eu##div[style="text-align: center; width: 50%"]
@@ -286,6 +289,7 @@ moja-ostroleka.pl##div[class]:has(> div:first-child:not([class]) + div:last-chil
 ||wizja.cc/embed/adsy/cache/theme-helper-v2.js
 autocentrum.pl##.saplConfigurator
 katowice24.info##.grid__row:has(> div.grid__col > div.card > div.box > div.box__container > div[id^="bills_in_rotation_"] > a[href^="https://www.sdsm.pl/"])
+gratka.pl###partnerTop
 gratka.pl##.banner:empty
 depesza.fm,zaradnakobieta.pl##div[class*="adBlock__" i]
 gazetkapromocyjna.com.pl##.hidden:has(> .relative[class*="Reklama"])
@@ -844,7 +848,7 @@ ebok.pgnig.pl##.slick-track > .slick-slide:has(> div > .news-lists-ad)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187699
 opoka.org.pl##.webpart-wrap-raw_html:has(> a[name="reklama"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187669
-otodom.pl#$##__next > div[class^="css-"] > div:is([class^="css-"], [data-cy="nexus-header"]):has(> div[class*="css-"] > a[href="/"][aria-label]) { padding-top: 0 !important; }
+otodom.pl#$##__next > div[class^="css-"] > div:is([class^="css-"], [data-cy="nexus-header"]):has(> div:is([class*="css-"], [data-slot="layout-container"]) > a[href="/"][aria-label]) { padding-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187207
 pogonsportnet.pl##aside > .widget > a > img[src*="://i.postimg.cc/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186966
