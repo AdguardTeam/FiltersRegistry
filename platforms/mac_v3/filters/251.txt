@@ -1,13 +1,13 @@
-! Checksum: rPdk5NJg6F96clPyGs4Yog
-! Diff-Path: ../patches/251/251-s-1791751655-14400.patch
+! Checksum: 6y7dFd+iSbuv4B7OiFVbXg
+! Diff-Path: ../patches/251/251-s-1791838238-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.46
-! TimeUpdated: 2026-10-11T20:44:13+00:00
+! Version: 2.0.10.47
+! TimeUpdated: 2026-10-12T20:47:05+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 10October2026v1
+! OriginalVersion: 12October2026v3
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1889,6 +1889,17 @@ $removeparam=_rdc
 ||instagram.com^$document,removeparam=ndid
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18670208
 ||instacart.com^$document,removeparam=ic_medium
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18824994
+||instagram.com^$document,removeparam=psln
+||instagram.com^$document,removeparam=rpxt
+||instagram.com^$document,removeparam=srtk
+||instagram.com^$document,removeparam=obrf
+||instagram.com^$document,removeparam=cplk
+||instagram.com^$document,removeparam=dlrf
+||instagram.com^$document,removeparam=xtok
+||instagram.com^$document,removeparam=mdxt
+||instagram.com^$document,removeparam=exln
+||instagram.com^$document,removeparam=vrfl
 !!! ——— Google ———
 ! https://books•googleusercontent•com/books/content/reader?id=ZqK8A800eu4C&hl=no&pg=epub_10-jpg&img=1&zoom=6&cds=2&sig=ACfU3U3Si7lRb8j-vl0ZHTxcQUS7QcwWfg&w=800&h=1046&cp_ksver=2%3DVrverkkqAh0•&source=ge-web-app (The "$sig" value is specific to individual Google Play Books accounts; 22/11/2020)
 $removeparam=cp_ksver
@@ -2050,14 +2061,6 @@ $removeparam=share_link_id
 $document,removeparam=/^web_id\d+/,domain=tiktok.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4978150
 ||tiktok.com^$removeparam=embed_source
-! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18824994
-||instagram.com^$document,removeparam=psln
-||instagram.com^$document,removeparam=rpxt
-||instagram.com^$document,removeparam=srtk
-||instagram.com^$document,removeparam=obrf
-||instagram.com^$document,removeparam=cplk
-||instagram.com^$document,removeparam=dlrf
-||instagram.com^$document,removeparam=xtok
 !!! ——— 🔊 Spotify ———
 ! https://open•spotify•com/playlist/37i9dQZF1DWXRvPx3nttRN?si=asdf1234567890
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtu.be|zappos.com
@@ -2894,7 +2897,7 @@ $removeparam=rt,domain=lendgo.com|bilibili.com
 ! https://github.com/uBlockOrigin/uBlock-issues/issues/1784
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18426283
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18426542
-$document,removeparam=lid,domain=baidu.com|chewy.com|clickserve.dartsearch.net|flipkart.com|instagram.com|weather.com|harborfreight.com|sonypictures.com
+$document,removeparam=lid,domain=baidu.com|chewy.com|clickserve.dartsearch.net|flipkart.com|instagram.com|weather.com|harborfreight.com|sonypictures.com|mcdonalds.com
 ! https://www•microcenter•com/site/content/specialofferssd240inf•aspx?referaldomain=youtube•com&web=EMAIL%20OPT%20IN%20-%20DLA_INFLUENCER_LinusTechTips_10252021
 $removeparam=referaldomain,domain=microcenter.com
 $removeparam=web,domain=microcenter.com|tomtop.com
@@ -4640,6 +4643,8 @@ ref=macapp.supply$document,removeparam=ref
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18800913
 ||verizon.com^$document,removeparam=EMHID
 ||verizon.com^$document,removeparam=BID
+! https://www.nps.gov/orgs/1207/national-park-service-selects-frank-lands-as-deputy-director-for-operations.htm?ref=thebirthofacapital.info
+ref=thebirthofacapital.info$document,removeparam=ref
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
