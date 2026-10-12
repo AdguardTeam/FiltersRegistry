@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: HARryzd9by0rDmkpMEYZsw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1791818056-3600.patch
+! Checksum: G07kI1Z7yMzS+GvWYjBCUA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1791821411-3600.patch
 ! Title: AdGuard Base filter + EasyList (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.96.80
-! TimeUpdated: 2026-10-12T15:09:37+00:00
+! Version: 2.4.96.81
+! TimeUpdated: 2026-10-12T16:06:05+00:00
 ! Expires: 5 days (update frequency)
 ||resourcelow.com^
 ||dgkqqbixb.com^
@@ -11456,6 +11456,7 @@ youtube.com##+js(json-prune, entries.[-].command.reelWatchEndpoint.adClientParam
 www.youtube.com##+js(json-prune, contents.twoColumnBrowseResultsRenderer.tabs.[].tabRenderer.content.richGridRenderer.contents.[-].richItemRenderer.content.adSlotRenderer)
 www.youtube.com##+js(json-prune, ytInitialData.contents.twoColumnBrowseResultsRenderer.tabs.[].tabRenderer.content.richGridRenderer.contents.[-].richItemRenderer.content.adSlotRenderer)
 www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.web_streaming_watch, false)
+www.youtube.com##+js(json-prune, $.playerResponse[?(@.cards&&!@.playabilityStatus.miniplayer)].playerConfig.audioConfig.muteOnStart)
 m.youtube.com##+js(json-prune-fetch-response, $..itemSectionRenderer.contents[?(@.adSlotRenderer)], , propsToMatch, /get_watch)
 m.youtube.com##+js(json-prune, playerResponse.messages.[].youThereRenderer)
 !+ NOT_OPTIMIZED
@@ -11776,6 +11777,7 @@ strema.top##+js(set-constant, pConf.visitAdsOnplay, false)
 strema.top##+js(set-constant, pConf.disableDirectAds, true)
 strema.top##+js(abort-on-stack-trace, open, visitDirectAds)
 xhamster.com##.thumb-list > div:not(.video-thumb, [data-block])
+xhamster.*##div[class^="thumbContainer"]:empty
 vidara.to,vidara.so##div.mx-auto > div.relative:has(> span.tracking-wide)
 msn.com##div[id^="rightRailAds"]
 hltv.org##.colCon > div > aside > a[href^="/out2/"]
@@ -11954,6 +11956,7 @@ androidpolice.com,babygaga.com,backyardboss.net,carbuzz.com,cbr.com,collider.com
 stuff.co.nz##div[data-testid="sponsor"]
 ||assets.stuff.co.nz/static/stuff-adtech-sdk/ads-sdk/
 pornmz.com##+js(abort-current-script, fetch, window.open)
+mmaweekly.com,paulickreport.com,skateboarding.com##.header-ad-slot
 justwatch.com##div[class*="sr-campaign"]
 justwatch.com##.offers.buybox-selector
 justwatch.com##.sponsored-recommendation
@@ -24491,6 +24494,7 @@ browsershots.org#@#.advert_area
 ||aheadpains.com^
 ||ahfrmuxihku.in^
 ||ahhgpywevknoz.com^
+||ahkdqejtblece.site^
 ||ahort.xyz^
 ||ahqoqgffak.in^
 ||ahqwswioi.com^
@@ -24734,6 +24738,7 @@ browsershots.org#@#.advert_area
 ||amoebidscarola.cfd^
 ||amolegrallicclootie.qpon^
 ||amon1.net^
+||amongstmask.com^
 ||amoralstern.com^
 ||amovsodwrogxp.online^
 ||ampxchange.com^
@@ -25352,6 +25357,7 @@ browsershots.org#@#.advert_area
 ||b-m.xyz^
 ||b15a60aea4.com^
 ||b182z39mu43o4wujttoxlq2hmct9ub.cfd^
+||b26pmm66c91hbjr.cfd^
 ||b2b719b22c.com^
 ||b3mny.com^
 ||b3stcond1tions.com^
@@ -27196,6 +27202,7 @@ browsershots.org#@#.advert_area
 ||confessedwarmth.com^
 ||confessinvaluable.com^
 ||confiskreluct.qpon^
+||confitunwhig.cyou^
 ||confrghatsbraggy.cfd^
 ||confrontationdrunk.com^
 ||confusedassociation.com^
@@ -29637,6 +29644,7 @@ browsershots.org#@#.advert_area
 ||fplxwidbwpfd.com^
 ||fpnpmcdn.net^
 ||fposfzmqexyzw.online^
+||fpqqzbmwdnhjb.space^
 ||fprqdwuxgn.com^
 ||fptrxrtmvoajy.com^
 ||fpvbvoussvxqh.online^
@@ -31152,6 +31160,7 @@ browsershots.org#@#.advert_area
 ||hxnicvldneogf.online^
 ||hxoewq.com^
 ||hxyeghyjvkqga.site^
+||hy2jprm21n913mwwph.rest^
 ||hydagepedicle.com^
 ||hydridspassage.qpon^
 ||hydroidcheth.com^
@@ -32113,6 +32122,7 @@ browsershots.org#@#.advert_area
 ||jywudytmwihee.site^
 ||jyzkut.com^
 ||jzfwmalgjmnkq.space^
+||jzhdiapugcfgg.site^
 ||jzjtijnsgpnpe.site^
 ||jznogdxshfuqk.site^
 ||jzrjnphuxkayy.online^
@@ -34684,6 +34694,7 @@ browsershots.org#@#.advert_area
 ||oducnyesnjykf.space^
 ||odycorygwrexi.online^
 ||odylismnumina.com^
+||odylssautfancy.cyou^
 ||odzcmuoq.in^
 ||oebcckvxlwaij.space^
 ||oeddcqpagllfy.website^
@@ -36472,6 +36483,7 @@ browsershots.org#@#.advert_area
 ||queuingmudsill.com^
 ||queujzffuwaog.site^
 ||quge5.com^
+||qugesjhoibqjw.site^
 ||quhmzpwehvvkm.space^
 ||quickennasa.qpon^
 ||quickerapparently.com^
@@ -38893,6 +38905,7 @@ browsershots.org#@#.advert_area
 ||tfxhfikjxvdoo.site^
 ||tgldaqlqeltbt.site^
 ||tgosjheihxbdm.site^
+||tgqfwlsasjcno.site^
 ||tgqykrsjo.com^
 ||thafqlstoiluv.site^
 ||thagrechulo.com^
@@ -40140,6 +40153,7 @@ browsershots.org#@#.advert_area
 ||vexohnhuwyykl.com^
 ||vexolinu.com^
 ||vexprjpisorhi.com^
+||vezyqxahzspbj.online^
 ||vfbyodygylncy.site^
 ||vffiobtknfxce.online^
 ||vfghc.com^
@@ -41636,6 +41650,7 @@ browsershots.org#@#.advert_area
 ||yx-ads6.com^
 ||yx95pbcglifh11xxqg65w8.rest^
 ||yxcruyhkddqkn.site^
+||yxhpertx.com^
 ||yxmvtcdlrsvkm.online^
 ||yxosmdbrmfepu.space^
 ||yxvjolppbtn.com^

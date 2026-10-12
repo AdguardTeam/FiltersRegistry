@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: eRDjJ920eC06JQ+2bE1b6g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1791818056-3600.patch
+! Checksum: M7nvVb1sQreafEOaQkq0ZA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1791821412-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.96.80
-! TimeUpdated: 2026-10-12T15:09:37+00:00
+! Version: 2.4.96.81
+! TimeUpdated: 2026-10-12T16:06:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -40290,6 +40290,8 @@ www.youtube.com##+js(json-prune, contents.twoColumnBrowseResultsRenderer.tabs.[]
 www.youtube.com##+js(json-prune, ytInitialData.contents.twoColumnBrowseResultsRenderer.tabs.[].tabRenderer.content.richGridRenderer.contents.[-].richItemRenderer.content.adSlotRenderer)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3911413190
 www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.web_streaming_watch, false)
+! Fixes muting videos when `web_streaming_watch` is set to `true`
+www.youtube.com##+js(json-prune, $.playerResponse[?(@.cards&&!@.playabilityStatus.miniplayer)].playerConfig.audioConfig.muteOnStart)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3902013966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239516#issuecomment-5747844181
 ! Viewer count and other elements are not updating automatically when rule below is applied
@@ -40795,6 +40797,7 @@ hitsportshdd.xyz##.penci-container__content > .widget-area:has(> .theiaStickySid
 fmdtv.com,90minutes.pro###clickgate
 techrepublic.com##.jwplayer-wrapper
 xhamster.com##.thumb-list > div:not(.video-thumb, [data-block])
+xhamster.*##div[class^="thumbContainer"]:empty
 redscores.com##.rs-ad-slot
 ||redscores.com/images/bns/
 ||redscores.com/slot/render/
@@ -41320,7 +41323,7 @@ veporn.com##.ad-zone
 gagadget.com##.col-sm-6 > div.l-container:has(> div.col-sm-12 div#gagadget_sidebar_premium_uk > iframe[id^="google_ads_iframe"])
 pornmz.com##.nina-final-layer
 pornmz.com##+js(abort-current-script, fetch, window.open)
-skateboarding.com##.header-ad-slot
+mmaweekly.com,paulickreport.com,skateboarding.com##.header-ad-slot
 justwatch.com##div[class*="sr-campaign"]
 justwatch.com##.offers.buybox-selector
 justwatch.com##.sponsored-recommendation
