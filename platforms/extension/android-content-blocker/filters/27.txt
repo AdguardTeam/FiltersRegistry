@@ -1,8 +1,8 @@
-! Checksum: FnwwgJW5R1sAZjOg+RSjsg
+! Checksum: GGz+ZStcuZ3OHW1HNhFWuA
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.37
-! TimeUpdated: 2026-10-12T07:31:03+00:00
+! Version: 2.0.0.38
+! TimeUpdated: 2026-10-12T08:22:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -42,6 +42,8 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244072
+@@||ewybory.eu^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243947
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243774
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -81,6 +83,11 @@
 !
 ! NOTE: Specific rules
 !
+tujastrzebie.pl,rybnik.com.pl##.ppl-cnt
+jeja.pl##a[onclick*="Farmerama"] > img
+ewybory.eu##div[class="middle_ad"]
+ewybory.eu##div[class="header_ad"]
+ewybory.eu##ins[class="adsbygoogle"]
 ofeminin.pl##.placeholder
 phototrans.pl,phototrans.eu##div[style="text-align: center; width: 50%"]
 bolec.info##.dm-side-ad-label
@@ -454,9 +461,6 @@ warszawa.in,miastorumia.pl###sidebar #posts_custom_box > .content > a > img
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223442
 !+ NOT_OPTIMIZED
 juvepoland.com###jedynka
-! https://github.com/AdguardTeam/AdguardFilters/issues/233308
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||ewybory.eu^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/230405
 ||forumrowerowe.org/vendor/scripts/app/js/adBlockDetectAction.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228107
@@ -559,8 +563,6 @@ tygodnikpowszechny.pl##.top_add
 mybank.pl###rek_gora
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191854
 zloteprzeboje.pl###onnetwork--html:empty
-! https://github.com/AdguardTeam/AdguardFilters/issues/191853
-rybnik.com.pl##.ppl-cnt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193169
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191725
 wprost.pl##.bli-ad
@@ -1386,8 +1388,6 @@ bestflix.pl##.sticky-widget
 meteoprog.pl##.promo
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136922
 weatheronline.pl##.banner_oben
-! ewybory.eu - incorrect blocking
-ewybory.eu#@#.advertisment
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136777
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136775
 dziennik.pl##.infor-ad
