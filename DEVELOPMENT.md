@@ -387,8 +387,8 @@ yarn test
 ```
 
 Tests use Vitest and live alongside the code they cover in `__tests__/` directories,
-currently `scripts/build/__tests__/`, `scripts/repository/__tests__/`, and
-`scripts/wildcard-domain-processor/__tests__/`.
+currently `scripts/build/__tests__/`, `scripts/repository/__tests__/`,
+`scripts/translations/__tests__/`, and `scripts/wildcard-domain-processor/__tests__/`.
 
 The repository compression tests drive the real `git filter-repo` 2.47 or newer and are skipped
 when the tool is not installed. The compression procedure needs the tool on the operator machine.
@@ -496,6 +496,8 @@ git push origin --delete <branch>
 
 ```bash
 git fetch origin
+# the script rewrites the local master, so move it to the remote head first
+git reset --hard origin/master
 yarn compress 1000
 ```
 
@@ -655,7 +657,7 @@ All build tooling lives under `scripts/`. After making changes:
 1. Run `yarn test` — all tests must pass.
 1. Update tests in the matching `__tests__/` directory for the code you changed
    (`scripts/build/__tests__/`, `scripts/repository/__tests__/`,
-   `scripts/wildcard-domain-processor/__tests__/`).
+   `scripts/translations/__tests__/`, `scripts/wildcard-domain-processor/__tests__/`).
 1. Run `yarn validate` if the change affects filter compilation or platform outputs.
 
 Build scripts under `scripts/` are written in JavaScript and TypeScript, executed

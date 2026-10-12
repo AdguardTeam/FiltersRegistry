@@ -148,6 +148,7 @@ After completing any task that modifies code in `scripts/`:
    - `scripts/wildcard-domain-processor/__tests__/` for wildcard-domain-processor changes
    - `scripts/build/__tests__/` for build script changes
    - `scripts/repository/__tests__/` for repository script changes
+   - `scripts/translations/__tests__/` for translation script changes
 
 4. **Validate platform outputs** if filters, templates, or build scripts changed.
 
