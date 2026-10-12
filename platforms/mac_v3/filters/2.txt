@@ -1,9 +1,9 @@
-! Checksum: AkN+GXPRqHSasIDR6nQZWQ
-! Diff-Path: ../patches/2/2-s-1791818072-3600.patch
+! Checksum: ppmKSNleQfPmSvW4Viu42A
+! Diff-Path: ../patches/2/2-s-1791821421-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.96.80
-! TimeUpdated: 2026-10-12T15:09:37+00:00
+! Version: 2.4.96.81
+! TimeUpdated: 2026-10-12T16:06:05+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -41525,6 +41525,8 @@ www.youtube.com#%#//scriptlet('json-prune', 'ytInitialData.contents.twoColumnBro
 www.youtube.com#%#(()=>{let t=!1;const i={apply:(i,n,a)=>{try{!t&&window.ytInitialData&&(window.ytInitialData=JSON.parse(JSON.stringify(window.ytInitialData)),t=!0)}catch(t){}return Reflect.apply(i,n,a)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,i)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3911413190
 www.youtube.com#%#//scriptlet('set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.web_streaming_watch', 'false')
+! Fixes muting videos when `web_streaming_watch` is set to `true`
+www.youtube.com#%#//scriptlet('json-prune', '$.playerResponse[?(@.cards&&!@.playabilityStatus.miniplayer)].playerConfig.audioConfig.muteOnStart')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3902013966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239516#issuecomment-5747844181
 ! Viewer count and other elements are not updating automatically when rule below is applied
@@ -42040,6 +42042,7 @@ hitsportshdd.xyz##.penci-container__content > .widget-area:has(> .theiaStickySid
 fmdtv.com,90minutes.pro###clickgate
 techrepublic.com##.jwplayer-wrapper
 xhamster.com##.thumb-list > div:not(.video-thumb, [data-block])
+xhamster.*##div[class^="thumbContainer"]:empty
 redscores.com##.rs-ad-slot
 ||redscores.com/images/bns/
 ||redscores.com/slot/render/
@@ -42579,7 +42582,7 @@ veporn.com##.ad-zone
 gagadget.com##.col-sm-6 > div.l-container:has(> div.col-sm-12 div#gagadget_sidebar_premium_uk > iframe[id^="google_ads_iframe"])
 pornmz.com##.nina-final-layer
 pornmz.com#%#//scriptlet('abort-current-inline-script', 'fetch', 'window.open')
-skateboarding.com##.header-ad-slot
+mmaweekly.com,paulickreport.com,skateboarding.com##.header-ad-slot
 justwatch.com##div[class*="sr-campaign"]
 justwatch.com##.offers.buybox-selector
 justwatch.com##.sponsored-recommendation
@@ -91746,6 +91749,7 @@ browsershots.org#@#.advert_area
 ||ahisu.com^
 ||ahiwvmjktstlw.site^
 ||ahizzxdpeqmkt.space^
+||ahkdqejtblece.site^
 ||ahllyqzgtyuln.space^
 ||ahlothpsubmvk.website^
 ||ahmyebqzknlpj.website^
@@ -92216,6 +92220,7 @@ browsershots.org#@#.advert_area
 ||amoebidscarola.cfd^
 ||amolegrallicclootie.qpon^
 ||amon1.net^
+||amongstmask.com^
 ||amoralforsteppe.com^
 ||amoralslog.qpon^
 ||amoralstern.com^
@@ -93448,6 +93453,7 @@ browsershots.org#@#.advert_area
 ||b1ht7m8bkbjc32t2yij7yutub.cfd^
 ||b1ll3r11.xyz^
 ||b1xuekes.xyz^
+||b26pmm66c91hbjr.cfd^
 ||b2b719b22c.com^
 ||b2cd8956b2.com^
 ||b2f5a87e42.com^
@@ -97349,6 +97355,7 @@ browsershots.org#@#.advert_area
 ||confinecloakroomnew.com^
 ||confinementroguerecital.com^
 ||confiskreluct.qpon^
+||confitunwhig.cyou^
 ||conflabbegan.com^
 ||conformityexpertgrounds.com^
 ||confrghatsbraggy.cfd^
@@ -103544,6 +103551,7 @@ browsershots.org#@#.advert_area
 ||fpplwtittfozz.website^
 ||fpqdhexikoire.online^
 ||fpqguhajcermv.website^
+||fpqqzbmwdnhjb.space^
 ||fpqvfrdcnoxah.online^
 ||fprqdwuxgn.com^
 ||fptrxrtmvoajy.com^
@@ -107156,6 +107164,7 @@ browsershots.org#@#.advert_area
 ||hxyeghyjvkqga.site^
 ||hxyzkpzzbzekl.site^
 ||hxzdmcgrkmxsz.website^
+||hy2jprm21n913mwwph.rest^
 ||hy2qvo4qfomw3rx.cfd^
 ||hyaccgrjkbsoz.online^
 ||hyalitehydrol.cfd^
@@ -109767,6 +109776,7 @@ browsershots.org#@#.advert_area
 ||jzcvpqoorkigm.site^
 ||jzfrcctrmyclt.space^
 ||jzfwmalgjmnkq.space^
+||jzhdiapugcfgg.site^
 ||jzhkmgdeesljp.online^
 ||jzhnqycanbvsn.space^
 ||jziweafbssqyj.store^
@@ -116131,6 +116141,7 @@ browsershots.org#@#.advert_area
 ||odycorygwrexi.online^
 ||odylicplodge.qpon^
 ||odylismnumina.com^
+||odylssautfancy.cyou^
 ||odyvcahzbdmlx.website^
 ||odzcmuoq.in^
 ||odzzperikpir.com^
@@ -120522,6 +120533,7 @@ browsershots.org#@#.advert_area
 ||queujzffuwaog.site^
 ||qufzoiycxutsn.website^
 ||quge5.com^
+||qugesjhoibqjw.site^
 ||quhmzpwehvvkm.space^
 ||quickads.net^
 ||quickedangora.cyou^
@@ -126504,6 +126516,7 @@ browsershots.org#@#.advert_area
 ||tgldaqlqeltbt.site^
 ||tgmbxplmlsclp.space^
 ||tgosjheihxbdm.site^
+||tgqfwlsasjcno.site^
 ||tgqykrsjo.com^
 ||tgtrjjlpjntes.space^
 ||tguyxzkrxgzqt.online^
@@ -129744,6 +129757,7 @@ browsershots.org#@#.advert_area
 ||vexprjpisorhi.com^
 ||vextshiatsu.cyou^
 ||veymqlpxnqbih.website^
+||vezyqxahzspbj.online^
 ||vfamnpvtqmhpw.site^
 ||vfbyodygylncy.site^
 ||vffiobtknfxce.online^
@@ -133862,6 +133876,7 @@ browsershots.org#@#.advert_area
 ||yxcruyhkddqkn.site^
 ||yxcxheuw.net^
 ||yxeawgomuxnix.space^
+||yxhpertx.com^
 ||yxibcujksiubp.online^
 ||yxjdwjbajkukl.online^
 ||yxmtgttitplap.store^
