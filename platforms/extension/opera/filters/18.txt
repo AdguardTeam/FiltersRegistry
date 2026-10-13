@@ -1,9 +1,9 @@
-! Checksum: RrNQNlS3gpWIctmA350RMA
-! Diff-Path: ../patches/18/18-s-1791889857-3600.patch
+! Checksum: OZwrMT/bES4GzalAfaH3+A
+! Diff-Path: ../patches/18/18-s-1791893595-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.96.70
-! TimeUpdated: 2026-10-13T11:07:22+00:00
+! Version: 2.0.96.71
+! TimeUpdated: 2026-10-13T12:09:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2674,6 +2674,7 @@ e-hortico.pl,sklep.doppelherz.pl,jestemwbajce.pl,greentouch.pl,4zywioly.pl,kanke
 !
 ! NOTE: Regular rules
 !
+valtiolle.fi#%#//scriptlet('trusted-set-cookie', 'consent', '{"necessary":true,"preferences":false,"analytics":false,"marketing":false,"uncategorized":false}')
 turizmguncel.com##body > div.fixed:has(> div.mx-auto > p[class] > a[href="/sayfa/cerez-politikasi"])
 turizmguncel.com##body > div.fixed.bg-black\/40
 reachporn.com###rp-cookie-banner
@@ -19808,6 +19809,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244182
+valtiolle.fi#@##cookie-dialog
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243894
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=nove.tv
 @@||cdn.cookielaw.org/consent/*.json$domain=nove.tv
