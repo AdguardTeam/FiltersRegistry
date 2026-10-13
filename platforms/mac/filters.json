@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.97.11",
-			"timeUpdated": "2026-10-13T22:05:14+0000",
+			"version": "2.4.97.12",
+			"timeUpdated": "2026-10-13T23:05:17+0000",
 			"languages": []
 		},
 		{
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.82.62",
-			"timeUpdated": "2026-10-13T19:06:12+0000",
+			"version": "2.2.82.63",
+			"timeUpdated": "2026-10-13T23:06:05+0000",
 			"languages": []
 		},
 		{
@@ -256,8 +256,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.38.11",
-			"timeUpdated": "2026-10-13T21:06:27+0000",
+			"version": "2.1.38.12",
+			"timeUpdated": "2026-10-13T23:06:09+0000",
 			"languages": []
 		},
 		{
@@ -302,8 +302,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.96.74",
-			"timeUpdated": "2026-10-13T16:07:35+0000",
+			"version": "2.0.96.75",
+			"timeUpdated": "2026-10-13T23:06:15+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.85.27",
-			"timeUpdated": "2026-10-13T19:06:23+0000",
+			"version": "2.0.85.28",
+			"timeUpdated": "2026-10-13T23:06:17+0000",
 			"languages": []
 		},
 		{
@@ -328,8 +328,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.33.3",
-			"timeUpdated": "2026-10-13T17:06:13+0000",
+			"version": "2.0.33.4",
+			"timeUpdated": "2026-10-13T23:06:18+0000",
 			"languages": []
 		},
 		{
@@ -1214,8 +1214,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.67.40",
-			"timeUpdated": "2026-10-13T15:08:23+0000",
+			"version": "2.1.67.41",
+			"timeUpdated": "2026-10-13T23:06:31+0000",
 			"languages": [
 				"zh"
 			]
