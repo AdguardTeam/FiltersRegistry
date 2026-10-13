@@ -20,14 +20,10 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Use Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: 'yarn'
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      # The suite runs inside the image, so git-filter-repo is available and
+      # nothing has to be installed on the runner.
+      - name: Build the test image
+        run: docker build -t filters-registry-tests .
 
       - name: Test
-        run: yarn test
+        run: docker run --rm filters-registry-tests
