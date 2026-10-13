@@ -392,6 +392,8 @@ currently `scripts/build/__tests__/`, `scripts/repository/__tests__/`,
 
 The repository compression tests drive the real `git filter-repo` 2.47 or newer and are skipped
 when the tool is not installed. The compression procedure needs the tool on the operator machine.
+CI runs the whole suite inside the `Dockerfile` image, which provides the tool, so these tests
+run on every pull request.
 
 ### Validation
 
@@ -419,9 +421,9 @@ checkout with a valid `HEAD`.
 
 Once a year, we compress the repository to reduce its size.
 The compression script rewrites `master` into a history that holds the initial commit,
-one squash commit, and the last `commits_to_keep` commits (default `1000`) with their
-merge structure. The file tree of `master` is unchanged. The storage scheme stays the
-same: `platforms/` and the generated files remain in Git.
+one squash commit, and the last `commits_to_keep` commits (default `1000`, about a month
+of history) with their merge structure. The file tree of `master` is unchanged. The storage
+scheme stays the same: `platforms/` and the generated files remain in Git.
 
 #### How to
 
@@ -429,11 +431,12 @@ same: `platforms/` and the generated files remain in Git.
 
 ```bash
 git clone <repository-url>
+git clone --mirror <repository-url> backup.git
 # or, to extend an existing shallow clone:
 git fetch --unshallow
 ```
 
-Keep the backup copy until the GitHub size drops.
+Keep the backup copy until the next build succeeds and the team has re-cloned.
 
 ##### 2. Install the dependencies and `git-filter-repo`
 
@@ -474,14 +477,15 @@ gh pr close <number> --comment "rebase and reopen after the compression"
 gh workflow disable build-adguard.yaml
 gh workflow disable build-3p.yaml
 gh workflow disable update-translations.yaml
+gh run list --status queued
 gh run list --status in_progress
 ```
 
-Wait until the run list is empty.
+Wait until both lists are empty.
 
 ##### 7. Disable the branch protection ruleset
 
-Disable the ruleset that prevents direct pushes to `master`.
+Disable the ruleset that blocks force pushes and deletion of the `master` branch.
 
 ##### 8. Delete every branch except `master`
 
@@ -517,8 +521,11 @@ With the old head hash printed by the script:
 ##### 11. Overwrite the `master` branch
 
 ```bash
-git push --force origin master
+git push --force-with-lease=master:<old head> origin master
 ```
+
+The lease rejects the push if `master` moves after the fetch in step 9, instead of
+dropping those commits.
 
 ##### 12. Restore the ruleset and the workflows
 
@@ -548,7 +555,7 @@ git reset --hard <old head>
 ```
 
 If the old head is unavailable, restore from the backup copy. If the push is rejected,
-the branch protection is still active: disable it and push again.
+the ruleset that blocks force pushes is still active: disable it and push again.
 
 #### After the window
 
@@ -558,10 +565,21 @@ Send the team instruction:
 - never run `git pull` from an old clone;
 - rebase branches before pushing.
 
-Pull-request authors rebase onto the new `master` and reopen their pull requests.
+Pull-request authors rebase onto the new `master` and reopen their pull requests. An old
+branch shares only the initial commit with the new `master`, so a plain `git rebase
+origin/master` replays the whole squashed history. Save the old base before the fetch and
+rebase onto it:
 
-Monitor the repository size on GitHub until it drops. Record the value and the date.
-Keep the backup until the size drops. Optionally reclaim local disk:
+```bash
+old_base=$(git merge-base <branch> origin/master)   # before fetching the rewritten master
+git fetch origin
+git rebase --onto origin/master "$old_base" <branch>
+```
+
+GitHub keeps `refs/pull/*/head` for every closed pull request, so the size GitHub reports
+may not drop after the rewrite. New clones are smaller because they do not fetch
+pull-request refs. Keep the backup copy until the next build succeeds and the team has
+re-cloned. Optionally reclaim local disk:
 
 ```bash
 git reflog expire --expire=now --all && git gc --prune=now
