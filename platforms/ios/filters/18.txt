@@ -1,9 +1,9 @@
-! Checksum: UBBVjx5tplYCPOHEdJH+FQ
-! Diff-Path: ../patches/18/18-s-1791882839-3600.patch
+! Checksum: 6oCIIKgaHMx03VaE7A44GQ
+! Diff-Path: ../patches/18/18-s-1791886290-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.96.68
-! TimeUpdated: 2026-10-13T09:11:31+00:00
+! Version: 2.0.96.69
+! TimeUpdated: 2026-10-13T10:07:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19046,7 +19046,7 @@ ok.co.uk,wpolityce.pl,cyprus-mail.com,downloadsource.net,download-source.de,down
 lovethesales.com#%#//scriptlet("set-cookie", "lts-cookie-consent", "1")
 mapcarta.com#%#//scriptlet('set-constant', 'runads', 'false')
 console.scaleway.com#%#//scriptlet('trusted-click-element', 'body > div:not([id]) > div[data-open="true"] > dialog > div[class] > div[class] > h2 + button')
-blick.ch#%#//scriptlet('trusted-click-element', '#onetrust-banner-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk .onetrust-close-btn-handler')
+nove.tv,blick.ch#%#//scriptlet('trusted-click-element', '#onetrust-banner-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk .onetrust-close-btn-handler')
 sn.at#%#//scriptlet('trusted-click-element', '.save-preference-btn-handler')
 mobile-fueling.de#%#//scriptlet('set-cookie', 'cookieControl', 'true')
 mobile-fueling.de#%#//scriptlet('trusted-set-cookie', 'cookieControlPrefs', '["comfort"]')
@@ -19838,6 +19838,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/243894
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=nove.tv
+@@||cdn.cookielaw.org/consent/*.json$domain=nove.tv
+nove.tv#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243830
 rtvi.com#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243783

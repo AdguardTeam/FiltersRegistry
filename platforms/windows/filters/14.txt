@@ -1,9 +1,9 @@
-! Checksum: GriaXo3BN8i3HAxDz3DtAg
-! Diff-Path: ../patches/14/14-s-1791882849-3600.patch
+! Checksum: 1bK1KfB7xwDSPfelsebVgQ
+! Diff-Path: ../patches/14/14-s-1791886303-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.82.52
-! TimeUpdated: 2026-10-13T09:11:24+00:00
+! Version: 2.2.82.53
+! TimeUpdated: 2026-10-13T10:07:47+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19052,7 +19052,7 @@ ok.co.uk,wpolityce.pl,cyprus-mail.com,downloadsource.net,download-source.de,down
 lovethesales.com#%#//scriptlet("set-cookie", "lts-cookie-consent", "1")
 mapcarta.com#%#//scriptlet('set-constant', 'runads', 'false')
 console.scaleway.com#%#//scriptlet('trusted-click-element', 'body > div:not([id]) > div[data-open="true"] > dialog > div[class] > div[class] > h2 + button')
-blick.ch#%#//scriptlet('trusted-click-element', '#onetrust-banner-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk .onetrust-close-btn-handler')
+nove.tv,blick.ch#%#//scriptlet('trusted-click-element', '#onetrust-banner-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk .onetrust-close-btn-handler')
 sn.at#%#//scriptlet('trusted-click-element', '.save-preference-btn-handler')
 mobile-fueling.de#%#//scriptlet('set-cookie', 'cookieControl', 'true')
 mobile-fueling.de#%#//scriptlet('trusted-set-cookie', 'cookieControlPrefs', '["comfort"]')
@@ -19898,6 +19898,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/243894
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=nove.tv
+@@||cdn.cookielaw.org/consent/*.json$domain=nove.tv
+nove.tv#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243830
 rtvi.com#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243783
@@ -38119,9 +38123,10 @@ przegladsportowy.onet.pl,dailymail.com,tavovaikas.lt,thehill.com,gardenbetty.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+pixhost.to##.announcement-bar[data-announcement-key="telegram-v1"]
 vijesti.me##.follow-us-section
 19fortyfive.com##.my-google-news
-book.mynavi.jp#?#hr.shogi_pr + div[style^="text-align: center;"]:contains(将棋情報局では、お得なキャンペーンや新着コンテンツの情報をお届けしています。)
+book.mynavi.jp##hr.shogi_pr + div[style^="text-align: center;"]:has(+ .register_btn)
 book.mynavi.jp##hr.shogi_pr
 book.mynavi.jp##.register_btn
 book.mynavi.jp##.entry_main > .promo
@@ -48865,6 +48870,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+convertcase.net##main > .cta-card:has(> .content > .links > a[href^="https://apps.apple.com/app/"])
 bavku.shop##.hero-in > div.hero-rail:has(> div.badges > a[href^="https://apps.apple.com/kr/app/"])
 playmods.net###thirdparty_share
 junkcall.org##.c_bnr
@@ -67620,6 +67626,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+delt.io##.p-0.fcols > .text-center:has(> a[href^="https://www.buymeacoffee.com/"])
 independentaustralia.net##.mainArtText > div.row > div.col-sm-12:has(> a[href="https://independentaustralia.net/about-ia/donate-to-ia"])
 independentaustralia.net###donateWrapper
 independentaustralia.net##.card:has(> div.card-body > p.card-text > a[href="/about-ia/donate-to-ia"])

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wWmmXGzIQS19j0btV4m8JQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1791882837-3600.patch
+! Checksum: nh6gTJ1fmj5Ov0Q560cy4g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1791886286-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.96.98
-! TimeUpdated: 2026-10-13T09:10:51+00:00
+! Version: 2.4.96.99
+! TimeUpdated: 2026-10-13T10:07:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12006,6 +12006,7 @@ ad.broadstreetads.com
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||cdn.dezacibesodexi.com^
 ||ads.1mindrama.net^
 ||sa7eer.com^
 ||lobe.scv.public.sse-prod-eks-euw1.futureplc.engineering^
@@ -40418,6 +40419,10 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+||cdn.*.com/sdk/v1/dd.p.js^$script,3p
+||porndd.com/static/js/popunder-inject.js
+||pixhost.to/resource-session/
+pixhost.to##+js(abort-on-stack-trace, document.addEventListener, loadInstantMessage)
 tap4porn.cc##div[style^="position: absolute;"][style*="background: rgba(0, 0, 0, 0.35);"]
 ikisoda.com##.is-list-items > div.row > div.col:not(:has(> div[class*="b6m-"]))
 ikisoda.com##.similiar-videos:not([id])
@@ -63723,6 +63728,8 @@ $popup,3p,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244171
+convertcase.net#@#.ads-desktop
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243796
 marcusoscarsson.se#@#.ad-loaded
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243351
