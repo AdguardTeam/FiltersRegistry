@@ -178,8 +178,8 @@ const createTestRepository = async (forkPoint = LINEAR_COMMITS.length): Promise<
 };
 
 // The rewrite tests drive the real `git filter-repo`, which is not present on
-// every machine; skip them when the tool is missing. CI runs them inside the
-// `Dockerfile` image, which provides the tool.
+// every machine; skip them when the tool is missing. The `Compression tests`
+// workflow runs them in a container image that provides the tool.
 const filterRepoAvailable = spawnSync('git', ['filter-repo', '--proceed', '--version'], { stdio: 'ignore' })
     .status === 0;
 

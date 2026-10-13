@@ -392,8 +392,9 @@ currently `scripts/build/__tests__/`, `scripts/repository/__tests__/`,
 
 The repository compression tests drive the real `git filter-repo` 2.47 or newer and are skipped
 when the tool is not installed. The compression procedure needs the tool on the operator machine.
-CI runs the whole suite inside the `Dockerfile` image, which provides the tool, so these tests
-run on every pull request.
+The `Compression tests` workflow runs them in a container image that provides the tool: on every
+pull request that touches `scripts/repository/`, and on a monthly schedule, so a new
+`git-filter-repo` release is caught before the annual window.
 
 ### Validation
 
