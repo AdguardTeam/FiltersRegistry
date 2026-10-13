@@ -273,17 +273,23 @@ const validatePatches = async (): Promise<void> => {
 };
 
 /**
+ * Resolves the platforms directory to validate.
+ *
+ * @param platformsArg Directory given on the command line, if any.
+ *
+ * @returns Absolute path to the platforms directory: a path given on the
+ * command line is resolved against the current working directory, and the
+ * default one against this script.
+ */
+export const resolvePlatformsPath = (platformsArg?: string): string => (
+    platformsArg ? path.resolve(platformsArg) : path.join(__dirname, '../../platforms')
+);
+
+/**
  * Validates built platforms.
  */
 const main = async (): Promise<void> => {
-    const args = process.argv.slice(2);
-
-    let platforms = args[0];
-    if (!platforms) {
-        platforms = '../../platforms';
-    }
-
-    const platformsPath = path.join(__dirname, platforms);
+    const platformsPath = resolvePlatformsPath(process.argv[2]);
 
     const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
     if (!validationResult) {

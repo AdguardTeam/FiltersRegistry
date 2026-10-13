@@ -4,9 +4,11 @@ import {
 import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
+import { fileURLToPath } from 'url';
 import CryptoJS from 'crypto-js';
 import {
     parseDiffPath,
+    resolvePlatformsPath,
     validateClientUpdate,
     validatePlatformPatches,
 } from '../../validation/validate_platforms.js';
@@ -101,6 +103,24 @@ describe('parseDiffPath', () => {
         const content = `${'!\n'.repeat(50)}! Diff-Path: ../patches/1/1-s-1-3600.patch\n`;
 
         expect(parseDiffPath(content)).toBeNull();
+    });
+});
+
+describe('resolvePlatformsPath', () => {
+    it('resolves a relative path against the working directory', () => {
+        expect(resolvePlatformsPath('./platforms')).toBe(path.resolve(process.cwd(), 'platforms'));
+    });
+
+    it('keeps an absolute path as it is', () => {
+        const absolutePath = path.join(os.tmpdir(), 'platforms');
+
+        expect(resolvePlatformsPath(absolutePath)).toBe(absolutePath);
+    });
+
+    it('defaults to the platforms directory of the repository', () => {
+        const testDir = path.dirname(fileURLToPath(import.meta.url));
+
+        expect(resolvePlatformsPath()).toBe(path.resolve(testDir, '../../../platforms'));
     });
 });
 
