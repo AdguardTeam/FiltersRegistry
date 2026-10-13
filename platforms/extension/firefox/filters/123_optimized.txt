@@ -1,9 +1,9 @@
-! Checksum: Vg0WW9vLo+8sD5exOHseQA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1791854755-14400.patch
+! Checksum: ffb3Qt9QZJc2U7td5VjqPw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1791867345-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.70.41
-! TimeUpdated: 2026-10-13T01:22:19+00:00
+! Version: 2.1.70.42
+! TimeUpdated: 2026-10-13T04:52:27+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -481,6 +481,7 @@ _social-bar/
 ###sharing-box
 ###sharing-button
 ###sharing-sidebar
+###sharingBlock
 ###sharing_buttons
 ###sharing_container
 ###sharingfooter
@@ -492,6 +493,7 @@ _social-bar/
 ###sidebar-twitter
 ###sidebar-youtube
 ###sidebar_share
+###sidebar_social
 ###sidebar_social_icons
 ###single-share
 ###site-share
@@ -547,7 +549,6 @@ _social-bar/
 ###social-sharing-bar
 ###social-sharing-buttons
 ###social-sidebar
-###social-sites-wrapper
 ###social-slideout
 ###social-slider
 ###social-spotify
@@ -885,7 +886,6 @@ _social-bar/
 ##.article_social_share
 ##.articlesharebox
 ##.aside-social
-##.asocial-area
 ##.aspexifblikebox
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
@@ -1094,7 +1094,6 @@ _social-bar/
 ##.dashicons-facebook
 ##.dashicons-twitter
 ##.ddc-social-share
-##.desktop-share
 ##.desktop-social
 ##.detail-share
 ##.detail-social
@@ -1263,6 +1262,7 @@ _social-bar/
 ##.fblbForm
 ##.fblikebox
 ##.fblink
+##.fbpopup-container
 ##.fbshare
 ##.fbsmallshare
 ##.fe-share
@@ -1643,7 +1643,6 @@ _social-bar/
 ##.ikonz-social
 ##.image-social
 ##.img-social
-##.imgShare
 ##.img__sharer
 ##.in-social
 ##.in_icon
@@ -1808,6 +1807,7 @@ _social-bar/
 ##.m-icon-tw
 ##.m-share
 ##.m-share-bar__link
+##.m-share_site
 ##.m-sharing
 ##.m-sns
 ##.m-social-bar
@@ -2628,8 +2628,6 @@ _social-bar/
 ##.single__floating-share
 ##.single__share
 ##.single__social
-##.single_post_share_icon_post
-##.single_post_share_icons
 ##.single_share
 ##.single_social
 ##.site-follow-us
@@ -2890,7 +2888,6 @@ _social-bar/
 ##.social-share_compact
 ##.social-sharer
 ##.social-shares
-##.social-sharing-bottom
 ##.social-sharing-buttons
 ##.social-sharing-link
 ##.social-sharing-top
@@ -2926,7 +2923,6 @@ _social-bar/
 ##.social-wrp
 ##.socialBanner
 ##.socialBar
-##.socialBottom
 ##.socialBtnList
 ##.socialButtons
 ##.socialButtonv1
@@ -3643,7 +3639,6 @@ videocardz.com###welcome-modal
 tennis.com##.-sharebar
 askubuntu.com,mathoverflow.net,nhl.com,petri.com,serverfault.com,stackexchange.com,stackoverflow.com,superuser.com##.-social
 ynet.co.il,ynetnews.com##.AccordionShareWrapper
-newatlas.com##.ActionLink
 newscientist.com##.ArticleHeader__SocialWrapper
 nordvpn.com##.BlogPost__social-block
 cnbc.com##.CNBCFooter-social
@@ -3732,7 +3727,6 @@ androidpolice.com,givemesport.com##.btn-flipboard
 androidpolice.com##.btn-linkedIn
 androidpolice.com,backyardboss.net,cbr.com,collider.com,dualshockers.com,gamerant.com,givemesport.com,howtogeek.com,makeuseof.com,movieweb.com,pocketnow.com,thegamer.com,thethings.com,thetravel.com,xda-developers.com##.btn-mail
 androidpolice.com##.btn-reddit
-as.com,f1-news.eu,mainichi.jp##.btn-share
 agrimag.co.za,androidpolice.com,automart.co.za,givemesport.com##.btn-whatsapp
 koimoi.com##.btn-whatsup
 androidpolice.com##.btn-x
@@ -3900,7 +3894,6 @@ slashdot.org##.nav-social
 neowin.net##.nav-social-alt
 triblive.com##.navbar-right
 chess.com##.navigation-footer-platforms-component
-newsbusters.org##.nb-twitter-block
 pmc.ncbi.nlm.nih.gov##.ncbi-footer__icon-section
 nerdist.com##.nerdist-social-share
 taiwebs.com##.networking
@@ -3990,7 +3983,6 @@ apple.com##.sharesheet
 thenation.com##.sharethis-menu
 proofpoint.com##.sharethis_toolbox
 12tomatoes.com##.sharetocare-popup
-thekitchenmagpie.com##.sharing-cta
 welivesecurity.com##.sidebar-card-media
 freefrontend.com##.sidebar-footer > .nav-title
 tribune.com.pk##.sidebar-social-icons
@@ -4016,7 +4008,6 @@ complex.com##.social-links-top
 adn.com,casino.org##.social-list
 ojornalextra.com.br##.social-media-share-wrapper
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,browserstack.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,radioblog.eu,tvone.tv,ultiworld.com##.social-menu
-eltecolote.org,melmagazine.com,mississippifreepress.org,orlandoweekly.com,prismreports.org,sacurrent.com,thefrisc.com,worldcrunch.com##.social-navigation
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
 iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
@@ -4107,7 +4098,6 @@ aspicyperspective.com,budgetbytes.com,butterwithasideofbread.com,downshiftology.
 manhwatop.com##.wrap_social_account
 w3schools.com##.ws-share
 store.google.com##.yYrYCd
-worldcrunch.com##.ysi_share
 firstpost.com##.yt-ch
 zmescience.com##.zme-google-follow-banners
 securityweek.com##.zox-foot-soc
@@ -4121,7 +4111,6 @@ breakingnews.ie,nhentai.net##[aria-label="Twitter"]
 techcommunity.microsoft.com##[class^="custom_widget_SocialSharing_sharePage_"]
 xhamster.com##[class^="socials-"] > a
 news.sky.com##[data-component-name="sdc-article-strapline"]
-theguardian.com##[data-component="preferred-source-button-prefer"]
 latimes.com##[data-element="google-preferred-sources"]
 lifehacker.com##[data-ga-element="social-link"]
 cnet.com##[data-meta="footer-section-social"]
@@ -4136,6 +4125,7 @@ bbc.com##[data-testid="social-follow-us-container"]
 nytimes.com##[data-testid="social-group"]
 dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
+axios.com##[data-vars-event-name="preferred_source_view"]
 axios.com##[data-vars-event-name="share_view"]
 datacamp.com##[data-waffles-component="social-sharer"]
 hentaini.com##[href="https://discord.gg/PPkkEuRfyz"]
