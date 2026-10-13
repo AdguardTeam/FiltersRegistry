@@ -1,9 +1,9 @@
-! Checksum: 0NDpYbNTf1wQbFOd8XOvLQ
-! Diff-Path: ../patches/14/14-s-1791904264-3600.patch
+! Checksum: PZrsl1bSxg0XiC3VaI7POQ
+! Diff-Path: ../patches/14/14-s-1791907858-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.82.58
-! TimeUpdated: 2026-10-13T15:07:58+00:00
+! Version: 2.2.82.59
+! TimeUpdated: 2026-10-13T16:07:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2676,6 +2676,7 @@ e-hortico.pl,sklep.doppelherz.pl,jestemwbajce.pl,greentouch.pl,4zywioly.pl,kanke
 !
 ! NOTE: Regular rules
 !
+itsnicethat.com#%#//scriptlet('trusted-click-element', 'div#CybotCookiebotDialogBodyButtonsWrapper > button#CybotCookiebotDialogBodyLevelButtonCustomize, input#CybotCookiebotDialogBodyLevelButtonStatisticsInline, div#CybotCookiebotDialogBodyButtonsWrapper > button#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection')
 valtiolle.fi#%#//scriptlet('trusted-set-cookie', 'consent', '{"necessary":true,"preferences":false,"analytics":false,"marketing":false,"uncategorized":false}')
 turizmguncel.com##body > div.fixed:has(> div.mx-auto > p[class] > a[href="/sayfa/cerez-politikasi"])
 turizmguncel.com##body > div.fixed.bg-black\/40
@@ -19830,6 +19831,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/243914
+@@||consent.cookiebot.com/uc.js$domain=itsnicethat.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244182
 valtiolle.fi#@##cookie-dialog
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243894
@@ -41941,7 +41944,7 @@ textertobi.de###custom_html-43
 rbc.ru##.article__special_container:has(> p > strong > a[href="https://t.me/+o--H2lU_IO83NmUy"])
 poder360.com.br##.navigation-menu__form-create
 linkingsociety.hitachi.co.jp##.footer-mailmaga
-cracked.com##.module-newsletter
+itsnicethat.com,cracked.com##.module-newsletter
 paratiritis-news.gr##.page-footer > div[class]:has(> .container > .row > div[class] > form[data-name="Newsletter Form"])
 tproger.ru##.tp-tag-subscription-banner
 tproger.ru##.tp-layout-default__aside-right-widget--digest-subscribe
