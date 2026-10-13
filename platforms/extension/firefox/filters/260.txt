@@ -1,9 +1,9 @@
-! Checksum: jIxxBg1CwVvrhS8IREllUg
-! Diff-Path: ../patches/260/260-s-1791823657-14400.patch
+! Checksum: 7tpuY/kcdtJqt/9ezI+VWA
+! Diff-Path: ../patches/260/260-s-1791854758-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.58
-! TimeUpdated: 2026-10-12T16:45:23+00:00
+! Version: 2.0.2.59
+! TimeUpdated: 2026-10-13T01:23:13+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1473,8 +1473,8 @@ github.com##[data-component="IconButton"]:has(> .octicon-copilot)
 ! Symbols pane - Copilot button
 github.com##.prc-ButtonGroup-ButtonGroup-vFUrY:has([data-testid="copilot-ask-menu"])
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/100
-! Right sidebar - Open in GitHub Copilot
-github.com##[data-component="ActionList.Item"]:has([class^="CopilotAppOpenAction-module_"])
+! Right sidebar - Open in GitHub Copilot app
+github.com##[data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-light-"])
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/new (New issue page)
 ! "Write with Copilot" below issue description
 ! * Doesn't always appear. May be limited to issues from repository owner?
@@ -3960,6 +3960,11 @@ www.sysdig.com###pfCfChatContainer
 ! ============
 ! == Target ==
 ! ============
+! Ask Target button by search bar
+www.target.com##div[class^="styles_agenticChatWrapper__"]
+www.target.com#$#.styles_withAgenticEntryPoint__Idg_a { --agentic-entry-width: 0px !important }
+! Search autocomplete - Ask Target
+www.target.com##button[aria-label="Ask Target"]
 ! -- https://www.target.com/p/greenpan-rio-advanced-8-ceramic-nonstick-fry-pan/-/A-95024971
 ! AI shopping assistant
 www.target.com##.sc-35985976-1
