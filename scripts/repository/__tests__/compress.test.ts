@@ -49,6 +49,7 @@ interface TestRepository {
     oldHead: string;
     boundary: string;
     initial: string;
+    keptCommitCount: number;
     squashMessage: string;
     keptSubjects: string[];
     keptCommitterDates: string[];
@@ -74,13 +75,14 @@ const makeTempDir = async (prefix: string): Promise<string> => {
 };
 
 /**
- * Writes `content` to `file.txt` and commits it with a fixed committer date.
+ * Writes `content` to `fileName` and commits it with a fixed committer date.
  *
  * @param git - Git client bound to the fixture repository.
  * @param dir - Fixture repository directory.
- * @param content - Content of `file.txt` for this commit.
+ * @param content - Content of `fileName` for this commit.
  * @param subject - Commit subject.
  * @param date - Author and committer date for the commit.
+ * @param fileName - File to write and commit; defaults to `file.txt`.
  */
 const writeAndCommit = async (
     git: SimpleGit,
@@ -88,10 +90,11 @@ const writeAndCommit = async (
     content: string,
     subject: string,
     date: string,
+    fileName = 'file.txt',
 ): Promise<void> => {
-    await fs.writeFile(path.join(dir, 'file.txt'), content, 'utf8');
+    await fs.writeFile(path.join(dir, fileName), content, 'utf8');
     const commitGit = git.env('GIT_AUTHOR_DATE', date).env('GIT_COMMITTER_DATE', date);
-    await commitGit.add('file.txt');
+    await commitGit.add(fileName);
     await commitGit.commit(subject);
 };
 
@@ -121,11 +124,14 @@ const commitSequence = async (
  *
  * The first-parent chain, oldest to newest: Initial commit, Second commit,
  * Third commit, Fourth commit, Merge feature, Fifth commit..Eighth commit.
- * The feature branch starts at Fourth commit and is merged with `--no-ff`.
+ * The feature branch starts at the `forkPoint`-th linear commit and is merged
+ * with `--no-ff`.
  *
+ * @param forkPoint - Number of linear commits to create before the feature
+ *   branch forks; defaults to all of them, so the branch forks at the boundary.
  * @returns The fixture directory and the recorded history details.
  */
-const createTestRepository = async (): Promise<TestRepository> => {
+const createTestRepository = async (forkPoint = LINEAR_COMMITS.length): Promise<TestRepository> => {
     const dir = await makeTempDir('compress-test-');
     const git = simpleGit({ baseDir: dir, trimmed: true });
 
@@ -137,9 +143,10 @@ const createTestRepository = async (): Promise<TestRepository> => {
     await commitSequence(git, dir, LINEAR_COMMITS, 'linear content');
 
     const boundary = await git.revparse('master');
+    const forkBase = await git.revparse(`master~${LINEAR_COMMITS.length - forkPoint}`);
 
-    await git.checkoutLocalBranch('feature');
-    await writeAndCommit(git, dir, 'feature content', FEATURE_COMMIT.subject, FEATURE_COMMIT.date);
+    await git.raw(['checkout', '-b', 'feature', forkBase]);
+    await writeAndCommit(git, dir, 'feature content', FEATURE_COMMIT.subject, FEATURE_COMMIT.date, 'feature.txt');
     await git.checkout('master');
 
     const mergeGit = git.env('GIT_AUTHOR_DATE', MERGE_DATE).env('GIT_COMMITTER_DATE', MERGE_DATE);
@@ -150,6 +157,7 @@ const createTestRepository = async (): Promise<TestRepository> => {
 
     const oldHead = await git.revparse('master');
     const initial = await git.raw(['rev-list', '--max-parents=0', 'master']);
+    const keptCommitCount = Number(await git.raw(['rev-list', '--count', 'master', `^${boundary}`]));
     const keptSubjects = [MERGE_SUBJECT, ...TAIL_COMMITS.map((commit) => commit.subject)];
     const keptCommitterDates = (await git.raw(['log', '--first-parent', '--format=%cI', 'master']))
         .split('\n')
@@ -161,6 +169,7 @@ const createTestRepository = async (): Promise<TestRepository> => {
         oldHead,
         boundary,
         initial,
+        keptCommitCount,
         squashMessage: `squashed history from ${initial} to ${boundary}`,
         keptSubjects,
         keptCommitterDates,
@@ -168,8 +177,9 @@ const createTestRepository = async (): Promise<TestRepository> => {
     };
 };
 
-// The rewrite tests drive the real `git filter-repo`, which CI runners do not
-// install; skip them when the tool is missing.
+// The rewrite tests drive the real `git filter-repo`, which is not present on
+// every machine; skip them when the tool is missing. CI runs them inside the
+// `Dockerfile` image, which provides the tool.
 const filterRepoAvailable = spawnSync('git', ['filter-repo', '--proceed', '--version'], { stdio: 'ignore' })
     .status === 0;
 
@@ -213,6 +223,22 @@ describe('compress', () => {
 
         const subjects = (await git.raw(['log', '--first-parent', '--format=%s', 'master'])).split('\n');
         expect(subjects).toContain(repo.mergeSubject);
+    });
+
+    it.skipIf(!filterRepoAvailable)('cuts a branch that forked below the boundary', async () => {
+        const repo = await createTestRepository(2);
+        const git = simpleGit({ baseDir: repo.dir, trimmed: true });
+
+        await compress({ commitsToKeep: repo.commitsToKeep, cwd: repo.dir });
+
+        expect(await git.raw(['rev-list', '--count', 'master'])).toBe(String(repo.keptCommitCount + 2));
+        expect(await git.raw(['rev-list', '--count', '--merges', 'master'])).toBe('1');
+
+        const subjects = (await git.raw(['log', '--all', '--format=%s'])).split('\n');
+        expect(subjects).toContain(FEATURE_COMMIT.subject);
+        expect(subjects).not.toContain('Second commit');
+        expect(subjects).not.toContain('Third commit');
+        expect(subjects).not.toContain('Fourth commit');
     });
 
     it.skipIf(!filterRepoAvailable)('keeps the committer dates of the last commits', async () => {
@@ -283,6 +309,30 @@ describe('compress', () => {
         expect(await git.revparse('master')).toBe(repo.oldHead);
     });
 
+    it('rejects a commitsToKeep that selects the initial commit as the boundary', async () => {
+        const repo = await createTestRepository();
+        const git = simpleGit({ baseDir: repo.dir, trimmed: true });
+        const firstParentCount = Number(await git.raw(['rev-list', '--count', '--first-parent', 'master']));
+
+        await expect(compress({ commitsToKeep: firstParentCount - 1, cwd: repo.dir }))
+            .rejects.toThrow(/initial commit/i);
+
+        expect(await git.revparse('master')).toBe(repo.oldHead);
+    });
+
+    it('rejects a repository without a master branch', async () => {
+        const dir = await makeTempDir('compress-no-master-');
+        const git = simpleGit({ baseDir: dir, trimmed: true });
+
+        await git.raw(['init', '--initial-branch=main']);
+        await git.addConfig('user.name', 'Test User');
+        await git.addConfig('user.email', 'test@example.com');
+        await git.addConfig('commit.gpgsign', 'false');
+        await writeAndCommit(git, dir, 'content', 'Initial commit', '2024-01-01T00:00:00+00:00');
+
+        await expect(compress({ commitsToKeep: 1, cwd: dir })).rejects.toThrow(/master branch/i);
+    });
+
     it('rejects a missing git-filter-repo', async () => {
         const repo = await createTestRepository();
         const binDir = await makeTempDir('compress-bin-');
@@ -348,6 +398,31 @@ describe('compress', () => {
         const result = spawnSync(tsxBinaryPath, [entryPath], { cwd: dir, encoding: 'utf8' });
 
         expect(result.status).toBe(0);
+    });
+
+    it('does not run the CLI when evaluated with tsx -e', async () => {
+        const dir = await makeTempDir('compress-eval-');
+        const evaluated = `import(${JSON.stringify(compressModulePath)}).then(() => console.log('imported'));`;
+
+        const result = spawnSync(tsxBinaryPath, ['-e', evaluated], { cwd: dir, encoding: 'utf8' });
+
+        expect(result.status).toBe(0);
+        expect(result.stdout).toContain('imported');
+    });
+
+    it.skipIf(!filterRepoAvailable)('runs the CLI through a symlinked entry point', async () => {
+        const repo = await createTestRepository();
+        const linkDir = await makeTempDir('compress-link-');
+        const linkPath = path.join(linkDir, 'compress.ts');
+        await fs.symlink(compressModulePath, linkPath);
+
+        const result = spawnSync(tsxBinaryPath, [linkPath, String(repo.commitsToKeep)], {
+            cwd: repo.dir,
+            encoding: 'utf8',
+        });
+
+        expect(result.status).toBe(0);
+        expect(result.stdout).toContain('Old head:');
     });
 
     it('exits with code 1 when commitsToKeep is invalid', async () => {
