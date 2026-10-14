@@ -200,17 +200,30 @@ export const compress = async ({ commitsToKeep, cwd }: CompressOptions): Promise
     const squashMessage = `squashed history from ${initial} to ${boundary}`;
 
     // The squash commit gets the date of the boundary's parent, so it sits
-    // chronologically before the kept commits. A dedicated instance keeps the
-    // custom environment (which simple-git passes as the whole child
-    // environment) away from the commands that need the full process env.
+    // chronologically before the kept commits. The dates go through the process
+    // environment: simple-git versions that carry the unsafe-operations plugin
+    // refuse a custom environment with variables such as PAGER or EDITOR.
     const boundaryParentDate = await git.raw(['show', '-s', '--format=%cI', `${boundary}~1`]);
-    const squash = await simpleGit({ baseDir: cwd, trimmed: true })
-        .env({
-            ...process.env,
-            GIT_AUTHOR_DATE: boundaryParentDate,
-            GIT_COMMITTER_DATE: boundaryParentDate,
-        })
-        .raw(['commit-tree', tree, '-p', initial, '-m', squashMessage]);
+    const previousAuthorDate = process.env.GIT_AUTHOR_DATE;
+    const previousCommitterDate = process.env.GIT_COMMITTER_DATE;
+    process.env.GIT_AUTHOR_DATE = boundaryParentDate;
+    process.env.GIT_COMMITTER_DATE = boundaryParentDate;
+
+    let squash: string;
+    try {
+        squash = await git.raw(['commit-tree', tree, '-p', initial, '-m', squashMessage]);
+    } finally {
+        if (previousAuthorDate === undefined) {
+            delete process.env.GIT_AUTHOR_DATE;
+        } else {
+            process.env.GIT_AUTHOR_DATE = previousAuthorDate;
+        }
+        if (previousCommitterDate === undefined) {
+            delete process.env.GIT_COMMITTER_DATE;
+        } else {
+            process.env.GIT_COMMITTER_DATE = previousCommitterDate;
+        }
+    }
 
     const { grafts, expectedCommitCount } = await collectBoundaryCut(git, oldHead, boundary, squash);
 
