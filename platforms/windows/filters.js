@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.97.35",
-			"timeUpdated": "2026-10-14T22:05:10+0000",
+			"version": "2.4.97.36",
+			"timeUpdated": "2026-10-14T23:05:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.38.23",
-			"timeUpdated": "2026-10-14T21:06:16+0000",
+			"version": "2.1.38.24",
+			"timeUpdated": "2026-10-14T23:06:30+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -1828,8 +1828,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.67.50",
-			"timeUpdated": "2026-10-14T16:07:20+0000",
+			"version": "2.1.67.51",
+			"timeUpdated": "2026-10-14T23:06:52+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
