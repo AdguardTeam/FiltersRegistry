@@ -33,6 +33,8 @@ for all supported AdGuard products.
     - `build-adguard.yaml`
     - `build-3p.yaml`
     - `test.yaml` (runs `yarn test` on every pull request)
+    - `compression-tests.yaml` (runs the repository compression tests in a container on pull
+      requests that touch `scripts/repository/`, and monthly)
     - `update-translations.yaml` (weekly translations download from Crowdin that opens a PR;
       requires the `CROWDIN_PERSONAL_TOKEN` secret)
 - **Translations upload**: manual only, via the legacy `scripts/translations/upload.sh`
@@ -63,7 +65,7 @@ for all supported AdGuard products.
 │   ├── build/                      # build.js, build-config.ts, constants.js,
 │   │                               #   custom_platforms.ts, patches.ts, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
-│   ├── repository/                 # compress.js — repository compression
+│   ├── repository/                 # compress.ts — repository compression
 │   ├── translations/               # Locale download/upload tooling, PR validation reporting
 │   ├── utils/                      # Shared utilities (find_files.js, splitter.ts, strings.js)
 │   ├── validation/                 # validate_platforms.ts, validate_locales.ts
@@ -147,6 +149,8 @@ After completing any task that modifies code in `scripts/`:
    alongside the code you changed:
    - `scripts/wildcard-domain-processor/__tests__/` for wildcard-domain-processor changes
    - `scripts/build/__tests__/` for build script changes
+   - `scripts/repository/__tests__/` for repository script changes
+   - `scripts/translations/__tests__/` for translation script changes
 
 4. **Validate platform outputs** if filters, templates, or build scripts changed.
 
