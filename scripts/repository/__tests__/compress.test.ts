@@ -369,7 +369,7 @@ describe('compress', () => {
             'if [ "$status" -ne 0 ]; then exit "$status"; fi',
             'echo tampered >> file.txt',
             'git add file.txt',
-            'git commit -q -m "tamper tree"',
+            'git -c core.hooksPath=/dev/null commit -q -m "tamper tree"',
             '',
         ].join('\n');
         await fs.writeFile(path.join(binDir, 'git-filter-repo'), wrapper, { mode: 0o755 });
