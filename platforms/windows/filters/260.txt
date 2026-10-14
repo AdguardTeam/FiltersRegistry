@@ -1,9 +1,9 @@
-! Checksum: 8B60U/zJXITT9n0Y8nI3Ew
-! Diff-Path: ../patches/260/260-s-1791953299-14400.patch
+! Checksum: pZ16j81PCc+Q3iW5sRIegg
+! Diff-Path: ../patches/260/260-s-1791996539-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.64
-! TimeUpdated: 2026-10-14T04:46:10+00:00
+! Version: 2.0.2.65
+! TimeUpdated: 2026-10-14T16:46:21+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -2575,6 +2575,11 @@ www.kohls.com##div:has(> button[aria-label="Ask Kohl's"])
 ! -- https://www.kohls.com/product/prd-3910467/mens-sonoma-goods-for-life-supersoft-essential-crewneck-tee.jsp
 ! Shop Similar button
 www.kohls.com##button[aria-label="Shop Similar - Find similar products using AI assistance"]
+! ============
+! == Kroger ==
+! ============
+! Shopping Assistant button
+www.kroger.com##.citrus-Link[href="/shoppingassistant"]
 ! ==============
 ! == Langfuse ==
 ! ==============
@@ -4547,10 +4552,20 @@ recoverit.wondershare.com##.ai-summary
 ! == Wordpress ==
 ! ===============
 ! -- https://wordpress.com/ (Main page - logged out)
-! Top navbar > Products > AI Website Builder
-wordpress.com##.x-nav--ai-website-builder-header
-! Top navbar > Footer > AI Website Builder
-wordpress.com##.x-nav-footer--ai-website-builder-footer
+! Navbar dropdown items
+wordpress.com##.x-nav--products-ai-website-builder
+wordpress.com##.x-nav--resources-business-name-generator
+wordpress.com##.x-nav--resources-logo-maker
+wordpress.com##.x-nav--resources-ai
+wordpress.com##.x-menu-mobile-dropdown-item:has(> [href="https://wordpress.com/ai-website-builder/"])
+wordpress.com##.x-menu-mobile-dropdown-item:has(> [href="https://wordpress.com/business-name-generator/"])
+wordpress.com##.x-menu-mobile-dropdown-item:has(> [href="https://wordpress.com/logo-maker/"])
+wordpress.com##.x-menu-mobile-dropdown-item:has(> [href="https://wordpress.com/ai"])
+! Footer
+wordpress.com##.x-nav-footer--footer-ai-website-builder
+wordpress.com##.x-nav-footer--footer-business-name-generator
+wordpress.com##.x-nav-footer--footer-logo-maker
+wordpress.com##.x-nav-footer--footer-ai
 ! -- https://wordpress.com/sites (Logged in)
 ! "Add new site" button > "Create with AI"
 wordpress.com##.dashboard-add-new-site__menu-item[href^="https://wordpress.com/setup/ai-site-builder"]
