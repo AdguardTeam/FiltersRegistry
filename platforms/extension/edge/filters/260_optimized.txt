@@ -1,9 +1,9 @@
-! Checksum: oyQUIQw63N0Ee/N1psmSeA
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1791924413-14400.patch
+! Checksum: lhpeGcaOE7pqdFlslhWfew
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1791940323-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.62
-! TimeUpdated: 2026-10-13T20:44:23+00:00
+! Version: 2.0.2.63
+! TimeUpdated: 2026-10-14T01:09:16+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -149,6 +149,9 @@ www.bing.com##.b_ans.b_top:has(> .cht_container)
 www.bing.com##.b_ans:has(> #b_wpt_container_ml)
 www.bing.com###ccpg-container:has(#b_cp_upsell_box_parent)
 www.bing.com###imgcrtr_key
+www.bing.com##.ihps [data-wptds-carousel-item]:has([href^="/images/create/ai-image-generator"])
+www.bing.com##.vnt-toggle-pill[aria-checked="false"]
+www.bing.com##.dgControl_list:not([data-row]):has(.top-warning-container)
 www.bing.com#?#.slide:has(.gtxmd-cm.button.lkmd-cm:contains(Try it on Copilot))
 www.bing.com##.conversation_starters
 www.bing.com##.editorial-promo-card:has(> [aria-label^="Advance your AI skills"])
@@ -1034,6 +1037,13 @@ www.msn.com##.me-stripe-tile-content:has(> .me-stripe-tile-button[aria-label="Mi
 ||www.chatbase.co/embed.min.js$script,domain=www.myonlinetraininghub.com
 news.mydrivers.com###AiSummaryLink
 ||passport.mydrivers.com//V2/pc/AISummaryHandler.ashx$xmlhttprequest,domain=news.mydrivers.com
+www.myfonts.com##.gh-slide:has(> [href^="https://chatgpt.com/apps/myfonts/"])
+www.myfonts.com#$?#.gh-slide:has(> [href^="https://chatgpt.com/apps/myfonts/"]) { remove: true; }
+www.myfonts.com###ai-search-banner
+www.myfonts.com##[data-testid="ai-smart-search-cta"]
+www.myfonts.com###AIMagicStrip
+www.myfonts.com##[data-testid="myfonts-chatgpt-banner"]
+www.myfonts.com##[data-testid="restore-ai-results-cta"]
 www.nate.com##.link-ngpt
 www.nate.com##.chat1
 ||azurefd.net/cdns/copilot_v3.min.js$script,domain=nus.edu.sg
@@ -1639,12 +1649,12 @@ allporncomic.com##.menu-item:has(> [href="https://allporncomic.com/ai-artists/"]
 allporncomic.com##.menu-item:has(> [href="https://s.zlink7.com/v1/d.php?z=5605532"])
 allporncomic.com##.genres__collapse .col-6.col-sm-4.col-md-2:has(> [href="https://allporncomic.com/porncomicgenre/ai-gen/"])
 animeidhentai.com###promo-topbar
-animeidhentai.com##.topbar-ai
-animeidhentai.com##.promo
-animeidhentai.com##.nav-group:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(> [href="https://aipenly.com/"])
-animeidhentai.com##.nav-sect:has(+ .nav-group > [href="https://hentaihub.com/?ref=AN-MENULINK"]):has(+ .nav-group > [href="https://aipenly.com/"])
-animeidhentai.com##.footer-list > li:has(> [href="https://hentaihub.com/?ref=AN-MENULINK"])
-animeidhentai.com##.aigen
+animeidhentai.com,hentai.tv##.topbar-ai
+animeidhentai.com,hentai.tv##.promo
+animeidhentai.com,hentai.tv##.nav-item[href^="https://hentaihub.com/?ref="]
+animeidhentai.com,hentai.tv##.nav-item[href="https://aipenly.com/"]
+animeidhentai.com,hentai.tv##.footer-list > li:has(> [href^="https://hentaihub.com/?ref="])
+animeidhentai.com,hentai.tv##.aigen
 anysex.com##li:has(> [href="https://anysex.com/photos/categories/ai/"])
 anysex.com##li:has(> [href^="https://rtb-6.anysex.com/bid?spot_id[]=171"])
 www.ashemaletube.com##.navmenu > li:has(> [title="AI Lover"])
@@ -1707,6 +1717,7 @@ hentaihaven.xxx###menu-item-96519
 hentaihaven.xxx##.hhz_nh
 hentaihaven.xxx##.widget_block:has(.novaads)
 hentaihaven.xxx#?#.widget_block:has(.wp-block-heading:contains(AI Hentai))
+hentaihaven.io##.menu-item:has(> [href^="https://hentaihub.com/?ref="])
 hentaihaven.vip,hentaistream.tv,nhentaihaven.org,porngifs.xxx##.menu-item:has(> [href^="https://pornhaven.ai/"])
 hentaihaven.xxx##aside:has(> [href^="https://pornhaven.ai/"])
 hentaihaven.xxx##div:has(> [href^="https://pornhaven.ai/"])
@@ -1750,6 +1761,7 @@ luscious.net##.desktop-module__submenu-item--njaEB:has([href$="/ai-art-63/"])
 manhwaread.com##.menu-item:has(> [href="https://juicyads.in/tab.php?id=2101971"])
 milftoon.xxx##.ann-banner[aria-label="Advertisement"]
 mrgay.com##[href^="https://lp3.joi.com/teddy?afid=1000020659&subafid=%5BCAMPAIGN_ID%5D_mrgay.com"]
+muchohentai.com##.menu-item:has(> [href="https://redvideo.ai"])
 mult34.com##.menu-item:has(> [href="https://dfhidbh.flowflirting.com/c/39a8baadcfd77?subsource=m34&sub2=ai_jerk_off&sub3=menu_link"])
 mult34.com##.hentry[data-exclude="1"]:has([alt="Create and Fuck your AI Slut"])
 multporn.net###menu-22120-1
