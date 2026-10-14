@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cq+898yCCVTwfI3kvtm9vQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1791958337-3600.patch
+! Checksum: vSugUTJ7sedI5NrLyZIsSw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1791962119-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.97.19
-! TimeUpdated: 2026-10-14T06:08:00+00:00
+! Version: 2.4.97.20
+! TimeUpdated: 2026-10-14T07:10:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||textads.lv^
 ||resourcelow.com^
 ||dgkqqbixb.com^
 ||exbd.ex.co^
@@ -33459,6 +33460,7 @@ vatantat.ru##a[href="https://pobeda.onf.ru/"]
 ##.right-menu > div.adhl
 !
 !
+seomaking.com##.sideXd
 xn--y3cta3b5d6a.net###main-video-container:style(display: block !important;)
 xn--y3cta3b5d6a.net###main > div[style]:not([class]):style(display: none !important;)
 xn--y3cta3b5d6a.net##.top-banner-grid:style(display: none !important;)
@@ -40426,6 +40428,8 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+goal.com##.abs-widget
+nesninja.com##.partner-slot
 ||vdrama.fans/js/vd-ad-config.js
 editorial.rottentomatoes.com##.ad-leaderboard_wrapper
 androidapks.com##div[style="margin:-15px auto 6px;min-height:250px !important;"]
@@ -62351,6 +62355,8 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 !
 !
 !+ NOT_OPTIMIZED
+goal.com##.fco-sticky-wrapper__wrapper
+!+ NOT_OPTIMIZED
 outsideonline.com##.prestitial-ad
 !+ NOT_OPTIMIZED
 comix.*,comix.ws,animekai.*,animekai.la,animekai.gs,animekai.fo,animekai.fi,comix.to,anikai.to##body > a[target="_blank"][style^="position:"][style*="z-index:"]
@@ -63339,6 +63345,9 @@ giantfreakinrobot.com##.pw-leaderboard-btf-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/91687
 !+ NOT_OPTIMIZED
 siasat.com##.stream-item-in-post
+! https://github.com/AdguardTeam/AdguardFilters/issues/244243
+! Required to fix loading AdGuard content script
+! Website uses service worker and AdGuard content script is not loaded correctly without this rule
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152773
 ! It's necessary to block service worker, otherwise element hiding and javascript rules do not work
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146499
