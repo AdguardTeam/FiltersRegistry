@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.97.31",
-			"timeUpdated": "2026-10-14T18:06:46+0000",
+			"version": "2.4.97.32",
+			"timeUpdated": "2026-10-14T19:05:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.82.81",
-			"timeUpdated": "2026-10-14T18:07:20+0000",
+			"version": "2.2.82.82",
+			"timeUpdated": "2026-10-14T19:06:34+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.38.21",
-			"timeUpdated": "2026-10-14T17:06:11+0000",
+			"version": "2.1.38.22",
+			"timeUpdated": "2026-10-14T19:06:37+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -733,8 +733,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.84",
-			"timeUpdated": "2026-10-14T18:07:25+0000",
+			"version": "2.0.96.85",
+			"timeUpdated": "2026-10-14T19:06:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -755,8 +755,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.85.41",
-			"timeUpdated": "2026-10-14T17:06:20+0000",
+			"version": "2.0.85.42",
+			"timeUpdated": "2026-10-14T19:06:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -799,8 +799,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.23",
-			"timeUpdated": "2026-10-14T15:07:14+0000",
+			"version": "2.0.49.24",
+			"timeUpdated": "2026-10-14T19:06:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -924,8 +924,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.0.46",
-			"timeUpdated": "2026-10-14T15:07:19+0000",
+			"version": "2.0.0.47",
+			"timeUpdated": "2026-10-14T19:06:53+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
