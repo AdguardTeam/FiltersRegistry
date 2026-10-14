@@ -1,9 +1,9 @@
-! Checksum: XdI3KZlmTnSUjM2HWR4wow
-! Diff-Path: ../patches/260/260-s-1791940336-14400.patch
+! Checksum: e3ynBAa7kLb9xG9hj4TjpA
+! Diff-Path: ../patches/260/260-s-1791953289-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.63
-! TimeUpdated: 2026-10-14T01:09:16+00:00
+! Version: 2.0.2.64
+! TimeUpdated: 2026-10-14T04:46:10+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -4787,11 +4787,11 @@ www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.
 ! * Playback bar chapter segments
 m.youtube.com,www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.playerBar.multiMarkersPlayerBarRenderer.visibleOnLoad.key=="AUTO_CHAPTERS"]')
 ! * "In this video" sidebar chapters + backup for playback bar
-m.youtube.com,www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.panelIdentifier=="engagement-panel-macro-markers-auto-chapters"]')
+www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.panelIdentifier=="engagement-panel-macro-markers-auto-chapters"].content')
+m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.panelIdentifier=="engagement-panel-macro-markers-auto-chapters"]')
 ! * Chapter cards in description
-www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[0].updateEngagementPanelContentCommand.contentSourcePanelIdentifier.tag=="engagement-panel-macro-markers-auto-chapters"]')
 m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[2].engagementPanelHeaderShowNavigationButtonCommand.targetId=="engagement-panel-macro-markers-auto-chapters"]')
-! Automatic chapters backup filters
+! Automatic chapter backup filters
 ! Partially based on https://github.com/moocj/yt-remove-ai-chapters
 ! TODO: Remove segments on playback bar
 ! * Player - Chapter tooltips when hovering progress bar
@@ -4800,7 +4800,7 @@ www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-
 www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytp-chapter-container
 ! * Description - Chapter cards
 www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) ytd-horizontal-card-list-renderer[modern-chapters]
-! * Sidebar panel - Chapter tab
+! * Sidebar panel - Chapter tab (Not covered by JSON filters)
 www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytChipBarViewModelChipWrapper:has(button[aria-label="Chapters"][aria-selected="false"])
 www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) chip-bar-view-model:has(button[aria-label="Chapters"][aria-selected="false"]):has(.ytChipBarViewModelChipWrapper:last-child:nth-child(2))
 ! * Sidebar panel - Transcript chapter headers
