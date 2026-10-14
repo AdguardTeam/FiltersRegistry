@@ -1,9 +1,9 @@
-! Checksum: IaVysuTrpRhr07rJLc9Dbg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1791940311-14400.patch
+! Checksum: QhCLysiYTuzmqOrqVeAd6w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1791953279-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.70.47
-! TimeUpdated: 2026-10-14T01:08:21+00:00
+! Version: 2.1.70.48
+! TimeUpdated: 2026-10-14T04:45:35+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -99,6 +99,7 @@
 /sharer.js
 /sharethis.js
 /shareTools.js
+/shareTT.js
 /shareTwitter.png
 /shariff.min.js
 /silicon-counters.js
@@ -188,7 +189,6 @@ _social-bar/
 ###desktop-share-wrapper
 ###details-share-icon-link
 ###divSideShare
-###divSocial
 ###embed-share
 ###et-post-share
 ###et-social-icons
@@ -210,6 +210,7 @@ _social-bar/
 ###facebook_link
 ###facebook_overlay
 ###facebook_share
+###facebook_subscribe
 ###facebookbtn
 ###facebooklike
 ###facebooknotification
@@ -219,6 +220,7 @@ _social-bar/
 ###fan-exit
 ###fanback
 ###fb-box
+###fb-fanbox
 ###fb-like
 ###fb-like-box
 ###fbDiv
@@ -284,6 +286,7 @@ _social-bar/
 ###footer_social_instagram
 ###footer_social_youtube
 ###footer_socialmedia
+###galleryPlayerShare
 ###getSocial
 ###gkSocial
 ###gkSocialAPI
@@ -873,7 +876,6 @@ _social-bar/
 ##.article__share-buttons
 ##.article__share-title
 ##.article__sharebar
-##.article__shares
 ##.article__sharing
 ##.article__social
 ##.article__social-links
@@ -1245,7 +1247,6 @@ _social-bar/
 ##.fb-xfbml-parse-ignore
 ##.fbBtn
 ##.fbLike
-##.fbLogo
 ##.fbShare
 ##.fbShareTrigger
 ##.fb_bar
@@ -1877,6 +1878,7 @@ _social-bar/
 ##.mod-facebook
 ##.mod-follow
 ##.mod-twitter
+##.modSharing
 ##.mod_footer_sociallist_iconlink
 ##.module--share
 ##.module-follow
@@ -1899,7 +1901,6 @@ _social-bar/
 ##.native-share
 ##.native-share-buttons
 ##.native-share-wrapper
-##.nav--share
 ##.nav--social
 ##.nav-footer-social
 ##.nav-share
@@ -2105,6 +2106,7 @@ _social-bar/
 ##.s_google
 ##.s_instagram
 ##.s_twitter
+##.s_youtube
 ##.saboxplugin-socials
 ##.safirShare
 ##.sal-leaf-accessori-sharebox
@@ -2120,6 +2122,7 @@ _social-bar/
 ##.scSocialIconsWidget
 ##.sc_sns
 ##.scriptlesssocialsharing
+##.scroll-triggered-box
 ##.sd-sharing
 ##.sd-social
 ##.sd-social-icon-text
@@ -2769,7 +2772,6 @@ _social-bar/
 ##.social-icons-new
 ##.social-icons-title
 ##.social-icons-top
-##.social-icons-v2
 ##.social-icons-widget
 ##.social-icons-wrap
 ##.social-icons-wrapper
@@ -2854,7 +2856,6 @@ _social-bar/
 ##.social-share-article
 ##.social-share-bar
 ##.social-share-block
-##.social-share-bottom
 ##.social-share-box
 ##.social-share-btn
 ##.social-share-btns
@@ -3662,7 +3663,6 @@ asahi.com##.SnsUtilityArea
 ndtv.com##.SoFl_cr-lf-r2
 birminghammail.co.uk,bristolpost.co.uk,dailyrecord.co.uk,dailystar.co.uk,irishstar.com,liverpoolecho.co.uk,manchestereveningnews.co.uk,mirror.co.uk,stokesentinel.co.uk,themirror.com,walesonline.co.uk##.SocialFollowBar_wrapper__h4k_D
 cbssports.com##.SocialIconsBar
-suntimes.com,tageblatt.de##.SocialLink
 indiatoday.in##.Story_whatsapp_channel__6xdtB
 pixivision.net##._floated-bottom-bar
 pixivision.net##._follow-us-card
@@ -3802,12 +3802,10 @@ www.opera.com##.footer__follow-label
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
 www.opera.com##.footer__social-icons
-edubirdie.com,infoq.com##.footer__social-wrap
 adguard.com##.footer__socials
 indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
-gematsu.com##.gematsu-footer__social
 blackmagicdesign.com##.gf-socials
 news18.com##.gglebtn
 gardinerbryant.com##.gh-share-container
@@ -3985,7 +3983,6 @@ thenation.com##.sharethis-menu
 proofpoint.com##.sharethis_toolbox
 12tomatoes.com##.sharetocare-popup
 welivesecurity.com##.sidebar-card-media
-freefrontend.com##.sidebar-footer > .nav-title
 tribune.com.pk##.sidebar-social-icons
 pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
 budgetbytes.com##.single-share-wrap
@@ -4350,7 +4347,6 @@ capital.gr##.controls
 telex.hu##.fb-box
 index.hu,totalcar.hu,velvet.hu##.megoszt
 telex.hu##.options
-atlatszo.hu##.post_share
 amarujala.com##.auw_event_share
 centrometeoitaliano.it,leggo.it###box-social
 liberoquotidiano.it###dropdown-trigger
@@ -4407,6 +4403,7 @@ buzzap.jp##.sbmk_sidebar
 watchmono.com##.sns-list
 univ-journal.jp##.snsSpace
 qiita.com##[class^="style-"] > [class^="style-"] > div[class^="style-"]:has(> button[aria-label][title][aria-describedby] + p[id][role="tooltip"])
+qiita.com##[href^="https://b.hatena.ne.jp/entry/"]
 qiita.com##div[id^="AdventCalendar"] hr ~ div[class^="style-"]:has(> button[class^="style-"][aria-label][title])
 ||imyfone.com/assets/js/media_share/
 ||line-scdn.net/line_add_friends/edge/btn/
