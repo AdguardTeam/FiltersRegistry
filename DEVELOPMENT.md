@@ -387,7 +387,14 @@ yarn test
 ```
 
 Tests use Vitest and live alongside the code they cover in `__tests__/` directories,
-currently `scripts/build/__tests__/` and `scripts/wildcard-domain-processor/__tests__/`.
+currently `scripts/build/__tests__/`, `scripts/repository/__tests__/`,
+`scripts/translations/__tests__/`, and `scripts/wildcard-domain-processor/__tests__/`.
+
+The repository compression tests drive the real `git filter-repo` 2.47 or newer and are skipped
+when the tool is not installed. The compression procedure needs the tool on the operator machine.
+The `Compression tests` workflow runs them in a container image that provides the tool: on every
+pull request that touches `scripts/repository/`, and on a monthly schedule, so a new
+`git-filter-repo` release is caught before the annual window.
 
 ### Validation
 
@@ -413,70 +420,171 @@ checkout with a valid `HEAD`.
 
 ### Repository Compression
 
-Once a year, we will compress the repository to reduce its size.
-We will delete all remote branches and overwrite the master branch with a squashed history.
-The compression script will retain the first N commits in their original order in the history.
-All other commits (except the first one) will be squashed into a single commit.
+Once a year, we compress the repository to reduce its size.
+The compression script rewrites `master` into a history that holds the initial commit,
+one squash commit, and the last `commits_to_keep` commits (default `1000`, about a month
+of history) with their merge structure. The file tree of `master` is unchanged. The storage
+scheme stays the same: `platforms/` and the generated files remain in Git.
 
 #### How to
 
-##### 1. Squash all old commits
+##### 1. Prepare a full clone and a backup copy
+
+```bash
+git clone <repository-url>
+git clone --mirror <repository-url> backup.git
+# or, to extend an existing shallow clone:
+git fetch --unshallow
+```
+
+Keep the backup copy until the next build succeeds and the team has re-cloned.
+
+##### 2. Install the dependencies and `git-filter-repo`
 
 ```bash
 yarn install
-yarn compress [commits_to_keep]
+brew install git-filter-repo
+# or
+pipx install git-filter-repo
 ```
 
-It will retain the first `[commits_to_keep]` (default is 10000,
-which is approximately one year of history) commits, starting from now,
-in their original order in the history.
-All other older commits (except the very first one) will be squashed into a single commit.
+`git-filter-repo` 2.47 or newer is required. The script verifies the version and stops
+if the tool is missing or older.
 
-##### 2. Overwrite master branch
+##### 3. Record the current `master` head
+
+This hash is the rollback anchor:
 
 ```bash
-git push --set-upstream origin --force master
+git rev-parse master
 ```
 
-##### 3. List all remote branches
+##### 4. Rehearse on a copy
+
+Run `yarn compress 1000` on a copy of the full clone and run the validation commands
+from step 10.
+
+##### 5. Announce the window and close the open pull requests
+
+Announce the window to the team. Close the open pull requests:
+
+```bash
+gh pr close <number> --comment "rebase and reopen after the compression"
+```
+
+##### 6. Disable the write workflows and drain the active runs
+
+```bash
+gh workflow disable build-adguard.yaml
+gh workflow disable build-3p.yaml
+gh workflow disable update-translations.yaml
+gh run list --status queued
+gh run list --status in_progress
+```
+
+Wait until both lists are empty.
+
+##### 7. Disable the branch protection ruleset
+
+Disable the ruleset that blocks force pushes and deletion of the `master` branch.
+
+##### 8. Delete every branch except `master`
+
+List the remote branches, then delete each branch except `master`:
 
 ```bash
 git ls-remote --heads origin
+git push origin --delete <branch>
 ```
 
-##### 4. Remove remote branches
-
-Remove remote branches that are no longer needed locally
-and push the removal to the remote repository:
+##### 9. Rewrite the local history
 
 ```bash
-git push origin --delete branchName
+git fetch origin
+# the script rewrites the local master, so move it to the remote head first
+git reset --hard origin/master
+yarn compress 1000
 ```
 
-Replace `branchName` with the name of the branch you want to delete.
+The script prints the old head and the new head.
 
-##### 5. Prune remote branches
+##### 10. Validate the rewritten history
 
-Use git remote prune origin to remove references to remote branches that have been deleted on the remote repository.
-This keeps your local repository in sync with the remote:
+With the old head hash printed by the script:
+
+- `git diff <old head> master` is empty;
+- `git rev-list --count --first-parent master` equals `commits_to_keep + 2`;
+- `git log --oneline --first-parent | tail -2` shows the squash commit above the
+  initial commit;
+- the merge commits are still present;
+- `git for-each-ref refs/replace` is empty.
+
+##### 11. Overwrite the `master` branch
 
 ```bash
-git remote prune origin
+git push --force-with-lease=master:<old head> origin master
 ```
 
-##### 6. Clean the reflog
+The lease rejects the push if `master` moves after the fetch in step 9, instead of
+dropping those commits.
 
-Over time, Git can accumulate references in the reflog that are no longer needed.
-You can clean the reflog using the following command:
+##### 12. Restore the ruleset and the workflows
+
+Re-enable the branch protection ruleset and the write workflows:
 
 ```bash
-git reflog expire --expire=now --all
-git gc --aggressive --prune=now
+gh workflow enable build-adguard.yaml
+gh workflow enable build-3p.yaml
+gh workflow enable update-translations.yaml
 ```
 
-This will remove unnecessary entries from the reflog and perform garbage collection.
+##### 13. Run one build
 
-After this procedure, the Git repository size will be reduced.
+Confirm that the build succeeds and pushes a commit:
+
+```bash
+gh workflow run build-adguard.yaml
+```
+
+#### If the validation fails
+
+Stop before the push. The script runs `git filter-repo` with `--refs master`, which
+keeps the pre-rewrite objects, so you can restore the old history:
+
+```bash
+git reset --hard <old head>
+```
+
+If the old head is unavailable, restore from the backup copy. If the push is rejected,
+the ruleset that blocks force pushes is still active: disable it and push again.
+
+#### After the window
+
+Send the team instruction:
+
+- re-clone, or run `git fetch origin && git reset --hard origin/master`;
+- never run `git pull` from an old clone;
+- rebase branches before pushing.
+
+Pull-request authors rebase onto the new `master` and reopen their pull requests. An old
+branch shares only the initial commit with the new `master`, so a plain `git rebase
+origin/master` replays the whole squashed history. Save the old base before the fetch and
+rebase onto it:
+
+```bash
+old_base=$(git merge-base <branch> origin/master)   # before fetching the rewritten master
+git fetch origin
+git rebase --onto origin/master "$old_base" <branch>
+```
+
+GitHub keeps `refs/pull/*/head` for every closed pull request, so the size GitHub reports
+may not drop after the rewrite. New clones are smaller because they do not fetch
+pull-request refs. Keep the backup copy until the next build succeeds and the team has
+re-cloned. Optionally reclaim local disk:
+
+```bash
+git reflog expire --expire=now --all && git gc --prune=now
+```
 
 ## Common Tasks
 
@@ -567,7 +675,8 @@ All build tooling lives under `scripts/`. After making changes:
 1. Run `yarn lint` — fix all errors.
 1. Run `yarn test` — all tests must pass.
 1. Update tests in the matching `__tests__/` directory for the code you changed
-   (`scripts/build/__tests__/`, `scripts/wildcard-domain-processor/__tests__/`).
+   (`scripts/build/__tests__/`, `scripts/repository/__tests__/`,
+   `scripts/translations/__tests__/`, `scripts/wildcard-domain-processor/__tests__/`).
 1. Run `yarn validate` if the change affects filter compilation or platform outputs.
 
 Build scripts under `scripts/` are written in JavaScript and TypeScript, executed
