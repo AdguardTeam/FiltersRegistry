@@ -21,25 +21,10 @@ const mockFsPromises = (overrides: Record<string, unknown> = {}): { default: Rec
     },
 });
 
-// compile() always fetches percent.json remotely, even under use(). Mock only
-// that call so the suite below stays offline; everything else passes through.
-vi.mock('child_process', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('child_process')>();
-    return {
-        ...actual,
-        execFileSync: vi.fn((command: string, args: string[], options: unknown) => {
-            const url = args.find((arg) => typeof arg === 'string' && arg.includes('percent.json'));
-            if (url) {
-                return JSON.stringify({ config: [{ filterId: 1 }] });
-            }
-            return actual.execFileSync(command, args, options as never);
-        }),
-    };
-});
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const expectedOptimizationStatsBasePath = path.resolve(__dirname, '../../../temp/optimization/stats');
+const expectedPercentOptions = { percentPath: path.resolve(__dirname, '../../../optimization_config.json') };
 
 const EMPTY_FILTER_IDS = Object.freeze([]);
 const FILTER_ID = 1;
@@ -142,7 +127,12 @@ describe('build.js: cache flag handling', () => {
 
             await vi.waitFor(() => {
                 expect(vi.mocked(mockedStats.download))
-                    .toHaveBeenCalledWith(expectedOptimizationStatsBasePath, includedFilterIds, excludedFilterIds);
+                    .toHaveBeenCalledWith(
+                        expectedOptimizationStatsBasePath,
+                        includedFilterIds,
+                        excludedFilterIds,
+                        expectedPercentOptions,
+                    );
             });
             expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
         },
@@ -185,7 +175,10 @@ describe('build.js: cache flag handling', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
         });
-        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedOptimizationStatsBasePath);
+        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(
+            expectedOptimizationStatsBasePath,
+            expectedPercentOptions,
+        );
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
@@ -255,7 +248,10 @@ describe('build.js: cache flag handling', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
         });
-        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedOptimizationStatsBasePath);
+        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(
+            expectedOptimizationStatsBasePath,
+            expectedPercentOptions,
+        );
     });
 
     it('stats dir exists but its filters/ subfolder is missing: falls back to remote, does not crash', async () => {
@@ -372,8 +368,10 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
         const statsDir = path.join(optimizationStatsBasePath, 'filters', String(FILTER_ID));
         await fs.mkdir(statsDir, { recursive: true });
 
-        // percent.json isn't written locally — it's never read from disk, only
-        // fetched (and mocked above), so it's not needed here.
+        // Injected via percentPath, so compile() makes no network request for percent.json.
+        const percentPath = path.join(tmpDir, 'optimization_config.json');
+        await fs.writeFile(percentPath, JSON.stringify([{ filterId: FILTER_ID, percent: 40 }]), 'utf-8');
+
         const statsJson = JSON.stringify({
             percent: 40,
             minPercent: 25,
@@ -393,7 +391,7 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
         await fs.writeFile(statsPath, statsJson, 'utf-8');
         statsContentBefore = statsJson;
 
-        localOptimizationStatistics.use(optimizationStatsBasePath);
+        localOptimizationStatistics.use(optimizationStatsBasePath, { percentPath });
 
         await compile(filtersDir, logPath, reportPath, platformsDir, [FILTER_ID], [], TEST_PLATFORM_CONFIG);
 

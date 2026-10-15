@@ -62,6 +62,10 @@ const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
 // applying a stats cache outside the allowed --include/--skip scope results
 // will trigger a hard failure in compile().
 const optimizationStatsScopeFile = `${optimizationStatsDir}.scope`;
+// Pins the set of optimizable filters, so --download-stats and --use-cache do
+// not depend on the remote percent.json (which changes over time and requires
+// network access).
+const optimizationPercentPath = path.join(__dirname, '../..', 'optimization_config.json');
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -133,6 +137,7 @@ const buildFilters = async () => {
             optimizationStatsDir,
             includedFilterIDs,
             excludedFilterIDs,
+            { percentPath: optimizationPercentPath },
         );
         await fs.writeFile(
             optimizationStatsScopeFile,
@@ -185,7 +190,7 @@ const buildFilters = async () => {
 
             const isScopeIdentical = cachedScopeFlags === currentScopeFlags;
             if (isScopeIdentical || cachedScopeFlags === unscopedFlags) {
-                localOptimizationStatistics.use(optimizationStatsDir);
+                localOptimizationStatistics.use(optimizationStatsDir, { percentPath: optimizationPercentPath });
                 console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
             } else {
                 console.log(
