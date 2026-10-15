@@ -1,8 +1,8 @@
-! Checksum: hKa5HRPE+H3f7YcNyZDVRg
+! Checksum: UCv98nHYcNaWKFRpZ8LfBg
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.82.86
-! TimeUpdated: 2026-10-15T06:09:14+00:00
+! Version: 2.2.82.87
+! TimeUpdated: 2026-10-15T07:10:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2674,6 +2674,8 @@ e-hortico.pl,sklep.doppelherz.pl,jestemwbajce.pl,greentouch.pl,4zywioly.pl,kanke
 !
 ! NOTE: Regular rules
 !
+metalmagazine.eu#%#//scriptlet('set-cookie', 'analytics_consent', 'false')
+metalmagazine.eu#%#//scriptlet('set-cookie', 'cookies_requested', 'true')
 wpolu.pl#%#//scriptlet('trusted-set-cookie', 'cookieList', 't0:accept|t1:statistic|t2:marketing')
 sendasmile.de##.consentmodal
 khelnow.com##section[aria-labelledby="kn-cookie-consent-title"]
@@ -38153,7 +38155,8 @@ t3n.de,theregister.com,lecrabeinfo.net,przegladsportowy.onet.pl,dailymail.com,ta
 !
 ! SECTION: Subscriptions - Regular rules
 !
-jezebel.com##.email-popup
+theonion.com##div.gridible-col > div.wp-block-group:has(> div.onion-part-footer-newsletter)
+avclub.com,jezebel.com##.email-popup
 wpolu.pl##form[action="?action=newsletter"]
 horror-shop.com##.shopify-section.shopify-section-group-footer-group:has(form.klaviyo-form.klaviyo-form-version-cid_1)
 mdr.de##.contentbox:has(> .teaser img[src*="google-handy-100.webp"])
