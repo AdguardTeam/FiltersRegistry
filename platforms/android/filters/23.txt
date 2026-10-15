@@ -1,9 +1,9 @@
-! Checksum: gWhAjD0Mdv7ECpdtasM2jw
-! Diff-Path: ../patches/23/23-s-1790093400-3600.patch
+! Checksum: Bqg0/lRdiZg+UKvukLIScQ
+! Diff-Path: ../patches/23/23-s-1792058972-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.9.28
-! TimeUpdated: 2026-09-22T16:06:59+00:00
+! Version: 2.0.9.44
+! TimeUpdated: 2026-10-15T10:06:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -38,6 +38,7 @@
 /^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][a-z]$/$xmlhttprequest,other,media,third-party
 /^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][?&]/$xmlhttprequest,other,media,third-party
 /^https:\/\/vveu.[a-z0-9]+\.[a-z]+\/.*\/[a-z0-9]+\.[a-z][a-z][a-z][a-z][?&]/$xmlhttprequest,other,media,third-party
+.link/*?*=*&referer=$xmlhttprequest
 /vast/ad-rotator/*
 /lib/*.xml?fre=$xmlhttprequest
 ||vveu.*/files/episodes/*.mp4
@@ -1470,6 +1471,51 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||poi.kinzazaza.org^
+||beloboka.link^
+||burunduksha.link^
+||bystroglaza.link^
+||dobrolyuba.link^
+||dolgoruka.link^
+||geralovod.link^
+||gigovatokal.link^
+||gorodyshka.link^
+||gromoboyara.link^
+||khitrozya.link^
+||kkkkkkkrrrrrrrr.link^
+||kleveromal.link^
+||koverdynya.link^
+||krasnomaga.link^
+||kruglyashka.link^
+||kudroshapka.link^
+||leproletsu.link^
+||morozovnya.link^
+||mudrobasa.link^
+||myagkotela.link^
+||pelamedara.link^
+||pepyakanew.link^
+||perepolokha.link^
+||pustobrya.link^
+||ryabokoshka.link^
+||samograyka.link^
+||samokhvala.link^
+||sinebryuga.link^
+||skorobeyka.link^
+||skovorodnya.link^
+||svarogonil.link^
+||taramashka.link^
+||tazaromikaz.link^
+||teplodara.link^
+||tikhomira.link^
+||veselchaga.link^
+||vorogushka.link^
+||yaropolka.link^
+||zamorokeharu.link^
+||zhenivalka.link^
+||zlatobryuga.link^
+||zveroboyna.link^
+||beeparentdo.com^
+||balamutka.link^
 ||nevalyashka.link^
 ||aj2663.bid^
 ||sentry.rstprgapipt.com^
@@ -4106,6 +4152,10 @@ avtocod.ru,love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,del
 !
 ! NOTE: Specific rules
 !
+||yandex.*/ads/adfox/
+||yandex.*/adfox/
+||kinogomy.net/uploads/kgi/intro.
+||yandex.ru./ads/system/adsdk.js
 kinobase.org##div[id^="ad"]
 fakty.ua##.nts-ad
 liga.net##.remp-banner
@@ -4441,10 +4491,12 @@ rezka-tv.org,hdrezka.la,rezka-ag.net,hdrezka.fans,rezka-ua.co,rezka-ua.pub,hdrez
 [$domain=/rezka/]#%#//scriptlet('remove-class', 'active-brand', 'body')
 !
 ! Hdrezka, Kinogo, etc.
-.bid^$xmlhttprequest,domain=mentalist-hdrezka.net|glee-hdrezka.net
-.link^$xmlhttprequest,third-party,domain=mentalist-hdrezka.net|glee-hdrezka.net|kinovod.pro
-kinovod.pro,glee-hdrezka.net,mentalist-hdrezka.net,hdrezka-ted-lasso.net,kinob.net,kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'vast', '0', 'vast')
-kinovod.pro,glee-hdrezka.net,mentalist-hdrezka.net,hdrezka-ted-lasso.net,kinob.net,kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'prerolls', '0', 'prerolls')
+.bid^$xmlhttprequest,domain=mentalist-hdrezka.net|glee-hdrezka.net|kinozo.cam
+.link^$xmlhttprequest,third-party,domain=mentalist-hdrezka.net|glee-hdrezka.net|kinovod.pro|kinozo.cam
+kinozo.cam,hdreskaz.top,kinovod.pro,glee-hdrezka.net,mentalist-hdrezka.net,hdrezka-ted-lasso.net,kinob.net,kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'vast', '0', 'vast')
+kinozo.cam,hdreskaz.top,kinovod.pro,glee-hdrezka.net,mentalist-hdrezka.net,hdrezka-ted-lasso.net,kinob.net,kinobase.org#%#//scriptlet('trusted-json-set', 'JSON.parse', 'prerolls', '0', 'prerolls')
+[$domain=/hdreska|rezka|lostfilm/]#%#//scriptlet('trusted-json-set', 'JSON.parse', 'vast', '0', 'vast')
+[$domain=/hdreska|rezka|lostfilm/]#%#//scriptlet('trusted-json-set', 'JSON.parse', 'prerolls', '0', 'prerolls')
 !
 ! Группа компаний Актион
 kom-dir.ru,gd.ru,buhsoft.ru,dirklinik.ru,fd.ru,business.ru,pro-personal.ru,trudohrana.ru##.ASE_brandImage
@@ -4475,6 +4527,7 @@ citrus.ua,xsport.ua,zi.dn.ua,zi.ua##img[src^="/upload/rk/"]
 !
 !
 !
+machineryline.ua##.index-bns
 kurs.com.ua##.advertising:not(#bottomWrap)
 hotline.finance##.side-popup
 football24.ua##.external-content
@@ -4666,7 +4719,6 @@ segodnya.ua##.article__banner-container
 goloskarpat.info##.gkad
 kurs.com.ua##div[data-display-before="РЕКЛАМА"]
 unn.ua###ads-sidebar
-censor.net##.container > div#w1001.d-print-none
 opentv.media##img[alt="ad"]
 /assets/vendor/*.xml$domain=tortuga.wtf
 liga.net##.ad

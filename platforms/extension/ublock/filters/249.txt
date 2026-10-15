@@ -1,15 +1,15 @@
 ![Adblock Plus 2.0]
-! Checksum: LSlM0MAcsdwvpeEAktOY8w
-! Diff-Path: ../patches/249/249-s-1787719706-14400.patch
+! Checksum: Nk4DyTdCb1cNV7vocZDWkg
+! Diff-Path: ../patches/249/249-s-1791854769-14400.patch
 ! Title: Dandelion Sprout's Nordic Filters
 ! Description: This list covers websites for Norway, Denmark, Iceland, Danish territories, and the Sami indigenous population.
-! Version: 2.0.8.54
-! TimeUpdated: 2026-08-26T04:45:25+00:00
+! Version: 2.0.8.57
+! TimeUpdated: 2026-10-13T01:22:59+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Title 🇬🇧: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
-! Last modified: 25August2026v1
+! Last modified: 12October2026v3
 ! Expires: 18 hours
 ! Lisens / Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md
@@ -267,6 +267,7 @@ e24.no,e24-no.translate.goog###adPlaceholderFront
 mytastenor.com,mytastednk.com##div[class$=_panorama]
 anlast.no##.BannerContainerTop
 avisen.dk##.Ad
+gulesider.no##.place-items-center.grid
 fcbarcelona.dk###middlecoulmn > #social_links
 topp.no##a[href*="/annonse/"]
 tek.no##main > div > section + div:last-of-type
@@ -286,7 +287,6 @@ fiskerforum.dk##.elementor-widget-text-editor:contains(/^.*\s\sANNONCER\s\s.*$/)
 fiskerforum.dk##div[data-elementor-type=wp-post] section[class*=_slider]:has(.elementor-size-default > a)
 fiskerforum.dk##section:has(.elementor-row > div:only-of-type div[id*=ezoic])
 netnatur.dk##.widget:has(.g-single)
-europamester.dk##div:has(> div[id^=cncpt-])
 musikknyheter.no##.centered:not(#toTop)
 tu.no##.undefined.hidden
 recordere.dk##.td-header-header
@@ -306,7 +306,6 @@ filmfront.no##.annonse_forklaring
 tek.no##html[lang] > body::before
 trinesmatblogg.no##.sidebar__widget--ad
 sn.dk##.first_paragraph_banner
-kondis.no##.articles .bannerlocation
 folketidende.dk##.block:has(> .adblock)
 parcferme.no##*:has(>*>ins[data-revive-zoneid])
 holdsport.dk##.article:has(a[href*=spillemaskin])
@@ -1189,11 +1188,12 @@ keldan.is##.x-box-inner > .x-panel-noborder:not(.x-grid-panel)
 vg.no,familieklubben.no##.appnexus
 bold.dk##div[id$=-banner]
 onlineaviser.no##html[lang] > body > div > table > tbody > tr > td > table > tbody > tr > td:nth-of-type(2):last-of-type
-kondis.no##.thearticlecontent > .bannerlocation
 nutiminn.is,newz.dk##.custom-html-widget.textwidget
 lorenskogkino.no,filmweb.no,~www.filmweb.no##div[data-debuglabel]
 bornholm.nu##.bannercontent
 ba.no##.lp_realestatecarousel.realestatecarousel
+prisjakt.*##div[data-sentry-component=MobileAdSlot]
+prisjakt.*##.pjra\:block.pjra\:lg\:hidden:has(div[id*=panorama])
 shareholders.dk###left_section
 itavisen.no##p[style="text-align: center;"]
 klikk.no##article[id^=lpc_belowArticle_]
@@ -1577,8 +1577,6 @@ _visittkortannonse_$image
 -visittkortannonse-$image
 ! ytresognNO (16/12/2020)
 /hnuannonse^
-! heilsutorgIS (17/04/2021)
-||is/static/strevda/$image
 ! fugleognaturDK (14/05/2021)
 /images/bannere^$image
 ! https://norges•online/produkt/nestle-viking-melk-410-g
@@ -1669,6 +1667,8 @@ _visittkortannonse_$image
 *px_Toppbanner-$image
 ! tog24NO (02/06/2026)
 /Annonsebanner-*.png^$domain=no
+! nidarosNO (12/10/2026)
+||smartembedhandlelokalt.getbagera.no^
 ! — — — — —
 ! 🇳🇴：Domenefokuserte blokkeringsoppføringer
 ! 🇳🇴🏞：Domenefokuserande bloknadsoppføringar
@@ -2488,6 +2488,8 @@ dagsavisen.no##:is(p,h2):has(> br:only-of-type:empty)
 @@||images.medlem.$~3p
 ! Bank login problems
 @@/pm-blikunde/1x1.png^$domain=sparebank1.no
+! https://github.com/easylist/easylist/issues/25253
+@@/ga-tracking.$domain=no
 ! ★★★ Caused by «EasyList – Social Widgets», if I recall correctly ★★★
 krom.is#@#.share-container
 @@/images/*youtube.jpg$domain=realityportalen.dk
@@ -2533,9 +2535,6 @@ findbolig.nu#@#.advertLink
 sosialurin.fo#@#.ads-banner
 ! ekstrabladet•dk/klip/(...) (11/03/2026)
 @@||imasdk.googleapis.com/js/core/bridge^$domain=ekstrabladet.dk
-! ★★★ Caused by «I Don't Care About Cookies» (Its maintainer couldn't reproduce it) ★★★
-! Fullpage uncloseable overlay when browsing around on Telenor Norway's TV section
-telenor.no##.global-overlay-background
 ! ★★★ Unknown cause ★★★
 ! https://github.com/DandelionSprout/adfilt/issues/67
 @@||fe.adstate.net/assets/common/img/web_ad^$domain=aasavis.no|amta.no|an.no|ao.no|auraavis.no|austagderblad.no|avisenagder.no|ba.no|bygdebladet.no|bygdeposten.no|dalane-tidende.no|dt.no|eikerbladet.no|enebakkavis.no|f-b.no|finnmarkdagblad.no|finnmarken.no|firda.no|firdaposten.no|fremover.no|gbnett.no|gjengangeren.no|glomdalen.no|h-avis.no|ha-halden.no|hadeland.no|hardanger-folkeblad.no|helg.no|iharstad.no|indre.no|jarlsbergavis.no|jbl.no|kv.no|kvinnheringen.no|laagendalsposten.no|lierposten.no|lofotposten.no|lyngdalsavis.no|moss-avis.no|nidaros.no|noblad.no|nordhordland.no|nordlys.no|oa.no|oblad.no|op.no|ostlendingen.no|oyene.no|r-a.no|rablad.no|ranablad.no|rb.no|retten.no|rha.no|ringblad.no|ringsaker-blad.no|sa.no|sandeavis.no|sandnesposten.no|sb.no|smaalenene.no|sognavis.no|solabladet.no|solungavisa.no|strandbuen.no|svelviksposten.no|ta.no|tb.no|telen.no|tk.no|tvedestrandsposten.no|varingen.no|vestbyavis.no
@@ -2568,8 +2567,12 @@ tronderporten.no#@##cmplz-cookiebanner-container
 @@||cl.k5a.io^$domain=abcnyheter.no
 ! (02/06/2026)
 @@/wp-content/uploads/*/Randi-Ness$domain=tog24.no
+! (16/09/2026)
+trondheimspektrum.no#@#.eu-cookie-compliance-banner:not(body):not(html)
 ! ★★★ Forårsaket av / Caused by «uBlock Filters - Cookie Notices»
 ! (10/06/2026)
+! Late September 2026
+e24.no,minmote.no,tek.no,vg.no#@#div[id^="sp_message_container_"]
 ! 🇳🇴/🇩🇰：Anti-'CPU-massakrering'
 ! 🇮🇸：And-örgjörvislatrun
 ! 🇬🇧：Anti-'CPU slaughtering'
@@ -2679,7 +2682,6 @@ gamer.no##[data-uname^=gamer_skyskraper_]
 gamer.no##header ~ * > [class]:has(> [data-name=gamer_toppbanner])
 inputmag.dk##+js(acis, EventTarget.prototype.addEventListener, adsbygoogle.js)
 jobindex.dk##div[aria-label=Annonce]
-jyllands-posten.dk##html[lang] > body section[id^=monster_]
 kundeavisogtilbud.no##div[class^=ad_]
 nettavisen.no##.teaser_body[href]:has(div.overlay_container [data-skin=commercial])
 nettavisen.no##amedia-include[param-editionid=kommersiellartikkel]

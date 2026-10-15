@@ -1,0 +1,86 @@
+project_id: "17570"
+api_token_env: "CROWDIN_PERSONAL_TOKEN"
+preserve_hierarchy: true
+
+# Keep the download limited to the locales this repo tracks. The codes are
+# Crowdin language IDs; the Twosky codes es/pt/sv/hy are es-ES/pt-PT/sv-SE/
+# hy-AM in Crowdin (the CLI hard-fails on codes the project does not have).
+# `en` is downloaded like in the old download.sh.
+#
+# This list is the single source for the language set: download-crowdin.sh
+# imports exactly the locale dirs this download produces, so adding a language
+# here is enough to have it downloaded and imported.
+export_languages:
+  - ar
+  - be
+  - bg
+  - ca
+  - cs
+  - da
+  - de
+  - el
+  - en
+  - es-ES
+  - fa
+  - fi
+  - fr
+  - he
+  - hi
+  - hr
+  - hu
+  - hy-AM
+  - id
+  - it
+  - ja
+  - ko
+  - lt
+  - mk
+  - ms
+  - nl
+  - no
+  - pl
+  - pt-BR
+  - pt-PT
+  - ro
+  - ru
+  - sk
+  - sl
+  - sr
+  - sv-SE
+  - th
+  - tr
+  - uk
+  - vi
+  - zh-CN
+  - zh-TW
+
+# Map Crowdin language codes to the locale directory names used in this repo:
+# es-ES/pt-PT/pt-BR use underscores, zh-CN is stored as `zh`, and the
+# two-letter repo dirs sv/hy keep their names (sv-SE -> sv, hy-AM -> hy).
+# es_ES/pt_PT are additionally copied to the base es/pt alias dirs by
+# download-crowdin.sh: validate_locales.ts requires those dirs and the
+# compiler consumes them.
+# Note: &/* is Yaml anchor syntax: https://support.atlassian.com/bitbucket-cloud/docs/yaml-anchors/
+languages_mapping: &languages_mapping
+  two_letters_code:
+    pt-BR: pt_BR
+    pt-PT: pt_PT
+    zh-CN: zh
+    zh-TW: zh_TW
+    es-ES: es_ES
+    sv-SE: sv
+    hy-AM: hy
+
+files:
+  - source: /temp/crowdin/source/tags.json
+    dest: /miscellaneous/filters-registry/tags.json
+    translation: /temp/crowdin/%two_letters_code%/tags.json
+    languages_mapping: *languages_mapping
+  - source: /temp/crowdin/source/groups.json
+    dest: /miscellaneous/filters-registry/groups.json
+    translation: /temp/crowdin/%two_letters_code%/groups.json
+    languages_mapping: *languages_mapping
+  - source: /temp/crowdin/source/filters.json
+    dest: /miscellaneous/filters-registry/filters.json
+    translation: /temp/crowdin/%two_letters_code%/filters.json
+    languages_mapping: *languages_mapping

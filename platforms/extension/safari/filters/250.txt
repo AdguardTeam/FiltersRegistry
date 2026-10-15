@@ -1,13 +1,13 @@
-! Checksum: a7M/LSUd2jABFdbJTJfFjg
-! Diff-Path: ../patches/250/250-s-1790167988-14400.patch
+! Checksum: Q2Ugb2Cn9sG2p5/u31VaLA
+! Diff-Path: ../patches/250/250-s-1792082851-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.20.67
-! TimeUpdated: 2026-09-23T12:50:13+00:00
+! Version: 2.0.20.88
+! TimeUpdated: 2026-10-15T16:45:02+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 22August2026v1-Compilation
+! OriginalVersion: 25September2026v1-Compilation
 ! Expires: 18 hours
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -56,8 +56,10 @@
 ! • DailyMotion Simplicity / • Know Your Meme: Pure Browsing Experience / • Wikia: Pure Browsing Experiences
 ! ⌘ General annoyances on the sites in question.
 ! • Anti-"Aİ results in tech situations where Aİ was not asked for" List
-! ⌘ Aİ results above regular search results during regular-mode Google searches.
+! ⌘ Aİ results above regular search results during regular-mode Google and Bing searches.
 ! ⌘ Copilot Aİ stuff in Microsoft Word Online.
+! • Anti-"«Add as a preferred source on Google» widgets on non-Google sites" List
+! ⌘ All those "Add us as a Google Preferred Source" buttons in ≥2025.
 ! • Annoyance List's main file
 ! ⌘ Certain sites' entry types that are of relevance to pretty no one.
 ! ⌘ The "Anonymous animal" bubbles on Google Docs.
@@ -75,7 +77,7 @@
 ! ⌘ Makes some websites use much more of the screen width, instead of just a thin central column.
 ! What this broad compilation does not block：Newsletters, cookie banners, social media links to companies' pages
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 19September2026v1
+! OriginalVersion: 04October2026v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
@@ -508,6 +510,12 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||213.227.149.208^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||213.227.149.211^$all
+||redddit.com^$all
+||redit.com^$all
+||reditt.com^$all
+||reddtt.com^$all
+||reddtit.com^$all
+||mirappe.com^$all
 ! ——— Frequently or previously frequently used to infiltrate and maliciously redirect sites ———
 ||ortrun-adi.com^$all
 ||paramonos-oha.com^$all
@@ -10764,7 +10772,7 @@ http://secured21.*.com/|$all
 ||43.164.196.209^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||88.255.216.16^$all
-/((https?|tcp|iquic)://)?204\.194\.54\.\d{1,3}([:/].*)?$/$all
+/^((https?|tcp|iquic)://)?204\.194\.54\.\d{1,3}([:/].*)?$/$all
 ! https://new•reddit•com/r/softwaregore/comments/1spebzh/i_broke_the_antivirus_ad/ (19/04/2026)
 ||adtng.com^$all
 ||anonymity-guardstation.com^$all
@@ -11030,6 +11038,8 @@ http://secured21.*.com/|$all
 ||103.29.182.53^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||13.140.171.211^$all
+! https://github.com/DandelionSprout/adfilt/issues/1296
+||koboldcpp.com^$all
 ! ——— Standard malware that I stumbled upon on my own ———
 ! http://www•toorgle•net/results•php?q=fetishkitsch&security=666
 ||downloadprovider.me^$all
@@ -13464,8 +13474,6 @@ drvhub.net##.driver-item__install
 ||quickfindresults.com^$all
 ||smorgasbordet.com^$all
 ||xdelta.org^
-!+ NOT_PLATFORM(windows, mac, android, cli)
-||23.48.203.140^
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||3.33.130.190^
 ||[2a02:26f0:1700:11::b856:6790]^
@@ -16861,7 +16869,7 @@ dr.dk#$#.player-overlay { background:0!important }
 ! ARD Mediathek
 de##.ardplayer-background
 ! Title: 🍁 Anti-"Aİ results in tech situations where Aİ was not asked for" List
-! OriginalVersion: 24April2026v1-Alpha
+! OriginalVersion: 25September2026v1-Alpha
 ! Expires: 2 days
 ! Homepage: https://github.com/DandelionSprout/adfilt/tree/master
 ! Description: 1) I'm way too old for the Aİ bubble, and I'm not even 30 yet. 2) Google's pushing of Aİ in regular search results in particular have a very bad reputation for often being wrong about things. This list will however not block Aİ prompt sites.
@@ -16883,11 +16891,50 @@ www.google.*,ipv6.google.com##.ULSxyf:has(div[data-tma])
 www.google.*,ipv6.google.com##div[data-subtree^=ai] > div[data-wiz-uids] > div[class]:not([class=""]):first-of-type
 ! Image search with a pasted image (24/04/2026)
 www.google.*,ipv6.google.com##div#m-x-content div[jscontroller] > div[class]:only-of-type > div[class]:first-of-type:has(+ div[class][jsname]:last-of-type)
+! Bing's regular search results
+! https://www.bing.com/search?q=how+to+change+tyres&form=QBLH&ghc=1&lq=0 (25/09/2026)
+bing.*###b_results > .b_top[data-partnertag]
 ! Microsoft Word Online
 word-edit.officeapps.live.com,word.cloud.microsoft###TellMeWrapper_container
 word-edit.officeapps.live.com,word.cloud.microsoft##.BeforePageContent
 ! Qwant (Tested with AdGuard VPN set to France Marseille; 23/04/2026)
 qwant.com##div[data-testid=containerWeb] div[class=""]:first-of-type:has(a[data-click-label^=Llm i])
+! Title: ⛵️ Anti-"«Add as a preferred source on Google» widgets on non-Google sites" List
+! OriginalVersion: 12October2026v1-Alpha
+! Description: In late 2025, widgets to add various newssites to the user's Google account's Google News "Preferred Sources" list began showing up on those various newssites' articles. This list removes those widgets.
+! Homepage: https://github.com/DandelionSprout/adfilt
+! No particular examples
+eurogamer.*##.preferred_source_button
+! https://www•sfgate•com/national-parks/article/national-parks-change-prioritizes-trump-birthday-21219336.php (Early December 2025)
+sfgate.com##.br4.deep
+! https://bleedingcool•com/tv/60-minutes-pulled-trump-cecot-segment-airs-on-global-tv-in-canada/ (23/12/2025)
+/social_icons//google_preferred_source_$image,domain=~google.*|~google|~goog
+bleedingcool.com##.google-news-source
+! https://windowsreport•com/open-hlp-files-windows-10/ (27/12/2025)
+/google-preferred-source-badge-$image,domain=~google.*|~google|~goog
+~google.*,~google,~goog##.sidebar-google-badge:not(html,body)
+~google.*,~google,~goog##.follow-more-news__google-preferred:not(html,body)
+! https://www•makeuseof•com/install-dolby-atmos-in-windows/ (03/01/2026)
+~google.*,~google,~goog##.google-addus:not(html,body)
+! https://las-motorsport•com/f1/blog/top-10-worst-formula-one-tracks/17265/
+~google.*,~google,~goog##.motor-source-prefere:not(html,body)
+! https://movieweb•com/1993-super-mario-bros-live-action-4k-30th-anniversary-100/
+~google.*,~google,~goog##.article-add-google:not(html,body)
+! https://sportskhabri•com/10-worst-formula-one-tracks-of-all-time/
+~google.*,~google,~goog##.sk-page-single__share:not(html,body)
+! https://www•wionews•com/world/indian-americans-fellow-republicans-react-sharply-to-bo-french-s-post-targeting-foreigner-students-in-texas-1789369347097
+~google.*,~google,~goog##.googleTrustedContainer-mid:not(html,body)
+! https://www•srednja•hr/novosti/vijesti/87396/u-tramvaju-sutra-ne-morate-cvikati-kartu-najavili-jos-jednu-pogodnost-dio-grada-bit-ce-zatvoren/vijest (23/09/2026)
+~google.*,~google,~goog##.google-source:not(html,body)
+! https://sourceforge.net/projects/equalizerapo/files/1.4.2/ (17/09/2026)
+sourceforge.net###preferred-source-button
+! 25. sep. 2026 https://www.diskpart.com/password/how-to-get-your-local-computer-password-on-windows-11-0725.html
+diskpart.com##.theme-side
+! 25. sep. 2026 https://geekrewind.com/how-to-set-up-ssh-key-login-with-windows-11/
+! pcgamesnCOM (30/09/2026)
+~google.*,~google,~goog##.legion-preferred-source:not(html,body)
+! sports•yahoo•com (02/10/2026)
+~google.*,~google,~goog##elgoog-btn:not(html,body)
 !!! !#include Android%20Scum%20Class%20%E2%80%94%20Fake%20notification%20counters.txt
 !+ NOT_OPTIMIZED
 ! Title: 💺 Anti-'IMDB ratings on other sites' List
@@ -17143,7 +17190,7 @@ www.pixiv.net##.text-left.charcoal-clickable
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 23September2026v1
+! OriginalVersion: 15October2026v4
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -17235,6 +17282,7 @@ www.pixiv.net##.text-left.charcoal-clickable
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-715449
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-728592
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-737564
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18626569
 ! https://www•theguardian•com/technology/2021/may/11/apple-accused-of-breaking-uk-competition-law-by-overcharging-for-apps?CMP=Share_AndroidApp_Other
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-750434
 ! https://m•lightinthebox•com/no/p/kvinners-svart-blaa-groenn-vintage-maxi-kjole-langarmet-troeye-med-v-hals_p4298383•html?currency=NOK&litb_from=paid_adwords_shopping&sku=1_6920%7C2_286&country_code=no&adword_mt&adword_ct=496040937781&adword_kw&adword_pos&adword_pl&adword_net=u&adword_tar&adw_src_id=(...) (22/05/2021)
@@ -17561,6 +17609,7 @@ www.pixiv.net##.text-left.charcoal-clickable
 ! https://www•magicdesktop•com/get/kiosk?src=winget&v=11.5.0.52 (12/06/2025)
 ! https://design•cricut•com/home?checkForDeferred=true&referrer=https%3A%2F%2Fwww•qwant•com%2F&visitorId=2de7f63d-0282-43e0-ac78-9ac4fe9ded8a&deepLinkGuid=c5605f61-9833-40ce-bd6d-93249770a851 (27/07/2026)
 ! https://www•playstation•com/no-no/ps-plus/?smcid=pdc%3Ano-no%3Asupport-subscriptions-ps-plus-pc%3Aprimary%20nav%3Amsg-ps-plus%3Aabonner (10/08/2026)
+! Snapchat Click ID: https://businesshelp.snapchat.com/s/article/troubleshooting-click-id?language=en_US (13/10/2026)
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -17708,6 +17757,7 @@ www.pixiv.net##.text-left.charcoal-clickable
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18318579
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18457419
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18519131
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18824994
 !!! ——— Google ———
 ! https://books•googleusercontent•com/books/content/reader?id=ZqK8A800eu4C&hl=no&pg=epub_10-jpg&img=1&zoom=6&cds=2&sig=ACfU3U3Si7lRb8j-vl0ZHTxcQUS7QcwWfg&w=800&h=1046&cp_ksver=2%3DVrverkkqAh0•&source=ge-web-app (The "$sig" value is specific to individual Google Play Books accounts; 22/11/2020)
 ! https://www•google•no/search?q=disney+fairies+rani&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj14vqyvpbtAhXDlYsKHYXwAE4Q_AUoAXoECAsQAw&biw=1440&bih=2417#imgrc=wxIq9RsVA6XwVM
@@ -18301,6 +18351,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/commit/57f39538070d7d5e6379da4e58bd02defffa7481
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-5498306
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-17886709
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18607681
 ! https://www•onlyandsons•com/fi-fi/product/22022876_207/regular-fit-housut?rm=R2V0UmVsYXRlZEl0ZW1z
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-5555484
 ! https://www•ilo•org/ipec/Informationresources/WCMS_797515/lang--en/index•htm?ssSourceSiteId=global
@@ -18334,6 +18385,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6130028
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6133046
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6133356
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18612685
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6133351
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6133171
 ! https://blog•torproject•org/mission-improbable-hardening-android-security-and-privacy/?ref=spreadprivacy•com
@@ -18610,7 +18662,9 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18423748
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18422176
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18424370
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18690796
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18424537
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18720713
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18425054
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18425232
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18425806
@@ -18622,9 +18676,36 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18475027
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18487081
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18520521
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18670517
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18521604
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18539173
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18539702
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18670517
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18559456
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18612769
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18626456
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18626540
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18626569
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18627692
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18628824
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18628836
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18658037
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18669714
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18670340
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18685928
+! https://www•omio•com/no/tog/storlien/aare-ztyvj?landing_referrer=https%3A%2F%2Fwww•qwant•com%2F
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18710388
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18731729
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18732939
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18737344
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18741423
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18765147
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18767158
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18800913
+! https://www.nps.gov/orgs/1207/national-park-service-selects-frank-lands-as-deputy-director-for-operations.htm?ref=thebirthofacapital.info
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18670208
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18887389
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18930157
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 ! https://i-viaplay-com•akamaized•net/viaplay-prod/64/412/1566206933-67aca1cbde0e0edf7ee8d3d2a79748af3e64ba8d•jpg?width=400&height=600 (02/03/2021)
@@ -18666,6 +18747,8 @@ buffalonews.com#%#//scriptlet('ubo-set', 'lee_trkLinkSrc', 'noopFunc')
 ! "interact from your instance" button i.e. on https://bw3.dev/articles/2FHb1/state-of-the-blog-address (example https://bw3.dev/remote_interaction?ap_id=https://bw3.dev/o/2FHb1)
 ! reported by @0x3b0b@bw3.dev in private message
 ! https://bw3.dev/articles/2FHb1/state-of-the-blog-address
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-18732976
+! https://github.com/AdguardTeam/AdguardFilters/issues/243495
 ! (This subfile is an extension file, and is not for standalone use.)
 ! For when one really doesn't want to have a harder time with uBO's log error checker
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-750434
@@ -18700,7 +18783,7 @@ www.pfu.ricoh.com#$#body[onload*=ssacc i] { font-family:"Segoe UI",Calibri,Verda
 jp,xn--wgv71a,kyoto,nagoya,okinawa,osaka,ryukyu,tokyo,yokohama,~1000mg.jp,~10mtv.jp,~1geki.jp,~2nn.jp,~4travel.jp,~9db.jp,~account.nicovideo.jp,~altema.jp,~amiami.jp,~animate-onlineshop.jp,~applion.jp,~appmedia.jp,~ark-pc.co.jp,~ascii.jp,~asunaro.shop-pro.jp,~athome.co.jp,~atpress.ne.jp,~auone.jp,~bloomberg.co.jp,~bookoff.co.jp,~books-sanseido.jp,~castel.jp,~cdjapan.co.jp,~cero.gr.jp,~ch.nicovideo.jp,~cinematoday.jp,~club-animate.jp,~coat.co.jp,~cocreco.kodansha.co.jp,~conan-cafe.jp,~cosmeconcier.jp,~cosmospc.co.jp,~cyclowired.jp,~diamond.co.jp,~diamond.jp,~direct.sanwa.co.jp,~dmkt-sp.jp,~dmm.co.jp,~dokkyomed.ac.jp,~doope.jp,~doorblog.jp,~dpoint.docomo.ne.jp,~dto.jp,~eagate.573.jp,~eic.or.jp,~eikoh-prize.jp,~entabe.jp,~entamepost.jp,~eonet.jp,~epark.jp,~eposcard.co.jp,~estar.jp,~expo70-park.jp,~expresscard.jp,~expy.jp,~faq.radiko.jp,~ftnews.jp,~futtsu.lg.jp,~g123.jp,~gamefactory.jp,~gamepedia.jp,~gameranbu.jp,~gamewith.jp,~ganguoroshi.jp,~gch.jp,~geekjob.jp,~goguynet.jp,~granbluefantasy.jp,~gta5.jp,~h1g.jp,~hia-net.gr.jp,~hiltonjapan.co.jp,~hosyusokuhou.jp,~hotpepper.jp,~huffingtonpost.jp,~hulu.jp,~ib-game.jp,~impress.co.jp,~innervision.co.jp,~insightnow.jp,~iphone-mania.jp,~itmedia.co.jp,~jafp.or.jp,~japan-baseball.jp,~jetro.go.jp,~jfa.jp,~jgrants-portal.go.jp,~jitenon.jp,~jma.go.jp,~jmca.jp,~jmty.jp,~joshinweb.jp,~jri.co.jp,~k-manga.jp,~kabutan.jp,~kamigame.jp,~kanachu.jp,~kanno-novel.jp,~kawade.co.jp,~keio.co.jp,~kenko-tokina.co.jp,~kinokuniya.co.jp,~kinro.ntv.co.jp,~kitakyushu.lg.jp,~kntv.jp,~konoyubitomare.jp,~kotobank.jp,~koupenchan-store.jp,~library.city.kita.tokyo.jp,~livedoor.biz,~location.sevenbank.co.jp,~loft.co.jp,~maidonanews.jp,~mainichi.jp,~maonline.jp,~mapion.co.jp,~mayla.jp,~mechacomic.jp,~melonbooks.co.jp,~mext.go.jp,~mgjshop.co.jp,~mineo.jp,~mixi.jp,~mora.jp,~ms.bridgestone.co.jp,~n-kishou.co.jp,~namedic.jp,~naturum.ne.jp,~nazonazo.jp,~nec.co.jp,~neowing.co.jp,~netoff.co.jp,~news.infoseek.co.jp,~newsweekjapan.jp,~nicenature.top,~nijimen.kusuguru.co.jp,~nikkan.co.jp,~nikkeibp.co.jp,~nojima.co.jp,~novelgame.jp,~nta.co.jp,~ntj.jac.go.jp,~nttxstore.jp,~numata.gunma.jp,~number.bunshun.jp,~nwknews.jp,~ocn.ne.jp,~odakyu.jp,~odakyubus.co.jp,~omni7.jp,~onojibi.jp,~osawa-inc.co.jp,~otakomu.jp,~otanew.jp,~otona-novel.jp,~pex.jp,~point.recruit.co.jp,~qa.nicovideo.jp,~qoo10.jp,~rakuten.co.jp,~rank-king.jp,~recipe-blog.jp,~research-panel.jp,~rizzan.co.jp,~rtrp.jp,~rurubu.jp,~ryokan.or.jp,~sansokan.jp,~sanwa-d.co.jp,~secure.tw4.jp,~seesaa.jp,~seiga.nicovideo.jp,~sengokuixa.jp,~sentankyo.jp,~shidaikyo.or.jp,~shiki.jp,~shogakukan.co.jp,~shop.adidas.jp,~shop.hanshintigers.jp,~skima.jp,~sneakerwars.jp,~st-c.co.jp,~store-tsutaya.tsite.jp,~suruga-ya.jp,~suumo.jp,~syukatsu-kaigi.jp,~t-stamina.jp,~takaratomymall.jp,~takarazuka-an.co.jp,~taking-a-stand.jp,~tenki.jp,~tepco.co.jp,~timesclub.jp,~tokubai.co.jp,~tokyo-np.co.jp,~tokyodisneyresort.jp,~tokyubus.co.jp,~toonippo.co.jp,~tsukumo.co.jp,~tv-tokyo.co.jp,~umitenki.jp,~universal-music.co.jp,~vector.co.jp,~vippers.jp,~vpass.ne.jp,~walica.jp,~weathernews.jp,~web-ace.jp,~webcomics.jp,~weblio.jp,~westjr.co.jp,~woman.excite.co.jp,~wowgame.jp,~wowkorea.jp,~wowma.jp,~www.gpoint.co.jp,~www.homes.co.jp,~www.infoseek.co.jp,~www.jorudan.co.jp,~www.meti.go.jp,~www.swiki.jp,~www.yuzawaya.co.jp,~yachiyo.lg.jp,~yahoo.co.jp,~yamagata-np.jp,~yomiuri.co.jp#$?#:is(body,div,li,a,strong,dd,span):matches-css(font-family: /^.*(ＭＳ|MS) ?[ＰP]ゴシック.*/i) { font-family:"Segoe UI",Calibri,Verdana,Ubuntu,"Noto Sans CJK JP","Noto Sans CJK","Hiragino Maru Gothic Pro W4","ヒラギノ丸ゴ W4","Hiragino Maru Gothic Pro W3","ヒラギノ丸ゴ W3","Ume Gothic","Ume UI Gothic","Yu Gothic","Yu Gothic UI",Meiryo,メイリオ,"BabelStone Han",Nishiki-teki,FRBTaiwaneseKana,"Malgun Gothic","맑은 고딕",NanumGothic,AppleSDGothicNeo,NanumBarumGothic,sandoll-gothicneo3,sandoll-gothicneo2,sandoll-gothicneo1,NanumSquareRoundB,sans-serif!important }
 jp,~1000mg.jp,~10mtv.jp,~1geki.jp,~2nn.jp,~4travel.jp,~9db.jp,~account.nicovideo.jp,~altema.jp,~amiami.jp,~animate-onlineshop.jp,~applion.jp,~appmedia.jp,~ark-pc.co.jp,~ascii.jp,~asunaro.shop-pro.jp,~athome.co.jp,~atpress.ne.jp,~auone.jp,~bloomberg.co.jp,~bookoff.co.jp,~books-sanseido.jp,~castel.jp,~cdjapan.co.jp,~cero.gr.jp,~ch.nicovideo.jp,~cinematoday.jp,~club-animate.jp,~coat.co.jp,~cocreco.kodansha.co.jp,~conan-cafe.jp,~cosmeconcier.jp,~cosmospc.co.jp,~cyclowired.jp,~diamond.co.jp,~diamond.jp,~direct.sanwa.co.jp,~dmkt-sp.jp,~dmm.co.jp,~dokkyomed.ac.jp,~doope.jp,~doorblog.jp,~dpoint.docomo.ne.jp,~dto.jp,~eagate.573.jp,~eic.or.jp,~eikoh-prize.jp,~entabe.jp,~entamepost.jp,~eonet.jp,~epark.jp,~eposcard.co.jp,~estar.jp,~expo70-park.jp,~expresscard.jp,~expy.jp,~faq.radiko.jp,~ftnews.jp,~futtsu.lg.jp,~g123.jp,~gamefactory.jp,~gamepedia.jp,~gameranbu.jp,~gamewith.jp,~ganguoroshi.jp,~gch.jp,~geekjob.jp,~goguynet.jp,~granbluefantasy.jp,~gta5.jp,~h1g.jp,~hia-net.gr.jp,~hiltonjapan.co.jp,~hosyusokuhou.jp,~hotpepper.jp,~huffingtonpost.jp,~hulu.jp,~ib-game.jp,~impress.co.jp,~innervision.co.jp,~insightnow.jp,~iphone-mania.jp,~itmedia.co.jp,~jafp.or.jp,~japan-baseball.jp,~jetro.go.jp,~jfa.jp,~jgrants-portal.go.jp,~jitenon.jp,~jma.go.jp,~jmca.jp,~jmty.jp,~joshinweb.jp,~jri.co.jp,~k-manga.jp,~kabutan.jp,~kamigame.jp,~kanachu.jp,~kanno-novel.jp,~kawade.co.jp,~keio.co.jp,~kenko-tokina.co.jp,~kinokuniya.co.jp,~kinro.ntv.co.jp,~kitakyushu.lg.jp,~kntv.jp,~konoyubitomare.jp,~kotobank.jp,~koupenchan-store.jp,~library.city.kita.tokyo.jp,~livedoor.biz,~location.sevenbank.co.jp,~loft.co.jp,~maidonanews.jp,~mainichi.jp,~maonline.jp,~mapion.co.jp,~mayla.jp,~mechacomic.jp,~melonbooks.co.jp,~mext.go.jp,~mgjshop.co.jp,~mineo.jp,~mixi.jp,~mora.jp,~ms.bridgestone.co.jp,~n-kishou.co.jp,~namedic.jp,~naturum.ne.jp,~nazonazo.jp,~nec.co.jp,~neowing.co.jp,~netoff.co.jp,~news.infoseek.co.jp,~newsweekjapan.jp,~nicenature.top,~nijimen.kusuguru.co.jp,~nikkan.co.jp,~nikkeibp.co.jp,~nojima.co.jp,~novelgame.jp,~nta.co.jp,~ntj.jac.go.jp,~nttxstore.jp,~numata.gunma.jp,~number.bunshun.jp,~nwknews.jp,~ocn.ne.jp,~odakyu.jp,~odakyubus.co.jp,~omni7.jp,~onojibi.jp,~osawa-inc.co.jp,~otakomu.jp,~otanew.jp,~otona-novel.jp,~pex.jp,~point.recruit.co.jp,~qa.nicovideo.jp,~qoo10.jp,~rakuten.co.jp,~rank-king.jp,~recipe-blog.jp,~research-panel.jp,~rizzan.co.jp,~rtrp.jp,~rurubu.jp,~ryokan.or.jp,~sansokan.jp,~sanwa-d.co.jp,~secure.tw4.jp,~seesaa.jp,~seiga.nicovideo.jp,~sengokuixa.jp,~sentankyo.jp,~shidaikyo.or.jp,~shiki.jp,~shogakukan.co.jp,~shop.adidas.jp,~shop.hanshintigers.jp,~skima.jp,~sneakerwars.jp,~st-c.co.jp,~store-tsutaya.tsite.jp,~suruga-ya.jp,~suumo.jp,~syukatsu-kaigi.jp,~t-stamina.jp,~takaratomymall.jp,~takarazuka-an.co.jp,~taking-a-stand.jp,~tenki.jp,~tepco.co.jp,~timesclub.jp,~tokubai.co.jp,~tokyo-np.co.jp,~tokyodisneyresort.jp,~tokyubus.co.jp,~toonippo.co.jp,~tsukumo.co.jp,~tv-tokyo.co.jp,~umitenki.jp,~universal-music.co.jp,~vector.co.jp,~vippers.jp,~vpass.ne.jp,~walica.jp,~weathernews.jp,~web-ace.jp,~webcomics.jp,~weblio.jp,~westjr.co.jp,~woman.excite.co.jp,~wowgame.jp,~wowkorea.jp,~wowma.jp,~www.gpoint.co.jp,~www.homes.co.jp,~www.infoseek.co.jp,~www.jorudan.co.jp,~www.meti.go.jp,~www.swiki.jp,~www.yuzawaya.co.jp,~yachiyo.lg.jp,~yahoo.co.jp,~yamagata-np.jp,~yomiuri.co.jp#$?#:is(body,div,li,a,strong,dd,span):matches-css(font-family: /^.*MS ?PGothic.*/i) { font-family:"Segoe UI",Calibri,Verdana,Ubuntu,"Noto Sans CJK JP","Noto Sans CJK","Hiragino Maru Gothic Pro W4","ヒラギノ丸ゴ W4","Hiragino Maru Gothic Pro W3","ヒラギノ丸ゴ W3","Ume Gothic","Ume UI Gothic","Yu Gothic","Yu Gothic UI",Meiryo,メイリオ,"BabelStone Han",Nishiki-teki,FRBTaiwaneseKana,"Malgun Gothic","맑은 고딕",NanumGothic,AppleSDGothicNeo,NanumBarumGothic,sandoll-gothicneo3,sandoll-gothicneo2,sandoll-gothicneo1,NanumSquareRoundB,sans-serif!important }
 ! AdGuard was known as of early 2025 to not be able to handle "env_mobile" correctly, necessitating a number of semi-clone syntaxing to handle their products.
-! OriginalVersion: 04September2026v2
+! OriginalVersion: 12October2026v2
 ! Title: 📱 Staying On The Phone Browser
 ! Expires: 10 days
 ! Description: Created as a proof of concept, and for the benefit of people who really like their phone's web browsers and who are less keen on using various apps.
@@ -19174,6 +19257,8 @@ threads.com###has-finished-comet-page + div[class^=__fb-][class*="-mode "]
 zalando.*##div[style="display:contents"]:not([data-trckng-component]):has(> div[style="display:contents"] > div[style^="min-height:"]:last-child:only-of-type)
 duck.ai###app form[data-chat-footer] > div:has(a:is([href*="://play.google.com/"],[href*="://apps.apple.com/"]))
 startpage.com##.app-promo
+xn--ernr-xoa.no##div.custom-screen + div.justify-center:has(a[href^="https://apps.apple.com/"])
+steampowered.com##.open_in_steam_container
 ! https://github.com/DandelionSprout/adfilt/issues/1047
 @@/jquery.smartbanner.js^
 ! (https://github.com/DandelionSprout/adfilt/issues/1065)
@@ -19252,6 +19337,8 @@ instagram.com##div[class]:first-of-type:not(.html-div) + div.html-div:has(+ div:
 ##.readInAppBtn:not(html,body,:empty)
 ! pdfTO (04/09/2026)
 ###pwaInstallBanner:not(:empty)
+! business-standardCOM (25/09/2026)
+##.readInAppBtn:not(html,body,:empty)
 ! Below are entries that I borrowed from "I Don't Want Your App", which was maintained by https://github.com/lassekongo83 at https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/i-dont-want-your-app.txt, and which was licenced as GPLv3
 ! Generic
 ##a[href*=".app.link/"]

@@ -33,7 +33,12 @@ for all supported AdGuard products.
     - `build-adguard.yaml`
     - `build-3p.yaml`
     - `test.yaml` (runs `yarn test` on every pull request)
-    - `update-translations.yaml` (weekly translations download that opens a PR)
+    - `compression-tests.yaml` (runs the repository compression tests in a container on pull
+      requests that touch `scripts/repository/`, and monthly)
+    - `update-translations.yaml` (weekly translations download from Crowdin that opens a PR;
+      requires the `CROWDIN_PERSONAL_TOKEN` secret)
+- **Translations upload**: manual only, via the legacy `scripts/translations/upload.sh`
+  (there is no automated or Crowdin-CLI-based upload)
 - **Performance Goals**: N/A
 - **Constraints**: Filter lists must remain compatible with AdGuard's rule syntax;
   third-party filters follow an acceptance policy documented in README.md
@@ -60,16 +65,17 @@ for all supported AdGuard products.
 │   ├── build/                      # build.js, build-config.ts, constants.js,
 │   │                               #   custom_platforms.ts, patches.ts, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
-│   ├── repository/                 # compress.js — repository compression
+│   ├── repository/                 # compress.ts — repository compression
 │   ├── translations/               # Locale download/upload tooling, PR validation reporting
 │   ├── utils/                      # Shared utilities (find_files.js, splitter.ts, strings.js)
-│   ├── validation/                 # validate_platforms.js, validate_locales.ts
+│   ├── validation/                 # validate_platforms.ts, validate_locales.ts
 │   ├── wildcard-domain-processor/  # TS module with CLI, unit tests (__tests__/)
 │   └── auto_build.sh               # Automated build entry point
 ├── locales/                        # Translations (45+ language dirs)
 ├── groups/                         # Filter group definitions (metadata.json)
 ├── tags/                           # Filter tag taxonomy (metadata.json)
 ├── temp/                           # Temporary build artifacts
+├── crowdin.yml                     # Crowdin project config (project 17570, folder miscellaneous/filters-registry)
 ├── package.json                    # Project manifest and scripts
 ├── tsconfig.json                   # TypeScript config (ES2022, nodenext)
 ├── vitest.config.ts                # Test runner config
@@ -89,7 +95,7 @@ for all supported AdGuard products.
 | `yarn build:patches` | Build incremental patches |
 | `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
 | `yarn download-stats` | Download per-filter `stats.json` to `temp/optimization/stats/` |
-| `yarn strip-generated-meta` | Strip generated meta lines from platform filter files |
+| `yarn strip-generated-meta <dir>` | Strip generated meta from `.txt`/`filters.json`/`filters.js` in `<dir>` in place |
 | `yarn test` | Run unit tests (`vitest run`) |
 | `yarn lint` | Run all linters (code + types + markdown) |
 | `yarn lint:code` | ESLint check (`eslint .`) |
@@ -102,6 +108,7 @@ for all supported AdGuard products.
 | `yarn update-wildcard-domains` | Scan filters for wildcard domains |
 | `yarn expand-wildcard-domains` | Expand wildcard domains in platform builds |
 | `yarn compress` | Compress repository data |
+| `yarn crowdin` | Run the Crowdin CLI (used by the translations download script) |
 
 `yarn build:local` reuses `temp/optimization/stats/` when it's non-empty *and* its
 `temp/optimization/stats.scope` marker matches the current `--include`/`--skip`
@@ -142,6 +149,8 @@ After completing any task that modifies code in `scripts/`:
    alongside the code you changed:
    - `scripts/wildcard-domain-processor/__tests__/` for wildcard-domain-processor changes
    - `scripts/build/__tests__/` for build script changes
+   - `scripts/repository/__tests__/` for repository script changes
+   - `scripts/translations/__tests__/` for translation script changes
 
 4. **Validate platform outputs** if filters, templates, or build scripts changed.
 
@@ -162,6 +171,13 @@ After completing any task that modifies code in `scripts/`:
     - Add or update tests in `scripts/build/__tests__/` covering the new behaviour.
     - Update the *Command Compatibility* section in `DEVELOPMENT.md`.
     - Never merge CLI changes without matching tests and documentation.
+
+9. **Coordinate new filters with the MV3 browser extension.** When adding a new filter
+   (new `filterId`), keep it out of the MV3 extension platforms (`ext_chromium_mv3`,
+   `ext_edge_mv3`, `ext_opera_mv3`) via `platformsExcluded` in its `metadata.json` until
+   `@adguard/dnr-rulesets` includes the new ruleset (`tasks/validator-data.json` and
+   related files updated) *and* an MV3 extension release bundling it has shipped.
+   See [DEVELOPMENT.md — Adding a New Filter](DEVELOPMENT.md#adding-a-new-filter).
 
 ## Code Guidelines
 
@@ -187,6 +203,21 @@ General code style guidelines for JavaScript are available via link:
   are enforced by `eslint.config.js`. Run `yarn lint` to check.
   See [DEVELOPMENT.md — ESLint configuration](DEVELOPMENT.md#eslint-configuration) for how that file
   relates to the project's pre-migration ESLint 8 configuration.
+
+### Runtime data validation (TypeScript/JavaScript)
+
+Before adding any runtime check, decide whether the data is trusted or external. Data the
+system itself produced — own build artifacts, generated JSON, config files the project owns —
+is trusted: JSON.parse + as cast and move on. If such data is malformed, the code SHOULD fail
+loudly; never silently skip, default, or return-early on an unexpected shape.
+
+Genuinely external input (user input, network responses, third-party files) gets validated
+ONCE at the boundary — with a schema library (zod/valibot) when the project already has one —
+and the parsed type is trusted downstream. Do not re-validate past the boundary.
+
+Never write hand-rolled type guards (`isRecord`, `typeof x === 'object' && x !== null && !Array.isArray(x)` chains).
+A guard justified only by a hypothetical "what if the data is corrupt" is a smell:
+answer whether that corruption is real for THIS data source before writing anything.
 
 ### Testing
 

@@ -287,12 +287,12 @@ describe('build.js: cache flag handling', () => {
             readFile: vi.fn().mockResolvedValue(unscopedFlags),
         }));
 
-        const VIRTUAL_STATS_PATH = '/tmp/stats.json';
+        const VIRTUAL_STATS_PATH = path.join('/', 'tmp', 'stats.json');
+
+        const retrieveStatsError = new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH, 'retrieval');
 
         vi.doMock('@adguard/filters-compiler', () => ({
-            compile: vi.fn().mockRejectedValue(
-                new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH, 'retrieval'),
-            ),
+            compile: vi.fn().mockRejectedValue(retrieveStatsError),
             localOptimizationStatistics: {
                 download: vi.fn().mockResolvedValue(undefined),
                 use: vi.fn(),
@@ -313,9 +313,51 @@ describe('build.js: cache flag handling', () => {
 
         expect(consoleErrorSpy).toHaveBeenCalledWith(
             expect.stringContaining(
-                'Run --download-stats to download the latest statistics. '
-                + `(${new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH, 'retrieval').message})`,
+                `Run --download-stats to download the latest statistics. (${retrieveStatsError.message})`,
             ),
+        );
+
+        consoleErrorSpy.mockRestore();
+        exitSpy.mockRestore();
+    });
+
+    it('--use-cache with invalid (not missing) stats.json: printing the validation-specific hint', async () => {
+        vi.doMock('fs', () => ({
+            existsSync: vi.fn().mockReturnValue(true),
+        }));
+
+        const VIRTUAL_STATS_PATH = path.join('/', 'tmp', 'stats.json');
+
+        const invalidStatsError = new OptimizationStatsError(FILTER_ID, VIRTUAL_STATS_PATH, 'validation');
+
+        vi.doMock('@adguard/filters-compiler', () => ({
+            compile: vi.fn().mockRejectedValue(invalidStatsError),
+            localOptimizationStatistics: {
+                download: vi.fn().mockResolvedValue(undefined),
+                use: vi.fn(),
+                reset: vi.fn().mockResolvedValue(undefined),
+            },
+            OptimizationStatsError,
+        }));
+        process.argv = ['node', 'build.js', '--use-cache'];
+
+        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+        const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+
+        await import('../build.js');
+
+        await vi.waitFor(() => {
+            expect(exitSpy).toHaveBeenCalledWith(1);
+        });
+
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+            expect.stringContaining(
+                'The cached optimization stats are invalid. Inspect the file, or run '
+                + `--download-stats to try refreshing it from the remote server. (${invalidStatsError.message})`,
+            ),
+        );
+        expect(consoleErrorSpy).not.toHaveBeenCalledWith(
+            expect.stringContaining('Run --download-stats to download the latest statistics.'),
         );
 
         consoleErrorSpy.mockRestore();
