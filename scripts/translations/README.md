@@ -10,14 +10,14 @@ The `/locales` directory contains translations for filters, groups, and tags.
 
 ## Integration with Translation Service
 
-Translations are stored in the Crowdin project `adguard-applications` (project ID 17570) under
+Translations are stored in the Crowdin project `adguard-applications` (project ID 365951) under
 the `miscellaneous/filters-registry` folder. The Crowdin CLI (configured in the root `crowdin.yml`)
 is used to download strings; the legacy Twosky-based `download.sh`/`upload.sh` scripts are kept
 for reference, and `upload.sh` remains the only way to upload strings to the service (a manual
 step, see below).
 
-The Crowdin CLI reads the API token from the `CROWDIN_PERSONAL_TOKEN` environment variable, so it
-must be set before running the scripts (in CI it is provided by the `CROWDIN_PERSONAL_TOKEN`
+The Crowdin CLI reads the API token from the `CROWDIN_FILTERS_REGISTRY_TOKEN` environment variable, so it
+must be set before running the scripts (in CI it is provided by the `CROWDIN_FILTERS_REGISTRY_TOKEN`
 repository secret).
 
 It's essential to import strings from the service before exporting them, as some changes may be lost otherwise.
@@ -34,7 +34,7 @@ It's essential to import strings from the service before exporting them, as some
 
     ```bash
     cd scripts/translations
-    CROWDIN_PERSONAL_TOKEN="YOURTOKEN" ./download-crowdin.sh
+    CROWDIN_FILTERS_REGISTRY_TOKEN="YOURTOKEN" ./download-crowdin.sh
     ```
 
     The script downloads translations for all locales listed in `crowdin.yml`
@@ -93,7 +93,7 @@ It's essential to import strings from the service before exporting them, as some
 
 The `Update translations` GitHub Actions workflow
 (`.github/workflows/update-translations.yaml`) runs `download-crowdin.sh` weekly and on demand
-(authenticated with the `CROWDIN_PERSONAL_TOKEN` repository secret),
+(authenticated with the `CROWDIN_FILTERS_REGISTRY_TOKEN` repository secret),
 validates the result with `yarn validate:locales`, and opens a pull request with the
 changes to `locales/`. Trigger it manually from the Actions tab. Uploading base English
 strings (`upload.sh`) stays a manual step, outside the workflow.
