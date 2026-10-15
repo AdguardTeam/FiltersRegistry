@@ -140,6 +140,13 @@ with a log message explaining why.
 If a filter's `stats.json` is missing under a cache that *did* match, the
 build fails with a message pointing at `yarn download-stats`.
 
+The set of optimizable filters is pinned too: `--download-stats` and a
+`--use-cache` build that applies the local stats cache read it from
+[`optimization_config.json`](optimization_config.json) instead of fetching the
+remote `percent.json`, so they need no network access for it and give the same
+result on every run. A plain `yarn build` and a `--use-cache` build that falls
+back to remote stats still fetch the remote `percent.json`.
+
 The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` flags can be
 combined:
 
@@ -227,7 +234,8 @@ The following flags can be used with `yarn build` and `yarn build:local`:
   Fetches into a temp directory and, once every fetch succeeds, replaces the whole local stats
   directory — not a per-filter merge into the existing cache. `--include` / `--skip` scope which
   filters are fetched, so a scoped `--download-stats` drops every other filter's cached stats;
-  pair it with an equally scoped build. `--report`, `--strip-generated-meta`, and
+  pair it with an equally scoped build. The filters to download come from the local
+  `optimization_config.json`, not the remote `percent.json`. `--report`, `--strip-generated-meta`, and
   `--no-patches-prepare` error here, since none of them apply to a run that produces no
   platform output.
 
