@@ -1,9 +1,9 @@
-! Checksum: WUilrWe+6WmVkUBC8wA+bg
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1792010696-14400.patch
+! Checksum: 4WSw/2w03z3R8W5fRXijDQ
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1792026521-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.66
-! TimeUpdated: 2026-10-14T20:42:37+00:00
+! Version: 2.0.2.67
+! TimeUpdated: 2026-10-15T01:06:48+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -1188,6 +1188,10 @@ www.reddit.com#$#[slot="comment"] p > a.border-dotted { border: none !important;
 www.reddit.com##[slot="comment"] p > a.border-dotted > span:has(> [icon-name="search-sparkle"])
 www.reddit.com#%#//scriptlet('remove-attr', 'href', '[slot="comment"] p > a.border-dotted')
 www.reddit.com#$#[slot="comment"] p > a.border-dotted[href^="/answers/"] { pointer-events: none !important }
+www.reddit.com#$#[view-events="post_detail/view/highlight"] a { border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important }
+www.reddit.com##[view-events="post_detail/view/highlight"] span:has(> [icon-name="search"])
+www.reddit.com#%#//scriptlet('remove-attr', 'href', '[view-events="post_detail/view/highlight"] a')
+www.reddit.com#$#[view-events="post_detail/view/highlight"] a[href] { pointer-events: none !important }
 www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"])
 www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [author="anthropic-ai"], [author="apollo-io"], [author="decartai"], [author="kubit_ai"], [author="raybanmeta"], [author="RUNdotgame"], [domain$=".ai"], [post-title~="AI"]) + hr
 www.reddit.com##shreddit-comments-page-ad:is([domain$=".ai"], [domain="apollo.io"], [domain="hyperagent.com"], #t3_1tr5mav, [title~="AI"])
@@ -1262,6 +1266,7 @@ softonic.com##li:has(> [data-track-category-id="ai"])
 softonic.com##li:has(> [data-meta="card-category"] > [href="https://en.softonic.com/ai/windows"])
 softonic.com##li:has(> #ai-menu-status-id)
 softonic.com##li:has(> [data-track-category-id="ai-hub"])
+www.softwaretestinghelp.com##.mwai-chatbot-container
 sogou.com##.searchnav > li:has(> #sogou_aimode)
 www.sogou.com##.reactResult
 ||wenda.sogou.com/produce_ai_answer$xmlhttprequest,domain=www.sogou.com
