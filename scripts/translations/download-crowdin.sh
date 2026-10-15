@@ -42,6 +42,9 @@ baseLocaleAliases=(
 echo "Cleaning previous downloads"
 rm -rf "$crowdinDir"
 
+# crowdin.yml sets base_path to this directory, and the CLI requires it to exist.
+mkdir -p "$crowdinDir"
+
 echo "Downloading translations"
 # --all makes the CLI match the configured files against the server-side
 # project files (by dest) instead of the local source paths, which are not
