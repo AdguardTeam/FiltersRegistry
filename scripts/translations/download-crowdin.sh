@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 # Downloads translations from Crowdin via the Crowdin CLI instead of the
-# Twosky gateway. Requires the CROWDIN_PERSONAL_TOKEN environment variable
+# Twosky gateway. Requires the CROWDIN_FILTERS_REGISTRY_TOKEN environment variable
 # (see crowdin.yml api_token_env). The script resolves every path from its own
 # location, so it can be run from any directory (CI runs it from
 # scripts/translations, `yarn run` from the repo root).
