@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: rkZAVaOwInxZHc0tTmCX/Q
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1791943814-3600.patch
+! Checksum: Eyi7yhFHEqHoD1JXouUBiQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1792030233-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.97
@@ -83,7 +83,6 @@ marieclaire.fr###overlay:style(display: none !important;)
 equinoxmagazine.fr,adala-news.fr##+js(abort-current-script, jQuery, adblocker)
 equinoxmagazine.fr,adala-news.fr##+js(set-constant, penci_options_set.ad_blocker_detector, false)
 @@||soins-infirmiers.com/*/adblocker.blogads.css
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=qub.ca
 qub.ca,tvaplus.ca##+js(set-constant, ima, {})
 ||cdn.assets*.nicematin.com/build/js/viewpay.*.js
 nicematin.com##+js(addEventListener-defuser, DOMContentLoaded, adblock)
@@ -414,6 +413,7 @@ filmoflix.money,filmoflix.ad,papadustream.*,papadustream.cash##.g-buttons
 ici.radio-canada.ca##div[class^="_adBoxReset"]
 planhub.ca##.h-banner
 usine-digitale.fr,lemoniteur.fr##.b-ad-banner__wrap
+meilleure-innovation.com##.a-wrap:has(> div[id])
 lessentiel.lu##div[data-ad-unit-id]
 lejournaldelamaison.fr##div[data-actirise-slot]
 supersoluce.com,positivr.fr,lejournaldelamaison.fr##div[data-hbdbrk-parent]
@@ -1732,6 +1732,7 @@ _werbebanner_
 ||ad-spire.net^$3p
 ||ad6.fr^$3p
 ||adaccess.fr^$3p
+||adclick.lt^$3p
 ||adhslx.com^$3p
 ||adintop.com^$3p
 ||adkontekst.pl^$3p
@@ -1745,6 +1746,7 @@ _werbebanner_
 ||adnxtr.com^$3p
 ||adoftheyear.com^$3p
 ||adop.cc^$3p
+||adoptima.com^$3p
 ||adoric.com^$3p
 ||adpaths.com^$3p
 ||adpick.co.kr^$3p
@@ -1780,20 +1782,17 @@ _werbebanner_
 ||affiliatable.io^$3p
 ||affility.com^$3p
 ||afilio.com.br^$3p
-||afromessenger.com^$3p
 ||aleja.lt^$3p
 ||apps2you.org^$3p
 ||apypxl.com^$3p
 ||aquaplatform.com^$3p
 ||arabytracking.com^$3p
-||asiatmessenger.com^$3p
 ||askmecca.com^$3p
 ||atedra.com^$3p
 ||bazardux.com^$3p
 ||best-deals-products.com^$3p
 ||bestcontentwork.top^$3p
 ||betterbannerscloud.com^$3p
-||beurettemessenger.com^$3p
 ||broadcast.pm^$3p
 ||camsoda.com^$3p
 ||caramec.fr^$3p
@@ -1896,6 +1895,7 @@ _werbebanner_
 ||ntl.cloud^$3p
 ||nuggad.net^$3p
 ||octea.com^$3p
+||oneinstaller.com^$3p
 ||oniad.com^$3p
 ||opti-digital.com^$3p
 ||orangepublicite.fr^$3p
@@ -1911,7 +1911,6 @@ _werbebanner_
 ||pubinteractive.ca^$3p
 ||publy.net^$3p
 ||pubstack.io^$3p
-||purlive.com^$~image,3p
 ||pwspace.com^$3p
 ||pxltgr.com^$3p
 ||recoco.it^$3p
@@ -2459,7 +2458,6 @@ _werbebanner_
 ||imglnkx.com^
 ||imparloments.com^
 ||impendtewter.com^
-||insideoftech.com^
 ||insimipourr.com^
 ||inteindwormer.com^
 ||ioefhvcc.com^
@@ -2710,7 +2708,6 @@ _werbebanner_
 ||shoftoupsouxoam.net^
 ||shpuzesoxyfhh.com^
 ||shuffele.com^
-||silenthill24.biz^
 ||silimbompom.com^
 ||silpharapidly.com^
 ||similesgleby.com^
@@ -2956,6 +2953,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||ads-tracking.collectiveaudience.co^
 ||ads.vnhell.com^
 ||adultempire.com/bn/
+||ahlaejaba.com^$subdocument
 ||ajoutezvotresite.com/button.php
 ||akamaized.net/images/banner/
 ||alfafile.net/img/buttons/promo/
@@ -2977,7 +2975,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||b.clictoload.com^
 ||bandeiracorp.biz/images/$3p
 ||be.com/wp-content/uploads/$3p
-||block.s*block.com^$script
 ||brsimg.com/pub/
 ||camtempel.com/banner/
 ||cdn.citytourgirls.com/static/bn/
@@ -3058,7 +3055,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||nouslibertins.com^$image,3p
 ||offer.alibaba.com^$subdocument
 ||ouo.press/images/*-ad.
-||p.porn.fr^
 ||partenaire.bemove.fr^
 ||partenaires.feerik.com^$3p
 ||philatelistes.net/liens/cptr/
@@ -3139,7 +3135,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ||safelinku.com^$script,3p
 ||shorte.st^$script,3p
 ||shortem.com^$script,subdocument,3p
-||tmearn.com^$script,3p
 ||i.imgur.com/32xkKog.jpg
 ||i.imgur.com/LjJzcZk.png
 ||lookimg.com/images/2021/12/20/PydgJE.png
@@ -3599,6 +3594,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ###leaderboard.ads
 ###left_slide_pub
 ###lht-space-ad
+###loading-ad
 ###mb_video_syncad_bottom
 ###mobileMessageAd
 ###monetiz-pub
@@ -3878,7 +3874,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.fig-ad
 ##.fix_reklama
 ##.fixedAd
-##.flash-ad
 ##.footer--pub
 ##.footer-pub
 ##.footerpubright
@@ -4058,7 +4053,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.pub_160x600
 ##.pub_300_250
 ##.pub_300_250_right_interne
-##.pub_300_600
 ##.pub_728_90
 ##.pub_article
 ##.pub_bande
@@ -4227,8 +4221,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.wrapper_pub_sidebar
 ##.xadv-invid
 ##.xplayer-banner-bottom
-##.yourcolor-ads
-##.zone_annonceurs
 ##.zone_pub_orange
 ##.zonepub
 ##[class*="-ad-placeholder-"]
@@ -4372,6 +4364,7 @@ ledemondujeu.com,minuteur-en-ligne.fr,musculaction.com,planeterenault.com,quiveu
 musculaction.com###pub3
 info-clipper.com###pubBando
 telequebec.tv###pubIlotContainer
+vo2.fr###pub_background
 maxifoot-live.com###pub_bc
 jeuxvideo.com###pub_carre1
 emu-france.com###pub_casino_header
@@ -4492,6 +4485,7 @@ linguee.com,linguee.fr##.dlTopBanner
 mavanimes.co##.dmp_Player
 doctissimo.fr##.doc-sticky-col-container
 echoroukonline.com##.ech-live__ads
+gamekult.com##.ed__news-h--native
 howtofix.guide##.eds-animate
 manga-news.com##.external-link
 gameblog.fr##.footer__partners
@@ -4617,7 +4611,6 @@ boursorama.com##.smart
 novaplanet.com##.sponsor-top
 tsa-algerie.com##.sponsored-by
 laredoute.fr##.sponsoredBanner
-msn.com##.sponsorship
 tvanouvelles.ca##.sticky-ad-container
 auto-utilitaire.com,mobilealgerie.com##.td-header-sp-recs
 lexpress.fr##.teads__block
@@ -4833,6 +4826,7 @@ latribune.fr##.homepage-section.supplement-section:has(span:contains(Partenaires
 futura-sciences.com##li[class*="article-"]:has(.tag-sponsorise)
 farmaline.be,redcare-apotheke.ch,redcare-pharmacie.fr##li[data-qa-id="result-list-entry"]:has(a[href^="https://api.sae.systems/"])
 libhunt.com##.boxed:has(.tag:contains(Sponsored))
+libhunt.com##.repo-component:has(label:contains(sponsored))
 mediamarkt.be##[data-index-number]:contains(Sponsorisé)
 numerama.com##.post-card:has(span:contains(sponso))
 on-mag.fr##.uk-margin-remove-last-child:has(div:has(span:contains(PUBLICITÉ)))
