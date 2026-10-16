@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bHV564oSQl3glV1ypG29yA
-! Diff-Path: ../patches/14/14-s-1792131114-3600.patch
+! Checksum: ehsEWyDrUHaCpVdqRE1zmw
+! Diff-Path: ../patches/14/14-s-1792134841-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.83.1
-! TimeUpdated: 2026-10-16T06:08:47+00:00
+! Version: 2.2.83.2
+! TimeUpdated: 2026-10-16T07:10:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16997,6 +16997,8 @@ qastack.it###cookies-consent ~ div.modal-backdrop:style(display: none !important
 ! Meta
 ! On facebookcareers.com remove-class cannot be used, because
 ! it breaks search function (it's incorrectly displayed when class "_31e" is removed)
+dev.meta.ai##dialog[aria-labelledby="cookie-consent-title"]:style(display: none !important;)
+dev.meta.ai##body:style(position: unset !important; overflow: auto !important;)
 horizon.meta.com##body > div[id^="mount_"][data-interactable] + div:has(div[aria-modal="true"][role="dialog"])
 business.whatsapp.com##body > ._li._31e:style(position: sticky !important;)
 transparency.meta.com,fort.fb.com,ai.meta.com,transparency.fb.com,business.instagram.com##body.hasCookieBanner > ._li._31e:style(position: sticky !important;)
@@ -62785,6 +62787,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244496
+novelaplay.com##+js(adjust-setInterval, countdown, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244415
 enmods.com##+js(adjust-setInterval, timeLeft, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243996
