@@ -1,9 +1,9 @@
-! Checksum: Ke+owyyqHAza/u8weGl1ZA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1792112930-14400.patch
+! Checksum: wskfae91kbVNYLx4uCj3og
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1792169045-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.99.53
-! TimeUpdated: 2026-10-16T01:05:30+00:00
+! Version: 2.1.99.54
+! TimeUpdated: 2026-10-16T16:39:53+00:00
 ! Expires: 12 hours (update frequency)
 &ad_count=
 &ad_unit_
@@ -295,6 +295,7 @@
 ?728&90&
 ?ad_sub=
 ?ADFassetID=
+?adlink/
 ?adnet=
 ?adprovider=
 ?adRef=
@@ -397,11 +398,14 @@ _pages_ad.
 _personalized_ads
 _popads.
 _popdhtml/
+_profits_ad-
 _pub.gif
+_pub_iframe.
 _publ1c1te.
 _publicite.
 _publicite1.
 _publicite_
+_regiepub/
 _smartclick.js
 _square_ads.
 _werbebanner_
@@ -493,13 +497,16 @@ _werbebanner_
 ||301ads.com^$third-party
 ||3xdl.com^$third-party
 ||3xtraffic.com^$third-party
+||7x4.fr^$third-party
 ||acexedge.com^$third-party
 ||acwm.biz^$third-party
 ||acxiom-online.com^$third-party
 ||ad-lead.com^$third-party
 ||ad-spire.net^$third-party
+||ad2.club^$third-party
 ||ad6.fr^$third-party
 ||adaccess.fr^$third-party
+||adc-lc.eu^$third-party
 ||adclick.lt^$third-party
 ||adhslx.com^$third-party
 ||adintop.com^$third-party
@@ -539,6 +546,7 @@ _werbebanner_
 ||adultwork.com^$third-party
 ||adverdata.net^$third-party
 ||adverline.com^$third-party
+||advertsight.com^$third-party
 ||adverum.lt^$third-party
 ||advideo.ru^$third-party
 ||advrich.com^$third-party
@@ -557,6 +565,7 @@ _werbebanner_
 ||arabytracking.com^$third-party
 ||askmecca.com^$third-party
 ||atedra.com^$third-party
+||awsclic.com^$third-party
 ||bazardux.com^$third-party
 ||best-deals-products.com^$third-party
 ||bestcontentwork.top^$third-party
@@ -646,6 +655,7 @@ _werbebanner_
 ||missaffiliate.com^$third-party
 ||misstrends.com^$third-party
 ||mobileoffers-*-download.com^$third-party
+||mobligo.com^$third-party
 ||mobsuccess.com^$third-party
 ||mobvista.com^$third-party
 ||mochiads.com^$third-party
@@ -751,7 +761,6 @@ _werbebanner_
 ||abatediminutionelemental.com^
 ||abattuehagbuts.com^
 ||abeenrammyjv.top^
-||abistonfrau.com^
 ||abkajbvlymqmb.top^
 ||ablazebust.com^
 ||abnormalityleversip.com^
@@ -1117,7 +1126,6 @@ _werbebanner_
 ||emplorebunches.com^
 ||encouragingthread.com^
 ||endballbemires.com^
-||endedstrung.com^
 ||endocrineweb.com^
 ||energeticladybug.com^
 ||engridfanlike.com^
@@ -1855,6 +1863,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||premiumpress.com/banner/
 ||prettybigescorts.com/images/$third-party
 ||promo.japanhdv.com^
+||pronoturf.free.fr/pub/
 ||proxy.ads.canalplus-bo.net^
 ||proxy.vidazoo.com^
 ||pub-algeriatenders.s3.eu-central-1.amazonaws.com^
@@ -2059,7 +2068,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||pornhub.com^*?utm_$popup
 ||realnswag.fr^$popup,domain=rapghetto.com
 ||redtube.com^*?utm_source=paid$popup
-||roobet.*?ref=$popup
 ||rugbygeneration.com^$popup,domain=kazeo.com
 ||scubastore.com^$popup,domain=sous-la-mer.com
 ||stock.adobe.com^$popup,domain=freepik.com
@@ -2289,6 +2297,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||web2.*/|$xmlhttprequest,domain=0calc.com|0calc.es|0calc.fr|0calc.in|0calc.ru|0rechner.de
 ||weshrak.com^*/imp.php?
 ||weshrak.com^*/pub.php?
+||whynotclub.com/images/prelinker-
 ||wiflix-*/voir/
 ||winamax.fr/img/pub/
 ||winds-up.com/pub/
@@ -2755,6 +2764,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.side-pub
 ##.sidebar-adv
 ##.sidebar-header-pub
+##.sidebar-wrapper-advert
 ##.sidebar_adds
 ##.simple-ad
 ##.site-pub-interstitiel
@@ -2840,6 +2850,7 @@ africanmanager.com###Layer1
 scan-manga.com###TOPAMZ720
 lepoint.fr###WRAP_BAN_ATF
 ahlaejaba.com,net-iris.fr,orange.fr,paruvendu.fr,radio.co.ma,zalotech.com###ad
+telechargerunevideo.com###adlbl
 cuisineaz.com###advi
 finalclap.com###aff_tuto_com
 matchendirect.fr###akceloTopAdArea
@@ -2867,6 +2878,7 @@ lanutrition.fr###block-views-remote-products-block-home
 cowcotland.com###blocpub1
 cowcotland.com###bottom_pubN2
 darty.com###brand
+cine-torrent.org,frenchtorrent.cc,magnet-torrent.org,mania-torrent.org,warez-torrent.org,zktorrent.org###btvpn
 ktotv.com###campain-bandeau
 lafranceapoil.com###cams
 sitedesmarques.com###check-also-box
@@ -2938,6 +2950,7 @@ tube8.fr###pb_block
 clicbienetre.com###popup
 aufeminin.com###precontent
 hellokids.com###preroll
+bobvoyeur.com###products-export
 egaliteetreconciliation.fr###produits_en_vente
 lacanausurfinfo.com###promo
 ouedkniss.com###promo-header
@@ -2985,7 +2998,6 @@ alloforfait.fr###zzone
 lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
-nouvelobs.com##.ObsBox-Ligatus
 outlook.live.com##.Ogt7j[id*="-"]
 radiofrance.fr##.PopSlot
 marmiton.org##.RCP__sc-i1pqes-4
@@ -3005,6 +3017,7 @@ fusac.fr,laposte.fr,lebonfap.com,lefigaro.fr,letagparfait.com,rajacasablanca.com
 fipradio.fr,francemusique.fr,girlsgogames.fr,jeu.fr,lesoir.be,lestrepublicain.com,midilibre.fr,monpetitforfait.com##.advert
 ccm.net,commentcamarche.com,commentcamarche.net,latribune.fr,nouvelobs.com,traildesforts.com##.advertising
 statistiks.fr##.adz
+aufeminin.com##.af-block-native
 permaculteurs.com##.aff
 leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
@@ -3015,6 +3028,7 @@ autojournal.fr,autoplus.fr##.annonces-container-sidebar
 herault-tribune.com##.annonces-legales
 leboncoin.fr##.apn-na
 lacentrale.fr##.appNexusPlaceholder
+journaldunet.com,linternaute.com##.app_aside--content_commerce
 lejournaldelamaison.fr,mariefrance.fr##.article-context-produit
 causeur.fr##.asa_product_box
 rds.ca##.b-ads-custom
@@ -3350,6 +3364,7 @@ superphysique.org##div[style*="text-align: center"][style*="width:250px"]
 judgehype.com##div[style*="width:300px;height:600px;"]
 echoroukonline.com,maxifoot.fr##div[style*="width:468px;"]
 forum.gsmhosting.com##div[style="float:right; width:336px; height:560px; margin-left:10px"]
+voyageforum.com##div[style^="display: table; float: left; height: 250px; width: 310px;"]
 geny.com##div[style^="width: 300px; height: 250px;"]
 poki.com##div[width="160"][height="600"]
 poki.com##div[width="300"][height="250"]
@@ -3440,7 +3455,6 @@ zataz.com#?#.custom-sidebar:has(h3:contains(/Partenaires|Publicité/))
 @@||disquscdn.com^$script,domain=hds.quest|jetanimes.com
 @@||film-francais-vf.com/assets/js/jquery-3.2.1.min.js$script,domain=saison-streaming.com
 @@||firebaseio.com/.lp?$script,domain=cam4.com|cam4.fr
-@@||fonts.googleapis.com/css$stylesheet,domain=gsurl.in|jetanimes.com|mavanimes.co|mega-p2p.net|onion.ly|protect-mylinks.com|tntendirect.com
 @@||js.txxx.tube/assets/$script,domain=txxx.com
 @@||js.txxx.tube/upd/*/static/js/$script,domain=txxx.com
 @@||mrsexe.com/api/video.6.6.3.min.js$script,domain=mrsexe.com
