@@ -21,21 +21,6 @@ const mockFsPromises = (overrides: Record<string, unknown> = {}): { default: Rec
     },
 });
 
-// Throws if percent.json is requested through child_process: with percentPath set,
-// no request for it should be made. Everything else passes through.
-vi.mock('child_process', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('child_process')>();
-    return {
-        ...actual,
-        execFileSync: vi.fn((command: string, args: string[], options: unknown) => {
-            if (args.some((arg) => typeof arg === 'string' && arg.includes('percent.json'))) {
-                throw new Error('percent.json must not be fetched when percentPath is set');
-            }
-            return actual.execFileSync(command, args, options as never);
-        }),
-    };
-});
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const expectedOptimizationStatsBasePath = path.resolve(__dirname, '../../../temp/optimization/stats');
@@ -152,6 +137,37 @@ describe('build.js: cache flag handling', () => {
             expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
         },
     );
+
+    it('--download-stats failure: names optimization_config.json and keeps the original message', async () => {
+        const downloadError = new Error('curl failed: 404 for filters/9999/stats.json');
+        vi.doMock('@adguard/filters-compiler', () => ({
+            compile: vi.fn().mockResolvedValue(undefined),
+            localOptimizationStatistics: {
+                download: vi.fn().mockRejectedValue(downloadError),
+                use: vi.fn(),
+                reset: vi.fn().mockResolvedValue(undefined),
+            },
+        }));
+        process.argv = ['node', 'build.js', '--download-stats'];
+
+        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+        const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+
+        await import('../build.js');
+
+        await vi.waitFor(() => {
+            expect(exitSpy).toHaveBeenCalledWith(1);
+        });
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+            expect.stringContaining('optimization_config.json'),
+        );
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+            expect.stringContaining(downloadError.message),
+        );
+
+        consoleErrorSpy.mockRestore();
+        exitSpy.mockRestore();
+    });
 
     it.each([
         ['--use-cache', ['--use-cache']],
@@ -397,12 +413,28 @@ const TEST_PLATFORM_CONFIG: Record<string, Record<string, unknown>> = {
 
 describe('localOptimizationStatistics: rules optimized from local cache', () => {
     let tmpDir: string;
+    let curlLogPath: string;
+    let originalPath: string | undefined;
     let optimizationStatsBasePath: string;
     let allOutput: string;
     let statsContentBefore: string;
 
     beforeAll(async () => {
         tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'filters-e2e-optimized-rules-'));
+
+        // The compiler downloads through `curl`. Put a failing curl first on PATH and
+        // log its calls, so the test proves no remote request (percent.json or
+        // stats.json) is made when percentPath is set — even with network access.
+        const curlShimDir = path.join(tmpDir, 'bin');
+        curlLogPath = path.join(tmpDir, 'curl-calls.log');
+        await fs.mkdir(curlShimDir, { recursive: true });
+        await fs.writeFile(
+            path.join(curlShimDir, 'curl'),
+            `#!/bin/sh\necho "$@" >> "${curlLogPath}"\nexit 22\n`,
+            { mode: 0o755 },
+        );
+        originalPath = process.env.PATH;
+        process.env.PATH = `${curlShimDir}${path.delimiter}${originalPath ?? ''}`;
 
         const filtersDir = path.join(tmpDir, 'filters');
         optimizationStatsBasePath = path.join(tmpDir, 'optimization', 'stats');
@@ -458,6 +490,11 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
         allOutput = (await Promise.all(optimizedFiles.map(async (f) => fs.readFile(f, 'utf-8')))).join('\n');
     }, 30_000);
 
+    it('makes no remote request: percent.json comes from percentPath', async () => {
+        const curlCalls = await fs.readFile(curlLogPath, 'utf-8').catch(() => '');
+        expect(curlCalls).toBe('');
+    });
+
     it('local stats.json is not modified by compile', async () => {
         const statsPath = path.join(optimizationStatsBasePath, 'filters', String(FILTER_ID), 'stats.json');
         const statsContentAfter = await fs.readFile(statsPath, 'utf-8');
@@ -473,6 +510,7 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
     });
 
     afterAll(async () => {
+        process.env.PATH = originalPath;
         await localOptimizationStatistics.reset(optimizationStatsBasePath);
         await fs.rm(tmpDir, { recursive: true, force: true });
     });
