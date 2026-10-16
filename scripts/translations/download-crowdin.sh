@@ -51,11 +51,8 @@ echo "Downloading translations"
 # staged in this repo (there is no upload step).
 yarn -s crowdin download --all --config "$crowdinConfig"
 
-if [ ! -d "$crowdinDir" ]; then
-    echo "Error: the download produced no files: $crowdinDir does not exist" >&2
-    exit 1
-fi
-
+# An empty download needs no check of its own: the import loop below finds no
+# locale dirs and the `imported -eq 0` guard at its end fails the run.
 imported=0
 importedLocales=""
 aliased=0
