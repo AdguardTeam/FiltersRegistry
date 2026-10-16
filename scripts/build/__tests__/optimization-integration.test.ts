@@ -21,6 +21,21 @@ const mockFsPromises = (overrides: Record<string, unknown> = {}): { default: Rec
     },
 });
 
+// Throws if percent.json is requested through child_process: with percentPath set,
+// no request for it should be made. Everything else passes through.
+vi.mock('child_process', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('child_process')>();
+    return {
+        ...actual,
+        execFileSync: vi.fn((command: string, args: string[], options: unknown) => {
+            if (args.some((arg) => typeof arg === 'string' && arg.includes('percent.json'))) {
+                throw new Error('percent.json must not be fetched when percentPath is set');
+            }
+            return actual.execFileSync(command, args, options as never);
+        }),
+    };
+});
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const expectedOptimizationStatsBasePath = path.resolve(__dirname, '../../../temp/optimization/stats');

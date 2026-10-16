@@ -123,6 +123,9 @@ The set of optimizable filters is pinned too: `--download-stats` and a
 remote `percent.json`, so they need no network access for it and give the same
 result on every run. A plain `yarn build` and a `--use-cache` build that falls
 back to remote stats still fetch the remote `percent.json`.
+Because the list is local, a filter added to `optimization_config.json` before
+the config is deployed makes `--download-stats` fail with a 404 on that filter's
+`stats.json`: Please deploy the config to the server first.
 
 The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` flags can be
 combined:
