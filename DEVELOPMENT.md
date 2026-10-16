@@ -162,10 +162,13 @@ It walks through a few prompts, in order:
 Under the hood it builds `master` and the compare branch
 in parallel via git worktrees under `temp/`, with a progress spinner on the
 slow steps (install, build, copy, restore, cleanup); it also resets the
-compare worktree's `filters/` to the master version first, so `revision.json`
-version counters start from the same point and don't show up as diff noise in
-the report. With `filters/` pinned, the tool compares build-tooling changes
-through their effect on the platform output, not filter content.
+compare worktree's `filters/` and `optimization_config.json` to the master
+version first, so `revision.json` version counters start from the same point and
+don't show up as diff noise in the report, and both builds use the same set of
+optimizable filters as the shared stats snapshot. With `filters/` pinned, the tool
+compares build-tooling changes through their effect on the platform output, not
+filter content. A branch's own changes to `optimization_config.json` are not
+compared.
 
 Two more things it does around the build:
 
