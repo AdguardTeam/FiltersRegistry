@@ -35,8 +35,9 @@ for all supported AdGuard products.
     - `test.yaml` (runs `yarn test` on every pull request)
     - `compression-tests.yaml` (runs the repository compression tests in a container on pull
       requests that touch `scripts/repository/`, and monthly)
-    - `update-translations.yaml` (weekly translations download from Crowdin that opens a PR;
-      requires the `CROWDIN_FILTERS_REGISTRY_TOKEN` secret)
+    - `update-translations.yaml` (translations download from Crowdin that opens a PR; runs on
+      manual dispatch only for now — the weekly schedule is commented out until the
+      `CROWDIN_FILTERS_REGISTRY_TOKEN` secret is added)
 - **Translations upload**: manual only, via the legacy `scripts/translations/upload.sh`
   (there is no automated or Crowdin-CLI-based upload)
 - **Performance Goals**: N/A
