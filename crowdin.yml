@@ -84,21 +84,21 @@ files:
   # match the downloaded archive; `translation_replace` then strips the project
   # folder from the local path, and `base_path` puts the result under
   # temp/crowdin.
+  # The pattern and the replace map are the same for every file, so they are
+  # anchored on the first entry and reused below.
   - source: /source/tags.json
     dest: /miscellaneous/filters-registry/tags.json
-    translation: /%language_id%/%original_path%/%original_file_name%
-    translation_replace:
+    translation: &translation /%language_id%/%original_path%/%original_file_name%
+    translation_replace: &translation_replace
       "miscellaneous/filters-registry/": ""
     languages_mapping: *languages_mapping
   - source: /source/groups.json
     dest: /miscellaneous/filters-registry/groups.json
-    translation: /%language_id%/%original_path%/%original_file_name%
-    translation_replace:
-      "miscellaneous/filters-registry/": ""
+    translation: *translation
+    translation_replace: *translation_replace
     languages_mapping: *languages_mapping
   - source: /source/filters.json
     dest: /miscellaneous/filters-registry/filters.json
-    translation: /%language_id%/%original_path%/%original_file_name%
-    translation_replace:
-      "miscellaneous/filters-registry/": ""
+    translation: *translation
+    translation_replace: *translation_replace
     languages_mapping: *languages_mapping
