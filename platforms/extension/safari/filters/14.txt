@@ -1,9 +1,9 @@
-! Checksum: pnZ3D4m/RItpVNkb4uTAUg
-! Diff-Path: ../patches/14/14-s-1792131112-3600.patch
+! Checksum: WihIwCeBkGBuCXLvMofD3g
+! Diff-Path: ../patches/14/14-s-1792134837-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.83.1
-! TimeUpdated: 2026-10-16T06:08:47+00:00
+! Version: 2.2.83.2
+! TimeUpdated: 2026-10-16T07:10:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18144,6 +18144,8 @@ instagram.com#%#//scriptlet('trusted-click-element', 'div[role="dialog"] div[sty
 ! Meta
 ! On facebookcareers.com remove-class cannot be used, because
 ! it breaks search function (it's incorrectly displayed when class "_31e" is removed)
+dev.meta.ai#$#dialog[aria-labelledby="cookie-consent-title"] { display: none !important; }
+dev.meta.ai#$#body { position: unset !important; overflow: auto !important; }
 horizon.meta.com##body > div[id^="mount_"][data-interactable] + div:has(div[aria-modal="true"][role="dialog"])
 auth.meta.com,accountscenter.meta.com#%#//scriptlet('trusted-click-element', 'body > div[class="x1n2onr6 x1vjfegm"] div[aria-hidden="false"] div[class]:last-child > div[class="x3nfvp2 x1n2onr6 xh8yej3"] > div[role="button"][tabindex="0"] > div[role="none"][class^="x1ja2u2z x78zum5 x2lah0s x1n2onr6"] > div[class^="html-div"][class$="xx2axb6"]')
 metacareers.com,meta.com#%#//scriptlet('trusted-click-element', 'body > div[class="x1n2onr6 x1vjfegm"] div[aria-hidden="false"] div[class]:last-child > div[aria-hidden="true"] + div div[role="button"] > div[role="none"][class^="x1ja2u2z"][class*="xtvsq51"]')
@@ -63770,6 +63772,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244496
+novelaplay.com#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244415
 enmods.com#%#//scriptlet('adjust-setInterval', 'timeLeft', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243996
