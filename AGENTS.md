@@ -118,6 +118,9 @@ selection (or was a full, unscoped download); otherwise stats are fetched from t
 remote server. Plain `yarn build` always fetches remotely — the local cache is
 only applied under `--use-cache`.
 
+`yarn download-stats` and an applied stats cache take the set of optimizable filters from
+`optimization_config.json` instead of the remote `percent.json`.
+
 `yarn download-stats` stages fetches in a temp directory and swaps in the whole stats directory
 only after every fetch succeeds. `--include` / `--skip` scope which filters are fetched,
 so a scoped `yarn download-stats` drops every other filter's cached stats; `--report`,

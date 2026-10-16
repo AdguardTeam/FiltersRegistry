@@ -164,12 +164,21 @@ const buildFilters = async () => {
     }
 
     if (downloadStats) {
-        await localOptimizationStatistics.download(
-            optimizationStatsDir,
-            includedFilterIDs,
-            excludedFilterIDs,
-            { percentPath: optimizationPercentPath },
-        );
+        try {
+            await localOptimizationStatistics.download(
+                optimizationStatsDir,
+                includedFilterIDs,
+                excludedFilterIDs,
+                { percentPath: optimizationPercentPath },
+            );
+        } catch (error) {
+            throw new Error(
+                'Downloading optimization stats failed. The filters to download come from '
+                + 'optimization_config.json; if a filter was added there before its stats were deployed, '
+                + `its stats.json is missing on the server, so deploy the config first. (${error.message})`,
+                { cause: error },
+            );
+        }
         await fs.writeFile(
             optimizationStatsScopeFile,
             scopeFlagsFor(includedFilterIDs, excludedFilterIDs),
