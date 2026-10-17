@@ -25,7 +25,8 @@ const REQUIRED_LOCALES = [
     'it',
     'ja',
     'ko',
-    'zh_CN',
+    // the repo keeps Simplified Chinese in the `zh` dir (Crowdin's `zh-CN`)
+    'zh',
     'zh_TW',
     'pt',
     'pt_BR',

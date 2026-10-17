@@ -1,10 +1,14 @@
-project_id: "17570"
-api_token_env: "CROWDIN_PERSONAL_TOKEN"
+project_id: "365951"
+api_token_env: "CROWDIN_FILTERS_REGISTRY_TOKEN"
 preserve_hierarchy: true
+
+# Local output root: translations land in temp/crowdin/<locale>/<file>. The
+# directory must exist before the CLI runs, so download-crowdin.sh creates it.
+base_path: "temp/crowdin"
 
 # Keep the download limited to the locales this repo tracks. The codes are
 # Crowdin language IDs; the Twosky codes es/pt/sv/hy are es-ES/pt-PT/sv-SE/
-# hy-AM in Crowdin (the CLI hard-fails on codes the project does not have).
+# hy-AM in Crowdin, and the repo's `sr` is `sr-CS` (Serbian (Latin)) there.
 # `en` is downloaded like in the old download.sh.
 #
 # This list is the single source for the language set: download-crowdin.sh
@@ -45,7 +49,7 @@ export_languages:
   - ru
   - sk
   - sl
-  - sr
+  - sr-CS
   - sv-SE
   - th
   - tr
@@ -54,15 +58,16 @@ export_languages:
   - zh-CN
   - zh-TW
 
-# Map Crowdin language codes to the locale directory names used in this repo:
-# es-ES/pt-PT/pt-BR use underscores, zh-CN is stored as `zh`, and the
-# two-letter repo dirs sv/hy keep their names (sv-SE -> sv, hy-AM -> hy).
-# es_ES/pt_PT are additionally copied to the base es/pt alias dirs by
-# download-crowdin.sh: validate_locales.ts requires those dirs and the
+# Map Crowdin language IDs to the locale directory names used in this repo.
+# The mapping key must be `language_id` because `%language_id%` drives the
+# local path: pt-BR/pt-PT keep underscores, zh-CN is stored as `zh`, the
+# two-letter repo dirs sv/hy/sr keep their names (sv-SE -> sv, hy-AM -> hy,
+# sr-CS -> sr). es_ES/pt_PT are additionally copied to the base es/pt alias
+# dirs by download-crowdin.sh: validate_locales.ts requires those dirs and the
 # compiler consumes them.
 # Note: &/* is Yaml anchor syntax: https://support.atlassian.com/bitbucket-cloud/docs/yaml-anchors/
 languages_mapping: &languages_mapping
-  two_letters_code:
+  language_id:
     pt-BR: pt_BR
     pt-PT: pt_PT
     zh-CN: zh
@@ -70,17 +75,30 @@ languages_mapping: &languages_mapping
     es-ES: es_ES
     sv-SE: sv
     hy-AM: hy
+    sr-CS: sr
 
 files:
-  - source: /temp/crowdin/source/tags.json
+  # These project files were uploaded by the legacy Twosky flow, so Crowdin
+  # keeps the default export layout `<language_id>/<original_path>/<original_file_name>`
+  # for them. The `translation` pattern mirrors that layout, so the CLI can
+  # match the downloaded archive; `translation_replace` then strips the project
+  # folder from the local path, and `base_path` puts the result under
+  # temp/crowdin.
+  # The pattern and the replace map are the same for every file, so they are
+  # anchored on the first entry and reused below.
+  - source: /source/tags.json
     dest: /miscellaneous/filters-registry/tags.json
-    translation: /temp/crowdin/%two_letters_code%/tags.json
+    translation: &translation /%language_id%/%original_path%/%original_file_name%
+    translation_replace: &translation_replace
+      "miscellaneous/filters-registry/": ""
     languages_mapping: *languages_mapping
-  - source: /temp/crowdin/source/groups.json
+  - source: /source/groups.json
     dest: /miscellaneous/filters-registry/groups.json
-    translation: /temp/crowdin/%two_letters_code%/groups.json
+    translation: *translation
+    translation_replace: *translation_replace
     languages_mapping: *languages_mapping
-  - source: /temp/crowdin/source/filters.json
+  - source: /source/filters.json
     dest: /miscellaneous/filters-registry/filters.json
-    translation: /temp/crowdin/%two_letters_code%/filters.json
+    translation: *translation
+    translation_replace: *translation_replace
     languages_mapping: *languages_mapping
