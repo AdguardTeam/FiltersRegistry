@@ -928,8 +928,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.76.61",
-			"timeUpdated": "2026-10-17T16:37:20+0000",
+			"version": "2.1.76.62",
+			"timeUpdated": "2026-10-17T20:37:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1059,8 +1059,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.99.57",
-			"timeUpdated": "2026-10-17T16:37:24+0000",
+			"version": "2.1.99.58",
+			"timeUpdated": "2026-10-17T20:37:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1133,8 +1133,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.99.59",
-			"timeUpdated": "2026-10-17T16:37:26+0000",
+			"version": "2.1.99.60",
+			"timeUpdated": "2026-10-17T20:37:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1205,8 +1205,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.99.59",
-			"timeUpdated": "2026-10-17T16:37:26+0000",
+			"version": "2.1.99.60",
+			"timeUpdated": "2026-10-17T20:37:05+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1235,8 +1235,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.99.58",
-			"timeUpdated": "2026-10-17T16:37:27+0000",
+			"version": "2.1.99.59",
+			"timeUpdated": "2026-10-17T20:37:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1284,8 +1284,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.73.30",
-			"timeUpdated": "2026-10-17T16:37:31+0000",
+			"version": "2.1.73.31",
+			"timeUpdated": "2026-10-17T20:37:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1331,8 +1331,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.30.76",
-			"timeUpdated": "2026-10-17T12:42:44+0000",
+			"version": "2.0.30.77",
+			"timeUpdated": "2026-10-17T20:37:10+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1360,8 +1360,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.1.29",
-			"timeUpdated": "2026-09-29T08:49:15+0000",
+			"version": "2.0.1.30",
+			"timeUpdated": "2026-10-17T20:37:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1387,8 +1387,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.68.2",
-			"timeUpdated": "2026-10-17T08:39:59+0000",
+			"version": "2.1.68.3",
+			"timeUpdated": "2026-10-17T20:37:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1413,8 +1413,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.70.64",
-			"timeUpdated": "2026-10-17T16:37:41+0000",
+			"version": "2.1.70.65",
+			"timeUpdated": "2026-10-17T20:37:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1439,8 +1439,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.71.33",
-			"timeUpdated": "2026-10-17T16:37:41+0000",
+			"version": "2.0.71.34",
+			"timeUpdated": "2026-10-17T20:37:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1487,8 +1487,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist-thailand/easylist-thailand/master/subscription/easylist-thailand.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.33",
-			"timeUpdated": "2026-10-17T16:37:45+0000",
+			"version": "2.0.0.34",
+			"timeUpdated": "2026-10-17T20:37:17+0000",
 			"deprecated": false,
 			"languages": [
 				"th"
@@ -1593,8 +1593,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.99.59",
-			"timeUpdated": "2026-10-17T16:37:47+0000",
+			"version": "2.1.99.60",
+			"timeUpdated": "2026-10-17T20:37:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1639,8 +1639,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.98.85",
-			"timeUpdated": "2026-10-17T16:37:51+0000",
+			"version": "2.1.98.86",
+			"timeUpdated": "2026-10-17T20:37:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1910,8 +1910,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.99.59",
-			"timeUpdated": "2026-10-17T16:38:00+0000",
+			"version": "2.1.99.60",
+			"timeUpdated": "2026-10-17T20:37:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1937,8 +1937,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.89.38",
-			"timeUpdated": "2026-10-17T16:38:01+0000",
+			"version": "2.0.89.39",
+			"timeUpdated": "2026-10-17T20:37:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1958,8 +1958,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.13.16",
-			"timeUpdated": "2026-10-17T12:43:16+0000",
+			"version": "2.0.13.17",
+			"timeUpdated": "2026-10-17T20:37:31+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -2069,8 +2069,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "1.0.40.29",
-			"timeUpdated": "2026-10-17T16:38:06+0000",
+			"version": "1.0.40.30",
+			"timeUpdated": "2026-10-17T20:37:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2199,8 +2199,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.95.65",
-			"timeUpdated": "2026-10-17T16:38:12+0000",
+			"version": "2.1.95.66",
+			"timeUpdated": "2026-10-17T20:37:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2305,8 +2305,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.92.90",
-			"timeUpdated": "2026-10-17T16:38:18+0000",
+			"version": "2.0.92.91",
+			"timeUpdated": "2026-10-17T20:37:43+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"

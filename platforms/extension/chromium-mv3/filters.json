@@ -904,8 +904,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.99.59",
-			"timeUpdated": "2026-10-17T16:37:26+0000",
+			"version": "2.1.99.60",
+			"timeUpdated": "2026-10-17T20:37:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -976,8 +976,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.99.59",
-			"timeUpdated": "2026-10-17T16:37:26+0000",
+			"version": "2.1.99.60",
+			"timeUpdated": "2026-10-17T20:37:05+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1023,8 +1023,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.30.76",
-			"timeUpdated": "2026-10-17T12:42:44+0000",
+			"version": "2.0.30.77",
+			"timeUpdated": "2026-10-17T20:37:10+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1047,8 +1047,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist-thailand/easylist-thailand/master/subscription/easylist-thailand.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.33",
-			"timeUpdated": "2026-10-17T16:37:45+0000",
+			"version": "2.0.0.34",
+			"timeUpdated": "2026-10-17T20:37:17+0000",
 			"deprecated": false,
 			"languages": [
 				"th"
@@ -1258,8 +1258,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.13.16",
-			"timeUpdated": "2026-10-17T12:43:16+0000",
+			"version": "2.0.13.17",
+			"timeUpdated": "2026-10-17T20:37:31+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1394,8 +1394,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.92.90",
-			"timeUpdated": "2026-10-17T16:38:18+0000",
+			"version": "2.0.92.91",
+			"timeUpdated": "2026-10-17T20:37:43+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
