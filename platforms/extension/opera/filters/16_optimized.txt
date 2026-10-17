@@ -1,5 +1,5 @@
-! Checksum: FxAV5i3ILzO+/cpHxfzTCQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1792116664-3600.patch
+! Checksum: 4HahQXQjSCBoCdqThZwTCg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1792203419-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.57.98
@@ -786,6 +786,7 @@ lavie.fr##.if-abo
 lavie.fr##.bandeau-abo
 qub.ca##legend[data-testid="adTag"]
 mapcustomizer.com##.ad-pane
+lesnumeriques.com##.ln__sb__second > a[href^="/publicite/"]
 meteofrance.com##a[href*="https://www.ardoiz.com/"]
 actu.fr##.ac-banner-ad
 lavoixdunord.fr###hp_banniere_haute
@@ -1627,12 +1628,16 @@ _970-x-90_
 _970_90_
 _970x250.
 _990x557.
+_ad-server.
 _ad160x600.
 _ad_agency_
 _ad_campaign_
 _ad_images_
 _ad_unit.
 _ad_view_
+_ad_viewable_
+_adcitrik_
+_AdClick_
 _adco_
 _adplib.
 _adreaper/
@@ -1667,6 +1672,7 @@ _personalized_ads
 _popads.
 _popdhtml/
 _profits_ad-
+_program_ad.
 _pub.gif
 _pub_iframe.
 _publ1c1te.
@@ -1678,6 +1684,7 @@ _smartclick.js
 _square_ads.
 _werbebanner_
 /wp-content/banners/*$third-party
+/wp-content/plugins/baw-bon-plan/*
 /wp-content/plugins/bazooka-shopping/*
 /wp-content/plugins/easy-affiliate-links/*
 /wp-content/plugins/mm-ad-widget/*
@@ -1777,6 +1784,7 @@ _werbebanner_
 ||adc-lc.eu^$third-party
 ||adclick.lt^$third-party
 ||adhslx.com^$third-party
+||adinlive.com^$third-party
 ||adintop.com^$third-party
 ||adkontekst.pl^$third-party
 ||adleadevent.com^$third-party
@@ -1831,6 +1839,7 @@ _werbebanner_
 ||apypxl.com^$third-party
 ||aquaplatform.com^$third-party
 ||arabytracking.com^$third-party
+||areyouabot.net^$third-party
 ||askmecca.com^$third-party
 ||atedra.com^$third-party
 ||awsclic.com^$third-party
@@ -1922,6 +1931,7 @@ _werbebanner_
 ||meetaffiliate.net^$third-party
 ||missaffiliate.com^$third-party
 ||misstrends.com^$third-party
+||misterbell.com^$third-party
 ||mobileoffers-*-download.com^$third-party
 ||mobligo.com^$third-party
 ||mobsuccess.com^$third-party
@@ -2726,7 +2736,6 @@ _werbebanner_
 ||rsuuc.com^
 ||rtbanalytics.com^
 ||runoffree.bid^
-||rupatch.com^
 ||sabsbonos.com^
 ||samiana.com^
 ||sancvquz.com^
@@ -3052,6 +3061,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||f00.psgsm.net/p/891014/sigma-forum.gif
 ||flux.effiliation.com^
 ||forokeys.com/foro/banners/
+||freeflights.net/electronique/bannieres/
 ||fsx.i-run.fr^
 ||fuckandcdn.com^*/ads/
 ||fusion.localpoint.ch/widgets/$third-party
@@ -3954,7 +3964,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.inplayer_banners
 ##.inread_ads-wrapper
 ##.inside-pub-container
-##.istdg-sponsored
 ##.it-sponsor-site
 ##.item-izipub
 ##.item-pubb-728
@@ -4000,6 +4009,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.modalPub
 ##.module-pub
 ##.module_sponsored
+##.moduletable-pub2
 ##.mom-ads-wrap
 ##.mpu-adv-revamp
 ##.myAd
@@ -4110,6 +4120,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pub_encart_content
 ##.pub_head
 ##.pub_header
+##.pub_header_banner
 ##.pub_info
 ##.pub_kelkoo
 ##.pub_leaderboard
@@ -4238,7 +4249,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.topAdvertContainer
 ##.topPub
 ##.top_banner_ads
-##.top_pub_google
 ##.top_reklama
 ##.topbanneradvertise
 ##.topleftad
@@ -4253,6 +4263,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.video_reklama
 ##.view-publicites
 ##.widget-advert
+##.widget-advert-300-600
 ##.widget-le_guide
 ##.widget-pub
 ##.widget_advncdads
@@ -4320,6 +4331,7 @@ lacanausurfinfo.com###banner_footer
 cowcotland.com###bannertop
 nouvelobs.com###banniere_haute
 algerie360.com###bglink
+neurozinzin.com###bigAdd
 tetesaclaques.tv###bigBox
 save.ca###bigboxgate
 gratuiciel.com,logitheque.com###bloc-droite-bas-250-250
@@ -4333,6 +4345,7 @@ cowcotland.com###blocpub1
 cowcotland.com###bottom_pubN2
 darty.com###brand
 cine-torrent.org,frenchtorrent.cc,magnet-torrent.org,mania-torrent.org,warez-torrent.org,zktorrent.org###btvpn
+conseils-courseapied.com###cadre-vignette-carnet
 ktotv.com###campain-bandeau
 lafranceapoil.com###cams
 sitedesmarques.com###check-also-box
@@ -4441,6 +4454,7 @@ turbo.fr###topShopper
 webstar-auto.com###top_body_right
 freepik.com###topbar
 flaticon.com###unicorn
+europages.fr###vipBox
 sibnet.ru###vjs-overlayclip-container-box
 rtl.be###w-leaderboard
 wix.com###wixFooter
@@ -4555,6 +4569,8 @@ cbanque.com,clubpronostics.com,gratuiciel.com,lelogicielgratuit.com,logicielmac.
 realite-virtuelle.com##.halfpageAd
 medialot.fr##.header-sub
 tvanouvelles.ca##.header-topBar-sticky
+geek-malin.fr##.header-widget-area
+lexpress.fr##.header_content_edito
 ouedkniss.com##.home-land-header
 ouedkniss.com##.home-promo-header
 xboxygen.com##.htpub
@@ -4665,6 +4681,7 @@ laredoute.fr##.sponsoredBanner
 tvanouvelles.ca##.sticky-ad-container
 auto-utilitaire.com,mobilealgerie.com##.td-header-sp-recs
 lexpress.fr##.teads__block
+laposte.fr##.tile--flag--partner
 ecranlarge.com##.top-banner
 jeretiens.net##.top-bar
 lefigaro.fr##.tvm-reagir__pub
@@ -4693,7 +4710,6 @@ webstar-electro.com##[class^="banner"]
 doctissimo.fr##[class^="doc-ad-"]
 fnac.com##[class^="f-kamino-"]
 orange.fr##[class^="media-advert-"]
-dl-protect.link,yggtorrent2.my##[class^="trust"]
 g2a.com##[data-ad-placement-rail]
 cleanrider.com##[data-content="ad"]
 cdiscount.com##[data-e2e="lplr-partner-carousel"]
@@ -4719,7 +4735,6 @@ voyageforum.com##[id*="billboardArround"]
 comarketing-news.fr##[id^="comar-"]
 3dnatives.com##[id^="dnati-"]
 jeuxvideomoinschers.fr,tahiti-infos.com##[id^="pub_"]
-yggtorrent2.my##[id^="vpn"]
 moneyvox.fr##[mam-campaign="Ban"]
 ouedkniss.com##[no-adsense]
 toutvendre.fr##[onclick*=".kelkoogroup.net/"]
