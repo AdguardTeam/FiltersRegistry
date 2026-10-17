@@ -1,9 +1,9 @@
-! Checksum: YS5STjmZj+OFlgMG6iv+0A
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1792183400-14400.patch
+! Checksum: 93z9/1Vk4blScOVLTkqUMQ
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1792226601-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.72
-! TimeUpdated: 2026-10-16T20:40:36+00:00
+! Version: 2.0.2.73
+! TimeUpdated: 2026-10-17T08:40:43+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -601,6 +601,12 @@ about.google##.glue-footer__link[href^="https://ai.google/"]
 ads.google.com##.app-bar-icon:has(> .icon-ads-guide)
 ads.google.com##.list-group:has(ads-advisor-suggestion)
 ads.google.com##.search-bar:not(:has(universal-search.active)) .label-text
+ads.google.com##multimodal-asset-creator-entrypoint
+ads.google.com##image-cards:has([data-test-id="create-image-card"]):has([data-test-id="image-to-animation-card"]):has([data-test-id="bulk-edit-with-ai-card"])
+ads.google.com##[data-test-id="flux-card"]
+ads.google.com##[data-test-id="image-to-video-card"]
+ads.google.com##.edit-with-ai-button
+ads.google.com##.advisor-summary-card
 analytics.google.com##gmp-chat-entry-point
 analytics.google.com##gmp-suggestion-dropdown > div:has(#ask-chatbotundefined)
 analytics.google.com##ga-toolbar-icon-button-component.ga-intelligence-button
@@ -744,6 +750,9 @@ www.google.com##.GS02Vb .mLFOe > .imucI + .ozDyDd.iRPzcb
 support.google.com##html.hcfe:not([style="overflow: hidden;"]) .helpPanelContainerRoot
 support.google.com#?#.top-nav > li:contains("Gen AI tips")
 support.google.com##.notification[data-name="Gemini_EN_RemoteWork_Covid19_NonEN"]
+||support.google.com/apis/aiarticlegeneratesuggestedqueries$xmlhttprequest,domain=support.google.com,important
+support.google.com###ai-answers-container
+||support.google.com/apis/aiarticlesubmitquery$xmlhttprequest,domain=support.google.com,important
 trends.google.com##button[aria-label="Suggest search terms"]
 workspace.google.com##.TemplateHeader_headerNavGroup:has(> [data-g-action="ai"])
 workspace.google.com#?#div._innerGrid_1u063_113 > div._card_1u063_136:contains(Premium AI built-in)
@@ -1130,8 +1139,8 @@ www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..illust[?.aiType==2]
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..content.thumbnails.[?.aiType==2]', 'propsToMatch')
 www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..data.thumbnails[?.aiType==2]')
 www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..contents.[?.thumbnails.[?.aiType==2]]')
-www.pixiv.net##.sc-455f28d6-1:has(.sc-250a6a48-2.sc-250a6a48-4 > [href="https://www.pixiv.help/hc/articles/11866167926809"]) > figure
-www.pixiv.net##.lptroa
+www.pixiv.net##[data-ga4-label="page_root"]:has(figcaption footer [href="https://www.pixiv.help/hc/articles/11866167926809"]) figure
+www.pixiv.net##.sc-d7d0e23-0.hwYNFu:empty
 www.pixiv.net##.fDgtdo[href="/ranking.php?mode=daily_ai"]
 www.plugshare.com###review-summary
 www.plugshare.com###reviews-summary
@@ -1713,6 +1722,7 @@ e-hentai.org,exhentai.org##.itg > tbody > tr:has(img:is([title*="[ai]" i], [titl
 e-hentai.org,exhentai.org##.itg > div.gl1t:has(img:is([title*="[ai]" i], [title*="ai generated" i], [title*="ai-generated" i], [title*="aigenerated" i]))
 e-hentai.org,exhentai.org##.itg > tbody > tr:has(:is(.gt, gtl)[title="other:ai generated"])
 www.eporner.com##.dropdown > li:has(> [href="/cams2/"])
+www.eporner.com###categories-list-left [data-category-slug="ai"]
 www.erofus.com##.header-link a:is([href="https://crushon.ai/?mist=1&utm_source=erofus&utm_medium=headerlink&utm_campaign=porn-ai-chat"], [href="https://nsfw.tools/collections/adult-games"], [href="https://www.cmonbae.com/?union_id=MTgz"])
 www.erome.com##.sp:has(> [href="https://www.erome.com/o/menu-3"])
 www.erome.com##.sp:has(> [href="https://www.erome.com/o/menu-4"])
@@ -1769,6 +1779,8 @@ tube.hentaistream.com##li:has(> [href="https://tube.hentaistream.com/out/trahaic
 tube.hentaistream.com##.post:has([href^="https://tube.hentaistream.com/createai/"])
 hentai.tv###promo-topbar
 hentai.tv##.btn[href="https://aipenly.com/"]
+hentai2read.com##.ourdream-bar
+hentai2read.com#$#body.ourdream-bar-active { padding-top: 0px !important }
 hentaiera.com##[data-tags~="17758"]
 hentaifromhell.org##.textwidget > [href="https://crushon.ai/?&mist=1?utm_source=hentaifromhell&utm_medium=text&utm_campaign=ai_sex_chat"]
 hentaifromhell.org##.textwidget > [href="https://crushon.ai/?&mist=1?utm_source=hentaifromhell&utm_medium=text&utm_campaign=ai_sex_chat"] + br
@@ -1782,6 +1794,8 @@ hentairun.com,imhentai.xxx##[data-tags~="17861"]
 hentaivox.com##.affil-in-content:has([data-value*="AI Porn Video"])
 www.its.porn##.item:has(> [href="https://wittered-mainging.com/0e230fe3-ff83-4040-a8ae-d137617c5f58"])
 jcomic.net##.row.col-lg-4.col-md-6.col-xs-12:has(> [href*="(AI)"], [href*="（AI）"])
+www.justporn.com##.nav-link[href^="https://landing.candynetwork.ai/"]
+www.justporn.com##.nav-link[href="https://www.justporn.com/categories/ai/"]
 lacomics.net##.cat-item-10302
 lacomics.net##.post.category-ai-porn
 www.lolhentai.net##.init-popup:has(> [href^="https://www.gptgirlfriend.online"])
@@ -1890,6 +1904,7 @@ topcartoonpornsites.com##[data-url="https://topcartoonpornsites.com/ai-porn-site
 topcartoonpornsites.com##img[src$="/gptgirlfriend.jpg"]
 toppornsites.com##.best-ai-porn-sites
 toppornsites.com##.best-ai-porn-generators
+toppornsites.com##.individualLiMagnigying:has(> .has-ai-badge)
 tube8.com,tube8.es,tube8.fr##.paidTab:has([data-label2="Ai Girls"])
 4tube.com,analgalore.com,asiangalore.com,assoass.com,bbwpornvideos.com,bigcockxxx.com,biporn.com,cartoonpornvideos.com,coqnu.com,dinotube.com,ebonygalore.com,el-ladies.com,forhertube.com,fucd.com,fullpornvideos.com,fuq.com,fux.com,fuqpremium.com,gaymaletube.com,gotporn.com,hentaigalore.com,homemadegalore.com,ixxx.com,javideos.com,latingalore.com,lesbianpornvideos.com,lobstertube.com,lupoporno.com,maturetube.com,melonstube.com,metaporn.com,modelgalore.com,newporno.com,pornhd.com,pornmd.com,porntv.com,porzo.com,qorno.com,sambaporno.com,shortporn.com,stocking-tease.com,tgtube.com,tiava.com,toroporno.com,tubebdsm.com,tubegalore.com,tubeporn.com,tubepornstars.com,vrxxx.com,xxxmilfs.com##.dropdown .group\/subnav:has([rel="sponsored"][href^="https://www.ourdreamersai.com/"])
 4tube.com,analgalore.com,asiangalore.com,assoass.com,bbwpornvideos.com,bigcockxxx.com,biporn.com,cartoonpornvideos.com,coqnu.com,dinotube.com,ebonygalore.com,el-ladies.com,forhertube.com,fucd.com,fullpornvideos.com,fuq.com,fux.com,fuqpremium.com,gaymaletube.com,gotporn.com,hentaigalore.com,homemadegalore.com,ixxx.com,javideos.com,latingalore.com,lesbianpornvideos.com,lobstertube.com,lupoporno.com,maturetube.com,melonstube.com,metaporn.com,modelgalore.com,newporno.com,pornhd.com,pornmd.com,porntv.com,porzo.com,qorno.com,sambaporno.com,shortporn.com,stocking-tease.com,tgtube.com,tiava.com,toroporno.com,tubebdsm.com,tubegalore.com,tubeporn.com,tubepornstars.com,vrxxx.com,xxxmilfs.com##.card:has(> [href*="/ai-generated"])

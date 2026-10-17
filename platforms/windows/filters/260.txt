@@ -1,9 +1,9 @@
-! Checksum: e0r/lY/47CAhG8NrzSU8Kw
-! Diff-Path: ../patches/260/260-s-1792183421-14400.patch
+! Checksum: p+ijm6UYwlZGTEIAyPDvfg
+! Diff-Path: ../patches/260/260-s-1792226631-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.72
-! TimeUpdated: 2026-10-16T20:40:36+00:00
+! Version: 2.0.2.73
+! TimeUpdated: 2026-10-17T08:40:43+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1520,6 +1520,7 @@ ogs.google.com##.bwIQH:has([data-label="Get a Google AI plan"])
 ! "Google AI" in footer
 about.google##.glue-footer__link[href^="https://ai.google/"]
 ! === Google Ads ===
+! -- https://ads.google.com/aw/
 ! Ads Advisor in navbar
 ads.google.com##.app-bar-icon:has(> .icon-ads-guide)
 ! Search - Ask Advisor suggestions
@@ -1527,6 +1528,19 @@ ads.google.com##.app-bar-icon:has(> .icon-ads-guide)
 ads.google.com##.list-group:has(ads-advisor-suggestion)
 ! Search - Placeholder search suggestions
 ads.google.com##.search-bar:not(:has(universal-search.active)) .label-text
+! -- https://ads.google.com/aw/assetstudio
+! "Transform your business and brand into assets"
+ads.google.com##multimodal-asset-creator-entrypoint
+! "Personalize your images with Google AI" section
+ads.google.com##image-cards:has([data-test-id="create-image-card"]):has([data-test-id="image-to-animation-card"]):has([data-test-id="bulk-edit-with-ai-card"])
+! AI cards
+ads.google.com##[data-test-id="flux-card"]
+ads.google.com##[data-test-id="image-to-video-card"]
+! Asset Library - About this Asset - Actions - Copy and edit with Ai
+ads.google.com##.edit-with-ai-button
+! -- https://ads.google.com/aw/policy/ads/summary
+! Ask Advisor about account issues
+ads.google.com##.advisor-summary-card
 ! === Google Analytics ===
 ! Header > "Ask Analytics Advisor" button
 analytics.google.com##gmp-chat-entry-point
@@ -1887,6 +1901,12 @@ support.google.com##html.hcfe:not([style="overflow: hidden;"]) .helpPanelContain
 support.google.com#?#.top-nav > li:contains("Gen AI tips")
 ! Notice promoting Workplace with Gemini
 support.google.com##.notification[data-name="Gemini_EN_RemoteWork_Covid19_NonEN"]
+! -- https://support.google.com/google-ads/answer/16456563?hl=en
+! AI agent suggestions
+||support.google.com/apis/aiarticlegeneratesuggestedqueries$xmlhttprequest,domain=support.google.com,important
+support.google.com###ai-answers-container
+! Sending message to AI agent support
+||support.google.com/apis/aiarticlesubmitquery$xmlhttprequest,domain=support.google.com,important
 ! === Google Trends ===
 ! -- https://trends.google.com/explore
 ! "Suggest search terms" button
@@ -2886,10 +2906,11 @@ www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..data.thumbnails[?.aiType==2]')
 www.pixiv.net#%#//scriptlet('ubo-json-prune', '$..contents.[?.thumbnails.[?.aiType==2]]')
 ! -- https://www.pixiv.net/en/artworks/145900548
 ! Hide image if 'AI-generated' tag is present
-www.pixiv.net##.sc-455f28d6-1:has(.sc-250a6a48-2.sc-250a6a48-4 > [href="https://www.pixiv.help/hc/articles/11866167926809"]) > figure
+www.pixiv.net##[data-ga4-label="page_root"]:has(figcaption footer [href="https://www.pixiv.help/hc/articles/11866167926809"]) figure
 ! -- https://www.pixiv.net/en/users/112965293/illustrations
 ! Blank space on user's page when viewing image list
-www.pixiv.net##.lptroa
+! * If class name changes again, consider using `div:empty` with parent element names
+www.pixiv.net##.sc-d7d0e23-0.hwYNFu:empty
 ! -- https://www.pixiv.net/ranking.php
 ! AI generated ranking category
 www.pixiv.net##.fDgtdo[href="/ranking.php?mode=daily_ai"]
@@ -4290,6 +4311,8 @@ e-hentai.org,exhentai.org##.itg > tbody > tr:has(:is(.gt, gtl)[title="other:ai g
 ! === Eporner (NSFW) ===
 ! AI Jerk Off
 www.eporner.com##.dropdown > li:has(> [href="/cams2/"])
+! Sidebar - AI category
+www.eporner.com###categories-list-left [data-category-slug="ai"]
 ! === Erofus (NSFW) ===
 ! AI Header links
 www.erofus.com##.header-link a:is([href="https://crushon.ai/?mist=1&utm_source=erofus&utm_medium=headerlink&utm_campaign=porn-ai-chat"], [href="https://nsfw.tools/collections/adult-games"], [href="https://www.cmonbae.com/?union_id=MTgz"])
@@ -4419,6 +4442,10 @@ tube.hentaistream.com##.post:has([href^="https://tube.hentaistream.com/createai/
 hentai.tv###promo-topbar
 ! AI Porn partner site in sidebar
 hentai.tv##.btn[href="https://aipenly.com/"]
+! === Hentai2Read (NSFW) ===
+! Header - ourdream AI promo
+hentai2read.com##.ourdream-bar
+hentai2read.com#$#body.ourdream-bar-active { padding-top: 0px !important }
 ! === HentaiEra (NSFW) ===
 ! Galleries tagged ai generated
 hentaiera.com##[data-tags~="17758"]
@@ -4452,6 +4479,11 @@ www.its.porn##.item:has(> [href="https://wittered-mainging.com/0e230fe3-ff83-404
 ! -- https://jcomic.net/search/ai
 ! Comics with AI in title
 jcomic.net##.row.col-lg-4.col-md-6.col-xs-12:has(> [href*="(AI)"], [href*="（AI）"])
+! === JustPorn (NSFW) ===
+! Sidebar - AI Girlfriend
+www.justporn.com##.nav-link[href^="https://landing.candynetwork.ai/"]
+! Sidebar - AI Category
+www.justporn.com##.nav-link[href="https://www.justporn.com/categories/ai/"]
 ! === Lacomics (NSFW) ===
 ! AI Porn category
 lacomics.net##.cat-item-10302
@@ -4717,6 +4749,8 @@ topcartoonpornsites.com##img[src$="/gptgirlfriend.jpg"]
 ! Site category sections
 toppornsites.com##.best-ai-porn-sites
 toppornsites.com##.best-ai-porn-generators
+! Site with AI badge
+toppornsites.com##.individualLiMagnigying:has(> .has-ai-badge)
 ! === Tube8 (NSFW) ===
 ! -- https://www.tube8.com/
 ! "Ai Girls" in header nav

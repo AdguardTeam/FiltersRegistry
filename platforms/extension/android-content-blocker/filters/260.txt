@@ -1,8 +1,8 @@
-! Checksum: JDanB+tmV8MknWe2aAyqDw
+! Checksum: /NzCkfMMW7APiYraZwyelw
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.72
-! TimeUpdated: 2026-10-16T20:40:36+00:00
+! Version: 2.0.2.73
+! TimeUpdated: 2026-10-17T08:40:43+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1257,10 +1257,23 @@ google.com##[data-rp-placement-id="gemkick-pep-icon-callout-id"]
 ! "Google AI" in footer
 about.google##.glue-footer__link[href^="https://ai.google/"]
 ! === Google Ads ===
+! -- https://ads.google.com/aw/
 ! Ads Advisor in navbar
 ! Search - Ask Advisor suggestions
 ! TODO: Still selectable with keyboard arrow keys
 ! Search - Placeholder search suggestions
+! -- https://ads.google.com/aw/assetstudio
+! "Transform your business and brand into assets"
+ads.google.com##multimodal-asset-creator-entrypoint
+! "Personalize your images with Google AI" section
+! AI cards
+ads.google.com##[data-test-id="flux-card"]
+ads.google.com##[data-test-id="image-to-video-card"]
+! Asset Library - About this Asset - Actions - Copy and edit with Ai
+ads.google.com##.edit-with-ai-button
+! -- https://ads.google.com/aw/policy/ads/summary
+! Ask Advisor about account issues
+ads.google.com##.advisor-summary-card
 ! === Google Analytics ===
 ! Header > "Ask Analytics Advisor" button
 analytics.google.com##gmp-chat-entry-point
@@ -1544,6 +1557,12 @@ support.google.com##html.hcfe:not([style="overflow: hidden;"]) .helpPanelContain
 ! Navbar - Gen AI tips tab
 ! Notice promoting Workplace with Gemini
 support.google.com##.notification[data-name="Gemini_EN_RemoteWork_Covid19_NonEN"]
+! -- https://support.google.com/google-ads/answer/16456563?hl=en
+! AI agent suggestions
+||support.google.com/apis/aiarticlegeneratesuggestedqueries$xmlhttprequest,domain=support.google.com,important
+support.google.com###ai-answers-container
+! Sending message to AI agent support
+||support.google.com/apis/aiarticlesubmitquery$xmlhttprequest,domain=support.google.com,important
 ! === Google Trends ===
 ! -- https://trends.google.com/explore
 ! "Suggest search terms" button
@@ -2402,7 +2421,8 @@ pictory.ai###livex-chatbot-app
 ! Hide image if 'AI-generated' tag is present
 ! -- https://www.pixiv.net/en/users/112965293/illustrations
 ! Blank space on user's page when viewing image list
-www.pixiv.net##.lptroa
+! * If class name changes again, consider using `div:empty` with parent element names
+www.pixiv.net##.sc-d7d0e23-0.hwYNFu:empty
 ! -- https://www.pixiv.net/ranking.php
 ! AI generated ranking category
 www.pixiv.net##.fDgtdo[href="/ranking.php?mode=daily_ai"]
@@ -3581,6 +3601,8 @@ www.drtuber.com##.header_premium_bar[href^="https://go.xliiirdr.com/ls"]
 ! Compact/Extended view by tag
 ! === Eporner (NSFW) ===
 ! AI Jerk Off
+! Sidebar - AI category
+www.eporner.com###categories-list-left [data-category-slug="ai"]
 ! === Erofus (NSFW) ===
 ! AI Header links
 www.erofus.com##.header-link a:is([href="https://crushon.ai/?mist=1&utm_source=erofus&utm_medium=headerlink&utm_campaign=porn-ai-chat"], [href="https://nsfw.tools/collections/adult-games"], [href="https://www.cmonbae.com/?union_id=MTgz"])
@@ -3676,6 +3698,9 @@ hentai.pro##.ai-link
 hentai.tv###promo-topbar
 ! AI Porn partner site in sidebar
 hentai.tv##.btn[href="https://aipenly.com/"]
+! === Hentai2Read (NSFW) ===
+! Header - ourdream AI promo
+hentai2read.com##.ourdream-bar
 ! === HentaiEra (NSFW) ===
 ! Galleries tagged ai generated
 hentaiera.com##[data-tags~="17758"]
@@ -3703,6 +3728,11 @@ hentairun.com,imhentai.xxx##[data-tags~="17861"]
 ! === JComic (NSFW) ===
 ! -- https://jcomic.net/search/ai
 ! Comics with AI in title
+! === JustPorn (NSFW) ===
+! Sidebar - AI Girlfriend
+www.justporn.com##.nav-link[href^="https://landing.candynetwork.ai/"]
+! Sidebar - AI Category
+www.justporn.com##.nav-link[href="https://www.justporn.com/categories/ai/"]
 ! === Lacomics (NSFW) ===
 ! AI Porn category
 lacomics.net##.cat-item-10302
@@ -3902,6 +3932,7 @@ topcartoonpornsites.com##img[src$="/gptgirlfriend.jpg"]
 ! Site category sections
 toppornsites.com##.best-ai-porn-sites
 toppornsites.com##.best-ai-porn-generators
+! Site with AI badge
 ! === Tube8 (NSFW) ===
 ! -- https://www.tube8.com/
 ! "Ai Girls" in header nav
