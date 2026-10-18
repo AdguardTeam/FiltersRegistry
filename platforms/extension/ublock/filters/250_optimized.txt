@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: bpU6Kbk1obv8/ev77ly+cw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1792226613-14400.patch
+! Checksum: WwVOt5NcpUDbjhXNJMw2kg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1792298668-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.91
@@ -50,7 +50,6 @@ exefiles.com##.row:has(a[href*="/recommended/"])
 /^(https?|tcp|iquic):\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php$/$document,domain=biz|fun|live
 ||freeroms.com^$document
 ||romsmania.com^$document
-||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
@@ -153,7 +152,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||37.0.10.83^$all
 ||192.3.110.170^$all
 ||totalwebshield.com^$all
-||protected.net^$all
 ||91.241.19.38^$all
 ||45.90.58.90^$document
 ||95.85.89.98^$all
@@ -1533,7 +1531,6 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@||bannedbook.org^
 @@||dongtaiwang.com^
 @@||epochtimes.com.tw^
-@@||ntdtv.com^
 @@||secretchina.com^
 @@||soundofhope.org^
 @@||buzzfeed.com^
@@ -1835,7 +1832,6 @@ $document,removeparam=source_location
 $document,removeparam=psf_variant
 $document,removeparam=es_id
 $document,removeparam=bxid
-$document,removeparam=cndid
 $document,removeparam=/^clickid=.*$/i,domain=~discover.*
 $document,removeparam=ito
 $document,removeparam=c[0]
@@ -2052,6 +2048,8 @@ $removeparam=spUserID
 $removeparam=spJobID
 $removeparam=spReportId
 $removeparam=actId
+$removeparam=actCampaignType
+$removeparam=actSource
 $removeparam=oly_anon_id
 $document,removeparam=/^wickedsource=.*$/i
 $removeparam=s_cid
@@ -2241,10 +2239,10 @@ $removeparam=hubspotUtk
 $removeparam=messagesUtk
 $removeparam=advUuid
 $document,removeparam=traceId
+$removeparam=refDomain
 $removeparam=criteoId
 $removeparam=dspCookie
 $document,removeparam=_rand,domain=~goofish.com
-$removeparam=ttd_id
 $removeparam=dsp_uid
 $removeparam=pn_id
 $removeparam=adsafe_url
@@ -2834,6 +2832,8 @@ $removeparam=site_id,domain=taskrabbit.com|kochava.com
 ||kochava.com^$removeparam=device_id
 ||skyscanner.$removeparam=redirectedFrom
 ||skyscanner.$removeparam=previousCultureSource
+$removeparam=context_referrer
+$removeparam=ref_ctx_id
 ||fiverr.com^$removeparam=pckg_id
 ||fiverr.com^$removeparam=context_alg
 ||fiverr.com^$removeparam=context_type
@@ -3198,7 +3198,6 @@ $document,removeparam=af_xp
 !+ NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
 ||carousell.$removeparam=t-id
-$document,domain=carousell.*,removeparam=/^t-referrer_/
 ||carousell.$removeparam=t-tap_index
 ||qzone.qq.com^$document,removeparam=loginfrom
 ||qzone.qq.com^$document,removeparam=jumptoqzone
@@ -3315,8 +3314,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||photoshop.adobe.com^$removeparam=mv
 ://get.microsoft.com/installer/download^$removeparam=referrer
 ://get.microsoft.com/installer/download^$removeparam=source
-://globalcdn.nuget.org/packages/*.nupkg?packageVersion=$removeparam=packageVersion
-||mcafee.$removeparam=msockid
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=CttFileID
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=CDCttType
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=ModelType
