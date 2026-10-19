@@ -644,23 +644,26 @@ Registering a brand-new filter (new `filterId`) takes more than creating
 Translations live in `locales/` (45+ languages). See
 [scripts/translations/README.md](scripts/translations/README.md) for the full workflow:
 
-1. Download latest translations: `cd scripts/translations && CROWDIN_PERSONAL_TOKEN=... ./download-crowdin.sh`
+1. Download latest translations: `cd scripts/translations && CROWDIN_FILTERS_REGISTRY_TOKEN=... ./download-crowdin.sh`
 1. Validate: `yarn validate:locales`
 1. Edit strings in `locales/` as needed.
 1. Upload changes (manual only): `cd scripts/translations && ./upload.sh`
 
-Translations are stored in the Crowdin project `adguard-applications` (project ID 17570) under
+Translations are stored in the Crowdin project `adguard-applications` (project ID 365951) under
 `miscellaneous/filters-registry`; downloads use the Crowdin CLI configured in the root
 `crowdin.yml`. The legacy Twosky-based `download.sh`/`upload.sh` scripts are kept for reference;
 uploading strings to the service is done manually via `upload.sh` only — there is no
 Crowdin-CLI-based upload script.
 
-The first two steps are automated: the `update-translations.yaml` workflow runs weekly
-(Mondays 06:00 UTC) and on manual dispatch, downloads translations via `download-crowdin.sh`
-(authenticated with the `CROWDIN_PERSONAL_TOKEN` repository secret),
-validates them with `yarn validate:locales`, and opens a pull request with the changes
-to `locales/`. Merging is manual; the next regular build propagates new strings into
-`platforms/`.
+The first two steps are automated: the `update-translations.yaml` workflow downloads
+translations via `download-crowdin.sh` (authenticated with the
+`CROWDIN_FILTERS_REGISTRY_TOKEN` repository secret), validates them with
+`yarn validate:locales`, and opens a pull request with the changes to `locales/`.
+Merging is manual; the next regular build propagates new strings into `platforms/`.
+
+The workflow runs on manual dispatch only for now: its weekly schedule (Mondays
+06:00 UTC) stays commented out until the `CROWDIN_FILTERS_REGISTRY_TOKEN` secret is
+added to the repository.
 
 The auto-created PR is opened with the default `GITHUB_TOKEN`, so GitHub does not run
 `test.yaml`/`build-adguard` on it (events raised with that token do not start workflow

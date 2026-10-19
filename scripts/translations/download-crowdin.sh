@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 # Downloads translations from Crowdin via the Crowdin CLI instead of the
-# Twosky gateway. Requires the CROWDIN_PERSONAL_TOKEN environment variable
+# Twosky gateway. Requires the CROWDIN_FILTERS_REGISTRY_TOKEN environment variable
 # (see crowdin.yml api_token_env). The script resolves every path from its own
 # location, so it can be run from any directory (CI runs it from
 # scripts/translations, `yarn run` from the repo root).
@@ -42,17 +42,17 @@ baseLocaleAliases=(
 echo "Cleaning previous downloads"
 rm -rf "$crowdinDir"
 
+# crowdin.yml sets base_path to this directory, and the CLI requires it to exist.
+mkdir -p "$crowdinDir"
+
 echo "Downloading translations"
 # --all makes the CLI match the configured files against the server-side
 # project files (by dest) instead of the local source paths, which are not
 # staged in this repo (there is no upload step).
 yarn -s crowdin download --all --config "$crowdinConfig"
 
-if [ ! -d "$crowdinDir" ]; then
-    echo "Error: the download produced no files: $crowdinDir does not exist" >&2
-    exit 1
-fi
-
+# An empty download needs no check of its own: the import loop below finds no
+# locale dirs and the `imported -eq 0` guard at its end fails the run.
 imported=0
 importedLocales=""
 aliased=0
