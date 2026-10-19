@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wcdO3wd81L4lRc/esfLraA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792401721-3600.patch
+! Checksum: 2dO19bOnPso192LDShe+tg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792404926-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.98.39
-! TimeUpdated: 2026-10-19T09:17:31+00:00
+! Version: 2.4.98.40
+! TimeUpdated: 2026-10-19T10:11:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35748,6 +35748,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/243741
+! Workaround for MV3 extension when scriptlet is injected too late
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242899
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242900
 pornoeggs.com,pornflip.com##+js(set-constant, pop_clicked, 1)
@@ -40468,6 +40470,10 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+||cdn.onnetwork.tv/js/prebid*.js
+morningstar.com##.home__content__mdc > section.home__section--separator__mdc:has(> section.mdc-panel__mdc h2.mdc-header__title__mdc:contains(Sponsor Center))
+morningstar.com##.mdc-top-ad__container
+morningstar.com##.mdc-page-container__sponsor-center__mdc
 merriam-webster.com##div[class^="tbgads-"]
 ||mjedge.net/nb/service-handler.js
 pornwhite.com##.nav > li:not(.drop)
