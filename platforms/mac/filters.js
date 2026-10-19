@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.9.20",
-			"timeUpdated": "2026-10-17T15:09:00+0000",
+			"version": "2.1.9.21",
+			"timeUpdated": "2026-10-19T14:13:43+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.98.43",
-			"timeUpdated": "2026-10-19T13:13:56+0000",
+			"version": "2.4.98.44",
+			"timeUpdated": "2026-10-19T14:13:59+0000",
 			"languages": []
 		},
 		{
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.83.33",
-			"timeUpdated": "2026-10-19T13:14:44+0000",
+			"version": "2.2.83.34",
+			"timeUpdated": "2026-10-19T14:14:49+0000",
 			"languages": []
 		},
 		{
@@ -302,8 +302,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.97.14",
-			"timeUpdated": "2026-10-19T13:14:52+0000",
+			"version": "2.0.97.15",
+			"timeUpdated": "2026-10-19T14:14:59+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.85.76",
-			"timeUpdated": "2026-10-19T13:14:54+0000",
+			"version": "2.0.85.77",
+			"timeUpdated": "2026-10-19T14:15:01+0000",
 			"languages": []
 		},
 		{
@@ -420,8 +420,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.0.52",
-			"timeUpdated": "2026-10-19T10:12:37+0000",
+			"version": "2.0.0.53",
+			"timeUpdated": "2026-10-19T14:15:13+0000",
 			"languages": [
 				"pl"
 			]
@@ -1214,8 +1214,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.67.87",
-			"timeUpdated": "2026-10-19T12:18:01+0000",
+			"version": "2.1.67.88",
+			"timeUpdated": "2026-10-19T14:15:18+0000",
 			"languages": [
 				"zh"
 			]
