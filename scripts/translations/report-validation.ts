@@ -71,8 +71,7 @@ export const buildCommentBody = (report: string): string => {
     const truncatedReport = truncateReport(report);
     return [
         COMMENT_MARKER,
-        '**`yarn validate:locales` failed** for the downloaded translations.',
-        'The PR was created anyway so the changes can be inspected and fixed.',
+        '**`yarn validate:locales` failed** for the downloaded translations (related to the previous commit).',
         '',
         '<details><summary>Validation report</summary>',
         '',
