@@ -1,9 +1,9 @@
-! Checksum: i/tg9dQTp7hGmKmVvJluSw
-! Diff-Path: ../patches/19/19-s-1792386976-3600.patch
+! Checksum: +Y0OLmIgWOpfZ/f0mCAKHQ
+! Diff-Path: ../patches/19/19-s-1792391207-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.85.69
-! TimeUpdated: 2026-10-19T05:12:35+00:00
+! Version: 2.0.85.70
+! TimeUpdated: 2026-10-19T06:23:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2248,6 +2248,11 @@ socialblade.com##.socialblade-heartbeat
 socialblade.com##div[style^="width: px; height: 250px;"]
 creativeuncut.com###abox-s_i
 creativeuncut.com###g_abox
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/244734
+fenixplay.xyz#%#//scriptlet('set-constant', 'FENIX_ADBLOCK_MODE', 'undefined')
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+@@||fenixplay.xyz/player/*.js?cb=$domain=fenixplay.xyz|anitube.in.ua
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237040
 toolskitpro.net#%#//scriptlet('prevent-setTimeout', 'ad_blocker')
@@ -22636,7 +22641,7 @@ xda-developers.com###newsletter-sidebar-subscribe
 theregister.com##.newsletter_signup_unit
 theregister.com###index_page > .srow > .faux-article > .newsletter_link
 theregister.com#$?##index_page > .srow > .faux-article:has(> .newsletter_link) { visibility: hidden !important; }
-parfum-zentrum.de,geekwire.com,gq.co.za,franceinter.fr,time.com,techbang.com,fivethirtyeight.com,eschuhe.de,kotaku.com.au,gizmodo.com.au,finanzen100.de##.newsletter-subscribe
+americanrifleman.org,americanhunter.org,parfum-zentrum.de,geekwire.com,gq.co.za,franceinter.fr,time.com,techbang.com,fivethirtyeight.com,eschuhe.de,kotaku.com.au,gizmodo.com.au,finanzen100.de##.newsletter-subscribe
 lancashiretelegraph.co.uk##div[data-block-pull="newsletter-interstitial"]
 bestbuy.com###footer-email-block
 actualcomment.ru##.ya_dzen__container
