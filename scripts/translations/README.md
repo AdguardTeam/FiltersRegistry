@@ -19,8 +19,7 @@ step, see below).
 The Crowdin CLI reads the API token from the `CROWDIN_FILTERS_REGISTRY_TOKEN` environment variable, so it
 must be set before running the scripts (in CI it is provided by the `CROWDIN_FILTERS_REGISTRY_TOKEN`
 repository secret). When that variable is not set, the CLI falls back to `CROWDIN_PERSONAL_TOKEN`;
-a stale value there produces the same confusing `403 Forbidden` as a missing token, so unset it
-when testing locally.
+a stale value there produces a confusing `403 Forbidden`, so unset it when testing locally.
 
 It's essential to import strings from the service before exporting them, as some changes may be lost otherwise.
 
