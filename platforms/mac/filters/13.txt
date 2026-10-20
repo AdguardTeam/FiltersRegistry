@@ -1,8 +1,8 @@
-! Checksum: DLss74S/RiF+2BEoIFnxeA
+! Checksum: zwlzMaU2jh+RvZpz7YQMWA
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.10
-! TimeUpdated: 2026-10-20T03:12:58+00:00
+! Version: 2.0.69.11
+! TimeUpdated: 2026-10-20T04:20:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -563,7 +563,7 @@ oyungibi.com#%#//scriptlet("set-constant", "jQuery.adblock", "false")
 osxinfo.net#%#//scriptlet("abort-current-inline-script", "$", "!document.getElementById(btoa")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49271
 turkdenizcileri.com,bilgalem.blogspot.com#%#//scriptlet("set-constant", "koddostu_com_adblock_yok", "null")
-turkdenizcileri.com,bilgalem.blogspot.com$$script[tag-content="adblock"][max-length="300"]
+turkdenizcileri.com,bilgalem.blogspot.com$$script:contains(adblock):contains(/^(?=.{0,300}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203121
 tekniknot.com#%#//scriptlet('abort-on-stack-trace', 'document.querySelector', 'window.onload')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47184
@@ -610,7 +610,7 @@ osxinfo.net#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_a
 huawei-turkiye.com##.XGT-AdBlock-Govde
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34999
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34807
-memoryhackers.org$$script[tag-content="adregain_wall"][min-length="3000"][max-length="7000"]
+memoryhackers.org$$script:contains(adregain_wall):contains(/^(?=.{3000,7000}$).*/s)
 memoryhackers.org#%#//scriptlet("abort-on-property-write", "adregain_wall")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33340
 blogkafem.net#$##blogkafemnet-reklam { height: 1px!important; }
@@ -659,7 +659,7 @@ baho.com.tr#$#.adsmd { height: 1px!important; }
 web.tv#%#var canRunAds = true;
 @@||static.origins.web.tv/scripts/ads.js
 ! http://forum.adguard.com/showthread.php?7046
-mackolik.com$$script[tag-content="if (typeof (AdmostClient)"][max-length="250"]
+mackolik.com$$script:contains(/^(?=.{0,250}$)(?=.*if \(typeof \(AdmostClient\)).*/s)
 mackolik.com,sahadan.com#%#var _amw1 = 1;
 mackolik.com,sahadan.com#%#var AdmostClient = 1;
 mackolik.com,sahadan.com#%#var advertisement_not_blocked = 1;

@@ -1,9 +1,9 @@
-! Checksum: 7g6rSzTXWcfoLfvDjMmBBA
-! Diff-Path: ../patches/6/6-s-1792422928-3600.patch
+! Checksum: l8jPH9x4ukz2SbjsXwjXog
+! Diff-Path: ../patches/6/6-s-1792470223-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.54.22
-! TimeUpdated: 2026-10-19T15:11:42+00:00
+! Version: 2.0.54.23
+! TimeUpdated: 2026-10-20T04:20:41+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -624,7 +624,7 @@ t-rocforum.de#%#//scriptlet("abort-current-inline-script", "$", "!document.getEl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/62688
 ! '#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")'
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56965
-wetteronline.at,wetteronline.de$$script[tag-content="runInIframe"][min-length="10000"][max-length="50000"]
+wetteronline.at,wetteronline.de$$script:contains(runInIframe):contains(/^(?=.{10000,50000}$).*/s)
 wetteronline.at,wetteronline.de#%#//scriptlet("abort-on-property-write", "googletag.defineSlot")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53825
 @@||stats.t-online.de/js/ads/adex.js
@@ -843,7 +843,7 @@ bzbasel.ch#$#.az-iso--adblockerBlocker { display: none!important; }
 @@||freiepresse.de/RWD/js/werbung/_advertisement.js
 ! https://forum.adguard.com/index.php?threads/5872/
 @@||adition.com^$domain=motorsport-total.com
-motorsport-total.com$$script[tag-content="ads.com/fp.js"][max-length="30000"]
+motorsport-total.com$$script:contains(ads.com/fp.js):contains(/^(?=.{0,30000}$).*/s)
 ! https://forum.adguard.com/index.php?threads/china-gadgets-de.20961/
 china-gadgets.de##.TMX_Werbeplatz_adblocker
 ! https://forum.adguard.com/index.php?threads/9777/
@@ -853,7 +853,7 @@ china-gadgets.de##.TMX_Werbeplatz_adblocker
 @@||ec-ns.sascdn.com/diff/251/pages/motorsporttotal.js$domain=motorsport-total.com
 ! https://forum.adguard.com/index.php?threads/20694/
 @@andads.com/*/ad-*.bmp
-rp-online.de$$script[tag-content="n.createAdTag"][max-length="10000"]
+rp-online.de$$script:contains(n.createAdTag):contains(/^(?=.{0,10000}$).*/s)
 ! https://forum.adguard.com/index.php?threads/mahjongspielen-de.20371/
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js^$domain=mahjongspielen.de
 ! https://forum.adguard.com/index.php?threads/kostenlosspielen-net.20364/

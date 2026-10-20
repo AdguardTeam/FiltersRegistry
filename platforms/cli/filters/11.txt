@@ -1,9 +1,9 @@
-! Checksum: +WdicnEphBJ8HRZ1MSjLhg
-! Diff-Path: ../patches/11/11-s-1792466172-3600.patch
+! Checksum: 8S9H9xhuEYS0cifG9fx/8g
+! Diff-Path: ../patches/11/11-s-1792470178-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.72.83
-! TimeUpdated: 2026-10-20T03:12:57+00:00
+! Version: 2.0.72.84
+! TimeUpdated: 2026-10-20T04:20:48+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1860,7 +1860,7 @@ deviantart.com#$#div[class*="dp-ad-"] { height: 0!important; width: 0!important;
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139022
 antikor.com.ua$$amp-addthis
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136614
-cumhuriyet.com.tr$$div[tag-content="data-delay-ad-request"][max-length="700"]
+cumhuriyet.com.tr$$div:contains(data-delay-ad-request):contains(/^(?=.{0,700}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134379
 businessinsider.in$$div[class="amazon_ad"]
 ! AMP ads in ShadowRoot
@@ -1885,7 +1885,7 @@ zoomtventertainment.com$$amp-embed[type="taboola"]
 vokrug.tv,dni.ru$$amp-iframe[src="https://news.gnezdo.ru/"]
 cumhuriyet.com.tr,vokrug.tv$$amp-embed[type="engageya"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17500
-motherless.xxx$$script[tag-content="awentw.com"][min-length="2000"][max-length="2500"]
+motherless.xxx$$script:contains(awentw.com):contains(/^(?=.{2000,2500}$).*/s)
 !---------------------------------------------------------------------------!
 !-------------- General URL blocking rules ---------------------------------!
 !---------------------------------------------------------------------------!

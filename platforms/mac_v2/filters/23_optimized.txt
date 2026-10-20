@@ -1,9 +1,9 @@
-! Checksum: TBX4glb8IkBiuqMNd4AvxA
-! Diff-Path: ../patches/23_optimized/23_optimized-s-1792152721-3600.patch
+! Checksum: Q8C9bXT6w5IwxFPj4b36og
+! Diff-Path: ../patches/23_optimized/23_optimized-s-1792470213-3600.patch
 ! Title: AdGuard Ukrainian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.9.46
-! TimeUpdated: 2026-10-16T12:08:40+00:00
+! Version: 2.0.9.47
+! TimeUpdated: 2026-10-20T04:21:06+00:00
 ! Expires: 12 hours (update frequency)
 ?fre=*&nocredentials=1^$xmlhttprequest,third-party
 /assets/*.txt?fre=
@@ -3560,15 +3560,15 @@ http://w7.ru^$third-party
 /script.js$domain=infopedia.su|studopedia.net|studopedia.su|studopedia.org|studopedia.ru|studopedia.com.ua|lektsii.org|mydocx.ru
 infopedia.su,studopedia.net,studopedia.su,studopedia.org,studopedia.ru,studopedia.com.ua,lektsii.org,mydocx.ru#@#.adbanner
 inforesist.org,newsyou.info,newsua.one,textreferat.com,socportal.info,vsetv.com#%#(function(){var a=document.currentScript,b=String.prototype.charCodeAt,c=function(){return true;};Object.defineProperty(String.prototype,"charCodeAt",{get:function(){return document.currentScript===a?b:c},set:function(a){}})})();
-kurs.com.ua,gismeteo.ua,tv.ua,isport.ua$$script[tag-content="ShadowRoot"][max-length="15000"]
-eurointegration.com.ua$$script[wildcard="*track*banner*"][max-length="22000"]
-dengi.ua,dt.ua,liga.net$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
+kurs.com.ua,gismeteo.ua,tv.ua,isport.ua$$script:contains(ShadowRoot):contains(/^(?=.{0,15000}$).*/s)
+eurointegration.com.ua$$script:contains(/^(?=.{0,22000}$)(?=.*track.*banner.*$).*/s)
+dengi.ua,dt.ua,liga.net$$script:contains(/^(?=.{0,16000}$)(?=.*Xr\="zmc"\+"track".*$).*/s)
 glianec.com,ostro.org,nashamama.com,bilshe.com,i.factor.ua,gismeteo.ua,1777.ru,cn.ru,finance.i.ua,hvylya.net,love.i.ua,peers.tv,radio.i.ua,real-vin.com,vsetv.com$$script:contains(zmctrack)
-xittv.net,bigmir.net$$script[wildcard="*!function(*""zmctrack""*""mzs""*"][max-length="9500"]
-allboxing.ru$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
-bagnet.org$$script[wildcard="*(function(){var *substr*,Bn=*"][max-length="10000"]
+xittv.net,bigmir.net$$script:contains(/^(?=.{0,9500}$)(?=.*\!function\(.*"zmctrack".*"mzs".*$).*/s)
+allboxing.ru$$script:contains(/^(?=.{0,10000}$)(?=.*\!function\(\)\{function.*n\=Zu\+t\(\);Ut\[n\]\=Wt.*\,Bn\=.*$).*/s)
+bagnet.org$$script:contains(/^(?=.{0,10000}$)(?=.*\(function\(\)\{var .*substr.*\,Bn\=.*$).*/s)
 !+ NOT_PLATFORM(ext_ff)
-vsetv.com$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
+vsetv.com$$script:contains(/^(?=.{0,16000}$)(?=.*Xr\="zmc"\+"track".*$).*/s)
 ://s.zmctrack.net^$replace=/.+//,important,domain=censor.net
 .klcheck.com^$replace=/.+//,important
 wss://s.zmctrack.net/
@@ -3580,8 +3580,8 @@ wss://s.zmctrack.net/
 ||s.znctrack.net/z$xmlhttprequest,redirect=noopjson,important,domain=ukr.net
 sinoptik.ua#$#head > style[id]:empty { background-image: none !important; }
 sinoptik.ua#%#(function () { const mutObs = new MutationObserver(function () { const elStyle = document.querySelector('link[type="text/css"][rel="preload"][as="style"][disabled]'); if (elStyle) { mutObs.disconnect(); elStyle.removeAttribute('disabled'); elStyle.setAttribute('rel', 'stylesheet'); } }); mutObs.observe(document, { childList: !0, subtree: !0 }); setTimeout(function () { mutObs.disconnect(); }, 1E4); })();
-sinoptik.ua$$script[wildcard="*function*=""bind""*"][max-length="5000"]
-meteofor.com.ua$$script[wildcard="*function*=""bind""*"][max-length="15000"]
+sinoptik.ua$$script:contains(/^(?=.{0,5000}$)(?=.*function.*\="bind".*$).*/s)
+meteofor.com.ua$$script:contains(/^(?=.{0,15000}$)(?=.*function.*\="bind".*$).*/s)
 meteofor.com.ua##.placeholder
 forumodua.com#$?#head > iframe[name] { remove: true; }
 www.ukr.net#%#//scriptlet('remove-node-text', 'script', '!function(r,n,t,e)')
@@ -3596,7 +3596,7 @@ sinoptik.ua$$script:contains(adtelligent)
 sinoptik.ua$$script:contains(slotBranding)
 sinoptik.ua$$script:contains(div-gpt-ad)
 sinoptik.ua#%#//scriptlet("abort-on-property-read", "SIN.AdsLoader")
-sinoptik.ua$$script[tag-content="SIN.AdsLoader.adBlockDetector()"][max-length="16000"]
+sinoptik.ua$$script:contains(/^(?=.{0,16000}$)(?=.*SIN\.AdsLoader\.adBlockDetector\(\)).*/s)
 budport.com.ua##body > div[style*="text-align:center"][style*="z-index:9999"]
 1plus1.video#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||1plus1.video/static/player/js/ovva.$script,replace=/\.abMessage\(\)//
@@ -3655,7 +3655,7 @@ kom-dir.ru,gd.ru,buhsoft.ru,business.ru,26-2.ru,fd.ru,pro-personal.ru#$#.topAdve
 kom-dir.ru,gd.ru,buhsoft.ru,business.ru,26-2.ru,fd.ru,pro-personal.ru#$#body.branded { margin-top: 60px !important; }
 talks.happymonday.com.ua,unisender.com#$##popmechanic-snippet { display: none!important; }
 talks.happymonday.com.ua,unisender.com#$#body { overflow: visible!important; }
-fishki.net,hronika.info,meta.ua$$script[tag-content="window.AD_DOMAIN_URL_SYS"][max-length="500"]
+fishki.net,hronika.info,meta.ua$$script:contains(window.AD_DOMAIN_URL_SYS):contains(/^(?=.{0,500}$).*/s)
 cosmonova-broadcast.tv#%#//scriptlet('set-constant', 'amodule.data', 'emptyArr')
 ashdi.vip#%#//scriptlet('trusted-replace-node-text', 'script', 'eval', '|preroll|', '|no_preroll|')
 root-nation.com#%#//scriptlet('set-constant', 'td_ad_background_click_link', 'undefined')
@@ -3716,10 +3716,10 @@ china-review.com.ua#$#body { margin-top: 0!important; }
 proagro.com.ua#$##all > main { margin: 0 15px 0 165px !important; }
 unian.info,unian.ua,unian.net#$#.social-shares { visibility: hidden!important; }
 meteofor.com.ua,ua.sinoptik.ua$$script[wildcard="*track*ShadowRoot*"][max-length="80000"]
-hochu.ua$$style[tag-content=".brand-"][max-length="900"]
-apostrophe.ua$$style[tag-content="#branding{display:"][max-length="200"]
-unn.com.ua$$script[tag-content="mg_ws"][max-length="1600"]
-i.ua$$script[tag-content="var branding"][max-length="2000"]
+hochu.ua$$style:contains(.brand-):contains(/^(?=.{0,900}$).*/s)
+apostrophe.ua$$style:contains(/^(?=.{0,200}$)(?=.*#branding\{display:).*/s)
+unn.com.ua$$script:contains(mg_ws):contains(/^(?=.{0,1600}$).*/s)
+i.ua$$script:contains(var branding):contains(/^(?=.{0,2000}$).*/s)
 /^http(s?):\/\/[a-z]{6}\..*\/[a-z0-9]{3,30}\/[a-z0-9]{5,}\.php$/$script,third-party,domain=infpol.ru|ego-zhena.ru|codernet.ru|desmyhome.ru|ale07.ru|wotexpress.info|koolinar.ru|newdaynews.ru|smiruss.ru|uk-parkovaya.ru|allkey.org|beejournal.ru|coronavirus-control.ru|fatelines.net|ovgorskiy.ru|fixmaster74.ru|winnote.ru|amperof.ru|220.guru|vph-holod.ru|severpost.ru|siniy-ekran.ru|ua.news|kslift.ru|politnavigator.net|tarifec.com|vse-vino.ru|pornreactor.cc|joyreactor.cc|reactor.cc|rsute.ru|enovosty.com|tayga.info|xnewsq.net|om1.ru|rustxt.ru|jpnsoft.ru|oc-windows.ru|cikavosti.com|u-news.com.ua|mp3frog.com|tom-dzherri.ru|konkurent.ru|dalanews.kz|svpressa.ru|bargu.by|mp3rax.com|progorodsamara.ru|yaom.ru|comandir.com|pocvetam.ru|osnmedia.ru|topdaynews.ru|hxmp3.com|novosti-n.org|mp3crown.cc|knews.kg|audiokniga-onlain.ru|xfilesserial.ru|kulichki.net|pesni-detskie.ru|militaryarms.ru|ranobe-novels.ru|vo-radio.ru|petstime.ru|nakanune.ru|time-in.ru|kotletki.online|sakhalife.ru|kinobaza24.ru|ianed.ru|turkish-tv.ru|android-kino-tv.ru|lafa.site|hozzi.ru|syzran-small.ru|inforuss.info|tourprom.ru|macdonaldsi.ru|togliatti24.ru|ctnews.ru|solenka.info|kaluga-poisk.ru|bragazeta.ru|astrologyk.com|potokmedia.ru|gotovim.ru|mir-znamenitostej.ru|topnews.ru|pg21.ru|podolyaka.su|asilmedia.org|telegraf.news|mechtarybolova.ru|fermilon.ru|seron.tv|prufy.ru
 /^http(s?):\/\/[A-Za-z0-9]{6}\.[A-Za-z0-9]{3}\/[A-Za-z0-9]{30,}\.php$/$script,third-party,domain=rsute.ru|afn.by|hdvideobox.ru|samelectrik.ru|amazingfacts.ru|allkey.org|kg-portal.ru|smartpress.by|unews.pro|inzhener-info.ru|vklook.online|joyreactor.cc|solenka.info|discover24.ru
 /^http(s?):\/\/[A-Za-z0-9]{6}\.[A-Za-z0-9]{3}\/[A-Za-z0-9-.]{6}\/[A-Za-z0-9-.\/]{25,}\.php$/$script,third-party,domain=solenka.info|kvmarvel.ru|crashplane.ru|ymkababy.ru|newsland.com|prozoro.net.ua|alau.kz|brjunetka.ru|tarifec.com|u-news.com.ua|b-online.ru|porosenka.net|dachnyuchastok.ru|gubka-bob.ru|film.ru|pg11.ru|pg12.ru|pg13.ru|pg21.ru|prochepetsk.ru|progorodnn.ru|progorodnsk.ru|progorodsamara.ru|samokat-dostavka.ru|lifedon.com.ua|clubhunters.ru|polytech-soft.com|max-vps.ru|unews.pro|vsplanet.net

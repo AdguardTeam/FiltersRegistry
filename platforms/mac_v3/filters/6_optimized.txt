@@ -1,9 +1,9 @@
-! Checksum: ZGgYBktM1V/Hnn7Z/OoDUw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1792462672-3600.patch
+! Checksum: C3jaGO4g/9Pw4vVMycYoIQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1792470219-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.54.22
-! TimeUpdated: 2026-10-19T15:11:42+00:00
+! Version: 2.0.54.23
+! TimeUpdated: 2026-10-20T04:20:41+00:00
 ! Expires: 12 hours (update frequency)
 ||sqrt-5041.de^
 ||tizofvtuqo.com^
@@ -423,7 +423,7 @@ nibelungen-kurier.de#%#//scriptlet("set-constant", "window.nlf.custom.userCapabi
 @@||ad.71i.de/somtag/loader/loader.js$domain=puls4.com
 @@||ad.71i.de^$domain=prosieben.de
 t-rocforum.de#%#//scriptlet("abort-current-inline-script", "$", "!document.getElementById(btoa")
-wetteronline.at,wetteronline.de$$script[tag-content="runInIframe"][min-length="10000"][max-length="50000"]
+wetteronline.at,wetteronline.de$$script:contains(runInIframe):contains(/^(?=.{10000,50000}$).*/s)
 wetteronline.at,wetteronline.de#%#//scriptlet("abort-on-property-write", "googletag.defineSlot")
 @@||stats.t-online.de/js/ads/adex.js
 t-online.de#%#//scriptlet("set-constant", "abp", "false")
@@ -463,8 +463,8 @@ willhaben.at#@#div[id^="advert"]
 bildungsspender.de#%#window.werbeblocker = true;
 @@||bildungsspender.de/banner/ads/adserver/click/ad.js
 @@||20min.rcmd.tda.io^$domain=20min.ch
-motorsport-total.com$$script[tag-content="ads.com/fp.js"][max-length="30000"]
-rp-online.de$$script[tag-content="n.createAdTag"][max-length="10000"]
+motorsport-total.com$$script:contains(ads.com/fp.js):contains(/^(?=.{0,30000}$).*/s)
+rp-online.de$$script:contains(n.createAdTag):contains(/^(?=.{0,10000}$).*/s)
 @@||gan.wavecdn.net/js/video_kostenlosspielen_net.js^$domain=kostenlosspielen.net
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js^$domain=games.cdn.famobi.com
 @@||chinamobilemag.de^$generichide

@@ -672,7 +672,7 @@ oyungibi.com#%#//scriptlet("set-constant", "jQuery.adblock", "false")
 osxinfo.net#%#//scriptlet("abort-current-inline-script", "$", "!document.getElementById(btoa")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49271
 turkdenizcileri.com,bilgalem.blogspot.com#%#//scriptlet("set-constant", "koddostu_com_adblock_yok", "null")
-turkdenizcileri.com,bilgalem.blogspot.com$$script[tag-content="adblock"][max-length="300"]
+turkdenizcileri.com,bilgalem.blogspot.com$$script:contains(adblock):contains(/^(?=.{0,300}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203121
 tekniknot.com#%#//scriptlet('abort-on-stack-trace', 'document.querySelector', 'window.onload')
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
@@ -747,7 +747,7 @@ huawei-turkiye.com##.XGT-AdBlock-Govde
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 @@.png#$domain=dreamfancy.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34807
-memoryhackers.org$$script[tag-content="adregain_wall"][min-length="3000"][max-length="7000"]
+memoryhackers.org$$script:contains(adregain_wall):contains(/^(?=.{3000,7000}$).*/s)
 memoryhackers.org#%#//scriptlet("abort-on-property-write", "adregain_wall")
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb || ext_ublock)
 @@||memoryhackers.org^$generichide
@@ -825,7 +825,7 @@ baho.com.tr#$#.adsmd { height: 1px!important; }
 web.tv#%#var canRunAds = true;
 @@||static.origins.web.tv/scripts/ads.js
 ! http://forum.adguard.com/showthread.php?7046
-mackolik.com$$script[tag-content="if (typeof (AdmostClient)"][max-length="250"]
+mackolik.com$$script:contains(/^(?=.{0,250}$)(?=.*if \(typeof \(AdmostClient\)).*/s)
 mackolik.com,sahadan.com#%#var _amw1 = 1;
 mackolik.com,sahadan.com#%#var AdmostClient = 1;
 mackolik.com,sahadan.com#%#var advertisement_not_blocked = 1;

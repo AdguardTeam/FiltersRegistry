@@ -1,9 +1,9 @@
-! Checksum: p6NNwwONhzcCOoVaA2fRdg
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1792459613-3600.patch
+! Checksum: KvHNkirXkiuL9pAIwEjiYA
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1792470213-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.67.90
-! TimeUpdated: 2026-10-20T01:23:28+00:00
+! Version: 2.1.67.91
+! TimeUpdated: 2026-10-20T04:21:14+00:00
 ! Expires: 12 hours (update frequency)
 ||ezze0ct.com^
 ||hokkid5.com^
@@ -687,9 +687,9 @@ apple.com.cn#$#html { margin-top: 0 !important; }
 apple.com.cn#$#html #globalnav { top: 0 !important; }
 apple.com.cn#$##ac-globalnav { top: 0 !important; }
 apple.com.cn#$#.ac-gn-blur { top: 0 !important; }
-hentaicomic.*,wnacg1.cc,wnacg.*$$script[wildcard="*tips[1]*document.write(tips*"][min-length="1000"][max-length="2000"]
-goodav17.com$$script[tag-content="getPopunderCookie"][max-length="2500"]
-mobile01.com$$script[tag-content="$.cookie(""fullscreenad"""][max-length="550"]
+hentaicomic.*,wnacg1.cc,wnacg.*$$script:contains(/^(?=.{1000,2000}$)(?=.*tips\[1\].*document\.write\(tips.*$).*/s)
+goodav17.com$$script:contains(getPopunderCookie):contains(/^(?=.{0,2500}$).*/s)
+mobile01.com$$script:contains(/^(?=.{0,550}$)(?=.*\$\.cookie\("fullscreenad").*/s)
 /^https:\/\/zz\d{4}bb\d{4}\.com/$third-party,image
 :8686/8888/*.gif$third-party,image
 /960x60.
@@ -4472,6 +4472,7 @@ newduba.cn###jq_youxi
 ||v3ekghfm2l.com^
 ||dkphbpakvgftxm.com^
 ||8kbg4gnw32.com^
+||cmn4xjgp67.com^
 ||lm1o9ejjs.com^
 ||velocity83.com^
 ||5j01ouj0l.com^

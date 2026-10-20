@@ -1,9 +1,9 @@
-! Checksum: ILXdqOJreMTTNz8OdOpkPg
-! Diff-Path: ../patches/27/27-s-1792419520-3600.patch
+! Checksum: +Uo39Fazkz2Jm4Rz9l9pgw
+! Diff-Path: ../patches/27/27-s-1792470221-3600.patch
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.53
-! TimeUpdated: 2026-10-19T14:15:13+00:00
+! Version: 2.0.0.54
+! TimeUpdated: 2026-10-20T04:21:11+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2726,7 +2726,7 @@ silesion.pl##.banner-promotions-wrapper
 login.wyborcza.pl#@#.ads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94999
 yafud.pl#$#body > .adsbygoogle { display: block !important; }
-yafud.pl$$script[tag-content="BlockAdBlock.prototype"][min-length="5000"][max-length="10000"]
+yafud.pl$$script:contains(BlockAdBlock.prototype):contains(/^(?=.{5000,10000}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95343
 exsites.pl#@##ad-slot
 exsites.pl#$#.adsbox#ad-slot { display: block !important; }
@@ -3427,7 +3427,7 @@ trojmiasto.pl##.banner-maxia
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106925
 trojmiasto.pl##.banner-a
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55846
-trojmiasto.pl$$script[tag-content="__adblockDetected "][min-length="2000"][max-length="5000"]
+trojmiasto.pl$$script:contains(__adblockDetected ):contains(/^(?=.{2000,5000}$).*/s)
 trojmiasto.pl#%#//scriptlet("abort-on-property-read", "HateAdBlock")
 trojmiasto.pl#%#//scriptlet("abort-on-property-read", "adBlockDetected")
 !+ NOT_OPTIMIZED
@@ -3628,7 +3628,7 @@ nick.com.pl#%#//scriptlet("set-constant", "gon.viacom_config.ads.game_ads.enable
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48369
 rybnik.com.pl#%#//scriptlet("abort-on-property-write", "__loadnow")
 rybnik.com.pl#$?#iframe[name]:not([class]):not([id]):not([src])[style="display:none"] { remove: true; }
-rybnik.com.pl$$script[wildcard="*track*ShadowRoot*"][min-length="5000"][max-length="10000"]
+rybnik.com.pl$$script:contains(/^(?=.{5000,10000}$)(?=.*track.*ShadowRoot.*$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48112
 @@||soisk-me.pl/modules/*/js/advertisement.js
 ! zalajkowane.pl - ads
@@ -4128,7 +4128,7 @@ pilot.wp.pl#$#html > body > div.pub_300x250.text_ads.ad_container[style]:not(#pa
 sciaga.pl##.sth-bill
 sciaga.pl#$?#.sth-bill { remove: true; }
 sciaga.pl#%#//scriptlet('prevent-window-open', '/doubleclick\.net|gemius\.pl/')
-sciaga.pl$$script[wildcard="*event.target.tagName==='BODY'*window.open*"][max-length="550"]
+sciaga.pl$$script:contains(/^(?=.{0,550}$)(?=.*event\.target\.tagName\=\=\='BODY'.*window\.open.*$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29042
 ||video.onnetwork.tv^$domain=sciaga.pl
 ! wyborcza.pl - fixing video player
@@ -4212,7 +4212,7 @@ anime-odcinki.pl##.ao-ad-wrapper
 anime-odcinki.pl##.region-sidebar-second > .widget_text > .textwidget > center > div[id][style="width:300px;height:250px;"]:empty
 kitsune-subs.anime-odcinki.pl#%#//scriptlet('set-constant', 'showAds', 'true')
 @@||kitsune-subs.anime-odcinki.pl/wp-content/themes/fanstrap/lib/js/advertisement.js
-anime-odcinki.pl$$script[tag-content="zfgloadedpushopt"][min-length="30000"][max-length="50000"]
+anime-odcinki.pl$$script:contains(zfgloadedpushopt):contains(/^(?=.{30000,50000}$).*/s)
 anime-odcinki.pl##a[href="https://e-neko.pl/"] > img
 ||cdn.shortpixel.ai/client/q_lossy,ret_img/https://anime-odcinki.pl/wp-content/uploads/*/ga_banner1.jpg
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235568
@@ -4768,15 +4768,15 @@ filmweb.pl##.page__group > .filmWhereToWatchLinkSection > .page__container > .su
 filmweb.pl##.page__group > .fa.faBar > iframe[src*="fwcdn.pl/el/kk/player/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15134
 ! https://forum.adguard.com/index.php?threads/adblock-detection-filmweb-pl-mac.26801/
-filmweb.pl$$script[tag-content="adblockDisplayInformation."][min-length="8000"][max-length="50000"]
-filmweb.pl$$script[tag-content="plusAdblock"][min-length="4000"][max-length="10000"]
+filmweb.pl$$script:contains(adblockDisplayInformation.):contains(/^(?=.{8000,50000}$).*/s)
+filmweb.pl$$script:contains(plusAdblock):contains(/^(?=.{4000,10000}$).*/s)
 filmweb.pl#%#//scriptlet("prevent-setInterval", ".offsetHeight&&0!==")
 filmweb.pl#%#//scriptlet("abort-current-inline-script", "IRI", "Adblock")
 filmweb.pl#%#//scriptlet("set-constant", "sats", "true")
 filmweb.pl#$#body > .fwPlusBtn[style]:not(#style_important), body > #advertBar-pl_PL[style]:not(#style_important), body > .clickArea[style]:not(#style_important), body > .advert[style]:not(#style_important), body > #mainSkyBanner-pl_PL[style]:not(#style_important), body > #ad[style]:not(#style_important), body > .rec-sponsored[style]:not(#style_important), body > .ws__wrapper[style]:not(#style_important), body > .text-ad[style]:not(#style_important), body > .textAd[style]:not(#style_important), body > #clickUrl1[style]:not(#style_important), body > #flashcontent3[style]:not(#style_important), body > #pasekup[style]:not(#style_important), body > .pub_728x90[style]:not(#style_important), body > .ad-internal[style]:not(#style_important), body > .ad-imagehold[style]:not(#style_important), body > .about_adsense[style]:not(#style_important), body > .abBoxAd[style]:not(#style_important), body > .HomeAds[style]:not(#style_important), body > .CommentAd[style]:not(#style_important), body > .Ad160x600[style]:not(#style_important), body > .ADTextSingle[style]:not(#style_important), body > .AD300Block[style]:not(#style_important) { display: block !important; }
 !+ NOT_OPTIMIZED
 filmweb.pl#$?#.ws__wrapper:not([style]) { remove: true; }
-filmweb.pl$$script[tag-content=".name)throw h=""ABP"","][max-length="7000"]
+filmweb.pl$$script:contains(/^(?=.{0,7000}$)(?=.*\.name\)throw h="ABP",).*/s)
 filmweb.pl#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/notDetectedBy/.test(a.toString()))return b(a,c)};})();
 ||fwcdn.pl/front/assets/FaStaticBanner-*.$domain=filmweb.pl
 ||fwcdn.pl/front/assets/WelcomeScreen.*.js$domain=filmweb.pl

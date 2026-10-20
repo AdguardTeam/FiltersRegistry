@@ -1,9 +1,9 @@
-! Checksum: khnZgyKWT15McW6yZjYQZg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1792462673-3600.patch
+! Checksum: FqUgHlW0ZaZMPtdZA6pRjw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1792470220-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.58.1
-! TimeUpdated: 2026-10-18T03:12:56+00:00
+! Version: 2.0.58.2
+! TimeUpdated: 2026-10-20T04:21:00+00:00
 ! Expires: 12 hours (update frequency)
 ||static.gimii.fr^
 ||adstanding.com^
@@ -226,7 +226,7 @@ recreatisse.com#%#//scriptlet("abort-current-inline-script", "document.getElemen
 recreatisse.com$$script[tag-content="adback_configuration"][min-length="100000"][max-length="360000"]
 @@||dzfoot.com/wp-content/themes/dzfoot/js/advertisement.js
 voyageforum.com#%#//scriptlet("prevent-setTimeout", "adsbygoogle")
-voyageforum.com$$script[tag-content="adsbygoogle"][max-length="3700"]
+voyageforum.com$$script:contains(adsbygoogle):contains(/^(?=.{0,3700}$).*/s)
 jtrouver.com#%#//scriptlet("set-constant", "google_jobrunner", "noopFunc")
 linternaute.com#%#//scriptlet('json-prune', 'adParams siteParams.aabMessage')
 sante.journaldesfemmes.fr,linternaute.com#$#.AdBox.Ligatus.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }

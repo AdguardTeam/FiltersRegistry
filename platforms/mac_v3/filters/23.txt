@@ -1,9 +1,9 @@
-! Checksum: ziM3wTPK2/um2iusVRcxEQ
-! Diff-Path: ../patches/23/23-s-1792152725-3600.patch
+! Checksum: q5naC0I4XKtEun0H7XKSew
+! Diff-Path: ../patches/23/23-s-1792470217-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.9.46
-! TimeUpdated: 2026-10-16T12:08:40+00:00
+! Version: 2.0.9.47
+! TimeUpdated: 2026-10-20T04:21:06+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3753,15 +3753,15 @@ infopedia.su,studopedia.net,studopedia.su,studopedia.org,studopedia.ru,studopedi
 ! kinozal.tv - ломается расширение Ace Stream https://github.com/AdguardTeam/AdguardFilters/issues/57813
 inforesist.org,newsyou.info,newsua.one,textreferat.com,socportal.info,vsetv.com#%#(function(){var a=document.currentScript,b=String.prototype.charCodeAt,c=function(){return true;};Object.defineProperty(String.prototype,"charCodeAt",{get:function(){return document.currentScript===a?b:c},set:function(a){}})})();
 !
-kurs.com.ua,gismeteo.ua,tv.ua,isport.ua$$script[tag-content="ShadowRoot"][max-length="15000"]
-eurointegration.com.ua$$script[wildcard="*track*banner*"][max-length="22000"]
-dengi.ua,dt.ua,liga.net$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
+kurs.com.ua,gismeteo.ua,tv.ua,isport.ua$$script:contains(ShadowRoot):contains(/^(?=.{0,15000}$).*/s)
+eurointegration.com.ua$$script:contains(/^(?=.{0,22000}$)(?=.*track.*banner.*$).*/s)
+dengi.ua,dt.ua,liga.net$$script:contains(/^(?=.{0,16000}$)(?=.*Xr\="zmc"\+"track".*$).*/s)
 glianec.com,ostro.org,nashamama.com,bilshe.com,i.factor.ua,gismeteo.ua,1777.ru,cn.ru,finance.i.ua,hvylya.net,love.i.ua,peers.tv,radio.i.ua,real-vin.com,vsetv.com$$script:contains(zmctrack)
-xittv.net,bigmir.net$$script[wildcard="*!function(*""zmctrack""*""mzs""*"][max-length="9500"]
-allboxing.ru$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
-bagnet.org$$script[wildcard="*(function(){var *substr*,Bn=*"][max-length="10000"]
+xittv.net,bigmir.net$$script:contains(/^(?=.{0,9500}$)(?=.*\!function\(.*"zmctrack".*"mzs".*$).*/s)
+allboxing.ru$$script:contains(/^(?=.{0,10000}$)(?=.*\!function\(\)\{function.*n\=Zu\+t\(\);Ut\[n\]\=Wt.*\,Bn\=.*$).*/s)
+bagnet.org$$script:contains(/^(?=.{0,10000}$)(?=.*\(function\(\)\{var .*substr.*\,Bn\=.*$).*/s)
 !+ NOT_PLATFORM(ext_ff)
-vsetv.com$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
+vsetv.com$$script:contains(/^(?=.{0,16000}$)(?=.*Xr\="zmc"\+"track".*$).*/s)
 !
 ://s.zmctrack.net^$replace=/.+//,important,domain=censor.net
 .klcheck.com^$replace=/.+//,important
@@ -3775,8 +3775,8 @@ wss://s.zmctrack.net/
 ||s.znctrack.net/z$xmlhttprequest,redirect=noopjson,important,domain=ukr.net
 sinoptik.ua#$#head > style[id]:empty { background-image: none !important; }
 sinoptik.ua#%#(function () { const mutObs = new MutationObserver(function () { const elStyle = document.querySelector('link[type="text/css"][rel="preload"][as="style"][disabled]'); if (elStyle) { mutObs.disconnect(); elStyle.removeAttribute('disabled'); elStyle.setAttribute('rel', 'stylesheet'); } }); mutObs.observe(document, { childList: !0, subtree: !0 }); setTimeout(function () { mutObs.disconnect(); }, 1E4); })();
-sinoptik.ua$$script[wildcard="*function*=""bind""*"][max-length="5000"]
-meteofor.com.ua$$script[wildcard="*function*=""bind""*"][max-length="15000"]
+sinoptik.ua$$script:contains(/^(?=.{0,5000}$)(?=.*function.*\="bind".*$).*/s)
+meteofor.com.ua$$script:contains(/^(?=.{0,15000}$)(?=.*function.*\="bind".*$).*/s)
 meteofor.com.ua##.placeholder
 !
 ! for `zmctrack` if iframe isn't in ShadowRoot
@@ -3820,7 +3820,7 @@ sinoptik.ua$$script:contains(adtelligent)
 sinoptik.ua$$script:contains(slotBranding)
 sinoptik.ua$$script:contains(div-gpt-ad)
 sinoptik.ua#%#//scriptlet("abort-on-property-read", "SIN.AdsLoader")
-sinoptik.ua$$script[tag-content="SIN.AdsLoader.adBlockDetector()"][max-length="16000"]
+sinoptik.ua$$script:contains(/^(?=.{0,16000}$)(?=.*SIN\.AdsLoader\.adBlockDetector\(\)).*/s)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68143
 budport.com.ua##body > div[style*="text-align:center"][style*="z-index:9999"]
@@ -3945,7 +3945,7 @@ talks.happymonday.com.ua,unisender.com#$#body { overflow: visible!important; }
 !-------------------
 !
 ! https://forum.adguard.com/index.php?threads/26986/
-fishki.net,hronika.info,meta.ua$$script[tag-content="window.AD_DOMAIN_URL_SYS"][max-length="500"]
+fishki.net,hronika.info,meta.ua$$script:contains(window.AD_DOMAIN_URL_SYS):contains(/^(?=.{0,500}$).*/s)
 !
 ! This section contains the list of ad blocking rules that fall under "advanced" category.
 ! By advanced we mean the following rule types: CSS, scriptlets, HTML filtering (`$$` marker), JS.
@@ -4084,13 +4084,13 @@ unian.info,unian.ua,unian.net#$#.social-shares { visibility: hidden!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155108
 meteofor.com.ua,ua.sinoptik.ua$$script[wildcard="*track*ShadowRoot*"][max-length="80000"]
 ! hochu.ua - удаление брендированного фона
-hochu.ua$$style[tag-content=".brand-"][max-length="900"]
+hochu.ua$$style:contains(.brand-):contains(/^(?=.{0,900}$).*/s)
 ! apostrophe.ua - удаление отступа сверху
-apostrophe.ua$$style[tag-content="#branding{display:"][max-length="200"]
+apostrophe.ua$$style:contains(/^(?=.{0,200}$)(?=.*#branding\{display:).*/s)
 ! MarketGid ads(for app)
-unn.com.ua$$script[tag-content="mg_ws"][max-length="1600"]
+unn.com.ua$$script:contains(mg_ws):contains(/^(?=.{0,1600}$).*/s)
 ! i.ua - удаление скрипта брендирования
-i.ua$$script[tag-content="var branding"][max-length="2000"]
+i.ua$$script:contains(var branding):contains(/^(?=.{0,2000}$).*/s)
 !-------------------------------------------------------------------------------!
 !------------------ Rules for specific web sites  ------------------------------!
 !-------------------------------------------------------------------------------!

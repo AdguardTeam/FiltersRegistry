@@ -1,9 +1,9 @@
-! Checksum: /n4Z3bpytY4/Xy/ePJInpw
-! Diff-Path: ../patches/11_optimized/11_optimized-s-1792466200-3600.patch
+! Checksum: dRcvaMNFqvw7w4Ep+F61Bw
+! Diff-Path: ../patches/11_optimized/11_optimized-s-1792470211-3600.patch
 ! Title: AdGuard Mobile Ads filter (Optimized)
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.72.83
-! TimeUpdated: 2026-10-20T03:12:57+00:00
+! Version: 2.0.72.84
+! TimeUpdated: 2026-10-20T04:20:48+00:00
 ! Expires: 12 hours (update frequency)
 ||adx-open-service.youku.com^
 ||ad.youku.com^
@@ -1424,7 +1424,7 @@ skymetweather.com#$#.ui-mobile-viewport { padding-bottom: 0!important; }
 factroom.ru#$#.mobile-pop-direct { display: none!important; height: 0!important; }
 deviantart.com#$#div[class*="dp-ad-"] { height: 0!important; width: 0!important; }
 antikor.com.ua$$amp-addthis
-cumhuriyet.com.tr$$div[tag-content="data-delay-ad-request"][max-length="700"]
+cumhuriyet.com.tr$$div:contains(data-delay-ad-request):contains(/^(?=.{0,700}$).*/s)
 businessinsider.in$$div[class="amazon_ad"]
 cnet.com$$div[class="amp-ad"]
 businessinsider.in$$div[class="fc_clmb_ad"]
@@ -1446,7 +1446,7 @@ zoomtventertainment.com$$amp-embed[type="taboola"]
 24tv.ua$$div[class="within-ads"]
 vokrug.tv,dni.ru$$amp-iframe[src="https://news.gnezdo.ru/"]
 cumhuriyet.com.tr,vokrug.tv$$amp-embed[type="engageya"]
-motherless.xxx$$script[tag-content="awentw.com"][min-length="2000"][max-length="2500"]
+motherless.xxx$$script:contains(awentw.com):contains(/^(?=.{2000,2500}$).*/s)
 ||s.*.com/pp.php?uid=$third-party
 .cn/?ss=
 /adfurikun/*

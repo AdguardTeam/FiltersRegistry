@@ -1,9 +1,9 @@
-! Checksum: gYKDvE2ogJnxB71Qtnv5rQ
-! Diff-Path: ../patches/224/224-s-1792459573-3600.patch
+! Checksum: P27UEjRkb2dnVvskNGqS4g
+! Diff-Path: ../patches/224/224-s-1792470176-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.67.90
-! TimeUpdated: 2026-10-20T01:23:28+00:00
+! Version: 2.1.67.91
+! TimeUpdated: 2026-10-20T04:21:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1063,11 +1063,11 @@ apple.com.cn#$#.ac-gn-blur { top: 0 !important; }
 ! SECTION: Chinese - HTML
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106842
-hentaicomic.*,wnacg1.cc,wnacg.*$$script[wildcard="*tips[1]*document.write(tips*"][min-length="1000"][max-length="2000"]
+hentaicomic.*,wnacg1.cc,wnacg.*$$script:contains(/^(?=.{1000,2000}$)(?=.*tips\[1\].*document\.write\(tips.*$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34910
-goodav17.com$$script[tag-content="getPopunderCookie"][max-length="2500"]
+goodav17.com$$script:contains(getPopunderCookie):contains(/^(?=.{0,2500}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3129
-mobile01.com$$script[tag-content="$.cookie(""fullscreenad"""][max-length="550"]
+mobile01.com$$script:contains(/^(?=.{0,550}$)(?=.*\$\.cookie\("fullscreenad").*/s)
 ! NOTE: HTML end ⬆️
 ! !SECTION: Chinese - HTML
 !---------------------------------------------------------------------------!
@@ -5179,6 +5179,7 @@ newduba.cn###jq_youxi
 ||v3ekghfm2l.com^
 ||dkphbpakvgftxm.com^
 ||8kbg4gnw32.com^
+||cmn4xjgp67.com^
 ||lm1o9ejjs.com^
 ||velocity83.com^
 ||5j01ouj0l.com^

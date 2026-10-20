@@ -1,9 +1,9 @@
-! Checksum: l2LB8816SYFZ6tL59mC3tQ
-! Diff-Path: ../patches/1/1-s-1792419480-3600.patch
+! Checksum: GUUHeBK6s92nJeZFwr8cIg
+! Diff-Path: ../patches/1/1-s-1792470178-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.9.21
-! TimeUpdated: 2026-10-19T14:13:43+00:00
+! Version: 2.1.9.22
+! TimeUpdated: 2026-10-20T04:20:12+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3876,15 +3876,15 @@ infopedia.su,studopedia.net,studopedia.su,studopedia.org,studopedia.ru,studopedi
 ! kinozal.tv - ломается расширение Ace Stream https://github.com/AdguardTeam/AdguardFilters/issues/57813
 inforesist.org,newsyou.info,newsua.one,textreferat.com,socportal.info,vsetv.com#%#(function(){var a=document.currentScript,b=String.prototype.charCodeAt,c=function(){return true;};Object.defineProperty(String.prototype,"charCodeAt",{get:function(){return document.currentScript===a?b:c},set:function(a){}})})();
 !
-kurs.com.ua,gismeteo.ua,tv.ua,isport.ua$$script[tag-content="ShadowRoot"][max-length="15000"]
-eurointegration.com.ua$$script[wildcard="*track*banner*"][max-length="22000"]
-dengi.ua,dt.ua,liga.net$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
+kurs.com.ua,gismeteo.ua,tv.ua,isport.ua$$script:contains(ShadowRoot):contains(/^(?=.{0,15000}$).*/s)
+eurointegration.com.ua$$script:contains(/^(?=.{0,22000}$)(?=.*track.*banner.*$).*/s)
+dengi.ua,dt.ua,liga.net$$script:contains(/^(?=.{0,16000}$)(?=.*Xr\="zmc"\+"track".*$).*/s)
 glianec.com,ostro.org,nashamama.com,bilshe.com,i.factor.ua,gismeteo.ua,1777.ru,cn.ru,finance.i.ua,hvylya.net,love.i.ua,peers.tv,radio.i.ua,real-vin.com,vsetv.com$$script:contains(zmctrack)
-xittv.net,bigmir.net$$script[wildcard="*!function(*""zmctrack""*""mzs""*"][max-length="9500"]
-allboxing.ru$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
-bagnet.org$$script[wildcard="*(function(){var *substr*,Bn=*"][max-length="10000"]
+xittv.net,bigmir.net$$script:contains(/^(?=.{0,9500}$)(?=.*\!function\(.*"zmctrack".*"mzs".*$).*/s)
+allboxing.ru$$script:contains(/^(?=.{0,10000}$)(?=.*\!function\(\)\{function.*n\=Zu\+t\(\);Ut\[n\]\=Wt.*\,Bn\=.*$).*/s)
+bagnet.org$$script:contains(/^(?=.{0,10000}$)(?=.*\(function\(\)\{var .*substr.*\,Bn\=.*$).*/s)
 !+ NOT_PLATFORM(ext_ff)
-vsetv.com$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
+vsetv.com$$script:contains(/^(?=.{0,16000}$)(?=.*Xr\="zmc"\+"track".*$).*/s)
 !
 ://s.zmctrack.net^$replace=/.+//,important,domain=censor.net
 .klcheck.com^$replace=/.+//,important
@@ -3898,8 +3898,8 @@ wss://s.zmctrack.net/
 ||s.znctrack.net/z$xmlhttprequest,redirect=noopjson,important,domain=ukr.net
 sinoptik.ua#$#head > style[id]:empty { background-image: none !important; }
 sinoptik.ua#%#(function () { const mutObs = new MutationObserver(function () { const elStyle = document.querySelector('link[type="text/css"][rel="preload"][as="style"][disabled]'); if (elStyle) { mutObs.disconnect(); elStyle.removeAttribute('disabled'); elStyle.setAttribute('rel', 'stylesheet'); } }); mutObs.observe(document, { childList: !0, subtree: !0 }); setTimeout(function () { mutObs.disconnect(); }, 1E4); })();
-sinoptik.ua$$script[wildcard="*function*=""bind""*"][max-length="5000"]
-meteofor.com.ua$$script[wildcard="*function*=""bind""*"][max-length="15000"]
+sinoptik.ua$$script:contains(/^(?=.{0,5000}$)(?=.*function.*\="bind".*$).*/s)
+meteofor.com.ua$$script:contains(/^(?=.{0,15000}$)(?=.*function.*\="bind".*$).*/s)
 meteofor.com.ua##.placeholder
 !
 ! for `zmctrack` if iframe isn't in ShadowRoot
@@ -4413,7 +4413,7 @@ fishki.net#%#//scriptlet('abort-on-property-write', 'Object.prototype.detect')
 fishki.net#%#//scriptlet('prevent-xhr', 'yandex.ru')
 ! https://github.com/AdguardTeam/adguardfilters/issues/17682
 ! Ads reinjection
-fishki.net$$script[wildcard="*document.getElementsByTagName*ins();*adblock*"][max-length="800"]
+fishki.net$$script:contains(/^(?=.{0,800}$)(?=.*document\.getElementsByTagName.*ins\(\);.*adblock.*$).*/s)
 !+ NOT_OPTIMIZED
 @@||fishki.net/js/adv.js
 !
@@ -4437,7 +4437,7 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 ! Ads reinjection (XHR scripts)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12917
-opnevmonii.ru,sonnikonline.club$$script[tag-content=".com/rotator-v2/"][max-length="800"]
+opnevmonii.ru,sonnikonline.club$$script:contains(.com/rotator-v2/):contains(/^(?=.{0,800}$).*/s)
 opnevmonii.ru,bodytrain.ru,felomena.com#%#//scriptlet("abort-current-inline-script", "document.addEventListener", "onerror")
 !+ PLATFORM(windows, mac, android, cli)
 ://block.*.com/rotator-v2/*.js
@@ -4455,7 +4455,7 @@ chipmaker.ru#$#a[id^="ipb-attach-url-"] { display: block!important; }
 @@||screenpost.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13396
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13127
-dni.ru$$script[tag-content="var sc = document.createElement"][max-length="400"]
+dni.ru$$script:contains(var sc = document.createElement):contains(/^(?=.{0,400}$).*/s)
 ||dni.ru/*/*/*/*/*/$replace=/{"settings":.+/null;/,script,domain=dni.ru,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12158
 @@||suj.li/assets/xnew/js/fuckadblock.js
@@ -4603,12 +4603,12 @@ auto62rus.ru#%#window.aadnet = {};
 ! https://forum.adguard.com/index.php?threads/18914/
 rango-hack.ru##.svg-adblock
 ! https://forum.adguard.com/index.php?threads/18882/
-track24.ru$$script[tag-content="function adBlockNotDetected"][max-length="2300"]
+track24.ru$$script:contains(function adBlockNotDetected):contains(/^(?=.{0,2300}$).*/s)
 @@||track24.ru$generichide
 ! https://forum.adguard.com/index.php?threads/18571/
 api.ekranka.tv#@#.ad_content
 ! https://forum.adguard.com/index.php?threads/18179/
-iomedia.ru$$script[tag-content="if (jQuery('.adsbygoogle"][max-length="1200"]
+iomedia.ru$$script:contains(/^(?=.{0,1200}$)(?=.*if \(jQuery\('\.adsbygoogle).*/s)
 @@||iomedia.ru/static/adsbygoogle.js
 iomedia.ru#%#//scriptlet('set-constant', 'canRunAds', 'true')
 cybergame.tv###abwarn
@@ -5023,14 +5023,14 @@ moviki.ru#$##e52d ~ * { display: block!important; }
 ! http://forum.adguard.com/showthread.php?3590
 the-village.ru##.row-adblock-message
 ! avatarko.ru
-avatarko.ru$$script[tag-content="getAddblock"][max-length="2000"]
+avatarko.ru$$script:contains(getAddblock):contains(/^(?=.{0,2000}$).*/s)
 ! fenixx-repack.3dn.ru
 ||fenixx-repack.3dn.ru/design/7564.js
 ! 99px.ru
 ||99px.ru/cms/modules/jslib/tpl/unblock/unblock.js
 ! planetaua.net anti-adblock
 planetaua.net$$div[id="s9ee"]
-planetaua.net$$script[tag-content="ad,ads,adsense"][max-length="4500"]
+planetaua.net$$script:contains(ad,ads,adsense):contains(/^(?=.{0,4500}$).*/s)
 ! pic5you.ru,pic4you.ru
 @@||pic4you.ru/js/advertisement
 @@||pic5you.ru/js/advertisement
@@ -5061,7 +5061,7 @@ womanhit.ru#%#//scriptlet("abort-on-property-read", "Object.prototype.AdblockCoo
 echo.msk.ru,kakprosto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.AdvManagerLoaderRender')
 ||echo.msk.ru^$replace=/AdvManager\.render/AdvManager._render/
 echo.msk.ru$$script:contains(DisplayAcceptableAdIfAdblocked)
-otzovik.com$$script[wildcard="*function*blockId*"][min-length="1000"][max-length="2500"]
+otzovik.com$$script:contains(/^(?=.{1000,2500}$)(?=.*function.*blockId.*$).*/s)
 !
 !
 ! START: Yandex
@@ -5364,7 +5364,7 @@ widgets.kinopoisk.ru,www.kinopoisk.ru,yandex.*#%#//scriptlet('abort-on-property-
 ! END: Yandex
 !
 !
-liveinternet.ru$$script[wildcard="*ownerId*params*"][max-length="500"]
+liveinternet.ru$$script:contains(/^(?=.{0,500}$)(?=.*ownerId.*params.*$).*/s)
 liveinternet.ru#%#Element.prototype.attachShadow = function(){};
 !
 ! comedy-radio.ru
@@ -5473,7 +5473,7 @@ talks.happymonday.com.ua,unisender.com#$#body { overflow: visible!important; }
 !-------------------
 !
 ! https://forum.adguard.com/index.php?threads/26986/
-fishki.net,hronika.info,meta.ua$$script[tag-content="window.AD_DOMAIN_URL_SYS"][max-length="500"]
+fishki.net,hronika.info,meta.ua$$script:contains(window.AD_DOMAIN_URL_SYS):contains(/^(?=.{0,500}$).*/s)
 !
 ! This section contains the list of ad blocking rules that fall under "advanced" category.
 ! By advanced we mean the following rule types: CSS, scriptlets, HTML filtering (`$$` marker), JS.
@@ -6761,7 +6761,7 @@ www.kinopoisk.ru##div[class*="styles_height250__"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/117101
 gtamania.ru$$script:contains(/bens/vinos)
 ! 80-e.ru ad scripts
-80-e.ru$$script[tag-content="document.createElement('script');"][max-length="1000"]
+80-e.ru$$script:contains(/^(?=.{0,1000}$)(?=.*document\.createElement\('script'\);).*/s)
 ! https://github.com/AdguardTeam/CoreLibs/issues/1442
 novosti-n.org$$script:contains(setAttribute('type', 'text'))
 ! rutracker.org - addition for apps only
@@ -6775,59 +6775,59 @@ yandex.md,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru$$div[
 yandex.md,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru$$div[class="directblock"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50723
 ! For Ukrainian users of Yandex.Browser(ads are loaded using proxy)
-zoneofgames.ru$$script[tag-content="an.yandex.ru"][max-length="700"]
+zoneofgames.ru$$script:contains(an.yandex.ru):contains(/^(?=.{0,700}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42990
 animebest.org$$iframe[srcdoc="getOwnPropertyDescriptor"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41410
 nntt.org,rus-media.org,rutor.in,rutracker.in$$script:contains((function(g,b,a,c,e,d))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37789
-echo.msk.ru$$script[tag-content="iadfox"][max-length="600"]
+echo.msk.ru$$script:contains(iadfox):contains(/^(?=.{0,600}$).*/s)
 ! forum.fonarevka.ru
-forum.fonarevka.ru$$script[wildcard="*_0x*atob*"][max-length="1100"]
+forum.fonarevka.ru$$script:contains(/^(?=.{0,1100}$)(?=.*_0x.*atob.*$).*/s)
 ! Block mixadvert ads when DNS blocking is enabled
-$$script[wildcard="*document.getElementById*mixadvert.com*script.onerror*"][min-length="1500"][max-length="2200"]
+$$script:contains(/^(?=.{1500,2200}$)(?=.*document\.getElementById.*mixadvert\.com.*script\.onerror.*$).*/s)
 ! Oblivki.biz - <script>window.RESOURCE_* = 'ad domain';</script>
-~fcbarcelona.com,~premierleague.com$$script[tag-content="window.RESOURCE_"][max-length="60"]
-upraznenia.ru$$script[tag-content="window.RESOURCE_"][max-length="27000"]
+~fcbarcelona.com,~premierleague.com$$script:contains(window.RESOURCE_):contains(/^(?=.{0,60}$).*/s)
+upraznenia.ru$$script:contains(window.RESOURCE_):contains(/^(?=.{0,27000}$).*/s)
 ! htapop
-kinozal-tv.appspot.com$$script[tag-content="var __htapop = {};"][max-length="400"]
+kinozal-tv.appspot.com$$script:contains(/^(?=.{0,400}$)(?=.*var __htapop = \{\};).*/s)
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7970
-hi-tech.mail.ru$$script[wildcard="*ar wrapper = appendToBody('rb-*var frameSrc = 'https://r.mradx.net/*"][max-length="7000"]
+hi-tech.mail.ru$$script:contains(/^(?=.{0,7000}$)(?=.*ar wrapper \= appendToBody\('rb-.*var frameSrc \= 'https:\/\/r\.mradx\.net\/.*$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8030
-manytorrents.org$$script[tag-content="amigo"][max-length="2500"]
+manytorrents.org$$script:contains(amigo):contains(/^(?=.{0,2500}$).*/s)
 ! https://forum.adguard.com/index.php?threads/26876/
 games.mail.ru$$video[id="rb_video"][preload=""]
 ! https://forum.adguard.com/index.php?threads/26833/
-forum.ixbt.com$$style[tag-content=".clickable_zone_brand"][max-length="2300"]
+forum.ixbt.com$$style:contains(.clickable_zone_brand):contains(/^(?=.{0,2300}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7523
 igromania.ru$$style:contains(min-height:32px !important;height:200px !important;)
 ! https://forum.adguard.com/index.php?threads/26071/
-bigcinema.cc$$script[tag-content="var brdImg "][max-length="1000"]
+bigcinema.cc$$script:contains(var brdImg ):contains(/^(?=.{0,1000}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24538
-dugtor.org$$style[tag-content="background"][max-length="250"]
+dugtor.org$$style:contains(background):contains(/^(?=.{0,250}$).*/s)
 ! gazeta.ru - ads
-gazeta.ru$$script[wildcard="*setTimeout*atob*"][max-length="11000"]
+gazeta.ru$$script:contains(/^(?=.{0,11000}$)(?=.*setTimeout.*atob.*$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5232
-moonwalk.co$$script[tag-content="window.location = rurl;"][max-length="600"]
+moonwalk.co$$script:contains(window.location = rurl;):contains(/^(?=.{0,600}$).*/s)
 ! https://forum.adguard.com/index.php?threads/11233/
-afisha.mail.ru$$script[tag-content="mimic:{setup:"][max-length="6500"]
+afisha.mail.ru$$script:contains(/^(?=.{0,6500}$)(?=.*mimic:\{setup:).*/s)
 ! https://forum.adguard.com/index.php?threads/15624/
-games.mail.ru$$script[tag-content="getElem('rb_holder_"][max-length="12000"]
+games.mail.ru$$script:contains(/^(?=.{0,12000}$)(?=.*getElem\('rb_holder_).*/s)
 ! Beseed ads
-tivix.net$$script[tag-content="var beseed_div_id"][max-length="1200"]
+tivix.net$$script:contains(var beseed_div_id):contains(/^(?=.{0,1200}$).*/s)
 ! viboom ads
-tivix.net$$script[tag-content="vbm('get'"][max-length="500"]
+tivix.net$$script:contains(/^(?=.{0,500}$)(?=.*vbm\('get').*/s)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4012
-aces.gg$$script[tag-content="$('#alert').on('click'"][max-length="250"]
+aces.gg$$script:contains(/^(?=.{0,250}$)(?=.*\$\('#alert'\)\.on\('click').*/s)
 ! myplaycity.ru - удаление пустот от рекламы
 myplaycity.ru$$div[class="contentbox gamespage_contentbox"]:contains(advertisement)
 ! https://forum.adguard.com/index.php?threads/9483/
-freerutor.com$$style[tag-content="padding: 250px 0px 0px !important"][max-length="600"]
+freerutor.com$$style:contains(/^(?=.{0,600}$)(?=.*padding: 250px 0px 0px !important).*/s)
 ! Remove some ads loaders(utarget etc.)
-diakov.net,ogosex.ru,only-tv.org,kino-filmi.net,bobfilm1.net,kinogo.co,omaske.ru$$script[tag-content="document.write(""<sc""+""ript type='text/javascript' src='//"][max-length="180"]
+diakov.net,ogosex.ru,only-tv.org,kino-filmi.net,bobfilm1.net,kinogo.co,omaske.ru$$script:contains(/^(?=.{0,180}$)(?=.*document\.write\("<sc"\+"ript type='text\/javascript' src='\/\/).*/s)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14774
 74.ru,autochel.ru,chelyabinsk.ru,chel.ru,chelfin.ru$$div[id="sb_"]
