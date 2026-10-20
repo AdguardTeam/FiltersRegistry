@@ -1,9 +1,9 @@
-! Checksum: 3SddSq13gky7Yp8qn9NvCQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1792458536-14400.patch
+! Checksum: EBzsvKfsrKakux/AxI648A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1792486142-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.70.78
-! TimeUpdated: 2026-10-20T01:06:27+00:00
+! Version: 2.1.70.79
+! TimeUpdated: 2026-10-20T08:45:35+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -21,7 +21,6 @@
 /accesspress-social-counter/*
 /addthis_widget.js
 /addtoany.min.js
-/badge_twitter.png
 /banner-social.jpg
 /bottom-facebook.png
 /common/sns/*
@@ -309,6 +308,7 @@ _social-bar/
 ###js-SocialWidget-Container
 ###js-Stay-Connected-Container-0
 ###js-Stay-Connected-Container-2
+###js-dialog-social-overlay
 ###js-share
 ###js-share-links
 ###large_share_wrapper
@@ -428,6 +428,7 @@ _social-bar/
 ###shareStrip
 ###shareTab
 ###shareTags
+###shareTool
 ###shareToolBottom
 ###shareTxt
 ###shareUrl
@@ -574,6 +575,7 @@ _social-bar/
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
+###socialMediaBar
 ###socialMediaFacebook
 ###socialMediaSection
 ###socialModal
@@ -591,6 +593,7 @@ _social-bar/
 ###social_bottom
 ###social_box
 ###social_btns
+###social_cont
 ###social_facebook
 ###social_fb
 ###social_follow
@@ -751,6 +754,7 @@ _social-bar/
 ##.Socials
 ##.Socials-root
 ##.StlyeSocial
+##.SynFacebookLike
 ##.Twitter-icon
 ##.TwitterButton
 ##.TwitterShareButton
@@ -964,7 +968,6 @@ _social-bar/
 ##.bottom-share-buttons
 ##.bottom-shares
 ##.bottom-social
-##.bottom-social-share
 ##.bottom-socials
 ##.bottomSocialBtns
 ##.bottom_share
@@ -1273,7 +1276,6 @@ _social-bar/
 ##.fixedsocial
 ##.fl-social-icons
 ##.flare-button-icon
-##.flare-follow
 ##.flare-horizontal
 ##.flaticon-facebook
 ##.float-share
@@ -1970,7 +1972,6 @@ _social-bar/
 ##.page-social
 ##.page_share
 ##.pane-social-links
-##.panel-follow-social
 ##.panel-share-networks
 ##.par-footer-social
 ##.parent-shareBox
@@ -2396,6 +2397,7 @@ _social-bar/
 ##.shareThis
 ##.shareTitle
 ##.shareTool
+##.shareTools
 ##.shareTop
 ##.shareTrig
 ##.shareTwitter
@@ -2487,6 +2489,7 @@ _social-bar/
 ##.sharebottom
 ##.sharebox
 ##.sharebtn
+##.sharebtns
 ##.sharebutt
 ##.sharebutton
 ##.sharebuttons
@@ -3214,6 +3217,7 @@ _social-bar/
 ##.twitter-custom
 ##.twitter-div
 ##.twitter-feed
+##.twitter-feed-wrapper
 ##.twitter-follow
 ##.twitter-follow-box
 ##.twitter-followers
@@ -3312,7 +3316,6 @@ _social-bar/
 ##.wc_social_plugin_wrapper
 ##.wds-is-follow-us
 ##.web_widget_socialBar
-##.wf-social
 ##.whatsapp-share
 ##.whatsapp-share-btn
 ##.whatsapp-share-button
@@ -3571,6 +3574,7 @@ iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
 torrentsafe.com###addthisimage
 9to5google.com,9to5mac.com,dronedj.com,electrek.co###after_disclaimer_placement
+autonocion.com###an-gfollow-wrap
 dailymail.co.uk###articleIconLinksContainer
 fastcompany.com,inc.com###article_share_button
 fastcompany.com,inc.com###article_share_google_icon
@@ -3642,7 +3646,6 @@ i24news.tv##.Footer_social-network-links-wrapper__xN9Go
 ndtv.com##.FtrScl
 indianexpress.com##.G-folow-button
 meduza.io##.GeneralMaterial-module-share
-birminghammail.co.uk,bristolpost.co.uk,dailyrecord.co.uk,dailystar.co.uk,irishstar.com,liverpoolecho.co.uk,manchestereveningnews.co.uk,mirror.co.uk,stokesentinel.co.uk,themirror.com,walesonline.co.uk##.GooglePreferredSource_wrapper__lSRA6
 cnbc.com##.HighlightShare-container
 apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
@@ -3871,6 +3874,7 @@ smashingmagazine.com##.meta-box--share
 businessinsider.com##.mi-logo-social-container
 news18.com##.midgprfd
 lifewire.com##.mm-nav-footer__social
+autonocion.com##.mn-share
 boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
 mozilla.org##.moz24-footer-socials
@@ -4493,7 +4497,6 @@ adslzone.net##.comments-social-share
 wapa.pe##.container_shared--internal
 elcolombiano.com##.contenedor-google-noticias
 elperiodico.com,sport.es##.ft-mol-rrss-column
-diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,elcorreoweb.es,eldia.es,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondemurcia.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,regio7.cat,superdeporte.es##.ft-mol-rrss-column__items
 milenio.com##.google-news-follow
 dolarhoy.com##.header__redes
 tn.com.ar##.horizontal-share

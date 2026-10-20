@@ -1314,7 +1314,7 @@ tvn.pl,tvn24.pl##+js(json-prune, options.auto_play)
 karachan.org##+js(acis, setInterval, Math.random)
 ! Rule "komputerswiat.pl###ks_breaking_news:style(position: absolute !important; left: -3000px !important)" converted to: "komputerswiat.pl#$##ks_breaking_news { position: absolute !important; left: -3000px !important }"
 komputerswiat.pl###ks_breaking_news:style(position: absolute !important; left: -3000px !important)
-! Rule "karachan.org##^script:not([src]):min-text-length(100):has-text(/style.*xD/)" converted to: "karachan.org$$script:not([src]):contains(/^(?=.{100,262144}$).*/s):contains(/style.*xD/)"
+! Rule "karachan.org##^script:not([src]):min-text-length(100):has-text(/style.*xD/)" converted to: "karachan.org$$script:not([src]):contains(/^(?=.{100,65535}$).*/s):contains(/style.*xD/)"
 karachan.org##^script:not([src]):min-text-length(100):has-text(/style.*xD/)
 ! Rule "komputerswiat.pl##^#ks_breaking_news" converted to: "komputerswiat.pl$$#ks_breaking_news"
 komputerswiat.pl##^#ks_breaking_news
@@ -1344,6 +1344,8 @@ wbgroup.pl##:matches-media((max-width: 999px)) header > .Header-content:style(di
 youtube.com##html:not([dark]) #guide-inner-content:style(scrollbar-color: #000 #0000 !important)
 ! Rule "youtube.com##html[dark] #guide-inner-content:style(scrollbar-color: #999 #9990 !important)" converted to: "youtube.com#$#html[dark] #guide-inner-content { scrollbar-color: #999 #9990 !important }"
 youtube.com##html[dark] #guide-inner-content:style(scrollbar-color: #999 #9990 !important)
+! Rule "karachan.org$$script[wildcard="style*xD"][min-length="100"]" converted to: "karachan.org$$script:contains(/^(?=.{100,}$)(?=style.*xD$).*/s)"
+karachan.org$$script[wildcard="style*xD"][min-length="100"]
 ! Rule "pacjent.gov.pl#@#:matches-media((max-width: 639px)) footer picture source[srcset="/sites/default/files/2019-08/unia-europejska-mobile_0.svg"]:remove()" converted to: "pacjent.gov.pl#@$?#@media (max-width: 639px) { footer picture source[srcset="/sites/default/files/2019-08/unia-europejska-mobile_0.svg"] { remove: true; } }"
 pacjent.gov.pl#@#:matches-media((max-width: 639px)) footer picture source[srcset="/sites/default/files/2019-08/unia-europejska-mobile_0.svg"]:remove()
 ! Error: Unable to convert rule to AdGuard syntax: "poczta.o2.pl,poczta.wp.pl#@#:matches-path(/login/login.html) body[class*=" _"]:remove-class(/_[a-z0-9]{12}/)" due to error: Expected '<{-token>', but got 'end of input'
