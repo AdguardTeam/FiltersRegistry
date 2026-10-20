@@ -1,8 +1,8 @@
-! Checksum: Kg1R8cq+qHf5Ca6siwITng
+! Checksum: VnAdc9G7QVDKNSL/y1s7vg
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.73
-! TimeUpdated: 2026-10-17T08:40:43+00:00
+! Version: 2.0.2.74
+! TimeUpdated: 2026-10-20T16:40:36+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1175,6 +1175,9 @@ www.gettyimages.com##[data-testid="AIGenerator"]
 ! Sheet Assistant
 app.gigasheet.com##.ag-side-button:has(#sheetAssistant)
 ! === GitBook ===
+! -- https://www.gitbook.com/
+! Footer - Get an AI summary
+www.gitbook.com##[data-framer-name="Links"] [data-framer-name="Group 16"]:has([aria-label="AI summary links"])
 ! -- https://gitbook.com/docs
 ! Header - AI button
 cortex-docs.paloaltonetworks.com,gitbook.com##[data-testid="ai-chat-button"]
@@ -2374,6 +2377,12 @@ www.lowes.com##.review-ai-summary
 ! Buttons in header
 ludwig.guru###i-ask-pdf
 ludwig.guru###i-rewrite
+! === MacMD Viewer ===
+! -- https://macmdviewer.com/blog/markdown-collapsible-section
+! Use this article with AI
+macmdviewer.com##.ai-share
+! Footer - AI Tool Setup
+macmdviewer.com##.footer-col li:has(> [href="/docs/integrations"])
 ! === Macys ===
 ! -- https://www.macys.com/shop/product/easy-spirit-womens-acasia-slip-on-flats?ID=16015298
 ! Ask Macy's in header
@@ -3045,6 +3054,29 @@ manual.raycast.com##[class^="button-module__"][href^="raycast://extensions/rayca
 www.razer.com##[data-more-menu-uid="mm-razer-ai-node"]
 ! Footer - AI Gaming Newsletter
 www.razer.com##li:has(> [href="https://www.razer.com/newsletter/ai"])
+! === ReadMe ===
+! -- https://docs.readme.com/main/docs/about-readme
+! Header - Ask AI
+docs.readme.com##button[aria-label="ai.asAiAriaLabel"]
+! Search autocomplete - Ask AI Assistant
+! * TODO: Still selectable with keyboard arrows
+docs.readme.com##[aria-labelledby="AppSearch-ask-ai-label"]
+! Search autocomplete - AI suggested questions
+||docs.readme.com/developers/api-next/v2/owlbot/suggest_questions$xmlhttprequest,domain=docs.readme.com
+! Copy Page - More dropdown menu
+docs.readme.com##.tippy-content .Menu-Item_link:has([data-name="sparkles"])
+docs.readme.com##.tippy-content .Menu-Item_link:has([data-name="sparkles"]) + .Menu-Divider
+docs.readme.com##.tippy-content .Menu-Item_link[href^="https://chat.openai.com/?q="]
+docs.readme.com##.tippy-content .Menu-Item_link[href^="https://claude.ai/new?q="]
+docs.readme.com##.tippy-content .Menu-Item_link[href^="https://claude.ai/new?q="] + .Menu-Divider
+docs.readme.com##.tippy-content .Menu-Header:has(+ .Menu-Item_link [data-name="cursor"])
+docs.readme.com##.tippy-content .Menu-Item_link:has([data-name="cursor"])
+docs.readme.com##.tippy-content .Menu-Item_link:has([data-name="vscode"])
+docs.readme.com##.tippy-content .Menu-Item_link:has([data-name="clipboard"])
+docs.readme.com##.tippy-content .Menu-Item_link:has([data-name="terminal"])
+docs.readme.com##.tippy-content .Menu-Item_link:has([data-name="terminal"]) + .Menu-Divider
+! Floating "Ask AI anything" bar
+docs.readme.com##.rm-AskAi-floating-input
 ! === Real Python ===
 ! -- https://realpython.com/
 ! Navbar > Learn Python > Code Mentor
@@ -3182,6 +3214,12 @@ docs.scylladb.com##biel-button
 ! === SecNews ===
 ! Floating AI chatbot button
 www.secnews.gr##[id^="sngai-"]
+! === selfh.st ===
+! -- https://selfh.st/apps/
+! Apps with AI tag
+selfh.st##.tile-slot:has(.tile-tag[href="https://selfh.st/apps/?tag=Artificial%20Intelligence"])
+! Sidebar - AI tag
+selfh.st###tagFilterOptions > .custom-multiselect-option[aria-selected="false"]:has(> #tag-Artificial-Intelligence)
 ! === Semrush ===
 ! -- https://www.semrush.com/blog/google-tag-manager/
 ! "See How AI Is Talking About Your Brand" box in article
