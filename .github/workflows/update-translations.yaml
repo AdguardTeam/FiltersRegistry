@@ -152,7 +152,10 @@ jobs:
         with:
           status: failure
           fields: workflow,repo,message,commit,author,eventName,ref,job
-          job_name: Update translations
+          # action-slack matches this value against the job names of the run.
+          # The only job that can trigger this notification is the update job,
+          # so use its name, not the workflow name.
+          job_name: Download translations and open a PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
