@@ -1,9 +1,9 @@
-! Checksum: eiQ3otp3e+0SGv1GqFE9pw
-! Diff-Path: ../patches/14/14-s-1792494944-3600.patch
+! Checksum: GvQReg6HtQImcCIZZSx+Wg
+! Diff-Path: ../patches/14/14-s-1792498793-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.83.51
-! TimeUpdated: 2026-10-20T11:12:11+00:00
+! Version: 2.2.83.52
+! TimeUpdated: 2026-10-20T12:16:31+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28587,6 +28587,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+startpage.com#%#//scriptlet('set-local-storage-item', 'SERP_DELIGHT_STAGE', '2')
 processon.io##.dlg-newfunction
 processon.io##.window-mask
 booking.com#$?#body > div[class]:has(> div[data-bui-trap-root] > div[role="dialog"] div[data-testid="auth-link-in-view"]) { remove: true; }
@@ -38181,6 +38182,8 @@ space.com,nokiapoweruser.com,russianemirates.com,egw.news,androidcentral.com,t3n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+koin.com##.sailthru-signup-widget
+koin.com##.nexstar-google-preferred-sources
 zlotowskie.pl##.share__socials > li[class="share__social"]:has(> a[href^="https://news.google.com/publications/"])
 prospect.org##.wp-block-group[style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)"]
 helpnetsecurity.com##.share-source
@@ -53423,6 +53426,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+meduza.io##.Informer-module-root:has(> a)
 m.economictimes.com##div[id^="appDownloadBottomBanner"]
 rankingdak.com##.top-link-banner
 minimodel.jp##.roomtw-w-full > aside.sm\:roomtw-hidden:has(> a[href^="https://minimo.onelink.me/"])
