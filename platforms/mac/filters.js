@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.98.60",
-			"timeUpdated": "2026-10-20T07:15:36+0000",
+			"version": "2.4.98.61",
+			"timeUpdated": "2026-10-20T08:13:51+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.34.19",
-			"timeUpdated": "2026-10-20T07:15:54+0000",
+			"version": "2.1.34.20",
+			"timeUpdated": "2026-10-20T08:14:14+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.54.23",
-			"timeUpdated": "2026-10-20T04:20:41+0000",
+			"version": "2.0.54.24",
+			"timeUpdated": "2026-10-20T08:14:18+0000",
 			"languages": [
 				"de"
 			]
@@ -218,8 +218,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.69.12",
-			"timeUpdated": "2026-10-20T05:11:30+0000",
+			"version": "2.0.69.13",
+			"timeUpdated": "2026-10-20T08:14:26+0000",
 			"languages": [
 				"tr"
 			]
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.83.47",
-			"timeUpdated": "2026-10-20T07:16:15+0000",
+			"version": "2.2.83.48",
+			"timeUpdated": "2026-10-20T08:14:34+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.85.84",
-			"timeUpdated": "2026-10-20T06:18:24+0000",
+			"version": "2.0.85.85",
+			"timeUpdated": "2026-10-20T08:14:44+0000",
 			"languages": []
 		},
 		{
@@ -420,8 +420,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.0.55",
-			"timeUpdated": "2026-10-20T07:16:29+0000",
+			"version": "2.0.0.56",
+			"timeUpdated": "2026-10-20T08:14:51+0000",
 			"languages": [
 				"pl"
 			]
