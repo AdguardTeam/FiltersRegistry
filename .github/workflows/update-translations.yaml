@@ -89,11 +89,6 @@ jobs:
           base: master
           title: Update translations
           body: Translations are downloaded from Crowdin by the "Update translations" workflow.
-          # Default reviewers for the translations PR
-          reviewers: |
-            Alex-302
-            zloyden
-            abolshova-a11y
 
       # Refresh the validation comment whenever the translations PR exists (the
       # action above outputs the PR number both when it creates and updates the
@@ -110,6 +105,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn tsx scripts/translations/report-validation.ts --pr-number ${{ steps.create-pr.outputs.pull-request-number }} --result ${{ steps.validate.outcome }}
+
+      # Request the default reviewers of the translations PR in a separate step,
+      # after the report. A reviewer request can fail (a reviewer lost access, a
+      # transient 5xx). If the create-pull-request action did it, that step would
+      # fail after the PR is already created or updated, and its empty
+      # pull-request-number would skip the report above. Here the same failure
+      # still fails the job, but only after the PR and the report are in place.
+      - name: Request reviewers
+        if: steps.create-pr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr edit ${{ steps.create-pr.outputs.pull-request-number }} --add-reviewer Alex-302,zloyden,abolshova-a11y
 
       # Fail the job so the Slack notification still fires, but only after the branch
       # was pushed, the PR was created/updated, and the failure was reported above.
