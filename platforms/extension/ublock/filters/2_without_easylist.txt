@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: IRuy8PZh3GEA7XGdNUSccg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792470205-3600.patch
+! Checksum: 5lYUbBllVeebtgz/VX3O5Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792473346-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.98.57
-! TimeUpdated: 2026-10-20T04:20:21+00:00
+! Version: 2.4.98.58
+! TimeUpdated: 2026-10-20T05:10:50+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12885,6 +12885,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244679
+cloudnet.one##+js(abort-on-stack-trace, document.createElement, runDetection)
+cloudnet.one###check-overlay
+cloudnet.one#@#.ad-content
+cloudnet.one#@#.sponsored-post
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244577
 ||textmatchcut.app/ad-gate.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244488
@@ -13726,9 +13731,6 @@ epic.hellosports.live##.popSc
 hexanaut.io##+js(prevent-fetch, adsbygoogle, length:60000-60001)
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xhr,domain=hexanaut.io,important
-! https://github.com/AdguardTeam/AdguardFilters/issues/223131
-platinsport.com###adblock-modal-overlay:style(display: none !important;)
-platinsport.com##body:style(overflow: auto !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222901
 newsofx2.com##+js(abort-on-stack-trace, document.createElement, eval)
 ||newsofx2.com/wp-content/litespeed/js/$script
@@ -42486,8 +42488,6 @@ newegg.com##.row-side-banners
 yesporn.vip##.header-inner > a:not([href^="https://yesporn.vip/"], [href="https://t.me/+xf80qlGHH_9kNWY0"])
 familyporn.tv##+js(remove-node-text, script, popMethods)
 tabooporn.tv##.textlink a[target="blank"]
-platinsport.com##.pum-container
-platinsport.com##a[href^="https://1xlite-23411.bar/"]
 animeidhentai.com###promo-topbar
 animeidhentai.com##.intl-ad
 animeidhentai.com##.promo--isad
