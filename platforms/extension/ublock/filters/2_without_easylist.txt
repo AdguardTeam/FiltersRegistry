@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: p3sKCe/e3Bp8OWVM4mtcxQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792498809-3600.patch
+! Checksum: TOQImusPgAcWwfnKLZGAwg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792502188-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.98.65
-! TimeUpdated: 2026-10-20T12:15:43+00:00
+! Version: 2.4.98.66
+! TimeUpdated: 2026-10-20T13:12:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13020,23 +13020,22 @@ adslink.pw##+js(prevent-fetch, adsbygoogle)
 ! AntiAdBlock Core
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239607
 .lnbz.la^
-.srnky.com^
 .clksz.com^
 .aii.sh^
 .pahe.ink^
+srnky.com,lnbz.la##+js(abort-on-property-read, TextDecoder)
 /:\/\/pahe.ink\/[a-z0-9]+/[a-z0-9]+$/$script,domain=pahe.ink
-srnky.com,pahe.plus##+js(abort-on-property-write, __aw)
-lnbz.la##+js(abort-on-property-read, TextDecoder)
+pahe.plus##+js(abort-on-property-write, __aw)
 intercelestial.com##html > div
 /^https:\/\/intercelestial\.com\/[0-9a-f]+\/[a-z]+\.[0-9a-f]+\.js/$script,domain=intercelestial.com
-lnbz.la,clksz.com,aii.sh,srnky.com##+js(abort-on-property-read, atob)
+lnbz.la,clksz.com,aii.sh##+js(abort-on-property-read, atob)
 @@/^https:\/\/[a-z]{4,14}\.[a-z]{3,4}\/[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]\//$domain=intercelestial.com|pahe.plus|linegee.net
-/^(?!(https:\/\/[a-z]{3,5}\.[a-z]{2,3}\/cdn-cgi\/|https:\/\/[a-z]{3,5}\.[a-z]{2,3}\/cloud_theme\/build\/js\/script\.min\.js|https:\/\/[a-z]{3,5}\.[a-z]{2,3}\/links\/go)).*$/$~3p,script,xhr,domain=aii.sh|srnky.com|clksz.com|lnbz.la
+/^(?!(https:\/\/[a-z]{3,5}\.[a-z]{2,3}\/cdn-cgi\/|https:\/\/[a-z]{3,5}\.[a-z]{2,3}\/cloud_theme\/build\/js\/script\.min\.js|https:\/\/[a-z]{3,5}\.[a-z]{2,3}\/links\/go)).*$/$~3p,script,xhr,domain=aii.sh|clksz.com|lnbz.la
 1614lnbz.la,clksz.com,aii.sh,intercelestial.com##+js(prevent-fetch, googlesyndication)
 1614lnbz.la,clksz.com,aii.sh##iframe + [style]:not([id]):style(display: none !important;)
 1614lnbz.la,clksz.com,aii.sh##div[style^="border-block-style: revert; border-inline: revert;"]:style(display: none !important;)
 intercelestial.com,1614lnbz.la,clksz.com,aii.sh##html:style(overflow: auto !important;)
-$xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|linegee.net|clksz.com|srnky.com|lnbz.la
+$xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|linegee.net|clksz.com|lnbz.la
 @@.js|$xhr,domain=intercelestial.com|pahe.plus|linegee.net
 @@||linegee.net^$generichide
 @@||pahe.plus^$generichide
