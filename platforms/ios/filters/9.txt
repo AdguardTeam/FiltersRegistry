@@ -1,9 +1,9 @@
-! Checksum: jsuxq7Mu1Q6fjETFGgolKg
-! Diff-Path: ../patches/9/9-s-1792415876-3600.patch
+! Checksum: XgyTVncWMudQbxk3ET/KuQ
+! Diff-Path: ../patches/9/9-s-1792494969-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.36.11
-! TimeUpdated: 2026-10-19T13:14:29+00:00
+! Version: 2.0.36.12
+! TimeUpdated: 2026-10-20T11:11:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -268,6 +268,10 @@ hardwarepremium.com#@#.sponsored-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238502
 otakufilmes.org#$#body { overflow: auto !important; }
 otakufilmes.org#$##adblock-overlay { display: none !important; }
+otakufilmes.org#%#//scriptlet('remove-attr', 'inert', 'body > [inert]')
+otakufilmes.org#%#//scriptlet('trusted-set-constant', 'otakuAdsState', 'clear')
+otakufilmes.org#%#//scriptlet('prevent-fetch', '/(?:a-ads|freitarriver)\.com/')
+otakufilmes.org#%#//scriptlet('trusted-replace-argument', 'Document.prototype.querySelector', '0', '"body"', '#frame-top iframe')
 otakufilmes.org#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'adblock')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=otakufilmes.org
@@ -2546,6 +2550,7 @@ actualidadiphone.com,lucrandoideias.com,proandroid.com,lusometeo.com,kltutors.co
 !
 ! NOTE: Specific rules
 !
+animegratis.org##.amazon-showcase-container
 ggmax.com.br##div[class]:has(> .announcement__ad)
 estadao.com.br##div:has(> .ads-container:only-child)
 estadao.com.br##div:has(> div[class*="BlueStudio__Container"])

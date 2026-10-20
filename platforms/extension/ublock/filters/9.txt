@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kRYWxuFNK4SmrO6wvkZyMQ
-! Diff-Path: ../patches/9/9-s-1792415873-3600.patch
+! Checksum: MoC5svTrEbvVOdoZNdnTvg
+! Diff-Path: ../patches/9/9-s-1792494964-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.36.11
-! TimeUpdated: 2026-10-19T13:14:29+00:00
+! Version: 2.0.36.12
+! TimeUpdated: 2026-10-20T11:11:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -254,6 +254,8 @@ hardwarepremium.com#@#.sponsored-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238502
 otakufilmes.org##body:style(overflow: auto !important;)
 otakufilmes.org###adblock-overlay:style(display: none !important;)
+otakufilmes.org##+js(remove-attr, inert, body > [inert])
+otakufilmes.org##+js(prevent-fetch, /(?:a-ads|freitarriver)\.com/)
 otakufilmes.org##+js(addEventListener-defuser, DOMContentLoaded, adblock)
 ! https://github.com/uBlockOrigin/uAssets/issues/34810
 ! https://www.reddit.com/r/uBlockOrigin/comments/1vj17s5/adblock_detection_on_httpsdarkmahouio/
@@ -2201,6 +2203,7 @@ actualidadiphone.com,lucrandoideias.com,proandroid.com,lusometeo.com,kltutors.co
 !
 ! NOTE: Specific rules
 !
+animegratis.org##.amazon-showcase-container
 ggmax.com.br##div[class]:has(> .announcement__ad)
 estadao.com.br##div:has(> .ads-container:only-child)
 estadao.com.br##div:has(> div[class*="BlueStudio__Container"])
