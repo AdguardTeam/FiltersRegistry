@@ -1,5 +1,5 @@
-! Checksum: 2e6YKY8G3qOgKbj8d0oNDg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1792530204-14400.patch
+! Checksum: SmXkfyN06oGo89hZQJzrdg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1792557935-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.96
@@ -362,6 +362,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||115.52.17.123^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||182.59.69.21^$all
+||chip-secured-download.de^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||160.202.163.100^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1216,7 +1217,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||95.211.229.247^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||88.208.22.1^$all
-||amused-condition.com^$all
 ||reflectingproject.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||188.72.219.35^$all
@@ -1447,7 +1447,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##.share-trigger:not(html,body,:empty)
 ##.share-whatsapp:not(html,body,:empty)
 ##.share__list:not(html,body,:empty)
-##.share_area:not(html,body,:empty)
 ##.share_btn:not(html,body,:empty)
 ##.share_toggle:not(html,body,:empty)
 ##.shareBar:not(html,body,:empty)
@@ -1874,6 +1873,7 @@ knowyourmeme.com###trending-bar
 knowyourmeme.com###leaderboard
 knowyourmeme.com###top-entries-sidebar
 knowyourmeme.com###spp-gallery
+knowyourmeme.com##.homepage-share
 knowyourmeme.com##.fb-page-like
 knowyourmeme.com##.cbox-smedia
 wikia.org,fandom.com###WikiaBarWrapper
@@ -2456,7 +2456,6 @@ $document,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
 $removeparam=atid
 $document,removeparam=/^clickref\d?=.*$/
-$removeparam=cuid,domain=~dynamicyield.com
 $removeparam=data1,domain=~web3.cmvm.pt
 $removeparam=data2
 $removeparam=data3
@@ -2479,7 +2478,6 @@ $removeparam=tid4
 $removeparam=avad
 $removeparam=ckmc
 $removeparam=ckmsc
-$removeparam=__cn_tracker
 $document,removeparam=/^sfmc_.*$/
 $removeparam=mktc
 $removeparam=cm_ven
@@ -2552,6 +2550,7 @@ $removeparam=pk_kwd
 $removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
+$removeparam=elqTrack
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -2925,6 +2924,7 @@ $removeparam=u_code
 $removeparam=is_copy_url
 $removeparam=is_from_webapp
 $removeparam=sender_device
+$removeparam=sender_web_id
 ||tiktok.com^$removeparam=_d
 ||tiktok.com^$removeparam=tt_from
 ||tiktok.com^$removeparam=preview_pb
@@ -2963,7 +2963,6 @@ $removeparam=ignoreNavigationBar
 $removeparam=wx_statusbar_hidden
 ||aliexpress.$removeparam=pdp_ext_f
 ||aliexpress.$removeparam=utparam
-||aliexpress.$removeparam=__tppBottom
 $removeparam=aff_fcid
 $removeparam=aff_fsk
 $removeparam=aff_platform
@@ -3672,6 +3671,7 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 ||intel.com^$document,removeparam=programid
 ||game.intel.com^$document,removeparam=em_id
 ||game.intel.com^$document,removeparam=source_id
+||dell.com^$removeparam=lwp
 ||microsoft.com^$removeparam=srcref
 ||microsoft^$removeparam=fromcode
 ||microsoft.com^$removeparam=refSource
@@ -3708,8 +3708,6 @@ $document,removeparam=sc_src,domain=ecoflow.com|eufymake.com|newbalance.com
 $document,removeparam=sc_lid,domain=ecoflow.com|eufymake.com|newbalance.com
 $document,removeparam=sc_llid,domain=ecoflow.com|eufymake.com|newbalance.com
 $document,removeparam=correlationId,domain=adobe.com|costco.com
-$document,removeparam=lctg,domain=bleacherreport.com|weather.com
-$document,removeparam=enc_em,domain=bleacherreport.com|weather.com
 ||microsoft.com^$document,removeparam=UID
 ||harborfreight.com^$document,removeparam=infy
 $document,removeparam=mi_ecmp,domain=chewy.com|harborfreight.com
@@ -3816,6 +3814,7 @@ quora.com###mainContent > div > .qu-borderRadius--small:has(> [class=q-box])
 docs.google.com###docs-presence
 ||freshports.org/images/notbug.gif^
 ://go.microsoft.com/fwlink/?LinkID=219472^$all
+foodora.*##.top-banner-container
 foodora.*#$#.page-wrapper.order-component { margin-top: 128px !important }
 foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 @@/favicon.ico|
@@ -3857,7 +3856,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 #@#.text_ads
 ##.text_ads:not(html,body,:empty)
 #@#.textad
-##.textad:not(html,body,:empty)
 #@#.textAd
 ##.textAd:not(html,body,:empty)
 @@/adblock-detection/prebid.js|
