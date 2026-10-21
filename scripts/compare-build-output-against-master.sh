@@ -297,7 +297,7 @@ restore_worktree_platforms() {
 # checkout — they would otherwise keep their own revision.json counters and
 # show up as diff noise in the report.
 # optimization_config.json is loaded from the project root.
-sync_filters_baseline() {
+sync_baseline() {
     git -C "$CHANGED_WORK_TREE" rm -r --quiet --ignore-unmatch -- filters &&
         git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/ optimization_config.json
 }
@@ -835,7 +835,7 @@ if [ "$DO_USE_STATS" = true ]; then
 fi
 
 if ! run_with_spinner "syncing filters/ and optimization_config.json to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
-    sync_filters_baseline; then
+    sync_baseline; then
     die "syncing filters/ and optimization_config.json baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
