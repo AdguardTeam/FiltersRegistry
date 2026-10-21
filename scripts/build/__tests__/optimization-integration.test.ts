@@ -29,6 +29,30 @@ const expectedPercentOptions = { percentPath: path.resolve(__dirname, '../../../
 const EMPTY_FILTER_IDS = Object.freeze([]);
 const FILTER_ID = 1;
 
+/**
+ * Imports build.js with `process.exit` and `console.error` stubbed, and waits
+ * for it to exit with code 1.
+ *
+ * @returns Everything build.js printed through `console.error`, joined by newlines.
+ */
+const importBuildExpectingFailure = async (): Promise<string> => {
+    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+    const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+
+    try {
+        await import('../build.js');
+
+        await vi.waitFor(() => {
+            expect(exitSpy).toHaveBeenCalledWith(1);
+        });
+
+        return consoleErrorSpy.mock.calls.map(([message]) => String(message)).join('\n');
+    } finally {
+        consoleErrorSpy.mockRestore();
+        exitSpy.mockRestore();
+    }
+};
+
 describe('build.js: cache flag handling', () => {
     const originalArgv = process.argv;
 
@@ -140,33 +164,14 @@ describe('build.js: cache flag handling', () => {
 
     it('--download-stats failure: names optimization_config.json and keeps the original message', async () => {
         const downloadError = new Error('curl failed: 404 for filters/9999/stats.json');
-        vi.doMock('@adguard/filters-compiler', () => ({
-            compile: vi.fn().mockResolvedValue(undefined),
-            localOptimizationStatistics: {
-                download: vi.fn().mockRejectedValue(downloadError),
-                use: vi.fn(),
-                reset: vi.fn().mockResolvedValue(undefined),
-            },
-        }));
+        const { localOptimizationStatistics: mockedStats } = await import('@adguard/filters-compiler');
+        vi.mocked(mockedStats.download).mockRejectedValueOnce(downloadError);
         process.argv = ['node', 'build.js', '--download-stats'];
 
-        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
-        const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+        const errorOutput = await importBuildExpectingFailure();
 
-        await import('../build.js');
-
-        await vi.waitFor(() => {
-            expect(exitSpy).toHaveBeenCalledWith(1);
-        });
-        expect(consoleErrorSpy).toHaveBeenCalledWith(
-            expect.stringContaining('optimization_config.json'),
-        );
-        expect(consoleErrorSpy).toHaveBeenCalledWith(
-            expect.stringContaining(downloadError.message),
-        );
-
-        consoleErrorSpy.mockRestore();
-        exitSpy.mockRestore();
+        expect(errorOutput).toContain('optimization_config.json');
+        expect(errorOutput).toContain(downloadError.message);
     });
 
     it.each([
@@ -329,23 +334,11 @@ describe('build.js: cache flag handling', () => {
         }));
         process.argv = ['node', 'build.js', '--use-cache'];
 
-        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
-        const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+        const errorOutput = await importBuildExpectingFailure();
 
-        await import('../build.js');
-
-        await vi.waitFor(() => {
-            expect(exitSpy).toHaveBeenCalledWith(1);
-        });
-
-        expect(consoleErrorSpy).toHaveBeenCalledWith(
-            expect.stringContaining(
-                `Run --download-stats to download the latest statistics. (${retrieveStatsError.message})`,
-            ),
+        expect(errorOutput).toContain(
+            `Run --download-stats to download the latest statistics. (${retrieveStatsError.message})`,
         );
-
-        consoleErrorSpy.mockRestore();
-        exitSpy.mockRestore();
     });
 
     it('--use-cache with invalid (not missing) stats.json: printing the validation-specific hint', async () => {
@@ -368,27 +361,13 @@ describe('build.js: cache flag handling', () => {
         }));
         process.argv = ['node', 'build.js', '--use-cache'];
 
-        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
-        const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+        const errorOutput = await importBuildExpectingFailure();
 
-        await import('../build.js');
-
-        await vi.waitFor(() => {
-            expect(exitSpy).toHaveBeenCalledWith(1);
-        });
-
-        expect(consoleErrorSpy).toHaveBeenCalledWith(
-            expect.stringContaining(
-                'The cached optimization stats are invalid. Inspect the file, or run '
-                + `--download-stats to try refreshing it from the remote server. (${invalidStatsError.message})`,
-            ),
+        expect(errorOutput).toContain(
+            'The cached optimization stats are invalid. Inspect the file, or run '
+            + `--download-stats to try refreshing it from the remote server. (${invalidStatsError.message})`,
         );
-        expect(consoleErrorSpy).not.toHaveBeenCalledWith(
-            expect.stringContaining('Run --download-stats to download the latest statistics.'),
-        );
-
-        consoleErrorSpy.mockRestore();
-        exitSpy.mockRestore();
+        expect(errorOutput).not.toContain('Run --download-stats to download the latest statistics.');
     });
 });
 
