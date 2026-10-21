@@ -70,9 +70,9 @@ const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
 // applying a stats cache outside the allowed --include/--skip scope results
 // will trigger a hard failure in compile().
 const optimizationStatsScopeFile = `${optimizationStatsDir}.scope`;
-// Pins the set of optimizable filters, so --download-stats and --use-cache do
-// not depend on the remote percent.json (which changes over time and requires
-// network access).
+// Pins the set of optimizable filters, so --download-stats and an applied
+// --use-cache stats cache don't depend on the remote percent.json (which changes
+// over time and requires network access).
 const optimizationPercentPath = path.join(__dirname, '../..', 'optimization_config.json');
 
 const reportPath = rawReportPath !== ''
