@@ -1,9 +1,9 @@
-! Checksum: pbqChBKYardlpgWV/Ps3KA
-! Diff-Path: ../patches/9/9-s-1792509318-3600.patch
+! Checksum: dkn/veYS0LlTSD5kRtlBiA
+! Diff-Path: ../patches/9/9-s-1792613726-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.36.13
-! TimeUpdated: 2026-10-20T15:11:41+00:00
+! Version: 2.0.36.16
+! TimeUpdated: 2026-10-21T20:11:41+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -204,6 +204,11 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244958
+nexusmangas.com#%#//scriptlet('prevent-setTimeout', '{x()}')
+nexusmangas.com#%#//scriptlet('prevent-setInterval', '{x()}')
+nexusmangas.com#%#//scriptlet('prevent-addEventListener', '', '{x()}')
+nexusmangas.com#%#//scriptlet('prevent-fetch', 'googlesyndication')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244705
 novelaocs.top#%#//scriptlet('prevent-setTimeout', 'revisarPublicidad')
 novelaocs.top#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.removeAttribute', 'Publicidad')
@@ -2224,6 +2229,7 @@ actualidadiphone.com,lucrandoideias.com,proandroid.com,lusometeo.com,kltutors.co
 !
 ! NOTE: Specific rules
 !
+||pyrsahn.com^$domain=latribuna.hn
 animegratis.org##.amazon-showcase-container
 ggmax.com.br##div[class]:has(> .announcement__ad)
 estadao.com.br##div:has(> .ads-container:only-child)

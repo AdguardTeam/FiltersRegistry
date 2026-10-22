@@ -675,9 +675,8 @@ translations via `download-crowdin.sh` (authenticated with the
 `yarn validate:locales`, and opens a pull request with the changes to `locales/`.
 Merging is manual; the next regular build propagates new strings into `platforms/`.
 
-The workflow runs on manual dispatch only for now: its weekly schedule (Mondays
-06:00 UTC) stays commented out until the `CROWDIN_FILTERS_REGISTRY_TOKEN` secret is
-added to the repository.
+The workflow runs every Monday at 06:00 UTC and on manual dispatch. It adds the default
+reviewers to the translations PR.
 
 The auto-created PR is opened with the default `GITHUB_TOKEN`, so GitHub does not run
 `test.yaml`/`build-adguard` on it (events raised with that token do not start workflow

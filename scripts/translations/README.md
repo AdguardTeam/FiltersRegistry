@@ -19,8 +19,7 @@ step, see below).
 The Crowdin CLI reads the API token from the `CROWDIN_FILTERS_REGISTRY_TOKEN` environment variable, so it
 must be set before running the scripts (in CI it is provided by the `CROWDIN_FILTERS_REGISTRY_TOKEN`
 repository secret). When that variable is not set, the CLI falls back to `CROWDIN_PERSONAL_TOKEN`;
-a stale value there produces the same confusing `403 Forbidden` as a missing token, so unset it
-when testing locally.
+a stale value there produces a confusing `403 Forbidden`, so unset it when testing locally.
 
 It's essential to import strings from the service before exporting them, as some changes may be lost otherwise.
 
@@ -94,15 +93,13 @@ It's essential to import strings from the service before exporting them, as some
 ## Automatic Updates
 
 The `Update translations` GitHub Actions workflow
-(`.github/workflows/update-translations.yaml`) runs `download-crowdin.sh` on demand
-(authenticated with the `CROWDIN_FILTERS_REGISTRY_TOKEN` repository secret),
-validates the result with `yarn validate:locales`, and opens a pull request with the
-changes to `locales/`. Trigger it manually from the Actions tab. Uploading base English
-strings (`upload.sh`) stays a manual step, outside the workflow.
+(`.github/workflows/update-translations.yaml`) runs every Monday at 06:00 UTC and on manual
+dispatch. It runs `download-crowdin.sh` (authenticated with the
+`CROWDIN_FILTERS_REGISTRY_TOKEN` repository secret), validates the result with
+`yarn validate:locales`, and opens a pull request with the changes to `locales/`. Uploading
+base English strings (`upload.sh`) stays a manual step, outside the workflow.
 
-The weekly run (Mondays 06:00 UTC) is commented out in the workflow until the
-`CROWDIN_FILTERS_REGISTRY_TOKEN` secret is added to the repository, so the workflow is
-manual dispatch only for now.
+The workflow adds the default reviewers to the pull request.
 
 The pull request is created with the default `GITHUB_TOKEN`, so it does not trigger the
 regular CI workflows; the update job itself runs `yarn validate:locales`, `yarn lint`,
