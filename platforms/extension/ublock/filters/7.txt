@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 8xvFvUCZosYRx+qzODeJhQ
-! Diff-Path: ../patches/7/7-s-1792653648-3600.patch
+! Checksum: ea1AiNr1Hr9Yj0NphBubEg
+! Diff-Path: ../patches/7/7-s-1792674912-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.71
-! TimeUpdated: 2026-10-22T07:17:55+00:00
+! Version: 2.0.77.72
+! TimeUpdated: 2026-10-22T13:12:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27,6 +27,7 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$3p,domain=~rakuten-co.jp|~rakuten.ne.jp
 !
+||fanza.ftbucket.info^
 ||ad.001zb.com^
 ||onergogogo.com^$all
 ||hmshanyin.com^$all
@@ -472,8 +473,8 @@ e-words.jp###abmessage
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237504
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234737
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234232
-mangaruu.com,rawfree.top,soraraw.*##+js(prevent-fetch, /\?abg=|adsbygoogle|tpc\.googlesyndication\.com|doubleclick\.net|googleadservices\.com/)
-mangaruu.com,rawfree.top,soraraw.*##+js(set-constant, navigator.brave, undefined)
+trogiupnhanh.com,mangaruu.com,rawfree.top,soraraw.*##+js(prevent-fetch, /\?abg=|adsbygoogle|tpc\.googlesyndication\.com|doubleclick\.net|googleadservices\.com/)
+trogiupnhanh.com,mangaruu.com,rawfree.top,soraraw.*##+js(set-constant, navigator.brave, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233289
 @@||genshin-soku.com/wp-content/plugins/amazon-egift-donation/assets/front.js
 @@||genshin-soku.com/wp-content/plugins/yamiisoku-bbs-comments/assets/comments.js
@@ -1976,6 +1977,13 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+polandball.jp##div[class^="myadd"]
+trogiupnhanh.com##.w-full[style="width: 100%; max-width: 728px; min-height: 90px; overflow: visible; box-sizing: border-box;"]
+trogiupnhanh.com##.max-w-full:has(> div[data-adsense-type])
+||ftbucket.info/*/dmmrec_$script,stylesheet
+ftbucket.info###dmm-ad-widget
+ftbucket.info###dmmrec-list-root
+ftbucket.info##a[href="https://fanza.ftbucket.info/"]
 kasemato.net##.sidewrapper:has(> .side > center > a[rel~="sponsored"])
 ||kasemato.net/myframe/$domain=kasemato.net
 kandatasokuho.com##.amaquick-box ~ a[href^="https://link.amazon/"]
@@ -3380,6 +3388,8 @@ encount.press###c2_click_JAF_textlink
 encount.press##a[id*="click"][id*="banner_"]
 lps-web.co.jp##.is-style-icon_announce:has(> a:contains(【PR】))
 kidsna.com##.side-menu__sponsord
+otakuma.net###left_col > div > a[href^="https://jinseilog.jp/"][rel="noopener"]
+otakuma.net##.otkm-ad-rotation
 otakuma.net##div[class*="ad_side_widget"]
 tsuisoku.com##img[src^="https://livedoor.blogimg.jp/ld_manga/imgs/"]
 haijin-boys.com##.widget:has(> ins.adsbygoogle)
