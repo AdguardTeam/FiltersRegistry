@@ -30,10 +30,10 @@ const EMPTY_FILTER_IDS = Object.freeze([]);
 const FILTER_ID = 1;
 
 /**
- * Imports build.js with `process.exit` and `console.error` stubbed, and waits
+ * Imports build.ts with `process.exit` and `console.error` stubbed, and waits
  * for it to exit with code 1.
  *
- * @returns Everything build.js printed through `console.error`, joined by newlines.
+ * @returns Everything build.ts printed through `console.error`, joined by newlines.
  */
 const importBuildExpectingFailure = async (): Promise<string> => {
     const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
@@ -53,7 +53,7 @@ const importBuildExpectingFailure = async (): Promise<string> => {
     }
 };
 
-describe('build.js: cache flag handling', () => {
+describe('build.ts: cache flag handling', () => {
     const originalArgv = process.argv;
 
     beforeEach(() => {
@@ -219,7 +219,7 @@ describe('build.js: cache flag handling', () => {
     });
 
     it('plain build with a cached local optimization present: does not call use(), fetches remotely', async () => {
-        // build.js only applies a local stats cache under --use-cache; a
+        // build.ts only applies a local stats cache under --use-cache; a
         // plain build must ignore it even when a matching cache exists.
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
