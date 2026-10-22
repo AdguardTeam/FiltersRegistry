@@ -175,7 +175,7 @@ It walks through a few prompts, in order:
 3. The build mode — a plain `build`, or `build:local` from cached sources.
   Choosing cached mode adds two follow-up prompts: whether to run
   `generate-cache` first, and whether to use optimization stats. Stats are
-  cached-mode only (`build.js` only applies a local stats cache under
+  cached-mode only (`build.ts` only applies a local stats cache under
   `--use-cache`); when used, they're downloaded once into a shared
   `temp/reg-stats` (kept separate from the main checkout's
   `temp/optimization/stats`) and copied into both worktrees, so both builds
