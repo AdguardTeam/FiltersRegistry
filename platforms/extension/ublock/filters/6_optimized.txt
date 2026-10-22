@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: OXUEHNtO/zQ2NkG701a82g
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1792549247-3600.patch
+! Checksum: Zr07ZIISUOKYhSjidz8oTQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1792635605-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.54.27
@@ -26,7 +26,6 @@
 ||widget.marktjagd.de^
 ||cwi.re^$3p
 ||a.zdg.de^
-||cockpit.symplr.de^$3p
 ||afl-static-cdn.newbiz-prod.stroeerws.de^$3p
 ||embed.contentverticals.de^$3p
 ||partners2.das-onlinespiel.de^$3p
@@ -2063,6 +2062,7 @@ finanzen.net##div[id^="fin-ob-box-ar_"]
 bitblokes.de###google_ad_2_amazon
 kodi-tipps.de##.identitaet-box
 ||pagead2.googlesyndication.com$domain=promiflash.de,redirect=noop.txt,important,image,media,subdocument,stylesheet,script,xhr,other
+hallelife.de##.banner_image
 dubisthalle.de##.sidebar-content > .dbh-widget
 borncity.com##.widget-area li#ai_widget-2
 borncity.com##div#content .code-block[style="margin: 8px 0; clear: both;"]
@@ -2340,7 +2340,6 @@ drehscheibe-online.de###dsHeaderColoured
 zdnet.de###featureWhitepaper
 winfuture.de###homepage_rectangle
 sueddeutsche.de###iqd_mainAd
-digitalfaq.com,szbz.de,hardwareluxx.de,geliebte-katze.de###leaderboard
 physio-deutschland.de###partners-right
 abnehmen.com###posts > li.postbitlegacy.postcontainer.old:not([id^="post_"])
 hilfdirselbst.ch###r230
@@ -2698,6 +2697,7 @@ rtl.de#@#.rtlde-medium-rectangle
 .org/werbung/
 /_werbung/*
 /banners/werbung-
+/bilder/werbung_
 /esel.js
 /getwerbung.
 /gigaflat.js
@@ -2791,6 +2791,7 @@ _woz_banner_vote.
 ###p-rechts-werbung
 ###reklame
 ###reklame-rechts-mitte
+###reklame-rectangle
 ###startwerbung
 ###topwerbung
 ###werbeanzeige
@@ -2883,7 +2884,6 @@ _woz_banner_vote.
 ##.werbung-250x250
 ##.werbung-box
 ##.werbung-container
-##.werbung-content
 ##.werbung-inline
 ##.werbung-label
 ##.werbung-leiste
@@ -2894,6 +2894,7 @@ _woz_banner_vote.
 ##.werbung-unten
 ##.werbung1
 ##.werbung2
+##.werbung280x70_wrap
 ##.werbung3
 ##.werbung301
 ##.werbung970x250
@@ -2987,6 +2988,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||active-tracking.de^$3p
 ||ad-mix.de^$3p
 ||ad-pay.de^$3p
+||ad-serving.de^$3p
 ||ad-sun.de^$3p
 ||ad4m.at^$3p
 ||ad4mat.de^$3p
@@ -3153,7 +3155,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||xup.to^$domain=raidrush.ws
 ||yogsototh.bytecamp.net^$3p
 ||adfarm1.adition.com^$popup,domain=web.de
-||boerse.today^$popup,3p
 ||ddownload.com^$popup,domain=ddl-warez.cc
 ||katfile.com^$popup,domain=ddl-warez.cc
 ||tracking.s24.com^$popup,3p
@@ -3259,6 +3260,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||generic.web.de^
 ||germancorrector.com/cnc/
 ||germanscooterforum.de/bannermanagement/
+||glarus24.ch/uploads/tx_xeiroads/
 ||gmx.net/uim/connector/live/v2/service.min.js
 ||gn-online.de/ad/
 ||goldesel.sx/img/b3f2784f11449ba054835ce14db00d7611.jpg
@@ -3310,6 +3312,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||klexikon.de/banner/
 ||kochbar.de/moltenbundle/
 ||kradblatt.de/wp-content/uploads/mediabanner/
+||kroatien-nachrichten.de/wp-content/uploads/*/125375586_1887673141371509_4482467756478970036_n.jpg
 ||kroatien-nachrichten.de/wp-content/uploads/2020/11/Logo.jpg
 ||krone.at/talk-ads/
 ||kunststoffweb.de/_g/_ads/
@@ -3404,6 +3407,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||stadt-bremerhaven.de^*/psw.jpg
 ||stereo.de^*/banner/
 ||steuertipps.de/scripts/google-ad/
+||studio-magazin.de/files/banner/
 ||suche.1und1.de/amazon?
 ||suche.gmx.net/amazon?
 ||suche.t-online.de/web/amazon?
@@ -3515,7 +3519,6 @@ $csp=script-src 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' stati
 ||pornoklinge.com^*==/
 ||pornolisa.com^*==/
 ||sexfilme-gratis.com^*==/
-/^https?:\/\/.*\.(jpg|jpeg|gif|png|php|svg|ico|js|txt|css)/$popup,domain=190.115.18.20|aniworld.to|canna-power.to|canna.to|kinoger.com|kinoger.to|serien.cam|serienstream.to
 ||delamar.de/out/$popup
 ||windowspro.de/a.php?url=$popup
 ||windowspro.de/aa.php?url=$popup
@@ -3646,7 +3649,6 @@ kleinanzeigen.de###brws_banner-supersize
 formel1.de###bs-container
 kleinanzeigen.de###btf-billboard
 steuern.de###c11507
-hsg-wetzlar.de###c5307
 sexei.net###catfad
 beeg-pornos.com,deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-pornos.info,hd-sexfilme.com,hdpornos.net,herzporno.com,lesbenhd.com,meinyouporn.com,milffabrik.com,nursexfilme.com,pornhub-sexfilme.net,pornoaffe.net,pornodavid.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohelm.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoleon.com,pornolisa.com,pornoritze.com,pornoschlange.com,pornosusi.com,pornotanja.com,pornotom.com,pornotommy.com,pornovideos-hd.com,pornozebra.com,sexente.com,sexfilme-gratis.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xhamster-sexfilme.com,xnxx-porno.com,xnxx-pornos.xxx,xnxx-sexfilme.com###chatins_frame
 beliebtestewebseite.de###checkdiv
@@ -3721,6 +3723,7 @@ rp-online.de###ir_rpd_lb
 focus.de###isl-31-AdSlot
 juraforum.de###jf-stroer-sky
 juraforum.de###jf-stroer-superbanner
+ostfriesischer-kurier.de###jsn-pos-user-top
 klamm.de###klamm\.de_incontent_1
 wallstreet-online.de###kosocgen
 laborjournal.de###kratzer
@@ -3980,6 +3983,7 @@ kochrezepte.at##.advertisement_widget
 oefb.at,szbz.de,zeit.de##.advertising
 kauf6.com##.advertisments
 speedweek.com##.advheader
+smartdroid.de##.advorp1
 erf.de,greenbyte.ch,rtl.de##.adwrapper
 rtl.de##.adwrapper--mobile
 pcgameshardware.de##.afBtn1
@@ -4050,6 +4054,7 @@ moviejones.de##.bannerInfo
 erotikforum.at##.bannerWrapper
 bluray-disc.de##.banner_container
 apotheke-adhoc.de##.banner_container__mobile_billboard
+hallelife.de##.banner_image
 112-magazin.de,bassprofessor.info,finews.ch,griechenland.net,hifistatement.net,highway-magazin.de,hitradio.com.na,kajak-magazin.com,kl-aktuell.de,motorradundreisen.de,naturundtherapie.at,osttirol-online.at,pc-experience.de,radio-oberland.de,sonic-seducer.de,speyer-report.de,spielbox.de,tennistraveller.net,tvbb.de,vorsprung-online.de,wahrschauer.net##.bannergroup
 tobitech.de##.bannergroupimgframe
 eurogirlsescort.de,strafbock.ch##.banners
@@ -4178,6 +4183,7 @@ elektroauto-news.net##.elementor-element-5edce23
 report24.news##.elementor-element-6b9ddea
 elektroauto-news.net##.elementor-element-6c8f458
 elektroauto-news.net##.elementor-element-8419f6d
+nunu.at##.elementor-element-dc42ab9
 report24.news##.elementor-element-ef8547e
 immobilienscout24.de##.expose-ad-placeholder
 cannabis-medic.eu##.externalURL
@@ -4196,7 +4202,6 @@ rewe.de##.flagship-container
 kleinezeitung.at##.flex.justify-center.mx-auto.hidden.lg\:flex.lg\:mb-4.lg\:pb-4
 tvinfo.de##.floatLeft[style="padding:10px;"]
 deutschepornos.co,erotik-sexvideos.com,geilesexclips.com,gratis-sex-videos.net,gratisfickvideos.net,sexfilmetube.net,sexkostenlos.biz,xhamsterdeutsch.xyz##.footer-dingens
-hottime.ch##.footer-grey
 ecrbs.redbulls.com,fussball.de##.footer-partner
 schalke04.de##.footer-sponsors
 saechsische.de##.footer__partner
@@ -4358,7 +4363,6 @@ onmeda.de##.on-top-banner-wrapper
 autoscout24.at,autoscout24.de##.osa-as24-placeholder
 finanzen.at##.oscar_green
 oz-online.de##.ox
-happysex.ch##.p-banner-landscape-container
 6navi.ch##.p-banners-withborder
 emtb-news.de##.p-header
 kultur.bz.it##.page-banner
@@ -4388,6 +4392,7 @@ saarbruecker-zeitung.de,volksfreund.de,wz.de##.portal-slot
 ga.de##.portal-top
 ibooks.to##.post_content .btn
 hartware.de##.postanzeige
+swz.it##.pr
 ostbelgiendirekt.be##.pr-area
 oljo.de##.preisboxinner
 f95.de##.premiumpartner
@@ -4822,6 +4827,7 @@ amazon.de##div[id^="sp_detail"]
 supermarktblog.com,supertipp-online.de##div[id^="super-"]
 fitbook.de,petbook.de##div[id^="superbanner_"]
 teltarif.de##div[id^="tarifSlider"]
+finanzfluss.de##div[id^="trading212-"]
 bbheute.de,berliner-kurier.de,berliner-zeitung.de,bietigheimerzeitung.de,blick.de,donaukurier.de,evangelische-zeitung.de,frankenpost.de,ingolstadt-today.de,krzbb.de,main-echo.de,mittelbayerische.de,mopo.de,muehlacker-tagblatt.de,np-coburg.de,pnp.de,schwarzwaelder-bote.de,stuttgarter-nachrichten.de,stuttgarter-zeitung.de,wochenblatt-reporter.de##div[id^="traffective-ad-"]
 dealdoktor.de,mytopdeals.net##div[id^="trimexa-ads_"]
 galeria.de##div[id^="viewHomeDesktop-outGrid-sponsored_products-"]
@@ -4840,6 +4846,7 @@ oekotest.de##div[style="clear:both; display:block; min-height: 640px;"]
 wirtschaftslexikon24.com##div[style="float:left;clear:left;height:620px;width:180px;padding-top:15px;"]
 mydealz.de##div[style="height: 126px;"]
 raptastisch.net##div[style="height: 300px;"]
+boerse-social.com##div[style="height:80px;background-color:#fff"]
 nydus.org##div[style="height:90px;overflow:hidden;text-align:center;"]
 digitalfernsehen.de##div[style="margin-bottom:10px"]
 winfuture.de##div[style="margin: 10px 0px; text-align: center; min-width: 300px; min-height: 250px;"]
@@ -4874,6 +4881,7 @@ datenschutz-berater.de,quadjournal.eu##img[height="600"]
 warez-ddl.net##img[height="90"]
 ak-kurier.de,nr-kurier.de,ww-kurier.de##img[name="banner"]
 data-load.me##img[style="width:270px;height:80px;"]
+ibooks.to##img[title="Usenet"]
 darts1.de##img[width="120"]
 wirsiegen.de##img[width="140"][height="180"]
 kultur-port.de,utvmagazin.de##img[width="200"][height="600"]
@@ -5140,6 +5148,7 @@ beeg-pornos.com,deinesexfilme.com,deinesexvideos.com,deutscherporno.biz,einfacht
 @@||football-aktuell.de/links/banner_oben.png
 @@||g.doubleclick.net/gampad/ads?$script,xhr,domain=11freunde.de|n-tv.de|stern.de
 @@||g.doubleclick.net/gampad/ads?$xhr,domain=auto-motor-und-sport.de|gala.de|gamepro.de|gamestar.de|manager-magazin.de|motorradonline.de|moviepilot.de|spiegel.de
+@@||g.doubleclick.net/gampad/ads?*&iu_parts=21917048853%2CTargetlink%2CBill-%2CLeaderboard%2CMedium-Rectangle%2CSkyscraper%2CHalfpage%2CShop%2CHalfpageLO%2CAffiPlatzierung&$script,xhr,domain=teltarif.de
 @@||g.doubleclick.net/gampad/ads?*&iu_parts=27763518%3A21917048853%2Cteltarif-de_Onlineverlag_GmbH%2Cteltarif.de%2CParallax%2Chalfpagelu%2Chalfpageru%2Cnavisky&$script,xhr,domain=teltarif.de
 @@||g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$script,domain=auto-motor-und-sport.de|gamepro.de|gamestar.de|manager-magazin.de|motorradonline.de|teltarif.de
 @@||g.doubleclick.net/pagead/ppub_config?$domain=manager-magazin.de
@@ -5158,6 +5167,7 @@ beeg-pornos.com,deinesexfilme.com,deinesexvideos.com,deutscherporno.biz,einfacht
 @@||improvedigital.com/pbw/headerlift.min.js$domain=jetztspielen.de
 @@||middleware.marktjagd.de/proxy/$domain=aktionspreis.de|angebote.focus.de|dasoertliche.de|donau-ries-aktuell.de|fressnapf.ch|infranken.de|maxizoo.ch|meinestadt.de|sparwelt.de
 @@||mmcomputer.de^*&BannerID=$subdocument
+@@||native.emsservice.de/images/teaser*_*.jpeg$domain=11freunde.de
 @@||rubiconproject.com/prebid/dynamic/18086.js$domain=4p.de|derwesten.de|futurezone.de|leckerschmecker.me|moin.de|morgenpost.de|news38.de|thueringen24.de|wmn.de
 @@||smartclip.net/?plc=$script,domain=spiele.rtl.de
 @@||smartclip.net/ads?$script,domain=spiele.rtl.de
