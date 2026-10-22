@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.98.94",
-			"timeUpdated": "2026-10-22T06:17:19+0000",
+			"version": "2.4.98.95",
+			"timeUpdated": "2026-10-22T07:17:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.70",
-			"timeUpdated": "2026-10-21T20:11:39+0000",
+			"version": "2.0.77.71",
+			"timeUpdated": "2026-10-22T07:17:55+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.88",
-			"timeUpdated": "2026-10-21T23:10:03+0000",
+			"version": "2.0.72.89",
+			"timeUpdated": "2026-10-22T07:18:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.17",
-			"timeUpdated": "2026-10-22T05:11:25+0000",
+			"version": "2.0.69.18",
+			"timeUpdated": "2026-10-22T07:18:02+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -618,8 +618,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.83.69",
-			"timeUpdated": "2026-10-22T06:18:14+0000",
+			"version": "2.2.83.70",
+			"timeUpdated": "2026-10-22T07:18:08+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -644,8 +644,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.39.4",
-			"timeUpdated": "2026-10-22T05:11:38+0000",
+			"version": "2.1.39.5",
+			"timeUpdated": "2026-10-22T07:18:10+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -748,8 +748,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.85.96",
-			"timeUpdated": "2026-10-22T06:18:26+0000",
+			"version": "2.0.85.97",
+			"timeUpdated": "2026-10-22T07:18:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
