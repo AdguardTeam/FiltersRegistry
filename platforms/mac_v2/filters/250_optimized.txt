@@ -1,5 +1,5 @@
-! Checksum: 8VTL9Gk+jJt14TQBWMYsXg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1792557945-14400.patch
+! Checksum: 9MjxpbOgXHnfIOvvi+95iw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1792644343-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.96
@@ -42,7 +42,6 @@ windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||testedforyou.net^$all
-##.ym-p1-server-mode-outbyte
 ||solvusoft.com^$document
 ||freeroms.com^$document
 ||romsmania.com^$document
@@ -1986,7 +1985,6 @@ instacart.com##.AuthModal__Overlay:has(a[href$="/business"])
 mycarly.com#$#.chakra-dialog__backdrop { backdrop-filter:0!important }
 amazon.*##.nav-flyout.nav-signin-tt
 trello.com##.mod-warning.header-banner
-cdn.memberspace.com/*
 pinterest.*##div[data-test-id=giftWrap]
 quizlet.com##.LoginBottomBar
 quizlet.com#$#.SetPageTerm-largeSide { filter: none !important }
@@ -2535,6 +2533,7 @@ $removeparam=__hsfp
 $removeparam=dgcid
 $document,removeparam=/^hsa_.*$/
 $removeparam=gws_rd
+$removeparam=sr_share
 $removeparam=twclid
 $document,removeparam=/^ds_.*$/,domain=~clickserve.dartsearch.net
 $removeparam=Adposition
@@ -2620,7 +2619,6 @@ $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
 $removeparam=oly_anon_id
-$document,removeparam=/^wickedsource=.*$/i
 $removeparam=s_cid
 $removeparam=ml_subscriber
 $removeparam=ml_subscriber_hash
@@ -2703,7 +2701,6 @@ $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
 $removeparam=dt_dapp
 $removeparam=dt_platform
-$removeparam=i_cid
 $removeparam=_gac
 $removeparam=af_medium
 $removeparam=af_source
@@ -2833,7 +2830,6 @@ $removeparam=client-ts
 $removeparam=tp_uid
 $removeparam=ft_section
 $removeparam=correlator
-$document,removeparam=ap_id
 $removeparam=ucf_user_id
 $removeparam=yandexuid
 $removeparam=google_nid
@@ -3212,7 +3208,6 @@ $removeparam=aff_click_id
 ||map.baidu.com^$removeparam=ugc_ver
 ||baidu.com^$removeparam=hl_tag
 ||zhidao.baidu.com^$removeparam=qbl
-||wenku.baidu.com/search?$removeparam=cc
 ||baike.baidu.com^$removeparam=lemmaFrom
 ||wenku.baidu.com^$removeparam=_wkts_
 wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
@@ -3331,7 +3326,6 @@ $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|a
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $document,removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com|harborfreight.com
-$removeparam=hpt,domain=cnn.com
 ||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
 $removeparam=ab_channel,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
@@ -3772,10 +3766,6 @@ $document,removeparam=af_xp
 ||qzone.qq.com^$document,removeparam=ciphertext
 ||qzone.qq.com^$document,removeparam=blog_photo
 ||qzone.qq.com^$document,removeparam=g
-||qzone.qq.com^$document,removeparam=res_uin
-||qzone.qq.com^$document,removeparam=cellid
-||qzone.qq.com^$document,removeparam=subid
-||qzone.qq.com^$document,removeparam=bp1
 ||qzone.qq.com^$document,removeparam=bp2
 ||qzone.qq.com^$document,removeparam=bp7
 ||qzone.qq.com^$document,removeparam=g_f
@@ -3886,7 +3876,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=ModelType
 ||org.downloadcenter.samsung.com/downloadfile^$removeparam=/^ModelName=$/
 ||store.epicgames.com^$document,removeparam=epic_creator_id
-||medal.tv^$document,removeparam=invite
 ||quora.com^$document,removeparam=qv_src
 ||americanexpress.com^$document,removeparam=inav
 $document,removeparam=sc_src,domain=ecoflow.com|eufymake.com|newbalance.com
@@ -4277,8 +4266,8 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 @@/favicon1.ico|
 @@://adserver.advertising.adtech.$third-party
 #@#.adSense
+##.adSense:not(html,body,:empty)
 #@#.adContent
-##.adContent:not(html,body,:empty)
 #@#.ad-text
 ##.ad-text:not(html,body,:empty)
 #@#.adBlock
@@ -4338,7 +4327,6 @@ www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/
 &client_ad_session_id=
 ||anyclip.com^$app=TETR.IO.exe
 duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##button:first-of-type + div:last-of-type[class*=" "]:has(button)
-www.qwant.com###root:has(a[href*=goo]) section div[class]:not([data-testid],[style],[class*=" "],[class*=_]):has([id^=Piwik_])
 adressa.no#$#.strom .overlay { background:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important }
 ://www.bing.com/?shorturl=$document
 youtube.com#%#//scriptlet('ubo-json-edit', '..adaptiveFormats.*[?.audioTrack.isAutoDubbed]')
