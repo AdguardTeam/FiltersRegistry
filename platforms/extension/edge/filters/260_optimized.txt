@@ -1,9 +1,9 @@
-! Checksum: 6rujS+K/vAfzicMaVLixww
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1792687474-14400.patch
+! Checksum: vFuDp24wzQlQGj1jOeKFNw
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1792701765-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.77
-! TimeUpdated: 2026-10-22T16:42:01+00:00
+! Version: 2.0.2.78
+! TimeUpdated: 2026-10-22T20:40:38+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -633,6 +633,7 @@ developers.google.com##.devsite-banner-announcement:has([href="/analytics/devgui
 developers.google.com##devsite-key-takeaways-panel
 developers.google.com##.devsite-explain-code
 developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com,web.dev##devsite-search-summary
+docs.google.com###docs-sidekick-gen-ai-promo-button-container
 docs.google.com###textToSpeechToolbarButton
 docs.google.com##.superfab-aitextgeneratormenu-button
 docs.google.com###docs-sidekick-button-container
@@ -678,7 +679,11 @@ docs.google.com##[role="menuitem"]:has(> [data-action-id="freebird-open-help-me-
 docs.google.com##[jsname="Vjwl5e"]:has(#getting-started-dialog-navigation-view)
 drive.google.com###WWNEkf
 drive.google.com##.p5rLxe.HBDJjb
-drive.google.com#$?#[role="menuitem"]:has(img[src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x16.png"]) { remove: true; }
+drive.google.com##[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"])
+drive.google.com#$?#[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) { remove: true; }
+drive.google.com##[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) + [role="separator"]
+drive.google.com#$?#[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) + [role="separator"] { remove: true; }
+drive.google.com###nt\:Dr[role="treeitem"][aria-selected="false"]
 drive.google.com##.j6o35e:has([aria-label="You now have promotional access to audio overviews in Drive"])
 drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y)
 drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y) + .h-Yo[role="separator"]

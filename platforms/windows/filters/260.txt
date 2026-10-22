@@ -1,9 +1,9 @@
-! Checksum: uBw7VjwxiZDGwdCMa32eEQ
-! Diff-Path: ../patches/260/260-s-1792687500-14400.patch
+! Checksum: SKBIAP1bBKlTOaQkFfM2BA
+! Diff-Path: ../patches/260/260-s-1792701785-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.77
-! TimeUpdated: 2026-10-22T16:42:01+00:00
+! Version: 2.0.2.78
+! TimeUpdated: 2026-10-22T20:40:38+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1609,6 +1609,9 @@ developers.google.com##.devsite-explain-code
 developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com,web.dev##devsite-search-summary
 ! === Google Docs ===
 ! Some filters only apply to accounts with a Google Workspace or Google AI subscription
+! -- https://docs.google.com/document/u/0/ (Docs)
+! Header - Gemini button
+docs.google.com###docs-sidekick-gen-ai-promo-button-container
 ! -- https://docs.google.com/create (Docs)
 ! "Listen to this tab" icon in header toolbar
 docs.google.com###textToSpeechToolbarButton
@@ -1712,9 +1715,14 @@ drive.google.com###WWNEkf
 ! "AI Overview search" sources icon in search bar
 drive.google.com##.p5rLxe.HBDJjb
 ! Remove "Get answers from Drive" placeholder and sparkle from search bar
-! New > More > Google AI Studio
+! Sidebar - New > New Project
 ! * Use 'remove()' to fix keyboard navigation
-drive.google.com#$?#[role="menuitem"]:has(img[src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x16.png"]) { remove: true; }
+drive.google.com##[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"])
+drive.google.com#$?#[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) { remove: true; }
+drive.google.com##[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) + [role="separator"]
+drive.google.com#$?#[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) + [role="separator"] { remove: true; }
+! Sidebar - Projects tab
+drive.google.com###nt\:Dr[role="treeitem"][aria-selected="false"]
 ! -- https://drive.google.com/drive/home
 ! Notice for access to audio overviews
 drive.google.com##.j6o35e:has([aria-label="You now have promotional access to audio overviews in Drive"])
@@ -2933,6 +2941,7 @@ www.pinterest.com#%#//scriptlet('ubo-json-prune', 'resource_response.data.result
 ! Change search settings to hide AI
 ! * Alters search results instead of hiding items. Allows more non-ai results per page
 ! * Requires trust
+! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1tscpwb/comment/oovgpl5/
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch')
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch')
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..illust[?.aiType==2]', 'propsToMatch')
