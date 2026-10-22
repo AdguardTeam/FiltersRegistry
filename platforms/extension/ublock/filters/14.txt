@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wZBFaFvD/Jkwy+7GeDNncQ
-! Diff-Path: ../patches/14/14-s-1792664073-3600.patch
+! Checksum: eHg12GPGC5KmCLrUlNiMVg
+! Diff-Path: ../patches/14/14-s-1792667622-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.83.73
-! TimeUpdated: 2026-10-22T10:11:20+00:00
+! Version: 2.2.83.74
+! TimeUpdated: 2026-10-22T11:10:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2595,6 +2595,7 @@ spinedu.pl,aquamelior.pl,e-hortico.pl,sklep.doppelherz.pl,jestemwbajce.pl,greent
 !
 ! NOTE: Regular rules
 !
+ptsmc.com###sc-cookie-banner
 pochta.ru###cookie-consent-pochta
 criminalip.io##div[aria-label="Cookie Settings"]
 avoro.eu###ui-consent
@@ -2655,7 +2656,7 @@ lifeingos.ru##+js(set-local-storage-item, isCookieAccepted, true)
 tarifaluzhora.es,stopkillinggames.com##div[aria-labelledby="cookie-banner-title"]
 gubdaily.ru##.gub-article-politika
 stylevana.com##.cookie-policy-notification
-s.ee##.fixed.bottom-3:has(a[href^="/privacy/"])
+s.ee##.fixed.bottom-3:has(a[href$="/privacy/"])
 ||consentement.quebecor.com^
 qeeq.com###bottomComponentsContainer
 qeeq.com##.bottom-tip-bars-wrapper
@@ -3751,7 +3752,7 @@ toolnation.pl,primor.eu,horace.com,ispot.pl##body:style(overflow: auto !importan
 skyscanner.cz###cookieBannerContent:style(display: none !important;)
 scan.co.uk##.s-popup:style(display: none !important;)
 scan.co.uk##body.popup-open:style(overflow: auto !important;)
-walconmarine.com,carbongap.org,vaultimate.net,onebrand.company,artemislifemedicine.com,crusade.com.sg,nexusacademyuk.com,ampravda.ru,myownconference.com,amibeingpwned.com,paysend.com,formbyeats.co.uk,code.market,propelmusic.co.nz,lagless.gg,sotellus.com,abetterrouteplanner.com,eyou.social,getedumail.com,digiparser.com,gemini.com##div[aria-label="Cookie consent"]
+hessian.sh,walconmarine.com,carbongap.org,vaultimate.net,onebrand.company,artemislifemedicine.com,crusade.com.sg,nexusacademyuk.com,ampravda.ru,myownconference.com,amibeingpwned.com,paysend.com,formbyeats.co.uk,code.market,propelmusic.co.nz,lagless.gg,sotellus.com,abetterrouteplanner.com,eyou.social,getedumail.com,digiparser.com,gemini.com##div[aria-label="Cookie consent"]
 ||assetlab.io/consent^$domain=theweeknd.co
 kolobrzeg.info.pl##html.disable--interaction.show--consent:style(overflow: auto !important;)
 wishmaster.me###js_policy-cookie
@@ -36522,6 +36523,7 @@ creativebloq.com,space.com,nokiapoweruser.com,russianemirates.com,egw.news,andro
 !
 ! SECTION: Subscriptions - Regular rules
 !
+turbosmurfs.gg##aside > div.widget:has(form#subscribeBlogForm)
 punchbowl.news###homepageSubscriptionForm
 verbraucherzentrale.de##div.toc-content > div.block-component-container > div.block-component > div.block-component--content-container:has(> div.block-component--content > div > h2#toc-news-alert-zur-klage-abonnieren)
 bazarstore.az##.newsletter-subscribe-popup-overlay
@@ -62935,6 +62937,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244948
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244496
 novelaplay.com##+js(adjust-setInterval, countdown, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244415
