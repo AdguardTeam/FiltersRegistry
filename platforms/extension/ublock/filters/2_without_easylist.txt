@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: tb/Olg6F7dV3t3ptjWXbwg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792646079-3600.patch
+! Checksum: nyORY/1IS8QTquG73mIDXQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792650136-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.98.93
-! TimeUpdated: 2026-10-22T05:10:49+00:00
+! Version: 2.4.98.94
+! TimeUpdated: 2026-10-22T06:17:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23753,8 +23753,8 @@ delfi.ee##body:style(margin-top: auto!important;)
 digileht.epl.delfi.ee##.pagebreak-banner
 ||ado.delfi.ee^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243573
-go3.ee##+js(json-prune, adpods)
-||stream.broadpeak.io^$xhr,removeparam=caid,domain=go3.ee
+go3.ee,go3.lv,go3.lt##+js(json-prune, adpods)
+||stream.broadpeak.io^$xhr,removeparam=caid,domain=go3.ee|go3.lv|go3.lt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214163
 ||b.ohtuleht.ee/pics/kov26sxx/index.html$subdocument,domain=ohtuleht.ee
 ohtuleht.ee##iframe[src^="https://b.ohtuleht.ee/pics/kov26sxx/index.html"]
@@ -41984,12 +41984,12 @@ sourceforge.net##body > div[id^="mongo"]
 sourceforge.net##body > div[id^="at-bottom-"]
 sourceforge.net##body [id][data-banner-name]:not(#style_important)
 sourceforge.net##[id][data-mobile-slot]:not(#style_important):has(> span.close + .linkrow)
-sourceforge.net##body > [id][data-mobile-name]:not(#style_important):has(> span.close + .linkrow)
+sourceforge.net##body > [id]:is([data-mobile-name], [data-mobile-s]):not(#style_important):has(> span.close + .linkrow)
 sourceforge.net##body > [id][data-region-m]:not(#style_important):has(> span.close + .linkrow)
 sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> .row > .input-card > .vibe-glow)
 sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> button:is([class*="-close"], [id*="close"]) + div[class*="sticky"])
-sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> .row > [class*="-row"] > [class*="-inner"] > button[data-url])
-sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> div[class*="sticky"] + button:is([class*="-close"], [id*="close"], [class*="dismiss"]))
+sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> * > [class*="-row"] > [class*="-inner"] > button[data-url])
+sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> div:is([class*="sticky"], [class*="stiky"]) + button:is([class*="-close"], [id*="close"], [class*="dismiss"]))
 sourceforge.net##[id*="-coding-bar"]
 sourceforge.net##body [id^="vibe-main-row"]:not(#style_important)
 sourceforge.net##.l-side-column .m-sidebar-widget:has(> .body > .standard > div[data-dest*="bannerid="])
@@ -44097,6 +44097,11 @@ hentaigifz.com##.single-side > .side-widget:has(> ins[data-zoneid])
 ||hentaijuggs.com/uploads/banners/
 hentaijuggs.com##.shortcode-banner
 hentaijuggs.com##.posts-grid > div.posts-grid-item:has(> div.pgi-wrapper a[href] > img[src^="https://hentaijuggs.com/uploads/banners/"])
+||cdn.myhentaicomics.com/rev/frames/
+myhentaicomics.com###Sliders
+myhentaicomics.com##center > div[style^="min-height:"]:has(>ins[data-revive-zoneid])
+myhentaicomics.com##.comics-grid > li.item:has(> div[class^="image-container"] > iframe, > div[class^="image-container"] > center > #native-content)
+myhentaicomics.com##+js(no-setTimeout-if, data-revive-zoneid)
 myhentaicomics.com##.header-image:style(min-height: 0 !important;)
 sportsbay.dk##.VideoPlayer + div[style]
 ||imglnkx.com/9863/PMKT-1799_DESIGN-25431_Sexmessenger_resize_1_300650.gif
