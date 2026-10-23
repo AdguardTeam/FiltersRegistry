@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: u7J5S9sP34oppTRqU3mHBg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792765030-3600.patch
+! Checksum: KUzgDA0j4VFMKkdGm02BFA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1792768423-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.99.26
-! TimeUpdated: 2026-10-23T14:12:02+00:00
+! Version: 2.4.99.27
+! TimeUpdated: 2026-10-23T15:09:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12855,6 +12855,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245182
+tv.10dailythings.com#@##pageAdDiv
+tv.10dailythings.com#@#.adsDiv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245080
 sarkarijobcorner.com##+js(remove-node-text, script, detect)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244703
@@ -12999,8 +13002,7 @@ adslink.pw##+js(prevent-fetch, adsbygoogle)
 .aii.sh^
 .pahe.ink^
 srnky.com,lnbzi.com##+js(abort-on-stack-trace, document.createElement, new Promise)
-/:\/\/pahe.ink\/[a-z0-9]+/[a-z0-9]+$/$script,domain=pahe.ink
-pahe.plus##+js(abort-on-property-write, __aw)
+/:\/\/pahe.ink\/[a-z0-9]+\/[a-z0-9]+-\w$/$domain=pahe.ink
 intercelestial.com##html > div
 /^https:\/\/intercelestial\.com\/[0-9a-f]+\/[a-z]+\.[0-9a-f]+\.js/$script,domain=intercelestial.com
 lnbz.la,clksz.com,aii.sh##+js(abort-on-property-read, atob)
