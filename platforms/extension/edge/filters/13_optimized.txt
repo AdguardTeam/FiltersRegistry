@@ -1,9 +1,9 @@
-! Checksum: lskyqb2xBRa2Iv3gcy7JFg
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1792746895-3600.patch
+! Checksum: xfozVxPnLMnerUTxuuORZg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1792750491-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.21
-! TimeUpdated: 2026-10-23T09:12:27+00:00
+! Version: 2.0.69.22
+! TimeUpdated: 2026-10-23T10:11:41+00:00
 ! Expires: 10 days (update frequency)
 ||apk-2.online^$third-party
 ||geniusclickad.cc^
@@ -475,6 +475,7 @@ mackolik.com,sahadan.com#%#var advertisement_not_blocked = 1;
 mackolik.com,sahadan.com#%#var criteo_medyanet_loaded = 1;
 r10.net#%#//scriptlet('abort-on-property-read', 'rTargets')
 r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
+##.header-nav > a[href="/"] ~ a[href][target="_blank"]
 ##.background-link > a[target="_blank"]
 ##.channel-area ~ div.popup-overlay
 ##a[class="current-address-link"]
@@ -5603,6 +5604,10 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+[$domain=/tulipbettv\d+\.com$/]##header > ul
+[$domain=/tulipbettv\d+\.com$/]##.odds-container
+[$domain=/tulipbettv\d+\.com$/]##.header-top > div.header-text
+[$domain=/tulipbettv\d+\.com$/]##.footer-links
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/patronlig\d+\.cfd$/
 [$domain=/hadibettv\d+\.com$/]##.footer-links
@@ -5640,9 +5645,7 @@ videoplays.cfd#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '
 [$domain=/bovtv\d+\.com$/]##.header-top > div.header-text
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/restizle\d+\.com$/
-[$domain=/restizle\d+\.com$/]##.background-link
 [$domain=/restizle\d+\.com$/]##.banner-container
-[$domain=/restizle\d+\.com$/]##.header-nav > a[href="/"] ~ a[href][target="_blank"]
 [$domain=/harbitv\d+\.live$/]##div[class^="reklam-"]
 [$domain=/harbitv\d+\.live$/]##body > header
 [$domain=/harbitv\d+\.live$/]##.footer-links
@@ -5683,9 +5686,7 @@ zevkdolu32.com#$##mainVideo { display: block !important; }
 [$domain=/kacakspor\d+\.com$/]###splash-banner
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/pasizle\d+\.com$/
-[$domain=/pasizle\d+\.com$/]##.background-link
 [$domain=/pasizle\d+\.com$/]##.banner-container
-[$domain=/pasizle\d+\.com$/]##.header-nav > a[href="/"] ~ a[href][target="_blank"]
 ||milanotv*.shop/Uploads/*_bckg.jpg
 [$domain=/milanotv\d+\.shop$/]##.nk-nav-table > ul
 [$domain=/milanotv\d+\.shop$/]#%#//scriptlet('abort-on-property-read', 'initPu')
@@ -5821,20 +5822,14 @@ x.palv2.cfd###adPlayerBanner
 ||betpaributv*.com/*.gif
 [$domain=/betpaributv\d+\.com$/]##header > ul > li:not(:has(> a[href="/"]))
 [$domain=/betpaributv\d+\.com$/]##a[href="http://bpgir.vip/"]
-!+ NOT_VALIDATE
-||blogger.googleusercontent.com/img/$domain=/restmacizle\d+\.cfd$/
-[$domain=/restmacizle\d+\.cfd$/]##.background-link
-[$domain=/restmacizle\d+\.cfd$/]##.header-nav > a[href="/"] ~ a[href][target="_blank"]
 [$domain=/tvakin\d?\.live$/]##div[onclick^="window.open('https://direk"]
 [$domain=/tvakin\d?\.live$/]##.marquee-banner
 patrongol41.cfd##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
-patrongol41.cfd##.background-link
 patrongol41.cfd##.top-banner-header
 ||blogger.googleusercontent.com/img/$domain=patrongol41.cfd
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/patron(live\|futbol\|hd)\d+\.cfd$/
 [$domain=/patron(live\|futbol\|hd)\d+\.cfd$/]##.channel-ad-item
-[$domain=/patron(live\|futbol\|hd)\d+\.cfd$/]##.background-link
 [$domain=/patron(live\|futbol\|hd)\d+\.cfd$/]##.top-banner-header
 [$domain=/patron(live\|futbol\|hd)\d+\.cfd$/]##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
 [$domain=/patron(live\|futbol\|hd)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
@@ -5853,7 +5848,6 @@ turkkizlar.com##div[class^="vid-promo"]
 [$domain=/dahahizli\d+\.(com\|live)$/]###video-player-ads
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/hepbetspor\d+\.cfd$/
-[$domain=/hepbetspor\d+\.cfd$/]##.background-link
 [$domain=/hepbetspor\d+\.cfd$/]##.site-header > nav.header-nav
 ||zbahistv*.com/*.gif
 [$domain=/^zbahistv\d+\.com$/]##a[href^="https://cutt.ly/"]

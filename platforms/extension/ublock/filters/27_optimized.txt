@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: v8MiNe/A1G/6uljmLH9dww
-! Diff-Path: ../patches/27_optimized/27_optimized-s-1792746913-3600.patch
+! Checksum: h9MUGqnM/q6T3q1tHecnIg
+! Diff-Path: ../patches/27_optimized/27_optimized-s-1792750511-3600.patch
 ! Title: AdGuard Polish filter (Optimized)
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.60
-! TimeUpdated: 2026-10-23T09:12:49+00:00
+! Version: 2.0.0.61
+! TimeUpdated: 2026-10-23T10:12:10+00:00
 ! Expires: 5 days (update frequency)
 ||testowa-strona-dozynkowa.pl^
 @@||ewybory.eu^$generichide
@@ -848,6 +848,10 @@ fxmag.pl##div[class^="Ad_bottom_"]
 fxmag.pl##div[class*="_header_ad"]
 fxmag.pl##text[class^="Ad-module-"]
 fxmag.pl##div[class^="SidebarWithAds-"][class*="__ad_"]
+fxmag.pl##+js(no-setTimeout-if, /^\(\)=>[a-z]\(!0\)$/, 10000)
+fxmag.pl##+js(adjust-setInterval, /\{\(\d+==.\|\|[\s\S]*?clearInterval/, *, 0.001)
+fxmag.pl##body > .MuiDialog-root:has(div[class^="Ad-module-"][class*="__skip_button"]):style(display: none !important)
+fxmag.pl##body:has(> .MuiDialog-root div[class^="Ad-module-"][class*="__skip_button"]):style(overflow: auto !important; padding-right: 0 !important;)
 franczyzawhandlu.pl##.top
 franczyzawhandlu.pl##div[class^="position_"][class$="top"]
 meczyki.pl##.grid-news-slider > div.news-item:has(> a[href^="https://www.meczyki.pl/link/bukmacher/"])
