@@ -1,8 +1,8 @@
-! Checksum: jrPQAr8HFZLWbDOvnN0VbA
+! Checksum: 4KtdxIEoNcf7dHr3b2EdRQ
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.22
-! TimeUpdated: 2026-10-23T10:11:41+00:00
+! Version: 2.0.69.23
+! TimeUpdated: 2026-10-23T13:11:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6147,12 +6147,14 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/tulipbettv\d+\.com$/]##.header-top > div.header-text
 [$domain=/tulipbettv\d+\.com$/]##.footer-links
 !
-! Frequently changed domains: patronlig*.cfd
+! Frequently changed domains: patronlig*.cfd; patronsaha*.cfd
 ! Source: patronspor.is
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
-||blogger.googleusercontent.com/img/$domain=/patronlig\d+\.cfd$/
+||blogger.googleusercontent.com/img/$domain=/patron(lig\|saha)\d+\.cfd$/
 ! aglint-enable no-invalid-modifiers
+[$domain=/patron(lig\|saha)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
+[$domain=/patron(lig\|saha)\d+\.cfd$/]##.footer-links
 ! Frequently changed domains: hadibettv*.com
 ! Source: hadibettv6.com
 [$domain=/hadibettv\d+\.com$/]##.footer-links

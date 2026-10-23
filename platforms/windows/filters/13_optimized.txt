@@ -1,9 +1,9 @@
-! Checksum: JlW1SvET+7lkbTtX+dIdrg
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1792750528-3600.patch
+! Checksum: u6kitCoPJMso5asuWGbPIQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1792761277-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.22
-! TimeUpdated: 2026-10-23T10:11:41+00:00
+! Version: 2.0.69.23
+! TimeUpdated: 2026-10-23T13:11:22+00:00
 ! Expires: 12 hours (update frequency)
 ||apk-2.online^$third-party
 ||geniusclickad.cc^
@@ -5619,7 +5619,9 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/tulipbettv\d+\.com$/]##.header-top > div.header-text
 [$domain=/tulipbettv\d+\.com$/]##.footer-links
 !+ NOT_VALIDATE
-||blogger.googleusercontent.com/img/$domain=/patronlig\d+\.cfd$/
+||blogger.googleusercontent.com/img/$domain=/patron(lig\|saha)\d+\.cfd$/
+[$domain=/patron(lig\|saha)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
+[$domain=/patron(lig\|saha)\d+\.cfd$/]##.footer-links
 [$domain=/hadibettv\d+\.com$/]##.footer-links
 ||hadibettv*.com/view/theme/ultimate/img/*.gif
 ||pornocudayi*.com/klip/klip-*.mp4
