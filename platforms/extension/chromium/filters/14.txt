@@ -1,9 +1,9 @@
-! Checksum: 0Fb/ZosH65frqp/4N1NKOA
-! Diff-Path: ../patches/14/14-s-1792725416-3600.patch
+! Checksum: ynJtndbBM0mMyFypVDhBgQ
+! Diff-Path: ../patches/14/14-s-1792736528-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.83.82
-! TimeUpdated: 2026-10-23T03:13:19+00:00
+! Version: 2.2.83.83
+! TimeUpdated: 2026-10-23T06:18:44+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2675,6 +2675,9 @@ multigastro.pl,badrex-sklep.pl,spinedu.pl,aquamelior.pl,e-hortico.pl,sklep.doppe
 !
 ! NOTE: Regular rules
 !
+parklot.pl#$#body { overflow: auto !important; }
+parklot.pl#$#body > * { filter: none !important; -webkit-filter: none !important; }
+parklot.pl#$#body > div[class]:not([id]):not([style]):has(> div[role="dialog"][aria-label="Plansza informacyjna WP"]) { display: none !important; }
 toho-one.com#%#//scriptlet('set-local-storage-item', 'CookiePerformanceAccepted', 'false')
 toho-one.com#%#//scriptlet('set-local-storage-item', 'CookieOptInAccepted', 'true')
 ptsmc.com###sc-cookie-banner
