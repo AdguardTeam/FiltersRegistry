@@ -1,9 +1,9 @@
-! Checksum: 7x5N5UAAItcoY7SF3RmdYw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1792717960-14400.patch
+! Checksum: 4gTPIGEE1ESxmop9Yz4mhg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1792730751-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.70.95
-! TimeUpdated: 2026-10-23T01:09:20+00:00
+! Version: 2.1.70.96
+! TimeUpdated: 2026-10-23T04:43:07+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -227,6 +227,7 @@ _social-bar/
 ###fbLike
 ###fbLikeButton
 ###fbShare
+###fbSlider
 ###fb_header
 ###fb_link
 ###fb_share
@@ -559,6 +560,7 @@ _social-bar/
 ###social-youtube
 ###social-yt
 ###social2
+###socialBanner
 ###socialBar
 ###socialButtonOnPage
 ###socialButtons
@@ -628,7 +630,6 @@ _social-bar/
 ###socialfooter
 ###socialicons
 ###sociallinks
-###socialmediaicons
 ###socialnav
 ###socialnets
 ###socialpopup
@@ -774,7 +775,6 @@ _social-bar/
 ##.action--share
 ##.action.mailto.friend
 ##.actions-bar-share
-##.actions-social
 ##.actnbr-has-follow
 ##.adSocial
 ##.add-this
@@ -865,7 +865,6 @@ _social-bar/
 ##.article-socials
 ##.article-title-share
 ##.articleShare
-##.articleSocialLinks
 ##.article__header__share
 ##.article__likes
 ##.article__share
@@ -884,7 +883,6 @@ _social-bar/
 ##.article_social
 ##.article_social_share
 ##.articlesharebox
-##.aside-social
 ##.aspexifblikebox
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
@@ -1181,6 +1179,7 @@ _social-bar/
 ##.et_social_twitter
 ##.expand-share
 ##.f-sns
+##.f1-social-networks
 ##.facebook-banner
 ##.facebook-banner-wrapper
 ##.facebook-bg
@@ -1201,7 +1200,6 @@ _social-bar/
 ##.facebook-recommend
 ##.facebook-share-btn
 ##.facebook-share-button
-##.facebook-share-link
 ##.facebook-sidebar
 ##.facebook-social
 ##.facebookOuter
@@ -1334,7 +1332,6 @@ _social-bar/
 ##.footer-col-social
 ##.footer-connect
 ##.footer-contact-social
-##.footer-contacts__socials
 ##.footer-content-social
 ##.footer-facebook
 ##.footer-facebook-icon
@@ -1477,6 +1474,7 @@ _social-bar/
 ##.gridlove-soc-menu
 ##.gs-share
 ##.gshare
+##.gt-social-menu
 ##.gtm_footer_facebook
 ##.gtm_footer_instagram
 ##.gtm_footer_twitter
@@ -1522,7 +1520,6 @@ _social-bar/
 ##.header__socials
 ##.header_sns
 ##.header_social
-##.header_social-media
 ##.header_social_icon
 ##.headersocial:not(body):not(html)
 ##.headsocial
@@ -1536,8 +1533,6 @@ _social-bar/
 ##.hero-social
 ##.hideSocial
 ##.hideshare-wrap
-##.hls-share-button
-##.hls-share-container
 ##.hola_share_player_btn
 ##.hola_share_player_btn_wrapper
 ##.home-social-links
@@ -1983,6 +1978,7 @@ _social-bar/
 ##.penci-social_counter
 ##.penci_facebook_widget
 ##.penci_social_widget
+##.pg-shareBar
 ##.pgevoke-contentarea-socialbuttons
 ##.pgevoke-header-row2-right-social
 ##.photo-share
@@ -2015,6 +2011,7 @@ _social-bar/
 ##.polaris__social--icon
 ##.poll-share
 ##.popover-share
+##.popySocial
 ##.post-content-share
 ##.post-footer-share
 ##.post-footer-social
@@ -2278,7 +2275,6 @@ _social-bar/
 ##.share-network-whatsapp
 ##.share-pannel
 ##.share-pictures-overlay
-##.share-pin
 ##.share-pinterest
 ##.share-pinterest-icon
 ##.share-platform
@@ -2571,7 +2567,6 @@ _social-bar/
 ##.sharing-zone
 ##.sharingButton
 ##.sharingList
-##.sharingOptions
 ##.sharingPanel
 ##.sharing__list
 ##.sharing_block
@@ -2635,7 +2630,6 @@ _social-bar/
 ##.site-footer__social-list
 ##.site-footer__socials
 ##.site-social
-##.site-social-icon
 ##.site-social-menu
 ##.sitewide-social-media
 ##.sn-share
@@ -2975,7 +2969,6 @@ _social-bar/
 ##.socialToolbar
 ##.socialTools
 ##.socialTop
-##.socialV2
 ##.socialWidget
 ##.socialWrap
 ##.socialWrapper
@@ -3008,7 +3001,6 @@ _social-bar/
 ##.social_sec
 ##.social_section
 ##.social_share_bar
-##.social_share_buttons
 ##.social_share_fb
 ##.social_share_left
 ##.social_share_privacy_area
@@ -3795,6 +3787,7 @@ adguard.com##.footer__socials
 indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
+gametyrant.com##.gametyrantSocial
 blackmagicdesign.com##.gf-socials
 news18.com##.gglebtn
 gardinerbryant.com##.gh-share-container
@@ -3809,7 +3802,6 @@ gamespot.com##.google-follow-us-wrapper
 alarabiya.net##.google-news-callout
 cybernews.com,sammobile.com##.google-news-cta
 phonearena.com,quiverquant.com##.google-news-follow
-bleedingcool.com##.google-news-source
 techspot.com##.google-preferred
 sammobile.com##.google-preferred-news-source-cta
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,mathrubhumi.com,spaceexplored.com##.google-preferred-source-badge
@@ -3987,14 +3979,12 @@ tmz.com##.social-item
 knewz.com,politico.eu,revolvermag.com##.social-items
 psychologytoday.com##.social-links-bottom
 complex.com##.social-links-top
-adn.com,casino.org##.social-list
 ojornalextra.com.br##.social-media-share-wrapper
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,browserstack.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,radioblog.eu,tvone.tv,ultiworld.com##.social-menu
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
 iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
-arnnet.com.au,computerworld.com,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
 rappler.com##.social-share__actions
 cnn.com##.social-share_labelled-list
 mirror.co.uk,themirror.com##.social-sites
@@ -4345,7 +4335,9 @@ navigaweb.net###like
 navigaweb.net###social3
 dissapore.com##._social-share
 raiplaysound.it##.banner-buttons
+consigli.it##.box-canale-telegram
 calciomercato.com##.cm-share
+consigli.it##.company-social
 open.online##.container-meta-social
 donnamoderna.com##.dm20-lory-share-panel
 iodonna.it##.eltdf-woo-social-share-holder
@@ -4447,14 +4439,12 @@ auto-bild.ro##.social > li:has(.icon.icon-outline)
 sud.ua##.bbone-list
 inforesist.org###push_notificationBlock
 sibnet.ru###telegram_push
-sibnet.ru###widget-messenger
 caravan.kz##.PatternCurrentNewsHead__share
 rg.ru##.StoryContentMainShare_root__LRFwu
 5-tv.ru##._links
 radiosputnik.ru,ria.ru##.article__aggr
 interfax.ru##.header__soc
 forklog.com##.post_bottom_socials_buttons_wrapper
-sibnet.ru##.push
 lifehacker.ru##.share-button__container
 aif.ru##.sharing_item
 academic.ru##.smm
