@@ -4,13 +4,13 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { compile, localOptimizationStatistics, OptimizationStatsError } from '@adguard/filters-compiler';
-import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.ts';
+import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import { FOLDER_WITH_NEW_FILTERS, FOLDER_WITH_OLD_FILTERS } from './constants.js';
 import {
     parseFlags, validateFlags, validateArgs, scopeFlagsFor,
-} from './build-config.ts';
-import { stripGeneratedMetaFromDir } from './strip-generated-meta.ts';
+} from './build-config.js';
+import { stripGeneratedMetaFromDir } from './strip-generated-meta.js';
 import { findFiles } from '../utils/find_files.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,7 +20,7 @@ const __dirname = path.dirname(__filename);
  * Parse and validate command-line parameters
  */
 const args = process.argv.slice(2);
-const red = (s) => `\x1b[31m${s}\x1b[0m`;
+const red = (s: string): string => `\x1b[31m${s}\x1b[0m`;
 const argsError = validateArgs(args);
 if (argsError) {
     console.error(`${red(argsError)}\n`);
@@ -86,9 +86,9 @@ const SHADOW_TEMPLATE_CONTENT = '@include "./filter.txt"\n';
 /**
  * Cleans the cached filters directory by removing all cached files.
  *
- * @returns {Promise<void[]>}
+ * @returns A promise that resolves once all cached directories are removed.
  */
-const cleanCachedFiltersDir = async () => Promise.all([
+const cleanCachedFiltersDir = async (): Promise<void[]> => Promise.all([
     fs.rm(cachedFiltersDir, { recursive: true, force: true }),
     fs.rm(cachedGroupsDir, { recursive: true, force: true }),
     fs.rm(cachedTagsDir, { recursive: true, force: true }),
@@ -108,9 +108,9 @@ const cleanCachedFiltersDir = async () => Promise.all([
  * `filtersDir` it's given — without them, `filters.json`/`filters.js` are
  * silently omitted from the build output.
  *
- * @returns {Promise<void>}
+ * @returns A promise that resolves once the cache is prepared.
  */
-const prepareCachedFiltersDir = async () => {
+const prepareCachedFiltersDir = async (): Promise<void> => {
     // Remove stale copies if they exist
     await cleanCachedFiltersDir();
 
@@ -123,9 +123,9 @@ const prepareCachedFiltersDir = async () => {
     ]);
 
     // Find all directories containing template.txt and replace with shadow templates
-    const templatePaths = await findFiles(cachedFiltersDir, (p) => path.basename(p) === 'template.txt');
+    const templatePaths = await findFiles(cachedFiltersDir, (p: string) => path.basename(p) === 'template.txt');
 
-    await Promise.all(templatePaths.map(async (templatePath) => {
+    await Promise.all(templatePaths.map(async (templatePath: string) => {
         const dir = path.dirname(templatePath);
         const filterTxtPath = path.join(dir, 'filter.txt');
 
@@ -145,7 +145,7 @@ const prepareCachedFiltersDir = async () => {
 /**
  * Compiler entry point.
  */
-const buildFilters = async () => {
+const buildFilters = async (): Promise<void> => {
     // --generate-cache compiles filter templates only, writing filter.txt to each
     // filters/<id>/ directory. Passing null as platformsPath skips platform file
     // generation entirely. It no longer touches optimization stats — use
@@ -175,7 +175,7 @@ const buildFilters = async () => {
             throw new Error(
                 'Downloading optimization stats failed. The filters to download come from '
                 + 'optimization_config.json; if a filter was added there before its stats were deployed, '
-                + `its stats.json is missing on the server, so deploy the config first. (${error.message})`,
+                + `its stats.json is missing on the server, so deploy the config first. (${(error as Error).message})`,
                 { cause: error },
             );
         }
@@ -218,7 +218,7 @@ const buildFilters = async () => {
         }
 
         if (statsDirHasContent) {
-            let cachedScopeFlags = null;
+            let cachedScopeFlags: string | null = null;
             try {
                 cachedScopeFlags = await fs.readFile(optimizationStatsScopeFile, 'utf8');
             } catch {
@@ -293,7 +293,7 @@ const buildFilters = async () => {
     }
 };
 
-buildFilters().catch((e) => {
+buildFilters().catch((e: Error) => {
     console.error(red(e.message));
     process.exit(1);
 });
