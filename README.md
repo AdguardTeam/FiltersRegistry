@@ -224,7 +224,9 @@ until the compression goal (defined in percentages) is achieved.
 <!-- markdown-disable-line MD028/no-blanks-blockquote -->
 > [!NOTE]
 > However, these changes will only take effect after being uploaded to the server,
-> as `filters-compiler` does not use this file locally but retrieves it from the server.
+> as a regular build of `filters-compiler` does not use this file locally but retrieves it from the server.
+> Only `yarn download-stats` and a `yarn build:local` that reuses the local stats cache read
+> this file, to pin the set of optimizable filters.
 
 [kb-filter-statistics]: https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics/
 [kb-hints]: https://adguard.com/kb/general/ad-filtering/create-own-filters/#hints
