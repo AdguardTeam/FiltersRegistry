@@ -1,8 +1,8 @@
-! Checksum: COK7qLnRT/hbiOhtS5+8zg
+! Checksum: f5E3g8IaZ3IIg2MOwO9Zzw
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.83
-! TimeUpdated: 2026-10-24T04:42:32+00:00
+! Version: 2.0.2.84
+! TimeUpdated: 2026-10-24T20:38:41+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1522,8 +1522,13 @@ www.google.*##[data-attnms]
 ! Web Guide
 ! * Only applies if Web Guide is enabled in Google Labs
 www.google.*##.oGdvd
+! Transient "AI Mode experience" promo dialog for Google app (mobile)
+www.google.*##body > div > [role="dialog"][aria-describedby="promo_desc_id"]
 ! -- https://www.google.com/search?q=caine
-! AI Overview header logo (mobile)
+! AI Overview header logo
+! * Desktop
+!   TODO: Trusted filter to move ⋮ menu down and remove empty space
+! * Mobile
 ! "Things to know" and "People also ask" sections
 ! * First filter hides list items, .cUnQKe hides header if all items are AI, .ULSxyf hides extra space if needed
 ! * Extra sanity checks on child elements of .ULSxyf to avoid overfiltering. (Example: https://www.google.com/search?q=world+cup+standing)
@@ -1803,6 +1808,10 @@ www.investopedia.com##[data-inv-answers-widget]
 ! -- https://www.ishopchangi.com/en/home
 ! Chatbot icon
 www.ishopchangi.com###chat-wrapper
+! === ISTOM ===
+! -- https://www.istom.fr/
+! Chatbot modal
+||webchat.studizz.fr/webchat.js$script,domain=www.istom.fr
 ! === JetBrains ===
 ! Header - Products - AI TOOLS section
 ! Header - Products - JetBrains Air promo
@@ -3284,6 +3293,10 @@ editor.wix.com##[data-hook="start-screen-generation-container"]
 ! Right window - "Ask Meta AI" panel (below "download WhatsApp for Windows")
 ! Left sidebar - Meta AI + Separator
 web.whatsapp.com##.x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7.x78zum5.xozqiw3.x1oa3qoh.x12fk4p8.xeuugli.x2lwn1j.x1nhvcw1.xdt5ytf.x1cy8zhl.x1277o0a > hr.xh8yej3.xjm9jq1.x178xt8z.x13fuv20.xx42vgk.x18oe1m7.x1sy0etr.xstzfhl
+! === Whizz-Tech ===
+! -- https://whizz-tech.com/support/wifi-router-fixes/tls-issues-on-wifi/
+! Floating AI chatbot window
+||whizz-tech.com/wp-content/plugins/whizz-chat/assets/chat.js$script,~third-party
 ! === Windows Latest ===
 ! AskGPT 4o button
 www.windowslatest.com##.icon-chat
