@@ -1,8 +1,8 @@
-! Checksum: 8rMIq3suOppHNFYW2Z6zBQ
+! Checksum: EOlLv3ZUqRSLs0F7NylWPA
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.82
-! TimeUpdated: 2026-10-24T01:05:45+00:00
+! Version: 2.0.2.83
+! TimeUpdated: 2026-10-24T04:42:32+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -32,8 +32,9 @@
 ||widget.molin.ai/shop-ai.js$script,domain=benu.hu|euronics.hu|www.decathlon.hu
 ! === 1Password ===
 ! -- https://1password.com/
-! Unified Access AI agent banner
-1password.com##.header-navigation__nav-banner-link[href="/product/unified-access"] > .box-decoration-clone
+! Header banner for AI agents (Desktop and mobile)
+1password.com##.header-navigation > div.bg-gold [href="/personal-ai-agent-integrations"] > span
+1password.com##.header-navigation > div.bg-gold:has([href="/personal-ai-agent-integrations"]):not(:has([href^="https://start.1password.com/signin"]))
 ! -- https://www.1password.dev/ssh
 ! Copy Page > LLM options
 www.1password.dev#?#[role="menuitem"]:contains(Copy page as Markdown for LLMs)
@@ -1433,6 +1434,8 @@ docs.github.com##[data-testid="ask-ai"]
 www.githubstatus.com##.link-gray[href="https://github.com/features/copilot"]
 ! === GitLab ===
 ! -- https://about.gitlab.com/ (About page)
+! Header banner
+about.gitlab.com##.banner:is([data-ga-name="transcend-october-2026-banner"], [data-ga-name="orbit"])
 ! Footer - AI features
 about.gitlab.com##[data-ga-name="ai-assisted development"], [data-ga-name="ai for coding"], [data-ga-name="agentic ai"]
 ! -- https://gitlab.com/ (Homepage - logged in)

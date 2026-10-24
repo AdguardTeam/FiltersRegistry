@@ -1,5 +1,5 @@
-! Checksum: 7PxAJQ2spRSgHphb/B0NkQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1792804106-14400.patch
+! Checksum: YvHscQtEnkGPwEsjTThLfg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1792817128-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.20.97
@@ -37,11 +37,11 @@ cfoc.org###top_custom_banner
 windowsreport.com##div[class^=restoro-download] + section
 appuals.com##.wptp
 appuals.com##p + div > div:first-of-type
+||driver-soft.com^$document
 windll.com##.download-block
 windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
-||testedforyou.net^$all
 ||solvusoft.com^$document
 ||freeroms.com^$document
 ||romsmania.com^$document
@@ -860,9 +860,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 208.91.189.203$network
 ||commonjamknights.com^$all
 ||grievetube.com^$all
-||fluffyinfection.com^$all
 ||delicioustightbronze.com^$all
-||markswaitingrouge.com^$all
 ||aboveboardcomplicate.com^$all
 ||antonyexpected.com^$all
 ||profitablecpm*.com^$all
@@ -1431,7 +1429,6 @@ drvhub.net##.driver-item__install
 2606:4700:3033::6815:5644$network
 !+ PLATFORM(windows, mac, android, cli)
 2a01:4f8:2201:388a::2$network
-||mbsrv2.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 185.7.99.190$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -1488,7 +1485,6 @@ drvhub.net##.driver-item__install
 ||ibarrareal.es^$all
 ||admozartxml.com^$all
 ||bidmyadz.com^$all
-||blastmedia.site^$all
 ||clixvista.com^$all
 ||ctrtraffic.com^$all
 ||explorads.com^$all
@@ -1567,7 +1563,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 199.168.185.4$network
 ||dabaicai.com^$all
 ||flash.cn^$all
-||cprapid.com^$all
 ||crentgate.com^$all
 ||redirekted.com^$all
 /^172\.255\.6\.(\d{1,2}|2.*|1[0-689].*|17[0-689])\$/$network
@@ -2585,11 +2580,6 @@ $document,removeparam=/^source=pepperjam$/
 $document,removeparam=/^source=cj$/
 $removeparam=affil
 $removeparam=cjid
-$removeparam=cl_crtv
-$removeparam=cl_camp
-$removeparam=cl_aid
-$removeparam=cl_vend
-$removeparam=cl_ch
 $removeparam=irsharedid
 $removeparam=hvarAID
 $removeparam=sv_affiliate_id
@@ -2715,6 +2705,7 @@ $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
 $removeparam=dt_dapp
 $removeparam=dt_platform
+$removeparam=i_cid
 $removeparam=_gac
 $removeparam=af_medium
 $removeparam=af_source
@@ -3355,7 +3346,6 @@ $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.c
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|cybernews.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
-$document,removeparam=rid,domain=apple.com|giphy.com
 ||apple.com^$removeparam=fnode
 ||microsoft.com^$removeparam=headerid
 ||microsoft.com^$removeparam=destrt
@@ -3380,7 +3370,6 @@ $removeparam=x-source,domain=malwarebytes.com|parallels.com
 ||malwarebytes.com^$removeparam=ADDITIONAL_x-source
 ||ozon.ru^$removeparam=advert
 $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
-||belk.com^$removeparam=start
 $removeparam=ia-pkpmtrack
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
@@ -3552,6 +3541,7 @@ $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=rec,domain=argos.co.uk|roboform.com
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
+$removeparam=/^cid=DSS-Affiliate.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 $removeparam=/^cid=DSS-Search-.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
@@ -3565,7 +3555,6 @@ $removeparam=intcid,domain=cbsnews.com
 ||ecosia.org^$removeparam=addon
 $removeparam=referralInfo,domain=wix.com
 $removeparam=locale,domain=udemy.com
-||zoho.com^$removeparam=zsrc
 ||nortonsafe.search.ask.com^$removeparam=installsource
 ||nortonsafe.search.ask.com^$removeparam=os
 ||nortonsafe.search.ask.com^$removeparam=templatecat
@@ -3897,15 +3886,11 @@ $document,removeparam=correlationId,domain=adobe.com|costco.com
 $document,removeparam=mi_ecmp,domain=chewy.com|harborfreight.com
 ||cc.rs6.net/tn.jsp$document,removeparam=c
 ||cc.rs6.net/tn.jsp$document,removeparam=ch
-||norton.com^$document,removeparam=fermat_redirect
-||norton.com^$document,removeparam=fermat_channel
-||norton.com^$document,removeparam=fermat_adid
 $document,removeparam=fb_ad,domain=norton.com|liquid-iv.com
 $document,removeparam=fb_adid,domain=norton.com|liquid-iv.com
 $document,removeparam=fb_adset,domain=norton.com|liquid-iv.com
 $document,removeparam=fb_campaign,domain=norton.com|liquid-iv.com
 $document,removeparam=fb_campaignid,domain=norton.com|liquid-iv.com
-||norton.com^$document,removeparam=om_ext_cid
 $document,removeparam=mi_u,domain=chewy.com|harborfreight.com|samsclub.com|walmart.com
 ||harborfreight.com^$document,removeparam=adsetid
 ||ebay.com^$document,removeparam=tag4
@@ -4071,6 +4056,7 @@ www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/
 &client_ad_session_id=
 ||anyclip.com^$app=TETR.IO.exe
 duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##button:first-of-type + div:last-of-type[class*=" "]:has(button)
+www.qwant.com###root:has(a[href*=goo]) section div[class]:not([data-testid],[style],[class*=" "],[class*=_]):has([id^=Piwik_])
 adressa.no#$#.strom .overlay { background:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important }
 ://www.bing.com/?shorturl=$document
 youtube.com#%#//scriptlet('ubo-json-edit', '..adaptiveFormats.*[?.audioTrack.isAutoDubbed]')
