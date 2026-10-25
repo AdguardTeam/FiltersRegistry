@@ -1,5 +1,5 @@
-! Checksum: w0hPvSA6ExYYYerAoRrcEQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1792847565-3600.patch
+! Checksum: G6Q/7gxjKVEDtottMzkEHw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1792894806-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.54.32
@@ -784,6 +784,7 @@ sn.at##.adbox
 20min.ch##div[type="ad"]
 20min.ch##div[class^="ContentPage_insideFullContentEnd"]
 20min.ch##section aside[class^="sc-"]:has(> div[class^="sc-"]:not([id]) > div[class^="sc-"]:not([id]) > div[data-ad-unit-id])
+mydealz.de##div[class]:has(> .ad--bg:only-child)
 digital-eliteboard.com##article[class$="debAd"]
 spiegel.de##div[x-data^="{adIndex:"]
 speedweek.com##div[class*="_bannerContainer"]
@@ -831,6 +832,7 @@ focus.de##article[data-element-tracking-property*="Admanager"]
 bussgeldkatalog.de###amazon + p
 bussgeldkatalog.de##.slideIn
 testsieger.de###sponsoredProductPdp
+chip.de##article + div:has(> h3:first-child + a[href^="https://www.chip.de/angebote"]:last-child)
 heise.de##.article-sidebar > div[class]:has(> .ad-label:first-child + .ad:last-child)
 heise.de##div[class]:has(> .downloads-container:only-child > div:only-child > .ad-label)
 20min.ch##div[id*="/inside-full-recommender-pos"]
@@ -868,10 +870,10 @@ schnelle-online.info#%#//scriptlet('set-constant', 'initOwnAds', 'noopFunc')
 tutti.ch##.MuiBox-root:has(> div[class] > div[data-ad-unit-id])
 ||datenbank.nwb.de/Ads/DocumentSlot
 homegate.ch##div[data-cy="ad-slot"]
+motorsport-magazin.com##.sponsored-row
 preisjaeger.at###sidebarContentPortal div.listLayout-box[style="height: 286px;"]
 mein-schoener-garten.de##div[data-testid="ParagraphAdSlot"]
 mein-schoener-garten.de##div[data-testid="ParagraphOutbrain"]
-eisbaeren.de##.full_column > div#slide_260
 tarnkappe.info##.container .is-one-third:has(a[href^="https://"][target="_blank"])
 ||techbook.de/wp-json/gutenberg/v1/html/embed/
 otz.de#%#//scriptlet('trusted-replace-fetch-response', '/ads\.julephosting\.de/g', 'cdn.julephosting.de', '/-episode\.json/')
@@ -1705,6 +1707,7 @@ areadvd.de##div[style="padding-bottom:5px;"]
 areadvd.de##div[align="center"]
 areadvd.de##div[align="center"] + br
 areadvd.de##.entry > p[style="text-align:left"]
+vip.de##.morecontent-teaser-item__box:not(.rtli-bgcolor-prim)
 bayreuther-tagblatt.de##.bayre-adlabel
 bayreuther-tagblatt.de##.inner_sidebar > #custom_html-2
 transfermarkt.de###home-rectangle-spotlight
@@ -1818,6 +1821,7 @@ netzwelt.de##.ad-trigger
 netzwelt.de##.with-ad-label
 netzwelt.de##.without-ad-label
 mtb-news.de##div[class*="header__banner"]
+radio.de##.topASp
 urlaubspartner.net##a[href^="https://firmen.faz.net/immobilienmakler"]
 winfuture.de##a[target="_blank"][href*="mysoftware.de"]
 ||tichyseinblick.de/wp-content/uploads/*/Anzeigen-
@@ -1869,6 +1873,7 @@ gamestar.de###dfp-masthead
 tvspielfilm.de##.promo-box
 netzwelt.de##.ad-host
 n-tv.de##.extcontent--amazon
+duden.de##.medrec
 filmstarts.de##.main-banner
 stuttgarter-zeitung.de##.trf-declaration-container
 spin.de###adcontsupersize
@@ -1957,6 +1962,7 @@ ga.de##div[data-host="general-anzeiger-bonn.weekli.de"]
 heise.de##div[id^="wtma_teaser"]
 administrator.de##.ads-300x600-wrapper
 administrator.de##.snhb-ads
+mtb-news.de##div[class^="mtbnews-ad-"]
 emtb-news.de,mtb-news.de,rennrad-news.de##.mtbnewsAdBillboardContainer
 emtb-news.de##.message[data-author="eMTB-News.de"]
 rennrad-news.de##.message[data-author="Rennrad-News.de"]
@@ -2093,6 +2099,7 @@ digitalfernsehen.de,pi-news.net##.td-a-rec
 email.t-online.de##.mailAdElem
 ||zomap.de^$domain=prosieben.de
 ||cdn.zomap.de^$domain=ran.de|zappn.tv|kabeleins.de|kabeleinsdoku.de|prosieben.at|prosiebenmaxx.de|sat1.de|sixx.de|the-voice-of-germany.de|wetter.com|sat1.at
+gamestar.de##.centeredDiv > .homeContReg > a[target="_blank"] > img
 hifi-forum.de###adslot_top
 hifi-forum.de###adslot_right
 hifi-forum.de,hifi.de##.ad-header-placeholder
@@ -2127,7 +2134,6 @@ heise.de###mitte_rechts > a-ad.bcadv_oben
 moz.de,lr-online.de,swp.de##.swp-adbox
 wallstreet-online.de##div[id^="sban"]
 aerzteblatt.de##.anzeigenbox
-holidaycheck.de##div[id^="tad"]
 finanz-tools.de##.sidebar.nur_desktop
 buzer.de##.anz_unten
 elektrikforum.de,bauexpertenforum.de##.sidebar > .funbox
@@ -2210,6 +2216,7 @@ focus.de##.tft_ads
 pcgames.de##.amazonAutoLink
 tichyseinblick.de##.adwidget_wrapper
 freizeitpartnerweb.de,outdoorpartner.net,urlaubspartner.net##.ad.text-uppercase
+spox.com##.daznhm.maxwidth
 borkenerzeitung.de,bbv-net.de###WallpaperBanner
 pfalz-express.de###alternative_footer
 pfalz-express.de##div[id^="banner_unter_menu"]
@@ -2238,6 +2245,7 @@ kachelmannwetter.com##.dkpw-billboard
 wetter.com###localeInformationsWidget
 donnerwetter.de##.block.prepend-top > center > div[style="font-size: 60%; color: #aab5b5;"]
 ich-tanke.de##.box-partner
+csgo.99damage.de###sub_header > div[id^="monkey_top"]
 korrekturen.de##div[style="width:728px; height: 90px; text-align: center; background-color:#c0c0c0;"]
 korrekturen.de##div[style^="width:300px; height:250px;"][style$="background-color:#c0c0c0; overflow:hidden;"]
 analog-forum.de##.wcfAdLocation:not(.wcfAdLocationSidebarTop)
@@ -2829,6 +2837,7 @@ _woz_banner_vote.
 ##.werbung-box
 ##.werbung-container
 ##.werbung-fullbanner
+##.werbung-halfbanner
 ##.werbung-inline
 ##.werbung-label
 ##.werbung-leiste
@@ -2977,6 +2986,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||fexzuf.com^$third-party
 ||finad.de^$third-party
 ||finative.cloud^$third-party
+||firstsponsor.de^$third-party
 ||fotoscaseras.top^$third-party
 ||gbucket.ch^$third-party
 ||geldcounter.de^$third-party
@@ -3055,6 +3065,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||edgar.de/img/partner/$third-party
 ||erotik1.de^*.php?$subdocument,third-party
 ||eteleon.de/partner/$third-party,domain=~facebook.com
+||fairvital.com^*/banner_$third-party
 ||fantecio.com/ib/$third-party
 ||fastad.beepworld.de^
 ||fs-location.de/img/partner/
@@ -3074,6 +3085,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||kai-homilius-verlag.de/bilder/banner/$third-party
 ||koketti.com/ib/
 ||kontakt-vermittler.de/banner2/$third-party
+||lotto-hh.de/lh/widget1/$subdocument,third-party
 ||media*.s24.com^$third-party
 ||media.alphaload.com^
 ||meinecloud.io/cms-standort-brb/ads/
@@ -3082,6 +3094,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||monsterdealz.de/images/$third-party
 ||mothor.de^*/webbanner/
 ||partners2.das-onlinespiel.de/client.js?pid=*&_=2.12.3|$script,domain=games.focus.de|spiele.bild.de|spiele.stern.de
+||pillendienst.com^$third-party
 ||pm.deinsexdate.com^$third-party
 ||pm.natursektdating.com^$third-party
 ||publisher.outtra.com^$third-party
@@ -3475,6 +3488,7 @@ $csp=script-src 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' stati
 ||pornohans.net^*==/
 ||pornolisa.com^*==/
 ||sexfilme-gratis.com^*==/
+/^https?:\/\/.*\.(jpg|jpeg|gif|png|php|svg|ico|js|txt|css)/$popup,domain=190.115.18.20|aniworld.to|canna-power.to|canna.to|kinoger.com|kinoger.to|serien.cam|serienstream.to
 ||delamar.de/out/$popup
 ||windowspro.de/a.php?url=$popup
 ||windowspro.de/aa.php?url=$popup
@@ -3485,10 +3499,6 @@ druckerchannel.de###DCA_TOP
 druckkosten.de###DKGA_LEAD
 druckkosten.de###DKGA_SKY
 eatsmarter.de###EAT_D_Index_Top_Wrapper
-immmo.at###IMM_M_Top
-immmo.at###IMM_R_Bot
-immmo.at###IMM_R_List
-immmo.at###IMM_R_List2
 inside-digital.de###INS_D_ROS_Parallax
 staedte-info.net###Layer2
 tips.at###Leaderboard_1_Superbanner_1_Billboard_1_Top_
@@ -3586,8 +3596,6 @@ it-boltwise.de###block-31
 jungle.world###block-anzeige
 macgadget.de###block-anzeige2
 hoerzu.de###block-block-218
-fachzeitungen.de###block-block-32
-fachzeitungen.de###block-block-5
 buecher-magazin.de,online-webradio.com###block-block-7
 duden.de###block-dudende-d-970x250-1billboard
 duden.de###block-leaderboard2ndslot
@@ -3704,6 +3712,7 @@ lokalo.de###media_image-41
 lokalo.de###media_image-42
 kremser-sc.at###media_image-6
 dasoertliche.de###medium_rect
+hceintracht-hildesheim.de###module-sponsors
 wallstreet-online.de###mooTicker
 wallstreet-online.de###mooTickerContainerMobile
 bild.de,finanzen.net,techbook.de###mrec
@@ -3840,6 +3849,7 @@ buecher-magazin.de###topshadow
 suche.t-online.de###tpctop
 teltarif.de###ttParallaxcontainer
 tvdigital.de###tvd-ad-top
+wetter-deutschland.com###urban-medrect1
 ifun.de,iphone-ticker.de###verbraucherhinweis-300x600
 ifun.de,iphone-ticker.de###verbraucherhinweis-970
 ifun.de,iphone-ticker.de###verbraucherhinweis-970x250
@@ -3989,6 +3999,7 @@ pcgameshardware.de##.at_sponsored
 autoline.de,autoline24.at,autoline24.ch##.atla-place
 autogazette.de##.autog-widget
 nrwhits.de##.ax-medium-rectangle-n
+az.com.na##.az-adverts
 blitzrechner.de##.azimg
 sumikai.com##.b
 fcaugsburg.de##.b-logo-listing
@@ -4302,7 +4313,6 @@ finanznachrichten.de##.nadT
 finanzen.net##.native-content-ad-container
 watson.ch##.nativeAndPromotionStories
 ploetzblog.de##.nav-anzeige
-nordisch.info##.neck
 schwulissimo.de##.news-group-ad-container
 wallstreet-online.de##.newsFlagSlider
 pz-news.de,rheinpfalz.de,zvw.de##.nfy-banner
@@ -4337,6 +4347,7 @@ gmx.net,web.de##.partner-links
 herthabsc.com##.partner-main-footer
 finanzfluss.de##.partner-news-card
 finanzfluss.de##.partner-suggestion
+bhc06.de##.partner-teaser
 rts-salzburg.at##.partner_section
 esports.ch,hannover96.de,p-stadtkultur.de,sihf.ch##.partners
 fla.de##.pbph
@@ -4452,6 +4463,7 @@ mahjongkostenlos.de##.spielseite_anz_2
 mahjongkostenlos.de##.spielseite_kopf
 it-boltwise.de##.spons-bar
 fcaugsburg.de##.sponser-lead-inner
+argovia.ch,bolzano-bozen.it,esports.ch,europages.de,frischauf-gp.de,hc-elbflorenz.de,mainpost.de,radio24.ch,scfreiburg.com,svww.de##.sponsor
 rittnerbuam.com##.sponsor-section
 eisbaeren.de##.sponsor_wrapper
 ariva.de,otto.de,tips.at,toolbox.webediagaming.de,zdnet.de##.sponsored
@@ -4559,7 +4571,6 @@ zeno.org##.zenoLSInnerProductTableRightAmazon
 zwischengas.com##.zgsky
 heise.de##A-PATERNOSTER
 home24.de##[data-cnstrc-sl-campaign-owner]
-aerzteblatt.de##[data-cy="section-ad"]
 gmx.net##[data-sda-slot]
 skodacommunity.de##[id^="fh-afp_"]
 nebenwerte-magazin.com##a[aria-label="auvesta-gold-sparvertrag"]
@@ -4626,7 +4637,6 @@ tweakpc.de##a[href^="https://www.tweakpc.de/rev3/www/delivery/"]
 beeg-pornos.com,deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-sexfilme.com,hdpornos.net,herzporno.com,lesbenhd.com,meinyouporn.com,milffabrik.com,nursexfilme.com,pornhub-sexfilme.net,pornoaffe.net,pornodavid.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohelm.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoleon.com,pornolisa.com,pornoritze.com,pornoschlange.com,pornosusi.com,pornotanja.com,pornotom.com,pornotommy.com,pornovideos-hd.com,pornozebra.com,sexente.com,sexfilme-gratis.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xnxx-porno.com,xnxx-pornos.xxx,xnxx-sexfilme.com##a[href^="https://www.visit-x.world/"]
 wallstreet-online.de##a[onclick*="'tableAd'"]
 wallstreet-online.de##a[onclick*="tableAd"] + span
-anisearch.de,herz-fuer-tiere.de,schweizer-illustrierte.ch##a[rel="sponsored"]
 android-hilfe.de##article[data-author="Angebot"]
 otto.de##article[data-origin="sponsored"]
 nius.de##aside[aria-label="Werbung"]
@@ -4636,7 +4646,6 @@ winfuture.de##div[align="center"][style="min-height: 320px;"]
 disco-load.cc##div[class$="-adbox"]
 disco-load.cc##div[class$="-adwrap"]
 disco-load.cc##div[class$="-bannerbox"]
-windowspro.de##div[class*="-ad-"]
 shop.rewe.de##div[class*="Product_productSpecialTile"]
 onlinehaendler-news.de##div[class*="adplacement_"]
 chartsurfer.de##div[class*="adszone-"]
@@ -4857,6 +4866,7 @@ schnelle-online.info##ins[data-ad-client]
 tuhlteim.de##ins[style*="width: 300px; height: 250px;"]
 fuersie.de,idee-fuer-mich.de,jolie.de,leben-und-erziehen.de,maedchen.de,ok-magazin.de,petra.de,vital.de##kas
 vital.de##kas[type="placement"]
+restegourmet.de##li[data-content-type="ad"]
 kleinanzeigen.de##li[data-liberty-position-name^="home-teaser-ads-"]
 finanzfluss.de##li[id*="-Insearchad-"]
 finanzfluss.de##li[id^="ff-Insearch-"]
@@ -5046,7 +5056,6 @@ avguide.ch#?#.avgrid_1_of_1.viewlet-bottom:has(h2:contains(Advertorials))
 baur.de#?#span:contains(Gesponserte Artikel)
 chip.de#?#.download-item:contains(Anzeige)
 computerbild.de#?#article.gridArea__teaserM:has(div.teaserBlock__label:contains(Anzeige))
-beobachter.ch#?##content-aside-item-0:contains(Partnerinhalte)
 finanzfluss.de#?#.component.linked-card.hero-card:contains(Anzеigе)
 finanzfluss.de#?#.component:has(div.disclaimer-text:contains(Anzeige))
 focus.de#?#article[id^="teaser-"][data-placement]:contains(Anzeige)
