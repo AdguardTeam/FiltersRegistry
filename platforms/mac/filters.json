@@ -440,8 +440,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.77.5",
-			"timeUpdated": "2026-10-25T04:41:59+0000",
+			"version": "2.1.77.6",
+			"timeUpdated": "2026-10-25T08:41:19+0000",
 			"languages": []
 		},
 		{
@@ -525,8 +525,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.1",
-			"timeUpdated": "2026-10-25T04:42:03+0000",
+			"version": "2.2.0.2",
+			"timeUpdated": "2026-10-25T08:41:23+0000",
 			"languages": []
 		},
 		{
@@ -571,8 +571,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.2.0.3",
-			"timeUpdated": "2026-10-25T04:42:06+0000",
+			"version": "2.2.0.4",
+			"timeUpdated": "2026-10-25T08:41:26+0000",
 			"languages": []
 		},
 		{
@@ -614,8 +614,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.2.0.3",
-			"timeUpdated": "2026-10-25T04:42:07+0000",
+			"version": "2.2.0.4",
+			"timeUpdated": "2026-10-25T08:41:28+0000",
 			"languages": [
 				"ar"
 			]
@@ -634,8 +634,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.2",
-			"timeUpdated": "2026-10-25T04:42:10+0000",
+			"version": "2.2.0.3",
+			"timeUpdated": "2026-10-25T08:41:30+0000",
 			"languages": []
 		},
 		{
@@ -719,8 +719,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.73.74",
-			"timeUpdated": "2026-10-25T04:42:14+0000",
+			"version": "2.1.73.75",
+			"timeUpdated": "2026-10-25T08:41:34+0000",
 			"languages": []
 		},
 		{
@@ -806,8 +806,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.71.8",
-			"timeUpdated": "2026-10-25T04:42:22+0000",
+			"version": "2.1.71.9",
+			"timeUpdated": "2026-10-25T08:41:43+0000",
 			"languages": []
 		},
 		{
@@ -824,8 +824,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.71.77",
-			"timeUpdated": "2026-10-25T04:42:24+0000",
+			"version": "2.0.71.78",
+			"timeUpdated": "2026-10-25T08:41:44+0000",
 			"languages": []
 		},
 		{
@@ -870,8 +870,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.hufilter.hu/hufilter-adguard.txt",
-			"version": "2.0.5.42",
-			"timeUpdated": "2026-10-23T20:40:53+0000",
+			"version": "2.0.5.43",
+			"timeUpdated": "2026-10-25T08:41:47+0000",
 			"languages": [
 				"hu"
 			]
@@ -944,8 +944,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.3",
-			"timeUpdated": "2026-10-25T04:42:30+0000",
+			"version": "2.2.0.4",
+			"timeUpdated": "2026-10-25T08:41:50+0000",
 			"languages": []
 		},
 		{
@@ -1024,8 +1024,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.99.29",
-			"timeUpdated": "2026-10-25T04:42:33+0000",
+			"version": "2.1.99.30",
+			"timeUpdated": "2026-10-25T08:41:53+0000",
 			"languages": []
 		},
 		{
@@ -1334,8 +1334,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.3",
-			"timeUpdated": "2026-10-25T04:42:43+0000",
+			"version": "2.2.0.4",
+			"timeUpdated": "2026-10-25T08:42:04+0000",
 			"languages": []
 		},
 		{
@@ -1587,8 +1587,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.96.9",
-			"timeUpdated": "2026-10-25T04:42:54+0000",
+			"version": "2.1.96.10",
+			"timeUpdated": "2026-10-25T08:42:15+0000",
 			"languages": []
 		},
 		{
@@ -1693,8 +1693,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.93.34",
-			"timeUpdated": "2026-10-25T04:43:01+0000",
+			"version": "2.0.93.35",
+			"timeUpdated": "2026-10-25T08:42:22+0000",
 			"languages": [
 				"hi"
 			]
@@ -1736,8 +1736,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
-			"version": "2.0.9.26",
-			"timeUpdated": "2026-10-24T08:42:16+0000",
+			"version": "2.0.9.27",
+			"timeUpdated": "2026-10-25T08:42:25+0000",
 			"languages": []
 		},
 		{
