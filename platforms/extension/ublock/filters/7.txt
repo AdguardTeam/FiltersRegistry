@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cEY5VZH9Fa2GrFj4vfG7CQ
-! Diff-Path: ../patches/7/7-s-1792872851-3600.patch
+! Checksum: 4JLl8Mv1UkQdasIAz93bdw
+! Diff-Path: ../patches/7/7-s-1792944800-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.80
-! TimeUpdated: 2026-10-24T20:10:15+00:00
+! Version: 2.0.77.81
+! TimeUpdated: 2026-10-25T16:10:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1190,8 +1190,6 @@ yaraon-blog.com##+js(no-setInterval-if, q2w3_sidebar(q2w3_sidebar_options)
 nan-net.com##+js(no-setTimeout-if, movie_cnt, 300)
 ! popstate overlay
 chibanippo.co.jp,engineweb.jp,kenshonavi.com,maidonanews.jp,nkreport.jp,riajo.com,searchkoreanews.jp,trafficnews.jp,yougakumap.com,encount.press,realsound.jp,h1g.jp##+js(abort-current-script, document.referrer, gmo_bb)
-! https://github.com/AdguardTeam/AdguardFilters/issues/128686
-uraaka-joshi.com##+js(no-window-open-if)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146129
 jav380.com##+js(set-constant, document.write, noopFunc)
 ! fix sidebar
@@ -1209,8 +1207,6 @@ shico.xyz##+js(abort-on-property-read, fanza_link)
 trendynailwraps.com##+js(no-window-open-if)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133903
 nwknews.jp,nandemo-uketori.com,2chblog.jp,yugioh-starlight.com,kijomatomelog.com,gundamlog.com,doorblog.jp,digital-thread.com,livedoor.blog,blog.jp,blog.livedoor.jp##+js(abort-current-script, jQuery, floatingAd)
-! https://github.com/AdguardTeam/AdguardFilters/issues/128599
-uraaka-joshi.com##+js(addEventListener-defuser, playing, VAST_TARGET)
 ! skip ad
 collepic.net##+js(adjust-setInterval, .run()}, 1000)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68275
@@ -1935,9 +1931,9 @@ _co_jp.*.php$document,to=cc|com
 !
 ! For URL shorteners or simple sites with frequently changed ad servers.
 ! Incorrectly blocked domains can be excluded using regex(synchronize this regexp in all filters)
-/^(?!.*(mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|(\/\/|\.)vk\.com|yandex.|yastatic.net|ytimg.com|zencdn.net|player|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|alicdn.com|(\/\/|\.)x\.com)).*$/$3p,script,_,domain=viki.ja-jp.nina.az|uraaka-joshi.com
+/^(?!.*(mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|(\/\/|\.)vk\.com|yandex.|yastatic.net|ytimg.com|zencdn.net|player|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|alicdn.com|(\/\/|\.)x\.com)).*$/$3p,script,_,domain=viki.ja-jp.nina.az
 ! Similar to regexp above, but using the denyallow modifier
-*$script,3p,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|x.com|alicdn.com|zeala.link,_,domain=viki.ja-jp.nina.az|uraaka-joshi.com|rawkuma.net|rawjx.net|rawmiu.net|rawkuro.net|momon-ga.com
+*$script,3p,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|x.com|alicdn.com|zeala.link,_,domain=viki.ja-jp.nina.az|rawkuma.net|rawjx.net|rawmiu.net|rawkuro.net|momon-ga.com
 !
 ! ###banner
 town.inawashiro.fukushima.jp,city.buzen.lg.jp,nanbbs.jp,eroita.net,city.hirosaki.aomori.jp,iyasiya.com,adacomi.com,pref.shimane.lg.jp,pref.osaka.lg.jp,illust-ai.com,nan-net.com,radiolife.com,keimei.ne.jp,bbspink.com,crank-in.net###banner
@@ -7103,8 +7099,6 @@ aikodemoneyfactory.dreamlog.jp,akasatananj.2chblog.jp##div[class^="sideads"]
 ||suruga-ya.jp/pics_light/banner/*-af-1.jpg$3p
 web-dev-qa-db-ja.com##.adnet
 ||ossnews.jp/upimg/banner/p1_
-||uraaka-joshi.com/json/ad-
-||uraaka-joshi.com/ad-$subdocument
 otonano-shumatsu.com##div[class^="adv-"]
 you1news.com,shikakuhiroba.net,newbalance-days.com,supportcenternavi.com##.FixedWidget__fixed_widget
 naoblogpcgame.com##.xo-slider
@@ -11904,8 +11898,6 @@ auctions.yahoo.co.jp##div[class^="LayoutMain-sc"] > section[class^="Component-sc
 inakadaisuki.com##.post > table[style]:has(> tbody > tr > td > .adsbygoogle)
 tabikobo.com##.main > .newTemp > p:last-child:has(> .adsbygoogle)
 jigen.net##.section > div.clear:has(> a[href^="https://amazon.co.jp/"])
-uraaka-joshi.com###pickup-block > .grid:has(iframe[src*="/ad-d/"])
-uraaka-joshi.com###main-block > .grid > div[class^="grid-cell"]:has(iframe[src*="/ad-d/"])
 famitsu.com##.search-box ~ div.l-contents-block:has(.card-game-sale-rank--amazon)
 haijin-boys.com##.widget:has(> div.adsense)
 haijin-boys.com##.widget:has(> ul > li > a[href^="https://www.amazon.co.jp"])
