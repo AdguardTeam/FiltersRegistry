@@ -1,9 +1,9 @@
-! Checksum: /kytDQc79r/9xdZWC26EfQ
-! Diff-Path: ../patches/7/7-s-1792948435-3600.patch
+! Checksum: nkXj5a9d033usL9ZaXGQUw
+! Diff-Path: ../patches/7/7-s-1792991786-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.82
-! TimeUpdated: 2026-10-25T17:09:29+00:00
+! Version: 2.0.77.83
+! TimeUpdated: 2026-10-26T05:12:49+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26,6 +26,7 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 !
+||onetag.adnx.jp^
 ||fanza.ftbucket.info^
 ||ad.001zb.com^
 ||onergogogo.com^$all
@@ -2004,6 +2005,9 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+memo.wiki#?#.sidecolumn .free-box:contains(/\bAD\b/)
+news.jp##.postFeed__item--ad
+news.jp##div[style^="min-width:"]:has(> .fundit-ad-placeholder)
 nijiurachan.net##aside[aria-label="DMM広告"]
 vid-snap-player.com#%#//scriptlet('prevent-window-open')
 syosetu.help###ipob
