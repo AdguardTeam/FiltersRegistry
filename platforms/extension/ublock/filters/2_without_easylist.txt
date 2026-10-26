@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XxpcQj9yQZ2y1l8JjehAEg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793009854-3600.patch
+! Checksum: KxYDB7fQqwl0uX3xrR0KtA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793013267-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.99.94
-! TimeUpdated: 2026-10-26T10:13:38+00:00
+! Version: 2.4.99.95
+! TimeUpdated: 2026-10-26T11:11:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12857,6 +12857,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245449
+app.tobari.moe##+js(no-setTimeout-if, show)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244659
 amritlink.xyz##+js(set-constant, isPopupBlockedDetected, false)
 @@||amritlink.xyz^$generichide
@@ -40067,6 +40069,8 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+catster.com##main > section.mx-auto > div.flex > aside.w-full > div.lg\:sticky > figure[class]:has(> a[href^="https://petsmart.haujjd.net/"])
+adblock.turtlecute.org##.notice_stack > a[rel$="sponsored"]
 ||cdn.jsdelivr.net/gh/senbonzakura000/$script,3p
 startseite.to##+js(remove-attr, onclick, body[onclick])
 riftdecks.com###in-stream-placement
@@ -63465,6 +63469,10 @@ $popup,3p,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245406
+@@||live.primis.tech/live/liveView.php$domain=glasgowlive.co.uk
+@@||live.primis.tech/live/liveVideo.php$domain=glasgowlive.co.uk
+@@||live.primis.tech/content/omid/static/omid-session-client*.js$domain=glasgowlive.co.uk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244171
 convertcase.net#@#.ads-mobile
 convertcase.net#@#.ads-desktop
