@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.9.29",
-			"timeUpdated": "2026-10-25T11:09:10+0000",
+			"version": "2.1.9.30",
+			"timeUpdated": "2026-10-26T14:59:47+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.99.96",
-			"timeUpdated": "2026-10-26T13:38:36+0000",
+			"version": "2.4.99.97",
+			"timeUpdated": "2026-10-26T14:59:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.34",
-			"timeUpdated": "2026-10-26T13:39:02+0000",
+			"version": "2.0.54.35",
+			"timeUpdated": "2026-10-26T15:00:21+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -500,8 +500,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/8_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.9.48",
-			"timeUpdated": "2026-10-16T05:06:25+0000",
+			"version": "2.0.9.49",
+			"timeUpdated": "2026-10-26T15:00:25+0000",
 			"deprecated": false,
 			"languages": [
 				"nl"
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.84.11",
-			"timeUpdated": "2026-10-26T13:39:21+0000",
+			"version": "2.2.84.12",
+			"timeUpdated": "2026-10-26T15:00:38+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.39.53",
-			"timeUpdated": "2026-10-26T11:11:46+0000",
+			"version": "2.1.39.54",
+			"timeUpdated": "2026-10-26T15:00:41+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -707,8 +707,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.97.64",
-			"timeUpdated": "2026-10-26T13:39:28+0000",
+			"version": "2.0.97.65",
+			"timeUpdated": "2026-10-26T15:00:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1802,8 +1802,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.68.31",
-			"timeUpdated": "2026-10-26T13:39:39+0000",
+			"version": "2.1.68.32",
+			"timeUpdated": "2026-10-26T15:00:57+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
@@ -2004,11 +2004,11 @@
 			"name": "Persian Blocker",
 			"description": "Filter list for blocking ads and trackers on websites in Persian.",
 			"timeAdded": "2022-06-14T16:28:16+0000",
-			"homepage": "https://github.com/MasterKia/PersianBlocker/",
+			"homepage": "https://github.com/PersianBlocker/PersianBlocker/",
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlocker.txt",
+			"subscriptionUrl": "https://raw.githubusercontent.com/PersianBlocker/PersianBlocker/main/PersianBlocker.txt",
 			"trustLevel": "high",
 			"version": "2.0.6.35",
 			"timeUpdated": "2026-06-17T13:45:02+0000",

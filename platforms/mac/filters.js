@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.9.29",
-			"timeUpdated": "2026-10-25T11:09:10+0000",
+			"version": "2.1.9.30",
+			"timeUpdated": "2026-10-26T14:59:47+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.99.96",
-			"timeUpdated": "2026-10-26T13:38:36+0000",
+			"version": "2.4.99.97",
+			"timeUpdated": "2026-10-26T14:59:58+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.54.34",
-			"timeUpdated": "2026-10-26T13:39:02+0000",
+			"version": "2.0.54.35",
+			"timeUpdated": "2026-10-26T15:00:21+0000",
 			"languages": [
 				"de"
 			]
@@ -143,8 +143,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/8.txt",
-			"version": "2.0.9.48",
-			"timeUpdated": "2026-10-16T05:06:25+0000",
+			"version": "2.0.9.49",
+			"timeUpdated": "2026-10-26T15:00:25+0000",
 			"languages": [
 				"nl"
 			]
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.84.11",
-			"timeUpdated": "2026-10-26T13:39:21+0000",
+			"version": "2.2.84.12",
+			"timeUpdated": "2026-10-26T15:00:38+0000",
 			"languages": []
 		},
 		{
@@ -256,8 +256,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.39.53",
-			"timeUpdated": "2026-10-26T11:11:46+0000",
+			"version": "2.1.39.54",
+			"timeUpdated": "2026-10-26T15:00:41+0000",
 			"languages": []
 		},
 		{
@@ -302,8 +302,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.97.64",
-			"timeUpdated": "2026-10-26T13:39:28+0000",
+			"version": "2.0.97.65",
+			"timeUpdated": "2026-10-26T15:00:44+0000",
 			"languages": []
 		},
 		{
@@ -1214,8 +1214,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.68.31",
-			"timeUpdated": "2026-10-26T13:39:39+0000",
+			"version": "2.1.68.32",
+			"timeUpdated": "2026-10-26T15:00:57+0000",
 			"languages": [
 				"zh"
 			]
@@ -1393,11 +1393,11 @@
 			"filterId": 235,
 			"name": "Persian Blocker",
 			"description": "Filter list for blocking ads and trackers on websites in Persian.",
-			"homepage": "https://github.com/MasterKia/PersianBlocker/",
+			"homepage": "https://github.com/PersianBlocker/PersianBlocker/",
 			"expires": 432000,
 			"displayNumber": 2,
 			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlocker.txt",
+			"subscriptionUrl": "https://raw.githubusercontent.com/PersianBlocker/PersianBlocker/main/PersianBlocker.txt",
 			"version": "2.0.6.35",
 			"timeUpdated": "2026-06-17T13:45:02+0000",
 			"languages": [
