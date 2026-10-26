@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.99.92",
-			"timeUpdated": "2026-10-26T08:20:33+0000",
+			"version": "2.4.99.93",
+			"timeUpdated": "2026-10-26T09:19:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.14.13",
-			"timeUpdated": "2026-10-26T05:12:41+0000",
+			"version": "2.1.14.14",
+			"timeUpdated": "2026-10-26T09:19:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.32",
-			"timeUpdated": "2026-10-24T13:10:13+0000",
+			"version": "2.0.54.33",
+			"timeUpdated": "2026-10-26T09:19:42+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.36.18",
-			"timeUpdated": "2026-10-26T07:30:12+0000",
+			"version": "2.0.36.19",
+			"timeUpdated": "2026-10-26T09:19:49+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -671,8 +671,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.97.61",
-			"timeUpdated": "2026-10-26T07:30:30+0000",
+			"version": "2.0.97.62",
+			"timeUpdated": "2026-10-26T09:20:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -693,8 +693,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.19",
-			"timeUpdated": "2026-10-26T07:30:32+0000",
+			"version": "2.0.86.20",
+			"timeUpdated": "2026-10-26T09:20:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -759,8 +759,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.15.27",
-			"timeUpdated": "2026-10-23T18:14:04+0000",
+			"version": "2.0.15.28",
+			"timeUpdated": "2026-10-26T09:20:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
