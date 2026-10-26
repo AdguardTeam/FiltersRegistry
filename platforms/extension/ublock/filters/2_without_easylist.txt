@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /+Pt8WYd78LDfsSl7V5FnA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793006638-3600.patch
+! Checksum: XxpcQj9yQZ2y1l8JjehAEg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793009854-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.99.93
-! TimeUpdated: 2026-10-26T09:19:11+00:00
+! Version: 2.4.99.94
+! TimeUpdated: 2026-10-26T10:13:38+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12857,6 +12857,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244659
+amritlink.xyz##+js(set-constant, isPopupBlockedDetected, false)
+@@||amritlink.xyz^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245182
 tv.10dailythings.com#@##pageAdDiv
 tv.10dailythings.com#@#.adsDiv
@@ -34593,6 +34596,8 @@ truyenqqhot.com##div[id^="ads_"]
 !
 !
 !+ NOT_OPTIMIZED
+##.adx_center
+!+ NOT_OPTIMIZED
 ##.ads-rect
 !+ NOT_OPTIMIZED
 ##.ad-placeholder-wrapper
@@ -41296,7 +41301,7 @@ bestbuy.com##li[data-testid="sponsored-listing"]
 soccerway.com##.zone__container
 soccerway.com##.boxOverContentRevive
 akirabox.com,akirabox.to##+js(abort-on-stack-trace, atob, <anonymous>)
-apkdog.com.ua,apkdog.*,apk.dog##.adv_text
+apk.gold,apkdog.com.ua,apkdog.*,apk.dog##.adv_text
 hltv.org##.match > div.match-bottom > div.match-fixtures
 songlyrics.com##.ad-zone-reserve
 songlyrics.com##div[id^="sl-player-"]
