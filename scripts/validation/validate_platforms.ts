@@ -26,6 +26,16 @@ const localesDirPath = path.join(__dirname, LOCALES_DIR_PATH);
 const jsonSchemaReportPath = path.join(repoRootPath, JSON_SCHEMA_REPORT_FILE_NAME);
 
 /**
+ * Removes the report file left by a previous run.
+ *
+ * The compiler appends to the log file, so a stale report would mix previous
+ * warnings with the current validation results.
+ */
+const removeStaleReport = (): void => {
+    fs.rmSync(jsonSchemaReportPath, { force: true });
+};
+
+/**
  * Number of leading lines to scan for the `Diff-Path` tag, matching
  * `@adguard/diff-builder`'s tag parser.
  */
@@ -296,6 +306,8 @@ const main = async (): Promise<void> => {
     }
 
     const platformsPath = path.join(__dirname, platforms);
+
+    removeStaleReport();
 
     const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT, {
         localesPath: localesDirPath,
