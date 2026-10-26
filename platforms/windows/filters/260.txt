@@ -1,9 +1,9 @@
-! Checksum: lro8fELO5lNMcdrLTflf9A
-! Diff-Path: ../patches/260/260-s-1792545079-14400.patch
+! Checksum: J8xBr0gzGv0b/AxW4TUfSg
+! Diff-Path: ../patches/260/260-s-1792960849-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.76
-! TimeUpdated: 2026-10-21T01:08:06+00:00
+! Version: 2.0.2.85
+! TimeUpdated: 2026-10-25T20:38:39+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -33,8 +33,9 @@
 ||widget.molin.ai/shop-ai.js$script,domain=benu.hu|euronics.hu|www.decathlon.hu
 ! === 1Password ===
 ! -- https://1password.com/
-! Unified Access AI agent banner
-1password.com##.header-navigation__nav-banner-link[href="/product/unified-access"] > .box-decoration-clone
+! Header banner for AI agents (Desktop and mobile)
+1password.com##.header-navigation > div.bg-gold [href="/personal-ai-agent-integrations"] > span
+1password.com##.header-navigation > div.bg-gold:has([href="/personal-ai-agent-integrations"]):not(:has([href^="https://start.1password.com/signin"]))
 ! -- https://www.1password.dev/ssh
 ! Copy Page > LLM options
 www.1password.dev#?#[role="menuitem"]:contains(Copy page as Markdown for LLMs)
@@ -518,6 +519,10 @@ www.browserstack.com###promo-notification:has([href^="https://www.browserstack.c
 www.browserstack.com##.bstack-mm-li:has([data-title="AI Agents"])
 ! Footer - AI Agents
 www.browserstack.com###menu-item-153460
+! === Built In ===
+! -- https://builtin.com/jobs
+! "Let Your Resume Do The Work"
+builtin.com,builtinaustin.com,builtinbelfast.uk,builtinbengaluru.in,builtinboston.com,builtinbristol.uk,builtincalgary.org,builtincharlotte.com,builtinchennai.in,builtinchicago.org,builtincolorado.com,builtindelhi.in,builtindublin.ie,builtinedinburgh.uk,builtinhyderabad.in,builtinkolkata.in,builtinla.com,builtinlondon.uk,builtinmanchester.uk,builtinmelbourne.com,builtinmontreal.com,builtinmumbai.in,builtinnyc.com,builtinottawa.com,builtinpune.in,builtinseattle.com,builtinsf.com,builtinsingapore.com,builtinsydney.au,builtintoronto.com,builtinvancouver.org##div:has(> .gradient-border.px-0 > .upload-container > [x-data="uploadResume"])
 ! === Bunnings Warehouse ===
 ! -- https://www.bunnings.com.au/
 ! Ask Buddy button
@@ -1181,15 +1186,17 @@ app.gigasheet.com##.ag-side-button:has(#sheetAssistant)
 www.gitbook.com##[data-framer-name="Links"] [data-framer-name="Group 16"]:has([aria-label="AI summary links"])
 ! -- https://gitbook.com/docs (Sites on https://www.gitbook.com/customers)
 ! Header - AI button
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##[data-testid="ai-chat-button"]
+##button[data-testid="ai-chat-button"]
 ! Search -  autocomplete bar for "Ask AI Assistant"
 ! TODO: Inivsible option selectable with arrow keys or via Ctrl+I
 ! TODO: AI autocomplete suggestions for search
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##[data-testid="search-ask-question"]
-! Ask button at top of article & sparkle that appears when hovering over text
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##button[aria-label="Ask"]
-! Floating ask button when highlighting text
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##div[style^="position: fixed;"] > button.text-contrast-primary-original
+##a[data-testid="search-ask-question"][role="option"]
+! Ask button at top of article
+##header > .float-right > div > button[aria-label="Ask"]
+! Ask AI icon when highlighting text
+##div[data-ask-ai-paragraph] > div > button[aria-label="Ask"]
+! Floating Ask button when hightlighting text
+##body.site-background > div[style^="position: fixed;"] > button.text-contrast-primary-original
 ! Ask/Copy dropdown options
 ! * Gitbook Assistant
 argos-ci.com,atomico.gitbook.io,boxlang.ortusbooks.com,developer.esw.com,developers.gamma.app,developers.make.com,doc.batch.com,docs.abtasty.com,docs.digit.org,docs.flora.ai,docs.mews.com,docs.mozilla.ai,docs.pentaho.com,docs.screendesk.io,documentation.immuta.com,gitbook.com,help.join.com,helpcenter.channable.com,www.usemotion.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M12.8916 1.06265C12.921 0.979101 13.0392"])
@@ -1202,15 +1209,15 @@ developer.collibra.com,docs.commercelayer.io,docs.ionos.com,docs.sonarsource.com
 help.verkada.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M278.5 15.6C275 6.2 266 0 256 0s-19"])
 help.verkada.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M278.5 15.6C275 6.2 266 0 256 0s-19"]) + [role="separator"]
 ! * ChatGPT logo
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M475.3 209.6c11.6-34.9 7.6-73.1-11-104.8-27"])
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M475.3 209.6c11.6-34.9 7.6-73.1-11-104.8-27"]) + [role="separator"]
+##[data-base-ui-portal] > [role="presentation"] > [data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M475.3 209.6c11.6-34.9 7.6-73.1-11-104.8-27"])
+##[data-base-ui-portal] > [role="presentation"] > [data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M475.3 209.6c11.6-34.9 7.6-73.1-11-104.8-27"]) + [role="separator"]
 ! * Claude logo
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M100.4 340.5l100.7-56.5 1.7-4.9-1.7-2.7-4.9"])
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M100.4 340.5l100.7-56.5 1.7-4.9-1.7-2.7-4.9"]) + [role="separator"]
+##[data-base-ui-portal] > [role="presentation"] > [data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M100.4 340.5l100.7-56.5 1.7-4.9-1.7-2.7-4.9"])
+##[data-base-ui-portal] > [role="presentation"] > [data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M100.4 340.5l100.7-56.5 1.7-4.9-1.7-2.7-4.9"]) + [role="separator"]
 ! * MCP logo
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M334.7 50c-21.4-20.9-55.6-20.9-77 0L52.3 251.4c-7.1"])
+##[data-base-ui-portal] > [role="presentation"] > [data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M334.7 50c-21.4-20.9-55.6-20.9-77 0L52.3 251.4c-7.1"])
 ! * VSCode logo
-argos-ci.com,atomico.gitbook.io,bluebricks.co,boxlang.ortusbooks.com,community.threekit.com,cortex-docs.paloaltonetworks.com,developer.collibra.com,developer.esw.com,developers.felt.com,developers.gamma.app,developers.make.com,developers.raycast.com,doc.batch.com,doc.bunq.com,docs.abtasty.com,docs.commercelayer.io,docs.digibee.com,docs.digit.org,docs.flora.ai,docs.fluentbit.io,docs.gensyn.ai,docs.griaule.com,docs.ionos.com,docs.keycloakify.dev,docs.kognitos.com,docs.koncile.ai,docs.mews.com,docs.mozilla.ai,docs.n8n.io,docs.openg2p.org,docs.panther.com,docs.pentaho.com,docs.pinot.apache.org,docs.portainer.io,docs.rayon.design,docs.reflag.com,docs.scraperapi.com,docs.screendesk.io,docs.sola.security,docs.sonarsource.com,docs.snyk.io,docs.usepylon.com,docs.verifone.com,documentation.gravitee.io,documentation.immuta.com,documentation.opencollective.com,gitbook.com,help.impact.com,help.join.com,help.nightfall.ai,help.quantower.com,help.verkada.com,library.zoom.com,meshnet.nordvpn.com,newdocs.keeper.io,support.audacityteam.org,support-en.braver.net,www.usemotion.com##[data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M363.1 508.5c8.1 3.1 17.3 2.9 25.4-1l105.4-50.7C505"])
+##[data-base-ui-portal] > [role="presentation"] > [data-testid="dropdown-menu"] > [role="menuitem"]:has(path[d^="M363.1 508.5c8.1 3.1 17.3 2.9 25.4-1l105.4-50.7C505"])
 ! TODO: Can leave extra separator if there isn't a non-ai section at bottom of list
 ! -- Site specific
 ! "How can I help you today" AI chatbox
@@ -1428,6 +1435,8 @@ docs.github.com##[data-testid="ask-ai"]
 www.githubstatus.com##.link-gray[href="https://github.com/features/copilot"]
 ! === GitLab ===
 ! -- https://about.gitlab.com/ (About page)
+! Header banner
+about.gitlab.com##.banner:is([data-ga-name="transcend-october-2026-banner"], [data-ga-name="orbit"])
 ! Footer - AI features
 about.gitlab.com##[data-ga-name="ai-assisted development"], [data-ga-name="ai for coding"], [data-ga-name="agentic ai"]
 ! -- https://gitlab.com/ (Homepage - logged in)
@@ -1474,11 +1483,13 @@ glyphy.io##section[class^="NameGenerators_container__"]
 ! === Gmail ===
 ! Some filters only apply to accounts with a Google Workspace or Google AI subscription
 ! -- https://mail.google.com/mail/ (Inbox)
+! Remove "Ask Gmail" and sparkle from search bar
 ! Header - Google Workspace Studio icon
 mail.google.com##.lRwCV
 ! Header - Ask Gemini icon
 mail.google.com##.e5IPTd
-! Remove "Ask Gmail" and sparkle from search bar
+! Gemini promo offer at top of inbox
+mail.google.com##div[data-container-id$=":growth_promo_banner:growth_promo_banner"]:has(span[data-action-behavior*="\"GMAIL_ABOVE_INBOX_CARD\""][data-action-behavior*="\"https://one.google.com/ai"])
 ! -- Composing an email
 ! "Help me write" icon next to "Send" button
 ! * Hiding this causes the "insert signature" button to get moved to "More options" menu (⋮). Unsure why.
@@ -1607,13 +1618,14 @@ developers.google.com##.devsite-explain-code
 developer.chrome.com,developers.google.com,docs.cloud.google.com,knowledge.workspace.google.com,web.dev##devsite-search-summary
 ! === Google Docs ===
 ! Some filters only apply to accounts with a Google Workspace or Google AI subscription
+! -- https://docs.google.com/document/u/0/ (Docs)
+! Header - Gemini button
+docs.google.com###docs-sidekick-gen-ai-promo-button-container
 ! -- https://docs.google.com/create (Docs)
-! "Listen to this tab" icon in header toolbar
-docs.google.com###textToSpeechToolbarButton
-! "Help me write" icon in floating menu
-docs.google.com##.superfab-aitextgeneratormenu-button
 ! Header - Gemini button (Replaces "Try Gemini" button)
 docs.google.com###docs-sidekick-button-container
+! "Help me write" icon in floating menu
+docs.google.com##.superfab-aitextgeneratormenu-button
 ! Menubar - "Insert" > "Audio buttons"
 ! * Two label checks to catch placeholder during page load and finalized button
 docs.google.com##.apps-menuitem:has([aria-label="Audio buttons f5"],[aria-label="Audio buttons New f5"])
@@ -1621,6 +1633,8 @@ docs.google.com##.apps-menuitem:has([aria-label="Audio buttons f5"],[aria-label=
 docs.google.com##.apps-menuitem:has([aria-label="Audio f6"], [aria-label="Audio New f6"])
 ! Menubar - "Tools" > "Gemini"
 docs.google.com##.apps-menuitem:has(.goog-menuitem-label[aria-label="Gemini 2"])
+! Toolbar - "Listen to this tab" icon in header toolbar
+docs.google.com###textToSpeechToolbarButton
 ! "Write with Gemini" footer popup
 docs.google.com##.WithHideTransition.kixWizBarkickWrapper
 docs.google.com##.appsElementsCalloutIsPrimary.appsElementsCalloutAnchorPaddingContainer
@@ -1705,59 +1719,64 @@ docs.google.com##[jsname="Vjwl5e"]:has(#getting-started-dialog-navigation-view)
 ! === Google Drive ===
 ! Some filters only apply to accounts with a Google Workspace or Google AI subscription
 ! -- https://drive.google.com/drive/ (All pages)
-! "Ask Gemini" icon in header
+! Header - "Ask Gemini" icon
 drive.google.com###WWNEkf
+! Header - "Try Gemini" icon
+drive.google.com###bPjCde
 ! "AI Overview search" sources icon in search bar
 drive.google.com##.p5rLxe.HBDJjb
 ! Remove "Get answers from Drive" placeholder and sparkle from search bar
-! New > More > Google AI Studio
-! * Use 'remove()' to fix keyboard navigation
-drive.google.com#$?#[role="menuitem"]:has(img[src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x16.png"]) { remove: true; }
-! -- https://drive.google.com/drive/home
+! Sidebar - New > New Project
+drive.google.com##[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"])
+drive.google.com#$?#[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) { remove: true; }
+drive.google.com##[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) + [role="separator"]
+drive.google.com#$?#[data-list-type="MENU"] > [role="menuitem"]:has(path[d^="M12 18C11.9537 18 11.9173 17.9868 11.8908 17.9603C11.8644"]) + [role="separator"] { remove: true; }
+! Sidebar - Projects tab
+drive.google.com###nt\:Dr[role="treeitem"][aria-selected="false"]
+! -- https://drive.google.com/drive/my-drive
 ! Notice for access to audio overviews
 drive.google.com##.j6o35e:has([aria-label="You now have promotional access to audio overviews in Drive"])
-! "Ask Gemini" in "More actions" menu (⋮)
-! * TODO: Fix arrow key navigation. (:remove() doesn't fix it)
-drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y)
-drive.google.com##.h-v[role="menuitem"]:has(.Nsw7Y) + .h-Yo[role="separator"]
-! "Ask Gemini"/"Catch me up" buttons when a file is selected
-drive.google.com##.iQnZTe.SMHH7
-! Right click file > Ask Gemini
-drive.google.com##span[data-is-tooltip-wrapper]:has([aria-label^="Ask Gemini"])
-drive.google.com##li[role="separator"]:has(+ span[data-is-tooltip-wrapper] [aria-label^="Ask Gemini"])
-! -- https://drive.google.com/drive/my-drive
-! "Ask Gemini"/"Suggest file moves" button
+! Filter bar - "Ask Gemini"/"Suggest file moves" button
 drive.google.com##[data-test-id="help-me-organize-chip-container"]
-! "Summarize this file" when hovering over file icon
+! Action bar for selected file - "Ask Gemini"/"Catch me up" buttons
+drive.google.com##.iQnZTe.SMHH7
+! More Actions menu (⋮) on a file (Ask Gemini, Audio Overview, Suggest file moves)
+! * Options change depending on file type
+drive.google.com##[role="menuitem"]:has(path[d^="M480-80q-6,0-11-4t-7-10q-17-67-51-126T328-328T220"])
+drive.google.com#$?#[role="menuitem"]:has(path[d^="M480-80q-6,0-11-4t-7-10q-17-67-51-126T328-328T220"]) { remove: true; }
+drive.google.com##[role="menuitem"]:has(path[d^="M480-80q-6,0-11-4t-7-10q-17-67-51-126T328-328T220"]) + [role="separator"]
+drive.google.com##[role="menuitem"]:has(path[d^="M360-80V-800h80V-80H360ZM520-240V-640h80v400H520ZM200"])
+drive.google.com#$?#[role="menuitem"]:has(path[d^="M360-80V-800h80V-80H360ZM520-240V-640h80v400H520ZM200"]) { remove: true; }
+drive.google.com##[role="menuitem"]:has(path[d^="M360-80V-800h80V-80H360ZM520-240V-640h80v400H520ZM200"]) + [role="separator"]
+drive.google.com##[data-is-tooltip-wrapper="true"]:has(> [role="menuitem"] path[d^="M160-160q-33,0-56.5-23.5T80-240V-720q0-33 23.5-56.5T160"])
+drive.google.com#$?#[data-is-tooltip-wrapper="true"]:has(> [role="menuitem"] path[d^="M160-160q-33,0-56.5-23.5T80-240V-720q0-33 23.5-56.5T160"]) { remove: true; }
+drive.google.com##[data-is-tooltip-wrapper="true"]:has(> [role="menuitem"] path[d^="M160-160q-33,0-56.5-23.5T80-240V-720q0-33 23.5-56.5T160"]) + [role="separator"]
+drive.google.com##[role="separator"] + [role="separator"]
+! "Summarize this file"/"Ask Gemini" button when hovering over file type icon
 drive.google.com##.oaTPh
-! Right click menu, New > More > Google AI Studio
-drive.google.com##.h-v:has([src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_ai_studio_x32.png"])
 ! -- https://drive.google.com/drive/search?q=what%20is%20my%20biggest%20file%3F
 ! AI Overview
 ||appsgenaiserver-pa.clients6.google.com/v1/genai/$xmlhttprequest,domain=drive.google.com
 drive.google.com##.De8rPe
-! -- Viewing a file
-! "Ask Gemini" button in top right (no longer used?)
+! -- Viewing a PDF file
+! Header - Gemini button
+drive.google.com##.TLiyPe
+! * (no longer used?)
 drive.google.com###viewer-sidekick-button
+! Menubar - Tools - Suggestion controls
+! * Only hide if summary cards are disabled
+drive.google.com##[data-list-type="MENU"] > [role="presentation"]:has(path[d^="M480-480ZM370-80L354-208q-13-5-24.5-12T307"]):has(path[d^="M280-520v-80H600v80H280Zm0,160v-80H840v80H280Zm0"])
+drive.google.com#$?#[data-list-type="MENU"] > [role="presentation"]:has(path[d^="M480-480ZM370-80L354-208q-13-5-24.5-12T307"]):has(path[d^="M280-520v-80H600v80H280Zm0,160v-80H840v80H280Zm0"]) { remove: true; }
+drive.google.com##[data-list-type="MENU"] > [role="presentation"]:has(path[d^="M480-480ZM370-80L354-208q-13-5-24.5-12T307"]):has(path[d^="M280-520v-80H600v80H280Zm0,160v-80H840v80H280Zm0"]) + [role="separator"]
+drive.google.com##[data-list-type="MENU"] > [role="separator"]:first-child
+! Toolbar - Create an audio overview
+drive.google.com##button[aria-label="Create an audio overview"]
+! Sidebar - AI Summary
+drive.google.com##.equNN
 ! -- Viewing a video file
 ! Autogenerated chapters
 drive.google.com##.ux0ck:has([aria-label="Chapters"])
 ||workspacevideo-pa.clients6.google.com/v1/drive/media/*/chapterInfo:generateChapters$xmlhttprequest,domain=drive.google.com
-! -- With a PDF opened
-! Header - Gemini button
-drive.google.com##.TLiyPe
-! Menubar - Tools
-! * TODO: Breaks keyboard navigation of menubar
-drive.google.com#?#[role="menuitem"]:contains(Ask Gemini)
-drive.google.com#?#[role="menuitem"]:contains(Ask Gemini) + [role="separator"]
-drive.google.com#?#[role="menuitem"]:contains(Create an audio overview)
-! * Only hide if summaries are disbaled
-drive.google.com#?#[role="menu"] > [role="presentation"]:contains(Suggestion controls):contains(Enable PDF summary cards)
-drive.google.com#?#[role="menu"] > [role="presentation"]:contains(Suggestion controls):contains(Enable PDF summary cards) + [role="separator"]
-! Audio Overview
-drive.google.com##.DbMyfd.LOB30e:has([aria-label="Create an audio overview"])
-! Genini in sidebar
-drive.google.com##.equNN
 ! -- https://drive.google.com/file/d/[id]/view (Direct file link)
 ! "Gemini for all your Drive files" modal dialog
 drive.google.com##[data-dialog-id]:has([href="https://support.google.com/drive?p=gemini_drive_pdf"])
@@ -1844,9 +1863,15 @@ www.google.com#@$?#.YzCcne { remove: true; }
 ! Web Guide
 ! * Only applies if Web Guide is enabled in Google Labs
 www.google.*##.oGdvd
+! Transient "AI Mode experience" promo dialog for Google app (mobile)
+www.google.*##body > div > [role="dialog"][aria-describedby="promo_desc_id"]
 ! -- https://www.google.com/search?q=caine
-! AI Overview header logo (mobile)
-! * Non-AI pieces like images can stay, but use :has() to make sure the actual AI element is something we caught in other filters
+! AI Overview header logo
+! Non-AI pieces like images can stay, but use :has() to make sure the actual AI element is something we caught in other filters
+! * Desktop
+!   TODO: Trusted filter to move ⋮ menu down and remove empty space
+www.google.*###rcnt:has([data-attnms]) .Ws2DOe .Y2jOfb
+! * Mobile
 www.google.com##.MjjYud:has(+ .MjjYud [data-attnms]) [data-prvwid="HEADER"] > .Ws2DOe
 ! "Things to know" and "People also ask" sections
 ! * First filter hides list items, .cUnQKe hides header if all items are AI, .ULSxyf hides extra space if needed
@@ -2177,6 +2202,10 @@ www.investopedia.com##[data-inv-answers-widget]
 ! -- https://www.ishopchangi.com/en/home
 ! Chatbot icon
 www.ishopchangi.com###chat-wrapper
+! === ISTOM ===
+! -- https://www.istom.fr/
+! Chatbot modal
+||webchat.studizz.fr/webchat.js$script,domain=www.istom.fr
 ! === JetBrains ===
 ! Header - Products - AI TOOLS section
 www.jetbrains.com#?#[data-test-marker="Products"] [data-test$="menu-column-title"]:contains("AI TOOLS"):upward(1)
@@ -2931,6 +2960,7 @@ www.pinterest.com#%#//scriptlet('ubo-json-prune', 'resource_response.data.result
 ! Change search settings to hide AI
 ! * Alters search results instead of hiding items. Allows more non-ai results per page
 ! * Requires trust
+! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1tscpwb/comment/oovgpl5/
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..[\'body\',\'data\',\'illusts\',\'popular\',\'userIllusts\',\'works\'].*[?.aiType==2]', 'propsToMatch')
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..body.thumbnails.*.[?.aiType==2]', 'propsToMatch')
 www.pixiv.net#%#//scriptlet('json-prune-fetch-response', '$..illust[?.aiType==2]', 'propsToMatch')
@@ -3501,6 +3531,10 @@ www.techbloat.com##[data-ym-p3-product="chipps"]
 ! -- https://tecnoblog.net/noticias/youtube-aperta-o-cerco-contra-videos-ruins-feitos-com-ia/
 ! Ask Tecnochat at bottom of article
 tecnoblog.net##.tb-single-tecnochat
+! === Technology Checker ===
+! -- https://technologychecker.io/technology/gitbook
+! Explore with AI
+technologychecker.io##.flex.gap-x-3.gap-y-2.flex-row.items-center.place-content-start.flex-wrap:has(> div > [href^="https://chat.openai.com/?q=Summarize"])
 ! === Telerik ===
 ! -- https://www.telerik.com/products/reporting/documentation/designing-reports/connecting-to-data/data-source-components/webservicedatasource-component/how-to-use-jsonpath-to-filter-json-data
 ! Header banner AI promo
@@ -3885,9 +3919,17 @@ web.whatsapp.com##section.x6egj2d.xh8yej3.x5yr21d.x2b8uid.x6s0dn4.xl56j7k.x78zum
 ! Left sidebar - Meta AI + Separator
 web.whatsapp.com##.x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7.x78zum5.xozqiw3.x1oa3qoh.x12fk4p8.xeuugli.x2lwn1j.x1nhvcw1.xdt5ytf.x1cy8zhl.x1277o0a > .x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7.x78zum5.xozqiw3.x1oa3qoh.x12fk4p8.xeuugli.x2lwn1j.x1nhvcw1.x1q0g3np.x1cy8zhl.x100vrsf.x1vqgdyp.xhslqc4.x1ekkm8c.x1143rjc.xum4auv.xj21bgg.x1277o0a.x13i9f1t.xr9ek0c.xjpr12u:has(> span.html-span > button[aria-label="Meta AI"])
 web.whatsapp.com##.x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7.x78zum5.xozqiw3.x1oa3qoh.x12fk4p8.xeuugli.x2lwn1j.x1nhvcw1.xdt5ytf.x1cy8zhl.x1277o0a > hr.xh8yej3.xjm9jq1.x178xt8z.x13fuv20.xx42vgk.x18oe1m7.x1sy0etr.xstzfhl
+! === Whizz-Tech ===
+! -- https://whizz-tech.com/support/wifi-router-fixes/tls-issues-on-wifi/
+! Floating AI chatbot window
+||whizz-tech.com/wp-content/plugins/whizz-chat/assets/chat.js$script,~third-party
 ! === Windows Latest ===
 ! AskGPT 4o button
 www.windowslatest.com##.icon-chat
+! === Windscribe ===
+! -- https://windscribe.com
+! Floating chatbot
+||garry3-be-prd.windscribe.com/garry.js$script,~third-party
 ! === Wolfram Alpha ===
 ! -- https://www.wolframalpha.com/
 ! LLM Solutions in footer

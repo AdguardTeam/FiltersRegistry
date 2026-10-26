@@ -1,10 +1,11 @@
-! Checksum: jf6wxOszokEKY1aWrTuFqg
-! Diff-Path: ../patches/27_optimized/27_optimized-s-1792520260-3600.patch
+! Checksum: B2KeaHdHz4bGhdwoo40K1A
+! Diff-Path: ../patches/27_optimized/27_optimized-s-1792750493-3600.patch
 ! Title: AdGuard Polish filter (Optimized)
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.58
-! TimeUpdated: 2026-10-20T18:14:29+00:00
+! Version: 2.0.0.61
+! TimeUpdated: 2026-10-23T10:12:10+00:00
 ! Expires: 10 days (update frequency)
+||testowa-strona-dozynkowa.pl^
 @@||ewybory.eu^$generichide
 ewybory.eu#%#//scriptlet('prevent-setTimeout', 'blocked')
 ewybory.eu#%#//scriptlet('abort-on-stack-trace', 'Array.prototype.forEach', 'applyAdClasses')
@@ -12,6 +13,11 @@ anime-odcinki.pl#%#//scriptlet('abort-current-inline-script', 'EventTarget.proto
 phototrans.pl,phototrans.eu#%#//scriptlet('prevent-setTimeout', '.removeChild')
 tygodnikziemiopolskiej.info#%#//scriptlet('google-ima3')
 ##.news-slot-center
+legnica.fm##.text-center:has(> ul > li.banneritem)
+legnica.fm##.margin-top:has(> .panel > ins.adsbygoogle)
+legnica.fm##div[itemprop="articleBody"] > span.text-small
+legnica.fm##div[itemprop="articleBody"] > .panel:has(> ins.adsbygoogle)
+fcinter.pl##.footer-banners
 zywiecinfo.pl##div.relative:has(> ins[class^="staticpubads"])
 wpolityce.pl##.sticky_atf
 plejada.pl,onet.pl#$?#.ods-c-card-wrapper:has(> .ods-o-card:only-child > .onet-ad) { remove: true; }
@@ -469,6 +475,7 @@ tko.pl##article[class^="post-"] > div[id^="tdi_"] > div.tdc_zone > div.tdc-row >
 tko.pl##div[id^="nol24-"]
 ||niestatystyczny.pl/wp-content/cache/autoptimize/js/autoptimize_single_2343f262534a03ee11866211f8a8792f.js
 niestatystyczny.pl#$#body { background-image: none !important; }
+||jastrzebieonline.pl/static/js/ads-placements.js
 jastrzebieonline.pl##div[class^="ad_"]
 bieganie.pl#?#.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
@@ -847,7 +854,10 @@ fxmag.pl##div[class^="Ad_bottom_"]
 fxmag.pl##div[class*="_header_ad"]
 fxmag.pl##text[class^="Ad-module-"]
 fxmag.pl##div[class^="SidebarWithAds-"][class*="__ad_"]
-fxmag.pl#%#//scriptlet('trusted-click-element', 'div[class^="Ad_skip_button"]')
+fxmag.pl#%#//scriptlet('prevent-setTimeout', '/^\(\)=>[a-z]\(!0\)$/', '10000')
+fxmag.pl#%#//scriptlet('adjust-setInterval', '/\{\(\d+==.\|\|[\s\S]*?clearInterval/', '*', '0.001')
+fxmag.pl#$#body > .MuiDialog-root:has(div[class^="Ad-module-"][class*="__skip_button"]) { display: none !important }
+fxmag.pl#$#body:has(> .MuiDialog-root div[class^="Ad-module-"][class*="__skip_button"]) { overflow: auto !important; padding-right: 0 !important; }
 franczyzawhandlu.pl##.top
 franczyzawhandlu.pl##div[class^="position_"][class$="top"]
 meczyki.pl##.grid-news-slider > div.news-item:has(> a[href^="https://www.meczyki.pl/link/bukmacher/"])

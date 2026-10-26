@@ -1,9 +1,9 @@
-! Checksum: 9PXpMV5AmUrXixJMUtdVxw
-! Diff-Path: ../patches/257/257-s-1792572495-14400.patch
+! Checksum: brQ+38rqgOuDq3TtnNSOfQ
+! Diff-Path: ../patches/257/257-s-1792946598-14400.patch
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.12.97
-! TimeUpdated: 2026-10-21T08:45:26+00:00
+! Version: 2.0.13.1
+! TimeUpdated: 2026-10-25T16:40:20+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -6244,6 +6244,11 @@ monster###bw-rc-host[style="position: fixed !important; inset: 0px !important; z
 /apph5/?enHash=$document
 !+ NOT_OPTIMIZED
 ##html[data-page="macos-download"] > body[data-platform="macos"] > .app_wrap
+! https://github.com/uBlockOrigin/uAssets/issues/34992
+!+ NOT_OPTIMIZED
+||r2.dev/Verifyd1.html$document
+!+ NOT_OPTIMIZED
+r2.dev##body > .main-wrapper > .main-content:has(> #checkbox-window.checkbox-window)
 ! !SECTION: ClickFix
 ! https://www.reddit.com/r/uBlockOrigin/comments/12ng4o8/
 ! https://www.virustotal.com/gui/url/fe6b4bc7a258a92a97ad3216c85d159857ccd581df9b31a50a308ca49f967e34
@@ -10794,8 +10799,11 @@ pages.dev##html:not([class]) > body.gradient-bg.min-h-screen.flex.items-center.j
 !+ NOT_OPTIMIZED
 ||cyrexmods.cc^$all
 ! https://github.com/uBlockOrigin/uAssets/issues/32206
+! https://github.com/uBlockOrigin/uAssets/pull/34989
 !+ NOT_OPTIMIZED
 ||audiveris.com^$document
+!+ NOT_OPTIMIZED
+||audiveris.net^$document
 ! phishing emails - https://storage.googleapis.com/hmdbox/hmd_v2.html
 !+ NOT_OPTIMIZED
 ||storage.googleapis.com/hmdbox/$document
@@ -11470,3 +11478,11 @@ top##body > center + .A + .post
 ||ledger-nano.com^$all
 !+ NOT_OPTIMIZED
 ||ledger.net.cn^$all
+! https://github.com/uBlockOrigin/uAssets/issues/35000
+!+ NOT_OPTIMIZED
+||onpointfcu.com^$all
+!+ NOT_OPTIMIZED
+||onpointcu.portalaccess.app^$all
+! https://www.reddit.com/r/cybersecurity/comments/1xekbvs/anyone_actually_gotten_a_phishing_site_taken_down/
+!+ NOT_OPTIMIZED
+||despegar.vercel.app^$all

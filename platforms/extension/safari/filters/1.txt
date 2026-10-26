@@ -1,9 +1,9 @@
-! Checksum: ebwyOMOe7nOYLsTZr67UTA
-! Diff-Path: ../patches/1/1-s-1792624432-3600.patch
+! Checksum: A7qx05orwQJQI1lbUMPWPQ
+! Diff-Path: ../patches/1/1-s-1792926775-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.9.25
-! TimeUpdated: 2026-10-21T23:09:17+00:00
+! Version: 2.1.9.29
+! TimeUpdated: 2026-10-25T11:09:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4848,6 +4848,8 @@ game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,nayl
 @@/SidebarAds.js$~third-party,domain=game4you.top|rustorka.com|rustorka.net|rustorkacom.lib|naylo.top|monna2.top|zannn.top|innal.top|apad2.top
 @@/report_ad.js$~third-party,domain=game4you.top|rustorka.com|rustorka.net|rustorkacom.lib|naylo.top|monna2.top|zannn.top|innal.top|apad2.top
 !
+@@||rustorka.com/begun.js
+rustorka.com#%#//scriptlet('abort-current-inline-script', 'document.documentElement.innerHTML', 'Пожалуйста')
 rustorka.com#%#//scriptlet('set-constant', 'document.write', 'undefined')
 rustorka.com#%#//scriptlet('prevent-setTimeout', 'detectAdBlock')
 rustorka.com#%#//scriptlet('prevent-setTimeout', ';console[')
@@ -6801,6 +6803,9 @@ avtocod.ru,love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,del
 !
 ! NOTE: Specific rules
 !
+tribuna.com##div[class*="common_layout__right_column"]:has(> div[class^="Banner-module_"])
+tribuna.com##div[class^="Banner-module_"]
+tribuna.com##div[class^="_ideal-media_"]
 itc.ua##.post-txt > div.hidden-sm
 ||yandex.*/ads/adfox/
 ||yandex.*/adfox/
@@ -7173,6 +7178,7 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+sdelanounas.ru##.banner_wide_top
 appstorrent.ru##.dle_b_apps
 radar-map.ru#%#//scriptlet('abort-on-stack-trace', 'document.getElementById', 'readLivePaid')
 ||radar-map.ru/static/vendor/adfinity.js
@@ -20123,6 +20129,7 @@ citrus.ua,xsport.ua,zi.dn.ua,zi.ua##img[src^="/upload/rk/"]
 !
 !
 !
+sinoptik.ua##aside > div:has(> div[id^="div-gpt-ad"])
 machineryline.ua##.index-bns
 kurs.com.ua##.advertising:not(#bottomWrap)
 hotline.finance##.side-popup
@@ -20880,6 +20887,7 @@ turystam.in.ua###Mod99.ja-moduletable
 e-flash.com.ua###Reclama
 minfin.com.ua###BrandingLeftPlace
 minfin.com.ua###BrandingRightPlace
+||kinofilms.ua/images/r/$subdocument
 ||kinofilms.ua/images/brands/
 kinofilms.ua###sitewrap > a[href^="/go/?"][target="_blank"]
 kinofilms.ua###KFside > aside > a[href^="/go/?"][target="_blank"]
