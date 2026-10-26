@@ -1,15 +1,15 @@
-! Checksum: eKuCkguCgoGnmfD/qxY7kA
-! Diff-Path: ../patches/102/102-s-1792804101-14400.patch
+! Checksum: hLmS9imemGsloAnk5ngLQA
+! Diff-Path: ../patches/102/102-s-1793024445-14400.patch
 ! Title: ABPindo
 ! Description: Additional filter list for websites in Indonesian and Malay.
-! Version: 2.0.10.70
-! TimeUpdated: 2026-10-24T01:04:35+00:00
+! Version: 2.0.10.71
+! TimeUpdated: 2026-10-26T14:16:44+00:00
 ! Expires: 12 hours (update frequency)
 !
-! OriginalVersion: 202610232221
+! OriginalVersion: 202610261202
 ! Title: ABPindo
 ! Description: Filter tambahan untuk EasyList memblokir iklan berbahasa Indonesia dan Malaysia.
-! Last modified: 23 Oct 2026 22:21 UTC
+! Last modified: 26 Oct 2026 12:02 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/ABPindo/indonesianadblockrules/
 ! License: https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/LICENSE
@@ -335,6 +335,7 @@ $popup,domain=animekompi.*|kiryuu.*|kiryuu03.*|komikstation.co|mangakita.id|wrt.
 ||anibatch.*/wp-content/uploads/*.gif$image
 ||animeindo.*/wp-content/uploads/*.gif$image
 ||animeinweb.com/api/proxy/data/ads/show$~third-party,xmlhttprequest
+||animekompi.sbs/api/ads/$image
 ||animeku.*/public/vid/huskypres.mp4$media
 ||animexin.*/wp-content/uploads/*.gif$image,~third-party
 ||anoboy.watch/img/*.gif$image,domain=anoboy.watch
@@ -382,6 +383,7 @@ $popup,domain=animekompi.*|kiryuu.*|kiryuu03.*|komikstation.co|mangakita.id|wrt.
 ||fansubupdate.com/res/img/sampleads/
 ||filmbioskop21.*/wp-content/uploads/*.gif$image
 ||gamma.cachefly.net/js/ad-exchange.js$third-party
+||gbr.animekompi.link/wp-content/uploads/$image,domain=animekompi.sbs
 ||google.co.id/search?q=$popup,domain=komikav.com|komikcast.com|manhwaindo.id
 ||gudangmovies21.*/wp-content/uploads/*.gif$image
 ||harakah.net.my/images/stories/iklan/
@@ -1171,6 +1173,7 @@ bahasteknologi.com###fkdl[href]
 bioskopkeren.*###float-b-1
 terbit21.*,terbit21official.*###float-banner
 bioskopkeren.*,terbit21.*###float-bottom-banner
+animekompi.*###floatAdOverlay
 anixverseone.com###floatads1
 komikstation.com###floatbanner
 samehadaku.*###floatbottom
@@ -1698,6 +1701,7 @@ dapurpacu.com##.fixed-ads-atas
 miyanime.site##.fixed-lside
 miyanime.site##.fixed-rside
 shinigami.asia##.flex-col.flex.mx-auto.container.false > .mx-auto.container > .gap-4.md\:gap-4.md\:grid-cols-2.grid-cols-1.grid
+animekompi.*##.float-ad-overlay
 bolasport.com,gridoto.com##.float-ads
 readwebtoons.com##.float-ck
 manganime.in##.float_tengah
@@ -1946,6 +1950,7 @@ pikiran-rakyat.com##.prads
 kompas.com##.premium_div
 blibli.com##.product__card:has(.product__tag__ads)
 cna.id##.programtic-ads
+animekompi.*##.promo-grid
 bolasport.com,grid.id,gridoto.com,kompas.com,kompasiana.com,sonora.id,tribunnews.com##.pushdown-banner
 fimela.com##.py-4.banner
 beautyjournal.id##.r-1mi0q7o.r-sax9pr.r-14lw9ot.css-175oi2r
@@ -6014,6 +6019,7 @@ totojitu.gif|$image
 ##[href="https://klik.gg/anichin"]
 ##[href="https://klik.top/anichinh"]
 ##[href="https://klik.top/anichinid"]
+##[href="https://t.ly/anime-gacorrun"]
 ##[href="https://tinyurl.com/anichin36"]
 ##[href="https://tinyurl.com/anichinhoki"]
 ##[href^="http://1001win.fun"]
@@ -9931,6 +9937,8 @@ drbokep.*##.loaded.ads-50
 vivamaxstream.com##.movie-top-ads
 javdesu.tv##.overflow-hidden.w-full.aspect-\[728\/90\].relative
 doujin.desu.xxx##.partner-slot-frame
+hentaisubindo.net##.pf-ad
+hentaisubindo.net#$#.pf-adblock-wall { display: none !important; }
 podjav.tv##.player-banner-ads-top
 videyindo.space##.playeroverlay
 agenbokep.*##.popbox
@@ -9990,10 +9998,11 @@ animekompi.*,artisbokep.*,komikdewasa.art,nekopoi.*,republikbokep.*,sebokep.vip,
 kayatan.vip##aside > div > .mt-4
 bokep.pemersatu.top#$#body.age-gate-open { overflow: auto !important; }
 pemersatufun.com#$#body.gate-open > :not(.age-gate) { pointer-events: auto !important; }
-i-jav.space,komikpoi.com,rumahparaperjaka.*#$#body { overflow: auto !important; }
+hentaisubindo.net,i-jav.space,komikpoi.com,rumahparaperjaka.*#$#body { overflow: auto !important; }
 komikdewasa.art#$#body { padding-top: 0 !important; padding-bottom: 0 !important; }
 pemersatu.*##div.ad iframe
 pemersatu.*##div.ad ins
+hentaisubindo.net#$#div.pf-ad-bait { display: block !important; height: 1px !important; }
 asiasizzle.com,zonaplus.space##div.popup-banner-content
 asiasizzle.com,zonaplus.space##div.popup-banner-grid
 bokepi.com#$#div:has(> a[href^="https://tuanmuda88baja.com/"]) { display: none !important; }
@@ -10028,8 +10037,10 @@ kingbokep.media##video[src*=".webm"]:not(div[class*="video"] > img)
 ||afapoker.com^$third-party
 ||ajar-poet.com^$popup
 ||aksesin.top^$third-party
+||akseskaiko.cam^$third-party
 ||allvegaspoker.com^$third-party
 ||anaktogel.com^$popup
+||analytics.xxcontent.cfd^$third-party
 ||aosbobet.com^$popup
 ||aosbobet.com^$third-party
 ||areaslt.net^$third-party
@@ -10144,6 +10155,7 @@ kingbokep.media##video[src*=".webm"]:not(div[class*="video"] > img)
 ||mitrapoker.com^$third-party
 ||mobilepokerclub.com^$third-party
 ||movd21.com^$third-party
+||mso303.monster^$third-party
 ||nag303.xyz^$third-party
 ||naga-poker.com^$third-party
 ||nagapoker.biz^$third-party
@@ -10239,6 +10251,7 @@ kingbokep.media##video[src*=".webm"]:not(div[class*="video"] > img)
 ||taruhancasino.com^$third-party
 ||taruhanku.com^$third-party
 ||temannonton.store^$third-party
+||terbangrusia.site^$third-party
 ||texaspokercc.com^$third-party
 ||theedgepoker.com^$third-party
 ||togel2.xtgem.com^$third-party
