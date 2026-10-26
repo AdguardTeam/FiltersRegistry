@@ -70,6 +70,10 @@ const optimizationStatsDir = path.join(tempDir, 'optimization', 'stats');
 // applying a stats cache outside the allowed --include/--skip scope results
 // will trigger a hard failure in compile().
 const optimizationStatsScopeFile = `${optimizationStatsDir}.scope`;
+// Pins the set of optimizable filters, so --download-stats and an applied
+// --use-cache stats cache don't depend on the remote percent.json (which changes
+// over time and requires network access).
+const optimizationPercentPath = path.join(__dirname, '../..', 'optimization_config.json');
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
@@ -160,11 +164,21 @@ const buildFilters = async () => {
     }
 
     if (downloadStats) {
-        await localOptimizationStatistics.download(
-            optimizationStatsDir,
-            includedFilterIDs,
-            excludedFilterIDs,
-        );
+        try {
+            await localOptimizationStatistics.download(
+                optimizationStatsDir,
+                includedFilterIDs,
+                excludedFilterIDs,
+                { percentPath: optimizationPercentPath },
+            );
+        } catch (error) {
+            throw new Error(
+                'Downloading optimization stats failed. The filters to download come from '
+                + 'optimization_config.json; if a filter was added there before its stats were deployed, '
+                + `its stats.json is missing on the server, so deploy the config first. (${error.message})`,
+                { cause: error },
+            );
+        }
         await fs.writeFile(
             optimizationStatsScopeFile,
             scopeFlagsFor(includedFilterIDs, excludedFilterIDs),
@@ -216,7 +230,7 @@ const buildFilters = async () => {
 
             const isScopeIdentical = cachedScopeFlags === currentScopeFlags;
             if (isScopeIdentical || cachedScopeFlags === unscopedFlags) {
-                localOptimizationStatistics.use(optimizationStatsDir);
+                localOptimizationStatistics.use(optimizationStatsDir, { percentPath: optimizationPercentPath });
                 console.log(`Using local optimization statistics from: ${optimizationStatsDir}.`);
             } else {
                 console.log(
