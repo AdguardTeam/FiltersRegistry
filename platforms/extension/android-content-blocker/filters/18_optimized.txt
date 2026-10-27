@@ -1,8 +1,8 @@
-! Checksum: dTnVgDOrRoiO+O7i61Sw9Q
+! Checksum: eiNPsVx0hAAHtKdjFS2PAA
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.97.70
-! TimeUpdated: 2026-10-27T01:27:54+00:00
+! Version: 2.0.97.71
+! TimeUpdated: 2026-10-27T02:18:41+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -168,6 +168,7 @@
 ##.cookie-agreement-wrapper
 ###cookie_notification
 ##ark-cookiebar
+##amedia-privacybox
 ##.wpcc-container
 ###tt-cookie-alert
 ##.jnews-cookie-law-policy
@@ -511,7 +512,6 @@
 ###cookielawwarning
 ###cookiemessage
 ###cookiemodule
-###cookiemonster
 ###cookiemsg
 ###cookienote
 ###cookienotice
@@ -763,6 +763,7 @@
 ##.cookieBox
 ##.cookieCompliance
 ##.cookieConsent:not(body):not(html)
+##.cookieConsentPanel
 ##.cookieContainer
 ##.cookieControl
 ##.cookieDisclaimer
@@ -976,6 +977,7 @@
 /wp-content/plugins/cookieadmin/assets/*
 /wp-content/plugins/cookieadmin-pro/assets/*
 ||cmp.bonniernews.se^
+||cdn.sypher.eu/consent/
 /kvkk.cookie.v2.min.js
 ||cookies.nos.nl^
 ||app.termly.io/resource-blocker/
@@ -1265,6 +1267,7 @@
 /cookies_bar.js
 /cookies_directive.
 /cookies_komunikat.
+/cookies_loading.php?
 /cookies_policy.js
 /Cookies_Pro/*
 /CookiesAgreement/*
@@ -1409,6 +1412,7 @@ granola.ai,faac.pl,darkhorizons.com,mammut-dental.de,gavazzanablues.org,nuovaven
 /cookieconsent.$domain=qrcodemonkey.net|wedos.com|scssoft.com|umino.io|sklep.ledlumen.pl|megasobota.pl|emunia.pl|proxmox.com|glowing.com|medicalonline.jp|shop.wagnardsoft.com|funmix.pl|mokaunited.com|liki24.ro|cerrahpasa.iuc.edu.tr|fatfish.pl|artamon.cz|markat.com.pl|itpizzalasporto.plateform.app|jagadzet.pl
 help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keeper.io,developers.deepl.com##[aria-label="Cookies"]
 military24.pl,softimi.pl,yarnpower.pl,baumgart-kaffee.pl,decorlabs.pl,werbus.pl,xeromania.pl,dzielnicazdrowia.pl,sklepy-cynamonowe.eu,elektronar.pl,granitnaturalny.pl,sklep-ppoz.pl,alphastore.pl,latamfpv.pl,krugermatz.com,patandrub.eu,sklepkoszykarski.pl,dayabeauty.pl,najlepszyfiltr.pl,wildleather.pl,sklep.szymkowiak-karcher.pl,coolmarket.pl,sklep.hmmcleaning.pl,biogo.pl,sklep-marinelab.pl,rarecraft.pl,kaweo.pl,yummo.pl,candy-shop.pl,slodyczowo.pl,friser.pl,sklep.cryptotech.com.pl,jupiter.com.pl,sklep.bacowkatowary.pl,higienamed.pl,voiceshop.pl,superrower.pl##.consents
+reviews.konsumentenecho.de##.gap-4.bg-white.p-4.shadow-personal.md\:flex-row.md\:gap-40
 bokserkoland.pl###bk-cmp-banner
 mobileasia.com.pl##.left-0.right-0.z-\[100\].p-3.md\:p-4
 hikmicrotech.com##.hik-gdpr
@@ -1548,7 +1552,6 @@ sellpy.pl###app > div[style] ~ div[class^="sc-"]:empty + div[class^="sc-"]
 radom.pl##.elementor-8775
 gazetawielicka.pl##.fcm-banner
 sklep.elus.pl##.cookie-message-popup-lq
-my.tickmill.com##div[class*="_isCookiesNotice_"]
 tbank-online.com##div[data-qa-type="cookie-consent-banner-wrapper-desktop"]
 idprotect.trendmicro.com###__next ~ div[evergreen-portal-container] > .fixed.bottom-0
 sportigio.com,dzps.pl,cracovia.pl##.sg-cc
@@ -1570,13 +1573,11 @@ hola.org##div[class^="content_of_consent"]
 igorslab.de###ilab-consent-banner
 fresha.com##.pos_fixed.op_transparent
 businessinsight.pl###app > div.min-h-screen > div.fixed.bottom-0
-ortacizgi.com##aside[aria-label="Çerez bildirimi"]
 boot.dev,aitryon.art,seevido.com##.fixed.bottom-5
 k2.com.pl##.k2-cn-info
 shanghairanking.com##.cookie-auth
 hiraoka.com.pe##.gs_overlay
 trends.google.com##div[data-trends-cookie-bar]
-x.com##body > div[aria-label^="Cookie-"]
 top.kion.ru##kion-top-alert
 panel.fps.ms,eurotoptech.com##section[aria-label="Cookie consent"]
 diabinfo.de##.cookieconsent-backdrop
@@ -1593,6 +1594,7 @@ catho.com.br###lgpd-consent-widget
 youdo.com##div[data-sentry-component="AccessCookies"]
 barcablaugranes.com,sbnation.com,theverge.com##.duet--navigation--pmc-privacy-banner
 ||k.pl/static/js/cookieconsent.umd.*js
+moje-karnisze.pl,naostrzu.pl##div[class^="cMonster"]
 szkolna24.pl,mlekovitka.pl,mlekovita.com.pl,4real.pl,matysek.pl,sklep.plast-pol.com,essystemk.pl,lako.pl,stonefeather.pl,benugo.pl,buycom.pl##.realCookies
 toolspivot.com###bvCookieBar
 ||widget.legalniewsieci.pl/cookie-manager/
@@ -1626,7 +1628,6 @@ yenisafak.com##div[class^="_kvkkWarning_"]
 hostarmada.com###gdprcookie-overlay
 yapikredi.com.tr###secondCookiModal
 yapikredi.com.tr##.cookie-icon
-sammyguru.com,steelgear.pl###sg-consent
 tabor.ru##.site-policy-wrap
 e-domus.com.pl###ed-cookie-bar
 tabox.co,perplexity.ai,app.short.io,pixelcut.ai##div[data-testid="consent-banner-card"]
@@ -1737,7 +1738,6 @@ mayaksbor.ru###AgreementPopup
 oggusto.com##.mainBox > div.fixed.top-0:not([id])
 edumsko.ru##.cookies_popup-container
 bonus.ebrokerpartner.pl##div[class$="-cookiesInfoContainer"]
-renderforest.com##div[class^="styles_cookie-message-wrapper__"]
 weverse.io###wevConsentManager
 profinance.ru##.askbuttontextbox
 soundation.com##.pfx-cookie-consent__body-modal
@@ -1752,7 +1752,6 @@ wishmaster.me###js_policy-cookie
 store.psg.fr,nbastore.eu,f1store.formula1.com,store.chelseafc.com##.marketing-cookies-banner
 ostrovok.ru##div[class^="PrivacyPopup_root"]
 escavador.com##.c-popup-consentimento
-account.xiaomi.com##._-src-components-CookieBanner-wrapper
 ||consentise.com^$domain=aspose.app
 ||cdn.jsdelivr.net/npm/vanilla-cookieconsent@$domain=useragents.io
 dobrodel.mosreg.ru##pgu-cookie-agreement-toast
@@ -1848,7 +1847,6 @@ otpbank.ru##.p-cookies-notification
 link.com##div[class^="CookieSettingsNotification_CookieBanner"]
 support.link.com##.LinkSupportSite-CookieBanner-container
 wisecleaner.com##.cooke-privacy-wrap
-befunky.com##.toast--cookie-banner
 pcbway.com##.cookies-pop-alert
 stiftung-evz.de,inbank.pl,tohurt.pl,overdrive.com,autoteile-markt.de,lodz-airport.pl,gemini.pl,ilmonet.fi,wurth.fr,isybank.com,hausderbibel.ch,fredolsen.es,longchamp.com,interactivebrokers.co.uk,skin79-sklep.pl,skin79.sk,skin79.net,kicksmaniac.com,carolynspring.com,vileda.hu,vileda.de,aok.de,omg.de,eshop.idsbk.sk,pojezierze24.pl,highlight-led.de,schaecke.at,haloursynow.pl,atlasformen.hu,atlasformen.sk,atlasformen.cz,atlasformen.nl,atlasformen.co.uk,atlasformen.ch,atlasformen.pl,atlasformen.com,epiphone.com,mohrsiebeck.com,vileda.com,vileda.com.tr,bodensee-airport.eu,schnelltest-apotheke.de,gibson.com,bahlsen.com,mymoments.de,atlasformen.de,socradar.io,inselflieger.de,globalfamilydoctor.com,bmeia.gv.at,nichtraucherhelden.de,aldi-sued.de,sued.aldi-liefert.de,felix1.de,panoramafirm.pl,hofer.at,dizioneri.com,m.n11.com,wuerth.de,deutsches-ausschreibungsblatt.de,sued.aldi-liefert.de,xn--giant-dsseldorf-5vb.de,plk-sa.pl,sutterhealth.org,freshcotton.com,rolmarket.pl,neubaukompass.de,dr-brinkmann.com,bezpiecznedane.gov.pl,odido.nl,hife.es,hurt-orange.pl,hitech-gamer.com,cicloscorredor.com##.modal-backdrop
 tass.ru##div[class^="CookieAcceptanceBlock_container"]
@@ -1926,7 +1924,6 @@ micro1.ai##.cookie_bar-wrapper
 samoletplus.ru##div[class^="AcceptAgreement_"]
 missiveapp.com,wizards.com,brainly.*,tabnine.com,shop.hbo.com,bitwarden.com###ketch-consent-banner
 ||bordersdown.net/js/privacy-consent-banner.js
-kick.com##.contents > div.z-modal.fixed.bottom-4
 irodoricomics.com###ccpa_consent_bar
 ||jottacloud.com/webapp_static/jotta-consent.js
 ||banknorwegian.de/*/api/*/spaInitObject/cookieconsent?
@@ -1940,7 +1937,6 @@ santander.com.br##wpc-mfe-cookies-element
 ||nextcloud.com/*/nc_cookies.js
 stylevana.com,rambler.ru,buffaloamericas.com###cookie-policy-notification
 ||exist.ru/ts/CookiesConfirmer.js
-askspot.io,thepublic.info,simpleurl.tech,thepublic.info,trepedia.nl,trepedia.fr,trepedia.ai,trepedia.de,formula-timer.com,fusiora.com,fontlab.com,skycash.com,zemail.me###silktide-wrapper
 omadanetworks.com,tp-link.com###tp-cookie-banner
 avtocod.ru##cookie-accept-terms
 dartagnan.com,vktry.com,gearaid.com###polaris-css-lockdown-container
@@ -1965,7 +1961,6 @@ lightinthebox.com##.cookie-prompt-bg
 xmtrading.com###js-cookieModal ~ div[modal-backdrop]
 temp-mail.io##div[data-qa="cookie-warning"]
 tutu.ru##div[data-ti="disclaimer_wrapper"]
-helse-bergen.no,helseplattformen.no##div[class*="cookieconsent-banner"]
 oda.com##div[class^="styles_cookie-widget-wrapper"]
 raiffeisen.ru##.CookieDialog
 thenounproject.com##div[data-callback="accounts/hide-banner/CookiesBanner"]
@@ -2324,7 +2319,6 @@ flypobeda.ru##cookie-warning
 gaming.amazon.com##div[data-a-target="cookie-policy-banner"]
 web.basemark.com##.cookie-law
 dunsterhouse.co.uk##.cookie-acception
-tauron1liga.pl,pls.pl,mistrzostwapolskimasters.pl,siatkarskieligi.pl,tauronliga.pl,plusliga.pl##.cokie-manager-dialog
 leeds.ac.uk###cookie-control-prompt
 joblift.de##.jl-cookie-banner
 zus.pl###main-cookie-dialog
@@ -2533,6 +2527,7 @@ satfilm.pl,otvarta.pl###cct-banner
 ||gdprcdn.b-cdn.net/js/gdpr_cookie_consent.min.js$domain=hagenbikes.com|aavalabs.com
 gosuslugi.ru##.gw-analytics-agreement
 pakamera.pl###ccpm
+hitobuwie.pl###v-cookielaw-background
 nordlayer.com,nordpass.com,nordlocker.com,nordvpn.com##.ConsentWidget__container
 emu-land.net##.policy-validation
 iotransfer.itopvpn.com##.fl-accept
@@ -2551,7 +2546,6 @@ wincofoods.com##mct-templater-cookie-consent
 ups.com.tr##.cookie-pol
 pekao.com.pl###cookies-popup-container
 pkgs.org###consent_notice
-yambaru-tour.net,sayo-kanko.jp,saitama-supportdesk.com,snowrich-tokamachi.com,stib.jp,minamiechizen.com,kumanokodo-iseji.jp,b-izu.com,izumi-navi.jp,hakobura.jp##.approval-required-fix-balloon
 propertyguru.com.my,ddproperty.com##.cookie-banner-section-root
 softube.com##.sui-cookie-warning
 patek.com##.cookies.modal_mask
@@ -2775,6 +2769,7 @@ bing.com###thp_notf_div
 ||gdpr.api.bcdn.jp^
 lalal.ai,rivegauche.ru,megamarket.ru,whitebit.com###cookies-notification
 ||difesa.it/SiteAssets/cookie/gdpr-cookie.js
+maklerinmuenster.de,garten-bienen.at###privacyCtrl
 lesniludzie.pl,zaburzeniasnu.info,dentystapoleca.pl,ibs.org.pl,helmuzeum.pl,brandvital.eu,leclerc.pl###lmk_cookiebaner_container
 zeebiz.com##.cookieScreenOverlay
 pfr.gov.ru,sfr.gov.ru##.user-data-processing-wrapper
@@ -2892,7 +2887,6 @@ uploadedpremiumlink.net##footer.v-footer + div
 /assets/client/cookie$domain=the-sun.com|thesun.co.uk
 ||antikvarium.hu/dist/assets/js/js/3rd-party/jquery-eu-cookie-law-popup-
 autodesk.*###adsk-gdpr-footer-wrapper
-town.yahaba.iwate.jp,tvi.jp,rkc-kochi.co.jp,jrt.co.jp,fbc.jp,fct.co.jp,teny.co.jp,fmf.co.jp###gdpr_c
 vessoft.com##div[id^="cookie_ok_"]
 ||tokyometro.jp/library/common/js/jquery.cookie.js
 ||storage.googleapis.com/snap-marketing-web-component/StandaloneCookieModal.js$domain=help.snapchat.com
@@ -3659,7 +3653,6 @@ dance-charts.de###cpnb
 ezcast.com###cookie_noti
 audi-technology-portal.de###PrivacyManager
 checkmybus.*,ugc.fr,ugc.fr##.gdpr-overlay
-appark.ai,amuse.io##.cookie-notice-banner
 igroray.ru,key-drop.com##.toast--cookies
 multipolar-magazin.de###cookiezeile
 zolar.de,webuyanycar.com,yougov.co.uk,yougov.com##.vwo-overlay
@@ -3745,6 +3738,7 @@ myresume.ru##.rulesInfo
 mayoclinic.org###mayo-privacy-consent-banner
 ultrafarma.com.br###modal-lgpd
 englishdom.com###gdpr-tooltip
+solarenerjial.com,bemzen.com.br,otvfoco.com.br###privacy-pop-up
 /klaro-cookie-consent/*$domain=calimove.com
 hik-connect.com##.ant-message-notice-content
 hik-connect.com##div[class^="src-pages-cookie-___cookieTip__app-cookie-container"]
@@ -3853,6 +3847,7 @@ tetrika-school.ru,skobar.ob-ob.ru,tochkasklada.ru,retouch4.me,gigway.ru,slurm.io
 shoop.de##accept-cookies-banner
 tabak-brucker.de###Cookie_Hinweis
 titan-comics.com,forbiddenplanet.com###gdpr-options
+tierarzt-onlineverzeichnis.de,vergleichen-und-sparen.de###vs-cookiehinweis
 techdevguide.withgoogle.com###gtd-cookie-consent
 godrej.com,tata.com##.overlayPop
 ncsc.gov.uk##.pcf-cookie
@@ -3995,6 +3990,7 @@ exodus.com##.x-cookies-banner
 heizman24.de,serverando.de,arsmundi.de##.cookie-permission-container-big
 tranzystor.pl###tranzystorcookies
 haustechnikdialog.de###ctl01_privacy
+remscheid.de,stadtundland.de,paderborn.de,fh-dortmund.de,kassel.de,delmenhorst.de,rhein-sieg-kreis.de,mainz.de,marburg-biedenkopf.de,bottrop.de,duisburg.de,bonn.de##.SP-CookieUsageNotification
 gehalt.de,caterer.com,jobsite.co.uk,stepstone.de,totaljobs.com###GDPRConsentManagerContainer
 med.uni-rostock.de,ruegen.de##.data-consent
 ||cornelsen.de/*/consent-manager/cornelsen-consent-manager.js
@@ -4265,6 +4261,7 @@ synology.cn,synology.com##.syno_cookie_element
 airdroid.com##.mode-cookie-tip
 airbnb.az,airbnb.co.id,airbnb.ba,airbnb.cat,airbnb.cz,airbnb.me,airbnb.dk,airbnb.de,airbnb.at,airbnb.ch,airbnb.com.ee,airbnb.com.au,airbnb.ca,airbnb.ie,airbnb.co.nz,airbnb.com.sg,airbnb.ae,airbnb.co.uk,airbnb.com.ar,airbnb.com.bz,airbnb.com.bo,airbnb.cl,airbnb.co.cr,airbnb.com.ec,airbnb.com.sv,airbnb.es,airbnb.com.gt,airbnb.com.hn,airbnb.com.co,airbnb.mx,airbnb.com.ni,airbnb.com.pa,airbnb.com.py,airbnb.com.pe,airbnb.co.ve,airbnb.be,airbnb.fr,airbnb.co.za,airbnb.is,airbnb.it,airbnb.lv,airbnb.lt,airbnb.hu,airbnb.pl,airbnb.com.mt,airbnb.com.my,airbnb.nl,airbnb.no,airbnb.com.br,airbnb.pt,airbnb.com.ro,airbnb.si,airbnb.rs,airbnb.fi,airbnb.se,airbnb.com.ph,airbnb.com.vn,airbnb.com.tr,airbnb.gr,airbnb.ru,airbnb.com.ua,airbnb.am,airbnb.co.in,airbnb.co.kr,airbnb.jp,airbnb.com.hk,airbnb.com.tw##div[data-testid="main-cookies-banner-container"]
 nonkyc.io,pixers.com.tr,iauto.lv,visitgdansk.com,jestemzgdanska.pl,kartamundurowa.pl,mconvert.net,mobiflip.de,kartalodzianina.pl###cookieConsentModal
+jestemzgdanska.pl###cookieConsentButton
 tutu.ru,tutu.travel##.style__disclaimer
 cifraclub.com.br###js-cookie-policy
 pegacifra.com.br##.banner-rodape-cifra
@@ -4534,6 +4531,7 @@ emag.ro,emag.hu,emag.pl##body .gdpr-cookie-banner
 accupass.com##div[class$="-cookie-container"]
 cbtnuggets.com##.main-react-app > main + section > footer + section
 oyunlarskor.com###cerez_kabul
+musabase.com,miyav.com.tr##.cookie-bubble
 mbbru.ru,remkresla.ru,remdivana.ru,spb-obivka-mebeli.ru,aquaphor.ru,gorodsreda.ru,allrivers.info,biletyplus.ru,vawoo.co.uk,atompark.com,fuqer.com##.cookies-block
 subscribestar.adult,subscribestar.*##.notice_cookies
 iboysoft.com##.user_popup
@@ -4997,6 +4995,7 @@ hsbc.com.tr,advantage.com.tr##.new-cookie
 pixivision.net##._gdpr-notify-header > *
 pixivision.net##body > input + ._gdpr-notify-header
 ||xn--152-1dd8d.xn--p1ai/widget/
+mercedes-benz-north-cyprus.com,mercedes-benz.at,mercedes-benz.ba,mercedes-benz.be,mercedes-benz.bg,mercedes-benz.ca,mercedes-benz.ch,mercedes-benz.cl,mercedes-benz.co.id,mercedes-benz.co.in,mercedes-benz.co.jp,mercedes-benz.co.kr,mercedes-benz.co.nz,mercedes-benz.co.th,mercedes-benz.co.uk,mercedes-benz.co.za,mercedes-benz.com,mercedes-benz.com.ar,mercedes-benz.com.au,mercedes-benz.com.br,mercedes-benz.com.cn,mercedes-benz.com.co,mercedes-benz.com.cy,mercedes-benz.com.hk,mercedes-benz.com.mt,mercedes-benz.com.mx,mercedes-benz.com.my,mercedes-benz.com.sg,mercedes-benz.com.tr,mercedes-benz.com.tw,mercedes-benz.com.vn,mercedes-benz.cz,mercedes-benz.de,mercedes-benz.dk,mercedes-benz.ee,mercedes-benz.es,mercedes-benz.fi,mercedes-benz.fr,mercedes-benz.gr,mercedes-benz.hr,mercedes-benz.hu,mercedes-benz.ie,mercedes-benz.is,mercedes-benz.it,mercedes-benz.lt,mercedes-benz.lu,mercedes-benz.lv,mercedes-benz.nl,mercedes-benz.no,mercedes-benz.pl,mercedes-benz.pt,mercedes-benz.ro,mercedes-benz.rs,mercedes-benz.ru,mercedes-benz.se,mercedes-benz.si,mercedes-benz.sk##.cp-wrapper
 google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.cn,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.bz,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.nf,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.je,google.jo,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tk,google.tl,google.tm,google.tn,google.to,google.tt,google.vg,google.vu,google.ws##body > amp-user-notification
 google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.cn,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.bz,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.nf,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.je,google.jo,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tk,google.tl,google.tm,google.tn,google.to,google.tt,google.vg,google.vu,google.ws##div#epbar
 google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.cn,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.bz,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.nf,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.je,google.jo,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tk,google.tl,google.tm,google.tn,google.to,google.tt,google.vg,google.vu,google.ws###consent-bump
@@ -5508,6 +5507,7 @@ bibliotheek.be#@#.eu-cookie-compliance-banner:not(body):not(html)
 yeyiangaming.com#@##cookie-banner
 yeyiangaming.com#@#.cookie-banner:not(body):not(html)
 @@||api.usercentrics.eu/settings/*.json$domain=sso.bonify.de
+@@||web.cmp.usercentrics.eu/ui/loader.js$script,domain=casino.psk.hr
 @@||cdn.cookielaw.org/consent/*.json$domain=lasestrellas.tv|televisa.com
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=lasestrellas.tv|televisa.com
 traunstein.de#@##CookieConsent
@@ -5652,6 +5652,7 @@ baur.eu#@#.cookie-consent-content
 @@||api.service.cmp.usercentrics.eu/latest/1/cmp/$domain=sporteurope.tv
 gpiaaf.gov.pt#@#.CookieBanner:not(body):not(html)
 gpiaaf.gov.pt#@##cookie-banner
+@@||cdn.consentmanager.net/delivery/$domain=bildderfrau.de
 @@||cache.consentframework.com/js/*/stub$domain=gizmodo.com|kotaku.com
 @@||cache.consentframework.com/js/*/cmp$domain=gizmodo.com|kotaku.com
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=registration.lovoo.com
