@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: p8ZLwRW1yRCtNMz9UXCMaw
-! Diff-Path: ../patches/14/14-s-1793124802-3600.patch
+! Checksum: uKdqQje+3AkAQbH50U+Xdg
+! Diff-Path: ../patches/14/14-s-1793128391-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.84.32
-! TimeUpdated: 2026-10-27T18:10:39+00:00
+! Version: 2.2.84.33
+! TimeUpdated: 2026-10-27T19:09:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36582,6 +36582,7 @@ autonews.com,nerdwallet.com,creativebloq.com,space.com,nokiapoweruser.com,russia
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rivo.st##aside[aria-label="Join our Discord"]
 selectel.ru##div.footer-info > div.footer-info__block:has(> div.footer-info__block-content > a[href="/subscribe/"])
 niemanlab.org##.roscoe-newsletter-box
 ||niemanlab.org/wordpress/wp-content/plugins/niemanlab-exit-popup/
@@ -65984,6 +65985,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (third-party services)
 !
+||tally.so/embed^$3p
 ||prod.oddsmind.ai/js/oddsmind-chat.min.js$3p
 ||widster.ru^$3p
 ||widget.yourgood.app^
@@ -66143,6 +66145,9 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (specific)
 !
+golem.de##iframe[data-tally-src]
+golem.de##.go-embed-container:has(> div:only-child > iframe[data-tally-src])
+golem.de##.go-embed-container:has(> .go-embed-consent:only-child > p:contains(tally.so))
 fragrantica.com###idIframeEAB
 ||c.fimgs.net/*&itemId=$subdocument
 mid-day.com##p[class^="article_shareyourfeedback_"]

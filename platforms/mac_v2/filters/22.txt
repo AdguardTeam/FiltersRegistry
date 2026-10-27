@@ -1,9 +1,9 @@
-! Checksum: 4Rw3tT/YJCsBwVZOGRvTOA
-! Diff-Path: ../patches/22/22-s-1793121220-3600.patch
+! Checksum: W4KaDTtxV5j3CRnyyNK89Q
+! Diff-Path: ../patches/22/22-s-1793128403-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.15.30
-! TimeUpdated: 2026-10-27T17:09:40+00:00
+! Version: 2.0.15.31
+! TimeUpdated: 2026-10-27T19:09:39+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1418,6 +1418,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (third-party services)
 !
+||tally.so/embed^$third-party
 ||prod.oddsmind.ai/js/oddsmind-chat.min.js$third-party
 ||widster.ru^$third-party
 ||widget.yourgood.app^
@@ -1577,6 +1578,9 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (specific)
 !
+golem.de##iframe[data-tally-src]
+golem.de##.go-embed-container:has(> div:only-child > iframe[data-tally-src])
+golem.de#?#.go-embed-container:has(> .go-embed-consent:only-child > p:contains(tally.so))
 fragrantica.com###idIframeEAB
 ||c.fimgs.net/*&itemId=$subdocument
 mid-day.com##p[class^="article_shareyourfeedback_"]
