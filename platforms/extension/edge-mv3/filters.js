@@ -879,8 +879,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt",
 			"trustLevel": "high",
-			"version": "2.0.6.63",
-			"timeUpdated": "2026-10-27T12:51:20+0000",
+			"version": "2.0.6.64",
+			"timeUpdated": "2026-10-27T16:37:03+0000",
 			"deprecated": false,
 			"languages": [
 				"he"
@@ -904,8 +904,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.2.0.16",
-			"timeUpdated": "2026-10-27T12:51:21+0000",
+			"version": "2.2.0.17",
+			"timeUpdated": "2026-10-27T16:37:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -976,8 +976,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.2.0.16",
-			"timeUpdated": "2026-10-27T12:51:23+0000",
+			"version": "2.2.0.17",
+			"timeUpdated": "2026-10-27T16:37:05+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1118,8 +1118,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.46.55",
-			"timeUpdated": "2026-10-27T12:51:44+0000",
+			"version": "2.0.46.56",
+			"timeUpdated": "2026-10-27T16:37:34+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1258,8 +1258,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.13.20",
-			"timeUpdated": "2026-10-27T12:51:52+0000",
+			"version": "2.0.13.21",
+			"timeUpdated": "2026-10-27T16:37:48+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1394,8 +1394,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.93.47",
-			"timeUpdated": "2026-10-27T12:52:06+0000",
+			"version": "2.0.93.48",
+			"timeUpdated": "2026-10-27T16:38:04+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1522,8 +1522,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.2.87",
-			"timeUpdated": "2026-10-26T20:42:45+0000",
+			"version": "2.0.2.88",
+			"timeUpdated": "2026-10-27T16:38:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
