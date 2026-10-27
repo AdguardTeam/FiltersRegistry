@@ -50,8 +50,8 @@ const MV3_PLATFORM_DIRS = ['chromium-mv3', 'opera-mv3', 'edge-mv3'];
 /**
  * Checks whether a patch should be generated for the given platform filter file.
  *
- * Patches are skipped for the MV3 extension platforms, for the Android Content
- * Blocker, and for the old mac (v1) platform.
+ * Patches are skipped for the MV3 extension platforms and for the old Mac (v1)
+ * platform.
  *
  * @param file - Path of the platform filter file.
  * @param includedFilterIDs - Filter IDs to include; empty (default) processes all.
@@ -82,13 +82,6 @@ export const shouldGeneratePatch = (
 
     if (isMv3) {
         log('Skipped generating patch for MV3 extension');
-        return false;
-    }
-
-    const isAndroidContentBlocker = file.includes('/android-content-blocker/')
-        || file.includes('\\android-content-blocker\\');
-    if (isAndroidContentBlocker) {
-        log('Skipped generating patch for android-content-blocker');
         return false;
     }
 

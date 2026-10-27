@@ -46,10 +46,16 @@ describe('shouldGeneratePatch', () => {
         expect(shouldGeneratePatch(windowsPath, EMPTY_FILTER_IDS, EMPTY_FILTER_IDS)).toBe(false);
     });
 
-    it('skips patch generation for android-content-blocker', () => {
+    it('generates patches for android-content-blocker on unix-style paths', () => {
         const file = 'platforms/extension/android-content-blocker/filters/1.txt';
 
-        expect(shouldGeneratePatch(file, EMPTY_FILTER_IDS, EMPTY_FILTER_IDS)).toBe(false);
+        expect(shouldGeneratePatch(file, EMPTY_FILTER_IDS, EMPTY_FILTER_IDS)).toBe(true);
+    });
+
+    it('generates patches for android-content-blocker on windows-style paths', () => {
+        const file = 'platforms\\extension\\android-content-blocker\\filters\\1.txt';
+
+        expect(shouldGeneratePatch(file, EMPTY_FILTER_IDS, EMPTY_FILTER_IDS)).toBe(true);
     });
 
     it('skips patch generation for the old mac platform', () => {
