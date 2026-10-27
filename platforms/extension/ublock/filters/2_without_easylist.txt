@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: eNAVKXgInCLZXyYimCttQQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793085818-3600.patch
+! Checksum: Km7RSUrpu2eGgG5fPuwUMA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793092581-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.0.14
-! TimeUpdated: 2026-10-27T07:18:58+00:00
+! Version: 2.5.0.15
+! TimeUpdated: 2026-10-27T09:13:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||modusygunaciro.com^
 ||dunanscastle.org^
 ||combatbaskstationery.com^
 ||thoroughgear.com^
@@ -6823,7 +6824,6 @@ ad.broadstreetads.com
 ||jssdk.gogukypynijoxy.com^
 ||jssdk.jucibenadyxyso.com^
 ||jssdk.koxuwurutihugi.com^
-||jssdk.modusygunaciro.com^
 ||jssdk.runative-syndicate.com^
 ||jssdk.sivycafybemude.com^
 ||jssdk.sixapypyfynela.com^
@@ -39527,6 +39527,9 @@ realthaisluts.com##.video-list-ads:style(position: absolute!important; left: -30
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17543
 healthline.com##.css-orw3q8:style(margin-top: 100px!important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216041
+! https://github.com/AdguardTeam/AdguardFilters/issues/245413
+*$script,3p,redirect=noop.js,domain=tvtropes.org
+||cdn.bigcrunch.com^$redirect=noop.js,domain=tvtropes.org,script
 tvtropes.org#@##stick-cont
 tvtropes.org#@#.sb-fad-unit
 tvtropes.org##.sb-fad-unit:style(visibility: collapse !important;)
@@ -40922,6 +40925,13 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+||xxxfetish.tube/new_static/video/spicy-box.
+xxxfetish.tube##a[href][target="_blank"][rel*="sponsored"]
+xxxfetish.tube##.header-promo-link
+xxxfetish.tube##.header-inner > nav > a:not([href^="https://xxxfetish.tube/"])
+xxxfetish.tube##.fh-videos
+xxxfetish.tube##.fp-logo
+xxxfetish.tube##.promo-box
 filecrypt.cc##+js(addEventListener-defuser, click, /_0x|window\.open/)
 content.st##+js(json-prune, $.[?(@.id && @.needCheck && @.plan)].plan)
 catster.com##main > section.mx-auto > div.flex > aside.w-full > div.lg\:sticky > figure[class]:has(> a[href^="https://petsmart.haujjd.net/"])
@@ -62690,6 +62700,8 @@ me##body[bgcolor="#000000"] > div[id="adbtm"][style^="position: fixed;"]
 ! apl*.me - frequently changed domains
 !
 ! xhamster.com
+xhamster.com##+js(set-cookie, x_preroll_shown, 1)
+xhamster.com##+js(set-cookie, x_preroll, 2)
 xhplus.live##.thumb-list > div[class^="thumbContainer-"]
 xhplus.live##div[data-role="promo-messages-unpin"]
 xhplus.live,xhamster.com,xhamster46.desi##.xplayer > div.xh-helper-hidden + div[class*="-hover-menu"]
