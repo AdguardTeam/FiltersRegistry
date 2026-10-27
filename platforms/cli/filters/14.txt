@@ -1,9 +1,9 @@
-! Checksum: n4K0HHJ/sKyJIT3EoQxzxQ
-! Diff-Path: ../patches/14/14-s-1793110654-3600.patch
+! Checksum: 39s8lh0Ua5yRpUCOuLwsoQ
+! Diff-Path: ../patches/14/14-s-1793114201-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.84.29
-! TimeUpdated: 2026-10-27T14:14:13+00:00
+! Version: 2.2.84.30
+! TimeUpdated: 2026-10-27T15:13:08+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18083,6 +18083,8 @@ forum.gamer.com.tr#?#.p-body-inner > .notices > .notice:has(> .notice-content > 
 bethesda.net#?#visor-alert > div > div > div:last-child:has(> a[href$="/cookie-policy"])
 maximum.com.tr#?#.sticky_cookie_warning:has(> a[href^="/TR/gizlilik-politikamiz/Sayfalar/gizlilik-politikamiz.aspx"])
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245277
+!
 ! Hearst Television Inc / Hearst Properties Inc
 4029tv.com,98online.com,abc-7.com,hearst.com,kcci.com,kcra.com,ketv.com,kmbc.com,koat.com,koco.com,ksbw.com,mor-tv.com,mynbc5.com,nbc-2.com,wapt.com,wbal.com,wbaltv.com,wcvb.com,wdsu.com,wesh.com,wgal.com,wisn.com,wjcl.com,wlky.com,wlwt.com,wmtw.com,wmur.com,wpbf.com,wptz.com,wtae.com,wvtm13.com,wxii12.com,wyff4.com##div[data-ketch-backdrop]
 !
@@ -28783,7 +28785,6 @@ ntv.co.jp##.ntv-float-movies
 teaserid.com#$#.popupVarkenBody { overflow: auto !important; }
 teaserid.com#$##tanitimPopModal { display: none !important; }
 tech-iq.ru###telegram-promo-banner
-dulo.cx,dulo.gd,dulo.*##.fixed:has(> div.p-4 > div.items-start > button[aria-label="Dismiss notice"])
 yenisafak.com#%#//scriptlet('set-cookie', 'tvnet-live-video-closed', 'true')
 technopark.ru##.modal-banner
 klerk.ru##.min-h-screen > div > div.bottom-bottom-mobile-menu:has(> a[target="_self"])
@@ -28863,7 +28864,9 @@ superpower.com#$#html { overflow: auto !important; }
 aquatruwater.com##div[id^="alia-popup-root-alia"]
 aquatruwater.com##div[aria-label="Promotional popup"]
 service.ocn.ne.jp###floatingBanner
-streamo.pro#%#//scriptlet('set-cookie', 'join_modal_dismissed', '1')
+streamo.st,streamo.*##.glass-overlay
+streamo.st,streamo.*##.fixed:has(> div.glass-popover)
+streamo.st,streamo.*#%#//scriptlet('set-cookie', 'join_modal_dismissed', '1')
 watchseries.*###domain-change-overlay
 aurorascreen.org##.as-notice-overlay
 infopraca.pl#$#.home-welcome-modal { display: none !important; }
@@ -38285,6 +38288,8 @@ autonews.com,nerdwallet.com,creativebloq.com,space.com,nokiapoweruser.com,russia
 !
 ! SECTION: Subscriptions - Regular rules
 !
+niemanlab.org##.roscoe-newsletter-box
+||niemanlab.org/wordpress/wp-content/plugins/niemanlab-exit-popup/
 sciencenorway.no##a[href^="https://sciencenorway.no/about-sciencenorway/subscribe-to-our-newsletter/"]
 sciencenorway.no##body > div.mnm-form-center > form.mnm-form-body
 ua.mfa.lt##div.one_widget > div.sub-block:has(> form#subscription_form)
@@ -39326,7 +39331,6 @@ tomsguide.com##button[aria-label="Share this article"]
 dailystar.co.uk##article > p[class]:has(> strong > a:is([href="https://www.facebook.com/thedailystarsport#"], [href="https://www.dailystar.co.uk/newsletter-preference-centre/"]))
 shiksha.com##.adpPwa_summary > div[style]:has(> #inlineRegWidget)
 cinevibe.*#%#//scriptlet('trusted-set-local-storage-item', 'discord-splash-dismissed', '9999999999999')
-dulo.tv#%#//scriptlet('set-local-storage-item', 'amri-discord-popup-dismissed', '1')
 auto.economictimes.indiatimes.com#$#html { overflow: auto !important; }
 auto.economictimes.indiatimes.com#$#body { overflow: auto !important; }
 auto.economictimes.indiatimes.com#$#.model-bg { display: none !important; }
@@ -49377,7 +49381,7 @@ m.megabox.co.kr#$##mainAppInsPop { display: none !important }
 m.megabox.co.kr#$#.induceBanner { display: none !important; }
 m.megabox.co.kr#$#.modal-open { overflow: auto !important; }
 weareiowa.com##li[aria-label="App promo"]
-streamo.pro##a[aria-label="Download Android app"]
+streamo.st,streamo.*##a[aria-label="Download Android app"]
 firefox.com##.fl-qr-code-floating-snippet
 shopping.naver.com##div[class^="_appStarterBanner_app_starter_banner_"]
 t-j.ru##div[class^="_commonNavItems_"] > a[href^="https://journal.onelink.me/"]
@@ -53694,6 +53698,8 @@ instagram.com##._aagw:empty
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245392
+tanstack.com##.flex.group\/rail
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245529
 bigpara.hurriyet.com.tr##.interested-widget
 hurriyet.com.tr##.news-flash
