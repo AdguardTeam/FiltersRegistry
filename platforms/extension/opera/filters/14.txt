@@ -1,9 +1,9 @@
-! Checksum: VOw5gcf8/E/cSEQjIbLt8g
-! Diff-Path: ../patches/14/14-s-1793147094-3600.patch
+! Checksum: NZ9e0VmA/rztu437ypn1MQ
+! Diff-Path: ../patches/14/14-s-1793150019-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.84.34
-! TimeUpdated: 2026-10-28T00:21:29+00:00
+! Version: 2.2.84.35
+! TimeUpdated: 2026-10-28T01:10:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2675,6 +2675,9 @@ aluramy.pl,ameco-meble-biurowe.pl,exerion.pl,multigastro.pl,badrex-sklep.pl,spin
 !
 ! NOTE: Regular rules
 !
+||market-rolniczy.pl/modules/shopcreoconsent/
+bilety.lechpoznan.pl#%#//scriptlet('trusted-set-cookie', 'cookies_accepted_new_ex', '$currentDate$')
+lechpils.pl##.cookies--cloak
 musiccreator.ai##section[aria-label="Cookie Consent"]
 ||contivus.pl/wp-content/plugins/ks-cookiemate/
 bellevue-wengen.ch##.extended_cookie_overlay
@@ -10671,7 +10674,7 @@ pamprofi.cz#$#body.modal-open { overflow: auto !important; padding-right: 0 !imp
 romstal.ro,librarul.ro##.gdpr_popup
 xing.com##div[title="Dimmer"]
 felgenshop.de##div[class^="keksbox"]
-oponeo.de###cookiePolicyTooltip
+opony.com,oponeo.de###cookiePolicyTooltip
 dotwatcher.cc##.jasubA
 vergoelst.de#$?#body > div.ReactModalPortal:has(> div[class*="overlayModalCookieConsentVariant"]) { display:none!important; }
 vergoelst.de#$#html[class*="htmlOpenBlur"] main [class^="o-"] { filter: none!important; }
@@ -19905,6 +19908,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245587
+bilety.lechpoznan.pl#@##cookie-dialog
+bilety.lechpoznan.pl#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245567
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=magentasport.de
 @@||cdn.cookielaw.org/consent/*.json$domain=magentasport.de
