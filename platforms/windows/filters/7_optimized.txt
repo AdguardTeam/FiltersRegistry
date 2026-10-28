@@ -1,9 +1,9 @@
-! Checksum: SMoYoc8pwAZgCVuGTW31gQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1793196855-3600.patch
+! Checksum: uzIOvh5U1OGhhWPeVLrLyA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1793200351-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.93
-! TimeUpdated: 2026-10-28T14:09:29+00:00
+! Version: 2.0.77.94
+! TimeUpdated: 2026-10-28T15:09:16+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||onetag.adnx.jp^
@@ -1254,6 +1254,8 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 ||amazonaws.com/app.apk?id=$document
 .com/download.php?id=$subdocument
 ||amazonaws.com/Vpass.apk$document
+.com/c*apk/e-tax%E$document
+.com/*/e-tax%E5%9B%BD%E7%A8%8E%E3%82%A2%E3%83%97%E3%83%AA|$document
 .com/*/e-tax%E5%9B%BD%E7%A8%8E|$document
 .com/*/e-tax|$document
 .com/*/e-tax%E3%82%A2%E3%83%97%E3%83%AA|$document
@@ -1554,15 +1556,19 @@ city.aomori.aomori.jp,lg.jp,city.numata.gunma.jp,city.tokai.aichi.jp,city.noda.c
 city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.ikoma.lg.jp,city.higashiosaka.lg.jp,city.higashiomi.shiga.jp,city.ogaki.lg.jp,city.tama.lg.jp,city.inzai.lg.jp,city.kyotanabe.lg.jp,city.himeji.lg.jp,city.hirakata.osaka.jp,city.osaka.lg.jp,city.kyoto.lg.jp,city.maizuru.kyoto.jp,city.iga.lg.jp##.bana
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+twidouga.net###video-grid > div.grid-item--wide[style]:not([data-id])
+||5ch.io/adstir.html
+kako.5ch.io##.h-\[300px\]
+kako.5ch.io##.w-\[728px\]
+ichioshi.allabout.co.jp##.ichioshi_pc_anchor
+ichioshi.allabout.co.jp#$#footer[style="margin-bottom: 120px;"] { margin-bottom: 0 !important; }
 ichioshi.allabout.co.jp##.banner_advertisement
-togetter.com##.amazon_sale_box
+posfie.com,togetter.com##.amazon_sale_box
 nikkinonline.com##.ad-slot--image
-dengekionline.com#?#section[class^="RightColumn-"] > h2[class^="TitleHeadLinePattern"]:contains(/^PR$/)
 dengekionline.com##section[class*="topBackgroundJack"]:has(> div[class*="headerBanner"])
-dengekionline.com##aside[class*="_leftColumn"] > div[class*="_stickyBanner"]
 ||twidouga.net/js/popunder-inject.js
-2game.info##.pcNone > p.pb-cap
-2game.info##.pcNone > p.pb-cap + div
+2game.info##dl > dd[class*="None"]:has(> p.pb-cap + div[class])
+||2game.info/pr/menu.js
 ||2game.info/adf/
 dengekionline.com#?#div[class^="ArticleDetailBody-"][class$="_buttonList"]:has(> a[data-event-click="button_amazon"]:contains(で調べる))
 dengekionline.com##div[class$="rectangleBanner"]
@@ -7458,7 +7464,7 @@ game8.jp##.l-jack__top_container
 doujin.koe-koe.com##.ranking > li > a[href^="https://ac.congrab.com/"]
 ||eroita.net/banner_in/
 ||asahicom.jp/ad/js/
-urbanlife.tokyo,2game.info##div[class^="fluct-unit"]
+urbanlife.tokyo##div[class^="fluct-unit"]
 androidjiten.com###surfing_adsense_widget-4
 teratail.com##div[class^="googlePublisherTags_ads"]
 teratail.com##div[class*="_questionBottomAdArea_"]

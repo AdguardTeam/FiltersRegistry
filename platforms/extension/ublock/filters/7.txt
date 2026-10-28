@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: pBayD+TX38LRNEKRrg8RKw
-! Diff-Path: ../patches/7/7-s-1793196830-3600.patch
+! Checksum: 57Uzwdf7Ccar4YZR3d6GhQ
+! Diff-Path: ../patches/7/7-s-1793200338-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.77.93
-! TimeUpdated: 2026-10-28T14:09:29+00:00
+! Version: 2.0.77.94
+! TimeUpdated: 2026-10-28T15:09:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1637,6 +1637,8 @@ hostlove.com###index_nav > h1:style(padding-top: 30px!important;)
 ||amazonaws.com/app.apk?id=$document
 .com/download.php?id=$subdocument
 ||amazonaws.com/Vpass.apk$document
+.com/c*apk/e-tax%E$document
+.com/*/e-tax%E5%9B%BD%E7%A8%8E%E3%82%A2%E3%83%97%E3%83%AA|$document
 .com/*/e-tax%E5%9B%BD%E7%A8%8E|$document
 .com/*/e-tax|$document
 .com/*/e-tax%E3%82%A2%E3%83%97%E3%83%AA|$document
@@ -1984,15 +1986,19 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+twidouga.net###video-grid > div.grid-item--wide[style]:not([data-id])
+||5ch.io/adstir.html
+kako.5ch.io##.h-\[300px\]
+kako.5ch.io##.w-\[728px\]
+ichioshi.allabout.co.jp##.ichioshi_pc_anchor
+ichioshi.allabout.co.jp##footer[style="margin-bottom: 120px;"]:style(margin-bottom: 0 !important;)
 ichioshi.allabout.co.jp##.banner_advertisement
-togetter.com##.amazon_sale_box
+posfie.com,togetter.com##.amazon_sale_box
 nikkinonline.com##.ad-slot--image
-dengekionline.com##section[class^="RightColumn-"] > h2[class^="TitleHeadLinePattern"]:contains(/^PR$/)
 dengekionline.com##section[class*="topBackgroundJack"]:has(> div[class*="headerBanner"])
-dengekionline.com##aside[class*="_leftColumn"] > div[class*="_stickyBanner"]
 ||twidouga.net/js/popunder-inject.js
-2game.info##.pcNone > p.pb-cap
-2game.info##.pcNone > p.pb-cap + div
+2game.info##dl > dd[class*="None"]:has(> p.pb-cap + div[class])
+||2game.info/pr/menu.js
 ||2game.info/adf/
 dengekionline.com##div[class^="ArticleDetailBody-"][class$="_buttonList"]:has(> a[data-event-click="button_amazon"]:contains(で調べる))
 dengekionline.com##div[class$="rectangleBanner"]
@@ -7875,7 +7881,7 @@ game8.jp##.l-jack__top_container
 doujin.koe-koe.com##.ranking > li > a[href^="https://ac.congrab.com/"]
 ||eroita.net/banner_in/
 ||asahicom.jp/ad/js/
-urbanlife.tokyo,2game.info##div[class^="fluct-unit"]
+urbanlife.tokyo##div[class^="fluct-unit"]
 androidjiten.com###surfing_adsense_widget-4
 teratail.com##div[class^="googlePublisherTags_ads"]
 teratail.com##div[class*="_questionBottomAdArea_"]
