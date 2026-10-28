@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: F2aaXda78MIBJId+6IklYQ
-! Diff-Path: ../patches/2/2-s-1793185952-3600.patch
+! Checksum: FijBLDeP2RbbfUrqJeV5eg
+! Diff-Path: ../patches/2/2-s-1793189809-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.0.41
-! TimeUpdated: 2026-10-28T11:08:56+00:00
+! Version: 2.5.0.42
+! TimeUpdated: 2026-10-28T12:12:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13715,6 +13715,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245356
+@@||waiting.info/rad_singlepageapp.js^$domain=waiting.info
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245622
 live-xo.lovable.app##+js(prevent-fetch, method:HEAD)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245535
@@ -40935,6 +40937,8 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+savefiles.com###sf-ad-overlay
+waiting.info###contentBillboard
 ||javovo.net/ad-to-go/
 javrank.com##.nav a[target="_blank"]
 ||pic.desu.xxx/content/banner/*.gif
@@ -50499,7 +50503,7 @@ esports.net##.espnet-conv-slot
 zee5.com##div[playeradtag="ad"]
 fivethirtyeight.com###ad-InContent
 fivethirtyeight.com##aside[class$="-sidebar-ad"]
-procyclingstats.com##div[class^="r89-"]
+waiting.info,procyclingstats.com##div[class^="r89-"]
 analyticsindiamag.com##[data-id="07dec40"]
 ekathimerini.com##div[id^="nx"]
 analyticsinsight.net##.widget-5
@@ -55099,7 +55103,7 @@ primarygames.com###overlay-hideme
 primarygames.com##.below-gameinfo > .AD300x250-wrapper
 primarygames.com##.outer_gamecat_wrap > .gamecat_wrap300x250
 friv.land##.banner-advertisement
-hentai-moon.com,megatube.xxx,dropstab.com,stremio-addons.net,pornoreino.com,okporn.xxx,productreview.com.au,videohelp.com,techinferno.com,boyfriendtv.com##a[rel="sponsored"]
+omgjav.com,hentai-moon.com,megatube.xxx,dropstab.com,stremio-addons.net,pornoreino.com,okporn.xxx,productreview.com.au,videohelp.com,techinferno.com,boyfriendtv.com##a[rel="sponsored"]
 letmejerk.com##.wrapper > div.container + div[class]
 xxxvogue.net###embed-parrot
 xxxvogue.net###embed-embed-overlay
@@ -62132,9 +62136,13 @@ myabandonware.com##div:matches-attr(/data-[a-z][0-9]{3,4}-ad/)
 9news.com,myfoxzone.com,wtol.com,5newsonline.com,fox61.com,wqad.com,fox43.com,10tv.com,localmemphis.com,newswest9.com,weareiowa.com,krem.com,kcentv.com,cbs19.tv,kiiitv.com,12newsnow.com,cbs8.com,kvue.com,wbir.com,wltx.com,wgrz.com,newscentermaine.com,whas11.com,ktvb.com,13wmaz.com,firstcoastnews.com,wnep.com,wtsp.com,wfaa.com,kgw.com,king5.com,wcnc.com,kens5.com,ksdk.com,khou.com,wusa9.com,abc10.com,wwltv.com,11alive.com,wfmynews2.com,thv11.com,wkyc.com,wzzm13.com,kare11.com,13newsnow.com,12news.com##div[data-module="just-a-pinch"]
 !
 ! KickAssAnime
-/_nuxt/*.js?v3|$script,domain=kaa.lt
-kaa.lt##+js(abort-on-stack-trace, open, attemptPopup)
-kaa.lt,kaa.*,kickassanimes.*,kaas.*,kickassanime.*##.latest-update > div.row > div[class^="col-md-"]:has(> div.text-center > div.hide-button)
+/300x250*.html|$subdocument,domain=kaa.lt|kaa.*
+/_nuxt/*.js?$script,domain=kaa.lt|kaa.*
+kaa.lt,kaa.*##+js(abort-on-stack-trace, open, attemptPopup)
+kaa.lt,kaa.*##.v-list > a.romantic-highlight
+kaa.lt,kaa.*###premium-swipey-bar
+kaa.lt,kaa.*##.row > div[class^="col-"]:has(> div.show-item > div[class*="native-ad"])
+kaa.lt,kaa.*##.row > div[class^="col"] > div.text-center:has(> div.hide-button)
 !
 ! fulltv
 ||ver.gratis^$~image,domain=fulltv.com.ar|fulltv.tv|fulltv.com.mx
@@ -90411,6 +90419,7 @@ browsershots.org#@#.advert_area
 ||biqadnwzega.in^
 ||biqhnzqiljycl.site^
 ||biqtlcqiutnjk.online^
+||birdebigottyasteer.cfd^
 ||birdpriceall.com^
 ||birdseyewings.co^
 ||biribatwinkle.cfd^
@@ -90903,6 +90912,7 @@ browsershots.org#@#.advert_area
 ||boutmewasobea.org^
 ||bovinetimingunsaddle.com^
 ||bovmkbuiaddbb.website^
+||bovvaivwmnjxa.site^
 ||bowablejusting.cfd^
 ||bowermisrule.com^
 ||bowersorgamy.com^
@@ -92418,6 +92428,7 @@ browsershots.org#@#.advert_area
 ||ckaibkxlldgui.site^
 ||ckauyijrivige.site^
 ||ckbgvpjrjcwai.site^
+||ckffxtbzbbrlf.site^
 ||ckfkkwjvpcsbw.site^
 ||ckgbulrcgantw.space^
 ||ckhqqureiipcd.space^
@@ -102910,6 +102921,7 @@ browsershots.org#@#.advert_area
 ||jeetyetmedia.com^
 ||jefbhujbrbfsq.site^
 ||jeflakrlrdysq.website^
+||jegksgumzeszc.online^
 ||jegouryzasiao.site^
 ||jeiuukvjmedjs.space^
 ||jeiwumcsw.com^
@@ -112801,6 +112813,7 @@ browsershots.org#@#.advert_area
 ||qofvgeufsacrw.site^
 ||qofzpsdexjmbw.site^
 ||qohdzcdlxukep.online^
+||qohsbzioyziuq.site^
 ||qoiqfckhwinup.online^
 ||qojeoccuereut.space^
 ||qokzrwccbilzz.website^
@@ -119371,6 +119384,7 @@ browsershots.org#@#.advert_area
 ||ucqvrreziifwz.website^
 ||ucrdnjnlcorqx.online^
 ||ucsnddigmtwoe.space^
+||ucsoopwofnqby.website^
 ||ucukokdokjydj.space^
 ||ucuqtxhmdgvfr.website^
 ||ucuumhsxenzwq.online^
@@ -124119,6 +124133,7 @@ browsershots.org#@#.advert_area
 ||ymxcaxpqjnxvi.site^
 ||ymzukfvbwuofd.site^
 ||ynafusihflnzm.online^
+||ynamkbxzunzpl.online^
 ||ynbsakxipni.net^
 ||yncddpjquwij.net^
 ||yncsudpwwfklq.online^
