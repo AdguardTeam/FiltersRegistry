@@ -1520,8 +1520,9 @@ github.com#$#li:has(> [data-tab-item="agents"]) { max-width: 0px !important; mar
 github.com##[data-component="ActionList.Item"]:has(> [data-tab-item="agents"])
 
 ! -- https://github.com/easylist/easylistchina
-! "Ask Copilot about this repository" if no README is present
-github.com##.OverviewRepoFiles-module__Box_1__OXeac:has([data-component="Blankslate"])
+! "Ask Copilot about this repository" when repository has no README file
+! Might be limited to enterprise users with Copilot
+github.com##[class^="OverviewRepoFiles-module_"]:has([data-component="Blankslate"] .octicon-copilot)
 
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
 ! File header - "Ask Copilot about this file" button
@@ -5062,15 +5063,15 @@ studio.youtube.com##ytcp-creator-chat-trigger
 !   by asking to "Talk with a human", so the rule is commented out below.
 ! studio.youtube.com##.ytcpSamChatHost
 
-! -- Dashboard tab
+! -- https://studio.youtube.com/channel/[channel_id]/ (Dashboard tab)
 ! "Catch me up on this video"
 studio.youtube.com##ytcp-creator-chat-entrypoint-button
 
-! -- Content tab
+! -- https://studio.youtube.com/channel/[channel_id]/videos/ (Content tab)
 ! Inspiration tab
 studio.youtube.com###inspiration-tab
 
-! -- Analytics tab
+! -- https://studio.youtube.com/channel/[channel_id]/analytics/ (Analytics tab)
 ! Brainstorm video ideas
 studio.youtube.com##tp-yt-paper-item[test-id="brainstorm"]
 ! Suggested questions for channel analytcs in "Analytics" > "Overview"
@@ -5080,7 +5081,7 @@ studio.youtube.com##.screen-banners-container.yta-screen:has(#anchor[href="https
 ! "Brainstorm video ideas" button that appears under "Analytics" > "Trends" after using search bar
 studio.youtube.com##.brainstorm-ideas-button
 
-! -- Community tab
+! -- https://studio.youtube.com/channel/[channel_id]/comments/ (Community tab)
 ! Search chip
 studio.youtube.com##ytcp-chip[aria-label^="Search"]
 ! "Brainstorm video ideas" button in action menu (...) under "Community" > "Comments"
@@ -5089,11 +5090,13 @@ studio.youtube.com#?#ytcp-menu-service-item-renderer:contains(Brainstorm video i
 ! https://support.google.com/youtube/answer/10357396
 studio.youtube.com###comment-smart-replies
 
-! -- Video Details page
+! -- https://studio.youtube.com/video/[video_id]/edit (Video Details page)
 ! "Brainstorm video ideas" in action menu (⋮)
 studio.youtube.com##[test-id="VIDEO_BRAINSTORM_IDEA"]
 ! "Get Suggestions" button for thumbnail
 studio.youtube.com##.ask-studio-container
+! Editor - Create - Turn audio into Short
+studio.youtube.com###entrypoint-audiovision-shorts-row
 
 ! === Zillow ===
 ! Floating chatbot icon

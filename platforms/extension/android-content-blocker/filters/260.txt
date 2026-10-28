@@ -1,9 +1,9 @@
-! Checksum: E1l88/xHblOj7C+EoWdsvQ
-! Diff-Path: ../patches/260/260-s-1793205547-14400.patch
+! Checksum: 6yXJ4KvLQi2AKlbSr1Pc0Q
+! Diff-Path: ../patches/260/260-s-1793219963-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.90
-! TimeUpdated: 2026-10-28T16:36:33+00:00
+! Version: 2.0.2.91
+! TimeUpdated: 2026-10-28T20:36:34+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1075,7 +1075,8 @@ github.com##[data-testid="copilot-free-user-checklist"]
 ! "Agents" tab in repository navbar (desktop & mobile)
 ! * Via https://www.reddit.com/r/uBlockOrigin/comments/1vkxr0j/comment/p2xake5/
 ! -- https://github.com/easylist/easylistchina
-! "Ask Copilot about this repository" if no README is present
+! "Ask Copilot about this repository" when repository has no README file
+! Might be limited to enterprise users with Copilot
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
 ! File header - "Ask Copilot about this file" button
 github.com###blob-view-header-copilot-icon
@@ -3555,31 +3556,33 @@ studio.youtube.com##ytcp-creator-chat-trigger
 ! * There's an "Chat with creator support" button that uses AI, but you can get a real person
 !   by asking to "Talk with a human", so the rule is commented out below.
 ! studio.youtube.com##.ytcpSamChatHost
-! -- Dashboard tab
+! -- https://studio.youtube.com/channel/[channel_id]/ (Dashboard tab)
 ! "Catch me up on this video"
 studio.youtube.com##ytcp-creator-chat-entrypoint-button
-! -- Content tab
+! -- https://studio.youtube.com/channel/[channel_id]/videos/ (Content tab)
 ! Inspiration tab
 studio.youtube.com###inspiration-tab
-! -- Analytics tab
+! -- https://studio.youtube.com/channel/[channel_id]/analytics/ (Analytics tab)
 ! Brainstorm video ideas
 studio.youtube.com##tp-yt-paper-item[test-id="brainstorm"]
 ! Suggested questions for channel analytcs in "Analytics" > "Overview"
 ! "AI tools for brainstorming video ideas have moved" banner under "Analytics" > "Trends"
 ! "Brainstorm video ideas" button that appears under "Analytics" > "Trends" after using search bar
 studio.youtube.com##.brainstorm-ideas-button
-! -- Community tab
+! -- https://studio.youtube.com/channel/[channel_id]/comments/ (Community tab)
 ! Search chip
 studio.youtube.com##ytcp-chip[aria-label^="Search"]
 ! "Brainstorm video ideas" button in action menu (...) under "Community" > "Comments"
 ! Comment reply suggestions under "Community" > "Comments"
 ! https://support.google.com/youtube/answer/10357396
 studio.youtube.com###comment-smart-replies
-! -- Video Details page
+! -- https://studio.youtube.com/video/[video_id]/edit (Video Details page)
 ! "Brainstorm video ideas" in action menu (⋮)
 studio.youtube.com##[test-id="VIDEO_BRAINSTORM_IDEA"]
 ! "Get Suggestions" button for thumbnail
 studio.youtube.com##.ask-studio-container
+! Editor - Create - Turn audio into Short
+studio.youtube.com###entrypoint-audiovision-shorts-row
 ! === Zillow ===
 ! Floating chatbot icon
 ! * Appears during searches. Does not appear for all users.
