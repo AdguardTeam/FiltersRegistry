@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kw5nHF3OXldB1mBaWqI0Eg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793164306-3600.patch
+! Checksum: CPd9sluYD5xwVg61t/h57w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793168350-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.0.35
-! TimeUpdated: 2026-10-28T05:08:40+00:00
+! Version: 2.5.0.36
+! TimeUpdated: 2026-10-28T06:14:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14121,6 +14121,7 @@ okteve.com##+js(abort-current-script, EventTarget.prototype.addEventListener, /p
 /js/pk-*.js?$domain=streamcash.to|strcsh.xyz
 /js/detect.js$domain=streamcash.to|strcsh.xyz
 ||streamcash.to/js/rtc.js
+||streamcash.to/s/*.js|$script,redirect=noop.js
 streamcash.to##+js(no-xhr-if, pagead2.googlesyndication.com)
 streamcash.to##+js(set-constant, __shown, 1)
 streamcash.to#@#.Footer_1-ad-holder
@@ -40932,6 +40933,8 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+||mangaraw24.online/api/v*/ads/
+||hivex.stream/scripts/profit.js
 boyfriendtv3.com##[src^="https://www.boyfriendtv3.com/zv3/"]
 boyfriendtv3.com##.tilebar-line
 boyfriendtv3.com##.media-listing-grid > .js-quiet.mtile-x7:has(> .mtile-x7__inner-wrapper a[href^="/zv3/cam"])
@@ -62880,8 +62883,8 @@ uqload.*##+js(abort-current-script, Node.prototype.appendChild, aclib)
 ! Example: https://ta.alluviopurreic.com/rKtCq1ZqtiJJ/84527
 ! Example: https://daejyre.com/riInStepVNRaVlz/wvqMG
 /^https:\/\/(?:[0-9a-z]+\.){1,2}(?:cfd|rest)\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/(?:\d{6}|[A-Za-z]{5})$/$script,3p,match-case
-/^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{4,5}$/$script,3p,match-case
-/^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.shop\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{4,5}(?:[&?]param_\d=\d+)*$/$subdocument,3p,match-case
+/^https:\/\/(?:[a-z]{2}\.)?[a-z]{6,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{4,5}$/$script,3p,match-case
+/^https:\/\/(?:[a-z]{2}\.)?[a-z]{6,14}\.shop\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{4,5}(?:[&?]param_\d=\d+)*$/$subdocument,3p,match-case
 ! https://github.com/easylist/easylist/issues/6476
 ! Example: https://curtisbarways.com/gZ1vfAd01DRoG/60809
 /^https?:\/\/(?:[a-z]{2}|[a-z]{5,7})?\.?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{3,6}(?:[&?][0-9_a-z]+=[0-9A-Za-z-]+)*$/$subdocument,script,xhr,3p,match-case
@@ -68499,6 +68502,7 @@ implbits.com#@#.banner_container
 !
 ! NOTE: Specific rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245560
 ! log.rlsbb.in - Search not showing anything
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244926
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245108
