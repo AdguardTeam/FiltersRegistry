@@ -1,9 +1,9 @@
-! Checksum: rZkpzZYCOJ3HXU1zQ2NTag
-! Diff-Path: ../patches/260/260-s-1793149029-14400.patch
+! Checksum: RLYLisNbr+gMLsjp0rdDCQ
+! Diff-Path: ../patches/260/260-s-1793205578-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.89
-! TimeUpdated: 2026-10-28T00:54:54+00:00
+! Version: 2.0.2.90
+! TimeUpdated: 2026-10-28T16:36:33+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1765,14 +1765,18 @@ drive.google.com##.j6o35e:has([aria-label="You now have promotional access to au
 drive.google.com##[data-test-id="help-me-organize-chip-container"]
 ! Action bar for selected file - "Ask Gemini"/"Catch me up" buttons
 drive.google.com##.iQnZTe.SMHH7
-! More Actions menu (⋮) on a file (Ask Gemini, Audio Overview, Suggest file moves)
-! * Options change depending on file type
+! More Actions menu (⋮) on a file
+! Options change depending on file type
+! * Ask Gemini
 drive.google.com##[role="menuitem"]:has(path[d^="M480-80q-6,0-11-4t-7-10q-17-67-51-126T328-328T220"])
 drive.google.com#$?#[role="menuitem"]:has(path[d^="M480-80q-6,0-11-4t-7-10q-17-67-51-126T328-328T220"]) { remove: true; }
 drive.google.com##[role="menuitem"]:has(path[d^="M480-80q-6,0-11-4t-7-10q-17-67-51-126T328-328T220"]) + [role="separator"]
+drive.google.com##[role="separator"] + [data-is-tooltip-wrapper]:has(> #menu-item-tooltip-13) + [role="separator"]
+! * Audio Overview
 drive.google.com##[role="menuitem"]:has(path[d^="M360-80V-800h80V-80H360ZM520-240V-640h80v400H520ZM200"])
 drive.google.com#$?#[role="menuitem"]:has(path[d^="M360-80V-800h80V-80H360ZM520-240V-640h80v400H520ZM200"]) { remove: true; }
 drive.google.com##[role="menuitem"]:has(path[d^="M360-80V-800h80V-80H360ZM520-240V-640h80v400H520ZM200"]) + [role="separator"]
+! * Suggest file moves
 drive.google.com##[data-is-tooltip-wrapper="true"]:has(> [role="menuitem"] path[d^="M160-160q-33,0-56.5-23.5T80-240V-720q0-33 23.5-56.5T160"])
 drive.google.com#$?#[data-is-tooltip-wrapper="true"]:has(> [role="menuitem"] path[d^="M160-160q-33,0-56.5-23.5T80-240V-720q0-33 23.5-56.5T160"]) { remove: true; }
 drive.google.com##[data-is-tooltip-wrapper="true"]:has(> [role="menuitem"] path[d^="M160-160q-33,0-56.5-23.5T80-240V-720q0-33 23.5-56.5T160"]) + [role="separator"]
