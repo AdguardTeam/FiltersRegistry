@@ -1,9 +1,9 @@
-! Checksum: 4l61sf5Idet6AzmwziR63A
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1793149010-14400.patch
+! Checksum: Lq+H6kviYhwKZSqph/ZrRg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1793162434-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.71.24
-! TimeUpdated: 2026-10-28T00:54:17+00:00
+! Version: 2.1.71.25
+! TimeUpdated: 2026-10-28T04:37:14+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -139,6 +139,7 @@ _social-bar/
 ###Followers1
 ###ShareButton
 ###ShareItemBtn
+###SocialContainer
 ###SocialMedia
 ###SocialShare
 ###Socialize
@@ -158,6 +159,7 @@ _social-bar/
 ###articlesocial
 ###aside-social-links-container
 ###bdshare
+###block-menu-menu-social
 ###block-menu-menu-social-links
 ###block-menu-menu-social-media-links
 ###block-social
@@ -217,7 +219,7 @@ _social-bar/
 ###fb-box
 ###fb-fanbox
 ###fb-like
-###fb-like-box
+###fb-likebox
 ###fbDiv
 ###fbLike
 ###fbLikeButton
@@ -242,6 +244,7 @@ _social-bar/
 ###follow-links
 ###follow-us-box
 ###follow-us-widget
+###follow-widget
 ###followBox
 ###followFB
 ###followFBSvg
@@ -893,7 +896,6 @@ _social-bar/
 ##.awp-media-share-container
 ##.b-article__social
 ##.b-event_links__share__block
-##.b-follow-us
 ##.b-footer__social
 ##.b-footer_social
 ##.b-header__social
@@ -999,7 +1001,6 @@ _social-bar/
 ##.c-footer__social-media
 ##.c-global-header__social
 ##.c-header__social
-##.c-icon--whatsapp
 ##.c-list--social
 ##.c-nav-social
 ##.c-navbar-primary__social
@@ -1012,19 +1013,18 @@ _social-bar/
 ##.c-social-bar
 ##.c-social-container
 ##.c-social-share
-##.c-social-shares
 ##.c-social-sharetool
 ##.c-social-sharing
 ##.c-socialSharebar_container
 ##.c-social__list
 ##.c-socials
-##.c-socials-aside
 ##.c-tools-share
 ##.cShareLink
 ##.c_facebook
 ##.c_hxcms_social_buttons
 ##.c_share
 ##.c_social-toolbar
+##.c_social_media
 ##.caas-share-section
 ##.cactus-share-and-like
 ##.canvas-share-buttons
@@ -1274,6 +1274,7 @@ _social-bar/
 ##.floating-share-bar
 ##.floating-social
 ##.floating-social-container
+##.fluid-share-cameraroll-view
 ##.fluid_share_container
 ##.fluid_share_wrapper
 ##.fly-text-share
@@ -1778,7 +1779,6 @@ _social-bar/
 ##.lzd-follow-us-icon
 ##.m-footer-social
 ##.m-header--social-nav
-##.m-icon-facebook
 ##.m-icon-tw
 ##.m-share
 ##.m-share-bar__link
@@ -1881,7 +1881,6 @@ _social-bar/
 ##.nav-share-btn
 ##.nav-soc-but
 ##.nav-social-links
-##.nav-social-wrap
 ##.navSocial
 ##.nav__social
 ##.nav_share
@@ -1997,6 +1996,7 @@ _social-bar/
 ##.post-like-share
 ##.post-meta-share
 ##.post-share
+##.post-share-area
 ##.post-share-b
 ##.post-share-bar
 ##.post-share-bot
@@ -2009,7 +2009,6 @@ _social-bar/
 ##.post-share-links
 ##.post-share-menu-item
 ##.post-share-panel
-##.post-share-twitter
 ##.post-share-widget
 ##.post-share__sticky-wrapper
 ##.post-sharing
@@ -2701,7 +2700,6 @@ _social-bar/
 ##.social-float
 ##.social-follow
 ##.social-follow-bar
-##.social-follow-item
 ##.social-foot
 ##.social-footer
 ##.social-footer-block
@@ -2786,6 +2784,7 @@ _social-bar/
 ##.social-news-buttons
 ##.social-newsletter
 ##.social-newsletter-container
+##.social-overlay
 ##.social-pages
 ##.social-panel
 ##.social-plugins
@@ -3204,7 +3203,6 @@ _social-bar/
 ##.twitterWidget
 ##.twitter_btn
 ##.twitter_feed
-##.twitter_follow
 ##.twitter_icn
 ##.twitter_icon
 ##.twitter_link
@@ -3214,7 +3212,6 @@ _social-bar/
 ##.twitterbutton
 ##.twitterfollow
 ##.twitterjo
-##.twitterlink
 ##.twittershare
 ##.twshare
 ##.twt-icon
@@ -3624,7 +3621,6 @@ tandfonline.com##.a2a_share_target
 wccftech.com##.add-google
 bgr.com,chowhound.com,engadget.com,foodie.com,foodrepublic.com,gardenguides.com,glam.com,grunge.com,housedigest.com,hunker.com,islands.com,jalopnik.com,looper.com,nickiswift.com,planetware.com,sciencing.com,slashfilm.com,slashgear.com,thedailymeal.com,thelist.com,thetakeout.com,tvline.com,women.com,wrestlinginc.com##.add-on-google-widget
 consequence.net##.add-to-google
-usmagazine.com##.add-to-google-banner
 citynews.ca##.add-trusted-source
 techspot.com##.add-us
 planetizen.com##.addtoany_list
@@ -3897,7 +3893,6 @@ aajtak.in,gnttv.com,indiatoday.in,indiatodayne.in##.share-social-icons
 alarabiya.net,timeextension.com##.share-this
 dailymail.co.uk,thisismoney.co.uk##.share-twitter
 dailymail.co.uk,thisismoney.co.uk##.share-whatsapp
-audi-sport.net,overtake.gg##.shareButtons
 windowsreport.com##.shareMobile
 economictimes.indiatimes.com##.sharePbanner
 ggmax.com.br,gov.br,wtop.com##.share__container
@@ -4323,6 +4318,7 @@ fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
 alfredopedulla.com##.tw-banner
 mymovies.it##.vota-pul-consiglio
+virgilio.it##.vv-shr
 ilgiorno.it,ilrestodelcarlino.it,iltelegrafolivorno.it,lanazione.it,quotidiano.net##div[class^="SocialShare_"]
 ilpost.it##div[class^="_share_"]
 nlab.itmedia.co.jp###my_social_top
@@ -4411,7 +4407,6 @@ europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
 adn40.mx##.ListSiguenos-SocialStrip
 elpais.com.uy##.Page-actions-wrapper
-antena3.com##.article-author__social
 rpp.pe##.article__follow
 elfinanciero.com.mx##.b-footer__social-links-container
 estadiodeportivo.com##.boton-share
@@ -4608,4 +4603,3 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||github.com^$generichide
 @@||github.io^$generichide
 @@||ifttt.com^$generichide
-@@||restream.io^$generichide
