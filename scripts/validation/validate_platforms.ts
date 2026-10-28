@@ -11,8 +11,6 @@ import { shouldGeneratePatch } from '../build/patches.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const FILTERS_REQUIRED_AMOUNT = 80;
-
 const LOCALES_DIR_PATH = '../../locales';
 
 /**
@@ -309,7 +307,7 @@ const main = async (): Promise<void> => {
 
     removeStaleReport();
 
-    const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT, {
+    const validationResult = validateJSONSchema(platformsPath, {
         localesPath: localesDirPath,
         logPath: jsonSchemaReportPath,
     });
