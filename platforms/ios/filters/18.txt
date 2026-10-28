@@ -1,9 +1,9 @@
-! Checksum: 9F8WqN6aagvOmd+5HCDELw
-! Diff-Path: ../patches/18/18-s-1793175346-3600.patch
+! Checksum: KhcP/CpDvMC5kT38PsCq4Q
+! Diff-Path: ../patches/18/18-s-1793178914-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.97.89
-! TimeUpdated: 2026-10-28T08:12:24+00:00
+! Version: 2.0.97.90
+! TimeUpdated: 2026-10-28T09:11:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,7 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+##.con-kit-component-cookie-banner
 ###panel_cookie_dol
 ###poscookielaw
 ###flexiblecookies_container
@@ -4510,7 +4511,6 @@ saksfifthavenue.com##.footer-email-signup
 bookvoed.ru##.cookie-suggest
 chitai-gorod.ru##.agreement-notice
 nibc.*#%#//scriptlet('trusted-set-cookie', 'dbh-cookie-consent', 'Essential=1')
-kutschstall.de,sports-club.de,cleverfit.fitness-konzepte.de,paulpadel.com,krmr.it,myoreflextherapie-heidelberg.de##.con-kit-component-cookie-banner
 mijn.host#%#//scriptlet('trusted-click-element', '.cky-consent-container .cky-btn-customize, #ckyPreferenceCenter button[data-cky-tag="detail-save-button"]', '!cookie:cookieyes-consent')
 mainz.de##sp-consent-banner
 postnl.nl#%#//scriptlet('trusted-click-element', 'pnl-cookie-wall-widget >>> pnl-cookie-widget-overview .pci-button.pci-button--secondary', '', '1500')
@@ -19949,6 +19949,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245623
+@@||onecdn.io/*/cookie-banner.$script,stylesheet
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245405
 globalcitizensolutions.com#@##moove_gdpr_cookie_info_bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245579
@@ -20402,8 +20404,6 @@ ckpodgorza.pl#@#.js-cookies
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=nowtv.com.tr
 @@||cdn.cookielaw.org/consent/*.json$domain=nowtv.com.tr
 nowtv.com.tr#@##onetrust-consent-sdk
-! https://github.com/AdguardTeam/AdguardFilters/issues/226324
-@@||onecdn.io/b/client/*/cookie-banner.$domain=paulpadel.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226277
 recruit.prometech.co.jp#@##cookie-accept
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226247
@@ -20547,11 +20547,6 @@ ecofamily.hu#@#body:not(.scroll-lock) .cookie-alert
 loadoutbuilder.gg#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219898
 @@||bitrefill.com/assets/CookieConsent-$script
-! https://github.com/AdguardTeam/AdguardFilters/issues/234015
-! https://github.com/AdguardTeam/AdguardFilters/issues/226418
-! https://github.com/AdguardTeam/AdguardFilters/issues/224690
-! https://github.com/AdguardTeam/AdguardFilters/issues/220837
-@@||onecdn.io/b/client/*/cookie-banner.$domain=myoreflextherapie-heidelberg.de|krmr.it|cleverfit.fitness-konzepte.de|soldaten-kompass.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220012
 mijn.host#@#.cky-consent-bar
 @@||cdn-cookieyes.com/client_data/*.js$domain=mijn.host
