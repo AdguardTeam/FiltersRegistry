@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.9.37",
-			"timeUpdated": "2026-10-27T14:13:02+0000",
+			"version": "2.1.9.38",
+			"timeUpdated": "2026-10-28T07:09:35+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.5.0.36",
-			"timeUpdated": "2026-10-28T06:14:17+0000",
+			"version": "2.5.0.37",
+			"timeUpdated": "2026-10-28T07:09:46+0000",
 			"languages": []
 		},
 		{
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.84.40",
-			"timeUpdated": "2026-10-28T06:15:12+0000",
+			"version": "2.2.84.41",
+			"timeUpdated": "2026-10-28T07:10:28+0000",
 			"languages": []
 		},
 		{
@@ -256,8 +256,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.39.73",
-			"timeUpdated": "2026-10-28T05:09:18+0000",
+			"version": "2.1.39.74",
+			"timeUpdated": "2026-10-28T07:10:31+0000",
 			"languages": []
 		},
 		{
@@ -302,8 +302,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.97.87",
-			"timeUpdated": "2026-10-28T06:15:22+0000",
+			"version": "2.0.97.88",
+			"timeUpdated": "2026-10-28T07:10:36+0000",
 			"languages": []
 		},
 		{
@@ -341,8 +341,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.49.73",
-			"timeUpdated": "2026-10-28T06:15:27+0000",
+			"version": "2.0.49.74",
+			"timeUpdated": "2026-10-28T07:10:38+0000",
 			"languages": []
 		},
 		{
@@ -1214,8 +1214,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.68.40",
-			"timeUpdated": "2026-10-28T03:11:44+0000",
+			"version": "2.1.68.41",
+			"timeUpdated": "2026-10-28T07:10:47+0000",
 			"languages": [
 				"zh"
 			]
