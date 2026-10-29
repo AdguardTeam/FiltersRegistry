@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9WtzdNZbWIweNctrkLn71Q
-! Diff-Path: ../patches/260/260-s-1793235371-14400.patch
+! Checksum: 19Hi3L1CasFydREbPHexbw
+! Diff-Path: ../patches/260/260-s-1793291961-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.92
-! TimeUpdated: 2026-10-29T00:53:59+00:00
+! Version: 2.0.2.93
+! TimeUpdated: 2026-10-29T16:36:42+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1162,6 +1162,13 @@ www.foodnetwork.com##.reviewsSummary
 www.forbes.com##.jwGQ_
 ! Article summary
 www.forbes.com##.genAiSummary
+! === FreeConvert ===
+! -- https://www.freeconvert.com/image-converter
+! AI photo editor
+www.freeconvert.com##[data-automation-id="CrossPromoAiPhotoEditorGroup"]
+! -- https://www.freeconvert.com/video-compressor
+! AI photo editor (appears after uploading video)
+www.freeconvert.com##.ai-section
 ! === FRITZ! ===
 ! -- https://fritz.com/en/pages/service
 ! FRITZ!-Bot AI chat
@@ -1268,7 +1275,7 @@ helpcenter.channable.com##header > .float-right:has(button[aria-label="Ask"])
 ! Copilot network requests
 ! * Prevents Copilot-generated commit messages
 ||api.individual.githubcopilot.com/$xhr,domain=github.com
-! -- https://github.com/ (logged in)
+! -- https://github.com/ (Any logged-in GitHub page)
 ! Header - "Chat with Copilot" icon next to search bar
 github.com##[data-testid="top-bar-actions"] > .hide-md:has([data-component="ActionMenu.Button"][class*=" CopilotMenu__"])
 ! Header - Search bar - Copilot autocomplete suggestion
@@ -1277,13 +1284,12 @@ github.com##[data-component="ActionList.Divider"]:has(+ [data-component="ActionL
 ! Header - Profile icon - Feature Preview - Organization Custom Instructions
 ! * Only applies if feature is already disabled
 github.com##[id$="-tab-copilot_chat_custom_instructions"]:has(.octicon-eye-closed)
-! Left sidebar - Copilot button
+! Left sidebar (≡) - Copilot button
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
-! Left sidebar - MCP Registry
+! Left sidebar (≡) - MCP Registry
 github.com##[data-component="NavList.Item"][href="/mcp"]
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
-! * JSONPath v2 compatible
 github.com##+js(json-edit-fetch-response, $.results[?@.action.path=="/copilot"], propsToMatch, /command_palette/jump_to_page_navigation)
 ! * Backup cosmetic filter (Won't remove from autocomplete. Uses :remove() to fix arrow key navigation)
 github.com##command-palette-item[data-item-title="Copilot"]
@@ -1380,7 +1386,7 @@ github.com##[data-test-id="copilot-actions-chat-button"]
 ! -- https://github.com/ (logged out)
 ! Download GitHub Copilot app button
 github.com##[class^="Primer_Brand__Button-module__Button___"][href="/features/ai/github-app"]
-! -- https://github.com/home
+! -- https://github.com/home (landing page)
 ! Try Copilot button (No longer used?)
 github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
 ! Navbar - Platform - "AI Code Creation" section
@@ -3812,6 +3818,25 @@ androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers
 app.vanta.com##[data-testid="global-vanta-ai-button"]
 ! Vanta agent in sidebar
 app.vanta.com###vanta-agent
+! === Veed ===
+! -- https://www.veed.io/convert/video-converter
+! Header banner for AI video creation
+www.veed.io##.relative.z-50.flex.h-12.w-full.items-center.justify-center.bg-\[\#121212\].px-10:has(> [href="https://www.veed.io/workspaces"])
+! -- https://www.veed.io/new
+! "AI Talking video" on media upload dialog
+www.veed.io##[data-testid="@upload-modal/ai_character_video_card"]
+! Left sidebar - AI tools
+www.veed.io##[data-testid="@editor/ai-tools"]
+! Video - Generate button
+www.veed.io##[data-testid="@editor/media/gen-ai-video"]
+! Video - Talking characters
+www.veed.io##[data-radix-scroll-area-viewport] div.flex.flex-col.gap-12.pt-6 > div.flex.flex-col.gap-4:has([data-testid^="@ai-avatars/fabric-character-item-"])
+! Audio - AI voice
+www.veed.io##[data-testid="@editor/media/text-to-speech"]
+! Audio - Voice cloning
+www.veed.io##[data-testid="@editor/media/voice-clone"]
+! Image - Generate & Generate B-roll
+www.veed.io##[data-testid^="@editor/image/gen-ai/generate-"]
 ! === Veldach Szczecin (Polish) ===
 ! Floating chat widget
 ||widget.wenetasystent.ai/page/$subdocument,domain=www.veldach.com.pl
