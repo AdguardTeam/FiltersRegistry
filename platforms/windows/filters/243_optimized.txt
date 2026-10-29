@@ -1,9 +1,9 @@
-! Checksum: t5+BbWQl6uCiCIpAwnmNbg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1793005076-14400.patch
+! Checksum: ds70DvVxLUZRF5WVDUcG9w
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1793263302-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.70
-! TimeUpdated: 2026-10-26T08:54:30+00:00
+! Version: 2.0.25.71
+! TimeUpdated: 2026-10-29T08:38:16+00:00
 ! Expires: 12 hours (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -551,7 +551,8 @@ fastighetstidningen.se##.adspace, a[class*="annons"]
 fastighetsvarlden.se##a.entry__link[href*="/native/"]
 fastighetsvarlden.se##.widget_custom_html:has(.ad-text)
 fasting.nu#$#body { display:unset!important }
-feber.se,tjock.se##div[role="dialog"][aria-label="Annons"], div[data-slot], div[data-native-slot="1"]
+feber.se,tjock.se##div[role="dialog"][aria-label="Annons"], div[data-slot], div[data-native-slot="1"], article[data-feed-section="promotion"]
+feber.se,tjock.se#%#//scriptlet('ubo-set', 'B.ab', 'false')
 feber.se,tjock.se#%#//scriptlet('ubo-set', 'dovideostuffAD', 'noopFunc')
 feber.se,tjock.se#%#//scriptlet('ubo-set-session-storage-item', 'fs', '1')
 feber.se,tjock.se##.column:has(> div > a > picture > img[src*="//img.feber.se/k/"])
@@ -2163,11 +2164,14 @@ zeromagazine.nu##div[id^="ads"]
 /api/ads$xmlhttprequest,domain=investeramera.se
 /api/a/b$domain=borskollen.se
 /api/exposure$domain=svenskverkstad.se
+/api/n$domain=feber.se|tjock.se
 /api/partners$domain=familjehemsbanken.se
 /api/popup-block$xmlhttprequest,domain=investeramera.se
 /api/promo-block$xmlhttprequest,domain=investeramera.se
 /api/sponsors$domain=aikhockey.se|almtuna.com|bikkarlskoga.se|bjorkloven.com|brynas.se|difhockey.se|frolundahockey.com|farjestadbk.se|hockeyallsvenskan.se|hv71.se|ikoskarshamn.se|kalmarhockey.com|leksandsif.se|luleahockey.se|malmoredhawks.com|modohockey.se|moraik.se|nybrovikings.com|orebrohockey.se|roglebk.se|shl.se|skellefteaaik.se|sodertaljesk.se|taif.nu|timraik.se|vaxjolakers.se|vik.se|ostersundik.com
+/api/status$domain=feber.se|tjock.se
 /api/tracker?$image
+/api/w$domain=feber.se|tjock.se
 /appinsights/*/track
 /appnexus$script
 /app.php/adsview$xmlhttprequest

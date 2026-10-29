@@ -1,15 +1,15 @@
-! Checksum: hs6oWT0y+M6V/LFokbmGbg
-! Diff-Path: ../patches/232/232-s-1793235356-14400.patch
+! Checksum: yHHc8hrTtpIrv2WXgZdUaw
+! Diff-Path: ../patches/232/232-s-1793263263-14400.patch
 ! Title: KAD - Anti-Scam
 ! Description: Filter that protects against various types of scams in the Polish network, such as mass text messaging, fake online stores, etc.
-! Version: 2.0.89.72
-! TimeUpdated: 2026-10-29T00:53:41+00:00
+! Version: 2.0.89.73
+! TimeUpdated: 2026-10-29T08:38:08+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 KAD - STOP Przekrętom
 ! Description: Filtry chroniące przed różnymi zagrożeniami w polskiej sieci, takimi jak wirusy, fałszywe sklepy i subskrypcje SMS. Dodatkowo zawierają one wpisy stworzone przez CERT Polska, legalniewsieci.pl, KNF i inne zespoły.
-! Last modified: Wed, 28 Oct 2026, 21:37 UTC+01:00
-! OriginalVersion: 2026.10.28.2
+! Last modified: Thu, 29 Oct 2026, 08:49 UTC+01:00
+! OriginalVersion: 2026.10.29.0
 ! Expires: 2 days
 ! License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ! Creator: azet12
@@ -49,6 +49,8 @@
 ||go.playoosh.com^$document
 !
 ! Przekręty
+::ffff:d93c:ed6f^$document,to=[::ffff:d93c:ed6f]
+||217.60.237.111^$document,to=217.60.237.111
 ||datedeskads.com^$document
 ||kinomaniak.pl^$document,to=kinomaniak.pl
 ||millenium.pl^$document
@@ -110,10 +112,10 @@
 ||olx.pl-*.$document,to=~olx.pl
 ||olx.pl.*.$document,to=~olx.pl
 ||shorturl.at/*#*@*.$document,to=shorturl.at
-||shorturl.at/*#*@*.$subdocument,object,domain=shorturl.at
+||shorturl.at/*#*@*.$subdocument,object,domain=~shorturl.at
 ||u*p*w.ha*.t.justns.ru^$document,to=ru
 ||wasabisys.com/*.htm*?*#*@*.$document,to=wasabisys.com
-||wasabisys.com/*.htm*?*#*@*.$subdocument,object,domain=wasabisys.com
+||wasabisys.com/*.htm*?*#*@*.$subdocument,object,domain=~wasabisys.com
 ||wp.*.top^$document,to=top
 ||youtube.com.*.*.com^$document,to=com|~youtube.com
 ||youtube.com.*.*.com^$subdocument,object,domain=com|~youtube.com
