@@ -1,8 +1,8 @@
-! Checksum: PkDguRKaEG5qnpaX4TN8hQ
+! Checksum: 06kV4nW4KOkRVY3YpMXhJQ
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.91
-! TimeUpdated: 2026-10-28T20:36:34+00:00
+! Version: 2.0.2.92
+! TimeUpdated: 2026-10-29T00:53:59+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -321,6 +321,9 @@ www.belk.com###shopping-assistant-header-mobile
 ! "Shopping assistant" button
 www.belk.com###shopping-assistant-pdp
 ! === Best Buy ===
+! -- https://www.bestbuy.com/
+! Navbar - Ask Blue
+www.bestbuy.com##[data-testid="dnm-ask-blue-button"]
 ! -- https://www.bestbuy.com/product/logitech-m196-lightweight-bluetooth-wireless-optical-mouse-compact-3-button-ambidextrous-mouse-with-smooth-tracking-wireless-graphite/J7H7ZYG47F
 ! "Customers are saying" below product name
 www.bestbuy.com##[data-component-name="AiReviewSummary"]
@@ -1090,9 +1093,10 @@ www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has(.
 ! "What people are saying" comment summary (logged in)
 www.facebook.com##[role="presentation"] .x1jx94hy.x1obq294.x5a5i1n.xde0f50.x15x8krk.xjf5wm9.xod5an3.x1tpqehw.x1wsuqlk.x14vqqas.xz9dl7a.xpdmqnj.xsag5q8.x1g0dm76:has(> .x6s0dn4.x78zum5.x1q0g3np.x1qughib [alt="Meta AI logo"])
 ! -- https://www.facebook.com/permalink.php?story_fbid=pfbid0nM3EdTKDBTXFnxftmhzgX2HRaESqcBoNXDHTFCo3oq8u716VFg2mUp9PLykieQPfl&id=61588534388215
-! Post with AI info disclaimer
+! Post with AI info disclaimer (disclosed by user)
 ! * Won't hide posts if linked directly
 www.facebook.com#?#[role="main"] .x17zd0t2 > [role="button"]:contains(/(AI info|AI content)/):upward(.x1n2onr6.xh8yej3.x1ja2u2z):upward(3)
+! TODO: Hide posts with AI detected by FB (... context menu > AI Content)
 ! -- https://www.facebook.com/help/437430672945092/
 ! Suggestion chips for AI assistant
 www.facebook.com##[role="main"] .x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w:has(> .xsag5q8.xz9dl7a [data-type="hscroll-child"] [aria-label="Meta AI icon"])
@@ -2652,6 +2656,9 @@ powerpoint.cloud.microsoft##.___qeeaaj0:has(> [aria-label="Explore Copilot secti
 ! -- https://powerpoint.cloud.microsoft/ (With document open)
 ! Ribbon - Home - Designer button
 usc-powerpoint.officeapps.live.com###innerRibbonContainer > [class^="groupContainer-"]:has(#ChatPPT-group)
+! Context menu - Explain
+usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"])
+usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"]) + .fui-MenuDivider
 ! -- https://onenote.cloud.microsoft/notebooks/
 ! Header promo for Copilot Notebooks
 onenote.cloud.microsoft##.fui-MessageBar:has([alt="Copilot Notebook Icon"])
