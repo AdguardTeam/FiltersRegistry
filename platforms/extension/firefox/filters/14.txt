@@ -1,9 +1,9 @@
-! Checksum: MJ+bU5pyhzkIypv3OWS6CA
-! Diff-Path: ../patches/14/14-s-1793247266-3600.patch
+! Checksum: FZgZr538vJdcXrxSvw4OMA
+! Diff-Path: ../patches/14/14-s-1793254677-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.84.54
-! TimeUpdated: 2026-10-29T04:11:21+00:00
+! Version: 2.2.84.55
+! TimeUpdated: 2026-10-29T06:14:57+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5634,7 +5634,7 @@ chevrolet.com.br##gb-legal-notification[data-cookie-lifespan]
 kia.com.br#%#//scriptlet('trusted-set-local-storage-item', 'cookie-kia', 'ok')
 thenounproject.com##div[data-callback="accounts/hide-banner/CookiesBanner"]
 visionexpress.pl###bpr_cookie-alert
-halara.*,thehalara.*###set_cookies_module
+halara.*,thehalara.*#%#//scriptlet('trusted-set-cookie', 'setting_cookies_data', '-1')
 cherryxtrfy.com##div[class^="cookies-policy"]
 flipsnack.com#%#//scriptlet('trusted-set-cookie', 'agree_cookie_policy_v', '{"v":2,"p":0,"a":0}')
 hs-rm.de#%#//scriptlet('trusted-set-cookie', 'in2cookiemodal-selection', '[%22essential%22]')
@@ -28687,6 +28687,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+/wheel/getActivityWheel?$domain=thehalara.co.kr|thehalara.jp|thehalara.com.mx|thehalara.de|halara.com|thehalara.fr|thehalara.au|thehalara.co.uk|thehalara.es
 stardima.com##.close-floating
 stardima.com##.floating-container
 zenox.lol##div[aria-label="Discord Community Invitation"]
@@ -38296,6 +38297,8 @@ rocket-boys.co.jp,autonews.com,nerdwallet.com,creativebloq.com,space.com,nokiapo
 !
 ! SECTION: Subscriptions - Regular rules
 !
+halara.*,thehalara.*###emailSubscriptionWarp
+halara.*,thehalara.*###email-subscription-bar
 backenmachtgluecklich.de##.wp-block-bmg-newsletter-signup
 onet.pl###pianoNewsletterPremiumIntext
 diariocoimbra.pt##.dc-post-newsletter-cta
@@ -49170,6 +49173,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+halara.*,thehalara.*##a[id^="observerImg"][href^="https://halara.onelink.me/"]
 flatfy.ua##.native-app-banner-spacer
 follow.yahoo.co.jp##div[class*="_AppPromotion"]
 tedi.com.tr#$#.mobil-app-bar { visibility: hidden !important; }
