@@ -1,8 +1,9 @@
-! Checksum: COK7qLnRT/hbiOhtS5+8zg
+! Checksum: vqaVkzo59pFWVixllTYULw
+! Diff-Path: ../patches/260/260-s-1793321947-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.83
-! TimeUpdated: 2026-10-24T04:42:32+00:00
+! Version: 2.0.2.95
+! TimeUpdated: 2026-10-30T00:55:59+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -281,6 +282,9 @@ www.belk.com###shopping-assistant-header-mobile
 ! "Shopping assistant" button
 www.belk.com###shopping-assistant-pdp
 ! === Best Buy ===
+! -- https://www.bestbuy.com/
+! Navbar - Ask Blue
+www.bestbuy.com##[data-testid="dnm-ask-blue-button"]
 ! -- https://www.bestbuy.com/product/logitech-m196-lightweight-bluetooth-wireless-optical-mouse-compact-3-button-ambidextrous-mouse-with-smooth-tracking-wireless-graphite/J7H7ZYG47F
 ! "Customers are saying" below product name
 www.bestbuy.com##[data-component-name="AiReviewSummary"]
@@ -828,6 +832,11 @@ www.eastherts.gov.uk###block-eastherts-chatbotebiai
 ! -- https://www.ebay.com/sch/i.html?_nkw=hp+65+calculator
 ! FAQs with eBay.ai
 www.ebay.com##.srp-river-answer--FAQ_KW_SRP_MODULE
+! -- https://export.ebay.com/en/
+! Floating chatbox
+export.ebay.com##.chatbot-ask
+! Floating chat icon
+export.ebay.com##.chatbot
 ! === Ecosia ===
 ! AI-free searching
 ! -- https://www.ecosia.org/ (Homepage)
@@ -908,8 +917,9 @@ www.facebook.com##[aria-label="Generate images using AI"]
 ! Post title generated with AI (logged in)
 ! "What people are saying" comment summary (logged in)
 ! -- https://www.facebook.com/permalink.php?story_fbid=pfbid0nM3EdTKDBTXFnxftmhzgX2HRaESqcBoNXDHTFCo3oq8u716VFg2mUp9PLykieQPfl&id=61588534388215
-! Post with AI info disclaimer
+! Post with AI info disclaimer (disclosed by user)
 ! * Won't hide posts if linked directly
+! TODO: Hide posts with AI detected by FB (... context menu > AI Content)
 ! -- https://www.facebook.com/help/437430672945092/
 ! Suggestion chips for AI assistant
 ! Support assistant button in dropdown help option
@@ -933,6 +943,19 @@ fandom.com##section.trfc161
 ! === Fight the New Drug ===
 ! Floating AI button
 fightthenewdrug.org###askFTND_button
+! === Firebase Console ===
+! -- https://console.firebase.google.com/
+! Welcome to Firebase - AI powered sample apps
+! Project setup - Disable Gemini by default
+! Right sidebar - Gemini icon
+console.firebase.google.com##helios-entry-point
+! -- https://console.firebase.google.com/u/0/project/[id]/overview
+! Project overview - "Try agent skills" tip
+! Next steps with Gemini
+! -- https://console.firebase.google.com/u/0/project/[id]/hosting/sites/
+! Ask Gemini button
+console.firebase.google.com##fire-gemini-button
+! Agent tip banner
 ! === Firstpost ===
 ! ≡ menu > "First AI" button
 firstpost.com###ia-search
@@ -946,6 +969,13 @@ www.foodnetwork.com##.reviewsSummary
 www.forbes.com##.jwGQ_
 ! Article summary
 www.forbes.com##.genAiSummary
+! === FreeConvert ===
+! -- https://www.freeconvert.com/image-converter
+! AI photo editor
+www.freeconvert.com##[data-automation-id="CrossPromoAiPhotoEditorGroup"]
+! -- https://www.freeconvert.com/video-compressor
+! AI photo editor (appears after uploading video)
+www.freeconvert.com##.ai-section
 ! === FRITZ! ===
 ! -- https://fritz.com/en/pages/service
 ! FRITZ!-Bot AI chat
@@ -1024,18 +1054,17 @@ cortex-docs.paloaltonetworks.com###how-can-i-help-you-today
 ! Copilot network requests
 ! * Prevents Copilot-generated commit messages
 ||api.individual.githubcopilot.com/$xmlhttprequest,domain=github.com
-! -- https://github.com/ (logged in)
+! -- https://github.com/ (Any logged-in GitHub page)
 ! Header - "Chat with Copilot" icon next to search bar
 ! Header - Search bar - Copilot autocomplete suggestion
 ! Header - Profile icon - Feature Preview - Organization Custom Instructions
 ! * Only applies if feature is already disabled
-! Left sidebar - Copilot button
+! Left sidebar (≡) - Copilot button
 github.com##[data-testid="side-nav-menu-item-COPILOT"]
-! Left sidebar - MCP Registry
+! Left sidebar (≡) - MCP Registry
 github.com##[data-component="NavList.Item"][href="/mcp"]
 ! Command Palette - Copilot
 ! * "Command Palette" is enabled via "Feature Preview". Opens with Ctrl+K
-! * JSONPath v2 compatible
 github.com##command-palette-item[data-item-title="Copilot"]
 ! Copilot Chat sidebar panel
 ! * Opens with Shift+D shortcut
@@ -1056,7 +1085,8 @@ github.com##[data-testid="copilot-free-user-checklist"]
 ! "Agents" tab in repository navbar (desktop & mobile)
 ! * Via https://www.reddit.com/r/uBlockOrigin/comments/1vkxr0j/comment/p2xake5/
 ! -- https://github.com/easylist/easylistchina
-! "Ask Copilot about this repository" if no README is present
+! "Ask Copilot about this repository" when repository has no README file
+! Might be limited to enterprise users with Copilot
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
 ! File header - "Ask Copilot about this file" button
 github.com###blob-view-header-copilot-icon
@@ -1106,7 +1136,7 @@ github.com##[data-test-id="copilot-actions-chat-button"]
 ! -- https://github.com/ (logged out)
 ! Download GitHub Copilot app button
 github.com##[class^="Primer_Brand__Button-module__Button___"][href="/features/ai/github-app"]
-! -- https://github.com/home
+! -- https://github.com/home (landing page)
 ! Try Copilot button (No longer used?)
 github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
 ! Navbar - Platform - "AI Code Creation" section
@@ -1433,8 +1463,11 @@ drive.google.com###nt\:Dr[role="treeitem"][aria-selected="false"]
 drive.google.com##[data-test-id="help-me-organize-chip-container"]
 ! Action bar for selected file - "Ask Gemini"/"Catch me up" buttons
 drive.google.com##.iQnZTe.SMHH7
-! More Actions menu (⋮) on a file (Ask Gemini, Audio Overview, Suggest file moves)
-! * Options change depending on file type
+! More Actions menu (⋮) on a file
+! Options change depending on file type
+! * Ask Gemini
+! * Audio Overview
+! * Suggest file moves
 drive.google.com##[role="separator"] + [role="separator"]
 ! "Summarize this file"/"Ask Gemini" button when hovering over file type icon
 drive.google.com##.oaTPh
@@ -1522,8 +1555,13 @@ www.google.*##[data-attnms]
 ! Web Guide
 ! * Only applies if Web Guide is enabled in Google Labs
 www.google.*##.oGdvd
+! Transient "AI Mode experience" promo dialog for Google app (mobile)
+www.google.*##body > div > [role="dialog"][aria-describedby="promo_desc_id"]
 ! -- https://www.google.com/search?q=caine
-! AI Overview header logo (mobile)
+! AI Overview header logo
+! * Desktop
+!   TODO: Trusted filter to move ⋮ menu down and remove empty space
+! * Mobile
 ! "Things to know" and "People also ask" sections
 ! * First filter hides list items, .cUnQKe hides header if all items are AI, .ULSxyf hides extra space if needed
 ! * Extra sanity checks on child elements of .ULSxyf to avoid overfiltering. (Example: https://www.google.com/search?q=world+cup+standing)
@@ -1803,6 +1841,10 @@ www.investopedia.com##[data-inv-answers-widget]
 ! -- https://www.ishopchangi.com/en/home
 ! Chatbot icon
 www.ishopchangi.com###chat-wrapper
+! === ISTOM ===
+! -- https://www.istom.fr/
+! Chatbot modal
+||webchat.studizz.fr/webchat.js$script,domain=www.istom.fr
 ! === JetBrains ===
 ! Header - Products - AI TOOLS section
 ! Header - Products - JetBrains Air promo
@@ -2157,6 +2199,7 @@ powerpoint.cloud.microsoft##[aria-label="Create with Copilot"]
 powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
 ! -- https://powerpoint.cloud.microsoft/ (With document open)
 ! Ribbon - Home - Designer button
+! Context menu - Explain
 ! -- https://onenote.cloud.microsoft/notebooks/
 ! Header promo for Copilot Notebooks
 ! === Microsoft Power Automate ===
@@ -2617,6 +2660,8 @@ www.reddit.com##.expanded-composer-ask-pill
 ! Search bar - Trending summaries for subreddits
 ! * Also blocks weekly viewer count. Unclear if this can be avoided.
 www.reddit.com##[data-testid="search-sdui-typeahead-suggestion"] .inline-block.text-neutral-content-weak
+! Search bar - Ask button (Logged out)
+! -- https://www.reddit.com/?feed=home
 ! Recommended posts from AI subreddits
 ! -- https://www.reddit.com/search/?q=legal+eagle+bricks+and+minifigs
 ! "Ask" tab
@@ -3135,6 +3180,23 @@ androidpolice.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers
 app.vanta.com##[data-testid="global-vanta-ai-button"]
 ! Vanta agent in sidebar
 app.vanta.com###vanta-agent
+! === Veed ===
+! -- https://www.veed.io/convert/video-converter
+! Header banner for AI video creation
+! -- https://www.veed.io/new
+! "AI Talking video" on media upload dialog
+www.veed.io##[data-testid="@upload-modal/ai_character_video_card"]
+! Left sidebar - AI tools
+www.veed.io##[data-testid="@editor/ai-tools"]
+! Video - Generate button
+www.veed.io##[data-testid="@editor/media/gen-ai-video"]
+! Video - Talking characters
+! Audio - AI voice
+www.veed.io##[data-testid="@editor/media/text-to-speech"]
+! Audio - Voice cloning
+www.veed.io##[data-testid="@editor/media/voice-clone"]
+! Image - Generate & Generate B-roll
+www.veed.io##[data-testid^="@editor/image/gen-ai/generate-"]
 ! === Veldach Szczecin (Polish) ===
 ! Floating chat widget
 ||widget.wenetasystent.ai/page/$subdocument,domain=www.veldach.com.pl
@@ -3284,9 +3346,17 @@ editor.wix.com##[data-hook="start-screen-generation-container"]
 ! Right window - "Ask Meta AI" panel (below "download WhatsApp for Windows")
 ! Left sidebar - Meta AI + Separator
 web.whatsapp.com##.x1c4vz4f.xs83m0k.xdl72j9.x1g77sc7.x78zum5.xozqiw3.x1oa3qoh.x12fk4p8.xeuugli.x2lwn1j.x1nhvcw1.xdt5ytf.x1cy8zhl.x1277o0a > hr.xh8yej3.xjm9jq1.x178xt8z.x13fuv20.xx42vgk.x18oe1m7.x1sy0etr.xstzfhl
+! === Whizz-Tech ===
+! -- https://whizz-tech.com/support/wifi-router-fixes/tls-issues-on-wifi/
+! Floating AI chatbot window
+||whizz-tech.com/wp-content/plugins/whizz-chat/assets/chat.js$script,~third-party
 ! === Windows Latest ===
 ! AskGPT 4o button
 www.windowslatest.com##.icon-chat
+! === Windscribe ===
+! -- https://windscribe.com
+! Floating chatbot
+||garry3-be-prd.windscribe.com/garry.js$script,~third-party
 ! === Wolfram Alpha ===
 ! -- https://www.wolframalpha.com/
 ! LLM Solutions in footer
@@ -3379,15 +3449,21 @@ search.yahoo.com##.scoutNav
 search.yahoo.com##.scout-tab
 ! More > Shopping
 ! "Explore AI results" in sidebar
-! -- https://finance.yahoo.com/technology/ai/articles/us-threatens-sanctions-against-chinese-153705506.html
-! Mid-article "Ask Yahoo Scout"
-finance.yahoo.com##.dig-deeper-wrapper
-finance.yahoo.com##[data-testid="lazym-digDeeper"] + .skeleton-container
 ! -- https://search.yahoo.com/search?p=Women%27s+College+World+Series
 ! "Trending now" AI headline
 ! -- https://shopping.yahoo.com/
 ! Search bar (redirects to Scout AI)
 shopping.yahoo.com##form[role="search"]
+! === Yahoo Finance ===
+! -- https://finance.yahoo.com/
+! Sidebar - Ask AI switcher
+! -- https://finance.yahoo.com/markets/article/meta-announces-plans-to-raise-up-to-95-billion-for-ai-buildout-140141962.html
+! Ask AI button (mobile)
+finance.yahoo.com##.scout-fab-split-half--scout
+! -- https://finance.yahoo.com/technology/ai/articles/us-threatens-sanctions-against-chinese-153705506.html
+! Mid-article "Ask Yahoo Scout" (No longer used?)
+finance.yahoo.com##.dig-deeper-wrapper
+finance.yahoo.com##[data-testid="lazym-digDeeper"] + .skeleton-container
 ! === Yahoo Japan ===
 ! -- https://www.yahoo.co.jp/ (Homepage)
 ! Header - AI suggested topic
@@ -3510,31 +3586,33 @@ studio.youtube.com##ytcp-creator-chat-trigger
 ! * There's an "Chat with creator support" button that uses AI, but you can get a real person
 !   by asking to "Talk with a human", so the rule is commented out below.
 ! studio.youtube.com##.ytcpSamChatHost
-! -- Dashboard tab
+! -- https://studio.youtube.com/channel/[channel_id]/ (Dashboard tab)
 ! "Catch me up on this video"
 studio.youtube.com##ytcp-creator-chat-entrypoint-button
-! -- Content tab
+! -- https://studio.youtube.com/channel/[channel_id]/videos/ (Content tab)
 ! Inspiration tab
 studio.youtube.com###inspiration-tab
-! -- Analytics tab
+! -- https://studio.youtube.com/channel/[channel_id]/analytics/ (Analytics tab)
 ! Brainstorm video ideas
 studio.youtube.com##tp-yt-paper-item[test-id="brainstorm"]
 ! Suggested questions for channel analytcs in "Analytics" > "Overview"
 ! "AI tools for brainstorming video ideas have moved" banner under "Analytics" > "Trends"
 ! "Brainstorm video ideas" button that appears under "Analytics" > "Trends" after using search bar
 studio.youtube.com##.brainstorm-ideas-button
-! -- Community tab
+! -- https://studio.youtube.com/channel/[channel_id]/comments/ (Community tab)
 ! Search chip
 studio.youtube.com##ytcp-chip[aria-label^="Search"]
 ! "Brainstorm video ideas" button in action menu (...) under "Community" > "Comments"
 ! Comment reply suggestions under "Community" > "Comments"
 ! https://support.google.com/youtube/answer/10357396
 studio.youtube.com###comment-smart-replies
-! -- Video Details page
+! -- https://studio.youtube.com/video/[video_id]/edit (Video Details page)
 ! "Brainstorm video ideas" in action menu (⋮)
 studio.youtube.com##[test-id="VIDEO_BRAINSTORM_IDEA"]
 ! "Get Suggestions" button for thumbnail
 studio.youtube.com##.ask-studio-container
+! Editor - Create - Turn audio into Short
+studio.youtube.com###entrypoint-audiovision-shorts-row
 ! === Zillow ===
 ! Floating chatbot icon
 ! * Appears during searches. Does not appear for all users.
@@ -3654,6 +3732,8 @@ beeg.com##.x-search__content [href="/GenerativeAI"]
 nhentai.net##.desktop > [href="//tsyndicate.com/api/v1/direct/e220320bd2e542b8a2ab7cd2c5a9df8c?"]
 ! === CartoonPorn (NSFW) ===
 ! AI GF in navbar
+! === Cumguru (NSFW) ===
+! Trends tags
 ! === DrTuber (NSFW) ===
 ! AI Girlfriend
 www.drtuber.com##.header_premium_bar[href^="https://go.xliiirdr.com/ls"]
@@ -3790,6 +3870,9 @@ hentaila.tv##.nav-link[href="https://pornhaven.ai/"]
 ! Galleries tagged ai generated
 hentairun.com,imhentai.xxx##[data-tags~="17861"]
 ! === Hentaivox (NSFW) ===
+! === InPorn (NSFW) ===
+! Navbar - AI porn tag
+! Footer - AI tags
 ! === Its.PORN (NSFW) ===
 ! Navbar - AI Undress Porn
 ! === JComic (NSFW) ===
@@ -3878,8 +3961,10 @@ www.pornhits.com##.sites__item--hl[href^="https://rtr2perf5.com/37f77684-ae10-45
 ! === Pornhub (NSFW) ===
 ! AI Cum Slut button
 www.pornhub.com##.uploadBtnContentSpicevids
+! Banner message for Brazzers.ai (message rotates)
 ! Videos with AI creator icon
-! Videos with ai generated in title
+! Videos with AI generated in title
+! Videos from AI user
 ! === PornOne (NSFW) ===
 ! Navbar
 ! === Porn Dude (NSFW) ===

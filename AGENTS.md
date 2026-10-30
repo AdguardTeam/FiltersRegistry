@@ -62,7 +62,7 @@ for all supported AdGuard products.
 │       └── <sub-target>/           # extension/ only: chromium, chromium-mv3, edge, edge-mv3,
 │                                   #   firefox, opera, opera-mv3, safari, android-content-blocker, ublock
 ├── scripts/                        # All build and utility scripts
-│   ├── build/                      # build.js, build-config.ts, constants.js,
+│   ├── build/                      # build.ts, build-config.ts, constants.js,
 │   │                               #   custom_platforms.ts, patches.ts, strip-generated-meta.ts
 │   ├── checksum/                   # Checksum generation (index.ts)
 │   ├── repository/                 # compress.ts — repository compression
@@ -90,11 +90,11 @@ for all supported AdGuard products.
 
 | Command | Description |
 | ------- | ----------- |
-| `yarn build` | Build all filters (`tsx scripts/build/build.js`) |
-| `yarn build:local` | Build from cached `filter.txt` (`build.js --use-cache`) |
+| `yarn build` | Build all filters (`tsx scripts/build/build.ts`) |
+| `yarn build:local` | Build from cached `filter.txt` (`build.ts --use-cache`) |
 | `yarn auto-build` | Full automated build via `bash scripts/auto_build.sh` |
 | `yarn build:patches` | Build incremental patches |
-| `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.js --generate-cache`) |
+| `yarn generate-cache` | Generate cached `filter.txt` from templates (`tsx scripts/build/build.ts --generate-cache`) |
 | `yarn download-stats` | Download per-filter `stats.json` to `temp/optimization/stats/` |
 | `yarn strip-generated-meta <dir>` | Strip generated meta from `.txt`/`filters.json`/`filters.js` in `<dir>` in place |
 | `yarn test` | Run unit tests (`vitest run`) |
@@ -116,6 +116,9 @@ for all supported AdGuard products.
 selection (or was a full, unscoped download); otherwise stats are fetched from the
 remote server. Plain `yarn build` always fetches remotely — the local cache is
 only applied under `--use-cache`.
+
+`yarn download-stats` and an applied stats cache take the set of optimizable filters from
+`optimization_config.json` instead of the remote `percent.json`.
 
 `yarn download-stats` stages fetches in a temp directory and swaps in the whole stats directory
 only after every fetch succeeds. `--include` / `--skip` scope which filters are fetched,

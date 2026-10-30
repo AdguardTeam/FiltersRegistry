@@ -1,9 +1,9 @@
-! Checksum: mGhessoCim6KeEa8g7Fr7A
-! Diff-Path: ../patches/11/11-s-1792764996-3600.patch
+! Checksum: mfuiRbKQ/2Yy2PZ0PFI/VA
+! Diff-Path: ../patches/11/11-s-1793376800-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.72.96
-! TimeUpdated: 2026-10-23T14:12:44+00:00
+! Version: 2.0.73.13
+! TimeUpdated: 2026-10-30T16:09:43+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -166,6 +166,8 @@
 !
 !NOTE: Regular rules
 !
+||inapps.af-sdk.com^
+||cdn-settings.af-sdk.com^
 ||da.flvcdn.net^
 ||rtb.nefta.app^
 ||ads-proxy-aka.prod.bo.canal.canalplustech.pro^
@@ -2315,6 +2317,8 @@ motherless.xxx$$script:contains(awentw.com):contains(/^(?=.{2000,2500}$).*/s)
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245100
+sector.sk#@$##frs { margin-top: 100px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242033
 @@||anymind360.com/js/*/ats.js$domain=hotosena.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/236078
@@ -2721,6 +2725,30 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+goal.com##.fco-sticky-wrapper__space-placeholder
+goal.com##.fco-gameday-with-ad-container__ads
+kako.5ch.io##.h-\[100px\]
+kako.5ch.io##.h-\[260px\]
+ichioshi.allabout.co.jp###ma_ad_container
+mfuns.net##.m-adwork
+m.tvdirekt.de##div[id^="adWebWrapper"]
+tvtoday.de##mobile-sticky-ad
+gamingbible.com##div[class^="advert-placeholder"]
+rakkokeyword.com##.rakko-sp-wrapper
+twidouga.net##.max-w-screen-xl > div[style*="margin"]:has(> div[id^="bnc_ad_"])
+skyblock.jp,kze.network,oyasai.io,sokuhou.wiki,chronicle.wiki,game-info.wiki,playing.wiki,seesaawiki.jp##div[style="width:300px; height:250px; "]
+m.iceporn.net#%#//scriptlet('set-cookie', 'pop_show', '3')
+m.iceporn.net#%#//scriptlet('set-cookie-reload', 'no_postitial_video', '1')
+m.iceporn.net#%#//scriptlet('set-constant', 'use_second_popunder', 'false')
+pornhub.com#$##mobileContainer.notPremium { padding-top: 0px !important; }
+pornhub.com#$##mobileContainer.notPremium > div[class$="ad"]:has(> div.watchpageAd) { height: 0px !important; }
+rbc.ru##.ui-branding-logo
+rbc.ru##.indicators-bar-branding
+russiatoday.ru##.sparrow-banner
+dengekionline.com##div[class$="_headerBannerForSp"]
+dengekionline.com##div[class$="_pickUpBannerForSp"]
+memo.wiki##div[style="width:300px; height:250px; "]
+erogamescape.dyndns.org##div[id^="mobile_ad_"]
 2dfan.com##.nexus-banner-ad
 jorudan.co.jp##a[id^="bnr_"]
 op.gg###pubg-m-leaderboard-top
@@ -5695,7 +5723,7 @@ bookmaker-ratings.ru##.branding-top-wrapper
 washingtonpost.com##.tableAd1
 hdporner.me,rahaporn.com,wankzone.com,pornmk.com,myhentai.us,taboovideosx.com,fxpornhd.com,thevoyeurmania.com,pornolatinox.com,fistingplanet.com##.happy-related-videos-mobile
 hdporner.me,yespornhd.com,rahaporn.com,wankzone.com,pornbuz.com,sxyland.com,pornmk.com,myhentai.us,taboovideosx.com,fxpornhd.com,thevoyeurmania.com,pornolatinox.com,familyxxxhd.com,erotic-hentai.com,villagesexvideos.com,xxxvideoindian2.com,fistingplanet.com##.happy-footer-mobile
-mediacourant.nl,coinwarz.com##div[id^="ad"]
+kze.network,mediacourant.nl,coinwarz.com##div[id^="ad"]
 pornpapa.com##.mobile-device
 maximum.ru,rusradio.ru,dfm.ru##.advertising-mobile-popup-overlay
 vesti-ua.net##amp-iframe[width="280"][height="852"]
@@ -5816,7 +5844,6 @@ bqprime.com##div[class^="ad-with-placeholder"]
 e-konomista.pt##.r-top-publicity-wrapper
 paroles2chansons.lemonde.fr##div[style="min-height:320px;"]
 siamblockchain.com###inarticle-banner-mobile
-uraaka-joshi.com##.grid-cell-non-hover
 healthshots.com##.footerstickyad
 svethuawei.eu###mobile-pop-up-ad
 pornone.com##div[class^="flex-initial"]
@@ -5858,13 +5885,13 @@ theporndude.vip,theporndude.com##.pdc-casting
 soccerdigestweb.com##div[class^="bnr_w3"]
 teleprogramma.pro##.header-bottom-wrapper
 nukemanga.com##.widget-text
-m.viptube.*#%#//scriptlet('set-cookie', 'adv_show', '3')
-m.viptube.*##.player_premium_bar
-m.viptube.*##.livecams_main
-m.viptube.*##.lcb
-m.viptube.*###mobile-header-1
-m.viptube.*###mobile-middle-1
-m.viptube.*###mobile-footer-1
+m.iceporn.net,m.viptube.*#%#//scriptlet('set-cookie', 'adv_show', '3')
+m.iceporn.net,m.viptube.*##.player_premium_bar
+m.iceporn.net,m.viptube.*##.livecams_main
+m.iceporn.net,m.viptube.*##.lcb
+m.iceporn.net,m.viptube.*###mobile-header-1
+m.iceporn.net,m.viptube.*###mobile-middle-1
+m.iceporn.net,m.viptube.*###mobile-footer-1
 olive-hitomawashi.com###main > .bl_articles > h3[style="margin-bottom:0;"]
 olive-hitomawashi.com##h3[style="margin-bottom:0;"] + div[style^="padding-bottom: 50px; text-align: -webkit-center"]
 bisweb.jp###sp_all_header_1st
@@ -7024,7 +7051,7 @@ m.haberturk.com###s300x200Sticky
 eporner.com###admobilemiddle
 jbbs.shitaraba.net##.header_news
 jbbs.shitaraba.net##.ad-320_50
-jbbs.shitaraba.net,chronicle.wiki,game-info.wiki,memo.wiki,playing.wiki,seesaawiki.jp,sokuhou.wiki,sougouwiki.com##.ad-300_250
+skyblock.jp,kze.network,oyasai.io,jbbs.shitaraba.net,chronicle.wiki,game-info.wiki,memo.wiki,playing.wiki,seesaawiki.jp,sokuhou.wiki,sougouwiki.com##.ad-300_250
 m.vz.ru,chronicle.wiki,game-info.wiki,memo.wiki,playing.wiki,seesaawiki.jp,sokuhou.wiki,sougouwiki.com##.header-banner
 sammobile.com##.g-29
 virtualbrest.ru##body > div.rounded + div[style^="width:"] > a[target="_blank"] > img
@@ -8092,7 +8119,7 @@ imobie.com##.adlet_mobile
 regionalwolfenbuettel.de##.mobile-ad1
 fuckler.com##.container-fluid > div[class="page-header text-center"]
 m.gazetevatan.com##a.Teaser[href^="http://secure.milliyet.com.tr/redirect/Default.aspx"][target="_blank"]
-m.iceporn.com##.main > .introduction
+m.iceporn.net,m.iceporn.com##.introduction
 m.rund-ums-baby.de##[class="ta"][style="margin:0 0 5% 0;"]
 m.rund-ums-baby.de##[class="ta"][style="margin:0 0 10% 0;"]
 m.rund-ums-baby.de##p[style="font-size:10px; color:#8d8d8d; margin-bottom:10px; padding:0px 15px 0px 0px"]

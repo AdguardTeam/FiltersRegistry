@@ -1,9 +1,9 @@
-! Checksum: oDGPqiM2e67QhX1Eg4N8sg
-! Diff-Path: ../patches/23/23-s-1792736523-3600.patch
+! Checksum: /sCB308zYKoaOtGm8ICMSQ
+! Diff-Path: ../patches/23/23-s-1793283245-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.9.49
-! TimeUpdated: 2026-10-23T06:19:00+00:00
+! Version: 2.0.9.55
+! TimeUpdated: 2026-10-29T14:10:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -982,7 +982,7 @@ ucoz.ru/informer/
 ###banner-top-2
 ###banner-top-3
 ###banner-top-4
-~flickr.com###banner-wrap
+~accuweather.com,~flickr.com###banner-wrap
 ###banner240
 ###banner300_250
 ###banner3_wraper
@@ -1471,6 +1471,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||antonshipanov.org^
 ||poi.kinzazaza.org^
 ||beloboka.link^
 ||burunduksha.link^
@@ -1796,7 +1797,6 @@ ucoz.ru/informer/
 ||readto.ru^$third-party
 ||adwile.com^$third-party
 ||lentainform.com^$third-party
-||mpuls.ru^$third-party
 ||newseek.org^$third-party
 .infox.sg^$third-party
 ||sv-pr.ru^$third-party
@@ -3709,6 +3709,7 @@ http://w7.ru^$third-party
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||bns.bluesystem.world^
 ||kinogo-may.vipapi.org^
 ||adfox.yandex.ru^$domain=~yandex.by|~yandex.cloud|~yandex.com|~yandex.com.am|~yandex.com.tr|~yandex.kz|~yandex.net|~yandex.ru|~yandex.uz
 ||ad.cub.red^
@@ -4148,6 +4149,9 @@ avtocod.ru,love.ngs.ru,mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,del
 !
 ! NOTE: Specific rules
 !
+eurointegration.com.ua##div[style="min-height:280px"]
+nikvesti.com##.nv-ad
+nikvesti.com##.adfree-strip
 tribuna.com##div[class*="common_layout__right_column"]:has(> div[class^="Banner-module_"])
 tribuna.com##div[class^="Banner-module_"]
 tribuna.com##div[class^="_ideal-media_"]
@@ -4527,6 +4531,8 @@ citrus.ua,xsport.ua,zi.dn.ua,zi.ua##img[src^="/upload/rk/"]
 !
 !
 !
+24tv.ua##div[app-ad]
+24tv.ua##div[app-article-ita]
 sinoptik.ua##aside > div:has(> div[id^="div-gpt-ad"])
 machineryline.ua##.index-bns
 kurs.com.ua##.advertising:not(#bottomWrap)
@@ -4572,7 +4578,7 @@ itnet.com.ua##.td-ss-main-content > div.comments ~ h3
 tabletki.ua##.col__com > aside:has(> .com__panel-container > .com__panel > a[rel="nofollow sponsored noreferrer"])
 telegraf.com.ua##.l-layout__sidebar > .c-r:has(> .o-adds)
 tochka.net#%#//scriptlet('remove-node-text', 'script', 'attachShadow')
-rayon.in.ua##.banner-slot-container
+24tv.ua,rayon.in.ua##.banner-slot-container
 rivnepost.rv.ua##.sqview
 rivnepost.rv.ua##.entry-top
 sportarena.ua##.advertisment-events

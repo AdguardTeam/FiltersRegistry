@@ -1,8 +1,9 @@
-! Checksum: jPPN8X6CSPNG3OuhE93lPQ
+! Checksum: zTLxFYaix6gqdRRhIwaVKg
+! Diff-Path: ../patches/22/22-s-1793373193-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.15.27
-! TimeUpdated: 2026-10-23T18:14:04+00:00
+! Version: 2.0.15.33
+! TimeUpdated: 2026-10-30T15:09:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1223,6 +1224,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (third-party services)
 !
+||tally.so/embed^$third-party
 ||prod.oddsmind.ai/js/oddsmind-chat.min.js$third-party
 ||widster.ru^$third-party
 ||widget.yourgood.app^
@@ -1382,6 +1384,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (specific)
 !
+golem.de##iframe[data-tally-src]
 fragrantica.com###idIframeEAB
 ||c.fimgs.net/*&itemId=$subdocument
 mid-day.com##p[class^="article_shareyourfeedback_"]
@@ -1776,6 +1779,7 @@ yukawanet.com###custom_html-27
 ||comm100.com^$third-party
 /livechat.ashx?siteId=$script,third-party
 !
+||widget.brambles.ai^
 ||barry3.controld.com^
 ||dante-ai.com^$third-party
 ||i.v*.flomni.com/chat.corner.js
@@ -1853,7 +1857,10 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+alfemo.com##.online-sales-popup
+publikations-plattform.de###moinai-container
 dobro.ru##.widget-icon
+tokenpost.kr##.floating_actions
 flynode.io##button.woot-widget-bubble
 lg.com##.al-quick-btn__quickbtn
 lg.com##.al-proactive-msg
@@ -2054,6 +2061,8 @@ zebratechnologies.force.com##.zbrbot-container
 !
 !   SECTION: Uncategorized
 !
+!  visible on mobile
+! https://github.com/AdguardTeam/AdguardFilters/issues/245235
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233934
 ||gist.ai^$domain=upi.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/232077

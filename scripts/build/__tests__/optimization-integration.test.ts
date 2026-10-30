@@ -21,30 +21,39 @@ const mockFsPromises = (overrides: Record<string, unknown> = {}): { default: Rec
     },
 });
 
-// compile() always fetches percent.json remotely, even under use(). Mock only
-// that call so the suite below stays offline; everything else passes through.
-vi.mock('child_process', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('child_process')>();
-    return {
-        ...actual,
-        execFileSync: vi.fn((command: string, args: string[], options: unknown) => {
-            const url = args.find((arg) => typeof arg === 'string' && arg.includes('percent.json'));
-            if (url) {
-                return JSON.stringify({ config: [{ filterId: 1 }] });
-            }
-            return actual.execFileSync(command, args, options as never);
-        }),
-    };
-});
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const expectedOptimizationStatsBasePath = path.resolve(__dirname, '../../../temp/optimization/stats');
+const expectedPercentOptions = { percentPath: path.resolve(__dirname, '../../../optimization_config.json') };
 
 const EMPTY_FILTER_IDS = Object.freeze([]);
 const FILTER_ID = 1;
 
-describe('build.js: cache flag handling', () => {
+/**
+ * Imports build.ts with `process.exit` and `console.error` stubbed, and waits
+ * for it to exit with code 1.
+ *
+ * @returns Everything build.ts printed through `console.error`, joined by newlines.
+ */
+const importBuildExpectingFailure = async (): Promise<string> => {
+    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+    const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+
+    try {
+        await import('../build.js');
+
+        await vi.waitFor(() => {
+            expect(exitSpy).toHaveBeenCalledWith(1);
+        });
+
+        return consoleErrorSpy.mock.calls.map(([message]) => String(message)).join('\n');
+    } finally {
+        consoleErrorSpy.mockRestore();
+        exitSpy.mockRestore();
+    }
+};
+
+describe('build.ts: cache flag handling', () => {
     const originalArgv = process.argv;
 
     beforeEach(() => {
@@ -142,11 +151,28 @@ describe('build.js: cache flag handling', () => {
 
             await vi.waitFor(() => {
                 expect(vi.mocked(mockedStats.download))
-                    .toHaveBeenCalledWith(expectedOptimizationStatsBasePath, includedFilterIds, excludedFilterIds);
+                    .toHaveBeenCalledWith(
+                        expectedOptimizationStatsBasePath,
+                        includedFilterIds,
+                        excludedFilterIds,
+                        expectedPercentOptions,
+                    );
             });
             expect(vi.mocked(mockedCompile)).not.toHaveBeenCalled();
         },
     );
+
+    it('--download-stats failure: names optimization_config.json and keeps the original message', async () => {
+        const downloadError = new Error('curl failed: 404 for filters/9999/stats.json');
+        const { localOptimizationStatistics: mockedStats } = await import('@adguard/filters-compiler');
+        vi.mocked(mockedStats.download).mockRejectedValueOnce(downloadError);
+        process.argv = ['node', 'build.js', '--download-stats'];
+
+        const errorOutput = await importBuildExpectingFailure();
+
+        expect(errorOutput).toContain('optimization_config.json');
+        expect(errorOutput).toContain(downloadError.message);
+    });
 
     it.each([
         ['--use-cache', ['--use-cache']],
@@ -185,12 +211,15 @@ describe('build.js: cache flag handling', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
         });
-        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedOptimizationStatsBasePath);
+        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(
+            expectedOptimizationStatsBasePath,
+            expectedPercentOptions,
+        );
         expect(vi.mocked(mockedStats.download)).not.toHaveBeenCalled();
     });
 
     it('plain build with a cached local optimization present: does not call use(), fetches remotely', async () => {
-        // build.js only applies a local stats cache under --use-cache; a
+        // build.ts only applies a local stats cache under --use-cache; a
         // plain build must ignore it even when a matching cache exists.
         vi.doMock('fs', () => ({
             existsSync: vi.fn().mockReturnValue(true),
@@ -255,7 +284,10 @@ describe('build.js: cache flag handling', () => {
         await vi.waitFor(() => {
             expect(vi.mocked(mockedCompile)).toHaveBeenCalled();
         });
-        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(expectedOptimizationStatsBasePath);
+        expect(vi.mocked(mockedStats.use)).toHaveBeenCalledWith(
+            expectedOptimizationStatsBasePath,
+            expectedPercentOptions,
+        );
     });
 
     it('stats dir exists but its filters/ subfolder is missing: falls back to remote, does not crash', async () => {
@@ -302,23 +334,11 @@ describe('build.js: cache flag handling', () => {
         }));
         process.argv = ['node', 'build.js', '--use-cache'];
 
-        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
-        const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+        const errorOutput = await importBuildExpectingFailure();
 
-        await import('../build.js');
-
-        await vi.waitFor(() => {
-            expect(exitSpy).toHaveBeenCalledWith(1);
-        });
-
-        expect(consoleErrorSpy).toHaveBeenCalledWith(
-            expect.stringContaining(
-                `Run --download-stats to download the latest statistics. (${retrieveStatsError.message})`,
-            ),
+        expect(errorOutput).toContain(
+            `Run --download-stats to download the latest statistics. (${retrieveStatsError.message})`,
         );
-
-        consoleErrorSpy.mockRestore();
-        exitSpy.mockRestore();
     });
 
     it('--use-cache with invalid (not missing) stats.json: printing the validation-specific hint', async () => {
@@ -341,27 +361,13 @@ describe('build.js: cache flag handling', () => {
         }));
         process.argv = ['node', 'build.js', '--use-cache'];
 
-        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
-        const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+        const errorOutput = await importBuildExpectingFailure();
 
-        await import('../build.js');
-
-        await vi.waitFor(() => {
-            expect(exitSpy).toHaveBeenCalledWith(1);
-        });
-
-        expect(consoleErrorSpy).toHaveBeenCalledWith(
-            expect.stringContaining(
-                'The cached optimization stats are invalid. Inspect the file, or run '
-                + `--download-stats to try refreshing it from the remote server. (${invalidStatsError.message})`,
-            ),
+        expect(errorOutput).toContain(
+            'The cached optimization stats are invalid. Inspect the file, or run '
+            + `--download-stats to try refreshing it from the remote server. (${invalidStatsError.message})`,
         );
-        expect(consoleErrorSpy).not.toHaveBeenCalledWith(
-            expect.stringContaining('Run --download-stats to download the latest statistics.'),
-        );
-
-        consoleErrorSpy.mockRestore();
-        exitSpy.mockRestore();
+        expect(errorOutput).not.toContain('Run --download-stats to download the latest statistics.');
     });
 });
 
@@ -386,12 +392,28 @@ const TEST_PLATFORM_CONFIG: Record<string, Record<string, unknown>> = {
 
 describe('localOptimizationStatistics: rules optimized from local cache', () => {
     let tmpDir: string;
+    let curlLogPath: string;
+    let originalPath: string | undefined;
     let optimizationStatsBasePath: string;
     let allOutput: string;
     let statsContentBefore: string;
 
     beforeAll(async () => {
         tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'filters-e2e-optimized-rules-'));
+
+        // The compiler downloads through `curl`. Put a failing curl first on PATH and
+        // log its calls, so the test proves no remote request (percent.json or
+        // stats.json) is made when percentPath is set — even with network access.
+        const curlShimDir = path.join(tmpDir, 'bin');
+        curlLogPath = path.join(tmpDir, 'curl-calls.log');
+        await fs.mkdir(curlShimDir, { recursive: true });
+        await fs.writeFile(
+            path.join(curlShimDir, 'curl'),
+            `#!/bin/sh\necho "$@" >> "${curlLogPath}"\nexit 22\n`,
+            { mode: 0o755 },
+        );
+        originalPath = process.env.PATH;
+        process.env.PATH = `${curlShimDir}${path.delimiter}${originalPath ?? ''}`;
 
         const filtersDir = path.join(tmpDir, 'filters');
         optimizationStatsBasePath = path.join(tmpDir, 'optimization', 'stats');
@@ -414,8 +436,10 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
         const statsDir = path.join(optimizationStatsBasePath, 'filters', String(FILTER_ID));
         await fs.mkdir(statsDir, { recursive: true });
 
-        // percent.json isn't written locally — it's never read from disk, only
-        // fetched (and mocked above), so it's not needed here.
+        // Injected via percentPath, so compile() makes no network request for percent.json.
+        const percentPath = path.join(tmpDir, 'optimization_config.json');
+        await fs.writeFile(percentPath, JSON.stringify([{ filterId: FILTER_ID, percent: 40 }]), 'utf-8');
+
         const statsJson = JSON.stringify({
             percent: 40,
             minPercent: 25,
@@ -435,7 +459,7 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
         await fs.writeFile(statsPath, statsJson, 'utf-8');
         statsContentBefore = statsJson;
 
-        localOptimizationStatistics.use(optimizationStatsBasePath);
+        localOptimizationStatistics.use(optimizationStatsBasePath, { percentPath });
 
         await compile(filtersDir, logPath, reportPath, platformsDir, [FILTER_ID], [], TEST_PLATFORM_CONFIG);
 
@@ -444,6 +468,11 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
         expect(optimizedFiles.length).toBeGreaterThan(0);
         allOutput = (await Promise.all(optimizedFiles.map(async (f) => fs.readFile(f, 'utf-8')))).join('\n');
     }, 30_000);
+
+    it('makes no remote request: percent.json comes from percentPath', async () => {
+        const curlCalls = await fs.readFile(curlLogPath, 'utf-8').catch(() => '');
+        expect(curlCalls).toBe('');
+    });
 
     it('local stats.json is not modified by compile', async () => {
         const statsPath = path.join(optimizationStatsBasePath, 'filters', String(FILTER_ID), 'stats.json');
@@ -460,6 +489,7 @@ describe('localOptimizationStatistics: rules optimized from local cache', () => 
     });
 
     afterAll(async () => {
+        process.env.PATH = originalPath;
         await localOptimizationStatistics.reset(optimizationStatsBasePath);
         await fs.rm(tmpDir, { recursive: true, force: true });
     });

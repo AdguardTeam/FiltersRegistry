@@ -140,6 +140,16 @@ with a log message explaining why.
 If a filter's `stats.json` is missing under a cache that *did* match, the
 build fails with a message pointing at `yarn download-stats`.
 
+The set of optimizable filters is pinned too: `--download-stats` and a
+`--use-cache` build that applies the local stats cache read it from
+[`optimization_config.json`](optimization_config.json) instead of fetching the
+remote `percent.json`, so they need no network access for it and give the same
+result on every run. A plain `yarn build` and a `--use-cache` build that falls
+back to remote stats still fetch the remote `percent.json`.
+Because the list is local, a filter added to `optimization_config.json` before
+the config is deployed makes `--download-stats` fail with a 404 on that filter's
+`stats.json`: Please deploy the config to the server first.
+
 The `-i` / `-s` / `--no-patches-prepare` / `--strip-generated-meta` flags can be
 combined:
 
@@ -165,7 +175,7 @@ It walks through a few prompts, in order:
 3. The build mode — a plain `build`, or `build:local` from cached sources.
   Choosing cached mode adds two follow-up prompts: whether to run
   `generate-cache` first, and whether to use optimization stats. Stats are
-  cached-mode only (`build.js` only applies a local stats cache under
+  cached-mode only (`build.ts` only applies a local stats cache under
   `--use-cache`); when used, they're downloaded once into a shared
   `temp/reg-stats` (kept separate from the main checkout's
   `temp/optimization/stats`) and copied into both worktrees, so both builds
@@ -175,10 +185,13 @@ It walks through a few prompts, in order:
 Under the hood it builds `master` and the compare branch
 in parallel via git worktrees under `temp/`, with a progress spinner on the
 slow steps (install, build, copy, restore, cleanup); it also resets the
-compare worktree's `filters/` to the master version first, so `revision.json`
-version counters start from the same point and don't show up as diff noise in
-the report. With `filters/` pinned, the tool compares build-tooling changes
-through their effect on the platform output, not filter content.
+compare worktree's `filters/` and `optimization_config.json` to the master
+version first, so `revision.json` version counters start from the same point and
+don't show up as diff noise in the report, and both builds use the same set of
+optimizable filters as the shared stats snapshot. With `filters/` pinned, the tool
+compares build-tooling changes through their effect on the platform output, not
+filter content. A branch's own changes to `optimization_config.json` are not
+compared.
 
 Two more things it does around the build:
 
@@ -227,7 +240,8 @@ The following flags can be used with `yarn build` and `yarn build:local`:
   Fetches into a temp directory and, once every fetch succeeds, replaces the whole local stats
   directory — not a per-filter merge into the existing cache. `--include` / `--skip` scope which
   filters are fetched, so a scoped `--download-stats` drops every other filter's cached stats;
-  pair it with an equally scoped build. `--report`, `--strip-generated-meta`, and
+  pair it with an equally scoped build. The filters to download come from the local
+  `optimization_config.json`, not the remote `percent.json`. `--report`, `--strip-generated-meta`, and
   `--no-patches-prepare` error here, since none of them apply to a run that produces no
   platform output.
 

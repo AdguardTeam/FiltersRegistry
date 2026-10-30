@@ -1,9 +1,9 @@
-! Checksum: HYMJyNQGC1Wxk06+2De3fg
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1792765007-3600.patch
+! Checksum: GD0MRkgF6b6UgtW65igWGw
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1793369603-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.24
-! TimeUpdated: 2026-10-23T14:12:46+00:00
+! Version: 2.0.69.39
+! TimeUpdated: 2026-10-30T14:10:05+00:00
 ! Expires: 10 days (update frequency)
 ||apk-2.online^$third-party
 ||geniusclickad.cc^
@@ -559,6 +559,7 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ##.solkulereklam
 ##.reklamCerceve
 ##.reklamKodu
+##body > a.pageskin
 ##body > a[target="_blank"] > div.pageskin
 ##body > div.pageskin
 ##body > div#pageskin
@@ -1068,6 +1069,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+patronspor.is##a[rel="sponsored noopener"]
 onedio.com##.theme-brand
 ||diziizle.wiki/e/s$xmlhttprequest
 technopat.net##.tp-ad-zone
@@ -5604,6 +5606,10 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+||pasgoliptv*.site/view/theme/ultimate/assets/js/rc.js
+||pasgoliptv*.site/view/theme/ultimate/img/*.gif
+[$domain=/pasgoliptv\d+\.site$/]##body > header
+[$domain=/pasgoliptv\d+\.site$/]##div[class^="reklam-"]
 [$domain=/tulipbettv\d+\.com$/]##header > ul
 [$domain=/tulipbettv\d+\.com$/]##.odds-container
 [$domain=/tulipbettv\d+\.com$/]##.header-top > div.header-text
@@ -5867,8 +5873,8 @@ turkkizlar.com##div[class^="vid-promo"]
 [$domain=/patronmac\d+\.cfd$/]#$#.background-link { display: none !important; }
 [$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ||cdn.jsdelivr.net/*.mp4$domain=/patronmac\d+\.cfd$/
-||blogger.googleusercontent.com/img/$domain=patronmac101.cfd
-||cdn.jsdelivr.net/*.mp4$domain=patronmac101.cfd
+||blogger.googleusercontent.com/img/$domain=patronmac102.cfd
+||cdn.jsdelivr.net/*.mp4$domain=patronmac102.cfd
 ||turkifsaclub*.sbs/*.gif
 turkifsaclub.org##.ads-grid
 turkifsaclub.org#?#main > h3:contains(Sponsor Bannerlar)
@@ -5998,6 +6004,8 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 [$domain=/hdselcuksports\d+\.top/]##.header_r
 [$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('prevent-window-open')
 ||sporcafe*.xyz/assets/uploads/$image
+!+ NOT_VALIDATE
+[$domain=/^(www\.)?sporcafe[a-z0-9-]+\.xyz$/]###guvenilir
 !+ NOT_VALIDATE
 [$domain=/^(www\.)?sporcafe[a-z0-9-]+\.xyz$/]##.banner-placeholder
 !+ NOT_VALIDATE
@@ -6135,7 +6143,7 @@ hdtaraftartv1000.blogspot.com#$##main-wrapper { margin: 0 auto 0 !important; }
 hdfilmizleamk.net,birasyadizi.com,seyredeger.com#%#//scriptlet('abort-on-property-write', 'onPopUnderLoaded')
 ||royaltv*.com/reklam*.gif
 [$domain=/royaltv\d+\.com/]##a[href^="https://t2ly.io/"]
-royaltv38.com##a[href^="https://t2ly.io/"]
+royaltv39.com##a[href^="https://t2ly.io/"]
 ||diziyou*.com/wp-content/*.gif
 [$domain=/diziyou\d+\.com/]#%#//scriptlet('set-constant', 'player.vroll', 'noopFunc')
 diziyou.one#%#//scriptlet('set-constant', 'player.vroll', 'noopFunc')

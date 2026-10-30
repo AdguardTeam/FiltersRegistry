@@ -247,9 +247,9 @@ filter_flags() {
     printf '%s' "$flags"
 }
 
-# Normalizes a comma-separated filter-ID list the same way build.js's
+# Normalizes a comma-separated filter-ID list the same way build.ts's
 # scopeFlagsFor() does (Number.parseInt), e.g. "01,2" -> "1,2" — so a scope
-# string built from it compares equal to one build.js wrote, even if the
+# string built from it compares equal to one build.ts wrote, even if the
 # filter-selection prompt let a leading zero through.
 normalize_filter_ids() {
     local ids=$1 id out=""
@@ -291,19 +291,21 @@ restore_worktree_platforms() {
         git -C "$1" clean --quiet -fd -- platforms/
 }
 
-# Replaces the compare worktree's filters/ with the $BASE_BRANCH version.
+# Replaces the compare worktree's filters/ and optimization_config.json with the
+# $BASE_BRANCH version.
 # `git rm` first so filter directories the branch *added* don't survive the
 # checkout — they would otherwise keep their own revision.json counters and
 # show up as diff noise in the report.
-sync_filters_baseline() {
+# optimization_config.json is loaded from the project root.
+sync_baseline() {
     git -C "$CHANGED_WORK_TREE" rm -r --quiet --ignore-unmatch -- filters &&
-        git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/
+        git -C "$CHANGED_WORK_TREE" checkout "$MASTER_SHA" -- filters/ optimization_config.json
 }
 
 # Copies SHARED_STATS_DIR into both worktrees' temp/optimization/stats, so
-# build.js's existsSync() check picks it up via localOptimizationStatistics.use()
+# build.ts's existsSync() check picks it up via localOptimizationStatistics.use()
 # instead of each worktree fetching its own (possibly different) remote snapshot.
-# The sibling .scope marker travels with it — build.js now refuses to use() a
+# The sibling .scope marker travels with it — build.ts now refuses to use() a
 # stats dir whose .scope doesn't match (or isn't a full download), so leaving
 # it behind here would make every worktree fall back to remote regardless.
 copy_shared_stats_into_worktrees() {
@@ -633,7 +635,7 @@ if confirm; then
 
     # Downloaded once (via the $BASE_BRANCH worktree) into SHARED_STATS_DIR,
     # then copied into both worktrees, so they see the same snapshot instead
-    # of each fetching its own — build.js only applies a local stats cache
+    # of each fetching its own — build.ts only applies a local stats cache
     # under --use-cache, so this is only offered here. Decided now, but
     # actually run only after Step 6 has installed deps into
     # $MASTER_WORK_TREE, since yarn download-stats needs node_modules.
@@ -643,7 +645,7 @@ if confirm; then
     # recorded here and checked below.
     SHARED_STATS_SCOPE_FILE="$SHARED_STATS_DIR.scope"
     CURRENT_STATS_SCOPE="include=$INCLUDED_FILTER_IDS;exclude=$EXCLUDED_FILTER_IDS"
-    # A full, unscoped download is valid for any selection — mirrors build.js's
+    # A full, unscoped download is valid for any selection — mirrors build.ts's
     # own scopeFlagsFor([], []) acceptance. Without this, a scoped rerun after a
     # full download would report "different filter selection" and overwrite the
     # full snapshot with a partial one.
@@ -832,9 +834,9 @@ if [ "$DO_USE_STATS" = true ]; then
     fi
 fi
 
-if ! run_with_spinner "syncing filters/ to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
-    sync_filters_baseline; then
-    die "syncing filters/ baseline FAILED" "$LOG_SYNC_BASELINE"
+if ! run_with_spinner "syncing filters/ and optimization_config.json to $BASE_BRANCH baseline" "$LOG_SYNC_BASELINE" \
+    sync_baseline; then
+    die "syncing filters/ and optimization_config.json baseline FAILED" "$LOG_SYNC_BASELINE"
 fi
 
 # Clear the platforms/ directory in each worktree to ensure the output

@@ -302,7 +302,6 @@ describe('validatePlatformPatches', () => {
         const changedFiles = [
             'platforms/mac/filters/1.txt',
             'platforms/extension/chromium-mv3/filters/1.txt',
-            'platforms/extension/android-content-blocker/filters/1.txt',
         ];
 
         gitMock.changedFiles = changedFiles;
@@ -318,6 +317,23 @@ describe('validatePlatformPatches', () => {
                 '',
             );
         }
+
+        await expect(validatePlatformPatches()).resolves.toBeUndefined();
+    });
+
+    it('validates android-content-blocker patches', async () => {
+        const relativePath = 'platforms/extension/android-content-blocker/filters/1.txt';
+        const oldContent = '! Title: Test\r\n! Diff-Path: ../patches/1/1-s-1-3600.patch\r\n! Version: 1\r\n';
+        const newContent = '! Title: Test\r\n! Diff-Path: ../patches/1/1-s-1-3600.patch\r\n! Version: 2\r\n';
+        const rcsPatch = 'd3 1\na3 1\n! Version: 2\r\n';
+
+        gitMock.changedFiles = [relativePath];
+        gitMock.headContents.set(relativePath, oldContent);
+        await writeRepoFile(relativePath, newContent);
+        await writeRepoFile(
+            'platforms/extension/android-content-blocker/patches/1/1-s-1-3600.patch',
+            rcsPatch,
+        );
 
         await expect(validatePlatformPatches()).resolves.toBeUndefined();
     });

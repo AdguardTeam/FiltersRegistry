@@ -1,9 +1,9 @@
-! Checksum: JGil4m1SFlnDIYk1VhE16Q
-! Diff-Path: ../patches/13/13-s-1792765037-3600.patch
+! Checksum: jtVW+iBSe+Rky84otrFQzg
+! Diff-Path: ../patches/13/13-s-1793369639-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.24
-! TimeUpdated: 2026-10-23T14:12:46+00:00
+! Version: 2.0.69.39
+! TimeUpdated: 2026-10-30T14:10:05+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -798,6 +798,7 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ##.solkulereklam
 ##.reklamCerceve
 ##.reklamKodu
+##body > a.pageskin
 ##body > a[target="_blank"] > div.pageskin
 ##body > div.pageskin
 ##body > div#pageskin
@@ -1596,6 +1597,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+patronspor.is##a[rel="sponsored noopener"]
 onedio.com##.theme-brand
 ||diziizle.wiki/e/s$xmlhttprequest
 technopat.net##.tp-ad-zone
@@ -6141,6 +6143,13 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! except some sites that use non-template domain names of mirror sites
 !
 !
+! Frequently changed domains: pasgoliptv*.site
+! Source: pasgoliptv44.site
+||pasgoliptv*.site/view/theme/ultimate/assets/js/rc.js
+||pasgoliptv*.site/view/theme/ultimate/img/*.gif
+[$domain=/pasgoliptv\d+\.site$/]##body > header
+[$domain=/pasgoliptv\d+\.site$/]##div[class^="reklam-"]
+!
 ! Frequently changed domains: tulipbettv*.com
 ! Source: tulipbettv117.com
 [$domain=/tulipbettv\d+\.com$/]##header > ul
@@ -6615,8 +6624,8 @@ turkkizlar.com##div[class^="vid-promo"]
 [$domain=/patronmac\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 ||cdn.jsdelivr.net/*.mp4$domain=/patronmac\d+\.cfd$/
 ! aglint-enable no-invalid-modifiers
-||blogger.googleusercontent.com/img/$domain=patronmac101.cfd
-||cdn.jsdelivr.net/*.mp4$domain=patronmac101.cfd
+||blogger.googleusercontent.com/img/$domain=patronmac102.cfd
+||cdn.jsdelivr.net/*.mp4$domain=patronmac102.cfd
 !
 ! Frequently changed domains: turkifsaclub*.sbs
 ! Source: turkifsaclub.org
@@ -6840,6 +6849,8 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ! Frequently changed domains: sporcafe[-hash].com
 ||sporcafe*.xyz/assets/uploads/$image
 !+ NOT_VALIDATE
+[$domain=/^(www\.)?sporcafe[a-z0-9-]+\.xyz$/]###guvenilir
+!+ NOT_VALIDATE
 [$domain=/^(www\.)?sporcafe[a-z0-9-]+\.xyz$/]##.banner-placeholder
 !+ NOT_VALIDATE
 [$domain=/^(www\.)?sporcafe[a-z0-9-]+\.xyz$/]##.pageskin-clickable
@@ -7014,7 +7025,7 @@ hdfilmizleamk.net,birasyadizi.com,seyredeger.com#%#//scriptlet('abort-on-propert
 ! Frequently changed domains: royaltv*.com
 ||royaltv*.com/reklam*.gif
 [$domain=/royaltv\d+\.com/]##a[href^="https://t2ly.io/"]
-royaltv38.com##a[href^="https://t2ly.io/"]
+royaltv39.com##a[href^="https://t2ly.io/"]
 !
 ! Frequently changed domains: diziyou*.com
 ! Source: https://t.me/diziyoucom
