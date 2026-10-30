@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.5.0.82",
-			"timeUpdated": "2026-10-30T05:08:48+0000",
+			"version": "2.5.0.83",
+			"timeUpdated": "2026-10-30T06:14:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.34.54",
-			"timeUpdated": "2026-10-30T00:21:02+0000",
+			"version": "2.1.34.55",
+			"timeUpdated": "2026-10-30T06:14:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.84.67",
-			"timeUpdated": "2026-10-30T05:09:38+0000",
+			"version": "2.2.84.68",
+			"timeUpdated": "2026-10-30T06:14:52+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -681,8 +681,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/16_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.8",
-			"timeUpdated": "2026-10-29T16:10:40+0000",
+			"version": "2.0.58.9",
+			"timeUpdated": "2026-10-30T06:15:00+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -707,8 +707,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.98.5",
-			"timeUpdated": "2026-10-30T05:09:47+0000",
+			"version": "2.0.98.6",
+			"timeUpdated": "2026-10-30T06:15:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.53",
-			"timeUpdated": "2026-10-30T05:09:50+0000",
+			"version": "2.0.86.54",
+			"timeUpdated": "2026-10-30T06:15:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -898,8 +898,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.0.65",
-			"timeUpdated": "2026-10-29T09:10:58+0000",
+			"version": "2.0.0.66",
+			"timeUpdated": "2026-10-30T06:15:15+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
