@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.5.0.95",
-			"timeUpdated": "2026-10-30T19:07:44+0000",
+			"version": "2.5.0.96",
+			"timeUpdated": "2026-10-30T20:08:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.14.53",
-			"timeUpdated": "2026-10-30T18:09:33+0000",
+			"version": "2.1.14.54",
+			"timeUpdated": "2026-10-30T20:08:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.84.80",
-			"timeUpdated": "2026-10-30T19:08:25+0000",
+			"version": "2.2.84.81",
+			"timeUpdated": "2026-10-30T20:09:05+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.61",
-			"timeUpdated": "2026-10-30T19:08:34+0000",
+			"version": "2.0.86.62",
+			"timeUpdated": "2026-10-30T20:09:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -898,8 +898,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.0.68",
-			"timeUpdated": "2026-10-30T15:09:58+0000",
+			"version": "2.0.0.69",
+			"timeUpdated": "2026-10-30T20:09:29+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
@@ -1802,8 +1802,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.68.56",
-			"timeUpdated": "2026-10-30T18:10:41+0000",
+			"version": "2.1.68.57",
+			"timeUpdated": "2026-10-30T20:09:33+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
