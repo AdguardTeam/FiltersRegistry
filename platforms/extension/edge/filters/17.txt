@@ -1,9 +1,9 @@
-! Checksum: cVv+F3n0EoN6Q2hvF7yNxQ
-! Diff-Path: ../patches/17/17-s-1793279648-3600.patch
+! Checksum: TwQLEQ7tZAWHDlpggb/Ylw
+! Diff-Path: ../patches/17/17-s-1793337165-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.75
-! TimeUpdated: 2026-10-29T13:10:15+00:00
+! Version: 2.0.14.76
+! TimeUpdated: 2026-10-30T05:09:46+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -538,6 +538,11 @@ $removeparam=tduid
 ! Good: ||example.org^$removeparam=cx
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245728
+||auto.de^$removeparam=source
+||auto.de^$removeparam=medium
+||auto.de^$removeparam=campaign
+||auto.de^$removeparam=adgroupid
 ! x.com "copy link" tracking parameters
 ||x.com^$removeparam=a
 ||x.com^$removeparam=s
