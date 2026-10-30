@@ -440,8 +440,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.77.33",
-			"timeUpdated": "2026-10-30T04:35:17+0000",
+			"version": "2.1.77.34",
+			"timeUpdated": "2026-10-30T08:36:51+0000",
 			"languages": []
 		},
 		{
@@ -525,8 +525,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.29",
-			"timeUpdated": "2026-10-30T04:35:21+0000",
+			"version": "2.2.0.30",
+			"timeUpdated": "2026-10-30T08:36:53+0000",
 			"languages": []
 		},
 		{
@@ -571,8 +571,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.2.0.31",
-			"timeUpdated": "2026-10-30T04:35:23+0000",
+			"version": "2.2.0.32",
+			"timeUpdated": "2026-10-30T08:36:55+0000",
 			"languages": []
 		},
 		{
@@ -614,8 +614,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.2.0.31",
-			"timeUpdated": "2026-10-30T04:35:25+0000",
+			"version": "2.2.0.32",
+			"timeUpdated": "2026-10-30T08:36:55+0000",
 			"languages": [
 				"ar"
 			]
@@ -634,8 +634,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.30",
-			"timeUpdated": "2026-10-30T04:35:27+0000",
+			"version": "2.2.0.31",
+			"timeUpdated": "2026-10-30T08:36:56+0000",
 			"languages": []
 		},
 		{
@@ -719,8 +719,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.74.2",
-			"timeUpdated": "2026-10-30T04:35:30+0000",
+			"version": "2.1.74.3",
+			"timeUpdated": "2026-10-30T08:36:59+0000",
 			"languages": []
 		},
 		{
@@ -806,8 +806,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.71.36",
-			"timeUpdated": "2026-10-30T04:35:36+0000",
+			"version": "2.1.71.37",
+			"timeUpdated": "2026-10-30T08:37:05+0000",
 			"languages": []
 		},
 		{
@@ -824,8 +824,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.72.5",
-			"timeUpdated": "2026-10-30T04:35:38+0000",
+			"version": "2.0.72.6",
+			"timeUpdated": "2026-10-30T08:37:05+0000",
 			"languages": []
 		},
 		{
@@ -944,8 +944,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.31",
-			"timeUpdated": "2026-10-30T04:35:42+0000",
+			"version": "2.2.0.32",
+			"timeUpdated": "2026-10-30T08:37:10+0000",
 			"languages": []
 		},
 		{
@@ -1024,8 +1024,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.99.57",
-			"timeUpdated": "2026-10-30T04:35:45+0000",
+			"version": "2.1.99.58",
+			"timeUpdated": "2026-10-30T08:37:12+0000",
 			"languages": []
 		},
 		{
@@ -1055,8 +1055,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
-			"version": "2.0.46.59",
-			"timeUpdated": "2026-10-30T04:35:45+0000",
+			"version": "2.0.46.60",
+			"timeUpdated": "2026-10-30T08:37:13+0000",
 			"languages": [
 				"vi"
 			]
@@ -1265,8 +1265,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/npm/@filteringdev/filterslists-ko@latest/dist/filterslist-AdGuard-classic.txt",
-			"version": "2.0.25.99",
-			"timeUpdated": "2026-10-30T04:35:51+0000",
+			"version": "2.0.26.0",
+			"timeUpdated": "2026-10-30T08:37:18+0000",
 			"languages": [
 				"ko"
 			]
@@ -1334,8 +1334,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.31",
-			"timeUpdated": "2026-10-30T04:35:53+0000",
+			"version": "2.2.0.32",
+			"timeUpdated": "2026-10-30T08:37:19+0000",
 			"languages": []
 		},
 		{
@@ -1531,8 +1531,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
-			"version": "2.0.25.71",
-			"timeUpdated": "2026-10-29T08:38:16+0000",
+			"version": "2.0.25.72",
+			"timeUpdated": "2026-10-30T08:37:27+0000",
 			"languages": [
 				"sv"
 			]
@@ -1587,8 +1587,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.96.37",
-			"timeUpdated": "2026-10-30T04:36:04+0000",
+			"version": "2.1.96.38",
+			"timeUpdated": "2026-10-30T08:37:28+0000",
 			"languages": []
 		},
 		{
@@ -1693,8 +1693,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.93.62",
-			"timeUpdated": "2026-10-30T04:36:09+0000",
+			"version": "2.0.93.63",
+			"timeUpdated": "2026-10-30T08:37:32+0000",
 			"languages": [
 				"hi"
 			]
@@ -1736,8 +1736,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
-			"version": "2.0.9.30",
-			"timeUpdated": "2026-10-29T08:38:29+0000",
+			"version": "2.0.9.31",
+			"timeUpdated": "2026-10-30T08:37:34+0000",
 			"languages": []
 		},
 		{
