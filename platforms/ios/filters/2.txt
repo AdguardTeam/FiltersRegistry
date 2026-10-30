@@ -1,9 +1,9 @@
-! Checksum: 0OxfZOZuKS2Bf5hWL4YzlA
-! Diff-Path: ../patches/2/2-s-1793391202-3600.patch
+! Checksum: RZyiAeJ19T4d0fyEhL8aog
+! Diff-Path: ../patches/2/2-s-1793394743-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.0.96
-! TimeUpdated: 2026-10-30T20:08:11+00:00
+! Version: 2.5.0.97
+! TimeUpdated: 2026-10-30T21:08:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14018,11 +14018,6 @@ ecropper.in#$#div[aria-labelledby="adblock-modal-title"] { display: none !import
 content.st#%#Object.defineProperty(window,"BlockCheck",{get:()=>({check:()=>Promise.resolve("")}),set:e=>{}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245449
 app.tobari.moe#%#//scriptlet('prevent-setTimeout', 'show')
-! https://github.com/AdguardTeam/AdguardFilters/issues/244659
-amritlink.xyz#%#//scriptlet('prevent-element-src-loading', 'script', '/chymiadolors\.com|imprasavariac\.com|abscloud\.org/')
-amritlink.xyz#%#//scriptlet('set-constant', 'isPopupBlockedDetected', 'false')
-amritlink.xyz#%#(()=>{const verifiedKey=typeof popupPermVerifiedKey!=='undefined'?popupPermVerifiedKey:'popupPermVerifiedKey';const originalGetItem=Storage.prototype.getItem;Storage.prototype.getItem=function(key){if(this===sessionStorage){const keyStr=String(key);if(keyStr.includes('al_dl_fired_')||keyStr.includes('al_dl_opened_')||keyStr.includes(verifiedKey)){return'1';}}return originalGetItem.call(this,key);};const fakeWindow={closed:false,outerHeight:100,innerHeight:100,location:{replace:function(){}},close:function(){}};const fakeOpen=()=>fakeWindow;try{Object.defineProperty(window,'open',{value:fakeOpen,writable:false,configurable:false});}catch(e){window.open=fakeOpen;}try{Object.defineProperty(window,'__amritNativeOpen',{value:fakeOpen,writable:false,configurable:false});}catch(e){}})();
-@@||amritlink.xyz^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245182
 tv.10dailythings.com#@##pageAdDiv
 tv.10dailythings.com#@#.adsDiv
@@ -39332,6 +39327,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/244659
+amritlink.xyz#%#(()=>{document.addEventListener('click',e=>{const b=e.target.closest('#continueButton, #getFinalLinkBtn');if(b?.getAttribute('href')?.includes('auctionr.org')){e.preventDefault();e.stopPropagation();}},true);new MutationObserver(()=>{['continueButton','getFinalLinkBtn'].forEach(id=>{const b=document.getElementById(id);if(b?.getAttribute('href')?.includes('auctionr.org')){b.setAttribute('href','javascript:void(0);');b.removeAttribute('target');b.removeAttribute('rel');}});}).observe(document,{childList:true,subtree:true});})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243741
 ! Workaround for MV3 extension when scriptlet is injected too late
 f4scdn.com#%#(()=>{const n={apply:(n,o,t)=>{try{"open"===o?.name&&"_blank"===t?.[2]&&(o=window.open)}catch(n){}return Reflect.apply(n,o,t)}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,n)})();
@@ -103330,6 +103327,7 @@ browsershots.org#@#.advert_area
 ||dimmockvanglo.com^
 ||dimoriceplot.com^
 ||dimqtugkwxzrq.site^
+||dimxdtixyhxsg.site^
 ||dinepalli.com^
 ||dinernicknamestopwatch.com^
 ||dinetannery.com^
@@ -103900,6 +103898,7 @@ browsershots.org#@#.advert_area
 ||drawersrespectively.com^
 ||drawnbinary.com^
 ||drawncooler.com^
+||drawoffcutheal.cfd^
 ||drbsliemurknv.website^
 ||drbtcjprbqkhj.site^
 ||drcfwuuwswbni.store^
@@ -104381,6 +104380,7 @@ browsershots.org#@#.advert_area
 ||duchesspleasurelollipop.com^
 ||duckswillsmoochyou.com^
 ||duckvoidrebuke.com^
+||dudgeonideo.com^
 ||dudleyrevolutioninconsistent.com^
 ||dudppbtqgdvam.site^
 ||dudragonitean.com^
@@ -105245,6 +105245,7 @@ browsershots.org#@#.advert_area
 ||emtzvglbjsxnd.space^
 ||emufimenpcwsl.online^
 ||emumsazpndymr.space^
+||emwhsuftqjkcj.online^
 ||emwksqauungjg.website^
 ||emxdgt.com^
 ||emxipsmjhingj.website^
@@ -105427,6 +105428,7 @@ browsershots.org#@#.advert_area
 ||eolithlippia.com^
 ||eolrjhouwnzrz.site^
 ||eondunpea.com^
+||eonrjanlbksmi.website^
 ||eonwuljgmyjep.site^
 ||eoojhxzrnpqmj.site^
 ||eookanmfhqjkh.online^
@@ -107252,6 +107254,7 @@ browsershots.org#@#.advert_area
 ||fsdzafmzbdyan.store^
 ||fseoxnxjrtytt.site^
 ||fsgpxvemqbven.store^
+||fsjftgqefefds.online^
 ||fsknvrmtznthn.online^
 ||fsmfceljvhwfg.space^
 ||fsmozsiqsdapq.store^
@@ -108375,6 +108378,7 @@ browsershots.org#@#.advert_area
 ||goesduck.com^
 ||gofdtdxdtzkav.site^
 ||gogoga.xyz^
+||gogtib.com^
 ||gohotygirl.com^
 ||goilyklykgejy.website^
 ||goingtabific.com^
@@ -108753,6 +108757,7 @@ browsershots.org#@#.advert_area
 ||gtuxvjpwgyzob.online^
 ||gtychirzxljfl.online^
 ||gtyenqlhhinew.online^
+||gtysyjcmutudf.website^
 ||gtzjkxdwrglzj.online^
 ||gtzsczqtttoqd.site^
 ||guacosravaka.com^
@@ -109798,6 +109803,7 @@ browsershots.org#@#.advert_area
 ||hoggincourge.cyou^
 ||hogginsplateau.com^
 ||hogimid.cfd^
+||hogkueuehuoly.space^
 ||hoglikesummula.com^
 ||hogpastebruise.com^
 ||hogpenhusting.qpon^
@@ -112303,6 +112309,7 @@ browsershots.org#@#.advert_area
 ||jpgubykgtkioj.online^
 ||jpheacrrnllaq.space^
 ||jphnagyscnekv.site^
+||jpiiastwrhiyd.online^
 ||jpisoprhajjyx.space^
 ||jpixwkrjebyht.online^
 ||jpktldryxvuzk.online^
@@ -112436,6 +112443,7 @@ browsershots.org#@#.advert_area
 ||jszpagyvknvhv.website^
 ||jszwcvutrlpcr.site^
 ||jtarfendijmmo.online^
+||jtbfbkobnabhi.online^
 ||jtbwncoobdwdy.space^
 ||jtdkmjuiogidh.site^
 ||jtemxykefwgmw.online^
@@ -119421,6 +119429,7 @@ browsershots.org#@#.advert_area
 ||pageantlethal.com^
 ||pagejunky.com^
 ||pagerrentablespotlight.com^
+||paginalhalve.com^
 ||paginescanner.cfd^
 ||pagkitahn.com^
 ||pagmkummap.in^
@@ -120013,6 +120022,7 @@ browsershots.org#@#.advert_area
 ||pgabbgqhenhxu.space^
 ||pgaicmmmgubkv.site^
 ||pganwasqoeibh.website^
+||pgbwwtzfomeonq.com^
 ||pgcsfmjlvndfo.space^
 ||pgeevebcbzzcm.site^
 ||pgffyonxlfaz.com^
@@ -120243,6 +120253,7 @@ browsershots.org#@#.advert_area
 ||pipetmosette.com^
 ||pipeycashibo.com^
 ||pippiermagas.qpon^
+||pippleperfinshessite.qpon^
 ||pipsol.net^
 ||pirategailycauldron.com^
 ||pirogsimar.com^
@@ -124341,6 +124352,7 @@ browsershots.org#@#.advert_area
 ||sbrxizryixvpz.space^
 ||sbrxqximkoeig.website^
 ||sbsbetlinfevn.site^
+||sbsxzvtlrkkfl.website^
 ||sbvxtnnfuwnkv.space^
 ||sbwpwveyqunmi.space^
 ||sbxoukhwafjlx.site^
@@ -130306,6 +130318,7 @@ browsershots.org#@#.advert_area
 ||visitstats.com^
 ||visitweb.com^
 ||visonalumins.cyou^
+||visrpgtvklxkw.space^
 ||vitalbreak.pro^
 ||vitrealtropist.cfd^
 ||vitrialennui.cyou^
@@ -130870,6 +130883,7 @@ browsershots.org#@#.advert_area
 ||waggonertributeshaky.com^
 ||wagsad.com^
 ||wahabitanunderpinery.cfd^
+||wahfputqy.com^
 ||wahoha.com^
 ||waigaumaphips.net^
 ||waihaistuglo.net^
@@ -131046,6 +131060,7 @@ browsershots.org#@#.advert_area
 ||wbmuakyzdpylq.website^
 ||wbnidphydrpkz.site^
 ||wboptim.online^
+||wboqkrlaxfxlsg.com^
 ||wbrqykwbeazwn.space^
 ||wbscyctyiiold.space^
 ||wbsleixbsbbrf.space^
@@ -132466,6 +132481,7 @@ browsershots.org#@#.advert_area
 ||xgquu0bp.xyz^
 ||xgraph.net^
 ||xgsakoxjmdkld.site^
+||xgssbcysnelhi.space^
 ||xgupczseyx.com^
 ||xgv6nvb3htofxib39zooggyl7h.cfd^
 ||xgvgjcesdrssk.site^
@@ -134754,6 +134770,7 @@ browsershots.org#@#.advert_area
 ||zxjnlsqprjjqo.space^
 ||zxjshtdjvtfhb.site^
 ||zxmkhbsmmuikc.online^
+||zxnyiczxyfjaz.website^
 ||zxnymrendoxms.space^
 ||zxqvocyhiggng.site^
 ||zxrddcngmsdqu.site^
