@@ -1,5 +1,5 @@
-! Checksum: HzlNQe32FZi3moEloIBblw
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1793373203-3600.patch
+! Checksum: i5SVngPT6TeRQkq0cLe5fw
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1793412852-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.15.33
@@ -70,7 +70,6 @@ kasemato.net###more > span[style="color: rgb(255, 0, 0);"]
 incident-wo.com##.rss-entry-cards
 incident-wo.com##.widget_custom_html:has(> div > div.rss-entry-cards)
 incident-wo.com##.widget-single-content-bottom
-mutyun.com##.widget_mutyun_rss_widget
 girlsvip-matome.com###kanren_box2
 zzzsoku.com##.archive
 zzzsoku.com##.widget-below-sns-buttons:has(> .custom-html-widget > .wjp)
@@ -339,8 +338,6 @@ aatyu.livedoor.blog#?##blog-header > div[align="center"] > div.logbox
 aatyu.livedoor.blog##.custom5
 aatyu.livedoor.blog##.article-body > div.logbox4
 kitizawa.com##.article-body-more > div[style="border:1px solid #F90;padding:10px;border-radius:10px;background:#f9f9d4;"]
-||matomeantena.com^$domain=aaieba.livedoor.biz|incident-wo.com
-||nullpoantenna.com^$domain=aaieba.livedoor.biz|incident-wo.com|samuraisoccer.doorblog.jp
 kijomatomelog.com##.rss-single
 kijomatomelog.com,sukattojapan.com##.section-rss1
 ||vtubernews.jp/*link.js
@@ -419,6 +416,7 @@ carp-matome.blog.jp##.bw_outbox
 anihatsu.com##.rss-blogroll-kobetu
 news30over.com##div[class^="topbox"]
 uwakich.com##div[style^="height:"][style*="width:"][style$="px; overflow-y:scroll; text-decoration:none;"]
+mojokosan.doorblog.jp##.column-inner-2 > center > table
 lions-matome.com,sutekinakijo.com##.plugin-memo:has(> div.side > script[src$="/blogroll.js"])
 nekowan.com##div[class^="rss_comsita_saigo"]
 twibuz.com,nekowan.com##div[class^="blogroll-"]
@@ -861,12 +859,14 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||tally.so/embed^$third-party
 ||widster.ru^$third-party
 ||widget.yourgood.app^
+||quizgo-widget.ru^$third-party
 ||cdn.helvia.io^$third-party
 ||lemrock.com^$third-party
 ||tariffuxx.de^$third-party
 ||affilizz.com^$third-party
 ||mbp-japan.com/information/$script,third-party
 ||chat.quickcep.com^
+||webchat-ui.citibot.net^
 ||webchat.bebot.io^$third-party
 ||kwizbot.io^$third-party
 ||quotiq.ru^$third-party
@@ -1025,6 +1025,7 @@ hdfcbank.com###chatTogglerDiv
 help.bc.game##.csh-footer-ask
 justanswer.com##.th-chat-window
 kasla.ru##.callback-button
+khv-okna.ru###pozvonim-button
 muzofond.fm##.feedback-main-container
 myassignmenthelp.com###support-chat-wrapper
 network.mobile.rakuten.co.jp###rexSurveyEmbedded
@@ -1072,6 +1073,7 @@ volyninfa.com.ua###custom_html-2
 ||wchat.freshchat.com/js/widget.js
 ||widget.info-*.ru/js/init.js?t=$script,third-party
 @@||secure.livechatinc.com/customer/action/open_chat?$domain=njumobile.pl
+@@||api.popin.cc/searchbox/$domain=ampproject.net
 @@||static.landbot.io/landbot-widget/landbot-widget-*.js$domain=emma-matratze.de
 @@||widget.happyfoxchat.com^$domain=support.linksys.com
 @@||secure.livechatinc.com/customer/action/open_chat?$domain=kinguin.net
@@ -1211,13 +1213,11 @@ digital-razor.ru##.assistant-widget__message
 nefisyemektarifleri.com##.nyt-chatbot-tooltip
 nefisyemektarifleri.com##.nyt-chatbot-toggle
 isinolsa.com###isinolsa-ai-btn
-jrepoint.jp##.launcher-agent div.messenger
 chatlab.com##.rcw-widget-container
 asviva.de##.o-livechat-root
 dns-shop.ru###chat-button
 pacjent.gov.pl###sprintbot-chat
 careers.dhl.com##.phenom-chatbot-wrapper
-namesilo.com##.ai-chat-widget-container
 xbox.com##.copilot-container
 microsoft.com###msChatContainer
 games-world4you.de###shopify-chat
@@ -1231,7 +1231,6 @@ nbg.gr###chat-widget-root
 mediaexpert.pl###help-bubble
 mediaexpert.pl###expert-help-bubble
 ||livechat.oyunfor.com^
-pebblehost.com##.crisp-client
 gib.gov.tr,turktelekom.com.tr##.cbot-animation-holder
 xn--h1alcedd.xn--d1aqf.xn--p1ai###beesenderchat
 ||cdn.mindbehind.com/sdk-tr/mindbehind-webchat.js
@@ -1276,7 +1275,6 @@ moluch.ru##.ask_out
 ||smartsuppchat.com/loader.js
 ||studlancer.net/images/chat/studlancer_form.js
 @@||config.gorgias.chat^$domain=uperfect.com
-@@||client.crisp.chat^$domain=journey.cloud|aa.net.uk|pebblehost.com
 @@||service.force.com/embeddedservice/*/esw.min.js$domain=microchip.com|visible.com|playstation.com|cyberpowersystems.com|lego.com|support.sonos.com|chatbot-marie.dhl.de
 news.nextapple.com#$#.scrollTool > a { visibility: hidden !important; pointer-events: none !important; }
 news.nextapple.com#$#.scrollTool { cursor: default !important; }
@@ -1392,13 +1390,11 @@ cornellsun.com#$##cds-donate-modal { display: none !important; }
 cornellsun.com#$##cds-donate-modal ~ .modal-backdrop { display: none !important; }
 cornellsun.com#$#body.modal-open { overflow: auto !important; }
 wspinanie.pl##.support_google
-itechguides.com##.ym-donation-kofi-quick-wrap
 artistgrid.cx#%#//scriptlet('trusted-click-element', 'dialog[aria-label="Announcement"] button.justify-center')
 bingebox.to#%#//scriptlet('set-session-storage-item', 'bingebox-donation-banner-dismissed', '1')
 dir.bg###doantion-banner-block
 archive.org##.js-donate-banner
 pureinfotech.com##.kofi-box
-notepad.js.org###toastPopup
 techxplore.com,medicalxpress.com###js-popup-donate
 footystats.org##.appCta
 bentopdf.com###donation-ribbon
