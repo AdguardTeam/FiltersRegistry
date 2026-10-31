@@ -11,7 +11,27 @@ import { shouldGeneratePatch } from '../build/patches.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const FILTERS_REQUIRED_AMOUNT = 80;
+const LOCALES_DIR_PATH = '../../locales';
+
+/**
+ * Report file for the JSON schema validation warnings and errors.
+ * The file is gitignored.
+ */
+const JSON_SCHEMA_REPORT_FILE_NAME = 'report_json_schema.txt';
+
+const repoRootPath = path.join(__dirname, '../..');
+const localesDirPath = path.join(__dirname, LOCALES_DIR_PATH);
+const jsonSchemaReportPath = path.join(repoRootPath, JSON_SCHEMA_REPORT_FILE_NAME);
+
+/**
+ * Removes the report file left by a previous run.
+ *
+ * The compiler appends to the log file, so a stale report would mix previous
+ * warnings with the current validation results.
+ */
+const removeStaleReport = (): void => {
+    fs.rmSync(jsonSchemaReportPath, { force: true });
+};
 
 /**
  * Number of leading lines to scan for the `Diff-Path` tag, matching
@@ -285,9 +305,14 @@ const main = async (): Promise<void> => {
 
     const platformsPath = path.join(__dirname, platforms);
 
-    const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
+    removeStaleReport();
+
+    const validationResult = validateJSONSchema(platformsPath, {
+        localesPath: localesDirPath,
+        logPath: jsonSchemaReportPath,
+    });
     if (!validationResult) {
-        throw new Error('Invalid filters json');
+        throw new Error(`Invalid filters json, see ${JSON_SCHEMA_REPORT_FILE_NAME}`);
     }
 
     await validatePatches();
