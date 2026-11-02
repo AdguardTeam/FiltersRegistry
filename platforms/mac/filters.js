@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.5.1.58",
-			"timeUpdated": "2026-11-02T11:08:34+0000",
+			"version": "2.5.1.59",
+			"timeUpdated": "2026-11-02T12:12:08+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.34.64",
-			"timeUpdated": "2026-11-02T11:08:54+0000",
+			"version": "2.1.34.65",
+			"timeUpdated": "2026-11-02T12:12:34+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.54.44",
-			"timeUpdated": "2026-11-02T08:11:44+0000",
+			"version": "2.0.54.45",
+			"timeUpdated": "2026-11-02T12:12:40+0000",
 			"languages": [
 				"de"
 			]
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.85.0",
-			"timeUpdated": "2026-11-02T11:09:17+0000",
+			"version": "2.2.85.1",
+			"timeUpdated": "2026-11-02T12:13:01+0000",
 			"languages": []
 		},
 		{
@@ -269,8 +269,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/16.txt",
-			"version": "2.0.58.9",
-			"timeUpdated": "2026-10-30T06:15:00+0000",
+			"version": "2.0.58.10",
+			"timeUpdated": "2026-11-02T12:13:09+0000",
 			"languages": [
 				"fr"
 			]
@@ -302,8 +302,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.98.30",
-			"timeUpdated": "2026-11-02T11:09:27+0000",
+			"version": "2.0.98.31",
+			"timeUpdated": "2026-11-02T12:13:11+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.86.70",
-			"timeUpdated": "2026-11-02T10:09:38+0000",
+			"version": "2.0.86.71",
+			"timeUpdated": "2026-11-02T12:13:14+0000",
 			"languages": []
 		},
 		{
@@ -400,8 +400,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.0.14",
-			"timeUpdated": "2026-11-02T11:09:37+0000",
+			"version": "2.0.0.15",
+			"timeUpdated": "2026-11-02T12:13:22+0000",
 			"languages": [
 				"it"
 			]
