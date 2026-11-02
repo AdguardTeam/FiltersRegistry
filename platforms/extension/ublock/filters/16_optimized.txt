@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: uNuYi007s5bCYMsv9HQbRg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1793499312-3600.patch
+! Checksum: FfyLnQI+S2RzBikzgS0QpA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1793585764-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.58.9
@@ -377,6 +377,7 @@ footmercato.net##.article__iframe--dailymotion-sticky
 femmeactuelle.fr##.article-outbrain
 femmeactuelle.fr##div[class]:has(>[data-placeholdertext] + div:last-child)
 femmeactuelle.fr##div[class*=" "]:has(>[data-introtext])
+clubic.com##aside div[id^="sidebarPos"]:has(a.un-styled-linked[target="_blank"] img)
 macg.co##.app-header > div.w-full:has(> .Billboard_1)
 jeuxvideo.com##a[rel="sponsored"]
 jeuxvideo.com##.anchorMiddleOne--banner
@@ -834,8 +835,6 @@ $script,3p,domain=vipleague.im,badfilter
 ||publishers.edisound.com^$domain=lejournaldelamaison.fr,badfilter
 $script,3p,domain=asd.homes,badfilter
 tme.eu#@#a[href*="/www/delivery/"]
-@@||lastampa.it/embed/$subdocument,domain=lastampa.it
-@@||sonar.viously.com/*/js$domain=supersoluce.com
 $popup,domain=listeamed.net,badfilter
 $3p,xhr,domain=listeamed.net,badfilter
 $3p,xhr,domain=mivalyo.com,badfilter
@@ -1553,7 +1552,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?rand=*&blk=*&ref_
 ?redir=*/click?
 ?reqType=AdsSetup&
-?runauction=
 ?size=728x90|$subdocument
 ?tag_id=*&sw_url=
 ?tour=*&campaign=$3p
@@ -1563,6 +1561,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?zones=*&blockcampaign=
 _1080x90.$image
 _1140x90.
+_120by600_
 _250x300_
 _300-x-250_
 _300_600.
@@ -1828,6 +1827,7 @@ _werbebanner_
 ||afftrack001.com^$3p
 ||afilio.com.br^$3p
 ||aleja.lt^$3p
+||alldomserv2.com^$3p
 ||alloclick.com^$3p
 ||appsfire.com^$3p
 ||apypxl.com^$3p
@@ -2050,6 +2050,7 @@ _werbebanner_
 ||abistonfrau.com^
 ||abkajbvlymqmb.top^
 ||abolishmentpass.com^
+||abominableexhibition.com^
 ||abominablenicefrozen.com^
 ||aboundadmirermyself.com^
 ||aboutcrawford.com^
@@ -2179,7 +2180,6 @@ _werbebanner_
 ||ambulancetweakliberty.com^
 ||ambushthank.com^
 ||aminecaninus.com^
-||amjbc.com^
 ||ammoniacognatesupportive.com^
 ||amongstpromtumult.com^
 ||amoralentitled.com^
@@ -3903,6 +3903,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.fig-ad
 ##.fix_reklama
 ##.fixedAd
+##.footer--pub
 ##.footer-pub
 ##.footerpubright
 ##.frame-ads-left
@@ -3941,7 +3942,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.inread_ads-wrapper
 ##.inside-pub-container
 ##.it-sponsor-site
-##.item-izipub
 ##.jeg_ad_module
 ##.jeg_ads_hide_desktop
 ##.jeg_ads_hide_phone
@@ -3964,7 +3964,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.list-ads-282
 ##.list-ads-468
 ##.logo-right-ads
-##.m-adbanner
 ##.m-adbanner--megaban
 ##.map_fond_pub
 ##.marketing-container
@@ -4052,6 +4051,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.pub-text
 ##.pub-top
 ##.pub160x600
+##.pub242x90
 ##.pub300
 ##.pub300250
 ##.pub300_contenu
@@ -4235,6 +4235,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dailyuploads
 ##.top_reklama
 ##.topbanneradvertise
 ##.topbarpub
+##.topcenteradss
 ##.topleftad
 ##.tradingCenterAd
 ##.txt-pub
@@ -4441,6 +4442,7 @@ animeka.com,europages.fr###sponsor
 ruedesjoueurs.com###supersticiel
 lelmanga.com###teaser3
 tech2tech.fr###text-html-widget-20
+frenchweb.fr###text-html-widget-324
 quick-tutoriel.com###the-post .warning
 plancul-gratuit.fr,plancul-gratuit.org###toast-container
 viewsurf.com###top-ban
