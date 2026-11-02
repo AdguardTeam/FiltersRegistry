@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FV6hZEASizTuU7MPIUyssw
-! Diff-Path: ../patches/14/14-s-1793603661-3600.patch
+! Checksum: lRjpYANw1BZo6aXsowuLkw
+! Diff-Path: ../patches/14/14-s-1793607284-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.84.96
-! TimeUpdated: 2026-11-02T07:10:22+00:00
+! Version: 2.2.84.97
+! TimeUpdated: 2026-11-02T08:12:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2597,6 +2597,7 @@ gomedia.net.pl,sklep.coconaut.com,anhko.pl,4motos.pl,aluramy.pl,ameco-meble-biur
 !
 ! NOTE: Regular rules
 !
+tn.ru###disBot
 diariobitcoin.com###dbtc-cookie-notice
 ||nordsee24.de/consent/script
 yufap.com,yuvideos.com###cookies-content
@@ -18046,7 +18047,7 @@ audi-mediacenter.com##+js(set-cookie, AUDI_ENSIGHTEN_PRIVACY_Functional, 1)
 audi-mediacenter.com##+js(set-cookie, AUDI_ENSIGHTEN_PRIVACY_Performance, 0)
 gaana.com##+js(set-cookie, gdprv1, 1)
 umcutrecht.nl##+js(set-local-storage-item, consent, 1)
-apotheka.ee##+js(set-cookie, gdpr_cookie_token, 1)
+apothekabeauty.ee,apotheka.ee##+js(set-cookie, gdpr_cookie_token, 1)
 manutd.com##+js(set-cookie, userConsentCookiePolicy, true)
 magazinevoce.com.br,magazineluiza.com.br##+js(set-cookie-reload, cookie_accept_policy, true)
 fish.shimano.com##+js(set-cookie, cookiePrefAnalytics, 0)
@@ -36652,6 +36653,9 @@ wiwo.de,rocket-boys.co.jp,autonews.com,nerdwallet.com,creativebloq.com,space.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+tn.ru##.news-form-community-wrapper
+24noticias.sapo.pt##.wp-block-group > div[class^="gsbp-"]:has(> div.wp-block-mailchimp-mailchimp)
+24noticias.sapo.pt##.wp-block-group > div[class^="gsbp-"]:has(> div.wp-block-group > div.wp-block-mailchimp-mailchimp)
 neoteo.com##div[x-data*="neoteo_gsource"]
 diariobitcoin.com##.entry-content > div.titled-container-wrapper:has(> section > div.mailchimp-signup-form-container)
 diariobitcoin.com##.mailchimp-signup-form-container
@@ -46485,7 +46489,7 @@ stavropol.media,ussurmedia.ru,irkutskmedia.ru,krasnoyarskmedia.ru,primamedia.ru,
 zn.ua###social_block_article
 mobil.nwzonline.de###sticky-share
 photo-monster.ru###subSidebar
-novayagazeta.eu,world-devices.ru,realty.yandex.ru,education.yandex.ru,deeplearning.ai,embracer.com,kontur.ru,blog.aspose.com,earthsight.org.uk,infobus.*,biblio.com,acf.international,codastory.com,atbmarket.com,dogeat.ru,oggusto.com,pcsecrets.ru,paradoxplaza.com,beforeitsnews.com,nplus1.ru###subscribe
+tn.ru,novayagazeta.eu,world-devices.ru,realty.yandex.ru,education.yandex.ru,deeplearning.ai,embracer.com,kontur.ru,blog.aspose.com,earthsight.org.uk,infobus.*,biblio.com,acf.international,codastory.com,atbmarket.com,dogeat.ru,oggusto.com,pcsecrets.ru,paradoxplaza.com,beforeitsnews.com,nplus1.ru###subscribe
 problogbooster.com###subscribe-box-sbm
 dreamfancy.org###subscribe-css
 livelib.ru,buttondown.com,buttondown.email,the-village.ru,psychologies.ru###subscribe-form
@@ -47617,9 +47621,6 @@ manhuaren.com###tc-cover-wrap
 manhuaren.com##div.guide >img[src][onclick^="$('.guide')"]
 7fon.org###cbox > div#tmbox:has(> div > iframe[src^="https://7fon.org/goapp.php"])
 7fon.org###rgform
-turkiyegazetesi.com.tr##.abone-banner:style(display: none !important;)
-turkiyegazetesi.com.tr##.header:style(top: 0 !important;)
-turkiyegazetesi.com.tr##body:style(padding-top: 70px !important;)
 sports.yahoo.co.jp##main > section.sn-modList:has(> ul.sn-articleList img[src*="/promotion/follow/"])
 9xbuddy.in,9xbuddy.*##+js(set-session-storage-item, promo_popup_dismissed, 1)
 scamadviser.com##main > section.section-with-card:has(> div.container-lg > div.link-container > a[href="https://app-download.scamadviser.com/"])
@@ -51540,6 +51541,12 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##div[c
 ! Misc rules, removed during optimization. If some rules are in groups, no need to move them here
 !
 !
+!+ NOT_OPTIMIZED
+turkiyegazetesi.com.tr##.abone-banner:style(display: none !important;)
+!+ NOT_OPTIMIZED
+turkiyegazetesi.com.tr##.header:style(top: 0 !important;)
+!+ NOT_OPTIMIZED
+turkiyegazetesi.com.tr##body:style(padding-top: 70px !important;)
 !+ NOT_OPTIMIZED
 xn--pckua2a7gp15o89zb.com##.p-appFootBnr
 !+ NOT_OPTIMIZED
@@ -66770,6 +66777,7 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+turkiyegazetesi.com.tr##.tg-ai-chat-btn
 ford.com.tr##.fop-chatbot-toggle-container
 alfemo.com##.online-sales-popup
 publikations-plattform.de###moinai-container
@@ -66799,7 +66807,6 @@ jrepoint.jp##.launcher-agent div.messenger
 poro.gg##.BeaconFabButtonFrame
 ||web.eu-pl.koda.ai/web.sdk.js$domain=hammerphones.com
 chatlab.com##.rcw-widget-container
-||turkiyegazetesi.com.tr/s/js/ai-chat.js
 asviva.de##.o-livechat-root
 dns-shop.ru###chat-button
 pacjent.gov.pl###sprintbot-chat
@@ -67675,6 +67682,8 @@ hromadske.ua##body:style(overflow: visible !important;)
 ! NOTE: Widgets - Another end ⬆️
 ! !SECTION: Widgets - Another
 !
+!+ NOT_OPTIMIZED
+||turkiyegazetesi.com.tr/s/js/ai-chat.js
 !+ NOT_OPTIMIZED
 hanshintigers1.blog.jp##div[class^="include"]
 !+ NOT_OPTIMIZED
