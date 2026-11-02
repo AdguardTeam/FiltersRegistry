@@ -1,9 +1,9 @@
-! Checksum: zjqwRyHGFMrWAQ1rLIj2yg
-! Diff-Path: ../patches/7/7-s-1793441566-3600.patch
+! Checksum: g9wM5VBFJjEIhI6x81FQ9A
+! Diff-Path: ../patches/7/7-s-1793592931-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.2
-! TimeUpdated: 2026-10-31T10:08:17+00:00
+! Version: 2.0.78.3
+! TimeUpdated: 2026-11-02T04:10:26+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -453,6 +453,7 @@
 !
 !
 ! www.slorepo.com anti-adb
+slorepo.com#%#//scriptlet('prevent-setTimeout', 'bait')
 slorepo.com#%#//scriptlet('prevent-fetch', 'doubleclick.net')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244783
 ||plicy.net/Js/pw-guard.js
@@ -2010,6 +2011,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+||slorepo.com/v*/assets/srmeasure.js^
+slorepo.com##.sr-ad-hold
 bowlroll.net##.infeed-ad
 twidouga.net###video-grid > div.grid-item--wide[style]:not([data-id])
 ||5ch.io/adstir.html
