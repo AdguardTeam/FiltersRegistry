@@ -1,9 +1,9 @@
-! Checksum: vki5hvsLuHJqC9JQyCJ1oQ
-! Diff-Path: ../patches/260/260-s-1793637587-14400.patch
+! Checksum: 55BvkFDh8n4+d1b0kavYww
+! Diff-Path: ../patches/260/260-s-1793651968-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.98
-! TimeUpdated: 2026-11-02T16:36:55+00:00
+! Version: 2.0.2.99
+! TimeUpdated: 2026-11-02T20:36:54+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -2392,6 +2392,19 @@ www.nordstrom.com##.j_24W
 ! -- https://www.nutraingredients.com/
 ! Floating AI chat button
 www.nutraingredients.com##.ask-ia-widget
+! === Nvidia ===
+! -- https://www.nvidia.com/en-us/
+! Floating Ask AI button
+www.nvidia.com##nv-assistant
+! Replace search bar placeholder text
+! -- https://www.nvidia.com/en-us/search/?q=NVIDIA%20Broadcast
+! Search summary
+www.nvidia.com##.librarian-genai-summery
+||www.nvidia.com/ai-agents/chimera/stream$xmlhttprequest,domain=www.nvidia.com
+! -- https://www.nvidia.com/404/
+! Messages about AI search
+www.nvidia.com###librarian-search1 .css-c2iebg > svg
+www.nvidia.com###librarian-search1 .css-c2iebg > .css-12k99am
 ! === NxCode ===
 ! -- https://www.nxcode.io/resources/news/claude-sonnet-4-6-vs-gpt-5-4-coding-comparison-2026
 ! "Before you go..." modal
@@ -3529,7 +3542,6 @@ yep.com##.css-2p650t-sidebar
 ! LobsterAI product slide
 ! LobsterAI in product list
 ! === YouTube ===
-! -- General
 ! Search bar (includes backup cosmetic filters)
 ! * Ask YouTube button
 www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
@@ -3569,12 +3581,13 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 ! -- https://www.youtube.com/watch?v=oh5p5f5_-7A
 ! Block AI upscaled "Super Resolution" quality options
 ! * May not work if video is loaded directly from URL
-! Automatic video chapters
+! - Automatic video chapters
+! Method 1: JSON
 ! * Playback bar chapter segments
 ! * "In this video" sidebar chapters + backup for playback bar
 ! * Chapter cards in description
 ! * Alt for chapter card in description (Seen on https://m.youtube.com/watch?v=1K55xVb6qhY)
-! Automatic chapter backup filters
+! Method 2: CSS
 ! Partially based on https://github.com/moocj/yt-remove-ai-chapters
 ! TODO: Remove segments on playback bar
 ! * Player - Chapter tooltips when hovering progress bar

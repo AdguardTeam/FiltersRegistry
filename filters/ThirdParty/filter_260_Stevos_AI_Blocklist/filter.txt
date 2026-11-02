@@ -3382,6 +3382,23 @@ northflank.com##aside:has(> [href="/blog/ai-sdlc"])
 ! Floating AI chat button
 www.nutraingredients.com##.ask-ia-widget
 
+! === Nvidia ===
+! -- https://www.nvidia.com/en-us/
+! Floating Ask AI button
+www.nvidia.com##nv-assistant
+! Replace search bar placeholder text
+
+! -- https://www.nvidia.com/en-us/search/?q=NVIDIA%20Broadcast
+! Search summary
+www.nvidia.com##.librarian-genai-summery
+||www.nvidia.com/ai-agents/chimera/stream$xmlhttprequest,domain=www.nvidia.com
+
+! -- https://www.nvidia.com/404/
+! Messages about AI search
+www.nvidia.com###librarian-search1 .css-c2iebg > svg
+www.nvidia.com###librarian-search1 .css-c2iebg > .css-12k99am
+www.nvidia.com#$##librarian-search1 .css-c2iebg { height: unset !important }
+
 ! === NxCode ===
 ! -- https://www.nxcode.io/resources/news/claude-sonnet-4-6-vs-gpt-5-4-coding-comparison-2026
 ! "Before you go..." modal
@@ -5007,7 +5024,6 @@ www.youdao.com##.swiper-slide:has(> [src="https://ydlunacommon-cdn.nosdn.127.net
 www.youdao.com##.product-item:has([src="https://ydlunacommon-cdn.nosdn.127.net/cc4afa89cc5497e23b355bc7436cb1c9.png"])
 
 ! === YouTube ===
-! -- General
 ! Search bar (includes backup cosmetic filters)
 ! * Ask YouTube button
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_searchbox_entrypoint', 'false')
@@ -5075,7 +5091,9 @@ www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="1080p"]]..adaptiveFormats[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="720p"]]..adaptiveFormats[?.qualityLabel=="720p"]')
 !#endif
-! Automatic video chapters
+
+! - Automatic video chapters
+! Method 1: JSON
 ! * Playback bar chapter segments
 m.youtube.com,www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.playerBar.multiMarkersPlayerBarRenderer.visibleOnLoad.key=="AUTO_CHAPTERS"]')
 ! * "In this video" sidebar chapters + backup for playback bar
@@ -5085,7 +5103,8 @@ m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.panelIdentifier=="engagemen
 m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[2].engagementPanelHeaderShowNavigationButtonCommand.targetId=="engagement-panel-macro-markers-auto-chapters"]')
 ! * Alt for chapter card in description (Seen on https://m.youtube.com/watch?v=1K55xVb6qhY)
 m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[0].updateEngagementPanelContentCommand.contentSourcePanelIdentifier.tag=="engagement-panel-macro-markers-auto-chapters"]')
-! Automatic chapter backup filters
+
+! Method 2: CSS
 ! Partially based on https://github.com/moocj/yt-remove-ai-chapters
 ! TODO: Remove segments on playback bar
 ! * Player - Chapter tooltips when hovering progress bar
