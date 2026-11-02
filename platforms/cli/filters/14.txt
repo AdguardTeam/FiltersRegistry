@@ -1,9 +1,9 @@
-! Checksum: Y7+8z6EQM5CGx+p4qNcc5w
-! Diff-Path: ../patches/14/14-s-1793610839-3600.patch
+! Checksum: 7EYsLdyDFkZ6qy/22JxbeA
+! Diff-Path: ../patches/14/14-s-1793614354-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.84.98
-! TimeUpdated: 2026-11-02T09:11:31+00:00
+! Version: 2.2.84.99
+! TimeUpdated: 2026-11-02T10:09:27+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2678,6 +2678,9 @@ gomedia.net.pl,sklep.coconaut.com,anhko.pl,4motos.pl,aluramy.pl,ameco-meble-biur
 !
 ! NOTE: Regular rules
 !
+otak.com.ua#$##cookies-modal { display: none !important; }
+otak.com.ua#$#.backdrop { display: none !important; }
+otak.com.ua#$#body { overflow: auto !important; }
 tn.ru###disBot
 diariobitcoin.com###dbtc-cookie-notice
 ||nordsee24.de/consent/script
@@ -5723,7 +5726,7 @@ vitalvet.sk##.cm-cookie-block
 hostzealot.*##div[x-data="gdprComponent"]
 publix.com##.tou-prompt-wrapper
 robolinkmarket.com##.w-full > div.fixed[class*="bottom-"]:has(a[href="https://robolinkmarket.com/pages/bilgi-guvenligi-politikasi"])
-seoboost.com,wpconsent.com,laveco.pl,kesq.com,jurconsult.pro,automatorplugin.com,pokespecial.com.pl,rogelli.com.pl,athemes.com,wtnovels.com,auto-tech-news.com,candidcyber.com,talkbasket.net,wpbeginner.com,wpmailsmtp.com,sutlucekadayif.com,libretro.com,motopass.pl,classicsongoftheday.com,sectorcine.com,9to5linux.com###wpconsent-root
+bananaball.com,seoboost.com,wpconsent.com,laveco.pl,kesq.com,jurconsult.pro,automatorplugin.com,pokespecial.com.pl,rogelli.com.pl,athemes.com,wtnovels.com,auto-tech-news.com,candidcyber.com,talkbasket.net,wpbeginner.com,wpmailsmtp.com,sutlucekadayif.com,libretro.com,motopass.pl,classicsongoftheday.com,sectorcine.com,9to5linux.com###wpconsent-root
 tigo.com.gt,tigo.com.hn,tigo.com.ni,tigo.com.bo,tigo.com.py,tigo.com.sv,tigo.cr,tigo.com.co,tigo.com.pa##app-cookieconsent
 m3datarecovery.com###user_popup
 otpbank.md#$#body { overflow: auto !important; }
@@ -20051,6 +20054,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246026
+otak.com.ua#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245132
 chimera.com.pl#@##cookies-modal
 chimera.com.pl#@#.cookies-modal
@@ -25870,6 +25875,18 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+padovaoggi.it#$#div[data-unfair] { display: none !important; }
+padovaoggi.it#$#html, body { overflow: auto !important; }
+padovaoggi.it#@##ad_banner
+padovaoggi.it#@#div[id^="div-gpt-"]
+padovaoggi.it#@##carbonads
+padovaoggi.it#@##ad-top
+padovaoggi.it#@#.ad-slot
+padovaoggi.it#@#.ad-unit:not(.textads)
+padovaoggi.it#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
+padovaoggi.it#@#.ad-leaderboard
+padovaoggi.it#@#.sponsored-ad
+padovaoggi.it#@#[id^="div-gpt-ad"]
 themezon.net##.main > div[class*="adblock"]
 lycantoons.com#%#//scriptlet('prevent-setTimeout', 'blocked&&')
 lycantoons.com###toast-group\:top ~ div[class^="css-"]:has(> div > button[aria-label="Fechar"])
@@ -38378,6 +38395,7 @@ wiwo.de,rocket-boys.co.jp,autonews.com,nerdwallet.com,creativebloq.com,space.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+iza.ne.jp##.preferred-source-wrapper
 armyandoutdoors.com##.footer__block-item--newsletter
 tn.ru##.news-form-community-wrapper
 24noticias.sapo.pt##.wp-block-group > div[class^="gsbp-"]:has(> div.wp-block-mailchimp-mailchimp)
@@ -49286,6 +49304,8 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+suno.com#%#//scriptlet('trusted-set-local-storage-item', 'appsell-logged-out-modal-dismissed', '{"timestamp":9999999999999,"ttlMs":86400000}')
+suno.com##.h-full > div.flex:has(> img[alt="Suno app"])
 thuisarts.nl##main > div.layout-wrapper:has(> div.layout-wrapper__inner > div.promotion-block)
 halara.*,thehalara.*##a[id^="observerImg"][href^="https://halara.onelink.me/"]
 flatfy.ua##.native-app-banner-spacer
