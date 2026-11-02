@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.5.1.62",
-			"timeUpdated": "2026-11-02T15:08:26+0000",
+			"version": "2.5.1.63",
+			"timeUpdated": "2026-11-02T16:08:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.14.65",
-			"timeUpdated": "2026-11-02T15:08:48+0000",
+			"version": "2.1.14.66",
+			"timeUpdated": "2026-11-02T16:09:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.34.68",
-			"timeUpdated": "2026-11-02T15:08:51+0000",
+			"version": "2.1.34.69",
+			"timeUpdated": "2026-11-02T16:09:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.46",
-			"timeUpdated": "2026-11-02T13:09:50+0000",
+			"version": "2.0.54.47",
+			"timeUpdated": "2026-11-02T16:09:32+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -493,8 +493,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/8.txt",
 			"trustLevel": "full",
-			"version": "2.0.9.50",
-			"timeUpdated": "2026-10-29T04:11:08+0000",
+			"version": "2.0.9.51",
+			"timeUpdated": "2026-11-02T16:09:36+0000",
 			"deprecated": false,
 			"languages": [
 				"nl"
@@ -618,8 +618,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.85.4",
-			"timeUpdated": "2026-11-02T15:09:11+0000",
+			"version": "2.2.85.5",
+			"timeUpdated": "2026-11-02T16:09:49+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -748,8 +748,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.74",
-			"timeUpdated": "2026-11-02T15:09:21+0000",
+			"version": "2.0.86.75",
+			"timeUpdated": "2026-11-02T16:10:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -887,8 +887,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.0.15",
-			"timeUpdated": "2026-11-02T12:13:22+0000",
+			"version": "2.0.0.16",
+			"timeUpdated": "2026-11-02T16:10:05+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
