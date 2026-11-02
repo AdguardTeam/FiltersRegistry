@@ -1,9 +1,9 @@
-! Checksum: BPCC9klV/IEH8g90V0fuvQ
-! Diff-Path: ../patches/14/14-s-1793628854-3600.patch
+! Checksum: mT/RH7maQEo715t+i71xNg
+! Diff-Path: ../patches/14/14-s-1793632413-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.85.3
-! TimeUpdated: 2026-11-02T14:10:23+00:00
+! Version: 2.2.85.4
+! TimeUpdated: 2026-11-02T15:09:11+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2678,6 +2678,8 @@ gomedia.net.pl,sklep.coconaut.com,anhko.pl,4motos.pl,aluramy.pl,ameco-meble-biur
 !
 ! NOTE: Regular rules
 !
+itfc.co.uk##.popup-wrapper:has(> div.popup button.popup__button--accept)
+manutd.com##div[data-testid="cookie-banner"]
 benchlm.ai##section[aria-labelledby="cookie-choice-title"]
 otak.com.ua#$##cookies-modal { display: none !important; }
 otak.com.ua#$#.backdrop { display: none !important; }
@@ -37322,6 +37324,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+manutd.com#%#//scriptlet('trusted-set-local-storage-item', 'braze_push_primer_dismissed', '$now$')
 tgrthaber.com##.tgrt-push-overlay
 poznan.pl###web-push-footer
 mp3semti.com##body > div.bldrmAcik
