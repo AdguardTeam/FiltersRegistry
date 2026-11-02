@@ -1,9 +1,9 @@
-! Checksum: C8Zr8ZuaEZLvSEkqd/MSbA
-! Diff-Path: ../patches/260/260-s-1793479078-14400.patch
+! Checksum: ZVp11Tuy3HOzP8rt8jNZHQ
+! Diff-Path: ../patches/260/260-s-1793594333-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.96
-! TimeUpdated: 2026-10-31T20:35:39+00:00
+! Version: 2.0.2.97
+! TimeUpdated: 2026-11-02T04:36:11+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1087,12 +1087,15 @@ facebook.com#?#[data-dcm-id="1"]:has(.rtl-ignore.f2.a:contains(/(Adobe Firefly|M
 ! AI post summary
 ! TODO: Filter mobile version
 www.facebook.com##div:not([class]):has( > .x1g0dm76.xpdmqnj > .x1120s5i.xyamay9.x1n2onr6 > .html-div.xdj266r.x14z9mp.xat24cr.x1lziwak.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x78zum5.x1n2onr6.xh8yej3)
-! -- https://www.facebook.com/groups/1404116417142065/posts/1791850441701992/
+! -- https://www.facebook.com/groups/captainsoftech/posts/797383481555925/?seo_visit=1
 ! * TODO:  Other Posts - Summarized by AI (logged out)
 ! Post title generated with AI (logged in)
-www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has(.x15mokao.x1ga7v0g.x16uus16.xbiv7yw.x1b0d499.x1d69dk1[style*="background-image: url(\"https://static.xx.fbcdn.net/rsrc.php/yD/r/dVRMatSddQj.webp\");"])
+www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has([style^="background-image: url"])
 ! "What people are saying" comment summary (logged in)
 www.facebook.com##[role="presentation"] .x1jx94hy.x1obq294.x5a5i1n.xde0f50.x15x8krk.xjf5wm9.xod5an3.x1tpqehw.x1wsuqlk.x14vqqas.xz9dl7a.xpdmqnj.xsag5q8.x1g0dm76:has(> .x6s0dn4.x78zum5.x1q0g3np.x1qughib [alt="Meta AI logo"])
+! -- https://www.facebook.com/groups/captainsoftech/posts/797383481555925/?seo_visit=1 (mobile)
+! Comment summary
+www.facebook.com##.m.displayed[data-mcomponent="MContainer"]:has(> div > div > [data-mcomponent="ServerImageArea"] > [src="https://static.xx.fbcdn.net/rsrc.php/y-/r/Ib87vxW-sT9.webp"])
 ! -- https://www.facebook.com/permalink.php?story_fbid=pfbid0nM3EdTKDBTXFnxftmhzgX2HRaESqcBoNXDHTFCo3oq8u716VFg2mUp9PLykieQPfl&id=61588534388215
 ! Post with AI info disclaimer (disclosed by user)
 ! * Won't hide posts if linked directly
@@ -3529,6 +3532,17 @@ www.studocu.com##.SidebarClickableItem_wrapper__vQRrT:has(#content-sidebar-ask-a
 www.studocu.com##.SidebarClickableItem_wrapper__vQRrT:has(#content-sidebar-quiz-creation)
 ! AI question bar
 www.studocu.com##[aria-label="AI toolbar"]
+! === Superhuman Docs ===
+! -- https://docs.superhuman.com/ (Home)
+! Left sidebar - User profile menu - Connect to the Docs MCP
+docs.superhuman.com##[data-layer-id]:has(> [role="menuitem"] [data-icon="Connectors"])
+docs.superhuman.com##[data-layer-id]:has(> [role="menuitem"] [data-icon="Connectors"]) + hr
+! Getting started carousel > Connect Docs MCP
+docs.superhuman.com#?#.L2QHsp05.tnBcgZxh:contains(Connect Docs MCP)
+! -- New document page
+! Close chat sidebar
+! Floating chat icon
+docs.superhuman.com##[data-coda-ui-id="shAgentEntryButton"]
 ! === SuperSummary ===
 ! -- https://www.supersummary.com/game-changer-shusterman/summary/
 ! Generate questions button
