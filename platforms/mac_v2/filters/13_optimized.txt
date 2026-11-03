@@ -1,9 +1,9 @@
-! Checksum: tDmhaHHNSKeOB/81PRZ/kQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1793693713-3600.patch
+! Checksum: HjxYGLWNiYl8UW+OWpe4VQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1793715165-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.44
-! TimeUpdated: 2026-11-03T08:11:21+00:00
+! Version: 2.0.69.45
+! TimeUpdated: 2026-11-03T14:08:38+00:00
 ! Expires: 12 hours (update frequency)
 ||apk-2.online^$third-party
 ||geniusclickad.cc^
@@ -5682,8 +5682,14 @@ videoplays.cfd#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '
 [$domain=/kodamantv\d*\.com$/]###splashAd
 [$domain=/kodamantv\d*\.com$/]###sabitFooter
 [$domain=/kodamantv\d*\.com$/]#%#//scriptlet('prevent-window-open')
+!+ NOT_VALIDATE
+.gif$image,domain=/bahisotv\d+\.com$/
+!+ NOT_VALIDATE
+||cdn.asekyazilim.pro^$media,domain=/bahisotv\d+\.com$/
 [$domain=/bahisotv\d+\.com$/]##div[style^="margin:"]:has(> a[href][target="_blank"])
 [$domain=/bahisotv\d+\.com$/]##.footer-links
+[$domain=/bahisotv\d+\.com$/]##.sb-player-gifs
+[$domain=/bahisotv\d+\.com$/]##.site-banner-bottom
 [$domain=/gmatv\d+\.live$/]##div[class^="reklam-"]
 ||pelitcanlitv.com/admin/uploads/*.gif
 ||pelitcanlitv.com/admin/uploads/TV-PAGESKIN.png
