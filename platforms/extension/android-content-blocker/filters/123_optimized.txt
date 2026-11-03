@@ -1,9 +1,9 @@
-! Checksum: z+204uXknzNUjdFi5Mbpgg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1793667009-14400.patch
+! Checksum: CTzmluyEbupl2Qqo4tQjow
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1793695149-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.71.59
-! TimeUpdated: 2026-11-03T00:46:47+00:00
+! Version: 2.1.71.60
+! TimeUpdated: 2026-11-03T08:35:36+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -179,6 +179,7 @@ _social-bar/
 ###custom-tweet-button
 ###details-share-icon-link
 ###divSideShare
+###divSocial
 ###embed-share
 ###et-post-share
 ###et-social-icons
@@ -230,7 +231,6 @@ _social-bar/
 ###fbshare
 ###fcbk
 ###fdbk_tab
-###float_fb_plugin
 ###floatingSocialShare
 ###follow-box
 ###follow-buttons
@@ -522,7 +522,6 @@ _social-bar/
 ###social-plugins
 ###social-popup
 ###social-promo-flyin
-###social-rail
 ###social-share
 ###social-share-bottom
 ###social-share-buttons
@@ -1828,7 +1827,6 @@ _social-bar/
 ##.mng-follow
 ##.mobile-share-buttons-spacer
 ##.mobile-social
-##.mobile-social-wrapper
 ##.mobile-socialshare-bottom
 ##.mobileShare
 ##.mod-facebook
@@ -2082,6 +2080,7 @@ _social-bar/
 ##.scSocialIconsWidget
 ##.scriptlesssocialsharing
 ##.scroll-triggered-box
+##.scsb_twitter
 ##.sd-share
 ##.sd-sharing
 ##.sd-social
@@ -2113,6 +2112,7 @@ _social-bar/
 ##.share--bottom
 ##.share--column
 ##.share--facebook
+##.share--item
 ##.share--twitter
 ##.share-a
 ##.share-action
@@ -2675,7 +2675,6 @@ _social-bar/
 ##.social-counter-widget
 ##.social-cta
 ##.social-ext
-##.social-fixed-bar
 ##.social-float
 ##.social-follow
 ##.social-follow-bar
@@ -3024,6 +3023,7 @@ _social-bar/
 ##.socialwrap
 ##.sociaux
 ##.socshare
+##.sosyalAglar
 ##.sow-social-media-button
 ##.square-social
 ##.ss-facebook
@@ -3101,7 +3101,6 @@ _social-bar/
 ##.the_champ_sharing_ul
 ##.thread-share
 ##.thread-share-bar-buttons
-##.titleSocial
 ##.tk-footer-social-icons
 ##.tm-footer-social
 ##.tm-share-this
@@ -3498,7 +3497,6 @@ _social-bar/
 ||vk.com/widget_community_messages.php?$third-party
 ||vk.com/widget_like.php$third-party
 ||vkontakte.ru/js/api/$third-party,domain=~arudex.com|~tapclap.com|~ugo.ru|~vk.com
-||vkontakte.ru/widget_like.php$third-party
 ||w.uptolike.com^$third-party
 ||widget.weibo.com^$third-party
 ||widget.whatshelp.io^$third-party
@@ -3526,7 +3524,6 @@ dailymail.co.uk,thisismoney.co.uk###dms-txt
 imgflip.com###findUs
 memuplay.com###fixed-share
 thefreedictionary.com###fixedBlock
-empoweringparents.com,geraligado.blog.br,katholisch.de,tvmaze.com###follow
 openspeedtest.com###footBox2
 abebooks.com,atlasobscura.com###footer-social-list
 aimp.ru###footer_counter
@@ -3775,7 +3772,6 @@ presstv.co.uk##.in-sidebar
 inews.co.uk##.inews__post-share
 mainichi.jp##.inline-list
 insideevs.com##.isBottomShare
-orissapost.com##.jeg_share_button
 businessday.ng##.join-whatsapp
 moneycontrol.com##.join_follow
 euronews.com##.js-c-article-partage-commentaire-share
@@ -3872,7 +3868,6 @@ mymodernmet.com##.share-it-side
 dailymail.co.uk,fundrazr.com,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 thehackernews.com##.share-open-modal
-ig.com.br,med.stanford.edu##.share-page
 alternet.org,audacy.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,physicsworld.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 dailymail.com##.share-snapchat
 aajtak.in,gnttv.com,indiatoday.in,indiatodayne.in##.share-social-icons
@@ -4040,8 +4035,6 @@ dw.com##[data-tracking-name^="sharing-icons-"]
 axios.com##[data-vars-event-name="preferred_source_view"]
 axios.com##[data-vars-event-name="share_view"]
 datacamp.com##[data-waffles-component="social-sharer"]
-hentai-moon.com##[href^="https://telegram.me/"]
-hentai-moon.com##[href^="https://twitter.com/"]
 straitstimes.com##button.desktop\:block
 player.amperwavepodcasting.com,stockx.com##button[aria-label="Share"]
 nine.com.au##button[data-ui-testid="header-share-button"]
@@ -4153,6 +4146,7 @@ quechoisir.org##.qc-footer_social-media-links
 moneyvox.fr##.reseau-soc-page
 boursedirect.fr##.slide-share
 gameblog.fr##.social-button:not(.comment-button):not(.heart-button)
+gupy.fr##.social-listing
 phonandroid.com##.social-networks
 francetvinfo.fr##.social-zone__wrapper
 ||lequipe.fr/_nuxt/Share.
