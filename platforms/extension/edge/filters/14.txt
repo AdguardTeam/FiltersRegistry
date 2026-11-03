@@ -1,9 +1,9 @@
-! Checksum: 1B27kVJSquM7AcYbMD2PWQ
-! Diff-Path: ../patches/14/14-s-1793711635-3600.patch
+! Checksum: TlAoOUXFzY45Wl9zUp70sA
+! Diff-Path: ../patches/14/14-s-1793718797-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.85.21
-! TimeUpdated: 2026-11-03T13:09:25+00:00
+! Version: 2.2.85.22
+! TimeUpdated: 2026-11-03T15:09:17+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -39173,7 +39173,8 @@ mobidea.com##.widget_subscribe_mailchimp
 pextra.cloud##.lm-backdrop
 credistory.ru##mt-post > section:has(ch-blog-subscribe-socials)
 www1.ru##.flex > div.ml-auto:has(> a[href="https://t.me/WWW1ru"])
-merriam-webster.com##.footer-subscribe-block
+merriam-webster.com##.footer-subscribe
+merriam-webster.com##.footer-subscribe-block > .footer-subscribe-msg > p:only-child
 banki.ru##body > div.gray:has(> div > div > div[class^="WidgetStack__sc-"] > div > div > div[data-module-id] > div[data-test="subscribe-widget"])
 tengrinews.kz##.banner-google-news
 myagd.pl##.box-newsletter-wrapper
@@ -44858,7 +44859,7 @@ masterclass.com###email-capture
 interestingengineering.com##div[class^="Newsletter_overlay"]
 urbandictionary.com##.flex-1 > div[data-x-data="subscribeData()"]
 inzynieria.com##.small-box-newsletter
-nbcmiami.com##.widget_nbc_newsletter
+nbcboston.com,nbcmiami.com##.widget_nbc_newsletter
 mil.in.ua#?#.single-news__wrapper > p:has(> strong:contains(Будь з “Мілітарним” на всіх платформах))
 mil.in.ua#?#.single-news__wrapper > p:has(> strong:contains(Будь з “Мілітарним” на всіх платформах)) + p
 remarkable.com##div[class^="MarketingOptInExitIntent_"]
@@ -47742,7 +47743,7 @@ recipetineats.com,tasteandtellblog.com,tochka.net##.subscribe_widget
 thegatewaypundit.com##.email-list-subscribe
 belta.by##.bans
 ||chimpstatic.com^$domain=xakep.ru
-pextra.cloud,ekd.de,blog.mozilla.org###newsletter-subscribe
+thewrap.com,pextra.cloud,ekd.de,blog.mozilla.org###newsletter-subscribe
 economictimes.indiatimes.com,cbc.ca##.newsletterWidget
 parfums.ua##.js-subscription_block
 vtm.be###block-vtm-blocks-vtm-blocks-newsletter-large
@@ -49240,6 +49241,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+agoda.com##div[data-testid="white-banner-promo"]
 otelz.com###OZBanner
 hotels.com##.page-header > div.customer-notification-container:has(> section a[href^="https://hotelsapp.onelink.me/"])
 hotelscombined.com#%#//scriptlet('trusted-click-element', 'div.c-ulo-content:has(> div#appDownloadPrompt) button[aria-label="Close"]')
@@ -58880,6 +58882,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+agoda.com##[data-component="deals-static-bar"]
 jollytur.com#$#body.modal-open { overflow: auto !important; }
 jollytur.com#$#.modal-backdrop { display: none !important; }
 jollytur.com#$##couponWinModal { display: none !important; }
@@ -65274,6 +65277,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246169
+freetp.org#%#//scriptlet('set-attr', '.ftp-dl-action > div.ftp-dl-counter', 'data-counter', '1')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244948
 !+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
 coolmathgames.com#%#(function(){if(window.__cmgCont)return;window.__cmgCont=1;var S=['.game-meta-header','#continue-container','#timer-div'];var fk=function(e){var ks=Object.keys(e),i=0;for(;i<ks.length;i++){if(ks[i].indexOf('__reactFiber$')===0)return e[ks[i]]}return null};var get=function(){var i=0,j=0,es,e,b,n,m;for(;i<S.length;i++){es=document.querySelectorAll(S[i]);j=0;for(;j<es.length;j++){e=es[j];b=fk(e);for(n=0;b&&n<40;b=b.return,n++){m=b.memoizedProps;if(m&&typeof m.onContinue==='function')return m.onContinue}}}return null};var k=0,t=0,r=function(){var f=get();if(f){f();k+=1;if(k>3)return}t+=1;if(t>150)return;setTimeout(r,120)};setTimeout(r,0)})();
@@ -68952,6 +68957,7 @@ daddyhd.com##.sidebar__inner
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+on.com.tr###chatapp-icon
 yepas.com##.tusla-livechat
 armyandoutdoors.com##.rp-micro-app-dummy-icon-container
 turkiyegazetesi.com.tr##.tg-ai-chat-btn
