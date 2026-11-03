@@ -1,5 +1,5 @@
-! Checksum: +3JTmti2Y4fheZI+4H8ecA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1793636052-3600.patch
+! Checksum: T1zJGhGREv5nj+dOnxipeQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1793672199-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.54.47
@@ -731,7 +731,6 @@ wowtv.de#%#//scriptlet('set-constant', 'window.CONFIGURATION.adInsertion.enabled
 ebay.de#%#//scriptlet('prevent-element-src-loading', 'script', 'data:text/javascript;base64,KHdpbmRvd1tTeW1ib2wuZm9yKCdiZXJyaWVzJyldIHx8IHdpbmRvdy5iZXJyaWVzIHx8IHdpbmRvdy5lYmF5QWRzQmVycmllcykucmVuZGVy')
 ebay.de#$#div[wire-region="center-top-ads"] { display: none !important; }
 handyhase.de##div[id^="trimexa-ads"]
-handyhase.de##.hh-article-teaser ~ div.dynamic-widget-area
 bz-berlin.de##section[data-block-id="Sonderthemen"]
 bz-berlin.de##section[data-block-id="B.Z. Aboshop"]
 rtl.de##div[class^="AdSlot"]
@@ -883,7 +882,6 @@ tarnkappe.info##.container .is-one-third:has(a[href^="https://"][target="_blank"
 otz.de#%#//scriptlet('trusted-replace-fetch-response', '/ads\.julephosting\.de/g', 'cdn.julephosting.de', '/-episode\.json/')
 focus.de,bunte.de##div[id*="AdSlot"]
 bunte.de##[class^="Ad-Slot"]
-menshealth.de###va-outbrain-container
 rnd.de##div[data-element-selector="recommendations"] > div[class^="ChainLikeContainerstyled_"]:has(> .OUTBRAIN:only-child)
 bild.de##.liveticker-ad
 bild.de##.article-body > p:empty
@@ -907,6 +905,7 @@ computerbild.de##.universalTeaser
 computerbild.de##.gridArea__teaserM.bordered
 sueddeutsche.de##.ancr-group
 sueddeutsche.de###eip-popup
+holidaycheck.de##.featured-hotels
 chip.de#%#//scriptlet('adjust-setTimeout', '/\(\)=>\{.\(!1\)\}/', '*', '0.001')
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,important,domain=chip.de
 ||cdn.greenvideo.io/pbjs/gvpb.js
@@ -2348,6 +2347,7 @@ wohnwagen-forum.de,extrem-bodybuilding.de,clashroyaleforum.de,clashofclansforum.
 winfuture.de##.ws_contentAd660
 goldesel.to##a[href^="apps/windows/"] > img
 chip.de##a[href^="https://www.bestcheck.de"][href*="utm_campaign"]
+haustiermagazin.com##aside > #text-16:nth-child(2)
 forum.digitalfernsehen.de##blockquote.messageText > div:not([id]):not([class]):not([style]):first-child
 mathe-lexikon.at##body > div#lb
 computerbild.de##body > div[id][style^="z-index:"]
@@ -2775,6 +2775,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /images/werbung.
 /images/werbung/*
 /img/werbung/*
+/includes/werbung/*
 /iqadcontroller.$script
 /medien/werbung/*
 /nativendo.js
@@ -2937,7 +2938,6 @@ _woz_banner_vote.
 ##.spielen_werbung_2
 ##.sponsorlinkgruen
 ##.symplr-ad-holder
-##.teaser_adliste
 ##.textlinkwerbung
 ##.tx-scandesk-werbung
 ##.wadtag
@@ -5201,6 +5201,7 @@ hardwareluxx.de#?#.bg-gray-light:has(div.text-right:contains(Werbung))
 jungefreiheit.de#?#.elementor-element > .elementor-widget-container:has(.elementor-shortcode:contains(Anzeige))
 knuspr.de#?#div[data-test="whisperer-product-wrapper"]:contains(Gesponsert)
 koeln.de#?#.gb-container:contains(Anzeige)
+kurier.at#?#.gridContainer:contains(Sponsored Content)
 mediamarkt.*#?#[data-test="mms-base-teaser"]:contains(Gesponsert)
 mediamarkt.*,saturn.de#?#li:has(div[data-test="mms-product-card"]:has(span:contains(Gesponsert)))
 mmnews.de#?#.sp-module:has(span:contains(Kleinanzeigen))
