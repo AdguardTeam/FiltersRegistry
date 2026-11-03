@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PuKvgSg8MmWGcTtKlHP6fQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793675512-3600.patch
+! Checksum: TJSa7Bn0F/Vo9oPvvOAKZw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793679186-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.1.74
-! TimeUpdated: 2026-11-03T03:08:38+00:00
+! Version: 2.5.1.75
+! TimeUpdated: 2026-11-03T04:08:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -41176,6 +41176,13 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+imgpv.com##+js(abort-current-script, Date.now, overlay)
+imgpv.com###corner-ad
+imgpv.com##.sj-dl-wrap
+imgpv.com##.rightcol > p[style="text-align: center; margin: 25px 0;"]
+imgpv.com##body:style(overflow: auto !important;)
+imgpv.com##body > .wrapper ~ div[style*="999999"]:style(display: none !important;)
+||imgpv.com/*.html?v=$subdocument,domain=imgpv.com
 ||nhentai.to/js/combined.*.js?
 ||nhentai.to/ads/
 nhentai.to##.hdr-slot-m
@@ -41873,7 +41880,7 @@ masrawytrend.com###adx-interstitial
 underhentai.net##.row > article.post-card:has(> a[href] > div.img-wrapper > div.badge:contains(/^AD$/g))
 underhentai.net##menu > li:has(> a[href="/games/"])
 openinbox.io##.overflow-hidden.w-full:has(> div.text-center:contains(Advertisement))
-nhentai.to,hentaihaven.xxx,jerkmotion.com##a[rel~="sponsored"]
+imgpv.com,nhentai.to,hentaihaven.xxx,jerkmotion.com##a[rel~="sponsored"]
 jerkmotion.com##div[style="min-height: 90px;"]
 ||api.jerkmotion.com/*^placement=
 ||codex-resets.com/sponsors.js

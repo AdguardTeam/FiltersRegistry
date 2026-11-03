@@ -1,9 +1,9 @@
-! Checksum: OeZT1bZH28YaArdKnHQy5g
-! Diff-Path: ../patches/17/17-s-1793610846-3600.patch
+! Checksum: 6XlCme1Y6E07IH169ecZng
+! Diff-Path: ../patches/17/17-s-1793679159-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.14.78
-! TimeUpdated: 2026-11-02T09:11:37+00:00
+! Version: 2.0.14.79
+! TimeUpdated: 2026-11-03T04:09:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -538,6 +538,15 @@ $removeparam=tduid
 ! Good: ||example.org^$removeparam=cx
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246067
+||trck.norisbank.de/click.php$removeparam=s_id
+||trck.norisbank.de/click.php$removeparam=kidc
+||trck.norisbank.de/click.php$removeparam=kid
+||dkb.de^$removeparam=referer
+||aktionen.consorsbank.de^$removeparam=partnerId
+||aktionen.consorsbank.de^$removeparam=aid
+||aktionen.consorsbank.de^$removeparam=cid
+||aktionen.consorsbank.de^$removeparam=trid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246011
 ||1xlite-12669.pro^$removeparam=tag
 ||1xlite-12669.pro^$removeparam=pb
