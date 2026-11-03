@@ -1,9 +1,9 @@
-! Checksum: gLlDJ3+b0lnPqlbvHrHb/g
-! Diff-Path: ../patches/20/20-s-1793679172-3600.patch
+! Checksum: U5w41FvpgAiPNpAq087nsg
+! Diff-Path: ../patches/20/20-s-1793693687-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.33.69
-! TimeUpdated: 2026-11-03T04:09:57+00:00
+! Version: 2.0.33.70
+! TimeUpdated: 2026-11-03T08:11:43+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -60,6 +60,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+jollytur.com##.mobilapp-banner-container
 onefootball.com##div[class*="_bannercontainer"]:has(a[href*="adj.st"])
 proverkacheka.com##.b-pwa-install-desire
 bellona.com.tr###ch-banner-studio-318
@@ -4529,6 +4530,12 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+orbitz.com#%#//scriptlet('set-cookie', 'SheetBannerClose', 'yes')
+orbitz.com##.Storefront-Homepage > div.lazyload-wrapper > div.uitk-spacing > div[class]:has(a#download-btn[href^="https://orbz.onelink.me/decs?"])
+jollytur.com##.smart-app-router-wrapper
+tatilbudur.com##.deep-link-div
+betboom.ru#$##baseLayoutContainer > div[class^="sc-"]:has(> div[class^="sc-"] > div.device-layout-component > a[href="/mobileapp"]) { display: none !important; }
+betboom.ru#$##baseLayoutContainer > header#root-header { top: 0 !important; }
 yepas.com#$#.smart-banner { display: none !important; }
 yepas.com#$#.site-header { margin-top: 0px !important; }
 moyo.ua##.mobile-app-not-placeholder
@@ -5148,7 +5155,7 @@ mqihuan.bookresource.qq.com##.auto-tr
 deviantart.com##body > aside:has(> h2 > div > button[aria-label="Close"])
 migros.com.tr##sm-mobile-app-popup
 uhaul.com###nativeAppBanner
-airbnb.com##div[data-testid="app-install-container"]
+airbnb.com.tr,airbnb.com##div[data-testid="app-install-container"]
 ww2.freshthyme.com##a[href="https://ww2.freshthyme.com/mythyme-loyalty"]
 m.1688.com###recyclerview > div.rox-pegasus-module:has(> div[style] > div.main > div[style] > div.androidOpenModal)
 m.1688.com##.header-wrapper
