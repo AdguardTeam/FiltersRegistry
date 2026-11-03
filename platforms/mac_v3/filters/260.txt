@@ -1,9 +1,9 @@
-! Checksum: vojobmOxZpejNlHN+97apw
-! Diff-Path: ../patches/260/260-s-1793651996-14400.patch
+! Checksum: GNv0BK01wz/0S3XTGVHZnQ
+! Diff-Path: ../patches/260/260-s-1793667045-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.99
-! TimeUpdated: 2026-11-02T20:36:54+00:00
+! Version: 2.0.3.0
+! TimeUpdated: 2026-11-03T00:47:39+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1020,6 +1020,12 @@ emojicombos.com##.step-body > div:has(> [href="https://perchance.org/ai-icon-gen
 ! -- https://devhome.evero.net/deployments
 ! Executive AI Summary tab
 devhome.evero.net##[role="tablist"] > [id$="-trigger-aisummary"]
+! === Evetech ===
+! Header - Eva icon
+www.evetech.co.za##button[title="Ask Eva"]
+www.evetech.co.za##button[title="Ask Eva"] + div
+! Floating Eva button
+www.evetech.co.za##button[aria-label="Open Eva chat assistant"]
 ! === Emojipedia ===
 ! -- https://emojipedia.org/
 ! "Create Emojis" button in navbar
@@ -1316,13 +1322,12 @@ github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-
 github.com##.start-copilot-banner
 ! "Getting started" checklist section
 github.com##[data-testid="copilot-free-user-checklist"]
-! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/
+! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/ (repository page)
 ! "Agents" tab in repository navbar (desktop & mobile)
 ! * Via https://www.reddit.com/r/uBlockOrigin/comments/1vkxr0j/comment/p2xake5/
 github.com#$#li:has(> [data-tab-item="agents"]) { max-width: 0px !important; margin-left: calc(0px - var(--stack-gap-condensed,.5rem)) !important; visibility: hidden !important; }
 github.com##[data-component="ActionList.Item"]:has(> [data-tab-item="agents"])
-! -- https://github.com/easylist/easylistchina
-! "Ask Copilot about this repository" when repository has no README file
+! "Ask Copilot about this repository" when repository has no README file (ex: https://github.com/easylist/easylistchina)
 ! Might be limited to enterprise users with Copilot
 github.com##[class^="OverviewRepoFiles-module_"]:has([data-component="Blankslate"] .octicon-copilot)
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
@@ -1348,7 +1353,7 @@ github.com##.prc-ButtonGroup-ButtonGroup-vFUrY:has([data-testid="copilot-ask-men
 ! Right sidebar - Open in GitHub Copilot app
 github.com##[data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-"])
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/new (New issue page)
-! "Write with Copilot" below issue description
+! "Write with Copilot" below issue description (No longer used?)
 ! * Doesn't always appear. May be limited to issues from repository owner?
 ! * The end of class name changed from "__RL1TZUq" to "__eCAAR". Is it dynamic?
 github.com##.Footer-module__footerButtonWrapper__RL1TZUq
@@ -1386,6 +1391,9 @@ github.com##[data-component="ActionList.Divider"] + [data-component="ActionList.
 ! -- https://github.com/zloirock/core-js/actions/runs/22272347580/job/64429009933 (Failed workflow job)
 ! "Explain error" button
 github.com##[data-test-id="copilot-actions-chat-button"]
+! -- https://github.com/search?q=python&type=repositories (Search)
+! Left sidebar - Filter by AI resources
+github.com##[data-testid="nav-item-ai_resources"]
 ! -- https://github.com/ (logged out)
 ! Download GitHub Copilot app button
 github.com##[class^="Primer_Brand__Button-module__Button___"][href="/features/ai/github-app"]
@@ -2850,11 +2858,16 @@ search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
 ! "Quick Read" AI summary
 www.ndtv.com##.ASum_wr.ASum_Mnon
 ! === Newegg ===
-! -- https://www.newegg.com/abs-stratos-ruby-gaming-desktop-rtx-5060-core-i5-14400f-32gb-ddr5-1tb-ssd-sr7800x3d9070xt-black/p/N82E16883360936
-! AI Assistant
+! -- https://www.newegg.com/
+! Header - Shop with Celeste
+www.newegg.com##.header2021-celeste
+! Search bar (focused) - Ask Celeste
+www.newegg.com##.header2021-search-sec-ask
+! Floating AI Assistant icon
 www.newegg.com##.floating-robot
-! AI Expert
-www.newegg.com##.ek-sales-content
+! -- https://www.newegg.com/p/pl?d=test
+! Sidebar - Ask Celeste about filters
+www.newegg.com##.plp-side-ask
 ! === News18 ===
 ! Search - AI overview
 www.news18.com##.aiovwrp
@@ -3660,6 +3673,13 @@ thenewstack.io##.search-disclaimer
 thenewstack.io#%#//scriptlet('remove-attr', 'placeholder', '.search-input[placeholder="This is AI-powered search. Type a prompt."]')
 ! Remove AI sparkles from search icon
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
+! === The New York Times ===
+! -- https://www.nytimes.com/wirecutter/
+! "What do you need (or want)" search section
+www.nytimes.com##[data-testid="finder-promo-below-hero-desktop"]
+! -- https://www.nytimes.com/wirecutter/search/?s=How+do+I+stop+my+house+from+smelling%3F
+! AI summarized answer (& product recommendations)
+www.nytimes.com##[data-testid="answer-block"]:not(:has([data-icon="spinner"]))
 ! === The StoryGraph ===
 ! -- https://app.thestorygraph.com/books/9ea80c87-b424-472d-b17e-bf4b97e042e4
 ! SGAI personalized recommendation

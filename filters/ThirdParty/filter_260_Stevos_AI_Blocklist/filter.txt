@@ -1195,6 +1195,13 @@ emojicombos.com##.step-body > div:has(> [href="https://perchance.org/ai-icon-gen
 ! Executive AI Summary tab
 devhome.evero.net##[role="tablist"] > [id$="-trigger-aisummary"]
 
+! === Evetech ===
+! Header - Eva icon
+www.evetech.co.za##button[title="Ask Eva"]
+www.evetech.co.za##button[title="Ask Eva"] + div
+! Floating Eva button
+www.evetech.co.za##button[aria-label="Open Eva chat assistant"]
+
 ! === Emojipedia ===
 ! -- https://emojipedia.org/
 ! "Create Emojis" button in navbar
@@ -1536,14 +1543,12 @@ github.com##.start-copilot-banner
 ! "Getting started" checklist section
 github.com##[data-testid="copilot-free-user-checklist"]
 
-! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/
+! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/ (repository page)
 ! "Agents" tab in repository navbar (desktop & mobile)
 ! * Via https://www.reddit.com/r/uBlockOrigin/comments/1vkxr0j/comment/p2xake5/
 github.com#$#li:has(> [data-tab-item="agents"]) { max-width: 0px !important; margin-left: calc(0px - var(--stack-gap-condensed,.5rem)) !important; visibility: hidden !important; }
 github.com##[data-component="ActionList.Item"]:has(> [data-tab-item="agents"])
-
-! -- https://github.com/easylist/easylistchina
-! "Ask Copilot about this repository" when repository has no README file
+! "Ask Copilot about this repository" when repository has no README file (ex: https://github.com/easylist/easylistchina)
 ! Might be limited to enterprise users with Copilot
 github.com##[class^="OverviewRepoFiles-module_"]:has([data-component="Blankslate"] .octicon-copilot)
 
@@ -1574,7 +1579,7 @@ github.com##.prc-ButtonGroup-ButtonGroup-vFUrY:has([data-testid="copilot-ask-men
 github.com##[data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-"])
 
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/new (New issue page)
-! "Write with Copilot" below issue description
+! "Write with Copilot" below issue description (No longer used?)
 ! * Doesn't always appear. May be limited to issues from repository owner?
 ! * The end of class name changed from "__RL1TZUq" to "__eCAAR". Is it dynamic?
 github.com##.Footer-module__footerButtonWrapper__RL1TZUq
@@ -1617,6 +1622,10 @@ github.com##[data-component="ActionList.Divider"] + [data-component="ActionList.
 ! -- https://github.com/zloirock/core-js/actions/runs/22272347580/job/64429009933 (Failed workflow job)
 ! "Explain error" button
 github.com##[data-test-id="copilot-actions-chat-button"]
+
+! -- https://github.com/search?q=python&type=repositories (Search)
+! Left sidebar - Filter by AI resources
+github.com##[data-testid="nav-item-ai_resources"]
 
 ! -- https://github.com/ (logged out)
 ! Download GitHub Copilot app button
@@ -3347,11 +3356,17 @@ search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
 www.ndtv.com##.ASum_wr.ASum_Mnon
 
 ! === Newegg ===
-! -- https://www.newegg.com/abs-stratos-ruby-gaming-desktop-rtx-5060-core-i5-14400f-32gb-ddr5-1tb-ssd-sr7800x3d9070xt-black/p/N82E16883360936
-! AI Assistant
+! -- https://www.newegg.com/
+! Header - Shop with Celeste
+www.newegg.com##.header2021-celeste
+! Search bar (focused) - Ask Celeste
+www.newegg.com##.header2021-search-sec-ask
+! Floating AI Assistant icon
 www.newegg.com##.floating-robot
-! AI Expert
-www.newegg.com##.ek-sales-content
+
+! -- https://www.newegg.com/p/pl?d=test
+! Sidebar - Ask Celeste about filters
+www.newegg.com##.plp-side-ask
 
 ! === News18 ===
 ! Search - AI overview
@@ -4343,6 +4358,15 @@ thenewstack.io#%#//scriptlet('remove-attr', 'placeholder', '.search-input[placeh
 ! Remove AI sparkles from search icon
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
 
+! === The New York Times ===
+! -- https://www.nytimes.com/wirecutter/
+! "What do you need (or want)" search section
+www.nytimes.com##[data-testid="finder-promo-below-hero-desktop"]
+
+! -- https://www.nytimes.com/wirecutter/search/?s=How+do+I+stop+my+house+from+smelling%3F
+! AI summarized answer (& product recommendations)
+www.nytimes.com##[data-testid="answer-block"]:not(:has([data-icon="spinner"]))
+
 ! === The StoryGraph ===
 ! -- https://app.thestorygraph.com/books/9ea80c87-b424-472d-b17e-bf4b97e042e4
 ! SGAI personalized recommendation
@@ -5072,6 +5096,9 @@ m.youtube.com##.engagement-panel-section-list-footer-wrapper
 www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
 www.youtube.com#%#//scriptlet('ubo-json-edit-xhr-response', 'v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed]', 'propsToMatch', '/youtubei')
 www.youtube.com#%#//scriptlet('ubo-json-edit-fetch-response', 'v2:$..adaptiveFormats[?@.audioTrack.isAutoDubbed]', 'propsToMatch', '/youtubei')
+! Would fix filtering on initial URL load, but causes conflicts
+! (See https://github.com/uBlockOrigin/uBlock-issues/issues/4187)
+! www.youtube.com##+js(edit-object-on-setter, ytInitialPlayerResponse, $..adaptiveFormats[?@.audioTrack.isAutoDubbed])
 !#else
 ! * Alternate filter for AdGuard support
 www.youtube.com#%#//scriptlet('json-prune', '$..adaptiveFormats[?@.audioTrack.isAutoDubbed]')
@@ -5087,6 +5114,10 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 !#if ext_ublock
 www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.qualityDetails[?@.key=="1080p"];$..adaptiveFormats[?@.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-edit', 'v2:$..paygatedQualitiesMetadata.qualityDetails[?@.key=="720p"];$..adaptiveFormats[?@.qualityLabel=="720p"]')
+! Would fix filtering on initial URL load, but causes conflicts
+! (See https://github.com/uBlockOrigin/uBlock-issues/issues/4187)
+! www.youtube.com##+js(edit-object-on-setter, ytInitialPlayerResponse, $..paygatedQualitiesMetadata.qualityDetails[?@.key=="1080p"];$..adaptiveFormats[?@.qualityLabel=="1080p"])
+! www.youtube.com##+js(edit-object-on-setter, ytInitialPlayerResponse, $..paygatedQualitiesMetadata.qualityDetails[?@.key=="720p"];$..adaptiveFormats[?@.qualityLabel=="720p"]
 !#else
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="1080p"]]..adaptiveFormats[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="720p"]]..adaptiveFormats[?.qualityLabel=="720p"]')
