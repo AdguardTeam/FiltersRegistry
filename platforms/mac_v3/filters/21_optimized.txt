@@ -1,5 +1,5 @@
-! Checksum: eu8CVDN0B7Lo3aXRB2dCig
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1793718847-3600.patch
+! Checksum: 0n/IphUGYSrHGtUrU3BFSQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1793758532-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
 ! Version: 2.0.49.92
@@ -68,6 +68,7 @@ iceout.org#%#//scriptlet('set-local-storage-item', 'tos_accepted', 'true')
 itest.5ch.io#%#//scriptlet('trusted-replace-argument', 'window.open', '0', 'replace:/^https:\/\/itest\.5ch\.io\/jump\/to\?url=(.+)/$1/', '/jump/to?url=')
 calciomercato.com#%#(()=>{const t={construct:(t,e,n)=>{const r=e[0],o=r?.toString(),c=o?.includes("vidFloating");return c&&(e[0]=()=>{}),Reflect.construct(t,e,n)}};window.IntersectionObserver=new Proxy(window.IntersectionObserver,t)})();
 france24.com#%#//scriptlet('trusted-suppress-native-method', 'DOMTokenList.prototype.add', '"u-pip-active"')
+radaronline.com##div[class^="sc-"]:has(> div[class^="sc-"] > a[title="Email RadarOnline"])
 pcgamestorrents.com###text-12
 investopedia.com#%#//scriptlet('remove-class', 'jw-flag-floating', 'div[id^="article__primary-video"]')
 huffpost.com,nypost.com#%#//scriptlet('abort-on-stack-trace', 'Object.keys', 'canEnterFloating')
@@ -981,7 +982,6 @@ fotomac.com.tr##.share
 astar.bz,anistar.org,online-star.org##.share-soc
 appleinsider.ru,hi-news.ru##.sidebar-banner-telegram
 webtekno.com##.sidebar-social
-likar.info##.soc-viber
 kinopoisk.ru##.social-teasers
 akket.com##.social-zone
 statista.com##.socialMediaBox
@@ -1195,6 +1195,7 @@ wavve.com##.multi-band-banner
 kami-labs.fr###kl-tpb-bottom
 hmall.com#%#//scriptlet('trusted-set-cookie', 'checkGradePup', 'done')
 aol.com###m-dispatcher-sticky-footer
+romstal.ro###cs-popup-overlay
 popcornmovies.ac##.inset-x-3.fixed
 wallpapers.com#%#//scriptlet('trusted-set-attr', 'button[class="cd-free-dl-btn"][data-dl-gate="free"]', 'data-dl-gate', 'premium')
 3dmgame.com##.Content_L > a[href^="https://mall.3dmgame.hk/?"]
@@ -1448,6 +1449,7 @@ theonion.com##.wp-block-image a[href^="https://membership.theonion.com/?campaign
 ozon.ru##div[data-widget="webReviewTabs"] div[data-widget="skuGrid"]
 blog.domclick.ru#%#//scriptlet('set-session-storage-item', 'realtorLabelIncludedInPost', 'false')
 blog.domclick.ru#%#//scriptlet('set-session-storage-item', 'isRealtorLabelVisible', 'false')
+forexclub.pl##.header__pr
 xnxx.*,xvideos.*##.banner-game
 lookmovie2.la,lookmovie2.to,lookmovie2.*###floating-ads-internal
 gamesradar.com##.kwizly-poll
@@ -1491,7 +1493,6 @@ computerbase.de##.js-promobar
 ||20.detik.com/watch/livestreaming-20d?
 experts-exchange.com##main div[tabindex="-1"]:has(> div.chakra-stack > a.chakra-button[href^="https://go.experts-exchange.com/ask"])
 experts-exchange.com##.proColumnMain > div:not([class]):not([id]):has(> div[class^="css-"] div.chakra-stack > img[alt^="Reward"])
-pitchfork.com##div[data-testid="paywall-bar-thin"]
 zvuk.com#%#//scriptlet('set-session-storage-item', 'desktop_showedSaSubscriptionModal', 'true')
 dzen.ru##div[class^="content--dzen-pro-"]
 wa3.i-3-i.info##div[id^="ads_bb"]
@@ -1536,7 +1537,6 @@ cnews.ru###cnLike + noindex
 windguru.cz###forecasts-page-content > a[href="/help.php?sec=pro"]
 fissman.ru#$#.popmechanic-js-paranja { display: none !important; }
 kinogo.*##.zplata
-itest.5ch.io##a[id^="link"] > img[src*="/assets/banner/"]
 mangadex.org##a[href="/advertise"]
 check.lenta.com##.chek_wrapper > div[class] > #carousel
 klz9.com##a[href^="/premium"]
@@ -2129,7 +2129,6 @@ full-count.jp###c2_click_jera_banner_sp_article_end
 asahi.com###main > div[class]:has(> div[class] > span[x-component-name][x-component-data*="iref"][x-component-data*="freeArticlePW_imasugu"])
 kontur.ru##section[data-show-event-name^="event-adv-link-"]
 rb.ru#$##globalHeader { top: 0 !important; }
-englishdom.com##.container-banner-teacher
 jaomix.ru##.adblock-service
 rawkuma.com##.kln > a > img
 skillbox.ru##.js-article-banner
@@ -2793,6 +2792,7 @@ privatter.net##.appreach
 privatter.net#?#.col-lg-4 > strong.small:contains(おすすめ文章作成エディタ)
 gofile.io###adsATF
 lemon8-app.com##.nav-bar-line-1
+zbporn.com##.cs-link-holder
 monitor.firefox.com##.vpn-banner
 tripadvisor.com##footer ~ div[class^="Su"][style="bottom: 284px;"]
 tokyo-np.co.jp##.koudoku_annai
@@ -2959,7 +2959,6 @@ hotokami.jp##.layout_fix_advice--apps
 odysee.com##.claim-preview--premium-plus
 stadt-bremerhaven.de##iframe.wp-embedded-content
 ||aurora.network/images/banners/
-creativespirits.info##.prom
 shefinds.com##.house__unit
 live.fc2.com##.ad-list
 theync.com##.top-aff
