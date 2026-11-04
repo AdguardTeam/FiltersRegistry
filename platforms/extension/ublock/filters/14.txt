@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5T4NtD6ABq7c1/SAAW0RPg
-! Diff-Path: ../patches/14/14-s-1793740326-3600.patch
+! Checksum: G7ULk1APSVT8HTLlSIVr8g
+! Diff-Path: ../patches/14/14-s-1793754745-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.85.26
-! TimeUpdated: 2026-11-03T21:08:20+00:00
+! Version: 2.2.85.27
+! TimeUpdated: 2026-11-04T01:08:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2599,6 +2599,8 @@ propaganda24h.pl,gomedia.net.pl,sklep.coconaut.com,anhko.pl,4motos.pl,aluramy.pl
 !
 ! NOTE: Regular rules
 !
+||nohello.org/consent-manager.js
+deepseek-harness.io###ga-banner
 redcross.ru###tildaBanner
 medtochka.ru##+js(set-local-storage-item, cookie_consent, accepted)
 ||cookiethough.dev/$domain=elchecf.es
@@ -35625,6 +35627,7 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 !
 ! SECTION: Push notifications - Regular rules
 !
+r7.com##+js(set-cookie, push_notification_denied, true)
 inyourarea.co.uk##div[data-event="OneSignal Notification Prompt_Displayed"]
 tatilsepeti.com##.pc-webpush-overlay
 tgrthaber.com##.tgrt-push-overlay
@@ -36692,6 +36695,9 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+r7.com##+js(set-cookie, push_preferred_denied, true)
+deepseek-harness.io##.waitlist-zone
+news-medical.net##.add-on-google
 inyourarea.co.uk##div[data-aard-subtype="article-sidebar"] + div:has(> .relative > figure:only-child > div:only-child > img[src*="GeoFlex"])
 fastcompany.com##.google-preferred-btn
 tatilsepeti.com##.footer__media__newsletter
