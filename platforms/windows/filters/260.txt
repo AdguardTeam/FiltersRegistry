@@ -1,9 +1,9 @@
-! Checksum: ncgesT0sP6vWk3mbYqsbSQ
-! Diff-Path: ../patches/260/260-s-1793738412-14400.patch
+! Checksum: U5PBcT1SyecyHwtis9zmsA
+! Diff-Path: ../patches/260/260-s-1793753358-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.2
-! TimeUpdated: 2026-11-03T20:37:04+00:00
+! Version: 2.0.3.3
+! TimeUpdated: 2026-11-04T00:46:14+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -46,10 +46,14 @@ www.1password.dev#?#[role="menuitem"]:contains(Ask questions about this page)
 ! -- https://www.aberdeencity.gov.uk/
 ! Floating chatbot button
 www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
-! === AdBlock/Adblock Plus ===
-! -- https://help.adblockplus.org/adblock-plus-help-center/how-to-write-filters
-! "Use with AI" button
-help.adblockplus.org,helpcenter.getadblock.com##ai-actions
+! === AdBlock ===
+! -- https://helpcenter.getadblock.com/adblock-help-center/how-does-adblock-work
+! "Use with AI" markdown button text & menu options
+help.adblockplus.org,helpcenter.getadblock.com##ai-actions button > svg:has(> [d="M19 9L20.25 6.25L23 5L20.25 3.75L19 1L17.75 3.75L15 5L17.75 6.25L19 9Z"])
+help.adblockplus.org,helpcenter.getadblock.com#$#ai-actions button { font-size: 0 !important; column-gap: 0 !important; padding-inline: 6px !important }
+help.adblockplus.org,helpcenter.getadblock.com##hr:has(+ [value="open-in-chatgpt"])
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-chatgpt"]
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-claude"]
 ! === Adobe ===
 ! -- https://www.adobe.com/ (logged out)
 ! Floating "Ask a question" field. Appears after scrolling down
