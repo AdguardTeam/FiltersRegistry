@@ -1,9 +1,9 @@
-! Checksum: syP272JDwpOZlP6OHWBYDw
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1793767166-14400.patch
+! Checksum: entNjdP80/yMA0b4Floo0g
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1793810333-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.4
-! TimeUpdated: 2026-11-04T04:36:44+00:00
+! Version: 2.0.3.5
+! TimeUpdated: 2026-11-04T16:36:11+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -37,25 +37,27 @@ www.aliexpress.us##div:has(> [class^="seo-sellpoints--title--"])
 www.aliexpress.us##div:has(> [class^="seo-sellpoints--title--"]) + [class^="split-line--wrap--"]
 alphacoders.com##.item:has(.thumb-tag-masonry:is([href="https://alphacoders.com/ai-art-wallpapers"], [href="https://alphacoders.com/midjourney-wallpapers"]))
 ||www.amazon.*/rufus/$xmlhttprequest,domain=www.amazon.*
+www.amazon.*#%#//scriptlet('json-prune-xhr-response', 'suggestions.[-].widgetId', '', '/suggestions')
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
 www.amazon.*###nav-rufus-disco
 www.amazon.*##.nav-li:has([data-csa-c-content-id$="_cs_health_ai"])
 www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
-www.amazon.*#%#//scriptlet('json-prune-xhr-response', 'suggestions.[-].widgetId', '', '/suggestions')
-www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
-www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel:dockedState', 'null')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel', 'null')
+www.amazon.*##.nav-search-rufus-container > #nav-flyout-rufus
 www.amazon.*###rufus-ask-rufus-tooltip
 www.amazon.*###nile-inline_feature_div
+www.amazon.*###shopTalk_feature_div
 www.amazon.*###nile-inline-btf_feature_div
+www.amazon.*##[data-csa-c-painter="review-highlights-experience"]
 www.amazon.*##.cr-reviews-ai-pills-t2
-www.amazon.*##[data-csa-c-item-id="cr-product-insights-cards"], [data-csa-c-item-id="cr-product-insights-detail-page"]
-www.amazon.*##.nav-search-rufus-container > #nav-flyout-rufus
 www.amazon.*###rufus-dpx-atf-mission-pills-container
 www.amazon.*###nile-inline-insights_feature_div
 www.amazon.*###nile-inline-mobile-hoc-below-top-highlights_feature_div
+www.amazon.*##.cr-reviews-ai-pills-t1
 www.amazon.*##.cs-summary-section
 www.amazon.*##.a-spacing-top-mini:has(> .ai-branding-icon)
 www.amazon.*##.hero-top-highlights
@@ -540,6 +542,7 @@ github.com##[data-component="ActionList.Group"]:has(> [aria-label="Copilot"]) + 
 github.com#$?#[data-testid="copilot-menu-items"] { remove: true; }
 github.com##[data-component="IconButton"]:has(> .octicon-copilot)
 github.com##.prc-ButtonGroup-ButtonGroup-vFUrY:has([data-testid="copilot-ask-menu"])
+github.com##body:not(:has([app-name="copilot-agents"])) [data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-"])
 github.com##.Footer-module__footerButtonWrapper__RL1TZUq
 github.com##.Footer-module__footerButtonWrapper__eCAAR
 github.com##[partial-name="copilot-assisted-review-upsell"]
@@ -1201,6 +1204,7 @@ www.pbtech.co.nz,www.pbtech.com###aiReviewCard
 www.pchealth.ca,www.shoppersdrugmart.ca##.remedy-chatbot-landing
 www.pcmag.com##[data-element="Maggie-Product-Picker-Launcher"]
 www.pcmag.com##div:has(> [data-element="embedded-unit"] > form[\@submit\.prevent*="'product-picker-init'"])
+www.pcworld.com##.miso-summary-box
 medicalxpress.com,phys.org,techxplore.com##[data-target="#summary-modal"]
 pictory.ai###livex-chatbot-app
 www.pinterest.com#%#//scriptlet('ubo-json-prune', 'resource_response.data.results.[-].gen_ai_topics')
