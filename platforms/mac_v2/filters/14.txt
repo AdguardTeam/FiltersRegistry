@@ -1,9 +1,9 @@
-! Checksum: oUh1VyDRtMHAnswclYk8lA
-! Diff-Path: ../patches/14/14-s-1793769228-3600.patch
+! Checksum: NMlqnR+M2k0LOgdZo4k2hQ
+! Diff-Path: ../patches/14/14-s-1793772953-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.85.29
-! TimeUpdated: 2026-11-04T05:09:21+00:00
+! Version: 2.2.85.30
+! TimeUpdated: 2026-11-04T06:12:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2680,6 +2680,7 @@ propaganda24h.pl,gomedia.net.pl,sklep.coconaut.com,anhko.pl,4motos.pl,aluramy.pl
 !
 ! NOTE: Regular rules
 !
+meteomatics.com#%#//scriptlet('trusted-click-element', '#cookie-banner .formatted-content > a[href="#"], #cookie-banner .shrink .mt-6 input[value="analytics"], #cookie-banner .shrink .mt-6 input[value="marketing"], #cookie-banner .gap-4.md\:gap-8 > a[href="#"]:last-child', '', '1500')
 ||prepmymeal.com/cdn/shop/*/assets/cookies.js
 prepmymeal.com#%#//scriptlet('trusted-click-element', '#shopify-pc__banner__btn-decline')
 bushikaku.net##.app-lead
@@ -20079,6 +20080,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245926
+meteomatics.com#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246196
 prepmymeal.com#@##shopify-pc__banner#shopify-pc__banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245963
@@ -25906,6 +25909,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+shugo.gg#$#div[aria-label="Ad Blocker Detected"] { display: none !important; }
+shugo.gg#$#html, body { overflow: auto !important; }
 4umods.com###enmods-adblock-notice
 palermotoday.it,padovaoggi.it#$#div[data-unfair] { display: none !important; }
 palermotoday.it,padovaoggi.it#$#html, body { overflow: auto !important; }
@@ -57681,6 +57686,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+estadao.com.br##.touchpoint-slot
 agoda.com##[data-component="deals-static-bar"]
 jollytur.com#$#body.modal-open { overflow: auto !important; }
 jollytur.com#$#.modal-backdrop { display: none !important; }
