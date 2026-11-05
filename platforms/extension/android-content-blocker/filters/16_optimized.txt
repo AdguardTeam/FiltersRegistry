@@ -1,5 +1,5 @@
-! Checksum: Hjv0JZ/P+Frz57v4N2FOUA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1793819388-3600.patch
+! Checksum: k5dqABWgfHSqmzv7hLszfQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1793844863-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.58.13
@@ -37,7 +37,6 @@ nicematin.com#@#.ads-box
 !+ PLATFORM(ios, ext_android_cb)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=monlatuque.com
 planhub.ca###popupAdBlockerDetected
-@@||fiches-auto.fr/popup2.js$~third-party
 !+ NOT_OPTIMIZED
 fiches-auto.fr##body > button#back-to-top ~ div[id][style="display: block;"]
 ||pmur.org/scripts/Slate_abChoice.js$domain=slate.fr
@@ -265,6 +264,7 @@ kami-labs.fr##div[id^="kl-ad-"]
 ||kami-labs.fr/wp-content/plugins/autoarticle-receiver/assets/js/ads-widget.js
 footmercato.net##.article__iframe--dailymotion-sticky
 femmeactuelle.fr##.article-outbrain
+latribune.ca##.arcad-feature
 jeuxvideo.com##a[rel="sponsored"]
 jeuxvideo.com##.anchorMiddleOne--banner
 journaldugeek.com##.lg\:min-h-\[300px\]
@@ -593,6 +593,7 @@ tfarjo.cc,filmz.cc##.col-md-8 script + div:not([class]):not([id]) > div[style^="
 latribunedelart.com##.encart_colonne
 latribunedelart.com##.encart_bandeau_haut
 presse-citron.net###presse_citron_skin_banner
+orange.fr##.RM.o_r_notchanged
 iphonesoft.fr##.center.bigPub
 rtl.fr##.g-aside-ad
 ||tennisactu.net/pubs/300x125
@@ -1036,9 +1037,9 @@ youzik.com#@#a[style]
 @@||bitchute.com/static/*/js/monetization.js
 akademikpersonel.org#@##ad_global_below_navbar
 overclockzone.com#@##ad_global_below_navbar
-@@||nahnoji.cz/embed?id=
 androidpit.fr#@##ad-sticky-container
 @@||www*.tusfiles.net^
+@@||tusfiles.net/scripts/app.js
 @@||yospace.com/csm/$xmlhttprequest,domain=7plus.com.au
 trackitonline.ru#@#.liketable
 nudogram.com#@#.is-ad-visible
@@ -1410,6 +1411,7 @@ _970-x-90_
 _970_90_
 _970x250.
 _990x557.
+_990x67.
 _ad-server.
 _ad160x600.
 _ad_agency_
@@ -1567,6 +1569,7 @@ _werbebanner_
 ||380tl.com^$third-party
 ||3xdl.com^$third-party
 ||3xtraffic.com^$third-party
+||57union.com^$third-party
 ||7x4.fr^$third-party
 ||7x5.fr^$third-party
 ||acexedge.com^$third-party
@@ -1608,6 +1611,7 @@ _werbebanner_
 ||adrock.tv^$third-party
 ||ads-x.com^$third-party
 ||adsb4track.com^$third-party
+||adsb4trk.com^$third-party
 ||adsbtrack.com^$third-party
 ||adschoom.com^$third-party
 ||adsearch.pl^$third-party
@@ -1628,6 +1632,7 @@ _werbebanner_
 ||adtech.com^$third-party
 ||adten.eu^$third-party
 ||adultwork.com^$third-party
+||adunblock.com^$third-party
 ||adverdata.net^$third-party
 ||adverline.com^$third-party
 ||adverti.fr^$third-party
@@ -1674,6 +1679,7 @@ _werbebanner_
 ||buckridge.link^$third-party
 ||camsoda.com^$third-party
 ||caramec.fr^$third-party
+||carasexe.info^$third-party
 ||carasexe.name^$third-party
 ||carpediem.fr^$third-party
 ||cclpub.com^$third-party
@@ -2233,7 +2239,6 @@ _werbebanner_
 ||elderlytown.com^
 ||embushloaners.rest^
 ||emeutetubbers.cfd^
-||emplorebunches.com^
 ||encouragingthread.com^
 ||endballbemires.com^
 ||endocrineweb.com^
@@ -2636,6 +2641,7 @@ _werbebanner_
 ||teatsbummest.com^
 ||teazlesstoic.com^
 ||tech-script.ru^
+||tenrecgange.cfd^
 ||tercabilis.info^
 ||tetryltepanec.help^
 ||theorboswear.help^
@@ -2938,6 +2944,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||meilleurduweb.com/images/pub/
 ||membersrule.com/getimg.php$third-party
 ||mini-jeux.com/jeuday.js$third-party
+||moevideo.net/getit/
 ||mym-db.com/storage/$third-party
 ||mynudez.com^$media,script
 ||netdna-ssl.com^*_banner.$domain=~www.orange.be
@@ -3212,6 +3219,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||french-stream.*/js/9c9e0968.js
 ||frprn.com/even/
 ||gauleporno.xxx/assets/js/head.
+||geeek.org/amazon/
 ||geny.com/web/images/genybet/
 ||goal.*/uploads/promotion/
 ||goal.com^$subdocument,~third-party
@@ -3264,6 +3272,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||mediabong.*/loader.js
 ||medialot.fr/wp-content/uploads/*/Logo-
 ||medialot.fr/wp-content/uploads/*/pub-
+||mes-dialogues.net^*/gaysize.gif
 ||mobilealgerie.com/wp-content/uploads/*/banniere-
 ||monbestseller.com/sites/default/files/pushs/
 ||monpetitforfait.com/wp-content/uploads/*/ban
@@ -3328,6 +3337,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||top-for-phone.fr/imgs/
 ||trovit.*/index.php/cod.get_premium/$xmlhttprequest
 ||trovitargentina.*/index.php/cod.get_premium/
+||trucsweb.com^*/ban_$image
 ||tukif.com/webcams/
 ||turfomania.fr/*-publicitaire/
 ||twitch.tv/track?
@@ -3486,6 +3496,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###native_ad
 ###news_pub_centre
 ###nf-fixed-ads
+###oPublicite
 ###om_ads-7
 ###pagelet_advertiser_panel
 ###partner-ads
@@ -3739,6 +3750,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.divAdsBottom
 ##.div_ads
 ##.dm_ads_InRead
+##.dp-ad-chrome
+##.dp-ad-visible
 ##.drt-ad-url
 ##.drt-sponsor-block
 ##.drt-sponsor-data
@@ -3922,6 +3935,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pubBottomRight
 ##.pubBox
 ##.pubContent
+##.pubFlash
 ##.pubGoodDeals
 ##.pubGoogle300
 ##.pubHead
@@ -4041,7 +4055,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.single-top-ads
 ##.site-inner-ads
 ##.site-pub-interstitiel
-##.site-pub-skin
 ##.site-pub-top
 ##.six-article-with-ad
 ##.skin_outer_ad
@@ -4197,6 +4210,7 @@ solutions-numeriques.com###clickable
 jetanimes.com###clickfakeplayer
 auchan.fr###cms-slot-disclaimerSlot
 tukif.com###co_sponsor
+soundlightup.com###colonnePub
 renovationettravaux.fr###colorbox
 signification-prenom.com###colpub > #bloc_forum
 orange.fr###commercial-links
@@ -4206,7 +4220,6 @@ lesmobiles.com###ctn_right
 lesmobiles.com###ctn_top
 lesmobiles.com###ctn_top2
 papvacances.fr###details-services
-guide-piscine.fr###devis-lien-popup
 ladepeche.fr###encart_dernieres_annonces
 maxifoot.fr###ep300z
 maxifoot.fr###ep728
@@ -4281,6 +4294,7 @@ vo2.fr###pub_background
 maxifoot-live.com###pub_bc
 jeuxvideo.com###pub_carre1
 emu-france.com###pub_casino_header
+algerie360.com###pub_rand300b
 gamaniak.com###pubtopmenu
 liligo.fr###pulledbanner-right-top
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
@@ -4355,6 +4369,7 @@ herault-tribune.com##.annonces-legales
 leboncoin.fr##.apn-na
 lacentrale.fr##.appNexusPlaceholder
 journaldunet.com,linternaute.com##.app_aside--content_commerce
+neowebcar.com##.argus-logo
 lejournaldelamaison.fr,mariefrance.fr##.article-context-produit
 causeur.fr##.asa_product_box
 rds.ca##.b-ads-custom
@@ -4374,11 +4389,13 @@ bfmtv.com##.banner_top
 liberte-algerie.com##.bannergroup_pave
 turf-fr.com##.banners-con
 multiup.io##.bg-info
+moov.mg##.bgTGC
 ennaharonline.com##.big-ad2
 journaldemontreal.com##.bigbox-container
 autonews.fr##.bl-partner
 tv5.org##.bloc_promomiddle
 egora.fr##.block-egora-pub
+d8.tv##.block-mozaic-pub
 maison-travaux.fr##.blockUI
 cotemaison.fr##.block_partners
 mystere-tv.com##.blockrightpub
@@ -4434,6 +4451,7 @@ frandroid.com##.h-bic
 hitek.fr##.h_ad_970x250
 homecinema-fr.com##.hab_link
 cbanque.com,clubpronostics.com,gratuiciel.com,lelogicielgratuit.com,logicielmac.com,logitheque.com,made-in-algeria.com,made-in-tunisia.net,maghrebex.com,mediscom.com,quetelecharger.com,sofoot.com,toucharger.com##.habillage
+cbanque.com##.habpage
 realite-virtuelle.com##.halfpageAd
 medialot.fr##.header-sub
 tvanouvelles.ca##.header-topBar-sticky
@@ -4506,7 +4524,6 @@ lanutrition.fr##.product-shop
 nitrotype.com##.profile-ad
 codeur.com##.project-option-premium
 heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.promSB
-deco.fr,euro-2016-france.net,pokaa.fr##.promo
 challenges.fr,nouvelobs.com##.promo-bottom-art
 gauleporno.xxx,pornburst.xxx##.promo-gauleporno
 ouedkniss.com##.promo-loader
@@ -4568,6 +4585,7 @@ gupy.fr##.vrd_tickets_sponsored
 positivr.fr##.vsly-player, .positivr-positivrtv-cta
 pornovore.fr##.webcams
 place4geek.com##.widget_text.widget.widget_custom_html
+directmatin.fr##.wrap_evenement
 macg.co##.wrapper > a
 boulistenaute.com##.xo-banner-ad-footer
 jawharafm.net##.zone_banner_content
@@ -4707,6 +4725,7 @@ ouest-france.fr##div[id^="pub_pave_article"]
 universfreebox.com##div[id^="publicite-"]
 zonebourse.com##div[id^="zpp"]
 superphysique.org##div[style*="text-align: center"][style*="width:250px"]
+gamalive.com##div[style*="width:160px;height:600px;"]
 judgehype.com##div[style*="width:300px;height:600px;"]
 echoroukonline.com,maxifoot.fr##div[style*="width:468px;"]
 forum.gsmhosting.com##div[style="float:right; width:336px; height:560px; margin-left:10px"]

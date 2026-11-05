@@ -1,5 +1,5 @@
-! Checksum: 19+Ow6gXw8mcyapUMxOVrQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1793772922-3600.patch
+! Checksum: kKCl8FZinjxuAAqdTfw1Pw
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1793844864-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
 ! Version: 2.0.49.93
@@ -47,14 +47,13 @@ hightech.fm##.ad-banner
 3dnews.ru##.js-mediator-article > div#newsSlider
 lifehacker.com##[data-ga-element="openweb_scroll"]
 ecartelera.com.mx##.player-section .unmute-button
-||1lib.*/components/z-promotion.js
-||1lib.*/components/z-recommended-search.js
 ||z-lib.*/components/z-promotion.js
 ||z-lib.*/components/z-recommended-search.js
 ||z-library.*/components/z-promotion.js
 ||z-library.*/components/z-recommended-search.js
 filmibeat.com##.fb-article-content-widget
 ||elements.video/player.js$domain=forbes.com
+travelandleisure.com##.mm-video-medianet-bytes
 nbcnews.com##div[data-testid="marqueeBreaking"]
 pcgamer.com##aside[data-component-name="Recirculation:ArticleRiver"]
 neoline.ru##a[href="/company/news/interesnoe/yandex-split-pay/"]
@@ -161,6 +160,7 @@ sravni.ru##div[class^="special-offers-"]
 cookpad.com##div[data-source-tracking-screen-value="home_banner"]
 docin.com###addFavoritesTips
 testbook.com##web-signup-sticky-footer
+eurosport.tvn24.pl##div[data-testid="pip-container"] > div[data-testid="player-pip-active"]
 ||pregchan.com/randomBanner.js
 harajuku.pl##.apicodes-frame
 moeyo.com###main > a[href="https://twitter.com/MoeyoCom"]
@@ -475,6 +475,7 @@ interia.pl,pomponik.pl,styl.pl##div[class*="video-"] div[class="vjs-fixedmonitor
 luxuretv.com##.contentsvideosimilaire > .cam
 banana.by###footer
 myapple.pl##body > .alert-announcement#announcement
+send.firefox.com##.fxPromo
 androidpit.de###einsUndEinsBannerFixed
 kievpravda.com##.person-of-day-sidebar
 youtube.com###content > .style-scope > .ytd-compact-promoted-item-renderer
@@ -821,7 +822,6 @@ ssg.com##.ssgcard_swiper
 www.ssg.com###lp_gnbTopBanr
 ratatype.com##.not-prose
 ratatype.com###header > div.message
-trafficnews.jp##.premium-banner-sp
 machineryline.*##.create-sale-widget
 otonanswer.jp##.custom-button-wrap
 dotabuff.com##.footer-nav-secondary > a[href="https://elo-entertainment-inc.breezy.hr"]
@@ -944,7 +944,6 @@ shiksha.com##.recoWidgetSection
 reddit.com##advertise-button
 index.hr##.premium-sticky
 zerohedge.com###store-promo
-ispazio.net##div[data-isp-ad-slot]
 gitflic.ru##.sidebar-single-banner
 onedio.co##.kesfet_promotion
 chibanippo.co.jp##.block-views-blockteikimono-views-block-1
@@ -990,6 +989,7 @@ new.donatepay.ru##.Multiplier__banner
 gay-blog.tomrockets.com##.gb-content-banner
 alternet.org##.mobile-inline-an-signup-offer
 metallinvestbank.ru##.article-detail__promo
+lastpass.com##.backdrop
 ||navitime.co.jp/*/account/walk/proplus_myspot_banner.webp
 telex.hu##.telex-links
 techspot.com##.subDriveRevBot
@@ -1007,7 +1007,6 @@ linkvertise.com##lv-premium-ad-card
 kinoreporter.ru##.advt-holder
 ||tourister.ru/query?m=popularMaterials-
 shop.mts.ru##.v2-catalog-card-list__promo-banners-slider
-consumer.1-ofd.ru##.con-banner-cards-list
 skillbox.ru##.layout div[data-fetch-key="UniversalNotice:0"]
 secrets.tbank.ru##body > .layout > .informer-container
 ||theonion.com/wp-content/uploads/*/Gift_Membership_Banner_Ad_
@@ -1039,6 +1038,7 @@ mediaexpert.pl,computerbase.de##.promobar
 manzoku.or.jp###scrollbox-non
 manzoku.or.jp##.mz-scroll
 sabah.com.tr##.market-banner
+ulketv.com##.imsakiye-widget
 amwine.ru##.header__announce
 bonappetit.com##figure[data-testid="cne-interlude-container"]
 wildberries.ru##.mo-modal__overlay[class*="dynamicOnboardingOverlay"]
@@ -1079,6 +1079,7 @@ forbes.com##header a[href^="https://account.forbes.com/subscribe"]
 cnews.ru###cnLike + noindex
 windguru.cz###forecasts-page-content > a[href="/help.php?sec=pro"]
 kinogo.*##.zplata
+thirdspacelearning.com##body.single-usa_blog > div[style^="position:"]:not([class]):not([id])
 mangadex.org##a[href="/advertise"]
 check.lenta.com##.chek_wrapper > div[class] > #carousel
 klz9.com##a[href^="/premium"]
@@ -1105,6 +1106,7 @@ courses.monoprix.fr##[data-test="pop-up-banner"]
 t3n.de##.tg-jobs-kategorie-box
 ||grajapa.shueisha.co.jp/api/banner/overlay
 futurepedia.io##a[href*="futurepediaacademy.in/"][href*="&utm_medium=banner&"]
+bankersadda.com##main > .row a[href*="adda247.com"]
 bankersadda.com##.footer-static-detail-bar
 pan.baidu.com##.nd-operate-guidance
 neg.by##.footer-banner
@@ -1187,6 +1189,7 @@ merkmal-biz.jp###recruitlink
 asmr18.fans##.book18-post-list
 jornaldocomercio.com###popup
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##shreddit-async-loader[bundlename="feed_announcement"]
+pitchfork.com##.body__inner-container > div.disclaimer
 the-ans.jp##center > script + a[id^="c2_click_"]
 the-ans.jp##.single-links
 the-ans.jp##a[id^="c2_click_textlink_"]
@@ -1539,6 +1542,7 @@ themeselection.com###thegem-template-13
 themeselection.com###thegem-template-6
 officemag.ru##.SideEvent
 officemag.ru##.HeaderBanner
+||makuring.jp/wp-content/uploads/2023/09/5338.jpeg.webp
 anilibria.top##.v-carousel + div.justify-center
 anilibria.top##.v-carousel
 funabashi-tsushin.com###main > a[href="https://funabashi-tsushin.com/banner_ads"]
@@ -1687,7 +1691,6 @@ gamewith.jp##.walkthrough-gamewith-announces.gtm-ga4-walkthrough-imp-event
 efe.com###media_image-2
 dotnet.microsoft.com##.swim-purple
 flightradar24.com##.size-full > div.relative > div.size-full ~ div.justify-between.absolute > div.justify-center.flex + div.items-end
-deezer.com###tbcc_offer_btn
 rakumachi.jp###js-MultiPageHeader
 rakumachi.jp##.postBanner
 home.kingsoft.jp##.col-md-3 > a[href] > img
@@ -1796,6 +1799,7 @@ wolframalpha.com##.sc-13120a7c-0
 udemy.com##div[data-testid="smart-bar-container"]
 zennioptical.com###comp-message-bar
 flickr.com##.ad-rail-content-container
+klerk.ru###promoTop
 trendhunter.com##.hcamp--bottom
 itsfoss.com##.gh-portal-triggerbtn-iframe
 investing.com##.promo-strip-wrapper
@@ -1967,6 +1971,7 @@ nikkei-cnbc.co.jp##li > a[href="https://www.nikkei-cnbc.co.jp/kouza"]
 dev.ua##.afterheader-widget
 dev.ua##main > div[class^="island d-none_"]
 asahi.com##.nZ_AH
+finance.yahoo.com##a[title="Stay ahead of the market"]
 123telugu.com##img[onclick="track_ad_clicked(this)"]
 so.com###so-activity-entry
 yanmaga.jp##.episode-special-banner
@@ -2276,6 +2281,7 @@ texterra.ru###overlay-default
 plus.espn.com##.popup-container
 edureka.co##.cta-ads-block-inline
 business.tutsplus.com##.post__inarticle-ad-template-mobile
+uteka.ru##._advertising
 thehindubusinessline.com###offer-0-HIc45
 testbook.com##.signup-banner
 recochoku.jp##.top-campaign-bnr
@@ -2450,6 +2456,7 @@ keengamer.com##.bannerTOP
 office.com##.m-alert.f-information
 ||banner.consultant.ru^
 rayon.in.ua,fujinkoron.jp,dime.jp,k2sporn.com,rallys.online,hobbygames.ru,islamicfinder.org,incehesap.com,curseforge.com,toto.rakuten.co.jp,themeforest.net##.banner
+alba.co.kr###MainBanner
 filmix.my,filmix.biz,filmix.ac,filmix.tech,filmix.zone##.remove-sda-wrap
 zoon.ru###zoonHeader
 praxistipps.chip.de##.Article__Promo
@@ -2768,7 +2775,6 @@ diamond.jp##.zai-subcolumn-fbanners
 m.dm5.com##.guide
 pixiv.net##.premium-lead-t-footer
 pixiv.net##.premium-lead-new-t-info-home-top
-voshod-solnca.ru##.order-calendar
 investors.com##.wrapper .broadcast-text
 mt.de###paywall-footer-slider
 findaphd.com###billboard-inner
