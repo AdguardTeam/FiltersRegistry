@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: tDA5MvLeCYB/RkLSx6qeug
-! Diff-Path: ../patches/14/14-s-1793891543-3600.patch
+! Checksum: IfX6vMlX0Qdz19imj1wjqw
+! Diff-Path: ../patches/14/14-s-1793895321-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.85.56
-! TimeUpdated: 2026-11-05T15:08:58+00:00
+! Version: 2.2.85.57
+! TimeUpdated: 2026-11-05T16:11:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2599,6 +2599,7 @@ nogame.pl,propaganda24h.pl,gomedia.net.pl,sklep.coconaut.com,anhko.pl,4motos.pl,
 !
 ! NOTE: Regular rules
 !
+wellrx.com##main > .topPageCallout:has(> button.alert-close-button)
 niakhera.es##.igkc-cookie-info
 cubepath.com##.fixed.bottom-0:has(a[href="/policy"])
 brandfetch.com###portal > div[class^="index-module__"]:has(> div[aria-label="Cookie preferences"])
@@ -9031,7 +9032,7 @@ tattoodo.com###js-root > div > div:has(> button[onclick="acceptCookies()"])
 paradoxwikis.com##body.prevent-scroll:style(overflow: auto !important;)
 paradoxwikis.com##.cookies-overlay:style(display: none !important;)
 ichgcp.net##.js-cookie-consent-wrap
-gothic-gifts.com###CCM_popup
+allstays.com,gothic-gifts.com###CCM_popup
 sweetwater.com##div[id^="ccpa-"]
 jetcost.*###ck-modal-container:style(display: none !important;)
 jetcost.*##body:style(overflow: auto !important; position: static !important;)
@@ -18508,6 +18509,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246360
+netz-noe.at#@#.cc-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246361
 cruiseit.co.il#@#.cc-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246319
@@ -27119,6 +27122,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+wellrx.com##.fixed.inset-0 > #signUpModal
 duck.ai##section[data-testid="duckai-sidebar"] + section > div:not([style]):not([data-testid]):has(> a[href^="https://selfserve.decipherinc.com/survey/"])
 united24media.com##.gtm-bottom-popup-article
 united24media.com##.gtm-bottom-popup-homepage
@@ -47560,6 +47564,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+wellrx.com##.cta-banner
 telekom.gr##.ODSContainer-basic--horizontal > div.ODSCardBasic:has(> div.ODSCardBasic-Content button[aria-label="Σκάναρε"])
 azal.az##div[class^="ToAppMarketBanner_"]
 parismatch.com##.hidden > .items-center:has(> div.flex + img[alt*="Paris Match"])
@@ -57022,6 +57027,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+vkvideo.ru##.vkuiBanner__host
 allsoft.ru##.b-banner_fluid__wrapper
 speedof.me##.home-promos
 estadao.com.br##.touchpoint-slot
