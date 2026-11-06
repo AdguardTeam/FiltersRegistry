@@ -1,9 +1,9 @@
-! Checksum: Cx8Iy0ccvPnZWro5R4vGhA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1793967261-3600.patch
+! Checksum: dZWO4cfMqEk5OE+SjyRWaQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1793970761-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.56
-! TimeUpdated: 2026-11-06T12:11:19+00:00
+! Version: 2.0.69.57
+! TimeUpdated: 2026-11-06T13:08:58+00:00
 ! Expires: 10 days (update frequency)
 ||apk-2.online^$third-party
 ||geniusclickad.cc^
@@ -482,6 +482,10 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ##header > ul > li.blink > a[target]
 ##.playerTextReklam
 ##center > a[target="_blank"][style="color: red;"] > font[style="font-size: 15pt"]
+##.odds-container
+##.header-top > div.header-text
+##.footer-links
+##div[class^="reklam-"]
 ##.pageskin-container
 ##.player-ad-banner
 ##.ads_single_font
@@ -5617,6 +5621,10 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#.play-that-video { display: none !important; }
 lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com#$#body div#player { display: block !important; }
+||kazansanatv*.com/view/theme/ultimate/img/NEWgif*.webp
+||kazansanatv*.com/KazansanaTV_AD*.mp4
+||kazansanatv*.com/view/theme/ultimate/assets/js/rc.js
+[$domain=/kazansanatv\d+\.com$/]##header > ul
 [$domain=/intersportv\d+\.live$/]##header > ul
 [$domain=/intersportv\d+\.live$/]##.odds-container
 [$domain=/intersportv\d+\.live$/]##.header-top > div.header-text

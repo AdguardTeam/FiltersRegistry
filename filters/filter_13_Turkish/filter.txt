@@ -862,6 +862,10 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218312
 ##center > a[target="_blank"][style="color: red;"] > font[style="font-size: 15pt"]
 ! Sport streaming sites
+##.odds-container
+##.header-top > div.header-text
+##.footer-links
+##div[class^="reklam-"]
 ##.pageskin-container
 ##.player-ad-banner
 ##.ads_single_font
@@ -6327,6 +6331,16 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+!
+! Frequently changed domains: kazansanatv*.com
+! Source: kazansanatv3.com
+||kazansanatv*.com/view/theme/ultimate/img/NEWgif*.webp
+||kazansanatv*.com/KazansanaTV_AD*.mp4
+||kazansanatv*.com/view/theme/ultimate/assets/js/rc.js
+[$domain=/kazansanatv\d+\.com$/]##header > ul
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
+kazansanatv3.com##header > ul
+!#endif
 !
 ! Frequently changed domains: intersportv*.live
 ! Source: intersportv1.live
