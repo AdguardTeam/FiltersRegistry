@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.5.2.58",
-			"timeUpdated": "2026-11-06T17:07:58+0000",
+			"version": "2.5.2.59",
+			"timeUpdated": "2026-11-06T18:10:52+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.54.57",
-			"timeUpdated": "2026-11-06T11:08:01+0000",
+			"version": "2.0.54.58",
+			"timeUpdated": "2026-11-06T18:11:23+0000",
 			"languages": [
 				"de"
 			]
@@ -158,8 +158,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.36.38",
-			"timeUpdated": "2026-11-06T14:09:11+0000",
+			"version": "2.0.36.39",
+			"timeUpdated": "2026-11-06T18:11:30+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -218,8 +218,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.69.58",
-			"timeUpdated": "2026-11-06T14:09:14+0000",
+			"version": "2.0.69.59",
+			"timeUpdated": "2026-11-06T18:11:34+0000",
 			"languages": [
 				"tr"
 			]
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.85.72",
-			"timeUpdated": "2026-11-06T15:09:31+0000",
+			"version": "2.2.85.73",
+			"timeUpdated": "2026-11-06T18:11:43+0000",
 			"languages": []
 		},
 		{
@@ -328,8 +328,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.33.90",
-			"timeUpdated": "2026-11-06T15:09:40+0000",
+			"version": "2.0.33.91",
+			"timeUpdated": "2026-11-06T18:11:54+0000",
 			"languages": []
 		},
 		{
@@ -341,8 +341,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.50.0",
-			"timeUpdated": "2026-11-06T15:09:41+0000",
+			"version": "2.0.50.1",
+			"timeUpdated": "2026-11-06T18:11:55+0000",
 			"languages": []
 		},
 		{
