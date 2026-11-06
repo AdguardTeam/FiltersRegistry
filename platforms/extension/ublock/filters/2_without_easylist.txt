@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: GscZjym7OZIdXhT3LebH0Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793934851-3600.patch
+! Checksum: q7QAZzASsNhpQk5fVsEdXA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1793938404-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.2.45
-! TimeUpdated: 2026-11-06T03:09:33+00:00
+! Version: 2.5.2.46
+! TimeUpdated: 2026-11-06T04:09:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||dvwztnx4ab3fl.cloudfront.net^
 ||insightjs.com^$all
 ||insightjs.org^$all
 ||zowiedead.com^
@@ -14136,6 +14137,17 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246427
+mlhbd.xyz##html.abg-lock, html.abg-lock body:style(overflow: auto !important;)
+mlhbd.xyz###abg-ov:style(display: none !important;)
+mlhbd.xyz#@##ad-top-banner
+mlhbd.xyz#@#.ad-slot
+mlhbd.xyz#@##sponsorAd
+mlhbd.xyz#@#[id^="google_ads_iframe_"]
+mlhbd.xyz#@#.adunit
+mlhbd.xyz#@#.ad_box:not(.text-ad)
+mlhbd.xyz#@#.ads-300x250
+mlhbd.xyz#@#.sponsored-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246376
 vpnjantit.com##body > div[style^="position: fixed; inset: 0px; width: 100%;"]:has(> div[style] > button[onclick^="window.location.reload"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246366
@@ -41611,7 +41623,7 @@ nesninja.com##.partner-slot
 ||vdrama.fans/js/vd-ad-config.js
 editorial.rottentomatoes.com##.ad-leaderboard_wrapper
 androidapks.com##div[style="margin:-15px auto 6px;min-height:250px !important;"]
-||cdn.*.com/sdk/v1/dd.p.js^$script,3p
+||cdn.*.com/sdk/v1/dd.*.js^$script,3p
 ||porndd.com/static/js/popunder-inject.js
 ||pixhost.to/resource-session/
 pixhost.to##+js(abort-on-stack-trace, document.addEventListener, loadInstantMessage)
@@ -42019,7 +42031,10 @@ imgur.com##.Grid-column > div[id^="Col-Child-"]:has(> div.fast-grid-ad)
 euronews.com##div[data-ad-name]:remove()
 nrl.com##.ladder__item--sportsbet-cell
 xcandid.vip,xcandid.top##.g1-row:has(#g1-secondary-nav)
+||api.leakgallery.com/cfg/*/z?
+||api.leakgallery.com/cfg/*/cpc?
 ||api.leakgallery.com/affiliate/
+leakgallery.com##app-page-lead
 leakgallery.com##.affiliate-grid
 leakgallery.com##.partners-title
 leakgallery.com##a[rel="sponsored nofollow noopener"]
