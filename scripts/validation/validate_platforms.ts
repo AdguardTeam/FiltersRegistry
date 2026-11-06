@@ -307,6 +307,9 @@ const main = async (): Promise<void> => {
 
     removeStaleReport();
 
+    // `requiredLocales` stays unset on purpose: the compiler then requires
+    // every locale directory, as the static `filters_i18n` schema did before
+    // compiler 4.0.0.
     const validationResult = validateJSONSchema(platformsPath, {
         localesPath: localesDirPath,
         logPath: jsonSchemaReportPath,
