@@ -1,9 +1,9 @@
-! Checksum: H79ovagW5isL848Wx3wLpg
-! Diff-Path: ../patches/260/260-s-1793810324-14400.patch
+! Checksum: FDOo956STDqsNaZEkMzMLg
+! Diff-Path: ../patches/260/260-s-1793954221-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.5
-! TimeUpdated: 2026-11-04T16:36:11+00:00
+! Version: 2.0.3.6
+! TimeUpdated: 2026-11-06T08:35:15+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -138,6 +138,9 @@ www.amazon.*##.cs-summary-section
 www.amazon.*##.hero-top-highlights
 ! Question suggestions
 www.amazon.*##.scans-hero-pills-row
+! -- https://www.amazon.com/gp/css/order-history
+! "Ask Alexa about this order" button on order history page
+www.amazon.*##.yo-ask-order-pill
 ! -- https://health.amazon.com/
 ! "Health AI" button in navbar
 health.amazon.com###nav-health-ai
@@ -585,9 +588,12 @@ www.collinsdictionary.com##.assistantIcon
 ! "Ask Collins Dictionary" in bottom-right corner
 www.collinsdictionary.com###assistant-link
 ! -- https://www.collinsdictionary.com/dictionary/english/word
-! Footer - Ask me a question
+! Sticky "Ask me a question" bar
 ||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
 www.collinsdictionary.com##.assistant-sticky-bar
+! -- https://www.collinsdictionary.com/us/dictionary/english/word
+! Sticky "Ask me a question" chatbox
+www.collinsdictionary.com###ai-widget
 ! === Computer World ===
 ! Header promo for AI powered hybrid search
 ! * The header announcement gets added by a script with id='enqueued-script-consent-manager-js-after', which also handles items like the cookie consent banner.
@@ -1543,13 +1549,19 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 !   * Pregenerated topic infobox (mobile only): https://www.google.com/search?q=ghola+dune
 !   * Mixture of AI and non-ai infoboxes: https://www.google.com/search?q=Super+Mario+64+release+date
 ! -- https://www.google.com/ (Homepage)
-! Search bar > "AI Mode" button
+! Search bar - Plus icon for "add files and tools"
+! * TODO: Doesn't work on https://www.google.co.jp/index.html
+! * TODO: Replace icon with magnifying glass
+! Search bar - "AI Mode" button
 www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Doodle Logos
 ! AdGuard compatible
 ! AI buttons below search bar
 ! * "Create images", "Ask about files", and "Brainstorm"
 ! * These buttons replace the standard "Google Search" button.
+www.google.com##[role="button"][data-azi][jsname="pLYtdd"]
+www.google.com##[role="button"][data-azi][jsname="KrqAEf"]
+www.google.com##[role="button"][data-azi][jsname="aG66rb"]
 ! Promo text below search bar mentioning AI
 ! AI mode promo boxes
 www.google.*##[jscontroller="DyTeib"]
@@ -2229,7 +2241,11 @@ powerpoint.cloud.microsoft##[aria-label="Create with Copilot"]
 ! "Explore copilot" section
 powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
 ! -- https://powerpoint.cloud.microsoft/ (With document open)
-! Ribbon - Home - Designer button
+! Ribbon - Home - Create Interactive Slide
+usc-powerpoint.officeapps.live.com###CopilotCreateInteractiveSlideGalleryFromRibbon
+! Ribbon - Home - Design Suggestions
+! Copilot button to the right of ribbon
+usc-powerpoint.officeapps.live.com##[id^="dabCon"]
 ! Context menu - Explain
 ! -- https://onenote.cloud.microsoft/notebooks/
 ! Header promo for Copilot Notebooks

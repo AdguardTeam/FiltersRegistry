@@ -1,9 +1,9 @@
-! Checksum: UqYMsxDODrOoMUSyOb8sdA
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1793810322-14400.patch
+! Checksum: EXIqhXSexVlwB6qfOgR3kw
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1793954220-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.5
-! TimeUpdated: 2026-11-04T16:36:11+00:00
+! Version: 2.0.3.6
+! TimeUpdated: 2026-11-06T08:35:15+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -62,6 +62,7 @@ www.amazon.*##.cs-summary-section
 www.amazon.*##.a-spacing-top-mini:has(> .ai-branding-icon)
 www.amazon.*##.hero-top-highlights
 www.amazon.*##.scans-hero-pills-row
+www.amazon.*##.yo-ask-order-pill
 health.amazon.com###nav-health-ai
 health.amazon.com##.bg-no-repeat[style*="background-image:url('https://m.media-amazon.com/images/G/01/ahs/health_ai/opt-in/HealthAI_Background_CDF0E9.jpg');"]
 health.amazon.com##.pui-sub-nav-health-ai-button
@@ -273,6 +274,7 @@ www.collinsdictionary.com#$?#.assistantMobile { remove: true; }
 www.collinsdictionary.com###assistant-link
 ||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
 www.collinsdictionary.com##.assistant-sticky-bar
+www.collinsdictionary.com###ai-widget
 www.computerworld.com##.section-block--announcementbar:has(.reset-button)
 www.consumerreports.org##.cda-gnav__main-search-askcr-ai
 www.consumerreports.org###mt-askcr-sf-abandon-footer
@@ -752,11 +754,16 @@ www.google.com##.AJqepd:has([jsaction="settings.askGemini"])
 www.google.com##[jsaction="navigationrail.askMaps"]
 meet.google.com#?#div[jsshadow][jscontroller="dGzwdb"]:contains(Express yourself with an AI-generated background)
 one.google.com##.aTVMOe.RLyrIe.KGSMie
+www.google.*#$#.y1yadf:has(.UbbAWe) { pointer-events: none !important }
+www.google.*#$#.y1yadf .UbbAWe path { color: #9aa0a6 !important }
+www.google.*#$#.y1yadf .UbbAWe > .wPSZBe { height: 20px !important; width: 20px !important }
 www.google.*##.plR5qb
 www.google.*#%#//scriptlet('remove-attr', 'href', 'a[href*="&udm=50"]:has(#hplogo)')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
-www.google.com##[class="jLddNe"][role="button"]:has(> .DUGvJe)
+www.google.com##[role="button"][data-azi][jsname="pLYtdd"]
+www.google.com##[role="button"][data-azi][jsname="KrqAEf"]
+www.google.com##[role="button"][data-azi][jsname="aG66rb"]
 www.google.*#?#promo-middle-slot:contains("/\bAI\b/")
 www.google.*#?#promo-middle-slot:contains(Gemini)
 www.google.*##[jscontroller="DyTeib"]
@@ -1075,7 +1082,9 @@ powerpoint.cloud.microsoft#$#.f187e7yg:has(.___142hl50 [alt="Edit brilliantly wi
 powerpoint.cloud.microsoft##[aria-label="Create with Copilot"]
 powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
 powerpoint.cloud.microsoft##.___qeeaaj0:has(> [aria-label="Explore Copilot section."]:only-child)
-usc-powerpoint.officeapps.live.com###innerRibbonContainer > [class^="groupContainer-"]:has(#ChatPPT-group)
+usc-powerpoint.officeapps.live.com###CopilotCreateInteractiveSlideGalleryFromRibbon
+usc-powerpoint.officeapps.live.com##[class^="groupContainer-"]:has(#ChatPPT-group)
+usc-powerpoint.officeapps.live.com##[id^="dabCon"]
 usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"])
 usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"]) + .fui-MenuDivider
 onenote.cloud.microsoft##.fui-MessageBar:has([alt="Copilot Notebook Icon"])

@@ -174,6 +174,10 @@ www.amazon.*##.hero-top-highlights
 ! Question suggestions
 www.amazon.*##.scans-hero-pills-row
 
+! -- https://www.amazon.com/gp/css/order-history
+! "Ask Alexa about this order" button on order history page
+www.amazon.*##.yo-ask-order-pill
+
 ! -- https://health.amazon.com/
 ! "Health AI" button in navbar
 health.amazon.com###nav-health-ai
@@ -809,9 +813,13 @@ www.collinsdictionary.com#$?#.assistantMobile { remove: true; }
 www.collinsdictionary.com###assistant-link
 
 ! -- https://www.collinsdictionary.com/dictionary/english/word
-! Footer - Ask me a question
+! Sticky "Ask me a question" bar
 ||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
 www.collinsdictionary.com##.assistant-sticky-bar
+
+! -- https://www.collinsdictionary.com/us/dictionary/english/word
+! Sticky "Ask me a question" chatbox
+www.collinsdictionary.com###ai-widget
 
 ! === Computer World ===
 ! Header promo for AI powered hybrid search
@@ -2185,7 +2193,13 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 !   * Mixture of AI and non-ai infoboxes: https://www.google.com/search?q=Super+Mario+64+release+date
 
 ! -- https://www.google.com/ (Homepage)
-! Search bar > "AI Mode" button
+! Search bar - Plus icon for "add files and tools"
+! * TODO: Doesn't work on https://www.google.co.jp/index.html
+! * TODO: Replace icon with magnifying glass
+www.google.*#$#.y1yadf:has(.UbbAWe) { pointer-events: none !important }
+www.google.*#$#.y1yadf .UbbAWe path { color: #9aa0a6 !important }
+www.google.*#$#.y1yadf .UbbAWe > .wPSZBe { height: 20px !important; width: 20px !important }
+! Search bar - "AI Mode" button
 www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Doodle Logos
 !#if ext_ublock
@@ -2201,7 +2215,9 @@ www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
 ! AI buttons below search bar
 ! * "Create images", "Ask about files", and "Brainstorm"
 ! * These buttons replace the standard "Google Search" button.
-www.google.com##[class="jLddNe"][role="button"]:has(> .DUGvJe)
+www.google.com##[role="button"][data-azi][jsname="pLYtdd"]
+www.google.com##[role="button"][data-azi][jsname="KrqAEf"]
+www.google.com##[role="button"][data-azi][jsname="aG66rb"]
 ! Promo text below search bar mentioning AI
 www.google.*#?#promo-middle-slot:contains("/\bAI\b/")
 www.google.*#?#promo-middle-slot:contains(Gemini)
@@ -3158,8 +3174,12 @@ powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
 powerpoint.cloud.microsoft##.___qeeaaj0:has(> [aria-label="Explore Copilot section."]:only-child)
 
 ! -- https://powerpoint.cloud.microsoft/ (With document open)
-! Ribbon - Home - Designer button
-usc-powerpoint.officeapps.live.com###innerRibbonContainer > [class^="groupContainer-"]:has(#ChatPPT-group)
+! Ribbon - Home - Create Interactive Slide
+usc-powerpoint.officeapps.live.com###CopilotCreateInteractiveSlideGalleryFromRibbon
+! Ribbon - Home - Design Suggestions
+usc-powerpoint.officeapps.live.com##[class^="groupContainer-"]:has(#ChatPPT-group)
+! Copilot button to the right of ribbon
+usc-powerpoint.officeapps.live.com##[id^="dabCon"]
 ! Context menu - Explain
 usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"])
 usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"]) + .fui-MenuDivider
