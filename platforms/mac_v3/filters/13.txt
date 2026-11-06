@@ -1,9 +1,9 @@
-! Checksum: j9q+pE79dgn4+tk3SglBMw
-! Diff-Path: ../patches/13/13-s-1793369646-3600.patch
+! Checksum: nimqgdRPjMEG7pn2glg9Lg
+! Diff-Path: ../patches/13/13-s-1793988941-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.39
-! TimeUpdated: 2026-10-30T14:10:05+00:00
+! Version: 2.0.69.59
+! TimeUpdated: 2026-11-06T18:11:34+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -697,6 +697,10 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218312
 ##center > a[target="_blank"][style="color: red;"] > font[style="font-size: 15pt"]
 ! Sport streaming sites
+##.odds-container
+##.header-top > div.header-text
+##.footer-links
+##div[class^="reklam-"]
 ##.pageskin-container
 ##.player-ad-banner
 ##.ads_single_font
@@ -1597,6 +1601,16 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+tribuntv.online##div[style^="position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: 2147483647; background-color:"]
+tribuntv.online##.tenant-player-poster-loading
+||tribuntv.online/media/tenants/$image
+inattv.live,inattv.co,inat-tv.org#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
+||cdn.jsdelivr.net/gh/$media,redirect=noopmp3-0.1s,domain=inat-tv.org|inattv.co
+||blogger.googleusercontent.com/img/$domain=inat-tv.org|inattv.co
+inattv.co,inat-tv.org###splash-banner
+inattv.live##.cpa-video-banner
+haberturk.com##section[data-adv]
+shiftdelete.net##body > div#header-container:has(> div#mastheadslot)
 patronspor.is##a[rel="sponsored noopener"]
 onedio.com##.theme-brand
 ||diziizle.wiki/e/s$xmlhttprequest
@@ -2315,6 +2329,7 @@ gdh.digital##div[id^="fontSizeChanger"] > div[class*="250px"]:has(> .adsbygoogle
 gdh.digital##.col-start-1 > .my-6 > .items-center > .relative:has(> .block > .adsbygoogle)
 ||istanbulticaretgazetesi.com/uploads/ads/
 ||r.resimlink.com/*.gif
+ortadogugazetesi.com##article > .detail-sort-item.overflow-hidden:has(> .detailside-inner-ad-cont)
 ortadogugazetesi.com,haberingundemi.com,iscihaber.net##.detailside-inner-ad-cont
 selcukflix.*##.player > div.flex
 asyawatch.com,dizillahd.*,flatscher.net,dizilla40.com,roketdizi.*,dizilla.*,yabancidizi.*##.player > .flex:has(> div > img[alt="ad image"])
@@ -6143,6 +6158,24 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! except some sites that use non-template domain names of mirror sites
 !
 !
+! Frequently changed domains: kazansanatv*.com
+! Source: kazansanatv3.com
+||kazansanatv*.com/view/theme/ultimate/img/NEWgif*.webp
+||kazansanatv*.com/KazansanaTV_AD*.mp4
+||kazansanatv*.com/view/theme/ultimate/assets/js/rc.js
+[$domain=/kazansanatv\d+\.com$/]##header > ul
+!
+! Frequently changed domains: intersportv*.live
+! Source: intersportv1.live
+[$domain=/intersportv\d+\.live$/]##header > ul
+[$domain=/intersportv\d+\.live$/]##.odds-container
+[$domain=/intersportv\d+\.live$/]##.header-top > div.header-text
+[$domain=/intersportv\d+\.live$/]##.footer-links
+!
+! Frequently changed domains: inagamingtv*.com
+! Source: inagamingtv293.com
+[$domain=/inagamingtv\d+\.com$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
+!
 ! Frequently changed domains: pasgoliptv*.site
 ! Source: pasgoliptv44.site
 ||pasgoliptv*.site/view/theme/ultimate/assets/js/rc.js
@@ -6157,18 +6190,23 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/tulipbettv\d+\.com$/]##.header-top > div.header-text
 [$domain=/tulipbettv\d+\.com$/]##.footer-links
 !
-! Frequently changed domains: patronlig*.cfd; patronsaha*.cfd
+! Frequently changed domains: patronlig*.cfd; patronsaha*.cfd; patronizle*.cfd
 ! Source: patronspor.is
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
-||blogger.googleusercontent.com/img/$domain=/patron(lig\|saha)\d+\.cfd$/
+||blogger.googleusercontent.com/img/$domain=/patron(lig\|saha\|izle)\d+\.cfd$/
 ! aglint-enable no-invalid-modifiers
-[$domain=/patron(lig\|saha)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
+[$domain=/patron(lig\|saha\|izle)\d+\.cfd$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 [$domain=/patron(lig\|saha)\d+\.cfd$/]##.footer-links
+!
 ! Frequently changed domains: hadibettv*.com
-! Source: hadibettv6.com
-[$domain=/hadibettv\d+\.com$/]##.footer-links
+! Source: hadibettv10.com
 ||hadibettv*.com/view/theme/ultimate/img/*.gif
+[$domain=/hadibettv\d+\.com$/]##div[class^="reklam-"]
+[$domain=/hadibettv\d+\.com$/]##body > header
+[$domain=/hadibettv\d+\.com$/]##.footer-links
+[$domain=/hadibettv\d+\.com$/]##.odds-container
+[$domain=/hadibettv\d+\.com$/]##.header-top > div.header-text
 !
 ! Frequently changed domains: pornocudayi*.com
 ! Source: pornocudayi39.com
@@ -6188,12 +6226,16 @@ videoplays.cfd#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '
 ! Source: golbettv6.com
 [$domain=/golbettv\d+\.com$/]##body > a[target="_blank"]
 [$domain=/golbettv\d+\.com$/]##.bnr
+[$domain=/golbettv\d+\.com$/]##.popup-overlay
 !
 ! Frequently changed domains: bahsinetv*.site
-! Source: bahsinetv8.site
-[$domain=/bahsinetv\d+\.site$/]##body > a[target="_blank"]
-[$domain=/bahsinetv\d+\.site$/]##body > div[class^="reklam-"]
+! Source: bahsinetv16.site
+||bahsinetv*.site/view/theme/ultimate/img/*.gif
+[$domain=/bahsinetv\d+\.site$/]##div[class^="reklam-"]
+[$domain=/bahsinetv\d+\.site$/]##body > header
 [$domain=/bahsinetv\d+\.site$/]##.footer-links
+[$domain=/bahsinetv\d+\.site$/]##.odds-container
+[$domain=/bahsinetv\d+\.site$/]##.header-top > div.header-text
 !
 ! Frequently changed domains: piatv*.site
 ! Source: piatv2.site
@@ -6256,8 +6298,16 @@ videoplays.cfd#%#//scriptlet('abort-on-stack-trace', 'document.createElement', '
 !
 ! Frequently changed domains: bahisotv*.com
 ! Source: bahisotv35.com
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+.gif$image,domain=/bahisotv\d+\.com$/
+!+ NOT_VALIDATE
+||cdn.asekyazilim.pro^$media,domain=/bahisotv\d+\.com$/
+! aglint-enable no-invalid-modifiers
 [$domain=/bahisotv\d+\.com$/]##div[style^="margin:"]:has(> a[href][target="_blank"])
 [$domain=/bahisotv\d+\.com$/]##.footer-links
+[$domain=/bahisotv\d+\.com$/]##.sb-player-gifs
+[$domain=/bahisotv\d+\.com$/]##.site-banner-bottom
 !
 ! Frequently changed domains: gmatv*.live
 ! Source: gmatv61.live / https://t.me/guncelmacanaliz
@@ -6554,9 +6604,9 @@ x.palv2.cfd###adPlayerBanner
 !
 ! Frequently changed domains: patronlive*.cfd
 ! Source: patronspor.is
-patrongol41.cfd##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
-patrongol41.cfd##.top-banner-header
-||blogger.googleusercontent.com/img/$domain=patrongol41.cfd
+patrongol42.cfd##a[href="https://x.com/patronsporis"] ~ a[href][target="_blank"]:not(#telegram-link)
+patrongol42.cfd##.top-banner-header
+||blogger.googleusercontent.com/img/$domain=patrongol42.cfd
 !
 ! Frequently changed domains: patronlive*.cfd; patronfutbol*.cfd
 ! Source: patronspor.is
@@ -6953,9 +7003,11 @@ justintvizle736.top,justintvizle737.top,justintvizle738.top,justintvizle739.top,
 ! aglint-enable no-invalid-modifiers
 [$domain=/selcuksports\d+\.com/]##img[id^="top-ads-"]
 ! CASE 3 - probably fake
-taraftarium24bjk17.com,taraftarium24tvizle.com#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
-taraftarium24bjk17.com,taraftarium24tvizle.com###ad-pageskin
-taraftarium24bjk17.com,taraftarium24tvizle.com##.playerStrip
+||video.bsky.app/watch/*/playlist.m3u8$domain=taraftarium24bjk27.com
+||blogger.googleusercontent.com/img/$domain=taraftarium24bjk27.com
+taraftarium24bjk27.com,taraftarium24tvizle.com#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
+taraftarium24bjk27.com,taraftarium24tvizle.com###ad-pageskin
+taraftarium24bjk27.com,taraftarium24tvizle.com##.playerStrip
 taraftarium24tvizle.com##.listAd
 24taraftarium12.xyz##.betcio-banner
 24taraftarium12.xyz##.modal-overlay

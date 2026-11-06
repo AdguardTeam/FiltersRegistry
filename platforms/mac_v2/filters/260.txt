@@ -1,9 +1,9 @@
-! Checksum: 4l1NvRXc3EcDMuhn+tFRyA
-! Diff-Path: ../patches/260/260-s-1793321983-14400.patch
+! Checksum: qCJq52TjKKdZwlFVCbHIvw
+! Diff-Path: ../patches/260/260-s-1793983121-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.95
-! TimeUpdated: 2026-10-30T00:55:59+00:00
+! Version: 2.0.3.7
+! TimeUpdated: 2026-11-06T16:36:07+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -46,10 +46,14 @@ www.1password.dev#?#[role="menuitem"]:contains(Ask questions about this page)
 ! -- https://www.aberdeencity.gov.uk/
 ! Floating chatbot button
 www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
-! === AdBlock/Adblock Plus ===
-! -- https://help.adblockplus.org/adblock-plus-help-center/how-to-write-filters
-! "Use with AI" button
-help.adblockplus.org,helpcenter.getadblock.com##ai-actions
+! === AdBlock ===
+! -- https://helpcenter.getadblock.com/adblock-help-center/how-does-adblock-work
+! "Use with AI" markdown button text & menu options
+help.adblockplus.org,helpcenter.getadblock.com##ai-actions button > svg:has(> [d="M19 9L20.25 6.25L23 5L20.25 3.75L19 1L17.75 3.75L15 5L17.75 6.25L19 9Z"])
+help.adblockplus.org,helpcenter.getadblock.com#$#ai-actions button { font-size: 0 !important; column-gap: 0 !important; padding-inline: 6px !important }
+help.adblockplus.org,helpcenter.getadblock.com##hr:has(+ [value="open-in-chatgpt"])
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-chatgpt"]
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-claude"]
 ! === Adobe ===
 ! -- https://www.adobe.com/ (logged out)
 ! Floating "Ask a question" field. Appears after scrolling down
@@ -105,45 +109,48 @@ alphacoders.com##.item:has(.thumb-tag-masonry:is([href="https://alphacoders.com/
 ! -- https://www.amazon.com/ (homepage)
 ! Chatbot network requests
 ||www.amazon.*/rufus/$xmlhttprequest,domain=www.amazon.*
-! "Rufus" button in navbar
+! AI questions in autocomplete search suggestions
+www.amazon.*#%#//scriptlet('json-prune-xhr-response', 'suggestions.[-].widgetId', '', '/suggestions')
+! Search placeholder messages (No longer used?)
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
+www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
+! Navbar - "Rufus" button
 www.amazon.*###nav-rufus-disco
-! Health AI in navbar
+! Navbar - Health AI in navbar (No longer used?)
 www.amazon.*##.nav-li:has([data-csa-c-content-id$="_cs_health_ai"])
-! Navbar > Medical Care - AI elements
+! Navbar - Medical Care - AI elements (No longer used?)
 www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
-! AI questions in autocomplete search suggestions
-www.amazon.*#%#//scriptlet('json-prune-xhr-response', 'suggestions.[-].widgetId', '', '/suggestions')
-! Search placeholder messages
-www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
-www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
 ! Rufus chatbot in sidebar
 ! * Requires trusted filters in AdGuard
 ! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1pod2g6/comment/nuelobn/
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel:dockedState', 'null')
 www.amazon.*#%#//scriptlet('ubo-set-session-storage-item', 'rufus:panel', 'null')
-! -- https://www.amazon.com/Celeste-Nintendo-Switch-Digital-Code/dp/B079Z1LPSP (Product page)
-! Rufus button that appears when highlighting text
-www.amazon.*###rufus-ask-rufus-tooltip
-! "Ask Rufus" suggestions below product image
-www.amazon.*###nile-inline_feature_div
-! "Ask rufus or search reviews" section above user reviews ("ie: Looking for specific info?")
-www.amazon.*###nile-inline-btf_feature_div
-! Summarize positive/negative reviews
-www.amazon.*##.cr-reviews-ai-pills-t2
-! AI review summary (IE: "Customers say")
-www.amazon.*##[data-csa-c-item-id="cr-product-insights-cards"], [data-csa-c-item-id="cr-product-insights-detail-page"]
-! -- https://www.amazon.com/CORSAIR-VENGEANCE-6000MHz-Compatible-Computer/dp/B0BPTKD797 (mobile)
+! -- https://www.amazon.com/CORSAIR-VENGEANCE-6000MHz-Compatible-Computer/dp/B0BPTKD797
 ! Alexa chat window
-! Prevents issue where window cannot be closed once opened
+! * Prevents issue where window cannot be closed once opened
 www.amazon.*##.nav-search-rufus-container > #nav-flyout-rufus
-! Question pills below product image carousel
+! Rufus button that appears when highlighting text (No longer used?)
+www.amazon.*###rufus-ask-rufus-tooltip
+! "Ask Alexa" question suggestions below product image carousel
+www.amazon.*###nile-inline_feature_div
+! "Hear the highlights" AI summary
+www.amazon.*###shopTalk_feature_div
+! "Looking for specific info?" section above reviews
+www.amazon.*###nile-inline-btf_feature_div
+! "Customers say" section
+www.amazon.*##[data-csa-c-painter="review-highlights-experience"]
+www.amazon.*##.cr-reviews-ai-pills-t2
+! - Mobile
+! "Ask Alexa" question pills below product image carousel
 www.amazon.*###rufus-dpx-atf-mission-pills-container
 ! Top highlights - Summarized points
 www.amazon.*###nile-inline-insights_feature_div
 ! Top highlights - Question suggestions
 www.amazon.*###nile-inline-mobile-hoc-below-top-highlights_feature_div
+! Customer reviews - Summarize 1 star/5 star reviews pills
+www.amazon.*##.cr-reviews-ai-pills-t1
 ! -- https://www.amazon.com/clp/B01BFE0KNQ
 ! "Customers say" summary
 www.amazon.*##.cs-summary-section
@@ -152,6 +159,9 @@ www.amazon.*##.a-spacing-top-mini:has(> .ai-branding-icon)
 www.amazon.*##.hero-top-highlights
 ! Question suggestions
 www.amazon.*##.scans-hero-pills-row
+! -- https://www.amazon.com/gp/css/order-history
+! "Ask Alexa about this order" button on order history page
+www.amazon.*##.yo-ask-order-pill
 ! -- https://health.amazon.com/
 ! "Health AI" button in navbar
 health.amazon.com###nav-health-ai
@@ -218,6 +228,11 @@ www.astronomer.io##[role="menuitem"]:has([d^="M15.688 2.343a2.588 2.588 0 00-3.6
 www.asus.com###aiMenu
 ! Floating assistant
 ||asus-brand-assistant.asus.com/brand-assistant.js$script,domain=www.asus.com
+! -- https://rog.asus.com/us/
+! Floating chatbot
+||asuschatapi.asus.com/aiassistantapi/api/v0c/$xmlhttprequest,domain=rog.asus.com
+! AI product recommendations
+rog.asus.com##div[class^="Home__aiRecommendWrapper__"]
 ! === Atlassian ===
 ! -- https://<yourdomain>.atlassian.net/browse/SUP-1 (Support - Task)
 ! Automation button (lighting icon) - Build automations with AI
@@ -689,9 +704,12 @@ www.collinsdictionary.com#$?#.assistantMobile { remove: true; }
 ! "Ask Collins Dictionary" in bottom-right corner
 www.collinsdictionary.com###assistant-link
 ! -- https://www.collinsdictionary.com/dictionary/english/word
-! Footer - Ask me a question
+! Sticky "Ask me a question" bar
 ||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
 www.collinsdictionary.com##.assistant-sticky-bar
+! -- https://www.collinsdictionary.com/us/dictionary/english/word
+! Sticky "Ask me a question" chatbox
+www.collinsdictionary.com###ai-widget
 ! === Computer World ===
 ! Header promo for AI powered hybrid search
 ! * The :has(.reset-button) is an attempt to avoid blocking non-ai announcements by checking for the "Try it!" button. We don't use :has-text(), as it introduces a delay.
@@ -1015,6 +1033,12 @@ emojicombos.com##.step-body > div:has(> [href="https://perchance.org/ai-icon-gen
 ! -- https://devhome.evero.net/deployments
 ! Executive AI Summary tab
 devhome.evero.net##[role="tablist"] > [id$="-trigger-aisummary"]
+! === Evetech ===
+! Header - Eva icon
+www.evetech.co.za##button[title="Ask Eva"]
+www.evetech.co.za##button[title="Ask Eva"] + div
+! Floating Eva button
+www.evetech.co.za##button[aria-label="Open Eva chat assistant"]
 ! === Emojipedia ===
 ! -- https://emojipedia.org/
 ! "Create Emojis" button in navbar
@@ -1087,12 +1111,15 @@ facebook.com#?#[data-dcm-id="1"]:has(.rtl-ignore.f2.a:contains(/(Adobe Firefly|M
 ! AI post summary
 ! TODO: Filter mobile version
 www.facebook.com##div:not([class]):has( > .x1g0dm76.xpdmqnj > .x1120s5i.xyamay9.x1n2onr6 > .html-div.xdj266r.x14z9mp.xat24cr.x1lziwak.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x78zum5.x1n2onr6.xh8yej3)
-! -- https://www.facebook.com/groups/1404116417142065/posts/1791850441701992/
+! -- https://www.facebook.com/groups/captainsoftech/posts/797383481555925/?seo_visit=1
 ! * TODO:  Other Posts - Summarized by AI (logged out)
 ! Post title generated with AI (logged in)
-www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has(.x15mokao.x1ga7v0g.x16uus16.xbiv7yw.x1b0d499.x1d69dk1[style*="background-image: url(\"https://static.xx.fbcdn.net/rsrc.php/yD/r/dVRMatSddQj.webp\");"])
+www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has([style^="background-image: url"])
 ! "What people are saying" comment summary (logged in)
 www.facebook.com##[role="presentation"] .x1jx94hy.x1obq294.x5a5i1n.xde0f50.x15x8krk.xjf5wm9.xod5an3.x1tpqehw.x1wsuqlk.x14vqqas.xz9dl7a.xpdmqnj.xsag5q8.x1g0dm76:has(> .x6s0dn4.x78zum5.x1q0g3np.x1qughib [alt="Meta AI logo"])
+! -- https://www.facebook.com/groups/captainsoftech/posts/797383481555925/?seo_visit=1 (mobile)
+! Comment summary
+www.facebook.com##.m.displayed[data-mcomponent="MContainer"]:has(> div > div > [data-mcomponent="ServerImageArea"] > [src="https://static.xx.fbcdn.net/rsrc.php/y-/r/Ib87vxW-sT9.webp"])
 ! -- https://www.facebook.com/permalink.php?story_fbid=pfbid0nM3EdTKDBTXFnxftmhzgX2HRaESqcBoNXDHTFCo3oq8u716VFg2mUp9PLykieQPfl&id=61588534388215
 ! Post with AI info disclaimer (disclosed by user)
 ! * Won't hide posts if linked directly
@@ -1308,13 +1335,12 @@ github.com##.dashboard-changelog .TimelineItem:has([href*="-agentic"], [href*="-
 github.com##.start-copilot-banner
 ! "Getting started" checklist section
 github.com##[data-testid="copilot-free-user-checklist"]
-! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/
+! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/ (repository page)
 ! "Agents" tab in repository navbar (desktop & mobile)
 ! * Via https://www.reddit.com/r/uBlockOrigin/comments/1vkxr0j/comment/p2xake5/
 github.com#$#li:has(> [data-tab-item="agents"]) { max-width: 0px !important; margin-left: calc(0px - var(--stack-gap-condensed,.5rem)) !important; visibility: hidden !important; }
 github.com##[data-component="ActionList.Item"]:has(> [data-tab-item="agents"])
-! -- https://github.com/easylist/easylistchina
-! "Ask Copilot about this repository" when repository has no README file
+! "Ask Copilot about this repository" when repository has no README file (ex: https://github.com/easylist/easylistchina)
 ! Might be limited to enterprise users with Copilot
 github.com##[class^="OverviewRepoFiles-module_"]:has([data-component="Blankslate"] .octicon-copilot)
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
@@ -1338,9 +1364,9 @@ github.com##[data-component="IconButton"]:has(> .octicon-copilot)
 github.com##.prc-ButtonGroup-ButtonGroup-vFUrY:has([data-testid="copilot-ask-menu"])
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/100
 ! Right sidebar - Open in GitHub Copilot app
-github.com##[data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-"])
+github.com##body:not(:has([app-name="copilot-agents"])) [data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-"])
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/new (New issue page)
-! "Write with Copilot" below issue description
+! "Write with Copilot" below issue description (No longer used?)
 ! * Doesn't always appear. May be limited to issues from repository owner?
 ! * The end of class name changed from "__RL1TZUq" to "__eCAAR". Is it dynamic?
 github.com##.Footer-module__footerButtonWrapper__RL1TZUq
@@ -1378,6 +1404,9 @@ github.com##[data-component="ActionList.Divider"] + [data-component="ActionList.
 ! -- https://github.com/zloirock/core-js/actions/runs/22272347580/job/64429009933 (Failed workflow job)
 ! "Explain error" button
 github.com##[data-test-id="copilot-actions-chat-button"]
+! -- https://github.com/search?q=python&type=repositories (Search)
+! Left sidebar - Filter by AI resources
+github.com##[data-testid="nav-item-ai_resources"]
 ! -- https://github.com/ (logged out)
 ! Download GitHub Copilot app button
 github.com##[class^="Primer_Brand__Button-module__Button___"][href="/features/ai/github-app"]
@@ -1857,7 +1886,13 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 !   * Pregenerated topic infobox (mobile only): https://www.google.com/search?q=ghola+dune
 !   * Mixture of AI and non-ai infoboxes: https://www.google.com/search?q=Super+Mario+64+release+date
 ! -- https://www.google.com/ (Homepage)
-! Search bar > "AI Mode" button
+! Search bar - Plus icon for "add files and tools"
+! * TODO: Doesn't work on https://www.google.co.jp/index.html
+! * TODO: Replace icon with magnifying glass
+www.google.*#$#.y1yadf:has(.UbbAWe) { pointer-events: none !important }
+www.google.*#$#.y1yadf .UbbAWe path { color: #9aa0a6 !important }
+www.google.*#$#.y1yadf .UbbAWe > .wPSZBe { height: 20px !important; width: 20px !important }
+! Search bar - "AI Mode" button
 www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Doodle Logos
 ! AdGuard compatible
@@ -1867,7 +1902,9 @@ www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
 ! AI buttons below search bar
 ! * "Create images", "Ask about files", and "Brainstorm"
 ! * These buttons replace the standard "Google Search" button.
-www.google.com##[class="jLddNe"][role="button"]:has(> .DUGvJe)
+www.google.com##[role="button"][data-azi][jsname="pLYtdd"]
+www.google.com##[role="button"][data-azi][jsname="KrqAEf"]
+www.google.com##[role="button"][data-azi][jsname="aG66rb"]
 ! Promo text below search bar mentioning AI
 www.google.*#?#promo-middle-slot:contains("/\bAI\b/")
 www.google.*#?#promo-middle-slot:contains(Gemini)
@@ -1883,6 +1920,7 @@ www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@.zp.udm=="50"]')
 www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@[?@.zf==86]]')
 ! * Backup cosmetic filter for mobile
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
+! -- https://www.google.com/?sa=X (mobile)
 ! -- https://www.google.com/search?q=Why+are+we+here
 ! "AI Mode" tab in navbar
 www.google.*##[role="listitem"]:has(.olrp5b)
@@ -2246,6 +2284,14 @@ www.ishopchangi.com###chat-wrapper
 ! -- https://www.istom.fr/
 ! Chatbot modal
 ||webchat.studizz.fr/webchat.js$script,domain=www.istom.fr
+! === JCPenney ===
+! -- https://www.jcpenney.com/
+! Header - AskPenney
+www.jcpenney.com###askPenneyBlock
+www.jcpenney.com###askPenneyMobileBlock
+! -- https://www.jcpenney.com/p/stylus-womens-high-rise-wide-leg-pant/ppr5008207177?pTmplType=regular&geoZip=11530
+! Review summary
+www.jcpenney.com##[data-bv-show="review-summaries"]
 ! === JetBrains ===
 ! Header - Products - AI TOOLS section
 www.jetbrains.com#?#[data-test-marker="Products"] [data-test$="menu-column-title"]:contains("AI TOOLS"):upward(1)
@@ -2387,6 +2433,10 @@ www.lesnumeriques.com##[data-lemrock-component]
 ! === LG ===
 ! LG AI in header
 www.lg.com##.MuiLink-root[href="https://www.lg.com/us/affectionate-intelligence-ai"]
+! === Liberty Care Mobility ===
+! -- https://libertycare.ca/product/mobb-sock-aid-with-foam-handles-mhscaf/
+! "Have a question about this product?" box
+libertycare.ca###lcai
 ! === LinkedIn ===
 ! -- https://www.linkedin.com/feed/ (Feed - logged in)
 ! Start a post > "Rewrite with AI" button
@@ -2661,8 +2711,12 @@ powerpoint.cloud.microsoft##[aria-label="Create with Copilot"]
 powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
 powerpoint.cloud.microsoft##.___qeeaaj0:has(> [aria-label="Explore Copilot section."]:only-child)
 ! -- https://powerpoint.cloud.microsoft/ (With document open)
-! Ribbon - Home - Designer button
-usc-powerpoint.officeapps.live.com###innerRibbonContainer > [class^="groupContainer-"]:has(#ChatPPT-group)
+! Ribbon - Home - Create Interactive Slide
+usc-powerpoint.officeapps.live.com###CopilotCreateInteractiveSlideGalleryFromRibbon
+! Ribbon - Home - Design Suggestions
+usc-powerpoint.officeapps.live.com##[class^="groupContainer-"]:has(#ChatPPT-group)
+! Copilot button to the right of ribbon
+usc-powerpoint.officeapps.live.com##[id^="dabCon"]
 ! Context menu - Explain
 usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"])
 usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"]) + .fui-MenuDivider
@@ -2842,11 +2896,16 @@ search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
 ! "Quick Read" AI summary
 www.ndtv.com##.ASum_wr.ASum_Mnon
 ! === Newegg ===
-! -- https://www.newegg.com/abs-stratos-ruby-gaming-desktop-rtx-5060-core-i5-14400f-32gb-ddr5-1tb-ssd-sr7800x3d9070xt-black/p/N82E16883360936
-! AI Assistant
+! -- https://www.newegg.com/
+! Header - Shop with Celeste
+www.newegg.com##.header2021-celeste
+! Search bar (focused) - Ask Celeste
+www.newegg.com##.header2021-search-sec-ask
+! Floating AI Assistant icon
 www.newegg.com##.floating-robot
-! AI Expert
-www.newegg.com##.ek-sales-content
+! -- https://www.newegg.com/p/pl?d=test
+! Sidebar - Ask Celeste about filters
+www.newegg.com##.plp-side-ask
 ! === News18 ===
 ! Search - AI overview
 www.news18.com##.aiovwrp
@@ -2870,6 +2929,20 @@ northflank.com##aside:has(> [href="/blog/ai-sdlc"])
 ! -- https://www.nutraingredients.com/
 ! Floating AI chat button
 www.nutraingredients.com##.ask-ia-widget
+! === Nvidia ===
+! -- https://www.nvidia.com/en-us/
+! Floating Ask AI button
+www.nvidia.com##nv-assistant
+! Replace search bar placeholder text
+! -- https://www.nvidia.com/en-us/search/?q=NVIDIA%20Broadcast
+! Search summary
+www.nvidia.com##.librarian-genai-summery
+||www.nvidia.com/ai-agents/chimera/stream$xmlhttprequest,domain=www.nvidia.com
+! -- https://www.nvidia.com/404/
+! Messages about AI search
+www.nvidia.com###librarian-search1 .css-c2iebg > svg
+www.nvidia.com###librarian-search1 .css-c2iebg > .css-12k99am
+www.nvidia.com#$##librarian-search1 .css-c2iebg { height: unset !important }
 ! === NxCode ===
 ! -- https://www.nxcode.io/resources/news/claude-sonnet-4-6-vs-gpt-5-4-coding-comparison-2026
 ! "Before you go..." modal
@@ -2976,6 +3049,10 @@ www.pchealth.ca,www.shoppersdrugmart.ca##.remedy-chatbot-landing
 www.pcmag.com##[data-element="Maggie-Product-Picker-Launcher"]
 ! AI Product Finder QA box
 www.pcmag.com##div:has(> [data-element="embedded-unit"] > form[\@submit\.prevent*="'product-picker-init'"])
+! === PCWorld ===
+! -- https://www.pcworld.com/article/3088112/vibe-coding-apps-taught-me-how-hard-real-coding-is.html
+! Article summary
+www.pcworld.com##.miso-summary-box
 ! === Phys.org ===
 ! -- https://phys.org/news/2026-07-rare-blue-optical-transient-class.html
 ! "The GIST" article summary
@@ -3205,7 +3282,7 @@ www.reddit.com##.trailing-divider:has(+ .trailing-content-container > [name="tra
 www.reddit.com##.trailing-content-container:has(> [name="trailingContent"])
 ! -- https://www.reddit.com/?feed=home
 ! Recommended posts from AI subreddits
-www.reddit.com#?#shreddit-feed:not([reload-url$="?feed=following"]) shreddit-post[recommendation-source]:matches-attr(subreddit-name="/^(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)$/")
+www.reddit.com#?#shreddit-feed:not([reload-url$="?feed=following"]) shreddit-post[recommendation-source]:matches-attr(subreddit-name="/^(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)$/")
 ! -- https://www.reddit.com/search/?q=legal+eagle+bricks+and+minifigs
 ! "Ask" tab
 www.reddit.com###search-results-page-tab-ai_search
@@ -3222,7 +3299,7 @@ www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp) + h
 ! "People also ask about" section (Mobile only)
 www.reddit.com##[id^="answers-suggested-queries"]
 ! Suggestions to repost to AI subreddit (If post was by current user)
-www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
+www.reddit.com#?#[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
 ! -- https://www.reddit.com/r/valve/comments/1vo1c7q/comment/p3nmcrh/
 ! AI-linked keywords in comments
 ! * Based on https://www.reddit.com/r/uBlockOrigin/comments/1vt6sgy/comment/p4rdpz2/
@@ -3489,6 +3566,9 @@ stackoverflow.com##.js-sofa-sidebar-promo
 ! -- https://stackoverflow.com/questions
 ! Collective for OpenAI
 stackoverflow.com##.js-gps-related-tags:has([href="/collectives/openai"])
+! -- https://stackoverflow.com/questions/550001/fully-transparent-windows-in-pygame/51845075#51845075
+! "Use with AI" button on code block in answer
+stackoverflow.com##.js-use-with-ai-button
 ! === Startpage ===
 ! Expandable sidebar, Products, "Vanish: Private AI"
 ! * TODO: Leaves blank space. Need to change spacing on prior element in list. (Different between desktop and mobile sites)
@@ -3529,6 +3609,17 @@ www.studocu.com##.SidebarClickableItem_wrapper__vQRrT:has(#content-sidebar-ask-a
 www.studocu.com##.SidebarClickableItem_wrapper__vQRrT:has(#content-sidebar-quiz-creation)
 ! AI question bar
 www.studocu.com##[aria-label="AI toolbar"]
+! === Superhuman Docs ===
+! -- https://docs.superhuman.com/ (Home)
+! Left sidebar - User profile menu - Connect to the Docs MCP
+docs.superhuman.com##[data-layer-id]:has(> [role="menuitem"] [data-icon="Connectors"])
+docs.superhuman.com##[data-layer-id]:has(> [role="menuitem"] [data-icon="Connectors"]) + hr
+! Getting started carousel > Connect Docs MCP
+docs.superhuman.com#?#.L2QHsp05.tnBcgZxh:contains(Connect Docs MCP)
+! -- New document page
+! Close chat sidebar
+! Floating chat icon
+docs.superhuman.com##[data-coda-ui-id="shAgentEntryButton"]
 ! === SuperSummary ===
 ! -- https://www.supersummary.com/game-changer-shusterman/summary/
 ! Generate questions button
@@ -3627,6 +3718,13 @@ thenewstack.io##.search-disclaimer
 thenewstack.io#%#//scriptlet('remove-attr', 'placeholder', '.search-input[placeholder="This is AI-powered search. Type a prompt."]')
 ! Remove AI sparkles from search icon
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
+! === The New York Times ===
+! -- https://www.nytimes.com/wirecutter/
+! "What do you need (or want)" search section
+www.nytimes.com##[data-testid="finder-promo-below-hero-desktop"]
+! -- https://www.nytimes.com/wirecutter/search/?s=How+do+I+stop+my+house+from+smelling%3F
+! AI summarized answer (& product recommendations)
+www.nytimes.com##[data-testid="answer-block"]:not(:has([data-icon="spinner"]))
 ! === The StoryGraph ===
 ! -- https://app.thestorygraph.com/books/9ea80c87-b424-472d-b17e-bf4b97e042e4
 ! SGAI personalized recommendation
@@ -4197,7 +4295,6 @@ www.youdao.com##.swiper-slide:has(> [src="https://ydlunacommon-cdn.nosdn.127.net
 ! LobsterAI in product list
 www.youdao.com##.product-item:has([src="https://ydlunacommon-cdn.nosdn.127.net/cc4afa89cc5497e23b355bc7436cb1c9.png"])
 ! === YouTube ===
-! -- General
 ! Search bar (includes backup cosmetic filters)
 ! * Ask YouTube button
 www.youtube.com#%#//scriptlet('ubo-set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.enable_ai_mode_searchbox_entrypoint', 'false')
@@ -4250,7 +4347,8 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 ! * May not work if video is loaded directly from URL
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="1080p"]]..adaptiveFormats[?.qualityLabel=="1080p"]')
 www.youtube.com#%#//scriptlet('ubo-json-prune', '$[?..paygatedQualitiesMetadata.qualityDetails[?.key=="720p"]]..adaptiveFormats[?.qualityLabel=="720p"]')
-! Automatic video chapters
+! - Automatic video chapters
+! Method 1: JSON
 ! * Playback bar chapter segments
 m.youtube.com,www.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.playerBar.multiMarkersPlayerBarRenderer.visibleOnLoad.key=="AUTO_CHAPTERS"]')
 ! * "In this video" sidebar chapters + backup for playback bar
@@ -4260,7 +4358,7 @@ m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.panelIdentifier=="engagemen
 m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[2].engagementPanelHeaderShowNavigationButtonCommand.targetId=="engagement-panel-macro-markers-auto-chapters"]')
 ! * Alt for chapter card in description (Seen on https://m.youtube.com/watch?v=1K55xVb6qhY)
 m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.header.richListHeaderRenderer.navigationButton.buttonRenderer.command.commandExecutorCommand.commands[0].updateEngagementPanelContentCommand.contentSourcePanelIdentifier.tag=="engagement-panel-macro-markers-auto-chapters"]')
-! Automatic chapter backup filters
+! Method 2: CSS
 ! Partially based on https://github.com/moocj/yt-remove-ai-chapters
 ! TODO: Remove segments on playback bar
 ! * Player - Chapter tooltips when hovering progress bar

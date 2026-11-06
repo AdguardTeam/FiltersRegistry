@@ -1,9 +1,9 @@
-! Checksum: vZpukEnZK6uBb8/LNmGITw
-! Diff-Path: ../patches/27/27-s-1793373193-3600.patch
+! Checksum: 3MUf7DvqaX2gtb4/ZKMYLA
+! Diff-Path: ../patches/27/27-s-1793869915-3600.patch
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.68
-! TimeUpdated: 2026-10-30T15:09:58+00:00
+! Version: 2.0.0.73
+! TimeUpdated: 2026-11-05T09:09:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||lekipoludzku.pl^
 ||testowa-strona-dozynkowa.pl^
 !
 ! This section contains the list of advertising networks domains, which are hosted on non advertising sites as subdomains.
@@ -86,6 +87,12 @@
 !
 ! NOTE: Specific rules
 !
+leksykon.com.pl##div[id^="lekipoludzku_"]
+||waszregion.pl/_bannery/
+waszregion.pl##.box-rotation-wrap
+lublin112.pl##.l112-ad-zone
+tko.pl##.tko-home-ad-shell
+tko.pl##.tko-ad
 retailnet.pl##.rn-ads-band
 retailnet.pl##.rn-nat-box
 komputerswiat.pl##ad-default
@@ -1286,7 +1293,6 @@ portalochronysrodowiska.pl##.widget-baner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159617
 ! https://github.com/AdguardTeam/AdguardFilters/issues/141564
 ||buybox.click^$domain=benchmark.pl
-benchmark.pl##.wp-screening-placeholder-container
 benchmark.pl##.hidden-lg-up
 benchmark.pl##.hidden-tb-up
 benchmark.pl##.hidden-tb-down
@@ -3307,6 +3313,7 @@ open.fm##.Placeholder
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111616
 wiadomosci.wp.pl##body > #root > div[class]:empty
 ipolska24.pl,benchmark.pl##.wp-billboard
+spottedlublin.pl,benchmark.pl,kobietypro.pl##.wp-screening-placeholder-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179793
 www.o2.pl,rozrywka.o2.pl##.w-full[class*="bg-"] > div[class*="w-"][class*="px"] > div[class][style="width:100%"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55606
@@ -4074,6 +4081,8 @@ interia.pl##div[class*="ad ad_"]
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245224
+kuchenny.com.pl#@#A[target="_blank"] > IMG
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242783
 @@||filmweb.pl/api/v1/rc/ads.pl_PL$~third-party,xmlhttprequest
 !---------------------------------------------------------------------------!
@@ -9330,6 +9339,7 @@ filmyfilmy.pl###play
 ||dobrezrodla.com^
 ||feji.io^
 ||hvmtdby.com^
+||flffetre.net^
 ||imasdk.googleapis.com/js/core/bridge*.html$subdocument,domain=exs.pl,important
 ||ipla.hit.stat24.com^$object,domain=ipla.tv,important
 electro-torrent.pl##a[href*="://o9d.pl/"]

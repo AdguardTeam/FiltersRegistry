@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Ipo4RoJpuZ1S1MgFNb/ymA
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1793321974-14400.patch
+! Checksum: gBn4D0/hs4RwncFGY0bvTg
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1793983115-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.95
-! TimeUpdated: 2026-10-30T00:55:59+00:00
+! Version: 2.0.3.7
+! TimeUpdated: 2026-11-06T16:36:07+00:00
 ! Expires: 5 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,3p
@@ -16,7 +16,11 @@ www.1password.dev##[role="menuitem"]:contains(Copy MCP Server URL to clipboard)
 www.1password.dev##[role="menuitem"]:contains(Install MCP Server)
 www.1password.dev##[role="menuitem"]:contains(Ask questions about this page)
 www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
-help.adblockplus.org,helpcenter.getadblock.com##ai-actions
+help.adblockplus.org,helpcenter.getadblock.com##ai-actions button > svg:has(> [d="M19 9L20.25 6.25L23 5L20.25 3.75L19 1L17.75 3.75L15 5L17.75 6.25L19 9Z"])
+help.adblockplus.org,helpcenter.getadblock.com##ai-actions button:style(font-size: 0 !important; column-gap: 0 !important; padding-inline: 6px !important)
+help.adblockplus.org,helpcenter.getadblock.com##hr:has(+ [value="open-in-chatgpt"])
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-chatgpt"]
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-claude"]
 ||www.adobe.com/libs/c2/blocks/brand-concierge/chat-ui-config.js$script,domain=www.adobe.com
 www.adobe.com##.promobar:contains(Adobe Firefly)
 www.adobe.com##[data-key="category-genai"]
@@ -34,29 +38,32 @@ www.aliexpress.us##div:has(> [class^="seo-sellpoints--title--"])
 www.aliexpress.us##div:has(> [class^="seo-sellpoints--title--"]) + [class^="split-line--wrap--"]
 alphacoders.com##.item:has(.thumb-tag-masonry:is([href="https://alphacoders.com/ai-art-wallpapers"], [href="https://alphacoders.com/midjourney-wallpapers"]))
 ||www.amazon.*/rufus/$xhr,domain=www.amazon.*
+www.amazon.*##+js(json-prune-xhr-response, suggestions.[-].widgetId, , propsToMatch, /suggestions)
+www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Ask Alexa a question"])
+www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Compare products with Alexa"])
 www.amazon.*###nav-rufus-disco
 www.amazon.*##.nav-li:has([data-csa-c-content-id$="_cs_health_ai"])
 www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
-www.amazon.*##+js(json-prune-xhr-response, suggestions.[-].widgetId, , propsToMatch, /suggestions)
-www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Ask Alexa a question"])
-www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Compare products with Alexa"])
 www.amazon.*##+js(set-session-storage-item, rufus:panel:dockedState, null)
 www.amazon.*##+js(set-session-storage-item, rufus:panel, null)
+www.amazon.*##.nav-search-rufus-container > #nav-flyout-rufus
 www.amazon.*###rufus-ask-rufus-tooltip
 www.amazon.*###nile-inline_feature_div
+www.amazon.*###shopTalk_feature_div
 www.amazon.*###nile-inline-btf_feature_div
+www.amazon.*##[data-csa-c-painter="review-highlights-experience"]
 www.amazon.*##.cr-reviews-ai-pills-t2
-www.amazon.*##[data-csa-c-item-id="cr-product-insights-cards"], [data-csa-c-item-id="cr-product-insights-detail-page"]
-www.amazon.*##.nav-search-rufus-container > #nav-flyout-rufus
 www.amazon.*###rufus-dpx-atf-mission-pills-container
 www.amazon.*###nile-inline-insights_feature_div
 www.amazon.*###nile-inline-mobile-hoc-below-top-highlights_feature_div
+www.amazon.*##.cr-reviews-ai-pills-t1
 www.amazon.*##.cs-summary-section
 www.amazon.*##.a-spacing-top-mini:has(> .ai-branding-icon)
 www.amazon.*##.hero-top-highlights
 www.amazon.*##.scans-hero-pills-row
+www.amazon.*##.yo-ask-order-pill
 health.amazon.com###nav-health-ai
 health.amazon.com##.bg-no-repeat[style*="background-image:url('https://m.media-amazon.com/images/G/01/ahs/health_ai/opt-in/HealthAI_Background_CDF0E9.jpg');"]
 health.amazon.com##.pui-sub-nav-health-ai-button
@@ -83,6 +90,8 @@ www.astronomer.io##[role="menuitem"]:has([d^="M21.55 10.004a5.416 5.416 0 00-.47
 www.astronomer.io##[role="menuitem"]:has([d^="M15.688 2.343a2.588 2.588 0 00-3.61 0l-9.626 9.44a.863.863 0 01-1.203 0 .823.823"])
 www.asus.com###aiMenu
 ||asus-brand-assistant.asus.com/brand-assistant.js$script,domain=www.asus.com
+||asuschatapi.asus.com/aiassistantapi/api/v0c/$xhr,domain=rog.asus.com
+rog.asus.com##div[class^="Home__aiRecommendWrapper__"]
 atlassian.net##[data-placement="bottom-end"] > div[class^="css-"] > div[class^="css-"]:has([href="https://support.atlassian.com/studio/docs/what-is-rovo-studio/"])
 atlassian.net##[data-testid="servicedesk-ai-context-common.ui.ai-context-container.ai-container"]
 atlassian.net##[data-testid="servicedesk-smart-request-summary-trigger.ui.jira-smart-summary-standard-button"]
@@ -266,6 +275,7 @@ www.collinsdictionary.com##.assistantMobile:remove()
 www.collinsdictionary.com###assistant-link
 ||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
 www.collinsdictionary.com##.assistant-sticky-bar
+www.collinsdictionary.com###ai-widget
 www.computerworld.com##.section-block--announcementbar:has(.reset-button)
 www.consumerreports.org##.cda-gnav__main-search-askcr-ai
 www.consumerreports.org###mt-askcr-sf-abandon-footer
@@ -397,6 +407,9 @@ www.ecosia.org##.search-navigation__divider:has(+ [data-test-id="search-navigati
 emojicombos.com###introEl > [href="https://perchance.org/ai-chat"]
 emojicombos.com##.step-body > div:has(> [href="https://perchance.org/ai-icon-generator"])
 devhome.evero.net##[role="tablist"] > [id$="-trigger-aisummary"]
+www.evetech.co.za##button[title="Ask Eva"]
+www.evetech.co.za##button[title="Ask Eva"] + div
+www.evetech.co.za##button[aria-label="Open Eva chat assistant"]
 emojipedia.org##.Button_btn__p7Xgd[href="/ai-emoji-generator"]
 emojipedia.org##.flex.flex-col.gap-4:has(> .items-center > .Button_btn__p7Xgd[href="/ai-emoji-generator"])
 www.etsy.com##[data-appears-component-name="reviews_feature_tags"]
@@ -428,8 +441,9 @@ www.facebook.com##[role="link"][href="/messages/t/36327,2227039302/"]
 www.facebook.com##[aria-label="Generate images using AI"]
 facebook.com##[data-dcm-id="1"]:has(.rtl-ignore.f2.a:contains(/(Adobe Firefly|Meta AI)/))
 www.facebook.com##div:not([class]):has( > .x1g0dm76.xpdmqnj > .x1120s5i.xyamay9.x1n2onr6 > .html-div.xdj266r.x14z9mp.xat24cr.x1lziwak.xexx8yu.xyri2b.x18d9i69.x1c1uobl.x78zum5.x1n2onr6.xh8yej3)
-www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has(.x15mokao.x1ga7v0g.x16uus16.xbiv7yw.x1b0d499.x1d69dk1[style*="background-image: url(\"https://static.xx.fbcdn.net/rsrc.php/yD/r/dVRMatSddQj.webp\");"])
+www.facebook.com##[role="presentation"] .xsag5q8.x1g0dm76.xpdmqnj.x1y1aw1k:has([style^="background-image: url"])
 www.facebook.com##[role="presentation"] .x1jx94hy.x1obq294.x5a5i1n.xde0f50.x15x8krk.xjf5wm9.xod5an3.x1tpqehw.x1wsuqlk.x14vqqas.xz9dl7a.xpdmqnj.xsag5q8.x1g0dm76:has(> .x6s0dn4.x78zum5.x1q0g3np.x1qughib [alt="Meta AI logo"])
+www.facebook.com##.m.displayed[data-mcomponent="MContainer"]:has(> div > div > [data-mcomponent="ServerImageArea"] > [src="https://static.xx.fbcdn.net/rsrc.php/y-/r/Ib87vxW-sT9.webp"])
 www.facebook.com##[role="main"] .x17zd0t2 > [role="button"]:contains(/(AI info|AI content)/):upward(.x1n2onr6.xh8yej3.x1ja2u2z):upward(3)
 www.facebook.com##[role="main"] .x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w:has(> .xsag5q8.xz9dl7a [data-type="hscroll-child"] [aria-label="Meta AI icon"])
 www.facebook.com##.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.x2lah0s.x193iq5w.xeuugli.x11lfxj5.x135b78x.xjkvuk6.x1iorvi4:has(> .x1i10hfl.xjqpnuy.xc5r6h4.xqeqjp1.x1phubyo.x13fuv20.x18b5jzi.x1q0q8m5.x1t7ytsu.x972fbf.x10w94by.x1qhh985.x14e42zd.x9f619.x1ypdohk.xdl72j9.x2lah0s.x3ct3a4.xdj266r.x14z9mp.xat24cr.x1lziwak.x2lwn1j.xeuugli.xexx8yu.x18d9i69.x1n2onr6.x16tdsg8.x1hl2dhg.xggy1nq.x1ja2u2z.x1t137rt.x1q0g3np.x87ps6o.x1lku1pv.x1a2a7pz.x6s0dn4.x1qhmfi1.x1i5p2am.x1whfx0g.xr2y4jy.x1ihp6rs.x3nfvp2.x1r1pt67.x1g0dm76.xpdmqnj [clip-path="url(#_clip)"])
@@ -531,7 +545,7 @@ github.com##[data-component="ActionList.Group"]:has(> [aria-label="Copilot"]) + 
 github.com##[data-testid="copilot-menu-items"]:remove()
 github.com##[data-component="IconButton"]:has(> .octicon-copilot)
 github.com##.prc-ButtonGroup-ButtonGroup-vFUrY:has([data-testid="copilot-ask-menu"])
-github.com##[data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-"])
+github.com##body:not(:has([app-name="copilot-agents"])) [data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-"])
 github.com##.Footer-module__footerButtonWrapper__RL1TZUq
 github.com##.Footer-module__footerButtonWrapper__eCAAR
 github.com##[partial-name="copilot-assisted-review-upsell"]
@@ -548,6 +562,7 @@ github.com##[role="menuitem"]:has(.octicon-copilot):remove()
 github.com##[data-component="ActionList.Divider"]:last-child
 github.com##[data-component="ActionList.Divider"] + [data-component="ActionList.Divider"]
 github.com##[data-test-id="copilot-actions-chat-button"]
+github.com##[data-testid="nav-item-ai_resources"]
 github.com##[class^="Primer_Brand__Button-module__Button___"][href="/features/ai/github-app"]
 github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
 github.com##nav li:has(> div[class^="group__"]):has([href="https://github.com/features/copilot"]):has([href="https://github.com/features/ai/github-app"]):has([href="https://github.com/mcp"])
@@ -740,8 +755,13 @@ www.google.com##.AJqepd:has([jsaction="settings.askGemini"])
 www.google.com##[jsaction="navigationrail.askMaps"]
 meet.google.com##div[jsshadow][jscontroller="dGzwdb"]:contains(Express yourself with an AI-generated background)
 one.google.com##.aTVMOe.RLyrIe.KGSMie
+www.google.*##.y1yadf:has(.UbbAWe):style(pointer-events: none !important)
+www.google.*##.y1yadf .UbbAWe path:style(color: #9aa0a6 !important)
+www.google.*##.y1yadf .UbbAWe > .wPSZBe:style(height: 20px !important; width: 20px !important)
 www.google.*##.plR5qb
-www.google.com##[class="jLddNe"][role="button"]:has(> .DUGvJe)
+www.google.com##[role="button"][data-azi][jsname="pLYtdd"]
+www.google.com##[role="button"][data-azi][jsname="KrqAEf"]
+www.google.com##[role="button"][data-azi][jsname="aG66rb"]
 www.google.*##promo-middle-slot:contains("/\bAI\b/")
 www.google.*##promo-middle-slot:contains(Gemini)
 www.google.*##[jscontroller="DyTeib"]
@@ -892,6 +912,9 @@ www.investopedia.com##[data-inv-answers-widget]
 ||chat.ipon.hu/widget.js$script,~3p
 www.ishopchangi.com###chat-wrapper
 ||webchat.studizz.fr/webchat.js$script,domain=www.istom.fr
+www.jcpenney.com###askPenneyBlock
+www.jcpenney.com###askPenneyMobileBlock
+www.jcpenney.com##[data-bv-show="review-summaries"]
 www.jetbrains.com##[data-test-marker="Products"] [data-test$="menu-column-title"]:contains("AI TOOLS"):upward(1)
 www.jetbrains.com##[data-test="main-submenu-banner"]:has(> [href="/air/"])
 www.jetbrains.com##[data-test="main-submenu-banner"]:has(> [href="/agentic-software-development/"])
@@ -949,6 +972,7 @@ www.lenovo.com##.pdp-ai-summary
 www.lenovo.com##[data-bv-show="review-summaries"]
 www.lesnumeriques.com##[data-lemrock-component]
 www.lg.com##.MuiLink-root[href="https://www.lg.com/us/affectionate-intelligence-ai"]
+libertycare.ca###lcai
 www.linkedin.com##.share-creation-state__writing-assistant-container--premium
 www.linkedin.com##div.pvs-entity__secondary-action-container:has(svg[data-test-icon="premium-signal-ai-small"])
 www.linkedin.com##[data-testid="lazy-column"] > div > div:has(div > div[data-display-contents="true"] > div[componentkey] > div > #InitialStateHowYouFitSlot)
@@ -1059,7 +1083,9 @@ powerpoint.cloud.microsoft##.f187e7yg:has(.___142hl50 [alt="Edit brilliantly wit
 powerpoint.cloud.microsoft##[aria-label="Create with Copilot"]
 powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
 powerpoint.cloud.microsoft##.___qeeaaj0:has(> [aria-label="Explore Copilot section."]:only-child)
-usc-powerpoint.officeapps.live.com###innerRibbonContainer > [class^="groupContainer-"]:has(#ChatPPT-group)
+usc-powerpoint.officeapps.live.com###CopilotCreateInteractiveSlideGalleryFromRibbon
+usc-powerpoint.officeapps.live.com##[class^="groupContainer-"]:has(#ChatPPT-group)
+usc-powerpoint.officeapps.live.com##[id^="dabCon"]
 usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"])
 usc-powerpoint.officeapps.live.com##.fui-MenuGroup:has(> [data-unique-id^="ContextMenu-Explainer"]) + .fui-MenuDivider
 onenote.cloud.microsoft##.fui-MessageBar:has([alt="Copilot Notebook Icon"])
@@ -1129,8 +1155,10 @@ search.naver.com##[data-meta-ssuid-extra="fender_renderer-ai_briefing"]
 ||aib-api.naver.com/aibrender.naver?where=nexearch&query=$xhr,domain=search.naver.com
 search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
 www.ndtv.com##.ASum_wr.ASum_Mnon
+www.newegg.com##.header2021-celeste
+www.newegg.com##.header2021-search-sec-ask
 www.newegg.com##.floating-robot
-www.newegg.com##.ek-sales-content
+www.newegg.com##.plp-side-ask
 www.news18.com##.aiovwrp
 www.nike.com##.nav-css-1f9nce4:has(> [data-testid="ask-nikeai-search-result"])
 ||barracuda-cdn.zoovu.com/core-js/zoovu-tag-library/zoovu-tag-library-latest.min.js$script,domain=www.nobleknight.com
@@ -1139,6 +1167,12 @@ www.nobleknight.com###squireSection
 www.nordstrom.com##.j_24W
 northflank.com##aside:has(> [href="/blog/ai-sdlc"])
 www.nutraingredients.com##.ask-ia-widget
+www.nvidia.com##nv-assistant
+www.nvidia.com##.librarian-genai-summery
+||www.nvidia.com/ai-agents/chimera/stream$xhr,domain=www.nvidia.com
+www.nvidia.com###librarian-search1 .css-c2iebg > svg
+www.nvidia.com###librarian-search1 .css-c2iebg > .css-12k99am
+www.nvidia.com###librarian-search1 .css-c2iebg:style(height: unset !important)
 www.nxcode.io##[role="dialog"][aria-label="Before you go..."]
 www.nxcode.io##.mb-8.flex:has(> [href^="https://studio.nxcode.io"])
 www.nxcode.io###inline-article-cta
@@ -1180,6 +1214,7 @@ www.pbtech.co.nz,www.pbtech.com###aiReviewCard
 www.pchealth.ca,www.shoppersdrugmart.ca##.remedy-chatbot-landing
 www.pcmag.com##[data-element="Maggie-Product-Picker-Launcher"]
 www.pcmag.com##div:has(> [data-element="embedded-unit"] > form[\@submit\.prevent*="'product-picker-init'"])
+www.pcworld.com##.miso-summary-box
 medicalxpress.com,phys.org,techxplore.com##[data-target="#summary-modal"]
 pictory.ai###livex-chatbot-app
 www.pinterest.com##+js(json-prune, resource_response.data.results.[-].gen_ai_topics)
@@ -1264,7 +1299,7 @@ www.reddit.com##.expanded-composer-ask-pill
 www.reddit.com##[data-testid="search-sdui-typeahead-suggestion"] .inline-block.text-neutral-content-weak
 www.reddit.com##.trailing-divider:has(+ .trailing-content-container > [name="trailingContent"])
 www.reddit.com##.trailing-content-container:has(> [name="trailingContent"])
-www.reddit.com##shreddit-feed:not([reload-url$="?feed=following"]) shreddit-post[recommendation-source]:matches-attr(subreddit-name="/^(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)$/")
+www.reddit.com##shreddit-feed:not([reload-url$="?feed=following"]) shreddit-post[recommendation-source]:matches-attr(subreddit-name="/^(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)$/")
 www.reddit.com###search-results-page-tab-ai_search
 www.reddit.com##search-telemetry-tracker[view-events="search/view/unit"]:has(search-answers-expandable, search-answers-response-container-streaming, .search-answers-preview-section)
 www.reddit.com##search-telemetry-tracker[view-events="search/view/unit"]:has(search-answers-expandable, search-answers-response-container-streaming, .search-answers-preview-section) + .border-solid
@@ -1273,7 +1308,7 @@ www.reddit.com###answers-nav-button
 www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp)
 www.reddit.com##.grid:has(> .col-start-2 > conversation-snapshot-text-clamp) + hr
 www.reddit.com##[id^="answers-suggested-queries"]
-www.reddit.com##[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
+www.reddit.com##[data-testid="post-recovery-suggested-communities"] a:matches-attr(href="/^\/r\/(3amAI|ADULT_ART_AI|AgentsOfAI|AI_Agents|Ai_and_Digital_arts|AI_ART|AI_Art_Department|AI_Art_Requests|AI_Art_Series|ai_artworld|AI_developers|Ai_Dragons|Ai_HarryPotter|Ai_Husbando_Art|Ai_PeopleOfColor_Art|Ai_Pokemon|Ai_StarWars_Art|AIAliveSentient|aiArt|AiArt_Psych|AIartbattle|AiArtChallenge|aiartcodex|AIArtCreator|aiARTistsUNITE|AIArtistWorkflows|AiArtLounge|AIArtPorn|AiArtShow|AIArtwork|AiArtWow|AIArtZone|aibeingstupid|AiCarArt|AICatgirls|AICharacterDrawing|AiChatGPT|aiCoffeeArt|AiComicBookArt|AiComicBookArt|AIEscher|aifails|AIfreakout|aigamedev|AIGameOfThrones|aiGayArt|AIGenArt|AiGenCarporn|AIGeneratedArt|aigeneratedmemes|AIgeneratednightmares|AIGeneratedPokemon|AIGirlfriend|AiGirlsSexyArt|aigoddesses|AIGrinding|AiHentaiArtwork|Aihotgirl|aiHub|AIisfuckinglit|ailookbook|AImsorryjon|aiMusic|AIpornhub|aipromptprogramming|AIRetrofuturism|aisettings|aispacegirls|aitoolsupdate|AiUncensored|aivideo|AIVideo4all|AiVideoGameArt|AIVisibile|aiwars|AiWholesome|aiyiff|AmazingAI|AnimeAIArt|anyaiart|Art_of_AI|Arthemy|artificial|ArtificialInteligence|ArtIsForEveryone|bard|bigsleep|Celebrity_Ai_Photos|CharacterAI|CharacterAI_No_Filter|Chatbots|ChatGPT|ChatGPTCoding|ChatGPTPro|civitai|claude|ClaudeAI|comfyui|Copilot|craiyon|CursedAI|cursedAIpics|dalle2|dallemini|dawnAi|deepdream|DeepFloydIF|deeplearning|DefendingAI|DefendingAIArt|DimensionTraveler|DiscoDiffusion|dndai|DragonDiffusion|DreamArchitecture|DreamBooth|dreamcasting|DreamstudioAI|DumbAI|DuneAI|DungeonoftheMadMage|EternalAI_org|FanArtAI|FiddlartAi|FurAI|GarfieldAI_art|GeminiAI|GenAI4all|generateforme|generative|generativeAI|GenTube|GithubCopilot|GoogleAI|GoogleAIGoneWild|GoogleGeminiAI|GPT3|hellaflyai|HighEndAI|HQ_AI_Ecchi|ImageGenerators|Indian_AI_Girls|IndianArtAI|indie_games_and_ai|invokeai|JustOneWord|layla_ai|Lensa|LensaFails|leonardoai|lotr_ai_art|LOTRAI|LovingOpenSourceAI|MachineLearning|MBVirtualVixens|MediaSynthesis|microsoft_365_copilot|midjourney|MidJourney2Dalle|midjourney_imagine|MidjourneyArtworks|MidJourneyDiscussions|MidjourneyFails|MidJourneyFantasy|MidjourneyPrompts|momaia|narrative_ai_art|nightcafe|nijijourney|nonutsnightmare|NovelAi|OpenAI|perplexity_ai|Pixai_Official|ProductHunters|PromptArt|promptcraft|PromptDesign|PromptEngineering|PromptSharing|promptsideas|RenaissanceArt_AI|riffusion|sdforall|sdnsfw|SeaArtAI|sexbotlovers|shittyAiArt|SillyTavernAI|singularity|SoraAi|StableDiffusion|StableDiffusionInfo|StableDiffusionUI|starryai|StarWarsAIArt|stupidAI|SukiAI|SunoAI|te_diffusion|TheAIBrain|WaifuDiffusion|weirddalle|WomboArt|Wombodream|wonderAI|WorldbuildingWithAI)/")
 www.reddit.com##[slot="comment"] p > a.border-dotted:style(border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important)
 www.reddit.com##[slot="comment"] p > a.border-dotted > span:has(> [icon-name="search-sparkle"])
 www.reddit.com##[view-events="post_detail/view/highlight"] a:style(border: none !important; color: inherit !important; cursor: auto !important; padding: 0 !important)
@@ -1378,6 +1413,7 @@ askubuntu.com,serverfault.com,stackexchange.com,stackoverflow.com,superuser.com#
 askubuntu.com,serverfault.com,stackexchange.com,stackoverflow.com,superuser.com##.ps-relative:has(> #nav-sofa)
 stackoverflow.com##.js-sofa-sidebar-promo
 stackoverflow.com##.js-gps-related-tags:has([href="/collectives/openai"])
+stackoverflow.com##.js-use-with-ai-button
 www.startpage.com##.products-section > [href^="https://vanish.startpage.com/"]
 static.app##.c-FluffyCard[href="/ai-answers"]
 webmail.strato.de##[aria-label="KI-Chat"]
@@ -1395,6 +1431,10 @@ www.studocu.com##.SidebarClickableItem_wrapper__vQRrT:has(#content-sidebar-ai-no
 www.studocu.com##.SidebarClickableItem_wrapper__vQRrT:has(#content-sidebar-ask-ai)
 www.studocu.com##.SidebarClickableItem_wrapper__vQRrT:has(#content-sidebar-quiz-creation)
 www.studocu.com##[aria-label="AI toolbar"]
+docs.superhuman.com##[data-layer-id]:has(> [role="menuitem"] [data-icon="Connectors"])
+docs.superhuman.com##[data-layer-id]:has(> [role="menuitem"] [data-icon="Connectors"]) + hr
+docs.superhuman.com##.L2QHsp05.tnBcgZxh:contains(Connect Docs MCP)
+docs.superhuman.com##[data-coda-ui-id="shAgentEntryButton"]
 www.supersummary.com##.MuiButtonBase-root:has(> [aria-label="Generate Discussion Questions"])
 www.supersummary.com##[data-testid="story-recap-desktop-card"]
 www.supersummary.com##.MuiButtonBase-root[href$="#ai-tools-page-header"]
@@ -1434,6 +1474,8 @@ www.theinformation.com###ti-footer li:has(> [href="/deep-research"])
 thenewstack.io###tns-search-overview
 thenewstack.io##.search-disclaimer
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
+www.nytimes.com##[data-testid="finder-promo-below-hero-desktop"]
+www.nytimes.com##[data-testid="answer-block"]:not(:has([data-icon="spinner"]))
 ||app.thestorygraph.com/personalized-preview.turbo_stream$xhr,domain=app.thestorygraph.com
 app.thestorygraph.com##.storygraph-preview-pane
 www.thermofisher.com##.ask-ai-widget-container

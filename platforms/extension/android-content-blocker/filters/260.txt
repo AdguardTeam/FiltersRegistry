@@ -1,9 +1,9 @@
-! Checksum: vqaVkzo59pFWVixllTYULw
-! Diff-Path: ../patches/260/260-s-1793321947-14400.patch
+! Checksum: BG+HBflot+PPNfBd5nVEmw
+! Diff-Path: ../patches/260/260-s-1793983096-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.95
-! TimeUpdated: 2026-10-30T00:55:59+00:00
+! Version: 2.0.3.7
+! TimeUpdated: 2026-11-06T16:36:07+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -41,10 +41,11 @@
 ! -- https://www.aberdeencity.gov.uk/
 ! Floating chatbot button
 www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
-! === AdBlock/Adblock Plus ===
-! -- https://help.adblockplus.org/adblock-plus-help-center/how-to-write-filters
-! "Use with AI" button
-help.adblockplus.org,helpcenter.getadblock.com##ai-actions
+! === AdBlock ===
+! -- https://helpcenter.getadblock.com/adblock-help-center/how-does-adblock-work
+! "Use with AI" markdown button text & menu options
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-chatgpt"]
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-claude"]
 ! === Adobe ===
 ! -- https://www.adobe.com/ (logged out)
 ! Floating "Ask a question" field. Appears after scrolling down
@@ -94,39 +95,42 @@ www.alibaba.com##.accio-wrapper
 ! -- https://www.amazon.com/ (homepage)
 ! Chatbot network requests
 ||www.amazon.*/rufus/$xmlhttprequest,domain=www.amazon.*
-! "Rufus" button in navbar
+! AI questions in autocomplete search suggestions
+! Search placeholder messages (No longer used?)
+! Navbar - "Rufus" button
 www.amazon.*###nav-rufus-disco
-! Health AI in navbar
-! Navbar > Medical Care - AI elements
+! Navbar - Health AI in navbar (No longer used?)
+! Navbar - Medical Care - AI elements (No longer used?)
 www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
-! AI questions in autocomplete search suggestions
-! Search placeholder messages
 ! Rufus chatbot in sidebar
 ! * Requires trusted filters in AdGuard
 ! * Source: https://www.reddit.com/r/uBlockOrigin/comments/1pod2g6/comment/nuelobn/
-! -- https://www.amazon.com/Celeste-Nintendo-Switch-Digital-Code/dp/B079Z1LPSP (Product page)
-! Rufus button that appears when highlighting text
-www.amazon.*###rufus-ask-rufus-tooltip
-! "Ask Rufus" suggestions below product image
-www.amazon.*###nile-inline_feature_div
-! "Ask rufus or search reviews" section above user reviews ("ie: Looking for specific info?")
-www.amazon.*###nile-inline-btf_feature_div
-! Summarize positive/negative reviews
-www.amazon.*##.cr-reviews-ai-pills-t2
-! AI review summary (IE: "Customers say")
-www.amazon.*##[data-csa-c-item-id="cr-product-insights-cards"], [data-csa-c-item-id="cr-product-insights-detail-page"]
-! -- https://www.amazon.com/CORSAIR-VENGEANCE-6000MHz-Compatible-Computer/dp/B0BPTKD797 (mobile)
+! -- https://www.amazon.com/CORSAIR-VENGEANCE-6000MHz-Compatible-Computer/dp/B0BPTKD797
 ! Alexa chat window
-! Prevents issue where window cannot be closed once opened
+! * Prevents issue where window cannot be closed once opened
 www.amazon.*##.nav-search-rufus-container > #nav-flyout-rufus
-! Question pills below product image carousel
+! Rufus button that appears when highlighting text (No longer used?)
+www.amazon.*###rufus-ask-rufus-tooltip
+! "Ask Alexa" question suggestions below product image carousel
+www.amazon.*###nile-inline_feature_div
+! "Hear the highlights" AI summary
+www.amazon.*###shopTalk_feature_div
+! "Looking for specific info?" section above reviews
+www.amazon.*###nile-inline-btf_feature_div
+! "Customers say" section
+www.amazon.*##[data-csa-c-painter="review-highlights-experience"]
+www.amazon.*##.cr-reviews-ai-pills-t2
+! - Mobile
+! "Ask Alexa" question pills below product image carousel
 www.amazon.*###rufus-dpx-atf-mission-pills-container
 ! Top highlights - Summarized points
 www.amazon.*###nile-inline-insights_feature_div
 ! Top highlights - Question suggestions
 www.amazon.*###nile-inline-mobile-hoc-below-top-highlights_feature_div
+! Customer reviews - Summarize 1 star/5 star reviews pills
+www.amazon.*##.cr-reviews-ai-pills-t1
 ! -- https://www.amazon.com/clp/B01BFE0KNQ
 ! "Customers say" summary
 www.amazon.*##.cs-summary-section
@@ -134,6 +138,9 @@ www.amazon.*##.cs-summary-section
 www.amazon.*##.hero-top-highlights
 ! Question suggestions
 www.amazon.*##.scans-hero-pills-row
+! -- https://www.amazon.com/gp/css/order-history
+! "Ask Alexa about this order" button on order history page
+www.amazon.*##.yo-ask-order-pill
 ! -- https://health.amazon.com/
 ! "Health AI" button in navbar
 health.amazon.com###nav-health-ai
@@ -189,6 +196,11 @@ www.astronomer.io###assistant-entry
 www.asus.com###aiMenu
 ! Floating assistant
 ||asus-brand-assistant.asus.com/brand-assistant.js$script,domain=www.asus.com
+! -- https://rog.asus.com/us/
+! Floating chatbot
+||asuschatapi.asus.com/aiassistantapi/api/v0c/$xmlhttprequest,domain=rog.asus.com
+! AI product recommendations
+rog.asus.com##div[class^="Home__aiRecommendWrapper__"]
 ! === Atlassian ===
 ! -- https://<yourdomain>.atlassian.net/browse/SUP-1 (Support - Task)
 ! Automation button (lighting icon) - Build automations with AI
@@ -576,9 +588,12 @@ www.collinsdictionary.com##.assistantIcon
 ! "Ask Collins Dictionary" in bottom-right corner
 www.collinsdictionary.com###assistant-link
 ! -- https://www.collinsdictionary.com/dictionary/english/word
-! Footer - Ask me a question
+! Sticky "Ask me a question" bar
 ||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
 www.collinsdictionary.com##.assistant-sticky-bar
+! -- https://www.collinsdictionary.com/us/dictionary/english/word
+! Sticky "Ask me a question" chatbox
+www.collinsdictionary.com###ai-widget
 ! === Computer World ===
 ! Header promo for AI powered hybrid search
 ! * The header announcement gets added by a script with id='enqueued-script-consent-manager-js-after', which also handles items like the cookie consent banner.
@@ -854,6 +869,12 @@ emojicombos.com###introEl > [href="https://perchance.org/ai-chat"]
 ! -- https://devhome.evero.net/deployments
 ! Executive AI Summary tab
 devhome.evero.net##[role="tablist"] > [id$="-trigger-aisummary"]
+! === Evetech ===
+! Header - Eva icon
+www.evetech.co.za##button[title="Ask Eva"]
+www.evetech.co.za##button[title="Ask Eva"] + div
+! Floating Eva button
+www.evetech.co.za##button[aria-label="Open Eva chat assistant"]
 ! === Emojipedia ===
 ! -- https://emojipedia.org/
 ! "Create Emojis" button in navbar
@@ -912,10 +933,12 @@ www.facebook.com##[aria-label="Generate images using AI"]
 ! -- https://www.facebook.com/groups/810265769826493/posts/2180121562840900/ (Group post - logged out)
 ! AI post summary
 ! TODO: Filter mobile version
-! -- https://www.facebook.com/groups/1404116417142065/posts/1791850441701992/
+! -- https://www.facebook.com/groups/captainsoftech/posts/797383481555925/?seo_visit=1
 ! * TODO:  Other Posts - Summarized by AI (logged out)
 ! Post title generated with AI (logged in)
 ! "What people are saying" comment summary (logged in)
+! -- https://www.facebook.com/groups/captainsoftech/posts/797383481555925/?seo_visit=1 (mobile)
+! Comment summary
 ! -- https://www.facebook.com/permalink.php?story_fbid=pfbid0nM3EdTKDBTXFnxftmhzgX2HRaESqcBoNXDHTFCo3oq8u716VFg2mUp9PLykieQPfl&id=61588534388215
 ! Post with AI info disclaimer (disclosed by user)
 ! * Won't hide posts if linked directly
@@ -1081,11 +1104,10 @@ github.com##.DashboardBannerCopilotApp
 github.com##.start-copilot-banner
 ! "Getting started" checklist section
 github.com##[data-testid="copilot-free-user-checklist"]
-! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/
+! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/ (repository page)
 ! "Agents" tab in repository navbar (desktop & mobile)
 ! * Via https://www.reddit.com/r/uBlockOrigin/comments/1vkxr0j/comment/p2xake5/
-! -- https://github.com/easylist/easylistchina
-! "Ask Copilot about this repository" when repository has no README file
+! "Ask Copilot about this repository" when repository has no README file (ex: https://github.com/easylist/easylistchina)
 ! Might be limited to enterprise users with Copilot
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
 ! File header - "Ask Copilot about this file" button
@@ -1102,7 +1124,7 @@ github.com###copilot-button-container
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/100
 ! Right sidebar - Open in GitHub Copilot app
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/new (New issue page)
-! "Write with Copilot" below issue description
+! "Write with Copilot" below issue description (No longer used?)
 ! * Doesn't always appear. May be limited to issues from repository owner?
 ! * The end of class name changed from "__RL1TZUq" to "__eCAAR". Is it dynamic?
 github.com##.Footer-module__footerButtonWrapper__RL1TZUq
@@ -1133,6 +1155,9 @@ github.com##[data-component="ActionList.Divider"] + [data-component="ActionList.
 ! -- https://github.com/zloirock/core-js/actions/runs/22272347580/job/64429009933 (Failed workflow job)
 ! "Explain error" button
 github.com##[data-test-id="copilot-actions-chat-button"]
+! -- https://github.com/search?q=python&type=repositories (Search)
+! Left sidebar - Filter by AI resources
+github.com##[data-testid="nav-item-ai_resources"]
 ! -- https://github.com/ (logged out)
 ! Download GitHub Copilot app button
 github.com##[class^="Primer_Brand__Button-module__Button___"][href="/features/ai/github-app"]
@@ -1524,13 +1549,19 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 !   * Pregenerated topic infobox (mobile only): https://www.google.com/search?q=ghola+dune
 !   * Mixture of AI and non-ai infoboxes: https://www.google.com/search?q=Super+Mario+64+release+date
 ! -- https://www.google.com/ (Homepage)
-! Search bar > "AI Mode" button
+! Search bar - Plus icon for "add files and tools"
+! * TODO: Doesn't work on https://www.google.co.jp/index.html
+! * TODO: Replace icon with magnifying glass
+! Search bar - "AI Mode" button
 www.google.*##.plR5qb
 ! Remove AI hyperlinks from Google Doodle Logos
 ! AdGuard compatible
 ! AI buttons below search bar
 ! * "Create images", "Ask about files", and "Brainstorm"
 ! * These buttons replace the standard "Google Search" button.
+www.google.com##[role="button"][data-azi][jsname="pLYtdd"]
+www.google.com##[role="button"][data-azi][jsname="KrqAEf"]
+www.google.com##[role="button"][data-azi][jsname="aG66rb"]
 ! Promo text below search bar mentioning AI
 ! AI mode promo boxes
 www.google.*##[jscontroller="DyTeib"]
@@ -1541,6 +1572,7 @@ www.google.*##.xOchs
 ! Autocomplete suggestions
 ! * JSONPath v2 compatible
 ! * Backup cosmetic filter for mobile
+! -- https://www.google.com/?sa=X (mobile)
 ! -- https://www.google.com/search?q=Why+are+we+here
 ! "AI Mode" tab in navbar
 ! * Fix conflict with laylavish's AI blocklist.
@@ -1845,6 +1877,14 @@ www.ishopchangi.com###chat-wrapper
 ! -- https://www.istom.fr/
 ! Chatbot modal
 ||webchat.studizz.fr/webchat.js$script,domain=www.istom.fr
+! === JCPenney ===
+! -- https://www.jcpenney.com/
+! Header - AskPenney
+www.jcpenney.com###askPenneyBlock
+www.jcpenney.com###askPenneyMobileBlock
+! -- https://www.jcpenney.com/p/stylus-womens-high-rise-wide-leg-pant/ppr5008207177?pTmplType=regular&geoZip=11530
+! Review summary
+www.jcpenney.com##[data-bv-show="review-summaries"]
 ! === JetBrains ===
 ! Header - Products - AI TOOLS section
 ! Header - Products - JetBrains Air promo
@@ -1966,6 +2006,10 @@ www.lesnumeriques.com##[data-lemrock-component]
 ! === LG ===
 ! LG AI in header
 www.lg.com##.MuiLink-root[href="https://www.lg.com/us/affectionate-intelligence-ai"]
+! === Liberty Care Mobility ===
+! -- https://libertycare.ca/product/mobb-sock-aid-with-foam-handles-mhscaf/
+! "Have a question about this product?" box
+libertycare.ca###lcai
 ! === LinkedIn ===
 ! -- https://www.linkedin.com/feed/ (Feed - logged in)
 ! Start a post > "Rewrite with AI" button
@@ -2198,7 +2242,11 @@ powerpoint.cloud.microsoft##[aria-label="Create with Copilot"]
 ! "Explore copilot" section
 powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
 ! -- https://powerpoint.cloud.microsoft/ (With document open)
-! Ribbon - Home - Designer button
+! Ribbon - Home - Create Interactive Slide
+usc-powerpoint.officeapps.live.com###CopilotCreateInteractiveSlideGalleryFromRibbon
+! Ribbon - Home - Design Suggestions
+! Copilot button to the right of ribbon
+usc-powerpoint.officeapps.live.com##[id^="dabCon"]
 ! Context menu - Explain
 ! -- https://onenote.cloud.microsoft/notebooks/
 ! Header promo for Copilot Notebooks
@@ -2359,11 +2407,16 @@ search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
 ! "Quick Read" AI summary
 www.ndtv.com##.ASum_wr.ASum_Mnon
 ! === Newegg ===
-! -- https://www.newegg.com/abs-stratos-ruby-gaming-desktop-rtx-5060-core-i5-14400f-32gb-ddr5-1tb-ssd-sr7800x3d9070xt-black/p/N82E16883360936
-! AI Assistant
+! -- https://www.newegg.com/
+! Header - Shop with Celeste
+www.newegg.com##.header2021-celeste
+! Search bar (focused) - Ask Celeste
+www.newegg.com##.header2021-search-sec-ask
+! Floating AI Assistant icon
 www.newegg.com##.floating-robot
-! AI Expert
-www.newegg.com##.ek-sales-content
+! -- https://www.newegg.com/p/pl?d=test
+! Sidebar - Ask Celeste about filters
+www.newegg.com##.plp-side-ask
 ! === News18 ===
 ! Search - AI overview
 www.news18.com##.aiovwrp
@@ -2385,6 +2438,19 @@ www.nordstrom.com##.j_24W
 ! -- https://www.nutraingredients.com/
 ! Floating AI chat button
 www.nutraingredients.com##.ask-ia-widget
+! === Nvidia ===
+! -- https://www.nvidia.com/en-us/
+! Floating Ask AI button
+www.nvidia.com##nv-assistant
+! Replace search bar placeholder text
+! -- https://www.nvidia.com/en-us/search/?q=NVIDIA%20Broadcast
+! Search summary
+www.nvidia.com##.librarian-genai-summery
+||www.nvidia.com/ai-agents/chimera/stream$xmlhttprequest,domain=www.nvidia.com
+! -- https://www.nvidia.com/404/
+! Messages about AI search
+www.nvidia.com###librarian-search1 .css-c2iebg > svg
+www.nvidia.com###librarian-search1 .css-c2iebg > .css-12k99am
 ! === NxCode ===
 ! -- https://www.nxcode.io/resources/news/claude-sonnet-4-6-vs-gpt-5-4-coding-comparison-2026
 ! "Before you go..." modal
@@ -2473,6 +2539,10 @@ www.pchealth.ca,www.shoppersdrugmart.ca##.remedy-chatbot-landing
 ! AI Product Finder in header
 www.pcmag.com##[data-element="Maggie-Product-Picker-Launcher"]
 ! AI Product Finder QA box
+! === PCWorld ===
+! -- https://www.pcworld.com/article/3088112/vibe-coding-apps-taught-me-how-hard-real-coding-is.html
+! Article summary
+www.pcworld.com##.miso-summary-box
 ! === Phys.org ===
 ! -- https://phys.org/news/2026-07-rare-blue-optical-transient-class.html
 ! "The GIST" article summary
@@ -2903,6 +2973,9 @@ askubuntu.com,mathoverflow.net,serverfault.com,stackexchange.com,stackoverflow.c
 stackoverflow.com##.js-sofa-sidebar-promo
 ! -- https://stackoverflow.com/questions
 ! Collective for OpenAI
+! -- https://stackoverflow.com/questions/550001/fully-transparent-windows-in-pygame/51845075#51845075
+! "Use with AI" button on code block in answer
+stackoverflow.com##.js-use-with-ai-button
 ! === Startpage ===
 ! Expandable sidebar, Products, "Vanish: Private AI"
 ! * TODO: Leaves blank space. Need to change spacing on prior element in list. (Different between desktop and mobile sites)
@@ -2938,6 +3011,14 @@ docs.stripe.com##.⚙ld2wwb + [role="separator"]
 ! Sidebar
 ! AI question bar
 www.studocu.com##[aria-label="AI toolbar"]
+! === Superhuman Docs ===
+! -- https://docs.superhuman.com/ (Home)
+! Left sidebar - User profile menu - Connect to the Docs MCP
+! Getting started carousel > Connect Docs MCP
+! -- New document page
+! Close chat sidebar
+! Floating chat icon
+docs.superhuman.com##[data-coda-ui-id="shAgentEntryButton"]
 ! === SuperSummary ===
 ! -- https://www.supersummary.com/game-changer-shusterman/summary/
 ! Generate questions button
@@ -3019,6 +3100,12 @@ thenewstack.io###tns-search-overview
 thenewstack.io##.search-disclaimer
 ! Remove AI sparkles from search icon
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
+! === The New York Times ===
+! -- https://www.nytimes.com/wirecutter/
+! "What do you need (or want)" search section
+www.nytimes.com##[data-testid="finder-promo-below-hero-desktop"]
+! -- https://www.nytimes.com/wirecutter/search/?s=How+do+I+stop+my+house+from+smelling%3F
+! AI summarized answer (& product recommendations)
 ! === The StoryGraph ===
 ! -- https://app.thestorygraph.com/books/9ea80c87-b424-472d-b17e-bf4b97e042e4
 ! SGAI personalized recommendation
@@ -3514,7 +3601,6 @@ yep.com##.css-2p650t-sidebar
 ! LobsterAI product slide
 ! LobsterAI in product list
 ! === YouTube ===
-! -- General
 ! Search bar (includes backup cosmetic filters)
 ! * Ask YouTube button
 www.youtube.com##.ytSearchboxComponentInputBox > [client-ve-type]
@@ -3554,12 +3640,13 @@ www.youtube.com##.ytp-menuitem-section-header ~ .ytp-menuitem
 ! -- https://www.youtube.com/watch?v=oh5p5f5_-7A
 ! Block AI upscaled "Super Resolution" quality options
 ! * May not work if video is loaded directly from URL
-! Automatic video chapters
+! - Automatic video chapters
+! Method 1: JSON
 ! * Playback bar chapter segments
 ! * "In this video" sidebar chapters + backup for playback bar
 ! * Chapter cards in description
 ! * Alt for chapter card in description (Seen on https://m.youtube.com/watch?v=1K55xVb6qhY)
-! Automatic chapter backup filters
+! Method 2: CSS
 ! Partially based on https://github.com/moocj/yt-remove-ai-chapters
 ! TODO: Remove segments on playback bar
 ! * Player - Chapter tooltips when hovering progress bar

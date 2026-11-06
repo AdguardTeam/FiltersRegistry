@@ -17,6 +17,7 @@
 ! https://forum.adguard.com/index.php?threads/ivoox-com-podcasts-issues.29530/
 ! ||addevweb.com^$third-party
 !
+||antiadblockguard.com^
 ||adstag0102.xyz^
 ||otzads.net^
 ||bivogrvfyoj.in^
@@ -175,6 +176,8 @@
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||e-afiliacao.estadao.com.br^
+||smartads.estadao.com.br^
 ||ak-ads-ns.prisasd.com^
 ||ads.comunidades.net^
 ||go.etoro.com^$third-party
@@ -199,6 +202,10 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/245829
+legiongamesgod.com#%#//scriptlet('prevent-setTimeout', 'offsetHeight')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||legiongamesgod.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245425
 xtusubs.com#%#//scriptlet('prevent-setInterval', 'divExists')
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
@@ -2078,6 +2085,8 @@ peru21.pe#@#.adstop
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246107
+blizzpaste.com#%#(()=>{document.addEventListener('click',e=>{const b=e.target.closest('#popupCaptchaButton');if(!b)return;setTimeout(()=>{window.dispatchEvent(new Event('blur'));window.dispatchEvent(new Event('focus'));},50);},true);})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/239913
 ! Fixes time duration in MPD files for video playback when ads are removed
 !+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
@@ -2736,6 +2745,28 @@ mundoisosgratis.com,actualidadiphone.com,lucrandoideias.com,proandroid.com,lusom
 !
 ! NOTE: Specific rules
 !
+seriesmp4.club#%#//scriptlet('href-sanitizer', 'a[href^="https://seriesmp4.club/dl/?go=aHR0c"]', '?go', 'base64decode')
+dbsullca.com#$##special-overlay { display: none !important; }
+dbsullca.com#$#body { overflow: auto !important; }
+dbsullca.com##.special-overlay__link
+||dbsullca.com/storage/promo-modal/
+filmesmp4.biz##.fm-ads
+as.com##.ad-tp
+madridinforma.es##div[class^="gb-element-"]:has(> :is([class^="mi-ad-"], [id^="mi-ad-"]))
+finance.biggo.com##button[aria-label="Share"]
+estadao.com.br##.content-wrapper.subfooter > .styled-wrapper:has(> .container div[data-ea-slot])
+ominho.pt##.entry-content > div[style*="overflow:hidden;"]:has(> div[id^="div-gpt-ad-"])
+elchecf.es##.MkModuleBanner
+elchecf.es##.MkGrids__block--three_divisions
+blizzpaste.com#%#//scriptlet('prevent-window-open', '_blank')
+vejasp.abril.com.br###relacionadas_marfeel_single
+vejasp.abril.com.br###mais_lidas_marfeel_single
+vejasp.abril.com.br###abrAdAnchor
+||js.sapo.pt/Projects/CPU/
+sapo.pt##.inkw-pub-wrapper
+diariobitcoin.com##.dbtc-ad-slot
+legiongamesgod.com###adAnchor
+legiongamesgod.com##.ad-modal-overlay
 doramaexpress.com,yandispoiler.net#%#//scriptlet('set-constant', 'YanConfig.gate_server.enabled', 'false')
 doramaexpress.com,yandispoiler.net#%#//scriptlet('set-constant', 'YanConfig.hero_links_active', 'false')
 doramaexpress.com,yandispoiler.net#%#//scriptlet('set-session-storage-item', 'yan_hero_ad_shown', '1')
@@ -3597,9 +3628,6 @@ la-razon.com##.genosha_ads
 la-razon.com##.genosha_ads_fixed_bottom
 ||pagina7.cl/js/ads.js
 ||gamesfull.app/*/anuncios/
-seriesflix.onl##.babaz
-seriesflix.onl#%#//scriptlet('prevent-window-open')
-seriesflix.onl#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'pop[_0x')
 nationalgeographic.pt#$#.ad-container-m1 { min-height: 0 !important; }
 novabrasilfm.com.br##[class^="publicidade-"]
 webmotors.com.br##div[id^="ad-search-result"]
@@ -5112,7 +5140,7 @@ epocanegocios.globo.com###pub-shopping
 acidadeon.com##.slb0
 acidadeon.com###opec
 ovaciondigital.com.uy,elpais.com.uy##.module1colAds
-g24.gal,elpais.com.uy##.ads-container
+estadao.com.br,g24.gal,elpais.com.uy##.ads-container
 es.charla.motor.narkive.com##div[onimpression="nk_playbuzz_impression"]
 ordenador.online##div[class^="escomad"]
 enmimaquinafunciona.com##.big-square-inline

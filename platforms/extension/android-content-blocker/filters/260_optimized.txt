@@ -1,16 +1,17 @@
-! Checksum: CMkBSe7S6vGF87fnvJGFpQ
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1793321947-14400.patch
+! Checksum: haiN6a+MBU/aN3p+6zQmIQ
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1793983096-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.2.95
-! TimeUpdated: 2026-10-30T00:55:59+00:00
+! Version: 2.0.3.7
+! TimeUpdated: 2026-11-06T16:36:07+00:00
 ! Expires: 5 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
 ||widget.molin.ai/shop-ai.js$script,domain=benu.hu|euronics.hu|www.decathlon.hu
 1password.com##.header-navigation > div.bg-gold [href="/personal-ai-agent-integrations"] > span
 www.aberdeencity.gov.uk##a[aria-label="Open Chatbot"]
-help.adblockplus.org,helpcenter.getadblock.com##ai-actions
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-chatgpt"]
+help.adblockplus.org,helpcenter.getadblock.com##[value="open-in-claude"]
 ||www.adobe.com/libs/c2/blocks/brand-concierge/chat-ui-config.js$script,domain=www.adobe.com
 www.adobe.com##[data-key="category-genai"]
 www.adobe.com##.tab-default-button-group[aria-label="Generative AI"]
@@ -26,18 +27,21 @@ www.amazon.*###nav-rufus-disco
 www.amazon.*##.health-ai-header
 www.amazon.*##.ask-health-ai-section
 www.amazon.*##.ahi-health-ai-content > .banner-pills-container
+www.amazon.*##.nav-search-rufus-container > #nav-flyout-rufus
 www.amazon.*###rufus-ask-rufus-tooltip
 www.amazon.*###nile-inline_feature_div
+www.amazon.*###shopTalk_feature_div
 www.amazon.*###nile-inline-btf_feature_div
+www.amazon.*##[data-csa-c-painter="review-highlights-experience"]
 www.amazon.*##.cr-reviews-ai-pills-t2
-www.amazon.*##[data-csa-c-item-id="cr-product-insights-cards"], [data-csa-c-item-id="cr-product-insights-detail-page"]
-www.amazon.*##.nav-search-rufus-container > #nav-flyout-rufus
 www.amazon.*###rufus-dpx-atf-mission-pills-container
 www.amazon.*###nile-inline-insights_feature_div
 www.amazon.*###nile-inline-mobile-hoc-below-top-highlights_feature_div
+www.amazon.*##.cr-reviews-ai-pills-t1
 www.amazon.*##.cs-summary-section
 www.amazon.*##.hero-top-highlights
 www.amazon.*##.scans-hero-pills-row
+www.amazon.*##.yo-ask-order-pill
 health.amazon.com###nav-health-ai
 health.amazon.com##.bg-no-repeat[style*="background-image:url('https://m.media-amazon.com/images/G/01/ahs/health_ai/opt-in/HealthAI_Background_CDF0E9.jpg');"]
 health.amazon.com##.pui-sub-nav-health-ai-button
@@ -53,6 +57,8 @@ www.argos.co.uk##[data-test="ai-reviews-summary"]
 www.astronomer.io###assistant-entry
 www.asus.com###aiMenu
 ||asus-brand-assistant.asus.com/brand-assistant.js$script,domain=www.asus.com
+||asuschatapi.asus.com/aiassistantapi/api/v0c/$xmlhttprequest,domain=rog.asus.com
+rog.asus.com##div[class^="Home__aiRecommendWrapper__"]
 atlassian.net##[data-testid="servicedesk-ai-context-common.ui.ai-context-container.ai-container"]
 atlassian.net##[data-testid="servicedesk-smart-request-summary-trigger.ui.jira-smart-summary-standard-button"]
 atlassian.net##[data-testid="issue.views.issue-details.issue-layout.left-most-column"] .css-1jkd4gw
@@ -152,6 +158,7 @@ www.collinsdictionary.com##.assistantIcon
 www.collinsdictionary.com###assistant-link
 ||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
 www.collinsdictionary.com##.assistant-sticky-bar
+www.collinsdictionary.com###ai-widget
 www.consumerreports.org##.cda-gnav__main-search-askcr-ai
 www.consumerreports.org###mt-askcr-sf-abandon-footer
 www.consumerreports.org##.cda-gnav__main-search-hints-semantic-askCR
@@ -236,6 +243,9 @@ www.ecosia.org##.omnibox-search-form__ai-chat
 www.ecosia.org##[data-test-id="search-navigation-item-chat"]
 emojicombos.com###introEl > [href="https://perchance.org/ai-chat"]
 devhome.evero.net##[role="tablist"] > [id$="-trigger-aisummary"]
+www.evetech.co.za##button[title="Ask Eva"]
+www.evetech.co.za##button[title="Ask Eva"] + div
+www.evetech.co.za##button[aria-label="Open Eva chat assistant"]
 emojipedia.org##.Button_btn__p7Xgd[href="/ai-emoji-generator"]
 www.etsy.com##[data-appears-component-name="reviews_feature_tags"]
 exceladept.com##div > [href^="https://chat.openai.com/"]
@@ -306,6 +316,7 @@ github.com##[data-testid="copilot-diff-explain-button"]
 github.com##[data-component="ActionList.Divider"]:last-child
 github.com##[data-component="ActionList.Divider"] + [data-component="ActionList.Divider"]
 github.com##[data-test-id="copilot-actions-chat-button"]
+github.com##[data-testid="nav-item-ai_resources"]
 github.com##[class^="Primer_Brand__Button-module__Button___"][href="/features/ai/github-app"]
 github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
 github.com##.Primer_Brand__Button-module__Button___lDruK[href="/github-copilot/pro"]
@@ -411,6 +422,9 @@ www.google.com##[role="dialog"][aria-label="Ask anything about anywhere"]
 www.google.com##[jsaction="navigationrail.askMaps"]
 one.google.com##.aTVMOe.RLyrIe.KGSMie
 www.google.*##.plR5qb
+www.google.com##[role="button"][data-azi][jsname="pLYtdd"]
+www.google.com##[role="button"][data-azi][jsname="KrqAEf"]
+www.google.com##[role="button"][data-azi][jsname="aG66rb"]
 www.google.*##[jscontroller="DyTeib"]
 www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_campaign=bottom-footer"]
 www.google.*##.xOchs
@@ -495,6 +509,9 @@ www.investopedia.com##[data-inv-answers-widget]
 ||chat.ipon.hu/widget.js$script,~third-party
 www.ishopchangi.com###chat-wrapper
 ||webchat.studizz.fr/webchat.js$script,domain=www.istom.fr
+www.jcpenney.com###askPenneyBlock
+www.jcpenney.com###askPenneyMobileBlock
+www.jcpenney.com##[data-bv-show="review-summaries"]
 www.jetbrains.com##a[href="/business/"][class^="_card_"]
 www.jimdo.com###companion
 www.johnhancock.com##.webchat
@@ -532,6 +549,7 @@ www.lenovo.com##.pdp-ai-summary
 www.lenovo.com##[data-bv-show="review-summaries"]
 www.lesnumeriques.com##[data-lemrock-component]
 www.lg.com##.MuiLink-root[href="https://www.lg.com/us/affectionate-intelligence-ai"]
+libertycare.ca###lcai
 www.linkedin.com##.share-creation-state__writing-assistant-container--premium
 www.linkyhost.com##nav[class^="homepage-header_"] [href="/build"]
 www.linkyhost.com##footer [href="/build"]
@@ -600,6 +618,8 @@ excel.cloud.microsoft##[role="region"][aria-label="Explore Copilot section."]
 ||/officeonline/x/s/*__layouts/App_Scripts/rslc0/EwaTS.copilot*.js$script,domain=usc-excel.officeapps.live.com
 powerpoint.cloud.microsoft##[aria-label="Create with Copilot"]
 powerpoint.cloud.microsoft##[aria-label="Explore Copilot section."]
+usc-powerpoint.officeapps.live.com###CopilotCreateInteractiveSlideGalleryFromRibbon
+usc-powerpoint.officeapps.live.com##[id^="dabCon"]
 make.powerautomate.com##[data-test-id="aiHub"], [data-test-id="aiPrompts"]
 make.powerautomate.com##.wrapper-178[href="https://copilotstudio.microsoft.com"]
 admin.powerplatform.microsoft.com##button[value="/copilot/overview"]
@@ -650,14 +670,21 @@ search.naver.com##[data-meta-ssuid-extra="fender_renderer-ai_briefing"]
 ||aib-api.naver.com/aibrender.naver?where=nexearch&query=$xmlhttprequest,domain=search.naver.com
 search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
 www.ndtv.com##.ASum_wr.ASum_Mnon
+www.newegg.com##.header2021-celeste
+www.newegg.com##.header2021-search-sec-ask
 www.newegg.com##.floating-robot
-www.newegg.com##.ek-sales-content
+www.newegg.com##.plp-side-ask
 www.news18.com##.aiovwrp
 ||barracuda-cdn.zoovu.com/core-js/zoovu-tag-library/zoovu-tag-library-latest.min.js$script,domain=www.nobleknight.com
 www.nobleknight.com##[aria-controls="squireSection"]
 www.nobleknight.com###squireSection
 www.nordstrom.com##.j_24W
 www.nutraingredients.com##.ask-ia-widget
+www.nvidia.com##nv-assistant
+www.nvidia.com##.librarian-genai-summery
+||www.nvidia.com/ai-agents/chimera/stream$xmlhttprequest,domain=www.nvidia.com
+www.nvidia.com###librarian-search1 .css-c2iebg > svg
+www.nvidia.com###librarian-search1 .css-c2iebg > .css-12k99am
 www.nxcode.io##[role="dialog"][aria-label="Before you go..."]
 www.nxcode.io###inline-article-cta
 www.officeworks.com.au##li[class^="GoogleRetailAgentTilestyled__TileWrapper-sc-"]
@@ -681,6 +708,7 @@ www.pbtech.co.nz,www.pbtech.com###aiReviewCard
 ||mypharmacy.*.ca/remedy?variant=entry$subdocument,domain=www.pchealth.ca|www.shoppersdrugmart.ca
 www.pchealth.ca,www.shoppersdrugmart.ca##.remedy-chatbot-landing
 www.pcmag.com##[data-element="Maggie-Product-Picker-Launcher"]
+www.pcworld.com##.miso-summary-box
 medicalxpress.com,phys.org,techxplore.com##[data-target="#summary-modal"]
 pictory.ai###livex-chatbot-app
 www.pixiv.net##.sc-d7d0e23-0.hwYNFu:empty
@@ -802,6 +830,7 @@ app.squareup.com##.item-library-edit__auto-write-button-wrapper
 stackoverflow.com###hide-this-if-you-want > div > div > div.d-flex.fd-column.as-start
 askubuntu.com,mathoverflow.net,serverfault.com,stackexchange.com,stackoverflow.com,superuser.com###nav-askstack
 stackoverflow.com##.js-sofa-sidebar-promo
+stackoverflow.com##.js-use-with-ai-button
 www.startpage.com##.products-section > [href^="https://vanish.startpage.com/"]
 static.app##.c-FluffyCard[href="/ai-answers"]
 webmail.strato.de##[aria-label="KI-Chat"]
@@ -814,6 +843,7 @@ docs.stripe.com##.⚙19wy2gp
 docs.stripe.com##.⚙ld2wwb
 docs.stripe.com##.⚙ld2wwb + [role="separator"]
 www.studocu.com##[aria-label="AI toolbar"]
+docs.superhuman.com##[data-coda-ui-id="shAgentEntryButton"]
 www.supersummary.com##[data-testid="story-recap-desktop-card"]
 www.supersummary.com##.MuiButtonBase-root[href$="#ai-tools-page-header"]
 ||js.qualified.com$script,domain=www.suse.com
@@ -837,6 +867,7 @@ www.theinformation.com###ai-research-banner
 thenewstack.io###tns-search-overview
 thenewstack.io##.search-disclaimer
 thenewstack.io##.masthead-search-icon path[d^="M18 4a4 4 0 0 0-4 4 4 4 0"]
+www.nytimes.com##[data-testid="finder-promo-below-hero-desktop"]
 ||app.thestorygraph.com/personalized-preview.turbo_stream$xmlhttprequest,domain=app.thestorygraph.com
 app.thestorygraph.com##.storygraph-preview-pane
 www.thermofisher.com##.ask-ai-widget-container
