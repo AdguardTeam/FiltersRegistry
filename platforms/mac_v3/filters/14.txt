@@ -1,9 +1,9 @@
-! Checksum: lzcz3NanWSaSFZuI+TI/Lw
-! Diff-Path: ../patches/14/14-s-1793945925-3600.patch
+! Checksum: Am0vvlxRqowaLEJaLp42vg
+! Diff-Path: ../patches/14/14-s-1793952813-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.85.64
-! TimeUpdated: 2026-11-06T06:14:39+00:00
+! Version: 2.2.85.65
+! TimeUpdated: 2026-11-06T08:10:43+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2680,6 +2680,7 @@ nogame.pl,propaganda24h.pl,gomedia.net.pl,sklep.coconaut.com,anhko.pl,4motos.pl,
 !
 ! NOTE: Regular rules
 !
+walla.co.il##div[aria-label="הודעה על שימוש בעוגיות"]
 photonics.com###CP_CookiePolicy_UP_CookiePolicy
 raiffeisen.ru##.CookieDialog
 kutno.budzet-obywatelski.org#%#//scriptlet('trusted-click-element', '#full_cookie_info #cookies-settings, #full_cookie_info #cookie-save-settings', '!cookie:settings')
@@ -6016,7 +6017,7 @@ tuke.sk,stippl.io##.react-cookie-notice-container
 ines.co.jp,aidata.co.jp,asustor.com###gdpr_wrap
 chat.mistral.ai#%#//scriptlet('trusted-click-element', 'body > div[role="dialog"][id^="radix-"] > button[class^="disabled"]')
 chat.mistral.ai#%#//scriptlet('trusted-click-element', 'div[role="dialog"][id="radix-:r2:"] > div.flex > div.flex > button + button', '!cookie:cc_cookie')
-regnum.ru##.cookies-notice-container
+maariv.co.il,regnum.ru##.cookies-notice-container
 remnote.com##div[cypress-id="consent-popup"]
 whereby.com#%#//scriptlet('trusted-set-cookie', 'cookie_consents', '{"strictlyNecessary":true,"preferences":false,"statistics":false,"marketing":false}')
 fairtrade-universities.de#%#//scriptlet('set-cookie', 'cookie_google_maps', '1')
@@ -20099,6 +20100,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246386
+@@||websight.co.il/wp-content/themes/company-theme/assets/js/modules/cookieBanner.js$domain=websight.co.il
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246360
 netz-noe.at#@#.cc-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246361
@@ -28833,6 +28836,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+maariv.co.il##.radio-container
 wellrx.com##.fixed.inset-0 > #signUpModal
 duck.ai##section[data-testid="duckai-sidebar"] + section > div:not([style]):not([data-testid]):has(> a[href^="https://selfserve.decipherinc.com/survey/"])
 united24media.com##.gtm-bottom-popup-article
@@ -38470,6 +38474,8 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+f1-gate.com##.gnews-cta
+maariv.co.il##.article-google-button-container
 prothomalo.com##.story-content > div:has(> span + a[href^="https://www.google.com/preferences/source?q="])
 prothomalo.com##a[aria-label="Google News"]
 extraetf.com##cms-newsletter-offer
@@ -64267,8 +64273,6 @@ topshare.in,tempmaile.me,filydot.fun#%#//scriptlet('adjust-setInterval', '/count
 crystal-launcher.pl#%#//scriptlet('adjust-setTimeout', 'timerCount', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213540
 asd.ink,asd.pics,asd.homes#%#//scriptlet('trusted-replace-node-text', 'script', 'downloadbtn', '/seconds: \d+/g', 'seconds: 0')
-! https://github.com/AdguardTeam/AdguardFilters/issues/213170
-financewada.com,utkarshonlinetest.com,techbezzie.com#%#//scriptlet('adjust-setInterval', '/time--|timeto--/', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212391
 sporx.com#%#//scriptlet('set-constant', 'Object.prototype.isStickyModeTemporarilyDisabled', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/228011

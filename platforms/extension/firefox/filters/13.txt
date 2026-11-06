@@ -1,9 +1,9 @@
-! Checksum: eeU+xnDJP7knHVvpvrgtsw
-! Diff-Path: ../patches/13/13-s-1793895303-3600.patch
+! Checksum: hZgBK+qBw16YqAnTW0E//Q
+! Diff-Path: ../patches/13/13-s-1793952793-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.69.52
-! TimeUpdated: 2026-11-05T16:10:58+00:00
+! Version: 2.0.69.53
+! TimeUpdated: 2026-11-06T08:10:38+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1616,6 +1616,11 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+inattv.live,inattv.co,inat-tv.org#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
+||cdn.jsdelivr.net/gh/$media,redirect=noopmp3-0.1s,domain=inat-tv.org|inattv.co
+||blogger.googleusercontent.com/img/$domain=inat-tv.org|inattv.co
+inattv.co,inat-tv.org###splash-banner
+inattv.live##.cpa-video-banner
 haberturk.com##section[data-adv]
 shiftdelete.net##body > div#header-container:has(> div#mastheadslot)
 patronspor.is##a[rel="sponsored noopener"]
@@ -6163,6 +6168,10 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+!
+! Frequently changed domains: inagamingtv*.com
+! Source: inagamingtv293.com
+[$domain=/inagamingtv\d+\.com$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
 !
 ! Frequently changed domains: pasgoliptv*.site
 ! Source: pasgoliptv44.site

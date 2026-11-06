@@ -1771,6 +1771,11 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+inattv.live,inattv.co,inat-tv.org#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
+||cdn.jsdelivr.net/gh/$media,redirect=noopmp3-0.1s,domain=inat-tv.org|inattv.co
+||blogger.googleusercontent.com/img/$domain=inat-tv.org|inattv.co
+inattv.co,inat-tv.org###splash-banner
+inattv.live##.cpa-video-banner
 haberturk.com##section[data-adv]
 shiftdelete.net##body > div#header-container:has(> div#mastheadslot)
 patronspor.is##a[rel="sponsored noopener"]
@@ -6319,6 +6324,13 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! Don't mix frequently changed domains with other rules, to make it easier to maintain,
 ! except some sites that use non-template domain names of mirror sites
 !
+!
+! Frequently changed domains: inagamingtv*.com
+! Source: inagamingtv293.com
+[$domain=/inagamingtv\d+\.com$/]#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
+inagamingtv293.com#%#//scriptlet('trusted-replace-node-text', 'script', 'prerollEnabled', '/prerollEnabled\s*:\s*true/g', 'prerollEnabled: false')
+!#endif
 !
 ! Frequently changed domains: pasgoliptv*.site
 ! Source: pasgoliptv44.site
