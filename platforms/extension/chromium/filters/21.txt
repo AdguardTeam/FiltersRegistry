@@ -1,9 +1,9 @@
-! Checksum: JKFgrfRJiltydNjcwspecg
-! Diff-Path: ../patches/21/21-s-1793988913-3600.patch
+! Checksum: Na1HNBVUTva4n0+y+VMR/g
+! Diff-Path: ../patches/21/21-s-1794067945-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
-! Version: 2.0.50.1
-! TimeUpdated: 2026-11-06T18:11:55+00:00
+! Version: 2.0.50.2
+! TimeUpdated: 2026-11-07T16:08:58+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10724,7 +10724,7 @@ fontshub.pro#$#.download-share-box { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134283
 speedtorrent.ru#%#//scriptlet("adjust-setInterval", "counter", "*", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133857
-w.acortaz.eu#%#(function(){try{var a=location.href.split("/#");if(a[1]){a=a[1];for(var b=0;10>b;b++){a=atob(a);try{new URL(decodeURIComponent(a));var c=!0}catch(d){c=!1}if(c)try{location.assign(decodeURIComponent(a));break}catch(d){}}}}catch(d){}})();
+w.acortaz.eu#%#(function(){try{var a=location.href.split("/#");if(a[1]){a=a[1];for(var b=0;10>b;b++){a=atob(a);try{var u=new URL(decodeURIComponent(a));var c=u.protocol==="http:"||u.protocol==="https:"}catch(d){c=!1}if(c)try{location.assign(u.href);break}catch(d){}}}}catch(d){}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132493
 listas.pro#%#//scriptlet("adjust-setInterval", "counter", "*", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131116
@@ -11298,9 +11298,7 @@ worldofmods.com#%#//scriptlet("adjust-setTimeout", "tick()", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52152
 boardgamesonline.net#%#//scriptlet("adjust-setInterval", "#timer", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51982
-beermoneyforum.com#%#!function(){if(-1<location.pathname.indexOf("/redirect")){var a=(new URL(window.location.href)).searchParams.get("to");if(a)try{window.location=atob(a)}catch(b){}}}();
-! https://github.com/AdguardTeam/AdguardFilters/issues/51281
-prueba.pixelshost.com#%#!function(){if(-1<window.location.href.indexOf("?url=")){var a=location.href.split("?url=");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
+beermoneyforum.com#%#!function(){if(-1<location.pathname.indexOf("/redirect")){var a=(new URL(window.location.href)).searchParams.get("to");if(a)try{var u=new URL(atob(a));if(u.protocol==="http:"||u.protocol==="https:")window.location=u.href}catch(b){}}}();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50721
 lg-firmwares.com,sfirmware.com#%#//scriptlet("adjust-setInterval", "#download-popup", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/81702
