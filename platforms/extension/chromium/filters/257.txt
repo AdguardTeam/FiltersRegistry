@@ -1,9 +1,9 @@
-! Checksum: pzXZnaYAQDdlesWD68fVGA
-! Diff-Path: ../patches/257/257-s-1793968710-14400.patch
+! Checksum: UW/vhav8Y2oEa6PLWGqo2A
+! Diff-Path: ../patches/257/257-s-1794040746-14400.patch
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.13.13
-! TimeUpdated: 2026-11-06T12:36:27+00:00
+! Version: 2.0.13.14
+! TimeUpdated: 2026-11-07T08:36:23+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -6107,6 +6107,9 @@ r2.dev##body > .main-wrapper > .main-content:has(> #checkbox-window.checkbox-win
 ! https://ohey.ca/research/clocktail-clickfix-unfilled-command/
 !+ NOT_OPTIMIZED
 ##body.glue-body > #cf-modal-overlay
+! https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-10-31-Romulus-Loader-spread-via-ClickFix-technique.txt
+!+ NOT_OPTIMIZED
+/^https:\/\/sites\.google\.com\/view\/antibot[0-9]+\b/$document,match-case
 ! !SECTION: ClickFix
 ! https://www.reddit.com/r/uBlockOrigin/comments/12ng4o8/
 ! https://www.virustotal.com/gui/url/fe6b4bc7a258a92a97ad3216c85d159857ccd581df9b31a50a308ca49f967e34
@@ -9688,6 +9691,11 @@ webflow.io##html.w-mod-js:not(.wf-active) > body:not([class]):not([id]) > a[clas
 ! https://www.reddit.com/r/Scams/comments/1iyqpsn/new_digital_fearscam_unlocked_zoom_phishing/
 !+ NOT_OPTIMIZED
 ||zoom.us*web.us^$document
+! https://www.reddit.com/r/Scams/comments/1xogded/job_scam_using_webzoomus/
+!+ NOT_OPTIMIZED
+||webzoom.us^$all
+!+ NOT_OPTIMIZED
+||us13webzoom.us^$all
 ! https://www.reddit.com/r/phishing/comments/1j2yegj/finally_got_one/
 !+ NOT_OPTIMIZED
 ||e-zpass.com-$document
@@ -11204,3 +11212,9 @@ top##body > center + .A + .post
 ||wlygrowth.com^$all
 !+ NOT_OPTIMIZED
 ||ludashisafe.com^$all
+! https://www.reddit.com/r/Scams/comments/1xp6ej8/in_beware_of_this_crypto_scam_gtagrokcom/
+!+ NOT_OPTIMIZED
+||gtagrok.com^$all
+! https://www.reddit.com/r/Scams/comments/1xo5pr0/heads_up_fake_aldi_website_phishing_scam_spotted/
+!+ NOT_OPTIMIZED
+||pondmart.shop^$all
