@@ -1,13 +1,13 @@
-! Checksum: FARvhVo8OqY9z7fKbOLv1g
-! Diff-Path: ../patches/251/251-s-1793954224-14400.patch
+! Checksum: XW0n8QHe6qZVo8oPOCHk+Q
+! Diff-Path: ../patches/251/251-s-1794026309-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.57
-! TimeUpdated: 2026-11-06T08:35:10+00:00
+! Version: 2.0.10.58
+! TimeUpdated: 2026-11-07T04:35:49+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 04November2026v1
+! OriginalVersion: 06November2026v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -4664,7 +4664,10 @@ $document,removeparam=hid,domain=investopedia.com|people.inc
 $document,removeparam=lr_input,domain=investopedia.com|people.inc
 ||investopedia.com^$document,removeparam=inv_to_sim
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19302144
-||entire.com^$removeparam=redirected_from
+||entire.com^$document,removeparam=redirected_from
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19429873
+||oldphoneworks.com^$document,removeparam=_su_rec
+||oldphoneworks.com^$document,removeparam=_su_rec_id
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
@@ -4735,6 +4738,7 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243495
 ! breaks unsubscribe links
 @@||newsletter.smartbrief.com/UnSubscribe.jsp$removeparam
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19453388
 ! (This subfile is an extension file, and is not for standalone use.)
 ! For when one really doesn't want to have a harder time with uBO's log error checker
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-750434

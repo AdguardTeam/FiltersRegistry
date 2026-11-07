@@ -1,9 +1,9 @@
-! Checksum: R5Lz+pj4gTGyZrDRrtoBxw
-! Diff-Path: ../patches/118_optimized/118_optimized-s-1794012449-14400.patch
+! Checksum: qlJjw3+9CJMBo6TDYp7i6g
+! Diff-Path: ../patches/118_optimized/118_optimized-s-1794026329-14400.patch
 ! Title: EasyPrivacy (Optimized)
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.41
-! TimeUpdated: 2026-11-07T00:44:48+00:00
+! Version: 2.1.74.42
+! TimeUpdated: 2026-11-07T04:35:08+00:00
 ! Expires: 12 hours (update frequency)
 &&sub19=undefined&sub20=undefined
 &action=js_stats
@@ -155,7 +155,6 @@
 /analytics/pageview
 /analytics/searches?
 /analytics/track_event/*
-/analytics/tracker.js
 /analytics/trackImpressions
 /analytics?ver=*&referrer=
 /analytics_cookie.js
@@ -312,7 +311,6 @@
 /com.snowplowanalytics.snowplow/*$domain=~7plus.com.au
 /common/analytics.js
 /common/ga.js
-/common/tracker.js
 /complianz/v1/track$xmlhttprequest
 /comscore-min.js
 /comscore?
@@ -657,7 +655,6 @@
 /metrics/v1/frontend/*
 /metrika.js?=
 /metrika/tag.js
-/microsoft.cognitiveservices.speech.sdk.bundle.js
 /minescripts.js
 /mint/?js
 /mistat-data/onetrack/onetrack.js
@@ -1387,6 +1384,7 @@ omni.soundestlink.com$image
 ||adcontroll.com^
 ||addefend-platform.com^
 ||aditude.cloud^
+||admetrics.events^
 ||adnext.co^
 ||adsmeasurement.com^
 ||adspsp.com^
@@ -1547,6 +1545,7 @@ omni.soundestlink.com$image
 ||krxd.net^
 ||ladsp.com^
 ||leadhit.io^
+||leadsy.ai^
 ||lemonpi.io^
 ||lltrck.com^
 ||lmepbq.com^
@@ -1834,7 +1833,6 @@ omni.soundestlink.com$image
 ||aptrinsic.com^$third-party
 ||aqtracker.com^$third-party
 ||aralego.net^$third-party
-||arc.io/widget.min.js
 ||arcadeweb.com^$third-party
 ||ardalio.com^$third-party
 ||arkayne.com^$third-party
@@ -2019,7 +2017,6 @@ omni.soundestlink.com$image
 ||cogmatch.net^$third-party
 ||cognitivlabs.com^$third-party
 ||cohesionapps.com^$third-party
-||collarity.com^$third-party
 ||collserve.com^$third-party
 ||colossusssp.com^$third-party
 ||commander1.com^$third-party
@@ -2028,7 +2025,6 @@ omni.soundestlink.com$image
 ||compteur.cc^$third-party
 ||conductrics.com^$third-party
 ||conductrics.net^$third-party
-||confirmational.com^$third-party
 ||connectif.cloud^$third-party
 ||contactmonkey.com^$third-party
 ||contentinsights.com^$third-party
@@ -2291,6 +2287,7 @@ omni.soundestlink.com$image
 ||funneld.com^$third-party
 ||funnelytics.io^$third-party
 ||fusestats.com^$third-party
+||fuziontech.net^$third-party
 ||fwpixel.com^$third-party
 ||fyreball.com^$third-party
 ||gaconnector.com^$third-party
@@ -2643,6 +2640,7 @@ omni.soundestlink.com$image
 ||ml-attr.com^$third-party
 ||mlclick.com^$third-party
 ||mlno6.com^$third-party
+||mlytics.com^$third-party
 ||mochibot.com^$third-party
 ||monetate.net^$third-party
 ||mongoosemetrics.com^$third-party
@@ -2724,7 +2722,6 @@ omni.soundestlink.com$image
 ||nrich.ai^$third-party
 ||nstracking.com^$third-party
 ||nuggad.net^$third-party
-||numative.com^$third-party
 ||numerino.cz^$third-party
 ||o-s.io^$third-party
 ||octavius.rocks^$third-party
@@ -2766,6 +2763,7 @@ omni.soundestlink.com$image
 ||ositracker.com^$third-party
 ||otoshiana.com^$third-party
 ||ournet-analytics.com^$third-party
+||oursprivacy.com^$third-party
 ||outbrainimg.com^$third-party
 ||overtracking.com^$third-party
 ||ownpage.fr^$third-party
@@ -3026,6 +3024,7 @@ omni.soundestlink.com$image
 ||serveipqs.com^$third-party
 ||servestats.com^$third-party
 ||servustats.com^$third-party
+||sessioncam.com^$third-party
 ||sexcounter.com^$third-party
 ||sf14g.com^$third-party
 ||shareasale-analytics.com^$third-party
@@ -3059,6 +3058,7 @@ omni.soundestlink.com$image
 ||siteimproveanalytics.com^$third-party
 ||siteimproveanalytics.io^$third-party
 ||sitelabweb.com^$third-party
+||sitelytics.tech^$third-party
 ||sitemeter.com^$third-party
 ||siteplug.com^$third-party
 ||sitescout.com^$third-party
@@ -3175,6 +3175,7 @@ omni.soundestlink.com$image
 ||tcactivity.net^$third-party
 ||tcimg.com^$third-party
 ||tctm.co^$third-party
+||td573.com^$third-party
 ||tdstats.com^$third-party
 ||tealiumiq.com^$third-party
 ||techlab-cdn.com^$third-party
@@ -3192,6 +3193,7 @@ omni.soundestlink.com$image
 ||theardent.group^$third-party
 ||thebestlinks.com^$third-party
 ||thecounter.com^$third-party
+||thesearchagency.net^$third-party
 ||thoughtmetric.io^$third-party
 ||tinb.net^$third-party
 ||tinycounter.com^$third-party
@@ -3325,6 +3327,7 @@ omni.soundestlink.com$image
 ||we-stats.com^$third-party
 ||web-counter.net^$third-party
 ||web-stat.com^$third-party
+||web-stat.net^$third-party
 ||webclicktracker.com^$third-party
 ||webcounter.co.za^$third-party
 ||webcounter.ws^$third-party
@@ -6338,7 +6341,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||link-empfehlen24.de^$third-party
 ||losecounter.de^$third-party
 ||lumitos.com^$third-party
-||marketing-page.de^$third-party
 ||mateti.net^$third-party
 ||meetrics.net^$third-party
 ||mengis-linden.org^$third-party
@@ -6506,7 +6508,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||dotmetrics.net^$third-party
 ||xclaimwords.net^$third-party
 ||affilbox.cz^$third-party
-||affiliateport.eu^$third-party
 ||ehub.cz^$third-party
 ||itop.cz^$third-party
 ||leady.com^$third-party
@@ -6761,7 +6762,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||kmindex.ru^$third-party
 ||lentainform.com^$third-party
 ||logua.com^$third-party
-||logxp.ru^$third-party
 ||lookmy.info^$third-party
 ||lugansk-info.ru^$third-party
 ||mediatoday.ru^$third-party
@@ -6898,6 +6898,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||alipay.com/service/clear.png?
 ||amazon.com/cs/uedata
 ||amazonaws.com/appmonitors/
+||amazonaws.com/b2bjsstore/
 ||amazonaws.com/beacon^
 ||amazonaws.com/frame-image-br/bg.png?
 ||amazonaws.com/js/reach.js
@@ -7826,7 +7827,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||licdn.com/*.gif?rnd=
 ||licensing.bitmovin.com/impression
 ||lift.acquia.com^
-||lightboxcdn.com/static/identity.html
 ||link.bhvr.com^
 ||link.informer.com^
 ||linkedin.com/countserv/count/$third-party
@@ -8277,7 +8277,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||sdk-service.nsureapi.com/events
 ||sdk.51.la^$third-party
 ||sdk.appsflyer.com^
-||sdk.getlimy.ai/p/limy-analytics.min.js
 ||sdk.mrf.io/statics/marfeel-sdk.js
 ||sdrive.skoda-auto.com^
 ||sdtagging.azureedge.net^
@@ -9560,6 +9559,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||clipkit.co/clipkit_assets/beacon-
 ||collector.t-idr.com^
 ||cookie.sync.usonar.jp^
+||counter1.fc2.com^$third-party
 ||counter2.blog.livedoor.com^$image
 ||crossees.com^
 ||cv-tracker.stanby.com^
@@ -9568,7 +9568,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||estore.jp/beacon/
 ||ev.tpocdm.com^
 ||external-tag.mysquadbeyond.com^
-||future-shop.jp/rview.gif?
 ||gacraft.jp/publish/token.html
 ||hatmiso.net^$third-party
 ||heatmap.support-inc.co.jp^
@@ -10562,7 +10561,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||lowes.com/gauge/
 ||lowes.com/pharos/api/webTelemetry?
 ||lucida.su/api/event
-||lycos.com/analytics.js
 ||lyft.com/api/track
 ||m.facebook.com/ajax/weblite_resources_timing_logging/
 ||m365.cloud.microsoft/events
@@ -10625,7 +10623,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||mstm.motorsport.com^
 ||mtg.macpaw.com^
 ||mtrics.cdc.gov^
-||musescore.com/components/data?
 ||mx.eneba.com^
 ||myanimelist.net/static/logging.html
 ||myfreecams.com/php/tracking.php?
@@ -11351,10 +11348,8 @@ abc17news.com,al.com,artforum.com,artnews.com,awkward.com,awkwardmom.com,bailiwi
 baeldung.com,cheatsheet.com,pcwelt.de,pwinsider.com#%#//scriptlet('ubo-rmnt', 'script', 'admiral')
 cbssports.com,foxnews.com,gbatemp.net,news.com.au,pcworld.com,usatoday.com#%#//scriptlet('ubo-set', 'admiral', 'noopFunc')
 usatoday.com#%#//scriptlet('ubo-set', 'gnt.x.adm', '')
-||askdriver.com^$redirect=noopjs,script
 ||duetcode.com^$redirect=noopjs,script
 ||glasscoyote.com^$redirect=noopjs,script
-||kindhush.com^$redirect=noopjs,script
 ||unloadyourself.com^$redirect=noopjs,script
 anikore.jp#$#html[class^="loading"] { visibility: visible !important; }
 fedex.com#%#//scriptlet('ubo-set-local-storage-item', 'fdx_enable_new_detail_page', 'true')
@@ -13508,7 +13503,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||stats.seva.rocks^
 ||stats.shareup.app^
 ||stats.shepherd.com^
-||stats.shh.io^
 ||stats.shiftx.com^
 ||stats.simplinetworks.com^
 ||stats.sirdata.com^
@@ -17435,7 +17429,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||s.orangeville.com^
 ||s.ourwindsor.ca^
 ||s.parrysound.com^
-||s.rosettastone.co.uk^
 ||s.rosettastone.com^
 ||s.rosettastone.eu^
 ||s.sachem.ca^
@@ -33736,7 +33729,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||tmt.intelligence.informa.com^
 ||tools.ricoh.co.uk^
 ||tools.ricoh.de^
-||tp.lexisnexis.co.nz^
 ||tp.lexisnexis.com.au^
 ||tr-business.vodafone.com^
 ||tr.informabi.com^
@@ -33935,7 +33927,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||tracking.evanta.com^
 ||tracking.events.adp.com^
 ||tracking.evergy.com^
-||tracking.exclusive-networks.com^
 ||tracking.eyefinity.com^
 ||tracking.faucetdirect.com^
 ||tracking.fcmtravel.com^
@@ -36909,6 +36900,7 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||nicovideo.jp/api/counter/
 ||nijiurachan.net/analytics/
 ||nikkei.com/.resources/tracking/
+||note.com/api/v3/trackings/
 ||odsyms15.com/impression?
 ||oita-press.co.jp/js2020/analytics.js
 ||pvtag.yahoo.co.jp^
@@ -37019,6 +37011,7 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||mr.allegro.
 ||ocular.pepper.pl^
 ||p.gazeta.pl^
+||play.pl/?_hn:type=
 ||rek.www.wp.pl^
 ||savecart.pl/d/
 ||squid.gazeta.pl/bdtrck/
@@ -37237,7 +37230,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 @@||etsy.com/api/v3/ajax/bespoke/*log_performance_metrics=$~third-party
 @@||fpt.microsoft.com^$domain=account.microsoft.com|fpt.microsoft.com
 @@||geoip-db.com/jsonp/$script,third-party
-@@||getpublica.com/playlist.m3u8$xmlhttprequest
 @@||gnar.grammarly.com/events$xmlhttprequest,domain=account.grammarly.com
 @@||groupbycloud.com/gb-tracker-client-3.min.js
 @@||gstatic.com^*/firebase-performance-standalone.js$script,domain=flightradar24.com

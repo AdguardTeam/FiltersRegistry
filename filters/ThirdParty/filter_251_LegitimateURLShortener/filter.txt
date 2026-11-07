@@ -1,6 +1,6 @@
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 04November2026v1
+! OriginalVersion: 06November2026v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -5689,7 +5689,11 @@ $document,removeparam=lr_input,domain=investopedia.com|people.inc
 ||investopedia.com^$document,removeparam=inv_to_sim
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19302144
-||entire.com^$removeparam=redirected_from
+||entire.com^$document,removeparam=redirected_from
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19429873
+||oldphoneworks.com^$document,removeparam=_su_rec
+||oldphoneworks.com^$document,removeparam=_su_rec_id
 
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
@@ -5797,6 +5801,8 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 
 ! breaks unsubscribe links
 @@||newsletter.smartbrief.com/UnSubscribe.jsp$removeparam
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19453388
 
 !#if !ext_ublock
 ! (This subfile is an extension file, and is not for standalone use.)
