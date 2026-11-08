@@ -1,5 +1,5 @@
-! Checksum: eYTJFLFiPnv8/mYInv5NcQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1794083900-14400.patch
+! Checksum: u2LHqX2hck7PKzcsyJAyvg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1794112764-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.21.9
@@ -1199,6 +1199,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||167.235.163.216^$all
 ||eln3ax.com^$all
+||gettopple.com^$all
 ||vws4brkfst.com^$all
 ||zlink0.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1223,7 +1224,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||154.223.16.232^$all
 /adx_iframe_$third-party
-||az-partners.net^
 drvhub.net##.driver-item__install
 |https://undefined/
 /api/rtb-pops/go^$all
@@ -1933,7 +1933,6 @@ reports.adguard.com$badfilter
 @@||gitlab.com/*/raw/main/*$~third-party
 @@||cdn.jsdelivr.net/gh/*@master$~third-party
 @@||easylist.to/*.txt^
-@@||pgl.yoyo.org/adservers/serverlist.
 @@||someonewhocares.org/hosts/
 @@||fanboy.co.nz/*.txt^
 @@||github.githubassets.com/assets/behaviors-$script,xmlhttprequest
@@ -2292,7 +2291,6 @@ $removeparam=gws_rd
 $removeparam=sr_share
 $removeparam=twclid
 $document,removeparam=/^ds_.*$/,domain=~clickserve.dartsearch.net
-$removeparam=Adposition
 $removeparam=adposition
 $removeparam=gbraid
 $removeparam=wbraid
@@ -2390,6 +2388,7 @@ $document,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
 $removeparam=atid
 $document,removeparam=/^clickref\d?=.*$/
+$removeparam=cuid,domain=~dynamicyield.com
 $removeparam=data1,domain=~web3.cmvm.pt
 $removeparam=data2
 $removeparam=data3
@@ -3242,6 +3241,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
+$removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
 ||walmart.$removeparam=wl11
@@ -3612,8 +3612,6 @@ $document,removeparam=mi_u,domain=chewy.com|harborfreight.com|samsclub.com|walma
 ||bestbuy.com^$document,removeparam=jobid
 ||bestbuy.com^$document,removeparam=commcode
 ||bestbuy.com^$document,removeparam=eut
-||verizon.com^$document,removeparam=EMHID
-||verizon.com^$document,removeparam=BID
 ref=thebirthofacapital.info$document,removeparam=ref
 $document,removeparam=smtrctid,domain=samsclub.com|walmart.com
 ||oxylabs.io^$removeparam=groupid

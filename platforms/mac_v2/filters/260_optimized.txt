@@ -1,9 +1,9 @@
-! Checksum: Z9Lf/p49h50/GU04ARa1YA
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1794083912-14400.patch
+! Checksum: I7Z3NHs0I0WzKzA2El865A
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1794112776-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.8
-! TimeUpdated: 2026-11-07T20:35:39+00:00
+! Version: 2.0.3.9
+! TimeUpdated: 2026-11-08T04:36:34+00:00
 ! Expires: 12 hours (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -1323,6 +1323,11 @@ www.reddit.com##shreddit-ad-post:is([author="adobe"][post-title~="Firefly"], [au
 www.reddit.com##shreddit-comments-page-ad:is([domain$=".ai"], [domain="apollo.io"], [domain="hyperagent.com"], #t3_1tr5mav, [title~="AI"])
 www.reddit.com##shreddit-sidebar-ad:is(#t3_1tqih0v, #t3_1tr5maz)
 www.rediff.com##.navlink:has(> [data-secid="nav_aisitebuilder"])
+regex101.com##button[data-section="assistant"][aria-pressed="false"]
+regex101.com##section[data-section="explanation"] p:has(button[aria-label="Open AI Assistant"])
+regex101.com##[aria-label="Notifications"] > [role="dialog"]:has([href="https://docs.regex101.com/application/ai-assistant/"])
+regex101.com#$#section[data-section="match-info"] .oEhHv { font-size: 0px !important }
+regex101.com#$#section[data-section="match-info"] .oEhHv button:first-child { font-size: 14px !important }
 render.com##button:has([d^="M10 3.99707C9.80222 3.99707 9.60888 4.05572 9.44443 4.1656C9.27998 4.27548 9.15181"])
 render.com##.px-15[href^="https://chat.openai.com/?hints=search&prompt=Read%20from"]
 render.com##.px-15[href^="https://claude.ai/new?q=Read%20from"]

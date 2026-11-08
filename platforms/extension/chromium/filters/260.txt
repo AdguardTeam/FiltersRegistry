@@ -1,9 +1,9 @@
-! Checksum: sXVfR/x8F/MWHcqsk5uFSg
-! Diff-Path: ../patches/260/260-s-1794083892-14400.patch
+! Checksum: QfvMTcxPCnNDkOTmlzlX9A
+! Diff-Path: ../patches/260/260-s-1794112756-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.8
-! TimeUpdated: 2026-11-07T20:35:39+00:00
+! Version: 2.0.3.9
+! TimeUpdated: 2026-11-08T04:36:34+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -3327,6 +3327,18 @@ www.reddit.com##shreddit-sidebar-ad:is(#t3_1tqih0v, #t3_1tr5maz)
 ! -- https://www.rediff.com/
 ! AI-Website Builder
 www.rediff.com##.navlink:has(> [data-secid="nav_aisitebuilder"])
+! === Regex101 ===
+! -- https://regex101.com/
+! Sidebar - AI Assistant
+regex101.com##button[data-section="assistant"][aria-pressed="false"]
+! Explanation - AI Assistant paragraph
+regex101.com##section[data-section="explanation"] p:has(button[aria-label="Open AI Assistant"])
+! Update notice for v14.5.0 with AI Assistant
+regex101.com##[aria-label="Notifications"] > [role="dialog"]:has([href="https://docs.regex101.com/application/ai-assistant/"])
+! -- https://regex101.com/?regex=test&testString=&flags=gm&flavor=pcre2&delimiter=%2F
+! Match Information - Ask AI
+regex101.com#$#section[data-section="match-info"] .oEhHv { font-size: 0px !important }
+regex101.com#$#section[data-section="match-info"] .oEhHv button:first-child { font-size: 14px !important }
 ! === Render ===
 ! -- https://render.com/docs/your-first-deploy
 ! Ask button

@@ -1,9 +1,9 @@
-! Checksum: EDldAZK1IXbZbuEl2SuqHA
-! Diff-Path: ../patches/118_optimized/118_optimized-s-1794099149-14400.patch
+! Checksum: Yl+tVtXSd/crSZ4uke0Uqg
+! Diff-Path: ../patches/118_optimized/118_optimized-s-1794112772-14400.patch
 ! Title: EasyPrivacy (Optimized)
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.47
-! TimeUpdated: 2026-11-08T00:49:04+00:00
+! Version: 2.1.74.48
+! TimeUpdated: 2026-11-08T04:35:29+00:00
 ! Expires: 5 days (update frequency)
 &&sub19=undefined&sub20=undefined
 &action=js_stats
@@ -186,7 +186,6 @@
 /api/v1/firehose?_
 /api/v1/metrics
 /api/v1/reportData/*
-/api/v1/reporting/flows
 /api/v2/collector
 /api/web/v1/tracker$ping
 /api_ip_info.php
@@ -1150,6 +1149,7 @@
 ://analytics-cdn.
 ://analytics.*/collect
 ://analytics.*/event
+://analytics.*/hardal
 ://analytics.*/impression
 ://backstory.ebay.
 ://beacon.*/track
@@ -1367,6 +1367,7 @@ _webanalytics.
 ://e.*/open?$image
 ://email.*/o/$image
 ://links.*/s/eo/$image
+://parcel-api.delivery-status.*/open/$image
 ://t.*/open^$image
 _ad_impression.
 _adobe_analytics.js
@@ -1424,7 +1425,6 @@ omni.soundestlink.com$image
 ||cbdatatracker.com^
 ||cdjbf8trk.com^
 ||cdn-vitals.com^
-||cdn.sy-d.io^
 ||cdnlogs.org^
 ||cdnwidget.com^
 ||ciqtracking.com^
@@ -1587,6 +1587,7 @@ omni.soundestlink.com$image
 ||pix.pub^
 ||pixel-tracker.com^
 ||pixmg.com^
+||pocustrack.com^
 ||powerrobotflower.com^
 ||prfct.co^
 ||protechts.net^
@@ -1839,7 +1840,6 @@ omni.soundestlink.com$image
 ||arlime.com^$third-party
 ||arpxs.com^$third-party
 ||arrivalist.com^$third-party
-||artefact.is^$third-party
 ||artfut.com^$third-party
 ||assoctrac.com^$third-party
 ||astro-way.com^$third-party
@@ -2048,7 +2048,6 @@ omni.soundestlink.com$image
 ||count.ly^$third-party
 ||counter.dev^$third-party
 ||counter.gd^$third-party
-||counterapi.dev^$third-party
 ||counterbot.com^$third-party
 ||countercentral.com^$third-party
 ||countergeo.com^$third-party
@@ -2279,7 +2278,6 @@ omni.soundestlink.com$image
 ||froomle.com^$third-party
 ||fruitflan.com^$third-party
 ||ftbpro.com^$third-party
-||fueldeck.com^$third-party
 ||fuelx.com^$third-party
 ||fugetech.com^$third-party
 ||fullcircleinsights.com^$third-party
@@ -2584,7 +2582,6 @@ omni.soundestlink.com$image
 ||lxtrack.com^$third-party
 ||lypn.net^$third-party
 ||lytics.io^$third-party
-||m-pathy.com^$third-party
 ||m6r.eu^$third-party
 ||madkudu.com^$third-party
 ||magnetmail1.net^$third-party
@@ -2889,6 +2886,7 @@ omni.soundestlink.com$image
 ||qubitproducts.com^$third-party
 ||questionpro.com^$third-party,domain=~questionpro.com.au|~questionpro.eu
 ||questradeaffiliates.com^$third-party
+||quillion.com^$third-party
 ||quintelligence.com^$third-party
 ||qzlog.com^$third-party
 ||r7ls.net^$third-party
@@ -3300,6 +3298,7 @@ omni.soundestlink.com$image
 ||virgul.com^$third-party
 ||virool.com^$third-party
 ||virtualnet.co.uk^$third-party
+||visibli.com^$third-party
 ||visioncriticalpanels.com^$third-party
 ||visistat.com^$third-party
 ||visitor-analytics.io^$third-party
@@ -3389,6 +3388,7 @@ omni.soundestlink.com$image
 ||xxxcounter.com^$third-party
 ||xyztraffic.com^$third-party
 ||y-track.com^$third-party
+||ybotvisit.com^$third-party
 ||yellowbrix.com^$third-party
 ||yext-pixel.com^$third-party
 ||yextevents.com^$third-party
@@ -5200,6 +5200,7 @@ omni.soundestlink.com$image
 ||profanstee.com^
 ||profitrumour.com^
 ||profusesupport.com^
+||projectglove.com^
 ||promiseair.com^
 ||propertypotato.com^
 ||propsynergy.com^
@@ -6197,8 +6198,8 @@ omni.soundestlink.com$image
 ||moengage.com^$third-party
 ||najva.com^$third-party
 ||netmera-web.com^$third-party
+||notify.solutions^$third-party
 ||notix.io^$third-party
-||outfunnel.com^$third-party
 ||pn.vg^$third-party
 ||provesrc.com^$third-party
 ||psh.one^$third-party
@@ -6338,7 +6339,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||iyi.net^$third-party
 ||kctag.net^$third-party
 ||keytrack.de^$third-party
-||kostenlose-counter.com^$third-party
 ||kupona.de^$third-party
 ||link-empfehlen24.de^$third-party
 ||losecounter.de^$third-party
@@ -6558,7 +6558,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||freestats.tv^$third-party
 ||geocontatore.com^$third-party
 ||hiperstat.com^$third-party
-||ipfrom.com^$third-party
 ||italianadirectory.com^$third-party
 ||laserstat.com^$third-party
 ||mystat.it^$third-party
@@ -6683,6 +6682,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||webstat.no^$third-party
 ||xtractor.no^$third-party
 ||persianstat.com^$third-party
+||persianstat.ir^$third-party
 ||tinystat.ir^$third-party
 ||yektanet.com^$third-party
 ||adschoom.com^$third-party
@@ -7143,7 +7143,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||argos.citruserve.com^
 ||ariane.abtasty.com^
 ||arkoselabs.com/metrics/
-||aservice.cloud/trc/mastertag
 ||assets.9gtb.com^
 ||assets.apollo.io/micro/website-tracker/
 ||assets.hearstapps.com/commerce/release/affiliate-bundle.
@@ -8437,7 +8436,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||statuspage.io/embed/frame
 ||stg-data-collector.playbuzz.com^
 ||storage.googleapis.com/builder-preview/iframe/pixel.js
-||storage.googleapis.com/tm-frend-graffiti/
 ||storage.googleapis.com/vs-scripts/intentiq/vsintentiq.js
 ||storage.syncmedia.io/libs/sm_capture_
 ||stormgate.production.raptive.com^
@@ -8780,7 +8778,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||userexperience.thehut.net^
 ||usersegment.wpdigital.net^
 ||userstatics.com/get/script.js
-||userway.org/api/abn/events
 ||userway.org/api/v1/stats
 ||usizy.com/external/pageview
 ||usr.interactiveone.com^
@@ -9845,7 +9842,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||uc.xddi.ru^
 ||ulogin.ru/js/stats.js
 ||umnico.com/tracker/
-||uptolike.com/widgets/*/imp?
 ||visitor-microservice.ext.p-a.im^
 ||visor.sberbank.ru^
 ||webtrack.biz^$third-party
@@ -10084,7 +10080,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||baidu.com^*/wb.gif?
 ||banggood.com/collectBanner?
 ||bats.video.yahoo.com^
-||bc.nejm.org/script.js
 ||bcbits.com/bundle/bundle/1/analytics-$domain=bandcamp.com
 ||bcbits.com/bundle/bundle/1/impl-$domain=bandcamp.com
 ||beacon.dropbox.com^
@@ -10203,7 +10198,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||collector.xhamster3.com^
 ||collider.com/strpixel.png
 ||colvk.viki.io^
-||community.netweather.tv/4p9v/
 ||compare-static.flightconnections.com/tag.js
 ||confiant.msn.com^
 ||connecteam.com/bi/api/ReportHit/
@@ -10520,7 +10514,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||lastpass.com/lpapi/content/pixels
 ||lastpass.com/m.php/proxy_tracker
 ||lc-event.pixiv.net^
-||leadconnectorhq.com/stats/event
 ||lego.com/api/dl-event-ingest
 ||lego.com/api/uec/v1/events
 ||lendingtree.com/analytics/
@@ -10686,6 +10679,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||pdffiller.com/click-stream/
 ||pelisfree.site/cdn-cgi/trace
 ||pendo.scopus.com/data/ptm.gif
+||pepin.padlet.com^
 ||perplexity.ai/rest/event/analytics
 ||perr.hola.org^
 ||pf.newegg.com^
@@ -10871,7 +10865,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||stats.ibtimes.co.in^
 ||stats.jiosaavn.com^
 ||stats.justpaste.it^
-||stats.lrb.co.uk^
 ||stats.searchftps.net^
 ||stats.suenicholls.com^
 ||stats.trimbles.ie^
@@ -10900,7 +10893,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||support.github.com/session/event
 ||support.github.com/session/user
 ||support.google.com/apis/logjourney
-||svcs.ebay.com/ufeservice/v1/metrics
 ||swasc.homedepot.com^$ping
 ||szrpr.raen.com^
 ||t-mobile.com/self-service-commerce/v1/logging
@@ -11712,7 +11704,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||a8.shizq.store^
 ||a8.shokubun.net^
 ||a8.shop.basefood.co.jp^
-||a8.shop.km-link.jp^
 ||a8.shop.nicosuma.com^
 ||a8.shop.tsukijiwadatsumi.com^
 ||a8.shopserve.jp^
@@ -12654,7 +12645,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||a8n.radishbo-ya.co.jp^
 ||a8net.augustberg.jp^
 ||a8net.beyond-gym.com^
-||a8net.gset.co.jp^
 ||a8net.hassyadai.com^
 ||a8net.kitamura-print.com^
 ||a8net.sourcenext.com^
@@ -13354,7 +13344,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||stats.kryptoslogic.com^
 ||stats.ks-labs.de^
 ||stats.kyushoku2050.org^
-||stats.labibli.com^
 ||stats.laptopsin.space^
 ||stats.lastfm.matthiasloibl.com^
 ||stats.latehours.net^
@@ -13364,7 +13353,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||stats.learnlinux.tv^
 ||stats.leavetrackapp.com^
 ||stats.lefthoek.com^
-||stats.legendofnom.com^
 ||stats.leoloso.com^
 ||stats.lica.at^
 ||stats.lik.fr^
@@ -13388,7 +13376,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||stats.matthiasloibl.com^
 ||stats.maximaconsulting.xyz^
 ||stats.mein-futterlexikon.org^
-||stats.memberdrive.org^
 ||stats.mesenvies.fr^
 ||stats.michaeloliver.dev^
 ||stats.micv.works^
@@ -15585,7 +15572,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||med.linzesshcp.com^
 ||med.live2thrive.org^
 ||med.myandroderm.com^
-||med.namenda.com^
 ||med.namzaric.com^
 ||med.rectiv.com^
 ||med.saphris.com^
@@ -17420,7 +17406,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||s.ourwindsor.ca^
 ||s.parrysound.com^
 ||s.rosettastone.com^
-||s.rosettastone.eu^
 ||s.sachem.ca^
 ||s.save.ca^
 ||s.simcoe.com^
@@ -20499,7 +20484,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||smetrics.slalom.com^
 ||smetrics.sleepnumber.com^
 ||smetrics.sling.com^
-||smetrics.sloc.co.uk^
 ||smetrics.slugger.com^
 ||smetrics.smart-invest.sparkasse-wuppertal.de^
 ||smetrics.smartcommerce.amazon.in^
@@ -23077,7 +23061,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||connect.tribepictures.com^
 ||connect.uniti.com^
 ||connect.uofuhealth.org^
-||connect.walkerfirst.com^
 ||connect.zehno.com^
 ||connected.integrationpoint.com^
 ||conseil.seicgland.ch^
@@ -23273,7 +23256,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||global.raboag.com^
 ||globalcommunications.sc.com^
 ||glue.evansadhesive.com^
-||go.accumaxglobal.com.au^
 ||go.acelisconnectedhealth.com^
 ||go.adaquest.com^
 ||go.alliancefunds.com^
@@ -24451,7 +24433,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||marketing.funmobility.com^
 ||marketing.funraise.io^
 ||marketing.fwcbd.com^
-||marketing.gables.com^
 ||marketing.gasandsupply.com^
 ||marketing.gatewayp.com^
 ||marketing.gatlinburg.com^
@@ -24779,7 +24760,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||marketing.opoffice.com^
 ||marketing.optimumenergyco.com^
 ||marketing.optionmetrics.com^
-||marketing.optis-world.com^
 ||marketing.optitex.com^
 ||marketing.oremuscorp.com^
 ||marketing.orionhealth.com^
@@ -24899,7 +24879,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||marketing.santabarbaraca.com^
 ||marketing.sap.events.deloitte.com^
 ||marketing.savannahchamber.com^
-||marketing.scalematrix.com^
 ||marketing.scenicsedona.com^
 ||marketing.schneiderdowns.com^
 ||marketing.schuff.com^
@@ -25473,7 +25452,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||sales.virtualpbx.com^
 ||salesandmarketing.aitcfis.com^
 ||samarketing.sedgwick.com^
-||science.schoolspecialtynews.com^
 ||scispg.smu.edu.sg^
 ||scmarketing.colliers.com^
 ||se.netpartnering.com^
@@ -25579,7 +25557,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||southwest.pgaofamericagolf.com^
 ||spa.admissions.ucdenver.edu^
 ||spark.thelyst.com^
-||srsa.srglobal.com^
 ||srsg.srglobal.com^
 ||sruk.srglobal.com^
 ||start.mediware.com^
@@ -25803,7 +25780,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||tcdata.fnac.com^
 ||0.net.easyjet.com^
 ||63-217-112-145.static.pccwglobal.net.iberostar.com^
-||68-175.net.jumia.co.ke^
 ||affiliate.logitravel.com^
 ||ai.net.anwalt.de^
 ||ak-br-cdn.kwai.net.iberostar.com^
@@ -25824,7 +25800,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||bruny.net.anwalt.de^
 ||bs-pro-origin-pull.kwai.net.iberostar.com^
 ||cast.net.anwalt.de^
-||cdn.net.dz.jumia.com^
 ||cdn.net.elogia.net^
 ||dc01p-net-sslvpn0-ra.net.jumia.com.gh^
 ||dev-cenam-mobilefirst.tmx-internacional.net.iberostar.com^
@@ -26497,7 +26472,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||tr.news.easyvoyage.com^
 ||tr.news.easyvoyage.de^
 ||tr.news.editions-lva.fr^
-||tr.news.enkiapp.io^
 ||tr.news.entreprise-pm.com^
 ||tr.news.eureden.com^
 ||tr.news.eurodatatv.com^
@@ -26667,7 +26641,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||tr.payment.lvmh.com^
 ||tr.pm.pelhammedia.com^
 ||tr.poker.np6.com^
-||tr.pole-emploi-services.com^
 ||tr.pole-emploi.info^
 ||tr.policyexpert.info^
 ||tr.politicoevents.eu^
@@ -29153,7 +29126,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||qwfuug.phoneclick.it^
 ||qwylpm.teljoy.co.za^
 ||qxauwo.sportisimo.ro^
-||qxibrn.enviedefraise.fr^
 ||qxkous.sweet-mommy.com^
 ||qxsfaj.caloo.jp^
 ||qxvqhy.miliboo.es^
@@ -29385,7 +29357,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||sqtivj.vidaxl.hr^
 ||srmdvb.ekohealth.com^
 ||sroork.mrmarvis.nl^
-||srratl.mona-mode.at^
 ||ssgamf.stories.com^
 ||sshhfy.ray-ban.com^
 ||ssigpc.servusmarktplatz.com^
@@ -30816,7 +30787,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||bps.ricoh.ie^
 ||bpsemea.hilton.com^
 ||br.adpinfo.com^
-||branch.verintsystemsinc.com^
 ||branchout.pegs.com^
 ||brand.adp.ca^
 ||breakthrough.kronos.com^
@@ -30976,7 +30946,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||connect.care.sheppardpratt.org^
 ||connect.care.wakemed.org^
 ||connect.caringcrowd.org^
-||connect.carrier.com.ph^
 ||connect.chapman.com^
 ||connect.compellent.com^
 ||connect.delphi.international^
@@ -31893,7 +31862,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||go.sgs.com^
 ||go.sseairtricity.com^
 ||go.steelbuilding.com^
-||go.syncsketch.com^
 ||go.testo.com^
 ||go.transtector.com^
 ||go.tuev.cn^
@@ -32526,7 +32494,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||info.unis.edu.gt^
 ||info.vaadsheli.co.il^
 ||info.venyu.com^
-||info.verint.com^
 ||info.viant.com^
 ||info.wkf.fr^
 ||info.wolterskluwer.de^
@@ -33186,7 +33153,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||response.abrdn.com^
 ||response.accuitysolutions.com^
 ||response.approva.net^
-||response.australian.physio^
 ||response.b2b.bea.com^
 ||response.bea.com^
 ||response.careerstructure.com^
@@ -33340,7 +33306,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||secureinfo.edc.ca^
 ||securetracking.eaton.com^
 ||securetracking.golfpride.com^
-||securityintelligence.verint.com^
 ||seek.intel.com^
 ||seek.uwa.edu.au^
 ||sendmoney.americanexpress.co.uk^
@@ -33891,7 +33856,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||tracking.corteva.ca^
 ||tracking.corteva.us^
 ||tracking.cpa.qa.web.visa.com^
-||tracking.creditacceptance.com^
 ||tracking.dataloen.dk^
 ||tracking.dev2.pepsicopartners.com^
 ||tracking.dfinsolutions.com^
@@ -33983,7 +33947,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||tracking.learn.oakstreethealth.com^
 ||tracking.lfg.com^
 ||tracking.lightingdirect.com^
-||tracking.lightingshowplace.com^
 ||tracking.link.boone.health^
 ||tracking.lseg.com^
 ||tracking.luminishealth.org^
@@ -34142,7 +34105,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||tracking.vitalant.org^
 ||tracking.vodafone.co.uk^
 ||tracking.vodafone.com^
-||tracking.winecoolerdirect.com^
 ||tracking.xmor.info^
 ||tracking.your.montagehealth.org^
 ||tracking.zakelijk.cz.nl^
@@ -34998,7 +34960,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||2efj.up.coop^
 ||3esm.consubebe.es^
 ||5fm.985fm.ca^
-||66jo.societegenerale.fr^
 ||6pal.consobaby.com^
 ||6swu.cpa-france.org^
 ||7lbd4.armandthiery.fr^
@@ -36069,7 +36030,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||united.web.de/confirm?
 ||united.web.de/event?
 ||vinted.de/relay/events
-||volksverpetzer.de/pl/v.js
 ||wa.gmx.net^
 ||wa.web.de^
 ||windowspro.de/stats/
@@ -36509,7 +36469,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||l.gamekult.com^
 ||l.nicematin.com^
 ||l.pleinevie.fr^
-||l.sportauto.fr^
 ||l.topsante.com^
 ||l.zdnet.fr^
 ||lacoccinelle.net/tools.js
@@ -36536,6 +36495,7 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||sncf-connect.com/bff/api/v1/t/events
 ||sta.zone-telechargement.
 ||stats.zone-telechargement.
+||stw.extreme-down.
 ||t.blablacar.com^
 ||t.hellowork.com^
 ||tracking.cdiscount.com^
@@ -36846,7 +36806,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 ||dxlive.com/js/dtrace.js
 ||ek-tracker.ekitan.com^
 ||ekitan.com/*-analytics.js
-||ekitan.com/common/ek-tracker/
 ||eq-beacon.stream.co.jp^
 ||eq-player-log.cdnext.stream.ne.jp^
 ||esports-world.jp/js/banner.event.js
@@ -37391,7 +37350,6 @@ search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
 @@||iwa.iplsc.com/iwa.js$script
 @@||sascdn.com/tag/$script,domain=filmweb.pl
 @@||d.tailtarget.com/profiles.js$domain=superesportes.com.br
-@@||sdk-analytics-web.cloud.itau.com.br/index.js$script,domain=meu.userede.com.br
 @@||playep.pro/log_event$~third-party,xmlhttprequest
 @@||player.smotrim.ru/js/piwik.js$~third-party
 @@||plplayer.online/log_event$~third-party,xmlhttprequest
