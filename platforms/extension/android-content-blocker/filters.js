@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.5.3.18",
-			"timeUpdated": "2026-11-09T05:08:46+0000",
+			"version": "2.5.3.19",
+			"timeUpdated": "2026-11-09T06:16:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.15.8",
-			"timeUpdated": "2026-11-09T05:09:10+0000",
+			"version": "2.1.15.9",
+			"timeUpdated": "2026-11-09T06:16:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.85.85",
-			"timeUpdated": "2026-11-09T05:09:38+0000",
+			"version": "2.2.85.86",
+			"timeUpdated": "2026-11-09T06:16:48+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -707,8 +707,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.98.90",
-			"timeUpdated": "2026-11-09T05:09:46+0000",
+			"version": "2.0.98.91",
+			"timeUpdated": "2026-11-09T06:16:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.27",
-			"timeUpdated": "2026-11-09T03:10:59+0000",
+			"version": "2.0.87.28",
+			"timeUpdated": "2026-11-09T06:16:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -751,8 +751,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.33.94",
-			"timeUpdated": "2026-11-07T16:08:57+0000",
+			"version": "2.0.33.95",
+			"timeUpdated": "2026-11-09T06:16:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -868,8 +868,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.0.17",
-			"timeUpdated": "2026-11-03T12:11:34+0000",
+			"version": "2.0.0.18",
+			"timeUpdated": "2026-11-09T06:17:00+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -1802,8 +1802,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.69.19",
-			"timeUpdated": "2026-11-09T02:11:30+0000",
+			"version": "2.1.69.20",
+			"timeUpdated": "2026-11-09T06:17:05+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
