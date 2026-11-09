@@ -1,18 +1,20 @@
 ![Adblock Plus 2.0]
-! Checksum: oSEViVdgf5N0MLqrnTmymQ
-! Diff-Path: ../patches/118_optimized/118_optimized-s-1794112769-14400.patch
+! Checksum: rnvUv/jO/CkjDqgTlbJF9A
+! Diff-Path: ../patches/118_optimized/118_optimized-s-1794185569-14400.patch
 ! Title: EasyPrivacy (Optimized)
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.48
-! TimeUpdated: 2026-11-08T04:35:29+00:00
+! Version: 2.1.74.49
+! TimeUpdated: 2026-11-09T00:49:31+00:00
 ! Expires: 5 days (update frequency)
 &&sub19=undefined&sub20=undefined
 &action=js_stats
 &ev=PageView&
 &EventType=Impression&
+&gtm=*&tag_exp=
 &http_referer=$script,xhr,domain=~biletomat.pl|~facebook.com|~jobscore.com
 &refer=http$script
 &t=pageview&
+&tid=*&gtm=*&ecid=
 &ui-instrumentation-components-beacon.InstrumentationBeacon.sendData=1
 -adobe-analytics/
 -adobeDatalayer_bridge.js
@@ -86,6 +88,7 @@
 /a.gif?
 /a/elevar/static/*
 /a/performance_timing/*
+/a?id=*&gtm=
 /abc.gif?
 /access.php?referrer=
 /acclog.cgi?
@@ -177,10 +180,13 @@
 /api/log-visit
 /api/metrics/collect
 /api/metrics/event
+/api/otlp/trace
 /api/pageview/*$ping
 /api/pageview?
 /api/pixel?
 /api/sentry/tunnel$xhr
+/api/t/c|
+/api/t/gtm/*
 /api/track?guid
 /api/v1/EndpointTracker
 /api/v1/firehose/batch
@@ -261,6 +267,7 @@
 /cache_warmer/track/*
 /caixinlog.js
 /call.tracker.js
+/ccm/collect?
 /cdn-cgi/beacon/*
 /cdn-cgi/rum?
 /cdn-cgi/zaraz/*
@@ -297,8 +304,10 @@
 /CofinaHits.js
 /cogi-etracker.js
 /cohesion-latest.min.js
+/cohesion/xs2.html
 /coinhive.min.js
 /collect.gif?
+/collect/metric|
 /collect/pv?
 /collect/view?
 /collect/view_count?
@@ -348,6 +357,7 @@
 /dataunlocker.js
 /dcjs/prod/*
 /dcs.gif?
+/ddm/activity/src=
 /dead-clicks-autocapture.js
 /detectIncognito.min.js
 /detm-container-ftr.js
@@ -372,6 +382,7 @@
 /dynamicyield/*
 /dynaTraceMonitor?
 /e.gif?
+/e?k=*&v=$image
 /ecg-js-ga-tracking/index.
 /eclytics/*
 /egcs/v2/collect
@@ -485,6 +496,7 @@
 /geo.php?
 /geoLocationData/v1/*
 /get/live/web/_/*$script,~3p
+/get_cookie_id?cookie_domain=
 /get_geoip?
 /get_site_data?requestUUID=
 /getlog.gif
@@ -645,11 +657,13 @@
 /matomo/*$script,domain=~github.com|~hub.docker.com|~matomo.org|~wordpress.org
 /mc4wp-premium/ecommerce3/assets/js/tracker.js
 /measure/pixel/*
+/measurement/conversion?
 /metric/?mid=
 /metric/?wid=
 /metrica/sp.js
 /metrics/bambuser.min.js
 /metrics/event?
+/metrics/ga/*
 /metrics/rum
 /metrics/statsd/*
 /metrics/v1/frontend/*
@@ -875,9 +889,11 @@
 /seo/pageStat/*
 /services/t/l?referrer=
 /session/update-beacon
+/set_cookie?val=
 /set_tracking.js
 /sfdc/networktracking.js
 /sftouch?branchId=
+/sgtm/g/*
 /shared/sentry/*
 /shopify-boomerang-
 /shopify/track.js
@@ -894,6 +910,7 @@
 /smetrics.*/b/ss/*
 /smetrics.*/id?
 /Smile_ElasticsuiteTracker/js/tracking.min.js
+/smrwv/v1/webvital
 /snowplow.js
 /snowplow/*$script
 /snowplow_$script
@@ -937,6 +954,7 @@
 /strpixel.png?
 /sw.js?origin=
 /sw/analytics.js
+/sw_iframe.html?origin=
 /swlapi/stats|
 /symplr-analytics-
 /t.gif?
@@ -944,6 +962,7 @@
 /taevents-c.js
 /tagcommander/prd/*
 /tagmanager/pptm.js
+/tagmetrics/*
 /tc_analytics.js
 /tccl.min.js
 /TeaLeaf.js
@@ -956,6 +975,7 @@
 /ticimax/analytics.js
 /tilda-stat-1.0.min.js
 /tjx-tracking-data.js
+/tms?id=
 /tncms/tracking.js
 /tongji.js
 /tr.gif?
@@ -1051,6 +1071,8 @@
 /uutils.fcg?
 /v.gif?
 /v1/adn/visit|
+/v1/events/publish|
+/v1/external/visitor|
 /v1/pixel?
 /v1/tracker.js
 /v1/viewport_events
@@ -1160,16 +1182,20 @@
 ://collector.*/event
 ://dwh-prod.*/de.npg/
 ://fallback.*/collector
+://gtm-tagging.
+://gtm.prod.
 ://insights-collector.
 ://l.*/counter.php?id=$script,~3p
 ://l.*/script.php?i=$script,~3p
 ://lightning.*/launch/
+://load.sgtm.
 ://matomo.$domain=~matomo.dhjensen.dk|~matomo.org
 ://piwik.$domain=~matomo.org|~piwik.pro
 ://plausible.*/api/event|
 ://plausible.*/js/script.
 ://posthog.$script,domain=~posthog.com
 ://segment-cdn.
+://sgtm.
 ://signal.*/hardal
 ://sp.*/sp/h|$xhr
 ://ssgtm.
@@ -1183,6 +1209,7 @@
 ?action=track_visitor&
 ?action=tracking_script
 ?event=pageview&
+?id=GTM-*&l=gtmDataLayer
 ?log=stats-
 ?log=united-impression&
 ?logType=impression&
@@ -1249,7 +1276,7 @@ _webanalytics.
 /ns.html?id=GTM-
 ://gtm.*.js?st=
 ://load.*.js?st=$~3p
-://sgtm.*.js?
+://sgtm.
 ://tagging.*.js?aw=
 ://tagging.*/settings.js
 .js?tg=$~3p
@@ -1715,6 +1742,7 @@ omni.soundestlink.com$image
 ||aamsitecertifier.com^$3p
 ||ablyft.com^$3p
 ||abmr.net^$3p
+||absmartly.io^$3p
 ||absolstats.co.za^$3p
 ||abtshield.com^$3p
 ||accdab.net^$3p
@@ -1799,6 +1827,7 @@ omni.soundestlink.com$image
 ||akstat.io^$3p
 ||alcmpn.com^$3p
 ||alenty.com^$3p
+||alketech.eu^$3p
 ||alocdn.com^$3p
 ||alpixtrack.com^$3p
 ||altabold1.com^$3p
@@ -1828,6 +1857,7 @@ omni.soundestlink.com$image
 ||anytrack.io^$3p
 ||apextwo.com^$3p
 ||apicit.net^$3p
+||app.dub.co^$3p
 ||appboycdn.com^$3p
 ||appcast.io^$3p
 ||appdynamics.com^$3p
@@ -1871,6 +1901,7 @@ omni.soundestlink.com$image
 ||baikalize.com^$3p
 ||bam-x.com^$3p
 ||baptisttop1000.com^$3p
+||baqend.com^$3p
 ||barilliance.net^$3p
 ||baynote.net^$3p
 ||bbthat.com^$script,3p
@@ -1962,6 +1993,7 @@ omni.soundestlink.com$image
 ||cartstack.com^$3p
 ||cccpmo.com^$3p
 ||ccgateway.net^$3p
+||ccmbg.com^$3p
 ||cdn-net.com^$3p
 ||cdnlibjs.com^$3p
 ||cdnmaster.com^$3p
@@ -2122,6 +2154,7 @@ omni.soundestlink.com$image
 ||dmpprof.com^$3p
 ||dmtracker.com^$3p
 ||dmxleo.com^$3p
+||dn-analytics.alketech.eu^
 ||doceree.com^$3p
 ||doclix.com^$3p
 ||dojomojo.ninja^$3p
@@ -2132,6 +2165,7 @@ omni.soundestlink.com$image
 ||dsmmadvantage.com^$3p
 ||dsparking.com^$3p
 ||dti-ranker.com^$3p
+||dubcdn.com^$3p
 ||durationmedia.net^$3p
 ||dvnfo.com^$3p
 ||dynatrace-managed.com^$3p
@@ -4405,6 +4439,7 @@ omni.soundestlink.com$image
 ||funoverbored.com^
 ||funoverflow.com^
 ||funtoyplanet.com^
+||furiousvinyl.com^
 ||furryfork.com^
 ||fusedcontent.com^
 ||futuristicfifth.com^
@@ -4490,6 +4525,7 @@ omni.soundestlink.com$image
 ||grocerycrew.com^
 ||grocerydog.com^
 ||groglog.com^
+||grooveguides.com^
 ||groovespacing.com^
 ||groovyornament.com^
 ||grouchybrothers.com^
@@ -5167,6 +5203,7 @@ omni.soundestlink.com$image
 ||possiblepencil.com^
 ||potatoinvention.com^
 ||potentmagic.com^
+||pottylife.com^
 ||powerfulblends.com^
 ||powerfulcopper.com^
 ||powertoolwiki.com^
@@ -5266,6 +5303,7 @@ omni.soundestlink.com$image
 ||raintwig.com^
 ||rainyhand.com^
 ||rainyrule.com^
+||ramartworks.com^
 ||rambunctiousflock.com^
 ||rangecake.com^
 ||rangeplayground.com^
@@ -5292,6 +5330,7 @@ omni.soundestlink.com$image
 ||receptivereaction.com^
 ||recessrain.com^
 ||recipearena.com^
+||recipediner.com^
 ||recipepile.net^
 ||recipepin.com^
 ||reconditeprison.com^
@@ -6933,6 +6972,7 @@ $3p,xhr,domain=opensubtitles.org
 ||analytics-fe.digital-cloud-prem.medallia.eu^
 ||analytics-fe.digital-cloud.medallia.ca^
 ||analytics-fe.digital-cloud.medallia.com^
+||analytics-fe.digital-cloud.medallia.eu^
 ||analytics-ipv6.tiktokw.us^
 ||analytics-prd.aws.wehaa.net^
 ||analytics-prod-alb-292764149.us-west-2.elb.amazonaws.com^
@@ -7096,6 +7136,7 @@ $3p,xhr,domain=opensubtitles.org
 ||ape-tagit.timeinc.net^
 ||apester.com/event^
 ||api-analytics-prd.pelcro.com^
+||api-engage-us.sitecorecloud.io^
 ||api-iam.intercom.io/messenger/web/metrics
 ||api-location-prd.pelcro.com^$domain=newsweek.com
 ||api-pf.nw18.com/cdp-api/api/data
@@ -7120,10 +7161,13 @@ $3p,xhr,domain=opensubtitles.org
 ||aplus.alibaba.com^
 ||app.adjust.com^$3p
 ||app.carnow.com/dealers/track_visitor
+||app.factori.ai/personica.js
+||app.lifesight.io/personica.js
 ||app.link/_r?$script,3p
 ||app.octaneai.com/get_analytics_engine/
 ||app.optibase.io^
 ||app.pendo.io/data/$image
+||app.planhat.com/analytics/plantrack.min.js
 ||app.qualified.com/*/sentry/
 ||app.qualified.com/*/visitor_events
 ||app.revenuehero.io/logs/ingest
@@ -7148,6 +7192,7 @@ $3p,xhr,domain=opensubtitles.org
 ||assets.apollo.io/micro/website-tracker/
 ||assets.hearstapps.com/commerce/release/affiliate-bundle.
 ||assets.jimstatic.com/at.js
+||assets.sprocket.bz/trackers/
 ||assets.yumpu.com/release/*/tracking.js
 ||assistant.watson.appdomain.cloud/analytics/
 ||async-px-eu.dynamicyield.com^
@@ -7222,6 +7267,7 @@ $3p,xhr,domain=opensubtitles.org
 ||blackcrow.ai/v1/events/
 ||bmrg.reflected.net^
 ||bonfire.spklw.com^
+||bot.cdn.adeo.cloud^
 ||botdetection.hbrsd.com^
 ||bpi.zip.co/trx/
 ||branch.io^$3p
@@ -7277,7 +7323,9 @@ $3p,xhr,domain=opensubtitles.org
 ||cdn.cuty.io/fps.js
 ||cdn.debugbear.com^$3p
 ||cdn.dfsdk.com^
+||cdn.drda.io/scripts/analytics/
 ||cdn.fonts.net/t/1.css?
+||cdn.ltba.io^
 ||cdn.polarbyte.com^
 ||cdn.prod.euid.eu^
 ||cdn.seonintelligence.com^
@@ -7934,6 +7982,7 @@ $3p,xhr,domain=opensubtitles.org
 ||metrics.userguiding.com^
 ||metrix.emagister.com^
 ||mfilterit.net^$3p
+||mirakl.net/mtag.min.js
 ||mj-snowplow-static-js.s3.amazonaws.com^
 ||ml.com/enterprisetagging/
 ||mlweb.dmlab.hu^
@@ -7989,6 +8038,7 @@ $3p,xhr,domain=opensubtitles.org
 ||obs.du89buildings.com^
 ||obs.esnlocco.com^
 ||obs.greencolumnblog.com^
+||obs.protoroundprince.com^
 ||obs.sd4823.spglobal.com^
 ||obs.system1onesource.com^
 ||observe-nexus.pointandplace.com^
@@ -8093,6 +8143,8 @@ $3p,xhr,domain=opensubtitles.org
 ||pixel.mtrcs.samba.tv^
 ||pixel.newscred.com^
 ||pixel.nudgify.com^
+||pixel.optimeeze.data.adeo.cloud^
+||pixel.profound.click^
 ||pixel.propublica.org^
 ||pixel.pub.lilyai.net^
 ||pixel.quantserve.com^
@@ -8519,7 +8571,9 @@ $3p,xhr,domain=opensubtitles.org
 ||tag.rmp.rakuten.com^
 ||tag.statshop.fr^
 ||tag.unifyintent.com^
+||tag.web.onesdata.com^
 ||tagger.opecloud.com^
+||tagging.conde.digital^
 ||tagging.shiftdigitalapps.io^
 ||taggstar.com^*/taggstar.min.js
 ||tags.catapultx.com^
@@ -8699,6 +8753,7 @@ $3p,xhr,domain=opensubtitles.org
 ||tracking.musixmatch.com^
 ||tracking.offerista.com^
 ||tracking.olx-st.com^
+||tracking.optimeeze.data.adeo.cloud^
 ||tracking.pacharge.com^
 ||tracking.plinga.de^
 ||tracking.prepr.io^
@@ -9174,6 +9229,7 @@ $3p,xhr,domain=opensubtitles.org
 ||nlytcs.idfnet.net^
 ||orbidder.otto.de^
 ||owen.prolitteris.ch^
+||p.marktplaats.net^
 ||pixel.poptok.com^
 ||plausible.ams.to^
 ||px.staticfiles.at^
@@ -9557,6 +9613,7 @@ $3p,xhr,domain=opensubtitles.org
 ||c-rings.net^$script,3p
 ||client-log.karte.io^
 ||clipkit.co/clipkit_assets/beacon-
+||collection.cyberprocurement.com^
 ||collector.t-idr.com^
 ||cookie.sync.usonar.jp^
 ||counter1.fc2.com^$3p
@@ -9884,6 +9941,7 @@ $3p,xhr,domain=opensubtitles.org
 ||mtm.qdqmedia.com
 ||pub.servidoresge.com^
 ||rt.cdnmedia.tv^
+||rum.haystack.es^
 ||segment.lalr.co^
 ||sp.vtex.com^
 ||stats.administrarweb.es^
@@ -10254,6 +10312,7 @@ $3p,xhr,domain=opensubtitles.org
 ||df.infra.sz.shopee.
 ||dhresource.com/dhs/fob/js/common/track/$domain=dhgate.com
 ||digital.flytedesk.com/js/head.js
+||dior.com/contcdc/
 ||discover-metrics.cloud.seek.com.au^
 ||dls-account.di.atlas.samsung.com^
 ||dmt.fidelity.com/prod/meas/
@@ -10520,6 +10579,7 @@ $3p,xhr,domain=opensubtitles.org
 ||lego.com/api/uec/v1/events
 ||lendingtree.com/analytics/
 ||lenovo.com/gemets/
+||leroymerlin.co.za/fokt/
 ||librato-collector.genius.com^
 ||link.kogan.com^
 ||linkedin.com/apfc/collect$xhr
@@ -10568,6 +10628,8 @@ $3p,xhr,domain=opensubtitles.org
 ||manua.ls/gtag
 ||marketing.alibaba.com^
 ||marketing.dropbox.com^
+||masterclass.com/qz6s/
+||matalan.co.uk/track
 ||maximise.nyc3.cdn.digitaloceanspaces.com/mxmse.min.js$domain=essentiallysports.com
 ||mcdonalds.com/tags/js/*/mparticle.js
 ||mcs-ie.tiktokw.eu^
@@ -10607,6 +10669,7 @@ $3p,xhr,domain=opensubtitles.org
 ||mon.us.tiktokv.com^
 ||monitor.channel4.com^
 ||monitor.ebay.com^
+||monster.com/visitor/tracking-v11.js
 ||morningstar.com/api/v1/analytics
 ||movetv.com/sa-events
 ||mp.imgur.com^
@@ -10731,6 +10794,7 @@ $3p,xhr,domain=opensubtitles.org
 ||promos.investing.com/*/digibox.gif?
 ||proporn.com/ajax/log/
 ||proxima.midjourney.com^
+||psychcentral.com/api/drivers/
 ||public.tableau.com/inst?v=
 ||pulsar.ebay.com^
 ||pulse.delta.com^
@@ -11108,7 +11172,10 @@ $3p,xhr,domain=opensubtitles.org
 ||wolfram.com/common/javascript/analytics.js
 ||wolfram.com/common/javascript/wal/latest/walLoad.js
 ||wondershare.com/trk
+||www.airbnb.*/gtg/$script
 ||www.ebay.*/gh/dfpsvc?
+||www.eventim.*/orchestra/
+||www.vivastreet.*/cfgtg/
 ||x.com/1.1/graphql/app_context.json
 ||x.com/1.1/graphql/user_flow.json
 ||x.com/1.1/jot
@@ -36976,6 +37043,7 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||rek.www.wp.pl^
 ||savecart.pl/d/
 ||squid.gazeta.pl/bdtrck/
+||sst.leroymerlin.pl^
 ||ab.g.globo/event
 ||audience-mostread.r7.com^
 ||csplog.kwai-pro.com^
@@ -37034,6 +37102,7 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||hh.ru/analytics^
 ||hh.ru/stat?
 ||interfax.ru/cnt/
+||jitsu.www1.ru/api/s/track
 ||kontur.ru/abtests/
 ||kontur.ru/stats/
 ||livelib.ru/service/pinger

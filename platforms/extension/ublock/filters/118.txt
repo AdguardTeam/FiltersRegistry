@@ -1,17 +1,17 @@
 ![Adblock Plus 2.0]
-! Checksum: Z8noSH7NSgJLdoUFE6aVVQ
-! Diff-Path: ../patches/118/118-s-1794112769-14400.patch
+! Checksum: Z0GjrJnKLtjh0u2QQitWng
+! Diff-Path: ../patches/118/118-s-1794185569-14400.patch
 ! Title: EasyPrivacy
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.48
-! TimeUpdated: 2026-11-08T04:35:29+00:00
+! Version: 2.1.74.49
+! TimeUpdated: 2026-11-09T00:49:31+00:00
 ! Expires: 5 days (update frequency)
 !
-! OriginalVersion: 202611080424
+! OriginalVersion: 202611090044
 ! Title: EasyPrivacy
-! Last modified: 08 Nov 2026 04:24 UTC
+! Last modified: 09 Nov 2026 00:44 UTC
 ! Expires: 4 days (update frequency)
-! Commit: 3450af59a0f7e0162b00036da9863850c75ea617
+! Commit: e21659f20c770e051a7c26d43c7a383273b0ec3f
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -31,11 +31,13 @@
 &event_name=view_item_list&
 &EventType=DataDealImpression&
 &EventType=Impression&
+&gtm=*&tag_exp=
 &hitType=pageview&
 &http_referer=$script,xhr,domain=~biletomat.pl|~facebook.com|~jobscore.com
 &refer=http$script
 &sst.gcsub=
 &t=pageview&
+&tid=*&gtm=*&ecid=
 &ui-instrumentation-components-beacon.InstrumentationBeacon.sendData=1
 -adobe-analytics/
 -adobeDatalayer_bridge.js
@@ -159,6 +161,7 @@
 /a/elevar/static/*
 /a/performance_timing/*
 /a8c-analytics.js
+/a?id=*&gtm=
 /aap/stats
 /abc.gif?
 /access.php?referrer=
@@ -385,6 +388,7 @@
 /api/metrics/collect
 /api/metrics/event
 /api/notify-track$ping
+/api/otlp/trace
 /api/pageactivity
 /api/pageview/*$ping
 /api/pageview?
@@ -394,6 +398,8 @@
 /api/sentry/tunnel$xhr
 /api/stat?
 /api/stn/audience|$xhr
+/api/t/c|
+/api/t/gtm/*
 /api/track?guid
 /api/trk?
 /api/v1/EndpointTracker
@@ -579,6 +585,7 @@
 /callbacks/stats?
 /capture_client.js
 /CaptureStat.asmx
+/ccm/collect?
 /cdn-cgi/beacon/*
 /cdn-cgi/ping?$image
 /cdn-cgi/rum?
@@ -682,6 +689,7 @@
 /CofinaHits.js
 /cogi-etracker.js
 /cohesion-latest.min.js
+/cohesion/xs2.html
 /coinhive.min.js
 /coinimp-cache/*
 /collect.gif?
@@ -689,6 +697,7 @@
 /collect/?dp=
 /collect/kasupport
 /collect/kf?
+/collect/metric|
 /collect/pageview?
 /collect/pv?
 /collect/stats?
@@ -819,6 +828,7 @@
 /dcjs/prod/*
 /dcs.gif?
 /dcs_tag.js
+/ddm/activity/src=
 /dead-clicks-autocapture.js
 /default/pAnalytics
 /detectIncognito.min.js
@@ -862,6 +872,7 @@
 /dynamicyield/*
 /dynaTraceMonitor?
 /e.gif?
+/e?k=*&v=$image
 /e_stat?g_id=
 /eatms.js
 /ecanalytics.js
@@ -1134,6 +1145,7 @@
 /geoLocationData/v1/*
 /geov2.js
 /get/live/web/_/*$script,~3p
+/get_cookie_id?cookie_domain=
 /get_geoip?
 /get_site_data?requestUUID=
 /getbglog.js
@@ -1573,6 +1585,7 @@
 /mcount.cgi?
 /measure/pixel/*
 /measure/visit/*
+/measurement/conversion?
 /medialaanUniversalTracker.js
 /mediametrie.js
 /mediateGA.js
@@ -1588,6 +1601,7 @@
 /metrics/bambuser.min.js
 /metrics/event?
 /metrics/ga.js
+/metrics/ga/*
 /metrics/init?
 /metrics/onload
 /metrics/ping?
@@ -2186,12 +2200,14 @@
 /SessionHit.aspx?
 /set-cookie.gif?
 /set_cookie.php?
+/set_cookie?val=
 /set_optimizely_cookie.js
 /set_tracking.js
 /sf-recommendations-events-listener.js
 /sfCounter/*
 /sfdc/networktracking.js
 /sftouch?branchId=
+/sgtm/g/*
 /sgtracker.js
 /shared/sentry/*
 /sherlock.gif?
@@ -2237,6 +2253,7 @@
 /Smile_ElasticsuiteTracker/js/tracking.min.js
 /smmch-mine.js
 /smmch-own.js
+/smrwv/v1/webvital
 /snowman.gif?p=
 /snowplow-collector-prod.$xhr
 /snowplow-tracker.tatest.js
@@ -2400,6 +2417,7 @@
 /svs.gif?
 /sw.js?origin=
 /sw/analytics.js
+/sw_iframe.html?origin=
 /swa_t.gif?
 /swatag.js
 /swell-ct-ad-data
@@ -2429,6 +2447,7 @@
 /tagging?env=
 /tagmanager/event?
 /tagmanager/pptm.js
+/tagmetrics/*
 /tags.js?org_id=
 /tailtarget.js
 /talpa-analytics-pro/*
@@ -2460,6 +2479,7 @@
 /tjp_beacon.js
 /tjx-tracking-data.js
 /tking/ajax_track_stats?
+/tms?id=
 /tncms/tracking.js
 /token?referer=
 /tongji.js
@@ -2717,6 +2737,8 @@
 /uutils.fcg?
 /v.gif?
 /v1/adn/visit|
+/v1/events/publish|
+/v1/external/visitor|
 /v1/log/web-vitals$xhr
 /v1/pixel.js
 /v1/pixel?
@@ -2971,12 +2993,15 @@
 ://elqtrk.
 ://fallback.*/collector
 ://fathom.$domain=~fathom.care|~fathom.co.za|~fathom.fm|~fathom.info|~fathom.io|~fathom.lib.uchicago.edu|~fathom.news|~fathom.org|~fathom.services|~fathom.video|~fathom.world|~fathomdelivers.com|~fathomseo.com|~usesfathom.com
+://gtm-tagging.
+://gtm.prod.
 ://gtrack.*/dye
 ://insights-collector.
 ://internal-matomo.
 ://l.*/counter.php?id=$script,~3p
 ://l.*/script.php?i=$script,~3p
 ://lightning.*/launch/
+://load.sgtm.
 ://matomo.$domain=~matomo.dhjensen.dk|~matomo.org
 ://metrics-collector.
 ://mint.*/?js
@@ -2987,6 +3012,7 @@
 ://rum.collector.
 ://segment-api.
 ://segment-cdn.
+://sgtm.
 ://signal.*/hardal
 ://signals.*/hardal
 ://sp.*/sp/h|$xhr
@@ -3015,6 +3041,7 @@
 ?event=performance&
 ?event=performancelogger:
 ?groupType=engagement&eventType=CLICK&
+?id=GTM-*&l=gtmDataLayer
 ?local_ga_js=
 ?log=player-*&stats_tkn=
 ?log=player_*&stats_tkn=
@@ -3141,7 +3168,7 @@ _WebVitalsReporter_
 /tag/proxy?id=G-
 ://gtm.*.js?st=
 ://load.*.js?st=$~3p
-://sgtm.*.js?
+://sgtm.
 ://tagging.*.js?aw=
 ://tagging.*/settings.js
 ! Taggrs.io
@@ -4086,6 +4113,7 @@ omni.soundestlink.com$image
 ||ablsrv.com^$3p
 ||ablyft.com^$3p
 ||abmr.net^$3p
+||absmartly.io^$3p
 ||absolstats.co.za^$3p
 ||abtshield.com^$3p
 ||acc-hd.de^$3p
@@ -4194,6 +4222,7 @@ omni.soundestlink.com$image
 ||albacross.com^$3p
 ||alcmpn.com^$3p
 ||alenty.com^$3p
+||alketech.eu^$3p
 ||alltracked.com^$3p
 ||alocdn.com^$3p
 ||alpixtrack.com^$3p
@@ -4240,6 +4269,7 @@ omni.soundestlink.com$image
 ||apicit.net^$3p
 ||apollofind.com^$3p
 ||apolloprogram.io^$3p
+||app.dub.co^$3p
 ||appboycdn.com^$3p
 ||appcast.io^$3p
 ||appdynamics.com^$3p
@@ -4310,6 +4340,7 @@ omni.soundestlink.com$image
 ||baikalize.com^$3p
 ||bam-x.com^$3p
 ||baptisttop1000.com^$3p
+||baqend.com^$3p
 ||baremetrics.com^$3p
 ||barilliance.net^$3p
 ||basicstat.com^$3p
@@ -4446,6 +4477,7 @@ omni.soundestlink.com$image
 ||cbtrk.net^$3p
 ||cccpmo.com^$3p
 ||ccgateway.net^$3p
+||ccmbg.com^$3p
 ||ccscserver.com^$3p
 ||cdn-net.com^$3p
 ||cdnlibjs.com^$3p
@@ -4680,6 +4712,7 @@ omni.soundestlink.com$image
 ||dmpprof.com^$3p
 ||dmtracker.com^$3p
 ||dmxleo.com^$3p
+||dn-analytics.alketech.eu^
 ||dnsdelegation.io^$3p
 ||doceree.com^$3p
 ||doclix.com^$3p
@@ -4702,6 +4735,7 @@ omni.soundestlink.com$image
 ||dtc-v6t.com^$3p
 ||dti-ranker.com^$3p
 ||dtxngr.com^$3p
+||dubcdn.com^$3p
 ||durationmedia.net^$3p
 ||dvnfo.com^$3p
 ||dynatrace-managed.com^$3p
@@ -7698,6 +7732,7 @@ omni.soundestlink.com$image
 ||funoverbored.com^
 ||funoverflow.com^
 ||funtoyplanet.com^
+||furiousvinyl.com^
 ||furryfork.com^
 ||fusedcontent.com^
 ||futuristicfifth.com^
@@ -7783,6 +7818,7 @@ omni.soundestlink.com$image
 ||grocerycrew.com^
 ||grocerydog.com^
 ||groglog.com^
+||grooveguides.com^
 ||groovespacing.com^
 ||groovyornament.com^
 ||grouchybrothers.com^
@@ -8461,6 +8497,7 @@ omni.soundestlink.com$image
 ||possiblepencil.com^
 ||potatoinvention.com^
 ||potentmagic.com^
+||pottylife.com^
 ||powerfulblends.com^
 ||powerfulcopper.com^
 ||powertoolwiki.com^
@@ -8560,6 +8597,7 @@ omni.soundestlink.com$image
 ||raintwig.com^
 ||rainyhand.com^
 ||rainyrule.com^
+||ramartworks.com^
 ||rambunctiousflock.com^
 ||rangecake.com^
 ||rangeplayground.com^
@@ -8586,6 +8624,7 @@ omni.soundestlink.com$image
 ||receptivereaction.com^
 ||recessrain.com^
 ||recipearena.com^
+||recipediner.com^
 ||recipepile.net^
 ||recipepin.com^
 ||reconditeprison.com^
@@ -10715,6 +10754,7 @@ $3p,xhr,domain=opensubtitles.org
 ||analytics-fe.digital-cloud-prem.medallia.eu^
 ||analytics-fe.digital-cloud.medallia.ca^
 ||analytics-fe.digital-cloud.medallia.com^
+||analytics-fe.digital-cloud.medallia.eu^
 ||analytics-ipv6.tiktokw.us^
 ||analytics-prd.aws.wehaa.net^
 ||analytics-prod-alb-292764149.us-west-2.elb.amazonaws.com^
@@ -10887,6 +10927,7 @@ $3p,xhr,domain=opensubtitles.org
 ||ape-tagit.timeinc.net^
 ||apester.com/event^
 ||api-analytics-prd.pelcro.com^
+||api-engage-us.sitecorecloud.io^
 ||api-iam.intercom.io/messenger/web/metrics
 ||api-location-prd.pelcro.com^$domain=newsweek.com
 ||api-pf.nw18.com/cdp-api/api/data
@@ -10934,12 +10975,15 @@ $3p,xhr,domain=opensubtitles.org
 ||app.clickfunnels.com/assets/pushcrew.js
 ||app.clickfunnels.com/assets/userevents/application.js
 ||app.clickfunnels.com/cf.js
+||app.factori.ai/personica.js
+||app.lifesight.io/personica.js
 ||app.link/_r?$script,3p
 ||app.octaneai.com/get_analytics_engine/
 ||app.opmnstr.com/v2/geolocate/
 ||app.optibase.io^
 ||app.partnerboost.com/brand/track.2.0.min.js
 ||app.pendo.io/data/$image
+||app.planhat.com/analytics/plantrack.min.js
 ||app.posthog.com/e/?compression=
 ||app.posthog.com/e/?ip=
 ||app.posthog.com/static/array.js
@@ -10989,6 +11033,7 @@ $3p,xhr,domain=opensubtitles.org
 ||assets.jimstatic.com/at.js
 ||assets.minutemediacdn.com/mm-cwv-tracker/
 ||assets.moneymade.io/js/fp.min.js
+||assets.sprocket.bz/trackers/
 ||assets.trendii.com/pixel/main.js
 ||assets.yumpu.com/release/*/tracking.js
 ||assistant.watson.appdomain.cloud/analytics/
@@ -11119,6 +11164,7 @@ $3p,xhr,domain=opensubtitles.org
 ||bonfire.spklw.com^
 ||booking.com/pxpixel.html
 ||boomtrain.com/identify/resolve?
+||bot.cdn.adeo.cloud^
 ||botdetection.hbrsd.com^
 ||bpath.com/count.dll?
 ||bpi.zip.co/trx/
@@ -11197,8 +11243,10 @@ $3p,xhr,domain=opensubtitles.org
 ||cdn.cuty.io/fps.js
 ||cdn.debugbear.com^$3p
 ||cdn.dfsdk.com^
+||cdn.drda.io/scripts/analytics/
 ||cdn.fonts.net/t/1.css?
 ||cdn.lr-hv-in.com/logger.min.js
+||cdn.ltba.io^
 ||cdn.one.store/xdomain_cookie.html
 ||cdn.polarbyte.com^
 ||cdn.prod.euid.eu^
@@ -12340,6 +12388,7 @@ $3p,xhr,domain=opensubtitles.org
 ||mfilterit.net^$3p
 ||mgmlcdn.com/stats/
 ||minutemediacdn.com/campaign-manager-client/
+||mirakl.net/mtag.min.js
 ||mixpanel.com/track?
 ||mj-snowplow-static-js.s3.amazonaws.com^
 ||mkcms.com/stats.js
@@ -12456,6 +12505,7 @@ $3p,xhr,domain=opensubtitles.org
 ||obs.esnlocco.com^
 ||obs.greencolumnblog.com^
 ||obs.jollyoutdoorjogger.com^
+||obs.protoroundprince.com^
 ||obs.sd4823.spglobal.com^
 ||obs.system1onesource.com^
 ||observe-nexus.pointandplace.com^
@@ -12618,6 +12668,8 @@ $3p,xhr,domain=opensubtitles.org
 ||pixel.mtrcs.samba.tv^
 ||pixel.newscred.com^
 ||pixel.nudgify.com^
+||pixel.optimeeze.data.adeo.cloud^
+||pixel.profound.click^
 ||pixel.propublica.org^
 ||pixel.pub.lilyai.net^
 ||pixel.quantserve.com^
@@ -13230,7 +13282,9 @@ $3p,xhr,domain=opensubtitles.org
 ||tag.rmp.rakuten.com^
 ||tag.statshop.fr^
 ||tag.unifyintent.com^
+||tag.web.onesdata.com^
 ||tagger.opecloud.com^
+||tagging.conde.digital^
 ||tagging.shiftdigitalapps.io^
 ||taggstar.com^*/taggstar.min.js
 ||tags.catapultx.com^
@@ -13450,6 +13504,7 @@ $3p,xhr,domain=opensubtitles.org
 ||tracking.musixmatch.com^
 ||tracking.offerista.com^
 ||tracking.olx-st.com^
+||tracking.optimeeze.data.adeo.cloud^
 ||tracking.pacharge.com^
 ||tracking.plattformad.com^$3p
 ||tracking.plinga.de^
@@ -14187,6 +14242,7 @@ $3p,xhr,domain=opensubtitles.org
 ||orbidder.otto.de^
 ||ottogroup.media/ogm.nitro.
 ||owen.prolitteris.ch^
+||p.marktplaats.net^
 ||pixel.poptok.com^
 ||plausible.ams.to^
 ||plista.com/getuid?
@@ -14799,6 +14855,7 @@ $3p,xhr,domain=opensubtitles.org
 ||cnobi.jp^*/js/imp.
 ||cnt.mail.netbk.co.jp^$image
 ||codemarketing.cloud/rest/
+||collection.cyberprocurement.com^
 ||collector.t-idr.com^
 ||cookie.sync.usonar.jp^
 ||counter1.fc2.com^$3p
@@ -15264,6 +15321,7 @@ $3p,xhr,domain=opensubtitles.org
 ||pub.servidoresge.com^
 ||recogerconsentimiento.com/consent/
 ||rt.cdnmedia.tv^
+||rum.haystack.es^
 ||s3wfg.com/js/vortexloader.js
 ||segment.lalr.co^
 ||smarte.rs/log
@@ -15945,6 +16003,7 @@ $3p,xhr,domain=opensubtitles.org
 ||diabrowser.com/api/event
 ||diabrowser.com/js/arcnet-script.js
 ||digital.flytedesk.com/js/head.js
+||dior.com/contcdc/
 ||discover-metrics.cloud.seek.com.au^
 ||dls-account.di.atlas.samsung.com^
 ||dmt.fidelity.com/prod/meas/
@@ -16452,6 +16511,7 @@ $3p,xhr,domain=opensubtitles.org
 ||lendingtree.com/pixel/
 ||lenovo.com/gemets/
 ||lensdirect.com/page-tracking/
+||leroymerlin.co.za/fokt/
 ||letsdoeit.com/tracking/
 ||lexology.com/pd.js
 ||lftce.clearstem.com/load
@@ -16537,7 +16597,9 @@ $3p,xhr,domain=opensubtitles.org
 ||marriott.com/mi/api/shop-renderer/logger
 ||marty.zappos.com^
 ||massivecams.com/api/metrics
+||masterclass.com/qz6s/
 ||mat6tube.com/api/stats?
+||matalan.co.uk/track
 ||maximise.nyc3.cdn.digitaloceanspaces.com/mxmse.min.js$domain=essentiallysports.com
 ||mcc-tags.cisco.com^
 ||mcdonalds.com/tags/js/*/mparticle.js
@@ -16614,6 +16676,7 @@ $3p,xhr,domain=opensubtitles.org
 ||monitor.channel4.com^
 ||monitor.ebay.com^
 ||monitor.lifemiles.com/collect
+||monster.com/visitor/tracking-v11.js
 ||morningstar.com/api/v1/analytics
 ||motorsport.com/stat/
 ||mov.t-mobile.com/p/js/1.js
@@ -16861,6 +16924,7 @@ $3p,xhr,domain=opensubtitles.org
 ||prop.astonvillanews.co.uk^
 ||proporn.com/ajax/log/
 ||proxima.midjourney.com^
+||psychcentral.com/api/drivers/
 ||pt.blubrry.com^
 ||public.tableau.com/inst?v=
 ||public.tableau.com/public/apis/audit-event
@@ -17635,7 +17699,10 @@ $3p,xhr,domain=opensubtitles.org
 ||wsj.com/cookies/pixel.gif
 ||wstats.e-wok.tv^
 ||www-backend.strinova.com/api/common/uid
+||www.airbnb.*/gtg/$script
 ||www.ebay.*/gh/dfpsvc?
+||www.eventim.*/orchestra/
+||www.vivastreet.*/cfgtg/
 ||x.com/1.1/attribution
 ||x.com/1.1/graphql/app_context.json
 ||x.com/1.1/graphql/error_log.json
@@ -55883,6 +55950,7 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||sentry.siepomaga.pl^
 ||squid.gazeta.pl/bdtrck/
 ||ss.woodupp.pl^
+||sst.leroymerlin.pl^
 ||stats.teledyski.info^
 ||wp.pl/?rid=
 ||wtk.pl/js/WTKStats.js
@@ -56006,6 +56074,7 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||hh.ru/stat?
 ||interfax.ru/cnt/
 ||irecommend.ru/collect/
+||jitsu.www1.ru/api/s/track
 ||kommersant.ru/a.asp?p=
 ||kommersant.uk/banner_stats
 ||kontur.ru/abtests/
