@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.9.51",
-			"timeUpdated": "2026-11-06T15:08:38+0000",
+			"version": "2.1.9.52",
+			"timeUpdated": "2026-11-09T12:10:57+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.5.3.24",
-			"timeUpdated": "2026-11-09T11:07:51+0000",
+			"version": "2.5.3.25",
+			"timeUpdated": "2026-11-09T12:11:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.34.95",
-			"timeUpdated": "2026-11-09T11:08:16+0000",
+			"version": "2.1.34.96",
+			"timeUpdated": "2026-11-09T12:11:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.85.91",
-			"timeUpdated": "2026-11-09T11:08:34+0000",
+			"version": "2.2.85.92",
+			"timeUpdated": "2026-11-09T12:11:54+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -707,8 +707,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.98.96",
-			"timeUpdated": "2026-11-09T11:08:40+0000",
+			"version": "2.0.98.97",
+			"timeUpdated": "2026-11-09T12:12:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.30",
-			"timeUpdated": "2026-11-09T09:11:38+0000",
+			"version": "2.0.87.31",
+			"timeUpdated": "2026-11-09T12:12:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -751,8 +751,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.33.99",
-			"timeUpdated": "2026-11-09T11:08:42+0000",
+			"version": "2.0.34.0",
+			"timeUpdated": "2026-11-09T12:12:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
