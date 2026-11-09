@@ -1,14 +1,14 @@
-! Checksum: oGCGk+X0IVKSs0Esc2W9NA
-! Diff-Path: ../patches/243/243-s-1794185551-14400.patch
+! Checksum: 9y5zK9c9iJpx9eKpK2XCLA
+! Diff-Path: ../patches/243/243-s-1794213564-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.79
-! TimeUpdated: 2026-11-09T00:50:05+00:00
+! Version: 2.0.25.80
+! TimeUpdated: 2026-11-09T08:36:33+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-11-08 07:17:10 CET
+! Last modified: 2026-11-09 05:52:04 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -1331,9 +1331,7 @@ sakochliv.se##.cookie-disclaimer-wrap, .type-promo, .sector-annons, .sticky-foot
 saltvattensguiden.se##li a img
 saltvattensguiden.se##.cWidgetContainer--isWidget:has(img[src*="/Annons"])
 samefolket.se##.elementor-top-column .elementor-widget-image:has(a[href]:not([href^="/"]):not([href*="samefolket.se"]))
-samfalligheterna.se##.tdm-popup-modal-wrap
-samfalligheterna.se##.td-cpt-post:has(a[href*="/sponsra"])
-samfalligheterna.se#?#.td_block_wrap:contains(Annons)
+samfalligheterna.se##.sf-annons, .sf-samtycke, .sf-start-sponsrat
 samnytt.se,samnytt.nu##a[target="_blank"] img:not([class^="tweet-"]), a img[src^="/butik"], main > section + div + div img, div[class^="samnytt-widget"] + .sticky img, .sticky > div.fixed[class*="bg-opacity"]
 samnytt.se,samnytt.nu#?#img[src*="/ads/"]:upward(1)
 samnytt.se,samnytt.nu##.fixed.bottom-0:has(a[href$="/prenumerera"])
@@ -2050,7 +2048,7 @@ zeromagazine.nu##div[id^="ads"]
 &autoplay$subdocument,removeparam=autoplay,domain=di.se|expressen.se
 &displayMode=modal$domain=dagen.se
 *$subdocument,third-party,redirect=click2load.html,domain=alltomsallskapsspel.se
-*$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net|feber.se|tjock.se|guldkanalen.se|butikstrender.se|pepperdeals.se|recipify.com|inkopsradet.se|upphandling24.se
+*$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net|feber.se|tjock.se|guldkanalen.se|butikstrender.se|pepperdeals.se|recipify.com|inkopsradet.se|upphandling24.se|svenskverkstad.se|samfalligheterna.se
 *$script,~third-party,domain=hrsvepet.se|cfosvepet.se|vdsvepet.se
 *$script,redirect-rule=noopjs,domain=elevspel.se
 *$xmlhttprequest,third-party,domain=skargarden.se
@@ -2983,6 +2981,8 @@ zeromagazine.nu##div[id^="ads"]
 /@sentry$script,domain=aftonbladet.se|svd.se
 /^(https?:\/\/)?(?!www\.)[a-zA-Z]+\.svenskhandel\.se\/.*\.js/$script,domain=svenskhandel.se
 /_adsmodern/*$image
+/_astro/AdSlot$domain=samfalligheterna.se
+/_astro/ConsentBanner$domain=samfalligheterna.se
 /_astro/InitializeAdverts$domain=aftonbladet.se|svd.se
 /_astro/Sifo$domain=aftonbladet.se|svd.se
 /_astro/Takeover$domain=svd.se
@@ -3552,7 +3552,6 @@ _banner.php?$domain=tvmatchen.nu
 ||royapp.com^$third-party
 ||rudderstack.com^$third-party
 ||sales.agriprim.com/Banners
-||samfalligheterna.se^$ping
 ||samnytt.se/ads/
 ||samnytt.se/b/$image
 ||sannsyn.com^$third-party
