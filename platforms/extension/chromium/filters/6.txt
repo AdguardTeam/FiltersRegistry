@@ -1,9 +1,9 @@
-! Checksum: gkp83C6B5efWZazF2z/OsQ
-! Diff-Path: ../patches/6/6-s-1794190419-3600.patch
+! Checksum: peRdxQGF2qrEUrX4KED0AA
+! Diff-Path: ../patches/6/6-s-1794229984-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.54.62
-! TimeUpdated: 2026-11-09T02:10:52+00:00
+! Version: 2.0.54.63
+! TimeUpdated: 2026-11-09T13:09:02+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -393,7 +393,9 @@ wowtv.de#%#//scriptlet('set-constant', 'window.CONFIGURATION.features.enableAdBl
 stadt-bremerhaven.de###cb-adblock-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/238166
 *$script,third-party,redirect=noopjs,domain=ligainsider.de
+||ligainsider.de/js/*.js$script
 @@||ligainsider.de^$generichide
+ligainsider.de#%#//scriptlet('remove-node-text', 'script', '__abSelfBlocked')
 ligainsider.de#%#//scriptlet('prevent-element-src-loading', 'script', '/googlesyndication\.com|doubleclick\.net|bing\.com|taboola\.com/')
 ligainsider.de#%#//scriptlet('abort-on-property-read', 'LIDetector')
 ||ligainsider.de/public/*/js/li-probe-base.js
