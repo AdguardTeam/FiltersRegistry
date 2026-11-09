@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 const LOCALES_DIR_PATH = '../../locales';
 
 /**
- * Report file for the JSON schema validation warnings and errors.
+ * Log file for the JSON schema validation, including warnings and errors.
  * The file is gitignored.
  */
 const JSON_SCHEMA_REPORT_FILE_NAME = 'report_json_schema.txt';

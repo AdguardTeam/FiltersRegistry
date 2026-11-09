@@ -429,8 +429,9 @@ yarn validate:locales
 `yarn validate:platforms` validates the built JSON files against the compiler schemas. For
 non-legacy platforms, the compiler generates the `filters_i18n` schema at runtime from the
 platform `filters.json` and the `locales` directory. The entity IDs come from the platform
-metadata. The required locales and the English fallback strings come from `locales`. Warnings
-and errors go to `report_json_schema.txt` in the repository root. The file is gitignored and
+metadata. The required locales and the English fallback strings come from `locales`. The
+validation log, including warnings and errors, goes to `report_json_schema.txt` in the
+repository root. A clean run contains only informational lines. The file is gitignored and
 is recreated on every run.
 
 `yarn validate:platforms` also simulates a client patch update: for every filter file changed relative
