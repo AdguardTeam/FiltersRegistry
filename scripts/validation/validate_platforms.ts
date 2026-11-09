@@ -325,7 +325,7 @@ const main = async (): Promise<void> => {
         logPath: jsonSchemaReportPath,
     });
     if (!validationResult) {
-        throw new Error(`Invalid filters json, see ${JSON_SCHEMA_REPORT_FILE_NAME}`);
+        throw new Error(`Invalid filters json, see ${path.relative(process.cwd(), jsonSchemaReportPath)}`);
     }
 
     await validatePatches();
