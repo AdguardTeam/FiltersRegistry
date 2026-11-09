@@ -1,9 +1,9 @@
-! Checksum: 9s2LDIImPTqtWOQd2LuMYA
-! Diff-Path: ../patches/19/19-s-1794229979-3600.patch
+! Checksum: mMRYvLqhnumAk2yc30bruw
+! Diff-Path: ../patches/19/19-s-1794233575-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.87.32
-! TimeUpdated: 2026-11-09T13:09:25+00:00
+! Version: 2.0.87.33
+! TimeUpdated: 2026-11-09T14:09:16+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -597,8 +597,10 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+airlinegeeks.com##.advads-modal
 winfuture.de###wf-schutzhinweis
 winfuture.de###wf-sh-platz
+winfuture.de#%#//scriptlet('set-constant', 'wf_adshield_aus', 'noopFunc')
 klix.ba##.kx-podrska
 shugo.gg#$#div[aria-label="Ad Blocker Detected"] { display: none !important; }
 shugo.gg#$#html, body { overflow: auto !important; }
@@ -13120,6 +13122,10 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+airlinegeeks.com##.wp-block-acf-cta:has(> div.flex a[href="https://airlinegeeks.com/newsletter/"])
+mimikama.org##section[aria-label*="Newsletter"]
+mercedes-benz.com.tr##.hp-footer__newsletter
+mercedes-benz.com.tr##.hp-footer__cta-preferred-source
 sportsnaut.com##.tpd-sh-daily
 sportsnaut.com##.tpd-sh-follow
 sportsnaut.com##.sidebar-widget > .widget_block:has(.tpd-newsletter-card)
@@ -13133,7 +13139,7 @@ thepostmillennial.com##section[aria-label="Subscribe to Libby’s Desk"]
 thepostmillennial.com##section[aria-label="Subscribe to TPM Newsletter"]
 thepostmillennial.com##section[aria-labelledby="home-support-h"]
 sport.de##.hs-google-button
-hotdeals.com#%#//scriptlet('set-cookie', 'retainPopV2', 'hide', 'hotdeals.com')
+hotdeals.com#%#//scriptlet('set-cookie', 'retainPopV2', 'hide', '/', 'hotdeals.com')
 thedailybeast.com##div[data-slot="subscribe-banner"]
 thedailybeast.com###hp__newsletter
 thedailybeast.com##div[data-component="GoogleSourceCta"]
@@ -14514,8 +14520,8 @@ ambitiouskitchen.com###d-popups[data-open-popup-id="newsletter"]
 cyberkendra.com##.google-preferred-badge
 cyberkendra.com##.mainWrp > #notif-widget:has(.google-preferred-badge)
 avweb.com##.widget_block > a[href="https://avweb.com/newsletters/"]
-avweb.com###AVWemailcapform
-avweb.com##.acf-block-newsletter-subscribe-cta
+airlinegeeks.com,avweb.com###AVWemailcapform
+airlinegeeks.com,avweb.com##.acf-block-newsletter-subscribe-cta
 tuttoandroid.net##.post-content > p:has(> a[href^="https://www.google.com/preferences/"])
 tuttoandroid.net##.post-content > p:has(> a[href^="https://profile.google.com/"])
 science.org##div.mb-2x:has(> div.d-flex > a[href^="/content/page/scienceadviser"] > span)
