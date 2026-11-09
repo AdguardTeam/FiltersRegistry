@@ -293,17 +293,27 @@ const validatePatches = async (): Promise<void> => {
 };
 
 /**
+ * Resolves the platforms directory to validate.
+ *
+ * A relative command-line argument is resolved against the current working
+ * directory, so the documented `yarn validate:platforms ./platforms` works
+ * from the repository root. Without an argument, the repository `platforms`
+ * directory is used.
+ *
+ * @param platformsArg Platforms path from the command line.
+ *
+ * @returns Absolute path to the platforms directory.
+ */
+export const resolvePlatformsPath = (platformsArg?: string): string => {
+    return platformsArg ? path.resolve(platformsArg) : path.join(repoRootPath, 'platforms');
+};
+
+/**
  * Validates built platforms.
  */
 const main = async (): Promise<void> => {
     const args = process.argv.slice(2);
-
-    let platforms = args[0];
-    if (!platforms) {
-        platforms = '../../platforms';
-    }
-
-    const platformsPath = path.join(__dirname, platforms);
+    const platformsPath = resolvePlatformsPath(args[0]);
 
     removeStaleReport();
 
