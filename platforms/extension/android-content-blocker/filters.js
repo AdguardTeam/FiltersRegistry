@@ -928,8 +928,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.77.80",
-			"timeUpdated": "2026-11-09T00:49:17+0000",
+			"version": "2.1.77.81",
+			"timeUpdated": "2026-11-09T04:35:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1005,8 +1005,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.70.5",
-			"timeUpdated": "2026-11-09T00:49:19+0000",
+			"version": "2.1.70.6",
+			"timeUpdated": "2026-11-09T04:35:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1059,8 +1059,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.0.76",
-			"timeUpdated": "2026-11-09T00:49:21+0000",
+			"version": "2.2.0.77",
+			"timeUpdated": "2026-11-09T04:35:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1133,8 +1133,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.2.0.78",
-			"timeUpdated": "2026-11-09T00:49:24+0000",
+			"version": "2.2.0.79",
+			"timeUpdated": "2026-11-09T04:35:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1205,8 +1205,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.2.0.78",
-			"timeUpdated": "2026-11-09T00:49:25+0000",
+			"version": "2.2.0.79",
+			"timeUpdated": "2026-11-09T04:35:17+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1235,8 +1235,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.0.77",
-			"timeUpdated": "2026-11-09T00:49:27+0000",
+			"version": "2.2.0.78",
+			"timeUpdated": "2026-11-09T04:35:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1284,8 +1284,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.74.49",
-			"timeUpdated": "2026-11-09T00:49:31+0000",
+			"version": "2.1.74.50",
+			"timeUpdated": "2026-11-09T04:35:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1413,8 +1413,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.71.83",
-			"timeUpdated": "2026-11-09T00:49:38+0000",
+			"version": "2.1.71.84",
+			"timeUpdated": "2026-11-09T04:35:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1439,8 +1439,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.72.52",
-			"timeUpdated": "2026-11-09T00:49:39+0000",
+			"version": "2.0.72.53",
+			"timeUpdated": "2026-11-09T04:35:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1593,8 +1593,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.0.78",
-			"timeUpdated": "2026-11-09T00:49:45+0000",
+			"version": "2.2.0.79",
+			"timeUpdated": "2026-11-09T04:35:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1639,8 +1639,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.0.4",
-			"timeUpdated": "2026-11-09T00:49:48+0000",
+			"version": "2.2.0.5",
+			"timeUpdated": "2026-11-09T04:35:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1660,8 +1660,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.46.71",
-			"timeUpdated": "2026-11-09T00:49:49+0000",
+			"version": "2.0.46.72",
+			"timeUpdated": "2026-11-09T04:35:44+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1910,8 +1910,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.2.0.78",
-			"timeUpdated": "2026-11-09T00:49:57+0000",
+			"version": "2.2.0.79",
+			"timeUpdated": "2026-11-09T04:35:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2199,8 +2199,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.96.84",
-			"timeUpdated": "2026-11-09T00:50:08+0000",
+			"version": "2.1.96.85",
+			"timeUpdated": "2026-11-09T04:36:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2333,8 +2333,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.94.9",
-			"timeUpdated": "2026-11-09T00:50:14+0000",
+			"version": "2.0.94.10",
+			"timeUpdated": "2026-11-09T04:36:13+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
