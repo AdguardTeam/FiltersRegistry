@@ -11,7 +11,27 @@ import { shouldGeneratePatch } from '../build/patches.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const FILTERS_REQUIRED_AMOUNT = 80;
+const LOCALES_DIR_PATH = '../../locales';
+
+/**
+ * Log file for the JSON schema validation, including warnings and errors.
+ * The file is gitignored.
+ */
+const JSON_SCHEMA_REPORT_FILE_NAME = 'report_json_schema.txt';
+
+const repoRootPath = path.join(__dirname, '../..');
+const localesDirPath = path.join(__dirname, LOCALES_DIR_PATH);
+const jsonSchemaReportPath = path.join(repoRootPath, JSON_SCHEMA_REPORT_FILE_NAME);
+
+/**
+ * Removes the report file left by a previous run.
+ *
+ * The compiler appends to the log file, so a stale report would mix previous
+ * warnings with the current validation results.
+ */
+const removeStaleReport = (): void => {
+    fs.rmSync(jsonSchemaReportPath, { force: true });
+};
 
 /**
  * Number of leading lines to scan for the `Diff-Path` tag, matching
@@ -273,21 +293,39 @@ const validatePatches = async (): Promise<void> => {
 };
 
 /**
+ * Resolves the platforms directory to validate.
+ *
+ * A relative command-line argument is resolved against the current working
+ * directory, so the documented `yarn validate:platforms ./platforms` works
+ * from the repository root. Without an argument, the repository `platforms`
+ * directory is used.
+ *
+ * @param platformsArg Platforms path from the command line.
+ *
+ * @returns Absolute path to the platforms directory.
+ */
+export const resolvePlatformsPath = (platformsArg?: string): string => {
+    return platformsArg ? path.resolve(platformsArg) : path.join(repoRootPath, 'platforms');
+};
+
+/**
  * Validates built platforms.
  */
 const main = async (): Promise<void> => {
     const args = process.argv.slice(2);
+    const platformsPath = resolvePlatformsPath(args[0]);
 
-    let platforms = args[0];
-    if (!platforms) {
-        platforms = '../../platforms';
-    }
+    removeStaleReport();
 
-    const platformsPath = path.join(__dirname, platforms);
-
-    const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
+    // `requiredLocales` stays unset on purpose: the compiler then requires
+    // every locale directory, as the static `filters_i18n` schema did before
+    // compiler 4.0.0.
+    const validationResult = validateJSONSchema(platformsPath, {
+        localesPath: localesDirPath,
+        logPath: jsonSchemaReportPath,
+    });
     if (!validationResult) {
-        throw new Error('Invalid filters json');
+        throw new Error(`Invalid filters json, see ${path.relative(process.cwd(), jsonSchemaReportPath)}`);
     }
 
     await validatePatches();

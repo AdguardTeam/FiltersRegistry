@@ -4,12 +4,16 @@ import {
 import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
+import { fileURLToPath } from 'url';
 import CryptoJS from 'crypto-js';
 import {
     parseDiffPath,
+    resolvePlatformsPath,
     validateClientUpdate,
     validatePlatformPatches,
 } from '../../validation/validate_platforms.js';
+
+const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 
 const gitMock = vi.hoisted(() => ({
     repoRoot: '',
@@ -68,6 +72,22 @@ vi.mock('child_process', async (importOriginal) => {
             throw new Error(`Unexpected git command: ${args.join(' ')}`);
         }),
     };
+});
+
+describe('resolvePlatformsPath', () => {
+    it('resolves a relative path against the current working directory', () => {
+        expect(resolvePlatformsPath('./platforms')).toBe(path.resolve('platforms'));
+    });
+
+    it('keeps an absolute path', () => {
+        const absolutePath = path.join(repositoryRoot, 'custom-platforms');
+
+        expect(resolvePlatformsPath(absolutePath)).toBe(absolutePath);
+    });
+
+    it('defaults to the repository platforms directory', () => {
+        expect(resolvePlatformsPath()).toBe(path.join(repositoryRoot, 'platforms'));
+    });
 });
 
 describe('parseDiffPath', () => {

@@ -426,6 +426,14 @@ yarn validate:platforms ./platforms  # explicit path (optional)
 yarn validate:locales
 ```
 
+`yarn validate:platforms` validates the built JSON files against the compiler schemas. For
+non-legacy platforms, the compiler generates the `filters_i18n` schema at runtime from the
+platform `filters.json` and the `locales` directory. The entity IDs come from the platform
+metadata. The required locales and the English fallback strings come from `locales`. The
+validation log, including warnings and errors, goes to `report_json_schema.txt` in the
+repository root. A clean run contains only informational lines. The file is gitignored and
+is recreated on every run.
+
 `yarn validate:platforms` also simulates a client patch update: for every filter file changed relative
 to git HEAD on a patch-enabled platform, it applies the patch named by the committed `! Diff-Path` and
 requires the result to match the built file. Files without a committed `! Diff-Path`, new filters, and
@@ -619,6 +627,12 @@ Registering a brand-new filter (new `filterId`) takes more than creating
 1. Create the filter directory (`template.txt`, `metadata.json` with a unique
    `filterId`, `timeAdded`, `groupId`, tags, etc.). Register new tags or groups
    in `tags/metadata.json` / `groups/metadata.json` if needed.
+1. Add the filter strings to the locale files. Put `filter.<ID>.name` and
+   `filter.<ID>.description` in every `locales/<locale>/filters.json`, not only in
+   `locales/en/filters.json`. The generated `filters_i18n` schema requires every locale
+   directory, so a missing locale entry makes `yarn validate` fail with
+   `must have required property '<locale>'`; the auto-build fails in the same way. Use the
+   English text in the other locales until Crowdin translations arrive.
 1. **Check MV3 browser extension readiness.** The MV3 browser extension
    (Chromium MV3, Edge MV3, Opera MV3) reads the platform `filters.json`
    metadata, but its bundled DNR rulesets come from the `@adguard/dnr-rulesets`
