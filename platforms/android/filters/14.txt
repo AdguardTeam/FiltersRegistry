@@ -1,9 +1,9 @@
-! Checksum: Tib/R+W3FQ+wTJhRXVlmjQ
-! Diff-Path: ../patches/14/14-s-1794298471-3600.patch
+! Checksum: 2+RMs8P8G+zjIUd1InbG7w
+! Diff-Path: ../patches/14/14-s-1794301947-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.86.4
-! TimeUpdated: 2026-11-10T08:11:19+00:00
+! Version: 2.2.86.5
+! TimeUpdated: 2026-11-10T09:09:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2681,6 +2681,7 @@ sklep.precio.pl,kim24.pl,sklep.moderat.pl,dlagentlemana.pl,nogame.pl,propaganda2
 !
 ! NOTE: Regular rules
 !
+figshare.com##aside[data-node-id="overlay-background-for-cookie-banner"]
 pricemymeds.com##pmm-cookie-consent
 chat.qwen.ai##section[class*="cookie-confirm"]
 cenogram.pl###stcm-wrapper
@@ -3243,7 +3244,7 @@ vfa.de#%#//scriptlet('trusted-click-element', 'div.klaro button.c-button--second
 x.com##body > div[aria-label^="Cookie-"]
 top.kion.ru##kion-top-alert
 discovery.com###ltp-dialog
-panel.fps.ms,eurotoptech.com##section[aria-label="Cookie consent"]
+open-domains.com,panel.fps.ms,eurotoptech.com##section[aria-label="Cookie consent"]
 showaround.com##div[class^="_GdprLine_"]
 studienteilnehmergesucht.de,studienteilnehmergesucht.at,proefpersoongezocht.nl,poszukiwani-uczestnicy-badan.pl,clinicaltrials4you.co.uk#%#//scriptlet('trusted-set-cookie', 'cookieConsent', '{"cookie_necessary_enabled":true,"cookie_functional_enabled":true,"cookie_analytics_enabled":false,"cookie_marketing_enabled":false}')
 infraveil.com#%#//scriptlet('set-cookie', 'infraveil_privacy_choice_v1', 'denied')
@@ -3627,7 +3628,6 @@ zus.pl##body > p-dynamicdialog:has(> div > div[aria-labelledby="cookie-consent-m
 testsieger.de#%#//scriptlet('trusted-click-element', 'button.cm__btn--secondary, button[data-role="necessary"]')
 pornoxo.com#%#//scriptlet('trusted-set-cookie', 'cc_pref', '%7B%22essential%22%3Atrue%2C%22internal%22%3Atrue%2C%22functional%22%3Afalse%2C%22targeting%22%3Afalse%2C%22marketing%22%3Afalse%2C%22timestamp%22%3A%222026-07-06T17%3A52%3A57.995Z%22%7D')
 pornoxo.com#%#//scriptlet('trusted-set-cookie', 'rta_terms_accepted', 'true')
-blsspainvisa.com###removeCookie
 xdownloaderz.com##.fixed.bottom-0:has(a[href$="/privacy"])
 abelohost.com##section[class^="CookiesBarSection-"]
 banknowy.pl###cookie-banner-section
@@ -18708,6 +18708,8 @@ befestigungsfuchs.de,jawoll.de,cafe-royal.com,campingplus.de,bikebox-shop.de,mli
 !
 !
 !+ NOT_OPTIMIZED
+blsspainvisa.com###removeCookie
+!+ NOT_OPTIMIZED
 wagner-kfz-service.de,ku.de###dv-t3-consent-management-modal
 !+ NOT_OPTIMIZED
 x.com##div[role="region"][aria-label*="cookie"]
@@ -28899,6 +28901,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+jbpress.ismedia.jp##.js-popup-info
 wefashion.com#%#//scriptlet('set-cookie', 'loginNudgeDismissed', 'true')
 malls.ru###mya-card
 maariv.co.il##.radio-container
@@ -38671,6 +38674,9 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+cybernews.com##.tools-block
+yaramica.net##a[href^="https://t.me/"]
+yaramica.net##.tgpromo
 hromadske.ua##.c-subscribe-links
 78.ru##div[class^="max-promo_container"]
 ||buy-eu.piano.io/checkout/template/cacheableShow.html?*&offerId=fakeOfferId&*&displayMode=inline&widget=template&isConsentManagerEnabled=$domain=onetz.de
