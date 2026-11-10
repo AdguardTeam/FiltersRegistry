@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.5.3.46",
-			"timeUpdated": "2026-11-10T10:08:06+0000",
+			"version": "2.5.3.47",
+			"timeUpdated": "2026-11-10T11:07:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.35.3",
-			"timeUpdated": "2026-11-10T09:09:16+0000",
+			"version": "2.1.35.4",
+			"timeUpdated": "2026-11-10T11:08:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.86.6",
-			"timeUpdated": "2026-11-10T10:09:00+0000",
+			"version": "2.2.86.7",
+			"timeUpdated": "2026-11-10T11:08:31+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.41.27",
-			"timeUpdated": "2026-11-10T09:09:41+0000",
+			"version": "2.1.41.28",
+			"timeUpdated": "2026-11-10T11:08:34+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -733,8 +733,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.99.9",
-			"timeUpdated": "2026-11-10T10:09:07+0000",
+			"version": "2.0.99.10",
+			"timeUpdated": "2026-11-10T11:08:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -755,8 +755,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.42",
-			"timeUpdated": "2026-11-10T10:09:09+0000",
+			"version": "2.0.87.43",
+			"timeUpdated": "2026-11-10T11:08:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -894,8 +894,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.0.19",
-			"timeUpdated": "2026-11-10T04:10:10+0000",
+			"version": "2.0.0.20",
+			"timeUpdated": "2026-11-10T11:08:49+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -924,8 +924,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.0.76",
-			"timeUpdated": "2026-11-10T10:09:17+0000",
+			"version": "2.0.0.77",
+			"timeUpdated": "2026-11-10T11:08:52+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"

@@ -1,9 +1,9 @@
-! Checksum: 3myKQ/4RQhmvzBKVA558Ng
-! Diff-Path: ../patches/2/2-s-1794305565-3600.patch
+! Checksum: mkJu8bqN7UMJzHZSrViePw
+! Diff-Path: ../patches/2/2-s-1794309151-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.3.46
-! TimeUpdated: 2026-11-10T10:08:06+00:00
+! Version: 2.5.3.47
+! TimeUpdated: 2026-11-10T11:07:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14321,6 +14321,10 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246845
+! To reproduce the anti-adblock message, it is necessary to click on a specific element, for example the search button
+sextb.net#%#//scriptlet('set-attr', 'html', 'data-adfree', 'true')
+f4scdn.com,f4stream.com#%#//scriptlet('remove-attr', 'data-block-adblock', '.player-wrap', 'asap stay')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246834
 @@||uploadg.com^$generichide
 uploadg.com#%#(()=>{const t=Function.prototype.toString,e=["ad_banner","adsbygoogle","google_ads_iframe","getComputedStyle","offsetHeight","offsetWidth","clientHeight"],o=t=>t(!1);window.Promise=new Proxy(window.Promise,{construct(n,c,i){try{const n=c[0];if("function"==typeof n){const i=Reflect.apply(t,n,[]);e.every((t=>i.includes(t)))&&(c[0]=o)}}catch{}return Reflect.construct(n,c,i)}})})();
@@ -17830,17 +17834,6 @@ gocmod.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=live.hitsports.bond
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245659
 ||sextb.*/js/brs.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/165486
-! To reproduce the anti-adblock message, it is necessary to click on a specific element, for example the search button
-@@||sextb.net^$generichide
-@@||sextb.date^$generichide
-sextb.date,sextb.net#%#//scriptlet('set-constant', 'Check_ADBL', 'falseFunc')
-sextb.date,sextb.net#%#//scriptlet('spoof-css', 'body .sextb_700', 'display', 'block')
-sextb.date,sextb.net#%#//scriptlet('spoof-css', '.sextb_300', 'display', 'block')
-sextb.date,sextb.net#$#.sextb_300 { display: none !important; }
-sextb.date,sextb.net#$#body .sextb_700 { display: none !important; }
-sextb.date,sextb.net#$#body .sextb_728 { display: block !important; }
-sextb.date,sextb.net#$#body .sextb_728:not([id]) { position: absolute !important; left: -9999px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167445
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165730
 mangoai.co#%#//scriptlet('prevent-fetch', 'www3.doubleclick.net')
@@ -99207,6 +99200,7 @@ browsershots.org#@#.advert_area
 ||bpvoctpvauvyv.website^
 ||bpzxevecpsxva.store^
 ||bqaijuqtjwpbf.website^
+||bqbgshfmnhuza.space^
 ||bqbwvfofginwp.online^
 ||bqenzxdijbdov.space^
 ||bqglwzsuxvfsr.space^
@@ -101022,6 +101016,7 @@ browsershots.org#@#.advert_area
 ||cockeyenomes.com^
 ||cockiesbonnne.com^
 ||cocklenuclear.qpon^
+||cocklettherial.cyou^
 ||cockneyskasely.com^
 ||cockpitadministration.com^
 ||cockpiteconomicspayroll.com^
@@ -101042,6 +101037,7 @@ browsershots.org#@#.advert_area
 ||coderformylife.info^
 ||codextutus.com^
 ||codingskysail.com^
+||coelarwhosome.com^
 ||coeliabumpee.com^
 ||coendouspare.com^
 ||coerautsbdfpg.online^
@@ -101088,6 +101084,7 @@ browsershots.org#@#.advert_area
 ||coldongjiffies.click^
 ||coleastrehabilitation.com^
 ||colentkeruing.top^
+||colhanygoyohp.space^
 ||colicsbefile.com^
 ||collationuppermodel.com^
 ||collectbladders.com^
@@ -101677,6 +101674,7 @@ browsershots.org#@#.advert_area
 ||crowdsynonym.com^
 ||crownzodiac.com^
 ||crpcrngnbogao.site^
+||crpdadadgogyh.site^
 ||crprmbjapabkt.website^
 ||crptentry.com^
 ||crptgate.com^
@@ -105432,6 +105430,7 @@ browsershots.org#@#.advert_area
 ||excruciationaccident.com^
 ||excuseduchess.com^
 ||excuselift.com^
+||exdsogxhiatsx.space^
 ||exdtqlgaezeqf.site^
 ||exdxgjgqdmfrw.online^
 ||exdynsrv.com^
@@ -105598,6 +105597,7 @@ browsershots.org#@#.advert_area
 ||ezvthdrknbfad.space^
 ||ezwknedlwdetk.online^
 ||ezxkarybihqoo.space^
+||ezygwbeelptbx.site^
 ||f00e275c9a.com^
 ||f06f6cd6ce.com^
 ||f07neg4p.de^
@@ -106835,6 +106835,7 @@ browsershots.org#@#.advert_area
 ||frsamsxjlpfhv.site^
 ||frshery.com^
 ||frtihyvwigowg.online^
+||frtjdwbojvpyz.space^
 ||frtnoquwhksdm.space^
 ||frtya.com^
 ||frtyd.com^
@@ -106907,6 +106908,7 @@ browsershots.org#@#.advert_area
 ||ftzblwbirevog.website^
 ||fuagebel.cyou^
 ||fuagesilk.com^
+||fuahwnyxymhlq.site^
 ||fubbedcubes.com^
 ||fucioryxes.qpon^
 ||fuck-ads.vercel.app^
@@ -109161,6 +109163,7 @@ browsershots.org#@#.advert_area
 ||hibawsvdvfsul.site^
 ||hibids10.com^
 ||hiboowbrkegop.site^
+||hickeysideaful.com^
 ||hicnwrwfphkyz.website^
 ||hicrqskneechm.website^
 ||hicuci2f9bd.net^
@@ -112011,6 +112014,7 @@ browsershots.org#@#.advert_area
 ||jqpaisehvpnvp.website^
 ||jqrgweazndruf.online^
 ||jqronboikqdxd.site^
+||jqrrbqfdjkazm.site^
 ||jqsklowxurgbh.online^
 ||jqueryoi.com^
 ||jqwqxdboznygi.online^
@@ -114750,6 +114754,7 @@ browsershots.org#@#.advert_area
 ||lxtacluhwhcfy.site^
 ||lxvuhkpbehdjt.website^
 ||lxwmazdgleyxy.website^
+||lxxdiuzxfvylv.site^
 ||lxyvpfalzuhnx.space^
 ||lxzduwepfkhiu.site^
 ||lyaauumakulfq.site^
@@ -117159,6 +117164,7 @@ browsershots.org#@#.advert_area
 ||nmcdn.us^
 ||nmcgokdsitgmj.site^
 ||nmdsxbxarvpuh.online^
+||nmdthrgpykmpo.website^
 ||nmebheeajgqz.com^
 ||nmfglawsleujk.space^
 ||nmgdxeuophsqo.website^
@@ -122949,6 +122955,7 @@ browsershots.org#@#.advert_area
 ||rftlseazrjgue.site^
 ||rftxmwcivenzn.space^
 ||rfugjeqobps.com^
+||rfwhdtsxfcwtd.space^
 ||rfwmfadnncajl.site^
 ||rfxqu0v7.xyz^
 ||rfxvxqcgsieib.site^
@@ -129202,6 +129209,7 @@ browsershots.org#@#.advert_area
 ||urimnugocfr.com^
 ||urinatereroute.cyou^
 ||urineimprobable.com^
+||urineyduools.com^
 ||urjioxzktaiuz.space^
 ||urkkxdmmgvfxk.online^
 ||urkptdjgrquuw.online^
@@ -129915,6 +129923,7 @@ browsershots.org#@#.advert_area
 ||vibrateanytime.com^
 ||vibtrvfiegdpi.site^
 ||vic-m.co^
+||vicaireresowscohol.cyou^
 ||vicesus.com^
 ||viciascapus.shop^
 ||vicingnutate.com^
@@ -133997,6 +134006,7 @@ browsershots.org#@#.advert_area
 ||zinovu.com^
 ||ziodiuptkyked.website^
 ||ziodjoorfijuu.online^
+||zioshdvobbgim.website^
 ||zioynaervpnht.space^
 ||zipatsunbochur.qpon^
 ||zipcrypticbroadsheet.com^

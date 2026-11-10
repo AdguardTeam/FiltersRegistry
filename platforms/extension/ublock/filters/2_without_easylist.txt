@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sv6UY4USb5JbxzZaqS8ygg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1794305570-3600.patch
+! Checksum: +BYVTLA96Ll+GiZkijP4QA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1794309157-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.3.46
-! TimeUpdated: 2026-11-10T10:08:06+00:00
+! Version: 2.5.3.47
+! TimeUpdated: 2026-11-10T11:07:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14140,6 +14140,10 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/246845
+! To reproduce the anti-adblock message, it is necessary to click on a specific element, for example the search button
+sextb.net##+js(set-attr, html, data-adfree, true)
+f4scdn.com,f4stream.com##+js(remove-attr, data-block-adblock, .player-wrap, asap stay)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246834
 @@||uploadg.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246831
@@ -16742,17 +16746,6 @@ gocmod.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=live.hitsports.bond
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245659
 ||sextb.*/js/brs.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/165486
-! To reproduce the anti-adblock message, it is necessary to click on a specific element, for example the search button
-@@||sextb.net^$generichide
-@@||sextb.date^$generichide
-sextb.date,sextb.net##+js(set-constant, Check_ADBL, falseFunc)
-sextb.date,sextb.net##+js(spoof-css, body .sextb_700, display, block)
-sextb.date,sextb.net##+js(spoof-css, .sextb_300, display, block)
-sextb.date,sextb.net##.sextb_300:style(display: none !important;)
-sextb.date,sextb.net##body .sextb_700:style(display: none !important;)
-sextb.date,sextb.net##body .sextb_728:style(display: block !important;)
-sextb.date,sextb.net##body .sextb_728:not([id]):style(position: absolute !important; left: -9999px !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167445
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165730
 mangoai.co##+js(prevent-fetch, www3.doubleclick.net)
