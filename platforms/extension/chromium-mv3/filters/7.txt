@@ -1,8 +1,8 @@
-! Checksum: RkbHgy18+WOh7dl3rSkU4w
+! Checksum: Vx8BjzUkJvx/7+LCpf6d+g
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.34
-! TimeUpdated: 2026-11-10T14:09:03+00:00
+! Version: 2.0.78.35
+! TimeUpdated: 2026-11-10T16:09:32+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1983,7 +1983,9 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-hamusoku.com##.article-body-more > span[style]:has(b > a[href^="https://www.amazon.co.jp/"])
+hamusoku.com##div[class^="article-body"] > span[style="font-size: 150%;"]:has(> b > a[href^="https://www.amazon.co.jp/"])
+hamusoku.com##div[class^="article-body"] > span[style="color: #3300FF;"]:has(+ br + span[style="font-size: 150%;"] > b > a[href^="https://www.amazon.co.jp/"])
+hamusoku.com##div[class^="article-body"] > span[style="color: #3300FF;"]:has(> span[style="font-size: 150%;"] > b > a[href^="https://www.amazon.co.jp/"])
 phileweb.com###sp_article_header
 phileweb.com###sp_article_undertitle_wrapper
 response.jp##div[class^="aside-box-ifad"]
@@ -6414,7 +6416,8 @@ muuu.jp##.entry-content-wrapper > div.avia-builder-widget-area
 ufret.jp##div[style="text-align: center;margin:20px auto 400px auto;width :685px;"]
 ufret.jp###showAdPosition
 otona-life.com##.ad_minh_sp
-||response.jp/base/scripts/cx-fbq.js
+/feature/adb/*$domain=animeanime.jp|cinemacafe.net|inside-games.jp|manetatsu.com|rbbtoday.com|response.jp
+/cx-fbq.js$domain=animeanime.jp|cinemacafe.net|gamespark.jp|inside-games.jp|manetatsu.com|response.jp
 response.jp###ad10
 sponichi.co.jp##.recruitment-list-header
 sponichi.co.jp##.recruitment-list-header + ul
