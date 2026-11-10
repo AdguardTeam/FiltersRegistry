@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.5.3.45",
-			"timeUpdated": "2026-11-10T09:08:55+0000",
+			"version": "2.5.3.46",
+			"timeUpdated": "2026-11-10T10:08:06+0000",
 			"languages": []
 		},
 		{
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.86.5",
-			"timeUpdated": "2026-11-10T09:09:39+0000",
+			"version": "2.2.86.6",
+			"timeUpdated": "2026-11-10T10:09:00+0000",
 			"languages": []
 		},
 		{
@@ -302,8 +302,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.99.8",
-			"timeUpdated": "2026-11-10T09:09:47+0000",
+			"version": "2.0.99.9",
+			"timeUpdated": "2026-11-10T10:09:07+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.87.41",
-			"timeUpdated": "2026-11-10T09:09:48+0000",
+			"version": "2.0.87.42",
+			"timeUpdated": "2026-11-10T10:09:09+0000",
 			"languages": []
 		},
 		{
@@ -328,8 +328,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.34.2",
-			"timeUpdated": "2026-11-10T04:10:03+0000",
+			"version": "2.0.34.3",
+			"timeUpdated": "2026-11-10T10:09:10+0000",
 			"languages": []
 		},
 		{
@@ -420,8 +420,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.0.75",
-			"timeUpdated": "2026-11-09T09:11:43+0000",
+			"version": "2.0.0.76",
+			"timeUpdated": "2026-11-10T10:09:17+0000",
 			"languages": [
 				"pl"
 			]
@@ -1214,8 +1214,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.69.25",
-			"timeUpdated": "2026-11-10T05:09:03+0000",
+			"version": "2.1.69.26",
+			"timeUpdated": "2026-11-10T10:09:20+0000",
 			"languages": [
 				"zh"
 			]
