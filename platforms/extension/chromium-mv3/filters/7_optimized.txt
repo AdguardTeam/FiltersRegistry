@@ -1,8 +1,8 @@
-! Checksum: jXho3YBBEmzUvwez87S5rQ
+! Checksum: FadTLG1PDSEO1q8wDAMIEA
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.33
-! TimeUpdated: 2026-11-10T09:09:23+00:00
+! Version: 2.0.78.34
+! TimeUpdated: 2026-11-10T14:09:03+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||re-n-ai.com^$third-party
@@ -1225,6 +1225,7 @@ hostlove.com#$##index_nav > h1 { padding-top: 30px!important; }
 /wp-content/plugins/kyujin-box/*
 /wp-content/themes/CashLINESystem/js/modal.$script
 /wp-content/uploads/2024/09/fanza_ad$image
+/api/download.php?action=init|$xmlhttprequest
 /download/cloud/c9_googlePlayCashBack_*.apk$document
 ||amazonaws.com/Tiktok18.apk?$document
 ||amazonaws.com/*/e-Tax%E$document
@@ -1582,8 +1583,9 @@ dengekionline.com##div[class$="rectangleBanner"]
 dengekionline.com##div[class^="InLead-"]
 !+ NOT_VALIDATE
 ||socialxup.com/go/$urltransform=/go\/.*//
-socialxup.com#%#//scriptlet('prevent-addEventListener', 'click', '[native code]')
-socialxup.com#?#:not(a):matches-css(cursor:pointer):xpath(div[not(ancestor::a)])
+socialxup.com#%#//scriptlet('prevent-addEventListener', 'click', '/\[native code\]|^\s*e\s*=>\s*.+\(\s*e\s*\)\s*$/')
+socialxup.com#?#span:matches-css(cursor:pointer):empty
+socialxup.com#?#:not(a):matches-css(cursor:pointer):upward(1):xpath(div[not(ancestor::a)])
 socialxup.com##.cursor-pointer
 socialxup.com##[style*="cursor:"]
 socialxup.com##a:not([href])
