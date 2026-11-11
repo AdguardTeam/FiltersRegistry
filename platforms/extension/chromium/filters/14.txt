@@ -1,9 +1,9 @@
-! Checksum: /PedCNroAodWjlCykyrvjw
-! Diff-Path: ../patches/14/14-s-1794391951-3600.patch
+! Checksum: EBsuEvcX/GBr79jVkNW3jQ
+! Diff-Path: ../patches/14/14-s-1794399232-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.86.20
-! TimeUpdated: 2026-11-11T10:08:58+00:00
+! Version: 2.2.86.21
+! TimeUpdated: 2026-11-11T12:11:26+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2680,6 +2680,9 @@ sklep.precio.pl,kim24.pl,sklep.moderat.pl,dlagentlemana.pl,nogame.pl,propaganda2
 !
 ! NOTE: Regular rules
 !
+gfiber.com#%#//scriptlet('set-local-storage-item', 'user_privacy_consent', 'denied')
+gfiber.com#%#//scriptlet('set-local-storage-item', 'gfiber_consent_targeted_advertising', 'false')
+gfiber.com#%#//scriptlet('set-local-storage-item', 'gfiber_consent_non_essential', 'false')
 engineering.fb.com###MetaCookieBanner
 cnews.ru##.cookiesbanner
 bka.de#%#//scriptlet('trusted-click-element', '.confirmSelection')
@@ -38449,6 +38452,7 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rosbalt.ru##.matter-after > div[data-slug="matter_before_sharing"] + div
 missavporn.live##a[href="https://t.me/javnewdaily"]
 3dnews.ru##.ps-promo
 finanztip.de##.boxContainer > div.box:has(> .boxContent > div[entry-id="app-promo"])
@@ -49746,8 +49750,8 @@ gorod.mos.ru#%#//scriptlet('set-local-storage-item', 'downloadAppComplete', '1')
 imgur.com#%#(()=>{window.addEventListener("click",(function(t){const e=t?.target?.closest?.(".BottomRecirc a[href].Post-item");e&&(t.preventDefault(),location.assign(e.href))}),!0);})();
 orbitz.com#$#.has-uitk-sheet { overflow: auto !important; }
 orbitz.com#$#.CustomerNotificationsWrapper { display: none !important; }
-wlwt.com##div.two-cols > div[class^="css-"]:has(> a[href="/apps"])
-wlwt.com,wisn.com,wjcl.com##div[aria-label=" App Promo"] > div[class^="css-"] > div[class^="css-"]:has(a[href="/apps"])
+kcra.com,wlwt.com##div.two-cols > div[class^="css-"]:has(> a[href="/apps"])
+kcra.com,wlwt.com,wisn.com,wjcl.com##div[aria-label=" App Promo"] > div[class^="css-"] > div[class^="css-"]:has(a[href="/apps"])
 meduza.io##.GeneralMaterial-module-article > p:has(> a[href^="https://onelink.to/appication"])
 trf1.net##.kan-banner
 xprimehub.bond,rogmovies.cv,vegamovies.lease,xprimehub.*,rogmovies.*,vegamovies.*##a[class="btn-pill"]
