@@ -1,9 +1,9 @@
-! Checksum: ZjGc8qHxm4jps0p+5qeU5g
-! Diff-Path: ../patches/1/1-s-1794410011-3600.patch
+! Checksum: 8wrj0KqstXI9EiMDoFTJ3w
+! Diff-Path: ../patches/1/1-s-1794413635-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.9.58
-! TimeUpdated: 2026-11-11T15:07:53+00:00
+! Version: 2.1.9.59
+! TimeUpdated: 2026-11-11T16:08:35+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4646,7 +4646,7 @@ $script,xmlhttprequest,domain=dzen.ru|dzeninfra.ru,jsonprune=\$..[direct\, "rtbA
 dzen.ru#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
 !
 ! Dzen main page
-dzen.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.findSsrAd')
+dzen.ru#%#//scriptlet('abort-on-property-read', 'yaads')
 dzen.ru##div[class^="dzen-desktop--desktop-skeleton__"]
 dzen.ru##div[class^="dzen-desktop--horizontal-article-skeleton__"]
 dzen.ru##div[class^="dzen-desktop--feed-one-column-right-skeleton__"]
@@ -7284,6 +7284,7 @@ sport-express.ru,gorod24.online,vedomosti.ru,kommersant.ru,rg.ru,glavbukh.ru,che
 !
 ! NOTE: Specific rules
 !
+marvel-online.ru,kadikama.com#%#//scriptlet('json-prune', 'ads.vast.prerolls.* ads.vast.pauserolls.* vast.prerolls.* vast.pauserolls.*')
 ||ya.ru/adfox/
 allsoft.ru##div[class^="b-banner_fluid"]
 ||byrutgame.org/templates/byrut_upd/modules/game-window/
