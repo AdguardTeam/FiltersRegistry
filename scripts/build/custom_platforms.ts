@@ -580,12 +580,15 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
         'defines': {
             'adguard': true,
             'adguard_app_windows': true,
+            'cap_html_filtering': true,
+            'adguard_corelibs': true,
         },
     },
     'MAC': {
         'platform': 'mac',
         'path': 'mac',
         'configuration': {
+            'removeRulePatterns': HTML_FILTERING_MODIFIER_PATTERNS,
             'ignoreRuleHints': false,
             'replacements': null,
         },
@@ -605,6 +608,8 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
         'defines': {
             'adguard': true,
             'adguard_app_mac': true,
+            'cap_html_filtering': true,
+            'adguard_corelibs': true,
         },
     },
     'MAC_V3': {
@@ -618,6 +623,8 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
         'defines': {
             'adguard': true,
             'adguard_app_mac': true,
+            'cap_html_filtering': true,
+            'adguard_corelibs': true,
         },
     },
     'ANDROID': {
@@ -630,6 +637,8 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
         'defines': {
             'adguard': true,
             'adguard_app_android': true,
+            'cap_html_filtering': true,
+            'adguard_corelibs': true,
         },
     },
     'CLI': {
@@ -643,6 +652,8 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
         'defines': {
             'adguard': true,
             'adguard_app_cli': true,
+            'cap_html_filtering': true,
+            'adguard_corelibs': true,
         },
     },
     'EXTENSION_CHROMIUM': {
@@ -748,7 +759,6 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
         'expires': '10 days',
         'configuration': {
             'removeRulePatterns': [
-                ...HTML_FILTERING_MODIFIER_PATTERNS,
                 ...APP_MODIFIER_PATTERNS,
                 ...NETWORK_MODIFIER_PATTERNS,
                 ...PROTOBUF_MODIFIER_PATTERNS,
@@ -764,6 +774,7 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
         'defines': {
             'adguard': true,
             'adguard_ext_firefox': true,
+            'cap_html_filtering': true,
         },
     },
     'EXTENSION_SAFARI': {
