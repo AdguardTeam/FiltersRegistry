@@ -1,5 +1,5 @@
-! Checksum: PslP3XKp8LtR3IH1fDgN6Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1794285524-14400.patch
+! Checksum: /fNoO/LgeVuqhH3wZfQvYg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1794371880-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.21.11
@@ -46,7 +46,6 @@ softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||solvusoft.com^$document
 ||freeroms.com^$document
-||romsmania.com^$document
 coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
@@ -399,6 +398,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 159.148.186.228$network
 ||yotube.com^$all
+/beep.mp3^$domain=xyz|club|pro
 !+ PLATFORM(windows, mac, android, cli)
 103.233.216.77$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -957,7 +957,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||anrdoezrs.net^$all
 ||giantpanda.media^$all
 ||junclikrmedi.com^$all
-||ourdreamersai.com^$all
 ||shopli.city^$all
 !+ PLATFORM(windows, mac, android, cli)
 15.204.140.239$network
@@ -2082,7 +2081,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 @@://safeweb.norton.com^
 @@||sitecheck.sucuri.net^
 @@||safebrowsing.google.com^
-@@||urlscan.io^
 @@://wikipedia.org^
 @@://github.com^|
 @@||bitbucket.org^
@@ -2442,7 +2440,6 @@ $document,removeparam=/^outputType=amp$/
 $removeparam=orig_referrer
 $removeparam=ncid
 $document,removeparam=/^ecid=.*$/i,domain=~account.microsoft.com
-$removeparam=adcid
 $removeparam=mkt_tok
 @@^mkt_unsubscribe=$removeparam=mkt_tok
 $removeparam=affname
@@ -2597,6 +2594,7 @@ $removeparam=cm_lm
 $removeparam=CSID
 $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
+$document,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
 $removeparam=paid
 $removeparam=pacid
 $removeparam=adtype
@@ -3045,13 +3043,10 @@ $removeparam=sender_web_id
 $removeparam=share_app_id
 $removeparam=share_item_id
 $removeparam=share_link_id
-||tiktok.com^$document,removeparam=referer_url
 ||tiktok.com^$document,removeparam=referer_video_id
-||tiktok.com^$document,removeparam=refer
 ||tiktok.com^$removeparam=checksum
 ||tiktok.com^$removeparam=sec_uid
 ||tiktok.com^$removeparam=share_author_id
-$document,removeparam=/^web_id\d+/,domain=tiktok.com
 ||tiktok.com^$removeparam=embed_source
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtu.be|zappos.com
 $removeparam=gtm
@@ -3255,7 +3250,6 @@ $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.c
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
-$document,removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com|harborfreight.com
 $removeparam=hpt,domain=cnn.com
 ||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
@@ -3772,7 +3766,6 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 $document,removeparam=lctg
 $document,removeparam=enc_em,domain=bleacherreport.com|fave.co|weather.com
 ||harborfreight.com^$document,removeparam=infy
-$document,removeparam=mi_ecmp,domain=chewy.com|harborfreight.com
 ||cc.rs6.net/tn.jsp$document,removeparam=c
 ||cc.rs6.net/tn.jsp$document,removeparam=ch
 $document,removeparam=mi_u,domain=chewy.com|harborfreight.com|samsclub.com|walmart.com
@@ -3842,6 +3835,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 #@#.adBlock
 ##.adBlock:not(html,body,:empty)
 #@#.ad-banners
+##.ad-banners:not(html,body,:empty)
 #@#.ad-below
 #@#.ad-display
 ##.ad-display:not(html,body,:empty)

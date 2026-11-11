@@ -1,5 +1,5 @@
-! Checksum: fBQPhttmK9wnkMzGvKDkbQ
-! Diff-Path: ../patches/201_optimized/201_optimized-s-1794285523-14400.patch
+! Checksum: P3aRcMWDWOxcBW0U+iSnKw
+! Diff-Path: ../patches/201_optimized/201_optimized-s-1794371879-14400.patch
 ! Title: Web Annoyances Ultralist (Optimized)
 ! Description: Blocks annoying web elements and reclaims lost screen real estate.
 ! Version: 2.0.0.46
@@ -28,6 +28,7 @@ gamerevolution.com##.widget_evolve_ad_gpt_widget
 gq.com##.article-inline-ad, [class*="ConsumerMarketingUnitThemedWrapper"]
 history.com##.m-header-ad
 information.dk##.masthead
+istheservicedown.com##.section-promoted-head
 jpost.com##.OUTBRAIN, .fake-container-for-outbrain-sticky.one-row, .line-left-side-before-and-after-container, .one-row.line-one-row-before-and-after-container
 kiplinger.com##.kip-advertisement
 latimes.com,pacificsandiego.com,sandiegouniontribune.com##.google-dfp-ad-wrapper, div.GoogleDfpAd-wrapper
@@ -49,13 +50,11 @@ tass.ru##.adsSlot300600
 tedium.co##.md-adbox
 thelibertydaily.com##.paid-subscriber
 usatoday.com#?#[id*="ad-slot-"]:upward(1)
-usnews.com###ac-lre-player-ph, #bfad-slot, #sailthru-recommendations-widget, [class*="ad-spacer__AdSpacer-"], [class*="Ad__Container-sc"]
 vanityfair.com###AMS_VYF_ARTICLE_INTEGRATED_END, #AMS_VYF_ARTICLE_INTEGRATED_INSTREAM, #AMS_VYF_GLOBAL_FOOTER, #AMS_VYF_GLOBAL_HEADER, #AMS_VYF_HOLLYWOOD_FOOTER, #AMS_VYF_INLINE_PROMO, #AMS_VYF_INLINE_TEXT, .ad--in-content, .ad--out-of-page, .component-riser, .component-sponsored-links, .consumer-marketing-unit, .consumer-marketing-unit--cm-footer, .consumer-marketing-unit--display-hero, .paywall-bar-failsafe, .paywall-growler, [class*="StickyHeroAdWrapper-"]
 vogue.com##.ticker-view
 w3schools.com###skyscraper
 wikipedia.org##.cn-WikiLovesPride2019, .cn-fundraising, .frb
 wired.com###paywall-growler, #wiredwidgetsecommerce-2, #wiredwidgetsecommerce-3, #wiredwidgetsmarketing-3, .ad-stickyhero, .advertisement__leaderboard, .affiliate-links-component, .consumer-marketing-unit--article-mid-content, .consumer-marketing-unit--cm-footer, .consumer-marketing-unit--display-rail, .insider, .js-post-listing-rad, .js-prefooter-rad, .magazine, .paywall-container-component, .rad
-wsj.com###comments_ad, #cx-article-cover-image, #cx-candybar-wrapper, #cx-mktg-tile, #cx-notification, #cx-popup, #cx-what-to-read-next, #expNav, #hat_tab_wsj, #in_ad_col_a, #in_ad_col_b, #saving-united-coupon-list, .WSJTheme__adContainer_39QoSCiFRHj0OwE7STJ23b .WSJTheme__adWrapper_2v6EA8giE6Pw9SoNUltRuT, .WSJTheme__onboarding-banner_2iniaUJWnOXdS0jqStuxs2, .banner-ad, .bing-native-ad, .inno-adhesive-container, .innovation-mojo-ad-wrapper, .live-coverage__instream-ad, .nc-exp-ad, .ob_strip_container.SB_2, .popC.connect.popClosed.popClose, .responsive-ad-container, .space-bottom.mktg-tile, .toggleBtn, .topLinks, .wsj-ad, .wsj-body-ad-placement, .wsj-immersive-ad-placement, .wsj-native-strip, .wsj-responsive-ad-wrap, .wsj-responsive-nav-circ-wrap, .zonedModule[data-module-zone="moatAds"], .zonedModule[data-module-zone="prebid"], [class^="WSJTheme--ad-container-"], [class^="WSJTheme--slide-related-ad-container-"], [class^="style__wsj-nav-promobottom"], [class*="style--wsj-nav-promobottom--"], div[class^="WSJTheme--adWrapper--"], [id*="wrapper-AD_LIVECOVERAGE-"]
 yahoo.com###YDC-MainCanvasLeadAd-Composite, #danafarberpromo, #defaultdestLREC, #fantasyshoppromo, #get-the-app, #mega-banner, #mega-banner-wrapper, #mrt-node-Lead-2-AbPromo, #sda-LDRB, #sda-MON, #sdaAdvText-INARTICLE, #sportsshop-promo, #uh-scroll-promo, #unblock-instructions, #unblock-intstructions, #viewer-LDRB, #yset-search-upsell-container, #yucs-top-ff-promo, .H-fixed.Ad, .ginsuAd, .nr-applet-main-nav-right, .sponsored, .td-applet-canvass
 ||menshealth.com/*/advagg_js$script,domain=menshealth.com
 ###acceptCookies
@@ -136,6 +135,7 @@ yahoo.com###YDC-MainCanvasLeadAd-Composite, #danafarberpromo, #defaultdestLREC, 
 ##.gdpr-banner
 ##.gdpr-privacy-bar
 ##.page-wrap--cookie-permission
+##.wordpress-gdpr-popup
 /wrapperMessagingWithoutDetection.js$script,domain=the-sun.com|thescottishsun.co.uk|thesun.co.uk|thesun.ie
 @@||geolocation.onetrust.com/cookieconsentpub/$script
 apnews.com,businesswire.com,cbssports.com,msn.com,nba.com,ncaa.com,nhl.com,reuters.com###onetrust-consent-sdk
@@ -275,8 +275,6 @@ androidpolice.com,babygaga.com,collider.com,fextralife.com,gamerant.com,hotcars.
 androidpolice.com,babygaga.com,collider.com,fextralife.com,gamerant.com,hotcars.com,lostmediawiki.com,makeuseof.com,moms.com,polygon.com,screenrant.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,xda-developers.com#$#.sidebar-sticky { position: relative !important; top: 0 !important; }
 androidpolice.com,babygaga.com,collider.com,fextralife.com,gamerant.com,hotcars.com,makeuseof.com,moms.com,screenrant.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,xda-developers.com#$##js-header { position: relative !important; transform: none !important; }
 androidpolice.com,babygaga.com,collider.com,fextralife.com,gamerant.com,hotcars.com,makeuseof.com,moms.com,screenrant.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,xda-developers.com#$#.quick-action-sidebar { position: relative !important; top: 0 !important; }
-anime-planet.com#$##siteHeader, #siteSearchUser { height: 54px !important; }
-anime-planet.com#$##siteHeader { position: absolute !important; }
 answers.com,bigthink.com,buymeacoffee.com,cohost.org,comic.pixiv.net,digitalb.al,evano.com,gizmodo.com,imgdownloader.com,inc.com,si.com,signup.dropout.tv,sitepoint.com,soulfun.ai,utah.com#$#.top-0.fixed { position: absolute !important; }
 aparat.com##.promote-puls
 apple.com#$##localnav { position: relative !important; }
@@ -286,7 +284,6 @@ arbys.com,arizonasports.com,art-sheep.com,linkody.com,liveviolet.net,motioneleme
 architecturaldigest.com,bonappetit.com,wired.com#$#.sticky-box { position: static !important; }
 arnoldporter.com,auditmypc.com,blog.sucuri.net,braintropic.com,cernovich.com,collinmbarrett.com,coloradoreview.colostate.edu,copyblogger.com,coryrylan.com,crazydadlife.com,ebikeschool.com,ehomerecordingstudio.com,erome.vip,famousbirthdays.com,formidable.com,freecodecamp.org,gamingtoday.com,gasspouts.com,gdpr-info.eu,githubuniverse.com,hanime.watch,helpdeskgeek.com,intowindows.com,jheneaiko.com,malwarebytes.com,matrix.org,milcorp.com,mintpressnews.com,mitpress.mit.edu,mspoweruser.com,notlaura.com,octoverse.github.com,peerlyst.com,phickle.com,quartersnacks.com,realityblurred.com,recordedfuture.com,regroove.ca,rootreport.com,sallysbakingaddiction.com,samharris.org,smartrecruiters.com,theamericanscholar.org,theamphour.com,thenib.com,thetechhacker.com,thewonderweeks.com,utech-polyurethane.com,warriortrading.com,wdc.com,wifinowevents.com,wplearninglab.com#$#.site-header { position: absolute !important; }
 arstechnica.com#$##site-header { position: relative !important; top: 0 !important; }
-arstechnica.com###top > div:nth-child(2), #top > div:nth-child(5)[style*="61"][style*="1920"]
 arstechnica.com#$#.p-nav { border-bottom: 1px solid rgba(0,0,0,0.12) !important; box-shadow: none !important; }
 arstechnica.com#$#.p-navSticky { position: relative !important; top: 0 !important; }
 arstechnica.com#$#.p-staffBar { position: relative !important; }
@@ -299,7 +296,6 @@ asus.com#$##headerLayerOne { display: revert !important; }
 asus.com#$#.headerExternal { position: relative !important; }
 athletic.net#$#.athletic-header { position: absolute !important; }
 atlassian.com#$#.fixed.ask-a-question-panel, .hamburger, .stuck.lia-quilt-column-atl-navigation-column.lia-quilt-column-single.lia-quilt-column-24.lia-quilt-column { position: absolute !important; }
-autoevolution.com,dev.to,nyaa.eu,spongepowered.org#$##topbar { position: absolute !important; }
 automobiles.honda.com#$#.wrapper { margin-top: 0 !important; }
 avrotros.nl,ibb.co,kidrock.com#$#.top-bar { position: relative !important; top: 0 !important; }
 azure.microsoft.com#$##azure-header { position: relative !important; }
@@ -347,7 +343,6 @@ bing.com##.hp_top_cover_dim
 bing.com#$#.sbox { position: absolute !important; }
 bios-pw.org,freeformatter.com,headphonecheck.com,lifedaily.com,pythonspeed.com,radare.org,softpedia.com#$#.topbar { position: absolute !important; }
 bittorrent.com,canadiantire.ca,cntraveler.com,corporate.target.com,fanduel.com,goodmorningamerica.com,makitatools.com,sofi.com,theladders.com#$#.global-header { position: absolute !important; }
-blackwonder.tf,coasterforce.com,forums.anandtech.com,forums.socialmediagirls.com,skial.com,sonicfangameshq.com#$#.p-navSticky { position: relative !important; }
 bladesports.org,flightgear.org#$#.navigation-top { position: relative !important; bottom: 0 !important; }
 bleepingcomputer.com#$#.bc_wrapper { padding-top: 0 !important; }
 bleepingcomputer.com#$#header { position: relative !important; top: 0 !important; transform: none !important; }
@@ -366,6 +361,7 @@ boston.com#@$#.site-container { margin-top: -100px !important; }
 boston.com,corporate.bestbuy.com#$##site-header { position: static !important; }
 boston25news.com,fox26houston.com,mediacentre.euroleague.net,news.samsung.com,npr.org,trustedreviews.com,wftv.com,wsbtv.com#$##wrapper { padding-top: 0 !important; }
 bountysource.com,lineageos.org#$#.navbar { position: absolute !important; box-shadow: none !important; }
+brainly.*#$#.sg-logo[class*="logo--"] { transform: scale(1) !important; }
 brave.com#$#.site-header { --site-header-height: unset !important; background-color: transparent !important; box-shadow: none !important; }
 britannica.com###global-nav-top-search-bar
 britannica.com#$#.drawerToggle { position: relative !important; top: 0 !important; }
@@ -381,7 +377,6 @@ buzzfeed.com#$#.js-main-nav { position: relative !important; }
 buzzfeed.com#$#.logoWrapper__2Uw7a { transform: none !important; }
 buzzfeed.com##.subNavContainer__2UWL9.isPrimaryNav__o_SGr
 buzzfeed.com#$#.subNavContainer__2UWL9 { opacity: 1 !important; visibility: visible !important; transform: none !important; }
-ca.gov#$##head-search { visibility: visible !important; opacity: 1 !important; }
 cam4.com#$#[data-section-id="Header"] { position: relative !important; }
 careers.ulta.com,prosperousamerica.org,safeway.com,sciencing.com,snapchat.com,southernkitchen.com,telegraaf.nl#$#.header-container { position: absolute !important; }
 cavedivers.com.au,netgate.com,openshot.org#$#.header-body { position: absolute !important; }
@@ -568,6 +563,7 @@ fedex.com#$#.fxg-nav { max-height: 75px !important; }
 fedoraproject.org#$##desktop { position: absolute !important; }
 ffmpeg.com,nintendo.com#$##sidebar-wrapper { position: absolute !important; }
 finance.yahoo.com,news.yahoo.com,sports.yahoo.com,www.yahoo.com#$##ybar-navigation { opacity: 1 !important; margin-top: 0 !important; }
+fiverr.com#$##topbar, .sidebar { position: relative !important; }
 fiverr.com#%#//scriptlet('ubo-nostif', 'function(){e()}', '2000')
 flathub.org#$#.z-30.fixed { position: absolute !important; background-color: unset !important; box-shadow: none !important; --tw-shadow: none !important; }
 flickr.com#$#.global-nav-view .global-nav-content { position: absolute !important; }
@@ -577,8 +573,6 @@ fonts.google.com###feedback-button
 fontsig.com,netzwelt.de#$##header { position: absolute !important; box-shadow: none !important; }
 forbes.com##._1TZN0
 forbes.com#$#._5OuWW { position: relative !important; transform: none !important; }
-forums.socialmediagirls.com#$#.p-sectionLinks { border-bottom: 1px solid rgba(255,255,255,0.12) !important; }
-forums.socialmediagirls.com,skial.com,tf2maps.net###top > div:nth-child(3)
 forums.tomsguide.*,forums.tomshardware.*#$#.uix_stickyBodyElement:not(.offCanvasMenu) { position: static !important; }
 forums.tomsguide.*,forums.tomshardware.*,resetera.com#$#.uix_headerContainer .p-navSticky.is-sticky > * { box-shadow: none !important; }
 foundation.wikimedia.org,mediawiki.org,meta.telepedia.net,wikipedia.org,wikisource.org,wiktionary.org#$#.vector-sticky-pinned-container { position: relative !important; top: 0 !important; }
@@ -594,7 +588,6 @@ foxnews.com#$#.recommended-navbar { position: relative !important; }
 france24.com,rfi.fr#$#.o-header__inner, .o-tag-list-wrapper { position: absolute !important; }
 freeconvert.com#$##breadcrumb { top: 100% !important; }
 freeconvert.com,hersheyland.com#$#.navbar-container { position: absolute !important; }
-funpay.com#$##nav-abc { position: absolute !important; top: 0 !important; }
 funpay.com#$#.chat-float { position: relative !important; top: 0 !important; }
 gallup.com#$##ctl00_HeaderNavigation_Navbar { position: relative !important; animation: none !important; }
 gallup.com##.navbar-sticky-placeholder
@@ -674,8 +667,6 @@ hackernoon.com#$#.top-0.fixed { position: absolute !important; transform: none !
 help.disneyplus.com#$#.article-feedback-wrap .fixed-footer { position: relative !important; }
 help.disneyplus.com##.vxAssistant-fab
 help.steampowered.com#$#._2wa31Vkjhr311VBcF_ynDO { position: absolute !important; top: 0 !important; }
-helpx.adobe.com#$##adbmsgCta { position: absolute !important; }
-helpx.adobe.com#$##root_content_flex { margin-top: 0 !important; }
 helpx.adobe.com#$#.productDetails { position: relative !important; }
 helpx.adobe.com#$#.titleBar { position: relative !important; }
 helpx.adobe.com#$#.toc { position: absolute !important; top: 0 !important; max-height: unset !important; overflow-y: unset !important; }
@@ -715,8 +706,6 @@ internetsociety.org#$#.main-header { position: absolute !important; top: 0 !impo
 investing.com#$#.switchHeader, header:not(.js-section-header) { position: relative !important; }
 investing.com#$#body > .wrapper { padding-top: 0 !important; }
 investopedia.com#$##header_1-0, .inner-helper, .journey-nav-wrapper { position: absolute !important; }
-irfanview.com#$##fixed-menu { position: absolute !important; }
-irfanview.com#$#.inner-header { position: absolute !important; }
 isitdownrightnow.com#$##likebox { position: absolute !important; top: 120px !important; left: -68px !important; }
 iso.org#$#.isologo { height: 115px !important; width: 90px !important; background-position: 4px 35px !important; }
 iso.org#$#.navbar, header.header-img .logo { position: absolute !important; }
@@ -788,7 +777,6 @@ manualslib.com#$##caffix { position: relative !important; top: 0 !important; }
 marketplace.visualstudio.com#$##section-banner, .itemdetails.details-tab, .ms-Pivot, .ux-item-shortdesc { animation: none !important; }
 marketplace.visualstudio.com#$##section-banner, .ms-Pivot { position: relative !important; }
 marketplace.visualstudio.com#$#.ux-item-details { margin-bottom: 0 !important; }
-matcha-jp.com#$#.l-nav { position: absolute !important; }
 mediafire.com#$##header:not(.signUp #header) { position: absolute !important; }
 mediapart.fr#$#.engagement-bar { position: absolute !important; top: 54px !important; visibility: visible !important; opacity: 1 !important; }
 mediapart.fr#$#.nav._scroll-top:not(._sticky) .nav__main { animation: none !important; }
@@ -934,6 +922,7 @@ programiz.com##.get-app-link-wrapper
 protonvpn.com#$#.top-0.sticky { position: absolute !important; }
 protonvpn.com#$#.xl\:fixed { position: absolute !important; }
 psychologytoday.com#$#.main-nav-wrapper { position: absolute !important; box-shadow: 0 1px 2px 0 #1F293714 !important; }
+pypi.org#$##sticky-notifications { position: absolute !important; }
 quora.com#$#.q-fixed { position: absolute !important; }
 quora.com#$#.q-sticky { position: relative !important; top: 0 !important; }
 quora.com#$#.qu-zIndex--action_bar { position: relative !important; }
@@ -1103,7 +1092,6 @@ urbandictionary.com#$#.md\:sticky.top-0 { position: relative !important; }
 usatoday.com#$#.gnt_em_vp_c { position: static !important; width: 100% !important; height: 100% !important; }
 usatoday.com##.gnt_nb
 userbenchmark.com#$#.container-fluid.pagebounds.top-menu { position: absolute !important; }
-usnews.com#$#.show-for-large-up.main.header, nav[class^="SubNav__StickyNav"] { position: relative !important; }
 vanityfair.com#$#.sticky-box { position: static !important; top: 0 !important; }
 vanityfair.com#$#.sub-brand-nav__links { display: flex !important; }
 variety.com#$#.player-position { position: static !important; width: 100% !important; height: 100% !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; }
@@ -1187,8 +1175,6 @@ worldmarket.com#$#.sticky-nav { position: relative !important; top: unset !impor
 woshub.com#$##navigation.header-6 #logo img { max-height: 80px !important; padding: 12px 0 !important; }
 woshub.com#$##navigation.header-6 #top-search > a, #navigation.header-6 .show-search a.close-search { height: 80px !important; line-height: 80px !important; }
 woshub.com#$##navigation.header-6.menu-item-padding, #navigation.header-9.menu-item-padding, #navigation.header-6.menu-item-padding ul.menu > li > a, #navigation.header-9.menu-item-padding ul.menu > li > a { height: 81px !important; }
-wsj.com##.css-1mb36w1-DummyWrapper
-wsj.com#$#.css-p14k17-MastHeadContainer { position: static !important; box-shadow: none !important; }
 www.frontiersin.org#$#.Ibar__button, .Ibar__dropdown__trigger, .Ibar__icon, .Ibar__link, .Ibar__logo__text { color: unset !important; }
 www.frontiersin.org#$#.Ibar__button { border: 1px solid !important; }
 www.frontiersin.org#$#.Ibar__journal { position: absolute !important; transform: none !important; }
@@ -1252,7 +1238,6 @@ youtube.com#$#ytd-two-column-browse-results-renderer[page-subtype="history"] #se
 ###elGuestTerms
 ###facebookShare
 ###footer-social
-###go-to-top:not(html):not(body)
 ###goTop:not(html):not(body)
 ###gotop:not(html):not(body)
 ###header-social
@@ -1446,7 +1431,6 @@ youtube.com#$#ytd-two-column-browse-results-renderer[page-subtype="history"] #se
 ##.site-footer__social
 ##.social-bar-wrapper
 ##.social-block
-##.social-box
 ##.social-button
 ##.social-buttons
 ##.social-container
@@ -1716,7 +1700,6 @@ timeanddate.com###mpo
 twitter.com#$#html[style*="overflow: hidden;"] { overflow-y: scroll !important; overscroll-behavior-y: auto !important; margin-right: 0 !important; }
 vanityfair.com##.component-modal, .paywall-bar, .paywall-bar__consumer-marketing-unit, .paywall-container, .paywall-modal
 wbur.org##.section--takeover
-wsj.com###agate-wallet, #cx-candybar, #cx-candybarhp, #cx-scrim, [id*="sp_message_container"]
 wunderground.com##snack-bar-container
 youtube.com#$?#.opened:not(.ytcp-bulk-actions) { remove: true; }
 youtube.com##tp-yt-iron-overlay-backdrop

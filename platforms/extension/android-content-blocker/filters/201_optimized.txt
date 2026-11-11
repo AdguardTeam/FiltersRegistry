@@ -1,5 +1,5 @@
-! Checksum: tXnQC2P5RUos+a3PAy7pnA
-! Diff-Path: ../patches/201_optimized/201_optimized-s-1794285526-14400.patch
+! Checksum: JwNcDetoWE8Eo5JbwmqzIA
+! Diff-Path: ../patches/201_optimized/201_optimized-s-1794371881-14400.patch
 ! Title: Web Annoyances Ultralist (Optimized)
 ! Description: Blocks annoying web elements and reclaims lost screen real estate.
 ! Version: 2.0.0.46
@@ -28,6 +28,7 @@ gamerevolution.com##.widget_evolve_ad_gpt_widget
 gq.com##.article-inline-ad, [class*="ConsumerMarketingUnitThemedWrapper"]
 history.com##.m-header-ad
 information.dk##.masthead
+istheservicedown.com##.section-promoted-head
 jpost.com##.OUTBRAIN, .fake-container-for-outbrain-sticky.one-row, .line-left-side-before-and-after-container, .one-row.line-one-row-before-and-after-container
 kiplinger.com##.kip-advertisement
 latimes.com,pacificsandiego.com,sandiegouniontribune.com##.google-dfp-ad-wrapper, div.GoogleDfpAd-wrapper
@@ -47,13 +48,11 @@ seriouseats.com##.bottom-sticky-ad, .custom-aba, .leaderboard
 tass.ru##.adsSlot300600
 tedium.co##.md-adbox
 thelibertydaily.com##.paid-subscriber
-usnews.com###ac-lre-player-ph, #bfad-slot, #sailthru-recommendations-widget, [class*="ad-spacer__AdSpacer-"], [class*="Ad__Container-sc"]
 vanityfair.com###AMS_VYF_ARTICLE_INTEGRATED_END, #AMS_VYF_ARTICLE_INTEGRATED_INSTREAM, #AMS_VYF_GLOBAL_FOOTER, #AMS_VYF_GLOBAL_HEADER, #AMS_VYF_HOLLYWOOD_FOOTER, #AMS_VYF_INLINE_PROMO, #AMS_VYF_INLINE_TEXT, .ad--in-content, .ad--out-of-page, .component-riser, .component-sponsored-links, .consumer-marketing-unit, .consumer-marketing-unit--cm-footer, .consumer-marketing-unit--display-hero, .paywall-bar-failsafe, .paywall-growler, [class*="StickyHeroAdWrapper-"]
 vogue.com##.ticker-view
 w3schools.com###skyscraper
 wikipedia.org##.cn-WikiLovesPride2019, .cn-fundraising, .frb
 wired.com###paywall-growler, #wiredwidgetsecommerce-2, #wiredwidgetsecommerce-3, #wiredwidgetsmarketing-3, .ad-stickyhero, .advertisement__leaderboard, .affiliate-links-component, .consumer-marketing-unit--article-mid-content, .consumer-marketing-unit--cm-footer, .consumer-marketing-unit--display-rail, .insider, .js-post-listing-rad, .js-prefooter-rad, .magazine, .paywall-container-component, .rad
-wsj.com###comments_ad, #cx-article-cover-image, #cx-candybar-wrapper, #cx-mktg-tile, #cx-notification, #cx-popup, #cx-what-to-read-next, #expNav, #hat_tab_wsj, #in_ad_col_a, #in_ad_col_b, #saving-united-coupon-list, .WSJTheme__adContainer_39QoSCiFRHj0OwE7STJ23b .WSJTheme__adWrapper_2v6EA8giE6Pw9SoNUltRuT, .WSJTheme__onboarding-banner_2iniaUJWnOXdS0jqStuxs2, .banner-ad, .bing-native-ad, .inno-adhesive-container, .innovation-mojo-ad-wrapper, .live-coverage__instream-ad, .nc-exp-ad, .ob_strip_container.SB_2, .popC.connect.popClosed.popClose, .responsive-ad-container, .space-bottom.mktg-tile, .toggleBtn, .topLinks, .wsj-ad, .wsj-body-ad-placement, .wsj-immersive-ad-placement, .wsj-native-strip, .wsj-responsive-ad-wrap, .wsj-responsive-nav-circ-wrap, .zonedModule[data-module-zone="moatAds"], .zonedModule[data-module-zone="prebid"], [class^="WSJTheme--ad-container-"], [class^="WSJTheme--slide-related-ad-container-"], [class^="style__wsj-nav-promobottom"], [class*="style--wsj-nav-promobottom--"], div[class^="WSJTheme--adWrapper--"], [id*="wrapper-AD_LIVECOVERAGE-"]
 yahoo.com###YDC-MainCanvasLeadAd-Composite, #danafarberpromo, #defaultdestLREC, #fantasyshoppromo, #get-the-app, #mega-banner, #mega-banner-wrapper, #mrt-node-Lead-2-AbPromo, #sda-LDRB, #sda-MON, #sdaAdvText-INARTICLE, #sportsshop-promo, #uh-scroll-promo, #unblock-instructions, #unblock-intstructions, #viewer-LDRB, #yset-search-upsell-container, #yucs-top-ff-promo, .H-fixed.Ad, .ginsuAd, .nr-applet-main-nav-right, .sponsored, .td-applet-canvass
 ||menshealth.com/*/advagg_js$script,domain=menshealth.com
 ###acceptCookies
@@ -134,6 +133,7 @@ yahoo.com###YDC-MainCanvasLeadAd-Composite, #danafarberpromo, #defaultdestLREC, 
 ##.gdpr-banner
 ##.gdpr-privacy-bar
 ##.page-wrap--cookie-permission
+##.wordpress-gdpr-popup
 /wrapperMessagingWithoutDetection.js$script,domain=the-sun.com|thescottishsun.co.uk|thesun.co.uk|thesun.ie
 @@||geolocation.onetrust.com/cookieconsentpub/$script
 apnews.com,businesswire.com,cbssports.com,msn.com,nba.com,ncaa.com,nhl.com,reuters.com###onetrust-consent-sdk
@@ -182,7 +182,6 @@ aliexpress.com###pc-sticky-header
 amazon.*##.persistent-header
 androidpolice.com,babygaga.com,collider.com,fextralife.com,gamerant.com,hotcars.com,howtogeek.com,makeuseof.com,moms.com,screenrant.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,xda-developers.com###js-secondary-header
 aparat.com##.promote-puls
-arstechnica.com###top > div:nth-child(2), #top > div:nth-child(5)[style*="61"][style*="1920"]
 askubuntu.com,serverfault.com,stackexchange.com,stackoverflow.com,superuser.com###overlay-header, .create-team-tooltip, .js-notice-sidebar-popover
 bbcgoodfood.com##.eyebrow-nav .image__img
 beaumontenterprise.com,chron.com,ctpost.com,darientimes.com,fairfieldcitizenonline.com,greenwichtime.com,lmtonline.com,michigansthumb.com,middletownpress.com,milfordmirror.com,mrt.com,myjournalcourier.com,myplainview.com,ncadvertiser.com,newmilfordspectrum.com,newstimes.com,nhregister.com,ourmidland.com,registercitizen.com,seattlepi.com,sheltonherald.com,stamfordadvocate.com,thehour.com,theintelligencer.com,theridgefieldpress.com,thetelegraph.com,timesunion.com,trumbulltimes.com,westport-news.com,wiltonbulletin.com,yourconroenews.com#@##ctpl-fullbanner-spacer
@@ -219,7 +218,6 @@ fandom.com##.is-visible.fandom-sticky-header
 flickr.com##.loader-bar
 fonts.google.com###feedback-button
 forbes.com##._1TZN0
-forums.socialmediagirls.com,skial.com,tf2maps.net###top > div:nth-child(3)
 foxnews.com###elections-iframe-banner, .c-item.c-item-first.c-item-last, .featured.featured-video .control, .featured.featured-video.sticky-video .contain .info .title::before, .g-41.section-featured, .vid-scroll-bknd
 gallup.com##.navbar-sticky-placeholder
 github.com###issue-viewer-sticky-header
@@ -295,7 +293,6 @@ wetter.com##.scroll-btn
 whatculture.com###app-nav-end, .app-nav__inner
 winaero.com##.fixtop
 wordpress.com##.marketing-bar
-wsj.com##.css-1mb36w1-DummyWrapper
 www.google.com##.VjFXz
 www.google.com##.chr-jumplinks-v2__list
 www.yahoo.com##.-rotate-90.absolute
@@ -320,7 +317,6 @@ youtube.com###frosted-glass
 ###elGuestTerms
 ###facebookShare
 ###footer-social
-###go-to-top:not(html):not(body)
 ###goTop:not(html):not(body)
 ###gotop:not(html):not(body)
 ###header-social
@@ -514,7 +510,6 @@ youtube.com###frosted-glass
 ##.site-footer__social
 ##.social-bar-wrapper
 ##.social-block
-##.social-box
 ##.social-button
 ##.social-buttons
 ##.social-container
@@ -763,7 +758,6 @@ subzero-wolf.com##.footer-announcement
 timeanddate.com###mpo
 vanityfair.com##.component-modal, .paywall-bar, .paywall-bar__consumer-marketing-unit, .paywall-container, .paywall-modal
 wbur.org##.section--takeover
-wsj.com###agate-wallet, #cx-candybar, #cx-candybarhp, #cx-scrim, [id*="sp_message_container"]
 wunderground.com##snack-bar-container
 youtube.com##tp-yt-iron-overlay-backdrop
 youtube.com##ytd-offline-promo-renderer
