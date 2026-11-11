@@ -1,9 +1,9 @@
-! Checksum: RbswLHg87MTqBSsjpD7CDQ
-! Diff-Path: ../patches/14/14-s-1794373936-3600.patch
+! Checksum: wLSd2+pnh/f9eUTjNelz7A
+! Diff-Path: ../patches/14/14-s-1794377856-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.86.16
-! TimeUpdated: 2026-11-11T05:08:53+00:00
+! Version: 2.2.86.17
+! TimeUpdated: 2026-11-11T06:13:15+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2681,6 +2681,9 @@ sklep.precio.pl,kim24.pl,sklep.moderat.pl,dlagentlemana.pl,nogame.pl,propaganda2
 !
 ! NOTE: Regular rules
 !
+pickaboo.com#%#//scriptlet('set-cookie', 'cookie-consent-accepted', 'false')
+||static.epagine.fr/tarteaucitron/
+autoc-one.jp###cookie_notice_bmw
 e-bikes.de##.eb-cookies
 fafit24.de#%#//scriptlet('trusted-click-element', 'div[aria-labelledby="cookie-config-title"] button.js-offcanvas-cookie-submit', '!cookie:cookie-preference')
 81-sports.com,81-sports.de,81-sports.pl#%#//scriptlet('trusted-set-cookie', '_cookieSettingsRequired', 'granted')
@@ -49541,6 +49544,8 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+bibliatodo.com###bt-app-install-banner
+nap-camp.com##.hide-in-app
 emlakkatilimparaf.com.tr##section[id^="dynamic-zone.app-downloader"]
 polis.ua##section[class^="AppsModule_apps"]
 chat.qwen.ai##.qwen-auth-share-logo
@@ -49926,7 +49931,6 @@ lookup.robokiller.com#%#//scriptlet('set-session-storage-item', 'dontShowMobileB
 truecaller.com#%#//scriptlet('set-cookie', 'tc:dismissexitintentpopup', 'true')
 kleiner-kalender.de###AppMsg
 gdh.digital##body > div.overflow-hidden.fixed
-memorial.com.tr##.smart-banner-block
 bitrefill.com##div[class^="_wrapper_"] > section[class]:has(> div[class^="_inner_11mgk"] a[href="https://apps.apple.com/in/app/bitrefill/id1378102623"])
 uatv.ua##.first-rotation-banner
 asics.com.hk##.layout-header > div[class^="sc-"]:has(> div > div > [alt^="ASICS HK banner"])
@@ -53755,6 +53759,8 @@ wear.jp#%#//scriptlet('trusted-set-session-storage-item', 'status_of_app_redirec
 ! Misc rules, removed during optimization. If some rules are in groups, no need to move them here
 !
 !
+!+ NOT_OPTIMIZED
+memorial.com.tr##.smart-banner-block
 !+ NOT_OPTIMIZED
 singlecare.com##.stickyAppPromoBanner
 !+ NOT_OPTIMIZED
