@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: OSFgG/26aD/Pv1Slohhx9A
-! Diff-Path: ../patches/18/18-s-1794496403-3600.patch
+! Checksum: 1VedmjttudSMNCUb6dkd1g
+! Diff-Path: ../patches/18/18-s-1794500033-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.99.37
-! TimeUpdated: 2026-11-12T15:09:06+00:00
+! Version: 2.0.99.38
+! TimeUpdated: 2026-11-12T16:09:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2601,6 +2601,8 @@ sklep.precio.pl,kim24.pl,sklep.moderat.pl,dlagentlemana.pl,nogame.pl,propaganda2
 !
 ! NOTE: Regular rules
 !
+china-airlines.com##+js(set-local-storage-item, is-cookie-consent-done, true)
+flights.china-airlines.com##div[aria-label="Cookies banner"]
 palert.ru##.palert-cookie-bar
 novostroy.ru,novostroy.su##div[class^="Cookie-module"]
 racetime.net##footer + div[style^="position: fixed"][style*="z-index: 40"]
@@ -9637,7 +9639,7 @@ mb4.ru###cookiesAlarm
 konsultacje.um.warszawa.pl,bo.um.warszawa.pl,otempo.com.br,skaleet.com,bitkub.com##.cookies__container
 deepsource.io##footer + div.animate-fadeIn.shadow-2xl.fixed.bottom-0
 moviesroom.pl##footer > div.overlay-rules
-polizei.de##.mfp-ready:style(display: none !important;)
+polizei.de##div[class^="mfp-"]:style(display: none !important;)
 nadeta.cz###inshopCookies:style(display: none !important;)
 nadeta.cz##body.mdc-dialog-scroll-lock:style(overflow: auto !important;)
 priorydirect.co.uk###cookie__Wrapper
