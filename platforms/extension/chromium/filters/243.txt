@@ -1,14 +1,14 @@
-! Checksum: KCjrMnBakQLofTZhNMAeVQ
-! Diff-Path: ../patches/243/243-s-1794299944-14400.patch
+! Checksum: CXgI8ywVOGN0f/+wa9x2xA
+! Diff-Path: ../patches/243/243-s-1794472662-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.81
-! TimeUpdated: 2026-11-10T08:36:07+00:00
+! Version: 2.0.25.82
+! TimeUpdated: 2026-11-12T08:35:41+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-11-10 07:07:23 CET
+! Last modified: 2026-11-12 07:13:29 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -561,6 +561,7 @@ fastighetstidningen.se##.adspace, a[class*="annons"]
 fastighetsvarlden.se##a.entry__link[href*="/native/"]
 fastighetsvarlden.se##.widget_custom_html:has(.ad-text)
 fasting.nu#$#body { display:unset!important }
+feber.se,tjock.se##article:has([data-feed-section="sponsored"])
 feber.se,tjock.se##div[role="dialog"][aria-label="Annons"], div[data-slot], div[data-native-slot="1"], article[data-feed-section="promotion"]
 feber.se,tjock.se#%#//scriptlet('ubo-set', 'B.ab', 'false')
 feber.se,tjock.se#%#//scriptlet('ubo-set', 'dovideostuffAD', 'noopFunc')
@@ -858,6 +859,7 @@ industritorget.se###pnlCookie, .campaign-top, .campaigns-right
 inet.se#%#//scriptlet('ubo-set-cookie', 'allow-marketing-cookies', '0')
 inkopsradet.se##div[id^="inkop-"], #u24s-banner
 inkopsradet.se##.brxe-shortcode:has(div[id^="inkop-"])
+innebandymagazinet.se##.entry-content > div > section > div:has(a[href*="/sponsrat"], a[href*="utm_campaign"])
 innebandymagazinet.se,padeldirekt.se,formeldirekt.se##.Odds_Widget_Ad, .c-partners, div[class*="_panorama"], div[class*="_insider"], .LiveWrapped-mobile_in_article, div[class*="LiveWrapped-desktop"], .endast-desktop, .endast-mobil, div[id^="pb-slot"]
 innebandymagazinet.se,padeldirekt.se,formeldirekt.se##.article-row:has(.h-background--sponsored)
 innebandymagazinet.se,padeldirekt.se,formeldirekt.se##.text-center:has(div[data-ad-unit-id])
@@ -1023,11 +1025,11 @@ livsmedelsnyheter.se#?#div[class*="elementor-widget-text-editor"][data-widget_ty
 livsmedelsnyheter.se,signprint.se##.jet-popup
 ljudochbild.se#$##MoreLink_content-container { height:unset!important; }
 ljudochbild.se###MoreLink_fade-out-div
-ljudochbild.se#?#.Annonsinnehåll:upward(.maincol)
-ljudochbild.se##.adremark, .coofad, .hidead, .phoneads, .pricecomp, .offerz, .type-articleadvertorial, .adblock, .lbplussinfo, .popup-overlayx, a[href*="/advertorial"], a[href*="/advertorial"] + .textbox, .prisjakt, #stickleft, #stickright, .adbox, .mainbanner, .egenannonse
+ljudochbild.se##.adremark, .coofad, .hidead, .phoneads, .pricecomp, .offerz, .type-articleadvertorial, .adblock, .lbplussinfo, .popup-overlayx, a[href*="/advertorial"], a[href*="/advertorial"] + .textbox, .prisjakt, #stickleft, #stickright, .adbox, .mainbanner, .egenannonse, section[aria-label="Annonse"]
 ljudochbild.se#$#.thecontent, .entry-content { max-height: unset !important; overflow: initial !important; height: unset !important; }
 ljudochbild.se#$#.wp-caption { display:initial!important }
 ljudochbild.se##:is(div[class^="col-md"][style*="border-radius"], .maincol):has(a[href*="/advertorial"])
+ljudochbild.se#?#:is(.Annonsinnehåll, .Annonsørinnhold):upward(.maincol, a)
 ljungbysporten.se##section.widget_media_image, a[target="_blank"]:not([href*="ljungbysporten.se"])
 ljuskultur.se,aapl.se,inredningsarkitektur.se,inblick.se,forfattarforbundet.se##.cookies
 ljuskultur.se,bettips.se,spelo.se,skogsaktuellt.se,entreprenadaktuellt.se,ja.se,husbilhusvagn.se,klassiker.nu,vibilagare.se,frillesasbandy.se,djungeltrumman.se,skik.se,omni.se,campingsverige.se,eniro.se,restaurangvarlden.se,naringslivetvgl.se,dalarnasaffarer.se,stockholmsaffarer.se,jamtlandsaffarer.se,hallandsnaringsliv.se,sjuharadsnaringsliv.se,nyheteridag.se,alekuriren.se,onkologiisverige.se,svenskalag.se,borasweekly.se,hitta.se,sporttv.nu,bostadspolitik.se,kropps.se,studentlund.se,karriarlakare.se##.banner
@@ -3011,6 +3013,7 @@ zeromagazine.nu##div[id^="ads"]
 @@||cargodisplayads.com/till_minne/
 @@||cdn.play.showheroes.com/part/partimage$image
 @@||cdn.play.showheroes.com/part/rendered$media
+@@||content.viralize.tv/display/$domain=innebandymagazinet.se
 @@||createsend1.com/css/
 @@||fast.fonts.net/jsapi/core/mt.js$domain=tidskriftenprovins.se
 @@||feed.meltwater.com^$subdocument
@@ -3204,7 +3207,7 @@ _banner.php?$domain=tvmatchen.nu
 ||cookiehub.eu^$domain=da.se|elongroup.se|kommunal.se|adapt.se|el-kretsen.se
 ||cookiehub.net^$domain=adoptionscentrum.se
 ||cookieinformation.com^$domain=dental24.se|vinbanken.se|handelskammarenvarmland.se|enahabo.se|placera.se|skk.se|hyresgastforeningen.se|kopahund.se|arstiderna.com
-||cookielaw.org^$domain=flashscore.se|ikea.com|manpower.se|natgeotv.com|internetkunskap.se|internetstiftelsen.se|yelp.se|viaplayradio.se|svenskarnaochinternet.se|bredbandskollen.se|internetmuseum.se|internetdagarna.se|digitalalektioner.se|goto10.se|tripadvisor.se|sydkusten.es|livetochdiabetes.se|cioanalytics.se|se.trustpilot.com|pricerunner.se|lidl.se|pwc.se|svenskafans.com|vinted.se|global.morningstar.com|fotbolldirekt.se|hockeysverige.se|koket.se
+||cookielaw.org^$domain=flashscore.se|ikea.com|manpower.se|natgeotv.com|internetkunskap.se|internetstiftelsen.se|yelp.se|viaplayradio.se|svenskarnaochinternet.se|bredbandskollen.se|internetmuseum.se|internetdagarna.se|digitalalektioner.se|goto10.se|tripadvisor.se|sydkusten.es|livetochdiabetes.se|cioanalytics.se|se.trustpilot.com|pricerunner.se|lidl.se|pwc.se|svenskafans.com|vinted.se|global.morningstar.com|fotbolldirekt.se|hockeysverige.se|koket.se|innebandymagazinet.se
 ||cookiepro.com^$domain=djurskyddet.se|havet.nu
 ||cookies.dizparchstd.se^$domain=usabil.nu
 ||cookietractor.com^$domain=innebandy.se|orientering.se|pluggakuten.se|munskankarna.se|burgerdudes.se|tidningenattention.se|fremia.se|sprintchallenge.se|fondbolagen.se|hjart-lung.se|tidningenrevansch.se|abf.se|svmc.se
