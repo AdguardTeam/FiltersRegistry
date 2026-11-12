@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.5.3.95",
-			"timeUpdated": "2026-11-12T12:11:08+0000",
+			"version": "2.5.3.96",
+			"timeUpdated": "2026-11-12T13:07:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.35.13",
-			"timeUpdated": "2026-11-12T08:10:32+0000",
+			"version": "2.1.35.14",
+			"timeUpdated": "2026-11-12T13:08:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.86.36",
-			"timeUpdated": "2026-11-12T12:12:03+0000",
+			"version": "2.2.86.37",
+			"timeUpdated": "2026-11-12T13:08:35+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.41.53",
-			"timeUpdated": "2026-11-12T11:07:56+0000",
+			"version": "2.1.41.54",
+			"timeUpdated": "2026-11-12T13:08:38+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -681,8 +681,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.19",
-			"timeUpdated": "2026-11-12T12:12:09+0000",
+			"version": "2.0.58.20",
+			"timeUpdated": "2026-11-12T13:08:39+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -755,8 +755,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.62",
-			"timeUpdated": "2026-11-12T12:12:12+0000",
+			"version": "2.0.87.63",
+			"timeUpdated": "2026-11-12T13:08:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -799,8 +799,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.21",
-			"timeUpdated": "2026-11-12T10:08:53+0000",
+			"version": "2.0.50.22",
+			"timeUpdated": "2026-11-12T13:08:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
