@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 8IbJSvFzULcIzgyoQs4cuA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1794371899-14400.patch
+! Checksum: 3FRX4rmmZHnaiKCwphT+jQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1794458304-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.21.11
@@ -32,6 +32,7 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.primary_download
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-text
 drivereasy.com##.pakb-content p:contains(Driver Easy)
+drivereasy.com##.pakb-content div.info.note:contains(drivereasy.com)
 drivereasy.com##.pakb-content p:contains(the FREE version)
 drivereasy.com##.pakb-content p:contains(the Pro version)
 drivereasy.com##.pakb-content p:contains(click Update All)
@@ -502,6 +503,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||verificationcenter.top^$all
 ||23.22.126.183^$all
 ||novatalent.agency^$all
+||trkepcs.com^$all
 ||43.157.122.86^$all
 ||43.157.46.83^$all
 ||43.164.196.209^$all
@@ -1087,7 +1089,6 @@ www.microsoft.com##.card[data-bi-cn*= crafts i]
 ##div[class*=_share_button]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=addthis]
 ##div[class*=article-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-article-share])
-##div[class*=box--share]
 ##div[class*=footer__share]
 ##div[class*=FooterShare i]
 ##div[class*=post-sharing]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-post-sharing])
@@ -1624,7 +1625,6 @@ www.google.*,ipv6.google.com##div#m-x-content div[jscontroller] > div[class]:onl
 bing.*###b_results > .b_top[data-partnertag]
 word-edit.officeapps.live.com,word.cloud.microsoft###TellMeWrapper_container
 word-edit.officeapps.live.com,word.cloud.microsoft##.BeforePageContent
-eurogamer.*##.preferred_source_button
 techedt.com##.google-actions
 ubackup.com##.preferred
 /google-preferred-source-badge-$image,domain=~google.*|~google|~goog
@@ -1633,8 +1633,6 @@ ubackup.com##.preferred
 ~google.*,~google,~goog##.google-source:not(html,body)
 sourceforge.net###preferred-source-button
 diskpart.com##.theme-side
-~google.*,~google,~goog##.legion-preferred-source:not(html,body)
-~google.*,~google,~goog##elgoog-btn:not(html,body)
 ~google.*,~google,~goog##.w-google-addus-btn:not(html,body)
 ~google.*,~google,~goog##.google-follow-link:not(html,body)
 ~google.*,~google,~goog##.cc-google-preferred-source:not(html,body)
@@ -1795,6 +1793,7 @@ $document,removeparam=/^utm-.*$/
 $~subdocument,removeparam=aff,domain=~discoverbank.com|~discover.com
 $removeparam=mc_cid
 $removeparam=mc_eid
+$removeparam=afftag
 $document,removeparam=/^affid=.*$/i,domain=~redir.tradedoubler.com|~affiliate.geekbuying.com
 $removeparam=referralCode
 $removeparam=LSNPUBID
@@ -2034,7 +2033,6 @@ $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
 $document,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
 $removeparam=paid
-$removeparam=pacid
 $removeparam=adtype
 $removeparam=tmcampid
 $removeparam=n_cid
@@ -3199,6 +3197,7 @@ $document,removeparam=curator_clanid,domain=store.steampowered.com|steamcommunit
 ||store.epicgames.com^$document,removeparam=epic_creator_id
 ||quora.com^$document,removeparam=qv_src
 ||americanexpress.com^$document,removeparam=inav
+||ck12.org^$document,removeparam=_eid
 ||qobuz.com^$document,removeparam=qbzc
 ||qobuz.com^$document,removeparam=qbzs
 $document,removeparam=lctg
@@ -3215,7 +3214,6 @@ $document,removeparam=mi_u,domain=chewy.com|harborfreight.com|samsclub.com|walma
 ||bestbuy.com^$document,removeparam=jobid
 ||bestbuy.com^$document,removeparam=commcode
 ||bestbuy.com^$document,removeparam=eut
-ref=thebirthofacapital.info$document,removeparam=ref
 $document,removeparam=smtrctid,domain=samsclub.com|walmart.com
 ||oxylabs.io^$removeparam=groupid
 ||oxylabs.io^$removeparam=transaction_id
