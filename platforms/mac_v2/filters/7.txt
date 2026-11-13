@@ -1,9 +1,9 @@
-! Checksum: U5hY2T43zNNPD0575KvNvQ
-! Diff-Path: ../patches/7/7-s-1794492796-3600.patch
+! Checksum: /2IyR0bm3FsDNWr8fHZu5Q
+! Diff-Path: ../patches/7/7-s-1794546796-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.39
-! TimeUpdated: 2026-11-12T14:09:05+00:00
+! Version: 2.0.78.40
+! TimeUpdated: 2026-11-13T05:08:47+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2063,7 +2063,9 @@ dengekionline.com##div[class^="InLead-"]
 !+ NOT_VALIDATE
 ||socialxup.com/go/$urltransform=/go\/.*//
 ! aglint-enable no-invalid-modifiers
+socialxup.com#%#//scriptlet('prevent-window-open', '_blank')
 socialxup.com#%#//scriptlet('prevent-addEventListener', 'click', '/\[native code\]|^\s*e\s*=>\s*.+\(\s*e\s*\)\s*$/')
+socialxup.com#?#a[href^="/"]:matches-attr("href"="/^\/[0-9a-z]{3,8}-[0-9A-Za-z][AQgw]$/")
 socialxup.com##a[target][href^="https://socialxup.com/"]
 socialxup.com##a[target][href^="/"]
 socialxup.com#?#span:matches-css(cursor:pointer):empty
@@ -2275,7 +2277,7 @@ pdftoshokan.com#%#//scriptlet('trusted-replace-argument', 'parseInt', '0', '1800
 pdftoshokan.com#%#//scriptlet('trusted-replace-outbound-text', 'atob', '/^https:\/\/s\.pemsrv\.com.+/', 'window.location.href')
 pdftoshokan.com#%#//scriptlet('set-constant', 'doAdRedirect', 'noopFunc')
 pdftoshokan.com#%#//scriptlet('prevent-window-open', '/ok_|pemsrv\.com|window\.location\.href/')
-pdftoshokan.com##.post[style="margin-bottom:1rem;"]:has(> #myIframe2)
+pdftoshokan.com##article:not([class]):has(> #myIframe2)
 pdftoshokan.com###ad-containerx
 hanasone.mainichi.jp##.p-article-trend-lists
 ai-ssr.com##.grid > div:has(> a[href^="https://al.fanza.co.jp"][target="_blank"])
