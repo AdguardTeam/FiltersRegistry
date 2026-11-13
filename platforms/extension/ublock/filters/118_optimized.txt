@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: foVDGnaPHzIB+5ICiwO3Dw
-! Diff-Path: ../patches/118_optimized/118_optimized-s-1794531133-14400.patch
+! Checksum: 30F1dApo5O0pVmRpz3KPQg
+! Diff-Path: ../patches/118_optimized/118_optimized-s-1794544666-14400.patch
 ! Title: EasyPrivacy (Optimized)
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.74.73
-! TimeUpdated: 2026-11-13T00:48:01+00:00
+! Version: 2.1.74.74
+! TimeUpdated: 2026-11-13T04:34:47+00:00
 ! Expires: 5 days (update frequency)
 &&sub19=undefined&sub20=undefined
 &action=js_stats
@@ -161,6 +161,7 @@
 /analytics/searches?
 /analytics/track_event/*
 /analytics/trackImpressions
+/analytics?ver=*&referrer=
 /analytics_cookie.js
 /analytics_events.js
 /analytics_js/client.js
@@ -183,7 +184,6 @@
 /api/otlp/trace
 /api/pageview/*$ping
 /api/pageview?
-/api/pixel?
 /api/sentry/tunnel$xhr
 /api/t/c|
 /api/t/gtm/*
@@ -413,7 +413,6 @@
 /events/counter?
 /Events/Impression?
 /events/track/*
-/events/tracking
 /events/view?
 /eventsBeacon?
 /eventtracker.js
@@ -693,7 +692,6 @@
 /new-client/trackers.
 /new-relic.js
 /new-relic.min.js
-/newrelic-browser.js
 /newrelic.js
 /newrelic.min.js
 /nielsen.js
@@ -931,7 +929,6 @@
 /statistics/visit?id=
 /StatRecorder.asp?
 /stats-collect
-/stats-listener.js
 /stats.*/event$domain=~stats.prisamedia.cl|~stats.uniquetma.com
 /stats.*/tracker.
 /stats.gif?
@@ -1118,6 +1115,7 @@
 /webdig.js
 /webdig_test.js
 /weblog.php?
+/webmr.js
 /webruntime/log/metrics$ping
 /webstats.js
 /webtrack.js
@@ -1343,7 +1341,6 @@ _webanalytics.
 .southwest.com/r/$image
 .sp1-brevo.net/mk/op/$image
 .sparkpostmail.com/q/$image
-.sparkpostmail1.com/q/$image
 .sparkpostmail2.com/q/$image
 .spmailtechnol.com/q/$image
 .spmailtechnolo.com/q/$image
@@ -1527,7 +1524,6 @@ omni.soundestlink.com$image
 ||g792337340.co^
 ||g792337341.co^
 ||g9706132415.co^
-||g9904216750.co^
 ||gaij.app^
 ||gbqofs.com^
 ||gcprivacy.com^
@@ -1658,7 +1654,6 @@ omni.soundestlink.com$image
 ||stat.ovh^
 ||stats.rip^
 ||summerhamster.com^
-||syncingbridge.com^
 ||t13.io^
 ||targetemsecure.blob.core.windows.net^
 ||techpump.com^
@@ -1903,6 +1898,7 @@ omni.soundestlink.com$image
 ||baptisttop1000.com^$3p
 ||baqend.com^$3p
 ||barilliance.net^$3p
+||basicstat.com^$3p
 ||baynote.net^$3p
 ||bbthat.com^$script,3p
 ||bdash-cloud.com^$3p
@@ -2078,13 +2074,13 @@ omni.soundestlink.com$image
 ||core-cen-54.com^$3p
 ||coremetrics.com^$3p
 ||coremotives.com^$3p
-||cost1action.com^$3p
 ||count.ly^$3p
 ||counter.dev^$3p
 ||counter.gd^$3p
 ||counterbot.com^$3p
 ||countercentral.com^$3p
 ||countergeo.com^$3p
+||counterland.com^$3p
 ||counters4u.com^$3p
 ||counting4free.com^$3p
 ||countomat.com^$3p
@@ -2289,6 +2285,7 @@ omni.soundestlink.com$image
 ||fouanalytics.com^$3p
 ||foundry42.com^$3p
 ||fout.jp^$3p
+||fpctraffic2.com^$3p
 ||fpjs.io^$3p
 ||fprnt.com^$3p
 ||fraud0.com^$3p
@@ -2400,6 +2397,7 @@ omni.soundestlink.com$image
 ||hellosherpa.com^$3p
 ||hexagon-analytics.com^$3p
 ||heylink.com^$3p
+||heystaks.com^$3p
 ||hiconversion.com^$3p
 ||hif.to^$3p
 ||higherengine.com^$3p
@@ -2481,6 +2479,7 @@ omni.soundestlink.com$image
 ||instore.biz^$3p
 ||intake-lr.com^$3p
 ||intelli-direct.com^$3p
+||intelligencefocus.com^$3p
 ||intellimize.co^$3p
 ||interceptum.com^$3p
 ||interstateanalytics.com^$3p
@@ -2490,6 +2489,7 @@ omni.soundestlink.com$image
 ||invitereferrals.com^$3p
 ||invoc.us^$3p
 ||invoca.net^$3p
+||invoca.solutions^$3p
 ||iocnt.net^$3p
 ||iovation.com^$3p
 ||ip-label.net^$3p
@@ -2613,7 +2613,6 @@ omni.soundestlink.com$image
 ||lumatag.co.uk^$3p
 ||luminate.com^$3p
 ||lxtrack.com^$3p
-||lypn.net^$3p
 ||lytics.io^$3p
 ||m6r.eu^$3p
 ||madkudu.com^$3p
@@ -2816,7 +2815,6 @@ omni.soundestlink.com$image
 ||pcspeedup.com^$3p
 ||pdst.fm^$script,3p
 ||peerius.com^$3p
-||percentmobile.com^$3p
 ||perfalytics.com^$3p
 ||perfectaudience.com^$3p
 ||perfiliate.com^$3p
@@ -2864,6 +2862,7 @@ omni.soundestlink.com$image
 ||polaranalytics.com^$3p
 ||polarcdn-pentos.com^$3p
 ||pop6serve.com^$3p
+||popsample.com^$3p
 ||popt.in^$3p,domain=~poptin.com
 ||populr.me^$3p
 ||popupmaker.com^$3p
@@ -2898,7 +2897,6 @@ omni.soundestlink.com$image
 ||pubperf.com^$3p
 ||pulseinsights.com^$3p
 ||pulsemaps.com^$3p
-||purevideo.com^$3p
 ||pushauction.com^$3p
 ||pvd.to^$3p
 ||pvdpix.com^$3p
@@ -2933,6 +2931,7 @@ omni.soundestlink.com$image
 ||rapidcounter.com^$3p
 ||rapidstats.net^$3p
 ||rapidtrk.net^$3p
+||rating.in^$3p
 ||ravelin.click^$3p
 ||rdcdn.com^$3p
 ||reachforce.com^$3p
@@ -3052,6 +3051,7 @@ omni.soundestlink.com$image
 ||seomonitor.ro^$3p
 ||seondnsresolve.com^$3p
 ||seoparts.net^$3p
+||serious-partners.com^$3p
 ||servebom.com^$3p
 ||serveipqs.com^$3p
 ||servestats.com^$3p
@@ -3289,6 +3289,7 @@ omni.soundestlink.com$image
 ||tyxo.com^$3p
 ||u-on.eu^$3p
 ||u5e.com^$3p
+||uadx.com^$3p
 ||ubertags.com^$3p
 ||uciservice.com^$3p
 ||udkcrj.com^$3p
@@ -3424,6 +3425,7 @@ omni.soundestlink.com$image
 ||xxxcounter.com^$3p
 ||xyztraffic.com^$3p
 ||y-track.com^$3p
+||yaudience.com^$3p
 ||ybotvisit.com^$3p
 ||yellowbrix.com^$3p
 ||yext-pixel.com^$3p
@@ -3434,7 +3436,6 @@ omni.soundestlink.com$image
 ||yjtag.jp^$3p
 ||ymetrica1.com^$3p
 ||youramigo.com^$3p
-||yourbow.com^$3p
 ||youvisit.com^$3p
 ||ywxi.net^$3p,domain=~trustedsite.com
 ||zanox-affiliate.de^$3p
@@ -5620,6 +5621,7 @@ omni.soundestlink.com$image
 ||skylightdata.com^
 ||slackpod.com^
 ||slaysweater.com^
+||sleepfrankly.com^
 ||slickcontent.com^
 ||slimesupplies.net^
 ||slimsense.net^
@@ -6330,6 +6332,7 @@ $3p,xhr,domain=opensubtitles.org
 ||audiencemanager.de^$3p
 ||backlinkdino.de^$3p
 ||beliebtestewebseite.de^$3p
+||besucherzaehler-counter.de^$3p
 ||besucherzaehler-zugriffszaehler.de^$3p
 ||besucherzaehler.org^$3p
 ||bf-tools.net^$3p
@@ -6361,6 +6364,7 @@ $3p,xhr,domain=opensubtitles.org
 ||countino.de^$3p
 ||countit.ch^$3p
 ||countnow.de^$3p
+||counto.de^$3p
 ||countok.de^$3p
 ||countyou.de^$3p
 ||cptrack.de^$3p
@@ -6442,6 +6446,7 @@ $3p,xhr,domain=opensubtitles.org
 ||ranking-counter.de^$3p
 ||ranking-hits.de^$3p
 ||redretarget.com^$3p
+||refinedads.com^$3p
 ||rightstats.com^$3p
 ||royalcount.de^$3p
 ||scriptil.com^$3p
@@ -6833,6 +6838,7 @@ $3p,xhr,domain=opensubtitles.org
 ||kmindex.ru^$3p
 ||lentainform.com^$3p
 ||logua.com^$3p
+||logxp.ru^$3p
 ||lookmy.info^$3p
 ||lugansk-info.ru^$3p
 ||mediatoday.ru^$3p
@@ -7869,6 +7875,7 @@ $3p,xhr,domain=opensubtitles.org
 ||jly24aw29n5m-a.akamaihd.net^
 ||jotform.io/getReferrer/$3p
 ||js.cdn.applicationinsights.io/scripts/b/ai.3.gbl.min.js
+||js.ciphera.net/script.js
 ||js.eruptr.io/epd.js
 ||js.verisoul.ai^
 ||jsdelivr.net/npm/@snowplow/
@@ -8208,6 +8215,7 @@ $3p,xhr,domain=opensubtitles.org
 ||plausible.server.hakai.app^
 ||play.adtonos.com^
 ||player-metrics.instaread.co^
+||player.ooyala.com/errors/report?
 ||pm.boostintegrated.com^
 ||pmi.flowplayer.com^
 ||podiums.link/event
@@ -10330,7 +10338,6 @@ $3p,xhr,domain=opensubtitles.org
 ||data.allstate.com^
 ||data.api.canalplus.com/event
 ||data.debugbear.com^
-||data.jerkmate.com^
 ||data.younow.com^
 ||datum.jsdelivr.com^
 ||dc.banggood.com^
@@ -11032,6 +11039,7 @@ $3p,xhr,domain=opensubtitles.org
 ||telegraph.prd.api.max.com^
 ||telem.sre.gopuff.com^
 ||telemetry.adobe.io^
+||telemetry.algolia.com^
 ||telemetry.api.playstation.com^
 ||telemetry.canva.com^
 ||telemetry.proton.me^
@@ -11304,7 +11312,6 @@ $3p,xhr,domain=opensubtitles.org
 /^https?:\/\/www\.ebay-kleinanzeigen\.de\/[a-z0-9]{8}\-[0-9a-f]{4}\-/$script,domain=kleinanzeigen.de
 /^https?:\/\/www\.kroger\.com\/content\/{20,}/$script,xhr,domain=kroger.com
 ||127.0.0.1^$3p,domain=53.com|ameriprise.com|beachbody.com|chick-fil-a.com|citi.com|ebay.at|ebay.be|ebay.ca|ebay.ch|ebay.cn|ebay.co.uk|ebay.com|ebay.com.au|ebay.com.hk|ebay.com.my|ebay.com.sg|ebay.de|ebay.es|ebay.fr|ebay.ie|ebay.it|ebay.nl|ebay.ph|ebay.pl|equifax.ca|equifax.com|globo.com|gumtree.com|kleinanzeigen.de|lendup.com|mbna.ca|rusneb.ru|sciencedirect.com|sky.com|spectrum.net|td.com|tiaa.org|vedacheck.com|wepay.com|whatleaks.com
-||analytics.fibwatch.com^
 ||astrologyanswers.com/gtmmetrics/
 ||cfa.fidelity.com^
 ||check3.tiaa.org^
@@ -36273,7 +36280,6 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||vinted.de/relay/events
 ||wa.gmx.net^
 ||wa.web.de^
-||windowspro.de/stats/
 ||xing.com^$ping
 ||ymprove.gmx.net^
 ||ymprove.web.de^
@@ -37190,7 +37196,6 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||event-tracking.hellohealthgroup.com^
 ||propertyguru.com.my/api/consumer/vast-media/impression?
 ||data.nrk.no^
-||stm.komplett.no^
 ||telemetry.nav.no^
 ||aparat.com/gogol/
 ||ads.tvp.pl^
@@ -37207,7 +37212,6 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||savecart.pl/d/
 ||squid.gazeta.pl/bdtrck/
 ||sst.leroymerlin.pl^
-||ab.g.globo/event
 ||audience-mostread.r7.com^
 ||csplog.kwai-pro.com^
 ||dna.uol.com.br^
@@ -37241,7 +37245,6 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||adme.media/metric-collector
 ||agroserver.ru/ct/
 ||alloy-web.zvuk.com^
-||api-metric.gosweb.gosuslugi.ru^
 ||api.litres.ru/tracker/
 ||auto.ru/-/ajax/$~xhr
 ||avito.ru/stat/
