@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.5.4.17",
-			"timeUpdated": "2026-11-13T10:07:57+0000",
+			"version": "2.5.4.18",
+			"timeUpdated": "2026-11-13T11:07:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.15.45",
-			"timeUpdated": "2026-11-13T09:09:08+0000",
+			"version": "2.1.15.46",
+			"timeUpdated": "2026-11-13T11:07:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -650,8 +650,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.14.83",
-			"timeUpdated": "2026-11-12T15:09:04+0000",
+			"version": "2.0.14.84",
+			"timeUpdated": "2026-11-13T11:08:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -671,8 +671,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.99.43",
-			"timeUpdated": "2026-11-13T09:09:36+0000",
+			"version": "2.0.99.44",
+			"timeUpdated": "2026-11-13T11:08:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -693,8 +693,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.69",
-			"timeUpdated": "2026-11-13T10:09:02+0000",
+			"version": "2.0.87.70",
+			"timeUpdated": "2026-11-13T11:08:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -815,6 +815,56 @@
 				10
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/25.txt"
+		},
+		{
+			"filterId": 26,
+			"name": "AdGuard Italian filter",
+			"description": "EasyList Italy + AdGuard Italian filter. Filter list that specifically removes ads on websites in the Italian language.",
+			"timeAdded": "2026-09-17T11:02:06+0000",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 864000,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/26.txt",
+			"trustLevel": "full",
+			"version": "2.0.0.22",
+			"timeUpdated": "2026-11-12T07:09:51+0000",
+			"deprecated": false,
+			"languages": [
+				"it"
+			],
+			"tags": [
+				1,
+				10,
+				11,
+				35
+			],
+			"downloadUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/26.txt"
+		},
+		{
+			"filterId": 27,
+			"name": "AdGuard Polish filter",
+			"description": "Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.",
+			"timeAdded": "2026-09-17T11:02:06+0000",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 864000,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/27.txt",
+			"trustLevel": "full",
+			"version": "2.0.0.84",
+			"timeUpdated": "2026-11-13T07:09:32+0000",
+			"deprecated": false,
+			"languages": [
+				"pl"
+			],
+			"tags": [
+				1,
+				10,
+				11,
+				41
+			],
+			"downloadUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/27.txt"
 		},
 		{
 			"filterId": 103,
