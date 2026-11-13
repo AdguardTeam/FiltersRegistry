@@ -1,14 +1,14 @@
-! Checksum: CXgI8ywVOGN0f/+wa9x2xA
-! Diff-Path: ../patches/243/243-s-1794472662-14400.patch
+! Checksum: j93oE4jzWYKZZDzUX2grTQ
+! Diff-Path: ../patches/243/243-s-1794573589-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.82
-! TimeUpdated: 2026-11-12T08:35:41+00:00
+! Version: 2.0.25.83
+! TimeUpdated: 2026-11-13T12:37:07+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-11-12 07:13:29 CET
+! Last modified: 2026-11-13 13:27:21 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -344,9 +344,9 @@ byggnadsarbetaren.se##[class^="siteAds"], .siteAlerts, #gan-popup
 byggnads.se##section[aria-labelledby="cookie-consent-heading"]
 byggteknikforlaget.se###text-2.widget_text, .header-widget-area
 byggvarlden.se,omtanke.today##a[href*="/annons/"], .ai-viewports, .ads__top-panorama
-bytbil.com#$#html,body { overflow:auto!important; }
 bytbil.com##.listpage-banner, .available-services
 bytbil.com##.newcars-widget:has(a[href*="bit.ly"], a[href*="content-ad"])
+bytbil.com,hockeynews.se#$#html,body { overflow:auto!important; }
 bytesverket.se###cookies-policy
 cafekartan.se,restaurangkartan.se,hotellkartan.se,pizzakartan.se,sushikartan.se,badkartan.se,campingkartan.se,vandrarhemskartan.se,slottskartan.se,kyrkokartan.se,vintagekartan.se,wifikartan.se##[id^="google_ad"]
 cafe.se,automotorsport.se##article:has(a[href*="/partner/"])
@@ -561,8 +561,8 @@ fastighetstidningen.se##.adspace, a[class*="annons"]
 fastighetsvarlden.se##a.entry__link[href*="/native/"]
 fastighetsvarlden.se##.widget_custom_html:has(.ad-text)
 fasting.nu#$#body { display:unset!important }
-feber.se,tjock.se##article:has([data-feed-section="sponsored"])
 feber.se,tjock.se##div[role="dialog"][aria-label="Annons"], div[data-slot], div[data-native-slot="1"], article[data-feed-section="promotion"]
+feber.se,tjock.se##main > div[data-page="1"] > div:not([class]):has([data-feed-section="sponsored"])
 feber.se,tjock.se#%#//scriptlet('ubo-set', 'B.ab', 'false')
 feber.se,tjock.se#%#//scriptlet('ubo-set', 'dovideostuffAD', 'noopFunc')
 feber.se,tjock.se#%#//scriptlet('ubo-set-session-storage-item', 'fs', '1')
@@ -795,7 +795,7 @@ hockeyettan.se##.club-ad-item, .banner-row
 hockeynews.se##article .bg-blue:has(sesamy-paywall-wizard)
 hockeynews.se##article .bg-gradient-to-t.to-transparent
 hockeynews.se#?#a.bg-yellow\/30:contains(/spons/i):upward(1)
-hockeynews.se##a[href*="/speltips"], .readPeak-container-frontpage, .readPeak-container-article
+hockeynews.se##a[href*="/speltips"], .readPeak-container-frontpage, .readPeak-container-article, dialog[aria-labelledby="campaign-takeover-title"]
 hockeynews.se#$#div[class^="paywall"].hidden { display:unset!important; }
 hockeynews.se##div[style^="min-height"]:has(.maxetise)
 hockeynews.se#$#html.overflow-hidden { overflow:unset!important; }
@@ -1451,7 +1451,7 @@ sportpanelen.se,sportnyheter.nu,sporthalsa.se,sport24.nu,golfbladet.se##.textwid
 sporttv.nu##a[onclick*="bannerClick"], #linkus, .details-bet-banner
 sporttv.nu#$?#.progams-list-xs .text-center:has(.banner) { remove: true; }
 sporttv.nu##.text-center:has(.banner_tag)
-sporttv.nu##.visible-xs:has(a[href*="betting"], a[href*="casino"])
+sporttv.nu##:is(.visible-xs, .hidden-xs):has(a[href*="betting"], a[href*="casino"])
 stallet.se##.pnlAdTop
 startaochdriva.se##.banner-right, .banner-left, .wpb_single_image a[target="_blank"], .tdm-popup-modal-wrap
 startaochdriva.se##:is(.latest-post, .td-cpt-post):has(a[href*="/sponsrat"])
@@ -2406,6 +2406,7 @@ zeromagazine.nu##div[id^="ads"]
 /images/site/annonser
 /images/sponsor$domain=sporttv.nu
 /images/*casino$domain=hockeynews.se
+/images/*casino$domain=sporttv.nu
 /imatrics$domain=vk.se|folkbladet.nu|nordsverige.se|mellanbygden.nu|vasterbottningen.se|lokaltidningen.nu
 /img/ads$domain=shortcut.se
 /img/allalanse$image,domain=ekonominyheter.se
