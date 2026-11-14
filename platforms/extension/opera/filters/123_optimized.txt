@@ -1,9 +1,9 @@
-! Checksum: O+RW6qLpizcWMfl5CFZAqg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1794617298-14400.patch
+! Checksum: eoKOwQ10BWQD0CRrQBf9Tw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1794631045-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.72.13
-! TimeUpdated: 2026-11-14T00:44:56+00:00
+! Version: 2.1.72.14
+! TimeUpdated: 2026-11-14T04:35:01+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -253,14 +253,12 @@ _social-bar/
 ###footer-facebook
 ###footer-fb
 ###footer-follow-us
-###footer-instagram-icon
 ###footer-share
 ###footer-social
 ###footer-social-link
 ###footer-socials
 ###footer-twitter
 ###footer-youtube
-###footer-youtube-icon
 ###footerConnect
 ###footerFollow
 ###footerSocial
@@ -511,6 +509,8 @@ _social-bar/
 ###social-link
 ###social-links
 ###social-links-container
+###social-links-facebook
+###social-links-twitter
 ###social-media-footer
 ###social-media-header
 ###social-media-navigation
@@ -537,7 +537,6 @@ _social-bar/
 ###social-slider
 ###social-spotify
 ###social-tabs
-###social-text
 ###social-tools-panel
 ###social-widget
 ###social-widgets
@@ -722,7 +721,6 @@ _social-bar/
 ##.SiteFooter__follow
 ##.Social-Media
 ##.Social-link
-##.SocialArticleIcons
 ##.SocialBar
 ##.SocialIcon
 ##.SocialIcons
@@ -2074,6 +2072,7 @@ _social-bar/
 ##.s_google
 ##.s_instagram
 ##.s_twitter
+##.s_youtube
 ##.saboxplugin-socials
 ##.safirShare
 ##.sal-leaf-accessori-sharebox
@@ -2276,6 +2275,7 @@ _social-bar/
 ##.share-this-article
 ##.share-this-page
 ##.share-this-popover
+##.share-this-post
 ##.share-tiktok
 ##.share-title
 ##.share-to
@@ -2357,7 +2357,6 @@ _social-bar/
 ##.shareTrig
 ##.shareTwitter
 ##.shareVideo
-##.shareWa
 ##.shareWidget
 ##.shareWrap
 ##.share__button
@@ -2885,6 +2884,7 @@ _social-bar/
 ##.socialFixed
 ##.socialFollow
 ##.socialFooter
+##.socialFull
 ##.socialHeader
 ##.socialHubIcon
 ##.socialHubInnerDiv
@@ -3045,7 +3045,6 @@ _social-bar/
 ##.ssba_pinterest_share
 ##.ssba_share_link
 ##.ssba_sharecount
-##.ssbp-container
 ##.st-custom-button
 ##.st-social-block
 ##.st-social__share
@@ -3242,6 +3241,7 @@ _social-bar/
 ##.vlog-social-icons
 ##.voc-social
 ##.vs-social
+##.vsac-social
 ##.vuukle-powerbar
 ##.w-share
 ##.w-sharing
@@ -3312,6 +3312,7 @@ _social-bar/
 ##.wplogout-social-wrapper
 ##.wpusb-btn
 ##.wrap-social
+##.wrap__sns
 ##.wrapper-share
 ##.wrapper-share-social
 ##.wrapper_fb_like
@@ -3520,7 +3521,6 @@ theepochtimes.com###article_top_right_share_btn
 news18.com###artshare
 attitude.co.uk###att-unique-wrapper-2026
 bleedingcool.com###bc_sharing_is_caring
-noyb.eu###block-chives-shariff-share
 skidrowreloaded.com###communication
 sputnikglobe.com###cta
 dailymail.co.uk,thisismoney.co.uk###dms-txt
@@ -3595,8 +3595,10 @@ asahi.com##.SnsUtilityArea
 ndtv.com##.SoFl_cr-lf-r2
 birminghammail.co.uk,bristolpost.co.uk,dailyrecord.co.uk,dailystar.co.uk,irishstar.com,liverpoolecho.co.uk,manchestereveningnews.co.uk,mirror.co.uk,stokesentinel.co.uk,themirror.com,walesonline.co.uk##.SocialFollowBar_wrapper__h4k_D
 cbssports.com##.SocialIconsBar
+timesnownews.com##.SocialShare_followrow__SHotd
 indiatoday.in##.Story_prefergogl__Nw2MQ
 indiatoday.in##.Story_whatsapp_channel__6xdtB
+carexpert.co.nz##._19v7sel2
 grammarly.com##._3fq8S-container
 pixivision.net##._floated-bottom-bar
 pixivision.net##._follow-us-card
@@ -3604,7 +3606,6 @@ france24.com##.a-share-button
 tandfonline.com##.a2a_share_target
 wccftech.com##.add-google
 bgr.com,chowhound.com,engadget.com,foodie.com,foodrepublic.com,gardenguides.com,glam.com,grunge.com,housedigest.com,hunker.com,islands.com,jalopnik.com,looper.com,nickiswift.com,planetware.com,sciencing.com,slashfilm.com,slashgear.com,thedailymeal.com,thelist.com,thetakeout.com,tvline.com,women.com,wrestlinginc.com##.add-on-google-widget
-consequence.net##.add-to-google
 citynews.ca##.add-trusted-source
 techspot.com##.add-us
 planetizen.com##.addtoany_list
@@ -3638,7 +3639,6 @@ adweek.com##.aw-social-share-container
 beebom.com##.beebom-social-share
 gobankingrates.com##.between-share-and-author
 military.com##.block--addtoanyadv
-csis.org##.block--social-sharing
 crash.net,nltimes.nl,ttnews.com##.block-better-social-sharing-buttons
 tastesbetterfromscratch.com##.block-follow-me
 crash.net##.block-preferred-source
@@ -3942,7 +3942,6 @@ overclock3d.net##.socials-container
 downloadsource.net##.socials-vertical
 phys.org##.socials-wrapper
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
-vnexpress.net##.sticky
 healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar
 aetv.com,wccftech.com##.story-share
@@ -4025,7 +4024,6 @@ aftermath.site##[data-socials]
 jetbrains.com##[data-test="social-list"]
 reuters.com##[data-testid="SharingSymbols"]
 gamesradar.com,pcgamer.com##[data-testid="buttons-social"]
-forbes.com##[data-testid="googleCTA"]
 bbc.com##[data-testid="social-follow-us-container"]
 nytimes.com##[data-testid="social-group"]
 dw.com##[data-tracking-name="footer-section-social-media"]
@@ -4179,6 +4177,7 @@ krone.at##.al__socials
 giga.de##.alice-push-channel
 pcgameshardware.de##.artSocialLinks
 finanznachrichten.de##.article--footer
+butenunbinnen.de##.article-addons
 n-tv.de##.article__share-wrapper
 welt.de##.c-social-bar
 web.de##.content__share
@@ -4237,6 +4236,7 @@ forssanlehti.fi##.herald-single-sticky:has(.herald-share)
 apotti.fi##.post-footer:has(> .share)
 enternity.gr###enternity_social_dialog
 capital.gr##.controls
+maariv.co.il##.article-google-button-container
 telex.hu##.fb-box
 szeretlekmagyarorszag.hu##.fbpage-like-szmo
 index.hu,totalcar.hu,velvet.hu##.megoszt
@@ -4309,6 +4309,7 @@ news.j-wave.co.jp###snsLink
 fnn.jp##.--share
 kakakumag.com##.article-sns-btm
 oricon.co.jp##.block-sub-sns
+fnn.jp##.footer-social
 kakakumag.com##.hd-sns
 srad.jp##.synd
 auction.co.kr##.sare-sns
@@ -4362,12 +4363,13 @@ rg.ru##.StoryContentMainShare_root__LRFwu
 5-tv.ru##._links
 radiosputnik.ru,ria.ru##.article__aggr
 interfax.ru##.header__soc
+avtoradio.ru##.ok
 forklog.com##.post_bottom_socials_buttons_wrapper
 lifehacker.ru##.share-button__container
 aif.ru##.sharing_item
 academic.ru##.smm
+avtoradio.ru##.vk
 glas-javnosti.rs##.row.pt-4.pb-4
-ta3.com##.detail_text_socials
 sme.sk##.social-dialog-wrapper
 24ur.com##.flex.flex-row.items-center.justify-center.md\:justify-start.p-16.md\:p-0
 24ur.com##.w-full.md\:w-auto.h-full.flex.flex-row.items-center.justify-center.md\:justify-start.pt-16.md\:pt-0.border-t.md\:border-none.border-black\/10.dark\:border-white\/10
