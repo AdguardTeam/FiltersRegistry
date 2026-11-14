@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.5.4.37",
-			"timeUpdated": "2026-11-14T06:10:52+0000",
+			"version": "2.5.4.38",
+			"timeUpdated": "2026-11-14T07:07:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.41.74",
-			"timeUpdated": "2026-11-14T05:08:06+0000",
+			"version": "2.1.41.75",
+			"timeUpdated": "2026-11-14T07:07:58+0000",
 			"languages": [],
 			"tags": [
 				45,
