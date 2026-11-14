@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.5.4.41",
-			"timeUpdated": "2026-11-14T10:07:10+0000",
+			"version": "2.5.4.42",
+			"timeUpdated": "2026-11-14T11:07:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.73",
-			"timeUpdated": "2026-11-13T18:09:26+0000",
+			"version": "2.0.54.74",
+			"timeUpdated": "2026-11-14T11:07:22+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.86.58",
-			"timeUpdated": "2026-11-14T10:07:50+0000",
+			"version": "2.2.86.59",
+			"timeUpdated": "2026-11-14T11:07:36+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.41.76",
-			"timeUpdated": "2026-11-14T09:08:07+0000",
+			"version": "2.1.41.77",
+			"timeUpdated": "2026-11-14T11:07:38+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -707,8 +707,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.99.50",
-			"timeUpdated": "2026-11-14T10:07:58+0000",
+			"version": "2.0.99.51",
+			"timeUpdated": "2026-11-14T11:07:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -888,8 +888,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/27_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.0.87",
-			"timeUpdated": "2026-11-14T08:10:18+0000",
+			"version": "2.0.0.88",
+			"timeUpdated": "2026-11-14T11:07:55+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
