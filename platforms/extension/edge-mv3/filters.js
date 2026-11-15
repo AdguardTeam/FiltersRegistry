@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.5.4.62",
-			"timeUpdated": "2026-11-15T07:07:34+0000",
+			"version": "2.5.4.63",
+			"timeUpdated": "2026-11-15T08:09:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.78.44",
-			"timeUpdated": "2026-11-13T18:09:28+0000",
+			"version": "2.0.78.45",
+			"timeUpdated": "2026-11-15T08:09:56+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.90",
-			"timeUpdated": "2026-11-14T14:07:52+0000",
+			"version": "2.0.69.91",
+			"timeUpdated": "2026-11-15T08:10:01+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -619,8 +619,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.21",
-			"timeUpdated": "2026-11-13T09:09:35+0000",
+			"version": "2.0.58.22",
+			"timeUpdated": "2026-11-15T08:10:14+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -737,8 +737,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.26",
-			"timeUpdated": "2026-11-13T19:08:16+0000",
+			"version": "2.0.50.27",
+			"timeUpdated": "2026-11-15T08:10:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1258,8 +1258,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.69.58",
-			"timeUpdated": "2026-11-15T05:08:31+0000",
+			"version": "2.1.69.59",
+			"timeUpdated": "2026-11-15T08:10:27+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
