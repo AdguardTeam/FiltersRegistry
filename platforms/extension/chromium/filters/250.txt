@@ -1,9 +1,9 @@
-! Checksum: pWa3H4TRRrTx8kCxxpFQ4Q
-! Diff-Path: ../patches/250/250-s-1794704004-14400.patch
+! Checksum: LRjpQvEgmizzQjcE3CN01A
+! Diff-Path: ../patches/250/250-s-1794760729-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.21.14
-! TimeUpdated: 2026-11-15T00:50:40+00:00
+! Version: 2.0.21.15
+! TimeUpdated: 2026-11-15T16:35:53+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -77,25 +77,12 @@
 ! ⌘ Makes some websites use much more of the screen width, instead of just a thin central column.
 ! What this broad compilation does not block：Newsletters, cookie banners, social media links to companies' pages
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 08November2026v3
+! OriginalVersion: 14November2026v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
-! Legitimate use is almost non-existent, but has a tiny userbase in Japan and among upstart coding experiments. Its extreme common-ness in malware redirections means that the entry will be kept forever.
-||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~yggleak.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top|~doubledouble.top|~hedon-haven.top|~outlands.top|~tk-web.top|~qpmegathread.top|~qmk.top|~mgytr.top|~girlskissing.top|~luxferre.top|~adderly.top|~supremecloud.top|~cldev.top|~medoed.top|~tooru.top|~wodepa.top|~rank.top|~vino.top|~snowshot.top|~nemanja.top
-! (Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067)
-@@||masto*.top^$document
-@@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
-! (An E-mail tip)
-@@://blog.*.top^$document
-! https://github.com/DandelionSprout/adfilt/issues/1108
-@@://pyrofork.*.top^$document
-! https://github.com/DandelionSprout/adfilt/issues/1158
-@@||wceui.top^
-! https://github.com/DandelionSprout/adfilt/issues/1242
-@@://maven.*.top^$document
 ! International topical domains that have consistently horrendous scores on watchlists of bad TLDs, and whose use for legit purposes is practically non-existent.
 ||loan^$document
 ||bid^$document
@@ -17143,7 +17130,7 @@ www.pixiv.net##.text-left.charcoal-clickable
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 13November2026v1
+! OriginalVersion: 15November2026v3
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -18943,7 +18930,7 @@ $removeparam=_sacat,domain=~ebay.*
 $removeparam=crlp,domain=ebay.*
 $removeparam=MT_ID,domain=ebay.*
 $removeparam=geo_id,domain=ebay.*
-$removeparam=device,domain=ebay.*|obs.no
+$document,removeparam=device,domain=docs.channel.io|ebay.*|obs.no
 $removeparam=cmpgn,domain=ebay.*
 ! https://www•ebay•com/itm/265272975304?LH_BIN=1
 ||ebay.*/itm/$removeparam=LH_BIN
@@ -20320,7 +20307,7 @@ $removeparam=_t,domain=shein.com
 ! https://www•youtube•com/watch?v=7yk3WDZRcTM&feature=youtu•be
 $removeparam=sr_id,domain=reddit.app.link
 $removeparam=sr_name,domain=reddit.app.link
-$removeparam=domain,domain=reddit.app.link
+$document,removeparam=domain,domain=docs.channel.io|reddit.app.link
 $removeparam=geoip_country,domain=reddit.app.link
 $removeparam=user_agent,domain=reddit.app.link
 $removeparam=referrer_domain,domain=reddit.app.link
@@ -20642,10 +20629,9 @@ $removeparam=ifs,domain=pcgamesn.com|pockettactics.com|thedigitalfix.com|theload
 ||bandcamp.com^$removeparam=search_page_no
 ||bandcamp.com^$removeparam=search_rank
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4097133
-! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19461022
 ||bstn.com^$removeparam=indexName
 ||bstn.com^$removeparam=objectID
-$document,removeparam=queryID,domain=bstn.com|suomalainen.com
+$document,removeparam=queryID,domain=bstn.com
 ! https://app•slack•com/plans/[redacted]?entry_point=upgrade-button
 ||app.slack.com^$removeparam=entry_point
 ! https://sp•seiga•nicovideo•jp/comic/33962?track=mym_favorite
@@ -21810,6 +21796,10 @@ $document,removeparam=lr_input,domain=investopedia.com|people.inc
 ||amazon.com^$document,removeparam=btn_ref
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19467841
 ||delta.com^$document,removeparam=mkcpgn
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19461022
+||suomalainen.com^$document,removeparam=queryId
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19608045
+||wealthsimple.com^$document,removeparam=ajs_aid
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au

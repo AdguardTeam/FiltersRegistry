@@ -1,13 +1,13 @@
-! Checksum: g+DV8BJKg2c+p2XGlflzJA
-! Diff-Path: ../patches/251/251-s-1794602299-14400.patch
+! Checksum: 0ivtn3UwtIlJ22AR4LsA8g
+! Diff-Path: ../patches/251/251-s-1794760729-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.62
-! TimeUpdated: 2026-11-13T20:36:05+00:00
+! Version: 2.0.10.63
+! TimeUpdated: 2026-11-15T16:35:53+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 13November2026v1
+! OriginalVersion: 15November2026v3
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1807,7 +1807,7 @@ $removeparam=_sacat,domain=~ebay.*
 $removeparam=crlp,domain=ebay.*
 $removeparam=MT_ID,domain=ebay.*
 $removeparam=geo_id,domain=ebay.*
-$removeparam=device,domain=ebay.*|obs.no
+$document,removeparam=device,domain=docs.channel.io|ebay.*|obs.no
 $removeparam=cmpgn,domain=ebay.*
 ! https://www•ebay•com/itm/265272975304?LH_BIN=1
 ||ebay.*/itm/$removeparam=LH_BIN
@@ -3183,7 +3183,7 @@ $removeparam=_t,domain=shein.com
 ! https://www•youtube•com/watch?v=7yk3WDZRcTM&feature=youtu•be
 $removeparam=sr_id,domain=reddit.app.link
 $removeparam=sr_name,domain=reddit.app.link
-$removeparam=domain,domain=reddit.app.link
+$document,removeparam=domain,domain=docs.channel.io|reddit.app.link
 $removeparam=geoip_country,domain=reddit.app.link
 $removeparam=user_agent,domain=reddit.app.link
 $removeparam=referrer_domain,domain=reddit.app.link
@@ -3505,10 +3505,9 @@ $removeparam=ifs,domain=pcgamesn.com|pockettactics.com|thedigitalfix.com|theload
 ||bandcamp.com^$removeparam=search_page_no
 ||bandcamp.com^$removeparam=search_rank
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4097133
-! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19461022
 ||bstn.com^$removeparam=indexName
 ||bstn.com^$removeparam=objectID
-$document,removeparam=queryID,domain=bstn.com|suomalainen.com
+$document,removeparam=queryID,domain=bstn.com
 ! https://app•slack•com/plans/[redacted]?entry_point=upgrade-button
 ||app.slack.com^$removeparam=entry_point
 ! https://sp•seiga•nicovideo•jp/comic/33962?track=mym_favorite
@@ -4673,6 +4672,10 @@ $document,removeparam=lr_input,domain=investopedia.com|people.inc
 ||amazon.com^$document,removeparam=btn_ref
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19467841
 ||delta.com^$document,removeparam=mkcpgn
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19461022
+||suomalainen.com^$document,removeparam=queryId
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19608045
+||wealthsimple.com^$document,removeparam=ajs_aid
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au

@@ -1,9 +1,9 @@
-! Checksum: J7pMlEqoP/Lbfyt4Vnim0w
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1794602320-14400.patch
+! Checksum: MCxonijXirCfxlfSy+iR4Q
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1794760757-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.10.62
-! TimeUpdated: 2026-11-13T20:36:05+00:00
+! Version: 2.0.10.63
+! TimeUpdated: 2026-11-15T16:35:53+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1237,7 +1237,7 @@ $removeparam=_sacat,domain=~ebay.*
 $removeparam=crlp,domain=ebay.*
 $removeparam=MT_ID,domain=ebay.*
 $removeparam=geo_id,domain=ebay.*
-$removeparam=device,domain=ebay.*|obs.no
+$document,removeparam=device,domain=docs.channel.io|ebay.*|obs.no
 $removeparam=cmpgn,domain=ebay.*
 ||ebay.*/itm/$removeparam=LH_BIN
 $removeparam=rpp_cid
@@ -2143,7 +2143,7 @@ $removeparam=from_country,domain=shein.com
 $removeparam=_t,domain=shein.com
 $removeparam=sr_id,domain=reddit.app.link
 $removeparam=sr_name,domain=reddit.app.link
-$removeparam=domain,domain=reddit.app.link
+$document,removeparam=domain,domain=docs.channel.io|reddit.app.link
 $removeparam=geoip_country,domain=reddit.app.link
 $removeparam=user_agent,domain=reddit.app.link
 $removeparam=referrer_domain,domain=reddit.app.link
@@ -2353,7 +2353,7 @@ $removeparam=ifs,domain=pcgamesn.com|pockettactics.com|thedigitalfix.com|theload
 ||bandcamp.com^$removeparam=search_rank
 ||bstn.com^$removeparam=indexName
 ||bstn.com^$removeparam=objectID
-$document,removeparam=queryID,domain=bstn.com|suomalainen.com
+$document,removeparam=queryID,domain=bstn.com
 ||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
@@ -3096,6 +3096,8 @@ $document,removeparam=lr_input,domain=investopedia.com|people.inc
 ||oldphoneworks.com^$document,removeparam=_su_rec_id
 ||amazon.com^$document,removeparam=btn_ref
 ||delta.com^$document,removeparam=mkcpgn
+||suomalainen.com^$document,removeparam=queryId
+||wealthsimple.com^$document,removeparam=ajs_aid
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
