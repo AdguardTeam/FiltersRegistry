@@ -430,8 +430,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.78.20",
-			"timeUpdated": "2026-11-15T16:34:48+0000",
+			"version": "2.1.78.21",
+			"timeUpdated": "2026-11-15T20:34:37+0000",
 			"languages": []
 		},
 		{
@@ -515,8 +515,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.1.16",
-			"timeUpdated": "2026-11-15T16:34:52+0000",
+			"version": "2.2.1.17",
+			"timeUpdated": "2026-11-15T20:34:39+0000",
 			"languages": []
 		},
 		{
@@ -561,8 +561,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.2.1.18",
-			"timeUpdated": "2026-11-15T16:34:56+0000",
+			"version": "2.2.1.19",
+			"timeUpdated": "2026-11-15T20:34:41+0000",
 			"languages": []
 		},
 		{
@@ -604,8 +604,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.2.1.18",
-			"timeUpdated": "2026-11-15T16:34:58+0000",
+			"version": "2.2.1.19",
+			"timeUpdated": "2026-11-15T20:34:43+0000",
 			"languages": [
 				"ar"
 			]
@@ -624,8 +624,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.1.17",
-			"timeUpdated": "2026-11-15T16:35:00+0000",
+			"version": "2.2.1.18",
+			"timeUpdated": "2026-11-15T20:34:43+0000",
 			"languages": []
 		},
 		{
@@ -709,8 +709,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.74.89",
-			"timeUpdated": "2026-11-15T16:35:04+0000",
+			"version": "2.1.74.90",
+			"timeUpdated": "2026-11-15T20:34:46+0000",
 			"languages": []
 		},
 		{
@@ -796,8 +796,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.72.23",
-			"timeUpdated": "2026-11-15T16:35:14+0000",
+			"version": "2.1.72.24",
+			"timeUpdated": "2026-11-15T20:34:54+0000",
 			"languages": []
 		},
 		{
@@ -814,8 +814,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.72.92",
-			"timeUpdated": "2026-11-15T16:35:16+0000",
+			"version": "2.0.72.93",
+			"timeUpdated": "2026-11-15T20:34:54+0000",
 			"languages": []
 		},
 		{
@@ -934,8 +934,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.1.18",
-			"timeUpdated": "2026-11-15T16:35:23+0000",
+			"version": "2.2.1.19",
+			"timeUpdated": "2026-11-15T20:35:01+0000",
 			"languages": []
 		},
 		{
@@ -1014,8 +1014,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.0.44",
-			"timeUpdated": "2026-11-15T16:35:26+0000",
+			"version": "2.2.0.45",
+			"timeUpdated": "2026-11-15T20:35:04+0000",
 			"languages": []
 		},
 		{
@@ -1324,8 +1324,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.1.18",
-			"timeUpdated": "2026-11-15T16:35:35+0000",
+			"version": "2.2.1.19",
+			"timeUpdated": "2026-11-15T20:35:09+0000",
 			"languages": []
 		},
 		{
@@ -1342,8 +1342,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.90.13",
-			"timeUpdated": "2026-11-15T16:35:37+0000",
+			"version": "2.0.90.14",
+			"timeUpdated": "2026-11-15T20:35:10+0000",
 			"languages": []
 		},
 		{
@@ -1355,8 +1355,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
-			"version": "2.0.13.25",
-			"timeUpdated": "2026-11-09T00:49:58+0000",
+			"version": "2.0.13.26",
+			"timeUpdated": "2026-11-15T20:35:11+0000",
 			"languages": [
 				"fi"
 			]
@@ -1428,8 +1428,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "1.0.40.52",
-			"timeUpdated": "2026-11-14T20:35:40+0000",
+			"version": "1.0.40.53",
+			"timeUpdated": "2026-11-15T20:35:15+0000",
 			"languages": []
 		},
 		{
@@ -1577,8 +1577,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.97.24",
-			"timeUpdated": "2026-11-15T16:35:49+0000",
+			"version": "2.1.97.25",
+			"timeUpdated": "2026-11-15T20:35:19+0000",
 			"languages": []
 		},
 		{
@@ -1595,8 +1595,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.0.4.96",
-			"timeUpdated": "2026-11-09T00:50:08+0000",
+			"version": "2.0.4.97",
+			"timeUpdated": "2026-11-15T20:35:19+0000",
 			"languages": []
 		},
 		{
@@ -1683,8 +1683,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.94.49",
-			"timeUpdated": "2026-11-15T16:35:56+0000",
+			"version": "2.0.94.50",
+			"timeUpdated": "2026-11-15T20:35:23+0000",
 			"languages": [
 				"hi"
 			]
