@@ -1,9 +1,9 @@
-! Checksum: lZxCV6jp2LE4yDAeUA9E+Q
-! Diff-Path: ../patches/27/27-s-1794813582-3600.patch
+! Checksum: YVGSnea5z9Mn8G9Vhpj6hw
+! Diff-Path: ../patches/27/27-s-1794817526-3600.patch
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.90
-! TimeUpdated: 2026-11-16T07:16:36+00:00
+! Version: 2.0.0.91
+! TimeUpdated: 2026-11-16T08:22:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4885,6 +4885,7 @@ naszemiasto.pl#%#window.adBlockTest = true;
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20613
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15353
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11323
+shinden.pl##.hp-rot
 shinden.pl###sh-promo
 shinden.pl##.takie-tam
 shinden.pl###spolSticky
@@ -4895,7 +4896,10 @@ shinden.pl#%#//scriptlet('abort-current-inline-script', 'atob', 'getElementsByTa
 shinden.pl#%#//scriptlet("abort-on-property-read", "popjs.init")
 shinden.pl#%#//scriptlet("set-constant", "_pop", "noopFunc")
 shinden.pl#%#//scriptlet("abort-on-property-write", "AdservingModule")
+shinden.pl#%#//scriptlet('abort-current-inline-script', 'Document.prototype.querySelectorAll', '/"spolecznosci-"|\.parentNode\.getBoundingClientRect\(\);/')
+shinden.pl#%#//scriptlet('json-prune', 'bramka', 'bramkaLinki')
 @@/^https:\/\/www\.[a-z]{7,14}\.com\/[a-z]{1,4}\.js/$script,third-party,domain=shinden.pl,badfilter
+||shinden.pl/kafelek?
 ||spolecznosci.net^$domain=shinden.pl,important
 ||tradeadexchange.com/a/display.php$domain=shinden.pl,important
 ||reklama.shinden.eu^$domain=shinden.pl,important
