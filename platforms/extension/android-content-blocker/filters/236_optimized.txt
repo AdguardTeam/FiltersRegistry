@@ -1,5 +1,5 @@
-! Checksum: 2wg94xKwEye6OqHX6bkZ2A
-! Diff-Path: ../patches/236_optimized/236_optimized-s-1794760726-14400.patch
+! Checksum: C7P6d/fsKfaAenWJNlt5tA
+! Diff-Path: ../patches/236_optimized/236_optimized-s-1794847043-14400.patch
 ! Title: road-block light (Optimized)
 ! Description: Romanian ad blocking filter subscription.
 ! Version: 2.0.4.45
@@ -34,6 +34,7 @@
 ||ads3-adnow.com^
 ||tesseradigital.com^
 ||observatorulph.ro/cdn-cgi/apps/*$script,~third-party
+observatorulph.ro##[class*="obser-internet_corp"]:has(.obser-adlabel)
 observatorulph.ro##.td-a-rec-id-custom-spot
 ||thumbs.gfycat.com^$image,domain=deschide.md
 @@||s1.olx.ro/static/olxro/naspersclassifieds-regional/olxeu-atlas-web/static/js/tracking/ninja.js$script,domain=olx.ro
@@ -99,6 +100,8 @@ stiripesurse.ro##[href*="Adv"]
 stiripesurse.ro##[href*="Promo"]
 stiripesurse.ro##[href^="https://ccir.ro/"]
 stiripesurse.ro##.vertical-banner
+stiripesurse.ro##.news-widget:not([class]:has([href^="https://www.stiripesurse.ro"]))
+stiripesurse.ro##.row:not([class]:has([href^="https://www.stiripesurse.ro"]))
 stiripesurse.ro##.bgcolor-revista-blogurilor
 stiripesurse.ro##.border-revista-blogurilor
 ||media.stiripesurse.ro/assets/img/agerpres-300x250.png$image
@@ -106,6 +109,7 @@ stiripesurse.ro##.in-article-banner
 stiripesurse.ro###taboola-sponsored-mid-article
 stiripesurse.ro##.sticky-banner-container
 stiripesurse.ro##.banner-block
+stiripesurse.ro##[style]:has(#PA-Taboola-mid)
 stiripesurse.ro##[href="https://www.stiripesurse.ro/ardereaesteproblema"]
 ||media.stiripesurse.ro/assets/img/ads_$subdocument
 stiripesurse.ro##.banner-sales-soma
@@ -124,6 +128,7 @@ zf.ro##.banda-sticky-vp
 zf.ro###alephLiveBkp
 ||zonait.ro/*/728x90px$image
 zonait.ro##[href^="//www.techinstyle.ro/"]
+zonait.ro##[id^="custom_html"]:has([id^="adocean"])
 ||partner.dw-world.de/syndication/feeds/rss-en-hotnews.2757-cb.html$subdocument
 ||partner.dw-world.de/syndication/feeds/VTPartner_hotnewsecon.2756-cb.html$subdocument
 ||privesc.eu/Widget/embeded/Inregistrare/Romania,Parlament,Guvern,Conferinte,Offlineuri,Emisiuni,Concerte,Retransmisiuni,Sport,Monden,Altele,hotnews$subdocument
@@ -143,6 +148,7 @@ vestea.net##[id^="buffercode_banner"]
 zch.ro##.widget_sp_image-image-link
 zch.ro##.widget_sp_image
 zch.ro##.bookingaff
+ziartarguneamt.ro##[href]:not([href*="ziartarguneamt.ro"], [href^="/"], [href*="#"]):has([src])
 ||neamt24.ro/wp-content/uploads/2020/02/mplus-fm-creative-print*.jpg$image
 ||neamt24.ro/wp-content/uploads/2020/02/WhatsApp-Image-2020-02-22-at-09.57.34*.jpeg$image
 ||neamt24.ro/wp-content/uploads/2019/07/05*.jpg$image
@@ -157,12 +163,14 @@ zch.ro##.bookingaff
 ||neamt24.ro/wp-content/uploads/2018/05/geneza-*.jpg$image
 ||neamt24.ro/wp-content/uploads/2018/05/coravi-2.jpg$image
 neamt24.ro##[href="https://www.facebook.com/TaxiLuxTarguNeamt/"]
+radiomplusfm.ro##.widget:has([href]:not([href*="radiomplusfm.ro"]))
 ||ziarpiatraneamt.ro/wp-content/uploads/2020/08/ardealul*.png$image
 ||ziarpiatraneamt.ro/wp-content/uploads/2020/06/rifil-neamt*.jpg$image
 ||ziarpiatraneamt.ro/wp-content/uploads/2020/06/brantner-piatra-neamt*.jpg$image
 tvmneamt.ro##.wpb_content_element
 tvmneamt.ro##[class^="widget"] [src][width][height]
 informatia-zilei.ro##[width="2246"][height="519"]
+informatia-zilei.ro##[href]:not([href*="informatia-zilei.ro"], [href*="abonamente-informatiazilei.ro"], [href^="/"], [href*="#"]):has([src])
 ||informatia-zilei.ro/wp-content/uploads/2023/03/Captura$image
 ||informatia-zilei.ro/wp-content/uploads/2026/03/poster$image
 informatia-zilei.ro##.wp-element-caption
@@ -170,7 +178,9 @@ informatia-zilei.ro##.wp-element-caption
 ||portalsm.ro/media/publicitate/$image
 portalsm.ro##div.st-clr.st-ad-region
 portalsm.ro##[src^="/media/publicitate/"]
+portalsm.ro##.st-sidebar-widget:has([src*="publicitate"])
 ||presasm.ro/*reclama$image
+presasm.ro##.widget:not(*:has([href*="presasm.ro"])):not(*:has([data-href*="facebook"]))
 presasm.ro##.wp-image-179110
 presasm.ro##.header-banner
 presasm.ro##.code-block
@@ -273,15 +283,18 @@ luju.ro##[id*="banner"]
 @@||luju.ro/static/images/home.jpg
 @@||luju.ro/static/images/logo.jpg
 @@||luju.ro/static/images/shadow.jpg
+luju.ro##aside.externals:has([href*="cotidianul.ro"])
 luju.ro##video
 luju.ro##[src^="https://luju.ro/static/images/ccir"]
 b1tv.ro##.branding
 b1tv.ro##.bg--dark
+b1tv.ro##.height-250:has([id^="div-gpt-ad"])
 .ro/track.js?$script
 ziardecluj.ro##div.ad
 stiridecluj.ro##div[onclick]
 ||stiridecluj.ro/files/banners*
 stiridecluj.ro##.leaderboard.bstats
+stiridecluj.ro##.s-ba-sub-menu:has(.adsbygoogle)
 aerotim.ro##[id="intRightSideBanners"]
 aerotim.ro##.front-overlay-banners
 ||aerotim.ro/images/Banner_240x140px.jpg
@@ -330,6 +343,7 @@ pricy.ro##.in.fade.modal-backdrop
 ||cabral.ro/ads/*$image
 ||psnews.ro/ads/*$image
 ||psnews.ro/*/*Ad_PS*$image
+nasul.tv##.wpb_wrapper:has([href^="https://repigmentare.ro/"])
 nasul.tv##[href="https://www.ecrgroup.eu/"]
 nasul.tv##[href="http://stefanovidiu.ro/"]
 nasul.tv##[href="https://www.expresorul.ro/"]
@@ -354,6 +368,7 @@ evz.ro##.news-listing-comunicate
 evz.ro##[id^="ado"]
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=evz.ro
 ||cotidianul.ro/wp-content/uploads/*banner
+national.ro##.clear:has(a)
 national.ro##.metasingle-jos
 national.ro###ys-container
 national.ro##.visible.ys-layer
@@ -364,6 +379,7 @@ national.ro##.td-a-rec-id-custom-spot
 ziarulromanesc.de###adv-Piede-sticky
 ||ziarulromanesc.de/*promo
 ziarulromanesc.de##.ai_widget.widget
+ziarulromanesc.de##.code-block:has([id^="taboola-"])
 flux24.ro##[href*="profitshare.ro/"]
 flux24.ro##.td_spot_img_all
 georgebutunoiu.com##.img-banner
@@ -380,8 +396,10 @@ prosport.ro##.height-250.mg-sm-bottom-20
 @@||brid.tv/player/$script,domain=prosport.ro
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=prosport.ro
 prosport.ro##.strawberry-ad
+prosport.ro##[data-platform]:has([id^="div-gpt-ad"])
 prosport.ro###tvdpl
 ||s2blosh.com^
+agora.md##.overflow-hidden:has(app-dfp-ad)
 ||curentul.md/wp-content/banners/
 curentul.md###banner1
 curentul.md###banner5
@@ -393,6 +411,7 @@ curentul.md##.floating
 curentul.md##div.ric.richmedia
 curentul.md###banner8_singlebottom
 hotnews.md##.adv
+istoria.md##div.d2011-block-lateral-middle:has(a[href*="voceabasarabiei.net"])
 poliexpert.md##.banner
 protv.md###idvop_fbl
 radiochisinau.md##.adds
@@ -414,6 +433,7 @@ capital.ro##[id^="ado"]
 ||capital.ro/*Banner$image
 ||timponline.ro/*300x250$image
 ||timponline.ro/*728x90.jpg$image
+timponline.ro##.widget:has([href]:not([href*="timponline.ro"]))
 timponline.ro##[href="https://www.facebook.com/romanadecomobili"]
 timponline.ro##.g-single
 newsromania.net##.background-image-clickable
@@ -444,10 +464,12 @@ gazetaromaneasca.com##.rm-skin
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=romaniatv.net
 romaniatv.net##.height-300
 romaniatv.net###sam_branding
+romaniatv.net##.top:has([id^="div-gpt-ad"])
 romaniatv.net##[data-platform="AdNow"]
 romaniatv.net##[data-platform="MGID"]
 ##.SC_TBlock
 romaniatv.net##.sam_placeholder
+romaniatv.net##.height-250:has([id^="div-gpt-ad-"])
 ||adevarul.ro/assets/adevarul.ro/MRImage/2019/02/20/5c6d75d7445219c57e642558/orig.jpg$image
 ||adevarul.ro/assets/adevarul.ro/MRImage/2019/05/27/5cec182e445219c57e1efd38/orig.jpg$image
 adevarul.ro##[id^="gid-ads"]
@@ -484,7 +506,9 @@ mediafax.ro##div.notif-bula.notif
 ||mediafax.ro/sanador$subdocument
 mediafax.ro###tvdpl
 mediafax.ro###teads-inread
+mediafax.ro##.min-h-250:has(.strawberry-ads-manager-container)
 ||i.imgur.com/oj9G0zy.png
+cspower.ro##.ipsWidget_inner:has([href*="freakhosting.com"])
 escortebucuresti.com##.banners-box
 escortebucuresti.com##.new_domain_r.block
 nimfomane.com##.content-page-mg > p
@@ -497,11 +521,14 @@ nimfomane.com##[alt="advertisement_alt"]
 sa-mp.ro##[href*="&do=advertisement"]
 ||ro-ph.com/img/banners/roph.jpg
 craiovaforum.ro##.wpb_wrapper > aside.widget_text.widget
+craiovaforum.ro##aside:has([target="_blank"])
 @@||clarity.ms/tag/$script,domain=craiovaforum.ro
 4tuning.ro##.aobn
 4tuning.ro##.side-col
 anunturi-auto.4tuning.ro##.aobn
+forum.4tuning.ro##[style="min-height: 260px;"]:has([id^="adocean"])
 4tuning.ro##.news-fb-comments
+gsp.ro##[class^="banner"]:not(*:has(.related-in-article))
 ||gsp.ro/usr/widgets/*/cptm*$image
 ||gsp.ro/*/widgets*.gif$image
 ||gsp.ro^*banner$image
@@ -517,6 +544,8 @@ oradesibiu.ro##.sidebar-column-primary.sidebar-column.col-sm-4 > .sidebar
 cancan.ro##.height-sm-360.height-xs-200.mg-bottom-20
 cancan.ro##.height-250
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=cancan.ro
+cancan.ro##.height-300:has([id^="div-gpt-ad"])
+cancan.ro##.article:has([href*="go4it"])
 cancan.ro###tvdpl
 ||filmecrestineonline.ro/wp-content/uploads/2021/01/nail-khusnutdinov-als-171-000-aro-244-modelling-0-1.jpg$image
 ||filmecrestineonline.ro/wp-content/uploads/2017/09/resizedimage-300x150.png$image
@@ -536,6 +565,7 @@ promotor.ro###teads-inread
 retete.unica.ro##div[class^="strawberry"]
 retete.unica.ro##.sam_branding.hidden-xs
 petitchef.ro##div[class^="akcelo"]
+playtech.ro##.height-250:has([id^="div-gpt-ad"])
 playtech.ro##.height-sm-250.height-xs-300
 playtech.ro##.mg-bottom-10.text-center
 playtech.ro##.padding-top-10.padding-bottom-10
@@ -544,9 +574,14 @@ playtech.ro###sam_branding
 playtech.ro##div.mg-bottom-20.height-300
 playtech.ro##div.height-300
 playtech.ro##.height-md-250
+scritub.com##[style^="overflow:"]:has([data-ad])
+scritub.com##[style^="overflow:"]:has([data-ad-slot])
+scritub.com##[style^="overflow:"]:has(#v-scritub-v3)
 ||sighet247.ro/banners/
 sighet247.ro##.ad
 ||hoinaru.ro/wp-content/uploads/*/*/banner*$image
+rasfoiesc.com##[style^="overflow:"]:has([data-ad])
+rasfoiesc.com##[style^="overflow:"]:has([data-ad-slot])
 rasfoiesc.com##td[height^="500"]
 daciaclub.ro,reno.ro##.profitshare
 daciaclub.ro,reno.ro##.adsense
@@ -556,6 +591,7 @@ ziuanews.ro###pub-top-container
 ziuanews.ro##.ads-container
 ziuanews.ro##.adsz
 ziuanews.ro##.pub
+ziuanews.ro##[href]:not([href*="ziuanews.ro"], [href^="/"], [href*="#"]):has([src])
 ziaruldeiasi.ro##[href*="adclick"]
 asculta-live.com##.ad
 cetateanul.net##[href*="/?utm_source=cetateanul"]
@@ -563,17 +599,23 @@ myradioonline.ro##.pls-dis-blck
 myradioonline.ro##[class*="Banner"]
 ||3myad.com^
 qreferat.com##[style^="overflow:auto;"]
+jurnalul.ro##.DAGInScrollInner:has(.bannerBox)
 jurnalul.ro##.bannerGrey
 jurnalul.ro###ribbon
 jurnalul.ro##.push-notification
 protv.ro##.brandingDfp
+protv.ro##.container.billboard-1-index:has([id^="div-gpt-ad"])
 ||media.dcnews.ro/nxt/bolero2300x600min.jpg$image
 ||media.dcnews.ro/nxt/publicitate_v2.jpg$image
 ||media.dcnews.ro/ads/*
 dcnews.ro##[href^="https://ccir.ro/"]
 dcnews.ro##[data-ad]
+dcnews.ro###articleContent > [style]:has([data-ad])
 dcnews.ro##[href="https://www.dcbusiness.ro/cum-nu-construim-in-romania"]
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=dcnews.ro
+dcnews.ro##[align="center"]:has(#div-gpt-dcnews_gpt-billboard_responsive)
+dcnews.ro##[class^="container-block-"]:has(#div-gpt-dcnews_gpt-billboard_responsive)
+dcnews.ro##.desktop_only:has([id^="div-gpt-dcnews_gpt"])
 dcbusiness.ro##[href="https://arca.info.ro/"]
 dcbusiness.ro##[href="https://www.proger.ro/"]
 dcbusiness.ro##[href="https://www.dcbusiness.ro/cum-nu-construim-in-romania"]
@@ -591,6 +633,7 @@ fanatik.ro##[data-banner]
 fanatik.ro##[rel^="sponsored"]
 fanatik.ro##[class^="ssc-card__branding"]
 fanatik.ro##[id^="strawberry_feeds_manager_widget"]
+fanatik.ro##.container.mg-top-20:has([href*="pariuri"])
 lauralaurentiu.ro##.ai-attributes
 lauralaurentiu.ro##.reclamaLata
 lauralaurentiu.ro##.titluReclama
@@ -605,6 +648,8 @@ ziare.com##[id^="div-gpt-ad"]
 @@||pagead2.googlesyndication.com/pagead/managed/js/adsense/$script,domain=savoriurbane.com
 @@/adsid/integrator.js$script,domain=savoriurbane.com
 @@||pagead2.googlesyndication.com/getconfig/$xmlhttprequest,domain=savoriurbane.com
+b365.ro##.height-250:has(.strawberry-ads)
+incorectpolitic.com##.widget-container:has([href^="http://thecryptobot.com"])
 divahair.ro##.featuredBrandsCon
 ||divahair.ro/*/featured_brands/$image
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=divahair.ro
@@ -623,6 +668,7 @@ ct100.ro##.twp-ad-image-section
 cugetliber.ro##[class^="banner"]
 romaniataramea.com##.widget_text
 romaniataramea.com##[href^="https://afflat3c1.com/trk/"]
+romaniataramea.com##.widget_block:not(.widget_block:has([href*="romaniataramea.com"])):not(.widget_block:has([href*="google.com"]))
 ||romaniataramea.com/wp-content/plugins/buymeacoffee/
 ||buymeacoffee.com^$domain=romaniataramea.com
 romaniataramea.com##.wpsd-master-wrapper
@@ -634,14 +680,19 @@ focuspress.ro##[data-widget_type="image.default"]
 focuspress.ro##aside.widget_media_image.widget.td_block_template_1
 @@||focuspress.ro/*/logo-600x90-constanta.png
 ||sfatulparintilor.ro/*banner$image
+sfatulparintilor.ro##.textwidget:has([target="_blank"]:not([method]))
+sfatulparintilor.ro##.widget_text:has([id^="div-gpt-ad"])
 sfatulparintilor.ro##.lvd-blog-ad
 ||serveresamp.com/banner$image
+serveresamp.com##center:has(a)
+bucurestitv.net##.side-widget:has([class="adsbygoogle"])
 cspower.ro##[src*="banner"]
 cspower.ro##[href="https://redsky.ro/"]
 floteauto.ro##.pubheader
 ||autoexpert.ro/img/rca300.png$image,domain=floteauto.ro
 ||floteauto.ro/*Banner$image
 floteauto.ro##[href^="https://ivecopentrutine.ro/"]
+floteauto.ro##.textwidget:not([class]:has([href^="https://floteauto.ro"])):not([class]:has([href*="//www.autoexpert.ro"]))
 ilike-it.ro##.fake_grooveskin
 ilike-it.ro###rectangle
 ilike-it.ro###billboard
@@ -655,11 +706,14 @@ onlinesport.ro##[href^="https://record.mypartners360.com/"]
 aktual24.ro##.sam__branding
 aktual24.ro##[style="min-height: 250px;"]
 ||cdn.aktual24.ro/wp-content/uploads/2022/02/simion4-*.png$image
+aktual24.ro##.min-h-250:has(.strawberry-ads-manager-container)
+aktual24.ro##[class*="min-height-50"]:has(.strawberry-ads-manager-container)
 dirtbike.ro##[class*="banner"]
 ||dirtbike.ro/*banner$image
 autoexpert.ro##.pub
 autoexpert.ro##.pubheader
 autoexpert.ro##[href="https://www.sab.ro/"]
+autoexpert.ro##.textwidget:has([target="_blank"])
 autoexpert.ro##[href^="https://www.porschefinance.ro/"]
 carzz.ro##[href^="https://www.carvertical.com/"]
 carzz.ro##.second_carvertical_noVin
@@ -673,16 +727,21 @@ sroscas.ro##.textwidget
 dez.ro#@##ad-carousel
 dez.ro##.alert-warning.alert
 substantial.ro##[id^="subst-"][style]
+mediculmeu.com##[style]:has(.adsbygoogle)
 bugetul.ro##[class^="reclama"]
 bugetul.ro##[class^="banner"]
+bugetul.ro##[class^="bg"]:has([id^="adocean"])
+bugetul.ro##[style]:has(#taboola-mid-article)
 @@||vitan-auto.ro/*/ads_images/$image,~third-party
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=kudika.ro
 kudika.ro##.minh-250
+kudika.ro###billboard:has(.add-container)
 ##.strawberry_ads_container
 ##.strawberry-ads__pretty-container
 ##.strawberry-ads-manager-container
 ##.strawberry-ad-card
 ##.strawberry-ad
+uzpbihor.ro###widget-wrap:not(*:has([href*="uzpbihor.ro"]))
 crisana.ro##[src*="banner"]
 tenisdecamp.ro###ad-bilboard
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=life.ro
@@ -693,6 +752,8 @@ monitorulexpres.ro##.td_spot_img_all
 crestintotal.ro##[href="https://www.kerigma.ro/"]
 crestintotal.ro##[href^="https://librariact.ro/"]
 spynews.ro##.ads
+moduri.ro##.widget-container:has([id="t5_zone_standard-ga"])
+moduri.ro##.widget-container:has(.adsbygoogle)
 turdanews.net##.elementor-widget-smartmag-codes
 turdanews.net##[href="https://viamso.ro/"]
 turdanews.net##.smartmag-widget-codes
@@ -703,11 +764,15 @@ turdanews.net##.ai-track
 ziarulevenimentul.ro##[href*="/adclick.php"]
 ziarulevenimentul.ro##[href^="https://www.bursa.ro"]
 g4media.ro##.custom-html-widget
+g4media.ro##[data-ai-debug]:has([src*=pnl])
+g4media.ro##.code-block:has(.ad-header)
+g4media.ro##.post-review:has(.author-publicitate)
 g4media.ro###tvdpl
 g4media.ro###strawberry-branding
 ||investigatoria.ro/*banner$image
 investigatoria.ro##.code-block
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=kfetele.ro
+kfetele.ro##.sidebar:has([class^="ad-"])
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=wall-street.ro
 wall-street.ro##.minh-250.mb-20.mt-20
 wall-street.ro##.slick-slider.slick-initialized.ws_gallery_image > .draggable.slick-list > .slick-track
@@ -716,6 +781,7 @@ wall-street.ro##.ads
 wall-street.ro##.minh-250
 wall-street.ro###adocean\.slots\.box3
 wall-street.ro##.minh-lg-600.sidebarBox
+wall-street.ro##[class^="add"]:has([id^="adocean"])
 9am.ro###branding-holder
 9am.ro##.ad-in-artilce
 9am.ro##.minh-250
@@ -724,12 +790,14 @@ wall-street.ro##.minh-lg-600.sidebarBox
 @@||giz.ro^$generichide
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=kanald.ro|stirilekanald.ro|video.onnetwork.tv
 @@||cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/$script,domain=kanald.ro
+stirilekanald.ro##.col-sm-4:has([class="ad"])
 kanald.ro##.afis-sticky
 kanald.ro##[id*="overlayer"]
 pbinfo.ro##div.center.well-sm.well
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=9am.ro|wowbiz.ro
 libnet.ro##div.bnd
 libnet.ro##.row-header-baner
+odat.ro##.textwidget:has(.adsbygoogle)
 odat.ro##[href="https://chestionareauto.ro/"]
 odat.ro##[href="http://www.moveout.ro/"]
 stirileprotv.ro##.topBranding
@@ -741,7 +809,11 @@ sport.ro##.desktop-branding
 7est.ro##.td-a-rec-id-header
 7est.ro##.widget_wq_reclame
 7est.ro##[class*="_ad_"]
+pretbenzina.ro##[id^="box"]:has(.adsbygoogle)
+autouncle.ro##[style]:has([id^="div-gpt-ad"])
+autouncle.ro##[style]:has(>#RO_Web_SP_LB1_Skin)
 automobilen.ro##.reclama
+nwradu.ro##.textwidget:has(.afiliere)
 anonimus.ro##[href="https://trenduri.blogspot.com/"]
 anonimus.ro##[href="https://fabricatinro.ro/"]
 anonimus.ro##[href="https://malltaranesc.ro/"]
@@ -759,8 +831,11 @@ desteptarea.ro##[href*="banner"]
 desteptarea.ro##[href]:not([href*="desteptarea.ro"], [href*="paydemic.com"],[href*="facebook.com"],[href*="instagram.com"],[href*="tiktok.com"], [href*="vk.com"], [href*="paydemic.com"], [href*="facebook.com"], [href*="instagram.com"], [href*="tiktok.com"], [href*="t.me"], [href*="anpc.ro"], [href*="europa.eu"], [href="#"])
 desteptarea.ro##.tdi_119, .tdi_161, .tdi_162, .tdi_163, .tdi_166, .tdi_167, .tdi_168
 ||integr8.digital^$third-party
+csid.ro##.centered:has(.strawberry-ads-manager-container)
+csid.ro##.mg-bottom-10:has(.strawberry-ads-manager-container)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=csid.ro
 androidu.ro##.banner728x90px
+androidu.ro##.align-right:has(.adsbygoogle)
 autolatest.ro##.td_spot_img_all
 ||autolatest.ro/wp-content/uploads/*/Banner$image
 autolatest.ro##.td-pb-span12.tdi_24
@@ -792,7 +867,11 @@ alba24.ro##.latest-ad-row
 ziarulunirea.ro###mvp-leader-wrap
 ||vremeanoua.ro/wp-content/uploads/*/*/banner*.jpg$image
 ||vremeanoua.ro/*gif$image
+vremeanoua.ro##.tdc-element-style.td-pb-row.wpb_row:has([target="_blank"]):has([class^="td-lazy-img"])
+vremeanoua.ro##.td-a-rec-id-custom-spot:has([alt="spot_img"])
 vremeanoua.ro##.td_block_template_1.td-single-image-
+vremeanoua.ro##[target="_blank"]:has(picture)
+vremeanoua.ro##[href]:has([data-od-added-loading]):not(:has(.tie-small-image)):not(:has(.size-full))
 infobistrita.ro##.banner_image
 agro-tv.ro##.gofollow
 agro-tv.ro##[href="https://www.fabricadecompost.ro/"]
@@ -809,6 +888,7 @@ curier.ro##img[alt="Dr.Teo"]
 curier.ro##[alt="ad"]
 ||startingup.ro^*/banner*$image
 ||giurgiuveanul.ro/stiri/*banner$image
+giurgiuveanul.ro##[href]:not([href*="giurgiuveanul.ro"], [href^="/"], [href*="#"]):has([src])
 ||independentonline.ro^*/commercials/$image
 inturda.ro##.banner
 inturda.ro##.panel[class*=widget]
@@ -838,6 +918,7 @@ viatasisanatate.com###ppsPopupBgOverlay
 viatasisanatate.com##.ppsPopupShell
 viatasisanatate.com##.code-block-8.code-block
 viatasisanatate.com##.ai_widget.widget
+dezvaluiri.ro##[id^="media_image"]:not(*:has([href*="dezvaluiri.ro"]))
 ||clujust.ro/*banner$image
 ||clujust.ro/*.gif$image
 clujust.ro##[href^="https://www.studiumgreen.ro/"]
@@ -846,6 +927,7 @@ clujust.ro##[href*="utm_medium=banner"]
 clujust.ro##[id^="ad"]
 forum-auto.ro##[href="https://e-husa.ro/"]
 ||horticultorul.ro/rcl/*.html$subdocument
+napocanews.ro##.widget:has([target="_blank"])
 napocanews.ro##[href="http://www.coralimpex.ro/"]
 napocanews.ro##[href="http://www.rosal.ro/"]
 napocanews.ro##[href="http://www.trcj.ro"]
@@ -856,12 +938,16 @@ napocanews.ro###pa_inarticle_placeholder
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=a1.ro|antena3.ro|antenastars.ro|as.ro|jurnalul.ro|observator.tv|observatornews.ro|spynews.ro|zutv.ro
 ziarulargesul.ro##[class*="e3lan"]
 ||opiniabuzau.ro/*banner$image
+opiniabuzau.ro##.stream-item-mag:has([target="_blank"])
+opiniabuzau.ro##.stream-item-mag:has([href=""])
 opiniabuzau.ro##[href^="https://vreaulanova.ro/"]
 opiniabuzau.ro##[href="https://souqeshop.ro/panouri-solare-fotovoltaice/"]
 opiniabuzau.ro###background-stream-cover
 ||openstat.eu^
 ||graiulsalajului.ro/*Banner$image
 ||graiulsalajului.ro/*2048x136$image
+graiulsalajului.ro##.wp-block-image:has([sizes])
+graiulsalajului.ro##.elementor-element:has([data-widget_type="image.default"])
 ||voceavalcii.ro/*ad.jpg$image
 ||gazetadambovitei.ro/*.gif$image
 gazetadambovitei.ro##.custom-html-widget
@@ -874,18 +960,26 @@ mobilissimo.ro##.mobileTopStaticBanner
 ||viata-libera.ro/images/banners/$image
 ||monitoruldevrancea.ro/*banner$image
 ||monitoruldevrancea.ro/*reclama
+monitoruldevrancea.ro##.widget_rss:has([href*=".bursa.ro/"])
 monitoruldevrancea.ro##[class*="td-a-rec-id-custom_ad"]
 monitoruldevrancea.ro##[href="https://www.bursa.ro/"]
 monitoruldevrancea.ro##[class*="_ad_"]
+bursa.ro##.clearfix [href][target="_blank"][rel]:has([alt][title][style])
 bursa.ro##.banner
+gorjonline.ro##.container-wrapper > [href="https://www.gorjonline.ro/anunturi/"]:has([src])
 gorjonline.ro##.stream-item-below-header
 gorjonline.ro##[src^="wp-content/uploads/2024/08/banner-"]
 gorjonline.ro##[href="//www.psgone.ro/"]
 gorjonline.ro##[href="//www.baltacocorenilor.ro/"]
+newmoney.ro##.sow-image-container:has([target="_blank"][rel])
 ||newmoney.ro/*Banner$image
 ||filme-bune.biz^*.gif$image
+filme-bune.biz##.Wdgt:has([src*=".gif"])
 ||topgear.ro^*Banner$image
 ||topgear.ro^*gif$image
+tuktuk.ro##[href]:not([href*="tuktuk"]):has([src*="anner"])
+tuktuk.ro##.widget:has([data-aid])
+tuktuk.ro##.widget:has(.adsbygoogle)
 tuktuk.ro##.herald-header-wraper.header-middle
 tuktuk.ro##[href^="//www.booking.com"]
 ||lajumate.ro/images/banners/$image
@@ -894,6 +988,8 @@ dinpopor.ro##.a-wrap
 ||computerblog.ro^*970x250$image
 ||computerblog.ro^*600_300$image
 ||computerblog.ro/banner/
+myexpert.ro##.content-segment:has([src*="pagead"])
+myexpert.ro##[style*="border-radius: 3px; margin-bottom: 20px; width: 160px;"]:has([target="_blank"])
 ||bankingnews.ro/*banner$image
 bankingnews.ro##.banner_g
 bankingnews.ro##[href^="https://www.brd.ro/"]
@@ -901,19 +997,24 @@ bankingnews.ro###text-49
 ||i0.wp.com/r3media.ro/*/banner$image
 r3media.ro##iframe[src*="feature=oembed"]
 r3media.ro###pa_inarticle_placeholder
+parerimagazin.ro##.widget_custom_html:has([src*="pagead"])
+aproapemasini.com##.widget_text:has([href*="utm_source=aff"])
 i-car.ro##.banners
 i-car.ro###banners-4
 i-car.ro###adswidget1-quick-adsense-reloaded-2
 ||lyberti.com/*.gif$image
 ||impactpress.ro/*.gif$image
 impactpress.ro###text-25
+impactpress.ro##.widget:has([src*="pagead"])
 ||stiriest.ro/*banners$image
 ||stiriest.ro/*.gif$image
 stiriest.ro##[id^="wds_"]
 stiriest.ro###custom_html-58
 ||newsbv.ro/*banner$image
 newsbv.ro###block-2
+newsbv.ro##.textwidget:has([src*="anner"])
 newsbv.ro##[href="https://www.rplp-piatracraiului.ro/"]
+cargo-bus.ro##.textwidget:has([src])
 ||cargo-bus.ro/*banner
 ||cargo-bus.ro/*.gif$image
 missauto.ro###honda_bnr_rot_1
@@ -928,6 +1029,7 @@ zero-accidente.ro##[href="https://www.priboisiasociatii.ro/"]
 buzau.net##[href*="?utm_source="]
 buzau.net##.header-banner
 buzau.net##[alt^="Oferta"]
+buzau.net##[href]:not([href*="buzau.net"], [href^="/"], [href*="#"]):has([src])
 ||buzau.net/img.pro/$image
 motorclasic.ro##.custom-html-widget.textwidget
 motorclasic.ro##.widget_custom_html.widget.widget_text
@@ -936,10 +1038,14 @@ turbomag.ro##.home-featured-boxes
 turbomag.ro##.homepage-banner
 zvj.ro##[class*="banner"]
 ||confortmedia.ro^$third-party
+zvj.ro##[href]:not([href*="zvj.ro"], [href^="/"], [href*="#"]):has([src])
 vloggeri.com##[href^="https://event.2performant.com/"]
 ||damboviteanul.com^*.gif$image
+damboviteanul.com##.widget_custom_html:has([href][target="_blank"]):not(*:has([href*="damboviteanul.com"])):not(*:has([id="widget_container_curs"]))
+actualitati.info##.widget:has(.adsbygoogle)
 ||imobiliare.ro^$domain=moise.ro
 moise.ro##[href*="imobiliare.ro"]
+gadget.ro##[id^="block"]:has([src*="pub"])
 obiectiv-sm.ro##.ottowebAds
 obiectiv-sm.ro##.ads-banner-link
 obiectiv-sm.ro##.bk-sticksb-wrapper
@@ -947,35 +1053,52 @@ obiectiv-sm.ro##.bk-sticksb-wrapper
 ||gedave.ro^*.gif
 ||sportulsalajean.ro/*banner$image
 sportulsalajean.ro##[href="https://www.welthaus.ro/"]
+sportulsalajean.ro##.textwidget:has([href*="facebook.com"])
+sportulsalajean.ro##[href]:not([href*="sportulsalajean.ro"], [href^="/"], [href*="#"]):has([src])
 ||sgbm.info^
+stiri.md##.wrapper:has([id^="admixer"])
 stiri.md##[class^="Banner"]
 stiri.md##[data-banner-name]
 stiri.md##.desktopBranding
 stiri.md##[href*="banner"]
+stiri.md##[data-testid="source-url"]:not(*:has([href*="stiri.md"]))
 stiri.md##[class*="AdWrapper"]
 stiri.md##.desktop-branding-wrapper
 stiri.md##[class^="MobileBanner"]
 ||ziarulincomod.ro^*gif$image
+ziarulincomod.ro##.td-a-rec:has([href*="350x350"])
+ciao.ro##.hidden-xs:has([id^="div-gpt-ad"])
+ciao.ro##[style^="min"]:has([id^="gpt-ad"])
 ciao.ro###tvdpl
 retetesivedete.ro###adobranding
 retetesivedete.ro##[id^="ado"]
 retetesivedete.ro###ONN_player
+conso.ro##.billboard:has(#consoAdTop)
 ||dailyfeed.ro/*banner$image
 ||mediaflux.ro/*banner$image
 mediaflux.ro##.td_spot_img_all
 mediaflux.ro##.sam-container
 mediaflux.ro##.mg-top-20
+substantial.ro##.incontent:has(.adsbygoogle)
 doctorulzilei.ro##[id^="ado"]
 pofta-buna.com##[href^="https://www.profi.ro/"]
 evenimentulistoric.ro###adobranding
 stiridinromania.ro##.attachment-full.vc_single_image-img
 stiridinromania.ro##[href*="virtualmag.ro"]
 stiridinromania.ro##[href*="tornabuoni.ro"]
+stiridinromania.ro##.textwidget:has(.adsbygoogle)
+stiridinromania.ro##.wpb_wrapper.vc_figure:has([target="_blank"])
 ||stiridinromania.ro^*.gif$image
 infoactual.ro##[id^="ado"]
 bzi.ro##.branding--top
 bzi.ro##[href^="https://bit.ly/"]
+bzi.ro##.height-250:has(> [id^="div-gpt-ad"])
+bzi.ro##.min-height-250:has(> [id^="div-gpt-ad"])
 ||arq.ro/html/media/banners
+presadeazi.ro##.td-a-rec-id-custom-spot:has([href="https://www.vadrexim.ro/anvelope.html"])
+presadeazi.ro##[style]:has(.td-adspot-title):has(.td_spot_img_all)
+zcj.ro##.hidden-xs:has(.ad-placeholder)
+tomisnews.ro##.code-block:has(.hbagency_space_19811)
 tomisnews.ro##.size-full.wp-block-image
 tomisnews.ro##.widget_media_image
 brasovstiri.ro##.ai-rotate
@@ -993,6 +1116,8 @@ cronicadefalticeni.ro##.sidebar-mid
 cronicadefalticeni.ro##[href="https://almaclinic.ro/"]
 cronicadefalticeni.ro##[href^="https://car-invatamant.ro/aplica-online/"]
 televiziunea-medicala.ro#@#.adsbygoogle
+televiziunea-medicala.ro###text-25:has(.adsbygoogle)
+televiziunea-medicala.ro###text-30:has([href*="jooble.org"])
 stirimed.ro##[id*="_ads"]
 stiridepitesti.ro##.td_spot_img_all
 stiridepitesti.ro##.td-spot-id-content_inline
@@ -1003,23 +1128,31 @@ ziarobiectiv.ro##.rzonvm-image
 ||ziarobiectiv.ro/*.gif$image
 ziarobiectiv.ro##.breakdance-image-object[src*=".webp"]
 ziarobiectiv.ro##[src*="banner"]
+ziarobiectiv.ro##[class^="bde-div-"]:has([src*="webp"]):first-of-type:not(*:has(.bde-text))
 ctnews.ro##.gofollow
 ||wp.com/*Banner$image,domain=ctnews.ro
+litoraltv.ro##.widget:has(.adsbygoogle)
 ||litoraltv.ro/*banner$image
+vbiz.ro##.height-250:has(.adsbygoogle)
 dailybusiness.ro##[data-banner]
+dailybusiness.ro##.height-250:has([id^="div-gpt-ad-"])
 ||ziaruldinmuscel.ro/*reclama$image
+ziaruldinmuscel.ro##.td_block_template_1.vc_column_text:has([href]):not(*:has([href*="ziaruldinmuscel.ro"]))
 ziaruldinmuscel.ro##.vc_empty_space
 ||obiectivbr.ro/*/banner/$image
 @@||obiectivbr.ro/sites/default/files/banner/bogdi1024-web.jpg$image,~third-party
 mediastiri.ro##.td_spot_img_all
 peco-online.ro##tr[onclick*="revolut"]
+go4games.ro##.mg-bottom-10:has(.strawberry-ads)
 dexonline.net##.adsense-imagine
 dexonline.net##[href="https://creditrapid.ro/"]
 actualitateavranceana.ro##[href="https://www.sipotehnokaronline.com/"]
 actualitateavranceana.ro##[href^="https://www.sviatoacademy.ro/"]
 actualitateavranceana.ro##.widget_media_image
 ||florariafocsani.ro/image/catalog/ADV/$image,third-party
+fileshare.ro##td[width="250"]:not(*:has([href*="fileshare.ro"]))
 fileshare.ro##[href]:not([href*="fileshare.ro"], [href^="/"])
+fileshare.ro##tr:has([rel="sponsored"])
 ||fileshare.ro/banners$image
 ||simpatie.ro^$third-party
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=qbebe.ro
@@ -1038,6 +1171,7 @@ amosnews.ro##[href="http://www.catenapascupas.ro/"]
 lumeasatului.ro##.sp-module-content
 ||gandul.ro/*Tobacco$media
 ||mediafax.ro/publicitate
+stirilebzi.ro##.vc_column_inner > .vc_column-inner > .wpb_wrapper:has(.adsbygoogle)
 ||cronicazilei.ro/*banner-$image
 cronicazilei.ro##[href="https://www.amosnews.ro/"]
 cronicazilei.ro##[href^="https://www.facebook.com/profile.php"]
@@ -1048,12 +1182,14 @@ ziaruldevalcea.ro##[href*="raureni.ro"]
 ziaruldevalcea.ro##.widget_media_image
 ziaruldevalcea.ro##.widget_block
 arenavalceana.ro##[href="https://tradecores.com/"]
+arenavalceana.ro##.widget:has(> [href])
 arenavalceana.ro##.td-all-devices
 ziartopdearges.com##.size-large.wp-block-image
 paginademedia.ro##.entry-content > div.demand-supply
 ||ziaruldebacau.ro/*banner$image
 ||ziaruldebacau.ro/*Reclama$image
 ziaruldebacau.ro##.widget_links.widget
+ziaruldebacau.ro##.widget_text.widget:not(*:has([href*="ziaruldebacau.ro"]))
 buzoienii.ro##.is-style-default [href]
 ||viata-libera.ro/*banner$image
 zhd.ro##.td-a-rec-id-custom-spot
@@ -1075,9 +1211,11 @@ shtiu.ro##.leaderboard
 autoplay.ro##.custom-html-widget
 radiobrasov.ro##.view-advertising-banner
 stirileimobiliare.ro##.ai_widget
+arhiblog.ro##.widget:has([href^="https://arhiblog.ro/colaboram/"])
 spectacola.ro##[href="mailto:publicitate@dcnews.ro"]
 ||spectacola.ro/*banner$image
 ||bancherul.ro/banner
+bancherul.ro##.side_right_box:has([src*="banner/"])
 ||novatv.ro/*banner$image
 novatv.ro##.adv-link
 ||infotravelromania.ro/banner
@@ -1097,19 +1235,24 @@ mytex.ro##.stream-item-below-header.stream-item
 bzb.ro##.banners
 ||info1tv.ro/*.gif$image
 info1tv.ro##[href="http://www.april91.ro/"]
+info1tv.ro##[id^="custom_html"]:has([alt^="Agentie"])
 info1tv.ro##.widget_custom_html.side-widget.widget_text
 ||info1tv.ro/*banner
 stiriardeal.ro##.custom-html-widget.textwidget
 stiriardeal.ro##.widget-title
 actualdecluj.ro##.custom-html-widget.textwidget
 mesagerulhunedorean.ro##.widget_media_image
+mesagerulhunedorean.ro##.textwidget:has(.adsbygoogle)
 politik24.ro##.td_spot_img_all
 politik24.ro##.tdi_153
 politik24.ro###tdi_195
+mangalianews.ro##.td_block_template_1:has(.td_single_image_bg)
+mangalianews.ro##.td_block_template_1:has([class^="td-adspot"])
 manager.ro###FixedDivContainer
 manager.ro###fixedDiv
 jamilacuisine.ro##.td-a-rec-id-custom-spot
 ziarmedical.ro##.td-a-rec-id-custom-spot
+videotutorial.ro##.widget-wrap:has(.adsbygoogle)
 ||ziarulsanatatea.ro/*banner$image
 ziarulsanatatea.ro##.vc_raw_html.td_block_wrap.wpb_wrapper
 ziarulsanatatea.ro##.td-a-rec-id-content_bottom.td-a-rec
@@ -1117,14 +1260,18 @@ ziarulsanatatea.ro##[href^="http://www.spitalbunavestire.ro/"]
 ||reporteris.ro/*.gif$image
 reporteris.ro##.banneritem
 ||reporteris.ro/images/banners/$image
+programegratuitepc.com##.widget_media_image:has([href*="affiliate.php"])
 programegratuitepc.com##[href^="https://bit.ly/"]
 programegratuitepc.com##.td_shadow_btn
 programegratuitepc.com##.td-all-devices
+newsmed.ro##[style^="min-height: 200px;"]:has(.adsbygoogle)
+newsmed.ro##.vc_column-inner:has(.adsbygoogle)
 doc.ro##.side-sticky-banner
 doc.ro##.content-add
 ||aplizz.net^
 ||filmelexxx.com/*.php
 coinjournal.net##.ad-banner
+coinjournal.net##.py-6:has([href*="/etoro"])
 ||pornlash.com^
 ||pgnasm.click^
 ||colorfulculture.click^
@@ -1169,10 +1316,12 @@ radioimpuls.ro##.desktop.billboard.use-placeholder
 estnews.ro##[id^="media_image"]
 ||argument.ro/*banner
 ||i0.wp.com/*/banner$image,domain=argument.ro
+argument.ro##[href]:not([href*="argument.ro"], [href^="/"], [href*="#"]):has([src])
 horoscop.ro##.images_adv
 republikanews.ro##.object-contain
 republikanews.ro##.rounded.border-gray-200
 republikanews.ro##[class^="ads"]
+super-boost.ro##.border:has([href*="binance.com"])
 ||botosaneanul.ro/reclame/$image
 *.gif$domain=botosaneanul.ro,image
 botosaneanul.ro##.home_prezentare.prezentare
@@ -1205,6 +1354,7 @@ clubmercedes.ro##.axd
 atacdeconstanta.com##[id^="banner"]
 atacdeconstanta.com##[href="https://www.iuliuscompany.ro/"]
 atacdeconstanta.com##aside[id^="media"]
+atacdeconstanta.com##ul:has([href^="https://bit.ly"])
 atacdeconstanta.com##.size-large[srcset]
 ||adc-teasers.com^
 ||xamubee.ru^
@@ -1215,6 +1365,7 @@ atacdeconstanta.com##.size-large[srcset]
 &ad_campaign_id$document
 ||get-in-shape.beauty^
 ###sam_branding[style="min-height:250px;"]
+economica.net##.mg-xs-top-20:has([id^="div-gpt-ad"])
 zicala.ro##.theiaStickySidebar
 ||director-web.helponline.ro^$third-party
 ||roportal.ro^$third-party
@@ -1251,13 +1402,16 @@ meoo.ro###buttonposter.blue
 ||rotalianul.com/wp-content/uploads/ads/$image
 rotalianul.com##.ad-continue
 rotalianul.com##.sponsored-content-title
+gandul.ro##[style]:has(.strawberry-ads-manager-container)
 gandul.ro###tvdpl
 gandul.ro##.gap-10.flex-col
 ||gonowx.com^
 program-tv.ro##.topad
+program-tv.ro##div:has(> .multicolumndayproginnerad)
 filme123.ro##[href^="https://ggbetbestoffer.com"]
 ofertecatalog.ro##[href^="https://l.profitshare.ro/"]
 ofertecatalog.ro##[href^="https://bit.ly/"]
+ofertecatalog.ro##section#text-2:has(.adsbygoogle)
 catalog-az.ro##.ads
 catalog-az.ro##.ads-container
 catalog-az.ro##.sidebar-ads-container
@@ -1266,17 +1420,22 @@ catalog-az.ro##.catalogue-entry-ad-mobile
 catalog-az.ro##.tall-ads
 catalog-az.ro##.long-ad
 kimbino.ro##.ad
+observatornews.ro##.outstream-text:has(.banner)
 observatornews.ro##.vertical-add-container
 observatornews.ro##.new-ad
 observatornews.ro##.ad-special
 observatornews.ro##.first-ad-desktop
+acasatv.protv.ro##[id]:has(script)
 lovedeco.ro###billboard
+publi24.ro##.article-list > [class]:has([id^="PUB"])
 compari.ro##.admanager-leaderboard
 compari.ro##.gam-top-push
 gorjeanul.ro##[href="https://sni.ro/"]
 ||gorjeanul.ro/wp-content/uploads/2018/06/macheta_clinic_life.jpg$image
+gorjeanul.ro##[href]:not([href*="gorjeanul.ro"], [href^="/"], [href*="#"]):has([src])
 asingorj.ro##.widget_custom_html
 asingorj.ro##[href="https://www.allcrisguard.ro/"]
+cvlpress.ro##.bla-container:not(*:has([href*="cvlpress.ro"]))
 ||cdn.expressdebanat.ro/*Banner$image
 ||cdn.expressdebanat.ro/*.gif$image
 expressdebanat.ro##[rel*="sponsored"]
@@ -1288,26 +1447,40 @@ expressdebanat.ro##[href^="https://www.brantner.com/"]
 tion.ro##.et-last-child.et_pb_column_2
 ||stiridetimisoara.ro/*banner
 ||stiridetimisoara.ro/*.gif$image
+go4it.ro##.single__under:has([style*="padding"])
 go4it.ro##.text-center.hidden-sm.hidden-md
+go4it.ro##.mg-bottom-10:has(.strawberry-ads)
+oradea-online.ro##.widget:not(*:has([href*="oradea-online.ro"], [href^="/"], [href^="oradea"], [href^="https://www.digi24.ro"])):has([href])
 ||bihorstiri.ro/*banner$image
 jurnalulolteniei.ro##.reclame
 cronicaolteniei.ro##.size-full.wp-block-image > picture
 cronicaolteniei.ro##.tdm_block_inline_image_simplified
 ||republicaoltenia.ro/*banner$image
+e-ziare.ro##.right.sidebar:has(.adsbygoogle)
 ||micapi.ro/*reclama$image
 tvfoltenia.ro##[class^="facebook-like-"]
 asculta-radio-live.com##[class^="ad_"]
 asculta-live.com##.ad-mid
 tonurideapelgratis.com##.ad
+catalog-hypermarket.ro##[style]:has(.adsbygoogle)
 actualitateaprahoveana.ro##.bannergroup
+actualitateaprahoveana.ro##.card:has(.bannergroup)
+actualitateaprahoveana.ro##.module-inner:has(.bannergroup)
 ziarulactualitatea.ro##[href="https://ziarulactualitatea.ro/marea-publicitate/"]
+ziarulactualitatea.ro##aside > .widget_text:not(*:has([href^="https://ziarulactualitatea.ro/"], [href="https://nicolaesilade.blogspot.com/"], [href*="paydemic.com"], [href="https://actualitatealiterara.ro"], [href="https://augustinbercean.com"], [href="https://www.ort.ro/"], [href^="https://www.flashscore.ro/"], [href="http://www.agerpres.ro"])):has([href])
+ziarulactualitatea.ro##.flexslider:has([href*="facebook.com"])
 ziarulactualitatea.ro##[href^="https://retim.ro/"]
 ||ziarulactualitatea.ro/*banner
 ||ziarulactualitatea.ro/*/ultima-computers
 ||ziarulactualitatea.ro/*/bella-gold
 ||ziarulactualitatea.ro/*/macheta
+angliamea.ro,germaniamea.ro##.flag-block-wrapper:has(.adsbygoogle)
 ||svnews.ro/adv/$image
 svnews.ro###headgal
+svnews.ro##[style]:has([src*="/adv/"])
+svnews.ro###aside > [style]:has(.adsbygoogle)
+svnews.ro###sidebar > [style]:has([id^="div-gpt-ad-"])
+svnews.ro##[style*="980"]:has(.adsbygoogle)
 cotidianulagricol.ro##.ad_fixed
 marketwatch.ro##.reclama
 ||graiul.ro/banners/$image
@@ -1317,34 +1490,57 @@ graiul.ro##[href="https://www.facebook.com/cruceaalbgalbenaBM"]
 graiul.ro##[href="https://www.graiul.ro/wp-content/uploads/2025/07/spatiu-vasile-300x238.jpg"]
 ||graiul.ro/wp-content/uploads/2025/09/clinica*.jpg$image
 graiul.ro##aside.widget_media_image
+economedia.ro##.code-block:has([id^="div-gpt-ad"])
 ziaruldetulcea.ro###reclama-header-sub-logo
+actualitati-valcene.ro##.wp-block-image:not(*:has([href*="actualitati-valcene.ro"])):has([href])
+banateanul.ro##.mvp-side-widget:not(*:has([href*="banateanul.ro"])):has([href])
+banateanul.ro##.aligncenter:has([src])
 acasa.ro###container_bn_acasa_ro
 t-times.ro##.left-top-banner
 t-times.ro##.article-page-banner
 t-times.ro##.categories-banner
 t-times.ro##.articlesBanner
+cursdeguvernare.ro##.add-articol:has([id^="adocean"])
+cursdeguvernare.ro##.elementor-widget-container:has([id^="adocean"])
 infotrucker.ro##.stream-item:not([href*="infotrucker.ro"])
 tractionisti.ro##.stream-item:not([href*="tractionisti.ro"])
+obiectivderadauti.ro##.wpb_wrapper:not(*:has([href*="obiectivderadauti.ro"], [href*="facebook.com"], [href="#"])):has([href])
 ||obiectivdesuceava.ro/*banner$image
 ||obiectiv-mehedintean.ro/imgs/profin-small.jpg$image
+obiectiv-mehedintean.ro##.widgetcontainer:has([href*="profin"])
+2mnews.ro##.wpb_wrapper:not(*:has([href*="2mnews.ro"], [href*="facebook.com"], [href="#"])):has([href])
+2mnews.ro##.textwidget:not(*:has([href*="2mnews.ro"], [href*="facebook.com"], [href="#"])):has([href])
+ziuaveche.ro##[align="center"]:not(*:has([href*="ziuaveche.ro"], [href*="facebook.com"], [href="#"])):has([href])
+tv8.md##[style*="250px"]:has([id^="admixer"])
+tv8.md##[style*="90px"]:has([id^="admixer"])
+tv8.md##[style*="600px"]:has([id^="admixer"])
 tv8.md##.ad-container
 ||adv.noi.md^
 noi.md##.top-bnr
+noi.md##.news-feed-item:has([src*="adv"])
+diez.md##.widget:not(*:has([href*="diez.md"])):has([href])
 diez.md##[src="https://www.delucru.md/recent-jobs"]
 argesfocus.ro##.bannergroup
 argesfocus.ro###popper_content
 argesexpres.ro##[href^="/images/pub/"]
+apropomagazin.md##li:not(*:has([href*="apropomagazin.md"], [href^="/"], [href*="webmaster.md"], [href*="aproteh.md"])):has([href])
 ||jurnalulph.ro/images/banners/
 jurnaluldesatumare.ro##.wpb_wrapper.td_block_single_image
 phonline.ro##.banneritem
 phonline.ro###cad-slider
 viata-libera.ro##.bannergroup
+vestea.net##aside[id^="media"]:not(*:has([href])) [src]
+vestea.net##aside.widget:not(*:has([href], [src*="youtube.com"])) [src]
 vestea.net##[href="https://vestea.net/servicii-salubritas-pentru-firme-si-persoane-fizice/"]
 ||euro-firms.eu/reclame/$image
 jurnalulolteniei.ro##[aria-label*="banner"]
+jurnalulolteniei.ro##.widget:not(*:has([href*="jurnalulolteniei.ro"])):has([href])
+stiricraiova.ro##.widget:not(*:has([href*="stiricraiova.ro"])):has([href])
+urmele.ro##.elementor-column .elementor-widget-image:not(*:has([href*="urmele.ro"])):has([href])
 timisoaraexpress.ro##[href="https://timisoaraexpress.ro/cerere-publicitate/"]
 ||timisoarastiri.ro/*Banner
 ||timisoarastiri.ro/wp-content/uploads/*.gif
+timpuldevalcea.net##.widget:not(*:has([href*="timpuldevalcea.net"])):has([href])
 ||bunaziuafagaras.ro/*reclama$image
 ||bunaziuafagaras.ro/*banner$image
 ||bunaziuafagaras.ro/*.gif$image
@@ -1355,13 +1551,17 @@ bunaziuafagaras.ro##.ads-only-aside
 programtv.ro##.py-5.px-3.background-white
 xfilme.ro##.fakeplayer
 3xforum.ro##[src^="/banners/"]
+3xforum.ro##td:has([href^="https://www.simpatie.ro/"])
+3xforum.ro##td:has(script)
 ||money.ro/*banner$image
 money.ro##[class^="ad-desktop-"]
 money.ro##[class^="ad-mobile-"]
 60m.ro##[href^="https://www.money.ro/"]
+descopera.ro##[data-placeholder]:has([id^="gpt-ad"])
 descopera.ro###tvdpl
 monitorulneamt.ro##[style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 30px 0;"]
 ||livearad.ro/*advert
+actualitati-arad.ro##.widget_block:not(*:has([href*="actualitati-arad.ro"],[href="https://presadeazi.ro/"]))
 liberinteleorman.ro###simple-banner
 liberinteleorman.ro##.before-header
 liberinteleorman.ro##.size-large.attachment-large
@@ -1373,18 +1573,26 @@ altex.ro,mediagalaxy.ro##[class^="ffrWebAdvertising"]
 stiripesurse.md##[class^="reclama"]
 fsonline.app##.ml-popup-overlay
 tpu.ro##.banner-box
+ipn.md##header > .elementor-element:has(script)
+point.md##[class] > [class]:has([data-banner-position="Top"])
+point.md##div[class]:has(> a[href*="://sales.simpals.com/"][href*="banner"])
 point.md##[data-banner-name*="Banner"]
+point.md##aside > [class]:has([data-banner-name*="Banner"])
 ||deltarockme.com^
 ||beesratyou.com^
 ||whitemaincode.com^
 ||kdsk32lfa.xyz^
+lajumate.ro##.hidden:has([id^="ad-"])
 jurnaltv.md##.bg-advertoriale
+jurnaltv.md##.bg-gray-1500:has(.fb-comments)
+pbinfo.ro##.container [style]:has(.adsbygoogle)
 pbinfo.ro###adbw
 cronica-gaestiului.ro##.mow_fn_banner__singlepost_after_in
 cronica-gaestiului.ro##.mow_fn_sidebar
 meoo.ro###fake-play-overlay
 meoo.ro##[href*="?key"]
 999.md##[class^="styles_ad__banner"]
+realitatea.net##.relative.flex.items-center.justify-center:has([id^="div-gpt-ad"])
 *fifa-banner$script,~third-party
 orangesport.ro##[href="https://www.veolia.ro/"]
 orangesport.ro##[href^="https://mrbit.ro/"]
@@ -1393,54 +1601,92 @@ orangesport.ro##[href^="https://mrbit.ro/"]
 ||miscareaderezistenta.ro/*Banner
 miscareaderezistenta.ro##[href="http://www.smartradio.ro/"]
 stiri.botosani.ro##[class^="ads"]
+zdg.md##[class^="code"]:has([id^="adocean"])
+zdg.md##[style*="border"]:has([id^="admixer"])
 radioinfinit.ro##.slick-track
 dincolodesport.eu##[href^="https://www.facebook.com/"]
 ||dincolodesport.eu/wp-content/uploads/*/auto-service.jpg$image
 dincolodesport.eu##[href="https://coica.ro/"]
 dincolodesport.eu##[href^="https://www.tiktok.com/"]
+debanat.ro##.widget:not(*:has([href*="debanat.ro"], [href^="/"])):has([href])
+debanat.ro##.custom-html-widget:has([onclick])
+transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##.widget:not(*:has([href*="stirilebanatului.ro"], [href*="stirilemoldovei.ro"], [href*="transilvaniaon.ro"],[href^="/"], center)):has([href])
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##.wp-block-heading
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://msmileorto.ro/"]
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://www.twelvetransfers.co.uk/"]
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://tradesilvania.com/"]
 transilvaniaon.ro,stirilemoldovei.ro,stirilebanatului.ro##[href="https://www.completdental.ro/"]
+banatulmeu.ro##[href]:not([href*="banatulmeu.ro"], [href*="youtube.com"], [href^="/"]):has([src])
 banatulmeu.ro##[href*="utm_campaign"]
+banatulazi.ro##[href]:not([href*="banatulazi.ro"], [href^="/"], [href*="#"]):has([src])
 ziarultimisoara.ro##.banneritem
 ||zfilmeonline.ro/scripts.js$script
+ziarulamprenta.ro##[href]:not([href*="ziarulamprenta.ro"], [href^="/"], [href*="#"]):has([src])
 ziarulamprenta.ro##.full-w-communication
+tulceanoastra.ro##[href]:not([href*="tulceanoastra.ro"], [href^="/"], [href*="#"]):has([src])
 tulceanoastra.ro##.box > .home-top-img
+infotulcea.ro##[href]:not([href*="infotulcea.ro"], [href^="/"], [href*="#"]):has([src])
 ||infotulcea.ro/wp-content/uploads/*navrom-delta*$image
 ##[href*="/add.php"]
 turnulsfatului.ro##.tsai
 tribuna.ro##.advertising
 tribuna.ro##[class*="ads"]
+salajulliber.ro##[href]:not([href*="salajulliber.ro"], [href^="https://crucearosiesalaj.ro"], [href^="/"], [href*="#"]):has([src])
 salajulliber.ro##[src*="Banner"]
 salajulliber.ro##[src*="banner"]
 salajulliber.ro##[alt="cover"]
 salajulliber.ro##.widget_media_image
 salajulliber.ro##[alt*="Pub"]
 salajulliber.ro##[src*="top-sim.jpg"]
+monitoruldesalaj.ro##[href]:not([href*="monitoruldesalaj.ro"], [href^="/"], [href*="#"]):has([src])
 monitoruldesalaj.ro##.header-banner
+monitoruldesalaj.ro##p:has([src][sizes][srcset])
 monitoruldesalaj.ro##.advertise-area
 monitoruldesalaj.ro##[href*="utm_campaign"]
 monitoruldesalaj.ro##[src*="delcar"]
 ztv.ro##.widget_media_image
+gazetadebistrita.ro##[href]:not([href*="gazetadebistrita.ro"], [href*="youtube.com"], [href^="/"], [href*="#"]):has([src])
+gazetadebistrita.ro##.td-g-rec:has(.adsbygoogle)
+bistritabusiness.ro##[href]:not([href*="bistritabusiness.ro"], [href^="/"], [href*="#"]):has([src])
 bistritabusiness.ro##.header-banner
+dinpolitica.ro##[href]:not([href*="dinpolitica.ro"], [href*="politiclive.ro"], [href^="/"], [href*="#"]):has([src])
+constantadeazi.ro##[href]:not([href*="constantadeazi.ro"], [href^="/"], [href*="#"]):has([src])
+iasitvlife.ro##[href]:not([href*="iasitvlife.ro"], [href^="/"], [href*="#"]):has([src])
+clujenii.ro##[href]:not([href*="clujenii.ro"], [href*="europa.eu"], [href*="anpc.ro"], [href^="/"], [href*="#"]):has([src])
+actualdecluj.ro##[href]:not([href*="actualdecluj.ro"], [href*="g4media.ro"], [href^="/"], [href*="#"]):has([src])
+infoialomita.ro##[href]:not([href*="infoialomita.ro"], [href^="/"], [href*="#"]):has([src])
 infoialomita.ro##.fancybox
+mesagerulbacau.ro##[href]:not([href*="mesagerulbacau.ro"], [href^="/"], [href*="#"]):has([src])
+bistritaexpress.ro##[href]:not([href*="bistritaexpress.ro"], [href^="/"], [href*="#"]):has([src])
+bacau.net##[href]:not([href*="bacau.net"], [href^="/"], [href*="#"]):has([src])
+rasunetul.ro##[href]:not([href*="rasunetul.ro"], [href^="/"], [href*="#"]):has([src])
 ||rasunetul.ro/*/adfiles$image
 ||rasunetul.ro/sites/default/files/reclame/$image
+ziarulevenimentul.ro##[href]:not([href*="ziarulevenimentul.ro"], [href^="/"], [href*="#"]):has([src])
+media9.ro##[href]:not([href*="media9.ro"], [href^="/"], [href*="#"]):has([src])
+wikipress.ro##[href]:not([href*="wikipress.ro"], [href*="forms.gle"], [href^="/"], [href*="#"]):has([src])
+salutfagaras.ro##[href]:not([href*="salutfagaras.ro"], [href^="/"], [href*="#"]):has([src])
 ||cdn.shortpixel.ai/spai/*/florian-shaorma.jpg$image
+ct100.ro##[href]:not([href*="ct100.ro"], [href^="/"], [href*="#"]):has([src])
 ct100.ro##.twp-ad
+magazinsalajean.ro##[href]:not([href*="magazinsalajean.ro"], [href*="youtube.com"], [href*="caietesilvane.ro"], [href*="ajs.ro"], [href^="/"], [href*="#"]):has([src])
 ||magazinsalajean.ro/*.gif$image
 ||magazinsalajean.ro/*/meses$image
 ||magazinsalajean.ro/*/traducator-copy*.jpg$image
 ||magazinsalajean.ro/*/just*.jpg$image
+fagarasultau.ro##[href]:not([href*="fagarasultau.ro"], [href^="/"], [href*="#"]):has([src])
 fagarasultau.ro##.widget.widget_simpleimage
 fagarasultau.ro##.widget.widget_media_image
 ||tvfagaras.ro/*/my-flyer$image
+voceafagarasenilor.ro##[href]:not([href*="voceafagarasenilor.ro"], [href*="wetter2.com"], [href*="facebook.com"], [href*="youtube.com"], [href*="x.com"], [href^="/"], [href*="#"]):has([src])
 voceafagarasenilor.ro##[href="https://www.facebook.com/CityRideTaxi/"]
 voceafagarasenilor.ro##.vf-ad-card
 voceafagarasenilor.ro##.widget_media_image
+ampress.ro##[href]:not([href*="ampress.ro"], [href^="/"], [href*="#"]):has([src])
 actualitateabotosaneana.ro##[id^="ads"]
+obiectivbr.ro##[href]:not([href*="obiectivbr.ro"], [href^="/"], [href*="#"]):has([src])
+obiectivbr.ro##[class*="banner"]:not(*:has([href*="obiectivbr.ro"]))
+voceatimisului.ro##[href]:not([href*="voceatimisului.ro"], [href^="/"], [href*="#"]):has([src])
 reper24.ro##.sa_vert_center
 ||reper24.ro/*banner$image
 ||reper24.ro/*.gif$image
@@ -1449,11 +1695,17 @@ ieseanul.com##[href="https://www.palasmall.ro"]
 ||ieseanul.com/*.gif$image
 gherlainfo.ro##[href="https://www.gama-optic.ro/"]
 gherlainfo.ro##body > div > [href] > picture
+gazetanord-vest.ro##[href]:not([href*="gazetanord-vest.ro"], [href^="/"], [href*="#"]):has([src])
 gazetanord-vest.ro##.ow-block-media
 ||cdn.ottoweb.ro/*/ads/
+jurnaldeilfov.ro##[href]:not([href*="jurnaldeilfov.ro"], [href^="/"], [href*="#"]):has([src])
+botosaninews.ro##[href]:not([href*="botosaninews.ro"], [href^="/"], [href*="#"]):has([src])
 botosaninews.ro##.banner-wrapper
 botosaninews.ro##[class*="banner"]
 ||botosaninews.ro/*.gif$image
+botosaninecenzurat.ro##[href]:not([href*="botosaninecenzurat.ro"], [href^="/"], [href*="#"]):has([src])
+gazetabt.ro##[href]:not([href*="gazetabt.ro"], [href^="/"], [href*="#"]):has([src])
+infobt.ro##[href]:not([href*="infobt.ro"], [href^="/"], [href*="google.com"], [href*="#"]):has([src])
 ||infobt.ro/*.gif$image
 infobt.ro##[alt*="admir"]
 banulbotosanean.ro##.banner-stack
@@ -1461,53 +1713,92 @@ banulbotosanean.ro##.widget_media_image
 banulbotosanean.ro##[alt^="banner"]
 ||banulbotosanean.ro/*banner$image
 banulbotosanean.ro##.elementor-widget-image
+telembotosani.ro##[href]:not([href*="telembotosani.ro"], [href^="/"], [href*="#"]):has([src])
 telembotosani.ro##figure.wp-caption
 ziarebotosani.ro##.banner-img
+ziarebotosani.ro##.ad-banner:not(.ad-banner:has([title*="Trimite"]))
 ||bihorstiri.ro/*.gif$image
+bihorstiri.ro##[href]:not([href*="bihorstiri.ro"], [href^="/"], [href*="#"]):has([src])
 epitesti.ro##.big-google-ads
+ziartopdearges.com##[href]:not([href*="ziartopdearges.com"], [href^="/"], [href*="#"]):has([src])
 ziartopdearges.com##[class*="slideshow"]
 ziartopdearges.com##.afw_ad
+ziarulargesenilor.ro##.widget_sp_image:not(.widget_sp_image:has([href*="ziarulargesenilor.ro"], [href*="primariadarmanesti.ro"], [href^="/"], [href*="#"])):has([src])
+monitoruldegalati.ro##[href]:not([href*="monitoruldegalati.ro"], [href^="/"]):has([src])
 monitoruldevaslui.ro##.td-custom-image
 monitoruldevaslui.ro##.widget_media_image
 monitoruldevaslui.ro##.td_block_single_image
+stirivaslui.ro##[href]:not([href*="stirivaslui.ro"], [href^="/"], [href*="#"]):has([src])
 vasluianul.ro##.td-custom
+vasluianul.ro##[href]:not([href*="vasluianul.ro"], [href^="/"], [href*="#"]):has([src])
 ||vasluianul.ro/*reclam
 vasluianul.ro##[src*="reclam"]
 ||newsvaslui.ro/*-ad$image
+newsvaslui.ro##[href]:not([href*="newsvaslui.ro"], [href^="/"], [href*="#"]):has([src])
 newsvaslui.ro##.widget_media_image.widget
 newsvaslui.ro##[src*="WhatsApp"]
 ||b-o.ro/banners/
+b-o.ro##[href]:not([href*="b-o.ro"], [href*="displayimage.php"], [href^="/"], [href*="#"]):has([src])
 b-o.ro##body > center > center > table:nth-child(4) > tbody > tr > td:nth-child(3)
 turnucustiri.ro##.adsense_articol
 turnucustiri.ro##.right_col_300_250
 ||turnucustiri.ro/*.gif$image
+trnews.ro##[href]:not([href*="trnews.ro"], [href^="/"], [href*="#"]):has([src])
 trnews.ro##.widget_media_image
 opiniagiurgiu.ro##.widget_media_image.widget
+giurgiu-news.ro##[href]:not([href*="giurgiu-news.ro"], [href*="forecast7.com"], [href^="/"], [href*="#"]):has([src])
+cronicagiurgiuveana.ro##[href]:not([href*="cronicagiurgiuveana.ro"], [href^="/"], [href*="#"]):has([src])
+breakingnewsgiurgiu.ro##[href]:not([href*="breakingnewsgiurgiu.ro"], [href*="forecast7.com"], [href^="/"], [href*="#"]):has([src])
 eziarultau.ro##[style][href]:not([href*="eziarultau.ro"], [href^="/"], [href*="#"])
 ||stirilemm.ro/images/Reclame
 ||necenzuratmm.ro/images/Reclame
+someseanul.ro##[href]:not([href*="someseanul.ro"], [href*="ziar.com"], [href*="ziare.org"], [href^="/"], [href*="#"]):has([src])
+tlplus.ro##[href]:not([href*="tlplus.ro"], [href*="ziare.org"], [href^="/"], [href*="#"]):has([src])
 tlplus.ro##.widget_media_image.widget
+baiamaretv.ro##[href]:not([href*="baiamaretv.ro"], [href^="/"], [href*="#"]):has([src])
 ||unghiul.md/*banner$image
 ecronica.ro##[href="http://mgps.ro"]
+infocs.ro##[href]:not([href*="infocs.ro"], [href^="/"], [href*="#"]):has([src])
 infocs.ro##[href="#lightbox_6"]
 ||curentul.info/*Banner$image
+realitateavalceana.ro##[href]:not([href*="realitateavalceana.ro"], [href^="/"], [href*="#"]):has([src])
 sportpesurse.ro##[class^="reclama"]
+sportpesurse.ro##.code-block:has(script)
+canalsud.ro##[href]:not([href*="canalsud.ro"], [href^="/"], [href*="#"]):has([src])
+calarasipress.ro##.widget_media_image.widget:not(.widget_media_image:has([href*="calarasipress.ro"], [href*="brandingradio.com"], [href^="/"], [href*="#"])):has([src])
 calarasipress.ro##.banner
+atitudineadincalarasi.ro##[href]:not([href*="atitudineadincalarasi.ro"], [href*="televiziuneacalarasi.ro"], [href^="/"], [href*="#"]):has([src])
 ||atitudineadincalarasi.ro/wp-content/uploads/*/aldis.jpg$image
+televiziuneacalarasi.ro##[href]:not([href*="televiziuneacalarasi.ro"], [href^="/"], [href*="#"]):has([src])
 ||atitudineadincalarasi.ro/wp-content/uploads/*/afispic.jpg$image
+zi-de-zi.ro##[href]:not([href*="zi-de-zi.ro"], [href^="/"], [href*="#"]):has([src])
+punctul.ro##p:has([class*="wp-image-"])
+punctul.ro##[href]:not([href*="punctul.ro"], [href^="/"], [href*="#"]):has([src])
+punctul.ro##.widget_sp_image:has([style="max-width: 100%;"]:not(aside)):not(aside)
+cuvantul-liber.ro##[href]:not([href*="cuvantul-liber.ro"], [href*="anpc.ro"], [href*="europa.eu"], [href*="acvromania.ro"], [href^="/"], [href*="#"]):has([src])
 dambovitanews.com##.widget_media_image.widget
+dambovitanews.com##[href]:not([href*="dambovitanews.com"], [href^="/"], [href*="#"]):has([src])
 ||dambovitanews.com/wp-content/uploads/*/ddd$image
+dambovita24.ro##[href]:not([href*="dambovita24.ro"], [href^="/"], [href*="#"]):has([src])
 dambovita24.ro##.textwidget
+stirilafixdb.ro##[href]:not([href*="stirilafixdb.ro"], [href^="/"], [href*="#"]):has([src])
+incomod-media.ro##[href]:not([href*="incomod-media.ro"], [href*="incomod-media.blogspot.ro"], [href^="/"], [href*="#"]):has([src])
 ||filmexxx.ro/*push
 ||filmexxx.ro/assets/js/cxads.js
 filmexxx.ro##.videoPlayerAD
 cronicadeseverin.ro##.widget_custom_html
+ziaruldegarda.ro##[href]:not([href*="ziaruldegarda.ro"], [href^="/"], [href*="#"]):has([src])
 ziaruldegarda.ro##[id^="swiftadswidget"]
 ziaruldeolt.ro##[style^="background-image"]
+zdp.ro##[href]:not([href*="zdp.ro"], [href^="/"], [href*="#"]):has([src])
 ||zdp.ro/*banner_GME.jpg$image
+ziarulderoman.ro##[href]:not([href*="ziarulderoman.ro"], [href^="/"], [href*="#"]):has([src])
 ziarulderoman.ro##.banner-vertical
 ziarulderoman.ro##.custom-html-widget.textwidget
+ziarulderoman.ro##center:has([src*="gif"])
 ||ziarulderoman.ro/wp-content/uploads/2016/05/danlinxxl.jpg$image
+ziaruldetulcea.ro##[href]:not([href*="ziaruldetulcea.ro"], [href^="/"], [href*="#"]):has([src])
+automotorsisport.ro##[href]:not([href*="automotorsisport.ro"], [href^="/"], [href*="#"]):has([src])
 ||sportulbistritean.ro/*.gif$image
 sportulbistritean.ro###sidebar > .widget_media_image.widget
 rds.live##.adsterra-header-desktop
@@ -1521,6 +1812,7 @@ webcamromania.ro##.wcr-reclama-peste-titlu
 seintamplainvalcea.ro##.code-block-4.code-block
 opiniavl.ro##[href="https://annabella.ro"]
 infocontact.ro##aside.ad-container
+financiarpress.ro##[href]:not([href*="financiarpress.ro"], [href^="/"], [href*="#"]):has([src])
 ||financiarpress.ro/wp-content/uploads/2026/07/garanta*.png$image
 /sitefilme\.com\/.*.js\?\d+/
 smartliving.ro##[data-sl-ad-slot]
@@ -1538,6 +1830,7 @@ cinemagia.ro###banner_container_top
 ||unpkg.com/videojs-vast-vpaid@2.0.2/bin/videojs_5.vast.vpaid.min.js$script,domain=vzlinks.com
 @@||regielive.ro^$generichide
 ||sapi.emag.*/recommendations/*zones=adss$xmlhttprequest,~third-party
+emag.*##.container:has([data-tracking-alias^="sponsored_products"])
 ||business24.ro/index.php?module=getActiveBlockerContent.ajxinternal
 business24.ro##.banner
 business24.ro##.branding-container

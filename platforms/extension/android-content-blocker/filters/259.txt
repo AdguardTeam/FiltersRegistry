@@ -1,5 +1,5 @@
-! Checksum: 0LLvF7HAQoFhIZlgzJQXbg
-! Diff-Path: ../patches/259/259-s-1794760727-14400.patch
+! Checksum: k+H2Askrqe9OrIlE9i0tDw
+! Diff-Path: ../patches/259/259-s-1794847044-14400.patch
 ! Title: Dandelion Sprout's Anti-Malware List
 ! Description: Blocks more malware than most other major anti-malware lists - domains and URL patterns used in malware redirection chains, IP addresses that are solely used by malware, PUP nags, and a few scammers. Already included in Dandelion Sprout's Annoyances List.
 ! Version: 2.0.0.32
@@ -24,6 +24,34 @@
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139667
 /^.*\.(live|buzz)/.*&[a-z]{1,3}=[a-zA-Z0-9%]{250,}\$/$document
 ! ——— You know those ultra-fraudulent auto-generated things that clutter up Google searches? These entries should remove some of them. ———
+www.google.*,ipv6.google.com##.g:has(a[href*=".php?xxx="])
+www.google.*,ipv6.google.com##.g:has(a[href*="?event=ad.logClickampadvert="])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect.asp?url="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/go_links.php?"]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redir?dir="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/link?url="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect.aspx?url=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="?url=//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="redirect=//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="return_url=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="returnurl=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*=pag-redireciona i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/jump.cfm" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/www/delivery/"]):has(a[href*=".php?"])
+www.google.*,ipv6.google.com##.g:has([href*="?link=//"]):has(a[href*=".tk/"], a[href*=".ml"])
+www.google.*,ipv6.google.com##.g:has([href*="&url=//"]):has(a[href*=".tk/"], a[href*=".ml"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/?//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/AdRedirector.asp" i])
+www.google.*,ipv6.google.com##.g:has(a[href*="&uri=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/global_outurl.php" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="&loc=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="&orig_url=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="=//"]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*=redirect][href*=".%D1%80%D1%84"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/go/"][href*=".%D1%80%D1%84"])
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[title$="% OFF"]:is([href*=-aa-],[href*=-bb-],[href*=-cc-],[href*=-dd-],[href*=-ee-],[href*=-ff-],[href*=-gg-],[href*=-hh-],[href*=-ii-],[href*=-jj-],[href*=-kk-],[href*=-ll-],[href*=-mm-],[href*=-nn-],[href*=-oo-],[href*=-pp-],[href*=-qq-],[href*=-rr-],[href*=-ss-],[href*=-tt-],[href*=-uu-],[href*=-vv-],[href*=-ww-],[href*=-xx-],[href*=-yy-],[href*=-zz-]))
+www.google.*,ipv6.google.com##.g:has(a[href^="https://books.google."])
 ! ——— Old dead tech-related domains ———
 ! Domains that used to host lists for adblockers or "hosts" tools, but which are now either used by malware pushers, or could potentially be snapped up by them.
 ||adblock.gjtech.net^$document
@@ -61,6 +89,20 @@
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||138.68.252.54^$document
 ! Presumed to be fraudulent antivirus extensions on app/extension sites where it's perfectly probable that everyday people could install them.
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=free])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=clean])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=boost])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=boost][href*=clean])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=gratis])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*="201"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=security])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*="anti.virus"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*="scanguard"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=".totalav."])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adblocker])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=".adblock."])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adsblock])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href$=".adblock"])
 ! Other
 ||fileplanet.com^$document,popup
 ||inputmapper.com^$document,domain=~stolen_by_casino_spammers.*
@@ -90,6 +132,7 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 ! https://www•thewindowsclub•com/fix-windows-update-error-0xc1900130-on-windows-10
 thewindowsclub.com##div[style^="float: none; margin:10px "]
 ! https://www•majorgeeks•com/files/details/patch_my_pc•html
+majorgeeks.com##b:has(a[target^=reimage])
 ||majorgeeks.com/images/icons/red_icon_18x17px.png$image
 ! https://www•2-spyware•com/remove-redirector-gvt1-com•html
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.ui-content > .win
@@ -102,12 +145,14 @@ thewindowsclub.com##div[style^="float: none; margin:10px "]
 ! ¤¤¤ ScanUtilities ¤¤¤
 ! https://www•bynarycodes•com/fix-windows-10-update-error-0x80070006/
 bynarycodes.com##div[class^=bynar-content_]
+bynarycodes.com##.panel:has(a[href*="scanutilities.com"])
 ! ¤¤¤ Driver Easy ¤¤¤
 ! https://www•drivereasy•com/knowledge/fix-critical-service-failed-blue-screen-error-on-windows-10/
 ! https://www•drivereasy•com/knowledge/fixed-how-to-fix-stop-error-0x0000001e/
 drivereasy.com##.pakb-content img[sizes^="(max-width: 80"]
 ! https://www•drivereasy•com/knowledge/download-gigabyte-audio-driver/
 drivereasy.com##.pakb-content img[sizes^="(max-width: 79"]
+drivereasy.com##.pakb-content li:has(a[href="#automatically"])
 ! https://www•drivereasy•com/knowledge/epson-xp-420-driver-update-for-windows-7-8-and-10/
 ! https://www•drivereasy•com/knowledge/solved-this-display-does-not-support-hdcp/
 ! ¤¤¤ Slimware DriverUpdate ¤¤¤
@@ -123,20 +168,31 @@ howtoremove.guide##div[style^="border:2px"]
 guide##a[href*="download.enigmasoftware.com/spyhunter-free-download/stpl_94/SpyHunter-Installer.exe"]
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-968070041
 howtoremove.guide##[id*="newage"]
+howtoremove.guide##.wp-block-table:has(.banner)
 virusresearch.org##.virus-before-content
 virusresearch.org##.q2w3-fixed-widget-container
 virusresearch.org##.virus-after-fourth-h2
 virusresearch.org##.virus-after-content
 ! https://www•cyclonis•com/how-to-create-gmail-account-without-phone-number/
+cyclonis.com##div.rotatead-container:has(.download[data-params*="dl.enigmasoftware.com"])
 ! https://www•2-viruses•com/remove-ad-spam-press-allow-to-continue
 2-viruses.com##.active.prods-win.prod-download
 ! https://github.com/iam-py-test/my_filters_001/issues/119
 cfoc.org###top_custom_banner
 cfoc.org##.custom_banner_top_btn
+cfoc.org##tr:has([href$="ttps://cfoc.org/go-to-spyhunter/"])
+cfoc.org##.widget_text.widget:has([href^="https://cfoc.org/spyhunter-"])
 ||cfoc.org/combocleaner-download-mac/^$document
+cfoc.org##tr:has([href$="ttps://cfoc.org/combocleaner-download-mac/"])
 ||sensorstechforum.com/wp-content/uploads/2020/04/SpyHunter-Install-And-Free-Scan-$image
+sensorstechforum.com##tr:has([href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"])
+sensorstechforum.com##center:has([href$="ttps://www.enigmasoftware.com/spyhunter5-eula/"])
 sensorstechforum.com##[href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"]
 sensorstechforum.com##.top_banner_custom
+sensorstechforum.com##p:has([href$="ttps://sensorstechforum.com/spyhunter-mac-review-advanced-anti-malware/"])
+sensorstechforum.com##p:has([src^="https://sensorstechforum.com/wp-content/uploads/2020/04/SpyHunter-Install-And-Free-Scan-"])
+sensorstechforum.com##center:has([title="Download SpyHunter for Mac"])
+sensorstechforum.com##p:has([src$="ttps://www.youtube.com/embed/KbGF_fvsRU4"])
 sensorstechforum.com###win_top_new_hidden
 macsecurity.net##.banner
 macsecurity.net##.btn-download.btn-lg.btn
@@ -167,6 +223,7 @@ windll.com##.download-block
 windll.com##.dll > p
 dllfile.net##.sticky-link
 fix4dll.com##.file__download
+winaero.com##.entry-content > div:has([href="/fix-classic-issues-performance/"])
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
@@ -174,10 +231,13 @@ processlibrary.com##.bottom > .row:last-of-type
 ##.ym-p1-server-mode-outbyte
 ! ¤¤¤ PC Reviver ¤¤¤
 ! ¤¤¤ FixMyPC ¤¤¤
+dll-found.com##p:has(a[href*=tweakbit])
 ! ¤¤¤ "DLL Helper" ¤¤¤
 azdll.net##.dllhelper-banner
 ! ¤¤¤ WinThruster ¤¤¤
 ||solvusoft.com^$document
+exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
+exefiles.com##.row:has(a[href*="/recommended/"])
 ! Common scam domain patterns
 /^(https?|tcp|iquic)://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
 /^(https?|tcp|iquic):\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
@@ -209,6 +269,9 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adskiper."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-firefox."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
+download.cnet.com##.c-globalCard:has(a[href*="/Sir-AdGuard/"])
+download.cnet.com##.c-globalCard:has(a[href*="/Ad-Smasher/"])
+download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||apps.apple.com/*/app/*/id1564900435^$document
 ! ——— Typo squatting, misspellings, and honest TLD address bar mistakes ———
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
@@ -1037,11 +1100,14 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ! https://github.com/hagezi/dns-blocklists/issues/4907
 ! https://cside.dev/blog/over-5k-wordpress-sites-caught-in-wp3xyz-malware-attack
 ! Tumblr spammers
+tumblr.com##div[data-id][tabindex="-1"]:has(a[href^="https://href.li/?https://bit.ly/"])
+tumblr.com##div[tabindex][style]:has(a[href*="://cutt.ly/"])
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://104.21.82.132^$document,popup
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||172.67.158.57^$document,popup
 ||sites.google.com/view/*wincashapp^$document
+www.tumblr.com##div[data-timeline-id] div[style="margin-top: 0px;"]:has(a:is([href*="tuusi."],[href*="sexcham."]) img)
 ! R34US
 ! https://github.com/AdguardTeam/FiltersRegistry/issues/654#issuecomment-2629098471
 ||gitlab.gitlab.gitlab.$document,popup
@@ -1516,6 +1582,8 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 ! Inspired by https://github.com/DandelionSprout/adfilt/issues/1095
 *$badfilter
 ! Yet more Google searches
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[title*=" OFF "][title$="%"]:not([title$="0%"],[title$="5%"]))
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cname="])
 ! Domains stolen by casino SEO spammers
 ||aussie-gamer.com^$document,domain=~the-site-was-stolen-by-casino-link-spammers.*
 ! Brazilian mobsters trying to DDoS Cisco with TXT-type DNS requests

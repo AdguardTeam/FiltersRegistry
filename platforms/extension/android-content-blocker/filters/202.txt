@@ -1,4 +1,5 @@
-! Checksum: IbtWfAau09HpsjJUWqho/A
+! Checksum: fw0dzkhcS5ApTa/eS8MmWw
+! Diff-Path: ../patches/202/202-s-1794847042-14400.patch
 ! Title: EasyList Thailand
 ! Description: Filter that blocks ads on Thai sites.
 ! Version: 2.0.0.35
@@ -443,6 +444,7 @@ upic.me##div[id^="simplemodal"]
 ||shopee.co.th/userstats_record$xmlhttprequest
 ||shopeemobile.com/th/tr$xmlhttprequest
 ! shopee item-based ads
+shopee.co.th##:has(> .shopee_ic img[loading="lazy"] ~ div.right-0 > .text-white)
 ||lucky135.com
 ||veewin.top/*banner$image
 ! Game
@@ -1298,11 +1300,18 @@ nung2-hdd.com##div[class^="rIdV-"]
 ! 24-hda.com
 24-hda.com##.adl
 24-hda.com##aside.ad, section.adf, div.ad1
+24-hda.com##aside a:has(img)
+24-hda.com##a[href*="ufa"]:has(img)
+24-hda.com##a[href*="1688"]:has(img)
+24-hda.com##a[href*="game1688"]:has(img)
+24-hda.com##a[href*="lockdown"]:has(img)
+24-hda.com##a[href*="hydra"]:has(img)
 24-hda.com##iframe[src*="ufa"], iframe[src*="1688"], iframe[src*="casino"], iframe[src*="bet"]
 24-hda.com##.dac-section--float, .dac-section--banner, a.video-player-banner
 24-hda.com##.ads, .adsbygoogle, [id*="ads"], [class*="ads-"], [class*="-ads"]
 ||24-hda.com/wp-content/uploads/*.gif
 ||24-hda.com/link_to.php?url=*
+24-hda.com##div.ab1:has(img[src*="13969.gif"])
 ! 037hddmovies.com
 037hddmovies.com##[id^="ads-"]
 ! 2499hdonline.com
@@ -1313,6 +1322,7 @@ nung2-hdd.com##div[class^="rIdV-"]
 037hd-movie.com###ads-single
 037hd-movie.com###ads-sidebar-single-top
 ! dunung24.com
+dunung24.com##.elementor-widget-image:has(a[target="_blank"])
 dunung24.com##footer[class*="elementor-location-footer"]
 ! hd432.com
 ||hd432.com/ads/player-header.php
@@ -1322,6 +1332,9 @@ dunung24.com##footer[class*="elementor-location-footer"]
 hd432.com###ads_fix_footer
 hd432.com##.side-banner
 ! 24hd.media
+24hd.media##.elementor-widget-image:has(a[href^="http"])
+24hd.media##.elementor-widget-image:has(img[src*="727200.jpg.webp"])
+24hd.media##.elementor-widget-image:has(img.wp-image-126857)
 ! News
 blognone.com###rightbottom_sidebar .region div[id^="block-views-jobs"]
 blognone.com#@#.advertorial

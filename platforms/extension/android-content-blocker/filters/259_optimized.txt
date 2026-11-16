@@ -1,5 +1,5 @@
-! Checksum: hDqgrz/H87u+mrPw0y5nXw
-! Diff-Path: ../patches/259_optimized/259_optimized-s-1794760727-14400.patch
+! Checksum: ONvJcWc9/V5Wcv9AWxBGnQ
+! Diff-Path: ../patches/259_optimized/259_optimized-s-1794847044-14400.patch
 ! Title: Dandelion Sprout's Anti-Malware List (Optimized)
 ! Description: Blocks more malware than most other major anti-malware lists - domains and URL patterns used in malware redirection chains, IP addresses that are solely used by malware, PUP nags, and a few scammers. Already included in Dandelion Sprout's Annoyances List.
 ! Version: 2.0.0.32
@@ -12,6 +12,34 @@
 .live/*/?*=*&*=*&*=*&*=*&*=$document
 .xyz/*/?*=*&*=*&*=*&*=*&*=$document
 /^.*\.(live|buzz)/.*&[a-z]{1,3}=[a-zA-Z0-9%]{250,}\$/$document
+www.google.*,ipv6.google.com##.g:has(a[href*=".php?xxx="])
+www.google.*,ipv6.google.com##.g:has(a[href*="?event=ad.logClickampadvert="])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect.asp?url="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/go_links.php?"]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redir?dir="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/link?url="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect.aspx?url=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="?url=//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="redirect=//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="return_url=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="returnurl=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*=pag-redireciona i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/jump.cfm" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/www/delivery/"]):has(a[href*=".php?"])
+www.google.*,ipv6.google.com##.g:has([href*="?link=//"]):has(a[href*=".tk/"], a[href*=".ml"])
+www.google.*,ipv6.google.com##.g:has([href*="&url=//"]):has(a[href*=".tk/"], a[href*=".ml"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/?//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/AdRedirector.asp" i])
+www.google.*,ipv6.google.com##.g:has(a[href*="&uri=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/global_outurl.php" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="&loc=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="&orig_url=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="=//"]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*=redirect][href*=".%D1%80%D1%84"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/go/"][href*=".%D1%80%D1%84"])
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[title$="% OFF"]:is([href*=-aa-],[href*=-bb-],[href*=-cc-],[href*=-dd-],[href*=-ee-],[href*=-ff-],[href*=-gg-],[href*=-hh-],[href*=-ii-],[href*=-jj-],[href*=-kk-],[href*=-ll-],[href*=-mm-],[href*=-nn-],[href*=-oo-],[href*=-pp-],[href*=-qq-],[href*=-rr-],[href*=-ss-],[href*=-tt-],[href*=-uu-],[href*=-vv-],[href*=-ww-],[href*=-xx-],[href*=-yy-],[href*=-zz-]))
+www.google.*,ipv6.google.com##.g:has(a[href^="https://books.google."])
 ||adblock.gjtech.net^$document
 ||spam404bl.com^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -40,6 +68,20 @@
 ||ublock.org^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||138.68.252.54^$document
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=free])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=clean])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=boost])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=boost][href*=clean])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=gratis])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*="201"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=security])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*="anti.virus"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*="scanguard"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=".totalav."])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adblocker])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=".adblock."])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adsblock])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href$=".adblock"])
 ||fileplanet.com^$document,popup
 ||inputmapper.com^$document,domain=~stolen_by_casino_spammers.*
 ||henrypp.org^$document,domain=~stolen_by_casino_spammers.*
@@ -60,6 +102,7 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_i
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-offer-header
 thewindowsclub.com##div[style^="float: none; margin:10px "]
+majorgeeks.com##b:has(a[target^=reimage])
 ||majorgeeks.com/images/icons/red_icon_18x17px.png$image
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.ui-content > .win
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.sidebar_download_inner > :not(.voting-box, .colorbg-grey)
@@ -69,25 +112,38 @@ thewindowsclub.com##div[style^="float: none; margin:10px "]
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-placeholder
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-text
 bynarycodes.com##div[class^=bynar-content_]
+bynarycodes.com##.panel:has(a[href*="scanutilities.com"])
 drivereasy.com##.pakb-content img[sizes^="(max-width: 80"]
 drivereasy.com##.pakb-content img[sizes^="(max-width: 79"]
+drivereasy.com##.pakb-content li:has(a[href="#automatically"])
 forums.windowscentral.com###navbar_notice_33
 ||google-analytics.com^$domain=sdi-tool.org
 howtoremove.guide##div[style^="border:2px"]
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.automatic_removal_list_w > .ar_block_description
 guide##a[href*="download.enigmasoftware.com/spyhunter-free-download/stpl_94/SpyHunter-Installer.exe"]
 howtoremove.guide##[id*="newage"]
+howtoremove.guide##.wp-block-table:has(.banner)
 virusresearch.org##.virus-before-content
 virusresearch.org##.q2w3-fixed-widget-container
 virusresearch.org##.virus-after-fourth-h2
 virusresearch.org##.virus-after-content
+cyclonis.com##div.rotatead-container:has(.download[data-params*="dl.enigmasoftware.com"])
 2-viruses.com##.active.prods-win.prod-download
 cfoc.org###top_custom_banner
 cfoc.org##.custom_banner_top_btn
+cfoc.org##tr:has([href$="ttps://cfoc.org/go-to-spyhunter/"])
+cfoc.org##.widget_text.widget:has([href^="https://cfoc.org/spyhunter-"])
 ||cfoc.org/combocleaner-download-mac/^$document
+cfoc.org##tr:has([href$="ttps://cfoc.org/combocleaner-download-mac/"])
 ||sensorstechforum.com/wp-content/uploads/2020/04/SpyHunter-Install-And-Free-Scan-$image
+sensorstechforum.com##tr:has([href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"])
+sensorstechforum.com##center:has([href$="ttps://www.enigmasoftware.com/spyhunter5-eula/"])
 sensorstechforum.com##[href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"]
 sensorstechforum.com##.top_banner_custom
+sensorstechforum.com##p:has([href$="ttps://sensorstechforum.com/spyhunter-mac-review-advanced-anti-malware/"])
+sensorstechforum.com##p:has([src^="https://sensorstechforum.com/wp-content/uploads/2020/04/SpyHunter-Install-And-Free-Scan-"])
+sensorstechforum.com##center:has([title="Download SpyHunter for Mac"])
+sensorstechforum.com##p:has([src$="ttps://www.youtube.com/embed/KbGF_fvsRU4"])
 sensorstechforum.com###win_top_new_hidden
 macsecurity.net##.banner
 macsecurity.net##.btn-download.btn-lg.btn
@@ -110,13 +166,17 @@ windll.com##.download-block
 windll.com##.dll > p
 dllfile.net##.sticky-link
 fix4dll.com##.file__download
+winaero.com##.entry-content > div:has([href="/fix-classic-issues-performance/"])
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ##.ym-p1-server-mode-outbyte
+dll-found.com##p:has(a[href*=tweakbit])
 azdll.net##.dllhelper-banner
 ||solvusoft.com^$document
+exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
+exefiles.com##.row:has(a[href*="/recommended/"])
 /^(https?|tcp|iquic)://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
 /^(https?|tcp|iquic):\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
 /^(https?|tcp|iquic):\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php\$/$document,domain=biz|fun|live
@@ -136,6 +196,9 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adskiper."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-firefox."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
+download.cnet.com##.c-globalCard:has(a[href*="/Sir-AdGuard/"])
+download.cnet.com##.c-globalCard:has(a[href*="/Ad-Smasher/"])
+download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||apps.apple.com/*/app/*/id1564900435^$document
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
 ||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
@@ -601,11 +664,14 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 .med.br/?q=artstation-$document
 /artstation-*-[fanart]-$document,domain=~artstation.com
 =artstation-*-[fanart]-$document,domain=~artstation.com
+tumblr.com##div[data-id][tabindex="-1"]:has(a[href^="https://href.li/?https://bit.ly/"])
+tumblr.com##div[tabindex][style]:has(a[href*="://cutt.ly/"])
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://104.21.82.132^$document,popup
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||172.67.158.57^$document,popup
 ||sites.google.com/view/*wincashapp^$document
+www.tumblr.com##div[data-timeline-id] div[style="margin-top: 0px;"]:has(a:is([href*="tuusi."],[href*="sexcham."]) img)
 ||gitlab.gitlab.gitlab.$document,popup
 ||gitlab.git.git.$document,popup
 ||gitlab.gitlab.git.$document,popup
@@ -1010,6 +1076,8 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 ||amazonaws.com^$badfilter
 ://$badfilter
 *$badfilter
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[title*=" OFF "][title$="%"]:not([title$="0%"],[title$="5%"]))
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cname="])
 ||aussie-gamer.com^$document,domain=~the-site-was-stolen-by-casino-link-spammers.*
 |cisco.com|$dnstype=TXT
 |cloudflare.com|$dnstype=TXT

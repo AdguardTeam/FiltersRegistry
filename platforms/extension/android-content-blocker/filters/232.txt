@@ -1,5 +1,5 @@
-! Checksum: 8O97j0XPxLvK9OPcXAu21A
-! Diff-Path: ../patches/232/232-s-1794790540-14400.patch
+! Checksum: Na4YLtPO1W1XZjzc+FIMUA
+! Diff-Path: ../patches/232/232-s-1794847043-14400.patch
 ! Title: KAD - Anti-Scam
 ! Description: Filter that protects against various types of scams in the Polish network, such as mass text messaging, fake online stores, etc.
 ! Version: 2.0.90.15
@@ -128,14 +128,21 @@
 !
 ! Natrętne lub wprowadzające w błąd reklamy/obrazy
 ###humanFrame
+###humanModal:has(#humanFrame)
 ##a[href^="/fb-login"]
+##body > .container:not([id]):only-child:has(> h1:first-child ~ table:not([id]):not([class]):only-of-type ~ div.dconts:not([id]):last-child)
 /^https?:\/\/[\w]+\.cloudfront\.net\/(?:build|current|latest|main|release|rel|revision|rev|v|version|ver)\/pl\/v/$document,domain=~asystent-pobierania-na-dobreprogramy-lub-softonic.*|cloudfront.net,to=cloudfront.net
 @@||blocked-site-hole-cert.pl^$domain=lista.cert.pl
 ||ekino-tv.pl/views/img/reklama_btn2.png$image
 ~pl##a[href*="whokeys.com/"]:lang(pl)
+cba.pl##body > div[style*="position"]:has(> div[style*="position"] > iframe[src*="/embed/kFGCW1_63lA"])
+dobreprogramy.pl##article#main-content div[data-nosnippet]:has(> div > div > a[href*="/jak-w-windowsie-usunac-niepotrzebne-pliki-i-posprzatac-w-systemie"])
+emedyczny.com,emedyczny.pl##.c-product-box:has(a[href*="/cisnieniomierz-ekg-smart-pulsoksymetr-pulsometr-cardio-one" i])
 emedyczny.com,emedyczny.pl##a[href*="/zegarki-kardiowatch" i], a[href*="/smartwatche" i], a[href*="/cisnieniomierz-ekg-smart-pulsoksymetr-pulsometr-cardio-one" i]
+facetikuchnia.com.pl###sidebar > div.widget:has(#flashContent)
 pl##a[href*="whokeys.com/"]
 speedtest.com.pl,speedtest.pl##a[href*="przyspiesz.pl/"]
+www.google.*##.g:has(a[href*="//adservice.google."])
 ||mojeikp.pl^$document
 ||ublock.org^$document
 ||ublockdns.com^$document

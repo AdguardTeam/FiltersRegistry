@@ -1,4 +1,5 @@
-! Checksum: ALqO668nx+vDV+xLwbjeGg
+! Checksum: 0H+LRDexct+iSBbTTlcElg
+! Diff-Path: ../patches/115_optimized/115_optimized-s-1794847041-14400.patch
 ! Title: (Obsolete) RU AdList (Optimized)
 ! Description: Additional filter list for websites in Russian.
 ! Version: 2.0.91.54
@@ -25322,11 +25323,15 @@ bigpuzzle.ru##td[valign="top"][width="240px"][height="600"]
 @@||studizba.com^$generichide,badfilter
 @@||utarget.ru/check_geo/|$script,badfilter,domain=memepedia.ru
 @@||xksqb.com/native.$script,badfilter,domain=gwss.ru
+eksmo.ru##.fancybox-container:has([src*="/smv/popup/"])
+glavagronom.ru##div:not([id]):not([class]):has(> div + div + section + section) > div:first-child + div > div:only-child > div:first-child + div:last-child
 hideip.me#@#.node-promoted
 myshared.ru###download_form > .modal-body
+ozon.ru##.layout-page > div:has(> div > p > a[href*="://docs.ozon.ru/common/pravila"])
 sawlive.tv##body[onclick^="closeMyAd"] > div[id][style*="position"][style*="background-color"]
 smotrim.ru##.dialog-wrapper
 softportal.com##.st-browser__timer
+yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##body > .serp_js_inited .serp-list > .serp-item:has(:scope > div > div > .label_theme_direct)
 ||24molnia.com^$xmlhttprequest,badfilter,domain=24molnia.com
 ||7ogorod.ru^$xmlhttprequest,badfilter,domain=7ogorod.ru
 ||alau.kz^$xmlhttprequest,badfilter,domain=alau.kz
@@ -25350,6 +25355,8 @@ softportal.com##.st-browser__timer
 ~e.mail.ru,mail.ru###projects [data-alias="market"]
 ~e.mail.ru,mail.ru###projects [data-alias="mra"]
 ~dom.mail.ru,mail.ru##.article__item_source_viqeo ~ .article__item_source_viqeo
+~dom.mail.ru,mail.ru##.article__item_source_viqeo:has(> div > .viqeo-embed > iframe[src^="https://cdn.viqeo.tv/embed?playerId="])
+ok.ru##.feed-list > .feed-w:has(.feed_ava ~ div div > span ~ span ~ span ~ span ~ span ~ span)
 ~3igames.mail.ru,~auto.mail.ru,~biz.mail.ru,~bonus.mail.ru,~calendar.mail.ru,~cloud.mail.ru,~deti.mail.ru,~dobro.mail.ru,~e.mail.ru,~esports.mail.ru,~games.mail.ru,~gibdd.mail.ru,~go.mail.ru,~health.mail.ru,~help.mail.ru,~hi-tech.mail.ru,~horo.mail.ru,~kino.mail.ru,~lady.mail.ru,~love.mail.ru,mail.ru,~mailblog.mail.ru,~mcs.mail.ru,~minigames.mail.ru,~my.mail.ru,~news.mail.ru,~octavius.mail.ru,~okminigames.mail.ru,~otvet.mail.ru,~pets.mail.ru,~pogoda.mail.ru,~realty.mail.ru,~top.mail.ru,~touch.mail.ru,~tv.mail.ru#@#.i-pull-left .news-item_tgb
 @@||ad.mail.ru/adp/?_SITEZONE=*&isAtlas=$~third-party,xmlhttprequest
 ||cdn.viqeo.tv/js/vq_starter.js$third-party,domain=~dom.mail.ru|lifehacker.ru|mail.ru
@@ -25362,6 +25369,7 @@ softportal.com##.st-browser__timer
 24boxing.com.ua,4mama.ua,autoua.net,avtovod.com.ua,beauty.ua,besplatka.ua,bigmir.net,bilshe.com,buhgalter.com.ua,buhgalter911.com,businessua.com,censor.net,dengi.ua,ditey.com,enovosty.com,epravda.com.ua,eurointegration.com.ua,f1analytic.com,facenews.ua,factor.ua,football-ukraine.com,football24.ua,footballtransfer.com.ua,forumodua.com,gismeteo.ua,glianec.com,gorod.dp.ua,hvylya.net,i.ua,inforesist.org,internetua.com,isport.ua,kolobok.ua,kp.ua,kriminal.tv,lifedon.com.ua,liga.net,mama.ua,meteo.ua,mport.ua,nashamama.com,newsyou.info,nnovosti.info,nv.ua,okino.ua,orakul.com,ostro.org,pravda.com.ua,real-vin.com,sinoptik.ua,smak.ua,sportanalytic.com,stravy.net,tochka.net,toneto.net,tv.ua,tvgid.ua,tvoymalysh.com.ua,u-news.com.ua,udoktora.net,vsetv.com,zdorovia.com.ua##style:first-child ~ slot ~ div[class]:not([class*=" "])
 @@||s.zmctrack.net/ads.js|$third-party,script
 @@||www.ukr.net^$generichide
+beta.gismeteo.ru,www.gismeteo.by,www.gismeteo.kz,www.gismeteo.md,www.gismeteo.ru##body[class*="-ru"] div[class]:has(:scope > div:not([id]):not([class]) > div[id]:not([class]) ~ script)
 /^https?://beta\.gismeteo\.ru/(?!ajax\/|api\/informer\/getconstructorinformer\/|api\/v\d{1}\/geoip/$|api\/v\d{1}\/search/|maps\/)/$xmlhttprequest,badfilter,domain=beta.gismeteo.ru
 /^https?://beta\.gismeteo\.ru/\api\/informer\/[^\s]{70,}/$xmlhttprequest,badfilter,domain=beta.gismeteo.ru
 /^https?://www\.gismeteo\.by/(?!ajax\/|api\/informer\/getconstructorinformer\/|api\/v\d{1}\/geoip/$|api\/v\d{1}\/search/|maps\/|news\/resource\/)/$xmlhttprequest,badfilter,domain=gismeteo.by

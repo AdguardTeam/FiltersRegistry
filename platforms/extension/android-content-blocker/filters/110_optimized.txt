@@ -1,4 +1,5 @@
-! Checksum: OGkKfUyvMXkeDo6BWfE4sw
+! Checksum: O8pdc9AKGCoJAKWzgTaBqg
+! Diff-Path: ../patches/110_optimized/110_optimized-s-1794847041-14400.patch
 ! Title: EasyList Lithuania (Optimized)
 ! Description: Additional filter list for websites in Lithuanian.
 ! Version: 2.0.3.0
@@ -13,6 +14,7 @@
 ##img[alt="Reklaminis skydelis"]
 1588.lt###headerBanner
 15min.lt##.top-banner
+15min.lt##script + div:not(.header):has(+ .wrapper)
 15min.lt##.dfp
 15min.lt##.ads-cnt
 15min.lt##.article-0
@@ -23,10 +25,12 @@
 aciu.lt###adrotate_2
 aciu.lt##.parama
 aciu.lt###adrotate_1
+aina.lt##div[data-vc-full-width]:has(div[id^=aina_lt_300x250_])
 aina.lt##.vc_col-sm-4 a:not([href*=aina])
 aina.lt###warp > div[style^=text-align]
 aina.lt##.sticky_side_el
 aina.lt##.non_sticky_side_el > div[style]
+aina.lt##.bdaia-widget:has(a[href*=farming])
 akmensmagija.lt###top
 alfa.lt##.block_text_links
 alfa.lt##.cosite_block
@@ -74,6 +78,7 @@ autogidas.lt##.no-print:not([class*=" "])
 autogidas.lt##.reklama-300x250
 automokyklos.lt##.reklamaadd
 automokyklos.lt##.header > .container
+automokyklos.lt##.col-md-4.col-sm-6:has(> ._slot)
 autoplius.lt##.ap-loan-calculator-native
 autoplius.lt##.apl-content-calculator
 autoplius.lt##.apl-example-note
@@ -258,6 +263,7 @@ ldiena.lt##div[style="position:relative; display:block; margin: 10px auto; text-
 legalus.net##img[alt="www.linda-seeds.com"]
 legionas.lt##.banner-holder *
 lietuvis.no###wdBannerImg
+lietuviuzodynas.lt##.text-center:has(img)
 liguabc.lt##div[style="margin:5px;text-align:center"]
 liguabc.lt##div[style="text-align:center"]
 liguabc.lt##img[alt="Ruba.lt - vyriški marškiniai, megztiniai internetu, išpardavimas"]
@@ -278,6 +284,7 @@ lrvalstybe.lt##.left_banners
 lrvalstybe.lt##.right_banners
 lrytas.lt##.LBlockSidebar__item
 lttv.us##a[href$="ttp://www.filmux.us"]
+lzinios.lt##.fl-row:has(iframe[src*=reklama])
 lzskelbimai.com###banners_170
 m.autogidas.lt###bigbank-mobile
 m.autogidas.lt##.bottom-media
@@ -341,6 +348,7 @@ pokeris.lt###bfad178770
 pokeris.lt###bfad240549
 pokeris.lt##.headerhorizontalbanners
 pokeris.lt##.headerverticalbanners
+diena.lt##.panel-pane:has(.pane-content > script:first-of-type + style + div:last-of-type)
 portas.lt,reksas.lt##a[target=_blank] > *
 powerhitradio.tv3.lt###adblocker
 pradzia.org###block-block-7 P
@@ -403,6 +411,7 @@ sport24.lt###promo
 supermama.lt##div[style="width: 752px; padding-top: 7px;"]
 sutarta.lt##.center.desktop.shadow-top
 sutarta.lt##li[style="overflow:visible"]
+suvalkai.lt##.widget_text:has(a:not([href*="suvalkai."]))
 suvalkai.lt##a[href*="pakavimopleveles.lt"]
 sveikas.lt##.side-block.side-banner *
 sveikatosabc.lt##div[style="width:250px; float:left"] > div[style^="height:"]
@@ -511,7 +520,9 @@ skelbiu.lt##.luminor-item-container-new
 skelbiu.lt##[href*="ttps://www.aruodas.lt/nauji-projektai/?utm_source"]
 skelbiu.lt##.bigbank-loan-calculator-wrapper
 skelbiu.lt###inbank-loan-calculator1
+m.skelbiu.lt##div.list-item:has(div > .mobile-b)
 15min.lt##[class*=field_banner_]
+m.delfi.lt##.md-block > div:not([class]):has(> [class*=adx])
 ve.lt##.layout__region--ad
 ve.lt###block-adaboveheader
 savaite.lt##[id^=fm_adv_]
@@ -522,6 +533,7 @@ tv3.lt###tv980x200_tv3_lt
 tv3.lt##.imMobile
 delfi.lt##.ad-marker
 autoplius.lt##.parameter-value-bigbank
+torrent.ai,torrent.lt###inside > .block:has(.middle > #left_banner)
 torrent.ai,torrent.lt##a[href*="ttps://7bet.lt"]
 torrent.ai,torrent.lt##[href*="ttps://bit.ly/"][target=_blank]
 autogidas.lt##div[class^=lenders-]
@@ -540,6 +552,7 @@ pigu.lt##[widget-attachpoint^=easyPay].not-marketplace
 skytech.lt##.gfBlock
 skytech.lt##.front-ads
 skytech.lt##.campaigns-list
+15min.lt##.col-18.no-padding.vl-auto-row:has(iframe)
 m.delfi.lt##div[id^=adx-] + div
 m.delfi.lt##.lb-adx-frame.ad-marker
 delfi.lt##[style]>[href]>img[width="100%"]
@@ -548,12 +561,19 @@ technologijos.lt##.portlet_nuorodos
 krepsinis.net##.custom-div
 elenta.lt###unit-details-sidebar-ad
 ohoskelbimai.lt##.sidebar-banner
+zarasuose.lt##.sp-module:has(.adsbygoogle, img[src*="/reklama_"], a[href*="mods."])
 vilniausskelbimai.lt##.adv_b
+krepsiniozinios.lt##.sp-column:has(#krepsiniozinios_lt_top)
 krepsiniozinios.lt##div[itemprop=articleBody] > p + div[style*=padding-top]
+anekdotai.lt##.col-md-6:has(ins.adsbygoogle)
 budas.lt###sp-top-banner-block-wrapper
 budas.lt###sp-right .custom > p[style^=text]
+budas.lt###sp-right .module:has(script, a[data-saferedirecturl])
 budas.lt##.bottom iframe
 game-game.lt##.text-center.row
+nidosreceptai.lt##.widget_custom_html:has(.stickyContainer)
+bukimevieningi.lt##.widget_text:has(ins)
+pirkis.lt##aside > .uk-panel-box:has(> ins)
 etaplius.lt##.ad
 etaplius.lt##iframe[data-id]
 hey.lt##a[href*=casino]
@@ -567,11 +587,14 @@ madeinvilnius.lt##.content-inner > div[style^="text-align: center;"][style*="min
 madeinvilnius.lt##div[style$="margin: 15px 0; min-height: 250px;"]
 diena.lt##.node > iframe[src$=".php"]
 respublika.lt##.desktop_banner
+meteofor.lt##.section:has(>.h250)
 meteofor.lt##.top-media-placeholder
+alytausgidas.lt##div.raw-html-component:has(>div[id^=alytausgidas_])
 grokiskis.lt##.td-main-sidebar
 grokiskis.lt##.widget_custom_html
 zemelapis.lt##._0x0
 lrytas.lt##.LAdvert
+lrytas.lt##div[style^="min-height:"]:has(>.LAdvert)
 www.alfa.lt##.sidebar
 www.alfa.lt##.leadas + div[style^="width:100%;"][style$=":center"]
 -baneris-

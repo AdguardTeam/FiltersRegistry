@@ -1,4 +1,5 @@
-! Checksum: LF+93WQNfwmtvqM6AA45JA
+! Checksum: GjG2rqf/mdJZE/BHNuU5aQ
+! Diff-Path: ../patches/115/115-s-1794847041-14400.patch
 ! Title: (Obsolete) RU AdList
 ! Description: Additional filter list for websites in Russian.
 ! Version: 2.0.91.54
@@ -26045,11 +26046,15 @@ bigpuzzle.ru##td[valign="top"][width="240px"][height="600"]
 @@||studizba.com^$generichide,badfilter
 @@||utarget.ru/check_geo/|$script,badfilter,domain=memepedia.ru
 @@||xksqb.com/native.$script,badfilter,domain=gwss.ru
+eksmo.ru##.fancybox-container:has([src*="/smv/popup/"])
+glavagronom.ru##div:not([id]):not([class]):has(> div + div + section + section) > div:first-child + div > div:only-child > div:first-child + div:last-child
 hideip.me#@#.node-promoted
 myshared.ru###download_form > .modal-body
+ozon.ru##.layout-page > div:has(> div > p > a[href*="://docs.ozon.ru/common/pravila"])
 sawlive.tv##body[onclick^="closeMyAd"] > div[id][style*="position"][style*="background-color"]
 smotrim.ru##.dialog-wrapper
 softportal.com##.st-browser__timer
+yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##body > .serp_js_inited .serp-list > .serp-item:has(:scope > div > div > .label_theme_direct)
 ||24molnia.com^$xmlhttprequest,badfilter,domain=24molnia.com
 ||7ogorod.ru^$xmlhttprequest,badfilter,domain=7ogorod.ru
 ||alau.kz^$xmlhttprequest,badfilter,domain=alau.kz
@@ -26075,6 +26080,8 @@ softportal.com##.st-browser__timer
 ~e.mail.ru,mail.ru###projects [data-alias="market"]
 ~e.mail.ru,mail.ru###projects [data-alias="mra"]
 ~dom.mail.ru,mail.ru##.article__item_source_viqeo ~ .article__item_source_viqeo
+~dom.mail.ru,mail.ru##.article__item_source_viqeo:has(> div > .viqeo-embed > iframe[src^="https://cdn.viqeo.tv/embed?playerId="])
+ok.ru##.feed-list > .feed-w:has(.feed_ava ~ div div > span ~ span ~ span ~ span ~ span ~ span)
 ~3igames.mail.ru,~auto.mail.ru,~biz.mail.ru,~bonus.mail.ru,~calendar.mail.ru,~cloud.mail.ru,~deti.mail.ru,~dobro.mail.ru,~e.mail.ru,~esports.mail.ru,~games.mail.ru,~gibdd.mail.ru,~go.mail.ru,~health.mail.ru,~help.mail.ru,~hi-tech.mail.ru,~horo.mail.ru,~kino.mail.ru,~lady.mail.ru,~love.mail.ru,mail.ru,~mailblog.mail.ru,~mcs.mail.ru,~minigames.mail.ru,~my.mail.ru,~news.mail.ru,~octavius.mail.ru,~okminigames.mail.ru,~otvet.mail.ru,~pets.mail.ru,~pogoda.mail.ru,~realty.mail.ru,~top.mail.ru,~touch.mail.ru,~tv.mail.ru#@#.i-pull-left .news-item_tgb
 @@||ad.mail.ru/adp/?_SITEZONE=*&isAtlas=$~third-party,xmlhttprequest
 ||cdn.viqeo.tv/js/vq_starter.js$third-party,domain=~dom.mail.ru|lifehacker.ru|mail.ru
@@ -26096,6 +26103,7 @@ softportal.com##.st-browser__timer
 @@||www.ukr.net^$generichide
 !
 ! Гисметео
+beta.gismeteo.ru,www.gismeteo.by,www.gismeteo.kz,www.gismeteo.md,www.gismeteo.ru##body[class*="-ru"] div[class]:has(:scope > div:not([id]):not([class]) > div[id]:not([class]) ~ script)
 !
 /^https?://beta\.gismeteo\.ru/(?!ajax\/|api\/informer\/getconstructorinformer\/|api\/v\d{1}\/geoip/$|api\/v\d{1}\/search/|maps\/)/$xmlhttprequest,badfilter,domain=beta.gismeteo.ru
 /^https?://beta\.gismeteo\.ru/\api\/informer\/[^\s]{70,}/$xmlhttprequest,badfilter,domain=beta.gismeteo.ru

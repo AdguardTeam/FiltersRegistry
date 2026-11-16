@@ -1,9 +1,9 @@
-! Checksum: 4NKpuRXQRstUayBtK7V2OA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1794804276-14400.patch
+! Checksum: JWk0ZclRpuNpmchX8Y2ccQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1794847043-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.21.15
-! TimeUpdated: 2026-11-15T16:35:53+00:00
+! Version: 2.0.21.16
+! TimeUpdated: 2026-11-16T16:35:50+00:00
 ! Expires: 5 days (update frequency)
 ||loan^$document
 ||bid^$document
@@ -27,6 +27,7 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.primary_download
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-text
 howtoremove.guide##[id*="newage"]
+howtoremove.guide##.wp-block-table:has(.banner)
 cfoc.org###top_custom_banner
 windowsreport.com##div[class^=restoro-download] + section
 appuals.com##.wptp
@@ -590,6 +591,7 @@ gamespot.com##.share--column
 forbes.com##.article-sharing
 rawstory.com##.share-popup.rm-stats-tracked
 ||syndication.twitter.com/srv/timeline-profile^$third-party
+##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
 ##.chrome-footer:not(html, body)
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
@@ -608,20 +610,24 @@ aminoapps.com##.height-toggle
 studocu.com###document-wrapper > div:first-of-type:not([style])
 reddit.com##[bundlename=desktop_rpl_nsfw_blocking_modal]
 ||blueconic.net^$third-party
+linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea:has(.cGuestTeaser):not(:has(.ipsComposeArea_editor))
 ||subs.youmaker.com^$third-party
 ##.paywall-gradient:not(html, body)
 ||glassdoor.com^*/gd-user-hardsell-overlay.
 ##.tmblr-iframe--follow-teaser
 tumblr.com##.tmblr-iframe--follow-teaser
 deviantart.com##div[style] > div[class^=_] + div:not([class^=_]):nth-of-type(2):last-of-type
+deviantart.com##div[style^="width:"] > div:first-of-type + div:last-of-type:has(> a[href*="/join/?"])
 ||assets.guim.co.uk/assets/SignInGateMain.
 twitch.tv###twilight-sticky-footer-root
 pinterest.*##div[id$=unauth-container] div[data-test-id=pin-closeup-image] > div[style^="cursor: pointer;"]
 pinterest.*##[data-test-id^=fullPageSignupModal]
+www.deviantart.com##body > header[role=banner]:not([class*=" "]) ~ div[class^=_][class*=" "]:has(a[href*="/login"])
 magma.com##modals-box
 vk.com###page_bottom_banners_root
 substack.com,microsoftsecurityinsights.com,chipstrat.com##div[class^=subscribe-]
 substack.com,microsoftsecurityinsights.com,chipstrat.com##.subscription-widget-wrap > .show-subscribe
+instacart.com##.AuthModal__Overlay:has(a[href$="/business"])
 amazon.*##.nav-flyout.nav-signin-tt
 trello.com##.mod-warning.header-banner
 pinterest.*##div[data-test-id=giftWrap]
@@ -637,6 +643,8 @@ vimeo.com##._16rrx
 ||ixigua.com/api/feedv2^
 ||hotdeals.com^$document,domain=~fake-coupon-site-that-has-no-coupons.*
 ||coupert.com^$document,domain=~fake-coupon-site-that-has-no-coupons.*
+pixiv.net##div:has(> aside + a[href^="/premium/lead/"])
+pixiv.net##div > div + section:has(a[href^="/premium/lead/"])
 cda.pl##.video-baner
 cda.pl###tVC
 fandom.com##.ad-slot-placeholder
@@ -705,9 +713,11 @@ fandom.com##.notifications-box
 fandom.com##div[class^=page-footer__]
 fandom.com##[data-testid=QuizBanner]
 fandom.com##section[class^=trfc]
+fandom.com##.notifications-placeholder:has(a[href$=":Signup" i])
 fandom.com##.global-footer__section-advertise
 fandom.com##nav.is-community-bar-in .mobile-global-navigation__left
 fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
+fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 fandom.com##.rail-widget-summaries
 /particles.min.js^
 /frosmo.easy.js^
@@ -790,13 +800,18 @@ reports.adguard.com$badfilter
 ##.et_pb_divider:not(html,body)
 transfermarkt.com##.clearer
 rule34.xxx###status-notices > br:empty
+pixiv.net##div[class*=" "]:empty:has(+ aside + aside)
 channel4.com###playerContrastOverlay
 ##.c-controls__background:not(html, body)
+www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class$=-gradient-bottom]
 ##div[class^=ytp-gradient-]
 hbomax.com##div[data-testid=protection_layer]
 de##.ardplayer-background
 www.google.*,ipv6.google.com##style:first-of-type ~ div ~ button[jsaction*=mouseleave i]:last-of-type
+www.google.*,ipv6.google.com##div[data-st-cnt] div[role=list] > div[role=listitem]:has(a[href*="&udm=50&"])
+www.google.*,ipv6.google.com##.ULSxyf:has(div[data-tma])
 www.google.*,ipv6.google.com##div[data-subtree^=ai] > div[data-wiz-uids] > div[class]:not([class=""]):first-of-type
+www.google.*,ipv6.google.com##div#m-x-content div[jscontroller] > div[class]:only-of-type > div[class]:first-of-type:has(+ div[class][jsname]:last-of-type)
 bing.*###b_results > .b_top[data-partnertag]
 word-edit.officeapps.live.com,word.cloud.microsoft###TellMeWrapper_container
 word-edit.officeapps.live.com,word.cloud.microsoft##.BeforePageContent
@@ -828,7 +843,10 @@ diskpart.com##.theme-side
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
 rakuten.tv##a[href*=".imdb.com/title/"]
 www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
+www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
 www.google.*,ipv6.google.com##div[role=presentation] a[href*="://www.imdb.com/title"]
+www.google.*,ipv6.google.com##div[data-sokoban]:has(a[href*=".imdb."]) div[class*=" "][style^="min-width:"]:has(span[role=img])
+justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 ||comment.youmaker.com^$domain=theepochtimes.com
 indiatimes.com##div[class$="cmtwrapper "]
 color-hex.com##.txtgray
@@ -1048,6 +1066,7 @@ instagram.com##a[href="/accounts/login/?next=%2F&source=mobile_nav"] + button
 instagram.com##a[href^="https://itunes.apple.com/app/instagram/id389801252?"][role=alert]
 instagram.com##body > span > section > nav > div > div > section.xZ2Xk
 instagram.com##main > div[class$="     "]:first-of-type + section:last-of-type
+instagram.com##nav > div > div > section > div:has(div > div > button > div)
 intellicast.com###promoAd
 intellicast.com###stormLink
 ipaddressguide.com##img[alt="iptools android app"]
@@ -1078,6 +1097,7 @@ m.ndtv.com###header_ap_id
 m.ntv.ru###androidbanner
 m.pikabu.ru##.fb-widget-below-comments-mw.promo
 m.qidian.com##.read_app_download
+m.qyer.com##.side-dock:has(img[alt^="穷游App"])
 m.soundcloud.com##.footer_appButtonContainer
 m.soundcloud.com##upsellBanner
 m.tapas.io###bottom-app-banner
@@ -1135,6 +1155,7 @@ rt.com##.app-panel
 rtcg.me##.footerBgrdImg
 rtcg.me##.footerStoreLinks
 rts.rs,xn--p1acc.xn--90a3ac##.footer-download
+rts.rs,xn--p1acc.xn--90a3ac##.boxRight:has(img[src*=ndroid-aplikacija])
 schnaeppchenfuchs.com##.mobile-promo-apps__vertical-spacer
 shiftdelete.net##.e_magazine_mobile
 shiftdelete.net##img[title="Torrent Yasal mı? - ShiftDelete.Net"]
@@ -1158,16 +1179,21 @@ surfingbird.ru##.b-mobile-redirect
 tabs.ultimate-guitar.com##.js-install.ugm-btn__info
 tabs.ultimate-guitar.com##.spl-content-side-overflow::after
 tabs.ultimate-guitar.com##.spl-content-side-overflow::before
+tabs.ultimate-guitar.com##.undefined:has(button[icon=android])
 tellows.de###hint_box
 tokopedia.com##div[id*=header] div[class^=css-]> a[href="/mobile-apps/"]
+tokopedia.com##div[id*=header] i:has(+ a[href="/mobile-apps/"])
+touch.qunar.com##.col4:has(.guide-box[href*="/download?immediate="])
 tripadvisor.*###partialScreenInterrupter
 tumblr.com##.mobile-banner-inner
 ultimate-guitar.com##.ug-floated-splash.js-splash-container
 userstyles.org##.android_button_banner
 userstyles.org##.overlay_background
+userstyles.org##div.us-stylecard--short:has(img[src="/ui/images/280x294.png"])
 valyuta.com###bannerParent
 video.az##.sidebar-right > .text-center > a[href*="/app"] > img
 viu.com##.v-foot-wrap > div#app
+vsco.co##div[class^=css-]:has(.mb0)
 wap.ithome.com###a_ad
 wattpad.com###announcements-container
 wattpad.com###bottom-banner-container
@@ -1191,6 +1217,7 @@ zedge.net##.column.trailer.leader
 zona.mobi###zona-android
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##span.hidden[class$="m:block"]
 bfmtv.com###android_banner
+doctolib.fr##.MuiModal-root:has([href*="play.google"])
 valdemarsro.dk##.promobar-container
 republicworld.com,republicbharat.com###hellobar-bar
 /^.*/jquery\.smartbanner/.*$/$match-case
@@ -1201,6 +1228,7 @@ republicworld.com,republicbharat.com###hellobar-bar
 fandom.com##.global-footer__section-fandom-apps
 fandom.com##.global-footer__section-fandom-stores
 kundeavisogtilbud.no##.corner-popup-container
+getir.com##div[class*=" "]:has(+ nav[role=navigation]):has(a[href*="onelink."])
 m.twitch.tv##a[href*="tt_content=upsell"][href*="_open_in_app&"]
 ||2app.lk^$third-party
 ||anistar.ru/templates/*/images/android-app-on-google-play.png^
@@ -1219,21 +1247,27 @@ m.twitch.tv##a[href*="tt_content=upsell"][href*="_open_in_app&"]
 ||unleashedprepaids.com/mobiquo/smartbanner/
 ||vizefinalsorupaylasimi.com/uploads/googleplay.jpg^
 ||weather.gc.ca/banner/images/App_*.gif$image
+www.youtube.com###teaser-carousel:has(img[src*="/youtube_kids_"])
 francetvinfo.fr##.o-footer__apps-block
 francetvinfo.fr##.m-app-links
 www.wikipedia.org##.app-badges
 www.tumblr.com##.PH0PQ
 kikkoman.*##.assist-homecook-banner
 flashscore.*##.selfPromo__box--apps
+borsen.dagbladet.no###borsen-header div:has(>[href*="/play.google.com/store/app"])
+qwant.com##div[class*=" "] > div[class]:not([class*=" "]):first-of-type + div[class*=" "]:last-of-type:has([aria-label*="Download the app" i])
 prisjakt.*,prisjagt.dk,hintaopas.fi,pricespy.co.uk,pricespy.co.nz,ledenicheur.fr##div[class^=Download-] > :is(h4,[class^=DownloadI])
 qwant.com##a[role=listitem]:is([href*="/apps/"],[href*="/app/"])
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion,~old.reddit.com,~old.reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion###xpromo-bottom-sheet
 nur.kz##.js-branding-top
+tvtropes.org##.announcement-banner-wrapper:has(> a[href*="36710300&"])
 ##.article-cont-read-button-on-app:not(html,body,:empty)
 rawstory.com###mobile-inline-rs-signup-offer
 ###android-app-promotion-button
 mycarusermanual.com##.app
+qwant.com###root > div > div[class]:not([class*=" "]):has(a[href*="play.google.com"] svg):first-of-type
 lenny-faces.com##.playstore
+video.fc2.com##div.container-sp:has([class^=c-app-])
 mytuner-radio.com###app-installer
 radio-norge.org###android_link
 norsk-radio.com##.sticky-line
@@ -1247,9 +1281,13 @@ panewslab.com##div.leading-none ~ div:not([class]):last-of-type
 foodora.*##.bds-c-sticky-banner
 novosti.rs##.mobile-app
 threads.com###has-finished-comet-page + div[class^=__fb-][class*="-mode "]
+zalando.*##div[style="display:contents"]:not([data-trckng-component]):has(> div[style="display:contents"] > div[style^="min-height:"]:last-child:only-of-type)
+duck.ai###app form[data-chat-footer] > div:has(a:is([href*="://play.google.com/"],[href*="://apps.apple.com/"]))
 startpage.com##.app-promo
+xn--ernr-xoa.no##div.custom-screen + div.justify-center:has(a[href^="https://apps.apple.com/"])
 steampowered.com##.open_in_steam_container
 osakaman1.com##.app_modal_back
+m.fredit.co.kr##div:not([class]):has(>.app-down-layer)
 m.teescanner.com###appinfo-wrap
 tokenpost.kr##.sidebar_app_box
 @@/jquery.smartbanner.js^
@@ -1267,7 +1305,10 @@ tokenpost.kr##.sidebar_app_box
 ~applink.dk##a[href*="/applink.dk/"]
 ##div[class^=Web2AppBannerstyles__Container]
 media.tumblr.com###app-download-links-container
+www.google.com##li[jstcache]:has(> button[jsaction*=mobileapp i])
+www.google.com##li:last-of-type:has(> button[jsaction*="navigationrail.mobileApp"])
 ||blogger.googleusercontent.com/img/b/*/google-play-badge-logo-png-transparent.png^$image
+postnord.*##.app-hidden:has(a[href*="//play.google.com/"])
 nettfart.no###store-links
 ##a[data-testid=open-in-app-link]
 !+ NOT_OPTIMIZED
@@ -1278,6 +1319,10 @@ deviantart.com##body.mobile > .ReactModalPortal + aside:last-of-type
 ##.hero__app-links:not(html,body,:empty)
 ##.footer__appButtonContainer:not(html,body,:empty)
 ###app-store-links
+!+ NOT_OPTIMIZED
+instagram.com##.html-div + div:not(.html-div) + .html-div:has(> [role=link][href^="intent://instagram.com"])
+!+ NOT_OPTIMIZED
+instagram.com##div[class]:first-of-type:not(.html-div) + div.html-div:has(+ div:last-of-type:not([class])):has(a[href^="intent://"])
 ###android-app-prompt
 ##.footer-app-icons:not(html,body,:empty)
 ##a.both-badges.ai-app-badge
@@ -1345,6 +1390,11 @@ webon-studio.pl##div.fixed.border[style]:empty
 .ani|$domain=~pixiv.net|~deviantart.com
 .cursor|$domain=~pixiv.net|~deviantart.com
 www.dolby.com##div#custom-cursor
+!+ NOT_OPTIMIZED
+freelancer.com##.PageProjectViewLogout-freelancerInfo:has(.small-flag.bangladesh)
+!+ NOT_OPTIMIZED
+whynohttps.com##tbody > tr:has([src="/flags/4x3/cn.svg"])
+quora.com###mainContent > div > .qu-borderRadius--small:has(> [class=q-box])
 docs.google.com###docs-presence
 ||freshports.org/images/notbug.gif^
 foodora.*##.top-banner-container
@@ -1390,6 +1440,7 @@ foodora.*##.top-banner-container
 #@#.textAd
 ##.textAd:not(html,body,:empty)
 @@/adblock-detection/prebid.js|
+www.youtube.com##.ytd-watch-flexy #dismissible:has(.badge-style-type-simple)
 www.youtube.com##ytd-video-renderer ~ ytd-shelf-renderer[thumbnail-style]
 tv2.no##.banner
 @@://googleadservices.com^|$badfilter
@@ -1405,5 +1456,9 @@ independent.co.uk,indy100.com##.notification-prompt
 |https://adblock.*/js/widget/ads.js|$~third-party
 |https://adblock.*/js/pagead.js|$~third-party
 /bugsnag.$domain=adblock-tester.*
+www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 &client_ad_session_id=
+duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##button:first-of-type + div:last-of-type[class*=" "]:has(button)
+www.qwant.com###root:has(a[href*=goo]) section div[class]:not([data-testid],[style],[class*=" "],[class*=_]):has([id^=Piwik_])
 ://www.bing.com/?shorturl=$document
+qwant.com##div[class*=" "]:has(+ footer):has(a[href^="https://chromewebstore."])

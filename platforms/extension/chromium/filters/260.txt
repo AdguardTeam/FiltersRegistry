@@ -1,9 +1,9 @@
-! Checksum: pqnF6YD6DhYmdpsqvctEuw
-! Diff-Path: ../patches/260/260-s-1794804278-14400.patch
+! Checksum: 0emuPXs7M2B83P/8wPtJsA
+! Diff-Path: ../patches/260/260-s-1794847046-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.13
-! TimeUpdated: 2026-11-16T04:42:45+00:00
+! Version: 2.0.3.14
+! TimeUpdated: 2026-11-16T16:35:56+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1359,6 +1359,10 @@ github.com###copilot-button-container
 github.com##[data-component="ActionList.Group"]:has(> [aria-label="Copilot"])
 github.com##[data-component="ActionList.Group"]:has(> [aria-label="Copilot"]) + [data-component="ActionList.Divider"]
 github.com#$?#[data-testid="copilot-menu-items"] { remove: true; }
+! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/new (New issue page)
+! "Write with Copilot" below issue description
+! * Doesn't always appear. May be limited to issues from repository owner?
+github.com##[data-testid="markdown-editor-footer"]:has(> [class^="footerWrapper__"] > [class^="footerButtonWrapper__"] .octicon-arrow-up-right)
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/compare/main...reddit-rewrite (Pull request creation)
 ! "Generate pull request title with Copilot" button
 github.com##[data-component="IconButton"]:has(> .octicon-copilot)
@@ -1368,10 +1372,6 @@ github.com##.prc-ButtonGroup-ButtonGroup-vFUrY:has([data-testid="copilot-ask-men
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/100
 ! Right sidebar - Open in GitHub Copilot app
 github.com##body:not(:has([app-name="copilot-agents"])) [data-component="ActionList.Item"]:has(img[src^="https://github.githubassets.com/assets/github-copilot-app-"])
-! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/issues/new (New issue page)
-! "Write with Copilot" below issue description
-! * Doesn't always appear. May be limited to issues from repository owner?
-github.com##[data-testid="markdown-editor-footer"]
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/pull/13 (Pull request)
 ! "Copilot" promo when adding reviewers via gear icon
 github.com##[partial-name="copilot-assisted-review-upsell"]

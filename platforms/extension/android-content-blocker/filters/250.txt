@@ -1,9 +1,9 @@
-! Checksum: 7dS6VlvK2oK/cAabDrRhbQ
-! Diff-Path: ../patches/250/250-s-1794760726-14400.patch
+! Checksum: bzxYBPIefrVyO7U3FhWizg
+! Diff-Path: ../patches/250/250-s-1794847043-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.21.15
-! TimeUpdated: 2026-11-15T16:35:53+00:00
+! Version: 2.0.21.16
+! TimeUpdated: 2026-11-16T16:35:50+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -94,6 +94,34 @@
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139667
 /^.*\.(live|buzz)/.*&[a-z]{1,3}=[a-zA-Z0-9%]{250,}\$/$document
 ! ——— You know those ultra-fraudulent auto-generated things that clutter up Google searches? These entries should remove some of them. ———
+www.google.*,ipv6.google.com##.g:has(a[href*=".php?xxx="])
+www.google.*,ipv6.google.com##.g:has(a[href*="?event=ad.logClickampadvert="])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect.asp?url="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/go_links.php?"]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redir?dir="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/link?url="]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect.aspx?url=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="?url=//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="redirect=//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="return_url=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="returnurl=" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*=pag-redireciona i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/jump.cfm" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/www/delivery/"]):has(a[href*=".php?"])
+www.google.*,ipv6.google.com##.g:has([href*="?link=//"]):has(a[href*=".tk/"], a[href*=".ml"])
+www.google.*,ipv6.google.com##.g:has([href*="&url=//"]):has(a[href*=".tk/"], a[href*=".ml"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/?//" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/AdRedirector.asp" i])
+www.google.*,ipv6.google.com##.g:has(a[href*="&uri=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/global_outurl.php" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/redirect/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="&loc=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="&orig_url=/" i]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*="=//"]):has(a[href*=".tk/"], a[href*=".ml/"])
+www.google.*,ipv6.google.com##.g:has(a[href*=redirect][href*=".%D1%80%D1%84"])
+www.google.*,ipv6.google.com##.g:has(a[href*="/go/"][href*=".%D1%80%D1%84"])
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[title$="% OFF"]:is([href*=-aa-],[href*=-bb-],[href*=-cc-],[href*=-dd-],[href*=-ee-],[href*=-ff-],[href*=-gg-],[href*=-hh-],[href*=-ii-],[href*=-jj-],[href*=-kk-],[href*=-ll-],[href*=-mm-],[href*=-nn-],[href*=-oo-],[href*=-pp-],[href*=-qq-],[href*=-rr-],[href*=-ss-],[href*=-tt-],[href*=-uu-],[href*=-vv-],[href*=-ww-],[href*=-xx-],[href*=-yy-],[href*=-zz-]))
+www.google.*,ipv6.google.com##.g:has(a[href^="https://books.google."])
 ! ——— Old dead tech-related domains ———
 ! Domains that used to host lists for adblockers or "hosts" tools, but which are now either used by malware pushers, or could potentially be snapped up by them.
 ||adblock.gjtech.net^$document
@@ -131,6 +159,20 @@
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||138.68.252.54^$document
 ! Presumed to be fraudulent antivirus extensions on app/extension sites where it's perfectly probable that everyday people could install them.
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=free])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=clean])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=boost])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=boost][href*=clean])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=gratis])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*="201"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=security])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*="anti.virus"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*="scanguard"])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=".totalav."])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adblocker])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=".adblock."])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adsblock])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href$=".adblock"])
 ! Other
 ||fileplanet.com^$document,popup
 ||inputmapper.com^$document,domain=~stolen_by_casino_spammers.*
@@ -160,6 +202,7 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 ! https://www•thewindowsclub•com/fix-windows-update-error-0xc1900130-on-windows-10
 thewindowsclub.com##div[style^="float: none; margin:10px "]
 ! https://www•majorgeeks•com/files/details/patch_my_pc•html
+majorgeeks.com##b:has(a[target^=reimage])
 ||majorgeeks.com/images/icons/red_icon_18x17px.png$image
 ! https://www•2-spyware•com/remove-redirector-gvt1-com•html
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.ui-content > .win
@@ -172,12 +215,14 @@ thewindowsclub.com##div[style^="float: none; margin:10px "]
 ! ¤¤¤ ScanUtilities ¤¤¤
 ! https://www•bynarycodes•com/fix-windows-10-update-error-0x80070006/
 bynarycodes.com##div[class^=bynar-content_]
+bynarycodes.com##.panel:has(a[href*="scanutilities.com"])
 ! ¤¤¤ Driver Easy ¤¤¤
 ! https://www•drivereasy•com/knowledge/fix-critical-service-failed-blue-screen-error-on-windows-10/
 ! https://www•drivereasy•com/knowledge/fixed-how-to-fix-stop-error-0x0000001e/
 drivereasy.com##.pakb-content img[sizes^="(max-width: 80"]
 ! https://www•drivereasy•com/knowledge/download-gigabyte-audio-driver/
 drivereasy.com##.pakb-content img[sizes^="(max-width: 79"]
+drivereasy.com##.pakb-content li:has(a[href="#automatically"])
 ! https://www•drivereasy•com/knowledge/epson-xp-420-driver-update-for-windows-7-8-and-10/
 ! https://www•drivereasy•com/knowledge/solved-this-display-does-not-support-hdcp/
 ! ¤¤¤ Slimware DriverUpdate ¤¤¤
@@ -193,20 +238,31 @@ howtoremove.guide##div[style^="border:2px"]
 guide##a[href*="download.enigmasoftware.com/spyhunter-free-download/stpl_94/SpyHunter-Installer.exe"]
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-968070041
 howtoremove.guide##[id*="newage"]
+howtoremove.guide##.wp-block-table:has(.banner)
 virusresearch.org##.virus-before-content
 virusresearch.org##.q2w3-fixed-widget-container
 virusresearch.org##.virus-after-fourth-h2
 virusresearch.org##.virus-after-content
 ! https://www•cyclonis•com/how-to-create-gmail-account-without-phone-number/
+cyclonis.com##div.rotatead-container:has(.download[data-params*="dl.enigmasoftware.com"])
 ! https://www•2-viruses•com/remove-ad-spam-press-allow-to-continue
 2-viruses.com##.active.prods-win.prod-download
 ! https://github.com/iam-py-test/my_filters_001/issues/119
 cfoc.org###top_custom_banner
 cfoc.org##.custom_banner_top_btn
+cfoc.org##tr:has([href$="ttps://cfoc.org/go-to-spyhunter/"])
+cfoc.org##.widget_text.widget:has([href^="https://cfoc.org/spyhunter-"])
 ||cfoc.org/combocleaner-download-mac/^$document
+cfoc.org##tr:has([href$="ttps://cfoc.org/combocleaner-download-mac/"])
 ||sensorstechforum.com/wp-content/uploads/2020/04/SpyHunter-Install-And-Free-Scan-$image
+sensorstechforum.com##tr:has([href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"])
+sensorstechforum.com##center:has([href$="ttps://www.enigmasoftware.com/spyhunter5-eula/"])
 sensorstechforum.com##[href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"]
 sensorstechforum.com##.top_banner_custom
+sensorstechforum.com##p:has([href$="ttps://sensorstechforum.com/spyhunter-mac-review-advanced-anti-malware/"])
+sensorstechforum.com##p:has([src^="https://sensorstechforum.com/wp-content/uploads/2020/04/SpyHunter-Install-And-Free-Scan-"])
+sensorstechforum.com##center:has([title="Download SpyHunter for Mac"])
+sensorstechforum.com##p:has([src$="ttps://www.youtube.com/embed/KbGF_fvsRU4"])
 sensorstechforum.com###win_top_new_hidden
 macsecurity.net##.banner
 macsecurity.net##.btn-download.btn-lg.btn
@@ -237,6 +293,7 @@ windll.com##.download-block
 windll.com##.dll > p
 dllfile.net##.sticky-link
 fix4dll.com##.file__download
+winaero.com##.entry-content > div:has([href="/fix-classic-issues-performance/"])
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
@@ -244,10 +301,13 @@ processlibrary.com##.bottom > .row:last-of-type
 ##.ym-p1-server-mode-outbyte
 ! ¤¤¤ PC Reviver ¤¤¤
 ! ¤¤¤ FixMyPC ¤¤¤
+dll-found.com##p:has(a[href*=tweakbit])
 ! ¤¤¤ "DLL Helper" ¤¤¤
 azdll.net##.dllhelper-banner
 ! ¤¤¤ WinThruster ¤¤¤
 ||solvusoft.com^$document
+exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
+exefiles.com##.row:has(a[href*="/recommended/"])
 ! Common scam domain patterns
 /^(https?|tcp|iquic)://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
 /^(https?|tcp|iquic):\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
@@ -279,6 +339,9 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adskiper."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-firefox."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
+download.cnet.com##.c-globalCard:has(a[href*="/Sir-AdGuard/"])
+download.cnet.com##.c-globalCard:has(a[href*="/Ad-Smasher/"])
+download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||apps.apple.com/*/app/*/id1564900435^$document
 ! ——— Typo squatting, misspellings, and honest TLD address bar mistakes ———
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
@@ -1107,11 +1170,14 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ! https://github.com/hagezi/dns-blocklists/issues/4907
 ! https://cside.dev/blog/over-5k-wordpress-sites-caught-in-wp3xyz-malware-attack
 ! Tumblr spammers
+tumblr.com##div[data-id][tabindex="-1"]:has(a[href^="https://href.li/?https://bit.ly/"])
+tumblr.com##div[tabindex][style]:has(a[href*="://cutt.ly/"])
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://104.21.82.132^$document,popup
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||172.67.158.57^$document,popup
 ||sites.google.com/view/*wincashapp^$document
+www.tumblr.com##div[data-timeline-id] div[style="margin-top: 0px;"]:has(a:is([href*="tuusi."],[href*="sexcham."]) img)
 ! R34US
 ! https://github.com/AdguardTeam/FiltersRegistry/issues/654#issuecomment-2629098471
 ||gitlab.gitlab.gitlab.$document,popup
@@ -1586,6 +1652,8 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 ! Inspired by https://github.com/DandelionSprout/adfilt/issues/1095
 *$badfilter
 ! Yet more Google searches
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[title*=" OFF "][title$="%"]:not([title$="0%"],[title$="5%"]))
+www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cname="])
 ! Domains stolen by casino SEO spammers
 ||aussie-gamer.com^$document,domain=~the-site-was-stolen-by-casino-link-spammers.*
 ! Brazilian mobsters trying to DDoS Cisco with TXT-type DNS requests
@@ -2237,6 +2305,7 @@ rawstory.com##.share-fb
 rawstory.com##.share-popup.rm-stats-tracked
 ! All embed feeds I've seen of it, have been broken since July 2023 anyway
 ||syndication.twitter.com/srv/timeline-profile^$third-party
+##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
 ! Expanding the list to cover "Add as a Google preferred source" buttons.
 ! https://visualstudiomagazine•com/articles/2022/08/12/net-framework-4-8-1.aspx (06/01/2026)
 ##.PreferredSourceButtonWrapper:is(a,div)
@@ -2252,6 +2321,7 @@ rawstory.com##.share-popup.rm-stats-tracked
 ! Note: The list doesn't block browser download buttons on first-party site pages solely dedicated to downloads, if the browser is made by that same first-party. For instance https://www•ccleaner•com/ccleaner/download
 ! ——— Chrome ———
 google.com##.gb_vd[aria-label*="Google Play"][aria-label*=Chrome]
+google.*##.gb_g.gb_ba:has(.gb_Ad)
 chrome.google.com##.Yb
 futureordering.com,bestill.egon.no###unsupported
 chromewebstore.google.com##div[aria-labelledby=promo-header]
@@ -2290,6 +2360,7 @@ softonic.com##[src*="/avastsecurebrowser/"]
 ! ——— GMX Internet Browser, whatever that is ———
 ||united-infos.net^$third-party
 ! ——— DuckDuckGo Browser ———
+duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##div.header--aside__item:has(+a)
 ! ——— All browsers except Brave ———
 ! ——— Unknown browsers ———
 ! https://www•kongregate•com/games/hapiwakuproject/incremental-epic-hero (05/08/2022)
@@ -2305,6 +2376,7 @@ asrock.com###Manual > .Notice
 ! https://www•gigabyte•com/Motherboard/Z390-M-GAMING-rev-10#support-manual
 /get_adobe_reader.$image
 ! https://www•supermicro•com/about/sitemap/
+supermicro.com##.boxHome.textA:has([href*="products/acrobat/"])
 @@||supermicro.com$elemhide,badfilter
 ! https://signform•no/dss/statlige-blanketter?view=forms&id=12
 ! No active example pages
@@ -2315,8 +2387,10 @@ asrock.com###Manual > .Notice
 search.brave.com,search.brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd.onion##.download-cta
 search.brave.com,search.brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd.onion##banner
 ! ——— Desktop app versions of websites ———
+deezer.com##.page-alerts:has(a[href$="/download"])
 ! ——— Self-promoting but somewhat annoying links ———
 fileinfo.com##.fv
+fileinfo.com##.top:has(a[href*="/windows_file_viewer"])
 ! ——— Prompts about outdated browsers... within reasonable limits ———
 ! nettavisenNO (24/05/2023)
 ! Title: 🚪 Browse websites without logging in
@@ -2380,11 +2454,13 @@ chronicle.com##.bcpNotificationBar
 !!!www.facebook.com,www.beta.facebook.com,b-www.facebook.com,secure.facebook.com,pixel.facebook.com,error.facebook.com##div[class^=__fb-][class*="-mode "] > div[class*=" "]:first-of-type:nth-last-of-type(2) > div[class]:only-of-type:style(min-height: 0 !important; height: 0 !important)
 !!!www.facebook.com,www.beta.facebook.com,b-www.facebook.com,secure.facebook.com,pixel.facebook.com,error.facebook.com##div[class^=__fb-][class*="-mode "] > div[class*=" "]:first-of-type:nth-last-of-type(2) > div[class]:only-of-type > div[class]:first-of-type:style(height: 0 !important)
 !! Aims to prevent the bottom bar
+!!!facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~touch.facebook.com,~mtouch.facebook.com,~x.facebook.com,~iphone.facebook.com,~m.facebook.com,~touch.beta.facebook.com,~mtouch.beta.facebook.com,~x.beta.facebook.com,~iphone.beta.facebook.com,~m.beta.facebook.com,~b-m.facebook.com,~touch.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~mtouch.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~x.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~iphone.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~m.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~b-m.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~mbasic.facebook.com,~d.facebook.com,~free.facebook.com,~0.facebook.com,~mbasic.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~d.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~free.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~0.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##div[role=progressbar] ~ div:not([class],[id],[role],[style]):has(> div[data-nosnippet]):style(visibility: hidden !important)
 ! SegmentFault
 !! https://github.com/DandelionSprout/adfilt/issues/581
 ! Tumblr
 !! Uncloseable prompt saying "We know you were really enjoying yourself, but we're going to need a little more info." (31/05/2022)
 ! ([role=dialog] is needed to make the ••• buttons work)
+tumblr.com###glass-container > div[role=dialog]:has(p + p):has(a[href^="/auth/google?"])
 !! The same prompt 6 months later:
 !! https://github.com/DandelionSprout/adfilt/commit/db0401c254e7064a9048e1aa52326a080ed97107#commitcomment-111160729 + https://github.com/DandelionSprout/adfilt/discussions/642 + The Trending page's numbered top list tries to enforce logins
 ||assets.tumblr.com/pop/js/modern/async-login-wall$script,domain=www.tumblr.com
@@ -2399,6 +2475,7 @@ studocu.com###document-wrapper > div:first-of-type:not([style])
 reddit.com##[bundlename=desktop_rpl_nsfw_blocking_modal]
 ! https://github.com/DandelionSprout/adfilt/issues/1004
 ! https://github.com/DandelionSprout/adfilt/issues/1011
+www.instagram.com##[id^=mount]:has(a[class][href*="/accounts/login/?"]) ~ div[class*=" "][style^=--][style*="255"]
 ! https://www•the-inquisitor-magazine•com/swedish-noc-on-dubious-2030-winter-games-decisions/
 ! https://github.com/DandelionSprout/adfilt/issues/1055
 ! Substack (https://github.com/DandelionSprout/adfilt/issues/1056)
@@ -2414,6 +2491,8 @@ globalcomix.com##.chakra-portal
 quora.com##.new_signup_dialog.modal_bg
 quora.com##._DialogSignupForm
 ! New York Times Cooking 📛 (Fixed in "AdGuard Annoyances filter")
+cooking.nytimes.com##.nytc---modal-window---isShown:not(:has(.nytc---largepicturemodal---contentBody > .nytc---x---x.nytc---largepicturemodal---xBtn[role=button], .nytc---grocerylistmodal---groceryListContentContainer))
+cooking.nytimes.com##div[class*=modal_show_]:not(:has(button[aria-label=close], div[class*=grocerylist_listContainer]))
 ! Make all Quizlet cards show up on the bottom feed 📛 (Fixed in "uBlock Filters - Annoyances")
 ! Seeking Alphaᵃ 📛 (Fixed in "uBlock Filters - Annoyances")
 ! Makes certain shareholder meeting transcripts entirely readable on a single page, thus bypassing a block on going past page 2 or using the "Single page view" button without logging in.
@@ -2443,6 +2522,7 @@ context.reverso.net###blocked-results-banner
 ! Autosport 📠
 ||blueconic.net^$third-party
 ! https://linustechtips•com/main/topic/1133668-how-to-get-rid-of-green-fps-counter-with-beeping-sound/
+linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea:has(.cGuestTeaser):not(:has(.ipsComposeArea_editor))
 ! theepochtimesCOM
 ||subs.youmaker.com^$third-party
 ! fwi•co•uk
@@ -2488,11 +2568,13 @@ zapytaj.onet.pl##.know-better-answer
 !!!instagram.com###fb-root + div[role=presentation]
 ! https://www•instagram•com/explore/tags/melowy/?hl=en (2022-08-05)
 !! "Log in to continue"
+!!!instagram.com##div[style*=spectrum-cherry]:has(form[id^=loginForm i])
 ! https://www•instagram•com/foxilayart/ (07/01/2025)
 !!! www.instagram.com##div[data-visualcompletion=ignore] + div[class*=" "] (https://github.com/AdguardTeam/AdguardFilters/issues/210579)
 ! SpanishDict
 ! https://github.com/DandelionSprout/adfilt/issues/7#issuecomment-559903607
 ! Removes a one-time account creation prompt
+spanishdict.com##.ReactModal__Overlay:has(video[src$="/bloom2.mp4"])
 ! Die Zeit 📛
 ! Makes the oﬀicial article previews fully visible
 ! https://www•zeit•de/2020/06/alfred-bauer-filmbuerokratie-nationalsozialismus-berlinale
@@ -2531,6 +2613,7 @@ minervanett.no##.teaserContent::before
 ! YouTube
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-678544030
 ! (https://github.com/DandelionSprout/adfilt/issues/1038 ?)
+!!!www.youtube.com##ytd-popup-container > .ytd-popup-container[role=dialog]:has(a[href="https://support.google.com/youtube/?p=sign_in"])
 ! TekInvestor (Norway)
 tekinvestor.no###full-page-signup-cta
 ! Weibo
@@ -2539,6 +2622,7 @@ tekinvestor.no###full-page-signup-cta
 ||sinaimg.cn/m/weibo-lite/*/smsLogin^
 !! Aims to remove a QR login prompt that shows up every time when pausing/unpausing and going in and out of fullscreen on a video (Logging in appears to still work from https://weibo.com/login.php)
 !!! https://weibo•com/7292751406/Mnt2psINg
+weibo.com##.mini-player + .woo-box-flex:has(div[class^=LoginPop_])
 ! Tumblr
 !! Removes a floaty prompt on bottom
 tumblr.com##div[class][style^="background: rgb(124, 92, 255); "]:only-of-type
@@ -2547,6 +2631,7 @@ tumblr.com##div[class][style^="background: rgb(124, 92, 255); "]:only-of-type
 ! Because uBlock Filters added "@@||tumblr.com^$ghide"
 tumblr.com##.tmblr-iframe--follow-teaser
 ! https://thememedaddy•tumblr•com/archive
+tumblr.com,~www.tumblr.com##div[style^="background-color: rgb(124, 92"]:has(> div > div > button[aria-label="Sign up"])
 ! deviantART ↪️📛
 ! https://www•deviantart•com/demotex/art/Latex-Polly-903934930 (NSFW; thankfully not NSFL, which is what most other DA art is)
 deviantart.com##div[style] > div[class^=_] + div:not([class^=_]):nth-of-type(2):last-of-type
@@ -2556,6 +2641,7 @@ deviantart.com##body[class*=ads-] div[style^="width:"][class]:not([class*=" "]) 
 ! (https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1407020400)
 !!!deviantart.com##header[data-hook=top_nav]:first-of-type + div + div[class^="_"][class*=" "]:last-of-type
 ! https://www•deviantart•com/trece-013/art/Chelsea-Ruby-Gillman-02-954136106 (20/02/2023)
+deviantart.com##div[style^="width:"] > div:first-of-type + div:last-of-type:has(> a[href*="/join/?"])
 ! Reddit
 ! A login prompt in the lower right when scrolling down on a select few subreddits
 ! r/comedydamnation (2021-11-27)
@@ -2585,6 +2671,7 @@ douyin.com##script[src*=websdk] + div:not([class], [id])
 !! https://github.com/DandelionSprout/adfilt/issues/811
 /tncms/api/access.js|$script,domain=westernstandard.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171530
+www.deviantart.com##body > header[role=banner]:not([class*=" "]) ~ div[class^=_][class*=" "]:has(a[href*="/login"])
 ! https://github.com/DandelionSprout/adfilt/issues/1053
 magma.com##modals-box
 ! VKontakte (https://github.com/DandelionSprout/adfilt/issues/1055)
@@ -2598,6 +2685,7 @@ substack.com,microsoftsecurityinsights.com,chipstrat.com##.subscribe-widget
 ! https://github.com/DandelionSprout/adfilt/issues/1081
 404media.co##.fading::after
 ! https://github.com/DandelionSprout/adfilt/issues/1121
+instacart.com##.AuthModal__Overlay:has(a[href$="/business"])
 ! https://adultdvdrip•is/search/?q=••••••••••#/ (Still leaves many of the BG images blurry, however; 29/06/2025)
 adultdvdrip.is##.backdrop-modal
 ! https://www•mycarly•com/community/peugeot-ion-radio-reception-problems-b52f9ba7-6044-44e2-850a-31d11d7fbe70/ (18/09/2025)
@@ -2651,6 +2739,7 @@ pinterest.*##div[data-test-id=giftWrap]
 pinterest.*##div[class=Closeup__wrapper] > div > div[style^="cursor: default"]
 pinterest.*##.Hsu.iyn.zI7:nth-of-type(2) > div > .FullPageModal__scroller
 !! Removes the "Open" overlay on images, so that their raw versions can more easily be opened
+pinterest.*##.GrowthUnauthPinImage > a > div[class^=Jea]:has(button[class^="noButtonStyles "])
 pinterest.*##div[class=GrowthUnauthPinImage__imageDim]
 ! Opera Add-Ons
 !! Removes fullscreen prompt about installing Opera
@@ -2660,6 +2749,7 @@ addons.opera.com###overlay
 ! Instagram
 ! https://github.com/DandelionSprout/adfilt/issues/25
 !! Removes the bottom login banner
+instagram.com##.ZUqME:has(a[href^="/accounts/emailsignup/"])
 ! Ooopic
 !! Removes uncloseable login prompt
 ooopic.com###public-mask-login
@@ -2794,6 +2884,7 @@ cuponation.*##.first .d.v
 kupongkode.com##.promotionCouponPopup
 nettavisen.no##.type-tilbud
 rabattkode.gulesider.no##.deal
+rabble.*##.offer-card:has(i.icon-link-ext)
 ! Blatantly bot-generated fraudsters
 ||e-rabattkode.no^$document,domain=~falsk-kupongside-som-ikke-har-kuponger.*
 ||hotdeals.com^$document,domain=~fake-coupon-site-that-has-no-coupons.*
@@ -2803,6 +2894,8 @@ rabattkode.gulesider.no##.deal
 ! If a banner is in this category, it means that those who still do want to buy into their Premium services, can do so through the user settings without having to see the obtrusive banners.
 pixiv.net##._premium-lead-popular-d-body
 pixiv.net##._premium-lead-tag-search-bar > a[href^="/premium.php"]
+pixiv.net##div:has(> aside + a[href^="/premium/lead/"])
+pixiv.net##div > div + section:has(a[href^="/premium/lead/"])
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-691479377
 ###dakapoinfeed
 ###dakapotopbar
@@ -2824,12 +2917,15 @@ bulbapedia.bulbagarden.net###upper-article
 ||images.opencollective.com^$domain=socket.io
 ||socket.io/images/sponsors^$image
 socket.io###sponsors
+islandecho.co.uk##.herald-module:has(.category-news-in-brief)
 ! ——— Placeholders that are seemingly too small for EasyList ———
 mightytext.net###ad-block-holder
 ! ——— Denied (or implied denied) in EasyList for not being in English, denied (or implied denied) in AdGuard Base for not being a popular site, no known language lists for it. May be submitted to uAssets at some point ———
 ! For info on languages and which lists to send them to, see https://github.com/DandelionSprout/adfilt/blob/master/Wiki/Status%20for%20rare%20languages.md
 ! —— 🇰🇿 Kazakh (Қазақша) ——
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146131
+kostanaytany.kz##.elementor-widget-image:has(a[href*=uploads])
+old.kostanaytany.kz##.widget > p:has(a[href*=uploads])
 ! —— 🇲🇹 Maltese (Malti) ——
 ! Alexa: 239,224th
 tvmnews.mt##div[data-widget_type="shortcode.default"]
@@ -2841,6 +2937,7 @@ tvmnews.mt##div[data-widget_type="shortcode.default"]
 ! Alexa: Worse than 1,000,000th
 vientianetimeslao.la##div[id^=media_image]
 ! ——— Slot machine spam ———
+deviantart.com##div[style^="width:"][style*="display:"]:has(a[href*="/art/"][href*=slotonline i])
 deviantart.com##a[data-hook][href*="/art/"][href*=slotonline i]
 ! ——— Occurs too rarely for anyone else to reproduce them ———
 fandom.com##.ad-slot-placeholder
@@ -3043,7 +3140,11 @@ taifaleo.nation.co.ke##.text-center
 globalpublishers.co.tz##.adcontainer
 globalpublishers.co.tz##.widget_custom_html a[href="#"]
 globalpublishers.co.tz###custom_html-40
+globalpublishers.co.tz##.listing-item:has(> div.item-inner a[href*="-sloti-"])
+globalpublishers.co.tz##.listing > article:has(> div.item-inner a[href*="-kasino"])
+globalpublishers.co.tz##.listing > article:has(> div.item-inner a[href*="-chapride-"])
 mwanahalisionline.com##a[href*=meridianbet]
+mwanahalisionline.com##.jl_cgrid_layout:has(a[href*=meridianbet])
 mwanahalisionline.com##.elementor-widget-image
 jamhurimedia.co.tz##body > div[style^="text-align: center;"]
 ! ——— 🇿🇦 Zulu ———
@@ -3051,6 +3152,9 @@ ilanganews.co.za##.vc_single_image.wpb_wrapper
 ilanganews.co.za##.widget_media_image
 isolezwe.co.za##.advert-leaderboard-bot
 ! ——— 🇪🇹 Amharic (አማርኛ) ———
+ethiopianreporter.com##style + .td-stretch-content:has(.td-a-rec)
+ethiopianreporter.com##.td-stretch-content:has(style + div > .td-a-rec:only-of-type)
+ethiopianreporter.com##.td-stretch-content:has(style + div > style + div .td-a-rec:only-of-type)
 ||ethiopianreporter.com/files/20*/728-x-90
 ||ethiopianreporter.com/files/20*728x89
 ||ethiopianreporter.com/files/20*ezgif.com-
@@ -3063,6 +3167,8 @@ isolezwe.co.za##.advert-leaderboard-bot
 ||ethiopianreporter.com/files/20*Web-Banner$image
 ||ethiopianreporter.com/files/20*/IMG_20*-scaled-e$image
 addisadmassnews.com###top-a
+addisadmassnews.com##.grid-v:has(a[href*="bit.ly"])
+ethiopiainsider.com##.td-pb-span4:has(#vid)
 ! ——— 🇳🇬 🇧🇯 Yoruba ———
 alaroye.org##.widget_media_image
 alaroye.org#@#.navbar-ad-section
@@ -3077,6 +3183,8 @@ apahausa.com.ng##.sticky-sidebar > section[class$=" widget_block"]
 intyoza.com##.widget_media_image.widget_block
 ! ——— 🇿🇦 Sotho ———
 seiponemadireng.co.za##.text-center.container
+seiponemadireng.co.za##.white:has(> script)
+seiponemadireng.co.za##.white:has(img[src*="-ad."])
 ! ——— 🇪🇹 Oromo ———
 omn.today##.stream-item
 ! Title: 🍿 Know Your Meme: Pure Browsing Experience
@@ -3118,6 +3226,7 @@ knowyourmeme.com##.cbox-smedia
 ! Description: Have you ever been watching «Pinkie Cooper and the Jet Set Pets» on DailyMotion, but you keep getting distracted by all the trend-based recommendations below the video player? This list will help focus your attention on the video instead.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! Removes the "Featured channels" feed below the video player
+dailymotion.com##div[class^=DiscoveryQueueDisplay__sectionContainer]:has(a[class*=channelCard])
 ! Removes the "Trending" feed that shows up below the video player if the location is set to the United States
 ! Makes it easier to take screencaps of the videos
 dailymotion.com##.np_Darken
@@ -3214,6 +3323,7 @@ fandom.com##[data-testid=QuizBanner]
 fandom.com###quiz_module_desktop_link_styles
 fandom.com##section[class^=trfc]
 ! Anon notifications in the lower left asking people to sign up
+fandom.com##.notifications-placeholder:has(a[href$=":Signup" i])
 ! Removes menus of the "Advertise here" category from various wikias (https://github.com/DandelionSprout/adfilt/issues/921#issuecomment-1868299455)
 fandom.com##.global-footer__section-advertise
 ! Aims to remove Fandom-centrals links on mobile EXCEPT if the page is scrolled wholly up.
@@ -3221,6 +3331,7 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__left
 ! The entry below could potentially have performance issues (Primarily slow reloading of the top bar with the user icon) under certain circumstances, but I went with it anyway.
 fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 ! https://github.com/DandelionSprout/adfilt/issues/1019 (Seemingly only shows up if cookies are accepted)
+fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 ! https://sims•fandom•com/wiki/Afterschool_activity (27/07/2026)
 fandom.com##.rail-widget-summaries
 ! https://sims.fandom.com/wiki/Afterschool_activity (01/08/2026)
@@ -3618,18 +3729,31 @@ yjc.ir,tabnak.ir##a[href$="/fa/prayer"]
 adnocdistribution.ae##.footer-info-time
 albayan.ae##.prayername
 albayan.ae##.prayertimer
+almanar.com.lb##.box-wrapper:has(.prayer-times)
+alrai.com##.padd10px:has(> .salat-time)
 arabiaweather.com##.ramadan-section-container
 dhivehi.mv###ptimes
 dhivehi.mv##a[href="/prayer-times/"]
 dirarab.net##a[href$="/prayertimes"]
 elwatannews.com##li > [href$="/pray"]
 emaratalyoum.com##div[class^=imsakiya-]
+hamariweb.com##div.col-md-4:has(td[width="25%"])
 info-algerie.com##a[href*=ajouter-heure-priere]
+info-algerie.com##.blog-single-sidebar:has(a[href*=ajouter-heure-priere])
 menara.ma##.main-horaires
+portal.moi.gov.qa##li:has(> a[href*="/prayertimings/"])
 raajje.mv##.prayer-bar > div[style*="235"]
+radiogafsa.tn##.widget:has(ahmedii)
+shobiddak.com##li:has(a[href="/prayers/cities"])
+thenational.ae##.dropdown:has(.prayer)
 thenews.com.pk##a[href$="/prayer-time"]
+tunisienumerique.com##.bande-header-container > ul > li:has(.priere)
+tunisienumerique.com##li:has(> a[href*="/%d8%a3%d9%88%d9%82%d8%a7%d8%aa-%d8%a7%d9%84%d8%b5%d9%84%d8%a7%d8%a9-%d9%81%d9%8a-%d8%aa%d9%88%d9%86%d8%b3/"])
+visitabudhabi.ae##li:has(> a[href*="/prayer.times.aspx"])
 www.aviny.com##a[href*="prayer.aviny.com"]
 yabiladi.*##a[href="/prieres/"]
+yabiladi.*##.frame:has(.prayer)
+yenisafak.com##.item:has(a[href$=-prayer-times])
 gulf-times.com###headingTwo
 alarab.qa##.timetables
 alrai.com##.salat-item
@@ -3641,12 +3765,17 @@ istiklal.com.tr##.nv-main
 agridogruhaber.com##.BlokNamazRenk
 agridogruhaber.com##.namazbg
 dogruhaber.com.tr##.col-md-4 > .panel-success
+haberantalya.com##.col-md-12:has(> .BlokNamazRenk)
+kuzeyanadolugazetesi.com##.cerceve-anket:has(> #burc)
+yenisalpazari.com###sidebar .kanews-section:has(.table-prayer)
 alwatan.kuwait.tt##.time > div[style^="float:left;"]
 guncelgazete.com##.praying-content
 bursahakimiyet.com.tr##.prayertimes
 todaytime.ir##.pray_times
 bingolonline.com##.namazVakitleriBlok
 ahaber.com.tr##.menu-timer
+yesilirmakgazetesi.com.tr##.anket:has(+ style + .namazbg)
+inegolunsesi.com##.haberler:has(> .namaz-widget)
 takvim.com.tr##.weather > .timer
 milligazete.com.tr##.center-xs .center-xs
 yeniasir.com.tr##.timer
@@ -3769,6 +3898,7 @@ drhell.web.fc2.com##br
 ! https://www•feltet•dk/nyheder/dansker_enig_i_kritik_svaert_ved_at_se_hvad_de_har_at_goere_her/
 ! For listings with 2 or more related/size notices
 rule34.xxx###status-notices > br:empty
+pixiv.net##div[class*=" "]:empty:has(+ aside + aside)
 ! Disqualified entries due to breakage of regular content (Example given)
 ! Media player gradient removals
 viaplay.*##.backdrop-bottom
@@ -3793,6 +3923,8 @@ channel4.com###playerContrastOverlay
 ! https://positivr•fr/plant-moms-les-conseils-pour-verdir-nos-interieurs-fleurissent-sur-tiktok/
 ##.c-controls__background:not(html, body)
 ! YouTube on PC
+www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class*="-gradient-bottom "]
+www.youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##head:has(meta[property$=":video:url"]) + body div[class$=-gradient-bottom]
 ##div[class^=ytp-gradient-]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185410
 ! T-We
@@ -3816,16 +3948,21 @@ de##.ardplayer-background
 ! Note: No, I am not going to remove Aİ results on artsites. The sites generally already have anti-Aİ search filters, and on Deviantart in particular are Aİ things better than 90% of their non-Aİ things.
 ! Note 2: https://new•reddit•com/r/GoogleAIGoneWild/top/?t=month should be sufficient proof to give this sub-list hastily expedited implementation to Dandelion Sprout's Annoyances List.
 ! Google's regular search results
+!!!www.google.*,ipv6.google.com###m-x-content div[class]:first-of-type:not([class*=" "]):has(> [data-rl])
 www.google.*,ipv6.google.com##style:first-of-type ~ div ~ button[jsaction*=mouseleave i]:last-of-type
+www.google.*,ipv6.google.com##div[data-st-cnt] div[role=list] > div[role=listitem]:has(a[href*="&udm=50&"])
 ! (12/12/2025)
+www.google.*,ipv6.google.com##div[data-host-wiz-contract-name] div[data-subtree] > div[jsuid]:first-of-type:has(~ [jsaction^=request])
 ! (17/03/2026)
 !!!www.google.*,ipv6.google.com##div[data-subtree][data-hveid] > div[jsuid]:first-of-type
 ! (23/04/2026)
 www.google.*,ipv6.google.com##div[dir][style="display: contents"] script[nonce] + div
 ! https://ipv6•google•com/search?q=Microsoft•NET•Native•Framework•2•2 (23/04/2026)
+www.google.*,ipv6.google.com##.ULSxyf:has(div[data-tma])
 ! https://ipv6•google•com/search?q=dotnet+native+download (23/04/2026)
 www.google.*,ipv6.google.com##div[data-subtree^=ai] > div[data-wiz-uids] > div[class]:not([class=""]):first-of-type
 ! Image search with a pasted image (24/04/2026)
+www.google.*,ipv6.google.com##div#m-x-content div[jscontroller] > div[class]:only-of-type > div[class]:first-of-type:has(+ div[class][jsname]:last-of-type)
 ! Bing's regular search results
 ! https://www.bing.com/search?q=how+to+change+tyres&form=QBLH&ghc=1&lq=0 (25/09/2026)
 bing.*###b_results > .b_top[data-partnertag]
@@ -3833,6 +3970,7 @@ bing.*###b_results > .b_top[data-partnertag]
 word-edit.officeapps.live.com,word.cloud.microsoft###TellMeWrapper_container
 word-edit.officeapps.live.com,word.cloud.microsoft##.BeforePageContent
 ! Qwant (Tested with AdGuard VPN set to France Marseille; 23/04/2026)
+qwant.com##div[data-testid=containerWeb] div[class=""]:first-of-type:has(a[data-click-label^=Llm i])
 ! Title: ⛵️ Anti-"«Add as a preferred source on Google» widgets on non-Google sites" List
 ! OriginalVersion: 18October2026v1-Alpha
 ! Description: In late 2025, widgets to add various newssites to the user's Google account's Google News "Preferred Sources" list began showing up on those various newssites' articles. This list removes those widgets.
@@ -3962,22 +4100,35 @@ diskpart.com##.theme-side
 ! https://reelgood•com/show/lalaloopsy-2013 (22/05/2024)
 ~imdb.com##div[title="IMDb Rating" i]
 ! International (All adblockers)
+newonnetflix.info##p:has(a[target=_imdb])
 rakuten.tv##.score
 rakuten.tv##a[href*=".imdb.com/title/"]
 rakuten.tv##div[type=scores]
+sfanytime.com##div:has(> img[alt^=IMDB])
 playpilot.com##.ratings
 sfanytime.com##a[href*="?imdb="]
+unblockninja.st##.rating-row:has(img[src*=imdb])
 ! International (uBlock Origin or AdGuard only)
+amazon.*##span.av-badge-text:has(.av-imdb-logo)
 amazon.*##a[href="#customer-review-section"] + span
+!!!google.*##div[data-hveid]:has(> div > div > a[href*="imdb.com"]) div:has(> div[class] > span)
+www.google.*,ipv6.google.com##.g .r:has(a[href*=".imdb.com"]) + .s > div > div:first-of-type
+www.google.*,ipv6.google.com##div[data-async-context^="query:"] > .g:has(a[href*=".imdb.com/"]) div:has(> g-review-stars)
 www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
+www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
 www.google.*,ipv6.google.com##div[role=presentation] a[href*="://www.imdb.com/title"]
+www.google.*,ipv6.google.com##div[data-sokoban]:has(a[href*=".imdb."]) div[class*=" "][style^="min-width:"]:has(span[role=img])
 ! (https://github.com/AdguardTeam/AdguardFilters/issues/148512)
+www.google.*,ipv6.google.com##.g div[jscontroller]:has(a[href*=imdb]) div + div + div[class*=" "]:has(span[role=img])
 viaplay.*##.Imdb-link-slSbv
 viaplay.*##.ImdbExtended-container-_sA0e
 viaplay.*##div[id*=imdb][data-testhook=carousel-header]
 viaplay.*##div[id*=imdb][data-testhook=carousel-header] + section
+yandex.*##li.serp-item:has(a[href*="imdb.com"]) .rating
 ! Norway
+filmweb.no##.Ratings:has(img[alt=IMDb])
 tvguide.vg.no##._3_ZF3
+twe.no##div.content-list:has(a[href*=imdb])
 twe.no##div[data-test-id=home-section-item__decorators] > div[style^=text-align]
 twe.no##div[data-test-id=tile__decorators] > div:nth-of-type(2)
 serienytt.no##div[class^=wpgb-block-][class$=wpgb-idle-scheme-1] + div[class^=wpgb-block-][class$=wpgb-idle-scheme-1]
@@ -3986,6 +4137,7 @@ tvguide.vg.no##a.whitespace-nowrap.items-center
 ! Sweden
 tv.nu##a[href*="imdb.com"]
 tv.nu##._1bnN4
+tv.nu##a[title] span:has(path[d^="M9.465 "])
 ! Denmark
 tvguide.dk##.zk-poster-badges
 cmore.dk##div[class^=AssetPortraitsstyles__Rating]
@@ -3997,6 +4149,7 @@ telsu.fi##em[class*=" "]
 kissanime.*##.rating
 kissanime.*##a[href*="kissanime."][href$="/imdb/"]
 ! Australia
+binge.com.au##h3 + p + ul > li:has(svg[class$=Imdb])
 ! Iran
 gapfilm.ir##a[href^="/movie/"] + div:not([class*=" "]):last-of-type > a[href^="/movie/"] ~ div:not([class*=" "]):last-of-type
 gapfilm.ir##a[href^="/serial/"] + div:not([class*=" "]):last-of-type > a[href^="/serial/"] ~ div:not([class*=" "]):last-of-type
@@ -4004,12 +4157,15 @@ gapfilm.ir##.progress-drs
 ! Uzbekistan
 cinerama.uz##div[class^=MovieDescription_rating__]:nth-of-type(1)
 ! Various movie sites
+ddl-warez.to##td:has(.btn[data-original-title^=IMDb])
+yts.am##div.rating-row:has(a[title="IMDb Rating"])
 watchfreemovies.ch##.movie_ratings:nth-of-type(2)
 watchfreemovies.ch##.index_ratings
 ganool21.link,45.87.43.43##.rating
 m4uhd.net##.quality
 hdfilmcehennemi.film##.poster-imdb
 watchseries.*##.imdb
+justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 !+ NOT_OPTIMIZED
 ! Title: 💐 Anti-'Awful comments' list
 ! OriginalVersion: 18August2026v1-Beta
@@ -5864,6 +6020,7 @@ instagram.com##a[href="/accounts/login/?next=%2F&source=mobile_nav"] + button
 instagram.com##a[href^="https://itunes.apple.com/app/instagram/id389801252?"][role=alert]
 instagram.com##body > span > section > nav > div > div > section.xZ2Xk
 instagram.com##main > div[class$="     "]:first-of-type + section:last-of-type
+instagram.com##nav > div > div > section > div:has(div > div > button > div)
 intellicast.com###promoAd
 intellicast.com###stormLink
 ipaddressguide.com##img[alt="iptools android app"]
@@ -5894,6 +6051,7 @@ m.ndtv.com###header_ap_id
 m.ntv.ru###androidbanner
 m.pikabu.ru##.fb-widget-below-comments-mw.promo
 m.qidian.com##.read_app_download
+m.qyer.com##.side-dock:has(img[alt^="穷游App"])
 m.soundcloud.com##.footer_appButtonContainer
 m.soundcloud.com##upsellBanner
 m.tapas.io###bottom-app-banner
@@ -5951,6 +6109,7 @@ rt.com##.app-panel
 rtcg.me##.footerBgrdImg
 rtcg.me##.footerStoreLinks
 rts.rs,xn--p1acc.xn--90a3ac##.footer-download
+rts.rs,xn--p1acc.xn--90a3ac##.boxRight:has(img[src*=ndroid-aplikacija])
 schnaeppchenfuchs.com##.mobile-promo-apps__vertical-spacer
 shiftdelete.net##.e_magazine_mobile
 shiftdelete.net##img[title="Torrent Yasal mı? - ShiftDelete.Net"]
@@ -5974,16 +6133,21 @@ surfingbird.ru##.b-mobile-redirect
 tabs.ultimate-guitar.com##.js-install.ugm-btn__info
 tabs.ultimate-guitar.com##.spl-content-side-overflow::after
 tabs.ultimate-guitar.com##.spl-content-side-overflow::before
+tabs.ultimate-guitar.com##.undefined:has(button[icon=android])
 tellows.de###hint_box
 tokopedia.com##div[id*=header] div[class^=css-]> a[href="/mobile-apps/"]
+tokopedia.com##div[id*=header] i:has(+ a[href="/mobile-apps/"])
+touch.qunar.com##.col4:has(.guide-box[href*="/download?immediate="])
 tripadvisor.*###partialScreenInterrupter
 tumblr.com##.mobile-banner-inner
 ultimate-guitar.com##.ug-floated-splash.js-splash-container
 userstyles.org##.android_button_banner
 userstyles.org##.overlay_background
+userstyles.org##div.us-stylecard--short:has(img[src="/ui/images/280x294.png"])
 valyuta.com###bannerParent
 video.az##.sidebar-right > .text-center > a[href*="/app"] > img
 viu.com##.v-foot-wrap > div#app
+vsco.co##div[class^=css-]:has(.mb0)
 wap.ithome.com###a_ad
 wattpad.com###announcements-container
 wattpad.com###bottom-banner-container
@@ -6007,6 +6171,7 @@ zedge.net##.column.trailer.leader
 zona.mobi###zona-android
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##span.hidden[class$="m:block"]
 bfmtv.com###android_banner
+doctolib.fr##.MuiModal-root:has([href*="play.google"])
 valdemarsro.dk##.promobar-container
 republicworld.com,republicbharat.com###hellobar-bar
 /^.*/jquery\.smartbanner/.*$/$match-case
@@ -6017,6 +6182,7 @@ republicworld.com,republicbharat.com###hellobar-bar
 fandom.com##.global-footer__section-fandom-apps
 fandom.com##.global-footer__section-fandom-stores
 kundeavisogtilbud.no##.corner-popup-container
+getir.com##div[class*=" "]:has(+ nav[role=navigation]):has(a[href*="onelink."])
 m.twitch.tv##a[href*="tt_content=upsell"][href*="_open_in_app&"]
 ||2app.lk^$third-party
 ||anistar.ru/templates/*/images/android-app-on-google-play.png^
@@ -6035,22 +6201,28 @@ m.twitch.tv##a[href*="tt_content=upsell"][href*="_open_in_app&"]
 ||unleashedprepaids.com/mobiquo/smartbanner/
 ||vizefinalsorupaylasimi.com/uploads/googleplay.jpg^
 ||weather.gc.ca/banner/images/App_*.gif$image
+www.youtube.com###teaser-carousel:has(img[src*="/youtube_kids_"])
 francetvinfo.fr##.o-footer__apps-block
 francetvinfo.fr##.m-app-links
 www.wikipedia.org##.app-badges
 www.tumblr.com##.PH0PQ
 kikkoman.*##.assist-homecook-banner
 flashscore.*##.selfPromo__box--apps
+borsen.dagbladet.no###borsen-header div:has(>[href*="/play.google.com/store/app"])
+qwant.com##div[class*=" "] > div[class]:not([class*=" "]):first-of-type + div[class*=" "]:last-of-type:has([aria-label*="Download the app" i])
 prisjakt.*,prisjagt.dk,hintaopas.fi,pricespy.co.uk,pricespy.co.nz,ledenicheur.fr##div[class^=Download-] > :is(h4,[class^=DownloadI])
 qwant.com##a[role=listitem]:is([href*="/apps/"],[href*="/app/"])
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion,~old.reddit.com,~old.reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion###xpromo-bottom-sheet
 nur.kz##.js-branding-top
+tvtropes.org##.announcement-banner-wrapper:has(> a[href*="36710300&"])
 ##.article-cont-read-button-on-app:not(html,body,:empty)
 rawstory.com###mobile-inline-rs-signup-offer
 ###android-app-promotion-button
 mycarusermanual.com##.app
+qwant.com###root > div > div[class]:not([class*=" "]):has(a[href*="play.google.com"] svg):first-of-type
 !!!##.download-cta:not(html,body,:empty) (Very high on the list of "Reasons why I should always provide sources to my entries nowadays, since I can't remember my own sources".)
 lenny-faces.com##.playstore
+video.fc2.com##div.container-sp:has([class^=c-app-])
 mytuner-radio.com###app-installer
 radio-norge.org###android_link
 norsk-radio.com##.sticky-line
@@ -6064,9 +6236,13 @@ panewslab.com##div.leading-none ~ div:not([class]):last-of-type
 foodora.*##.bds-c-sticky-banner
 novosti.rs##.mobile-app
 threads.com###has-finished-comet-page + div[class^=__fb-][class*="-mode "]
+zalando.*##div[style="display:contents"]:not([data-trckng-component]):has(> div[style="display:contents"] > div[style^="min-height:"]:last-child:only-of-type)
+duck.ai###app form[data-chat-footer] > div:has(a:is([href*="://play.google.com/"],[href*="://apps.apple.com/"]))
 startpage.com##.app-promo
+xn--ernr-xoa.no##div.custom-screen + div.justify-center:has(a[href^="https://apps.apple.com/"])
 steampowered.com##.open_in_steam_container
 osakaman1.com##.app_modal_back
+m.fredit.co.kr##div:not([class]):has(>.app-down-layer)
 m.teescanner.com###appinfo-wrap
 tokenpost.kr##.sidebar_app_box
 ! https://github.com/DandelionSprout/adfilt/issues/1047
@@ -6097,9 +6273,12 @@ tokenpost.kr##.sidebar_app_box
 ! For sites that have $generichide
 media.tumblr.com###app-download-links-container
 ! Google Maps
+www.google.com##li[jstcache]:has(> button[jsaction*=mobileapp i])
+www.google.com##li:last-of-type:has(> button[jsaction*="navigationrail.mobileApp"])
 ! lenny-facesCOM
 ||blogger.googleusercontent.com/img/b/*/google-play-badge-logo-png-transparent.png^$image
 ! https://my•postnord•no (12/09/2025)
+postnord.*##.app-hidden:has(a[href*="//play.google.com/"])
 ! nettfartNO (07/09/2025)
 nettfart.no###store-links
 ! https://m•soundcloud•com/discover (16/09/2025)
@@ -6120,6 +6299,10 @@ deviantart.com##body.mobile > .ReactModalPortal + aside:last-of-type
 ! accuweatherCOM (Early 2020's)
 ###app-store-links
 ! https://www•instagram•com/what_the_house_/ (16/10/2025, "Open app" button and page opening overlay respectively; I was however unable to remove the baffling "intent://" overlay)
+!+ NOT_OPTIMIZED
+instagram.com##.html-div + div:not(.html-div) + .html-div:has(> [role=link][href^="intent://instagram.com"])
+!+ NOT_OPTIMIZED
+instagram.com##div[class]:first-of-type:not(.html-div) + div.html-div:has(+ div:last-of-type:not([class])):has(a[href^="intent://"])
 ! sixnationsrugbyCOM (03/11/2025)
 ###android-app-prompt
 ! filternyheterNO (03/11/2025)
@@ -6258,8 +6441,14 @@ www.dolby.com##div#custom-cursor
 ! Marks completed subthreads in https://github.com/DandelionSprout/adfilt/discussions/163 as complated, by marking them as green
 ! ————— Entries that are currently specific to this compilation —————
 ! Removes listings in certain lists, that are simply unwanted and unwarranted space wasters
+!+ NOT_OPTIMIZED
+freelancer.com##.PageProjectViewLogout-freelancerInfo:has(.small-flag.bangladesh)
+!+ NOT_OPTIMIZED
+whynohttps.com##tbody > tr:has([src="/flags/4x3/cn.svg"])
 2fa.directory##.table-danger
 ! https://github.com/DandelionSprout/adfilt/issues/609
+quora.com###mainContent > div > .q-box:has(.q-inline.qu-mr--small)
+quora.com###mainContent > div > .qu-borderRadius--small:has(> [class=q-box])
 ! Removes those creepy square bubbles on Google Documents about how many people that are watching every move you make there
 docs.google.com###docs-presence
 ! Fake insects crawling all over the screen
@@ -6348,6 +6537,7 @@ foodora.*##.top-banner-container
 ! https://www.techtimes.com/articles/252624/20200917/youtubes-horrible-recommendations-could-affect-younger-users-and-you-could-help-fix-it.htm
 ! https://new.reddit.com/r/insanepeoplefacebook/comments/17ys1zw/comment/k9v92xs/
 !!!youtube.com##ytd-watch-next-secondary-results-renderer
+www.youtube.com##.ytd-watch-flexy #dismissible:has(.badge-style-type-simple)
 ! For YouTube's searches. Goodness knows why YouTube would want to promote racist fakers in YT searches too. I literally just searched for "naruto rocks", as in the song, and the results in the "Others watch" section had one of the videos be an obvious FSB agent spreading blatant lies about NYC.
 ! (https://github.com/AdguardTeam/AdguardFilters/issues/187851#issuecomment-2543168740)
 www.youtube.com##ytd-video-renderer ~ ytd-shelf-renderer[thumbnail-style]
@@ -6392,6 +6582,9 @@ google.*#@##google-hats-survey
 ||appboycdn.com^$third-party
 independent.co.uk,indy100.com##.notification-prompt
 ! Pretty frequent "Make us your default search engine" prompts
+!!!qwant.com##div[class^=_][class*=" "]:last-of-type:has(>div>:is([href*="://chromewebstore."],[href*="://addons.mozilla.org/"]))
+qwant.com##main > div:last-of-type:has(>div>a:is([href*="://chromewebstore."],[href*="://addons.mozilla."]):not([data-testid]))
+qwant.com###root > div[style="display: block;"] > div[class*=" "] > div[class*=" "]:has(img[src^="data:image/svg+xml;base64,PHN2ZyB4b"])
 ! Because many people think such test sites are industry standard tools, which they're (unfortunately?) not.
 /fakepage.html|$important
 /ads.js^$domain=tracksong.github.io|adblock.turtleneck.com,important
@@ -6415,8 +6608,11 @@ discord.com##div[data-list-item-id*=skill-trees] ~ div path[d^="M12 23a11 11 0 "
 ! Transparent floaty on bottom
 www.deviantart.com##.surface-primary[class^=theme-] > div[class^=_][class*=" _"]:last-of-type
 ! Frequently empty box in the rightside bar
+!!!www.deviantart.com##div[class]:has(> div[style^="width: "] > iframe[title*=DealerAdIframe i])
 ! One of the native user promo boxes in the rightside bar has apparently begun to show unambiguous porn. That part is normal enough, but not when I'm not even logged in.
+www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 ! Fullpage transparent overlay when having logged in, because of course there would be
+!!!www.deviantart.com##div.ReactModalPortal + div[class^=_]:has(iframe[title*=DealerAdIframe i])
 ! Constantly shaking, un-emptiable, fake bell+number notification in top bar
 teknikproffset.*##.seg-promotion-wrapper
 ! Tends to be sky-high on users' requests for Nordic Filters, but legally cannot be blocked in that list. So I'm blocking it as an annoyance instead.
@@ -6428,6 +6624,7 @@ teknikproffset.*##.seg-promotion-wrapper
 &client_ad_session_id=
 ! Pretty high up on "Things practically no one asked for": What seems to be a video newsfeed in the upper left of a game's main menu
 ! https://github.com/DandelionSprout/adfilt/issues/1189
+duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##button:first-of-type + div:last-of-type[class*=" "]:has(button)
 ! Tried out Batch Text File Editor once, closed the program, and was greeted with the browser opening a somewhat intrusive page
 ||binarymark.com/products/*/thank-you-for-using^$popup
 ||binarymark.com/products/*/uninstalled^$popup
@@ -6435,6 +6632,7 @@ teknikproffset.*##.seg-promotion-wrapper
 ||diskpart.com/*?source=auto-popup^$popup
 ! Begging banners that come across as psycho spouses who shout "Why are you leaving me?! Am I not good enough for you?!" when the other party simply went to the supermarket to buy breakfast cereal.
 ! https://www•qwant•com/?q=goog+tld&t=web (27/12/2025)
+www.qwant.com###root:has(a[href*=goo]) section div[class]:not([data-testid],[style],[class*=" "],[class*=_]):has([id^=Piwik_])
 ! Pointless blurring of the modules of electricity prices (08/01/2026)
 ! Redirections to Bing/MSN from other Microsoft sites, especially those where simply the original links were dead so they made them redirect to Bing instead.
 ://www.bing.com/?shorturl=$document
@@ -6445,4 +6643,5 @@ teknikproffset.*##.seg-promotion-wrapper
 ! https://github.com/DandelionSprout/adfilt/issues/1227
 ! Hopefully upgrading various sites to HTTPS when the sites don't do it themselves.
 ! "Make us your default search engine" prompts
+qwant.com##div[class*=" "]:has(+ footer):has(a[href^="https://chromewebstore."])
 ! "The Bee Movie" spam results when searching with GitHub's main search bar
