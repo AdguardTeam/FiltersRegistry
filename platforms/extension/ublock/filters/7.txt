@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: vx+YWerpM2Ws78dzNEn59w
-! Diff-Path: ../patches/7/7-s-1794751934-3600.patch
+! Checksum: hmJxfRoLG/d1T6Gb0ZkPGA
+! Diff-Path: ../patches/7/7-s-1794805974-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.46
-! TimeUpdated: 2026-11-15T14:07:47+00:00
+! Version: 2.0.78.47
+! TimeUpdated: 2026-11-16T05:09:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1992,6 +1992,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+read.amazon.co.jp##.ad-wrapper
+||cosxive.net/api/partner-content/
 mangaraw.org.uk##+js(no-window-open-if, _blank)
 shikutoku.me##.talk-ad-slot
 hamusoku.com##div[class^="article-body"] > span[style="font-size: 150%;"]:has(> b > a[href^="https://www.amazon.co.jp/"])
@@ -2048,6 +2050,7 @@ dengekionline.com##div[class^="InLead-"]
 ! aglint-enable no-invalid-modifiers
 socialxup.com##+js(no-window-open-if, _blank)
 socialxup.com##+js(addEventListener-defuser, click, /\[native code\]|^\s*e\s*=>\s*.+\(\s*e\s*\)\s*$/)
+socialxup.com##a[href^="/"]:not([data-track], :has(> img[src^="/avatar/"])):matches-attr("href"="/^\/(?=[A-Z_a-z]*[0-9])[0-9A-Z_a-z]+$/"):not(:contains(/注目|達成|凍結|増加|減少|フォロワー/))
 socialxup.com##a[href^="/"]:matches-attr("href"="/^\/(?=[0-9A-Z_a-z]*[A-Z])[0-9A-Z_a-z]+$/")
 socialxup.com##a[target][href^="https://socialxup.com/"]
 socialxup.com##a[target][href^="/"]
