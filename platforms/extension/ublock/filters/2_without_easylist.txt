@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: RG778BOQ15ydombB8IOPRQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1794831445-3600.patch
+! Checksum: /U/msyUKXcijlymVPR9nYA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1794835332-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.4.91
-! TimeUpdated: 2026-11-16T12:14:08+00:00
+! Version: 2.5.4.92
+! TimeUpdated: 2026-11-16T13:18:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28737,8 +28737,8 @@ smlpc.lt##.sidebar > div.widget:has(> div.textwidget > div.stpdSidebarAd)
 smlpc.lt##div[style]:has(> div:is([id^="smlpc_lt_"], [id^="stpd-"]))
 smlpc.lt##div[id^="smlpc_lt_"]
 smlpc.lt##div[id^="stpd-"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/221266
-go.lnk.lt##+js(prevent-fetch, adsbygoogle)
+! https://github.com/AdguardTeam/AdguardFilters/issues/247304
+! aglint-disable-next-line
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201373
 kaipkada.lt###footer-slideup
 kaipkada.lt##+js(prevent-fetch, adsbygoogle)
@@ -40421,6 +40421,9 @@ neowin.net##div[class^="banner-"]:style(height: 0!important; min-height: 0!impor
 ! /asset/jquery/slim-3.2.min.js$domain=avple.video|javhdfree.icu|nekolink.site|mambast.tk|netflav.com|fembed-hd.com|ndrama.xyz|pornhole.club|ffem.club|jvembed.com|dzmdplay.xyz|jav247.top|yuistream.xyz|javfu.net|iframe2videos.xyz|viplayer.cc|watchjavnow.xyz|cdn-myhdjav.info|embed-media.com|fembed9hd.com|cloudrls.com|vidgo.top
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247123#issuecomment-6872786362
+! uqload video player is an iframe so we need generic regex for Safari
+/^https:\/\/uqload\.[a-z]+\/[a-z0-9][a-z0-9][a-z0-9]+\/[a-z0-9][a-z0-9][a-z0-9][a-z0-9]+\.js/$script,match-case
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246041
 ?aff_pub_id=*&ofv_id=$all
 ?ofv_id=*&aff_pub_id=$all
@@ -41402,7 +41405,7 @@ pawastreams.*,nflbite.to,footybite.to,sportschamp.fun,afly.pro,topsporter.net,so
 ! ###dismiss-btn
 pawastreams.*,groundedtechs.com,rayinfosports.com,sequencecard.xyz,matchtime.co,sportspellz.com,bestreamsports.org,silverspoon.site###dismiss-btn
 ! ##.samBannerUnit
-vi-control.net,nullforums.net,landyzone.co.uk,nullcave.pro,woxmax.com,waskucity.com,babia.to,technofino.in,reef2reef.com,minebbs.com,craxpro.io,affiliatefix.com,myiptvforum.com,hifivision.com,worldofiptv.com,altenen.is,beermoneyforum.com,germancarforum.com,cracking.org##.samBannerUnit
+gearspace.com,gleaks.pro,vi-control.net,nullforums.net,landyzone.co.uk,nullcave.pro,woxmax.com,waskucity.com,babia.to,technofino.in,reef2reef.com,minebbs.com,craxpro.io,affiliatefix.com,myiptvforum.com,hifivision.com,worldofiptv.com,altenen.is,beermoneyforum.com,germancarforum.com,cracking.org##.samBannerUnit
 ! propeller-tracking.com for CB
 ! Requests like https://almstda.tv/5/6202259
 !
@@ -41437,6 +41440,9 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+gearspace.com##.pagetakeover_app
+||uadforum.com/community/images/ua_ads/
+groupdiy.com##.cmBP
 manutd.one##.nz-ad-card
 ||s.cdn.gcprivacy.net/gcid_s.min.js
 maps.roadtrippers.com##.rt-ad-container
@@ -41445,7 +41451,6 @@ watchporn.to##.fhm
 xmoviesforyou.top##.ads-submenu
 ||electricbikes.com/api/ad-banners
 cpanel.infinityfree.com##.panel-widget:not([id]):has(> .panel-body > .text-center > ins.adsbygoogle)
-/^https:\/\/uqload\.[a-z]+\/[a-z0-9][a-z0-9][a-z0-9]+\/[a-z0-9][a-z0-9][a-z0-9][a-z0-9]+\.js/$script,match-case
 ||justthegays.tv/ac.js^
 heavy-r.com##body.topbar_promo_active:style(margin-top: 0 !important;)
 heavy-r.com###topbar_promo
@@ -46478,7 +46483,6 @@ biblehub.com##div[align="center"]:has(> div[id^="div-gpt-ad"])
 o2tvseries.com##+js(set-cookie, downloadbypass, 1)
 y2meta-uk.com##+js(no-window-open-if, !yt1d.com)
 analysis-chess.io.vn##.widget_block:has(> ins.adsbygoogle)
-gleaks.pro##.samBannerUnit
 gleaks.pro##.p-body-header:has(> div.p-title > h1:contains(Resources))
 22.do##.content-adsense
 liteapks.net##p[style="font-size: 15px"].text-center.mb-2
