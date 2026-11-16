@@ -1,9 +1,9 @@
-! Checksum: 4g2zMyqHwcrBbPK+GMj5ww
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1794790542-14400.patch
+! Checksum: SVUUlJx1DAwT0lPurWjqfQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1794804278-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.72.25
-! TimeUpdated: 2026-11-16T00:53:20+00:00
+! Version: 2.1.72.26
+! TimeUpdated: 2026-11-16T04:42:05+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -63,6 +63,7 @@
 /plugins/facebook-page-promoter-$~stylesheet
 /plugins/mashsharer/assets/js/mashsb.min.js
 /plugins/pinterest-pin-it-button-on-image-hover-and-post/js/pinit.js
+/plugins/share-and-follow/*$image
 /plugins/sociable-re/images/*
 /plugins/sociable/*$~stylesheet
 /plugins/social-media-widget/*$image
@@ -121,7 +122,6 @@
 /twitter-footer-
 /twitter-v2.png
 /twitter_footer.png
-/twitter_header.png
 /twitter_square.png
 /videojs-share.js
 /weiboshare.html
@@ -432,7 +432,6 @@ _social-bar/
 ###share_linkedin
 ###share_links
 ###share_panel
-###share_social_sidebar
 ###share_telegram
 ###share_this
 ###share_to
@@ -700,6 +699,7 @@ _social-bar/
 ##.LineShareButton
 ##.ListSocial
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
+##.PageSharingMenu
 ##.PinItButton
 ##.PinterestButtonContainer
 ##.RadSocialShare
@@ -1197,8 +1197,6 @@ _social-bar/
 ##.facebook_logo
 ##.facebook_net
 ##.facebook_share
-##.facebook_sm
-##.facebook_top
 ##.facebooklike
 ##.facebookshare
 ##.facewrapper
@@ -1255,7 +1253,6 @@ _social-bar/
 ##.fixed-share
 ##.fixed-social
 ##.fixed-social-share
-##.fixedsocial
 ##.fl-social-icons
 ##.flare-button-icon
 ##.flare-follow
@@ -1267,7 +1264,6 @@ _social-bar/
 ##.floating-share
 ##.floating-share-bar
 ##.floating-social
-##.floating-social-container
 ##.fluid-share-cameraroll-view
 ##.fluid_share_container
 ##.fluid_share_wrapper
@@ -1609,7 +1605,6 @@ _social-bar/
 ##.ig_social
 ##.ikonz-social
 ##.image-social
-##.img-share-twt
 ##.img-social
 ##.img__sharer
 ##.in-social
@@ -1654,6 +1649,7 @@ _social-bar/
 ##.item-social-row
 ##.itemSocialSharing
 ##.j-social
+##.j-social-share
 ##.j-twitter
 ##.janrainShareCountContainer
 ##.janrainSocialBar
@@ -1863,7 +1859,6 @@ _social-bar/
 ##.mvp_facebook_widget
 ##.native-share
 ##.native-share-buttons
-##.nav--share
 ##.nav--social
 ##.nav-footer-social
 ##.nav-share
@@ -1969,6 +1964,7 @@ _social-bar/
 ##.pinterest-share-button
 ##.pinterest-sharetool
 ##.pinterest.share
+##.pinterest1
 ##.pinterestShare
 ##.pinterest_btn
 ##.pinteresticon
@@ -2002,6 +1998,7 @@ _social-bar/
 ##.post-share-menu-item
 ##.post-share-panel
 ##.post-share-widget
+##.post-sharebox
 ##.post-sharing
 ##.post-social
 ##.post-social-pin
@@ -2499,6 +2496,7 @@ _social-bar/
 ##.sharify-btn-pinterest
 ##.sharify-btn-twitter
 ##.sharify-container
+##.sharing-area
 ##.sharing-bar
 ##.sharing-block
 ##.sharing-bottom
@@ -2804,6 +2802,7 @@ _social-bar/
 ##.social-share-buttons
 ##.social-share-collection
 ##.social-share-container
+##.social-share-count
 ##.social-share-custom
 ##.social-share-expand
 ##.social-share-facebook
@@ -2996,7 +2995,6 @@ _social-bar/
 ##.sociallist
 ##.socialmedia-buttons
 ##.socialmedia-footer
-##.socialmedia_article_linkbox
 ##.socialmedia_link
 ##.socialmediabar
 ##.socialmobile
@@ -3186,7 +3184,6 @@ _social-bar/
 ##.twitter_icn
 ##.twitter_icon
 ##.twitter_link
-##.twitter_sm
 ##.twitter_widget
 ##.twitterbtn
 ##.twitterbutton
@@ -3510,7 +3507,6 @@ _social-bar/
 ||xing-share.com^$third-party
 ||yandex.st/share/
 ||youtube.com/subscribe_embed?$third-party
-||youtube.com/subscribe_widget$third-party
 ||people.com.cn/img/2020fenxiang/
 iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
@@ -3757,7 +3753,6 @@ archaeology.org##.header-share
 malaymail.com##.header-social-menu
 cpac.ca##.header__multi__social
 mirror.co.uk##.header__nav__share--active
-addons.opera.com##.hf--social
 manutd.com##.home-content-panel__details-social__main-holder
 apa.org##.horizontal-icon-bar
 hrw.org##.hrw-share
@@ -4350,6 +4345,7 @@ uol.com.br##.solar-header-columnist-socialmedia-content
 terra.com.br##.t360-sharebar__wrapper
 tecmundo.com.br##.tec--didyouknow
 tecmundo.com.br##.tec--share__container
+cnnbrasil.com.br##.top__share
 r7.com##[class*="article-fill-social-"]
 infomoney.com.br##[data-ds-element^="social-share-"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]
@@ -4379,6 +4375,7 @@ europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
 adn40.mx##.ListSiguenos-SocialStrip
 elpais.com.uy##.Page-actions-wrapper
+elpais.com.uy##.SocialLink
 rpp.pe##.article__follow
 elfinanciero.com.mx##.b-footer__social-links-container
 estadiodeportivo.com##.boton-share
@@ -4389,6 +4386,7 @@ eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
 adslzone.net##.comments-social-share
 wapa.pe##.container_shared--internal
 elcolombiano.com##.contenedor-google-noticias
+paparazzi.com.ar##.entry-sharer
 a24.com,diariodecuyo.com.ar,perfil.com##.footer-redes
 elperiodico.com,sport.es##.ft-mol-rrss-column
 milenio.com##.google-news-follow
