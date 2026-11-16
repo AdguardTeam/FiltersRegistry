@@ -1,9 +1,9 @@
-! Checksum: S64Ff/A/I9aW5I6SBa+7uQ
-! Diff-Path: ../patches/14/14-s-1794798855-3600.patch
+! Checksum: KyfQYmKJuQt41OW54lrohw
+! Diff-Path: ../patches/14/14-s-1794802476-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.86.70
-! TimeUpdated: 2026-11-16T03:10:50+00:00
+! Version: 2.2.86.71
+! TimeUpdated: 2026-11-16T04:10:32+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2682,6 +2682,11 @@ sklep.precio.pl,kim24.pl,sklep.moderat.pl,dlagentlemana.pl,nogame.pl,propaganda2
 !
 ! NOTE: Regular rules
 !
+sellteo.pl#%#//scriptlet('trusted-click-element', '.zgody button[data-zgody="niezbedne"]', '!cookie:sellteo.zgody')
+skyrc.com#%#//scriptlet('set-cookie', 'accept-cookie-20240708', 'false')
+doatrip.de###cookie-legal
+_astro/CookieConsent.$domain=jottacore.com
+trukszyn.pl###trukszyn-cookie-consent
 audioforum.si##.dialog-type-lightbox.elementor-popup-modal:has(a[href="/privacy-policy"])
 ||briefing.com/apps_mobile_src_app_Components_General_cookie-banner_cookie-banner_component_ts.js
 myco-tar.pl###mycotar-cookie-bar
@@ -3002,7 +3007,7 @@ pahe.plus###cookie-pop
 suno.com###cmp-banner-container
 larose.care##.message-popup-background-ui.message-popup-lq
 duwo.opole.uw.gov.pl##div[aria-describedby="dialogCookiesDesc"]
-notbir.com.tr,ajansspor.com##div[aria-label="Çerez tercihleri"]
+parakalsa.com,notbir.com.tr,ajansspor.com##div[aria-label="Çerez tercihleri"]
 barlinek.pl,bip.um.opole.pl##div[data-name="cookiePolicy"]
 korayspor.com###lokum-cookie-host
 klimat.ekomalopolska.pl#%#//scriptlet('trusted-click-element', '#rodo-popup-overlay #rodo-reject', '!cookie:cmplz_consent_mode', '1500')
@@ -4657,7 +4662,7 @@ philharmonia.spb.ru#$#body { overflow: auto !important; }
 philharmonia.spb.ru#$#div[class^="it-cookeis"] { display: none !important; }
 mineskin.pro##div[aria-labelledby="cookie-settings-title"]
 kamkombank.ru##.cmsl_warning_cookie
-schwabenpillen.de,my-forum-apotheke.de,wz-kliniken.de,germanwatch.org,memodo.de,xspo.*,web-crossing.com,zehdenick-tourismus.de#%#//scriptlet('trusted-click-element', '.ccm-modal .ccm--decline-cookies', '!localStorage:ccm_consent')
+bern.com,schwabenpillen.de,my-forum-apotheke.de,wz-kliniken.de,germanwatch.org,memodo.de,xspo.*,web-crossing.com,zehdenick-tourismus.de#%#//scriptlet('trusted-click-element', '.ccm-modal .ccm--decline-cookies', '!localStorage:ccm_consent')
 weidener-thermenwelt.de##.cookie-outer-container-wrap
 wirkaufendeinauto.de#%#//scriptlet('trusted-click-element', 'span[data-qa-selector="gdpr-banner-configuration-button"], span[data-qa-selector="gdpr-banner-accept-selected-button"]')
 ecofamily.hu#$#body:not(.scroll-lock) .cookie-alert { display: none !important; }
@@ -12652,7 +12657,7 @@ innovaphone.com###disableBackground
 mail.ru##.b-header-agreements
 tudumnetflix.com.br##.cookies-auth
 arcserve.com##.pps-privacy-policy-strip
-phoenixreisen.com,heizungsfinder.de,handelskammer-hamburg.de,blog.fanfiktion.de,mvp.de,kplus-apotheken.de,kbv.de,mieterhilfeverein.de,autonotizen.de,tourismus-heidenheim.de,alltours-reisecenter.de,ihk.de,golf.de,pfisterer.ch,ausschreiben.de,viel-unterwegs.de,zeitgeist-online.de,kern-haus.de,diewebsitemacherei.de,effizienzhaus-online.de,daemmen-und-sanieren.de,maler-vergleich.com,kartonmodellbau.de,wvv.de##.ccm-root
+bern.com,phoenixreisen.com,heizungsfinder.de,handelskammer-hamburg.de,blog.fanfiktion.de,mvp.de,kplus-apotheken.de,kbv.de,mieterhilfeverein.de,autonotizen.de,tourismus-heidenheim.de,alltours-reisecenter.de,ihk.de,golf.de,pfisterer.ch,ausschreiben.de,viel-unterwegs.de,zeitgeist-online.de,kern-haus.de,diewebsitemacherei.de,effizienzhaus-online.de,daemmen-und-sanieren.de,maler-vergleich.com,kartonmodellbau.de,wvv.de##.ccm-root
 n-ergie.de##.cookie-compliance-bar
 nuuvem.com##.consent-warning
 aps.org##div[class^="app__cookie-footer"]
@@ -17997,7 +18002,7 @@ bpostbank.be##.lp-notifications
 stokke.com##.luana-module-cookie-policy
 bitburger.de,otto.de##.m-cookie-layer
 m.krombacher.de##.mainContent > .textSection + .formSection + .textSection
-mini.de##.md-cookie
+mdent-wroclaw.pl,mini.de##.md-cookie
 jovemnerd.com.br##footer + div[class=""][style*="background-color"][style*="position: fixed"]
 support.ubi.com##.message--cookie
 mclaren.com##.messages.show
@@ -38615,6 +38620,10 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+netzpolitik.org##.interstitial--article
+netzpolitik.org##.is-style-section-corporate--15
+skyrc.com#%#//scriptlet('set-cookie', 'click-newsletter-close', '1')
+trukszyn.pl#%#//scriptlet('set-session-storage-item', 'tam_newsletter_offer_seen', '1')
 indiatimes.com,samayam.com,vijaykarnataka.com,maharashtratimes.com###google-preferred-source-strip
 businesstimes.com.sg##button[data-testid="article-google-prefered-source-button"]
 businesstimes.com.sg##div[data-testid="bt-global-newsletter-component"]
@@ -49633,6 +49642,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+r.gnavi.co.jp##.appFlowHeader
 maharashtratimes.com##.news-app
 opentable.com##div[data-test="apps-banner-container"]
 stockanalysis.com##body > div > div.items-center.flex:has(> div.min-w-0 + a[href^="https://play.google.com/store/apps/details?id=com.stockanalysis.app"])
@@ -58008,6 +58018,8 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+netzpolitik.org##.np-block-campaigns
+netzpolitik.org##div[class*="gn-component"]
 redact.dev##aside.fixed > div.mx-auto > div.pointer-events-auto:has(> div.relative > div.grid a[href="https://download.redact.dev/windows"])
 thedailybeast.com##aside[aria-label="Subscription offer"]
 g2a.com##aside[data-ad-placement-rail]
