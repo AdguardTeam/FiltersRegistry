@@ -1,9 +1,9 @@
-! Checksum: T//78WS7VoGEU+h+SIqEVg
-! Diff-Path: ../patches/18/18-s-1794841882-3600.patch
+! Checksum: t2KfivZ31W38isZ8DdVGFg
+! Diff-Path: ../patches/18/18-s-1794845490-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.99.68
-! TimeUpdated: 2026-11-16T15:08:28+00:00
+! Version: 2.0.99.69
+! TimeUpdated: 2026-11-16T16:09:09+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2682,6 +2682,7 @@ sklep.precio.pl,kim24.pl,sklep.moderat.pl,dlagentlemana.pl,nogame.pl,propaganda2
 !
 ! NOTE: Regular rules
 !
+steamcommunity.com##.noOpinionatedGlobalStyles div[style^="display:contents;"] > div > dialog[open]:has(> div[class] > div[class] > a[href="https://store.steampowered.com/account/cookiepreferences"])
 thepfsa.co.uk###pfsa-cc > .cc-bar
 sporteurope.tv#%#//scriptlet('trusted-click-element', 'dialog[aria-labelledby="consent-wall-title"] h2#consent-wall-title ~ div.align-items-end > button.btn-primary')
 spartak.com###__next > div[class^="sc-"]:has(> svg + div > a[href="https://spartak.com/more/privacy"])
@@ -5774,6 +5775,7 @@ cloudticket.net###cookie-compliance-banner
 jackwestin.com##.jw-accept-cookies-banner-container
 plantagen.se#%#//scriptlet('set-cookie', '_ca', 'false')
 plantagen.se#%#//scriptlet('set-cookie', '_ftu', 'false')
+thefashionspot.com$$script:contains(consentKnown)
 thefashionspot.com#%#//scriptlet('remove-node-text', 'script', 'consentKnown')
 thefashionspot.com#%#//scriptlet('abort-on-property-read', '__cmpGdprAppliesGlobally')
 guard.io##.cookie-banner-component
@@ -10323,6 +10325,7 @@ factory.pixiv.net##.agreement-to-last-term
 greatone.pl###zamknij_cookies
 pogodadlaslaska.pl###elementor-popup-modal-1823
 cem.polskieradio.pl##div[class^="ModalTerms_"]
+wijnbeurs.nl$$script:contains(cookieRequest)
 castorama.pl##.background-overlay
 spy-optic.pl,bbq.pl,voltpolska.pl##.st_notification_wrap[aria-labelledby="Komunikat Cookies"]:not(#st_notification_3)
 bal.sk,bal.cz,sparkys.cz,fotoskoda.cz,harfasport.cz,geaviationturboprop.com,praguebest.cz,konsepti.com,albi.cz,mkluzkoviny.cz,mklozkoviny.sk,parfemy-elnino.sk,parfimo.ch,parfimo.de,parfimo.at,lijepa.hr,parfimo.it,spleticna.si,parfimo.bg,parfimo.ro,parfimo.gr,parfimo.hu,parfemy-elnino.cz,elnino-parfum.pl,dpp.cz#$##template-container_cookie-consent { display: none !important; }
@@ -10360,6 +10363,7 @@ bricklink.com#$#.cookie-notice { display: none!important; }
 bricklink.com#$#body { overflow: auto!important; }
 privacy.samsung.com#$#body { overflow: auto !important; }
 privacy.samsung.com#$#div[class^='cookie-'] { display: none !important; }
+doka.guide$$div[class="cookie-notification"]
 callisto.sds.com##div[aria-describedby="cookie-notification-message"]
 ||vitalpoint.cz/static*/cookie/
 taste-institute.com##app-pop-up-cookies
@@ -18444,6 +18448,7 @@ prolighting.de,moebelplus.de,itsco.de,noor.eu#$#div[data-feature="Web.Core.Featu
 prolighting.de,moebelplus.de,itsco.de,noor.eu#$#body { overflow: auto !important; }
 !
 !
+web.de,gmx.net,gmx.at$$script:contains(redirectToInterceptionPage):contains(/^(?=.{0,2500}$).*/s)
 !
 ns.nl#$##cookie-notice { display: none !important; }
 ns.nl#$#.cookie-notice:not(body):not(html) { display: none !important; }
@@ -20071,6 +20076,9 @@ stockmann.com#$#.cookie-dialog-screen { display: none!important; }
 !
 ! SECTION: Cookies - Specific rules (HTML)
 !
+loteriakozel.pl$$div[id="cookies_modal"]
+imi-online.de$$div[id="mbmcookie"]
+m.timesofindia.com,m-timesofindia-com.cdn.ampproject.org$$amp-consent
 ! NOTE: Specific rules (HTML) end ⬆️
 ! !SECTION: Cookies - Specific rules (HTML)
 !

@@ -1,5 +1,5 @@
-! Checksum: ea/yGX/ShLEL8I/pFwEmOw
-! Diff-Path: ../patches/16/16-s-1794813572-3600.patch
+! Checksum: GJJ9U9F+EfkZ2/PTclPx3Q
+! Diff-Path: ../patches/16/16-s-1794845490-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.58.25
@@ -63,6 +63,7 @@ sushiscan.st#$#.ad-wrap { display: none !important; }
 sushiscan.st#%#//scriptlet('abort-on-property-read', '__vpx')
 sushiscan.st#%#//scriptlet('abort-current-inline-script', 'Array.prototype.forEach', '/bloqueur|amazon-adsystem\.com/')
 sushiscan.st#%#//scriptlet('prevent-setTimeout', '/walled|adsbygoogle|new Image\(\)\.src|\)return;if\(_/')
+sushiscan.st$$script:contains(host.attachShadow?host.attachShadow)
 ||sushiscan.st/js/g/v.js
 ||sushiscan.st/js/g/m.js
 ||sushiscan.st/js/g/t.js
@@ -327,6 +328,7 @@ dhnet.be#%#//scriptlet('set-constant', 'bAdBlocker', 'false')
 @@||service.videoplaza.tv/proxy/pulse-sdk-html5^$domain=lesoir.be
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125968
 radio.fr#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
+radio.fr$$script[tag-content="Flags."][min-length="20000"][max-length="300000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242769
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125261
 animationdigitalnetwork.com,animationdigitalnetwork.fr#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
@@ -450,6 +452,7 @@ hack-life.net#%#//scriptlet("set-constant", "adBlockDetected", "false")
 ||twch.femina.ch^
 ! recreatisse.com - antiadblock
 recreatisse.com#%#//scriptlet("abort-current-inline-script", "document.getElementById", "adback")
+recreatisse.com$$script[tag-content="adback_configuration"][min-length="100000"][max-length="360000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39129
 @@||wakanim.tv/fr/*/video/adsunauth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42045
@@ -458,6 +461,7 @@ recreatisse.com#%#//scriptlet("abort-current-inline-script", "document.getElemen
 @@||systemed.fr/assets/js/advertisement-*.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38153
 voyageforum.com#%#//scriptlet("prevent-setTimeout", "adsbygoogle")
+voyageforum.com$$script:contains(adsbygoogle):contains(/^(?=.{0,3700}$).*/s)
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=voyageforum.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34766
@@ -680,6 +684,7 @@ $script,redirect-rule=noopjs,domain=tf1info.fr
 !---------------------------------------------------------------------------!
 !
 ! This section contains the list of ad blocking rules that fall under "advanced" category.
+! By advanced we mean the following rule types: CSS, scriptlets, HTML filtering (`$$` marker), JS.
 !
 ! Good: example.org#$##rek { display: none !important; }; example.org#%#//scriptlet('set-cookie', 'ad', '0'); example.org$$script[tag-content="ad"][max-length="3000"].
 ! Bad: example.org###rek (should be in specific.txt)
@@ -1037,6 +1042,7 @@ bebesetmamans.20minutes.fr##div[class^="box_ban"]
 lesoir.be##.r-panel--bandeau
 clubic.com##.ad-container:not(#style_important)
 hentaivost.fr#%#//scriptlet('remove-node-text', 'script', '__ADX_slot_id')
+hentaivost.fr$$script:contains(__ADX_slot_id)
 hentaivost.fr##.navbar-nav > li[id^="nav-menu-item-"] > a:not([href^="https://hentaivost.fr/"])
 ||hentaivost.fr/detect.js
 ||gupload.*/data/head/script.php

@@ -1,5 +1,5 @@
-! Checksum: vSv+nt4asxHpSdb+WHjILQ
-! Diff-Path: ../patches/27/27-s-1794841883-3600.patch
+! Checksum: yXJUO4y7m8/buefVzu95gA
+! Diff-Path: ../patches/27/27-s-1794845492-3600.patch
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
 ! Version: 2.0.0.94
@@ -2112,6 +2112,7 @@ koty.pl,psy.pl##section[class*="portal-homepage-placeholder-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125696
 radio.pl#?#div[class^="sc-"] > div[class^="sc-"] > div[id^="RAD_"]:upward(2)
 radio.pl#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
+radio.pl$$script[tag-content="Flags."][min-length="20000"][max-length="300000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125594
 ||konflikty.pl/wp-content/uploads/*/*/reklama-*.jpg
 konflikty.pl##.post-content > p[style*="text-align: center;"] + p > a[target="_blank"] > img
@@ -2781,6 +2782,7 @@ silesion.pl##.banner-promotions-wrapper
 login.wyborcza.pl#@#.ads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94999
 yafud.pl#$#body > .adsbygoogle { display: block !important; }
+yafud.pl$$script:contains(BlockAdBlock.prototype):contains(/^(?=.{5000,10000}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95343
 exsites.pl#@##ad-slot
 exsites.pl#$#.adsbox#ad-slot { display: block !important; }
@@ -3448,6 +3450,9 @@ fakt.pl#$#.onet-ad { position: absolute!important; left: -3000px!important; }
 fakt.pl#$##onet-ad-flat-plista { position: absolute !important; left: -3000px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58213
 waw4free.pl#?#.zobacz-box-text:contains(/^reklama$/)
+waw4free.pl$$script:contains(Wykryliśmy adblocka)
+waw4free.pl$$style:contains(document.documentElement.scrollTop?document.documentElement.scrollTop:document)
+waw4free.pl$$script:contains(adbinfo)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213563
 ! https://github.com/AdguardTeam/AdguardFilters/issues/57758
 ||audiostereo.pl/old/images/baner_
@@ -3478,6 +3483,7 @@ trojmiasto.pl##.banner-maxia
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106925
 trojmiasto.pl##.banner-a
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55846
+trojmiasto.pl$$script:contains(__adblockDetected ):contains(/^(?=.{2000,5000}$).*/s)
 trojmiasto.pl#%#//scriptlet("abort-on-property-read", "HateAdBlock")
 trojmiasto.pl#%#//scriptlet("abort-on-property-read", "adBlockDetected")
 !+ NOT_OPTIMIZED
@@ -3678,6 +3684,7 @@ nick.com.pl#%#//scriptlet("set-constant", "gon.viacom_config.ads.game_ads.enable
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48369
 rybnik.com.pl#%#//scriptlet("abort-on-property-write", "__loadnow")
 rybnik.com.pl#$?#iframe[name]:not([class]):not([id]):not([src])[style="display:none"] { remove: true; }
+rybnik.com.pl$$script:contains(/^(?=.{5000,10000}$)(?=.*track.*ShadowRoot.*$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48112
 @@||soisk-me.pl/modules/*/js/advertisement.js
 ! zalajkowane.pl - ads
@@ -3766,6 +3773,7 @@ meczyki.pl#%#!function(){window.YLHH={bidder:{startAuction:function(){}}};}();
 @@||wfirma.pl/*/add/*?_=$other
 ! filman.cc - skip timer, ads
 filman.cc#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/#kam-ban-player/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
+filman.cc$$iframe[src="javascript:window.location.replace"]
 filman.cc#%#//scriptlet("abort-current-inline-script", "decodeURIComponent", "removeCookie")
 filman.cc#$?#iframe[src^="javascript:window.location.replace"] { remove: true; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47917
@@ -4233,6 +4241,7 @@ pilot.wp.pl#$#html > body > div.pub_300x250.text_ads.ad_container[style]:not(#pa
 sciaga.pl##.sth-bill
 sciaga.pl#$?#.sth-bill { remove: true; }
 sciaga.pl#%#//scriptlet('prevent-window-open', '/doubleclick\.net|gemius\.pl/')
+sciaga.pl$$script:contains(/^(?=.{0,550}$)(?=.*event\.target\.tagName\=\=\='BODY'.*window\.open.*$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29042
 ||video.onnetwork.tv^$domain=sciaga.pl
 ! wyborcza.pl - fixing video player
@@ -4314,6 +4323,7 @@ anime-odcinki.pl##.ao-ad-wrapper
 anime-odcinki.pl##.region-sidebar-second > .widget_text > .textwidget > center > div[id][style="width:300px;height:250px;"]:empty
 kitsune-subs.anime-odcinki.pl#%#//scriptlet('set-constant', 'showAds', 'true')
 @@||kitsune-subs.anime-odcinki.pl/wp-content/themes/fanstrap/lib/js/advertisement.js
+anime-odcinki.pl$$script:contains(zfgloadedpushopt):contains(/^(?=.{30000,50000}$).*/s)
 anime-odcinki.pl##a[href="https://e-neko.pl/"] > img
 ||cdn.shortpixel.ai/client/q_lossy,ret_img/https://anime-odcinki.pl/wp-content/uploads/*/ga_banner1.jpg
 ! https://github.com/AdguardTeam/AdguardFilters/issues/235568
@@ -4479,6 +4489,7 @@ instalki.pl##.module-adv
 instalki.pl###outer > #banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23628
 pcworld.pl#%#window.uabpInject = function() {};
+pcworld.pl$$script[tag-content=".uabpInject=!0,"][min-length="20000"][max-length="80000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39370
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29945
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28572
@@ -4758,6 +4769,7 @@ www.wp.pl##.grid > div:not([class]):has(> div[class*=" "]:only-child > div[class
 www.wp.pl##div[class*=" "]:not(.wp-image-placeholder):has(> img[src^="https://v.wpimg.pl/"]:first-child + div:last-child:empty:not(.wp-badge-wrapper))
 www.wp.pl##.wp-inner-content > div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"]:first-child + div + script:last-child)
 wp.pl##[class^="_"]:has(> img[src*=".wp.pl"])
+wp.pl$$script:contains(/var wp_gaf_rv[\s\S]*?\n.*"spin".*"dfpConfig".*"slots?"/)
 spottedlublin.pl,autocentrum.pl,benchmark.pl,dobreprogramy.pl,so-magazyn.pl,parenting.pl,fotoblogia.pl,kafeteria.pl,wplatform.media,staszownews.pl,zdrowienews.pl,kurierostrowiecki.pl,ostrowiec24.info,kielce112.pl,lublinnews.pl,lovelifestyle.pl,telefan24.pl,marketing-zone.pl,panoramaplock.pl,ipolska24.pl,dzieckopoznan.pl,sportpoznan.pl,historiapoznania.pl,wirtualnemedia.pl,pcformat.pl,pudelek.pl,abczdrowie.pl,pysznosci.pl,o2.pl,autokult.pl,jastrzabpost.pl,genialne.pl,polygamia.pl,money.pl,wp.pl#%#//scriptlet('trusted-prune-inbound-object', 'Object.keys', 'slots')
 spottedlublin.pl,autocentrum.pl,benchmark.pl,dobreprogramy.pl,so-magazyn.pl,parenting.pl,fotoblogia.pl,kafeteria.pl,wplatform.media,staszownews.pl,zdrowienews.pl,kurierostrowiecki.pl,ostrowiec24.info,kielce112.pl,lublinnews.pl,lovelifestyle.pl,telefan24.pl,marketing-zone.pl,panoramaplock.pl,ipolska24.pl,dzieckopoznan.pl,sportpoznan.pl,historiapoznania.pl,wirtualnemedia.pl,pcformat.pl,pudelek.pl,abczdrowie.pl,pysznosci.pl,o2.pl,autokult.pl,jastrzabpost.pl,genialne.pl,polygamia.pl,money.pl,wp.pl#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*.slots')
 spottedlublin.pl,autocentrum.pl,benchmark.pl,dobreprogramy.pl,so-magazyn.pl,parenting.pl,fotoblogia.pl,kafeteria.pl,wplatform.media,staszownews.pl,zdrowienews.pl,kurierostrowiecki.pl,ostrowiec24.info,kielce112.pl,lublinnews.pl,lovelifestyle.pl,telefan24.pl,marketing-zone.pl,panoramaplock.pl,ipolska24.pl,dzieckopoznan.pl,sportpoznan.pl,historiapoznania.pl,wirtualnemedia.pl,pcformat.pl,pudelek.pl,abczdrowie.pl,pysznosci.pl,o2.pl,autokult.pl,jastrzabpost.pl,genialne.pl,polygamia.pl,money.pl,wp.pl#%#(()=>{const t={apply:(t,e,o)=>{try{const t=e;t&&"object"==typeof t&&t.context?.bidRequestId&&(e={})}catch(t){}return Reflect.apply(t,e,o)}};window.Object.prototype.hasOwnProperty=new Proxy(window.Object.prototype.hasOwnProperty,t)})();
@@ -4887,12 +4899,15 @@ filmweb.pl##.page__group > .filmWhereToWatchLinkSection > .page__container > .su
 filmweb.pl##.page__group > .fa.faBar > iframe[src*="fwcdn.pl/el/kk/player/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15134
 ! https://forum.adguard.com/index.php?threads/adblock-detection-filmweb-pl-mac.26801/
+filmweb.pl$$script:contains(adblockDisplayInformation.):contains(/^(?=.{8000,50000}$).*/s)
+filmweb.pl$$script:contains(plusAdblock):contains(/^(?=.{4000,10000}$).*/s)
 filmweb.pl#%#//scriptlet("prevent-setInterval", ".offsetHeight&&0!==")
 filmweb.pl#%#//scriptlet("abort-current-inline-script", "IRI", "Adblock")
 filmweb.pl#%#//scriptlet("set-constant", "sats", "true")
 filmweb.pl#$#body > .fwPlusBtn[style]:not(#style_important), body > #advertBar-pl_PL[style]:not(#style_important), body > .clickArea[style]:not(#style_important), body > .advert[style]:not(#style_important), body > #mainSkyBanner-pl_PL[style]:not(#style_important), body > #ad[style]:not(#style_important), body > .rec-sponsored[style]:not(#style_important), body > .ws__wrapper[style]:not(#style_important), body > .text-ad[style]:not(#style_important), body > .textAd[style]:not(#style_important), body > #clickUrl1[style]:not(#style_important), body > #flashcontent3[style]:not(#style_important), body > #pasekup[style]:not(#style_important), body > .pub_728x90[style]:not(#style_important), body > .ad-internal[style]:not(#style_important), body > .ad-imagehold[style]:not(#style_important), body > .about_adsense[style]:not(#style_important), body > .abBoxAd[style]:not(#style_important), body > .HomeAds[style]:not(#style_important), body > .CommentAd[style]:not(#style_important), body > .Ad160x600[style]:not(#style_important), body > .ADTextSingle[style]:not(#style_important), body > .AD300Block[style]:not(#style_important) { display: block !important; }
 !+ NOT_OPTIMIZED
 filmweb.pl#$?#.ws__wrapper:not([style]) { remove: true; }
+filmweb.pl$$script:contains(/^(?=.{0,7000}$)(?=.*\.name\)throw h="ABP",).*/s)
 filmweb.pl#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/notDetectedBy/.test(a.toString()))return b(a,c)};})();
 ||fwcdn.pl/front/assets/FaStaticBanner-*.$domain=filmweb.pl
 ||fwcdn.pl/front/assets/WelcomeScreen.*.js$domain=filmweb.pl
@@ -5185,6 +5200,7 @@ purepc.pl#@#.reklama
 @@||cdn.behavioralengine.com/scripts/btest/advertisement.js$domain=tvnturbo.pl
 @@||s.tvn.pl/tools/_ads/advert.js$domain=tvnturbo.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198568
+stooq.pl,stooq.com$$script:contains(adsbygoogle.push)
 stooq.pl,stooq.com#%#//scriptlet('abort-current-inline-script', 'Object.defineProperties', 'adsbygoogle.push')
 stooq.pl,stooq.com#?##f13 > table[bgcolor]:has(> tbody:only-child > tr:only-child > td:only-child > b:contains(/^Sponsorowane$/))
 stooq.pl,stooq.com###f13 > table[bgcolor][style*="display: none !important"] + div + table[style]:has(> tbody > tr > td > a[href^="?"])
@@ -11265,6 +11281,7 @@ dobreprogramy.pl#$#body:not(#bd):not([style*="background-image:"]) { background-
 www.dobreprogramy.pl#$#body:not(variant-mobile).skin-green .user-login { color:#88ae04!important }
 forum.dobreprogramy.pl#$#body[class] { background-image: none !important }
 www.dobreprogramy.pl#$#div[class*="tag-"].home-section > .span-8 { width: 100% !important; margin-right: 15px !important }
+www.dobreprogramy.pl$$#phContent_avastBadge
 milionkobiet.pl#$#.gallery-embed-list-images { height: auto !important }
 lowcygier.pl#$#body { background-image: none !important }
 interia.pl#$#[class^="common-header common-header--"] { top: 0px !important }
@@ -11326,6 +11343,10 @@ alefunny.pl###myModal, .modal-backdrop
 alefunny.pl#$#.modal-open { overflow: auto !important; padding-right: 0px !important }
 autokult.pl,gadzetomania.pl,komorkomania.pl,wp.pl##.modal__body-adblock
 dziwnekomiksy.pl#$#body>* { filter: blur(0px) !important }
+czasdzieci.pl$$div#allPage > script:contains(corner)
+komputerswiat.pl$$#googleAdsCont
+hdtvpolska.com$$script:contains(#sdWelcomeScreen)
+polygamia.pl$$.screening
 brodnica-cbr.pl,ciechanowinaczej.pl,ddb24.pl,e-wyszogrod.pl,egarwolin.pl,egorzow.pl,golub-cgd.pl,ibialoleka.pl,ibielsk.pl,ikampinos.pl,imokotow.pl,infosiedlce.pl,iotwock.info,ipragapoludnie.pl,itvpiaseczno.pl,izoliborz.pl,kurierpodlaski.pl,lipno-cli.pl,lowicz24.eu,nolesnica.pl,ototorun.pl,rypin-cry.pl,szczecinek.com,twojradom.pl,wabrzezno-cwa.pl,wio.waw.pl,zambrow.org,zycie.pila.pl#$#.c-content__adv { padding-top: 0 !important }
 it-manuals.info###pum-822
 it-manuals.info#$#html.pum-open [aria-hidden] { padding-right: 0 !important }

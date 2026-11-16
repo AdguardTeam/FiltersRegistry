@@ -1,5 +1,5 @@
-! Checksum: KAQaO3p0V8J6nRlU3EfB+Q
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1794813560-3600.patch
+! Checksum: u71b6Uc3D9To7ubdRdttZw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1794845479-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.58.25
@@ -119,6 +119,7 @@ xn--mto-bmab.fr#@#.topbanneradvertise
 ebookdz.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
 ||ebookdz.com/forum/libab/script.js
 japscan.*#@#div.container > [href]
+japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
 @@||japscan.$image,xmlhttprequest,script,~third-party
 japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
@@ -242,7 +243,11 @@ prod-player.tf1.fr,tf1.fr,tf1info.fr#@#.carbon-ads
 @@||srv.flashb.id/cfg/$domain=supersoluce.com
 *$script,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|x.com|alicdn.com,_____,domain=dl-protect.link|zone-telechargement.*|fsmirror93.lol|sushiscan.st|flemmix.studio|flemmix.run|french-anime.com
 $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|x.com,_____,domain=zone-telechargement.*|raijin-scans.fr|flemmix.studio|flemmix.run|french-anime.com
+parismatch.com##.bg-pm-background-stronger:has(> div[data-ad-slot])
+parismatch.com##div.top-below-sticky-header > div.bg-pm-background-stronger:has(> div[data-ad-slot])
+parismatch.com##div.flex-wrap > .lg\:shrink-0:has(> .top-below-sticky-header > div[data-ad-slot])
 parismatch.com##div.empty\:hidden
+macg.co##div.w-full.md\:block:has(> div[class^="Billboard_"])
 macg.co##img[alt="Publicité"]
 flemmix.land###ext-top-btns
 raenonx.cc##.w-full.overflow-hidden.outline-transparent > div[style^="height:"]
@@ -261,21 +266,30 @@ kami-labs.fr##div[id^="kl-ad-"]
 ||kami-labs.fr/wp-content/plugins/autoarticle-receiver/assets/js/ads-widget.js
 footmercato.net##.article__iframe--dailymotion-sticky
 femmeactuelle.fr##.article-outbrain
+femmeactuelle.fr##div[class]:has(>[data-placeholdertext] + div:last-child)
+femmeactuelle.fr##div[class*=" "]:has(>[data-introtext])
+clubic.com##aside div[id^="sidebarPos"]:has(a.un-styled-linked[target="_blank"] img)
 latribune.ca##.arcad-feature
+macg.co##.app-header > div.w-full:has(> .Billboard_1)
 jeuxvideo.com##a[rel="sponsored"]
 jeuxvideo.com##.anchorMiddleOne--banner
 journaldugeek.com##.lg\:min-h-\[300px\]
 20min.ch,lessentiel.lu##div[type="ad"]
 20min.ch,lessentiel.lu##div[class^="ContentPage_insideFullContentEnd"]
+20min.ch,lessentiel.lu##div[class^="ContentPage_contentPage"] > div[class]:not([id]):not([class^="sc-"], [class*="_"]):has(> div[class] > div[class] > div[data-ad-unit-id])
+20min.ch,lessentiel.lu##section[class*="ad-content-wrapper"] > div[class] > aside:has(> div[class] > div[class] > div[data-ad-unit-id])
 ledevoir.com###top-publicite-placeholder
 futura-sciences.com##.zone-insert
 futura-sciences.com##.section-interest
 femmeactuelle.fr,voici.fr##.coreads-skin-wrapper
+lematin.ch##section[class*="ad-content-wrapper"] > div[class*="-1"]:has(div[data-ad-unit-id])
 sudinfo.be##.r-immoweb
+lesoir.be##.gr-panel:has(> #ctrmedia_links)
 rtl.be,sudinfo.be,lesoir.be##.r-mini-panel--pub-bas-article
 bfmtv.com##.tead-inread-placeholder
 challenges.fr##.widget-poool-engage
 ||static.filecrypt.to/js/aaaaa*$script
+bonjour-ratp.fr###main > div:has([style*="placeholder_ad"])
 europe1.fr##.ads-inread
 europe1.fr##.content-display[class*="ban-h"]
 europe1.fr###block-europe1-pubatfsidebar
@@ -284,9 +298,12 @@ filmoflix.money,filmoflix.ad,papadustream.*,papadustream.cash##.g-buttons
 ici.radio-canada.ca##div[class^="_adBoxReset"]
 planhub.ca##.h-banner
 usine-digitale.fr,lemoniteur.fr##.b-ad-banner__wrap
+meilleure-innovation.com##.a-wrap:not(:has(>*))
+meilleure-innovation.com##.a-wrap:has(> div[id])
 lessentiel.lu##div[data-ad-unit-id]
 supersoluce.com,positivr.fr,lejournaldelamaison.fr##div[data-hbdbrk-parent]
 secondechance.org###div-gpt-pub-header
+radio.fr##.mx-auto:has(> div.super-reklame-header-holder)
 ici.radio-canada.ca##.adbox-cls
 latribune.fr##div[id*="-ban"]
 bebesetmamans.20minutes.fr##.bannerdesktop
@@ -297,10 +314,13 @@ lesoir.be##.r-panel--bandeau
 clubic.com##.ad-container:not(#style_important)
 hentaivost.fr##.navbar-nav > li[id^="nav-menu-item-"] > a:not([href^="https://hentaivost.fr/"])
 ||hentaivost.fr/detect.js
+qwant.com##.is-sidebar > div[class*=" "]:has(img[data-testid="advertiserAdsImage"])
+gamekult.com##.gk__sidebar__list  > li:has(> .g2__a-dc)
 numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 south-park-tv.fr##.king-ads
+judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 diverto.tv##div[data-atoms="Ad"]
 challenges.fr##.domain-ui-ad-placeholder
 la-croix.com##.gam
@@ -308,13 +328,19 @@ nationalgeographic.fr##div[id^="gpt--header--"]
 fsmirror93.lol###ad-banner
 leboncoin.fr##li[style^="grid-area\:advertising"]
 nationalgeographic.fr##.css-1xxldsp
+ouedkniss.com##.promo-loader:has(> .o-link + .promo-skeleton-loader)
 ouedkniss.com##.__sidebar .promo-loader > .promo-skeleton-loader:empty
+ouedkniss.com##.__sidebar .promo-loader:has(> .promo-skeleton-loader:only-child)
+ouedkniss.com##.o-section-heading:has(+ .promo-loader > .o-link + .promo-skeleton-loader)
+ouedkniss.com##.promo-loader:has(> .o-link > a[href^="https://okn.is/"] > picture > source)
+ouedkniss.com##.o-section-heading:has(+ .promo-loader > .o-link > a[href^="https://okn.is/"] > picture > source)
 actu.fr##.ac-embed--dailymotion
 europe1.fr##.lmn-container
 cnews.fr##.wrapper-ads
 cnews.fr##div[id^="dm_ads_"]
 cnews.fr###block-cnews-pubsidebarsticky300x600
 masculin.com##body div[data-actirise-slot][class$="ads"]
+magazine-avantages.fr##.External:has(> .googleAd)
 anime-sama.org,anime-sama.fr###squBot
 anime-sama.org,anime-sama.fr###bannBot
 anime-sama.org,anime-sama.fr###bannLeft
@@ -328,23 +354,32 @@ lanouvellerepublique.fr##.dfp
 letribunaldunet.fr##div[class^="code-block code-block-"][style^="margin:"]
 vidal.fr##.content-gam
 petitfute.com###adup_bigContentAd
+marieclaire.fr##.External:has(> .googleAd:only-child)
+lexpress.mu##.place-items-center:has(> div:only-child:not([class], [id]) > p.text-right ~ script[src^="https://adserve."])
 orange.fr##div[class^="media-advert"]
 orange.fr##.tag-rm
 cuisineaz.com##.banniere-haute-wrapper
 cuisineaz.com###bottomArticle
+nicematin.com##aside > .desktop-right-col-sticky > .sticky-multi-level-container:has(> .sticky-content > .ad-slot-container)
+nicematin.com##aside > .desktop-right-col-sticky > .sticky-next-level > .sticky-multi-level-container:has(> .sticky-content > .ad-slot-container)
 charentelibre.fr###main-before-content-container
+lemonde.fr##.services:not(:has(div[data-services-name*="Le Monde"][data-services-name$="Mémorable"]))
 lefigaro.fr##.fig-partner
 ||widget.betin.ai/get/geny
 qub.ca,tvasports.ca,coupdepouce.com,tvaplus.ca##div[data-testid="ad-container"]
 tesla-mag.com##.sidebar-inner-wrap > section[id^="block-"]
+moneyvox.fr##.main div[class]:has(> img[mam-campaign="Ban"])
 lephoceen.fr##div[class^="layout_megabanTopContainer"]
 nouvelobs.com##body .dfp-slot:not(#style_important)
 nouvelobs.com##.advertising
+nouvelobs.com##.sidecol > .pb-25:has(> div[style] > .OUTBRAIN)
 futura-sciences.com##div[class*="ad-parent"]
 justarrived.lu##div[id^="laure-"]
 eurosport.fr##div[data-testid="ad-organism"]
+radio-canada.ca##div[class*="bg-gray"]:has(> div[class*=" "]:only-child > div[data-adtype])
 750g.com##.ads-pholder
 lesoir.be##.r-pub--hor
+supertoinette.com##.row > div.col:has(> div.sticky > div.ads)
 virgule.lu##div[id^="ad_"]
 science-et-vie.com,maison-travaux.fr,bibamagazine.fr,doctissimo.fr,science-et-vie.com,mariefrance.fr##.viously-player
 deco.fr,fourchette-et-bikini.fr##.ads-core-placeholder
@@ -356,6 +391,7 @@ automobile-magazine.fr##.wrap-am.bloc-line-three.annonces
 magicmaman.com,larvf.com##.External.is-empty
 cookomix.com##.AdMB
 ||voirdrama.org/rotateva.php
+h2-mobile.fr###main-container .blog__content:has(> .col-md-4 > div[id^="optidigital-adslot-"])
 cosmopolitan.fr##.External
 femina.fr##.p-aside
 femina.fr##.p-inread
@@ -363,6 +399,7 @@ femina.fr##.p-pave
 femina.fr##.p-top
 caminteresse.fr##body .ads
 immobilier.lefigaro.fr##div[id^="taboola-"]
+lefigaro.fr##.sticky-element > .section-widget-ops:has(> .bu_ccmeditor:empty)
 etudiant.lefigaro.fr##div[id^="gpt_"]
 geo.fr##.dia-ads
 letribunaldunet.fr##div[class^="code-block code-block-"][style^="margin: 8px auto; text-align: center;"]
@@ -377,10 +414,14 @@ topsante.com##.pepsia
 clubic.com###megaban-container
 trustmyscience.com##div[id^="vsly-top-of-page-"]
 stream-complet.biz,journaldequebec.com###banner
+journaldequebec.com##.section-rightrail > .bigbox-container:has(> .dfpLabel)
+capital.fr##.page-aside > div.custombox:has(> a[data-custombox-position][title])
 jeune-gay.fr##.beau
 jeune-gay.fr##.happy-sidebar
+jeune-gay.fr##.under-video-block > div:has( > div[class] > a[href][target="_blank"])
 jeune-gay.fr##.yellow
 commentcamarche.net##.sticky-zone
+commentcamarche.com,commentcamarche.net,journaldunet.com##div[id^="ctn_"]:not(:has(#content_ctn))
 jeux-gratuits.com##div[class^="placeholder_"]
 la-croix.com##.banner-offer__wrapper
 iphon.fr##.od-billboard
@@ -4832,7 +4873,33 @@ bol.com##section.js_slot-sponsored-products
 solutions-numeriques.com##td[onclick^="window.open('https://www.solutions-numeriques.com/r/?"]
 wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.btnnew
 wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.sadst
+01net.com,20minutes.fr,alarme.pages.dev,ariase.com,autoplus.fr,autosblog.fr,banqcompare.com,bemove.fr,chartreuse-tourisme.com,cosmopolitan.fr,degrouptest.com,dupple.com,echosdunet.net,edcom.fr,escp.eu,euridis-ecole.com,fournisseurs-electricite.com,futura-sciences.com,gotechpresso.com,jechange.fr,journaldugeek.com,larvf.com,lettre-resiliation.com,magazine-avantages.fr,magicmaman.com,marieclaire.fr,moneyvox.fr,numero.com,petitfute.com,presse-citron.net,resilier.com,selectra.info,techpresso.co,tesla-mag.com##[data-cf], [data-cf-end], [data-cf] ~ :has(~ [data-cf-end])
 1fr1.net,3oloum.com,7olm.org,ahladalil.com,ahlamontada.com,alamontada.com,arabepro.com,banouta.net,darkbb.com,easyforumpro.com,fcmulhousefans.com,forum2jeux.com,forumactif.com,forumactif.fr,forumactif.org,forumalgerie.net,forumotion.net,forumpro.fr,forums-actifs.com,galoppourlavie.org,gid3an.com,jordanforum.net,lebonforum.com,orizzontescuolaforum.net,own0.com,passionmilitaria.com,sorcieremonique.com,superforum.fr,syriaforums.net,walkingdead-rpg.com,yoo7.com,ze-43eme.com##.croco_wrapper, [onclick*="var"], [onmousedown*="\x"], [style*="height: 90px;"]
+tvanouvelles.ca##.dfp-container:has(.dfp-ad)
+auchan.fr##.hp-banner:has(.hp-banner__message-sponsored)
+frandroid.com##.is-hidden-mobile:has([class^="Billboard"])
+carrefour.fr##.lc-banner:has([src*="ressources.luckycart.com"])
+radio-canada.ca##.max-w-150:has(.srcPubZone)
+laredoute.fr##.plp-grid_item:has(.sponsoredContent_label)
+frandroid.com##.post-card:has(a[href^="https://native.humanoid.fr/"])
+fr.shopping.rakuten.com##.prd_side:has(.gtm_ads_caption)
+carrefour.fr##.product-banner__products:has(.product-banner__advertising)
+e.leclerc##.product-container:has(.ad-product)
+decathlon.fr##.product-grid li:has(.sponsored-header-tag)
+carrefour.fr##.product-list-grid__item:has([id*="data-advertising-sponsored-products"])
+boulanger.com##.product-list__item:has(.product-list__product-sponsored)
+frandroid.com##.sticky-content:has([class^="HalfpageAd"])
+boulanger.com##[class*="kamino"]:has(.product-list__product-sponsored)
+cleanrider.com##[class*="min-h-"]:has([id^="optidigital-ad"])
+cdiscount.com##[data-e2e="offer-wrapper"]:has(.sponsor > button[aria-haspopup="dialog"])
+cdiscount.com##[data-e2e="search-result-block"] > section:has(> button[aria-haspopup="dialog"])
+fr.shopping.rakuten.com##[data-productid]:has([class^="style_sponsoredAds"])
+seloger.com##[data-testid="serp-core-suggestion-card-testid"]:has([aria-haspopup])
+boulanger.com##[id*="kamino"]:has(.product-list__product-sponsored)
+intermarche.com##[id^="stime-product-item"]:has(.stime-product--details__sponsored)
+search.lilo.org##a:has([data-testid="advertiserAdsSignature"])
+auchan.fr##article.product-thumbnail:has(.product-thumbnail__sponsored)
+futura-sciences.com##li[class*="article-"]:has(.tag-sponsorise)
 ||facebook.com/ajax/qm/
 ||facebook.com/tr/
 ||facebook.com/tr?

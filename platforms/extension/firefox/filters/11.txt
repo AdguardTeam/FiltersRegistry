@@ -1,5 +1,5 @@
-! Checksum: 5LTgpNm1XaA2T1JVnpBkuQ
-! Diff-Path: ../patches/11/11-s-1794838905-3600.patch
+! Checksum: FAEBIAKRDgXL6Zq2OSb/vA
+! Diff-Path: ../patches/11/11-s-1794845489-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
 ! Version: 2.0.73.49
@@ -1310,6 +1310,7 @@ turbopages.org##.page__result > div[class*="type_native"]
 !---------------------------------------------------------------------------!
 !
 ! This section contains the list of ad blocking rules that fall under "advanced" category.
+! By advanced we mean the following rule types: CSS, scriptlets, HTML filtering (`$$` marker), JS.
 !
 ! Good: example.org#$##rek { display: none !important; }; example.org#%#//scriptlet('set-cookie', 'ad', '0'); example.org$$script[tag-content="ad"][max-length="3000"].
 ! Bad: example.org###rek (should be in specific.txt)
@@ -1859,10 +1860,33 @@ deviantart.com#$#div[class*="dp-ad-"] { height: 0!important; width: 0!important;
 !-------------------
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139022
+antikor.com.ua$$amp-addthis
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136614
+cumhuriyet.com.tr$$div:contains(data-delay-ad-request):contains(/^(?=.{0,700}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134379
+businessinsider.in$$div[class="amazon_ad"]
 ! AMP ads in ShadowRoot
+cnet.com$$div[class="amp-ad"]
+businessinsider.in$$div[class="fc_clmb_ad"]
+$$amp-ad
+tv100.com$$div[class="ad-container"]
+tv100.com$$div[class="content-inside-ad"]
+www-livemint-com.cdn.ampproject.org,livemint.com$$div[class="adHolder"]
+www-livemint-com.cdn.ampproject.org,livemint.com$$div[class="fixadheightbottom"]
+timesnownews.com$$div[id="flyCarpet"]
+timesnownews.com$$div[id="taboolaAds"]
+timesnownews.com,zoomtventertainment.com$$div[class="adv-blocker"]
+zoomtventertainment.com$$div[class="Layout-atfAd-VBh-h"]
+amp.scmp.com$$div[class="inline-advert"]
+amp.scmp.com$$div[class="ad-header-container"]
+amp.scmp.com$$div[class="advert-fly-carpet-container"]
+zn.ua$$div[class="mix_advert_"]
+zoomtventertainment.com$$amp-embed[type="taboola"]
+24tv.ua$$div[class="within-ads"]
+vokrug.tv,dni.ru$$amp-iframe[src="https://news.gnezdo.ru/"]
+cumhuriyet.com.tr,vokrug.tv$$amp-embed[type="engageya"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17500
+motherless.xxx$$script:contains(awentw.com):contains(/^(?=.{2000,2500}$).*/s)
 !---------------------------------------------------------------------------!
 !-------------- General URL blocking rules ---------------------------------!
 !---------------------------------------------------------------------------!
@@ -2200,6 +2224,7 @@ safeframe.googlesyndication.com###towerVideo
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103481
 matomedane.jp#@##AdvHeader
 ! https://github.com/AdguardTeam/AdguardFilters/issues/98108
+nashemisto.dp.ua,5692.com.ua,048.ua$@$amp-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95096
 ! https://github.com/AdguardTeam/AdguardFilters/issues/92164
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88141
@@ -4130,6 +4155,7 @@ news.m.pchome.com.tw##div[class^="showad_"]
 newsphere.jp##div[style="height: 210px;"]
 shogis.com##.adv300_250
 yourweather.co.uk,theweather.net,tempo.pt,tempo.com,tiempo.com,meteored.*#$#.pie-pagina { margin-bottom: 0 !important; }
+1000mg.jp$$script:contains(1000mg.jp/ad_com1.php)
 s.kakaku.com##.u-bt_ad
 s.kakaku.com##.p-box-foot_item
 dengekionline.com##.gAdBanner
@@ -4759,6 +4785,7 @@ mannenzaken.nl##.r89-mobile-rectangle-mid
 mannenzaken.nl##.r89-mobile-rectangle-infinite
 mannenzaken.nl##.wpb_wrapper:has(> div.td-fix-index > div.r89-mobile-billboard-top)
 cnbctv18.com##.below-summary-ad
+telegraf.com.ua$$div[class="tgr-ads"]
 mytabs.ru##.dc-bt-mobile
 3movs.com##.spot_list
 3movs.com##.spot-after-header

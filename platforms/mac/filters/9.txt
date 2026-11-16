@@ -1,4 +1,4 @@
-! Checksum: sDGmACbAi2qBHr4+g7ub7g
+! Checksum: Rm4m/MIUWz6iNDF6QIpz0A
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
 ! Version: 2.0.36.49
@@ -229,7 +229,6 @@ nexusmangas.com#%#//scriptlet('prevent-fetch', 'googlesyndication')
 novelaocs.top#%#//scriptlet('prevent-setTimeout', 'revisarPublicidad')
 novelaocs.top#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.removeAttribute', 'Publicidad')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244498
-www2.clubvideostv.com$$script:contains(lockScreen)
 www2.clubvideostv.com#%#//scriptlet('remove-node-text', 'script', 'lockScreen')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244181
 ||topanimes.net/topanimes.net.js
@@ -413,7 +412,6 @@ infomatricula.pt#%#//scriptlet('prevent-setTimeout', '/=window\.setInterval\([\s
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220472
 darkmahou.io#%#//scriptlet('abort-on-stack-trace', 'document.getElementById', 'showAdblockAlert')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/240699
-3xyaoi.com$$script:contains(/_adBlockDetectorExecuted|checkForbiddenBrowsers/)
 3xyaoi.com#%#//scriptlet('remove-node-text', 'script', '/_adBlockDetectorExecuted|checkForbiddenBrowsers/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219700
 ||app.doramas.org/js/adb_plus.o.js
@@ -915,7 +913,6 @@ meutimao.com.br#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133583
 ||ipify.org^$domain=comando.la
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133933
-pcworld.es$$script[tag-content="Flags."][min-length="10000"][max-length="300000"]
 pcworld.es#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
 ! fix antiadblock
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=antena2.com
@@ -1590,7 +1587,6 @@ peru21.pe#@#.adstop
 !---------------------------------------------------------------------------!
 !
 ! This section contains the list of ad blocking rules that fall under "advanced" category.
-! By advanced we mean the following rule types: CSS, scriptlets, HTML filtering (`$$` marker), JS.
 !
 ! Good: example.org#$##rek { display: none !important; }; example.org#%#//scriptlet('set-cookie', 'ad', '0'); example.org$$script[tag-content="ad"][max-length="3000"].
 ! Bad: example.org###rek (should be in specific.txt)
@@ -2375,7 +2371,6 @@ locopelis.com##.btn-download
 idinheiro.com.br##.ads-idi
 serasa.com.br##div[data-name="ads"]
 ||olympusxyz.com/ad-*.js
-redecanais.tr,redecanais.ae,redecanaistv.tr,redecanaistv.ae,redecanais.*,redecanaistv.*$$div[id="rc1win-"]
 redecanais.tr,redecanais.ae,redecanaistv.tr,redecanaistv.ae,redecanais.*,redecanaistv.*#?#div[data-rc1win-pronto]
 redecanais.tr,redecanais.ae,redecanaistv.tr,redecanaistv.ae,redecanais.*,redecanaistv.*##div[data-rc1win-pronto]
 redecanais.pk,redecanaistv.pk,redecanais.*,redecanaistv.*#%#//scriptlet('prevent-addEventListener', 'click', '_0x')
@@ -3308,7 +3303,6 @@ ciudadano.news##.module-free > a[target="_blank"]
 ciudadano.news##.module-free > a[href$=" target="]
 animeid.tv##.a468x60
 animeid.tv##.a728x90
-animeid.tv$$script:contains(url_popup)
 animeid.tv#%#//scriptlet('remove-node-text', 'script', 'url_popup')
 americanas.com.br##div[data-position="produto-top"]
 ||apycdn.com/cn/banner/$domain=mbbforum.com

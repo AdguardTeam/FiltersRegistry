@@ -1,4 +1,4 @@
-! Checksum: ZVXaSy2j02Drp82Y3pw8fg
+! Checksum: 8nDOhqAazimky6s0eouA8Q
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
 ! Version: 2.0.69.94
@@ -573,7 +573,6 @@ oyungibi.com#%#//scriptlet("set-constant", "jQuery.adblock", "false")
 osxinfo.net#%#//scriptlet("abort-current-inline-script", "$", "!document.getElementById(btoa")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49271
 turkdenizcileri.com,bilgalem.blogspot.com#%#//scriptlet("set-constant", "koddostu_com_adblock_yok", "null")
-turkdenizcileri.com,bilgalem.blogspot.com$$script:contains(adblock):contains(/^(?=.{0,300}$).*/s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203121
 tekniknot.com#%#//scriptlet('abort-on-stack-trace', 'document.querySelector', 'window.onload')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47184
@@ -620,7 +619,6 @@ osxinfo.net#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_a
 huawei-turkiye.com##.XGT-AdBlock-Govde
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34999
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34807
-memoryhackers.org$$script:contains(adregain_wall):contains(/^(?=.{3000,7000}$).*/s)
 memoryhackers.org#%#//scriptlet("abort-on-property-write", "adregain_wall")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33340
 blogkafem.net#$##blogkafemnet-reklam { height: 1px!important; }
@@ -669,7 +667,6 @@ baho.com.tr#$#.adsmd { height: 1px!important; }
 web.tv#%#var canRunAds = true;
 @@||static.origins.web.tv/scripts/ads.js
 ! http://forum.adguard.com/showthread.php?7046
-mackolik.com$$script:contains(/^(?=.{0,250}$)(?=.*if \(typeof \(AdmostClient\)).*/s)
 mackolik.com,sahadan.com#%#var _amw1 = 1;
 mackolik.com,sahadan.com#%#var AdmostClient = 1;
 mackolik.com,sahadan.com#%#var advertisement_not_blocked = 1;
@@ -968,7 +965,6 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 !---------------------------------------------------------------------------!
 !
 ! This section contains the list of ad blocking rules that fall under "advanced" category.
-! By advanced we mean the following rule types: CSS, scriptlets, HTML filtering (`$$` marker), JS.
 !
 ! Good: example.org#$##rek { display: none !important; }; example.org#%#//scriptlet('set-cookie', 'ad', '0'); example.org$$script[tag-content="ad"][max-length="3000"].
 ! Bad: example.org###rek (should be in specific.txt)
@@ -2375,7 +2371,6 @@ bugunkibris.com##p > a[href="https://dausen.org/"]
 ||bugunkibris.com/images/gonyeli720-x-90.gif
 antakyagazetesi.com##.panel-grid-cell > div.widget_dik-numarali-manset-posts-list-widget + div.widget_media_image
 antakyagazetesi.com##.panel-grid-cell > div.widget_manset-1-posts-list-widget + div.widget_media_image
-sinema.*$$script:contains(pbrk)
 sinema.*#%#//scriptlet('remove-node-text', 'script', 'pbrk')
 ||dizibox.live/r/
 evrensel.net##.affiliate
@@ -6502,7 +6497,6 @@ x.palv2.cfd###adPlayerBanner
 !
 ! Frequently changed domains: doedaturkifsa*.blog
 ! Source: doedaturkifsa6.blog
-[$domain=/doedaturkifsa\d+\.blog$/]$$script:contains(popUnder)
 [$domain=/doedaturkifsa\d+\.blog$/]#%#//scriptlet('remove-node-text', 'script', 'popUnder')
 !
 ! Frequently changed domains: turkporoclub*.sbs
@@ -6572,7 +6566,6 @@ x.palv2.cfd###adPlayerBanner
 !
 ! Frequently changed domains: turkifsalife*.blog
 ! Source: turkifsalife16.blog
-[$domain=/^turkifsalife\d+\.(blog\|lat)$/]$$script:contains(reklamAcildi)
 [$domain=/^turkifsalife\d+\.(blog\|lat)$/]#%#//scriptlet('remove-node-text', 'script', 'reklamAcildi')
 [$domain=/^turkifsalife\d+\.(blog\|lat)$/]#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'app_advert')
 [$domain=/^turkifsalife\d+\.(blog\|lat)$/]#%#//scriptlet('prevent-addEventListener', 'click', 'popUnder')
@@ -6922,7 +6915,6 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ||hdselcuksports*.top/cdn/r/$image
 ! breaks video player
 ! [$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('remove-node-text', 'script', 'show_popup')
-! [$domain=/hdselcuksports\d+\.top/]$$script:contains(show_popup)
 [$domain=/hdselcuksports\d+\.top/]###video_reklam
 [$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('set-constant', 'puShown', 'true')
 [$domain=/hdselcuksports\d+\.top/]##.iframe_728
@@ -7019,7 +7011,6 @@ justintvizle736.top,justintvizle737.top,justintvizle738.top,justintvizle739.top,
 ||selcuksports*.top/dimg/*.gif
 ||selcuksports*.top/assets/img/*.gif
 ! [$domain=/justintvizle\d+\.top/]#%#//scriptlet('remove-node-text', 'script', 'show_popup')
-! [$domain=/justintvizle\d+\.top/]$$script:contains(show_popup)
 [$domain=/justintvizle\d+\.top/]###video_reklam
 [$domain=/justintvizle\d+\.top/]#%#//scriptlet('set-constant', 'puShown', 'true')
 [$domain=/justintvizle\d+\.top/]#%#//scriptlet('prevent-window-open')
