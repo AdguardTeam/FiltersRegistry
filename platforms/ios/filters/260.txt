@@ -1,9 +1,9 @@
-! Checksum: qvnjlk+JkPErlwZWIKzFjg
-! Diff-Path: ../patches/260/260-s-1794876683-14400.patch
+! Checksum: HUoTQuIVEV41xrMLnsNaUg
+! Diff-Path: ../patches/260/260-s-1794890286-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.16
-! TimeUpdated: 2026-11-17T00:49:18+00:00
+! Version: 2.0.3.17
+! TimeUpdated: 2026-11-17T04:36:09+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -189,7 +189,7 @@ www.americanbanker.com##.miso-hybrid-search-combo__answers-promo
 ! Floating "Ask a question" prompt
 www.answeroverflow.com##form:has([placeholder="Ask a question..."])
 ! Resources - MCP Server
-answeroverflow.com#?#.text-left.w-full.pt-4.border-t:contains(MCP Server)
+www.answeroverflow.com#?#.text-left.w-full.pt-4.border-t:contains(MCP Server)
 ! === Archive of Our Own ===
 ! -- https://archiveofourown.org/tags/Created%20Using%20Generative%20AI/works
 ! Works tagged as "Created Using Generative AI"
@@ -1909,8 +1909,9 @@ www.google.*#?#promo-middle-slot:contains(Gemini)
 www.google.*##[jscontroller="DyTeib"]
 ! Footer - Promo text for AI tools
 www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_campaign=bottom-footer"]
-! Search bar - AI button (magnifying glass icon, mobile only)
+! Search bar - AI button (sparkling magnifying glass icon, mobile only)
 www.google.*##.xOchs
+www.google.*##button.EX3c2d.Cq58Jd:has([d^="M740-560q-6,0-8-6q-16-61-60"])
 ! Autocomplete suggestions
 ! * JSONPath v2 compatible
 www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@.zp.udm=="50"]')
@@ -2907,6 +2908,11 @@ www.newegg.com###ai-side-panel
 www.newegg.com#$#body.ai-panel-open { padding-right: 0px !important }
 ! Sidebar - Ask Celeste about filters
 www.newegg.com##.plp-side-ask
+! -- https://www.newegg.com/p/N82E16823167075
+! "Ask Celeste" question suggestions
+www.newegg.com##.ask-assistant
+! "Any Questions? Ask Celeste"
+www.newegg.com##.assistant_box
 ! === News18 ===
 ! Search - AI overview
 www.news18.com##.aiovwrp
