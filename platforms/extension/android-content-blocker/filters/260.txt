@@ -1,9 +1,9 @@
-! Checksum: gBz1Iti5WmhlV3DYYqrpiQ
-! Diff-Path: ../patches/260/260-s-1794861446-14400.patch
+! Checksum: Sjxu8dKIRPWJUiMAJyV1+g
+! Diff-Path: ../patches/260/260-s-1794876659-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.15
-! TimeUpdated: 2026-11-16T20:35:53+00:00
+! Version: 2.0.3.16
+! TimeUpdated: 2026-11-17T00:49:18+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -166,17 +166,12 @@ health.amazon.com##.flex-container.margin-bottom-small > .flex-justify-content-f
 ! "Get started with Health AI" (Logged in)
 health.amazon.com##[data-hcr-token-id="{{health.ai.widget.upsell.banner}}"]
 ! === American Banker ===
-! -- https://www.americanbanker.com/
-! Header - Restore non-ai search button
-! * Created by AchernarB (https://www.reddit.com/r/uBlockOrigin/comments/1te8z0m/comment/om1ap7p/)
-americanbanker.com##.miso-page-header-search
 ! -- https://www.americanbanker.com/search?q=test
-! Remove sparkle from icon in search bar
 ! AI Answer
 www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
 www.americanbanker.com##.miso-hybrid-search-combo__grid-answer
 ||api-edge.askmiso.com/v1/ask/questions/$xmlhttprequest,domain=www.americanbanker.com
-! Promo for AI Answer
+! Promo for AI Answers Pro
 www.americanbanker.com##.miso-hybrid-search-combo__answers-promo
 ! === Answer Overflow ===
 ! -- https://www.answeroverflow.com/m/1402722130789011496
@@ -274,6 +269,7 @@ www.autozone.com###custom-reviews-container [data-testid="st-view"]:has(> [data-
 ! "Docs AI" button when search bar is focused
 docs.aws.amazon.com##button[aria-label="Search with Docs AI"]
 ! Remove purple glow from search bar
+! Remove sparkle from search icon
 ! -- https://docs.aws.amazon.com/search/doc-search.html?searchQuery=test
 ! "Docs AI" tab on search results page
 docs.aws.amazon.com##[class^="awsui_tabs-tab_14rmt_"]:has([data-testid="ai"])
@@ -385,9 +381,11 @@ www.bing.com##.b_ans.b_top:has(> .cht_container)
 ! -- https://www.bing.com/search?q=apache+airflow+dag
 ! AI summary
 www.bing.com##.b_ans:has(> #b_wpt_container_ml)
-! -- https://www.bing.com/search?q=Gemini
-! "Meet your AI assistant" promo card at top of search results
+! -- https://www.bing.com/search?q=google%20gemini
+! "Meet your AI assistant" promo card at top of search results (no longer used?)
 www.bing.com###ccpg-container:has(#b_cp_upsell_box_parent)
+! "Your Copilot is here" promo
+www.bing.com###uaanswer:has(> #b_cp_upsell_parent)
 ! -- https://www.bing.com/images
 ! "Create" chip below search bar
 www.bing.com###imgcrtr_key
@@ -667,18 +665,13 @@ coinmarketcap.com##.homepageAiInsights_questionItem__6Igst
 collabnix.com###docker-ai-book-banner
 ! === Collins Dictionary ===
 ! -- https://www.collinsdictionary.com/
-! "AI Assistant" button next to search bar
-www.collinsdictionary.com##.assistantIcon
-! Header assistant button (mobile)
-! "Ask Collins Dictionary" in bottom-right corner
-www.collinsdictionary.com###assistant-link
+! Bottom sticky assistant bar
+www.collinsdictionary.com##.assistant-pwa-bar
+! Header - AI Assistant sparkle icon
+www.collinsdictionary.com##[aria-label="AI assistant"]
 ! -- https://www.collinsdictionary.com/dictionary/english/word
 ! Sticky "Ask me a question" bar
-||www.collinsdictionary.com/external/assistant/idm-assistant.js$script,domain=www.collinsdictionary.com
-www.collinsdictionary.com##.assistant-sticky-bar
-! -- https://www.collinsdictionary.com/us/dictionary/english/word
-! Sticky "Ask me a question" chatbox
-www.collinsdictionary.com###ai-widget
+www.collinsdictionary.com##.ai-widget
 ! === Computer World ===
 ! Header promo for AI powered hybrid search
 ! * The header announcement gets added by a script with id='enqueued-script-consent-manager-js-after', which also handles items like the cookie consent banner.
@@ -2791,7 +2784,10 @@ www.newegg.com##.header2021-celeste
 www.newegg.com##.header2021-search-sec-ask
 ! Floating AI Assistant icon
 www.newegg.com##.floating-robot
-! -- https://www.newegg.com/p/pl?d=test
+! -- https://www.newegg.com/p/pl?d=what+is+the+best+cpu
+! Ask Celeste sidebar/chat widget
+||www.newegg.com/ai/pin$subdocument,domain=www.newegg.com
+www.newegg.com###ai-side-panel
 ! Sidebar - Ask Celeste about filters
 www.newegg.com##.plp-side-ask
 ! === News18 ===
