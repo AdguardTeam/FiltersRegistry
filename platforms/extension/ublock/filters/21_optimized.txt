@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: I0p1r7wBuGUFXTl1I96iYg
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1794903171-3600.patch
+! Checksum: UUku+qrkAjPZCKBed3F0Rg
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1794931914-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements that do not fall under popular categories of annoyances, such as website promotional offers and restrictions on copying and text selection.
-! Version: 2.0.50.34
-! TimeUpdated: 2026-11-17T08:10:34+00:00
+! Version: 2.0.50.35
+! TimeUpdated: 2026-11-17T16:09:30+00:00
 ! Expires: 5 days (update frequency)
 !######### Annoying elements (not ads)
 instagram.com##div[class]:has(> div[class]:first-child > a[href="/explore/people/"]):style(position: absolute !important; left: -3000px !important;)
@@ -1050,6 +1050,7 @@ yandex.*##:matches-path(/games) header + main.stack > div > div[class*="-wrapper
 www.kinopoisk.ru##header[class][style*="--header-height:150px"] > div > img:style(display: none !important;)
 www.kinopoisk.ru##header[class][style*="--header-height:150px"] > div.header-navigation:style(margin-top: 0 !important;)
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+oggi.it##main > div.gridRow:has(> div.gridRow__item > div.gridRow__block > div.centeredContent > a[href^="https://www.oggi.it/speciale/"])
 sprava.ua##+js(set-session-storage-item, promo_closed, 1)
 searchengineland.com##.sel-semrush-popout
 searchengineland.com##.sel-post-semrush-rail
@@ -3966,6 +3967,8 @@ softpedia.com##iframe.swipebox-rightxd[id="relcontent"]:style(top: 60px!importan
 !##############################
 !######### JS tweaks ##########
 !##############################
+dlink10.com##+js(set-constant, seconde, -1)
+retrovault.ch##+js(adjust-setTimeout, startDownload, *, 0.001)
 freetp.org##+js(set-attr, .ftp-dl-action > div.ftp-dl-counter, data-counter, 1)
 !+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
 novelaplay.com##+js(adjust-setInterval, countdown, *, 0.001)
