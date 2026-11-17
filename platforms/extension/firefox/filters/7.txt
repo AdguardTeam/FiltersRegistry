@@ -1,9 +1,9 @@
-! Checksum: Go9TMfoSymV6wiT/DdAw3g
-! Diff-Path: ../patches/7/7-s-1794852783-3600.patch
+! Checksum: JN56RK/f1/TDHLGZ8CCKSQ
+! Diff-Path: ../patches/7/7-s-1794913933-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.49
-! TimeUpdated: 2026-11-16T18:10:28+00:00
+! Version: 2.0.78.50
+! TimeUpdated: 2026-11-17T11:08:18+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -542,7 +542,6 @@ tonuriaz.info,wakuraw.com,klmanga.cloud,trogiupnhanh.com,mangaruu.com,rawfree.to
 @@||yamiisoku.com/wp-includes/js/comment-reply.min.js
 $script,xmlhttprequest,domain=genshin-soku.com|monhan-soku.com|xn--gckdevd5myivf.site|xn--o9j0bk1l6d1bnv1as45bb2j.com|yamiisoku.com
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,xn--o9j0bk1l6d1bnv1as45bb2j.com,yamiisoku.com###yaab-overlay
-genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,xn--o9j0bk1l6d1bnv1as45bb2j.com,yamiisoku.com$$script[id="yaab-detect"]
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,xn--o9j0bk1l6d1bnv1as45bb2j.com,yamiisoku.com#%#//scriptlet('remove-node-text', 'script', '/adsby|console|data-ad|modal|requestAnimationFrame|srcdoc|tagName|text\/html|userAgent|visibility|zucks|^[\S\s]{3200,}$|\\u00|ブロッカ/')
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,xn--o9j0bk1l6d1bnv1as45bb2j.com,yamiisoku.com#%#//scriptlet('set-constant', 'YAAB', 'undefined')
 genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,xn--o9j0bk1l6d1bnv1as45bb2j.com,yamiisoku.com#@#.ad-wrapper
@@ -589,7 +588,6 @@ himachat.jp#%#//scriptlet('prevent-fetch', '/adm\.shinobi\.jp\/st\/t\.js/ method
 ||adm.shinobi.jp/st/t.js$xmlhttprequest,redirect=nooptext,domain=himachat.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210437
 pretravel.kawasaki-create.com#%#//scriptlet('remove-node-text', 'script', 'detectAdBlocker')
-pretravel.kawasaki-create.com$$script:contains(detectAdBlocker)
 ! anti-adb
 @@||koken.nicovideo.jp^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206406
@@ -652,7 +650,6 @@ shukatsubbs.com,localch.net,best-hit.tv,h178.com,j-baseball.club,j-basketball.cl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193339
 lv73.net##div[id^="ad-blocker-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193283
-rxlife.net$$script:contains(detectAdBlock)
 rxlife.net#%#//scriptlet('remove-node-text', 'script', 'detectAdBlock')
 rxlife.net#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191181
@@ -1151,7 +1148,6 @@ kyukyoku-matome.com##.widget_pc_ad
 !---------------------------------------------------------------------------!
 !
 ! This section contains the list of ad blocking rules that fall under "advanced" category.
-! By advanced we mean the following rule types: CSS, scriptlets, HTML filtering (`$$` marker), JS.
 !
 ! Good: example.org#$##rek { display: none !important; }; example.org#%#//scriptlet('set-cookie', 'ad', '0'); example.org$$script[tag-content="ad"][max-length="3000"].
 ! Bad: example.org###rek (should be in specific.txt)
@@ -1179,7 +1175,6 @@ erommd-street.com#%#//scriptlet('abort-current-inline-script', 'document.createE
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192076
 twivideo.net#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'imageUrls')
 twivideo.net#%#//scriptlet('prevent-addEventListener', 'load', 'videoInstArea')
-twivideo.net$$script:contains(/videoInstArea|randomImageUrl/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176598
 ac-illust.com,photo-ac.com#%#//scriptlet('abort-current-inline-script', '$', 'google_ads_iframe_')
 ! ad-leftover on click
@@ -1586,9 +1581,7 @@ hostlove.com#$##index_nav > h1 { padding-top: 30px!important; }
 !
 !
 ! popunder
-wav.tv$$div[class="adv-popup"]
 ! https://github.com/tofukko/filter/issues/69
-kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 !---------------------------------------------------------------------------!
 !-------------- General URL blocking rules ---------------------------------!
 !---------------------------------------------------------------------------!
@@ -2009,6 +2002,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+||mynvwm.com/wp-content/themes/mwp-parent/js/adfair/
 read.amazon.co.jp##.ad-wrapper
 ||cosxive.net/api/partner-content/
 mangaraw.org.uk#%#//scriptlet('prevent-window-open', '_blank')
@@ -12075,7 +12069,6 @@ qiita.com#?##home-side-ad:upward(1)
 qiita.com#?##personalized-feed-side-ad:upward(1)
 qiita.com#?#.p-items_main > div[class^="css-"]:has(div[id^="dfp-slot-"])
 oricon.co.jp,trafficnews.jp#?#ul[class^="_taxel_row"] > li > div[class^="_taxel_ad_article"]:upward(1)
-egolf.jp,bike-news.jp,merkmal-biz.jp,kuruma-news.jp,trafficnews.jp$$div.swiper-slide[data-history="photo_extra"]
 egolf.jp,bike-news.jp,merkmal-biz.jp,kuruma-news.jp,trafficnews.jp#$?#.swiper-slide[data-history^="photo_extra"] { remove: true; }
 soco-st.com#$?#.post_ad { remove: true; }
 mainichi.jp#$?#.is-2col.articlelist > li > div[id^="ad-pc-article"]:upward(1) { remove: true; }
