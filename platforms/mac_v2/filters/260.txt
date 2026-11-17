@@ -1,9 +1,9 @@
-! Checksum: 5mkSBTpYaDjXZ/+WtVMWoQ
-! Diff-Path: ../patches/260/260-s-1794933499-14400.patch
+! Checksum: VZqwbhHaX9Y8SJtlP1Y3jQ
+! Diff-Path: ../patches/260/260-s-1794947930-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.18
-! TimeUpdated: 2026-11-17T16:36:11+00:00
+! Version: 2.0.3.19
+! TimeUpdated: 2026-11-17T20:36:46+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -3159,6 +3159,15 @@ www.priceline.com###penny-icon-module
 ! Floating Penny chatbot button
 www.priceline.com##[data-testid="penny-fab-button"]
 www.priceline.com##[data-testid="poptip"]
+! === PriceSpy ===
+! Several AI links (header button, explore search results, etc)
+hintaopas.fi,prisjagt.dk,prisjakt.no,prisjakt.nu##a[href^="/open-in-assistant/ask"]
+! Floating AI button
+hintaopas.fi,prisjagt.dk,prisjakt.no,prisjakt.nu##[data-test="StickyAssistantButton"]
+! -- https://www.prisjakt.nu/
+! Search mode switcher
+hintaopas.fi,prisjagt.dk,prisjakt.no,prisjakt.nu##[data-sentry-component="HeroModeTabs"]:has(button[aria-pressed="false"] [data-sentry-component="AssistantIcon"])
+hintaopas.fi,prisjagt.dk,prisjakt.no,prisjakt.nu#$#[data-sentry-component="HeroModeTabs"]:has(button[aria-pressed="false"] [data-sentry-component="AssistantIcon"]) + div:has(> [role="search"]) { border-radius: 32px !important }
 ! === Prime Video ===
 ! -- https://www.primevideo.com/search?ie=UTF8&ref_=atv_nb_sug&phrase=Avatar
 ! AI beta recommendations
