@@ -269,6 +269,25 @@ const REPLACE_MODIFIER_PATTERNS = [
     `\\$(?!#|${NON_BASIC_MODIFIER_LIST_GUARD}|.*removeparam=).*replace(,|=|$)`,
 ];
 
+/**
+ * Pattern to check if rule contains `$urltransform` modifier
+ * and does not contain a non-basic modifier list (`$domain`, `$path`, `$url`).
+ *
+ * Pattern parts:
+ * - `\\$` — modifiers divider
+ * - `(?!#|...)` — negative lookahead that excludes CSS rules (#$#), rules with a non-basic modifier list (see
+ *   `NON_BASIC_MODIFIER_LIST_GUARD`), and `$removeparam` values like `$removeparam=urltransform`
+ * - `.*urltransform` — urltransform modifier itself
+ * - `(,|=|$)` — end of line or modifiers divider, as `$urltransform` can be followed by other modifiers (`,`),
+ *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
+ *
+ * @example
+ * ```||example.com^$urltransform=/firstpath/secondpath/```
+ */
+const URLTRANSFORM_MODIFIER_PATTERNS = [
+    `\\$(?!#|${NON_BASIC_MODIFIER_LIST_GUARD}|.*removeparam=).*urltransform(,|=|$)`,
+];
+
 /* eslint-disable max-len */
 
 /**
@@ -588,6 +607,7 @@ const SAFARI_BASED_EXTENSION_PATTERNS = [
     ...REMOVEHEADER_MODIFIER_PATTERNS,
     ...MP4_MODIFIER_PATTERNS,
     ...REPLACE_MODIFIER_PATTERNS,
+    ...URLTRANSFORM_MODIFIER_PATTERNS,
     ...STEALTH_MODIFIER_PATTERNS,
     ...COOKIE_MODIFIER_PATTERNS,
     ...APP_MODIFIER_PATTERNS,
@@ -873,6 +893,7 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
                 ...CSS_RULES_PATTERNS,
                 ...MP4_MODIFIER_PATTERNS,
                 ...REPLACE_MODIFIER_PATTERNS,
+                ...URLTRANSFORM_MODIFIER_PATTERNS,
                 ...STEALTH_MODIFIER_PATTERNS,
                 ...COOKIE_MODIFIER_PATTERNS,
                 ...EMPTY_MODIFIER_PATTERNS,
@@ -906,6 +927,7 @@ export const CUSTOM_PLATFORMS_CONFIG: CustomPlatformsConfig = {
                 ...HTML_FILTERING_MODIFIER_PATTERNS,
                 ...MP4_MODIFIER_PATTERNS,
                 ...REPLACE_MODIFIER_PATTERNS,
+                ...URLTRANSFORM_MODIFIER_PATTERNS,
                 ...STEALTH_MODIFIER_PATTERNS,
                 ...COOKIE_MODIFIER_PATTERNS,
                 ...APP_MODIFIER_PATTERNS,
