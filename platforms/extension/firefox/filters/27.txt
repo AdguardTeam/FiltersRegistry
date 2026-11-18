@@ -1,9 +1,9 @@
-! Checksum: /F1sQgkj14XIduFsqaRnBA
-! Diff-Path: ../patches/27/27-s-1794924742-3600.patch
+! Checksum: y5dNAQHKDQ+maeIosZTbtw
+! Diff-Path: ../patches/27/27-s-1795000250-3600.patch
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.96
-! TimeUpdated: 2026-11-17T14:10:04+00:00
+! Version: 2.0.0.97
+! TimeUpdated: 2026-11-18T11:08:39+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -88,6 +88,7 @@ tygodnikziemiopolskiej.info#%#//scriptlet('google-ima3')
 !
 ! NOTE: Specific rules
 !
+mycompanypolska.pl##.custom-slot
 epiotrkow.pl##.box-ra:has(> .ad-link)
 epiotrkow.pl##.box-ra:has(> .w-100 > .hb-iframe)
 epiotrkow.pl##.box-ra:has(> .text-align-center > .ad-link)
@@ -4998,6 +4999,7 @@ naszemiasto.pl#%#window.adBlockTest = true;
 shinden.pl##.hp-rot
 shinden.pl###sh-promo
 shinden.pl##.takie-tam
+shinden.pl##.sh-side-ad
 shinden.pl###spolSticky
 shinden.pl##.spolecznoscinet
 shinden.pl##iframe[src^="https://reklama.shinden.eu/adpeeps.php?"]
@@ -5006,6 +5008,7 @@ shinden.pl#%#//scriptlet('abort-current-inline-script', 'atob', 'getElementsByTa
 shinden.pl#%#//scriptlet("abort-on-property-read", "popjs.init")
 shinden.pl#%#//scriptlet("set-constant", "_pop", "noopFunc")
 shinden.pl#%#//scriptlet("abort-on-property-write", "AdservingModule")
+shinden.pl#%#//scriptlet('trusted-replace-argument', 'Document.prototype.querySelectorAll', '0', 'body', '[id^="spolecznosci-"] iframe')
 shinden.pl#%#//scriptlet('abort-current-inline-script', 'Document.prototype.querySelectorAll', '/"spolecznosci-"|\.parentNode\.getBoundingClientRect\(\);/')
 shinden.pl#%#//scriptlet('json-prune', 'bramka', 'bramkaLinki')
 @@/^https:\/\/www\.[a-z]{7,14}\.com\/[a-z]{1,4}\.js/$script,third-party,domain=shinden.pl,badfilter

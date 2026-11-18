@@ -1,9 +1,9 @@
-! Checksum: 7Rrq1oTkRVKBuRIVDTRcmA
-! Diff-Path: ../patches/27_optimized/27_optimized-s-1794924756-3600.patch
+! Checksum: OtrVL9Jiu2NFok4PTd7giQ
+! Diff-Path: ../patches/27_optimized/27_optimized-s-1795000267-3600.patch
 ! Title: AdGuard Polish filter (Optimized)
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.0.96
-! TimeUpdated: 2026-11-17T14:10:04+00:00
+! Version: 2.0.0.97
+! TimeUpdated: 2026-11-18T11:08:39+00:00
 ! Expires: 5 days (update frequency)
 ||lekipoludzku.pl^
 ||testowa-strona-dozynkowa.pl^
@@ -18,6 +18,7 @@ tygodnikziemiopolskiej.info#%#//scriptlet('google-ima3')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=tygodnikziemiopolskiej.info
 ##.news-slot-center
+mycompanypolska.pl##.custom-slot
 epiotrkow.pl##.box-ra:has(> .ad-link)
 epiotrkow.pl##.box-ra:has(> .w-100 > .hb-iframe)
 epiotrkow.pl##.box-ra:has(> .text-align-center > .ad-link)
@@ -3527,6 +3528,7 @@ naszemiasto.pl#%#window.adBlockTest = true;
 shinden.pl##.hp-rot
 shinden.pl###sh-promo
 shinden.pl##.takie-tam
+shinden.pl##.sh-side-ad
 shinden.pl###spolSticky
 shinden.pl##.spolecznoscinet
 shinden.pl##iframe[src^="https://reklama.shinden.eu/adpeeps.php?"]
@@ -3535,6 +3537,7 @@ shinden.pl#%#//scriptlet('abort-current-inline-script', 'atob', 'getElementsByTa
 shinden.pl#%#//scriptlet("abort-on-property-read", "popjs.init")
 shinden.pl#%#//scriptlet("set-constant", "_pop", "noopFunc")
 shinden.pl#%#//scriptlet("abort-on-property-write", "AdservingModule")
+shinden.pl#%#//scriptlet('trusted-replace-argument', 'Document.prototype.querySelectorAll', '0', 'body', '[id^="spolecznosci-"] iframe')
 shinden.pl#%#//scriptlet('abort-current-inline-script', 'Document.prototype.querySelectorAll', '/"spolecznosci-"|\.parentNode\.getBoundingClientRect\(\);/')
 shinden.pl#%#//scriptlet('json-prune', 'bramka', 'bramkaLinki')
 @@/^https:\/\/www\.[a-z]{7,14}\.com\/[a-z]{1,4}\.js/$script,third-party,domain=shinden.pl,badfilter
