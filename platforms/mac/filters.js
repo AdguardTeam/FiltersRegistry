@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.5.5.41",
-			"timeUpdated": "2026-11-18T16:08:10+0000",
+			"version": "2.5.5.42",
+			"timeUpdated": "2026-11-18T17:07:55+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.15.84",
-			"timeUpdated": "2026-11-18T15:08:38+0000",
+			"version": "2.1.15.85",
+			"timeUpdated": "2026-11-18T17:08:14+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.35.37",
-			"timeUpdated": "2026-11-18T12:11:14+0000",
+			"version": "2.1.35.38",
+			"timeUpdated": "2026-11-18T17:08:16+0000",
 			"languages": []
 		},
 		{
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.87.12",
-			"timeUpdated": "2026-11-18T15:08:59+0000",
+			"version": "2.2.87.13",
+			"timeUpdated": "2026-11-18T17:08:37+0000",
 			"languages": []
 		},
 		{
@@ -256,8 +256,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.42.23",
-			"timeUpdated": "2026-11-18T15:09:02+0000",
+			"version": "2.1.42.24",
+			"timeUpdated": "2026-11-18T17:08:39+0000",
 			"languages": []
 		},
 		{
@@ -315,8 +315,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.88.8",
-			"timeUpdated": "2026-11-18T13:07:44+0000",
+			"version": "2.0.88.9",
+			"timeUpdated": "2026-11-18T17:08:45+0000",
 			"languages": []
 		},
 		{
@@ -328,8 +328,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.34.38",
-			"timeUpdated": "2026-11-18T15:09:08+0000",
+			"version": "2.0.34.39",
+			"timeUpdated": "2026-11-18T17:08:45+0000",
 			"languages": []
 		},
 		{
