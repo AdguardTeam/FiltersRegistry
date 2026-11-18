@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0PbflAaJJCmfioJOsBGytA
-! Diff-Path: ../patches/260/260-s-1794947924-14400.patch
+! Checksum: JnNmLNtRkjYbGpyLQ27M7w
+! Diff-Path: ../patches/260/260-s-1794963136-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.19
-! TimeUpdated: 2026-11-17T20:36:46+00:00
+! Version: 2.0.3.20
+! TimeUpdated: 2026-11-18T00:49:57+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1407,7 +1407,7 @@ github.com##[data-test-id="copilot-actions-chat-button"]
 github.com##[data-testid="nav-item-ai_resources"]
 ! -- https://github.com/ (logged out)
 ! Download GitHub Copilot app button
-github.com##[class^="Primer_Brand__Button-module__Button___"][href="/features/ai/github-app"]
+github.com##[class^="Intro__content__"] [class^="Primer_Brand__Button-module__Button___"][href="/features/copilot"]
 ! -- https://github.com/home (landing page)
 ! Try Copilot button (No longer used?)
 github.com##.CtaForm-secondaryAction[href="/github-copilot/pro"]
@@ -1888,6 +1888,10 @@ one.google.com##.aTVMOe.RLyrIe.KGSMie
 !   * Pregenerated topic infobox (mobile only): https://www.google.com/search?q=ghola+dune
 !   * Mixture of AI and non-ai infoboxes: https://www.google.com/search?q=Super+Mario+64+release+date
 ! -- https://www.google.com/ (Homepage)
+! Remove AI hyperlinks from Google Doodle Logos
+! * Desktop
+! * Mobile
+! * Mobile search results page
 ! Search bar - Plus icon for "add files and tools"
 ! * TODO: Doesn't work on https://www.google.co.jp/index.html
 ! * TODO: Replace icon with magnifying glass
@@ -1896,10 +1900,23 @@ www.google.*##.y1yadf .UbbAWe path:style(color: #9aa0a6 !important)
 www.google.*##.y1yadf .UbbAWe > .wPSZBe:style(height: 20px !important; width: 20px !important)
 ! Search bar - "AI Mode" button
 www.google.*##.plR5qb
-! Remove AI hyperlinks from Google Doodle Logos
+! Search bar - Deactivate AI tools plus (+) icon and revert to magnifying glass
 ! * Desktop
+www.google.*##[action="/search"] .y1yadf:has([d="M440-440H200v-80H440V-760h80v240H760v80H520v240H440V-440Z"]):style(pointer-events: none !important)
+www.google.*##[action="/search"] .y1yadf .G4cWGb.z1asCe:has([d="M440-440H200v-80H440V-760h80v240H760v80H520v240H440V-440Z"]):style(height: 20px !important; line-height: 20px !important; width: 20px !important)
+www.google.*##[action="/search"] .y1yadf [d="M440-440H200v-80H440V-760h80v240H760v80H520v240H440V-440Z"]:style(color: #9aa0a6 !important; d: path("M784-120L532-372q-30,24-69,38t-83,14q-109,0-184.5-75.5T120-580t75.5-184.5T380-840t184.5,75.5T640-580q0,44-14,83t-38,69L840-176l-56,56ZM380-400q75,0 127.5-52.5T560-580T507.5-707.5T380-760T252.5-707.5T200-580t52.5,127.5T380-400Z") !important)
 ! * Mobile
-! * Mobile search results page
+www.google.*##[action="/search"] .eCAVse[type="button"][aria-haspopup="dialog"]:has([d="M440-440H200v-80H440V-760h80v240H760v80H520v240H440V-440Z"]):style(pointer-events: none !important)
+www.google.*##[action="/search"] .eCAVse[type="button"][aria-haspopup="dialog"] [d="M440-440H200v-80H440V-760h80v240H760v80H520v240H440V-440Z"]:style(color: #bfbfbf !important; d: path("M784-120L532-372q-30,24-69,38t-83,14q-109,0-184.5-75.5T120-580t75.5-184.5T380-840t184.5,75.5T640-580q0,44-14,83t-38,69L840-176l-56,56ZM380-400q75,0 127.5-52.5T560-580T507.5-707.5T380-760T252.5-707.5T200-580t52.5,127.5T380-400Z") !important)
+! Search bar - AI button (sparkling magnifying glass icon, mobile only)
+www.google.*##.xOchs
+www.google.*##button.EX3c2d.Cq58Jd:has([d^="M740-560q-6,0-8-6q-16-61-60"])
+! Search bar - Autocomplete suggestions
+! * JSONPath v2 compatible
+www.google.*##+js(json-edit, $..[?@.zp.udm=="50"])
+www.google.*##+js(json-edit, $..[?@[?@.zf==86]])
+! * Backup cosmetic filter for mobile
+www.google.*##.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 ! AI buttons below search bar
 ! * "Create images", "Ask about files", and "Brainstorm"
 ! * These buttons replace the standard "Google Search" button.
@@ -1913,15 +1930,6 @@ www.google.*##promo-middle-slot:contains(Gemini)
 www.google.*##[jscontroller="DyTeib"]
 ! Footer - Promo text for AI tools
 www.google.*##[role="contentinfo"] [href^="https://ai.google/"][href$="&utm_campaign=bottom-footer"]
-! Search bar - AI button (sparkling magnifying glass icon, mobile only)
-www.google.*##.xOchs
-www.google.*##button.EX3c2d.Cq58Jd:has([d^="M740-560q-6,0-8-6q-16-61-60"])
-! Autocomplete suggestions
-! * JSONPath v2 compatible
-www.google.*##+js(json-edit, $..[?@.zp.udm=="50"])
-www.google.*##+js(json-edit, $..[?@[?@.zf==86]])
-! * Backup cosmetic filter for mobile
-www.google.*##.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
 ! -- https://www.google.com/?sa=X (mobile)
 ! Placeholder "Ask Google" text in focused search bar
 ! -- https://www.google.com/search?q=Why+are+we+here
