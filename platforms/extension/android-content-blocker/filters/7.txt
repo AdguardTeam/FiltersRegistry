@@ -1,9 +1,9 @@
-! Checksum: aHOH+3Mg7zQjGKTaSaaVPw
-! Diff-Path: ../patches/7/7-s-1794913906-3600.patch
+! Checksum: xhXhOCotztGZnI8LUnUh1Q
+! Diff-Path: ../patches/7/7-s-1794982501-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.50
-! TimeUpdated: 2026-11-17T11:08:18+00:00
+! Version: 2.0.78.51
+! TimeUpdated: 2026-11-18T06:12:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -424,18 +424,18 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
-!
+! AdMax 広告ブロック検知スクリプト v1.0.0
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247367
-@@||adm.shinobi.jp/abd.js^$domain=momoiroadult.com
-@@||momoiroadult.com^$generichide
+@@||adm.shinobi.jp/abd.js$domain=momoiroadult.com|travel-bookmark.net|presscarry.com|monte-carlo-lab.pages.dev|masa-web.jp|marvelousact.hatenablog.jp|lyrics-jpop.net|jyankuotakarakanteidan.blogspot.com|hirotron.com|erotaredogaonly.xyz
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247280
 fujiyama.tv##.adblock-overlay
+fujiyama.tv#@#.ad-slot
 ! www.slorepo.com anti-adb
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=slorepo.com
 @@||googleads.g.doubleclick.net/pagead/id$xmlhttprequest,domain=slorepo.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244783
 ||plicy.net/Js/pw-guard.js
-! AdMax 広告ブロック検知スクリプト v1.0.0
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242937
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=onepiecelabs.tonuriaz.info
@@ -1340,13 +1340,9 @@ kyukyoku-matome.com##.widget_pc_ad
 ! Malware/Phishing
 /api/download.php?action=init|$xmlhttprequest
 /download/cloud/c9_googlePlayCashBack_*.apk$document
-||amazonaws.com/VYYfqIKaL.apk$document
-||amazonaws.com/SMBC-Card.apk$document
-||amazonaws.com/Tiktok18.apk?$document
+||amazonaws.com/*.apk$document
 ||amazonaws.com/*/e-Tax%E$document
-||amazonaws.com/app.apk?id=$document
 .com/download.php?id=$subdocument
-||amazonaws.com/Vpass.apk$document
 .com/c*apk/e-tax%E$document
 .com/*tax%E3%82%A2%E3%83%97%E3%83%AA|$document
 .com/*/e-tax%E5%9B%BD%E7%A8%8E|$document
@@ -1753,6 +1749,7 @@ dengekionline.com##div[class^="InLead-"]
 !+ NOT_VALIDATE
 ||socialxup.com/go/$urltransform=/go\/.*//
 ! aglint-enable no-invalid-modifiers
+socialxup.com##a[data-track="related_click"]:not([data-track-context="user_page_related"])
 socialxup.com##a[target][href^="https://socialxup.com/"]
 socialxup.com##a[target][href^="/"]
 socialxup.com##.cursor-pointer

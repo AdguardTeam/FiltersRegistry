@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: IgHnNgKk7AYEwzRqHg009A
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1794975142-3600.patch
+! Checksum: 7U1PDBiALoIOwfhG5XhuLA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1794982522-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.5.30
-! TimeUpdated: 2026-11-18T04:09:20+00:00
+! Version: 2.5.5.31
+! TimeUpdated: 2026-11-18T06:12:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14148,6 +14148,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247456
+akari46.com###a46ab:style(display: none !important;)
+akari46.com##html, body:style(overflow: auto !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247440
 ||retrovault.ch/assets/js/rv-guard.js
 retrovault.ch##+js(no-setTimeout-if, aclibLoaded)
@@ -36603,7 +36606,7 @@ ganooll.co,aii.sh,oko.sh,cloudvideo.tv,file-up.org##+js(abort-current-script, Ma
 milfcaps.com,book18.fans,hpjav.in,openload.movmomon-ga.com,nyahentai.*,javfan.one,jav.direct,javmix.tv,livecamrips.tv,whoreshub.com,mdhstream.cc,forums.socialmediagirls.com##+js(addEventListener-defuser, load, puURLstrpcht)
 ! univresalP
 javeve.tv,141jav.com##+js(abort-current-script, onload, univresalP)
-1337x.st,thehentai.net,aagmaal.cx,hentaianimezone.com,javsaga.ninja,evojav.pro,momon-ga.com,torrentkitty.one,141ppv.com,camcam.cc,javneon.tv,1337x.to,hdporn92.com,eachporn.com,yourdailypornvideos.ws##+js(set-constant, univresalP, noopFunc)
+x1337x.eu,x1337x.*,1337x.st,1337x.*,thehentai.net,aagmaal.cx,hentaianimezone.com,javsaga.ninja,evojav.pro,momon-ga.com,torrentkitty.one,141ppv.com,camcam.cc,javneon.tv,1337x.to,hdporn92.com,eachporn.com,yourdailypornvideos.ws##+js(set-constant, univresalP, noopFunc)
 ! initPu, puShown
 pornd.pro,uzaymanga.com,dfilmizle.com,cartoonporno.xxx,69games.xxx,mirrorace.com,safirfilmizle1.com,mylink.vc##+js(abort-on-property-read, initPu)
 pornd.pro,asianpornjav.com,fetish-games.com,porngames.tv,twstalker.com,xbokepfb.co,javmix.app,shemaleporn.xxx,lizardporn.com,45.133.203.223,filmdelisi.co,seyredeger.com,masterplayer.*,filmseyretizlet.com,milfzr.com,movies07.live,hotscopes.*,hentaianimedownloads.com,eroticpub.com,boobsrealm.com,kickass.ws,naughtymachinima.com,xxxparodyhd.net,torrentproject.cc,porcore.com,mangoporn.net,pornkino.cc,watchpornfree.info,imguur.pictures,xxxmoviestream.xyz,mangoporn.co,kickass.vc,kickass.love,xopenload.me,streamporn.pw##+js(set-constant, puShown, true)
@@ -41452,6 +41455,10 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+cybernews.com##.editorial__sidebar-ads
+cybernews.com##.direct-ad
+akari46.com##.widget.HTML:has(> .widget-content > ins.adsbygoogle)
+akari46.com###sidebar > .widget.Stats ~ div[class="widget HTML"]
 gayhaus.com##.col.second:has(> .spot-holder)
 gayhaus.com###comment .related-video
 gayhaus.com##div[class*="pornlynx-"]
@@ -41551,7 +41558,8 @@ sportsnaut.com##.tpd-ad-slot-block
 pymnts.com##.container-scroller:style(--billboard-h: 0px !important;)
 games.gg##.ad-rail-reserve
 ||cms.games.gg/api/advertisements
-||1337x.st/mm.js
+||x1337x.*/mm.js^
+||1337x.*/mm.js^
 gayporntube.com##.category-banner
 thepostmillennial.com##aside[aria-label="Advertisement"]
 topsitecam.com##body .ad-banner

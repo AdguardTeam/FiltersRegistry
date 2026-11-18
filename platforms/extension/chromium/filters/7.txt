@@ -1,9 +1,9 @@
-! Checksum: ofp5b88A3AhneMxP6BwsfQ
-! Diff-Path: ../patches/7/7-s-1794913915-3600.patch
+! Checksum: u60p+3lLTjn7WrBaRl5mCQ
+! Diff-Path: ../patches/7/7-s-1794982504-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.50
-! TimeUpdated: 2026-11-17T11:08:18+00:00
+! Version: 2.0.78.51
+! TimeUpdated: 2026-11-18T06:12:43+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -451,18 +451,19 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
-!
+! AdMax 広告ブロック検知スクリプト v1.0.0
+||adm.shinobi.jp/abd.js$script,xmlhttprequest,redirect=noopjs
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247367
-momoiroadult.com#%#//scriptlet('remove-node-text', 'script', 'bait')
+erotaredogaonly.xyz,hirotron.com,jyankuotakarakanteidan.blogspot.com,lyrics-jpop.net,marvelousact.hatenablog.jp,masa-web.jp,monte-carlo-lab.pages.dev,presscarry.com,travel-bookmark.net,momoiroadult.com#%#//scriptlet('set-constant', '__ninjaAdMaxAbdLoaded', 'true')
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247280
 fujiyama.tv##.adblock-overlay
+fujiyama.tv#@#.ad-slot
 ! www.slorepo.com anti-adb
 slorepo.com#%#//scriptlet('prevent-setTimeout', 'bait')
 slorepo.com#%#//scriptlet('prevent-fetch', 'doubleclick.net')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244783
 ||plicy.net/Js/pw-guard.js
-! AdMax 広告ブロック検知スクリプト v1.0.0
-||adm.shinobi.jp/abd.js$script,xmlhttprequest,redirect=noopjs
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242937
 onepiecelabs.tonuriaz.info#%#//scriptlet('prevent-setTimeout', '/resolve|native/', '300')
 ! fuucdayo.com anti-adb
@@ -1647,13 +1648,9 @@ hostlove.com#$##index_nav > h1 { padding-top: 30px!important; }
 ! Malware/Phishing
 /api/download.php?action=init|$xmlhttprequest
 /download/cloud/c9_googlePlayCashBack_*.apk$document
-||amazonaws.com/VYYfqIKaL.apk$document
-||amazonaws.com/SMBC-Card.apk$document
-||amazonaws.com/Tiktok18.apk?$document
+||amazonaws.com/*.apk$document
 ||amazonaws.com/*/e-Tax%E$document
-||amazonaws.com/app.apk?id=$document
 .com/download.php?id=$subdocument
-||amazonaws.com/Vpass.apk$document
 .com/c*apk/e-tax%E$document
 .com/*tax%E3%82%A2%E3%83%97%E3%83%AA|$document
 .com/*/e-tax%E5%9B%BD%E7%A8%8E|$document
@@ -2059,6 +2056,7 @@ dengekionline.com##div[class^="InLead-"]
 ! aglint-enable no-invalid-modifiers
 socialxup.com#%#//scriptlet('prevent-window-open', '_blank')
 socialxup.com#%#//scriptlet('prevent-addEventListener', 'click', '/\[native code\]|^\s*e\s*=>\s*.+\(\s*e\s*\)\s*$/')
+socialxup.com##a[data-track="related_click"]:not([data-track-context="user_page_related"])
 socialxup.com#?#a[href^="/"]:not([data-track], :has(> img[src^="/avatar/"])):matches-attr("href"="/^\/(?=[A-Z_a-z]*[0-9])[0-9A-Z_a-z]+$/"):not(:contains(/注目|達成|凍結|増加|減少|フォロワー/))
 socialxup.com#?#a[href^="/"]:matches-attr("href"="/^\/(?=[0-9A-Z_a-z]*[A-Z])[0-9A-Z_a-z]+$/")
 socialxup.com##a[target][href^="https://socialxup.com/"]

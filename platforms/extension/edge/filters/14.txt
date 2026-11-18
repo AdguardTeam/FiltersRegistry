@@ -1,9 +1,9 @@
-! Checksum: GkX2SQH8+fUcJ9pGmbIw8g
-! Diff-Path: ../patches/14/14-s-1794975123-3600.patch
+! Checksum: 6hfm5UKME6f8YD4vwpoQzg
+! Diff-Path: ../patches/14/14-s-1794982505-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.87.3
-! TimeUpdated: 2026-11-18T04:09:57+00:00
+! Version: 2.2.87.4
+! TimeUpdated: 2026-11-18T06:12:57+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2682,6 +2682,11 @@ houseofpostcards.pl,sklep.precio.pl,kim24.pl,sklep.moderat.pl,dlagentlemana.pl,n
 !
 ! NOTE: Regular rules
 !
+senet.cloud##[aria-labelledby="cookie-notice-title"]
+senet.cloud##button[data-consent-region][data-consent-country]
+joybuggy.com##div[aria-labelledby="onboarding-modal-title"]:has(button[data-testid="accept-essential"])
+||ncez.pzh.gov.pl/*/plugins/lightweight-cookie-consent/
+plitch.com##.cookiebar-overlay
 xn--80az8a.xn--d1aqf.xn--p1ai#%#//scriptlet('set-local-storage-item', 'isConfirmTerms', 'true')
 ||primecook.pl/catalog/view/theme/primecook/js/vendor/primecook-consent-nosnippet-
 jtexpress.de###cookie-use-sdk-container
@@ -12612,7 +12617,7 @@ tresorit.com##footer + aside
 thecap.com.br##body > div[style$="position: fixed; width: 100%; z-index: 99999999;"]
 ||infopedia.pt/*klaro/klaro-pe.js
 nostter.app,todtv.com.tr,cryptonews.com,duellinksmeta.com##.cookieConsentWrapper
-atoz2512.com,getmodapks.in,elaoffcial.com,ch1n.com.br,zapowiedzi24.blogspot.com,rockmods.net##.cookies-show
+akari46.com,atoz2512.com,getmodapks.in,elaoffcial.com,ch1n.com.br,zapowiedzi24.blogspot.com,rockmods.net##.cookies-show
 anthropologie.com,urbanoutfitters.com##.cookie-message__cookieMessage
 adslgr.com,cxense.com###cookieConsentDiv
 discoverybrasil.com##div[data-testid="test-root"]
@@ -28904,6 +28909,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+||ncez.pzh.gov.pl/*/plugins/ncez-ebook-popup/
 ruangguru.com###bantuan-divs-container
 justthegays.tv##.hp-tip
 justthegays.tv##.notification[aria-label="Make it ad-free."]
@@ -38569,6 +38575,7 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+ncez.pzh.gov.pl###newsletter + .et_block_section:has(.ec-v-form-input > input.ec-v-forms-form-control[type="email"])
 wallstreet-online.de##a[href="https://www.wallstreet-online.de/newsletter"]
 extraetf.com##.container-footer-newsletter
 oggi.it##a[aria-label*="Google Discover"]

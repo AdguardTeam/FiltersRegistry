@@ -1,9 +1,9 @@
-! Checksum: R2jRKLelaYgC55SUVZiQWg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1794913902-3600.patch
+! Checksum: YP47DdW/TfHg8peVsmA9vQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1794982498-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.50
-! TimeUpdated: 2026-11-17T11:08:18+00:00
+! Version: 2.0.78.51
+! TimeUpdated: 2026-11-18T06:12:43+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||re-n-ai.com^$third-party
@@ -404,12 +404,13 @@
 ||kok.eroterest.net^
 ||ad-hatena.com^
 ||advert.punyu.com^
-momoiroadult.com#%#//scriptlet('remove-node-text', 'script', 'bait')
+||adm.shinobi.jp/abd.js$script,xmlhttprequest,redirect=noopjs
+erotaredogaonly.xyz,hirotron.com,jyankuotakarakanteidan.blogspot.com,lyrics-jpop.net,marvelousact.hatenablog.jp,masa-web.jp,monte-carlo-lab.pages.dev,presscarry.com,travel-bookmark.net,momoiroadult.com#%#//scriptlet('set-constant', '__ninjaAdMaxAbdLoaded', 'true')
 fujiyama.tv##.adblock-overlay
+fujiyama.tv#@#.ad-slot
 slorepo.com#%#//scriptlet('prevent-setTimeout', 'bait')
 slorepo.com#%#//scriptlet('prevent-fetch', 'doubleclick.net')
 ||plicy.net/Js/pw-guard.js
-||adm.shinobi.jp/abd.js$script,xmlhttprequest,redirect=noopjs
 onepiecelabs.tonuriaz.info#%#//scriptlet('prevent-setTimeout', '/resolve|native/', '300')
 fuucdayo.com#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 fjkcircle2.cfbx.jp#%#//scriptlet('prevent-fetch', 'adm.shinobi.jp')
@@ -1257,13 +1258,9 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 /wp-content/uploads/2024/09/fanza_ad$image
 /api/download.php?action=init|$xmlhttprequest
 /download/cloud/c9_googlePlayCashBack_*.apk$document
-||amazonaws.com/VYYfqIKaL.apk$document
-||amazonaws.com/SMBC-Card.apk$document
-||amazonaws.com/Tiktok18.apk?$document
+||amazonaws.com/*.apk$document
 ||amazonaws.com/*/e-Tax%E$document
-||amazonaws.com/app.apk?id=$document
 .com/download.php?id=$subdocument
-||amazonaws.com/Vpass.apk$document
 .com/c*apk/e-tax%E$document
 .com/*tax%E3%82%A2%E3%83%97%E3%83%AA|$document
 .com/*/e-tax%E5%9B%BD%E7%A8%8E|$document
@@ -1620,9 +1617,11 @@ dengekionline.com##div[class$="rectangleBanner"]
 dengekionline.com##div[class^="InLead-"]
 !+ NOT_VALIDATE
 ||socialxup.com/go/$urltransform=/go\/.*//
+||socialxup.com/_next/static/chunks/$script,replace=/(["&'()\,.:0-9A-Z_a-z{|}]+?\.onClick&&[\$0-9A-Z_a-z]+\.onClick\(e\))/e.preventDefault();return;\$1/
 ||socialxup.com/_next/static/chunks/$script,replace=/if\("auxclick"===e\.type&&1!==e\.button\)return;/if(1)e.preventDefault();return;/
 socialxup.com#%#//scriptlet('prevent-window-open', '_blank')
 socialxup.com#%#//scriptlet('prevent-addEventListener', 'click', '/\[native code\]|^\s*e\s*=>\s*.+\(\s*e\s*\)\s*$/')
+socialxup.com##a[data-track="related_click"]:not([data-track-context="user_page_related"])
 socialxup.com#?#a[href^="/"]:not([data-track], :has(> img[src^="/avatar/"])):matches-attr("href"="/^\/(?=[A-Z_a-z]*[0-9])[0-9A-Z_a-z]+$/"):not(:contains(/注目|達成|凍結|増加|減少|フォロワー/))
 socialxup.com#?#a[href^="/"]:matches-attr("href"="/^\/(?=[0-9A-Z_a-z]*[A-Z])[0-9A-Z_a-z]+$/")
 socialxup.com##a[target][href^="https://socialxup.com/"]
