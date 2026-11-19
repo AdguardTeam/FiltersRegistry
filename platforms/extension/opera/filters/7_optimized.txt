@@ -1,9 +1,9 @@
-! Checksum: 9NX9LtSju/Vx3fFLcw9Y7A
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1795068978-3600.patch
+! Checksum: 59iSpLRtHS/NJ+BHxeMCow
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1795072271-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.53
-! TimeUpdated: 2026-11-19T06:13:16+00:00
+! Version: 2.0.78.54
+! TimeUpdated: 2026-11-19T07:08:51+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||re-n-ai.com^$third-party
@@ -753,6 +753,9 @@ modalina.jp#%#//scriptlet('abort-on-property-read', 'AdBlockLimitation')
 @@||sekai-kabuka.com^$generichide
 ||googleads.g.doubleclick.net/pagead/ads?$subdocument,redirect=noopframe,domain=realtime-chart.info|sekai-kabuka.com
 ouminews.net#$#.ad_unit.ad-unit.text-ad.text_ad.pub_300x250 { display: block !important; }
+knshow.com#$#body > #wrapper ~ div[id][role="dialog"][style*="2147483647"] { display: none !important; }
+knshow.com#$#.fc-ab-root { display: none !important; }
+knshow.com#$#html, body { overflow: auto !important; }
 knshow.com#%#//scriptlet('prevent-setTimeout', 'brave')
 knshow.com#$#.ads { display: block!important;height: 1px!important; }
 crefan.jp#%#//scriptlet('prevent-setTimeout', 'objDef.resolve')
@@ -12014,9 +12017,6 @@ gtoys.blog.fc2.com###adright
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 !+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
-knshow.com#$#.fc-ab-root ~ div[id][role="dialog"][style*="2147483647"] { display: none !important; }
-knshow.com#$#.fc-ab-root { display: none !important; }
-knshow.com#$#html, body { overflow: auto !important; }
 @@||gstatic.com/admanager/outstream/rewarded_web_video_$domain=pointmall.rakuten.co.jp
 @@||g.doubleclick.net/pagead/images/gmob/close-circle-30x30.png$domain=pointmall.rakuten.co.jp
 utaten.com#@#a[href^="https://srv.clickfuse.com/"]

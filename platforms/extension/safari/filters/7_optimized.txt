@@ -1,9 +1,9 @@
-! Checksum: A8qownpYqzdJbGvZl29ybQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1795068981-3600.patch
+! Checksum: yh+QH1mM71CFLrG7R2MJxQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1795072273-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.53
-! TimeUpdated: 2026-11-19T06:13:16+00:00
+! Version: 2.0.78.54
+! TimeUpdated: 2026-11-19T07:08:51+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||re-n-ai.com^$third-party
@@ -790,6 +790,9 @@ ouminews.net#@#.ad-unit:not(.textads)
 ouminews.net#@#.text-ad
 ouminews.net#@#.text_ad
 ouminews.net#@#.pub_300x250
+knshow.com#$#body > #wrapper ~ div[id][role="dialog"][style*="2147483647"] { display: none !important; }
+knshow.com#$#.fc-ab-root { display: none !important; }
+knshow.com#$#html, body { overflow: auto !important; }
 knshow.com#%#//scriptlet('prevent-setTimeout', 'brave')
 knshow.com#$#.ads { display: block!important;height: 1px!important; }
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=knshow.com
@@ -12070,9 +12073,6 @@ d-navi004.com##.adsbygoogle
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 !+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
-knshow.com#$#.fc-ab-root ~ div[id][role="dialog"][style*="2147483647"] { display: none !important; }
-knshow.com#$#.fc-ab-root { display: none !important; }
-knshow.com#$#html, body { overflow: auto !important; }
 @@||gstatic.com/admanager/outstream/rewarded_web_video_$domain=pointmall.rakuten.co.jp
 @@||g.doubleclick.net/pagead/images/gmob/close-circle-30x30.png$domain=pointmall.rakuten.co.jp
 utaten.com#@#a[href^="https://srv.clickfuse.com/"]
