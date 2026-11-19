@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +w0SSXANAhPs8QVZVw/NsA
-! Diff-Path: ../patches/260/260-s-1795049434-14400.patch
+! Checksum: Spkxv/QysJOS0iCLBCyP9w
+! Diff-Path: ../patches/260/260-s-1795063091-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.22
-! TimeUpdated: 2026-11-19T00:48:49+00:00
+! Version: 2.0.3.23
+! TimeUpdated: 2026-11-19T04:35:55+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -364,6 +364,8 @@ www.bing.com###codex
 www.bing.com##.gbfo_c_bsic_variant:has(> [href^="https://www.bing.com/images/create"])
 ! Header - ... → Microsoft 365 → M365 Copilot
 www.bing.com###m365copilot_overflow
+! Search bar - Plus button + for AI tools
+www.bing.com###hpsbtools-drawer:style(pointer-events: none !important)
 ! "M365" button to the right of search bar
 www.bing.com##.cdxCopilotIconBg
 ! "Image creator" and "Video creator" buttons below search bar
@@ -373,6 +375,8 @@ www.bing.com###sa_ai_block
 ! Autocomplete suggestion for "Image Creator"
 www.bing.com##+js(json-edit-xhr-response, $.s[?@.t=="AI"], propsToMatch, /AS/Suggestions)
 ! -- https://www.bing.com/search?q=test (generic search page)
+! Search bar - Plus button for AI tools
+www.bing.com###sb_tool_drawer:style(pointer-events: none !important)
 ! Navbar tabs for "Search" and "Copilot"
 www.bing.com###b-scopeListItem-copilotsearch
 www.bing.com###b-scopeListItem-conv
@@ -3830,9 +3834,11 @@ tms-outsource.com##.menu-item:has(> [href="https://tms-outsource.com/blog/catego
 ! -- https://www.todoist.com/
 ! Ramble promo banner
 www.todoist.com##message-banner[data-banner-name="ramble-1vv4lt6"]
-! -- https://app.todoist.com/app/upcoming
-! Ramble button
+! -- https://app.todoist.com/app
+! Sidebar - Ramble button
 app.todoist.com##button[aria-label="Dictate tasks with Ramble"]
+! Sidebar - Todoist Automations
+app.todoist.com###apps-automations
 ! === TrialX ===
 ! -- https://www.trialx.com/clinical-trials/listings/273100/early-detection-of-endometrialovarian/
 ! AI simplified article
@@ -4132,6 +4138,9 @@ www.wigs.com##.oke-w-reviewsSummaryModule
 ! -- https://onlinelibrary.wiley.com/doi/10.1002/agr.70142
 ! Floating AI Companion
 ||onlinelibrary.wiley.com/products/acropolis/pericles/releasedAssets/js/ContentAssistant.js$script,domain=onlinelibrary.wiley.com
+! -- https://onlinelibrary.wiley.com/doi/epdf/10.1002/zoo.70100
+! Floating AI Companion
+||onlinelibrary.wiley.com/products/pericles/releasedAssets/js/ContentAssistant-$script,domain=onlinelibrary.wiley.com
 ! === Wix ===
 ! -- https://manage.wix.com/ai-assistant?flow=main-partner-studio
 ! "Chat with AI" button.

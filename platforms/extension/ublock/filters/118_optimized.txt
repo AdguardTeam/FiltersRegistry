@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9bNHPJKyrn2f2dofHLeIug
-! Diff-Path: ../patches/118_optimized/118_optimized-s-1795049432-14400.patch
+! Checksum: dFjeCu2b1zCO6lMMCag3fw
+! Diff-Path: ../patches/118_optimized/118_optimized-s-1795063089-14400.patch
 ! Title: EasyPrivacy (Optimized)
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.75.9
-! TimeUpdated: 2026-11-19T00:48:10+00:00
+! Version: 2.1.75.10
+! TimeUpdated: 2026-11-19T04:34:56+00:00
 ! Expires: 5 days (update frequency)
 &&sub19=undefined&sub20=undefined
 &action=js_stats
@@ -27,7 +27,6 @@
 .com/hit$ping
 .com/track?v=
 .content_tracking.js
-.file-downloads.outbound-links.js
 .gatracking.js
 .gif?Log=
 .hash.outbound-links.js
@@ -146,6 +145,7 @@
 /analytics.config.js
 /analytics.gif?
 /analytics.js/v1/*
+/analytics/abtest/*
 /analytics/analytics.js
 /analytics/analytics.min.js
 /analytics/click?
@@ -416,7 +416,6 @@
 /events/view?
 /eventsBeacon?
 /eventtracker.js
-/eventtracking-
 /eventtracking.
 /eventtracking/*
 /evercookie.js
@@ -707,6 +706,7 @@
 /o_code.js
 /o_tealium.js
 /oa-tracking?
+/oas_analytics.js
 /official-facebook-pixel/js/facebook_signal.js
 /omgpixel_validation_osp.json?
 /onetag/*
@@ -948,6 +948,7 @@
 /stats/events$xhr,domain=~wbsc.org
 /stats/footer.js
 /stats/header.js
+/stats/impression
 /stats/pageview
 /stats/record_visit/*
 /stats/transp.bmp
@@ -990,6 +991,7 @@
 /trace/mail/*$image
 /trace/record?
 /traces.php?
+/tracifyv2.js
 /track-event.js
 /track-internal-links.js
 /track-the-click-public.js
@@ -1055,8 +1057,6 @@
 /trk?t=$image
 /tynt.js
 /u.gif?
-/ua/Optin?
-/ua/TrailEvent?
 /uisprime/track
 /umami.js
 /umami/script.js
@@ -1324,7 +1324,6 @@ _webanalytics.
 .flipboard.com/usage?
 .gif?mpe=*&mpn=
 .google-analytics.com/
-.hilton.com/subscription/watermark.gif?
 .intercom-mail.com/q/
 .intercom-mail.com/via/$image
 .inxmail-commerce.com/tracking/$image
@@ -1336,7 +1335,6 @@ _webanalytics.
 .na1.hubspotlinks.com/$image
 .oculus.com/collect/
 .pstmrk.it/open^
-.qualtrics.com/subscription/watermark.gif?
 .quora.com/qemail/mark_read?
 .sendcloud.net/track/$image
 .sendibm1.com/*.gif?
@@ -2297,7 +2295,6 @@ omni.soundestlink.com$image
 ||freelogs.com^$3p
 ||freesitemapgenerator.com^$3p
 ||freestats.com^$3p
-||freetrafficsystem.com^$3p
 ||freeusersonline.com^$3p
 ||freeweblogger.com^$3p
 ||freshcounter.com^$3p
@@ -2454,7 +2451,6 @@ omni.soundestlink.com$image
 ||indexstats.com^$3p
 ||indextools.com^$3p
 ||indicative.com^$3p
-||individuad.net^$3p
 ||ineedhits.com^$3p
 ||inetstats.org^$3p
 ||infinigraph.com^$3p
@@ -2522,6 +2518,7 @@ omni.soundestlink.com$image
 ||jirafe.com^$3p
 ||jixie.io^$3p
 ||js.clickrank.ai^$3p
+||jstracker.com^$3p
 ||justuno.com^$3p
 ||k-analytix.com^$3p
 ||kameleoon.com^$3p
@@ -2616,7 +2613,6 @@ omni.soundestlink.com$image
 ||madkudu.com^$3p
 ||magiq.com^$3p
 ||magnetmail1.net^$3p
-||magnify360.com^$3p
 ||mailstat.us^$3p
 ||maploco.com^$3p
 ||mapmyuser.com^$3p
@@ -2987,7 +2983,6 @@ omni.soundestlink.com$image
 ||rollbar.com^$3p
 ||roosterfirework.com^$3p
 ||rs6.net^$image,script,3p
-||rtb123.com^$3p
 ||rtbiq.com^$3p
 ||rtrk.co.nz^$3p
 ||rtrk.com^$3p
@@ -3000,6 +2995,7 @@ omni.soundestlink.com$image
 ||rztrkr.com^$3p
 ||s3s-main.net^$3p
 ||safevisit.online^$3p
+||sageanalyst.net^$3p
 ||salecycle.com^$3p
 ||salesviewer.com^$3p
 ||salesviewer.org^$3p
@@ -3068,7 +3064,6 @@ omni.soundestlink.com$image
 ||simplehitcounter.com^$3p
 ||simplereach.com^$3p
 ||simpli.fi^$3p
-||simplycast.us^$3p
 ||simplymeasured.com^$3p
 ||singlefeed.com^$3p
 ||singular.net^$3p
@@ -3105,6 +3100,7 @@ omni.soundestlink.com$image
 ||sniphub.com^$3p
 ||snitcher.com^$3p
 ||snoobi.com^$3p
+||snowsignal.com^$3p
 ||snplow.net^$3p
 ||socialtrack.co^$3p
 ||sociaplus.com^$3p
@@ -3129,6 +3125,7 @@ omni.soundestlink.com$image
 ||squidanalytics.com^$3p
 ||srmdata-us.com^$3p
 ||srmdata.com^$3p
+||srpx.net^$3p
 ||stat-track.com^$3p
 ||stat.re^$3p
 ||stat24.com^$3p
@@ -3174,6 +3171,8 @@ omni.soundestlink.com$image
 ||superboosty.com^$3p
 ||supercounters.com^$3p
 ||superstats.com^$3p
+||surfcounters.com^$3p
+||surveyscout.com^$3p
 ||surveywriter.com^$3p
 ||survicate.com^$3p
 ||swetrix.org^$3p
@@ -5088,6 +5087,7 @@ omni.soundestlink.com$image
 ||outdoorthingy.com^
 ||outerwords.com^
 ||outletpeople.com^
+||outpro.net^
 ||outsidevibe.com^
 ||overconfidentfood.com^
 ||overkick.com^
@@ -6316,6 +6316,7 @@ omni.soundestlink.com$image
 ||brdtest.com^
 ||brdtnet.com^
 ||brightdata.com^$3p
+||brightdata.de^$3p
 ||luminati.io^
 ||perr.l-agent.me^
 ||perr.l-err.biz^
@@ -6507,7 +6508,6 @@ $3p,xhr,domain=opensubtitles.org
 ||xplosion.de^$3p
 ||yoochoose.net^$3p
 ||123compteur.com^$3p
-||7x4.fr^$3p
 ||7x5.fr^$3p
 ||abcompteur.com^$3p
 ||air360tracker.net^$3p
@@ -6539,7 +6539,6 @@ $3p,xhr,domain=opensubtitles.org
 ||sparteo.com^$3p
 ||sync.tv^$3p
 ||time1.me^$3p
-||titag.com^$3p
 ||tracking.wlscripts.net^
 ||webcompteur.com^$3p
 ||winitout.com^$3p
@@ -6661,6 +6660,7 @@ $3p,xhr,domain=opensubtitles.org
 ||superstat.info^$3p
 ||tetigi.com^$3p
 ||thestat.net^$3p
+||webmeter.ws^$3p
 ||accaii.com^$3p
 ||accesstrade.net^$3p
 ||actiontracking.jp^$3p
@@ -7184,7 +7184,6 @@ $3p,xhr,domain=opensubtitles.org
 ||analyticsehnwe.servicebus.windows.net^
 ||analyticsplusdev.clientify.net^
 ||analyticssec.overwolf.com^
-||analyto.io/api/event
 ||analyze-82dfgsi2.m-w.com^
 ||ancestrycdn.com/tao/at/
 ||ao-freegeoip.herokuapp.com^
@@ -10315,7 +10314,6 @@ $3p,xhr,domain=opensubtitles.org
 ||client-metrics.chess.com^
 ||cm.nordvpn.com^
 ||cmp.vg.no^*/metrics/
-||cms.1sec.email/api/analytics-track
 ||cnt.xhamster.com^
 ||codecademy.com/analytics/
 ||coincarp.com/cdn-cgi/trace
@@ -10434,8 +10432,6 @@ $3p,xhr,domain=opensubtitles.org
 ||el.quizlet.com^
 ||eldorado.gg/white-house/white_house_script_data_
 ||elements.video/tr/
-||emailtemporario.com.br/*/trackevents
-||emailtemporario.com.br/~api/analytics
 ||embed.reddit.com/svc/shreddit
 ||embedme.top/embed/extra
 ||engagefront.theweathernetwork.com^
@@ -10599,7 +10595,6 @@ $3p,xhr,domain=opensubtitles.org
 ||htrace.wetvinfo.com^
 ||huggingface.co/js/script.js
 ||hulu.com/metricsconfig
-||ibm.com/analytics/build/bluemix-analytics.min.js
 ||idmsa.apple.com/appleauth/jslog
 ||iguazu.doordash.com^
 ||iheart.com/api/v3/playback/reporting
@@ -10822,7 +10817,6 @@ $3p,xhr,domain=opensubtitles.org
 ||pcgamesn.com/cdn-cgi/trace
 ||pcmag.com/js/ga.js
 ||pcmag.com/js/z0WVjCBSEeGLoxIxOQVEwQ.min.js
-||pdfcrowd.com/static/3rd/js/fpr.js
 ||peachr.tv/s.js
 ||pelisfree.site/cdn-cgi/trace
 ||pendo.scopus.com/data/ptm.gif
@@ -10890,7 +10884,6 @@ $3p,xhr,domain=opensubtitles.org
 ||r.apkpure.net^
 ||r.bbci.co.uk^
 ||r.cdnpure.com/webReport
-||r.upload.app^
 ||raindrop.io/pb/api/event
 ||rakuten.com/rmsgjs/soj2.js
 ||ranker.com/api/px
@@ -26132,7 +26125,6 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||marketing.net.home24.fr^
 ||marketing.net.home24.nl^
 ||marketing.net.iberostar.com^
-||marketing.net.idealo-partner.com^
 ||marketing.net.jumia.com.gh^
 ||marketing.net.occhiali24.it^
 ||marketing.net.vsgamers.es^
@@ -37008,7 +37000,6 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||logs.kaya.delfi.ee^
 ||rac.ruutu.fi^
 ||teamtailor.com/pageview
-||skroutza.skroutz.gr/skroutza.min.js
 ||bhol.co.il/system/js/analytics.js
 ||stats.mako.co.il^
 ||adat.borsonline.hu^
@@ -37247,6 +37238,7 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||squid.gazeta.pl/bdtrck/
 ||sst.leroymerlin.pl^
 ||ab.g.globo/event
+||alloy-rap.reclameaqui.com.br^
 ||audience-mostread.r7.com^
 ||csplog.kwai-pro.com^
 ||dna.uol.com.br^
@@ -37404,6 +37396,7 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 ||pixel.coccoc.com^
 ||rivo.vin/api/*/view
 ||rivo.vin/rivo-stealer/
+||tka.tiki.vn/pixel/
 ||track-srv.vietnamnet.vn^
 ||w-api.baomoi.com^$image
 @@||1.1.1.1/cdn-cgi/trace$xhr,domain=myair.resmed.com|one.one.one.one
@@ -37588,6 +37581,7 @@ search.rakuten.co.jp##+js(aeld, mouseup, sendClickEvent)
 @@||tag.aticdn.net/piano-analytics.js$script,domain=boerzoektvrouw.kro-ncrv.nl
 @@||analytics-sdk.yle.fi/yle-analytics.min.js$~3p
 @@||keytiles.com/tracking/$script,domain=blikk.hu
+@@||konzolvilag.hu^*/click_tracking.js$~3p
 @@||adobedtm.com^*/AppMeasurement.min.js$script,domain=sky.it
 @@||cdnb.4strokemedia.com/carousel/v4/comscore-JS-$script
 @@||clerk.io/clerk.js$script,domain=trony.it
