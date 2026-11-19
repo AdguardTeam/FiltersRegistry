@@ -1,9 +1,9 @@
-! Checksum: d1RkvIZB8GGddFhSkI9luQ
-! Diff-Path: ../patches/260/260-s-1795106239-14400.patch
+! Checksum: XppBfL1CeyWPkjXtstXo2g
+! Diff-Path: ../patches/260/260-s-1795120707-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.24
-! TimeUpdated: 2026-11-19T16:35:40+00:00
+! Version: 2.0.3.25
+! TimeUpdated: 2026-11-19T20:36:32+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -177,6 +177,10 @@ health.amazon.com##.flex-container.margin-bottom-small > .flex-justify-content-f
 ! "Get started with Health AI" (Logged in)
 health.amazon.com##[data-hcr-token-id="{{health.ai.widget.upsell.banner}}"]
 ! === American Banker ===
+! Re-activate simplified search
+www.americanbanker.com#$#.arizent-header-search-toggle { display: inline-flex !important }
+www.americanbanker.com#$#.ar-miso-header-search { display: none !important }
+www.americanbanker.com#$##arizent-header-search-panel.is-open { display: block !important }
 ! -- https://www.americanbanker.com/search?q=test
 ! AI Answer
 www.americanbanker.com##.miso-hybrid-search-combo__disclaimer
@@ -661,6 +665,9 @@ clarencemedicalrhyl.wales###druidWebchatRoot_v2
 platform.claude.com###aiSearchResults__Item-__ask_ai__
 ! Search bar - Toggle AI mode
 platform.claude.com##.ikp-ai-search-input-group > [data-part="view_toggle"]
+! -- https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals
+! Markdown dropdown menu - Chat in Claude.ai
+platform.claude.com##[role="menu"][data-side="bottom"] [role="menuitem"]:has([data-cds="Spark"])
 ! === CodeAI ===
 ! -- https://code.org/en-US
 ! Navbar - Hour of AI
@@ -2923,8 +2930,17 @@ www.ndtv.com##.ASum_wr.ASum_Mnon
 www.newegg.com##.header2021-celeste
 ! Search bar (focused) - Ask Celeste
 www.newegg.com##.header2021-search-sec-ask
+! Search bar - Remove sparkle from magnifying glass search button
+! * uBO doesn't allow backslash \ in CSS styles
+!   https://github.com/uBlockOrigin/uBlock-issues/issues/668#issuecomment-511117701
+www.newegg.com#$#.ico-search-ai::before { content: "\f002" !important }
 ! Floating AI Assistant icon
 www.newegg.com##.floating-robot
+! -- https://www.newegg.com/ (mobile)
+! Navbar - AI Mode
+www.newegg.com##.ai-mode-links
+! Floating AI button
+www.newegg.com##.ai-button
 ! -- https://www.newegg.com/p/pl?d=what+is+the+best+cpu
 ! Ask Celeste sidebar/chat widget
 ||www.newegg.com/ai/pin$subdocument,domain=www.newegg.com
@@ -2937,6 +2953,11 @@ www.newegg.com##.plp-side-ask
 www.newegg.com##.ask-assistant
 ! "Any Questions? Ask Celeste"
 www.newegg.com##.assistant_box
+! -- https://www.newegg.com/p/N82E16823167075 (mobile)
+! Ask Celeste question suggestions
+www.newegg.com##.ask-ai-assistant
+! Sticky footer - AI Assistant icon
+www.newegg.com##.ai-btn
 ! === News18 ===
 ! Search - AI overview
 www.news18.com##.aiovwrp
