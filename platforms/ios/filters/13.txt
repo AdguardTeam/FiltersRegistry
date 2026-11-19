@@ -1,9 +1,9 @@
-! Checksum: qWiRbdxZvKfbqOMWHGOx3Q
-! Diff-Path: ../patches/13/13-s-1795057959-3600.patch
+! Checksum: iDrTCGLHv/k49gFqTZIgCg
+! Diff-Path: ../patches/13/13-s-1795097459-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.70.2
-! TimeUpdated: 2026-11-19T03:10:07+00:00
+! Version: 2.0.70.3
+! TimeUpdated: 2026-11-19T14:08:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -276,10 +276,16 @@
 ankarakampkafasi.com,zamaninvarken.com,kriptoradar.com,bakimlikadin.net,korsanedebiyat.com,genelpara.com,azbuz.org,mustafabukulmez.com#%#//scriptlet("prevent-setTimeout", "0===o.offsetLeft&&0===o.offsetTop")
 teknop.net,ozgunbilgi.com#%#//scriptlet("set-constant", "adblock.check", "noopFunc")
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/246975
-dramadizilerim1.com#%#//scriptlet('remove-attr', 'inert')
-dramadizilerim1.com#$#.access-screen { display: none !important; }
-@@||dramadizilerim1.com^$generichide
+! https://github.com/AdguardTeam/AdguardFilters/issues/247577
+dramadizilerim1.com#%#//scriptlet('set-constant', 'navigator.onLine', 'false')
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=dramadizilerim1.com
+@@||securepubads.g.doubleclick.net/tag/js/gpt.js$xmlhttprequest,domain=dramadizilerim1.com
+@@||c.amazon-adsystem.com/aax2/apstag.js$xmlhttprequest,domain=dramadizilerim1.com
+@@||llvpn.com/tag.min.js$xmlhttprequest,domain=dramadizilerim1.com
+dramadizilerim1.com#@#[id^="div-gpt-ad"]
+dramadizilerim1.com#@#div[id^="div-gpt-"]
+dramadizilerim1.com#@#.ad-slot
+dramadizilerim1.com#@#.adunit
 ! https://github.com/AdguardTeam/AdguardFilters/issues/246957
 bilgisayarbilisim.net#%#//scriptlet('abort-current-inline-script', 'document.getElementById', '/adblock/i')
 bilgisayarbilisim.net#@#ins.adsbygoogle[data-ad-client]
@@ -304,17 +310,6 @@ ortacizgi.com#@#.ad_unit
 summertoons.net#%#//scriptlet('prevent-addEventListener', 'load', 'checkAdblock')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=summertoons.net
-! https://github.com/AdguardTeam/AdguardFilters/issues/234427
-dramadizilerim1.com#@#.ad-slot
-dramadizilerim1.com#$#body { overflow: auto !important; }
-dramadizilerim1.com#$##sysOverlay99 { display: none !important; }
-dramadizilerim1.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '/\.offsetHeight[\s]*?===[\s]*?0|pagead2\.googlesyndication\.com/')
-dramadizilerim1.com#%#//scriptlet('prevent-fetch', 'llvpn.com/tag.min.js')
-@@||dramadizilerim.com/assets/js/admanager.js$~third-party
-@@||dramadizilerim1.com^$generichide
-@@||llvpn.com/tag.min.js$xmlhttprequest,domain=dramadizilerim1.com
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=dramadizilerim1.com
-@@||googleads.g.doubleclick.net/pagead/viewthroughconversion/1/$xmlhttprequest,domain=dramadizilerim1.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/233080
 paradoxscans.com#%#//scriptlet('abort-on-property-write', 'detectAdBlock')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
