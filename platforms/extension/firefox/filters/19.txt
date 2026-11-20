@@ -1,9 +1,9 @@
-! Checksum: CUl9I4akAK+YUwgyheDoCA
-! Diff-Path: ../patches/19/19-s-1795151480-3600.patch
+! Checksum: uDDejQ0iZ1+2PuL+Ct3YXg
+! Diff-Path: ../patches/19/19-s-1795155300-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.88.19
-! TimeUpdated: 2026-11-20T05:08:52+00:00
+! Version: 2.0.88.20
+! TimeUpdated: 2026-11-20T06:12:58+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3503,6 +3503,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+symbaloo.com###libraryRegisterPopup
 daily.dev##.flex > div.z-modal:has(> img[src*="login-popover-dailydev"])
 sp.nicovideo.jp#%#//scriptlet('trusted-set-local-storage-item', 'page_show_app_dialog_last_shown_date', '"2045-11-19T08:06:31.175Z"')
 cyderes.com###hs-web-interactives-bottom-anchor
@@ -12106,7 +12107,6 @@ mp3semti.com##body > div.bldrmAcik
 ||bfm.ru/push-subscribe.js
 tomarnarede.pt##.notification-master-subscribe
 cmjornal.pt##.container_book_push
-dom.ria.com##div[class^="PopupNotificationsComponent__Wrapper"]
 ||pasazer.com/push-subscribe.js
 stiga.com##.am-notification-wrapper
 /static/js/medya-push.js$domain=haberler.com|sondakika.com
@@ -12895,6 +12895,8 @@ officelife.media#$##subscribePushModal ~ div.modal-backdrop { display: none !imp
 officelife.media#$#body { overflow: visible !important; }
 filmweb.pl#%#//scriptlet("abort-on-property-read", "webPushPublicKey")
 !+ NOT_OPTIMIZED
+dom.ria.com##div[class^="PopupNotificationsComponent__Wrapper"]
+!+ NOT_OPTIMIZED
 armeniasputnik.am,sputniknewslv.com##.modal-push
 !+ NOT_OPTIMIZED
 techxplore.com,phys.org###subscribeToWebPush
@@ -13177,6 +13179,10 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+teknoblog.com###tps-sticky[aria-label="Google Tercihli Kaynak"]
+teknoblog.com##.tps-aside[aria-label="Google Tercihli Kaynak"]
+teknoblog.com##.tb-wa-cta
+kudago.com###subscription-block
 deutschepost.de##.main > .stripe:has(.coffer > .coffer__content a[href="https://shop.deutschepost.de/newsletter-abonnieren"])
 money.it##.google-follow-wrapper
 money.it##.m26-newsletter
@@ -15887,6 +15893,7 @@ zoom.us#$#body.zoom-popup-parent--hidden { overflow: auto !important; width: aut
 computerbild.de##.socialBar__newsletter
 computerbild.de##.NewsletterEmbed__iframe
 ||resources-production.la.welt.de/la-paperboy-widget
+welt.de##.is-newsletter
 ksta.de##.newsletter-widget-background
 goal.com##div[data-testid="article-body"] > .fco-responsive-table:has(td > a[href^="https://www.whatsapp.com/channel/"])
 opumo.com#%#//scriptlet('set-cookie', 'o-newsletter-popup', 'hide')

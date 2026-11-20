@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bu0C+WxF1ENxE8f9dOOe9Q
-! Diff-Path: ../patches/19/19-s-1795151498-3600.patch
+! Checksum: KHvaVWD5PfZnnfEwcHURwA
+! Diff-Path: ../patches/19/19-s-1795155310-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.88.19
-! TimeUpdated: 2026-11-20T05:08:52+00:00
+! Version: 2.0.88.20
+! TimeUpdated: 2026-11-20T06:12:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3366,6 +3366,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+symbaloo.com###libraryRegisterPopup
 daily.dev##.flex > div.z-modal:has(> img[src*="login-popover-dailydev"])
 cyderes.com###hs-web-interactives-bottom-anchor
 bigo.tv##.room-recommend-live ~ div.login-popup:not(:has(.btn-close))
@@ -11951,7 +11952,6 @@ mp3semti.com##body > div.bldrmAcik
 ||bfm.ru/push-subscribe.js
 tomarnarede.pt##.notification-master-subscribe
 cmjornal.pt##.container_book_push
-dom.ria.com##div[class^="PopupNotificationsComponent__Wrapper"]
 ||pasazer.com/push-subscribe.js
 stiga.com##.am-notification-wrapper
 /static/js/medya-push.js$domain=haberler.com|sondakika.com
@@ -12736,6 +12736,8 @@ officelife.media###subscribePushModal ~ div.modal-backdrop:style(display: none !
 officelife.media##body:style(overflow: visible !important;)
 filmweb.pl##+js(abort-on-property-read, webPushPublicKey)
 !+ NOT_OPTIMIZED
+dom.ria.com##div[class^="PopupNotificationsComponent__Wrapper"]
+!+ NOT_OPTIMIZED
 armeniasputnik.am,sputniknewslv.com##.modal-push
 !+ NOT_OPTIMIZED
 techxplore.com,phys.org###subscribeToWebPush
@@ -13018,6 +13020,10 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+teknoblog.com###tps-sticky[aria-label="Google Tercihli Kaynak"]
+teknoblog.com##.tps-aside[aria-label="Google Tercihli Kaynak"]
+teknoblog.com##.tb-wa-cta
+kudago.com###subscription-block
 deutschepost.de##.main > .stripe:has(.coffer > .coffer__content a[href="https://shop.deutschepost.de/newsletter-abonnieren"])
 money.it##.google-follow-wrapper
 money.it##.m26-newsletter
@@ -15668,6 +15674,7 @@ zoom.us##body.zoom-popup-parent--hidden:style(overflow: auto !important; width: 
 computerbild.de##.socialBar__newsletter
 computerbild.de##.NewsletterEmbed__iframe
 ||resources-production.la.welt.de/la-paperboy-widget
+welt.de##.is-newsletter
 ksta.de##.newsletter-widget-background
 goal.com##div[data-testid="article-body"] > .fco-responsive-table:has(td > a[href^="https://www.whatsapp.com/channel/"])
 opumo.com##+js(set-cookie, o-newsletter-popup, hide)

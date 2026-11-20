@@ -1,9 +1,9 @@
-! Checksum: 9qUDhDsNaxFaCrAS9HJ2wg
-! Diff-Path: ../patches/19/19-s-1795151462-3600.patch
+! Checksum: 26r1mVKEq5VPdjHmqlKljA
+! Diff-Path: ../patches/19/19-s-1795155291-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.88.19
-! TimeUpdated: 2026-11-20T05:08:52+00:00
+! Version: 2.0.88.20
+! TimeUpdated: 2026-11-20T06:12:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2942,6 +2942,7 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+symbaloo.com###libraryRegisterPopup
 daily.dev##.flex > div.z-modal:has(> img[src*="login-popover-dailydev"])
 cyderes.com###hs-web-interactives-bottom-anchor
 bigo.tv##.room-recommend-live ~ div.login-popup:not(:has(.btn-close))
@@ -8864,7 +8865,6 @@ mp3semti.com##body > div.bldrmAcik
 ||bfm.ru/push-subscribe.js
 tomarnarede.pt##.notification-master-subscribe
 cmjornal.pt##.container_book_push
-dom.ria.com##div[class^="PopupNotificationsComponent__Wrapper"]
 ||pasazer.com/push-subscribe.js
 stiga.com##.am-notification-wrapper
 /static/js/medya-push.js$domain=haberler.com|sondakika.com
@@ -9587,6 +9587,8 @@ ndtv.com/js/notify.js
 !
 !
 !+ NOT_OPTIMIZED
+dom.ria.com##div[class^="PopupNotificationsComponent__Wrapper"]
+!+ NOT_OPTIMIZED
 armeniasputnik.am,sputniknewslv.com##.modal-push
 !+ NOT_OPTIMIZED
 techxplore.com,phys.org###subscribeToWebPush
@@ -9870,6 +9872,10 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+teknoblog.com###tps-sticky[aria-label="Google Tercihli Kaynak"]
+teknoblog.com##.tps-aside[aria-label="Google Tercihli Kaynak"]
+teknoblog.com##.tb-wa-cta
+kudago.com###subscription-block
 deutschepost.de##.main > .stripe:has(.coffer > .coffer__content a[href="https://shop.deutschepost.de/newsletter-abonnieren"])
 money.it##.google-follow-wrapper
 money.it##.m26-newsletter
@@ -12206,6 +12212,7 @@ zoom.us##div[type="SMS_EVERGREEN"]
 computerbild.de##.socialBar__newsletter
 computerbild.de##.NewsletterEmbed__iframe
 ||resources-production.la.welt.de/la-paperboy-widget
+welt.de##.is-newsletter
 ksta.de##.newsletter-widget-background
 goal.com##div[data-testid="article-body"] > .fco-responsive-table:has(td > a[href^="https://www.whatsapp.com/channel/"])
 misato-gurashi.com###follow
