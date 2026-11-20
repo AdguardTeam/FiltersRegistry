@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PmDOXcvBrOg7bBO3RB6wgw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1795169507-3600.patch
+! Checksum: yrwT8pq2I5rm1aSSHpYwEA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1795173108-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.5.83
-! TimeUpdated: 2026-11-20T10:07:48+00:00
+! Version: 2.5.5.84
+! TimeUpdated: 2026-11-20T11:07:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23889,6 +23889,9 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
+www.seznam.cz##div[style="height:300px;width:560px;"]
+||seznam.cz/*/v2/xhr|
+seznam.cz##+js(set-cookie, __nttd, 1)
 autoviny.sk##.bm-group
 autoviny.sk##.mtx
 sector.sk###newsload > div[style*="text-align:"]:has(> a[onmouseover])
@@ -39053,6 +39056,7 @@ vidbom.com##+js(abort-current-script, atob, removeCookie)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75585
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164633
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153636
+pinterest.*##+js(json-prune, $..data.*[?.is_promoted==true])
 pinterest.*##+js(json-prune, resource_response.data.[-].ad_data)
 ! Blocking ads based on property
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225455
@@ -41466,6 +41470,7 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+onefootball.com##.xtdgva_xpaLayoutContainerGridItemComponents > div.bys4-W_container
 ccn.com##div[id^="toplist-"]
 cinehd.vc##main > div.mt-6[style="background:transparent"]
 cinehd.vc##main > div.mt-8:has(> div[class] > a[href="https://royalminer.app/"])
