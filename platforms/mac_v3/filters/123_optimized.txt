@@ -1,9 +1,9 @@
-! Checksum: eBoNE4w7zgJgWj0qByeIDw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1795135741-14400.patch
+! Checksum: Ev49Dy2PzPZQr6z7ZreKig
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1795149449-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.72.49
-! TimeUpdated: 2026-11-20T00:46:40+00:00
+! Version: 2.1.72.50
+! TimeUpdated: 2026-11-20T04:35:08+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -196,6 +196,7 @@ _social-bar/
 ###facebook-popup
 ###facebook-share
 ###facebook-widget
+###facebookBox
 ###facebookFan
 ###facebookIcon
 ###facebookLike
@@ -357,6 +358,7 @@ _social-bar/
 ###share-bar
 ###share-below-desktop
 ###share-bottom
+###share-btns
 ###share-buttons
 ###share-card
 ###share-facebook
@@ -491,6 +493,7 @@ _social-bar/
 ###social-actions
 ###social-badges
 ###social-bar
+###social-border
 ###social-bottom
 ###social-box
 ###social-buttons-nav
@@ -1012,7 +1015,6 @@ _social-bar/
 ##.c-share-article
 ##.c-share-tools
 ##.c-share1
-##.c-sharebtn
 ##.c-site-footer__social-icons
 ##.c-sns
 ##.c-social-bar
@@ -1134,7 +1136,6 @@ _social-bar/
 ##.entry-socials
 ##.entryShare
 ##.entry__share
-##.entry_share
 ##.entypo-share
 ##.entypo-social
 ##.epcl-share-container
@@ -1756,6 +1757,7 @@ _social-bar/
 ##.list-share
 ##.list-social
 ##.list-socials
+##.listTrailerShare
 ##.list_share
 ##.list_sns
 ##.listing-share
@@ -1791,6 +1793,7 @@ _social-bar/
 ##.masterSocialbutton
 ##.masthead-social
 ##.mc-share-toggle
+##.md-list-share
 ##.md-social-toolbar-circle
 ##.mdi-facebook
 ##.mdi-share
@@ -1844,6 +1847,7 @@ _social-bar/
 ##.module-social-share-icons
 ##.mom-social-icons
 ##.mom-social-share
+##.mps-article-social
 ##.ms-share-container
 ##.mvp-alp-soc-list
 ##.mvp-foot-soc-list
@@ -2327,6 +2331,7 @@ _social-bar/
 ##.shareList
 ##.shareListBox
 ##.shareMenu
+##.shareModuleBar
 ##.shareMore
 ##.shareOption
 ##.sharePage
@@ -2675,6 +2680,7 @@ _social-bar/
 ##.social-cta
 ##.social-ext
 ##.social-float
+##.social-floating
 ##.social-follow
 ##.social-follow-bar
 ##.social-foot
@@ -3263,6 +3269,7 @@ _social-bar/
 ##.widget-social
 ##.widget-social-b
 ##.widget-social-icons
+##.widget-social-links
 ##.widget_FacebookLikeBox
 ##.widget_a2a_follow_widget
 ##.widget_add_to_any_subscribe_widget
@@ -3537,7 +3544,7 @@ taylorfrancis.com###openShare
 fia.com###page-pre-footer
 tasteofhome.com###pch-social-icons
 mediaite.com###post-social
-chippewa.com,columbustelegram.com,journalstar.com,qctimes.com,siouxcityjournal.com###preferredSource
+bismarcktribune.com,chippewa.com,columbustelegram.com,journalstar.com,pantagraph.com,qctimes.com,siouxcityjournal.com,wcfcourier.com###preferredSource
 wikihow.com###preferred_source_btn
 wikihow.com###sf
 bracketfights.com,ecuadoradio.ec,tiermaker.com###share-container
@@ -3608,7 +3615,6 @@ foxbusiness.com,foxnews.com##.amp-share
 asiaone.com##.ao-share-buttons
 firstpost.com##.art-soc-icons
 hindustantimes.com##.artShare
-androidpolice.com,carbuzz.com,cbr.com,collider.com,footballfancast.com,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,movieweb.com,pocket-lint.com,polygon.com,screenrant.com,simpleflying.com,thegamer.com,thetravel.com,xda-developers.com##.article-add-google
 jpost.com##.article-buttons-wrap
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
@@ -3629,6 +3635,7 @@ insider-gaming.com##.aspect-1660-250
 insider-gaming.com##.aspect-400-600
 secretchicago.com,secretldn.com##.author-share-buttons
 adweek.com##.aw-social-share-container
+techpartner.news##.badge-light
 beebom.com##.beebom-social-share
 gobankingrates.com##.between-share-and-author
 military.com##.block--addtoanyadv
@@ -3911,6 +3918,7 @@ tmz.com##.social-item
 knewz.com,politico.eu,revolvermag.com##.social-items
 psychologytoday.com##.social-links-bottom
 reuters.com##.social-links-module__wrap-links__Zxr2b
+complex.com##.social-links-top
 adn.com,casino.org,lrt.lt##.social-list
 99percentinvisible.org,churchpop.com,dersonntag.at,toofab.com##.social-nav
 eltecolote.org,melmagazine.com,mississippifreepress.org,orlandoweekly.com,prismreports.org,sacurrent.com,thefrisc.com,worldcrunch.com##.social-navigation
@@ -3954,6 +3962,7 @@ npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
 hindustantimes.com##.subscribe-social
 locals.com##.support-now
 targettrend.com##.sws_supernormalaction
+gamingbolt.com##.tag-social-media
 celebs100.com##.tags-share-box
 notthebee.com##.take-shareables
 cybersecuritynews.com##.tdm-ii-wrap
@@ -3990,6 +3999,7 @@ military.com,polygon.com##.w-google-addus-btn
 androidpolice.com,babygaga.com,backyardboss.net,carbuzz.com,cbr.com,collider.com,dualshockers.com,footballfancast.com,footballleagueworld.co.uk,gamerant.com,givemesport.com,hardcoregamer.com,hotcars.com,howtogeek.com,makeuseof.com,moms.com,movieweb.com,pocket-lint.com,pocketnow.com,screenrant.com,simpleflying.com,thegamer.com,therichest.com,thesportster.com,thethings.com,thetravel.com,topspeed.com,xda-developers.com##.w-google-addus-btn--article-header-variants
 polygon.com##.w-sharing-bottom
 beincrypto.com##.want-to-know-more-block
+whispersinthecorridors.in##.wh-share
 dailymail.co.uk,oogtv.nl##.whatsapp
 aajtak.in,businesstoday.in##.whatsapp_channel
 business-standard.com##.whtsclick
@@ -4545,7 +4555,6 @@ google.com#@#SHARE-BUTTON
 geki-cine.jp,heiwa-9inday.jp,hypnosismic-anime.com,idolmaster-official.jp,mamodan-plus.clony.co.jp,monsterhunternow.belugacpn.jp,ranking.sanrio.co.jp,ufret.jp#@#a[href^="https://twitter.com/intent/tweet?"]
 petsmart.com,ranking.sanrio.co.jp#@#a[href^="https://www.facebook.com/sharer/sharer.php"]
 playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"]
-@@/angular-facebook.js
 @@/wp-content/plugins/bwp-minify/min/?*,wp-content$script,stylesheet,~third-party
 @@/wp-content/plugins/share-this-image/*$~third-party
 @@/wp-content/plugins/wordpress-social-login/*$~third-party
