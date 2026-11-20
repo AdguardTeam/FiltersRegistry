@@ -1,9 +1,9 @@
-! Checksum: 7QvUWb1lkW3MkAoOSqisng
-! Diff-Path: ../patches/260/260-s-1795120710-14400.patch
+! Checksum: 6O37nWaNygHshD3JqP+ggw
+! Diff-Path: ../patches/260/260-s-1795135729-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.25
-! TimeUpdated: 2026-11-19T20:36:32+00:00
+! Version: 2.0.3.26
+! TimeUpdated: 2026-11-20T00:47:13+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -111,6 +111,8 @@ alphacoders.com##.item:has(.thumb-tag-masonry:is([href="https://alphacoders.com/
 ||www.amazon.*/rufus/$xmlhttprequest,domain=www.amazon.*
 ! AI questions in autocomplete search suggestions
 www.amazon.*#%#//scriptlet('json-prune-xhr-response', 'suggestions.[-].widgetId', '', '/suggestions')
+! * Backup CSS filter
+www.amazon.*##[id^="sac-suggestion-row-"]:has(.s-suggestion-rufus-autocomplete-bh-desktop-icon-container)
 ! Search placeholder messages (No longer used?)
 www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Ask Alexa a question"]')
 www.amazon.com#%#//scriptlet('ubo-json-edit', '$.suggestions[?@.text=="Compare products with Alexa"]')
@@ -1356,8 +1358,10 @@ github.com##[data-testid="copilot-free-user-checklist"]
 github.com#$#li:has(> [data-tab-item="agents"]) { max-width: 0px !important; margin-left: calc(0px - var(--stack-gap-condensed,.5rem)) !important; visibility: hidden !important; }
 github.com##[data-component="ActionList.Item"]:has(> [data-tab-item="agents"])
 ! "Ask Copilot about this repository" when repository has no README file (ex: https://github.com/easylist/easylistchina)
-! Might be limited to enterprise users with Copilot
-github.com##[class^="OverviewRepoFiles-module_"]:has([data-component="Blankslate"] .octicon-copilot)
+! * Enterprise account
+github.com##[class^="OverviewRepoFiles-module_"][class$="_Box_1"]:has([data-component="Blankslate"] .octicon-copilot)
+! * Non-enterprise account
+github.com##[class^="Box_1__"]:has([data-component="Blankslate"] .octicon-copilot)
 ! -- https://github.com/Stevoisiak/Stevos-AI-Blocklist/blob/main/GenAI-Blocklist.txt (File view)
 ! File header - "Ask Copilot about this file" button
 github.com###blob-view-header-copilot-icon
@@ -2078,6 +2082,10 @@ workspace.google.com##.ORSkHc:has([data-appset-type="49"])
 ||ai-search-dot-gsuite-staging.appspot.com/api/answer$xmlhttprequest,domain=workspace.google.com
 ! AI search summary
 workspace.google.com##.summary
+! === Grand Forks Herald ===
+! -- https://www.grandforksherald.com/search?q=test
+! Ask Herald chatbot
+||assets.dappier.com/widget/dappier-loader.min.js$script,domain=www.grandforksherald.com
 ! === Graphed ===
 ! -- https://www.graphed.com/blog/can-you-delete-data-from-google-analytics
 ! Mid-article AI Agent promos
@@ -2920,6 +2928,10 @@ search.naver.com##[data-meta-ssuid-extra="fender_renderer-ai_briefing"]
 ||aib-api.naver.com/aibrender.naver?where=nexearch&query=$xmlhttprequest,domain=search.naver.com
 ! AI tab
 search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
+! == ND Mais (Portuguese)
+! -- https://ndmais.com.br/economia/governo-aumenta-valor-da-hora-extra-fim-escala-6x1-nova-regra-data/
+! Summarize article
+ndmais.com.br##.nd-ro__resumo
 ! === NDTV ===
 ! -- https://www.ndtv.com/feature/amazon-announces-90-day-code-safety-reset-amid-ai-related-outages-know-details-11203576
 ! "Quick Read" AI summary
@@ -3420,6 +3432,9 @@ replug.io##.mantine-1fndqk8
 ! -- https://risingwave.com/blog/essential-guide-to-find-sql-server-hostname-and-port/
 ! Header promo banner
 risingwave.com##div.bg-\[\#3a88fe\]:has(+ header):has(a[href*="interactive-ai"])
+! === Rivulis (Hebrew) ===
+! Chatbot
+||sitegpt.ai/widget/$script,domain=he.rivulis.com
 ! === Rock 30 Games ===
 ! Floating AI assistant button
 rock30games.com##clever-search-toggler
@@ -3528,6 +3543,9 @@ admin.shopify.com##[class^="_ControlsContainer_"] > [class*="_SectionBreak_"]:ha
 ! -- https://admin.shopify.com/store/[id]/settings/general/store-contact-details
 ! Store name - Get name ideas from Sidekick
 admin.shopify.com##[data-component-name="store-name-suggestion-footer"]
+! -- https://community.shopify.com/t/new-in-shipping-batching-scan-to-verify-and-more/690349
+! AI topic summary
+community.shopify.com##.ai-topic-summary
 ! -- https://shopify.dev/docs
 ! Header - Ask Assistant
 ! TODO: Remove AI hotkey for `/`
@@ -3894,6 +3912,10 @@ turbotax.intuit.com###aic-entry
 tutorbin.com##[class^="dropdown_li__"]:has(> [class^="dropdown_ai_tool___"])
 ! AI Study Tools section
 tutorbin.com##section:has([href="/ai-homework-helper"] > [class^="Aisection_tryAiText__"])
+! === TweakTown ===
+! -- https://www.tweaktown.com/news/114756/intel-claims-new-lpddr5x-d270-gpu-outperforms-rtx-pro-6000-with-gddr7-at-half-the-power-consumption/index.html
+! Story Q&A
+www.tweaktown.com##.tt-faq-wrapper
 ! === Twilio ===
 ! -- https://www.twilio.com/docs/sendgrid/api-reference
 ! Copy as markdown > Open in assistant

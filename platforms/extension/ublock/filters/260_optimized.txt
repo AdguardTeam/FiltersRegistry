@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JPJ8rti2UWUoJBeivVBOPQ
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1795120716-14400.patch
+! Checksum: ZLVP260OzPkcGNHWbMKxYw
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1795135734-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.25
-! TimeUpdated: 2026-11-19T20:36:32+00:00
+! Version: 2.0.3.26
+! TimeUpdated: 2026-11-20T00:47:13+00:00
 ! Expires: 5 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,3p
@@ -39,6 +39,7 @@ www.aliexpress.us##div:has(> [class^="seo-sellpoints--title--"]) + [class^="spli
 alphacoders.com##.item:has(.thumb-tag-masonry:is([href="https://alphacoders.com/ai-art-wallpapers"], [href="https://alphacoders.com/midjourney-wallpapers"]))
 ||www.amazon.*/rufus/$xhr,domain=www.amazon.*
 www.amazon.*##+js(json-prune-xhr-response, suggestions.[-].widgetId, , propsToMatch, /suggestions)
+www.amazon.*##[id^="sac-suggestion-row-"]:has(.s-suggestion-rufus-autocomplete-bh-desktop-icon-container)
 www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Ask Alexa a question"])
 www.amazon.com##+js(json-edit, $.suggestions[?@.text=="Compare products with Alexa"])
 www.amazon.*###nav-rufus-disco
@@ -544,7 +545,8 @@ github.com##.start-copilot-banner
 github.com##[data-testid="copilot-free-user-checklist"]
 github.com##li:has(> [data-tab-item="agents"]):style(max-width: 0px !important; margin-left: calc(0px - var(--stack-gap-condensed,.5rem)) !important; visibility: hidden !important;)
 github.com##[data-component="ActionList.Item"]:has(> [data-tab-item="agents"])
-github.com##[class^="OverviewRepoFiles-module_"]:has([data-component="Blankslate"] .octicon-copilot)
+github.com##[class^="OverviewRepoFiles-module_"][class$="_Box_1"]:has([data-component="Blankslate"] .octicon-copilot)
+github.com##[class^="Box_1__"]:has([data-component="Blankslate"] .octicon-copilot)
 github.com###blob-view-header-copilot-icon
 github.com##div:has(> [class*="CopilotPopover-module__copilotButton__"])
 github.com###copilot-button-container
@@ -838,6 +840,7 @@ workspace.google.com##section[data-module="TemplateLocalizedModuleContainer"]:ha
 workspace.google.com##.ORSkHc:has([data-appset-type="49"])
 ||ai-search-dot-gsuite-staging.appspot.com/api/answer$xhr,domain=workspace.google.com
 workspace.google.com##.summary
+||assets.dappier.com/widget/dappier-loader.min.js$script,domain=www.grandforksherald.com
 www.graphed.com##[data-sentry-component="BlogCTADashboard"]
 www.graphed.com##[data-sentry-component="BlogCTAPdf"]
 grafana.com##.first-section-class:has([aria-label="Ask AI question input"])
@@ -1170,6 +1173,7 @@ www.naver.com###search-ai-tab-button
 search.naver.com##[data-meta-ssuid-extra="fender_renderer-ai_briefing"]
 ||aib-api.naver.com/aibrender.naver?where=nexearch&query=$xhr,domain=search.naver.com
 search.naver.com##[role="tab"][href^="?ssc=tab.ait.all"]
+ndmais.com.br##.nd-ro__resumo
 www.ndtv.com##.ASum_wr.ASum_Mnon
 www.newegg.com##.header2021-celeste
 www.newegg.com##.header2021-search-sec-ask
@@ -1359,6 +1363,7 @@ render.com##.px-15[href^="https://chat.openai.com/?hints=search&prompt=Read%20fr
 render.com##.px-15[href^="https://claude.ai/new?q=Read%20from"]
 replug.io##.mantine-1fndqk8
 risingwave.com##div.bg-\[\#3a88fe\]:has(+ header):has(a[href*="interactive-ai"])
+||sitegpt.ai/widget/$script,domain=he.rivulis.com
 rock30games.com##clever-search-toggler
 www.rockettes.com##.control--chat
 rows.com##footer div:has(> section [href="https://superhuman.com/docs"])
@@ -1399,6 +1404,7 @@ admin.shopify.com##div[class^="_SidekickField_"][data-sidekick-field]
 admin.shopify.com##[class^="_ControlsContainer_"] > [class*="_SectionBreak_"]:has(#sidekick-field-activator)
 [class^="_Section_"]
 admin.shopify.com##[data-component-name="store-name-suggestion-footer"]
+community.shopify.com##.ai-topic-summary
 shopify.dev##li[class*="_ActionAskAssistant_"]:has(> #open-assistant)
 www.shutterfly.com###paige-ai-chatbot-button-desktop
 www.shutterfly.com###paige-ai-chatbot-button-mobile
@@ -1540,6 +1546,7 @@ www.tunepocket.com###pageholder > #tp-main-head:style(margin-top: -5px !importan
 turbotax.intuit.com###aic-entry
 tutorbin.com##[class^="dropdown_li__"]:has(> [class^="dropdown_ai_tool___"])
 tutorbin.com##section:has([href="/ai-homework-helper"] > [class^="Aisection_tryAiText__"])
+www.tweaktown.com##.tt-faq-wrapper
 www.twilio.com##[data-paste-element="MENU_GROUP"][aria-label="Open in assistant"]
 www.twilio.com##[data-paste-element="MENU_SEPARATOR"]:has(+ [data-paste-element="MENU_GROUP"][aria-label="Open in assistant"])
 www.udemy.com##.link[href="/topic/chatgpt/"]
