@@ -1,9 +1,9 @@
-! Checksum: 2k5qwHYQpAHQkYXZfBGWbw
-! Diff-Path: ../patches/27/27-s-1795162378-3600.patch
+! Checksum: uXfH75PgSB4JXh1NkDnoIA
+! Diff-Path: ../patches/27/27-s-1795165853-3600.patch
 ! Title: AdGuard Polish filter
 ! Description: Official Polish filters for AdBlock, uBlock Origin & AdGuard + AdGuard Polish filter. Filter list that specifically removes ads on websites in the Polish language.
-! Version: 2.0.1.0
-! TimeUpdated: 2026-11-20T08:10:58+00:00
+! Version: 2.0.1.1
+! TimeUpdated: 2026-11-20T09:09:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -45,6 +45,9 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247120
+radio.pl#%#//scriptlet('prevent-navigation', '/adblock')
+radio.pl#%#(()=>{const t=Function.prototype.toString,o={construct:(o,c,n)=>{try{const o=c[0];"function"==typeof o&&t.call(o).includes("adBlockerStatus")&&(c[0]=t=>t(!1))}catch(t){}return Reflect.construct(o,c,n)}};window.Promise=new Proxy(window.Promise,o)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244072
 @@||ewybory.eu^$generichide
 ewybory.eu#%#//scriptlet('prevent-setTimeout', 'blocked')
