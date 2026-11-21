@@ -1,4 +1,4 @@
-! Checksum: o7Q9qjNGLtphPJEclkx2bg
+! Checksum: 2NEkToYxpnVR5brpPJE2tg
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.58.30
@@ -34,6 +34,7 @@ lematin.ch#$#body { overflow: visible !important; }
 lematin.ch#$#body div.fc-ab-root:not(#style_important) { display: none !important; }
 tvasports.ca,coupdepouce.com#%#//scriptlet('set-constant', '__NEXT_DATA__.runtimeConfig._qub_sdk.qubConfig.ad.adBlockerDetectorEnabled', 'false')
 monlatuque.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+planhub.ca###popupAdBlockerDetected
 planhub.ca#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ NOT_OPTIMIZED
 fiches-auto.fr##body > button#back-to-top ~ div[id][style="display: block;"]
@@ -442,8 +443,8 @@ usine-digitale.fr,lemoniteur.fr##.b-ad-banner__wrap
 meilleure-innovation.com##.a-wrap:not(:has(>*))
 meilleure-innovation.com##.a-wrap:has(> div[id])
 lessentiel.lu##div[data-ad-unit-id]
+lejournaldelamaison.fr##div[data-actirise-slot]
 supersoluce.com,positivr.fr,lejournaldelamaison.fr##div[data-hbdbrk-parent]
-secondechance.org###div-gpt-pub-header
 radio.fr##.mx-auto:has(> div.super-reklame-header-holder)
 ici.radio-canada.ca##.adbox-cls
 cyclismactu.net#$#.stickySidePClong { min-height: auto !important; }
@@ -789,7 +790,6 @@ jeuxvideo.com,supertoinette.com,trustmyscience.com,peopleauquotidien.com,geo.fr,
 forumgaming.fr,forumactif.com,forum-airguns.com###page-body a[onclick*="'shift'"][target="_blank"]
 allocine.fr##.main-banner
 expressio.fr##.promoted-vcontainer
-neogeo-system.com##.inner a[onclick*="'shift'"][target="_blank"]
 lalanguefrancaise.com##div[style="min-height:600px;text-align:right;"]
 lecourrier-du-soir.com##.td-banner-wrap-full
 pornforrelax.com##.vda-item
@@ -876,6 +876,9 @@ modal.com#@#.marketing-container
 $script,third-party,domain=vipleague.im,badfilter
 /mads/*$badfilter
 /mads/*$domain=~letterboxd.com
+@@||flashb.id/universal/$domain=lejournaldelamaison.fr
+@@||flashb.id/assets/$domain=lejournaldelamaison.fr
+@@||srv.flashb.id/cfg/$domain=lejournaldelamaison.fr
 ||platform.edisound.com^$domain=lejournaldelamaison.fr,badfilter
 ||publishers.edisound.com^$domain=lejournaldelamaison.fr,badfilter
 $script,third-party,domain=asd.homes,badfilter
@@ -1651,7 +1654,6 @@ _adspromo.
 _adunit=
 _adv_300.
 _affiliate_banner_
-_android_ads.
 _article_ads-
 _banner_pub.
 _banniere-300.
@@ -1677,6 +1679,7 @@ _profits_ad-
 _program_ad.
 _pub.gif
 _pub_300x.
+_publicitaire/
 _publicite.
 _publicite_
 _pubscript.
@@ -1846,6 +1849,7 @@ _werbebanner_
 ||adsxxxtraff.com^$third-party
 ||adtech.com^$third-party
 ||adten.eu^$third-party
+||adtrafic.com^$third-party
 ||adturtle.biz^$third-party
 ||adultwork.com^$third-party
 ||adunblock.com^$third-party
@@ -1868,7 +1872,6 @@ _werbebanner_
 ||alldomserv2.com^$third-party
 ||alloclick.com^$third-party
 ||am-media.fr^$third-party
-||appsfire.com^$third-party
 ||apypxl.com^$third-party
 ||aquaplatform.com^$third-party
 ||aquipelis.tv^$third-party
@@ -1878,6 +1881,7 @@ _werbebanner_
 ||avantajadas.com.br^$third-party
 ||awms.ws^$third-party
 ||awsclic.com^$third-party
+||bayard-pub.com^$third-party
 ||bazardux.com^$third-party
 ||beaffiliates.fr^$third-party
 ||best-deals-products.com^$third-party
@@ -2930,6 +2934,7 @@ velduncinus.cfd
 ||yktxrceoyoxn.com^
 ||ymnu59pw4f96yo1ie2cv2ixwj2.cyou^
 ||yrtace.com^
+||yurakgorst.top^
 ||yxnylm7kci73vntw.rest^
 ||zarebasdezaley.com^
 ||zaudephaigrauto.net^
@@ -3060,12 +3065,12 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||allopass.com^*/pub/
 ||alloref.com^$image,third-party
 ||am.contobox.com^
+||amazonaws.com/aeup/$domain=~affilae.com
 ||ams.cdn.arkadiumhosted.com/advertisement/$media
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
 ||api.gamerprices.com/compare/$third-party
 ||arc.io/widget$third-party
 ||asumi.shinobi.jp^
-||atoowin.com/images/diffusion/
 ||autotrends.be^*/widget/$third-party
 ||awin1.com/awclick.php?
 ||azurewebsites.net/widget/
@@ -3112,7 +3117,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||f00.psgsm.net/p/891014/sigma-forum.gif
 ||flux.effiliation.com^
 ||forokeys.com/foro/banners/
-||freeflights.net/electronique/bannieres/
 ||fsx.i-run.fr^
 ||fuckandcdn.com^*/ads/
 ||full.video/*.htm
@@ -3155,7 +3159,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||mdhcdn.com^*/banner_
 ||medias.gupy.fr/*/nordvpn
 ||medias.gupy.fr/*/prime
-||meilleurdusexe.com/images/pub/
 ||meilleurduweb.com/images/pub/
 ||membersrule.com/getimg.php$third-party
 ||mhcdn.net^*/banner/
@@ -3185,6 +3188,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||pub-algeriatenders.s3.eu-central-1.amazonaws.com^
 ||pub.groupe-ldlc.com^
 ||qassa.fr/proban/
+||raidrush.net/passback.php
 ||ratehub.ca/widgets/$third-party
 ||recettes.de/images/logos/$third-party
 ||regie-agricole.com^*/pubs^$third-party
@@ -3198,6 +3202,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||satsupreme.com/images/banners/
 ||schule-und-familie.de/assets/images/banners/
 ||sexcity-girls.com/banner/
+||sexeautop.com/images/logos/
 ||shareasale.com/sale.cfm?amount=
 ||sherpa.agoda.com^$third-party
 ||shop.mango.com^$third-party
@@ -3544,7 +3549,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||pronosoft.com/img/pub/
 ||pub.le360.ma^
 ||qariya.info/adv/
-||ra-sante.com/wp-content/uploads/2020/01/isosteo.gif
 ||rajacasablanca.com/site/images/flash_banners/
 ||rapeporn.name^$script
 ||rapidgator.net/images/pics/
@@ -3586,6 +3590,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||trovitargentina.*/index.php/cod.get_premium/
 ||trucsweb.com^*/ban_$image
 ||tukif.*/webcams/
+||turf-fr.com/images/*x250.
 ||turfomania.fr/*-publicitaire/
 ||twitch.tv/track?
 ||uploadgig.com/static_/$media
@@ -3976,7 +3981,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.c-ads-sidebar
 ##.carrepub
 ##.catAds
-##.closeStartAdZone
 ##.co-ads
 ##.col-advert
 ##.column_in_pub
@@ -4069,6 +4073,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.leftaddsense
 ##.liens-sponsorises__external
 ##.line-adv
+##.link-background-advert
 ##.list-ads-468
 ##.logo-right-ads
 ##.logo_pub
@@ -4235,7 +4240,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pubaccueildroite1
 ##.pubads
 ##.pubadsense
-##.pubfond
 ##.pubimage
 ##.pubitem
 ##.publicidad
@@ -4266,7 +4270,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.r-pub--inread
 ##.r-pub--leader
 ##.rd-widget-ads
-##.regiePub
 ##.reklam-gizle
 ##.reklam-side
 ##.reklam728x90
@@ -4447,7 +4450,6 @@ moov.mg###box-link-left
 previmeteo.com###box_4_pub
 darty.com###brand
 cine-torrent.org,frenchtorrent.cc,magnet-torrent.org,mania-torrent.org,warez-torrent.org,zktorrent.org###btvpn
-conseils-courseapied.com###cadre-vignette-carnet
 ktotv.com###campain-bandeau
 renovationettravaux.fr###cboxOverlay
 wanarun.net###chaussuresCarousel
@@ -4474,6 +4476,7 @@ conseils-courseapied.com###equipement
 ville-ideale.com###esspub
 algeriepatriotique.com###flottante_droite
 amateur2sexe.fr###footer-boom
+liberation.fr###footer-partners-box
 hardware.fr###footer_img
 bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
@@ -4485,14 +4488,12 @@ buzzdefou.com,gerardmerinfo.fr###habillage_site
 tomsguide.fr,tomshardware.fr###header_leaderboard
 leboncoin.fr###home-top-banner
 meilleurmobile.com###home_mea_1
-meilleurmobile.com###home_mea_3
 touslesprix.com###hright
 confidentielles.com###hunt
 avis-express.com###icegram_messages_container
 madstef.com###idkey1ban
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
-freenews.fr###insidepic_widget
 marketing-professionnel.fr###leader-wrapper
 zdnet.fr###leaderBottom
 zdnet.fr###leaderTop
@@ -4546,7 +4547,6 @@ aliasdmc.fr,allocine.fr,annuaire-streaming.com,blablastream.com,centerblog.net,c
 dici.fr###pub-background
 ledemondujeu.com,minuteur-en-ligne.fr,musculaction.com,planeterenault.com,quiveutdufromage.com###pub2
 musculaction.com###pub3
-info-clipper.com###pubBando
 telequebec.tv###pubBaniereContainer
 telequebec.tv###pubIlotContainer
 remede.org###pubSky
@@ -4580,7 +4580,6 @@ ledevoir.com###top-publicite-placeholder
 turbo.fr###topShopper
 freepik.com###topbar
 flaticon.com###unicorn
-europages.fr###vipBox
 systemed.fr###vitrineFabricants
 sibnet.ru###vjs-overlayclip-container-box
 sharewood.lol###vpz
@@ -4646,7 +4645,6 @@ judgehype.com##.bannerATF_container
 2ememain.be##.bannerContainerLoading
 darjadida.com##.banner_125x125
 bfmtv.com##.banner_top
-liberte-algerie.com##.bannergroup_pave
 turf-fr.com##.banners-con
 multiup.io##.bg-info
 iladit.com##.bg-pub-interne
@@ -4664,7 +4662,6 @@ egora.fr##.block-egora-pub
 d8.tv##.block-mozaic-pub
 maison-travaux.fr##.blockUI
 cotemaison.fr##.block_partners
-mystere-tv.com##.blockrightpub
 liligo.fr##.bottom-banner
 banques-en-ligne.fr##.boxEliracashLNA
 techniques-ingenieur.fr##.boxPub
@@ -4707,9 +4704,7 @@ zktorrent.org##.downpremium
 echoroukonline.com##.ech-live__ads
 gamekult.com##.ed__news-h--native
 howtofix.guide##.eds-animate
-wp-infinity.com##.entry-featured
 manga-news.com##.external-link
-direct-radio.fr##.externe-right
 gameblog.fr##.footer__partners
 tukif.com,tukif.porn##.footer_partner_container_wrapper
 positivr.fr##.front-page-featured_partnr-section-container
@@ -4747,7 +4742,6 @@ boulanger.com,darty.com,fnac.com##.kmino-ad
 fnac.com##.kmino-component
 technplay.com##.kt-inside-inner-col
 linguee.com,linguee.fr##.l_deepl_ad_container
-nouvelobs.com##.leGuideContainer
 alvinet.com,hotmixradio.fr,jeu.fr,marques.expert,meteovista.be,radiox.com,rtbf.be,walfoot.be##.leaderboard
 team-aaa.com##.list-sponsors
 frandroid.com##.listplans-shortcode-container
@@ -4809,6 +4803,8 @@ ouedkniss.com##.promo-loader-interstitial
 tvanouvelles.ca##.promo-tva-inner
 expressio.fr##.promoted-vcontainer
 ados.fr,afrik-foot.com,afrik.com,afrikeco.com,agoravox.fr,agoravox.tv,annuaire-streaming.com,bhmag.fr,bienpublic.com,cciaf.org,centerblog.net,cio-online.com,commentreparer.com,construiresamaison.com,cotemaison.fr,cuisineactuelle.fr,dictionnaire-synonymes.com,docteurclic.com,educatout.com,elbotola.com,elheddaf.com,ennaharonline.com,europages.ma,fan-de-cinema.com,foot01.com,franceinfo.fr,franceinter.fr,gratuiciel.com,hellokids.com,ici.tou.tv,igen.fr,infoconcert.com,internetparsatellite.net,iphonesoft.fr,iphonetweak.fr,jeux-hentai.com,jeux-mmorpg.com,ktotv.com,lacentrale.fr,ladepeche.fr,larousse.fr,lefigaro.fr,leprogres.fr,lesdebiles.com,lesechos.fr,lesoir.be,lexpress.fr,logicielmac.com,logitheque.com,loractu.fr,macg.co,macommune.info,mapiaule.com,maximiles.com,meilleurtaux.com,menara.ma,midilibre.fr,montelimar-news.fr,mots-croises.ch,nextinpact.com,nintendo-master.com,orange.fr,ouest-france.fr,over-blog.com,programme.tv,radio-monaco.com,radioclassique.fr,remede.org,sfr.fr,skirandomag.com,slate.fr,sofoot.com,soonnight.com,sudinfo.be,techno-science.net,telemb.be,telequebec.tv,tf1.fr,tsa-algerie.com,turbo.fr,vipsg.fr,watchgeneration.fr,xboxygen.com,yabiladi.com,zupimages.net##.pub
+constructeurdemaison.net##.pub-content
+1point2vue.com,direct-radio.fr##.pub-header
 challenges.fr,sciencesetavenir.fr##.pub-home
 lematin.ma##.pub-medium
 lequipement.fr##.pub-revendeur
@@ -4933,7 +4929,6 @@ seneweb.com##a[href*="/xban/"]
 rtl.be##a[href*="://ad.doubleclick.net/"]
 fdesouche.com,forum-xiaomi.com##a[href*="://amzn.to/"]
 jeuxetcompagnie.fr##a[href*="://www.ludeek.com/"] > img
-challenges.fr##a[href*="=partenariat&"]
 challenges.fr,nouvelobs.com##a[href*="?partnerlinkid="]
 abcbourse.com,meteofrance.com##a[href*="?utm_source="]
 welovebuzz.com##a[href*="_adw&"]
@@ -4949,7 +4944,6 @@ leparisien.fr##a[href^="/bons-plans/"]
 agroligne.com,zone911.com##a[href^="/component/banners/"]
 babesxworld.com,cocogals.com##a[href^="/goto/"]
 igg-games.com##a[href^="/offernf?"]
-betaseries.com##a[href^="/partner/"]
 lesnumeriques.com##a[href^="/publicite/"]
 edcom.fr##a[href^="/regie"]
 skitour.fr##a[href^="divers/a/out.php?"]
@@ -5014,6 +5008,7 @@ superphysique.org##div[style*="text-align: center"][style*="width:250px"]
 gamalive.com##div[style*="width:160px;height:600px;"]
 judgehype.com##div[style*="width:300px;height:600px;"]
 echoroukonline.com,maxifoot.fr##div[style*="width:468px;"]
+livehost.fr##div[style*="width:728px"]
 forum.gsmhosting.com##div[style="float:right; width:336px; height:560px; margin-left:10px"]
 futura-sciences.com##div[style="height:90px; width:728px;"]
 vacanceo.com##div[style="width:310px;height:270px;"]
@@ -5037,6 +5032,7 @@ wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.btnnew
 wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.sadst
 01net.com,20minutes.fr,alarme.pages.dev,ariase.com,autoplus.fr,autosblog.fr,banqcompare.com,bemove.fr,chartreuse-tourisme.com,cosmopolitan.fr,degrouptest.com,dupple.com,echosdunet.net,edcom.fr,escp.eu,euridis-ecole.com,fournisseurs-electricite.com,futura-sciences.com,gotechpresso.com,jechange.fr,journaldugeek.com,larvf.com,lettre-resiliation.com,magazine-avantages.fr,magicmaman.com,marieclaire.fr,moneyvox.fr,numero.com,petitfute.com,presse-citron.net,resilier.com,selectra.info,techpresso.co,tesla-mag.com##[data-cf], [data-cf-end], [data-cf] ~ :has(~ [data-cf-end])
 1fr1.net,3oloum.com,7olm.org,ahladalil.com,ahlamontada.com,alamontada.com,arabepro.com,banouta.net,darkbb.com,easyforumpro.com,fcmulhousefans.com,forum2jeux.com,forumactif.com,forumactif.fr,forumactif.org,forumalgerie.net,forumotion.net,forumpro.fr,forums-actifs.com,galoppourlavie.org,gid3an.com,jordanforum.net,lebonforum.com,orizzontescuolaforum.net,own0.com,passionmilitaria.com,sorcieremonique.com,superforum.fr,syriaforums.net,walkingdead-rpg.com,yoo7.com,ze-43eme.com##.croco_wrapper, [onclick*="var"], [onmousedown*="\x"], [style*="height: 90px;"]
+cdiscount.com##.c-productCard:has(a[href*="?idOffre="][href*="&sw="])
 tvanouvelles.ca##.dfp-container:has(.dfp-ad)
 auchan.fr##.hp-banner:has(.hp-banner__message-sponsored)
 frandroid.com##.is-hidden-mobile:has([class^="Billboard"])
