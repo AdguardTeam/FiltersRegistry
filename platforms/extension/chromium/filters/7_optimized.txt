@@ -1,9 +1,9 @@
-! Checksum: 7g+Zrh6f6DTvtboM8Dy4Pg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1795187495-3600.patch
+! Checksum: n3mf3d7gw2wUc9ot6E9Xbg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1795263192-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.63
-! TimeUpdated: 2026-11-20T15:08:31+00:00
+! Version: 2.0.78.64
+! TimeUpdated: 2026-11-21T12:10:26+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||fod-cm-ad-v.webcdn.stream.ne.jp^
@@ -1557,6 +1557,8 @@ city.aomori.aomori.jp,lg.jp,city.numata.gunma.jp,city.tokai.aichi.jp,city.noda.c
 city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.ikoma.lg.jp,city.higashiosaka.lg.jp,city.higashiomi.shiga.jp,city.ogaki.lg.jp,city.tama.lg.jp,city.inzai.lg.jp,city.kyotanabe.lg.jp,city.himeji.lg.jp,city.hirakata.osaka.jp,city.osaka.lg.jp,city.kyoto.lg.jp,city.maizuru.kyoto.jp,city.iga.lg.jp##.bana
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+225225.jp###adsBtm
+225225.jp###adsMid
 livecombs.com##[class^="m"]:has(> div.md\:h-\[280px\])
 livecombs.com#?#div.text-center:contains(Sponsored Link):upward(1)
 livecombs.com##.divide-y > aside:has(> ins)
@@ -1628,7 +1630,7 @@ dengekionline.com##div[class^="InLead-"]
 ||socialxup.com/go/$urltransform=/go\/.*//
 ||socialxup.com^$removeheader=location
 socialxup.com#%#//scriptlet('prevent-window-open', '_blank')
-socialxup.com#?#a[data-track="related_click"]:not(:contains(フォロワー))
+socialxup.com#?#a[data-track="related_click"]:not(:has(> div[class="flex flex-col items-center text-center"] > img[src^="/avatar/"][src$=".png"][height="48"][width="48"][style="color: transparent;"] + p + p[class="text-xs text-gray-500 truncate w-full"] + p[class="text-xs text-blue-600 mt-1"]:contains(/^\d+(,\d+)? フォロワー$/)))
 socialxup.com##a.bg-yellow-300
 socialxup.com##a.border-indigo-300
 socialxup.com##aside *:has(> a:not([href*="/tools/"], [href*="/genre/"], [data-track^="sidebar_"]))
@@ -9642,6 +9644,9 @@ globaledu.jp##.one_banner
 ouminews.net##.oumi-widget
 yurukuyaru.com###float_left
 yurukuyaru.com##.article-bottom
+jin115.com##div[class^="article"] > a[href^="https://link.amazon"]
+jin115.com##div[class^="article"] > a[href^="https://link.amazon"] + br
+jin115.com##div[class^="article"] > font[color="#CC0000"][size="+1"]:has(+ br + a[href^="https://link.amazon"])
 jin115.com###footer-menu > ul.submenu > li:has(> a[href^="http://hb.afl.rakuten.co.jp"])
 jin115.com###footer-menu > ul.submenu > li:has(> a[href^="https://amzn.to"])
 jin115.com##div[class^="article"] > font[color="#CC0000"][size="+1"]:has( + br + table[style="text-align:left;margin-left:0;margin-right:0;"])
