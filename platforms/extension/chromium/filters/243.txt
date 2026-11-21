@@ -1,14 +1,14 @@
-! Checksum: xyX2YxXYEx0gRJdcq8pCmQ
-! Diff-Path: ../patches/243/243-s-1795163818-14400.patch
+! Checksum: 7DCRX5p8eF2H9pkzFP0TXg
+! Diff-Path: ../patches/243/243-s-1795250278-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.89
-! TimeUpdated: 2026-11-20T08:35:22+00:00
+! Version: 2.0.25.90
+! TimeUpdated: 2026-11-21T08:35:39+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-11-20 07:13:52 CET
+! Last modified: 2026-11-21 07:16:04 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -732,7 +732,7 @@ haboportalen.se###dynamic_box_right
 haften.se##.loader
 hallbartbyggande.com##div[id^="hallb-"]
 hallbyhandboll.se,skiljebosk.nu,molndalfotboll.com##.cookiePush, .stickyFollow, .sponsorGroup__item, .sa-ad-sidebar
-halmstadsport.se##.gs_logo_area, .small-adv
+halmstadsport.se##section[aria-label="Huvudpartners"], #partners
 hammarbyfotboll.se#$#body[data-modal-open] { overflow-y:unset!important; }
 hammarbyfotboll.se#?#div[class*="module--banner"]:contains(Annons):upward(1)
 hammarbyfotboll.se###seasonalTakeover, div[class*="sponsorBarContainer"], div[class*="footerSponsors"], .slick-slide a[target="_blank"]
@@ -1218,7 +1218,7 @@ nyheter.fiskejournalen.se,jaktjournalen.se#?#.kicker:is(.below, .above):contains
 nyheter.swebbtv.se#?#.recent-posts-widget-with-thumbnails:contains(/annonssamarbete|annons/i)
 nyheter.swebbtv.se##.wp-block-image a[target]:not([href*="nyheter.swebbtv.se"]), .mh-sidebar-2 .indexlink, .mh-slider-widget
 nyhetsbyranjarva.se##div[style="display: flex; justify-content: center; flex-direction: column; align-items: center;"]
-nyhetsbyranjarva.se,nyan.ax,tv-kanal.se,golfguidenonline.se,rockbladet.se,vildmarken.se,nyhetersto.se,dagenslogistik.se,turismnytt.se,radiosol.se,cora.se,travelandtourworld.se,mallorcanyheter.com,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,it-hallbarhet.se,fisheco.se,opusmagasin.se,samefolket.se##.g
+nyhetsbyranjarva.se,nyan.ax,tv-kanal.se,golfguidenonline.se,rockbladet.se,vildmarken.se,nyhetersto.se,dagenslogistik.se,turismnytt.se,radiosol.se,cora.se,travelandtourworld.se,mallorcanyheter.com,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,it-hallbarhet.se,fisheco.se,opusmagasin.se,samefolket.se,vmhockey.se##.g
 nyteknik.se,lag-avtal.se,arbetarskydd.se##article:has(a[href*="/sponsrad"])
 nyteknik.se,lag-avtal.se,arbetarskydd.se#?#.kicker:contains(ANNONS):upward(article)
 nyteknik.se,lag-avtal.se,arbetarskydd.se##.placeholder:has(.google-ad)
@@ -1443,7 +1443,6 @@ sportbilen.se##.widget:has(a[href*="casino"], .adsbygoogle)
 sportbloggare.com##.partners-box, .cube-bonus-list, .section-featured-links-column, .section-bonus-list, a[href="https://sportbloggare.com/casino-bonus"], a[href="https://sportbloggare.com/bettingsidor"], a[href="https://sportbloggare.com/betting-bonus"]
 sporthalsa.se##.header_top, #media_image-2, #text-6, article[class*="veckans-produkt"], a[href*="/annonsering"], .art_category-partnerinnehall
 sportlovin.se##div[style*="min-height"]:has(div[id^="sportlovin_"])
-sportnik.com##.index-footer-section:has(.make-money-partners)
 sportpanelen.se###mvp-side-wrap .homepage-widget:has(a[href*="utanlicens"])
 sportpanelen.se#?#.mvp-blog-story-wrap:contains(/kasino|casino/i)
 sportpanelen.se,sportnyheter.nu,sporthalsa.se,sport24.nu,golfbladet.se##.textwidget:has(a[href*="casino"])
@@ -1624,7 +1623,10 @@ tv4.se,skippo.se,koket.se,travnet.se,f1news.se,marcusoscarsson.se##.maxetise
 tv24.se##li[id^="infeed"], div.presented-by
 tvmatchen.nu##.bet365, .panorama-wrapper, .tvg-manager-box, .tv102945, .tv102987, #event_banner, .go-to-partner, .odds, #text-13, .left-skyscraper-wrapper, .right-skyscraper-wrapper, .sticky-top-wrapper, div[class*="-ads"], a[href*="/oddsbonusar/"], a[target][href*="/go?link="], .rt-odds-wrapper
 tvmatchen.nu##.menu-item:has(a[href$="/betting/"])
-tvsporten.nu##div[class*="odds_container"], .sidebar a[target], .fixture-ad-wrapper, #tower-1, div[class*="-ads"]
+tvsporten.nu##div[class*="EventListInsert_insert"]:has(div[class*="ResponsiveAd"])
+tvsporten.nu#$#div[class*="Layout_panoramaContent"] { padding-top:unset!important; }
+tvsporten.nu##div[class*="ResponsiveAd"], div[class*="Layout_panoramaBanner"], div[class*="Layout_panoramaSpacer"]
+tvsporten.nu##.tvs-cta-box:has(a[rel*="sponsored"])
 tv.nu##a[href*="adform.net"], .ad-fullscreenWallpaper__container, div[data-advertory-ad-rendered]
 tv.nu###modal div[itemtype][itemscope] > div[class]:has(a[href*="doubleclick"])
 tv.nu#?##tv-schedule section:contains(ANNONS)
