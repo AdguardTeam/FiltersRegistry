@@ -1,9 +1,9 @@
-! Checksum: p0IK8TwqmDrCSlcp7nd78Q
-! Diff-Path: ../patches/102_optimized/102_optimized-s-1795308799-14400.patch
+! Checksum: oxT4Z8JMwuAanLUHclgwmA
+! Diff-Path: ../patches/102_optimized/102_optimized-s-1795322290-14400.patch
 ! Title: ABPindo (Optimized)
 ! Description: Additional filter list for websites in Indonesian and Malay.
-! Version: 2.0.10.77
-! TimeUpdated: 2026-11-22T00:50:07+00:00
+! Version: 2.0.10.78
+! TimeUpdated: 2026-11-22T04:34:56+00:00
 ! Expires: 10 days (update frequency)
 ||accesstrade.co.id^$third-party
 ||ad-loupe.com^$third-party
@@ -208,6 +208,7 @@
 .tv/iklan/$image,stylesheet
 /0iklan-$image
 /1iklan-
+/^https:\/\/[0-9a-z]{6,12}\.in(?:\/[a-z]{2,10}){1,3}$/$match-case,script,third-party
 /ads/iklan.$image
 /ads/iklan/*$image
 /adv/iklan.$image
@@ -222,6 +223,7 @@
 /banner_iklan1.
 /banner_iklan2.
 /banner_kanan_
+/disable-devtool.min.js
 /diskon_iklan/*$image
 /foto_iklan/*$image
 /gambar_iklan/*$image
@@ -476,6 +478,7 @@ $popup,domain=animekompi.*|kiryuu.*|kiryuu03.*|komikstation.co|mangakita.id|wrt.
 ||utusan.com.my/utusan/iklan/
 ||wp.com/*.photobucket.com/*/Blogger%20Perempuan/banner-$domain=~bloggerperempuan.com
 ||wsmwidget.mediaprimalabs.com^$domain=bharian.com.my|hmetro.com.my
+||xys*-jadwal.pages.dev/adblock.js
 ||yourjavascript.com/0653544211/lompatin.js
 ||yourjavascript.com/1411253239/itu-domino-popup-script.js
 ||yourjavascript.com/9422241923/iklan-popweb-goalcoid.js
@@ -524,11 +527,14 @@ anichin.watch##a:has(img[src$=".gif"])
 anichin.co,idlixku.com##a[target*="blank"]:has(> img)
 /wp-content/uploads/*$media,redirect=noopmp4-1s,domain=nokephub.*
 bokepindo69.live#%#//scriptlet('ubo-nowoif')
+bokeptod.in#%#//scriptlet('ubo-nowoif')
 crotpedia.net#%#//scriptlet('ubo-noeval-if', 'ads')
 dodz.pro#%#//scriptlet('ubo-nowoif')
 dodz.pro#%#//scriptlet('ubo-set-constant', 'bait_b3j4hu231', 'true')
+doujin.desu.xxx#%#//scriptlet('ubo-aeld', 'contextmenu')
 info-menarik.net#%#//scriptlet('ubo-aopw', 'ai_front')
 kimcilonly.de#%#//scriptlet('ubo-nowoif')
+kingbokep.media#%#//scriptlet('ubo-nowoif')
 videyindo.space#%#//scriptlet('ubo-aeld', 'click', 'popMagic')
 videyindo.space#%#//scriptlet('ubo-nowoif')
 ||animekompi.sbs/wp-content/uploads/$media,redirect=noopmp4-1s
@@ -1170,6 +1176,7 @@ blogspot.com###floating_banner_bottom2
 bioskop78.com###floating_banner_bottoms
 bioskop90.com###floating_banner_left
 bioskop90.com###floating_banner_right
+streambola.group###floating_banner_top
 baladfilm.*,northridgeautospa.com,spucweb.com###floating_banner_top1
 bioskop78.com,nonton33.com###floating_banner_tops
 indosport.com###flyingcarpet-ad
@@ -1266,6 +1273,8 @@ kuramanime.*###playerOverplay
 metrotvnews.com###popup-ads
 bioskopkeren.*,dunia21official.*,terbit21.*###popup-banner
 anoboy.*###popup_box
+streambola.group###popupklan
+streambola.group###popupklanfooter
 tirto.id###premium
 pikiran-rakyat.com###prmn__megabillboard
 tafsirweb.com###promo-after
@@ -1314,6 +1323,7 @@ indotelko.com###vertical_top_kanal
 layanfilem.*,lk21official.*###videoAd
 animeindo.net###videoad1
 moenime.com###w-node-b77
+videye.pro###welcome-message
 komikpoi.com###wp-iklan-overlay
 bioskop78.com###wrap > center
 gooto.com###zone_3
@@ -1516,6 +1526,7 @@ kompas.com##.bannerR3A
 indonesiasatu.kompas.com##.bannerTop1
 kompas.com##.bannerTopOut
 sonora.id##.banner__giant
+streambola.group##.banner__item
 sonora.id##.banner__left
 sonora.id##.banner__right
 sonora.id##.banner__top
@@ -1761,6 +1772,7 @@ blog.arizman.com##.iklan-kiri-postingan
 suki48.web.id##.iklanSUKI
 cantika.com##.ikln
 animeindo.video##.in_up_ad-area
+streambola.group##.inline-banner
 cantika.com##.inner-ads-content-1
 ulasan.co##.inner-floatleft
 ulasan.co##.inner-floatright
@@ -2156,10 +2168,12 @@ iberita.com##[style="float:right; margin:7px 0 10px 10px;"] > small
 katadata.co.id##[style="height:0; min-height:180px;"]
 jawapos.com##[style^="height"][style$="align-items: center;"]
 insertlive.com##[style^="padding-top:16px;margin-bottom:24px;"]
+videye.pro##[style^="position: fixed;"]
 yasir252.com##a#download-link[rel]
 idxx1.*##a.bnner
 semarangkota.com##a.thirstylink
 yasir252.com##a.tombol-link[href][target][rel]
+movieku.website##a:has(img[src$=".gif"])
 tokopedia.com##a[data-testid="lnkProductContainer"]:has(img[alt^="topads"])
 westmanga.info##a[href="https://klik.fun/Kp7S5"]
 mypt3.com##a[href][target="_blank"] > img
@@ -9823,6 +9837,7 @@ igo-bokep.*,igo-bokep.bond,igobokep.*###GLOBAL-ADS-OVERLAY
 nekopoi.*###HTML1
 nekopoi.*###HTML9
 krucil.com###KD_adpB
+kingbokep.media###_0xAbModal
 i-jav.space#$##ab-wall { display: none !important; }
 vivamaxstream.com###ad-slot-13
 vivamaxstream.com###ad-slot-3
@@ -9939,6 +9954,12 @@ areakomik.com##.lin-header-ad-container
 areakomik.com##.lin-native-item.lin-ad-link
 drbokep.*##.loaded.ads-50
 vivamaxstream.com##.movie-top-ads
+nekopoi.care##.nk-ad-left
+nekopoi.care##.nk-ad-mobile
+nekopoi.care##.nk-ad-mobile-bottom
+nekopoi.care##.nk-ad-mobile-floating
+nekopoi.care##.nk-ad-mobile-top
+nekopoi.care##.nk-ad-pagenav
 javdesu.tv##.overflow-hidden.w-full.aspect-\[728\/90\].relative
 doujin.desu.xxx##.partner-slot-frame
 hentaisubindo.net##.pf-ad
@@ -10001,7 +10022,8 @@ anoboy.*,manhwadesu.im,manhwadesu.org##a[href^="https://klik.gg/"]
 slurr.my.id##a[href^="https://scratchy-trick.com/"]
 18subindo.com##a[href^="https://tinyurl.com/"]
 kebokepanku.com##a[id="tracking-url"][target="_blank"]
-animekompi.*,artisbokep.*,artisbokep.online,filmnikmat.bar,komikdewasa.art,nekopoi.*,republikbokep.*,sebokep.vip,semikeren.bar,simontokx.tv,xbokepin.*##a[target*="blank"]:has(> img)
+animekompi.*,artisbokep.*,artisbokep.online,doujin.desu.xxx,filmnikmat.bar,komikdewasa.art,nekopoi.*,republikbokep.*,sebokep.vip,semikeren.bar,simontokx.tv,xbokepin.*##a[target*="blank"]:has(> img)
+doujin.desu.xxx##a[target*="blank"]:has(> img):not(.btn-link)
 bokepbox.co,pukihot.surf##a[target*="blank"]:has(img)
 kayatan.vip##aside > div > .mt-4
 bokep.pemersatu.top#$#body.age-gate-open { overflow: auto !important; }
@@ -10023,6 +10045,7 @@ rou.video##div[id^="ts_ad_native"]
 kampungbokep.*##div[id^="wp5hpr_"][id$="_overlay"]
 dodz.pro##div[style*="position: fixed"][style*="background-color: red"]
 tantecentil.fans##div[style*="z-index: 999999"]
+kingbokep.media##div[style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 999999; opacity: 0; cursor: pointer; background: transparent; pointer-events: auto;"]
 pemersatufun.com#$#html.gate-open,body.gate-open { overflow: auto !important;overscroll-behavior: auto !important;pointer-events: auto !important; }
 indobokepin.com##iframe[src*="dooods.pro/ads_banner"]
 semprot.com##img[data-ad]
@@ -10065,6 +10088,7 @@ kingbokep.media##video[src*=".webm"]:not(div[class*="video"] > img)
 ||auredzetw.com^$third-party
 ||autocst.site^$third-party
 ||axes88.org^$third-party
+||badnessgimmickposted.com^$popup
 ||badylenicesist.com^$third-party
 ||bandarjuditogel.com^$third-party
 ||bandarxl.bio^$third-party

@@ -1,5 +1,5 @@
-! Checksum: xA5Qxo/JV45sZKa4nYI3BQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1795279046-14400.patch
+! Checksum: 0GvnRBLC99oVuva8acjfSQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1795322274-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.21.20
@@ -155,6 +155,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^192\.243\.59\.[12]?\d?\d$/$network
 !+ PLATFORM(windows, mac, android, cli)
 /^192\.243\.61\.[12]?\d?\d$/$network
+/^((https?|tcp|iquic)://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 /^(https?|tcp|iquic)://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 !+ PLATFORM(windows, mac, android, cli)
 134.209.136.174$network
@@ -863,6 +864,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 185.196.9.214$network
 !+ PLATFORM(windows, mac, android, cli)
 185.196.9.222$network
+||brgdtracking.com^$all
 ||dealshik.com^$all
 ||dealslandz.com^$all
 ||webhop.me^$all
@@ -2190,7 +2192,6 @@ diskpart.com##.theme-side
 ~imdb.com##.jt-imdb:not(html,body,:empty)
 ~imdb.com##.imdb-score:not(html,body,:empty)
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
-bing.com#?#.b_algo:has(cite:contains(imdb.com)) .b_sritem
 rakuten.tv##a[href*=".imdb.com/title/"]
 www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
@@ -2548,7 +2549,6 @@ $document,removeparam=/^subid2=.*$/i
 $document,removeparam=/^subid3=.*$/i
 $document,removeparam=/^subid4=.*$/i
 $document,removeparam=/^subid5=.*$/i
-$removeparam=tid1
 $removeparam=tid3
 $removeparam=tid4
 $removeparam=avad
@@ -2874,7 +2874,6 @@ $document,removeparam=entrypoint,domain=bing.com
 $removeparam=_trkparms
 $removeparam=_from
 $removeparam=sacat
-$removeparam=amdata,domain=ebay.*
 $removeparam=hash,domain=ebay.*
 ||ebay.$removeparam=mkevt
 ||ebay.$removeparam=mkcid
@@ -3284,6 +3283,8 @@ $removeparam=site_id,domain=taskrabbit.com|kochava.com
 ||skyscanner.$removeparam=redirectedFrom
 ||skyscanner.$removeparam=previousCultureSource
 $removeparam=site_refer,domain=saksfifthavenue.com|saksoff5th.com
+||fubo.tv^$removeparam=irad
+||fubo.tv^$removeparam=irmp
 $removeparam=context_referrer
 $removeparam=ref_ctx_id
 ||fiverr.com^$removeparam=pckg_id
@@ -3600,7 +3601,6 @@ $document,removeparam=af_reengagement_window
 ||instagram.com^$document,removeparam=short_redirect
 ||privatbank.ua^$removeparam=visit_id
 ||yandex.com/portal/set/any$removeparam=sk
-||wordpress.com^$document,removeparam=/^ref=[a-z-]{5,}$/
 $document,removeparam=_x_ns_sku_id,domain=temu.com
 $document,removeparam=_x_ads_channel,domain=temu.com
 $document,removeparam=_x_gmc_account,domain=temu.com
@@ -3685,6 +3685,7 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||hotels.com^$removeparam=pwa_ts
 !+ NOT_OPTIMIZED
 ||hotels.com^$removeparam=latLong
+ref=dtf.ru$document,removeparam=ref
 ||forms.office.com^$removeparam=route
 ||ul.com^$removeparam=redirected
 ||pond5.com^$removeparam=dd_referrer
