@@ -1,8 +1,8 @@
-! Checksum: LADNzxbc/xQsaIYO7WG5eg
+! Checksum: pGjJcQsIZKHHgu8HrWTAsA
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.6.28
-! TimeUpdated: 2026-11-22T07:07:44+00:00
+! Version: 2.5.6.29
+! TimeUpdated: 2026-11-22T08:09:32+00:00
 ! Expires: 10 days (update frequency)
 ||conventionalresponse.com^
 ||pockett3.com^$third-party
@@ -19463,7 +19463,7 @@ $popup,third-party,domain=fembed-hd.com,badfilter
 $popup,third-party,domain=sbplay2.com,badfilter
 $popup,third-party,domain=dood.ws,badfilter
 !##################
-zeenews.com,zee24taas.com#%#(()=>{const noop=()=>{},callbacks=[];let player,ready=false,head=0;const invoke=callback=>{try{callback([]);}catch{}};const flush=()=>{ready=true;while(head<callbacks.length)invoke(callbacks[head++]);callbacks.length=0;head=0;};const requestBids=(_,callback)=>{if(typeof callback!=="function")return;if(ready||player){ready=true;invoke(callback);}else callbacks.push(callback);};try{Object.defineProperty(window,"PWT",{configurable:true,get:()=>({requestBids,generateConfForGPT:noop,addKeyValuePairsToGPTSlots:noop,generateDFPURL:noop}),set:noop});}catch{}try{Object.defineProperty(window,"KalturaPlayer",{configurable:true,get:()=>player,set:value=>{player=value;if(value)flush();}});}catch{}})();
+zeenews.com,zee24taas.com#%#(()=>{const noop=()=>{},callbacks=[];let player=window.KalturaPlayer||null,ready=false,head=0,flushTimer=null,fallbackTimer=null;const invoke=callback=>{try{callback([]);}catch{}};const flush=()=>{if(ready)return;ready=true;if(flushTimer!==null){clearTimeout(flushTimer);flushTimer=null;}if(fallbackTimer!==null){clearTimeout(fallbackTimer);fallbackTimer=null;}while(head<callbacks.length)invoke(callbacks[head++]);callbacks.length=0;head=0;};const scheduleFlush=()=>{if(ready||flushTimer!==null||callbacks.length===0)return;flushTimer=setTimeout(()=>{flushTimer=null;flush();},150);};const requestBids=(_,callback)=>{if(typeof callback!=="function")return;if(ready){invoke(callback);return;}callbacks.push(callback);if(fallbackTimer===null)fallbackTimer=setTimeout(()=>{fallbackTimer=null;flush();},4000);if(player)scheduleFlush();};try{Object.defineProperty(window,"PWT",{configurable:true,get:()=>({requestBids,generateConfForGPT:noop,addKeyValuePairsToGPTSlots:noop,generateDFPURL:noop}),set:noop});}catch{}try{Object.defineProperty(window,"KalturaPlayer",{configurable:true,get:()=>player,set:value=>{player=value;if(value)scheduleFlush();}});}catch{}})();
 foxsports.com.au#%#//scriptlet('google-ima3')
 @@||fluid.4strokemedia.com/www/delivery/$domain=3addedminutes.com
 @@||live.primis.tech/live/liveView.php$domain=glasgowlive.co.uk
@@ -28591,6 +28591,7 @@ browsershots.org#@#.advert_area
 ||azeriondigital.com^
 ||azevalaovugqg.space^
 ||azimuthsifters.cyou^
+||azjaetdikwysg.online^
 ||azjmp.com^
 ||aznapoz.info^
 ||azoogleads.com^
@@ -28905,6 +28906,7 @@ browsershots.org#@#.advert_area
 ||bewashgloater.qpon^
 ||bewhidare.com^
 ||beworkfangagoulan.qpon^
+||beworrybellis.com^
 ||bext7jc1p8yb8wxzpjcni.cfd^
 ||bezelsasianicberinse.qpon^
 ||bf-ad.net^
@@ -29541,6 +29543,7 @@ browsershots.org#@#.advert_area
 ||bvairnyluwqjs.space^
 ||bveaafwiwktxb.space^
 ||bvfwjqkkxauml.site^
+||bvlhbzhwkhfoc.space^
 ||bvmcdn.net^
 ||bvpicpsbasens.site^
 ||bvtpk.com^
@@ -29611,6 +29614,7 @@ browsershots.org#@#.advert_area
 ||cablishgenial.com^
 ||cabnnr.com^
 ||caboucalamda.com^
+||cacambogwaytruckie.cyou^
 ||cacciastary.com^
 ||cachegorilla.com^
 ||cachewabbler.com^
@@ -29905,6 +29909,7 @@ browsershots.org#@#.advert_area
 ||cexwqhxuxixew.site^
 ||ceyxnepeta.com^
 ||cfakrdncrvooc.space^
+||cfcnirllfjjai.space^
 ||cfdfasdvrrfnj.online^
 ||cfdoulhmrvytg.space^
 ||cfgqshboimq.com^
@@ -31770,6 +31775,7 @@ browsershots.org#@#.advert_area
 ||ecdhfydktzlvg.com^
 ||ecdmizqngxzzq.site^
 ||ecdwm.com^
+||ecffmnluomrqm.site^
 ||ecfzasgibyqaa.com^
 ||echedarnatto.cfd^
 ||echinalfp.cyou^
@@ -32931,6 +32937,7 @@ browsershots.org#@#.advert_area
 ||funniestpins.com^
 ||funnyvot.com^
 ||fupwovtxzcfcl.site^
+||furahcnf.in^
 ||furanesdwellsamoans.cyou^
 ||furiousexpansion.com^
 ||furudloof.com^
@@ -33096,6 +33103,7 @@ browsershots.org#@#.advert_area
 ||gcevqvaedpxtp.online^
 ||gchgticijsour.website^
 ||gcmzdwnwegmkr.online^
+||gcoqzqvofzdkl.space^
 ||gcoxqjezzhwqv.space^
 ||gcpczbniuuuoo.site^
 ||gcrdrdtxrdzbu.online^
@@ -33673,6 +33681,7 @@ browsershots.org#@#.advert_area
 ||gzkzidlwj.com^
 ||gzlcdrxypijir.site^
 ||gzmftfhecexxm.com^
+||gzomoucymjcfy.space^
 ||gzzhrzeijtyth.space^
 ||h12-media.com^
 ||h2tf864mbzghvw87kpkjeem.rest^
@@ -36628,6 +36637,7 @@ browsershots.org#@#.advert_area
 ||misformchipsggr.cyou^
 ||misgrewgelding.cyou^
 ||misgrowducked.cfd^
+||misguidedarticle.pro^
 ||miskeepanaqua.cyou^
 ||mislaidwingcut.qpon^
 ||mismetdeism.com^
@@ -41486,6 +41496,7 @@ browsershots.org#@#.advert_area
 ||tggtudrdytkps.site^
 ||tghjnmotnlftr.website^
 ||tgigyxgmpd.com^
+||tgiikkhuxtmqc.website^
 ||tgnvngbiwnfcv.space^
 ||tgocketieimfj.site^
 ||tgodwwsydkht.com^
@@ -42493,6 +42504,7 @@ browsershots.org#@#.advert_area
 ||uxdwaeiceelyu.site^
 ||uxevhnhwanwgg.site^
 ||uxrwxlja.com^
+||uxsyynwodf.com^
 ||uxtctarowbrsv.online^
 ||uxviteyylmlj79jwlbm7kjl6.cfd^
 ||uxzybqtqlauaa.space^
@@ -42863,6 +42875,7 @@ browsershots.org#@#.advert_area
 ||vrdcftcmydygd.com^
 ||vrhvyxbebusfn.space^
 ||vrizead.com^
+||vrlovpuwrlmfw.space^
 ||vrtcal.com^
 ||vrtnmxrmbyngf.site^
 ||vrtzads.com^
@@ -44264,6 +44277,7 @@ browsershots.org#@#.advert_area
 ||zkgbexqaimtdr.space^
 ||zkggdzyagjzcp.website^
 ||zkogweyemvhbd.space^
+||zktvudkgootyp.site^
 ||zkwxohilcpfeb.online^
 ||zkxweadue.com^
 ||zkyghqcgeaabl.site^
