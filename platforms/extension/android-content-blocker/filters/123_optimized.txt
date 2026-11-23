@@ -1,9 +1,9 @@
-! Checksum: UKgPa0/++BZr44vwfwQHZw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1795395260-14400.patch
+! Checksum: 7p9u6HROmHpPk0udGmQM1Q
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1795408762-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.72.67
-! TimeUpdated: 2026-11-23T00:51:34+00:00
+! Version: 2.1.72.68
+! TimeUpdated: 2026-11-23T04:37:09+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -143,7 +143,6 @@ _social-bar/
 ###SocialMedia
 ###SocialShare
 ###Socialize
-###VKPopupWrapper
 ###action-share
 ###adbl-social-icons
 ###addThis
@@ -720,6 +719,7 @@ _social-bar/
 ##.ShareRail
 ##.ShareThis
 ##.ShareTools
+##.Sharebar
 ##.Shariff
 ##.SiteFooter__follow
 ##.Social-Media
@@ -851,6 +851,7 @@ _social-bar/
 ##.article-social-buttons
 ##.article-social-container
 ##.article-social-icons
+##.article-social-links
 ##.article-social-media
 ##.article-social-panel
 ##.article-social-share
@@ -886,7 +887,6 @@ _social-bar/
 ##.aspexifblikebox
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
-##.at-share
 ##.at-share-btn
 ##.au-share
 ##.author-bio__social
@@ -925,7 +925,6 @@ _social-bar/
 ##.bd-socialicon
 ##.bdaia-social-io
 ##.beacon-social
-##.below-article-share-block
 ##.better-social-counter
 ##.bg-share
 ##.bgShare.fb
@@ -985,7 +984,6 @@ _social-bar/
 ##.button-pinterest
 ##.button-share
 ##.button-share-facebook
-##.button-share-twitter
 ##.button-social
 ##.button-twitter
 ##.button__share
@@ -1130,6 +1128,7 @@ _social-bar/
 ##.entry-meta-social
 ##.entry-share
 ##.entry-shares
+##.entry-sharing
 ##.entry-sharing-buttons
 ##.entry-social
 ##.entry-socials
@@ -1242,7 +1241,6 @@ _social-bar/
 ##.fbbutton
 ##.fblikebox
 ##.fblink
-##.fblke
 ##.fbpopup-container
 ##.fbshare
 ##.fbsmallshare
@@ -1648,6 +1646,7 @@ _social-bar/
 ##.item-sharing
 ##.item-social-row
 ##.itemSocialSharing
+##.itemTwitter
 ##.j-social
 ##.j-social-share
 ##.j-twitter
@@ -1799,7 +1798,6 @@ _social-bar/
 ##.media-share-button
 ##.mediaShare
 ##.mejs-share-button
-##.menu--footer-social
 ##.menu--social-media
 ##.menu-article-share
 ##.menu-footer-social
@@ -1890,7 +1888,6 @@ _social-bar/
 ##.news-header-social
 ##.news-share
 ##.news-share-button
-##.news-sharing
 ##.news__share
 ##.nexstar-google-preferred-sources
 ##.nice-menu-menu-social-menu
@@ -2074,6 +2071,7 @@ _social-bar/
 ##.sb_share
 ##.sc--twitter
 ##.sc-button-share
+##.sc-social
 ##.sc-social-links
 ##.scShareBoxRow
 ##.scShareText
@@ -2708,6 +2706,7 @@ _social-bar/
 ##.social-icons-list
 ##.social-icons-title
 ##.social-icons-top
+##.social-icons-v2
 ##.social-icons-widget
 ##.social-icons-wrap
 ##.social-icons-wrapper
@@ -3150,7 +3149,6 @@ _social-bar/
 ##.twitter-btn
 ##.twitter-btn-icon
 ##.twitter-custom
-##.twitter-div
 ##.twitter-feed
 ##.twitter-follow
 ##.twitter-follow-box
@@ -3367,6 +3365,7 @@ _social-bar/
 ##a[href^="https://plus.google.com/share?"]
 ##a[href^="https://reddit.com/submit?"]
 ##a[href^="https://share.flipboard.com/bookmarklet/popout?"]
+##a[href^="https://simpleshare.io/go?"]
 ##a[href^="https://t.me/share/url?"]
 ##a[href^="https://telegram.me/share/url?"]
 ##a[href^="https://threads.net/intent/post?text="]
@@ -3573,6 +3572,7 @@ ynet.co.il,ynetnews.com##.AccordionShareWrapper
 abebooks.com,americanbanker.com,koaa.com,kosu.org,nbcsports.com,newatlas.com,nhpr.org,pitchbook.com,refractor.io,scrippsnews.com##.ActionBar
 newscientist.com##.ArticleHeader__SocialWrapper
 nordvpn.com##.BlogPost__social-block
+abcnews.com##.Byline__GooglePreferredSource
 cnbc.com##.CNBCFooter-social
 abc.net.au##.FixedHeader_shareBtn__yNush
 ndtv.com##.FtrScl
@@ -3861,6 +3861,7 @@ hp.com##.share-action-button
 thedirect.com##.share-bar-2
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
 ibtimes.co.in##.share-btn-wrp
+smithsonianmag.com##.share-control
 coindesk.com##.share-dialog-button
 dailymail.co.uk,thisismoney.co.uk##.share-email
 dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
@@ -3929,7 +3930,6 @@ politico.com##.social-tools__list
 cies.ch,dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 macrumors.com##.socialMedia--3i9tSnAb
 forbes.com##.socialShareContainer
-wionews.com##.socialShare_shareFixed__xNEGI
 jetphotos.com##.social__link--share
 newscientist.com##.social__links
 eurovisionworld.com##.social_a
@@ -4209,7 +4209,6 @@ lastampausa.com##.Footer-module__SfUiJG__footer-social
 lastampausa.com##.HeaderToolbar-module__ofzsGq__socials
 lastampausa.com##.Share-module__8Fg7qW__share
 dissapore.com##._social-share
-ricetta.it##.alert
 raiplaysound.it##.banner-buttons
 calciomercato.com##.cm-share
 iodonna.it##.eltdf-woo-social-share-holder
