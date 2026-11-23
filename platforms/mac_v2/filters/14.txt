@@ -1,9 +1,9 @@
-! Checksum: ICfKvhqRn3b3OHuaRUzPIg
-! Diff-Path: ../patches/14/14-s-1795421635-3600.patch
+! Checksum: EQH6DMHS3aMgR1fKkk5krg
+! Diff-Path: ../patches/14/14-s-1795425250-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.87.56
-! TimeUpdated: 2026-11-23T08:11:48+00:00
+! Version: 2.2.87.57
+! TimeUpdated: 2026-11-23T09:11:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2684,6 +2684,9 @@ houseofpostcards.pl,sklep.precio.pl,kim24.pl,sklep.moderat.pl,dlagentlemana.pl,n
 !
 ! NOTE: Regular rules
 !
+latinasxxxx.com##.ceRibbon
+flaschenland.de#%#//scriptlet('trusted-click-element', 'body[style] div.cookie-permission-container button[type="submit"]', 'containsText:Nur technisch notwendige')
+xmartserver.com##.cookies-card
 toyscabin.com###cookieField
 opentweet.io##.z-\[100\].p-4.sm\:p-6
 publicmobile.ca##div[data-testid="cookie-consent-sticky-footer"]
@@ -20258,6 +20261,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247899
+flaschenland.de#@#.cookie-permission-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247591
 ! youtube video not display
 @@||web.cmp.usercentrics.eu/ui/*.js^$domain=justetf.com
@@ -26133,6 +26138,9 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+leagueofgraphs.com#%#//scriptlet('prevent-setTimeout', 'if (blocked())')
+keeplinks.org###bn_bg[style="display: block;"]
+keeplinks.org###bn_box[style="display: block;"]
 romatoday.it#%#//scriptlet('prevent-setTimeout', 'adblock', '300')
 stadt-bremerhaven.de###ab-hinweis
 shinden.pl##.ep-ads-note
