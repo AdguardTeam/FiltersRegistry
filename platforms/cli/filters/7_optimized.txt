@@ -1,9 +1,9 @@
-! Checksum: yqaw4WyEMVprpUGNmq9c6A
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1795453828-3600.patch
+! Checksum: YzLOckd0Kbu14qoYtW54HA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1795457563-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.78.72
-! TimeUpdated: 2026-11-23T17:08:13+00:00
+! Version: 2.0.78.73
+! TimeUpdated: 2026-11-23T18:10:05+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||fod-cm-ad-v.webcdn.stream.ne.jp^
@@ -1650,6 +1650,7 @@ dengekionline.com##div[class^="InLead-"]
 ||socialxup.com/_next/static/chunks/$script,replace=/(["&'()\,.:0-9A-Z_a-z{|}]+?\.onClick&&[\$0-9A-Z_a-z]+\.onClick\(e\))/e.preventDefault();return;\$1/
 ||socialxup.com/_next/static/chunks/$script,replace=/if\("auxclick"===e\.type&&1!==e\.button\)return;/if(1)e.preventDefault();return;/
 socialxup.com#%#//scriptlet('prevent-window-open', '_blank')
+socialxup.com##.promo-card
 socialxup.com#?#a[data-track="home_popular_tweet_profile_click"]:not(:contains(/^@[0-9A-Z_a-z]+$/)):not(:has(> img:only-child))
 socialxup.com#?#a[data-track="related_click"]:not(:has(> div[class="flex flex-col items-center text-center"] > img[src^="/avatar/"][src$=".png"][height="48"][width="48"][style="color: transparent;"] + p + p[class="text-xs text-gray-500 truncate w-full"] + p[class="text-xs text-blue-600 mt-1"]:contains(/^\d+(,\d+)* フォロワー$/)))
 socialxup.com##a.bg-yellow-300
@@ -10346,6 +10347,7 @@ w.atwiki.jp###wikibody > h3[id^="id_"] + br + hr
 w.atwiki.jp###imobile_adspotdiv2
 ||atwiki.jp/common/dist/js/atwiki_autoads.js
 ||atwiki.jp/common/dist/js/moveads.js
+||daily.jp/Koukoku/$image
 daily.co.jp###dspc-relation_img
 daily.co.jp###nativeRecommend
 daily.co.jp##aside[class^="aside-"][class*="-ad"]
@@ -12066,6 +12068,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+@@||i.daily.jp/Koukoku/Images/2026_tigers_slogan400x222.webp
+@@||i.daily.jp/Koukoku/Images/vsc_logo900x136.png
 @@||gstatic.com/admanager/outstream/rewarded_web_video_$domain=pointmall.rakuten.co.jp
 @@||g.doubleclick.net/pagead/images/gmob/close-circle-30x30.png$domain=pointmall.rakuten.co.jp
 utaten.com#@#a[href^="https://srv.clickfuse.com/"]
