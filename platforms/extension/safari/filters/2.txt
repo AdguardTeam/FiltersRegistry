@@ -1,9 +1,9 @@
-! Checksum: 8ZSolxdZMaoZ+KnNvlDcBQ
-! Diff-Path: ../patches/2/2-s-1795417912-3600.patch
+! Checksum: NWFnIc339/iSDC9DWfqrWA
+! Diff-Path: ../patches/2/2-s-1795421628-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.6.51
-! TimeUpdated: 2026-11-23T07:09:04+00:00
+! Version: 2.5.6.52
+! TimeUpdated: 2026-11-23T08:11:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32716,9 +32716,8 @@ dziennikprawny.pl##article > div:not([class]) > a[target="_blank"][rel="noopener
 !+ NOT_OPTIMIZED
 ithardware.pl###home-sliderBaner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218733
-ithardware.pl#$##special-section-4 { background-image: none !important; }
-ithardware.pl#$#html[class*="light"] #special-section-4 { background-color: black !important; }
-ithardware.pl#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'ad.doubleclick.net')
+ithardware.pl#%#//scriptlet('abort-current-inline-script', 'document.getElementById', '/window\.open|ad\.doubleclick\.net/')
+ithardware.pl#$#.special-section-wrapper { background-image: none !important; background-color: #161616 !important; cursor: default !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214235
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131705
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134017
@@ -44226,6 +44225,7 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+wsj.com##div[class^="css-"] > div[data-layout-type="weekend-reads"] + div[class*="css-"]:has(> div.adWrapper)
 usnews.com##div[data-component="Splash.ContentWrapper"] > .MuiStack-root > .MuiBox-root:has(> .content > div[class^="HomepageSplashPage__BucketWrapper"] > div > div[class^="Ad__Container"])
 porndiff.com##div[x-data^="vixeeAdSlot"]
 ||porndiff.com/api/vixee/
@@ -67958,6 +67958,10 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247880
+@@||live.primis.tech/live/liveView.php$domain=apnews.com
+@@||live.primis.tech/live/liveVideo.php$domain=apnews.com
+@@||live.primis.tech/content/omid/static/omid-session-client*.js$domain=apnews.com
 ! unbreak videos at https://www.zee24taas.com/videos & https://www.zeenews.com/videos
 zeenews.com,zee24taas.com#%#(()=>{const noop=()=>{},callbacks=[];let player=window.KalturaPlayer||null,ready=false,head=0,flushTimer=null,fallbackTimer=null;const invoke=callback=>{try{callback([]);}catch{}};const flush=()=>{if(ready)return;ready=true;if(flushTimer!==null){clearTimeout(flushTimer);flushTimer=null;}if(fallbackTimer!==null){clearTimeout(fallbackTimer);fallbackTimer=null;}while(head<callbacks.length)invoke(callbacks[head++]);callbacks.length=0;head=0;};const scheduleFlush=()=>{if(ready||flushTimer!==null||callbacks.length===0)return;flushTimer=setTimeout(()=>{flushTimer=null;flush();},150);};const requestBids=(_,callback)=>{if(typeof callback!=="function")return;if(ready){invoke(callback);return;}callbacks.push(callback);if(fallbackTimer===null)fallbackTimer=setTimeout(()=>{fallbackTimer=null;flush();},4000);if(player)scheduleFlush();};try{Object.defineProperty(window,"PWT",{configurable:true,get:()=>({requestBids,generateConfForGPT:noop,addKeyValuePairsToGPTSlots:noop,generateDFPURL:noop}),set:noop});}catch{}try{Object.defineProperty(window,"KalturaPlayer",{configurable:true,get:()=>player,set:value=>{player=value;if(value)scheduleFlush();}});}catch{}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247017
@@ -98031,6 +98035,7 @@ browsershots.org#@#.advert_area
 ||aypyhwfzvexlr.website^
 ||ayqkfkajfwjar.website^
 ||aysltbnozkryu.site^
+||aysrobinintufts.cfd^
 ||aytbhnsvjqdrv.site^
 ||ayuyublipped.com^
 ||ayvwhsqziyjts.site^
@@ -100539,6 +100544,7 @@ browsershots.org#@#.advert_area
 ||ccpqzlqzfxqey.space^
 ||ccqfqdwfdcvjo.online^
 ||ccrdcfkugujnl.space^
+||ccrrnhwxxaied.online^
 ||ccshymxkbepsl.online^
 ||cctblmittniqn.space^
 ||ccutanagfr.in^
@@ -104472,6 +104478,7 @@ browsershots.org#@#.advert_area
 ||dudleyrevolutioninconsistent.com^
 ||dudppbtqgdvam.site^
 ||dudsyeaning.rest^
+||dudyetoknndrw.online^
 ||duefulcry.cyou^
 ||dueimmigratedebit.com^
 ||duendesmolest.com^
@@ -105620,6 +105627,7 @@ browsershots.org#@#.advert_area
 ||epwpsssmnituo.space^
 ||epxniaadddb.com^
 ||epyeepoyznjmv.site^
+||epyotrdzfsmut.space^
 ||epypdzamjywzh.online^
 ||epzgkwdmedhes.website^
 ||eqads.com^
@@ -108221,6 +108229,7 @@ browsershots.org#@#.advert_area
 ||ghoqnanthfges.site^
 ||ghostnewz.com^
 ||ghostsinstance.com^
+||ghpbfcqztyzpw.site^
 ||ghrjyouvkdqwu.space^
 ||ghsmiaohdfgxl.space^
 ||ghsnhdmwjklks.website^
@@ -112621,6 +112630,7 @@ browsershots.org#@#.advert_area
 ||jnarigjkijgoh.space^
 ||jnbhi.com^
 ||jnbtmnrktzdrt.space^
+||jnejfjcwwacid.website^
 ||jnhffeitzaycd.online^
 ||jnhykgiysawuq.site^
 ||jnjkkvkfwnlrd.site^
@@ -116812,6 +116822,7 @@ browsershots.org#@#.advert_area
 ||moilegrogram.cfd^
 ||moimczcuqzkxc.website^
 ||moisturelibellous.com^
+||moiykbqna.com^
 ||mojkwcdgbyauy.website^
 ||mojoaffiliates.com^
 ||mojykkiyazken.website^
@@ -117893,6 +117904,7 @@ browsershots.org#@#.advert_area
 ||nhhclkljqimut.online^
 ||nhiaoadcolahl.website^
 ||nhiwyubasvwub.site^
+||nhjaykjwizofa.online^
 ||nhnkhosypgwvh.site^
 ||nhomgluxrcotw.space^
 ||nhonnlvjebaid.site^
@@ -119201,6 +119213,7 @@ browsershots.org#@#.advert_area
 ||ojdcebrmfzcnf.store^
 ||ojevjamihdgxf.site^
 ||ojfascbw.in^
+||ojfnmyrme.in^
 ||ojgnshmpawhpq.space^
 ||ojgsqeksvdnwm.space^
 ||ojhanmnumsi.in^
@@ -122808,6 +122821,7 @@ browsershots.org#@#.advert_area
 ||qoy1tz2lb5icfeil.rest^
 ||qoydtxdfmwlwn.store^
 ||qoyuhtehzwryg.website^
+||qozkbwkxygxlrs.com^
 ||qozveo.com^
 ||qozwuskwwzqua.space^
 ||qpadmalav.in^
@@ -123169,6 +123183,7 @@ browsershots.org#@#.advert_area
 ||qybratedbxyac.online^
 ||qycyxmnywcyug.website^
 ||qyeavpkdevzzc.site^
+||qyeftsmcsehxb.website^
 ||qyexjolwpv6wvgbet5wp.cfd^
 ||qyfkhibpaggzg.space^
 ||qyilwubonplyd.website^
@@ -134193,6 +134208,7 @@ browsershots.org#@#.advert_area
 ||yawuyibzriuzn.space^
 ||yaxbsamkhdycw.online^
 ||yaxcheionised.cyou^
+||yaxyzavayjhcv.space^
 ||yaynwduzuxjgz.space^
 ||yayoqmevdpqqp.space^
 ||yazahenlvirdc.space^
@@ -143530,6 +143546,8 @@ $third-party,xmlhttprequest,domain=mega4upload.net
 ||gpt.mail.yahoo.net/sandbox$subdocument,domain=mail.yahoo.com
 ||graphicdesignforums.co.uk/banners/
 ||greatandhra.com/images/landing/
+||gridinsoft.com/assets/js/report-ad-frequency.js
+||gridinsoft.com/assets/js/report-ads.js
 ||grow.gab.com/galahad/
 ||gsmarena.com/top-skin.min.js
 ||guessthe.game/ads/
@@ -147235,6 +147253,7 @@ cined.com##.alternative-links
 thejc.com##.altura_header
 thejc.com##.altura_midpage
 antimusic.com##.am-center
+gridinsoft.com##.am-report-anchor
 music-news.com##.amazon
 orschlurch.net##.amazon-wrapper
 indiatimes.com##.amazonProductSidebar
