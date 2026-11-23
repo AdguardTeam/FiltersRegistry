@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ULG3vIR19+wmn/Rv7YpwvQ
-! Diff-Path: ../patches/2/2-s-1795436112-3600.patch
+! Checksum: HlaqxMe4mU3BgP5Jt6OUMA
+! Diff-Path: ../patches/2/2-s-1795439606-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.6.56
-! TimeUpdated: 2026-11-23T12:11:32+00:00
+! Version: 2.5.6.57
+! TimeUpdated: 2026-11-23T13:09:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14155,6 +14155,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247894
+peeplayer.com##+js(abort-current-script, __psAb, __psAb)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247507
 zeta-ai.io##+js(prevent-fetch, tpc.googlesyndication.com/sodar/sodar2.js)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247573
@@ -14612,6 +14614,8 @@ okteve.com##+js(abort-current-script, EventTarget.prototype.addEventListener, /p
 strcsh.xyz##+js(set-constant, __dtRan, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234088
 strcsh.xyz,streamcash.to##body ~ div[class]:style(display: none !important;)
+strcsh.xyz,streamcash.to##body > #player-wrap ~ script + div:not([id], [class])
+strcsh.xyz,streamcash.to##+js(set-constant, __advExempt, true)
 strcsh.xyz,streamcash.to##+js(no-setInterval-if, /pause|getComputedStyle|tampered/)
 strcsh.xyz,streamcash.to##+js(set-constant, __abGate, noopFunc)
 /js/pk-*.js?$domain=streamcash.to|strcsh.xyz
@@ -41481,6 +41485,7 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+peeplayer.com###ps-klik
 rk.com##div[title*="advertisement"]
 keeplinks.org##center > a[target="_blank"] > img
 wsj.com##div[class^="css-"] > div[data-layout-type="weekend-reads"] + div[class*="css-"]:has(> div.adWrapper)
@@ -93409,6 +93414,7 @@ browsershots.org#@#.advert_area
 ||chittakscreich.com^
 ||chivageheelorder.cyou^
 ||chivalrouscalmlymexican.com^
+||chiviestaxemic.cyou^
 ||chkxkacblyyes.site^
 ||chlblhojlbxrt.space^
 ||chlorylrewedssebait.cfd^
@@ -103658,6 +103664,7 @@ browsershots.org#@#.advert_area
 ||ilxilmadwxfah.space^
 ||ilxjgfxguojbl.site^
 ||ilxvbhkknas.com^
+||ilxvquuwrpkax.online^
 ||ilyf4amifh.com^
 ||ilzdhlbybbztu.online^
 ||ilzualntjfjjd.online^
@@ -105826,6 +105833,7 @@ browsershots.org#@#.advert_area
 ||kdhgwxwkpbxbf.site^
 ||kdhhpgbbnfgwl.online^
 ||kdhwaqcwpqvwo.website^
+||kdivzhhicuroy.site^
 ||kdjtwmbfrfblq.space^
 ||kdjyejumiotmh.online^
 ||kdkpsqklemvnu.site^
@@ -106317,6 +106325,7 @@ browsershots.org#@#.advert_area
 ||knurryanele.cyou^
 ||knurrylivid.click^
 ||knutenegros.pro^
+||knvmghlvc.com^
 ||knwjmjujhadoo.site^
 ||knxbqxxucleie.site^
 ||knxcyvvibuvde.website^
@@ -106456,6 +106465,7 @@ browsershots.org#@#.advert_area
 ||kreeseagrafe.qpon^
 ||krfaihltnqyrr.website^
 ||krg4f5bo.xyz^
+||krh6izf79nu9bnklxicbgh2if.rest^
 ||krisydark.com^
 ||krjxhubmrumxk.online^
 ||krjxhvyyzp.com^
@@ -112299,6 +112309,7 @@ browsershots.org#@#.advert_area
 ||otnhcfuhdwicg.site^
 ||otnolatrnup.com^
 ||otoadom.com^
+||otobfgoasghps.space^
 ||otowlgplnxtmk.website^
 ||otqbmlcodvbqg.website^
 ||otqmunvibzp.in^
@@ -116951,6 +116962,7 @@ browsershots.org#@#.advert_area
 ||roikingdom.com^
 ||roildauted.qpon^
 ||roiledmoats.com^
+||roilednotchideist.cfd^
 ||roilierservet.qpon^
 ||roittopia.com^
 ||rokfuqexbnx.com^
@@ -122290,6 +122302,7 @@ browsershots.org#@#.advert_area
 ||ufhwghrdkqdvs.online^
 ||ufidxaduyqqkq.site^
 ||ufirmirylfavb.online^
+||ufjgcmdyvcwij.space^
 ||uflbwgsviaueg.site^
 ||ufofrowstplumy.cfd^
 ||ufomuvddhotgb.online^
@@ -125880,6 +125893,7 @@ browsershots.org#@#.advert_area
 ||xbkcaouzpdgpb.site^
 ||xblsynpocs.com^
 ||xbmhvmucyelyr.com^
+||xbmszapvtsaqz.site^
 ||xbnmjrjlfyyai.site^
 ||xbntrnsfgmhiw.space^
 ||xbosvsupnbtzx.website^
@@ -126662,6 +126676,7 @@ browsershots.org#@#.advert_area
 ||yadmarmizuogr.website^
 ||yads.tech^
 ||yadsunkzjtzlb.space^
+||yaewriejekoir.space^
 ||yaffenbtrdlkx.website^
 ||yafltxtjsjxdl.online^
 ||yafoivqxiuaby.online^

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: X9ZPBb/bSMWCv/kZyujhKA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1795436113-3600.patch
+! Checksum: 7r621ejeHjR2LJFzamUMMA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1795439607-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.6.56
-! TimeUpdated: 2026-11-23T12:11:32+00:00
+! Version: 2.5.6.57
+! TimeUpdated: 2026-11-23T13:09:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14155,6 +14155,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247894
+peeplayer.com##+js(abort-current-script, __psAb, __psAb)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247507
 zeta-ai.io##+js(prevent-fetch, tpc.googlesyndication.com/sodar/sodar2.js)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247573
@@ -14612,6 +14614,8 @@ okteve.com##+js(abort-current-script, EventTarget.prototype.addEventListener, /p
 strcsh.xyz##+js(set-constant, __dtRan, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234088
 strcsh.xyz,streamcash.to##body ~ div[class]:style(display: none !important;)
+strcsh.xyz,streamcash.to##body > #player-wrap ~ script + div:not([id], [class])
+strcsh.xyz,streamcash.to##+js(set-constant, __advExempt, true)
 strcsh.xyz,streamcash.to##+js(no-setInterval-if, /pause|getComputedStyle|tampered/)
 strcsh.xyz,streamcash.to##+js(set-constant, __abGate, noopFunc)
 /js/pk-*.js?$domain=streamcash.to|strcsh.xyz
@@ -41481,6 +41485,7 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+peeplayer.com###ps-klik
 rk.com##div[title*="advertisement"]
 keeplinks.org##center > a[target="_blank"] > img
 wsj.com##div[class^="css-"] > div[data-layout-type="weekend-reads"] + div[class*="css-"]:has(> div.adWrapper)

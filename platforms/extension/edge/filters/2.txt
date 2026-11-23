@@ -1,9 +1,9 @@
-! Checksum: H72KurKG+tpuKA0TonCqNQ
-! Diff-Path: ../patches/2/2-s-1795436094-3600.patch
+! Checksum: RwEfj3SK4EWTq/VYz0nZDg
+! Diff-Path: ../patches/2/2-s-1795439581-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.6.56
-! TimeUpdated: 2026-11-23T12:11:32+00:00
+! Version: 2.5.6.57
+! TimeUpdated: 2026-11-23T13:09:18+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14254,6 +14254,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247894
+peeplayer.com#%#//scriptlet('abort-current-inline-script', '__psAb', '__psAb')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247507
 zeta-ai.io#%#//scriptlet('prevent-fetch', 'tpc.googlesyndication.com/sodar/sodar2.js')
 zeta-ai.io#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
@@ -14744,6 +14746,8 @@ okteve.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.a
 strcsh.xyz#%#//scriptlet('set-constant', '__dtRan', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/234088
 strcsh.xyz,streamcash.to#$#body ~ div[class] { display: none !important; }
+strcsh.xyz,streamcash.to##body > #player-wrap ~ script + div:not([id], [class])
+strcsh.xyz,streamcash.to#%#//scriptlet('set-constant', '__advExempt', 'true')
 strcsh.xyz,streamcash.to#%#//scriptlet('prevent-setInterval', '/pause|getComputedStyle|tampered/')
 strcsh.xyz,streamcash.to#%#//scriptlet('set-constant', '__abGate', 'noopFunc')
 /js/pk-*.js?$domain=streamcash.to|strcsh.xyz
@@ -42270,6 +42274,7 @@ $image,third-party,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+peeplayer.com###ps-klik
 rk.com##div[title*="advertisement"]
 keeplinks.org##center > a[target="_blank"] > img
 wsj.com##div[class^="css-"] > div[data-layout-type="weekend-reads"] + div[class*="css-"]:has(> div.adWrapper)
@@ -96221,6 +96226,7 @@ browsershots.org#@#.advert_area
 ||chittakscreich.com^
 ||chivageheelorder.cyou^
 ||chivalrouscalmlymexican.com^
+||chiviestaxemic.cyou^
 ||chkxkacblyyes.site^
 ||chlblhojlbxrt.space^
 ||chlorylrewedssebait.cfd^
@@ -106470,6 +106476,7 @@ browsershots.org#@#.advert_area
 ||ilxilmadwxfah.space^
 ||ilxjgfxguojbl.site^
 ||ilxvbhkknas.com^
+||ilxvquuwrpkax.online^
 ||ilyf4amifh.com^
 ||ilzdhlbybbztu.online^
 ||ilzualntjfjjd.online^
@@ -108638,6 +108645,7 @@ browsershots.org#@#.advert_area
 ||kdhgwxwkpbxbf.site^
 ||kdhhpgbbnfgwl.online^
 ||kdhwaqcwpqvwo.website^
+||kdivzhhicuroy.site^
 ||kdjtwmbfrfblq.space^
 ||kdjyejumiotmh.online^
 ||kdkpsqklemvnu.site^
@@ -109129,6 +109137,7 @@ browsershots.org#@#.advert_area
 ||knurryanele.cyou^
 ||knurrylivid.click^
 ||knutenegros.pro^
+||knvmghlvc.com^
 ||knwjmjujhadoo.site^
 ||knxbqxxucleie.site^
 ||knxcyvvibuvde.website^
@@ -109268,6 +109277,7 @@ browsershots.org#@#.advert_area
 ||kreeseagrafe.qpon^
 ||krfaihltnqyrr.website^
 ||krg4f5bo.xyz^
+||krh6izf79nu9bnklxicbgh2if.rest^
 ||krisydark.com^
 ||krjxhubmrumxk.online^
 ||krjxhvyyzp.com^
@@ -115111,6 +115121,7 @@ browsershots.org#@#.advert_area
 ||otnhcfuhdwicg.site^
 ||otnolatrnup.com^
 ||otoadom.com^
+||otobfgoasghps.space^
 ||otowlgplnxtmk.website^
 ||otqbmlcodvbqg.website^
 ||otqmunvibzp.in^
@@ -119763,6 +119774,7 @@ browsershots.org#@#.advert_area
 ||roikingdom.com^
 ||roildauted.qpon^
 ||roiledmoats.com^
+||roilednotchideist.cfd^
 ||roilierservet.qpon^
 ||roittopia.com^
 ||rokfuqexbnx.com^
@@ -125102,6 +125114,7 @@ browsershots.org#@#.advert_area
 ||ufhwghrdkqdvs.online^
 ||ufidxaduyqqkq.site^
 ||ufirmirylfavb.online^
+||ufjgcmdyvcwij.space^
 ||uflbwgsviaueg.site^
 ||ufofrowstplumy.cfd^
 ||ufomuvddhotgb.online^
@@ -128692,6 +128705,7 @@ browsershots.org#@#.advert_area
 ||xbkcaouzpdgpb.site^
 ||xblsynpocs.com^
 ||xbmhvmucyelyr.com^
+||xbmszapvtsaqz.site^
 ||xbnmjrjlfyyai.site^
 ||xbntrnsfgmhiw.space^
 ||xbosvsupnbtzx.website^
@@ -129474,6 +129488,7 @@ browsershots.org#@#.advert_area
 ||yadmarmizuogr.website^
 ||yads.tech^
 ||yadsunkzjtzlb.space^
+||yaewriejekoir.space^
 ||yaffenbtrdlkx.website^
 ||yafltxtjsjxdl.online^
 ||yafoivqxiuaby.online^
