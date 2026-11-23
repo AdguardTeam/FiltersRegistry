@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.5.6.59",
-			"timeUpdated": "2026-11-23T16:08:01+0000",
+			"version": "2.5.6.60",
+			"timeUpdated": "2026-11-23T17:07:44+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.16.26",
-			"timeUpdated": "2026-11-23T16:08:17+0000",
+			"version": "2.1.16.27",
+			"timeUpdated": "2026-11-23T17:08:03+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.78.71",
-			"timeUpdated": "2026-11-23T16:08:25+0000",
+			"version": "2.0.78.72",
+			"timeUpdated": "2026-11-23T17:08:13+0000",
 			"languages": [
 				"ja"
 			]
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.73.61",
-			"timeUpdated": "2026-11-23T16:08:32+0000",
+			"version": "2.0.73.62",
+			"timeUpdated": "2026-11-23T17:08:18+0000",
 			"languages": []
 		},
 		{
@@ -238,8 +238,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.87.63",
-			"timeUpdated": "2026-11-23T16:08:40+0000",
+			"version": "2.2.87.64",
+			"timeUpdated": "2026-11-23T17:08:26+0000",
 			"languages": []
 		},
 		{
@@ -256,8 +256,8 @@
 				"ext_edge_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.42.82",
-			"timeUpdated": "2026-11-23T16:08:42+0000",
+			"version": "2.1.42.83",
+			"timeUpdated": "2026-11-23T17:08:28+0000",
 			"languages": []
 		},
 		{
@@ -341,8 +341,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.50.52",
-			"timeUpdated": "2026-11-23T13:10:18+0000",
+			"version": "2.0.50.53",
+			"timeUpdated": "2026-11-23T17:08:33+0000",
 			"languages": []
 		},
 		{
