@@ -1,9 +1,9 @@
-! Checksum: CgcVOJxJeT14U6BQj1wxCQ
-! Diff-Path: ../patches/16/16-s-1795497076-3600.patch
+! Checksum: 9tRxq83mpk2CbsTMS7pA9A
+! Diff-Path: ../patches/16/16-s-1795536752-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.58.35
-! TimeUpdated: 2026-11-24T05:09:09+00:00
+! Version: 2.0.58.36
+! TimeUpdated: 2026-11-24T16:09:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -55,6 +55,9 @@
 ! Good: @@/adblocker/detect.js$domain=example.org
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/247764
+!+ PLATFORM(ios, ext_android_cb)
+@@||vinteconto.com.br/js/oncc-ad.js$~third-party
 ! https://github.com/uBlockOrigin/uAssets/issues/34384
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=rmcplus.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/237640
@@ -766,6 +769,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+vide-greniers.org##.agw-banner
 ici.radio-canada.ca##div[class^="_adBoxReset_"]
 parismatch.com##.bg-pm-background-stronger:has(> div[data-ad-slot])
 parismatch.com##div.top-below-sticky-header > div.bg-pm-background-stronger:has(> div[data-ad-slot])
