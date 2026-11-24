@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.5.6.83",
-			"timeUpdated": "2026-11-24T16:08:45+0000",
+			"version": "2.5.6.84",
+			"timeUpdated": "2026-11-24T17:07:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.78.73",
-			"timeUpdated": "2026-11-23T18:10:05+0000",
+			"version": "2.0.78.74",
+			"timeUpdated": "2026-11-24T17:08:12+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -625,8 +625,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.87.73",
-			"timeUpdated": "2026-11-24T16:09:49+0000",
+			"version": "2.2.87.74",
+			"timeUpdated": "2026-11-24T17:08:25+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -651,8 +651,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.42.93",
-			"timeUpdated": "2026-11-24T15:08:33+0000",
+			"version": "2.1.42.94",
+			"timeUpdated": "2026-11-24T17:08:28+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -707,8 +707,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.0.33",
-			"timeUpdated": "2026-11-24T16:09:59+0000",
+			"version": "2.1.0.34",
+			"timeUpdated": "2026-11-24T17:08:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.88.49",
-			"timeUpdated": "2026-11-24T16:10:01+0000",
+			"version": "2.0.88.50",
+			"timeUpdated": "2026-11-24T17:08:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1792,8 +1792,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.70.18",
-			"timeUpdated": "2026-11-24T13:08:55+0000",
+			"version": "2.1.70.19",
+			"timeUpdated": "2026-11-24T17:08:41+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
