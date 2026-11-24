@@ -1,8 +1,8 @@
-! Checksum: dboN11sT++IlpupL3ljhmQ
+! Checksum: 4j89INCpIcyilKzbD6LlMw
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.6.85
-! TimeUpdated: 2026-11-24T18:09:22+00:00
+! Version: 2.5.6.86
+! TimeUpdated: 2026-11-24T19:07:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25267,6 +25267,8 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
+seznam.cz##.ad-leaderboard
+seznam.cz##.gadget-container > div.animated-height > div:not([id]):not([class]) > div.gadget[data-dot-data*="abTestVariant"]
 www.seznam.cz##div[style="height:300px;width:560px;"]
 ||seznam.cz/*/v2/xhr|
 seznam.cz#%#//scriptlet('set-cookie', '__nttd', '1')
@@ -67114,7 +67116,8 @@ terashare.co#%#(()=>{const e={apply:(e,t,n)=>{try{const[e,r]=n,a=r?.toString();i
 ||onejav.com^$referrerpolicy=origin
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189854
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166718
-x.com#%#//scriptlet('json-prune', 'data.*.home_timeline_urt.instructions.*.entries.[-].content.content.promoted_metadata')
+x.com#%#//scriptlet('json-prune', '$.data..["entries","items"][?(@.*.content.promoted_metadata)]')
+x.com#%#//scriptlet('json-prune', 'data.*.home_timeline_urt.instructions.*.entries.[-].content.content.promoted_metadata data.threaded_conversation_with_injections_v2.instructions.*.entries.[-].content.items.*.item.content.promoted_metadata')
 ! Home timeline ads
 /i/api/graphql/*/HomeLatestTimeline$jsonprune=\$.data.home.home_timeline_urt.instructions..entries..[?(key-substr 'entryId' 'promoted-tweet-')],domain=twitter.com|x.com
 /i/api/graphql/*/HomeTimeline$jsonprune=\$.data.home.home_timeline_urt.instructions..entries..[?(key-substr 'entryId' 'promoted-tweet-')],domain=twitter.com|x.com
@@ -92803,6 +92806,7 @@ browsershots.org#@#.advert_area
 ||9ff1a25009.com^
 ||9fqqxlhki9wz7ej3.cfd^
 ||9hkv3j6ql4n2ego4f1npgj1lng2oh3php.cfd^
+||9ip7few3b4jif4th2f936e1uy4.rest^
 ||9kcut8werch6hbker1yub.cfd^
 ||9l3s3fnhl.com^
 ||9l5ss9l.de^
@@ -93071,6 +93075,7 @@ browsershots.org#@#.advert_area
 ||accidentallyrussian.com^
 ||accidiafilmize.qpon^
 ||accingeodeon.cfd^
+||accjucvaz.in^
 ||acclaimincessantporridge.com^
 ||acclalmeddate.net^
 ||accmgr.com^
@@ -93169,6 +93174,7 @@ browsershots.org#@#.advert_area
 ||actingturk.com^
 ||actinondistent.cyou^
 ||actionfurmap.com^
+||actiumfug.com^
 ||activategrowconserve.com^
 ||activatormanorplausible.com^
 ||active-bat.com^
@@ -99656,6 +99662,7 @@ browsershots.org#@#.advert_area
 ||cslcbabvxbbnr.site^
 ||cslmpnddwujdf.space^
 ||csmzticvczsrs.online^
+||csnfevdbreypv.space^
 ||csnyoydcaayfs.site^
 ||csrsmzmnkofij.site^
 ||csrtvckpwnfby.site^
@@ -108700,6 +108707,7 @@ browsershots.org#@#.advert_area
 ||ileuadlrdnpow.space^
 ||ileumoctant.com^
 ||ilexeslapeler.com^
+||ilezkybigxjqu.site^
 ||ilggukzdomyuy.site^
 ||ilgosajlubqdg.space^
 ||ilgpscfvwohwr.space^
@@ -112999,6 +113007,7 @@ browsershots.org#@#.advert_area
 ||lpgouuzcqcfjz.site^
 ||lphzghnxjvujh.online^
 ||lpiclzjsiwsaw.online^
+||lpjesrjwmfdwb.online^
 ||lpjnugxqeofzm.site^
 ||lpjxlnldaryvk.online^
 ||lpklqoaezptbr.space^
@@ -116477,6 +116486,7 @@ browsershots.org#@#.advert_area
 ||obliquecensortend.com^
 ||obliquescallionexcavator.com^
 ||oblivionplaysaltered.com^
+||obljulpi.in^
 ||oblong-punch.com^
 ||oblong-recover.pro^
 ||obnzriaaldxfc.site^
@@ -122395,6 +122405,7 @@ browsershots.org#@#.advert_area
 ||rrijuekqotlri.site^
 ||rrkvgegrywbkf.site^
 ||rrlpfsdammzii.site^
+||rrmxaipuvpfbe.space^
 ||rrnkmzaflln.com^
 ||rrpbdjwpvqovf.online^
 ||rrpbonj6pfzv2b6z.cfd^
@@ -124011,6 +124022,7 @@ browsershots.org#@#.advert_area
 ||sleezyduppy.cfd^
 ||slejyhnflrqje.space^
 ||slepezleucictourte.cfd^
+||slewingflyteceleb.cfd^
 ||slewsyank.qpon^
 ||slfhtrkjbsnbh.space^
 ||slfsmf.com^
@@ -125342,6 +125354,7 @@ browsershots.org#@#.advert_area
 ||svbwirezjttqe.site^
 ||svckenton.com^
 ||sverowkatguzh.site^
+||svgkmgtnxbnno.online^
 ||svgvlmegeeysc.space^
 ||svibskjkwfkum.space^
 ||svirbuepmsnkn.online^
@@ -127687,6 +127700,7 @@ browsershots.org#@#.advert_area
 ||ui02.com^
 ||uiapoozgbrnyy.site^
 ||uibcqpgbxhsjt.site^
+||uibnyreijcmyc.space^
 ||uiddjbqqqjfku.online^
 ||uidsync.net^
 ||uidvuwfpybvnp.online^
@@ -128010,6 +128024,7 @@ browsershots.org#@#.advert_area
 ||uniquebranch.com^
 ||uniqueproceedingincurable.com^
 ||uniquetrowman.com^
+||uniquewave.info^
 ||unirsweqilejf.website^
 ||unitedjetinclusion.com^
 ||unitersetboltiambics.cyou^
@@ -129549,6 +129564,7 @@ browsershots.org#@#.advert_area
 ||vswhmbqdhhdtnk.com^
 ||vswwxfjybgf.com^
 ||vsxahkco.com^
+||vsyvgvqylxxpk.site^
 ||vsyvkhtnuhqsr.space^
 ||vsznyyhrbezhg.online^
 ||vszuuzhowtqtz.site^
@@ -131118,6 +131134,7 @@ browsershots.org#@#.advert_area
 ||wxwjidcqfsakq.space^
 ||wxxpwlalzbagk.space^
 ||wxynsnaplyrio.online^
+||wxzpeizldnupa.website^
 ||wy7zi79ri3vbkz63zeegr.cfd^
 ||wyaiuzyqwbuvt.site^
 ||wyaustogc.com^
@@ -132899,6 +132916,7 @@ browsershots.org#@#.advert_area
 ||z2c9n81uljvxgv4l.cfd^
 ||z5g022gc.xyz^
 ||z8hnppzl5no5ot8376zzwwgyzqu51r.cfd^
+||z989qkwjq2r12qwyc76bbx7yp5k7cp.cfd^
 ||zaatpjzahehda.space^
 ||zabanit.xyz^
 ||zablgoqpquvty.site^
