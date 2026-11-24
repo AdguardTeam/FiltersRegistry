@@ -1,14 +1,14 @@
-! Checksum: w/Ggzbf/8O4PNczHWA7KZw
-! Diff-Path: ../patches/243/243-s-1795423237-14400.patch
+! Checksum: 9p8QT5cF9Wxp8BFmWt3fZQ
+! Diff-Path: ../patches/243/243-s-1795509470-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.25.91
-! TimeUpdated: 2026-11-23T08:38:28+00:00
+! Version: 2.0.25.92
+! TimeUpdated: 2026-11-24T08:36:13+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-11-23 07:04:35 CET
+! Last modified: 2026-11-24 07:12:40 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -720,6 +720,7 @@ grillbaronen.se##a[href*="/click."], #block-2, #block-4, #custom_html-3, #custom
 grillbaronen.se##.post:has(a[href*="casino"], a[href*="kasino"], a[href*="betting"])
 grundskoletidningen.se##div[id^="block-adrevive"]
 guldkanalen.se##div.grid_container[style*="height:240px;"]
+guldkanalen.se#?#.cff-item:contains(/reklam/i)
 gymnasieguiden.se##a[onclick*="banner-click"]
 gynning.net#?#.sponsored-notification:upward([id^="post-"])
 haaf.se##.stream-item:has(.adsbygoogle)
@@ -952,6 +953,7 @@ konsumentmagasinet.se##.pricerunner, #Conzent, .conzent-modal, .price-part
 korledare.myclub.se##.sponsors
 kristendate.se##div[id^="adv"], #site-right-col-wrapper a[target] img
 kritiker.se##div.recad, div.adhor, div.stickyad, div[data-ad-slot-wrapper]
+kritiker.se#%#//scriptlet('ubo-set', 'initAdblockModalFlow', 'noopFunc')
 krogen.se#?#a.article-link:contains(Annons:):upward(.sp-article-content)
 krogen.se#?#div.mark:matches-css(after, content: "ANNONS")
 krogen.se##.newsletter-notice-container, .bottom-dialog
@@ -1258,7 +1260,7 @@ placera.se#?#h5.font-medium:contains(Annons):upward(1)
 placera.se##.bg-surf-tertiary[role="link"]:has(a[href$="/annons"])
 playradio.se##.sidealtcol
 plural.nu##div[style="min-height:300px;text-align:center"]
-podcasts.nu##.sponsor-list, .sponsor-type, .cookie-law-wrapper, .big-ad-placeholder, .affiliate-wrapper, .overlay, .modal
+podcasts.nu##.pn-ad-card, .pn-consent
 poddtoppen.se##.txs-a
 podtail.se##aside a[href*="utm_campaign"], a[title*="casino"]
 podtail.se#?#.item-list__item:contains(/annons från/i)
@@ -3348,7 +3350,6 @@ _banner.php?$domain=tvmatchen.nu
 ||imgix.net^*/analytics.$script
 ||imgsct.cookiebot.com/1.gif
 ||img.feber.se/k/$image,domain=feber.se|tjock.se
-||img.podcast24.org^$domain=podcasts.nu
 ||img.upsales.com/*/visit$script,important
 ||imp.laget.se^
 ||inboxads.com^$third-party
@@ -3391,7 +3392,6 @@ _banner.php?$domain=tvmatchen.nu
 ||konzilo.com/mtc.js
 ||konzilo.net/mtc.js
 ||kortio.se^$third-party
-||kritiker.se/js/gdpr.js
 ||kundvisaren.se^$third-party
 ||kvikr.se/ads/
 ||laget.se^*/retarget.js
@@ -3509,7 +3509,6 @@ _banner.php?$domain=tvmatchen.nu
 ||playable.com/campaign
 ||plowking.mecenat.com^
 ||pm.azerioncircle.com^
-||podcasts.nu/adbg.svg
 ||poddtoppen.se/api/ad?
 ||popupsmart.com^$third-party
 ||portalhc.com^$third-party
