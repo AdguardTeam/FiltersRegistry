@@ -1,9 +1,9 @@
-! Checksum: YxY7RJhRXu/IaHee22Br6g
-! Diff-Path: ../patches/260_optimized/260_optimized-s-1795538219-14400.patch
+! Checksum: qo+BAXq8SWlGDMxzjPkKXA
+! Diff-Path: ../patches/260_optimized/260_optimized-s-1795552703-14400.patch
 ! Title: Stevo's AI Blocklist (Optimized)
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.37
-! TimeUpdated: 2026-11-24T16:35:30+00:00
+! Version: 2.0.3.38
+! TimeUpdated: 2026-11-24T20:36:31+00:00
 ! Expires: 10 days (update frequency)
 ##.js--show.gen-ai
 ||widget.kapa.ai/kapa-widget.bundle.js$script,third-party
@@ -767,7 +767,9 @@ www.google.com##.yVTUN:has(svg.fdpJhe)
 www.google.com##.kfgtbc:has([class="lHmueb"])
 www.google.com##[role="dialog"][aria-label="Ask anything about anywhere"]
 www.google.com##.KNfEk.Rqu0ae.aUjao:has(.F5iire)
-www.google.com##.AJqepd:has([jsaction="settings.askGemini"])
+www.google.com##.YxsSjf.F5lvuc.QWdptd:has(.F5iire)
+www.google.com##.m6QErb.iS1Ot.XiKgde.caxkfb:has([jsaction^="pane.promocard.askmapstravelcta"])
+www.google.com##li:has(> [jsaction="settings.askGemini"])
 www.google.com##[jsaction="navigationrail.askMaps"]
 meet.google.com#?#div[jsshadow][jscontroller="dGzwdb"]:contains(Express yourself with an AI-generated background)
 one.google.com##.aTVMOe.RLyrIe.KGSMie
@@ -776,7 +778,6 @@ www.google.*##.ECfIkf
 www.google.*#%#//scriptlet('remove-attr', 'href', 'a[href*="&udm=50"]:has(#hplogo)')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
-www.google.*##.plR5qb
 www.google.*#$#[action="/search"] .XCTQH:has(.G4cWGb.z1asCe) { pointer-events: none !important }
 www.google.*#$#[action="/search"] .XCTQH .G4cWGb.z1asCe { height: 20px !important; line-height: 20px !important; width: 20px !important }
 www.google.*#$#[action="/search"] .XCTQH .G4cWGb.z1asCe path { color: #9aa0a6 !important }
@@ -784,8 +785,11 @@ www.google.*#$#[action="/search"] .XCTQH .G4cWGb.z1asCe path { d: path("M784-120
 www.google.*#$#[action="/search"] .eCAVse[type="button"][aria-haspopup="dialog"] { pointer-events: none !important }
 www.google.*#$#[action="/search"] .eCAVse[type="button"][aria-haspopup="dialog"] path { color: #bfbfbf !important }
 www.google.*#$#[action="/search"] .eCAVse[type="button"][aria-haspopup="dialog"] path { d: path("M784-120L532-372q-30,24-69,38t-83,14q-109,0-184.5-75.5T120-580t75.5-184.5T380-840t184.5,75.5T640-580q0,44-14,83t-38,69L840-176l-56,56ZM380-400q75,0 127.5-52.5T560-580T507.5-707.5T380-760T252.5-707.5T200-580t52.5,127.5T380-400Z") !important }
+www.google.*##.pUM3Jb
 www.google.*##.xOchs
 www.google.*##button.EX3c2d.Cq58Jd:has([d^="M740-560q-6,0-8-6q-16-61-60"])
+www.google.*##.plR5qb:not(.VzUPFe.Sw4CSc.PHjFye)
+www.google.*#$#.plR5qb.VzUPFe.Sw4CSc .bvUkz { animation: none !important }
 www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@.zp.udm=="50"]')
 www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@[?@.zf==86]]')
 www.google.*#?#.CKtgbd[role="listbox"] > .sbct:has(.cuyMBe:contains(AI Mode))
@@ -802,6 +806,7 @@ www.google.com#@$?#div[role="navigation"] span:contains(AI Mode):upward(5) { rem
 www.google.*##[data-attnms]
 www.google.*##.Kevs9.SLPe5b:has([data-attnms])
 www.google.*##.YNk70c.EjQTId:has(+ div [data-attnms]) #oFNiHe:empty
+www.google.*##[role="main"] > .SLPe5b.M8OgIe:has([data-attnms]):has(#oFNiHe:empty)
 www.google.*##.ULSxyf:has(> .MjjYud > .SePcAf[data-tma="80"] [data-attnms])
 www.google.com#@$?#.YzCcne { remove: true; }
 www.google.*##.oGdvd
@@ -2052,14 +2057,14 @@ www.rule34.world#%#//scriptlet('ubo-set-local-storage-item', 'ui_filterAi', 'tru
 www.rule34.lol##.media-box:has(.thumb:is([data-image-tag-aliases*="ai assisted,"], [data-image-tag-aliases*="ai generated,"]))
 www.sankakucomplex.com##[data-test="ai_companion"]
 www.sankakucomplex.com##[data-test="ai_art"]
+chan.sankakucomplex.com###news-ticker:has(> [href="https://get.sankaku.plus/"])
 chan.sankakucomplex.com###header li:has(> [href^="https://chan.sankakucomplex.com/?tags=sankaku_ai"])
 chan.sankakucomplex.com##.nav-special:has(> [href="/companions"])
 chan.sankakucomplex.com##.companion--draggable_element
 chan.sankakucomplex.com##.ai-carousel
 chan.sankakucomplex.com##.companion-carousel
 chan.sankakucomplex.com##.post-preview:has([data-auto_page~="ai-assisted"], [data-auto_page~="ai-created"], [data-auto_page~="ai-upscaled"], [data-auto_page~="ai-voiced"])
-chan.sankakucomplex.com#?#.premium-carousel:contains(" AI ")
-chan.sankakucomplex.com#?#.carousel:has(> h5 > [href="https://get.sankaku.plus/"]):contains(AI creator)
+chan.sankakucomplex.com##.carousel:has(h5 > [href="https://get.sankaku.plus/"])
 scrolller.com##.index-module__fNZuDa__container[href="https://trk.scrolller.com/b5fb9e68-dccb-4e9c-a514-9b514cfdaf7f"]
 sxypix.com##.grid-item[title*="ai generated"i]
 sxypix.com##.live-search > .lsel[data-href^="/s/ai-"i]

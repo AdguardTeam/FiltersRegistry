@@ -1,9 +1,9 @@
-! Checksum: N4basSmZZroypwAA+k+yDw
-! Diff-Path: ../patches/260/260-s-1795538234-14400.patch
+! Checksum: ZweFm1ebqzkon06jU0iv4Q
+! Diff-Path: ../patches/260/260-s-1795552724-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.37
-! TimeUpdated: 2026-11-24T16:35:30+00:00
+! Version: 2.0.3.38
+! TimeUpdated: 2026-11-24T20:36:31+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1882,12 +1882,15 @@ www.google.com##.yVTUN:has(svg.fdpJhe)
 www.google.com##.kfgtbc:has([class="lHmueb"])
 ! === Google Maps ===
 ! -- https://www.google.com/maps/
-! Modal window for Ask Maps. May only appear once per user.
+! Transient modal for Ask Maps
 www.google.com##[role="dialog"][aria-label="Ask anything about anywhere"]
-! "Ask Maps" button at top by location categories
+! "Ask Maps" button at top by location categories carousel
 www.google.com##.KNfEk.Rqu0ae.aUjao:has(.F5iire)
+www.google.com##.YxsSjf.F5lvuc.QWdptd:has(.F5iire)
+! "Ask Maps" section below search autocomplete suggestions
+www.google.com##.m6QErb.iS1Ot.XiKgde.caxkfb:has([jsaction^="pane.promocard.askmapstravelcta"])
 ! "Ask Maps" button in expandable sidebar
-www.google.com##.AJqepd:has([jsaction="settings.askGemini"])
+www.google.com##li:has(> [jsaction="settings.askGemini"])
 ! "Ask Maps" button in fixed sidebar
 www.google.com##[jsaction="navigationrail.askMaps"]
 ! === Google Meet ===
@@ -1921,8 +1924,6 @@ www.google.*##.ECfIkf
 www.google.*#%#//scriptlet('remove-attr', 'href', 'a[href*="&udm=50"]:has(#hplogo)')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#hplogoo a[href*="&udm=50"]')
 www.google.*#%#//scriptlet('remove-attr', 'href', '#mlogo[href*="&udm=50"]')
-! Search bar - "AI Mode" button
-www.google.*##.plR5qb
 ! Search bar - Revert AI tools plus icon (+) to magnifying glass
 ! * Desktop
 www.google.*#$#[action="/search"] .XCTQH:has(.G4cWGb.z1asCe) { pointer-events: none !important }
@@ -1933,9 +1934,18 @@ www.google.*#$#[action="/search"] .XCTQH .G4cWGb.z1asCe path { d: path("M784-120
 www.google.*#$#[action="/search"] .eCAVse[type="button"][aria-haspopup="dialog"] { pointer-events: none !important }
 www.google.*#$#[action="/search"] .eCAVse[type="button"][aria-haspopup="dialog"] path { color: #bfbfbf !important }
 www.google.*#$#[action="/search"] .eCAVse[type="button"][aria-haspopup="dialog"] path { d: path("M784-120L532-372q-30,24-69,38t-83,14q-109,0-184.5-75.5T120-580t75.5-184.5T380-840t184.5,75.5T640-580q0,44-14,83t-38,69L840-176l-56,56ZM380-400q75,0 127.5-52.5T560-580T507.5-707.5T380-760T252.5-707.5T200-580t52.5,127.5T380-400Z") !important }
-! Search bar - AI button (sparkling magnifying glass icon, mobile only)
+! Search bar - Sparkling magnifying glass AI icon
+! * Desktop, appears after typing in search bar
+www.google.*##.pUM3Jb
+! * Mobile
 www.google.*##.xOchs
 www.google.*##button.EX3c2d.Cq58Jd:has([d^="M740-560q-6,0-8-6q-16-61-60"])
+! Search bar - "AI Mode" button
+! * Use :not() because AI button may transform into regular search button after typing search query
+! * .PHjFye indicates icon has finished transforming from AI button
+www.google.*##.plR5qb:not(.VzUPFe.Sw4CSc.PHjFye)
+! * Cancel gradient animation when button appears
+www.google.*#$#.plR5qb.VzUPFe.Sw4CSc .bvUkz { animation: none !important }
 ! Search bar - Autocomplete suggestions
 ! * JSONPath v2 compatible
 www.google.*#%#//scriptlet('ubo-json-edit', '$..[?@.zp.udm=="50"]')
@@ -1968,6 +1978,7 @@ www.google.*##[data-attnms]
 ! * Blank space for AI Overview at top of search results
 www.google.*##.Kevs9.SLPe5b:has([data-attnms])
 www.google.*##.YNk70c.EjQTId:has(+ div [data-attnms]) #oFNiHe:empty
+www.google.*##[role="main"] > .SLPe5b.M8OgIe:has([data-attnms]):has(#oFNiHe:empty)
 ! * Blank space when in middle of search results (Ex: https://www.google.com/search?q=stevo%27s+genai+blocklist)
 www.google.*##.ULSxyf:has(> .MjjYud > .SePcAf[data-tma="80"] [data-attnms])
 ! * Fix conflict with laylavish's AI blocklist
@@ -5084,10 +5095,12 @@ www.sankakucomplex.com##[data-test="ai_companion"]
 www.sankakucomplex.com##[data-test="ai_art"]
 ! Can't block AI art from non-chan site because only a few image tags are present in the metadata.
 ! There are so many AI features, this filter is a drop in the bucket ¯\_(ツ)_/¯
-! -- https://chan.sankakucomplex.com/
+! -- https://chan.sankakucomplex.com/ (logged in)
+! Header - Promo for Sankaku Plus
+chan.sankakucomplex.com###news-ticker:has(> [href="https://get.sankaku.plus/"])
 ! Navbar - Posts > AI Artwork
 chan.sankakucomplex.com###header li:has(> [href^="https://chan.sankakucomplex.com/?tags=sankaku_ai"])
-! Navbar, Companions
+! Navbar - Companions
 chan.sankakucomplex.com##.nav-special:has(> [href="/companions"])
 ! Floating companions window
 chan.sankakucomplex.com##.companion--draggable_element
@@ -5096,11 +5109,9 @@ chan.sankakucomplex.com##.ai-carousel
 chan.sankakucomplex.com##.companion-carousel
 ! Images tagged as AI made
 chan.sankakucomplex.com##.post-preview:has([data-auto_page~="ai-assisted"], [data-auto_page~="ai-created"], [data-auto_page~="ai-upscaled"], [data-auto_page~="ai-voiced"])
-! Sankaku subscription promo mentioning AI
-chan.sankakucomplex.com#?#.premium-carousel:contains(" AI ")
-! -- https://chan.sankakucomplex.com/en/posts/porq836Vwa7
-! Plus promo mentioning AI
-chan.sankakucomplex.com#?#.carousel:has(> h5 > [href="https://get.sankaku.plus/"]):contains(AI creator)
+! Promo banner for Sankaku Plus
+! * Covers homepage, search, and post view
+chan.sankakucomplex.com##.carousel:has(h5 > [href="https://get.sankaku.plus/"])
 ! === Scrolller (NSFW) ===
 ! AI Jerk Off
 scrolller.com##.index-module__fNZuDa__container[href="https://trk.scrolller.com/b5fb9e68-dccb-4e9c-a514-9b514cfdaf7f"]
