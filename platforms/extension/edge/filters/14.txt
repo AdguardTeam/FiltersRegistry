@@ -1,9 +1,9 @@
-! Checksum: x1t4qgcSkEJTNnBc22Hf1A
-! Diff-Path: ../patches/14/14-s-1795626669-3600.patch
+! Checksum: PtAGqFWenJYU7YL91Tj29g
+! Diff-Path: ../patches/14/14-s-1795630393-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.87.89
-! TimeUpdated: 2026-11-25T17:08:16+00:00
+! Version: 2.2.87.90
+! TimeUpdated: 2026-11-25T18:10:19+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2682,6 +2682,7 @@ ziolaioleje.pl,houseofpostcards.pl,sklep.precio.pl,kim24.pl,sklep.moderat.pl,dla
 !
 ! NOTE: Regular rules
 !
+yello-card.com##section[aria-labelledby="cookie-consent-title"]
 garuda-indonesia.com#%#//scriptlet('trusted-set-cookie-reload', 'consent%3Acookie', '{%22essentialCookies%22:true%2C%22marketingCookies%22:false%2C%22analyticCookies%22:false%2C%22consentStatus%22:%22Rejected%22%2C%22id%22:%22109d7bee-d7f5-4daf-9b74-a684995999fe%22}')
 blog.etoto.pl###zgoda-root
 npfsberbanka.ru##div[class*="CookieAcceptionPopup_"]
@@ -20200,6 +20201,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! yello-card.com
+@@||yello-card.com/assets/CookieConsent-*.js$domain=yello-card.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216554
 @@||cdn.cookielaw.org^$domain=variety.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247933
@@ -49794,6 +49797,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+bird.rent#%#//scriptlet('trusted-click-element', 'div.redirector > dialog.modal button.svelte-ccmpno')
 way.com##app-mobile-top-banner
 blog.etoto.pl##.sidebar-vip
 vide-greniers.org###content > div.flex-col > div.flex-col > div.justify-center:has(dialog[aria-label="Fenêtre présentation Application"])
