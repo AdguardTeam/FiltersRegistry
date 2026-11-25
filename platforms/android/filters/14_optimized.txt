@@ -1,9 +1,9 @@
-! Checksum: f6g18CZatMVOeBd6paRsvw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1795594367-3600.patch
+! Checksum: SpXsJzsvD7R0dcYpcRB5VQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1795601479-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.87.82
-! TimeUpdated: 2026-11-25T08:10:49+00:00
+! Version: 2.2.87.83
+! TimeUpdated: 2026-11-25T10:08:55+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1738,6 +1738,7 @@ wearmedicine.com##div[data-test="cookiesConsentModal"]
 fluxpayroll.ai#%#//scriptlet('set-cookie', 'flux_tracking_consent', 'false')
 senet.cloud##[aria-labelledby="cookie-notice-title"]
 senet.cloud##button[data-consent-region][data-consent-country]
+j-taxrefund.com#%#//scriptlet('trusted-set-cookie', 'RFCOOK_WEB', 'v2')
 joybuggy.com##div[aria-labelledby="onboarding-modal-title"]:has(button[data-testid="accept-essential"])
 ||ncez.pzh.gov.pl/*/plugins/lightweight-cookie-consent/
 plitch.com##.cookiebar-overlay
@@ -10094,6 +10095,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android, cli)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 @@||cdn.cookielaw.org^$domain=variety.com
+j-taxrefund.com#@#.cookie-consent-content
+j-taxrefund.com#@##cookieNotice
 flaschenland.de#@#.cookie-permission-container
 @@||web.cmp.usercentrics.eu/ui/*.js^$domain=justetf.com
 @@||api.service.cmp.usercentrics.eu^$xmlhttprequest,domain=justetf.com
