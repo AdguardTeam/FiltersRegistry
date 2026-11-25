@@ -1,9 +1,9 @@
-! Checksum: E+TaVacyiLBxehdv4mKolw
-! Diff-Path: ../patches/260/260-s-1795567949-14400.patch
+! Checksum: wVVZeCUrljdadZMAAYMc7g
+! Diff-Path: ../patches/260/260-s-1795581423-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.39
-! TimeUpdated: 2026-11-25T00:50:24+00:00
+! Version: 2.0.3.40
+! TimeUpdated: 2026-11-25T04:35:20+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1218,6 +1218,10 @@ firstpost.com###ia-search
 ! -- https://www.foodnetwork.com/recipes/alton-brown/baked-macaroni-and-cheese-recipe-1939524
 ! Review summary
 www.foodnetwork.com##.reviewsSummary
+! === Font Awesome ===
+! -- https://fontawesome.com/search?q=%EE%80%A8
+! Let your agent find icons for you
+fontawesome.com##.ais-StateResults .column-6:has(> [href="/ai"])
 ! === Forbes ===
 ! -- https://www.forbes.com/sites/jonmarkman/2026/09/03/googles-gemini-38-flash-brings-frontier-level-work-to-its-cheap-tier/
 ! Article voiceover
@@ -2626,6 +2630,11 @@ widget.indexfox.ai##.ask-ai-button
 widget.indexfox.ai##.ask-response
 ! Search - Page summary
 ||api.indexfox.ai/api/6383989965980236728/summary$xmlhttprequest,domain=widget.indexfox.ai
+! === MarketBeat ===
+! -- https://www.marketbeat.com/pages/search.aspx?query=test
+! AI search overview
+||www.marketbeat.com/Pages/Search.aspx/GetOverview$xmlhttprequest,domain=www.marketbeat.com
+www.marketbeat.com###ai-overview
 ! === Mathrubhumi ===
 ! -- https://english.mathrubhumi.com/news/india/suvendu-adhikari-aide-murder-bike-recovered-west-bengal-u8r914aj
 ! Article summary
@@ -2999,9 +3008,7 @@ www.newegg.com##.header2021-celeste
 ! Search bar (focused) - Ask Celeste
 www.newegg.com##.header2021-search-sec-ask
 ! Search bar - Remove sparkle from magnifying glass search button
-! * uBO doesn't allow backslash \ in CSS styles
-!   https://github.com/uBlockOrigin/uBlock-issues/issues/668#issuecomment-511117701
-www.newegg.com#$#.ico-search-ai::before { content: "\f002" !important }
+www.newegg.com#$#.ico-search-ai::before { content: "" !important }
 ! Floating AI Assistant icon
 www.newegg.com##.floating-robot
 ! -- https://www.newegg.com/ (mobile)
