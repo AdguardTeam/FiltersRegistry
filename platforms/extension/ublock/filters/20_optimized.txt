@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: cMS/bX7kaUGJ60Z3nG2rSg
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1795536778-3600.patch
+! Checksum: f51PasXtECKAyCYG5H24wg
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1795572879-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.34.46
@@ -107,8 +107,6 @@ sheepesports.com##+js(set-session-storage-item, sheepesports:mobile-app-launch:p
 tokenpost.kr##.app_qr_widget_wrap
 m.teescanner.com###appinfo-wrap
 m.fredit.co.kr##.app-down-layer
-m-emart.ssg.com,m.ssg.com##.gnb-banner
-mfront.homeplus.co.kr##.appInstallBanner
 dobro.ru##div.footer-column > div.tw\:v-stack:has(> div.tw\:v-stack > div.tw\:flex a[href^="https://www.rustore.ru/catalog/app"])
 duckduckgo.com##.site-wrapper div[data-testid="serp-atb-btn"]:has(> a[href^="https://play.google.com/store/apps/"])
 ether.fi##section.footer-closing-cta
@@ -151,6 +149,7 @@ chollometro.com###customBannerList-id-77
 food.ru##div[class^="AppDownloadBanner_"]
 mamba.ru##div[data-name="install-pwa-banner"]
 jetstream.blog###pwa-install-banner
+rostics.ru###links-menu + div[class]:has(> div[class] a[href="/legal/loyalty_program"])
 newspicks.com##div[class^="css-"]:has(> div > img[src="/resources/images/banner-app-download.png"])
 shop.lashinbang.com##+js(set-cookie-reload, is_app_install, 0)
 univision.com##footer > div.grid > a[data-tracking-event="vix_footer_banner"]
@@ -335,6 +334,7 @@ poupatempo.sp.gov.br###evaluateDownloadApp
 people.com##.people-sc-block-featuredlink--people-app-promo
 people.com##.get-the-app-link
 vodafone.com.tr##div[data-widget="StickyAlert"]
+rover.com##div[edge-id="app-install-banner"]
 books.yandex.ru##button[class*="DesktopHeaderPromoOrPlusButton"]
 paribucineverse.com###app-qr-modal
 hoff.ru##.suggest-wrapper
@@ -374,8 +374,8 @@ customer.licard.ru##+js(set-session-storage-item, modalClosed, true)
 xn--pckua2a7gp15o89zb.com##+js(set-cookie, hideuab, 1)
 baitoru.com##a[href*="adj.st"]
 milliyet.com.tr##.redirectPopup
+bikemap.net##div[class^="app-qr-code_container"]
 news.yahoo.co.jp##li:has(> a[href*="/app.adjust.com"]:only-child)
-litv.tv##a[title="下載APP"]
 auto.ru##div[data-testid="ListingItemPromoGoToApp"]
 vatanbilgisayar.com##.open-app-top
 ||amazonaws.com/mobligo_smart_banner.js
@@ -393,7 +393,6 @@ movilhentai.com##.alerta-adblock
 gl.ali213.net##.share-container
 borsadirekt.com##.sticky-header-app:style(display: none !important;)
 sedas.com##+js(remove-node-text, script, duyuruModal)
-typhoon.yahoo.co.jp##.appLinkTyphoon
 redecanaistv.*,redecanais.*##.pm-video-heading > div[style]:has(> a[href="./android/"])
 ||cdn.ekoltv.com.tr/news/44102.jpg
 energogarant.ru##+js(set-cookie, show_apps, true)
@@ -444,7 +443,6 @@ cars.com##.global-footer-mobile-apps
 cars.com##.global-footer-heading:contains(Mobile App)
 cars.com##cars-app-banner
 yandex.*##:matches-path(/metro) .metro-sidebar-view__mobile-share-container
-tokopedia.com##body > div:has(> div[data-unify="Overlay"] + div > article[data-unify="Modal"] img[src^="https://p16-assets-sg.tokopedia-static.net/"][src$="/zeus/kratos/a79a26a0.png"]):style(display: none !important;)
 autotrader.com##.app-store-bar
 vivo.com##.vep-head-download
 instagram.com##main + div:not([class]) > div[data-visualcompletion="ignore"] > div._abpk
@@ -510,7 +508,6 @@ meqqe.jp##main > div[class] > div[class][style*="opacity"]
 microsoft.com##.rail-cta-prefix-container
 mobalytics.gg##main > div > div:has(> div > img[alt="Mobalytics"])
 scribd.com##div[style] > a[href^="https://www.scribd.com/oauth/signup"]:has(> span[style^="position:absolute;"])
-shufoo.net##.__sp_footerBanner
 przegladsportowy.onet.pl###__bottomBanner
 foxford.ru##div[class*="ContentContainer"] > div > div:has( > div > div > .slick-slider > .slick-list > .slick-track > .slick-slide > div > div > div[class*="QrWrapper"])
 evroopt.by##a[href="/app-eplus/"]:style(visibility: hidden !important;)
@@ -823,7 +820,6 @@ japantravel.navitime.com,uniqlo.com.hk##.app-modal
 japantravel.navitime.com##.p__aside__app
 youla.ru##+js(set-cookie, youla_fullscreenbanner, disabled)
 aliexpress.com,aliexpress.us###mobile-download
-navitime.com##.appli-japan-travel-banner
 mixch.tv##body:style(overflow: auto !important;)
 ||baycrews.jp/src/feature/seo/*_app/*-app-bana.jpg
 shop.menz-style.com###coupon-container
@@ -1170,7 +1166,6 @@ clubjt.jp##app-favorite-popup-safari
 swarmapp.com##.fixedUpsellBottom
 heritagedaily.com##.tdi_68
 dcarshare.docomo.ne.jp###l_download_app
-metar-taf.com##.download-info
 nieuwsblad.be##a[href="https://urlgeni.us/nbonieuws/apppromowidgets"]
 naked-science.ru##.footer-app-block
 m.iqiyi.com##.m-box[name="m-recList"]
@@ -1333,7 +1328,6 @@ bigo.tv##.load-box
 bigo.tv##.download-dialog
 fanyi.qq.com##.textpanel-banner
 hinative.com##.mod_banner_bestapp_footer
-m.douban.com##.TalionNav-static:style(display: none !important;)
 m.douban.com##.TalionNav:style(padding-bottom: 30px !important;)
 gaosan.com##.float-qrcode
 kogan.com###kogan-ad-sidebar
@@ -1804,6 +1798,7 @@ labirint.ru##.smartbanner__height
 factor.ua##.b-app-banner
 montecarlo.ru##.mobile-popup
 indeed.com###appPromoBanner
+hitta.se##.AppBannerContainer
 aminoapps.com##.recommend-app
 ||instagram.com/static/images/appstore-install-badges^
 radio.net##.section-block > h2[data-mobile-title="App"]
@@ -1844,7 +1839,6 @@ weathernews.jp##.wni-appMenu
 zalando.de,zalando.pl##.z-mask-smartbanner
 pieseauto.ro##.pa-inst-app-piese-wrap
 ||play.google.com/intl/en_us/badges/$domain=richluck.ru
-appletips.nl##.atapp
 m.kfc.ru##.app-download-wrapper
 oneindia.com##.extensionElem
 fix-price.com,napopravku.ru,expres.sk,arukereso.hu,msg.aliexpress.*,uinterview.com,eapteka.ru,locator.transitcard.ru##.mobile-app
@@ -1860,7 +1854,6 @@ bing.com###bnp_ttc_div
 follow.yahoo.co.jp,zdnet.de##.appPromo
 kino-teatr.ua##a[href="https://play.google.com/store/apps/details?id=com.kinoteatr.ua.filmgoer"]
 bleacherreport.com##.notification.mobile_interstitial
-m.baby.ru##.happy_mama-banner
 haberler.com,apahotel.com,snkrdunk.com,yamareco.com,snkrdunk.com,haber61.net,avtocod.ru,yeniduzen.com,yenicaggazetesi.com.tr,20minutes.fr,picwish.com,halktv.com.tr,whosampled.com,lefigaro.fr,type.jp,yenihaberden.com,victorysportsnews.com###app-banner
 filejoker.net,sport.de##a[href^="https://play.google.com"]
 kicker.de###ovAppBar
@@ -1889,10 +1882,10 @@ superfb.com##a[href="http://www.superfb.com/mobil"]
 ||superfb.com/_img/mobil_imaj.png
 finans.mynet.com###moblie_banner_300x250
 reuters.com##[class^="GetTheAppBanner"]
+ipleer.fm##.rt_play_market
 video.az##.sidebar-right > .text-center > a[href*="/app"] > img
 wallstreet-online.de##.app-advertising
 uakinogo.org,kinogo.org,kinogo.tm,klook.com,m.globalsources.com,megamarket.ru,prioritypass.com,trainman.in,klook.com,newchic.com,m.zaful.com,c.mi.com,m.vseinstrumenti.ru##.app-download
-||klavyer.com/android/klavyer-android-uygulamamiz.jpg
 moviefone.com##.app-intercept
 olx.ua###mobileAppsbadge
 ifeng.com##.openApp[onclick^="loadOpen.init(download"]
@@ -1903,6 +1896,7 @@ opodo.de###app-layer
 chrono24.cn,chrono24.co.uk,chrono24.com,chrono24.de,chrono24.es,chrono24.fr,chrono24.it,chrono24.jp,chrono24.nl,pampers.*,trendyol.com,tripadvisor.ru,prog-8.com,spice.eplus.jp,catalog.onliner.by,hket.com,fashion-headline.com,momoshop.com.tw,ticketjam.jp,kompas.com,sevenbank.co.jp,booth.pm,reverso.net,bangumi.org,msn.com,m.investing.com,m.spiegel.de,mavcsoport.hu,m.trendyol.com,autobild.de,infranken.de,m.douglas.de,focus.de###smartbanner
 ipaddressguide.com##img[alt="iptools android app"]
 oncoforum.ru##.ad-app
+oceans-nadia.com,epicentrk.ua,oncoforum.ru##.footer-app
 m.ndtv.com###header_ap_id
 zillow.com###mobile-upsell-container
 supreme2.ru###s2newsad
@@ -1911,6 +1905,7 @@ soundcloud.com##article.mobileApps
 apkpure.*##.safe-link > .dl-ref
 wattpad.com###bottom-banner-container
 wattpad.com###announcements-container
+sputnik.ru##.b-cover__box > div.b-panel.js-panel[style="height: 60px;"]
 marca.com##.js-mobile-banner:style(display: none !important;)
 olx.ua###appsBottomBar
 m24.ru###AndroidMobileAppBanner
@@ -1947,7 +1942,6 @@ ecvip.pchome.com.tw,24h.m.pchome.com.tw###smartbanner[class*="shown"] + #WRAPPER
 9gag.com##.open-in-app:style(display: none !important;)
 9gag.com##body:style(overflow: auto !important;)
 bing.com##.b_hphb:style(display:block!important;)
-citrus.ua##body:style(overflow: visible !important;)
 fandom.com##.global-navigation-mobile-wrapper:style(top: 0!important;)
 fandom.com##body:style(margin-top: 0!important;)
 goodreads.com##html.withAppInstallationBanner .siteHeader:style(top: 0 !important;)
