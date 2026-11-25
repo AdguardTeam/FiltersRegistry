@@ -318,6 +318,10 @@ www.automateexcel.com##nav:has([href="/formula-generator-ai-bot/"]):has([href="/
 ! Floating chat button
 www.autonocion.com###an-box-btn
 
+! === Auto Trader NZ ===
+! Floating AI chat button
+||embed.vaile.ai/chat-widget-magic.iife.js$script,domain=autotrader.co.nz
+
 ! === AutoZone ===
 ! -- https://www.autozone.com/p/duralast-platinum-battery-h7-agm/319458
 ! Review summary
@@ -501,6 +505,14 @@ www.bing.com##.conversation_starters
 www.bing.com##.editorial-promo-card:has(> [aria-label^="Advance your AI skills"])
 ! Copilot price insignhts (bottom)
 www.bing.com#?##ShoppingLandingPage_ShoppingEducation:contains(Try it on Copilot)
+
+! -- https://www.bing.com/videos/riverview/relatedvideo?q=bob+ross+episode+1&&mid=4EA7E588CD4C7E1FDC044EA7E588CD4C7E1FDC04&churl=https%3a%2f%2fwww.youtube.com%2fchannel%2fUCxcnsr1R5Ge_fbTu5ajt8DQ&FORM=VRDGAR (Video)
+! AI insights
+www.bing.com##.aibtn
+! "Key moments in this video"
+www.bing.com##.aichpolc
+! Summary
+www.bing.com##.acaiic
 
 ! -- https://rewards.bing.com/
 ! Earn > Microsoft Unlocked
@@ -1369,6 +1381,17 @@ facebook.com##.m.nb[data-type="container"]:has([role="button"][aria-label="Meta 
 ! -- https://avatar.fandom.com/wiki/Aang (Article)
 ! Quick Answers - appears below contents box
 fandom.com##section.trfc161
+
+! === Feedly ===
+! -- https://feedly.com/i/my/me
+! Sidebar - Create AI Feed
+feedly.com##.LeftnavWebAlertsButton__wrapper
+! Sidebar > Feeds > Plus icon (+) > Create AI Feed
+feedly.com##[data-floating-ui-focusable] [role="menuitem"][tabindex="0"]:has([d^="M10.005 3.133a.5.5 0 0 1 .492.41l"])
+
+! -- https://feedly.com/i/collection/content/user/[user-id]/category/global.all (Feeds > All)
+! "Synthesize articles" sparkle icon
+feedly.com##div:has(> button[aria-label="Toggle Ask AI panel"])
 
 ! === Fight the New Drug ===
 ! Floating AI button
@@ -2508,6 +2531,10 @@ www.greenpan.us#$#.bar_menu .item:has(+ [data-parent="ai-shopping-assistant"]) a
 ! Review summary
 www.greenpan.us##[data-bv-show="review-summaries"]
 
+! === Gridinsoft ===
+! Floating AI chat icon
+gridinsoft.com##.ai-chat-widget
+
 ! === Hardware Busters ===
 ! -- https://hwbusters.com/news/comma-ai-egpu-dock-runs-open-source-firmware-249-bare-799-with-an-rx-9060/
 ! Floating "Ask Buster" button
@@ -2929,6 +2956,10 @@ www.lawinsider.com##.mdc-menu-surface--anchor:has(> [data-trigger-paywall-id="AI
 www.lenovo.com##.pdp-ai-summary
 ! Review summary
 www.lenovo.com##[data-bv-show="review-summaries"]
+
+! -- https://psref.lenovo.com/
+! Floating PSREF AI Beta button [support, chatbot]
+psref.lenovo.com##.ai-icon-container
 
 ! === Les Numériques (French) ===
 ! Floating chat icon
@@ -5402,16 +5433,18 @@ m.youtube.com#%#//scriptlet('ubo-json-edit', '$..[?@.horizontalCardListRenderer.
 ! Partially based on https://github.com/moocj/yt-remove-ai-chapters
 ! TODO: Remove segments on playback bar
 ! * Player - Chapter tooltips when hovering progress bar
-www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytp-tooltip-progress-bar-pill-title
+www.youtube.com##.watch-root-element:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytp-tooltip-progress-bar-pill-title
 ! * Player - Chapter near video time
-www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytp-chapter-container
+www.youtube.com##.watch-root-element:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytp-chapter-container
 ! * Description - Chapter cards
-www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) ytd-horizontal-card-list-renderer[modern-chapters]
+www.youtube.com##.watch-root-element:has([target-id="engagement-panel-macro-markers-auto-chapters"]) [modern-chapters]
 ! * Sidebar panel - Chapter tab (Not covered by JSON filters)
-www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytChipBarViewModelChipWrapper:has(button[aria-label="Chapters"][aria-selected="false"])
-www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) chip-bar-view-model:has(button[aria-label="Chapters"][aria-selected="false"]):has(.ytChipBarViewModelChipWrapper:last-child:nth-child(2))
+www.youtube.com##.watch-root-element:has([target-id="engagement-panel-macro-markers-auto-chapters"]) .ytChipBarViewModelChipWrapper:has(button[aria-label="Chapters"][aria-selected="false"])
+! ** Hide all tabs if only 1 is left
+www.youtube.com##.watch-root-element:has([target-id="engagement-panel-macro-markers-auto-chapters"]) chip-bar-view-model:has(button[aria-label="Chapters"][aria-selected="false"]):has(.ytChipBarViewModelChipWrapper:last-child:nth-child(2))
 ! * Sidebar panel - Transcript chapter headers
-www.youtube.com##ytd-watch-flexy:has([target-id="engagement-panel-macro-markers-auto-chapters"]) [data-target-id="PAmodern_transcript_view"] yt-item-section-renderer > #header
+!   Note: Sometimes transcript auto-chapters appear without a chapters section (https://www.youtube.com/watch?v=LeFPryVXFwQ)
+www.youtube.com###panels:not(:has([target-id="engagement-panel-macro-markers-description-chapters"])) timeline-chapter-view-model
 
 ! -- https://m.youtube.com/watch?v=oh5p5f5_-7A (mobile)
 ! "Ask" slide in comment carousel below video
@@ -5475,6 +5508,18 @@ studio.youtube.com##[test-id="VIDEO_BRAINSTORM_IDEA"]
 studio.youtube.com##.ask-studio-container
 ! Editor - Create - Turn audio into Short
 studio.youtube.com###entrypoint-audiovision-shorts-row
+
+! === Zenni Optical ===
+! Search bar - AI button
+www.zennioptical.com##[data-testid="ai-search-shortcut"]
+! Search bar (focused) - AI Search toggle
+www.zennioptical.com##.tw-group\/aitoggle:has([role="switch"][aria-checked="false"])
+! Search bar (focused) - Try these AI searches
+www.zennioptical.com##.tw-py-4:has([data-testid="ai-example-query"])
+! Search bar - Override placeholder text
+! * Backup for non-trusted filters. The text starts as "Search glasses", but changes after page load.
+!   Ideally we'd find a way to block this without trusted filters.
+www.zennioptical.com#$#.searchInput[placeholder="Search or let AI recommend frames"]::placeholder { color: transparent !important }
 
 ! === Zillow ===
 ! Floating chatbot icon
