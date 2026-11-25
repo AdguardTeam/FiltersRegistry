@@ -15,6 +15,7 @@
 !
 !
 !
+||fozekikikiminu.com^
 ||reliablelinen.com^
 ||xtaztxiibmcgwv.com^
 ||qozkbwkxygxlrs.com^
@@ -8305,7 +8306,6 @@ ad.broadstreetads.com
 ||jssdk.donuheridimylo.com^
 ||jssdk.fegekejynewyhe.com^
 ||jssdk.fogavokygysypa.com^
-||jssdk.fozekikikiminu.com^
 ||jssdk.fubavavibosuta.com^
 ||jssdk.gajukogyxywahu.com^
 ||jssdk.gogukypynijoxy.com^
@@ -47235,6 +47235,9 @@ tvtoss.com$$script:contains(ads-wrap)
 ! /asset/jquery/slim-3.2.min.js$domain=avple.video|javhdfree.icu|nekolink.site|mambast.tk|netflav.com|fembed-hd.com|ndrama.xyz|pornhole.club|ffem.club|jvembed.com|dzmdplay.xyz|jav247.top|yuistream.xyz|javfu.net|iframe2videos.xyz|viplayer.cc|watchjavnow.xyz|cdn-myhdjav.info|embed-media.com|fembed9hd.com|cloudrls.com|vidgo.top
 !
 !
+! TrafficStars
+/do2/*/master|
+/do2/*/vast|
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247123#issuecomment-6872786362
 ! uqload video player is an iframe so we need generic regex for Safari
 /^https:\/\/uqload\.[a-z]+\/[a-z0-9][a-z0-9][a-z0-9]+\/[a-z0-9][a-z0-9][a-z0-9][a-z0-9]+\.js/$script,match-case
@@ -48382,7 +48385,9 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##amp-img[class^="img_"][style="width:336px;height:280px;"]
 ##amp-img[height^="   "]
 ##browsispot[style^="width:    100%;"]
+##a[href*="-load"][style^="height:   "]
 ##a[href*="html-load.com/"] > amp-img[src^="https://tpc.googlesyndication.com/"]
+##a[href*="html-load.com/"]:empty + div[class] > a[href*=".html-load.com/"]
 ##a[href*="html-load.com/"]:has(+ amp-pixel + div[aria-hidden="true"]) > amp-img.aspw
 ##a[href*="html-load.com/"][attributiondestination="https://appier.net"]
 ##a[href*="html-load.com/"][attributionsrc^="https://track.u.send.microad.jp"]
@@ -48530,6 +48535,8 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##div[style$="overflow: hidden; width: 300px; height: 250px; margin: 0px auto;"]
 ##div[style$="text-indent: 0px !important;"] > a[href*="html-load.com"]
 ##div[style*="left: 0px; z-index: 1000000000"] > div > div[id^="img_"]
+##div[style*="width:    3"][style*="height:    "]
+##div[style*="width:   3"][style*="height:   "]
 ##div[style="display:inline"][class^="img_"] > div[style="display:flex;"]
 ##div[style^="bottom:0;right:0;width:300px;height:250px;background:initial!important;"]
 ##div[style^="left:0px;top:0px;width:   100%;height:   100%"] + div[class][style="display:inline"]
@@ -48538,7 +48545,6 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##div[style^="position:absolute;"] > div[id^="img_"]
 ##div[style^="transition-duration:0ms!important;margin:0px!important;padding:0px!important;border:none!important;position:absolute!important;top:0px!important;"]
 ##div[style^="visibility: visible; position: relative; overflow: hidden; width: 300px; height: 250px"]
-##div[style^="width:    3"][style*="height:    "]
 ##div[style] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##div[style^="position:"][ontouchstart="fCidsp(event)"]
 ##div[style^="v"] > a[href*="html-load.com"][target][style="text-decoration:none;"]
@@ -48598,6 +48604,7 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 @@||smsonline.cloud^$generichide
 @@||dogdrip.net^$generichide
 ! Ad-Shield specific rules
+gamewith.jp##div[id^="browsi_wrapper_"]
 autoby.jp###sp-breadcrumbs-top
 select.mamastar.jp##.page-page + div[class][style="margin-bottom:20px;"]
 select.mamastar.jp##.reward-content-area + style + div[class]:has(> div[id][align="center"][style="text-align:center"])
@@ -72587,7 +72594,7 @@ forbes.com#$#body .current-page.ads-loaded { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189854
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166718
 x.com#%#//scriptlet('json-prune', '$.data..["entries","items"][?(@.*.content.promoted_metadata)]')
-x.com#%#//scriptlet('json-prune', 'data.*.home_timeline_urt.instructions.*.entries.[-].content.content.promoted_metadata data.threaded_conversation_with_injections_v2.instructions.*.entries.*.content.items.[-].item.content.promoted_metadata')
+x.com#%#//scriptlet('json-prune', 'data.*.home_timeline_urt.instructions.*.entries.[-].content.content.promoted_metadata data.threaded_conversation_with_injections_v2.instructions.*.entries.*.content.items.[-].item.content.promoted_metadata data.search_by_raw_query.search_timeline.timeline.instructions.*.entries.[-].content.content.promoted_metadata')
 ! Home timeline ads
 /i/api/graphql/*/HomeLatestTimeline$jsonprune=\$.data.home.home_timeline_urt.instructions..entries..[?(key-substr 'entryId' 'promoted-tweet-')],domain=twitter.com|x.com
 /i/api/graphql/*/HomeTimeline$jsonprune=\$.data.home.home_timeline_urt.instructions..entries..[?(key-substr 'entryId' 'promoted-tweet-')],domain=twitter.com|x.com
@@ -105177,6 +105184,7 @@ browsershots.org#@#.advert_area
 ||ancykwplparfu.website^
 ||ancznewozw.com^
 ||andallthemise.org^
+||andinelibbard.cyou^
 ||andinemacules.com^
 ||androidduvetscribble.com^
 ||andthoughmy.org^
@@ -112376,6 +112384,7 @@ browsershots.org#@#.advert_area
 ||dsezzn.com^
 ||dsfdzo.com^
 ||dsfgge.com^
+||dsfiua.com^
 ||dsfixu.com^
 ||dsfjcz.com^
 ||dsfkry.com^
@@ -123547,6 +123556,7 @@ browsershots.org#@#.advert_area
 ||llxemmopmuitk.space^
 ||llxhgmptlnuxe.space^
 ||llxuggnaaghgg.space^
+||llxuksutghlty.online^
 ||llyjwpmbhzuwe.website^
 ||lm1668.com^
 ||lmajjygd.com^
@@ -123571,6 +123581,7 @@ browsershots.org#@#.advert_area
 ||lmjvywakjupgv.site^
 ||lmjzsplamr.com^
 ||lmlirxrgiowap.online^
+||lmnracceunkmg.online^
 ||lmouywaaussjy.website^
 ||lmpygevzkenzr.online^
 ||lmqduqzuqzjbs.space^
@@ -131060,6 +131071,7 @@ browsershots.org#@#.advert_area
 ||qcmtxdjqftulh.site^
 ||qcnljeukwbfdu.online^
 ||qcobvdvhldboz.online^
+||qcqhfgiqksxkz.site^
 ||qcqntwlipjjjy.site^
 ||qcsjqchatmwpj.space^
 ||qcsvxobneexyu.site^
@@ -133237,6 +133249,7 @@ browsershots.org#@#.advert_area
 ||rqmgessslopfy.online^
 ||rqqimwqpigpqa.site^
 ||rqrrujuxzpety.site^
+||rqrscydbsjldb.website^
 ||rqswkiedmjkhu.space^
 ||rqtrk.eu^
 ||rqtsvdclifjqy.site^
@@ -137156,6 +137169,7 @@ browsershots.org#@#.advert_area
 ||timbalschinookternar.qpon^
 ||timbernobtuse.cyou^
 ||timbresthump.qpon^
+||timdmcacsaiuw.website^
 ||timedgype.com^
 ||timeforagreement.com^
 ||timelymaybe.pro^
@@ -138880,6 +138894,7 @@ browsershots.org#@#.advert_area
 ||uniatherbane.cyou^
 ||uniblehijinks.com^
 ||unicornpride123.com^
+||unideallayboy.cfd^
 ||unidentifiedrelatecalled.com^
 ||unidentifiedscammertravel.com^
 ||unifini.de^
@@ -139620,6 +139635,7 @@ browsershots.org#@#.advert_area
 ||vanelawzyliftmen.cfd^
 ||vanesfounte.click^
 ||vangloeducat.com^
+||vangsfeuedtulchin.cfd^
 ||vangsyours.com^
 ||vanillagrapelowlife.com^
 ||vanillanegotiationitem.com^
@@ -140077,6 +140093,7 @@ browsershots.org#@#.advert_area
 ||viosdojjklsuq.site^
 ||viovtyhydslzg.online^
 ||viowrel.com^
+||vioxchivkniyd.space^
 ||vipads.live^
 ||vipavkacrfujf.online^
 ||vipdine.space^
@@ -143603,6 +143620,7 @@ browsershots.org#@#.advert_area
 ||yrvamtdweysom.site^
 ||yrzrmvgzxteuq.site^
 ||ys73fwrg.xyz^
+||ysaafgyzqdxjd.online^
 ||ysaohbqahvvyq.online^
 ||ysarhyrgeanij.site^
 ||yscorqzbhudtw.space^

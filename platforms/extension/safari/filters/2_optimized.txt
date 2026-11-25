@@ -1,10 +1,11 @@
-! Checksum: z/GECRm0pI0iGrdnVF5e3g
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1795601509-3600.patch
+! Checksum: ahIj62oV/so7NO75P6+k6A
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1795605054-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.5.7.1
-! TimeUpdated: 2026-11-25T10:08:09+00:00
+! Version: 2.5.7.2
+! TimeUpdated: 2026-11-25T11:07:38+00:00
 ! Expires: 5 days (update frequency)
+||fozekikikiminu.com^
 ||reliablelinen.com^
 ||xtaztxiibmcgwv.com^
 ||qozkbwkxygxlrs.com^
@@ -3666,7 +3667,6 @@
 ||jssdk.cysyjucymudity.com^
 ||jssdk.donuheridimylo.com^
 ||jssdk.fogavokygysypa.com^
-||jssdk.fozekikikiminu.com^
 ||jssdk.fubavavibosuta.com^
 ||jssdk.gajukogyxywahu.com^
 ||jssdk.gogukypynijoxy.com^
@@ -15951,6 +15951,8 @@ cdkeys.com#$#body .wrapper { background: none!important; }
 hltv.org#$#body { background-image: none !important; }
 cdkeyit.it,allkeyshop.com#$#body { background-image: none!important; }
 benchmarkreviews.com#$#body { background-image: none!important; }
+/do2/*/master|
+/do2/*/vast|
 /^https:\/\/uqload\.[a-z]+\/[a-z0-9][a-z0-9][a-z0-9]+\/[a-z0-9][a-z0-9][a-z0-9][a-z0-9]+\.js/$script,match-case
 ?aff_pub_id=*&ofv_id=$all
 ?ofv_id=*&aff_pub_id=$all
@@ -16270,7 +16272,9 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##amp-img[class^="img_"][style="width:336px;height:280px;"]
 ##amp-img[height^="   "]
 ##browsispot[style^="width:    100%;"]
+##a[href*="-load"][style^="height:   "]
 ##a[href*="html-load.com/"] > amp-img[src^="https://tpc.googlesyndication.com/"]
+##a[href*="html-load.com/"]:empty + div[class] > a[href*=".html-load.com/"]
 ##a[href*="html-load.com/"]:has(+ amp-pixel + div[aria-hidden="true"]) > amp-img.aspw
 ##a[href*="html-load.com/"][attributiondestination="https://appier.net"]
 ##a[href*="html-load.com/"][attributionsrc^="https://track.u.send.microad.jp"]
@@ -16418,6 +16422,8 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##div[style$="overflow: hidden; width: 300px; height: 250px; margin: 0px auto;"]
 ##div[style$="text-indent: 0px !important;"] > a[href*="html-load.com"]
 ##div[style*="left: 0px; z-index: 1000000000"] > div > div[id^="img_"]
+##div[style*="width:    3"][style*="height:    "]
+##div[style*="width:   3"][style*="height:   "]
 ##div[style="display:inline"][class^="img_"] > div[style="display:flex;"]
 ##div[style^="bottom:0;right:0;width:300px;height:250px;background:initial!important;"]
 ##div[style^="left:0px;top:0px;width:   100%;height:   100%"] + div[class][style="display:inline"]
@@ -16426,7 +16432,6 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 ##div[style^="position:absolute;"] > div[id^="img_"]
 ##div[style^="transition-duration:0ms!important;margin:0px!important;padding:0px!important;border:none!important;position:absolute!important;top:0px!important;"]
 ##div[style^="visibility: visible; position: relative; overflow: hidden; width: 300px; height: 250px"]
-##div[style^="width:    3"][style*="height:    "]
 ##div[style] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##div[style^="position:"][ontouchstart="fCidsp(event)"]
 ##div[style^="v"] > a[href*="html-load.com"][target][style="text-decoration:none;"]
@@ -16485,6 +16490,7 @@ content-loader.com,css-load.com,html-load.com,img-load.com#$?#html:not(:has(> he
 @@||infinityfree.com^$generichide
 @@||smsonline.cloud^$generichide
 @@||dogdrip.net^$generichide
+gamewith.jp##div[id^="browsi_wrapper_"]
 autoby.jp###sp-breadcrumbs-top
 select.mamastar.jp##.page-page + div[class][style="margin-bottom:20px;"]
 select.mamastar.jp##.reward-content-area + style + div[class]:has(> div[id][align="center"][style="text-align:center"])
@@ -22768,7 +22774,7 @@ manhwa-raw.com#%#//scriptlet('abort-on-property-write', 'advads_passive_placemen
 terashare.co#%#//scriptlet('prevent-window-open', '!/sharing/link')
 terashare.co#%#(()=>{const e={apply:(e,t,n)=>{try{const[e,r]=n,a=r?.toString();if("click"===e&&a?.includes("attached")&&t instanceof HTMLElement&&t.matches(".share-embed-container"))return}catch(e){}return Reflect.apply(e,t,n)}};window.EventTarget.prototype.addEventListener=new Proxy(window.EventTarget.prototype.addEventListener,e)})();
 x.com#%#//scriptlet('json-prune', '$.data..["entries","items"][?(@.*.content.promoted_metadata)]')
-x.com#%#//scriptlet('json-prune', 'data.*.home_timeline_urt.instructions.*.entries.[-].content.content.promoted_metadata data.threaded_conversation_with_injections_v2.instructions.*.entries.*.content.items.[-].item.content.promoted_metadata')
+x.com#%#//scriptlet('json-prune', 'data.*.home_timeline_urt.instructions.*.entries.[-].content.content.promoted_metadata data.threaded_conversation_with_injections_v2.instructions.*.entries.*.content.items.[-].item.content.promoted_metadata data.search_by_raw_query.search_timeline.timeline.instructions.*.entries.[-].content.content.promoted_metadata')
 !+ NOT_OPTIMIZED
 lite.qwant.com#?#.content > article.result:has(> p > span.ad)
 !+ PLATFORM(ios, ext_safari, ext_chromium_mv3)
@@ -34720,6 +34726,7 @@ browsershots.org#@#.advert_area
 ||ancilladysnomyangles.cfd^
 ||ancillammmm.com^
 ||andallthemise.org^
+||andinelibbard.cyou^
 ||androidduvetscribble.com^
 ||andthoughmy.org^
 ||anedvzkjfgrw.com^
@@ -38093,6 +38100,7 @@ browsershots.org#@#.advert_area
 ||dseukg.com^
 ||dsezzn.com^
 ||dsfgge.com^
+||dsfiua.com^
 ||dsfjcz.com^
 ||dsfmzp.com^
 ||dsfqfe.com^
@@ -42305,12 +42313,14 @@ browsershots.org#@#.advert_area
 ||llsofpbwwufml.online^
 ||lluebjiimznuz.site^
 ||llvpn.com^
+||llxuksutghlty.online^
 ||llyjwpmbhzuwe.website^
 ||lmajjygd.com^
 ||lmcreoloharsr.website^
 ||lmgyjug31.com^
 ||lmifiblkmsjzr.space^
 ||lmjzsplamr.com^
+||lmnracceunkmg.online^
 ||lmouywaaussjy.website^
 ||lmqduqzuqzjbs.space^
 ||lmsaafkrems.com^
@@ -45314,6 +45324,7 @@ browsershots.org#@#.advert_area
 ||qcglsbvudqtao.site^
 ||qcinj6zhut5j93fzztmo275hgj37rg19gxvrw.cfd^
 ||qcmoubaihyvbj.online^
+||qcqhfgiqksxkz.site^
 ||qcwhyhayjcxra.online^
 ||qczgzwbmvious.space^
 ||qdgjpsiqkjiet.website^
@@ -46136,6 +46147,7 @@ browsershots.org#@#.advert_area
 ||rqhknoywabunz.space^
 ||rqhsfmwwy.com^
 ||rqqimwqpigpqa.site^
+||rqrscydbsjldb.website^
 ||rqtrk.eu^
 ||rrmxaipuvpfbe.space^
 ||rrnkmzaflln.com^
@@ -47738,6 +47750,7 @@ browsershots.org#@#.advert_area
 ||timanigriped.qpon^
 ||timbalschinookternar.qpon^
 ||timbernobtuse.cyou^
+||timdmcacsaiuw.website^
 ||timedgype.com^
 ||timesmonarchcivil.com^
 ||timingrunaway.com^
@@ -48391,6 +48404,7 @@ browsershots.org#@#.advert_area
 ||unhaputterparking.cyou^
 ||unhitchdusks.click^
 ||unhurtdittay.click^
+||unideallayboy.cfd^
 ||unigpmgsuffwj.site^
 ||uniolaicecaps.com^
 ||unique-memory.com^
@@ -48661,6 +48675,7 @@ browsershots.org#@#.advert_area
 ||vanelawzyliftmen.cfd^
 ||vanesfounte.click^
 ||vangloeducat.com^
+||vangsfeuedtulchin.cfd^
 ||vangsyours.com^
 ||vannedrigsenbrave.cfd^
 ||vansfeudeefemmes.cyou^
@@ -48848,6 +48863,7 @@ browsershots.org#@#.advert_area
 ||violetcommercial.com^
 ||violettrail.pro^
 ||viowrel.com^
+||vioxchivkniyd.space^
 ||vipads.live^
 ||viral782.com^
 ||viralmediatech.com^
@@ -50044,6 +50060,7 @@ browsershots.org#@#.advert_area
 ||yrtajivgfzoqr.site^
 ||yrzrmvgzxteuq.site^
 ||ys73fwrg.xyz^
+||ysaafgyzqdxjd.online^
 ||yseemjov.com^
 ||ytasozwfwgilm.online^
 ||ytdayhyefpxcp.website^
