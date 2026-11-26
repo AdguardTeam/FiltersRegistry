@@ -1,13 +1,13 @@
-! Checksum: 6ltq5uwi4O28YoQilYhT9A
-! Diff-Path: ../patches/121/121-s-1793033139-14400.patch
+! Checksum: wM/+jdZKGOOlTuHON+C2Zg
+! Diff-Path: ../patches/121/121-s-1795725474-14400.patch
 ! Title: Greek AdBlock Filter
 ! Description: Additional filter list for websites in Greek.
-! Version: 2.0.1.31
-! TimeUpdated: 2026-10-26T16:43:13+00:00
+! Version: 2.0.1.32
+! TimeUpdated: 2026-11-26T20:35:18+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Greek AdBlock Filter
-! OriginalVersion: 2026102600
+! OriginalVersion: 2026112600
 ! Expires: 2 days
 ! Homepage: https://github.com/kargig/greek-adblockplus-filter
 ! License: https://creativecommons.org/licenses/by-sa/4.0/
@@ -135,6 +135,12 @@
 ||enikos.gr/banners/bg/
 ||entertv.gr/sites/default/files/entertv_skin*
 ||epiruspost.gr/images/banners/
+||evros-news.gr/wp-content/uploads/*.gif$image
+||evros-news.gr/wp-content/uploads/*/Istikbal-therapy-plus-*.jpg$image
+||evros-news.gr/wp-content/uploads/*/ktel.png$image
+||evros-news.gr/wp-content/uploads/*/new_kriton_banner_*.jpg$image
+||evros-news.gr/wp-content/uploads/*/sialakis-*.jpg$image
+||filathlos.gr/wp-content/uploads/2025/04/eac0704f-82e3-4af0-a2a7-46c5865aca41.jpg$image
 ||files.capital.gr/adserver/
 ||files.capital.gr/banners/
 ||files.capital.gr/images/dowjones/dowjones_home_logo_small.jpg
@@ -237,6 +243,7 @@
 ||koutipandoras.gr/img/adds/
 ||koutipandoras.gr/sites/default/files/*banner*.swf
 ||koutipandoras.gr/skins/Koutipandoras.gr_Skin.jpg
+||lexigram.gr/lex/ABUsers.php$xmlhttprequest
 ||lifo.gr/adsimg/
 ||lifo.gr/icache/300/600/1/989673_wind_mila.jpg
 ||lifo.gr/icache/940/337/1/983904_GOT_970.jpg
@@ -577,7 +584,6 @@ cosmo.gr##.rightClickable
 cosmo.gr##A.sponsLink
 cretalive.gr###sma-banner-wide
 cretalive.gr###sponsors-mainmodule
-crete2day.com##[id^=front-banner]
 crete2day.com###front-banner
 crete2day.com###front-mobbanner2-container
 crete2day.com###news-mobdown-title-banner2
@@ -662,6 +668,7 @@ enimerosi.com##.sw-banner
 enimerosi.com##.detail-right-sd
 ertecho.gr##.adL
 ertecho.gr##.advert
+ertecho.gr##.content-sidebar
 ethnos.gr##.deal
 ethnos.gr##.sls
 ethnos.gr##.srs
@@ -672,17 +679,25 @@ euro2day.gr##.billboard
 euro2day.gr##.bnrwrp
 eviaportal.gr##.bos_searchbox_widget_class
 eviaportal.gr###custom_html-2
-evros-news.gr##img[src$=".gif"]
 evros-news.gr##.adv
-evros-news.gr##.widget_text[class^="widget-"]
-evros-news.gr##[href^="https://istikbalkouros.gr"]
-evros-news.gr##[href^="https://kriton-energy.com"]
-evros-news.gr##[href^="https://casadikouros.gr"]
+evros-news.gr##.content-area > div[id^="text-"]
+evros-news.gr##.domino_boxed_layout > .no-fp-display.inner-wrap:has(> a[href][target="blanc"] > img[src])
+evros-news.gr##.entry-content > div[style^="clear:both;float:left;width:100%;"]:has(> .adsbygoogle)
+evros-news.gr##.entry-content > h4:has(> a[href] > img[decoding="async"][src])
+evros-news.gr##.entry-content > p > a[href*="/polymedical-"]
+evros-news.gr##.entry-content > p:has(> a[href] > img[decoding="async"][src]):not(:has(br))
+evros-news.gr##.home_widgets > div[id^="text-"]
+evros-news.gr##.theiaStickySidebar > .widget_custom_html:has(> .textwidget > img[style="width: 100%;"][src])
+evros-news.gr##.theiaStickySidebar > div[id^="text-"]
 filadelfia-xalkidona.gr##.td_block_15
 filadelfia-xalkidona.gr##.td_flex_block
 filadelfia-xalkidona.gr##.td_mod_wrap
 filadelfia-xalkidona.gr##.tdi_88_ffb
 filadelfia-xalkidona.gr##.vc_raw_html
+filathlos.gr##.mx-auto:has(> .flex > div[data-ocm-ad])
+filathlos.gr##.mx-auto:has(> #taboola-alternating-below-article)
+filathlos.gr##div[class^="col-span-"]:has(> .flex > div[data-ocm-ad])
+filathlos.gr##img[alt="ad banner"]
 fileleutheros.net###sidebar-one
 fileleutheros.net###page-body-header
 filoitexnisfilosofias.com###af-preloader
@@ -865,6 +880,7 @@ larissanet.gr##.elementor-element-5680254d
 larissanet.gr##.jeg_ad
 larissanet.gr##.widget_sp_image
 lesvosnews.net##.region-banner-top.region.row
+lexigram.gr###divAdOthers
 lifo.gr###das_out
 lifo.gr##.textads-wrapper
 lifo.gr##a[href*="/lines/click/"]
@@ -905,6 +921,8 @@ myphone.gr###leftboxhome
 myphone.gr###rightboxhome
 myphone.gr##.leftbox
 myphone.gr##.rightbox
+myphone.gr###custom_html-2
+myphone.gr##body > div[onclick="linkme()"]
 naftemporiki.gr###google_ads_container
 naftemporiki.gr##DIV.banner
 naxospress.gr##.naxos-pano-apo-tin-epikefalida-se-ola
@@ -1006,6 +1024,7 @@ pcsteps.gr###text-65
 pcsteps.gr##div.single-subscribe-block
 philenews.com##aside
 pitsirikos.net###text-19
+poiein.gr##.widget_custom_html:has(script[src^="https://adspoiein.interten.gr/"])
 politic.gr##.code-block
 politic.gr##.sticky-sidebar
 politic.gr###ad-container
@@ -1149,9 +1168,11 @@ techgear.gr###text-39
 techgear.gr##.mobile_adv
 techgear.gr##.leftClickable
 techgear.gr##.rightClickable
-techgear.gr##div.sticky-el.ad__desktop.ad__div
-techgear.gr##.ad__desktop.ad__div
 techgear.gr##.ad__div
+techmaniacs.gr##.techm-adsense-bottom
+techmaniacs.gr##aside[aria-label="Article sidebar"]:has(> .lg\:sticky > div[class*="border-slate-"] > .items-center > .adsbygoogle)
+techmaniacs.gr##div[class^="techm-after-"]:has(> div[class^="gas_fallback-ad_"] > .adsbygoogle)
+techmaniacs.gr##html:is(.td-md-is-android,.td-md-is-ios) .td-banner-wrap-full
 techteam.gr##A[href*=spinpalace]
 tharrosnews.gr##center
 tharrosnews.gr##.custom-html-widget2

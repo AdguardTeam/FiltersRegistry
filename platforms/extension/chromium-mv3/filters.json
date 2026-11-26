@@ -954,8 +954,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.2.1.83",
-			"timeUpdated": "2026-11-26T16:34:56+0000",
+			"version": "2.2.1.84",
+			"timeUpdated": "2026-11-26T20:35:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1026,8 +1026,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.2.1.83",
-			"timeUpdated": "2026-11-26T16:34:57+0000",
+			"version": "2.2.1.84",
+			"timeUpdated": "2026-11-26T20:35:10+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1444,8 +1444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.95.14",
-			"timeUpdated": "2026-11-26T16:35:47+0000",
+			"version": "2.0.95.15",
+			"timeUpdated": "2026-11-26T20:36:02+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1572,8 +1572,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Stevoisiak/Stevos-AI-Blocklist/refs/heads/main/GenAI-Blocklist.txt",
 			"trustLevel": "high",
-			"version": "2.0.3.43",
-			"timeUpdated": "2026-11-26T00:49:29+0000",
+			"version": "2.0.3.44",
+			"timeUpdated": "2026-11-26T20:36:08+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
