@@ -1,5 +1,5 @@
-! Checksum: skPDWJa/CM+iCXPHh4APSA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1795619596-3600.patch
+! Checksum: EVeqG6GQk+630QBeFOw1Qg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1795659271-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.58.37
@@ -506,7 +506,6 @@ turbo.fr#$##Banniere-Haute { min-height: 0 !important; visibility: hidden !impor
 autoplus.fr###text-65
 autoplus.fr###text-51
 autoplus.fr###text-66
-autoplus.fr###text-16
 lanouvellerepublique.fr##.dfp
 7jours.ca,lesacdechips.com,pesesurstart.com,silo57.ca,24heures.ca,clindoeil.ca,billie.ca,24heures.ca,salutbonjour.ca,slate.fr,journaldesseniors.20minutes.fr##.ad
 letribunaldunet.fr##div[class^="code-block code-block-"][style^="margin:"]
@@ -1635,7 +1634,6 @@ _ad_images_
 _ad_literature.
 _ad_unit.
 _ad_view_
-_AdClick_
 _adco_
 _adcommon.
 _adplib.
@@ -1684,6 +1682,7 @@ _publicite_
 _pubscript.
 _pubted.
 _regie/aff.
+_regiepub/
 _smartclick.js
 _square_ads.
 _werbebanner_
@@ -1711,6 +1710,7 @@ _werbebanner_
 /s/s/su.php?*&width=
 |https://*/nb.js/*,
 %*.juicyads.
+%22banner%*%22idzone%
 %22request_id%*%22idzone%
 /Siropu/AM/display.
 /^https?:\/\/(www\.)?([a-z0-9]{3,16}\.)?[a-z0-9]{5,32}\.([a-z]{2,8})\/([a-z0-9]{2,4}\/){3}[a-f0-9]{32}\.js$/$script,xmlhttprequest
@@ -1797,6 +1797,7 @@ _werbebanner_
 ||adaraby.com^$third-party
 ||adbison.com^$third-party
 ||adclick.lt^$third-party
+||adconnect.fr^$third-party
 ||adfever.com^$third-party
 ||adgoal.net^$third-party
 ||adhoc2.net^$third-party
@@ -1856,7 +1857,6 @@ _werbebanner_
 ||adunblock.com^$third-party
 ||adverdata.net^$third-party
 ||adverline.com^$third-party
-||adverti.fr^$third-party
 ||advideo.ru^$third-party
 ||adwidecenter.com^$third-party
 ||adwise.bg^$third-party
@@ -1890,7 +1890,6 @@ _werbebanner_
 ||boruto.fr^$third-party
 ||braip.com.br^$third-party
 ||broadcast.pm^$third-party
-||buckridge.link^$third-party
 ||bzzvid.com^$third-party
 ||camsoda.com^$third-party
 ||camsympa.com^$third-party,domain=~camsympa.fr
@@ -1937,6 +1936,7 @@ _werbebanner_
 ||ebzfbiueubria.com^$third-party
 ||echangedebannieres.fr^$third-party
 ||egnatius-ear.com^$third-party
+||eurolive.com^$~image,third-party
 ||eurowebbiz.com^$third-party
 ||explorads.com^$third-party
 ||ezstatic.com^$third-party
@@ -2164,6 +2164,7 @@ velduncinus.cfd
 ||achyrepeatitchy.com^
 ||acoponposeur.com^
 ||actionrtb.com^
+||actuanius.com^
 ||addingirritationdesk.com^
 ||admiredexcrete.com^
 ||admiretolerant.com^
@@ -2418,7 +2419,6 @@ velduncinus.cfd
 ||eymwxhqck.com^
 ||f2kif7rht23wkr6kwqftuw99m1u7.cyou^
 ||f5c8x32gf3o8exqm.cyou^
-||f7hyg4q.org^
 ||fadedsnow.com^
 ||fairfeeling.com^
 ||falseframe.com^
@@ -2533,7 +2533,6 @@ velduncinus.cfd
 ||isanalyze.com^
 ||isoamidtrusion.com^
 ||isobaresoffit.com^
-||italarizege.xyz^
 ||iwyedjscpql.com^
 ||j0ss4np1c5.site^
 ||j68l67f4yknn1t.cyou^
@@ -2974,6 +2973,7 @@ velduncinus.cfd
 ||zxvflioj.com^
 .aspx?poolid=
 /coinhive.min.js
+/cryptonight.wasm
 /lhnhelpouttab-current.
 /minescripts.js
 ||a-calc.de^$third-party
@@ -3224,6 +3224,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||s3.amazonaws.com/*/affiliate/
 ||s3.amazonaws.com^*/ads/
 ||s3content.s3.amazonaws.com/imgemails/cf
+||satking.de/images/banners/
 ||satsupreme.com/images/banners/
 ||schule-und-familie.de/assets/images/banners/
 ||sexcity-girls.com/banner/
@@ -3519,6 +3520,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ||jackypc.com/bann*.swf
 ||jawharafm.net/*/upload/1579350911.png
 ||jeu-tarot-en-ligne.com/pubs/
+||jeux-hentai.com/bg/
 ||jeux.org/vda/
 ||judgehype.com/pub2/bg.php?
 ||keriximmo.net/_pub/
@@ -3684,6 +3686,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ###bsa-block-125--125
 ###bsa-block-1920--1200
 ###bsa-block-250--250
+###bsa-block-250--600
 ###bsa-block-300--250
 ###bsa-block-300--600
 ###bsa-block-336--280
@@ -4250,7 +4253,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|allviid.xyz|dai
 ##.pub_left
 ##.pub_left_content
 ##.pub_mobile
-##.pub_mobile_une
 ##.pub_open
 ##.pub_outer
 ##.pub_pave
@@ -4484,6 +4486,7 @@ previmeteo.com###box_4_pub
 darty.com###brand
 cine-torrent.org,frenchtorrent.cc,magnet-torrent.org,mania-torrent.org,warez-torrent.org,zktorrent.org###btvpn
 ktotv.com###campain-bandeau
+sexeautop.com###catcher
 renovationettravaux.fr###cboxOverlay
 wanarun.net###chaussuresCarousel
 sitedesmarques.com###check-also-box
@@ -5132,8 +5135,10 @@ ouedkniss.com#$#.pg-top.d-print-none { height: 0px; }
 ||facebook.net^*/fbevents.js$third-party
 @@|blob:$popup,domain=caf.fr|cerise-prim.fr|particulier.edf.fr
 @@||ad-exchange.fr^$~third-party
+@@||ami2.com/resources/img/mysite/publicites/$image,~third-party
 @@||assets.isthereanydeal.com/*/banner300.$image
 @@||francesurfinfo.com/affiliation/
+@@||gpsfront.aliexpress.com/queryGpsProductAjax.do?*&imageSize=$script,~third-party
 @@||koifaire.com/upload/*/300x250-$image,~third-party
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,third-party,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,third-party
