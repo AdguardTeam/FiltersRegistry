@@ -1,9 +1,9 @@
-! Checksum: F6ApdhfuaueGV18uoFnmHQ
-! Diff-Path: ../patches/18/18-s-1795666413-3600.patch
+! Checksum: 4a0tJYa1RDcmQvIQsbw2hQ
+! Diff-Path: ../patches/18/18-s-1795673717-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.1.0.49
-! TimeUpdated: 2026-11-26T04:10:08+00:00
+! Version: 2.1.0.50
+! TimeUpdated: 2026-11-26T06:12:52+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2684,6 +2684,10 @@ ziolaioleje.pl,houseofpostcards.pl,sklep.precio.pl,kim24.pl,sklep.moderat.pl,dla
 !
 ! NOTE: Regular rules
 !
+shop.latexfauna.com#$##cookies-modal { display: none !important; }
+shop.latexfauna.com#$#body > .backdrop { display: none !important; }
+shop.latexfauna.com#$#body { overflow: auto !important; }
+member.uhc.com##div[data-testid="prelogin-footer-notice"]
 pretto.fr#%#//scriptlet('trusted-click-element', 'dialog[aria-label="Gestion des cookies"] button:not([aria-expanded]):not([aria-busy]):not([class*=" "])', '!cookie:tracking-preferences')
 moneezy.de#%#//scriptlet('trusted-click-element', 'div[aria-labelledby^="reka-dialog-title-"] .w-full.rounded-lg.bg-gray-200', '!cookie:consent')
 finanzpartner.de###cc-button
@@ -20288,6 +20292,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/248097
+shop.latexfauna.com#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/248189
 ! https://github.com/AdguardTeam/AdguardFilters/issues/248193
 ! https://github.com/AdguardTeam/AdguardFilters/issues/248190

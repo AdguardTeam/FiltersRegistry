@@ -1,9 +1,9 @@
-! Checksum: m/MqY6q45YN8axyIPiaKFQ
-! Diff-Path: ../patches/14/14-s-1795669859-3600.patch
+! Checksum: lQj9TcHE0vE7K2N6fDYg5Q
+! Diff-Path: ../patches/14/14-s-1795673704-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.87.94
-! TimeUpdated: 2026-11-26T05:08:50+00:00
+! Version: 2.2.87.95
+! TimeUpdated: 2026-11-26T06:12:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2685,6 +2685,10 @@ ziolaioleje.pl,houseofpostcards.pl,sklep.precio.pl,kim24.pl,sklep.moderat.pl,dla
 !
 ! NOTE: Regular rules
 !
+shop.latexfauna.com#$##cookies-modal { display: none !important; }
+shop.latexfauna.com#$#body > .backdrop { display: none !important; }
+shop.latexfauna.com#$#body { overflow: auto !important; }
+member.uhc.com##div[data-testid="prelogin-footer-notice"]
 pretto.fr#%#//scriptlet('trusted-click-element', 'dialog[aria-label="Gestion des cookies"] button:not([aria-expanded]):not([aria-busy]):not([class*=" "])', '!cookie:tracking-preferences')
 moneezy.de#%#//scriptlet('trusted-click-element', 'div[aria-labelledby^="reka-dialog-title-"] .w-full.rounded-lg.bg-gray-200', '!cookie:consent')
 finanzpartner.de###cc-button
@@ -20219,6 +20223,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/248097
+shop.latexfauna.com#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/248189
 ! https://github.com/AdguardTeam/AdguardFilters/issues/248193
 ! https://github.com/AdguardTeam/AdguardFilters/issues/248190
@@ -39270,7 +39276,7 @@ catalogueau.com##div:is([data-home-subscribe], [data-retailer-subscribe])
 houstonchronicle.com##article > div.mb32:has(> div[class] > a[href^="https://www.google.com/preferences/source"])
 leparisien.fr##.share-toolsv2-container-right
 averydennison.com##.TSNewsLetterSignUp
-shiftdelete.net##.widget__Butterfly_Framework_Widget_Base
+shiftdelete.net##.sd-rd[aria-label="Teknoloji Radyosu"]
 bauknecht.de##.emeabesttemplatewhirlpool-newsletter-custom-app-2-x-formBanner
 partsfinder.bilsteingroup.com#%#//scriptlet('set-cookie', 'PF_TRACKING_ENABLED', 'false')
 partsfinder.bilsteingroup.com#%#//scriptlet('set-cookie', 'FB_PIXEL_ENABLED', 'false')
