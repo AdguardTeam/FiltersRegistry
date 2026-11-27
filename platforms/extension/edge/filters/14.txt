@@ -1,9 +1,9 @@
-! Checksum: cqWM6yezV0l2q/nizpKOzA
-! Diff-Path: ../patches/14/14-s-1795785129-3600.patch
+! Checksum: aIOCCJdaKkmcoCAnikmHFg
+! Diff-Path: ../patches/14/14-s-1795788636-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.88.13
-! TimeUpdated: 2026-11-27T13:08:47+00:00
+! Version: 2.2.88.14
+! TimeUpdated: 2026-11-27T14:08:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2685,12 +2685,13 @@ ziolaioleje.pl,houseofpostcards.pl,sklep.precio.pl,kim24.pl,sklep.moderat.pl,dla
 !
 ! NOTE: Regular rules
 !
+tase.co.il##tase-cookies-policy-v2
 siepomaga.pl#%#//scriptlet('trusted-set-cookie', 'consents', 'eyJhbmFseXRpY3MiOmZhbHNlLCJhbmFseXRpY3Mtc2llcG9tYWdhIjpmYWxzZSwicmV0YXJnZXRpbmciOmZhbHNlLCJyZXRhcmdldGluZy1jcml0ZW8iOmZhbHNlLCJyZXRhcmdldGluZy1nb29nbGUiOmZhbHNlLCJyZXRhcmdldGluZy1mYWNlYm9vayI6ZmFsc2UsInJldGFyZ2V0aW5nLXRpa3RvayI6ZmFsc2UsInJlcXVpcmVkIjp0cnVlLCJyZXF1aXJlZC1zaWVwb21hZ2EiOnRydWUsInJlcXVpcmVkLWNsb3VkZmxhcmUiOnRydWUsInJlcXVpcmVkLWZhY2Vib29rIjp0cnVlLCJyZXF1aXJlZC1nb29nbGUiOnRydWUsInJlcXVpcmVkLWdvb2dsZS1wYXkiOnRydWUsInJlcXVpcmVkLWFwcGxlLXBheSI6dHJ1ZSwicmVxdWlyZWQteW91dHViZSI6dHJ1ZSwidmVyc2lvbiI6Mn0=')
 befree.ru###__next ~ div[style^="position: absolute; z-index: 16; height:"]
 ||israelinfo.co.il/javascript/ii-consent.js
-prepmymeal.fr#$##shopify-pc__banner { display: none !important; }
-prepmymeal.fr#$#body::before { display: none !important; }
-prepmymeal.fr#$#html { overflow: auto !important; }
+prepmymeal.com,prepmymeal.nl,prepmymeal.fr#$##shopify-pc__banner { display: none !important; }
+prepmymeal.com,prepmymeal.nl,prepmymeal.fr#$#body::before { display: none !important; }
+prepmymeal.com,prepmymeal.nl,prepmymeal.fr#$#html { overflow: auto !important; }
 rule34-videos.com###r34c
 aniwaffle.com##.prelaunch-consent
 stoletov.ru##div[class^="CookieNotificationMain_wrap"]
@@ -2915,7 +2916,7 @@ twinkl.de##.cookie-consent-popup-container
 info.2gis.ru##body > div[class^="wrapper-"][style="opacity: 1; transform: none;"]
 meteomatics.com#%#//scriptlet('trusted-click-element', '#cookie-banner .formatted-content > a[href="#"], #cookie-banner .shrink .mt-6 input[value="analytics"], #cookie-banner .shrink .mt-6 input[value="marketing"], #cookie-banner .gap-4.md\:gap-8 > a[href="#"]:last-child', '', '1500')
 ||prepmymeal.com/cdn/shop/*/assets/cookies.js
-prepmymeal.com#%#//scriptlet('trusted-click-element', '#shopify-pc__banner__btn-decline')
+prepmymeal.com,prepmymeal.nl,prepmymeal.fr#%#//scriptlet('trusted-click-element', '#shopify-pc__banner__btn-decline')
 bushikaku.net##.app-lead
 ||nohello.org/consent-manager.js
 deepseek-harness.io###ga-banner
@@ -20227,7 +20228,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247936
-prepmymeal.fr#@##shopify-pc__banner#shopify-pc__banner
+! https://github.com/AdguardTeam/AdguardFilters/issues/246196
+prepmymeal.com,prepmymeal.nl,prepmymeal.fr#@##shopify-pc__banner#shopify-pc__banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194777
 @@||sdk.privacy-center.org^$domain=tportal.hr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/248097
@@ -20295,8 +20297,6 @@ pwt.wroc.pl#@##cookieModal
 alpsgo.it#@#.cc-window[aria-label="cookieconsent"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245926
 meteomatics.com#@##cookie-banner
-! https://github.com/AdguardTeam/AdguardFilters/issues/246196
-prepmymeal.com#@##shopify-pc__banner#shopify-pc__banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/245963
 wirkaufendeinentesla.com#@#.cli-popupbar-overlay
 wirkaufendeinentesla.com#@##cliSettingsPopup
@@ -38719,6 +38719,7 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
+tomshardware.com##* #article-body > figure.pull-left
 aukro.at,aukro.cz,aukro.hr,aukro.hu,aukro.pl,aukro.ro,aukro.si,aukro.sk#$#.cdk-overlay-container:has(auk-email-collector-popup) { display: none !important; }
 aukro.at,aukro.cz,aukro.hr,aukro.hu,aukro.pl,aukro.ro,aukro.si,aukro.sk#$#html.cdk-global-scrollblock { position: static !important; }
 pluska.sk###article-subscribe-newsletter
@@ -43382,7 +43383,7 @@ falter.at##.subscription-note-wide
 letribunaldunet.fr###googleNewsFollowBtn
 adotrip.com###cta_area
 jomo-news.co.jp##.m-message-newsletter
-loudwire.com,newstalkkgvo.com,973kkrc.com##.incontent-newsletter
+wgna.com,loudwire.com,newstalkkgvo.com,973kkrc.com##.incontent-newsletter
 973kkrc.com##section[id^="tsq_sailthru_newsletter"]
 973kkrc.com#%#//scriptlet('trusted-set-cookie', 'newsletter-overlay-notspam', 'completed-newsletter')
 rprealtyplus.com##.theiaStickySidebar > div.row:has(h4.category-heading + div[class] #semail_err)
@@ -51763,7 +51764,7 @@ tmailor.com##.noti-download-app
 lifestyleasia.com##.btt-top-add-section
 hatarako.net,askdoctors.jp##.top-app-area
 povo.jp###sectionApp
-xlcountry.com,my1035.com##.branded-app-shortcode-inarticle
+wgna.com,xlcountry.com,my1035.com##.branded-app-shortcode-inarticle
 threads.net#?#div[class*=" "][style^="width:"] > div + div[class*=" "]:has(> div:last-child > a[href^="/download"])
 gpfans.com###androidDownload
 ctinews.com#?#.promote-items > li:has(> a[href="https://deep.ctinews.com/app-cti117"])
@@ -54396,6 +54397,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+tomshardware.com##* #article-body > figure.pull-left + p[id^="elk-"]:has(> a[href^="https://play.google.com/store/apps/details?id=com.futureplc.peregrine.tomshardware"])
 chouseisan.com###open_app_banner
 17.live#$#div[data-testid="mobileBlock"]:has(> div > div > button[data-ga-event-label="download_app_msite"]) { display: none !important; }
 17.live#$#div[data-testid="mobileBlock"]:has(> div > div > button[data-ga-event-label="download_app_msite"]) + div { min-height: 100% !important; }
@@ -59621,6 +59623,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+x.com##div[class*="@container/post-actions"] > div.relative:has(> div.flex > a[href="/i/account_analytics"])
 city.fukuoka.lg.jp##.promotion
 famitsu.com##section[class$="_section"]:has(> div[class$="_headline"] > div[class$="_headlineWrapper"] > h2 > a[class$="_titleLink"][href="/ranking/amazon"])
 ||middleware-prod.dailywire.com/middleware/v*/getGlobalBanner
