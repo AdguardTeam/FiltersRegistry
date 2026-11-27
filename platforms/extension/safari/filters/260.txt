@@ -1,9 +1,9 @@
-! Checksum: btSbaOmbNDghYgsktOS/0A
-! Diff-Path: ../patches/260/260-s-1795754250-14400.patch
+! Checksum: YF4Jn4RFOdw1IuJjYqupZA
+! Diff-Path: ../patches/260/260-s-1795768651-14400.patch
 ! Title: Stevo's AI Blocklist
 ! Description: A filter list that hides website features which use generative AI and AI-generated content.
-! Version: 2.0.3.46
-! TimeUpdated: 2026-11-27T04:35:43+00:00
+! Version: 2.0.3.47
+! TimeUpdated: 2026-11-27T08:36:04+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Stevo's AI Blocklist
@@ -1063,8 +1063,11 @@ export.ebay.com##.chatbot
 ! AI-free searching
 www.ecosia.org#%#//scriptlet('ubo-set-cookie-reload', 'ECNOAI', 'true')
 ! -- https://www.ecosia.org/ (Homepage)
+! * Backup filters if setting cookie fails
 ! "AI Chat" in search bar
 www.ecosia.org##.omnibox-search-form__ai-chat
+! Plus button for AI tools
+www.ecosia.org##.omnibox-ai-tools__toggle
 ! -- https://www.ecosia.org/search?q=test (Search results)
 ! "AI Chat" & separator in navbar
 www.ecosia.org##[data-test-id="search-navigation-item-chat"]
@@ -2224,6 +2227,22 @@ www.homedepot.com###product-section-magic-apron-qa-bot
 www.homedepot.com###beyond_bought_together
 ! Review summary
 www.homedepot.com###magic-apron-review-summary
+! === Home Depot (Canada) ===
+! -- https://www.homedepot.ca/en/home.html
+! Header - Ask button
+www.homedepot.ca##.global-header-magic-apron-ask
+! -- https://www.homedepot.ca/search?q=%20
+! Transient notice for Ask button
+www.homedepot.ca##magic-apron-blurb-widget
+! Search filters - Ask
+www.homedepot.ca##.ask-button-touch
+! Floating magic apron button
+www.homedepot.ca##hdca-magic-apron-assist-micro
+! -- https://www.homedepot.ca/product/milwaukee-tool-18v-m18-lithium-ion-extended-capacity-xc-6-0-ah-redlithium-high-output-battery/1001129753
+! Ask AI about out product
+www.homedepot.ca###magicApronBot
+! Review summary
+www.homedepot.ca##[data-bv-show="review-summaries"]
 ! === Hourglass Cosmetics ===
 ! -- https://www.hourglasscosmetics.com/products/veil-hydrating-skin-tint
 ! Review summary
@@ -2530,6 +2549,10 @@ www.lawinsider.com##.zKcZVDrbtr
 ! ClauseFinder & AI Column chips
 www.lawinsider.com##.mdc-menu-surface--anchor:has([data-trigger-paywall-id="CLAUSE_FINDER"])
 www.lawinsider.com##.mdc-menu-surface--anchor:has(> [data-trigger-paywall-id="AI_SEARCH_COLUMNS"])
+! === Learn Python ===
+! -- https://www.learnpython.org/en/Hello%2C_World%21
+! Explain Code button
+www.learnpython.org##[data-trackid="exercise-action-bar-explain"]
 ! === Lenovo ===
 ! -- https://www.lenovo.com/us/en/p/workstations/thinkstation-p-series/lenovo-thinkstation-p3-tiny-gen-2-intel/30k6000xus
 ! AI Overview (mobile)
