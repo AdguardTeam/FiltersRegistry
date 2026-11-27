@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kaBSKyyRg9Arbcyk/xfM8A
-! Diff-Path: ../patches/14/14-s-1795792284-3600.patch
+! Checksum: c+VgSKQkFepnZSo1T7pw2g
+! Diff-Path: ../patches/14/14-s-1795799463-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.88.15
-! TimeUpdated: 2026-11-27T15:08:17+00:00
+! Version: 2.2.88.16
+! TimeUpdated: 2026-11-27T17:07:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2605,6 +2605,7 @@ centrumfotelikow.pl,ziolaioleje.pl,houseofpostcards.pl,sklep.precio.pl,kim24.pl,
 !
 ! NOTE: Regular rules
 !
+frogum.com###qoliber-gdpr-cookie-consent
 tase.co.il##tase-cookies-policy-v2
 befree.ru###__next ~ div[style^="position: absolute; z-index: 16; height:"]
 ||israelinfo.co.il/javascript/ii-consent.js
@@ -37066,7 +37067,9 @@ lastwordonsports.com,barcelonasecreta.com,wiwo.de,rocket-boys.co.jp,autonews.com
 !
 ! SECTION: Subscriptions - Regular rules
 !
-tomshardware.com##* #article-body > figure.pull-left
+frogum.com##.footer > div.bg-primary:has(> div.flex > div > form#newsletter-validate-detail)
+baku.ws##.js-preferred-source
+tomshardware.com###article-body > figure.pull-left
 aukro.at,aukro.cz,aukro.hr,aukro.hu,aukro.pl,aukro.ro,aukro.si,aukro.sk##.cdk-overlay-container:has(auk-email-collector-popup):style(display: none !important;)
 aukro.at,aukro.cz,aukro.hr,aukro.hu,aukro.pl,aukro.ro,aukro.si,aukro.sk##html.cdk-global-scrollblock:style(position: static !important;)
 pluska.sk###article-subscribe-newsletter
@@ -52552,7 +52555,7 @@ m.tokopedia.com##div[data-testid="divOverlay"]:style(display: none!important;)
 gumtree.com.au##.footer__app-section
 hayatpay.com.tr##main > div.bottomBanner_container__oI2IU
 hayatpay.com.tr##body > div.wrapper > a[href^="https://hayatpay.go.link/"]
-tomshardware.com##* #article-body > figure.pull-left + p[id^="elk-"]:has(> a[href^="https://play.google.com/store/apps/details?id=com.futureplc.peregrine.tomshardware"])
+tomshardware.com###article-body > figure.pull-left + p[id^="elk-"]:has(> a[href^="https://play.google.com/store/apps/details?id=com.futureplc.peregrine.tomshardware"])
 chouseisan.com###open_app_banner
 17.live##div[data-testid="mobileBlock"]:has(> div > div > button[data-ga-event-label="download_app_msite"]):style(display: none !important;)
 17.live##div[data-testid="mobileBlock"]:has(> div > div > button[data-ga-event-label="download_app_msite"]) + div:style(min-height: 100% !important;)
@@ -57728,6 +57731,9 @@ oppaiman.com##div.bg-nautral-base > div.border-jacarta-500
 tomshardware.com##.flcw-skinnybanner-header-bg
 top.gg##div.w-full > div.flex:has(> a[href="/subscribe"])
 top.gg##body > div.fixed:has(> div.max-w-full > a[href="/subscribe"])
+speedof.me#@#.api-ad-footer
+speedof.me##+js(set-constant, PerformanceObserver, undefined)
+speedof.me##.api-ad-footer ins.adsbygoogle:style(width: 100% !important; height: 100% !important; display: block !important;)
 speedof.me##+js(prevent-fetch, speedof.me/api/userdata.php)
 linuxcommunity.io##aside#lcio-tee
 finanzen.net##div[data-page-header-slot="dynamic-content-boxes"]
