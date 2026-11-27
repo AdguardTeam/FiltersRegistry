@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: r08micYcL5UhJL1p21yasA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1795788649-3600.patch
+! Checksum: ehIIOQ3Y+qYm6EhQcuzK/Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1795792287-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.5.7.52
-! TimeUpdated: 2026-11-27T14:07:56+00:00
+! Version: 2.5.7.53
+! TimeUpdated: 2026-11-27T15:07:38+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15470,9 +15470,9 @@ thertstv.com##body:style(overflow: auto !important;)
 thertstv.com##body > div#wrapper:style(filter: none !important; pointer-events: auto !important;)
 thertstv.com##body > div[style*="position: fixed; z-index: 2147483647;"]:style(display: none !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243741
-f4scdn.com##body > .adsbox.pub_300x250[style]:style(display: block !important;)
-f4scdn.com##+js(prevent-fetch, pagead2.googlesyndication.com)
-f4scdn.com##+js(remove-attr, data-block-adblock, .player-wrap[data-block-adblock])
+f4splay.vip,f4scdn.com##body > .adsbox.pub_300x250[style]:style(display: block !important;)
+f4splay.vip,f4scdn.com##+js(prevent-fetch, pagead2.googlesyndication.com)
+f4splay.vip,f4scdn.com##+js(remove-attr, data-block-adblock, .player-wrap[data-block-adblock])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243556
 nosubapp.com##.adblock-gate:style(display: none !important;)
 nosubapp.com##.adblock-locked:style(overflow: auto !important;)
@@ -38037,6 +38037,7 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 ! vidara, often changed
 ! https://github.com/AdguardTeam/AdguardFilters/issues/244659
 ! https://github.com/AdguardTeam/AdguardFilters/issues/243741
+! https://github.com/AdguardTeam/AdguardFilters/issues/248114
 ! Workaround for MV3 extension when scriptlet is injected too late
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242899
 ! https://github.com/AdguardTeam/AdguardFilters/issues/242900
@@ -42723,6 +42724,7 @@ $image,3p,denyallow=googleapis.com,domain=vipbox1.org
 !
 ! NOTE: Specific rules
 !
+gamerant.com##.gr-ig-offer
 epicroms.net##+js(remove-node-text, script, /\(\)\;void window\;/)
 epicroms.net##center > button.file-download-btnn
 finance.yahoo.com##.dock-item.dock-top-insert
@@ -43247,8 +43249,8 @@ gptcleanuptools.com##body > div.backdrop-blur.fixed:has(ins.adsbygoogle)
 dmagazine.com##.c-advertisement-native
 dmagazine.com##.c-featured-post-feed__latest-slide--partner
 dmagazine.com##.c-section__stories > .c-section__story:has(>.c-advertisement-native)
-f4scdn.com##+js(no-window-open-if, _blank)
-f4scdn.com##+js(json-prune, $.[?(@.urls && @.vast)].*)
+f4splay.vip,f4scdn.com##+js(no-window-open-if, _blank)
+f4splay.vip,f4scdn.com##+js(json-prune, $.[?(@.urls && @.vast)].*)
 empireonline.com##div[class^="advertWrapper-"]
 mumsnet.com##div[id^="side-rail-"]
 mumsnet.com##aside:has(> div[id^="feedAd"])
@@ -43743,7 +43745,6 @@ deepai.org##div[data-adtype]
 petersenshunting.com##.adpos_rightD
 speedof.me##.intro-ad-footer
 ||speedof.me/api/uc.php
-speedof.me##.api-ad-footer
 cine.su##+js(json-prune, $..children.*[?(@.id=="ad-network-boot")].dangerouslySetInnerHTML.__html)
 pornditt.com##.top_nav_menu
 startpage.com###main > div[data-bvs][data-identifier]
@@ -65087,7 +65088,7 @@ insideevs.com,motor1.com##.outstream_partner
 !+ NOT_OPTIMIZED
 goal.com##.fco-sticky-wrapper__wrapper
 !+ NOT_OPTIMIZED
-outsideonline.com##.prestitial-ad
+backpacker.com,outsideonline.com##.prestitial-ad
 !+ NOT_OPTIMIZED
 comix.*,comix.ws,animekai.*,animekai.la,animekai.gs,animekai.fo,animekai.fi,comix.to,anikai.to##body > a[target="_blank"][style^="position:"][style*="z-index:"]
 !+ NOT_OPTIMIZED
