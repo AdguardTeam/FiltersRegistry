@@ -1,9 +1,9 @@
-! Checksum: pY8I/+klqUtFAzsX4H+jHQ
-! Diff-Path: ../patches/3/3-s-1795774320-3600.patch
+! Checksum: v2N2gzSnzmQYLXBA6MTUvg
+! Diff-Path: ../patches/3/3-s-1795777833-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.16.59
-! TimeUpdated: 2026-11-27T10:08:16+00:00
+! Version: 2.1.16.60
+! TimeUpdated: 2026-11-27T11:07:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -113859,6 +113859,11 @@ d4?appid*type*
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !
 !
+! https://x.com/KonoTsuranori/status/2126243309400342533
+ekitan.com#%#//scriptlet('set-constant', 'executeImpressionTicketTracking', 'noopFunc')
+ekitan.com#%#//scriptlet('set-constant', 'initHomesTracking', 'noopFunc')
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+@@||ekitan.com/transit/js/ticket-analytics.js$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247930
 @@||fp.yangcong345.com/*/webTrack.js$domain=school.yangcongxueyuan.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/247621
@@ -121436,3 +121441,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us#%#//scriptlet('ubo-set', 'navigator.b
 ! alfalfalfa.com,matometanews.com
 ! search.rakuten.co.jp
 search.rakuten.co.jp#%#//scriptlet('ubo-aeld', 'mouseup', 'sendClickEvent')
+! ekitan.com
+ekitan.com#%#//scriptlet('ubo-set', 'executeImpressionTicketTracking', 'noopFunc')
+ekitan.com#%#//scriptlet('ubo-set', 'initHomesTracking', 'noopFunc')
+@@||ekitan.com/transit/js/ticket-analytics.js$badfilter,~third-party
