@@ -1,5 +1,5 @@
-! Checksum: 6nwey4EDiRZbVktZ7+gnTw
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1795781680-3600.patch
+! Checksum: x81H7wlJFIRngVvDZtXF2w
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1795832019-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.15.73
@@ -94,6 +94,7 @@ jumpmatome2ch.biz##.kotei
 firestorage.jp###news_box > div.row > div:not(#ad_foot_rec)
 ||lovekoala.com/rss-$subdocument
 lovekoala.com##.lcmcolumn ~ div.mtxt
+monst-news.net##div[id^="rss_wrap"]
 himasoku.com##.himajin-headline
 karukantimes.com##iframe[src^="https://karukantimes.com/rss_top3.html"]
 squallchannel.com###hg78d
@@ -237,6 +238,7 @@ you1news.com##h2.caption-title:has(+ div[class*="-rss"])
 netouyonews.net##.rss-entry-cards
 kinsoku.blog.jp##header.article-header > br:has(~ .pager)
 kinsoku.blog.jp###more > div[style^="width:"] > a[href*="//amzn.to/"] + br + span
+l-o-l.net##div[class^="live-rss"]
 xn--r8jwklh769h2mc880dk1o431a.com##.topbox2 > div.”smanone”
 meilblog.com##div[class^="meilb-"]
 ichinuke.com##.w-beforeRelated
@@ -1010,6 +1012,7 @@ kinsta.com##kinsta-article-feedback
 recotripp.com##.ad-cms-contents
 phoenixnap.com##.live-chat-btn
 doc.ua##.header__call-btn
+amazon.co.jp#?#.a-ws-span8 > div.a-row:has(> div.a-column > div.a-section > div#ConfirmationPageCenterVOCElement-score-text-row)
 ||code.jivo.ru/widget/$third-party
 ||engage.wixapps.net/chat-widget-server/
 my.rakuten.co.jp###survey-area
@@ -1221,7 +1224,6 @@ armyandoutdoors.com##.rp-micro-app-dummy-icon-container
 turkiyegazetesi.com.tr##.tg-ai-chat-btn
 ford.com.tr##.fop-chatbot-toggle-container
 alfemo.com##.online-sales-popup
-publikations-plattform.de###moinai-container
 dobro.ru##.widget-icon
 lg.com##.al-quick-btn__quickbtn
 lg.com##.al-proactive-msg
@@ -1233,7 +1235,6 @@ royal-computers.ru##div[data-chat-widget-b24u]
 nefisyemektarifleri.com##.nyt-chatbot-tooltip
 nefisyemektarifleri.com##.nyt-chatbot-toggle
 jrepoint.jp##.launcher-agent div.messenger
-asviva.de##.o-livechat-root
 dns-shop.ru###chat-button
 pacjent.gov.pl###sprintbot-chat
 namesilo.com##.ai-chat-widget-container
@@ -1241,7 +1242,6 @@ spolshy.com.ua##.phone-modal
 xbox.com##.copilot-container
 rotaborsa.com##.kanews-chat
 microsoft.com###msChatContainer
-games-world4you.de###shopify-chat
 vit.ac.in###whatsapp-chat-widget
 business.linkedin.com##.persistent-assistant-container
 ||app.qualified.com/*/messenger?$domain=cloudflare.com
@@ -1285,10 +1285,12 @@ tiodonghua.com,siracusanews.it###ht-ctc-chat
 boxberry.ru##.popup-messenger
 sexuria.net,buhgalter.com.ua##.chat
 daemon-hentai.com###secondary > div.widget:last-child
+easeus.com###livechat-for-own
 howdyho.net##.hollow
 javbangers.com,javtasty.com##.table > .block-chat
 knights-table.net###arrowchat_base
 moluch.ru##.ask_out
+snahp.it#?#.sidebar-content > div.widget:has(> div.textwidget > iframe[src^="https://st.chatango.com/"])
 zebratechnologies.force.com##.zbrbot-container
 ||app.hubspot.com/conversations-visitor$third-party
 ||cdn.shopify.com/shopifycloud/shopify_chat^$third-party
@@ -1362,6 +1364,7 @@ t-online.de,welt.de##iframe[src^="https://widget.civey.com"]
 ##amp-iframe[src^="https://widget.civey.com"]
 ##iframe[src*="compass.pressekompass.net/compasses"]
 ||embed-v*.sided.co^$third-party
+||widjet.j-stand.com/embed.js$third-party
 ||aflt.travel.yandex.ru^$script,third-party
 ||widget.justwatch.com^$third-party
 ||insticator.com^$third-party
