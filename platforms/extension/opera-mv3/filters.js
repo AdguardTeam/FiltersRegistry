@@ -954,8 +954,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.2.1.92",
-			"timeUpdated": "2026-11-28T04:35:12+0000",
+			"version": "2.2.1.93",
+			"timeUpdated": "2026-11-28T08:35:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1026,8 +1026,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.2.1.92",
-			"timeUpdated": "2026-11-28T04:35:12+0000",
+			"version": "2.2.1.93",
+			"timeUpdated": "2026-11-28T08:35:07+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1360,8 +1360,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.93",
-			"timeUpdated": "2026-11-26T08:36:46+0000",
+			"version": "2.0.25.94",
+			"timeUpdated": "2026-11-28T08:35:48+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1387,8 +1387,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.60",
-			"timeUpdated": "2026-11-26T00:49:16+0000",
+			"version": "2.0.8.61",
+			"timeUpdated": "2026-11-28T08:35:51+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1444,8 +1444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.95.23",
-			"timeUpdated": "2026-11-28T04:35:57+0000",
+			"version": "2.0.95.24",
+			"timeUpdated": "2026-11-28T08:35:57+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1512,8 +1512,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.9.59",
-			"timeUpdated": "2026-11-27T08:36:02+0000",
+			"version": "2.0.9.60",
+			"timeUpdated": "2026-11-28T08:36:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
